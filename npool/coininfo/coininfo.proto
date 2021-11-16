@@ -39,7 +39,6 @@ message GetCoinInfosRequest {}
 
 // 注册币种信息
 message RegisterCoinRequest {
-	bool need_signinfo = 1; // 是否需要预签名信息
 	string name = 2; // 币种名称：Filecoin
 	string unit = 3; // 单位：FIL
 }

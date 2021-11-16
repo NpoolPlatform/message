@@ -136,9 +136,6 @@
     "sphinxcoininfov1RegisterCoinRequest": {
       "type": "object",
       "properties": {
-        "needSigninfo": {
-          "type": "boolean"
-        },
         "name": {
           "type": "string"
         },

@@ -90,7 +90,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| need_signinfo | [bool](#bool) |  | 是否需要预签名信息 |
 | name | [string](#string) |  | 币种名称：Filecoin |
 | unit | [string](#string) |  | 单位：FIL |
 
