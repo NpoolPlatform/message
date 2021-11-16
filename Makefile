@@ -9,6 +9,7 @@ PROTO_SWAGGER_FILE = $(patsubst %.proto,%.swagger.json,$(PROTO_FILE))
 
 PROTO_INCLUDE += -I.
 PROTO_INCLUDE += -I./google
+PROTO_INCLUDE += -I./npool
 
 proto: $(PROTO_GO_FILE) $(PROTO_GO_GW_FILE)
 %.pb.go: %.proto
