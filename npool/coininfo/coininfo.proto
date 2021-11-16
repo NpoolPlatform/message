@@ -2,10 +2,9 @@ syntax = "proto3";
 
 package sphinx.coininfo.v1;
 
-option go_package = "github.com/NpoolPlatform/sphinx-coininfo/message/npool";
+option go_package = "github.com/NpoolPlatform/message/npool/coininfo";
 
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
 import "npool/signproxy/signproxy.proto";
 
 // CoinInfo服务

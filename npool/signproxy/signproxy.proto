@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package sphinx.proxy.v1;
 
-option go_package = "github.com/NpoolPlatform/sphinx-proxy/message/npool/signproxy";
+option go_package = "github.com/NpoolPlatform/message/npool/signproxy";
 
 // Service Name
 service SignProxy {

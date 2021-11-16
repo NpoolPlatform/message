@@ -2,11 +2,11 @@
 // source: npool/coininfo/coininfo.proto
 
 /*
-Package npool is a reverse proxy.
+Package coininfo is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package npool
+package coininfo
 
 import (
 	"context"
