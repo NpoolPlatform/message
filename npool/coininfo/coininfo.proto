@@ -10,13 +10,6 @@ import "npool/signproxy/signproxy.proto";
 
 // CoinInfo服务
 service SphinxCoininfo {
-	// Method Version
-	rpc Version (google.protobuf.Empty) returns (VersionResponse){
-		option (google.api.http) = {
-			post: "/v0/version"
-			body: "*"
-		};
-	}
 	// 注册新币种
 	rpc RegisterCoin (RegisterCoinRequest) returns (RegisterCoinResponse){
 		option (google.api.http) = {
@@ -45,11 +38,6 @@ message GetCoinInfoRequest {
 // 获取币种请求
 message GetCoinInfosRequest {}
 
-// request body and response
-message VersionResponse {
-	string Info = 100;
-}
-
 // 注册币种信息
 message RegisterCoinRequest {
 	bool need_signinfo = 1; // 是否需要预签名信息
@@ -65,7 +53,7 @@ message RegisterCoinResponse {
 // 数据库内CoinInfo
 message CoinInfoRow {
 	int32 id = 1;
-	bool need_signinfo = 2; // 是否需要预签名信息
+	bool is_presale = 2; // 是否为预售，false为在售商品
 	string name = 3; // 币种名称：Filecoin
 	string unit = 4; // 单位：FIL
 }
