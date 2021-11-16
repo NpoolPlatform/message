@@ -1,0 +1,182 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/signproxy/signproxy.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "SignProxy"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "CoinTypeUnKnow",
+        "CoinTypeFIL",
+        "CoinTypeBTC"
+      ],
+      "default": "CoinTypeUnKnow"
+    },
+    "v1MpoolGetNonceInfo": {
+      "type": "object",
+      "properties": {
+        "Nonce": {
+          "type": "string",
+          "format": "uint64"
+        }
+      }
+    },
+    "v1MpoolGetNonceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1MpoolGetNonceInfo"
+        }
+      }
+    },
+    "v1RegisterCoinResponse": {
+      "type": "object"
+    },
+    "v1Signature": {
+      "type": "object",
+      "properties": {
+        "SignType": {
+          "type": "string"
+        },
+        "Data": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1TransactionRequest": {
+      "type": "object",
+      "properties": {
+        "TransactionType": {
+          "$ref": "#/definitions/v1TransactionType"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "Message": {
+          "$ref": "#/definitions/v1UnsignedMessage"
+        }
+      }
+    },
+    "v1TransactionResponseInfo": {
+      "type": "object",
+      "properties": {
+        "Address": {
+          "type": "string"
+        },
+        "Message": {
+          "$ref": "#/definitions/v1UnsignedMessage"
+        },
+        "Signature": {
+          "$ref": "#/definitions/v1Signature"
+        }
+      }
+    },
+    "v1TransactionType": {
+      "type": "string",
+      "enum": [
+        "TransactionTypeUnKnow",
+        "TransactionTypeCreateAccount",
+        "TransactionTypeTransaction"
+      ],
+      "default": "TransactionTypeUnKnow"
+    },
+    "v1UnsignedMessage": {
+      "type": "object",
+      "properties": {
+        "Version": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "To": {
+          "type": "string"
+        },
+        "From": {
+          "type": "string"
+        },
+        "Nonce": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "GasLimit": {
+          "type": "string",
+          "format": "int64"
+        },
+        "GasFeeCap": {
+          "type": "string"
+        },
+        "GasPremium": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "Params": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1WalletBalanceInfo": {
+      "type": "object",
+      "properties": {
+        "Balance": {
+          "type": "string"
+        }
+      }
+    },
+    "v1WalletBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1WalletBalanceInfo"
+        }
+      }
+    }
+  }
+}
