@@ -150,62 +150,6 @@ message VersionResponse {
 }
 
 
-// 以下为接入proxy部分
-
-
-
-// 向proxy请求代理
-message TransactionRequest {
-	TransactionType TransactionType = 100;
-	CoinType CoinType               = 110;
-	UnsignedMessage Message         = 120;
-}
-
-enum TransactionType {
-	TransactionTypeUnKnow = 0;
-	TransactionTypeCreateAccount = 1;
-	TransactionTypeTransaction = 2;
-}
-
-enum CoinType {
-	CoinTypeUnKnow = 0;
-	CoinTypeFIL = 1;
-	CoinTypeBTC = 2;
-}
-
-message UnsignedMessage {
-	uint64 Version    = 100;
-	string To         = 110;
-	string From       = 120;
-	uint64 Nonce      = 130;
-	string Value      = 140;
-
-	int64 GasLimit    = 150;
-	string GasFeeCap  = 160;
-	string GasPremium = 170;
-	uint64 Method     = 180;
-
-	bytes Params      = 190;
-}
-
-message TransactionResponse {
-	TransactionResponseInfo Info = 100;
-}
-
-message TransactionResponseInfo {
-	string Address            = 100;// create new account address
-	UnsignedMessage Message   = 110;
-	Signature	   Signature    = 120;
-}
-
-message Signature {
-	string SignType = 100;//secp256k1
-	bytes Data      = 110;
-}
-
-
-
-
 
 
 

@@ -13,16 +13,8 @@
     - [GetInsiteTxStatusResponse](#sphinx.v1.GetInsiteTxStatusResponse)
     - [GetTxJSONRequest](#sphinx.v1.GetTxJSONRequest)
     - [RegisterAccountRequest](#sphinx.v1.RegisterAccountRequest)
-    - [Signature](#sphinx.v1.Signature)
     - [SuccessInfo](#sphinx.v1.SuccessInfo)
-    - [TransactionRequest](#sphinx.v1.TransactionRequest)
-    - [TransactionResponse](#sphinx.v1.TransactionResponse)
-    - [TransactionResponseInfo](#sphinx.v1.TransactionResponseInfo)
-    - [UnsignedMessage](#sphinx.v1.UnsignedMessage)
     - [VersionResponse](#sphinx.v1.VersionResponse)
-  
-    - [CoinType](#sphinx.v1.CoinType)
-    - [TransactionType](#sphinx.v1.TransactionType)
   
     - [ServiceExample](#sphinx.v1.ServiceExample)
     - [Trading](#sphinx.v1.Trading)
@@ -207,22 +199,6 @@ RegisterAccount 参数
 
 
 
-<a name="sphinx.v1.Signature"></a>
-
-### Signature
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| SignType | [string](#string) |  | secp256k1 |
-| Data | [bytes](#bytes) |  |  |
-
-
-
-
-
-
 <a name="sphinx.v1.SuccessInfo"></a>
 
 ### SuccessInfo
@@ -232,79 +208,6 @@ RegisterAccount 参数
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | info | [string](#string) |  | &#34;success&#34; |
-
-
-
-
-
-
-<a name="sphinx.v1.TransactionRequest"></a>
-
-### TransactionRequest
-向proxy请求代理
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TransactionType | [TransactionType](#sphinx.v1.TransactionType) |  |  |
-| CoinType | [CoinType](#sphinx.v1.CoinType) |  |  |
-| Message | [UnsignedMessage](#sphinx.v1.UnsignedMessage) |  |  |
-
-
-
-
-
-
-<a name="sphinx.v1.TransactionResponse"></a>
-
-### TransactionResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [TransactionResponseInfo](#sphinx.v1.TransactionResponseInfo) |  |  |
-
-
-
-
-
-
-<a name="sphinx.v1.TransactionResponseInfo"></a>
-
-### TransactionResponseInfo
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Address | [string](#string) |  | create new account address |
-| Message | [UnsignedMessage](#sphinx.v1.UnsignedMessage) |  |  |
-| Signature | [Signature](#sphinx.v1.Signature) |  |  |
-
-
-
-
-
-
-<a name="sphinx.v1.UnsignedMessage"></a>
-
-### UnsignedMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Version | [uint64](#uint64) |  |  |
-| To | [string](#string) |  |  |
-| From | [string](#string) |  |  |
-| Nonce | [uint64](#uint64) |  |  |
-| Value | [string](#string) |  |  |
-| GasLimit | [int64](#int64) |  |  |
-| GasFeeCap | [string](#string) |  |  |
-| GasPremium | [string](#string) |  |  |
-| Method | [uint64](#uint64) |  |  |
-| Params | [bytes](#bytes) |  |  |
 
 
 
@@ -326,32 +229,6 @@ request body and response
 
 
  
-
-
-<a name="sphinx.v1.CoinType"></a>
-
-### CoinType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| CoinTypeUnKnow | 0 |  |
-| CoinTypeFIL | 1 |  |
-| CoinTypeBTC | 2 |  |
-
-
-
-<a name="sphinx.v1.TransactionType"></a>
-
-### TransactionType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TransactionTypeUnKnow | 0 |  |
-| TransactionTypeCreateAccount | 1 |  |
-| TransactionTypeTransaction | 2 |  |
-
 
  
 
