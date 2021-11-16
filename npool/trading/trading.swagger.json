@@ -1,0 +1,395 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/trading/trading.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Trading"
+    },
+    {
+      "name": "ServiceExample"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/account/balance": {
+      "get": {
+        "summary": "余额查询",
+        "operationId": "Trading_GetBalance",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AccountBalance"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "coinId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "timestampUtc",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "Trading"
+        ]
+      }
+    },
+    "/v1/account/register": {
+      "post": {
+        "summary": "创建账户",
+        "operationId": "Trading_RegisterAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AccountAddress"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1RegisterAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Trading"
+        ]
+      }
+    },
+    "/v1/account/transaction": {
+      "get": {
+        "summary": "交易状态查询",
+        "operationId": "Trading_GetInsiteTxStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetInsiteTxStatusResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "transactionIdInsite",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Trading"
+        ]
+      },
+      "post": {
+        "summary": "转账 / 提现",
+        "operationId": "Trading_ApplyTransaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SuccessInfo"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ApplyTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Trading"
+        ]
+      }
+    },
+    "/version": {
+      "post": {
+        "summary": "Method Version",
+        "operationId": "ServiceExample_Version",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
+            }
+          }
+        ],
+        "tags": [
+          "ServiceExample"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AccountAddress": {
+      "type": "object",
+      "properties": {
+        "coinId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "address": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "title": "RegisterAccount 返回"
+    },
+    "v1AccountBalance": {
+      "type": "object",
+      "properties": {
+        "coinId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "address": {
+          "type": "string"
+        },
+        "timestampUtc": {
+          "type": "string",
+          "format": "int64"
+        },
+        "amountFloat64": {
+          "type": "number",
+          "format": "double"
+        },
+        "amountUint64": {
+          "type": "string",
+          "format": "uint64"
+        }
+      },
+      "title": "GetBalance 返回"
+    },
+    "v1AccountTxJSON": {
+      "type": "object",
+      "properties": {
+        "json": {
+          "type": "string"
+        }
+      },
+      "title": "GetTxJSONRequest 返回"
+    },
+    "v1ApplyTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "coinId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "transactionIdInsite": {
+          "type": "string"
+        },
+        "addressFrom": {
+          "type": "string"
+        },
+        "addressTo": {
+          "type": "string"
+        },
+        "amountFloat64": {
+          "type": "number",
+          "format": "double"
+        },
+        "amountUint64": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "type": {
+          "type": "string"
+        },
+        "uuidSignature": {
+          "type": "string"
+        },
+        "createtimeUtc": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "title": "ApplyTransaction 参数"
+    },
+    "v1GetInsiteTxStatusResponse": {
+      "type": "object",
+      "properties": {
+        "coinId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "amountFloat64": {
+          "type": "number",
+          "format": "double"
+        },
+        "amountUint64": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "addressFrom": {
+          "type": "string"
+        },
+        "addressTo": {
+          "type": "string"
+        },
+        "insiteTxType": {
+          "type": "string"
+        },
+        "transactionIdInsite": {
+          "type": "string"
+        },
+        "transactionIdChain": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "isProcessing": {
+          "type": "boolean"
+        },
+        "createtimeUtc": {
+          "type": "string",
+          "format": "int64"
+        },
+        "updatetimeUtc": {
+          "type": "string",
+          "format": "int64"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        },
+        "isFailed": {
+          "type": "boolean"
+        }
+      },
+      "title": "GetInsiteTxStatus 返回"
+    },
+    "v1RegisterAccountRequest": {
+      "type": "object",
+      "properties": {
+        "coinId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "title": "RegisterAccount 参数"
+    },
+    "v1SuccessInfo": {
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      },
+      "title": "request body and response"
+    }
+  }
+}
