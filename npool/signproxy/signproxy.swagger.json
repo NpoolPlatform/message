@@ -44,6 +44,17 @@
         }
       }
     },
+    "v1AccountInfo": {
+      "type": "object",
+      "properties": {
+        "SigType": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        }
+      }
+    },
     "v1CoinType": {
       "type": "string",
       "enum": [
@@ -153,7 +164,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "type": "string"
+          "$ref": "#/definitions/v1AccountInfo"
         }
       }
     }

@@ -37,7 +37,7 @@ message AccountInfo {
 }
 
 message WalletNewResponse {
-    string Info = 100;
+    AccountInfo Info = 100;
 }
 
 message TransactionRequest {

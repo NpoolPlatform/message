@@ -44,7 +44,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [string](#string) |  |  |
+| Info | [AccountInfo](#sphinx.sign.v1.AccountInfo) |  |  |
 
 
 

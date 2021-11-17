@@ -44,11 +44,22 @@
         }
       }
     },
+    "v1AccountInfo": {
+      "type": "object",
+      "properties": {
+        "SigType": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        }
+      }
+    },
     "v1WalletNewResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "type": "string"
+          "$ref": "#/definitions/v1AccountInfo"
         }
       }
     }

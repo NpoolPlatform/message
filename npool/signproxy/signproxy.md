@@ -215,7 +215,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [string](#string) |  |  |
+| Info | [AccountInfo](#sphinx.proxy.v1.AccountInfo) |  |  |
 
 
 
