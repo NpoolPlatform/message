@@ -5,38 +5,39 @@ package sphinx.coininfo.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/coininfo";
 
 import "google/api/annotations.proto";
+import "npool/signproxy/signproxy.proto";
 
 // CoinInfo服务
 service SphinxCoininfo {
 	// 注册新币种
 	rpc RegisterCoin (RegisterCoinRequest) returns (CoinInfoRow){
 		option (google.api.http) = {
-			post: "/v0/coin/register"
+			post: "/v1/coin/register"
 			body: "*"
 		};
 	}
 	// 获取币种信息
 	rpc GetCoinInfos (GetCoinInfosRequest) returns (GetCoinInfosResponse){
 		option (google.api.http) = {
-			get: "/v0/coin/infos"
+			get: "/v1/coin/infos"
 		};
 	}
 	// 获取单个币种
 	rpc GetCoinInfo (GetCoinInfoRequest) returns (CoinInfoRow) {
 		option (google.api.http) = {
-			get: "/v0/coin/single"
+			get: "/v1/coin/single"
 		};}
 	// 设置币种是否预售
 	rpc SetCoinPresale (SetCoinPresaleRequest) returns (CoinInfoRow) {
 		option (google.api.http) = {
-			post: "/v0/coin/presale"
+			post: "/v1/coin/presale"
 			body: "*"
 		};}
 }
 
 // 获取单个币种
 message GetCoinInfoRequest {
-	int32 coin_type_id = 1;
+	sphinx.proxy.v1.CoinType CoinType = 1;
 }
 
 // 获取币种请求
@@ -44,17 +45,17 @@ message GetCoinInfosRequest {}
 
 // 注册币种信息
 message RegisterCoinRequest {
-	int32 coin_type_id = 1; // signproxy.CoinType
-	string name = 2; // 币种名称：Filecoin
-	string unit = 3; // 单位：FIL
+	sphinx.proxy.v1.CoinType CoinType = 1; // signproxy.CoinType
+	string Name = 2; // 币种名称：Filecoin
+	string Unit = 3; // 单位：FIL
 }
 
 // 数据库内CoinInfo
 message CoinInfoRow {
-	int32 coin_type_id = 1;
-	bool is_presale = 2; // 是否为预售，false为在售商品
-	string name = 3; // 币种名称：Filecoin
-	string unit = 4; // 单位：FIL
+	sphinx.proxy.v1.CoinType CoinType = 1;
+	bool IsPresale = 2; // 是否为预售，false为在售商品
+	string Name = 3; // 币种名称：Filecoin
+	string Unit = 4; // 单位：FIL
 }
 
 // 所有币种信息
@@ -64,6 +65,6 @@ message GetCoinInfosResponse {
 
 // 设置预售请求
 message SetCoinPresaleRequest {
-	int32 coin_type_id = 1; // signproxy.CoinType
-	bool is_presale = 2; // 是否为预售，false为在售商品
+	sphinx.proxy.v1.CoinType CoinType = 1; // signproxy.CoinType
+	bool IsPresale = 2; // 是否为预售，false为在售商品
 }

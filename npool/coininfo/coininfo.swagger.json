@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v0/coin/infos": {
+    "/v1/coin/infos": {
       "get": {
         "summary": "获取币种信息",
         "operationId": "SphinxCoininfo_GetCoinInfos",
@@ -39,7 +39,7 @@
         ]
       }
     },
-    "/v0/coin/presale": {
+    "/v1/coin/presale": {
       "post": {
         "summary": "设置币种是否预售",
         "operationId": "SphinxCoininfo_SetCoinPresale",
@@ -72,7 +72,7 @@
         ]
       }
     },
-    "/v0/coin/register": {
+    "/v1/coin/register": {
       "post": {
         "summary": "注册新币种",
         "operationId": "SphinxCoininfo_RegisterCoin",
@@ -96,7 +96,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1RegisterCoinRequest"
+              "$ref": "#/definitions/sphinxcoininfov1RegisterCoinRequest"
             }
           }
         ],
@@ -105,7 +105,7 @@
         ]
       }
     },
-    "/v0/coin/single": {
+    "/v1/coin/single": {
       "get": {
         "summary": "获取单个币种",
         "operationId": "SphinxCoininfo_GetCoinInfo",
@@ -125,11 +125,16 @@
         },
         "parameters": [
           {
-            "name": "coinTypeId",
+            "name": "CoinType",
             "in": "query",
             "required": false,
-            "type": "integer",
-            "format": "int32"
+            "type": "string",
+            "enum": [
+              "CoinTypeUnKnow",
+              "CoinTypeFIL",
+              "CoinTypeBTC"
+            ],
+            "default": "CoinTypeUnKnow"
           }
         ],
         "tags": [
@@ -166,24 +171,47 @@
         }
       }
     },
+    "sphinxcoininfov1RegisterCoinRequest": {
+      "type": "object",
+      "properties": {
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string"
+        }
+      },
+      "title": "注册币种信息"
+    },
     "v1CoinInfoRow": {
       "type": "object",
       "properties": {
-        "coinTypeId": {
-          "type": "integer",
-          "format": "int32"
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
         },
-        "isPresale": {
+        "IsPresale": {
           "type": "boolean"
         },
-        "name": {
+        "Name": {
           "type": "string"
         },
-        "unit": {
+        "Unit": {
           "type": "string"
         }
       },
       "title": "数据库内CoinInfo"
+    },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "CoinTypeUnKnow",
+        "CoinTypeFIL",
+        "CoinTypeBTC"
+      ],
+      "default": "CoinTypeUnKnow"
     },
     "v1GetCoinInfosResponse": {
       "type": "object",
@@ -197,30 +225,13 @@
       },
       "title": "所有币种信息"
     },
-    "v1RegisterCoinRequest": {
-      "type": "object",
-      "properties": {
-        "coinTypeId": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "name": {
-          "type": "string"
-        },
-        "unit": {
-          "type": "string"
-        }
-      },
-      "title": "注册币种信息"
-    },
     "v1SetCoinPresaleRequest": {
       "type": "object",
       "properties": {
-        "coinTypeId": {
-          "type": "integer",
-          "format": "int32"
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
         },
-        "isPresale": {
+        "IsPresale": {
           "type": "boolean"
         }
       },

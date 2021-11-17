@@ -32,10 +32,10 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_type_id | [int32](#int32) |  |  |
-| is_presale | [bool](#bool) |  | 是否为预售，false为在售商品 |
-| name | [string](#string) |  | 币种名称：Filecoin |
-| unit | [string](#string) |  | 单位：FIL |
+| CoinType | [sphinx.proxy.v1.CoinType](#sphinx.proxy.v1.CoinType) |  |  |
+| IsPresale | [bool](#bool) |  | 是否为预售，false为在售商品 |
+| Name | [string](#string) |  | 币种名称：Filecoin |
+| Unit | [string](#string) |  | 单位：FIL |
 
 
 
@@ -50,7 +50,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_type_id | [int32](#int32) |  |  |
+| CoinType | [sphinx.proxy.v1.CoinType](#sphinx.proxy.v1.CoinType) |  |  |
 
 
 
@@ -90,9 +90,9 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_type_id | [int32](#int32) |  | signproxy.CoinType |
-| name | [string](#string) |  | 币种名称：Filecoin |
-| unit | [string](#string) |  | 单位：FIL |
+| CoinType | [sphinx.proxy.v1.CoinType](#sphinx.proxy.v1.CoinType) |  | signproxy.CoinType |
+| Name | [string](#string) |  | 币种名称：Filecoin |
+| Unit | [string](#string) |  | 单位：FIL |
 
 
 
@@ -107,8 +107,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_type_id | [int32](#int32) |  | signproxy.CoinType |
-| is_presale | [bool](#bool) |  | 是否为预售，false为在售商品 |
+| CoinType | [sphinx.proxy.v1.CoinType](#sphinx.proxy.v1.CoinType) |  | signproxy.CoinType |
+| IsPresale | [bool](#bool) |  | 是否为预售，false为在售商品 |
 
 
 
