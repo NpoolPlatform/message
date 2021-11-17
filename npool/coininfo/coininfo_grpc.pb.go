@@ -19,11 +19,13 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SphinxCoininfoClient interface {
 	// 注册新币种
-	RegisterCoin(ctx context.Context, in *RegisterCoinRequest, opts ...grpc.CallOption) (*RegisterCoinResponse, error)
+	RegisterCoin(ctx context.Context, in *RegisterCoinRequest, opts ...grpc.CallOption) (*CoinInfoRow, error)
 	// 获取币种信息
 	GetCoinInfos(ctx context.Context, in *GetCoinInfosRequest, opts ...grpc.CallOption) (*GetCoinInfosResponse, error)
 	// 获取单个币种
 	GetCoinInfo(ctx context.Context, in *GetCoinInfoRequest, opts ...grpc.CallOption) (*CoinInfoRow, error)
+	// 设置币种是否预售
+	SetCoinPresale(ctx context.Context, in *SetCoinPresaleRequest, opts ...grpc.CallOption) (*CoinInfoRow, error)
 }
 
 type sphinxCoininfoClient struct {
@@ -34,8 +36,8 @@ func NewSphinxCoininfoClient(cc grpc.ClientConnInterface) SphinxCoininfoClient {
 	return &sphinxCoininfoClient{cc}
 }
 
-func (c *sphinxCoininfoClient) RegisterCoin(ctx context.Context, in *RegisterCoinRequest, opts ...grpc.CallOption) (*RegisterCoinResponse, error) {
-	out := new(RegisterCoinResponse)
+func (c *sphinxCoininfoClient) RegisterCoin(ctx context.Context, in *RegisterCoinRequest, opts ...grpc.CallOption) (*CoinInfoRow, error) {
+	out := new(CoinInfoRow)
 	err := c.cc.Invoke(ctx, "/sphinx.coininfo.v1.SphinxCoininfo/RegisterCoin", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -61,16 +63,27 @@ func (c *sphinxCoininfoClient) GetCoinInfo(ctx context.Context, in *GetCoinInfoR
 	return out, nil
 }
 
+func (c *sphinxCoininfoClient) SetCoinPresale(ctx context.Context, in *SetCoinPresaleRequest, opts ...grpc.CallOption) (*CoinInfoRow, error) {
+	out := new(CoinInfoRow)
+	err := c.cc.Invoke(ctx, "/sphinx.coininfo.v1.SphinxCoininfo/SetCoinPresale", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SphinxCoininfoServer is the server API for SphinxCoininfo service.
 // All implementations must embed UnimplementedSphinxCoininfoServer
 // for forward compatibility
 type SphinxCoininfoServer interface {
 	// 注册新币种
-	RegisterCoin(context.Context, *RegisterCoinRequest) (*RegisterCoinResponse, error)
+	RegisterCoin(context.Context, *RegisterCoinRequest) (*CoinInfoRow, error)
 	// 获取币种信息
 	GetCoinInfos(context.Context, *GetCoinInfosRequest) (*GetCoinInfosResponse, error)
 	// 获取单个币种
 	GetCoinInfo(context.Context, *GetCoinInfoRequest) (*CoinInfoRow, error)
+	// 设置币种是否预售
+	SetCoinPresale(context.Context, *SetCoinPresaleRequest) (*CoinInfoRow, error)
 	mustEmbedUnimplementedSphinxCoininfoServer()
 }
 
@@ -78,7 +91,7 @@ type SphinxCoininfoServer interface {
 type UnimplementedSphinxCoininfoServer struct {
 }
 
-func (UnimplementedSphinxCoininfoServer) RegisterCoin(context.Context, *RegisterCoinRequest) (*RegisterCoinResponse, error) {
+func (UnimplementedSphinxCoininfoServer) RegisterCoin(context.Context, *RegisterCoinRequest) (*CoinInfoRow, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterCoin not implemented")
 }
 func (UnimplementedSphinxCoininfoServer) GetCoinInfos(context.Context, *GetCoinInfosRequest) (*GetCoinInfosResponse, error) {
@@ -86,6 +99,9 @@ func (UnimplementedSphinxCoininfoServer) GetCoinInfos(context.Context, *GetCoinI
 }
 func (UnimplementedSphinxCoininfoServer) GetCoinInfo(context.Context, *GetCoinInfoRequest) (*CoinInfoRow, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinInfo not implemented")
+}
+func (UnimplementedSphinxCoininfoServer) SetCoinPresale(context.Context, *SetCoinPresaleRequest) (*CoinInfoRow, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetCoinPresale not implemented")
 }
 func (UnimplementedSphinxCoininfoServer) mustEmbedUnimplementedSphinxCoininfoServer() {}
 
@@ -154,6 +170,24 @@ func _SphinxCoininfo_GetCoinInfo_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SphinxCoininfo_SetCoinPresale_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetCoinPresaleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SphinxCoininfoServer).SetCoinPresale(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/sphinx.coininfo.v1.SphinxCoininfo/SetCoinPresale",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SphinxCoininfoServer).SetCoinPresale(ctx, req.(*SetCoinPresaleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // SphinxCoininfo_ServiceDesc is the grpc.ServiceDesc for SphinxCoininfo service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -172,6 +206,10 @@ var SphinxCoininfo_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCoinInfo",
 			Handler:    _SphinxCoininfo_GetCoinInfo_Handler,
+		},
+		{
+			MethodName: "SetCoinPresale",
+			Handler:    _SphinxCoininfo_SetCoinPresale_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

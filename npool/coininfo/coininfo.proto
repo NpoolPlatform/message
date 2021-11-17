@@ -5,12 +5,11 @@ package sphinx.coininfo.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/coininfo";
 
 import "google/api/annotations.proto";
-import "npool/signproxy/signproxy.proto";
 
 // CoinInfo服务
 service SphinxCoininfo {
 	// 注册新币种
-	rpc RegisterCoin (RegisterCoinRequest) returns (RegisterCoinResponse){
+	rpc RegisterCoin (RegisterCoinRequest) returns (CoinInfoRow){
 		option (google.api.http) = {
 			post: "/v0/coin/register"
 			body: "*"
@@ -27,11 +26,17 @@ service SphinxCoininfo {
 		option (google.api.http) = {
 			get: "/v0/coin/single"
 		};}
+	// 设置币种是否预售
+	rpc SetCoinPresale (SetCoinPresaleRequest) returns (CoinInfoRow) {
+		option (google.api.http) = {
+			post: "/v0/coin/presale"
+			body: "*"
+		};}
 }
 
 // 获取单个币种
 message GetCoinInfoRequest {
-	int32 coin_id = 1;
+	int32 coin_type_id = 1;
 }
 
 // 获取币种请求
@@ -39,18 +44,14 @@ message GetCoinInfosRequest {}
 
 // 注册币种信息
 message RegisterCoinRequest {
+	int32 coin_type_id = 1; // signproxy.CoinType
 	string name = 2; // 币种名称：Filecoin
 	string unit = 3; // 单位：FIL
 }
 
-// 注册成功通知
-message RegisterCoinResponse {
-	string info = 1; // "success"
-}
-
 // 数据库内CoinInfo
 message CoinInfoRow {
-	int32 id = 1;
+	int32 coin_type_id = 1;
 	bool is_presale = 2; // 是否为预售，false为在售商品
 	string name = 3; // 币种名称：Filecoin
 	string unit = 4; // 单位：FIL
@@ -59,4 +60,10 @@ message CoinInfoRow {
 // 所有币种信息
 message GetCoinInfosResponse {
 	repeated CoinInfoRow infos = 1; // array
+}
+
+// 设置预售请求
+message SetCoinPresaleRequest {
+	int32 coin_type_id = 1; // signproxy.CoinType
+	bool is_presale = 2; // 是否为预售，false为在售商品
 }

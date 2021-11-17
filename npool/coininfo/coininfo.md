@@ -9,7 +9,7 @@
     - [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest)
     - [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse)
     - [RegisterCoinRequest](#sphinx.coininfo.v1.RegisterCoinRequest)
-    - [RegisterCoinResponse](#sphinx.coininfo.v1.RegisterCoinResponse)
+    - [SetCoinPresaleRequest](#sphinx.coininfo.v1.SetCoinPresaleRequest)
   
     - [SphinxCoininfo](#sphinx.coininfo.v1.SphinxCoininfo)
   
@@ -32,7 +32,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
+| coin_type_id | [int32](#int32) |  |  |
 | is_presale | [bool](#bool) |  | 是否为预售，false为在售商品 |
 | name | [string](#string) |  | 币种名称：Filecoin |
 | unit | [string](#string) |  | 单位：FIL |
@@ -50,7 +50,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_id | [int32](#int32) |  |  |
+| coin_type_id | [int32](#int32) |  |  |
 
 
 
@@ -90,6 +90,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| coin_type_id | [int32](#int32) |  | signproxy.CoinType |
 | name | [string](#string) |  | 币种名称：Filecoin |
 | unit | [string](#string) |  | 单位：FIL |
 
@@ -98,15 +99,16 @@
 
 
 
-<a name="sphinx.coininfo.v1.RegisterCoinResponse"></a>
+<a name="sphinx.coininfo.v1.SetCoinPresaleRequest"></a>
 
-### RegisterCoinResponse
-注册成功通知
+### SetCoinPresaleRequest
+设置预售请求
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| info | [string](#string) |  | &#34;success&#34; |
+| coin_type_id | [int32](#int32) |  | signproxy.CoinType |
+| is_presale | [bool](#bool) |  | 是否为预售，false为在售商品 |
 
 
 
@@ -126,9 +128,10 @@ CoinInfo服务
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| RegisterCoin | [RegisterCoinRequest](#sphinx.coininfo.v1.RegisterCoinRequest) | [RegisterCoinResponse](#sphinx.coininfo.v1.RegisterCoinResponse) | 注册新币种 |
+| RegisterCoin | [RegisterCoinRequest](#sphinx.coininfo.v1.RegisterCoinRequest) | [CoinInfoRow](#sphinx.coininfo.v1.CoinInfoRow) | 注册新币种 |
 | GetCoinInfos | [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest) | [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse) | 获取币种信息 |
 | GetCoinInfo | [GetCoinInfoRequest](#sphinx.coininfo.v1.GetCoinInfoRequest) | [CoinInfoRow](#sphinx.coininfo.v1.CoinInfoRow) | 获取单个币种 |
+| SetCoinPresale | [SetCoinPresaleRequest](#sphinx.coininfo.v1.SetCoinPresaleRequest) | [CoinInfoRow](#sphinx.coininfo.v1.CoinInfoRow) | 设置币种是否预售 |
 
  
 
