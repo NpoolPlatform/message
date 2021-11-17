@@ -8,38 +8,10 @@ option go_package = "github.com/NpoolPlatform/message/npool/signproxy";
 service SignProxy {
     // RegisterCoin register new coin
     rpc RegisterCoin (RegisterCoinRequest) returns (RegisterCoinResponse){}
-    // MpoolGetNonce get nonce for transaction or create new account
-    rpc MpoolGetNonce(MpoolGetNonceRequest) returns (MpoolGetNonceResponse) {}
     // Transaction use transfer or create new account
     rpc Transaction (stream TransactionResponse) returns (stream TransactionRequest) {}
     // WalletBalance get account balance
     rpc WalletBalance (WalletBalanceRequest) returns (WalletBalanceResponse) {}
-}
-
-message WalletBalanceRequest {
-    CoinType CoinType   = 100;
-    string Address      = 110;
-}
-
-message WalletBalanceInfo {
-    string Balance = 100;
-}
-
-message WalletBalanceResponse {
-    WalletBalanceInfo Info = 100;
-}
-
-// TODO diff coin type
-message MpoolGetNonceRequest {
-    string Address = 100;
-}
-
-message MpoolGetNonceInfo {
-    uint64 Nonce = 100;
-}
-
-message MpoolGetNonceResponse {
-    MpoolGetNonceInfo Info = 100;
 }
 
 message RegisterCoinRequest {
@@ -95,4 +67,17 @@ message TransactionResponseInfo {
 message Signature {
     string SignType = 100;//secp256k1
     bytes Data      = 110;
+}
+
+message WalletBalanceRequest {
+    CoinType CoinType   = 100;
+    string Address      = 110;
+}
+
+message WalletBalanceInfo {
+    string Balance = 100;
+}
+
+message WalletBalanceResponse {
+    WalletBalanceInfo Info = 100;
 }
