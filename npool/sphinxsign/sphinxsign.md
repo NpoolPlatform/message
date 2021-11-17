@@ -3,7 +3,7 @@
 
 ## Table of Contents
 
-- [npool/sphinxsign/signsign.proto](#npool/sphinxsign/signsign.proto)
+- [npool/sphinxsign/sphinxsign.proto](#npool/sphinxsign/sphinxsign.proto)
     - [AccountInfo](#sphinx.sign.v1.AccountInfo)
     - [WalletNewResponse](#sphinx.sign.v1.WalletNewResponse)
   
@@ -13,10 +13,10 @@
 
 
 
-<a name="npool/sphinxsign/signsign.proto"></a>
+<a name="npool/sphinxsign/sphinxsign.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/sphinxsign/signsign.proto
+## npool/sphinxsign/sphinxsign.proto
 
 
 

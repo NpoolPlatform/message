@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package sphinx.sign.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/signsign";
+option go_package = "github.com/NpoolPlatform/message/npool/sphinxsign";
 
 import "google/protobuf/empty.proto";
 
