@@ -39,15 +39,15 @@
         ]
       }
     },
-    "/v0/coin/register": {
+    "/v0/coin/presale": {
       "post": {
-        "summary": "注册新币种",
-        "operationId": "SphinxCoininfo_RegisterCoin",
+        "summary": "设置币种是否预售",
+        "operationId": "SphinxCoininfo_SetCoinPresale",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/sphinxcoininfov1RegisterCoinResponse"
+              "$ref": "#/definitions/v1CoinInfoRow"
             }
           },
           "default": {
@@ -63,7 +63,40 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/sphinxcoininfov1RegisterCoinRequest"
+              "$ref": "#/definitions/v1SetCoinPresaleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SphinxCoininfo"
+        ]
+      }
+    },
+    "/v0/coin/register": {
+      "post": {
+        "summary": "注册新币种",
+        "operationId": "SphinxCoininfo_RegisterCoin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CoinInfoRow"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1RegisterCoinRequest"
             }
           }
         ],
@@ -92,7 +125,7 @@
         },
         "parameters": [
           {
-            "name": "coinId",
+            "name": "coinTypeId",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -133,34 +166,10 @@
         }
       }
     },
-    "sphinxcoininfov1RegisterCoinRequest": {
-      "type": "object",
-      "properties": {
-        "needSigninfo": {
-          "type": "boolean"
-        },
-        "name": {
-          "type": "string"
-        },
-        "unit": {
-          "type": "string"
-        }
-      },
-      "title": "注册币种信息"
-    },
-    "sphinxcoininfov1RegisterCoinResponse": {
-      "type": "object",
-      "properties": {
-        "info": {
-          "type": "string"
-        }
-      },
-      "title": "注册成功通知"
-    },
     "v1CoinInfoRow": {
       "type": "object",
       "properties": {
-        "id": {
+        "coinTypeId": {
           "type": "integer",
           "format": "int32"
         },
@@ -187,6 +196,35 @@
         }
       },
       "title": "所有币种信息"
+    },
+    "v1RegisterCoinRequest": {
+      "type": "object",
+      "properties": {
+        "coinTypeId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        }
+      },
+      "title": "注册币种信息"
+    },
+    "v1SetCoinPresaleRequest": {
+      "type": "object",
+      "properties": {
+        "coinTypeId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "isPresale": {
+          "type": "boolean"
+        }
+      },
+      "title": "设置预售请求"
     }
   }
 }
