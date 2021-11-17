@@ -4,6 +4,7 @@
 ## Table of Contents
 
 - [npool/signproxy/signproxy.proto](#npool/signproxy/signproxy.proto)
+    - [AccountInfo](#sphinx.proxy.v1.AccountInfo)
     - [RegisterCoinRequest](#sphinx.proxy.v1.RegisterCoinRequest)
     - [RegisterCoinResponse](#sphinx.proxy.v1.RegisterCoinResponse)
     - [Signature](#sphinx.proxy.v1.Signature)
@@ -14,6 +15,7 @@
     - [WalletBalanceInfo](#sphinx.proxy.v1.WalletBalanceInfo)
     - [WalletBalanceRequest](#sphinx.proxy.v1.WalletBalanceRequest)
     - [WalletBalanceResponse](#sphinx.proxy.v1.WalletBalanceResponse)
+    - [WalletNewResponse](#sphinx.proxy.v1.WalletNewResponse)
   
     - [CoinType](#sphinx.proxy.v1.CoinType)
     - [TransactionType](#sphinx.proxy.v1.TransactionType)
@@ -28,6 +30,22 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/signproxy/signproxy.proto
+
+
+
+<a name="sphinx.proxy.v1.AccountInfo"></a>
+
+### AccountInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| SigType | [string](#string) |  | secp256k1 |
+| Address | [string](#string) |  |  |
+
+
+
 
 
 
@@ -190,6 +208,21 @@
 
 
 
+
+<a name="sphinx.proxy.v1.WalletNewResponse"></a>
+
+### WalletNewResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [string](#string) |  |  |
+
+
+
+
+
  
 
 
@@ -231,7 +264,8 @@ Service Name
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | RegisterCoin | [RegisterCoinRequest](#sphinx.proxy.v1.RegisterCoinRequest) | [RegisterCoinResponse](#sphinx.proxy.v1.RegisterCoinResponse) | RegisterCoin register new coin |
-| Transaction | [TransactionResponse](#sphinx.proxy.v1.TransactionResponse) stream | [TransactionRequest](#sphinx.proxy.v1.TransactionRequest) stream | Transaction use transfer or create new account |
+| WalletNew | [.google.protobuf.Empty](#google.protobuf.Empty) | [WalletNewResponse](#sphinx.proxy.v1.WalletNewResponse) | WalletNew create new account |
+| Transaction | [TransactionResponse](#sphinx.proxy.v1.TransactionResponse) stream | [TransactionRequest](#sphinx.proxy.v1.TransactionRequest) stream | Transaction use transfer |
 | WalletBalance | [WalletBalanceRequest](#sphinx.proxy.v1.WalletBalanceRequest) | [WalletBalanceResponse](#sphinx.proxy.v1.WalletBalanceResponse) | WalletBalance get account balance |
 
  

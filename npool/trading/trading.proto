@@ -5,7 +5,7 @@ package sphinx.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/trading";
 
 import "google/api/annotations.proto";
-import "google/protobuf/Empty.proto";
+import "google/protobuf/empty.proto";
 
 // 交易服务
 service Trading {

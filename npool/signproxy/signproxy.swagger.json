@@ -160,6 +160,14 @@
           "$ref": "#/definitions/v1WalletBalanceInfo"
         }
       }
+    },
+    "v1WalletNewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
     }
   }
 }
