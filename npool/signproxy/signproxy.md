@@ -18,7 +18,6 @@
     - [WalletNewResponse](#sphinx.proxy.v1.WalletNewResponse)
   
     - [CoinType](#sphinx.proxy.v1.CoinType)
-    - [TransactionType](#sphinx.proxy.v1.TransactionType)
   
     - [SignProxy](#sphinx.proxy.v1.SignProxy)
   
@@ -98,7 +97,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | CoinType | [CoinType](#sphinx.proxy.v1.CoinType) |  |  |
 | Message | [UnsignedMessage](#sphinx.proxy.v1.UnsignedMessage) |  |  |
 
@@ -236,19 +234,6 @@
 | CoinTypeUnKnow | 0 |  |
 | CoinTypeFIL | 1 |  |
 | CoinTypeBTC | 2 |  |
-
-
-
-<a name="sphinx.proxy.v1.TransactionType"></a>
-
-### TransactionType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TransactionTypeUnKnow | 0 |  |
-| TransactionTypeCreateAccount | 1 |  |
-| TransactionTypeTransaction | 2 |  |
 
 
  

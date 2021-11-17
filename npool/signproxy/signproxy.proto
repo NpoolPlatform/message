@@ -41,15 +41,8 @@ message WalletNewResponse {
 }
 
 message TransactionRequest {
-    TransactionType TransactionType = 100;
-    CoinType CoinType               = 110;
-    UnsignedMessage Message         = 120;
-}
-
-enum TransactionType {
-    TransactionTypeUnKnow = 0;
-    TransactionTypeCreateAccount = 1;
-    TransactionTypeTransaction = 2;
+    CoinType CoinType               = 100;
+    UnsignedMessage Message         = 110;
 }
 
 message UnsignedMessage {

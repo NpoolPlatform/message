@@ -71,9 +71,6 @@
     "v1TransactionRequest": {
       "type": "object",
       "properties": {
-        "TransactionType": {
-          "$ref": "#/definitions/v1TransactionType"
-        },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
@@ -95,15 +92,6 @@
           "$ref": "#/definitions/v1Signature"
         }
       }
-    },
-    "v1TransactionType": {
-      "type": "string",
-      "enum": [
-        "TransactionTypeUnKnow",
-        "TransactionTypeCreateAccount",
-        "TransactionTypeTransaction"
-      ],
-      "default": "TransactionTypeUnKnow"
     },
     "v1UnsignedMessage": {
       "type": "object",
