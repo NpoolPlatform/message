@@ -252,7 +252,7 @@ func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/RegisterAccount", runtime.WithHTTPPathPattern("/v1/account/register"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/RegisterAccount", runtime.WithHTTPPathPattern("/v0/account/register"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -275,7 +275,7 @@ func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/GetBalance", runtime.WithHTTPPathPattern("/v1/account/balance"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/GetBalance", runtime.WithHTTPPathPattern("/v0/account/balance"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -298,7 +298,7 @@ func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/ApplyTransaction", runtime.WithHTTPPathPattern("/v1/account/transaction"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/ApplyTransaction", runtime.WithHTTPPathPattern("/v0/account/transaction"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -321,7 +321,7 @@ func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/GetInsiteTxStatus", runtime.WithHTTPPathPattern("/v1/account/transaction"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/GetInsiteTxStatus", runtime.WithHTTPPathPattern("/v0/account/transaction"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -344,7 +344,7 @@ func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/ACK", runtime.WithHTTPPathPattern("/v1/internal/ack"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/ACK", runtime.WithHTTPPathPattern("/v0/internal/ack"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -438,7 +438,7 @@ func RegisterTradingHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/RegisterAccount", runtime.WithHTTPPathPattern("/v1/account/register"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/RegisterAccount", runtime.WithHTTPPathPattern("/v0/account/register"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -458,7 +458,7 @@ func RegisterTradingHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/GetBalance", runtime.WithHTTPPathPattern("/v1/account/balance"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/GetBalance", runtime.WithHTTPPathPattern("/v0/account/balance"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -478,7 +478,7 @@ func RegisterTradingHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/ApplyTransaction", runtime.WithHTTPPathPattern("/v1/account/transaction"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/ApplyTransaction", runtime.WithHTTPPathPattern("/v0/account/transaction"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -498,7 +498,7 @@ func RegisterTradingHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/GetInsiteTxStatus", runtime.WithHTTPPathPattern("/v1/account/transaction"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/GetInsiteTxStatus", runtime.WithHTTPPathPattern("/v0/account/transaction"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -518,7 +518,7 @@ func RegisterTradingHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/ACK", runtime.WithHTTPPathPattern("/v1/internal/ack"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/ACK", runtime.WithHTTPPathPattern("/v0/internal/ack"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -538,15 +538,15 @@ func RegisterTradingHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Trading_RegisterAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "account", "register"}, ""))
+	pattern_Trading_RegisterAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v0", "account", "register"}, ""))
 
-	pattern_Trading_GetBalance_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "account", "balance"}, ""))
+	pattern_Trading_GetBalance_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v0", "account", "balance"}, ""))
 
-	pattern_Trading_ApplyTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "account", "transaction"}, ""))
+	pattern_Trading_ApplyTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v0", "account", "transaction"}, ""))
 
-	pattern_Trading_GetInsiteTxStatus_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "account", "transaction"}, ""))
+	pattern_Trading_GetInsiteTxStatus_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v0", "account", "transaction"}, ""))
 
-	pattern_Trading_ACK_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "internal", "ack"}, ""))
+	pattern_Trading_ACK_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v0", "internal", "ack"}, ""))
 )
 
 var (

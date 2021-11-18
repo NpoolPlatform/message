@@ -41,7 +41,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | transaction_id_insite | [string](#string) |  | 站内交易ID |
-| transaction_chain_id | [string](#string) |  | 信息订单ID |
 | is_okay | [bool](#bool) |  | 交易请求是否成功 |
 
 
@@ -67,9 +66,9 @@ RegisterAccount 返回
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_id | [int32](#int32) |  |  |
+| coin_name | [string](#string) |  | 币种名称(唯一) |
 | address | [string](#string) |  | 创建的钱包地址 |
-| uuid | [string](#string) |  | uuid将用于加密私钥，提高整体安全性 |
+| uuid | [string](#string) |  | uuid将关联私钥，提高整体安全性 |
 
 
 
@@ -84,11 +83,10 @@ GetBalance 返回
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_id | [int32](#int32) |  |  |
+| coin_name | [string](#string) |  | 币种名称(唯一) |
 | address | [string](#string) |  | 查询的钱包地址 |
 | timestamp_utc | [int64](#int64) |  | 长整型时间戳 |
-| amount_float64 | [double](#double) |  | 不入库的参考金额 |
-| amount_uint64 | [uint64](#uint64) |  | 内部交互标准金额格式 |
+| amount_float64 | [double](#double) |  | 余额 |
 
 
 
@@ -103,7 +101,7 @@ GetTxJSONRequest 返回
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| json | [string](#string) |  |  |
+| json | [string](#string) |  | disabled for now |
 
 
 
@@ -118,12 +116,11 @@ ApplyTransaction 参数
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_id | [int32](#int32) |  |  |
+| coin_name | [string](#string) |  | 币种名称(唯一) |
 | transaction_id_insite | [string](#string) |  | 站内交易ID |
 | address_from | [string](#string) |  | 发送方 |
 | address_to | [string](#string) |  | 接收方 |
 | amount_float64 | [double](#double) |  | 不入库的参考金额 |
-| amount_uint64 | [uint64](#uint64) |  | 内部交互标准金额格式 |
 | type | [string](#string) |  | recharge, payment, withdraw |
 | uuid_signature | [string](#string) |  | 2FA的时效性验证码，前期可以留空 |
 | createtime_utc | [int64](#int64) |  | 用户提交请求时的时间戳，与2FA绑定 |
@@ -141,7 +138,7 @@ GetBalance 参数
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_id | [int32](#int32) |  |  |
+| coin_name | [string](#string) |  | 币种名称(唯一) |
 | address | [string](#string) |  | 查询的钱包地址 |
 | timestamp_utc | [int64](#int64) |  | 长整型时间戳 |
 
@@ -173,15 +170,14 @@ GetInsiteTxStatus 返回
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_id | [int32](#int32) |  |  |
+| transaction_id_insite | [string](#string) |  | 站内交易ID |
+| coin_name | [string](#string) |  | 币种名称(唯一) |
 | amount_float64 | [double](#double) |  | 不入库的参考金额 |
-| amount_uint64 | [uint64](#uint64) |  | 内部交互标准金额格式 |
 | address_from | [string](#string) |  | 发送方 |
 | address_to | [string](#string) |  | 接收方 |
 | insite_tx_type | [string](#string) |  | recharge, payment, withdraw, unknown |
-| transaction_id_insite | [string](#string) |  | 站内交易ID |
 | transaction_id_chain | [string](#string) |  | 公链交易ID（如有） |
-| status | [string](#string) |  | 为done则成功；全部状态：&#34;pending_review&#34;, &#34;pending_process&#34;, &#34;pending_signinfo&#34;, &#34;pending_signaction&#34;, &#34;pending_broadcast&#34;, &#34;pending_confirm&#34;, &#34;done&#34;, &#34;rejected&#34;, &#34;error&#34;, &#34;error_expected&#34; |
+| status | [string](#string) |  | 为done则成功；全部状态：&#34;pending_review&#34;, &#34;pending_process&#34;, &#34;pending_signinfo&#34;, &#34;pending_sign&#34;, &#34;pending_broadcast&#34;, &#34;pending_confirm&#34;, &#34;done&#34;, &#34;rejected&#34;, &#34;error&#34;, &#34;error_expected&#34; |
 | is_processing | [bool](#bool) |  | 对应数据库中mutex |
 | createtime_utc | [int64](#int64) |  | 创建时间 |
 | updatetime_utc | [int64](#int64) |  | 上次更新时间 |
@@ -201,7 +197,9 @@ GetTxJSONRequest 参数
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_id | [int32](#int32) |  | 继承钱包节点基础功能，预留 |
+| coin_name | [string](#string) |  | 继承钱包节点基础功能，预留
+
+币种名称(唯一) |
 | address | [string](#string) |  | 要查询的钱包地址 |
 | timefrom_utc | [int64](#int64) |  | 开始时间 |
 | timetill_utc | [int64](#int64) |  | 结束时间 |
@@ -220,7 +218,7 @@ RegisterAccount 参数
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_id | [int32](#int32) |  |  |
+| coin_name | [string](#string) |  | 币种名称(唯一) |
 | uuid | [string](#string) |  | user_id或与其绑定的唯一标识符 |
 
 
