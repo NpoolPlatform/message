@@ -38,6 +38,7 @@ service SphinxCoininfo {
 // 获取单个币种
 message GetCoinInfoRequest {
 	sphinx.proxy.v1.CoinType CoinType = 1;
+	int32 CoinTypeID = 2; // 便于调用，在每一请求中应与CoinType同步
 }
 
 // 获取币种请求
@@ -53,6 +54,7 @@ message RegisterCoinRequest {
 // 数据库内CoinInfo
 message CoinInfoRow {
 	sphinx.proxy.v1.CoinType CoinType = 1;
+	int32 CoinTypeID = 2; // 便于调用，在每一请求中应与CoinType同步
 	bool IsPresale = 2; // 是否为预售，false为在售商品
 	string Name = 3; // 币种名称：Filecoin
 	string Unit = 4; // 单位：FIL
@@ -66,5 +68,6 @@ message GetCoinInfosResponse {
 // 设置预售请求
 message SetCoinPresaleRequest {
 	sphinx.proxy.v1.CoinType CoinType = 1; // signproxy.CoinType
+	int32 CoinTypeID = 2; // 便于调用，在每一请求中应与CoinType同步
 	bool IsPresale = 2; // 是否为预售，false为在售商品
 }
