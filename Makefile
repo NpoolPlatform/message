@@ -29,6 +29,6 @@ proto: $(PROTO_GO_FILE) $(PROTO_GO_GW_FILE)
 		--grpc-gateway_opt paths=source_relative
 
 clean:
-	find ./ -name "*.go" | xargs rm -rf
+	find ./ -name "*.pb.go" | xargs rm -rf
 	find ./ -name "*.md" | grep -v README.md | xargs rm -rf
 	find ./ -name "*.json" | xargs rm -rf
