@@ -260,6 +260,9 @@
         "transactionIdInsite": {
           "type": "string"
         },
+        "transactionChainId": {
+          "type": "string"
+        },
         "isOkay": {
           "type": "boolean"
         }
