@@ -20,7 +20,7 @@ pipeline {
       steps {
         sh (returnStdout: false, script: '''
           PATH=$PATH:/usr/go/bin:$HOME/go/bin make -C tools/grpc install
-          PATH=$PATH:/usr/go/bin:$HOME/go/bin make -C message clean proto
+          PATH=$PATH:/usr/go/bin:$HOME/go/bin make clean proto
         '''.stripIndent())
       }
     }
@@ -32,7 +32,7 @@ pipeline {
       steps {
         sh (returnStdout: false, script: '''
           swaggeruipod=`kubectl get pods -A | grep swagger | awk '{print $2}'`
-          for md in `find "*.swagger.json"`; do
+          for md in `find -name "*.swagger.json"`; do
             kubectl cp $md kube-system/$swaggeruipod:/usr/share/nginx/html || true
           done
         '''.stripIndent())
