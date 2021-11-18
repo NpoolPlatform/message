@@ -10,6 +10,14 @@ pipeline {
     stage('Clone') {
       steps {
         git(url: scm.userRemoteConfigs[0].url, branch: '$BRANCH_NAME', changelog: true, credentialsId: 'KK-github-key', poll: true)
+      }
+    }
+
+    stage('Compile') {
+      when {
+        expression { BUILD_TARGET == 'true' }
+      }
+      steps {
         sh (returnStdout: false, script: '''
           make -C tools/grpc install
           PATH=$PATH:/usr/go/bin:$HOME/go/bin make -C message clean proto
