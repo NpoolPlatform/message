@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package sphinx.sign.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/sphinxsign";
+
+import "google/protobuf/empty.proto";
+
+// Service Name
+service Sign {
+    // WalletNew create new account
+    rpc WalletNew (google.protobuf.Empty) returns (WalletNewResponse) {}
+}
+
+message AccountInfo {
+    string SigType = 100;// secp256k1
+    string Address = 110;
+}
+
+message WalletNewResponse {
+    AccountInfo Info = 100;
+}

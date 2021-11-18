@@ -7,6 +7,7 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -20,7 +21,9 @@ const _ = grpc.SupportPackageIsVersion7
 type SignProxyClient interface {
 	// RegisterCoin register new coin
 	RegisterCoin(ctx context.Context, in *RegisterCoinRequest, opts ...grpc.CallOption) (*RegisterCoinResponse, error)
-	// Transaction use transfer or create new account
+	// WalletNew create new account
+	WalletNew(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*WalletNewResponse, error)
+	// Transaction use transfer
 	Transaction(ctx context.Context, opts ...grpc.CallOption) (SignProxy_TransactionClient, error)
 	// WalletBalance get account balance
 	WalletBalance(ctx context.Context, in *WalletBalanceRequest, opts ...grpc.CallOption) (*WalletBalanceResponse, error)
@@ -37,6 +40,15 @@ func NewSignProxyClient(cc grpc.ClientConnInterface) SignProxyClient {
 func (c *signProxyClient) RegisterCoin(ctx context.Context, in *RegisterCoinRequest, opts ...grpc.CallOption) (*RegisterCoinResponse, error) {
 	out := new(RegisterCoinResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SignProxy/RegisterCoin", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *signProxyClient) WalletNew(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*WalletNewResponse, error) {
+	out := new(WalletNewResponse)
+	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SignProxy/WalletNew", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +101,9 @@ func (c *signProxyClient) WalletBalance(ctx context.Context, in *WalletBalanceRe
 type SignProxyServer interface {
 	// RegisterCoin register new coin
 	RegisterCoin(context.Context, *RegisterCoinRequest) (*RegisterCoinResponse, error)
-	// Transaction use transfer or create new account
+	// WalletNew create new account
+	WalletNew(context.Context, *emptypb.Empty) (*WalletNewResponse, error)
+	// Transaction use transfer
 	Transaction(SignProxy_TransactionServer) error
 	// WalletBalance get account balance
 	WalletBalance(context.Context, *WalletBalanceRequest) (*WalletBalanceResponse, error)
@@ -102,6 +116,9 @@ type UnimplementedSignProxyServer struct {
 
 func (UnimplementedSignProxyServer) RegisterCoin(context.Context, *RegisterCoinRequest) (*RegisterCoinResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterCoin not implemented")
+}
+func (UnimplementedSignProxyServer) WalletNew(context.Context, *emptypb.Empty) (*WalletNewResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WalletNew not implemented")
 }
 func (UnimplementedSignProxyServer) Transaction(SignProxy_TransactionServer) error {
 	return status.Errorf(codes.Unimplemented, "method Transaction not implemented")
@@ -136,6 +153,24 @@ func _SignProxy_RegisterCoin_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SignProxyServer).RegisterCoin(ctx, req.(*RegisterCoinRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SignProxy_WalletNew_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(emptypb.Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SignProxyServer).WalletNew(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/sphinx.proxy.v1.SignProxy/WalletNew",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SignProxyServer).WalletNew(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -194,6 +229,10 @@ var SignProxy_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RegisterCoin",
 			Handler:    _SignProxy_RegisterCoin_Handler,
+		},
+		{
+			MethodName: "WalletNew",
+			Handler:    _SignProxy_WalletNew_Handler,
 		},
 		{
 			MethodName: "WalletBalance",

@@ -44,6 +44,17 @@
         }
       }
     },
+    "v1AccountInfo": {
+      "type": "object",
+      "properties": {
+        "SigType": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        }
+      }
+    },
     "v1CoinType": {
       "type": "string",
       "enum": [
@@ -71,9 +82,6 @@
     "v1TransactionRequest": {
       "type": "object",
       "properties": {
-        "TransactionType": {
-          "$ref": "#/definitions/v1TransactionType"
-        },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
@@ -95,15 +103,6 @@
           "$ref": "#/definitions/v1Signature"
         }
       }
-    },
-    "v1TransactionType": {
-      "type": "string",
-      "enum": [
-        "TransactionTypeUnKnow",
-        "TransactionTypeCreateAccount",
-        "TransactionTypeTransaction"
-      ],
-      "default": "TransactionTypeUnKnow"
     },
     "v1UnsignedMessage": {
       "type": "object",
@@ -158,6 +157,14 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1WalletBalanceInfo"
+        }
+      }
+    },
+    "v1WalletNewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AccountInfo"
         }
       }
     }
