@@ -33,7 +33,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.proxy.v1.CoinType](#sphinx.proxy.v1.CoinType) |  |  |
-| CoinTypeID | [int32](#int32) |  | 便于调用，在每一请求中应与CoinType同步 |
+| CoinTypeID | [int32](#int32) |  | coininfo内部调用，在每一请求中应与CoinType同步 |
 | IsPresale | [bool](#bool) |  | 是否为预售，false为在售商品 |
 | Name | [string](#string) |  | 币种名称：Filecoin |
 | Unit | [string](#string) |  | 单位：FIL |
@@ -52,7 +52,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.proxy.v1.CoinType](#sphinx.proxy.v1.CoinType) |  |  |
-| CoinTypeID | [int32](#int32) |  | 便于调用，在每一请求中应与CoinType同步 |
+| CoinTypeID | [int32](#int32) |  | coininfo内部调用，在每一请求中应与CoinType同步 |
 
 
 
@@ -110,7 +110,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.proxy.v1.CoinType](#sphinx.proxy.v1.CoinType) |  | signproxy.CoinType |
-| CoinTypeID | [int32](#int32) |  | 便于调用，在每一请求中应与CoinType同步 |
+| CoinTypeID | [int32](#int32) |  | coininfo内部调用，在每一请求中应与CoinType同步 |
 | IsPresale | [bool](#bool) |  | 是否为预售，false为在售商品 |
 
 

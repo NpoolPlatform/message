@@ -29,7 +29,7 @@ type GetCoinInfoRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	CoinType   signproxy.CoinType `protobuf:"varint,1,opt,name=CoinType,proto3,enum=sphinx.proxy.v1.CoinType" json:"CoinType,omitempty"`
-	CoinTypeID int32              `protobuf:"varint,2,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty"` // 便于调用，在每一请求中应与CoinType同步
+	CoinTypeID int32              `protobuf:"varint,2,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty"` // coininfo内部调用，在每一请求中应与CoinType同步
 }
 
 func (x *GetCoinInfoRequest) Reset() {
@@ -188,7 +188,7 @@ type CoinInfoRow struct {
 	unknownFields protoimpl.UnknownFields
 
 	CoinType   signproxy.CoinType `protobuf:"varint,1,opt,name=CoinType,proto3,enum=sphinx.proxy.v1.CoinType" json:"CoinType,omitempty"`
-	CoinTypeID int32              `protobuf:"varint,2,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty"` // 便于调用，在每一请求中应与CoinType同步
+	CoinTypeID int32              `protobuf:"varint,2,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty"` // coininfo内部调用，在每一请求中应与CoinType同步
 	IsPresale  bool               `protobuf:"varint,3,opt,name=IsPresale,proto3" json:"IsPresale,omitempty"`   // 是否为预售，false为在售商品
 	Name       string             `protobuf:"bytes,4,opt,name=Name,proto3" json:"Name,omitempty"`              // 币种名称：Filecoin
 	Unit       string             `protobuf:"bytes,5,opt,name=Unit,proto3" json:"Unit,omitempty"`              // 单位：FIL
@@ -316,7 +316,7 @@ type SetCoinPresaleRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	CoinType   signproxy.CoinType `protobuf:"varint,1,opt,name=CoinType,proto3,enum=sphinx.proxy.v1.CoinType" json:"CoinType,omitempty"` // signproxy.CoinType
-	CoinTypeID int32              `protobuf:"varint,2,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty"`                           // 便于调用，在每一请求中应与CoinType同步
+	CoinTypeID int32              `protobuf:"varint,2,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty"`                           // coininfo内部调用，在每一请求中应与CoinType同步
 	IsPresale  bool               `protobuf:"varint,3,opt,name=IsPresale,proto3" json:"IsPresale,omitempty"`                             // 是否为预售，false为在售商品
 }
 
