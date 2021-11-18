@@ -7,17 +7,10 @@
     - [AccountInfo](#sphinx.proxy.v1.AccountInfo)
     - [RegisterCoinRequest](#sphinx.proxy.v1.RegisterCoinRequest)
     - [RegisterCoinResponse](#sphinx.proxy.v1.RegisterCoinResponse)
-    - [Signature](#sphinx.proxy.v1.Signature)
     - [TransactionRequest](#sphinx.proxy.v1.TransactionRequest)
     - [TransactionResponse](#sphinx.proxy.v1.TransactionResponse)
     - [TransactionResponseInfo](#sphinx.proxy.v1.TransactionResponseInfo)
-    - [UnsignedMessage](#sphinx.proxy.v1.UnsignedMessage)
-    - [WalletBalanceInfo](#sphinx.proxy.v1.WalletBalanceInfo)
-    - [WalletBalanceRequest](#sphinx.proxy.v1.WalletBalanceRequest)
-    - [WalletBalanceResponse](#sphinx.proxy.v1.WalletBalanceResponse)
     - [WalletNewResponse](#sphinx.proxy.v1.WalletNewResponse)
-  
-    - [CoinType](#sphinx.proxy.v1.CoinType)
   
     - [SignProxy](#sphinx.proxy.v1.SignProxy)
   
@@ -56,7 +49,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinType | [CoinType](#sphinx.proxy.v1.CoinType) |  |  |
+| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 
 
 
@@ -73,22 +66,6 @@
 
 
 
-<a name="sphinx.proxy.v1.Signature"></a>
-
-### Signature
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| SignType | [string](#string) |  | secp256k1 |
-| Data | [bytes](#bytes) |  |  |
-
-
-
-
-
-
 <a name="sphinx.proxy.v1.TransactionRequest"></a>
 
 ### TransactionRequest
@@ -97,8 +74,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinType | [CoinType](#sphinx.proxy.v1.CoinType) |  |  |
-| Message | [UnsignedMessage](#sphinx.proxy.v1.UnsignedMessage) |  |  |
+| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 
 
 
@@ -129,78 +106,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Address | [string](#string) |  | create new account address |
-| Message | [UnsignedMessage](#sphinx.proxy.v1.UnsignedMessage) |  |  |
-| Signature | [Signature](#sphinx.proxy.v1.Signature) |  |  |
-
-
-
-
-
-
-<a name="sphinx.proxy.v1.UnsignedMessage"></a>
-
-### UnsignedMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Version | [uint64](#uint64) |  |  |
-| To | [string](#string) |  |  |
-| From | [string](#string) |  |  |
-| Nonce | [uint64](#uint64) |  |  |
-| Value | [string](#string) |  |  |
-| GasLimit | [int64](#int64) |  |  |
-| GasFeeCap | [string](#string) |  |  |
-| GasPremium | [string](#string) |  |  |
-| Method | [uint64](#uint64) |  |  |
-| Params | [bytes](#bytes) |  |  |
-
-
-
-
-
-
-<a name="sphinx.proxy.v1.WalletBalanceInfo"></a>
-
-### WalletBalanceInfo
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Balance | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="sphinx.proxy.v1.WalletBalanceRequest"></a>
-
-### WalletBalanceRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| CoinType | [CoinType](#sphinx.proxy.v1.CoinType) |  |  |
-| Address | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="sphinx.proxy.v1.WalletBalanceResponse"></a>
-
-### WalletBalanceResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [WalletBalanceInfo](#sphinx.proxy.v1.WalletBalanceInfo) |  |  |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
+| Signature | [sphinx.plugin.v1.Signature](#sphinx.plugin.v1.Signature) |  |  |
 
 
 
@@ -223,19 +130,6 @@
 
  
 
-
-<a name="sphinx.proxy.v1.CoinType"></a>
-
-### CoinType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| CoinTypeUnKnow | 0 |  |
-| CoinTypeFIL | 1 |  |
-| CoinTypeBTC | 2 |  |
-
-
  
 
  
@@ -251,7 +145,7 @@ Service Name
 | RegisterCoin | [RegisterCoinRequest](#sphinx.proxy.v1.RegisterCoinRequest) | [RegisterCoinResponse](#sphinx.proxy.v1.RegisterCoinResponse) | RegisterCoin register new coin |
 | WalletNew | [.google.protobuf.Empty](#google.protobuf.Empty) | [WalletNewResponse](#sphinx.proxy.v1.WalletNewResponse) | WalletNew create new account |
 | Transaction | [TransactionResponse](#sphinx.proxy.v1.TransactionResponse) stream | [TransactionRequest](#sphinx.proxy.v1.TransactionRequest) stream | Transaction use transfer |
-| WalletBalance | [WalletBalanceRequest](#sphinx.proxy.v1.WalletBalanceRequest) | [WalletBalanceResponse](#sphinx.proxy.v1.WalletBalanceResponse) | WalletBalance get account balance |
+| WalletBalance | [.sphinx.plugin.v1.WalletBalanceRequest](#sphinx.plugin.v1.WalletBalanceRequest) | [.sphinx.plugin.v1.WalletBalanceResponse](#sphinx.plugin.v1.WalletBalanceResponse) | WalletBalance get account balance |
 
  
 

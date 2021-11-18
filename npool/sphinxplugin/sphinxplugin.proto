@@ -4,8 +4,6 @@ package sphinx.plugin.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/sphinxplugin";
 
-import "npool/signproxy/signproxy.proto";
-
 // 钱包代理插件
 service Plugin {
   rpc MpoolGetNonce (MpoolGetNonceRequest) returns (MpoolGetNonceResponse) {}
@@ -13,9 +11,35 @@ service Plugin {
   rpc WalletBalance (WalletBalanceRequest) returns (WalletBalanceResponse) {}
 }
 
+enum CoinType {
+  CoinTypeUnKnow  = 0;
+  CoinTypeFIL     = 1;
+  CoinTypeBTC     = 2;
+}
+
+message UnsignedMessage {
+  uint64 Version          = 100;
+  string To               = 110;
+  string From             = 120;
+  uint64 Nonce            = 130;
+  string Value            = 140;
+
+  int64 GasLimit          = 150;
+  string GasFeeCap        = 160;
+  string GasPremium       = 170;
+  uint64 Method           = 180;
+
+  bytes Params            = 190;
+}
+
+message Signature {
+  string SignType = 100;//secp256k1
+  bytes Data      = 110;
+}
+
 message MpoolGetNonceRequest {
-  sphinx.proxy.v1.CoinType CoinType   = 100;
-  string Address                      = 110;
+  CoinType CoinType   = 100;
+  string Address      = 110;
 }
 
 message MpoolGetNonceInfo {
@@ -27,8 +51,8 @@ message MpoolGetNonceResponse {
 }
 
 message MpoolPushRequest {
-  sphinx.proxy.v1.UnsignedMessage Message   = 100;
-	sphinx.proxy.v1.Signature       Signature = 110;
+  UnsignedMessage Message   = 100;
+	Signature       Signature = 110;
 }
 
 message MpoolPushInfo {
@@ -40,8 +64,8 @@ message MpoolPushResponse {
 }
 
 message WalletBalanceRequest {
-  sphinx.proxy.v1.CoinType CoinType   = 100;
-  string Address                      = 110;
+  CoinType CoinType   = 100;
+  string Address      = 110;
 }
 
 message WalletBalanceInfo {
@@ -51,4 +75,3 @@ message WalletBalanceInfo {
 message WalletBalanceResponse {
   WalletBalanceInfo Info = 100;
 }
-

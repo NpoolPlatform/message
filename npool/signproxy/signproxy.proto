@@ -5,6 +5,7 @@ package sphinx.proxy.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/signproxy";
 
 import "google/protobuf/empty.proto";
+import "npool/sphinxplugin/sphinxplugin.proto";
 
 // Service Name
 service SignProxy {
@@ -15,17 +16,11 @@ service SignProxy {
     // Transaction use transfer
     rpc Transaction (stream TransactionResponse) returns (stream TransactionRequest) {}
     // WalletBalance get account balance
-    rpc WalletBalance (WalletBalanceRequest) returns (WalletBalanceResponse) {}
+    rpc WalletBalance (sphinx.plugin.v1.WalletBalanceRequest) returns (sphinx.plugin.v1.WalletBalanceResponse) {}
 }
 
 message RegisterCoinRequest {
-    CoinType CoinType = 100;
-}
-
-enum CoinType {
-    CoinTypeUnKnow = 0;
-    CoinTypeFIL = 1;
-    CoinTypeBTC = 2;
+    sphinx.plugin.v1.CoinType CoinType = 100;
 }
 
 message RegisterCoinResponse {
@@ -41,23 +36,8 @@ message WalletNewResponse {
 }
 
 message TransactionRequest {
-    CoinType CoinType               = 100;
-    UnsignedMessage Message         = 110;
-}
-
-message UnsignedMessage {
-    uint64 Version          = 100;
-    string To               = 110;
-    string From             = 120;
-    uint64 Nonce            = 130;
-    string Value            = 140;
-
-    int64 GasLimit          = 150;
-    string GasFeeCap        = 160;
-    string GasPremium       = 170;
-    uint64 Method           = 180;
-
-    bytes Params            = 190;
+    sphinx.plugin.v1.CoinType CoinType               = 100;
+    sphinx.plugin.v1.UnsignedMessage Message         = 110;
 }
 
 message TransactionResponse {
@@ -66,24 +46,6 @@ message TransactionResponse {
 
 message TransactionResponseInfo {
     string Address            = 100;// create new account address
-    UnsignedMessage Message   = 110;
-	Signature       Signature = 120;
-}
-
-message Signature {
-    string SignType = 100;//secp256k1
-    bytes Data      = 110;
-}
-
-message WalletBalanceRequest {
-    CoinType CoinType   = 100;
-    string Address      = 110;
-}
-
-message WalletBalanceInfo {
-    string Balance = 100;
-}
-
-message WalletBalanceResponse {
-    WalletBalanceInfo Info = 100;
+    sphinx.plugin.v1.UnsignedMessage Message   = 110;
+	sphinx.plugin.v1.Signature       Signature = 120;
 }

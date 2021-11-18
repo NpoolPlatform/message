@@ -5,7 +5,7 @@ package sphinx.coininfo.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/coininfo";
 
 import "google/api/annotations.proto";
-import "npool/signproxy/signproxy.proto";
+import "npool/sphinxplugin/sphinxplugin.proto";
 
 // CoinInfo服务
 service SphinxCoininfo {
@@ -37,7 +37,7 @@ service SphinxCoininfo {
 
 // 获取单个币种
 message GetCoinInfoRequest {
-	sphinx.proxy.v1.CoinType CoinType = 1;
+	sphinx.plugin.v1.CoinType CoinType = 1;
 }
 
 // 获取币种请求
@@ -45,14 +45,14 @@ message GetCoinInfosRequest {}
 
 // 注册币种信息
 message RegisterCoinRequest {
-	sphinx.proxy.v1.CoinType CoinType = 1; // signproxy.CoinType
+	sphinx.plugin.v1.CoinType CoinType = 1; // sphinxplugin.CoinType
 	string Name = 2; // 币种名称：Filecoin
 	string Unit = 3; // 单位：FIL
 }
 
 // 数据库内CoinInfo
 message CoinInfoRow {
-	sphinx.proxy.v1.CoinType CoinType = 1;
+	sphinx.plugin.v1.CoinType CoinType = 1;
 	bool IsPresale = 2; // 是否为预售，false为在售商品
 	string Name = 3; // 币种名称：Filecoin
 	string Unit = 4; // 单位：FIL
@@ -65,6 +65,6 @@ message GetCoinInfosResponse {
 
 // 设置预售请求
 message SetCoinPresaleRequest {
-	sphinx.proxy.v1.CoinType CoinType = 1; // signproxy.CoinType
+	sphinx.plugin.v1.CoinType CoinType = 1; // sphinxplugin.CoinType
 	bool IsPresale = 2; // 是否为预售，false为在售商品
 }

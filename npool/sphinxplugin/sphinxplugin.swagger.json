@@ -44,22 +44,6 @@
         }
       }
     },
-    "sphinxpluginv1WalletBalanceInfo": {
-      "type": "object",
-      "properties": {
-        "Balance": {
-          "type": "string"
-        }
-      }
-    },
-    "sphinxpluginv1WalletBalanceResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/sphinxpluginv1WalletBalanceInfo"
-        }
-      }
-    },
     "v1CoinType": {
       "type": "string",
       "enum": [
@@ -151,6 +135,22 @@
         "Params": {
           "type": "string",
           "format": "byte"
+        }
+      }
+    },
+    "v1WalletBalanceInfo": {
+      "type": "object",
+      "properties": {
+        "Balance": {
+          "type": "string"
+        }
+      }
+    },
+    "v1WalletBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1WalletBalanceInfo"
         }
       }
     }

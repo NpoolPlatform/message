@@ -10,9 +10,13 @@
     - [MpoolPushInfo](#sphinx.plugin.v1.MpoolPushInfo)
     - [MpoolPushRequest](#sphinx.plugin.v1.MpoolPushRequest)
     - [MpoolPushResponse](#sphinx.plugin.v1.MpoolPushResponse)
+    - [Signature](#sphinx.plugin.v1.Signature)
+    - [UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage)
     - [WalletBalanceInfo](#sphinx.plugin.v1.WalletBalanceInfo)
     - [WalletBalanceRequest](#sphinx.plugin.v1.WalletBalanceRequest)
     - [WalletBalanceResponse](#sphinx.plugin.v1.WalletBalanceResponse)
+  
+    - [CoinType](#sphinx.plugin.v1.CoinType)
   
     - [Plugin](#sphinx.plugin.v1.Plugin)
   
@@ -50,7 +54,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinType | [sphinx.proxy.v1.CoinType](#sphinx.proxy.v1.CoinType) |  |  |
+| CoinType | [CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | Address | [string](#string) |  |  |
 
 
@@ -96,8 +100,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Message | [sphinx.proxy.v1.UnsignedMessage](#sphinx.proxy.v1.UnsignedMessage) |  |  |
-| Signature | [sphinx.proxy.v1.Signature](#sphinx.proxy.v1.Signature) |  |  |
+| Message | [UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
+| Signature | [Signature](#sphinx.plugin.v1.Signature) |  |  |
 
 
 
@@ -113,6 +117,46 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [MpoolPushInfo](#sphinx.plugin.v1.MpoolPushInfo) |  |  |
+
+
+
+
+
+
+<a name="sphinx.plugin.v1.Signature"></a>
+
+### Signature
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| SignType | [string](#string) |  | secp256k1 |
+| Data | [bytes](#bytes) |  |  |
+
+
+
+
+
+
+<a name="sphinx.plugin.v1.UnsignedMessage"></a>
+
+### UnsignedMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Version | [uint64](#uint64) |  |  |
+| To | [string](#string) |  |  |
+| From | [string](#string) |  |  |
+| Nonce | [uint64](#uint64) |  |  |
+| Value | [string](#string) |  |  |
+| GasLimit | [int64](#int64) |  |  |
+| GasFeeCap | [string](#string) |  |  |
+| GasPremium | [string](#string) |  |  |
+| Method | [uint64](#uint64) |  |  |
+| Params | [bytes](#bytes) |  |  |
 
 
 
@@ -142,7 +186,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinType | [sphinx.proxy.v1.CoinType](#sphinx.proxy.v1.CoinType) |  |  |
+| CoinType | [CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | Address | [string](#string) |  |  |
 
 
@@ -165,6 +209,19 @@
 
 
  
+
+
+<a name="sphinx.plugin.v1.CoinType"></a>
+
+### CoinType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| CoinTypeUnKnow | 0 |  |
+| CoinTypeFIL | 1 |  |
+| CoinTypeBTC | 2 |  |
+
 
  
 
