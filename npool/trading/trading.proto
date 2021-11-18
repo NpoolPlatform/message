@@ -12,18 +12,18 @@ service Trading {
 	// 创建账户
 	rpc RegisterAccount (RegisterAccountRequest) returns (AccountAddress) {
 		option (google.api.http) = {
-			post: "/v1/account/register"
+			post: "/v0/account/register"
 			body: "*"
 		};}
 	// 余额查询
 	rpc GetBalance (GetBalanceRequest) returns (AccountBalance) {
 		option (google.api.http) = {
-			get: "/v1/account/balance"
+			get: "/v0/account/balance"
 		};}
 	// 转账 / 提现
 	rpc ApplyTransaction (ApplyTransactionRequest) returns (SuccessInfo) {
 		option (google.api.http) = {
-			post: "/v1/account/transaction"
+			post: "/v0/account/transaction"
 			body: "*"
 		};}
 	// TODO: 账户交易查询
@@ -31,55 +31,54 @@ service Trading {
 	// 交易状态查询
 	rpc GetInsiteTxStatus (GetInsiteTxStatusRequest) returns (GetInsiteTxStatusResponse) {
 		option (google.api.http) = {
-			get: "/v1/account/transaction"
+			get: "/v0/account/transaction"
 		};}
 	// 接收ack
 	rpc ACK (ACKRequest) returns (ACKResponse) {
 		option (google.api.http) = {
-			post: "/v1/internal/ack"
+			post: "/v0/internal/ack"
 			body: "*"
 		};}
 }
 
 // RegisterAccount 参数
 message RegisterAccountRequest {
-	int32 coin_id = 1;
-	string uuid = 2; // user_id或与其绑定的唯一标识符
+	string coin_name = 1; // 币种名称(唯一)
+	string uuid = 3; // user_id或与其绑定的唯一标识符
 }
 // RegisterAccount 返回
 message AccountAddress {
-	int32 coin_id = 1;
-	string address = 2; // 创建的钱包地址
-	string uuid = 3; // uuid将用于加密私钥，提高整体安全性
+	string coin_name = 1; // 币种名称(唯一)
+	string address = 3; // 创建的钱包地址
+	string uuid = 4; // uuid将关联私钥，提高整体安全性
 }
 
 // GetBalance 参数
 message GetBalanceRequest {
-	int32 coin_id = 1;
-	string address = 2; // 查询的钱包地址
-	int64 timestamp_utc = 3; // 长整型时间戳
+	string coin_name = 1; // 币种名称(唯一)
+	string address = 3; // 查询的钱包地址
+	int64 timestamp_utc = 4; // 长整型时间戳
 }
 // GetBalance 返回
 message AccountBalance {
-	int32 coin_id = 1;
-	string address = 2; // 查询的钱包地址
-	int64 timestamp_utc = 3; // 长整型时间戳
-	double amount_float64 = 4; // 不入库的参考金额
-	uint64 amount_uint64 = 5; // 内部交互标准金额格式
+	string coin_name = 1; // 币种名称(唯一)
+	string address = 3; // 查询的钱包地址
+	int64 timestamp_utc = 4; // 长整型时间戳
+	double amount_float64 = 5; // 余额
 }
 
 // GetTxJSONRequest 参数
 message GetTxJSONRequest {
 	// 继承钱包节点基础功能，预留
-	int32 coin_id = 1;
-	string address = 2; // 要查询的钱包地址
-	int64 timefrom_utc = 3; // 开始时间
-	int64 timetill_utc = 4; // 结束时间
-	int32 limit_n = 5; // 服务端限制返回条数
+	string coin_name = 1; // 币种名称(唯一)
+	string address = 3; // 要查询的钱包地址
+	int64 timefrom_utc = 4; // 开始时间
+	int64 timetill_utc = 5; // 结束时间
+	int32 limit_n = 6; // 服务端限制返回条数
 }
 // GetTxJSONRequest 返回
 message AccountTxJSON {
-	string json = 1;
+	string json = 1; // disabled for now
 }
 
 // GetInsiteTxStatus 参数
@@ -89,33 +88,31 @@ message GetInsiteTxStatusRequest {
 
 // GetInsiteTxStatus 返回
 message GetInsiteTxStatusResponse {
-	int32 coin_id = 1;
-	double amount_float64 = 2; // 不入库的参考金额
-	uint64 amount_uint64 = 3; // 内部交互标准金额格式
-	string address_from = 4; // 发送方
-	string address_to = 5; // 接收方
-	string insite_tx_type = 6; // recharge, payment, withdraw, unknown
-	string transaction_id_insite = 7; // 站内交易ID
-	string transaction_id_chain = 8; // 公链交易ID（如有）
-	string status = 9; // 为done则成功；全部状态："pending_review", "pending_process", "pending_signinfo", "pending_signaction", "pending_broadcast", "pending_confirm", "done", "rejected", "error", "error_expected"
-	bool is_processing = 10; // 对应数据库中mutex
-	int64 createtime_utc = 11; // 创建时间
-	int64 updatetime_utc = 12; // 上次更新时间
-	bool is_success = 13; // 便于调用方判断
-	bool is_failed = 14; // 不success不fail就是pending了
+	string transaction_id_insite = 8; // 站内交易ID
+	string coin_name = 1; // 币种名称(唯一)
+	double amount_float64 = 3; // 不入库的参考金额
+	string address_from = 5; // 发送方
+	string address_to = 6; // 接收方
+	string insite_tx_type = 7; // recharge, payment, withdraw, unknown
+	string transaction_id_chain = 9; // 公链交易ID（如有）
+	string status = 10; // 为done则成功；全部状态："pending_review", "pending_process", "pending_signinfo", "pending_sign", "pending_broadcast", "pending_confirm", "done", "rejected", "error", "error_expected"
+	bool is_processing = 11; // 对应数据库中mutex
+	int64 createtime_utc = 12; // 创建时间
+	int64 updatetime_utc = 13; // 上次更新时间
+	bool is_success = 14; // 便于调用方判断
+	bool is_failed = 15; // 不success不fail就是pending了
 }
 
 // ApplyTransaction 参数
 message ApplyTransactionRequest {
-	int32 coin_id = 1;
-	string transaction_id_insite = 2; // 站内交易ID
-	string address_from = 3; // 发送方
-	string address_to = 4; // 接收方
-	double amount_float64 = 5; // 不入库的参考金额
-	uint64 amount_uint64 = 6; // 内部交互标准金额格式
-	string type = 7; // recharge, payment, withdraw
-	string uuid_signature = 8; // 2FA的时效性验证码，前期可以留空
-	int64 createtime_utc = 9; // 用户提交请求时的时间戳，与2FA绑定
+	string coin_name = 1; // 币种名称(唯一)
+	string transaction_id_insite = 3; // 站内交易ID
+	string address_from = 4; // 发送方
+	string address_to = 5; // 接收方
+	double amount_float64 = 6; // 不入库的参考金额
+	string type = 8; // recharge, payment, withdraw
+	string uuid_signature = 9; // 2FA的时效性验证码，前期可以留空
+	int64 createtime_utc = 10; // 用户提交请求时的时间戳，与2FA绑定
 }
 
 // // PortalSignInit 参数
@@ -138,8 +135,7 @@ message ApplyTransactionRequest {
 
 message ACKRequest {
 	string transaction_id_insite = 1; // 站内交易ID
-	string transaction_chain_id = 2; // 信息订单ID
-	bool is_okay = 3; // 交易请求是否成功
+	bool is_okay = 2; // 交易请求是否成功
 }
 
 message ACKResponse {
