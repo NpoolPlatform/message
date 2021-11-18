@@ -41,6 +41,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | transaction_id_insite | [string](#string) |  | 站内交易ID |
+| is_okay | [bool](#bool) |  | 交易请求是否成功 |
 
 
 

@@ -138,6 +138,7 @@ message ApplyTransactionRequest {
 
 message ACKRequest {
 	string transaction_id_insite = 1; // 站内交易ID
+	bool is_okay = 2; // 交易请求是否成功
 }
 
 message ACKResponse {

@@ -259,6 +259,9 @@
       "properties": {
         "transactionIdInsite": {
           "type": "string"
+        },
+        "isOkay": {
+          "type": "boolean"
         }
       }
     },
