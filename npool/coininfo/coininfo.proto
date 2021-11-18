@@ -55,9 +55,9 @@ message RegisterCoinRequest {
 message CoinInfoRow {
 	sphinx.proxy.v1.CoinType CoinType = 1;
 	int32 CoinTypeID = 2; // 便于调用，在每一请求中应与CoinType同步
-	bool IsPresale = 2; // 是否为预售，false为在售商品
-	string Name = 3; // 币种名称：Filecoin
-	string Unit = 4; // 单位：FIL
+	bool IsPresale = 3; // 是否为预售，false为在售商品
+	string Name = 4; // 币种名称：Filecoin
+	string Unit = 5; // 单位：FIL
 }
 
 // 所有币种信息
@@ -69,5 +69,5 @@ message GetCoinInfosResponse {
 message SetCoinPresaleRequest {
 	sphinx.proxy.v1.CoinType CoinType = 1; // signproxy.CoinType
 	int32 CoinTypeID = 2; // 便于调用，在每一请求中应与CoinType同步
-	bool IsPresale = 2; // 是否为预售，false为在售商品
+	bool IsPresale = 3; // 是否为预售，false为在售商品
 }
