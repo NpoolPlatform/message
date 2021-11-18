@@ -10,20 +10,9 @@ pipeline {
     stage('Clone') {
       steps {
         git(url: scm.userRemoteConfigs[0].url, branch: '$BRANCH_NAME', changelog: true, credentialsId: 'KK-github-key', poll: true)
-      }
-    }
-
-    stage('Compile') {
-      when {
-        expression { BUILD_TARGET == 'true' }
-      }
-      steps {
-        sh 'git clone https://github.com/NpoolPlatform/message.git /tmp/message'
         sh (returnStdout: false, script: '''
-          cd /tmp/message
           make -C tools/grpc install
           PATH=$PATH:/usr/go/bin:$HOME/go/bin make -C message clean proto
-          cd -
         '''.stripIndent())
       }
     }
@@ -35,7 +24,7 @@ pipeline {
       steps {
         sh (returnStdout: false, script: '''
           swaggeruipod=`kubectl get pods -A | grep swagger | awk '{print $2}'`
-          for md in `find /tmp/message -name "*.swagger.json"`; do
+          for md in `find "*.swagger.json"`; do
             kubectl cp $md kube-system/$swaggeruipod:/usr/share/nginx/html || true
           done
         '''.stripIndent())
