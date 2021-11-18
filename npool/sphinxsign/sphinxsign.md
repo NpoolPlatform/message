@@ -5,6 +5,7 @@
 
 - [npool/sphinxsign/sphinxsign.proto](#npool/sphinxsign/sphinxsign.proto)
     - [AccountInfo](#sphinx.sign.v1.AccountInfo)
+    - [WalletNewRequest](#sphinx.sign.v1.WalletNewRequest)
     - [WalletNewResponse](#sphinx.sign.v1.WalletNewResponse)
   
     - [Sign](#sphinx.sign.v1.Sign)
@@ -30,6 +31,21 @@
 | ----- | ---- | ----- | ----------- |
 | SigType | [string](#string) |  | secp256k1 |
 | Address | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="sphinx.sign.v1.WalletNewRequest"></a>
+
+### WalletNewRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 
 
 
@@ -64,7 +80,7 @@ Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| WalletNew | [.google.protobuf.Empty](#google.protobuf.Empty) | [WalletNewResponse](#sphinx.sign.v1.WalletNewResponse) | WalletNew create new account |
+| WalletNew | [WalletNewRequest](#sphinx.sign.v1.WalletNewRequest) | [WalletNewResponse](#sphinx.sign.v1.WalletNewResponse) | WalletNew create new account |
 
  
 

@@ -55,6 +55,15 @@
         }
       }
     },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "CoinTypeUnKnow",
+        "CoinTypeFIL",
+        "CoinTypeBTC"
+      ],
+      "default": "CoinTypeUnKnow"
+    },
     "v1WalletNewResponse": {
       "type": "object",
       "properties": {

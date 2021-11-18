@@ -143,7 +143,7 @@ Service Name
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | RegisterCoin | [RegisterCoinRequest](#sphinx.proxy.v1.RegisterCoinRequest) | [RegisterCoinResponse](#sphinx.proxy.v1.RegisterCoinResponse) | RegisterCoin register new coin |
-| WalletNew | [.google.protobuf.Empty](#google.protobuf.Empty) | [WalletNewResponse](#sphinx.proxy.v1.WalletNewResponse) | WalletNew create new account |
+| WalletNew | [.sphinx.sign.v1.WalletNewRequest](#sphinx.sign.v1.WalletNewRequest) | [.sphinx.sign.v1.WalletNewResponse](#sphinx.sign.v1.WalletNewResponse) | WalletNew create new account |
 | Transaction | [TransactionResponse](#sphinx.proxy.v1.TransactionResponse) stream | [TransactionRequest](#sphinx.proxy.v1.TransactionRequest) stream | Transaction use transfer |
 | WalletBalance | [.sphinx.plugin.v1.WalletBalanceRequest](#sphinx.plugin.v1.WalletBalanceRequest) | [.sphinx.plugin.v1.WalletBalanceResponse](#sphinx.plugin.v1.WalletBalanceResponse) | WalletBalance get account balance |
 

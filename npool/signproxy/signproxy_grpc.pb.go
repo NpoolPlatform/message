@@ -5,10 +5,10 @@ package signproxy
 import (
 	context "context"
 	sphinxplugin "github.com/NpoolPlatform/message/npool/sphinxplugin"
+	sphinxsign "github.com/NpoolPlatform/message/npool/sphinxsign"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -23,7 +23,7 @@ type SignProxyClient interface {
 	// RegisterCoin register new coin
 	RegisterCoin(ctx context.Context, in *RegisterCoinRequest, opts ...grpc.CallOption) (*RegisterCoinResponse, error)
 	// WalletNew create new account
-	WalletNew(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*WalletNewResponse, error)
+	WalletNew(ctx context.Context, in *sphinxsign.WalletNewRequest, opts ...grpc.CallOption) (*sphinxsign.WalletNewResponse, error)
 	// Transaction use transfer
 	Transaction(ctx context.Context, opts ...grpc.CallOption) (SignProxy_TransactionClient, error)
 	// WalletBalance get account balance
@@ -47,8 +47,8 @@ func (c *signProxyClient) RegisterCoin(ctx context.Context, in *RegisterCoinRequ
 	return out, nil
 }
 
-func (c *signProxyClient) WalletNew(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*WalletNewResponse, error) {
-	out := new(WalletNewResponse)
+func (c *signProxyClient) WalletNew(ctx context.Context, in *sphinxsign.WalletNewRequest, opts ...grpc.CallOption) (*sphinxsign.WalletNewResponse, error) {
+	out := new(sphinxsign.WalletNewResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SignProxy/WalletNew", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -103,7 +103,7 @@ type SignProxyServer interface {
 	// RegisterCoin register new coin
 	RegisterCoin(context.Context, *RegisterCoinRequest) (*RegisterCoinResponse, error)
 	// WalletNew create new account
-	WalletNew(context.Context, *emptypb.Empty) (*WalletNewResponse, error)
+	WalletNew(context.Context, *sphinxsign.WalletNewRequest) (*sphinxsign.WalletNewResponse, error)
 	// Transaction use transfer
 	Transaction(SignProxy_TransactionServer) error
 	// WalletBalance get account balance
@@ -118,7 +118,7 @@ type UnimplementedSignProxyServer struct {
 func (UnimplementedSignProxyServer) RegisterCoin(context.Context, *RegisterCoinRequest) (*RegisterCoinResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterCoin not implemented")
 }
-func (UnimplementedSignProxyServer) WalletNew(context.Context, *emptypb.Empty) (*WalletNewResponse, error) {
+func (UnimplementedSignProxyServer) WalletNew(context.Context, *sphinxsign.WalletNewRequest) (*sphinxsign.WalletNewResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WalletNew not implemented")
 }
 func (UnimplementedSignProxyServer) Transaction(SignProxy_TransactionServer) error {
@@ -159,7 +159,7 @@ func _SignProxy_RegisterCoin_Handler(srv interface{}, ctx context.Context, dec f
 }
 
 func _SignProxy_WalletNew_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(emptypb.Empty)
+	in := new(sphinxsign.WalletNewRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -171,7 +171,7 @@ func _SignProxy_WalletNew_Handler(srv interface{}, ctx context.Context, dec func
 		FullMethod: "/sphinx.proxy.v1.SignProxy/WalletNew",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SignProxyServer).WalletNew(ctx, req.(*emptypb.Empty))
+		return srv.(SignProxyServer).WalletNew(ctx, req.(*sphinxsign.WalletNewRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

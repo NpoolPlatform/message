@@ -7,7 +7,6 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -20,7 +19,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SignClient interface {
 	// WalletNew create new account
-	WalletNew(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*WalletNewResponse, error)
+	WalletNew(ctx context.Context, in *WalletNewRequest, opts ...grpc.CallOption) (*WalletNewResponse, error)
 }
 
 type signClient struct {
@@ -31,7 +30,7 @@ func NewSignClient(cc grpc.ClientConnInterface) SignClient {
 	return &signClient{cc}
 }
 
-func (c *signClient) WalletNew(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*WalletNewResponse, error) {
+func (c *signClient) WalletNew(ctx context.Context, in *WalletNewRequest, opts ...grpc.CallOption) (*WalletNewResponse, error) {
 	out := new(WalletNewResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.sign.v1.Sign/WalletNew", in, out, opts...)
 	if err != nil {
@@ -45,7 +44,7 @@ func (c *signClient) WalletNew(ctx context.Context, in *emptypb.Empty, opts ...g
 // for forward compatibility
 type SignServer interface {
 	// WalletNew create new account
-	WalletNew(context.Context, *emptypb.Empty) (*WalletNewResponse, error)
+	WalletNew(context.Context, *WalletNewRequest) (*WalletNewResponse, error)
 	mustEmbedUnimplementedSignServer()
 }
 
@@ -53,7 +52,7 @@ type SignServer interface {
 type UnimplementedSignServer struct {
 }
 
-func (UnimplementedSignServer) WalletNew(context.Context, *emptypb.Empty) (*WalletNewResponse, error) {
+func (UnimplementedSignServer) WalletNew(context.Context, *WalletNewRequest) (*WalletNewResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WalletNew not implemented")
 }
 func (UnimplementedSignServer) mustEmbedUnimplementedSignServer() {}
@@ -70,7 +69,7 @@ func RegisterSignServer(s grpc.ServiceRegistrar, srv SignServer) {
 }
 
 func _Sign_WalletNew_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(emptypb.Empty)
+	in := new(WalletNewRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -82,7 +81,7 @@ func _Sign_WalletNew_Handler(srv interface{}, ctx context.Context, dec func(inte
 		FullMethod: "/sphinx.sign.v1.Sign/WalletNew",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SignServer).WalletNew(ctx, req.(*emptypb.Empty))
+		return srv.(SignServer).WalletNew(ctx, req.(*WalletNewRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
