@@ -1,0 +1,159 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/sphinxplugin/sphinxplugin.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "CoinTypeUnKnow",
+        "CoinTypeFIL",
+        "CoinTypeBTC"
+      ],
+      "default": "CoinTypeUnKnow"
+    },
+    "v1MpoolGetNonceInfo": {
+      "type": "object",
+      "properties": {
+        "Nonce": {
+          "type": "string",
+          "format": "uint64"
+        }
+      }
+    },
+    "v1MpoolGetNonceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1MpoolGetNonceInfo"
+        }
+      }
+    },
+    "v1MpoolPushInfo": {
+      "type": "object",
+      "properties": {
+        "CID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1MpoolPushResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1MpoolPushInfo"
+        }
+      }
+    },
+    "v1Signature": {
+      "type": "object",
+      "properties": {
+        "SignType": {
+          "type": "string"
+        },
+        "Data": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1UnsignedMessage": {
+      "type": "object",
+      "properties": {
+        "Version": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "To": {
+          "type": "string"
+        },
+        "From": {
+          "type": "string"
+        },
+        "Nonce": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "GasLimit": {
+          "type": "string",
+          "format": "int64"
+        },
+        "GasFeeCap": {
+          "type": "string"
+        },
+        "GasPremium": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "Params": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1WalletBalanceInfo": {
+      "type": "object",
+      "properties": {
+        "Balance": {
+          "type": "string"
+        }
+      }
+    },
+    "v1WalletBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1WalletBalanceInfo"
+        }
+      }
+    }
+  }
+}
