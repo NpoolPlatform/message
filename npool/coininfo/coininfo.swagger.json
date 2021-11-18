@@ -135,6 +135,13 @@
               "CoinTypeBTC"
             ],
             "default": "CoinTypeUnKnow"
+          },
+          {
+            "name": "CoinTypeID",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
           }
         ],
         "tags": [
@@ -176,6 +183,10 @@
       "properties": {
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
+        },
+        "CoinTypeID": {
+          "type": "integer",
+          "format": "int32"
         },
         "IsPresale": {
           "type": "boolean"
@@ -230,6 +241,10 @@
       "properties": {
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
+        },
+        "CoinTypeID": {
+          "type": "integer",
+          "format": "int32"
         },
         "IsPresale": {
           "type": "boolean"
