@@ -4,6 +4,8 @@
 ## Table of Contents
 
 - [npool/trading/trading.proto](#npool/trading/trading.proto)
+    - [ACKRequest](#sphinx.v1.ACKRequest)
+    - [ACKResponse](#sphinx.v1.ACKResponse)
     - [AccountAddress](#sphinx.v1.AccountAddress)
     - [AccountBalance](#sphinx.v1.AccountBalance)
     - [AccountTxJSON](#sphinx.v1.AccountTxJSON)
@@ -27,6 +29,31 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/trading/trading.proto
+
+
+
+<a name="sphinx.v1.ACKRequest"></a>
+
+### ACKRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| transaction_id_insite | [string](#string) |  | 站内交易ID |
+
+
+
+
+
+
+<a name="sphinx.v1.ACKResponse"></a>
+
+### ACKResponse
+
+
+
+
 
 
 
@@ -202,7 +229,7 @@ RegisterAccount 参数
 <a name="sphinx.v1.SuccessInfo"></a>
 
 ### SuccessInfo
-
+deprecated
 
 
 | Field | Type | Label | Description |
@@ -257,6 +284,7 @@ request body and response
 | ApplyTransaction | [ApplyTransactionRequest](#sphinx.v1.ApplyTransactionRequest) | [SuccessInfo](#sphinx.v1.SuccessInfo) | 转账 / 提现 |
 | GetTxJSON | [GetTxJSONRequest](#sphinx.v1.GetTxJSONRequest) | [AccountTxJSON](#sphinx.v1.AccountTxJSON) | TODO: 账户交易查询 |
 | GetInsiteTxStatus | [GetInsiteTxStatusRequest](#sphinx.v1.GetInsiteTxStatusRequest) | [GetInsiteTxStatusResponse](#sphinx.v1.GetInsiteTxStatusResponse) | 交易状态查询 |
+| ACK | [ACKRequest](#sphinx.v1.ACKRequest) | [ACKResponse](#sphinx.v1.ACKResponse) | 接收ack |
 
  
 

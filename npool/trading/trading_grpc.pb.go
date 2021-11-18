@@ -29,6 +29,8 @@ type TradingClient interface {
 	GetTxJSON(ctx context.Context, in *GetTxJSONRequest, opts ...grpc.CallOption) (*AccountTxJSON, error)
 	// 交易状态查询
 	GetInsiteTxStatus(ctx context.Context, in *GetInsiteTxStatusRequest, opts ...grpc.CallOption) (*GetInsiteTxStatusResponse, error)
+	// 接收ack
+	ACK(ctx context.Context, in *ACKRequest, opts ...grpc.CallOption) (*ACKResponse, error)
 }
 
 type tradingClient struct {
@@ -84,6 +86,15 @@ func (c *tradingClient) GetInsiteTxStatus(ctx context.Context, in *GetInsiteTxSt
 	return out, nil
 }
 
+func (c *tradingClient) ACK(ctx context.Context, in *ACKRequest, opts ...grpc.CallOption) (*ACKResponse, error) {
+	out := new(ACKResponse)
+	err := c.cc.Invoke(ctx, "/sphinx.v1.Trading/ACK", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TradingServer is the server API for Trading service.
 // All implementations must embed UnimplementedTradingServer
 // for forward compatibility
@@ -98,6 +109,8 @@ type TradingServer interface {
 	GetTxJSON(context.Context, *GetTxJSONRequest) (*AccountTxJSON, error)
 	// 交易状态查询
 	GetInsiteTxStatus(context.Context, *GetInsiteTxStatusRequest) (*GetInsiteTxStatusResponse, error)
+	// 接收ack
+	ACK(context.Context, *ACKRequest) (*ACKResponse, error)
 	mustEmbedUnimplementedTradingServer()
 }
 
@@ -119,6 +132,9 @@ func (UnimplementedTradingServer) GetTxJSON(context.Context, *GetTxJSONRequest) 
 }
 func (UnimplementedTradingServer) GetInsiteTxStatus(context.Context, *GetInsiteTxStatusRequest) (*GetInsiteTxStatusResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetInsiteTxStatus not implemented")
+}
+func (UnimplementedTradingServer) ACK(context.Context, *ACKRequest) (*ACKResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ACK not implemented")
 }
 func (UnimplementedTradingServer) mustEmbedUnimplementedTradingServer() {}
 
@@ -223,6 +239,24 @@ func _Trading_GetInsiteTxStatus_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Trading_ACK_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ACKRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TradingServer).ACK(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/sphinx.v1.Trading/ACK",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TradingServer).ACK(ctx, req.(*ACKRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Trading_ServiceDesc is the grpc.ServiceDesc for Trading service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -249,6 +283,10 @@ var Trading_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetInsiteTxStatus",
 			Handler:    _Trading_GetInsiteTxStatus_Handler,
+		},
+		{
+			MethodName: "ACK",
+			Handler:    _Trading_ACK_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

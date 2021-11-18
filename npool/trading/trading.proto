@@ -33,6 +33,12 @@ service Trading {
 		option (google.api.http) = {
 			get: "/v1/account/transaction"
 		};}
+	// 接收ack
+	rpc ACK (ACKRequest) returns (ACKResponse) {
+		option (google.api.http) = {
+			post: "/v1/internal/ack"
+			body: "*"
+		};}
 }
 
 // RegisterAccount 参数
@@ -130,6 +136,14 @@ message ApplyTransactionRequest {
 // 	int64 timestamp_utc = 8; // 汇报时间
 // }
 
+message ACKRequest {
+	string transaction_id_insite = 1; // 站内交易ID
+}
+
+message ACKResponse {
+}
+
+// deprecated
 message SuccessInfo {
 	string info = 1; // "success"
 }

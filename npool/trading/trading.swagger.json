@@ -159,6 +159,39 @@
         ]
       }
     },
+    "/v1/internal/ack": {
+      "post": {
+        "summary": "接收ack",
+        "operationId": "Trading_ACK",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ACKResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ACKRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Trading"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "summary": "Method Version",
@@ -220,6 +253,17 @@
           }
         }
       }
+    },
+    "v1ACKRequest": {
+      "type": "object",
+      "properties": {
+        "transactionIdInsite": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ACKResponse": {
+      "type": "object"
     },
     "v1AccountAddress": {
       "type": "object",
@@ -380,7 +424,8 @@
         "info": {
           "type": "string"
         }
-      }
+      },
+      "title": "deprecated"
     },
     "v1VersionResponse": {
       "type": "object",
