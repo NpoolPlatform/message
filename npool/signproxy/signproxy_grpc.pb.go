@@ -18,8 +18,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SignProxyClient interface {
-	ProxyPluginChannel(ctx context.Context, opts ...grpc.CallOption) (SignProxy_ProxyPluginChannelClient, error)
-	Transaction(ctx context.Context, opts ...grpc.CallOption) (SignProxy_TransactionClient, error)
+	ProxyPlugin(ctx context.Context, opts ...grpc.CallOption) (SignProxy_ProxyPluginClient, error)
+	ProxySign(ctx context.Context, opts ...grpc.CallOption) (SignProxy_ProxySignClient, error)
 }
 
 type signProxyClient struct {
@@ -30,62 +30,62 @@ func NewSignProxyClient(cc grpc.ClientConnInterface) SignProxyClient {
 	return &signProxyClient{cc}
 }
 
-func (c *signProxyClient) ProxyPluginChannel(ctx context.Context, opts ...grpc.CallOption) (SignProxy_ProxyPluginChannelClient, error) {
-	stream, err := c.cc.NewStream(ctx, &SignProxy_ServiceDesc.Streams[0], "/sphinx.proxy.v1.SignProxy/ProxyPluginChannel", opts...)
+func (c *signProxyClient) ProxyPlugin(ctx context.Context, opts ...grpc.CallOption) (SignProxy_ProxyPluginClient, error) {
+	stream, err := c.cc.NewStream(ctx, &SignProxy_ServiceDesc.Streams[0], "/sphinx.proxy.v1.SignProxy/ProxyPlugin", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &signProxyProxyPluginChannelClient{stream}
+	x := &signProxyProxyPluginClient{stream}
 	return x, nil
 }
 
-type SignProxy_ProxyPluginChannelClient interface {
-	Send(*ProxyPluginChannelResponse) error
-	Recv() (*ProxyPluginChannelRequest, error)
+type SignProxy_ProxyPluginClient interface {
+	Send(*ProxyPluginResponse) error
+	Recv() (*ProxyPluginRequest, error)
 	grpc.ClientStream
 }
 
-type signProxyProxyPluginChannelClient struct {
+type signProxyProxyPluginClient struct {
 	grpc.ClientStream
 }
 
-func (x *signProxyProxyPluginChannelClient) Send(m *ProxyPluginChannelResponse) error {
+func (x *signProxyProxyPluginClient) Send(m *ProxyPluginResponse) error {
 	return x.ClientStream.SendMsg(m)
 }
 
-func (x *signProxyProxyPluginChannelClient) Recv() (*ProxyPluginChannelRequest, error) {
-	m := new(ProxyPluginChannelRequest)
+func (x *signProxyProxyPluginClient) Recv() (*ProxyPluginRequest, error) {
+	m := new(ProxyPluginRequest)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *signProxyClient) Transaction(ctx context.Context, opts ...grpc.CallOption) (SignProxy_TransactionClient, error) {
-	stream, err := c.cc.NewStream(ctx, &SignProxy_ServiceDesc.Streams[1], "/sphinx.proxy.v1.SignProxy/Transaction", opts...)
+func (c *signProxyClient) ProxySign(ctx context.Context, opts ...grpc.CallOption) (SignProxy_ProxySignClient, error) {
+	stream, err := c.cc.NewStream(ctx, &SignProxy_ServiceDesc.Streams[1], "/sphinx.proxy.v1.SignProxy/ProxySign", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &signProxyTransactionClient{stream}
+	x := &signProxyProxySignClient{stream}
 	return x, nil
 }
 
-type SignProxy_TransactionClient interface {
-	Send(*TransactionResponse) error
-	Recv() (*TransactionRequest, error)
+type SignProxy_ProxySignClient interface {
+	Send(*ProxySignResponse) error
+	Recv() (*ProxySignRequest, error)
 	grpc.ClientStream
 }
 
-type signProxyTransactionClient struct {
+type signProxyProxySignClient struct {
 	grpc.ClientStream
 }
 
-func (x *signProxyTransactionClient) Send(m *TransactionResponse) error {
+func (x *signProxyProxySignClient) Send(m *ProxySignResponse) error {
 	return x.ClientStream.SendMsg(m)
 }
 
-func (x *signProxyTransactionClient) Recv() (*TransactionRequest, error) {
-	m := new(TransactionRequest)
+func (x *signProxyProxySignClient) Recv() (*ProxySignRequest, error) {
+	m := new(ProxySignRequest)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
@@ -96,8 +96,8 @@ func (x *signProxyTransactionClient) Recv() (*TransactionRequest, error) {
 // All implementations must embed UnimplementedSignProxyServer
 // for forward compatibility
 type SignProxyServer interface {
-	ProxyPluginChannel(SignProxy_ProxyPluginChannelServer) error
-	Transaction(SignProxy_TransactionServer) error
+	ProxyPlugin(SignProxy_ProxyPluginServer) error
+	ProxySign(SignProxy_ProxySignServer) error
 	mustEmbedUnimplementedSignProxyServer()
 }
 
@@ -105,11 +105,11 @@ type SignProxyServer interface {
 type UnimplementedSignProxyServer struct {
 }
 
-func (UnimplementedSignProxyServer) ProxyPluginChannel(SignProxy_ProxyPluginChannelServer) error {
-	return status.Errorf(codes.Unimplemented, "method ProxyPluginChannel not implemented")
+func (UnimplementedSignProxyServer) ProxyPlugin(SignProxy_ProxyPluginServer) error {
+	return status.Errorf(codes.Unimplemented, "method ProxyPlugin not implemented")
 }
-func (UnimplementedSignProxyServer) Transaction(SignProxy_TransactionServer) error {
-	return status.Errorf(codes.Unimplemented, "method Transaction not implemented")
+func (UnimplementedSignProxyServer) ProxySign(SignProxy_ProxySignServer) error {
+	return status.Errorf(codes.Unimplemented, "method ProxySign not implemented")
 }
 func (UnimplementedSignProxyServer) mustEmbedUnimplementedSignProxyServer() {}
 
@@ -124,52 +124,52 @@ func RegisterSignProxyServer(s grpc.ServiceRegistrar, srv SignProxyServer) {
 	s.RegisterService(&SignProxy_ServiceDesc, srv)
 }
 
-func _SignProxy_ProxyPluginChannel_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(SignProxyServer).ProxyPluginChannel(&signProxyProxyPluginChannelServer{stream})
+func _SignProxy_ProxyPlugin_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(SignProxyServer).ProxyPlugin(&signProxyProxyPluginServer{stream})
 }
 
-type SignProxy_ProxyPluginChannelServer interface {
-	Send(*ProxyPluginChannelRequest) error
-	Recv() (*ProxyPluginChannelResponse, error)
+type SignProxy_ProxyPluginServer interface {
+	Send(*ProxyPluginRequest) error
+	Recv() (*ProxyPluginResponse, error)
 	grpc.ServerStream
 }
 
-type signProxyProxyPluginChannelServer struct {
+type signProxyProxyPluginServer struct {
 	grpc.ServerStream
 }
 
-func (x *signProxyProxyPluginChannelServer) Send(m *ProxyPluginChannelRequest) error {
+func (x *signProxyProxyPluginServer) Send(m *ProxyPluginRequest) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func (x *signProxyProxyPluginChannelServer) Recv() (*ProxyPluginChannelResponse, error) {
-	m := new(ProxyPluginChannelResponse)
+func (x *signProxyProxyPluginServer) Recv() (*ProxyPluginResponse, error) {
+	m := new(ProxyPluginResponse)
 	if err := x.ServerStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func _SignProxy_Transaction_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(SignProxyServer).Transaction(&signProxyTransactionServer{stream})
+func _SignProxy_ProxySign_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(SignProxyServer).ProxySign(&signProxyProxySignServer{stream})
 }
 
-type SignProxy_TransactionServer interface {
-	Send(*TransactionRequest) error
-	Recv() (*TransactionResponse, error)
+type SignProxy_ProxySignServer interface {
+	Send(*ProxySignRequest) error
+	Recv() (*ProxySignResponse, error)
 	grpc.ServerStream
 }
 
-type signProxyTransactionServer struct {
+type signProxyProxySignServer struct {
 	grpc.ServerStream
 }
 
-func (x *signProxyTransactionServer) Send(m *TransactionRequest) error {
+func (x *signProxyProxySignServer) Send(m *ProxySignRequest) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func (x *signProxyTransactionServer) Recv() (*TransactionResponse, error) {
-	m := new(TransactionResponse)
+func (x *signProxyProxySignServer) Recv() (*ProxySignResponse, error) {
+	m := new(ProxySignResponse)
 	if err := x.ServerStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
@@ -185,14 +185,14 @@ var SignProxy_ServiceDesc = grpc.ServiceDesc{
 	Methods:     []grpc.MethodDesc{},
 	Streams: []grpc.StreamDesc{
 		{
-			StreamName:    "ProxyPluginChannel",
-			Handler:       _SignProxy_ProxyPluginChannel_Handler,
+			StreamName:    "ProxyPlugin",
+			Handler:       _SignProxy_ProxyPlugin_Handler,
 			ServerStreams: true,
 			ClientStreams: true,
 		},
 		{
-			StreamName:    "Transaction",
-			Handler:       _SignProxy_Transaction_Handler,
+			StreamName:    "ProxySign",
+			Handler:       _SignProxy_ProxySign_Handler,
 			ServerStreams: true,
 			ClientStreams: true,
 		},

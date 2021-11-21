@@ -4,11 +4,11 @@
 ## Table of Contents
 
 - [npool/signproxy/signproxy.proto](#npool/signproxy/signproxy.proto)
-    - [ProxyPluginChannelRequest](#sphinx.proxy.v1.ProxyPluginChannelRequest)
-    - [ProxyPluginChannelResponse](#sphinx.proxy.v1.ProxyPluginChannelResponse)
-    - [TransactionRequest](#sphinx.proxy.v1.TransactionRequest)
-    - [TransactionResponse](#sphinx.proxy.v1.TransactionResponse)
-    - [TransactionResponseInfo](#sphinx.proxy.v1.TransactionResponseInfo)
+    - [ProxyPluginRequest](#sphinx.proxy.v1.ProxyPluginRequest)
+    - [ProxyPluginResponse](#sphinx.proxy.v1.ProxyPluginResponse)
+    - [ProxySignRequest](#sphinx.proxy.v1.ProxySignRequest)
+    - [ProxySignResponse](#sphinx.proxy.v1.ProxySignResponse)
+    - [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo)
   
     - [TransSM](#sphinx.proxy.v1.TransSM)
     - [TransactionType](#sphinx.proxy.v1.TransactionType)
@@ -26,41 +26,17 @@
 
 
 
-<a name="sphinx.proxy.v1.ProxyPluginChannelRequest"></a>
+<a name="sphinx.proxy.v1.ProxyPluginRequest"></a>
 
-### ProxyPluginChannelRequest
-RegisterCoin MpoolGetNonce MpoolPush WalletBalance ..
+### ProxyPluginRequest
+MpoolGetNonce WalletBalance MpoolPush ..
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
-
-
-
-
-
-
-<a name="sphinx.proxy.v1.ProxyPluginChannelResponse"></a>
-
-### ProxyPluginChannelResponse
-
-
-
-
-
-
-
-<a name="sphinx.proxy.v1.TransactionRequest"></a>
-
-### TransactionRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
-| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
+| Address | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 
 
@@ -68,24 +44,59 @@ RegisterCoin MpoolGetNonce MpoolPush WalletBalance ..
 
 
 
-<a name="sphinx.proxy.v1.TransactionResponse"></a>
+<a name="sphinx.proxy.v1.ProxyPluginResponse"></a>
 
-### TransactionResponse
+### ProxyPluginResponse
+RegisterCoin ..
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
+| TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
+| Nonce | [uint64](#uint64) |  |  |
+| CID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="sphinx.proxy.v1.ProxySignRequest"></a>
+
+### ProxySignRequest
+Sign WalletNew ..
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
+| TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
+
+
+
+
+
+
+<a name="sphinx.proxy.v1.ProxySignResponse"></a>
+
+### ProxySignResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [TransactionResponseInfo](#sphinx.proxy.v1.TransactionResponseInfo) |  |  |
+| Info | [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo) |  |  |
 
 
 
 
 
 
-<a name="sphinx.proxy.v1.TransactionResponseInfo"></a>
+<a name="sphinx.proxy.v1.ProxySignResponseInfo"></a>
 
-### TransactionResponseInfo
+### ProxySignResponseInfo
 
 
 
@@ -124,8 +135,12 @@ RegisterCoin MpoolGetNonce MpoolPush WalletBalance ..
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | Invalid | 0 |  |
-| Signature | 1 |  |
-| WalletNew | 2 |  |
+| WalletNew | 1 | proxy -&gt; sign |
+| Signature | 2 | proxy -&gt; sign |
+| Balance | 3 | proxy -&gt; plugin |
+| PreSign | 4 | proxy -&gt; pluign get nonce |
+| Broadcast | 5 | proxy -&gt; plugin mpool push |
+| RegisterCoin | 6 | plugin -&gt; proxy |
 
 
  
@@ -141,8 +156,8 @@ Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| ProxyPluginChannel | [ProxyPluginChannelResponse](#sphinx.proxy.v1.ProxyPluginChannelResponse) stream | [ProxyPluginChannelRequest](#sphinx.proxy.v1.ProxyPluginChannelRequest) stream |  |
-| Transaction | [TransactionResponse](#sphinx.proxy.v1.TransactionResponse) stream | [TransactionRequest](#sphinx.proxy.v1.TransactionRequest) stream |  |
+| ProxyPlugin | [ProxyPluginResponse](#sphinx.proxy.v1.ProxyPluginResponse) stream | [ProxyPluginRequest](#sphinx.proxy.v1.ProxyPluginRequest) stream |  |
+| ProxySign | [ProxySignResponse](#sphinx.proxy.v1.ProxySignResponse) stream | [ProxySignRequest](#sphinx.proxy.v1.ProxySignRequest) stream |  |
 
  
 

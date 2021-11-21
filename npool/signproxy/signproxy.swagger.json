@@ -79,42 +79,40 @@
       ],
       "default": "CoinTypeUnKnow"
     },
-    "v1ProxyPluginChannelRequest": {
+    "v1ProxyPluginRequest": {
       "type": "object",
       "properties": {
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
-        }
-      },
-      "description": "RegisterCoin MpoolGetNonce MpoolPush WalletBalance .."
-    },
-    "v1Signature": {
-      "type": "object",
-      "properties": {
-        "SignType": {
-          "type": "string"
         },
-        "Data": {
-          "type": "string",
-          "format": "byte"
-        }
-      }
-    },
-    "v1TransactionRequest": {
-      "type": "object",
-      "properties": {
         "TransactionType": {
           "$ref": "#/definitions/v1TransactionType"
         },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
+        "Address": {
+          "type": "string"
         },
         "Message": {
           "$ref": "#/definitions/v1UnsignedMessage"
         }
-      }
+      },
+      "description": "MpoolGetNonce WalletBalance MpoolPush .."
     },
-    "v1TransactionResponseInfo": {
+    "v1ProxySignRequest": {
+      "type": "object",
+      "properties": {
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "TransactionType": {
+          "$ref": "#/definitions/v1TransactionType"
+        },
+        "Message": {
+          "$ref": "#/definitions/v1UnsignedMessage"
+        }
+      },
+      "description": "Sign WalletNew .."
+    },
+    "v1ProxySignResponseInfo": {
       "type": "object",
       "properties": {
         "Address": {
@@ -128,12 +126,28 @@
         }
       }
     },
+    "v1Signature": {
+      "type": "object",
+      "properties": {
+        "SignType": {
+          "type": "string"
+        },
+        "Data": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
     "v1TransactionType": {
       "type": "string",
       "enum": [
         "Invalid",
+        "WalletNew",
         "Signature",
-        "WalletNew"
+        "Balance",
+        "PreSign",
+        "Broadcast",
+        "RegisterCoin"
       ],
       "default": "Invalid"
     },

@@ -9,53 +9,56 @@ import "npool/sphinxplugin/sphinxplugin.proto";
 // TODO 分开 sign 和 proxy 的队列
 // Service Name
 service SignProxy {
-    rpc ProxyPluginChannel (stream ProxyPluginChannelResponse) returns (stream ProxyPluginChannelRequest) {}
-    rpc Transaction (stream TransactionResponse) returns (stream TransactionRequest) {}
+    rpc ProxyPlugin (stream ProxyPluginResponse) returns (stream ProxyPluginRequest) {}
+    rpc ProxySign (stream ProxySignResponse) returns (stream ProxySignRequest) {}
 }
 
-// message AccountInfo {
-//     string SigType = 100;// secp256k1
-//     string Address = 110;
-// }
-
-// message WalletNewResponse {
-//     AccountInfo Info = 100;
-// }
-
-// RegisterCoin MpoolGetNonce MpoolPush WalletBalance ..
-message ProxyPluginChannelRequest {
-    sphinx.plugin.v1.CoinType CoinType = 100;
+// RegisterCoin ..
+message ProxyPluginResponse {
+    sphinx.plugin.v1.CoinType CoinType          = 100;
+    TransactionType TransactionType             = 110;
+    uint64 Nonce                                = 120;
+    string CID                                  = 130;
 }
 
-message ProxyPluginChannelResponse {
-
+// MpoolGetNonce WalletBalance MpoolPush ..
+message ProxyPluginRequest {
+    sphinx.plugin.v1.CoinType CoinType          = 100;
+    TransactionType TransactionType             = 110;
+    string Address                              = 120;
+    sphinx.plugin.v1.UnsignedMessage Message    = 130;
 }
 
-enum TransactionType {
-    Invalid = 0;
-    Signature = 1;
-    WalletNew = 2;
+// Sign WalletNew ..
+message ProxySignRequest {
+    sphinx.plugin.v1.CoinType CoinType          = 100;
+    TransactionType TransactionType             = 110;
+    sphinx.plugin.v1.UnsignedMessage Message    = 130;
 }
 
-message TransactionRequest {
-    TransactionType TransactionType             = 100;
-    sphinx.plugin.v1.CoinType CoinType          = 110;
-    sphinx.plugin.v1.UnsignedMessage Message    = 120;
+message ProxySignResponse {
+    ProxySignResponseInfo Info = 100;
 }
 
-message TransactionResponse {
-    TransactionResponseInfo Info = 100;
-}
-
-message TransactionResponseInfo {
+message ProxySignResponseInfo {
     string Address                              = 100;// create new account address
     sphinx.plugin.v1.UnsignedMessage Message    = 110;
 	sphinx.plugin.v1.Signature       Signature  = 120;
 }
 
+enum TransactionType {
+    Invalid         = 0;
+    WalletNew       = 1; // proxy -> sign
+    Signature       = 2; // proxy -> sign
+    Balance         = 3; // proxy -> plugin
+    PreSign         = 4; // proxy -> pluign get nonce
+    Broadcast       = 5; // proxy -> plugin mpool push
+    RegisterCoin    = 6; // plugin -> proxy
+}
+
 enum TransSM {
-    TransSMInvalid = 0;
-    TransSMPreSign = 1;
-    TransSMSign = 2;
-    TransSMBroadcast = 3;
+    TransSMInvalid      = 0;
+    TransSMPreSign      = 1;
+    TransSMSign         = 2;
+    TransSMBroadcast    = 3;
 }
