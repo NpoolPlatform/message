@@ -4,13 +4,15 @@
 ## Table of Contents
 
 - [npool/signproxy/signproxy.proto](#npool/signproxy/signproxy.proto)
-    - [AccountInfo](#sphinx.proxy.v1.AccountInfo)
-    - [RegisterCoinRequest](#sphinx.proxy.v1.RegisterCoinRequest)
-    - [RegisterCoinResponse](#sphinx.proxy.v1.RegisterCoinResponse)
+    - [FromPluginToProxyRequest](#sphinx.proxy.v1.FromPluginToProxyRequest)
+    - [FromPluginToProxyResponse](#sphinx.proxy.v1.FromPluginToProxyResponse)
+    - [FromProxyToPluginRequest](#sphinx.proxy.v1.FromProxyToPluginRequest)
+    - [FromProxyToPluginResponse](#sphinx.proxy.v1.FromProxyToPluginResponse)
     - [TransactionRequest](#sphinx.proxy.v1.TransactionRequest)
     - [TransactionResponse](#sphinx.proxy.v1.TransactionResponse)
     - [TransactionResponseInfo](#sphinx.proxy.v1.TransactionResponseInfo)
-    - [WalletNewResponse](#sphinx.proxy.v1.WalletNewResponse)
+  
+    - [TransactionType](#sphinx.proxy.v1.TransactionType)
   
     - [SignProxy](#sphinx.proxy.v1.SignProxy)
   
@@ -25,26 +27,20 @@
 
 
 
-<a name="sphinx.proxy.v1.AccountInfo"></a>
+<a name="sphinx.proxy.v1.FromPluginToProxyRequest"></a>
 
-### AccountInfo
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| SigType | [string](#string) |  | secp256k1 |
-| Address | [string](#string) |  |  |
+### FromPluginToProxyRequest
 
 
 
 
 
 
-<a name="sphinx.proxy.v1.RegisterCoinRequest"></a>
 
-### RegisterCoinRequest
+<a name="sphinx.proxy.v1.FromPluginToProxyResponse"></a>
 
+### FromPluginToProxyResponse
+RegisterCoin ..
 
 
 | Field | Type | Label | Description |
@@ -56,10 +52,20 @@
 
 
 
-<a name="sphinx.proxy.v1.RegisterCoinResponse"></a>
+<a name="sphinx.proxy.v1.FromProxyToPluginRequest"></a>
 
-### RegisterCoinResponse
+### FromProxyToPluginRequest
 
+
+
+
+
+
+
+<a name="sphinx.proxy.v1.FromProxyToPluginResponse"></a>
+
+### FromProxyToPluginResponse
+MpoolGetNonce MpoolPush WalletBalance ..
 
 
 
@@ -74,6 +80,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 
@@ -113,22 +120,20 @@
 
 
 
-
-<a name="sphinx.proxy.v1.WalletNewResponse"></a>
-
-### WalletNewResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [AccountInfo](#sphinx.proxy.v1.AccountInfo) |  |  |
-
-
-
-
-
  
+
+
+<a name="sphinx.proxy.v1.TransactionType"></a>
+
+### TransactionType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| Invalid | 0 |  |
+| Signature | 1 |  |
+| WalletNew | 2 |  |
+
 
  
 
@@ -138,14 +143,14 @@
 <a name="sphinx.proxy.v1.SignProxy"></a>
 
 ### SignProxy
+TODO 分开 sign 和 proxy 的队列
 Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| RegisterCoin | [RegisterCoinRequest](#sphinx.proxy.v1.RegisterCoinRequest) | [RegisterCoinResponse](#sphinx.proxy.v1.RegisterCoinResponse) | RegisterCoin register new coin |
-| WalletNew | [.sphinx.sign.v1.WalletNewRequest](#sphinx.sign.v1.WalletNewRequest) | [.sphinx.sign.v1.WalletNewResponse](#sphinx.sign.v1.WalletNewResponse) | WalletNew create new account |
-| Transaction | [TransactionResponse](#sphinx.proxy.v1.TransactionResponse) stream | [TransactionRequest](#sphinx.proxy.v1.TransactionRequest) stream | Transaction use transfer |
-| WalletBalance | [.sphinx.plugin.v1.WalletBalanceRequest](#sphinx.plugin.v1.WalletBalanceRequest) | [.sphinx.plugin.v1.WalletBalanceResponse](#sphinx.plugin.v1.WalletBalanceResponse) | WalletBalance get account balance |
+| FromPluginToProxy | [FromPluginToProxyResponse](#sphinx.proxy.v1.FromPluginToProxyResponse) stream | [FromPluginToProxyRequest](#sphinx.proxy.v1.FromPluginToProxyRequest) stream |  |
+| FromProxyToPlugin | [FromProxyToPluginResponse](#sphinx.proxy.v1.FromProxyToPluginResponse) stream | [FromProxyToPluginRequest](#sphinx.proxy.v1.FromProxyToPluginRequest) stream |  |
+| Transaction | [TransactionResponse](#sphinx.proxy.v1.TransactionResponse) stream | [TransactionRequest](#sphinx.proxy.v1.TransactionRequest) stream |  |
 
  
 

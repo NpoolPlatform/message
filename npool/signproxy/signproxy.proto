@@ -5,39 +5,54 @@ package sphinx.proxy.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/signproxy";
 
 import "npool/sphinxplugin/sphinxplugin.proto";
-import "npool/sphinxsign/sphinxsign.proto";
 
+// TODO 分开 sign 和 proxy 的队列
 // Service Name
 service SignProxy {
-    // RegisterCoin register new coin
-    rpc RegisterCoin (RegisterCoinRequest) returns (RegisterCoinResponse){}
-    // WalletNew create new account
-    rpc WalletNew (sphinx.sign.v1.WalletNewRequest) returns (sphinx.sign.v1.WalletNewResponse) {}
-    // Transaction use transfer
+    rpc FromPluginToProxy (stream FromPluginToProxyResponse) returns (stream FromPluginToProxyRequest) {}
+    rpc FromProxyToPlugin (stream FromProxyToPluginResponse) returns (stream FromProxyToPluginRequest) {}
     rpc Transaction (stream TransactionResponse) returns (stream TransactionRequest) {}
-    // WalletBalance get account balance
-    rpc WalletBalance (sphinx.plugin.v1.WalletBalanceRequest) returns (sphinx.plugin.v1.WalletBalanceResponse) {}
+    //  get account balance
+    // rpc WalletBalance (sphinx.plugin.v1.WalletBalanceRequest) returns (sphinx.plugin.v1.WalletBalanceResponse) {}
 }
 
-message RegisterCoinRequest {
+// message AccountInfo {
+//     string SigType = 100;// secp256k1
+//     string Address = 110;
+// }
+
+// message WalletNewResponse {
+//     AccountInfo Info = 100;
+// }
+
+// RegisterCoin ..
+message FromPluginToProxyResponse {
     sphinx.plugin.v1.CoinType CoinType = 100;
 }
 
-message RegisterCoinResponse {
+message FromPluginToProxyRequest {
+
 }
 
-message AccountInfo {
-    string SigType = 100;// secp256k1
-    string Address = 110;
+// MpoolGetNonce MpoolPush WalletBalance ..
+message FromProxyToPluginResponse {
+
 }
 
-message WalletNewResponse {
-    AccountInfo Info = 100;
+message FromProxyToPluginRequest {
+
+}
+
+enum TransactionType {
+    Invalid = 0;
+    Signature = 1;
+    WalletNew = 2;
 }
 
 message TransactionRequest {
-    sphinx.plugin.v1.CoinType CoinType               = 100;
-    sphinx.plugin.v1.UnsignedMessage Message         = 110;
+    TransactionType TransactionType             = 100;
+    sphinx.plugin.v1.CoinType CoinType          = 110;
+    sphinx.plugin.v1.UnsignedMessage Message    = 120;
 }
 
 message TransactionResponse {

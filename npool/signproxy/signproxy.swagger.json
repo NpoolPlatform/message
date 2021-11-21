@@ -70,25 +70,6 @@
         }
       }
     },
-    "sphinxsignv1AccountInfo": {
-      "type": "object",
-      "properties": {
-        "SigType": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        }
-      }
-    },
-    "sphinxsignv1WalletNewResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/sphinxsignv1AccountInfo"
-        }
-      }
-    },
     "v1CoinType": {
       "type": "string",
       "enum": [
@@ -98,7 +79,10 @@
       ],
       "default": "CoinTypeUnKnow"
     },
-    "v1RegisterCoinResponse": {
+    "v1FromPluginToProxyRequest": {
+      "type": "object"
+    },
+    "v1FromProxyToPluginRequest": {
       "type": "object"
     },
     "v1Signature": {
@@ -116,6 +100,9 @@
     "v1TransactionRequest": {
       "type": "object",
       "properties": {
+        "TransactionType": {
+          "$ref": "#/definitions/v1TransactionType"
+        },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
@@ -137,6 +124,15 @@
           "$ref": "#/definitions/v1Signature"
         }
       }
+    },
+    "v1TransactionType": {
+      "type": "string",
+      "enum": [
+        "Invalid",
+        "Signature",
+        "WalletNew"
+      ],
+      "default": "Invalid"
     },
     "v1UnsignedMessage": {
       "type": "object",
@@ -175,22 +171,6 @@
         "Params": {
           "type": "string",
           "format": "byte"
-        }
-      }
-    },
-    "v1WalletBalanceInfo": {
-      "type": "object",
-      "properties": {
-        "Balance": {
-          "type": "string"
-        }
-      }
-    },
-    "v1WalletBalanceResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1WalletBalanceInfo"
         }
       }
     }

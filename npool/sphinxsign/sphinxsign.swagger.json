@@ -44,34 +44,6 @@
           }
         }
       }
-    },
-    "v1AccountInfo": {
-      "type": "object",
-      "properties": {
-        "SigType": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CoinType": {
-      "type": "string",
-      "enum": [
-        "CoinTypeUnKnow",
-        "CoinTypeFIL",
-        "CoinTypeBTC"
-      ],
-      "default": "CoinTypeUnKnow"
-    },
-    "v1WalletNewResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AccountInfo"
-        }
-      }
     }
   }
 }

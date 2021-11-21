@@ -5,10 +5,6 @@
 
 - [npool/sphinxsign/sphinxsign.proto](#npool/sphinxsign/sphinxsign.proto)
     - [AccountInfo](#sphinx.sign.v1.AccountInfo)
-    - [WalletNewRequest](#sphinx.sign.v1.WalletNewRequest)
-    - [WalletNewResponse](#sphinx.sign.v1.WalletNewResponse)
-  
-    - [Sign](#sphinx.sign.v1.Sign)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -36,51 +32,11 @@
 
 
 
-
-<a name="sphinx.sign.v1.WalletNewRequest"></a>
-
-### WalletNewRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
-
-
-
-
-
-
-<a name="sphinx.sign.v1.WalletNewResponse"></a>
-
-### WalletNewResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [AccountInfo](#sphinx.sign.v1.AccountInfo) |  |  |
-
-
-
-
-
  
 
  
 
  
-
-
-<a name="sphinx.sign.v1.Sign"></a>
-
-### Sign
-Service Name
-
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-| WalletNew | [WalletNewRequest](#sphinx.sign.v1.WalletNewRequest) | [WalletNewResponse](#sphinx.sign.v1.WalletNewResponse) | WalletNew create new account |
 
  
 
