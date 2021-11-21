@@ -257,6 +257,12 @@
         "transaction_id_insite": {
           "type": "string"
         },
+        "transaction_id_chain": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
         "is_okay": {
           "type": "boolean"
         }

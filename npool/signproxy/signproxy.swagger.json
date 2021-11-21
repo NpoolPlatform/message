@@ -79,11 +79,14 @@
       ],
       "default": "CoinTypeUnKnow"
     },
-    "v1FromPluginToProxyRequest": {
-      "type": "object"
-    },
-    "v1FromProxyToPluginRequest": {
-      "type": "object"
+    "v1ProxyPluginChannelRequest": {
+      "type": "object",
+      "properties": {
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        }
+      },
+      "description": "RegisterCoin MpoolGetNonce MpoolPush WalletBalance .."
     },
     "v1Signature": {
       "type": "object",

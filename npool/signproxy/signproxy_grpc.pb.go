@@ -18,8 +18,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SignProxyClient interface {
-	FromPluginToProxy(ctx context.Context, opts ...grpc.CallOption) (SignProxy_FromPluginToProxyClient, error)
-	FromProxyToPlugin(ctx context.Context, opts ...grpc.CallOption) (SignProxy_FromProxyToPluginClient, error)
+	ProxyPluginChannel(ctx context.Context, opts ...grpc.CallOption) (SignProxy_ProxyPluginChannelClient, error)
 	Transaction(ctx context.Context, opts ...grpc.CallOption) (SignProxy_TransactionClient, error)
 }
 
@@ -31,62 +30,31 @@ func NewSignProxyClient(cc grpc.ClientConnInterface) SignProxyClient {
 	return &signProxyClient{cc}
 }
 
-func (c *signProxyClient) FromPluginToProxy(ctx context.Context, opts ...grpc.CallOption) (SignProxy_FromPluginToProxyClient, error) {
-	stream, err := c.cc.NewStream(ctx, &SignProxy_ServiceDesc.Streams[0], "/sphinx.proxy.v1.SignProxy/FromPluginToProxy", opts...)
+func (c *signProxyClient) ProxyPluginChannel(ctx context.Context, opts ...grpc.CallOption) (SignProxy_ProxyPluginChannelClient, error) {
+	stream, err := c.cc.NewStream(ctx, &SignProxy_ServiceDesc.Streams[0], "/sphinx.proxy.v1.SignProxy/ProxyPluginChannel", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &signProxyFromPluginToProxyClient{stream}
+	x := &signProxyProxyPluginChannelClient{stream}
 	return x, nil
 }
 
-type SignProxy_FromPluginToProxyClient interface {
-	Send(*FromPluginToProxyResponse) error
-	Recv() (*FromPluginToProxyRequest, error)
+type SignProxy_ProxyPluginChannelClient interface {
+	Send(*ProxyPluginChannelResponse) error
+	Recv() (*ProxyPluginChannelRequest, error)
 	grpc.ClientStream
 }
 
-type signProxyFromPluginToProxyClient struct {
+type signProxyProxyPluginChannelClient struct {
 	grpc.ClientStream
 }
 
-func (x *signProxyFromPluginToProxyClient) Send(m *FromPluginToProxyResponse) error {
+func (x *signProxyProxyPluginChannelClient) Send(m *ProxyPluginChannelResponse) error {
 	return x.ClientStream.SendMsg(m)
 }
 
-func (x *signProxyFromPluginToProxyClient) Recv() (*FromPluginToProxyRequest, error) {
-	m := new(FromPluginToProxyRequest)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
-func (c *signProxyClient) FromProxyToPlugin(ctx context.Context, opts ...grpc.CallOption) (SignProxy_FromProxyToPluginClient, error) {
-	stream, err := c.cc.NewStream(ctx, &SignProxy_ServiceDesc.Streams[1], "/sphinx.proxy.v1.SignProxy/FromProxyToPlugin", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &signProxyFromProxyToPluginClient{stream}
-	return x, nil
-}
-
-type SignProxy_FromProxyToPluginClient interface {
-	Send(*FromProxyToPluginResponse) error
-	Recv() (*FromProxyToPluginRequest, error)
-	grpc.ClientStream
-}
-
-type signProxyFromProxyToPluginClient struct {
-	grpc.ClientStream
-}
-
-func (x *signProxyFromProxyToPluginClient) Send(m *FromProxyToPluginResponse) error {
-	return x.ClientStream.SendMsg(m)
-}
-
-func (x *signProxyFromProxyToPluginClient) Recv() (*FromProxyToPluginRequest, error) {
-	m := new(FromProxyToPluginRequest)
+func (x *signProxyProxyPluginChannelClient) Recv() (*ProxyPluginChannelRequest, error) {
+	m := new(ProxyPluginChannelRequest)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
@@ -94,7 +62,7 @@ func (x *signProxyFromProxyToPluginClient) Recv() (*FromProxyToPluginRequest, er
 }
 
 func (c *signProxyClient) Transaction(ctx context.Context, opts ...grpc.CallOption) (SignProxy_TransactionClient, error) {
-	stream, err := c.cc.NewStream(ctx, &SignProxy_ServiceDesc.Streams[2], "/sphinx.proxy.v1.SignProxy/Transaction", opts...)
+	stream, err := c.cc.NewStream(ctx, &SignProxy_ServiceDesc.Streams[1], "/sphinx.proxy.v1.SignProxy/Transaction", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -128,8 +96,7 @@ func (x *signProxyTransactionClient) Recv() (*TransactionRequest, error) {
 // All implementations must embed UnimplementedSignProxyServer
 // for forward compatibility
 type SignProxyServer interface {
-	FromPluginToProxy(SignProxy_FromPluginToProxyServer) error
-	FromProxyToPlugin(SignProxy_FromProxyToPluginServer) error
+	ProxyPluginChannel(SignProxy_ProxyPluginChannelServer) error
 	Transaction(SignProxy_TransactionServer) error
 	mustEmbedUnimplementedSignProxyServer()
 }
@@ -138,11 +105,8 @@ type SignProxyServer interface {
 type UnimplementedSignProxyServer struct {
 }
 
-func (UnimplementedSignProxyServer) FromPluginToProxy(SignProxy_FromPluginToProxyServer) error {
-	return status.Errorf(codes.Unimplemented, "method FromPluginToProxy not implemented")
-}
-func (UnimplementedSignProxyServer) FromProxyToPlugin(SignProxy_FromProxyToPluginServer) error {
-	return status.Errorf(codes.Unimplemented, "method FromProxyToPlugin not implemented")
+func (UnimplementedSignProxyServer) ProxyPluginChannel(SignProxy_ProxyPluginChannelServer) error {
+	return status.Errorf(codes.Unimplemented, "method ProxyPluginChannel not implemented")
 }
 func (UnimplementedSignProxyServer) Transaction(SignProxy_TransactionServer) error {
 	return status.Errorf(codes.Unimplemented, "method Transaction not implemented")
@@ -160,52 +124,26 @@ func RegisterSignProxyServer(s grpc.ServiceRegistrar, srv SignProxyServer) {
 	s.RegisterService(&SignProxy_ServiceDesc, srv)
 }
 
-func _SignProxy_FromPluginToProxy_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(SignProxyServer).FromPluginToProxy(&signProxyFromPluginToProxyServer{stream})
+func _SignProxy_ProxyPluginChannel_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(SignProxyServer).ProxyPluginChannel(&signProxyProxyPluginChannelServer{stream})
 }
 
-type SignProxy_FromPluginToProxyServer interface {
-	Send(*FromPluginToProxyRequest) error
-	Recv() (*FromPluginToProxyResponse, error)
+type SignProxy_ProxyPluginChannelServer interface {
+	Send(*ProxyPluginChannelRequest) error
+	Recv() (*ProxyPluginChannelResponse, error)
 	grpc.ServerStream
 }
 
-type signProxyFromPluginToProxyServer struct {
+type signProxyProxyPluginChannelServer struct {
 	grpc.ServerStream
 }
 
-func (x *signProxyFromPluginToProxyServer) Send(m *FromPluginToProxyRequest) error {
+func (x *signProxyProxyPluginChannelServer) Send(m *ProxyPluginChannelRequest) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func (x *signProxyFromPluginToProxyServer) Recv() (*FromPluginToProxyResponse, error) {
-	m := new(FromPluginToProxyResponse)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
-func _SignProxy_FromProxyToPlugin_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(SignProxyServer).FromProxyToPlugin(&signProxyFromProxyToPluginServer{stream})
-}
-
-type SignProxy_FromProxyToPluginServer interface {
-	Send(*FromProxyToPluginRequest) error
-	Recv() (*FromProxyToPluginResponse, error)
-	grpc.ServerStream
-}
-
-type signProxyFromProxyToPluginServer struct {
-	grpc.ServerStream
-}
-
-func (x *signProxyFromProxyToPluginServer) Send(m *FromProxyToPluginRequest) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-func (x *signProxyFromProxyToPluginServer) Recv() (*FromProxyToPluginResponse, error) {
-	m := new(FromProxyToPluginResponse)
+func (x *signProxyProxyPluginChannelServer) Recv() (*ProxyPluginChannelResponse, error) {
+	m := new(ProxyPluginChannelResponse)
 	if err := x.ServerStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
@@ -247,14 +185,8 @@ var SignProxy_ServiceDesc = grpc.ServiceDesc{
 	Methods:     []grpc.MethodDesc{},
 	Streams: []grpc.StreamDesc{
 		{
-			StreamName:    "FromPluginToProxy",
-			Handler:       _SignProxy_FromPluginToProxy_Handler,
-			ServerStreams: true,
-			ClientStreams: true,
-		},
-		{
-			StreamName:    "FromProxyToPlugin",
-			Handler:       _SignProxy_FromProxyToPlugin_Handler,
+			StreamName:    "ProxyPluginChannel",
+			Handler:       _SignProxy_ProxyPluginChannel_Handler,
 			ServerStreams: true,
 			ClientStreams: true,
 		},

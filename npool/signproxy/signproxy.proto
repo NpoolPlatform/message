@@ -9,11 +9,8 @@ import "npool/sphinxplugin/sphinxplugin.proto";
 // TODO 分开 sign 和 proxy 的队列
 // Service Name
 service SignProxy {
-    rpc FromPluginToProxy (stream FromPluginToProxyResponse) returns (stream FromPluginToProxyRequest) {}
-    rpc FromProxyToPlugin (stream FromProxyToPluginResponse) returns (stream FromProxyToPluginRequest) {}
+    rpc ProxyPluginChannel (stream ProxyPluginChannelResponse) returns (stream ProxyPluginChannelRequest) {}
     rpc Transaction (stream TransactionResponse) returns (stream TransactionRequest) {}
-    //  get account balance
-    // rpc WalletBalance (sphinx.plugin.v1.WalletBalanceRequest) returns (sphinx.plugin.v1.WalletBalanceResponse) {}
 }
 
 // message AccountInfo {
@@ -25,21 +22,12 @@ service SignProxy {
 //     AccountInfo Info = 100;
 // }
 
-// RegisterCoin ..
-message FromPluginToProxyResponse {
+// RegisterCoin MpoolGetNonce MpoolPush WalletBalance ..
+message ProxyPluginChannelRequest {
     sphinx.plugin.v1.CoinType CoinType = 100;
 }
 
-message FromPluginToProxyRequest {
-
-}
-
-// MpoolGetNonce MpoolPush WalletBalance ..
-message FromProxyToPluginResponse {
-
-}
-
-message FromProxyToPluginRequest {
+message ProxyPluginChannelResponse {
 
 }
 
@@ -63,4 +51,11 @@ message TransactionResponseInfo {
     string Address                              = 100;// create new account address
     sphinx.plugin.v1.UnsignedMessage Message    = 110;
 	sphinx.plugin.v1.Signature       Signature  = 120;
+}
+
+enum TransSM {
+    TransSMInvalid = 0;
+    TransSMPreSign = 1;
+    TransSMSign = 2;
+    TransSMBroadcast = 3;
 }

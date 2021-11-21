@@ -41,6 +41,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | transaction_id_insite | [string](#string) |  | 站内交易ID |
+| transaction_id_chain | [string](#string) |  | 广播交易 ID |
+| address | [string](#string) |  | 创建账号的地址 |
 | is_okay | [bool](#bool) |  | 交易请求是否成功 |
 
 

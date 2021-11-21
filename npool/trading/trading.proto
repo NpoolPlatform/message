@@ -135,7 +135,9 @@ message ApplyTransactionRequest {
 
 message ACKRequest {
 	string transaction_id_insite = 1; // 站内交易ID
-	bool is_okay = 2; // 交易请求是否成功
+	string transaction_id_chain = 2; // 广播交易 ID
+	string address = 3; // 创建账号的地址
+	bool is_okay = 4; // 交易请求是否成功
 }
 
 message ACKResponse {
