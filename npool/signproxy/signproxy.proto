@@ -60,7 +60,7 @@ message TransactionResponse {
 }
 
 message TransactionResponseInfo {
-    string Address            = 100;// create new account address
-    sphinx.plugin.v1.UnsignedMessage Message   = 110;
-	sphinx.plugin.v1.Signature       Signature = 120;
+    string Address                              = 100;// create new account address
+    sphinx.plugin.v1.UnsignedMessage Message    = 110;
+	sphinx.plugin.v1.Signature       Signature  = 120;
 }
