@@ -37,7 +37,9 @@ message ProxySignRequest {
 }
 
 message ProxySignResponse {
-    ProxySignResponseInfo Info = 100;
+    sphinx.plugin.v1.CoinType CoinType          = 100;
+    TransactionType TransactionType             = 110;
+    ProxySignResponseInfo Info                  = 120;
 }
 
 message ProxySignResponseInfo {
@@ -54,11 +56,4 @@ enum TransactionType {
     PreSign         = 4; // proxy -> pluign get nonce
     Broadcast       = 5; // proxy -> plugin mpool push
     RegisterCoin    = 6; // plugin -> proxy
-}
-
-enum TransSM {
-    TransSMInvalid      = 0;
-    TransSMPreSign      = 1;
-    TransSMSign         = 2;
-    TransSMBroadcast    = 3;
 }

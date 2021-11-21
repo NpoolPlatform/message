@@ -10,7 +10,6 @@
     - [ProxySignResponse](#sphinx.proxy.v1.ProxySignResponse)
     - [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo)
   
-    - [TransSM](#sphinx.proxy.v1.TransSM)
     - [TransactionType](#sphinx.proxy.v1.TransactionType)
   
     - [SignProxy](#sphinx.proxy.v1.SignProxy)
@@ -87,6 +86,8 @@ Sign WalletNew ..
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
+| TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | Info | [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo) |  |  |
 
 
@@ -111,20 +112,6 @@ Sign WalletNew ..
 
 
  
-
-
-<a name="sphinx.proxy.v1.TransSM"></a>
-
-### TransSM
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TransSMInvalid | 0 |  |
-| TransSMPreSign | 1 |  |
-| TransSMSign | 2 |  |
-| TransSMBroadcast | 3 |  |
-
 
 
 <a name="sphinx.proxy.v1.TransactionType"></a>
