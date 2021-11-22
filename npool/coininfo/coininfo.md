@@ -36,9 +36,10 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  | coininfo内部调用，在每一请求中应与CoinType同步 |
+| ID | [string](#string) |  | uuid |
+| Enum | [int32](#int32) |  | signproxy tradingservice 内部调用 coininfo仅存储 |
 | PreSale | [bool](#bool) |  | 是否为预售，false为在售商品 |
-| Name | [string](#string) |  | 币种名称：Filecoin |
+| Name | [string](#string) |  | 币种名称 unique eg:Filecoin |
 | Unit | [string](#string) |  | 单位：FIL |
 
 

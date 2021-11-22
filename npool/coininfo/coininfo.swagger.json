@@ -184,6 +184,10 @@
         "ID": {
           "type": "string"
         },
+        "Enum": {
+          "type": "integer",
+          "format": "int32"
+        },
         "PreSale": {
           "type": "boolean"
         },
