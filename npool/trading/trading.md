@@ -44,7 +44,7 @@
 | transaction_id_insite | [string](#string) |  | 交易ID |
 | transaction_id_chain | [string](#string) |  | 交易链上ID （如有） |
 | address | [string](#string) |  | 创建账号的地址 |
-| balance | [string](#string) |  | 查询账号的余额 |
+| balance | [double](#double) |  | 查询账号的余额 |
 | is_okay | [bool](#bool) |  | 交易请求是否成功 |
 | error_message | [string](#string) |  | 报错或调试时返回信息 |
 

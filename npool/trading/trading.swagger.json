@@ -260,7 +260,8 @@
           "type": "string"
         },
         "balance": {
-          "type": "string"
+          "type": "number",
+          "format": "double"
         },
         "is_okay": {
           "type": "boolean"

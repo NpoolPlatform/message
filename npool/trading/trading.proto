@@ -141,7 +141,7 @@ message ACKRequest {
 	string transaction_id_insite = 2; // 交易ID
 	string transaction_id_chain = 3; // 交易链上ID （如有）
 	string address = 4; // 创建账号的地址
-	string balance = 5; // 查询账号的余额
+	double balance = 5; // 查询账号的余额
 	bool is_okay = 6; // 交易请求是否成功
 	string error_message = 7; // 报错或调试时返回信息
 }
