@@ -196,6 +196,9 @@
         },
         "Unit": {
           "type": "string"
+        },
+        "LogoImage": {
+          "type": "string"
         }
       },
       "title": "数据库内CoinInfo"
