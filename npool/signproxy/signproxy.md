@@ -129,11 +129,12 @@ Sign WalletNew ..
 | ---- | ------ | ----------- |
 | Invalid | 0 |  |
 | WalletNew | 1 | proxy -&gt; sign |
-| Signature | 2 | proxy -&gt; sign |
-| Balance | 3 | proxy -&gt; plugin |
-| PreSign | 4 | proxy -&gt; pluign get nonce |
-| Broadcast | 5 | proxy -&gt; plugin mpool push |
-| RegisterCoin | 6 | plugin -&gt; proxy |
+| TransactionNew | 2 |  |
+| Signature | 3 | proxy -&gt; sign |
+| Balance | 4 | proxy -&gt; plugin |
+| PreSign | 5 | proxy -&gt; pluign get nonce |
+| Broadcast | 6 | proxy -&gt; plugin mpool push |
+| RegisterCoin | 7 | plugin -&gt; proxy |
 
 
  

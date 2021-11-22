@@ -152,6 +152,7 @@
       "enum": [
         "Invalid",
         "WalletNew",
+        "TransactionNew",
         "Signature",
         "Balance",
         "PreSign",
