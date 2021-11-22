@@ -21,6 +21,7 @@ import (
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
 	"google.golang.org/protobuf/proto"
+	"google.golang.org/protobuf/types/known/emptypb"
 )
 
 // Suppress "imported and not used" errors
@@ -31,8 +32,8 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_SphinxCoininfo_RegisterCoin_0(ctx context.Context, marshaler runtime.Marshaler, client SphinxCoininfoClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq RegisterCoinRequest
+func request_SphinxCoinInfo_CreateCoinInfo_0(ctx context.Context, marshaler runtime.Marshaler, client SphinxCoinInfoClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateCoinInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -43,13 +44,13 @@ func request_SphinxCoininfo_RegisterCoin_0(ctx context.Context, marshaler runtim
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.RegisterCoin(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateCoinInfo(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_SphinxCoininfo_RegisterCoin_0(ctx context.Context, marshaler runtime.Marshaler, server SphinxCoininfoServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq RegisterCoinRequest
+func local_request_SphinxCoinInfo_CreateCoinInfo_0(ctx context.Context, marshaler runtime.Marshaler, server SphinxCoinInfoServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateCoinInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -60,13 +61,13 @@ func local_request_SphinxCoininfo_RegisterCoin_0(ctx context.Context, marshaler 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.RegisterCoin(ctx, &protoReq)
+	msg, err := server.CreateCoinInfo(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_SphinxCoininfo_GetCoinInfos_0(ctx context.Context, marshaler runtime.Marshaler, client SphinxCoininfoClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetCoinInfosRequest
+func request_SphinxCoinInfo_GetCoinInfos_0(ctx context.Context, marshaler runtime.Marshaler, client SphinxCoinInfoClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
 	msg, err := client.GetCoinInfos(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -74,8 +75,8 @@ func request_SphinxCoininfo_GetCoinInfos_0(ctx context.Context, marshaler runtim
 
 }
 
-func local_request_SphinxCoininfo_GetCoinInfos_0(ctx context.Context, marshaler runtime.Marshaler, server SphinxCoininfoServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetCoinInfosRequest
+func local_request_SphinxCoinInfo_GetCoinInfos_0(ctx context.Context, marshaler runtime.Marshaler, server SphinxCoinInfoServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
 	msg, err := server.GetCoinInfos(ctx, &protoReq)
@@ -84,17 +85,17 @@ func local_request_SphinxCoininfo_GetCoinInfos_0(ctx context.Context, marshaler 
 }
 
 var (
-	filter_SphinxCoininfo_GetCoinInfo_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+	filter_SphinxCoinInfo_GetCoinInfo_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 )
 
-func request_SphinxCoininfo_GetCoinInfo_0(ctx context.Context, marshaler runtime.Marshaler, client SphinxCoininfoClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SphinxCoinInfo_GetCoinInfo_0(ctx context.Context, marshaler runtime.Marshaler, client SphinxCoinInfoClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetCoinInfoRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_SphinxCoininfo_GetCoinInfo_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_SphinxCoinInfo_GetCoinInfo_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -103,14 +104,14 @@ func request_SphinxCoininfo_GetCoinInfo_0(ctx context.Context, marshaler runtime
 
 }
 
-func local_request_SphinxCoininfo_GetCoinInfo_0(ctx context.Context, marshaler runtime.Marshaler, server SphinxCoininfoServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SphinxCoinInfo_GetCoinInfo_0(ctx context.Context, marshaler runtime.Marshaler, server SphinxCoinInfoServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetCoinInfoRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_SphinxCoininfo_GetCoinInfo_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_SphinxCoinInfo_GetCoinInfo_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -119,8 +120,8 @@ func local_request_SphinxCoininfo_GetCoinInfo_0(ctx context.Context, marshaler r
 
 }
 
-func request_SphinxCoininfo_SetCoinPresale_0(ctx context.Context, marshaler runtime.Marshaler, client SphinxCoininfoClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq SetCoinPresaleRequest
+func request_SphinxCoinInfo_UpdateCoinInfo_0(ctx context.Context, marshaler runtime.Marshaler, client SphinxCoinInfoClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateCoinInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -131,13 +132,13 @@ func request_SphinxCoininfo_SetCoinPresale_0(ctx context.Context, marshaler runt
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.SetCoinPresale(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.UpdateCoinInfo(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_SphinxCoininfo_SetCoinPresale_0(ctx context.Context, marshaler runtime.Marshaler, server SphinxCoininfoServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq SetCoinPresaleRequest
+func local_request_SphinxCoinInfo_UpdateCoinInfo_0(ctx context.Context, marshaler runtime.Marshaler, server SphinxCoinInfoServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateCoinInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -148,29 +149,29 @@ func local_request_SphinxCoininfo_SetCoinPresale_0(ctx context.Context, marshale
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.SetCoinPresale(ctx, &protoReq)
+	msg, err := server.UpdateCoinInfo(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-// RegisterSphinxCoininfoHandlerServer registers the http handlers for service SphinxCoininfo to "mux".
-// UnaryRPC     :call SphinxCoininfoServer directly.
+// RegisterSphinxCoinInfoHandlerServer registers the http handlers for service SphinxCoinInfo to "mux".
+// UnaryRPC     :call SphinxCoinInfoServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterSphinxCoininfoHandlerFromEndpoint instead.
-func RegisterSphinxCoininfoHandlerServer(ctx context.Context, mux *runtime.ServeMux, server SphinxCoininfoServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterSphinxCoinInfoHandlerFromEndpoint instead.
+func RegisterSphinxCoinInfoHandlerServer(ctx context.Context, mux *runtime.ServeMux, server SphinxCoinInfoServer) error {
 
-	mux.Handle("POST", pattern_SphinxCoininfo_RegisterCoin_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_SphinxCoinInfo_CreateCoinInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoininfo/RegisterCoin", runtime.WithHTTPPathPattern("/v1/coin/register"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoinInfo/CreateCoinInfo", runtime.WithHTTPPathPattern("/v1/create/coin/info"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SphinxCoininfo_RegisterCoin_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SphinxCoinInfo_CreateCoinInfo_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -178,22 +179,22 @@ func RegisterSphinxCoininfoHandlerServer(ctx context.Context, mux *runtime.Serve
 			return
 		}
 
-		forward_SphinxCoininfo_RegisterCoin_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SphinxCoinInfo_CreateCoinInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_SphinxCoininfo_GetCoinInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_SphinxCoinInfo_GetCoinInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoininfo/GetCoinInfos", runtime.WithHTTPPathPattern("/v1/coin/infos"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoinInfo/GetCoinInfos", runtime.WithHTTPPathPattern("/v1/get/coin/infos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SphinxCoininfo_GetCoinInfos_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SphinxCoinInfo_GetCoinInfos_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -201,22 +202,22 @@ func RegisterSphinxCoininfoHandlerServer(ctx context.Context, mux *runtime.Serve
 			return
 		}
 
-		forward_SphinxCoininfo_GetCoinInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SphinxCoinInfo_GetCoinInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_SphinxCoininfo_GetCoinInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_SphinxCoinInfo_GetCoinInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoininfo/GetCoinInfo", runtime.WithHTTPPathPattern("/v1/coin/single"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoinInfo/GetCoinInfo", runtime.WithHTTPPathPattern("/v1/get/coin/info"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SphinxCoininfo_GetCoinInfo_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SphinxCoinInfo_GetCoinInfo_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -224,22 +225,22 @@ func RegisterSphinxCoininfoHandlerServer(ctx context.Context, mux *runtime.Serve
 			return
 		}
 
-		forward_SphinxCoininfo_GetCoinInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SphinxCoinInfo_GetCoinInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_SphinxCoininfo_SetCoinPresale_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_SphinxCoinInfo_UpdateCoinInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoininfo/SetCoinPresale", runtime.WithHTTPPathPattern("/v1/coin/presale"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoinInfo/UpdateCoinInfo", runtime.WithHTTPPathPattern("/v1/update/coin/info"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SphinxCoininfo_SetCoinPresale_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SphinxCoinInfo_UpdateCoinInfo_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -247,16 +248,16 @@ func RegisterSphinxCoininfoHandlerServer(ctx context.Context, mux *runtime.Serve
 			return
 		}
 
-		forward_SphinxCoininfo_SetCoinPresale_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SphinxCoinInfo_UpdateCoinInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterSphinxCoininfoHandlerFromEndpoint is same as RegisterSphinxCoininfoHandler but
+// RegisterSphinxCoinInfoHandlerFromEndpoint is same as RegisterSphinxCoinInfoHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterSphinxCoininfoHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterSphinxCoinInfoHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -276,99 +277,99 @@ func RegisterSphinxCoininfoHandlerFromEndpoint(ctx context.Context, mux *runtime
 		}()
 	}()
 
-	return RegisterSphinxCoininfoHandler(ctx, mux, conn)
+	return RegisterSphinxCoinInfoHandler(ctx, mux, conn)
 }
 
-// RegisterSphinxCoininfoHandler registers the http handlers for service SphinxCoininfo to "mux".
+// RegisterSphinxCoinInfoHandler registers the http handlers for service SphinxCoinInfo to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterSphinxCoininfoHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterSphinxCoininfoHandlerClient(ctx, mux, NewSphinxCoininfoClient(conn))
+func RegisterSphinxCoinInfoHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterSphinxCoinInfoHandlerClient(ctx, mux, NewSphinxCoinInfoClient(conn))
 }
 
-// RegisterSphinxCoininfoHandlerClient registers the http handlers for service SphinxCoininfo
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "SphinxCoininfoClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "SphinxCoininfoClient"
+// RegisterSphinxCoinInfoHandlerClient registers the http handlers for service SphinxCoinInfo
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "SphinxCoinInfoClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "SphinxCoinInfoClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "SphinxCoininfoClient" to call the correct interceptors.
-func RegisterSphinxCoininfoHandlerClient(ctx context.Context, mux *runtime.ServeMux, client SphinxCoininfoClient) error {
+// "SphinxCoinInfoClient" to call the correct interceptors.
+func RegisterSphinxCoinInfoHandlerClient(ctx context.Context, mux *runtime.ServeMux, client SphinxCoinInfoClient) error {
 
-	mux.Handle("POST", pattern_SphinxCoininfo_RegisterCoin_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_SphinxCoinInfo_CreateCoinInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoininfo/RegisterCoin", runtime.WithHTTPPathPattern("/v1/coin/register"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoinInfo/CreateCoinInfo", runtime.WithHTTPPathPattern("/v1/create/coin/info"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SphinxCoininfo_RegisterCoin_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SphinxCoinInfo_CreateCoinInfo_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_SphinxCoininfo_RegisterCoin_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SphinxCoinInfo_CreateCoinInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_SphinxCoininfo_GetCoinInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_SphinxCoinInfo_GetCoinInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoininfo/GetCoinInfos", runtime.WithHTTPPathPattern("/v1/coin/infos"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoinInfo/GetCoinInfos", runtime.WithHTTPPathPattern("/v1/get/coin/infos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SphinxCoininfo_GetCoinInfos_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SphinxCoinInfo_GetCoinInfos_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_SphinxCoininfo_GetCoinInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SphinxCoinInfo_GetCoinInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_SphinxCoininfo_GetCoinInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_SphinxCoinInfo_GetCoinInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoininfo/GetCoinInfo", runtime.WithHTTPPathPattern("/v1/coin/single"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoinInfo/GetCoinInfo", runtime.WithHTTPPathPattern("/v1/get/coin/info"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SphinxCoininfo_GetCoinInfo_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SphinxCoinInfo_GetCoinInfo_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_SphinxCoininfo_GetCoinInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SphinxCoinInfo_GetCoinInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_SphinxCoininfo_SetCoinPresale_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_SphinxCoinInfo_UpdateCoinInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoininfo/SetCoinPresale", runtime.WithHTTPPathPattern("/v1/coin/presale"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.coininfo.v1.SphinxCoinInfo/UpdateCoinInfo", runtime.WithHTTPPathPattern("/v1/update/coin/info"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SphinxCoininfo_SetCoinPresale_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SphinxCoinInfo_UpdateCoinInfo_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_SphinxCoininfo_SetCoinPresale_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SphinxCoinInfo_UpdateCoinInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -376,21 +377,21 @@ func RegisterSphinxCoininfoHandlerClient(ctx context.Context, mux *runtime.Serve
 }
 
 var (
-	pattern_SphinxCoininfo_RegisterCoin_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "coin", "register"}, ""))
+	pattern_SphinxCoinInfo_CreateCoinInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "coin", "info"}, ""))
 
-	pattern_SphinxCoininfo_GetCoinInfos_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "coin", "infos"}, ""))
+	pattern_SphinxCoinInfo_GetCoinInfos_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "coin", "infos"}, ""))
 
-	pattern_SphinxCoininfo_GetCoinInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "coin", "single"}, ""))
+	pattern_SphinxCoinInfo_GetCoinInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "coin", "info"}, ""))
 
-	pattern_SphinxCoininfo_SetCoinPresale_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "coin", "presale"}, ""))
+	pattern_SphinxCoinInfo_UpdateCoinInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "update", "coin", "info"}, ""))
 )
 
 var (
-	forward_SphinxCoininfo_RegisterCoin_0 = runtime.ForwardResponseMessage
+	forward_SphinxCoinInfo_CreateCoinInfo_0 = runtime.ForwardResponseMessage
 
-	forward_SphinxCoininfo_GetCoinInfos_0 = runtime.ForwardResponseMessage
+	forward_SphinxCoinInfo_GetCoinInfos_0 = runtime.ForwardResponseMessage
 
-	forward_SphinxCoininfo_GetCoinInfo_0 = runtime.ForwardResponseMessage
+	forward_SphinxCoinInfo_GetCoinInfo_0 = runtime.ForwardResponseMessage
 
-	forward_SphinxCoininfo_SetCoinPresale_0 = runtime.ForwardResponseMessage
+	forward_SphinxCoinInfo_UpdateCoinInfo_0 = runtime.ForwardResponseMessage
 )

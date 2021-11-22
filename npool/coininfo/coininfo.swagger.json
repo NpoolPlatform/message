@@ -11,10 +11,74 @@
     "application/json"
   ],
   "paths": {
-    "/v1/coin/infos": {
+    "/v1/create/coin/info": {
+      "post": {
+        "summary": "注册新币种",
+        "operationId": "SphinxCoinInfo_CreateCoinInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateCoinInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateCoinInfoRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SphinxCoinInfo"
+        ]
+      }
+    },
+    "/v1/get/coin/info": {
+      "get": {
+        "summary": "获取单个币种",
+        "operationId": "SphinxCoinInfo_GetCoinInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "SphinxCoinInfo"
+        ]
+      }
+    },
+    "/v1/get/coin/infos": {
       "get": {
         "summary": "获取币种信息",
-        "operationId": "SphinxCoininfo_GetCoinInfos",
+        "operationId": "SphinxCoinInfo_GetCoinInfos",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -30,19 +94,19 @@
           }
         },
         "tags": [
-          "SphinxCoininfo"
+          "SphinxCoinInfo"
         ]
       }
     },
-    "/v1/coin/presale": {
+    "/v1/update/coin/info": {
       "post": {
         "summary": "设置币种是否预售",
-        "operationId": "SphinxCoininfo_SetCoinPresale",
+        "operationId": "SphinxCoinInfo_UpdateCoinInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CoinInfoRow"
+              "$ref": "#/definitions/v1UpdateCoinInfoResponse"
             }
           },
           "default": {
@@ -58,89 +122,12 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1SetCoinPresaleRequest"
+              "$ref": "#/definitions/v1UpdateCoinInfoRequest"
             }
           }
         ],
         "tags": [
-          "SphinxCoininfo"
-        ]
-      }
-    },
-    "/v1/coin/register": {
-      "post": {
-        "summary": "注册新币种",
-        "operationId": "SphinxCoininfo_RegisterCoin",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CoinInfoRow"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1RegisterCoinRequest"
-            }
-          }
-        ],
-        "tags": [
-          "SphinxCoininfo"
-        ]
-      }
-    },
-    "/v1/coin/single": {
-      "get": {
-        "summary": "获取单个币种",
-        "operationId": "SphinxCoininfo_GetCoinInfo",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CoinInfoRow"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "CoinType",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "CoinTypeUnKnow",
-              "CoinTypeFIL",
-              "CoinTypeBTC"
-            ],
-            "default": "CoinTypeUnKnow"
-          },
-          {
-            "name": "CoinTypeID",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "tags": [
-          "SphinxCoininfo"
+          "SphinxCoinInfo"
         ]
       }
     }
@@ -179,17 +166,14 @@
         }
       }
     },
-    "v1CoinInfoRow": {
+    "v1CoinInfo": {
       "type": "object",
       "properties": {
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
-        },
-        "CoinTypeID": {
+        "ID": {
           "type": "integer",
           "format": "int32"
         },
-        "IsPresale": {
+        "PreSale": {
           "type": "boolean"
         },
         "Name": {
@@ -201,57 +185,59 @@
       },
       "title": "数据库内CoinInfo"
     },
-    "v1CoinType": {
-      "type": "string",
-      "enum": [
-        "CoinTypeUnKnow",
-        "CoinTypeFIL",
-        "CoinTypeBTC"
-      ],
-      "default": "CoinTypeUnKnow"
+    "v1CreateCoinInfoRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinInfo"
+        }
+      },
+      "title": "注册币种信息"
+    },
+    "v1CreateCoinInfoResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinInfo"
+        }
+      }
+    },
+    "v1GetCoinInfoResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinInfo"
+        }
+      }
     },
     "v1GetCoinInfosResponse": {
       "type": "object",
       "properties": {
-        "infos": {
+        "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinInfoRow"
+            "$ref": "#/definitions/v1CoinInfo"
           }
         }
       },
       "title": "所有币种信息"
     },
-    "v1RegisterCoinRequest": {
+    "v1UpdateCoinInfoRequest": {
       "type": "object",
       "properties": {
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Unit": {
-          "type": "string"
-        }
-      },
-      "title": "注册币种信息"
-    },
-    "v1SetCoinPresaleRequest": {
-      "type": "object",
-      "properties": {
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
-        },
-        "CoinTypeID": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "IsPresale": {
-          "type": "boolean"
+        "Info": {
+          "$ref": "#/definitions/v1CoinInfo"
         }
       },
       "title": "设置预售请求"
+    },
+    "v1UpdateCoinInfoResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinInfo"
+        }
+      }
     }
   }
 }

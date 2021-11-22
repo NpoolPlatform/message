@@ -4,14 +4,18 @@
 ## Table of Contents
 
 - [npool/coininfo/coininfo.proto](#npool/coininfo/coininfo.proto)
-    - [CoinInfoRow](#sphinx.coininfo.v1.CoinInfoRow)
+    - [CoinInfo](#sphinx.coininfo.v1.CoinInfo)
+    - [CreateCoinInfoRequest](#sphinx.coininfo.v1.CreateCoinInfoRequest)
+    - [CreateCoinInfoResponse](#sphinx.coininfo.v1.CreateCoinInfoResponse)
     - [GetCoinInfoRequest](#sphinx.coininfo.v1.GetCoinInfoRequest)
+    - [GetCoinInfoResponse](#sphinx.coininfo.v1.GetCoinInfoResponse)
     - [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest)
     - [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse)
-    - [RegisterCoinRequest](#sphinx.coininfo.v1.RegisterCoinRequest)
-    - [SetCoinPresaleRequest](#sphinx.coininfo.v1.SetCoinPresaleRequest)
+    - [PageInfo](#sphinx.coininfo.v1.PageInfo)
+    - [UpdateCoinInfoRequest](#sphinx.coininfo.v1.UpdateCoinInfoRequest)
+    - [UpdateCoinInfoResponse](#sphinx.coininfo.v1.UpdateCoinInfoResponse)
   
-    - [SphinxCoininfo](#sphinx.coininfo.v1.SphinxCoininfo)
+    - [SphinxCoinInfo](#sphinx.coininfo.v1.SphinxCoinInfo)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -24,19 +28,48 @@
 
 
 
-<a name="sphinx.coininfo.v1.CoinInfoRow"></a>
+<a name="sphinx.coininfo.v1.CoinInfo"></a>
 
-### CoinInfoRow
+### CoinInfo
 数据库内CoinInfo
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
-| CoinTypeID | [int32](#int32) |  | coininfo内部调用，在每一请求中应与CoinType同步 |
-| IsPresale | [bool](#bool) |  | 是否为预售，false为在售商品 |
+| ID | [int32](#int32) |  | coininfo内部调用，在每一请求中应与CoinType同步 |
+| PreSale | [bool](#bool) |  | 是否为预售，false为在售商品 |
 | Name | [string](#string) |  | 币种名称：Filecoin |
 | Unit | [string](#string) |  | 单位：FIL |
+
+
+
+
+
+
+<a name="sphinx.coininfo.v1.CreateCoinInfoRequest"></a>
+
+### CreateCoinInfoRequest
+注册币种信息
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
+
+
+
+
+
+
+<a name="sphinx.coininfo.v1.CreateCoinInfoResponse"></a>
+
+### CreateCoinInfoResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
 
 
 
@@ -51,8 +84,22 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
-| CoinTypeID | [int32](#int32) |  | coininfo内部调用，在每一请求中应与CoinType同步 |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="sphinx.coininfo.v1.GetCoinInfoResponse"></a>
+
+### GetCoinInfoResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
 
 
 
@@ -62,7 +109,12 @@
 <a name="sphinx.coininfo.v1.GetCoinInfosRequest"></a>
 
 ### GetCoinInfosRequest
-获取币种请求
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| PageInfo | [PageInfo](#sphinx.coininfo.v1.PageInfo) |  |  |
 
 
 
@@ -77,41 +129,53 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| infos | [CoinInfoRow](#sphinx.coininfo.v1.CoinInfoRow) | repeated | array |
+| Infos | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) | repeated |  |
 
 
 
 
 
 
-<a name="sphinx.coininfo.v1.RegisterCoinRequest"></a>
+<a name="sphinx.coininfo.v1.PageInfo"></a>
 
-### RegisterCoinRequest
-注册币种信息
+### PageInfo
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  | sphinxplugin.CoinType |
-| Name | [string](#string) |  | 币种名称：Filecoin |
-| Unit | [string](#string) |  | 单位：FIL |
+| PageIndex | [int32](#int32) |  |  |
+| PageSize | [int32](#int32) |  |  |
 
 
 
 
 
 
-<a name="sphinx.coininfo.v1.SetCoinPresaleRequest"></a>
+<a name="sphinx.coininfo.v1.UpdateCoinInfoRequest"></a>
 
-### SetCoinPresaleRequest
+### UpdateCoinInfoRequest
 设置预售请求
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  | sphinxplugin.CoinType |
-| CoinTypeID | [int32](#int32) |  | coininfo内部调用，在每一请求中应与CoinType同步 |
-| IsPresale | [bool](#bool) |  | 是否为预售，false为在售商品 |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
+
+
+
+
+
+
+<a name="sphinx.coininfo.v1.UpdateCoinInfoResponse"></a>
+
+### UpdateCoinInfoResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
 
 
 
@@ -124,17 +188,17 @@
  
 
 
-<a name="sphinx.coininfo.v1.SphinxCoininfo"></a>
+<a name="sphinx.coininfo.v1.SphinxCoinInfo"></a>
 
-### SphinxCoininfo
+### SphinxCoinInfo
 CoinInfo服务
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| RegisterCoin | [RegisterCoinRequest](#sphinx.coininfo.v1.RegisterCoinRequest) | [CoinInfoRow](#sphinx.coininfo.v1.CoinInfoRow) | 注册新币种 |
-| GetCoinInfos | [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest) | [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse) | 获取币种信息 |
-| GetCoinInfo | [GetCoinInfoRequest](#sphinx.coininfo.v1.GetCoinInfoRequest) | [CoinInfoRow](#sphinx.coininfo.v1.CoinInfoRow) | 获取单个币种 |
-| SetCoinPresale | [SetCoinPresaleRequest](#sphinx.coininfo.v1.SetCoinPresaleRequest) | [CoinInfoRow](#sphinx.coininfo.v1.CoinInfoRow) | 设置币种是否预售 |
+| CreateCoinInfo | [CreateCoinInfoRequest](#sphinx.coininfo.v1.CreateCoinInfoRequest) | [CreateCoinInfoResponse](#sphinx.coininfo.v1.CreateCoinInfoResponse) | 注册新币种 |
+| GetCoinInfos | [.google.protobuf.Empty](#google.protobuf.Empty) | [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse) | 获取币种信息 |
+| GetCoinInfo | [GetCoinInfoRequest](#sphinx.coininfo.v1.GetCoinInfoRequest) | [GetCoinInfoResponse](#sphinx.coininfo.v1.GetCoinInfoResponse) | 获取单个币种 |
+| UpdateCoinInfo | [UpdateCoinInfoRequest](#sphinx.coininfo.v1.UpdateCoinInfoRequest) | [UpdateCoinInfoResponse](#sphinx.coininfo.v1.UpdateCoinInfoResponse) | 设置币种是否预售 |
 
  
 
