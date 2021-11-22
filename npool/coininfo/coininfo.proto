@@ -41,7 +41,7 @@ service SphinxCoinInfo {
 
 // 数据库内CoinInfo
 message CoinInfo {
-	int32 ID = 2; // coininfo内部调用，在每一请求中应与CoinType同步
+	string ID = 2; // coininfo内部调用，在每一请求中应与CoinType同步
 	bool PreSale = 3; // 是否为预售，false为在售商品
 	string Name = 4; // 币种名称：Filecoin
 	string Unit = 5; // 单位：FIL
