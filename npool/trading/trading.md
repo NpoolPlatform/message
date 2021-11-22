@@ -6,16 +6,16 @@
 - [npool/trading/trading.proto](#npool/trading/trading.proto)
     - [ACKRequest](#sphinx.v1.ACKRequest)
     - [ACKResponse](#sphinx.v1.ACKResponse)
-    - [AccountAddress](#sphinx.v1.AccountAddress)
-    - [AccountBalance](#sphinx.v1.AccountBalance)
     - [AccountTxJSON](#sphinx.v1.AccountTxJSON)
     - [CreateAccountRequest](#sphinx.v1.CreateAccountRequest)
+    - [CreateAccountResponse](#sphinx.v1.CreateAccountResponse)
     - [CreateTransactionRequest](#sphinx.v1.CreateTransactionRequest)
+    - [CreateTransactionResponse](#sphinx.v1.CreateTransactionResponse)
     - [GetBalanceRequest](#sphinx.v1.GetBalanceRequest)
+    - [GetBalanceResponse](#sphinx.v1.GetBalanceResponse)
     - [GetInsiteTxStatusRequest](#sphinx.v1.GetInsiteTxStatusRequest)
     - [GetInsiteTxStatusResponse](#sphinx.v1.GetInsiteTxStatusResponse)
     - [GetTxJSONRequest](#sphinx.v1.GetTxJSONRequest)
-    - [SuccessInfo](#sphinx.v1.SuccessInfo)
     - [VersionResponse](#sphinx.v1.VersionResponse)
   
     - [ServiceExample](#sphinx.v1.ServiceExample)
@@ -69,41 +69,6 @@
 
 
 
-<a name="sphinx.v1.AccountAddress"></a>
-
-### AccountAddress
-CreateAccount 返回
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| coin_name | [string](#string) |  | 币种名称(唯一) |
-| address | [string](#string) |  | 创建的钱包地址 |
-| uuid | [string](#string) |  | uuid将关联私钥，提高整体安全性 |
-
-
-
-
-
-
-<a name="sphinx.v1.AccountBalance"></a>
-
-### AccountBalance
-GetBalance 返回
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| coin_name | [string](#string) |  | 币种名称(唯一) |
-| address | [string](#string) |  | 查询的钱包地址 |
-| timestamp_utc | [int64](#int64) |  | 长整型时间戳 |
-| amount_float64 | [double](#double) |  | 余额 |
-
-
-
-
-
-
 <a name="sphinx.v1.AccountTxJSON"></a>
 
 ### AccountTxJSON
@@ -135,6 +100,23 @@ CreateAccount 参数
 
 
 
+<a name="sphinx.v1.CreateAccountResponse"></a>
+
+### CreateAccountResponse
+CreateAccount 返回
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| coin_name | [string](#string) |  | 币种名称(唯一) |
+| address | [string](#string) |  | 创建的钱包地址 |
+| uuid | [string](#string) |  | uuid将关联私钥，提高整体安全性 |
+
+
+
+
+
+
 <a name="sphinx.v1.CreateTransactionRequest"></a>
 
 ### CreateTransactionRequest
@@ -157,6 +139,21 @@ CreateTransaction 参数
 
 
 
+<a name="sphinx.v1.CreateTransactionResponse"></a>
+
+### CreateTransactionResponse
+deprecated
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| info | [string](#string) |  | &#34;success&#34; |
+
+
+
+
+
+
 <a name="sphinx.v1.GetBalanceRequest"></a>
 
 ### GetBalanceRequest
@@ -168,6 +165,24 @@ GetBalance 参数
 | coin_name | [string](#string) |  | 币种名称(唯一) |
 | address | [string](#string) |  | 查询的钱包地址 |
 | timestamp_utc | [int64](#int64) |  | 长整型时间戳 |
+
+
+
+
+
+
+<a name="sphinx.v1.GetBalanceResponse"></a>
+
+### GetBalanceResponse
+GetBalance 返回
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| coin_name | [string](#string) |  | 币种名称(唯一) |
+| address | [string](#string) |  | 查询的钱包地址 |
+| timestamp_utc | [int64](#int64) |  | 长整型时间戳 |
+| amount_float64 | [double](#double) |  | 余额 |
 
 
 
@@ -237,21 +252,6 @@ GetTxJSONRequest 参数
 
 
 
-<a name="sphinx.v1.SuccessInfo"></a>
-
-### SuccessInfo
-deprecated
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| info | [string](#string) |  | &#34;success&#34; |
-
-
-
-
-
-
 <a name="sphinx.v1.VersionResponse"></a>
 
 ### VersionResponse
@@ -290,9 +290,9 @@ request body and response
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateAccount | [CreateAccountRequest](#sphinx.v1.CreateAccountRequest) | [AccountAddress](#sphinx.v1.AccountAddress) | 创建账户 |
-| GetBalance | [GetBalanceRequest](#sphinx.v1.GetBalanceRequest) | [AccountBalance](#sphinx.v1.AccountBalance) | 余额查询 |
-| CreateTransaction | [CreateTransactionRequest](#sphinx.v1.CreateTransactionRequest) | [SuccessInfo](#sphinx.v1.SuccessInfo) | 转账 / 提现 |
+| CreateAccount | [CreateAccountRequest](#sphinx.v1.CreateAccountRequest) | [CreateAccountResponse](#sphinx.v1.CreateAccountResponse) | 创建账户 |
+| GetBalance | [GetBalanceRequest](#sphinx.v1.GetBalanceRequest) | [GetBalanceResponse](#sphinx.v1.GetBalanceResponse) | 余额查询 |
+| CreateTransaction | [CreateTransactionRequest](#sphinx.v1.CreateTransactionRequest) | [CreateTransactionResponse](#sphinx.v1.CreateTransactionResponse) | 转账 / 提现 |
 | GetTxJSON | [GetTxJSONRequest](#sphinx.v1.GetTxJSONRequest) | [AccountTxJSON](#sphinx.v1.AccountTxJSON) | TODO: 账户交易查询 |
 | GetInsiteTxStatus | [GetInsiteTxStatusRequest](#sphinx.v1.GetInsiteTxStatusRequest) | [GetInsiteTxStatusResponse](#sphinx.v1.GetInsiteTxStatusResponse) | 交易状态查询 |
 | ACK | [ACKRequest](#sphinx.v1.ACKRequest) | [ACKResponse](#sphinx.v1.ACKResponse) | 接收ack |

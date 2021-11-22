@@ -11,19 +11,19 @@ import "npool/signproxy/signproxy.proto";
 // 交易服务
 service Trading {
 	// 创建账户
-	rpc CreateAccount (CreateAccountRequest) returns (AccountAddress) {
+	rpc CreateAccount (CreateAccountRequest) returns (CreateAccountResponse) {
 		option (google.api.http) = {
 			post: "/v1/account/register"
 			body: "*"
 		};}
 	// 余额查询
-	rpc GetBalance (GetBalanceRequest) returns (AccountBalance) {
+	rpc GetBalance (GetBalanceRequest) returns (GetBalanceResponse) {
 		option (google.api.http) = {
 			post: "/v1/account/balance/get"
 			body: "*"
 		};}
 	// 转账 / 提现
-	rpc CreateTransaction (CreateTransactionRequest) returns (SuccessInfo) {
+	rpc CreateTransaction (CreateTransactionRequest) returns (CreateTransactionResponse) {
 		option (google.api.http) = {
 			post: "/v1/transaction/create"
 			body: "*"
@@ -50,7 +50,7 @@ message CreateAccountRequest {
 	string uuid = 3; // user_id或与其绑定的唯一标识符
 }
 // CreateAccount 返回
-message AccountAddress {
+message CreateAccountResponse {
 	string coin_name = 1; // 币种名称(唯一)
 	string address = 3; // 创建的钱包地址
 	string uuid = 4; // uuid将关联私钥，提高整体安全性
@@ -63,7 +63,7 @@ message GetBalanceRequest {
 	int64 timestamp_utc = 4; // 长整型时间戳
 }
 // GetBalance 返回
-message AccountBalance {
+message GetBalanceResponse {
 	string coin_name = 1; // 币种名称(唯一)
 	string address = 3; // 查询的钱包地址
 	int64 timestamp_utc = 4; // 长整型时间戳
@@ -152,7 +152,7 @@ message ACKResponse {
 }
 
 // deprecated
-message SuccessInfo {
+message CreateTransactionResponse {
 	string info = 1; // "success"
 }
 

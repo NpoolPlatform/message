@@ -20,11 +20,11 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type TradingClient interface {
 	// 创建账户
-	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*AccountAddress, error)
+	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
 	// 余额查询
-	GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*AccountBalance, error)
+	GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error)
 	// 转账 / 提现
-	CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*SuccessInfo, error)
+	CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*CreateTransactionResponse, error)
 	// TODO: 账户交易查询
 	GetTxJSON(ctx context.Context, in *GetTxJSONRequest, opts ...grpc.CallOption) (*AccountTxJSON, error)
 	// 交易状态查询
@@ -41,8 +41,8 @@ func NewTradingClient(cc grpc.ClientConnInterface) TradingClient {
 	return &tradingClient{cc}
 }
 
-func (c *tradingClient) CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*AccountAddress, error) {
-	out := new(AccountAddress)
+func (c *tradingClient) CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error) {
+	out := new(CreateAccountResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.v1.Trading/CreateAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -50,8 +50,8 @@ func (c *tradingClient) CreateAccount(ctx context.Context, in *CreateAccountRequ
 	return out, nil
 }
 
-func (c *tradingClient) GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*AccountBalance, error) {
-	out := new(AccountBalance)
+func (c *tradingClient) GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error) {
+	out := new(GetBalanceResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.v1.Trading/GetBalance", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -59,8 +59,8 @@ func (c *tradingClient) GetBalance(ctx context.Context, in *GetBalanceRequest, o
 	return out, nil
 }
 
-func (c *tradingClient) CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*SuccessInfo, error) {
-	out := new(SuccessInfo)
+func (c *tradingClient) CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*CreateTransactionResponse, error) {
+	out := new(CreateTransactionResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.v1.Trading/CreateTransaction", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -100,11 +100,11 @@ func (c *tradingClient) ACK(ctx context.Context, in *ACKRequest, opts ...grpc.Ca
 // for forward compatibility
 type TradingServer interface {
 	// 创建账户
-	CreateAccount(context.Context, *CreateAccountRequest) (*AccountAddress, error)
+	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
 	// 余额查询
-	GetBalance(context.Context, *GetBalanceRequest) (*AccountBalance, error)
+	GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error)
 	// 转账 / 提现
-	CreateTransaction(context.Context, *CreateTransactionRequest) (*SuccessInfo, error)
+	CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionResponse, error)
 	// TODO: 账户交易查询
 	GetTxJSON(context.Context, *GetTxJSONRequest) (*AccountTxJSON, error)
 	// 交易状态查询
@@ -118,13 +118,13 @@ type TradingServer interface {
 type UnimplementedTradingServer struct {
 }
 
-func (UnimplementedTradingServer) CreateAccount(context.Context, *CreateAccountRequest) (*AccountAddress, error) {
+func (UnimplementedTradingServer) CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAccount not implemented")
 }
-func (UnimplementedTradingServer) GetBalance(context.Context, *GetBalanceRequest) (*AccountBalance, error) {
+func (UnimplementedTradingServer) GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBalance not implemented")
 }
-func (UnimplementedTradingServer) CreateTransaction(context.Context, *CreateTransactionRequest) (*SuccessInfo, error) {
+func (UnimplementedTradingServer) CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTransaction not implemented")
 }
 func (UnimplementedTradingServer) GetTxJSON(context.Context, *GetTxJSONRequest) (*AccountTxJSON, error) {
