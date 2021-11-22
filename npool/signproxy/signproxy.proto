@@ -12,13 +12,21 @@ import "npool/sphinxplugin/sphinxplugin.proto";
 service SignProxy {
     rpc ProxyPlugin (stream ProxyPluginResponse) returns (stream ProxyPluginRequest) {}
     rpc ProxySign (stream ProxySignResponse) returns (stream ProxySignRequest) {}
-    // WalletBalance needed by trading service (through proxy)
+    // WalletBalance needed by trading service (through proxy); TODO
+    // Notice that sphixn.plugin.types are reused here; of logic we should seperately define request and response types in sphinx.proxy for grpc use; in v1 MVP these definitions are not essential
     rpc WalletBalance (sphinx.plugin.v1.WalletBalanceRequest) returns (sphinx.plugin.v1.WalletBalanceInfo) {
         option (google.api.http) = {
             post: "/v1/wallet/balance"
             body: "*"
         };
     }
+    // WalletNew needed by trading service; TODO
+    // types undefined in sphinx.sign; implements needed, since stream communications are not yet supported between signproxy and tradingservice
+    rpc WalletNew (WalletNewRequest) returns (AccountInfo) {
+        option (google.api.http) = {
+            post: "/v1/wallet/new"
+            body: "*"
+        };}
 }
 
 // RegisterCoin ..
@@ -65,3 +73,13 @@ enum TransactionType {
     Broadcast       = 5; // proxy -> plugin mpool push
     RegisterCoin    = 6; // plugin -> proxy
 }
+
+message WalletNewRequest {
+    sphinx.plugin.v1.CoinType CoinType = 100;
+}
+
+message AccountInfo {
+    string SigType = 100;// secp256k1
+    string Address = 110;
+}
+

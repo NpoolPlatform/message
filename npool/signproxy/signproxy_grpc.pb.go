@@ -21,8 +21,12 @@ const _ = grpc.SupportPackageIsVersion7
 type SignProxyClient interface {
 	ProxyPlugin(ctx context.Context, opts ...grpc.CallOption) (SignProxy_ProxyPluginClient, error)
 	ProxySign(ctx context.Context, opts ...grpc.CallOption) (SignProxy_ProxySignClient, error)
-	// WalletBalance needed by trading service (through proxy)
+	// WalletBalance needed by trading service (through proxy); TODO
+	// Notice that sphixn.plugin.types are reused here; of logic we should seperately define request and response types in sphinx.proxy for grpc use; in v1 MVP these definitions are not essential
 	WalletBalance(ctx context.Context, in *sphinxplugin.WalletBalanceRequest, opts ...grpc.CallOption) (*sphinxplugin.WalletBalanceInfo, error)
+	// WalletNew needed by trading service; TODO
+	// types undefined in sphinx.sign; implements needed, since stream communications are not yet supported between signproxy and tradingservice
+	WalletNew(ctx context.Context, in *WalletNewRequest, opts ...grpc.CallOption) (*AccountInfo, error)
 }
 
 type signProxyClient struct {
@@ -104,14 +108,27 @@ func (c *signProxyClient) WalletBalance(ctx context.Context, in *sphinxplugin.Wa
 	return out, nil
 }
 
+func (c *signProxyClient) WalletNew(ctx context.Context, in *WalletNewRequest, opts ...grpc.CallOption) (*AccountInfo, error) {
+	out := new(AccountInfo)
+	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SignProxy/WalletNew", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SignProxyServer is the server API for SignProxy service.
 // All implementations must embed UnimplementedSignProxyServer
 // for forward compatibility
 type SignProxyServer interface {
 	ProxyPlugin(SignProxy_ProxyPluginServer) error
 	ProxySign(SignProxy_ProxySignServer) error
-	// WalletBalance needed by trading service (through proxy)
+	// WalletBalance needed by trading service (through proxy); TODO
+	// Notice that sphixn.plugin.types are reused here; of logic we should seperately define request and response types in sphinx.proxy for grpc use; in v1 MVP these definitions are not essential
 	WalletBalance(context.Context, *sphinxplugin.WalletBalanceRequest) (*sphinxplugin.WalletBalanceInfo, error)
+	// WalletNew needed by trading service; TODO
+	// types undefined in sphinx.sign; implements needed, since stream communications are not yet supported between signproxy and tradingservice
+	WalletNew(context.Context, *WalletNewRequest) (*AccountInfo, error)
 	mustEmbedUnimplementedSignProxyServer()
 }
 
@@ -127,6 +144,9 @@ func (UnimplementedSignProxyServer) ProxySign(SignProxy_ProxySignServer) error {
 }
 func (UnimplementedSignProxyServer) WalletBalance(context.Context, *sphinxplugin.WalletBalanceRequest) (*sphinxplugin.WalletBalanceInfo, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WalletBalance not implemented")
+}
+func (UnimplementedSignProxyServer) WalletNew(context.Context, *WalletNewRequest) (*AccountInfo, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WalletNew not implemented")
 }
 func (UnimplementedSignProxyServer) mustEmbedUnimplementedSignProxyServer() {}
 
@@ -211,6 +231,24 @@ func _SignProxy_WalletBalance_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SignProxy_WalletNew_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(WalletNewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SignProxyServer).WalletNew(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/sphinx.proxy.v1.SignProxy/WalletNew",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SignProxyServer).WalletNew(ctx, req.(*WalletNewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // SignProxy_ServiceDesc is the grpc.ServiceDesc for SignProxy service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -221,6 +259,10 @@ var SignProxy_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "WalletBalance",
 			Handler:    _SignProxy_WalletBalance_Handler,
+		},
+		{
+			MethodName: "WalletNew",
+			Handler:    _SignProxy_WalletNew_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

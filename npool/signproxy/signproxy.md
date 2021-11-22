@@ -4,11 +4,13 @@
 ## Table of Contents
 
 - [npool/signproxy/signproxy.proto](#npool/signproxy/signproxy.proto)
+    - [AccountInfo](#sphinx.proxy.v1.AccountInfo)
     - [ProxyPluginRequest](#sphinx.proxy.v1.ProxyPluginRequest)
     - [ProxyPluginResponse](#sphinx.proxy.v1.ProxyPluginResponse)
     - [ProxySignRequest](#sphinx.proxy.v1.ProxySignRequest)
     - [ProxySignResponse](#sphinx.proxy.v1.ProxySignResponse)
     - [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo)
+    - [WalletNewRequest](#sphinx.proxy.v1.WalletNewRequest)
   
     - [TransactionType](#sphinx.proxy.v1.TransactionType)
   
@@ -22,6 +24,22 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/signproxy/signproxy.proto
+
+
+
+<a name="sphinx.proxy.v1.AccountInfo"></a>
+
+### AccountInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| SigType | [string](#string) |  | secp256k1 |
+| Address | [string](#string) |  |  |
+
+
+
 
 
 
@@ -111,6 +129,21 @@ Sign WalletNew ..
 
 
 
+
+<a name="sphinx.proxy.v1.WalletNewRequest"></a>
+
+### WalletNewRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
+
+
+
+
+
  
 
 
@@ -145,7 +178,8 @@ Service Name
 | ----------- | ------------ | ------------- | ------------|
 | ProxyPlugin | [ProxyPluginResponse](#sphinx.proxy.v1.ProxyPluginResponse) stream | [ProxyPluginRequest](#sphinx.proxy.v1.ProxyPluginRequest) stream |  |
 | ProxySign | [ProxySignResponse](#sphinx.proxy.v1.ProxySignResponse) stream | [ProxySignRequest](#sphinx.proxy.v1.ProxySignRequest) stream |  |
-| WalletBalance | [.sphinx.plugin.v1.WalletBalanceRequest](#sphinx.plugin.v1.WalletBalanceRequest) | [.sphinx.plugin.v1.WalletBalanceInfo](#sphinx.plugin.v1.WalletBalanceInfo) | WalletBalance needed by trading service (through proxy) |
+| WalletBalance | [.sphinx.plugin.v1.WalletBalanceRequest](#sphinx.plugin.v1.WalletBalanceRequest) | [.sphinx.plugin.v1.WalletBalanceInfo](#sphinx.plugin.v1.WalletBalanceInfo) | WalletBalance needed by trading service (through proxy); TODO Notice that sphixn.plugin.types are reused here; of logic we should seperately define request and response types in sphinx.proxy for grpc use; in v1 MVP these definitions are not essential |
+| WalletNew | [WalletNewRequest](#sphinx.proxy.v1.WalletNewRequest) | [AccountInfo](#sphinx.proxy.v1.AccountInfo) | WalletNew needed by trading service; TODO types undefined in sphinx.sign; implements needed, since stream communications are not yet supported between signproxy and tradingservice |
 
  
 

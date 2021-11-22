@@ -13,7 +13,7 @@
   "paths": {
     "/v1/wallet/balance": {
       "post": {
-        "summary": "WalletBalance needed by trading service (through proxy)",
+        "summary": "WalletBalance needed by trading service (through proxy); TODO\nNotice that sphixn.plugin.types are reused here; of logic we should seperately define request and response types in sphinx.proxy for grpc use; in v1 MVP these definitions are not essential",
         "operationId": "SignProxy_WalletBalance",
         "responses": {
           "200": {
@@ -36,6 +36,39 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1WalletBalanceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SignProxy"
+        ]
+      }
+    },
+    "/v1/wallet/new": {
+      "post": {
+        "summary": "WalletNew needed by trading service; TODO\ntypes undefined in sphinx.sign; implements needed, since stream communications are not yet supported between signproxy and tradingservice",
+        "operationId": "SignProxy_WalletNew",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AccountInfo"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1WalletNewRequest"
             }
           }
         ],
@@ -101,6 +134,17 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AccountInfo": {
+      "type": "object",
+      "properties": {
+        "SigType": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
         }
       }
     },
@@ -241,6 +285,14 @@
         },
         "Address": {
           "type": "string"
+        }
+      }
+    },
+    "v1WalletNewRequest": {
+      "type": "object",
+      "properties": {
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
         }
       }
     }
