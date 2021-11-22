@@ -31,5 +31,6 @@ proto: $(PROTO_GO_FILE) $(PROTO_GO_GW_FILE) $(PROTO_SWAGGER_FILE)
 
 clean:
 	find ./ -name "*.pb.go" | xargs rm -rf
+	find ./ -name "*.pb.gw.go" | xargs rm -rf
 	find ./ -name "*.md" | grep -v README.md | xargs rm -rf
 	find ./ -name "*.json" | xargs rm -rf
