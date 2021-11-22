@@ -4,6 +4,7 @@ package sphinx.proxy.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/signproxy";
 
+import "google/api/annotations.proto";
 import "npool/sphinxplugin/sphinxplugin.proto";
 
 // TODO 分开 sign 和 proxy 的队列
@@ -11,6 +12,13 @@ import "npool/sphinxplugin/sphinxplugin.proto";
 service SignProxy {
     rpc ProxyPlugin (stream ProxyPluginResponse) returns (stream ProxyPluginRequest) {}
     rpc ProxySign (stream ProxySignResponse) returns (stream ProxySignRequest) {}
+    // WalletBalance needed by trading service (through proxy)
+    rpc WalletBalance (sphinx.plugin.v1.WalletBalanceRequest) returns (sphinx.plugin.v1.WalletBalanceInfo) {
+        option (google.api.http) = {
+            post: "/v1/wallet/balance"
+            body: "*"
+        };
+    }
 }
 
 // RegisterCoin ..

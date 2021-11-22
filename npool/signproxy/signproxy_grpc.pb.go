@@ -4,6 +4,7 @@ package signproxy
 
 import (
 	context "context"
+	sphinxplugin "github.com/NpoolPlatform/message/npool/sphinxplugin"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -20,6 +21,8 @@ const _ = grpc.SupportPackageIsVersion7
 type SignProxyClient interface {
 	ProxyPlugin(ctx context.Context, opts ...grpc.CallOption) (SignProxy_ProxyPluginClient, error)
 	ProxySign(ctx context.Context, opts ...grpc.CallOption) (SignProxy_ProxySignClient, error)
+	// WalletBalance needed by trading service (through proxy)
+	WalletBalance(ctx context.Context, in *sphinxplugin.WalletBalanceRequest, opts ...grpc.CallOption) (*sphinxplugin.WalletBalanceInfo, error)
 }
 
 type signProxyClient struct {
@@ -92,12 +95,23 @@ func (x *signProxyProxySignClient) Recv() (*ProxySignRequest, error) {
 	return m, nil
 }
 
+func (c *signProxyClient) WalletBalance(ctx context.Context, in *sphinxplugin.WalletBalanceRequest, opts ...grpc.CallOption) (*sphinxplugin.WalletBalanceInfo, error) {
+	out := new(sphinxplugin.WalletBalanceInfo)
+	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SignProxy/WalletBalance", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SignProxyServer is the server API for SignProxy service.
 // All implementations must embed UnimplementedSignProxyServer
 // for forward compatibility
 type SignProxyServer interface {
 	ProxyPlugin(SignProxy_ProxyPluginServer) error
 	ProxySign(SignProxy_ProxySignServer) error
+	// WalletBalance needed by trading service (through proxy)
+	WalletBalance(context.Context, *sphinxplugin.WalletBalanceRequest) (*sphinxplugin.WalletBalanceInfo, error)
 	mustEmbedUnimplementedSignProxyServer()
 }
 
@@ -110,6 +124,9 @@ func (UnimplementedSignProxyServer) ProxyPlugin(SignProxy_ProxyPluginServer) err
 }
 func (UnimplementedSignProxyServer) ProxySign(SignProxy_ProxySignServer) error {
 	return status.Errorf(codes.Unimplemented, "method ProxySign not implemented")
+}
+func (UnimplementedSignProxyServer) WalletBalance(context.Context, *sphinxplugin.WalletBalanceRequest) (*sphinxplugin.WalletBalanceInfo, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WalletBalance not implemented")
 }
 func (UnimplementedSignProxyServer) mustEmbedUnimplementedSignProxyServer() {}
 
@@ -176,13 +193,36 @@ func (x *signProxyProxySignServer) Recv() (*ProxySignResponse, error) {
 	return m, nil
 }
 
+func _SignProxy_WalletBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(sphinxplugin.WalletBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SignProxyServer).WalletBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/sphinx.proxy.v1.SignProxy/WalletBalance",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SignProxyServer).WalletBalance(ctx, req.(*sphinxplugin.WalletBalanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // SignProxy_ServiceDesc is the grpc.ServiceDesc for SignProxy service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SignProxy_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "sphinx.proxy.v1.SignProxy",
 	HandlerType: (*SignProxyServer)(nil),
-	Methods:     []grpc.MethodDesc{},
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "WalletBalance",
+			Handler:    _SignProxy_WalletBalance_Handler,
+		},
+	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "ProxyPlugin",

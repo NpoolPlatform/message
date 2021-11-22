@@ -10,7 +10,41 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/wallet/balance": {
+      "post": {
+        "summary": "WalletBalance needed by trading service (through proxy)",
+        "operationId": "SignProxy_WalletBalance",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1WalletBalanceInfo"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1WalletBalanceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SignProxy"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -188,6 +222,25 @@
         "Params": {
           "type": "string",
           "format": "byte"
+        }
+      }
+    },
+    "v1WalletBalanceInfo": {
+      "type": "object",
+      "properties": {
+        "Balance": {
+          "type": "string"
+        }
+      }
+    },
+    "v1WalletBalanceRequest": {
+      "type": "object",
+      "properties": {
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "Address": {
+          "type": "string"
         }
       }
     }
