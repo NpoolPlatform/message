@@ -37,6 +37,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | Address | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
+| Signature | [sphinx.plugin.v1.Signature](#sphinx.plugin.v1.Signature) |  |  |
 
 
 
@@ -55,6 +56,7 @@ RegisterCoin ..
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | Nonce | [uint64](#uint64) |  |  |
 | CID | [string](#string) |  |  |
+| Balance | [string](#string) |  |  |
 
 
 

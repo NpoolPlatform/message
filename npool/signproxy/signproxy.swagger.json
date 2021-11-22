@@ -93,6 +93,9 @@
         },
         "Message": {
           "$ref": "#/definitions/v1UnsignedMessage"
+        },
+        "Signature": {
+          "$ref": "#/definitions/v1Signature"
         }
       },
       "description": "MpoolGetNonce WalletBalance MpoolPush .."

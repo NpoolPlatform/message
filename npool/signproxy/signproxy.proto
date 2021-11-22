@@ -19,6 +19,7 @@ message ProxyPluginResponse {
     TransactionType TransactionType             = 110;
     uint64 Nonce                                = 120;
     string CID                                  = 130;
+    string Balance                              = 140;
 }
 
 // MpoolGetNonce WalletBalance MpoolPush ..
@@ -27,6 +28,7 @@ message ProxyPluginRequest {
     TransactionType TransactionType             = 110;
     string Address                              = 120;
     sphinx.plugin.v1.UnsignedMessage Message    = 130;
+    sphinx.plugin.v1.Signature       Signature  = 140;
 }
 
 // Sign WalletNew ..
