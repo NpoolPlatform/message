@@ -1,0 +1,141 @@
+syntax = "proto3";
+
+package review.service.v1;
+
+option go_package = "github.com/NpoolPlatform/review-service/message/npool";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+// Service Name
+service ReviewService {
+    // Method Version
+    rpc Version (google.protobuf.Empty) returns (VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+
+    rpc CreateReview(CreateReviewRequest) returns (CreateReviewResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/review"
+            body: "*"
+        };
+    }
+    rpc UpdateReview(UpdateReviewRequest) returns (UpdateReviewResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/review"
+            body: "*"
+        };
+    }
+    rpc GetReviewsByDomain(GetReviewsByDomainRequest) returns (GetReviewsByDomainResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/reviews/by/domain"
+            body: "*"
+        };
+    }
+
+    rpc CreateReviewRule(CreateReviewRuleRequest) returns (CreateReviewRuleResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/review/rule"
+            body: "*"
+        };
+    }
+    rpc UpdateReviewRule(UpdateReviewRuleRequest) returns (UpdateReviewRuleResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/review/rule"
+            body: "*"
+        };
+    }
+    rpc GetReviewRule(GetReviewRuleRequest) returns (GetReviewRuleResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/review/rule"
+            body: "*"
+        };
+    }
+    rpc GetReviewRulesByDomain(GetReviewRulesByDomainRequest) returns (GetReviewRulesByDomainResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/review/rules/by/domain"
+            body: "*"
+        };
+    }
+}
+
+// request body and response
+message VersionResponse {
+    string Info = 100;
+}
+
+message Review {
+    string ID = 200;
+    string EntityType = 201;
+    string ReviewerID = 202;
+    string State = 203;
+    string Message = 204;
+    string ObjectID = 205;
+    string Domain = 206;
+}
+
+message CreateReviewRequest {
+    Review Info = 300;
+}
+
+message CreateReviewResponse {
+    Review Info = 400;
+}
+
+message UpdateReviewRequest {
+    Review Info = 500;
+}
+
+message UpdateReviewResponse {
+    Review Info = 600;
+}
+
+message GetReviewsByDomainRequest {
+    string Domain = 700;
+}
+
+message GetReviewsByDomainResponse {
+    repeated Review Infos = 800;
+}
+
+message ReviewRule {
+    string ID = 900;
+    string EntityType = 901;
+    string Domain = 902;
+    string Rules = 903;
+}
+
+message CreateReviewRuleRequest {
+    ReviewRule Info = 1000;
+}
+
+message CreateReviewRuleResponse {
+    ReviewRule Info = 1100;
+}
+
+message UpdateReviewRuleRequest {
+    ReviewRule Info = 1200;
+}
+
+message UpdateReviewRuleResponse {
+    ReviewRule Info = 1300;
+}
+
+message GetReviewRuleRequest {
+    string ID = 1400;
+}
+
+message GetReviewRuleResponse {
+    ReviewRule Info = 1500;
+}
+
+message GetReviewRulesByDomainRequest {
+    string Domain = 1600;
+}
+
+message GetReviewRulesByDomainResponse {
+    repeated ReviewRule Infos = 1700;
+}

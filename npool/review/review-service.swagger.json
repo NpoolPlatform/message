@@ -1,0 +1,477 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/review/review-service.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/review": {
+      "post": {
+        "operationId": "ReviewService_CreateReview",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateReviewResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateReviewRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ReviewService"
+        ]
+      }
+    },
+    "/v1/create/review/rule": {
+      "post": {
+        "operationId": "ReviewService_CreateReviewRule",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateReviewRuleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateReviewRuleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ReviewService"
+        ]
+      }
+    },
+    "/v1/get/review/rule": {
+      "post": {
+        "operationId": "ReviewService_GetReviewRule",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetReviewRuleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetReviewRuleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ReviewService"
+        ]
+      }
+    },
+    "/v1/get/review/rules/by/domain": {
+      "post": {
+        "operationId": "ReviewService_GetReviewRulesByDomain",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetReviewRulesByDomainResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetReviewRulesByDomainRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ReviewService"
+        ]
+      }
+    },
+    "/v1/get/reviews/by/domain": {
+      "post": {
+        "operationId": "ReviewService_GetReviewsByDomain",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetReviewsByDomainResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetReviewsByDomainRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ReviewService"
+        ]
+      }
+    },
+    "/v1/update/review": {
+      "post": {
+        "operationId": "ReviewService_UpdateReview",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateReviewResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateReviewRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ReviewService"
+        ]
+      }
+    },
+    "/v1/update/review/rule": {
+      "post": {
+        "operationId": "ReviewService_UpdateReviewRule",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateReviewRuleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateReviewRuleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ReviewService"
+        ]
+      }
+    },
+    "/version": {
+      "post": {
+        "summary": "Method Version",
+        "operationId": "ReviewService_Version",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
+            }
+          }
+        ],
+        "tags": [
+          "ReviewService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateReviewRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Review"
+        }
+      }
+    },
+    "v1CreateReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Review"
+        }
+      }
+    },
+    "v1CreateReviewRuleRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ReviewRule"
+        }
+      }
+    },
+    "v1CreateReviewRuleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ReviewRule"
+        }
+      }
+    },
+    "v1GetReviewRuleRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetReviewRuleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ReviewRule"
+        }
+      }
+    },
+    "v1GetReviewRulesByDomainRequest": {
+      "type": "object",
+      "properties": {
+        "Domain": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetReviewRulesByDomainResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1ReviewRule"
+          }
+        }
+      }
+    },
+    "v1GetReviewsByDomainRequest": {
+      "type": "object",
+      "properties": {
+        "Domain": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetReviewsByDomainResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Review"
+          }
+        }
+      }
+    },
+    "v1Review": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "EntityType": {
+          "type": "string"
+        },
+        "ReviewerID": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "ObjectID": {
+          "type": "string"
+        },
+        "Domain": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ReviewRule": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "EntityType": {
+          "type": "string"
+        },
+        "Domain": {
+          "type": "string"
+        },
+        "Rules": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateReviewRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Review"
+        }
+      }
+    },
+    "v1UpdateReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Review"
+        }
+      }
+    },
+    "v1UpdateReviewRuleRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ReviewRule"
+        }
+      }
+    },
+    "v1UpdateReviewRuleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ReviewRule"
+        }
+      }
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      },
+      "title": "request body and response"
+    }
+  }
+}
