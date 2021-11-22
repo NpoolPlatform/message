@@ -47,7 +47,7 @@
     "/v1/account/register": {
       "post": {
         "summary": "创建账户",
-        "operationId": "Trading_RegisterAccount",
+        "operationId": "Trading_CreateAccount",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -68,73 +68,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1RegisterAccountRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Trading"
-        ]
-      }
-    },
-    "/v1/account/transaction/apply": {
-      "post": {
-        "summary": "转账 / 提现",
-        "operationId": "Trading_ApplyTransaction",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1SuccessInfo"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1ApplyTransactionRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Trading"
-        ]
-      }
-    },
-    "/v1/account/transaction/status": {
-      "post": {
-        "summary": "交易状态查询",
-        "operationId": "Trading_GetInsiteTxStatus",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetInsiteTxStatusResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetInsiteTxStatusRequest"
+              "$ref": "#/definitions/v1CreateAccountRequest"
             }
           }
         ],
@@ -168,6 +102,72 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1ACKRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Trading"
+        ]
+      }
+    },
+    "/v1/transaction/create": {
+      "post": {
+        "summary": "转账 / 提现",
+        "operationId": "Trading_CreateTransaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SuccessInfo"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Trading"
+        ]
+      }
+    },
+    "/v1/transaction/status": {
+      "post": {
+        "summary": "交易状态查询",
+        "operationId": "Trading_GetInsiteTxStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetInsiteTxStatusResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetInsiteTxStatusRequest"
             }
           }
         ],
@@ -296,7 +296,7 @@
           "type": "string"
         }
       },
-      "title": "RegisterAccount 返回"
+      "title": "CreateAccount 返回"
     },
     "v1AccountBalance": {
       "type": "object",
@@ -327,7 +327,19 @@
       },
       "title": "GetTxJSONRequest 返回"
     },
-    "v1ApplyTransactionRequest": {
+    "v1CreateAccountRequest": {
+      "type": "object",
+      "properties": {
+        "coin_name": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "title": "CreateAccount 参数"
+    },
+    "v1CreateTransactionRequest": {
       "type": "object",
       "properties": {
         "coin_name": {
@@ -357,7 +369,7 @@
           "format": "int64"
         }
       },
-      "title": "ApplyTransaction 参数"
+      "title": "CreateTransaction 参数"
     },
     "v1GetBalanceRequest": {
       "type": "object",
@@ -431,18 +443,6 @@
         }
       },
       "title": "GetInsiteTxStatus 返回"
-    },
-    "v1RegisterAccountRequest": {
-      "type": "object",
-      "properties": {
-        "coin_name": {
-          "type": "string"
-        },
-        "uuid": {
-          "type": "string"
-        }
-      },
-      "title": "RegisterAccount 参数"
     },
     "v1SuccessInfo": {
       "type": "object",
