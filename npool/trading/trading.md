@@ -41,6 +41,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | transaction_type | [sphinx.proxy.v1.TransactionType](#sphinx.proxy.v1.TransactionType) |  | 交易类型： WalletNew, Signature, Balance, PreSign, Broadcast ； 创建账号、查询余额、交易状态更新 |
+| coin_type_id | [int32](#int32) |  |  |
 | transaction_id_insite | [string](#string) |  | 交易ID |
 | transaction_id_chain | [string](#string) |  | 交易链上ID （如有） |
 | address | [string](#string) |  | 创建账号的地址 |

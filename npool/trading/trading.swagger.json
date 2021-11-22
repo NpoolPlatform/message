@@ -250,6 +250,10 @@
         "transaction_type": {
           "$ref": "#/definitions/v1TransactionType"
         },
+        "coin_type_id": {
+          "type": "integer",
+          "format": "int32"
+        },
         "transaction_id_insite": {
           "type": "string"
         },
