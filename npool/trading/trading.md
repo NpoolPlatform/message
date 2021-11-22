@@ -40,10 +40,13 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| transaction_id_insite | [string](#string) |  | 站内交易ID |
-| transaction_id_chain | [string](#string) |  | 广播交易 ID |
+| transaction_type | [sphinx.proxy.v1.TransactionType](#sphinx.proxy.v1.TransactionType) |  | 交易类型： WalletNew, Signature, Balance, PreSign, Broadcast ； 创建账号、查询余额、交易状态更新 |
+| transaction_id_insite | [string](#string) |  | 交易ID |
+| transaction_id_chain | [string](#string) |  | 交易链上ID （如有） |
 | address | [string](#string) |  | 创建账号的地址 |
+| balance | [string](#string) |  | 查询账号的余额 |
 | is_okay | [bool](#bool) |  | 交易请求是否成功 |
+| error_message | [string](#string) |  | 报错或调试时返回信息 |
 
 
 
@@ -54,6 +57,11 @@
 
 ### ACKResponse
 
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| is_okay | [bool](#bool) |  | 是否收到请求 |
 
 
 

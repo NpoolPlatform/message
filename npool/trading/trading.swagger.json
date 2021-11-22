@@ -247,6 +247,9 @@
     "v1ACKRequest": {
       "type": "object",
       "properties": {
+        "transaction_type": {
+          "$ref": "#/definitions/v1TransactionType"
+        },
         "transaction_id_insite": {
           "type": "string"
         },
@@ -256,13 +259,24 @@
         "address": {
           "type": "string"
         },
+        "balance": {
+          "type": "string"
+        },
         "is_okay": {
           "type": "boolean"
+        },
+        "error_message": {
+          "type": "string"
         }
       }
     },
     "v1ACKResponse": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "is_okay": {
+          "type": "boolean"
+        }
+      }
     },
     "v1AccountAddress": {
       "type": "object",
@@ -433,6 +447,19 @@
         }
       },
       "title": "deprecated"
+    },
+    "v1TransactionType": {
+      "type": "string",
+      "enum": [
+        "Invalid",
+        "WalletNew",
+        "Signature",
+        "Balance",
+        "PreSign",
+        "Broadcast",
+        "RegisterCoin"
+      ],
+      "default": "Invalid"
     },
     "v1VersionResponse": {
       "type": "object",

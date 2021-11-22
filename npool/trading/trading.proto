@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/trading";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
+import "npool/signproxy/signproxy.proto";
 
 // 交易服务
 service Trading {
@@ -136,13 +137,17 @@ message ApplyTransactionRequest {
 // }
 
 message ACKRequest {
-	string transaction_id_insite = 1; // 站内交易ID
-	string transaction_id_chain = 2; // 广播交易 ID
-	string address = 3; // 创建账号的地址
-	bool is_okay = 4; // 交易请求是否成功
+	sphinx.proxy.v1.TransactionType transaction_type = 1; // 交易类型： WalletNew, Signature, Balance, PreSign, Broadcast ； 创建账号、查询余额、交易状态更新
+	string transaction_id_insite = 2; // 交易ID
+	string transaction_id_chain = 3; // 交易链上ID （如有）
+	string address = 4; // 创建账号的地址
+	string balance = 5; // 查询账号的余额
+	bool is_okay = 6; // 交易请求是否成功
+	string error_message = 7; // 报错或调试时返回信息
 }
 
 message ACKResponse {
+	bool is_okay = 1; // 是否收到请求
 }
 
 // deprecated
