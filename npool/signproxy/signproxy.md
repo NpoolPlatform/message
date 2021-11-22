@@ -35,6 +35,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
+| TransactionIDInsite | [string](#string) |  |  |
 | Address | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 | Signature | [sphinx.plugin.v1.Signature](#sphinx.plugin.v1.Signature) |  |  |
@@ -54,6 +55,7 @@ RegisterCoin ..
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
+| TransactionIDInsite | [string](#string) |  |  |
 | Nonce | [uint64](#uint64) |  |  |
 | CID | [string](#string) |  |  |
 | Balance | [string](#string) |  |  |
@@ -73,6 +75,7 @@ Sign WalletNew ..
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
+| TransactionIDInsite | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 
 
@@ -90,6 +93,7 @@ Sign WalletNew ..
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
+| TransactionIDInsite | [string](#string) |  |  |
 | Info | [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo) |  |  |
 
 

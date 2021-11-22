@@ -17,31 +17,35 @@ service SignProxy {
 message ProxyPluginResponse {
     sphinx.plugin.v1.CoinType CoinType          = 100;
     TransactionType TransactionType             = 110;
-    uint64 Nonce                                = 120;
-    string CID                                  = 130;
-    string Balance                              = 140;
+    string TransactionIDInsite                  = 120;
+    uint64 Nonce                                = 130;
+    string CID                                  = 140;
+    string Balance                              = 150;
 }
 
 // MpoolGetNonce WalletBalance MpoolPush ..
 message ProxyPluginRequest {
     sphinx.plugin.v1.CoinType CoinType          = 100;
     TransactionType TransactionType             = 110;
-    string Address                              = 120;
-    sphinx.plugin.v1.UnsignedMessage Message    = 130;
-    sphinx.plugin.v1.Signature       Signature  = 140;
+    string TransactionIDInsite                  = 120;
+    string Address                              = 130;
+    sphinx.plugin.v1.UnsignedMessage Message    = 140;
+    sphinx.plugin.v1.Signature       Signature  = 150;
 }
 
 // Sign WalletNew ..
 message ProxySignRequest {
     sphinx.plugin.v1.CoinType CoinType          = 100;
     TransactionType TransactionType             = 110;
+    string TransactionIDInsite                  = 120;
     sphinx.plugin.v1.UnsignedMessage Message    = 130;
 }
 
 message ProxySignResponse {
     sphinx.plugin.v1.CoinType CoinType          = 100;
     TransactionType TransactionType             = 110;
-    ProxySignResponseInfo Info                  = 120;
+    string TransactionIDInsite                  = 120;
+    ProxySignResponseInfo Info                  = 130;
 }
 
 message ProxySignResponseInfo {

@@ -88,6 +88,9 @@
         "TransactionType": {
           "$ref": "#/definitions/v1TransactionType"
         },
+        "TransactionIDInsite": {
+          "type": "string"
+        },
         "Address": {
           "type": "string"
         },
@@ -108,6 +111,9 @@
         },
         "TransactionType": {
           "$ref": "#/definitions/v1TransactionType"
+        },
+        "TransactionIDInsite": {
+          "type": "string"
         },
         "Message": {
           "$ref": "#/definitions/v1UnsignedMessage"
