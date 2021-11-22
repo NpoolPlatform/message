@@ -45,7 +45,7 @@
       }
     },
     "/v1/get/coin/info": {
-      "get": {
+      "post": {
         "summary": "获取单个币种",
         "operationId": "SphinxCoinInfo_GetCoinInfo",
         "responses": {
@@ -64,10 +64,12 @@
         },
         "parameters": [
           {
-            "name": "ID",
-            "in": "query",
-            "required": false,
-            "type": "string"
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinInfoRequest"
+            }
           }
         ],
         "tags": [
@@ -76,7 +78,7 @@
       }
     },
     "/v1/get/coin/infos": {
-      "get": {
+      "post": {
         "summary": "获取币种信息",
         "operationId": "SphinxCoinInfo_GetCoinInfos",
         "responses": {
@@ -93,6 +95,16 @@
             }
           }
         },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
+            }
+          }
+        ],
         "tags": [
           "SphinxCoinInfo"
         ]
@@ -201,6 +213,15 @@
           "$ref": "#/definitions/v1CoinInfo"
         }
       }
+    },
+    "v1GetCoinInfoRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      },
+      "title": "获取单个币种"
     },
     "v1GetCoinInfoResponse": {
       "type": "object",

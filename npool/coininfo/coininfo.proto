@@ -19,14 +19,18 @@ service SphinxCoinInfo {
 	// 获取币种信息
 	rpc GetCoinInfos (google.protobuf.Empty) returns (GetCoinInfosResponse){
 		option (google.api.http) = {
-			get: "/v1/get/coin/infos"
+			post: "/v1/get/coin/infos"
+            body: "*"
 		};
 	}
 	// 获取单个币种
 	rpc GetCoinInfo (GetCoinInfoRequest) returns (GetCoinInfoResponse) {
 		option (google.api.http) = {
-			get: "/v1/get/coin/info"
-		};}
+			post: "/v1/get/coin/info"
+            body: "*"
+		};
+    }
+
 	// 设置币种是否预售
 	rpc UpdateCoinInfo (UpdateCoinInfoRequest) returns (UpdateCoinInfoResponse) {
 		option (google.api.http) = {
