@@ -7,6 +7,7 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -28,6 +29,8 @@ type TradingClient interface {
 	GetInsiteTxStatus(ctx context.Context, in *GetInsiteTxStatusRequest, opts ...grpc.CallOption) (*GetInsiteTxStatusResponse, error)
 	// 接收ack
 	ACK(ctx context.Context, in *ACKRequest, opts ...grpc.CallOption) (*ACKResponse, error)
+	// ping - pong
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
 }
 
 type tradingClient struct {
@@ -83,6 +86,15 @@ func (c *tradingClient) ACK(ctx context.Context, in *ACKRequest, opts ...grpc.Ca
 	return out, nil
 }
 
+func (c *tradingClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error) {
+	out := new(VersionResponse)
+	err := c.cc.Invoke(ctx, "/sphinx.v1.Trading/Version", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TradingServer is the server API for Trading service.
 // All implementations must embed UnimplementedTradingServer
 // for forward compatibility
@@ -97,6 +109,8 @@ type TradingServer interface {
 	GetInsiteTxStatus(context.Context, *GetInsiteTxStatusRequest) (*GetInsiteTxStatusResponse, error)
 	// 接收ack
 	ACK(context.Context, *ACKRequest) (*ACKResponse, error)
+	// ping - pong
+	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
 	mustEmbedUnimplementedTradingServer()
 }
 
@@ -118,6 +132,9 @@ func (UnimplementedTradingServer) GetInsiteTxStatus(context.Context, *GetInsiteT
 }
 func (UnimplementedTradingServer) ACK(context.Context, *ACKRequest) (*ACKResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ACK not implemented")
+}
+func (UnimplementedTradingServer) Version(context.Context, *emptypb.Empty) (*VersionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
 func (UnimplementedTradingServer) mustEmbedUnimplementedTradingServer() {}
 
@@ -222,6 +239,24 @@ func _Trading_ACK_Handler(srv interface{}, ctx context.Context, dec func(interfa
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Trading_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(emptypb.Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TradingServer).Version(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/sphinx.v1.Trading/Version",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TradingServer).Version(ctx, req.(*emptypb.Empty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Trading_ServiceDesc is the grpc.ServiceDesc for Trading service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -248,6 +283,10 @@ var Trading_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ACK",
 			Handler:    _Trading_ACK_Handler,
+		},
+		{
+			MethodName: "Version",
+			Handler:    _Trading_Version_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

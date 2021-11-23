@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/trading";
 
 import "google/api/annotations.proto";
 import "npool/signproxy/signproxy.proto";
+import "google/protobuf/empty.proto";
 
 // 交易服务
 service Trading {
@@ -39,6 +40,14 @@ service Trading {
 			post: "/v1/internal/ack"
 			body: "*"
 		};}
+	// ping - pong
+  rpc Version (google.protobuf.Empty) returns (VersionResponse){
+    option (google.api.http) = {
+        post: "/version"
+        body: "*"
+    };
+  }
+
 }
 
 // share account structure

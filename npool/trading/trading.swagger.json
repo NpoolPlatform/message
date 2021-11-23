@@ -175,6 +175,39 @@
           "Trading"
         ]
       }
+    },
+    "/version": {
+      "post": {
+        "summary": "ping - pong",
+        "operationId": "Trading_Version",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
+            }
+          }
+        ],
+        "tags": [
+          "Trading"
+        ]
+      }
     }
   },
   "definitions": {
@@ -421,6 +454,15 @@
         "RegisterCoin"
       ],
       "default": "Invalid"
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      },
+      "title": "request body and response"
     }
   }
 }
