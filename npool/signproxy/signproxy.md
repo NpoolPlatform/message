@@ -59,6 +59,7 @@ RegisterCoin ..
 | Nonce | [uint64](#uint64) |  |  |
 | CID | [string](#string) |  |  |
 | Balance | [uint64](#uint64) |  |  |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 
 
 
