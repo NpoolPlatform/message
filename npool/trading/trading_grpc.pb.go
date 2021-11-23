@@ -7,7 +7,6 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -287,94 +286,6 @@ var Trading_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ACK",
 			Handler:    _Trading_ACK_Handler,
-		},
-	},
-	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/trading/trading.proto",
-}
-
-// ServiceExampleClient is the client API for ServiceExample service.
-//
-// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type ServiceExampleClient interface {
-	// Method Version
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
-}
-
-type serviceExampleClient struct {
-	cc grpc.ClientConnInterface
-}
-
-func NewServiceExampleClient(cc grpc.ClientConnInterface) ServiceExampleClient {
-	return &serviceExampleClient{cc}
-}
-
-func (c *serviceExampleClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error) {
-	out := new(VersionResponse)
-	err := c.cc.Invoke(ctx, "/sphinx.v1.ServiceExample/Version", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-// ServiceExampleServer is the server API for ServiceExample service.
-// All implementations must embed UnimplementedServiceExampleServer
-// for forward compatibility
-type ServiceExampleServer interface {
-	// Method Version
-	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
-	mustEmbedUnimplementedServiceExampleServer()
-}
-
-// UnimplementedServiceExampleServer must be embedded to have forward compatible implementations.
-type UnimplementedServiceExampleServer struct {
-}
-
-func (UnimplementedServiceExampleServer) Version(context.Context, *emptypb.Empty) (*VersionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
-}
-func (UnimplementedServiceExampleServer) mustEmbedUnimplementedServiceExampleServer() {}
-
-// UnsafeServiceExampleServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ServiceExampleServer will
-// result in compilation errors.
-type UnsafeServiceExampleServer interface {
-	mustEmbedUnimplementedServiceExampleServer()
-}
-
-func RegisterServiceExampleServer(s grpc.ServiceRegistrar, srv ServiceExampleServer) {
-	s.RegisterService(&ServiceExample_ServiceDesc, srv)
-}
-
-func _ServiceExample_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(emptypb.Empty)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ServiceExampleServer).Version(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/sphinx.v1.ServiceExample/Version",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ServiceExampleServer).Version(ctx, req.(*emptypb.Empty))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-// ServiceExample_ServiceDesc is the grpc.ServiceDesc for ServiceExample service.
-// It's only intended for direct use with grpc.RegisterService,
-// and not to be introspected or modified (even as a copy)
-var ServiceExample_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "sphinx.v1.ServiceExample",
-	HandlerType: (*ServiceExampleServer)(nil),
-	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "Version",
-			Handler:    _ServiceExample_Version_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

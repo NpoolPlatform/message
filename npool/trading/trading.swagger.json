@@ -175,39 +175,6 @@
           "Trading"
         ]
       }
-    },
-    "/version": {
-      "post": {
-        "summary": "Method Version",
-        "operationId": "ServiceExample_Version",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1VersionResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "properties": {}
-            }
-          }
-        ],
-        "tags": [
-          "ServiceExample"
-        ]
-      }
     }
   },
   "definitions": {
@@ -286,7 +253,7 @@
     "v1AccountTxJSON": {
       "type": "object",
       "properties": {
-        "json": {
+        "JSON": {
           "type": "string"
         }
       },
@@ -295,10 +262,10 @@
     "v1CreateAccountRequest": {
       "type": "object",
       "properties": {
-        "coin_name": {
+        "CoinName": {
           "type": "string"
         },
-        "uuid": {
+        "UUID": {
           "type": "string"
         }
       },
@@ -307,14 +274,8 @@
     "v1CreateAccountResponse": {
       "type": "object",
       "properties": {
-        "coin_name": {
-          "type": "string"
-        },
-        "address": {
-          "type": "string"
-        },
-        "uuid": {
-          "type": "string"
+        "Info": {
+          "$ref": "#/definitions/v1EntAccount"
         }
       },
       "title": "CreateAccount 返回"
@@ -322,31 +283,31 @@
     "v1CreateTransactionRequest": {
       "type": "object",
       "properties": {
-        "coin_name": {
+        "TransactionIDInsite": {
           "type": "string"
         },
-        "transaction_id_insite": {
+        "CoinName": {
           "type": "string"
         },
-        "address_from": {
+        "AddressFrom": {
           "type": "string"
         },
-        "address_to": {
+        "AddressTo": {
           "type": "string"
         },
-        "amount_float64": {
+        "AmountFloat64": {
           "type": "number",
           "format": "double"
         },
-        "type": {
+        "InsiteTxType": {
           "type": "string"
         },
-        "uuid_signature": {
-          "type": "string"
-        },
-        "createtime_utc": {
+        "CreatetimeUTC": {
           "type": "string",
           "format": "int64"
+        },
+        "UUIDSignature": {
+          "type": "string"
         }
       },
       "title": "CreateTransaction 参数"
@@ -354,22 +315,89 @@
     "v1CreateTransactionResponse": {
       "type": "object",
       "properties": {
-        "info": {
+        "Code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Info": {
           "type": "string"
         }
+      }
+    },
+    "v1EntAccount": {
+      "type": "object",
+      "properties": {
+        "CoinName": {
+          "type": "string"
+        },
+        "UUID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "AmountFloat64": {
+          "type": "number",
+          "format": "double"
+        }
       },
-      "title": "deprecated"
+      "title": "share account structure"
+    },
+    "v1EntTx": {
+      "type": "object",
+      "properties": {
+        "TransactionIDInsite": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "AmountFloat64": {
+          "type": "number",
+          "format": "double"
+        },
+        "AddressFrom": {
+          "type": "string"
+        },
+        "AddressTo": {
+          "type": "string"
+        },
+        "InsiteTxType": {
+          "type": "string"
+        },
+        "TransactionIDChain": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "CreatetimeUTC": {
+          "type": "string",
+          "format": "int64"
+        },
+        "UpdatetimeUTC": {
+          "type": "string",
+          "format": "int64"
+        },
+        "Succeeded": {
+          "type": "boolean"
+        },
+        "Failed": {
+          "type": "boolean"
+        }
+      },
+      "title": "share transaction structure"
     },
     "v1GetBalanceRequest": {
       "type": "object",
       "properties": {
-        "coin_name": {
+        "CoinName": {
           "type": "string"
         },
-        "address": {
+        "Address": {
           "type": "string"
         },
-        "timestamp_utc": {
+        "TimestampUTC": {
           "type": "string",
           "format": "int64"
         }
@@ -379,19 +407,8 @@
     "v1GetBalanceResponse": {
       "type": "object",
       "properties": {
-        "coin_name": {
-          "type": "string"
-        },
-        "address": {
-          "type": "string"
-        },
-        "timestamp_utc": {
-          "type": "string",
-          "format": "int64"
-        },
-        "amount_float64": {
-          "type": "number",
-          "format": "double"
+        "Info": {
+          "$ref": "#/definitions/v1EntAccount"
         }
       },
       "title": "GetBalance 返回"
@@ -399,7 +416,7 @@
     "v1GetInsiteTxStatusRequest": {
       "type": "object",
       "properties": {
-        "transaction_id_insite": {
+        "TransactionIDInsite": {
           "type": "string"
         }
       },
@@ -408,47 +425,8 @@
     "v1GetInsiteTxStatusResponse": {
       "type": "object",
       "properties": {
-        "transaction_id_insite": {
-          "type": "string"
-        },
-        "coin_name": {
-          "type": "string"
-        },
-        "amount_float64": {
-          "type": "number",
-          "format": "double"
-        },
-        "address_from": {
-          "type": "string"
-        },
-        "address_to": {
-          "type": "string"
-        },
-        "insite_tx_type": {
-          "type": "string"
-        },
-        "transaction_id_chain": {
-          "type": "string"
-        },
-        "status": {
-          "type": "string"
-        },
-        "is_processing": {
-          "type": "boolean"
-        },
-        "createtime_utc": {
-          "type": "string",
-          "format": "int64"
-        },
-        "updatetime_utc": {
-          "type": "string",
-          "format": "int64"
-        },
-        "is_success": {
-          "type": "boolean"
-        },
-        "is_failed": {
-          "type": "boolean"
+        "Info": {
+          "$ref": "#/definitions/v1EntTx"
         }
       },
       "title": "GetInsiteTxStatus 返回"
@@ -466,15 +444,6 @@
         "RegisterCoin"
       ],
       "default": "Invalid"
-    },
-    "v1VersionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "string"
-        }
-      },
-      "title": "request body and response"
     }
   }
 }

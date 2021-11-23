@@ -11,6 +11,8 @@
     - [CreateAccountResponse](#sphinx.v1.CreateAccountResponse)
     - [CreateTransactionRequest](#sphinx.v1.CreateTransactionRequest)
     - [CreateTransactionResponse](#sphinx.v1.CreateTransactionResponse)
+    - [EntAccount](#sphinx.v1.EntAccount)
+    - [EntTx](#sphinx.v1.EntTx)
     - [GetBalanceRequest](#sphinx.v1.GetBalanceRequest)
     - [GetBalanceResponse](#sphinx.v1.GetBalanceResponse)
     - [GetInsiteTxStatusRequest](#sphinx.v1.GetInsiteTxStatusRequest)
@@ -18,7 +20,6 @@
     - [GetTxJSONRequest](#sphinx.v1.GetTxJSONRequest)
     - [VersionResponse](#sphinx.v1.VersionResponse)
   
-    - [ServiceExample](#sphinx.v1.ServiceExample)
     - [Trading](#sphinx.v1.Trading)
   
 - [Scalar Value Types](#scalar-value-types)
@@ -77,7 +78,7 @@ GetTxJSONRequest 返回
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| json | [string](#string) |  | disabled for now |
+| JSON | [string](#string) |  | disabled for now |
 
 
 
@@ -92,8 +93,8 @@ CreateAccount 参数
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_name | [string](#string) |  | 币种名称(唯一) |
-| uuid | [string](#string) |  | user_id或与其绑定的唯一标识符 |
+| CoinName | [string](#string) |  | 币种名称(唯一) |
+| UUID | [string](#string) |  | 当前取UserID |
 
 
 
@@ -108,9 +109,7 @@ CreateAccount 返回
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_name | [string](#string) |  | 币种名称(唯一) |
-| address | [string](#string) |  | 创建的钱包地址 |
-| uuid | [string](#string) |  | uuid将关联私钥，提高整体安全性 |
+| Info | [EntAccount](#sphinx.v1.EntAccount) |  |  |
 
 
 
@@ -125,14 +124,14 @@ CreateTransaction 参数
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_name | [string](#string) |  | 币种名称(唯一) |
-| transaction_id_insite | [string](#string) |  | 站内交易ID |
-| address_from | [string](#string) |  | 发送方 |
-| address_to | [string](#string) |  | 接收方 |
-| amount_float64 | [double](#double) |  | 不入库的参考金额 |
-| type | [string](#string) |  | recharge, payment, withdraw |
-| uuid_signature | [string](#string) |  | 2FA的时效性验证码，前期可以留空 |
-| createtime_utc | [int64](#int64) |  | 用户提交请求时的时间戳，与2FA绑定 |
+| TransactionIDInsite | [string](#string) |  | 站内交易ID |
+| CoinName | [string](#string) |  | 币种名称(唯一) |
+| AddressFrom | [string](#string) |  | 发送方 |
+| AddressTo | [string](#string) |  | 接收方 |
+| AmountFloat64 | [double](#double) |  | 不入库的参考金额 |
+| InsiteTxType | [string](#string) |  | recharge, payment, withdraw, unknown |
+| CreatetimeUTC | [int64](#int64) |  | 用户提交请求时的时间戳，与2FA绑定 |
+| UUIDSignature | [string](#string) |  | 2FA的时效性验证码，前期可以留空 |
 
 
 
@@ -142,12 +141,57 @@ CreateTransaction 参数
 <a name="sphinx.v1.CreateTransactionResponse"></a>
 
 ### CreateTransactionResponse
-deprecated
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| info | [string](#string) |  | &#34;success&#34; |
+| Code | [int32](#int32) |  |  |
+| Info | [string](#string) |  | &#34;success&#34; |
+
+
+
+
+
+
+<a name="sphinx.v1.EntAccount"></a>
+
+### EntAccount
+share account structure
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinName | [string](#string) |  | 币种名称(唯一) |
+| UUID | [string](#string) |  | 当前取UserID |
+| Address | [string](#string) |  | 钱包地址，创建时填空 |
+| AmountFloat64 | [double](#double) |  | 长整型金额 |
+
+
+
+
+
+
+<a name="sphinx.v1.EntTx"></a>
+
+### EntTx
+share transaction structure
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TransactionIDInsite | [string](#string) |  | 站内交易ID |
+| CoinName | [string](#string) |  | 币种名称(唯一) |
+| AmountFloat64 | [double](#double) |  | 不入库的参考金额 |
+| AddressFrom | [string](#string) |  | 发送方 |
+| AddressTo | [string](#string) |  | 接收方 |
+| InsiteTxType | [string](#string) |  | recharge, payment, withdraw, unknown |
+| TransactionIDChain | [string](#string) |  | 公链交易ID（如有） |
+| Status | [string](#string) |  | 为done则成功；全部状态：&#34;pending_review&#34;, &#34;pending_process&#34;, &#34;pending_signinfo&#34;, &#34;pending_sign&#34;, &#34;pending_broadcast&#34;, &#34;pending_confirm&#34;, &#34;done&#34;, &#34;rejected&#34;, &#34;error&#34;, &#34;error_expected&#34; |
+| CreatetimeUTC | [int64](#int64) |  | 创建时间 |
+| UpdatetimeUTC | [int64](#int64) |  | 上次更新时间 |
+| Succeeded | [bool](#bool) |  | 便于调用方判断 |
+| Failed | [bool](#bool) |  | 不success不fail就是pending了 |
 
 
 
@@ -162,9 +206,9 @@ GetBalance 参数
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_name | [string](#string) |  | 币种名称(唯一) |
-| address | [string](#string) |  | 查询的钱包地址 |
-| timestamp_utc | [int64](#int64) |  | 长整型时间戳 |
+| CoinName | [string](#string) |  | 币种名称(唯一) |
+| Address | [string](#string) |  | 查询的钱包地址 |
+| TimestampUTC | [int64](#int64) |  | 长整型时间戳 |
 
 
 
@@ -179,10 +223,7 @@ GetBalance 返回
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_name | [string](#string) |  | 币种名称(唯一) |
-| address | [string](#string) |  | 查询的钱包地址 |
-| timestamp_utc | [int64](#int64) |  | 长整型时间戳 |
-| amount_float64 | [double](#double) |  | 余额 |
+| Info | [EntAccount](#sphinx.v1.EntAccount) |  |  |
 
 
 
@@ -197,7 +238,7 @@ GetInsiteTxStatus 参数
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| transaction_id_insite | [string](#string) |  | 站内交易ID |
+| TransactionIDInsite | [string](#string) |  | 站内交易ID |
 
 
 
@@ -212,19 +253,7 @@ GetInsiteTxStatus 返回
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| transaction_id_insite | [string](#string) |  | 站内交易ID |
-| coin_name | [string](#string) |  | 币种名称(唯一) |
-| amount_float64 | [double](#double) |  | 不入库的参考金额 |
-| address_from | [string](#string) |  | 发送方 |
-| address_to | [string](#string) |  | 接收方 |
-| insite_tx_type | [string](#string) |  | recharge, payment, withdraw, unknown |
-| transaction_id_chain | [string](#string) |  | 公链交易ID（如有） |
-| status | [string](#string) |  | 为done则成功；全部状态：&#34;pending_review&#34;, &#34;pending_process&#34;, &#34;pending_signinfo&#34;, &#34;pending_sign&#34;, &#34;pending_broadcast&#34;, &#34;pending_confirm&#34;, &#34;done&#34;, &#34;rejected&#34;, &#34;error&#34;, &#34;error_expected&#34; |
-| is_processing | [bool](#bool) |  | 对应数据库中mutex |
-| createtime_utc | [int64](#int64) |  | 创建时间 |
-| updatetime_utc | [int64](#int64) |  | 上次更新时间 |
-| is_success | [bool](#bool) |  | 便于调用方判断 |
-| is_failed | [bool](#bool) |  | 不success不fail就是pending了 |
+| Info | [EntTx](#sphinx.v1.EntTx) |  |  |
 
 
 
@@ -239,13 +268,12 @@ GetTxJSONRequest 参数
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| coin_name | [string](#string) |  | 继承钱包节点基础功能，预留
+| CoinName | [string](#string) |  | 预留，当前版本未实现，继承钱包节点基础功能
 
 币种名称(唯一) |
-| address | [string](#string) |  | 要查询的钱包地址 |
-| timefrom_utc | [int64](#int64) |  | 开始时间 |
-| timetill_utc | [int64](#int64) |  | 结束时间 |
-| limit_n | [int32](#int32) |  | 服务端限制返回条数 |
+| Address | [string](#string) |  | 要查询的钱包地址 |
+| TimefromUTC | [int64](#int64) |  | 开始时间 |
+| TimetillUTC | [int64](#int64) |  | 结束时间 |
 
 
 
@@ -271,16 +299,6 @@ request body and response
  
 
  
-
-
-<a name="sphinx.v1.ServiceExample"></a>
-
-### ServiceExample
-
-
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#sphinx.v1.VersionResponse) | Method Version |
 
 
 <a name="sphinx.v1.Trading"></a>
