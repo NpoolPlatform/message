@@ -46,6 +46,7 @@ message CoinInfo {
 	bool PreSale = 3; // 是否为预售，false为在售商品
 	string Name = 4; // 币种名称 unique eg:Filecoin
 	string Unit = 5; // 单位：FIL
+	string LogoImage = 6; // url; can be empty
 }
 
 // 获取单个币种

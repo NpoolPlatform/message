@@ -41,6 +41,7 @@
 | PreSale | [bool](#bool) |  | 是否为预售，false为在售商品 |
 | Name | [string](#string) |  | 币种名称 unique eg:Filecoin |
 | Unit | [string](#string) |  | 单位：FIL |
+| LogoImage | [string](#string) |  | url; can be empty |
 
 
 
