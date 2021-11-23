@@ -20,13 +20,13 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type TradingClient interface {
 	// 创建账户
-	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
+	CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error)
 	// 余额查询
-	GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error)
+	GetWalletBalance(ctx context.Context, in *GetWalletBalanceRequest, opts ...grpc.CallOption) (*GetWalletBalanceResponse, error)
 	// 转账 / 提现
 	CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*CreateTransactionResponse, error)
 	// 交易状态查询
-	GetInsiteTxStatus(ctx context.Context, in *GetInsiteTxStatusRequest, opts ...grpc.CallOption) (*GetInsiteTxStatusResponse, error)
+	GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionResponse, error)
 	// 接收ack
 	ACK(ctx context.Context, in *ACKRequest, opts ...grpc.CallOption) (*ACKResponse, error)
 	// ping - pong
@@ -41,18 +41,18 @@ func NewTradingClient(cc grpc.ClientConnInterface) TradingClient {
 	return &tradingClient{cc}
 }
 
-func (c *tradingClient) CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error) {
-	out := new(CreateAccountResponse)
-	err := c.cc.Invoke(ctx, "/sphinx.v1.Trading/CreateAccount", in, out, opts...)
+func (c *tradingClient) CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error) {
+	out := new(CreateWalletResponse)
+	err := c.cc.Invoke(ctx, "/sphinx.v1.Trading/CreateWallet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingClient) GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error) {
-	out := new(GetBalanceResponse)
-	err := c.cc.Invoke(ctx, "/sphinx.v1.Trading/GetBalance", in, out, opts...)
+func (c *tradingClient) GetWalletBalance(ctx context.Context, in *GetWalletBalanceRequest, opts ...grpc.CallOption) (*GetWalletBalanceResponse, error) {
+	out := new(GetWalletBalanceResponse)
+	err := c.cc.Invoke(ctx, "/sphinx.v1.Trading/GetWalletBalance", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -68,9 +68,9 @@ func (c *tradingClient) CreateTransaction(ctx context.Context, in *CreateTransac
 	return out, nil
 }
 
-func (c *tradingClient) GetInsiteTxStatus(ctx context.Context, in *GetInsiteTxStatusRequest, opts ...grpc.CallOption) (*GetInsiteTxStatusResponse, error) {
-	out := new(GetInsiteTxStatusResponse)
-	err := c.cc.Invoke(ctx, "/sphinx.v1.Trading/GetInsiteTxStatus", in, out, opts...)
+func (c *tradingClient) GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionResponse, error) {
+	out := new(GetTransactionResponse)
+	err := c.cc.Invoke(ctx, "/sphinx.v1.Trading/GetTransaction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -100,13 +100,13 @@ func (c *tradingClient) Version(ctx context.Context, in *emptypb.Empty, opts ...
 // for forward compatibility
 type TradingServer interface {
 	// 创建账户
-	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
+	CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error)
 	// 余额查询
-	GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error)
+	GetWalletBalance(context.Context, *GetWalletBalanceRequest) (*GetWalletBalanceResponse, error)
 	// 转账 / 提现
 	CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionResponse, error)
 	// 交易状态查询
-	GetInsiteTxStatus(context.Context, *GetInsiteTxStatusRequest) (*GetInsiteTxStatusResponse, error)
+	GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error)
 	// 接收ack
 	ACK(context.Context, *ACKRequest) (*ACKResponse, error)
 	// ping - pong
@@ -118,17 +118,17 @@ type TradingServer interface {
 type UnimplementedTradingServer struct {
 }
 
-func (UnimplementedTradingServer) CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAccount not implemented")
+func (UnimplementedTradingServer) CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateWallet not implemented")
 }
-func (UnimplementedTradingServer) GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetBalance not implemented")
+func (UnimplementedTradingServer) GetWalletBalance(context.Context, *GetWalletBalanceRequest) (*GetWalletBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetWalletBalance not implemented")
 }
 func (UnimplementedTradingServer) CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTransaction not implemented")
 }
-func (UnimplementedTradingServer) GetInsiteTxStatus(context.Context, *GetInsiteTxStatusRequest) (*GetInsiteTxStatusResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetInsiteTxStatus not implemented")
+func (UnimplementedTradingServer) GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTransaction not implemented")
 }
 func (UnimplementedTradingServer) ACK(context.Context, *ACKRequest) (*ACKResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ACK not implemented")
@@ -149,38 +149,38 @@ func RegisterTradingServer(s grpc.ServiceRegistrar, srv TradingServer) {
 	s.RegisterService(&Trading_ServiceDesc, srv)
 }
 
-func _Trading_CreateAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAccountRequest)
+func _Trading_CreateWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateWalletRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingServer).CreateAccount(ctx, in)
+		return srv.(TradingServer).CreateWallet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sphinx.v1.Trading/CreateAccount",
+		FullMethod: "/sphinx.v1.Trading/CreateWallet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServer).CreateAccount(ctx, req.(*CreateAccountRequest))
+		return srv.(TradingServer).CreateWallet(ctx, req.(*CreateWalletRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Trading_GetBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetBalanceRequest)
+func _Trading_GetWalletBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWalletBalanceRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingServer).GetBalance(ctx, in)
+		return srv.(TradingServer).GetWalletBalance(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sphinx.v1.Trading/GetBalance",
+		FullMethod: "/sphinx.v1.Trading/GetWalletBalance",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServer).GetBalance(ctx, req.(*GetBalanceRequest))
+		return srv.(TradingServer).GetWalletBalance(ctx, req.(*GetWalletBalanceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -203,20 +203,20 @@ func _Trading_CreateTransaction_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Trading_GetInsiteTxStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetInsiteTxStatusRequest)
+func _Trading_GetTransaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTransactionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingServer).GetInsiteTxStatus(ctx, in)
+		return srv.(TradingServer).GetTransaction(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sphinx.v1.Trading/GetInsiteTxStatus",
+		FullMethod: "/sphinx.v1.Trading/GetTransaction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServer).GetInsiteTxStatus(ctx, req.(*GetInsiteTxStatusRequest))
+		return srv.(TradingServer).GetTransaction(ctx, req.(*GetTransactionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -265,20 +265,20 @@ var Trading_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*TradingServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateAccount",
-			Handler:    _Trading_CreateAccount_Handler,
+			MethodName: "CreateWallet",
+			Handler:    _Trading_CreateWallet_Handler,
 		},
 		{
-			MethodName: "GetBalance",
-			Handler:    _Trading_GetBalance_Handler,
+			MethodName: "GetWalletBalance",
+			Handler:    _Trading_GetWalletBalance_Handler,
 		},
 		{
 			MethodName: "CreateTransaction",
 			Handler:    _Trading_CreateTransaction_Handler,
 		},
 		{
-			MethodName: "GetInsiteTxStatus",
-			Handler:    _Trading_GetInsiteTxStatus_Handler,
+			MethodName: "GetTransaction",
+			Handler:    _Trading_GetTransaction_Handler,
 		},
 		{
 			MethodName: "ACK",

@@ -11,13 +11,13 @@ import "google/protobuf/empty.proto";
 // 交易服务
 service Trading {
 	// 创建账户
-	rpc CreateAccount (CreateAccountRequest) returns (CreateAccountResponse) {
+	rpc CreateWallet (CreateWalletRequest) returns (CreateWalletResponse) {
 		option (google.api.http) = {
 			post: "/v1/create/wallet"
 			body: "*"
 		};}
 	// 余额查询
-	rpc GetBalance (GetBalanceRequest) returns (GetBalanceResponse) {
+	rpc GetWalletBalance (GetWalletBalanceRequest) returns (GetWalletBalanceResponse) {
 		option (google.api.http) = {
 			post: "/v1/get/wallet/balance"
 			body: "*"
@@ -29,7 +29,7 @@ service Trading {
 			body: "*"
 		};}
 	// 交易状态查询
-	rpc GetInsiteTxStatus (GetInsiteTxStatusRequest) returns (GetInsiteTxStatusResponse) {
+	rpc GetTransaction (GetTransactionRequest) returns (GetTransactionResponse) {
 		option (google.api.http) = {
 			post: "/v1/get/transaction"
 			body: "*"
@@ -58,24 +58,24 @@ message EntAccount {
 	string Address = 3;
 }
 
-// CreateAccount 参数
-message CreateAccountRequest {
+// CreateWallet 参数
+message CreateWalletRequest {
 	// 币种名称(唯一)
 	string CoinName = 1;
 	// 当前取UserID
 	string UUID = 2;
 }
-// CreateAccount 返回
-message CreateAccountResponse {
+// CreateWallet 返回
+message CreateWalletResponse {
 	EntAccount Info = 1;
 }
 
-// GetBalance 参数
-message GetBalanceRequest {
+// GetWalletBalance 参数
+message GetWalletBalanceRequest {
 	EntAccount Info = 1;
 }
-// GetBalance 返回
-message GetBalanceResponse {
+// GetWalletBalance 返回
+message GetWalletBalanceResponse {
 	EntAccount Info = 1;
 	double AmountFloat64 = 4; // 长整型金额
 }
@@ -98,13 +98,13 @@ message BaseTx {
 	int64 CreatetimeUTC = 12;
 }
 
-// GetInsiteTxStatus 参数
-message GetInsiteTxStatusRequest {
+// GetTransaction 参数
+message GetTransactionRequest {
 	// 站内交易ID
 	string TransactionIDInsite = 1;
 }
-// GetInsiteTxStatus 返回
-message GetInsiteTxStatusResponse {
+// GetTransaction 返回
+message GetTransactionResponse {
 	BaseTx Info = 1;
 	// 上次更新时间
 	int64 UpdatetimeUTC = 13;

@@ -47,12 +47,12 @@
     "/v1/create/wallet": {
       "post": {
         "summary": "创建账户",
-        "operationId": "Trading_CreateAccount",
+        "operationId": "Trading_CreateWallet",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAccountResponse"
+              "$ref": "#/definitions/v1CreateWalletResponse"
             }
           },
           "default": {
@@ -68,7 +68,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAccountRequest"
+              "$ref": "#/definitions/v1CreateWalletRequest"
             }
           }
         ],
@@ -80,12 +80,12 @@
     "/v1/get/transaction": {
       "post": {
         "summary": "交易状态查询",
-        "operationId": "Trading_GetInsiteTxStatus",
+        "operationId": "Trading_GetTransaction",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetInsiteTxStatusResponse"
+              "$ref": "#/definitions/v1GetTransactionResponse"
             }
           },
           "default": {
@@ -101,7 +101,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetInsiteTxStatusRequest"
+              "$ref": "#/definitions/v1GetTransactionRequest"
             }
           }
         ],
@@ -113,12 +113,12 @@
     "/v1/get/wallet/balance": {
       "post": {
         "summary": "余额查询",
-        "operationId": "Trading_GetBalance",
+        "operationId": "Trading_GetWalletBalance",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetBalanceResponse"
+              "$ref": "#/definitions/v1GetWalletBalanceResponse"
             }
           },
           "default": {
@@ -134,7 +134,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetBalanceRequest"
+              "$ref": "#/definitions/v1GetWalletBalanceRequest"
             }
           }
         ],
@@ -320,29 +320,6 @@
       },
       "title": "share transaction structure"
     },
-    "v1CreateAccountRequest": {
-      "type": "object",
-      "properties": {
-        "CoinName": {
-          "type": "string",
-          "title": "币种名称(唯一)"
-        },
-        "UUID": {
-          "type": "string",
-          "title": "当前取UserID"
-        }
-      },
-      "title": "CreateAccount 参数"
-    },
-    "v1CreateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1EntAccount"
-        }
-      },
-      "title": "CreateAccount 返回"
-    },
     "v1CreateTransactionRequest": {
       "type": "object",
       "properties": {
@@ -365,6 +342,29 @@
         }
       }
     },
+    "v1CreateWalletRequest": {
+      "type": "object",
+      "properties": {
+        "CoinName": {
+          "type": "string",
+          "title": "币种名称(唯一)"
+        },
+        "UUID": {
+          "type": "string",
+          "title": "当前取UserID"
+        }
+      },
+      "title": "CreateWallet 参数"
+    },
+    "v1CreateWalletResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EntAccount"
+        }
+      },
+      "title": "CreateWallet 返回"
+    },
     "v1EntAccount": {
       "type": "object",
       "properties": {
@@ -379,29 +379,7 @@
       },
       "title": "share account structure"
     },
-    "v1GetBalanceRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1EntAccount"
-        }
-      },
-      "title": "GetBalance 参数"
-    },
-    "v1GetBalanceResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1EntAccount"
-        },
-        "AmountFloat64": {
-          "type": "number",
-          "format": "double"
-        }
-      },
-      "title": "GetBalance 返回"
-    },
-    "v1GetInsiteTxStatusRequest": {
+    "v1GetTransactionRequest": {
       "type": "object",
       "properties": {
         "TransactionIDInsite": {
@@ -409,9 +387,9 @@
           "title": "站内交易ID"
         }
       },
-      "title": "GetInsiteTxStatus 参数"
+      "title": "GetTransaction 参数"
     },
-    "v1GetInsiteTxStatusResponse": {
+    "v1GetTransactionResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -439,7 +417,29 @@
           "title": "为done则成功；全部状态：\"pending_review\", \"pending_process\", \"pending_signinfo\", \"pending_sign\", \"pending_broadcast\", \"pending_confirm\", \"done\", \"rejected\", \"error\", \"error_expected\""
         }
       },
-      "title": "GetInsiteTxStatus 返回"
+      "title": "GetTransaction 返回"
+    },
+    "v1GetWalletBalanceRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EntAccount"
+        }
+      },
+      "title": "GetWalletBalance 参数"
+    },
+    "v1GetWalletBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EntAccount"
+        },
+        "AmountFloat64": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "title": "GetWalletBalance 返回"
     },
     "v1TransactionType": {
       "type": "string",
