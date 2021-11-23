@@ -179,17 +179,20 @@
           "format": "uint64"
         },
         "Value": {
-          "type": "string"
+          "type": "string",
+          "format": "uint64"
         },
         "GasLimit": {
           "type": "string",
           "format": "int64"
         },
         "GasFeeCap": {
-          "type": "string"
+          "type": "string",
+          "format": "uint64"
         },
         "GasPremium": {
-          "type": "string"
+          "type": "string",
+          "format": "uint64"
         },
         "Method": {
           "type": "string",

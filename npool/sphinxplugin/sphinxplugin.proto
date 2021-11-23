@@ -4,13 +4,6 @@ package sphinx.plugin.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/sphinxplugin";
 
-// 钱包代理插件
-service Plugin {
-  rpc MpoolGetNonce (MpoolGetNonceRequest) returns (MpoolGetNonceResponse) {}
-  rpc MpoolPush (MpoolPushRequest) returns (MpoolPushResponse) {}
-  rpc WalletBalance (WalletBalanceRequest) returns (WalletBalanceResponse) {}
-}
-
 enum CoinType {
   CoinTypeUnKnow  = 0;
   CoinTypeFIL     = 1;
@@ -22,11 +15,11 @@ message UnsignedMessage {
   string To               = 110;
   string From             = 120;
   uint64 Nonce            = 130;
-  string Value            = 140;
+  uint64 Value            = 140;
 
   int64 GasLimit          = 150;
-  string GasFeeCap        = 160;
-  string GasPremium       = 170;
+  uint64 GasFeeCap        = 160;
+  uint64 GasPremium       = 170;
   uint64 Method           = 180;
 
   bytes Params            = 190;
@@ -35,43 +28,4 @@ message UnsignedMessage {
 message Signature {
   string SignType = 100;//secp256k1
   bytes Data      = 110;
-}
-
-message MpoolGetNonceRequest {
-  CoinType CoinType   = 100;
-  string Address      = 110;
-}
-
-message MpoolGetNonceInfo {
-  uint64 Nonce = 100;
-}
-
-message MpoolGetNonceResponse {
-  MpoolGetNonceInfo Info = 100;
-}
-
-message MpoolPushRequest {
-  UnsignedMessage Message   = 100;
-	Signature       Signature = 110;
-}
-
-message MpoolPushInfo {
-  string CID = 100;
-}
-
-message MpoolPushResponse {
-  MpoolPushInfo Info = 100;
-}
-
-message WalletBalanceRequest {
-  CoinType CoinType   = 100;
-  string Address      = 110;
-}
-
-message WalletBalanceInfo {
-  string Balance = 100;
-}
-
-message WalletBalanceResponse {
-  WalletBalanceInfo Info = 100;
 }

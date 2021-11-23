@@ -4,21 +4,10 @@
 ## Table of Contents
 
 - [npool/sphinxplugin/sphinxplugin.proto](#npool/sphinxplugin/sphinxplugin.proto)
-    - [MpoolGetNonceInfo](#sphinx.plugin.v1.MpoolGetNonceInfo)
-    - [MpoolGetNonceRequest](#sphinx.plugin.v1.MpoolGetNonceRequest)
-    - [MpoolGetNonceResponse](#sphinx.plugin.v1.MpoolGetNonceResponse)
-    - [MpoolPushInfo](#sphinx.plugin.v1.MpoolPushInfo)
-    - [MpoolPushRequest](#sphinx.plugin.v1.MpoolPushRequest)
-    - [MpoolPushResponse](#sphinx.plugin.v1.MpoolPushResponse)
     - [Signature](#sphinx.plugin.v1.Signature)
     - [UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage)
-    - [WalletBalanceInfo](#sphinx.plugin.v1.WalletBalanceInfo)
-    - [WalletBalanceRequest](#sphinx.plugin.v1.WalletBalanceRequest)
-    - [WalletBalanceResponse](#sphinx.plugin.v1.WalletBalanceResponse)
   
     - [CoinType](#sphinx.plugin.v1.CoinType)
-  
-    - [Plugin](#sphinx.plugin.v1.Plugin)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -28,98 +17,6 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/sphinxplugin/sphinxplugin.proto
-
-
-
-<a name="sphinx.plugin.v1.MpoolGetNonceInfo"></a>
-
-### MpoolGetNonceInfo
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Nonce | [uint64](#uint64) |  |  |
-
-
-
-
-
-
-<a name="sphinx.plugin.v1.MpoolGetNonceRequest"></a>
-
-### MpoolGetNonceRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| CoinType | [CoinType](#sphinx.plugin.v1.CoinType) |  |  |
-| Address | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="sphinx.plugin.v1.MpoolGetNonceResponse"></a>
-
-### MpoolGetNonceResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [MpoolGetNonceInfo](#sphinx.plugin.v1.MpoolGetNonceInfo) |  |  |
-
-
-
-
-
-
-<a name="sphinx.plugin.v1.MpoolPushInfo"></a>
-
-### MpoolPushInfo
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| CID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="sphinx.plugin.v1.MpoolPushRequest"></a>
-
-### MpoolPushRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Message | [UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
-| Signature | [Signature](#sphinx.plugin.v1.Signature) |  |  |
-
-
-
-
-
-
-<a name="sphinx.plugin.v1.MpoolPushResponse"></a>
-
-### MpoolPushResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [MpoolPushInfo](#sphinx.plugin.v1.MpoolPushInfo) |  |  |
-
-
-
 
 
 
@@ -151,58 +48,12 @@
 | To | [string](#string) |  |  |
 | From | [string](#string) |  |  |
 | Nonce | [uint64](#uint64) |  |  |
-| Value | [string](#string) |  |  |
+| Value | [uint64](#uint64) |  |  |
 | GasLimit | [int64](#int64) |  |  |
-| GasFeeCap | [string](#string) |  |  |
-| GasPremium | [string](#string) |  |  |
+| GasFeeCap | [uint64](#uint64) |  |  |
+| GasPremium | [uint64](#uint64) |  |  |
 | Method | [uint64](#uint64) |  |  |
 | Params | [bytes](#bytes) |  |  |
-
-
-
-
-
-
-<a name="sphinx.plugin.v1.WalletBalanceInfo"></a>
-
-### WalletBalanceInfo
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Balance | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="sphinx.plugin.v1.WalletBalanceRequest"></a>
-
-### WalletBalanceRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| CoinType | [CoinType](#sphinx.plugin.v1.CoinType) |  |  |
-| Address | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="sphinx.plugin.v1.WalletBalanceResponse"></a>
-
-### WalletBalanceResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [WalletBalanceInfo](#sphinx.plugin.v1.WalletBalanceInfo) |  |  |
 
 
 
@@ -226,18 +77,6 @@
  
 
  
-
-
-<a name="sphinx.plugin.v1.Plugin"></a>
-
-### Plugin
-钱包代理插件
-
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-| MpoolGetNonce | [MpoolGetNonceRequest](#sphinx.plugin.v1.MpoolGetNonceRequest) | [MpoolGetNonceResponse](#sphinx.plugin.v1.MpoolGetNonceResponse) |  |
-| MpoolPush | [MpoolPushRequest](#sphinx.plugin.v1.MpoolPushRequest) | [MpoolPushResponse](#sphinx.plugin.v1.MpoolPushResponse) |  |
-| WalletBalance | [WalletBalanceRequest](#sphinx.plugin.v1.WalletBalanceRequest) | [WalletBalanceResponse](#sphinx.plugin.v1.WalletBalanceResponse) |  |
 
  
 

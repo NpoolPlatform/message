@@ -58,7 +58,7 @@ RegisterCoin ..
 | TransactionIDInsite | [string](#string) |  |  |
 | Nonce | [uint64](#uint64) |  |  |
 | CID | [string](#string) |  |  |
-| Balance | [string](#string) |  |  |
+| Balance | [uint64](#uint64) |  |  |
 
 
 
