@@ -11,15 +11,15 @@
     "application/json"
   ],
   "paths": {
-    "/v1/account/balance/get": {
+    "/v1/create/transaction": {
       "post": {
-        "summary": "余额查询",
-        "operationId": "Trading_GetBalance",
+        "summary": "转账 / 提现",
+        "operationId": "Trading_CreateTransaction",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetBalanceResponse"
+              "$ref": "#/definitions/v1CreateTransactionResponse"
             }
           },
           "default": {
@@ -35,7 +35,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetBalanceRequest"
+              "$ref": "#/definitions/v1CreateTransactionRequest"
             }
           }
         ],
@@ -44,7 +44,7 @@
         ]
       }
     },
-    "/v1/account/register": {
+    "/v1/create/wallet": {
       "post": {
         "summary": "创建账户",
         "operationId": "Trading_CreateAccount",
@@ -69,6 +69,72 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Trading"
+        ]
+      }
+    },
+    "/v1/get/transaction": {
+      "post": {
+        "summary": "交易状态查询",
+        "operationId": "Trading_GetInsiteTxStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetInsiteTxStatusResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetInsiteTxStatusRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Trading"
+        ]
+      }
+    },
+    "/v1/get/wallet/balance": {
+      "post": {
+        "summary": "余额查询",
+        "operationId": "Trading_GetBalance",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetBalanceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetBalanceRequest"
             }
           }
         ],
@@ -102,72 +168,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1ACKRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Trading"
-        ]
-      }
-    },
-    "/v1/transaction/create": {
-      "post": {
-        "summary": "转账 / 提现",
-        "operationId": "Trading_CreateTransaction",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateTransactionResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateTransactionRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Trading"
-        ]
-      }
-    },
-    "/v1/transaction/status": {
-      "post": {
-        "summary": "交易状态查询",
-        "operationId": "Trading_GetInsiteTxStatus",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetInsiteTxStatusResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetInsiteTxStatusRequest"
             }
           }
         ],

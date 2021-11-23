@@ -248,7 +248,7 @@ func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/CreateAccount", runtime.WithHTTPPathPattern("/v1/account/register"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/CreateAccount", runtime.WithHTTPPathPattern("/v1/create/wallet"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -271,7 +271,7 @@ func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/GetBalance", runtime.WithHTTPPathPattern("/v1/account/balance/get"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/GetBalance", runtime.WithHTTPPathPattern("/v1/get/wallet/balance"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -294,7 +294,7 @@ func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/CreateTransaction", runtime.WithHTTPPathPattern("/v1/transaction/create"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/CreateTransaction", runtime.WithHTTPPathPattern("/v1/create/transaction"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -317,7 +317,7 @@ func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/GetInsiteTxStatus", runtime.WithHTTPPathPattern("/v1/transaction/status"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/GetInsiteTxStatus", runtime.WithHTTPPathPattern("/v1/get/transaction"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -434,7 +434,7 @@ func RegisterTradingHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/CreateAccount", runtime.WithHTTPPathPattern("/v1/account/register"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/CreateAccount", runtime.WithHTTPPathPattern("/v1/create/wallet"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -454,7 +454,7 @@ func RegisterTradingHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/GetBalance", runtime.WithHTTPPathPattern("/v1/account/balance/get"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/GetBalance", runtime.WithHTTPPathPattern("/v1/get/wallet/balance"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -474,7 +474,7 @@ func RegisterTradingHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/CreateTransaction", runtime.WithHTTPPathPattern("/v1/transaction/create"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/CreateTransaction", runtime.WithHTTPPathPattern("/v1/create/transaction"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -494,7 +494,7 @@ func RegisterTradingHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/GetInsiteTxStatus", runtime.WithHTTPPathPattern("/v1/transaction/status"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/GetInsiteTxStatus", runtime.WithHTTPPathPattern("/v1/get/transaction"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -534,13 +534,13 @@ func RegisterTradingHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Trading_CreateAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "account", "register"}, ""))
+	pattern_Trading_CreateAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "wallet"}, ""))
 
-	pattern_Trading_GetBalance_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "account", "balance", "get"}, ""))
+	pattern_Trading_GetBalance_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "wallet", "balance"}, ""))
 
-	pattern_Trading_CreateTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "transaction", "create"}, ""))
+	pattern_Trading_CreateTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "transaction"}, ""))
 
-	pattern_Trading_GetInsiteTxStatus_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "transaction", "status"}, ""))
+	pattern_Trading_GetInsiteTxStatus_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "transaction"}, ""))
 
 	pattern_Trading_ACK_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "internal", "ack"}, ""))
 )

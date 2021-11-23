@@ -13,19 +13,19 @@ service Trading {
 	// 创建账户
 	rpc CreateAccount (CreateAccountRequest) returns (CreateAccountResponse) {
 		option (google.api.http) = {
-			post: "/v1/account/register"
+			post: "/v1/create/wallet"
 			body: "*"
 		};}
 	// 余额查询
 	rpc GetBalance (GetBalanceRequest) returns (GetBalanceResponse) {
 		option (google.api.http) = {
-			post: "/v1/account/balance/get"
+			post: "/v1/get/wallet/balance"
 			body: "*"
 		};}
 	// 转账 / 提现
 	rpc CreateTransaction (CreateTransactionRequest) returns (CreateTransactionResponse) {
 		option (google.api.http) = {
-			post: "/v1/transaction/create"
+			post: "/v1/create/transaction"
 			body: "*"
 		};}
 	// TODO: 账户交易查询
@@ -33,7 +33,7 @@ service Trading {
 	// 交易状态查询
 	rpc GetInsiteTxStatus (GetInsiteTxStatusRequest) returns (GetInsiteTxStatusResponse) {
 		option (google.api.http) = {
-			post: "/v1/transaction/status"
+			post: "/v1/get/transaction"
 			body: "*"
 		};}
 	// 接收ack
