@@ -144,8 +144,7 @@ CreateTransaction 参数
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Code | [int32](#int32) |  |  |
-| Info | [string](#string) |  | &#34;success&#34; |
+| Info | [BaseTx](#sphinx.v1.BaseTx) |  |  |
 
 
 

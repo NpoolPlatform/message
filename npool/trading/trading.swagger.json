@@ -246,7 +246,8 @@
       "type": "object",
       "properties": {
         "is_okay": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "是否收到请求"
         }
       }
     },
@@ -326,12 +327,8 @@
     "v1CreateTransactionResponse": {
       "type": "object",
       "properties": {
-        "Code": {
-          "type": "integer",
-          "format": "int32"
-        },
         "Info": {
-          "type": "string"
+          "$ref": "#/definitions/v1BaseTx"
         }
       }
     },

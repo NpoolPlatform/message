@@ -148,17 +148,17 @@ message ACKRequest {
 }
 
 message ACKResponse {
-	bool is_okay = 1; // 是否收到请求
+	// 是否收到请求
+	bool is_okay = 1;
 }
 
 message CreateTransactionResponse {
-	int32 Code = 1;
-	string Info = 2; // "success"
+	BaseTx Info = 1;
 }
 
 // request body and response
 message VersionResponse {
-		string Info = 100;
+	string Info = 100;
 }
 
 
