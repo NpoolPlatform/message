@@ -6,18 +6,16 @@
 - [npool/trading/trading.proto](#npool/trading/trading.proto)
     - [ACKRequest](#sphinx.v1.ACKRequest)
     - [ACKResponse](#sphinx.v1.ACKResponse)
-    - [AccountTxJSON](#sphinx.v1.AccountTxJSON)
+    - [BaseTx](#sphinx.v1.BaseTx)
     - [CreateAccountRequest](#sphinx.v1.CreateAccountRequest)
     - [CreateAccountResponse](#sphinx.v1.CreateAccountResponse)
     - [CreateTransactionRequest](#sphinx.v1.CreateTransactionRequest)
     - [CreateTransactionResponse](#sphinx.v1.CreateTransactionResponse)
     - [EntAccount](#sphinx.v1.EntAccount)
-    - [EntTx](#sphinx.v1.EntTx)
     - [GetBalanceRequest](#sphinx.v1.GetBalanceRequest)
     - [GetBalanceResponse](#sphinx.v1.GetBalanceResponse)
     - [GetInsiteTxStatusRequest](#sphinx.v1.GetInsiteTxStatusRequest)
     - [GetInsiteTxStatusResponse](#sphinx.v1.GetInsiteTxStatusResponse)
-    - [GetTxJSONRequest](#sphinx.v1.GetTxJSONRequest)
     - [VersionResponse](#sphinx.v1.VersionResponse)
   
     - [Trading](#sphinx.v1.Trading)
@@ -70,15 +68,21 @@
 
 
 
-<a name="sphinx.v1.AccountTxJSON"></a>
+<a name="sphinx.v1.BaseTx"></a>
 
-### AccountTxJSON
-GetTxJSONRequest 返回
+### BaseTx
+share transaction structure
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| JSON | [string](#string) |  | disabled for now |
+| TransactionIDInsite | [string](#string) |  | 站内交易ID |
+| CoinName | [string](#string) |  | 币种名称(唯一) |
+| AmountFloat64 | [double](#double) |  | 不入库的参考金额 |
+| AddressFrom | [string](#string) |  | 发送方 |
+| AddressTo | [string](#string) |  | 接收方 |
+| InsiteTxType | [string](#string) |  | sql enum: recharge, payment, withdraw, unknown |
+| CreatetimeUTC | [int64](#int64) |  | 用户提交请求时的时间戳，与2FA绑定 |
 
 
 
@@ -124,13 +128,7 @@ CreateTransaction 参数
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TransactionIDInsite | [string](#string) |  | 站内交易ID |
-| CoinName | [string](#string) |  | 币种名称(唯一) |
-| AddressFrom | [string](#string) |  | 发送方 |
-| AddressTo | [string](#string) |  | 接收方 |
-| AmountFloat64 | [double](#double) |  | 不入库的参考金额 |
-| InsiteTxType | [string](#string) |  | recharge, payment, withdraw, unknown |
-| CreatetimeUTC | [int64](#int64) |  | 用户提交请求时的时间戳，与2FA绑定 |
+| Info | [BaseTx](#sphinx.v1.BaseTx) |  | 交易基本信息 |
 | UUIDSignature | [string](#string) |  | 2FA的时效性验证码，前期可以留空 |
 
 
@@ -163,35 +161,7 @@ share account structure
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinName | [string](#string) |  | 币种名称(唯一) |
-| UUID | [string](#string) |  | 当前取UserID |
 | Address | [string](#string) |  | 钱包地址，创建时填空 |
-| AmountFloat64 | [double](#double) |  | 长整型金额 |
-
-
-
-
-
-
-<a name="sphinx.v1.EntTx"></a>
-
-### EntTx
-share transaction structure
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TransactionIDInsite | [string](#string) |  | 站内交易ID |
-| CoinName | [string](#string) |  | 币种名称(唯一) |
-| AmountFloat64 | [double](#double) |  | 不入库的参考金额 |
-| AddressFrom | [string](#string) |  | 发送方 |
-| AddressTo | [string](#string) |  | 接收方 |
-| InsiteTxType | [string](#string) |  | recharge, payment, withdraw, unknown |
-| TransactionIDChain | [string](#string) |  | 公链交易ID（如有） |
-| Status | [string](#string) |  | 为done则成功；全部状态：&#34;pending_review&#34;, &#34;pending_process&#34;, &#34;pending_signinfo&#34;, &#34;pending_sign&#34;, &#34;pending_broadcast&#34;, &#34;pending_confirm&#34;, &#34;done&#34;, &#34;rejected&#34;, &#34;error&#34;, &#34;error_expected&#34; |
-| CreatetimeUTC | [int64](#int64) |  | 创建时间 |
-| UpdatetimeUTC | [int64](#int64) |  | 上次更新时间 |
-| Succeeded | [bool](#bool) |  | 便于调用方判断 |
-| Failed | [bool](#bool) |  | 不success不fail就是pending了 |
 
 
 
@@ -206,9 +176,7 @@ GetBalance 参数
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinName | [string](#string) |  | 币种名称(唯一) |
-| Address | [string](#string) |  | 查询的钱包地址 |
-| TimestampUTC | [int64](#int64) |  | 长整型时间戳 |
+| Info | [EntAccount](#sphinx.v1.EntAccount) |  |  |
 
 
 
@@ -224,6 +192,7 @@ GetBalance 返回
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [EntAccount](#sphinx.v1.EntAccount) |  |  |
+| AmountFloat64 | [double](#double) |  | 长整型金额 |
 
 
 
@@ -253,27 +222,12 @@ GetInsiteTxStatus 返回
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [EntTx](#sphinx.v1.EntTx) |  |  |
-
-
-
-
-
-
-<a name="sphinx.v1.GetTxJSONRequest"></a>
-
-### GetTxJSONRequest
-GetTxJSONRequest 参数
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| CoinName | [string](#string) |  | 预留，当前版本未实现，继承钱包节点基础功能
-
-币种名称(唯一) |
-| Address | [string](#string) |  | 要查询的钱包地址 |
-| TimefromUTC | [int64](#int64) |  | 开始时间 |
-| TimetillUTC | [int64](#int64) |  | 结束时间 |
+| Info | [BaseTx](#sphinx.v1.BaseTx) |  |  |
+| UpdatetimeUTC | [int64](#int64) |  | 上次更新时间 |
+| Succeeded | [bool](#bool) |  | bool, 便于调用方判断 |
+| Failed | [bool](#bool) |  | 不success不fail就是pending了 |
+| TransactionIDChain | [string](#string) |  | 公链交易ID（如有） |
+| Status | [string](#string) |  | 为done则成功；全部状态：&#34;pending_review&#34;, &#34;pending_process&#34;, &#34;pending_signinfo&#34;, &#34;pending_sign&#34;, &#34;pending_broadcast&#34;, &#34;pending_confirm&#34;, &#34;done&#34;, &#34;rejected&#34;, &#34;error&#34;, &#34;error_expected&#34; |
 
 
 
@@ -311,7 +265,6 @@ request body and response
 | CreateAccount | [CreateAccountRequest](#sphinx.v1.CreateAccountRequest) | [CreateAccountResponse](#sphinx.v1.CreateAccountResponse) | 创建账户 |
 | GetBalance | [GetBalanceRequest](#sphinx.v1.GetBalanceRequest) | [GetBalanceResponse](#sphinx.v1.GetBalanceResponse) | 余额查询 |
 | CreateTransaction | [CreateTransactionRequest](#sphinx.v1.CreateTransactionRequest) | [CreateTransactionResponse](#sphinx.v1.CreateTransactionResponse) | 转账 / 提现 |
-| GetTxJSON | [GetTxJSONRequest](#sphinx.v1.GetTxJSONRequest) | [AccountTxJSON](#sphinx.v1.AccountTxJSON) | TODO: 账户交易查询 |
 | GetInsiteTxStatus | [GetInsiteTxStatusRequest](#sphinx.v1.GetInsiteTxStatusRequest) | [GetInsiteTxStatusResponse](#sphinx.v1.GetInsiteTxStatusResponse) | 交易状态查询 |
 | ACK | [ACKRequest](#sphinx.v1.ACKRequest) | [ACKResponse](#sphinx.v1.ACKResponse) | 接收ack |
 

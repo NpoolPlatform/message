@@ -24,8 +24,6 @@ type TradingClient interface {
 	GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error)
 	// 转账 / 提现
 	CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*CreateTransactionResponse, error)
-	// TODO: 账户交易查询
-	GetTxJSON(ctx context.Context, in *GetTxJSONRequest, opts ...grpc.CallOption) (*AccountTxJSON, error)
 	// 交易状态查询
 	GetInsiteTxStatus(ctx context.Context, in *GetInsiteTxStatusRequest, opts ...grpc.CallOption) (*GetInsiteTxStatusResponse, error)
 	// 接收ack
@@ -67,15 +65,6 @@ func (c *tradingClient) CreateTransaction(ctx context.Context, in *CreateTransac
 	return out, nil
 }
 
-func (c *tradingClient) GetTxJSON(ctx context.Context, in *GetTxJSONRequest, opts ...grpc.CallOption) (*AccountTxJSON, error) {
-	out := new(AccountTxJSON)
-	err := c.cc.Invoke(ctx, "/sphinx.v1.Trading/GetTxJSON", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *tradingClient) GetInsiteTxStatus(ctx context.Context, in *GetInsiteTxStatusRequest, opts ...grpc.CallOption) (*GetInsiteTxStatusResponse, error) {
 	out := new(GetInsiteTxStatusResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.v1.Trading/GetInsiteTxStatus", in, out, opts...)
@@ -104,8 +93,6 @@ type TradingServer interface {
 	GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error)
 	// 转账 / 提现
 	CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionResponse, error)
-	// TODO: 账户交易查询
-	GetTxJSON(context.Context, *GetTxJSONRequest) (*AccountTxJSON, error)
 	// 交易状态查询
 	GetInsiteTxStatus(context.Context, *GetInsiteTxStatusRequest) (*GetInsiteTxStatusResponse, error)
 	// 接收ack
@@ -125,9 +112,6 @@ func (UnimplementedTradingServer) GetBalance(context.Context, *GetBalanceRequest
 }
 func (UnimplementedTradingServer) CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTransaction not implemented")
-}
-func (UnimplementedTradingServer) GetTxJSON(context.Context, *GetTxJSONRequest) (*AccountTxJSON, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetTxJSON not implemented")
 }
 func (UnimplementedTradingServer) GetInsiteTxStatus(context.Context, *GetInsiteTxStatusRequest) (*GetInsiteTxStatusResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetInsiteTxStatus not implemented")
@@ -202,24 +186,6 @@ func _Trading_CreateTransaction_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Trading_GetTxJSON_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetTxJSONRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(TradingServer).GetTxJSON(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/sphinx.v1.Trading/GetTxJSON",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServer).GetTxJSON(ctx, req.(*GetTxJSONRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Trading_GetInsiteTxStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetInsiteTxStatusRequest)
 	if err := dec(in); err != nil {
@@ -274,10 +240,6 @@ var Trading_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateTransaction",
 			Handler:    _Trading_CreateTransaction_Handler,
-		},
-		{
-			MethodName: "GetTxJSON",
-			Handler:    _Trading_GetTxJSON_Handler,
 		},
 		{
 			MethodName: "GetInsiteTxStatus",

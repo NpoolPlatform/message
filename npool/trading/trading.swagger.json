@@ -250,23 +250,52 @@
         }
       }
     },
-    "v1AccountTxJSON": {
+    "v1BaseTx": {
       "type": "object",
       "properties": {
-        "JSON": {
-          "type": "string"
+        "TransactionIDInsite": {
+          "type": "string",
+          "title": "站内交易ID"
+        },
+        "CoinName": {
+          "type": "string",
+          "title": "币种名称(唯一)"
+        },
+        "AmountFloat64": {
+          "type": "number",
+          "format": "double",
+          "title": "不入库的参考金额"
+        },
+        "AddressFrom": {
+          "type": "string",
+          "title": "发送方"
+        },
+        "AddressTo": {
+          "type": "string",
+          "title": "接收方"
+        },
+        "InsiteTxType": {
+          "type": "string",
+          "title": "sql enum: recharge, payment, withdraw, unknown"
+        },
+        "CreatetimeUTC": {
+          "type": "string",
+          "format": "int64",
+          "title": "用户提交请求时的时间戳，与2FA绑定"
         }
       },
-      "title": "GetTxJSONRequest 返回"
+      "title": "share transaction structure"
     },
     "v1CreateAccountRequest": {
       "type": "object",
       "properties": {
         "CoinName": {
-          "type": "string"
+          "type": "string",
+          "title": "币种名称(唯一)"
         },
         "UUID": {
-          "type": "string"
+          "type": "string",
+          "title": "当前取UserID"
         }
       },
       "title": "CreateAccount 参数"
@@ -283,31 +312,13 @@
     "v1CreateTransactionRequest": {
       "type": "object",
       "properties": {
-        "TransactionIDInsite": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "AddressFrom": {
-          "type": "string"
-        },
-        "AddressTo": {
-          "type": "string"
-        },
-        "AmountFloat64": {
-          "type": "number",
-          "format": "double"
-        },
-        "InsiteTxType": {
-          "type": "string"
-        },
-        "CreatetimeUTC": {
-          "type": "string",
-          "format": "int64"
+        "Info": {
+          "$ref": "#/definitions/v1BaseTx",
+          "title": "交易基本信息"
         },
         "UUIDSignature": {
-          "type": "string"
+          "type": "string",
+          "title": "2FA的时效性验证码，前期可以留空"
         }
       },
       "title": "CreateTransaction 参数"
@@ -328,78 +339,21 @@
       "type": "object",
       "properties": {
         "CoinName": {
-          "type": "string"
-        },
-        "UUID": {
-          "type": "string"
+          "type": "string",
+          "title": "币种名称(唯一)"
         },
         "Address": {
-          "type": "string"
-        },
-        "AmountFloat64": {
-          "type": "number",
-          "format": "double"
+          "type": "string",
+          "title": "钱包地址，创建时填空"
         }
       },
       "title": "share account structure"
     },
-    "v1EntTx": {
-      "type": "object",
-      "properties": {
-        "TransactionIDInsite": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "AmountFloat64": {
-          "type": "number",
-          "format": "double"
-        },
-        "AddressFrom": {
-          "type": "string"
-        },
-        "AddressTo": {
-          "type": "string"
-        },
-        "InsiteTxType": {
-          "type": "string"
-        },
-        "TransactionIDChain": {
-          "type": "string"
-        },
-        "Status": {
-          "type": "string"
-        },
-        "CreatetimeUTC": {
-          "type": "string",
-          "format": "int64"
-        },
-        "UpdatetimeUTC": {
-          "type": "string",
-          "format": "int64"
-        },
-        "Succeeded": {
-          "type": "boolean"
-        },
-        "Failed": {
-          "type": "boolean"
-        }
-      },
-      "title": "share transaction structure"
-    },
     "v1GetBalanceRequest": {
       "type": "object",
       "properties": {
-        "CoinName": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        },
-        "TimestampUTC": {
-          "type": "string",
-          "format": "int64"
+        "Info": {
+          "$ref": "#/definitions/v1EntAccount"
         }
       },
       "title": "GetBalance 参数"
@@ -409,6 +363,10 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1EntAccount"
+        },
+        "AmountFloat64": {
+          "type": "number",
+          "format": "double"
         }
       },
       "title": "GetBalance 返回"
@@ -417,7 +375,8 @@
       "type": "object",
       "properties": {
         "TransactionIDInsite": {
-          "type": "string"
+          "type": "string",
+          "title": "站内交易ID"
         }
       },
       "title": "GetInsiteTxStatus 参数"
@@ -426,7 +385,28 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1EntTx"
+          "$ref": "#/definitions/v1BaseTx"
+        },
+        "UpdatetimeUTC": {
+          "type": "string",
+          "format": "int64",
+          "title": "上次更新时间"
+        },
+        "Succeeded": {
+          "type": "boolean",
+          "title": "bool, 便于调用方判断"
+        },
+        "Failed": {
+          "type": "boolean",
+          "title": "不success不fail就是pending了"
+        },
+        "TransactionIDChain": {
+          "type": "string",
+          "title": "公链交易ID（如有）"
+        },
+        "Status": {
+          "type": "string",
+          "title": "为done则成功；全部状态：\"pending_review\", \"pending_process\", \"pending_signinfo\", \"pending_sign\", \"pending_broadcast\", \"pending_confirm\", \"done\", \"rejected\", \"error\", \"error_expected\""
         }
       },
       "title": "GetInsiteTxStatus 返回"

@@ -27,8 +27,6 @@ service Trading {
 			post: "/v1/create/transaction"
 			body: "*"
 		};}
-	// TODO: 账户交易查询
-	rpc GetTxJSON (GetTxJSONRequest) returns (AccountTxJSON) {} // reserved function
 	// 交易状态查询
 	rpc GetInsiteTxStatus (GetInsiteTxStatusRequest) returns (GetInsiteTxStatusResponse) {
 		option (google.api.http) = {
@@ -45,16 +43,18 @@ service Trading {
 
 // share account structure
 message EntAccount {
-	string CoinName = 1; // 币种名称(唯一)
-	string UUID = 2; // 当前取UserID
-	string Address = 3; // 钱包地址，创建时填空
-	double AmountFloat64 = 4; // 长整型金额
+	// 币种名称(唯一)
+	string CoinName = 1;
+	// 钱包地址，创建时填空
+	string Address = 3;
 }
 
 // CreateAccount 参数
 message CreateAccountRequest {
-	string CoinName = 1; // 币种名称(唯一)
-	string UUID = 2; // 当前取UserID
+	// 币种名称(唯一)
+	string CoinName = 1;
+	// 当前取UserID
+	string UUID = 2;
 }
 // CreateAccount 返回
 message CreateAccountResponse {
@@ -63,64 +63,59 @@ message CreateAccountResponse {
 
 // GetBalance 参数
 message GetBalanceRequest {
-	string CoinName = 1; // 币种名称(唯一)
-	string Address = 3; // 查询的钱包地址
-	int64 TimestampUTC = 4; // 长整型时间戳
+	EntAccount Info = 1;
 }
 // GetBalance 返回
 message GetBalanceResponse {
 	EntAccount Info = 1;
-}
-
-// GetTxJSONRequest 参数
-message GetTxJSONRequest {
-	// 预留，当前版本未实现，继承钱包节点基础功能
-	string CoinName = 1; // 币种名称(唯一)
-	string Address = 3; // 要查询的钱包地址
-	int64 TimefromUTC = 4; // 开始时间
-	int64 TimetillUTC = 5; // 结束时间
-}
-// GetTxJSONRequest 返回
-message AccountTxJSON {
-	string JSON = 1; // disabled for now
+	double AmountFloat64 = 4; // 长整型金额
 }
 
 // share transaction structure
-message EntTx {
-	string TransactionIDInsite = 1; // 站内交易ID
-	string CoinName = 2; // 币种名称(唯一)
-	double AmountFloat64 = 3; // 不入库的参考金额
-	string AddressFrom = 4; // 发送方
-	string AddressTo = 5; // 接收方
-	string InsiteTxType = 6; // recharge, payment, withdraw, unknown
-	string TransactionIDChain = 7; // 公链交易ID（如有）
-	string Status = 8; // 为done则成功；全部状态："pending_review", "pending_process", "pending_signinfo", "pending_sign", "pending_broadcast", "pending_confirm", "done", "rejected", "error", "error_expected"
-	int64 CreatetimeUTC = 12; // 创建时间
-	int64 UpdatetimeUTC = 13; // 上次更新时间
-	bool Succeeded = 14; // 便于调用方判断
-	bool Failed = 15; // 不success不fail就是pending了
+message BaseTx {
+	// 站内交易ID
+	string TransactionIDInsite = 1;
+	// 币种名称(唯一)
+	string CoinName = 2;
+	// 不入库的参考金额
+	double AmountFloat64 = 3;
+	// 发送方
+	string AddressFrom = 4;
+	// 接收方
+	string AddressTo = 5;
+	// sql enum: recharge, payment, withdraw, unknown
+	string InsiteTxType = 6;
+	// 用户提交请求时的时间戳，与2FA绑定
+	int64 CreatetimeUTC = 12;
 }
 
 // GetInsiteTxStatus 参数
 message GetInsiteTxStatusRequest {
-	string TransactionIDInsite = 1; // 站内交易ID
+	// 站内交易ID
+	string TransactionIDInsite = 1;
 }
 // GetInsiteTxStatus 返回
 message GetInsiteTxStatusResponse {
-	EntTx Info = 1;
+	BaseTx Info = 1;
+	// 上次更新时间
+	int64 UpdatetimeUTC = 13;
+	// bool, 便于调用方判断
+	bool Succeeded = 14;
+	// 不success不fail就是pending了
+	bool Failed = 15;
+	// 公链交易ID（如有）
+	string TransactionIDChain = 7;
+	// 为done则成功；全部状态："pending_review", "pending_process", "pending_signinfo", "pending_sign", "pending_broadcast", "pending_confirm", "done", "rejected", "error", "error_expected"
+	string Status = 8;
 }
 
 
 // CreateTransaction 参数
 message CreateTransactionRequest {
-	string TransactionIDInsite = 1; // 站内交易ID
-	string CoinName = 2; // 币种名称(唯一)
-	string AddressFrom = 4; // 发送方
-	string AddressTo = 5; // 接收方
-	double AmountFloat64 = 6; // 不入库的参考金额
-	string InsiteTxType = 8; // recharge, payment, withdraw, unknown
-	int64 CreatetimeUTC = 9; // 用户提交请求时的时间戳，与2FA绑定
-	string UUIDSignature = 10; // 2FA的时效性验证码，前期可以留空
+	// 交易基本信息
+	BaseTx Info = 1;
+	// 2FA的时效性验证码，前期可以留空
+	string UUIDSignature = 2;
 }
 
 // // PortalSignInit 参数
