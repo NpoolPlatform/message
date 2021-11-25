@@ -20,7 +20,7 @@ message ProxyPluginResponse {
     string TransactionIDInsite                  = 120;
     uint64 Nonce                                = 130;
     string CID                                  = 140;
-    uint64 Balance                              = 150;
+    double Balance                              = 150;
     sphinx.plugin.v1.UnsignedMessage Message    = 160;
 }
 
