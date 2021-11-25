@@ -11,15 +11,15 @@
     "application/json"
   ],
   "paths": {
-    "/v1/account/balance/get": {
+    "/v1/create/transaction": {
       "post": {
-        "summary": "余额查询",
-        "operationId": "Trading_GetBalance",
+        "summary": "转账 / 提现",
+        "operationId": "Trading_CreateTransaction",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetBalanceResponse"
+              "$ref": "#/definitions/v1CreateTransactionResponse"
             }
           },
           "default": {
@@ -35,7 +35,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetBalanceRequest"
+              "$ref": "#/definitions/v1CreateTransactionRequest"
             }
           }
         ],
@@ -44,15 +44,15 @@
         ]
       }
     },
-    "/v1/account/register": {
+    "/v1/create/wallet": {
       "post": {
         "summary": "创建账户",
-        "operationId": "Trading_CreateAccount",
+        "operationId": "Trading_CreateWallet",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAccountResponse"
+              "$ref": "#/definitions/v1CreateWalletResponse"
             }
           },
           "default": {
@@ -68,7 +68,73 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAccountRequest"
+              "$ref": "#/definitions/v1CreateWalletRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Trading"
+        ]
+      }
+    },
+    "/v1/get/transaction": {
+      "post": {
+        "summary": "交易状态查询",
+        "operationId": "Trading_GetTransaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetTransactionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Trading"
+        ]
+      }
+    },
+    "/v1/get/wallet/balance": {
+      "post": {
+        "summary": "余额查询",
+        "operationId": "Trading_GetWalletBalance",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetWalletBalanceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetWalletBalanceRequest"
             }
           }
         ],
@@ -110,76 +176,10 @@
         ]
       }
     },
-    "/v1/transaction/create": {
-      "post": {
-        "summary": "转账 / 提现",
-        "operationId": "Trading_CreateTransaction",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateTransactionResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateTransactionRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Trading"
-        ]
-      }
-    },
-    "/v1/transaction/status": {
-      "post": {
-        "summary": "交易状态查询",
-        "operationId": "Trading_GetInsiteTxStatus",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetInsiteTxStatusResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetInsiteTxStatusRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Trading"
-        ]
-      }
-    },
     "/version": {
       "post": {
-        "summary": "Method Version",
-        "operationId": "ServiceExample_Version",
+        "summary": "ping - pong",
+        "operationId": "Trading_Version",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -205,7 +205,7 @@
           }
         ],
         "tags": [
-          "ServiceExample"
+          "Trading"
         ]
       }
     }
@@ -279,74 +279,57 @@
       "type": "object",
       "properties": {
         "is_okay": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "是否收到请求"
         }
       }
     },
-    "v1AccountTxJSON": {
+    "v1BaseTx": {
       "type": "object",
       "properties": {
-        "json": {
-          "type": "string"
+        "TransactionIDInsite": {
+          "type": "string",
+          "title": "站内交易ID"
+        },
+        "CoinName": {
+          "type": "string",
+          "title": "币种名称(唯一)"
+        },
+        "AmountFloat64": {
+          "type": "number",
+          "format": "double",
+          "title": "不入库的参考金额"
+        },
+        "AddressFrom": {
+          "type": "string",
+          "title": "发送方"
+        },
+        "AddressTo": {
+          "type": "string",
+          "title": "接收方"
+        },
+        "InsiteTxType": {
+          "type": "string",
+          "title": "sql enum: recharge, payment, withdraw, unknown"
+        },
+        "CreatetimeUTC": {
+          "type": "string",
+          "format": "int64",
+          "title": "用户提交请求时的时间戳，与2FA绑定"
         }
       },
-      "title": "GetTxJSONRequest 返回"
-    },
-    "v1CreateAccountRequest": {
-      "type": "object",
-      "properties": {
-        "coin_name": {
-          "type": "string"
-        },
-        "uuid": {
-          "type": "string"
-        }
-      },
-      "title": "CreateAccount 参数"
-    },
-    "v1CreateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "coin_name": {
-          "type": "string"
-        },
-        "address": {
-          "type": "string"
-        },
-        "uuid": {
-          "type": "string"
-        }
-      },
-      "title": "CreateAccount 返回"
+      "title": "share transaction structure"
     },
     "v1CreateTransactionRequest": {
       "type": "object",
       "properties": {
-        "coin_name": {
-          "type": "string"
+        "Info": {
+          "$ref": "#/definitions/v1BaseTx",
+          "title": "交易基本信息"
         },
-        "transaction_id_insite": {
-          "type": "string"
-        },
-        "address_from": {
-          "type": "string"
-        },
-        "address_to": {
-          "type": "string"
-        },
-        "amount_float64": {
-          "type": "number",
-          "format": "double"
-        },
-        "type": {
-          "type": "string"
-        },
-        "uuid_signature": {
-          "type": "string"
-        },
-        "createtime_utc": {
+        "UUIDSignature": {
           "type": "string",
-          "format": "int64"
+          "title": "2FA的时效性验证码，前期可以留空"
         }
       },
       "title": "CreateTransaction 参数"
@@ -354,104 +337,109 @@
     "v1CreateTransactionResponse": {
       "type": "object",
       "properties": {
-        "info": {
-          "type": "string"
+        "Info": {
+          "$ref": "#/definitions/v1BaseTx"
         }
-      },
-      "title": "deprecated"
+      }
     },
-    "v1GetBalanceRequest": {
+    "v1CreateWalletRequest": {
       "type": "object",
       "properties": {
-        "coin_name": {
-          "type": "string"
-        },
-        "address": {
-          "type": "string"
-        },
-        "timestamp_utc": {
+        "CoinName": {
           "type": "string",
-          "format": "int64"
+          "title": "币种名称(唯一)"
+        },
+        "UUID": {
+          "type": "string",
+          "title": "当前取UserID"
         }
       },
-      "title": "GetBalance 参数"
+      "title": "CreateWallet 参数"
     },
-    "v1GetBalanceResponse": {
+    "v1CreateWalletResponse": {
       "type": "object",
       "properties": {
-        "coin_name": {
-          "type": "string"
-        },
-        "address": {
-          "type": "string"
-        },
-        "timestamp_utc": {
+        "Info": {
+          "$ref": "#/definitions/v1EntAccount"
+        }
+      },
+      "title": "CreateWallet 返回"
+    },
+    "v1EntAccount": {
+      "type": "object",
+      "properties": {
+        "CoinName": {
           "type": "string",
-          "format": "int64"
+          "title": "币种名称(唯一)"
         },
-        "amount_float64": {
+        "Address": {
+          "type": "string",
+          "title": "钱包地址，创建时填空"
+        }
+      },
+      "title": "share account structure"
+    },
+    "v1GetTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "TransactionIDInsite": {
+          "type": "string",
+          "title": "站内交易ID"
+        }
+      },
+      "title": "GetTransaction 参数"
+    },
+    "v1GetTransactionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BaseTx"
+        },
+        "UpdatetimeUTC": {
+          "type": "string",
+          "format": "int64",
+          "title": "上次更新时间"
+        },
+        "Succeeded": {
+          "type": "boolean",
+          "title": "bool, 便于调用方判断"
+        },
+        "Failed": {
+          "type": "boolean",
+          "title": "不success不fail就是pending了"
+        },
+        "TransactionIDChain": {
+          "type": "string",
+          "title": "公链交易ID（如有）"
+        },
+        "Status": {
+          "type": "string",
+          "title": "为done则成功；全部状态：\"pending_review\", \"pending_process\", \"pending_signinfo\", \"pending_sign\", \"pending_broadcast\", \"pending_confirm\", \"done\", \"rejected\", \"error\", \"error_expected\""
+        }
+      },
+      "title": "GetTransaction 返回"
+    },
+    "v1GetWalletBalanceRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EntAccount"
+        }
+      },
+      "title": "GetWalletBalance 参数"
+    },
+    "v1GetWalletBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EntAccount"
+        },
+        "AmountFloat64": {
           "type": "number",
           "format": "double"
         }
       },
-      "title": "GetBalance 返回"
-    },
-    "v1GetInsiteTxStatusRequest": {
-      "type": "object",
-      "properties": {
-        "transaction_id_insite": {
-          "type": "string"
-        }
-      },
-      "title": "GetInsiteTxStatus 参数"
-    },
-    "v1GetInsiteTxStatusResponse": {
-      "type": "object",
-      "properties": {
-        "transaction_id_insite": {
-          "type": "string"
-        },
-        "coin_name": {
-          "type": "string"
-        },
-        "amount_float64": {
-          "type": "number",
-          "format": "double"
-        },
-        "address_from": {
-          "type": "string"
-        },
-        "address_to": {
-          "type": "string"
-        },
-        "insite_tx_type": {
-          "type": "string"
-        },
-        "transaction_id_chain": {
-          "type": "string"
-        },
-        "status": {
-          "type": "string"
-        },
-        "is_processing": {
-          "type": "boolean"
-        },
-        "createtime_utc": {
-          "type": "string",
-          "format": "int64"
-        },
-        "updatetime_utc": {
-          "type": "string",
-          "format": "int64"
-        },
-        "is_success": {
-          "type": "boolean"
-        },
-        "is_failed": {
-          "type": "boolean"
-        }
-      },
-      "title": "GetInsiteTxStatus 返回"
+      "title": "GetWalletBalance 返回"
     },
     "v1TransactionType": {
       "type": "string",

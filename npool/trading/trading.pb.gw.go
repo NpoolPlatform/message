@@ -32,8 +32,8 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_Trading_CreateAccount_0(ctx context.Context, marshaler runtime.Marshaler, client TradingClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateAccountRequest
+func request_Trading_CreateWallet_0(ctx context.Context, marshaler runtime.Marshaler, client TradingClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateWalletRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -44,13 +44,13 @@ func request_Trading_CreateAccount_0(ctx context.Context, marshaler runtime.Mars
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateAccount(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateWallet(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Trading_CreateAccount_0(ctx context.Context, marshaler runtime.Marshaler, server TradingServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateAccountRequest
+func local_request_Trading_CreateWallet_0(ctx context.Context, marshaler runtime.Marshaler, server TradingServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateWalletRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -61,13 +61,13 @@ func local_request_Trading_CreateAccount_0(ctx context.Context, marshaler runtim
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateAccount(ctx, &protoReq)
+	msg, err := server.CreateWallet(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_Trading_GetBalance_0(ctx context.Context, marshaler runtime.Marshaler, client TradingClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetBalanceRequest
+func request_Trading_GetWalletBalance_0(ctx context.Context, marshaler runtime.Marshaler, client TradingClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetWalletBalanceRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -78,13 +78,13 @@ func request_Trading_GetBalance_0(ctx context.Context, marshaler runtime.Marshal
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetBalance(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetWalletBalance(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Trading_GetBalance_0(ctx context.Context, marshaler runtime.Marshaler, server TradingServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetBalanceRequest
+func local_request_Trading_GetWalletBalance_0(ctx context.Context, marshaler runtime.Marshaler, server TradingServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetWalletBalanceRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -95,7 +95,7 @@ func local_request_Trading_GetBalance_0(ctx context.Context, marshaler runtime.M
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetBalance(ctx, &protoReq)
+	msg, err := server.GetWalletBalance(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -134,8 +134,8 @@ func local_request_Trading_CreateTransaction_0(ctx context.Context, marshaler ru
 
 }
 
-func request_Trading_GetInsiteTxStatus_0(ctx context.Context, marshaler runtime.Marshaler, client TradingClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetInsiteTxStatusRequest
+func request_Trading_GetTransaction_0(ctx context.Context, marshaler runtime.Marshaler, client TradingClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetTransactionRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -146,13 +146,13 @@ func request_Trading_GetInsiteTxStatus_0(ctx context.Context, marshaler runtime.
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetInsiteTxStatus(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetTransaction(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Trading_GetInsiteTxStatus_0(ctx context.Context, marshaler runtime.Marshaler, server TradingServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetInsiteTxStatusRequest
+func local_request_Trading_GetTransaction_0(ctx context.Context, marshaler runtime.Marshaler, server TradingServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetTransactionRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -163,7 +163,7 @@ func local_request_Trading_GetInsiteTxStatus_0(ctx context.Context, marshaler ru
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetInsiteTxStatus(ctx, &protoReq)
+	msg, err := server.GetTransaction(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -202,7 +202,7 @@ func local_request_Trading_ACK_0(ctx context.Context, marshaler runtime.Marshale
 
 }
 
-func request_ServiceExample_Version_0(ctx context.Context, marshaler runtime.Marshaler, client ServiceExampleClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Trading_Version_0(ctx context.Context, marshaler runtime.Marshaler, client TradingClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
@@ -219,7 +219,7 @@ func request_ServiceExample_Version_0(ctx context.Context, marshaler runtime.Mar
 
 }
 
-func local_request_ServiceExample_Version_0(ctx context.Context, marshaler runtime.Marshaler, server ServiceExampleServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Trading_Version_0(ctx context.Context, marshaler runtime.Marshaler, server TradingServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
@@ -242,18 +242,18 @@ func local_request_ServiceExample_Version_0(ctx context.Context, marshaler runti
 // Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterTradingHandlerFromEndpoint instead.
 func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, server TradingServer) error {
 
-	mux.Handle("POST", pattern_Trading_CreateAccount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Trading_CreateWallet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/CreateAccount", runtime.WithHTTPPathPattern("/v1/account/register"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/CreateWallet", runtime.WithHTTPPathPattern("/v1/create/wallet"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Trading_CreateAccount_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Trading_CreateWallet_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -261,22 +261,22 @@ func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Trading_CreateAccount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Trading_CreateWallet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Trading_GetBalance_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Trading_GetWalletBalance_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/GetBalance", runtime.WithHTTPPathPattern("/v1/account/balance/get"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/GetWalletBalance", runtime.WithHTTPPathPattern("/v1/get/wallet/balance"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Trading_GetBalance_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Trading_GetWalletBalance_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -284,7 +284,7 @@ func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Trading_GetBalance_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Trading_GetWalletBalance_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -294,7 +294,7 @@ func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/CreateTransaction", runtime.WithHTTPPathPattern("/v1/transaction/create"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/CreateTransaction", runtime.WithHTTPPathPattern("/v1/create/transaction"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -311,18 +311,18 @@ func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 
 	})
 
-	mux.Handle("POST", pattern_Trading_GetInsiteTxStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Trading_GetTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/GetInsiteTxStatus", runtime.WithHTTPPathPattern("/v1/transaction/status"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/GetTransaction", runtime.WithHTTPPathPattern("/v1/get/transaction"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Trading_GetInsiteTxStatus_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Trading_GetTransaction_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -330,7 +330,7 @@ func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Trading_GetInsiteTxStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Trading_GetTransaction_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -357,27 +357,18 @@ func RegisterTradingHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 
 	})
 
-	return nil
-}
-
-// RegisterServiceExampleHandlerServer registers the http handlers for service ServiceExample to "mux".
-// UnaryRPC     :call ServiceExampleServer directly.
-// StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterServiceExampleHandlerFromEndpoint instead.
-func RegisterServiceExampleHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ServiceExampleServer) error {
-
-	mux.Handle("POST", pattern_ServiceExample_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Trading_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.ServiceExample/Version", runtime.WithHTTPPathPattern("/version"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/sphinx.v1.Trading/Version", runtime.WithHTTPPathPattern("/version"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ServiceExample_Version_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Trading_Version_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -385,7 +376,7 @@ func RegisterServiceExampleHandlerServer(ctx context.Context, mux *runtime.Serve
 			return
 		}
 
-		forward_ServiceExample_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Trading_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -430,43 +421,43 @@ func RegisterTradingHandler(ctx context.Context, mux *runtime.ServeMux, conn *gr
 // "TradingClient" to call the correct interceptors.
 func RegisterTradingHandlerClient(ctx context.Context, mux *runtime.ServeMux, client TradingClient) error {
 
-	mux.Handle("POST", pattern_Trading_CreateAccount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Trading_CreateWallet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/CreateAccount", runtime.WithHTTPPathPattern("/v1/account/register"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/CreateWallet", runtime.WithHTTPPathPattern("/v1/create/wallet"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Trading_CreateAccount_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Trading_CreateWallet_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Trading_CreateAccount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Trading_CreateWallet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Trading_GetBalance_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Trading_GetWalletBalance_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/GetBalance", runtime.WithHTTPPathPattern("/v1/account/balance/get"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/GetWalletBalance", runtime.WithHTTPPathPattern("/v1/get/wallet/balance"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Trading_GetBalance_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Trading_GetWalletBalance_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Trading_GetBalance_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Trading_GetWalletBalance_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -474,7 +465,7 @@ func RegisterTradingHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/CreateTransaction", runtime.WithHTTPPathPattern("/v1/transaction/create"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/CreateTransaction", runtime.WithHTTPPathPattern("/v1/create/transaction"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -490,23 +481,23 @@ func RegisterTradingHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 
 	})
 
-	mux.Handle("POST", pattern_Trading_GetInsiteTxStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Trading_GetTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/GetInsiteTxStatus", runtime.WithHTTPPathPattern("/v1/transaction/status"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/GetTransaction", runtime.WithHTTPPathPattern("/v1/get/transaction"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Trading_GetInsiteTxStatus_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Trading_GetTransaction_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Trading_GetInsiteTxStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Trading_GetTransaction_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -530,88 +521,23 @@ func RegisterTradingHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 
 	})
 
-	return nil
-}
-
-var (
-	pattern_Trading_CreateAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "account", "register"}, ""))
-
-	pattern_Trading_GetBalance_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "account", "balance", "get"}, ""))
-
-	pattern_Trading_CreateTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "transaction", "create"}, ""))
-
-	pattern_Trading_GetInsiteTxStatus_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "transaction", "status"}, ""))
-
-	pattern_Trading_ACK_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "internal", "ack"}, ""))
-)
-
-var (
-	forward_Trading_CreateAccount_0 = runtime.ForwardResponseMessage
-
-	forward_Trading_GetBalance_0 = runtime.ForwardResponseMessage
-
-	forward_Trading_CreateTransaction_0 = runtime.ForwardResponseMessage
-
-	forward_Trading_GetInsiteTxStatus_0 = runtime.ForwardResponseMessage
-
-	forward_Trading_ACK_0 = runtime.ForwardResponseMessage
-)
-
-// RegisterServiceExampleHandlerFromEndpoint is same as RegisterServiceExampleHandler but
-// automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterServiceExampleHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
-	conn, err := grpc.Dial(endpoint, opts...)
-	if err != nil {
-		return err
-	}
-	defer func() {
-		if err != nil {
-			if cerr := conn.Close(); cerr != nil {
-				grpclog.Infof("Failed to close conn to %s: %v", endpoint, cerr)
-			}
-			return
-		}
-		go func() {
-			<-ctx.Done()
-			if cerr := conn.Close(); cerr != nil {
-				grpclog.Infof("Failed to close conn to %s: %v", endpoint, cerr)
-			}
-		}()
-	}()
-
-	return RegisterServiceExampleHandler(ctx, mux, conn)
-}
-
-// RegisterServiceExampleHandler registers the http handlers for service ServiceExample to "mux".
-// The handlers forward requests to the grpc endpoint over "conn".
-func RegisterServiceExampleHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterServiceExampleHandlerClient(ctx, mux, NewServiceExampleClient(conn))
-}
-
-// RegisterServiceExampleHandlerClient registers the http handlers for service ServiceExample
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "ServiceExampleClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "ServiceExampleClient"
-// doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "ServiceExampleClient" to call the correct interceptors.
-func RegisterServiceExampleHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ServiceExampleClient) error {
-
-	mux.Handle("POST", pattern_ServiceExample_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Trading_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.ServiceExample/Version", runtime.WithHTTPPathPattern("/version"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/sphinx.v1.Trading/Version", runtime.WithHTTPPathPattern("/version"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ServiceExample_Version_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Trading_Version_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ServiceExample_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Trading_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -619,9 +545,29 @@ func RegisterServiceExampleHandlerClient(ctx context.Context, mux *runtime.Serve
 }
 
 var (
-	pattern_ServiceExample_Version_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"version"}, ""))
+	pattern_Trading_CreateWallet_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "wallet"}, ""))
+
+	pattern_Trading_GetWalletBalance_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "wallet", "balance"}, ""))
+
+	pattern_Trading_CreateTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "transaction"}, ""))
+
+	pattern_Trading_GetTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "transaction"}, ""))
+
+	pattern_Trading_ACK_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "internal", "ack"}, ""))
+
+	pattern_Trading_Version_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"version"}, ""))
 )
 
 var (
-	forward_ServiceExample_Version_0 = runtime.ForwardResponseMessage
+	forward_Trading_CreateWallet_0 = runtime.ForwardResponseMessage
+
+	forward_Trading_GetWalletBalance_0 = runtime.ForwardResponseMessage
+
+	forward_Trading_CreateTransaction_0 = runtime.ForwardResponseMessage
+
+	forward_Trading_GetTransaction_0 = runtime.ForwardResponseMessage
+
+	forward_Trading_ACK_0 = runtime.ForwardResponseMessage
+
+	forward_Trading_Version_0 = runtime.ForwardResponseMessage
 )

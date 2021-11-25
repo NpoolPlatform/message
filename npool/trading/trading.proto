@@ -5,35 +5,33 @@ package sphinx.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/trading";
 
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
 import "npool/signproxy/signproxy.proto";
+import "google/protobuf/empty.proto";
 
 // 交易服务
 service Trading {
 	// 创建账户
-	rpc CreateAccount (CreateAccountRequest) returns (CreateAccountResponse) {
+	rpc CreateWallet (CreateWalletRequest) returns (CreateWalletResponse) {
 		option (google.api.http) = {
-			post: "/v1/account/register"
+			post: "/v1/create/wallet"
 			body: "*"
 		};}
 	// 余额查询
-	rpc GetBalance (GetBalanceRequest) returns (GetBalanceResponse) {
+	rpc GetWalletBalance (GetWalletBalanceRequest) returns (GetWalletBalanceResponse) {
 		option (google.api.http) = {
-			post: "/v1/account/balance/get"
+			post: "/v1/get/wallet/balance"
 			body: "*"
 		};}
 	// 转账 / 提现
 	rpc CreateTransaction (CreateTransactionRequest) returns (CreateTransactionResponse) {
 		option (google.api.http) = {
-			post: "/v1/transaction/create"
+			post: "/v1/create/transaction"
 			body: "*"
 		};}
-	// TODO: 账户交易查询
-	rpc GetTxJSON (GetTxJSONRequest) returns (AccountTxJSON) {} // reserved function
 	// 交易状态查询
-	rpc GetInsiteTxStatus (GetInsiteTxStatusRequest) returns (GetInsiteTxStatusResponse) {
+	rpc GetTransaction (GetTransactionRequest) returns (GetTransactionResponse) {
 		option (google.api.http) = {
-			post: "/v1/transaction/status"
+			post: "/v1/get/transaction"
 			body: "*"
 		};}
 	// 接收ack
@@ -42,80 +40,91 @@ service Trading {
 			post: "/v1/internal/ack"
 			body: "*"
 		};}
+	// ping - pong
+  rpc Version (google.protobuf.Empty) returns (VersionResponse){
+    option (google.api.http) = {
+        post: "/version"
+        body: "*"
+    };
+  }
+
 }
 
-// CreateAccount 参数
-message CreateAccountRequest {
-	string coin_name = 1; // 币种名称(唯一)
-	string uuid = 3; // user_id或与其绑定的唯一标识符
-}
-// CreateAccount 返回
-message CreateAccountResponse {
-	string coin_name = 1; // 币种名称(唯一)
-	string address = 3; // 创建的钱包地址
-	string uuid = 4; // uuid将关联私钥，提高整体安全性
+// share account structure
+message EntAccount {
+	// 币种名称(唯一)
+	string CoinName = 1;
+	// 钱包地址，创建时填空
+	string Address = 3;
 }
 
-// GetBalance 参数
-message GetBalanceRequest {
-	string coin_name = 1; // 币种名称(唯一)
-	string address = 3; // 查询的钱包地址
-	int64 timestamp_utc = 4; // 长整型时间戳
+// CreateWallet 参数
+message CreateWalletRequest {
+	// 币种名称(唯一)
+	string CoinName = 1;
+	// 当前取UserID
+	string UUID = 2;
 }
-// GetBalance 返回
-message GetBalanceResponse {
-	string coin_name = 1; // 币种名称(唯一)
-	string address = 3; // 查询的钱包地址
-	int64 timestamp_utc = 4; // 长整型时间戳
-	double amount_float64 = 5; // 余额
+// CreateWallet 返回
+message CreateWalletResponse {
+	EntAccount Info = 1;
 }
 
-// GetTxJSONRequest 参数
-message GetTxJSONRequest {
-	// 继承钱包节点基础功能，预留
-	string coin_name = 1; // 币种名称(唯一)
-	string address = 3; // 要查询的钱包地址
-	int64 timefrom_utc = 4; // 开始时间
-	int64 timetill_utc = 5; // 结束时间
-	int32 limit_n = 6; // 服务端限制返回条数
+// GetWalletBalance 参数
+message GetWalletBalanceRequest {
+	EntAccount Info = 1;
 }
-// GetTxJSONRequest 返回
-message AccountTxJSON {
-	string json = 1; // disabled for now
+// GetWalletBalance 返回
+message GetWalletBalanceResponse {
+	EntAccount Info = 1;
+	double AmountFloat64 = 4; // 长整型金额
 }
 
-// GetInsiteTxStatus 参数
-message GetInsiteTxStatusRequest {
-	string transaction_id_insite = 1; // 站内交易ID
+// share transaction structure
+message BaseTx {
+	// 站内交易ID
+	string TransactionIDInsite = 1;
+	// 币种名称(唯一)
+	string CoinName = 2;
+	// 不入库的参考金额
+	double AmountFloat64 = 3;
+	// 发送方
+	string AddressFrom = 4;
+	// 接收方
+	string AddressTo = 5;
+	// sql enum: recharge, payment, withdraw, unknown
+	string InsiteTxType = 6;
+	// 用户提交请求时的时间戳，与2FA绑定
+	int64 CreatetimeUTC = 12;
 }
 
-// GetInsiteTxStatus 返回
-message GetInsiteTxStatusResponse {
-	string transaction_id_insite = 8; // 站内交易ID
-	string coin_name = 1; // 币种名称(唯一)
-	double amount_float64 = 3; // 不入库的参考金额
-	string address_from = 5; // 发送方
-	string address_to = 6; // 接收方
-	string insite_tx_type = 7; // recharge, payment, withdraw, unknown
-	string transaction_id_chain = 9; // 公链交易ID（如有）
-	string status = 10; // 为done则成功；全部状态："pending_review", "pending_process", "pending_signinfo", "pending_sign", "pending_broadcast", "pending_confirm", "done", "rejected", "error", "error_expected"
-	bool is_processing = 11; // 对应数据库中mutex
-	int64 createtime_utc = 12; // 创建时间
-	int64 updatetime_utc = 13; // 上次更新时间
-	bool is_success = 14; // 便于调用方判断
-	bool is_failed = 15; // 不success不fail就是pending了
+// GetTransaction 参数
+message GetTransactionRequest {
+	// 站内交易ID
+	string TransactionIDInsite = 1;
 }
+// GetTransaction 返回
+message GetTransactionResponse {
+	BaseTx Info = 1;
+	// 上次更新时间
+	int64 UpdatetimeUTC = 13;
+	// bool, 便于调用方判断
+	bool Succeeded = 14;
+	// 不success不fail就是pending了
+	bool Failed = 15;
+	// 公链交易ID（如有）
+	string TransactionIDChain = 7;
+	// 为done则成功；全部状态："pending_review", "pending_process", "pending_signinfo", "pending_sign", "pending_broadcast", "pending_confirm", "done", "rejected", "error", "error_expected"
+	string Status = 8;
+}
+
 
 // CreateTransaction 参数
 message CreateTransactionRequest {
-	string coin_name = 1; // 币种名称(唯一)
-	string transaction_id_insite = 3; // 站内交易ID
-	string address_from = 4; // 发送方
-	string address_to = 5; // 接收方
-	double amount_float64 = 6; // 不入库的参考金额
-	string type = 8; // recharge, payment, withdraw
-	string uuid_signature = 9; // 2FA的时效性验证码，前期可以留空
-	int64 createtime_utc = 10; // 用户提交请求时的时间戳，与2FA绑定
+	// 交易基本信息
+	BaseTx Info = 1;
+	// 2FA的时效性验证码，前期可以留空
+	string UUIDSignature = 2;
 }
 
 // // PortalSignInit 参数
@@ -148,27 +157,17 @@ message ACKRequest {
 }
 
 message ACKResponse {
-	bool is_okay = 1; // 是否收到请求
+	// 是否收到请求
+	bool is_okay = 1;
 }
 
-// deprecated
 message CreateTransactionResponse {
-	string info = 1; // "success"
-}
-
-service ServiceExample {
-	// Method Version
-	rpc Version (google.protobuf.Empty) returns (VersionResponse){
-		option (google.api.http) = {
-			post: "/version"
-			body: "*"
-		};
-	}
+	BaseTx Info = 1;
 }
 
 // request body and response
 message VersionResponse {
-		string Info = 100;
+	string Info = 100;
 }
 
 
