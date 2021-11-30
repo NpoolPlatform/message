@@ -101,7 +101,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "properties": {}
+              "$ref": "#/definitions/v1GetCoinInfosRequest"
             }
           }
         ],
@@ -239,6 +239,25 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1CoinInfo"
+        }
+      }
+    },
+    "v1GetCoinInfosRequest": {
+      "type": "object",
+      "properties": {
+        "PreSale": {
+          "type": "boolean"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },

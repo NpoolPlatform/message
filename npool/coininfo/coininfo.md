@@ -183,7 +183,7 @@ CoinInfo 服务
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | CreateCoinInfo | [CreateCoinInfoRequest](#sphinx.coininfo.v1.CreateCoinInfoRequest) | [CreateCoinInfoResponse](#sphinx.coininfo.v1.CreateCoinInfoResponse) | 注册新币种 |
-| GetCoinInfos | [.google.protobuf.Empty](#google.protobuf.Empty) | [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse) | 获取币种信息 |
+| GetCoinInfos | [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest) | [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse) | 获取币种信息 |
 | GetCoinInfo | [GetCoinInfoRequest](#sphinx.coininfo.v1.GetCoinInfoRequest) | [GetCoinInfoResponse](#sphinx.coininfo.v1.GetCoinInfoResponse) | 获取单个币种 |
 | UpdateCoinInfo | [UpdateCoinInfoRequest](#sphinx.coininfo.v1.UpdateCoinInfoRequest) | [UpdateCoinInfoResponse](#sphinx.coininfo.v1.UpdateCoinInfoResponse) | 设置币种是否预售 |
 

@@ -17,7 +17,7 @@ service SphinxCoinInfo {
 		};
 	}
 	// 获取币种信息
-	rpc GetCoinInfos (google.protobuf.Empty) returns (GetCoinInfosResponse){
+	rpc GetCoinInfos (GetCoinInfosRequest) returns (GetCoinInfosResponse){
 		option (google.api.http) = {
 			post: "/v1/get/coin/infos"
             body: "*"

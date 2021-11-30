@@ -7,7 +7,6 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -22,7 +21,7 @@ type SphinxCoinInfoClient interface {
 	// 注册新币种
 	CreateCoinInfo(ctx context.Context, in *CreateCoinInfoRequest, opts ...grpc.CallOption) (*CreateCoinInfoResponse, error)
 	// 获取币种信息
-	GetCoinInfos(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*GetCoinInfosResponse, error)
+	GetCoinInfos(ctx context.Context, in *GetCoinInfosRequest, opts ...grpc.CallOption) (*GetCoinInfosResponse, error)
 	// 获取单个币种
 	GetCoinInfo(ctx context.Context, in *GetCoinInfoRequest, opts ...grpc.CallOption) (*GetCoinInfoResponse, error)
 	// 设置币种是否预售
@@ -46,7 +45,7 @@ func (c *sphinxCoinInfoClient) CreateCoinInfo(ctx context.Context, in *CreateCoi
 	return out, nil
 }
 
-func (c *sphinxCoinInfoClient) GetCoinInfos(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*GetCoinInfosResponse, error) {
+func (c *sphinxCoinInfoClient) GetCoinInfos(ctx context.Context, in *GetCoinInfosRequest, opts ...grpc.CallOption) (*GetCoinInfosResponse, error) {
 	out := new(GetCoinInfosResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.coininfo.v1.SphinxCoinInfo/GetCoinInfos", in, out, opts...)
 	if err != nil {
@@ -80,7 +79,7 @@ type SphinxCoinInfoServer interface {
 	// 注册新币种
 	CreateCoinInfo(context.Context, *CreateCoinInfoRequest) (*CreateCoinInfoResponse, error)
 	// 获取币种信息
-	GetCoinInfos(context.Context, *emptypb.Empty) (*GetCoinInfosResponse, error)
+	GetCoinInfos(context.Context, *GetCoinInfosRequest) (*GetCoinInfosResponse, error)
 	// 获取单个币种
 	GetCoinInfo(context.Context, *GetCoinInfoRequest) (*GetCoinInfoResponse, error)
 	// 设置币种是否预售
@@ -95,7 +94,7 @@ type UnimplementedSphinxCoinInfoServer struct {
 func (UnimplementedSphinxCoinInfoServer) CreateCoinInfo(context.Context, *CreateCoinInfoRequest) (*CreateCoinInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCoinInfo not implemented")
 }
-func (UnimplementedSphinxCoinInfoServer) GetCoinInfos(context.Context, *emptypb.Empty) (*GetCoinInfosResponse, error) {
+func (UnimplementedSphinxCoinInfoServer) GetCoinInfos(context.Context, *GetCoinInfosRequest) (*GetCoinInfosResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinInfos not implemented")
 }
 func (UnimplementedSphinxCoinInfoServer) GetCoinInfo(context.Context, *GetCoinInfoRequest) (*GetCoinInfoResponse, error) {
@@ -136,7 +135,7 @@ func _SphinxCoinInfo_CreateCoinInfo_Handler(srv interface{}, ctx context.Context
 }
 
 func _SphinxCoinInfo_GetCoinInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(emptypb.Empty)
+	in := new(GetCoinInfosRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -148,7 +147,7 @@ func _SphinxCoinInfo_GetCoinInfos_Handler(srv interface{}, ctx context.Context, 
 		FullMethod: "/sphinx.coininfo.v1.SphinxCoinInfo/GetCoinInfos",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SphinxCoinInfoServer).GetCoinInfos(ctx, req.(*emptypb.Empty))
+		return srv.(SphinxCoinInfoServer).GetCoinInfos(ctx, req.(*GetCoinInfosRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
