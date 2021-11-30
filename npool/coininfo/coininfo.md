@@ -11,7 +11,6 @@
     - [GetCoinInfoResponse](#sphinx.coininfo.v1.GetCoinInfoResponse)
     - [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest)
     - [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse)
-    - [PageInfo](#sphinx.coininfo.v1.PageInfo)
     - [UpdateCoinInfoRequest](#sphinx.coininfo.v1.UpdateCoinInfoRequest)
     - [UpdateCoinInfoResponse](#sphinx.coininfo.v1.UpdateCoinInfoResponse)
   
@@ -37,11 +36,10 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  | uuid |
-| Enum | [int32](#int32) |  | signproxy tradingservice 内部调用 coininfo仅存储 |
 | PreSale | [bool](#bool) |  | 是否为预售，false为在售商品 |
-| Name | [string](#string) |  | 币种名称 unique eg:Filecoin |
+| Name | [string](#string) |  | 币种名称 FIL, BTC |
 | Unit | [string](#string) |  | 单位：FIL |
-| LogoImage | [string](#string) |  | url; can be empty |
+| Logo | [string](#string) |  | url; can be empty |
 
 
 
@@ -56,7 +54,10 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
+| PreSale | [bool](#bool) |  | 是否为预售，false为在售商品 |
+| Name | [string](#string) |  | 币种名称 FIL, BTC |
+| Unit | [string](#string) |  | 单位：FIL |
+| Logo | [string](#string) |  | url; can be empty |
 
 
 
@@ -71,7 +72,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
+| ID | [string](#string) |  |  |
 
 
 
@@ -116,7 +117,10 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PageInfo | [PageInfo](#sphinx.coininfo.v1.PageInfo) |  |  |
+| PreSale | [bool](#bool) |  | 是否为预售，false为在售商品 |
+| Name | [string](#string) |  | 币种名称 FIL, BTC |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
 
 
 
@@ -138,22 +142,6 @@
 
 
 
-<a name="sphinx.coininfo.v1.PageInfo"></a>
-
-### PageInfo
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| PageIndex | [int32](#int32) |  |  |
-| PageSize | [int32](#int32) |  |  |
-
-
-
-
-
-
 <a name="sphinx.coininfo.v1.UpdateCoinInfoRequest"></a>
 
 ### UpdateCoinInfoRequest
@@ -162,7 +150,9 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
+| ID | [string](#string) |  |  |
+| PreSale | [bool](#bool) |  | 是否为预售，false为在售商品 |
+| Logo | [string](#string) |  | url; can be empty |
 
 
 
@@ -173,11 +163,6 @@
 
 ### UpdateCoinInfoResponse
 
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
 
 
 
@@ -193,7 +178,7 @@
 <a name="sphinx.coininfo.v1.SphinxCoinInfo"></a>
 
 ### SphinxCoinInfo
-CoinInfo服务
+CoinInfo 服务
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|

@@ -184,10 +184,6 @@
         "ID": {
           "type": "string"
         },
-        "Enum": {
-          "type": "integer",
-          "format": "int32"
-        },
         "PreSale": {
           "type": "boolean"
         },
@@ -197,7 +193,7 @@
         "Unit": {
           "type": "string"
         },
-        "LogoImage": {
+        "Logo": {
           "type": "string"
         }
       },
@@ -206,8 +202,17 @@
     "v1CreateCoinInfoRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinInfo"
+        "PreSale": {
+          "type": "boolean"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
         }
       },
       "title": "注册币种信息"
@@ -215,8 +220,8 @@
     "v1CreateCoinInfoResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinInfo"
+        "ID": {
+          "type": "string"
         }
       }
     },
@@ -252,19 +257,20 @@
     "v1UpdateCoinInfoRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinInfo"
+        "ID": {
+          "type": "string"
+        },
+        "PreSale": {
+          "type": "boolean"
+        },
+        "Logo": {
+          "type": "string"
         }
       },
       "title": "设置预售请求"
     },
     "v1UpdateCoinInfoResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinInfo"
-        }
-      }
+      "type": "object"
     }
   }
 }

@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/coininfo";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 
-// CoinInfo服务
+// CoinInfo 服务
 service SphinxCoinInfo {
 	// 注册新币种
 	rpc CreateCoinInfo (CreateCoinInfoRequest) returns (CreateCoinInfoResponse){
@@ -36,56 +36,59 @@ service SphinxCoinInfo {
 		option (google.api.http) = {
 			post: "/v1/update/coin/info"
 			body: "*"
-		};}
+		};
+	}
 }
 
 // 数据库内CoinInfo
 message CoinInfo {
-	string ID = 2; // uuid
-	int32 Enum = 1; // signproxy tradingservice 内部调用 coininfo仅存储
-	bool PreSale = 3; // 是否为预售，false为在售商品
-	string Name = 4; // 币种名称 unique eg:Filecoin
-	string Unit = 5; // 单位：FIL
-	string LogoImage = 6; // url; can be empty
+	string ID 		= 100; // uuid
+	bool PreSale 	= 110; // 是否为预售，false为在售商品
+	string Name 	= 120; // 币种名称 FIL, BTC
+	string Unit 	= 130; // 单位：FIL
+	string Logo		= 140; // url; can be empty
 }
 
 // 获取单个币种
 message GetCoinInfoRequest {
-    string ID = 1;
+    string ID = 100;
 }
 
 message GetCoinInfoResponse {
-    CoinInfo Info = 1;
+    CoinInfo Info = 100;
 }
 
 // 注册币种信息
 message CreateCoinInfoRequest {
-    CoinInfo Info = 1;
+    bool PreSale 	= 100; // 是否为预售，false为在售商品
+	string Name 	= 110; // 币种名称 FIL, BTC
+	string Unit 	= 120; // 单位：FIL
+	string Logo		= 130; // url; can be empty
 }
 
 message CreateCoinInfoResponse {
-    CoinInfo Info = 1;
-}
-
-message PageInfo {
-    int32 PageIndex = 1;
-    int32 PageSize = 2;
+	string ID = 100;
 }
 
 message GetCoinInfosRequest {
-    PageInfo PageInfo = 1;
+	bool PreSale 	= 100; // 是否为预售，false为在售商品
+	string Name 	= 110; // 币种名称 FIL, BTC
+	int32 Offset 	= 120;
+	int32 Limit		= 130;
 }
 
 // 所有币种信息
 message GetCoinInfosResponse {
-	repeated CoinInfo Infos = 1;
+	repeated CoinInfo Infos = 100;
 }
 
 // 设置预售请求
 message UpdateCoinInfoRequest {
-    CoinInfo Info = 1;
+    string ID 		= 100;
+	bool PreSale 	= 110; // 是否为预售，false为在售商品
+	string Logo		= 120; // url; can be empty
 }
 
 message UpdateCoinInfoResponse {
-    CoinInfo Info = 1;
+
 }
