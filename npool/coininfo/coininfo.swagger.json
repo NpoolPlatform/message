@@ -264,6 +264,10 @@
     "v1GetCoinInfosResponse": {
       "type": "object",
       "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        },
         "Infos": {
           "type": "array",
           "items": {

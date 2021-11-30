@@ -135,6 +135,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| Total | [int32](#int32) |  |  |
 | Infos | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) | repeated |  |
 
 

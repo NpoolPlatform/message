@@ -79,7 +79,8 @@ message GetCoinInfosRequest {
 
 // 所有币种信息
 message GetCoinInfosResponse {
-	repeated CoinInfo Infos = 100;
+	int32 Total 			= 100;
+	repeated CoinInfo Infos = 110;
 }
 
 // 设置预售请求
