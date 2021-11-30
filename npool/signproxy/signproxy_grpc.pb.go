@@ -18,6 +18,12 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SignProxyClient interface {
+	// sync
+	GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceReponse, error)
+	CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletReponse, error)
+	CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*CreateTransactionReponse, error)
+	GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionReponse, error)
+	// async stream
 	ProxyPlugin(ctx context.Context, opts ...grpc.CallOption) (SignProxy_ProxyPluginClient, error)
 	ProxySign(ctx context.Context, opts ...grpc.CallOption) (SignProxy_ProxySignClient, error)
 }
@@ -28,6 +34,42 @@ type signProxyClient struct {
 
 func NewSignProxyClient(cc grpc.ClientConnInterface) SignProxyClient {
 	return &signProxyClient{cc}
+}
+
+func (c *signProxyClient) GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceReponse, error) {
+	out := new(GetBalanceReponse)
+	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SignProxy/GetBalance", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *signProxyClient) CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletReponse, error) {
+	out := new(CreateWalletReponse)
+	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SignProxy/CreateWallet", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *signProxyClient) CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*CreateTransactionReponse, error) {
+	out := new(CreateTransactionReponse)
+	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SignProxy/CreateTransaction", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *signProxyClient) GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionReponse, error) {
+	out := new(GetTransactionReponse)
+	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SignProxy/GetTransaction", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *signProxyClient) ProxyPlugin(ctx context.Context, opts ...grpc.CallOption) (SignProxy_ProxyPluginClient, error) {
@@ -96,6 +138,12 @@ func (x *signProxyProxySignClient) Recv() (*ProxySignRequest, error) {
 // All implementations must embed UnimplementedSignProxyServer
 // for forward compatibility
 type SignProxyServer interface {
+	// sync
+	GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceReponse, error)
+	CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletReponse, error)
+	CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionReponse, error)
+	GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionReponse, error)
+	// async stream
 	ProxyPlugin(SignProxy_ProxyPluginServer) error
 	ProxySign(SignProxy_ProxySignServer) error
 	mustEmbedUnimplementedSignProxyServer()
@@ -105,6 +153,18 @@ type SignProxyServer interface {
 type UnimplementedSignProxyServer struct {
 }
 
+func (UnimplementedSignProxyServer) GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceReponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBalance not implemented")
+}
+func (UnimplementedSignProxyServer) CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletReponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateWallet not implemented")
+}
+func (UnimplementedSignProxyServer) CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionReponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTransaction not implemented")
+}
+func (UnimplementedSignProxyServer) GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionReponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTransaction not implemented")
+}
 func (UnimplementedSignProxyServer) ProxyPlugin(SignProxy_ProxyPluginServer) error {
 	return status.Errorf(codes.Unimplemented, "method ProxyPlugin not implemented")
 }
@@ -122,6 +182,78 @@ type UnsafeSignProxyServer interface {
 
 func RegisterSignProxyServer(s grpc.ServiceRegistrar, srv SignProxyServer) {
 	s.RegisterService(&SignProxy_ServiceDesc, srv)
+}
+
+func _SignProxy_GetBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SignProxyServer).GetBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/sphinx.proxy.v1.SignProxy/GetBalance",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SignProxyServer).GetBalance(ctx, req.(*GetBalanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SignProxy_CreateWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateWalletRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SignProxyServer).CreateWallet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/sphinx.proxy.v1.SignProxy/CreateWallet",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SignProxyServer).CreateWallet(ctx, req.(*CreateWalletRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SignProxy_CreateTransaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTransactionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SignProxyServer).CreateTransaction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/sphinx.proxy.v1.SignProxy/CreateTransaction",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SignProxyServer).CreateTransaction(ctx, req.(*CreateTransactionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SignProxy_GetTransaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTransactionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SignProxyServer).GetTransaction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/sphinx.proxy.v1.SignProxy/GetTransaction",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SignProxyServer).GetTransaction(ctx, req.(*GetTransactionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _SignProxy_ProxyPlugin_Handler(srv interface{}, stream grpc.ServerStream) error {
@@ -182,7 +314,24 @@ func (x *signProxyProxySignServer) Recv() (*ProxySignResponse, error) {
 var SignProxy_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "sphinx.proxy.v1.SignProxy",
 	HandlerType: (*SignProxyServer)(nil),
-	Methods:     []grpc.MethodDesc{},
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "GetBalance",
+			Handler:    _SignProxy_GetBalance_Handler,
+		},
+		{
+			MethodName: "CreateWallet",
+			Handler:    _SignProxy_CreateWallet_Handler,
+		},
+		{
+			MethodName: "CreateTransaction",
+			Handler:    _SignProxy_CreateTransaction_Handler,
+		},
+		{
+			MethodName: "GetTransaction",
+			Handler:    _SignProxy_GetTransaction_Handler,
+		},
+	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "ProxyPlugin",

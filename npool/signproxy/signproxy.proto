@@ -6,11 +6,62 @@ option go_package = "github.com/NpoolPlatform/message/npool/signproxy";
 
 import "npool/sphinxplugin/sphinxplugin.proto";
 
-// TODO 分开 sign 和 proxy 的队列
 // Service Name
 service SignProxy {
+    // sync
+    rpc GetBalance (GetBalanceRequest) returns (GetBalanceReponse) {}
+    rpc CreateWallet (CreateWalletRequest) returns (CreateWalletReponse) {}
+    rpc CreateTransaction (CreateTransactionRequest) returns (CreateTransactionReponse) {}
+    rpc GetTransaction (GetTransactionRequest) returns (GetTransactionReponse) {}
+    // async stream
     rpc ProxyPlugin (stream ProxyPluginResponse) returns (stream ProxyPluginRequest) {}
     rpc ProxySign (stream ProxySignResponse) returns (stream ProxySignRequest) {}
+}
+
+message GetBalanceRequest {
+    sphinx.plugin.v1.CoinType CoinType = 100;
+    string Address                     = 110;
+}
+
+message BalanceInfo {
+    double Balance  = 100;
+}
+
+message GetBalanceReponse {
+    BalanceInfo Info = 100;
+}
+
+message CreateWalletRequest {
+    sphinx.plugin.v1.CoinType CoinType = 100;
+}
+
+message WalletInfo {
+    string Address = 100;
+    // TODO sign type
+}
+
+message CreateWalletReponse {
+    WalletInfo Info = 100;
+}
+
+message CreateTransactionRequest {
+    sphinx.plugin.v1.CoinType CoinType  = 100;
+	string TransactionID                = 110;
+	string From                         = 130;
+	string To                           = 140;
+    double Value                        = 120;
+}
+
+message CreateTransactionReponse {
+
+}
+
+message GetTransactionRequest {
+
+}
+
+message GetTransactionReponse {
+
 }
 
 // RegisterCoin ..

@@ -4,11 +4,21 @@
 ## Table of Contents
 
 - [npool/signproxy/signproxy.proto](#npool/signproxy/signproxy.proto)
+    - [BalanceInfo](#sphinx.proxy.v1.BalanceInfo)
+    - [CreateTransactionReponse](#sphinx.proxy.v1.CreateTransactionReponse)
+    - [CreateTransactionRequest](#sphinx.proxy.v1.CreateTransactionRequest)
+    - [CreateWalletReponse](#sphinx.proxy.v1.CreateWalletReponse)
+    - [CreateWalletRequest](#sphinx.proxy.v1.CreateWalletRequest)
+    - [GetBalanceReponse](#sphinx.proxy.v1.GetBalanceReponse)
+    - [GetBalanceRequest](#sphinx.proxy.v1.GetBalanceRequest)
+    - [GetTransactionReponse](#sphinx.proxy.v1.GetTransactionReponse)
+    - [GetTransactionRequest](#sphinx.proxy.v1.GetTransactionRequest)
     - [ProxyPluginRequest](#sphinx.proxy.v1.ProxyPluginRequest)
     - [ProxyPluginResponse](#sphinx.proxy.v1.ProxyPluginResponse)
     - [ProxySignRequest](#sphinx.proxy.v1.ProxySignRequest)
     - [ProxySignResponse](#sphinx.proxy.v1.ProxySignResponse)
     - [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo)
+    - [WalletInfo](#sphinx.proxy.v1.WalletInfo)
   
     - [TransactionType](#sphinx.proxy.v1.TransactionType)
   
@@ -22,6 +32,131 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/signproxy/signproxy.proto
+
+
+
+<a name="sphinx.proxy.v1.BalanceInfo"></a>
+
+### BalanceInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Balance | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="sphinx.proxy.v1.CreateTransactionReponse"></a>
+
+### CreateTransactionReponse
+
+
+
+
+
+
+
+<a name="sphinx.proxy.v1.CreateTransactionRequest"></a>
+
+### CreateTransactionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
+| TransactionID | [string](#string) |  |  |
+| From | [string](#string) |  |  |
+| To | [string](#string) |  |  |
+| Value | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="sphinx.proxy.v1.CreateWalletReponse"></a>
+
+### CreateWalletReponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [WalletInfo](#sphinx.proxy.v1.WalletInfo) |  |  |
+
+
+
+
+
+
+<a name="sphinx.proxy.v1.CreateWalletRequest"></a>
+
+### CreateWalletRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
+
+
+
+
+
+
+<a name="sphinx.proxy.v1.GetBalanceReponse"></a>
+
+### GetBalanceReponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [BalanceInfo](#sphinx.proxy.v1.BalanceInfo) |  |  |
+
+
+
+
+
+
+<a name="sphinx.proxy.v1.GetBalanceRequest"></a>
+
+### GetBalanceRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
+| Address | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="sphinx.proxy.v1.GetTransactionReponse"></a>
+
+### GetTransactionReponse
+
+
+
+
+
+
+
+<a name="sphinx.proxy.v1.GetTransactionRequest"></a>
+
+### GetTransactionRequest
+
+
+
+
 
 
 
@@ -118,6 +253,21 @@ Sign WalletNew ..
 
 
 
+
+<a name="sphinx.proxy.v1.WalletInfo"></a>
+
+### WalletInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Address | [string](#string) |  | TODO sign type |
+
+
+
+
+
  
 
 
@@ -146,12 +296,15 @@ Sign WalletNew ..
 <a name="sphinx.proxy.v1.SignProxy"></a>
 
 ### SignProxy
-TODO 分开 sign 和 proxy 的队列
 Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| ProxyPlugin | [ProxyPluginResponse](#sphinx.proxy.v1.ProxyPluginResponse) stream | [ProxyPluginRequest](#sphinx.proxy.v1.ProxyPluginRequest) stream |  |
+| GetBalance | [GetBalanceRequest](#sphinx.proxy.v1.GetBalanceRequest) | [GetBalanceReponse](#sphinx.proxy.v1.GetBalanceReponse) | sync |
+| CreateWallet | [CreateWalletRequest](#sphinx.proxy.v1.CreateWalletRequest) | [CreateWalletReponse](#sphinx.proxy.v1.CreateWalletReponse) |  |
+| CreateTransaction | [CreateTransactionRequest](#sphinx.proxy.v1.CreateTransactionRequest) | [CreateTransactionReponse](#sphinx.proxy.v1.CreateTransactionReponse) |  |
+| GetTransaction | [GetTransactionRequest](#sphinx.proxy.v1.GetTransactionRequest) | [GetTransactionReponse](#sphinx.proxy.v1.GetTransactionReponse) |  |
+| ProxyPlugin | [ProxyPluginResponse](#sphinx.proxy.v1.ProxyPluginResponse) stream | [ProxyPluginRequest](#sphinx.proxy.v1.ProxyPluginRequest) stream | async stream |
 | ProxySign | [ProxySignResponse](#sphinx.proxy.v1.ProxySignResponse) stream | [ProxySignRequest](#sphinx.proxy.v1.ProxySignRequest) stream |  |
 
  

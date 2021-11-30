@@ -70,6 +70,15 @@
         }
       }
     },
+    "v1BalanceInfo": {
+      "type": "object",
+      "properties": {
+        "Balance": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
     "v1CoinType": {
       "type": "string",
       "enum": [
@@ -78,6 +87,28 @@
         "CoinTypeBTC"
       ],
       "default": "CoinTypeUnKnow"
+    },
+    "v1CreateTransactionReponse": {
+      "type": "object"
+    },
+    "v1CreateWalletReponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1WalletInfo"
+        }
+      }
+    },
+    "v1GetBalanceReponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BalanceInfo"
+        }
+      }
+    },
+    "v1GetTransactionReponse": {
+      "type": "object"
     },
     "v1ProxyPluginRequest": {
       "type": "object",
@@ -201,6 +232,14 @@
         "Params": {
           "type": "string",
           "format": "byte"
+        }
+      }
+    },
+    "v1WalletInfo": {
+      "type": "object",
+      "properties": {
+        "Address": {
+          "type": "string"
         }
       }
     }

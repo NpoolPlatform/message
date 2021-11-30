@@ -35,7 +35,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateTransactionRequest"
+              "$ref": "#/definitions/sphinxv1CreateTransactionRequest"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateWalletRequest"
+              "$ref": "#/definitions/sphinxv1CreateWalletRequest"
             }
           }
         ],
@@ -101,7 +101,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetTransactionRequest"
+              "$ref": "#/definitions/sphinxv1GetTransactionRequest"
             }
           }
         ],
@@ -244,6 +244,44 @@
         }
       }
     },
+    "sphinxv1CreateTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BaseTx",
+          "title": "交易基本信息"
+        },
+        "UUIDSignature": {
+          "type": "string",
+          "title": "2FA的时效性验证码，前期可以留空"
+        }
+      },
+      "title": "CreateTransaction 参数"
+    },
+    "sphinxv1CreateWalletRequest": {
+      "type": "object",
+      "properties": {
+        "CoinName": {
+          "type": "string",
+          "title": "币种名称(唯一)"
+        },
+        "UUID": {
+          "type": "string",
+          "title": "当前取UserID"
+        }
+      },
+      "title": "CreateWallet 参数"
+    },
+    "sphinxv1GetTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "TransactionIDInsite": {
+          "type": "string",
+          "title": "站内交易ID"
+        }
+      },
+      "title": "GetTransaction 参数"
+    },
     "v1ACKRequest": {
       "type": "object",
       "properties": {
@@ -320,20 +358,6 @@
       },
       "title": "share transaction structure"
     },
-    "v1CreateTransactionRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1BaseTx",
-          "title": "交易基本信息"
-        },
-        "UUIDSignature": {
-          "type": "string",
-          "title": "2FA的时效性验证码，前期可以留空"
-        }
-      },
-      "title": "CreateTransaction 参数"
-    },
     "v1CreateTransactionResponse": {
       "type": "object",
       "properties": {
@@ -341,20 +365,6 @@
           "$ref": "#/definitions/v1BaseTx"
         }
       }
-    },
-    "v1CreateWalletRequest": {
-      "type": "object",
-      "properties": {
-        "CoinName": {
-          "type": "string",
-          "title": "币种名称(唯一)"
-        },
-        "UUID": {
-          "type": "string",
-          "title": "当前取UserID"
-        }
-      },
-      "title": "CreateWallet 参数"
     },
     "v1CreateWalletResponse": {
       "type": "object",
@@ -378,16 +388,6 @@
         }
       },
       "title": "share account structure"
-    },
-    "v1GetTransactionRequest": {
-      "type": "object",
-      "properties": {
-        "TransactionIDInsite": {
-          "type": "string",
-          "title": "站内交易ID"
-        }
-      },
-      "title": "GetTransaction 参数"
     },
     "v1GetTransactionResponse": {
       "type": "object",
