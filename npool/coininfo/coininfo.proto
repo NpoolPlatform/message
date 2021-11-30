@@ -5,7 +5,6 @@ package sphinx.coininfo.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/coininfo";
 
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
 
 // CoinInfo 服务
 service SphinxCoinInfo {
