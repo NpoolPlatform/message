@@ -2,17 +2,18 @@ syntax = "proto3";
 
 package sphinx.proxy.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/signproxy";
+option go_package = "github.com/NpoolPlatform/message/npool/sphinxproxy";
 
 import "npool/sphinxplugin/sphinxplugin.proto";
 
 // Service Name
-service SignProxy {
+service SphinxProxy {
     // sync
     rpc GetBalance (GetBalanceRequest) returns (GetBalanceReponse) {}
     rpc CreateWallet (CreateWalletRequest) returns (CreateWalletReponse) {}
     rpc CreateTransaction (CreateTransactionRequest) returns (CreateTransactionReponse) {}
     rpc GetTransaction (GetTransactionRequest) returns (GetTransactionReponse) {}
+
     // async stream
     rpc ProxyPlugin (stream ProxyPluginResponse) returns (stream ProxyPluginRequest) {}
     rpc ProxySign (stream ProxySignResponse) returns (stream ProxySignRequest) {}
@@ -68,7 +69,7 @@ message GetTransactionReponse {
 message ProxyPluginResponse {
     sphinx.plugin.v1.CoinType CoinType          = 100;
     TransactionType TransactionType             = 110;
-    string TransactionIDInsite                  = 120;
+    string TransactionID                        = 120;
     uint64 Nonce                                = 130;
     string CID                                  = 140;
     double Balance                              = 150;
@@ -79,7 +80,7 @@ message ProxyPluginResponse {
 message ProxyPluginRequest {
     sphinx.plugin.v1.CoinType CoinType          = 100;
     TransactionType TransactionType             = 110;
-    string TransactionIDInsite                  = 120;
+    string TransactionID                        = 120;
     string Address                              = 130;
     sphinx.plugin.v1.UnsignedMessage Message    = 140;
     sphinx.plugin.v1.Signature       Signature  = 150;
@@ -89,14 +90,14 @@ message ProxyPluginRequest {
 message ProxySignRequest {
     sphinx.plugin.v1.CoinType CoinType          = 100;
     TransactionType TransactionType             = 110;
-    string TransactionIDInsite                  = 120;
+    string TransactionID                        = 120;
     sphinx.plugin.v1.UnsignedMessage Message    = 130;
 }
 
 message ProxySignResponse {
     sphinx.plugin.v1.CoinType CoinType          = 100;
     TransactionType TransactionType             = 110;
-    string TransactionIDInsite                  = 120;
+    string TransactionID                        = 120;
     ProxySignResponseInfo Info                  = 130;
 }
 

@@ -5,7 +5,7 @@ package sphinx.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/trading";
 
 import "google/api/annotations.proto";
-import "npool/signproxy/signproxy.proto";
+import "npool/sphinxproxy/sphinxproxy.proto";
 import "google/protobuf/empty.proto";
 
 // 交易服务

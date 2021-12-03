@@ -3,7 +3,7 @@
 
 ## Table of Contents
 
-- [npool/signproxy/signproxy.proto](#npool/signproxy/signproxy.proto)
+- [npool/sphinxproxy/sphinxproxy.proto](#npool/sphinxproxy/sphinxproxy.proto)
     - [BalanceInfo](#sphinx.proxy.v1.BalanceInfo)
     - [CreateTransactionReponse](#sphinx.proxy.v1.CreateTransactionReponse)
     - [CreateTransactionRequest](#sphinx.proxy.v1.CreateTransactionRequest)
@@ -22,16 +22,16 @@
   
     - [TransactionType](#sphinx.proxy.v1.TransactionType)
   
-    - [SignProxy](#sphinx.proxy.v1.SignProxy)
+    - [SphinxProxy](#sphinx.proxy.v1.SphinxProxy)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool/signproxy/signproxy.proto"></a>
+<a name="npool/sphinxproxy/sphinxproxy.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/signproxy/signproxy.proto
+## npool/sphinxproxy/sphinxproxy.proto
 
 
 
@@ -170,7 +170,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
-| TransactionIDInsite | [string](#string) |  |  |
+| TransactionID | [string](#string) |  |  |
 | Address | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 | Signature | [sphinx.plugin.v1.Signature](#sphinx.plugin.v1.Signature) |  |  |
@@ -190,7 +190,7 @@ RegisterCoin ..
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
-| TransactionIDInsite | [string](#string) |  |  |
+| TransactionID | [string](#string) |  |  |
 | Nonce | [uint64](#uint64) |  |  |
 | CID | [string](#string) |  |  |
 | Balance | [double](#double) |  |  |
@@ -211,7 +211,7 @@ Sign WalletNew ..
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
-| TransactionIDInsite | [string](#string) |  |  |
+| TransactionID | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 
 
@@ -229,7 +229,7 @@ Sign WalletNew ..
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
-| TransactionIDInsite | [string](#string) |  |  |
+| TransactionID | [string](#string) |  |  |
 | Info | [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo) |  |  |
 
 
@@ -293,9 +293,9 @@ Sign WalletNew ..
  
 
 
-<a name="sphinx.proxy.v1.SignProxy"></a>
+<a name="sphinx.proxy.v1.SphinxProxy"></a>
 
-### SignProxy
+### SphinxProxy
 Service Name
 
 | Method Name | Request Type | Response Type | Description |
