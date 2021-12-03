@@ -2226,5 +2226,5 @@ var CloudHashingGoods_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/goods/cloud-hashing-goods.proto",
+	Metadata: "npool/cloud-hashing-goods/cloud-hashing-goods.proto",
 }

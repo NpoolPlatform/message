@@ -3,7 +3,7 @@
 
 ## Table of Contents
 
-- [npool/goods/cloud-hashing-goods.proto](#npool/goods/cloud-hashing-goods.proto)
+- [npool/cloud-hashing-goods/cloud-hashing-goods.proto](#npool/cloud-hashing-goods/cloud-hashing-goods.proto)
     - [AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo)
     - [AppGoodTargetAreaInfo](#cloud.hashing.goods.v1.AppGoodTargetAreaInfo)
     - [AppTargetAreaInfo](#cloud.hashing.goods.v1.AppTargetAreaInfo)
@@ -147,10 +147,10 @@
 
 
 
-<a name="npool/goods/cloud-hashing-goods.proto"></a>
+<a name="npool/cloud-hashing-goods/cloud-hashing-goods.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/goods/cloud-hashing-goods.proto
+## npool/cloud-hashing-goods/cloud-hashing-goods.proto
 
 
 

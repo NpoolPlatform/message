@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/goods/cloud-hashing-goods.proto",
+    "title": "npool/cloud-hashing-goods/cloud-hashing-goods.proto",
     "version": "version not set"
   },
   "consumes": [
