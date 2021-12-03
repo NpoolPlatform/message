@@ -1,0 +1,1029 @@
+syntax = "proto3";
+
+package cloud.hashing.goods.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/cloud-hashing-goods";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+// Cloud Hashing Goods
+service CloudHashingGoods {
+    rpc Version (google.protobuf.Empty) returns (VersionResponse){
+        option (google.api.http) = {
+            get: "/version"
+        };
+    }
+
+    rpc CreateVendorLocation(CreateVendorLocationRequest) returns (CreateVendorLocationResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/vendor-location"
+            body: "*"
+        };
+    }
+    rpc UpdateVendorLocation(UpdateVendorLocationRequest) returns (UpdateVendorLocationResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/vendor-location"
+            body: "*"
+        };
+    }
+    rpc GetVendorLocation(GetVendorLocationRequest) returns (GetVendorLocationResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/vendor-location"
+            body: "*"
+        };
+    }
+    rpc DeleteVendorLocation(DeleteVendorLocationRequest) returns (DeleteVendorLocationResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/vendor-location"
+            body: "*"
+        };
+    }
+    rpc GetVendorLocations(GetVendorLocationsRequest) returns (GetVendorLocationsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/vendor-locations"
+            body: "*"
+        };
+    }
+
+    rpc CreatePriceCurrency(CreatePriceCurrencyRequest) returns (CreatePriceCurrencyResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/price-currency"
+            body: "*"
+        };
+    }
+    rpc UpdatePriceCurrency(UpdatePriceCurrencyRequest) returns (UpdatePriceCurrencyResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/price-currency"
+            body: "*"
+        };
+    }
+    rpc GetPriceCurrency(GetPriceCurrencyRequest) returns (GetPriceCurrencyResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/price-currency"
+            body: "*"
+        };
+    }
+    rpc GetPriceCurrencys(GetPriceCurrencysRequest) returns (GetPriceCurrencysResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/price-currencys"
+        };
+    }
+
+    rpc CreateTargetArea(CreateTargetAreaRequest) returns (CreateTargetAreaResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/target-area"
+            body: "*"
+        };
+    }
+    rpc UpdateTargetArea(UpdateTargetAreaRequest) returns (UpdateTargetAreaResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/target-area"
+            body: "*"
+        };
+    }
+    rpc GetTargetArea(GetTargetAreaRequest) returns (GetTargetAreaResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/target-area"
+            body: "*"
+        };
+    }
+    rpc DeleteTargetArea(DeleteTargetAreaRequest) returns (DeleteTargetAreaResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/target-area"
+            body: "*"
+        };
+    }
+    rpc DeleteTargetAreaByContinentCountry(DeleteTargetAreaByContinentCountryRequest) returns (DeleteTargetAreaByContinentCountryResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/target-area/continent/country"
+            body: "*"
+        };
+    }
+    rpc GetTargetAreas(GetTargetAreasRequest) returns (GetTargetAreasResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/target-areas"
+        };
+    }
+
+    rpc CreateDeviceInfo(CreateDeviceInfoRequest) returns (CreateDeviceInfoResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/device"
+            body: "*"
+        };
+    }
+    rpc UpdateDeviceInfo(UpdateDeviceInfoRequest) returns (UpdateDeviceInfoResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/device"
+            body: "*"
+        };
+    }
+    rpc GetDeviceInfo(GetDeviceInfoRequest) returns (GetDeviceInfoResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/device"
+            body: "*"
+        };
+    }
+    rpc DeleteDeviceInfo(DeleteDeviceInfoRequest) returns (DeleteDeviceInfoResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/device"
+            body: "*"
+        };
+    }
+    rpc GetDeviceInfos(GetDeviceInfosRequest) returns (GetDeviceInfosResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/devices"
+            body: "*"
+        };
+    }
+
+    // Good information for CRUD
+    rpc CreateGood(CreateGoodRequest) returns (CreateGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/good"
+            body: "*"
+        };
+    }
+    rpc UpdateGood(UpdateGoodRequest) returns (UpdateGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/good"
+            body: "*"
+        };
+    }
+    rpc GetGood(GetGoodRequest) returns (GetGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good"
+            body: "*"
+        };
+    }
+    rpc DeleteGood(DeleteGoodRequest) returns (DeleteGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/good"
+            body: "*"
+        };
+    }
+    rpc GetGoods(GetGoodsRequest) returns (GetGoodsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/goods"
+            body: "*"
+        };
+    }
+    // Good information for API
+    rpc GetGoodDetail(GetGoodDetailRequest) returns (GetGoodDetailResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/detail"
+            body: "*"
+        };
+    }
+    rpc GetGoodsDetail(GetGoodsDetailRequest) returns (GetGoodsDetailResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/goods/detail"
+            body: "*"
+        };
+    }
+
+    rpc AuthorizeAppGood(AuthorizeAppGoodRequest) returns (AuthorizeAppGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/authorize/app/good"
+            body: "*"
+        };
+    }
+    rpc SetAppGoodPrice(SetAppGoodPriceRequest) returns (SetAppGoodPriceResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/app/good/price"
+            body: "*"
+        };
+    }
+    rpc CheckAppGood(CheckAppGoodRequest) returns (CheckAppGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/check/app/good"
+            body: "*"
+        };
+    }
+    rpc OnsaleAppGood(OnsaleAppGoodRequest) returns (OnsaleAppGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/onsale/app/good"
+            body: "*"
+        };
+    }
+    rpc OffsaleAppGood(OffsaleAppGoodRequest) returns (OffsaleAppGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/offsale/app/good"
+            body: "*"
+        };
+    }
+    rpc UnauthorizeAppGood(UnauthorizeAppGoodRequest) returns (UnauthorizeAppGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/unauthorize/app/good"
+            body: "*"
+        };
+    }
+
+    rpc AuthorizeAppTargetArea(AuthorizeAppTargetAreaRequest) returns (AuthorizeAppTargetAreaResponse) {
+        option (google.api.http) = {
+            post: "/v1/authorize/app/target-area"
+            body: "*"
+        };
+    }
+    rpc CheckAppTargetArea(CheckAppTargetAreaRequest) returns (CheckAppTargetAreaResponse) {
+        option (google.api.http) = {
+            post: "/v1/check/app/target-area"
+            body: "*"
+        };
+    }
+    rpc UnauthorizeAppTargetArea(UnauthorizeAppTargetAreaRequest) returns (UnauthorizeAppTargetAreaResponse) {
+        option (google.api.http) = {
+            post: "/v1/unauthorize/app/target-area"
+            body: "*"
+        };
+    }
+
+    rpc AuthorizeAppGoodTargetArea(AuthorizeAppGoodTargetAreaRequest) returns (AuthorizeAppGoodTargetAreaResponse) {
+        option (google.api.http) = {
+            post: "/v1/authorize/app/good/target-area"
+            body: "*"
+        };
+    }
+    rpc CheckAppGoodTargetArea(CheckAppGoodTargetAreaRequest) returns (CheckAppGoodTargetAreaResponse) {
+        option (google.api.http) = {
+            post: "/v1/check/app/good/target-area"
+            body: "*"
+        };
+    }
+    rpc UnauthorizeAppGoodTargetArea(UnauthorizeAppGoodTargetAreaRequest) returns (UnauthorizeAppGoodTargetAreaResponse) {
+        option (google.api.http) = {
+            post: "/v1/unauthorize/app/good/target-area"
+            body: "*"
+        };
+    }
+
+    rpc CreateGoodComment(CreateGoodCommentRequest) returns (CreateGoodCommentResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/good/comment"
+            body: "*"
+        };
+    }
+    rpc UpdateGoodComment(UpdateGoodCommentRequest) returns (UpdateGoodCommentResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/good/comment"
+            body: "*"
+        };
+    }
+    rpc GetGoodComments(GetGoodCommentsRequest) returns (GetGoodCommentsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/comments"
+            body: "*"
+        };
+    }
+
+    rpc CreateGoodExtraInfo(CreateGoodExtraInfoRequest) returns (CreateGoodExtraInfoRequest) {
+        option (google.api.http) = {
+            post: "/v1/create/good/extra"
+            body: "*"
+        };
+    }
+    rpc GetGoodExtraInfo(GetGoodExtraInfoRequest) returns (GetGoodExtraInfoRequest) {
+        option (google.api.http) = {
+            post: "/v1/get/good/extra"
+            body: "*"
+        };
+    }
+    rpc UpdateGoodExtraInfo(UpdateGoodExtraInfoRequest) returns (UpdateGoodExtraInfoRequest) {
+        option (google.api.http) = {
+            post: "/v1/update/good/extra"
+            body: "*"
+        };
+    }
+
+    rpc CreateGoodReview(CreateGoodReviewRequest) returns (CreateGoodReviewResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/good/review"
+            body: "*"
+        };
+    }
+    rpc UpdateGoodReview(UpdateGoodReviewRequest) returns (UpdateGoodReviewResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/good/review"
+            body: "*"
+        };
+    }
+    rpc GetGoodReview(GetGoodReviewRequest) returns (GetGoodReviewResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/review"
+            body: "*"
+        };
+    }
+
+    rpc CreateFee(CreateFeeRequest) returns (CreateFeeResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/fee"
+            body: "*"
+        };
+    }
+    rpc GetFee(GetFeeRequest) returns (GetFeeResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/fee"
+            body: "*"
+        };
+    }
+
+    rpc CreateFeeType(CreateFeeTypeRequest) returns (CreateFeeTypeResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/fee/type"
+            body: "*"
+        };
+    }
+    rpc UpdateFeeType(UpdateFeeTypeRequest) returns (UpdateFeeTypeResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/fee/type"
+            body: "*"
+        };
+    }
+    rpc GetFeeType(GetFeeTypeRequest) returns (GetFeeTypeResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/fee/type"
+            body: "*"
+        };
+    }
+    rpc GetFeeTypes(GetFeeTypesRequest) returns (GetFeeTypesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/fee/types"
+            body: "*"
+        };
+    }
+
+    rpc CreateFeeDuration(CreateFeeDurationRequest) returns (CreateFeeDurationResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/fee/duration"
+            body: "*"
+        };
+    }
+    rpc UpdateFeeDuration(UpdateFeeDurationRequest) returns (UpdateFeeDurationResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/fee/duration"
+            body: "*"
+        };
+    }
+    rpc GetFeeDuration(GetFeeDurationRequest) returns (GetFeeDurationResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/fee/duration"
+            body: "*"
+        };
+    }
+    rpc GetFeeDurationsByFeeType(GetFeeDurationsByFeeTypeRequest) returns (GetFeeDurationsByFeeTypeResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/fee/durations/feetype"
+            body: "*"
+        };
+    }
+    rpc DeleteFeeDuration(DeleteFeeDurationRequest) returns (DeleteFeeDurationResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/fee/duration"
+            body: "*"
+        };
+    }
+}
+
+message PageInfo {
+    int32 PageIndex = 100;
+    int32 PageSize = 101;
+}
+
+// Request body and response
+message VersionResponse {
+    string Info = 200;
+}
+
+message VendorLocationInfo {
+    string ID = 300;
+    string Country = 301;
+    string Province = 302;
+    string City = 303;
+    string Address = 304;
+}
+
+message CreateVendorLocationRequest {
+    VendorLocationInfo Info = 400;
+}
+
+message CreateVendorLocationResponse {
+    VendorLocationInfo Info = 500;
+}
+
+message GetVendorLocationRequest {
+    string ID = 510;
+}
+
+message GetVendorLocationResponse {
+    VendorLocationInfo Info = 520;
+}
+
+message UpdateVendorLocationRequest {
+    VendorLocationInfo Info = 600;
+}
+
+message UpdateVendorLocationResponse {
+    VendorLocationInfo Info = 700;
+}
+
+message DeleteVendorLocationRequest {
+    string ID = 710;
+}
+
+message DeleteVendorLocationResponse {
+    VendorLocationInfo Info = 720;
+}
+
+message GetVendorLocationsRequest {
+    PageInfo PageInfo = 800;
+}
+
+message GetVendorLocationsResponse {
+    repeated VendorLocationInfo Infos = 900;
+    int32 Total = 901;
+}
+
+message TargetAreaInfo {
+    string ID = 1000;
+    string Continent = 1001;
+    string Country = 1002;
+}
+
+message CreateTargetAreaRequest {
+    TargetAreaInfo Info = 1100;
+}
+
+message CreateTargetAreaResponse {
+    TargetAreaInfo Info = 1200;
+}
+
+message GetTargetAreaRequest {
+    string ID = 1210;
+}
+
+message GetTargetAreaResponse {
+    TargetAreaInfo Info = 1220;
+}
+
+message UpdateTargetAreaRequest {
+    TargetAreaInfo Info = 1300;
+}
+
+message UpdateTargetAreaResponse {
+    TargetAreaInfo Info = 1400;
+}
+
+message DeleteTargetAreaRequest {
+    string ID = 1410;
+}
+
+message DeleteTargetAreaResponse {
+    TargetAreaInfo Info = 1420;
+}
+
+message DeleteTargetAreaByContinentCountryRequest {
+    string Continent = 1430;
+    string Country = 1431;
+}
+
+message DeleteTargetAreaByContinentCountryResponse {
+    TargetAreaInfo Info = 1440;
+}
+
+message GetTargetAreasRequest {
+    PageInfo PageInfo = 1500;
+}
+
+message GetTargetAreasResponse {
+    repeated TargetAreaInfo Infos = 1600;
+    int32 Total = 1501;
+}
+
+message DeviceInfo {
+    string ID = 1700;
+    string Type = 1701;
+    string Manufacturer = 1702;
+    int32 PowerComsuption = 1703;
+    int32 ShipmentAt = 1704;
+}
+
+message CreateDeviceInfoRequest {
+    DeviceInfo Info = 1800;
+}
+
+message CreateDeviceInfoResponse {
+    DeviceInfo Info = 1900;
+}
+
+message UpdateDeviceInfoRequest {
+    DeviceInfo Info = 2000;
+}
+
+message UpdateDeviceInfoResponse {
+    DeviceInfo Info = 2100;
+}
+
+message GetDeviceInfoRequest {
+    string ID = 2110;
+}
+
+message GetDeviceInfoResponse {
+    DeviceInfo Info = 2120;
+}
+
+message DeleteDeviceInfoRequest {
+    string ID = 2130;
+}
+
+message DeleteDeviceInfoResponse {
+    DeviceInfo Info = 2140;
+}
+
+message GetDeviceInfosRequest {
+    PageInfo PageInfo = 2200;
+}
+
+message GetDeviceInfosResponse {
+    repeated DeviceInfo Infos = 2300;
+    int32 Total = 2301;
+}
+
+message GoodInfo {
+    string ID = 2400;
+    string DeviceInfoID = 2401;
+    bool SeparateFee = 2403;
+    int32 UnitPower = 2404;
+    int32 DurationDays = 2405;
+    string CoinInfoID = 2406;
+    bool Actuals = 2407;
+    uint32 DeliveryAt = 2408;
+    string InheritFromGoodID = 2409;
+    string VendorLocationID = 2410;
+    double Price = 2411;
+    string BenefitType = 2412;
+    bool Classic = 2413;
+    repeated string SupportCoinTypeIDs = 2414;
+    int32 Total = 2415;
+    string PriceCurrency = 2416;
+    string Title = 2417;
+    string Unit = 2418;
+    repeated string FeeIDs = 2420;
+}
+
+message CreateGoodRequest {
+    GoodInfo Info = 2500;
+}
+
+message CreateGoodResponse {
+    GoodInfo Info = 2600;
+}
+
+message UpdateGoodRequest {
+    GoodInfo Info = 2700;
+}
+
+message UpdateGoodResponse {
+    GoodInfo Info = 2800;
+}
+
+message GetGoodRequest {
+    string ID = 2900;
+}
+
+message GetGoodResponse {
+    GoodInfo Info = 3000;
+}
+
+message PriceCurrency {
+    string ID = 3010;
+    string Name = 3011;
+    string Unit = 3012;
+    string Symbol = 3013;
+}
+
+message CreatePriceCurrencyRequest {
+    PriceCurrency Info = 3020;
+}
+
+message CreatePriceCurrencyResponse {
+    PriceCurrency Info = 3030;
+}
+
+message UpdatePriceCurrencyRequest {
+    PriceCurrency Info = 3040;
+}
+
+message UpdatePriceCurrencyResponse {
+    PriceCurrency Info = 3050;
+}
+
+message GetPriceCurrencyRequest {
+    string ID = 3060;
+}
+
+message GetPriceCurrencyResponse {
+    PriceCurrency Info = 3070;
+}
+
+message GetPriceCurrencysRequest {
+    PageInfo PageInfo = 3080;
+}
+
+message GetPriceCurrencysResponse {
+    repeated PriceCurrency Infos = 3090;
+}
+
+message FeeDetail {
+    FeeType Fee = 1;
+    double Value = 2;
+}
+
+message GoodDetail {
+    string ID = 2400;
+    DeviceInfo DeviceInfo = 2401;
+    bool SeparateFee = 2403;
+    int32 UnitPower = 2404;
+    int32 DurationDays = 2405;
+    string CoinInfoID = 2406;
+    bool Actuals = 2407;
+    uint32 DeliveryAt = 2408;
+    GoodInfo InheritFromGood = 2409;
+    VendorLocationInfo VendorLocation = 2410;
+    double Price = 2411;
+    string BenefitType = 2412;
+    bool Classic = 2413;
+    repeated string SupportCoinTypeIDs = 2414;
+    int32 Total = 2415;
+    GoodExtraInfo Extra = 2416;
+    string Title = 2417;
+    string Unit = 2418;
+    PriceCurrency PriceCurrency = 2420;
+    repeated FeeDetail Fees = 2421;
+}
+
+message GetGoodDetailRequest {
+    string ID = 3200;
+}
+
+message GetGoodDetailResponse {
+    GoodDetail Detail = 3210;
+}
+
+message GetGoodsDetailRequest {
+    PageInfo PageInfo = 3211;
+}
+
+message GetGoodsDetailResponse {
+    repeated GoodDetail Details = 3212;
+    int32 Total = 3213;
+}
+
+message DeleteGoodRequest {
+    string ID = 3220;
+}
+
+message DeleteGoodResponse {
+    GoodInfo Info = 3230;
+}
+
+message GetGoodsRequest {
+    PageInfo PageInfo = 3240;
+}
+
+message GetGoodsResponse {
+    repeated GoodInfo Infos = 3300;
+    int32 Total = 3301;
+}
+
+message AppGoodInfo {
+    string ID = 3310;
+    string AppID = 3311;
+    string GoodID = 3312;
+    double Price = 3313;
+    bool Authorized = 3315;
+    bool Online = 3316;
+    string InitAreaStrategy = 3317;
+}
+
+message SetAppGoodPriceRequest {
+    AppGoodInfo Info = 3500;
+}
+
+message SetAppGoodPriceResponse {
+    AppGoodInfo Info = 3600;
+}
+
+message CheckAppGoodRequest {
+    AppGoodInfo Info = 3610;
+}
+
+message CheckAppGoodResponse {
+    AppGoodInfo Info = 3620;
+}
+
+message OnsaleAppGoodRequest {
+    AppGoodInfo Info = 3630;
+}
+
+message OnsaleAppGoodResponse {
+    AppGoodInfo Info = 3640;
+}
+
+message OffsaleAppGoodRequest {
+    AppGoodInfo Info = 3650;
+}
+
+message OffsaleAppGoodResponse {
+    AppGoodInfo Info = 3660;
+}
+
+message AuthorizeAppGoodRequest {
+    AppGoodInfo Info = 3700;
+}
+
+message AuthorizeAppGoodResponse {
+    AppGoodInfo Info = 3800;
+}
+
+message UnauthorizeAppGoodRequest {
+    AppGoodInfo Info = 3900;
+}
+
+message UnauthorizeAppGoodResponse {
+    AppGoodInfo Info = 4000;
+}
+
+message AppTargetAreaInfo {
+    string ID = 4010;
+    string AppID = 4011;
+    string TargetAreaID = 4012;
+}
+
+message AuthorizeAppTargetAreaRequest {
+    AppTargetAreaInfo Info = 4020;
+}
+
+message AuthorizeAppTargetAreaResponse {
+    AppTargetAreaInfo Info = 4030;
+}
+
+message CheckAppTargetAreaRequest {
+    AppTargetAreaInfo Info = 4040;
+}
+
+message CheckAppTargetAreaResponse {
+    AppTargetAreaInfo Info = 4050;
+    bool Authorized = 4051;
+}
+
+message UnauthorizeAppTargetAreaRequest {
+    string ID = 4100;
+}
+
+message UnauthorizeAppTargetAreaResponse {
+    AppTargetAreaInfo Info = 4110;
+    bool Authorized = 4111;
+}
+
+message AppGoodTargetAreaInfo {
+    string ID = 4120;
+    string AppID = 4121;
+    string GoodID = 4122;
+    string TargetAreaID = 4123;
+}
+
+message AuthorizeAppGoodTargetAreaRequest {
+    AppGoodTargetAreaInfo Info = 4200;
+}
+
+message AuthorizeAppGoodTargetAreaResponse {
+    AppGoodTargetAreaInfo Info = 4210;
+}
+
+message CheckAppGoodTargetAreaRequest {
+    AppGoodTargetAreaInfo Info = 4220;
+}
+
+message CheckAppGoodTargetAreaResponse {
+    AppGoodTargetAreaInfo Info = 4230;
+}
+
+message UnauthorizeAppGoodTargetAreaRequest {
+    AppGoodTargetAreaInfo Info = 4300;
+}
+
+message UnauthorizeAppGoodTargetAreaResponse {
+    AppGoodTargetAreaInfo Info = 4310;
+}
+
+message GoodComment {
+    string ID = 4400;
+    string AppID = 4401;
+    string UserID = 4402;
+    string ReplyToID = 4403;
+    string GoodID = 4404;
+    string OrderID = 4405;
+    string Content = 4406;
+}
+
+message CreateGoodCommentRequest {
+    GoodComment Comment = 4500;
+}
+
+message CreateGoodCommentResponse {
+    GoodComment Comment = 4600;
+}
+
+message UpdateGoodCommentRequest {
+    GoodComment Comment = 4700;
+}
+
+message UpdateGoodCommentResponse {
+    GoodComment Comment = 4800;
+}
+
+message GetGoodCommentsRequest {
+    PageInfo PageInfo = 4900;
+    string GoodID = 4901;
+}
+
+message GetGoodCommentsResponse {
+    repeated GoodComment Comments = 5000;
+    int32 Total = 5001;
+}
+
+message GoodExtraInfo {
+    string ID = 5100;
+    string GoodID = 5101;
+    repeated string Posters = 5102;
+    repeated string Labels = 5103;
+    bool OutSale = 5104;
+    bool PreSale = 5105;
+    uint32 VoteCount = 5106;
+    float Rating = 5107;
+}
+
+message CreateGoodExtraInfoRequest {
+    GoodExtraInfo Info = 5200;
+}
+
+message CreateGoodExtraInfoResponse {
+    GoodExtraInfo Info = 5300;
+}
+
+message GetGoodExtraInfoRequest {
+    string GoodID = 5400;
+}
+
+message GetGoodExtraInfoResponse {
+    GoodExtraInfo Info = 5500;
+}
+
+message UpdateGoodExtraInfoRequest {
+    GoodExtraInfo Info = 5600;
+}
+
+message UpdateGoodExtraInfoResponse {
+    GoodExtraInfo Info = 5700;
+}
+
+message GoodReviewInfo {
+    string ID = 5800;
+    string Type = 5801;
+    string ReviewerID = 5802;
+    string State = 5803;
+    string Message = 5804;
+    string ReviewedID = 5805;
+}
+
+message CreateGoodReviewRequest {
+    GoodReviewInfo Info = 5900;
+}
+
+message CreateGoodReviewResponse {
+    GoodReviewInfo Info = 6000;
+}
+
+message UpdateGoodReviewRequest {
+    GoodReviewInfo Info = 6100;
+}
+
+message UpdateGoodReviewResponse {
+    GoodReviewInfo Info = 6200;
+}
+
+message GetGoodReviewRequest {
+    GoodReviewInfo Info = 6300;
+}
+
+message GetGoodReviewResponse {
+    GoodReviewInfo Info = 6400;
+}
+
+message FeeType {
+    string ID = 1;
+    string FeeType = 4;
+    string FeeDescription = 5;
+    string PayType = 6;
+}
+
+message CreateFeeTypeRequest {
+    FeeType Info = 1;
+}
+
+message CreateFeeTypeResponse {
+    FeeType Info = 1;
+}
+
+message UpdateFeeTypeRequest {
+    FeeType Info = 1;
+}
+
+message UpdateFeeTypeResponse {
+    FeeType Info = 1;
+}
+
+message GetFeeTypeRequest {
+    string ID = 1;
+}
+
+message GetFeeTypeResponse {
+    FeeType Info = 1;
+}
+
+message GetFeeTypesRequest {
+    PageInfo PageInfo = 1;
+}
+
+message GetFeeTypesResponse {
+    repeated FeeType Infos = 1;
+}
+
+message Fee {
+    string ID = 1;
+    string AppID = 2;
+    string FeeTypeID = 3;
+    double Value = 4;
+}
+
+message CreateFeeRequest {
+    Fee Info = 1;
+}
+
+message CreateFeeResponse {
+    Fee Info = 1;
+}
+
+message GetFeeRequest {
+    string ID = 1;
+}
+
+message GetFeeResponse {
+    Fee Info = 1;
+}
+
+message FeeDuration {
+    string ID = 1;
+    string FeeTypeID = 2;
+    int32 Duration = 3;
+}
+
+message CreateFeeDurationRequest {
+    FeeDuration Info = 1;
+}
+
+message CreateFeeDurationResponse {
+    FeeDuration Info = 1;
+}
+
+message UpdateFeeDurationRequest {
+    FeeDuration Info = 1;
+}
+
+message UpdateFeeDurationResponse {
+    FeeDuration Info = 1;
+}
+
+message GetFeeDurationRequest {
+    string ID = 1;
+}
+
+message GetFeeDurationResponse {
+    FeeDuration Info = 1;
+}
+
+message GetFeeDurationsByFeeTypeRequest {
+    string FeeTypeID = 1;
+}
+
+message GetFeeDurationsByFeeTypeResponse {
+    repeated FeeDuration Infos = 1;
+}
+
+message DeleteFeeDurationRequest {
+    string ID = 1;
+}
+
+message DeleteFeeDurationResponse {
+    FeeDuration Info = 1;
+}
