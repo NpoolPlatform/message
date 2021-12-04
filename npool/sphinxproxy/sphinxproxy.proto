@@ -20,8 +20,8 @@ service SphinxProxy {
 }
 
 message GetBalanceRequest {
-    sphinx.plugin.v1.CoinType CoinType = 100;
-    string Address                     = 110;
+    string Name     = 100;
+    string Address  = 110;
 }
 
 message BalanceInfo {
@@ -33,7 +33,7 @@ message GetBalanceReponse {
 }
 
 message CreateWalletRequest {
-    sphinx.plugin.v1.CoinType CoinType = 100;
+    string Name = 100;
 }
 
 message WalletInfo {
@@ -46,11 +46,11 @@ message CreateWalletReponse {
 }
 
 message CreateTransactionRequest {
-    sphinx.plugin.v1.CoinType CoinType  = 100;
-	string TransactionID                = 110;
-	string From                         = 130;
-	string To                           = 140;
-    double Value                        = 120;
+    string Name             = 100;
+    string TransactionID    = 110;
+    string From             = 130;
+    string To               = 140;
+    double Value            = 120;
 }
 
 message CreateTransactionReponse {
@@ -58,7 +58,7 @@ message CreateTransactionReponse {
 }
 
 message GetTransactionRequest {
-
+    string TransactionID = 100;
 }
 
 message GetTransactionReponse {

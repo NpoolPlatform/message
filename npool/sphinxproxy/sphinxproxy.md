@@ -68,7 +68,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
+| Name | [string](#string) |  |  |
 | TransactionID | [string](#string) |  |  |
 | From | [string](#string) |  |  |
 | To | [string](#string) |  |  |
@@ -102,7 +102,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
+| Name | [string](#string) |  |  |
 
 
 
@@ -132,7 +132,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
+| Name | [string](#string) |  |  |
 | Address | [string](#string) |  |  |
 
 
@@ -154,6 +154,11 @@
 
 ### GetTransactionRequest
 
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TransactionID | [string](#string) |  |  |
 
 
 
