@@ -4,14 +4,11 @@
 ## Table of Contents
 
 - [npool/trading/trading.proto](#npool/trading/trading.proto)
-    - [ACKRequest](#sphinx.v1.ACKRequest)
-    - [ACKResponse](#sphinx.v1.ACKResponse)
     - [BaseTx](#sphinx.v1.BaseTx)
     - [CreateTransactionRequest](#sphinx.v1.CreateTransactionRequest)
     - [CreateTransactionResponse](#sphinx.v1.CreateTransactionResponse)
     - [CreateWalletRequest](#sphinx.v1.CreateWalletRequest)
     - [CreateWalletResponse](#sphinx.v1.CreateWalletResponse)
-    - [EntAccount](#sphinx.v1.EntAccount)
     - [GetTransactionRequest](#sphinx.v1.GetTransactionRequest)
     - [GetTransactionResponse](#sphinx.v1.GetTransactionResponse)
     - [GetWalletBalanceRequest](#sphinx.v1.GetWalletBalanceRequest)
@@ -28,43 +25,6 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/trading/trading.proto
-
-
-
-<a name="sphinx.v1.ACKRequest"></a>
-
-### ACKRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| transaction_type | [sphinx.proxy.v1.TransactionType](#sphinx.proxy.v1.TransactionType) |  | 交易类型： WalletNew, Signature, Balance, PreSign, Broadcast ； 创建账号、查询余额、交易状态更新 |
-| coin_type_id | [int32](#int32) |  |  |
-| transaction_id_insite | [string](#string) |  | 交易ID |
-| transaction_id_chain | [string](#string) |  | 交易链上ID （如有） |
-| address | [string](#string) |  | 创建账号的地址 |
-| balance | [double](#double) |  | 查询账号的余额 |
-| is_okay | [bool](#bool) |  | 交易请求是否成功 |
-| error_message | [string](#string) |  | 报错或调试时返回信息 |
-
-
-
-
-
-
-<a name="sphinx.v1.ACKResponse"></a>
-
-### ACKResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| is_okay | [bool](#bool) |  | 是否收到请求 |
-
-
-
 
 
 
@@ -92,13 +52,16 @@ share transaction structure
 <a name="sphinx.v1.CreateTransactionRequest"></a>
 
 ### CreateTransactionRequest
-CreateTransaction 参数
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [BaseTx](#sphinx.v1.BaseTx) |  | 交易基本信息 |
-| UUIDSignature | [string](#string) |  | 2FA的时效性验证码，前期可以留空 |
+| TransactionID | [string](#string) |  |  |
+| Name | [string](#string) |  |  |
+| Amount | [double](#double) |  |  |
+| From | [string](#string) |  |  |
+| To | [string](#string) |  |  |
 
 
 
@@ -111,11 +74,6 @@ CreateTransaction 参数
 
 
 
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [BaseTx](#sphinx.v1.BaseTx) |  |  |
-
-
 
 
 
@@ -123,13 +81,13 @@ CreateTransaction 参数
 <a name="sphinx.v1.CreateWalletRequest"></a>
 
 ### CreateWalletRequest
-CreateWallet 参数
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinName | [string](#string) |  | 币种名称(唯一) |
-| UUID | [string](#string) |  | 当前取UserID |
+| Name | [string](#string) |  |  |
+| Unit | [string](#string) |  |  |
 
 
 
@@ -139,28 +97,7 @@ CreateWallet 参数
 <a name="sphinx.v1.CreateWalletResponse"></a>
 
 ### CreateWalletResponse
-CreateWallet 返回
 
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [EntAccount](#sphinx.v1.EntAccount) |  |  |
-
-
-
-
-
-
-<a name="sphinx.v1.EntAccount"></a>
-
-### EntAccount
-share account structure
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| CoinName | [string](#string) |  | 币种名称(唯一) |
-| Address | [string](#string) |  | 钱包地址，创建时填空 |
 
 
 
@@ -205,12 +142,13 @@ GetTransaction 返回
 <a name="sphinx.v1.GetWalletBalanceRequest"></a>
 
 ### GetWalletBalanceRequest
-GetWalletBalance 参数
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [EntAccount](#sphinx.v1.EntAccount) |  |  |
+| Name | [string](#string) |  |  |
+| Address | [string](#string) |  |  |
 
 
 
@@ -220,13 +158,12 @@ GetWalletBalance 参数
 <a name="sphinx.v1.GetWalletBalanceResponse"></a>
 
 ### GetWalletBalanceResponse
-GetWalletBalance 返回
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [EntAccount](#sphinx.v1.EntAccount) |  |  |
-| AmountFloat64 | [double](#double) |  | 长整型金额 |
+| Amount | [double](#double) |  |  |
 
 
 
@@ -236,7 +173,7 @@ GetWalletBalance 返回
 <a name="sphinx.v1.VersionResponse"></a>
 
 ### VersionResponse
-request body and response
+
 
 
 | Field | Type | Label | Description |
@@ -261,12 +198,11 @@ request body and response
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateWallet | [CreateWalletRequest](#sphinx.v1.CreateWalletRequest) | [CreateWalletResponse](#sphinx.v1.CreateWalletResponse) | 创建账户 |
-| GetWalletBalance | [GetWalletBalanceRequest](#sphinx.v1.GetWalletBalanceRequest) | [GetWalletBalanceResponse](#sphinx.v1.GetWalletBalanceResponse) | 余额查询 |
-| CreateTransaction | [CreateTransactionRequest](#sphinx.v1.CreateTransactionRequest) | [CreateTransactionResponse](#sphinx.v1.CreateTransactionResponse) | 转账 / 提现 |
-| GetTransaction | [GetTransactionRequest](#sphinx.v1.GetTransactionRequest) | [GetTransactionResponse](#sphinx.v1.GetTransactionResponse) | 交易状态查询 |
-| ACK | [ACKRequest](#sphinx.v1.ACKRequest) | [ACKResponse](#sphinx.v1.ACKResponse) | 接收ack |
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#sphinx.v1.VersionResponse) | ping - pong |
+| CreateWallet | [CreateWalletRequest](#sphinx.v1.CreateWalletRequest) | [CreateWalletResponse](#sphinx.v1.CreateWalletResponse) |  |
+| GetWalletBalance | [GetWalletBalanceRequest](#sphinx.v1.GetWalletBalanceRequest) | [GetWalletBalanceResponse](#sphinx.v1.GetWalletBalanceResponse) |  |
+| CreateTransaction | [CreateTransactionRequest](#sphinx.v1.CreateTransactionRequest) | [CreateTransactionResponse](#sphinx.v1.CreateTransactionResponse) |  |
+| GetTransaction | [GetTransactionRequest](#sphinx.v1.GetTransactionRequest) | [GetTransactionResponse](#sphinx.v1.GetTransactionResponse) |  |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#sphinx.v1.VersionResponse) |  |
 
  
 

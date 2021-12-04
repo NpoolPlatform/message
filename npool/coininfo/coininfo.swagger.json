@@ -11,9 +11,8 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/coin/info": {
+    "/v1/create/coininfo": {
       "post": {
-        "summary": "注册新币种",
         "operationId": "SphinxCoinInfo_CreateCoinInfo",
         "responses": {
           "200": {
@@ -44,9 +43,8 @@
         ]
       }
     },
-    "/v1/get/coin/info": {
+    "/v1/get/coininfo": {
       "post": {
-        "summary": "获取单个币种",
         "operationId": "SphinxCoinInfo_GetCoinInfo",
         "responses": {
           "200": {
@@ -77,9 +75,8 @@
         ]
       }
     },
-    "/v1/get/coin/infos": {
+    "/v1/get/coininfos": {
       "post": {
-        "summary": "获取币种信息",
         "operationId": "SphinxCoinInfo_GetCoinInfos",
         "responses": {
           "200": {
@@ -110,9 +107,8 @@
         ]
       }
     },
-    "/v1/update/coin/info": {
+    "/v1/update/coininfo": {
       "post": {
-        "summary": "设置币种是否预售",
         "operationId": "SphinxCoinInfo_UpdateCoinInfo",
         "responses": {
           "200": {
@@ -196,8 +192,7 @@
         "Logo": {
           "type": "string"
         }
-      },
-      "title": "数据库内CoinInfo"
+      }
     },
     "v1CreateCoinInfoRequest": {
       "type": "object",
@@ -214,8 +209,7 @@
         "Logo": {
           "type": "string"
         }
-      },
-      "title": "注册币种信息"
+      }
     },
     "v1CreateCoinInfoResponse": {
       "type": "object",
@@ -231,8 +225,7 @@
         "ID": {
           "type": "string"
         }
-      },
-      "title": "获取单个币种"
+      }
     },
     "v1GetCoinInfoResponse": {
       "type": "object",
@@ -274,8 +267,7 @@
             "$ref": "#/definitions/v1CoinInfo"
           }
         }
-      },
-      "title": "所有币种信息"
+      }
     },
     "v1UpdateCoinInfoRequest": {
       "type": "object",
@@ -289,8 +281,7 @@
         "Logo": {
           "type": "string"
         }
-      },
-      "title": "设置预售请求"
+      }
     },
     "v1UpdateCoinInfoResponse": {
       "type": "object"

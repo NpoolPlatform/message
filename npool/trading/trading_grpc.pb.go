@@ -19,17 +19,10 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type TradingClient interface {
-	// 创建账户
 	CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error)
-	// 余额查询
 	GetWalletBalance(ctx context.Context, in *GetWalletBalanceRequest, opts ...grpc.CallOption) (*GetWalletBalanceResponse, error)
-	// 转账 / 提现
 	CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*CreateTransactionResponse, error)
-	// 交易状态查询
 	GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionResponse, error)
-	// 接收ack
-	ACK(ctx context.Context, in *ACKRequest, opts ...grpc.CallOption) (*ACKResponse, error)
-	// ping - pong
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
 }
 
@@ -77,15 +70,6 @@ func (c *tradingClient) GetTransaction(ctx context.Context, in *GetTransactionRe
 	return out, nil
 }
 
-func (c *tradingClient) ACK(ctx context.Context, in *ACKRequest, opts ...grpc.CallOption) (*ACKResponse, error) {
-	out := new(ACKResponse)
-	err := c.cc.Invoke(ctx, "/sphinx.v1.Trading/ACK", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *tradingClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error) {
 	out := new(VersionResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.v1.Trading/Version", in, out, opts...)
@@ -99,17 +83,10 @@ func (c *tradingClient) Version(ctx context.Context, in *emptypb.Empty, opts ...
 // All implementations must embed UnimplementedTradingServer
 // for forward compatibility
 type TradingServer interface {
-	// 创建账户
 	CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error)
-	// 余额查询
 	GetWalletBalance(context.Context, *GetWalletBalanceRequest) (*GetWalletBalanceResponse, error)
-	// 转账 / 提现
 	CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionResponse, error)
-	// 交易状态查询
 	GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error)
-	// 接收ack
-	ACK(context.Context, *ACKRequest) (*ACKResponse, error)
-	// ping - pong
 	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
 	mustEmbedUnimplementedTradingServer()
 }
@@ -129,9 +106,6 @@ func (UnimplementedTradingServer) CreateTransaction(context.Context, *CreateTran
 }
 func (UnimplementedTradingServer) GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTransaction not implemented")
-}
-func (UnimplementedTradingServer) ACK(context.Context, *ACKRequest) (*ACKResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ACK not implemented")
 }
 func (UnimplementedTradingServer) Version(context.Context, *emptypb.Empty) (*VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
@@ -221,24 +195,6 @@ func _Trading_GetTransaction_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Trading_ACK_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ACKRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(TradingServer).ACK(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/sphinx.v1.Trading/ACK",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServer).ACK(ctx, req.(*ACKRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Trading_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
@@ -279,10 +235,6 @@ var Trading_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTransaction",
 			Handler:    _Trading_GetTransaction_Handler,
-		},
-		{
-			MethodName: "ACK",
-			Handler:    _Trading_ACK_Handler,
 		},
 		{
 			MethodName: "Version",

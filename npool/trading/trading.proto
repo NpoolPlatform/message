@@ -5,79 +5,57 @@ package sphinx.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/trading";
 
 import "google/api/annotations.proto";
-import "npool/sphinxproxy/sphinxproxy.proto";
 import "google/protobuf/empty.proto";
 
 // 交易服务
 service Trading {
-	// 创建账户
 	rpc CreateWallet (CreateWalletRequest) returns (CreateWalletResponse) {
 		option (google.api.http) = {
 			post: "/v1/create/wallet"
 			body: "*"
-		};}
-	// 余额查询
+		};
+	}
 	rpc GetWalletBalance (GetWalletBalanceRequest) returns (GetWalletBalanceResponse) {
 		option (google.api.http) = {
 			post: "/v1/get/wallet/balance"
 			body: "*"
-		};}
-	// 转账 / 提现
+		};
+	}
 	rpc CreateTransaction (CreateTransactionRequest) returns (CreateTransactionResponse) {
 		option (google.api.http) = {
 			post: "/v1/create/transaction"
 			body: "*"
-		};}
-	// 交易状态查询
+		};
+	}
 	rpc GetTransaction (GetTransactionRequest) returns (GetTransactionResponse) {
 		option (google.api.http) = {
 			post: "/v1/get/transaction"
 			body: "*"
-		};}
-	// 接收ack
-	rpc ACK (ACKRequest) returns (ACKResponse) {
+		};
+	}
+  	rpc Version (google.protobuf.Empty) returns (VersionResponse){
 		option (google.api.http) = {
-			post: "/v1/internal/ack"
+			post: "/version"
 			body: "*"
-		};}
-	// ping - pong
-  rpc Version (google.protobuf.Empty) returns (VersionResponse){
-    option (google.api.http) = {
-        post: "/version"
-        body: "*"
-    };
-  }
-
+		};
+  	}
 }
 
-// share account structure
-message EntAccount {
-	// 币种名称(唯一)
-	string CoinName = 1;
-	// 钱包地址，创建时填空
-	string Address = 3;
-}
-
-// CreateWallet 参数
 message CreateWalletRequest {
-	// 币种名称(唯一)
-	string CoinName = 1;
-	// 当前取UserID
-	string UUID = 2;
-}
-// CreateWallet 返回
-message CreateWalletResponse {
-	EntAccount Info = 1;
+	string Name = 100;
+	string Unit = 110;
 }
 
-// GetWalletBalance 参数
-message GetWalletBalanceRequest {
-	EntAccount Info = 1;
+message CreateWalletResponse {
 }
-// GetWalletBalance 返回
+
+message GetWalletBalanceRequest {
+	string Name 	= 100;
+	string Address 	= 110;
+}
+
 message GetWalletBalanceResponse {
-	EntAccount Info = 1;
-	double AmountFloat64 = 4; // 长整型金额
+	double Amount = 100;
 }
 
 // share transaction structure
@@ -118,64 +96,17 @@ message GetTransactionResponse {
 	string Status = 8;
 }
 
-
-// CreateTransaction 参数
 message CreateTransactionRequest {
-	// 交易基本信息
-	BaseTx Info = 1;
-	// 2FA的时效性验证码，前期可以留空
-	string UUIDSignature = 2;
-}
-
-// // PortalSignInit 参数
-// message PortalSignInit {
-// 	int32 coin_id = 1;
-// 	string uuid = 2; // 机器标识符
-// }
-
-// // PortalWalletInit 参数
-// message PortalWalletInit {
-// 	int32 coin_id = 1;
-// 	string uuid = 2; // 机器标识符
-// 	string location = 3; // 硬件所在地点（看板用到的节点信息，下同）
-// 	string host_vendor = 4; // 硬件供应商
-// 	string mac_address = 5; // MAC地址
-// 	string public_ip = 6; // 公网ip，也可能没有
-// 	string local_ip = 7; // 内网ip
-// 	int64 timestamp_utc = 8; // 汇报时间
-// }
-
-message ACKRequest {
-	sphinx.proxy.v1.TransactionType transaction_type = 1; // 交易类型： WalletNew, Signature, Balance, PreSign, Broadcast ； 创建账号、查询余额、交易状态更新
-	int32 coin_type_id = 2;
-	string transaction_id_insite = 3; // 交易ID
-	string transaction_id_chain = 4; // 交易链上ID （如有）
-	string address = 5; // 创建账号的地址
-	double balance = 6; // 查询账号的余额
-	bool is_okay = 7; // 交易请求是否成功
-	string error_message = 8; // 报错或调试时返回信息
-}
-
-message ACKResponse {
-	// 是否收到请求
-	bool is_okay = 1;
+	string TransactionID 	= 100;
+	string Name 			= 110;
+	double Amount 			= 120;
+	string From 			= 130;
+	string To 				= 140;
 }
 
 message CreateTransactionResponse {
-	BaseTx Info = 1;
 }
 
-// request body and response
 message VersionResponse {
 	string Info = 100;
 }
-
-
-
-
-
-
-
-
-
-

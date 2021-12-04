@@ -6,40 +6,33 @@ option go_package = "github.com/NpoolPlatform/message/npool/coininfo";
 
 import "google/api/annotations.proto";
 
-// CoinInfo 服务
 service SphinxCoinInfo {
-	// 注册新币种
 	rpc CreateCoinInfo (CreateCoinInfoRequest) returns (CreateCoinInfoResponse){
 		option (google.api.http) = {
-			post: "/v1/create/coin/info"
+			post: "/v1/create/coininfo"
 			body: "*"
 		};
 	}
-	// 获取币种信息
 	rpc GetCoinInfos (GetCoinInfosRequest) returns (GetCoinInfosResponse){
 		option (google.api.http) = {
-			post: "/v1/get/coin/infos"
+			post: "/v1/get/coininfos"
             body: "*"
 		};
 	}
-	// 获取单个币种
 	rpc GetCoinInfo (GetCoinInfoRequest) returns (GetCoinInfoResponse) {
 		option (google.api.http) = {
-			post: "/v1/get/coin/info"
+			post: "/v1/get/coininfo"
             body: "*"
 		};
     }
-
-	// 设置币种是否预售
 	rpc UpdateCoinInfo (UpdateCoinInfoRequest) returns (UpdateCoinInfoResponse) {
 		option (google.api.http) = {
-			post: "/v1/update/coin/info"
+			post: "/v1/update/coininfo"
 			body: "*"
 		};
 	}
 }
 
-// 数据库内CoinInfo
 message CoinInfo {
 	string ID 		= 100; // uuid
 	bool PreSale 	= 110; // 是否为预售，false为在售商品
@@ -48,7 +41,6 @@ message CoinInfo {
 	string Logo		= 140; // url; can be empty
 }
 
-// 获取单个币种
 message GetCoinInfoRequest {
     string ID = 100;
 }
@@ -57,7 +49,6 @@ message GetCoinInfoResponse {
     CoinInfo Info = 100;
 }
 
-// 注册币种信息
 message CreateCoinInfoRequest {
     bool PreSale 	= 100; // 是否为预售，false为在售商品
 	string Name 	= 110; // 币种名称 FIL, BTC
@@ -76,13 +67,11 @@ message GetCoinInfosRequest {
 	int32 Limit		= 130;
 }
 
-// 所有币种信息
 message GetCoinInfosResponse {
 	int32 Total 			= 100;
 	repeated CoinInfo Infos = 110;
 }
 
-// 设置预售请求
 message UpdateCoinInfoRequest {
     string ID 		= 100;
 	bool PreSale 	= 110; // 是否为预售，false为在售商品
@@ -90,5 +79,4 @@ message UpdateCoinInfoRequest {
 }
 
 message UpdateCoinInfoResponse {
-
 }

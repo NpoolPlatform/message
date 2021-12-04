@@ -30,7 +30,7 @@
 <a name="sphinx.coininfo.v1.CoinInfo"></a>
 
 ### CoinInfo
-数据库内CoinInfo
+
 
 
 | Field | Type | Label | Description |
@@ -49,7 +49,7 @@
 <a name="sphinx.coininfo.v1.CreateCoinInfoRequest"></a>
 
 ### CreateCoinInfoRequest
-注册币种信息
+
 
 
 | Field | Type | Label | Description |
@@ -82,7 +82,7 @@
 <a name="sphinx.coininfo.v1.GetCoinInfoRequest"></a>
 
 ### GetCoinInfoRequest
-获取单个币种
+
 
 
 | Field | Type | Label | Description |
@@ -130,7 +130,7 @@
 <a name="sphinx.coininfo.v1.GetCoinInfosResponse"></a>
 
 ### GetCoinInfosResponse
-所有币种信息
+
 
 
 | Field | Type | Label | Description |
@@ -146,7 +146,7 @@
 <a name="sphinx.coininfo.v1.UpdateCoinInfoRequest"></a>
 
 ### UpdateCoinInfoRequest
-设置预售请求
+
 
 
 | Field | Type | Label | Description |
@@ -179,14 +179,14 @@
 <a name="sphinx.coininfo.v1.SphinxCoinInfo"></a>
 
 ### SphinxCoinInfo
-CoinInfo 服务
+
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateCoinInfo | [CreateCoinInfoRequest](#sphinx.coininfo.v1.CreateCoinInfoRequest) | [CreateCoinInfoResponse](#sphinx.coininfo.v1.CreateCoinInfoResponse) | 注册新币种 |
-| GetCoinInfos | [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest) | [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse) | 获取币种信息 |
-| GetCoinInfo | [GetCoinInfoRequest](#sphinx.coininfo.v1.GetCoinInfoRequest) | [GetCoinInfoResponse](#sphinx.coininfo.v1.GetCoinInfoResponse) | 获取单个币种 |
-| UpdateCoinInfo | [UpdateCoinInfoRequest](#sphinx.coininfo.v1.UpdateCoinInfoRequest) | [UpdateCoinInfoResponse](#sphinx.coininfo.v1.UpdateCoinInfoResponse) | 设置币种是否预售 |
+| CreateCoinInfo | [CreateCoinInfoRequest](#sphinx.coininfo.v1.CreateCoinInfoRequest) | [CreateCoinInfoResponse](#sphinx.coininfo.v1.CreateCoinInfoResponse) |  |
+| GetCoinInfos | [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest) | [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse) |  |
+| GetCoinInfo | [GetCoinInfoRequest](#sphinx.coininfo.v1.GetCoinInfoRequest) | [GetCoinInfoResponse](#sphinx.coininfo.v1.GetCoinInfoResponse) |  |
+| UpdateCoinInfo | [UpdateCoinInfoRequest](#sphinx.coininfo.v1.UpdateCoinInfoRequest) | [UpdateCoinInfoResponse](#sphinx.coininfo.v1.UpdateCoinInfoResponse) |  |
 
  
 

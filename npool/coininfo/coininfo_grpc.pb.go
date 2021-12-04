@@ -18,13 +18,9 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SphinxCoinInfoClient interface {
-	// 注册新币种
 	CreateCoinInfo(ctx context.Context, in *CreateCoinInfoRequest, opts ...grpc.CallOption) (*CreateCoinInfoResponse, error)
-	// 获取币种信息
 	GetCoinInfos(ctx context.Context, in *GetCoinInfosRequest, opts ...grpc.CallOption) (*GetCoinInfosResponse, error)
-	// 获取单个币种
 	GetCoinInfo(ctx context.Context, in *GetCoinInfoRequest, opts ...grpc.CallOption) (*GetCoinInfoResponse, error)
-	// 设置币种是否预售
 	UpdateCoinInfo(ctx context.Context, in *UpdateCoinInfoRequest, opts ...grpc.CallOption) (*UpdateCoinInfoResponse, error)
 }
 
@@ -76,13 +72,9 @@ func (c *sphinxCoinInfoClient) UpdateCoinInfo(ctx context.Context, in *UpdateCoi
 // All implementations must embed UnimplementedSphinxCoinInfoServer
 // for forward compatibility
 type SphinxCoinInfoServer interface {
-	// 注册新币种
 	CreateCoinInfo(context.Context, *CreateCoinInfoRequest) (*CreateCoinInfoResponse, error)
-	// 获取币种信息
 	GetCoinInfos(context.Context, *GetCoinInfosRequest) (*GetCoinInfosResponse, error)
-	// 获取单个币种
 	GetCoinInfo(context.Context, *GetCoinInfoRequest) (*GetCoinInfoResponse, error)
-	// 设置币种是否预售
 	UpdateCoinInfo(context.Context, *UpdateCoinInfoRequest) (*UpdateCoinInfoResponse, error)
 	mustEmbedUnimplementedSphinxCoinInfoServer()
 }
