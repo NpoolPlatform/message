@@ -4,16 +4,18 @@
 ## Table of Contents
 
 - [npool/trading/trading.proto](#npool/trading/trading.proto)
-    - [BaseTx](#sphinx.v1.BaseTx)
     - [CreateTransactionRequest](#sphinx.v1.CreateTransactionRequest)
     - [CreateTransactionResponse](#sphinx.v1.CreateTransactionResponse)
-    - [CreateWalletRequest](#sphinx.v1.CreateWalletRequest)
-    - [CreateWalletResponse](#sphinx.v1.CreateWalletResponse)
     - [GetTransactionRequest](#sphinx.v1.GetTransactionRequest)
     - [GetTransactionResponse](#sphinx.v1.GetTransactionResponse)
-    - [GetWalletBalanceRequest](#sphinx.v1.GetWalletBalanceRequest)
-    - [GetWalletBalanceResponse](#sphinx.v1.GetWalletBalanceResponse)
+    - [GetTransactionsRequest](#sphinx.v1.GetTransactionsRequest)
+    - [GetTransactionsResponse](#sphinx.v1.GetTransactionsResponse)
+    - [TransactionInfo](#sphinx.v1.TransactionInfo)
+    - [UpdateTransactionRequest](#sphinx.v1.UpdateTransactionRequest)
+    - [UpdateTransactionResponse](#sphinx.v1.UpdateTransactionResponse)
     - [VersionResponse](#sphinx.v1.VersionResponse)
+  
+    - [TransactionState](#sphinx.v1.TransactionState)
   
     - [Trading](#sphinx.v1.Trading)
   
@@ -25,27 +27,6 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/trading/trading.proto
-
-
-
-<a name="sphinx.v1.BaseTx"></a>
-
-### BaseTx
-share transaction structure
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TransactionIDInsite | [string](#string) |  | 站内交易ID |
-| CoinName | [string](#string) |  | 币种名称(唯一) |
-| AmountFloat64 | [double](#double) |  | 不入库的参考金额 |
-| AddressFrom | [string](#string) |  | 发送方 |
-| AddressTo | [string](#string) |  | 接收方 |
-| InsiteTxType | [string](#string) |  | sql enum: recharge, payment, withdraw, unknown |
-| CreatetimeUTC | [int64](#int64) |  | 用户提交请求时的时间戳，与2FA绑定 |
-
-
-
 
 
 
@@ -78,41 +59,15 @@ share transaction structure
 
 
 
-<a name="sphinx.v1.CreateWalletRequest"></a>
-
-### CreateWalletRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Name | [string](#string) |  |  |
-| Unit | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="sphinx.v1.CreateWalletResponse"></a>
-
-### CreateWalletResponse
-
-
-
-
-
-
-
 <a name="sphinx.v1.GetTransactionRequest"></a>
 
 ### GetTransactionRequest
-GetTransaction 参数
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TransactionIDInsite | [string](#string) |  | 站内交易ID |
+| TransactionID | [string](#string) |  |  |
 
 
 
@@ -122,48 +77,94 @@ GetTransaction 参数
 <a name="sphinx.v1.GetTransactionResponse"></a>
 
 ### GetTransactionResponse
-GetTransaction 返回
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [BaseTx](#sphinx.v1.BaseTx) |  |  |
-| UpdatetimeUTC | [int64](#int64) |  | 上次更新时间 |
-| Succeeded | [bool](#bool) |  | bool, 便于调用方判断 |
-| Failed | [bool](#bool) |  | 不success不fail就是pending了 |
-| TransactionIDChain | [string](#string) |  | 公链交易ID（如有） |
-| Status | [string](#string) |  | 为done则成功；全部状态：&#34;pending_review&#34;, &#34;pending_process&#34;, &#34;pending_signinfo&#34;, &#34;pending_sign&#34;, &#34;pending_broadcast&#34;, &#34;pending_confirm&#34;, &#34;done&#34;, &#34;rejected&#34;, &#34;error&#34;, &#34;error_expected&#34; |
+| Info | [TransactionInfo](#sphinx.v1.TransactionInfo) |  |  |
 
 
 
 
 
 
-<a name="sphinx.v1.GetWalletBalanceRequest"></a>
+<a name="sphinx.v1.GetTransactionsRequest"></a>
 
-### GetWalletBalanceRequest
+### GetTransactionsRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Name | [string](#string) |  |  |
-| Address | [string](#string) |  |  |
+| State | [string](#string) |  |  |
+| From | [string](#string) |  |  |
+| To | [string](#string) |  |  |
+| Offset | [uint32](#uint32) |  |  |
+| Limit | [uint32](#uint32) |  |  |
 
 
 
 
 
 
-<a name="sphinx.v1.GetWalletBalanceResponse"></a>
+<a name="sphinx.v1.GetTransactionsResponse"></a>
 
-### GetWalletBalanceResponse
+### GetTransactionsResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| Total | [int32](#int32) |  |  |
+| Infos | [TransactionInfo](#sphinx.v1.TransactionInfo) | repeated |  |
+
+
+
+
+
+
+<a name="sphinx.v1.TransactionInfo"></a>
+
+### TransactionInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TransactionID | [string](#string) |  |  |
+| Name | [string](#string) |  |  |
 | Amount | [double](#double) |  |  |
+| From | [string](#string) |  |  |
+| To | [string](#string) |  |  |
+| state | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="sphinx.v1.UpdateTransactionRequest"></a>
+
+### UpdateTransactionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TransactionID | [string](#string) |  |  |
+| state | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="sphinx.v1.UpdateTransactionResponse"></a>
+
+### UpdateTransactionResponse
+
 
 
 
@@ -186,6 +187,22 @@ GetTransaction 返回
 
  
 
+
+<a name="sphinx.v1.TransactionState"></a>
+
+### TransactionState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TransactionStateUnKnow | 0 |  |
+| TransactionStatePendingReview | 1 |  |
+| TransactionStateConfirm | 2 |  |
+| TransactionStateRejected | 3 |  |
+| TransactionStatePendingTransaction | 4 |  |
+| TransactionStateDone | 5 |  |
+
+
  
 
  
@@ -198,10 +215,10 @@ GetTransaction 返回
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateWallet | [CreateWalletRequest](#sphinx.v1.CreateWalletRequest) | [CreateWalletResponse](#sphinx.v1.CreateWalletResponse) |  |
-| GetWalletBalance | [GetWalletBalanceRequest](#sphinx.v1.GetWalletBalanceRequest) | [GetWalletBalanceResponse](#sphinx.v1.GetWalletBalanceResponse) |  |
 | CreateTransaction | [CreateTransactionRequest](#sphinx.v1.CreateTransactionRequest) | [CreateTransactionResponse](#sphinx.v1.CreateTransactionResponse) |  |
 | GetTransaction | [GetTransactionRequest](#sphinx.v1.GetTransactionRequest) | [GetTransactionResponse](#sphinx.v1.GetTransactionResponse) |  |
+| GetTransactions | [GetTransactionsRequest](#sphinx.v1.GetTransactionsRequest) | [GetTransactionsResponse](#sphinx.v1.GetTransactionsResponse) |  |
+| UpdateTransaction | [UpdateTransactionRequest](#sphinx.v1.UpdateTransactionRequest) | [UpdateTransactionResponse](#sphinx.v1.UpdateTransactionResponse) |  |
 | Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#sphinx.v1.VersionResponse) |  |
 
  

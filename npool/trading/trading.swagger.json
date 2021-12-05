@@ -43,38 +43,6 @@
         ]
       }
     },
-    "/v1/create/wallet": {
-      "post": {
-        "operationId": "Trading_CreateWallet",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateWalletResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateWalletRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Trading"
-        ]
-      }
-    },
     "/v1/get/transaction": {
       "post": {
         "operationId": "Trading_GetTransaction",
@@ -107,14 +75,14 @@
         ]
       }
     },
-    "/v1/get/wallet/balance": {
+    "/v1/get/transactions": {
       "post": {
-        "operationId": "Trading_GetWalletBalance",
+        "operationId": "Trading_GetTransactions",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetWalletBalanceResponse"
+              "$ref": "#/definitions/v1GetTransactionsResponse"
             }
           },
           "default": {
@@ -130,7 +98,39 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetWalletBalanceRequest"
+              "$ref": "#/definitions/v1GetTransactionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Trading"
+        ]
+      }
+    },
+    "/v1/update/transaction": {
+      "post": {
+        "operationId": "Trading_UpdateTransaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateTransactionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateTransactionRequest"
             }
           }
         ],
@@ -206,42 +206,6 @@
         }
       }
     },
-    "v1BaseTx": {
-      "type": "object",
-      "properties": {
-        "TransactionIDInsite": {
-          "type": "string",
-          "title": "站内交易ID"
-        },
-        "CoinName": {
-          "type": "string",
-          "title": "币种名称(唯一)"
-        },
-        "AmountFloat64": {
-          "type": "number",
-          "format": "double",
-          "title": "不入库的参考金额"
-        },
-        "AddressFrom": {
-          "type": "string",
-          "title": "发送方"
-        },
-        "AddressTo": {
-          "type": "string",
-          "title": "接收方"
-        },
-        "InsiteTxType": {
-          "type": "string",
-          "title": "sql enum: recharge, payment, withdraw, unknown"
-        },
-        "CreatetimeUTC": {
-          "type": "string",
-          "format": "int64",
-          "title": "用户提交请求时的时间戳，与2FA绑定"
-        }
-      },
-      "title": "share transaction structure"
-    },
     "v1CreateTransactionRequest": {
       "type": "object",
       "properties": {
@@ -266,79 +230,99 @@
     "v1CreateTransactionResponse": {
       "type": "object"
     },
-    "v1CreateWalletRequest": {
-      "type": "object",
-      "properties": {
-        "Name": {
-          "type": "string"
-        },
-        "Unit": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CreateWalletResponse": {
-      "type": "object"
-    },
     "v1GetTransactionRequest": {
       "type": "object",
       "properties": {
-        "TransactionIDInsite": {
-          "type": "string",
-          "title": "站内交易ID"
+        "TransactionID": {
+          "type": "string"
         }
-      },
-      "title": "GetTransaction 参数"
+      }
     },
     "v1GetTransactionResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1BaseTx"
-        },
-        "UpdatetimeUTC": {
-          "type": "string",
-          "format": "int64",
-          "title": "上次更新时间"
-        },
-        "Succeeded": {
-          "type": "boolean",
-          "title": "bool, 便于调用方判断"
-        },
-        "Failed": {
-          "type": "boolean",
-          "title": "不success不fail就是pending了"
-        },
-        "TransactionIDChain": {
-          "type": "string",
-          "title": "公链交易ID（如有）"
-        },
-        "Status": {
-          "type": "string",
-          "title": "为done则成功；全部状态：\"pending_review\", \"pending_process\", \"pending_signinfo\", \"pending_sign\", \"pending_broadcast\", \"pending_confirm\", \"done\", \"rejected\", \"error\", \"error_expected\""
+          "$ref": "#/definitions/v1TransactionInfo"
         }
-      },
-      "title": "GetTransaction 返回"
+      }
     },
-    "v1GetWalletBalanceRequest": {
+    "v1GetTransactionsRequest": {
       "type": "object",
       "properties": {
         "Name": {
           "type": "string"
         },
-        "Address": {
+        "State": {
+          "type": "string"
+        },
+        "From": {
+          "type": "string"
+        },
+        "To": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetTransactionsResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1TransactionInfo"
+          }
+        }
+      }
+    },
+    "v1TransactionInfo": {
+      "type": "object",
+      "properties": {
+        "TransactionID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "From": {
+          "type": "string"
+        },
+        "To": {
+          "type": "string"
+        },
+        "state": {
           "type": "string"
         }
       }
     },
-    "v1GetWalletBalanceResponse": {
+    "v1UpdateTransactionRequest": {
       "type": "object",
       "properties": {
-        "Amount": {
-          "type": "number",
-          "format": "double"
+        "TransactionID": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
         }
       }
+    },
+    "v1UpdateTransactionResponse": {
+      "type": "object"
     },
     "v1VersionResponse": {
       "type": "object",
