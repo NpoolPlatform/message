@@ -57,6 +57,8 @@ message TransactionInfo {
 	string From 			= 130;
 	string To 				= 140;
 	string state 			= 150;
+	uint32 CreatedAt 		= 160;
+	uint32 UpdatedAt 		= 170;
 }
 
 message CreateTransactionRequest {

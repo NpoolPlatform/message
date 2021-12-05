@@ -13,18 +13,18 @@ service SphinxCoinInfo {
 			body: "*"
 		};
 	}
-	rpc GetCoinInfos (GetCoinInfosRequest) returns (GetCoinInfosResponse){
-		option (google.api.http) = {
-			post: "/v1/get/coininfos"
-            body: "*"
-		};
-	}
 	rpc GetCoinInfo (GetCoinInfoRequest) returns (GetCoinInfoResponse) {
 		option (google.api.http) = {
 			post: "/v1/get/coininfo"
             body: "*"
 		};
     }
+	rpc GetCoinInfos (GetCoinInfosRequest) returns (GetCoinInfosResponse){
+		option (google.api.http) = {
+			post: "/v1/get/coininfos"
+            body: "*"
+		};
+	}
 	rpc UpdateCoinInfo (UpdateCoinInfoRequest) returns (UpdateCoinInfoResponse) {
 		option (google.api.http) = {
 			post: "/v1/update/coininfo"
@@ -34,11 +34,13 @@ service SphinxCoinInfo {
 }
 
 message CoinInfo {
-	string ID 		= 100; // uuid
-	bool PreSale 	= 110; // 是否为预售，false为在售商品
-	string Name 	= 120; // 币种名称 FIL, BTC
-	string Unit 	= 130; // 单位：FIL
-	string Logo		= 140; // url; can be empty
+	string ID 			= 100; // uuid
+	bool PreSale 		= 110; // 是否为预售，false为在售商品
+	string Name 		= 120; // 币种名称 FIL, BTC
+	string Unit 		= 130; // 单位：FIL
+	string Logo			= 140; // url; can be empty
+	uint32 CreatedAt 	= 150;
+	uint32 UpdatedAt 	= 160;
 }
 
 message GetCoinInfoRequest {

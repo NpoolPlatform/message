@@ -19,8 +19,8 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SphinxCoinInfoClient interface {
 	CreateCoinInfo(ctx context.Context, in *CreateCoinInfoRequest, opts ...grpc.CallOption) (*CreateCoinInfoResponse, error)
-	GetCoinInfos(ctx context.Context, in *GetCoinInfosRequest, opts ...grpc.CallOption) (*GetCoinInfosResponse, error)
 	GetCoinInfo(ctx context.Context, in *GetCoinInfoRequest, opts ...grpc.CallOption) (*GetCoinInfoResponse, error)
+	GetCoinInfos(ctx context.Context, in *GetCoinInfosRequest, opts ...grpc.CallOption) (*GetCoinInfosResponse, error)
 	UpdateCoinInfo(ctx context.Context, in *UpdateCoinInfoRequest, opts ...grpc.CallOption) (*UpdateCoinInfoResponse, error)
 }
 
@@ -41,18 +41,18 @@ func (c *sphinxCoinInfoClient) CreateCoinInfo(ctx context.Context, in *CreateCoi
 	return out, nil
 }
 
-func (c *sphinxCoinInfoClient) GetCoinInfos(ctx context.Context, in *GetCoinInfosRequest, opts ...grpc.CallOption) (*GetCoinInfosResponse, error) {
-	out := new(GetCoinInfosResponse)
-	err := c.cc.Invoke(ctx, "/sphinx.coininfo.v1.SphinxCoinInfo/GetCoinInfos", in, out, opts...)
+func (c *sphinxCoinInfoClient) GetCoinInfo(ctx context.Context, in *GetCoinInfoRequest, opts ...grpc.CallOption) (*GetCoinInfoResponse, error) {
+	out := new(GetCoinInfoResponse)
+	err := c.cc.Invoke(ctx, "/sphinx.coininfo.v1.SphinxCoinInfo/GetCoinInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sphinxCoinInfoClient) GetCoinInfo(ctx context.Context, in *GetCoinInfoRequest, opts ...grpc.CallOption) (*GetCoinInfoResponse, error) {
-	out := new(GetCoinInfoResponse)
-	err := c.cc.Invoke(ctx, "/sphinx.coininfo.v1.SphinxCoinInfo/GetCoinInfo", in, out, opts...)
+func (c *sphinxCoinInfoClient) GetCoinInfos(ctx context.Context, in *GetCoinInfosRequest, opts ...grpc.CallOption) (*GetCoinInfosResponse, error) {
+	out := new(GetCoinInfosResponse)
+	err := c.cc.Invoke(ctx, "/sphinx.coininfo.v1.SphinxCoinInfo/GetCoinInfos", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -73,8 +73,8 @@ func (c *sphinxCoinInfoClient) UpdateCoinInfo(ctx context.Context, in *UpdateCoi
 // for forward compatibility
 type SphinxCoinInfoServer interface {
 	CreateCoinInfo(context.Context, *CreateCoinInfoRequest) (*CreateCoinInfoResponse, error)
-	GetCoinInfos(context.Context, *GetCoinInfosRequest) (*GetCoinInfosResponse, error)
 	GetCoinInfo(context.Context, *GetCoinInfoRequest) (*GetCoinInfoResponse, error)
+	GetCoinInfos(context.Context, *GetCoinInfosRequest) (*GetCoinInfosResponse, error)
 	UpdateCoinInfo(context.Context, *UpdateCoinInfoRequest) (*UpdateCoinInfoResponse, error)
 	mustEmbedUnimplementedSphinxCoinInfoServer()
 }
@@ -86,11 +86,11 @@ type UnimplementedSphinxCoinInfoServer struct {
 func (UnimplementedSphinxCoinInfoServer) CreateCoinInfo(context.Context, *CreateCoinInfoRequest) (*CreateCoinInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCoinInfo not implemented")
 }
-func (UnimplementedSphinxCoinInfoServer) GetCoinInfos(context.Context, *GetCoinInfosRequest) (*GetCoinInfosResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCoinInfos not implemented")
-}
 func (UnimplementedSphinxCoinInfoServer) GetCoinInfo(context.Context, *GetCoinInfoRequest) (*GetCoinInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinInfo not implemented")
+}
+func (UnimplementedSphinxCoinInfoServer) GetCoinInfos(context.Context, *GetCoinInfosRequest) (*GetCoinInfosResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCoinInfos not implemented")
 }
 func (UnimplementedSphinxCoinInfoServer) UpdateCoinInfo(context.Context, *UpdateCoinInfoRequest) (*UpdateCoinInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCoinInfo not implemented")
@@ -126,24 +126,6 @@ func _SphinxCoinInfo_CreateCoinInfo_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SphinxCoinInfo_GetCoinInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCoinInfosRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SphinxCoinInfoServer).GetCoinInfos(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/sphinx.coininfo.v1.SphinxCoinInfo/GetCoinInfos",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SphinxCoinInfoServer).GetCoinInfos(ctx, req.(*GetCoinInfosRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _SphinxCoinInfo_GetCoinInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCoinInfoRequest)
 	if err := dec(in); err != nil {
@@ -158,6 +140,24 @@ func _SphinxCoinInfo_GetCoinInfo_Handler(srv interface{}, ctx context.Context, d
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SphinxCoinInfoServer).GetCoinInfo(ctx, req.(*GetCoinInfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SphinxCoinInfo_GetCoinInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoinInfosRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SphinxCoinInfoServer).GetCoinInfos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/sphinx.coininfo.v1.SphinxCoinInfo/GetCoinInfos",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SphinxCoinInfoServer).GetCoinInfos(ctx, req.(*GetCoinInfosRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -192,12 +192,12 @@ var SphinxCoinInfo_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _SphinxCoinInfo_CreateCoinInfo_Handler,
 		},
 		{
-			MethodName: "GetCoinInfos",
-			Handler:    _SphinxCoinInfo_GetCoinInfos_Handler,
-		},
-		{
 			MethodName: "GetCoinInfo",
 			Handler:    _SphinxCoinInfo_GetCoinInfo_Handler,
+		},
+		{
+			MethodName: "GetCoinInfos",
+			Handler:    _SphinxCoinInfo_GetCoinInfos_Handler,
 		},
 		{
 			MethodName: "UpdateCoinInfo",

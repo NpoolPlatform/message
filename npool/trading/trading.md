@@ -139,6 +139,8 @@
 | From | [string](#string) |  |  |
 | To | [string](#string) |  |  |
 | state | [string](#string) |  |  |
+| CreatedAt | [uint32](#uint32) |  |  |
+| UpdatedAt | [uint32](#uint32) |  |  |
 
 
 

@@ -40,6 +40,8 @@
 | Name | [string](#string) |  | 币种名称 FIL, BTC |
 | Unit | [string](#string) |  | 单位：FIL |
 | Logo | [string](#string) |  | url; can be empty |
+| CreatedAt | [uint32](#uint32) |  |  |
+| UpdatedAt | [uint32](#uint32) |  |  |
 
 
 
@@ -185,8 +187,8 @@
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | CreateCoinInfo | [CreateCoinInfoRequest](#sphinx.coininfo.v1.CreateCoinInfoRequest) | [CreateCoinInfoResponse](#sphinx.coininfo.v1.CreateCoinInfoResponse) |  |
-| GetCoinInfos | [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest) | [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse) |  |
 | GetCoinInfo | [GetCoinInfoRequest](#sphinx.coininfo.v1.GetCoinInfoRequest) | [GetCoinInfoResponse](#sphinx.coininfo.v1.GetCoinInfoResponse) |  |
+| GetCoinInfos | [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest) | [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse) |  |
 | UpdateCoinInfo | [UpdateCoinInfoRequest](#sphinx.coininfo.v1.UpdateCoinInfoRequest) | [UpdateCoinInfoResponse](#sphinx.coininfo.v1.UpdateCoinInfoResponse) |  |
 
  
