@@ -2,13 +2,12 @@ syntax = "proto3";
 
 package sphinx.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/trading";
+option go_package = "github.com/NpoolPlatform/message/npool/sphinxservice";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 
-// 交易服务
-service Trading {
+service SphinxService {
 	rpc CreateTransaction (CreateTransactionRequest) returns (CreateTransactionResponse) {
 		option (google.api.http) = {
 			post: "/v1/create/transaction"

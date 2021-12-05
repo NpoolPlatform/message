@@ -3,7 +3,7 @@
 
 ## Table of Contents
 
-- [npool/trading/trading.proto](#npool/trading/trading.proto)
+- [npool/sphinxservice/sphinxservice.proto](#npool/sphinxservice/sphinxservice.proto)
     - [CreateTransactionRequest](#sphinx.v1.CreateTransactionRequest)
     - [CreateTransactionResponse](#sphinx.v1.CreateTransactionResponse)
     - [GetTransactionRequest](#sphinx.v1.GetTransactionRequest)
@@ -17,16 +17,16 @@
   
     - [TransactionState](#sphinx.v1.TransactionState)
   
-    - [Trading](#sphinx.v1.Trading)
+    - [SphinxService](#sphinx.v1.SphinxService)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool/trading/trading.proto"></a>
+<a name="npool/sphinxservice/sphinxservice.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/trading/trading.proto
+## npool/sphinxservice/sphinxservice.proto
 
 
 
@@ -210,10 +210,10 @@
  
 
 
-<a name="sphinx.v1.Trading"></a>
+<a name="sphinx.v1.SphinxService"></a>
 
-### Trading
-交易服务
+### SphinxService
+
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
