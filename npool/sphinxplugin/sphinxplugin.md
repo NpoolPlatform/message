@@ -48,7 +48,7 @@
 | To | [string](#string) |  |  |
 | From | [string](#string) |  |  |
 | Nonce | [uint64](#uint64) |  |  |
-| Value | [uint64](#uint64) |  |  |
+| Value | [double](#double) |  |  |
 | GasLimit | [int64](#int64) |  |  |
 | GasFeeCap | [uint64](#uint64) |  |  |
 | GasPremium | [uint64](#uint64) |  |  |

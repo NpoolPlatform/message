@@ -74,16 +74,16 @@ type UnsignedMessage struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Version    uint64 `protobuf:"varint,100,opt,name=Version,proto3" json:"Version,omitempty"`
-	To         string `protobuf:"bytes,110,opt,name=To,proto3" json:"To,omitempty"`
-	From       string `protobuf:"bytes,120,opt,name=From,proto3" json:"From,omitempty"`
-	Nonce      uint64 `protobuf:"varint,130,opt,name=Nonce,proto3" json:"Nonce,omitempty"`
-	Value      uint64 `protobuf:"varint,140,opt,name=Value,proto3" json:"Value,omitempty"`
-	GasLimit   int64  `protobuf:"varint,150,opt,name=GasLimit,proto3" json:"GasLimit,omitempty"`
-	GasFeeCap  uint64 `protobuf:"varint,160,opt,name=GasFeeCap,proto3" json:"GasFeeCap,omitempty"`
-	GasPremium uint64 `protobuf:"varint,170,opt,name=GasPremium,proto3" json:"GasPremium,omitempty"`
-	Method     uint64 `protobuf:"varint,180,opt,name=Method,proto3" json:"Method,omitempty"`
-	Params     []byte `protobuf:"bytes,190,opt,name=Params,proto3" json:"Params,omitempty"`
+	Version    uint64  `protobuf:"varint,100,opt,name=Version,proto3" json:"Version,omitempty"`
+	To         string  `protobuf:"bytes,110,opt,name=To,proto3" json:"To,omitempty"`
+	From       string  `protobuf:"bytes,120,opt,name=From,proto3" json:"From,omitempty"`
+	Nonce      uint64  `protobuf:"varint,130,opt,name=Nonce,proto3" json:"Nonce,omitempty"`
+	Value      float64 `protobuf:"fixed64,140,opt,name=Value,proto3" json:"Value,omitempty"`
+	GasLimit   int64   `protobuf:"varint,150,opt,name=GasLimit,proto3" json:"GasLimit,omitempty"`
+	GasFeeCap  uint64  `protobuf:"varint,160,opt,name=GasFeeCap,proto3" json:"GasFeeCap,omitempty"`
+	GasPremium uint64  `protobuf:"varint,170,opt,name=GasPremium,proto3" json:"GasPremium,omitempty"`
+	Method     uint64  `protobuf:"varint,180,opt,name=Method,proto3" json:"Method,omitempty"`
+	Params     []byte  `protobuf:"bytes,190,opt,name=Params,proto3" json:"Params,omitempty"`
 }
 
 func (x *UnsignedMessage) Reset() {
@@ -146,7 +146,7 @@ func (x *UnsignedMessage) GetNonce() uint64 {
 	return 0
 }
 
-func (x *UnsignedMessage) GetValue() uint64 {
+func (x *UnsignedMessage) GetValue() float64 {
 	if x != nil {
 		return x.Value
 	}
@@ -257,7 +257,7 @@ var file_npool_sphinxplugin_sphinxplugin_proto_rawDesc = []byte{
 	0x78, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x46, 0x72, 0x6f, 0x6d, 0x12, 0x15, 0x0a, 0x05, 0x4e,
 	0x6f, 0x6e, 0x63, 0x65, 0x18, 0x82, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x4e, 0x6f, 0x6e,
 	0x63, 0x65, 0x12, 0x15, 0x0a, 0x05, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x8c, 0x01, 0x20, 0x01,
-	0x28, 0x04, 0x52, 0x05, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x12, 0x1b, 0x0a, 0x08, 0x47, 0x61, 0x73,
+	0x28, 0x01, 0x52, 0x05, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x12, 0x1b, 0x0a, 0x08, 0x47, 0x61, 0x73,
 	0x4c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x96, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x47, 0x61,
 	0x73, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x1d, 0x0a, 0x09, 0x47, 0x61, 0x73, 0x46, 0x65, 0x65,
 	0x43, 0x61, 0x70, 0x18, 0xa0, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x09, 0x47, 0x61, 0x73, 0x46,

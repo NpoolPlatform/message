@@ -15,7 +15,7 @@ message UnsignedMessage {
   string To               = 110;
   string From             = 120;
   uint64 Nonce            = 130;
-  uint64 Value            = 140;
+  double Value            = 140;
 
   int64 GasLimit          = 150;
   uint64 GasFeeCap        = 160;
