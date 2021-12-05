@@ -220,12 +220,7 @@
       }
     },
     "v1CreateCoinInfoResponse": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
+      "type": "object"
     },
     "v1GetCoinInfoRequest": {
       "type": "object",

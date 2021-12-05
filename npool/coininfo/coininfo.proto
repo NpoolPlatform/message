@@ -60,7 +60,6 @@ message CreateCoinInfoRequest {
 }
 
 message CreateCoinInfoResponse {
-	string ID = 100;
 }
 
 message GetCoinInfosRequest {

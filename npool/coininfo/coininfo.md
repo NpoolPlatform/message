@@ -72,11 +72,6 @@
 
 
 
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-
-
 
 
 
