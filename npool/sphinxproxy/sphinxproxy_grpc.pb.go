@@ -19,10 +19,10 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SphinxProxyClient interface {
 	// sync
-	GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceReponse, error)
-	CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletReponse, error)
-	CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*CreateTransactionReponse, error)
-	GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionReponse, error)
+	GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error)
+	CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error)
+	CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*CreateTransactionResponse, error)
+	GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionResponse, error)
 	// async stream
 	ProxyPlugin(ctx context.Context, opts ...grpc.CallOption) (SphinxProxy_ProxyPluginClient, error)
 	ProxySign(ctx context.Context, opts ...grpc.CallOption) (SphinxProxy_ProxySignClient, error)
@@ -36,8 +36,8 @@ func NewSphinxProxyClient(cc grpc.ClientConnInterface) SphinxProxyClient {
 	return &sphinxProxyClient{cc}
 }
 
-func (c *sphinxProxyClient) GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceReponse, error) {
-	out := new(GetBalanceReponse)
+func (c *sphinxProxyClient) GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error) {
+	out := new(GetBalanceResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SphinxProxy/GetBalance", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -45,8 +45,8 @@ func (c *sphinxProxyClient) GetBalance(ctx context.Context, in *GetBalanceReques
 	return out, nil
 }
 
-func (c *sphinxProxyClient) CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletReponse, error) {
-	out := new(CreateWalletReponse)
+func (c *sphinxProxyClient) CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error) {
+	out := new(CreateWalletResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SphinxProxy/CreateWallet", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -54,8 +54,8 @@ func (c *sphinxProxyClient) CreateWallet(ctx context.Context, in *CreateWalletRe
 	return out, nil
 }
 
-func (c *sphinxProxyClient) CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*CreateTransactionReponse, error) {
-	out := new(CreateTransactionReponse)
+func (c *sphinxProxyClient) CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*CreateTransactionResponse, error) {
+	out := new(CreateTransactionResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SphinxProxy/CreateTransaction", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -63,8 +63,8 @@ func (c *sphinxProxyClient) CreateTransaction(ctx context.Context, in *CreateTra
 	return out, nil
 }
 
-func (c *sphinxProxyClient) GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionReponse, error) {
-	out := new(GetTransactionReponse)
+func (c *sphinxProxyClient) GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionResponse, error) {
+	out := new(GetTransactionResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SphinxProxy/GetTransaction", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -139,10 +139,10 @@ func (x *sphinxProxyProxySignClient) Recv() (*ProxySignRequest, error) {
 // for forward compatibility
 type SphinxProxyServer interface {
 	// sync
-	GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceReponse, error)
-	CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletReponse, error)
-	CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionReponse, error)
-	GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionReponse, error)
+	GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error)
+	CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error)
+	CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionResponse, error)
+	GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error)
 	// async stream
 	ProxyPlugin(SphinxProxy_ProxyPluginServer) error
 	ProxySign(SphinxProxy_ProxySignServer) error
@@ -153,16 +153,16 @@ type SphinxProxyServer interface {
 type UnimplementedSphinxProxyServer struct {
 }
 
-func (UnimplementedSphinxProxyServer) GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceReponse, error) {
+func (UnimplementedSphinxProxyServer) GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBalance not implemented")
 }
-func (UnimplementedSphinxProxyServer) CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletReponse, error) {
+func (UnimplementedSphinxProxyServer) CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateWallet not implemented")
 }
-func (UnimplementedSphinxProxyServer) CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionReponse, error) {
+func (UnimplementedSphinxProxyServer) CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTransaction not implemented")
 }
-func (UnimplementedSphinxProxyServer) GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionReponse, error) {
+func (UnimplementedSphinxProxyServer) GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTransaction not implemented")
 }
 func (UnimplementedSphinxProxyServer) ProxyPlugin(SphinxProxy_ProxyPluginServer) error {

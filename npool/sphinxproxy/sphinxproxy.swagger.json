@@ -88,10 +88,10 @@
       ],
       "default": "CoinTypeUnKnow"
     },
-    "v1CreateTransactionReponse": {
+    "v1CreateTransactionResponse": {
       "type": "object"
     },
-    "v1CreateWalletReponse": {
+    "v1CreateWalletResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -99,7 +99,7 @@
         }
       }
     },
-    "v1GetBalanceReponse": {
+    "v1GetBalanceResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "v1GetTransactionReponse": {
+    "v1GetTransactionResponse": {
       "type": "object"
     },
     "v1ProxyPluginRequest": {

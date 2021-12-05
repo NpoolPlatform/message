@@ -9,10 +9,10 @@ import "npool/sphinxplugin/sphinxplugin.proto";
 // Service Name
 service SphinxProxy {
     // sync
-    rpc GetBalance (GetBalanceRequest) returns (GetBalanceReponse) {}
-    rpc CreateWallet (CreateWalletRequest) returns (CreateWalletReponse) {}
-    rpc CreateTransaction (CreateTransactionRequest) returns (CreateTransactionReponse) {}
-    rpc GetTransaction (GetTransactionRequest) returns (GetTransactionReponse) {}
+    rpc GetBalance (GetBalanceRequest) returns (GetBalanceResponse) {}
+    rpc CreateWallet (CreateWalletRequest) returns (CreateWalletResponse) {}
+    rpc CreateTransaction (CreateTransactionRequest) returns (CreateTransactionResponse) {}
+    rpc GetTransaction (GetTransactionRequest) returns (GetTransactionResponse) {}
 
     // async stream
     rpc ProxyPlugin (stream ProxyPluginResponse) returns (stream ProxyPluginRequest) {}
@@ -28,7 +28,7 @@ message BalanceInfo {
     double Balance  = 100;
 }
 
-message GetBalanceReponse {
+message GetBalanceResponse {
     BalanceInfo Info = 100;
 }
 
@@ -41,7 +41,7 @@ message WalletInfo {
     // TODO sign type
 }
 
-message CreateWalletReponse {
+message CreateWalletResponse {
     WalletInfo Info = 100;
 }
 
@@ -53,7 +53,7 @@ message CreateTransactionRequest {
     double Value            = 120;
 }
 
-message CreateTransactionReponse {
+message CreateTransactionResponse {
 
 }
 
@@ -61,7 +61,7 @@ message GetTransactionRequest {
     string TransactionID = 100;
 }
 
-message GetTransactionReponse {
+message GetTransactionResponse {
 
 }
 

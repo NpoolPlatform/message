@@ -5,14 +5,14 @@
 
 - [npool/sphinxproxy/sphinxproxy.proto](#npool/sphinxproxy/sphinxproxy.proto)
     - [BalanceInfo](#sphinx.proxy.v1.BalanceInfo)
-    - [CreateTransactionReponse](#sphinx.proxy.v1.CreateTransactionReponse)
     - [CreateTransactionRequest](#sphinx.proxy.v1.CreateTransactionRequest)
-    - [CreateWalletReponse](#sphinx.proxy.v1.CreateWalletReponse)
+    - [CreateTransactionResponse](#sphinx.proxy.v1.CreateTransactionResponse)
     - [CreateWalletRequest](#sphinx.proxy.v1.CreateWalletRequest)
-    - [GetBalanceReponse](#sphinx.proxy.v1.GetBalanceReponse)
+    - [CreateWalletResponse](#sphinx.proxy.v1.CreateWalletResponse)
     - [GetBalanceRequest](#sphinx.proxy.v1.GetBalanceRequest)
-    - [GetTransactionReponse](#sphinx.proxy.v1.GetTransactionReponse)
+    - [GetBalanceResponse](#sphinx.proxy.v1.GetBalanceResponse)
     - [GetTransactionRequest](#sphinx.proxy.v1.GetTransactionRequest)
+    - [GetTransactionResponse](#sphinx.proxy.v1.GetTransactionResponse)
     - [ProxyPluginRequest](#sphinx.proxy.v1.ProxyPluginRequest)
     - [ProxyPluginResponse](#sphinx.proxy.v1.ProxyPluginResponse)
     - [ProxySignRequest](#sphinx.proxy.v1.ProxySignRequest)
@@ -50,16 +50,6 @@
 
 
 
-<a name="sphinx.proxy.v1.CreateTransactionReponse"></a>
-
-### CreateTransactionReponse
-
-
-
-
-
-
-
 <a name="sphinx.proxy.v1.CreateTransactionRequest"></a>
 
 ### CreateTransactionRequest
@@ -79,15 +69,10 @@
 
 
 
-<a name="sphinx.proxy.v1.CreateWalletReponse"></a>
+<a name="sphinx.proxy.v1.CreateTransactionResponse"></a>
 
-### CreateWalletReponse
+### CreateTransactionResponse
 
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [WalletInfo](#sphinx.proxy.v1.WalletInfo) |  |  |
 
 
 
@@ -109,15 +94,15 @@
 
 
 
-<a name="sphinx.proxy.v1.GetBalanceReponse"></a>
+<a name="sphinx.proxy.v1.CreateWalletResponse"></a>
 
-### GetBalanceReponse
+### CreateWalletResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [BalanceInfo](#sphinx.proxy.v1.BalanceInfo) |  |  |
+| Info | [WalletInfo](#sphinx.proxy.v1.WalletInfo) |  |  |
 
 
 
@@ -140,10 +125,15 @@
 
 
 
-<a name="sphinx.proxy.v1.GetTransactionReponse"></a>
+<a name="sphinx.proxy.v1.GetBalanceResponse"></a>
 
-### GetTransactionReponse
+### GetBalanceResponse
 
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [BalanceInfo](#sphinx.proxy.v1.BalanceInfo) |  |  |
 
 
 
@@ -159,6 +149,16 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TransactionID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="sphinx.proxy.v1.GetTransactionResponse"></a>
+
+### GetTransactionResponse
+
 
 
 
@@ -305,10 +305,10 @@ Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| GetBalance | [GetBalanceRequest](#sphinx.proxy.v1.GetBalanceRequest) | [GetBalanceReponse](#sphinx.proxy.v1.GetBalanceReponse) | sync |
-| CreateWallet | [CreateWalletRequest](#sphinx.proxy.v1.CreateWalletRequest) | [CreateWalletReponse](#sphinx.proxy.v1.CreateWalletReponse) |  |
-| CreateTransaction | [CreateTransactionRequest](#sphinx.proxy.v1.CreateTransactionRequest) | [CreateTransactionReponse](#sphinx.proxy.v1.CreateTransactionReponse) |  |
-| GetTransaction | [GetTransactionRequest](#sphinx.proxy.v1.GetTransactionRequest) | [GetTransactionReponse](#sphinx.proxy.v1.GetTransactionReponse) |  |
+| GetBalance | [GetBalanceRequest](#sphinx.proxy.v1.GetBalanceRequest) | [GetBalanceResponse](#sphinx.proxy.v1.GetBalanceResponse) | sync |
+| CreateWallet | [CreateWalletRequest](#sphinx.proxy.v1.CreateWalletRequest) | [CreateWalletResponse](#sphinx.proxy.v1.CreateWalletResponse) |  |
+| CreateTransaction | [CreateTransactionRequest](#sphinx.proxy.v1.CreateTransactionRequest) | [CreateTransactionResponse](#sphinx.proxy.v1.CreateTransactionResponse) |  |
+| GetTransaction | [GetTransactionRequest](#sphinx.proxy.v1.GetTransactionRequest) | [GetTransactionResponse](#sphinx.proxy.v1.GetTransactionResponse) |  |
 | ProxyPlugin | [ProxyPluginResponse](#sphinx.proxy.v1.ProxyPluginResponse) stream | [ProxyPluginRequest](#sphinx.proxy.v1.ProxyPluginRequest) stream | async stream |
 | ProxySign | [ProxySignResponse](#sphinx.proxy.v1.ProxySignResponse) stream | [ProxySignRequest](#sphinx.proxy.v1.ProxySignRequest) stream |  |
 
