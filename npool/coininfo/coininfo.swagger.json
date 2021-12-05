@@ -224,6 +224,9 @@
       "properties": {
         "ID": {
           "type": "string"
+        },
+        "Name": {
+          "type": "string"
         }
       }
     },

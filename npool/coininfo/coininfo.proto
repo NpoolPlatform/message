@@ -43,6 +43,7 @@ message CoinInfo {
 
 message GetCoinInfoRequest {
     string ID = 100;
+	string Name = 110;
 }
 
 message GetCoinInfoResponse {
