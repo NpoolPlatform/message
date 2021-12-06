@@ -55,9 +55,10 @@ message TransactionInfo {
 	double Amount 			= 120;
 	string From 			= 130;
 	string To 				= 140;
-	string state 			= 150;
-	uint32 CreatedAt 		= 160;
-	uint32 UpdatedAt 		= 170;
+	string State 			= 150;
+	string Cid				= 160;
+	uint32 CreatedAt 		= 170;
+	uint32 UpdatedAt 		= 180;
 }
 
 message CreateTransactionRequest {

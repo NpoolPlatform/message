@@ -305,7 +305,10 @@
         "To": {
           "type": "string"
         },
-        "state": {
+        "State": {
+          "type": "string"
+        },
+        "Cid": {
           "type": "string"
         },
         "CreatedAt": {
