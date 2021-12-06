@@ -76,6 +76,9 @@
         "Balance": {
           "type": "number",
           "format": "double"
+        },
+        "BalanceStr": {
+          "type": "string"
         }
       }
     },

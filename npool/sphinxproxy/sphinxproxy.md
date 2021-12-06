@@ -44,6 +44,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Balance | [double](#double) |  |  |
+| BalanceStr | [string](#string) |  |  |
 
 
 

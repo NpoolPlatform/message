@@ -25,7 +25,8 @@ message GetBalanceRequest {
 }
 
 message BalanceInfo {
-    double Balance  = 100;
+    double Balance      = 100;
+    string BalanceStr   = 110;
 }
 
 message GetBalanceResponse {
