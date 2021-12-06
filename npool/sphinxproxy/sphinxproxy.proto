@@ -74,7 +74,8 @@ message ProxyPluginResponse {
     uint64 Nonce                                = 130;
     string CID                                  = 140;
     double Balance                              = 150;
-    sphinx.plugin.v1.UnsignedMessage Message    = 160;
+    string BalanceStr                           = 160;
+    sphinx.plugin.v1.UnsignedMessage Message    = 170;
 }
 
 // MpoolGetNonce WalletBalance MpoolPush ..
