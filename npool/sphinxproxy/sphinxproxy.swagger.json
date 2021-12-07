@@ -111,7 +111,13 @@
       }
     },
     "v1GetTransactionResponse": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "ExitCode": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
     },
     "v1ProxyPluginRequest": {
       "type": "object",

@@ -150,6 +150,9 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TransactionID | [string](#string) |  |  |
+| From | [string](#string) |  |  |
+| To | [string](#string) |  |  |
+| CID | [string](#string) |  |  |
 
 
 
@@ -160,6 +163,11 @@
 
 ### GetTransactionResponse
 
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ExitCode | [int64](#int64) |  |  |
 
 
 
