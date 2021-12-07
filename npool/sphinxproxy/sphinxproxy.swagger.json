@@ -133,6 +133,9 @@
         },
         "Signature": {
           "$ref": "#/definitions/v1Signature"
+        },
+        "CID": {
+          "type": "string"
         }
       },
       "description": "MpoolGetNonce WalletBalance MpoolPush .."

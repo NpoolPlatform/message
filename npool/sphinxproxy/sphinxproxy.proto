@@ -86,6 +86,7 @@ message ProxyPluginRequest {
     string Address                              = 130;
     sphinx.plugin.v1.UnsignedMessage Message    = 140;
     sphinx.plugin.v1.Signature       Signature  = 150;
+    string CID                                  = 160;
 }
 
 // Sign WalletNew ..

@@ -180,6 +180,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Address | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 | Signature | [sphinx.plugin.v1.Signature](#sphinx.plugin.v1.Signature) |  |  |
+| CID | [string](#string) |  |  |
 
 
 
