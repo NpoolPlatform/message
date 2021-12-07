@@ -203,6 +203,7 @@ RegisterCoin ..
 | Balance | [double](#double) |  |  |
 | BalanceStr | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
+| ExitCode | [int64](#int64) |  | -1 find cid state on chain internal server error |
 
 
 
