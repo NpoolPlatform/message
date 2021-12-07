@@ -191,7 +191,8 @@
         "Balance",
         "PreSign",
         "Broadcast",
-        "RegisterCoin"
+        "RegisterCoin",
+        "SyncMsgState"
       ],
       "default": "Invalid"
     },

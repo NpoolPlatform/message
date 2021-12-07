@@ -118,4 +118,5 @@ enum TransactionType {
     PreSign         = 5; // proxy -> pluign get nonce
     Broadcast       = 6; // proxy -> plugin mpool push
     RegisterCoin    = 7; // plugin -> proxy
+    SyncMsgState    = 8; // plugin -> proxy
 }

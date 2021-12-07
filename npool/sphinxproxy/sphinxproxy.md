@@ -293,6 +293,7 @@ Sign WalletNew ..
 | PreSign | 5 | proxy -&gt; pluign get nonce |
 | Broadcast | 6 | proxy -&gt; plugin mpool push |
 | RegisterCoin | 7 | plugin -&gt; proxy |
+| SyncMsgState | 8 | plugin -&gt; proxy |
 
 
  
