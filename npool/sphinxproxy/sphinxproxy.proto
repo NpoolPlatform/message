@@ -65,6 +65,7 @@ message GetTransactionRequest {
 message TransactionChainInfo {
     string CID      = 100;
     int64 ExitCode  = 110;
+    string State    = 120; // "wait", "sign", "sync", "done", "fail"
 }
 
 message GetTransactionResponse {

@@ -279,6 +279,7 @@ Sign WalletNew ..
 | ----- | ---- | ----- | ----------- |
 | CID | [string](#string) |  |  |
 | ExitCode | [int64](#int64) |  |  |
+| State | [string](#string) |  | &#34;wait&#34;, &#34;sign&#34;, &#34;sync&#34;, &#34;done&#34;, &#34;fail&#34; |
 
 
 

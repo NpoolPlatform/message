@@ -198,6 +198,9 @@
         "ExitCode": {
           "type": "string",
           "format": "int64"
+        },
+        "State": {
+          "type": "string"
         }
       }
     },
