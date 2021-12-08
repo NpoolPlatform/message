@@ -113,12 +113,8 @@
     "v1GetTransactionResponse": {
       "type": "object",
       "properties": {
-        "CID": {
-          "type": "string"
-        },
-        "ExitCode": {
-          "type": "string",
-          "format": "int64"
+        "Info": {
+          "$ref": "#/definitions/v1TransactionChainInfo"
         }
       }
     },
@@ -190,6 +186,18 @@
         "Data": {
           "type": "string",
           "format": "byte"
+        }
+      }
+    },
+    "v1TransactionChainInfo": {
+      "type": "object",
+      "properties": {
+        "CID": {
+          "type": "string"
+        },
+        "ExitCode": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },

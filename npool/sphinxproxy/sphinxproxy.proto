@@ -62,9 +62,13 @@ message GetTransactionRequest {
     string TransactionID    = 100;
 }
 
-message GetTransactionResponse {
+message TransactionChainInfo {
     string CID      = 100;
     int64 ExitCode  = 110;
+}
+
+message GetTransactionResponse {
+    TransactionChainInfo Info = 100;
 }
 
 // RegisterCoin ..

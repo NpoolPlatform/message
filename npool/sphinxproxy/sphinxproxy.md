@@ -18,6 +18,7 @@
     - [ProxySignRequest](#sphinx.proxy.v1.ProxySignRequest)
     - [ProxySignResponse](#sphinx.proxy.v1.ProxySignResponse)
     - [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo)
+    - [TransactionChainInfo](#sphinx.proxy.v1.TransactionChainInfo)
     - [WalletInfo](#sphinx.proxy.v1.WalletInfo)
   
     - [TransactionType](#sphinx.proxy.v1.TransactionType)
@@ -164,8 +165,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CID | [string](#string) |  |  |
-| ExitCode | [int64](#int64) |  |  |
+| Info | [TransactionChainInfo](#sphinx.proxy.v1.TransactionChainInfo) |  |  |
 
 
 
@@ -263,6 +263,22 @@ Sign WalletNew ..
 | Address | [string](#string) |  | create new account address |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 | Signature | [sphinx.plugin.v1.Signature](#sphinx.plugin.v1.Signature) |  |  |
+
+
+
+
+
+
+<a name="sphinx.proxy.v1.TransactionChainInfo"></a>
+
+### TransactionChainInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CID | [string](#string) |  |  |
+| ExitCode | [int64](#int64) |  |  |
 
 
 
