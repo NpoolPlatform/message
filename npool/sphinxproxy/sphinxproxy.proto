@@ -60,13 +60,11 @@ message CreateTransactionResponse {
 
 message GetTransactionRequest {
     string TransactionID    = 100;
-    string From             = 110;
-    string To               = 120;
-    string CID              = 130;
 }
 
 message GetTransactionResponse {
-    int64 ExitCode  = 100;
+    string CID      = 100;
+    int64 ExitCode  = 110;
 }
 
 // RegisterCoin ..
