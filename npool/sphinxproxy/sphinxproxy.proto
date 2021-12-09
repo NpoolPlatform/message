@@ -4,15 +4,36 @@ package sphinx.proxy.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/sphinxproxy";
 
+import "google/api/annotations.proto";
 import "npool/sphinxplugin/sphinxplugin.proto";
 
-// Service Name
+// SphinxProxy http service only for inner
 service SphinxProxy {
     // sync
-    rpc GetBalance (GetBalanceRequest) returns (GetBalanceResponse) {}
-    rpc CreateWallet (CreateWalletRequest) returns (CreateWalletResponse) {}
-    rpc CreateTransaction (CreateTransactionRequest) returns (CreateTransactionResponse) {}
-    rpc GetTransaction (GetTransactionRequest) returns (GetTransactionResponse) {}
+    rpc GetBalance (GetBalanceRequest) returns (GetBalanceResponse) {
+        option (google.api.http) = {
+			post: "/v1/get/balance"
+			body: "*"
+		};
+    }
+    rpc CreateWallet (CreateWalletRequest) returns (CreateWalletResponse) {
+        option (google.api.http) = {
+			post: "/v1/create/wallet"
+			body: "*"
+		};
+    }
+    rpc CreateTransaction (CreateTransactionRequest) returns (CreateTransactionResponse) {
+        option (google.api.http) = {
+			post: "/v1/create/transaction"
+			body: "*"
+		};
+    }
+    rpc GetTransaction (GetTransactionRequest) returns (GetTransactionResponse) {
+        option (google.api.http) = {
+			post: "/v1/get/transaction"
+			body: "*"
+		};
+    }
     rpc ReviewTransaction (ReviewTransactionRequest) returns (ReviewTransactionResponse) {}
 
     // async stream

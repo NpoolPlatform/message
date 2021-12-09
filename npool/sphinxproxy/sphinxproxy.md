@@ -383,7 +383,7 @@ Sign WalletNew ..
 <a name="sphinx.proxy.v1.SphinxProxy"></a>
 
 ### SphinxProxy
-Service Name
+SphinxProxy http service only for inner
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
