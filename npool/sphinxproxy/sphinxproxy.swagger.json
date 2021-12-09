@@ -208,8 +208,8 @@
         "To": {
           "type": "string"
         },
-        "State": {
-          "type": "string"
+        "TransactionState": {
+          "$ref": "#/definitions/v1TransactionState"
         },
         "CID": {
           "type": "string"
@@ -227,6 +227,21 @@
           "format": "int64"
         }
       }
+    },
+    "v1TransactionState": {
+      "type": "string",
+      "enum": [
+        "TransactionStateUnKnow",
+        "TransactionStatePendingReview",
+        "TransactionStateConfirm",
+        "TransactionStateRejected",
+        "TransactionStateWait",
+        "TransactionStateSign",
+        "TransactionStateSync",
+        "TransactionStateDone",
+        "TransactionStateFail"
+      ],
+      "default": "TransactionStateUnKnow"
     },
     "v1TransactionType": {
       "type": "string",

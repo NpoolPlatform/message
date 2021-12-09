@@ -21,6 +21,7 @@
     - [TransactionInfo](#sphinx.proxy.v1.TransactionInfo)
     - [WalletInfo](#sphinx.proxy.v1.WalletInfo)
   
+    - [TransactionState](#sphinx.proxy.v1.TransactionState)
     - [TransactionType](#sphinx.proxy.v1.TransactionType)
   
     - [SphinxProxy](#sphinx.proxy.v1.SphinxProxy)
@@ -282,7 +283,7 @@ Sign WalletNew ..
 | Amount | [double](#double) |  |  |
 | From | [string](#string) |  |  |
 | To | [string](#string) |  |  |
-| State | [string](#string) |  |  |
+| TransactionState | [TransactionState](#sphinx.proxy.v1.TransactionState) |  |  |
 | CID | [string](#string) |  |  |
 | ExitCode | [int64](#int64) |  |  |
 | CreatedAt | [uint32](#uint32) |  |  |
@@ -301,13 +302,32 @@ Sign WalletNew ..
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Address | [string](#string) |  | TODO sign type |
+| Address | [string](#string) |  |  |
 
 
 
 
 
  
+
+
+<a name="sphinx.proxy.v1.TransactionState"></a>
+
+### TransactionState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TransactionStateUnKnow | 0 |  |
+| TransactionStatePendingReview | 1 |  |
+| TransactionStateConfirm | 2 |  |
+| TransactionStateRejected | 3 |  |
+| TransactionStateWait | 4 |  |
+| TransactionStateSign | 5 |  |
+| TransactionStateSync | 6 |  |
+| TransactionStateDone | 7 |  |
+| TransactionStateFail | 8 |  |
+
 
 
 <a name="sphinx.proxy.v1.TransactionType"></a>

@@ -39,7 +39,6 @@ message CreateWalletRequest {
 
 message WalletInfo {
     string Address = 100;
-    // TODO sign type
 }
 
 message CreateWalletResponse {
@@ -63,16 +62,16 @@ message GetTransactionRequest {
 }
 
 message TransactionInfo {
-	string TransactionID 	= 100;
-	string Name 			= 110;
-	double Amount 			= 120;
-	string From 			= 130;
-	string To 				= 140;
-	string State 			= 150;
-	string CID				= 160;
-    int64 ExitCode          = 170;
-	uint32 CreatedAt 		= 180;
-	uint32 UpdatedAt 		= 190;
+	string TransactionID 	            = 100;
+	string Name 			            = 110;
+	double Amount 			            = 120;
+	string From 			            = 130;
+	string To 				            = 140;
+	TransactionState TransactionState   = 150;
+	string CID				            = 160;
+    int64 ExitCode                      = 170;
+	uint32 CreatedAt 		            = 180;
+	uint32 UpdatedAt 		            = 190;
 }
 
 message GetTransactionResponse {
@@ -134,4 +133,16 @@ enum TransactionType {
     Broadcast       = 6; // proxy -> plugin mpool push
     RegisterCoin    = 7; // plugin -> proxy
     SyncMsgState    = 8; // plugin -> proxy
+}
+
+enum TransactionState {
+	TransactionStateUnKnow  			= 0;
+	TransactionStatePendingReview     	= 1;
+	TransactionStateConfirm     		= 2;
+	TransactionStateRejected     		= 3;
+	TransactionStateWait  				= 4;
+	TransactionStateSign  				= 5;
+	TransactionStateSync  				= 6;
+	TransactionStateDone     			= 7;
+	TransactionStateFail     			= 8;
 }
