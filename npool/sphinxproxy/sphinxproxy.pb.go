@@ -152,6 +152,7 @@ func (TransactionState) EnumDescriptor() ([]byte, []int) {
 	return file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP(), []int{1}
 }
 
+// ############################# sync
 type GetBalanceRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -780,7 +781,177 @@ func (x *GetTransactionResponse) GetInfo() *TransactionInfo {
 	return nil
 }
 
-// RegisterCoin ..
+type RejectTransactionRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TransactionID string `protobuf:"bytes,100,opt,name=TransactionID,proto3" json:"TransactionID,omitempty"`
+}
+
+func (x *RejectTransactionRequest) Reset() {
+	*x = RejectTransactionRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RejectTransactionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RejectTransactionRequest) ProtoMessage() {}
+
+func (x *RejectTransactionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RejectTransactionRequest.ProtoReflect.Descriptor instead.
+func (*RejectTransactionRequest) Descriptor() ([]byte, []int) {
+	return file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *RejectTransactionRequest) GetTransactionID() string {
+	if x != nil {
+		return x.TransactionID
+	}
+	return ""
+}
+
+type RejectTransactionResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *RejectTransactionResponse) Reset() {
+	*x = RejectTransactionResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RejectTransactionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RejectTransactionResponse) ProtoMessage() {}
+
+func (x *RejectTransactionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RejectTransactionResponse.ProtoReflect.Descriptor instead.
+func (*RejectTransactionResponse) Descriptor() ([]byte, []int) {
+	return file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP(), []int{12}
+}
+
+type ConfirmTransactionRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TransactionID string `protobuf:"bytes,100,opt,name=TransactionID,proto3" json:"TransactionID,omitempty"`
+}
+
+func (x *ConfirmTransactionRequest) Reset() {
+	*x = ConfirmTransactionRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ConfirmTransactionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfirmTransactionRequest) ProtoMessage() {}
+
+func (x *ConfirmTransactionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfirmTransactionRequest.ProtoReflect.Descriptor instead.
+func (*ConfirmTransactionRequest) Descriptor() ([]byte, []int) {
+	return file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *ConfirmTransactionRequest) GetTransactionID() string {
+	if x != nil {
+		return x.TransactionID
+	}
+	return ""
+}
+
+type ConfirmTransactionResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ConfirmTransactionResponse) Reset() {
+	*x = ConfirmTransactionResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ConfirmTransactionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfirmTransactionResponse) ProtoMessage() {}
+
+func (x *ConfirmTransactionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfirmTransactionResponse.ProtoReflect.Descriptor instead.
+func (*ConfirmTransactionResponse) Descriptor() ([]byte, []int) {
+	return file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP(), []int{14}
+}
+
+// ############################# async
 type ProxyPluginResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -800,7 +971,7 @@ type ProxyPluginResponse struct {
 func (x *ProxyPluginResponse) Reset() {
 	*x = ProxyPluginResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[11]
+		mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -813,7 +984,7 @@ func (x *ProxyPluginResponse) String() string {
 func (*ProxyPluginResponse) ProtoMessage() {}
 
 func (x *ProxyPluginResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[11]
+	mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -826,7 +997,7 @@ func (x *ProxyPluginResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProxyPluginResponse.ProtoReflect.Descriptor instead.
 func (*ProxyPluginResponse) Descriptor() ([]byte, []int) {
-	return file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP(), []int{11}
+	return file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ProxyPluginResponse) GetCoinType() sphinxplugin.CoinType {
@@ -910,7 +1081,7 @@ type ProxyPluginRequest struct {
 func (x *ProxyPluginRequest) Reset() {
 	*x = ProxyPluginRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[12]
+		mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -923,7 +1094,7 @@ func (x *ProxyPluginRequest) String() string {
 func (*ProxyPluginRequest) ProtoMessage() {}
 
 func (x *ProxyPluginRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[12]
+	mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -936,7 +1107,7 @@ func (x *ProxyPluginRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProxyPluginRequest.ProtoReflect.Descriptor instead.
 func (*ProxyPluginRequest) Descriptor() ([]byte, []int) {
-	return file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP(), []int{12}
+	return file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ProxyPluginRequest) GetCoinType() sphinxplugin.CoinType {
@@ -1003,7 +1174,7 @@ type ProxySignRequest struct {
 func (x *ProxySignRequest) Reset() {
 	*x = ProxySignRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[13]
+		mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1016,7 +1187,7 @@ func (x *ProxySignRequest) String() string {
 func (*ProxySignRequest) ProtoMessage() {}
 
 func (x *ProxySignRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[13]
+	mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1029,7 +1200,7 @@ func (x *ProxySignRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProxySignRequest.ProtoReflect.Descriptor instead.
 func (*ProxySignRequest) Descriptor() ([]byte, []int) {
-	return file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP(), []int{13}
+	return file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ProxySignRequest) GetCoinType() sphinxplugin.CoinType {
@@ -1074,7 +1245,7 @@ type ProxySignResponse struct {
 func (x *ProxySignResponse) Reset() {
 	*x = ProxySignResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[14]
+		mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1087,7 +1258,7 @@ func (x *ProxySignResponse) String() string {
 func (*ProxySignResponse) ProtoMessage() {}
 
 func (x *ProxySignResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[14]
+	mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1100,7 +1271,7 @@ func (x *ProxySignResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProxySignResponse.ProtoReflect.Descriptor instead.
 func (*ProxySignResponse) Descriptor() ([]byte, []int) {
-	return file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP(), []int{14}
+	return file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ProxySignResponse) GetCoinType() sphinxplugin.CoinType {
@@ -1144,7 +1315,7 @@ type ProxySignResponseInfo struct {
 func (x *ProxySignResponseInfo) Reset() {
 	*x = ProxySignResponseInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[15]
+		mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1157,7 +1328,7 @@ func (x *ProxySignResponseInfo) String() string {
 func (*ProxySignResponseInfo) ProtoMessage() {}
 
 func (x *ProxySignResponseInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[15]
+	mi := &file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1170,7 +1341,7 @@ func (x *ProxySignResponseInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProxySignResponseInfo.ProtoReflect.Descriptor instead.
 func (*ProxySignResponseInfo) Descriptor() ([]byte, []int) {
-	return file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP(), []int{15}
+	return file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *ProxySignResponseInfo) GetAddress() string {
@@ -1266,7 +1437,19 @@ var file_npool_sphinxproxy_sphinxproxy_proto_rawDesc = []byte{
 	0x73, 0x65, 0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x64, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x20, 0x2e, 0x73, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x2e, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x2e,
 	0x76, 0x31, 0x2e, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e,
-	0x66, 0x6f, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x80, 0x03, 0x0a, 0x13, 0x50, 0x72, 0x6f,
+	0x66, 0x6f, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x40, 0x0a, 0x18, 0x52, 0x65, 0x6a, 0x65,
+	0x63, 0x74, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x24, 0x0a, 0x0d, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x49, 0x44, 0x18, 0x64, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x54, 0x72, 0x61,
+	0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x44, 0x22, 0x1b, 0x0a, 0x19, 0x52, 0x65,
+	0x6a, 0x65, 0x63, 0x74, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x41, 0x0a, 0x19, 0x43, 0x6f, 0x6e, 0x66, 0x69,
+	0x72, 0x6d, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x24, 0x0a, 0x0d, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x49, 0x44, 0x18, 0x64, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x54, 0x72, 0x61,
+	0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x44, 0x22, 0x1c, 0x0a, 0x1a, 0x43, 0x6f,
+	0x6e, 0x66, 0x69, 0x72, 0x6d, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x80, 0x03, 0x0a, 0x13, 0x50, 0x72, 0x6f,
 	0x78, 0x79, 0x50, 0x6c, 0x75, 0x67, 0x69, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x12, 0x36, 0x0a, 0x08, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x18, 0x64, 0x20, 0x01,
 	0x28, 0x0e, 0x32, 0x1a, 0x2e, 0x73, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x2e, 0x70, 0x6c, 0x75, 0x67,
@@ -1380,8 +1563,8 @@ var file_npool_sphinxproxy_sphinxproxy_proto_rawDesc = []byte{
 	0x74, 0x61, 0x74, 0x65, 0x53, 0x79, 0x6e, 0x63, 0x10, 0x05, 0x12, 0x18, 0x0a, 0x14, 0x54, 0x72,
 	0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x44, 0x6f,
 	0x6e, 0x65, 0x10, 0x06, 0x12, 0x18, 0x0a, 0x14, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74,
-	0x69, 0x6f, 0x6e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x46, 0x61, 0x69, 0x6c, 0x10, 0x07, 0x32, 0xd2,
-	0x04, 0x0a, 0x0b, 0x53, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x50, 0x72, 0x6f, 0x78, 0x79, 0x12, 0x57,
+	0x69, 0x6f, 0x6e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x46, 0x61, 0x69, 0x6c, 0x10, 0x07, 0x32, 0xb1,
+	0x06, 0x0a, 0x0b, 0x53, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x50, 0x72, 0x6f, 0x78, 0x79, 0x12, 0x57,
 	0x0a, 0x0a, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x12, 0x22, 0x2e, 0x73,
 	0x70, 0x68, 0x69, 0x6e, 0x78, 0x2e, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x47,
 	0x65, 0x74, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
@@ -1406,23 +1589,36 @@ var file_npool_sphinxproxy_sphinxproxy_proto_rawDesc = []byte{
 	0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27,
 	0x2e, 0x73, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x2e, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x2e, 0x76, 0x31,
 	0x2e, 0x47, 0x65, 0x74, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x5e, 0x0a, 0x0b, 0x50, 0x72, 0x6f,
-	0x78, 0x79, 0x50, 0x6c, 0x75, 0x67, 0x69, 0x6e, 0x12, 0x24, 0x2e, 0x73, 0x70, 0x68, 0x69, 0x6e,
-	0x78, 0x2e, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x78, 0x79,
-	0x50, 0x6c, 0x75, 0x67, 0x69, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x1a, 0x23,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6c, 0x0a, 0x11, 0x52, 0x65, 0x6a,
+	0x65, 0x63, 0x74, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x29,
 	0x2e, 0x73, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x2e, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x2e, 0x76, 0x31,
-	0x2e, 0x50, 0x72, 0x6f, 0x78, 0x79, 0x50, 0x6c, 0x75, 0x67, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x22, 0x00, 0x28, 0x01, 0x30, 0x01, 0x12, 0x58, 0x0a, 0x09, 0x50, 0x72, 0x6f,
-	0x78, 0x79, 0x53, 0x69, 0x67, 0x6e, 0x12, 0x22, 0x2e, 0x73, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x2e,
-	0x70, 0x72, 0x6f, 0x78, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x78, 0x79, 0x53, 0x69,
-	0x67, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x1a, 0x21, 0x2e, 0x73, 0x70, 0x68,
-	0x69, 0x6e, 0x78, 0x2e, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f,
-	0x78, 0x79, 0x53, 0x69, 0x67, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x00, 0x28,
-	0x01, 0x30, 0x01, 0x42, 0x34, 0x5a, 0x32, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f,
-	0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x73, 0x70,
-	0x68, 0x69, 0x6e, 0x78, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x33,
+	0x2e, 0x52, 0x65, 0x6a, 0x65, 0x63, 0x74, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69,
+	0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x73, 0x70, 0x68, 0x69,
+	0x6e, 0x78, 0x2e, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x6a, 0x65,
+	0x63, 0x74, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6f, 0x0a, 0x12, 0x43, 0x6f, 0x6e, 0x66, 0x69,
+	0x72, 0x6d, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2a, 0x2e,
+	0x73, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x2e, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x2e, 0x76, 0x31, 0x2e,
+	0x43, 0x6f, 0x6e, 0x66, 0x69, 0x72, 0x6d, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69,
+	0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x73, 0x70, 0x68, 0x69,
+	0x6e, 0x78, 0x2e, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x66,
+	0x69, 0x72, 0x6d, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x5e, 0x0a, 0x0b, 0x50, 0x72, 0x6f, 0x78,
+	0x79, 0x50, 0x6c, 0x75, 0x67, 0x69, 0x6e, 0x12, 0x24, 0x2e, 0x73, 0x70, 0x68, 0x69, 0x6e, 0x78,
+	0x2e, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x78, 0x79, 0x50,
+	0x6c, 0x75, 0x67, 0x69, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x1a, 0x23, 0x2e,
+	0x73, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x2e, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x2e, 0x76, 0x31, 0x2e,
+	0x50, 0x72, 0x6f, 0x78, 0x79, 0x50, 0x6c, 0x75, 0x67, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x22, 0x00, 0x28, 0x01, 0x30, 0x01, 0x12, 0x58, 0x0a, 0x09, 0x50, 0x72, 0x6f, 0x78,
+	0x79, 0x53, 0x69, 0x67, 0x6e, 0x12, 0x22, 0x2e, 0x73, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x2e, 0x70,
+	0x72, 0x6f, 0x78, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x78, 0x79, 0x53, 0x69, 0x67,
+	0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x1a, 0x21, 0x2e, 0x73, 0x70, 0x68, 0x69,
+	0x6e, 0x78, 0x2e, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x78,
+	0x79, 0x53, 0x69, 0x67, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x00, 0x28, 0x01,
+	0x30, 0x01, 0x42, 0x34, 0x5a, 0x32, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d,
+	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x73, 0x70, 0x68,
+	0x69, 0x6e, 0x78, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1438,7 +1634,7 @@ func file_npool_sphinxproxy_sphinxproxy_proto_rawDescGZIP() []byte {
 }
 
 var file_npool_sphinxproxy_sphinxproxy_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_npool_sphinxproxy_sphinxproxy_proto_msgTypes = make([]protoimpl.MessageInfo, 16)
+var file_npool_sphinxproxy_sphinxproxy_proto_msgTypes = make([]protoimpl.MessageInfo, 20)
 var file_npool_sphinxproxy_sphinxproxy_proto_goTypes = []interface{}{
 	(TransactionType)(0),                 // 0: sphinx.proxy.v1.TransactionType
 	(TransactionState)(0),                // 1: sphinx.proxy.v1.TransactionState
@@ -1453,49 +1649,57 @@ var file_npool_sphinxproxy_sphinxproxy_proto_goTypes = []interface{}{
 	(*GetTransactionRequest)(nil),        // 10: sphinx.proxy.v1.GetTransactionRequest
 	(*TransactionInfo)(nil),              // 11: sphinx.proxy.v1.TransactionInfo
 	(*GetTransactionResponse)(nil),       // 12: sphinx.proxy.v1.GetTransactionResponse
-	(*ProxyPluginResponse)(nil),          // 13: sphinx.proxy.v1.ProxyPluginResponse
-	(*ProxyPluginRequest)(nil),           // 14: sphinx.proxy.v1.ProxyPluginRequest
-	(*ProxySignRequest)(nil),             // 15: sphinx.proxy.v1.ProxySignRequest
-	(*ProxySignResponse)(nil),            // 16: sphinx.proxy.v1.ProxySignResponse
-	(*ProxySignResponseInfo)(nil),        // 17: sphinx.proxy.v1.ProxySignResponseInfo
-	(sphinxplugin.CoinType)(0),           // 18: sphinx.plugin.v1.CoinType
-	(*sphinxplugin.UnsignedMessage)(nil), // 19: sphinx.plugin.v1.UnsignedMessage
-	(*sphinxplugin.Signature)(nil),       // 20: sphinx.plugin.v1.Signature
+	(*RejectTransactionRequest)(nil),     // 13: sphinx.proxy.v1.RejectTransactionRequest
+	(*RejectTransactionResponse)(nil),    // 14: sphinx.proxy.v1.RejectTransactionResponse
+	(*ConfirmTransactionRequest)(nil),    // 15: sphinx.proxy.v1.ConfirmTransactionRequest
+	(*ConfirmTransactionResponse)(nil),   // 16: sphinx.proxy.v1.ConfirmTransactionResponse
+	(*ProxyPluginResponse)(nil),          // 17: sphinx.proxy.v1.ProxyPluginResponse
+	(*ProxyPluginRequest)(nil),           // 18: sphinx.proxy.v1.ProxyPluginRequest
+	(*ProxySignRequest)(nil),             // 19: sphinx.proxy.v1.ProxySignRequest
+	(*ProxySignResponse)(nil),            // 20: sphinx.proxy.v1.ProxySignResponse
+	(*ProxySignResponseInfo)(nil),        // 21: sphinx.proxy.v1.ProxySignResponseInfo
+	(sphinxplugin.CoinType)(0),           // 22: sphinx.plugin.v1.CoinType
+	(*sphinxplugin.UnsignedMessage)(nil), // 23: sphinx.plugin.v1.UnsignedMessage
+	(*sphinxplugin.Signature)(nil),       // 24: sphinx.plugin.v1.Signature
 }
 var file_npool_sphinxproxy_sphinxproxy_proto_depIdxs = []int32{
 	3,  // 0: sphinx.proxy.v1.GetBalanceResponse.Info:type_name -> sphinx.proxy.v1.BalanceInfo
 	6,  // 1: sphinx.proxy.v1.CreateWalletResponse.Info:type_name -> sphinx.proxy.v1.WalletInfo
 	1,  // 2: sphinx.proxy.v1.TransactionInfo.TransactionState:type_name -> sphinx.proxy.v1.TransactionState
 	11, // 3: sphinx.proxy.v1.GetTransactionResponse.Info:type_name -> sphinx.proxy.v1.TransactionInfo
-	18, // 4: sphinx.proxy.v1.ProxyPluginResponse.CoinType:type_name -> sphinx.plugin.v1.CoinType
+	22, // 4: sphinx.proxy.v1.ProxyPluginResponse.CoinType:type_name -> sphinx.plugin.v1.CoinType
 	0,  // 5: sphinx.proxy.v1.ProxyPluginResponse.TransactionType:type_name -> sphinx.proxy.v1.TransactionType
-	19, // 6: sphinx.proxy.v1.ProxyPluginResponse.Message:type_name -> sphinx.plugin.v1.UnsignedMessage
-	18, // 7: sphinx.proxy.v1.ProxyPluginRequest.CoinType:type_name -> sphinx.plugin.v1.CoinType
+	23, // 6: sphinx.proxy.v1.ProxyPluginResponse.Message:type_name -> sphinx.plugin.v1.UnsignedMessage
+	22, // 7: sphinx.proxy.v1.ProxyPluginRequest.CoinType:type_name -> sphinx.plugin.v1.CoinType
 	0,  // 8: sphinx.proxy.v1.ProxyPluginRequest.TransactionType:type_name -> sphinx.proxy.v1.TransactionType
-	19, // 9: sphinx.proxy.v1.ProxyPluginRequest.Message:type_name -> sphinx.plugin.v1.UnsignedMessage
-	20, // 10: sphinx.proxy.v1.ProxyPluginRequest.Signature:type_name -> sphinx.plugin.v1.Signature
-	18, // 11: sphinx.proxy.v1.ProxySignRequest.CoinType:type_name -> sphinx.plugin.v1.CoinType
+	23, // 9: sphinx.proxy.v1.ProxyPluginRequest.Message:type_name -> sphinx.plugin.v1.UnsignedMessage
+	24, // 10: sphinx.proxy.v1.ProxyPluginRequest.Signature:type_name -> sphinx.plugin.v1.Signature
+	22, // 11: sphinx.proxy.v1.ProxySignRequest.CoinType:type_name -> sphinx.plugin.v1.CoinType
 	0,  // 12: sphinx.proxy.v1.ProxySignRequest.TransactionType:type_name -> sphinx.proxy.v1.TransactionType
-	19, // 13: sphinx.proxy.v1.ProxySignRequest.Message:type_name -> sphinx.plugin.v1.UnsignedMessage
-	18, // 14: sphinx.proxy.v1.ProxySignResponse.CoinType:type_name -> sphinx.plugin.v1.CoinType
+	23, // 13: sphinx.proxy.v1.ProxySignRequest.Message:type_name -> sphinx.plugin.v1.UnsignedMessage
+	22, // 14: sphinx.proxy.v1.ProxySignResponse.CoinType:type_name -> sphinx.plugin.v1.CoinType
 	0,  // 15: sphinx.proxy.v1.ProxySignResponse.TransactionType:type_name -> sphinx.proxy.v1.TransactionType
-	17, // 16: sphinx.proxy.v1.ProxySignResponse.Info:type_name -> sphinx.proxy.v1.ProxySignResponseInfo
-	19, // 17: sphinx.proxy.v1.ProxySignResponseInfo.Message:type_name -> sphinx.plugin.v1.UnsignedMessage
-	20, // 18: sphinx.proxy.v1.ProxySignResponseInfo.Signature:type_name -> sphinx.plugin.v1.Signature
+	21, // 16: sphinx.proxy.v1.ProxySignResponse.Info:type_name -> sphinx.proxy.v1.ProxySignResponseInfo
+	23, // 17: sphinx.proxy.v1.ProxySignResponseInfo.Message:type_name -> sphinx.plugin.v1.UnsignedMessage
+	24, // 18: sphinx.proxy.v1.ProxySignResponseInfo.Signature:type_name -> sphinx.plugin.v1.Signature
 	2,  // 19: sphinx.proxy.v1.SphinxProxy.GetBalance:input_type -> sphinx.proxy.v1.GetBalanceRequest
 	5,  // 20: sphinx.proxy.v1.SphinxProxy.CreateWallet:input_type -> sphinx.proxy.v1.CreateWalletRequest
 	8,  // 21: sphinx.proxy.v1.SphinxProxy.CreateTransaction:input_type -> sphinx.proxy.v1.CreateTransactionRequest
 	10, // 22: sphinx.proxy.v1.SphinxProxy.GetTransaction:input_type -> sphinx.proxy.v1.GetTransactionRequest
-	13, // 23: sphinx.proxy.v1.SphinxProxy.ProxyPlugin:input_type -> sphinx.proxy.v1.ProxyPluginResponse
-	16, // 24: sphinx.proxy.v1.SphinxProxy.ProxySign:input_type -> sphinx.proxy.v1.ProxySignResponse
-	4,  // 25: sphinx.proxy.v1.SphinxProxy.GetBalance:output_type -> sphinx.proxy.v1.GetBalanceResponse
-	7,  // 26: sphinx.proxy.v1.SphinxProxy.CreateWallet:output_type -> sphinx.proxy.v1.CreateWalletResponse
-	9,  // 27: sphinx.proxy.v1.SphinxProxy.CreateTransaction:output_type -> sphinx.proxy.v1.CreateTransactionResponse
-	12, // 28: sphinx.proxy.v1.SphinxProxy.GetTransaction:output_type -> sphinx.proxy.v1.GetTransactionResponse
-	14, // 29: sphinx.proxy.v1.SphinxProxy.ProxyPlugin:output_type -> sphinx.proxy.v1.ProxyPluginRequest
-	15, // 30: sphinx.proxy.v1.SphinxProxy.ProxySign:output_type -> sphinx.proxy.v1.ProxySignRequest
-	25, // [25:31] is the sub-list for method output_type
-	19, // [19:25] is the sub-list for method input_type
+	13, // 23: sphinx.proxy.v1.SphinxProxy.RejectTransaction:input_type -> sphinx.proxy.v1.RejectTransactionRequest
+	15, // 24: sphinx.proxy.v1.SphinxProxy.ConfirmTransaction:input_type -> sphinx.proxy.v1.ConfirmTransactionRequest
+	17, // 25: sphinx.proxy.v1.SphinxProxy.ProxyPlugin:input_type -> sphinx.proxy.v1.ProxyPluginResponse
+	20, // 26: sphinx.proxy.v1.SphinxProxy.ProxySign:input_type -> sphinx.proxy.v1.ProxySignResponse
+	4,  // 27: sphinx.proxy.v1.SphinxProxy.GetBalance:output_type -> sphinx.proxy.v1.GetBalanceResponse
+	7,  // 28: sphinx.proxy.v1.SphinxProxy.CreateWallet:output_type -> sphinx.proxy.v1.CreateWalletResponse
+	9,  // 29: sphinx.proxy.v1.SphinxProxy.CreateTransaction:output_type -> sphinx.proxy.v1.CreateTransactionResponse
+	12, // 30: sphinx.proxy.v1.SphinxProxy.GetTransaction:output_type -> sphinx.proxy.v1.GetTransactionResponse
+	14, // 31: sphinx.proxy.v1.SphinxProxy.RejectTransaction:output_type -> sphinx.proxy.v1.RejectTransactionResponse
+	16, // 32: sphinx.proxy.v1.SphinxProxy.ConfirmTransaction:output_type -> sphinx.proxy.v1.ConfirmTransactionResponse
+	18, // 33: sphinx.proxy.v1.SphinxProxy.ProxyPlugin:output_type -> sphinx.proxy.v1.ProxyPluginRequest
+	19, // 34: sphinx.proxy.v1.SphinxProxy.ProxySign:output_type -> sphinx.proxy.v1.ProxySignRequest
+	27, // [27:35] is the sub-list for method output_type
+	19, // [19:27] is the sub-list for method input_type
 	19, // [19:19] is the sub-list for extension type_name
 	19, // [19:19] is the sub-list for extension extendee
 	0,  // [0:19] is the sub-list for field type_name
@@ -1640,7 +1844,7 @@ func file_npool_sphinxproxy_sphinxproxy_proto_init() {
 			}
 		}
 		file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProxyPluginResponse); i {
+			switch v := v.(*RejectTransactionRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1652,7 +1856,7 @@ func file_npool_sphinxproxy_sphinxproxy_proto_init() {
 			}
 		}
 		file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProxyPluginRequest); i {
+			switch v := v.(*RejectTransactionResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1664,7 +1868,7 @@ func file_npool_sphinxproxy_sphinxproxy_proto_init() {
 			}
 		}
 		file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProxySignRequest); i {
+			switch v := v.(*ConfirmTransactionRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1676,7 +1880,7 @@ func file_npool_sphinxproxy_sphinxproxy_proto_init() {
 			}
 		}
 		file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProxySignResponse); i {
+			switch v := v.(*ConfirmTransactionResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1688,6 +1892,54 @@ func file_npool_sphinxproxy_sphinxproxy_proto_init() {
 			}
 		}
 		file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProxyPluginResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProxyPluginRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProxySignRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProxySignResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_sphinxproxy_sphinxproxy_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProxySignResponseInfo); i {
 			case 0:
 				return &v.state
@@ -1706,7 +1958,7 @@ func file_npool_sphinxproxy_sphinxproxy_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_sphinxproxy_sphinxproxy_proto_rawDesc,
 			NumEnums:      2,
-			NumMessages:   16,
+			NumMessages:   20,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

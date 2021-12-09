@@ -13,12 +13,15 @@ service SphinxProxy {
     rpc CreateWallet (CreateWalletRequest) returns (CreateWalletResponse) {}
     rpc CreateTransaction (CreateTransactionRequest) returns (CreateTransactionResponse) {}
     rpc GetTransaction (GetTransactionRequest) returns (GetTransactionResponse) {}
+    rpc RejectTransaction (RejectTransactionRequest) returns (RejectTransactionResponse) {}
+    rpc ConfirmTransaction (ConfirmTransactionRequest) returns (ConfirmTransactionResponse) {}
 
     // async stream
     rpc ProxyPlugin (stream ProxyPluginResponse) returns (stream ProxyPluginRequest) {}
     rpc ProxySign (stream ProxySignResponse) returns (stream ProxySignRequest) {}
 }
 
+// ############################# sync
 message GetBalanceRequest {
     string Name     = 100;
     string Address  = 110;
@@ -78,7 +81,24 @@ message GetTransactionResponse {
     TransactionInfo Info = 100;
 }
 
-// RegisterCoin ..
+
+message RejectTransactionRequest {
+    string TransactionID    = 100;
+}
+
+message RejectTransactionResponse {
+}
+
+message ConfirmTransactionRequest {
+    string TransactionID    = 100;
+}
+
+message ConfirmTransactionResponse {
+}
+
+
+
+// ############################# async
 message ProxyPluginResponse {
     sphinx.plugin.v1.CoinType CoinType          = 100;
     TransactionType TransactionType             = 110;
