@@ -5,8 +5,6 @@
 
 - [npool/sphinxproxy/sphinxproxy.proto](#npool/sphinxproxy/sphinxproxy.proto)
     - [BalanceInfo](#sphinx.proxy.v1.BalanceInfo)
-    - [ConfirmTransactionRequest](#sphinx.proxy.v1.ConfirmTransactionRequest)
-    - [ConfirmTransactionResponse](#sphinx.proxy.v1.ConfirmTransactionResponse)
     - [CreateTransactionRequest](#sphinx.proxy.v1.CreateTransactionRequest)
     - [CreateTransactionResponse](#sphinx.proxy.v1.CreateTransactionResponse)
     - [CreateWalletRequest](#sphinx.proxy.v1.CreateWalletRequest)
@@ -20,8 +18,8 @@
     - [ProxySignRequest](#sphinx.proxy.v1.ProxySignRequest)
     - [ProxySignResponse](#sphinx.proxy.v1.ProxySignResponse)
     - [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo)
-    - [RejectTransactionRequest](#sphinx.proxy.v1.RejectTransactionRequest)
-    - [RejectTransactionResponse](#sphinx.proxy.v1.RejectTransactionResponse)
+    - [ReviewTransactionRequest](#sphinx.proxy.v1.ReviewTransactionRequest)
+    - [ReviewTransactionResponse](#sphinx.proxy.v1.ReviewTransactionResponse)
     - [TransactionInfo](#sphinx.proxy.v1.TransactionInfo)
     - [WalletInfo](#sphinx.proxy.v1.WalletInfo)
   
@@ -51,31 +49,6 @@
 | ----- | ---- | ----- | ----------- |
 | Balance | [double](#double) |  |  |
 | BalanceStr | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="sphinx.proxy.v1.ConfirmTransactionRequest"></a>
-
-### ConfirmTransactionRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TransactionID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="sphinx.proxy.v1.ConfirmTransactionResponse"></a>
-
-### ConfirmTransactionResponse
-
 
 
 
@@ -299,24 +272,25 @@ Sign WalletNew ..
 
 
 
-<a name="sphinx.proxy.v1.RejectTransactionRequest"></a>
+<a name="sphinx.proxy.v1.ReviewTransactionRequest"></a>
 
-### RejectTransactionRequest
+### ReviewTransactionRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TransactionID | [string](#string) |  |  |
+| TransactionState | [TransactionState](#sphinx.proxy.v1.TransactionState) |  |  |
 
 
 
 
 
 
-<a name="sphinx.proxy.v1.RejectTransactionResponse"></a>
+<a name="sphinx.proxy.v1.ReviewTransactionResponse"></a>
 
-### RejectTransactionResponse
+### ReviewTransactionResponse
 
 
 
@@ -417,8 +391,7 @@ Service Name
 | CreateWallet | [CreateWalletRequest](#sphinx.proxy.v1.CreateWalletRequest) | [CreateWalletResponse](#sphinx.proxy.v1.CreateWalletResponse) |  |
 | CreateTransaction | [CreateTransactionRequest](#sphinx.proxy.v1.CreateTransactionRequest) | [CreateTransactionResponse](#sphinx.proxy.v1.CreateTransactionResponse) |  |
 | GetTransaction | [GetTransactionRequest](#sphinx.proxy.v1.GetTransactionRequest) | [GetTransactionResponse](#sphinx.proxy.v1.GetTransactionResponse) |  |
-| RejectTransaction | [RejectTransactionRequest](#sphinx.proxy.v1.RejectTransactionRequest) | [RejectTransactionResponse](#sphinx.proxy.v1.RejectTransactionResponse) |  |
-| ConfirmTransaction | [ConfirmTransactionRequest](#sphinx.proxy.v1.ConfirmTransactionRequest) | [ConfirmTransactionResponse](#sphinx.proxy.v1.ConfirmTransactionResponse) |  |
+| ReviewTransaction | [ReviewTransactionRequest](#sphinx.proxy.v1.ReviewTransactionRequest) | [ReviewTransactionResponse](#sphinx.proxy.v1.ReviewTransactionResponse) |  |
 | ProxyPlugin | [ProxyPluginResponse](#sphinx.proxy.v1.ProxyPluginResponse) stream | [ProxyPluginRequest](#sphinx.proxy.v1.ProxyPluginRequest) stream | async stream |
 | ProxySign | [ProxySignResponse](#sphinx.proxy.v1.ProxySignResponse) stream | [ProxySignRequest](#sphinx.proxy.v1.ProxySignRequest) stream |  |
 

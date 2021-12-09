@@ -13,8 +13,7 @@ service SphinxProxy {
     rpc CreateWallet (CreateWalletRequest) returns (CreateWalletResponse) {}
     rpc CreateTransaction (CreateTransactionRequest) returns (CreateTransactionResponse) {}
     rpc GetTransaction (GetTransactionRequest) returns (GetTransactionResponse) {}
-    rpc RejectTransaction (RejectTransactionRequest) returns (RejectTransactionResponse) {}
-    rpc ConfirmTransaction (ConfirmTransactionRequest) returns (ConfirmTransactionResponse) {}
+    rpc ReviewTransaction (ReviewTransactionRequest) returns (ReviewTransactionResponse) {}
 
     // async stream
     rpc ProxyPlugin (stream ProxyPluginResponse) returns (stream ProxyPluginRequest) {}
@@ -81,19 +80,12 @@ message GetTransactionResponse {
     TransactionInfo Info = 100;
 }
 
-
-message RejectTransactionRequest {
-    string TransactionID    = 100;
+message ReviewTransactionRequest {
+    string TransactionID                = 100;
+    TransactionState TransactionState   = 110;
 }
 
-message RejectTransactionResponse {
-}
-
-message ConfirmTransactionRequest {
-    string TransactionID    = 100;
-}
-
-message ConfirmTransactionResponse {
+message ReviewTransactionResponse {
 }
 
 

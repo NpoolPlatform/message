@@ -91,9 +91,6 @@
       ],
       "default": "CoinTypeUnKnow"
     },
-    "v1ConfirmTransactionResponse": {
-      "type": "object"
-    },
     "v1CreateTransactionResponse": {
       "type": "object"
     },
@@ -180,7 +177,7 @@
         }
       }
     },
-    "v1RejectTransactionResponse": {
+    "v1ReviewTransactionResponse": {
       "type": "object"
     },
     "v1Signature": {

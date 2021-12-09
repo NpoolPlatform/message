@@ -23,8 +23,7 @@ type SphinxProxyClient interface {
 	CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error)
 	CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*CreateTransactionResponse, error)
 	GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionResponse, error)
-	RejectTransaction(ctx context.Context, in *RejectTransactionRequest, opts ...grpc.CallOption) (*RejectTransactionResponse, error)
-	ConfirmTransaction(ctx context.Context, in *ConfirmTransactionRequest, opts ...grpc.CallOption) (*ConfirmTransactionResponse, error)
+	ReviewTransaction(ctx context.Context, in *ReviewTransactionRequest, opts ...grpc.CallOption) (*ReviewTransactionResponse, error)
 	// async stream
 	ProxyPlugin(ctx context.Context, opts ...grpc.CallOption) (SphinxProxy_ProxyPluginClient, error)
 	ProxySign(ctx context.Context, opts ...grpc.CallOption) (SphinxProxy_ProxySignClient, error)
@@ -74,18 +73,9 @@ func (c *sphinxProxyClient) GetTransaction(ctx context.Context, in *GetTransacti
 	return out, nil
 }
 
-func (c *sphinxProxyClient) RejectTransaction(ctx context.Context, in *RejectTransactionRequest, opts ...grpc.CallOption) (*RejectTransactionResponse, error) {
-	out := new(RejectTransactionResponse)
-	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SphinxProxy/RejectTransaction", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *sphinxProxyClient) ConfirmTransaction(ctx context.Context, in *ConfirmTransactionRequest, opts ...grpc.CallOption) (*ConfirmTransactionResponse, error) {
-	out := new(ConfirmTransactionResponse)
-	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SphinxProxy/ConfirmTransaction", in, out, opts...)
+func (c *sphinxProxyClient) ReviewTransaction(ctx context.Context, in *ReviewTransactionRequest, opts ...grpc.CallOption) (*ReviewTransactionResponse, error) {
+	out := new(ReviewTransactionResponse)
+	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SphinxProxy/ReviewTransaction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -163,8 +153,7 @@ type SphinxProxyServer interface {
 	CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error)
 	CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionResponse, error)
 	GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error)
-	RejectTransaction(context.Context, *RejectTransactionRequest) (*RejectTransactionResponse, error)
-	ConfirmTransaction(context.Context, *ConfirmTransactionRequest) (*ConfirmTransactionResponse, error)
+	ReviewTransaction(context.Context, *ReviewTransactionRequest) (*ReviewTransactionResponse, error)
 	// async stream
 	ProxyPlugin(SphinxProxy_ProxyPluginServer) error
 	ProxySign(SphinxProxy_ProxySignServer) error
@@ -187,11 +176,8 @@ func (UnimplementedSphinxProxyServer) CreateTransaction(context.Context, *Create
 func (UnimplementedSphinxProxyServer) GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTransaction not implemented")
 }
-func (UnimplementedSphinxProxyServer) RejectTransaction(context.Context, *RejectTransactionRequest) (*RejectTransactionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RejectTransaction not implemented")
-}
-func (UnimplementedSphinxProxyServer) ConfirmTransaction(context.Context, *ConfirmTransactionRequest) (*ConfirmTransactionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ConfirmTransaction not implemented")
+func (UnimplementedSphinxProxyServer) ReviewTransaction(context.Context, *ReviewTransactionRequest) (*ReviewTransactionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReviewTransaction not implemented")
 }
 func (UnimplementedSphinxProxyServer) ProxyPlugin(SphinxProxy_ProxyPluginServer) error {
 	return status.Errorf(codes.Unimplemented, "method ProxyPlugin not implemented")
@@ -284,38 +270,20 @@ func _SphinxProxy_GetTransaction_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SphinxProxy_RejectTransaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RejectTransactionRequest)
+func _SphinxProxy_ReviewTransaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReviewTransactionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SphinxProxyServer).RejectTransaction(ctx, in)
+		return srv.(SphinxProxyServer).ReviewTransaction(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sphinx.proxy.v1.SphinxProxy/RejectTransaction",
+		FullMethod: "/sphinx.proxy.v1.SphinxProxy/ReviewTransaction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SphinxProxyServer).RejectTransaction(ctx, req.(*RejectTransactionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _SphinxProxy_ConfirmTransaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ConfirmTransactionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SphinxProxyServer).ConfirmTransaction(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/sphinx.proxy.v1.SphinxProxy/ConfirmTransaction",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SphinxProxyServer).ConfirmTransaction(ctx, req.(*ConfirmTransactionRequest))
+		return srv.(SphinxProxyServer).ReviewTransaction(ctx, req.(*ReviewTransactionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -396,12 +364,8 @@ var SphinxProxy_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _SphinxProxy_GetTransaction_Handler,
 		},
 		{
-			MethodName: "RejectTransaction",
-			Handler:    _SphinxProxy_RejectTransaction_Handler,
-		},
-		{
-			MethodName: "ConfirmTransaction",
-			Handler:    _SphinxProxy_ConfirmTransaction_Handler,
+			MethodName: "ReviewTransaction",
+			Handler:    _SphinxProxy_ReviewTransaction_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
