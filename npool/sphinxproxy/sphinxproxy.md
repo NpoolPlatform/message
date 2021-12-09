@@ -320,13 +320,12 @@ Sign WalletNew ..
 | ---- | ------ | ----------- |
 | TransactionStateUnKnow | 0 |  |
 | TransactionStatePendingReview | 1 |  |
-| TransactionStateConfirm | 2 |  |
-| TransactionStateRejected | 3 |  |
-| TransactionStateWait | 4 |  |
-| TransactionStateSign | 5 |  |
-| TransactionStateSync | 6 |  |
-| TransactionStateDone | 7 |  |
-| TransactionStateFail | 8 |  |
+| TransactionStateRejected | 2 |  |
+| TransactionStateWait | 3 |  |
+| TransactionStateSign | 4 |  |
+| TransactionStateSync | 5 |  |
+| TransactionStateDone | 6 |  |
+| TransactionStateFail | 7 |  |
 
 
 

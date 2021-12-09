@@ -233,7 +233,6 @@
       "enum": [
         "TransactionStateUnKnow",
         "TransactionStatePendingReview",
-        "TransactionStateConfirm",
         "TransactionStateRejected",
         "TransactionStateWait",
         "TransactionStateSign",
