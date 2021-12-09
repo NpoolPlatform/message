@@ -49,9 +49,9 @@ message CreateWalletResponse {
 message CreateTransactionRequest {
     string Name             = 100;
     string TransactionID    = 110;
+    double Amount           = 120;
     string From             = 130;
     string To               = 140;
-    double Value            = 120;
 }
 
 message CreateTransactionResponse {
@@ -62,14 +62,21 @@ message GetTransactionRequest {
     string TransactionID    = 100;
 }
 
-message TransactionChainInfo {
-    string CID      = 100;
-    int64 ExitCode  = 110;
-    string State    = 120; // "wait", "sign", "sync", "done", "fail"
+message TransactionInfo {
+	string TransactionID 	= 100;
+	string Name 			= 110;
+	double Amount 			= 120;
+	string From 			= 130;
+	string To 				= 140;
+	string State 			= 150;
+	string CID				= 160;
+    int64 ExitCode          = 170;
+	uint32 CreatedAt 		= 180;
+	uint32 UpdatedAt 		= 190;
 }
 
 message GetTransactionResponse {
-    TransactionChainInfo Info = 100;
+    TransactionInfo Info = 100;
 }
 
 // RegisterCoin ..

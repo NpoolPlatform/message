@@ -114,7 +114,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TransactionChainInfo"
+          "$ref": "#/definitions/v1TransactionInfo"
         }
       }
     },
@@ -189,9 +189,28 @@
         }
       }
     },
-    "v1TransactionChainInfo": {
+    "v1TransactionInfo": {
       "type": "object",
       "properties": {
+        "TransactionID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "From": {
+          "type": "string"
+        },
+        "To": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        },
         "CID": {
           "type": "string"
         },
@@ -199,8 +218,13 @@
           "type": "string",
           "format": "int64"
         },
-        "State": {
-          "type": "string"
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

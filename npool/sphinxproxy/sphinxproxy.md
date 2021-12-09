@@ -18,7 +18,7 @@
     - [ProxySignRequest](#sphinx.proxy.v1.ProxySignRequest)
     - [ProxySignResponse](#sphinx.proxy.v1.ProxySignResponse)
     - [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo)
-    - [TransactionChainInfo](#sphinx.proxy.v1.TransactionChainInfo)
+    - [TransactionInfo](#sphinx.proxy.v1.TransactionInfo)
     - [WalletInfo](#sphinx.proxy.v1.WalletInfo)
   
     - [TransactionType](#sphinx.proxy.v1.TransactionType)
@@ -62,9 +62,9 @@
 | ----- | ---- | ----- | ----------- |
 | Name | [string](#string) |  |  |
 | TransactionID | [string](#string) |  |  |
+| Amount | [double](#double) |  |  |
 | From | [string](#string) |  |  |
 | To | [string](#string) |  |  |
-| Value | [double](#double) |  |  |
 
 
 
@@ -165,7 +165,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [TransactionChainInfo](#sphinx.proxy.v1.TransactionChainInfo) |  |  |
+| Info | [TransactionInfo](#sphinx.proxy.v1.TransactionInfo) |  |  |
 
 
 
@@ -269,17 +269,24 @@ Sign WalletNew ..
 
 
 
-<a name="sphinx.proxy.v1.TransactionChainInfo"></a>
+<a name="sphinx.proxy.v1.TransactionInfo"></a>
 
-### TransactionChainInfo
+### TransactionInfo
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| TransactionID | [string](#string) |  |  |
+| Name | [string](#string) |  |  |
+| Amount | [double](#double) |  |  |
+| From | [string](#string) |  |  |
+| To | [string](#string) |  |  |
+| State | [string](#string) |  |  |
 | CID | [string](#string) |  |  |
 | ExitCode | [int64](#int64) |  |  |
-| State | [string](#string) |  | &#34;wait&#34;, &#34;sign&#34;, &#34;sync&#34;, &#34;done&#34;, &#34;fail&#34; |
+| CreatedAt | [uint32](#uint32) |  |  |
+| UpdatedAt | [uint32](#uint32) |  |  |
 
 
 
