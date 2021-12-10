@@ -40,6 +40,7 @@
 | Name | [string](#string) |  | 币种名称 FIL, BTC |
 | Unit | [string](#string) |  | 单位：FIL |
 | Logo | [string](#string) |  | url; can be empty |
+| ReservedAmount | [double](#double) |  | 预留金额 |
 | CreatedAt | [uint32](#uint32) |  |  |
 | UpdatedAt | [uint32](#uint32) |  |  |
 
@@ -152,6 +153,7 @@
 | ID | [string](#string) |  |  |
 | PreSale | [bool](#bool) |  | 是否为预售，false为在售商品 |
 | Logo | [string](#string) |  | url; can be empty |
+| ReservedAmount | [double](#double) |  |  |
 
 
 

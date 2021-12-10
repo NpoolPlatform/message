@@ -192,6 +192,10 @@
         "Logo": {
           "type": "string"
         },
+        "ReservedAmount": {
+          "type": "number",
+          "format": "double"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -286,6 +290,10 @@
         },
         "Logo": {
           "type": "string"
+        },
+        "ReservedAmount": {
+          "type": "number",
+          "format": "double"
         }
       }
     },

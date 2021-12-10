@@ -34,13 +34,14 @@ service SphinxCoinInfo {
 }
 
 message CoinInfo {
-	string ID 			= 100; // uuid
-	bool PreSale 		= 110; // 是否为预售，false为在售商品
-	string Name 		= 120; // 币种名称 FIL, BTC
-	string Unit 		= 130; // 单位：FIL
-	string Logo			= 140; // url; can be empty
-	uint32 CreatedAt 	= 150;
-	uint32 UpdatedAt 	= 160;
+	string ID 				= 100; // uuid
+	bool PreSale 			= 110; // 是否为预售，false为在售商品
+	string Name 			= 120; // 币种名称 FIL, BTC
+	string Unit 			= 130; // 单位：FIL
+	string Logo				= 140; // url; can be empty
+	double ReservedAmount 	= 150; // 预留金额
+	uint32 CreatedAt 		= 160;
+	uint32 UpdatedAt 		= 170;
 }
 
 message GetCoinInfoRequest {
@@ -75,9 +76,10 @@ message GetCoinInfosResponse {
 }
 
 message UpdateCoinInfoRequest {
-    string ID 		= 100;
-	bool PreSale 	= 110; // 是否为预售，false为在售商品
-	string Logo		= 120; // url; can be empty
+    string ID 				= 100;
+	bool PreSale 			= 110; // 是否为预售，false为在售商品
+	string Logo				= 120; // url; can be empty
+	double ReservedAmount 	= 130;
 }
 
 message UpdateCoinInfoResponse {
