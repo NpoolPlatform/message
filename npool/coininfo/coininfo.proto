@@ -61,6 +61,7 @@ message CreateCoinInfoRequest {
 }
 
 message CreateCoinInfoResponse {
+	CoinInfo Info = 100;
 }
 
 message GetCoinInfosRequest {
@@ -83,4 +84,5 @@ message UpdateCoinInfoRequest {
 }
 
 message UpdateCoinInfoResponse {
+	CoinInfo Info = 100;
 }

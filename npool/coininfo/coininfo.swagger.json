@@ -224,7 +224,12 @@
       }
     },
     "v1CreateCoinInfoResponse": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinInfo"
+        }
+      }
     },
     "v1GetCoinInfoRequest": {
       "type": "object",
@@ -298,7 +303,12 @@
       }
     },
     "v1UpdateCoinInfoResponse": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinInfo"
+        }
+      }
     }
   }
 }

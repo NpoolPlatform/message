@@ -73,6 +73,11 @@
 
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
+
+
 
 
 
@@ -164,6 +169,11 @@
 
 ### UpdateCoinInfoResponse
 
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
 
 
 
