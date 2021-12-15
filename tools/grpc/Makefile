@@ -19,7 +19,9 @@ tool:
 	go mod tidy && \
 	go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc && \
 	go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger && \
+	go get github.com/grpc-ecosystem/protoc-gen-grpc-gateway-ts && \
 	go install \
 		github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway \
 		google.golang.org/protobuf/cmd/protoc-gen-go \
-		google.golang.org/grpc/cmd/protoc-gen-go-grpc
+		google.golang.org/grpc/cmd/protoc-gen-go-grpc \
+		github.com/grpc-ecosystem/protoc-gen-grpc-gateway-ts

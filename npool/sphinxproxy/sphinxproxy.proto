@@ -12,27 +12,27 @@ service SphinxProxy {
     // sync
     rpc GetBalance (GetBalanceRequest) returns (GetBalanceResponse) {
         option (google.api.http) = {
-			post: "/v1/get/balance"
-			body: "*"
-		};
+          post: "/v1/get/balance"
+          body: "*"
+        };
     }
     rpc CreateWallet (CreateWalletRequest) returns (CreateWalletResponse) {
         option (google.api.http) = {
-			post: "/v1/create/wallet"
-			body: "*"
-		};
+          post: "/v1/create/wallet"
+          body: "*"
+        };
     }
     rpc CreateTransaction (CreateTransactionRequest) returns (CreateTransactionResponse) {
         option (google.api.http) = {
-			post: "/v1/create/transaction"
-			body: "*"
-		};
+          post: "/v1/create/transaction"
+          body: "*"
+        };
     }
     rpc GetTransaction (GetTransactionRequest) returns (GetTransactionResponse) {
         option (google.api.http) = {
-			post: "/v1/get/transaction"
-			body: "*"
-		};
+          post: "/v1/get/transaction"
+          body: "*"
+        };
     }
     rpc ReviewTransaction (ReviewTransactionRequest) returns (ReviewTransactionResponse) {}
 
