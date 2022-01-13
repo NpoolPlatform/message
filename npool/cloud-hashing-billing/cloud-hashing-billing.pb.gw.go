@@ -2,11 +2,11 @@
 // source: npool/cloud-hashing-billing/cloud-hashing-billing.proto
 
 /*
-Package npool is a reverse proxy.
+Package cloud_hashing_billing is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package npool
+package cloud_hashing_billing
 
 import (
 	"context"

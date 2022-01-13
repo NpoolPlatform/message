@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package cloud.hashing.billing.v1;
 
-option go_package = "github.com/NpoolPlatform/cloud-hashing-billing/message/npool";
+option go_package = "github.com/NpoolPlatform/message/npool/cloud-hashing-billing";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
