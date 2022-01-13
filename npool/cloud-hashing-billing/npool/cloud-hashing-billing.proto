@@ -29,6 +29,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetCoinAccountByCoinAddress(GetCoinAccountByCoinAddressRequest) returns (GetCoinAccountByCoinAddressResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coin/account/by/coin/address"
+            body: "*"
+        };
+    }
     rpc GetCoinAccountsByAppUser(GetCoinAccountsByAppUserRequest) returns (GetCoinAccountsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/coin/accounts/by/app/user"
@@ -60,6 +66,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetCoinAccountTransactionsByState(GetCoinAccountTransactionsByStateRequest) returns (GetCoinAccountTransactionsByStateResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coin/account/transactions/by/state"
+            body: "*"
+        };
+    }
     rpc GetCoinAccountTransactionsByCoin(GetCoinAccountTransactionsByCoinRequest) returns (GetCoinAccountTransactionsByCoinResponse) {
         option (google.api.http) = {
             post: "/v1/get/coin/account/transactions/by/coin"
@@ -88,6 +100,12 @@ service CloudHashingBilling {
     rpc CreatePlatformBenefit(CreatePlatformBenefitRequest) returns (CreatePlatformBenefitResponse) {
         option (google.api.http) = {
             post: "/v1/create/platform/benefit",
+            body: "*"
+        };
+    }
+    rpc GetLatestPlatformBenefitByGood(GetLatestPlatformBenefitByGoodRequest) returns (GetLatestPlatformBenefitByGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/latest/platform/benefit/by/good"
             body: "*"
         };
     }
@@ -147,9 +165,21 @@ service CloudHashingBilling {
             body: "*"
         };
     }
-    rpc GetUserBebefitsByAppUser(GetUserBenefitsByAppUserRequest) returns (GetUserBenefitsByAppUserResponse) {
+    rpc GetUserBenefitsByAppUser(GetUserBenefitsByAppUserRequest) returns (GetUserBenefitsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/benefits/by/app/user"
+            body: "*"
+        };
+    }
+    rpc GetUserBenefitsByApp(GetUserBenefitsByAppRequest) returns (GetUserBenefitsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/benefits/by/app"
+            body: "*"
+        };
+    }
+    rpc GetLatestUserBenefitByGoodAppUser(GetLatestUserBenefitByGoodAppUserRequest) returns (GetLatestUserBenefitByGoodAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/latest/user/benefit/by/good/app/user"
             body: "*"
         };
     }
@@ -185,6 +215,15 @@ message GetCoinAccountRequest {
 
 message GetCoinAccountResponse {
     CoinAccountInfo Info = 600;
+}
+
+message GetCoinAccountByCoinAddressRequest {
+    string CoinInfoID = 1;
+    string Address = 2;
+}
+
+message GetCoinAccountByCoinAddressResponse {
+    CoinAccountInfo Info = 1;
 }
 
 message GetCoinAccountsByAppUserRequest {
@@ -267,6 +306,14 @@ message GetCoinAccountTransactionsByCoinAccountResponse {
     repeated CoinAccountTransaction Infos = 1700;
 }
 
+message GetCoinAccountTransactionsByStateRequest {
+    string State = 1;
+}
+
+message GetCoinAccountTransactionsByStateResponse {
+    repeated CoinAccountTransaction Infos = 1;
+}
+
 message GetCoinAccountTransactionsByCoinRequest {
     string CoinTypeID = 1800;
 }
@@ -298,6 +345,7 @@ message PlatformBenefit {
     double Amount = 2203;
     uint32 CreateAt = 2204;
     string ChainTransactionID = 2205;
+    uint32 LastBenefitTimestamp = 2206;
 }
 
 message CreatePlatformBenefitRequest {
@@ -339,6 +387,14 @@ message GetPlatformBenefitRequest {
 
 message GetPlatformBenefitResponse {
     PlatformBenefit Info = 2650;
+}
+
+message GetLatestPlatformBenefitByGoodRequest {
+    string GoodID = 1;
+}
+
+message GetLatestPlatformBenefitByGoodResponse {
+    PlatformBenefit Info = 1;
 }
 
 message PlatformSetting {
@@ -409,6 +465,7 @@ message UserBenefit {
     double Amount = 3405;
     uint32 CreateAt = 3406;
     string OrderID = 3407;
+    uint32 LastBenefitTimestamp = 3408;
 }
 
 message CreateUserBenefitRequest {
@@ -427,3 +484,28 @@ message GetUserBenefitsByAppUserRequest {
 message GetUserBenefitsByAppUserResponse {
     repeated UserBenefit Infos = 3800;
 }
+
+message PageInfo {
+    int32 PageIndex = 21;
+    int32 PageSize = 22;
+}
+
+message GetUserBenefitsByAppRequest {
+    string AppID = 3900;
+    PageInfo PageInfo = 3950;
+}
+
+message GetUserBenefitsByAppResponse {
+    repeated UserBenefit Infos = 3960;
+}
+
+message GetLatestUserBenefitByGoodAppUserRequest {
+    string AppID = 1;
+    string UserID = 2;
+    string GoodID = 3;
+}
+
+message GetLatestUserBenefitByGoodAppUserResponse {
+    UserBenefit Info = 1;
+}
+
