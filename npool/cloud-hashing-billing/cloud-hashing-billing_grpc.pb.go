@@ -23,16 +23,19 @@ type CloudHashingBillingClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
 	CreateCoinAccount(ctx context.Context, in *CreateCoinAccountRequest, opts ...grpc.CallOption) (*CreateCoinAccountResponse, error)
 	GetCoinAccount(ctx context.Context, in *GetCoinAccountRequest, opts ...grpc.CallOption) (*GetCoinAccountResponse, error)
+	GetCoinAccountByCoinAddress(ctx context.Context, in *GetCoinAccountByCoinAddressRequest, opts ...grpc.CallOption) (*GetCoinAccountByCoinAddressResponse, error)
 	GetCoinAccountsByAppUser(ctx context.Context, in *GetCoinAccountsByAppUserRequest, opts ...grpc.CallOption) (*GetCoinAccountsByAppUserResponse, error)
 	DeleteCoinAccount(ctx context.Context, in *DeleteCoinAccountRequest, opts ...grpc.CallOption) (*DeleteCoinAccountResponse, error)
 	CreateCoinAccountTransaction(ctx context.Context, in *CreateCoinAccountTransactionRequest, opts ...grpc.CallOption) (*CreateCoinAccountTransactionResponse, error)
 	GetCoinAccountTransaction(ctx context.Context, in *GetCoinAccountTransactionRequest, opts ...grpc.CallOption) (*GetCoinAccountTransactionResponse, error)
 	GetCoinAccountTransactionsByCoinAccount(ctx context.Context, in *GetCoinAccountTransactionsByCoinAccountRequest, opts ...grpc.CallOption) (*GetCoinAccountTransactionsByCoinAccountResponse, error)
+	GetCoinAccountTransactionsByState(ctx context.Context, in *GetCoinAccountTransactionsByStateRequest, opts ...grpc.CallOption) (*GetCoinAccountTransactionsByStateResponse, error)
 	GetCoinAccountTransactionsByCoin(ctx context.Context, in *GetCoinAccountTransactionsByCoinRequest, opts ...grpc.CallOption) (*GetCoinAccountTransactionsByCoinResponse, error)
 	UpdateCoinAccountTransaction(ctx context.Context, in *UpdateCoinAccountTransactionRequest, opts ...grpc.CallOption) (*UpdateCoinAccountTransactionResponse, error)
 	GetCoinAccountTransactionDetail(ctx context.Context, in *GetCoinAccountTransactionDetailRequest, opts ...grpc.CallOption) (*GetCoinAccountTransactionDetailResponse, error)
 	DeleteCoinAccountTransaction(ctx context.Context, in *DeleteCoinAccountTransactionRequest, opts ...grpc.CallOption) (*DeleteCoinAccountTransactionResponse, error)
 	CreatePlatformBenefit(ctx context.Context, in *CreatePlatformBenefitRequest, opts ...grpc.CallOption) (*CreatePlatformBenefitResponse, error)
+	GetLatestPlatformBenefitByGood(ctx context.Context, in *GetLatestPlatformBenefitByGoodRequest, opts ...grpc.CallOption) (*GetLatestPlatformBenefitByGoodResponse, error)
 	GetPlatformBenefitsByGood(ctx context.Context, in *GetPlatformBenefitsByGoodRequest, opts ...grpc.CallOption) (*GetPlatformBenefitsByGoodResponse, error)
 	GetPlatformBenefit(ctx context.Context, in *GetPlatformBenefitRequest, opts ...grpc.CallOption) (*GetPlatformBenefitResponse, error)
 	GetPlatformBenefitDetail(ctx context.Context, in *GetPlatformBenefitDetailRequest, opts ...grpc.CallOption) (*GetPlatformBenefitDetailResponse, error)
@@ -42,7 +45,9 @@ type CloudHashingBillingClient interface {
 	GetPlatformSettingDetail(ctx context.Context, in *GetPlatformSettingDetailRequest, opts ...grpc.CallOption) (*GetPlatformSettingDetailResponse, error)
 	GetPlatformSetting(ctx context.Context, in *GetPlatformSettingRequest, opts ...grpc.CallOption) (*GetPlatformSettingResponse, error)
 	CreateUserBenefit(ctx context.Context, in *CreateUserBenefitRequest, opts ...grpc.CallOption) (*CreateUserBenefitResponse, error)
-	GetUserBebefitsByAppUser(ctx context.Context, in *GetUserBenefitsByAppUserRequest, opts ...grpc.CallOption) (*GetUserBenefitsByAppUserResponse, error)
+	GetUserBenefitsByAppUser(ctx context.Context, in *GetUserBenefitsByAppUserRequest, opts ...grpc.CallOption) (*GetUserBenefitsByAppUserResponse, error)
+	GetUserBenefitsByApp(ctx context.Context, in *GetUserBenefitsByAppRequest, opts ...grpc.CallOption) (*GetUserBenefitsByAppResponse, error)
+	GetLatestUserBenefitByGoodAppUser(ctx context.Context, in *GetLatestUserBenefitByGoodAppUserRequest, opts ...grpc.CallOption) (*GetLatestUserBenefitByGoodAppUserResponse, error)
 }
 
 type cloudHashingBillingClient struct {
@@ -74,6 +79,15 @@ func (c *cloudHashingBillingClient) CreateCoinAccount(ctx context.Context, in *C
 func (c *cloudHashingBillingClient) GetCoinAccount(ctx context.Context, in *GetCoinAccountRequest, opts ...grpc.CallOption) (*GetCoinAccountResponse, error) {
 	out := new(GetCoinAccountResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetCoinAccount", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetCoinAccountByCoinAddress(ctx context.Context, in *GetCoinAccountByCoinAddressRequest, opts ...grpc.CallOption) (*GetCoinAccountByCoinAddressResponse, error) {
+	out := new(GetCoinAccountByCoinAddressResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetCoinAccountByCoinAddress", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,6 +139,15 @@ func (c *cloudHashingBillingClient) GetCoinAccountTransactionsByCoinAccount(ctx 
 	return out, nil
 }
 
+func (c *cloudHashingBillingClient) GetCoinAccountTransactionsByState(ctx context.Context, in *GetCoinAccountTransactionsByStateRequest, opts ...grpc.CallOption) (*GetCoinAccountTransactionsByStateResponse, error) {
+	out := new(GetCoinAccountTransactionsByStateResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetCoinAccountTransactionsByState", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingBillingClient) GetCoinAccountTransactionsByCoin(ctx context.Context, in *GetCoinAccountTransactionsByCoinRequest, opts ...grpc.CallOption) (*GetCoinAccountTransactionsByCoinResponse, error) {
 	out := new(GetCoinAccountTransactionsByCoinResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetCoinAccountTransactionsByCoin", in, out, opts...)
@@ -164,6 +187,15 @@ func (c *cloudHashingBillingClient) DeleteCoinAccountTransaction(ctx context.Con
 func (c *cloudHashingBillingClient) CreatePlatformBenefit(ctx context.Context, in *CreatePlatformBenefitRequest, opts ...grpc.CallOption) (*CreatePlatformBenefitResponse, error) {
 	out := new(CreatePlatformBenefitResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/CreatePlatformBenefit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetLatestPlatformBenefitByGood(ctx context.Context, in *GetLatestPlatformBenefitByGoodRequest, opts ...grpc.CallOption) (*GetLatestPlatformBenefitByGoodResponse, error) {
+	out := new(GetLatestPlatformBenefitByGoodResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetLatestPlatformBenefitByGood", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -251,9 +283,27 @@ func (c *cloudHashingBillingClient) CreateUserBenefit(ctx context.Context, in *C
 	return out, nil
 }
 
-func (c *cloudHashingBillingClient) GetUserBebefitsByAppUser(ctx context.Context, in *GetUserBenefitsByAppUserRequest, opts ...grpc.CallOption) (*GetUserBenefitsByAppUserResponse, error) {
+func (c *cloudHashingBillingClient) GetUserBenefitsByAppUser(ctx context.Context, in *GetUserBenefitsByAppUserRequest, opts ...grpc.CallOption) (*GetUserBenefitsByAppUserResponse, error) {
 	out := new(GetUserBenefitsByAppUserResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserBebefitsByAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserBenefitsByAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetUserBenefitsByApp(ctx context.Context, in *GetUserBenefitsByAppRequest, opts ...grpc.CallOption) (*GetUserBenefitsByAppResponse, error) {
+	out := new(GetUserBenefitsByAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserBenefitsByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetLatestUserBenefitByGoodAppUser(ctx context.Context, in *GetLatestUserBenefitByGoodAppUserRequest, opts ...grpc.CallOption) (*GetLatestUserBenefitByGoodAppUserResponse, error) {
+	out := new(GetLatestUserBenefitByGoodAppUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetLatestUserBenefitByGoodAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -268,16 +318,19 @@ type CloudHashingBillingServer interface {
 	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
 	CreateCoinAccount(context.Context, *CreateCoinAccountRequest) (*CreateCoinAccountResponse, error)
 	GetCoinAccount(context.Context, *GetCoinAccountRequest) (*GetCoinAccountResponse, error)
+	GetCoinAccountByCoinAddress(context.Context, *GetCoinAccountByCoinAddressRequest) (*GetCoinAccountByCoinAddressResponse, error)
 	GetCoinAccountsByAppUser(context.Context, *GetCoinAccountsByAppUserRequest) (*GetCoinAccountsByAppUserResponse, error)
 	DeleteCoinAccount(context.Context, *DeleteCoinAccountRequest) (*DeleteCoinAccountResponse, error)
 	CreateCoinAccountTransaction(context.Context, *CreateCoinAccountTransactionRequest) (*CreateCoinAccountTransactionResponse, error)
 	GetCoinAccountTransaction(context.Context, *GetCoinAccountTransactionRequest) (*GetCoinAccountTransactionResponse, error)
 	GetCoinAccountTransactionsByCoinAccount(context.Context, *GetCoinAccountTransactionsByCoinAccountRequest) (*GetCoinAccountTransactionsByCoinAccountResponse, error)
+	GetCoinAccountTransactionsByState(context.Context, *GetCoinAccountTransactionsByStateRequest) (*GetCoinAccountTransactionsByStateResponse, error)
 	GetCoinAccountTransactionsByCoin(context.Context, *GetCoinAccountTransactionsByCoinRequest) (*GetCoinAccountTransactionsByCoinResponse, error)
 	UpdateCoinAccountTransaction(context.Context, *UpdateCoinAccountTransactionRequest) (*UpdateCoinAccountTransactionResponse, error)
 	GetCoinAccountTransactionDetail(context.Context, *GetCoinAccountTransactionDetailRequest) (*GetCoinAccountTransactionDetailResponse, error)
 	DeleteCoinAccountTransaction(context.Context, *DeleteCoinAccountTransactionRequest) (*DeleteCoinAccountTransactionResponse, error)
 	CreatePlatformBenefit(context.Context, *CreatePlatformBenefitRequest) (*CreatePlatformBenefitResponse, error)
+	GetLatestPlatformBenefitByGood(context.Context, *GetLatestPlatformBenefitByGoodRequest) (*GetLatestPlatformBenefitByGoodResponse, error)
 	GetPlatformBenefitsByGood(context.Context, *GetPlatformBenefitsByGoodRequest) (*GetPlatformBenefitsByGoodResponse, error)
 	GetPlatformBenefit(context.Context, *GetPlatformBenefitRequest) (*GetPlatformBenefitResponse, error)
 	GetPlatformBenefitDetail(context.Context, *GetPlatformBenefitDetailRequest) (*GetPlatformBenefitDetailResponse, error)
@@ -287,7 +340,9 @@ type CloudHashingBillingServer interface {
 	GetPlatformSettingDetail(context.Context, *GetPlatformSettingDetailRequest) (*GetPlatformSettingDetailResponse, error)
 	GetPlatformSetting(context.Context, *GetPlatformSettingRequest) (*GetPlatformSettingResponse, error)
 	CreateUserBenefit(context.Context, *CreateUserBenefitRequest) (*CreateUserBenefitResponse, error)
-	GetUserBebefitsByAppUser(context.Context, *GetUserBenefitsByAppUserRequest) (*GetUserBenefitsByAppUserResponse, error)
+	GetUserBenefitsByAppUser(context.Context, *GetUserBenefitsByAppUserRequest) (*GetUserBenefitsByAppUserResponse, error)
+	GetUserBenefitsByApp(context.Context, *GetUserBenefitsByAppRequest) (*GetUserBenefitsByAppResponse, error)
+	GetLatestUserBenefitByGoodAppUser(context.Context, *GetLatestUserBenefitByGoodAppUserRequest) (*GetLatestUserBenefitByGoodAppUserResponse, error)
 	mustEmbedUnimplementedCloudHashingBillingServer()
 }
 
@@ -304,6 +359,9 @@ func (UnimplementedCloudHashingBillingServer) CreateCoinAccount(context.Context,
 func (UnimplementedCloudHashingBillingServer) GetCoinAccount(context.Context, *GetCoinAccountRequest) (*GetCoinAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinAccount not implemented")
 }
+func (UnimplementedCloudHashingBillingServer) GetCoinAccountByCoinAddress(context.Context, *GetCoinAccountByCoinAddressRequest) (*GetCoinAccountByCoinAddressResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCoinAccountByCoinAddress not implemented")
+}
 func (UnimplementedCloudHashingBillingServer) GetCoinAccountsByAppUser(context.Context, *GetCoinAccountsByAppUserRequest) (*GetCoinAccountsByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinAccountsByAppUser not implemented")
 }
@@ -319,6 +377,9 @@ func (UnimplementedCloudHashingBillingServer) GetCoinAccountTransaction(context.
 func (UnimplementedCloudHashingBillingServer) GetCoinAccountTransactionsByCoinAccount(context.Context, *GetCoinAccountTransactionsByCoinAccountRequest) (*GetCoinAccountTransactionsByCoinAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinAccountTransactionsByCoinAccount not implemented")
 }
+func (UnimplementedCloudHashingBillingServer) GetCoinAccountTransactionsByState(context.Context, *GetCoinAccountTransactionsByStateRequest) (*GetCoinAccountTransactionsByStateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCoinAccountTransactionsByState not implemented")
+}
 func (UnimplementedCloudHashingBillingServer) GetCoinAccountTransactionsByCoin(context.Context, *GetCoinAccountTransactionsByCoinRequest) (*GetCoinAccountTransactionsByCoinResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinAccountTransactionsByCoin not implemented")
 }
@@ -333,6 +394,9 @@ func (UnimplementedCloudHashingBillingServer) DeleteCoinAccountTransaction(conte
 }
 func (UnimplementedCloudHashingBillingServer) CreatePlatformBenefit(context.Context, *CreatePlatformBenefitRequest) (*CreatePlatformBenefitResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePlatformBenefit not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetLatestPlatformBenefitByGood(context.Context, *GetLatestPlatformBenefitByGoodRequest) (*GetLatestPlatformBenefitByGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLatestPlatformBenefitByGood not implemented")
 }
 func (UnimplementedCloudHashingBillingServer) GetPlatformBenefitsByGood(context.Context, *GetPlatformBenefitsByGoodRequest) (*GetPlatformBenefitsByGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPlatformBenefitsByGood not implemented")
@@ -361,8 +425,14 @@ func (UnimplementedCloudHashingBillingServer) GetPlatformSetting(context.Context
 func (UnimplementedCloudHashingBillingServer) CreateUserBenefit(context.Context, *CreateUserBenefitRequest) (*CreateUserBenefitResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUserBenefit not implemented")
 }
-func (UnimplementedCloudHashingBillingServer) GetUserBebefitsByAppUser(context.Context, *GetUserBenefitsByAppUserRequest) (*GetUserBenefitsByAppUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserBebefitsByAppUser not implemented")
+func (UnimplementedCloudHashingBillingServer) GetUserBenefitsByAppUser(context.Context, *GetUserBenefitsByAppUserRequest) (*GetUserBenefitsByAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserBenefitsByAppUser not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetUserBenefitsByApp(context.Context, *GetUserBenefitsByAppRequest) (*GetUserBenefitsByAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserBenefitsByApp not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetLatestUserBenefitByGoodAppUser(context.Context, *GetLatestUserBenefitByGoodAppUserRequest) (*GetLatestUserBenefitByGoodAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLatestUserBenefitByGoodAppUser not implemented")
 }
 func (UnimplementedCloudHashingBillingServer) mustEmbedUnimplementedCloudHashingBillingServer() {}
 
@@ -427,6 +497,24 @@ func _CloudHashingBilling_GetCoinAccount_Handler(srv interface{}, ctx context.Co
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingBillingServer).GetCoinAccount(ctx, req.(*GetCoinAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetCoinAccountByCoinAddress_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoinAccountByCoinAddressRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetCoinAccountByCoinAddress(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetCoinAccountByCoinAddress",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetCoinAccountByCoinAddress(ctx, req.(*GetCoinAccountByCoinAddressRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -521,6 +609,24 @@ func _CloudHashingBilling_GetCoinAccountTransactionsByCoinAccount_Handler(srv in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingBilling_GetCoinAccountTransactionsByState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoinAccountTransactionsByStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetCoinAccountTransactionsByState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetCoinAccountTransactionsByState",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetCoinAccountTransactionsByState(ctx, req.(*GetCoinAccountTransactionsByStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingBilling_GetCoinAccountTransactionsByCoin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCoinAccountTransactionsByCoinRequest)
 	if err := dec(in); err != nil {
@@ -607,6 +713,24 @@ func _CloudHashingBilling_CreatePlatformBenefit_Handler(srv interface{}, ctx con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingBillingServer).CreatePlatformBenefit(ctx, req.(*CreatePlatformBenefitRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetLatestPlatformBenefitByGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLatestPlatformBenefitByGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetLatestPlatformBenefitByGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetLatestPlatformBenefitByGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetLatestPlatformBenefitByGood(ctx, req.(*GetLatestPlatformBenefitByGoodRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -773,20 +897,56 @@ func _CloudHashingBilling_CreateUserBenefit_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudHashingBilling_GetUserBebefitsByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudHashingBilling_GetUserBenefitsByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserBenefitsByAppUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudHashingBillingServer).GetUserBebefitsByAppUser(ctx, in)
+		return srv.(CloudHashingBillingServer).GetUserBenefitsByAppUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserBebefitsByAppUser",
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserBenefitsByAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingBillingServer).GetUserBebefitsByAppUser(ctx, req.(*GetUserBenefitsByAppUserRequest))
+		return srv.(CloudHashingBillingServer).GetUserBenefitsByAppUser(ctx, req.(*GetUserBenefitsByAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetUserBenefitsByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserBenefitsByAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetUserBenefitsByApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserBenefitsByApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetUserBenefitsByApp(ctx, req.(*GetUserBenefitsByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetLatestUserBenefitByGoodAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLatestUserBenefitByGoodAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetLatestUserBenefitByGoodAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetLatestUserBenefitByGoodAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetLatestUserBenefitByGoodAppUser(ctx, req.(*GetLatestUserBenefitByGoodAppUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -811,6 +971,10 @@ var CloudHashingBilling_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingBilling_GetCoinAccount_Handler,
 		},
 		{
+			MethodName: "GetCoinAccountByCoinAddress",
+			Handler:    _CloudHashingBilling_GetCoinAccountByCoinAddress_Handler,
+		},
+		{
 			MethodName: "GetCoinAccountsByAppUser",
 			Handler:    _CloudHashingBilling_GetCoinAccountsByAppUser_Handler,
 		},
@@ -831,6 +995,10 @@ var CloudHashingBilling_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingBilling_GetCoinAccountTransactionsByCoinAccount_Handler,
 		},
 		{
+			MethodName: "GetCoinAccountTransactionsByState",
+			Handler:    _CloudHashingBilling_GetCoinAccountTransactionsByState_Handler,
+		},
+		{
 			MethodName: "GetCoinAccountTransactionsByCoin",
 			Handler:    _CloudHashingBilling_GetCoinAccountTransactionsByCoin_Handler,
 		},
@@ -849,6 +1017,10 @@ var CloudHashingBilling_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreatePlatformBenefit",
 			Handler:    _CloudHashingBilling_CreatePlatformBenefit_Handler,
+		},
+		{
+			MethodName: "GetLatestPlatformBenefitByGood",
+			Handler:    _CloudHashingBilling_GetLatestPlatformBenefitByGood_Handler,
 		},
 		{
 			MethodName: "GetPlatformBenefitsByGood",
@@ -887,8 +1059,16 @@ var CloudHashingBilling_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingBilling_CreateUserBenefit_Handler,
 		},
 		{
-			MethodName: "GetUserBebefitsByAppUser",
-			Handler:    _CloudHashingBilling_GetUserBebefitsByAppUser_Handler,
+			MethodName: "GetUserBenefitsByAppUser",
+			Handler:    _CloudHashingBilling_GetUserBenefitsByAppUser_Handler,
+		},
+		{
+			MethodName: "GetUserBenefitsByApp",
+			Handler:    _CloudHashingBilling_GetUserBenefitsByApp_Handler,
+		},
+		{
+			MethodName: "GetLatestUserBenefitByGoodAppUser",
+			Handler:    _CloudHashingBilling_GetLatestUserBenefitByGoodAppUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
