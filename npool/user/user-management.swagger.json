@@ -1,0 +1,1714 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/user/user-management.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/add/user": {
+      "post": {
+        "summary": "Add user.",
+        "operationId": "User_AddUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AddUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AddUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/bind/email": {
+      "post": {
+        "summary": "Bind user's email address.",
+        "operationId": "User_BindUserEmail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BindUserEmailResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1BindUserEmailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/bind/phone": {
+      "post": {
+        "summary": "Bind user's phone number.",
+        "operationId": "User_BindUserPhone",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BindUserPhoneResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1BindUserPhoneRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/bind/thirdparty": {
+      "post": {
+        "summary": "Link to a third-party oauth. save the UserID from third-party into mysql.",
+        "operationId": "User_BindThirdParty",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BindThirdPartyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1BindThirdPartyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/change/password": {
+      "post": {
+        "summary": "Change user's password. Before change users password, system need the user to do an authentication.",
+        "operationId": "User_ChangeUserPassword",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ChangeUserPasswordResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ChangeUserPasswordRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/delete/users": {
+      "post": {
+        "summary": "Delete users.",
+        "operationId": "User_DeleteUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/forget/password": {
+      "post": {
+        "summary": "Forget password.",
+        "operationId": "User_ForgetPassword",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ForgetPasswordResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ForgetPasswordRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/frozen/user": {
+      "post": {
+        "summary": "Frozen user.",
+        "operationId": "User_FrozenUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1FrozenUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1FrozenUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/get/frozen/user": {
+      "post": {
+        "summary": "Get frozen user list.",
+        "operationId": "User_GetFrozenUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetFrozenUsersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetFrozenUsersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/get/user": {
+      "post": {
+        "summary": "Get a user's info by his(her) ID, this api can be request by user self of admin.",
+        "operationId": "User_GetUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/get/user/details": {
+      "post": {
+        "summary": "Get user details in an app.",
+        "operationId": "User_GetUserDetails",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserDetailsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserDetailsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/get/user/providers": {
+      "post": {
+        "summary": "Get user provIDers info.",
+        "operationId": "User_GetUserProviders",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserProvidersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserProvidersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/get/users": {
+      "post": {
+        "summary": "Get all users.",
+        "operationId": "User_GetUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUsersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUsersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/query/user/by/userproviderid": {
+      "post": {
+        "summary": "query user by provIDer ID and his ID in the provIDer",
+        "operationId": "User_QueryUserByUserProviderID",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1QueryUserByUserProviderIDResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1QueryUserByUserProviderIDRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/query/user/exist": {
+      "post": {
+        "summary": "query user exist in database.",
+        "operationId": "User_QueryUserExist",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1QueryUserExistResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1QueryUserExistRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/query/user/frozen": {
+      "post": {
+        "summary": "query user is frozen or not",
+        "operationId": "User_QueryUserFrozen",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1QueryUserFrozenResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1QueryUserFrozenRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/set/password": {
+      "post": {
+        "summary": "set password.",
+        "operationId": "User_SetPassword",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SetPasswordResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetPasswordRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/signup": {
+      "post": {
+        "summary": "User can choose signup with username, email, phone or only emial or only phone.",
+        "operationId": "User_SignUp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SignupResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SignupRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/unbind/thirdparty": {
+      "post": {
+        "summary": "Unlink a third-party oauth. Delete the UserID we saved from mysql.",
+        "operationId": "User_UnbindThirdParty",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UnbindThirdPartyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UnbindThirdPartyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/unfrozen/user": {
+      "post": {
+        "summary": "Unfrozen user.",
+        "operationId": "User_UnfrozenUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UnfrozenUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UnfrozenUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/update/user": {
+      "post": {
+        "summary": "Update user's basic info.",
+        "operationId": "User_UpdateUserInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserInfoRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/update/user/email": {
+      "post": {
+        "summary": "update user email.",
+        "operationId": "User_UpdateUserEmail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserEmailResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserEmailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/v1/update/user/phone": {
+      "post": {
+        "summary": "update user phone.",
+        "operationId": "User_UpdateUserPhone",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserPhoneResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserPhoneRequest"
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/version": {
+      "post": {
+        "summary": "Method Version",
+        "operationId": "User_Version",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/userv1VersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
+            }
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "userv1PageInfo": {
+      "type": "object",
+      "properties": {
+        "PageIndex": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PageSize": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "userv1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      },
+      "title": "request body and response"
+    },
+    "v1AddUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserInfo": {
+          "$ref": "#/definitions/v1UserBasicInfo"
+        }
+      }
+    },
+    "v1AddUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserBasicInfo"
+        }
+      }
+    },
+    "v1ApplicationUserDetail": {
+      "type": "object",
+      "properties": {
+        "UserApplicationInfo": {
+          "$ref": "#/definitions/v1ApplicationUserInfo"
+        },
+        "UserGroupInfos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GroupUserInfo"
+          }
+        },
+        "UserRoleInfo": {
+          "$ref": "#/definitions/v1UserRole"
+        }
+      }
+    },
+    "v1ApplicationUserInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Original": {
+          "type": "boolean"
+        },
+        "KycVerify": {
+          "type": "boolean"
+        },
+        "GAVerify": {
+          "type": "boolean"
+        },
+        "GALogin": {
+          "type": "boolean"
+        },
+        "SMSLogin": {
+          "type": "boolean"
+        },
+        "LoginNumber": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreateAT": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1BindThirdPartyRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "ProviderID": {
+          "type": "string",
+          "title": "third party(provIDer)'s ID"
+        },
+        "ProviderUserID": {
+          "type": "string",
+          "title": "UserID in third party(provIDer)"
+        },
+        "UserProviderInfo": {
+          "type": "string"
+        }
+      }
+    },
+    "v1BindThirdPartyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserProvider"
+        }
+      }
+    },
+    "v1BindUserEmailRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1BindUserEmailResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1BindUserPhoneRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        }
+      }
+    },
+    "v1BindUserPhoneResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ChangeUserPasswordRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "VerifyParam": {
+          "type": "string"
+        },
+        "VerifyType": {
+          "type": "string",
+          "description": "verify types are emial, phone and google."
+        },
+        "OldPassword": {
+          "type": "string"
+        },
+        "Password": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ChangeUserPasswordResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteUserRequest": {
+      "type": "object",
+      "properties": {
+        "DeleteUserIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "an array of UserID who are being deleted."
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ForgetPasswordRequest": {
+      "type": "object",
+      "properties": {
+        "VerifyParam": {
+          "type": "string"
+        },
+        "VerifyType": {
+          "type": "string",
+          "description": "verify types are emial, phone and google."
+        },
+        "Password": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ForgetPasswordResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1FrozenUser": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "FrozenBy": {
+          "type": "string"
+        },
+        "FrozenCause": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "UnfrozenBy": {
+          "type": "string"
+        }
+      }
+    },
+    "v1FrozenUserRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "FrozenBy": {
+          "type": "string"
+        },
+        "FrozenCause": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1FrozenUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrozenUser"
+        }
+      }
+    },
+    "v1GetFrozenUsersRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/userv1PageInfo"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetFrozenUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1FrozenUser"
+          }
+        }
+      }
+    },
+    "v1GetUserDetailsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserDetails"
+        }
+      }
+    },
+    "v1GetUserProvidersRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserProvidersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserProvider"
+          }
+        }
+      }
+    },
+    "v1GetUserRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string",
+          "description": "UserID is who is queried."
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserBasicInfo"
+        }
+      }
+    },
+    "v1GetUsersRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/userv1PageInfo"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserBasicInfo"
+          }
+        }
+      }
+    },
+    "v1GroupUserInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "GroupID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Annotation": {
+          "type": "string"
+        },
+        "CreateAT": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1QueryProviderUserInfo": {
+      "type": "object",
+      "properties": {
+        "UserProviderInfo": {
+          "$ref": "#/definitions/v1UserProvider"
+        },
+        "UserBasicInfo": {
+          "$ref": "#/definitions/v1UserBasicInfo"
+        }
+      }
+    },
+    "v1QueryUserByUserProviderIDRequest": {
+      "type": "object",
+      "properties": {
+        "ProviderID": {
+          "type": "string"
+        },
+        "ProviderUserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1QueryUserByUserProviderIDResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1QueryProviderUserInfo"
+        }
+      }
+    },
+    "v1QueryUserExistRequest": {
+      "type": "object",
+      "properties": {
+        "Username": {
+          "type": "string"
+        },
+        "Password": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1QueryUserExistResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserBasicInfo"
+        }
+      }
+    },
+    "v1QueryUserFrozenRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1QueryUserFrozenResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrozenUser"
+        }
+      }
+    },
+    "v1RoleInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "RoleName": {
+          "type": "string"
+        },
+        "Creator": {
+          "type": "string"
+        },
+        "CreateAT": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdateAT": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Annotation": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SetPasswordRequest": {
+      "type": "object",
+      "properties": {
+        "Username": {
+          "type": "string"
+        },
+        "Password": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SetPasswordResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SignupRequest": {
+      "type": "object",
+      "properties": {
+        "Username": {
+          "type": "string",
+          "title": "optional"
+        },
+        "Password": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string",
+          "title": "optional"
+        },
+        "PhoneNumber": {
+          "type": "string",
+          "title": "optional"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SignupResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserBasicInfo"
+        }
+      }
+    },
+    "v1UnbindThirdPartyRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "ProviderID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UnbindThirdPartyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserProvider"
+        }
+      }
+    },
+    "v1UnfrozenUserRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "UnfrozenBy": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UnfrozenUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrozenUser"
+        }
+      }
+    },
+    "v1UpdateUserEmailRequest": {
+      "type": "object",
+      "properties": {
+        "OldEmail": {
+          "type": "string"
+        },
+        "OldCode": {
+          "type": "string"
+        },
+        "NewEmail": {
+          "type": "string"
+        },
+        "NewCode": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateUserEmailResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateUserInfoRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserBasicInfo"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateUserInfoResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserBasicInfo"
+        }
+      }
+    },
+    "v1UpdateUserPhoneRequest": {
+      "type": "object",
+      "properties": {
+        "OldPhone": {
+          "type": "string"
+        },
+        "OldCode": {
+          "type": "string"
+        },
+        "NewPhone": {
+          "type": "string"
+        },
+        "NewCode": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateUserPhoneResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UserBasicInfo": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "Password": {
+          "type": "string"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "Region": {
+          "type": "string"
+        },
+        "Birthday": {
+          "type": "string"
+        },
+        "Country": {
+          "type": "string"
+        },
+        "Province": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SignupMethod": {
+          "type": "string"
+        },
+        "Career": {
+          "type": "string"
+        },
+        "DisplayName": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "StreetAddress1": {
+          "type": "string"
+        },
+        "StreetAddress2": {
+          "type": "string"
+        },
+        "Compony": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UserDetails": {
+      "type": "object",
+      "properties": {
+        "UserBasicInfo": {
+          "$ref": "#/definitions/v1UserBasicInfo"
+        },
+        "UserAppInfo": {
+          "$ref": "#/definitions/v1ApplicationUserDetail"
+        }
+      }
+    },
+    "v1UserProvider": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ProviderID": {
+          "type": "string"
+        },
+        "ProviderUserID": {
+          "type": "string"
+        },
+        "UserProviderInfo": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdateAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UserRole": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RoleInfo"
+          }
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

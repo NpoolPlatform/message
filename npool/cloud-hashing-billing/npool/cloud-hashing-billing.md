@@ -3,7 +3,7 @@
 
 ## Table of Contents
 
-- [npool/cloud-hashing-billing.proto](#npool/cloud-hashing-billing.proto)
+- [npool/cloud-hashing-billing/npool/cloud-hashing-billing.proto](#npool/cloud-hashing-billing/npool/cloud-hashing-billing.proto)
     - [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo)
     - [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction)
     - [CoinAccountTransactionDetail](#cloud.hashing.billing.v1.CoinAccountTransactionDetail)
@@ -75,10 +75,10 @@
 
 
 
-<a name="npool/cloud-hashing-billing.proto"></a>
+<a name="npool/cloud-hashing-billing/npool/cloud-hashing-billing.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/cloud-hashing-billing.proto
+## npool/cloud-hashing-billing/npool/cloud-hashing-billing.proto
 
 
 

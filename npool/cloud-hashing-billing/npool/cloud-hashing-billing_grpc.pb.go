@@ -1072,5 +1072,5 @@ var CloudHashingBilling_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/cloud-hashing-billing.proto",
+	Metadata: "npool/cloud-hashing-billing/npool/cloud-hashing-billing.proto",
 }

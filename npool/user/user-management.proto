@@ -1,0 +1,559 @@
+syntax = "proto3";
+
+package user.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/user";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/application/application-management.proto";
+
+// a service of managing users
+service User {
+    // Method Version
+    rpc Version (google.protobuf.Empty) returns (VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+    /*
+    User can choose signup with username, email, phone or only emial or only phone.
+    */
+    rpc SignUp (SignupRequest) returns (SignupResponse) {
+        option (google.api.http) = {
+            post: "/v1/signup"
+            body: "*"
+        };
+    };
+    /*
+    Get a user's info by his(her) ID, this api can be request by user self of admin.
+    */
+    rpc GetUser (GetUserRequest) returns (GetUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user"
+            body: "*"
+        };
+    };
+    // Get user details in an app.
+    rpc GetUserDetails (GetUserDetailsRequest) returns (GetUserDetailsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/details"
+            body: "*"
+        };
+    };
+    /*
+    Get all users.
+    */
+    rpc GetUsers (GetUsersRequest) returns (GetUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/users"
+            body: "*"
+        };
+    };
+    /*
+    Update user's basic info.
+    */
+    rpc UpdateUserInfo (UpdateUserInfoRequest) returns (UpdateUserInfoResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user"
+            body: "*"
+        };
+    };
+    /*
+    Bind user's phone number.
+    */
+    rpc BindUserPhone (BindUserPhoneRequest) returns (BindUserPhoneResponse) {
+        option (google.api.http) = {
+            post: "/v1/bind/phone"
+            body: "*"
+        };
+    };
+    /*
+    Bind user's email address.
+    */
+    rpc BindUserEmail (BindUserEmailRequest) returns (BindUserEmailResponse) {
+        option (google.api.http) = {
+            post: "/v1/bind/email"
+            body: "*"
+        };
+    };
+    // update user email.
+    rpc UpdateUserEmail (UpdateUserEmailRequest) returns (UpdateUserEmailResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user/email"
+            body: "*"
+        };
+    };
+    // update user phone.
+    rpc UpdateUserPhone (UpdateUserPhoneRequest) returns (UpdateUserPhoneResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user/phone"
+            body: "*"
+        };
+    };
+    /*
+    Link to a third-party oauth. save the UserID from third-party into mysql.
+    */
+    rpc BindThirdParty (BindThirdPartyRequest) returns (BindThirdPartyResponse) {
+        option (google.api.http) = {
+            post: "/v1/bind/thirdparty"
+            body: "*"
+        };
+    };
+    /*
+    Unlink a third-party oauth. Delete the UserID we saved from mysql.
+    */
+    rpc UnbindThirdParty (UnbindThirdPartyRequest) returns (UnbindThirdPartyResponse) {
+        option (google.api.http) = {
+            post: "/v1/unbind/thirdparty"
+            body: "*"
+        };
+    };
+    /*
+    Change user's password. Before change users password, system need the user to do an authentication.
+    */
+    rpc ChangeUserPassword (ChangeUserPasswordRequest) returns (ChangeUserPasswordResponse) {
+        option (google.api.http) = {
+            post: "/v1/change/password"
+            body: "*"
+        };
+    };
+    /*
+    Forget password.
+    */
+    rpc ForgetPassword (ForgetPasswordRequest) returns (ForgetPasswordResponse) {
+        option (google.api.http) = {
+            post: "/v1/forget/password"
+            body: "*"
+        };
+    };
+    // set password.
+    rpc SetPassword (SetPasswordRequest) returns (SetPasswordResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/password"
+            body: "*"
+        };
+    };
+    /*
+    Add user.
+    */
+    rpc AddUser (AddUserRequest) returns (AddUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/add/user"
+            body: "*"
+        };
+    };
+    /*
+    Delete users.
+    */
+    rpc DeleteUser (DeleteUserRequest) returns (DeleteUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/users"
+            body: "*"
+        };
+    };
+    /*
+    Frozen user.
+    */
+    rpc FrozenUser (FrozenUserRequest) returns (FrozenUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/frozen/user"
+            body: "*"
+        };
+    };
+    /*
+    Unfrozen user.
+    */
+    rpc UnfrozenUser (UnfrozenUserRequest) returns (UnfrozenUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/unfrozen/user"
+            body: "*"
+        };
+    };
+    // query user is frozen or not
+    rpc QueryUserFrozen (QueryUserFrozenRequest) returns (QueryUserFrozenResponse) {
+        option (google.api.http) = {
+            post: "/v1/query/user/frozen"
+            body: "*"
+        };
+    };
+    /*
+    Get frozen user list.
+    */
+    rpc GetFrozenUsers (GetFrozenUsersRequest) returns (GetFrozenUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/frozen/user"
+            body: "*"
+        };
+    };
+    /*
+    Get user provIDers info.
+    */
+    rpc GetUserProviders (GetUserProvidersRequest) returns (GetUserProvidersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/providers"
+            body: "*"
+        };
+    };
+    // query user exist in database.
+    rpc QueryUserExist (QueryUserExistRequest) returns (QueryUserExistResponse) {
+        option (google.api.http) = {
+            post: "/v1/query/user/exist"
+            body: "*"
+        };
+    };
+    // query user by provIDer ID and his ID in the provIDer
+    rpc QueryUserByUserProviderID (QueryUserByUserProviderIDRequest) returns (QueryUserByUserProviderIDResponse) {
+        option (google.api.http) = {
+            post: "/v1/query/user/by/userproviderid"
+            body: "*"
+        };
+    };
+}
+
+// request body and response
+message VersionResponse {
+    string Info = 100;
+}
+
+message PageInfo {
+    uint32 PageIndex = 1;
+    uint32 PageSize = 2;
+}
+
+message UserBasicInfo {
+    string UserID = 1;
+    string Username = 2;
+    string Password = 15;
+    string Avatar = 3;
+    uint32 Age = 4;
+    string Gender = 5;
+    string Region = 6;
+    string Birthday = 7;
+    string Country = 8;
+    string Province = 9;
+    string City = 10;
+    string PhoneNumber = 11;
+    string EmailAddress = 12;
+    uint32 CreateAt = 13;
+    uint32 UpdateAt = 14;
+    string SignupMethod = 18;
+    string Career = 20;
+    string DisplayName = 21;
+    string FirstName = 23;
+    string LastName = 24;
+    string StreetAddress1 = 25;
+    string StreetAddress2 = 26;
+    string Compony = 27;
+    string PostalCode = 28;
+}
+
+message SignupRequest {
+    // optional
+    string Username = 1;
+    string Password = 2;
+    // optional
+    string EmailAddress = 4;
+    // optional
+    string PhoneNumber = 6;
+    string Code = 7;
+    string AppID = 8;
+}
+
+message SignupResponse {
+    UserBasicInfo Info = 1;
+}
+
+message GetUserRequest {
+    // UserID is who is queried.
+    string UserID = 1;
+    string AppID = 2;
+}
+
+message GetUserResponse {
+    UserBasicInfo Info = 1;
+}
+
+message GetUsersRequest {
+    PageInfo Info = 1;
+    string AppID = 2;
+}
+
+message GetUsersResponse {
+    repeated UserBasicInfo Infos = 1;
+}
+
+message UpdateUserInfoRequest {
+    UserBasicInfo Info = 1;
+    string AppID = 2;
+    string UserID = 3;
+}
+
+message UpdateUserInfoResponse {
+    UserBasicInfo Info = 1;
+}
+
+message BindUserPhoneRequest {
+    string UserID = 1;
+    string PhoneNumber = 2;
+    string AppID = 3;
+    string Code = 4;
+}
+
+message BindUserPhoneResponse {
+    string Info = 1;
+}
+
+message BindUserEmailRequest {
+    string UserID = 1;
+    string EmailAddress = 2;
+    string Code = 3;
+    string AppID = 4;
+}
+
+message BindUserEmailResponse {
+    string Info = 1;
+}
+
+message UserProvider {
+    string ID = 1;
+    string UserID = 2;
+    string ProviderID = 3;
+    string ProviderUserID = 4;
+    string UserProviderInfo = 5;
+    uint32 CreateAt = 6;
+    uint32 UpdateAt = 7;
+}
+
+message BindThirdPartyRequest {
+    string UserID = 1;
+    string AppID = 2;
+    // third party(provIDer)'s ID
+    string ProviderID = 3;
+    // UserID in third party(provIDer)
+    string ProviderUserID = 4;
+    string UserProviderInfo = 5;
+}
+
+message BindThirdPartyResponse {
+    UserProvider Info = 1;
+}
+
+message UnbindThirdPartyRequest {
+    string UserID = 1;
+    string AppID = 2;
+    string ProviderID = 3;
+}
+
+message UnbindThirdPartyResponse {
+    UserProvider Info = 1;
+}
+
+message ChangeUserPasswordRequest {
+    string UserID = 1;
+    string AppID = 2;
+    string VerifyParam = 3;
+    // verify types are emial, phone and google.
+    string VerifyType = 4;
+    string OldPassword = 5;
+    string Password = 6;
+    string Code = 7;
+}
+
+message ChangeUserPasswordResponse {
+    string Info = 1;
+}
+
+message CertificateKycRequest {
+    string UserID = 1;
+    string AppID = 2;
+    string FirstName = 3;
+    string LastName = 4;
+    string FrontCardImg = 5;
+    string BackCardImg = 6;
+    string UserCardImg = 7;
+    string CardType = 8;
+    string CardID = 9;
+    string Region = 10;
+}
+
+message CertificateKycResponse {
+    string Info = 1;
+}
+
+message GetGaQRCodeRequest {
+    string UserID = 1;
+    string AppID = 2;
+}
+
+message GetGaQRCodeResponse {
+    string Info = 1;
+}
+
+message ForgetPasswordRequest {
+    string VerifyParam = 1;
+    // verify types are emial, phone and google.
+    string VerifyType = 2;
+    string Password = 3;
+    string Code = 4;
+    string AppID = 5;
+}
+
+message ForgetPasswordResponse {
+    string Info = 1;
+}
+
+message DeleteUserRequest {
+    // an array of UserID who are being deleted.
+    repeated string DeleteUserIDs = 1;
+    string AppID = 2;
+}
+
+message DeleteUserResponse {
+    string Info = 1;
+}
+
+message AddUserRequest {
+    string AppID = 1;
+    UserBasicInfo UserInfo = 2;
+}
+
+message AddUserResponse {
+    UserBasicInfo Info = 1;
+}
+
+message FrozenUser {
+    string ID = 1;
+    string UserID = 2;
+    string FrozenBy = 3;
+    string FrozenCause = 4;
+    uint32 StartAt = 5;
+    uint32 EndAt = 6;
+    string Status = 7;
+    string UnfrozenBy = 8;
+}
+
+message FrozenUserRequest {
+    string UserID = 1;
+    string FrozenBy = 2;
+    string FrozenCause =3;
+    string AppID = 4;
+}
+
+message FrozenUserResponse {
+    FrozenUser Info = 1;
+}
+
+message QueryUserFrozenRequest {
+    string UserID = 1;
+    string AppID = 2;
+}
+
+message QueryUserFrozenResponse {
+    FrozenUser Info = 1;
+}
+
+message UnfrozenUserRequest {
+    string ID = 1;
+    string UserID = 2;
+    string UnfrozenBy = 3;
+    string AppID = 4;
+}
+
+message UnfrozenUserResponse {
+    FrozenUser Info = 1;
+}
+
+message GetFrozenUsersRequest {
+    PageInfo Info = 1;
+    string AppID = 2;
+}
+
+message GetFrozenUsersResponse {
+    repeated FrozenUser Infos = 1;
+}
+
+message GetUserProvidersRequest {
+    string UserID = 1;
+    string AppID = 2;
+}
+
+message GetUserProvidersResponse {
+    repeated UserProvider Infos = 1;
+}
+
+message QueryUserExistRequest {
+    string Username = 1;
+    string Password = 2;
+    string AppID = 3;
+}
+
+message QueryUserExistResponse {
+    UserBasicInfo Info = 1;
+}
+
+message QueryProviderUserInfo {
+    UserProvider UserProviderInfo = 1;
+    UserBasicInfo UserBasicInfo = 2;
+}
+
+message QueryUserByUserProviderIDRequest {
+    string ProviderID = 1;
+    string ProviderUserID = 2;
+    string AppID = 3;
+}
+
+message QueryUserByUserProviderIDResponse {
+    QueryProviderUserInfo Info = 1;
+}
+
+message SetPasswordRequest {
+    string Username = 1;
+    string Password = 2;
+    string AppID = 3;
+}
+
+message SetPasswordResponse {
+    string Info = 1;
+}
+
+message GetUserDetailsRequest {
+    string AppID = 1;
+    string UserID = 2;
+}
+
+message UserDetails {
+    UserBasicInfo UserBasicInfo = 1;
+    application.management.v1.ApplicationUserDetail UserAppInfo = 2;
+}
+
+message GetUserDetailsResponse {
+    UserDetails Info = 1;
+}
+
+message UpdateUserEmailRequest {
+    string OldEmail = 1;
+    string OldCode = 2;
+    string NewEmail = 3;
+    string NewCode = 4;
+    string UserID = 5;
+    string AppID = 6;
+}
+
+message UpdateUserEmailResponse {
+    string Info = 1;
+}
+
+message UpdateUserPhoneRequest {
+    string OldPhone = 1;
+    string OldCode = 2;
+    string NewPhone = 3;
+    string NewCode = 4;
+    string UserID = 5;
+    string AppID = 6;
+}
+
+message UpdateUserPhoneResponse {
+    string Info = 1;
+}
