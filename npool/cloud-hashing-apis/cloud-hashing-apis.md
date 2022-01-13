@@ -1,0 +1,651 @@
+# Protocol Documentation
+<a name="top"></a>
+
+## Table of Contents
+
+- [npool/cloud-hashing-apis/cloud-hashing-apis.proto](#npool/cloud-hashing-apis/cloud-hashing-apis.proto)
+    - [CreateOrderPaymentRequest](#cloud.hashing.apis.v1.CreateOrderPaymentRequest)
+    - [CreateOrderPaymentResponse](#cloud.hashing.apis.v1.CreateOrderPaymentResponse)
+    - [GetGoodRequest](#cloud.hashing.apis.v1.GetGoodRequest)
+    - [GetGoodResponse](#cloud.hashing.apis.v1.GetGoodResponse)
+    - [GetGoodsRequest](#cloud.hashing.apis.v1.GetGoodsRequest)
+    - [GetGoodsResponse](#cloud.hashing.apis.v1.GetGoodsResponse)
+    - [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest)
+    - [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse)
+    - [GetMyDirectInvitationsResponse.InfosEntry](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry)
+    - [GetMyInvitationsRequest](#cloud.hashing.apis.v1.GetMyInvitationsRequest)
+    - [GetMyInvitationsResponse](#cloud.hashing.apis.v1.GetMyInvitationsResponse)
+    - [GetMyInvitationsResponse.InfosEntry](#cloud.hashing.apis.v1.GetMyInvitationsResponse.InfosEntry)
+    - [GetOrderRequest](#cloud.hashing.apis.v1.GetOrderRequest)
+    - [GetOrderResponse](#cloud.hashing.apis.v1.GetOrderResponse)
+    - [GetOrdersByAppRequest](#cloud.hashing.apis.v1.GetOrdersByAppRequest)
+    - [GetOrdersByAppResponse](#cloud.hashing.apis.v1.GetOrdersByAppResponse)
+    - [GetOrdersByAppUserRequest](#cloud.hashing.apis.v1.GetOrdersByAppUserRequest)
+    - [GetOrdersByAppUserResponse](#cloud.hashing.apis.v1.GetOrdersByAppUserResponse)
+    - [GetOrdersByGoodRequest](#cloud.hashing.apis.v1.GetOrdersByGoodRequest)
+    - [GetOrdersByGoodResponse](#cloud.hashing.apis.v1.GetOrdersByGoodResponse)
+    - [GetRecommendGoodsByAppRequest](#cloud.hashing.apis.v1.GetRecommendGoodsByAppRequest)
+    - [GetRecommendGoodsByAppResponse](#cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse)
+    - [Good](#cloud.hashing.apis.v1.Good)
+    - [Invitation](#cloud.hashing.apis.v1.Invitation)
+    - [InvitationSummary](#cloud.hashing.apis.v1.InvitationSummary)
+    - [InvitationUserInfo](#cloud.hashing.apis.v1.InvitationUserInfo)
+    - [InvitationUserInfo.MySummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry)
+    - [InvitationUserInfo.SummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry)
+    - [OrderFee](#cloud.hashing.apis.v1.OrderFee)
+    - [RecommendGood](#cloud.hashing.apis.v1.RecommendGood)
+    - [SignupRequest](#cloud.hashing.apis.v1.SignupRequest)
+    - [SignupResponse](#cloud.hashing.apis.v1.SignupResponse)
+    - [SubmitOrderRequest](#cloud.hashing.apis.v1.SubmitOrderRequest)
+    - [SubmitOrderResponse](#cloud.hashing.apis.v1.SubmitOrderResponse)
+  
+    - [CloudHashingApis](#cloud.hashing.apis.v1.CloudHashingApis)
+  
+- [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="npool/cloud-hashing-apis/cloud-hashing-apis.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## npool/cloud-hashing-apis/cloud-hashing-apis.proto
+
+
+
+<a name="cloud.hashing.apis.v1.CreateOrderPaymentRequest"></a>
+
+### CreateOrderPaymentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| OrderID | [string](#string) |  |  |
+| PaymentCoinTypeID | [string](#string) |  |  |
+| Fees | [OrderFee](#cloud.hashing.apis.v1.OrderFee) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.CreateOrderPaymentResponse"></a>
+
+### CreateOrderPaymentResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.order.v1.OrderDetail](#cloud.hashing.order.v1.OrderDetail) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetGoodRequest"></a>
+
+### GetGoodRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetGoodResponse"></a>
+
+### GetGoodResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Good](#cloud.hashing.apis.v1.Good) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetGoodsRequest"></a>
+
+### GetGoodsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetGoodsResponse"></a>
+
+### GetGoodsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Good](#cloud.hashing.apis.v1.Good) | repeated |  |
+| Total | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetMyDirectInvitationsRequest"></a>
+
+### GetMyDirectInvitationsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| InviterID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetMyDirectInvitationsResponse"></a>
+
+### GetMyDirectInvitationsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| MySelf | [InvitationUserInfo](#cloud.hashing.apis.v1.InvitationUserInfo) |  |  |
+| Infos | [GetMyDirectInvitationsResponse.InfosEntry](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry"></a>
+
+### GetMyDirectInvitationsResponse.InfosEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [Invitation](#cloud.hashing.apis.v1.Invitation) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetMyInvitationsRequest"></a>
+
+### GetMyInvitationsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| InviterID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetMyInvitationsResponse"></a>
+
+### GetMyInvitationsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| MySelf | [InvitationUserInfo](#cloud.hashing.apis.v1.InvitationUserInfo) |  |  |
+| Infos | [GetMyInvitationsResponse.InfosEntry](#cloud.hashing.apis.v1.GetMyInvitationsResponse.InfosEntry) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetMyInvitationsResponse.InfosEntry"></a>
+
+### GetMyInvitationsResponse.InfosEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [Invitation](#cloud.hashing.apis.v1.Invitation) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetOrderRequest"></a>
+
+### GetOrderRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetOrderResponse"></a>
+
+### GetOrderResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.order.v1.OrderDetail](#cloud.hashing.order.v1.OrderDetail) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetOrdersByAppRequest"></a>
+
+### GetOrdersByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetOrdersByAppResponse"></a>
+
+### GetOrdersByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [cloud.hashing.order.v1.OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetOrdersByAppUserRequest"></a>
+
+### GetOrdersByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetOrdersByAppUserResponse"></a>
+
+### GetOrdersByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [cloud.hashing.order.v1.OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetOrdersByGoodRequest"></a>
+
+### GetOrdersByGoodRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| GoodID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetOrdersByGoodResponse"></a>
+
+### GetOrdersByGoodResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [cloud.hashing.order.v1.OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetRecommendGoodsByAppRequest"></a>
+
+### GetRecommendGoodsByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse"></a>
+
+### GetRecommendGoodsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [RecommendGood](#cloud.hashing.apis.v1.RecommendGood) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.Good"></a>
+
+### Good
+Request body and response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Good | [cloud.hashing.goods.v1.GoodDetail](#cloud.hashing.goods.v1.GoodDetail) |  |  |
+| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.Invitation"></a>
+
+### Invitation
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Invitees | [InvitationUserInfo](#cloud.hashing.apis.v1.InvitationUserInfo) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.InvitationSummary"></a>
+
+### InvitationSummary
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Units | [uint32](#uint32) |  |  |
+| Amount | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.InvitationUserInfo"></a>
+
+### InvitationUserInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| UserID | [string](#string) |  |  |
+| Username | [string](#string) |  |  |
+| Avatar | [string](#string) |  |  |
+| EmailAddress | [string](#string) |  |  |
+| Kol | [bool](#bool) |  |  |
+| Summarys | [InvitationUserInfo.SummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry) | repeated |  |
+| MySummarys | [InvitationUserInfo.MySummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry) | repeated |  |
+| InvitedCount | [uint32](#uint32) |  |  |
+| JoinDate | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry"></a>
+
+### InvitationUserInfo.MySummarysEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [InvitationSummary](#cloud.hashing.apis.v1.InvitationSummary) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry"></a>
+
+### InvitationUserInfo.SummarysEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [InvitationSummary](#cloud.hashing.apis.v1.InvitationSummary) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.OrderFee"></a>
+
+### OrderFee
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| DurationDays | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.RecommendGood"></a>
+
+### RecommendGood
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Good | [cloud.hashing.goods.v1.RecommendGood](#cloud.hashing.goods.v1.RecommendGood) |  |  |
+| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.SignupRequest"></a>
+
+### SignupRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Username | [string](#string) |  |  |
+| Password | [string](#string) |  |  |
+| EmailAddress | [string](#string) |  |  |
+| PhoneNumber | [string](#string) |  |  |
+| VerificationCode | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| InvitationCode | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.SignupResponse"></a>
+
+### SignupResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [user.v1.UserBasicInfo](#user.v1.UserBasicInfo) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.SubmitOrderRequest"></a>
+
+### SubmitOrderRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| GoodID | [string](#string) |  |  |
+| Units | [uint32](#uint32) |  |  |
+| UserID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| CouponID | [string](#string) |  |  |
+| DiscountCouponID | [string](#string) |  |  |
+| UserSpecialReductionID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.SubmitOrderResponse"></a>
+
+### SubmitOrderResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.order.v1.OrderDetail](#cloud.hashing.order.v1.OrderDetail) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="cloud.hashing.apis.v1.CloudHashingApis"></a>
+
+### CloudHashingApis
+Cloud Hashing Goods
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) |  |
+| GetGoods | [GetGoodsRequest](#cloud.hashing.apis.v1.GetGoodsRequest) | [GetGoodsResponse](#cloud.hashing.apis.v1.GetGoodsResponse) |  |
+| GetGood | [GetGoodRequest](#cloud.hashing.apis.v1.GetGoodRequest) | [GetGoodResponse](#cloud.hashing.apis.v1.GetGoodResponse) |  |
+| GetRecommendGoodsByApp | [GetRecommendGoodsByAppRequest](#cloud.hashing.apis.v1.GetRecommendGoodsByAppRequest) | [GetRecommendGoodsByAppResponse](#cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse) |  |
+| SubmitOrder | [SubmitOrderRequest](#cloud.hashing.apis.v1.SubmitOrderRequest) | [SubmitOrderResponse](#cloud.hashing.apis.v1.SubmitOrderResponse) |  |
+| CreateOrderPayment | [CreateOrderPaymentRequest](#cloud.hashing.apis.v1.CreateOrderPaymentRequest) | [CreateOrderPaymentResponse](#cloud.hashing.apis.v1.CreateOrderPaymentResponse) |  |
+| GetOrder | [GetOrderRequest](#cloud.hashing.apis.v1.GetOrderRequest) | [GetOrderResponse](#cloud.hashing.apis.v1.GetOrderResponse) |  |
+| GetOrdersByAppUser | [GetOrdersByAppUserRequest](#cloud.hashing.apis.v1.GetOrdersByAppUserRequest) | [GetOrdersByAppUserResponse](#cloud.hashing.apis.v1.GetOrdersByAppUserResponse) |  |
+| GetOrdersByApp | [GetOrdersByAppRequest](#cloud.hashing.apis.v1.GetOrdersByAppRequest) | [GetOrdersByAppResponse](#cloud.hashing.apis.v1.GetOrdersByAppResponse) |  |
+| GetOrdersByGood | [GetOrdersByGoodRequest](#cloud.hashing.apis.v1.GetOrdersByGoodRequest) | [GetOrdersByGoodResponse](#cloud.hashing.apis.v1.GetOrdersByGoodResponse) |  |
+| Signup | [SignupRequest](#cloud.hashing.apis.v1.SignupRequest) | [SignupResponse](#cloud.hashing.apis.v1.SignupResponse) |  |
+| GetMyInvitations | [GetMyInvitationsRequest](#cloud.hashing.apis.v1.GetMyInvitationsRequest) | [GetMyInvitationsResponse](#cloud.hashing.apis.v1.GetMyInvitationsResponse) |  |
+| GetMyDirectInvitations | [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest) | [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse) |  |
+
+ 
+
+
+
+## Scalar Value Types
+
+| .proto Type | Notes | C++ | Java | Python | Go | C# | PHP | Ruby |
+| ----------- | ----- | --- | ---- | ------ | -- | -- | --- | ---- |
+| <a name="double" /> double |  | double | double | float | float64 | double | float | Float |
+| <a name="float" /> float |  | float | float | float | float32 | float | float | Float |
+| <a name="int32" /> int32 | Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead. | int32 | int | int | int32 | int | integer | Bignum or Fixnum (as required) |
+| <a name="int64" /> int64 | Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead. | int64 | long | int/long | int64 | long | integer/string | Bignum |
+| <a name="uint32" /> uint32 | Uses variable-length encoding. | uint32 | int | int/long | uint32 | uint | integer | Bignum or Fixnum (as required) |
+| <a name="uint64" /> uint64 | Uses variable-length encoding. | uint64 | long | int/long | uint64 | ulong | integer/string | Bignum or Fixnum (as required) |
+| <a name="sint32" /> sint32 | Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s. | int32 | int | int | int32 | int | integer | Bignum or Fixnum (as required) |
+| <a name="sint64" /> sint64 | Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s. | int64 | long | int/long | int64 | long | integer/string | Bignum |
+| <a name="fixed32" /> fixed32 | Always four bytes. More efficient than uint32 if values are often greater than 2^28. | uint32 | int | int | uint32 | uint | integer | Bignum or Fixnum (as required) |
+| <a name="fixed64" /> fixed64 | Always eight bytes. More efficient than uint64 if values are often greater than 2^56. | uint64 | long | int/long | uint64 | ulong | integer/string | Bignum |
+| <a name="sfixed32" /> sfixed32 | Always four bytes. | int32 | int | int | int32 | int | integer | Bignum or Fixnum (as required) |
+| <a name="sfixed64" /> sfixed64 | Always eight bytes. | int64 | long | int/long | int64 | long | integer/string | Bignum |
+| <a name="bool" /> bool |  | bool | boolean | boolean | bool | bool | boolean | TrueClass/FalseClass |
+| <a name="string" /> string | A string must always contain UTF-8 encoded or 7-bit ASCII text. | string | String | str/unicode | string | string | string | String (UTF-8) |
+| <a name="bytes" /> bytes | May contain any arbitrary sequence of bytes. | string | ByteString | str | []byte | ByteString | string | String (ASCII-8BIT) |
+

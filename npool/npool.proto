@@ -3,3 +3,12 @@ syntax = "proto3";
 package npool.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool";
+
+message PageInfo {
+    int32 PageIndex = 10;
+    int32 PageSize = 20;
+}
+
+message VersionResponse {
+    string Info = 10;
+}

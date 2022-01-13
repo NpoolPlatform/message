@@ -4,6 +4,9 @@
 ## Table of Contents
 
 - [npool/npool.proto](#npool/npool.proto)
+    - [PageInfo](#npool.v1.PageInfo)
+    - [VersionResponse](#npool.v1.VersionResponse)
+  
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -12,6 +15,37 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/npool.proto
+
+
+
+<a name="npool.v1.PageInfo"></a>
+
+### PageInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| PageIndex | [int32](#int32) |  |  |
+| PageSize | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="npool.v1.VersionResponse"></a>
+
+### VersionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [string](#string) |  |  |
+
+
+
 
 
  

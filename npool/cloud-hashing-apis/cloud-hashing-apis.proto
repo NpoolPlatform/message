@@ -1,0 +1,259 @@
+syntax = "proto3";
+
+package cloud.hashing.apis.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/cloud-hashing-apis";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+import "npool/npool.proto";
+import "npool/cloud-hashing-goods/cloud-hashing-goods.proto";
+import "npool/cloud-hashing-order/cloud-hashing-order.proto";
+import "npool/cloud-hashing-billing/cloud-hashing-billing.proto";
+import "npool/cloud-hashing-inspire/cloud-hashing-inspire.proto";
+import "npool/review-service/review-service.proto";
+import "npool/user/user-management.proto";
+
+// Cloud Hashing Goods
+service CloudHashingApis {
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+
+    rpc GetGoods(GetGoodsRequest) returns (GetGoodsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/goods"
+            body: "*"
+        };
+    }
+    rpc GetGood(GetGoodRequest) returns (GetGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good"
+            body: "*"
+        };
+    }
+    rpc GetRecommendGoodsByApp(GetRecommendGoodsByAppRequest) returns (GetRecommendGoodsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/recommend/goods/by/app"
+            body: "*"
+        };
+    }
+
+    rpc SubmitOrder(SubmitOrderRequest) returns (SubmitOrderResponse) {
+        option (google.api.http) = {
+            post: "/v1/submit/order"
+            body: "*"
+        };
+    }
+    rpc CreateOrderPayment(CreateOrderPaymentRequest) returns (CreateOrderPaymentResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/order/payment"
+            body: "*"
+        };
+    }
+
+    rpc GetOrder(GetOrderRequest) returns (GetOrderResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/order"
+            body: "*"
+        };
+    }
+
+    rpc GetOrdersByAppUser(GetOrdersByAppUserRequest) returns (GetOrdersByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/orders/by/app/user"
+            body: "*"
+        };
+    }
+    rpc GetOrdersByApp(GetOrdersByAppRequest) returns (GetOrdersByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/orders/by/app"
+            body: "*"
+        };
+    }
+    rpc GetOrdersByGood(GetOrdersByGoodRequest) returns (GetOrdersByGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/orders/by/good"
+            body: "*"
+        };
+    }
+
+    rpc Signup(SignupRequest) returns (SignupResponse) {
+        option (google.api.http) = {
+            post: "/v1/signup"
+            body: "*"
+        };
+    }
+
+    rpc GetMyInvitations(GetMyInvitationsRequest) returns (GetMyInvitationsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/my/invitations"
+            body: "*"
+        };
+    }
+    rpc GetMyDirectInvitations(GetMyDirectInvitationsRequest) returns (GetMyDirectInvitationsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/my/direct/invitations"
+            body: "*"
+        };
+    }
+}
+
+// Request body and response
+message Good {
+    cloud.hashing.goods.v1.GoodDetail Good = 10;
+    review.service.v1.Review Review = 20;
+}
+
+message RecommendGood {
+    cloud.hashing.goods.v1.RecommendGood Good = 10;
+    review.service.v1.Review Review = 20;
+}
+
+message GetGoodRequest {
+    string ID = 10;
+}
+
+message GetGoodResponse {
+    Good Info = 10;
+}
+
+
+message GetGoodsRequest {
+    npool.v1.PageInfo PageInfo = 10;
+}
+
+message GetGoodsResponse {
+    repeated Good Infos = 10;
+    int32 Total = 20;
+}
+
+message GetRecommendGoodsByAppRequest {
+    string AppID = 10;
+}
+
+message GetRecommendGoodsByAppResponse {
+    repeated RecommendGood Infos = 10;
+}
+
+message GetOrderRequest {
+    string ID = 10;
+}
+
+message GetOrderResponse {
+    cloud.hashing.order.v1.OrderDetail Info = 10;
+}
+
+message GetOrdersByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetOrdersByAppUserResponse {
+    repeated cloud.hashing.order.v1.OrderDetail Infos = 10;
+}
+
+message GetOrdersByAppRequest {
+    string AppID = 10;
+}
+
+message GetOrdersByAppResponse {
+    repeated cloud.hashing.order.v1.OrderDetail Infos = 10;
+}
+
+message GetOrdersByGoodRequest {
+    string GoodID = 10;
+}
+
+message GetOrdersByGoodResponse {
+    repeated cloud.hashing.order.v1.OrderDetail Infos = 10;
+}
+
+message OrderFee {
+    string ID = 10;
+    uint32 DurationDays = 20;
+}
+
+message SubmitOrderRequest {
+    string GoodID = 10;
+    uint32 Units = 20;
+    string UserID = 30;
+    string AppID = 40;
+    string CouponID = 50;
+    string DiscountCouponID = 60;
+    string UserSpecialReductionID = 70;
+}
+
+message SubmitOrderResponse {
+    cloud.hashing.order.v1.OrderDetail Info = 10;
+}
+
+message CreateOrderPaymentRequest {
+    string OrderID = 10;
+    string PaymentCoinTypeID = 20;
+    repeated OrderFee Fees = 30;
+}
+
+message CreateOrderPaymentResponse {
+    cloud.hashing.order.v1.OrderDetail Info = 10;
+}
+
+message SignupRequest {
+    string Username = 10;
+    string Password = 20;
+    string EmailAddress = 30;
+    string PhoneNumber = 40;
+    string VerificationCode = 50;
+    string AppID = 60;
+    string InvitationCode = 70;
+}
+
+message SignupResponse {
+    user.v1.UserBasicInfo Info = 10;
+}
+
+message InvitationSummary {
+    uint32 Units = 10;
+    double Amount = 20;
+}
+
+message InvitationUserInfo {
+    string UserID = 10;
+    string Username = 20;
+    string Avatar = 30;
+    string EmailAddress = 40;
+    bool Kol = 50;
+    map<string, InvitationSummary> Summarys = 60;
+    map<string, InvitationSummary> MySummarys = 70;
+    uint32 InvitedCount = 80;
+    uint32 JoinDate = 90;
+}
+
+message Invitation {
+    repeated InvitationUserInfo Invitees = 10;
+}
+
+message GetMyInvitationsRequest {
+    string AppID = 10;
+    string InviterID = 20;
+}
+
+message GetMyInvitationsResponse {
+    InvitationUserInfo MySelf = 10;
+    map<string, Invitation> Infos = 20;
+}
+
+message GetMyDirectInvitationsRequest {
+    string AppID = 10;
+    string InviterID = 20;
+}
+
+message GetMyDirectInvitationsResponse {
+    InvitationUserInfo MySelf = 10;
+    map<string, Invitation> Infos = 20;
+}
+
