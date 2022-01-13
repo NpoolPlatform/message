@@ -1,0 +1,2738 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/application/application-management.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/add/group/users": {
+      "post": {
+        "summary": "Add users into group.",
+        "operationId": "ApplicationManagement_AddGroupUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AddGroupUsersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AddGroupUsersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/add/user/login/time": {
+      "post": {
+        "summary": "add user login times",
+        "operationId": "ApplicationManagement_AddUserLoginTime",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AddUserLoginTimeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AddUserLoginTimeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/add/users/to/app": {
+      "post": {
+        "summary": "Add users to app.",
+        "operationId": "ApplicationManagement_AddUsersToApplication",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AddUsersToApplicationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AddUsersToApplicationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/create/app": {
+      "post": {
+        "summary": "Create an application.",
+        "operationId": "ApplicationManagement_CreateApplication",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateApplicationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateApplicationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/create/group": {
+      "post": {
+        "summary": "Create group in an application.",
+        "operationId": "ApplicationManagement_CreateGroup",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateGroupResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateGroupRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/create/resource": {
+      "post": {
+        "summary": "Create resource for app.",
+        "operationId": "ApplicationManagement_CreateResource",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateResourceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateResourceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/create/role": {
+      "post": {
+        "summary": "Create a role in app.",
+        "operationId": "ApplicationManagement_CreateRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/delete/app": {
+      "post": {
+        "summary": "Delete an application.",
+        "operationId": "ApplicationManagement_DeleteApplication",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteApplicationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteApplicationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/delete/group": {
+      "post": {
+        "summary": "Delete group.",
+        "operationId": "ApplicationManagement_DeleteGroup",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteGroupResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteGroupRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/delete/resource": {
+      "post": {
+        "summary": "Delete resource from app.",
+        "operationId": "ApplicationManagement_DeleteResource",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteResourceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteResourceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/delete/role": {
+      "post": {
+        "summary": "Delete role from app.",
+        "operationId": "ApplicationManagement_DeleteRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/all/groups": {
+      "post": {
+        "summary": "Get all groups.",
+        "operationId": "ApplicationManagement_GetAllGroups",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAllGroupsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAllGroupsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/app": {
+      "post": {
+        "summary": "Get application.",
+        "operationId": "ApplicationManagement_GetApplication",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetApplicationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetApplicationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/app/by/owner": {
+      "post": {
+        "summary": "Get application by owner.",
+        "operationId": "ApplicationManagement_GetApplicationByOwner",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetApplicationByOwnerResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetApplicationByOwnerRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/app/user/detail": {
+      "post": {
+        "summary": "get application user detail info.",
+        "operationId": "ApplicationManagement_GetApplicationUserDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetApplicationUserDetailResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetApplicationUserDetailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/apps": {
+      "post": {
+        "summary": "Get all applications.",
+        "operationId": "ApplicationManagement_GetApplications",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetApplicationsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetApplicationsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/group": {
+      "post": {
+        "summary": "Get group info.",
+        "operationId": "ApplicationManagement_GetGroup",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGroupResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGroupRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/group/by/owner": {
+      "post": {
+        "summary": "Get group by owner.",
+        "operationId": "ApplicationManagement_GetGroupByOwner",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGroupByOwnerResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGroupByOwnerRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/group/users": {
+      "post": {
+        "summary": "Get group users.",
+        "operationId": "ApplicationManagement_GetGroupUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGroupUsersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGroupUsersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/resource": {
+      "post": {
+        "summary": "Get resource by ID.",
+        "operationId": "ApplicationManagement_GetResource",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetResourceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetResourceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/resource/by/creator": {
+      "post": {
+        "summary": "Get resource by creator.",
+        "operationId": "ApplicationManagement_GetResourceByCreator",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetResourceByCreatorResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetResourceByCreatorRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/resource/by/name": {
+      "post": {
+        "summary": "get resource by name.",
+        "operationId": "ApplicationManagement_GetResourceByName",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetResourceByNameResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetResourceByNameRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/resources": {
+      "post": {
+        "summary": "Get all resources from app.",
+        "operationId": "ApplicationManagement_GetResources",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetResourcesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetResourcesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/role": {
+      "post": {
+        "summary": "Get Role.",
+        "operationId": "ApplicationManagement_GetRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/role/by/creator": {
+      "post": {
+        "summary": "Get role by creator.",
+        "operationId": "ApplicationManagement_GetRoleByCreator",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRoleByCreatorResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRoleByCreatorRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/role/users": {
+      "post": {
+        "summary": "Get role users.",
+        "operationId": "ApplicationManagement_GetRoleUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRoleUsersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRoleUsersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/roles": {
+      "post": {
+        "summary": "Get Roles.",
+        "operationId": "ApplicationManagement_GetRoles",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRolesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRolesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/user/appid": {
+      "post": {
+        "summary": "Get user's appid.",
+        "operationId": "ApplicationManagement_GetUserAppID",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserAppIDResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserAppIDRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/user/from/app": {
+      "post": {
+        "summary": "Get user from app.",
+        "operationId": "ApplicationManagement_GetUserFromApplication",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserFromApplicationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserFromApplicationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/user/group": {
+      "post": {
+        "summary": "get user group info",
+        "operationId": "ApplicationManagement_GetUserGroup",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserGroupResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserGroupRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/user/role": {
+      "post": {
+        "summary": "Get user role.",
+        "operationId": "ApplicationManagement_GetUserRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/get/users/from/app": {
+      "post": {
+        "summary": "Get users from app.",
+        "operationId": "ApplicationManagement_GetUsersFromApplication",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUsersFromApplicationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUsersFromApplicationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/remove/group/users": {
+      "post": {
+        "summary": "Remove users from group.",
+        "operationId": "ApplicationManagement_RemoveGroupUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1RemoveGroupUsersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1RemoveGroupUsersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/remove/users/from/app": {
+      "post": {
+        "summary": "Remove users from app.",
+        "operationId": "ApplicationManagement_RemoveUsersFromApplication",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1RemoveUsersFromApplicationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1RemoveUsersFromApplicationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/set/ga/login": {
+      "post": {
+        "summary": "set ga login verify option",
+        "operationId": "ApplicationManagement_SetGALogin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SetGALoginResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetGALoginRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/set/sms/login": {
+      "post": {
+        "summary": "set sms login verify option",
+        "operationId": "ApplicationManagement_SetSMSLogin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SetSMSLoginResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetSMSLoginRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/set/user/role": {
+      "post": {
+        "summary": "Set role to user.",
+        "operationId": "ApplicationManagement_SetUserRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SetUserRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetUserRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/unset/user/role": {
+      "post": {
+        "summary": "Unset user role.",
+        "operationId": "ApplicationManagement_UnSetUserRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UnSetUserRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UnSetUserRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/update/app": {
+      "post": {
+        "summary": "Update an application's basic info.",
+        "operationId": "ApplicationManagement_UpdateApplication",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateApplicationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateApplicationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/update/group": {
+      "post": {
+        "summary": "Update group info.",
+        "operationId": "ApplicationManagement_UpdateGroup",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateGroupResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateGroupRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/update/resource": {
+      "post": {
+        "summary": "Update resource of app.",
+        "operationId": "ApplicationManagement_UpdateResource",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateResourceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateResourceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/update/role": {
+      "post": {
+        "summary": "Update role's basic info.",
+        "operationId": "ApplicationManagement_UpdateRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/update/user/ga/status": {
+      "post": {
+        "summary": "update user google authentication status.",
+        "operationId": "ApplicationManagement_UpdateUserGAStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserGAStatusResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserGAStatusRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/v1/update/user/kyc/status": {
+      "post": {
+        "summary": "update user kyc status.",
+        "operationId": "ApplicationManagement_UpdateUserKYCStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserKYCStatusResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserKYCStatusRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    },
+    "/version": {
+      "post": {
+        "summary": "Method Version",
+        "operationId": "ApplicationManagement_Version",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationManagement"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AddGroupUsersRequest": {
+      "type": "object",
+      "properties": {
+        "UserIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "GroupID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AddGroupUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GroupUserInfo"
+          }
+        }
+      }
+    },
+    "v1AddUserLoginTimeRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AddUserLoginTimeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AddUsersToApplicationRequest": {
+      "type": "object",
+      "properties": {
+        "UserIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Original": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1AddUsersToApplicationResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1ApplicationUserInfo"
+          }
+        }
+      }
+    },
+    "v1ApplicationInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "ApplicationName": {
+          "type": "string"
+        },
+        "ApplicationOwner": {
+          "type": "string"
+        },
+        "HomepageUrl": {
+          "type": "string"
+        },
+        "RedirectUrl": {
+          "type": "string"
+        },
+        "ApplicationLogo": {
+          "type": "string"
+        },
+        "CreateAT": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdateAT": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ClientSecret": {
+          "type": "string"
+        },
+        "GoogleRecaptcha": {
+          "type": "boolean"
+        },
+        "SmsLogin": {
+          "type": "boolean"
+        },
+        "InvitationCodeMust": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ApplicationUserDetail": {
+      "type": "object",
+      "properties": {
+        "UserApplicationInfo": {
+          "$ref": "#/definitions/v1ApplicationUserInfo"
+        },
+        "UserGroupInfos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GroupUserInfo"
+          }
+        },
+        "UserRoleInfo": {
+          "$ref": "#/definitions/v1UserRole"
+        }
+      }
+    },
+    "v1ApplicationUserInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Original": {
+          "type": "boolean"
+        },
+        "KycVerify": {
+          "type": "boolean"
+        },
+        "GAVerify": {
+          "type": "boolean"
+        },
+        "GALogin": {
+          "type": "boolean"
+        },
+        "SMSLogin": {
+          "type": "boolean"
+        },
+        "LoginNumber": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreateAT": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateApplicationRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ApplicationInfo"
+        }
+      }
+    },
+    "v1CreateApplicationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ApplicationInfo"
+        }
+      }
+    },
+    "v1CreateGroupRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GroupInfo"
+        }
+      }
+    },
+    "v1CreateGroupResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GroupInfo"
+        }
+      }
+    },
+    "v1CreateResourceRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ResourceInfo"
+        }
+      }
+    },
+    "v1CreateResourceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ResourceInfo"
+        }
+      }
+    },
+    "v1CreateRoleRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RoleInfo"
+        }
+      }
+    },
+    "v1CreateRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RoleInfo"
+        }
+      }
+    },
+    "v1CreatorResource": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Creator": {
+          "type": "string"
+        },
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1ResourceInfo"
+          }
+        }
+      }
+    },
+    "v1CreatorRole": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Creator": {
+          "type": "string"
+        },
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RoleInfo"
+          }
+        }
+      }
+    },
+    "v1DeleteApplicationRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteApplicationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteGroupRequest": {
+      "type": "object",
+      "properties": {
+        "GroupID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteGroupResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteResourceRequest": {
+      "type": "object",
+      "properties": {
+        "ResourceID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteResourceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteRoleRequest": {
+      "type": "object",
+      "properties": {
+        "RoleID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAllGroupsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAllGroupsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GroupInfo"
+          }
+        }
+      }
+    },
+    "v1GetApplicationByOwnerRequest": {
+      "type": "object",
+      "properties": {
+        "Owner": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetApplicationByOwnerResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OwnerApplication"
+        }
+      }
+    },
+    "v1GetApplicationRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetApplicationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ApplicationInfo"
+        }
+      }
+    },
+    "v1GetApplicationUserDetailRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetApplicationUserDetailResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ApplicationUserDetail"
+        }
+      }
+    },
+    "v1GetApplicationsRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetApplicationsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1ApplicationInfo"
+          }
+        }
+      }
+    },
+    "v1GetGroupByOwnerRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Owner": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetGroupByOwnerResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OwnerGroup"
+        }
+      }
+    },
+    "v1GetGroupRequest": {
+      "type": "object",
+      "properties": {
+        "GroupID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetGroupResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GroupInfo"
+        }
+      }
+    },
+    "v1GetGroupUsersRequest": {
+      "type": "object",
+      "properties": {
+        "GroupID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetGroupUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GroupUserInfo"
+          }
+        }
+      }
+    },
+    "v1GetResourceByCreatorRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Creator": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetResourceByCreatorResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CreatorResource"
+        }
+      }
+    },
+    "v1GetResourceByNameRequest": {
+      "type": "object",
+      "properties": {
+        "ResourceName": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetResourceByNameResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ResourceInfo"
+        }
+      }
+    },
+    "v1GetResourceRequest": {
+      "type": "object",
+      "properties": {
+        "ResourceID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetResourceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ResourceInfo"
+        }
+      }
+    },
+    "v1GetResourcesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetResourcesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1ResourceInfo"
+          }
+        }
+      }
+    },
+    "v1GetRoleByCreatorRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Creator": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetRoleByCreatorResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CreatorRole"
+        }
+      }
+    },
+    "v1GetRoleRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RoleInfo"
+        }
+      }
+    },
+    "v1GetRoleUsersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetRoleUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RoleUserInfo"
+          }
+        }
+      }
+    },
+    "v1GetRolesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetRolesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RoleInfo"
+          }
+        }
+      }
+    },
+    "v1GetUserAppIDRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserAppIDResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1GetUserFromApplicationRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserFromApplicationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ApplicationUserInfo"
+        }
+      }
+    },
+    "v1GetUserGroupRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserGroupResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GroupUserInfo"
+          }
+        }
+      }
+    },
+    "v1GetUserRoleRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserRole"
+        }
+      }
+    },
+    "v1GetUsersFromApplicationRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUsersFromApplicationResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1ApplicationUserInfo"
+          }
+        }
+      }
+    },
+    "v1GroupInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "GroupName": {
+          "type": "string"
+        },
+        "GroupOwner": {
+          "type": "string"
+        },
+        "GroupLogo": {
+          "type": "string"
+        },
+        "Annotation": {
+          "type": "string"
+        },
+        "CreateAT": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdateAT": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GroupUserInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "GroupID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Annotation": {
+          "type": "string"
+        },
+        "CreateAT": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1OwnerApplication": {
+      "type": "object",
+      "properties": {
+        "Owner": {
+          "type": "string"
+        },
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1ApplicationInfo"
+          }
+        }
+      }
+    },
+    "v1OwnerGroup": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Owner": {
+          "type": "string"
+        },
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GroupInfo"
+          }
+        }
+      }
+    },
+    "v1PageInfo": {
+      "type": "object",
+      "properties": {
+        "PageIndex": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PageSize": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1RemoveGroupUsersRequest": {
+      "type": "object",
+      "properties": {
+        "UserIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "GroupID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1RemoveGroupUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1RemoveUsersFromApplicationRequest": {
+      "type": "object",
+      "properties": {
+        "UserIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1RemoveUsersFromApplicationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ResourceInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "ResourceName": {
+          "type": "string"
+        },
+        "ResourceDescription": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Creator": {
+          "type": "string"
+        },
+        "CreateAT": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdateAT": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1RoleInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "RoleName": {
+          "type": "string"
+        },
+        "Creator": {
+          "type": "string"
+        },
+        "CreateAT": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdateAT": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Annotation": {
+          "type": "string"
+        }
+      }
+    },
+    "v1RoleUserInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CreateAT": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1SetGALoginRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Set": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1SetGALoginResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SetSMSLoginRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Set": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1SetSMSLoginResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SetUserRoleRequest": {
+      "type": "object",
+      "properties": {
+        "UserIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SetUserRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RoleUserInfo"
+          }
+        }
+      }
+    },
+    "v1UnSetUserRoleRequest": {
+      "type": "object",
+      "properties": {
+        "UserIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UnSetUserRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateApplicationRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ApplicationInfo"
+        }
+      }
+    },
+    "v1UpdateApplicationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ApplicationInfo"
+        }
+      }
+    },
+    "v1UpdateGroupRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GroupInfo"
+        }
+      }
+    },
+    "v1UpdateGroupResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GroupInfo"
+        }
+      }
+    },
+    "v1UpdateResourceRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ResourceInfo"
+        }
+      }
+    },
+    "v1UpdateResourceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ResourceInfo"
+        }
+      }
+    },
+    "v1UpdateRoleRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RoleInfo"
+        }
+      }
+    },
+    "v1UpdateRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RoleInfo"
+        }
+      }
+    },
+    "v1UpdateUserGAStatusRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateUserGAStatusResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateUserKYCStatusRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateUserKYCStatusResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UserRole": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RoleInfo"
+          }
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      },
+      "title": "request body and response"
+    }
+  }
+}
