@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package cloud.hashing.goods.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/cloud-hashing-goods";
+option go_package = "github.com/NpoolPlatform/cloud-hashing-goods/message/npool";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -182,6 +182,49 @@ service CloudHashingGoods {
         };
     }
 
+    rpc CreateRecommend(CreateRecommendRequest) returns (CreateRecommendResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/recommend"
+            body: "*"
+        };
+    }
+    rpc UpdateRecommend(UpdateRecommendRequest) returns (UpdateRecommendResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/recommend"
+            body: "*"
+        };
+    }
+    rpc GetRecommendsByApp(GetRecommendsByAppRequest) returns (GetRecommendsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/recommends/by/app"
+            body: "*"
+        };
+    }
+    rpc GetRecommendsByRecommender(GetRecommendsByRecommenderRequest) returns (GetRecommendsByRecommenderResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/recommends/by/recommender"
+            body: "*"
+        };
+    }
+    rpc DeleteRecommend(DeleteRecommendRequest) returns (DeleteRecommendResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/recommend"
+            body: "*"
+        };
+    }
+    rpc GetRecommendGoodsByApp(GetRecommendGoodsByAppRequest) returns (GetRecommendGoodsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/recommend/goods/by/app"
+            body: "*"
+        };
+    }
+    rpc GetRecommendGoodsByRecommender(GetRecommendGoodsByRecommenderRequest) returns (GetRecommendGoodsByRecommenderResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/recommend/goods/by/recommender"
+            body: "*"
+        };
+    }
+
     rpc AuthorizeAppGood(AuthorizeAppGoodRequest) returns (AuthorizeAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/authorize/app/good"
@@ -326,6 +369,12 @@ service CloudHashingGoods {
             body: "*"
         };
     }
+    rpc GetFees(GetFeesRequest) returns (GetFeesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/fees"
+            body: "*"
+        };
+    }
 
     rpc CreateFeeType(CreateFeeTypeRequest) returns (CreateFeeTypeResponse) {
         option (google.api.http) = {
@@ -348,37 +397,6 @@ service CloudHashingGoods {
     rpc GetFeeTypes(GetFeeTypesRequest) returns (GetFeeTypesResponse) {
         option (google.api.http) = {
             post: "/v1/get/fee/types"
-            body: "*"
-        };
-    }
-
-    rpc CreateFeeDuration(CreateFeeDurationRequest) returns (CreateFeeDurationResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/fee/duration"
-            body: "*"
-        };
-    }
-    rpc UpdateFeeDuration(UpdateFeeDurationRequest) returns (UpdateFeeDurationResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/fee/duration"
-            body: "*"
-        };
-    }
-    rpc GetFeeDuration(GetFeeDurationRequest) returns (GetFeeDurationResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/fee/duration"
-            body: "*"
-        };
-    }
-    rpc GetFeeDurationsByFeeType(GetFeeDurationsByFeeTypeRequest) returns (GetFeeDurationsByFeeTypeResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/fee/durations/feetype"
-            body: "*"
-        };
-    }
-    rpc DeleteFeeDuration(DeleteFeeDurationRequest) returns (DeleteFeeDurationResponse) {
-        option (google.api.http) = {
-            post: "/v1/delete/fee/duration"
             body: "*"
         };
     }
@@ -634,8 +652,10 @@ message GetPriceCurrencysResponse {
 }
 
 message FeeDetail {
-    FeeType Fee = 1;
-    double Value = 2;
+    string ID = 1;
+    string AppID = 2;
+    FeeType Fee = 3;
+    double Value = 4;
 }
 
 message GoodDetail {
@@ -693,6 +713,75 @@ message GetGoodsRequest {
 message GetGoodsResponse {
     repeated GoodInfo Infos = 3300;
     int32 Total = 3301;
+}
+
+message Recommend {
+    string ID = 10;
+    string AppID = 20;
+    string GoodID = 30;
+    string RecommenderID = 40;
+    string Message = 50;
+}
+
+message CreateRecommendRequest {
+    Recommend Info = 10;
+}
+
+message CreateRecommendResponse {
+    Recommend Info = 10;
+}
+
+message UpdateRecommendRequest {
+    Recommend Info = 10;
+}
+
+message UpdateRecommendResponse {
+    Recommend Info = 10;
+}
+
+message GetRecommendsByAppRequest {
+    string AppID = 10;
+}
+
+message GetRecommendsByAppResponse {
+    repeated Recommend Infos = 10;
+}
+
+message GetRecommendsByRecommenderRequest {
+    string UserID = 10;
+}
+
+message GetRecommendsByRecommenderResponse {
+    repeated Recommend Infos = 10;
+}
+
+message DeleteRecommendRequest {
+    string ID = 10;
+}
+
+message DeleteRecommendResponse {
+    Recommend Info = 10;
+}
+
+message RecommendGood {
+    Recommend Recommend = 10;
+    GoodDetail Good = 20;
+}
+
+message GetRecommendGoodsByAppRequest {
+    string AppID = 10;
+}
+
+message GetRecommendGoodsByAppResponse {
+    repeated RecommendGood Infos = 10;
+}
+
+message GetRecommendGoodsByRecommenderRequest {
+    string UserID = 10;
+}
+
+message GetRecommendGoodsByRecommenderResponse {
+    repeated RecommendGood Infos = 10;
 }
 
 message AppGoodInfo {
@@ -982,48 +1071,10 @@ message GetFeeResponse {
     Fee Info = 1;
 }
 
-message FeeDuration {
-    string ID = 1;
-    string FeeTypeID = 2;
-    int32 Duration = 3;
+message GetFeesRequest {
+    PageInfo PageInfo = 1;
 }
 
-message CreateFeeDurationRequest {
-    FeeDuration Info = 1;
-}
-
-message CreateFeeDurationResponse {
-    FeeDuration Info = 1;
-}
-
-message UpdateFeeDurationRequest {
-    FeeDuration Info = 1;
-}
-
-message UpdateFeeDurationResponse {
-    FeeDuration Info = 1;
-}
-
-message GetFeeDurationRequest {
-    string ID = 1;
-}
-
-message GetFeeDurationResponse {
-    FeeDuration Info = 1;
-}
-
-message GetFeeDurationsByFeeTypeRequest {
-    string FeeTypeID = 1;
-}
-
-message GetFeeDurationsByFeeTypeResponse {
-    repeated FeeDuration Infos = 1;
-}
-
-message DeleteFeeDurationRequest {
-    string ID = 1;
-}
-
-message DeleteFeeDurationResponse {
-    FeeDuration Info = 1;
+message GetFeesResponse {
+    repeated Fee Infos = 1;
 }
