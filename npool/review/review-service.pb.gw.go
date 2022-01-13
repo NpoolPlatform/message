@@ -2,11 +2,11 @@
 // source: npool/review/review-service.proto
 
 /*
-Package review_service is a reverse proxy.
+Package review is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package review_service
+package review
 
 import (
 	"context"
