@@ -8,11 +8,14 @@ import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as CloudHashingGoodsV1Cloud-hashing-goods from "../cloud-hashing-goods/cloud-hashing-goods.pb"
 import * as CloudHashingOrderV1Cloud-hashing-order from "../cloud-hashing-order/cloud-hashing-order.pb"
+import * as SphinxCoininfoV1Coininfo from "../coininfo/coininfo.pb"
 import * as NpoolV1Npool from "../npool.pb"
 import * as ReviewServiceV1Review-service from "../review-service/review-service.pb"
 import * as UserV1User-management from "../user/user-management.pb"
 export type Good = {
   Good?: CloudHashingGoodsV1Cloud-hashing-goods.GoodDetail
+  Main?: SphinxCoininfoV1Coininfo.CoinInfo
+  SupportedCoins?: SphinxCoininfoV1Coininfo.CoinInfo[]
   Review?: ReviewServiceV1Review-service.Review
 }
 

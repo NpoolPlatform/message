@@ -673,6 +673,38 @@
         }
       }
     },
+    "v1CoinInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "PreSale": {
+          "type": "boolean"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "ReservedAmount": {
+          "type": "number",
+          "format": "double"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1Compensate": {
       "type": "object",
       "properties": {
@@ -853,6 +885,15 @@
       "properties": {
         "Good": {
           "$ref": "#/definitions/v1GoodDetail"
+        },
+        "Main": {
+          "$ref": "#/definitions/v1CoinInfo"
+        },
+        "SupportedCoins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinInfo"
+          }
         },
         "Review": {
           "$ref": "#/definitions/v1Review"

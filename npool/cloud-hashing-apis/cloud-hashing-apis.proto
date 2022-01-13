@@ -12,6 +12,7 @@ import "npool/cloud-hashing-goods/cloud-hashing-goods.proto";
 import "npool/cloud-hashing-order/cloud-hashing-order.proto";
 import "npool/review-service/review-service.proto";
 import "npool/user/user-management.proto";
+import "npool/coininfo/coininfo.proto";
 
 // Cloud Hashing Goods
 service CloudHashingApis {
@@ -104,7 +105,9 @@ service CloudHashingApis {
 // Request body and response
 message Good {
     cloud.hashing.goods.v1.GoodDetail Good = 10;
-    review.service.v1.Review Review = 20;
+    sphinx.coininfo.v1.CoinInfo Main = 20;
+    repeated sphinx.coininfo.v1.CoinInfo SupportedCoins = 30;
+    review.service.v1.Review Review = 40;
 }
 
 message RecommendGood {
