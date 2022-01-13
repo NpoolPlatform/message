@@ -107,6 +107,38 @@
         ]
       }
     },
+    "/v1/get/review/rule/by/domain/object/type": {
+      "post": {
+        "operationId": "ReviewService_GetReviewRuleByDomainObjectType",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetReviewRuleByDomainObjectTypeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetReviewRuleByDomainObjectTypeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ReviewService"
+        ]
+      }
+    },
     "/v1/get/review/rules/by/domain": {
       "post": {
         "operationId": "ReviewService_GetReviewRulesByDomain",
@@ -139,6 +171,38 @@
         ]
       }
     },
+    "/v1/get/reviews/by/app/domain": {
+      "post": {
+        "operationId": "ReviewService_GetReviewsByAppDomain",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetReviewsByAppDomainResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetReviewsByAppDomainRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ReviewService"
+        ]
+      }
+    },
     "/v1/get/reviews/by/domain": {
       "post": {
         "operationId": "ReviewService_GetReviewsByDomain",
@@ -163,6 +227,70 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetReviewsByDomainRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ReviewService"
+        ]
+      }
+    },
+    "/v1/submit/review": {
+      "post": {
+        "operationId": "ReviewService_SubmitReview",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SubmitReviewResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SubmitReviewRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ReviewService"
+        ]
+      }
+    },
+    "/v1/submit/review/result": {
+      "post": {
+        "operationId": "ReviewService_SubmitReviewResult",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SubmitReviewResultResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SubmitReviewResultRequest"
             }
           }
         ],
@@ -335,6 +463,25 @@
         }
       }
     },
+    "v1GetReviewRuleByDomainObjectTypeRequest": {
+      "type": "object",
+      "properties": {
+        "Domain": {
+          "type": "string"
+        },
+        "ObjectType": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetReviewRuleByDomainObjectTypeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ReviewRule"
+        }
+      }
+    },
     "v1GetReviewRuleRequest": {
       "type": "object",
       "properties": {
@@ -370,6 +517,28 @@
         }
       }
     },
+    "v1GetReviewsByAppDomainRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Domain": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetReviewsByAppDomainResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Review"
+          }
+        }
+      }
+    },
     "v1GetReviewsByDomainRequest": {
       "type": "object",
       "properties": {
@@ -395,7 +564,10 @@
         "ID": {
           "type": "string"
         },
-        "EntityType": {
+        "ObjectType": {
+          "type": "string"
+        },
+        "AppID": {
           "type": "string"
         },
         "ReviewerID": {
@@ -421,7 +593,7 @@
         "ID": {
           "type": "string"
         },
-        "EntityType": {
+        "ObjectType": {
           "type": "string"
         },
         "Domain": {
@@ -429,6 +601,38 @@
         },
         "Rules": {
           "type": "string"
+        }
+      }
+    },
+    "v1SubmitReviewRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Review"
+        }
+      }
+    },
+    "v1SubmitReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Review"
+        }
+      }
+    },
+    "v1SubmitReviewResultRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Review"
+        }
+      }
+    },
+    "v1SubmitReviewResultResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Review"
         }
       }
     },

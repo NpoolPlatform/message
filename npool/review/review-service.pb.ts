@@ -12,7 +12,8 @@ export type VersionResponse = {
 
 export type Review = {
   ID?: string
-  EntityType?: string
+  ObjectType?: string
+  AppID?: string
   ReviewerID?: string
   State?: string
   Message?: string
@@ -44,9 +45,26 @@ export type GetReviewsByDomainResponse = {
   Infos?: Review[]
 }
 
+export type GetReviewsByAppDomainRequest = {
+  AppID?: string
+  Domain?: string
+}
+
+export type GetReviewsByAppDomainResponse = {
+  Infos?: Review[]
+}
+
+export type SubmitReviewRequest = {
+  Info?: Review
+}
+
+export type SubmitReviewResponse = {
+  Info?: Review
+}
+
 export type ReviewRule = {
   ID?: string
-  EntityType?: string
+  ObjectType?: string
   Domain?: string
   Rules?: string
 }
@@ -83,6 +101,23 @@ export type GetReviewRulesByDomainResponse = {
   Infos?: ReviewRule[]
 }
 
+export type GetReviewRuleByDomainObjectTypeRequest = {
+  Domain?: string
+  ObjectType?: string
+}
+
+export type GetReviewRuleByDomainObjectTypeResponse = {
+  Info?: ReviewRule
+}
+
+export type SubmitReviewResultRequest = {
+  Info?: Review
+}
+
+export type SubmitReviewResultResponse = {
+  Info?: Review
+}
+
 export class ReviewService {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -96,6 +131,15 @@ export class ReviewService {
   static GetReviewsByDomain(req: GetReviewsByDomainRequest, initReq?: fm.InitReq): Promise<GetReviewsByDomainResponse> {
     return fm.fetchReq<GetReviewsByDomainRequest, GetReviewsByDomainResponse>(`/v1/get/reviews/by/domain`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetReviewsByAppDomain(req: GetReviewsByAppDomainRequest, initReq?: fm.InitReq): Promise<GetReviewsByAppDomainResponse> {
+    return fm.fetchReq<GetReviewsByAppDomainRequest, GetReviewsByAppDomainResponse>(`/v1/get/reviews/by/app/domain`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static SubmitReview(req: SubmitReviewRequest, initReq?: fm.InitReq): Promise<SubmitReviewResponse> {
+    return fm.fetchReq<SubmitReviewRequest, SubmitReviewResponse>(`/v1/submit/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static SubmitReviewResult(req: SubmitReviewResultRequest, initReq?: fm.InitReq): Promise<SubmitReviewResultResponse> {
+    return fm.fetchReq<SubmitReviewResultRequest, SubmitReviewResultResponse>(`/v1/submit/review/result`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static CreateReviewRule(req: CreateReviewRuleRequest, initReq?: fm.InitReq): Promise<CreateReviewRuleResponse> {
     return fm.fetchReq<CreateReviewRuleRequest, CreateReviewRuleResponse>(`/v1/create/review/rule`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -107,5 +151,8 @@ export class ReviewService {
   }
   static GetReviewRulesByDomain(req: GetReviewRulesByDomainRequest, initReq?: fm.InitReq): Promise<GetReviewRulesByDomainResponse> {
     return fm.fetchReq<GetReviewRulesByDomainRequest, GetReviewRulesByDomainResponse>(`/v1/get/review/rules/by/domain`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetReviewRuleByDomainObjectType(req: GetReviewRuleByDomainObjectTypeRequest, initReq?: fm.InitReq): Promise<GetReviewRuleByDomainObjectTypeResponse> {
+    return fm.fetchReq<GetReviewRuleByDomainObjectTypeRequest, GetReviewRuleByDomainObjectTypeResponse>(`/v1/get/review/rule/by/domain/object/type`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
