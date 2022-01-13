@@ -1,0 +1,1055 @@
+syntax = "proto3";
+
+package cloud.hashing.inspire.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/cloud-hashing-inspire";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+// Service Name
+service CloudHashingInspire {
+    // Method Version
+    rpc Version (google.protobuf.Empty) returns (VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+
+    rpc CreateNewUserRewardSetting(CreateNewUserRewardSettingRequest) returns (CreateNewUserRewardSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/new/user/reward/setting"
+            body: "*"
+        };
+    }
+    rpc GetNewUserRewardSetting(GetNewUserRewardSettingRequest) returns (GetNewUserRewardSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/new/user/reward/setting"
+            body: "*"
+        };
+    }
+    rpc GetNewUserRewardSettingDetail(GetNewUserRewardSettingDetailRequest) returns (GetNewUserRewardSettingDetailResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/new/user/reward/setting/detail"
+            body: "*"
+        };
+    }
+    rpc GetNewUserRewardSettingByApp(GetNewUserRewardSettingByAppRequest) returns (GetNewUserRewardSettingByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/new/user/reward/setting/by/app"
+            body: "*"
+        };
+    }
+    rpc UpdateNewUserRewardSetting(UpdateNewUserRewardSettingRequest) returns (UpdateNewUserRewardSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/update/user/reward/setting"
+            body: "*"
+        };
+    }
+
+    rpc CreateAgencySetting(CreateAgencySettingRequest) returns (CreateAgencySettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/agency/setting"
+            body: "*"
+        };
+    }
+    rpc GetAgencySetting(GetAgencySettingRequest) returns (GetAgencySettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/agency/setting"
+            body: "*"
+        };
+    }
+    rpc GetAgencySettingByApp(GetAgencySettingByAppRequest) returns (GetAgencySettingByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/agency/setting/by/app"
+            body: "*"
+        };
+    }
+    rpc UpdateAgencySetting(UpdateAgencySettingRequest) returns (UpdateAgencySettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/agency/setting"
+            body: "*"
+        };
+    }
+    rpc GetAgencySettingDetail(GetAgencySettingDetailRequest) returns (GetAgencySettingDetailResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/agency/setting/detail"
+            body: "*"
+        };
+    }
+    rpc GetAgencySettingDetailByApp(GetAgencySettingDetailByAppRequest) returns (GetAgencySettingDetailByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/agency/setting/detail/by/app"
+            body: "*"
+        };
+    }
+
+    rpc CreatePurchaseInvitation(CreatePurchaseInvitationRequest) returns (CreatePurchaseInvitationResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/purchase/invitation"
+            body: "*"
+        };
+    }
+    rpc UpdatePurchaseInvitation(UpdatePurchaseInvitationRequest) returns (UpdatePurchaseInvitationResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/purchase/invitation"
+            body: "*"
+        };
+    }
+    rpc GetPurchaseInvitation(GetPurchaseInvitationRequest) returns (GetPurchaseInvitationResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/purchase/invitation"
+            body: "*"
+        };
+    }
+    rpc GetPurchaseInvitationsByApp(GetPurchaseInvitationsByAppRequest) returns (GetPurchaseInvitationsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/purchase/invitations/by/app"
+            body: "*"
+        };
+    }
+    rpc GetPurchaseInvitationByAppOrder(GetPurchaseInvitationByAppOrderRequest) returns (GetPurchaseInvitationByAppOrderResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/purchase/invitation/by/app/order"
+            body: "*"
+        };
+    }
+
+    rpc CreateRegistrationInvitation(CreateRegistrationInvitationRequest) returns (CreateRegistrationInvitationResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/registration/invitation"
+            body: "*"
+        };
+    }
+    rpc UpdateRegistrationInvitation(UpdateRegistrationInvitationRequest) returns (UpdateRegistrationInvitationResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/registration/invitation"
+            body: "*"
+        };
+    }
+    rpc GetRegistrationInvitation(GetRegistrationInvitationRequest) returns (GetRegistrationInvitationResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/registration/invitation"
+            body: "*"
+        };
+    }
+    rpc GetRegistrationInvitationsByApp(GetRegistrationInvitationsByAppRequest) returns (GetRegistrationInvitationsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/registration/invitations/by/app"
+            body: "*"
+        };
+    }
+    rpc GetRegistrationInvitationsByAppInviter(GetRegistrationInvitationsByAppInviterRequest) returns (GetRegistrationInvitationsByAppInviterResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/registration/invitations/by/app/inviter"
+            body: "*"
+        };
+    }
+    rpc GetRegistrationInvitationByAppInvitee(GetRegistrationInvitationByAppInviteeRequest) returns (GetRegistrationInvitationByAppInviteeResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/registration/invitations/by/app/invitee"
+            body: "*"
+        };
+    }
+
+    rpc CreateUserInvitationCode(CreateUserInvitationCodeRequest) returns (CreateUserInvitationCodeResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/invitation/code"
+            body: "*"
+        };
+    }
+    rpc GetUserInvitationCode(GetUserInvitationCodeRequest) returns (GetUserInvitationCodeResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/invitation/code"
+            body: "*"
+        };
+    }
+    rpc GetUserInvitationCodeByAppUser(GetUserInvitationCodeByAppUserRequest) returns (GetUserInvitationCodeByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/invitation/code/by/app/user"
+            body: "*"
+        };
+    }
+    rpc GetUserInvitationCodeByCode(GetUserInvitationCodeByCodeRequest) returns (GetUserInvitationCodeByCodeResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/invitation/code/by/code"
+            body: "*"
+        };
+    }
+
+    rpc CreateCouponAllocated(CreateCouponAllocatedRequest) returns (CreateCouponAllocatedResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/coupon/allocated"
+            body: "*"
+        };
+    }
+    rpc GetCouponAllocated(GetCouponAllocatedRequest) returns (GetCouponAllocatedResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coupon/allocated"
+            body: "*"
+        };
+    }
+    rpc GetCouponsAllocatedByApp(GetCouponsAllocatedByAppRequest) returns (GetCouponsAllocatedByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coupons/allocated/by/app"
+            body: "*"
+        };
+    }
+    rpc GetCouponsAllocatedByAppUser(GetCouponsAllocatedByAppUserRequest) returns (GetCouponsAllocatedByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coupons/allocated/by/app/user"
+            body: "*"
+        };
+    }
+    rpc UpdateCouponAllocated(UpdateCouponAllocatedRequest) returns (UpdateCouponAllocatedResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/coupon/allocated"
+            body: "*"
+        };
+    }
+    rpc GetCouponAllocatedDetail(GetCouponAllocatedDetailRequest) returns (GetCouponAllocatedDetailResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coupon/allocated/detail"
+            body: "*"
+        };
+    }
+    rpc GetCouponsAllocatedDetailByApp(GetCouponsAllocatedDetailByAppRequest) returns (GetCouponsAllocatedDetailByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coupons/allocated/detail/by/app"
+            body: "*"
+        };
+    }
+    rpc GetCouponsAllocatedDetailByAppUser(GetCouponsAllocatedDetailByAppUserRequest) returns (GetCouponsAllocatedDetailByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coupons/allocated/detail/by/app/user"
+            body: "*"
+        };
+    }
+
+    rpc CreateCouponPool(CreateCouponPoolRequest) returns (CreateCouponPoolResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/coupon/pool"
+            body: "*"
+        };
+    }
+    rpc UpdateCouponPool(UpdateCouponPoolRequest) returns (UpdateCouponPoolResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/coupon/pool"
+            body: "*"
+        };
+    }
+    rpc GetCouponPool(GetCouponPoolRequest) returns (GetCouponPoolResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coupon/pool"
+            body: "*"
+        };
+    }
+    rpc GetCouponPoolsByApp(GetCouponPoolsByAppRequest) returns (GetCouponPoolsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coupon/pools/by/app"
+            body: "*"
+        };
+    }
+    rpc GetCouponPoolsByAppReleaser(GetCouponPoolsByAppReleaserRequest) returns (GetCouponPoolsByAppReleaserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coupon/pools/by/app/releaser"
+            body: "*"
+        };
+    }
+
+    rpc CreateDiscountPool(CreateDiscountPoolRequest) returns (CreateDiscountPoolResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/discount/pool"
+            body: "*"
+        };
+    }
+    rpc UpdateDiscountPool(UpdateDiscountPoolRequest) returns (UpdateDiscountPoolResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/discount/pool"
+            body: "*"
+        };
+    }
+    rpc GetDiscountPool(GetDiscountPoolRequest) returns (GetDiscountPoolResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/discount/pool"
+            body: "*"
+        };
+    }
+    rpc GetDiscountPoolsByApp(GetDiscountPoolsByAppRequest) returns (GetDiscountPoolsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/discount/pools/by/app"
+            body: "*"
+        };
+    }
+    rpc GetDiscountPoolsByAppReleaser(GetDiscountPoolsByAppReleaserRequest) returns (GetDiscountPoolsByAppReleaserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/discount/pools/by/app/releaser"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppCouponSetting(CreateAppCouponSettingRequest) returns (CreateAppCouponSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/coupon/setting"
+            body: "*"
+        };
+    }
+    rpc GetAppCouponSetting(GetAppCouponSettingRequest) returns (GetAppCouponSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/coupon/setting"
+            body: "*"
+        };
+    }
+    rpc GetAppCouponSettingByApp(GetAppCouponSettingByAppRequest) returns (GetAppCouponSettingByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/coupon/setting/by/app"
+            body: "*"
+        };
+    }
+    rpc UpdateAppCouponSetting(UpdateAppCouponSettingRequest) returns (UpdateAppCouponSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/coupon/setting"
+            body: "*"
+        };
+    }
+
+    rpc CreateDefaultKpiSetting(CreateDefaultKpiSettingRequest) returns (CreateDefaultKpiSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/default/kpi/setting"
+            body: "*"
+        };
+    }
+    rpc GetDefaultKpiSetting(GetDefaultKpiSettingRequest) returns (GetDefaultKpiSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/default/kpi/setting"
+            body: "*"
+        };
+    }
+    rpc GetDefaultKpiSettingByAppGood(GetDefaultKpiSettingByAppGoodRequest) returns (GetDefaultKpiSettingByAppGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/default/kpi/setting/by/app/good"
+            body: "*"
+        };
+    }
+    rpc UpdateDefaultKpiSetting(UpdateDefaultKpiSettingRequest) returns (UpdateDefaultKpiSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/default/kpi/setting"
+            body: "*"
+        };
+    }
+
+    rpc CreateUserKpiSetting(CreateUserKpiSettingRequest) returns (CreateUserKpiSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/kpi/setting"
+            body: "*"
+        };
+    }
+    rpc GetUserKpiSetting(GetUserKpiSettingRequest) returns (GetUserKpiSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/kpi/setting"
+            body: "*"
+        };
+    }
+    rpc GetUserKpiSettingByAppGood(GetUserKpiSettingByAppGoodRequest) returns (GetUserKpiSettingByAppGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/kpi/setting/by/app/good"
+            body: "*"
+        };
+    }
+    rpc UpdateUserKpiSetting(UpdateUserKpiSettingRequest) returns (UpdateUserKpiSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user/kpi/setting"
+            body: "*"
+        };
+    }
+
+    rpc CreateUserSpecialReduction(CreateUserSpecialReductionRequest) returns (CreateUserSpecialReductionResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/special/reduction"
+            body: "*"
+        };
+    }
+    rpc GetUserSpecialReduction(GetUserSpecialReductionRequest) returns (GetUserSpecialReductionResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/special/reduction"
+            body: "*"
+        };
+    }
+    rpc GetUserSpecialReductionsByApp(GetUserSpecialReductionsByAppRequest) returns (GetUserSpecialReductionsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/special/reductions/by/app"
+            body: "*"
+        };
+    }
+    rpc GetUserSpecialReductionsByAppReleaser(GetUserSpecialReductionsByAppReleaserRequest) returns (GetUserSpecialReductionsByAppReleaserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/special/reductions/by/app/releaser"
+            body: "*"
+        };
+    }
+    rpc GetUserSpecialReductionsByAppUser(GetUserSpecialReductionsByAppUserRequest) returns (GetUserSpecialReductionsByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/special/reductions/by/app/user"
+            body: "*"
+        };
+    }
+    rpc UpdateUserSpecialReduction(UpdateUserSpecialReductionRequest) returns (UpdateUserSpecialReductionResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user/special/reduction"
+            body: "*"
+        };
+    }
+}
+
+// request body and response
+message VersionResponse {
+    string Info = 100;
+}
+
+message NewUserRewardSetting {
+    string ID = 200;
+    string AppID = 201;
+    string RegistrationCouponID = 202;
+    string KycCouponID = 203;
+    bool AutoGenerateInvitationCode = 204;
+}
+
+message CreateNewUserRewardSettingRequest {
+    NewUserRewardSetting Info = 300;
+}
+
+message CreateNewUserRewardSettingResponse {
+    NewUserRewardSetting Info = 400;
+}
+
+message GetNewUserRewardSettingRequest {
+    string ID = 500;
+}
+
+message GetNewUserRewardSettingResponse {
+    NewUserRewardSetting Info = 600;
+}
+
+message GetNewUserRewardSettingByAppRequest {
+    string AppID = 700;
+}
+
+message GetNewUserRewardSettingByAppResponse {
+    NewUserRewardSetting Info = 800;
+}
+
+message UpdateNewUserRewardSettingRequest {
+    NewUserRewardSetting Info = 900;
+}
+
+message UpdateNewUserRewardSettingResponse {
+    NewUserRewardSetting Info = 1000;
+}
+
+message AgencySetting {
+    string ID = 1100;
+    string AppID = 1101;
+    string GoodID = 1102;
+    int32 RegistrationRewardThreshold = 1103;
+    string RegistrationCouponID = 1104;
+    int32 KycRewardThreshold = 1105;
+    string KycCouponID = 1106;
+    int32 TotalPurchaseRewardPercent = 1107;
+    int32 PurchaseRewardChainLevels = 1108;
+    int32 LevelPurchaseRewardPercent = 1109;
+}
+
+message CreateAgencySettingRequest {
+    AgencySetting Info = 1200;
+}
+
+message CreateAgencySettingResponse {
+    AgencySetting Info = 1300;
+}
+
+message GetAgencySettingRequest {
+    string ID = 1400;
+}
+
+message GetAgencySettingResponse {
+    AgencySetting Info = 1500;
+}
+
+message GetAgencySettingByAppRequest {
+    string AppID = 1600;
+}
+
+message GetAgencySettingByAppResponse {
+    AgencySetting Info = 1700;
+}
+
+message UpdateAgencySettingRequest {
+    AgencySetting Info = 1800;
+}
+
+message UpdateAgencySettingResponse {
+    AgencySetting Info = 1900;
+}
+
+message PurchaseInvitation {
+    string ID = 2000;
+    string AppID = 2001;
+    string OrderID = 2002;
+    string InvitationCodeID = 2003;
+}
+
+message CreatePurchaseInvitationRequest {
+    PurchaseInvitation Info = 2100;
+}
+
+message CreatePurchaseInvitationResponse {
+    PurchaseInvitation Info = 2200;
+}
+
+message UpdatePurchaseInvitationRequest {
+    PurchaseInvitation Info = 2210;
+}
+
+message UpdatePurchaseInvitationResponse {
+    PurchaseInvitation Info = 2220;
+}
+
+message GetPurchaseInvitationRequest {
+    string ID = 2300;
+}
+
+message GetPurchaseInvitationResponse {
+    PurchaseInvitation Info = 2400;
+}
+
+message GetPurchaseInvitationsByAppRequest {
+    string AppID = 2500;
+}
+
+message GetPurchaseInvitationsByAppResponse {
+    repeated PurchaseInvitation Infos = 2600;
+}
+
+message GetPurchaseInvitationByAppOrderRequest {
+    string AppID = 2700;
+    string OrderID = 2701;
+}
+
+message GetPurchaseInvitationByAppOrderResponse {
+    PurchaseInvitation Info = 2800;
+}
+
+message RegistrationInvitation {
+    string ID = 2900;
+    string AppID = 2901;
+    string InviterID = 2902;
+    string InviteeID = 2903;
+    uint32 CreateAt = 2904;
+}
+
+message CreateRegistrationInvitationRequest {
+    RegistrationInvitation Info = 2100;
+}
+
+message CreateRegistrationInvitationResponse {
+    RegistrationInvitation Info = 2200;
+}
+
+message UpdateRegistrationInvitationRequest {
+    RegistrationInvitation Info = 2210;
+}
+
+message UpdateRegistrationInvitationResponse {
+    RegistrationInvitation Info = 2220;
+}
+
+message GetRegistrationInvitationRequest {
+    string ID = 2300;
+}
+
+message GetRegistrationInvitationResponse {
+    RegistrationInvitation Info = 2400;
+}
+
+message GetRegistrationInvitationsByAppRequest {
+    string AppID = 2500;
+}
+
+message GetRegistrationInvitationsByAppResponse {
+    repeated RegistrationInvitation Infos = 2600;
+}
+
+message GetRegistrationInvitationsByAppInviterRequest {
+    string AppID = 2700;
+    string InviterID = 2701;
+}
+
+message GetRegistrationInvitationsByAppInviterResponse {
+    repeated RegistrationInvitation Infos = 2800;
+}
+
+message GetRegistrationInvitationByAppInviteeRequest {
+    string AppID = 2700;
+    string InviteeID = 2701;
+}
+
+message GetRegistrationInvitationByAppInviteeResponse {
+    RegistrationInvitation Info = 2800;
+}
+
+message UserInvitationCode {
+    string ID = 2900;
+    string UserID = 2901;
+    string AppID = 2902;
+    string InvitationCode = 2903;
+}
+
+message CreateUserInvitationCodeRequest {
+    UserInvitationCode Info = 3000;
+}
+
+message CreateUserInvitationCodeResponse {
+    UserInvitationCode Info = 3100;
+}
+
+message GetUserInvitationCodeRequest {
+    string ID = 3200;
+}
+
+message GetUserInvitationCodeResponse {
+    UserInvitationCode Info = 3300;
+}
+
+message GetUserInvitationCodeByAppUserRequest {
+    string AppID = 3400;
+    string UserID = 3401;
+}
+
+message GetUserInvitationCodeByAppUserResponse {
+    UserInvitationCode Info = 3500;
+}
+
+message GetUserInvitationCodeByCodeRequest {
+    string Code = 3510;
+}
+
+message GetUserInvitationCodeByCodeResponse {
+    UserInvitationCode Info = 3520;
+}
+
+message CouponAllocated {
+    string ID = 3600;
+    string UserID = 3601;
+    string AppID = 3602;
+    string Type = 3603;
+    string CouponID = 3605;
+}
+
+message CreateCouponAllocatedRequest {
+    CouponAllocated Info = 3700;
+}
+
+message CreateCouponAllocatedResponse {
+    CouponAllocated Info = 3700;
+}
+
+message GetCouponAllocatedRequest {
+    string ID = 3800;
+}
+
+message GetCouponAllocatedResponse {
+    CouponAllocated Info = 3900;
+}
+
+message GetCouponsAllocatedByAppRequest {
+    string AppID = 4000;
+}
+
+message GetCouponsAllocatedByAppResponse {
+    repeated CouponAllocated Infos = 4100;
+}
+
+message GetCouponsAllocatedByAppUserRequest {
+    string AppID = 4200;
+    string UserID = 4201;
+}
+
+message GetCouponsAllocatedByAppUserResponse {
+    repeated CouponAllocated Infos = 4300;
+}
+
+message UpdateCouponAllocatedRequest {
+    CouponAllocated Info = 4400;
+}
+
+message UpdateCouponAllocatedResponse {
+    CouponAllocated Info = 4500;
+}
+
+message CouponPool {
+    string ID = 4600;
+    string AppID = 4601;
+    string ReleaseByUserID = 4602;
+    double Denomination = 4603;
+    int32 Circulation = 4604;
+    uint32 Start = 4605;
+    int32 DurationDays = 4606;
+    string Message = 4607;
+    string Name = 4608;
+}
+
+message CreateCouponPoolRequest {
+    CouponPool Info = 4700;
+}
+
+message CreateCouponPoolResponse {
+    CouponPool Info = 4800;
+}
+
+message UpdateCouponPoolRequest {
+    CouponPool Info = 4810;
+}
+
+message UpdateCouponPoolResponse {
+    CouponPool Info = 4820;
+}
+
+message GetCouponPoolRequest {
+    string ID = 4900;
+}
+
+message GetCouponPoolResponse {
+    CouponPool Info = 5000;
+}
+
+message GetCouponPoolsByAppRequest {
+    string AppID = 5100;
+}
+
+message GetCouponPoolsByAppResponse {
+    repeated CouponPool Infos = 5200;
+}
+
+message GetCouponPoolsByAppReleaserRequest {
+    string AppID = 5300;
+    string UserID = 5301;
+}
+
+message GetCouponPoolsByAppReleaserResponse {
+    repeated CouponPool Infos = 5400;
+}
+
+message NewUserRewardSettingDetail {
+    string ID = 5410;
+    string AppID = 5411;
+    bool AutoGenerateInvitationCode = 5412;
+    CouponPool RegistrationCoupon = 5413;
+    CouponPool KycCoupon = 5414;
+}
+
+message GetNewUserRewardSettingDetailRequest {
+    string ID = 5420;
+}
+
+message GetNewUserRewardSettingDetailResponse {
+    NewUserRewardSettingDetail Info = 5430;
+}
+
+message AppCouponSetting {
+    string ID = 5500;
+    string AppID = 5501;
+    double DominationLimit = 5502;
+    int32 TotalLimit = 5503;
+}
+
+message CreateAppCouponSettingRequest {
+    AppCouponSetting Info = 5600;
+}
+
+message CreateAppCouponSettingResponse {
+    AppCouponSetting Info = 5700;
+}
+
+message GetAppCouponSettingRequest {
+    string ID = 5800;
+}
+
+message GetAppCouponSettingResponse {
+    AppCouponSetting Info = 5900;
+}
+
+message GetAppCouponSettingByAppRequest {
+    string AppID = 6000;
+}
+
+message GetAppCouponSettingByAppResponse {
+    AppCouponSetting Info = 6100;
+}
+
+message UpdateAppCouponSettingRequest {
+    AppCouponSetting Info = 6200;
+}
+
+message UpdateAppCouponSettingResponse {
+    AppCouponSetting Info = 6200;
+}
+
+message DefaultKpiSetting {
+    string ID = 6300;
+    string AppID = 6301;
+    string GoodID = 6302;
+    double Amount = 6303;
+    int32 Percent = 6304;
+}
+
+message CreateDefaultKpiSettingRequest {
+    DefaultKpiSetting Info = 6400;
+}
+
+message CreateDefaultKpiSettingResponse {
+    DefaultKpiSetting Info = 6500;
+}
+
+message GetDefaultKpiSettingRequest {
+    string ID = 6600;
+}
+
+message GetDefaultKpiSettingResponse {
+    DefaultKpiSetting Info = 6700;
+}
+
+message GetDefaultKpiSettingByAppGoodRequest {
+    string AppID = 6800;
+    string GoodID = 6801;
+}
+
+message GetDefaultKpiSettingByAppGoodResponse {
+    DefaultKpiSetting Info = 6900;
+}
+
+message UpdateDefaultKpiSettingRequest {
+    DefaultKpiSetting Info = 7000;
+}
+
+message UpdateDefaultKpiSettingResponse {
+    DefaultKpiSetting Info = 7100;
+}
+
+message UserKpiSetting {
+    string ID = 7200;
+    string AppID = 7201;
+    string UserID = 7202;
+    string GoodID = 7203;
+    double Amount = 7204;
+    int32 Percent = 7205;
+}
+
+message CreateUserKpiSettingRequest {
+    UserKpiSetting Info = 7300;
+}
+
+message CreateUserKpiSettingResponse {
+    UserKpiSetting Info = 7400;
+}
+
+message GetUserKpiSettingRequest {
+    string ID = 7500;
+}
+
+message GetUserKpiSettingResponse {
+    UserKpiSetting Info = 7600;
+}
+
+message GetUserKpiSettingByAppGoodRequest {
+    string AppID = 7700;
+    string GoodID = 7701;
+}
+
+message GetUserKpiSettingByAppGoodResponse {
+    UserKpiSetting Info = 7800;
+}
+
+message UpdateUserKpiSettingRequest {
+    UserKpiSetting Info = 7900;
+}
+
+message UpdateUserKpiSettingResponse {
+    UserKpiSetting Info = 8000;
+}
+
+message AgencySettingDetail {
+    string ID = 9000;
+    string AppID = 9001;
+    string GoodID = 9002;
+    int32 RegistrationRewardThreshold = 9003;
+    CouponPool RegistrationCoupon = 9004;
+    int32 KycRewardThreshold = 9005;
+    CouponPool KycCoupon = 9006;
+    int32 TotalPurchaseRewardPercent = 9007;
+    int32 PurchaseRewardChainLevels = 9008;
+    int32 LevelPurchaseRewardPercent = 9009;
+}
+
+message GetAgencySettingDetailRequest {
+    string ID = 9100;
+}
+
+message GetAgencySettingDetailResponse {
+    AgencySettingDetail Info = 9200;
+}
+
+message GetAgencySettingDetailByAppRequest {
+    string AppID = 9300;
+}
+
+message GetAgencySettingDetailByAppResponse {
+    AgencySettingDetail Info = 9400;
+}
+
+message CouponAllocatedDetail {
+    string ID = 9500;
+    string UserID = 9501;
+    string AppID = 9502;
+    string Type = 9503;
+    CouponPool Coupon = 9504;
+    DiscountPool Discount = 9505;
+}
+
+message GetCouponAllocatedDetailRequest {
+    string ID = 9600;
+}
+
+message GetCouponAllocatedDetailResponse {
+    CouponAllocatedDetail Info = 9700;
+}
+
+message GetCouponsAllocatedDetailByAppRequest {
+    string AppID = 9800;
+}
+
+message GetCouponsAllocatedDetailByAppResponse {
+    repeated CouponAllocatedDetail Infos = 9900;
+}
+
+message GetCouponsAllocatedDetailByAppUserRequest {
+    string AppID = 10000;
+    string UserID = 10001;
+}
+
+message GetCouponsAllocatedDetailByAppUserResponse {
+    repeated CouponAllocatedDetail Infos = 10100;
+}
+
+message DiscountPool {
+    string ID = 4600;
+    string AppID = 4601;
+    string ReleaseByUserID = 4602;
+    uint32 Discount = 4604;
+    uint32 Start = 4605;
+    int32 DurationDays = 4606;
+    string Message = 4607;
+    string Name = 4608;
+}
+
+message CreateDiscountPoolRequest {
+    DiscountPool Info = 4700;
+}
+
+message CreateDiscountPoolResponse {
+    DiscountPool Info = 4800;
+}
+
+message UpdateDiscountPoolRequest {
+    DiscountPool Info = 4810;
+}
+
+message UpdateDiscountPoolResponse {
+    DiscountPool Info = 4820;
+}
+
+message GetDiscountPoolRequest {
+    string ID = 4900;
+}
+
+message GetDiscountPoolResponse {
+    DiscountPool Info = 5000;
+}
+
+message GetDiscountPoolsByAppRequest {
+    string AppID = 5100;
+}
+
+message GetDiscountPoolsByAppResponse {
+    repeated DiscountPool Infos = 5200;
+}
+
+message GetDiscountPoolsByAppReleaserRequest {
+    string AppID = 5300;
+    string UserID = 5301;
+}
+
+message GetDiscountPoolsByAppReleaserResponse {
+    repeated DiscountPool Infos = 5400;
+}
+
+message UserSpecialReduction {
+    string ID = 1;
+    string AppID = 2;
+    string UserID = 3;
+    double Amount = 4;
+    string ReleaseByUserID = 5;
+    uint32 Start = 6;
+    int32 DurationDays = 7;
+    string Message = 8;
+}
+
+message CreateUserSpecialReductionRequest {
+    UserSpecialReduction Info = 1;
+}
+
+message CreateUserSpecialReductionResponse {
+    UserSpecialReduction Info = 1;
+}
+
+message GetUserSpecialReductionRequest {
+    string ID = 1;
+}
+
+message GetUserSpecialReductionResponse {
+    UserSpecialReduction Info = 1;
+}
+
+message GetUserSpecialReductionsByAppRequest {
+    string AppID = 1;
+}
+
+message GetUserSpecialReductionsByAppResponse {
+    repeated UserSpecialReduction Infos = 1;
+}
+
+message GetUserSpecialReductionsByAppUserRequest {
+    string AppID = 1;
+    string UserID = 2;
+}
+
+message GetUserSpecialReductionsByAppUserResponse {
+    repeated UserSpecialReduction Infos = 1;
+}
+
+message UpdateUserSpecialReductionRequest {
+    UserSpecialReduction Info = 1;
+}
+
+message UpdateUserSpecialReductionResponse {
+    UserSpecialReduction Info = 1;
+}
+
+message GetUserSpecialReductionsByAppReleaserRequest {
+    string AppID = 1;
+    string UserID = 2;
+}
+
+message GetUserSpecialReductionsByAppReleaserResponse {
+    repeated UserSpecialReduction Infos = 1;
+}
