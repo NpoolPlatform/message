@@ -3,7 +3,7 @@
 
 ## Table of Contents
 
-- [npool/review/review-service.proto](#npool/review/review-service.proto)
+- [npool/review-service/review-service.proto](#npool/review-service/review-service.proto)
     - [CreateReviewRequest](#review.service.v1.CreateReviewRequest)
     - [CreateReviewResponse](#review.service.v1.CreateReviewResponse)
     - [CreateReviewRuleRequest](#review.service.v1.CreateReviewRuleRequest)
@@ -36,10 +36,10 @@
 
 
 
-<a name="npool/review/review-service.proto"></a>
+<a name="npool/review-service/review-service.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/review/review-service.proto
+## npool/review-service/review-service.proto
 
 
 

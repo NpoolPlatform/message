@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/review/review-service.proto",
+    "title": "npool/review-service/review-service.proto",
     "version": "version not set"
   },
   "consumes": [
