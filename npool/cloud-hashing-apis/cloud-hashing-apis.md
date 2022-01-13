@@ -38,6 +38,7 @@
     - [InvitationUserInfo.MySummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry)
     - [InvitationUserInfo.SummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry)
     - [KycReview](#cloud.hashing.apis.v1.KycReview)
+    - [Order](#cloud.hashing.apis.v1.Order)
     - [OrderFee](#cloud.hashing.apis.v1.OrderFee)
     - [RecommendGood](#cloud.hashing.apis.v1.RecommendGood)
     - [SignupRequest](#cloud.hashing.apis.v1.SignupRequest)
@@ -83,7 +84,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [cloud.hashing.order.v1.OrderDetail](#cloud.hashing.order.v1.OrderDetail) |  |  |
+| Info | [Order](#cloud.hashing.apis.v1.Order) |  |  |
 
 
 
@@ -325,7 +326,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [cloud.hashing.order.v1.OrderDetail](#cloud.hashing.order.v1.OrderDetail) |  |  |
+| Info | [Order](#cloud.hashing.apis.v1.Order) |  |  |
 
 
 
@@ -355,7 +356,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [cloud.hashing.order.v1.OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
+| Infos | [Order](#cloud.hashing.apis.v1.Order) | repeated |  |
 
 
 
@@ -386,7 +387,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [cloud.hashing.order.v1.OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
+| Infos | [Order](#cloud.hashing.apis.v1.Order) | repeated |  |
 
 
 
@@ -416,7 +417,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [cloud.hashing.order.v1.OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
+| Infos | [Order](#cloud.hashing.apis.v1.Order) | repeated |  |
 
 
 
@@ -589,6 +590,24 @@ Request body and response
 
 
 
+<a name="cloud.hashing.apis.v1.Order"></a>
+
+### Order
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Order | [cloud.hashing.order.v1.OrderDetail](#cloud.hashing.order.v1.OrderDetail) |  |  |
+| PayToAccount | [cloud.hashing.billing.v1.CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| Good | [Good](#cloud.hashing.apis.v1.Good) |  |  |
+| PayWithCoin | [sphinx.coininfo.v1.CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.OrderFee"></a>
 
 ### OrderFee
@@ -686,7 +705,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [cloud.hashing.order.v1.OrderDetail](#cloud.hashing.order.v1.OrderDetail) |  |  |
+| Info | [Order](#cloud.hashing.apis.v1.Order) |  |  |
 
 
 

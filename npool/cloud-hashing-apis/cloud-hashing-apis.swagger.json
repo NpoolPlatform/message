@@ -480,7 +480,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1OrderDetail"
+          "$ref": "#/definitions/hashingapisv1Order"
         }
       }
     },
@@ -498,7 +498,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1OrderDetail"
+            "$ref": "#/definitions/hashingapisv1Order"
           }
         }
       }
@@ -520,7 +520,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1OrderDetail"
+            "$ref": "#/definitions/hashingapisv1Order"
           }
         }
       }
@@ -539,7 +539,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1OrderDetail"
+            "$ref": "#/definitions/hashingapisv1Order"
           }
         }
       }
@@ -560,6 +560,23 @@
           "items": {
             "$ref": "#/definitions/hashingapisv1RecommendGood"
           }
+        }
+      }
+    },
+    "hashingapisv1Order": {
+      "type": "object",
+      "properties": {
+        "Order": {
+          "$ref": "#/definitions/v1OrderDetail"
+        },
+        "PayToAccount": {
+          "$ref": "#/definitions/v1CoinAccountInfo"
+        },
+        "Good": {
+          "$ref": "#/definitions/v1Good"
+        },
+        "PayWithCoin": {
+          "$ref": "#/definitions/v1CoinInfo"
         }
       }
     },
@@ -662,6 +679,35 @@
         }
       }
     },
+    "v1CoinAccountInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "GeneratedBy": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        },
+        "Idle": {
+          "type": "boolean"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
     "v1CoinInfo": {
       "type": "object",
       "properties": {
@@ -737,7 +783,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1OrderDetail"
+          "$ref": "#/definitions/hashingapisv1Order"
         }
       }
     },
@@ -1379,7 +1425,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1OrderDetail"
+          "$ref": "#/definitions/hashingapisv1Order"
         }
       }
     },

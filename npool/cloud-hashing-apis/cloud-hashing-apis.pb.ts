@@ -6,6 +6,7 @@
 
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
+import * as CloudHashingBillingV1Cloud-hashing-billing from "../cloud-hashing-billing/cloud-hashing-billing.pb"
 import * as CloudHashingGoodsV1Cloud-hashing-goods from "../cloud-hashing-goods/cloud-hashing-goods.pb"
 import * as CloudHashingOrderV1Cloud-hashing-order from "../cloud-hashing-order/cloud-hashing-order.pb"
 import * as SphinxCoininfoV1Coininfo from "../coininfo/coininfo.pb"
@@ -49,12 +50,19 @@ export type GetRecommendGoodsByAppResponse = {
   Infos?: RecommendGood[]
 }
 
+export type Order = {
+  Order?: CloudHashingOrderV1Cloud-hashing-order.OrderDetail
+  PayToAccount?: CloudHashingBillingV1Cloud-hashing-billing.CoinAccountInfo
+  Good?: Good
+  PayWithCoin?: SphinxCoininfoV1Coininfo.CoinInfo
+}
+
 export type GetOrderRequest = {
   ID?: string
 }
 
 export type GetOrderResponse = {
-  Info?: CloudHashingOrderV1Cloud-hashing-order.OrderDetail
+  Info?: Order
 }
 
 export type GetOrdersByAppUserRequest = {
@@ -63,7 +71,7 @@ export type GetOrdersByAppUserRequest = {
 }
 
 export type GetOrdersByAppUserResponse = {
-  Infos?: CloudHashingOrderV1Cloud-hashing-order.OrderDetail[]
+  Infos?: Order[]
 }
 
 export type GetOrdersByAppRequest = {
@@ -71,7 +79,7 @@ export type GetOrdersByAppRequest = {
 }
 
 export type GetOrdersByAppResponse = {
-  Infos?: CloudHashingOrderV1Cloud-hashing-order.OrderDetail[]
+  Infos?: Order[]
 }
 
 export type GetOrdersByGoodRequest = {
@@ -79,7 +87,7 @@ export type GetOrdersByGoodRequest = {
 }
 
 export type GetOrdersByGoodResponse = {
-  Infos?: CloudHashingOrderV1Cloud-hashing-order.OrderDetail[]
+  Infos?: Order[]
 }
 
 export type OrderFee = {
@@ -98,7 +106,7 @@ export type SubmitOrderRequest = {
 }
 
 export type SubmitOrderResponse = {
-  Info?: CloudHashingOrderV1Cloud-hashing-order.OrderDetail
+  Info?: Order
 }
 
 export type CreateOrderPaymentRequest = {
@@ -108,7 +116,7 @@ export type CreateOrderPaymentRequest = {
 }
 
 export type CreateOrderPaymentResponse = {
-  Info?: CloudHashingOrderV1Cloud-hashing-order.OrderDetail
+  Info?: Order
 }
 
 export type SignupRequest = {

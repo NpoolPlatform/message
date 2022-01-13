@@ -10,6 +10,7 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 import "npool/cloud-hashing-goods/cloud-hashing-goods.proto";
 import "npool/cloud-hashing-order/cloud-hashing-order.proto";
+import "npool/cloud-hashing-billing/cloud-hashing-billing.proto";
 import "npool/review-service/review-service.proto";
 import "npool/user/user-management.proto";
 import "npool/coininfo/coininfo.proto";
@@ -141,12 +142,19 @@ message GetRecommendGoodsByAppResponse {
     repeated RecommendGood Infos = 10;
 }
 
+message Order {
+    cloud.hashing.order.v1.OrderDetail Order = 10;
+    cloud.hashing.billing.v1.CoinAccountInfo PayToAccount = 20;
+    Good Good = 30;
+    sphinx.coininfo.v1.CoinInfo PayWithCoin = 40;
+}
+
 message GetOrderRequest {
     string ID = 10;
 }
 
 message GetOrderResponse {
-    cloud.hashing.order.v1.OrderDetail Info = 10;
+    Order Info = 10;
 }
 
 message GetOrdersByAppUserRequest {
@@ -155,7 +163,7 @@ message GetOrdersByAppUserRequest {
 }
 
 message GetOrdersByAppUserResponse {
-    repeated cloud.hashing.order.v1.OrderDetail Infos = 10;
+    repeated Order Infos = 10;
 }
 
 message GetOrdersByAppRequest {
@@ -163,7 +171,7 @@ message GetOrdersByAppRequest {
 }
 
 message GetOrdersByAppResponse {
-    repeated cloud.hashing.order.v1.OrderDetail Infos = 10;
+    repeated Order Infos = 10;
 }
 
 message GetOrdersByGoodRequest {
@@ -171,7 +179,7 @@ message GetOrdersByGoodRequest {
 }
 
 message GetOrdersByGoodResponse {
-    repeated cloud.hashing.order.v1.OrderDetail Infos = 10;
+    repeated Order Infos = 10;
 }
 
 message OrderFee {
@@ -190,7 +198,7 @@ message SubmitOrderRequest {
 }
 
 message SubmitOrderResponse {
-    cloud.hashing.order.v1.OrderDetail Info = 10;
+    Order Info = 10;
 }
 
 message CreateOrderPaymentRequest {
@@ -200,7 +208,7 @@ message CreateOrderPaymentRequest {
 }
 
 message CreateOrderPaymentResponse {
-    cloud.hashing.order.v1.OrderDetail Info = 10;
+    Order Info = 10;
 }
 
 message SignupRequest {
