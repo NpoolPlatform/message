@@ -15,7 +15,7 @@ import * as UserV1User-management from "../user/user-management.pb"
 export type Good = {
   Good?: CloudHashingGoodsV1Cloud-hashing-goods.GoodDetail
   Main?: SphinxCoininfoV1Coininfo.CoinInfo
-  SupportedCoins?: SphinxCoininfoV1Coininfo.CoinInfo[]
+  SupportCoins?: SphinxCoininfoV1Coininfo.CoinInfo[]
   Review?: ReviewServiceV1Review-service.Review
 }
 

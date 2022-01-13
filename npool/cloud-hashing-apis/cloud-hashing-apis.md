@@ -463,7 +463,7 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | Good | [cloud.hashing.goods.v1.GoodDetail](#cloud.hashing.goods.v1.GoodDetail) |  |  |
 | Main | [sphinx.coininfo.v1.CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
-| SupportedCoins | [sphinx.coininfo.v1.CoinInfo](#sphinx.coininfo.v1.CoinInfo) | repeated |  |
+| SupportCoins | [sphinx.coininfo.v1.CoinInfo](#sphinx.coininfo.v1.CoinInfo) | repeated |  |
 | Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 
 

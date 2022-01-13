@@ -889,7 +889,7 @@
         "Main": {
           "$ref": "#/definitions/v1CoinInfo"
         },
-        "SupportedCoins": {
+        "SupportCoins": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1CoinInfo"
