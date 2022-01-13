@@ -37,6 +37,15 @@ export type GetCoinAccountResponse = {
   Info?: CoinAccountInfo
 }
 
+export type GetCoinAccountByCoinAddressRequest = {
+  CoinInfoID?: string
+  Address?: string
+}
+
+export type GetCoinAccountByCoinAddressResponse = {
+  Info?: CoinAccountInfo
+}
+
 export type GetCoinAccountsByAppUserRequest = {
   AppID?: string
   UserID?: string
@@ -117,6 +126,14 @@ export type GetCoinAccountTransactionsByCoinAccountResponse = {
   Infos?: CoinAccountTransaction[]
 }
 
+export type GetCoinAccountTransactionsByStateRequest = {
+  State?: string
+}
+
+export type GetCoinAccountTransactionsByStateResponse = {
+  Infos?: CoinAccountTransaction[]
+}
+
 export type GetCoinAccountTransactionsByCoinRequest = {
   CoinTypeID?: string
 }
@@ -148,6 +165,7 @@ export type PlatformBenefit = {
   Amount?: number
   CreateAt?: number
   ChainTransactionID?: string
+  LastBenefitTimestamp?: number
 }
 
 export type CreatePlatformBenefitRequest = {
@@ -188,6 +206,14 @@ export type GetPlatformBenefitRequest = {
 }
 
 export type GetPlatformBenefitResponse = {
+  Info?: PlatformBenefit
+}
+
+export type GetLatestPlatformBenefitByGoodRequest = {
+  GoodID?: string
+}
+
+export type GetLatestPlatformBenefitByGoodResponse = {
   Info?: PlatformBenefit
 }
 
@@ -259,6 +285,7 @@ export type UserBenefit = {
   Amount?: number
   CreateAt?: number
   OrderID?: string
+  LastBenefitTimestamp?: number
 }
 
 export type CreateUserBenefitRequest = {
@@ -278,6 +305,30 @@ export type GetUserBenefitsByAppUserResponse = {
   Infos?: UserBenefit[]
 }
 
+export type PageInfo = {
+  PageIndex?: number
+  PageSize?: number
+}
+
+export type GetUserBenefitsByAppRequest = {
+  AppID?: string
+  PageInfo?: PageInfo
+}
+
+export type GetUserBenefitsByAppResponse = {
+  Infos?: UserBenefit[]
+}
+
+export type GetLatestUserBenefitByGoodAppUserRequest = {
+  AppID?: string
+  UserID?: string
+  GoodID?: string
+}
+
+export type GetLatestUserBenefitByGoodAppUserResponse = {
+  Info?: UserBenefit
+}
+
 export class CloudHashingBilling {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -287,6 +338,9 @@ export class CloudHashingBilling {
   }
   static GetCoinAccount(req: GetCoinAccountRequest, initReq?: fm.InitReq): Promise<GetCoinAccountResponse> {
     return fm.fetchReq<GetCoinAccountRequest, GetCoinAccountResponse>(`/v1/get/coin/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCoinAccountByCoinAddress(req: GetCoinAccountByCoinAddressRequest, initReq?: fm.InitReq): Promise<GetCoinAccountByCoinAddressResponse> {
+    return fm.fetchReq<GetCoinAccountByCoinAddressRequest, GetCoinAccountByCoinAddressResponse>(`/v1/get/coin/account/by/coin/address`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetCoinAccountsByAppUser(req: GetCoinAccountsByAppUserRequest, initReq?: fm.InitReq): Promise<GetCoinAccountsByAppUserResponse> {
     return fm.fetchReq<GetCoinAccountsByAppUserRequest, GetCoinAccountsByAppUserResponse>(`/v1/get/coin/accounts/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -303,6 +357,9 @@ export class CloudHashingBilling {
   static GetCoinAccountTransactionsByCoinAccount(req: GetCoinAccountTransactionsByCoinAccountRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsByCoinAccountResponse> {
     return fm.fetchReq<GetCoinAccountTransactionsByCoinAccountRequest, GetCoinAccountTransactionsByCoinAccountResponse>(`/v1/get/coin/account/transactions/by/coin/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetCoinAccountTransactionsByState(req: GetCoinAccountTransactionsByStateRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsByStateResponse> {
+    return fm.fetchReq<GetCoinAccountTransactionsByStateRequest, GetCoinAccountTransactionsByStateResponse>(`/v1/get/coin/account/transactions/by/state`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetCoinAccountTransactionsByCoin(req: GetCoinAccountTransactionsByCoinRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsByCoinResponse> {
     return fm.fetchReq<GetCoinAccountTransactionsByCoinRequest, GetCoinAccountTransactionsByCoinResponse>(`/v1/get/coin/account/transactions/by/coin`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -317,6 +374,9 @@ export class CloudHashingBilling {
   }
   static CreatePlatformBenefit(req: CreatePlatformBenefitRequest, initReq?: fm.InitReq): Promise<CreatePlatformBenefitResponse> {
     return fm.fetchReq<CreatePlatformBenefitRequest, CreatePlatformBenefitResponse>(`/v1/create/platform/benefit`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetLatestPlatformBenefitByGood(req: GetLatestPlatformBenefitByGoodRequest, initReq?: fm.InitReq): Promise<GetLatestPlatformBenefitByGoodResponse> {
+    return fm.fetchReq<GetLatestPlatformBenefitByGoodRequest, GetLatestPlatformBenefitByGoodResponse>(`/v1/get/latest/platform/benefit/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetPlatformBenefitsByGood(req: GetPlatformBenefitsByGoodRequest, initReq?: fm.InitReq): Promise<GetPlatformBenefitsByGoodResponse> {
     return fm.fetchReq<GetPlatformBenefitsByGoodRequest, GetPlatformBenefitsByGoodResponse>(`/v1/get/platform/benefits/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -345,7 +405,13 @@ export class CloudHashingBilling {
   static CreateUserBenefit(req: CreateUserBenefitRequest, initReq?: fm.InitReq): Promise<CreateUserBenefitResponse> {
     return fm.fetchReq<CreateUserBenefitRequest, CreateUserBenefitResponse>(`/v1/create/user/benefit`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetUserBebefitsByAppUser(req: GetUserBenefitsByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserBenefitsByAppUserResponse> {
+  static GetUserBenefitsByAppUser(req: GetUserBenefitsByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserBenefitsByAppUserResponse> {
     return fm.fetchReq<GetUserBenefitsByAppUserRequest, GetUserBenefitsByAppUserResponse>(`/v1/get/user/benefits/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserBenefitsByApp(req: GetUserBenefitsByAppRequest, initReq?: fm.InitReq): Promise<GetUserBenefitsByAppResponse> {
+    return fm.fetchReq<GetUserBenefitsByAppRequest, GetUserBenefitsByAppResponse>(`/v1/get/user/benefits/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetLatestUserBenefitByGoodAppUser(req: GetLatestUserBenefitByGoodAppUserRequest, initReq?: fm.InitReq): Promise<GetLatestUserBenefitByGoodAppUserResponse> {
+    return fm.fetchReq<GetLatestUserBenefitByGoodAppUserRequest, GetLatestUserBenefitByGoodAppUserResponse>(`/v1/get/latest/user/benefit/by/good/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
