@@ -558,19 +558,8 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/hashingapisv1RecommendGood"
+            "$ref": "#/definitions/v1RecommendGood"
           }
-        }
-      }
-    },
-    "hashingapisv1RecommendGood": {
-      "type": "object",
-      "properties": {
-        "Good": {
-          "$ref": "#/definitions/hashinggoodsv1RecommendGood"
-        },
-        "Review": {
-          "$ref": "#/definitions/v1Review"
         }
       }
     },
@@ -605,17 +594,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1UserBasicInfo"
-        }
-      }
-    },
-    "hashinggoodsv1RecommendGood": {
-      "type": "object",
-      "properties": {
-        "Recommend": {
-          "$ref": "#/definitions/v1Recommend"
-        },
-        "Good": {
-          "$ref": "#/definitions/v1GoodDetail"
         }
       }
     },
@@ -1327,6 +1305,17 @@
         },
         "Message": {
           "type": "string"
+        }
+      }
+    },
+    "v1RecommendGood": {
+      "type": "object",
+      "properties": {
+        "Recommend": {
+          "$ref": "#/definitions/v1Recommend"
+        },
+        "Good": {
+          "$ref": "#/definitions/v1GoodDetail"
         }
       }
     },

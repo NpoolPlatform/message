@@ -110,11 +110,6 @@ message Good {
     review.service.v1.Review Review = 40;
 }
 
-message RecommendGood {
-    cloud.hashing.goods.v1.RecommendGood Good = 10;
-    review.service.v1.Review Review = 20;
-}
-
 message GetGoodRequest {
     string ID = 10;
 }
@@ -138,7 +133,7 @@ message GetRecommendGoodsByAppRequest {
 }
 
 message GetRecommendGoodsByAppResponse {
-    repeated RecommendGood Infos = 10;
+    repeated cloud.hashing.goods.v1.RecommendGood Infos = 10;
 }
 
 message GetOrderRequest {
