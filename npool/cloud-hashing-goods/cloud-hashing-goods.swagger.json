@@ -3522,7 +3522,8 @@
         "Address": {
           "type": "string"
         }
-      }
+      },
+      "title": "Request body and response"
     },
     "v1VersionResponse": {
       "type": "object",
@@ -3530,8 +3531,7 @@
         "Info": {
           "type": "string"
         }
-      },
-      "title": "Request body and response"
+      }
     }
   }
 }

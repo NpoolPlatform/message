@@ -6,15 +6,7 @@
 
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
-export type PageInfo = {
-  PageIndex?: number
-  PageSize?: number
-}
-
-export type VersionResponse = {
-  Info?: string
-}
-
+import * as NpoolV1Npool from "../npool.pb"
 export type VendorLocationInfo = {
   ID?: string
   Country?: string
@@ -56,7 +48,7 @@ export type DeleteVendorLocationResponse = {
 }
 
 export type GetVendorLocationsRequest = {
-  PageInfo?: PageInfo
+  PageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetVendorLocationsResponse = {
@@ -112,7 +104,7 @@ export type DeleteTargetAreaByContinentCountryResponse = {
 }
 
 export type GetTargetAreasRequest = {
-  PageInfo?: PageInfo
+  PageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetTargetAreasResponse = {
@@ -161,7 +153,7 @@ export type DeleteDeviceInfoResponse = {
 }
 
 export type GetDeviceInfosRequest = {
-  PageInfo?: PageInfo
+  PageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetDeviceInfosResponse = {
@@ -247,7 +239,7 @@ export type GetPriceCurrencyResponse = {
 }
 
 export type GetPriceCurrencysRequest = {
-  PageInfo?: PageInfo
+  PageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetPriceCurrencysResponse = {
@@ -293,7 +285,7 @@ export type GetGoodDetailResponse = {
 }
 
 export type GetGoodsDetailRequest = {
-  PageInfo?: PageInfo
+  PageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetGoodsDetailResponse = {
@@ -310,7 +302,7 @@ export type DeleteGoodResponse = {
 }
 
 export type GetGoodsRequest = {
-  PageInfo?: PageInfo
+  PageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetGoodsResponse = {
@@ -535,7 +527,7 @@ export type UpdateGoodCommentResponse = {
 }
 
 export type GetGoodCommentsRequest = {
-  PageInfo?: PageInfo
+  PageInfo?: NpoolV1Npool.PageInfo
   GoodID?: string
 }
 
@@ -644,7 +636,7 @@ export type GetFeeTypeResponse = {
 }
 
 export type GetFeeTypesRequest = {
-  PageInfo?: PageInfo
+  PageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetFeeTypesResponse = {
@@ -675,7 +667,7 @@ export type GetFeeResponse = {
 }
 
 export type GetFeesRequest = {
-  PageInfo?: PageInfo
+  PageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetFeesResponse = {
@@ -683,8 +675,8 @@ export type GetFeesResponse = {
 }
 
 export class CloudHashingGoods {
-  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version?${fm.renderURLSearchParams(req, [])}`, {...initReq, method: "GET"})
+  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version?${fm.renderURLSearchParams(req, [])}`, {...initReq, method: "GET"})
   }
   static CreateVendorLocation(req: CreateVendorLocationRequest, initReq?: fm.InitReq): Promise<CreateVendorLocationResponse> {
     return fm.fetchReq<CreateVendorLocationRequest, CreateVendorLocationResponse>(`/v1/create/vendor-location`, {...initReq, method: "POST", body: JSON.stringify(req)})

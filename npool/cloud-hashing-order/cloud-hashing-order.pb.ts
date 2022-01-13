@@ -6,10 +6,7 @@
 
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
-export type VersionResponse = {
-  Info?: string
-}
-
+import * as NpoolV1Npool from "../npool.pb"
 export type GoodPaying = {
   ID?: string
   OrderID?: string
@@ -262,8 +259,8 @@ export type GetOrdersDetailByGoodResponse = {
 }
 
 export class CloudHashingOrder {
-  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateGoodPaying(req: CreateGoodPayingRequest, initReq?: fm.InitReq): Promise<CreateGoodPayingResponse> {
     return fm.fetchReq<CreateGoodPayingRequest, CreateGoodPayingResponse>(`/v1/create/good/paying`, {...initReq, method: "POST", body: JSON.stringify(req)})

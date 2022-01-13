@@ -7,9 +7,11 @@ option go_package = "github.com/NpoolPlatform/message/npool/cloud-hashing-goods"
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 
+import "npool/npool.proto";
+
 // Cloud Hashing Goods
 service CloudHashingGoods {
-    rpc Version (google.protobuf.Empty) returns (VersionResponse){
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
         option (google.api.http) = {
             get: "/version"
         };
@@ -402,317 +404,308 @@ service CloudHashingGoods {
     }
 }
 
-message PageInfo {
-    int32 PageIndex = 100;
-    int32 PageSize = 101;
-}
-
 // Request body and response
-message VersionResponse {
-    string Info = 200;
-}
-
 message VendorLocationInfo {
-    string ID = 300;
-    string Country = 301;
-    string Province = 302;
-    string City = 303;
-    string Address = 304;
+    string ID = 10;
+    string Country = 20;
+    string Province = 30;
+    string City = 40;
+    string Address = 50;
 }
 
 message CreateVendorLocationRequest {
-    VendorLocationInfo Info = 400;
+    VendorLocationInfo Info = 10;
 }
 
 message CreateVendorLocationResponse {
-    VendorLocationInfo Info = 500;
+    VendorLocationInfo Info = 10;
 }
 
 message GetVendorLocationRequest {
-    string ID = 510;
+    string ID = 10;
 }
 
 message GetVendorLocationResponse {
-    VendorLocationInfo Info = 520;
+    VendorLocationInfo Info = 10;
 }
 
 message UpdateVendorLocationRequest {
-    VendorLocationInfo Info = 600;
+    VendorLocationInfo Info = 10;
 }
 
 message UpdateVendorLocationResponse {
-    VendorLocationInfo Info = 700;
+    VendorLocationInfo Info = 10;
 }
 
 message DeleteVendorLocationRequest {
-    string ID = 710;
+    string ID = 10;
 }
 
 message DeleteVendorLocationResponse {
-    VendorLocationInfo Info = 720;
+    VendorLocationInfo Info = 10;
 }
 
 message GetVendorLocationsRequest {
-    PageInfo PageInfo = 800;
+    npool.v1.PageInfo PageInfo = 10;
 }
 
 message GetVendorLocationsResponse {
-    repeated VendorLocationInfo Infos = 900;
-    int32 Total = 901;
+    repeated VendorLocationInfo Infos = 10;
+    int32 Total = 20;
 }
 
 message TargetAreaInfo {
-    string ID = 1000;
-    string Continent = 1001;
-    string Country = 1002;
+    string ID = 10;
+    string Continent = 20;
+    string Country = 30;
 }
 
 message CreateTargetAreaRequest {
-    TargetAreaInfo Info = 1100;
+    TargetAreaInfo Info = 10;
 }
 
 message CreateTargetAreaResponse {
-    TargetAreaInfo Info = 1200;
+    TargetAreaInfo Info = 10;
 }
 
 message GetTargetAreaRequest {
-    string ID = 1210;
+    string ID = 10;
 }
 
 message GetTargetAreaResponse {
-    TargetAreaInfo Info = 1220;
+    TargetAreaInfo Info = 10;
 }
 
 message UpdateTargetAreaRequest {
-    TargetAreaInfo Info = 1300;
+    TargetAreaInfo Info = 10;
 }
 
 message UpdateTargetAreaResponse {
-    TargetAreaInfo Info = 1400;
+    TargetAreaInfo Info = 10;
 }
 
 message DeleteTargetAreaRequest {
-    string ID = 1410;
+    string ID = 10;
 }
 
 message DeleteTargetAreaResponse {
-    TargetAreaInfo Info = 1420;
+    TargetAreaInfo Info = 10;
 }
 
 message DeleteTargetAreaByContinentCountryRequest {
-    string Continent = 1430;
-    string Country = 1431;
+    string Continent = 10;
+    string Country = 20;
 }
 
 message DeleteTargetAreaByContinentCountryResponse {
-    TargetAreaInfo Info = 1440;
+    TargetAreaInfo Info = 10;
 }
 
 message GetTargetAreasRequest {
-    PageInfo PageInfo = 1500;
+    npool.v1.PageInfo PageInfo = 10;
 }
 
 message GetTargetAreasResponse {
-    repeated TargetAreaInfo Infos = 1600;
-    int32 Total = 1501;
+    repeated TargetAreaInfo Infos = 10;
+    int32 Total = 20;
 }
 
 message DeviceInfo {
-    string ID = 1700;
-    string Type = 1701;
-    string Manufacturer = 1702;
-    int32 PowerComsuption = 1703;
-    int32 ShipmentAt = 1704;
+    string ID = 10;
+    string Type = 20;
+    string Manufacturer = 30;
+    int32 PowerComsuption = 40;
+    int32 ShipmentAt = 50;
 }
 
 message CreateDeviceInfoRequest {
-    DeviceInfo Info = 1800;
+    DeviceInfo Info = 10;
 }
 
 message CreateDeviceInfoResponse {
-    DeviceInfo Info = 1900;
+    DeviceInfo Info = 10;
 }
 
 message UpdateDeviceInfoRequest {
-    DeviceInfo Info = 2000;
+    DeviceInfo Info = 10;
 }
 
 message UpdateDeviceInfoResponse {
-    DeviceInfo Info = 2100;
+    DeviceInfo Info = 10;
 }
 
 message GetDeviceInfoRequest {
-    string ID = 2110;
+    string ID = 10;
 }
 
 message GetDeviceInfoResponse {
-    DeviceInfo Info = 2120;
+    DeviceInfo Info = 10;
 }
 
 message DeleteDeviceInfoRequest {
-    string ID = 2130;
+    string ID = 10;
 }
 
 message DeleteDeviceInfoResponse {
-    DeviceInfo Info = 2140;
+    DeviceInfo Info = 10;
 }
 
 message GetDeviceInfosRequest {
-    PageInfo PageInfo = 2200;
+    npool.v1.PageInfo PageInfo = 10;
 }
 
 message GetDeviceInfosResponse {
-    repeated DeviceInfo Infos = 2300;
-    int32 Total = 2301;
+    repeated DeviceInfo Infos = 10;
+    int32 Total = 20;
 }
 
 message GoodInfo {
-    string ID = 2400;
-    string DeviceInfoID = 2401;
-    bool SeparateFee = 2403;
-    int32 UnitPower = 2404;
-    int32 DurationDays = 2405;
-    string CoinInfoID = 2406;
-    bool Actuals = 2407;
-    uint32 DeliveryAt = 2408;
-    string InheritFromGoodID = 2409;
-    string VendorLocationID = 2410;
-    double Price = 2411;
-    string BenefitType = 2412;
-    bool Classic = 2413;
-    repeated string SupportCoinTypeIDs = 2414;
-    int32 Total = 2415;
-    string PriceCurrency = 2416;
-    string Title = 2417;
-    string Unit = 2418;
-    repeated string FeeIDs = 2420;
+    string ID = 10;
+    string DeviceInfoID = 20;
+    bool SeparateFee = 30;
+    int32 UnitPower = 40;
+    int32 DurationDays = 50;
+    string CoinInfoID = 60;
+    bool Actuals = 70;
+    uint32 DeliveryAt = 80;
+    string InheritFromGoodID = 90;
+    string VendorLocationID = 100;
+    double Price = 110;
+    string BenefitType = 120;
+    bool Classic = 130;
+    repeated string SupportCoinTypeIDs = 140;
+    int32 Total = 150;
+    string PriceCurrency = 160;
+    string Title = 170;
+    string Unit = 180;
+    repeated string FeeIDs = 190;
 }
 
 message CreateGoodRequest {
-    GoodInfo Info = 2500;
+    GoodInfo Info = 10;
 }
 
 message CreateGoodResponse {
-    GoodInfo Info = 2600;
+    GoodInfo Info = 10;
 }
 
 message UpdateGoodRequest {
-    GoodInfo Info = 2700;
+    GoodInfo Info = 10;
 }
 
 message UpdateGoodResponse {
-    GoodInfo Info = 2800;
+    GoodInfo Info = 10;
 }
 
 message GetGoodRequest {
-    string ID = 2900;
+    string ID = 10;
 }
 
 message GetGoodResponse {
-    GoodInfo Info = 3000;
+    GoodInfo Info = 10;
 }
 
 message PriceCurrency {
-    string ID = 3010;
-    string Name = 3011;
-    string Unit = 3012;
-    string Symbol = 3013;
+    string ID = 10;
+    string Name = 20;
+    string Unit = 30;
+    string Symbol = 40;
 }
 
 message CreatePriceCurrencyRequest {
-    PriceCurrency Info = 3020;
+    PriceCurrency Info = 10;
 }
 
 message CreatePriceCurrencyResponse {
-    PriceCurrency Info = 3030;
+    PriceCurrency Info = 10;
 }
 
 message UpdatePriceCurrencyRequest {
-    PriceCurrency Info = 3040;
+    PriceCurrency Info = 10;
 }
 
 message UpdatePriceCurrencyResponse {
-    PriceCurrency Info = 3050;
+    PriceCurrency Info = 10;
 }
 
 message GetPriceCurrencyRequest {
-    string ID = 3060;
+    string ID = 10;
 }
 
 message GetPriceCurrencyResponse {
-    PriceCurrency Info = 3070;
+    PriceCurrency Info = 10;
 }
 
 message GetPriceCurrencysRequest {
-    PageInfo PageInfo = 3080;
+    npool.v1.PageInfo PageInfo = 10;
 }
 
 message GetPriceCurrencysResponse {
-    repeated PriceCurrency Infos = 3090;
+    repeated PriceCurrency Infos = 10;
 }
 
 message FeeDetail {
-    string ID = 1;
-    string AppID = 2;
-    FeeType Fee = 3;
-    double Value = 4;
+    string ID = 10;
+    string AppID = 20;
+    FeeType Fee = 30;
+    double Value = 40;
 }
 
 message GoodDetail {
-    string ID = 2400;
-    DeviceInfo DeviceInfo = 2401;
-    bool SeparateFee = 2403;
-    int32 UnitPower = 2404;
-    int32 DurationDays = 2405;
-    string CoinInfoID = 2406;
-    bool Actuals = 2407;
-    uint32 DeliveryAt = 2408;
-    GoodInfo InheritFromGood = 2409;
-    VendorLocationInfo VendorLocation = 2410;
-    double Price = 2411;
-    string BenefitType = 2412;
-    bool Classic = 2413;
-    repeated string SupportCoinTypeIDs = 2414;
-    int32 Total = 2415;
-    GoodExtraInfo Extra = 2416;
-    string Title = 2417;
-    string Unit = 2418;
-    PriceCurrency PriceCurrency = 2420;
-    repeated FeeDetail Fees = 2421;
+    string ID = 10;
+    DeviceInfo DeviceInfo = 20;
+    bool SeparateFee = 30;
+    int32 UnitPower = 40;
+    int32 DurationDays = 50;
+    string CoinInfoID = 60;
+    bool Actuals = 70;
+    uint32 DeliveryAt = 80;
+    GoodInfo InheritFromGood = 90;
+    VendorLocationInfo VendorLocation = 100;
+    double Price = 110;
+    string BenefitType = 120;
+    bool Classic = 130;
+    repeated string SupportCoinTypeIDs = 140;
+    int32 Total = 150;
+    GoodExtraInfo Extra = 160;
+    string Title = 170;
+    string Unit = 180;
+    PriceCurrency PriceCurrency = 190;
+    repeated FeeDetail Fees = 200;
 }
 
 message GetGoodDetailRequest {
-    string ID = 3200;
+    string ID = 10;
 }
 
 message GetGoodDetailResponse {
-    GoodDetail Detail = 3210;
+    GoodDetail Detail = 10;
 }
 
 message GetGoodsDetailRequest {
-    PageInfo PageInfo = 3211;
+    npool.v1.PageInfo PageInfo = 10;
 }
 
 message GetGoodsDetailResponse {
-    repeated GoodDetail Details = 3212;
-    int32 Total = 3213;
+    repeated GoodDetail Details = 10;
+    int32 Total = 20;
 }
 
 message DeleteGoodRequest {
-    string ID = 3220;
+    string ID = 10;
 }
 
 message DeleteGoodResponse {
-    GoodInfo Info = 3230;
+    GoodInfo Info = 10;
 }
 
 message GetGoodsRequest {
-    PageInfo PageInfo = 3240;
+    npool.v1.PageInfo PageInfo = 10;
 }
 
 message GetGoodsResponse {
-    repeated GoodInfo Infos = 3300;
-    int32 Total = 3301;
+    repeated GoodInfo Infos = 10;
+    int32 Total = 20;
 }
 
 message Recommend {
@@ -785,296 +778,296 @@ message GetRecommendGoodsByRecommenderResponse {
 }
 
 message AppGoodInfo {
-    string ID = 3310;
-    string AppID = 3311;
-    string GoodID = 3312;
-    double Price = 3313;
-    bool Authorized = 3315;
-    bool Online = 3316;
-    string InitAreaStrategy = 3317;
+    string ID = 10;
+    string AppID = 20;
+    string GoodID = 30;
+    double Price = 40;
+    bool Authorized = 50;
+    bool Online = 60;
+    string InitAreaStrategy = 70;
 }
 
 message SetAppGoodPriceRequest {
-    AppGoodInfo Info = 3500;
+    AppGoodInfo Info = 10;
 }
 
 message SetAppGoodPriceResponse {
-    AppGoodInfo Info = 3600;
+    AppGoodInfo Info = 10;
 }
 
 message CheckAppGoodRequest {
-    AppGoodInfo Info = 3610;
+    AppGoodInfo Info = 10;
 }
 
 message CheckAppGoodResponse {
-    AppGoodInfo Info = 3620;
+    AppGoodInfo Info = 10;
 }
 
 message OnsaleAppGoodRequest {
-    AppGoodInfo Info = 3630;
+    AppGoodInfo Info = 10;
 }
 
 message OnsaleAppGoodResponse {
-    AppGoodInfo Info = 3640;
+    AppGoodInfo Info = 10;
 }
 
 message OffsaleAppGoodRequest {
-    AppGoodInfo Info = 3650;
+    AppGoodInfo Info = 10;
 }
 
 message OffsaleAppGoodResponse {
-    AppGoodInfo Info = 3660;
+    AppGoodInfo Info = 10;
 }
 
 message AuthorizeAppGoodRequest {
-    AppGoodInfo Info = 3700;
+    AppGoodInfo Info = 10;
 }
 
 message AuthorizeAppGoodResponse {
-    AppGoodInfo Info = 3800;
+    AppGoodInfo Info = 10;
 }
 
 message UnauthorizeAppGoodRequest {
-    AppGoodInfo Info = 3900;
+    AppGoodInfo Info = 10;
 }
 
 message UnauthorizeAppGoodResponse {
-    AppGoodInfo Info = 4000;
+    AppGoodInfo Info = 10;
 }
 
 message AppTargetAreaInfo {
-    string ID = 4010;
-    string AppID = 4011;
-    string TargetAreaID = 4012;
+    string ID = 10;
+    string AppID = 20;
+    string TargetAreaID = 30;
 }
 
 message AuthorizeAppTargetAreaRequest {
-    AppTargetAreaInfo Info = 4020;
+    AppTargetAreaInfo Info = 10;
 }
 
 message AuthorizeAppTargetAreaResponse {
-    AppTargetAreaInfo Info = 4030;
+    AppTargetAreaInfo Info = 10;
 }
 
 message CheckAppTargetAreaRequest {
-    AppTargetAreaInfo Info = 4040;
+    AppTargetAreaInfo Info = 10;
 }
 
 message CheckAppTargetAreaResponse {
-    AppTargetAreaInfo Info = 4050;
-    bool Authorized = 4051;
+    AppTargetAreaInfo Info = 10;
+    bool Authorized = 20;
 }
 
 message UnauthorizeAppTargetAreaRequest {
-    string ID = 4100;
+    string ID = 10;
 }
 
 message UnauthorizeAppTargetAreaResponse {
-    AppTargetAreaInfo Info = 4110;
-    bool Authorized = 4111;
+    AppTargetAreaInfo Info = 10;
+    bool Authorized = 20;
 }
 
 message AppGoodTargetAreaInfo {
-    string ID = 4120;
-    string AppID = 4121;
-    string GoodID = 4122;
-    string TargetAreaID = 4123;
+    string ID = 10;
+    string AppID = 20;
+    string GoodID = 30;
+    string TargetAreaID = 40;
 }
 
 message AuthorizeAppGoodTargetAreaRequest {
-    AppGoodTargetAreaInfo Info = 4200;
+    AppGoodTargetAreaInfo Info = 10;
 }
 
 message AuthorizeAppGoodTargetAreaResponse {
-    AppGoodTargetAreaInfo Info = 4210;
+    AppGoodTargetAreaInfo Info = 10;
 }
 
 message CheckAppGoodTargetAreaRequest {
-    AppGoodTargetAreaInfo Info = 4220;
+    AppGoodTargetAreaInfo Info = 10;
 }
 
 message CheckAppGoodTargetAreaResponse {
-    AppGoodTargetAreaInfo Info = 4230;
+    AppGoodTargetAreaInfo Info = 10;
 }
 
 message UnauthorizeAppGoodTargetAreaRequest {
-    AppGoodTargetAreaInfo Info = 4300;
+    AppGoodTargetAreaInfo Info = 10;
 }
 
 message UnauthorizeAppGoodTargetAreaResponse {
-    AppGoodTargetAreaInfo Info = 4310;
+    AppGoodTargetAreaInfo Info = 10;
 }
 
 message GoodComment {
-    string ID = 4400;
-    string AppID = 4401;
-    string UserID = 4402;
-    string ReplyToID = 4403;
-    string GoodID = 4404;
-    string OrderID = 4405;
-    string Content = 4406;
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    string ReplyToID = 40;
+    string GoodID = 50;
+    string OrderID = 60;
+    string Content = 70;
 }
 
 message CreateGoodCommentRequest {
-    GoodComment Comment = 4500;
+    GoodComment Comment = 10;
 }
 
 message CreateGoodCommentResponse {
-    GoodComment Comment = 4600;
+    GoodComment Comment = 10;
 }
 
 message UpdateGoodCommentRequest {
-    GoodComment Comment = 4700;
+    GoodComment Comment = 10;
 }
 
 message UpdateGoodCommentResponse {
-    GoodComment Comment = 4800;
+    GoodComment Comment = 10;
 }
 
 message GetGoodCommentsRequest {
-    PageInfo PageInfo = 4900;
-    string GoodID = 4901;
+    npool.v1.PageInfo PageInfo = 10;
+    string GoodID = 20;
 }
 
 message GetGoodCommentsResponse {
-    repeated GoodComment Comments = 5000;
-    int32 Total = 5001;
+    repeated GoodComment Comments = 10;
+    int32 Total = 20;
 }
 
 message GoodExtraInfo {
-    string ID = 5100;
-    string GoodID = 5101;
-    repeated string Posters = 5102;
-    repeated string Labels = 5103;
-    bool OutSale = 5104;
-    bool PreSale = 5105;
-    uint32 VoteCount = 5106;
-    float Rating = 5107;
+    string ID = 10;
+    string GoodID = 20;
+    repeated string Posters = 30;
+    repeated string Labels = 40;
+    bool OutSale = 50;
+    bool PreSale = 60;
+    uint32 VoteCount = 70;
+    float Rating = 80;
 }
 
 message CreateGoodExtraInfoRequest {
-    GoodExtraInfo Info = 5200;
+    GoodExtraInfo Info = 10;
 }
 
 message CreateGoodExtraInfoResponse {
-    GoodExtraInfo Info = 5300;
+    GoodExtraInfo Info = 10;
 }
 
 message GetGoodExtraInfoRequest {
-    string GoodID = 5400;
+    string GoodID = 10;
 }
 
 message GetGoodExtraInfoResponse {
-    GoodExtraInfo Info = 5500;
+    GoodExtraInfo Info = 10;
 }
 
 message UpdateGoodExtraInfoRequest {
-    GoodExtraInfo Info = 5600;
+    GoodExtraInfo Info = 10;
 }
 
 message UpdateGoodExtraInfoResponse {
-    GoodExtraInfo Info = 5700;
+    GoodExtraInfo Info = 10;
 }
 
 message GoodReviewInfo {
-    string ID = 5800;
-    string Type = 5801;
-    string ReviewerID = 5802;
-    string State = 5803;
-    string Message = 5804;
-    string ReviewedID = 5805;
+    string ID = 10;
+    string Type = 20;
+    string ReviewerID = 30;
+    string State = 40;
+    string Message = 50;
+    string ReviewedID = 60;
 }
 
 message CreateGoodReviewRequest {
-    GoodReviewInfo Info = 5900;
+    GoodReviewInfo Info = 10;
 }
 
 message CreateGoodReviewResponse {
-    GoodReviewInfo Info = 6000;
+    GoodReviewInfo Info = 10;
 }
 
 message UpdateGoodReviewRequest {
-    GoodReviewInfo Info = 6100;
+    GoodReviewInfo Info = 10;
 }
 
 message UpdateGoodReviewResponse {
-    GoodReviewInfo Info = 6200;
+    GoodReviewInfo Info = 10;
 }
 
 message GetGoodReviewRequest {
-    GoodReviewInfo Info = 6300;
+    GoodReviewInfo Info = 10;
 }
 
 message GetGoodReviewResponse {
-    GoodReviewInfo Info = 6400;
+    GoodReviewInfo Info = 10;
 }
 
 message FeeType {
-    string ID = 1;
-    string FeeType = 4;
-    string FeeDescription = 5;
-    string PayType = 6;
+    string ID = 10;
+    string FeeType = 20;
+    string FeeDescription = 30;
+    string PayType = 40;
 }
 
 message CreateFeeTypeRequest {
-    FeeType Info = 1;
+    FeeType Info = 10;
 }
 
 message CreateFeeTypeResponse {
-    FeeType Info = 1;
+    FeeType Info = 10;
 }
 
 message UpdateFeeTypeRequest {
-    FeeType Info = 1;
+    FeeType Info = 10;
 }
 
 message UpdateFeeTypeResponse {
-    FeeType Info = 1;
+    FeeType Info = 10;
 }
 
 message GetFeeTypeRequest {
-    string ID = 1;
+    string ID = 10;
 }
 
 message GetFeeTypeResponse {
-    FeeType Info = 1;
+    FeeType Info = 10;
 }
 
 message GetFeeTypesRequest {
-    PageInfo PageInfo = 1;
+    npool.v1.PageInfo PageInfo = 10;
 }
 
 message GetFeeTypesResponse {
-    repeated FeeType Infos = 1;
+    repeated FeeType Infos = 10;
 }
 
 message Fee {
-    string ID = 1;
-    string AppID = 2;
-    string FeeTypeID = 3;
-    double Value = 4;
+    string ID = 10;
+    string AppID = 20;
+    string FeeTypeID = 30;
+    double Value = 40;
 }
 
 message CreateFeeRequest {
-    Fee Info = 1;
+    Fee Info = 10;
 }
 
 message CreateFeeResponse {
-    Fee Info = 1;
+    Fee Info = 10;
 }
 
 message GetFeeRequest {
-    string ID = 1;
+    string ID = 10;
 }
 
 message GetFeeResponse {
-    Fee Info = 1;
+    Fee Info = 10;
 }
 
 message GetFeesRequest {
-    PageInfo PageInfo = 1;
+    npool.v1.PageInfo PageInfo = 10;
 }
 
 message GetFeesResponse {
-    repeated Fee Infos = 1;
+    repeated Fee Infos = 10;
 }

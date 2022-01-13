@@ -4,6 +4,7 @@ package cloud_hashing_billing
 
 import (
 	context "context"
+	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -20,7 +21,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CloudHashingBillingClient interface {
 	// Method Version
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateCoinAccount(ctx context.Context, in *CreateCoinAccountRequest, opts ...grpc.CallOption) (*CreateCoinAccountResponse, error)
 	GetCoinAccount(ctx context.Context, in *GetCoinAccountRequest, opts ...grpc.CallOption) (*GetCoinAccountResponse, error)
 	GetCoinAccountByCoinAddress(ctx context.Context, in *GetCoinAccountByCoinAddressRequest, opts ...grpc.CallOption) (*GetCoinAccountByCoinAddressResponse, error)
@@ -58,8 +59,8 @@ func NewCloudHashingBillingClient(cc grpc.ClientConnInterface) CloudHashingBilli
 	return &cloudHashingBillingClient{cc}
 }
 
-func (c *cloudHashingBillingClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error) {
-	out := new(VersionResponse)
+func (c *cloudHashingBillingClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+	out := new(npool.VersionResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -315,7 +316,7 @@ func (c *cloudHashingBillingClient) GetLatestUserBenefitByGoodAppUser(ctx contex
 // for forward compatibility
 type CloudHashingBillingServer interface {
 	// Method Version
-	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
+	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateCoinAccount(context.Context, *CreateCoinAccountRequest) (*CreateCoinAccountResponse, error)
 	GetCoinAccount(context.Context, *GetCoinAccountRequest) (*GetCoinAccountResponse, error)
 	GetCoinAccountByCoinAddress(context.Context, *GetCoinAccountByCoinAddressRequest) (*GetCoinAccountByCoinAddressResponse, error)
@@ -350,7 +351,7 @@ type CloudHashingBillingServer interface {
 type UnimplementedCloudHashingBillingServer struct {
 }
 
-func (UnimplementedCloudHashingBillingServer) Version(context.Context, *emptypb.Empty) (*VersionResponse, error) {
+func (UnimplementedCloudHashingBillingServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
 func (UnimplementedCloudHashingBillingServer) CreateCoinAccount(context.Context, *CreateCoinAccountRequest) (*CreateCoinAccountResponse, error) {

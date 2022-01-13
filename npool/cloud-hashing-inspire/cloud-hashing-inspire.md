@@ -143,7 +143,6 @@
     - [UserInvitationCode](#cloud.hashing.inspire.v1.UserInvitationCode)
     - [UserKpiSetting](#cloud.hashing.inspire.v1.UserKpiSetting)
     - [UserSpecialReduction](#cloud.hashing.inspire.v1.UserSpecialReduction)
-    - [VersionResponse](#cloud.hashing.inspire.v1.VersionResponse)
   
     - [CloudHashingInspire](#cloud.hashing.inspire.v1.CloudHashingInspire)
   
@@ -1872,7 +1871,7 @@
 <a name="cloud.hashing.inspire.v1.NewUserRewardSetting"></a>
 
 ### NewUserRewardSetting
-
+request body and response
 
 
 | Field | Type | Label | Description |
@@ -2333,21 +2332,6 @@
 
 
 
-
-<a name="cloud.hashing.inspire.v1.VersionResponse"></a>
-
-### VersionResponse
-request body and response
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [string](#string) |  |  |
-
-
-
-
-
  
 
  
@@ -2362,7 +2346,7 @@ Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#cloud.hashing.inspire.v1.VersionResponse) | Method Version |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
 | CreateNewUserRewardSetting | [CreateNewUserRewardSettingRequest](#cloud.hashing.inspire.v1.CreateNewUserRewardSettingRequest) | [CreateNewUserRewardSettingResponse](#cloud.hashing.inspire.v1.CreateNewUserRewardSettingResponse) |  |
 | GetNewUserRewardSetting | [GetNewUserRewardSettingRequest](#cloud.hashing.inspire.v1.GetNewUserRewardSettingRequest) | [GetNewUserRewardSettingResponse](#cloud.hashing.inspire.v1.GetNewUserRewardSettingResponse) |  |
 | GetNewUserRewardSettingDetail | [GetNewUserRewardSettingDetailRequest](#cloud.hashing.inspire.v1.GetNewUserRewardSettingDetailRequest) | [GetNewUserRewardSettingDetailResponse](#cloud.hashing.inspire.v1.GetNewUserRewardSettingDetailResponse) |  |

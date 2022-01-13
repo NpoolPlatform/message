@@ -1213,7 +1213,8 @@
         "PaymentID": {
           "type": "string"
         }
-      }
+      },
+      "title": "request body and response"
     },
     "v1Order": {
       "type": "object",
@@ -1390,8 +1391,7 @@
         "Info": {
           "type": "string"
         }
-      },
-      "title": "request body and response"
+      }
     }
   }
 }

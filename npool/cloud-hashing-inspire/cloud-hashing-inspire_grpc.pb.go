@@ -4,6 +4,7 @@ package cloud_hashing_inspire
 
 import (
 	context "context"
+	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -20,7 +21,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CloudHashingInspireClient interface {
 	// Method Version
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateNewUserRewardSetting(ctx context.Context, in *CreateNewUserRewardSettingRequest, opts ...grpc.CallOption) (*CreateNewUserRewardSettingResponse, error)
 	GetNewUserRewardSetting(ctx context.Context, in *GetNewUserRewardSettingRequest, opts ...grpc.CallOption) (*GetNewUserRewardSettingResponse, error)
 	GetNewUserRewardSettingDetail(ctx context.Context, in *GetNewUserRewardSettingDetailRequest, opts ...grpc.CallOption) (*GetNewUserRewardSettingDetailResponse, error)
@@ -93,8 +94,8 @@ func NewCloudHashingInspireClient(cc grpc.ClientConnInterface) CloudHashingInspi
 	return &cloudHashingInspireClient{cc}
 }
 
-func (c *cloudHashingInspireClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error) {
-	out := new(VersionResponse)
+func (c *cloudHashingInspireClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+	out := new(npool.VersionResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -665,7 +666,7 @@ func (c *cloudHashingInspireClient) UpdateUserSpecialReduction(ctx context.Conte
 // for forward compatibility
 type CloudHashingInspireServer interface {
 	// Method Version
-	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
+	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateNewUserRewardSetting(context.Context, *CreateNewUserRewardSettingRequest) (*CreateNewUserRewardSettingResponse, error)
 	GetNewUserRewardSetting(context.Context, *GetNewUserRewardSettingRequest) (*GetNewUserRewardSettingResponse, error)
 	GetNewUserRewardSettingDetail(context.Context, *GetNewUserRewardSettingDetailRequest) (*GetNewUserRewardSettingDetailResponse, error)
@@ -735,7 +736,7 @@ type CloudHashingInspireServer interface {
 type UnimplementedCloudHashingInspireServer struct {
 }
 
-func (UnimplementedCloudHashingInspireServer) Version(context.Context, *emptypb.Empty) (*VersionResponse, error) {
+func (UnimplementedCloudHashingInspireServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
 func (UnimplementedCloudHashingInspireServer) CreateNewUserRewardSetting(context.Context, *CreateNewUserRewardSettingRequest) (*CreateNewUserRewardSettingResponse, error) {

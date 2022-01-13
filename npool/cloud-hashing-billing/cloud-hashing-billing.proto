@@ -7,10 +7,12 @@ option go_package = "github.com/NpoolPlatform/message/npool/cloud-hashing-billin
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 
+import "npool/npool.proto";
+
 // Cloud Hashing Billing
 service CloudHashingBilling {
     // Method Version
-    rpc Version (google.protobuf.Empty) returns (VersionResponse){
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
         option (google.api.http) = {
             post: "/version"
             body: "*"
@@ -185,327 +187,317 @@ service CloudHashingBilling {
     }
 }
 
-// request body and response
-message VersionResponse {
-    string Info = 100;
-}
-
 message CoinAccountInfo {
-    string ID = 200;
-    string CoinTypeID = 201;
-    string Address = 202;
-    string GeneratedBy = 203;
-    string UsedFor = 204;
-    bool Idle = 205;
-    string AppID = 206;
-    string UserID = 207;
+    string ID = 10;
+    string CoinTypeID = 20;
+    string Address = 30;
+    string GeneratedBy = 40;
+    string UsedFor = 50;
+    bool Idle = 60;
+    string AppID = 70;
+    string UserID = 80;
 }
 
 message CreateCoinAccountRequest {
-    CoinAccountInfo Info = 300;
+    CoinAccountInfo Info = 10;
 }
 
 message CreateCoinAccountResponse {
-    CoinAccountInfo Info = 400;
+    CoinAccountInfo Info = 10;
 }
 
 message GetCoinAccountRequest {
-    string ID = 500;
+    string ID = 10;
 }
 
 message GetCoinAccountResponse {
-    CoinAccountInfo Info = 600;
+    CoinAccountInfo Info = 10;
 }
 
 message GetCoinAccountByCoinAddressRequest {
-    string CoinInfoID = 1;
-    string Address = 2;
+    string CoinInfoID = 10;
+    string Address = 20;
 }
 
 message GetCoinAccountByCoinAddressResponse {
-    CoinAccountInfo Info = 1;
+    CoinAccountInfo Info = 10;
 }
 
 message GetCoinAccountsByAppUserRequest {
-    string AppID = 700;
-    string UserID = 701;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message GetCoinAccountsByAppUserResponse {
-    repeated CoinAccountInfo Infos = 800;
+    repeated CoinAccountInfo Infos = 10;
 }
 
 message DeleteCoinAccountRequest {
-    string ID = 900;
+    string ID = 10;
 }
 
 message DeleteCoinAccountResponse {
-    CoinAccountInfo Info = 1000;
+    CoinAccountInfo Info = 10;
 }
 
 message CoinAccountTransaction {
-    string ID = 1100;
-    string AppID = 1101;
-    string UserID = 1102;
-    string FromAddressID = 1103;
-    string ToAddressID = 1104;
-    string CoinTypeID = 1105;
-    double Amount = 1106;
-    string Message = 1107;
-    uint32 CreateAt = 1108;
-    string State = 1109;
-    string ChainTransactionID = 1110;
-    string PlatformTransactionID = 1111;
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    string FromAddressID = 40;
+    string ToAddressID = 50;
+    string CoinTypeID = 60;
+    double Amount = 70;
+    string Message = 80;
+    uint32 CreateAt = 90;
+    string State = 100;
+    string ChainTransactionID = 110;
+    string PlatformTransactionID = 120;
 }
 
 message CreateCoinAccountTransactionRequest {
-    CoinAccountTransaction Info = 1200;
+    CoinAccountTransaction Info = 10;
 }
 
 message CreateCoinAccountTransactionResponse {
-    CoinAccountTransaction Info = 1300;
+    CoinAccountTransaction Info = 10;
 }
 
 message GetCoinAccountTransactionRequest {
-    string ID = 1400;
+    string ID = 10;
 }
 
 message GetCoinAccountTransactionResponse {
-    CoinAccountTransaction Info = 1500;
+    CoinAccountTransaction Info = 10;
 }
 
 message CoinAccountTransactionDetail {
-    string ID = 1510;
-    string AppID = 1511;
-    string UserID = 1512;
-    CoinAccountInfo FromAddress = 1513;
-    CoinAccountInfo ToAddress = 1514;
-    string CoinTypeID = 1515;
-    double Amount = 1516;
-    string Message = 1517;
-    uint32 CreateAt = 1518;
-    string State = 1519;
-    string ChainTransactionID = 1520;
-    string PlatformTransactionID = 1521;
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    CoinAccountInfo FromAddress = 40;
+    CoinAccountInfo ToAddress = 50;
+    string CoinTypeID = 60;
+    double Amount = 70;
+    string Message = 80;
+    uint32 CreateAt = 90;
+    string State = 100;
+    string ChainTransactionID = 110;
+    string PlatformTransactionID = 120;
 }
 
 message GetCoinAccountTransactionDetailRequest {
-    string ID = 1550;
+    string ID = 10;
 }
 
 message GetCoinAccountTransactionDetailResponse {
-    CoinAccountTransactionDetail Detail = 1560;
+    CoinAccountTransactionDetail Detail = 10;
 }
 
 message GetCoinAccountTransactionsByCoinAccountRequest {
-    string CoinTypeID = 1600;
-    string AddressID = 1601;
+    string CoinTypeID = 10;
+    string AddressID = 20;
 }
 
 message GetCoinAccountTransactionsByCoinAccountResponse {
-    repeated CoinAccountTransaction Infos = 1700;
+    repeated CoinAccountTransaction Infos = 10;
 }
 
 message GetCoinAccountTransactionsByStateRequest {
-    string State = 1;
+    string State = 10;
 }
 
 message GetCoinAccountTransactionsByStateResponse {
-    repeated CoinAccountTransaction Infos = 1;
+    repeated CoinAccountTransaction Infos = 10;
 }
 
 message GetCoinAccountTransactionsByCoinRequest {
-    string CoinTypeID = 1800;
+    string CoinTypeID = 10;
 }
 
 message GetCoinAccountTransactionsByCoinResponse {
-    repeated CoinAccountTransaction Infos = 1900;
+    repeated CoinAccountTransaction Infos = 10;
 }
 
 message UpdateCoinAccountTransactionRequest {
-    CoinAccountTransaction Info = 1910;
+    CoinAccountTransaction Info = 10;
 }
 
 message UpdateCoinAccountTransactionResponse {
-    CoinAccountTransaction Info = 1920;
+    CoinAccountTransaction Info = 10;
 }
 
 message DeleteCoinAccountTransactionRequest {
-    string ID = 2000;
+    string ID = 10;
 }
 
 message DeleteCoinAccountTransactionResponse {
-    CoinAccountTransaction Info = 2100;
+    CoinAccountTransaction Info = 10;
 }
 
 message PlatformBenefit {
-    string ID = 2200;
-    string GoodID = 2201;
-    string BenefitAccountID = 2202;
-    double Amount = 2203;
-    uint32 CreateAt = 2204;
-    string ChainTransactionID = 2205;
-    uint32 LastBenefitTimestamp = 2206;
+    string ID = 10;
+    string GoodID = 20;
+    string BenefitAccountID = 30;
+    double Amount = 40;
+    uint32 CreateAt = 50;
+    string ChainTransactionID = 60;
+    uint32 LastBenefitTimestamp = 70;
 }
 
 message CreatePlatformBenefitRequest {
-    PlatformBenefit Info = 2300;
+    PlatformBenefit Info = 10;
 }
 
 message CreatePlatformBenefitResponse {
-    PlatformBenefit Info = 2400;
+    PlatformBenefit Info = 10;
 }
 
 message GetPlatformBenefitsByGoodRequest {
-    string GoodID = 2500;
+    string GoodID = 10;
 }
 
 message GetPlatformBenefitsByGoodResponse {
-    repeated PlatformBenefit Infos = 2600;
+    repeated PlatformBenefit Infos = 10;
 }
 
 message PlatformBenefitDetail {
-    string ID = 2610;
-    string GoodID = 2611;
-    CoinAccountInfo BenefitAddress = 2612;
-    double Amount = 2613;
-    uint32 CreateAt = 2614;
-    string ChainTransactionID = 2615;
+    string ID = 10;
+    string GoodID = 20;
+    CoinAccountInfo BenefitAddress = 30;
+    double Amount = 40;
+    uint32 CreateAt = 50;
+    string ChainTransactionID = 60;
 }
 
 message GetPlatformBenefitDetailRequest {
-    string ID = 2620;
+    string ID = 10;
 }
 
 message GetPlatformBenefitDetailResponse {
-    PlatformBenefitDetail Detail = 2630;
+    PlatformBenefitDetail Detail = 10;
 }
 
 message GetPlatformBenefitRequest {
-    string ID = 2640;
+    string ID = 10;
 }
 
 message GetPlatformBenefitResponse {
-    PlatformBenefit Info = 2650;
+    PlatformBenefit Info = 10;
 }
 
 message GetLatestPlatformBenefitByGoodRequest {
-    string GoodID = 1;
+    string GoodID = 10;
 }
 
 message GetLatestPlatformBenefitByGoodResponse {
-    PlatformBenefit Info = 1;
+    PlatformBenefit Info = 10;
 }
 
 message PlatformSetting {
-    string ID = 2700;
-    string GoodID = 2701;
-    string BenefitAccountID = 2702;
-    string PlatformOfflineAccountID = 2703;
-    string UserOnlineAccountID = 2704;
-    string UserOfflineAccountID = 2705;
-    int32 BenefitIntervalHours = 2706;
+    string ID = 10;
+    string GoodID = 20;
+    string BenefitAccountID = 30;
+    string PlatformOfflineAccountID = 40;
+    string UserOnlineAccountID = 50;
+    string UserOfflineAccountID = 60;
+    int32 BenefitIntervalHours = 70;
 }
 
 message CreatePlatformSettingRequest {
-    PlatformSetting Info = 2800;
+    PlatformSetting Info = 10;
 }
 
 message CreatePlatformSettingResponse {
-    PlatformSetting Info = 2900;
+    PlatformSetting Info = 10;
 }
 
 message UpdatePlatformSettingRequest {
-    PlatformSetting Info = 3000;
+    PlatformSetting Info = 10;
 }
 
 message UpdatePlatformSettingResponse {
-    PlatformSetting Info = 3100;
+    PlatformSetting Info = 10;
 }
 
 message GetPlatformSettingByGoodRequest {
-    string GoodID = 3200;
+    string GoodID = 10;
 }
 
 message GetPlatformSettingByGoodResponse {
-    PlatformSetting Info = 3300;
+    PlatformSetting Info = 10;
 }
 
 message PlatformSettingDetail {
-    string ID = 3310;
-    string GoodID = 3311;
-    CoinAccountInfo BenefitAddress = 3312;
-    CoinAccountInfo PlatformOfflineAddress = 3313;
-    CoinAccountInfo UserOnlineAddress = 3314;
-    CoinAccountInfo UserOfflineAddress = 3315;
-    int32 BenefitIntervalHours = 3316;
+    string ID = 10;
+    string GoodID = 20;
+    CoinAccountInfo BenefitAddress = 30;
+    CoinAccountInfo PlatformOfflineAddress = 40;
+    CoinAccountInfo UserOnlineAddress = 50;
+    CoinAccountInfo UserOfflineAddress = 60;
+    int32 BenefitIntervalHours = 70;
 }
 
 message GetPlatformSettingDetailRequest {
-    string ID = 3320;
+    string ID = 10;
 }
 
 message GetPlatformSettingDetailResponse {
-    PlatformSettingDetail Detail = 3330;
+    PlatformSettingDetail Detail = 10;
 }
 
 message GetPlatformSettingRequest {
-    string ID = 3340;
+    string ID = 10;
 }
 
 message GetPlatformSettingResponse {
-    PlatformSetting Info = 3350;
+    PlatformSetting Info = 10;
 }
 
 message UserBenefit {
-    string ID = 3401;
-    string UserID = 3402;
-    string AppID = 3403;
-    string GoodID = 3404;
-    double Amount = 3405;
-    uint32 CreateAt = 3406;
-    string OrderID = 3407;
-    uint32 LastBenefitTimestamp = 3408;
+    string ID = 10;
+    string UserID = 20;
+    string AppID = 30;
+    string GoodID = 40;
+    double Amount = 50;
+    uint32 CreateAt = 60;
+    string OrderID = 70;
+    uint32 LastBenefitTimestamp = 80;
 }
 
 message CreateUserBenefitRequest {
-    UserBenefit Info = 3500;
+    UserBenefit Info = 10;
 }
 
 message CreateUserBenefitResponse {
-    UserBenefit Info = 3600;
+    UserBenefit Info = 10;
 }
 
 message GetUserBenefitsByAppUserRequest {
-    string AppID = 3700;
-    string UserID = 3701;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message GetUserBenefitsByAppUserResponse {
-    repeated UserBenefit Infos = 3800;
-}
-
-message PageInfo {
-    int32 PageIndex = 21;
-    int32 PageSize = 22;
+    repeated UserBenefit Infos = 10;
 }
 
 message GetUserBenefitsByAppRequest {
-    string AppID = 3900;
-    PageInfo PageInfo = 3950;
+    string AppID = 10;
+    npool.v1.PageInfo PageInfo = 20;
 }
 
 message GetUserBenefitsByAppResponse {
-    repeated UserBenefit Infos = 3960;
+    repeated UserBenefit Infos = 10;
 }
 
 message GetLatestUserBenefitByGoodAppUserRequest {
-    string AppID = 1;
-    string UserID = 2;
-    string GoodID = 3;
+    string AppID = 10;
+    string UserID = 20;
+    string GoodID = 30;
 }
 
 message GetLatestUserBenefitByGoodAppUserResponse {
-    UserBenefit Info = 1;
+    UserBenefit Info = 10;
 }
 

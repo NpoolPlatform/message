@@ -6,10 +6,7 @@
 
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
-export type VersionResponse = {
-  Info?: string
-}
-
+import * as NpoolV1Npool from "../npool.pb"
 export type CoinAccountInfo = {
   ID?: string
   CoinTypeID?: string
@@ -305,14 +302,9 @@ export type GetUserBenefitsByAppUserResponse = {
   Infos?: UserBenefit[]
 }
 
-export type PageInfo = {
-  PageIndex?: number
-  PageSize?: number
-}
-
 export type GetUserBenefitsByAppRequest = {
   AppID?: string
-  PageInfo?: PageInfo
+  PageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetUserBenefitsByAppResponse = {
@@ -330,8 +322,8 @@ export type GetLatestUserBenefitByGoodAppUserResponse = {
 }
 
 export class CloudHashingBilling {
-  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateCoinAccount(req: CreateCoinAccountRequest, initReq?: fm.InitReq): Promise<CreateCoinAccountResponse> {
     return fm.fetchReq<CreateCoinAccountRequest, CreateCoinAccountResponse>(`/v1/create/coin/account`, {...initReq, method: "POST", body: JSON.stringify(req)})

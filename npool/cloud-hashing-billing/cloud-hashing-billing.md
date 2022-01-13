@@ -57,7 +57,6 @@
     - [GetUserBenefitsByAppResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppResponse)
     - [GetUserBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest)
     - [GetUserBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse)
-    - [PageInfo](#cloud.hashing.billing.v1.PageInfo)
     - [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit)
     - [PlatformBenefitDetail](#cloud.hashing.billing.v1.PlatformBenefitDetail)
     - [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting)
@@ -67,7 +66,6 @@
     - [UpdatePlatformSettingRequest](#cloud.hashing.billing.v1.UpdatePlatformSettingRequest)
     - [UpdatePlatformSettingResponse](#cloud.hashing.billing.v1.UpdatePlatformSettingResponse)
     - [UserBenefit](#cloud.hashing.billing.v1.UserBenefit)
-    - [VersionResponse](#cloud.hashing.billing.v1.VersionResponse)
   
     - [CloudHashingBilling](#cloud.hashing.billing.v1.CloudHashingBilling)
   
@@ -860,7 +858,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| PageInfo | [PageInfo](#cloud.hashing.billing.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
@@ -907,22 +905,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) | repeated |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.PageInfo"></a>
-
-### PageInfo
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| PageIndex | [int32](#int32) |  |  |
-| PageSize | [int32](#int32) |  |  |
 
 
 
@@ -1093,21 +1075,6 @@
 
 
 
-
-<a name="cloud.hashing.billing.v1.VersionResponse"></a>
-
-### VersionResponse
-request body and response
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [string](#string) |  |  |
-
-
-
-
-
  
 
  
@@ -1122,7 +1089,7 @@ Cloud Hashing Billing
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#cloud.hashing.billing.v1.VersionResponse) | Method Version |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
 | CreateCoinAccount | [CreateCoinAccountRequest](#cloud.hashing.billing.v1.CreateCoinAccountRequest) | [CreateCoinAccountResponse](#cloud.hashing.billing.v1.CreateCoinAccountResponse) |  |
 | GetCoinAccount | [GetCoinAccountRequest](#cloud.hashing.billing.v1.GetCoinAccountRequest) | [GetCoinAccountResponse](#cloud.hashing.billing.v1.GetCoinAccountResponse) |  |
 | GetCoinAccountByCoinAddress | [GetCoinAccountByCoinAddressRequest](#cloud.hashing.billing.v1.GetCoinAccountByCoinAddressRequest) | [GetCoinAccountByCoinAddressResponse](#cloud.hashing.billing.v1.GetCoinAccountByCoinAddressResponse) |  |

@@ -4,6 +4,7 @@ package cloud_hashing_order
 
 import (
 	context "context"
+	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -20,7 +21,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CloudHashingOrderClient interface {
 	// Method Version
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateGoodPaying(ctx context.Context, in *CreateGoodPayingRequest, opts ...grpc.CallOption) (*CreateGoodPayingResponse, error)
 	GetGoodPayingByOrder(ctx context.Context, in *GetGoodPayingByOrderRequest, opts ...grpc.CallOption) (*GetGoodPayingByOrderResponse, error)
 	CreateGasPaying(ctx context.Context, in *CreateGasPayingRequest, opts ...grpc.CallOption) (*CreateGasPayingResponse, error)
@@ -53,8 +54,8 @@ func NewCloudHashingOrderClient(cc grpc.ClientConnInterface) CloudHashingOrderCl
 	return &cloudHashingOrderClient{cc}
 }
 
-func (c *cloudHashingOrderClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error) {
-	out := new(VersionResponse)
+func (c *cloudHashingOrderClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+	out := new(npool.VersionResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -265,7 +266,7 @@ func (c *cloudHashingOrderClient) GetOrdersDetailByGood(ctx context.Context, in 
 // for forward compatibility
 type CloudHashingOrderServer interface {
 	// Method Version
-	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
+	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateGoodPaying(context.Context, *CreateGoodPayingRequest) (*CreateGoodPayingResponse, error)
 	GetGoodPayingByOrder(context.Context, *GetGoodPayingByOrderRequest) (*GetGoodPayingByOrderResponse, error)
 	CreateGasPaying(context.Context, *CreateGasPayingRequest) (*CreateGasPayingResponse, error)
@@ -295,7 +296,7 @@ type CloudHashingOrderServer interface {
 type UnimplementedCloudHashingOrderServer struct {
 }
 
-func (UnimplementedCloudHashingOrderServer) Version(context.Context, *emptypb.Empty) (*VersionResponse, error) {
+func (UnimplementedCloudHashingOrderServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
 func (UnimplementedCloudHashingOrderServer) CreateGoodPaying(context.Context, *CreateGoodPayingRequest) (*CreateGoodPayingResponse, error) {

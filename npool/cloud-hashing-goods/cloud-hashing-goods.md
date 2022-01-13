@@ -112,7 +112,6 @@
     - [OffsaleAppGoodResponse](#cloud.hashing.goods.v1.OffsaleAppGoodResponse)
     - [OnsaleAppGoodRequest](#cloud.hashing.goods.v1.OnsaleAppGoodRequest)
     - [OnsaleAppGoodResponse](#cloud.hashing.goods.v1.OnsaleAppGoodResponse)
-    - [PageInfo](#cloud.hashing.goods.v1.PageInfo)
     - [PriceCurrency](#cloud.hashing.goods.v1.PriceCurrency)
     - [Recommend](#cloud.hashing.goods.v1.Recommend)
     - [RecommendGood](#cloud.hashing.goods.v1.RecommendGood)
@@ -146,7 +145,6 @@
     - [UpdateVendorLocationRequest](#cloud.hashing.goods.v1.UpdateVendorLocationRequest)
     - [UpdateVendorLocationResponse](#cloud.hashing.goods.v1.UpdateVendorLocationResponse)
     - [VendorLocationInfo](#cloud.hashing.goods.v1.VendorLocationInfo)
-    - [VersionResponse](#cloud.hashing.goods.v1.VersionResponse)
   
     - [CloudHashingGoods](#cloud.hashing.goods.v1.CloudHashingGoods)
   
@@ -1020,7 +1018,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PageInfo | [PageInfo](#cloud.hashing.goods.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
@@ -1111,7 +1109,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PageInfo | [PageInfo](#cloud.hashing.goods.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
@@ -1141,7 +1139,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PageInfo | [PageInfo](#cloud.hashing.goods.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
@@ -1171,7 +1169,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PageInfo | [PageInfo](#cloud.hashing.goods.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 | GoodID | [string](#string) |  |  |
 
 
@@ -1323,7 +1321,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PageInfo | [PageInfo](#cloud.hashing.goods.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
@@ -1354,7 +1352,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PageInfo | [PageInfo](#cloud.hashing.goods.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
@@ -1415,7 +1413,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PageInfo | [PageInfo](#cloud.hashing.goods.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
@@ -1595,7 +1593,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PageInfo | [PageInfo](#cloud.hashing.goods.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
@@ -1656,7 +1654,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PageInfo | [PageInfo](#cloud.hashing.goods.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
@@ -1863,22 +1861,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.goods.v1.PageInfo"></a>
-
-### PageInfo
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| PageIndex | [int32](#int32) |  |  |
-| PageSize | [int32](#int32) |  |  |
 
 
 
@@ -2379,7 +2361,7 @@
 <a name="cloud.hashing.goods.v1.VendorLocationInfo"></a>
 
 ### VendorLocationInfo
-
+Request body and response
 
 
 | Field | Type | Label | Description |
@@ -2389,21 +2371,6 @@
 | Province | [string](#string) |  |  |
 | City | [string](#string) |  |  |
 | Address | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.goods.v1.VersionResponse"></a>
-
-### VersionResponse
-Request body and response
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [string](#string) |  |  |
 
 
 
@@ -2423,7 +2390,7 @@ Cloud Hashing Goods
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#cloud.hashing.goods.v1.VersionResponse) |  |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) |  |
 | CreateVendorLocation | [CreateVendorLocationRequest](#cloud.hashing.goods.v1.CreateVendorLocationRequest) | [CreateVendorLocationResponse](#cloud.hashing.goods.v1.CreateVendorLocationResponse) |  |
 | UpdateVendorLocation | [UpdateVendorLocationRequest](#cloud.hashing.goods.v1.UpdateVendorLocationRequest) | [UpdateVendorLocationResponse](#cloud.hashing.goods.v1.UpdateVendorLocationResponse) |  |
 | GetVendorLocation | [GetVendorLocationRequest](#cloud.hashing.goods.v1.GetVendorLocationRequest) | [GetVendorLocationResponse](#cloud.hashing.goods.v1.GetVendorLocationResponse) |  |

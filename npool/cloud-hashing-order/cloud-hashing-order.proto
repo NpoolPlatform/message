@@ -7,10 +7,12 @@ option go_package = "github.com/NpoolPlatform/message/npool/cloud-hashing-order"
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 
+import "npool/npool.proto";
+
 // Service Name
 service CloudHashingOrder {
     // Method Version
-    rpc Version (google.protobuf.Empty) returns (VersionResponse){
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
         option (google.api.http) = {
             post: "/version"
             body: "*"
@@ -158,257 +160,253 @@ service CloudHashingOrder {
 }
 
 // request body and response
-message VersionResponse {
-    string Info = 100;
-}
-
 message GoodPaying {
-    string ID = 200;
-    string OrderID = 201;
-    string PaymentID = 202;
+    string ID = 10;
+    string OrderID = 20;
+    string PaymentID = 30;
 }
 
 message CreateGoodPayingRequest {
-    GoodPaying Info = 300;
+    GoodPaying Info = 10;
 }
 
 message CreateGoodPayingResponse {
-    GoodPaying Info = 400;
+    GoodPaying Info = 10;
 }
 
 message GetGoodPayingByOrderRequest {
-    string OrderID = 500;
+    string OrderID = 10;
 }
 
 message GetGoodPayingByOrderResponse {
-    GoodPaying Info = 600;
+    GoodPaying Info = 10;
 }
 
 message GasPaying {
-    string ID = 700;
-    string OrderID = 701;
-    string PaymentID = 702;
-    uint32 DurationMinutes = 703;
-    string FeeTypeID = 704;
+    string ID = 10;
+    string OrderID = 20;
+    string PaymentID = 30;
+    uint32 DurationMinutes = 40;
+    string FeeTypeID = 50;
 }
 
 message CreateGasPayingRequest {
-    GasPaying Info = 800;
+    GasPaying Info = 10;
 }
 
 message CreateGasPayingResponse {
-    GasPaying Info = 900;
+    GasPaying Info = 10;
 }
 
 message GetGasPayingsByOrderRequest {
-    string OrderID = 1000;
+    string OrderID = 10;
 }
 
 message GetGasPayingsByOrderResponse {
-    repeated GasPaying Infos = 1100;
+    repeated GasPaying Infos = 10;
 }
 
 message Order {
-    string ID = 1400;
-    string GoodID = 1401;
-    string AppID = 1402;
-    string UserID = 1403;
-    uint32 Units = 1404;
-    string DiscountCouponID = 1405;
-    string UserSpecialReductionID = 1406;
-    uint32 Start = 1407;
-    uint32 End = 1408;
-    string CouponID = 1409;
+    string ID = 10;
+    string GoodID = 20;
+    string AppID = 30;
+    string UserID = 40;
+    uint32 Units = 50;
+    string DiscountCouponID = 60;
+    string UserSpecialReductionID = 70;
+    uint32 Start = 80;
+    uint32 End = 90;
+    string CouponID = 100;
 }
 
 message CreateOrderRequest {
-    Order Info = 1500;
+    Order Info = 10;
 }
 
 message CreateOrderResponse {
-    Order Info = 1600;
+    Order Info = 10;
 }
 
 message GetOrderRequest {
-    string ID = 1700;
+    string ID = 10;
 }
 
 message GetOrderResponse {
-    Order Info = 1800;
+    Order Info = 10;
 }
 
 message GetOrdersByAppUserRequest {
-    string AppID = 2100;
-    string UserID = 2101;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message GetOrdersByAppUserResponse {
-    repeated Order Infos = 2200;
+    repeated Order Infos = 10;
 }
 
 message GetOrdersByAppRequest {
-    string AppID = 2300;
+    string AppID = 10;
 }
 
 message GetOrdersByAppResponse {
-    repeated Order Infos = 2400;
+    repeated Order Infos = 10;
 }
 
 message GetOrdersByGoodRequest {
-    string GoodID = 2500;
+    string GoodID = 10;
 }
 
 message GetOrdersByGoodResponse {
-    repeated Order Infos = 2600;
+    repeated Order Infos = 10;
 }
 
 message Compensate {
-    string ID = 2610;
-    string OrderID = 2611;
-    uint32 Start = 2612;
-    uint32 End = 2613;
-    string Message = 2614;
+    string ID = 10;
+    string OrderID = 20;
+    uint32 Start = 30;
+    uint32 End = 40;
+    string Message = 50;
 }
 
 message CreateCompensateRequest {
-    Compensate Info = 2620;
+    Compensate Info = 10;
 }
 
 message CreateCompensateResponse {
-    Compensate Info = 2630;
+    Compensate Info = 10;
 }
 
 message GetCompensatesByOrderRequest {
-    string OrderID = 2640;
+    string OrderID = 10;
 }
 
 message GetCompensatesByOrderResponse {
-    repeated Compensate Infos = 2650;
+    repeated Compensate Infos = 10;
 }
 
 message OutOfGas {
-    string ID = 2610;
-    string OrderID = 2611;
-    uint32 Start = 2612;
-    uint32 End = 2613;
+    string ID = 10;
+    string OrderID = 20;
+    uint32 Start = 30;
+    uint32 End = 40;
 }
 
 message CreateOutOfGasRequest {
-    OutOfGas Info = 2620;
+    OutOfGas Info = 10;
 }
 
 message CreateOutOfGasResponse {
-    OutOfGas Info = 2630;
+    OutOfGas Info = 10;
 }
 
 message GetOutOfGasesByOrderRequest {
-    string OrderID = 2640;
+    string OrderID = 10;
 }
 
 message GetOutOfGasesByOrderResponse {
-    repeated OutOfGas Infos = 2650;
+    repeated OutOfGas Infos = 10;
 }
 
 message Payment {
-    string ID = 110;
-    string OrderID = 111;
-    string AccountID = 112;
-    double StartAmount = 113;
-    double Amount = 114;
-    string CoinInfoID = 115;
-    string State = 116;
-    string ChainTransactionID = 117;
-    string PlatformTransactionID = 118;
+    string ID = 10;
+    string OrderID = 20;
+    string AccountID = 30;
+    double StartAmount = 40;
+    double Amount = 50;
+    string CoinInfoID = 60;
+    string State = 70;
+    string ChainTransactionID = 80;
+    string PlatformTransactionID = 90;
 }
 
 message CreatePaymentRequest {
-    Payment Info = 2660;
+    Payment Info = 10;
 }
 
 message CreatePaymentResponse {
-    Payment Info = 2670;
+    Payment Info = 10;
 }
 
 message GetPaymentRequest {
-    string ID = 1;
+    string ID = 10;
 }
 
 message GetPaymentResponse {
-    Payment Info = 1;
+    Payment Info = 10;
 }
 
 message UpdatePaymentRequest {
-    Payment Info = 2660;
+    Payment Info = 10;
 }
 
 message UpdatePaymentResponse {
-    Payment Info = 2670;
+    Payment Info = 10;
 }
 
 message GetPaymentByOrderRequest {
-    string OrderID = 2680;
+    string OrderID = 10;
 }
 
 message GetPaymentByOrderResponse {
-    Payment Info = 2690;
+    Payment Info = 10;
 }
 
 message OrderDetail {
-    string ID = 2700;
-    string GoodID = 2701;
-    string AppID = 2702;
-    string UserID = 2703;
-    uint32 Units = 2704;
-    string DiscountCouponID = 2705;
-    string UserSpecialReductionID = 2706;
-    GoodPaying GoodPaying = 2708;
-    repeated GasPaying GasPayings = 2709;
-    repeated Compensate Compensates = 2710;
-    repeated OutOfGas OutOfGases = 2711;
-    Payment Payment = 2712;
-    uint32 Start = 2713;
-    uint32 End = 2714;
-    string CouponID = 2715;
+    string ID = 10;
+    string GoodID = 20;
+    string AppID = 30;
+    string UserID = 40;
+    uint32 Units = 50;
+    string DiscountCouponID = 60;
+    string UserSpecialReductionID = 70;
+    GoodPaying GoodPaying = 80;
+    repeated GasPaying GasPayings = 90;
+    repeated Compensate Compensates = 100;
+    repeated OutOfGas OutOfGases = 110;
+    Payment Payment = 120;
+    uint32 Start = 130;
+    uint32 End = 140;
+    string CouponID = 150;
 }
 
 message GetOrderDetailRequest {
-    string ID = 2800;
+    string ID = 10;
 }
 
 message GetOrderDetailResponse {
-    OrderDetail Detail = 2900;
+    OrderDetail Detail = 10;
 }
 
 message GetOrdersDetailByAppUserRequest {
-    string AppID = 3000;
-    string UserID = 3001;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message GetOrdersDetailByAppUserResponse {
-    repeated OrderDetail Details = 3100;
+    repeated OrderDetail Details = 10;
 }
 
 message GetOrdersShortDetailByAppUserRequest {
-    string AppID = 3000;
-    string UserID = 3001;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message GetOrdersShortDetailByAppUserResponse {
-    repeated OrderDetail Details = 3100;
+    repeated OrderDetail Details = 10;
 }
 
 message GetOrdersDetailByAppRequest {
-    string AppID = 3200;
+    string AppID = 10;
 }
 
 message GetOrdersDetailByAppResponse {
-    repeated OrderDetail Details = 3300;
+    repeated OrderDetail Details = 10;
 }
 
 message GetOrdersDetailByGoodRequest {
-    string GoodID = 3400;
+    string GoodID = 10;
 }
 
 message GetOrdersDetailByGoodResponse {
-    repeated OrderDetail Details = 3500;
+    repeated OrderDetail Details = 10;
 }

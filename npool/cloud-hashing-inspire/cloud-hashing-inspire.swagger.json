@@ -3207,7 +3207,8 @@
         "AutoGenerateInvitationCode": {
           "type": "boolean"
         }
-      }
+      },
+      "title": "request body and response"
     },
     "v1NewUserRewardSettingDetail": {
       "type": "object",
@@ -3523,8 +3524,7 @@
         "Info": {
           "type": "string"
         }
-      },
-      "title": "request body and response"
+      }
     }
   }
 }

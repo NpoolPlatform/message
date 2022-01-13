@@ -55,7 +55,6 @@
     - [Payment](#cloud.hashing.order.v1.Payment)
     - [UpdatePaymentRequest](#cloud.hashing.order.v1.UpdatePaymentRequest)
     - [UpdatePaymentResponse](#cloud.hashing.order.v1.UpdatePaymentResponse)
-    - [VersionResponse](#cloud.hashing.order.v1.VersionResponse)
   
     - [CloudHashingOrder](#cloud.hashing.order.v1.CloudHashingOrder)
   
@@ -744,7 +743,7 @@
 <a name="cloud.hashing.order.v1.GoodPaying"></a>
 
 ### GoodPaying
-
+request body and response
 
 
 | Field | Type | Label | Description |
@@ -881,21 +880,6 @@
 
 
 
-
-<a name="cloud.hashing.order.v1.VersionResponse"></a>
-
-### VersionResponse
-request body and response
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [string](#string) |  |  |
-
-
-
-
-
  
 
  
@@ -910,7 +894,7 @@ Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#cloud.hashing.order.v1.VersionResponse) | Method Version |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
 | CreateGoodPaying | [CreateGoodPayingRequest](#cloud.hashing.order.v1.CreateGoodPayingRequest) | [CreateGoodPayingResponse](#cloud.hashing.order.v1.CreateGoodPayingResponse) |  |
 | GetGoodPayingByOrder | [GetGoodPayingByOrderRequest](#cloud.hashing.order.v1.GetGoodPayingByOrderRequest) | [GetGoodPayingByOrderResponse](#cloud.hashing.order.v1.GetGoodPayingByOrderResponse) |  |
 | CreateGasPaying | [CreateGasPayingRequest](#cloud.hashing.order.v1.CreateGasPayingRequest) | [CreateGasPayingResponse](#cloud.hashing.order.v1.CreateGasPayingResponse) |  |

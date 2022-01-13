@@ -4,6 +4,7 @@ package cloud_hashing_goods
 
 import (
 	context "context"
+	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CloudHashingGoodsClient interface {
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateVendorLocation(ctx context.Context, in *CreateVendorLocationRequest, opts ...grpc.CallOption) (*CreateVendorLocationResponse, error)
 	UpdateVendorLocation(ctx context.Context, in *UpdateVendorLocationRequest, opts ...grpc.CallOption) (*UpdateVendorLocationResponse, error)
 	GetVendorLocation(ctx context.Context, in *GetVendorLocationRequest, opts ...grpc.CallOption) (*GetVendorLocationResponse, error)
@@ -94,8 +95,8 @@ func NewCloudHashingGoodsClient(cc grpc.ClientConnInterface) CloudHashingGoodsCl
 	return &cloudHashingGoodsClient{cc}
 }
 
-func (c *cloudHashingGoodsClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error) {
-	out := new(VersionResponse)
+func (c *cloudHashingGoodsClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+	out := new(npool.VersionResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.goods.v1.CloudHashingGoods/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -665,7 +666,7 @@ func (c *cloudHashingGoodsClient) GetFeeTypes(ctx context.Context, in *GetFeeTyp
 // All implementations must embed UnimplementedCloudHashingGoodsServer
 // for forward compatibility
 type CloudHashingGoodsServer interface {
-	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
+	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateVendorLocation(context.Context, *CreateVendorLocationRequest) (*CreateVendorLocationResponse, error)
 	UpdateVendorLocation(context.Context, *UpdateVendorLocationRequest) (*UpdateVendorLocationResponse, error)
 	GetVendorLocation(context.Context, *GetVendorLocationRequest) (*GetVendorLocationResponse, error)
@@ -737,7 +738,7 @@ type CloudHashingGoodsServer interface {
 type UnimplementedCloudHashingGoodsServer struct {
 }
 
-func (UnimplementedCloudHashingGoodsServer) Version(context.Context, *emptypb.Empty) (*VersionResponse, error) {
+func (UnimplementedCloudHashingGoodsServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
 func (UnimplementedCloudHashingGoodsServer) CreateVendorLocation(context.Context, *CreateVendorLocationRequest) (*CreateVendorLocationResponse, error) {

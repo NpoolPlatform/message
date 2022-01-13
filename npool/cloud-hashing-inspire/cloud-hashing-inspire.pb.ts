@@ -6,10 +6,7 @@
 
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
-export type VersionResponse = {
-  Info?: string
-}
-
+import * as NpoolV1Npool from "../npool.pb"
 export type NewUserRewardSetting = {
   ID?: string
   AppID?: string
@@ -658,8 +655,8 @@ export type GetUserSpecialReductionsByAppReleaserResponse = {
 }
 
 export class CloudHashingInspire {
-  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateNewUserRewardSetting(req: CreateNewUserRewardSettingRequest, initReq?: fm.InitReq): Promise<CreateNewUserRewardSettingResponse> {
     return fm.fetchReq<CreateNewUserRewardSettingRequest, CreateNewUserRewardSettingResponse>(`/v1/create/new/user/reward/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
