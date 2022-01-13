@@ -577,6 +577,15 @@
         },
         "PayWithCoin": {
           "$ref": "#/definitions/v1CoinInfo"
+        },
+        "FixAmountCoupon": {
+          "$ref": "#/definitions/v1CouponAllocatedDetail"
+        },
+        "DiscountCoupon": {
+          "$ref": "#/definitions/v1CouponAllocatedDetail"
+        },
+        "UserSpecialReduction": {
+          "$ref": "#/definitions/v1UserSpecialReduction"
         }
       }
     },
@@ -762,6 +771,65 @@
         }
       }
     },
+    "v1CouponAllocatedDetail": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Coupon": {
+          "$ref": "#/definitions/v1CouponPool"
+        },
+        "Discount": {
+          "$ref": "#/definitions/v1DiscountPool"
+        }
+      }
+    },
+    "v1CouponPool": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "ReleaseByUserID": {
+          "type": "string"
+        },
+        "Denomination": {
+          "type": "number",
+          "format": "double"
+        },
+        "Circulation": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        }
+      }
+    },
     "v1CreateOrderPaymentRequest": {
       "type": "object",
       "properties": {
@@ -806,6 +874,38 @@
         "ShipmentAt": {
           "type": "integer",
           "format": "int32"
+        }
+      }
+    },
+    "v1DiscountPool": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "ReleaseByUserID": {
+          "type": "string"
+        },
+        "Discount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
         }
       }
     },
@@ -1505,6 +1605,38 @@
           "type": "string"
         },
         "PostalCode": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UserSpecialReduction": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "ReleaseByUserID": {
+          "type": "string"
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Message": {
           "type": "string"
         }
       }

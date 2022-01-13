@@ -602,6 +602,9 @@ Request body and response
 | PayToAccount | [cloud.hashing.billing.v1.CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
 | Good | [Good](#cloud.hashing.apis.v1.Good) |  |  |
 | PayWithCoin | [sphinx.coininfo.v1.CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
+| FixAmountCoupon | [cloud.hashing.inspire.v1.CouponAllocatedDetail](#cloud.hashing.inspire.v1.CouponAllocatedDetail) |  |  |
+| DiscountCoupon | [cloud.hashing.inspire.v1.CouponAllocatedDetail](#cloud.hashing.inspire.v1.CouponAllocatedDetail) |  |  |
+| UserSpecialReduction | [cloud.hashing.inspire.v1.UserSpecialReduction](#cloud.hashing.inspire.v1.UserSpecialReduction) |  |  |
 
 
 

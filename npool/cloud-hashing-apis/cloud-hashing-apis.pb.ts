@@ -8,6 +8,7 @@ import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as CloudHashingBillingV1Cloud-hashing-billing from "../cloud-hashing-billing/cloud-hashing-billing.pb"
 import * as CloudHashingGoodsV1Cloud-hashing-goods from "../cloud-hashing-goods/cloud-hashing-goods.pb"
+import * as CloudHashingInspireV1Cloud-hashing-inspire from "../cloud-hashing-inspire/cloud-hashing-inspire.pb"
 import * as CloudHashingOrderV1Cloud-hashing-order from "../cloud-hashing-order/cloud-hashing-order.pb"
 import * as SphinxCoininfoV1Coininfo from "../coininfo/coininfo.pb"
 import * as NpoolV1Npool from "../npool.pb"
@@ -55,6 +56,9 @@ export type Order = {
   PayToAccount?: CloudHashingBillingV1Cloud-hashing-billing.CoinAccountInfo
   Good?: Good
   PayWithCoin?: SphinxCoininfoV1Coininfo.CoinInfo
+  FixAmountCoupon?: CloudHashingInspireV1Cloud-hashing-inspire.CouponAllocatedDetail
+  DiscountCoupon?: CloudHashingInspireV1Cloud-hashing-inspire.CouponAllocatedDetail
+  UserSpecialReduction?: CloudHashingInspireV1Cloud-hashing-inspire.UserSpecialReduction
 }
 
 export type GetOrderRequest = {
