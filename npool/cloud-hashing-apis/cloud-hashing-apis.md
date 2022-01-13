@@ -39,6 +39,7 @@
     - [InvitationUserInfo.SummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry)
     - [KycReview](#cloud.hashing.apis.v1.KycReview)
     - [OrderFee](#cloud.hashing.apis.v1.OrderFee)
+    - [RecommendGood](#cloud.hashing.apis.v1.RecommendGood)
     - [SignupRequest](#cloud.hashing.apis.v1.SignupRequest)
     - [SignupResponse](#cloud.hashing.apis.v1.SignupResponse)
     - [SubmitOrderRequest](#cloud.hashing.apis.v1.SubmitOrderRequest)
@@ -445,7 +446,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [cloud.hashing.goods.v1.RecommendGood](#cloud.hashing.goods.v1.RecommendGood) | repeated |  |
+| Infos | [RecommendGood](#cloud.hashing.apis.v1.RecommendGood) | repeated |  |
 
 
 
@@ -598,6 +599,22 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | DurationDays | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.RecommendGood"></a>
+
+### RecommendGood
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Good | [Good](#cloud.hashing.apis.v1.Good) |  |  |
+| Recommend | [cloud.hashing.goods.v1.Recommend](#cloud.hashing.goods.v1.Recommend) |  |  |
 
 
 

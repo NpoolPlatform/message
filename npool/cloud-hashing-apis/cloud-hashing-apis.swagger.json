@@ -558,8 +558,19 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1RecommendGood"
+            "$ref": "#/definitions/hashingapisv1RecommendGood"
           }
+        }
+      }
+    },
+    "hashingapisv1RecommendGood": {
+      "type": "object",
+      "properties": {
+        "Good": {
+          "$ref": "#/definitions/v1Good"
+        },
+        "Recommend": {
+          "$ref": "#/definitions/v1Recommend"
         }
       }
     },
@@ -1305,17 +1316,6 @@
         },
         "Message": {
           "type": "string"
-        }
-      }
-    },
-    "v1RecommendGood": {
-      "type": "object",
-      "properties": {
-        "Recommend": {
-          "$ref": "#/definitions/v1Recommend"
-        },
-        "Good": {
-          "$ref": "#/definitions/v1GoodDetail"
         }
       }
     },

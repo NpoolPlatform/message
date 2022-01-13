@@ -19,6 +19,11 @@ export type Good = {
   Review?: ReviewServiceV1Review-service.Review
 }
 
+export type RecommendGood = {
+  Good?: Good
+  Recommend?: CloudHashingGoodsV1Cloud-hashing-goods.Recommend
+}
+
 export type GetGoodRequest = {
   ID?: string
 }
@@ -41,7 +46,7 @@ export type GetRecommendGoodsByAppRequest = {
 }
 
 export type GetRecommendGoodsByAppResponse = {
-  Infos?: CloudHashingGoodsV1Cloud-hashing-goods.RecommendGood[]
+  Infos?: RecommendGood[]
 }
 
 export type GetOrderRequest = {
