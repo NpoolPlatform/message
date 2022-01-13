@@ -1,0 +1,907 @@
+syntax = "proto3";
+
+package application.management.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/application";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+service ApplicationManagement {
+    // Method Version
+    rpc Version (google.protobuf.Empty) returns (VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+    /*
+    Create an application.
+    */
+    rpc CreateApplication (CreateApplicationRequest) returns (CreateApplicationResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app"
+            body: "*"
+        };
+    };
+    /*
+    Update an application's basic info.
+    */
+    rpc UpdateApplication (UpdateApplicationRequest) returns (UpdateApplicationResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app"
+            body: "*"
+        };
+    };
+    /*
+    Get application.
+    */
+    rpc GetApplication (GetApplicationRequest) returns (GetApplicationResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app"
+            body: "*"
+        };
+    };
+    /*
+    Get application by owner.
+    */
+    rpc GetApplicationByOwner (GetApplicationByOwnerRequest) returns (GetApplicationByOwnerResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/by/owner"
+            body: "*"
+        };
+    };
+
+    /*
+    Get all applications.
+    */
+    rpc GetApplications (GetApplicationsRequest) returns (GetApplicationsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/apps"
+            body: "*"
+        };
+    };
+    /*
+    Delete an application.
+    */
+    rpc DeleteApplication (DeleteApplicationRequest) returns (DeleteApplicationResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/app"
+            body: "*"
+        };
+    };
+    /*
+    Create a role in app.
+    */
+    rpc CreateRole (CreateRoleRequest) returns (CreateRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/role"
+            body: "*"
+        };
+    };
+    /*
+    Update role's basic info.
+    */
+    rpc UpdateRole (UpdateRoleRequest) returns (UpdateRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/role"
+            body: "*"
+        };
+    };
+    /*
+    Get Role.
+    */
+    rpc GetRole (GetRoleRequest) returns (GetRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/role"
+            body: "*"
+        };
+    };
+    /*
+    Get role by creator.
+    */
+    rpc GetRoleByCreator (GetRoleByCreatorRequest) returns (GetRoleByCreatorResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/role/by/creator"
+            body: "*"
+        };
+    };
+    /*
+    Get Roles.
+    */
+    rpc GetRoles (GetRolesRequest) returns (GetRolesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/roles"
+            body: "*"
+        };
+    };
+    /*
+    Delete role from app.
+    */
+    rpc DeleteRole (DeleteRoleRequest) returns (DeleteRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/role"
+            body: "*"
+        };
+    };
+    /*
+    Set role to user.
+    */
+    rpc SetUserRole (SetUserRoleRequest) returns (SetUserRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/user/role"
+            body: "*"
+        };
+    };
+    /*
+    Get user role.
+    */
+    rpc GetUserRole (GetUserRoleRequest) returns (GetUserRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/role"
+            body: "*"
+        };
+    };
+    /*
+    Get role users.
+    */
+    rpc GetRoleUsers (GetRoleUsersRequest) returns (GetRoleUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/role/users"
+            body: "*"
+        };
+    };
+    /*
+    Unset user role.
+    */
+    rpc UnSetUserRole (UnSetUserRoleRequest) returns (UnSetUserRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/unset/user/role"
+            body: "*"
+        };
+    };
+    /*
+    Add users to app.
+    */
+    rpc AddUsersToApplication (AddUsersToApplicationRequest) returns (AddUsersToApplicationResponse) {
+        option (google.api.http) = {
+            post: "/v1/add/users/to/app"
+            body: "*"
+        };
+    };
+    /*
+    Get user from app.
+    */
+    rpc GetUserFromApplication (GetUserFromApplicationRequest) returns (GetUserFromApplicationResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/from/app"
+            body: "*"
+        };
+    };
+    /*
+    Get users from app.
+    */
+    rpc GetUsersFromApplication (GetUsersFromApplicationRequest) returns (GetUsersFromApplicationResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/users/from/app"
+            body: "*"
+        };
+    };
+    // Get user's appid.
+    rpc GetUserAppID (GetUserAppIDRequest) returns (GetUserAppIDResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/appid"
+            body: "*"
+        };
+    };
+    /*
+    Remove users from app.
+    */
+    rpc RemoveUsersFromApplication (RemoveUsersFromApplicationRequest) returns (RemoveUsersFromApplicationResponse) {
+        option (google.api.http) = {
+            post: "/v1/remove/users/from/app"
+            body: "*"
+        };
+    };
+    /*
+    Create group in an application.
+    */
+    rpc CreateGroup (CreateGroupRequest) returns (CreateGroupResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/group"
+            body: "*"
+        };
+    };
+    /*
+    Get group info.
+    */
+    rpc GetGroup (GetGroupRequest) returns (GetGroupResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/group"
+            body: "*"
+        };
+    };
+    /*
+    Get group by owner.
+    */
+    rpc GetGroupByOwner (GetGroupByOwnerRequest) returns (GetGroupByOwnerResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/group/by/owner"
+            body: "*"
+        };
+    };
+    /*
+    Get all groups.
+    */
+    rpc GetAllGroups (GetAllGroupsRequest) returns (GetAllGroupsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/all/groups"
+            body: "*"
+        };
+    };
+    /*
+    Update group info.
+    */
+    rpc UpdateGroup (UpdateGroupRequest) returns (UpdateGroupResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/group"
+            body: "*"
+        };
+    };
+    /*
+    Delete group.
+    */
+    rpc DeleteGroup (DeleteGroupRequest) returns (DeleteGroupResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/group"
+            body: "*"
+        };
+    };
+    /*
+    Add users into group.
+    */
+    rpc AddGroupUsers (AddGroupUsersRequest) returns (AddGroupUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/add/group/users"
+            body: "*"
+        };
+    };
+    /*
+    Get group users.
+    */
+    rpc GetGroupUsers (GetGroupUsersRequest) returns (GetGroupUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/group/users"
+            body: "*"
+        };
+    };
+    // get user group info
+    rpc GetUserGroup (GetUserGroupRequest) returns (GetUserGroupResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/group"
+            body: "*"
+        };
+    };
+    /*
+    Remove users from group.
+    */
+    rpc RemoveGroupUsers (RemoveGroupUsersRequest) returns (RemoveGroupUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/remove/group/users"
+            body: "*"
+        };
+    };
+    /*
+    Create resource for app.
+    */
+    rpc CreateResource (CreateResourceRequest) returns (CreateResourceResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/resource"
+            body: "*"
+        };
+    };
+    /*
+    Update resource of app.
+    */
+    rpc UpdateResource (UpdateResourceRequest) returns (UpdateResourceResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/resource"
+            body: "*"
+        };
+    };
+    /*
+    Get resource by ID.
+    */
+    rpc GetResource (GetResourceRequest) returns (GetResourceResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/resource"
+            body: "*"
+        };
+    };
+    // get resource by name.
+    rpc GetResourceByName (GetResourceByNameRequest) returns (GetResourceByNameResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/resource/by/name"
+            body: "*"
+        };
+    };
+    /*
+    Get resource by creator.
+    */
+    rpc GetResourceByCreator (GetResourceByCreatorRequest) returns (GetResourceByCreatorResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/resource/by/creator"
+            body: "*"
+        };
+    };
+    /*
+    Get all resources from app.
+    */
+    rpc GetResources (GetResourcesRequest) returns (GetResourcesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/resources"
+            body: "*"
+        };
+    };
+    /*
+    Delete resource from app.
+    */
+    rpc DeleteResource (DeleteResourceRequest) returns (DeleteResourceResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/resource"
+            body: "*"
+        };
+    };
+    // set ga login verify option
+    rpc SetGALogin (SetGALoginRequest) returns (SetGALoginResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/ga/login"
+            body: "*"
+        };
+    };
+    // set sms login verify option
+    rpc SetSMSLogin (SetSMSLoginRequest) returns (SetSMSLoginResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/sms/login"
+            body: "*"
+        };
+    };
+    // add user login times
+    rpc AddUserLoginTime (AddUserLoginTimeRequest) returns (AddUserLoginTimeResponse) {
+        option (google.api.http) = {
+            post: "/v1/add/user/login/time"
+            body: "*"
+        };
+    };
+    // update user google authentication status.
+    rpc UpdateUserGAStatus (UpdateUserGAStatusRequest) returns (UpdateUserGAStatusResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user/ga/status"
+            body: "*"
+        };
+    };
+    // update user kyc status.
+    rpc UpdateUserKYCStatus (UpdateUserKYCStatusRequest) returns (UpdateUserKYCStatusResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user/kyc/status"
+            body: "*"
+        };
+    };
+    // get application user detail info.
+    rpc GetApplicationUserDetail (GetApplicationUserDetailRequest) returns (GetApplicationUserDetailResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/user/detail"
+            body: "*"
+        };
+    };
+}
+
+// request body and response
+message VersionResponse {
+    string Info = 100;
+}
+
+message PageInfo {
+    uint32 PageIndex = 1;
+    uint32 PageSize = 2;
+}
+
+message ApplicationInfo {
+    string ID = 1;
+    string ApplicationName = 2;
+    string ApplicationOwner = 3;
+    string HomepageUrl = 4;
+    string RedirectUrl = 5;
+    string ApplicationLogo = 6;
+    uint32 CreateAT = 7;
+    uint32 UpdateAT = 8;
+    string ClientSecret = 9;
+    bool GoogleRecaptcha = 10;
+    bool SmsLogin = 11;
+    bool InvitationCodeMust = 12;
+}
+
+message CreateApplicationRequest {
+    ApplicationInfo Info = 1;
+}
+
+message CreateApplicationResponse {
+    ApplicationInfo Info = 1;
+}
+
+message UpdateApplicationRequest {
+    ApplicationInfo Info = 1;
+}
+
+message UpdateApplicationResponse {
+    ApplicationInfo Info = 1;
+}
+
+message GetApplicationRequest {
+    string AppID = 1;
+}
+
+message GetApplicationResponse {
+    ApplicationInfo Info = 1;
+}
+
+message GetApplicationByOwnerRequest {
+    string Owner = 2;
+}
+
+message OwnerApplication {
+    string Owner = 2;
+    repeated ApplicationInfo Infos = 3;
+}
+
+message GetApplicationByOwnerResponse {
+    OwnerApplication Info = 1;
+}
+
+message GetApplicationsRequest {
+    PageInfo Info = 1;
+}
+
+message GetApplicationsResponse {
+    repeated ApplicationInfo Infos = 1;
+}
+
+message DeleteApplicationRequest {
+    string AppID = 1;
+}
+
+message DeleteApplicationResponse {
+    string Info = 1;
+}
+
+message RoleInfo {
+    string ID = 1;
+    string AppID = 2;
+    string RoleName = 3;
+    string Creator = 4;
+    uint32 CreateAT = 5;
+    uint32 UpdateAT = 6;
+    string Annotation = 7;
+}
+
+message CreateRoleRequest {
+    RoleInfo Info = 1;
+}
+
+message CreateRoleResponse {
+    RoleInfo Info = 1;
+}
+
+message UpdateRoleRequest {
+    RoleInfo Info = 1;
+}
+
+message UpdateRoleResponse {
+    RoleInfo Info = 1;
+}
+
+message GetRoleRequest {
+    string AppID = 1;
+    string RoleID = 2;
+}
+
+message GetRoleResponse {
+    RoleInfo Info = 1;
+}
+
+message GetRoleByCreatorRequest {
+    string AppID = 1;
+    string Creator = 2;
+}
+
+message CreatorRole {
+    string AppID = 1;
+    string Creator = 2;
+    repeated RoleInfo Infos = 3;
+}
+
+message GetRoleByCreatorResponse {
+    CreatorRole Info = 1;
+}
+
+message DeleteRoleRequest {
+    string RoleID = 1;
+    string AppID = 2;
+}
+
+message DeleteRoleResponse {
+    string Info = 1;
+}
+
+message GetRolesRequest {
+    string AppID = 1;
+}
+
+message GetRolesResponse {
+    repeated RoleInfo Infos = 1;
+}
+
+message RoleUserInfo {
+    string ID = 1;
+    string AppID = 2;
+    string RoleID = 3;
+    string UserID = 4;
+    uint32 CreateAT = 5;
+}
+
+message SetUserRoleRequest {
+    repeated string UserIDs = 1;
+    string RoleID = 2;
+    string AppID = 3;
+}
+
+message SetUserRoleResponse {
+    repeated RoleUserInfo Infos = 1;
+}
+
+message GetUserRoleRequest {
+    string UserID = 1;
+    string AppID = 2;
+}
+
+message UserRole {
+    repeated RoleInfo Infos = 1;
+    string UserID = 2;
+    string AppID = 3;
+}
+
+message GetUserRoleResponse {
+    UserRole Info = 1;
+}
+
+message GetRoleUsersRequest {
+    string AppID = 1;
+    string RoleID = 2;
+}
+
+message GetRoleUsersResponse {
+    repeated RoleUserInfo Infos  = 1;
+}
+
+message UnSetUserRoleRequest {
+    repeated string UserIDs = 1;
+    string RoleID = 2;
+    string AppID = 3;
+}
+
+message UnSetUserRoleResponse {
+    string Info = 1;
+}
+
+message ApplicationUserInfo {
+    string ID = 1;
+    string AppID = 2;
+    string UserID = 3;
+    bool Original = 4;
+    bool KycVerify = 5;
+    bool GAVerify = 6;
+    bool GALogin = 7;
+    bool SMSLogin = 8;
+    uint32 LoginNumber = 9;
+    uint32 CreateAT = 10;
+}
+
+message ApplicationUserDetail {
+    ApplicationUserInfo UserApplicationInfo = 1;
+    repeated GroupUserInfo UserGroupInfos = 2;
+    UserRole UserRoleInfo = 3;
+}
+
+message GetApplicationUserDetailRequest {
+    string AppID = 1;
+    string UserID = 2;
+}
+
+message GetApplicationUserDetailResponse {
+    ApplicationUserDetail Info = 1;
+}
+
+message AddUsersToApplicationRequest {
+    repeated string UserIDs = 1;
+    string AppID = 2;
+    bool Original = 3;
+}
+
+message AddUsersToApplicationResponse {
+    repeated ApplicationUserInfo Infos = 1;
+}
+
+message GetUserFromApplicationRequest {
+    string AppID = 1;
+    string UserID = 2;
+}
+
+message GetUserFromApplicationResponse {
+    ApplicationUserInfo Info = 1;
+}
+
+message GetUsersFromApplicationRequest {
+    string AppID = 1;
+}
+
+message GetUsersFromApplicationResponse {
+    repeated ApplicationUserInfo Infos = 1;
+}
+
+message RemoveUsersFromApplicationRequest {
+    repeated string UserIDs = 1;
+    string AppID = 2;
+}
+
+message RemoveUsersFromApplicationResponse {
+    string Info = 1;
+}
+
+message GroupInfo {
+    string ID = 1;
+    string AppID = 2;
+    string GroupName = 3;
+    string GroupOwner = 4;
+    string GroupLogo = 5;
+    string Annotation = 6;
+    uint32 CreateAT = 7;
+    uint32 UpdateAT = 8;
+}
+
+message CreateGroupRequest {
+    GroupInfo Info = 1;
+}
+
+message CreateGroupResponse {
+    GroupInfo Info = 1;
+}
+
+message GetGroupRequest {
+    string GroupID = 1;
+    string AppID = 2;
+}
+
+message GetGroupResponse {
+    GroupInfo Info = 1;
+}
+
+message GetGroupByOwnerRequest {
+    string AppID = 1;
+    string Owner = 2;
+}
+
+message OwnerGroup {
+    string AppID = 1;
+    string Owner = 2;
+    repeated GroupInfo Infos = 3;
+}
+
+message GetGroupByOwnerResponse {
+    OwnerGroup Info = 1;
+}
+
+message GetAllGroupsRequest {
+    string AppID = 1;
+}
+
+message GetAllGroupsResponse {
+    repeated GroupInfo Infos = 1;
+}
+
+message UpdateGroupRequest {
+    GroupInfo Info = 1;
+}
+
+message UpdateGroupResponse {
+    GroupInfo Info = 1;
+}
+
+message DeleteGroupRequest {
+    string GroupID = 1;
+    string AppID = 2;
+}
+
+message DeleteGroupResponse {
+    string Info = 1;
+}
+
+message GroupUserInfo {
+    string ID = 1;
+    string GroupID = 2;
+    string AppID = 3;
+    string UserID = 4;
+    string Annotation = 5;
+    uint32 CreateAT = 6;
+}
+
+message AddGroupUsersRequest {
+    repeated string UserIDs = 1;
+    string GroupID = 2;
+    string AppID = 3;
+}
+
+message AddGroupUsersResponse {
+    repeated GroupUserInfo Infos = 1;
+}
+
+message GetGroupUsersRequest {
+    string GroupID = 1;
+    string AppID = 2;
+}
+
+message GetGroupUsersResponse {
+    repeated GroupUserInfo Infos = 1;
+}
+
+message RemoveGroupUsersRequest {
+    repeated string UserIDs = 1;
+    string GroupID = 2;
+    string AppID = 3;
+}
+
+message RemoveGroupUsersResponse {
+    string Info = 1;
+}
+
+message ResourceInfo {
+    string ID = 1;
+    string AppID = 2;
+    string ResourceName = 3;
+    string ResourceDescription = 4;
+    string Type = 5;
+    string Creator = 6;
+    uint32 CreateAT = 7;
+    uint32 UpdateAT = 8;
+}
+
+message CreateResourceRequest {
+    ResourceInfo Info = 1;
+}
+
+message CreateResourceResponse {
+    ResourceInfo Info = 1;
+}
+
+message UpdateResourceRequest {
+    ResourceInfo Info = 1;
+}
+
+message UpdateResourceResponse {
+    ResourceInfo Info = 1;
+}
+
+message GetResourceRequest {
+    string ResourceID = 1;
+    string AppID = 2;
+}
+
+message GetResourceResponse {
+    ResourceInfo Info = 1;
+}
+
+message GetResourceByCreatorRequest {
+    string AppID = 1;
+    string Creator = 2;
+}
+
+message CreatorResource {
+    string AppID = 1;
+    string Creator = 2;
+    repeated ResourceInfo Infos = 3;
+}
+
+message GetResourceByCreatorResponse {
+    CreatorResource Info = 1;
+}
+
+message GetResourcesRequest {
+    string AppID = 1;
+}
+
+message GetResourcesResponse {
+    repeated ResourceInfo Infos = 1;
+}
+
+message DeleteResourceRequest {
+    string ResourceID = 1;
+    string AppID = 2;
+}
+
+message DeleteResourceResponse {
+    string Info = 1;
+}
+
+message SetGALoginRequest {
+    string AppID = 1;
+    string UserID = 2;
+    bool Set = 3;
+}
+
+message SetGALoginResponse {
+    string Info = 1;
+}
+
+message AddUserLoginTimeRequest {
+    string UserID = 1;
+    string AppID = 2;
+}
+
+message AddUserLoginTimeResponse {
+    uint32 Info = 1;
+}
+
+message UpdateUserGAStatusRequest {
+    string UserID = 1;
+    string AppID = 2;
+    bool Status = 3;
+}
+
+message UpdateUserGAStatusResponse {
+    string Info = 1;
+}
+
+message UpdateUserKYCStatusRequest {
+    string UserID = 1;
+    string AppID = 2;
+    bool Status = 3;
+}
+
+message UpdateUserKYCStatusResponse {
+    string Info = 1;
+}
+
+message GetUserGroupRequest {
+    string AppID = 1;
+    string UserID = 2;
+}
+
+message GetUserGroupResponse {
+    repeated GroupUserInfo Infos = 1;
+}
+
+message SetSMSLoginRequest {
+    string AppID = 1;
+    string UserID = 2;
+    bool Set = 3;
+}
+
+message SetSMSLoginResponse {
+    string Info = 1;
+}
+
+message GetResourceByNameRequest {
+    string ResourceName = 1;
+    string AppID = 2;
+}
+
+message GetResourceByNameResponse {
+    ResourceInfo Info = 1;
+}
+
+message GetUserAppIDRequest {
+    string UserID = 1;
+}
+
+message GetUserAppIDResponse {
+    repeated string Infos = 1;
+}

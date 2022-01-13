@@ -1,0 +1,225 @@
+syntax = "proto3";
+
+package verification.door.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/verification";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+// Service Name
+service VerificationDoor {
+    // Method Version
+    rpc Version (google.protobuf.Empty) returns (VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    };
+    // get google authentication qr code url
+    rpc GetQRcodeURL (GetQRcodeURLRequest) returns (GetQRcodeURLResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/qrcode/url"
+            body: "*"
+        };
+    };
+    // verify user google authentication(user's input code)
+    rpc VerifyGoogleAuth (VerifyGoogleAuthRequest) returns (VerifyGoogleAuthResponse) {
+        option (google.api.http) = {
+            post: "/v1/verify/google/auth"
+            body: "*"
+        };
+    };
+    // delete user google authentication record
+    rpc DeleteUserGoogleAuth (DeleteUserGoogleAuthRequest) returns (DeleteUserGoogleAuthResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/user/google/auth"
+            body: "*"
+        };
+    };
+    // send email to user
+    rpc SendEmail (SendEmailRequest) returns (SendEmailResponse) {
+        option (google.api.http) = {
+            post: "/v1/send/email"
+            body: "*"
+        };
+    };
+    // send sms to user(todo......)
+    rpc SendSms (SendSmsRequest) returns (SendSmsResponse) {
+        option (google.api.http) = {
+            post: "/v1/send/sms"
+            body: "*"
+        };
+    };
+    // verify code with user id.
+    rpc VerifyCodeWithUserID (VerifyCodeWithUserIDRequest) returns (VerifyCodeWithUserIDResponse) {
+        option (google.api.http) = {
+            post: "/v1/verify/code/with/userid"
+            body: "*"
+        };
+    };
+    // verify code user input. (can verify email code and sms code, verify sms code is todo......)
+    rpc VerifyCode (VerifyCodeRequest) returns (VerifyCodeResponse) {
+        option (google.api.http) = {
+            post: "/v1/verify/code"
+            body: "*"
+        };
+    };
+    // verify google recaptcha.
+    rpc VerifyGoogleRecaptcha (VerifyGoogleRecaptchaRequest) returns (VerifyGoogleRecaptchaResponse) {
+        option (google.api.http) = {
+            post: "/v1/verify/google/recaptcha"
+            body: "*"
+        };
+    };
+    // get captcher imgine url
+    rpc GetCaptcherImg (GetCaptcherImgRequest) returns (GetCaptcherImgResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/captcher/img"
+            body: "*"
+        };
+    };
+    // verify captcher input
+    rpc VerifyCaptcher (VerifyCaptcherRequest) returns (VerifyCaptcherResponse) {
+        option (google.api.http) = {
+            post: "/v1/verify/captcher"
+            body: "*"
+        };
+    };
+    // Send user site contact email
+    rpc SendUserSiteContactEmail (SendUserSiteContactEmailRequest) returns (SendUserSiteContactEmailResponse) {
+        option (google.api.http) = {
+            post: "/v1/send/user/site/contact/email"
+            body: "*"
+        };
+    };
+}
+
+// request body and response
+message VersionResponse {
+    string Info = 100;
+}
+
+message GetQRcodeURLRequest {
+    string Username = 1;
+    string UserID = 2;
+    string AppID = 3;
+}
+
+message QRCodeInfo {
+    string CodeURL = 1;
+    string Secret = 2;
+}
+
+message GetQRcodeURLResponse {
+    QRCodeInfo Info = 1;
+}
+
+message VerifyGoogleAuthRequest {
+    string UserID = 1;
+    string Code = 2;
+    string AppID = 3;
+}
+
+message VerifyGoogleAuthResponse {
+    string Info = 1;
+}
+
+message DeleteUserGoogleAuthRequest {
+    string UserID = 1;
+    string AppID = 2;
+}
+
+message DeleteUserGoogleAuthResponse {
+    string Info = 1;
+}
+
+message SendEmailRequest {
+    string AppID = 1;
+    string Email = 2;
+    string Intention = 3;
+    string Lang = 4;
+    string Username = 5;
+}
+
+message SendEmailResponse {
+    string Info = 1;
+}
+
+message SendSmsRequest {
+    string AppID = 1;
+    string Phone = 2;
+    string Lang = 3;
+    string Intention = 4;
+}
+
+message SendSmsResponse {
+    string Info = 1;
+}
+
+message VerifyCodeRequest {
+    string Param = 1;
+    string Code = 2;
+    string VerifyType = 3;
+    string AppID = 4;
+}
+
+message VerifyCodeResponse {
+    string Info = 1;
+}
+
+message VerifyCodeWithUserIDRequest {
+    string UserID = 1;
+    string Param = 2;
+    string Code = 3;
+    string VerifyType = 4;
+    string AppID = 5;
+}
+
+message VerifyCodeWithUserIDResponse {
+    string Info = 1;
+}
+
+message VerifyGoogleRecaptchaRequest {
+    string Response = 1;
+}
+
+message VerifyGoogleRecaptchaResponse {
+    bool Info = 1;
+}
+
+message GetCaptcherImgRequest {
+    string AppID = 1;
+    string UserID = 2;
+}
+
+message CaptcherResp {
+    string ID = 1;
+    string Base64URL = 2;
+}
+
+message GetCaptcherImgResponse {
+    CaptcherResp Info = 1;
+}
+
+message VerifyCaptcherRequest {
+    string ID = 1;
+    string Input = 2;
+}
+
+message VerifyCaptcherResponse {
+    string Info = 1;
+}
+
+message SendUserSiteContactEmailRequest {
+    string AppID = 1;
+    string From = 2;
+    string To = 3;
+    string Text = 4;
+    string Subject = 5;
+    string Username = 6;
+}
+
+message SendUserSiteContactEmailResponse {
+    string Info = 1;
+}
