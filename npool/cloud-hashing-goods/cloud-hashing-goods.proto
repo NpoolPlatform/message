@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package cloud.hashing.goods.v1;
 
-option go_package = "github.com/NpoolPlatform/cloud-hashing-goods/message/npool";
+option go_package = "github.com/NpoolPlatform/message/npool/cloud-hashing-goods";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";

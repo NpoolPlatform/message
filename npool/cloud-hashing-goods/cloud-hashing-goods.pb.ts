@@ -255,6 +255,8 @@ export type GetPriceCurrencysResponse = {
 }
 
 export type FeeDetail = {
+  ID?: string
+  AppID?: string
   Fee?: FeeType
   Value?: number
 }
@@ -314,6 +316,75 @@ export type GetGoodsRequest = {
 export type GetGoodsResponse = {
   Infos?: GoodInfo[]
   Total?: number
+}
+
+export type Recommend = {
+  ID?: string
+  AppID?: string
+  GoodID?: string
+  RecommenderID?: string
+  Message?: string
+}
+
+export type CreateRecommendRequest = {
+  Info?: Recommend
+}
+
+export type CreateRecommendResponse = {
+  Info?: Recommend
+}
+
+export type UpdateRecommendRequest = {
+  Info?: Recommend
+}
+
+export type UpdateRecommendResponse = {
+  Info?: Recommend
+}
+
+export type GetRecommendsByAppRequest = {
+  AppID?: string
+}
+
+export type GetRecommendsByAppResponse = {
+  Infos?: Recommend[]
+}
+
+export type GetRecommendsByRecommenderRequest = {
+  UserID?: string
+}
+
+export type GetRecommendsByRecommenderResponse = {
+  Infos?: Recommend[]
+}
+
+export type DeleteRecommendRequest = {
+  ID?: string
+}
+
+export type DeleteRecommendResponse = {
+  Info?: Recommend
+}
+
+export type RecommendGood = {
+  Recommend?: Recommend
+  Good?: GoodDetail
+}
+
+export type GetRecommendGoodsByAppRequest = {
+  AppID?: string
+}
+
+export type GetRecommendGoodsByAppResponse = {
+  Infos?: RecommendGood[]
+}
+
+export type GetRecommendGoodsByRecommenderRequest = {
+  UserID?: string
+}
+
+export type GetRecommendGoodsByRecommenderResponse = {
+  Infos?: RecommendGood[]
 }
 
 export type AppGoodInfo = {
@@ -603,50 +674,12 @@ export type GetFeeResponse = {
   Info?: Fee
 }
 
-export type FeeDuration = {
-  ID?: string
-  FeeTypeID?: string
-  Duration?: number
+export type GetFeesRequest = {
+  PageInfo?: PageInfo
 }
 
-export type CreateFeeDurationRequest = {
-  Info?: FeeDuration
-}
-
-export type CreateFeeDurationResponse = {
-  Info?: FeeDuration
-}
-
-export type UpdateFeeDurationRequest = {
-  Info?: FeeDuration
-}
-
-export type UpdateFeeDurationResponse = {
-  Info?: FeeDuration
-}
-
-export type GetFeeDurationRequest = {
-  ID?: string
-}
-
-export type GetFeeDurationResponse = {
-  Info?: FeeDuration
-}
-
-export type GetFeeDurationsByFeeTypeRequest = {
-  FeeTypeID?: string
-}
-
-export type GetFeeDurationsByFeeTypeResponse = {
-  Infos?: FeeDuration[]
-}
-
-export type DeleteFeeDurationRequest = {
-  ID?: string
-}
-
-export type DeleteFeeDurationResponse = {
-  Info?: FeeDuration
+export type GetFeesResponse = {
+  Infos?: Fee[]
 }
 
 export class CloudHashingGoods {
@@ -734,6 +767,27 @@ export class CloudHashingGoods {
   static GetGoodsDetail(req: GetGoodsDetailRequest, initReq?: fm.InitReq): Promise<GetGoodsDetailResponse> {
     return fm.fetchReq<GetGoodsDetailRequest, GetGoodsDetailResponse>(`/v1/get/goods/detail`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateRecommend(req: CreateRecommendRequest, initReq?: fm.InitReq): Promise<CreateRecommendResponse> {
+    return fm.fetchReq<CreateRecommendRequest, CreateRecommendResponse>(`/v1/create/recommend`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateRecommend(req: UpdateRecommendRequest, initReq?: fm.InitReq): Promise<UpdateRecommendResponse> {
+    return fm.fetchReq<UpdateRecommendRequest, UpdateRecommendResponse>(`/v1/update/recommend`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetRecommendsByApp(req: GetRecommendsByAppRequest, initReq?: fm.InitReq): Promise<GetRecommendsByAppResponse> {
+    return fm.fetchReq<GetRecommendsByAppRequest, GetRecommendsByAppResponse>(`/v1/get/recommends/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetRecommendsByRecommender(req: GetRecommendsByRecommenderRequest, initReq?: fm.InitReq): Promise<GetRecommendsByRecommenderResponse> {
+    return fm.fetchReq<GetRecommendsByRecommenderRequest, GetRecommendsByRecommenderResponse>(`/v1/get/recommends/by/recommender`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static DeleteRecommend(req: DeleteRecommendRequest, initReq?: fm.InitReq): Promise<DeleteRecommendResponse> {
+    return fm.fetchReq<DeleteRecommendRequest, DeleteRecommendResponse>(`/v1/delete/recommend`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetRecommendGoodsByApp(req: GetRecommendGoodsByAppRequest, initReq?: fm.InitReq): Promise<GetRecommendGoodsByAppResponse> {
+    return fm.fetchReq<GetRecommendGoodsByAppRequest, GetRecommendGoodsByAppResponse>(`/v1/get/recommend/goods/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetRecommendGoodsByRecommender(req: GetRecommendGoodsByRecommenderRequest, initReq?: fm.InitReq): Promise<GetRecommendGoodsByRecommenderResponse> {
+    return fm.fetchReq<GetRecommendGoodsByRecommenderRequest, GetRecommendGoodsByRecommenderResponse>(`/v1/get/recommend/goods/by/recommender`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static AuthorizeAppGood(req: AuthorizeAppGoodRequest, initReq?: fm.InitReq): Promise<AuthorizeAppGoodResponse> {
     return fm.fetchReq<AuthorizeAppGoodRequest, AuthorizeAppGoodResponse>(`/v1/authorize/app/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -803,6 +857,9 @@ export class CloudHashingGoods {
   static GetFee(req: GetFeeRequest, initReq?: fm.InitReq): Promise<GetFeeResponse> {
     return fm.fetchReq<GetFeeRequest, GetFeeResponse>(`/v1/get/fee`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetFees(req: GetFeesRequest, initReq?: fm.InitReq): Promise<GetFeesResponse> {
+    return fm.fetchReq<GetFeesRequest, GetFeesResponse>(`/v1/get/fees`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static CreateFeeType(req: CreateFeeTypeRequest, initReq?: fm.InitReq): Promise<CreateFeeTypeResponse> {
     return fm.fetchReq<CreateFeeTypeRequest, CreateFeeTypeResponse>(`/v1/create/fee/type`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -814,20 +871,5 @@ export class CloudHashingGoods {
   }
   static GetFeeTypes(req: GetFeeTypesRequest, initReq?: fm.InitReq): Promise<GetFeeTypesResponse> {
     return fm.fetchReq<GetFeeTypesRequest, GetFeeTypesResponse>(`/v1/get/fee/types`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static CreateFeeDuration(req: CreateFeeDurationRequest, initReq?: fm.InitReq): Promise<CreateFeeDurationResponse> {
-    return fm.fetchReq<CreateFeeDurationRequest, CreateFeeDurationResponse>(`/v1/create/fee/duration`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static UpdateFeeDuration(req: UpdateFeeDurationRequest, initReq?: fm.InitReq): Promise<UpdateFeeDurationResponse> {
-    return fm.fetchReq<UpdateFeeDurationRequest, UpdateFeeDurationResponse>(`/v1/update/fee/duration`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetFeeDuration(req: GetFeeDurationRequest, initReq?: fm.InitReq): Promise<GetFeeDurationResponse> {
-    return fm.fetchReq<GetFeeDurationRequest, GetFeeDurationResponse>(`/v1/get/fee/duration`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetFeeDurationsByFeeType(req: GetFeeDurationsByFeeTypeRequest, initReq?: fm.InitReq): Promise<GetFeeDurationsByFeeTypeResponse> {
-    return fm.fetchReq<GetFeeDurationsByFeeTypeRequest, GetFeeDurationsByFeeTypeResponse>(`/v1/get/fee/durations/feetype`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static DeleteFeeDuration(req: DeleteFeeDurationRequest, initReq?: fm.InitReq): Promise<DeleteFeeDurationResponse> {
-    return fm.fetchReq<DeleteFeeDurationRequest, DeleteFeeDurationResponse>(`/v1/delete/fee/duration`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

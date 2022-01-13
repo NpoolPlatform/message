@@ -267,38 +267,6 @@
         ]
       }
     },
-    "/v1/create/fee/duration": {
-      "post": {
-        "operationId": "CloudHashingGoods_CreateFeeDuration",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateFeeDurationResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateFeeDurationRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingGoods"
-        ]
-      }
-    },
     "/v1/create/fee/type": {
       "post": {
         "operationId": "CloudHashingGoods_CreateFeeType",
@@ -492,6 +460,38 @@
         ]
       }
     },
+    "/v1/create/recommend": {
+      "post": {
+        "operationId": "CloudHashingGoods_CreateRecommend",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateRecommendResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateRecommendRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
     "/v1/create/target-area": {
       "post": {
         "operationId": "CloudHashingGoods_CreateTargetArea",
@@ -588,38 +588,6 @@
         ]
       }
     },
-    "/v1/delete/fee/duration": {
-      "post": {
-        "operationId": "CloudHashingGoods_DeleteFeeDuration",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1DeleteFeeDurationResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1DeleteFeeDurationRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingGoods"
-        ]
-      }
-    },
     "/v1/delete/good": {
       "post": {
         "operationId": "CloudHashingGoods_DeleteGood",
@@ -644,6 +612,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1DeleteGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/delete/recommend": {
+      "post": {
+        "operationId": "CloudHashingGoods_DeleteRecommend",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteRecommendResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteRecommendRequest"
             }
           }
         ],
@@ -844,70 +844,6 @@
         ]
       }
     },
-    "/v1/get/fee/duration": {
-      "post": {
-        "operationId": "CloudHashingGoods_GetFeeDuration",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetFeeDurationResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetFeeDurationRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingGoods"
-        ]
-      }
-    },
-    "/v1/get/fee/durations/feetype": {
-      "post": {
-        "operationId": "CloudHashingGoods_GetFeeDurationsByFeeType",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetFeeDurationsByFeeTypeResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetFeeDurationsByFeeTypeRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingGoods"
-        ]
-      }
-    },
     "/v1/get/fee/type": {
       "post": {
         "operationId": "CloudHashingGoods_GetFeeType",
@@ -964,6 +900,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetFeeTypesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/get/fees": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetFees",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetFeesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetFeesRequest"
             }
           }
         ],
@@ -1246,6 +1214,134 @@
             }
           }
         },
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/get/recommend/goods/by/app": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetRecommendGoodsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRecommendGoodsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRecommendGoodsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/get/recommend/goods/by/recommender": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetRecommendGoodsByRecommender",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRecommendGoodsByRecommenderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRecommendGoodsByRecommenderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/get/recommends/by/app": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetRecommendsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRecommendsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRecommendsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/get/recommends/by/recommender": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetRecommendsByRecommender",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRecommendsByRecommenderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRecommendsByRecommenderRequest"
+            }
+          }
+        ],
         "tags": [
           "CloudHashingGoods"
         ]
@@ -1593,38 +1689,6 @@
         ]
       }
     },
-    "/v1/update/fee/duration": {
-      "post": {
-        "operationId": "CloudHashingGoods_UpdateFeeDuration",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateFeeDurationResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateFeeDurationRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingGoods"
-        ]
-      }
-    },
     "/v1/update/fee/type": {
       "post": {
         "operationId": "CloudHashingGoods_UpdateFeeType",
@@ -1809,6 +1873,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1UpdatePriceCurrencyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/update/recommend": {
+      "post": {
+        "operationId": "CloudHashingGoods_UpdateRecommend",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateRecommendResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateRecommendRequest"
             }
           }
         ],
@@ -2111,22 +2207,6 @@
         }
       }
     },
-    "v1CreateFeeDurationRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1FeeDuration"
-        }
-      }
-    },
-    "v1CreateFeeDurationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1FeeDuration"
-        }
-      }
-    },
     "v1CreateFeeRequest": {
       "type": "object",
       "properties": {
@@ -2231,6 +2311,22 @@
         }
       }
     },
+    "v1CreateRecommendRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Recommend"
+        }
+      }
+    },
+    "v1CreateRecommendResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Recommend"
+        }
+      }
+    },
     "v1CreateTargetAreaRequest": {
       "type": "object",
       "properties": {
@@ -2279,22 +2375,6 @@
         }
       }
     },
-    "v1DeleteFeeDurationRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1DeleteFeeDurationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1FeeDuration"
-        }
-      }
-    },
     "v1DeleteGoodRequest": {
       "type": "object",
       "properties": {
@@ -2308,6 +2388,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1GoodInfo"
+        }
+      }
+    },
+    "v1DeleteRecommendRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteRecommendResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Recommend"
         }
       }
     },
@@ -2405,27 +2501,18 @@
     "v1FeeDetail": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
         "Fee": {
           "$ref": "#/definitions/v1FeeType"
         },
         "Value": {
           "type": "number",
           "format": "double"
-        }
-      }
-    },
-    "v1FeeDuration": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "FeeTypeID": {
-          "type": "string"
-        },
-        "Duration": {
-          "type": "integer",
-          "format": "int32"
         }
       }
     },
@@ -2485,41 +2572,6 @@
         }
       }
     },
-    "v1GetFeeDurationRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetFeeDurationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1FeeDuration"
-        }
-      }
-    },
-    "v1GetFeeDurationsByFeeTypeRequest": {
-      "type": "object",
-      "properties": {
-        "FeeTypeID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetFeeDurationsByFeeTypeResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1FeeDuration"
-          }
-        }
-      }
-    },
     "v1GetFeeRequest": {
       "type": "object",
       "properties": {
@@ -2567,6 +2619,25 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1FeeType"
+          }
+        }
+      }
+    },
+    "v1GetFeesRequest": {
+      "type": "object",
+      "properties": {
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetFeesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Fee"
           }
         }
       }
@@ -2722,6 +2793,82 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1PriceCurrency"
+          }
+        }
+      }
+    },
+    "v1GetRecommendGoodsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetRecommendGoodsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RecommendGood"
+          }
+        }
+      }
+    },
+    "v1GetRecommendGoodsByRecommenderRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetRecommendGoodsByRecommenderResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RecommendGood"
+          }
+        }
+      }
+    },
+    "v1GetRecommendsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetRecommendsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Recommend"
+          }
+        }
+      }
+    },
+    "v1GetRecommendsByRecommenderRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetRecommendsByRecommenderResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Recommend"
           }
         }
       }
@@ -3093,6 +3240,37 @@
         }
       }
     },
+    "v1Recommend": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "RecommenderID": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1RecommendGood": {
+      "type": "object",
+      "properties": {
+        "Recommend": {
+          "$ref": "#/definitions/v1Recommend"
+        },
+        "Good": {
+          "$ref": "#/definitions/v1GoodDetail"
+        }
+      }
+    },
     "v1SetAppGoodPriceRequest": {
       "type": "object",
       "properties": {
@@ -3190,22 +3368,6 @@
         }
       }
     },
-    "v1UpdateFeeDurationRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1FeeDuration"
-        }
-      }
-    },
-    "v1UpdateFeeDurationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1FeeDuration"
-        }
-      }
-    },
     "v1UpdateFeeTypeRequest": {
       "type": "object",
       "properties": {
@@ -3291,6 +3453,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1PriceCurrency"
+        }
+      }
+    },
+    "v1UpdateRecommendRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Recommend"
+        }
+      }
+    },
+    "v1UpdateRecommendResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Recommend"
         }
       }
     },
