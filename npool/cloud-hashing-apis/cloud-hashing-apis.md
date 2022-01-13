@@ -8,8 +8,12 @@
     - [CreateOrderPaymentResponse](#cloud.hashing.apis.v1.CreateOrderPaymentResponse)
     - [GetGoodRequest](#cloud.hashing.apis.v1.GetGoodRequest)
     - [GetGoodResponse](#cloud.hashing.apis.v1.GetGoodResponse)
+    - [GetGoodReviewsRequest](#cloud.hashing.apis.v1.GetGoodReviewsRequest)
+    - [GetGoodReviewsResponse](#cloud.hashing.apis.v1.GetGoodReviewsResponse)
     - [GetGoodsRequest](#cloud.hashing.apis.v1.GetGoodsRequest)
     - [GetGoodsResponse](#cloud.hashing.apis.v1.GetGoodsResponse)
+    - [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest)
+    - [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse)
     - [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest)
     - [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse)
     - [GetMyDirectInvitationsResponse.InfosEntry](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry)
@@ -27,11 +31,13 @@
     - [GetRecommendGoodsByAppRequest](#cloud.hashing.apis.v1.GetRecommendGoodsByAppRequest)
     - [GetRecommendGoodsByAppResponse](#cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse)
     - [Good](#cloud.hashing.apis.v1.Good)
+    - [GoodReview](#cloud.hashing.apis.v1.GoodReview)
     - [Invitation](#cloud.hashing.apis.v1.Invitation)
     - [InvitationSummary](#cloud.hashing.apis.v1.InvitationSummary)
     - [InvitationUserInfo](#cloud.hashing.apis.v1.InvitationUserInfo)
     - [InvitationUserInfo.MySummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry)
     - [InvitationUserInfo.SummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry)
+    - [KycReview](#cloud.hashing.apis.v1.KycReview)
     - [OrderFee](#cloud.hashing.apis.v1.OrderFee)
     - [RecommendGood](#cloud.hashing.apis.v1.RecommendGood)
     - [SignupRequest](#cloud.hashing.apis.v1.SignupRequest)
@@ -114,6 +120,31 @@
 
 
 
+<a name="cloud.hashing.apis.v1.GetGoodReviewsRequest"></a>
+
+### GetGoodReviewsRequest
+
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetGoodReviewsResponse"></a>
+
+### GetGoodReviewsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [GoodReview](#cloud.hashing.apis.v1.GoodReview) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.GetGoodsRequest"></a>
 
 ### GetGoodsRequest
@@ -139,6 +170,36 @@
 | ----- | ---- | ----- | ----------- |
 | Infos | [Good](#cloud.hashing.apis.v1.Good) | repeated |  |
 | Total | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetKycReviewsRequest"></a>
+
+### GetKycReviewsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetKycReviewsResponse"></a>
+
+### GetKycReviewsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [KycReview](#cloud.hashing.apis.v1.KycReview) | repeated |  |
 
 
 
@@ -408,6 +469,23 @@ Request body and response
 
 
 
+<a name="cloud.hashing.apis.v1.GoodReview"></a>
+
+### GoodReview
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+| User | [user.v1.UserBasicInfo](#user.v1.UserBasicInfo) |  |  |
+| Good | [cloud.hashing.goods.v1.GoodDetail](#cloud.hashing.goods.v1.GoodDetail) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.Invitation"></a>
 
 ### Invitation
@@ -488,6 +566,21 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | key | [string](#string) |  |  |
 | value | [InvitationSummary](#cloud.hashing.apis.v1.InvitationSummary) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.KycReview"></a>
+
+### KycReview
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 
 
 

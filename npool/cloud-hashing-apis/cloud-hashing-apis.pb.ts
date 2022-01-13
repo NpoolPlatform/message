@@ -163,6 +163,31 @@ export type GetMyDirectInvitationsResponse = {
   Infos?: {[key: string]: Invitation}
 }
 
+export type KycReview = {
+  Review?: ReviewServiceV1Review-service.Review
+}
+
+export type GetKycReviewsRequest = {
+  AppID?: string
+}
+
+export type GetKycReviewsResponse = {
+  Infos?: KycReview[]
+}
+
+export type GoodReview = {
+  Review?: ReviewServiceV1Review-service.Review
+  User?: UserV1User-management.UserBasicInfo
+  Good?: CloudHashingGoodsV1Cloud-hashing-goods.GoodDetail
+}
+
+export type GetGoodReviewsRequest = {
+}
+
+export type GetGoodReviewsResponse = {
+  Infos?: GoodReview[]
+}
+
 export class CloudHashingApis {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})

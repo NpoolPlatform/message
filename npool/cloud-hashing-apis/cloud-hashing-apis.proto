@@ -10,8 +10,6 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 import "npool/cloud-hashing-goods/cloud-hashing-goods.proto";
 import "npool/cloud-hashing-order/cloud-hashing-order.proto";
-import "npool/cloud-hashing-billing/cloud-hashing-billing.proto";
-import "npool/cloud-hashing-inspire/cloud-hashing-inspire.proto";
 import "npool/review-service/review-service.proto";
 import "npool/user/user-management.proto";
 
@@ -255,5 +253,30 @@ message GetMyDirectInvitationsRequest {
 message GetMyDirectInvitationsResponse {
     InvitationUserInfo MySelf = 10;
     map<string, Invitation> Infos = 20;
+}
+
+message KycReview {
+    review.service.v1.Review Review = 10;
+}
+
+message GetKycReviewsRequest {
+    string AppID = 10;
+}
+
+message GetKycReviewsResponse {
+    repeated  KycReview Infos = 10;
+}
+
+message GoodReview {
+    review.service.v1.Review Review = 10;
+    user.v1.UserBasicInfo User = 20;
+    cloud.hashing.goods.v1.GoodDetail Good = 30;
+}
+
+message GetGoodReviewsRequest {
+}
+
+message GetGoodReviewsResponse {
+    repeated GoodReview Infos = 10;
 }
 

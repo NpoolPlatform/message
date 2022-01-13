@@ -1058,7 +1058,8 @@
         "PaymentID": {
           "type": "string"
         }
-      }
+      },
+      "title": "request body and response"
     },
     "v1Invitation": {
       "type": "object",
@@ -1450,7 +1451,8 @@
         "Address": {
           "type": "string"
         }
-      }
+      },
+      "title": "Request body and response"
     }
   }
 }
