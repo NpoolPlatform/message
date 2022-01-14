@@ -4,6 +4,8 @@
 ## Table of Contents
 
 - [npool/cloud-hashing-apis/cloud-hashing-apis.proto](#npool/cloud-hashing-apis/cloud-hashing-apis.proto)
+    - [CreateGoodRequest](#cloud.hashing.apis.v1.CreateGoodRequest)
+    - [CreateGoodResponse](#cloud.hashing.apis.v1.CreateGoodResponse)
     - [CreateOrderPaymentRequest](#cloud.hashing.apis.v1.CreateOrderPaymentRequest)
     - [CreateOrderPaymentResponse](#cloud.hashing.apis.v1.CreateOrderPaymentResponse)
     - [GetGoodRequest](#cloud.hashing.apis.v1.GetGoodRequest)
@@ -56,6 +58,36 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/cloud-hashing-apis/cloud-hashing-apis.proto
+
+
+
+<a name="cloud.hashing.apis.v1.CreateGoodRequest"></a>
+
+### CreateGoodRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.goods.v1.GoodInfo](#cloud.hashing.goods.v1.GoodInfo) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.CreateGoodResponse"></a>
+
+### CreateGoodResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Good](#cloud.hashing.apis.v1.Good) |  |  |
+
+
+
 
 
 
@@ -730,6 +762,7 @@ Cloud Hashing Goods
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) |  |
 | GetGoods | [GetGoodsRequest](#cloud.hashing.apis.v1.GetGoodsRequest) | [GetGoodsResponse](#cloud.hashing.apis.v1.GetGoodsResponse) |  |
+| CreateGood | [CreateGoodRequest](#cloud.hashing.apis.v1.CreateGoodRequest) | [CreateGoodResponse](#cloud.hashing.apis.v1.CreateGoodResponse) |  |
 | GetGood | [GetGoodRequest](#cloud.hashing.apis.v1.GetGoodRequest) | [GetGoodResponse](#cloud.hashing.apis.v1.GetGoodResponse) |  |
 | GetRecommendGoodsByApp | [GetRecommendGoodsByAppRequest](#cloud.hashing.apis.v1.GetRecommendGoodsByAppRequest) | [GetRecommendGoodsByAppResponse](#cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse) |  |
 | SubmitOrder | [SubmitOrderRequest](#cloud.hashing.apis.v1.SubmitOrderRequest) | [SubmitOrderResponse](#cloud.hashing.apis.v1.SubmitOrderResponse) |  |

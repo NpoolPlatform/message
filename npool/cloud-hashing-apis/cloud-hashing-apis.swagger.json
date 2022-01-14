@@ -11,6 +11,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/good": {
+      "post": {
+        "operationId": "CloudHashingApis_CreateGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1CreateGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1CreateGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/create/order/payment": {
       "post": {
         "operationId": "CloudHashingApis_CreateOrderPayment",
@@ -429,6 +461,22 @@
     }
   },
   "definitions": {
+    "hashingapisv1CreateGoodRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodInfo"
+        }
+      }
+    },
+    "hashingapisv1CreateGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Good"
+        }
+      }
+    },
     "hashingapisv1GetGoodRequest": {
       "type": "object",
       "properties": {

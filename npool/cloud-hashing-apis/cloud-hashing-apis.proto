@@ -31,6 +31,12 @@ service CloudHashingApis {
             body: "*"
         };
     }
+    rpc CreateGood(CreateGoodRequest) returns (CreateGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/good"
+            body: "*"
+        };
+    }
     rpc GetGood(GetGoodRequest) returns (GetGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/good"
@@ -115,6 +121,14 @@ message Good {
 message RecommendGood {
     Good Good = 10;
     cloud.hashing.goods.v1.Recommend Recommend = 20;
+}
+
+message CreateGoodRequest {
+    cloud.hashing.goods.v1.GoodInfo Info = 10;
+}
+
+message CreateGoodResponse {
+    Good Info = 10;
 }
 
 message GetGoodRequest {

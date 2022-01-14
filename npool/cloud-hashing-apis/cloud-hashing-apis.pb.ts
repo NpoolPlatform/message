@@ -26,6 +26,14 @@ export type RecommendGood = {
   Recommend?: CloudHashingGoodsV1Cloud-hashing-goods.Recommend
 }
 
+export type CreateGoodRequest = {
+  Info?: CloudHashingGoodsV1Cloud-hashing-goods.GoodInfo
+}
+
+export type CreateGoodResponse = {
+  Info?: Good
+}
+
 export type GetGoodRequest = {
   ID?: string
 }
@@ -209,6 +217,9 @@ export class CloudHashingApis {
   }
   static GetGoods(req: GetGoodsRequest, initReq?: fm.InitReq): Promise<GetGoodsResponse> {
     return fm.fetchReq<GetGoodsRequest, GetGoodsResponse>(`/v1/get/goods`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateGood(req: CreateGoodRequest, initReq?: fm.InitReq): Promise<CreateGoodResponse> {
+    return fm.fetchReq<CreateGoodRequest, CreateGoodResponse>(`/v1/create/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetGood(req: GetGoodRequest, initReq?: fm.InitReq): Promise<GetGoodResponse> {
     return fm.fetchReq<GetGoodRequest, GetGoodResponse>(`/v1/get/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
