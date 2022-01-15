@@ -203,6 +203,38 @@
         ]
       }
     },
+    "/v1/get/reviews/by/app/domain/objectid": {
+      "post": {
+        "operationId": "ReviewService_GetReviewsByAppDomainObjectID",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetReviewsByAppDomainObjectIDResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetReviewsByAppDomainObjectIDRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ReviewService"
+        ]
+      }
+    },
     "/v1/get/reviews/by/domain": {
       "post": {
         "operationId": "ReviewService_GetReviewsByDomain",
@@ -513,6 +545,31 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1ReviewRule"
+          }
+        }
+      }
+    },
+    "v1GetReviewsByAppDomainObjectIDRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Domain": {
+          "type": "string"
+        },
+        "ObjectID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetReviewsByAppDomainObjectIDResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Review"
           }
         }
       }

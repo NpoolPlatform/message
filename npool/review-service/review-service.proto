@@ -41,6 +41,12 @@ service ReviewService {
             body: "*"
         };
     }
+    rpc GetReviewsByAppDomainObjectID(GetReviewsByAppDomainObjectIDRequest) returns (GetReviewsByAppDomainObjectIDResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/reviews/by/app/domain/objectid"
+            body: "*"
+        };
+    }
     rpc SubmitReview(SubmitReviewRequest) returns (SubmitReviewResponse) {
         option (google.api.http) = {
             post: "/v1/submit/review"
@@ -103,19 +109,19 @@ message Review {
 }
 
 message CreateReviewRequest {
-    Review Info = 300;
+    Review Info = 10;
 }
 
 message CreateReviewResponse {
-    Review Info = 400;
+    Review Info = 10;
 }
 
 message UpdateReviewRequest {
-    Review Info = 500;
+    Review Info = 10;
 }
 
 message UpdateReviewResponse {
-    Review Info = 600;
+    Review Info = 10;
 }
 
 message GetReviewsByDomainRequest {
@@ -123,7 +129,7 @@ message GetReviewsByDomainRequest {
 }
 
 message GetReviewsByDomainResponse {
-    repeated Review Infos = 800;
+    repeated Review Infos = 10;
 }
 
 message GetReviewsByAppDomainRequest {
@@ -132,7 +138,17 @@ message GetReviewsByAppDomainRequest {
 }
 
 message GetReviewsByAppDomainResponse {
-    repeated Review Infos = 800;
+    repeated Review Infos = 10;
+}
+
+message GetReviewsByAppDomainObjectIDRequest {
+    string AppID = 10;
+    string Domain = 20;
+    string ObjectID = 30;
+}
+
+message GetReviewsByAppDomainObjectIDResponse {
+    repeated Review Infos = 10;
 }
 
 message SubmitReviewRequest {
@@ -144,42 +160,42 @@ message SubmitReviewResponse {
 }
 
 message ReviewRule {
-    string ID = 900;
-    string ObjectType = 901;
-    string Domain = 902;
-    string Rules = 903;
+    string ID = 10;
+    string ObjectType = 20;
+    string Domain = 30;
+    string Rules = 40;
 }
 
 message CreateReviewRuleRequest {
-    ReviewRule Info = 1000;
+    ReviewRule Info = 10;
 }
 
 message CreateReviewRuleResponse {
-    ReviewRule Info = 1100;
+    ReviewRule Info = 10;
 }
 
 message UpdateReviewRuleRequest {
-    ReviewRule Info = 1200;
+    ReviewRule Info = 10;
 }
 
 message UpdateReviewRuleResponse {
-    ReviewRule Info = 1300;
+    ReviewRule Info = 10;
 }
 
 message GetReviewRuleRequest {
-    string ID = 1400;
+    string ID = 10;
 }
 
 message GetReviewRuleResponse {
-    ReviewRule Info = 1500;
+    ReviewRule Info = 10;
 }
 
 message GetReviewRulesByDomainRequest {
-    string Domain = 1600;
+    string Domain = 10;
 }
 
 message GetReviewRulesByDomainResponse {
-    repeated ReviewRule Infos = 1700;
+    repeated ReviewRule Infos = 10;
 }
 
 message GetReviewRuleByDomainObjectTypeRequest {
