@@ -115,7 +115,7 @@ message Good {
     cloud.hashing.goods.v1.GoodDetail Good = 10;
     sphinx.coininfo.v1.CoinInfo Main = 20;
     repeated sphinx.coininfo.v1.CoinInfo SupportCoins = 30;
-    review.service.v1.Review Review = 40;
+    repeated review.service.v1.Review Reviews = 40;
 }
 
 message RecommendGood {

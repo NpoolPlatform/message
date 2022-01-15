@@ -1078,8 +1078,11 @@
             "$ref": "#/definitions/v1CoinInfo"
           }
         },
-        "Review": {
-          "$ref": "#/definitions/v1Review"
+        "Reviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Review"
+          }
         }
       },
       "title": "Request body and response"
