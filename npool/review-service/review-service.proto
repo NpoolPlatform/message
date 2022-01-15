@@ -41,9 +41,9 @@ service ReviewService {
             body: "*"
         };
     }
-    rpc GetReviewsByAppDomainObjectID(GetReviewsByAppDomainObjectIDRequest) returns (GetReviewsByAppDomainObjectIDResponse) {
+    rpc GetReviewsByAppDomainObjectTypeID(GetReviewsByAppDomainObjectTypeIDRequest) returns (GetReviewsByAppDomainObjectTypeIDResponse) {
         option (google.api.http) = {
-            post: "/v1/get/reviews/by/app/domain/objectid"
+            post: "/v1/get/reviews/by/app/domain/object/type/id"
             body: "*"
         };
     }
@@ -141,13 +141,14 @@ message GetReviewsByAppDomainResponse {
     repeated Review Infos = 10;
 }
 
-message GetReviewsByAppDomainObjectIDRequest {
+message GetReviewsByAppDomainObjectTypeIDRequest {
     string AppID = 10;
     string Domain = 20;
-    string ObjectID = 30;
+    string ObjectType = 30;
+    string ObjectID = 40;
 }
 
-message GetReviewsByAppDomainObjectIDResponse {
+message GetReviewsByAppDomainObjectTypeIDResponse {
     repeated Review Infos = 10;
 }
 

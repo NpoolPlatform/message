@@ -14,8 +14,8 @@
     - [GetReviewRuleResponse](#review.service.v1.GetReviewRuleResponse)
     - [GetReviewRulesByDomainRequest](#review.service.v1.GetReviewRulesByDomainRequest)
     - [GetReviewRulesByDomainResponse](#review.service.v1.GetReviewRulesByDomainResponse)
-    - [GetReviewsByAppDomainObjectIDRequest](#review.service.v1.GetReviewsByAppDomainObjectIDRequest)
-    - [GetReviewsByAppDomainObjectIDResponse](#review.service.v1.GetReviewsByAppDomainObjectIDResponse)
+    - [GetReviewsByAppDomainObjectTypeIDRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeIDRequest)
+    - [GetReviewsByAppDomainObjectTypeIDResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeIDResponse)
     - [GetReviewsByAppDomainRequest](#review.service.v1.GetReviewsByAppDomainRequest)
     - [GetReviewsByAppDomainResponse](#review.service.v1.GetReviewsByAppDomainResponse)
     - [GetReviewsByDomainRequest](#review.service.v1.GetReviewsByDomainRequest)
@@ -196,9 +196,9 @@
 
 
 
-<a name="review.service.v1.GetReviewsByAppDomainObjectIDRequest"></a>
+<a name="review.service.v1.GetReviewsByAppDomainObjectTypeIDRequest"></a>
 
-### GetReviewsByAppDomainObjectIDRequest
+### GetReviewsByAppDomainObjectTypeIDRequest
 
 
 
@@ -206,6 +206,7 @@
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | Domain | [string](#string) |  |  |
+| ObjectType | [string](#string) |  |  |
 | ObjectID | [string](#string) |  |  |
 
 
@@ -213,9 +214,9 @@
 
 
 
-<a name="review.service.v1.GetReviewsByAppDomainObjectIDResponse"></a>
+<a name="review.service.v1.GetReviewsByAppDomainObjectTypeIDResponse"></a>
 
-### GetReviewsByAppDomainObjectIDResponse
+### GetReviewsByAppDomainObjectTypeIDResponse
 
 
 
@@ -482,7 +483,7 @@ Service Name
 | UpdateReview | [UpdateReviewRequest](#review.service.v1.UpdateReviewRequest) | [UpdateReviewResponse](#review.service.v1.UpdateReviewResponse) |  |
 | GetReviewsByDomain | [GetReviewsByDomainRequest](#review.service.v1.GetReviewsByDomainRequest) | [GetReviewsByDomainResponse](#review.service.v1.GetReviewsByDomainResponse) |  |
 | GetReviewsByAppDomain | [GetReviewsByAppDomainRequest](#review.service.v1.GetReviewsByAppDomainRequest) | [GetReviewsByAppDomainResponse](#review.service.v1.GetReviewsByAppDomainResponse) |  |
-| GetReviewsByAppDomainObjectID | [GetReviewsByAppDomainObjectIDRequest](#review.service.v1.GetReviewsByAppDomainObjectIDRequest) | [GetReviewsByAppDomainObjectIDResponse](#review.service.v1.GetReviewsByAppDomainObjectIDResponse) |  |
+| GetReviewsByAppDomainObjectTypeID | [GetReviewsByAppDomainObjectTypeIDRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeIDRequest) | [GetReviewsByAppDomainObjectTypeIDResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeIDResponse) |  |
 | SubmitReview | [SubmitReviewRequest](#review.service.v1.SubmitReviewRequest) | [SubmitReviewResponse](#review.service.v1.SubmitReviewResponse) |  |
 | SubmitReviewResult | [SubmitReviewResultRequest](#review.service.v1.SubmitReviewResultRequest) | [SubmitReviewResultResponse](#review.service.v1.SubmitReviewResultResponse) |  |
 | CreateReviewRule | [CreateReviewRuleRequest](#review.service.v1.CreateReviewRuleRequest) | [CreateReviewRuleResponse](#review.service.v1.CreateReviewRuleResponse) |  |

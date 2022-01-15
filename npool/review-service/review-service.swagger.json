@@ -203,14 +203,14 @@
         ]
       }
     },
-    "/v1/get/reviews/by/app/domain/objectid": {
+    "/v1/get/reviews/by/app/domain/object/type/id": {
       "post": {
-        "operationId": "ReviewService_GetReviewsByAppDomainObjectID",
+        "operationId": "ReviewService_GetReviewsByAppDomainObjectTypeID",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetReviewsByAppDomainObjectIDResponse"
+              "$ref": "#/definitions/v1GetReviewsByAppDomainObjectTypeIDResponse"
             }
           },
           "default": {
@@ -226,7 +226,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetReviewsByAppDomainObjectIDRequest"
+              "$ref": "#/definitions/v1GetReviewsByAppDomainObjectTypeIDRequest"
             }
           }
         ],
@@ -549,7 +549,7 @@
         }
       }
     },
-    "v1GetReviewsByAppDomainObjectIDRequest": {
+    "v1GetReviewsByAppDomainObjectTypeIDRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -558,12 +558,15 @@
         "Domain": {
           "type": "string"
         },
+        "ObjectType": {
+          "type": "string"
+        },
         "ObjectID": {
           "type": "string"
         }
       }
     },
-    "v1GetReviewsByAppDomainObjectIDResponse": {
+    "v1GetReviewsByAppDomainObjectTypeIDResponse": {
       "type": "object",
       "properties": {
         "Infos": {

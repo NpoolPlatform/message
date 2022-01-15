@@ -25,7 +25,7 @@ type ReviewServiceClient interface {
 	UpdateReview(ctx context.Context, in *UpdateReviewRequest, opts ...grpc.CallOption) (*UpdateReviewResponse, error)
 	GetReviewsByDomain(ctx context.Context, in *GetReviewsByDomainRequest, opts ...grpc.CallOption) (*GetReviewsByDomainResponse, error)
 	GetReviewsByAppDomain(ctx context.Context, in *GetReviewsByAppDomainRequest, opts ...grpc.CallOption) (*GetReviewsByAppDomainResponse, error)
-	GetReviewsByAppDomainObjectID(ctx context.Context, in *GetReviewsByAppDomainObjectIDRequest, opts ...grpc.CallOption) (*GetReviewsByAppDomainObjectIDResponse, error)
+	GetReviewsByAppDomainObjectTypeID(ctx context.Context, in *GetReviewsByAppDomainObjectTypeIDRequest, opts ...grpc.CallOption) (*GetReviewsByAppDomainObjectTypeIDResponse, error)
 	SubmitReview(ctx context.Context, in *SubmitReviewRequest, opts ...grpc.CallOption) (*SubmitReviewResponse, error)
 	SubmitReviewResult(ctx context.Context, in *SubmitReviewResultRequest, opts ...grpc.CallOption) (*SubmitReviewResultResponse, error)
 	CreateReviewRule(ctx context.Context, in *CreateReviewRuleRequest, opts ...grpc.CallOption) (*CreateReviewRuleResponse, error)
@@ -88,9 +88,9 @@ func (c *reviewServiceClient) GetReviewsByAppDomain(ctx context.Context, in *Get
 	return out, nil
 }
 
-func (c *reviewServiceClient) GetReviewsByAppDomainObjectID(ctx context.Context, in *GetReviewsByAppDomainObjectIDRequest, opts ...grpc.CallOption) (*GetReviewsByAppDomainObjectIDResponse, error) {
-	out := new(GetReviewsByAppDomainObjectIDResponse)
-	err := c.cc.Invoke(ctx, "/review.service.v1.ReviewService/GetReviewsByAppDomainObjectID", in, out, opts...)
+func (c *reviewServiceClient) GetReviewsByAppDomainObjectTypeID(ctx context.Context, in *GetReviewsByAppDomainObjectTypeIDRequest, opts ...grpc.CallOption) (*GetReviewsByAppDomainObjectTypeIDResponse, error) {
+	out := new(GetReviewsByAppDomainObjectTypeIDResponse)
+	err := c.cc.Invoke(ctx, "/review.service.v1.ReviewService/GetReviewsByAppDomainObjectTypeID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -170,7 +170,7 @@ type ReviewServiceServer interface {
 	UpdateReview(context.Context, *UpdateReviewRequest) (*UpdateReviewResponse, error)
 	GetReviewsByDomain(context.Context, *GetReviewsByDomainRequest) (*GetReviewsByDomainResponse, error)
 	GetReviewsByAppDomain(context.Context, *GetReviewsByAppDomainRequest) (*GetReviewsByAppDomainResponse, error)
-	GetReviewsByAppDomainObjectID(context.Context, *GetReviewsByAppDomainObjectIDRequest) (*GetReviewsByAppDomainObjectIDResponse, error)
+	GetReviewsByAppDomainObjectTypeID(context.Context, *GetReviewsByAppDomainObjectTypeIDRequest) (*GetReviewsByAppDomainObjectTypeIDResponse, error)
 	SubmitReview(context.Context, *SubmitReviewRequest) (*SubmitReviewResponse, error)
 	SubmitReviewResult(context.Context, *SubmitReviewResultRequest) (*SubmitReviewResultResponse, error)
 	CreateReviewRule(context.Context, *CreateReviewRuleRequest) (*CreateReviewRuleResponse, error)
@@ -200,8 +200,8 @@ func (UnimplementedReviewServiceServer) GetReviewsByDomain(context.Context, *Get
 func (UnimplementedReviewServiceServer) GetReviewsByAppDomain(context.Context, *GetReviewsByAppDomainRequest) (*GetReviewsByAppDomainResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetReviewsByAppDomain not implemented")
 }
-func (UnimplementedReviewServiceServer) GetReviewsByAppDomainObjectID(context.Context, *GetReviewsByAppDomainObjectIDRequest) (*GetReviewsByAppDomainObjectIDResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetReviewsByAppDomainObjectID not implemented")
+func (UnimplementedReviewServiceServer) GetReviewsByAppDomainObjectTypeID(context.Context, *GetReviewsByAppDomainObjectTypeIDRequest) (*GetReviewsByAppDomainObjectTypeIDResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetReviewsByAppDomainObjectTypeID not implemented")
 }
 func (UnimplementedReviewServiceServer) SubmitReview(context.Context, *SubmitReviewRequest) (*SubmitReviewResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SubmitReview not implemented")
@@ -327,20 +327,20 @@ func _ReviewService_GetReviewsByAppDomain_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ReviewService_GetReviewsByAppDomainObjectID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetReviewsByAppDomainObjectIDRequest)
+func _ReviewService_GetReviewsByAppDomainObjectTypeID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetReviewsByAppDomainObjectTypeIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ReviewServiceServer).GetReviewsByAppDomainObjectID(ctx, in)
+		return srv.(ReviewServiceServer).GetReviewsByAppDomainObjectTypeID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/review.service.v1.ReviewService/GetReviewsByAppDomainObjectID",
+		FullMethod: "/review.service.v1.ReviewService/GetReviewsByAppDomainObjectTypeID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ReviewServiceServer).GetReviewsByAppDomainObjectID(ctx, req.(*GetReviewsByAppDomainObjectIDRequest))
+		return srv.(ReviewServiceServer).GetReviewsByAppDomainObjectTypeID(ctx, req.(*GetReviewsByAppDomainObjectTypeIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -499,8 +499,8 @@ var ReviewService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ReviewService_GetReviewsByAppDomain_Handler,
 		},
 		{
-			MethodName: "GetReviewsByAppDomainObjectID",
-			Handler:    _ReviewService_GetReviewsByAppDomainObjectID_Handler,
+			MethodName: "GetReviewsByAppDomainObjectTypeID",
+			Handler:    _ReviewService_GetReviewsByAppDomainObjectTypeID_Handler,
 		},
 		{
 			MethodName: "SubmitReview",
