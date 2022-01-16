@@ -774,6 +774,8 @@ Cloud Hashing Goods
 | Signup | [SignupRequest](#cloud.hashing.apis.v1.SignupRequest) | [SignupResponse](#cloud.hashing.apis.v1.SignupResponse) |  |
 | GetMyInvitations | [GetMyInvitationsRequest](#cloud.hashing.apis.v1.GetMyInvitationsRequest) | [GetMyInvitationsResponse](#cloud.hashing.apis.v1.GetMyInvitationsResponse) |  |
 | GetMyDirectInvitations | [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest) | [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse) |  |
+| GetKycReviews | [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse) |  |
+| GetGoodReviews | [GetGoodReviewsRequest](#cloud.hashing.apis.v1.GetGoodReviewsRequest) | [GetGoodReviewsResponse](#cloud.hashing.apis.v1.GetGoodReviewsResponse) |  |
 
  
 

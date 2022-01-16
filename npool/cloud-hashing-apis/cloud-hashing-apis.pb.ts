@@ -254,4 +254,10 @@ export class CloudHashingApis {
   static GetMyDirectInvitations(req: GetMyDirectInvitationsRequest, initReq?: fm.InitReq): Promise<GetMyDirectInvitationsResponse> {
     return fm.fetchReq<GetMyDirectInvitationsRequest, GetMyDirectInvitationsResponse>(`/v1/get/my/direct/invitations`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetKycReviews(req: GetKycReviewsRequest, initReq?: fm.InitReq): Promise<GetKycReviewsResponse> {
+    return fm.fetchReq<GetKycReviewsRequest, GetKycReviewsResponse>(`/v1/get/kyc/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodReviews(req: GetGoodReviewsRequest, initReq?: fm.InitReq): Promise<GetGoodReviewsResponse> {
+    return fm.fetchReq<GetGoodReviewsRequest, GetGoodReviewsResponse>(`/v1/get/good/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
 }

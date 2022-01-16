@@ -108,6 +108,19 @@ service CloudHashingApis {
             body: "*"
         };
     }
+
+    rpc GetKycReviews(GetKycReviewsRequest) returns (GetKycReviewsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/kyc/reviews"
+            body: "*"
+        };
+    }
+    rpc GetGoodReviews(GetGoodReviewsRequest) returns (GetGoodReviewsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/reviews"
+            body: "*"
+        };
+    }
 }
 
 // Request body and response

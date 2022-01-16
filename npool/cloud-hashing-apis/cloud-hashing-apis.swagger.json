@@ -107,6 +107,38 @@
         ]
       }
     },
+    "/v1/get/good/reviews": {
+      "post": {
+        "operationId": "CloudHashingApis_GetGoodReviews",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodReviewsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodReviewsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/goods": {
       "post": {
         "operationId": "CloudHashingApis_GetGoods",
@@ -131,6 +163,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/hashingapisv1GetGoodsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/get/kyc/reviews": {
+      "post": {
+        "operationId": "CloudHashingApis_GetKycReviews",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetKycReviewsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetKycReviewsRequest"
             }
           }
         ],
@@ -1013,6 +1077,39 @@
         }
       }
     },
+    "v1GetGoodReviewsRequest": {
+      "type": "object"
+    },
+    "v1GetGoodReviewsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodReview"
+          }
+        }
+      }
+    },
+    "v1GetKycReviewsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetKycReviewsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1KycReview"
+          }
+        }
+      }
+    },
     "v1GetMyDirectInvitationsRequest": {
       "type": "object",
       "properties": {
@@ -1288,6 +1385,20 @@
       },
       "title": "request body and response"
     },
+    "v1GoodReview": {
+      "type": "object",
+      "properties": {
+        "Review": {
+          "$ref": "#/definitions/v1Review"
+        },
+        "User": {
+          "$ref": "#/definitions/v1UserBasicInfo"
+        },
+        "Good": {
+          "$ref": "#/definitions/v1GoodDetail"
+        }
+      }
+    },
     "v1Invitation": {
       "type": "object",
       "properties": {
@@ -1349,6 +1460,14 @@
         "JoinDate": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1KycReview": {
+      "type": "object",
+      "properties": {
+        "Review": {
+          "$ref": "#/definitions/v1Review"
         }
       }
     },

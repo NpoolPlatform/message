@@ -34,6 +34,8 @@ type CloudHashingApisClient interface {
 	Signup(ctx context.Context, in *SignupRequest, opts ...grpc.CallOption) (*SignupResponse, error)
 	GetMyInvitations(ctx context.Context, in *GetMyInvitationsRequest, opts ...grpc.CallOption) (*GetMyInvitationsResponse, error)
 	GetMyDirectInvitations(ctx context.Context, in *GetMyDirectInvitationsRequest, opts ...grpc.CallOption) (*GetMyDirectInvitationsResponse, error)
+	GetKycReviews(ctx context.Context, in *GetKycReviewsRequest, opts ...grpc.CallOption) (*GetKycReviewsResponse, error)
+	GetGoodReviews(ctx context.Context, in *GetGoodReviewsRequest, opts ...grpc.CallOption) (*GetGoodReviewsResponse, error)
 }
 
 type cloudHashingApisClient struct {
@@ -170,6 +172,24 @@ func (c *cloudHashingApisClient) GetMyDirectInvitations(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *cloudHashingApisClient) GetKycReviews(ctx context.Context, in *GetKycReviewsRequest, opts ...grpc.CallOption) (*GetKycReviewsResponse, error) {
+	out := new(GetKycReviewsResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetKycReviews", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetGoodReviews(ctx context.Context, in *GetGoodReviewsRequest, opts ...grpc.CallOption) (*GetGoodReviewsResponse, error) {
+	out := new(GetGoodReviewsResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetGoodReviews", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CloudHashingApisServer is the server API for CloudHashingApis service.
 // All implementations must embed UnimplementedCloudHashingApisServer
 // for forward compatibility
@@ -188,6 +208,8 @@ type CloudHashingApisServer interface {
 	Signup(context.Context, *SignupRequest) (*SignupResponse, error)
 	GetMyInvitations(context.Context, *GetMyInvitationsRequest) (*GetMyInvitationsResponse, error)
 	GetMyDirectInvitations(context.Context, *GetMyDirectInvitationsRequest) (*GetMyDirectInvitationsResponse, error)
+	GetKycReviews(context.Context, *GetKycReviewsRequest) (*GetKycReviewsResponse, error)
+	GetGoodReviews(context.Context, *GetGoodReviewsRequest) (*GetGoodReviewsResponse, error)
 	mustEmbedUnimplementedCloudHashingApisServer()
 }
 
@@ -236,6 +258,12 @@ func (UnimplementedCloudHashingApisServer) GetMyInvitations(context.Context, *Ge
 }
 func (UnimplementedCloudHashingApisServer) GetMyDirectInvitations(context.Context, *GetMyDirectInvitationsRequest) (*GetMyDirectInvitationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMyDirectInvitations not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetKycReviews(context.Context, *GetKycReviewsRequest) (*GetKycReviewsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetKycReviews not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetGoodReviews(context.Context, *GetGoodReviewsRequest) (*GetGoodReviewsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodReviews not implemented")
 }
 func (UnimplementedCloudHashingApisServer) mustEmbedUnimplementedCloudHashingApisServer() {}
 
@@ -502,6 +530,42 @@ func _CloudHashingApis_GetMyDirectInvitations_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingApis_GetKycReviews_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetKycReviewsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetKycReviews(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetKycReviews",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetKycReviews(ctx, req.(*GetKycReviewsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetGoodReviews_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodReviewsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetGoodReviews(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetGoodReviews",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetGoodReviews(ctx, req.(*GetGoodReviewsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CloudHashingApis_ServiceDesc is the grpc.ServiceDesc for CloudHashingApis service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -564,6 +628,14 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetMyDirectInvitations",
 			Handler:    _CloudHashingApis_GetMyDirectInvitations_Handler,
+		},
+		{
+			MethodName: "GetKycReviews",
+			Handler:    _CloudHashingApis_GetKycReviews_Handler,
+		},
+		{
+			MethodName: "GetGoodReviews",
+			Handler:    _CloudHashingApis_GetGoodReviews_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
