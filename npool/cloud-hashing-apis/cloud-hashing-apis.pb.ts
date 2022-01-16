@@ -11,6 +11,7 @@ import * as CloudHashingGoodsV1Cloud-hashing-goods from "../cloud-hashing-goods/
 import * as CloudHashingInspireV1Cloud-hashing-inspire from "../cloud-hashing-inspire/cloud-hashing-inspire.pb"
 import * as CloudHashingOrderV1Cloud-hashing-order from "../cloud-hashing-order/cloud-hashing-order.pb"
 import * as SphinxCoininfoV1Coininfo from "../coininfo/coininfo.pb"
+import * as KycManagementV1Kyc-management from "../kyc/kyc-management.pb"
 import * as NpoolV1Npool from "../npool.pb"
 import * as ReviewServiceV1Review-service from "../review-service/review-service.pb"
 import * as UserV1User-management from "../user/user-management.pb"
@@ -188,6 +189,8 @@ export type GetMyDirectInvitationsResponse = {
 
 export type KycReview = {
   Review?: ReviewServiceV1Review-service.Review
+  User?: UserV1User-management.UserBasicInfo
+  Kyc?: KycManagementV1Kyc-management.KycInfo
 }
 
 export type GetKycReviewsRequest = {

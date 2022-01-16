@@ -616,6 +616,8 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+| User | [user.v1.UserBasicInfo](#user.v1.UserBasicInfo) |  |  |
+| Kyc | [kyc.management.v1.KycInfo](#kyc.management.v1.KycInfo) |  |  |
 
 
 

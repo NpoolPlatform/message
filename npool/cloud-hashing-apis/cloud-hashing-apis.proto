@@ -12,6 +12,7 @@ import "npool/cloud-hashing-goods/cloud-hashing-goods.proto";
 import "npool/cloud-hashing-order/cloud-hashing-order.proto";
 import "npool/cloud-hashing-billing/cloud-hashing-billing.proto";
 import "npool/cloud-hashing-inspire/cloud-hashing-inspire.proto";
+import "npool/kyc/kyc-management.proto";
 import "npool/review-service/review-service.proto";
 import "npool/user/user-management.proto";
 import "npool/coininfo/coininfo.proto";
@@ -299,6 +300,8 @@ message GetMyDirectInvitationsResponse {
 
 message KycReview {
     review.service.v1.Review Review = 10;
+    user.v1.UserBasicInfo User = 20;
+    kyc.management.v1.KycInfo Kyc = 30;
 }
 
 message GetKycReviewsRequest {

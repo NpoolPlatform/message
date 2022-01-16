@@ -1463,11 +1463,63 @@
         }
       }
     },
+    "v1KycInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Region": {
+          "type": "string"
+        },
+        "CardType": {
+          "type": "string"
+        },
+        "CardID": {
+          "type": "string"
+        },
+        "FrontCardImg": {
+          "type": "string"
+        },
+        "BackCardImg": {
+          "type": "string"
+        },
+        "UserHandlingCardImg": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdateAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1KycReview": {
       "type": "object",
       "properties": {
         "Review": {
           "$ref": "#/definitions/v1Review"
+        },
+        "User": {
+          "$ref": "#/definitions/v1UserBasicInfo"
+        },
+        "Kyc": {
+          "$ref": "#/definitions/v1KycInfo"
         }
       }
     },
