@@ -217,6 +217,7 @@ export type GetGoodReviewsResponse = {
 export type Kyc = {
   Kyc?: KycManagementV1Kyc-management.KycInfo
   State?: string
+  Message?: string
 }
 
 export type GetKycByAppUserRequest = {

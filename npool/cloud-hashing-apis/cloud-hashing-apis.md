@@ -683,6 +683,7 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | Kyc | [kyc.management.v1.KycInfo](#kyc.management.v1.KycInfo) |  |  |
 | State | [string](#string) |  |  |
+| Message | [string](#string) |  |  |
 
 
 

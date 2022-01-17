@@ -341,6 +341,7 @@ message GetGoodReviewsResponse {
 message Kyc {
     kyc.management.v1.KycInfo Kyc = 10;
     string State = 20;
+    string Message = 30;
 }
 
 message GetKycByAppUserRequest {
