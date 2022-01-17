@@ -36,6 +36,7 @@ type CloudHashingApisClient interface {
 	GetMyDirectInvitations(ctx context.Context, in *GetMyDirectInvitationsRequest, opts ...grpc.CallOption) (*GetMyDirectInvitationsResponse, error)
 	GetKycReviews(ctx context.Context, in *GetKycReviewsRequest, opts ...grpc.CallOption) (*GetKycReviewsResponse, error)
 	GetGoodReviews(ctx context.Context, in *GetGoodReviewsRequest, opts ...grpc.CallOption) (*GetGoodReviewsResponse, error)
+	CreateKyc(ctx context.Context, in *CreateKycRequest, opts ...grpc.CallOption) (*CreateKycResponse, error)
 	GetKycByAppUser(ctx context.Context, in *GetKycByAppUserRequest, opts ...grpc.CallOption) (*GetKycByAppUserResponse, error)
 }
 
@@ -191,6 +192,15 @@ func (c *cloudHashingApisClient) GetGoodReviews(ctx context.Context, in *GetGood
 	return out, nil
 }
 
+func (c *cloudHashingApisClient) CreateKyc(ctx context.Context, in *CreateKycRequest, opts ...grpc.CallOption) (*CreateKycResponse, error) {
+	out := new(CreateKycResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/CreateKyc", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingApisClient) GetKycByAppUser(ctx context.Context, in *GetKycByAppUserRequest, opts ...grpc.CallOption) (*GetKycByAppUserResponse, error) {
 	out := new(GetKycByAppUserResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetKycByAppUser", in, out, opts...)
@@ -220,6 +230,7 @@ type CloudHashingApisServer interface {
 	GetMyDirectInvitations(context.Context, *GetMyDirectInvitationsRequest) (*GetMyDirectInvitationsResponse, error)
 	GetKycReviews(context.Context, *GetKycReviewsRequest) (*GetKycReviewsResponse, error)
 	GetGoodReviews(context.Context, *GetGoodReviewsRequest) (*GetGoodReviewsResponse, error)
+	CreateKyc(context.Context, *CreateKycRequest) (*CreateKycResponse, error)
 	GetKycByAppUser(context.Context, *GetKycByAppUserRequest) (*GetKycByAppUserResponse, error)
 	mustEmbedUnimplementedCloudHashingApisServer()
 }
@@ -275,6 +286,9 @@ func (UnimplementedCloudHashingApisServer) GetKycReviews(context.Context, *GetKy
 }
 func (UnimplementedCloudHashingApisServer) GetGoodReviews(context.Context, *GetGoodReviewsRequest) (*GetGoodReviewsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodReviews not implemented")
+}
+func (UnimplementedCloudHashingApisServer) CreateKyc(context.Context, *CreateKycRequest) (*CreateKycResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateKyc not implemented")
 }
 func (UnimplementedCloudHashingApisServer) GetKycByAppUser(context.Context, *GetKycByAppUserRequest) (*GetKycByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetKycByAppUser not implemented")
@@ -580,6 +594,24 @@ func _CloudHashingApis_GetGoodReviews_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingApis_CreateKyc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateKycRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).CreateKyc(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/CreateKyc",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).CreateKyc(ctx, req.(*CreateKycRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingApis_GetKycByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetKycByAppUserRequest)
 	if err := dec(in); err != nil {
@@ -668,6 +700,10 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetGoodReviews",
 			Handler:    _CloudHashingApis_GetGoodReviews_Handler,
+		},
+		{
+			MethodName: "CreateKyc",
+			Handler:    _CloudHashingApis_CreateKyc_Handler,
 		},
 		{
 			MethodName: "GetKycByAppUser",

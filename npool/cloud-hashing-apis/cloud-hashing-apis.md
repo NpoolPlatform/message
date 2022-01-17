@@ -6,6 +6,8 @@
 - [npool/cloud-hashing-apis/cloud-hashing-apis.proto](#npool/cloud-hashing-apis/cloud-hashing-apis.proto)
     - [CreateGoodRequest](#cloud.hashing.apis.v1.CreateGoodRequest)
     - [CreateGoodResponse](#cloud.hashing.apis.v1.CreateGoodResponse)
+    - [CreateKycRequest](#cloud.hashing.apis.v1.CreateKycRequest)
+    - [CreateKycResponse](#cloud.hashing.apis.v1.CreateKycResponse)
     - [CreateOrderPaymentRequest](#cloud.hashing.apis.v1.CreateOrderPaymentRequest)
     - [CreateOrderPaymentResponse](#cloud.hashing.apis.v1.CreateOrderPaymentResponse)
     - [GetGoodRequest](#cloud.hashing.apis.v1.GetGoodRequest)
@@ -88,6 +90,36 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [Good](#cloud.hashing.apis.v1.Good) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.CreateKycRequest"></a>
+
+### CreateKycRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [kyc.management.v1.KycInfo](#kyc.management.v1.KycInfo) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.CreateKycResponse"></a>
+
+### CreateKycResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Kyc](#cloud.hashing.apis.v1.Kyc) |  |  |
 
 
 
@@ -828,6 +860,7 @@ Cloud Hashing Goods
 | GetMyDirectInvitations | [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest) | [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse) |  |
 | GetGoodReviews | [GetGoodReviewsRequest](#cloud.hashing.apis.v1.GetGoodReviewsRequest) | [GetGoodReviewsResponse](#cloud.hashing.apis.v1.GetGoodReviewsResponse) |  |
+| CreateKyc | [CreateKycRequest](#cloud.hashing.apis.v1.CreateKycRequest) | [CreateKycResponse](#cloud.hashing.apis.v1.CreateKycResponse) |  |
 | GetKycByAppUser | [GetKycByAppUserRequest](#cloud.hashing.apis.v1.GetKycByAppUserRequest) | [GetKycByAppUserResponse](#cloud.hashing.apis.v1.GetKycByAppUserResponse) |  |
 
  

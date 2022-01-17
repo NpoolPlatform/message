@@ -43,6 +43,38 @@
         ]
       }
     },
+    "/v1/create/kyc": {
+      "post": {
+        "operationId": "CloudHashingApis_CreateKyc",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1CreateKycResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1CreateKycRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/create/order/payment": {
       "post": {
         "operationId": "CloudHashingApis_CreateOrderPayment",
@@ -570,6 +602,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Good"
+        }
+      }
+    },
+    "hashingapisv1CreateKycRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1KycInfo"
+        }
+      }
+    },
+    "hashingapisv1CreateKycResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Kyc"
         }
       }
     },

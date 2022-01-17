@@ -123,6 +123,12 @@ service CloudHashingApis {
         };
     }
 
+    rpc CreateKyc (CreateKycRequest) returns (CreateKycResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/kyc"
+            body: "*"
+        };
+    }
     rpc GetKycByAppUser(GetKycByAppUserRequest) returns (GetKycByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/kyc/by/user"
@@ -346,3 +352,10 @@ message GetKycByAppUserResponse {
     Kyc Info = 10;
 }
 
+message CreateKycRequest {
+    kyc.management.v1.KycInfo Info = 10;
+}
+
+message CreateKycResponse {
+    Kyc Info = 10;
+}
