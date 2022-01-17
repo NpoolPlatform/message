@@ -338,26 +338,8 @@
     "v1CreateKycRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CardType": {
-          "type": "string"
-        },
-        "CardID": {
-          "type": "string"
-        },
-        "FrontCardImg": {
-          "type": "string"
-        },
-        "BackCardImg": {
-          "type": "string"
-        },
-        "UserHandlingCardImg": {
-          "type": "string"
+        "Info": {
+          "$ref": "#/definitions/v1KycInfo"
         }
       }
     },
@@ -372,13 +354,8 @@
     "v1GetAllKycRequest": {
       "type": "object",
       "properties": {
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
         }
       }
     },
@@ -403,13 +380,8 @@
         "AppID": {
           "type": "string"
         },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
         }
       }
     },
@@ -497,10 +469,10 @@
         "ID": {
           "type": "string"
         },
-        "UserID": {
+        "AppID": {
           "type": "string"
         },
-        "AppID": {
+        "UserID": {
           "type": "string"
         },
         "CardType": {
@@ -526,34 +498,27 @@
           "type": "integer",
           "format": "int64"
         }
+      },
+      "title": "request body and response"
+    },
+    "v1PageInfo": {
+      "type": "object",
+      "properties": {
+        "PageIndex": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PageSize": {
+          "type": "integer",
+          "format": "int32"
+        }
       }
     },
     "v1UpdateKycRequest": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "CardType": {
-          "type": "string"
-        },
-        "CardID": {
-          "type": "string"
-        },
-        "FrontCardImg": {
-          "type": "string"
-        },
-        "BackCardImg": {
-          "type": "string"
-        },
-        "UserHandlingCardImg": {
-          "type": "string"
+        "Info": {
+          "$ref": "#/definitions/v1KycInfo"
         }
       }
     },
@@ -568,6 +533,9 @@
     "v1UploadKycImageRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "UserID": {
           "type": "string"
         },
@@ -575,9 +543,6 @@
           "type": "string"
         },
         "ImageBase64": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         }
       }
@@ -596,8 +561,7 @@
         "Info": {
           "type": "string"
         }
-      },
-      "title": "request body and response"
+      }
     }
   }
 }

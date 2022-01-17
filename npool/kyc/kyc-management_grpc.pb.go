@@ -4,6 +4,7 @@ package kyc
 
 import (
 	context "context"
+	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -20,7 +21,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type KycManagementClient interface {
 	// Method Version
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateKyc(ctx context.Context, in *CreateKycRequest, opts ...grpc.CallOption) (*CreateKycResponse, error)
 	GetKycByUserID(ctx context.Context, in *GetKycByUserIDRequest, opts ...grpc.CallOption) (*GetKycByUserIDResponse, error)
 	GetKycByAppID(ctx context.Context, in *GetKycByAppIDRequest, opts ...grpc.CallOption) (*GetKycByAppIDResponse, error)
@@ -39,8 +40,8 @@ func NewKycManagementClient(cc grpc.ClientConnInterface) KycManagementClient {
 	return &kycManagementClient{cc}
 }
 
-func (c *kycManagementClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error) {
-	out := new(VersionResponse)
+func (c *kycManagementClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+	out := new(npool.VersionResponse)
 	err := c.cc.Invoke(ctx, "/kyc.management.v1.KycManagement/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -125,7 +126,7 @@ func (c *kycManagementClient) GetKycByKycIDs(ctx context.Context, in *GetKycByKy
 // for forward compatibility
 type KycManagementServer interface {
 	// Method Version
-	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
+	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateKyc(context.Context, *CreateKycRequest) (*CreateKycResponse, error)
 	GetKycByUserID(context.Context, *GetKycByUserIDRequest) (*GetKycByUserIDResponse, error)
 	GetKycByAppID(context.Context, *GetKycByAppIDRequest) (*GetKycByAppIDResponse, error)
@@ -141,7 +142,7 @@ type KycManagementServer interface {
 type UnimplementedKycManagementServer struct {
 }
 
-func (UnimplementedKycManagementServer) Version(context.Context, *emptypb.Empty) (*VersionResponse, error) {
+func (UnimplementedKycManagementServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
 func (UnimplementedKycManagementServer) CreateKyc(context.Context, *CreateKycRequest) (*CreateKycResponse, error) {

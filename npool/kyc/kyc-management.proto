@@ -6,11 +6,12 @@ option go_package = "github.com/NpoolPlatform/message/npool/kyc";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
+import "npool/npool.proto";
 
 // Service Name
 service KycManagement {
     // Method Version
-    rpc Version (google.protobuf.Empty) returns (VersionResponse){
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
         option (google.api.http) = {
             post: "/version"
             body: "*"
@@ -67,107 +68,88 @@ service KycManagement {
 }
 
 // request body and response
-message VersionResponse {
-    string Info = 100;
-}
-
 message KycInfo {
-    string ID = 1;
-    string UserID = 2;
-    string AppID = 14;
-    string CardType = 6;
-    string CardID = 7;
-    string FrontCardImg = 8;
-    string BackCardImg = 9;
-    string UserHandlingCardImg = 10;
-    uint32 CreateAt = 11;
-    uint32 UpdateAt = 12;
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    string CardType = 40;
+    string CardID = 50;
+    string FrontCardImg = 60;
+    string BackCardImg = 70;
+    string UserHandlingCardImg = 80;
+    uint32 CreateAt = 90;
+    uint32 UpdateAt = 100;
 }
 
 message CreateKycRequest {
-    string AppID = 1;
-    string UserID = 2;
-    string CardType = 6;
-    string CardID = 7;
-    string FrontCardImg = 8;
-    string BackCardImg = 9;
-    string UserHandlingCardImg = 10;
+    KycInfo Info = 10;
 }
 
 message CreateKycResponse {
-    KycInfo Info = 1;
+    KycInfo Info = 10;
 }
 
 message GetKycByUserIDRequest {
-    string AppID = 1;
-    string UserID = 2;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message GetKycByUserIDResponse {
-    KycInfo Info = 1;
+    KycInfo Info = 10;
 }
 
 message GetKycByAppIDRequest {
-    string AppID = 1;
-    int32 Limit = 2;
-    int32 Offset = 3;
+    string AppID = 10;
+    npool.v1.PageInfo PageInfo = 20;
 }
 
 message GetKycByAppIDResponse {
-    repeated KycInfo Infos = 1;
-    int32 Total = 2;
+    repeated KycInfo Infos = 10;
+    int32 Total = 20;
 }
 
 message GetAllKycRequest {
-    int32 Limit = 1;
-    int32 Offset = 2;
+    npool.v1.PageInfo PageInfo = 10;
 }
 
 message GetAllKycResponse {
-    repeated KycInfo Infos = 1;
-    int32 Total = 2;
+    repeated KycInfo Infos = 10;
+    int32 Total = 20;
 }
 
 message UpdateKycRequest {
-    string ID = 1;
-    string UserID = 2;
-    string AppID = 3;
-    string CardType = 7;
-    string CardID = 8;
-    string FrontCardImg = 9;
-    string BackCardImg = 10;
-    string UserHandlingCardImg = 11;
+    KycInfo Info = 10;
 }
 
 message UpdateKycResponse {
-    KycInfo Info = 1;
+    KycInfo Info = 10;
 }
 
 message UploadKycImageRequest {
-    string UserID = 1;
-    string ImageType = 2;
-    string ImageBase64 = 3;
-    string AppID = 4;
+    string AppID = 10;
+    string UserID = 20;
+    string ImageType = 30;
+    string ImageBase64 = 40;
 }
 
 message UploadKycImageResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message GetKycImageRequest {
-    string AppID = 1;
-    string UserID = 2;
-    string ImageS3Key = 3;
+    string AppID = 10;
+    string UserID = 20;
+    string ImageS3Key = 30;
 }
 
 message GetKycImageResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message GetKycByKycIDsRequest {
-    repeated string KycIDs = 1;
+    repeated string KycIDs = 10;
 }
 
 message GetKycByKycIDsResponse {
-    repeated KycInfo Infos = 1;
+    repeated KycInfo Infos = 10;
 }

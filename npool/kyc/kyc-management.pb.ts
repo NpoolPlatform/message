@@ -6,14 +6,11 @@
 
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
-export type VersionResponse = {
-  Info?: string
-}
-
+import * as NpoolV1Npool from "../npool.pb"
 export type KycInfo = {
   ID?: string
-  UserID?: string
   AppID?: string
+  UserID?: string
   CardType?: string
   CardID?: string
   FrontCardImg?: string
@@ -24,13 +21,7 @@ export type KycInfo = {
 }
 
 export type CreateKycRequest = {
-  AppID?: string
-  UserID?: string
-  CardType?: string
-  CardID?: string
-  FrontCardImg?: string
-  BackCardImg?: string
-  UserHandlingCardImg?: string
+  Info?: KycInfo
 }
 
 export type CreateKycResponse = {
@@ -48,8 +39,7 @@ export type GetKycByUserIDResponse = {
 
 export type GetKycByAppIDRequest = {
   AppID?: string
-  Limit?: number
-  Offset?: number
+  PageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetKycByAppIDResponse = {
@@ -58,8 +48,7 @@ export type GetKycByAppIDResponse = {
 }
 
 export type GetAllKycRequest = {
-  Limit?: number
-  Offset?: number
+  PageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetAllKycResponse = {
@@ -68,14 +57,7 @@ export type GetAllKycResponse = {
 }
 
 export type UpdateKycRequest = {
-  ID?: string
-  UserID?: string
-  AppID?: string
-  CardType?: string
-  CardID?: string
-  FrontCardImg?: string
-  BackCardImg?: string
-  UserHandlingCardImg?: string
+  Info?: KycInfo
 }
 
 export type UpdateKycResponse = {
@@ -83,10 +65,10 @@ export type UpdateKycResponse = {
 }
 
 export type UploadKycImageRequest = {
+  AppID?: string
   UserID?: string
   ImageType?: string
   ImageBase64?: string
-  AppID?: string
 }
 
 export type UploadKycImageResponse = {
@@ -112,8 +94,8 @@ export type GetKycByKycIDsResponse = {
 }
 
 export class KycManagement {
-  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateKyc(req: CreateKycRequest, initReq?: fm.InitReq): Promise<CreateKycResponse> {
     return fm.fetchReq<CreateKycRequest, CreateKycResponse>(`/v1/create/kyc`, {...initReq, method: "POST", body: JSON.stringify(req)})

@@ -21,7 +21,6 @@
     - [UpdateKycResponse](#kyc.management.v1.UpdateKycResponse)
     - [UploadKycImageRequest](#kyc.management.v1.UploadKycImageRequest)
     - [UploadKycImageResponse](#kyc.management.v1.UploadKycImageResponse)
-    - [VersionResponse](#kyc.management.v1.VersionResponse)
   
     - [KycManagement](#kyc.management.v1.KycManagement)
   
@@ -44,13 +43,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
-| CardType | [string](#string) |  |  |
-| CardID | [string](#string) |  |  |
-| FrontCardImg | [string](#string) |  |  |
-| BackCardImg | [string](#string) |  |  |
-| UserHandlingCardImg | [string](#string) |  |  |
+| Info | [KycInfo](#kyc.management.v1.KycInfo) |  |  |
 
 
 
@@ -80,8 +73,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Limit | [int32](#int32) |  |  |
-| Offset | [int32](#int32) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
@@ -113,8 +105,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| Limit | [int32](#int32) |  |  |
-| Offset | [int32](#int32) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
@@ -233,14 +224,14 @@
 <a name="kyc.management.v1.KycInfo"></a>
 
 ### KycInfo
-
+request body and response
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | CardType | [string](#string) |  |  |
 | CardID | [string](#string) |  |  |
 | FrontCardImg | [string](#string) |  |  |
@@ -262,14 +253,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| CardType | [string](#string) |  |  |
-| CardID | [string](#string) |  |  |
-| FrontCardImg | [string](#string) |  |  |
-| BackCardImg | [string](#string) |  |  |
-| UserHandlingCardImg | [string](#string) |  |  |
+| Info | [KycInfo](#kyc.management.v1.KycInfo) |  |  |
 
 
 
@@ -299,10 +283,10 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | ImageType | [string](#string) |  |  |
 | ImageBase64 | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
 
 
 
@@ -313,21 +297,6 @@
 
 ### UploadKycImageResponse
 
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="kyc.management.v1.VersionResponse"></a>
-
-### VersionResponse
-request body and response
 
 
 | Field | Type | Label | Description |
@@ -352,7 +321,7 @@ Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#kyc.management.v1.VersionResponse) | Method Version |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
 | CreateKyc | [CreateKycRequest](#kyc.management.v1.CreateKycRequest) | [CreateKycResponse](#kyc.management.v1.CreateKycResponse) |  |
 | GetKycByUserID | [GetKycByUserIDRequest](#kyc.management.v1.GetKycByUserIDRequest) | [GetKycByUserIDResponse](#kyc.management.v1.GetKycByUserIDResponse) |  |
 | GetKycByAppID | [GetKycByAppIDRequest](#kyc.management.v1.GetKycByAppIDRequest) | [GetKycByAppIDResponse](#kyc.management.v1.GetKycByAppIDResponse) |  |
