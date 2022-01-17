@@ -46,9 +46,6 @@
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
-| FirstName | [string](#string) |  |  |
-| LastName | [string](#string) |  |  |
-| Region | [string](#string) |  |  |
 | CardType | [string](#string) |  |  |
 | CardID | [string](#string) |  |  |
 | FrontCardImg | [string](#string) |  |  |
@@ -244,9 +241,6 @@
 | ID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
-| FirstName | [string](#string) |  |  |
-| LastName | [string](#string) |  |  |
-| Region | [string](#string) |  |  |
 | CardType | [string](#string) |  |  |
 | CardID | [string](#string) |  |  |
 | FrontCardImg | [string](#string) |  |  |
@@ -271,9 +265,6 @@
 | ID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
-| FirstName | [string](#string) |  |  |
-| LastName | [string](#string) |  |  |
-| Region | [string](#string) |  |  |
 | CardType | [string](#string) |  |  |
 | CardID | [string](#string) |  |  |
 | FrontCardImg | [string](#string) |  |  |

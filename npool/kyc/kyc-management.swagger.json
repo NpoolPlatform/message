@@ -344,15 +344,6 @@
         "UserID": {
           "type": "string"
         },
-        "FirstName": {
-          "type": "string"
-        },
-        "LastName": {
-          "type": "string"
-        },
-        "Region": {
-          "type": "string"
-        },
         "CardType": {
           "type": "string"
         },
@@ -512,15 +503,6 @@
         "AppID": {
           "type": "string"
         },
-        "FirstName": {
-          "type": "string"
-        },
-        "LastName": {
-          "type": "string"
-        },
-        "Region": {
-          "type": "string"
-        },
         "CardType": {
           "type": "string"
         },
@@ -556,15 +538,6 @@
           "type": "string"
         },
         "AppID": {
-          "type": "string"
-        },
-        "FirstName": {
-          "type": "string"
-        },
-        "LastName": {
-          "type": "string"
-        },
-        "Region": {
           "type": "string"
         },
         "CardType": {

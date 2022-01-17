@@ -14,9 +14,6 @@ export type KycInfo = {
   ID?: string
   UserID?: string
   AppID?: string
-  FirstName?: string
-  LastName?: string
-  Region?: string
   CardType?: string
   CardID?: string
   FrontCardImg?: string
@@ -29,9 +26,6 @@ export type KycInfo = {
 export type CreateKycRequest = {
   AppID?: string
   UserID?: string
-  FirstName?: string
-  LastName?: string
-  Region?: string
   CardType?: string
   CardID?: string
   FrontCardImg?: string
@@ -77,9 +71,6 @@ export type UpdateKycRequest = {
   ID?: string
   UserID?: string
   AppID?: string
-  FirstName?: string
-  LastName?: string
-  Region?: string
   CardType?: string
   CardID?: string
   FrontCardImg?: string
