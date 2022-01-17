@@ -77,7 +77,6 @@
     },
     "/v1/get/balance": {
       "post": {
-        "summary": "sync",
         "operationId": "SphinxProxy_GetBalance",
         "responses": {
           "200": {
@@ -132,6 +131,39 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SphinxProxy"
+        ]
+      }
+    },
+    "/version": {
+      "post": {
+        "summary": "sync",
+        "operationId": "SphinxProxy_Version",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
             }
           }
         ],
@@ -217,7 +249,9 @@
       "enum": [
         "CoinTypeUnKnow",
         "CoinTypeFIL",
-        "CoinTypeBTC"
+        "CoinTypeBTC",
+        "CoinTypeETH",
+        "CoinTypeSpaceMesh"
       ],
       "default": "CoinTypeUnKnow"
     },
@@ -270,8 +304,7 @@
         "Address": {
           "type": "string"
         }
-      },
-      "title": "############################# sync"
+      }
     },
     "v1GetBalanceResponse": {
       "type": "object",
@@ -355,9 +388,6 @@
           "$ref": "#/definitions/v1Signature"
         }
       }
-    },
-    "v1ReviewTransactionResponse": {
-      "type": "object"
     },
     "v1Signature": {
       "type": "object",
@@ -481,6 +511,15 @@
           "format": "byte"
         }
       }
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      },
+      "title": "############################# sync"
     },
     "v1WalletInfo": {
       "type": "object",

@@ -5,9 +5,11 @@ package sphinx.plugin.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/sphinxplugin";
 
 enum CoinType {
-  CoinTypeUnKnow  = 0;
-  CoinTypeFIL     = 1;
-  CoinTypeBTC     = 2;
+  CoinTypeUnKnow    = 0;
+  CoinTypeFIL       = 1;
+  CoinTypeBTC       = 2;
+  CoinTypeETH       = 3;
+  CoinTypeSpaceMesh = 4;
 }
 
 message UnsignedMessage {
@@ -28,4 +30,30 @@ message UnsignedMessage {
 message Signature {
   string SignType = 100;//secp256k1
   bytes Data      = 110;
+}
+
+//=============================btc
+message MsgTx {
+  int32           Version   = 100;
+  repeated TxIn   TxIn      = 110;
+  repeated TxOut  TxOut     = 120;
+  uint32          LockTime  = 130;
+}
+
+message TxIn {
+  OutPoint        PreviousOutPoint  = 100;
+  bytes           SignatureScript   = 110;
+  repeated bytes  Witness           = 120;
+  uint32          Sequence          = 130;
+}
+
+message OutPoint {
+  // byte len 32
+  bytes   Hash  = 100;
+  uint32  Index = 110;
+}
+
+message TxOut {
+  int64 Value     = 100;
+  bytes PkScript  = 110;
 }

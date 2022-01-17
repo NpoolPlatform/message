@@ -7,6 +7,7 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -19,11 +20,11 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SphinxProxyClient interface {
 	// sync
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
 	GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error)
 	CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error)
 	CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*CreateTransactionResponse, error)
 	GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionResponse, error)
-	ReviewTransaction(ctx context.Context, in *ReviewTransactionRequest, opts ...grpc.CallOption) (*ReviewTransactionResponse, error)
 	// async stream
 	ProxyPlugin(ctx context.Context, opts ...grpc.CallOption) (SphinxProxy_ProxyPluginClient, error)
 	ProxySign(ctx context.Context, opts ...grpc.CallOption) (SphinxProxy_ProxySignClient, error)
@@ -35,6 +36,15 @@ type sphinxProxyClient struct {
 
 func NewSphinxProxyClient(cc grpc.ClientConnInterface) SphinxProxyClient {
 	return &sphinxProxyClient{cc}
+}
+
+func (c *sphinxProxyClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error) {
+	out := new(VersionResponse)
+	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SphinxProxy/Version", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *sphinxProxyClient) GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error) {
@@ -67,15 +77,6 @@ func (c *sphinxProxyClient) CreateTransaction(ctx context.Context, in *CreateTra
 func (c *sphinxProxyClient) GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionResponse, error) {
 	out := new(GetTransactionResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SphinxProxy/GetTransaction", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *sphinxProxyClient) ReviewTransaction(ctx context.Context, in *ReviewTransactionRequest, opts ...grpc.CallOption) (*ReviewTransactionResponse, error) {
-	out := new(ReviewTransactionResponse)
-	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SphinxProxy/ReviewTransaction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -149,11 +150,11 @@ func (x *sphinxProxyProxySignClient) Recv() (*ProxySignRequest, error) {
 // for forward compatibility
 type SphinxProxyServer interface {
 	// sync
+	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
 	GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error)
 	CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error)
 	CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionResponse, error)
 	GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error)
-	ReviewTransaction(context.Context, *ReviewTransactionRequest) (*ReviewTransactionResponse, error)
 	// async stream
 	ProxyPlugin(SphinxProxy_ProxyPluginServer) error
 	ProxySign(SphinxProxy_ProxySignServer) error
@@ -164,6 +165,9 @@ type SphinxProxyServer interface {
 type UnimplementedSphinxProxyServer struct {
 }
 
+func (UnimplementedSphinxProxyServer) Version(context.Context, *emptypb.Empty) (*VersionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
+}
 func (UnimplementedSphinxProxyServer) GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBalance not implemented")
 }
@@ -175,9 +179,6 @@ func (UnimplementedSphinxProxyServer) CreateTransaction(context.Context, *Create
 }
 func (UnimplementedSphinxProxyServer) GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTransaction not implemented")
-}
-func (UnimplementedSphinxProxyServer) ReviewTransaction(context.Context, *ReviewTransactionRequest) (*ReviewTransactionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ReviewTransaction not implemented")
 }
 func (UnimplementedSphinxProxyServer) ProxyPlugin(SphinxProxy_ProxyPluginServer) error {
 	return status.Errorf(codes.Unimplemented, "method ProxyPlugin not implemented")
@@ -196,6 +197,24 @@ type UnsafeSphinxProxyServer interface {
 
 func RegisterSphinxProxyServer(s grpc.ServiceRegistrar, srv SphinxProxyServer) {
 	s.RegisterService(&SphinxProxy_ServiceDesc, srv)
+}
+
+func _SphinxProxy_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(emptypb.Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SphinxProxyServer).Version(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/sphinx.proxy.v1.SphinxProxy/Version",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SphinxProxyServer).Version(ctx, req.(*emptypb.Empty))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _SphinxProxy_GetBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -270,24 +289,6 @@ func _SphinxProxy_GetTransaction_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SphinxProxy_ReviewTransaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ReviewTransactionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SphinxProxyServer).ReviewTransaction(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/sphinx.proxy.v1.SphinxProxy/ReviewTransaction",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SphinxProxyServer).ReviewTransaction(ctx, req.(*ReviewTransactionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _SphinxProxy_ProxyPlugin_Handler(srv interface{}, stream grpc.ServerStream) error {
 	return srv.(SphinxProxyServer).ProxyPlugin(&sphinxProxyProxyPluginServer{stream})
 }
@@ -348,6 +349,10 @@ var SphinxProxy_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*SphinxProxyServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
+			MethodName: "Version",
+			Handler:    _SphinxProxy_Version_Handler,
+		},
+		{
 			MethodName: "GetBalance",
 			Handler:    _SphinxProxy_GetBalance_Handler,
 		},
@@ -362,10 +367,6 @@ var SphinxProxy_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTransaction",
 			Handler:    _SphinxProxy_GetTransaction_Handler,
-		},
-		{
-			MethodName: "ReviewTransaction",
-			Handler:    _SphinxProxy_ReviewTransaction_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

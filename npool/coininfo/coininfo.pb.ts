@@ -5,6 +5,11 @@
 */
 
 import * as fm from "../../fetch.pb"
+import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
+export type VersionResponse = {
+  Info?: string
+}
+
 export type CoinInfo = {
   ID?: string
   PreSale?: boolean
@@ -60,6 +65,9 @@ export type UpdateCoinInfoResponse = {
 }
 
 export class SphinxCoinInfo {
+  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static CreateCoinInfo(req: CreateCoinInfoRequest, initReq?: fm.InitReq): Promise<CreateCoinInfoResponse> {
     return fm.fetchReq<CreateCoinInfoRequest, CreateCoinInfoResponse>(`/v1/create/coininfo`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }

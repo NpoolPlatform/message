@@ -5,8 +5,15 @@ package sphinx.coininfo.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/coininfo";
 
 import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
 
 service SphinxCoinInfo {
+  rpc Version (google.protobuf.Empty) returns (VersionResponse){
+    option (google.api.http) = {
+      post: "/version"
+      body: "*"
+    };
+  }
 	rpc CreateCoinInfo (CreateCoinInfoRequest) returns (CreateCoinInfoResponse){
 		option (google.api.http) = {
 			post: "/v1/create/coininfo"
@@ -31,6 +38,10 @@ service SphinxCoinInfo {
 			body: "*"
 		};
 	}
+}
+
+message VersionResponse {
+  string Info = 100;
 }
 
 message CoinInfo {

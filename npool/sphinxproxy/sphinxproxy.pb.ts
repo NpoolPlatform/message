@@ -5,6 +5,7 @@
 */
 
 import * as fm from "../../fetch.pb"
+import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as SphinxPluginV1Sphinxplugin from "../sphinxplugin/sphinxplugin.pb"
 
 export enum TransactionType {
@@ -28,6 +29,10 @@ export enum TransactionState {
   TransactionStateSync = "TransactionStateSync",
   TransactionStateDone = "TransactionStateDone",
   TransactionStateFail = "TransactionStateFail",
+}
+
+export type VersionResponse = {
+  Info?: string
 }
 
 export type GetBalanceRequest = {
@@ -88,14 +93,6 @@ export type GetTransactionResponse = {
   Info?: TransactionInfo
 }
 
-export type ReviewTransactionRequest = {
-  TransactionID?: string
-  TransactionState?: TransactionState
-}
-
-export type ReviewTransactionResponse = {
-}
-
 export type ProxyPluginResponse = {
   CoinType?: SphinxPluginV1Sphinxplugin.CoinType
   TransactionType?: TransactionType
@@ -139,6 +136,9 @@ export type ProxySignResponseInfo = {
 }
 
 export class SphinxProxy {
+  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetBalance(req: GetBalanceRequest, initReq?: fm.InitReq): Promise<GetBalanceResponse> {
     return fm.fetchReq<GetBalanceRequest, GetBalanceResponse>(`/v1/get/balance`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -150,8 +150,5 @@ export class SphinxProxy {
   }
   static GetTransaction(req: GetTransactionRequest, initReq?: fm.InitReq): Promise<GetTransactionResponse> {
     return fm.fetchReq<GetTransactionRequest, GetTransactionResponse>(`/v1/get/transaction`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static ReviewTransaction(req: ReviewTransactionRequest, initReq?: fm.InitReq): Promise<ReviewTransactionResponse> {
-    return fm.fetchReq<ReviewTransactionRequest, ReviewTransactionResponse>(`/sphinx.proxy.v1.SphinxProxy/ReviewTransaction`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

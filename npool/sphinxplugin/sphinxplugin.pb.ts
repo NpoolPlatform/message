@@ -8,6 +8,8 @@ export enum CoinType {
   CoinTypeUnKnow = "CoinTypeUnKnow",
   CoinTypeFIL = "CoinTypeFIL",
   CoinTypeBTC = "CoinTypeBTC",
+  CoinTypeETH = "CoinTypeETH",
+  CoinTypeSpaceMesh = "CoinTypeSpaceMesh",
 }
 
 export type UnsignedMessage = {
@@ -26,4 +28,28 @@ export type UnsignedMessage = {
 export type Signature = {
   SignType?: string
   Data?: Uint8Array
+}
+
+export type MsgTx = {
+  Version?: number
+  TxIn?: TxIn[]
+  TxOut?: TxOut[]
+  LockTime?: number
+}
+
+export type TxIn = {
+  PreviousOutPoint?: OutPoint
+  SignatureScript?: Uint8Array
+  Witness?: Uint8Array[]
+  Sequence?: number
+}
+
+export type OutPoint = {
+  Hash?: Uint8Array
+  Index?: number
+}
+
+export type TxOut = {
+  Value?: string
+  PkScript?: Uint8Array
 }

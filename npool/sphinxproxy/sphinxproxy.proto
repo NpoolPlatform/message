@@ -5,11 +5,19 @@ package sphinx.proxy.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/sphinxproxy";
 
 import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
 import "npool/sphinxplugin/sphinxplugin.proto";
 
 // SphinxProxy http service only for inner
 service SphinxProxy {
   // sync
+  rpc Version (google.protobuf.Empty) returns (VersionResponse){
+    option (google.api.http) = {
+      post: "/version"
+      body: "*"
+    };
+  }
   rpc GetBalance (GetBalanceRequest) returns (GetBalanceResponse) {
     option (google.api.http) = {
       post: "/v1/get/balance"
@@ -34,7 +42,6 @@ service SphinxProxy {
       body: "*"
     };
   }
-  rpc ReviewTransaction (ReviewTransactionRequest) returns (ReviewTransactionResponse) {}
 
   // async stream
   rpc ProxyPlugin (stream ProxyPluginResponse) returns (stream ProxyPluginRequest) {}
@@ -42,6 +49,10 @@ service SphinxProxy {
 }
 
 // ############################# sync
+message VersionResponse {
+  string Info = 100;
+}
+
 message GetBalanceRequest {
   string Name     = 100;
   string Address  = 110;
@@ -84,28 +95,20 @@ message GetTransactionRequest {
 }
 
 message TransactionInfo {
-	string TransactionID 	            = 100;
-	string Name 			            = 110;
-	double Amount 			            = 120;
-	string From 			            = 130;
-	string To 				            = 140;
+	string TransactionID 	              = 100;
+	string Name 			                  = 110;
+	double Amount 			                = 120;
+	string From 			                  = 130;
+	string To 				                  = 140;
 	TransactionState TransactionState   = 150;
-	string CID				            = 160;
+	string CID				                  = 160;
   int64 ExitCode                      = 170;
-	uint32 CreatedAt 		            = 180;
-	uint32 UpdatedAt 		            = 190;
+	uint32 CreatedAt 		                = 180;
+	uint32 UpdatedAt 		                = 190;
 }
 
 message GetTransactionResponse {
   TransactionInfo Info = 100;
-}
-
-message ReviewTransactionRequest {
-  string TransactionID                = 100;
-  TransactionState TransactionState   = 110;
-}
-
-message ReviewTransactionResponse {
 }
 
 // ############################# async
@@ -167,11 +170,12 @@ enum TransactionType {
 
 enum TransactionState {
 	TransactionStateUnKnow  			= 0;
-	TransactionStatePendingReview     	= 1;
-	TransactionStateRejected     		= 2;
+	TransactionStatePendingReview = 1;
+	TransactionStateRejected     	= 2;
 	TransactionStateWait  				= 3;
 	TransactionStateSign  				= 4;
 	TransactionStateSync  				= 5;
 	TransactionStateDone     			= 6;
 	TransactionStateFail     			= 7;
 }
+
