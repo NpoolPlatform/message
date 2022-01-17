@@ -14,6 +14,8 @@
     - [GetGoodReviewsResponse](#cloud.hashing.apis.v1.GetGoodReviewsResponse)
     - [GetGoodsRequest](#cloud.hashing.apis.v1.GetGoodsRequest)
     - [GetGoodsResponse](#cloud.hashing.apis.v1.GetGoodsResponse)
+    - [GetKycByAppUserRequest](#cloud.hashing.apis.v1.GetKycByAppUserRequest)
+    - [GetKycByAppUserResponse](#cloud.hashing.apis.v1.GetKycByAppUserResponse)
     - [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest)
     - [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse)
     - [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest)
@@ -39,6 +41,7 @@
     - [InvitationUserInfo](#cloud.hashing.apis.v1.InvitationUserInfo)
     - [InvitationUserInfo.MySummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry)
     - [InvitationUserInfo.SummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry)
+    - [Kyc](#cloud.hashing.apis.v1.Kyc)
     - [KycReview](#cloud.hashing.apis.v1.KycReview)
     - [Order](#cloud.hashing.apis.v1.Order)
     - [OrderFee](#cloud.hashing.apis.v1.OrderFee)
@@ -203,6 +206,37 @@
 | ----- | ---- | ----- | ----------- |
 | Infos | [Good](#cloud.hashing.apis.v1.Good) | repeated |  |
 | Total | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetKycByAppUserRequest"></a>
+
+### GetKycByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetKycByAppUserResponse"></a>
+
+### GetKycByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Kyc](#cloud.hashing.apis.v1.Kyc) |  |  |
 
 
 
@@ -607,6 +641,22 @@ Request body and response
 
 
 
+<a name="cloud.hashing.apis.v1.Kyc"></a>
+
+### Kyc
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Kyc | [kyc.management.v1.KycInfo](#kyc.management.v1.KycInfo) |  |  |
+| State | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.KycReview"></a>
 
 ### KycReview
@@ -778,6 +828,7 @@ Cloud Hashing Goods
 | GetMyDirectInvitations | [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest) | [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse) |  |
 | GetGoodReviews | [GetGoodReviewsRequest](#cloud.hashing.apis.v1.GetGoodReviewsRequest) | [GetGoodReviewsResponse](#cloud.hashing.apis.v1.GetGoodReviewsResponse) |  |
+| GetKycByAppUser | [GetKycByAppUserRequest](#cloud.hashing.apis.v1.GetKycByAppUserRequest) | [GetKycByAppUserResponse](#cloud.hashing.apis.v1.GetKycByAppUserResponse) |  |
 
  
 

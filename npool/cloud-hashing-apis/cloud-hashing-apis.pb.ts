@@ -214,6 +214,20 @@ export type GetGoodReviewsResponse = {
   Infos?: GoodReview[]
 }
 
+export type Kyc = {
+  Kyc?: KycManagementV1Kyc-management.KycInfo
+  State?: string
+}
+
+export type GetKycByAppUserRequest = {
+  AppID?: string
+  UserID?: string
+}
+
+export type GetKycByAppUserResponse = {
+  Info?: Kyc
+}
+
 export class CloudHashingApis {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -262,5 +276,8 @@ export class CloudHashingApis {
   }
   static GetGoodReviews(req: GetGoodReviewsRequest, initReq?: fm.InitReq): Promise<GetGoodReviewsResponse> {
     return fm.fetchReq<GetGoodReviewsRequest, GetGoodReviewsResponse>(`/v1/get/good/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetKycByAppUser(req: GetKycByAppUserRequest, initReq?: fm.InitReq): Promise<GetKycByAppUserResponse> {
+    return fm.fetchReq<GetKycByAppUserRequest, GetKycByAppUserResponse>(`/v1/get/kyc/by/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

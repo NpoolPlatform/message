@@ -122,6 +122,13 @@ service CloudHashingApis {
             body: "*"
         };
     }
+
+    rpc GetKycByAppUser(GetKycByAppUserRequest) returns (GetKycByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/kyc/by/user"
+            body: "*"
+        };
+    }
 }
 
 // Request body and response
@@ -323,5 +330,19 @@ message GetGoodReviewsRequest {
 
 message GetGoodReviewsResponse {
     repeated GoodReview Infos = 10;
+}
+
+message Kyc {
+    kyc.management.v1.KycInfo Kyc = 10;
+    string State = 20;
+}
+
+message GetKycByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetKycByAppUserResponse {
+    Kyc Info = 10;
 }
 

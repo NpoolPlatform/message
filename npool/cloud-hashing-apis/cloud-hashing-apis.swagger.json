@@ -171,6 +171,38 @@
         ]
       }
     },
+    "/v1/get/kyc/by/user": {
+      "post": {
+        "operationId": "CloudHashingApis_GetKycByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetKycByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetKycByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/kyc/reviews": {
       "post": {
         "operationId": "CloudHashingApis_GetKycReviews",
@@ -1091,6 +1123,25 @@
         }
       }
     },
+    "v1GetKycByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetKycByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Kyc"
+        }
+      }
+    },
     "v1GetKycReviewsRequest": {
       "type": "object",
       "properties": {
@@ -1460,6 +1511,17 @@
         "JoinDate": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1Kyc": {
+      "type": "object",
+      "properties": {
+        "Kyc": {
+          "$ref": "#/definitions/v1KycInfo"
+        },
+        "State": {
+          "type": "string"
         }
       }
     },

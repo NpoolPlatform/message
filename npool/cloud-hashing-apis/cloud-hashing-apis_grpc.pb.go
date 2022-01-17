@@ -36,6 +36,7 @@ type CloudHashingApisClient interface {
 	GetMyDirectInvitations(ctx context.Context, in *GetMyDirectInvitationsRequest, opts ...grpc.CallOption) (*GetMyDirectInvitationsResponse, error)
 	GetKycReviews(ctx context.Context, in *GetKycReviewsRequest, opts ...grpc.CallOption) (*GetKycReviewsResponse, error)
 	GetGoodReviews(ctx context.Context, in *GetGoodReviewsRequest, opts ...grpc.CallOption) (*GetGoodReviewsResponse, error)
+	GetKycByAppUser(ctx context.Context, in *GetKycByAppUserRequest, opts ...grpc.CallOption) (*GetKycByAppUserResponse, error)
 }
 
 type cloudHashingApisClient struct {
@@ -190,6 +191,15 @@ func (c *cloudHashingApisClient) GetGoodReviews(ctx context.Context, in *GetGood
 	return out, nil
 }
 
+func (c *cloudHashingApisClient) GetKycByAppUser(ctx context.Context, in *GetKycByAppUserRequest, opts ...grpc.CallOption) (*GetKycByAppUserResponse, error) {
+	out := new(GetKycByAppUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetKycByAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CloudHashingApisServer is the server API for CloudHashingApis service.
 // All implementations must embed UnimplementedCloudHashingApisServer
 // for forward compatibility
@@ -210,6 +220,7 @@ type CloudHashingApisServer interface {
 	GetMyDirectInvitations(context.Context, *GetMyDirectInvitationsRequest) (*GetMyDirectInvitationsResponse, error)
 	GetKycReviews(context.Context, *GetKycReviewsRequest) (*GetKycReviewsResponse, error)
 	GetGoodReviews(context.Context, *GetGoodReviewsRequest) (*GetGoodReviewsResponse, error)
+	GetKycByAppUser(context.Context, *GetKycByAppUserRequest) (*GetKycByAppUserResponse, error)
 	mustEmbedUnimplementedCloudHashingApisServer()
 }
 
@@ -264,6 +275,9 @@ func (UnimplementedCloudHashingApisServer) GetKycReviews(context.Context, *GetKy
 }
 func (UnimplementedCloudHashingApisServer) GetGoodReviews(context.Context, *GetGoodReviewsRequest) (*GetGoodReviewsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodReviews not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetKycByAppUser(context.Context, *GetKycByAppUserRequest) (*GetKycByAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetKycByAppUser not implemented")
 }
 func (UnimplementedCloudHashingApisServer) mustEmbedUnimplementedCloudHashingApisServer() {}
 
@@ -566,6 +580,24 @@ func _CloudHashingApis_GetGoodReviews_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingApis_GetKycByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetKycByAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetKycByAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetKycByAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetKycByAppUser(ctx, req.(*GetKycByAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CloudHashingApis_ServiceDesc is the grpc.ServiceDesc for CloudHashingApis service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -636,6 +668,10 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetGoodReviews",
 			Handler:    _CloudHashingApis_GetGoodReviews_Handler,
+		},
+		{
+			MethodName: "GetKycByAppUser",
+			Handler:    _CloudHashingApis_GetKycByAppUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
