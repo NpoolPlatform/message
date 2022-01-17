@@ -75,6 +75,7 @@ func (CoinType) EnumDescriptor() ([]byte, []int) {
 	return file_npool_sphinxplugin_sphinxplugin_proto_rawDescGZIP(), []int{0}
 }
 
+// fil
 type UnsignedMessage struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -249,7 +250,7 @@ func (x *Signature) GetData() []byte {
 	return nil
 }
 
-//=============================btc
+// =============================btc
 type MsgTx struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

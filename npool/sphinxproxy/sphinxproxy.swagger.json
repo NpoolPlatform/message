@@ -510,7 +510,8 @@
           "type": "string",
           "format": "byte"
         }
-      }
+      },
+      "title": "fil"
     },
     "v1VersionResponse": {
       "type": "object",
