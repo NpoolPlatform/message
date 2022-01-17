@@ -4,6 +4,7 @@ package application
 
 import (
 	context "context"
+	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -20,7 +21,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ApplicationManagementClient interface {
 	// Method Version
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	//
 	//Create an application.
 	CreateApplication(ctx context.Context, in *CreateApplicationRequest, opts ...grpc.CallOption) (*CreateApplicationResponse, error)
@@ -154,8 +155,8 @@ func NewApplicationManagementClient(cc grpc.ClientConnInterface) ApplicationMana
 	return &applicationManagementClient{cc}
 }
 
-func (c *applicationManagementClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error) {
-	out := new(VersionResponse)
+func (c *applicationManagementClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+	out := new(npool.VersionResponse)
 	err := c.cc.Invoke(ctx, "/application.management.v1.ApplicationManagement/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -564,7 +565,7 @@ func (c *applicationManagementClient) GetApplicationUserDetail(ctx context.Conte
 // for forward compatibility
 type ApplicationManagementServer interface {
 	// Method Version
-	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
+	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	//
 	//Create an application.
 	CreateApplication(context.Context, *CreateApplicationRequest) (*CreateApplicationResponse, error)
@@ -695,7 +696,7 @@ type ApplicationManagementServer interface {
 type UnimplementedApplicationManagementServer struct {
 }
 
-func (UnimplementedApplicationManagementServer) Version(context.Context, *emptypb.Empty) (*VersionResponse, error) {
+func (UnimplementedApplicationManagementServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
 func (UnimplementedApplicationManagementServer) CreateApplication(context.Context, *CreateApplicationRequest) (*CreateApplicationResponse, error) {

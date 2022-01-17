@@ -1648,7 +1648,8 @@
         "InvitationCodeMust": {
           "type": "boolean"
         }
-      }
+      },
+      "title": "request body and response"
     },
     "v1ApplicationUserDetail": {
       "type": "object",
@@ -2366,13 +2367,13 @@
     "v1PageInfo": {
       "type": "object",
       "properties": {
-        "PageIndex": {
+        "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
-        "PageSize": {
+        "Limit": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         }
       }
     },
@@ -2731,8 +2732,7 @@
         "Info": {
           "type": "string"
         }
-      },
-      "title": "request body and response"
+      }
     }
   }
 }

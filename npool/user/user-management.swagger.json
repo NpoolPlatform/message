@@ -778,7 +778,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/userv1VersionResponse"
+              "$ref": "#/definitions/v1VersionResponse"
             }
           },
           "default": {
@@ -837,28 +837,6 @@
           }
         }
       }
-    },
-    "userv1PageInfo": {
-      "type": "object",
-      "properties": {
-        "PageIndex": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "PageSize": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "userv1VersionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "string"
-        }
-      },
-      "title": "request body and response"
     },
     "v1AddUserRequest": {
       "type": "object",
@@ -1160,7 +1138,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/userv1PageInfo"
+          "$ref": "#/definitions/v1PageInfo"
         },
         "AppID": {
           "type": "string"
@@ -1243,7 +1221,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/userv1PageInfo"
+          "$ref": "#/definitions/v1PageInfo"
         },
         "AppID": {
           "type": "string"
@@ -1282,6 +1260,19 @@
         "CreateAT": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1PageInfo": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -1493,6 +1484,12 @@
     "v1UpdateUserEmailRequest": {
       "type": "object",
       "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
         "OldEmail": {
           "type": "string"
         },
@@ -1503,12 +1500,6 @@
           "type": "string"
         },
         "NewCode": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         }
       }
@@ -1546,6 +1537,12 @@
     "v1UpdateUserPhoneRequest": {
       "type": "object",
       "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
         "OldPhone": {
           "type": "string"
         },
@@ -1556,12 +1553,6 @@
           "type": "string"
         },
         "NewCode": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         }
       }
@@ -1652,7 +1643,8 @@
         "PostalCode": {
           "type": "string"
         }
-      }
+      },
+      "title": "request body and response"
     },
     "v1UserDetails": {
       "type": "object",
@@ -1706,6 +1698,14 @@
           "type": "string"
         },
         "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
           "type": "string"
         }
       }

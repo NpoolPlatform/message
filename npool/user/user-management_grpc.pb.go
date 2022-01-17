@@ -4,6 +4,7 @@ package user
 
 import (
 	context "context"
+	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -20,7 +21,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UserClient interface {
 	// Method Version
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	//
 	//User can choose signup with username, email, phone or only emial or only phone.
 	SignUp(ctx context.Context, in *SignupRequest, opts ...grpc.CallOption) (*SignupResponse, error)
@@ -93,8 +94,8 @@ func NewUserClient(cc grpc.ClientConnInterface) UserClient {
 	return &userClient{cc}
 }
 
-func (c *userClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error) {
-	out := new(VersionResponse)
+func (c *userClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+	out := new(npool.VersionResponse)
 	err := c.cc.Invoke(ctx, "/user.v1.User/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -314,7 +315,7 @@ func (c *userClient) QueryUserByUserProviderID(ctx context.Context, in *QueryUse
 // for forward compatibility
 type UserServer interface {
 	// Method Version
-	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
+	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	//
 	//User can choose signup with username, email, phone or only emial or only phone.
 	SignUp(context.Context, *SignupRequest) (*SignupResponse, error)
@@ -384,7 +385,7 @@ type UserServer interface {
 type UnimplementedUserServer struct {
 }
 
-func (UnimplementedUserServer) Version(context.Context, *emptypb.Empty) (*VersionResponse, error) {
+func (UnimplementedUserServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
 func (UnimplementedUserServer) SignUp(context.Context, *SignupRequest) (*SignupResponse, error) {

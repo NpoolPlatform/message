@@ -4,6 +4,7 @@ package verification
 
 import (
 	context "context"
+	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -20,7 +21,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type VerificationDoorClient interface {
 	// Method Version
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	// get google authentication qr code url
 	GetQRcodeURL(ctx context.Context, in *GetQRcodeURLRequest, opts ...grpc.CallOption) (*GetQRcodeURLResponse, error)
 	// verify user google authentication(user's input code)
@@ -53,8 +54,8 @@ func NewVerificationDoorClient(cc grpc.ClientConnInterface) VerificationDoorClie
 	return &verificationDoorClient{cc}
 }
 
-func (c *verificationDoorClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error) {
-	out := new(VersionResponse)
+func (c *verificationDoorClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+	out := new(npool.VersionResponse)
 	err := c.cc.Invoke(ctx, "/verification.door.v1.VerificationDoor/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -166,7 +167,7 @@ func (c *verificationDoorClient) SendUserSiteContactEmail(ctx context.Context, i
 // for forward compatibility
 type VerificationDoorServer interface {
 	// Method Version
-	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
+	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	// get google authentication qr code url
 	GetQRcodeURL(context.Context, *GetQRcodeURLRequest) (*GetQRcodeURLResponse, error)
 	// verify user google authentication(user's input code)
@@ -196,7 +197,7 @@ type VerificationDoorServer interface {
 type UnimplementedVerificationDoorServer struct {
 }
 
-func (UnimplementedVerificationDoorServer) Version(context.Context, *emptypb.Empty) (*VersionResponse, error) {
+func (UnimplementedVerificationDoorServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
 func (UnimplementedVerificationDoorServer) GetQRcodeURL(context.Context, *GetQRcodeURLRequest) (*GetQRcodeURLResponse, error) {

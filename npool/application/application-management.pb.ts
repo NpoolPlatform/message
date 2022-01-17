@@ -6,15 +6,7 @@
 
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
-export type VersionResponse = {
-  Info?: string
-}
-
-export type PageInfo = {
-  PageIndex?: number
-  PageSize?: number
-}
-
+import * as NpoolV1Npool from "../npool.pb"
 export type ApplicationInfo = {
   ID?: string
   ApplicationName?: string
@@ -68,7 +60,7 @@ export type GetApplicationByOwnerResponse = {
 }
 
 export type GetApplicationsRequest = {
-  Info?: PageInfo
+  Info?: NpoolV1Npool.PageInfo
 }
 
 export type GetApplicationsResponse = {
@@ -516,8 +508,8 @@ export type GetUserAppIDResponse = {
 }
 
 export class ApplicationManagement {
-  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateApplication(req: CreateApplicationRequest, initReq?: fm.InitReq): Promise<CreateApplicationResponse> {
     return fm.fetchReq<CreateApplicationRequest, CreateApplicationResponse>(`/v1/create/app`, {...initReq, method: "POST", body: JSON.stringify(req)})

@@ -52,6 +52,8 @@
     - [SignupResponse](#cloud.hashing.apis.v1.SignupResponse)
     - [SubmitOrderRequest](#cloud.hashing.apis.v1.SubmitOrderRequest)
     - [SubmitOrderResponse](#cloud.hashing.apis.v1.SubmitOrderResponse)
+    - [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest)
+    - [UpdateKycResponse](#cloud.hashing.apis.v1.UpdateKycResponse)
   
     - [CloudHashingApis](#cloud.hashing.apis.v1.CloudHashingApis)
   
@@ -831,6 +833,36 @@ Request body and response
 
 
 
+
+<a name="cloud.hashing.apis.v1.UpdateKycRequest"></a>
+
+### UpdateKycRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [kyc.management.v1.KycInfo](#kyc.management.v1.KycInfo) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.UpdateKycResponse"></a>
+
+### UpdateKycResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Kyc](#cloud.hashing.apis.v1.Kyc) |  |  |
+
+
+
+
+
  
 
  
@@ -862,6 +894,7 @@ Cloud Hashing Goods
 | GetKycReviews | [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse) |  |
 | GetGoodReviews | [GetGoodReviewsRequest](#cloud.hashing.apis.v1.GetGoodReviewsRequest) | [GetGoodReviewsResponse](#cloud.hashing.apis.v1.GetGoodReviewsResponse) |  |
 | CreateKyc | [CreateKycRequest](#cloud.hashing.apis.v1.CreateKycRequest) | [CreateKycResponse](#cloud.hashing.apis.v1.CreateKycResponse) |  |
+| UpdateKyc | [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest) | [UpdateKycResponse](#cloud.hashing.apis.v1.UpdateKycResponse) |  |
 | GetKycByAppUser | [GetKycByAppUserRequest](#cloud.hashing.apis.v1.GetKycByAppUserRequest) | [GetKycByAppUserResponse](#cloud.hashing.apis.v1.GetKycByAppUserResponse) |  |
 
  

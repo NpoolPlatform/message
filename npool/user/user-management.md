@@ -35,7 +35,6 @@
     - [GetUserResponse](#user.v1.GetUserResponse)
     - [GetUsersRequest](#user.v1.GetUsersRequest)
     - [GetUsersResponse](#user.v1.GetUsersResponse)
-    - [PageInfo](#user.v1.PageInfo)
     - [QueryProviderUserInfo](#user.v1.QueryProviderUserInfo)
     - [QueryUserByUserProviderIDRequest](#user.v1.QueryUserByUserProviderIDRequest)
     - [QueryUserByUserProviderIDResponse](#user.v1.QueryUserByUserProviderIDResponse)
@@ -60,7 +59,6 @@
     - [UserBasicInfo](#user.v1.UserBasicInfo)
     - [UserDetails](#user.v1.UserDetails)
     - [UserProvider](#user.v1.UserProvider)
-    - [VersionResponse](#user.v1.VersionResponse)
   
     - [User](#user.v1.User)
   
@@ -409,7 +407,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PageInfo](#user.v1.PageInfo) |  |  |
+| Info | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 | AppID | [string](#string) |  |  |
 
 
@@ -564,7 +562,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PageInfo](#user.v1.PageInfo) |  |  |
+| Info | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 | AppID | [string](#string) |  |  |
 
 
@@ -581,22 +579,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [UserBasicInfo](#user.v1.UserBasicInfo) | repeated |  |
-
-
-
-
-
-
-<a name="user.v1.PageInfo"></a>
-
-### PageInfo
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| PageIndex | [uint32](#uint32) |  |  |
-| PageSize | [uint32](#uint32) |  |  |
 
 
 
@@ -854,12 +836,12 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| UserID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
 | OldEmail | [string](#string) |  |  |
 | OldCode | [string](#string) |  |  |
 | NewEmail | [string](#string) |  |  |
 | NewCode | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
 
 
 
@@ -921,12 +903,12 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| UserID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
 | OldPhone | [string](#string) |  |  |
 | OldCode | [string](#string) |  |  |
 | NewPhone | [string](#string) |  |  |
 | NewCode | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
 
 
 
@@ -951,7 +933,7 @@
 <a name="user.v1.UserBasicInfo"></a>
 
 ### UserBasicInfo
-
+request body and response
 
 
 | Field | Type | Label | Description |
@@ -1022,21 +1004,6 @@
 
 
 
-
-<a name="user.v1.VersionResponse"></a>
-
-### VersionResponse
-request body and response
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [string](#string) |  |  |
-
-
-
-
-
  
 
  
@@ -1051,7 +1018,7 @@ a service of managing users
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#user.v1.VersionResponse) | Method Version |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
 | SignUp | [SignupRequest](#user.v1.SignupRequest) | [SignupResponse](#user.v1.SignupResponse) | User can choose signup with username, email, phone or only emial or only phone. |
 | GetUser | [GetUserRequest](#user.v1.GetUserRequest) | [GetUserResponse](#user.v1.GetUserResponse) | Get a user&#39;s info by his(her) ID, this api can be request by user self of admin. |
 | GetUserDetails | [GetUserDetailsRequest](#user.v1.GetUserDetailsRequest) | [GetUserDetailsResponse](#user.v1.GetUserDetailsResponse) | Get user details in an app. |

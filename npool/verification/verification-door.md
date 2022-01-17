@@ -28,7 +28,6 @@
     - [VerifyGoogleAuthResponse](#verification.door.v1.VerifyGoogleAuthResponse)
     - [VerifyGoogleRecaptchaRequest](#verification.door.v1.VerifyGoogleRecaptchaRequest)
     - [VerifyGoogleRecaptchaResponse](#verification.door.v1.VerifyGoogleRecaptchaResponse)
-    - [VersionResponse](#verification.door.v1.VersionResponse)
   
     - [VerificationDoor](#verification.door.v1.VerificationDoor)
   
@@ -124,7 +123,7 @@
 <a name="verification.door.v1.GetQRcodeURLRequest"></a>
 
 ### GetQRcodeURLRequest
-
+request body and response
 
 
 | Field | Type | Label | Description |
@@ -430,21 +429,6 @@
 
 
 
-
-<a name="verification.door.v1.VersionResponse"></a>
-
-### VersionResponse
-request body and response
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [string](#string) |  |  |
-
-
-
-
-
  
 
  
@@ -459,7 +443,7 @@ Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#verification.door.v1.VersionResponse) | Method Version |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
 | GetQRcodeURL | [GetQRcodeURLRequest](#verification.door.v1.GetQRcodeURLRequest) | [GetQRcodeURLResponse](#verification.door.v1.GetQRcodeURLResponse) | get google authentication qr code url |
 | VerifyGoogleAuth | [VerifyGoogleAuthRequest](#verification.door.v1.VerifyGoogleAuthRequest) | [VerifyGoogleAuthResponse](#verification.door.v1.VerifyGoogleAuthResponse) | verify user google authentication(user&#39;s input code) |
 | DeleteUserGoogleAuth | [DeleteUserGoogleAuthRequest](#verification.door.v1.DeleteUserGoogleAuthRequest) | [DeleteUserGoogleAuthResponse](#verification.door.v1.DeleteUserGoogleAuthResponse) | delete user google authentication record |

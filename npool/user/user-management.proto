@@ -7,11 +7,12 @@ option go_package = "github.com/NpoolPlatform/message/npool/user";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/application/application-management.proto";
+import "npool/npool.proto";
 
 // a service of managing users
 service User {
     // Method Version
-    rpc Version (google.protobuf.Empty) returns (VersionResponse){
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
         option (google.api.http) = {
             post: "/version"
             body: "*"
@@ -213,347 +214,338 @@ service User {
 }
 
 // request body and response
-message VersionResponse {
-    string Info = 100;
-}
-
-message PageInfo {
-    uint32 PageIndex = 1;
-    uint32 PageSize = 2;
-}
-
 message UserBasicInfo {
-    string UserID = 1;
-    string Username = 2;
-    string Password = 15;
-    string Avatar = 3;
-    uint32 Age = 4;
-    string Gender = 5;
-    string Region = 6;
-    string Birthday = 7;
-    string Country = 8;
-    string Province = 9;
-    string City = 10;
-    string PhoneNumber = 11;
-    string EmailAddress = 12;
-    uint32 CreateAt = 13;
-    uint32 UpdateAt = 14;
-    string SignupMethod = 18;
-    string Career = 20;
-    string DisplayName = 21;
-    string FirstName = 23;
-    string LastName = 24;
-    string StreetAddress1 = 25;
-    string StreetAddress2 = 26;
-    string Compony = 27;
-    string PostalCode = 28;
+    string UserID = 10;
+    string Username = 20;
+    string Password = 30;
+    string Avatar = 40;
+    uint32 Age = 50;
+    string Gender = 60;
+    string Region = 70;
+    string Birthday = 80;
+    string Country = 90;
+    string Province = 100;
+    string City = 110;
+    string PhoneNumber = 120;
+    string EmailAddress = 130;
+    uint32 CreateAt = 140;
+    uint32 UpdateAt = 150;
+    string SignupMethod = 160;
+    string Career = 170;
+    string DisplayName = 180;
+    string FirstName = 190;
+    string LastName = 200;
+    string StreetAddress1 = 210;
+    string StreetAddress2 = 220;
+    string Compony = 230;
+    string PostalCode = 240;
 }
 
 message SignupRequest {
     // optional
-    string Username = 1;
-    string Password = 2;
+    string Username = 10;
+    string Password = 20;
     // optional
-    string EmailAddress = 4;
+    string EmailAddress = 30;
     // optional
-    string PhoneNumber = 6;
-    string Code = 7;
-    string AppID = 8;
+    string PhoneNumber = 40;
+    string Code = 50;
+    string AppID = 60;
 }
 
 message SignupResponse {
-    UserBasicInfo Info = 1;
+    UserBasicInfo Info = 10;
 }
 
 message GetUserRequest {
     // UserID is who is queried.
-    string UserID = 1;
-    string AppID = 2;
+    string UserID = 10;
+    string AppID = 20;
 }
 
 message GetUserResponse {
-    UserBasicInfo Info = 1;
+    UserBasicInfo Info = 10;
 }
 
 message GetUsersRequest {
-    PageInfo Info = 1;
-    string AppID = 2;
+    npool.v1.PageInfo Info = 10;
+    string AppID = 20;
 }
 
 message GetUsersResponse {
-    repeated UserBasicInfo Infos = 1;
+    repeated UserBasicInfo Infos = 10;
 }
 
 message UpdateUserInfoRequest {
-    UserBasicInfo Info = 1;
-    string AppID = 2;
-    string UserID = 3;
+    UserBasicInfo Info = 10;
+    string AppID = 20;
+    string UserID = 30;
 }
 
 message UpdateUserInfoResponse {
-    UserBasicInfo Info = 1;
+    UserBasicInfo Info = 10;
 }
 
 message BindUserPhoneRequest {
-    string UserID = 1;
-    string PhoneNumber = 2;
-    string AppID = 3;
-    string Code = 4;
+    string UserID = 10;
+    string PhoneNumber = 20;
+    string AppID = 30;
+    string Code = 40;
 }
 
 message BindUserPhoneResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message BindUserEmailRequest {
-    string UserID = 1;
-    string EmailAddress = 2;
-    string Code = 3;
-    string AppID = 4;
+    string UserID = 10;
+    string EmailAddress = 20;
+    string Code = 30;
+    string AppID = 40;
 }
 
 message BindUserEmailResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message UserProvider {
-    string ID = 1;
-    string UserID = 2;
-    string ProviderID = 3;
-    string ProviderUserID = 4;
-    string UserProviderInfo = 5;
-    uint32 CreateAt = 6;
-    uint32 UpdateAt = 7;
+    string ID = 10;
+    string UserID = 20;
+    string ProviderID = 30;
+    string ProviderUserID = 40;
+    string UserProviderInfo = 50;
+    uint32 CreateAt = 60;
+    uint32 UpdateAt = 70;
 }
 
 message BindThirdPartyRequest {
-    string UserID = 1;
-    string AppID = 2;
+    string UserID = 10;
+    string AppID = 20;
     // third party(provIDer)'s ID
-    string ProviderID = 3;
+    string ProviderID = 30;
     // UserID in third party(provIDer)
-    string ProviderUserID = 4;
-    string UserProviderInfo = 5;
+    string ProviderUserID = 40;
+    string UserProviderInfo = 50;
 }
 
 message BindThirdPartyResponse {
-    UserProvider Info = 1;
+    UserProvider Info = 10;
 }
 
 message UnbindThirdPartyRequest {
-    string UserID = 1;
-    string AppID = 2;
-    string ProviderID = 3;
+    string UserID = 10;
+    string AppID = 20;
+    string ProviderID = 30;
 }
 
 message UnbindThirdPartyResponse {
-    UserProvider Info = 1;
+    UserProvider Info = 10;
 }
 
 message ChangeUserPasswordRequest {
-    string UserID = 1;
-    string AppID = 2;
-    string VerifyParam = 3;
+    string UserID = 10;
+    string AppID = 20;
+    string VerifyParam = 30;
     // verify types are emial, phone and google.
-    string VerifyType = 4;
-    string OldPassword = 5;
-    string Password = 6;
-    string Code = 7;
+    string VerifyType = 40;
+    string OldPassword = 50;
+    string Password = 60;
+    string Code = 70;
 }
 
 message ChangeUserPasswordResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message CertificateKycRequest {
-    string UserID = 1;
-    string AppID = 2;
-    string FirstName = 3;
-    string LastName = 4;
-    string FrontCardImg = 5;
-    string BackCardImg = 6;
-    string UserCardImg = 7;
-    string CardType = 8;
-    string CardID = 9;
-    string Region = 10;
+    string UserID = 10;
+    string AppID = 20;
+    string FirstName = 30;
+    string LastName = 40;
+    string FrontCardImg = 50;
+    string BackCardImg = 60;
+    string UserCardImg = 70;
+    string CardType = 80;
+    string CardID = 90;
+    string Region = 100;
 }
 
 message CertificateKycResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message GetGaQRCodeRequest {
-    string UserID = 1;
-    string AppID = 2;
+    string UserID = 10;
+    string AppID = 20;
 }
 
 message GetGaQRCodeResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message ForgetPasswordRequest {
-    string VerifyParam = 1;
+    string VerifyParam = 10;
     // verify types are emial, phone and google.
-    string VerifyType = 2;
-    string Password = 3;
-    string Code = 4;
-    string AppID = 5;
+    string VerifyType = 20;
+    string Password = 30;
+    string Code = 40;
+    string AppID = 50;
 }
 
 message ForgetPasswordResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message DeleteUserRequest {
     // an array of UserID who are being deleted.
-    repeated string DeleteUserIDs = 1;
-    string AppID = 2;
+    repeated string DeleteUserIDs = 10;
+    string AppID = 20;
 }
 
 message DeleteUserResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message AddUserRequest {
-    string AppID = 1;
-    UserBasicInfo UserInfo = 2;
+    string AppID = 10;
+    UserBasicInfo UserInfo = 20;
 }
 
 message AddUserResponse {
-    UserBasicInfo Info = 1;
+    UserBasicInfo Info = 10;
 }
 
 message FrozenUser {
-    string ID = 1;
-    string UserID = 2;
-    string FrozenBy = 3;
-    string FrozenCause = 4;
-    uint32 StartAt = 5;
-    uint32 EndAt = 6;
-    string Status = 7;
-    string UnfrozenBy = 8;
+    string ID = 10;
+    string UserID = 20;
+    string FrozenBy = 30;
+    string FrozenCause = 40;
+    uint32 StartAt = 50;
+    uint32 EndAt = 60;
+    string Status = 70;
+    string UnfrozenBy = 80;
 }
 
 message FrozenUserRequest {
-    string UserID = 1;
-    string FrozenBy = 2;
-    string FrozenCause =3;
-    string AppID = 4;
+    string UserID = 10;
+    string FrozenBy = 20;
+    string FrozenCause =30;
+    string AppID = 40;
 }
 
 message FrozenUserResponse {
-    FrozenUser Info = 1;
+    FrozenUser Info = 10;
 }
 
 message QueryUserFrozenRequest {
-    string UserID = 1;
-    string AppID = 2;
+    string UserID = 10;
+    string AppID = 20;
 }
 
 message QueryUserFrozenResponse {
-    FrozenUser Info = 1;
+    FrozenUser Info = 10;
 }
 
 message UnfrozenUserRequest {
-    string ID = 1;
-    string UserID = 2;
-    string UnfrozenBy = 3;
-    string AppID = 4;
+    string ID = 10;
+    string UserID = 20;
+    string UnfrozenBy = 30;
+    string AppID = 40;
 }
 
 message UnfrozenUserResponse {
-    FrozenUser Info = 1;
+    FrozenUser Info = 10;
 }
 
 message GetFrozenUsersRequest {
-    PageInfo Info = 1;
-    string AppID = 2;
+    npool.v1.PageInfo Info = 10;
+    string AppID = 20;
 }
 
 message GetFrozenUsersResponse {
-    repeated FrozenUser Infos = 1;
+    repeated FrozenUser Infos = 10;
 }
 
 message GetUserProvidersRequest {
-    string UserID = 1;
-    string AppID = 2;
+    string UserID = 10;
+    string AppID = 20;
 }
 
 message GetUserProvidersResponse {
-    repeated UserProvider Infos = 1;
+    repeated UserProvider Infos = 10;
 }
 
 message QueryUserExistRequest {
-    string Username = 1;
-    string Password = 2;
-    string AppID = 3;
+    string Username = 10;
+    string Password = 20;
+    string AppID = 30;
 }
 
 message QueryUserExistResponse {
-    UserBasicInfo Info = 1;
+    UserBasicInfo Info = 10;
 }
 
 message QueryProviderUserInfo {
-    UserProvider UserProviderInfo = 1;
-    UserBasicInfo UserBasicInfo = 2;
+    UserProvider UserProviderInfo = 10;
+    UserBasicInfo UserBasicInfo = 20;
 }
 
 message QueryUserByUserProviderIDRequest {
-    string ProviderID = 1;
-    string ProviderUserID = 2;
-    string AppID = 3;
+    string ProviderID = 10;
+    string ProviderUserID = 20;
+    string AppID = 30;
 }
 
 message QueryUserByUserProviderIDResponse {
-    QueryProviderUserInfo Info = 1;
+    QueryProviderUserInfo Info = 10;
 }
 
 message SetPasswordRequest {
-    string Username = 1;
-    string Password = 2;
-    string AppID = 3;
+    string Username = 10;
+    string Password = 20;
+    string AppID = 30;
 }
 
 message SetPasswordResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message GetUserDetailsRequest {
-    string AppID = 1;
-    string UserID = 2;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message UserDetails {
-    UserBasicInfo UserBasicInfo = 1;
-    application.management.v1.ApplicationUserDetail UserAppInfo = 2;
+    UserBasicInfo UserBasicInfo = 10;
+    application.management.v1.ApplicationUserDetail UserAppInfo = 20;
 }
 
 message GetUserDetailsResponse {
-    UserDetails Info = 1;
+    UserDetails Info = 10;
 }
 
 message UpdateUserEmailRequest {
-    string OldEmail = 1;
-    string OldCode = 2;
-    string NewEmail = 3;
-    string NewCode = 4;
-    string UserID = 5;
-    string AppID = 6;
+    string UserID = 10;
+    string AppID = 20;
+    string OldEmail = 30;
+    string OldCode = 40;
+    string NewEmail = 50;
+    string NewCode = 60;
 }
 
 message UpdateUserEmailResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message UpdateUserPhoneRequest {
-    string OldPhone = 1;
-    string OldCode = 2;
-    string NewPhone = 3;
-    string NewCode = 4;
-    string UserID = 5;
-    string AppID = 6;
+    string UserID = 10;
+    string AppID = 20;
+    string OldPhone = 30;
+    string OldCode = 40;
+    string NewPhone = 50;
+    string NewCode = 60;
 }
 
 message UpdateUserPhoneResponse {
-    string Info = 1;
+    string Info = 10;
 }

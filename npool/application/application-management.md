@@ -77,7 +77,6 @@
     - [GroupUserInfo](#application.management.v1.GroupUserInfo)
     - [OwnerApplication](#application.management.v1.OwnerApplication)
     - [OwnerGroup](#application.management.v1.OwnerGroup)
-    - [PageInfo](#application.management.v1.PageInfo)
     - [RemoveGroupUsersRequest](#application.management.v1.RemoveGroupUsersRequest)
     - [RemoveGroupUsersResponse](#application.management.v1.RemoveGroupUsersResponse)
     - [RemoveUsersFromApplicationRequest](#application.management.v1.RemoveUsersFromApplicationRequest)
@@ -106,7 +105,6 @@
     - [UpdateUserKYCStatusRequest](#application.management.v1.UpdateUserKYCStatusRequest)
     - [UpdateUserKYCStatusResponse](#application.management.v1.UpdateUserKYCStatusResponse)
     - [UserRole](#application.management.v1.UserRole)
-    - [VersionResponse](#application.management.v1.VersionResponse)
   
     - [ApplicationManagement](#application.management.v1.ApplicationManagement)
   
@@ -219,7 +217,7 @@
 <a name="application.management.v1.ApplicationInfo"></a>
 
 ### ApplicationInfo
-
+request body and response
 
 
 | Field | Type | Label | Description |
@@ -689,7 +687,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PageInfo](#application.management.v1.PageInfo) |  |  |
+| Info | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
@@ -1278,22 +1276,6 @@
 
 
 
-<a name="application.management.v1.PageInfo"></a>
-
-### PageInfo
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| PageIndex | [uint32](#uint32) |  |  |
-| PageSize | [uint32](#uint32) |  |  |
-
-
-
-
-
-
 <a name="application.management.v1.RemoveGroupUsersRequest"></a>
 
 ### RemoveGroupUsersRequest
@@ -1747,21 +1729,6 @@
 
 
 
-
-<a name="application.management.v1.VersionResponse"></a>
-
-### VersionResponse
-request body and response
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [string](#string) |  |  |
-
-
-
-
-
  
 
  
@@ -1776,7 +1743,7 @@ request body and response
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#application.management.v1.VersionResponse) | Method Version |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
 | CreateApplication | [CreateApplicationRequest](#application.management.v1.CreateApplicationRequest) | [CreateApplicationResponse](#application.management.v1.CreateApplicationResponse) | Create an application. |
 | UpdateApplication | [UpdateApplicationRequest](#application.management.v1.UpdateApplicationRequest) | [UpdateApplicationResponse](#application.management.v1.UpdateApplicationResponse) | Update an application&#39;s basic info. |
 | GetApplication | [GetApplicationRequest](#application.management.v1.GetApplicationRequest) | [GetApplicationResponse](#application.management.v1.GetApplicationResponse) | Get application. |

@@ -503,7 +503,8 @@
         "AppID": {
           "type": "string"
         }
-      }
+      },
+      "title": "request body and response"
     },
     "v1GetQRcodeURLResponse": {
       "type": "object",
@@ -724,8 +725,7 @@
         "Info": {
           "type": "string"
         }
-      },
-      "title": "request body and response"
+      }
     }
   }
 }

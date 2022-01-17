@@ -6,10 +6,11 @@ option go_package = "github.com/NpoolPlatform/message/npool/application";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
+import "npool/npool.proto";
 
 service ApplicationManagement {
     // Method Version
-    rpc Version (google.protobuf.Empty) returns (VersionResponse){
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
         option (google.api.http) = {
             post: "/version"
             body: "*"
@@ -397,511 +398,502 @@ service ApplicationManagement {
 }
 
 // request body and response
-message VersionResponse {
-    string Info = 100;
-}
-
-message PageInfo {
-    uint32 PageIndex = 1;
-    uint32 PageSize = 2;
-}
-
 message ApplicationInfo {
-    string ID = 1;
-    string ApplicationName = 2;
-    string ApplicationOwner = 3;
-    string HomepageUrl = 4;
-    string RedirectUrl = 5;
-    string ApplicationLogo = 6;
-    uint32 CreateAT = 7;
-    uint32 UpdateAT = 8;
-    string ClientSecret = 9;
-    bool GoogleRecaptcha = 10;
-    bool SmsLogin = 11;
-    bool InvitationCodeMust = 12;
+    string ID = 10;
+    string ApplicationName = 20;
+    string ApplicationOwner = 30;
+    string HomepageUrl = 40;
+    string RedirectUrl = 50;
+    string ApplicationLogo = 60;
+    uint32 CreateAT = 70;
+    uint32 UpdateAT = 80;
+    string ClientSecret = 90;
+    bool GoogleRecaptcha = 100;
+    bool SmsLogin = 110;
+    bool InvitationCodeMust = 120;
 }
 
 message CreateApplicationRequest {
-    ApplicationInfo Info = 1;
+    ApplicationInfo Info = 10;
 }
 
 message CreateApplicationResponse {
-    ApplicationInfo Info = 1;
+    ApplicationInfo Info = 10;
 }
 
 message UpdateApplicationRequest {
-    ApplicationInfo Info = 1;
+    ApplicationInfo Info = 10;
 }
 
 message UpdateApplicationResponse {
-    ApplicationInfo Info = 1;
+    ApplicationInfo Info = 10;
 }
 
 message GetApplicationRequest {
-    string AppID = 1;
+    string AppID = 10;
 }
 
 message GetApplicationResponse {
-    ApplicationInfo Info = 1;
+    ApplicationInfo Info = 10;
 }
 
 message GetApplicationByOwnerRequest {
-    string Owner = 2;
+    string Owner = 20;
 }
 
 message OwnerApplication {
-    string Owner = 2;
-    repeated ApplicationInfo Infos = 3;
+    string Owner = 20;
+    repeated ApplicationInfo Infos = 30;
 }
 
 message GetApplicationByOwnerResponse {
-    OwnerApplication Info = 1;
+    OwnerApplication Info = 10;
 }
 
 message GetApplicationsRequest {
-    PageInfo Info = 1;
+    npool.v1.PageInfo Info = 10;
 }
 
 message GetApplicationsResponse {
-    repeated ApplicationInfo Infos = 1;
+    repeated ApplicationInfo Infos = 10;
 }
 
 message DeleteApplicationRequest {
-    string AppID = 1;
+    string AppID = 10;
 }
 
 message DeleteApplicationResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message RoleInfo {
-    string ID = 1;
-    string AppID = 2;
-    string RoleName = 3;
-    string Creator = 4;
-    uint32 CreateAT = 5;
-    uint32 UpdateAT = 6;
-    string Annotation = 7;
+    string ID = 10;
+    string AppID = 20;
+    string RoleName = 30;
+    string Creator = 40;
+    uint32 CreateAT = 50;
+    uint32 UpdateAT = 60;
+    string Annotation = 70;
 }
 
 message CreateRoleRequest {
-    RoleInfo Info = 1;
+    RoleInfo Info = 10;
 }
 
 message CreateRoleResponse {
-    RoleInfo Info = 1;
+    RoleInfo Info = 10;
 }
 
 message UpdateRoleRequest {
-    RoleInfo Info = 1;
+    RoleInfo Info = 10;
 }
 
 message UpdateRoleResponse {
-    RoleInfo Info = 1;
+    RoleInfo Info = 10;
 }
 
 message GetRoleRequest {
-    string AppID = 1;
-    string RoleID = 2;
+    string AppID = 10;
+    string RoleID = 20;
 }
 
 message GetRoleResponse {
-    RoleInfo Info = 1;
+    RoleInfo Info = 10;
 }
 
 message GetRoleByCreatorRequest {
-    string AppID = 1;
-    string Creator = 2;
+    string AppID = 10;
+    string Creator = 20;
 }
 
 message CreatorRole {
-    string AppID = 1;
-    string Creator = 2;
-    repeated RoleInfo Infos = 3;
+    string AppID = 10;
+    string Creator = 20;
+    repeated RoleInfo Infos = 30;
 }
 
 message GetRoleByCreatorResponse {
-    CreatorRole Info = 1;
+    CreatorRole Info = 10;
 }
 
 message DeleteRoleRequest {
-    string RoleID = 1;
-    string AppID = 2;
+    string RoleID = 10;
+    string AppID = 20;
 }
 
 message DeleteRoleResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message GetRolesRequest {
-    string AppID = 1;
+    string AppID = 10;
 }
 
 message GetRolesResponse {
-    repeated RoleInfo Infos = 1;
+    repeated RoleInfo Infos = 10;
 }
 
 message RoleUserInfo {
-    string ID = 1;
-    string AppID = 2;
-    string RoleID = 3;
-    string UserID = 4;
-    uint32 CreateAT = 5;
+    string ID = 10;
+    string AppID = 20;
+    string RoleID = 30;
+    string UserID = 40;
+    uint32 CreateAT = 50;
 }
 
 message SetUserRoleRequest {
-    repeated string UserIDs = 1;
-    string RoleID = 2;
-    string AppID = 3;
+    repeated string UserIDs = 10;
+    string RoleID = 20;
+    string AppID = 30;
 }
 
 message SetUserRoleResponse {
-    repeated RoleUserInfo Infos = 1;
+    repeated RoleUserInfo Infos = 10;
 }
 
 message GetUserRoleRequest {
-    string UserID = 1;
-    string AppID = 2;
+    string UserID = 10;
+    string AppID = 20;
 }
 
 message UserRole {
-    repeated RoleInfo Infos = 1;
-    string UserID = 2;
-    string AppID = 3;
+    repeated RoleInfo Infos = 10;
+    string UserID = 20;
+    string AppID = 30;
 }
 
 message GetUserRoleResponse {
-    UserRole Info = 1;
+    UserRole Info = 10;
 }
 
 message GetRoleUsersRequest {
-    string AppID = 1;
-    string RoleID = 2;
+    string AppID = 10;
+    string RoleID = 20;
 }
 
 message GetRoleUsersResponse {
-    repeated RoleUserInfo Infos  = 1;
+    repeated RoleUserInfo Infos  = 10;
 }
 
 message UnSetUserRoleRequest {
-    repeated string UserIDs = 1;
-    string RoleID = 2;
-    string AppID = 3;
+    repeated string UserIDs = 10;
+    string RoleID = 20;
+    string AppID = 30;
 }
 
 message UnSetUserRoleResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message ApplicationUserInfo {
-    string ID = 1;
-    string AppID = 2;
-    string UserID = 3;
-    bool Original = 4;
-    bool KycVerify = 5;
-    bool GAVerify = 6;
-    bool GALogin = 7;
-    bool SMSLogin = 8;
-    uint32 LoginNumber = 9;
-    uint32 CreateAT = 10;
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    bool Original = 40;
+    bool KycVerify = 50;
+    bool GAVerify = 60;
+    bool GALogin = 70;
+    bool SMSLogin = 80;
+    uint32 LoginNumber = 90;
+    uint32 CreateAT = 100;
 }
 
 message ApplicationUserDetail {
-    ApplicationUserInfo UserApplicationInfo = 1;
-    repeated GroupUserInfo UserGroupInfos = 2;
-    UserRole UserRoleInfo = 3;
+    ApplicationUserInfo UserApplicationInfo = 10;
+    repeated GroupUserInfo UserGroupInfos = 20;
+    UserRole UserRoleInfo = 30;
 }
 
 message GetApplicationUserDetailRequest {
-    string AppID = 1;
-    string UserID = 2;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message GetApplicationUserDetailResponse {
-    ApplicationUserDetail Info = 1;
+    ApplicationUserDetail Info = 10;
 }
 
 message AddUsersToApplicationRequest {
-    repeated string UserIDs = 1;
-    string AppID = 2;
-    bool Original = 3;
+    repeated string UserIDs = 10;
+    string AppID = 20;
+    bool Original = 30;
 }
 
 message AddUsersToApplicationResponse {
-    repeated ApplicationUserInfo Infos = 1;
+    repeated ApplicationUserInfo Infos = 10;
 }
 
 message GetUserFromApplicationRequest {
-    string AppID = 1;
-    string UserID = 2;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message GetUserFromApplicationResponse {
-    ApplicationUserInfo Info = 1;
+    ApplicationUserInfo Info = 10;
 }
 
 message GetUsersFromApplicationRequest {
-    string AppID = 1;
+    string AppID = 10;
 }
 
 message GetUsersFromApplicationResponse {
-    repeated ApplicationUserInfo Infos = 1;
+    repeated ApplicationUserInfo Infos = 10;
 }
 
 message RemoveUsersFromApplicationRequest {
-    repeated string UserIDs = 1;
-    string AppID = 2;
+    repeated string UserIDs = 10;
+    string AppID = 20;
 }
 
 message RemoveUsersFromApplicationResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message GroupInfo {
-    string ID = 1;
-    string AppID = 2;
-    string GroupName = 3;
-    string GroupOwner = 4;
-    string GroupLogo = 5;
-    string Annotation = 6;
-    uint32 CreateAT = 7;
-    uint32 UpdateAT = 8;
+    string ID = 10;
+    string AppID = 20;
+    string GroupName = 30;
+    string GroupOwner = 40;
+    string GroupLogo = 50;
+    string Annotation = 60;
+    uint32 CreateAT = 70;
+    uint32 UpdateAT = 80;
 }
 
 message CreateGroupRequest {
-    GroupInfo Info = 1;
+    GroupInfo Info = 10;
 }
 
 message CreateGroupResponse {
-    GroupInfo Info = 1;
+    GroupInfo Info = 10;
 }
 
 message GetGroupRequest {
-    string GroupID = 1;
-    string AppID = 2;
+    string GroupID = 10;
+    string AppID = 20;
 }
 
 message GetGroupResponse {
-    GroupInfo Info = 1;
+    GroupInfo Info = 10;
 }
 
 message GetGroupByOwnerRequest {
-    string AppID = 1;
-    string Owner = 2;
+    string AppID = 10;
+    string Owner = 20;
 }
 
 message OwnerGroup {
-    string AppID = 1;
-    string Owner = 2;
-    repeated GroupInfo Infos = 3;
+    string AppID = 10;
+    string Owner = 20;
+    repeated GroupInfo Infos = 30;
 }
 
 message GetGroupByOwnerResponse {
-    OwnerGroup Info = 1;
+    OwnerGroup Info = 10;
 }
 
 message GetAllGroupsRequest {
-    string AppID = 1;
+    string AppID = 10;
 }
 
 message GetAllGroupsResponse {
-    repeated GroupInfo Infos = 1;
+    repeated GroupInfo Infos = 10;
 }
 
 message UpdateGroupRequest {
-    GroupInfo Info = 1;
+    GroupInfo Info = 10;
 }
 
 message UpdateGroupResponse {
-    GroupInfo Info = 1;
+    GroupInfo Info = 10;
 }
 
 message DeleteGroupRequest {
-    string GroupID = 1;
-    string AppID = 2;
+    string GroupID = 10;
+    string AppID = 20;
 }
 
 message DeleteGroupResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message GroupUserInfo {
-    string ID = 1;
-    string GroupID = 2;
-    string AppID = 3;
-    string UserID = 4;
-    string Annotation = 5;
-    uint32 CreateAT = 6;
+    string ID = 10;
+    string GroupID = 20;
+    string AppID = 30;
+    string UserID = 40;
+    string Annotation = 50;
+    uint32 CreateAT = 60;
 }
 
 message AddGroupUsersRequest {
-    repeated string UserIDs = 1;
-    string GroupID = 2;
-    string AppID = 3;
+    repeated string UserIDs = 10;
+    string GroupID = 20;
+    string AppID = 30;
 }
 
 message AddGroupUsersResponse {
-    repeated GroupUserInfo Infos = 1;
+    repeated GroupUserInfo Infos = 10;
 }
 
 message GetGroupUsersRequest {
-    string GroupID = 1;
-    string AppID = 2;
+    string GroupID = 10;
+    string AppID = 20;
 }
 
 message GetGroupUsersResponse {
-    repeated GroupUserInfo Infos = 1;
+    repeated GroupUserInfo Infos = 10;
 }
 
 message RemoveGroupUsersRequest {
-    repeated string UserIDs = 1;
-    string GroupID = 2;
-    string AppID = 3;
+    repeated string UserIDs = 10;
+    string GroupID = 20;
+    string AppID = 30;
 }
 
 message RemoveGroupUsersResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message ResourceInfo {
-    string ID = 1;
-    string AppID = 2;
-    string ResourceName = 3;
-    string ResourceDescription = 4;
-    string Type = 5;
-    string Creator = 6;
-    uint32 CreateAT = 7;
-    uint32 UpdateAT = 8;
+    string ID = 10;
+    string AppID = 20;
+    string ResourceName = 30;
+    string ResourceDescription = 40;
+    string Type = 50;
+    string Creator = 60;
+    uint32 CreateAT = 70;
+    uint32 UpdateAT = 80;
 }
 
 message CreateResourceRequest {
-    ResourceInfo Info = 1;
+    ResourceInfo Info = 10;
 }
 
 message CreateResourceResponse {
-    ResourceInfo Info = 1;
+    ResourceInfo Info = 10;
 }
 
 message UpdateResourceRequest {
-    ResourceInfo Info = 1;
+    ResourceInfo Info = 10;
 }
 
 message UpdateResourceResponse {
-    ResourceInfo Info = 1;
+    ResourceInfo Info = 10;
 }
 
 message GetResourceRequest {
-    string ResourceID = 1;
-    string AppID = 2;
+    string ResourceID = 10;
+    string AppID = 20;
 }
 
 message GetResourceResponse {
-    ResourceInfo Info = 1;
+    ResourceInfo Info = 10;
 }
 
 message GetResourceByCreatorRequest {
-    string AppID = 1;
-    string Creator = 2;
+    string AppID = 10;
+    string Creator = 20;
 }
 
 message CreatorResource {
-    string AppID = 1;
-    string Creator = 2;
-    repeated ResourceInfo Infos = 3;
+    string AppID = 10;
+    string Creator = 20;
+    repeated ResourceInfo Infos = 30;
 }
 
 message GetResourceByCreatorResponse {
-    CreatorResource Info = 1;
+    CreatorResource Info = 10;
 }
 
 message GetResourcesRequest {
-    string AppID = 1;
+    string AppID = 10;
 }
 
 message GetResourcesResponse {
-    repeated ResourceInfo Infos = 1;
+    repeated ResourceInfo Infos = 10;
 }
 
 message DeleteResourceRequest {
-    string ResourceID = 1;
-    string AppID = 2;
+    string ResourceID = 10;
+    string AppID = 20;
 }
 
 message DeleteResourceResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message SetGALoginRequest {
-    string AppID = 1;
-    string UserID = 2;
-    bool Set = 3;
+    string AppID = 10;
+    string UserID = 20;
+    bool Set = 30;
 }
 
 message SetGALoginResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message AddUserLoginTimeRequest {
-    string UserID = 1;
-    string AppID = 2;
+    string UserID = 10;
+    string AppID = 20;
 }
 
 message AddUserLoginTimeResponse {
-    uint32 Info = 1;
+    uint32 Info = 10;
 }
 
 message UpdateUserGAStatusRequest {
-    string UserID = 1;
-    string AppID = 2;
-    bool Status = 3;
+    string UserID = 10;
+    string AppID = 20;
+    bool Status = 30;
 }
 
 message UpdateUserGAStatusResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message UpdateUserKYCStatusRequest {
-    string UserID = 1;
-    string AppID = 2;
-    bool Status = 3;
+    string UserID = 10;
+    string AppID = 20;
+    bool Status = 30;
 }
 
 message UpdateUserKYCStatusResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message GetUserGroupRequest {
-    string AppID = 1;
-    string UserID = 2;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message GetUserGroupResponse {
-    repeated GroupUserInfo Infos = 1;
+    repeated GroupUserInfo Infos = 10;
 }
 
 message SetSMSLoginRequest {
-    string AppID = 1;
-    string UserID = 2;
-    bool Set = 3;
+    string AppID = 10;
+    string UserID = 20;
+    bool Set = 30;
 }
 
 message SetSMSLoginResponse {
-    string Info = 1;
+    string Info = 10;
 }
 
 message GetResourceByNameRequest {
-    string ResourceName = 1;
-    string AppID = 2;
+    string ResourceName = 10;
+    string AppID = 20;
 }
 
 message GetResourceByNameResponse {
-    ResourceInfo Info = 1;
+    ResourceInfo Info = 10;
 }
 
 message GetUserAppIDRequest {
-    string UserID = 1;
+    string UserID = 10;
 }
 
 message GetUserAppIDResponse {
-    repeated string Infos = 1;
+    repeated string Infos = 10;
 }

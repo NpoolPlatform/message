@@ -6,10 +6,7 @@
 
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
-export type VersionResponse = {
-  Info?: string
-}
-
+import * as NpoolV1Npool from "../npool.pb"
 export type GetQRcodeURLRequest = {
   Username?: string
   UserID?: string
@@ -135,8 +132,8 @@ export type SendUserSiteContactEmailResponse = {
 }
 
 export class VerificationDoor {
-  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetQRcodeURL(req: GetQRcodeURLRequest, initReq?: fm.InitReq): Promise<GetQRcodeURLResponse> {
     return fm.fetchReq<GetQRcodeURLRequest, GetQRcodeURLResponse>(`/v1/get/qrcode/url`, {...initReq, method: "POST", body: JSON.stringify(req)})

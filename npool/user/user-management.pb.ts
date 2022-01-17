@@ -7,15 +7,7 @@
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as ApplicationManagementV1Application-management from "../application/application-management.pb"
-export type VersionResponse = {
-  Info?: string
-}
-
-export type PageInfo = {
-  PageIndex?: number
-  PageSize?: number
-}
-
+import * as NpoolV1Npool from "../npool.pb"
 export type UserBasicInfo = {
   UserID?: string
   Username?: string
@@ -66,7 +58,7 @@ export type GetUserResponse = {
 }
 
 export type GetUsersRequest = {
-  Info?: PageInfo
+  Info?: NpoolV1Npool.PageInfo
   AppID?: string
 }
 
@@ -251,7 +243,7 @@ export type UnfrozenUserResponse = {
 }
 
 export type GetFrozenUsersRequest = {
-  Info?: PageInfo
+  Info?: NpoolV1Npool.PageInfo
   AppID?: string
 }
 
@@ -318,12 +310,12 @@ export type GetUserDetailsResponse = {
 }
 
 export type UpdateUserEmailRequest = {
+  UserID?: string
+  AppID?: string
   OldEmail?: string
   OldCode?: string
   NewEmail?: string
   NewCode?: string
-  UserID?: string
-  AppID?: string
 }
 
 export type UpdateUserEmailResponse = {
@@ -331,12 +323,12 @@ export type UpdateUserEmailResponse = {
 }
 
 export type UpdateUserPhoneRequest = {
+  UserID?: string
+  AppID?: string
   OldPhone?: string
   OldCode?: string
   NewPhone?: string
   NewCode?: string
-  UserID?: string
-  AppID?: string
 }
 
 export type UpdateUserPhoneResponse = {
@@ -344,8 +336,8 @@ export type UpdateUserPhoneResponse = {
 }
 
 export class User {
-  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static SignUp(req: SignupRequest, initReq?: fm.InitReq): Promise<SignupResponse> {
     return fm.fetchReq<SignupRequest, SignupResponse>(`/v1/signup`, {...initReq, method: "POST", body: JSON.stringify(req)})
