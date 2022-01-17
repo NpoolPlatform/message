@@ -76,7 +76,7 @@ message KycInfo {
     string CardID = 50;
     string FrontCardImg = 60;
     string BackCardImg = 70;
-    string UserHandlingCardImg = 80;
+    string UserHandingCardImg = 80;
     uint32 CreateAt = 90;
     uint32 UpdateAt = 100;
 }

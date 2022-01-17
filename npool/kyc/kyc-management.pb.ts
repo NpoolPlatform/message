@@ -15,7 +15,7 @@ export type KycInfo = {
   CardID?: string
   FrontCardImg?: string
   BackCardImg?: string
-  UserHandlingCardImg?: string
+  UserHandingCardImg?: string
   CreateAt?: number
   UpdateAt?: number
 }

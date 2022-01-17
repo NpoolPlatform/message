@@ -236,7 +236,7 @@ request body and response
 | CardID | [string](#string) |  |  |
 | FrontCardImg | [string](#string) |  |  |
 | BackCardImg | [string](#string) |  |  |
-| UserHandlingCardImg | [string](#string) |  |  |
+| UserHandingCardImg | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
 | UpdateAt | [uint32](#uint32) |  |  |
 
