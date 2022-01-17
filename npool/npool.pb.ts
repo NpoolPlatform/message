@@ -4,8 +4,8 @@
 * This file is a generated Typescript file for GRPC Gateway, DO NOT MODIFY
 */
 export type PageInfo = {
-  PageIndex?: number
-  PageSize?: number
+  Offset?: number
+  Limit?: number
 }
 
 export type VersionResponse = {

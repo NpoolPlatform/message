@@ -5,8 +5,8 @@ package npool.v1;
 option go_package = "github.com/NpoolPlatform/message/npool";
 
 message PageInfo {
-    int32 PageIndex = 10;
-    int32 PageSize = 20;
+    int32 Offset = 10;
+    int32 Limit = 20;
 }
 
 message VersionResponse {

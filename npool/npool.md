@@ -26,8 +26,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PageIndex | [int32](#int32) |  |  |
-| PageSize | [int32](#int32) |  |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
 
 
 
