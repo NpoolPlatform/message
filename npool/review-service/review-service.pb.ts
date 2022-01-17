@@ -19,6 +19,7 @@ export type Review = {
   Message?: string
   ObjectID?: string
   Domain?: string
+  CreateAt?: number
 }
 
 export type CreateReviewRequest = {

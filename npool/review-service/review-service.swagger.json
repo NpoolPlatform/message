@@ -644,6 +644,10 @@
         },
         "Domain": {
           "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
