@@ -203,7 +203,7 @@
         ]
       }
     },
-    "/v1/get/kyc/by/user": {
+    "/v1/get/kyc/by/app/user": {
       "post": {
         "operationId": "CloudHashingApis_GetKycByAppUser",
         "responses": {
@@ -829,11 +829,11 @@
     "npoolv1PageInfo": {
       "type": "object",
       "properties": {
-        "PageIndex": {
+        "Offset": {
           "type": "integer",
           "format": "int32"
         },
-        "PageSize": {
+        "Limit": {
           "type": "integer",
           "format": "int32"
         }
@@ -1579,19 +1579,10 @@
         "ID": {
           "type": "string"
         },
-        "UserID": {
-          "type": "string"
-        },
         "AppID": {
           "type": "string"
         },
-        "FirstName": {
-          "type": "string"
-        },
-        "LastName": {
-          "type": "string"
-        },
-        "Region": {
+        "UserID": {
           "type": "string"
         },
         "CardType": {
@@ -1606,7 +1597,7 @@
         "BackCardImg": {
           "type": "string"
         },
-        "UserHandlingCardImg": {
+        "UserHandingCardImg": {
           "type": "string"
         },
         "CreateAt": {
@@ -1617,7 +1608,8 @@
           "type": "integer",
           "format": "int64"
         }
-      }
+      },
+      "title": "request body and response"
     },
     "v1KycReview": {
       "type": "object",

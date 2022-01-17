@@ -131,7 +131,7 @@ service CloudHashingApis {
     }
     rpc GetKycByAppUser(GetKycByAppUserRequest) returns (GetKycByAppUserResponse) {
         option (google.api.http) = {
-            post: "/v1/get/kyc/by/user"
+            post: "/v1/get/kyc/by/app/user"
             body: "*"
         };
     }

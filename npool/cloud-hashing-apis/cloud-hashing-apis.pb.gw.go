@@ -1047,7 +1047,7 @@ func RegisterCloudHashingApisHandlerServer(ctx context.Context, mux *runtime.Ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.apis.v1.CloudHashingApis/GetKycByAppUser", runtime.WithHTTPPathPattern("/v1/get/kyc/by/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.apis.v1.CloudHashingApis/GetKycByAppUser", runtime.WithHTTPPathPattern("/v1/get/kyc/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1449,7 +1449,7 @@ func RegisterCloudHashingApisHandlerClient(ctx context.Context, mux *runtime.Ser
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.apis.v1.CloudHashingApis/GetKycByAppUser", runtime.WithHTTPPathPattern("/v1/get/kyc/by/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.apis.v1.CloudHashingApis/GetKycByAppUser", runtime.WithHTTPPathPattern("/v1/get/kyc/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1503,7 +1503,7 @@ var (
 
 	pattern_CloudHashingApis_CreateKyc_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "kyc"}, ""))
 
-	pattern_CloudHashingApis_GetKycByAppUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "kyc", "by", "user"}, ""))
+	pattern_CloudHashingApis_GetKycByAppUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "kyc", "by", "app", "user"}, ""))
 )
 
 var (

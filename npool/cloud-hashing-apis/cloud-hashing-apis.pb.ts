@@ -289,6 +289,6 @@ export class CloudHashingApis {
     return fm.fetchReq<CreateKycRequest, CreateKycResponse>(`/v1/create/kyc`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetKycByAppUser(req: GetKycByAppUserRequest, initReq?: fm.InitReq): Promise<GetKycByAppUserResponse> {
-    return fm.fetchReq<GetKycByAppUserRequest, GetKycByAppUserResponse>(`/v1/get/kyc/by/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetKycByAppUserRequest, GetKycByAppUserResponse>(`/v1/get/kyc/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
