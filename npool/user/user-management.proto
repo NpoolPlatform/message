@@ -242,15 +242,15 @@ message UserBasicInfo {
 }
 
 message SignupRequest {
+    string AppID = 10;
     // optional
-    string Username = 10;
-    string Password = 20;
+    string Username = 20;
+    string Password = 30;
     // optional
-    string EmailAddress = 30;
+    string EmailAddress = 40;
     // optional
-    string PhoneNumber = 40;
-    string Code = 50;
-    string AppID = 60;
+    string PhoneNumber = 50;
+    string Code = 60;
 }
 
 message SignupResponse {
@@ -259,8 +259,8 @@ message SignupResponse {
 
 message GetUserRequest {
     // UserID is who is queried.
-    string UserID = 10;
-    string AppID = 20;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message GetUserResponse {
@@ -268,8 +268,8 @@ message GetUserResponse {
 }
 
 message GetUsersRequest {
-    npool.v1.PageInfo Info = 10;
-    string AppID = 20;
+    string AppID = 10;
+    npool.v1.PageInfo Info = 20;
 }
 
 message GetUsersResponse {
@@ -277,9 +277,9 @@ message GetUsersResponse {
 }
 
 message UpdateUserInfoRequest {
-    UserBasicInfo Info = 10;
-    string AppID = 20;
-    string UserID = 30;
+    string AppID = 10;
+    string UserID = 20;
+    UserBasicInfo Info = 30;
 }
 
 message UpdateUserInfoResponse {
@@ -287,9 +287,9 @@ message UpdateUserInfoResponse {
 }
 
 message BindUserPhoneRequest {
-    string UserID = 10;
-    string PhoneNumber = 20;
-    string AppID = 30;
+    string AppID = 10;
+    string UserID = 20;
+    string PhoneNumber = 30;
     string Code = 40;
 }
 
@@ -298,10 +298,10 @@ message BindUserPhoneResponse {
 }
 
 message BindUserEmailRequest {
-    string UserID = 10;
-    string EmailAddress = 20;
-    string Code = 30;
-    string AppID = 40;
+    string AppID = 10;
+    string UserID = 20;
+    string EmailAddress = 30;
+    string Code = 40;
 }
 
 message BindUserEmailResponse {
@@ -319,8 +319,8 @@ message UserProvider {
 }
 
 message BindThirdPartyRequest {
-    string UserID = 10;
-    string AppID = 20;
+    string AppID = 10;
+    string UserID = 20;
     // third party(provIDer)'s ID
     string ProviderID = 30;
     // UserID in third party(provIDer)
@@ -333,8 +333,8 @@ message BindThirdPartyResponse {
 }
 
 message UnbindThirdPartyRequest {
-    string UserID = 10;
-    string AppID = 20;
+    string AppID = 10;
+    string UserID = 20;
     string ProviderID = 30;
 }
 
@@ -343,8 +343,8 @@ message UnbindThirdPartyResponse {
 }
 
 message ChangeUserPasswordRequest {
-    string UserID = 10;
-    string AppID = 20;
+    string AppID = 10;
+    string UserID = 20;
     string VerifyParam = 30;
     // verify types are emial, phone and google.
     string VerifyType = 40;
@@ -358,8 +358,8 @@ message ChangeUserPasswordResponse {
 }
 
 message CertificateKycRequest {
-    string UserID = 10;
-    string AppID = 20;
+    string AppID = 10;
+    string UserID = 20;
     string FirstName = 30;
     string LastName = 40;
     string FrontCardImg = 50;
@@ -375,8 +375,8 @@ message CertificateKycResponse {
 }
 
 message GetGaQRCodeRequest {
-    string UserID = 10;
-    string AppID = 20;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message GetGaQRCodeResponse {
@@ -384,12 +384,12 @@ message GetGaQRCodeResponse {
 }
 
 message ForgetPasswordRequest {
-    string VerifyParam = 10;
+    string AppID = 10;
+    string VerifyParam = 20;
     // verify types are emial, phone and google.
-    string VerifyType = 20;
-    string Password = 30;
-    string Code = 40;
-    string AppID = 50;
+    string VerifyType = 30;
+    string Password = 40;
+    string Code = 50;
 }
 
 message ForgetPasswordResponse {
@@ -397,9 +397,9 @@ message ForgetPasswordResponse {
 }
 
 message DeleteUserRequest {
+    string AppID = 10;
     // an array of UserID who are being deleted.
-    repeated string DeleteUserIDs = 10;
-    string AppID = 20;
+    repeated string DeleteUserIDs = 20;
 }
 
 message DeleteUserResponse {
@@ -427,10 +427,10 @@ message FrozenUser {
 }
 
 message FrozenUserRequest {
-    string UserID = 10;
-    string FrozenBy = 20;
-    string FrozenCause =30;
-    string AppID = 40;
+    string AppID = 10;
+    string UserID = 20;
+    string FrozenBy = 30;
+    string FrozenCause =40;
 }
 
 message FrozenUserResponse {
@@ -438,8 +438,8 @@ message FrozenUserResponse {
 }
 
 message QueryUserFrozenRequest {
-    string UserID = 10;
-    string AppID = 20;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message QueryUserFrozenResponse {
@@ -447,10 +447,10 @@ message QueryUserFrozenResponse {
 }
 
 message UnfrozenUserRequest {
-    string ID = 10;
-    string UserID = 20;
-    string UnfrozenBy = 30;
-    string AppID = 40;
+    string AppID = 10;
+    string ID = 20;
+    string UserID = 30;
+    string UnfrozenBy = 40;
 }
 
 message UnfrozenUserResponse {
@@ -458,8 +458,8 @@ message UnfrozenUserResponse {
 }
 
 message GetFrozenUsersRequest {
-    npool.v1.PageInfo Info = 10;
-    string AppID = 20;
+    string AppID = 10;
+    npool.v1.PageInfo Info = 20;
 }
 
 message GetFrozenUsersResponse {
@@ -467,8 +467,8 @@ message GetFrozenUsersResponse {
 }
 
 message GetUserProvidersRequest {
-    string UserID = 10;
-    string AppID = 20;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message GetUserProvidersResponse {
@@ -476,9 +476,9 @@ message GetUserProvidersResponse {
 }
 
 message QueryUserExistRequest {
-    string Username = 10;
-    string Password = 20;
-    string AppID = 30;
+    string AppID = 10;
+    string Username = 20;
+    string Password = 30;
 }
 
 message QueryUserExistResponse {
@@ -491,9 +491,9 @@ message QueryProviderUserInfo {
 }
 
 message QueryUserByUserProviderIDRequest {
-    string ProviderID = 10;
-    string ProviderUserID = 20;
-    string AppID = 30;
+    string AppID = 10;
+    string ProviderID = 20;
+    string ProviderUserID = 30;
 }
 
 message QueryUserByUserProviderIDResponse {
@@ -501,9 +501,9 @@ message QueryUserByUserProviderIDResponse {
 }
 
 message SetPasswordRequest {
-    string Username = 10;
-    string Password = 20;
-    string AppID = 30;
+    string AppID = 10;
+    string Username = 20;
+    string Password = 30;
 }
 
 message SetPasswordResponse {
@@ -525,8 +525,8 @@ message GetUserDetailsResponse {
 }
 
 message UpdateUserEmailRequest {
-    string UserID = 10;
-    string AppID = 20;
+    string AppID = 10;
+    string UserID = 20;
     string OldEmail = 30;
     string OldCode = 40;
     string NewEmail = 50;
@@ -538,8 +538,8 @@ message UpdateUserEmailResponse {
 }
 
 message UpdateUserPhoneRequest {
-    string UserID = 10;
-    string AppID = 20;
+    string AppID = 10;
+    string UserID = 20;
     string OldPhone = 30;
     string OldCode = 40;
     string NewPhone = 50;

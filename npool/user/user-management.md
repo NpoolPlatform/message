@@ -112,8 +112,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | ProviderID | [string](#string) |  | third party(provIDer)&#39;s ID |
 | ProviderUserID | [string](#string) |  | UserID in third party(provIDer) |
 | UserProviderInfo | [string](#string) |  |  |
@@ -146,10 +146,10 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | EmailAddress | [string](#string) |  |  |
 | Code | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
 
 
 
@@ -179,9 +179,9 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | PhoneNumber | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
 | Code | [string](#string) |  |  |
 
 
@@ -212,8 +212,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | FirstName | [string](#string) |  |  |
 | LastName | [string](#string) |  |  |
 | FrontCardImg | [string](#string) |  |  |
@@ -251,8 +251,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | VerifyParam | [string](#string) |  |  |
 | VerifyType | [string](#string) |  | verify types are emial, phone and google. |
 | OldPassword | [string](#string) |  |  |
@@ -287,8 +287,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| DeleteUserIDs | [string](#string) | repeated | an array of UserID who are being deleted. |
 | AppID | [string](#string) |  |  |
+| DeleteUserIDs | [string](#string) | repeated | an array of UserID who are being deleted. |
 
 
 
@@ -318,11 +318,11 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | VerifyParam | [string](#string) |  |  |
 | VerifyType | [string](#string) |  | verify types are emial, phone and google. |
 | Password | [string](#string) |  |  |
 | Code | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
 
 
 
@@ -374,10 +374,10 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | FrozenBy | [string](#string) |  |  |
 | FrozenCause | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
 
 
 
@@ -407,8 +407,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 | AppID | [string](#string) |  |  |
+| Info | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
@@ -438,8 +438,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 
 
 
@@ -500,8 +500,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 
 
 
@@ -531,8 +531,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| UserID | [string](#string) |  | UserID is who is queried. |
-| AppID | [string](#string) |  |  |
+| AppID | [string](#string) |  | UserID is who is queried. |
+| UserID | [string](#string) |  |  |
 
 
 
@@ -562,8 +562,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 | AppID | [string](#string) |  |  |
+| Info | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
@@ -609,9 +609,9 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | ProviderID | [string](#string) |  |  |
 | ProviderUserID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
 
 
 
@@ -641,9 +641,9 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | Username | [string](#string) |  |  |
 | Password | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
 
 
 
@@ -673,8 +673,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 
 
 
@@ -704,9 +704,9 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | Username | [string](#string) |  |  |
 | Password | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
 
 
 
@@ -736,12 +736,12 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | Username | [string](#string) |  | optional |
 | Password | [string](#string) |  |  |
 | EmailAddress | [string](#string) |  | optional |
 | PhoneNumber | [string](#string) |  | optional |
 | Code | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
 
 
 
@@ -771,8 +771,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | ProviderID | [string](#string) |  |  |
 
 
@@ -803,10 +803,10 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | ID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | UnfrozenBy | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
 
 
 
@@ -836,8 +836,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | OldEmail | [string](#string) |  |  |
 | OldCode | [string](#string) |  |  |
 | NewEmail | [string](#string) |  |  |
@@ -871,9 +871,9 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserBasicInfo](#user.v1.UserBasicInfo) |  |  |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
+| Info | [UserBasicInfo](#user.v1.UserBasicInfo) |  |  |
 
 
 
@@ -903,8 +903,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | OldPhone | [string](#string) |  |  |
 | OldCode | [string](#string) |  |  |
 | NewPhone | [string](#string) |  |  |

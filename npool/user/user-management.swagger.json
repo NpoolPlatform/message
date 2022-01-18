@@ -914,10 +914,10 @@
     "v1BindThirdPartyRequest": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "AppID": {
           "type": "string"
         },
-        "AppID": {
+        "UserID": {
           "type": "string"
         },
         "ProviderID": {
@@ -944,6 +944,9 @@
     "v1BindUserEmailRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "UserID": {
           "type": "string"
         },
@@ -951,9 +954,6 @@
           "type": "string"
         },
         "Code": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         }
       }
@@ -969,13 +969,13 @@
     "v1BindUserPhoneRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "UserID": {
           "type": "string"
         },
         "PhoneNumber": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         },
         "Code": {
@@ -994,10 +994,10 @@
     "v1ChangeUserPasswordRequest": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "AppID": {
           "type": "string"
         },
-        "AppID": {
+        "UserID": {
           "type": "string"
         },
         "VerifyParam": {
@@ -1029,15 +1029,15 @@
     "v1DeleteUserRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "DeleteUserIDs": {
           "type": "array",
           "items": {
             "type": "string"
           },
           "description": "an array of UserID who are being deleted."
-        },
-        "AppID": {
-          "type": "string"
         }
       }
     },
@@ -1052,6 +1052,9 @@
     "v1ForgetPasswordRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "VerifyParam": {
           "type": "string"
         },
@@ -1063,9 +1066,6 @@
           "type": "string"
         },
         "Code": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         }
       }
@@ -1112,6 +1112,9 @@
     "v1FrozenUserRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "UserID": {
           "type": "string"
         },
@@ -1119,9 +1122,6 @@
           "type": "string"
         },
         "FrozenCause": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         }
       }
@@ -1137,11 +1137,11 @@
     "v1GetFrozenUsersRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1PageInfo"
-        },
         "AppID": {
           "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1PageInfo"
         }
       }
     },
@@ -1178,10 +1178,10 @@
     "v1GetUserProvidersRequest": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "AppID": {
           "type": "string"
         },
-        "AppID": {
+        "UserID": {
           "type": "string"
         }
       }
@@ -1200,11 +1200,11 @@
     "v1GetUserRequest": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "AppID": {
           "type": "string",
           "description": "UserID is who is queried."
         },
-        "AppID": {
+        "UserID": {
           "type": "string"
         }
       }
@@ -1220,11 +1220,11 @@
     "v1GetUsersRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1PageInfo"
-        },
         "AppID": {
           "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1PageInfo"
         }
       }
     },
@@ -1290,13 +1290,13 @@
     "v1QueryUserByUserProviderIDRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "ProviderID": {
           "type": "string"
         },
         "ProviderUserID": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         }
       }
@@ -1312,13 +1312,13 @@
     "v1QueryUserExistRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "Username": {
           "type": "string"
         },
         "Password": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         }
       }
@@ -1334,10 +1334,10 @@
     "v1QueryUserFrozenRequest": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "AppID": {
           "type": "string"
         },
-        "AppID": {
+        "UserID": {
           "type": "string"
         }
       }
@@ -1381,13 +1381,13 @@
     "v1SetPasswordRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "Username": {
           "type": "string"
         },
         "Password": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         }
       }
@@ -1403,6 +1403,9 @@
     "v1SignupRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "Username": {
           "type": "string",
           "title": "optional"
@@ -1420,9 +1423,6 @@
         },
         "Code": {
           "type": "string"
-        },
-        "AppID": {
-          "type": "string"
         }
       }
     },
@@ -1437,10 +1437,10 @@
     "v1UnbindThirdPartyRequest": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "AppID": {
           "type": "string"
         },
-        "AppID": {
+        "UserID": {
           "type": "string"
         },
         "ProviderID": {
@@ -1459,6 +1459,9 @@
     "v1UnfrozenUserRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "ID": {
           "type": "string"
         },
@@ -1466,9 +1469,6 @@
           "type": "string"
         },
         "UnfrozenBy": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         }
       }
@@ -1484,10 +1484,10 @@
     "v1UpdateUserEmailRequest": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "AppID": {
           "type": "string"
         },
-        "AppID": {
+        "UserID": {
           "type": "string"
         },
         "OldEmail": {
@@ -1515,14 +1515,14 @@
     "v1UpdateUserInfoRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1UserBasicInfo"
-        },
         "AppID": {
           "type": "string"
         },
         "UserID": {
           "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1UserBasicInfo"
         }
       }
     },
@@ -1537,10 +1537,10 @@
     "v1UpdateUserPhoneRequest": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "AppID": {
           "type": "string"
         },
-        "AppID": {
+        "UserID": {
           "type": "string"
         },
         "OldPhone": {

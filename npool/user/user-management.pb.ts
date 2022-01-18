@@ -36,12 +36,12 @@ export type UserBasicInfo = {
 }
 
 export type SignupRequest = {
+  AppID?: string
   Username?: string
   Password?: string
   EmailAddress?: string
   PhoneNumber?: string
   Code?: string
-  AppID?: string
 }
 
 export type SignupResponse = {
@@ -49,8 +49,8 @@ export type SignupResponse = {
 }
 
 export type GetUserRequest = {
-  UserID?: string
   AppID?: string
+  UserID?: string
 }
 
 export type GetUserResponse = {
@@ -58,8 +58,8 @@ export type GetUserResponse = {
 }
 
 export type GetUsersRequest = {
-  Info?: NpoolV1Npool.PageInfo
   AppID?: string
+  Info?: NpoolV1Npool.PageInfo
 }
 
 export type GetUsersResponse = {
@@ -67,9 +67,9 @@ export type GetUsersResponse = {
 }
 
 export type UpdateUserInfoRequest = {
-  Info?: UserBasicInfo
   AppID?: string
   UserID?: string
+  Info?: UserBasicInfo
 }
 
 export type UpdateUserInfoResponse = {
@@ -77,9 +77,9 @@ export type UpdateUserInfoResponse = {
 }
 
 export type BindUserPhoneRequest = {
+  AppID?: string
   UserID?: string
   PhoneNumber?: string
-  AppID?: string
   Code?: string
 }
 
@@ -88,10 +88,10 @@ export type BindUserPhoneResponse = {
 }
 
 export type BindUserEmailRequest = {
+  AppID?: string
   UserID?: string
   EmailAddress?: string
   Code?: string
-  AppID?: string
 }
 
 export type BindUserEmailResponse = {
@@ -109,8 +109,8 @@ export type UserProvider = {
 }
 
 export type BindThirdPartyRequest = {
-  UserID?: string
   AppID?: string
+  UserID?: string
   ProviderID?: string
   ProviderUserID?: string
   UserProviderInfo?: string
@@ -121,8 +121,8 @@ export type BindThirdPartyResponse = {
 }
 
 export type UnbindThirdPartyRequest = {
-  UserID?: string
   AppID?: string
+  UserID?: string
   ProviderID?: string
 }
 
@@ -131,8 +131,8 @@ export type UnbindThirdPartyResponse = {
 }
 
 export type ChangeUserPasswordRequest = {
-  UserID?: string
   AppID?: string
+  UserID?: string
   VerifyParam?: string
   VerifyType?: string
   OldPassword?: string
@@ -145,8 +145,8 @@ export type ChangeUserPasswordResponse = {
 }
 
 export type CertificateKycRequest = {
-  UserID?: string
   AppID?: string
+  UserID?: string
   FirstName?: string
   LastName?: string
   FrontCardImg?: string
@@ -162,8 +162,8 @@ export type CertificateKycResponse = {
 }
 
 export type GetGaQRCodeRequest = {
-  UserID?: string
   AppID?: string
+  UserID?: string
 }
 
 export type GetGaQRCodeResponse = {
@@ -171,11 +171,11 @@ export type GetGaQRCodeResponse = {
 }
 
 export type ForgetPasswordRequest = {
+  AppID?: string
   VerifyParam?: string
   VerifyType?: string
   Password?: string
   Code?: string
-  AppID?: string
 }
 
 export type ForgetPasswordResponse = {
@@ -183,8 +183,8 @@ export type ForgetPasswordResponse = {
 }
 
 export type DeleteUserRequest = {
-  DeleteUserIDs?: string[]
   AppID?: string
+  DeleteUserIDs?: string[]
 }
 
 export type DeleteUserResponse = {
@@ -212,10 +212,10 @@ export type FrozenUser = {
 }
 
 export type FrozenUserRequest = {
+  AppID?: string
   UserID?: string
   FrozenBy?: string
   FrozenCause?: string
-  AppID?: string
 }
 
 export type FrozenUserResponse = {
@@ -223,8 +223,8 @@ export type FrozenUserResponse = {
 }
 
 export type QueryUserFrozenRequest = {
-  UserID?: string
   AppID?: string
+  UserID?: string
 }
 
 export type QueryUserFrozenResponse = {
@@ -232,10 +232,10 @@ export type QueryUserFrozenResponse = {
 }
 
 export type UnfrozenUserRequest = {
+  AppID?: string
   ID?: string
   UserID?: string
   UnfrozenBy?: string
-  AppID?: string
 }
 
 export type UnfrozenUserResponse = {
@@ -243,8 +243,8 @@ export type UnfrozenUserResponse = {
 }
 
 export type GetFrozenUsersRequest = {
-  Info?: NpoolV1Npool.PageInfo
   AppID?: string
+  Info?: NpoolV1Npool.PageInfo
 }
 
 export type GetFrozenUsersResponse = {
@@ -252,8 +252,8 @@ export type GetFrozenUsersResponse = {
 }
 
 export type GetUserProvidersRequest = {
-  UserID?: string
   AppID?: string
+  UserID?: string
 }
 
 export type GetUserProvidersResponse = {
@@ -261,9 +261,9 @@ export type GetUserProvidersResponse = {
 }
 
 export type QueryUserExistRequest = {
+  AppID?: string
   Username?: string
   Password?: string
-  AppID?: string
 }
 
 export type QueryUserExistResponse = {
@@ -276,9 +276,9 @@ export type QueryProviderUserInfo = {
 }
 
 export type QueryUserByUserProviderIDRequest = {
+  AppID?: string
   ProviderID?: string
   ProviderUserID?: string
-  AppID?: string
 }
 
 export type QueryUserByUserProviderIDResponse = {
@@ -286,9 +286,9 @@ export type QueryUserByUserProviderIDResponse = {
 }
 
 export type SetPasswordRequest = {
+  AppID?: string
   Username?: string
   Password?: string
-  AppID?: string
 }
 
 export type SetPasswordResponse = {
@@ -310,8 +310,8 @@ export type GetUserDetailsResponse = {
 }
 
 export type UpdateUserEmailRequest = {
-  UserID?: string
   AppID?: string
+  UserID?: string
   OldEmail?: string
   OldCode?: string
   NewEmail?: string
@@ -323,8 +323,8 @@ export type UpdateUserEmailResponse = {
 }
 
 export type UpdateUserPhoneRequest = {
-  UserID?: string
   AppID?: string
+  UserID?: string
   OldPhone?: string
   OldCode?: string
   NewPhone?: string
