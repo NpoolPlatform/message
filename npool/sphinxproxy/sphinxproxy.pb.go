@@ -962,13 +962,16 @@ type ProxyPluginRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CoinType        sphinxplugin.CoinType         `protobuf:"varint,100,opt,name=CoinType,proto3,enum=sphinx.plugin.v1.CoinType" json:"CoinType,omitempty"`
-	TransactionType TransactionType               `protobuf:"varint,110,opt,name=TransactionType,proto3,enum=sphinx.proxy.v1.TransactionType" json:"TransactionType,omitempty"`
-	TransactionID   string                        `protobuf:"bytes,120,opt,name=TransactionID,proto3" json:"TransactionID,omitempty"`
-	Address         string                        `protobuf:"bytes,130,opt,name=Address,proto3" json:"Address,omitempty"`
-	Message         *sphinxplugin.UnsignedMessage `protobuf:"bytes,140,opt,name=Message,proto3" json:"Message,omitempty"`
-	Signature       *sphinxplugin.Signature       `protobuf:"bytes,150,opt,name=Signature,proto3" json:"Signature,omitempty"`
-	CID             string                        `protobuf:"bytes,160,opt,name=CID,proto3" json:"CID,omitempty"`
+	CoinType        sphinxplugin.CoinType `protobuf:"varint,100,opt,name=CoinType,proto3,enum=sphinx.plugin.v1.CoinType" json:"CoinType,omitempty"`
+	TransactionType TransactionType       `protobuf:"varint,110,opt,name=TransactionType,proto3,enum=sphinx.proxy.v1.TransactionType" json:"TransactionType,omitempty"`
+	TransactionID   string                `protobuf:"bytes,120,opt,name=TransactionID,proto3" json:"TransactionID,omitempty"`
+	Address         string                `protobuf:"bytes,130,opt,name=Address,proto3" json:"Address,omitempty"`
+	// fil
+	Message   *sphinxplugin.UnsignedMessage `protobuf:"bytes,140,opt,name=Message,proto3" json:"Message,omitempty"`
+	Signature *sphinxplugin.Signature       `protobuf:"bytes,150,opt,name=Signature,proto3" json:"Signature,omitempty"`
+	// btc
+	MsgTx *sphinxplugin.MsgTx `protobuf:"bytes,151,opt,name=MsgTx,proto3" json:"MsgTx,omitempty"`
+	CID   string              `protobuf:"bytes,160,opt,name=CID,proto3" json:"CID,omitempty"`
 }
 
 func (x *ProxyPluginRequest) Reset() {
@@ -1045,6 +1048,13 @@ func (x *ProxyPluginRequest) GetSignature() *sphinxplugin.Signature {
 	return nil
 }
 
+func (x *ProxyPluginRequest) GetMsgTx() *sphinxplugin.MsgTx {
+	if x != nil {
+		return x.MsgTx
+	}
+	return nil
+}
+
 func (x *ProxyPluginRequest) GetCID() string {
 	if x != nil {
 		return x.CID
@@ -1052,16 +1062,18 @@ func (x *ProxyPluginRequest) GetCID() string {
 	return ""
 }
 
-// Sign WalletNew ..
 type ProxySignRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CoinType        sphinxplugin.CoinType         `protobuf:"varint,100,opt,name=CoinType,proto3,enum=sphinx.plugin.v1.CoinType" json:"CoinType,omitempty"`
-	TransactionType TransactionType               `protobuf:"varint,110,opt,name=TransactionType,proto3,enum=sphinx.proxy.v1.TransactionType" json:"TransactionType,omitempty"`
-	TransactionID   string                        `protobuf:"bytes,120,opt,name=TransactionID,proto3" json:"TransactionID,omitempty"`
-	Message         *sphinxplugin.UnsignedMessage `protobuf:"bytes,130,opt,name=Message,proto3" json:"Message,omitempty"`
+	CoinType        sphinxplugin.CoinType `protobuf:"varint,100,opt,name=CoinType,proto3,enum=sphinx.plugin.v1.CoinType" json:"CoinType,omitempty"`
+	TransactionType TransactionType       `protobuf:"varint,110,opt,name=TransactionType,proto3,enum=sphinx.proxy.v1.TransactionType" json:"TransactionType,omitempty"`
+	TransactionID   string                `protobuf:"bytes,120,opt,name=TransactionID,proto3" json:"TransactionID,omitempty"`
+	// fil
+	Message *sphinxplugin.UnsignedMessage `protobuf:"bytes,130,opt,name=Message,proto3" json:"Message,omitempty"`
+	// btc
+	MsgTx *sphinxplugin.MsgTx `protobuf:"bytes,140,opt,name=MsgTx,proto3" json:"MsgTx,omitempty"`
 }
 
 func (x *ProxySignRequest) Reset() {
@@ -1124,15 +1136,25 @@ func (x *ProxySignRequest) GetMessage() *sphinxplugin.UnsignedMessage {
 	return nil
 }
 
+func (x *ProxySignRequest) GetMsgTx() *sphinxplugin.MsgTx {
+	if x != nil {
+		return x.MsgTx
+	}
+	return nil
+}
+
 type ProxySignResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CoinType        sphinxplugin.CoinType  `protobuf:"varint,100,opt,name=CoinType,proto3,enum=sphinx.plugin.v1.CoinType" json:"CoinType,omitempty"`
-	TransactionType TransactionType        `protobuf:"varint,110,opt,name=TransactionType,proto3,enum=sphinx.proxy.v1.TransactionType" json:"TransactionType,omitempty"`
-	TransactionID   string                 `protobuf:"bytes,120,opt,name=TransactionID,proto3" json:"TransactionID,omitempty"`
-	Info            *ProxySignResponseInfo `protobuf:"bytes,130,opt,name=Info,proto3" json:"Info,omitempty"`
+	CoinType        sphinxplugin.CoinType `protobuf:"varint,100,opt,name=CoinType,proto3,enum=sphinx.plugin.v1.CoinType" json:"CoinType,omitempty"`
+	TransactionType TransactionType       `protobuf:"varint,110,opt,name=TransactionType,proto3,enum=sphinx.proxy.v1.TransactionType" json:"TransactionType,omitempty"`
+	TransactionID   string                `protobuf:"bytes,120,opt,name=TransactionID,proto3" json:"TransactionID,omitempty"`
+	// fil
+	Info *ProxySignResponseInfo `protobuf:"bytes,130,opt,name=Info,proto3" json:"Info,omitempty"`
+	// btc
+	MsgTx *sphinxplugin.MsgTx `protobuf:"bytes,140,opt,name=MsgTx,proto3" json:"MsgTx,omitempty"`
 }
 
 func (x *ProxySignResponse) Reset() {
@@ -1191,6 +1213,13 @@ func (x *ProxySignResponse) GetTransactionID() string {
 func (x *ProxySignResponse) GetInfo() *ProxySignResponseInfo {
 	if x != nil {
 		return x.Info
+	}
+	return nil
+}
+
+func (x *ProxySignResponse) GetMsgTx() *sphinxplugin.MsgTx {
+	if x != nil {
+		return x.MsgTx
 	}
 	return nil
 }
@@ -1367,7 +1396,7 @@ var file_npool_sphinxproxy_sphinxproxy_proto_rawDesc = []byte{
 	0x70, 0x6c, 0x75, 0x67, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x73, 0x67, 0x54, 0x78, 0x52,
 	0x05, 0x4d, 0x73, 0x67, 0x54, 0x78, 0x12, 0x1b, 0x0a, 0x08, 0x45, 0x78, 0x69, 0x74, 0x43, 0x6f,
 	0x64, 0x65, 0x18, 0xb4, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x45, 0x78, 0x69, 0x74, 0x43,
-	0x6f, 0x64, 0x65, 0x22, 0xe6, 0x02, 0x0a, 0x12, 0x50, 0x72, 0x6f, 0x78, 0x79, 0x50, 0x6c, 0x75,
+	0x6f, 0x64, 0x65, 0x22, 0x96, 0x03, 0x0a, 0x12, 0x50, 0x72, 0x6f, 0x78, 0x79, 0x50, 0x6c, 0x75,
 	0x67, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x36, 0x0a, 0x08, 0x43, 0x6f,
 	0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x18, 0x64, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1a, 0x2e, 0x73,
 	0x70, 0x68, 0x69, 0x6e, 0x78, 0x2e, 0x70, 0x6c, 0x75, 0x67, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e,
@@ -1388,8 +1417,11 @@ var file_npool_sphinxproxy_sphinxproxy_proto_rawDesc = []byte{
 	0x09, 0x53, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x18, 0x96, 0x01, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x1b, 0x2e, 0x73, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x2e, 0x70, 0x6c, 0x75, 0x67, 0x69,
 	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x52, 0x09,
-	0x53, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x12, 0x11, 0x0a, 0x03, 0x43, 0x49, 0x44,
-	0x18, 0xa0, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x43, 0x49, 0x44, 0x22, 0xfa, 0x01, 0x0a,
+	0x53, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x12, 0x2e, 0x0a, 0x05, 0x4d, 0x73, 0x67,
+	0x54, 0x78, 0x18, 0x97, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x73, 0x70, 0x68, 0x69,
+	0x6e, 0x78, 0x2e, 0x70, 0x6c, 0x75, 0x67, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x73, 0x67,
+	0x54, 0x78, 0x52, 0x05, 0x4d, 0x73, 0x67, 0x54, 0x78, 0x12, 0x11, 0x0a, 0x03, 0x43, 0x49, 0x44,
+	0x18, 0xa0, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x43, 0x49, 0x44, 0x22, 0xaa, 0x02, 0x0a,
 	0x10, 0x50, 0x72, 0x6f, 0x78, 0x79, 0x53, 0x69, 0x67, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x12, 0x36, 0x0a, 0x08, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x18, 0x64, 0x20,
 	0x01, 0x28, 0x0e, 0x32, 0x1a, 0x2e, 0x73, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x2e, 0x70, 0x6c, 0x75,
@@ -1405,7 +1437,10 @@ var file_npool_sphinxproxy_sphinxproxy_proto_rawDesc = []byte{
 	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x82, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e,
 	0x73, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x2e, 0x70, 0x6c, 0x75, 0x67, 0x69, 0x6e, 0x2e, 0x76, 0x31,
 	0x2e, 0x55, 0x6e, 0x73, 0x69, 0x67, 0x6e, 0x65, 0x64, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
-	0x52, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0xfa, 0x01, 0x0a, 0x11, 0x50, 0x72,
+	0x52, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x2e, 0x0a, 0x05, 0x4d, 0x73, 0x67,
+	0x54, 0x78, 0x18, 0x8c, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x73, 0x70, 0x68, 0x69,
+	0x6e, 0x78, 0x2e, 0x70, 0x6c, 0x75, 0x67, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x73, 0x67,
+	0x54, 0x78, 0x52, 0x05, 0x4d, 0x73, 0x67, 0x54, 0x78, 0x22, 0xaa, 0x02, 0x0a, 0x11, 0x50, 0x72,
 	0x6f, 0x78, 0x79, 0x53, 0x69, 0x67, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
 	0x36, 0x0a, 0x08, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x18, 0x64, 0x20, 0x01, 0x28,
 	0x0e, 0x32, 0x1a, 0x2e, 0x73, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x2e, 0x70, 0x6c, 0x75, 0x67, 0x69,
@@ -1421,7 +1456,10 @@ var file_npool_sphinxproxy_sphinxproxy_proto_rawDesc = []byte{
 	0x6f, 0x18, 0x82, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x73, 0x70, 0x68, 0x69, 0x6e,
 	0x78, 0x2e, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x78, 0x79,
 	0x53, 0x69, 0x67, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x49, 0x6e, 0x66, 0x6f,
-	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0xa9, 0x01, 0x0a, 0x15, 0x50, 0x72, 0x6f, 0x78, 0x79,
+	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x2e, 0x0a, 0x05, 0x4d, 0x73, 0x67, 0x54, 0x78, 0x18,
+	0x8c, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x73, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x2e,
+	0x70, 0x6c, 0x75, 0x67, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x73, 0x67, 0x54, 0x78, 0x52,
+	0x05, 0x4d, 0x73, 0x67, 0x54, 0x78, 0x22, 0xa9, 0x01, 0x0a, 0x15, 0x50, 0x72, 0x6f, 0x78, 0x79,
 	0x53, 0x69, 0x67, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x49, 0x6e, 0x66, 0x6f,
 	0x12, 0x18, 0x0a, 0x07, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x18, 0x64, 0x20, 0x01, 0x28,
 	0x09, 0x52, 0x07, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x12, 0x3b, 0x0a, 0x07, 0x4d, 0x65,
@@ -1565,33 +1603,36 @@ var file_npool_sphinxproxy_sphinxproxy_proto_depIdxs = []int32{
 	0,  // 10: sphinx.proxy.v1.ProxyPluginRequest.TransactionType:type_name -> sphinx.proxy.v1.TransactionType
 	21, // 11: sphinx.proxy.v1.ProxyPluginRequest.Message:type_name -> sphinx.plugin.v1.UnsignedMessage
 	23, // 12: sphinx.proxy.v1.ProxyPluginRequest.Signature:type_name -> sphinx.plugin.v1.Signature
-	19, // 13: sphinx.proxy.v1.ProxySignRequest.CoinType:type_name -> sphinx.plugin.v1.CoinType
-	0,  // 14: sphinx.proxy.v1.ProxySignRequest.TransactionType:type_name -> sphinx.proxy.v1.TransactionType
-	21, // 15: sphinx.proxy.v1.ProxySignRequest.Message:type_name -> sphinx.plugin.v1.UnsignedMessage
-	19, // 16: sphinx.proxy.v1.ProxySignResponse.CoinType:type_name -> sphinx.plugin.v1.CoinType
-	0,  // 17: sphinx.proxy.v1.ProxySignResponse.TransactionType:type_name -> sphinx.proxy.v1.TransactionType
-	18, // 18: sphinx.proxy.v1.ProxySignResponse.Info:type_name -> sphinx.proxy.v1.ProxySignResponseInfo
-	21, // 19: sphinx.proxy.v1.ProxySignResponseInfo.Message:type_name -> sphinx.plugin.v1.UnsignedMessage
-	23, // 20: sphinx.proxy.v1.ProxySignResponseInfo.Signature:type_name -> sphinx.plugin.v1.Signature
-	24, // 21: sphinx.proxy.v1.SphinxProxy.Version:input_type -> google.protobuf.Empty
-	3,  // 22: sphinx.proxy.v1.SphinxProxy.GetBalance:input_type -> sphinx.proxy.v1.GetBalanceRequest
-	6,  // 23: sphinx.proxy.v1.SphinxProxy.CreateWallet:input_type -> sphinx.proxy.v1.CreateWalletRequest
-	9,  // 24: sphinx.proxy.v1.SphinxProxy.CreateTransaction:input_type -> sphinx.proxy.v1.CreateTransactionRequest
-	11, // 25: sphinx.proxy.v1.SphinxProxy.GetTransaction:input_type -> sphinx.proxy.v1.GetTransactionRequest
-	14, // 26: sphinx.proxy.v1.SphinxProxy.ProxyPlugin:input_type -> sphinx.proxy.v1.ProxyPluginResponse
-	17, // 27: sphinx.proxy.v1.SphinxProxy.ProxySign:input_type -> sphinx.proxy.v1.ProxySignResponse
-	2,  // 28: sphinx.proxy.v1.SphinxProxy.Version:output_type -> sphinx.proxy.v1.VersionResponse
-	5,  // 29: sphinx.proxy.v1.SphinxProxy.GetBalance:output_type -> sphinx.proxy.v1.GetBalanceResponse
-	8,  // 30: sphinx.proxy.v1.SphinxProxy.CreateWallet:output_type -> sphinx.proxy.v1.CreateWalletResponse
-	10, // 31: sphinx.proxy.v1.SphinxProxy.CreateTransaction:output_type -> sphinx.proxy.v1.CreateTransactionResponse
-	13, // 32: sphinx.proxy.v1.SphinxProxy.GetTransaction:output_type -> sphinx.proxy.v1.GetTransactionResponse
-	15, // 33: sphinx.proxy.v1.SphinxProxy.ProxyPlugin:output_type -> sphinx.proxy.v1.ProxyPluginRequest
-	16, // 34: sphinx.proxy.v1.SphinxProxy.ProxySign:output_type -> sphinx.proxy.v1.ProxySignRequest
-	28, // [28:35] is the sub-list for method output_type
-	21, // [21:28] is the sub-list for method input_type
-	21, // [21:21] is the sub-list for extension type_name
-	21, // [21:21] is the sub-list for extension extendee
-	0,  // [0:21] is the sub-list for field type_name
+	22, // 13: sphinx.proxy.v1.ProxyPluginRequest.MsgTx:type_name -> sphinx.plugin.v1.MsgTx
+	19, // 14: sphinx.proxy.v1.ProxySignRequest.CoinType:type_name -> sphinx.plugin.v1.CoinType
+	0,  // 15: sphinx.proxy.v1.ProxySignRequest.TransactionType:type_name -> sphinx.proxy.v1.TransactionType
+	21, // 16: sphinx.proxy.v1.ProxySignRequest.Message:type_name -> sphinx.plugin.v1.UnsignedMessage
+	22, // 17: sphinx.proxy.v1.ProxySignRequest.MsgTx:type_name -> sphinx.plugin.v1.MsgTx
+	19, // 18: sphinx.proxy.v1.ProxySignResponse.CoinType:type_name -> sphinx.plugin.v1.CoinType
+	0,  // 19: sphinx.proxy.v1.ProxySignResponse.TransactionType:type_name -> sphinx.proxy.v1.TransactionType
+	18, // 20: sphinx.proxy.v1.ProxySignResponse.Info:type_name -> sphinx.proxy.v1.ProxySignResponseInfo
+	22, // 21: sphinx.proxy.v1.ProxySignResponse.MsgTx:type_name -> sphinx.plugin.v1.MsgTx
+	21, // 22: sphinx.proxy.v1.ProxySignResponseInfo.Message:type_name -> sphinx.plugin.v1.UnsignedMessage
+	23, // 23: sphinx.proxy.v1.ProxySignResponseInfo.Signature:type_name -> sphinx.plugin.v1.Signature
+	24, // 24: sphinx.proxy.v1.SphinxProxy.Version:input_type -> google.protobuf.Empty
+	3,  // 25: sphinx.proxy.v1.SphinxProxy.GetBalance:input_type -> sphinx.proxy.v1.GetBalanceRequest
+	6,  // 26: sphinx.proxy.v1.SphinxProxy.CreateWallet:input_type -> sphinx.proxy.v1.CreateWalletRequest
+	9,  // 27: sphinx.proxy.v1.SphinxProxy.CreateTransaction:input_type -> sphinx.proxy.v1.CreateTransactionRequest
+	11, // 28: sphinx.proxy.v1.SphinxProxy.GetTransaction:input_type -> sphinx.proxy.v1.GetTransactionRequest
+	14, // 29: sphinx.proxy.v1.SphinxProxy.ProxyPlugin:input_type -> sphinx.proxy.v1.ProxyPluginResponse
+	17, // 30: sphinx.proxy.v1.SphinxProxy.ProxySign:input_type -> sphinx.proxy.v1.ProxySignResponse
+	2,  // 31: sphinx.proxy.v1.SphinxProxy.Version:output_type -> sphinx.proxy.v1.VersionResponse
+	5,  // 32: sphinx.proxy.v1.SphinxProxy.GetBalance:output_type -> sphinx.proxy.v1.GetBalanceResponse
+	8,  // 33: sphinx.proxy.v1.SphinxProxy.CreateWallet:output_type -> sphinx.proxy.v1.CreateWalletResponse
+	10, // 34: sphinx.proxy.v1.SphinxProxy.CreateTransaction:output_type -> sphinx.proxy.v1.CreateTransactionResponse
+	13, // 35: sphinx.proxy.v1.SphinxProxy.GetTransaction:output_type -> sphinx.proxy.v1.GetTransactionResponse
+	15, // 36: sphinx.proxy.v1.SphinxProxy.ProxyPlugin:output_type -> sphinx.proxy.v1.ProxyPluginRequest
+	16, // 37: sphinx.proxy.v1.SphinxProxy.ProxySign:output_type -> sphinx.proxy.v1.ProxySignRequest
+	31, // [31:38] is the sub-list for method output_type
+	24, // [24:31] is the sub-list for method input_type
+	24, // [24:24] is the sub-list for extension type_name
+	24, // [24:24] is the sub-list for extension extendee
+	0,  // [0:24] is the sub-list for field type_name
 }
 
 func init() { file_npool_sphinxproxy_sphinxproxy_proto_init() }

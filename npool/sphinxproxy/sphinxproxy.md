@@ -186,8 +186,9 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Address | [string](#string) |  |  |
-| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  | fil |
 | Signature | [sphinx.plugin.v1.Signature](#sphinx.plugin.v1.Signature) |  |  |
+| MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
 | CID | [string](#string) |  |  |
 
 
@@ -223,7 +224,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 <a name="sphinx.proxy.v1.ProxySignRequest"></a>
 
 ### ProxySignRequest
-Sign WalletNew ..
+
 
 
 | Field | Type | Label | Description |
@@ -231,7 +232,8 @@ Sign WalletNew ..
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
-| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  | fil |
+| MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
 
 
 
@@ -249,7 +251,8 @@ Sign WalletNew ..
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
-| Info | [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo) |  |  |
+| Info | [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo) |  | fil |
+| MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
 
 
 

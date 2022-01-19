@@ -385,10 +385,15 @@
           "type": "string"
         },
         "Message": {
-          "$ref": "#/definitions/v1UnsignedMessage"
+          "$ref": "#/definitions/v1UnsignedMessage",
+          "title": "fil"
         },
         "Signature": {
           "$ref": "#/definitions/v1Signature"
+        },
+        "MsgTx": {
+          "$ref": "#/definitions/v1MsgTx",
+          "title": "btc"
         },
         "CID": {
           "type": "string"
@@ -409,10 +414,14 @@
           "type": "string"
         },
         "Message": {
-          "$ref": "#/definitions/v1UnsignedMessage"
+          "$ref": "#/definitions/v1UnsignedMessage",
+          "title": "fil"
+        },
+        "MsgTx": {
+          "$ref": "#/definitions/v1MsgTx",
+          "title": "btc"
         }
-      },
-      "description": "Sign WalletNew .."
+      }
     },
     "v1ProxySignResponseInfo": {
       "type": "object",

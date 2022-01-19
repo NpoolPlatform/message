@@ -136,24 +136,32 @@ message ProxyPluginRequest {
   TransactionType TransactionType             = 110;
   string TransactionID                        = 120;
   string Address                              = 130;
+  // fil
   sphinx.plugin.v1.UnsignedMessage Message    = 140;
   sphinx.plugin.v1.Signature       Signature  = 150;
+  // btc
+  sphinx.plugin.v1.MsgTx           MsgTx      = 151;
   string CID                                  = 160;
 }
 
-// Sign WalletNew ..
 message ProxySignRequest {
   sphinx.plugin.v1.CoinType CoinType          = 100;
   TransactionType TransactionType             = 110;
   string TransactionID                        = 120;
+  // fil
   sphinx.plugin.v1.UnsignedMessage Message    = 130;
+  // btc
+  sphinx.plugin.v1.MsgTx           MsgTx      = 140;
 }
 
 message ProxySignResponse {
   sphinx.plugin.v1.CoinType CoinType          = 100;
   TransactionType TransactionType             = 110;
   string TransactionID                        = 120;
+  // fil
   ProxySignResponseInfo Info                  = 130;
+  // btc
+  sphinx.plugin.v1.MsgTx           MsgTx      = 140;
 }
 
 message ProxySignResponseInfo {

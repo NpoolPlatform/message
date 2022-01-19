@@ -112,6 +112,7 @@ export type ProxyPluginRequest = {
   Address?: string
   Message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
   Signature?: SphinxPluginV1Sphinxplugin.Signature
+  MsgTx?: SphinxPluginV1Sphinxplugin.MsgTx
   CID?: string
 }
 
@@ -120,6 +121,7 @@ export type ProxySignRequest = {
   TransactionType?: TransactionType
   TransactionID?: string
   Message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
+  MsgTx?: SphinxPluginV1Sphinxplugin.MsgTx
 }
 
 export type ProxySignResponse = {
@@ -127,6 +129,7 @@ export type ProxySignResponse = {
   TransactionType?: TransactionType
   TransactionID?: string
   Info?: ProxySignResponseInfo
+  MsgTx?: SphinxPluginV1Sphinxplugin.MsgTx
 }
 
 export type ProxySignResponseInfo = {
