@@ -206,11 +206,13 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
-| Nonce | [uint64](#uint64) |  |  |
+| Nonce | [uint64](#uint64) |  | fil Nonce |
+| Unspent | [sphinx.plugin.v1.Unspent](#sphinx.plugin.v1.Unspent) | repeated | btc UTXO |
 | CID | [string](#string) |  |  |
 | Balance | [double](#double) |  |  |
 | BalanceStr | [string](#string) |  |  |
-| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  | fil |
+| MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
 | ExitCode | [int64](#int64) |  | -1 find cid state on chain internal server error |
 
 
@@ -335,13 +337,11 @@ Sign WalletNew ..
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | TransactionStateUnKnow | 0 |  |
-| TransactionStatePendingReview | 1 |  |
-| TransactionStateRejected | 2 |  |
-| TransactionStateWait | 3 |  |
-| TransactionStateSign | 4 |  |
-| TransactionStateSync | 5 |  |
-| TransactionStateDone | 6 |  |
-| TransactionStateFail | 7 |  |
+| TransactionStateWait | 1 |  |
+| TransactionStateSign | 2 |  |
+| TransactionStateSync | 3 |  |
+| TransactionStateDone | 4 |  |
+| TransactionStateFail | 5 |  |
 
 
 

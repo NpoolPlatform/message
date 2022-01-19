@@ -30,6 +30,18 @@ export type Signature = {
   Data?: Uint8Array
 }
 
+export type Unspent = {
+  TxID?: string
+  Vout?: number
+  Address?: string
+  Account?: string
+  ScriptPubKey?: string
+  RedeemScript?: string
+  Amount?: number
+  Confirmations?: string
+  Spendable?: boolean
+}
+
 export type MsgTx = {
   Version?: number
   TxIn?: TxIn[]

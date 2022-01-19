@@ -29,11 +29,23 @@ message UnsignedMessage {
 }
 
 message Signature {
-  string SignType = 100;//secp256k1
+  string SignType = 100; // secp256k1
   bytes Data      = 110;
 }
 
-// =============================btc
+// ============================= btc
+message Unspent {
+  string  TxID          = 100;
+	uint32  Vout          = 110;
+	string  Address       = 120;
+	string  Account       = 130;
+	string  ScriptPubKey  = 140;
+	string  RedeemScript  = 150;
+	double  Amount        = 160;
+	int64   Confirmations = 170;
+	bool    Spendable     = 180;
+}
+
 message MsgTx {
   int32           Version   = 100;
   repeated TxIn   TxIn      = 110;
@@ -58,5 +70,3 @@ message TxOut {
   int64 Value     = 100;
   bytes PkScript  = 110;
 }
-
-// eth

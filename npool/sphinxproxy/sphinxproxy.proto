@@ -113,15 +113,21 @@ message GetTransactionResponse {
 
 // ############################# async
 message ProxyPluginResponse {
-  sphinx.plugin.v1.CoinType CoinType          = 100;
-  TransactionType TransactionType             = 110;
-  string TransactionID                        = 120;
-  uint64 Nonce                                = 130;
-  string CID                                  = 140;
-  double Balance                              = 150;
-  string BalanceStr                           = 160;
-  sphinx.plugin.v1.UnsignedMessage Message    = 170;
-  int64  ExitCode                             = 180; // -1 find cid state on chain internal server error
+  sphinx.plugin.v1.CoinType CoinType        = 100;
+  TransactionType TransactionType           = 110;
+  string TransactionID                      = 120;
+  // fil Nonce
+  uint64 Nonce                              = 130;
+  // btc UTXO
+  repeated sphinx.plugin.v1.Unspent Unspent = 131;
+  string CID                                = 140;
+  double Balance                            = 150;
+  string BalanceStr                         = 160;
+  // fil
+  sphinx.plugin.v1.UnsignedMessage  Message = 170;
+  // btc
+  sphinx.plugin.v1.MsgTx            MsgTx   = 171;
+  int64  ExitCode                           = 180; // -1 find cid state on chain internal server error
 }
 
 // MpoolGetNonce WalletBalance MpoolPush ..
@@ -170,12 +176,9 @@ enum TransactionType {
 
 enum TransactionState {
 	TransactionStateUnKnow  			= 0;
-	TransactionStatePendingReview = 1;
-	TransactionStateRejected     	= 2;
-	TransactionStateWait  				= 3;
-	TransactionStateSign  				= 4;
-	TransactionStateSync  				= 5;
-	TransactionStateDone     			= 6;
-	TransactionStateFail     			= 7;
+	TransactionStateWait  				= 1;
+	TransactionStateSign  				= 2;
+	TransactionStateSync  				= 3;
+	TransactionStateDone     			= 4;
+	TransactionStateFail     			= 5;
 }
-

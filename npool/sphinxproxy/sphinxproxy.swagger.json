@@ -330,6 +330,45 @@
         }
       }
     },
+    "v1MsgTx": {
+      "type": "object",
+      "properties": {
+        "Version": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "TxIn": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1TxIn"
+          }
+        },
+        "TxOut": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1TxOut"
+          }
+        },
+        "LockTime": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1OutPoint": {
+      "type": "object",
+      "properties": {
+        "Hash": {
+          "type": "string",
+          "format": "byte",
+          "title": "byte len 32"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1ProxyPluginRequest": {
       "type": "object",
       "properties": {
@@ -444,8 +483,6 @@
       "type": "string",
       "enum": [
         "TransactionStateUnKnow",
-        "TransactionStatePendingReview",
-        "TransactionStateRejected",
         "TransactionStateWait",
         "TransactionStateSign",
         "TransactionStateSync",
@@ -468,6 +505,42 @@
         "SyncMsgState"
       ],
       "default": "Invalid"
+    },
+    "v1TxIn": {
+      "type": "object",
+      "properties": {
+        "PreviousOutPoint": {
+          "$ref": "#/definitions/v1OutPoint"
+        },
+        "SignatureScript": {
+          "type": "string",
+          "format": "byte"
+        },
+        "Witness": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "byte"
+          }
+        },
+        "Sequence": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1TxOut": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string",
+          "format": "int64"
+        },
+        "PkScript": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
     },
     "v1UnsignedMessage": {
       "type": "object",
@@ -512,6 +585,42 @@
         }
       },
       "title": "fil"
+    },
+    "v1Unspent": {
+      "type": "object",
+      "properties": {
+        "TxID": {
+          "type": "string"
+        },
+        "Vout": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "ScriptPubKey": {
+          "type": "string"
+        },
+        "RedeemScript": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "Confirmations": {
+          "type": "string",
+          "format": "int64"
+        },
+        "Spendable": {
+          "type": "boolean"
+        }
+      },
+      "title": "============================= btc"
     },
     "v1VersionResponse": {
       "type": "object",

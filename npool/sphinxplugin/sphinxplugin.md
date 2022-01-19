@@ -10,6 +10,7 @@
     - [TxIn](#sphinx.plugin.v1.TxIn)
     - [TxOut](#sphinx.plugin.v1.TxOut)
     - [UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage)
+    - [Unspent](#sphinx.plugin.v1.Unspent)
   
     - [CoinType](#sphinx.plugin.v1.CoinType)
   
@@ -27,7 +28,7 @@
 <a name="sphinx.plugin.v1.MsgTx"></a>
 
 ### MsgTx
-=============================btc
+
 
 
 | Field | Type | Label | Description |
@@ -126,6 +127,29 @@ fil
 | GasPremium | [uint64](#uint64) |  |  |
 | Method | [uint64](#uint64) |  |  |
 | Params | [bytes](#bytes) |  |  |
+
+
+
+
+
+
+<a name="sphinx.plugin.v1.Unspent"></a>
+
+### Unspent
+============================= btc
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TxID | [string](#string) |  |  |
+| Vout | [uint32](#uint32) |  |  |
+| Address | [string](#string) |  |  |
+| Account | [string](#string) |  |  |
+| ScriptPubKey | [string](#string) |  |  |
+| RedeemScript | [string](#string) |  |  |
+| Amount | [double](#double) |  |  |
+| Confirmations | [int64](#int64) |  |  |
+| Spendable | [bool](#bool) |  |  |
 
 
 

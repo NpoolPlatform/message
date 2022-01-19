@@ -22,8 +22,6 @@ export enum TransactionType {
 
 export enum TransactionState {
   TransactionStateUnKnow = "TransactionStateUnKnow",
-  TransactionStatePendingReview = "TransactionStatePendingReview",
-  TransactionStateRejected = "TransactionStateRejected",
   TransactionStateWait = "TransactionStateWait",
   TransactionStateSign = "TransactionStateSign",
   TransactionStateSync = "TransactionStateSync",
@@ -98,10 +96,12 @@ export type ProxyPluginResponse = {
   TransactionType?: TransactionType
   TransactionID?: string
   Nonce?: string
+  Unspent?: SphinxPluginV1Sphinxplugin.Unspent[]
   CID?: string
   Balance?: number
   BalanceStr?: string
   Message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
+  MsgTx?: SphinxPluginV1Sphinxplugin.MsgTx
   ExitCode?: string
 }
 
