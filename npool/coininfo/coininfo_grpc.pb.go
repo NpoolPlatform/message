@@ -7,6 +7,7 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -18,6 +19,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SphinxCoinInfoClient interface {
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
 	CreateCoinInfo(ctx context.Context, in *CreateCoinInfoRequest, opts ...grpc.CallOption) (*CreateCoinInfoResponse, error)
 	GetCoinInfo(ctx context.Context, in *GetCoinInfoRequest, opts ...grpc.CallOption) (*GetCoinInfoResponse, error)
 	GetCoinInfos(ctx context.Context, in *GetCoinInfosRequest, opts ...grpc.CallOption) (*GetCoinInfosResponse, error)
@@ -30,6 +32,15 @@ type sphinxCoinInfoClient struct {
 
 func NewSphinxCoinInfoClient(cc grpc.ClientConnInterface) SphinxCoinInfoClient {
 	return &sphinxCoinInfoClient{cc}
+}
+
+func (c *sphinxCoinInfoClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error) {
+	out := new(VersionResponse)
+	err := c.cc.Invoke(ctx, "/sphinx.coininfo.v1.SphinxCoinInfo/Version", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *sphinxCoinInfoClient) CreateCoinInfo(ctx context.Context, in *CreateCoinInfoRequest, opts ...grpc.CallOption) (*CreateCoinInfoResponse, error) {
@@ -72,6 +83,7 @@ func (c *sphinxCoinInfoClient) UpdateCoinInfo(ctx context.Context, in *UpdateCoi
 // All implementations must embed UnimplementedSphinxCoinInfoServer
 // for forward compatibility
 type SphinxCoinInfoServer interface {
+	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
 	CreateCoinInfo(context.Context, *CreateCoinInfoRequest) (*CreateCoinInfoResponse, error)
 	GetCoinInfo(context.Context, *GetCoinInfoRequest) (*GetCoinInfoResponse, error)
 	GetCoinInfos(context.Context, *GetCoinInfosRequest) (*GetCoinInfosResponse, error)
@@ -83,6 +95,9 @@ type SphinxCoinInfoServer interface {
 type UnimplementedSphinxCoinInfoServer struct {
 }
 
+func (UnimplementedSphinxCoinInfoServer) Version(context.Context, *emptypb.Empty) (*VersionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
+}
 func (UnimplementedSphinxCoinInfoServer) CreateCoinInfo(context.Context, *CreateCoinInfoRequest) (*CreateCoinInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCoinInfo not implemented")
 }
@@ -106,6 +121,24 @@ type UnsafeSphinxCoinInfoServer interface {
 
 func RegisterSphinxCoinInfoServer(s grpc.ServiceRegistrar, srv SphinxCoinInfoServer) {
 	s.RegisterService(&SphinxCoinInfo_ServiceDesc, srv)
+}
+
+func _SphinxCoinInfo_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(emptypb.Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SphinxCoinInfoServer).Version(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/sphinx.coininfo.v1.SphinxCoinInfo/Version",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SphinxCoinInfoServer).Version(ctx, req.(*emptypb.Empty))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _SphinxCoinInfo_CreateCoinInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -187,6 +220,10 @@ var SphinxCoinInfo_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "sphinx.coininfo.v1.SphinxCoinInfo",
 	HandlerType: (*SphinxCoinInfoServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Version",
+			Handler:    _SphinxCoinInfo_Version_Handler,
+		},
 		{
 			MethodName: "CreateCoinInfo",
 			Handler:    _SphinxCoinInfo_CreateCoinInfo_Handler,

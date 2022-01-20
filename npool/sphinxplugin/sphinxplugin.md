@@ -4,8 +4,13 @@
 ## Table of Contents
 
 - [npool/sphinxplugin/sphinxplugin.proto](#npool/sphinxplugin/sphinxplugin.proto)
+    - [MsgTx](#sphinx.plugin.v1.MsgTx)
+    - [OutPoint](#sphinx.plugin.v1.OutPoint)
     - [Signature](#sphinx.plugin.v1.Signature)
+    - [TxIn](#sphinx.plugin.v1.TxIn)
+    - [TxOut](#sphinx.plugin.v1.TxOut)
     - [UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage)
+    - [Unspent](#sphinx.plugin.v1.Unspent)
   
     - [CoinType](#sphinx.plugin.v1.CoinType)
   
@@ -17,6 +22,40 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/sphinxplugin/sphinxplugin.proto
+
+
+
+<a name="sphinx.plugin.v1.MsgTx"></a>
+
+### MsgTx
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Version | [int32](#int32) |  |  |
+| TxIn | [TxIn](#sphinx.plugin.v1.TxIn) | repeated |  |
+| TxOut | [TxOut](#sphinx.plugin.v1.TxOut) | repeated |  |
+| LockTime | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="sphinx.plugin.v1.OutPoint"></a>
+
+### OutPoint
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Hash | [bytes](#bytes) |  | byte len 32 |
+| Index | [uint32](#uint32) |  |  |
+
+
+
 
 
 
@@ -36,10 +75,44 @@
 
 
 
+<a name="sphinx.plugin.v1.TxIn"></a>
+
+### TxIn
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| PreviousOutPoint | [OutPoint](#sphinx.plugin.v1.OutPoint) |  |  |
+| SignatureScript | [bytes](#bytes) |  |  |
+| Witness | [bytes](#bytes) | repeated |  |
+| Sequence | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="sphinx.plugin.v1.TxOut"></a>
+
+### TxOut
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Value | [int64](#int64) |  |  |
+| PkScript | [bytes](#bytes) |  |  |
+
+
+
+
+
+
 <a name="sphinx.plugin.v1.UnsignedMessage"></a>
 
 ### UnsignedMessage
-
+fil
 
 
 | Field | Type | Label | Description |
@@ -59,6 +132,29 @@
 
 
 
+
+<a name="sphinx.plugin.v1.Unspent"></a>
+
+### Unspent
+============================= btc
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TxID | [string](#string) |  |  |
+| Vout | [uint32](#uint32) |  |  |
+| Address | [string](#string) |  |  |
+| Account | [string](#string) |  |  |
+| ScriptPubKey | [string](#string) |  |  |
+| RedeemScript | [string](#string) |  |  |
+| Amount | [double](#double) |  |  |
+| Confirmations | [int64](#int64) |  |  |
+| Spendable | [bool](#bool) |  |  |
+
+
+
+
+
  
 
 
@@ -72,6 +168,8 @@
 | CoinTypeUnKnow | 0 |  |
 | CoinTypeFIL | 1 |  |
 | CoinTypeBTC | 2 |  |
+| CoinTypeETH | 3 |  |
+| CoinTypeSpaceMesh | 4 |  |
 
 
  

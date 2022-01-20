@@ -5,8 +5,15 @@ package sphinx.coininfo.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/coininfo";
 
 import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
 
 service SphinxCoinInfo {
+  rpc Version (google.protobuf.Empty) returns (VersionResponse){
+    option (google.api.http) = {
+      post: "/version"
+      body: "*"
+    };
+  }
 	rpc CreateCoinInfo (CreateCoinInfoRequest) returns (CreateCoinInfoResponse){
 		option (google.api.http) = {
 			post: "/v1/create/coininfo"
@@ -16,13 +23,13 @@ service SphinxCoinInfo {
 	rpc GetCoinInfo (GetCoinInfoRequest) returns (GetCoinInfoResponse) {
 		option (google.api.http) = {
 			post: "/v1/get/coininfo"
-            body: "*"
+      body: "*"
 		};
-    }
+  }
 	rpc GetCoinInfos (GetCoinInfosRequest) returns (GetCoinInfosResponse){
 		option (google.api.http) = {
 			post: "/v1/get/coininfos"
-            body: "*"
+      body: "*"
 		};
 	}
 	rpc UpdateCoinInfo (UpdateCoinInfoRequest) returns (UpdateCoinInfoResponse) {
@@ -33,31 +40,35 @@ service SphinxCoinInfo {
 	}
 }
 
+message VersionResponse {
+  string Info = 100;
+}
+
 message CoinInfo {
-	string ID 				= 100; // uuid
-	bool PreSale 			= 110; // 是否为预售，false为在售商品
-	string Name 			= 120; // 币种名称 FIL, BTC
-	string Unit 			= 130; // 单位：FIL
-	string Logo				= 140; // url; can be empty
-	double ReservedAmount 	= 150; // 预留金额
-	uint32 CreatedAt 		= 160;
-	uint32 UpdatedAt 		= 170;
+	string  ID 				      = 100; // uuid
+	bool    PreSale         = 110; // 是否为预售，false为在售商品
+	string  Name 			      = 120; // 币种名称 FIL, BTC
+	string  Unit 			      = 130; // 单位：FIL
+	string  Logo				    = 140; // url; can be empty
+	double  ReservedAmount  = 150; // 预留金额
+	uint32  CreatedAt 		  = 160;
+	uint32  UpdatedAt 		  = 170;
 }
 
 message GetCoinInfoRequest {
-    string ID = 100;
-	string Name = 110;
+  string ID   = 100;
+  string Name = 110;
 }
 
 message GetCoinInfoResponse {
-    CoinInfo Info = 100;
+  CoinInfo Info = 100;
 }
 
 message CreateCoinInfoRequest {
-    bool PreSale 	= 100; // 是否为预售，false为在售商品
-	string Name 	= 110; // 币种名称 FIL, BTC
-	string Unit 	= 120; // 单位：FIL
-	string Logo		= 130; // url; can be empty
+  bool    PreSale = 100; // 是否为预售，false为在售商品
+	string  Name 	  = 110; // 币种名称 FIL, BTC
+	string  Unit 	  = 120; // 单位：FIL
+	string  Logo		= 130; // url; can be empty
 }
 
 message CreateCoinInfoResponse {
@@ -65,22 +76,22 @@ message CreateCoinInfoResponse {
 }
 
 message GetCoinInfosRequest {
-	bool PreSale 	= 100; // 是否为预售，false为在售商品
-	string Name 	= 110; // 币种名称 FIL, BTC
-	int32 Offset 	= 120;
-	int32 Limit		= 130;
+	bool    PreSale = 100; // 是否为预售，false为在售商品
+	string  Name 	  = 110; // 币种名称 FIL, BTC
+	int32   Offset 	= 120;
+	int32   Limit		= 130;
 }
 
 message GetCoinInfosResponse {
-	int32 Total 			= 100;
+	int32 Total 			      = 100;
 	repeated CoinInfo Infos = 110;
 }
 
 message UpdateCoinInfoRequest {
-    string ID 				= 100;
-	bool PreSale 			= 110; // 是否为预售，false为在售商品
-	string Logo				= 120; // url; can be empty
-	double ReservedAmount 	= 130;
+  string  ID 				      = 100;
+	bool    PreSale 			  = 110; // 是否为预售，false为在售商品
+	string  Logo            = 120; // url; can be empty
+	double  ReservedAmount  = 130;
 }
 
 message UpdateCoinInfoResponse {

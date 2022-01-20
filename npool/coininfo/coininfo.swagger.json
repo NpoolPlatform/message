@@ -138,6 +138,38 @@
           "SphinxCoinInfo"
         ]
       }
+    },
+    "/version": {
+      "post": {
+        "operationId": "SphinxCoinInfo_Version",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
+            }
+          }
+        ],
+        "tags": [
+          "SphinxCoinInfo"
+        ]
+      }
     }
   },
   "definitions": {
@@ -307,6 +339,14 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1CoinInfo"
+        }
+      }
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
         }
       }
     }
