@@ -105,6 +105,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ServiceName | [string](#string) |  |  |
+| PathPrefix | [string](#string) |  |  |
 | Paths | [Path](#api.manager.v1.Path) | repeated |  |
 
 

@@ -37,7 +37,8 @@ message Path {
 }
 
 message ServiceApis {
-    string ServiceName = 20;
+    string ServiceName = 10;
+    string PathPrefix = 20;
     repeated Path Paths = 30;
 }
 

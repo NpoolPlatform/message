@@ -15,6 +15,7 @@ export type Path = {
 
 export type ServiceApis = {
   ServiceName?: string
+  PathPrefix?: string
   Paths?: Path[]
 }
 

@@ -192,6 +192,9 @@
         "ServiceName": {
           "type": "string"
         },
+        "PathPrefix": {
+          "type": "string"
+        },
         "Paths": {
           "type": "array",
           "items": {
