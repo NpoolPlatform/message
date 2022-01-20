@@ -8,12 +8,12 @@ import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type Path = {
+  Method?: string
   Path?: string
   Exported?: boolean
 }
 
 export type ServiceApis = {
-  Method?: string
   ServiceName?: string
   Paths?: Path[]
 }

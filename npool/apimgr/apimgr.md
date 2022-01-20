@@ -57,6 +57,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| Method | [string](#string) |  |  |
 | Path | [string](#string) |  |  |
 | Exported | [bool](#bool) |  |  |
 
@@ -103,7 +104,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Method | [string](#string) |  |  |
 | ServiceName | [string](#string) |  |  |
 | Paths | [Path](#api.manager.v1.Path) | repeated |  |
 

@@ -31,12 +31,12 @@ service ApiManager {
 }
 
 message Path {
-    string Path = 10;
-    bool Exported = 20;
+    string Method = 10;
+    string Path = 20;
+    bool Exported = 30;
 }
 
 message ServiceApis {
-    string Method = 10;
     string ServiceName = 20;
     repeated Path Paths = 30;
 }

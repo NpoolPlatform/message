@@ -159,6 +159,9 @@
     "v1Path": {
       "type": "object",
       "properties": {
+        "Method": {
+          "type": "string"
+        },
         "Path": {
           "type": "string"
         },
@@ -186,9 +189,6 @@
     "v1ServiceApis": {
       "type": "object",
       "properties": {
-        "Method": {
-          "type": "string"
-        },
         "ServiceName": {
           "type": "string"
         },
