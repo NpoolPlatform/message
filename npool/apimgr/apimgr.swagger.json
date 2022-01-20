@@ -151,7 +151,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1ServiceApis"
+            "$ref": "#/definitions/v1ServicePath"
           }
         }
       }
@@ -200,6 +200,34 @@
           "items": {
             "$ref": "#/definitions/v1Path"
           }
+        }
+      }
+    },
+    "v1ServicePath": {
+      "type": "object",
+      "properties": {
+        "ServiceName": {
+          "type": "string"
+        },
+        "PathPrefix": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string"
+        },
+        "Path": {
+          "type": "string"
+        },
+        "Exported": {
+          "type": "boolean"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

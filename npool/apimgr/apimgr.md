@@ -10,6 +10,7 @@
     - [RegisterRequest](#api.manager.v1.RegisterRequest)
     - [RegisterResponse](#api.manager.v1.RegisterResponse)
     - [ServiceApis](#api.manager.v1.ServiceApis)
+    - [ServicePath](#api.manager.v1.ServicePath)
   
     - [ApiManager](#api.manager.v1.ApiManager)
   
@@ -42,7 +43,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [ServiceApis](#api.manager.v1.ServiceApis) | repeated |  |
+| Infos | [ServicePath](#api.manager.v1.ServicePath) | repeated |  |
 
 
 
@@ -107,6 +108,27 @@
 | ServiceName | [string](#string) |  |  |
 | PathPrefix | [string](#string) |  |  |
 | Paths | [Path](#api.manager.v1.Path) | repeated |  |
+
+
+
+
+
+
+<a name="api.manager.v1.ServicePath"></a>
+
+### ServicePath
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ServiceName | [string](#string) |  |  |
+| PathPrefix | [string](#string) |  |  |
+| Method | [string](#string) |  |  |
+| Path | [string](#string) |  |  |
+| Exported | [bool](#bool) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
+| UpdateAt | [uint32](#uint32) |  |  |
 
 
 

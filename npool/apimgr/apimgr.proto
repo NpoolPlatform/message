@@ -50,9 +50,19 @@ message RegisterResponse {
     ServiceApis Info = 10;
 }
 
+message ServicePath {
+    string ServiceName = 10;
+    string PathPrefix = 20;
+    string Method = 30;
+    string Path = 40;
+    bool Exported = 50;
+    uint32 CreateAt = 60;
+    uint32 UpdateAt = 70;
+}
+
 message GetApisRequest {
 }
 
 message GetApisResponse {
-    repeated ServiceApis Infos = 10;
+    repeated ServicePath Infos = 10;
 }

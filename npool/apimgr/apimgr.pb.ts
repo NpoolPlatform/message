@@ -27,11 +27,21 @@ export type RegisterResponse = {
   Info?: ServiceApis
 }
 
+export type ServicePath = {
+  ServiceName?: string
+  PathPrefix?: string
+  Method?: string
+  Path?: string
+  Exported?: boolean
+  CreateAt?: number
+  UpdateAt?: number
+}
+
 export type GetApisRequest = {
 }
 
 export type GetApisResponse = {
-  Infos?: ServiceApis[]
+  Infos?: ServicePath[]
 }
 
 export class ApiManager {
