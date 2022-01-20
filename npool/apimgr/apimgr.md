@@ -122,6 +122,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
 | ServiceName | [string](#string) |  |  |
 | PathPrefix | [string](#string) |  |  |
 | Method | [string](#string) |  |  |

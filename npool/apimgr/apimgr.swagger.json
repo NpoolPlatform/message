@@ -206,6 +206,9 @@
     "v1ServicePath": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "ServiceName": {
           "type": "string"
         },

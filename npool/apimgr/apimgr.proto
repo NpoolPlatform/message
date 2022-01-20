@@ -51,13 +51,14 @@ message RegisterResponse {
 }
 
 message ServicePath {
-    string ServiceName = 10;
-    string PathPrefix = 20;
-    string Method = 30;
-    string Path = 40;
-    bool Exported = 50;
-    uint32 CreateAt = 60;
-    uint32 UpdateAt = 70;
+    string ID = 10;
+    string ServiceName = 20;
+    string PathPrefix = 30;
+    string Method = 40;
+    string Path = 50;
+    bool Exported = 60;
+    uint32 CreateAt = 70;
+    uint32 UpdateAt = 80;
 }
 
 message GetApisRequest {

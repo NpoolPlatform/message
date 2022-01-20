@@ -28,6 +28,7 @@ export type RegisterResponse = {
 }
 
 export type ServicePath = {
+  ID?: string
   ServiceName?: string
   PathPrefix?: string
   Method?: string
