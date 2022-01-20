@@ -5,6 +5,7 @@
 */
 
 import * as fm from "../../fetch.pb"
+import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as SphinxPluginV1Sphinxplugin from "../sphinxplugin/sphinxplugin.pb"
 
 export enum TransactionType {
@@ -21,13 +22,15 @@ export enum TransactionType {
 
 export enum TransactionState {
   TransactionStateUnKnow = "TransactionStateUnKnow",
-  TransactionStatePendingReview = "TransactionStatePendingReview",
-  TransactionStateRejected = "TransactionStateRejected",
   TransactionStateWait = "TransactionStateWait",
   TransactionStateSign = "TransactionStateSign",
   TransactionStateSync = "TransactionStateSync",
   TransactionStateDone = "TransactionStateDone",
   TransactionStateFail = "TransactionStateFail",
+}
+
+export type VersionResponse = {
+  Info?: string
 }
 
 export type GetBalanceRequest = {
@@ -88,23 +91,17 @@ export type GetTransactionResponse = {
   Info?: TransactionInfo
 }
 
-export type ReviewTransactionRequest = {
-  TransactionID?: string
-  TransactionState?: TransactionState
-}
-
-export type ReviewTransactionResponse = {
-}
-
 export type ProxyPluginResponse = {
   CoinType?: SphinxPluginV1Sphinxplugin.CoinType
   TransactionType?: TransactionType
   TransactionID?: string
   Nonce?: string
+  Unspent?: SphinxPluginV1Sphinxplugin.Unspent[]
   CID?: string
   Balance?: number
   BalanceStr?: string
   Message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
+  MsgTx?: SphinxPluginV1Sphinxplugin.MsgTx
   ExitCode?: string
 }
 
@@ -115,6 +112,7 @@ export type ProxyPluginRequest = {
   Address?: string
   Message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
   Signature?: SphinxPluginV1Sphinxplugin.Signature
+  MsgTx?: SphinxPluginV1Sphinxplugin.MsgTx
   CID?: string
 }
 
@@ -123,6 +121,7 @@ export type ProxySignRequest = {
   TransactionType?: TransactionType
   TransactionID?: string
   Message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
+  MsgTx?: SphinxPluginV1Sphinxplugin.MsgTx
 }
 
 export type ProxySignResponse = {
@@ -130,6 +129,7 @@ export type ProxySignResponse = {
   TransactionType?: TransactionType
   TransactionID?: string
   Info?: ProxySignResponseInfo
+  MsgTx?: SphinxPluginV1Sphinxplugin.MsgTx
 }
 
 export type ProxySignResponseInfo = {
@@ -139,6 +139,9 @@ export type ProxySignResponseInfo = {
 }
 
 export class SphinxProxy {
+  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetBalance(req: GetBalanceRequest, initReq?: fm.InitReq): Promise<GetBalanceResponse> {
     return fm.fetchReq<GetBalanceRequest, GetBalanceResponse>(`/v1/get/balance`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -150,8 +153,5 @@ export class SphinxProxy {
   }
   static GetTransaction(req: GetTransactionRequest, initReq?: fm.InitReq): Promise<GetTransactionResponse> {
     return fm.fetchReq<GetTransactionRequest, GetTransactionResponse>(`/v1/get/transaction`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static ReviewTransaction(req: ReviewTransactionRequest, initReq?: fm.InitReq): Promise<ReviewTransactionResponse> {
-    return fm.fetchReq<ReviewTransactionRequest, ReviewTransactionResponse>(`/sphinx.proxy.v1.SphinxProxy/ReviewTransaction`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

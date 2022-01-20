@@ -77,7 +77,6 @@
     },
     "/v1/get/balance": {
       "post": {
-        "summary": "sync",
         "operationId": "SphinxProxy_GetBalance",
         "responses": {
           "200": {
@@ -132,6 +131,39 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SphinxProxy"
+        ]
+      }
+    },
+    "/version": {
+      "post": {
+        "summary": "sync",
+        "operationId": "SphinxProxy_Version",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
             }
           }
         ],
@@ -217,7 +249,9 @@
       "enum": [
         "CoinTypeUnKnow",
         "CoinTypeFIL",
-        "CoinTypeBTC"
+        "CoinTypeBTC",
+        "CoinTypeETH",
+        "CoinTypeSpaceMesh"
       ],
       "default": "CoinTypeUnKnow"
     },
@@ -270,8 +304,7 @@
         "Address": {
           "type": "string"
         }
-      },
-      "title": "############################# sync"
+      }
     },
     "v1GetBalanceResponse": {
       "type": "object",
@@ -297,6 +330,45 @@
         }
       }
     },
+    "v1MsgTx": {
+      "type": "object",
+      "properties": {
+        "Version": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "TxIn": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1TxIn"
+          }
+        },
+        "TxOut": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1TxOut"
+          }
+        },
+        "LockTime": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1OutPoint": {
+      "type": "object",
+      "properties": {
+        "Hash": {
+          "type": "string",
+          "format": "byte",
+          "title": "byte len 32"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1ProxyPluginRequest": {
       "type": "object",
       "properties": {
@@ -313,10 +385,15 @@
           "type": "string"
         },
         "Message": {
-          "$ref": "#/definitions/v1UnsignedMessage"
+          "$ref": "#/definitions/v1UnsignedMessage",
+          "title": "fil"
         },
         "Signature": {
           "$ref": "#/definitions/v1Signature"
+        },
+        "MsgTx": {
+          "$ref": "#/definitions/v1MsgTx",
+          "title": "btc"
         },
         "CID": {
           "type": "string"
@@ -337,10 +414,14 @@
           "type": "string"
         },
         "Message": {
-          "$ref": "#/definitions/v1UnsignedMessage"
+          "$ref": "#/definitions/v1UnsignedMessage",
+          "title": "fil"
+        },
+        "MsgTx": {
+          "$ref": "#/definitions/v1MsgTx",
+          "title": "btc"
         }
-      },
-      "description": "Sign WalletNew .."
+      }
     },
     "v1ProxySignResponseInfo": {
       "type": "object",
@@ -355,9 +436,6 @@
           "$ref": "#/definitions/v1Signature"
         }
       }
-    },
-    "v1ReviewTransactionResponse": {
-      "type": "object"
     },
     "v1Signature": {
       "type": "object",
@@ -414,8 +492,6 @@
       "type": "string",
       "enum": [
         "TransactionStateUnKnow",
-        "TransactionStatePendingReview",
-        "TransactionStateRejected",
         "TransactionStateWait",
         "TransactionStateSign",
         "TransactionStateSync",
@@ -438,6 +514,42 @@
         "SyncMsgState"
       ],
       "default": "Invalid"
+    },
+    "v1TxIn": {
+      "type": "object",
+      "properties": {
+        "PreviousOutPoint": {
+          "$ref": "#/definitions/v1OutPoint"
+        },
+        "SignatureScript": {
+          "type": "string",
+          "format": "byte"
+        },
+        "Witness": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "byte"
+          }
+        },
+        "Sequence": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1TxOut": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string",
+          "format": "int64"
+        },
+        "PkScript": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
     },
     "v1UnsignedMessage": {
       "type": "object",
@@ -480,7 +592,53 @@
           "type": "string",
           "format": "byte"
         }
-      }
+      },
+      "title": "fil"
+    },
+    "v1Unspent": {
+      "type": "object",
+      "properties": {
+        "TxID": {
+          "type": "string"
+        },
+        "Vout": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "ScriptPubKey": {
+          "type": "string"
+        },
+        "RedeemScript": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "Confirmations": {
+          "type": "string",
+          "format": "int64"
+        },
+        "Spendable": {
+          "type": "boolean"
+        }
+      },
+      "title": "============================= btc"
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      },
+      "title": "############################# sync"
     },
     "v1WalletInfo": {
       "type": "object",

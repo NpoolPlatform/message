@@ -13,6 +13,7 @@
     - [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse)
     - [UpdateCoinInfoRequest](#sphinx.coininfo.v1.UpdateCoinInfoRequest)
     - [UpdateCoinInfoResponse](#sphinx.coininfo.v1.UpdateCoinInfoResponse)
+    - [VersionResponse](#sphinx.coininfo.v1.VersionResponse)
   
     - [SphinxCoinInfo](#sphinx.coininfo.v1.SphinxCoinInfo)
   
@@ -179,6 +180,21 @@
 
 
 
+
+<a name="sphinx.coininfo.v1.VersionResponse"></a>
+
+### VersionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [string](#string) |  |  |
+
+
+
+
+
  
 
  
@@ -193,6 +209,7 @@
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#sphinx.coininfo.v1.VersionResponse) |  |
 | CreateCoinInfo | [CreateCoinInfoRequest](#sphinx.coininfo.v1.CreateCoinInfoRequest) | [CreateCoinInfoResponse](#sphinx.coininfo.v1.CreateCoinInfoResponse) |  |
 | GetCoinInfo | [GetCoinInfoRequest](#sphinx.coininfo.v1.GetCoinInfoRequest) | [GetCoinInfoResponse](#sphinx.coininfo.v1.GetCoinInfoResponse) |  |
 | GetCoinInfos | [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest) | [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse) |  |

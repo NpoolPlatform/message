@@ -18,9 +18,8 @@
     - [ProxySignRequest](#sphinx.proxy.v1.ProxySignRequest)
     - [ProxySignResponse](#sphinx.proxy.v1.ProxySignResponse)
     - [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo)
-    - [ReviewTransactionRequest](#sphinx.proxy.v1.ReviewTransactionRequest)
-    - [ReviewTransactionResponse](#sphinx.proxy.v1.ReviewTransactionResponse)
     - [TransactionInfo](#sphinx.proxy.v1.TransactionInfo)
+    - [VersionResponse](#sphinx.proxy.v1.VersionResponse)
     - [WalletInfo](#sphinx.proxy.v1.WalletInfo)
   
     - [TransactionState](#sphinx.proxy.v1.TransactionState)
@@ -117,7 +116,7 @@
 <a name="sphinx.proxy.v1.GetBalanceRequest"></a>
 
 ### GetBalanceRequest
-############################# sync
+
 
 
 | Field | Type | Label | Description |
@@ -187,8 +186,9 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Address | [string](#string) |  |  |
-| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  | fil |
 | Signature | [sphinx.plugin.v1.Signature](#sphinx.plugin.v1.Signature) |  |  |
+| MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
 | CID | [string](#string) |  |  |
 
 
@@ -207,11 +207,13 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
-| Nonce | [uint64](#uint64) |  |  |
+| Nonce | [uint64](#uint64) |  | fil Nonce |
+| Unspent | [sphinx.plugin.v1.Unspent](#sphinx.plugin.v1.Unspent) | repeated | btc UTXO |
 | CID | [string](#string) |  |  |
 | Balance | [double](#double) |  |  |
 | BalanceStr | [string](#string) |  |  |
-| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  | fil |
+| MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
 | ExitCode | [int64](#int64) |  | -1 find cid state on chain internal server error |
 
 
@@ -222,7 +224,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 <a name="sphinx.proxy.v1.ProxySignRequest"></a>
 
 ### ProxySignRequest
-Sign WalletNew ..
+
 
 
 | Field | Type | Label | Description |
@@ -230,7 +232,8 @@ Sign WalletNew ..
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
-| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  | fil |
+| MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
 
 
 
@@ -248,7 +251,8 @@ Sign WalletNew ..
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
-| Info | [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo) |  |  |
+| Info | [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo) |  | fil |
+| MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
 
 
 
@@ -266,32 +270,6 @@ Sign WalletNew ..
 | Address | [string](#string) |  | create new account address |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 | Signature | [sphinx.plugin.v1.Signature](#sphinx.plugin.v1.Signature) |  |  |
-
-
-
-
-
-
-<a name="sphinx.proxy.v1.ReviewTransactionRequest"></a>
-
-### ReviewTransactionRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TransactionID | [string](#string) |  |  |
-| TransactionState | [TransactionState](#sphinx.proxy.v1.TransactionState) |  |  |
-
-
-
-
-
-
-<a name="sphinx.proxy.v1.ReviewTransactionResponse"></a>
-
-### ReviewTransactionResponse
-
 
 
 
@@ -316,6 +294,21 @@ Sign WalletNew ..
 | ExitCode | [int64](#int64) |  |  |
 | CreatedAt | [uint32](#uint32) |  |  |
 | UpdatedAt | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="sphinx.proxy.v1.VersionResponse"></a>
+
+### VersionResponse
+############################# sync
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [string](#string) |  |  |
 
 
 
@@ -347,13 +340,11 @@ Sign WalletNew ..
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | TransactionStateUnKnow | 0 |  |
-| TransactionStatePendingReview | 1 |  |
-| TransactionStateRejected | 2 |  |
-| TransactionStateWait | 3 |  |
-| TransactionStateSign | 4 |  |
-| TransactionStateSync | 5 |  |
-| TransactionStateDone | 6 |  |
-| TransactionStateFail | 7 |  |
+| TransactionStateWait | 1 |  |
+| TransactionStateSign | 2 |  |
+| TransactionStateSync | 3 |  |
+| TransactionStateDone | 4 |  |
+| TransactionStateFail | 5 |  |
 
 
 
@@ -387,11 +378,11 @@ SphinxProxy http service only for inner
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| GetBalance | [GetBalanceRequest](#sphinx.proxy.v1.GetBalanceRequest) | [GetBalanceResponse](#sphinx.proxy.v1.GetBalanceResponse) | sync |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#sphinx.proxy.v1.VersionResponse) | sync |
+| GetBalance | [GetBalanceRequest](#sphinx.proxy.v1.GetBalanceRequest) | [GetBalanceResponse](#sphinx.proxy.v1.GetBalanceResponse) |  |
 | CreateWallet | [CreateWalletRequest](#sphinx.proxy.v1.CreateWalletRequest) | [CreateWalletResponse](#sphinx.proxy.v1.CreateWalletResponse) |  |
 | CreateTransaction | [CreateTransactionRequest](#sphinx.proxy.v1.CreateTransactionRequest) | [CreateTransactionResponse](#sphinx.proxy.v1.CreateTransactionResponse) |  |
 | GetTransaction | [GetTransactionRequest](#sphinx.proxy.v1.GetTransactionRequest) | [GetTransactionResponse](#sphinx.proxy.v1.GetTransactionResponse) |  |
-| ReviewTransaction | [ReviewTransactionRequest](#sphinx.proxy.v1.ReviewTransactionRequest) | [ReviewTransactionResponse](#sphinx.proxy.v1.ReviewTransactionResponse) |  |
 | ProxyPlugin | [ProxyPluginResponse](#sphinx.proxy.v1.ProxyPluginResponse) stream | [ProxyPluginRequest](#sphinx.proxy.v1.ProxyPluginRequest) stream | async stream |
 | ProxySign | [ProxySignResponse](#sphinx.proxy.v1.ProxySignResponse) stream | [ProxySignRequest](#sphinx.proxy.v1.ProxySignRequest) stream |  |
 

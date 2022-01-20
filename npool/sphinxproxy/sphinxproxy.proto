@@ -5,11 +5,19 @@ package sphinx.proxy.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/sphinxproxy";
 
 import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
 import "npool/sphinxplugin/sphinxplugin.proto";
 
 // SphinxProxy http service only for inner
 service SphinxProxy {
   // sync
+  rpc Version (google.protobuf.Empty) returns (VersionResponse){
+    option (google.api.http) = {
+      post: "/version"
+      body: "*"
+    };
+  }
   rpc GetBalance (GetBalanceRequest) returns (GetBalanceResponse) {
     option (google.api.http) = {
       post: "/v1/get/balance"
@@ -34,7 +42,6 @@ service SphinxProxy {
       body: "*"
     };
   }
-  rpc ReviewTransaction (ReviewTransactionRequest) returns (ReviewTransactionResponse) {}
 
   // async stream
   rpc ProxyPlugin (stream ProxyPluginResponse) returns (stream ProxyPluginRequest) {}
@@ -42,6 +49,10 @@ service SphinxProxy {
 }
 
 // ############################# sync
+message VersionResponse {
+  string Info = 100;
+}
+
 message GetBalanceRequest {
   string Name     = 100;
   string Address  = 110;
@@ -84,41 +95,39 @@ message GetTransactionRequest {
 }
 
 message TransactionInfo {
-	string TransactionID 	            = 100;
-	string Name 			            = 110;
-	double Amount 			            = 120;
-	string From 			            = 130;
-	string To 				            = 140;
+	string TransactionID 	              = 100;
+	string Name 			                  = 110;
+	double Amount 			                = 120;
+	string From 			                  = 130;
+	string To 				                  = 140;
 	TransactionState TransactionState   = 150;
-	string CID				            = 160;
+	string CID				                  = 160;
   int64 ExitCode                      = 170;
-	uint32 CreatedAt 		            = 180;
-	uint32 UpdatedAt 		            = 190;
+	uint32 CreatedAt 		                = 180;
+	uint32 UpdatedAt 		                = 190;
 }
 
 message GetTransactionResponse {
   TransactionInfo Info = 100;
 }
 
-message ReviewTransactionRequest {
-  string TransactionID                = 100;
-  TransactionState TransactionState   = 110;
-}
-
-message ReviewTransactionResponse {
-}
-
 // ############################# async
 message ProxyPluginResponse {
-  sphinx.plugin.v1.CoinType CoinType          = 100;
-  TransactionType TransactionType             = 110;
-  string TransactionID                        = 120;
-  uint64 Nonce                                = 130;
-  string CID                                  = 140;
-  double Balance                              = 150;
-  string BalanceStr                           = 160;
-  sphinx.plugin.v1.UnsignedMessage Message    = 170;
-  int64  ExitCode                             = 180; // -1 find cid state on chain internal server error
+  sphinx.plugin.v1.CoinType CoinType        = 100;
+  TransactionType TransactionType           = 110;
+  string TransactionID                      = 120;
+  // fil Nonce
+  uint64 Nonce                              = 130;
+  // btc UTXO
+  repeated sphinx.plugin.v1.Unspent Unspent = 131;
+  string CID                                = 140;
+  double Balance                            = 150;
+  string BalanceStr                         = 160;
+  // fil
+  sphinx.plugin.v1.UnsignedMessage  Message = 170;
+  // btc
+  sphinx.plugin.v1.MsgTx            MsgTx   = 171;
+  int64  ExitCode                           = 180; // -1 find cid state on chain internal server error
 }
 
 // MpoolGetNonce WalletBalance MpoolPush ..
@@ -127,24 +136,32 @@ message ProxyPluginRequest {
   TransactionType TransactionType             = 110;
   string TransactionID                        = 120;
   string Address                              = 130;
+  // fil
   sphinx.plugin.v1.UnsignedMessage Message    = 140;
   sphinx.plugin.v1.Signature       Signature  = 150;
+  // btc
+  sphinx.plugin.v1.MsgTx           MsgTx      = 151;
   string CID                                  = 160;
 }
 
-// Sign WalletNew ..
 message ProxySignRequest {
   sphinx.plugin.v1.CoinType CoinType          = 100;
   TransactionType TransactionType             = 110;
   string TransactionID                        = 120;
+  // fil
   sphinx.plugin.v1.UnsignedMessage Message    = 130;
+  // btc
+  sphinx.plugin.v1.MsgTx           MsgTx      = 140;
 }
 
 message ProxySignResponse {
   sphinx.plugin.v1.CoinType CoinType          = 100;
   TransactionType TransactionType             = 110;
   string TransactionID                        = 120;
+  // fil
   ProxySignResponseInfo Info                  = 130;
+  // btc
+  sphinx.plugin.v1.MsgTx           MsgTx      = 140;
 }
 
 message ProxySignResponseInfo {
@@ -167,11 +184,9 @@ enum TransactionType {
 
 enum TransactionState {
 	TransactionStateUnKnow  			= 0;
-	TransactionStatePendingReview     	= 1;
-	TransactionStateRejected     		= 2;
-	TransactionStateWait  				= 3;
-	TransactionStateSign  				= 4;
-	TransactionStateSync  				= 5;
-	TransactionStateDone     			= 6;
-	TransactionStateFail     			= 7;
+	TransactionStateWait  				= 1;
+	TransactionStateSign  				= 2;
+	TransactionStateSync  				= 3;
+	TransactionStateDone     			= 4;
+	TransactionStateFail     			= 5;
 }
