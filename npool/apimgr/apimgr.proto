@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package api.manager.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/apimgr";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+service ApiManager {
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+
+    rpc Register(RegisterRequest) returns (RegisterResponse) {
+        option (google.api.http) = {
+            post: "/v1/register"
+            body: "*"
+        };
+    }
+    rpc GetApis(GetApisRequest) returns (GetApisResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/apis"
+            body: "*"
+        };
+    }
+}
+
+message Path {
+    string Path = 10;
+    bool Exported = 20;
+}
+
+message ServiceApis {
+    string Method = 10;
+    string ServiceName = 20;
+    repeated Path Paths = 30;
+}
+
+message RegisterRequest {
+    ServiceApis Info = 10;
+}
+
+message RegisterResponse {
+    ServiceApis Info = 10;
+}
+
+message GetApisRequest {
+}
+
+message GetApisResponse {
+    repeated ServiceApis Infos = 10;
+}
