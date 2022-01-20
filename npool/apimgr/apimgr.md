@@ -130,6 +130,7 @@
 | Exported | [bool](#bool) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
 | UpdateAt | [uint32](#uint32) |  |  |
+| Domains | [string](#string) | repeated |  |
 
 
 

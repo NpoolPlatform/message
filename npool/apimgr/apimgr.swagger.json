@@ -231,6 +231,12 @@
         "UpdateAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

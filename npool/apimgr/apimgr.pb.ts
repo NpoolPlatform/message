@@ -36,6 +36,7 @@ export type ServicePath = {
   Exported?: boolean
   CreateAt?: number
   UpdateAt?: number
+  Domains?: string[]
 }
 
 export type GetApisRequest = {

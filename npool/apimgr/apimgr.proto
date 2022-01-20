@@ -59,6 +59,7 @@ message ServicePath {
     bool Exported = 60;
     uint32 CreateAt = 70;
     uint32 UpdateAt = 80;
+    repeated string Domains = 90;
 }
 
 message GetApisRequest {
