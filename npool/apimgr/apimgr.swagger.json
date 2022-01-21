@@ -189,6 +189,9 @@
     "v1ServiceApis": {
       "type": "object",
       "properties": {
+        "Protocol": {
+          "type": "string"
+        },
         "ServiceName": {
           "type": "string"
         },
@@ -209,8 +212,17 @@
         "ID": {
           "type": "string"
         },
+        "Protocol": {
+          "type": "string"
+        },
         "ServiceName": {
           "type": "string"
+        },
+        "Domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "PathPrefix": {
           "type": "string"
@@ -231,12 +243,6 @@
         "UpdateAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "Domains": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         }
       }
     },

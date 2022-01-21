@@ -14,6 +14,7 @@ export type Path = {
 }
 
 export type ServiceApis = {
+  Protocol?: string
   ServiceName?: string
   PathPrefix?: string
   Paths?: Path[]
@@ -29,14 +30,15 @@ export type RegisterResponse = {
 
 export type ServicePath = {
   ID?: string
+  Protocol?: string
   ServiceName?: string
+  Domains?: string[]
   PathPrefix?: string
   Method?: string
   Path?: string
   Exported?: boolean
   CreateAt?: number
   UpdateAt?: number
-  Domains?: string[]
 }
 
 export type GetApisRequest = {

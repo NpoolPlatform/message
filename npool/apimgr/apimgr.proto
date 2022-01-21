@@ -37,9 +37,10 @@ message Path {
 }
 
 message ServiceApis {
-    string ServiceName = 10;
-    string PathPrefix = 20;
-    repeated Path Paths = 30;
+    string Protocol = 10;
+    string ServiceName = 20;
+    string PathPrefix = 30;
+    repeated Path Paths = 40;
 }
 
 message RegisterRequest {
@@ -52,14 +53,15 @@ message RegisterResponse {
 
 message ServicePath {
     string ID = 10;
-    string ServiceName = 20;
-    string PathPrefix = 30;
-    string Method = 40;
-    string Path = 50;
-    bool Exported = 60;
-    uint32 CreateAt = 70;
-    uint32 UpdateAt = 80;
-    repeated string Domains = 90;
+    string Protocol = 20;
+    string ServiceName = 30;
+    repeated string Domains = 40;
+    string PathPrefix = 50;
+    string Method = 60;
+    string Path = 70;
+    bool Exported = 80;
+    uint32 CreateAt = 90;
+    uint32 UpdateAt = 100;
 }
 
 message GetApisRequest {

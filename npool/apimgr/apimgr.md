@@ -105,6 +105,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| Protocol | [string](#string) |  |  |
 | ServiceName | [string](#string) |  |  |
 | PathPrefix | [string](#string) |  |  |
 | Paths | [Path](#api.manager.v1.Path) | repeated |  |
@@ -123,14 +124,15 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
+| Protocol | [string](#string) |  |  |
 | ServiceName | [string](#string) |  |  |
+| Domains | [string](#string) | repeated |  |
 | PathPrefix | [string](#string) |  |  |
 | Method | [string](#string) |  |  |
 | Path | [string](#string) |  |  |
 | Exported | [bool](#bool) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
 | UpdateAt | [uint32](#uint32) |  |  |
-| Domains | [string](#string) | repeated |  |
 
 
 
