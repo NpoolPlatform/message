@@ -1,0 +1,437 @@
+syntax = "proto3";
+
+package app.user.manager.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appusermgr";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+service AppUserManager {
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+
+    rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app"
+            body: "*"
+        };
+    }
+    rpc UpdateApp (UpdateAppRequest) returns (UpdateAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app"
+            body: "*"
+        };
+    }
+    rpc CreateAppControl (CreateAppControlRequest) returns (CreateAppControlResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/control"
+            body: "*"
+        };
+    }
+    rpc UpdateAppControl (UpdateAppControlRequest) returns (UpdateAppControlResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/control"
+            body: "*"
+        };
+    }
+    rpc CreateBanApp (CreateBanAppRequest) returns (CreateBanAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/ban/app"
+            body: "*"
+        };
+    }
+    rpc DeleteBanApp (DeleteBanAppRequest) returns (DeleteBanAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/ban/app"
+            body: "*"
+        };
+    }
+
+    rpc GetApp (GetAppRequest) returns (GetAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app"
+            body: "*"
+        };
+    }
+    rpc GetApps (GetAppsRequest) returns (GetAppsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/apps"
+            body: "*"
+        };
+    }
+    rpc GetAppsByCreator (GetAppsByCreatorRequest) returns (GetAppsByCreatorResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/apps/by/creator"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppUser (CreateAppUserRequest) returns (CreateAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user"
+            body: "*"
+        };
+    }
+    rpc UpdateAppUser (UpdateAppUserRequest) returns (UpdateAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/user"
+            body: "*"
+        };
+    }
+    rpc CreateAppUserSecret (CreateAppUserSecretRequest) returns (CreateAppUserSecretResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/secret"
+            body: "*"
+        };
+    }
+    rpc UpdateAppUserSecret (UpdateAppUserSecretRequest) returns (UpdateAppUserSecretResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/user/secret"
+            body: "*"
+        };
+    }
+    rpc CreateAppUserExtra (CreateAppUserExtraRequest) returns (CreateAppUserExtraResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/extra"
+            body: "*"
+        };
+    }
+    rpc UpdateAppUserExtra (UpdateAppUserExtraRequest) returns (UpdateAppUserExtraResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/user/extra"
+            body: "*"
+        };
+    }
+    rpc CreateBanAppUser (CreateBanAppUserRequest) returns (CreateBanAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/ban/app/user"
+            body: "*"
+        };
+    }
+    rpc DeleteBanAppUser (DeleteBanAppUserRequest) returns (DeleteBanAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/ban/app/user"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppUserControl (CreateAppUserControlRequest) returns (CreateAppUserControlResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/control"
+            body: "*"
+        };
+    }
+    rpc UpdateAppUserControl (UpdateAppUserControlRequest) returns (UpdateAppUserControlResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/user/control"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppRole (CreateAppRoleRequest) returns (CreateAppRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/role"
+            body: "*"
+        };
+    }
+    rpc UpdateAppRole (UpdateAppRoleRequest) returns (UpdateAppRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/role"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppRoleUser (CreateAppRoleUserRequest) returns (CreateAppRoleUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/role/user"
+            body: "*"
+        };
+    }
+    rpc DeleteAppRoleUser (DeleteAppRoleUserRequest) returns (DeleteAppRoleUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/app/role/user"
+            body: "*"
+        };
+    }
+}
+
+message App {
+    string ID = 10;
+    string CreatedBy = 20;
+    string Name = 30;
+    string Logo = 40;
+    string Description = 50;
+}
+
+message CreateAppRequest {
+    App Info = 10;
+}
+
+message CreateAppResponse {
+    App Info = 10;
+}
+
+
+message UpdateAppRequest {
+    App Info = 10;
+}
+
+message UpdateAppResponse {
+    App Info = 10;
+}
+
+message AppControl {
+    string ID = 10;
+    string AppID = 20;
+    // Signup method always be signin method
+    repeated string SignupMethods = 30;
+    repeated string ExternSigninMethods = 40;
+    string RecaptchaMethod = 50;
+    bool KycEnable = 60;
+    bool SigninVerifyEnable = 70;
+}
+
+message CreateAppControlRequest {
+    AppControl Info = 10;
+}
+
+message CreateAppControlResponse {
+    AppControl Info = 10;
+}
+
+message UpdateAppControlRequest {
+    AppControl Info = 10;
+}
+
+message UpdateAppControlResponse {
+    AppControl Info = 10;
+}
+
+message BanApp {
+    string ID = 10;
+    string AppID = 20;
+}
+
+message CreateBanAppRequest {
+    BanApp Info = 10;
+}
+
+message CreateBanAppResponse {
+    BanApp Info = 10;
+}
+
+message DeleteBanAppRequest {
+    string ID = 10;
+}
+
+message DeleteBanAppResponse {
+    BanApp Info = 10;
+}
+
+message AppInfo {
+    App App = 10;
+    AppControl Ctrl = 20;
+    BanApp Ban = 30;
+}
+
+message GetAppRequest {
+    string ID = 10;
+}
+
+message GetAppResponse {
+    AppInfo Info = 10;
+}
+
+message GetAppsRequest {
+    npool.v1.PageInfo PageInfo = 10;
+}
+
+message GetAppsResponse {
+    repeated AppInfo Infos = 10;
+    uint32 Total = 20;
+}
+
+message GetAppsByCreatorRequest {
+    string UserID = 10;
+    npool.v1.PageInfo PageInfo = 20;
+}
+
+message GetAppsByCreatorResponse {
+    repeated AppInfo Infos = 10;
+    uint32 Total = 20;
+}
+
+message AppUser {
+    string ID = 10;
+    string AppID = 20;
+    string EmailAddress = 30;
+    string PhoneNO = 40;
+    string ImportFromApp = 50;
+}
+
+message CreateAppUserRequest {
+    AppUser Info = 10;
+}
+
+message CreateAppUserResponse {
+    AppUser Info = 10;
+}
+
+message UpdateAppUserRequest {
+    AppUser Info = 10;
+}
+
+message UpdateAppUserResponse {
+    AppUser Info = 10;
+}
+
+message AppUserSecret {
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    string PasswordHash = 40;
+    string Salt = 50;
+    string GoogleSecret = 60;
+}
+
+message CreateAppUserSecretRequest {
+    AppUserSecret Info = 10;
+}
+
+message CreateAppUserSecretResponse {
+    AppUserSecret Info = 10;
+}
+
+message UpdateAppUserSecretRequest {
+    AppUserSecret Info = 10;
+}
+
+message UpdateAppUserSecretResponse {
+    AppUserSecret Info = 10;
+}
+
+message AppUserExtra {
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    string Username = 40;
+    repeated string AddressFields = 50;
+    string Gender = 60;
+    string PostalCode = 70;
+    uint32 Age = 80;
+    uint32 Birthday = 90;
+    string Avatar = 100;
+    string Organization = 110;
+}
+
+message CreateAppUserExtraRequest {
+    AppUserExtra Info = 10;
+}
+
+message CreateAppUserExtraResponse {
+    AppUserExtra Info = 10;
+}
+
+message UpdateAppUserExtraRequest {
+    AppUserExtra Info = 10;
+}
+
+message UpdateAppUserExtraResponse {
+    AppUserExtra Info = 10;
+}
+
+message BanAppUser {
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+}
+
+message CreateBanAppUserRequest {
+    BanAppUser Info = 10;
+}
+
+message CreateBanAppUserResponse {
+    BanAppUser Info = 10;
+}
+
+message DeleteBanAppUserRequest {
+    BanAppUser Info = 10;
+}
+
+message DeleteBanAppUserResponse {
+    BanAppUser Info = 10;
+}
+
+message AppUserControl {
+    string ID = 10;
+}
+
+message CreateAppUserControlRequest {
+    AppUserControl Info = 10;
+}
+
+message CreateAppUserControlResponse {
+    AppUserControl Info = 10;
+}
+
+message UpdateAppUserControlRequest {
+    AppUserControl Info = 10;
+}
+
+message UpdateAppUserControlResponse {
+    AppUserControl Info = 10;
+}
+
+message AppRole {
+    string ID = 10;
+    string AppID = 20;
+    string CreatedBy = 30;
+    string Role = 40;
+    string Description = 50;
+    bool Default = 60;
+}
+
+message CreateAppRoleRequest {
+    AppRole Info = 10;
+}
+
+message CreateAppRoleResponse {
+    AppRole Info = 10;
+}
+
+message UpdateAppRoleRequest {
+    AppRole Info = 10;
+}
+
+message UpdateAppRoleResponse {
+    AppRole Info = 10;
+}
+
+message AppRoleUser {
+    string ID = 10;
+    string AppID = 20;
+    string RoleID = 30;
+    string UserID = 40;
+}
+
+message CreateAppRoleUserRequest {
+    AppRoleUser Info = 10;
+}
+
+message CreateAppRoleUserResponse {
+    AppRoleUser Info = 10;
+}
+
+message DeleteAppRoleUserRequest {
+    AppRoleUser Info = 10;
+}
+
+message DeleteAppRoleUserResponse {
+    AppRoleUser Info = 10;
+}
