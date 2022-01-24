@@ -33,10 +33,12 @@ export type GetAppResponse = {
 }
 
 export type GetAppsRequest = {
+  PageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetAppsResponse = {
   Infos?: App[]
+  Total?: number
 }
 
 export type GetAppsByCreatorRequest = {
@@ -210,6 +212,7 @@ export type GetAppUsersByAppRequest = {
 
 export type GetAppUsersByAppResponse = {
   Infos?: AppUser[]
+  Total?: number
 }
 
 export type UpdateAppUserRequest = {
@@ -413,6 +416,24 @@ export type CreateAppRoleResponse = {
   Info?: AppRole
 }
 
+export type GetAppRoleRequest = {
+  ID?: string
+}
+
+export type GetAppRoleResponse = {
+  Info?: AppRole
+}
+
+export type GetAppRolesByAppRequest = {
+  AppID?: string
+  PageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetAppRolesByAppResponse = {
+  Infos?: AppRole[]
+  Total?: number
+}
+
 export type UpdateAppRoleRequest = {
   Info?: AppRole
 }
@@ -434,6 +455,36 @@ export type CreateAppRoleUserRequest = {
 
 export type CreateAppRoleUserResponse = {
   Info?: AppRoleUser
+}
+
+export type GetAppRoleUserRequest = {
+  ID?: string
+}
+
+export type GetAppRoleUserResponse = {
+  Info?: AppRoleUser
+}
+
+export type GetAppRoleUsersByAppRoleRequest = {
+  AppID?: string
+  RoleID?: string
+  PageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetAppRoleUsersByAppRoleResponse = {
+  Infos?: AppRoleUser[]
+  Total?: number
+}
+
+export type GetUserRolesByAppUserRequest = {
+  AppID?: string
+  UserID?: string
+  PageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetUserRolesByAppUserResponse = {
+  Infos?: AppRole[]
+  Total?: number
 }
 
 export type DeleteAppRoleUserRequest = {
@@ -600,11 +651,26 @@ export class AppUserManager {
   static CreateAppRole(req: CreateAppRoleRequest, initReq?: fm.InitReq): Promise<CreateAppRoleResponse> {
     return fm.fetchReq<CreateAppRoleRequest, CreateAppRoleResponse>(`/v1/create/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetAppRole(req: GetAppRoleRequest, initReq?: fm.InitReq): Promise<GetAppRoleResponse> {
+    return fm.fetchReq<GetAppRoleRequest, GetAppRoleResponse>(`/v1/get/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppRolesByApp(req: GetAppRolesByAppRequest, initReq?: fm.InitReq): Promise<GetAppRolesByAppResponse> {
+    return fm.fetchReq<GetAppRolesByAppRequest, GetAppRolesByAppResponse>(`/v1/get/app/roles/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static UpdateAppRole(req: UpdateAppRoleRequest, initReq?: fm.InitReq): Promise<UpdateAppRoleResponse> {
     return fm.fetchReq<UpdateAppRoleRequest, UpdateAppRoleResponse>(`/v1/update/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateAppRoleUser(req: CreateAppRoleUserRequest, initReq?: fm.InitReq): Promise<CreateAppRoleUserResponse> {
     return fm.fetchReq<CreateAppRoleUserRequest, CreateAppRoleUserResponse>(`/v1/create/app/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppRoleUser(req: GetAppRoleUserRequest, initReq?: fm.InitReq): Promise<GetAppRoleUserResponse> {
+    return fm.fetchReq<GetAppRoleUserRequest, GetAppRoleUserResponse>(`/v1/get/app/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppRoleUsersByAppRole(req: GetAppRoleUsersByAppRoleRequest, initReq?: fm.InitReq): Promise<GetAppRoleUsersByAppRoleResponse> {
+    return fm.fetchReq<GetAppRoleUsersByAppRoleRequest, GetAppRoleUsersByAppRoleResponse>(`/v1/get/app/role/users/by/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserRolesByAppUser(req: GetUserRolesByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserRolesByAppUserResponse> {
+    return fm.fetchReq<GetUserRolesByAppUserRequest, GetUserRolesByAppUserResponse>(`/v1/get/user/roles/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static DeleteAppRoleUser(req: DeleteAppRoleUserRequest, initReq?: fm.InitReq): Promise<DeleteAppRoleUserResponse> {
     return fm.fetchReq<DeleteAppRoleUserRequest, DeleteAppRoleUserResponse>(`/v1/delete/app/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})

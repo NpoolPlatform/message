@@ -54,6 +54,14 @@
     - [GetAppInfosResponse](#app.user.manager.v1.GetAppInfosResponse)
     - [GetAppRequest](#app.user.manager.v1.GetAppRequest)
     - [GetAppResponse](#app.user.manager.v1.GetAppResponse)
+    - [GetAppRoleRequest](#app.user.manager.v1.GetAppRoleRequest)
+    - [GetAppRoleResponse](#app.user.manager.v1.GetAppRoleResponse)
+    - [GetAppRoleUserRequest](#app.user.manager.v1.GetAppRoleUserRequest)
+    - [GetAppRoleUserResponse](#app.user.manager.v1.GetAppRoleUserResponse)
+    - [GetAppRoleUsersByAppRoleRequest](#app.user.manager.v1.GetAppRoleUsersByAppRoleRequest)
+    - [GetAppRoleUsersByAppRoleResponse](#app.user.manager.v1.GetAppRoleUsersByAppRoleResponse)
+    - [GetAppRolesByAppRequest](#app.user.manager.v1.GetAppRolesByAppRequest)
+    - [GetAppRolesByAppResponse](#app.user.manager.v1.GetAppRolesByAppResponse)
     - [GetAppUserControlByAppUserRequest](#app.user.manager.v1.GetAppUserControlByAppUserRequest)
     - [GetAppUserControlByAppUserResponse](#app.user.manager.v1.GetAppUserControlByAppUserResponse)
     - [GetAppUserControlRequest](#app.user.manager.v1.GetAppUserControlRequest)
@@ -88,6 +96,8 @@
     - [GetBanAppUserByAppUserResponse](#app.user.manager.v1.GetBanAppUserByAppUserResponse)
     - [GetBanAppUserRequest](#app.user.manager.v1.GetBanAppUserRequest)
     - [GetBanAppUserResponse](#app.user.manager.v1.GetBanAppUserResponse)
+    - [GetUserRolesByAppUserRequest](#app.user.manager.v1.GetUserRolesByAppUserRequest)
+    - [GetUserRolesByAppUserResponse](#app.user.manager.v1.GetUserRolesByAppUserResponse)
     - [UpdateAppControlRequest](#app.user.manager.v1.UpdateAppControlRequest)
     - [UpdateAppControlResponse](#app.user.manager.v1.UpdateAppControlResponse)
     - [UpdateAppRequest](#app.user.manager.v1.UpdateAppRequest)
@@ -925,6 +935,131 @@
 
 
 
+<a name="app.user.manager.v1.GetAppRoleRequest"></a>
+
+### GetAppRoleRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppRoleResponse"></a>
+
+### GetAppRoleResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppRole](#app.user.manager.v1.AppRole) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppRoleUserRequest"></a>
+
+### GetAppRoleUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppRoleUserResponse"></a>
+
+### GetAppRoleUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppRoleUser](#app.user.manager.v1.AppRoleUser) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppRoleUsersByAppRoleRequest"></a>
+
+### GetAppRoleUsersByAppRoleRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| RoleID | [string](#string) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppRoleUsersByAppRoleResponse"></a>
+
+### GetAppRoleUsersByAppRoleResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AppRoleUser](#app.user.manager.v1.AppRoleUser) | repeated |  |
+| Total | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppRolesByAppRequest"></a>
+
+### GetAppRolesByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppRolesByAppResponse"></a>
+
+### GetAppRolesByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AppRole](#app.user.manager.v1.AppRole) | repeated |  |
+| Total | [uint32](#uint32) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.GetAppUserControlByAppUserRequest"></a>
 
 ### GetAppUserControlByAppUserRequest
@@ -1256,6 +1391,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [AppUser](#app.user.manager.v1.AppUser) | repeated |  |
+| Total | [uint32](#uint32) |  |  |
 
 
 
@@ -1300,6 +1436,11 @@
 
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+
+
 
 
 
@@ -1313,6 +1454,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [App](#app.user.manager.v1.App) | repeated |  |
+| Total | [uint32](#uint32) |  |  |
 
 
 
@@ -1434,6 +1576,39 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [BanAppUser](#app.user.manager.v1.BanAppUser) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetUserRolesByAppUserRequest"></a>
+
+### GetUserRolesByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetUserRolesByAppUserResponse"></a>
+
+### GetUserRolesByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AppRole](#app.user.manager.v1.AppRole) | repeated |  |
+| Total | [uint32](#uint32) |  |  |
 
 
 
@@ -1763,8 +1938,13 @@
 | GetAppUserControlByAppUser | [GetAppUserControlByAppUserRequest](#app.user.manager.v1.GetAppUserControlByAppUserRequest) | [GetAppUserControlByAppUserResponse](#app.user.manager.v1.GetAppUserControlByAppUserResponse) |  |
 | UpdateAppUserControl | [UpdateAppUserControlRequest](#app.user.manager.v1.UpdateAppUserControlRequest) | [UpdateAppUserControlResponse](#app.user.manager.v1.UpdateAppUserControlResponse) |  |
 | CreateAppRole | [CreateAppRoleRequest](#app.user.manager.v1.CreateAppRoleRequest) | [CreateAppRoleResponse](#app.user.manager.v1.CreateAppRoleResponse) |  |
+| GetAppRole | [GetAppRoleRequest](#app.user.manager.v1.GetAppRoleRequest) | [GetAppRoleResponse](#app.user.manager.v1.GetAppRoleResponse) |  |
+| GetAppRolesByApp | [GetAppRolesByAppRequest](#app.user.manager.v1.GetAppRolesByAppRequest) | [GetAppRolesByAppResponse](#app.user.manager.v1.GetAppRolesByAppResponse) |  |
 | UpdateAppRole | [UpdateAppRoleRequest](#app.user.manager.v1.UpdateAppRoleRequest) | [UpdateAppRoleResponse](#app.user.manager.v1.UpdateAppRoleResponse) |  |
 | CreateAppRoleUser | [CreateAppRoleUserRequest](#app.user.manager.v1.CreateAppRoleUserRequest) | [CreateAppRoleUserResponse](#app.user.manager.v1.CreateAppRoleUserResponse) |  |
+| GetAppRoleUser | [GetAppRoleUserRequest](#app.user.manager.v1.GetAppRoleUserRequest) | [GetAppRoleUserResponse](#app.user.manager.v1.GetAppRoleUserResponse) |  |
+| GetAppRoleUsersByAppRole | [GetAppRoleUsersByAppRoleRequest](#app.user.manager.v1.GetAppRoleUsersByAppRoleRequest) | [GetAppRoleUsersByAppRoleResponse](#app.user.manager.v1.GetAppRoleUsersByAppRoleResponse) |  |
+| GetUserRolesByAppUser | [GetUserRolesByAppUserRequest](#app.user.manager.v1.GetUserRolesByAppUserRequest) | [GetUserRolesByAppUserResponse](#app.user.manager.v1.GetUserRolesByAppUserResponse) |  |
 | DeleteAppRoleUser | [DeleteAppRoleUserRequest](#app.user.manager.v1.DeleteAppRoleUserRequest) | [DeleteAppRoleUserResponse](#app.user.manager.v1.DeleteAppRoleUserResponse) |  |
 | GetAppUserInfo | [GetAppUserInfoRequest](#app.user.manager.v1.GetAppUserInfoRequest) | [GetAppUserInfoResponse](#app.user.manager.v1.GetAppUserInfoResponse) |  |
 | GetAppUserInfos | [GetAppUserInfosRequest](#app.user.manager.v1.GetAppUserInfosRequest) | [GetAppUserInfosResponse](#app.user.manager.v1.GetAppUserInfosResponse) |  |

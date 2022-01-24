@@ -254,6 +254,18 @@ service AppUserManager {
             body: "*"
         };
     }
+    rpc GetAppRole (GetAppRoleRequest) returns (GetAppRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/role"
+            body: "*"
+        };
+    }
+    rpc GetAppRolesByApp (GetAppRolesByAppRequest) returns (GetAppRolesByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/roles/by/app"
+            body: "*"
+        };
+    }
     rpc UpdateAppRole (UpdateAppRoleRequest) returns (UpdateAppRoleResponse) {
         option (google.api.http) = {
             post: "/v1/update/app/role"
@@ -264,6 +276,24 @@ service AppUserManager {
     rpc CreateAppRoleUser (CreateAppRoleUserRequest) returns (CreateAppRoleUserResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/role/user"
+            body: "*"
+        };
+    }
+    rpc GetAppRoleUser (GetAppRoleUserRequest) returns (GetAppRoleUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/role/user"
+            body: "*"
+        };
+    }
+    rpc GetAppRoleUsersByAppRole (GetAppRoleUsersByAppRoleRequest) returns (GetAppRoleUsersByAppRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/role/users/by/app/role"
+            body: "*"
+        };
+    }
+    rpc GetUserRolesByAppUser (GetUserRolesByAppUserRequest) returns (GetUserRolesByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/roles/by/app/user"
             body: "*"
         };
     }
@@ -320,10 +350,12 @@ message GetAppResponse {
 }
 
 message GetAppsRequest {
+    npool.v1.PageInfo PageInfo = 10;
 }
 
 message GetAppsResponse {
     repeated App Infos = 10;
+    uint32 Total = 20;
 }
 
 message GetAppsByCreatorRequest {
@@ -498,6 +530,7 @@ message GetAppUsersByAppRequest {
 
 message GetAppUsersByAppResponse {
     repeated AppUser Infos = 10;
+    uint32 Total = 20;
 }
 
 message UpdateAppUserRequest {
@@ -701,6 +734,24 @@ message CreateAppRoleResponse {
     AppRole Info = 10;
 }
 
+message GetAppRoleRequest {
+    string ID = 10;
+}
+
+message GetAppRoleResponse {
+    AppRole Info = 10;
+}
+
+message GetAppRolesByAppRequest {
+    string AppID = 10;
+    npool.v1.PageInfo PageInfo = 20;
+}
+
+message GetAppRolesByAppResponse {
+    repeated AppRole Infos = 10;
+    uint32 Total = 20;
+}
+
 message UpdateAppRoleRequest {
     AppRole Info = 10;
 }
@@ -722,6 +773,36 @@ message CreateAppRoleUserRequest {
 
 message CreateAppRoleUserResponse {
     AppRoleUser Info = 10;
+}
+
+message GetAppRoleUserRequest {
+    string ID = 10;
+}
+
+message GetAppRoleUserResponse {
+    AppRoleUser Info = 10;
+}
+
+message GetAppRoleUsersByAppRoleRequest {
+    string AppID = 10;
+    string RoleID = 20;
+    npool.v1.PageInfo PageInfo = 30;
+}
+
+message GetAppRoleUsersByAppRoleResponse {
+    repeated AppRoleUser Infos = 10;
+    uint32 Total = 20;
+}
+
+message GetUserRolesByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+    npool.v1.PageInfo PageInfo = 30;
+}
+
+message GetUserRolesByAppUserResponse {
+    repeated AppRole Infos = 10;
+    uint32 Total = 20;
 }
 
 message DeleteAppRoleUserRequest {
