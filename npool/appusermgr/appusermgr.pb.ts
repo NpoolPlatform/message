@@ -280,6 +280,31 @@ export type DeleteAppRoleUserResponse = {
   Info?: AppRoleUser
 }
 
+export type AppUserInfo = {
+  User?: AppUser
+  Extra?: AppUserExtra
+  Ctrl?: AppUserControl
+  Ban?: BanAppUser
+  Roles?: AppRole[]
+}
+
+export type GetAppUserRequest = {
+  ID?: string
+}
+
+export type GetAppUserResponse = {
+  Info?: AppUserInfo
+}
+
+export type GetAppUsersRequest = {
+  PageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetAppUsersResponse = {
+  Infos?: AppUserInfo[]
+  Total?: number
+}
+
 export class AppUserManager {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -352,5 +377,11 @@ export class AppUserManager {
   }
   static DeleteAppRoleUser(req: DeleteAppRoleUserRequest, initReq?: fm.InitReq): Promise<DeleteAppRoleUserResponse> {
     return fm.fetchReq<DeleteAppRoleUserRequest, DeleteAppRoleUserResponse>(`/v1/delete/app/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUser(req: GetAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserResponse> {
+    return fm.fetchReq<GetAppUserRequest, GetAppUserResponse>(`/v1/get/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUsers(req: GetAppUsersRequest, initReq?: fm.InitReq): Promise<GetAppUsersResponse> {
+    return fm.fetchReq<GetAppUsersRequest, GetAppUsersResponse>(`/v1/get/app/users`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

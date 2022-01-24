@@ -159,6 +159,19 @@ service AppUserManager {
             body: "*"
         };
     }
+
+    rpc GetAppUser (GetAppUserRequest) returns (GetAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/user"
+            body: "*"
+        };
+    }
+    rpc GetAppUsers (GetAppUsersRequest) returns (GetAppUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/users"
+            body: "*"
+        };
+    }
 }
 
 message App {
@@ -434,4 +447,29 @@ message DeleteAppRoleUserRequest {
 
 message DeleteAppRoleUserResponse {
     AppRoleUser Info = 10;
+}
+
+message AppUserInfo {
+    AppUser User = 10;
+    AppUserExtra Extra = 20;
+    AppUserControl Ctrl = 30;
+    BanAppUser Ban = 40;
+    repeated AppRole Roles = 50;
+}
+
+message GetAppUserRequest {
+    string ID = 10;
+}
+
+message GetAppUserResponse {
+    AppUserInfo Info = 10;
+}
+
+message GetAppUsersRequest {
+    npool.v1.PageInfo PageInfo = 10;
+}
+
+message GetAppUsersResponse {
+    repeated AppUserInfo Infos = 10;
+    uint32 Total = 20;
 }

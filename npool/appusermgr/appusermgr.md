@@ -12,6 +12,7 @@
     - [AppUser](#app.user.manager.v1.AppUser)
     - [AppUserControl](#app.user.manager.v1.AppUserControl)
     - [AppUserExtra](#app.user.manager.v1.AppUserExtra)
+    - [AppUserInfo](#app.user.manager.v1.AppUserInfo)
     - [AppUserSecret](#app.user.manager.v1.AppUserSecret)
     - [BanApp](#app.user.manager.v1.BanApp)
     - [BanAppUser](#app.user.manager.v1.BanAppUser)
@@ -43,6 +44,10 @@
     - [DeleteBanAppUserResponse](#app.user.manager.v1.DeleteBanAppUserResponse)
     - [GetAppRequest](#app.user.manager.v1.GetAppRequest)
     - [GetAppResponse](#app.user.manager.v1.GetAppResponse)
+    - [GetAppUserRequest](#app.user.manager.v1.GetAppUserRequest)
+    - [GetAppUserResponse](#app.user.manager.v1.GetAppUserResponse)
+    - [GetAppUsersRequest](#app.user.manager.v1.GetAppUsersRequest)
+    - [GetAppUsersResponse](#app.user.manager.v1.GetAppUsersResponse)
     - [GetAppsByCreatorRequest](#app.user.manager.v1.GetAppsByCreatorRequest)
     - [GetAppsByCreatorResponse](#app.user.manager.v1.GetAppsByCreatorResponse)
     - [GetAppsRequest](#app.user.manager.v1.GetAppsRequest)
@@ -223,6 +228,25 @@
 | Birthday | [uint32](#uint32) |  |  |
 | Avatar | [string](#string) |  |  |
 | Organization | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.AppUserInfo"></a>
+
+### AppUserInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| User | [AppUser](#app.user.manager.v1.AppUser) |  |  |
+| Extra | [AppUserExtra](#app.user.manager.v1.AppUserExtra) |  |  |
+| Ctrl | [AppUserControl](#app.user.manager.v1.AppUserControl) |  |  |
+| Ban | [BanAppUser](#app.user.manager.v1.BanAppUser) |  |  |
+| Roles | [AppRole](#app.user.manager.v1.AppRole) | repeated |  |
 
 
 
@@ -702,6 +726,67 @@
 
 
 
+<a name="app.user.manager.v1.GetAppUserRequest"></a>
+
+### GetAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppUserResponse"></a>
+
+### GetAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppUsersRequest"></a>
+
+### GetAppUsersRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppUsersResponse"></a>
+
+### GetAppUsersResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AppUserInfo](#app.user.manager.v1.AppUserInfo) | repeated |  |
+| Total | [uint32](#uint32) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.GetAppsByCreatorRequest"></a>
 
 ### GetAppsByCreatorRequest
@@ -1012,6 +1097,8 @@
 | UpdateAppRole | [UpdateAppRoleRequest](#app.user.manager.v1.UpdateAppRoleRequest) | [UpdateAppRoleResponse](#app.user.manager.v1.UpdateAppRoleResponse) |  |
 | CreateAppRoleUser | [CreateAppRoleUserRequest](#app.user.manager.v1.CreateAppRoleUserRequest) | [CreateAppRoleUserResponse](#app.user.manager.v1.CreateAppRoleUserResponse) |  |
 | DeleteAppRoleUser | [DeleteAppRoleUserRequest](#app.user.manager.v1.DeleteAppRoleUserRequest) | [DeleteAppRoleUserResponse](#app.user.manager.v1.DeleteAppRoleUserResponse) |  |
+| GetAppUser | [GetAppUserRequest](#app.user.manager.v1.GetAppUserRequest) | [GetAppUserResponse](#app.user.manager.v1.GetAppUserResponse) |  |
+| GetAppUsers | [GetAppUsersRequest](#app.user.manager.v1.GetAppUsersRequest) | [GetAppUsersResponse](#app.user.manager.v1.GetAppUsersResponse) |  |
 
  
 

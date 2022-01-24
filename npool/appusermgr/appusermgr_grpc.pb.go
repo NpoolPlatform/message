@@ -44,6 +44,8 @@ type AppUserManagerClient interface {
 	UpdateAppRole(ctx context.Context, in *UpdateAppRoleRequest, opts ...grpc.CallOption) (*UpdateAppRoleResponse, error)
 	CreateAppRoleUser(ctx context.Context, in *CreateAppRoleUserRequest, opts ...grpc.CallOption) (*CreateAppRoleUserResponse, error)
 	DeleteAppRoleUser(ctx context.Context, in *DeleteAppRoleUserRequest, opts ...grpc.CallOption) (*DeleteAppRoleUserResponse, error)
+	GetAppUser(ctx context.Context, in *GetAppUserRequest, opts ...grpc.CallOption) (*GetAppUserResponse, error)
+	GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error)
 }
 
 type appUserManagerClient struct {
@@ -270,6 +272,24 @@ func (c *appUserManagerClient) DeleteAppRoleUser(ctx context.Context, in *Delete
 	return out, nil
 }
 
+func (c *appUserManagerClient) GetAppUser(ctx context.Context, in *GetAppUserRequest, opts ...grpc.CallOption) (*GetAppUserResponse, error) {
+	out := new(GetAppUserResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error) {
+	out := new(GetAppUsersResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUsers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AppUserManagerServer is the server API for AppUserManager service.
 // All implementations must embed UnimplementedAppUserManagerServer
 // for forward compatibility
@@ -298,6 +318,8 @@ type AppUserManagerServer interface {
 	UpdateAppRole(context.Context, *UpdateAppRoleRequest) (*UpdateAppRoleResponse, error)
 	CreateAppRoleUser(context.Context, *CreateAppRoleUserRequest) (*CreateAppRoleUserResponse, error)
 	DeleteAppRoleUser(context.Context, *DeleteAppRoleUserRequest) (*DeleteAppRoleUserResponse, error)
+	GetAppUser(context.Context, *GetAppUserRequest) (*GetAppUserResponse, error)
+	GetAppUsers(context.Context, *GetAppUsersRequest) (*GetAppUsersResponse, error)
 	mustEmbedUnimplementedAppUserManagerServer()
 }
 
@@ -376,6 +398,12 @@ func (UnimplementedAppUserManagerServer) CreateAppRoleUser(context.Context, *Cre
 }
 func (UnimplementedAppUserManagerServer) DeleteAppRoleUser(context.Context, *DeleteAppRoleUserRequest) (*DeleteAppRoleUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppRoleUser not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppUser(context.Context, *GetAppUserRequest) (*GetAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppUser not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppUsers(context.Context, *GetAppUsersRequest) (*GetAppUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppUsers not implemented")
 }
 func (UnimplementedAppUserManagerServer) mustEmbedUnimplementedAppUserManagerServer() {}
 
@@ -822,6 +850,42 @@ func _AppUserManager_DeleteAppRoleUser_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AppUserManager_GetAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppUser(ctx, req.(*GetAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_GetAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppUsersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppUsers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUsers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppUsers(ctx, req.(*GetAppUsersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AppUserManager_ServiceDesc is the grpc.ServiceDesc for AppUserManager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -924,6 +988,14 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteAppRoleUser",
 			Handler:    _AppUserManager_DeleteAppRoleUser_Handler,
+		},
+		{
+			MethodName: "GetAppUser",
+			Handler:    _AppUserManager_GetAppUser_Handler,
+		},
+		{
+			MethodName: "GetAppUsers",
+			Handler:    _AppUserManager_GetAppUsers_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
