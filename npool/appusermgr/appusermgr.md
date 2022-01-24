@@ -62,6 +62,10 @@
     - [GetAppsByCreatorResponse](#app.user.manager.v1.GetAppsByCreatorResponse)
     - [GetAppsRequest](#app.user.manager.v1.GetAppsRequest)
     - [GetAppsResponse](#app.user.manager.v1.GetAppsResponse)
+    - [GetBanAppByAppRequest](#app.user.manager.v1.GetBanAppByAppRequest)
+    - [GetBanAppByAppResponse](#app.user.manager.v1.GetBanAppByAppResponse)
+    - [GetBanAppRequest](#app.user.manager.v1.GetBanAppRequest)
+    - [GetBanAppResponse](#app.user.manager.v1.GetBanAppResponse)
     - [UpdateAppControlRequest](#app.user.manager.v1.UpdateAppControlRequest)
     - [UpdateAppControlResponse](#app.user.manager.v1.UpdateAppControlResponse)
     - [UpdateAppRequest](#app.user.manager.v1.UpdateAppRequest)
@@ -1007,6 +1011,66 @@
 
 
 
+<a name="app.user.manager.v1.GetBanAppByAppRequest"></a>
+
+### GetBanAppByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetBanAppByAppResponse"></a>
+
+### GetBanAppByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [BanApp](#app.user.manager.v1.BanApp) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetBanAppRequest"></a>
+
+### GetBanAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetBanAppResponse"></a>
+
+### GetBanAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [BanApp](#app.user.manager.v1.BanApp) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.UpdateAppControlRequest"></a>
 
 ### UpdateAppControlRequest
@@ -1241,6 +1305,8 @@
 | GetAppControlByApp | [GetAppControlByAppRequest](#app.user.manager.v1.GetAppControlByAppRequest) | [GetAppControlByAppResponse](#app.user.manager.v1.GetAppControlByAppResponse) |  |
 | UpdateAppControl | [UpdateAppControlRequest](#app.user.manager.v1.UpdateAppControlRequest) | [UpdateAppControlResponse](#app.user.manager.v1.UpdateAppControlResponse) |  |
 | CreateBanApp | [CreateBanAppRequest](#app.user.manager.v1.CreateBanAppRequest) | [CreateBanAppResponse](#app.user.manager.v1.CreateBanAppResponse) |  |
+| GetBanApp | [GetBanAppRequest](#app.user.manager.v1.GetBanAppRequest) | [GetBanAppResponse](#app.user.manager.v1.GetBanAppResponse) |  |
+| GetBanAppByApp | [GetBanAppByAppRequest](#app.user.manager.v1.GetBanAppByAppRequest) | [GetBanAppByAppResponse](#app.user.manager.v1.GetBanAppByAppResponse) |  |
 | DeleteBanApp | [DeleteBanAppRequest](#app.user.manager.v1.DeleteBanAppRequest) | [DeleteBanAppResponse](#app.user.manager.v1.DeleteBanAppResponse) |  |
 | GetAppInfo | [GetAppInfoRequest](#app.user.manager.v1.GetAppInfoRequest) | [GetAppInfoResponse](#app.user.manager.v1.GetAppInfoResponse) |  |
 | GetAppInfos | [GetAppInfosRequest](#app.user.manager.v1.GetAppInfosRequest) | [GetAppInfosResponse](#app.user.manager.v1.GetAppInfosResponse) |  |

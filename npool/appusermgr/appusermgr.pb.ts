@@ -111,6 +111,22 @@ export type CreateBanAppResponse = {
   Info?: BanApp
 }
 
+export type GetBanAppRequest = {
+  ID?: string
+}
+
+export type GetBanAppResponse = {
+  Info?: BanApp
+}
+
+export type GetBanAppByAppRequest = {
+  AppID?: string
+}
+
+export type GetBanAppByAppResponse = {
+  Info?: BanApp
+}
+
 export type DeleteBanAppRequest = {
   ID?: string
 }
@@ -379,6 +395,12 @@ export class AppUserManager {
   }
   static CreateBanApp(req: CreateBanAppRequest, initReq?: fm.InitReq): Promise<CreateBanAppResponse> {
     return fm.fetchReq<CreateBanAppRequest, CreateBanAppResponse>(`/v1/create/ban/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetBanApp(req: GetBanAppRequest, initReq?: fm.InitReq): Promise<GetBanAppResponse> {
+    return fm.fetchReq<GetBanAppRequest, GetBanAppResponse>(`/v1/get/ban/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetBanAppByApp(req: GetBanAppByAppRequest, initReq?: fm.InitReq): Promise<GetBanAppByAppResponse> {
+    return fm.fetchReq<GetBanAppByAppRequest, GetBanAppByAppResponse>(`/v1/get/ban/app/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static DeleteBanApp(req: DeleteBanAppRequest, initReq?: fm.InitReq): Promise<DeleteBanAppResponse> {
     return fm.fetchReq<DeleteBanAppRequest, DeleteBanAppResponse>(`/v1/delete/ban/app`, {...initReq, method: "POST", body: JSON.stringify(req)})

@@ -76,6 +76,18 @@ service AppUserManager {
             body: "*"
         };
     }
+    rpc GetBanApp (GetBanAppRequest) returns (GetBanAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/ban/app"
+            body: "*"
+        };
+    }
+    rpc GetBanAppByApp (GetBanAppByAppRequest) returns (GetBanAppByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/ban/app/by/app"
+            body: "*"
+        };
+    }
     rpc DeleteBanApp (DeleteBanAppRequest) returns (DeleteBanAppResponse) {
         option (google.api.http) = {
             post: "/v1/delete/ban/app"
@@ -306,6 +318,22 @@ message CreateBanAppRequest {
 }
 
 message CreateBanAppResponse {
+    BanApp Info = 10;
+}
+
+message GetBanAppRequest {
+    string ID = 10;
+}
+
+message GetBanAppResponse {
+    BanApp Info = 10;
+}
+
+message GetBanAppByAppRequest {
+    string AppID = 10;
+}
+
+message GetBanAppByAppResponse {
     BanApp Info = 10;
 }
 
