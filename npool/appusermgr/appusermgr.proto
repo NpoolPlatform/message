@@ -126,6 +126,18 @@ service AppUserManager {
             body: "*"
         };
     }
+    rpc GetAppUser (GetAppUserRequest) returns (GetAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/user"
+            body: "*"
+        };
+    }
+    rpc GetAppUsersByApp (GetAppUsersByAppRequest) returns (GetAppUsersByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/users/by/app"
+            body: "*"
+        };
+    }
     rpc UpdateAppUser (UpdateAppUserRequest) returns (UpdateAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/update/app/user"
@@ -208,15 +220,21 @@ service AppUserManager {
         };
     }
 
-    rpc GetAppUser (GetAppUserRequest) returns (GetAppUserResponse) {
+    rpc GetAppUserInfo (GetAppUserInfoRequest) returns (GetAppUserInfoResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/user"
+            post: "/v1/get/app/userinfo"
             body: "*"
         };
     }
-    rpc GetAppUsers (GetAppUsersRequest) returns (GetAppUsersResponse) {
+    rpc GetAppUserInfos (GetAppUserInfosRequest) returns (GetAppUserInfosResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/users"
+            post: "/v1/get/app/userinfos"
+            body: "*"
+        };
+    }
+    rpc GetAppUserInfosByApp (GetAppUserInfosByAppRequest) returns (GetAppUserInfosByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/userinfos/by/app"
             body: "*"
         };
     }
@@ -228,6 +246,7 @@ message App {
     string Name = 30;
     string Logo = 40;
     string Description = 50;
+    uint32 CreateAt = 60;
 }
 
 message CreateAppRequest {
@@ -399,6 +418,7 @@ message AppUser {
     string EmailAddress = 30;
     string PhoneNO = 40;
     string ImportFromApp = 50;
+    uint32 CreateAt = 60;
 }
 
 message CreateAppUserRequest {
@@ -407,6 +427,23 @@ message CreateAppUserRequest {
 
 message CreateAppUserResponse {
     AppUser Info = 10;
+}
+
+message GetAppUserRequest {
+    string ID = 10;
+}
+
+message GetAppUserResponse {
+    AppUser Info = 10;
+}
+
+message GetAppUsersByAppRequest {
+    string AppID = 10;
+    npool.v1.PageInfo PageInfo = 20;
+}
+
+message GetAppUsersByAppResponse {
+    repeated AppUser Infos = 10;
 }
 
 message UpdateAppUserRequest {
@@ -570,19 +607,30 @@ message AppUserInfo {
     repeated AppRole Roles = 50;
 }
 
-message GetAppUserRequest {
+message GetAppUserInfoRequest {
     string ID = 10;
 }
 
-message GetAppUserResponse {
+message GetAppUserInfoResponse {
     AppUserInfo Info = 10;
 }
 
-message GetAppUsersRequest {
+message GetAppUserInfosRequest {
     npool.v1.PageInfo PageInfo = 10;
 }
 
-message GetAppUsersResponse {
+message GetAppUserInfosResponse {
     repeated AppUserInfo Infos = 10;
     uint32 Total = 20;
 }
+
+message GetAppUserInfosByAppRequest {
+    string AppID = 10;
+    npool.v1.PageInfo PageInfo = 20;
+}
+
+message GetAppUserInfosByAppResponse {
+    repeated AppUserInfo Infos = 10;
+    uint32 Total = 20;
+}
+

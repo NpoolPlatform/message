@@ -555,14 +555,14 @@
         ]
       }
     },
-    "/v1/get/app/users": {
+    "/v1/get/app/userinfo": {
       "post": {
-        "operationId": "AppUserManager_GetAppUsers",
+        "operationId": "AppUserManager_GetAppUserInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppUsersResponse"
+              "$ref": "#/definitions/v1GetAppUserInfoResponse"
             }
           },
           "default": {
@@ -578,7 +578,103 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppUsersRequest"
+              "$ref": "#/definitions/v1GetAppUserInfoRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/userinfos": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserInfos",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfosResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfosRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/userinfos/by/app": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserInfosByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfosByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfosByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/users/by/app": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUsersByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUsersByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUsersByAppRequest"
             }
           }
         ],
@@ -1151,6 +1247,10 @@
         },
         "Description": {
           "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -1258,6 +1358,10 @@
         },
         "ImportFromApp": {
           "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -1707,6 +1811,71 @@
         }
       }
     },
+    "v1GetAppUserInfoRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserInfoResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
+        }
+      }
+    },
+    "v1GetAppUserInfosByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppUserInfosByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppUserInfo"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppUserInfosRequest": {
+      "type": "object",
+      "properties": {
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppUserInfosResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppUserInfo"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetAppUserRequest": {
       "type": "object",
       "properties": {
@@ -1719,30 +1888,29 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppUserInfo"
+          "$ref": "#/definitions/v1AppUser"
         }
       }
     },
-    "v1GetAppUsersRequest": {
+    "v1GetAppUsersByAppRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "PageInfo": {
           "$ref": "#/definitions/v1PageInfo"
         }
       }
     },
-    "v1GetAppUsersResponse": {
+    "v1GetAppUsersByAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1AppUserInfo"
+            "$ref": "#/definitions/v1AppUser"
           }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

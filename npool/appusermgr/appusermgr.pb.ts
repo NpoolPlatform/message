@@ -13,6 +13,7 @@ export type App = {
   Name?: string
   Logo?: string
   Description?: string
+  CreateAt?: number
 }
 
 export type CreateAppRequest = {
@@ -183,6 +184,7 @@ export type AppUser = {
   EmailAddress?: string
   PhoneNO?: string
   ImportFromApp?: string
+  CreateAt?: number
 }
 
 export type CreateAppUserRequest = {
@@ -191,6 +193,23 @@ export type CreateAppUserRequest = {
 
 export type CreateAppUserResponse = {
   Info?: AppUser
+}
+
+export type GetAppUserRequest = {
+  ID?: string
+}
+
+export type GetAppUserResponse = {
+  Info?: AppUser
+}
+
+export type GetAppUsersByAppRequest = {
+  AppID?: string
+  PageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetAppUsersByAppResponse = {
+  Infos?: AppUser[]
 }
 
 export type UpdateAppUserRequest = {
@@ -354,19 +373,29 @@ export type AppUserInfo = {
   Roles?: AppRole[]
 }
 
-export type GetAppUserRequest = {
+export type GetAppUserInfoRequest = {
   ID?: string
 }
 
-export type GetAppUserResponse = {
+export type GetAppUserInfoResponse = {
   Info?: AppUserInfo
 }
 
-export type GetAppUsersRequest = {
+export type GetAppUserInfosRequest = {
   PageInfo?: NpoolV1Npool.PageInfo
 }
 
-export type GetAppUsersResponse = {
+export type GetAppUserInfosResponse = {
+  Infos?: AppUserInfo[]
+  Total?: number
+}
+
+export type GetAppUserInfosByAppRequest = {
+  AppID?: string
+  PageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetAppUserInfosByAppResponse = {
   Infos?: AppUserInfo[]
   Total?: number
 }
@@ -429,6 +458,12 @@ export class AppUserManager {
   static CreateAppUser(req: CreateAppUserRequest, initReq?: fm.InitReq): Promise<CreateAppUserResponse> {
     return fm.fetchReq<CreateAppUserRequest, CreateAppUserResponse>(`/v1/create/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetAppUser(req: GetAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserResponse> {
+    return fm.fetchReq<GetAppUserRequest, GetAppUserResponse>(`/v1/get/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUsersByApp(req: GetAppUsersByAppRequest, initReq?: fm.InitReq): Promise<GetAppUsersByAppResponse> {
+    return fm.fetchReq<GetAppUsersByAppRequest, GetAppUsersByAppResponse>(`/v1/get/app/users/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static UpdateAppUser(req: UpdateAppUserRequest, initReq?: fm.InitReq): Promise<UpdateAppUserResponse> {
     return fm.fetchReq<UpdateAppUserRequest, UpdateAppUserResponse>(`/v1/update/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -468,10 +503,13 @@ export class AppUserManager {
   static DeleteAppRoleUser(req: DeleteAppRoleUserRequest, initReq?: fm.InitReq): Promise<DeleteAppRoleUserResponse> {
     return fm.fetchReq<DeleteAppRoleUserRequest, DeleteAppRoleUserResponse>(`/v1/delete/app/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppUser(req: GetAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserResponse> {
-    return fm.fetchReq<GetAppUserRequest, GetAppUserResponse>(`/v1/get/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppUserInfo(req: GetAppUserInfoRequest, initReq?: fm.InitReq): Promise<GetAppUserInfoResponse> {
+    return fm.fetchReq<GetAppUserInfoRequest, GetAppUserInfoResponse>(`/v1/get/app/userinfo`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppUsers(req: GetAppUsersRequest, initReq?: fm.InitReq): Promise<GetAppUsersResponse> {
-    return fm.fetchReq<GetAppUsersRequest, GetAppUsersResponse>(`/v1/get/app/users`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppUserInfos(req: GetAppUserInfosRequest, initReq?: fm.InitReq): Promise<GetAppUserInfosResponse> {
+    return fm.fetchReq<GetAppUserInfosRequest, GetAppUserInfosResponse>(`/v1/get/app/userinfos`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUserInfosByApp(req: GetAppUserInfosByAppRequest, initReq?: fm.InitReq): Promise<GetAppUserInfosByAppResponse> {
+    return fm.fetchReq<GetAppUserInfosByAppRequest, GetAppUserInfosByAppResponse>(`/v1/get/app/userinfos/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
