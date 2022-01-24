@@ -206,6 +206,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
+| ENV | [string](#string) |  | main or test |
 | TransactionID | [string](#string) |  |  |
 | Nonce | [uint64](#uint64) |  | fil Nonce |
 | Unspent | [sphinx.plugin.v1.Unspent](#sphinx.plugin.v1.Unspent) | repeated | btc UTXO |
@@ -213,8 +214,8 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Balance | [double](#double) |  |  |
 | BalanceStr | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  | fil |
-| MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
 | ExitCode | [int64](#int64) |  | -1 find cid state on chain internal server error |
+| MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
 
 
 
