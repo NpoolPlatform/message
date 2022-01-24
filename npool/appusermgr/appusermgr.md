@@ -54,6 +54,10 @@
     - [GetAppInfosResponse](#app.user.manager.v1.GetAppInfosResponse)
     - [GetAppRequest](#app.user.manager.v1.GetAppRequest)
     - [GetAppResponse](#app.user.manager.v1.GetAppResponse)
+    - [GetAppUserExtraByAppUserRequest](#app.user.manager.v1.GetAppUserExtraByAppUserRequest)
+    - [GetAppUserExtraByAppUserResponse](#app.user.manager.v1.GetAppUserExtraByAppUserResponse)
+    - [GetAppUserExtraRequest](#app.user.manager.v1.GetAppUserExtraRequest)
+    - [GetAppUserExtraResponse](#app.user.manager.v1.GetAppUserExtraResponse)
     - [GetAppUserInfoRequest](#app.user.manager.v1.GetAppUserInfoRequest)
     - [GetAppUserInfoResponse](#app.user.manager.v1.GetAppUserInfoResponse)
     - [GetAppUserInfosByAppRequest](#app.user.manager.v1.GetAppUserInfosByAppRequest)
@@ -909,6 +913,67 @@
 
 
 
+<a name="app.user.manager.v1.GetAppUserExtraByAppUserRequest"></a>
+
+### GetAppUserExtraByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppUserExtraByAppUserResponse"></a>
+
+### GetAppUserExtraByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserExtra](#app.user.manager.v1.AppUserExtra) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppUserExtraRequest"></a>
+
+### GetAppUserExtraRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppUserExtraResponse"></a>
+
+### GetAppUserExtraResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserExtra](#app.user.manager.v1.AppUserExtra) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.GetAppUserInfoRequest"></a>
 
 ### GetAppUserInfoRequest
@@ -1521,6 +1586,8 @@
 | GetAppUserSecretByAppUser | [GetAppUserSecretByAppUserRequest](#app.user.manager.v1.GetAppUserSecretByAppUserRequest) | [GetAppUserSecretByAppUserResponse](#app.user.manager.v1.GetAppUserSecretByAppUserResponse) |  |
 | UpdateAppUserSecret | [UpdateAppUserSecretRequest](#app.user.manager.v1.UpdateAppUserSecretRequest) | [UpdateAppUserSecretResponse](#app.user.manager.v1.UpdateAppUserSecretResponse) |  |
 | CreateAppUserExtra | [CreateAppUserExtraRequest](#app.user.manager.v1.CreateAppUserExtraRequest) | [CreateAppUserExtraResponse](#app.user.manager.v1.CreateAppUserExtraResponse) |  |
+| GetAppUserExtra | [GetAppUserExtraRequest](#app.user.manager.v1.GetAppUserExtraRequest) | [GetAppUserExtraResponse](#app.user.manager.v1.GetAppUserExtraResponse) |  |
+| GetAppUserExtraByAppUser | [GetAppUserExtraByAppUserRequest](#app.user.manager.v1.GetAppUserExtraByAppUserRequest) | [GetAppUserExtraByAppUserResponse](#app.user.manager.v1.GetAppUserExtraByAppUserResponse) |  |
 | UpdateAppUserExtra | [UpdateAppUserExtraRequest](#app.user.manager.v1.UpdateAppUserExtraRequest) | [UpdateAppUserExtraResponse](#app.user.manager.v1.UpdateAppUserExtraResponse) |  |
 | CreateBanAppUser | [CreateBanAppUserRequest](#app.user.manager.v1.CreateBanAppUserRequest) | [CreateBanAppUserResponse](#app.user.manager.v1.CreateBanAppUserResponse) |  |
 | DeleteBanAppUser | [DeleteBanAppUserRequest](#app.user.manager.v1.DeleteBanAppUserRequest) | [DeleteBanAppUserResponse](#app.user.manager.v1.DeleteBanAppUserResponse) |  |

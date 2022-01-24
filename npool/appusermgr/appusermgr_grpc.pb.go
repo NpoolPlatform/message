@@ -47,6 +47,8 @@ type AppUserManagerClient interface {
 	GetAppUserSecretByAppUser(ctx context.Context, in *GetAppUserSecretByAppUserRequest, opts ...grpc.CallOption) (*GetAppUserSecretByAppUserResponse, error)
 	UpdateAppUserSecret(ctx context.Context, in *UpdateAppUserSecretRequest, opts ...grpc.CallOption) (*UpdateAppUserSecretResponse, error)
 	CreateAppUserExtra(ctx context.Context, in *CreateAppUserExtraRequest, opts ...grpc.CallOption) (*CreateAppUserExtraResponse, error)
+	GetAppUserExtra(ctx context.Context, in *GetAppUserExtraRequest, opts ...grpc.CallOption) (*GetAppUserExtraResponse, error)
+	GetAppUserExtraByAppUser(ctx context.Context, in *GetAppUserExtraByAppUserRequest, opts ...grpc.CallOption) (*GetAppUserExtraByAppUserResponse, error)
 	UpdateAppUserExtra(ctx context.Context, in *UpdateAppUserExtraRequest, opts ...grpc.CallOption) (*UpdateAppUserExtraResponse, error)
 	CreateBanAppUser(ctx context.Context, in *CreateBanAppUserRequest, opts ...grpc.CallOption) (*CreateBanAppUserResponse, error)
 	DeleteBanAppUser(ctx context.Context, in *DeleteBanAppUserRequest, opts ...grpc.CallOption) (*DeleteBanAppUserResponse, error)
@@ -312,6 +314,24 @@ func (c *appUserManagerClient) CreateAppUserExtra(ctx context.Context, in *Creat
 	return out, nil
 }
 
+func (c *appUserManagerClient) GetAppUserExtra(ctx context.Context, in *GetAppUserExtraRequest, opts ...grpc.CallOption) (*GetAppUserExtraResponse, error) {
+	out := new(GetAppUserExtraResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserExtra", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetAppUserExtraByAppUser(ctx context.Context, in *GetAppUserExtraByAppUserRequest, opts ...grpc.CallOption) (*GetAppUserExtraByAppUserResponse, error) {
+	out := new(GetAppUserExtraByAppUserResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserExtraByAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *appUserManagerClient) UpdateAppUserExtra(ctx context.Context, in *UpdateAppUserExtraRequest, opts ...grpc.CallOption) (*UpdateAppUserExtraResponse, error) {
 	out := new(UpdateAppUserExtraResponse)
 	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/UpdateAppUserExtra", in, out, opts...)
@@ -451,6 +471,8 @@ type AppUserManagerServer interface {
 	GetAppUserSecretByAppUser(context.Context, *GetAppUserSecretByAppUserRequest) (*GetAppUserSecretByAppUserResponse, error)
 	UpdateAppUserSecret(context.Context, *UpdateAppUserSecretRequest) (*UpdateAppUserSecretResponse, error)
 	CreateAppUserExtra(context.Context, *CreateAppUserExtraRequest) (*CreateAppUserExtraResponse, error)
+	GetAppUserExtra(context.Context, *GetAppUserExtraRequest) (*GetAppUserExtraResponse, error)
+	GetAppUserExtraByAppUser(context.Context, *GetAppUserExtraByAppUserRequest) (*GetAppUserExtraByAppUserResponse, error)
 	UpdateAppUserExtra(context.Context, *UpdateAppUserExtraRequest) (*UpdateAppUserExtraResponse, error)
 	CreateBanAppUser(context.Context, *CreateBanAppUserRequest) (*CreateBanAppUserResponse, error)
 	DeleteBanAppUser(context.Context, *DeleteBanAppUserRequest) (*DeleteBanAppUserResponse, error)
@@ -550,6 +572,12 @@ func (UnimplementedAppUserManagerServer) UpdateAppUserSecret(context.Context, *U
 }
 func (UnimplementedAppUserManagerServer) CreateAppUserExtra(context.Context, *CreateAppUserExtraRequest) (*CreateAppUserExtraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserExtra not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppUserExtra(context.Context, *GetAppUserExtraRequest) (*GetAppUserExtraResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserExtra not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppUserExtraByAppUser(context.Context, *GetAppUserExtraByAppUserRequest) (*GetAppUserExtraByAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserExtraByAppUser not implemented")
 }
 func (UnimplementedAppUserManagerServer) UpdateAppUserExtra(context.Context, *UpdateAppUserExtraRequest) (*UpdateAppUserExtraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUserExtra not implemented")
@@ -1086,6 +1114,42 @@ func _AppUserManager_CreateAppUserExtra_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AppUserManager_GetAppUserExtra_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppUserExtraRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppUserExtra(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserExtra",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppUserExtra(ctx, req.(*GetAppUserExtraRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_GetAppUserExtraByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppUserExtraByAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppUserExtraByAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserExtraByAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppUserExtraByAppUser(ctx, req.(*GetAppUserExtraByAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AppUserManager_UpdateAppUserExtra_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppUserExtraRequest)
 	if err := dec(in); err != nil {
@@ -1416,6 +1480,14 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAppUserExtra",
 			Handler:    _AppUserManager_CreateAppUserExtra_Handler,
+		},
+		{
+			MethodName: "GetAppUserExtra",
+			Handler:    _AppUserManager_GetAppUserExtra_Handler,
+		},
+		{
+			MethodName: "GetAppUserExtraByAppUser",
+			Handler:    _AppUserManager_GetAppUserExtraByAppUser_Handler,
 		},
 		{
 			MethodName: "UpdateAppUserExtra",

@@ -284,6 +284,23 @@ export type CreateAppUserExtraResponse = {
   Info?: AppUserExtra
 }
 
+export type GetAppUserExtraRequest = {
+  ID?: string
+}
+
+export type GetAppUserExtraResponse = {
+  Info?: AppUserExtra
+}
+
+export type GetAppUserExtraByAppUserRequest = {
+  AppID?: string
+  UserID?: string
+}
+
+export type GetAppUserExtraByAppUserResponse = {
+  Info?: AppUserExtra
+}
+
 export type UpdateAppUserExtraRequest = {
   Info?: AppUserExtra
 }
@@ -499,6 +516,12 @@ export class AppUserManager {
   }
   static CreateAppUserExtra(req: CreateAppUserExtraRequest, initReq?: fm.InitReq): Promise<CreateAppUserExtraResponse> {
     return fm.fetchReq<CreateAppUserExtraRequest, CreateAppUserExtraResponse>(`/v1/create/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUserExtra(req: GetAppUserExtraRequest, initReq?: fm.InitReq): Promise<GetAppUserExtraResponse> {
+    return fm.fetchReq<GetAppUserExtraRequest, GetAppUserExtraResponse>(`/v1/get/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUserExtraByAppUser(req: GetAppUserExtraByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserExtraByAppUserResponse> {
+    return fm.fetchReq<GetAppUserExtraByAppUserRequest, GetAppUserExtraByAppUserResponse>(`/v1/get/app/user/extra/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateAppUserExtra(req: UpdateAppUserExtraRequest, initReq?: fm.InitReq): Promise<UpdateAppUserExtraResponse> {
     return fm.fetchReq<UpdateAppUserExtraRequest, UpdateAppUserExtraResponse>(`/v1/update/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req)})
