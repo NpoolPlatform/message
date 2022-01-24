@@ -94,6 +94,7 @@ export type GetTransactionResponse = {
 export type ProxyPluginResponse = {
   CoinType?: SphinxPluginV1Sphinxplugin.CoinType
   TransactionType?: TransactionType
+  ENV?: string
   TransactionID?: string
   Nonce?: string
   Unspent?: SphinxPluginV1Sphinxplugin.Unspent[]
@@ -101,8 +102,8 @@ export type ProxyPluginResponse = {
   Balance?: number
   BalanceStr?: string
   Message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
-  MsgTx?: SphinxPluginV1Sphinxplugin.MsgTx
   ExitCode?: string
+  MsgTx?: SphinxPluginV1Sphinxplugin.MsgTx
 }
 
 export type ProxyPluginRequest = {
