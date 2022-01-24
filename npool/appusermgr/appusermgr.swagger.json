@@ -1487,6 +1487,9 @@
         },
         "UserID": {
           "type": "string"
+        },
+        "Message": {
+          "type": "string"
         }
       }
     },

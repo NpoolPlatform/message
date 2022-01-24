@@ -513,6 +513,7 @@ message BanAppUser {
     string ID = 10;
     string AppID = 20;
     string UserID = 30;
+    string Message = 40;
 }
 
 message CreateBanAppUserRequest {

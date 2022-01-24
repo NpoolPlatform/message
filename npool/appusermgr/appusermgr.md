@@ -325,6 +325,7 @@
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
+| Message | [string](#string) |  |  |
 
 
 

@@ -279,6 +279,7 @@ export type BanAppUser = {
   ID?: string
   AppID?: string
   UserID?: string
+  Message?: string
 }
 
 export type CreateBanAppUserRequest = {
