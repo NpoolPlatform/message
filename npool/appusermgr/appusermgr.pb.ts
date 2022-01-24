@@ -245,11 +245,12 @@ export type GetAppUserSecretResponse = {
   Info?: AppUserSecret
 }
 
-export type GetAppUserSecretByAppRequest = {
+export type GetAppUserSecretByAppUserRequest = {
   AppID?: string
+  UserID?: string
 }
 
-export type GetAppUserSecretByAppResponse = {
+export type GetAppUserSecretByAppUserResponse = {
   Info?: AppUserSecret
 }
 
@@ -490,8 +491,8 @@ export class AppUserManager {
   static GetAppUserSecret(req: GetAppUserSecretRequest, initReq?: fm.InitReq): Promise<GetAppUserSecretResponse> {
     return fm.fetchReq<GetAppUserSecretRequest, GetAppUserSecretResponse>(`/v1/get/app/user/secret`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppUserSecretByApp(req: GetAppUserSecretByAppRequest, initReq?: fm.InitReq): Promise<GetAppUserSecretByAppResponse> {
-    return fm.fetchReq<GetAppUserSecretByAppRequest, GetAppUserSecretByAppResponse>(`/v1/get/app/user/secret/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppUserSecretByAppUser(req: GetAppUserSecretByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserSecretByAppUserResponse> {
+    return fm.fetchReq<GetAppUserSecretByAppUserRequest, GetAppUserSecretByAppUserResponse>(`/v1/get/app/user/secret/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateAppUserSecret(req: UpdateAppUserSecretRequest, initReq?: fm.InitReq): Promise<UpdateAppUserSecretResponse> {
     return fm.fetchReq<UpdateAppUserSecretRequest, UpdateAppUserSecretResponse>(`/v1/update/app/user/secret`, {...initReq, method: "POST", body: JSON.stringify(req)})

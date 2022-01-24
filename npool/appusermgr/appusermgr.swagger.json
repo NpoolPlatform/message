@@ -587,14 +587,14 @@
         ]
       }
     },
-    "/v1/get/app/user/secret/by/app": {
+    "/v1/get/app/user/secret/by/app/user": {
       "post": {
-        "operationId": "AppUserManager_GetAppUserSecretByApp",
+        "operationId": "AppUserManager_GetAppUserSecretByAppUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppUserSecretByAppResponse"
+              "$ref": "#/definitions/v1GetAppUserSecretByAppUserResponse"
             }
           },
           "default": {
@@ -610,7 +610,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppUserSecretByAppRequest"
+              "$ref": "#/definitions/v1GetAppUserSecretByAppUserRequest"
             }
           }
         ],
@@ -1959,15 +1959,18 @@
         }
       }
     },
-    "v1GetAppUserSecretByAppRequest": {
+    "v1GetAppUserSecretByAppUserRequest": {
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
+        },
+        "UserID": {
+          "type": "string"
         }
       }
     },
-    "v1GetAppUserSecretByAppResponse": {
+    "v1GetAppUserSecretByAppUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
