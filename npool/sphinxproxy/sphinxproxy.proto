@@ -116,6 +116,7 @@ message ProxyPluginResponse {
   sphinx.plugin.v1.CoinType CoinType        = 100;
   TransactionType TransactionType           = 110;
   string ENV                                = 111; // main or test
+  string Unit                               = 112;
   string TransactionID                      = 120;
   // fil Nonce
   uint64 Nonce                              = 130;

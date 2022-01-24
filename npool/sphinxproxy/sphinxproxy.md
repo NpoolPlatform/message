@@ -207,6 +207,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | ENV | [string](#string) |  | main or test |
+| Unit | [string](#string) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Nonce | [uint64](#uint64) |  | fil Nonce |
 | Unspent | [sphinx.plugin.v1.Unspent](#sphinx.plugin.v1.Unspent) | repeated | btc UTXO |
