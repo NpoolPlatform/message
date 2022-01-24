@@ -33,6 +33,7 @@ type AppUserManagerClient interface {
 	CreateBanApp(ctx context.Context, in *CreateBanAppRequest, opts ...grpc.CallOption) (*CreateBanAppResponse, error)
 	GetBanApp(ctx context.Context, in *GetBanAppRequest, opts ...grpc.CallOption) (*GetBanAppResponse, error)
 	GetBanAppByApp(ctx context.Context, in *GetBanAppByAppRequest, opts ...grpc.CallOption) (*GetBanAppByAppResponse, error)
+	UpdateBanApp(ctx context.Context, in *UpdateBanAppRequest, opts ...grpc.CallOption) (*UpdateBanAppResponse, error)
 	DeleteBanApp(ctx context.Context, in *DeleteBanAppRequest, opts ...grpc.CallOption) (*DeleteBanAppResponse, error)
 	GetAppInfo(ctx context.Context, in *GetAppInfoRequest, opts ...grpc.CallOption) (*GetAppInfoResponse, error)
 	GetAppInfos(ctx context.Context, in *GetAppInfosRequest, opts ...grpc.CallOption) (*GetAppInfosResponse, error)
@@ -174,6 +175,15 @@ func (c *appUserManagerClient) GetBanApp(ctx context.Context, in *GetBanAppReque
 func (c *appUserManagerClient) GetBanAppByApp(ctx context.Context, in *GetBanAppByAppRequest, opts ...grpc.CallOption) (*GetBanAppByAppResponse, error) {
 	out := new(GetBanAppByAppResponse)
 	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetBanAppByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) UpdateBanApp(ctx context.Context, in *UpdateBanAppRequest, opts ...grpc.CallOption) (*UpdateBanAppResponse, error) {
+	out := new(UpdateBanAppResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/UpdateBanApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -377,6 +387,7 @@ type AppUserManagerServer interface {
 	CreateBanApp(context.Context, *CreateBanAppRequest) (*CreateBanAppResponse, error)
 	GetBanApp(context.Context, *GetBanAppRequest) (*GetBanAppResponse, error)
 	GetBanAppByApp(context.Context, *GetBanAppByAppRequest) (*GetBanAppByAppResponse, error)
+	UpdateBanApp(context.Context, *UpdateBanAppRequest) (*UpdateBanAppResponse, error)
 	DeleteBanApp(context.Context, *DeleteBanAppRequest) (*DeleteBanAppResponse, error)
 	GetAppInfo(context.Context, *GetAppInfoRequest) (*GetAppInfoResponse, error)
 	GetAppInfos(context.Context, *GetAppInfosRequest) (*GetAppInfosResponse, error)
@@ -442,6 +453,9 @@ func (UnimplementedAppUserManagerServer) GetBanApp(context.Context, *GetBanAppRe
 }
 func (UnimplementedAppUserManagerServer) GetBanAppByApp(context.Context, *GetBanAppByAppRequest) (*GetBanAppByAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBanAppByApp not implemented")
+}
+func (UnimplementedAppUserManagerServer) UpdateBanApp(context.Context, *UpdateBanAppRequest) (*UpdateBanAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateBanApp not implemented")
 }
 func (UnimplementedAppUserManagerServer) DeleteBanApp(context.Context, *DeleteBanAppRequest) (*DeleteBanAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteBanApp not implemented")
@@ -746,6 +760,24 @@ func _AppUserManager_GetBanAppByApp_Handler(srv interface{}, ctx context.Context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetBanAppByApp(ctx, req.(*GetBanAppByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_UpdateBanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateBanAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).UpdateBanApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/UpdateBanApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).UpdateBanApp(ctx, req.(*UpdateBanAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1168,6 +1200,10 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetBanAppByApp",
 			Handler:    _AppUserManager_GetBanAppByApp_Handler,
+		},
+		{
+			MethodName: "UpdateBanApp",
+			Handler:    _AppUserManager_UpdateBanApp_Handler,
 		},
 		{
 			MethodName: "DeleteBanApp",

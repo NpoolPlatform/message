@@ -80,6 +80,8 @@
     - [UpdateAppUserResponse](#app.user.manager.v1.UpdateAppUserResponse)
     - [UpdateAppUserSecretRequest](#app.user.manager.v1.UpdateAppUserSecretRequest)
     - [UpdateAppUserSecretResponse](#app.user.manager.v1.UpdateAppUserSecretResponse)
+    - [UpdateBanAppRequest](#app.user.manager.v1.UpdateBanAppRequest)
+    - [UpdateBanAppResponse](#app.user.manager.v1.UpdateBanAppResponse)
   
     - [AppUserManager](#app.user.manager.v1.AppUserManager)
   
@@ -1281,6 +1283,36 @@
 
 
 
+
+<a name="app.user.manager.v1.UpdateBanAppRequest"></a>
+
+### UpdateBanAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [BanApp](#app.user.manager.v1.BanApp) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.UpdateBanAppResponse"></a>
+
+### UpdateBanAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [BanApp](#app.user.manager.v1.BanApp) |  |  |
+
+
+
+
+
  
 
  
@@ -1308,6 +1340,7 @@
 | CreateBanApp | [CreateBanAppRequest](#app.user.manager.v1.CreateBanAppRequest) | [CreateBanAppResponse](#app.user.manager.v1.CreateBanAppResponse) |  |
 | GetBanApp | [GetBanAppRequest](#app.user.manager.v1.GetBanAppRequest) | [GetBanAppResponse](#app.user.manager.v1.GetBanAppResponse) |  |
 | GetBanAppByApp | [GetBanAppByAppRequest](#app.user.manager.v1.GetBanAppByAppRequest) | [GetBanAppByAppResponse](#app.user.manager.v1.GetBanAppByAppResponse) |  |
+| UpdateBanApp | [UpdateBanAppRequest](#app.user.manager.v1.UpdateBanAppRequest) | [UpdateBanAppResponse](#app.user.manager.v1.UpdateBanAppResponse) |  |
 | DeleteBanApp | [DeleteBanAppRequest](#app.user.manager.v1.DeleteBanAppRequest) | [DeleteBanAppResponse](#app.user.manager.v1.DeleteBanAppResponse) |  |
 | GetAppInfo | [GetAppInfoRequest](#app.user.manager.v1.GetAppInfoRequest) | [GetAppInfoResponse](#app.user.manager.v1.GetAppInfoResponse) |  |
 | GetAppInfos | [GetAppInfosRequest](#app.user.manager.v1.GetAppInfosRequest) | [GetAppInfosResponse](#app.user.manager.v1.GetAppInfosResponse) |  |

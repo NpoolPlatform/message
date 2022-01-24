@@ -1035,6 +1035,38 @@
         ]
       }
     },
+    "/v1/update/ban/app": {
+      "post": {
+        "operationId": "AppUserManager_UpdateBanApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateBanAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateBanAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "operationId": "AppUserManager_Version",
@@ -1908,6 +1940,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserSecret"
+        }
+      }
+    },
+    "v1UpdateBanAppRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanApp"
+        }
+      }
+    },
+    "v1UpdateBanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanApp"
         }
       }
     },
