@@ -210,6 +210,12 @@ service AppUserManager {
             body: "*"
         };
     }
+    rpc UpdateBanAppUser (UpdateBanAppUserRequest) returns (UpdateBanAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/ban/app/user"
+            body: "*"
+        };
+    }
     rpc DeleteBanAppUser (DeleteBanAppUserRequest) returns (DeleteBanAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/delete/ban/app/user"
@@ -623,8 +629,16 @@ message GetBanAppUserByAppUserResponse {
     BanAppUser Info = 10;
 }
 
-message DeleteBanAppUserRequest {
+message UpdateBanAppUserRequest {
     BanAppUser Info = 10;
+}
+
+message UpdateBanAppUserResponse {
+    BanAppUser Info = 10;
+}
+
+message DeleteBanAppUserRequest {
+    string ID = 10;
 }
 
 message DeleteBanAppUserResponse {
@@ -711,7 +725,7 @@ message CreateAppRoleUserResponse {
 }
 
 message DeleteAppRoleUserRequest {
-    AppRoleUser Info = 10;
+    string ID = 10;
 }
 
 message DeleteAppRoleUserResponse {

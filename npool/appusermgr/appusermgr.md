@@ -104,6 +104,8 @@
     - [UpdateAppUserSecretResponse](#app.user.manager.v1.UpdateAppUserSecretResponse)
     - [UpdateBanAppRequest](#app.user.manager.v1.UpdateBanAppRequest)
     - [UpdateBanAppResponse](#app.user.manager.v1.UpdateBanAppResponse)
+    - [UpdateBanAppUserRequest](#app.user.manager.v1.UpdateBanAppUserRequest)
+    - [UpdateBanAppUserResponse](#app.user.manager.v1.UpdateBanAppUserResponse)
   
     - [AppUserManager](#app.user.manager.v1.AppUserManager)
   
@@ -658,7 +660,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppRoleUser](#app.user.manager.v1.AppRoleUser) |  |  |
+| ID | [string](#string) |  |  |
 
 
 
@@ -718,7 +720,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [BanAppUser](#app.user.manager.v1.BanAppUser) |  |  |
+| ID | [string](#string) |  |  |
 
 
 
@@ -1677,6 +1679,36 @@
 
 
 
+
+<a name="app.user.manager.v1.UpdateBanAppUserRequest"></a>
+
+### UpdateBanAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [BanAppUser](#app.user.manager.v1.BanAppUser) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.UpdateBanAppUserResponse"></a>
+
+### UpdateBanAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [BanAppUser](#app.user.manager.v1.BanAppUser) |  |  |
+
+
+
+
+
  
 
  
@@ -1724,6 +1756,7 @@
 | CreateBanAppUser | [CreateBanAppUserRequest](#app.user.manager.v1.CreateBanAppUserRequest) | [CreateBanAppUserResponse](#app.user.manager.v1.CreateBanAppUserResponse) |  |
 | GetBanAppUser | [GetBanAppUserRequest](#app.user.manager.v1.GetBanAppUserRequest) | [GetBanAppUserResponse](#app.user.manager.v1.GetBanAppUserResponse) |  |
 | GetBanAppUserByAppUser | [GetBanAppUserByAppUserRequest](#app.user.manager.v1.GetBanAppUserByAppUserRequest) | [GetBanAppUserByAppUserResponse](#app.user.manager.v1.GetBanAppUserByAppUserResponse) |  |
+| UpdateBanAppUser | [UpdateBanAppUserRequest](#app.user.manager.v1.UpdateBanAppUserRequest) | [UpdateBanAppUserResponse](#app.user.manager.v1.UpdateBanAppUserResponse) |  |
 | DeleteBanAppUser | [DeleteBanAppUserRequest](#app.user.manager.v1.DeleteBanAppUserRequest) | [DeleteBanAppUserResponse](#app.user.manager.v1.DeleteBanAppUserResponse) |  |
 | CreateAppUserControl | [CreateAppUserControlRequest](#app.user.manager.v1.CreateAppUserControlRequest) | [CreateAppUserControlResponse](#app.user.manager.v1.CreateAppUserControlResponse) |  |
 | GetAppUserControl | [GetAppUserControlRequest](#app.user.manager.v1.GetAppUserControlRequest) | [GetAppUserControlResponse](#app.user.manager.v1.GetAppUserControlResponse) |  |

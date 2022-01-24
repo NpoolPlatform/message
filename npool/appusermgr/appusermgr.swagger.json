@@ -1419,6 +1419,38 @@
         ]
       }
     },
+    "/v1/update/ban/app/user": {
+      "post": {
+        "operationId": "AppUserManager_UpdateBanAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateBanAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateBanAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "operationId": "AppUserManager_Version",
@@ -1918,8 +1950,8 @@
     "v1DeleteAppRoleUserRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppRoleUser"
+        "ID": {
+          "type": "string"
         }
       }
     },
@@ -1950,8 +1982,8 @@
     "v1DeleteBanAppUserRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1BanAppUser"
+        "ID": {
+          "type": "string"
         }
       }
     },
@@ -2529,6 +2561,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1BanApp"
+        }
+      }
+    },
+    "v1UpdateBanAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanAppUser"
+        }
+      }
+    },
+    "v1UpdateBanAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanAppUser"
         }
       }
     },

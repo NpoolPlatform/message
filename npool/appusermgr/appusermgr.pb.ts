@@ -341,8 +341,16 @@ export type GetBanAppUserByAppUserResponse = {
   Info?: BanAppUser
 }
 
-export type DeleteBanAppUserRequest = {
+export type UpdateBanAppUserRequest = {
   Info?: BanAppUser
+}
+
+export type UpdateBanAppUserResponse = {
+  Info?: BanAppUser
+}
+
+export type DeleteBanAppUserRequest = {
+  ID?: string
 }
 
 export type DeleteBanAppUserResponse = {
@@ -429,7 +437,7 @@ export type CreateAppRoleUserResponse = {
 }
 
 export type DeleteAppRoleUserRequest = {
-  Info?: AppRoleUser
+  ID?: string
 }
 
 export type DeleteAppRoleUserResponse = {
@@ -570,6 +578,9 @@ export class AppUserManager {
   }
   static GetBanAppUserByAppUser(req: GetBanAppUserByAppUserRequest, initReq?: fm.InitReq): Promise<GetBanAppUserByAppUserResponse> {
     return fm.fetchReq<GetBanAppUserByAppUserRequest, GetBanAppUserByAppUserResponse>(`/v1/get/ban/app/user/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateBanAppUser(req: UpdateBanAppUserRequest, initReq?: fm.InitReq): Promise<UpdateBanAppUserResponse> {
+    return fm.fetchReq<UpdateBanAppUserRequest, UpdateBanAppUserResponse>(`/v1/update/ban/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static DeleteBanAppUser(req: DeleteBanAppUserRequest, initReq?: fm.InitReq): Promise<DeleteBanAppUserResponse> {
     return fm.fetchReq<DeleteBanAppUserRequest, DeleteBanAppUserResponse>(`/v1/delete/ban/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
