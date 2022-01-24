@@ -523,6 +523,102 @@
         ]
       }
     },
+    "/v1/get/appinfo": {
+      "post": {
+        "operationId": "AppUserManager_GetAppInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppInfoRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/appinfos": {
+      "post": {
+        "operationId": "AppUserManager_GetAppInfos",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppInfosResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppInfosRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/appinfos/by/creator": {
+      "post": {
+        "operationId": "AppUserManager_GetAppInfosByCreator",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppInfosByCreatorResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppInfosByCreatorRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/get/apps": {
       "post": {
         "operationId": "AppUserManager_GetApps",
@@ -1335,6 +1431,71 @@
         }
       }
     },
+    "v1GetAppInfoRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppInfoResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppInfo"
+        }
+      }
+    },
+    "v1GetAppInfosByCreatorRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppInfosByCreatorResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppInfo"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppInfosRequest": {
+      "type": "object",
+      "properties": {
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppInfosResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppInfo"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetAppRequest": {
       "type": "object",
       "properties": {
@@ -1347,7 +1508,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppInfo"
+          "$ref": "#/definitions/v1App"
         }
       }
     },
@@ -1407,7 +1568,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1AppInfo"
+            "$ref": "#/definitions/v1App"
           }
         },
         "Total": {
@@ -1417,12 +1578,7 @@
       }
     },
     "v1GetAppsRequest": {
-      "type": "object",
-      "properties": {
-        "PageInfo": {
-          "$ref": "#/definitions/v1PageInfo"
-        }
-      }
+      "type": "object"
     },
     "v1GetAppsResponse": {
       "type": "object",
@@ -1430,12 +1586,8 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1AppInfo"
+            "$ref": "#/definitions/v1App"
           }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

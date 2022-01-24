@@ -22,14 +22,17 @@ const _ = grpc.SupportPackageIsVersion7
 type AppUserManagerClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error)
+	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
+	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
+	GetAppsByCreator(ctx context.Context, in *GetAppsByCreatorRequest, opts ...grpc.CallOption) (*GetAppsByCreatorResponse, error)
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	CreateAppControl(ctx context.Context, in *CreateAppControlRequest, opts ...grpc.CallOption) (*CreateAppControlResponse, error)
 	UpdateAppControl(ctx context.Context, in *UpdateAppControlRequest, opts ...grpc.CallOption) (*UpdateAppControlResponse, error)
 	CreateBanApp(ctx context.Context, in *CreateBanAppRequest, opts ...grpc.CallOption) (*CreateBanAppResponse, error)
 	DeleteBanApp(ctx context.Context, in *DeleteBanAppRequest, opts ...grpc.CallOption) (*DeleteBanAppResponse, error)
-	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
-	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
-	GetAppsByCreator(ctx context.Context, in *GetAppsByCreatorRequest, opts ...grpc.CallOption) (*GetAppsByCreatorResponse, error)
+	GetAppInfo(ctx context.Context, in *GetAppInfoRequest, opts ...grpc.CallOption) (*GetAppInfoResponse, error)
+	GetAppInfos(ctx context.Context, in *GetAppInfosRequest, opts ...grpc.CallOption) (*GetAppInfosResponse, error)
+	GetAppInfosByCreator(ctx context.Context, in *GetAppInfosByCreatorRequest, opts ...grpc.CallOption) (*GetAppInfosByCreatorResponse, error)
 	CreateAppUser(ctx context.Context, in *CreateAppUserRequest, opts ...grpc.CallOption) (*CreateAppUserResponse, error)
 	UpdateAppUser(ctx context.Context, in *UpdateAppUserRequest, opts ...grpc.CallOption) (*UpdateAppUserResponse, error)
 	CreateAppUserSecret(ctx context.Context, in *CreateAppUserSecretRequest, opts ...grpc.CallOption) (*CreateAppUserSecretResponse, error)
@@ -68,6 +71,33 @@ func (c *appUserManagerClient) Version(ctx context.Context, in *emptypb.Empty, o
 func (c *appUserManagerClient) CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error) {
 	out := new(CreateAppResponse)
 	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error) {
+	out := new(GetAppResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error) {
+	out := new(GetAppsResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetApps", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetAppsByCreator(ctx context.Context, in *GetAppsByCreatorRequest, opts ...grpc.CallOption) (*GetAppsByCreatorResponse, error) {
+	out := new(GetAppsByCreatorResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppsByCreator", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -119,27 +149,27 @@ func (c *appUserManagerClient) DeleteBanApp(ctx context.Context, in *DeleteBanAp
 	return out, nil
 }
 
-func (c *appUserManagerClient) GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error) {
-	out := new(GetAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetApp", in, out, opts...)
+func (c *appUserManagerClient) GetAppInfo(ctx context.Context, in *GetAppInfoRequest, opts ...grpc.CallOption) (*GetAppInfoResponse, error) {
+	out := new(GetAppInfoResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserManagerClient) GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error) {
-	out := new(GetAppsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetApps", in, out, opts...)
+func (c *appUserManagerClient) GetAppInfos(ctx context.Context, in *GetAppInfosRequest, opts ...grpc.CallOption) (*GetAppInfosResponse, error) {
+	out := new(GetAppInfosResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppInfos", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserManagerClient) GetAppsByCreator(ctx context.Context, in *GetAppsByCreatorRequest, opts ...grpc.CallOption) (*GetAppsByCreatorResponse, error) {
-	out := new(GetAppsByCreatorResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppsByCreator", in, out, opts...)
+func (c *appUserManagerClient) GetAppInfosByCreator(ctx context.Context, in *GetAppInfosByCreatorRequest, opts ...grpc.CallOption) (*GetAppInfosByCreatorResponse, error) {
+	out := new(GetAppInfosByCreatorResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppInfosByCreator", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -296,14 +326,17 @@ func (c *appUserManagerClient) GetAppUsers(ctx context.Context, in *GetAppUsersR
 type AppUserManagerServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error)
+	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
+	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
+	GetAppsByCreator(context.Context, *GetAppsByCreatorRequest) (*GetAppsByCreatorResponse, error)
 	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
 	CreateAppControl(context.Context, *CreateAppControlRequest) (*CreateAppControlResponse, error)
 	UpdateAppControl(context.Context, *UpdateAppControlRequest) (*UpdateAppControlResponse, error)
 	CreateBanApp(context.Context, *CreateBanAppRequest) (*CreateBanAppResponse, error)
 	DeleteBanApp(context.Context, *DeleteBanAppRequest) (*DeleteBanAppResponse, error)
-	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
-	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
-	GetAppsByCreator(context.Context, *GetAppsByCreatorRequest) (*GetAppsByCreatorResponse, error)
+	GetAppInfo(context.Context, *GetAppInfoRequest) (*GetAppInfoResponse, error)
+	GetAppInfos(context.Context, *GetAppInfosRequest) (*GetAppInfosResponse, error)
+	GetAppInfosByCreator(context.Context, *GetAppInfosByCreatorRequest) (*GetAppInfosByCreatorResponse, error)
 	CreateAppUser(context.Context, *CreateAppUserRequest) (*CreateAppUserResponse, error)
 	UpdateAppUser(context.Context, *UpdateAppUserRequest) (*UpdateAppUserResponse, error)
 	CreateAppUserSecret(context.Context, *CreateAppUserSecretRequest) (*CreateAppUserSecretResponse, error)
@@ -333,6 +366,15 @@ func (UnimplementedAppUserManagerServer) Version(context.Context, *emptypb.Empty
 func (UnimplementedAppUserManagerServer) CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateApp not implemented")
 }
+func (UnimplementedAppUserManagerServer) GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetApp not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetApps not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppsByCreator(context.Context, *GetAppsByCreatorRequest) (*GetAppsByCreatorResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppsByCreator not implemented")
+}
 func (UnimplementedAppUserManagerServer) UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateApp not implemented")
 }
@@ -348,14 +390,14 @@ func (UnimplementedAppUserManagerServer) CreateBanApp(context.Context, *CreateBa
 func (UnimplementedAppUserManagerServer) DeleteBanApp(context.Context, *DeleteBanAppRequest) (*DeleteBanAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteBanApp not implemented")
 }
-func (UnimplementedAppUserManagerServer) GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetApp not implemented")
+func (UnimplementedAppUserManagerServer) GetAppInfo(context.Context, *GetAppInfoRequest) (*GetAppInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppInfo not implemented")
 }
-func (UnimplementedAppUserManagerServer) GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetApps not implemented")
+func (UnimplementedAppUserManagerServer) GetAppInfos(context.Context, *GetAppInfosRequest) (*GetAppInfosResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppInfos not implemented")
 }
-func (UnimplementedAppUserManagerServer) GetAppsByCreator(context.Context, *GetAppsByCreatorRequest) (*GetAppsByCreatorResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppsByCreator not implemented")
+func (UnimplementedAppUserManagerServer) GetAppInfosByCreator(context.Context, *GetAppInfosByCreatorRequest) (*GetAppInfosByCreatorResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppInfosByCreator not implemented")
 }
 func (UnimplementedAppUserManagerServer) CreateAppUser(context.Context, *CreateAppUserRequest) (*CreateAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUser not implemented")
@@ -454,6 +496,60 @@ func _AppUserManager_CreateApp_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AppUserManager_GetApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetApp(ctx, req.(*GetAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_GetApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetApps(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetApps",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetApps(ctx, req.(*GetAppsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_GetAppsByCreator_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppsByCreatorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppsByCreator(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppsByCreator",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppsByCreator(ctx, req.(*GetAppsByCreatorRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AppUserManager_UpdateApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppRequest)
 	if err := dec(in); err != nil {
@@ -544,56 +640,56 @@ func _AppUserManager_DeleteBanApp_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserManager_GetApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppRequest)
+func _AppUserManager_GetAppInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppInfoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerServer).GetApp(ctx, in)
+		return srv.(AppUserManagerServer).GetAppInfo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetApp",
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppInfo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerServer).GetApp(ctx, req.(*GetAppRequest))
+		return srv.(AppUserManagerServer).GetAppInfo(ctx, req.(*GetAppInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserManager_GetApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppsRequest)
+func _AppUserManager_GetAppInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppInfosRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerServer).GetApps(ctx, in)
+		return srv.(AppUserManagerServer).GetAppInfos(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetApps",
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppInfos",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerServer).GetApps(ctx, req.(*GetAppsRequest))
+		return srv.(AppUserManagerServer).GetAppInfos(ctx, req.(*GetAppInfosRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserManager_GetAppsByCreator_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppsByCreatorRequest)
+func _AppUserManager_GetAppInfosByCreator_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppInfosByCreatorRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerServer).GetAppsByCreator(ctx, in)
+		return srv.(AppUserManagerServer).GetAppInfosByCreator(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppsByCreator",
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppInfosByCreator",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerServer).GetAppsByCreator(ctx, req.(*GetAppsByCreatorRequest))
+		return srv.(AppUserManagerServer).GetAppInfosByCreator(ctx, req.(*GetAppInfosByCreatorRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -902,6 +998,18 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AppUserManager_CreateApp_Handler,
 		},
 		{
+			MethodName: "GetApp",
+			Handler:    _AppUserManager_GetApp_Handler,
+		},
+		{
+			MethodName: "GetApps",
+			Handler:    _AppUserManager_GetApps_Handler,
+		},
+		{
+			MethodName: "GetAppsByCreator",
+			Handler:    _AppUserManager_GetAppsByCreator_Handler,
+		},
+		{
 			MethodName: "UpdateApp",
 			Handler:    _AppUserManager_UpdateApp_Handler,
 		},
@@ -922,16 +1030,16 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AppUserManager_DeleteBanApp_Handler,
 		},
 		{
-			MethodName: "GetApp",
-			Handler:    _AppUserManager_GetApp_Handler,
+			MethodName: "GetAppInfo",
+			Handler:    _AppUserManager_GetAppInfo_Handler,
 		},
 		{
-			MethodName: "GetApps",
-			Handler:    _AppUserManager_GetApps_Handler,
+			MethodName: "GetAppInfos",
+			Handler:    _AppUserManager_GetAppInfos_Handler,
 		},
 		{
-			MethodName: "GetAppsByCreator",
-			Handler:    _AppUserManager_GetAppsByCreator_Handler,
+			MethodName: "GetAppInfosByCreator",
+			Handler:    _AppUserManager_GetAppInfosByCreator_Handler,
 		},
 		{
 			MethodName: "CreateAppUser",

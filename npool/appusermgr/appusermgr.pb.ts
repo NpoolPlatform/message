@@ -23,6 +23,31 @@ export type CreateAppResponse = {
   Info?: App
 }
 
+export type GetAppRequest = {
+  ID?: string
+}
+
+export type GetAppResponse = {
+  Info?: App
+}
+
+export type GetAppsRequest = {
+}
+
+export type GetAppsResponse = {
+  Infos?: App[]
+}
+
+export type GetAppsByCreatorRequest = {
+  UserID?: string
+  PageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetAppsByCreatorResponse = {
+  Infos?: App[]
+  Total?: number
+}
+
 export type UpdateAppRequest = {
   Info?: App
 }
@@ -84,29 +109,29 @@ export type AppInfo = {
   Ban?: BanApp
 }
 
-export type GetAppRequest = {
+export type GetAppInfoRequest = {
   ID?: string
 }
 
-export type GetAppResponse = {
+export type GetAppInfoResponse = {
   Info?: AppInfo
 }
 
-export type GetAppsRequest = {
+export type GetAppInfosRequest = {
   PageInfo?: NpoolV1Npool.PageInfo
 }
 
-export type GetAppsResponse = {
+export type GetAppInfosResponse = {
   Infos?: AppInfo[]
   Total?: number
 }
 
-export type GetAppsByCreatorRequest = {
+export type GetAppInfosByCreatorRequest = {
   UserID?: string
   PageInfo?: NpoolV1Npool.PageInfo
 }
 
-export type GetAppsByCreatorResponse = {
+export type GetAppInfosByCreatorResponse = {
   Infos?: AppInfo[]
   Total?: number
 }
@@ -312,6 +337,15 @@ export class AppUserManager {
   static CreateApp(req: CreateAppRequest, initReq?: fm.InitReq): Promise<CreateAppResponse> {
     return fm.fetchReq<CreateAppRequest, CreateAppResponse>(`/v1/create/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetApp(req: GetAppRequest, initReq?: fm.InitReq): Promise<GetAppResponse> {
+    return fm.fetchReq<GetAppRequest, GetAppResponse>(`/v1/get/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetApps(req: GetAppsRequest, initReq?: fm.InitReq): Promise<GetAppsResponse> {
+    return fm.fetchReq<GetAppsRequest, GetAppsResponse>(`/v1/get/apps`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppsByCreator(req: GetAppsByCreatorRequest, initReq?: fm.InitReq): Promise<GetAppsByCreatorResponse> {
+    return fm.fetchReq<GetAppsByCreatorRequest, GetAppsByCreatorResponse>(`/v1/get/apps/by/creator`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static UpdateApp(req: UpdateAppRequest, initReq?: fm.InitReq): Promise<UpdateAppResponse> {
     return fm.fetchReq<UpdateAppRequest, UpdateAppResponse>(`/v1/update/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -327,14 +361,14 @@ export class AppUserManager {
   static DeleteBanApp(req: DeleteBanAppRequest, initReq?: fm.InitReq): Promise<DeleteBanAppResponse> {
     return fm.fetchReq<DeleteBanAppRequest, DeleteBanAppResponse>(`/v1/delete/ban/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetApp(req: GetAppRequest, initReq?: fm.InitReq): Promise<GetAppResponse> {
-    return fm.fetchReq<GetAppRequest, GetAppResponse>(`/v1/get/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppInfo(req: GetAppInfoRequest, initReq?: fm.InitReq): Promise<GetAppInfoResponse> {
+    return fm.fetchReq<GetAppInfoRequest, GetAppInfoResponse>(`/v1/get/appinfo`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetApps(req: GetAppsRequest, initReq?: fm.InitReq): Promise<GetAppsResponse> {
-    return fm.fetchReq<GetAppsRequest, GetAppsResponse>(`/v1/get/apps`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppInfos(req: GetAppInfosRequest, initReq?: fm.InitReq): Promise<GetAppInfosResponse> {
+    return fm.fetchReq<GetAppInfosRequest, GetAppInfosResponse>(`/v1/get/appinfos`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppsByCreator(req: GetAppsByCreatorRequest, initReq?: fm.InitReq): Promise<GetAppsByCreatorResponse> {
-    return fm.fetchReq<GetAppsByCreatorRequest, GetAppsByCreatorResponse>(`/v1/get/apps/by/creator`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppInfosByCreator(req: GetAppInfosByCreatorRequest, initReq?: fm.InitReq): Promise<GetAppInfosByCreatorResponse> {
+    return fm.fetchReq<GetAppInfosByCreatorRequest, GetAppInfosByCreatorResponse>(`/v1/get/appinfos/by/creator`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateAppUser(req: CreateAppUserRequest, initReq?: fm.InitReq): Promise<CreateAppUserResponse> {
     return fm.fetchReq<CreateAppUserRequest, CreateAppUserResponse>(`/v1/create/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
