@@ -50,9 +50,10 @@ message CoinInfo {
 	string  Name 			      = 120; // 币种名称 FIL, BTC
 	string  Unit 			      = 130; // 单位：FIL
 	string  Logo				    = 140; // url; can be empty
-	double  ReservedAmount  = 150; // 预留金额
-	uint32  CreatedAt 		  = 160;
-	uint32  UpdatedAt 		  = 170;
+  string  ENV             = 150; // main or test
+	double  ReservedAmount  = 160; // 预留金额
+	uint32  CreatedAt 		  = 170;
+	uint32  UpdatedAt 		  = 180;
 }
 
 message GetCoinInfoRequest {
@@ -69,6 +70,7 @@ message CreateCoinInfoRequest {
 	string  Name 	  = 110; // 币种名称 FIL, BTC
 	string  Unit 	  = 120; // 单位：FIL
 	string  Logo		= 130; // url; can be empty
+  string  ENV     = 140; // main or test
 }
 
 message CreateCoinInfoResponse {

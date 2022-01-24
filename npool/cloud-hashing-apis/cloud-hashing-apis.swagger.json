@@ -673,7 +673,7 @@
       "type": "object",
       "properties": {
         "PageInfo": {
-          "$ref": "#/definitions/npoolv1PageInfo"
+          "$ref": "#/definitions/v1PageInfo"
         }
       }
     },
@@ -874,19 +874,6 @@
         }
       }
     },
-    "npoolv1PageInfo": {
-      "type": "object",
-      "properties": {
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "npoolv1VersionResponse": {
       "type": "object",
       "properties": {
@@ -973,6 +960,9 @@
           "type": "string"
         },
         "Logo": {
+          "type": "string"
+        },
+        "ENV": {
           "type": "string"
         },
         "ReservedAmount": {
@@ -1769,6 +1759,19 @@
         }
       }
     },
+    "v1PageInfo": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
     "v1Payment": {
       "type": "object",
       "properties": {
@@ -1986,7 +1989,8 @@
         "PostalCode": {
           "type": "string"
         }
-      }
+      },
+      "title": "request body and response"
     },
     "v1UserSpecialReduction": {
       "type": "object",

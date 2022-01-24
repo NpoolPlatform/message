@@ -16,6 +16,7 @@ export type CoinInfo = {
   Name?: string
   Unit?: string
   Logo?: string
+  ENV?: string
   ReservedAmount?: number
   CreatedAt?: number
   UpdatedAt?: number
@@ -35,6 +36,7 @@ export type CreateCoinInfoRequest = {
   Name?: string
   Unit?: string
   Logo?: string
+  ENV?: string
 }
 
 export type CreateCoinInfoResponse = {

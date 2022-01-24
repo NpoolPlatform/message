@@ -3213,11 +3213,11 @@
     "v1PageInfo": {
       "type": "object",
       "properties": {
-        "PageIndex": {
+        "Offset": {
           "type": "integer",
           "format": "int32"
         },
-        "PageSize": {
+        "Limit": {
           "type": "integer",
           "format": "int32"
         }
