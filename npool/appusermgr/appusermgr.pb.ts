@@ -74,6 +74,22 @@ export type CreateAppControlResponse = {
   Info?: AppControl
 }
 
+export type GetAppControlRequest = {
+  ID?: string
+}
+
+export type GetAppControlResponse = {
+  Info?: AppControl
+}
+
+export type GetAppControlByAppRequest = {
+  AppID?: string
+}
+
+export type GetAppControlByAppResponse = {
+  Info?: AppControl
+}
+
 export type UpdateAppControlRequest = {
   Info?: AppControl
 }
@@ -351,6 +367,12 @@ export class AppUserManager {
   }
   static CreateAppControl(req: CreateAppControlRequest, initReq?: fm.InitReq): Promise<CreateAppControlResponse> {
     return fm.fetchReq<CreateAppControlRequest, CreateAppControlResponse>(`/v1/create/app/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppControl(req: GetAppControlRequest, initReq?: fm.InitReq): Promise<GetAppControlResponse> {
+    return fm.fetchReq<GetAppControlRequest, GetAppControlResponse>(`/v1/get/app/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppControlByApp(req: GetAppControlByAppRequest, initReq?: fm.InitReq): Promise<GetAppControlByAppResponse> {
+    return fm.fetchReq<GetAppControlByAppRequest, GetAppControlByAppResponse>(`/v1/get/app/control/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateAppControl(req: UpdateAppControlRequest, initReq?: fm.InitReq): Promise<UpdateAppControlResponse> {
     return fm.fetchReq<UpdateAppControlRequest, UpdateAppControlResponse>(`/v1/update/app/control`, {...initReq, method: "POST", body: JSON.stringify(req)})

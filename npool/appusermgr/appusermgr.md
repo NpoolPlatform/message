@@ -42,6 +42,10 @@
     - [DeleteBanAppResponse](#app.user.manager.v1.DeleteBanAppResponse)
     - [DeleteBanAppUserRequest](#app.user.manager.v1.DeleteBanAppUserRequest)
     - [DeleteBanAppUserResponse](#app.user.manager.v1.DeleteBanAppUserResponse)
+    - [GetAppControlByAppRequest](#app.user.manager.v1.GetAppControlByAppRequest)
+    - [GetAppControlByAppResponse](#app.user.manager.v1.GetAppControlByAppResponse)
+    - [GetAppControlRequest](#app.user.manager.v1.GetAppControlRequest)
+    - [GetAppControlResponse](#app.user.manager.v1.GetAppControlResponse)
     - [GetAppInfoRequest](#app.user.manager.v1.GetAppInfoRequest)
     - [GetAppInfoResponse](#app.user.manager.v1.GetAppInfoResponse)
     - [GetAppInfosByCreatorRequest](#app.user.manager.v1.GetAppInfosByCreatorRequest)
@@ -702,6 +706,66 @@
 
 
 
+<a name="app.user.manager.v1.GetAppControlByAppRequest"></a>
+
+### GetAppControlByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppControlByAppResponse"></a>
+
+### GetAppControlByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppControl](#app.user.manager.v1.AppControl) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppControlRequest"></a>
+
+### GetAppControlRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppControlResponse"></a>
+
+### GetAppControlResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppControl](#app.user.manager.v1.AppControl) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.GetAppInfoRequest"></a>
 
 ### GetAppInfoRequest
@@ -1173,6 +1237,8 @@
 | GetAppsByCreator | [GetAppsByCreatorRequest](#app.user.manager.v1.GetAppsByCreatorRequest) | [GetAppsByCreatorResponse](#app.user.manager.v1.GetAppsByCreatorResponse) |  |
 | UpdateApp | [UpdateAppRequest](#app.user.manager.v1.UpdateAppRequest) | [UpdateAppResponse](#app.user.manager.v1.UpdateAppResponse) |  |
 | CreateAppControl | [CreateAppControlRequest](#app.user.manager.v1.CreateAppControlRequest) | [CreateAppControlResponse](#app.user.manager.v1.CreateAppControlResponse) |  |
+| GetAppControl | [GetAppControlRequest](#app.user.manager.v1.GetAppControlRequest) | [GetAppControlResponse](#app.user.manager.v1.GetAppControlResponse) |  |
+| GetAppControlByApp | [GetAppControlByAppRequest](#app.user.manager.v1.GetAppControlByAppRequest) | [GetAppControlByAppResponse](#app.user.manager.v1.GetAppControlByAppResponse) |  |
 | UpdateAppControl | [UpdateAppControlRequest](#app.user.manager.v1.UpdateAppControlRequest) | [UpdateAppControlResponse](#app.user.manager.v1.UpdateAppControlResponse) |  |
 | CreateBanApp | [CreateBanAppRequest](#app.user.manager.v1.CreateBanAppRequest) | [CreateBanAppResponse](#app.user.manager.v1.CreateBanAppResponse) |  |
 | DeleteBanApp | [DeleteBanAppRequest](#app.user.manager.v1.DeleteBanAppRequest) | [DeleteBanAppResponse](#app.user.manager.v1.DeleteBanAppResponse) |  |

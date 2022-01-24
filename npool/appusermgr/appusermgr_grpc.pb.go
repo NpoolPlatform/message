@@ -27,6 +27,8 @@ type AppUserManagerClient interface {
 	GetAppsByCreator(ctx context.Context, in *GetAppsByCreatorRequest, opts ...grpc.CallOption) (*GetAppsByCreatorResponse, error)
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	CreateAppControl(ctx context.Context, in *CreateAppControlRequest, opts ...grpc.CallOption) (*CreateAppControlResponse, error)
+	GetAppControl(ctx context.Context, in *GetAppControlRequest, opts ...grpc.CallOption) (*GetAppControlResponse, error)
+	GetAppControlByApp(ctx context.Context, in *GetAppControlByAppRequest, opts ...grpc.CallOption) (*GetAppControlByAppResponse, error)
 	UpdateAppControl(ctx context.Context, in *UpdateAppControlRequest, opts ...grpc.CallOption) (*UpdateAppControlResponse, error)
 	CreateBanApp(ctx context.Context, in *CreateBanAppRequest, opts ...grpc.CallOption) (*CreateBanAppResponse, error)
 	DeleteBanApp(ctx context.Context, in *DeleteBanAppRequest, opts ...grpc.CallOption) (*DeleteBanAppResponse, error)
@@ -116,6 +118,24 @@ func (c *appUserManagerClient) UpdateApp(ctx context.Context, in *UpdateAppReque
 func (c *appUserManagerClient) CreateAppControl(ctx context.Context, in *CreateAppControlRequest, opts ...grpc.CallOption) (*CreateAppControlResponse, error) {
 	out := new(CreateAppControlResponse)
 	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppControl", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetAppControl(ctx context.Context, in *GetAppControlRequest, opts ...grpc.CallOption) (*GetAppControlResponse, error) {
+	out := new(GetAppControlResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppControl", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetAppControlByApp(ctx context.Context, in *GetAppControlByAppRequest, opts ...grpc.CallOption) (*GetAppControlByAppResponse, error) {
+	out := new(GetAppControlByAppResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppControlByApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -331,6 +351,8 @@ type AppUserManagerServer interface {
 	GetAppsByCreator(context.Context, *GetAppsByCreatorRequest) (*GetAppsByCreatorResponse, error)
 	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
 	CreateAppControl(context.Context, *CreateAppControlRequest) (*CreateAppControlResponse, error)
+	GetAppControl(context.Context, *GetAppControlRequest) (*GetAppControlResponse, error)
+	GetAppControlByApp(context.Context, *GetAppControlByAppRequest) (*GetAppControlByAppResponse, error)
 	UpdateAppControl(context.Context, *UpdateAppControlRequest) (*UpdateAppControlResponse, error)
 	CreateBanApp(context.Context, *CreateBanAppRequest) (*CreateBanAppResponse, error)
 	DeleteBanApp(context.Context, *DeleteBanAppRequest) (*DeleteBanAppResponse, error)
@@ -380,6 +402,12 @@ func (UnimplementedAppUserManagerServer) UpdateApp(context.Context, *UpdateAppRe
 }
 func (UnimplementedAppUserManagerServer) CreateAppControl(context.Context, *CreateAppControlRequest) (*CreateAppControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppControl not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppControl(context.Context, *GetAppControlRequest) (*GetAppControlResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppControl not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppControlByApp(context.Context, *GetAppControlByAppRequest) (*GetAppControlByAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppControlByApp not implemented")
 }
 func (UnimplementedAppUserManagerServer) UpdateAppControl(context.Context, *UpdateAppControlRequest) (*UpdateAppControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppControl not implemented")
@@ -582,6 +610,42 @@ func _AppUserManager_CreateAppControl_Handler(srv interface{}, ctx context.Conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppControl(ctx, req.(*CreateAppControlRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_GetAppControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppControlRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppControl(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppControl",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppControl(ctx, req.(*GetAppControlRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_GetAppControlByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppControlByAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppControlByApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppControlByApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppControlByApp(ctx, req.(*GetAppControlByAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1016,6 +1080,14 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAppControl",
 			Handler:    _AppUserManager_CreateAppControl_Handler,
+		},
+		{
+			MethodName: "GetAppControl",
+			Handler:    _AppUserManager_GetAppControl_Handler,
+		},
+		{
+			MethodName: "GetAppControlByApp",
+			Handler:    _AppUserManager_GetAppControlByApp_Handler,
 		},
 		{
 			MethodName: "UpdateAppControl",

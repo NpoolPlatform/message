@@ -52,6 +52,18 @@ service AppUserManager {
             body: "*"
         };
     }
+    rpc GetAppControl (GetAppControlRequest) returns (GetAppControlResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/control"
+            body: "*"
+        };
+    }
+    rpc GetAppControlByApp (GetAppControlByAppRequest) returns (GetAppControlByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/control/by/app"
+            body: "*"
+        };
+    }
     rpc UpdateAppControl (UpdateAppControlRequest) returns (UpdateAppControlResponse) {
         option (google.api.http) = {
             post: "/v1/update/app/control"
@@ -257,6 +269,22 @@ message CreateAppControlRequest {
 }
 
 message CreateAppControlResponse {
+    AppControl Info = 10;
+}
+
+message GetAppControlRequest {
+    string ID = 10;
+}
+
+message GetAppControlResponse {
+    AppControl Info = 10;
+}
+
+message GetAppControlByAppRequest {
+    string AppID = 10;
+}
+
+message GetAppControlByAppResponse {
     AppControl Info = 10;
 }
 
