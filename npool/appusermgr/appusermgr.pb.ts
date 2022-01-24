@@ -351,6 +351,8 @@ export type DeleteBanAppUserResponse = {
 
 export type AppUserControl = {
   ID?: string
+  AppID?: string
+  UserID?: string
 }
 
 export type CreateAppUserControlRequest = {
