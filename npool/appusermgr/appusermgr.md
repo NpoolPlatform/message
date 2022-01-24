@@ -62,6 +62,10 @@
     - [GetAppUserInfosResponse](#app.user.manager.v1.GetAppUserInfosResponse)
     - [GetAppUserRequest](#app.user.manager.v1.GetAppUserRequest)
     - [GetAppUserResponse](#app.user.manager.v1.GetAppUserResponse)
+    - [GetAppUserSecretByAppRequest](#app.user.manager.v1.GetAppUserSecretByAppRequest)
+    - [GetAppUserSecretByAppResponse](#app.user.manager.v1.GetAppUserSecretByAppResponse)
+    - [GetAppUserSecretRequest](#app.user.manager.v1.GetAppUserSecretRequest)
+    - [GetAppUserSecretResponse](#app.user.manager.v1.GetAppUserSecretResponse)
     - [GetAppUsersByAppRequest](#app.user.manager.v1.GetAppUsersByAppRequest)
     - [GetAppUsersByAppResponse](#app.user.manager.v1.GetAppUsersByAppResponse)
     - [GetAppsByCreatorRequest](#app.user.manager.v1.GetAppsByCreatorRequest)
@@ -1028,6 +1032,66 @@
 
 
 
+<a name="app.user.manager.v1.GetAppUserSecretByAppRequest"></a>
+
+### GetAppUserSecretByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppUserSecretByAppResponse"></a>
+
+### GetAppUserSecretByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserSecret](#app.user.manager.v1.AppUserSecret) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppUserSecretRequest"></a>
+
+### GetAppUserSecretRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppUserSecretResponse"></a>
+
+### GetAppUserSecretResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserSecret](#app.user.manager.v1.AppUserSecret) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.GetAppUsersByAppRequest"></a>
 
 ### GetAppUsersByAppRequest
@@ -1452,6 +1516,8 @@
 | GetAppUsersByApp | [GetAppUsersByAppRequest](#app.user.manager.v1.GetAppUsersByAppRequest) | [GetAppUsersByAppResponse](#app.user.manager.v1.GetAppUsersByAppResponse) |  |
 | UpdateAppUser | [UpdateAppUserRequest](#app.user.manager.v1.UpdateAppUserRequest) | [UpdateAppUserResponse](#app.user.manager.v1.UpdateAppUserResponse) |  |
 | CreateAppUserSecret | [CreateAppUserSecretRequest](#app.user.manager.v1.CreateAppUserSecretRequest) | [CreateAppUserSecretResponse](#app.user.manager.v1.CreateAppUserSecretResponse) |  |
+| GetAppUserSecret | [GetAppUserSecretRequest](#app.user.manager.v1.GetAppUserSecretRequest) | [GetAppUserSecretResponse](#app.user.manager.v1.GetAppUserSecretResponse) |  |
+| GetAppUserSecretByApp | [GetAppUserSecretByAppRequest](#app.user.manager.v1.GetAppUserSecretByAppRequest) | [GetAppUserSecretByAppResponse](#app.user.manager.v1.GetAppUserSecretByAppResponse) |  |
 | UpdateAppUserSecret | [UpdateAppUserSecretRequest](#app.user.manager.v1.UpdateAppUserSecretRequest) | [UpdateAppUserSecretResponse](#app.user.manager.v1.UpdateAppUserSecretResponse) |  |
 | CreateAppUserExtra | [CreateAppUserExtraRequest](#app.user.manager.v1.CreateAppUserExtraRequest) | [CreateAppUserExtraResponse](#app.user.manager.v1.CreateAppUserExtraResponse) |  |
 | UpdateAppUserExtra | [UpdateAppUserExtraRequest](#app.user.manager.v1.UpdateAppUserExtraRequest) | [UpdateAppUserExtraResponse](#app.user.manager.v1.UpdateAppUserExtraResponse) |  |

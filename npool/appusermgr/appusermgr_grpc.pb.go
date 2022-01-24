@@ -43,6 +43,8 @@ type AppUserManagerClient interface {
 	GetAppUsersByApp(ctx context.Context, in *GetAppUsersByAppRequest, opts ...grpc.CallOption) (*GetAppUsersByAppResponse, error)
 	UpdateAppUser(ctx context.Context, in *UpdateAppUserRequest, opts ...grpc.CallOption) (*UpdateAppUserResponse, error)
 	CreateAppUserSecret(ctx context.Context, in *CreateAppUserSecretRequest, opts ...grpc.CallOption) (*CreateAppUserSecretResponse, error)
+	GetAppUserSecret(ctx context.Context, in *GetAppUserSecretRequest, opts ...grpc.CallOption) (*GetAppUserSecretResponse, error)
+	GetAppUserSecretByApp(ctx context.Context, in *GetAppUserSecretByAppRequest, opts ...grpc.CallOption) (*GetAppUserSecretByAppResponse, error)
 	UpdateAppUserSecret(ctx context.Context, in *UpdateAppUserSecretRequest, opts ...grpc.CallOption) (*UpdateAppUserSecretResponse, error)
 	CreateAppUserExtra(ctx context.Context, in *CreateAppUserExtraRequest, opts ...grpc.CallOption) (*CreateAppUserExtraResponse, error)
 	UpdateAppUserExtra(ctx context.Context, in *UpdateAppUserExtraRequest, opts ...grpc.CallOption) (*UpdateAppUserExtraResponse, error)
@@ -274,6 +276,24 @@ func (c *appUserManagerClient) CreateAppUserSecret(ctx context.Context, in *Crea
 	return out, nil
 }
 
+func (c *appUserManagerClient) GetAppUserSecret(ctx context.Context, in *GetAppUserSecretRequest, opts ...grpc.CallOption) (*GetAppUserSecretResponse, error) {
+	out := new(GetAppUserSecretResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserSecret", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetAppUserSecretByApp(ctx context.Context, in *GetAppUserSecretByAppRequest, opts ...grpc.CallOption) (*GetAppUserSecretByAppResponse, error) {
+	out := new(GetAppUserSecretByAppResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserSecretByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *appUserManagerClient) UpdateAppUserSecret(ctx context.Context, in *UpdateAppUserSecretRequest, opts ...grpc.CallOption) (*UpdateAppUserSecretResponse, error) {
 	out := new(UpdateAppUserSecretResponse)
 	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/UpdateAppUserSecret", in, out, opts...)
@@ -427,6 +447,8 @@ type AppUserManagerServer interface {
 	GetAppUsersByApp(context.Context, *GetAppUsersByAppRequest) (*GetAppUsersByAppResponse, error)
 	UpdateAppUser(context.Context, *UpdateAppUserRequest) (*UpdateAppUserResponse, error)
 	CreateAppUserSecret(context.Context, *CreateAppUserSecretRequest) (*CreateAppUserSecretResponse, error)
+	GetAppUserSecret(context.Context, *GetAppUserSecretRequest) (*GetAppUserSecretResponse, error)
+	GetAppUserSecretByApp(context.Context, *GetAppUserSecretByAppRequest) (*GetAppUserSecretByAppResponse, error)
 	UpdateAppUserSecret(context.Context, *UpdateAppUserSecretRequest) (*UpdateAppUserSecretResponse, error)
 	CreateAppUserExtra(context.Context, *CreateAppUserExtraRequest) (*CreateAppUserExtraResponse, error)
 	UpdateAppUserExtra(context.Context, *UpdateAppUserExtraRequest) (*UpdateAppUserExtraResponse, error)
@@ -516,6 +538,12 @@ func (UnimplementedAppUserManagerServer) UpdateAppUser(context.Context, *UpdateA
 }
 func (UnimplementedAppUserManagerServer) CreateAppUserSecret(context.Context, *CreateAppUserSecretRequest) (*CreateAppUserSecretResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserSecret not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppUserSecret(context.Context, *GetAppUserSecretRequest) (*GetAppUserSecretResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserSecret not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppUserSecretByApp(context.Context, *GetAppUserSecretByAppRequest) (*GetAppUserSecretByAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserSecretByApp not implemented")
 }
 func (UnimplementedAppUserManagerServer) UpdateAppUserSecret(context.Context, *UpdateAppUserSecretRequest) (*UpdateAppUserSecretResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUserSecret not implemented")
@@ -986,6 +1014,42 @@ func _AppUserManager_CreateAppUserSecret_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AppUserManager_GetAppUserSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppUserSecretRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppUserSecret(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserSecret",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppUserSecret(ctx, req.(*GetAppUserSecretRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_GetAppUserSecretByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppUserSecretByAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppUserSecretByApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserSecretByApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppUserSecretByApp(ctx, req.(*GetAppUserSecretByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AppUserManager_UpdateAppUserSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppUserSecretRequest)
 	if err := dec(in); err != nil {
@@ -1336,6 +1400,14 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAppUserSecret",
 			Handler:    _AppUserManager_CreateAppUserSecret_Handler,
+		},
+		{
+			MethodName: "GetAppUserSecret",
+			Handler:    _AppUserManager_GetAppUserSecret_Handler,
+		},
+		{
+			MethodName: "GetAppUserSecretByApp",
+			Handler:    _AppUserManager_GetAppUserSecretByApp_Handler,
 		},
 		{
 			MethodName: "UpdateAppUserSecret",

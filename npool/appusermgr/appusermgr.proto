@@ -150,6 +150,18 @@ service AppUserManager {
             body: "*"
         };
     }
+    rpc GetAppUserSecret (GetAppUserSecretRequest) returns (GetAppUserSecretResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/user/secret"
+            body: "*"
+        };
+    }
+    rpc GetAppUserSecretByApp (GetAppUserSecretByAppRequest) returns (GetAppUserSecretByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/user/secret/by/app"
+            body: "*"
+        };
+    }
     rpc UpdateAppUserSecret (UpdateAppUserSecretRequest) returns (UpdateAppUserSecretResponse) {
         option (google.api.http) = {
             post: "/v1/update/app/user/secret"
@@ -468,6 +480,22 @@ message CreateAppUserSecretRequest {
 }
 
 message CreateAppUserSecretResponse {
+    AppUserSecret Info = 10;
+}
+
+message GetAppUserSecretRequest {
+    string ID = 10;
+}
+
+message GetAppUserSecretResponse {
+    AppUserSecret Info = 10;
+}
+
+message GetAppUserSecretByAppRequest {
+    string AppID = 10;
+}
+
+message GetAppUserSecretByAppResponse {
     AppUserSecret Info = 10;
 }
 

@@ -555,6 +555,70 @@
         ]
       }
     },
+    "/v1/get/app/user/secret": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserSecret",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserSecretResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserSecretRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/user/secret/by/app": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserSecretByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserSecretByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserSecretByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/get/app/userinfo": {
       "post": {
         "operationId": "AppUserManager_GetAppUserInfo",
@@ -1892,6 +1956,38 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUser"
+        }
+      }
+    },
+    "v1GetAppUserSecretByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserSecretByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserSecret"
+        }
+      }
+    },
+    "v1GetAppUserSecretRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserSecretResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserSecret"
         }
       }
     },

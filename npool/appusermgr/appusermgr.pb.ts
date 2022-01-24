@@ -237,6 +237,22 @@ export type CreateAppUserSecretResponse = {
   Info?: AppUserSecret
 }
 
+export type GetAppUserSecretRequest = {
+  ID?: string
+}
+
+export type GetAppUserSecretResponse = {
+  Info?: AppUserSecret
+}
+
+export type GetAppUserSecretByAppRequest = {
+  AppID?: string
+}
+
+export type GetAppUserSecretByAppResponse = {
+  Info?: AppUserSecret
+}
+
 export type UpdateAppUserSecretRequest = {
   Info?: AppUserSecret
 }
@@ -470,6 +486,12 @@ export class AppUserManager {
   }
   static CreateAppUserSecret(req: CreateAppUserSecretRequest, initReq?: fm.InitReq): Promise<CreateAppUserSecretResponse> {
     return fm.fetchReq<CreateAppUserSecretRequest, CreateAppUserSecretResponse>(`/v1/create/app/user/secret`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUserSecret(req: GetAppUserSecretRequest, initReq?: fm.InitReq): Promise<GetAppUserSecretResponse> {
+    return fm.fetchReq<GetAppUserSecretRequest, GetAppUserSecretResponse>(`/v1/get/app/user/secret`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUserSecretByApp(req: GetAppUserSecretByAppRequest, initReq?: fm.InitReq): Promise<GetAppUserSecretByAppResponse> {
+    return fm.fetchReq<GetAppUserSecretByAppRequest, GetAppUserSecretByAppResponse>(`/v1/get/app/user/secret/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateAppUserSecret(req: UpdateAppUserSecretRequest, initReq?: fm.InitReq): Promise<UpdateAppUserSecretResponse> {
     return fm.fetchReq<UpdateAppUserSecretRequest, UpdateAppUserSecretResponse>(`/v1/update/app/user/secret`, {...initReq, method: "POST", body: JSON.stringify(req)})
