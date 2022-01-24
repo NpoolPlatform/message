@@ -41,6 +41,7 @@
 | Name | [string](#string) |  | 币种名称 FIL, BTC |
 | Unit | [string](#string) |  | 单位：FIL |
 | Logo | [string](#string) |  | url; can be empty |
+| ENV | [string](#string) |  | main or test |
 | ReservedAmount | [double](#double) |  | 预留金额 |
 | CreatedAt | [uint32](#uint32) |  |  |
 | UpdatedAt | [uint32](#uint32) |  |  |
@@ -62,6 +63,7 @@
 | Name | [string](#string) |  | 币种名称 FIL, BTC |
 | Unit | [string](#string) |  | 单位：FIL |
 | Logo | [string](#string) |  | url; can be empty |
+| ENV | [string](#string) |  | main or test |
 
 
 

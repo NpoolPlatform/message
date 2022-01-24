@@ -224,6 +224,9 @@
         "Logo": {
           "type": "string"
         },
+        "ENV": {
+          "type": "string"
+        },
         "ReservedAmount": {
           "type": "number",
           "format": "double"
@@ -251,6 +254,9 @@
           "type": "string"
         },
         "Logo": {
+          "type": "string"
+        },
+        "ENV": {
           "type": "string"
         }
       }
