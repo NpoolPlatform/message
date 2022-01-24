@@ -51,8 +51,12 @@ type AppUserManagerClient interface {
 	GetAppUserExtraByAppUser(ctx context.Context, in *GetAppUserExtraByAppUserRequest, opts ...grpc.CallOption) (*GetAppUserExtraByAppUserResponse, error)
 	UpdateAppUserExtra(ctx context.Context, in *UpdateAppUserExtraRequest, opts ...grpc.CallOption) (*UpdateAppUserExtraResponse, error)
 	CreateBanAppUser(ctx context.Context, in *CreateBanAppUserRequest, opts ...grpc.CallOption) (*CreateBanAppUserResponse, error)
+	GetBanAppUser(ctx context.Context, in *GetBanAppUserRequest, opts ...grpc.CallOption) (*GetBanAppUserResponse, error)
+	GetBanAppUserByAppUser(ctx context.Context, in *GetBanAppUserByAppUserRequest, opts ...grpc.CallOption) (*GetBanAppUserByAppUserResponse, error)
 	DeleteBanAppUser(ctx context.Context, in *DeleteBanAppUserRequest, opts ...grpc.CallOption) (*DeleteBanAppUserResponse, error)
 	CreateAppUserControl(ctx context.Context, in *CreateAppUserControlRequest, opts ...grpc.CallOption) (*CreateAppUserControlResponse, error)
+	GetAppUserControl(ctx context.Context, in *GetAppUserControlRequest, opts ...grpc.CallOption) (*GetAppUserControlResponse, error)
+	GetAppUserControlByAppUser(ctx context.Context, in *GetAppUserControlByAppUserRequest, opts ...grpc.CallOption) (*GetAppUserControlByAppUserResponse, error)
 	UpdateAppUserControl(ctx context.Context, in *UpdateAppUserControlRequest, opts ...grpc.CallOption) (*UpdateAppUserControlResponse, error)
 	CreateAppRole(ctx context.Context, in *CreateAppRoleRequest, opts ...grpc.CallOption) (*CreateAppRoleResponse, error)
 	UpdateAppRole(ctx context.Context, in *UpdateAppRoleRequest, opts ...grpc.CallOption) (*UpdateAppRoleResponse, error)
@@ -350,6 +354,24 @@ func (c *appUserManagerClient) CreateBanAppUser(ctx context.Context, in *CreateB
 	return out, nil
 }
 
+func (c *appUserManagerClient) GetBanAppUser(ctx context.Context, in *GetBanAppUserRequest, opts ...grpc.CallOption) (*GetBanAppUserResponse, error) {
+	out := new(GetBanAppUserResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetBanAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetBanAppUserByAppUser(ctx context.Context, in *GetBanAppUserByAppUserRequest, opts ...grpc.CallOption) (*GetBanAppUserByAppUserResponse, error) {
+	out := new(GetBanAppUserByAppUserResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetBanAppUserByAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *appUserManagerClient) DeleteBanAppUser(ctx context.Context, in *DeleteBanAppUserRequest, opts ...grpc.CallOption) (*DeleteBanAppUserResponse, error) {
 	out := new(DeleteBanAppUserResponse)
 	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/DeleteBanAppUser", in, out, opts...)
@@ -362,6 +384,24 @@ func (c *appUserManagerClient) DeleteBanAppUser(ctx context.Context, in *DeleteB
 func (c *appUserManagerClient) CreateAppUserControl(ctx context.Context, in *CreateAppUserControlRequest, opts ...grpc.CallOption) (*CreateAppUserControlResponse, error) {
 	out := new(CreateAppUserControlResponse)
 	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppUserControl", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetAppUserControl(ctx context.Context, in *GetAppUserControlRequest, opts ...grpc.CallOption) (*GetAppUserControlResponse, error) {
+	out := new(GetAppUserControlResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserControl", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetAppUserControlByAppUser(ctx context.Context, in *GetAppUserControlByAppUserRequest, opts ...grpc.CallOption) (*GetAppUserControlByAppUserResponse, error) {
+	out := new(GetAppUserControlByAppUserResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserControlByAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -475,8 +515,12 @@ type AppUserManagerServer interface {
 	GetAppUserExtraByAppUser(context.Context, *GetAppUserExtraByAppUserRequest) (*GetAppUserExtraByAppUserResponse, error)
 	UpdateAppUserExtra(context.Context, *UpdateAppUserExtraRequest) (*UpdateAppUserExtraResponse, error)
 	CreateBanAppUser(context.Context, *CreateBanAppUserRequest) (*CreateBanAppUserResponse, error)
+	GetBanAppUser(context.Context, *GetBanAppUserRequest) (*GetBanAppUserResponse, error)
+	GetBanAppUserByAppUser(context.Context, *GetBanAppUserByAppUserRequest) (*GetBanAppUserByAppUserResponse, error)
 	DeleteBanAppUser(context.Context, *DeleteBanAppUserRequest) (*DeleteBanAppUserResponse, error)
 	CreateAppUserControl(context.Context, *CreateAppUserControlRequest) (*CreateAppUserControlResponse, error)
+	GetAppUserControl(context.Context, *GetAppUserControlRequest) (*GetAppUserControlResponse, error)
+	GetAppUserControlByAppUser(context.Context, *GetAppUserControlByAppUserRequest) (*GetAppUserControlByAppUserResponse, error)
 	UpdateAppUserControl(context.Context, *UpdateAppUserControlRequest) (*UpdateAppUserControlResponse, error)
 	CreateAppRole(context.Context, *CreateAppRoleRequest) (*CreateAppRoleResponse, error)
 	UpdateAppRole(context.Context, *UpdateAppRoleRequest) (*UpdateAppRoleResponse, error)
@@ -585,11 +629,23 @@ func (UnimplementedAppUserManagerServer) UpdateAppUserExtra(context.Context, *Up
 func (UnimplementedAppUserManagerServer) CreateBanAppUser(context.Context, *CreateBanAppUserRequest) (*CreateBanAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateBanAppUser not implemented")
 }
+func (UnimplementedAppUserManagerServer) GetBanAppUser(context.Context, *GetBanAppUserRequest) (*GetBanAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBanAppUser not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetBanAppUserByAppUser(context.Context, *GetBanAppUserByAppUserRequest) (*GetBanAppUserByAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBanAppUserByAppUser not implemented")
+}
 func (UnimplementedAppUserManagerServer) DeleteBanAppUser(context.Context, *DeleteBanAppUserRequest) (*DeleteBanAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteBanAppUser not implemented")
 }
 func (UnimplementedAppUserManagerServer) CreateAppUserControl(context.Context, *CreateAppUserControlRequest) (*CreateAppUserControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserControl not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppUserControl(context.Context, *GetAppUserControlRequest) (*GetAppUserControlResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserControl not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppUserControlByAppUser(context.Context, *GetAppUserControlByAppUserRequest) (*GetAppUserControlByAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserControlByAppUser not implemented")
 }
 func (UnimplementedAppUserManagerServer) UpdateAppUserControl(context.Context, *UpdateAppUserControlRequest) (*UpdateAppUserControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUserControl not implemented")
@@ -1186,6 +1242,42 @@ func _AppUserManager_CreateBanAppUser_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AppUserManager_GetBanAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBanAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetBanAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetBanAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetBanAppUser(ctx, req.(*GetBanAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_GetBanAppUserByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBanAppUserByAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetBanAppUserByAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetBanAppUserByAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetBanAppUserByAppUser(ctx, req.(*GetBanAppUserByAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AppUserManager_DeleteBanAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteBanAppUserRequest)
 	if err := dec(in); err != nil {
@@ -1218,6 +1310,42 @@ func _AppUserManager_CreateAppUserControl_Handler(srv interface{}, ctx context.C
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppUserControl(ctx, req.(*CreateAppUserControlRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_GetAppUserControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppUserControlRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppUserControl(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserControl",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppUserControl(ctx, req.(*GetAppUserControlRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_GetAppUserControlByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppUserControlByAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppUserControlByAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserControlByAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppUserControlByAppUser(ctx, req.(*GetAppUserControlByAppUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1498,12 +1626,28 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AppUserManager_CreateBanAppUser_Handler,
 		},
 		{
+			MethodName: "GetBanAppUser",
+			Handler:    _AppUserManager_GetBanAppUser_Handler,
+		},
+		{
+			MethodName: "GetBanAppUserByAppUser",
+			Handler:    _AppUserManager_GetBanAppUserByAppUser_Handler,
+		},
+		{
 			MethodName: "DeleteBanAppUser",
 			Handler:    _AppUserManager_DeleteBanAppUser_Handler,
 		},
 		{
 			MethodName: "CreateAppUserControl",
 			Handler:    _AppUserManager_CreateAppUserControl_Handler,
+		},
+		{
+			MethodName: "GetAppUserControl",
+			Handler:    _AppUserManager_GetAppUserControl_Handler,
+		},
+		{
+			MethodName: "GetAppUserControlByAppUser",
+			Handler:    _AppUserManager_GetAppUserControlByAppUser_Handler,
 		},
 		{
 			MethodName: "UpdateAppUserControl",

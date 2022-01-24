@@ -324,6 +324,23 @@ export type CreateBanAppUserResponse = {
   Info?: BanAppUser
 }
 
+export type GetBanAppUserRequest = {
+  ID?: string
+}
+
+export type GetBanAppUserResponse = {
+  Info?: BanAppUser
+}
+
+export type GetBanAppUserByAppUserRequest = {
+  AppID?: string
+  UserID?: string
+}
+
+export type GetBanAppUserByAppUserResponse = {
+  Info?: BanAppUser
+}
+
 export type DeleteBanAppUserRequest = {
   Info?: BanAppUser
 }
@@ -341,6 +358,23 @@ export type CreateAppUserControlRequest = {
 }
 
 export type CreateAppUserControlResponse = {
+  Info?: AppUserControl
+}
+
+export type GetAppUserControlRequest = {
+  ID?: string
+}
+
+export type GetAppUserControlResponse = {
+  Info?: AppUserControl
+}
+
+export type GetAppUserControlByAppUserRequest = {
+  AppID?: string
+  UserID?: string
+}
+
+export type GetAppUserControlByAppUserResponse = {
   Info?: AppUserControl
 }
 
@@ -529,11 +563,23 @@ export class AppUserManager {
   static CreateBanAppUser(req: CreateBanAppUserRequest, initReq?: fm.InitReq): Promise<CreateBanAppUserResponse> {
     return fm.fetchReq<CreateBanAppUserRequest, CreateBanAppUserResponse>(`/v1/create/ban/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetBanAppUser(req: GetBanAppUserRequest, initReq?: fm.InitReq): Promise<GetBanAppUserResponse> {
+    return fm.fetchReq<GetBanAppUserRequest, GetBanAppUserResponse>(`/v1/get/ban/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetBanAppUserByAppUser(req: GetBanAppUserByAppUserRequest, initReq?: fm.InitReq): Promise<GetBanAppUserByAppUserResponse> {
+    return fm.fetchReq<GetBanAppUserByAppUserRequest, GetBanAppUserByAppUserResponse>(`/v1/get/ban/app/user/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static DeleteBanAppUser(req: DeleteBanAppUserRequest, initReq?: fm.InitReq): Promise<DeleteBanAppUserResponse> {
     return fm.fetchReq<DeleteBanAppUserRequest, DeleteBanAppUserResponse>(`/v1/delete/ban/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateAppUserControl(req: CreateAppUserControlRequest, initReq?: fm.InitReq): Promise<CreateAppUserControlResponse> {
     return fm.fetchReq<CreateAppUserControlRequest, CreateAppUserControlResponse>(`/v1/create/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUserControl(req: GetAppUserControlRequest, initReq?: fm.InitReq): Promise<GetAppUserControlResponse> {
+    return fm.fetchReq<GetAppUserControlRequest, GetAppUserControlResponse>(`/v1/get/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUserControlByAppUser(req: GetAppUserControlByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserControlByAppUserResponse> {
+    return fm.fetchReq<GetAppUserControlByAppUserRequest, GetAppUserControlByAppUserResponse>(`/v1/get/app/user/control/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateAppUserControl(req: UpdateAppUserControlRequest, initReq?: fm.InitReq): Promise<UpdateAppUserControlResponse> {
     return fm.fetchReq<UpdateAppUserControlRequest, UpdateAppUserControlResponse>(`/v1/update/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req)})

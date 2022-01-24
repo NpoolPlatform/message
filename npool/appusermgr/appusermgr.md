@@ -54,6 +54,10 @@
     - [GetAppInfosResponse](#app.user.manager.v1.GetAppInfosResponse)
     - [GetAppRequest](#app.user.manager.v1.GetAppRequest)
     - [GetAppResponse](#app.user.manager.v1.GetAppResponse)
+    - [GetAppUserControlByAppUserRequest](#app.user.manager.v1.GetAppUserControlByAppUserRequest)
+    - [GetAppUserControlByAppUserResponse](#app.user.manager.v1.GetAppUserControlByAppUserResponse)
+    - [GetAppUserControlRequest](#app.user.manager.v1.GetAppUserControlRequest)
+    - [GetAppUserControlResponse](#app.user.manager.v1.GetAppUserControlResponse)
     - [GetAppUserExtraByAppUserRequest](#app.user.manager.v1.GetAppUserExtraByAppUserRequest)
     - [GetAppUserExtraByAppUserResponse](#app.user.manager.v1.GetAppUserExtraByAppUserResponse)
     - [GetAppUserExtraRequest](#app.user.manager.v1.GetAppUserExtraRequest)
@@ -80,6 +84,10 @@
     - [GetBanAppByAppResponse](#app.user.manager.v1.GetBanAppByAppResponse)
     - [GetBanAppRequest](#app.user.manager.v1.GetBanAppRequest)
     - [GetBanAppResponse](#app.user.manager.v1.GetBanAppResponse)
+    - [GetBanAppUserByAppUserRequest](#app.user.manager.v1.GetBanAppUserByAppUserRequest)
+    - [GetBanAppUserByAppUserResponse](#app.user.manager.v1.GetBanAppUserByAppUserResponse)
+    - [GetBanAppUserRequest](#app.user.manager.v1.GetBanAppUserRequest)
+    - [GetBanAppUserResponse](#app.user.manager.v1.GetBanAppUserResponse)
     - [UpdateAppControlRequest](#app.user.manager.v1.UpdateAppControlRequest)
     - [UpdateAppControlResponse](#app.user.manager.v1.UpdateAppControlResponse)
     - [UpdateAppRequest](#app.user.manager.v1.UpdateAppRequest)
@@ -913,6 +921,67 @@
 
 
 
+<a name="app.user.manager.v1.GetAppUserControlByAppUserRequest"></a>
+
+### GetAppUserControlByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppUserControlByAppUserResponse"></a>
+
+### GetAppUserControlByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserControl](#app.user.manager.v1.AppUserControl) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppUserControlRequest"></a>
+
+### GetAppUserControlRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppUserControlResponse"></a>
+
+### GetAppUserControlResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserControl](#app.user.manager.v1.AppUserControl) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.GetAppUserExtraByAppUserRequest"></a>
 
 ### GetAppUserExtraByAppUserRequest
@@ -1306,6 +1375,67 @@
 
 
 
+<a name="app.user.manager.v1.GetBanAppUserByAppUserRequest"></a>
+
+### GetBanAppUserByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetBanAppUserByAppUserResponse"></a>
+
+### GetBanAppUserByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [BanAppUser](#app.user.manager.v1.BanAppUser) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetBanAppUserRequest"></a>
+
+### GetBanAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetBanAppUserResponse"></a>
+
+### GetBanAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [BanAppUser](#app.user.manager.v1.BanAppUser) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.UpdateAppControlRequest"></a>
 
 ### UpdateAppControlRequest
@@ -1590,8 +1720,12 @@
 | GetAppUserExtraByAppUser | [GetAppUserExtraByAppUserRequest](#app.user.manager.v1.GetAppUserExtraByAppUserRequest) | [GetAppUserExtraByAppUserResponse](#app.user.manager.v1.GetAppUserExtraByAppUserResponse) |  |
 | UpdateAppUserExtra | [UpdateAppUserExtraRequest](#app.user.manager.v1.UpdateAppUserExtraRequest) | [UpdateAppUserExtraResponse](#app.user.manager.v1.UpdateAppUserExtraResponse) |  |
 | CreateBanAppUser | [CreateBanAppUserRequest](#app.user.manager.v1.CreateBanAppUserRequest) | [CreateBanAppUserResponse](#app.user.manager.v1.CreateBanAppUserResponse) |  |
+| GetBanAppUser | [GetBanAppUserRequest](#app.user.manager.v1.GetBanAppUserRequest) | [GetBanAppUserResponse](#app.user.manager.v1.GetBanAppUserResponse) |  |
+| GetBanAppUserByAppUser | [GetBanAppUserByAppUserRequest](#app.user.manager.v1.GetBanAppUserByAppUserRequest) | [GetBanAppUserByAppUserResponse](#app.user.manager.v1.GetBanAppUserByAppUserResponse) |  |
 | DeleteBanAppUser | [DeleteBanAppUserRequest](#app.user.manager.v1.DeleteBanAppUserRequest) | [DeleteBanAppUserResponse](#app.user.manager.v1.DeleteBanAppUserResponse) |  |
 | CreateAppUserControl | [CreateAppUserControlRequest](#app.user.manager.v1.CreateAppUserControlRequest) | [CreateAppUserControlResponse](#app.user.manager.v1.CreateAppUserControlResponse) |  |
+| GetAppUserControl | [GetAppUserControlRequest](#app.user.manager.v1.GetAppUserControlRequest) | [GetAppUserControlResponse](#app.user.manager.v1.GetAppUserControlResponse) |  |
+| GetAppUserControlByAppUser | [GetAppUserControlByAppUserRequest](#app.user.manager.v1.GetAppUserControlByAppUserRequest) | [GetAppUserControlByAppUserResponse](#app.user.manager.v1.GetAppUserControlByAppUserResponse) |  |
 | UpdateAppUserControl | [UpdateAppUserControlRequest](#app.user.manager.v1.UpdateAppUserControlRequest) | [UpdateAppUserControlResponse](#app.user.manager.v1.UpdateAppUserControlResponse) |  |
 | CreateAppRole | [CreateAppRoleRequest](#app.user.manager.v1.CreateAppRoleRequest) | [CreateAppRoleResponse](#app.user.manager.v1.CreateAppRoleResponse) |  |
 | UpdateAppRole | [UpdateAppRoleRequest](#app.user.manager.v1.UpdateAppRoleRequest) | [UpdateAppRoleResponse](#app.user.manager.v1.UpdateAppRoleResponse) |  |

@@ -198,6 +198,18 @@ service AppUserManager {
             body: "*"
         };
     }
+    rpc GetBanAppUser (GetBanAppUserRequest) returns (GetBanAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/ban/app/user"
+            body: "*"
+        };
+    }
+    rpc GetBanAppUserByAppUser (GetBanAppUserByAppUserRequest) returns (GetBanAppUserByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/ban/app/user/by/app/user"
+            body: "*"
+        };
+    }
     rpc DeleteBanAppUser (DeleteBanAppUserRequest) returns (DeleteBanAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/delete/ban/app/user"
@@ -208,6 +220,18 @@ service AppUserManager {
     rpc CreateAppUserControl (CreateAppUserControlRequest) returns (CreateAppUserControlResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/user/control"
+            body: "*"
+        };
+    }
+    rpc GetAppUserControl (GetAppUserControlRequest) returns (GetAppUserControlResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/user/control"
+            body: "*"
+        };
+    }
+    rpc GetAppUserControlByAppUser (GetAppUserControlByAppUserRequest) returns (GetAppUserControlByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/user/control/by/app/user"
             body: "*"
         };
     }
@@ -582,6 +606,23 @@ message CreateBanAppUserResponse {
     BanAppUser Info = 10;
 }
 
+message GetBanAppUserRequest {
+    string ID = 10;
+}
+
+message GetBanAppUserResponse {
+    BanAppUser Info = 10;
+}
+
+message GetBanAppUserByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetBanAppUserByAppUserResponse {
+    BanAppUser Info = 10;
+}
+
 message DeleteBanAppUserRequest {
     BanAppUser Info = 10;
 }
@@ -599,6 +640,23 @@ message CreateAppUserControlRequest {
 }
 
 message CreateAppUserControlResponse {
+    AppUserControl Info = 10;
+}
+
+message GetAppUserControlRequest {
+    string ID = 10;
+}
+
+message GetAppUserControlResponse {
+    AppUserControl Info = 10;
+}
+
+message GetAppUserControlByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetAppUserControlByAppUserResponse {
     AppUserControl Info = 10;
 }
 

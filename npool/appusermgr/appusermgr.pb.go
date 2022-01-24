@@ -3579,6 +3579,202 @@ func (x *CreateBanAppUserResponse) GetInfo() *BanAppUser {
 	return nil
 }
 
+type GetBanAppUserRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+}
+
+func (x *GetBanAppUserRequest) Reset() {
+	*x = GetBanAppUserRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[68]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetBanAppUserRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetBanAppUserRequest) ProtoMessage() {}
+
+func (x *GetBanAppUserRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[68]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetBanAppUserRequest.ProtoReflect.Descriptor instead.
+func (*GetBanAppUserRequest) Descriptor() ([]byte, []int) {
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{68}
+}
+
+func (x *GetBanAppUserRequest) GetID() string {
+	if x != nil {
+		return x.ID
+	}
+	return ""
+}
+
+type GetBanAppUserResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *BanAppUser `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *GetBanAppUserResponse) Reset() {
+	*x = GetBanAppUserResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[69]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetBanAppUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetBanAppUserResponse) ProtoMessage() {}
+
+func (x *GetBanAppUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[69]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetBanAppUserResponse.ProtoReflect.Descriptor instead.
+func (*GetBanAppUserResponse) Descriptor() ([]byte, []int) {
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{69}
+}
+
+func (x *GetBanAppUserResponse) GetInfo() *BanAppUser {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type GetBanAppUserByAppUserRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AppID  string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	UserID string `protobuf:"bytes,20,opt,name=UserID,proto3" json:"UserID,omitempty"`
+}
+
+func (x *GetBanAppUserByAppUserRequest) Reset() {
+	*x = GetBanAppUserByAppUserRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[70]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetBanAppUserByAppUserRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetBanAppUserByAppUserRequest) ProtoMessage() {}
+
+func (x *GetBanAppUserByAppUserRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[70]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetBanAppUserByAppUserRequest.ProtoReflect.Descriptor instead.
+func (*GetBanAppUserByAppUserRequest) Descriptor() ([]byte, []int) {
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{70}
+}
+
+func (x *GetBanAppUserByAppUserRequest) GetAppID() string {
+	if x != nil {
+		return x.AppID
+	}
+	return ""
+}
+
+func (x *GetBanAppUserByAppUserRequest) GetUserID() string {
+	if x != nil {
+		return x.UserID
+	}
+	return ""
+}
+
+type GetBanAppUserByAppUserResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *BanAppUser `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *GetBanAppUserByAppUserResponse) Reset() {
+	*x = GetBanAppUserByAppUserResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[71]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetBanAppUserByAppUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetBanAppUserByAppUserResponse) ProtoMessage() {}
+
+func (x *GetBanAppUserByAppUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[71]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetBanAppUserByAppUserResponse.ProtoReflect.Descriptor instead.
+func (*GetBanAppUserByAppUserResponse) Descriptor() ([]byte, []int) {
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{71}
+}
+
+func (x *GetBanAppUserByAppUserResponse) GetInfo() *BanAppUser {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 type DeleteBanAppUserRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3590,7 +3786,7 @@ type DeleteBanAppUserRequest struct {
 func (x *DeleteBanAppUserRequest) Reset() {
 	*x = DeleteBanAppUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[68]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[72]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3603,7 +3799,7 @@ func (x *DeleteBanAppUserRequest) String() string {
 func (*DeleteBanAppUserRequest) ProtoMessage() {}
 
 func (x *DeleteBanAppUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[68]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[72]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3616,7 +3812,7 @@ func (x *DeleteBanAppUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteBanAppUserRequest.ProtoReflect.Descriptor instead.
 func (*DeleteBanAppUserRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{68}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{72}
 }
 
 func (x *DeleteBanAppUserRequest) GetInfo() *BanAppUser {
@@ -3637,7 +3833,7 @@ type DeleteBanAppUserResponse struct {
 func (x *DeleteBanAppUserResponse) Reset() {
 	*x = DeleteBanAppUserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[69]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[73]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3650,7 +3846,7 @@ func (x *DeleteBanAppUserResponse) String() string {
 func (*DeleteBanAppUserResponse) ProtoMessage() {}
 
 func (x *DeleteBanAppUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[69]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[73]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3663,7 +3859,7 @@ func (x *DeleteBanAppUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteBanAppUserResponse.ProtoReflect.Descriptor instead.
 func (*DeleteBanAppUserResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{69}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{73}
 }
 
 func (x *DeleteBanAppUserResponse) GetInfo() *BanAppUser {
@@ -3684,7 +3880,7 @@ type AppUserControl struct {
 func (x *AppUserControl) Reset() {
 	*x = AppUserControl{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[70]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[74]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3697,7 +3893,7 @@ func (x *AppUserControl) String() string {
 func (*AppUserControl) ProtoMessage() {}
 
 func (x *AppUserControl) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[70]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[74]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3710,7 +3906,7 @@ func (x *AppUserControl) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppUserControl.ProtoReflect.Descriptor instead.
 func (*AppUserControl) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{70}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{74}
 }
 
 func (x *AppUserControl) GetID() string {
@@ -3731,7 +3927,7 @@ type CreateAppUserControlRequest struct {
 func (x *CreateAppUserControlRequest) Reset() {
 	*x = CreateAppUserControlRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[71]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[75]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3744,7 +3940,7 @@ func (x *CreateAppUserControlRequest) String() string {
 func (*CreateAppUserControlRequest) ProtoMessage() {}
 
 func (x *CreateAppUserControlRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[71]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[75]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3757,7 +3953,7 @@ func (x *CreateAppUserControlRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAppUserControlRequest.ProtoReflect.Descriptor instead.
 func (*CreateAppUserControlRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{71}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{75}
 }
 
 func (x *CreateAppUserControlRequest) GetInfo() *AppUserControl {
@@ -3778,7 +3974,7 @@ type CreateAppUserControlResponse struct {
 func (x *CreateAppUserControlResponse) Reset() {
 	*x = CreateAppUserControlResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[72]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[76]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3791,7 +3987,7 @@ func (x *CreateAppUserControlResponse) String() string {
 func (*CreateAppUserControlResponse) ProtoMessage() {}
 
 func (x *CreateAppUserControlResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[72]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[76]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3804,10 +4000,206 @@ func (x *CreateAppUserControlResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAppUserControlResponse.ProtoReflect.Descriptor instead.
 func (*CreateAppUserControlResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{72}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{76}
 }
 
 func (x *CreateAppUserControlResponse) GetInfo() *AppUserControl {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type GetAppUserControlRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+}
+
+func (x *GetAppUserControlRequest) Reset() {
+	*x = GetAppUserControlRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[77]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetAppUserControlRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAppUserControlRequest) ProtoMessage() {}
+
+func (x *GetAppUserControlRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[77]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAppUserControlRequest.ProtoReflect.Descriptor instead.
+func (*GetAppUserControlRequest) Descriptor() ([]byte, []int) {
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{77}
+}
+
+func (x *GetAppUserControlRequest) GetID() string {
+	if x != nil {
+		return x.ID
+	}
+	return ""
+}
+
+type GetAppUserControlResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AppUserControl `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *GetAppUserControlResponse) Reset() {
+	*x = GetAppUserControlResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[78]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetAppUserControlResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAppUserControlResponse) ProtoMessage() {}
+
+func (x *GetAppUserControlResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[78]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAppUserControlResponse.ProtoReflect.Descriptor instead.
+func (*GetAppUserControlResponse) Descriptor() ([]byte, []int) {
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{78}
+}
+
+func (x *GetAppUserControlResponse) GetInfo() *AppUserControl {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type GetAppUserControlByAppUserRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AppID  string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	UserID string `protobuf:"bytes,20,opt,name=UserID,proto3" json:"UserID,omitempty"`
+}
+
+func (x *GetAppUserControlByAppUserRequest) Reset() {
+	*x = GetAppUserControlByAppUserRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[79]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetAppUserControlByAppUserRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAppUserControlByAppUserRequest) ProtoMessage() {}
+
+func (x *GetAppUserControlByAppUserRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[79]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAppUserControlByAppUserRequest.ProtoReflect.Descriptor instead.
+func (*GetAppUserControlByAppUserRequest) Descriptor() ([]byte, []int) {
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{79}
+}
+
+func (x *GetAppUserControlByAppUserRequest) GetAppID() string {
+	if x != nil {
+		return x.AppID
+	}
+	return ""
+}
+
+func (x *GetAppUserControlByAppUserRequest) GetUserID() string {
+	if x != nil {
+		return x.UserID
+	}
+	return ""
+}
+
+type GetAppUserControlByAppUserResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AppUserControl `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *GetAppUserControlByAppUserResponse) Reset() {
+	*x = GetAppUserControlByAppUserResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[80]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetAppUserControlByAppUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAppUserControlByAppUserResponse) ProtoMessage() {}
+
+func (x *GetAppUserControlByAppUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[80]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAppUserControlByAppUserResponse.ProtoReflect.Descriptor instead.
+func (*GetAppUserControlByAppUserResponse) Descriptor() ([]byte, []int) {
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{80}
+}
+
+func (x *GetAppUserControlByAppUserResponse) GetInfo() *AppUserControl {
 	if x != nil {
 		return x.Info
 	}
@@ -3825,7 +4217,7 @@ type UpdateAppUserControlRequest struct {
 func (x *UpdateAppUserControlRequest) Reset() {
 	*x = UpdateAppUserControlRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[73]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[81]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3838,7 +4230,7 @@ func (x *UpdateAppUserControlRequest) String() string {
 func (*UpdateAppUserControlRequest) ProtoMessage() {}
 
 func (x *UpdateAppUserControlRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[73]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[81]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3851,7 +4243,7 @@ func (x *UpdateAppUserControlRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateAppUserControlRequest.ProtoReflect.Descriptor instead.
 func (*UpdateAppUserControlRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{73}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{81}
 }
 
 func (x *UpdateAppUserControlRequest) GetInfo() *AppUserControl {
@@ -3872,7 +4264,7 @@ type UpdateAppUserControlResponse struct {
 func (x *UpdateAppUserControlResponse) Reset() {
 	*x = UpdateAppUserControlResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[74]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[82]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3885,7 +4277,7 @@ func (x *UpdateAppUserControlResponse) String() string {
 func (*UpdateAppUserControlResponse) ProtoMessage() {}
 
 func (x *UpdateAppUserControlResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[74]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[82]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3898,7 +4290,7 @@ func (x *UpdateAppUserControlResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateAppUserControlResponse.ProtoReflect.Descriptor instead.
 func (*UpdateAppUserControlResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{74}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{82}
 }
 
 func (x *UpdateAppUserControlResponse) GetInfo() *AppUserControl {
@@ -3924,7 +4316,7 @@ type AppRole struct {
 func (x *AppRole) Reset() {
 	*x = AppRole{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[75]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[83]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3937,7 +4329,7 @@ func (x *AppRole) String() string {
 func (*AppRole) ProtoMessage() {}
 
 func (x *AppRole) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[75]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[83]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3950,7 +4342,7 @@ func (x *AppRole) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppRole.ProtoReflect.Descriptor instead.
 func (*AppRole) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{75}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{83}
 }
 
 func (x *AppRole) GetID() string {
@@ -4006,7 +4398,7 @@ type CreateAppRoleRequest struct {
 func (x *CreateAppRoleRequest) Reset() {
 	*x = CreateAppRoleRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[76]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[84]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4019,7 +4411,7 @@ func (x *CreateAppRoleRequest) String() string {
 func (*CreateAppRoleRequest) ProtoMessage() {}
 
 func (x *CreateAppRoleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[76]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[84]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4032,7 +4424,7 @@ func (x *CreateAppRoleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAppRoleRequest.ProtoReflect.Descriptor instead.
 func (*CreateAppRoleRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{76}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{84}
 }
 
 func (x *CreateAppRoleRequest) GetInfo() *AppRole {
@@ -4053,7 +4445,7 @@ type CreateAppRoleResponse struct {
 func (x *CreateAppRoleResponse) Reset() {
 	*x = CreateAppRoleResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[77]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[85]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4066,7 +4458,7 @@ func (x *CreateAppRoleResponse) String() string {
 func (*CreateAppRoleResponse) ProtoMessage() {}
 
 func (x *CreateAppRoleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[77]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[85]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4079,7 +4471,7 @@ func (x *CreateAppRoleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAppRoleResponse.ProtoReflect.Descriptor instead.
 func (*CreateAppRoleResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{77}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{85}
 }
 
 func (x *CreateAppRoleResponse) GetInfo() *AppRole {
@@ -4100,7 +4492,7 @@ type UpdateAppRoleRequest struct {
 func (x *UpdateAppRoleRequest) Reset() {
 	*x = UpdateAppRoleRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[78]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[86]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4113,7 +4505,7 @@ func (x *UpdateAppRoleRequest) String() string {
 func (*UpdateAppRoleRequest) ProtoMessage() {}
 
 func (x *UpdateAppRoleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[78]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[86]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4126,7 +4518,7 @@ func (x *UpdateAppRoleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateAppRoleRequest.ProtoReflect.Descriptor instead.
 func (*UpdateAppRoleRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{78}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{86}
 }
 
 func (x *UpdateAppRoleRequest) GetInfo() *AppRole {
@@ -4147,7 +4539,7 @@ type UpdateAppRoleResponse struct {
 func (x *UpdateAppRoleResponse) Reset() {
 	*x = UpdateAppRoleResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[79]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[87]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4160,7 +4552,7 @@ func (x *UpdateAppRoleResponse) String() string {
 func (*UpdateAppRoleResponse) ProtoMessage() {}
 
 func (x *UpdateAppRoleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[79]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[87]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4173,7 +4565,7 @@ func (x *UpdateAppRoleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateAppRoleResponse.ProtoReflect.Descriptor instead.
 func (*UpdateAppRoleResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{79}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{87}
 }
 
 func (x *UpdateAppRoleResponse) GetInfo() *AppRole {
@@ -4197,7 +4589,7 @@ type AppRoleUser struct {
 func (x *AppRoleUser) Reset() {
 	*x = AppRoleUser{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[80]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[88]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4210,7 +4602,7 @@ func (x *AppRoleUser) String() string {
 func (*AppRoleUser) ProtoMessage() {}
 
 func (x *AppRoleUser) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[80]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[88]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4223,7 +4615,7 @@ func (x *AppRoleUser) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppRoleUser.ProtoReflect.Descriptor instead.
 func (*AppRoleUser) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{80}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{88}
 }
 
 func (x *AppRoleUser) GetID() string {
@@ -4265,7 +4657,7 @@ type CreateAppRoleUserRequest struct {
 func (x *CreateAppRoleUserRequest) Reset() {
 	*x = CreateAppRoleUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[81]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[89]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4278,7 +4670,7 @@ func (x *CreateAppRoleUserRequest) String() string {
 func (*CreateAppRoleUserRequest) ProtoMessage() {}
 
 func (x *CreateAppRoleUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[81]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[89]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4291,7 +4683,7 @@ func (x *CreateAppRoleUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAppRoleUserRequest.ProtoReflect.Descriptor instead.
 func (*CreateAppRoleUserRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{81}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{89}
 }
 
 func (x *CreateAppRoleUserRequest) GetInfo() *AppRoleUser {
@@ -4312,7 +4704,7 @@ type CreateAppRoleUserResponse struct {
 func (x *CreateAppRoleUserResponse) Reset() {
 	*x = CreateAppRoleUserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[82]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[90]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4325,7 +4717,7 @@ func (x *CreateAppRoleUserResponse) String() string {
 func (*CreateAppRoleUserResponse) ProtoMessage() {}
 
 func (x *CreateAppRoleUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[82]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[90]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4338,7 +4730,7 @@ func (x *CreateAppRoleUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAppRoleUserResponse.ProtoReflect.Descriptor instead.
 func (*CreateAppRoleUserResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{82}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{90}
 }
 
 func (x *CreateAppRoleUserResponse) GetInfo() *AppRoleUser {
@@ -4359,7 +4751,7 @@ type DeleteAppRoleUserRequest struct {
 func (x *DeleteAppRoleUserRequest) Reset() {
 	*x = DeleteAppRoleUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[83]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[91]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4372,7 +4764,7 @@ func (x *DeleteAppRoleUserRequest) String() string {
 func (*DeleteAppRoleUserRequest) ProtoMessage() {}
 
 func (x *DeleteAppRoleUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[83]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[91]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4385,7 +4777,7 @@ func (x *DeleteAppRoleUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteAppRoleUserRequest.ProtoReflect.Descriptor instead.
 func (*DeleteAppRoleUserRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{83}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{91}
 }
 
 func (x *DeleteAppRoleUserRequest) GetInfo() *AppRoleUser {
@@ -4406,7 +4798,7 @@ type DeleteAppRoleUserResponse struct {
 func (x *DeleteAppRoleUserResponse) Reset() {
 	*x = DeleteAppRoleUserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[84]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[92]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4419,7 +4811,7 @@ func (x *DeleteAppRoleUserResponse) String() string {
 func (*DeleteAppRoleUserResponse) ProtoMessage() {}
 
 func (x *DeleteAppRoleUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[84]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[92]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4432,7 +4824,7 @@ func (x *DeleteAppRoleUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteAppRoleUserResponse.ProtoReflect.Descriptor instead.
 func (*DeleteAppRoleUserResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{84}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{92}
 }
 
 func (x *DeleteAppRoleUserResponse) GetInfo() *AppRoleUser {
@@ -4457,7 +4849,7 @@ type AppUserInfo struct {
 func (x *AppUserInfo) Reset() {
 	*x = AppUserInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[85]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[93]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4470,7 +4862,7 @@ func (x *AppUserInfo) String() string {
 func (*AppUserInfo) ProtoMessage() {}
 
 func (x *AppUserInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[85]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[93]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4483,7 +4875,7 @@ func (x *AppUserInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppUserInfo.ProtoReflect.Descriptor instead.
 func (*AppUserInfo) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{85}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{93}
 }
 
 func (x *AppUserInfo) GetUser() *AppUser {
@@ -4532,7 +4924,7 @@ type GetAppUserInfoRequest struct {
 func (x *GetAppUserInfoRequest) Reset() {
 	*x = GetAppUserInfoRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[86]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[94]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4545,7 +4937,7 @@ func (x *GetAppUserInfoRequest) String() string {
 func (*GetAppUserInfoRequest) ProtoMessage() {}
 
 func (x *GetAppUserInfoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[86]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[94]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4558,7 +4950,7 @@ func (x *GetAppUserInfoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppUserInfoRequest.ProtoReflect.Descriptor instead.
 func (*GetAppUserInfoRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{86}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{94}
 }
 
 func (x *GetAppUserInfoRequest) GetID() string {
@@ -4579,7 +4971,7 @@ type GetAppUserInfoResponse struct {
 func (x *GetAppUserInfoResponse) Reset() {
 	*x = GetAppUserInfoResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[87]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[95]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4592,7 +4984,7 @@ func (x *GetAppUserInfoResponse) String() string {
 func (*GetAppUserInfoResponse) ProtoMessage() {}
 
 func (x *GetAppUserInfoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[87]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[95]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4605,7 +4997,7 @@ func (x *GetAppUserInfoResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppUserInfoResponse.ProtoReflect.Descriptor instead.
 func (*GetAppUserInfoResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{87}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{95}
 }
 
 func (x *GetAppUserInfoResponse) GetInfo() *AppUserInfo {
@@ -4626,7 +5018,7 @@ type GetAppUserInfosRequest struct {
 func (x *GetAppUserInfosRequest) Reset() {
 	*x = GetAppUserInfosRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[88]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[96]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4639,7 +5031,7 @@ func (x *GetAppUserInfosRequest) String() string {
 func (*GetAppUserInfosRequest) ProtoMessage() {}
 
 func (x *GetAppUserInfosRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[88]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[96]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4652,7 +5044,7 @@ func (x *GetAppUserInfosRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppUserInfosRequest.ProtoReflect.Descriptor instead.
 func (*GetAppUserInfosRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{88}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{96}
 }
 
 func (x *GetAppUserInfosRequest) GetPageInfo() *npool.PageInfo {
@@ -4674,7 +5066,7 @@ type GetAppUserInfosResponse struct {
 func (x *GetAppUserInfosResponse) Reset() {
 	*x = GetAppUserInfosResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[89]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[97]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4687,7 +5079,7 @@ func (x *GetAppUserInfosResponse) String() string {
 func (*GetAppUserInfosResponse) ProtoMessage() {}
 
 func (x *GetAppUserInfosResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[89]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[97]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4700,7 +5092,7 @@ func (x *GetAppUserInfosResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppUserInfosResponse.ProtoReflect.Descriptor instead.
 func (*GetAppUserInfosResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{89}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{97}
 }
 
 func (x *GetAppUserInfosResponse) GetInfos() []*AppUserInfo {
@@ -4729,7 +5121,7 @@ type GetAppUserInfosByAppRequest struct {
 func (x *GetAppUserInfosByAppRequest) Reset() {
 	*x = GetAppUserInfosByAppRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[90]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[98]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4742,7 +5134,7 @@ func (x *GetAppUserInfosByAppRequest) String() string {
 func (*GetAppUserInfosByAppRequest) ProtoMessage() {}
 
 func (x *GetAppUserInfosByAppRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[90]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[98]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4755,7 +5147,7 @@ func (x *GetAppUserInfosByAppRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppUserInfosByAppRequest.ProtoReflect.Descriptor instead.
 func (*GetAppUserInfosByAppRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{90}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{98}
 }
 
 func (x *GetAppUserInfosByAppRequest) GetAppID() string {
@@ -4784,7 +5176,7 @@ type GetAppUserInfosByAppResponse struct {
 func (x *GetAppUserInfosByAppResponse) Reset() {
 	*x = GetAppUserInfosByAppResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[91]
+		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[99]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4797,7 +5189,7 @@ func (x *GetAppUserInfosByAppResponse) String() string {
 func (*GetAppUserInfosByAppResponse) ProtoMessage() {}
 
 func (x *GetAppUserInfosByAppResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[91]
+	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[99]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4810,7 +5202,7 @@ func (x *GetAppUserInfosByAppResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppUserInfosByAppResponse.ProtoReflect.Descriptor instead.
 func (*GetAppUserInfosByAppResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{91}
+	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{99}
 }
 
 func (x *GetAppUserInfosByAppResponse) GetInfos() []*AppUserInfo {
@@ -5198,26 +5590,63 @@ var file_npool_appusermgr_appusermgr_proto_rawDesc = []byte{
 	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x33, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
 	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65,
 	0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x61, 0x6e,
-	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4e, 0x0a,
-	0x17, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
-	0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x33, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
-	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65,
-	0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x61, 0x6e,
-	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4f, 0x0a,
-	0x18, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
-	0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x33, 0x0a, 0x04, 0x49, 0x6e, 0x66,
-	0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73,
-	0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x61,
-	0x6e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x20,
-	0x0a, 0x0e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
-	0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44,
-	0x22, 0x56, 0x0a, 0x1b, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
-	0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
-	0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e,
-	0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
-	0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72,
-	0x6f, 0x6c, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x57, 0x0a, 0x1c, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
+	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x26, 0x0a,
+	0x14, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x4c, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x41,
+	0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x33,
+	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x61,
+	0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
+	0x76, 0x31, 0x2e, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x49,
+	0x6e, 0x66, 0x6f, 0x22, 0x4d, 0x0a, 0x1d, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70,
+	0x55, 0x73, 0x65, 0x72, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73,
+	0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72,
+	0x49, 0x44, 0x22, 0x55, 0x0a, 0x1e, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55,
+	0x73, 0x65, 0x72, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x33, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61,
+	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55,
+	0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4e, 0x0a, 0x17, 0x44, 0x65, 0x6c,
+	0x65, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x33, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61,
+	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55,
+	0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4f, 0x0a, 0x18, 0x44, 0x65, 0x6c,
+	0x65, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x33, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d,
+	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70,
+	0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x20, 0x0a, 0x0e, 0x41, 0x70,
+	0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x12, 0x0e, 0x0a, 0x02,
+	0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x56, 0x0a, 0x1b,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x37, 0x0a, 0x04, 0x49,
+	0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x61, 0x70, 0x70, 0x2e,
+	0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e,
+	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x04,
+	0x49, 0x6e, 0x66, 0x6f, 0x22, 0x57, 0x0a, 0x1c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70,
+	0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x23, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61,
+	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72,
+	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x2a, 0x0a,
+	0x18, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72,
+	0x6f, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18,
+	0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x54, 0x0a, 0x19, 0x47, 0x65, 0x74,
+	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e,
+	0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x55, 0x73,
+	0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22,
+	0x51, 0x0a, 0x21, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73,
+	0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72,
+	0x49, 0x44, 0x22, 0x5d, 0x0a, 0x22, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72,
+	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72,
 	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
 	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65,
 	0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70,
@@ -5338,7 +5767,7 @@ var file_npool_appusermgr_appusermgr_proto_rawDesc = []byte{
 	0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70,
 	0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12,
 	0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05,
-	0x54, 0x6f, 0x74, 0x61, 0x6c, 0x32, 0x8f, 0x2e, 0x0a, 0x0e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
+	0x54, 0x6f, 0x74, 0x61, 0x6c, 0x32, 0xa5, 0x33, 0x0a, 0x0e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
 	0x72, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x51, 0x0a, 0x07, 0x56, 0x65, 0x72, 0x73,
 	0x69, 0x6f, 0x6e, 0x12, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x19, 0x2e, 0x6e, 0x70,
@@ -5612,106 +6041,147 @@ var file_npool_appusermgr_appusermgr_proto_rawDesc = []byte{
 	0x65, 0x61, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65,
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x22, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1c, 0x22, 0x17,
 	0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x62, 0x61, 0x6e, 0x2f, 0x61,
-	0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x93, 0x01, 0x0a, 0x10, 0x44,
-	0x65, 0x6c, 0x65, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12,
-	0x2c, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
-	0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x41,
-	0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2d, 0x2e,
-	0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
-	0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70,
-	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x22, 0x82, 0xd3,
-	0xe4, 0x93, 0x02, 0x1c, 0x22, 0x17, 0x2f, 0x76, 0x31, 0x2f, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65,
-	0x2f, 0x62, 0x61, 0x6e, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a,
-	0x12, 0xa3, 0x01, 0x0a, 0x14, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73,
-	0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x12, 0x30, 0x2e, 0x61, 0x70, 0x70, 0x2e,
-	0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e,
+	0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x87, 0x01, 0x0a, 0x0d, 0x47,
+	0x65, 0x74, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x29, 0x2e, 0x61,
+	0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
+	0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73,
+	0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
+	0x74, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x1f, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x19, 0x22, 0x14, 0x2f, 0x76, 0x31,
+	0x2f, 0x67, 0x65, 0x74, 0x2f, 0x62, 0x61, 0x6e, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65,
+	0x72, 0x3a, 0x01, 0x2a, 0x12, 0xae, 0x01, 0x0a, 0x16, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x41,
+	0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12,
+	0x32, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
+	0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55,
+	0x73, 0x65, 0x72, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x33, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d,
+	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e,
+	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x25,
+	0x22, 0x20, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x62, 0x61, 0x6e, 0x2f, 0x61, 0x70,
+	0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73,
+	0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x93, 0x01, 0x0a, 0x10, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
+	0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x2c, 0x2e, 0x61, 0x70, 0x70,
+	0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31,
+	0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
+	0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2d, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75,
+	0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x44,
+	0x65, 0x6c, 0x65, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x22, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1c, 0x22,
+	0x17, 0x2f, 0x76, 0x31, 0x2f, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x2f, 0x62, 0x61, 0x6e, 0x2f,
+	0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0xa3, 0x01, 0x0a, 0x14,
 	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e,
-	0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x61, 0x70,
-	0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76,
-	0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43,
-	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x26,
-	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x20, 0x22, 0x1b, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x63, 0x6f, 0x6e, 0x74,
-	0x72, 0x6f, 0x6c, 0x3a, 0x01, 0x2a, 0x12, 0xa3, 0x01, 0x0a, 0x14, 0x55, 0x70, 0x64, 0x61, 0x74,
-	0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x12,
-	0x30, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
-	0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55,
-	0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x31, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e,
-	0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70,
-	0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x20, 0x22, 0x1b, 0x2f, 0x76,
-	0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65,
-	0x72, 0x2f, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x3a, 0x01, 0x2a, 0x12, 0x86, 0x01, 0x0a,
-	0x0d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x12, 0x29,
-	0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
-	0x72, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f,
-	0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x61, 0x70, 0x70, 0x2e,
-	0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e,
-	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x22, 0x13, 0x2f,
-	0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x72, 0x6f,
-	0x6c, 0x65, 0x3a, 0x01, 0x2a, 0x12, 0x86, 0x01, 0x0a, 0x0d, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
-	0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x12, 0x29, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73,
-	0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61,
-	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41,
-	0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e,
-	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x22, 0x13, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61,
-	0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x3a, 0x01, 0x2a, 0x12, 0x97,
-	0x01, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65,
-	0x55, 0x73, 0x65, 0x72, 0x12, 0x2d, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e,
+	0x74, 0x72, 0x6f, 0x6c, 0x12, 0x30, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e,
 	0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65,
+	0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02,
+	0x20, 0x22, 0x1b, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x61, 0x70,
+	0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x3a, 0x01,
+	0x2a, 0x12, 0x97, 0x01, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72,
+	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x12, 0x2d, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73,
+	0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
+	0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65,
+	0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
+	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x23, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1d, 0x22, 0x18,
+	0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72,
+	0x2f, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x3a, 0x01, 0x2a, 0x12, 0xbe, 0x01, 0x0a, 0x1a,
+	0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x36, 0x2e, 0x61, 0x70, 0x70,
+	0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31,
+	0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72,
+	0x6f, 0x6c, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x37, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61,
+	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55,
+	0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55,
+	0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2f, 0x82, 0xd3, 0xe4,
+	0x93, 0x02, 0x29, 0x22, 0x24, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x61, 0x70, 0x70,
+	0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x2f, 0x62, 0x79,
+	0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0xa3, 0x01, 0x0a,
+	0x14, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x12, 0x30, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72,
+	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73,
+	0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72,
+	0x6f, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93,
+	0x02, 0x20, 0x22, 0x1b, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x61,
+	0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x3a,
+	0x01, 0x2a, 0x12, 0x86, 0x01, 0x0a, 0x0d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70,
+	0x52, 0x6f, 0x6c, 0x65, 0x12, 0x29, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e,
+	0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x2a, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
+	0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52,
+	0x6f, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4,
+	0x93, 0x02, 0x18, 0x22, 0x13, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f,
+	0x61, 0x70, 0x70, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x3a, 0x01, 0x2a, 0x12, 0x86, 0x01, 0x0a, 0x0d,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x12, 0x29, 0x2e,
+	0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
+	0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c,
+	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75,
+	0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x22, 0x13, 0x2f, 0x76,
+	0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x72, 0x6f, 0x6c,
+	0x65, 0x3a, 0x01, 0x2a, 0x12, 0x97, 0x01, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41,
+	0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x12, 0x2d, 0x2e, 0x61, 0x70, 0x70,
+	0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31,
+	0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73,
+	0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x61, 0x70, 0x70, 0x2e,
+	0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65,
+	0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x23, 0x82, 0xd3, 0xe4, 0x93, 0x02,
+	0x1d, 0x22, 0x18, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x61, 0x70,
+	0x70, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x97,
+	0x01, 0x0a, 0x11, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65,
+	0x55, 0x73, 0x65, 0x72, 0x12, 0x2d, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e,
+	0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74,
 	0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75,
 	0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d,
-	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
 	0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x22, 0x23, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1d, 0x22, 0x18, 0x2f, 0x76, 0x31,
-	0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x72, 0x6f, 0x6c, 0x65,
-	0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x97, 0x01, 0x0a, 0x11, 0x44, 0x65, 0x6c,
-	0x65, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x12, 0x2d,
-	0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
-	0x72, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f,
-	0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e,
-	0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
-	0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c,
-	0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x23, 0x82,
-	0xd3, 0xe4, 0x93, 0x02, 0x1d, 0x22, 0x18, 0x2f, 0x76, 0x31, 0x2f, 0x64, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a,
-	0x01, 0x2a, 0x12, 0x8a, 0x01, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
-	0x72, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x2a, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72,
-	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41,
-	0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x2b, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e,
-	0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73,
-	0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1f,
-	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x19, 0x22, 0x14, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f,
-	0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x69, 0x6e, 0x66, 0x6f, 0x3a, 0x01, 0x2a, 0x12,
-	0x8e, 0x01, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e,
-	0x66, 0x6f, 0x73, 0x12, 0x2b, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d,
-	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70,
-	0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x2c, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61,
-	0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
-	0x72, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x20,
-	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1a, 0x22, 0x15, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f,
-	0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x3a, 0x01, 0x2a,
-	0x12, 0xa4, 0x01, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x49,
-	0x6e, 0x66, 0x6f, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x12, 0x30, 0x2e, 0x61, 0x70, 0x70, 0x2e,
-	0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e,
-	0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x42,
-	0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x61, 0x70,
+	0x2f, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x72, 0x6f, 0x6c, 0x65,
+	0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x8a, 0x01, 0x0a, 0x0e, 0x47, 0x65, 0x74,
+	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x2a, 0x2e, 0x61, 0x70,
 	0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76,
 	0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f,
-	0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x27,
-	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x21, 0x22, 0x1c, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f,
-	0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x2f, 0x62, 0x79,
-	0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x42, 0x33, 0x5a, 0x31, 0x67, 0x69, 0x74, 0x68, 0x75,
-	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66,
-	0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f,
-	0x6c, 0x2f, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x67, 0x72, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73,
+	0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
+	0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1f, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x19, 0x22, 0x14, 0x2f, 0x76,
+	0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x69, 0x6e,
+	0x66, 0x6f, 0x3a, 0x01, 0x2a, 0x12, 0x8e, 0x01, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70,
+	0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x2b, 0x2e, 0x61, 0x70, 0x70, 0x2e,
+	0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e,
+	0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65,
+	0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
+	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x20, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1a, 0x22, 0x15, 0x2f, 0x76,
+	0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x69, 0x6e,
+	0x66, 0x6f, 0x73, 0x3a, 0x01, 0x2a, 0x12, 0xa4, 0x01, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x41, 0x70,
+	0x70, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x12,
+	0x30, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
+	0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72,
+	0x49, 0x6e, 0x66, 0x6f, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x31, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e,
+	0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73,
+	0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x27, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x21, 0x22, 0x1c, 0x2f, 0x76,
+	0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x69, 0x6e,
+	0x66, 0x6f, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x42, 0x33, 0x5a,
+	0x31, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f,
+	0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
+	0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x6d,
+	0x67, 0x72, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -5726,110 +6196,118 @@ func file_npool_appusermgr_appusermgr_proto_rawDescGZIP() []byte {
 	return file_npool_appusermgr_appusermgr_proto_rawDescData
 }
 
-var file_npool_appusermgr_appusermgr_proto_msgTypes = make([]protoimpl.MessageInfo, 92)
+var file_npool_appusermgr_appusermgr_proto_msgTypes = make([]protoimpl.MessageInfo, 100)
 var file_npool_appusermgr_appusermgr_proto_goTypes = []interface{}{
-	(*App)(nil),                               // 0: app.user.manager.v1.App
-	(*CreateAppRequest)(nil),                  // 1: app.user.manager.v1.CreateAppRequest
-	(*CreateAppResponse)(nil),                 // 2: app.user.manager.v1.CreateAppResponse
-	(*GetAppRequest)(nil),                     // 3: app.user.manager.v1.GetAppRequest
-	(*GetAppResponse)(nil),                    // 4: app.user.manager.v1.GetAppResponse
-	(*GetAppsRequest)(nil),                    // 5: app.user.manager.v1.GetAppsRequest
-	(*GetAppsResponse)(nil),                   // 6: app.user.manager.v1.GetAppsResponse
-	(*GetAppsByCreatorRequest)(nil),           // 7: app.user.manager.v1.GetAppsByCreatorRequest
-	(*GetAppsByCreatorResponse)(nil),          // 8: app.user.manager.v1.GetAppsByCreatorResponse
-	(*UpdateAppRequest)(nil),                  // 9: app.user.manager.v1.UpdateAppRequest
-	(*UpdateAppResponse)(nil),                 // 10: app.user.manager.v1.UpdateAppResponse
-	(*AppControl)(nil),                        // 11: app.user.manager.v1.AppControl
-	(*CreateAppControlRequest)(nil),           // 12: app.user.manager.v1.CreateAppControlRequest
-	(*CreateAppControlResponse)(nil),          // 13: app.user.manager.v1.CreateAppControlResponse
-	(*GetAppControlRequest)(nil),              // 14: app.user.manager.v1.GetAppControlRequest
-	(*GetAppControlResponse)(nil),             // 15: app.user.manager.v1.GetAppControlResponse
-	(*GetAppControlByAppRequest)(nil),         // 16: app.user.manager.v1.GetAppControlByAppRequest
-	(*GetAppControlByAppResponse)(nil),        // 17: app.user.manager.v1.GetAppControlByAppResponse
-	(*UpdateAppControlRequest)(nil),           // 18: app.user.manager.v1.UpdateAppControlRequest
-	(*UpdateAppControlResponse)(nil),          // 19: app.user.manager.v1.UpdateAppControlResponse
-	(*BanApp)(nil),                            // 20: app.user.manager.v1.BanApp
-	(*CreateBanAppRequest)(nil),               // 21: app.user.manager.v1.CreateBanAppRequest
-	(*CreateBanAppResponse)(nil),              // 22: app.user.manager.v1.CreateBanAppResponse
-	(*GetBanAppRequest)(nil),                  // 23: app.user.manager.v1.GetBanAppRequest
-	(*GetBanAppResponse)(nil),                 // 24: app.user.manager.v1.GetBanAppResponse
-	(*GetBanAppByAppRequest)(nil),             // 25: app.user.manager.v1.GetBanAppByAppRequest
-	(*GetBanAppByAppResponse)(nil),            // 26: app.user.manager.v1.GetBanAppByAppResponse
-	(*UpdateBanAppRequest)(nil),               // 27: app.user.manager.v1.UpdateBanAppRequest
-	(*UpdateBanAppResponse)(nil),              // 28: app.user.manager.v1.UpdateBanAppResponse
-	(*DeleteBanAppRequest)(nil),               // 29: app.user.manager.v1.DeleteBanAppRequest
-	(*DeleteBanAppResponse)(nil),              // 30: app.user.manager.v1.DeleteBanAppResponse
-	(*AppInfo)(nil),                           // 31: app.user.manager.v1.AppInfo
-	(*GetAppInfoRequest)(nil),                 // 32: app.user.manager.v1.GetAppInfoRequest
-	(*GetAppInfoResponse)(nil),                // 33: app.user.manager.v1.GetAppInfoResponse
-	(*GetAppInfosRequest)(nil),                // 34: app.user.manager.v1.GetAppInfosRequest
-	(*GetAppInfosResponse)(nil),               // 35: app.user.manager.v1.GetAppInfosResponse
-	(*GetAppInfosByCreatorRequest)(nil),       // 36: app.user.manager.v1.GetAppInfosByCreatorRequest
-	(*GetAppInfosByCreatorResponse)(nil),      // 37: app.user.manager.v1.GetAppInfosByCreatorResponse
-	(*AppUser)(nil),                           // 38: app.user.manager.v1.AppUser
-	(*CreateAppUserRequest)(nil),              // 39: app.user.manager.v1.CreateAppUserRequest
-	(*CreateAppUserResponse)(nil),             // 40: app.user.manager.v1.CreateAppUserResponse
-	(*GetAppUserRequest)(nil),                 // 41: app.user.manager.v1.GetAppUserRequest
-	(*GetAppUserResponse)(nil),                // 42: app.user.manager.v1.GetAppUserResponse
-	(*GetAppUsersByAppRequest)(nil),           // 43: app.user.manager.v1.GetAppUsersByAppRequest
-	(*GetAppUsersByAppResponse)(nil),          // 44: app.user.manager.v1.GetAppUsersByAppResponse
-	(*UpdateAppUserRequest)(nil),              // 45: app.user.manager.v1.UpdateAppUserRequest
-	(*UpdateAppUserResponse)(nil),             // 46: app.user.manager.v1.UpdateAppUserResponse
-	(*AppUserSecret)(nil),                     // 47: app.user.manager.v1.AppUserSecret
-	(*CreateAppUserSecretRequest)(nil),        // 48: app.user.manager.v1.CreateAppUserSecretRequest
-	(*CreateAppUserSecretResponse)(nil),       // 49: app.user.manager.v1.CreateAppUserSecretResponse
-	(*GetAppUserSecretRequest)(nil),           // 50: app.user.manager.v1.GetAppUserSecretRequest
-	(*GetAppUserSecretResponse)(nil),          // 51: app.user.manager.v1.GetAppUserSecretResponse
-	(*GetAppUserSecretByAppUserRequest)(nil),  // 52: app.user.manager.v1.GetAppUserSecretByAppUserRequest
-	(*GetAppUserSecretByAppUserResponse)(nil), // 53: app.user.manager.v1.GetAppUserSecretByAppUserResponse
-	(*UpdateAppUserSecretRequest)(nil),        // 54: app.user.manager.v1.UpdateAppUserSecretRequest
-	(*UpdateAppUserSecretResponse)(nil),       // 55: app.user.manager.v1.UpdateAppUserSecretResponse
-	(*AppUserExtra)(nil),                      // 56: app.user.manager.v1.AppUserExtra
-	(*CreateAppUserExtraRequest)(nil),         // 57: app.user.manager.v1.CreateAppUserExtraRequest
-	(*CreateAppUserExtraResponse)(nil),        // 58: app.user.manager.v1.CreateAppUserExtraResponse
-	(*GetAppUserExtraRequest)(nil),            // 59: app.user.manager.v1.GetAppUserExtraRequest
-	(*GetAppUserExtraResponse)(nil),           // 60: app.user.manager.v1.GetAppUserExtraResponse
-	(*GetAppUserExtraByAppUserRequest)(nil),   // 61: app.user.manager.v1.GetAppUserExtraByAppUserRequest
-	(*GetAppUserExtraByAppUserResponse)(nil),  // 62: app.user.manager.v1.GetAppUserExtraByAppUserResponse
-	(*UpdateAppUserExtraRequest)(nil),         // 63: app.user.manager.v1.UpdateAppUserExtraRequest
-	(*UpdateAppUserExtraResponse)(nil),        // 64: app.user.manager.v1.UpdateAppUserExtraResponse
-	(*BanAppUser)(nil),                        // 65: app.user.manager.v1.BanAppUser
-	(*CreateBanAppUserRequest)(nil),           // 66: app.user.manager.v1.CreateBanAppUserRequest
-	(*CreateBanAppUserResponse)(nil),          // 67: app.user.manager.v1.CreateBanAppUserResponse
-	(*DeleteBanAppUserRequest)(nil),           // 68: app.user.manager.v1.DeleteBanAppUserRequest
-	(*DeleteBanAppUserResponse)(nil),          // 69: app.user.manager.v1.DeleteBanAppUserResponse
-	(*AppUserControl)(nil),                    // 70: app.user.manager.v1.AppUserControl
-	(*CreateAppUserControlRequest)(nil),       // 71: app.user.manager.v1.CreateAppUserControlRequest
-	(*CreateAppUserControlResponse)(nil),      // 72: app.user.manager.v1.CreateAppUserControlResponse
-	(*UpdateAppUserControlRequest)(nil),       // 73: app.user.manager.v1.UpdateAppUserControlRequest
-	(*UpdateAppUserControlResponse)(nil),      // 74: app.user.manager.v1.UpdateAppUserControlResponse
-	(*AppRole)(nil),                           // 75: app.user.manager.v1.AppRole
-	(*CreateAppRoleRequest)(nil),              // 76: app.user.manager.v1.CreateAppRoleRequest
-	(*CreateAppRoleResponse)(nil),             // 77: app.user.manager.v1.CreateAppRoleResponse
-	(*UpdateAppRoleRequest)(nil),              // 78: app.user.manager.v1.UpdateAppRoleRequest
-	(*UpdateAppRoleResponse)(nil),             // 79: app.user.manager.v1.UpdateAppRoleResponse
-	(*AppRoleUser)(nil),                       // 80: app.user.manager.v1.AppRoleUser
-	(*CreateAppRoleUserRequest)(nil),          // 81: app.user.manager.v1.CreateAppRoleUserRequest
-	(*CreateAppRoleUserResponse)(nil),         // 82: app.user.manager.v1.CreateAppRoleUserResponse
-	(*DeleteAppRoleUserRequest)(nil),          // 83: app.user.manager.v1.DeleteAppRoleUserRequest
-	(*DeleteAppRoleUserResponse)(nil),         // 84: app.user.manager.v1.DeleteAppRoleUserResponse
-	(*AppUserInfo)(nil),                       // 85: app.user.manager.v1.AppUserInfo
-	(*GetAppUserInfoRequest)(nil),             // 86: app.user.manager.v1.GetAppUserInfoRequest
-	(*GetAppUserInfoResponse)(nil),            // 87: app.user.manager.v1.GetAppUserInfoResponse
-	(*GetAppUserInfosRequest)(nil),            // 88: app.user.manager.v1.GetAppUserInfosRequest
-	(*GetAppUserInfosResponse)(nil),           // 89: app.user.manager.v1.GetAppUserInfosResponse
-	(*GetAppUserInfosByAppRequest)(nil),       // 90: app.user.manager.v1.GetAppUserInfosByAppRequest
-	(*GetAppUserInfosByAppResponse)(nil),      // 91: app.user.manager.v1.GetAppUserInfosByAppResponse
-	(*npool.PageInfo)(nil),                    // 92: npool.v1.PageInfo
-	(*emptypb.Empty)(nil),                     // 93: google.protobuf.Empty
-	(*npool.VersionResponse)(nil),             // 94: npool.v1.VersionResponse
+	(*App)(nil),                                // 0: app.user.manager.v1.App
+	(*CreateAppRequest)(nil),                   // 1: app.user.manager.v1.CreateAppRequest
+	(*CreateAppResponse)(nil),                  // 2: app.user.manager.v1.CreateAppResponse
+	(*GetAppRequest)(nil),                      // 3: app.user.manager.v1.GetAppRequest
+	(*GetAppResponse)(nil),                     // 4: app.user.manager.v1.GetAppResponse
+	(*GetAppsRequest)(nil),                     // 5: app.user.manager.v1.GetAppsRequest
+	(*GetAppsResponse)(nil),                    // 6: app.user.manager.v1.GetAppsResponse
+	(*GetAppsByCreatorRequest)(nil),            // 7: app.user.manager.v1.GetAppsByCreatorRequest
+	(*GetAppsByCreatorResponse)(nil),           // 8: app.user.manager.v1.GetAppsByCreatorResponse
+	(*UpdateAppRequest)(nil),                   // 9: app.user.manager.v1.UpdateAppRequest
+	(*UpdateAppResponse)(nil),                  // 10: app.user.manager.v1.UpdateAppResponse
+	(*AppControl)(nil),                         // 11: app.user.manager.v1.AppControl
+	(*CreateAppControlRequest)(nil),            // 12: app.user.manager.v1.CreateAppControlRequest
+	(*CreateAppControlResponse)(nil),           // 13: app.user.manager.v1.CreateAppControlResponse
+	(*GetAppControlRequest)(nil),               // 14: app.user.manager.v1.GetAppControlRequest
+	(*GetAppControlResponse)(nil),              // 15: app.user.manager.v1.GetAppControlResponse
+	(*GetAppControlByAppRequest)(nil),          // 16: app.user.manager.v1.GetAppControlByAppRequest
+	(*GetAppControlByAppResponse)(nil),         // 17: app.user.manager.v1.GetAppControlByAppResponse
+	(*UpdateAppControlRequest)(nil),            // 18: app.user.manager.v1.UpdateAppControlRequest
+	(*UpdateAppControlResponse)(nil),           // 19: app.user.manager.v1.UpdateAppControlResponse
+	(*BanApp)(nil),                             // 20: app.user.manager.v1.BanApp
+	(*CreateBanAppRequest)(nil),                // 21: app.user.manager.v1.CreateBanAppRequest
+	(*CreateBanAppResponse)(nil),               // 22: app.user.manager.v1.CreateBanAppResponse
+	(*GetBanAppRequest)(nil),                   // 23: app.user.manager.v1.GetBanAppRequest
+	(*GetBanAppResponse)(nil),                  // 24: app.user.manager.v1.GetBanAppResponse
+	(*GetBanAppByAppRequest)(nil),              // 25: app.user.manager.v1.GetBanAppByAppRequest
+	(*GetBanAppByAppResponse)(nil),             // 26: app.user.manager.v1.GetBanAppByAppResponse
+	(*UpdateBanAppRequest)(nil),                // 27: app.user.manager.v1.UpdateBanAppRequest
+	(*UpdateBanAppResponse)(nil),               // 28: app.user.manager.v1.UpdateBanAppResponse
+	(*DeleteBanAppRequest)(nil),                // 29: app.user.manager.v1.DeleteBanAppRequest
+	(*DeleteBanAppResponse)(nil),               // 30: app.user.manager.v1.DeleteBanAppResponse
+	(*AppInfo)(nil),                            // 31: app.user.manager.v1.AppInfo
+	(*GetAppInfoRequest)(nil),                  // 32: app.user.manager.v1.GetAppInfoRequest
+	(*GetAppInfoResponse)(nil),                 // 33: app.user.manager.v1.GetAppInfoResponse
+	(*GetAppInfosRequest)(nil),                 // 34: app.user.manager.v1.GetAppInfosRequest
+	(*GetAppInfosResponse)(nil),                // 35: app.user.manager.v1.GetAppInfosResponse
+	(*GetAppInfosByCreatorRequest)(nil),        // 36: app.user.manager.v1.GetAppInfosByCreatorRequest
+	(*GetAppInfosByCreatorResponse)(nil),       // 37: app.user.manager.v1.GetAppInfosByCreatorResponse
+	(*AppUser)(nil),                            // 38: app.user.manager.v1.AppUser
+	(*CreateAppUserRequest)(nil),               // 39: app.user.manager.v1.CreateAppUserRequest
+	(*CreateAppUserResponse)(nil),              // 40: app.user.manager.v1.CreateAppUserResponse
+	(*GetAppUserRequest)(nil),                  // 41: app.user.manager.v1.GetAppUserRequest
+	(*GetAppUserResponse)(nil),                 // 42: app.user.manager.v1.GetAppUserResponse
+	(*GetAppUsersByAppRequest)(nil),            // 43: app.user.manager.v1.GetAppUsersByAppRequest
+	(*GetAppUsersByAppResponse)(nil),           // 44: app.user.manager.v1.GetAppUsersByAppResponse
+	(*UpdateAppUserRequest)(nil),               // 45: app.user.manager.v1.UpdateAppUserRequest
+	(*UpdateAppUserResponse)(nil),              // 46: app.user.manager.v1.UpdateAppUserResponse
+	(*AppUserSecret)(nil),                      // 47: app.user.manager.v1.AppUserSecret
+	(*CreateAppUserSecretRequest)(nil),         // 48: app.user.manager.v1.CreateAppUserSecretRequest
+	(*CreateAppUserSecretResponse)(nil),        // 49: app.user.manager.v1.CreateAppUserSecretResponse
+	(*GetAppUserSecretRequest)(nil),            // 50: app.user.manager.v1.GetAppUserSecretRequest
+	(*GetAppUserSecretResponse)(nil),           // 51: app.user.manager.v1.GetAppUserSecretResponse
+	(*GetAppUserSecretByAppUserRequest)(nil),   // 52: app.user.manager.v1.GetAppUserSecretByAppUserRequest
+	(*GetAppUserSecretByAppUserResponse)(nil),  // 53: app.user.manager.v1.GetAppUserSecretByAppUserResponse
+	(*UpdateAppUserSecretRequest)(nil),         // 54: app.user.manager.v1.UpdateAppUserSecretRequest
+	(*UpdateAppUserSecretResponse)(nil),        // 55: app.user.manager.v1.UpdateAppUserSecretResponse
+	(*AppUserExtra)(nil),                       // 56: app.user.manager.v1.AppUserExtra
+	(*CreateAppUserExtraRequest)(nil),          // 57: app.user.manager.v1.CreateAppUserExtraRequest
+	(*CreateAppUserExtraResponse)(nil),         // 58: app.user.manager.v1.CreateAppUserExtraResponse
+	(*GetAppUserExtraRequest)(nil),             // 59: app.user.manager.v1.GetAppUserExtraRequest
+	(*GetAppUserExtraResponse)(nil),            // 60: app.user.manager.v1.GetAppUserExtraResponse
+	(*GetAppUserExtraByAppUserRequest)(nil),    // 61: app.user.manager.v1.GetAppUserExtraByAppUserRequest
+	(*GetAppUserExtraByAppUserResponse)(nil),   // 62: app.user.manager.v1.GetAppUserExtraByAppUserResponse
+	(*UpdateAppUserExtraRequest)(nil),          // 63: app.user.manager.v1.UpdateAppUserExtraRequest
+	(*UpdateAppUserExtraResponse)(nil),         // 64: app.user.manager.v1.UpdateAppUserExtraResponse
+	(*BanAppUser)(nil),                         // 65: app.user.manager.v1.BanAppUser
+	(*CreateBanAppUserRequest)(nil),            // 66: app.user.manager.v1.CreateBanAppUserRequest
+	(*CreateBanAppUserResponse)(nil),           // 67: app.user.manager.v1.CreateBanAppUserResponse
+	(*GetBanAppUserRequest)(nil),               // 68: app.user.manager.v1.GetBanAppUserRequest
+	(*GetBanAppUserResponse)(nil),              // 69: app.user.manager.v1.GetBanAppUserResponse
+	(*GetBanAppUserByAppUserRequest)(nil),      // 70: app.user.manager.v1.GetBanAppUserByAppUserRequest
+	(*GetBanAppUserByAppUserResponse)(nil),     // 71: app.user.manager.v1.GetBanAppUserByAppUserResponse
+	(*DeleteBanAppUserRequest)(nil),            // 72: app.user.manager.v1.DeleteBanAppUserRequest
+	(*DeleteBanAppUserResponse)(nil),           // 73: app.user.manager.v1.DeleteBanAppUserResponse
+	(*AppUserControl)(nil),                     // 74: app.user.manager.v1.AppUserControl
+	(*CreateAppUserControlRequest)(nil),        // 75: app.user.manager.v1.CreateAppUserControlRequest
+	(*CreateAppUserControlResponse)(nil),       // 76: app.user.manager.v1.CreateAppUserControlResponse
+	(*GetAppUserControlRequest)(nil),           // 77: app.user.manager.v1.GetAppUserControlRequest
+	(*GetAppUserControlResponse)(nil),          // 78: app.user.manager.v1.GetAppUserControlResponse
+	(*GetAppUserControlByAppUserRequest)(nil),  // 79: app.user.manager.v1.GetAppUserControlByAppUserRequest
+	(*GetAppUserControlByAppUserResponse)(nil), // 80: app.user.manager.v1.GetAppUserControlByAppUserResponse
+	(*UpdateAppUserControlRequest)(nil),        // 81: app.user.manager.v1.UpdateAppUserControlRequest
+	(*UpdateAppUserControlResponse)(nil),       // 82: app.user.manager.v1.UpdateAppUserControlResponse
+	(*AppRole)(nil),                            // 83: app.user.manager.v1.AppRole
+	(*CreateAppRoleRequest)(nil),               // 84: app.user.manager.v1.CreateAppRoleRequest
+	(*CreateAppRoleResponse)(nil),              // 85: app.user.manager.v1.CreateAppRoleResponse
+	(*UpdateAppRoleRequest)(nil),               // 86: app.user.manager.v1.UpdateAppRoleRequest
+	(*UpdateAppRoleResponse)(nil),              // 87: app.user.manager.v1.UpdateAppRoleResponse
+	(*AppRoleUser)(nil),                        // 88: app.user.manager.v1.AppRoleUser
+	(*CreateAppRoleUserRequest)(nil),           // 89: app.user.manager.v1.CreateAppRoleUserRequest
+	(*CreateAppRoleUserResponse)(nil),          // 90: app.user.manager.v1.CreateAppRoleUserResponse
+	(*DeleteAppRoleUserRequest)(nil),           // 91: app.user.manager.v1.DeleteAppRoleUserRequest
+	(*DeleteAppRoleUserResponse)(nil),          // 92: app.user.manager.v1.DeleteAppRoleUserResponse
+	(*AppUserInfo)(nil),                        // 93: app.user.manager.v1.AppUserInfo
+	(*GetAppUserInfoRequest)(nil),              // 94: app.user.manager.v1.GetAppUserInfoRequest
+	(*GetAppUserInfoResponse)(nil),             // 95: app.user.manager.v1.GetAppUserInfoResponse
+	(*GetAppUserInfosRequest)(nil),             // 96: app.user.manager.v1.GetAppUserInfosRequest
+	(*GetAppUserInfosResponse)(nil),            // 97: app.user.manager.v1.GetAppUserInfosResponse
+	(*GetAppUserInfosByAppRequest)(nil),        // 98: app.user.manager.v1.GetAppUserInfosByAppRequest
+	(*GetAppUserInfosByAppResponse)(nil),       // 99: app.user.manager.v1.GetAppUserInfosByAppResponse
+	(*npool.PageInfo)(nil),                     // 100: npool.v1.PageInfo
+	(*emptypb.Empty)(nil),                      // 101: google.protobuf.Empty
+	(*npool.VersionResponse)(nil),              // 102: npool.v1.VersionResponse
 }
 var file_npool_appusermgr_appusermgr_proto_depIdxs = []int32{
 	0,   // 0: app.user.manager.v1.CreateAppRequest.Info:type_name -> app.user.manager.v1.App
 	0,   // 1: app.user.manager.v1.CreateAppResponse.Info:type_name -> app.user.manager.v1.App
 	0,   // 2: app.user.manager.v1.GetAppResponse.Info:type_name -> app.user.manager.v1.App
 	0,   // 3: app.user.manager.v1.GetAppsResponse.Infos:type_name -> app.user.manager.v1.App
-	92,  // 4: app.user.manager.v1.GetAppsByCreatorRequest.PageInfo:type_name -> npool.v1.PageInfo
+	100, // 4: app.user.manager.v1.GetAppsByCreatorRequest.PageInfo:type_name -> npool.v1.PageInfo
 	0,   // 5: app.user.manager.v1.GetAppsByCreatorResponse.Infos:type_name -> app.user.manager.v1.App
 	0,   // 6: app.user.manager.v1.UpdateAppRequest.Info:type_name -> app.user.manager.v1.App
 	0,   // 7: app.user.manager.v1.UpdateAppResponse.Info:type_name -> app.user.manager.v1.App
@@ -5850,14 +6328,14 @@ var file_npool_appusermgr_appusermgr_proto_depIdxs = []int32{
 	11,  // 22: app.user.manager.v1.AppInfo.Ctrl:type_name -> app.user.manager.v1.AppControl
 	20,  // 23: app.user.manager.v1.AppInfo.Ban:type_name -> app.user.manager.v1.BanApp
 	31,  // 24: app.user.manager.v1.GetAppInfoResponse.Info:type_name -> app.user.manager.v1.AppInfo
-	92,  // 25: app.user.manager.v1.GetAppInfosRequest.PageInfo:type_name -> npool.v1.PageInfo
+	100, // 25: app.user.manager.v1.GetAppInfosRequest.PageInfo:type_name -> npool.v1.PageInfo
 	31,  // 26: app.user.manager.v1.GetAppInfosResponse.Infos:type_name -> app.user.manager.v1.AppInfo
-	92,  // 27: app.user.manager.v1.GetAppInfosByCreatorRequest.PageInfo:type_name -> npool.v1.PageInfo
+	100, // 27: app.user.manager.v1.GetAppInfosByCreatorRequest.PageInfo:type_name -> npool.v1.PageInfo
 	31,  // 28: app.user.manager.v1.GetAppInfosByCreatorResponse.Infos:type_name -> app.user.manager.v1.AppInfo
 	38,  // 29: app.user.manager.v1.CreateAppUserRequest.Info:type_name -> app.user.manager.v1.AppUser
 	38,  // 30: app.user.manager.v1.CreateAppUserResponse.Info:type_name -> app.user.manager.v1.AppUser
 	38,  // 31: app.user.manager.v1.GetAppUserResponse.Info:type_name -> app.user.manager.v1.AppUser
-	92,  // 32: app.user.manager.v1.GetAppUsersByAppRequest.PageInfo:type_name -> npool.v1.PageInfo
+	100, // 32: app.user.manager.v1.GetAppUsersByAppRequest.PageInfo:type_name -> npool.v1.PageInfo
 	38,  // 33: app.user.manager.v1.GetAppUsersByAppResponse.Infos:type_name -> app.user.manager.v1.AppUser
 	38,  // 34: app.user.manager.v1.UpdateAppUserRequest.Info:type_name -> app.user.manager.v1.AppUser
 	38,  // 35: app.user.manager.v1.UpdateAppUserResponse.Info:type_name -> app.user.manager.v1.AppUser
@@ -5875,117 +6353,129 @@ var file_npool_appusermgr_appusermgr_proto_depIdxs = []int32{
 	56,  // 47: app.user.manager.v1.UpdateAppUserExtraResponse.Info:type_name -> app.user.manager.v1.AppUserExtra
 	65,  // 48: app.user.manager.v1.CreateBanAppUserRequest.Info:type_name -> app.user.manager.v1.BanAppUser
 	65,  // 49: app.user.manager.v1.CreateBanAppUserResponse.Info:type_name -> app.user.manager.v1.BanAppUser
-	65,  // 50: app.user.manager.v1.DeleteBanAppUserRequest.Info:type_name -> app.user.manager.v1.BanAppUser
-	65,  // 51: app.user.manager.v1.DeleteBanAppUserResponse.Info:type_name -> app.user.manager.v1.BanAppUser
-	70,  // 52: app.user.manager.v1.CreateAppUserControlRequest.Info:type_name -> app.user.manager.v1.AppUserControl
-	70,  // 53: app.user.manager.v1.CreateAppUserControlResponse.Info:type_name -> app.user.manager.v1.AppUserControl
-	70,  // 54: app.user.manager.v1.UpdateAppUserControlRequest.Info:type_name -> app.user.manager.v1.AppUserControl
-	70,  // 55: app.user.manager.v1.UpdateAppUserControlResponse.Info:type_name -> app.user.manager.v1.AppUserControl
-	75,  // 56: app.user.manager.v1.CreateAppRoleRequest.Info:type_name -> app.user.manager.v1.AppRole
-	75,  // 57: app.user.manager.v1.CreateAppRoleResponse.Info:type_name -> app.user.manager.v1.AppRole
-	75,  // 58: app.user.manager.v1.UpdateAppRoleRequest.Info:type_name -> app.user.manager.v1.AppRole
-	75,  // 59: app.user.manager.v1.UpdateAppRoleResponse.Info:type_name -> app.user.manager.v1.AppRole
-	80,  // 60: app.user.manager.v1.CreateAppRoleUserRequest.Info:type_name -> app.user.manager.v1.AppRoleUser
-	80,  // 61: app.user.manager.v1.CreateAppRoleUserResponse.Info:type_name -> app.user.manager.v1.AppRoleUser
-	80,  // 62: app.user.manager.v1.DeleteAppRoleUserRequest.Info:type_name -> app.user.manager.v1.AppRoleUser
-	80,  // 63: app.user.manager.v1.DeleteAppRoleUserResponse.Info:type_name -> app.user.manager.v1.AppRoleUser
-	38,  // 64: app.user.manager.v1.AppUserInfo.User:type_name -> app.user.manager.v1.AppUser
-	56,  // 65: app.user.manager.v1.AppUserInfo.Extra:type_name -> app.user.manager.v1.AppUserExtra
-	70,  // 66: app.user.manager.v1.AppUserInfo.Ctrl:type_name -> app.user.manager.v1.AppUserControl
-	65,  // 67: app.user.manager.v1.AppUserInfo.Ban:type_name -> app.user.manager.v1.BanAppUser
-	75,  // 68: app.user.manager.v1.AppUserInfo.Roles:type_name -> app.user.manager.v1.AppRole
-	85,  // 69: app.user.manager.v1.GetAppUserInfoResponse.Info:type_name -> app.user.manager.v1.AppUserInfo
-	92,  // 70: app.user.manager.v1.GetAppUserInfosRequest.PageInfo:type_name -> npool.v1.PageInfo
-	85,  // 71: app.user.manager.v1.GetAppUserInfosResponse.Infos:type_name -> app.user.manager.v1.AppUserInfo
-	92,  // 72: app.user.manager.v1.GetAppUserInfosByAppRequest.PageInfo:type_name -> npool.v1.PageInfo
-	85,  // 73: app.user.manager.v1.GetAppUserInfosByAppResponse.Infos:type_name -> app.user.manager.v1.AppUserInfo
-	93,  // 74: app.user.manager.v1.AppUserManager.Version:input_type -> google.protobuf.Empty
-	1,   // 75: app.user.manager.v1.AppUserManager.CreateApp:input_type -> app.user.manager.v1.CreateAppRequest
-	3,   // 76: app.user.manager.v1.AppUserManager.GetApp:input_type -> app.user.manager.v1.GetAppRequest
-	5,   // 77: app.user.manager.v1.AppUserManager.GetApps:input_type -> app.user.manager.v1.GetAppsRequest
-	7,   // 78: app.user.manager.v1.AppUserManager.GetAppsByCreator:input_type -> app.user.manager.v1.GetAppsByCreatorRequest
-	9,   // 79: app.user.manager.v1.AppUserManager.UpdateApp:input_type -> app.user.manager.v1.UpdateAppRequest
-	12,  // 80: app.user.manager.v1.AppUserManager.CreateAppControl:input_type -> app.user.manager.v1.CreateAppControlRequest
-	14,  // 81: app.user.manager.v1.AppUserManager.GetAppControl:input_type -> app.user.manager.v1.GetAppControlRequest
-	16,  // 82: app.user.manager.v1.AppUserManager.GetAppControlByApp:input_type -> app.user.manager.v1.GetAppControlByAppRequest
-	18,  // 83: app.user.manager.v1.AppUserManager.UpdateAppControl:input_type -> app.user.manager.v1.UpdateAppControlRequest
-	21,  // 84: app.user.manager.v1.AppUserManager.CreateBanApp:input_type -> app.user.manager.v1.CreateBanAppRequest
-	23,  // 85: app.user.manager.v1.AppUserManager.GetBanApp:input_type -> app.user.manager.v1.GetBanAppRequest
-	25,  // 86: app.user.manager.v1.AppUserManager.GetBanAppByApp:input_type -> app.user.manager.v1.GetBanAppByAppRequest
-	27,  // 87: app.user.manager.v1.AppUserManager.UpdateBanApp:input_type -> app.user.manager.v1.UpdateBanAppRequest
-	29,  // 88: app.user.manager.v1.AppUserManager.DeleteBanApp:input_type -> app.user.manager.v1.DeleteBanAppRequest
-	32,  // 89: app.user.manager.v1.AppUserManager.GetAppInfo:input_type -> app.user.manager.v1.GetAppInfoRequest
-	34,  // 90: app.user.manager.v1.AppUserManager.GetAppInfos:input_type -> app.user.manager.v1.GetAppInfosRequest
-	36,  // 91: app.user.manager.v1.AppUserManager.GetAppInfosByCreator:input_type -> app.user.manager.v1.GetAppInfosByCreatorRequest
-	39,  // 92: app.user.manager.v1.AppUserManager.CreateAppUser:input_type -> app.user.manager.v1.CreateAppUserRequest
-	41,  // 93: app.user.manager.v1.AppUserManager.GetAppUser:input_type -> app.user.manager.v1.GetAppUserRequest
-	43,  // 94: app.user.manager.v1.AppUserManager.GetAppUsersByApp:input_type -> app.user.manager.v1.GetAppUsersByAppRequest
-	45,  // 95: app.user.manager.v1.AppUserManager.UpdateAppUser:input_type -> app.user.manager.v1.UpdateAppUserRequest
-	48,  // 96: app.user.manager.v1.AppUserManager.CreateAppUserSecret:input_type -> app.user.manager.v1.CreateAppUserSecretRequest
-	50,  // 97: app.user.manager.v1.AppUserManager.GetAppUserSecret:input_type -> app.user.manager.v1.GetAppUserSecretRequest
-	52,  // 98: app.user.manager.v1.AppUserManager.GetAppUserSecretByAppUser:input_type -> app.user.manager.v1.GetAppUserSecretByAppUserRequest
-	54,  // 99: app.user.manager.v1.AppUserManager.UpdateAppUserSecret:input_type -> app.user.manager.v1.UpdateAppUserSecretRequest
-	57,  // 100: app.user.manager.v1.AppUserManager.CreateAppUserExtra:input_type -> app.user.manager.v1.CreateAppUserExtraRequest
-	59,  // 101: app.user.manager.v1.AppUserManager.GetAppUserExtra:input_type -> app.user.manager.v1.GetAppUserExtraRequest
-	61,  // 102: app.user.manager.v1.AppUserManager.GetAppUserExtraByAppUser:input_type -> app.user.manager.v1.GetAppUserExtraByAppUserRequest
-	63,  // 103: app.user.manager.v1.AppUserManager.UpdateAppUserExtra:input_type -> app.user.manager.v1.UpdateAppUserExtraRequest
-	66,  // 104: app.user.manager.v1.AppUserManager.CreateBanAppUser:input_type -> app.user.manager.v1.CreateBanAppUserRequest
-	68,  // 105: app.user.manager.v1.AppUserManager.DeleteBanAppUser:input_type -> app.user.manager.v1.DeleteBanAppUserRequest
-	71,  // 106: app.user.manager.v1.AppUserManager.CreateAppUserControl:input_type -> app.user.manager.v1.CreateAppUserControlRequest
-	73,  // 107: app.user.manager.v1.AppUserManager.UpdateAppUserControl:input_type -> app.user.manager.v1.UpdateAppUserControlRequest
-	76,  // 108: app.user.manager.v1.AppUserManager.CreateAppRole:input_type -> app.user.manager.v1.CreateAppRoleRequest
-	78,  // 109: app.user.manager.v1.AppUserManager.UpdateAppRole:input_type -> app.user.manager.v1.UpdateAppRoleRequest
-	81,  // 110: app.user.manager.v1.AppUserManager.CreateAppRoleUser:input_type -> app.user.manager.v1.CreateAppRoleUserRequest
-	83,  // 111: app.user.manager.v1.AppUserManager.DeleteAppRoleUser:input_type -> app.user.manager.v1.DeleteAppRoleUserRequest
-	86,  // 112: app.user.manager.v1.AppUserManager.GetAppUserInfo:input_type -> app.user.manager.v1.GetAppUserInfoRequest
-	88,  // 113: app.user.manager.v1.AppUserManager.GetAppUserInfos:input_type -> app.user.manager.v1.GetAppUserInfosRequest
-	90,  // 114: app.user.manager.v1.AppUserManager.GetAppUserInfosByApp:input_type -> app.user.manager.v1.GetAppUserInfosByAppRequest
-	94,  // 115: app.user.manager.v1.AppUserManager.Version:output_type -> npool.v1.VersionResponse
-	2,   // 116: app.user.manager.v1.AppUserManager.CreateApp:output_type -> app.user.manager.v1.CreateAppResponse
-	4,   // 117: app.user.manager.v1.AppUserManager.GetApp:output_type -> app.user.manager.v1.GetAppResponse
-	6,   // 118: app.user.manager.v1.AppUserManager.GetApps:output_type -> app.user.manager.v1.GetAppsResponse
-	8,   // 119: app.user.manager.v1.AppUserManager.GetAppsByCreator:output_type -> app.user.manager.v1.GetAppsByCreatorResponse
-	10,  // 120: app.user.manager.v1.AppUserManager.UpdateApp:output_type -> app.user.manager.v1.UpdateAppResponse
-	13,  // 121: app.user.manager.v1.AppUserManager.CreateAppControl:output_type -> app.user.manager.v1.CreateAppControlResponse
-	15,  // 122: app.user.manager.v1.AppUserManager.GetAppControl:output_type -> app.user.manager.v1.GetAppControlResponse
-	17,  // 123: app.user.manager.v1.AppUserManager.GetAppControlByApp:output_type -> app.user.manager.v1.GetAppControlByAppResponse
-	19,  // 124: app.user.manager.v1.AppUserManager.UpdateAppControl:output_type -> app.user.manager.v1.UpdateAppControlResponse
-	22,  // 125: app.user.manager.v1.AppUserManager.CreateBanApp:output_type -> app.user.manager.v1.CreateBanAppResponse
-	24,  // 126: app.user.manager.v1.AppUserManager.GetBanApp:output_type -> app.user.manager.v1.GetBanAppResponse
-	26,  // 127: app.user.manager.v1.AppUserManager.GetBanAppByApp:output_type -> app.user.manager.v1.GetBanAppByAppResponse
-	28,  // 128: app.user.manager.v1.AppUserManager.UpdateBanApp:output_type -> app.user.manager.v1.UpdateBanAppResponse
-	30,  // 129: app.user.manager.v1.AppUserManager.DeleteBanApp:output_type -> app.user.manager.v1.DeleteBanAppResponse
-	33,  // 130: app.user.manager.v1.AppUserManager.GetAppInfo:output_type -> app.user.manager.v1.GetAppInfoResponse
-	35,  // 131: app.user.manager.v1.AppUserManager.GetAppInfos:output_type -> app.user.manager.v1.GetAppInfosResponse
-	37,  // 132: app.user.manager.v1.AppUserManager.GetAppInfosByCreator:output_type -> app.user.manager.v1.GetAppInfosByCreatorResponse
-	40,  // 133: app.user.manager.v1.AppUserManager.CreateAppUser:output_type -> app.user.manager.v1.CreateAppUserResponse
-	42,  // 134: app.user.manager.v1.AppUserManager.GetAppUser:output_type -> app.user.manager.v1.GetAppUserResponse
-	44,  // 135: app.user.manager.v1.AppUserManager.GetAppUsersByApp:output_type -> app.user.manager.v1.GetAppUsersByAppResponse
-	46,  // 136: app.user.manager.v1.AppUserManager.UpdateAppUser:output_type -> app.user.manager.v1.UpdateAppUserResponse
-	49,  // 137: app.user.manager.v1.AppUserManager.CreateAppUserSecret:output_type -> app.user.manager.v1.CreateAppUserSecretResponse
-	51,  // 138: app.user.manager.v1.AppUserManager.GetAppUserSecret:output_type -> app.user.manager.v1.GetAppUserSecretResponse
-	53,  // 139: app.user.manager.v1.AppUserManager.GetAppUserSecretByAppUser:output_type -> app.user.manager.v1.GetAppUserSecretByAppUserResponse
-	55,  // 140: app.user.manager.v1.AppUserManager.UpdateAppUserSecret:output_type -> app.user.manager.v1.UpdateAppUserSecretResponse
-	58,  // 141: app.user.manager.v1.AppUserManager.CreateAppUserExtra:output_type -> app.user.manager.v1.CreateAppUserExtraResponse
-	60,  // 142: app.user.manager.v1.AppUserManager.GetAppUserExtra:output_type -> app.user.manager.v1.GetAppUserExtraResponse
-	62,  // 143: app.user.manager.v1.AppUserManager.GetAppUserExtraByAppUser:output_type -> app.user.manager.v1.GetAppUserExtraByAppUserResponse
-	64,  // 144: app.user.manager.v1.AppUserManager.UpdateAppUserExtra:output_type -> app.user.manager.v1.UpdateAppUserExtraResponse
-	67,  // 145: app.user.manager.v1.AppUserManager.CreateBanAppUser:output_type -> app.user.manager.v1.CreateBanAppUserResponse
-	69,  // 146: app.user.manager.v1.AppUserManager.DeleteBanAppUser:output_type -> app.user.manager.v1.DeleteBanAppUserResponse
-	72,  // 147: app.user.manager.v1.AppUserManager.CreateAppUserControl:output_type -> app.user.manager.v1.CreateAppUserControlResponse
-	74,  // 148: app.user.manager.v1.AppUserManager.UpdateAppUserControl:output_type -> app.user.manager.v1.UpdateAppUserControlResponse
-	77,  // 149: app.user.manager.v1.AppUserManager.CreateAppRole:output_type -> app.user.manager.v1.CreateAppRoleResponse
-	79,  // 150: app.user.manager.v1.AppUserManager.UpdateAppRole:output_type -> app.user.manager.v1.UpdateAppRoleResponse
-	82,  // 151: app.user.manager.v1.AppUserManager.CreateAppRoleUser:output_type -> app.user.manager.v1.CreateAppRoleUserResponse
-	84,  // 152: app.user.manager.v1.AppUserManager.DeleteAppRoleUser:output_type -> app.user.manager.v1.DeleteAppRoleUserResponse
-	87,  // 153: app.user.manager.v1.AppUserManager.GetAppUserInfo:output_type -> app.user.manager.v1.GetAppUserInfoResponse
-	89,  // 154: app.user.manager.v1.AppUserManager.GetAppUserInfos:output_type -> app.user.manager.v1.GetAppUserInfosResponse
-	91,  // 155: app.user.manager.v1.AppUserManager.GetAppUserInfosByApp:output_type -> app.user.manager.v1.GetAppUserInfosByAppResponse
-	115, // [115:156] is the sub-list for method output_type
-	74,  // [74:115] is the sub-list for method input_type
-	74,  // [74:74] is the sub-list for extension type_name
-	74,  // [74:74] is the sub-list for extension extendee
-	0,   // [0:74] is the sub-list for field type_name
+	65,  // 50: app.user.manager.v1.GetBanAppUserResponse.Info:type_name -> app.user.manager.v1.BanAppUser
+	65,  // 51: app.user.manager.v1.GetBanAppUserByAppUserResponse.Info:type_name -> app.user.manager.v1.BanAppUser
+	65,  // 52: app.user.manager.v1.DeleteBanAppUserRequest.Info:type_name -> app.user.manager.v1.BanAppUser
+	65,  // 53: app.user.manager.v1.DeleteBanAppUserResponse.Info:type_name -> app.user.manager.v1.BanAppUser
+	74,  // 54: app.user.manager.v1.CreateAppUserControlRequest.Info:type_name -> app.user.manager.v1.AppUserControl
+	74,  // 55: app.user.manager.v1.CreateAppUserControlResponse.Info:type_name -> app.user.manager.v1.AppUserControl
+	74,  // 56: app.user.manager.v1.GetAppUserControlResponse.Info:type_name -> app.user.manager.v1.AppUserControl
+	74,  // 57: app.user.manager.v1.GetAppUserControlByAppUserResponse.Info:type_name -> app.user.manager.v1.AppUserControl
+	74,  // 58: app.user.manager.v1.UpdateAppUserControlRequest.Info:type_name -> app.user.manager.v1.AppUserControl
+	74,  // 59: app.user.manager.v1.UpdateAppUserControlResponse.Info:type_name -> app.user.manager.v1.AppUserControl
+	83,  // 60: app.user.manager.v1.CreateAppRoleRequest.Info:type_name -> app.user.manager.v1.AppRole
+	83,  // 61: app.user.manager.v1.CreateAppRoleResponse.Info:type_name -> app.user.manager.v1.AppRole
+	83,  // 62: app.user.manager.v1.UpdateAppRoleRequest.Info:type_name -> app.user.manager.v1.AppRole
+	83,  // 63: app.user.manager.v1.UpdateAppRoleResponse.Info:type_name -> app.user.manager.v1.AppRole
+	88,  // 64: app.user.manager.v1.CreateAppRoleUserRequest.Info:type_name -> app.user.manager.v1.AppRoleUser
+	88,  // 65: app.user.manager.v1.CreateAppRoleUserResponse.Info:type_name -> app.user.manager.v1.AppRoleUser
+	88,  // 66: app.user.manager.v1.DeleteAppRoleUserRequest.Info:type_name -> app.user.manager.v1.AppRoleUser
+	88,  // 67: app.user.manager.v1.DeleteAppRoleUserResponse.Info:type_name -> app.user.manager.v1.AppRoleUser
+	38,  // 68: app.user.manager.v1.AppUserInfo.User:type_name -> app.user.manager.v1.AppUser
+	56,  // 69: app.user.manager.v1.AppUserInfo.Extra:type_name -> app.user.manager.v1.AppUserExtra
+	74,  // 70: app.user.manager.v1.AppUserInfo.Ctrl:type_name -> app.user.manager.v1.AppUserControl
+	65,  // 71: app.user.manager.v1.AppUserInfo.Ban:type_name -> app.user.manager.v1.BanAppUser
+	83,  // 72: app.user.manager.v1.AppUserInfo.Roles:type_name -> app.user.manager.v1.AppRole
+	93,  // 73: app.user.manager.v1.GetAppUserInfoResponse.Info:type_name -> app.user.manager.v1.AppUserInfo
+	100, // 74: app.user.manager.v1.GetAppUserInfosRequest.PageInfo:type_name -> npool.v1.PageInfo
+	93,  // 75: app.user.manager.v1.GetAppUserInfosResponse.Infos:type_name -> app.user.manager.v1.AppUserInfo
+	100, // 76: app.user.manager.v1.GetAppUserInfosByAppRequest.PageInfo:type_name -> npool.v1.PageInfo
+	93,  // 77: app.user.manager.v1.GetAppUserInfosByAppResponse.Infos:type_name -> app.user.manager.v1.AppUserInfo
+	101, // 78: app.user.manager.v1.AppUserManager.Version:input_type -> google.protobuf.Empty
+	1,   // 79: app.user.manager.v1.AppUserManager.CreateApp:input_type -> app.user.manager.v1.CreateAppRequest
+	3,   // 80: app.user.manager.v1.AppUserManager.GetApp:input_type -> app.user.manager.v1.GetAppRequest
+	5,   // 81: app.user.manager.v1.AppUserManager.GetApps:input_type -> app.user.manager.v1.GetAppsRequest
+	7,   // 82: app.user.manager.v1.AppUserManager.GetAppsByCreator:input_type -> app.user.manager.v1.GetAppsByCreatorRequest
+	9,   // 83: app.user.manager.v1.AppUserManager.UpdateApp:input_type -> app.user.manager.v1.UpdateAppRequest
+	12,  // 84: app.user.manager.v1.AppUserManager.CreateAppControl:input_type -> app.user.manager.v1.CreateAppControlRequest
+	14,  // 85: app.user.manager.v1.AppUserManager.GetAppControl:input_type -> app.user.manager.v1.GetAppControlRequest
+	16,  // 86: app.user.manager.v1.AppUserManager.GetAppControlByApp:input_type -> app.user.manager.v1.GetAppControlByAppRequest
+	18,  // 87: app.user.manager.v1.AppUserManager.UpdateAppControl:input_type -> app.user.manager.v1.UpdateAppControlRequest
+	21,  // 88: app.user.manager.v1.AppUserManager.CreateBanApp:input_type -> app.user.manager.v1.CreateBanAppRequest
+	23,  // 89: app.user.manager.v1.AppUserManager.GetBanApp:input_type -> app.user.manager.v1.GetBanAppRequest
+	25,  // 90: app.user.manager.v1.AppUserManager.GetBanAppByApp:input_type -> app.user.manager.v1.GetBanAppByAppRequest
+	27,  // 91: app.user.manager.v1.AppUserManager.UpdateBanApp:input_type -> app.user.manager.v1.UpdateBanAppRequest
+	29,  // 92: app.user.manager.v1.AppUserManager.DeleteBanApp:input_type -> app.user.manager.v1.DeleteBanAppRequest
+	32,  // 93: app.user.manager.v1.AppUserManager.GetAppInfo:input_type -> app.user.manager.v1.GetAppInfoRequest
+	34,  // 94: app.user.manager.v1.AppUserManager.GetAppInfos:input_type -> app.user.manager.v1.GetAppInfosRequest
+	36,  // 95: app.user.manager.v1.AppUserManager.GetAppInfosByCreator:input_type -> app.user.manager.v1.GetAppInfosByCreatorRequest
+	39,  // 96: app.user.manager.v1.AppUserManager.CreateAppUser:input_type -> app.user.manager.v1.CreateAppUserRequest
+	41,  // 97: app.user.manager.v1.AppUserManager.GetAppUser:input_type -> app.user.manager.v1.GetAppUserRequest
+	43,  // 98: app.user.manager.v1.AppUserManager.GetAppUsersByApp:input_type -> app.user.manager.v1.GetAppUsersByAppRequest
+	45,  // 99: app.user.manager.v1.AppUserManager.UpdateAppUser:input_type -> app.user.manager.v1.UpdateAppUserRequest
+	48,  // 100: app.user.manager.v1.AppUserManager.CreateAppUserSecret:input_type -> app.user.manager.v1.CreateAppUserSecretRequest
+	50,  // 101: app.user.manager.v1.AppUserManager.GetAppUserSecret:input_type -> app.user.manager.v1.GetAppUserSecretRequest
+	52,  // 102: app.user.manager.v1.AppUserManager.GetAppUserSecretByAppUser:input_type -> app.user.manager.v1.GetAppUserSecretByAppUserRequest
+	54,  // 103: app.user.manager.v1.AppUserManager.UpdateAppUserSecret:input_type -> app.user.manager.v1.UpdateAppUserSecretRequest
+	57,  // 104: app.user.manager.v1.AppUserManager.CreateAppUserExtra:input_type -> app.user.manager.v1.CreateAppUserExtraRequest
+	59,  // 105: app.user.manager.v1.AppUserManager.GetAppUserExtra:input_type -> app.user.manager.v1.GetAppUserExtraRequest
+	61,  // 106: app.user.manager.v1.AppUserManager.GetAppUserExtraByAppUser:input_type -> app.user.manager.v1.GetAppUserExtraByAppUserRequest
+	63,  // 107: app.user.manager.v1.AppUserManager.UpdateAppUserExtra:input_type -> app.user.manager.v1.UpdateAppUserExtraRequest
+	66,  // 108: app.user.manager.v1.AppUserManager.CreateBanAppUser:input_type -> app.user.manager.v1.CreateBanAppUserRequest
+	68,  // 109: app.user.manager.v1.AppUserManager.GetBanAppUser:input_type -> app.user.manager.v1.GetBanAppUserRequest
+	70,  // 110: app.user.manager.v1.AppUserManager.GetBanAppUserByAppUser:input_type -> app.user.manager.v1.GetBanAppUserByAppUserRequest
+	72,  // 111: app.user.manager.v1.AppUserManager.DeleteBanAppUser:input_type -> app.user.manager.v1.DeleteBanAppUserRequest
+	75,  // 112: app.user.manager.v1.AppUserManager.CreateAppUserControl:input_type -> app.user.manager.v1.CreateAppUserControlRequest
+	77,  // 113: app.user.manager.v1.AppUserManager.GetAppUserControl:input_type -> app.user.manager.v1.GetAppUserControlRequest
+	79,  // 114: app.user.manager.v1.AppUserManager.GetAppUserControlByAppUser:input_type -> app.user.manager.v1.GetAppUserControlByAppUserRequest
+	81,  // 115: app.user.manager.v1.AppUserManager.UpdateAppUserControl:input_type -> app.user.manager.v1.UpdateAppUserControlRequest
+	84,  // 116: app.user.manager.v1.AppUserManager.CreateAppRole:input_type -> app.user.manager.v1.CreateAppRoleRequest
+	86,  // 117: app.user.manager.v1.AppUserManager.UpdateAppRole:input_type -> app.user.manager.v1.UpdateAppRoleRequest
+	89,  // 118: app.user.manager.v1.AppUserManager.CreateAppRoleUser:input_type -> app.user.manager.v1.CreateAppRoleUserRequest
+	91,  // 119: app.user.manager.v1.AppUserManager.DeleteAppRoleUser:input_type -> app.user.manager.v1.DeleteAppRoleUserRequest
+	94,  // 120: app.user.manager.v1.AppUserManager.GetAppUserInfo:input_type -> app.user.manager.v1.GetAppUserInfoRequest
+	96,  // 121: app.user.manager.v1.AppUserManager.GetAppUserInfos:input_type -> app.user.manager.v1.GetAppUserInfosRequest
+	98,  // 122: app.user.manager.v1.AppUserManager.GetAppUserInfosByApp:input_type -> app.user.manager.v1.GetAppUserInfosByAppRequest
+	102, // 123: app.user.manager.v1.AppUserManager.Version:output_type -> npool.v1.VersionResponse
+	2,   // 124: app.user.manager.v1.AppUserManager.CreateApp:output_type -> app.user.manager.v1.CreateAppResponse
+	4,   // 125: app.user.manager.v1.AppUserManager.GetApp:output_type -> app.user.manager.v1.GetAppResponse
+	6,   // 126: app.user.manager.v1.AppUserManager.GetApps:output_type -> app.user.manager.v1.GetAppsResponse
+	8,   // 127: app.user.manager.v1.AppUserManager.GetAppsByCreator:output_type -> app.user.manager.v1.GetAppsByCreatorResponse
+	10,  // 128: app.user.manager.v1.AppUserManager.UpdateApp:output_type -> app.user.manager.v1.UpdateAppResponse
+	13,  // 129: app.user.manager.v1.AppUserManager.CreateAppControl:output_type -> app.user.manager.v1.CreateAppControlResponse
+	15,  // 130: app.user.manager.v1.AppUserManager.GetAppControl:output_type -> app.user.manager.v1.GetAppControlResponse
+	17,  // 131: app.user.manager.v1.AppUserManager.GetAppControlByApp:output_type -> app.user.manager.v1.GetAppControlByAppResponse
+	19,  // 132: app.user.manager.v1.AppUserManager.UpdateAppControl:output_type -> app.user.manager.v1.UpdateAppControlResponse
+	22,  // 133: app.user.manager.v1.AppUserManager.CreateBanApp:output_type -> app.user.manager.v1.CreateBanAppResponse
+	24,  // 134: app.user.manager.v1.AppUserManager.GetBanApp:output_type -> app.user.manager.v1.GetBanAppResponse
+	26,  // 135: app.user.manager.v1.AppUserManager.GetBanAppByApp:output_type -> app.user.manager.v1.GetBanAppByAppResponse
+	28,  // 136: app.user.manager.v1.AppUserManager.UpdateBanApp:output_type -> app.user.manager.v1.UpdateBanAppResponse
+	30,  // 137: app.user.manager.v1.AppUserManager.DeleteBanApp:output_type -> app.user.manager.v1.DeleteBanAppResponse
+	33,  // 138: app.user.manager.v1.AppUserManager.GetAppInfo:output_type -> app.user.manager.v1.GetAppInfoResponse
+	35,  // 139: app.user.manager.v1.AppUserManager.GetAppInfos:output_type -> app.user.manager.v1.GetAppInfosResponse
+	37,  // 140: app.user.manager.v1.AppUserManager.GetAppInfosByCreator:output_type -> app.user.manager.v1.GetAppInfosByCreatorResponse
+	40,  // 141: app.user.manager.v1.AppUserManager.CreateAppUser:output_type -> app.user.manager.v1.CreateAppUserResponse
+	42,  // 142: app.user.manager.v1.AppUserManager.GetAppUser:output_type -> app.user.manager.v1.GetAppUserResponse
+	44,  // 143: app.user.manager.v1.AppUserManager.GetAppUsersByApp:output_type -> app.user.manager.v1.GetAppUsersByAppResponse
+	46,  // 144: app.user.manager.v1.AppUserManager.UpdateAppUser:output_type -> app.user.manager.v1.UpdateAppUserResponse
+	49,  // 145: app.user.manager.v1.AppUserManager.CreateAppUserSecret:output_type -> app.user.manager.v1.CreateAppUserSecretResponse
+	51,  // 146: app.user.manager.v1.AppUserManager.GetAppUserSecret:output_type -> app.user.manager.v1.GetAppUserSecretResponse
+	53,  // 147: app.user.manager.v1.AppUserManager.GetAppUserSecretByAppUser:output_type -> app.user.manager.v1.GetAppUserSecretByAppUserResponse
+	55,  // 148: app.user.manager.v1.AppUserManager.UpdateAppUserSecret:output_type -> app.user.manager.v1.UpdateAppUserSecretResponse
+	58,  // 149: app.user.manager.v1.AppUserManager.CreateAppUserExtra:output_type -> app.user.manager.v1.CreateAppUserExtraResponse
+	60,  // 150: app.user.manager.v1.AppUserManager.GetAppUserExtra:output_type -> app.user.manager.v1.GetAppUserExtraResponse
+	62,  // 151: app.user.manager.v1.AppUserManager.GetAppUserExtraByAppUser:output_type -> app.user.manager.v1.GetAppUserExtraByAppUserResponse
+	64,  // 152: app.user.manager.v1.AppUserManager.UpdateAppUserExtra:output_type -> app.user.manager.v1.UpdateAppUserExtraResponse
+	67,  // 153: app.user.manager.v1.AppUserManager.CreateBanAppUser:output_type -> app.user.manager.v1.CreateBanAppUserResponse
+	69,  // 154: app.user.manager.v1.AppUserManager.GetBanAppUser:output_type -> app.user.manager.v1.GetBanAppUserResponse
+	71,  // 155: app.user.manager.v1.AppUserManager.GetBanAppUserByAppUser:output_type -> app.user.manager.v1.GetBanAppUserByAppUserResponse
+	73,  // 156: app.user.manager.v1.AppUserManager.DeleteBanAppUser:output_type -> app.user.manager.v1.DeleteBanAppUserResponse
+	76,  // 157: app.user.manager.v1.AppUserManager.CreateAppUserControl:output_type -> app.user.manager.v1.CreateAppUserControlResponse
+	78,  // 158: app.user.manager.v1.AppUserManager.GetAppUserControl:output_type -> app.user.manager.v1.GetAppUserControlResponse
+	80,  // 159: app.user.manager.v1.AppUserManager.GetAppUserControlByAppUser:output_type -> app.user.manager.v1.GetAppUserControlByAppUserResponse
+	82,  // 160: app.user.manager.v1.AppUserManager.UpdateAppUserControl:output_type -> app.user.manager.v1.UpdateAppUserControlResponse
+	85,  // 161: app.user.manager.v1.AppUserManager.CreateAppRole:output_type -> app.user.manager.v1.CreateAppRoleResponse
+	87,  // 162: app.user.manager.v1.AppUserManager.UpdateAppRole:output_type -> app.user.manager.v1.UpdateAppRoleResponse
+	90,  // 163: app.user.manager.v1.AppUserManager.CreateAppRoleUser:output_type -> app.user.manager.v1.CreateAppRoleUserResponse
+	92,  // 164: app.user.manager.v1.AppUserManager.DeleteAppRoleUser:output_type -> app.user.manager.v1.DeleteAppRoleUserResponse
+	95,  // 165: app.user.manager.v1.AppUserManager.GetAppUserInfo:output_type -> app.user.manager.v1.GetAppUserInfoResponse
+	97,  // 166: app.user.manager.v1.AppUserManager.GetAppUserInfos:output_type -> app.user.manager.v1.GetAppUserInfosResponse
+	99,  // 167: app.user.manager.v1.AppUserManager.GetAppUserInfosByApp:output_type -> app.user.manager.v1.GetAppUserInfosByAppResponse
+	123, // [123:168] is the sub-list for method output_type
+	78,  // [78:123] is the sub-list for method input_type
+	78,  // [78:78] is the sub-list for extension type_name
+	78,  // [78:78] is the sub-list for extension extendee
+	0,   // [0:78] is the sub-list for field type_name
 }
 
 func init() { file_npool_appusermgr_appusermgr_proto_init() }
@@ -6811,7 +7301,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[68].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteBanAppUserRequest); i {
+			switch v := v.(*GetBanAppUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6823,7 +7313,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[69].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteBanAppUserResponse); i {
+			switch v := v.(*GetBanAppUserResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6835,7 +7325,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[70].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AppUserControl); i {
+			switch v := v.(*GetBanAppUserByAppUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6847,7 +7337,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[71].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateAppUserControlRequest); i {
+			switch v := v.(*GetBanAppUserByAppUserResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6859,7 +7349,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[72].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateAppUserControlResponse); i {
+			switch v := v.(*DeleteBanAppUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6871,7 +7361,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[73].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateAppUserControlRequest); i {
+			switch v := v.(*DeleteBanAppUserResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6883,7 +7373,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[74].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateAppUserControlResponse); i {
+			switch v := v.(*AppUserControl); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6895,7 +7385,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[75].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AppRole); i {
+			switch v := v.(*CreateAppUserControlRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6907,7 +7397,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[76].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateAppRoleRequest); i {
+			switch v := v.(*CreateAppUserControlResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6919,7 +7409,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[77].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateAppRoleResponse); i {
+			switch v := v.(*GetAppUserControlRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6931,7 +7421,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[78].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateAppRoleRequest); i {
+			switch v := v.(*GetAppUserControlResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6943,7 +7433,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[79].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateAppRoleResponse); i {
+			switch v := v.(*GetAppUserControlByAppUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6955,7 +7445,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[80].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AppRoleUser); i {
+			switch v := v.(*GetAppUserControlByAppUserResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6967,7 +7457,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[81].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateAppRoleUserRequest); i {
+			switch v := v.(*UpdateAppUserControlRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6979,7 +7469,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[82].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateAppRoleUserResponse); i {
+			switch v := v.(*UpdateAppUserControlResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6991,7 +7481,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[83].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteAppRoleUserRequest); i {
+			switch v := v.(*AppRole); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -7003,7 +7493,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[84].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteAppRoleUserResponse); i {
+			switch v := v.(*CreateAppRoleRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -7015,7 +7505,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[85].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AppUserInfo); i {
+			switch v := v.(*CreateAppRoleResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -7027,7 +7517,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[86].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppUserInfoRequest); i {
+			switch v := v.(*UpdateAppRoleRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -7039,7 +7529,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[87].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppUserInfoResponse); i {
+			switch v := v.(*UpdateAppRoleResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -7051,7 +7541,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[88].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppUserInfosRequest); i {
+			switch v := v.(*AppRoleUser); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -7063,7 +7553,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[89].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppUserInfosResponse); i {
+			switch v := v.(*CreateAppRoleUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -7075,7 +7565,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[90].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppUserInfosByAppRequest); i {
+			switch v := v.(*CreateAppRoleUserResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -7087,6 +7577,102 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[91].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteAppRoleUserRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appusermgr_appusermgr_proto_msgTypes[92].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteAppRoleUserResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appusermgr_appusermgr_proto_msgTypes[93].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AppUserInfo); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appusermgr_appusermgr_proto_msgTypes[94].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetAppUserInfoRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appusermgr_appusermgr_proto_msgTypes[95].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetAppUserInfoResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appusermgr_appusermgr_proto_msgTypes[96].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetAppUserInfosRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appusermgr_appusermgr_proto_msgTypes[97].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetAppUserInfosResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appusermgr_appusermgr_proto_msgTypes[98].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetAppUserInfosByAppRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appusermgr_appusermgr_proto_msgTypes[99].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAppUserInfosByAppResponse); i {
 			case 0:
 				return &v.state
@@ -7105,7 +7691,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_appusermgr_appusermgr_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   92,
+			NumMessages:   100,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
