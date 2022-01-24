@@ -311,6 +311,7 @@ message UpdateAppControlResponse {
 message BanApp {
     string ID = 10;
     string AppID = 20;
+    string Message = 30;
 }
 
 message CreateBanAppRequest {

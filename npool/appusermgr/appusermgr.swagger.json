@@ -1334,6 +1334,9 @@
         },
         "AppID": {
           "type": "string"
+        },
+        "Message": {
+          "type": "string"
         }
       }
     },

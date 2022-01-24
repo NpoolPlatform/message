@@ -101,6 +101,7 @@ export type UpdateAppControlResponse = {
 export type BanApp = {
   ID?: string
   AppID?: string
+  Message?: string
 }
 
 export type CreateBanAppRequest = {

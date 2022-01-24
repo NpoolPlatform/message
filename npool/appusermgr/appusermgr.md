@@ -297,6 +297,7 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
+| Message | [string](#string) |  |  |
 
 
 
