@@ -452,6 +452,15 @@ export type GetAppRoleResponse = {
   Info?: AppRole
 }
 
+export type GetAppRoleByAppRoleRequest = {
+  AppID?: string
+  Role?: string
+}
+
+export type GetAppRoleByAppRoleResponse = {
+  Info?: AppRole
+}
+
 export type GetAppRolesByAppRequest = {
   AppID?: string
   PageInfo?: NpoolV1Npool.PageInfo
@@ -704,6 +713,9 @@ export class AppUserManager {
   }
   static GetAppRole(req: GetAppRoleRequest, initReq?: fm.InitReq): Promise<GetAppRoleResponse> {
     return fm.fetchReq<GetAppRoleRequest, GetAppRoleResponse>(`/v1/get/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppRoleByAppRole(req: GetAppRoleByAppRoleRequest, initReq?: fm.InitReq): Promise<GetAppRoleByAppRoleResponse> {
+    return fm.fetchReq<GetAppRoleByAppRoleRequest, GetAppRoleByAppRoleResponse>(`/v1/get/app/role/by/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppRolesByApp(req: GetAppRolesByAppRequest, initReq?: fm.InitReq): Promise<GetAppRolesByAppResponse> {
     return fm.fetchReq<GetAppRolesByAppRequest, GetAppRolesByAppResponse>(`/v1/get/app/roles/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
