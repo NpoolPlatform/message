@@ -962,6 +962,7 @@ request body and response
 | StreetAddress2 | [string](#string) |  |  |
 | Compony | [string](#string) |  |  |
 | PostalCode | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
 
 
 

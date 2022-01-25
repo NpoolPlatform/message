@@ -239,6 +239,7 @@ message UserBasicInfo {
     string StreetAddress2 = 220;
     string Compony = 230;
     string PostalCode = 240;
+    string AppID = 250;
 }
 
 message SignupRequest {

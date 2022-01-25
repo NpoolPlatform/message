@@ -33,6 +33,7 @@ export type UserBasicInfo = {
   StreetAddress2?: string
   Compony?: string
   PostalCode?: string
+  AppID?: string
 }
 
 export type SignupRequest = {
