@@ -11,6 +11,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/admin/apps": {
+      "post": {
+        "operationId": "AppUserManager_CreateAdminApps",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAdminAppsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAdminAppsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/create/app": {
       "post": {
         "operationId": "AppUserManager_CreateApp",
@@ -331,6 +363,70 @@
         ]
       }
     },
+    "/v1/create/genesis/role": {
+      "post": {
+        "operationId": "AppUserManager_CreateGenesisRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateGenesisRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateGenesisRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/create/genesis/role/user": {
+      "post": {
+        "operationId": "AppUserManager_CreateGenesisRoleUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateGenesisRoleUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateGenesisRoleUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/delete/app/role/user": {
       "post": {
         "operationId": "AppUserManager_DeleteAppRoleUser",
@@ -419,6 +515,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1DeleteBanAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/delete/genesis/role/user": {
+      "post": {
+        "operationId": "AppUserManager_DeleteGenesisRoleUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteGenesisRoleUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteGenesisRoleUserRequest"
             }
           }
         ],
@@ -1947,6 +2075,20 @@
         }
       }
     },
+    "v1CreateAdminAppsRequest": {
+      "type": "object"
+    },
+    "v1CreateAdminAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1App"
+          }
+        }
+      }
+    },
     "v1CreateAppControlRequest": {
       "type": "object",
       "properties": {
@@ -2107,6 +2249,33 @@
         }
       }
     },
+    "v1CreateGenesisRoleRequest": {
+      "type": "object"
+    },
+    "v1CreateGenesisRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRole"
+        }
+      }
+    },
+    "v1CreateGenesisRoleUserRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateGenesisRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRoleUser"
+        }
+      }
+    },
     "v1DeleteAppRoleUserRequest": {
       "type": "object",
       "properties": {
@@ -2152,6 +2321,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1BanAppUser"
+        }
+      }
+    },
+    "v1DeleteGenesisRoleUserRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteGenesisRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRoleUser"
         }
       }
     },

@@ -16,6 +16,12 @@ service AppUserManager {
         };
     }
 
+    rpc CreateAdminApps (CreateAdminAppsRequest) returns (CreateAdminAppsResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/admin/apps"
+            body: "*"
+        };
+    }
     rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {
         option (google.api.http) = {
             post: "/v1/create/app"
@@ -248,6 +254,25 @@ service AppUserManager {
         };
     }
 
+    rpc CreateGenesisRole (CreateGenesisRoleRequest) returns (CreateGenesisRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/genesis/role"
+            body: "*"
+        };
+    }
+    rpc CreateGenesisRoleUser (CreateGenesisRoleUserRequest) returns (CreateGenesisRoleUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/genesis/role/user"
+            body: "*"
+        };
+    }
+    rpc DeleteGenesisRoleUser (DeleteGenesisRoleUserRequest) returns (DeleteGenesisRoleUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/genesis/role/user"
+            body: "*"
+        };
+    }
+
     rpc CreateAppRole (CreateAppRoleRequest) returns (CreateAppRoleResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/role"
@@ -331,6 +356,13 @@ message App {
     string Logo = 40;
     string Description = 50;
     uint32 CreateAt = 60;
+}
+
+message CreateAdminAppsRequest {
+}
+
+message CreateAdminAppsResponse {
+    repeated App Infos = 10;
 }
 
 message CreateAppRequest {
@@ -726,6 +758,13 @@ message AppRole {
     bool Default = 60;
 }
 
+message CreateGenesisRoleRequest {
+}
+
+message CreateGenesisRoleResponse {
+    AppRole Info = 10;
+}
+
 message CreateAppRoleRequest {
     AppRole Info = 10;
 }
@@ -765,6 +804,22 @@ message AppRoleUser {
     string AppID = 20;
     string RoleID = 30;
     string UserID = 40;
+}
+
+message CreateGenesisRoleUserRequest {
+    string UserID = 10;
+}
+
+message CreateGenesisRoleUserResponse {
+    AppRoleUser Info = 10;
+}
+
+message DeleteGenesisRoleUserRequest {
+    string ID = 10;
+}
+
+message DeleteGenesisRoleUserResponse {
+    AppRoleUser Info = 10;
 }
 
 message CreateAppRoleUserRequest {

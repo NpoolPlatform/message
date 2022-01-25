@@ -16,6 +16,8 @@
     - [AppUserSecret](#app.user.manager.v1.AppUserSecret)
     - [BanApp](#app.user.manager.v1.BanApp)
     - [BanAppUser](#app.user.manager.v1.BanAppUser)
+    - [CreateAdminAppsRequest](#app.user.manager.v1.CreateAdminAppsRequest)
+    - [CreateAdminAppsResponse](#app.user.manager.v1.CreateAdminAppsResponse)
     - [CreateAppControlRequest](#app.user.manager.v1.CreateAppControlRequest)
     - [CreateAppControlResponse](#app.user.manager.v1.CreateAppControlResponse)
     - [CreateAppRequest](#app.user.manager.v1.CreateAppRequest)
@@ -36,12 +38,18 @@
     - [CreateBanAppResponse](#app.user.manager.v1.CreateBanAppResponse)
     - [CreateBanAppUserRequest](#app.user.manager.v1.CreateBanAppUserRequest)
     - [CreateBanAppUserResponse](#app.user.manager.v1.CreateBanAppUserResponse)
+    - [CreateGenesisRoleRequest](#app.user.manager.v1.CreateGenesisRoleRequest)
+    - [CreateGenesisRoleResponse](#app.user.manager.v1.CreateGenesisRoleResponse)
+    - [CreateGenesisRoleUserRequest](#app.user.manager.v1.CreateGenesisRoleUserRequest)
+    - [CreateGenesisRoleUserResponse](#app.user.manager.v1.CreateGenesisRoleUserResponse)
     - [DeleteAppRoleUserRequest](#app.user.manager.v1.DeleteAppRoleUserRequest)
     - [DeleteAppRoleUserResponse](#app.user.manager.v1.DeleteAppRoleUserResponse)
     - [DeleteBanAppRequest](#app.user.manager.v1.DeleteBanAppRequest)
     - [DeleteBanAppResponse](#app.user.manager.v1.DeleteBanAppResponse)
     - [DeleteBanAppUserRequest](#app.user.manager.v1.DeleteBanAppUserRequest)
     - [DeleteBanAppUserResponse](#app.user.manager.v1.DeleteBanAppUserResponse)
+    - [DeleteGenesisRoleUserRequest](#app.user.manager.v1.DeleteGenesisRoleUserRequest)
+    - [DeleteGenesisRoleUserResponse](#app.user.manager.v1.DeleteGenesisRoleUserResponse)
     - [GetAppControlByAppRequest](#app.user.manager.v1.GetAppControlByAppRequest)
     - [GetAppControlByAppResponse](#app.user.manager.v1.GetAppControlByAppResponse)
     - [GetAppControlRequest](#app.user.manager.v1.GetAppControlRequest)
@@ -362,6 +370,31 @@
 
 
 
+<a name="app.user.manager.v1.CreateAdminAppsRequest"></a>
+
+### CreateAdminAppsRequest
+
+
+
+
+
+
+
+<a name="app.user.manager.v1.CreateAdminAppsResponse"></a>
+
+### CreateAdminAppsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [App](#app.user.manager.v1.App) | repeated |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.CreateAppControlRequest"></a>
 
 ### CreateAppControlRequest
@@ -662,6 +695,61 @@
 
 
 
+<a name="app.user.manager.v1.CreateGenesisRoleRequest"></a>
+
+### CreateGenesisRoleRequest
+
+
+
+
+
+
+
+<a name="app.user.manager.v1.CreateGenesisRoleResponse"></a>
+
+### CreateGenesisRoleResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppRole](#app.user.manager.v1.AppRole) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.CreateGenesisRoleUserRequest"></a>
+
+### CreateGenesisRoleUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.CreateGenesisRoleUserResponse"></a>
+
+### CreateGenesisRoleUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppRoleUser](#app.user.manager.v1.AppRoleUser) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.DeleteAppRoleUserRequest"></a>
 
 ### DeleteAppRoleUserRequest
@@ -746,6 +834,36 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [BanAppUser](#app.user.manager.v1.BanAppUser) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.DeleteGenesisRoleUserRequest"></a>
+
+### DeleteGenesisRoleUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.DeleteGenesisRoleUserResponse"></a>
+
+### DeleteGenesisRoleUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppRoleUser](#app.user.manager.v1.AppRoleUser) |  |  |
 
 
 
@@ -1899,6 +2017,7 @@
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) |  |
+| CreateAdminApps | [CreateAdminAppsRequest](#app.user.manager.v1.CreateAdminAppsRequest) | [CreateAdminAppsResponse](#app.user.manager.v1.CreateAdminAppsResponse) |  |
 | CreateApp | [CreateAppRequest](#app.user.manager.v1.CreateAppRequest) | [CreateAppResponse](#app.user.manager.v1.CreateAppResponse) |  |
 | GetApp | [GetAppRequest](#app.user.manager.v1.GetAppRequest) | [GetAppResponse](#app.user.manager.v1.GetAppResponse) |  |
 | GetApps | [GetAppsRequest](#app.user.manager.v1.GetAppsRequest) | [GetAppsResponse](#app.user.manager.v1.GetAppsResponse) |  |
@@ -1937,6 +2056,9 @@
 | GetAppUserControl | [GetAppUserControlRequest](#app.user.manager.v1.GetAppUserControlRequest) | [GetAppUserControlResponse](#app.user.manager.v1.GetAppUserControlResponse) |  |
 | GetAppUserControlByAppUser | [GetAppUserControlByAppUserRequest](#app.user.manager.v1.GetAppUserControlByAppUserRequest) | [GetAppUserControlByAppUserResponse](#app.user.manager.v1.GetAppUserControlByAppUserResponse) |  |
 | UpdateAppUserControl | [UpdateAppUserControlRequest](#app.user.manager.v1.UpdateAppUserControlRequest) | [UpdateAppUserControlResponse](#app.user.manager.v1.UpdateAppUserControlResponse) |  |
+| CreateGenesisRole | [CreateGenesisRoleRequest](#app.user.manager.v1.CreateGenesisRoleRequest) | [CreateGenesisRoleResponse](#app.user.manager.v1.CreateGenesisRoleResponse) |  |
+| CreateGenesisRoleUser | [CreateGenesisRoleUserRequest](#app.user.manager.v1.CreateGenesisRoleUserRequest) | [CreateGenesisRoleUserResponse](#app.user.manager.v1.CreateGenesisRoleUserResponse) |  |
+| DeleteGenesisRoleUser | [DeleteGenesisRoleUserRequest](#app.user.manager.v1.DeleteGenesisRoleUserRequest) | [DeleteGenesisRoleUserResponse](#app.user.manager.v1.DeleteGenesisRoleUserResponse) |  |
 | CreateAppRole | [CreateAppRoleRequest](#app.user.manager.v1.CreateAppRoleRequest) | [CreateAppRoleResponse](#app.user.manager.v1.CreateAppRoleResponse) |  |
 | GetAppRole | [GetAppRoleRequest](#app.user.manager.v1.GetAppRoleRequest) | [GetAppRoleResponse](#app.user.manager.v1.GetAppRoleResponse) |  |
 | GetAppRolesByApp | [GetAppRolesByAppRequest](#app.user.manager.v1.GetAppRolesByAppRequest) | [GetAppRolesByAppResponse](#app.user.manager.v1.GetAppRolesByAppResponse) |  |
