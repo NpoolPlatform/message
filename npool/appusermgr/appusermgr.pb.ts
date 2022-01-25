@@ -487,6 +487,7 @@ export type AppRoleUser = {
 }
 
 export type CreateGenesisRoleUserRequest = {
+  AppID?: string
   UserID?: string
 }
 

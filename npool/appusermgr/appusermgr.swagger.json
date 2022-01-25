@@ -2327,6 +2327,9 @@
     "v1CreateGenesisRoleUserRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "UserID": {
           "type": "string"
         }

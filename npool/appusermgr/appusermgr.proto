@@ -844,7 +844,8 @@ message AppRoleUser {
 }
 
 message CreateGenesisRoleUserRequest {
-    string UserID = 10;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message CreateGenesisRoleUserResponse {
