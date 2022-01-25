@@ -22,6 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 type AppUserManagerClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateAdminApps(ctx context.Context, in *CreateAdminAppsRequest, opts ...grpc.CallOption) (*CreateAdminAppsResponse, error)
+	GetAdminApps(ctx context.Context, in *GetAdminAppsRequest, opts ...grpc.CallOption) (*GetAdminAppsResponse, error)
 	CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error)
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
 	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
@@ -61,8 +62,8 @@ type AppUserManagerClient interface {
 	GetAppUserControlByAppUser(ctx context.Context, in *GetAppUserControlByAppUserRequest, opts ...grpc.CallOption) (*GetAppUserControlByAppUserResponse, error)
 	UpdateAppUserControl(ctx context.Context, in *UpdateAppUserControlRequest, opts ...grpc.CallOption) (*UpdateAppUserControlResponse, error)
 	CreateGenesisRole(ctx context.Context, in *CreateGenesisRoleRequest, opts ...grpc.CallOption) (*CreateGenesisRoleResponse, error)
+	GetGenesisRole(ctx context.Context, in *GetGenesisRoleRequest, opts ...grpc.CallOption) (*GetGenesisRoleResponse, error)
 	CreateGenesisRoleUser(ctx context.Context, in *CreateGenesisRoleUserRequest, opts ...grpc.CallOption) (*CreateGenesisRoleUserResponse, error)
-	DeleteGenesisRoleUser(ctx context.Context, in *DeleteGenesisRoleUserRequest, opts ...grpc.CallOption) (*DeleteGenesisRoleUserResponse, error)
 	CreateAppRole(ctx context.Context, in *CreateAppRoleRequest, opts ...grpc.CallOption) (*CreateAppRoleResponse, error)
 	GetAppRole(ctx context.Context, in *GetAppRoleRequest, opts ...grpc.CallOption) (*GetAppRoleResponse, error)
 	GetAppRolesByApp(ctx context.Context, in *GetAppRolesByAppRequest, opts ...grpc.CallOption) (*GetAppRolesByAppResponse, error)
@@ -97,6 +98,15 @@ func (c *appUserManagerClient) Version(ctx context.Context, in *emptypb.Empty, o
 func (c *appUserManagerClient) CreateAdminApps(ctx context.Context, in *CreateAdminAppsRequest, opts ...grpc.CallOption) (*CreateAdminAppsResponse, error) {
 	out := new(CreateAdminAppsResponse)
 	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAdminApps", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetAdminApps(ctx context.Context, in *GetAdminAppsRequest, opts ...grpc.CallOption) (*GetAdminAppsResponse, error) {
+	out := new(GetAdminAppsResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAdminApps", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -454,18 +464,18 @@ func (c *appUserManagerClient) CreateGenesisRole(ctx context.Context, in *Create
 	return out, nil
 }
 
-func (c *appUserManagerClient) CreateGenesisRoleUser(ctx context.Context, in *CreateGenesisRoleUserRequest, opts ...grpc.CallOption) (*CreateGenesisRoleUserResponse, error) {
-	out := new(CreateGenesisRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateGenesisRoleUser", in, out, opts...)
+func (c *appUserManagerClient) GetGenesisRole(ctx context.Context, in *GetGenesisRoleRequest, opts ...grpc.CallOption) (*GetGenesisRoleResponse, error) {
+	out := new(GetGenesisRoleResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetGenesisRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserManagerClient) DeleteGenesisRoleUser(ctx context.Context, in *DeleteGenesisRoleUserRequest, opts ...grpc.CallOption) (*DeleteGenesisRoleUserResponse, error) {
-	out := new(DeleteGenesisRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/DeleteGenesisRoleUser", in, out, opts...)
+func (c *appUserManagerClient) CreateGenesisRoleUser(ctx context.Context, in *CreateGenesisRoleUserRequest, opts ...grpc.CallOption) (*CreateGenesisRoleUserResponse, error) {
+	out := new(CreateGenesisRoleUserResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateGenesisRoleUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -586,6 +596,7 @@ func (c *appUserManagerClient) GetAppUserInfosByApp(ctx context.Context, in *Get
 type AppUserManagerServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateAdminApps(context.Context, *CreateAdminAppsRequest) (*CreateAdminAppsResponse, error)
+	GetAdminApps(context.Context, *GetAdminAppsRequest) (*GetAdminAppsResponse, error)
 	CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error)
 	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
@@ -625,8 +636,8 @@ type AppUserManagerServer interface {
 	GetAppUserControlByAppUser(context.Context, *GetAppUserControlByAppUserRequest) (*GetAppUserControlByAppUserResponse, error)
 	UpdateAppUserControl(context.Context, *UpdateAppUserControlRequest) (*UpdateAppUserControlResponse, error)
 	CreateGenesisRole(context.Context, *CreateGenesisRoleRequest) (*CreateGenesisRoleResponse, error)
+	GetGenesisRole(context.Context, *GetGenesisRoleRequest) (*GetGenesisRoleResponse, error)
 	CreateGenesisRoleUser(context.Context, *CreateGenesisRoleUserRequest) (*CreateGenesisRoleUserResponse, error)
-	DeleteGenesisRoleUser(context.Context, *DeleteGenesisRoleUserRequest) (*DeleteGenesisRoleUserResponse, error)
 	CreateAppRole(context.Context, *CreateAppRoleRequest) (*CreateAppRoleResponse, error)
 	GetAppRole(context.Context, *GetAppRoleRequest) (*GetAppRoleResponse, error)
 	GetAppRolesByApp(context.Context, *GetAppRolesByAppRequest) (*GetAppRolesByAppResponse, error)
@@ -651,6 +662,9 @@ func (UnimplementedAppUserManagerServer) Version(context.Context, *emptypb.Empty
 }
 func (UnimplementedAppUserManagerServer) CreateAdminApps(context.Context, *CreateAdminAppsRequest) (*CreateAdminAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAdminApps not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAdminApps(context.Context, *GetAdminAppsRequest) (*GetAdminAppsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAdminApps not implemented")
 }
 func (UnimplementedAppUserManagerServer) CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateApp not implemented")
@@ -769,11 +783,11 @@ func (UnimplementedAppUserManagerServer) UpdateAppUserControl(context.Context, *
 func (UnimplementedAppUserManagerServer) CreateGenesisRole(context.Context, *CreateGenesisRoleRequest) (*CreateGenesisRoleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateGenesisRole not implemented")
 }
+func (UnimplementedAppUserManagerServer) GetGenesisRole(context.Context, *GetGenesisRoleRequest) (*GetGenesisRoleResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGenesisRole not implemented")
+}
 func (UnimplementedAppUserManagerServer) CreateGenesisRoleUser(context.Context, *CreateGenesisRoleUserRequest) (*CreateGenesisRoleUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateGenesisRoleUser not implemented")
-}
-func (UnimplementedAppUserManagerServer) DeleteGenesisRoleUser(context.Context, *DeleteGenesisRoleUserRequest) (*DeleteGenesisRoleUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteGenesisRoleUser not implemented")
 }
 func (UnimplementedAppUserManagerServer) CreateAppRole(context.Context, *CreateAppRoleRequest) (*CreateAppRoleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppRole not implemented")
@@ -856,6 +870,24 @@ func _AppUserManager_CreateAdminApps_Handler(srv interface{}, ctx context.Contex
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAdminApps(ctx, req.(*CreateAdminAppsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_GetAdminApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAdminAppsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAdminApps(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAdminApps",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAdminApps(ctx, req.(*GetAdminAppsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1562,6 +1594,24 @@ func _AppUserManager_CreateGenesisRole_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AppUserManager_GetGenesisRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGenesisRoleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetGenesisRole(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetGenesisRole",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetGenesisRole(ctx, req.(*GetGenesisRoleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AppUserManager_CreateGenesisRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateGenesisRoleUserRequest)
 	if err := dec(in); err != nil {
@@ -1576,24 +1626,6 @@ func _AppUserManager_CreateGenesisRoleUser_Handler(srv interface{}, ctx context.
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateGenesisRoleUser(ctx, req.(*CreateGenesisRoleUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppUserManager_DeleteGenesisRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteGenesisRoleUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppUserManagerServer).DeleteGenesisRoleUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/DeleteGenesisRoleUser",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerServer).DeleteGenesisRoleUser(ctx, req.(*DeleteGenesisRoleUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1830,6 +1862,10 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AppUserManager_CreateAdminApps_Handler,
 		},
 		{
+			MethodName: "GetAdminApps",
+			Handler:    _AppUserManager_GetAdminApps_Handler,
+		},
+		{
 			MethodName: "CreateApp",
 			Handler:    _AppUserManager_CreateApp_Handler,
 		},
@@ -1986,12 +2022,12 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AppUserManager_CreateGenesisRole_Handler,
 		},
 		{
-			MethodName: "CreateGenesisRoleUser",
-			Handler:    _AppUserManager_CreateGenesisRoleUser_Handler,
+			MethodName: "GetGenesisRole",
+			Handler:    _AppUserManager_GetGenesisRole_Handler,
 		},
 		{
-			MethodName: "DeleteGenesisRoleUser",
-			Handler:    _AppUserManager_DeleteGenesisRoleUser_Handler,
+			MethodName: "CreateGenesisRoleUser",
+			Handler:    _AppUserManager_CreateGenesisRoleUser_Handler,
 		},
 		{
 			MethodName: "CreateAppRole",

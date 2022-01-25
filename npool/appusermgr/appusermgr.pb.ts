@@ -23,6 +23,13 @@ export type CreateAdminAppsResponse = {
   Infos?: App[]
 }
 
+export type GetAdminAppsRequest = {
+}
+
+export type GetAdminAppsResponse = {
+  Infos?: App[]
+}
+
 export type CreateAppRequest = {
   Info?: App
 }
@@ -422,6 +429,13 @@ export type CreateGenesisRoleResponse = {
   Info?: AppRole
 }
 
+export type GetGenesisRoleRequest = {
+}
+
+export type GetGenesisRoleResponse = {
+  Info?: AppRole
+}
+
 export type CreateAppRoleRequest = {
   Info?: AppRole
 }
@@ -468,14 +482,6 @@ export type CreateGenesisRoleUserRequest = {
 }
 
 export type CreateGenesisRoleUserResponse = {
-  Info?: AppRoleUser
-}
-
-export type DeleteGenesisRoleUserRequest = {
-  ID?: string
-}
-
-export type DeleteGenesisRoleUserResponse = {
   Info?: AppRoleUser
 }
 
@@ -566,6 +572,9 @@ export class AppUserManager {
   }
   static CreateAdminApps(req: CreateAdminAppsRequest, initReq?: fm.InitReq): Promise<CreateAdminAppsResponse> {
     return fm.fetchReq<CreateAdminAppsRequest, CreateAdminAppsResponse>(`/v1/create/admin/apps`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAdminApps(req: GetAdminAppsRequest, initReq?: fm.InitReq): Promise<GetAdminAppsResponse> {
+    return fm.fetchReq<GetAdminAppsRequest, GetAdminAppsResponse>(`/v1/get/admin/apps`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateApp(req: CreateAppRequest, initReq?: fm.InitReq): Promise<CreateAppResponse> {
     return fm.fetchReq<CreateAppRequest, CreateAppResponse>(`/v1/create/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -684,11 +693,11 @@ export class AppUserManager {
   static CreateGenesisRole(req: CreateGenesisRoleRequest, initReq?: fm.InitReq): Promise<CreateGenesisRoleResponse> {
     return fm.fetchReq<CreateGenesisRoleRequest, CreateGenesisRoleResponse>(`/v1/create/genesis/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetGenesisRole(req: GetGenesisRoleRequest, initReq?: fm.InitReq): Promise<GetGenesisRoleResponse> {
+    return fm.fetchReq<GetGenesisRoleRequest, GetGenesisRoleResponse>(`/v1/get/genesis/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static CreateGenesisRoleUser(req: CreateGenesisRoleUserRequest, initReq?: fm.InitReq): Promise<CreateGenesisRoleUserResponse> {
     return fm.fetchReq<CreateGenesisRoleUserRequest, CreateGenesisRoleUserResponse>(`/v1/create/genesis/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static DeleteGenesisRoleUser(req: DeleteGenesisRoleUserRequest, initReq?: fm.InitReq): Promise<DeleteGenesisRoleUserResponse> {
-    return fm.fetchReq<DeleteGenesisRoleUserRequest, DeleteGenesisRoleUserResponse>(`/v1/delete/genesis/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateAppRole(req: CreateAppRoleRequest, initReq?: fm.InitReq): Promise<CreateAppRoleResponse> {
     return fm.fetchReq<CreateAppRoleRequest, CreateAppRoleResponse>(`/v1/create/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
