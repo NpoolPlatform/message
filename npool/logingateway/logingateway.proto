@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package login.gateway.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/logingateway";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/appusermgr/appusermgr.proto";
+
+service LoginGateway {
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+
+    rpc Login (LoginRequest) returns (LoginResponse) {
+        option (google.api.http) = {
+            post: "/v1/login"
+            body: "*"
+        };
+    }
+    rpc Logined (LoginedRequest) returns (LoginedResponse) {
+        option (google.api.http) = {
+            post: "/v1/logined"
+            body: "*"
+        };
+    }
+    rpc Logout (LogoutRequest) returns (LogoutResponse) {
+        option (google.api.http) = {
+            post: "/v1/logout"
+            body: "*"
+        };
+    }
+    rpc Refresh (RefreshRequest) returns (RefreshResponse) {
+        option (google.api.http) = {
+            post: "/v1/refresh"
+            body: "*"
+        };
+    }
+}
+
+message LoginRequest {
+    string Account = 10;
+    string PasswordHash = 20;
+    string ManMachineSpec = 30;
+}
+
+message LoginResponse {
+    app.user.manager.v1.AppUserInfo Info = 10;
+}
+
+message LoginedRequest {
+    string UserID = 10;
+}
+
+message LoginedResponse {
+    app.user.manager.v1.AppUserInfo Info = 10;
+}
+
+message LogoutRequest {
+    string UserID = 10;
+}
+
+message LogoutResponse {
+    app.user.manager.v1.AppUserInfo Info = 10;
+}
+
+message RefreshRequest {
+    string UserID = 10;
+}
+
+message RefreshResponse {
+    app.user.manager.v1.AppUserInfo Info = 10;
+}
