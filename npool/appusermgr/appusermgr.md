@@ -132,6 +132,8 @@
     - [UpdateBanAppResponse](#app.user.manager.v1.UpdateBanAppResponse)
     - [UpdateBanAppUserRequest](#app.user.manager.v1.UpdateBanAppUserRequest)
     - [UpdateBanAppUserResponse](#app.user.manager.v1.UpdateBanAppUserResponse)
+    - [VerifyAppUserByAppAccountPasswordRequest](#app.user.manager.v1.VerifyAppUserByAppAccountPasswordRequest)
+    - [VerifyAppUserByAppAccountPasswordResponse](#app.user.manager.v1.VerifyAppUserByAppAccountPasswordResponse)
   
     - [AppUserManager](#app.user.manager.v1.AppUserManager)
   
@@ -2125,6 +2127,38 @@
 
 
 
+
+<a name="app.user.manager.v1.VerifyAppUserByAppAccountPasswordRequest"></a>
+
+### VerifyAppUserByAppAccountPasswordRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| Account | [string](#string) |  |  |
+| PasswordHash | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.VerifyAppUserByAppAccountPasswordResponse"></a>
+
+### VerifyAppUserByAppAccountPasswordResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
+
+
+
+
+
  
 
  
@@ -2162,6 +2196,7 @@
 | CreateAppUser | [CreateAppUserRequest](#app.user.manager.v1.CreateAppUserRequest) | [CreateAppUserResponse](#app.user.manager.v1.CreateAppUserResponse) |  |
 | GetAppUser | [GetAppUserRequest](#app.user.manager.v1.GetAppUserRequest) | [GetAppUserResponse](#app.user.manager.v1.GetAppUserResponse) |  |
 | GetAppUserByAppAccount | [GetAppUserByAppAccountRequest](#app.user.manager.v1.GetAppUserByAppAccountRequest) | [GetAppUserByAppAccountResponse](#app.user.manager.v1.GetAppUserByAppAccountResponse) |  |
+| VerifyAppUserByAppAccountPassword | [VerifyAppUserByAppAccountPasswordRequest](#app.user.manager.v1.VerifyAppUserByAppAccountPasswordRequest) | [VerifyAppUserByAppAccountPasswordResponse](#app.user.manager.v1.VerifyAppUserByAppAccountPasswordResponse) |  |
 | GetAppUsersByApp | [GetAppUsersByAppRequest](#app.user.manager.v1.GetAppUsersByAppRequest) | [GetAppUsersByAppResponse](#app.user.manager.v1.GetAppUsersByAppResponse) |  |
 | UpdateAppUser | [UpdateAppUserRequest](#app.user.manager.v1.UpdateAppUserRequest) | [UpdateAppUserResponse](#app.user.manager.v1.UpdateAppUserResponse) |  |
 | CreateAppUserSecret | [CreateAppUserSecretRequest](#app.user.manager.v1.CreateAppUserSecretRequest) | [CreateAppUserSecretResponse](#app.user.manager.v1.CreateAppUserSecretResponse) |  |

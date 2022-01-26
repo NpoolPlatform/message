@@ -1867,6 +1867,38 @@
         ]
       }
     },
+    "/v1/verify/app/user/by/account/password": {
+      "post": {
+        "operationId": "AppUserManager_VerifyAppUserByAppAccountPassword",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VerifyAppUserByAppAccountPasswordResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1VerifyAppUserByAppAccountPasswordRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "operationId": "AppUserManager_Version",
@@ -3251,6 +3283,28 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1BanAppUser"
+        }
+      }
+    },
+    "v1VerifyAppUserByAppAccountPasswordRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        }
+      }
+    },
+    "v1VerifyAppUserByAppAccountPasswordResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
         }
       }
     },

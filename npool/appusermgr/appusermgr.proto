@@ -151,6 +151,12 @@ service AppUserManager {
             body: "*"
         };
     }
+    rpc VerifyAppUserByAppAccountPassword (VerifyAppUserByAppAccountPasswordRequest) returns (VerifyAppUserByAppAccountPasswordResponse) {
+        option (google.api.http) = {
+            post: "/v1/verify/app/user/by/account/password"
+            body: "*"
+        };
+    }
     rpc GetAppUsersByApp (GetAppUsersByAppRequest) returns (GetAppUsersByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/users/by/app"
@@ -963,5 +969,15 @@ message CreateAppUserWithSecretRequest {
 
 message CreateAppUserWithSecretResponse {
     AppUser Info = 10;
+}
+
+message VerifyAppUserByAppAccountPasswordRequest {
+    string AppID = 10;
+    string Account = 20;
+    string PasswordHash = 30;
+}
+
+message VerifyAppUserByAppAccountPasswordResponse {
+    AppUserInfo Info = 10;
 }
 

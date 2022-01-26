@@ -595,6 +595,16 @@ export type CreateAppUserWithSecretResponse = {
   Info?: AppUser
 }
 
+export type VerifyAppUserByAppAccountPasswordRequest = {
+  AppID?: string
+  Account?: string
+  PasswordHash?: string
+}
+
+export type VerifyAppUserByAppAccountPasswordResponse = {
+  Info?: AppUserInfo
+}
+
 export class AppUserManager {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -664,6 +674,9 @@ export class AppUserManager {
   }
   static GetAppUserByAppAccount(req: GetAppUserByAppAccountRequest, initReq?: fm.InitReq): Promise<GetAppUserByAppAccountResponse> {
     return fm.fetchReq<GetAppUserByAppAccountRequest, GetAppUserByAppAccountResponse>(`/v1/get/app/user/by/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static VerifyAppUserByAppAccountPassword(req: VerifyAppUserByAppAccountPasswordRequest, initReq?: fm.InitReq): Promise<VerifyAppUserByAppAccountPasswordResponse> {
+    return fm.fetchReq<VerifyAppUserByAppAccountPasswordRequest, VerifyAppUserByAppAccountPasswordResponse>(`/v1/verify/app/user/by/account/password`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppUsersByApp(req: GetAppUsersByAppRequest, initReq?: fm.InitReq): Promise<GetAppUsersByAppResponse> {
     return fm.fetchReq<GetAppUsersByAppRequest, GetAppUsersByAppResponse>(`/v1/get/app/users/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
