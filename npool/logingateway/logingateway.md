@@ -34,6 +34,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | Account | [string](#string) |  |  |
 | PasswordHash | [string](#string) |  |  |
 | ManMachineSpec | [string](#string) |  |  |
@@ -66,6 +67,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 
 
@@ -96,6 +98,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 
 
@@ -126,6 +129,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 
 

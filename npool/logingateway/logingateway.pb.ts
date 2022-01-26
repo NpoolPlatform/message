@@ -9,6 +9,7 @@ import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as AppUserManagerV1Appusermgr from "../appusermgr/appusermgr.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type LoginRequest = {
+  AppID?: string
   Account?: string
   PasswordHash?: string
   ManMachineSpec?: string
@@ -19,6 +20,7 @@ export type LoginResponse = {
 }
 
 export type LoginedRequest = {
+  AppID?: string
   UserID?: string
 }
 
@@ -27,6 +29,7 @@ export type LoginedResponse = {
 }
 
 export type LogoutRequest = {
+  AppID?: string
   UserID?: string
 }
 
@@ -35,6 +38,7 @@ export type LogoutResponse = {
 }
 
 export type RefreshRequest = {
+  AppID?: string
   UserID?: string
 }
 

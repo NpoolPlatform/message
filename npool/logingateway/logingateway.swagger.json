@@ -353,6 +353,9 @@
     "v1LoginRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "Account": {
           "type": "string"
         },
@@ -375,6 +378,9 @@
     "v1LoginedRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "UserID": {
           "type": "string"
         }
@@ -391,6 +397,9 @@
     "v1LogoutRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "UserID": {
           "type": "string"
         }
@@ -407,6 +416,9 @@
     "v1RefreshRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "UserID": {
           "type": "string"
         }

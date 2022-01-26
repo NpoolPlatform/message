@@ -44,9 +44,10 @@ service LoginGateway {
 }
 
 message LoginRequest {
-    string Account = 10;
-    string PasswordHash = 20;
-    string ManMachineSpec = 30;
+    string AppID = 10;
+    string Account = 20;
+    string PasswordHash = 30;
+    string ManMachineSpec = 40;
 }
 
 message LoginResponse {
@@ -54,7 +55,8 @@ message LoginResponse {
 }
 
 message LoginedRequest {
-    string UserID = 10;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message LoginedResponse {
@@ -62,7 +64,8 @@ message LoginedResponse {
 }
 
 message LogoutRequest {
-    string UserID = 10;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message LogoutResponse {
@@ -70,7 +73,8 @@ message LogoutResponse {
 }
 
 message RefreshRequest {
-    string UserID = 10;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message RefreshResponse {
