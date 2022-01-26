@@ -5827,7 +5827,7 @@ func (x *GetAppRoleUserResponse) GetInfo() *AppRoleUser {
 	return nil
 }
 
-type GetAppUserUserByAppUserRequest struct {
+type GetAppRoleUserByAppUserRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -5836,8 +5836,8 @@ type GetAppUserUserByAppUserRequest struct {
 	UserID string `protobuf:"bytes,20,opt,name=UserID,proto3" json:"UserID,omitempty"`
 }
 
-func (x *GetAppUserUserByAppUserRequest) Reset() {
-	*x = GetAppUserUserByAppUserRequest{}
+func (x *GetAppRoleUserByAppUserRequest) Reset() {
+	*x = GetAppRoleUserByAppUserRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[113]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5845,13 +5845,13 @@ func (x *GetAppUserUserByAppUserRequest) Reset() {
 	}
 }
 
-func (x *GetAppUserUserByAppUserRequest) String() string {
+func (x *GetAppRoleUserByAppUserRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetAppUserUserByAppUserRequest) ProtoMessage() {}
+func (*GetAppRoleUserByAppUserRequest) ProtoMessage() {}
 
-func (x *GetAppUserUserByAppUserRequest) ProtoReflect() protoreflect.Message {
+func (x *GetAppRoleUserByAppUserRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[113]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5863,26 +5863,26 @@ func (x *GetAppUserUserByAppUserRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetAppUserUserByAppUserRequest.ProtoReflect.Descriptor instead.
-func (*GetAppUserUserByAppUserRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetAppRoleUserByAppUserRequest.ProtoReflect.Descriptor instead.
+func (*GetAppRoleUserByAppUserRequest) Descriptor() ([]byte, []int) {
 	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{113}
 }
 
-func (x *GetAppUserUserByAppUserRequest) GetAppID() string {
+func (x *GetAppRoleUserByAppUserRequest) GetAppID() string {
 	if x != nil {
 		return x.AppID
 	}
 	return ""
 }
 
-func (x *GetAppUserUserByAppUserRequest) GetUserID() string {
+func (x *GetAppRoleUserByAppUserRequest) GetUserID() string {
 	if x != nil {
 		return x.UserID
 	}
 	return ""
 }
 
-type GetAppUserUserByAppUserResponse struct {
+type GetAppRoleUserByAppUserResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -5890,8 +5890,8 @@ type GetAppUserUserByAppUserResponse struct {
 	Info *AppRoleUser `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
-func (x *GetAppUserUserByAppUserResponse) Reset() {
-	*x = GetAppUserUserByAppUserResponse{}
+func (x *GetAppRoleUserByAppUserResponse) Reset() {
+	*x = GetAppRoleUserByAppUserResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[114]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5899,13 +5899,13 @@ func (x *GetAppUserUserByAppUserResponse) Reset() {
 	}
 }
 
-func (x *GetAppUserUserByAppUserResponse) String() string {
+func (x *GetAppRoleUserByAppUserResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetAppUserUserByAppUserResponse) ProtoMessage() {}
+func (*GetAppRoleUserByAppUserResponse) ProtoMessage() {}
 
-func (x *GetAppUserUserByAppUserResponse) ProtoReflect() protoreflect.Message {
+func (x *GetAppRoleUserByAppUserResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_appusermgr_appusermgr_proto_msgTypes[114]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5917,12 +5917,12 @@ func (x *GetAppUserUserByAppUserResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetAppUserUserByAppUserResponse.ProtoReflect.Descriptor instead.
-func (*GetAppUserUserByAppUserResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetAppRoleUserByAppUserResponse.ProtoReflect.Descriptor instead.
+func (*GetAppRoleUserByAppUserResponse) Descriptor() ([]byte, []int) {
 	return file_npool_appusermgr_appusermgr_proto_rawDescGZIP(), []int{114}
 }
 
-func (x *GetAppUserUserByAppUserResponse) GetInfo() *AppRoleUser {
+func (x *GetAppRoleUserByAppUserResponse) GetInfo() *AppRoleUser {
 	if x != nil {
 		return x.Info
 	}
@@ -7451,12 +7451,12 @@ var file_npool_appusermgr_appusermgr_proto_rawDesc = []byte{
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e,
 	0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x52, 0x6f,
 	0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4e, 0x0a, 0x1e,
-	0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x55, 0x73, 0x65, 0x72, 0x42, 0x79,
+	0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x42, 0x79,
 	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14,
 	0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41,
 	0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x57, 0x0a, 0x1f,
-	0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x55, 0x73, 0x65, 0x72, 0x42, 0x79,
+	0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x42, 0x79,
 	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
 	0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e,
 	0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
@@ -8066,14 +8066,14 @@ var file_npool_appusermgr_appusermgr_proto_rawDesc = []byte{
 	0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x22, 0x20, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1a, 0x22, 0x15, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65,
 	0x74, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a,
-	0x01, 0x2a, 0x12, 0xb2, 0x01, 0x0a, 0x17, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
-	0x72, 0x55, 0x73, 0x65, 0x72, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x33,
+	0x01, 0x2a, 0x12, 0xb2, 0x01, 0x0a, 0x17, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c,
+	0x65, 0x55, 0x73, 0x65, 0x72, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x33,
 	0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
-	0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x55,
+	0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55,
 	0x73, 0x65, 0x72, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75,
 	0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d,
 	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70,
-	0x55, 0x73, 0x65, 0x72, 0x55, 0x73, 0x65, 0x72, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
+	0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
 	0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2c, 0x82, 0xd3, 0xe4, 0x93, 0x02,
 	0x26, 0x22, 0x21, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x72,
 	0x6f, 0x6c, 0x65, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x2f,
@@ -8282,8 +8282,8 @@ var file_npool_appusermgr_appusermgr_proto_goTypes = []interface{}{
 	(*CreateAppRoleUserResponse)(nil),                 // 110: app.user.manager.v1.CreateAppRoleUserResponse
 	(*GetAppRoleUserRequest)(nil),                     // 111: app.user.manager.v1.GetAppRoleUserRequest
 	(*GetAppRoleUserResponse)(nil),                    // 112: app.user.manager.v1.GetAppRoleUserResponse
-	(*GetAppUserUserByAppUserRequest)(nil),            // 113: app.user.manager.v1.GetAppUserUserByAppUserRequest
-	(*GetAppUserUserByAppUserResponse)(nil),           // 114: app.user.manager.v1.GetAppUserUserByAppUserResponse
+	(*GetAppRoleUserByAppUserRequest)(nil),            // 113: app.user.manager.v1.GetAppRoleUserByAppUserRequest
+	(*GetAppRoleUserByAppUserResponse)(nil),           // 114: app.user.manager.v1.GetAppRoleUserByAppUserResponse
 	(*GetAppRoleUsersByAppRoleRequest)(nil),           // 115: app.user.manager.v1.GetAppRoleUsersByAppRoleRequest
 	(*GetAppRoleUsersByAppRoleResponse)(nil),          // 116: app.user.manager.v1.GetAppRoleUsersByAppRoleResponse
 	(*GetUserRolesByAppUserRequest)(nil),              // 117: app.user.manager.v1.GetUserRolesByAppUserRequest
@@ -8388,7 +8388,7 @@ var file_npool_appusermgr_appusermgr_proto_depIdxs = []int32{
 	106, // 79: app.user.manager.v1.CreateAppRoleUserRequest.Info:type_name -> app.user.manager.v1.AppRoleUser
 	106, // 80: app.user.manager.v1.CreateAppRoleUserResponse.Info:type_name -> app.user.manager.v1.AppRoleUser
 	106, // 81: app.user.manager.v1.GetAppRoleUserResponse.Info:type_name -> app.user.manager.v1.AppRoleUser
-	106, // 82: app.user.manager.v1.GetAppUserUserByAppUserResponse.Info:type_name -> app.user.manager.v1.AppRoleUser
+	106, // 82: app.user.manager.v1.GetAppRoleUserByAppUserResponse.Info:type_name -> app.user.manager.v1.AppRoleUser
 	132, // 83: app.user.manager.v1.GetAppRoleUsersByAppRoleRequest.PageInfo:type_name -> npool.v1.PageInfo
 	106, // 84: app.user.manager.v1.GetAppRoleUsersByAppRoleResponse.Infos:type_name -> app.user.manager.v1.AppRoleUser
 	132, // 85: app.user.manager.v1.GetUserRolesByAppUserRequest.PageInfo:type_name -> npool.v1.PageInfo
@@ -8461,7 +8461,7 @@ var file_npool_appusermgr_appusermgr_proto_depIdxs = []int32{
 	104, // 152: app.user.manager.v1.AppUserManager.UpdateAppRole:input_type -> app.user.manager.v1.UpdateAppRoleRequest
 	109, // 153: app.user.manager.v1.AppUserManager.CreateAppRoleUser:input_type -> app.user.manager.v1.CreateAppRoleUserRequest
 	111, // 154: app.user.manager.v1.AppUserManager.GetAppRoleUser:input_type -> app.user.manager.v1.GetAppRoleUserRequest
-	113, // 155: app.user.manager.v1.AppUserManager.GetAppUserUserByAppUser:input_type -> app.user.manager.v1.GetAppUserUserByAppUserRequest
+	113, // 155: app.user.manager.v1.AppUserManager.GetAppRoleUserByAppUser:input_type -> app.user.manager.v1.GetAppRoleUserByAppUserRequest
 	115, // 156: app.user.manager.v1.AppUserManager.GetAppRoleUsersByAppRole:input_type -> app.user.manager.v1.GetAppRoleUsersByAppRoleRequest
 	117, // 157: app.user.manager.v1.AppUserManager.GetUserRolesByAppUser:input_type -> app.user.manager.v1.GetUserRolesByAppUserRequest
 	119, // 158: app.user.manager.v1.AppUserManager.DeleteAppRoleUser:input_type -> app.user.manager.v1.DeleteAppRoleUserRequest
@@ -8522,7 +8522,7 @@ var file_npool_appusermgr_appusermgr_proto_depIdxs = []int32{
 	105, // 213: app.user.manager.v1.AppUserManager.UpdateAppRole:output_type -> app.user.manager.v1.UpdateAppRoleResponse
 	110, // 214: app.user.manager.v1.AppUserManager.CreateAppRoleUser:output_type -> app.user.manager.v1.CreateAppRoleUserResponse
 	112, // 215: app.user.manager.v1.AppUserManager.GetAppRoleUser:output_type -> app.user.manager.v1.GetAppRoleUserResponse
-	114, // 216: app.user.manager.v1.AppUserManager.GetAppUserUserByAppUser:output_type -> app.user.manager.v1.GetAppUserUserByAppUserResponse
+	114, // 216: app.user.manager.v1.AppUserManager.GetAppRoleUserByAppUser:output_type -> app.user.manager.v1.GetAppRoleUserByAppUserResponse
 	116, // 217: app.user.manager.v1.AppUserManager.GetAppRoleUsersByAppRole:output_type -> app.user.manager.v1.GetAppRoleUsersByAppRoleResponse
 	118, // 218: app.user.manager.v1.AppUserManager.GetUserRolesByAppUser:output_type -> app.user.manager.v1.GetUserRolesByAppUserResponse
 	120, // 219: app.user.manager.v1.AppUserManager.DeleteAppRoleUser:output_type -> app.user.manager.v1.DeleteAppRoleUserResponse
@@ -9900,7 +9900,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[113].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppUserUserByAppUserRequest); i {
+			switch v := v.(*GetAppRoleUserByAppUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -9912,7 +9912,7 @@ func file_npool_appusermgr_appusermgr_proto_init() {
 			}
 		}
 		file_npool_appusermgr_appusermgr_proto_msgTypes[114].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppUserUserByAppUserResponse); i {
+			switch v := v.(*GetAppRoleUserByAppUserResponse); i {
 			case 0:
 				return &v.state
 			case 1:

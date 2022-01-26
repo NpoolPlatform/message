@@ -521,12 +521,12 @@ export type GetAppRoleUserResponse = {
   Info?: AppRoleUser
 }
 
-export type GetAppUserUserByAppUserRequest = {
+export type GetAppRoleUserByAppUserRequest = {
   AppID?: string
   UserID?: string
 }
 
-export type GetAppUserUserByAppUserResponse = {
+export type GetAppRoleUserByAppUserResponse = {
   Info?: AppRoleUser
 }
 
@@ -774,8 +774,8 @@ export class AppUserManager {
   static GetAppRoleUser(req: GetAppRoleUserRequest, initReq?: fm.InitReq): Promise<GetAppRoleUserResponse> {
     return fm.fetchReq<GetAppRoleUserRequest, GetAppRoleUserResponse>(`/v1/get/app/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppUserUserByAppUser(req: GetAppUserUserByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserUserByAppUserResponse> {
-    return fm.fetchReq<GetAppUserUserByAppUserRequest, GetAppUserUserByAppUserResponse>(`/v1/get/app/role/user/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppRoleUserByAppUser(req: GetAppRoleUserByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppRoleUserByAppUserResponse> {
+    return fm.fetchReq<GetAppRoleUserByAppUserRequest, GetAppRoleUserByAppUserResponse>(`/v1/get/app/role/user/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppRoleUsersByAppRole(req: GetAppRoleUsersByAppRoleRequest, initReq?: fm.InitReq): Promise<GetAppRoleUsersByAppRoleResponse> {
     return fm.fetchReq<GetAppRoleUsersByAppRoleRequest, GetAppRoleUsersByAppRoleResponse>(`/v1/get/app/role/users/by/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})

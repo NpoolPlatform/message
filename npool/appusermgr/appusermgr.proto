@@ -336,7 +336,7 @@ service AppUserManager {
             body: "*"
         };
     }
-    rpc GetAppUserUserByAppUser (GetAppUserUserByAppUserRequest) returns (GetAppUserUserByAppUserResponse) {
+    rpc GetAppRoleUserByAppUser (GetAppRoleUserByAppUserRequest) returns (GetAppRoleUserByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/role/user/by/app/user"
             body: "*"
@@ -903,12 +903,12 @@ message GetAppRoleUserResponse {
     AppRoleUser Info = 10;
 }
 
-message GetAppUserUserByAppUserRequest {
+message GetAppRoleUserByAppUserRequest {
     string AppID = 10;
     string UserID = 20;
 }
 
-message GetAppUserUserByAppUserResponse {
+message GetAppRoleUserByAppUserResponse {
     AppRoleUser Info = 10;
 }
 
