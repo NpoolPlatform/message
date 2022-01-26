@@ -487,12 +487,13 @@ export type AppRoleUser = {
 }
 
 export type CreateGenesisRoleUserRequest = {
-  AppID?: string
-  UserID?: string
+  User?: AppUser
+  Secret?: AppUserSecret
 }
 
 export type CreateGenesisRoleUserResponse = {
-  Info?: AppRoleUser
+  User?: AppUser
+  RoleUser?: AppRoleUser
 }
 
 export type CreateAppRoleUserRequest = {

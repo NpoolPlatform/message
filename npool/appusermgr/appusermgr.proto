@@ -851,12 +851,13 @@ message AppRoleUser {
 }
 
 message CreateGenesisRoleUserRequest {
-    string AppID = 10;
-    string UserID = 20;
+    AppUser User = 10;
+    AppUserSecret Secret = 20;
 }
 
 message CreateGenesisRoleUserResponse {
-    AppRoleUser Info = 10;
+    AppUser User = 10;
+    AppRoleUser RoleUser = 20;
 }
 
 message CreateAppRoleUserRequest {

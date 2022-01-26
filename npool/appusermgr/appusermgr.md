@@ -765,8 +765,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
+| User | [AppUser](#app.user.manager.v1.AppUser) |  |  |
+| Secret | [AppUserSecret](#app.user.manager.v1.AppUserSecret) |  |  |
 
 
 
@@ -781,7 +781,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppRoleUser](#app.user.manager.v1.AppRoleUser) |  |  |
+| User | [AppUser](#app.user.manager.v1.AppUser) |  |  |
+| RoleUser | [AppRoleUser](#app.user.manager.v1.AppRoleUser) |  |  |
 
 
 

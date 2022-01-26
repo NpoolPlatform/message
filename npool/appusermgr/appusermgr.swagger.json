@@ -2378,18 +2378,21 @@
     "v1CreateGenesisRoleUserRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
-          "type": "string"
+        "User": {
+          "$ref": "#/definitions/v1AppUser"
         },
-        "UserID": {
-          "type": "string"
+        "Secret": {
+          "$ref": "#/definitions/v1AppUserSecret"
         }
       }
     },
     "v1CreateGenesisRoleUserResponse": {
       "type": "object",
       "properties": {
-        "Info": {
+        "User": {
+          "$ref": "#/definitions/v1AppUser"
+        },
+        "RoleUser": {
           "$ref": "#/definitions/v1AppRoleUser"
         }
       }
