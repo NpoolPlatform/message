@@ -13,6 +13,7 @@ export type LoginRequest = {
   Account?: string
   PasswordHash?: string
   ManMachineSpec?: string
+  EnvironmentSpec?: string
 }
 
 export type LoginResponse = {

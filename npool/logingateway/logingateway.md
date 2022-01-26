@@ -38,6 +38,7 @@
 | Account | [string](#string) |  |  |
 | PasswordHash | [string](#string) |  |  |
 | ManMachineSpec | [string](#string) |  |  |
+| EnvironmentSpec | [string](#string) |  |  |
 
 
 

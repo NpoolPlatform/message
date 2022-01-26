@@ -364,6 +364,9 @@
         },
         "ManMachineSpec": {
           "type": "string"
+        },
+        "EnvironmentSpec": {
+          "type": "string"
         }
       }
     },
