@@ -877,12 +877,12 @@
     },
     "/v1/get/app/user/by/account": {
       "post": {
-        "operationId": "AppUserManager_GetAppUserByAccount",
+        "operationId": "AppUserManager_GetAppUserByAppAccount",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppUserByAccountResponse"
+              "$ref": "#/definitions/v1GetAppUserByAppAccountResponse"
             }
           },
           "default": {
@@ -898,7 +898,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppUserByAccountRequest"
+              "$ref": "#/definitions/v1GetAppUserByAppAccountRequest"
             }
           }
         ],
@@ -2710,15 +2710,18 @@
         }
       }
     },
-    "v1GetAppUserByAccountRequest": {
+    "v1GetAppUserByAppAccountRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "Account": {
           "type": "string"
         }
       }
     },
-    "v1GetAppUserByAccountResponse": {
+    "v1GetAppUserByAppAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {

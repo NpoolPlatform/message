@@ -219,11 +219,12 @@ export type GetAppUserResponse = {
   Info?: AppUser
 }
 
-export type GetAppUserByAccountRequest = {
+export type GetAppUserByAppAccountRequest = {
+  AppID?: string
   Account?: string
 }
 
-export type GetAppUserByAccountResponse = {
+export type GetAppUserByAppAccountResponse = {
   Info?: AppUser
 }
 
@@ -661,8 +662,8 @@ export class AppUserManager {
   static GetAppUser(req: GetAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserResponse> {
     return fm.fetchReq<GetAppUserRequest, GetAppUserResponse>(`/v1/get/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppUserByAccount(req: GetAppUserByAccountRequest, initReq?: fm.InitReq): Promise<GetAppUserByAccountResponse> {
-    return fm.fetchReq<GetAppUserByAccountRequest, GetAppUserByAccountResponse>(`/v1/get/app/user/by/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppUserByAppAccount(req: GetAppUserByAppAccountRequest, initReq?: fm.InitReq): Promise<GetAppUserByAppAccountResponse> {
+    return fm.fetchReq<GetAppUserByAppAccountRequest, GetAppUserByAppAccountResponse>(`/v1/get/app/user/by/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppUsersByApp(req: GetAppUsersByAppRequest, initReq?: fm.InitReq): Promise<GetAppUsersByAppResponse> {
     return fm.fetchReq<GetAppUsersByAppRequest, GetAppUsersByAppResponse>(`/v1/get/app/users/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
