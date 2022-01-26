@@ -1178,7 +1178,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppRoleUser](#app.user.manager.v1.AppRoleUser) |  |  |
+| Infos | [AppRoleUser](#app.user.manager.v1.AppRoleUser) | repeated |  |
 
 
 

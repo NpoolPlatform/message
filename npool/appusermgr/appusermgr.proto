@@ -909,7 +909,7 @@ message GetAppRoleUserByAppUserRequest {
 }
 
 message GetAppRoleUserByAppUserResponse {
-    AppRoleUser Info = 10;
+    repeated AppRoleUser Infos = 10;
 }
 
 message GetAppRoleUsersByAppRoleRequest {

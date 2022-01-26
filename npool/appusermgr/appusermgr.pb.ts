@@ -527,7 +527,7 @@ export type GetAppRoleUserByAppUserRequest = {
 }
 
 export type GetAppRoleUserByAppUserResponse = {
-  Info?: AppRoleUser
+  Infos?: AppRoleUser[]
 }
 
 export type GetAppRoleUsersByAppRoleRequest = {

@@ -2717,8 +2717,11 @@
     "v1GetAppRoleUserByAppUserResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppRoleUser"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppRoleUser"
+          }
         }
       }
     },
