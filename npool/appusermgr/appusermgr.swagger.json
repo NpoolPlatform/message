@@ -299,6 +299,38 @@
         ]
       }
     },
+    "/v1/create/app/user/with/secret": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppUserWithSecret",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserWithSecretResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserWithSecretRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/create/ban/app": {
       "post": {
         "operationId": "AppUserManager_CreateBanApp",
@@ -2278,6 +2310,25 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserSecret"
+        }
+      }
+    },
+    "v1CreateAppUserWithSecretRequest": {
+      "type": "object",
+      "properties": {
+        "User": {
+          "$ref": "#/definitions/v1AppUser"
+        },
+        "Secret": {
+          "$ref": "#/definitions/v1AppUserSecret"
+        }
+      }
+    },
+    "v1CreateAppUserWithSecretResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUser"
         }
       }
     },

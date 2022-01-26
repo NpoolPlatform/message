@@ -34,6 +34,8 @@
     - [CreateAppUserResponse](#app.user.manager.v1.CreateAppUserResponse)
     - [CreateAppUserSecretRequest](#app.user.manager.v1.CreateAppUserSecretRequest)
     - [CreateAppUserSecretResponse](#app.user.manager.v1.CreateAppUserSecretResponse)
+    - [CreateAppUserWithSecretRequest](#app.user.manager.v1.CreateAppUserWithSecretRequest)
+    - [CreateAppUserWithSecretResponse](#app.user.manager.v1.CreateAppUserWithSecretResponse)
     - [CreateBanAppRequest](#app.user.manager.v1.CreateBanAppRequest)
     - [CreateBanAppResponse](#app.user.manager.v1.CreateBanAppResponse)
     - [CreateBanAppUserRequest](#app.user.manager.v1.CreateBanAppUserRequest)
@@ -633,6 +635,37 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [AppUserSecret](#app.user.manager.v1.AppUserSecret) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.CreateAppUserWithSecretRequest"></a>
+
+### CreateAppUserWithSecretRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| User | [AppUser](#app.user.manager.v1.AppUser) |  |  |
+| Secret | [AppUserSecret](#app.user.manager.v1.AppUserSecret) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.CreateAppUserWithSecretResponse"></a>
+
+### CreateAppUserWithSecretResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUser](#app.user.manager.v1.AppUser) |  |  |
 
 
 
@@ -2129,6 +2162,7 @@
 | GetAppUserInfo | [GetAppUserInfoRequest](#app.user.manager.v1.GetAppUserInfoRequest) | [GetAppUserInfoResponse](#app.user.manager.v1.GetAppUserInfoResponse) |  |
 | GetAppUserInfos | [GetAppUserInfosRequest](#app.user.manager.v1.GetAppUserInfosRequest) | [GetAppUserInfosResponse](#app.user.manager.v1.GetAppUserInfosResponse) |  |
 | GetAppUserInfosByApp | [GetAppUserInfosByAppRequest](#app.user.manager.v1.GetAppUserInfosByAppRequest) | [GetAppUserInfosByAppResponse](#app.user.manager.v1.GetAppUserInfosByAppResponse) |  |
+| CreateAppUserWithSecret | [CreateAppUserWithSecretRequest](#app.user.manager.v1.CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app.user.manager.v1.CreateAppUserWithSecretResponse) |  |
 
  
 

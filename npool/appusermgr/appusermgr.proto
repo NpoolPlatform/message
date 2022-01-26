@@ -361,6 +361,13 @@ service AppUserManager {
             body: "*"
         };
     }
+
+    rpc CreateAppUserWithSecret (CreateAppUserWithSecretRequest) returns (CreateAppUserWithSecretResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/with/secret"
+            body: "*"
+        };
+    }
 }
 
 message App {
@@ -931,5 +938,14 @@ message GetAppUserInfosByAppRequest {
 message GetAppUserInfosByAppResponse {
     repeated AppUserInfo Infos = 10;
     uint32 Total = 20;
+}
+
+message CreateAppUserWithSecretRequest {
+    AppUser User = 10;
+    AppUserSecret Secret = 20;
+}
+
+message CreateAppUserWithSecretResponse {
+    AppUser Info = 10;
 }
 
