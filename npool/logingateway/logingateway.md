@@ -13,8 +13,6 @@
     - [LoginedResponse](#login.gateway.v1.LoginedResponse)
     - [LogoutRequest](#login.gateway.v1.LogoutRequest)
     - [LogoutResponse](#login.gateway.v1.LogoutResponse)
-    - [RefreshRequest](#login.gateway.v1.RefreshRequest)
-    - [RefreshResponse](#login.gateway.v1.RefreshResponse)
   
     - [LoginGateway](#login.gateway.v1.LoginGateway)
   
@@ -128,6 +126,7 @@
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
+| Token | [string](#string) |  |  |
 
 
 
@@ -179,37 +178,6 @@
 
 
 
-
-<a name="login.gateway.v1.RefreshRequest"></a>
-
-### RefreshRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="login.gateway.v1.RefreshResponse"></a>
-
-### RefreshResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
-
-
-
-
-
  
 
  
@@ -228,7 +196,6 @@
 | Login | [LoginRequest](#login.gateway.v1.LoginRequest) | [LoginResponse](#login.gateway.v1.LoginResponse) |  |
 | Logined | [LoginedRequest](#login.gateway.v1.LoginedRequest) | [LoginedResponse](#login.gateway.v1.LoginedResponse) |  |
 | Logout | [LogoutRequest](#login.gateway.v1.LogoutRequest) | [LogoutResponse](#login.gateway.v1.LogoutResponse) |  |
-| Refresh | [RefreshRequest](#login.gateway.v1.RefreshRequest) | [RefreshResponse](#login.gateway.v1.RefreshResponse) |  |
 | GetLoginHistories | [GetLoginHistoriesRequest](#login.gateway.v1.GetLoginHistoriesRequest) | [GetLoginHistoriesResponse](#login.gateway.v1.GetLoginHistoriesResponse) |  |
 
  

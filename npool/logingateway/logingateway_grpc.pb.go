@@ -24,7 +24,6 @@ type LoginGatewayClient interface {
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
 	Logined(ctx context.Context, in *LoginedRequest, opts ...grpc.CallOption) (*LoginedResponse, error)
 	Logout(ctx context.Context, in *LogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error)
-	Refresh(ctx context.Context, in *RefreshRequest, opts ...grpc.CallOption) (*RefreshResponse, error)
 	GetLoginHistories(ctx context.Context, in *GetLoginHistoriesRequest, opts ...grpc.CallOption) (*GetLoginHistoriesResponse, error)
 }
 
@@ -72,15 +71,6 @@ func (c *loginGatewayClient) Logout(ctx context.Context, in *LogoutRequest, opts
 	return out, nil
 }
 
-func (c *loginGatewayClient) Refresh(ctx context.Context, in *RefreshRequest, opts ...grpc.CallOption) (*RefreshResponse, error) {
-	out := new(RefreshResponse)
-	err := c.cc.Invoke(ctx, "/login.gateway.v1.LoginGateway/Refresh", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *loginGatewayClient) GetLoginHistories(ctx context.Context, in *GetLoginHistoriesRequest, opts ...grpc.CallOption) (*GetLoginHistoriesResponse, error) {
 	out := new(GetLoginHistoriesResponse)
 	err := c.cc.Invoke(ctx, "/login.gateway.v1.LoginGateway/GetLoginHistories", in, out, opts...)
@@ -98,7 +88,6 @@ type LoginGatewayServer interface {
 	Login(context.Context, *LoginRequest) (*LoginResponse, error)
 	Logined(context.Context, *LoginedRequest) (*LoginedResponse, error)
 	Logout(context.Context, *LogoutRequest) (*LogoutResponse, error)
-	Refresh(context.Context, *RefreshRequest) (*RefreshResponse, error)
 	GetLoginHistories(context.Context, *GetLoginHistoriesRequest) (*GetLoginHistoriesResponse, error)
 	mustEmbedUnimplementedLoginGatewayServer()
 }
@@ -118,9 +107,6 @@ func (UnimplementedLoginGatewayServer) Logined(context.Context, *LoginedRequest)
 }
 func (UnimplementedLoginGatewayServer) Logout(context.Context, *LogoutRequest) (*LogoutResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Logout not implemented")
-}
-func (UnimplementedLoginGatewayServer) Refresh(context.Context, *RefreshRequest) (*RefreshResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Refresh not implemented")
 }
 func (UnimplementedLoginGatewayServer) GetLoginHistories(context.Context, *GetLoginHistoriesRequest) (*GetLoginHistoriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLoginHistories not implemented")
@@ -210,24 +196,6 @@ func _LoginGateway_Logout_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LoginGateway_Refresh_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RefreshRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LoginGatewayServer).Refresh(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/login.gateway.v1.LoginGateway/Refresh",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LoginGatewayServer).Refresh(ctx, req.(*RefreshRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _LoginGateway_GetLoginHistories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetLoginHistoriesRequest)
 	if err := dec(in); err != nil {
@@ -268,10 +236,6 @@ var LoginGateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Logout",
 			Handler:    _LoginGateway_Logout_Handler,
-		},
-		{
-			MethodName: "Refresh",
-			Handler:    _LoginGateway_Refresh_Handler,
 		},
 		{
 			MethodName: "GetLoginHistories",

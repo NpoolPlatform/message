@@ -26,6 +26,7 @@ export type LoginResponse = {
 export type LoginedRequest = {
   AppID?: string
   UserID?: string
+  Token?: string
 }
 
 export type LoginedResponse = {
@@ -38,15 +39,6 @@ export type LogoutRequest = {
 }
 
 export type LogoutResponse = {
-  Info?: AppUserManagerV1Appusermgr.AppUserInfo
-}
-
-export type RefreshRequest = {
-  AppID?: string
-  UserID?: string
-}
-
-export type RefreshResponse = {
   Info?: AppUserManagerV1Appusermgr.AppUserInfo
 }
 
@@ -81,9 +73,6 @@ export class LoginGateway {
   }
   static Logout(req: LogoutRequest, initReq?: fm.InitReq): Promise<LogoutResponse> {
     return fm.fetchReq<LogoutRequest, LogoutResponse>(`/v1/logout`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static Refresh(req: RefreshRequest, initReq?: fm.InitReq): Promise<RefreshResponse> {
-    return fm.fetchReq<RefreshRequest, RefreshResponse>(`/v1/refresh`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetLoginHistories(req: GetLoginHistoriesRequest, initReq?: fm.InitReq): Promise<GetLoginHistoriesResponse> {
     return fm.fetchReq<GetLoginHistoriesRequest, GetLoginHistoriesResponse>(`/v1/get/login/histories`, {...initReq, method: "POST", body: JSON.stringify(req)})

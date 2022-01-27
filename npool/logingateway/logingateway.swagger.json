@@ -139,38 +139,6 @@
         ]
       }
     },
-    "/v1/refresh": {
-      "post": {
-        "operationId": "LoginGateway_Refresh",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1RefreshResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1RefreshRequest"
-            }
-          }
-        ],
-        "tags": [
-          "LoginGateway"
-        ]
-      }
-    },
     "/version": {
       "post": {
         "operationId": "LoginGateway_Version",
@@ -476,6 +444,9 @@
         },
         "UserID": {
           "type": "string"
+        },
+        "Token": {
+          "type": "string"
         }
       }
     },
@@ -516,25 +487,6 @@
         "Limit": {
           "type": "integer",
           "format": "int32"
-        }
-      }
-    },
-    "v1RefreshRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1RefreshResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserInfo"
         }
       }
     },

@@ -35,12 +35,6 @@ service LoginGateway {
             body: "*"
         };
     }
-    rpc Refresh (RefreshRequest) returns (RefreshResponse) {
-        option (google.api.http) = {
-            post: "/v1/refresh"
-            body: "*"
-        };
-    }
     rpc GetLoginHistories (GetLoginHistoriesRequest) returns (GetLoginHistoriesResponse) {
         option (google.api.http) = {
             post: "/v1/get/login/histories"
@@ -67,6 +61,7 @@ message LoginResponse {
 message LoginedRequest {
     string AppID = 10;
     string UserID = 20;
+    string Token = 70;
 }
 
 message LoginedResponse {
@@ -79,15 +74,6 @@ message LogoutRequest {
 }
 
 message LogoutResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
-}
-
-message RefreshRequest {
-    string AppID = 10;
-    string UserID = 20;
-}
-
-message RefreshResponse {
     app.user.manager.v1.AppUserInfo Info = 10;
 }
 
