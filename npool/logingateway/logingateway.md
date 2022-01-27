@@ -95,6 +95,7 @@
 | ManMachineSpec | [string](#string) |  |  |
 | EnvironmentSpec | [string](#string) |  |  |
 | LoginType | [string](#string) |  |  |
+| Token | [string](#string) |  |  |
 
 
 

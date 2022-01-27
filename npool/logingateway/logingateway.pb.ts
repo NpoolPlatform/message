@@ -15,6 +15,7 @@ export type LoginRequest = {
   ManMachineSpec?: string
   EnvironmentSpec?: string
   LoginType?: string
+  Token?: string
 }
 
 export type LoginResponse = {
