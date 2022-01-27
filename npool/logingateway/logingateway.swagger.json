@@ -11,6 +11,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/get/login/histories": {
+      "post": {
+        "operationId": "LoginGateway_GetLoginHistories",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetLoginHistoriesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetLoginHistoriesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "LoginGateway"
+        ]
+      }
+    },
     "/v1/login": {
       "post": {
         "operationId": "LoginGateway_Login",
@@ -347,6 +379,52 @@
         },
         "Message": {
           "type": "string"
+        }
+      }
+    },
+    "v1GetLoginHistoriesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetLoginHistoriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1LoginHistory"
+          }
+        }
+      }
+    },
+    "v1LoginHistory": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ClientIP": {
+          "type": "string"
+        },
+        "UserAgent": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

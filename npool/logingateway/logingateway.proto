@@ -41,6 +41,12 @@ service LoginGateway {
             body: "*"
         };
     }
+    rpc GetLoginHistories (GetLoginHistoriesRequest) returns (GetLoginHistoriesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/login/histories"
+            body: "*"
+        };
+    }
 }
 
 message LoginRequest {
@@ -80,4 +86,22 @@ message RefreshRequest {
 
 message RefreshResponse {
     app.user.manager.v1.AppUserInfo Info = 10;
+}
+
+message LoginHistory {
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    string ClientIP = 40;
+    string UserAgent = 50;
+    uint32 CreateAt = 60;
+}
+
+message GetLoginHistoriesRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetLoginHistoriesResponse {
+    repeated LoginHistory Infos = 10;
 }

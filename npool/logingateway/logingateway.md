@@ -4,6 +4,9 @@
 ## Table of Contents
 
 - [npool/logingateway/logingateway.proto](#npool/logingateway/logingateway.proto)
+    - [GetLoginHistoriesRequest](#login.gateway.v1.GetLoginHistoriesRequest)
+    - [GetLoginHistoriesResponse](#login.gateway.v1.GetLoginHistoriesResponse)
+    - [LoginHistory](#login.gateway.v1.LoginHistory)
     - [LoginRequest](#login.gateway.v1.LoginRequest)
     - [LoginResponse](#login.gateway.v1.LoginResponse)
     - [LoginedRequest](#login.gateway.v1.LoginedRequest)
@@ -23,6 +26,57 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/logingateway/logingateway.proto
+
+
+
+<a name="login.gateway.v1.GetLoginHistoriesRequest"></a>
+
+### GetLoginHistoriesRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="login.gateway.v1.GetLoginHistoriesResponse"></a>
+
+### GetLoginHistoriesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [LoginHistory](#login.gateway.v1.LoginHistory) | repeated |  |
+
+
+
+
+
+
+<a name="login.gateway.v1.LoginHistory"></a>
+
+### LoginHistory
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| ClientIP | [string](#string) |  |  |
+| UserAgent | [string](#string) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
+
+
+
 
 
 
@@ -171,6 +225,7 @@
 | Logined | [LoginedRequest](#login.gateway.v1.LoginedRequest) | [LoginedResponse](#login.gateway.v1.LoginedResponse) |  |
 | Logout | [LogoutRequest](#login.gateway.v1.LogoutRequest) | [LogoutResponse](#login.gateway.v1.LogoutResponse) |  |
 | Refresh | [RefreshRequest](#login.gateway.v1.RefreshRequest) | [RefreshResponse](#login.gateway.v1.RefreshResponse) |  |
+| GetLoginHistories | [GetLoginHistoriesRequest](#login.gateway.v1.GetLoginHistoriesRequest) | [GetLoginHistoriesResponse](#login.gateway.v1.GetLoginHistoriesResponse) |  |
 
  
 

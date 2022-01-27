@@ -47,6 +47,24 @@ export type RefreshResponse = {
   Info?: AppUserManagerV1Appusermgr.AppUserInfo
 }
 
+export type LoginHistory = {
+  ID?: string
+  AppID?: string
+  UserID?: string
+  ClientIP?: string
+  UserAgent?: string
+  CreateAt?: number
+}
+
+export type GetLoginHistoriesRequest = {
+  AppID?: string
+  UserID?: string
+}
+
+export type GetLoginHistoriesResponse = {
+  Infos?: LoginHistory[]
+}
+
 export class LoginGateway {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -62,5 +80,8 @@ export class LoginGateway {
   }
   static Refresh(req: RefreshRequest, initReq?: fm.InitReq): Promise<RefreshResponse> {
     return fm.fetchReq<RefreshRequest, RefreshResponse>(`/v1/refresh`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetLoginHistories(req: GetLoginHistoriesRequest, initReq?: fm.InitReq): Promise<GetLoginHistoriesResponse> {
+    return fm.fetchReq<GetLoginHistoriesRequest, GetLoginHistoriesResponse>(`/v1/get/login/histories`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
