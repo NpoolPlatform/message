@@ -390,6 +390,9 @@
         },
         "UserID": {
           "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
         }
       }
     },
@@ -494,6 +497,19 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserInfo"
+        }
+      }
+    },
+    "v1PageInfo": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },

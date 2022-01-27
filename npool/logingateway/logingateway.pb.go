@@ -556,8 +556,9 @@ type GetLoginHistoriesRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AppID  string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	UserID string `protobuf:"bytes,20,opt,name=UserID,proto3" json:"UserID,omitempty"`
+	AppID    string          `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	UserID   string          `protobuf:"bytes,20,opt,name=UserID,proto3" json:"UserID,omitempty"`
+	PageInfo *npool.PageInfo `protobuf:"bytes,30,opt,name=PageInfo,proto3" json:"PageInfo,omitempty"`
 }
 
 func (x *GetLoginHistoriesRequest) Reset() {
@@ -604,6 +605,13 @@ func (x *GetLoginHistoriesRequest) GetUserID() string {
 		return x.UserID
 	}
 	return ""
+}
+
+func (x *GetLoginHistoriesRequest) GetPageInfo() *npool.PageInfo {
+	if x != nil {
+		return x.PageInfo
+	}
+	return nil
 }
 
 type GetLoginHistoriesResponse struct {
@@ -720,11 +728,14 @@ var file_npool_logingateway_logingateway_proto_rawDesc = []byte{
 	0x65, 0x72, 0x41, 0x67, 0x65, 0x6e, 0x74, 0x18, 0x32, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x55,
 	0x73, 0x65, 0x72, 0x41, 0x67, 0x65, 0x6e, 0x74, 0x12, 0x1a, 0x0a, 0x08, 0x43, 0x72, 0x65, 0x61,
 	0x74, 0x65, 0x41, 0x74, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x08, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x41, 0x74, 0x22, 0x48, 0x0a, 0x18, 0x47, 0x65, 0x74, 0x4c, 0x6f, 0x67, 0x69, 0x6e,
+	0x74, 0x65, 0x41, 0x74, 0x22, 0x78, 0x0a, 0x18, 0x47, 0x65, 0x74, 0x4c, 0x6f, 0x67, 0x69, 0x6e,
 	0x48, 0x69, 0x73, 0x74, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52,
 	0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44,
-	0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x51,
+	0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x2e,
+	0x0a, 0x08, 0x50, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x12, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x67, 0x65,
+	0x49, 0x6e, 0x66, 0x6f, 0x52, 0x08, 0x50, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x51,
 	0x0a, 0x19, 0x47, 0x65, 0x74, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x48, 0x69, 0x73, 0x74, 0x6f, 0x72,
 	0x69, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x34, 0x0a, 0x05, 0x49,
 	0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x6c, 0x6f, 0x67,
@@ -803,32 +814,34 @@ var file_npool_logingateway_logingateway_proto_goTypes = []interface{}{
 	(*GetLoginHistoriesRequest)(nil),  // 9: login.gateway.v1.GetLoginHistoriesRequest
 	(*GetLoginHistoriesResponse)(nil), // 10: login.gateway.v1.GetLoginHistoriesResponse
 	(*appusermgr.AppUserInfo)(nil),    // 11: app.user.manager.v1.AppUserInfo
-	(*emptypb.Empty)(nil),             // 12: google.protobuf.Empty
-	(*npool.VersionResponse)(nil),     // 13: npool.v1.VersionResponse
+	(*npool.PageInfo)(nil),            // 12: npool.v1.PageInfo
+	(*emptypb.Empty)(nil),             // 13: google.protobuf.Empty
+	(*npool.VersionResponse)(nil),     // 14: npool.v1.VersionResponse
 }
 var file_npool_logingateway_logingateway_proto_depIdxs = []int32{
 	11, // 0: login.gateway.v1.LoginResponse.Info:type_name -> app.user.manager.v1.AppUserInfo
 	11, // 1: login.gateway.v1.LoginedResponse.Info:type_name -> app.user.manager.v1.AppUserInfo
 	11, // 2: login.gateway.v1.LogoutResponse.Info:type_name -> app.user.manager.v1.AppUserInfo
 	11, // 3: login.gateway.v1.RefreshResponse.Info:type_name -> app.user.manager.v1.AppUserInfo
-	8,  // 4: login.gateway.v1.GetLoginHistoriesResponse.Infos:type_name -> login.gateway.v1.LoginHistory
-	12, // 5: login.gateway.v1.LoginGateway.Version:input_type -> google.protobuf.Empty
-	0,  // 6: login.gateway.v1.LoginGateway.Login:input_type -> login.gateway.v1.LoginRequest
-	2,  // 7: login.gateway.v1.LoginGateway.Logined:input_type -> login.gateway.v1.LoginedRequest
-	4,  // 8: login.gateway.v1.LoginGateway.Logout:input_type -> login.gateway.v1.LogoutRequest
-	6,  // 9: login.gateway.v1.LoginGateway.Refresh:input_type -> login.gateway.v1.RefreshRequest
-	9,  // 10: login.gateway.v1.LoginGateway.GetLoginHistories:input_type -> login.gateway.v1.GetLoginHistoriesRequest
-	13, // 11: login.gateway.v1.LoginGateway.Version:output_type -> npool.v1.VersionResponse
-	1,  // 12: login.gateway.v1.LoginGateway.Login:output_type -> login.gateway.v1.LoginResponse
-	3,  // 13: login.gateway.v1.LoginGateway.Logined:output_type -> login.gateway.v1.LoginedResponse
-	5,  // 14: login.gateway.v1.LoginGateway.Logout:output_type -> login.gateway.v1.LogoutResponse
-	7,  // 15: login.gateway.v1.LoginGateway.Refresh:output_type -> login.gateway.v1.RefreshResponse
-	10, // 16: login.gateway.v1.LoginGateway.GetLoginHistories:output_type -> login.gateway.v1.GetLoginHistoriesResponse
-	11, // [11:17] is the sub-list for method output_type
-	5,  // [5:11] is the sub-list for method input_type
-	5,  // [5:5] is the sub-list for extension type_name
-	5,  // [5:5] is the sub-list for extension extendee
-	0,  // [0:5] is the sub-list for field type_name
+	12, // 4: login.gateway.v1.GetLoginHistoriesRequest.PageInfo:type_name -> npool.v1.PageInfo
+	8,  // 5: login.gateway.v1.GetLoginHistoriesResponse.Infos:type_name -> login.gateway.v1.LoginHistory
+	13, // 6: login.gateway.v1.LoginGateway.Version:input_type -> google.protobuf.Empty
+	0,  // 7: login.gateway.v1.LoginGateway.Login:input_type -> login.gateway.v1.LoginRequest
+	2,  // 8: login.gateway.v1.LoginGateway.Logined:input_type -> login.gateway.v1.LoginedRequest
+	4,  // 9: login.gateway.v1.LoginGateway.Logout:input_type -> login.gateway.v1.LogoutRequest
+	6,  // 10: login.gateway.v1.LoginGateway.Refresh:input_type -> login.gateway.v1.RefreshRequest
+	9,  // 11: login.gateway.v1.LoginGateway.GetLoginHistories:input_type -> login.gateway.v1.GetLoginHistoriesRequest
+	14, // 12: login.gateway.v1.LoginGateway.Version:output_type -> npool.v1.VersionResponse
+	1,  // 13: login.gateway.v1.LoginGateway.Login:output_type -> login.gateway.v1.LoginResponse
+	3,  // 14: login.gateway.v1.LoginGateway.Logined:output_type -> login.gateway.v1.LoginedResponse
+	5,  // 15: login.gateway.v1.LoginGateway.Logout:output_type -> login.gateway.v1.LogoutResponse
+	7,  // 16: login.gateway.v1.LoginGateway.Refresh:output_type -> login.gateway.v1.RefreshResponse
+	10, // 17: login.gateway.v1.LoginGateway.GetLoginHistories:output_type -> login.gateway.v1.GetLoginHistoriesResponse
+	12, // [12:18] is the sub-list for method output_type
+	6,  // [6:12] is the sub-list for method input_type
+	6,  // [6:6] is the sub-list for extension type_name
+	6,  // [6:6] is the sub-list for extension extendee
+	0,  // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_npool_logingateway_logingateway_proto_init() }

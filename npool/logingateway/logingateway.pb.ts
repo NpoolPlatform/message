@@ -60,6 +60,7 @@ export type LoginHistory = {
 export type GetLoginHistoriesRequest = {
   AppID?: string
   UserID?: string
+  PageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetLoginHistoriesResponse = {

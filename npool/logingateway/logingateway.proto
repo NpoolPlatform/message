@@ -101,6 +101,7 @@ message LoginHistory {
 message GetLoginHistoriesRequest {
     string AppID = 10;
     string UserID = 20;
+    npool.v1.PageInfo PageInfo = 30;
 }
 
 message GetLoginHistoriesResponse {
