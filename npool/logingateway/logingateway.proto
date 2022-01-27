@@ -60,6 +60,7 @@ message LoginRequest {
 
 message LoginResponse {
     app.user.manager.v1.AppUserInfo Info = 10;
+    string Token = 20;
 }
 
 message LoginedRequest {
@@ -69,7 +70,6 @@ message LoginedRequest {
 
 message LoginedResponse {
     app.user.manager.v1.AppUserInfo Info = 10;
-    string Token = 20;
 }
 
 message LogoutRequest {

@@ -459,6 +459,9 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserInfo"
+        },
+        "Token": {
+          "type": "string"
         }
       }
     },
@@ -478,9 +481,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserInfo"
-        },
-        "Token": {
-          "type": "string"
         }
       }
     },
