@@ -169,6 +169,9 @@
         },
         "Token": {
           "type": "string"
+        },
+        "Resource": {
+          "type": "string"
         }
       }
     },

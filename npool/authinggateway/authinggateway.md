@@ -63,6 +63,7 @@
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | Token | [string](#string) |  |  |
+| Resource | [string](#string) |  |  |
 
 
 

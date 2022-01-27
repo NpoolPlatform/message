@@ -19,6 +19,7 @@ export type AuthByAppRoleUserRequest = {
   AppID?: string
   UserID?: string
   Token?: string
+  Resource?: string
 }
 
 export type AuthByAppRoleUserResponse = {
