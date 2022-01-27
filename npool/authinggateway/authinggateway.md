@@ -64,6 +64,7 @@
 | UserID | [string](#string) |  |  |
 | Token | [string](#string) |  |  |
 | Resource | [string](#string) |  |  |
+| Method | [string](#string) |  |  |
 
 
 

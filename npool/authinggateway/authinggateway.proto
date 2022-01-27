@@ -43,6 +43,7 @@ message AuthByAppRoleUserRequest {
     string UserID = 20;
     string Token = 30;
     string Resource = 40;
+    string Method = 50;
 }
 
 message AuthByAppRoleUserResponse {

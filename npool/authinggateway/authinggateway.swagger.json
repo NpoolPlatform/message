@@ -172,6 +172,9 @@
         },
         "Resource": {
           "type": "string"
+        },
+        "Method": {
+          "type": "string"
         }
       }
     },
