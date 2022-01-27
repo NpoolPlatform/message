@@ -14,6 +14,7 @@ export type LoginRequest = {
   PasswordHash?: string
   ManMachineSpec?: string
   EnvironmentSpec?: string
+  LoginType?: string
 }
 
 export type LoginResponse = {

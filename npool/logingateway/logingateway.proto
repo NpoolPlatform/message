@@ -55,6 +55,7 @@ message LoginRequest {
     string PasswordHash = 30;
     string ManMachineSpec = 40;
     string EnvironmentSpec = 50;
+    string LoginType = 60;
 }
 
 message LoginResponse {

@@ -445,6 +445,9 @@
         },
         "EnvironmentSpec": {
           "type": "string"
+        },
+        "LoginType": {
+          "type": "string"
         }
       }
     },

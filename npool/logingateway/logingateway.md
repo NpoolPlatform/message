@@ -93,6 +93,7 @@
 | PasswordHash | [string](#string) |  |  |
 | ManMachineSpec | [string](#string) |  |  |
 | EnvironmentSpec | [string](#string) |  |  |
+| LoginType | [string](#string) |  |  |
 
 
 
