@@ -28,6 +28,7 @@ export type LoginedRequest = {
 
 export type LoginedResponse = {
   Info?: AppUserManagerV1Appusermgr.AppUserInfo
+  Token?: string
 }
 
 export type LogoutRequest = {
