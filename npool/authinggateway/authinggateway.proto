@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package authing.gateway.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/authinggateway";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+service AuthingGateway {
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+
+    rpc AuthByApp (AuthByAppRequest) returns (AuthByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/auth/by/app"
+            body: "*"
+        };
+    }
+    rpc AuthByAppRoleUser (AuthByAppRoleUserRequest) returns (AuthByAppRoleUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/auth/by/app/role/user"
+            body: "*"
+        };
+    }
+}
+
+message AuthByAppRequest {
+    string AppID = 10;
+}
+
+message AuthByAppResponse {
+    bool Allowed = 10;
+}
+
+message AuthByAppRoleUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string Token = 30;
+}
+
+message AuthByAppRoleUserResponse {
+    bool Allowed = 10;
+}
+
