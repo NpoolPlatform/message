@@ -245,6 +245,9 @@
         "UserID": {
           "type": "string"
         },
+        "LangID": {
+          "type": "string"
+        },
         "PhoneNO": {
           "type": "string"
         },
@@ -304,6 +307,9 @@
           "type": "string"
         },
         "UserID": {
+          "type": "string"
+        },
+        "LangID": {
           "type": "string"
         },
         "PhoneNO": {

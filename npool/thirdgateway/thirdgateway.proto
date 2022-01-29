@@ -48,8 +48,9 @@ service ThirdGateway {
 message SendSMSCodeRequest {
     string AppID = 10;
     string UserID = 20;
-    string PhoneNO = 30;
-    string UsedFor = 40;
+    string LangID = 30;
+    string PhoneNO = 40;
+    string UsedFor = 50;
 }
 
 message SendSMSCodeResponse {
@@ -60,9 +61,10 @@ message SendSMSCodeResponse {
 message VerifySMSCodeRequest {
     string AppID = 10;
     string UserID = 20;
-    string PhoneNO = 30;
-    string UsedFor = 40;
-    string Code = 50;
+    string LangID = 30;
+    string PhoneNO = 40;
+    string UsedFor = 50;
+    string Code = 60;
 }
 
 message VerifySMSCodeResponse {

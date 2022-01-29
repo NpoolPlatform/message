@@ -82,6 +82,7 @@
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
 | PhoneNO | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 
@@ -151,6 +152,7 @@
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
 | PhoneNO | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 | Code | [string](#string) |  |  |
@@ -250,6 +252,7 @@ Service Name
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
 | PhoneNO | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 
@@ -319,6 +322,7 @@ Service Name
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
 | PhoneNO | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 | Code | [string](#string) |  |  |

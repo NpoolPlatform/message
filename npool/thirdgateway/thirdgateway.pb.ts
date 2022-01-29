@@ -10,6 +10,7 @@ import * as NpoolV1Npool from "../npool.pb"
 export type SendSMSCodeRequest = {
   appID?: string
   userID?: string
+  langID?: string
   phoneNO?: string
   usedFor?: string
 }
@@ -22,6 +23,7 @@ export type SendSMSCodeResponse = {
 export type VerifySMSCodeRequest = {
   appID?: string
   userID?: string
+  langID?: string
   phoneNO?: string
   usedFor?: string
   code?: string
