@@ -27,9 +27,13 @@ type ThirdGatewayClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateAppSMSTemplate(ctx context.Context, in *CreateAppSMSTemplateRequest, opts ...grpc.CallOption) (*CreateAppSMSTemplateResponse, error)
+	GetAppSMSTemplate(ctx context.Context, in *GetAppSMSTemplateRequest, opts ...grpc.CallOption) (*GetAppSMSTemplateResponse, error)
 	UpdateAppSMSTemplate(ctx context.Context, in *UpdateAppSMSTemplateRequest, opts ...grpc.CallOption) (*UpdateAppSMSTemplateResponse, error)
+	GetAppSMSTemplateByAppLangUsedFor(ctx context.Context, in *GetAppSMSTemplateByAppLangUsedForRequest, opts ...grpc.CallOption) (*GetAppSMSTemplateByAppLangUsedForResponse, error)
 	CreateAppEmailTemplate(ctx context.Context, in *CreateAppEmailTemplateRequest, opts ...grpc.CallOption) (*CreateAppEmailTemplateResponse, error)
+	GetAppEmailTemplate(ctx context.Context, in *GetAppEmailTemplateRequest, opts ...grpc.CallOption) (*GetAppEmailTemplateResponse, error)
 	UpdateAppEmailTemplate(ctx context.Context, in *UpdateAppEmailTemplateRequest, opts ...grpc.CallOption) (*UpdateAppEmailTemplateResponse, error)
+	GetAppEmailTemplateByAppLangUsedFor(ctx context.Context, in *GetAppEmailTemplateByAppLangUsedForRequest, opts ...grpc.CallOption) (*GetAppEmailTemplateByAppLangUsedForResponse, error)
 	SendSMSCode(ctx context.Context, in *SendSMSCodeRequest, opts ...grpc.CallOption) (*SendSMSCodeResponse, error)
 	VerifySMSCode(ctx context.Context, in *VerifySMSCodeRequest, opts ...grpc.CallOption) (*VerifySMSCodeResponse, error)
 	SendEmailCode(ctx context.Context, in *SendEmailCodeRequest, opts ...grpc.CallOption) (*SendEmailCodeResponse, error)
@@ -62,9 +66,27 @@ func (c *thirdGatewayClient) CreateAppSMSTemplate(ctx context.Context, in *Creat
 	return out, nil
 }
 
+func (c *thirdGatewayClient) GetAppSMSTemplate(ctx context.Context, in *GetAppSMSTemplateRequest, opts ...grpc.CallOption) (*GetAppSMSTemplateResponse, error) {
+	out := new(GetAppSMSTemplateResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/GetAppSMSTemplate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *thirdGatewayClient) UpdateAppSMSTemplate(ctx context.Context, in *UpdateAppSMSTemplateRequest, opts ...grpc.CallOption) (*UpdateAppSMSTemplateResponse, error) {
 	out := new(UpdateAppSMSTemplateResponse)
 	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/UpdateAppSMSTemplate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *thirdGatewayClient) GetAppSMSTemplateByAppLangUsedFor(ctx context.Context, in *GetAppSMSTemplateByAppLangUsedForRequest, opts ...grpc.CallOption) (*GetAppSMSTemplateByAppLangUsedForResponse, error) {
+	out := new(GetAppSMSTemplateByAppLangUsedForResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/GetAppSMSTemplateByAppLangUsedFor", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,9 +102,27 @@ func (c *thirdGatewayClient) CreateAppEmailTemplate(ctx context.Context, in *Cre
 	return out, nil
 }
 
+func (c *thirdGatewayClient) GetAppEmailTemplate(ctx context.Context, in *GetAppEmailTemplateRequest, opts ...grpc.CallOption) (*GetAppEmailTemplateResponse, error) {
+	out := new(GetAppEmailTemplateResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/GetAppEmailTemplate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *thirdGatewayClient) UpdateAppEmailTemplate(ctx context.Context, in *UpdateAppEmailTemplateRequest, opts ...grpc.CallOption) (*UpdateAppEmailTemplateResponse, error) {
 	out := new(UpdateAppEmailTemplateResponse)
 	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/UpdateAppEmailTemplate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *thirdGatewayClient) GetAppEmailTemplateByAppLangUsedFor(ctx context.Context, in *GetAppEmailTemplateByAppLangUsedForRequest, opts ...grpc.CallOption) (*GetAppEmailTemplateByAppLangUsedForResponse, error) {
+	out := new(GetAppEmailTemplateByAppLangUsedForResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/GetAppEmailTemplateByAppLangUsedFor", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -132,9 +172,13 @@ type ThirdGatewayServer interface {
 	// Method Version
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateAppSMSTemplate(context.Context, *CreateAppSMSTemplateRequest) (*CreateAppSMSTemplateResponse, error)
+	GetAppSMSTemplate(context.Context, *GetAppSMSTemplateRequest) (*GetAppSMSTemplateResponse, error)
 	UpdateAppSMSTemplate(context.Context, *UpdateAppSMSTemplateRequest) (*UpdateAppSMSTemplateResponse, error)
+	GetAppSMSTemplateByAppLangUsedFor(context.Context, *GetAppSMSTemplateByAppLangUsedForRequest) (*GetAppSMSTemplateByAppLangUsedForResponse, error)
 	CreateAppEmailTemplate(context.Context, *CreateAppEmailTemplateRequest) (*CreateAppEmailTemplateResponse, error)
+	GetAppEmailTemplate(context.Context, *GetAppEmailTemplateRequest) (*GetAppEmailTemplateResponse, error)
 	UpdateAppEmailTemplate(context.Context, *UpdateAppEmailTemplateRequest) (*UpdateAppEmailTemplateResponse, error)
+	GetAppEmailTemplateByAppLangUsedFor(context.Context, *GetAppEmailTemplateByAppLangUsedForRequest) (*GetAppEmailTemplateByAppLangUsedForResponse, error)
 	SendSMSCode(context.Context, *SendSMSCodeRequest) (*SendSMSCodeResponse, error)
 	VerifySMSCode(context.Context, *VerifySMSCodeRequest) (*VerifySMSCodeResponse, error)
 	SendEmailCode(context.Context, *SendEmailCodeRequest) (*SendEmailCodeResponse, error)
@@ -152,14 +196,26 @@ func (UnimplementedThirdGatewayServer) Version(context.Context, *emptypb.Empty) 
 func (UnimplementedThirdGatewayServer) CreateAppSMSTemplate(context.Context, *CreateAppSMSTemplateRequest) (*CreateAppSMSTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppSMSTemplate not implemented")
 }
+func (UnimplementedThirdGatewayServer) GetAppSMSTemplate(context.Context, *GetAppSMSTemplateRequest) (*GetAppSMSTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppSMSTemplate not implemented")
+}
 func (UnimplementedThirdGatewayServer) UpdateAppSMSTemplate(context.Context, *UpdateAppSMSTemplateRequest) (*UpdateAppSMSTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppSMSTemplate not implemented")
+}
+func (UnimplementedThirdGatewayServer) GetAppSMSTemplateByAppLangUsedFor(context.Context, *GetAppSMSTemplateByAppLangUsedForRequest) (*GetAppSMSTemplateByAppLangUsedForResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppSMSTemplateByAppLangUsedFor not implemented")
 }
 func (UnimplementedThirdGatewayServer) CreateAppEmailTemplate(context.Context, *CreateAppEmailTemplateRequest) (*CreateAppEmailTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppEmailTemplate not implemented")
 }
+func (UnimplementedThirdGatewayServer) GetAppEmailTemplate(context.Context, *GetAppEmailTemplateRequest) (*GetAppEmailTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppEmailTemplate not implemented")
+}
 func (UnimplementedThirdGatewayServer) UpdateAppEmailTemplate(context.Context, *UpdateAppEmailTemplateRequest) (*UpdateAppEmailTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppEmailTemplate not implemented")
+}
+func (UnimplementedThirdGatewayServer) GetAppEmailTemplateByAppLangUsedFor(context.Context, *GetAppEmailTemplateByAppLangUsedForRequest) (*GetAppEmailTemplateByAppLangUsedForResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppEmailTemplateByAppLangUsedFor not implemented")
 }
 func (UnimplementedThirdGatewayServer) SendSMSCode(context.Context, *SendSMSCodeRequest) (*SendSMSCodeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendSMSCode not implemented")
@@ -222,6 +278,24 @@ func _ThirdGateway_CreateAppSMSTemplate_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ThirdGateway_GetAppSMSTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppSMSTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdGatewayServer).GetAppSMSTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.v1.ThirdGateway/GetAppSMSTemplate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdGatewayServer).GetAppSMSTemplate(ctx, req.(*GetAppSMSTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ThirdGateway_UpdateAppSMSTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppSMSTemplateRequest)
 	if err := dec(in); err != nil {
@@ -236,6 +310,24 @@ func _ThirdGateway_UpdateAppSMSTemplate_Handler(srv interface{}, ctx context.Con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ThirdGatewayServer).UpdateAppSMSTemplate(ctx, req.(*UpdateAppSMSTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ThirdGateway_GetAppSMSTemplateByAppLangUsedFor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppSMSTemplateByAppLangUsedForRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdGatewayServer).GetAppSMSTemplateByAppLangUsedFor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.v1.ThirdGateway/GetAppSMSTemplateByAppLangUsedFor",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdGatewayServer).GetAppSMSTemplateByAppLangUsedFor(ctx, req.(*GetAppSMSTemplateByAppLangUsedForRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -258,6 +350,24 @@ func _ThirdGateway_CreateAppEmailTemplate_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ThirdGateway_GetAppEmailTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppEmailTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdGatewayServer).GetAppEmailTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.v1.ThirdGateway/GetAppEmailTemplate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdGatewayServer).GetAppEmailTemplate(ctx, req.(*GetAppEmailTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ThirdGateway_UpdateAppEmailTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppEmailTemplateRequest)
 	if err := dec(in); err != nil {
@@ -272,6 +382,24 @@ func _ThirdGateway_UpdateAppEmailTemplate_Handler(srv interface{}, ctx context.C
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ThirdGatewayServer).UpdateAppEmailTemplate(ctx, req.(*UpdateAppEmailTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ThirdGateway_GetAppEmailTemplateByAppLangUsedFor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppEmailTemplateByAppLangUsedForRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdGatewayServer).GetAppEmailTemplateByAppLangUsedFor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.v1.ThirdGateway/GetAppEmailTemplateByAppLangUsedFor",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdGatewayServer).GetAppEmailTemplateByAppLangUsedFor(ctx, req.(*GetAppEmailTemplateByAppLangUsedForRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -364,16 +492,32 @@ var ThirdGateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ThirdGateway_CreateAppSMSTemplate_Handler,
 		},
 		{
+			MethodName: "GetAppSMSTemplate",
+			Handler:    _ThirdGateway_GetAppSMSTemplate_Handler,
+		},
+		{
 			MethodName: "UpdateAppSMSTemplate",
 			Handler:    _ThirdGateway_UpdateAppSMSTemplate_Handler,
+		},
+		{
+			MethodName: "GetAppSMSTemplateByAppLangUsedFor",
+			Handler:    _ThirdGateway_GetAppSMSTemplateByAppLangUsedFor_Handler,
 		},
 		{
 			MethodName: "CreateAppEmailTemplate",
 			Handler:    _ThirdGateway_CreateAppEmailTemplate_Handler,
 		},
 		{
+			MethodName: "GetAppEmailTemplate",
+			Handler:    _ThirdGateway_GetAppEmailTemplate_Handler,
+		},
+		{
 			MethodName: "UpdateAppEmailTemplate",
 			Handler:    _ThirdGateway_UpdateAppEmailTemplate_Handler,
+		},
+		{
+			MethodName: "GetAppEmailTemplateByAppLangUsedFor",
+			Handler:    _ThirdGateway_GetAppEmailTemplateByAppLangUsedFor_Handler,
 		},
 		{
 			MethodName: "SendSMSCode",

@@ -24,21 +24,46 @@ service ThirdGateway {
             body: "*"
         };
     }
+    rpc GetAppSMSTemplate (GetAppSMSTemplateRequest) returns (GetAppSMSTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/sms/template"
+            body: "*"
+        };
+    }
     rpc UpdateAppSMSTemplate (UpdateAppSMSTemplateRequest) returns (UpdateAppSMSTemplateResponse) {
         option (google.api.http) = {
             post: "/v1/update/app/sms/template"
             body: "*"
         };
     }
+    rpc GetAppSMSTemplateByAppLangUsedFor (GetAppSMSTemplateByAppLangUsedForRequest) returns (GetAppSMSTemplateByAppLangUsedForResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/sms/template/by/app/lang/usedfor"
+            body: "*"
+        };
+    }
+
     rpc CreateAppEmailTemplate (CreateAppEmailTemplateRequest) returns (CreateAppEmailTemplateResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/email/template"
             body: "*"
         };
     }
+    rpc GetAppEmailTemplate (GetAppEmailTemplateRequest) returns (GetAppEmailTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/email/template"
+            body: "*"
+        };
+    }
     rpc UpdateAppEmailTemplate (UpdateAppEmailTemplateRequest) returns (UpdateAppEmailTemplateResponse) {
         option (google.api.http) = {
             post: "/v1/update/app/email/template"
+            body: "*"
+        };
+    }
+    rpc GetAppEmailTemplateByAppLangUsedFor (GetAppEmailTemplateByAppLangUsedForRequest) returns (GetAppEmailTemplateByAppLangUsedForResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/email/template/by/app/lang/usedfor"
             body: "*"
         };
     }
@@ -138,11 +163,29 @@ message CreateAppSMSTemplateResponse {
     AppSMSTemplate Info = 10;
 }
 
+message GetAppSMSTemplateRequest {
+    string ID = 10;
+}
+
+message GetAppSMSTemplateResponse {
+    AppSMSTemplate Info = 10;
+}
+
 message UpdateAppSMSTemplateRequest {
     AppSMSTemplate Info = 10;
 }
 
 message UpdateAppSMSTemplateResponse {
+    AppSMSTemplate Info = 10;
+}
+
+message GetAppSMSTemplateByAppLangUsedForRequest {
+    string AppID = 10;
+    string LangID = 20;
+    string UsedFor = 30;
+}
+
+message GetAppSMSTemplateByAppLangUsedForResponse {
     AppSMSTemplate Info = 10;
 }
 
@@ -165,11 +208,29 @@ message CreateAppEmailTemplateResponse {
     AppEmailTemplate Info = 10;
 }
 
+message GetAppEmailTemplateRequest {
+    string ID = 10;
+}
+
+message GetAppEmailTemplateResponse {
+    AppEmailTemplate Info = 10;
+}
+
 message UpdateAppEmailTemplateRequest {
     AppEmailTemplate Info = 10;
 }
 
 message UpdateAppEmailTemplateResponse {
+    AppEmailTemplate Info = 10;
+}
+
+message GetAppEmailTemplateByAppLangUsedForRequest {
+    string AppID = 10;
+    string LangID = 20;
+    string UsedFor = 30;
+}
+
+message GetAppEmailTemplateByAppLangUsedForResponse {
     AppEmailTemplate Info = 10;
 }
 

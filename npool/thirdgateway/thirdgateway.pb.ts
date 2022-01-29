@@ -75,11 +75,29 @@ export type CreateAppSMSTemplateResponse = {
   info?: AppSMSTemplate
 }
 
+export type GetAppSMSTemplateRequest = {
+  id?: string
+}
+
+export type GetAppSMSTemplateResponse = {
+  info?: AppSMSTemplate
+}
+
 export type UpdateAppSMSTemplateRequest = {
   info?: AppSMSTemplate
 }
 
 export type UpdateAppSMSTemplateResponse = {
+  info?: AppSMSTemplate
+}
+
+export type GetAppSMSTemplateByAppLangUsedForRequest = {
+  appID?: string
+  langID?: string
+  usedFor?: string
+}
+
+export type GetAppSMSTemplateByAppLangUsedForResponse = {
   info?: AppSMSTemplate
 }
 
@@ -102,11 +120,29 @@ export type CreateAppEmailTemplateResponse = {
   info?: AppEmailTemplate
 }
 
+export type GetAppEmailTemplateRequest = {
+  id?: string
+}
+
+export type GetAppEmailTemplateResponse = {
+  info?: AppEmailTemplate
+}
+
 export type UpdateAppEmailTemplateRequest = {
   info?: AppEmailTemplate
 }
 
 export type UpdateAppEmailTemplateResponse = {
+  info?: AppEmailTemplate
+}
+
+export type GetAppEmailTemplateByAppLangUsedForRequest = {
+  appID?: string
+  langID?: string
+  usedFor?: string
+}
+
+export type GetAppEmailTemplateByAppLangUsedForResponse = {
   info?: AppEmailTemplate
 }
 
@@ -117,14 +153,26 @@ export class ThirdGateway {
   static CreateAppSMSTemplate(req: CreateAppSMSTemplateRequest, initReq?: fm.InitReq): Promise<CreateAppSMSTemplateResponse> {
     return fm.fetchReq<CreateAppSMSTemplateRequest, CreateAppSMSTemplateResponse>(`/v1/create/app/sms/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetAppSMSTemplate(req: GetAppSMSTemplateRequest, initReq?: fm.InitReq): Promise<GetAppSMSTemplateResponse> {
+    return fm.fetchReq<GetAppSMSTemplateRequest, GetAppSMSTemplateResponse>(`/v1/get/app/sms/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static UpdateAppSMSTemplate(req: UpdateAppSMSTemplateRequest, initReq?: fm.InitReq): Promise<UpdateAppSMSTemplateResponse> {
     return fm.fetchReq<UpdateAppSMSTemplateRequest, UpdateAppSMSTemplateResponse>(`/v1/update/app/sms/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppSMSTemplateByAppLangUsedFor(req: GetAppSMSTemplateByAppLangUsedForRequest, initReq?: fm.InitReq): Promise<GetAppSMSTemplateByAppLangUsedForResponse> {
+    return fm.fetchReq<GetAppSMSTemplateByAppLangUsedForRequest, GetAppSMSTemplateByAppLangUsedForResponse>(`/v1/get/app/sms/template/by/app/lang/usedfor`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateAppEmailTemplate(req: CreateAppEmailTemplateRequest, initReq?: fm.InitReq): Promise<CreateAppEmailTemplateResponse> {
     return fm.fetchReq<CreateAppEmailTemplateRequest, CreateAppEmailTemplateResponse>(`/v1/create/app/email/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetAppEmailTemplate(req: GetAppEmailTemplateRequest, initReq?: fm.InitReq): Promise<GetAppEmailTemplateResponse> {
+    return fm.fetchReq<GetAppEmailTemplateRequest, GetAppEmailTemplateResponse>(`/v1/get/app/email/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static UpdateAppEmailTemplate(req: UpdateAppEmailTemplateRequest, initReq?: fm.InitReq): Promise<UpdateAppEmailTemplateResponse> {
     return fm.fetchReq<UpdateAppEmailTemplateRequest, UpdateAppEmailTemplateResponse>(`/v1/update/app/email/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppEmailTemplateByAppLangUsedFor(req: GetAppEmailTemplateByAppLangUsedForRequest, initReq?: fm.InitReq): Promise<GetAppEmailTemplateByAppLangUsedForResponse> {
+    return fm.fetchReq<GetAppEmailTemplateByAppLangUsedForRequest, GetAppEmailTemplateByAppLangUsedForResponse>(`/v1/get/app/email/template/by/app/lang/usedfor`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static SendSMSCode(req: SendSMSCodeRequest, initReq?: fm.InitReq): Promise<SendSMSCodeResponse> {
     return fm.fetchReq<SendSMSCodeRequest, SendSMSCodeResponse>(`/v1/send/sms/code`, {...initReq, method: "POST", body: JSON.stringify(req)})
