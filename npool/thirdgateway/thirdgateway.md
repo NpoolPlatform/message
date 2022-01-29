@@ -46,6 +46,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | EmailAddress | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 
@@ -78,6 +80,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | PhoneNO | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 
@@ -110,6 +114,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | EmailAddress | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 | Code | [string](#string) |  |  |
@@ -143,6 +149,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | PhoneNO | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 | Code | [string](#string) |  |  |
@@ -206,6 +214,8 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | EmailAddress | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 
@@ -238,6 +248,8 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | PhoneNO | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 
@@ -270,6 +282,8 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | EmailAddress | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 | Code | [string](#string) |  |  |
@@ -303,6 +317,8 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | PhoneNO | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 | Code | [string](#string) |  |  |

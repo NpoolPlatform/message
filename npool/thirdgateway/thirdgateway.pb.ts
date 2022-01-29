@@ -8,6 +8,8 @@ import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type SendSMSCodeRequest = {
+  appID?: string
+  userID?: string
   phoneNO?: string
   usedFor?: string
 }
@@ -18,6 +20,8 @@ export type SendSMSCodeResponse = {
 }
 
 export type VerifySMSCodeRequest = {
+  appID?: string
+  userID?: string
   phoneNO?: string
   usedFor?: string
   code?: string
@@ -29,6 +33,8 @@ export type VerifySMSCodeResponse = {
 }
 
 export type SendEmailCodeRequest = {
+  appID?: string
+  userID?: string
   emailAddress?: string
   usedFor?: string
 }
@@ -39,6 +45,8 @@ export type SendEmailCodeResponse = {
 }
 
 export type VerifyEmailCodeRequest = {
+  appID?: string
+  userID?: string
   emailAddress?: string
   usedFor?: string
   code?: string

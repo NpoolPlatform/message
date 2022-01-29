@@ -46,8 +46,10 @@ service ThirdGateway {
 }
 
 message SendSMSCodeRequest {
-    string PhoneNO = 10;
-    string UsedFor = 20;
+    string AppID = 10;
+    string UserID = 20;
+    string PhoneNO = 30;
+    string UsedFor = 40;
 }
 
 message SendSMSCodeResponse {
@@ -56,9 +58,11 @@ message SendSMSCodeResponse {
 }
 
 message VerifySMSCodeRequest {
-    string PhoneNO = 10;
-    string UsedFor = 20;
-    string Code = 30;
+    string AppID = 10;
+    string UserID = 20;
+    string PhoneNO = 30;
+    string UsedFor = 40;
+    string Code = 50;
 }
 
 message VerifySMSCodeResponse {
@@ -67,8 +71,10 @@ message VerifySMSCodeResponse {
 }
 
 message SendEmailCodeRequest {
-    string EmailAddress = 10;
-    string UsedFor = 20;
+    string AppID = 10;
+    string UserID = 20;
+    string EmailAddress = 30;
+    string UsedFor = 40;
 }
 
 message SendEmailCodeResponse {
@@ -77,9 +83,11 @@ message SendEmailCodeResponse {
 }
 
 message VerifyEmailCodeRequest {
-    string EmailAddress = 10;
-    string UsedFor = 20;
-    string Code = 30;
+    string AppID = 10;
+    string UserID = 20;
+    string EmailAddress = 30;
+    string UsedFor = 40;
+    string Code = 50;
 }
 
 message VerifyEmailCodeResponse {
