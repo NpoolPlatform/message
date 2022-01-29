@@ -8,503 +8,503 @@ import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type ApplicationInfo = {
-  ID?: string
-  ApplicationName?: string
-  ApplicationOwner?: string
-  HomepageUrl?: string
-  RedirectUrl?: string
-  ApplicationLogo?: string
-  CreateAT?: number
-  UpdateAT?: number
-  ClientSecret?: string
-  GoogleRecaptcha?: boolean
-  SmsLogin?: boolean
-  InvitationCodeMust?: boolean
+  id?: string
+  applicationName?: string
+  applicationOwner?: string
+  homepageUrl?: string
+  redirectUrl?: string
+  applicationLogo?: string
+  createAT?: number
+  updateAT?: number
+  clientSecret?: string
+  googleRecaptcha?: boolean
+  smsLogin?: boolean
+  invitationCodeMust?: boolean
 }
 
 export type CreateApplicationRequest = {
-  Info?: ApplicationInfo
+  info?: ApplicationInfo
 }
 
 export type CreateApplicationResponse = {
-  Info?: ApplicationInfo
+  info?: ApplicationInfo
 }
 
 export type UpdateApplicationRequest = {
-  Info?: ApplicationInfo
+  info?: ApplicationInfo
 }
 
 export type UpdateApplicationResponse = {
-  Info?: ApplicationInfo
+  info?: ApplicationInfo
 }
 
 export type GetApplicationRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetApplicationResponse = {
-  Info?: ApplicationInfo
+  info?: ApplicationInfo
 }
 
 export type GetApplicationByOwnerRequest = {
-  Owner?: string
+  owner?: string
 }
 
 export type OwnerApplication = {
-  Owner?: string
-  Infos?: ApplicationInfo[]
+  owner?: string
+  infos?: ApplicationInfo[]
 }
 
 export type GetApplicationByOwnerResponse = {
-  Info?: OwnerApplication
+  info?: OwnerApplication
 }
 
 export type GetApplicationsRequest = {
-  Info?: NpoolV1Npool.PageInfo
+  info?: NpoolV1Npool.PageInfo
 }
 
 export type GetApplicationsResponse = {
-  Infos?: ApplicationInfo[]
+  infos?: ApplicationInfo[]
 }
 
 export type DeleteApplicationRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type DeleteApplicationResponse = {
-  Info?: string
+  info?: string
 }
 
 export type RoleInfo = {
-  ID?: string
-  AppID?: string
-  RoleName?: string
-  Creator?: string
-  CreateAT?: number
-  UpdateAT?: number
-  Annotation?: string
+  id?: string
+  appID?: string
+  roleName?: string
+  creator?: string
+  createAT?: number
+  updateAT?: number
+  annotation?: string
 }
 
 export type CreateRoleRequest = {
-  Info?: RoleInfo
+  info?: RoleInfo
 }
 
 export type CreateRoleResponse = {
-  Info?: RoleInfo
+  info?: RoleInfo
 }
 
 export type UpdateRoleRequest = {
-  Info?: RoleInfo
+  info?: RoleInfo
 }
 
 export type UpdateRoleResponse = {
-  Info?: RoleInfo
+  info?: RoleInfo
 }
 
 export type GetRoleRequest = {
-  AppID?: string
-  RoleID?: string
+  appID?: string
+  roleID?: string
 }
 
 export type GetRoleResponse = {
-  Info?: RoleInfo
+  info?: RoleInfo
 }
 
 export type GetRoleByCreatorRequest = {
-  AppID?: string
-  Creator?: string
+  appID?: string
+  creator?: string
 }
 
 export type CreatorRole = {
-  AppID?: string
-  Creator?: string
-  Infos?: RoleInfo[]
+  appID?: string
+  creator?: string
+  infos?: RoleInfo[]
 }
 
 export type GetRoleByCreatorResponse = {
-  Info?: CreatorRole
+  info?: CreatorRole
 }
 
 export type DeleteRoleRequest = {
-  RoleID?: string
-  AppID?: string
+  roleID?: string
+  appID?: string
 }
 
 export type DeleteRoleResponse = {
-  Info?: string
+  info?: string
 }
 
 export type GetRolesRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetRolesResponse = {
-  Infos?: RoleInfo[]
+  infos?: RoleInfo[]
 }
 
 export type RoleUserInfo = {
-  ID?: string
-  AppID?: string
-  RoleID?: string
-  UserID?: string
-  CreateAT?: number
+  id?: string
+  appID?: string
+  roleID?: string
+  userID?: string
+  createAT?: number
 }
 
 export type SetUserRoleRequest = {
-  UserIDs?: string[]
-  RoleID?: string
-  AppID?: string
+  userIDs?: string[]
+  roleID?: string
+  appID?: string
 }
 
 export type SetUserRoleResponse = {
-  Infos?: RoleUserInfo[]
+  infos?: RoleUserInfo[]
 }
 
 export type GetUserRoleRequest = {
-  UserID?: string
-  AppID?: string
+  userID?: string
+  appID?: string
 }
 
 export type UserRole = {
-  Infos?: RoleInfo[]
-  UserID?: string
-  AppID?: string
+  infos?: RoleInfo[]
+  userID?: string
+  appID?: string
 }
 
 export type GetUserRoleResponse = {
-  Info?: UserRole
+  info?: UserRole
 }
 
 export type GetRoleUsersRequest = {
-  AppID?: string
-  RoleID?: string
+  appID?: string
+  roleID?: string
 }
 
 export type GetRoleUsersResponse = {
-  Infos?: RoleUserInfo[]
+  infos?: RoleUserInfo[]
 }
 
 export type UnSetUserRoleRequest = {
-  UserIDs?: string[]
-  RoleID?: string
-  AppID?: string
+  userIDs?: string[]
+  roleID?: string
+  appID?: string
 }
 
 export type UnSetUserRoleResponse = {
-  Info?: string
+  info?: string
 }
 
 export type ApplicationUserInfo = {
-  ID?: string
-  AppID?: string
-  UserID?: string
-  Original?: boolean
-  KycVerify?: boolean
-  GAVerify?: boolean
-  GALogin?: boolean
-  SMSLogin?: boolean
-  LoginNumber?: number
-  CreateAT?: number
+  id?: string
+  appID?: string
+  userID?: string
+  original?: boolean
+  kycVerify?: boolean
+  gAVerify?: boolean
+  gALogin?: boolean
+  sMSLogin?: boolean
+  loginNumber?: number
+  createAT?: number
 }
 
 export type ApplicationUserDetail = {
-  UserApplicationInfo?: ApplicationUserInfo
-  UserGroupInfos?: GroupUserInfo[]
-  UserRoleInfo?: UserRole
+  userApplicationInfo?: ApplicationUserInfo
+  userGroupInfos?: GroupUserInfo[]
+  userRoleInfo?: UserRole
 }
 
 export type GetApplicationUserDetailRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetApplicationUserDetailResponse = {
-  Info?: ApplicationUserDetail
+  info?: ApplicationUserDetail
 }
 
 export type AddUsersToApplicationRequest = {
-  UserIDs?: string[]
-  AppID?: string
-  Original?: boolean
+  userIDs?: string[]
+  appID?: string
+  original?: boolean
 }
 
 export type AddUsersToApplicationResponse = {
-  Infos?: ApplicationUserInfo[]
+  infos?: ApplicationUserInfo[]
 }
 
 export type GetUserFromApplicationRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetUserFromApplicationResponse = {
-  Info?: ApplicationUserInfo
+  info?: ApplicationUserInfo
 }
 
 export type GetUsersFromApplicationRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetUsersFromApplicationResponse = {
-  Infos?: ApplicationUserInfo[]
+  infos?: ApplicationUserInfo[]
 }
 
 export type RemoveUsersFromApplicationRequest = {
-  UserIDs?: string[]
-  AppID?: string
+  userIDs?: string[]
+  appID?: string
 }
 
 export type RemoveUsersFromApplicationResponse = {
-  Info?: string
+  info?: string
 }
 
 export type GroupInfo = {
-  ID?: string
-  AppID?: string
-  GroupName?: string
-  GroupOwner?: string
-  GroupLogo?: string
-  Annotation?: string
-  CreateAT?: number
-  UpdateAT?: number
+  id?: string
+  appID?: string
+  groupName?: string
+  groupOwner?: string
+  groupLogo?: string
+  annotation?: string
+  createAT?: number
+  updateAT?: number
 }
 
 export type CreateGroupRequest = {
-  Info?: GroupInfo
+  info?: GroupInfo
 }
 
 export type CreateGroupResponse = {
-  Info?: GroupInfo
+  info?: GroupInfo
 }
 
 export type GetGroupRequest = {
-  GroupID?: string
-  AppID?: string
+  groupID?: string
+  appID?: string
 }
 
 export type GetGroupResponse = {
-  Info?: GroupInfo
+  info?: GroupInfo
 }
 
 export type GetGroupByOwnerRequest = {
-  AppID?: string
-  Owner?: string
+  appID?: string
+  owner?: string
 }
 
 export type OwnerGroup = {
-  AppID?: string
-  Owner?: string
-  Infos?: GroupInfo[]
+  appID?: string
+  owner?: string
+  infos?: GroupInfo[]
 }
 
 export type GetGroupByOwnerResponse = {
-  Info?: OwnerGroup
+  info?: OwnerGroup
 }
 
 export type GetAllGroupsRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetAllGroupsResponse = {
-  Infos?: GroupInfo[]
+  infos?: GroupInfo[]
 }
 
 export type UpdateGroupRequest = {
-  Info?: GroupInfo
+  info?: GroupInfo
 }
 
 export type UpdateGroupResponse = {
-  Info?: GroupInfo
+  info?: GroupInfo
 }
 
 export type DeleteGroupRequest = {
-  GroupID?: string
-  AppID?: string
+  groupID?: string
+  appID?: string
 }
 
 export type DeleteGroupResponse = {
-  Info?: string
+  info?: string
 }
 
 export type GroupUserInfo = {
-  ID?: string
-  GroupID?: string
-  AppID?: string
-  UserID?: string
-  Annotation?: string
-  CreateAT?: number
+  id?: string
+  groupID?: string
+  appID?: string
+  userID?: string
+  annotation?: string
+  createAT?: number
 }
 
 export type AddGroupUsersRequest = {
-  UserIDs?: string[]
-  GroupID?: string
-  AppID?: string
+  userIDs?: string[]
+  groupID?: string
+  appID?: string
 }
 
 export type AddGroupUsersResponse = {
-  Infos?: GroupUserInfo[]
+  infos?: GroupUserInfo[]
 }
 
 export type GetGroupUsersRequest = {
-  GroupID?: string
-  AppID?: string
+  groupID?: string
+  appID?: string
 }
 
 export type GetGroupUsersResponse = {
-  Infos?: GroupUserInfo[]
+  infos?: GroupUserInfo[]
 }
 
 export type RemoveGroupUsersRequest = {
-  UserIDs?: string[]
-  GroupID?: string
-  AppID?: string
+  userIDs?: string[]
+  groupID?: string
+  appID?: string
 }
 
 export type RemoveGroupUsersResponse = {
-  Info?: string
+  info?: string
 }
 
 export type ResourceInfo = {
-  ID?: string
-  AppID?: string
-  ResourceName?: string
-  ResourceDescription?: string
-  Type?: string
-  Creator?: string
-  CreateAT?: number
-  UpdateAT?: number
+  id?: string
+  appID?: string
+  resourceName?: string
+  resourceDescription?: string
+  type?: string
+  creator?: string
+  createAT?: number
+  updateAT?: number
 }
 
 export type CreateResourceRequest = {
-  Info?: ResourceInfo
+  info?: ResourceInfo
 }
 
 export type CreateResourceResponse = {
-  Info?: ResourceInfo
+  info?: ResourceInfo
 }
 
 export type UpdateResourceRequest = {
-  Info?: ResourceInfo
+  info?: ResourceInfo
 }
 
 export type UpdateResourceResponse = {
-  Info?: ResourceInfo
+  info?: ResourceInfo
 }
 
 export type GetResourceRequest = {
-  ResourceID?: string
-  AppID?: string
+  resourceID?: string
+  appID?: string
 }
 
 export type GetResourceResponse = {
-  Info?: ResourceInfo
+  info?: ResourceInfo
 }
 
 export type GetResourceByCreatorRequest = {
-  AppID?: string
-  Creator?: string
+  appID?: string
+  creator?: string
 }
 
 export type CreatorResource = {
-  AppID?: string
-  Creator?: string
-  Infos?: ResourceInfo[]
+  appID?: string
+  creator?: string
+  infos?: ResourceInfo[]
 }
 
 export type GetResourceByCreatorResponse = {
-  Info?: CreatorResource
+  info?: CreatorResource
 }
 
 export type GetResourcesRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetResourcesResponse = {
-  Infos?: ResourceInfo[]
+  infos?: ResourceInfo[]
 }
 
 export type DeleteResourceRequest = {
-  ResourceID?: string
-  AppID?: string
+  resourceID?: string
+  appID?: string
 }
 
 export type DeleteResourceResponse = {
-  Info?: string
+  info?: string
 }
 
 export type SetGALoginRequest = {
-  AppID?: string
-  UserID?: string
-  Set?: boolean
+  appID?: string
+  userID?: string
+  set?: boolean
 }
 
 export type SetGALoginResponse = {
-  Info?: string
+  info?: string
 }
 
 export type AddUserLoginTimeRequest = {
-  UserID?: string
-  AppID?: string
+  userID?: string
+  appID?: string
 }
 
 export type AddUserLoginTimeResponse = {
-  Info?: number
+  info?: number
 }
 
 export type UpdateUserGAStatusRequest = {
-  UserID?: string
-  AppID?: string
-  Status?: boolean
+  userID?: string
+  appID?: string
+  status?: boolean
 }
 
 export type UpdateUserGAStatusResponse = {
-  Info?: string
+  info?: string
 }
 
 export type UpdateUserKYCStatusRequest = {
-  UserID?: string
-  AppID?: string
-  Status?: boolean
+  userID?: string
+  appID?: string
+  status?: boolean
 }
 
 export type UpdateUserKYCStatusResponse = {
-  Info?: string
+  info?: string
 }
 
 export type GetUserGroupRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetUserGroupResponse = {
-  Infos?: GroupUserInfo[]
+  infos?: GroupUserInfo[]
 }
 
 export type SetSMSLoginRequest = {
-  AppID?: string
-  UserID?: string
-  Set?: boolean
+  appID?: string
+  userID?: string
+  set?: boolean
 }
 
 export type SetSMSLoginResponse = {
-  Info?: string
+  info?: string
 }
 
 export type GetResourceByNameRequest = {
-  ResourceName?: string
-  AppID?: string
+  resourceName?: string
+  appID?: string
 }
 
 export type GetResourceByNameResponse = {
-  Info?: ResourceInfo
+  info?: ResourceInfo
 }
 
 export type GetUserAppIDRequest = {
-  UserID?: string
+  userID?: string
 }
 
 export type GetUserAppIDResponse = {
-  Infos?: string[]
+  infos?: string[]
 }
 
 export class ApplicationManagement {

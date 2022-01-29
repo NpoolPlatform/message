@@ -13,55 +13,55 @@ export enum CoinType {
 }
 
 export type UnsignedMessage = {
-  Version?: string
-  To?: string
-  From?: string
-  Nonce?: string
-  Value?: number
-  GasLimit?: string
-  GasFeeCap?: string
-  GasPremium?: string
-  Method?: string
-  Params?: Uint8Array
+  version?: string
+  to?: string
+  from?: string
+  nonce?: string
+  value?: number
+  gasLimit?: string
+  gasFeeCap?: string
+  gasPremium?: string
+  method?: string
+  params?: Uint8Array
 }
 
 export type Signature = {
-  SignType?: string
-  Data?: Uint8Array
+  signType?: string
+  data?: Uint8Array
 }
 
 export type Unspent = {
-  TxID?: string
-  Vout?: number
-  Address?: string
-  Account?: string
-  ScriptPubKey?: string
-  RedeemScript?: string
-  Amount?: number
-  Confirmations?: string
-  Spendable?: boolean
+  txID?: string
+  vout?: number
+  address?: string
+  account?: string
+  scriptPubKey?: string
+  redeemScript?: string
+  amount?: number
+  confirmations?: string
+  spendable?: boolean
 }
 
 export type MsgTx = {
-  Version?: number
-  TxIn?: TxIn[]
-  TxOut?: TxOut[]
-  LockTime?: number
+  version?: number
+  txIn?: TxIn[]
+  txOut?: TxOut[]
+  lockTime?: number
 }
 
 export type TxIn = {
-  PreviousOutPoint?: OutPoint
-  SignatureScript?: Uint8Array
-  Witness?: Uint8Array[]
-  Sequence?: number
+  previousOutPoint?: OutPoint
+  signatureScript?: Uint8Array
+  witness?: Uint8Array[]
+  sequence?: number
 }
 
 export type OutPoint = {
-  Hash?: Uint8Array
-  Index?: number
+  hash?: Uint8Array
+  index?: number
 }
 
 export type TxOut = {
-  Value?: string
-  PkScript?: Uint8Array
+  value?: string
+  pkScript?: Uint8Array
 }

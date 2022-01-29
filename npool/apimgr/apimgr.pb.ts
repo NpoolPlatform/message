@@ -8,44 +8,44 @@ import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type Path = {
-  Method?: string
-  Path?: string
-  Exported?: boolean
+  method?: string
+  path?: string
+  exported?: boolean
 }
 
 export type ServiceApis = {
-  Protocol?: string
-  ServiceName?: string
-  PathPrefix?: string
-  Paths?: Path[]
+  protocol?: string
+  serviceName?: string
+  pathPrefix?: string
+  paths?: Path[]
 }
 
 export type RegisterRequest = {
-  Info?: ServiceApis
+  info?: ServiceApis
 }
 
 export type RegisterResponse = {
-  Info?: ServiceApis
+  info?: ServiceApis
 }
 
 export type ServicePath = {
-  ID?: string
-  Protocol?: string
-  ServiceName?: string
-  Domains?: string[]
-  PathPrefix?: string
-  Method?: string
-  Path?: string
-  Exported?: boolean
-  CreateAt?: number
-  UpdateAt?: number
+  id?: string
+  protocol?: string
+  serviceName?: string
+  domains?: string[]
+  pathPrefix?: string
+  method?: string
+  path?: string
+  exported?: boolean
+  createAt?: number
+  updateAt?: number
 }
 
 export type GetApisRequest = {
 }
 
 export type GetApisResponse = {
-  Infos?: ServicePath[]
+  infos?: ServicePath[]
 }
 
 export class ApiManager {

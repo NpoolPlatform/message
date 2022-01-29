@@ -4,10 +4,10 @@
 * This file is a generated Typescript file for GRPC Gateway, DO NOT MODIFY
 */
 export type PageInfo = {
-  Offset?: number
-  Limit?: number
+  offset?: number
+  limit?: number
 }
 
 export type VersionResponse = {
-  Info?: string
+  info?: string
 }

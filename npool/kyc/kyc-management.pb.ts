@@ -8,89 +8,89 @@ import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type KycInfo = {
-  ID?: string
-  AppID?: string
-  UserID?: string
-  CardType?: string
-  CardID?: string
-  FrontCardImg?: string
-  BackCardImg?: string
-  UserHandingCardImg?: string
-  CreateAt?: number
-  UpdateAt?: number
+  id?: string
+  appID?: string
+  userID?: string
+  cardType?: string
+  cardID?: string
+  frontCardImg?: string
+  backCardImg?: string
+  userHandingCardImg?: string
+  createAt?: number
+  updateAt?: number
 }
 
 export type CreateKycRequest = {
-  Info?: KycInfo
+  info?: KycInfo
 }
 
 export type CreateKycResponse = {
-  Info?: KycInfo
+  info?: KycInfo
 }
 
 export type GetKycByUserIDRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetKycByUserIDResponse = {
-  Info?: KycInfo
+  info?: KycInfo
 }
 
 export type GetKycByAppIDRequest = {
-  AppID?: string
-  PageInfo?: NpoolV1Npool.PageInfo
+  appID?: string
+  pageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetKycByAppIDResponse = {
-  Infos?: KycInfo[]
-  Total?: number
+  infos?: KycInfo[]
+  total?: number
 }
 
 export type GetAllKycRequest = {
-  PageInfo?: NpoolV1Npool.PageInfo
+  pageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetAllKycResponse = {
-  Infos?: KycInfo[]
-  Total?: number
+  infos?: KycInfo[]
+  total?: number
 }
 
 export type UpdateKycRequest = {
-  Info?: KycInfo
+  info?: KycInfo
 }
 
 export type UpdateKycResponse = {
-  Info?: KycInfo
+  info?: KycInfo
 }
 
 export type UploadKycImageRequest = {
-  AppID?: string
-  UserID?: string
-  ImageType?: string
-  ImageBase64?: string
+  appID?: string
+  userID?: string
+  imageType?: string
+  imageBase64?: string
 }
 
 export type UploadKycImageResponse = {
-  Info?: string
+  info?: string
 }
 
 export type GetKycImageRequest = {
-  AppID?: string
-  UserID?: string
-  ImageS3Key?: string
+  appID?: string
+  userID?: string
+  imageS3Key?: string
 }
 
 export type GetKycImageResponse = {
-  Info?: string
+  info?: string
 }
 
 export type GetKycByKycIDsRequest = {
-  KycIDs?: string[]
+  kycIDs?: string[]
 }
 
 export type GetKycByKycIDsResponse = {
-  Infos?: KycInfo[]
+  infos?: KycInfo[]
 }
 
 export class KycManagement {

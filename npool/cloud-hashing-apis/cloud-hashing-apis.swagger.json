@@ -1988,6 +1988,9 @@
         },
         "PostalCode": {
           "type": "string"
+        },
+        "AppID": {
+          "type": "string"
         }
       },
       "title": "request body and response"

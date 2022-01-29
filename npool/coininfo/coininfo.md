@@ -17,7 +17,221 @@
   
     - [SphinxCoinInfo](#sphinx.coininfo.v1.SphinxCoinInfo)
   
+- [npool/coininfo/coininfo.proto](#npool/coininfo/coininfo.proto)
+    - [CoinInfo](#sphinx.coininfo.v1.CoinInfo)
+    - [CreateCoinInfoRequest](#sphinx.coininfo.v1.CreateCoinInfoRequest)
+    - [CreateCoinInfoResponse](#sphinx.coininfo.v1.CreateCoinInfoResponse)
+    - [GetCoinInfoRequest](#sphinx.coininfo.v1.GetCoinInfoRequest)
+    - [GetCoinInfoResponse](#sphinx.coininfo.v1.GetCoinInfoResponse)
+    - [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest)
+    - [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse)
+    - [UpdateCoinInfoRequest](#sphinx.coininfo.v1.UpdateCoinInfoRequest)
+    - [UpdateCoinInfoResponse](#sphinx.coininfo.v1.UpdateCoinInfoResponse)
+    - [VersionResponse](#sphinx.coininfo.v1.VersionResponse)
+  
+    - [SphinxCoinInfo](#sphinx.coininfo.v1.SphinxCoinInfo)
+  
 - [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="npool/coininfo/coininfo.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## npool/coininfo/coininfo.proto
+
+
+
+<a name="sphinx.coininfo.v1.CoinInfo"></a>
+
+### CoinInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  | uuid |
+| PreSale | [bool](#bool) |  | 是否为预售，false为在售商品 |
+| Name | [string](#string) |  | 币种名称 FIL, BTC |
+| Unit | [string](#string) |  | 单位：FIL |
+| Logo | [string](#string) |  | url; can be empty |
+| ENV | [string](#string) |  | main or test |
+| ReservedAmount | [double](#double) |  | 预留金额 |
+| CreatedAt | [uint32](#uint32) |  |  |
+| UpdatedAt | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="sphinx.coininfo.v1.CreateCoinInfoRequest"></a>
+
+### CreateCoinInfoRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| PreSale | [bool](#bool) |  | 是否为预售，false为在售商品 |
+| Name | [string](#string) |  | 币种名称 FIL, BTC |
+| Unit | [string](#string) |  | 单位：FIL |
+| Logo | [string](#string) |  | url; can be empty |
+| ENV | [string](#string) |  | main or test |
+
+
+
+
+
+
+<a name="sphinx.coininfo.v1.CreateCoinInfoResponse"></a>
+
+### CreateCoinInfoResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
+
+
+
+
+
+
+<a name="sphinx.coininfo.v1.GetCoinInfoRequest"></a>
+
+### GetCoinInfoRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| Name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="sphinx.coininfo.v1.GetCoinInfoResponse"></a>
+
+### GetCoinInfoResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
+
+
+
+
+
+
+<a name="sphinx.coininfo.v1.GetCoinInfosRequest"></a>
+
+### GetCoinInfosRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| PreSale | [bool](#bool) |  | 是否为预售，false为在售商品 |
+| Name | [string](#string) |  | 币种名称 FIL, BTC |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="sphinx.coininfo.v1.GetCoinInfosResponse"></a>
+
+### GetCoinInfosResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Total | [int32](#int32) |  |  |
+| Infos | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) | repeated |  |
+
+
+
+
+
+
+<a name="sphinx.coininfo.v1.UpdateCoinInfoRequest"></a>
+
+### UpdateCoinInfoRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| PreSale | [bool](#bool) |  | 是否为预售，false为在售商品 |
+| Logo | [string](#string) |  | url; can be empty |
+| ReservedAmount | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="sphinx.coininfo.v1.UpdateCoinInfoResponse"></a>
+
+### UpdateCoinInfoResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
+
+
+
+
+
+
+<a name="sphinx.coininfo.v1.VersionResponse"></a>
+
+### VersionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="sphinx.coininfo.v1.SphinxCoinInfo"></a>
+
+### SphinxCoinInfo
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#sphinx.coininfo.v1.VersionResponse) |  |
+| CreateCoinInfo | [CreateCoinInfoRequest](#sphinx.coininfo.v1.CreateCoinInfoRequest) | [CreateCoinInfoResponse](#sphinx.coininfo.v1.CreateCoinInfoResponse) |  |
+| GetCoinInfo | [GetCoinInfoRequest](#sphinx.coininfo.v1.GetCoinInfoRequest) | [GetCoinInfoResponse](#sphinx.coininfo.v1.GetCoinInfoResponse) |  |
+| GetCoinInfos | [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest) | [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse) |  |
+| UpdateCoinInfo | [UpdateCoinInfoRequest](#sphinx.coininfo.v1.UpdateCoinInfoRequest) | [UpdateCoinInfoResponse](#sphinx.coininfo.v1.UpdateCoinInfoResponse) |  |
+
+ 
 
 
 

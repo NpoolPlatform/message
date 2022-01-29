@@ -8,127 +8,127 @@ import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type GetQRcodeURLRequest = {
-  Username?: string
-  UserID?: string
-  AppID?: string
+  username?: string
+  userID?: string
+  appID?: string
 }
 
 export type QRCodeInfo = {
-  CodeURL?: string
-  Secret?: string
+  codeURL?: string
+  secret?: string
 }
 
 export type GetQRcodeURLResponse = {
-  Info?: QRCodeInfo
+  info?: QRCodeInfo
 }
 
 export type VerifyGoogleAuthRequest = {
-  UserID?: string
-  Code?: string
-  AppID?: string
+  userID?: string
+  code?: string
+  appID?: string
 }
 
 export type VerifyGoogleAuthResponse = {
-  Info?: string
+  info?: string
 }
 
 export type DeleteUserGoogleAuthRequest = {
-  UserID?: string
-  AppID?: string
+  userID?: string
+  appID?: string
 }
 
 export type DeleteUserGoogleAuthResponse = {
-  Info?: string
+  info?: string
 }
 
 export type SendEmailRequest = {
-  AppID?: string
-  Email?: string
-  Intention?: string
-  Lang?: string
-  Username?: string
+  appID?: string
+  email?: string
+  intention?: string
+  lang?: string
+  username?: string
 }
 
 export type SendEmailResponse = {
-  Info?: string
+  info?: string
 }
 
 export type SendSmsRequest = {
-  AppID?: string
-  Phone?: string
-  Lang?: string
-  Intention?: string
+  appID?: string
+  phone?: string
+  lang?: string
+  intention?: string
 }
 
 export type SendSmsResponse = {
-  Info?: string
+  info?: string
 }
 
 export type VerifyCodeRequest = {
-  Param?: string
-  Code?: string
-  VerifyType?: string
-  AppID?: string
+  param?: string
+  code?: string
+  verifyType?: string
+  appID?: string
 }
 
 export type VerifyCodeResponse = {
-  Info?: string
+  info?: string
 }
 
 export type VerifyCodeWithUserIDRequest = {
-  UserID?: string
-  Param?: string
-  Code?: string
-  VerifyType?: string
-  AppID?: string
+  userID?: string
+  param?: string
+  code?: string
+  verifyType?: string
+  appID?: string
 }
 
 export type VerifyCodeWithUserIDResponse = {
-  Info?: string
+  info?: string
 }
 
 export type VerifyGoogleRecaptchaRequest = {
-  Response?: string
+  response?: string
 }
 
 export type VerifyGoogleRecaptchaResponse = {
-  Info?: boolean
+  info?: boolean
 }
 
 export type GetCaptcherImgRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type CaptcherResp = {
-  ID?: string
-  Base64URL?: string
+  id?: string
+  base64URL?: string
 }
 
 export type GetCaptcherImgResponse = {
-  Info?: CaptcherResp
+  info?: CaptcherResp
 }
 
 export type VerifyCaptcherRequest = {
-  ID?: string
-  Input?: string
+  id?: string
+  input?: string
 }
 
 export type VerifyCaptcherResponse = {
-  Info?: string
+  info?: string
 }
 
 export type SendUserSiteContactEmailRequest = {
-  AppID?: string
-  From?: string
-  To?: string
-  Text?: string
-  Subject?: string
-  Username?: string
+  appID?: string
+  from?: string
+  to?: string
+  text?: string
+  subject?: string
+  username?: string
 }
 
 export type SendUserSiteContactEmailResponse = {
-  Info?: string
+  info?: string
 }
 
 export class VerificationDoor {

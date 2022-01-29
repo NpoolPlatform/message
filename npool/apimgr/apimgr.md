@@ -14,7 +14,160 @@
   
     - [ApiManager](#api.manager.v1.ApiManager)
   
+- [npool/apimgr/apimgr.proto](#npool/apimgr/apimgr.proto)
+    - [GetApisRequest](#api.manager.v1.GetApisRequest)
+    - [GetApisResponse](#api.manager.v1.GetApisResponse)
+    - [Path](#api.manager.v1.Path)
+    - [RegisterRequest](#api.manager.v1.RegisterRequest)
+    - [RegisterResponse](#api.manager.v1.RegisterResponse)
+    - [ServiceApis](#api.manager.v1.ServiceApis)
+    - [ServicePath](#api.manager.v1.ServicePath)
+  
+    - [ApiManager](#api.manager.v1.ApiManager)
+  
 - [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="npool/apimgr/apimgr.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## npool/apimgr/apimgr.proto
+
+
+
+<a name="api.manager.v1.GetApisRequest"></a>
+
+### GetApisRequest
+
+
+
+
+
+
+
+<a name="api.manager.v1.GetApisResponse"></a>
+
+### GetApisResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [ServicePath](#api.manager.v1.ServicePath) | repeated |  |
+
+
+
+
+
+
+<a name="api.manager.v1.Path"></a>
+
+### Path
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Method | [string](#string) |  |  |
+| Path | [string](#string) |  |  |
+| Exported | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="api.manager.v1.RegisterRequest"></a>
+
+### RegisterRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ServiceApis](#api.manager.v1.ServiceApis) |  |  |
+
+
+
+
+
+
+<a name="api.manager.v1.RegisterResponse"></a>
+
+### RegisterResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ServiceApis](#api.manager.v1.ServiceApis) |  |  |
+
+
+
+
+
+
+<a name="api.manager.v1.ServiceApis"></a>
+
+### ServiceApis
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Protocol | [string](#string) |  |  |
+| ServiceName | [string](#string) |  |  |
+| PathPrefix | [string](#string) |  |  |
+| Paths | [Path](#api.manager.v1.Path) | repeated |  |
+
+
+
+
+
+
+<a name="api.manager.v1.ServicePath"></a>
+
+### ServicePath
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| Protocol | [string](#string) |  |  |
+| ServiceName | [string](#string) |  |  |
+| Domains | [string](#string) | repeated |  |
+| PathPrefix | [string](#string) |  |  |
+| Method | [string](#string) |  |  |
+| Path | [string](#string) |  |  |
+| Exported | [bool](#bool) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
+| UpdateAt | [uint32](#uint32) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="api.manager.v1.ApiManager"></a>
+
+### ApiManager
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) |  |
+| Register | [RegisterRequest](#api.manager.v1.RegisterRequest) | [RegisterResponse](#api.manager.v1.RegisterResponse) |  |
+| GetApis | [GetApisRequest](#api.manager.v1.GetApisRequest) | [GetApisResponse](#api.manager.v1.GetApisResponse) |  |
+
+ 
 
 
 

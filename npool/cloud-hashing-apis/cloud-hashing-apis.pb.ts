@@ -16,233 +16,233 @@ import * as NpoolV1Npool from "../npool.pb"
 import * as ReviewServiceV1Review-service from "../review-service/review-service.pb"
 import * as UserV1User-management from "../user/user-management.pb"
 export type Good = {
-  Good?: CloudHashingGoodsV1Cloud-hashing-goods.GoodDetail
-  Main?: SphinxCoininfoV1Coininfo.CoinInfo
-  SupportCoins?: SphinxCoininfoV1Coininfo.CoinInfo[]
-  Reviews?: ReviewServiceV1Review-service.Review[]
+  good?: CloudHashingGoodsV1Cloud-hashing-goods.GoodDetail
+  main?: SphinxCoininfoV1Coininfo.CoinInfo
+  supportCoins?: SphinxCoininfoV1Coininfo.CoinInfo[]
+  reviews?: ReviewServiceV1Review-service.Review[]
 }
 
 export type RecommendGood = {
-  Good?: Good
-  Recommend?: CloudHashingGoodsV1Cloud-hashing-goods.Recommend
+  good?: Good
+  recommend?: CloudHashingGoodsV1Cloud-hashing-goods.Recommend
 }
 
 export type CreateGoodRequest = {
-  Info?: CloudHashingGoodsV1Cloud-hashing-goods.GoodInfo
+  info?: CloudHashingGoodsV1Cloud-hashing-goods.GoodInfo
 }
 
 export type CreateGoodResponse = {
-  Info?: Good
+  info?: Good
 }
 
 export type GetGoodRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetGoodResponse = {
-  Info?: Good
+  info?: Good
 }
 
 export type GetGoodsRequest = {
-  PageInfo?: NpoolV1Npool.PageInfo
+  pageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetGoodsResponse = {
-  Infos?: Good[]
-  Total?: number
+  infos?: Good[]
+  total?: number
 }
 
 export type GetRecommendGoodsByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetRecommendGoodsByAppResponse = {
-  Infos?: RecommendGood[]
+  infos?: RecommendGood[]
 }
 
 export type Order = {
-  Order?: CloudHashingOrderV1Cloud-hashing-order.OrderDetail
-  PayToAccount?: CloudHashingBillingV1Cloud-hashing-billing.CoinAccountInfo
-  Good?: Good
-  PayWithCoin?: SphinxCoininfoV1Coininfo.CoinInfo
-  FixAmountCoupon?: CloudHashingInspireV1Cloud-hashing-inspire.CouponAllocatedDetail
-  DiscountCoupon?: CloudHashingInspireV1Cloud-hashing-inspire.CouponAllocatedDetail
-  UserSpecialReduction?: CloudHashingInspireV1Cloud-hashing-inspire.UserSpecialReduction
+  order?: CloudHashingOrderV1Cloud-hashing-order.OrderDetail
+  payToAccount?: CloudHashingBillingV1Cloud-hashing-billing.CoinAccountInfo
+  good?: Good
+  payWithCoin?: SphinxCoininfoV1Coininfo.CoinInfo
+  fixAmountCoupon?: CloudHashingInspireV1Cloud-hashing-inspire.CouponAllocatedDetail
+  discountCoupon?: CloudHashingInspireV1Cloud-hashing-inspire.CouponAllocatedDetail
+  userSpecialReduction?: CloudHashingInspireV1Cloud-hashing-inspire.UserSpecialReduction
 }
 
 export type GetOrderRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetOrderResponse = {
-  Info?: Order
+  info?: Order
 }
 
 export type GetOrdersByAppUserRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetOrdersByAppUserResponse = {
-  Infos?: Order[]
+  infos?: Order[]
 }
 
 export type GetOrdersByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetOrdersByAppResponse = {
-  Infos?: Order[]
+  infos?: Order[]
 }
 
 export type GetOrdersByGoodRequest = {
-  GoodID?: string
+  goodID?: string
 }
 
 export type GetOrdersByGoodResponse = {
-  Infos?: Order[]
+  infos?: Order[]
 }
 
 export type OrderFee = {
-  ID?: string
-  DurationDays?: number
+  id?: string
+  durationDays?: number
 }
 
 export type SubmitOrderRequest = {
-  GoodID?: string
-  Units?: number
-  UserID?: string
-  AppID?: string
-  CouponID?: string
-  DiscountCouponID?: string
-  UserSpecialReductionID?: string
+  goodID?: string
+  units?: number
+  userID?: string
+  appID?: string
+  couponID?: string
+  discountCouponID?: string
+  userSpecialReductionID?: string
 }
 
 export type SubmitOrderResponse = {
-  Info?: Order
+  info?: Order
 }
 
 export type CreateOrderPaymentRequest = {
-  OrderID?: string
-  PaymentCoinTypeID?: string
-  Fees?: OrderFee[]
+  orderID?: string
+  paymentCoinTypeID?: string
+  fees?: OrderFee[]
 }
 
 export type CreateOrderPaymentResponse = {
-  Info?: Order
+  info?: Order
 }
 
 export type SignupRequest = {
-  Username?: string
-  Password?: string
-  EmailAddress?: string
-  PhoneNumber?: string
-  VerificationCode?: string
-  AppID?: string
-  InvitationCode?: string
+  username?: string
+  password?: string
+  emailAddress?: string
+  phoneNumber?: string
+  verificationCode?: string
+  appID?: string
+  invitationCode?: string
 }
 
 export type SignupResponse = {
-  Info?: UserV1User-management.UserBasicInfo
+  info?: UserV1User-management.UserBasicInfo
 }
 
 export type InvitationSummary = {
-  Units?: number
-  Amount?: number
+  units?: number
+  amount?: number
 }
 
 export type InvitationUserInfo = {
-  UserID?: string
-  Username?: string
-  Avatar?: string
-  EmailAddress?: string
-  Kol?: boolean
-  Summarys?: {[key: string]: InvitationSummary}
-  MySummarys?: {[key: string]: InvitationSummary}
-  InvitedCount?: number
-  JoinDate?: number
+  userID?: string
+  username?: string
+  avatar?: string
+  emailAddress?: string
+  kol?: boolean
+  summarys?: {[key: string]: InvitationSummary}
+  mySummarys?: {[key: string]: InvitationSummary}
+  invitedCount?: number
+  joinDate?: number
 }
 
 export type Invitation = {
-  Invitees?: InvitationUserInfo[]
+  invitees?: InvitationUserInfo[]
 }
 
 export type GetMyInvitationsRequest = {
-  AppID?: string
-  InviterID?: string
+  appID?: string
+  inviterID?: string
 }
 
 export type GetMyInvitationsResponse = {
-  MySelf?: InvitationUserInfo
-  Infos?: {[key: string]: Invitation}
+  mySelf?: InvitationUserInfo
+  infos?: {[key: string]: Invitation}
 }
 
 export type GetMyDirectInvitationsRequest = {
-  AppID?: string
-  InviterID?: string
+  appID?: string
+  inviterID?: string
 }
 
 export type GetMyDirectInvitationsResponse = {
-  MySelf?: InvitationUserInfo
-  Infos?: {[key: string]: Invitation}
+  mySelf?: InvitationUserInfo
+  infos?: {[key: string]: Invitation}
 }
 
 export type KycReview = {
-  Review?: ReviewServiceV1Review-service.Review
-  User?: UserV1User-management.UserBasicInfo
-  Kyc?: KycManagementV1Kyc-management.KycInfo
+  review?: ReviewServiceV1Review-service.Review
+  user?: UserV1User-management.UserBasicInfo
+  kyc?: KycManagementV1Kyc-management.KycInfo
 }
 
 export type GetKycReviewsRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetKycReviewsResponse = {
-  Infos?: KycReview[]
+  infos?: KycReview[]
 }
 
 export type GoodReview = {
-  Review?: ReviewServiceV1Review-service.Review
-  User?: UserV1User-management.UserBasicInfo
-  Good?: CloudHashingGoodsV1Cloud-hashing-goods.GoodDetail
+  review?: ReviewServiceV1Review-service.Review
+  user?: UserV1User-management.UserBasicInfo
+  good?: CloudHashingGoodsV1Cloud-hashing-goods.GoodDetail
 }
 
 export type GetGoodReviewsRequest = {
 }
 
 export type GetGoodReviewsResponse = {
-  Infos?: GoodReview[]
+  infos?: GoodReview[]
 }
 
 export type Kyc = {
-  Kyc?: KycManagementV1Kyc-management.KycInfo
-  State?: string
-  Message?: string
+  kyc?: KycManagementV1Kyc-management.KycInfo
+  state?: string
+  message?: string
 }
 
 export type GetKycByAppUserRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetKycByAppUserResponse = {
-  Info?: Kyc
+  info?: Kyc
 }
 
 export type CreateKycRequest = {
-  Info?: KycManagementV1Kyc-management.KycInfo
+  info?: KycManagementV1Kyc-management.KycInfo
 }
 
 export type CreateKycResponse = {
-  Info?: Kyc
+  info?: Kyc
 }
 
 export type UpdateKycRequest = {
-  Info?: KycManagementV1Kyc-management.KycInfo
+  info?: KycManagementV1Kyc-management.KycInfo
 }
 
 export type UpdateKycResponse = {
-  Info?: Kyc
+  info?: Kyc
 }
 
 export class CloudHashingApis {

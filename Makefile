@@ -20,7 +20,7 @@ proto: $(PROTO_GO_FILE) $(PROTO_TS_FILE) $(PROTO_GO_GW_FILE) $(PROTO_SWAGGER_FIL
 		--go-grpc_out=. \
 		--go-grpc_opt paths=source_relative \
 		--doc_out=$(dir $*) \
-		--doc_opt=markdown,$(notdir $*).md $<
+		--doc_opt=markdown,$(notdir $*).md $< \
 		--grpc-gateway-ts_out=. $<
 
 %.pb.ts: %.proto

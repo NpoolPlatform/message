@@ -8,254 +8,254 @@ import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type GoodPaying = {
-  ID?: string
-  OrderID?: string
-  PaymentID?: string
+  id?: string
+  orderID?: string
+  paymentID?: string
 }
 
 export type CreateGoodPayingRequest = {
-  Info?: GoodPaying
+  info?: GoodPaying
 }
 
 export type CreateGoodPayingResponse = {
-  Info?: GoodPaying
+  info?: GoodPaying
 }
 
 export type GetGoodPayingByOrderRequest = {
-  OrderID?: string
+  orderID?: string
 }
 
 export type GetGoodPayingByOrderResponse = {
-  Info?: GoodPaying
+  info?: GoodPaying
 }
 
 export type GasPaying = {
-  ID?: string
-  OrderID?: string
-  PaymentID?: string
-  DurationMinutes?: number
-  FeeTypeID?: string
+  id?: string
+  orderID?: string
+  paymentID?: string
+  durationMinutes?: number
+  feeTypeID?: string
 }
 
 export type CreateGasPayingRequest = {
-  Info?: GasPaying
+  info?: GasPaying
 }
 
 export type CreateGasPayingResponse = {
-  Info?: GasPaying
+  info?: GasPaying
 }
 
 export type GetGasPayingsByOrderRequest = {
-  OrderID?: string
+  orderID?: string
 }
 
 export type GetGasPayingsByOrderResponse = {
-  Infos?: GasPaying[]
+  infos?: GasPaying[]
 }
 
 export type Order = {
-  ID?: string
-  GoodID?: string
-  AppID?: string
-  UserID?: string
-  Units?: number
-  DiscountCouponID?: string
-  UserSpecialReductionID?: string
-  Start?: number
-  End?: number
-  CouponID?: string
+  id?: string
+  goodID?: string
+  appID?: string
+  userID?: string
+  units?: number
+  discountCouponID?: string
+  userSpecialReductionID?: string
+  start?: number
+  end?: number
+  couponID?: string
 }
 
 export type CreateOrderRequest = {
-  Info?: Order
+  info?: Order
 }
 
 export type CreateOrderResponse = {
-  Info?: Order
+  info?: Order
 }
 
 export type GetOrderRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetOrderResponse = {
-  Info?: Order
+  info?: Order
 }
 
 export type GetOrdersByAppUserRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetOrdersByAppUserResponse = {
-  Infos?: Order[]
+  infos?: Order[]
 }
 
 export type GetOrdersByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetOrdersByAppResponse = {
-  Infos?: Order[]
+  infos?: Order[]
 }
 
 export type GetOrdersByGoodRequest = {
-  GoodID?: string
+  goodID?: string
 }
 
 export type GetOrdersByGoodResponse = {
-  Infos?: Order[]
+  infos?: Order[]
 }
 
 export type Compensate = {
-  ID?: string
-  OrderID?: string
-  Start?: number
-  End?: number
-  Message?: string
+  id?: string
+  orderID?: string
+  start?: number
+  end?: number
+  message?: string
 }
 
 export type CreateCompensateRequest = {
-  Info?: Compensate
+  info?: Compensate
 }
 
 export type CreateCompensateResponse = {
-  Info?: Compensate
+  info?: Compensate
 }
 
 export type GetCompensatesByOrderRequest = {
-  OrderID?: string
+  orderID?: string
 }
 
 export type GetCompensatesByOrderResponse = {
-  Infos?: Compensate[]
+  infos?: Compensate[]
 }
 
 export type OutOfGas = {
-  ID?: string
-  OrderID?: string
-  Start?: number
-  End?: number
+  id?: string
+  orderID?: string
+  start?: number
+  end?: number
 }
 
 export type CreateOutOfGasRequest = {
-  Info?: OutOfGas
+  info?: OutOfGas
 }
 
 export type CreateOutOfGasResponse = {
-  Info?: OutOfGas
+  info?: OutOfGas
 }
 
 export type GetOutOfGasesByOrderRequest = {
-  OrderID?: string
+  orderID?: string
 }
 
 export type GetOutOfGasesByOrderResponse = {
-  Infos?: OutOfGas[]
+  infos?: OutOfGas[]
 }
 
 export type Payment = {
-  ID?: string
-  OrderID?: string
-  AccountID?: string
-  StartAmount?: number
-  Amount?: number
-  CoinInfoID?: string
-  State?: string
-  ChainTransactionID?: string
-  PlatformTransactionID?: string
+  id?: string
+  orderID?: string
+  accountID?: string
+  startAmount?: number
+  amount?: number
+  coinInfoID?: string
+  state?: string
+  chainTransactionID?: string
+  platformTransactionID?: string
 }
 
 export type CreatePaymentRequest = {
-  Info?: Payment
+  info?: Payment
 }
 
 export type CreatePaymentResponse = {
-  Info?: Payment
+  info?: Payment
 }
 
 export type GetPaymentRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetPaymentResponse = {
-  Info?: Payment
+  info?: Payment
 }
 
 export type UpdatePaymentRequest = {
-  Info?: Payment
+  info?: Payment
 }
 
 export type UpdatePaymentResponse = {
-  Info?: Payment
+  info?: Payment
 }
 
 export type GetPaymentByOrderRequest = {
-  OrderID?: string
+  orderID?: string
 }
 
 export type GetPaymentByOrderResponse = {
-  Info?: Payment
+  info?: Payment
 }
 
 export type OrderDetail = {
-  ID?: string
-  GoodID?: string
-  AppID?: string
-  UserID?: string
-  Units?: number
-  DiscountCouponID?: string
-  UserSpecialReductionID?: string
-  GoodPaying?: GoodPaying
-  GasPayings?: GasPaying[]
-  Compensates?: Compensate[]
-  OutOfGases?: OutOfGas[]
-  Payment?: Payment
-  Start?: number
-  End?: number
-  CouponID?: string
+  id?: string
+  goodID?: string
+  appID?: string
+  userID?: string
+  units?: number
+  discountCouponID?: string
+  userSpecialReductionID?: string
+  goodPaying?: GoodPaying
+  gasPayings?: GasPaying[]
+  compensates?: Compensate[]
+  outOfGases?: OutOfGas[]
+  payment?: Payment
+  start?: number
+  end?: number
+  couponID?: string
 }
 
 export type GetOrderDetailRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetOrderDetailResponse = {
-  Detail?: OrderDetail
+  detail?: OrderDetail
 }
 
 export type GetOrdersDetailByAppUserRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetOrdersDetailByAppUserResponse = {
-  Details?: OrderDetail[]
+  details?: OrderDetail[]
 }
 
 export type GetOrdersShortDetailByAppUserRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetOrdersShortDetailByAppUserResponse = {
-  Details?: OrderDetail[]
+  details?: OrderDetail[]
 }
 
 export type GetOrdersDetailByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetOrdersDetailByAppResponse = {
-  Details?: OrderDetail[]
+  details?: OrderDetail[]
 }
 
 export type GetOrdersDetailByGoodRequest = {
-  GoodID?: string
+  goodID?: string
 }
 
 export type GetOrdersDetailByGoodResponse = {
-  Details?: OrderDetail[]
+  details?: OrderDetail[]
 }
 
 export class CloudHashingOrder {

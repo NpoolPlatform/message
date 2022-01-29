@@ -8,23 +8,23 @@ import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type AuthByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type AuthByAppResponse = {
-  Allowed?: boolean
+  allowed?: boolean
 }
 
 export type AuthByAppRoleUserRequest = {
-  AppID?: string
-  UserID?: string
-  Token?: string
-  Resource?: string
-  Method?: string
+  appID?: string
+  userID?: string
+  token?: string
+  resource?: string
+  method?: string
 }
 
 export type AuthByAppRoleUserResponse = {
-  Allowed?: boolean
+  allowed?: boolean
 }
 
 export class AuthingGateway {

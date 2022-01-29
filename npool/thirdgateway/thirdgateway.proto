@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package third.gateway.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/thirdgateway";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service ThirdGateway {
+    // Method Version
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+}

@@ -11,7 +11,107 @@
   
     - [AuthingGateway](#authing.gateway.v1.AuthingGateway)
   
+- [npool/authinggateway/authinggateway.proto](#npool/authinggateway/authinggateway.proto)
+    - [AuthByAppRequest](#authing.gateway.v1.AuthByAppRequest)
+    - [AuthByAppResponse](#authing.gateway.v1.AuthByAppResponse)
+    - [AuthByAppRoleUserRequest](#authing.gateway.v1.AuthByAppRoleUserRequest)
+    - [AuthByAppRoleUserResponse](#authing.gateway.v1.AuthByAppRoleUserResponse)
+  
+    - [AuthingGateway](#authing.gateway.v1.AuthingGateway)
+  
 - [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="npool/authinggateway/authinggateway.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## npool/authinggateway/authinggateway.proto
+
+
+
+<a name="authing.gateway.v1.AuthByAppRequest"></a>
+
+### AuthByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="authing.gateway.v1.AuthByAppResponse"></a>
+
+### AuthByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Allowed | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="authing.gateway.v1.AuthByAppRoleUserRequest"></a>
+
+### AuthByAppRoleUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| Token | [string](#string) |  |  |
+| Resource | [string](#string) |  |  |
+| Method | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="authing.gateway.v1.AuthByAppRoleUserResponse"></a>
+
+### AuthByAppRoleUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Allowed | [bool](#bool) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="authing.gateway.v1.AuthingGateway"></a>
+
+### AuthingGateway
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) |  |
+| AuthByApp | [AuthByAppRequest](#authing.gateway.v1.AuthByAppRequest) | [AuthByAppResponse](#authing.gateway.v1.AuthByAppResponse) |  |
+| AuthByAppRoleUser | [AuthByAppRoleUserRequest](#authing.gateway.v1.AuthByAppRoleUserRequest) | [AuthByAppRoleUserResponse](#authing.gateway.v1.AuthByAppRoleUserResponse) |  |
+
+ 
 
 
 

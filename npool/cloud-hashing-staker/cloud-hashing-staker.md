@@ -6,7 +6,36 @@
 - [npool/cloud-hashing-staker/cloud-hashing-staker.proto](#npool/cloud-hashing-staker/cloud-hashing-staker.proto)
     - [CloudHashingStaker](#cloud.hashing.staker.v1.CloudHashingStaker)
   
+- [npool/cloud-hashing-staker/cloud-hashing-staker.proto](#npool/cloud-hashing-staker/cloud-hashing-staker.proto)
+    - [CloudHashingStaker](#cloud.hashing.staker.v1.CloudHashingStaker)
+  
 - [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="npool/cloud-hashing-staker/cloud-hashing-staker.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## npool/cloud-hashing-staker/cloud-hashing-staker.proto
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="cloud.hashing.staker.v1.CloudHashingStaker"></a>
+
+### CloudHashingStaker
+CloudHashingStaker
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
+
+ 
 
 
 

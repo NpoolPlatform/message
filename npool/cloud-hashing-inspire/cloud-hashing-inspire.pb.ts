@@ -8,650 +8,650 @@ import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type NewUserRewardSetting = {
-  ID?: string
-  AppID?: string
-  RegistrationCouponID?: string
-  KycCouponID?: string
-  AutoGenerateInvitationCode?: boolean
+  id?: string
+  appID?: string
+  registrationCouponID?: string
+  kycCouponID?: string
+  autoGenerateInvitationCode?: boolean
 }
 
 export type CreateNewUserRewardSettingRequest = {
-  Info?: NewUserRewardSetting
+  info?: NewUserRewardSetting
 }
 
 export type CreateNewUserRewardSettingResponse = {
-  Info?: NewUserRewardSetting
+  info?: NewUserRewardSetting
 }
 
 export type GetNewUserRewardSettingRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetNewUserRewardSettingResponse = {
-  Info?: NewUserRewardSetting
+  info?: NewUserRewardSetting
 }
 
 export type GetNewUserRewardSettingByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetNewUserRewardSettingByAppResponse = {
-  Info?: NewUserRewardSetting
+  info?: NewUserRewardSetting
 }
 
 export type UpdateNewUserRewardSettingRequest = {
-  Info?: NewUserRewardSetting
+  info?: NewUserRewardSetting
 }
 
 export type UpdateNewUserRewardSettingResponse = {
-  Info?: NewUserRewardSetting
+  info?: NewUserRewardSetting
 }
 
 export type AgencySetting = {
-  ID?: string
-  AppID?: string
-  GoodID?: string
-  RegistrationRewardThreshold?: number
-  RegistrationCouponID?: string
-  KycRewardThreshold?: number
-  KycCouponID?: string
-  TotalPurchaseRewardPercent?: number
-  PurchaseRewardChainLevels?: number
-  LevelPurchaseRewardPercent?: number
+  id?: string
+  appID?: string
+  goodID?: string
+  registrationRewardThreshold?: number
+  registrationCouponID?: string
+  kycRewardThreshold?: number
+  kycCouponID?: string
+  totalPurchaseRewardPercent?: number
+  purchaseRewardChainLevels?: number
+  levelPurchaseRewardPercent?: number
 }
 
 export type CreateAgencySettingRequest = {
-  Info?: AgencySetting
+  info?: AgencySetting
 }
 
 export type CreateAgencySettingResponse = {
-  Info?: AgencySetting
+  info?: AgencySetting
 }
 
 export type GetAgencySettingRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetAgencySettingResponse = {
-  Info?: AgencySetting
+  info?: AgencySetting
 }
 
 export type GetAgencySettingByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetAgencySettingByAppResponse = {
-  Info?: AgencySetting
+  info?: AgencySetting
 }
 
 export type UpdateAgencySettingRequest = {
-  Info?: AgencySetting
+  info?: AgencySetting
 }
 
 export type UpdateAgencySettingResponse = {
-  Info?: AgencySetting
+  info?: AgencySetting
 }
 
 export type PurchaseInvitation = {
-  ID?: string
-  AppID?: string
-  OrderID?: string
-  InvitationCodeID?: string
+  id?: string
+  appID?: string
+  orderID?: string
+  invitationCodeID?: string
 }
 
 export type CreatePurchaseInvitationRequest = {
-  Info?: PurchaseInvitation
+  info?: PurchaseInvitation
 }
 
 export type CreatePurchaseInvitationResponse = {
-  Info?: PurchaseInvitation
+  info?: PurchaseInvitation
 }
 
 export type UpdatePurchaseInvitationRequest = {
-  Info?: PurchaseInvitation
+  info?: PurchaseInvitation
 }
 
 export type UpdatePurchaseInvitationResponse = {
-  Info?: PurchaseInvitation
+  info?: PurchaseInvitation
 }
 
 export type GetPurchaseInvitationRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetPurchaseInvitationResponse = {
-  Info?: PurchaseInvitation
+  info?: PurchaseInvitation
 }
 
 export type GetPurchaseInvitationsByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetPurchaseInvitationsByAppResponse = {
-  Infos?: PurchaseInvitation[]
+  infos?: PurchaseInvitation[]
 }
 
 export type GetPurchaseInvitationByAppOrderRequest = {
-  AppID?: string
-  OrderID?: string
+  appID?: string
+  orderID?: string
 }
 
 export type GetPurchaseInvitationByAppOrderResponse = {
-  Info?: PurchaseInvitation
+  info?: PurchaseInvitation
 }
 
 export type RegistrationInvitation = {
-  ID?: string
-  AppID?: string
-  InviterID?: string
-  InviteeID?: string
-  CreateAt?: number
+  id?: string
+  appID?: string
+  inviterID?: string
+  inviteeID?: string
+  createAt?: number
 }
 
 export type CreateRegistrationInvitationRequest = {
-  Info?: RegistrationInvitation
+  info?: RegistrationInvitation
 }
 
 export type CreateRegistrationInvitationResponse = {
-  Info?: RegistrationInvitation
+  info?: RegistrationInvitation
 }
 
 export type UpdateRegistrationInvitationRequest = {
-  Info?: RegistrationInvitation
+  info?: RegistrationInvitation
 }
 
 export type UpdateRegistrationInvitationResponse = {
-  Info?: RegistrationInvitation
+  info?: RegistrationInvitation
 }
 
 export type GetRegistrationInvitationRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetRegistrationInvitationResponse = {
-  Info?: RegistrationInvitation
+  info?: RegistrationInvitation
 }
 
 export type GetRegistrationInvitationsByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetRegistrationInvitationsByAppResponse = {
-  Infos?: RegistrationInvitation[]
+  infos?: RegistrationInvitation[]
 }
 
 export type GetRegistrationInvitationsByAppInviterRequest = {
-  AppID?: string
-  InviterID?: string
+  appID?: string
+  inviterID?: string
 }
 
 export type GetRegistrationInvitationsByAppInviterResponse = {
-  Infos?: RegistrationInvitation[]
+  infos?: RegistrationInvitation[]
 }
 
 export type GetRegistrationInvitationByAppInviteeRequest = {
-  AppID?: string
-  InviteeID?: string
+  appID?: string
+  inviteeID?: string
 }
 
 export type GetRegistrationInvitationByAppInviteeResponse = {
-  Info?: RegistrationInvitation
+  info?: RegistrationInvitation
 }
 
 export type UserInvitationCode = {
-  ID?: string
-  UserID?: string
-  AppID?: string
-  InvitationCode?: string
+  id?: string
+  userID?: string
+  appID?: string
+  invitationCode?: string
 }
 
 export type CreateUserInvitationCodeRequest = {
-  Info?: UserInvitationCode
+  info?: UserInvitationCode
 }
 
 export type CreateUserInvitationCodeResponse = {
-  Info?: UserInvitationCode
+  info?: UserInvitationCode
 }
 
 export type GetUserInvitationCodeRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetUserInvitationCodeResponse = {
-  Info?: UserInvitationCode
+  info?: UserInvitationCode
 }
 
 export type GetUserInvitationCodeByAppUserRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetUserInvitationCodeByAppUserResponse = {
-  Info?: UserInvitationCode
+  info?: UserInvitationCode
 }
 
 export type GetUserInvitationCodeByCodeRequest = {
-  Code?: string
+  code?: string
 }
 
 export type GetUserInvitationCodeByCodeResponse = {
-  Info?: UserInvitationCode
+  info?: UserInvitationCode
 }
 
 export type CouponAllocated = {
-  ID?: string
-  UserID?: string
-  AppID?: string
-  Type?: string
-  CouponID?: string
+  id?: string
+  userID?: string
+  appID?: string
+  type?: string
+  couponID?: string
 }
 
 export type CreateCouponAllocatedRequest = {
-  Info?: CouponAllocated
+  info?: CouponAllocated
 }
 
 export type CreateCouponAllocatedResponse = {
-  Info?: CouponAllocated
+  info?: CouponAllocated
 }
 
 export type GetCouponAllocatedRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetCouponAllocatedResponse = {
-  Info?: CouponAllocated
+  info?: CouponAllocated
 }
 
 export type GetCouponsAllocatedByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetCouponsAllocatedByAppResponse = {
-  Infos?: CouponAllocated[]
+  infos?: CouponAllocated[]
 }
 
 export type GetCouponsAllocatedByAppUserRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetCouponsAllocatedByAppUserResponse = {
-  Infos?: CouponAllocated[]
+  infos?: CouponAllocated[]
 }
 
 export type UpdateCouponAllocatedRequest = {
-  Info?: CouponAllocated
+  info?: CouponAllocated
 }
 
 export type UpdateCouponAllocatedResponse = {
-  Info?: CouponAllocated
+  info?: CouponAllocated
 }
 
 export type CouponPool = {
-  ID?: string
-  AppID?: string
-  ReleaseByUserID?: string
-  Denomination?: number
-  Circulation?: number
-  Start?: number
-  DurationDays?: number
-  Message?: string
-  Name?: string
+  id?: string
+  appID?: string
+  releaseByUserID?: string
+  denomination?: number
+  circulation?: number
+  start?: number
+  durationDays?: number
+  message?: string
+  name?: string
 }
 
 export type CreateCouponPoolRequest = {
-  Info?: CouponPool
+  info?: CouponPool
 }
 
 export type CreateCouponPoolResponse = {
-  Info?: CouponPool
+  info?: CouponPool
 }
 
 export type UpdateCouponPoolRequest = {
-  Info?: CouponPool
+  info?: CouponPool
 }
 
 export type UpdateCouponPoolResponse = {
-  Info?: CouponPool
+  info?: CouponPool
 }
 
 export type GetCouponPoolRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetCouponPoolResponse = {
-  Info?: CouponPool
+  info?: CouponPool
 }
 
 export type GetCouponPoolsByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetCouponPoolsByAppResponse = {
-  Infos?: CouponPool[]
+  infos?: CouponPool[]
 }
 
 export type GetCouponPoolsByAppReleaserRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetCouponPoolsByAppReleaserResponse = {
-  Infos?: CouponPool[]
+  infos?: CouponPool[]
 }
 
 export type NewUserRewardSettingDetail = {
-  ID?: string
-  AppID?: string
-  AutoGenerateInvitationCode?: boolean
-  RegistrationCoupon?: CouponPool
-  KycCoupon?: CouponPool
+  id?: string
+  appID?: string
+  autoGenerateInvitationCode?: boolean
+  registrationCoupon?: CouponPool
+  kycCoupon?: CouponPool
 }
 
 export type GetNewUserRewardSettingDetailRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetNewUserRewardSettingDetailResponse = {
-  Info?: NewUserRewardSettingDetail
+  info?: NewUserRewardSettingDetail
 }
 
 export type AppCouponSetting = {
-  ID?: string
-  AppID?: string
-  DominationLimit?: number
-  TotalLimit?: number
+  id?: string
+  appID?: string
+  dominationLimit?: number
+  totalLimit?: number
 }
 
 export type CreateAppCouponSettingRequest = {
-  Info?: AppCouponSetting
+  info?: AppCouponSetting
 }
 
 export type CreateAppCouponSettingResponse = {
-  Info?: AppCouponSetting
+  info?: AppCouponSetting
 }
 
 export type GetAppCouponSettingRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetAppCouponSettingResponse = {
-  Info?: AppCouponSetting
+  info?: AppCouponSetting
 }
 
 export type GetAppCouponSettingByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetAppCouponSettingByAppResponse = {
-  Info?: AppCouponSetting
+  info?: AppCouponSetting
 }
 
 export type UpdateAppCouponSettingRequest = {
-  Info?: AppCouponSetting
+  info?: AppCouponSetting
 }
 
 export type UpdateAppCouponSettingResponse = {
-  Info?: AppCouponSetting
+  info?: AppCouponSetting
 }
 
 export type DefaultKpiSetting = {
-  ID?: string
-  AppID?: string
-  GoodID?: string
-  Amount?: number
-  Percent?: number
+  id?: string
+  appID?: string
+  goodID?: string
+  amount?: number
+  percent?: number
 }
 
 export type CreateDefaultKpiSettingRequest = {
-  Info?: DefaultKpiSetting
+  info?: DefaultKpiSetting
 }
 
 export type CreateDefaultKpiSettingResponse = {
-  Info?: DefaultKpiSetting
+  info?: DefaultKpiSetting
 }
 
 export type GetDefaultKpiSettingRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetDefaultKpiSettingResponse = {
-  Info?: DefaultKpiSetting
+  info?: DefaultKpiSetting
 }
 
 export type GetDefaultKpiSettingByAppGoodRequest = {
-  AppID?: string
-  GoodID?: string
+  appID?: string
+  goodID?: string
 }
 
 export type GetDefaultKpiSettingByAppGoodResponse = {
-  Info?: DefaultKpiSetting
+  info?: DefaultKpiSetting
 }
 
 export type UpdateDefaultKpiSettingRequest = {
-  Info?: DefaultKpiSetting
+  info?: DefaultKpiSetting
 }
 
 export type UpdateDefaultKpiSettingResponse = {
-  Info?: DefaultKpiSetting
+  info?: DefaultKpiSetting
 }
 
 export type UserKpiSetting = {
-  ID?: string
-  AppID?: string
-  UserID?: string
-  GoodID?: string
-  Amount?: number
-  Percent?: number
+  id?: string
+  appID?: string
+  userID?: string
+  goodID?: string
+  amount?: number
+  percent?: number
 }
 
 export type CreateUserKpiSettingRequest = {
-  Info?: UserKpiSetting
+  info?: UserKpiSetting
 }
 
 export type CreateUserKpiSettingResponse = {
-  Info?: UserKpiSetting
+  info?: UserKpiSetting
 }
 
 export type GetUserKpiSettingRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetUserKpiSettingResponse = {
-  Info?: UserKpiSetting
+  info?: UserKpiSetting
 }
 
 export type GetUserKpiSettingByAppGoodRequest = {
-  AppID?: string
-  GoodID?: string
+  appID?: string
+  goodID?: string
 }
 
 export type GetUserKpiSettingByAppGoodResponse = {
-  Info?: UserKpiSetting
+  info?: UserKpiSetting
 }
 
 export type UpdateUserKpiSettingRequest = {
-  Info?: UserKpiSetting
+  info?: UserKpiSetting
 }
 
 export type UpdateUserKpiSettingResponse = {
-  Info?: UserKpiSetting
+  info?: UserKpiSetting
 }
 
 export type AgencySettingDetail = {
-  ID?: string
-  AppID?: string
-  GoodID?: string
-  RegistrationRewardThreshold?: number
-  RegistrationCoupon?: CouponPool
-  KycRewardThreshold?: number
-  KycCoupon?: CouponPool
-  TotalPurchaseRewardPercent?: number
-  PurchaseRewardChainLevels?: number
-  LevelPurchaseRewardPercent?: number
+  id?: string
+  appID?: string
+  goodID?: string
+  registrationRewardThreshold?: number
+  registrationCoupon?: CouponPool
+  kycRewardThreshold?: number
+  kycCoupon?: CouponPool
+  totalPurchaseRewardPercent?: number
+  purchaseRewardChainLevels?: number
+  levelPurchaseRewardPercent?: number
 }
 
 export type GetAgencySettingDetailRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetAgencySettingDetailResponse = {
-  Info?: AgencySettingDetail
+  info?: AgencySettingDetail
 }
 
 export type GetAgencySettingDetailByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetAgencySettingDetailByAppResponse = {
-  Info?: AgencySettingDetail
+  info?: AgencySettingDetail
 }
 
 export type CouponAllocatedDetail = {
-  ID?: string
-  UserID?: string
-  AppID?: string
-  Type?: string
-  Coupon?: CouponPool
-  Discount?: DiscountPool
+  id?: string
+  userID?: string
+  appID?: string
+  type?: string
+  coupon?: CouponPool
+  discount?: DiscountPool
 }
 
 export type GetCouponAllocatedDetailRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetCouponAllocatedDetailResponse = {
-  Info?: CouponAllocatedDetail
+  info?: CouponAllocatedDetail
 }
 
 export type GetCouponsAllocatedDetailByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetCouponsAllocatedDetailByAppResponse = {
-  Infos?: CouponAllocatedDetail[]
+  infos?: CouponAllocatedDetail[]
 }
 
 export type GetCouponsAllocatedDetailByAppUserRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetCouponsAllocatedDetailByAppUserResponse = {
-  Infos?: CouponAllocatedDetail[]
+  infos?: CouponAllocatedDetail[]
 }
 
 export type DiscountPool = {
-  ID?: string
-  AppID?: string
-  ReleaseByUserID?: string
-  Discount?: number
-  Start?: number
-  DurationDays?: number
-  Message?: string
-  Name?: string
+  id?: string
+  appID?: string
+  releaseByUserID?: string
+  discount?: number
+  start?: number
+  durationDays?: number
+  message?: string
+  name?: string
 }
 
 export type CreateDiscountPoolRequest = {
-  Info?: DiscountPool
+  info?: DiscountPool
 }
 
 export type CreateDiscountPoolResponse = {
-  Info?: DiscountPool
+  info?: DiscountPool
 }
 
 export type UpdateDiscountPoolRequest = {
-  Info?: DiscountPool
+  info?: DiscountPool
 }
 
 export type UpdateDiscountPoolResponse = {
-  Info?: DiscountPool
+  info?: DiscountPool
 }
 
 export type GetDiscountPoolRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetDiscountPoolResponse = {
-  Info?: DiscountPool
+  info?: DiscountPool
 }
 
 export type GetDiscountPoolsByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetDiscountPoolsByAppResponse = {
-  Infos?: DiscountPool[]
+  infos?: DiscountPool[]
 }
 
 export type GetDiscountPoolsByAppReleaserRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetDiscountPoolsByAppReleaserResponse = {
-  Infos?: DiscountPool[]
+  infos?: DiscountPool[]
 }
 
 export type UserSpecialReduction = {
-  ID?: string
-  AppID?: string
-  UserID?: string
-  Amount?: number
-  ReleaseByUserID?: string
-  Start?: number
-  DurationDays?: number
-  Message?: string
+  id?: string
+  appID?: string
+  userID?: string
+  amount?: number
+  releaseByUserID?: string
+  start?: number
+  durationDays?: number
+  message?: string
 }
 
 export type CreateUserSpecialReductionRequest = {
-  Info?: UserSpecialReduction
+  info?: UserSpecialReduction
 }
 
 export type CreateUserSpecialReductionResponse = {
-  Info?: UserSpecialReduction
+  info?: UserSpecialReduction
 }
 
 export type GetUserSpecialReductionRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetUserSpecialReductionResponse = {
-  Info?: UserSpecialReduction
+  info?: UserSpecialReduction
 }
 
 export type GetUserSpecialReductionsByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetUserSpecialReductionsByAppResponse = {
-  Infos?: UserSpecialReduction[]
+  infos?: UserSpecialReduction[]
 }
 
 export type GetUserSpecialReductionsByAppUserRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetUserSpecialReductionsByAppUserResponse = {
-  Infos?: UserSpecialReduction[]
+  infos?: UserSpecialReduction[]
 }
 
 export type UpdateUserSpecialReductionRequest = {
-  Info?: UserSpecialReduction
+  info?: UserSpecialReduction
 }
 
 export type UpdateUserSpecialReductionResponse = {
-  Info?: UserSpecialReduction
+  info?: UserSpecialReduction
 }
 
 export type GetUserSpecialReductionsByAppReleaserRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetUserSpecialReductionsByAppReleaserResponse = {
-  Infos?: UserSpecialReduction[]
+  infos?: UserSpecialReduction[]
 }
 
 export class CloudHashingInspire {

@@ -7,63 +7,63 @@
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 export type VersionResponse = {
-  Info?: string
+  info?: string
 }
 
 export type CoinInfo = {
-  ID?: string
-  PreSale?: boolean
-  Name?: string
-  Unit?: string
-  Logo?: string
-  ENV?: string
-  ReservedAmount?: number
-  CreatedAt?: number
-  UpdatedAt?: number
+  id?: string
+  preSale?: boolean
+  name?: string
+  unit?: string
+  logo?: string
+  eNV?: string
+  reservedAmount?: number
+  createdAt?: number
+  updatedAt?: number
 }
 
 export type GetCoinInfoRequest = {
-  ID?: string
-  Name?: string
+  id?: string
+  name?: string
 }
 
 export type GetCoinInfoResponse = {
-  Info?: CoinInfo
+  info?: CoinInfo
 }
 
 export type CreateCoinInfoRequest = {
-  PreSale?: boolean
-  Name?: string
-  Unit?: string
-  Logo?: string
-  ENV?: string
+  preSale?: boolean
+  name?: string
+  unit?: string
+  logo?: string
+  eNV?: string
 }
 
 export type CreateCoinInfoResponse = {
-  Info?: CoinInfo
+  info?: CoinInfo
 }
 
 export type GetCoinInfosRequest = {
-  PreSale?: boolean
-  Name?: string
-  Offset?: number
-  Limit?: number
+  preSale?: boolean
+  name?: string
+  offset?: number
+  limit?: number
 }
 
 export type GetCoinInfosResponse = {
-  Total?: number
-  Infos?: CoinInfo[]
+  total?: number
+  infos?: CoinInfo[]
 }
 
 export type UpdateCoinInfoRequest = {
-  ID?: string
-  PreSale?: boolean
-  Logo?: string
-  ReservedAmount?: number
+  id?: string
+  preSale?: boolean
+  logo?: string
+  reservedAmount?: number
 }
 
 export type UpdateCoinInfoResponse = {
-  Info?: CoinInfo
+  info?: CoinInfo
 }
 
 export class SphinxCoinInfo {

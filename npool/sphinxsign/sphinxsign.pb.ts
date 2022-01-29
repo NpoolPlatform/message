@@ -4,6 +4,6 @@
 * This file is a generated Typescript file for GRPC Gateway, DO NOT MODIFY
 */
 export type AccountInfo = {
-  SigType?: string
-  Address?: string
+  sigType?: string
+  address?: string
 }

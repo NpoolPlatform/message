@@ -9,331 +9,331 @@ import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as ApplicationManagementV1Application-management from "../application/application-management.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type UserBasicInfo = {
-  UserID?: string
-  Username?: string
-  Password?: string
-  Avatar?: string
-  Age?: number
-  Gender?: string
-  Region?: string
-  Birthday?: string
-  Country?: string
-  Province?: string
-  City?: string
-  PhoneNumber?: string
-  EmailAddress?: string
-  CreateAt?: number
-  UpdateAt?: number
-  SignupMethod?: string
-  Career?: string
-  DisplayName?: string
-  FirstName?: string
-  LastName?: string
-  StreetAddress1?: string
-  StreetAddress2?: string
-  Compony?: string
-  PostalCode?: string
-  AppID?: string
+  userID?: string
+  username?: string
+  password?: string
+  avatar?: string
+  age?: number
+  gender?: string
+  region?: string
+  birthday?: string
+  country?: string
+  province?: string
+  city?: string
+  phoneNumber?: string
+  emailAddress?: string
+  createAt?: number
+  updateAt?: number
+  signupMethod?: string
+  career?: string
+  displayName?: string
+  firstName?: string
+  lastName?: string
+  streetAddress1?: string
+  streetAddress2?: string
+  compony?: string
+  postalCode?: string
+  appID?: string
 }
 
 export type SignupRequest = {
-  AppID?: string
-  Username?: string
-  Password?: string
-  EmailAddress?: string
-  PhoneNumber?: string
-  Code?: string
+  appID?: string
+  username?: string
+  password?: string
+  emailAddress?: string
+  phoneNumber?: string
+  code?: string
 }
 
 export type SignupResponse = {
-  Info?: UserBasicInfo
+  info?: UserBasicInfo
 }
 
 export type GetUserRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetUserResponse = {
-  Info?: UserBasicInfo
+  info?: UserBasicInfo
 }
 
 export type GetUsersRequest = {
-  AppID?: string
-  Info?: NpoolV1Npool.PageInfo
+  appID?: string
+  info?: NpoolV1Npool.PageInfo
 }
 
 export type GetUsersResponse = {
-  Infos?: UserBasicInfo[]
+  infos?: UserBasicInfo[]
 }
 
 export type UpdateUserInfoRequest = {
-  AppID?: string
-  UserID?: string
-  Info?: UserBasicInfo
+  appID?: string
+  userID?: string
+  info?: UserBasicInfo
 }
 
 export type UpdateUserInfoResponse = {
-  Info?: UserBasicInfo
+  info?: UserBasicInfo
 }
 
 export type BindUserPhoneRequest = {
-  AppID?: string
-  UserID?: string
-  PhoneNumber?: string
-  Code?: string
+  appID?: string
+  userID?: string
+  phoneNumber?: string
+  code?: string
 }
 
 export type BindUserPhoneResponse = {
-  Info?: string
+  info?: string
 }
 
 export type BindUserEmailRequest = {
-  AppID?: string
-  UserID?: string
-  EmailAddress?: string
-  Code?: string
+  appID?: string
+  userID?: string
+  emailAddress?: string
+  code?: string
 }
 
 export type BindUserEmailResponse = {
-  Info?: string
+  info?: string
 }
 
 export type UserProvider = {
-  ID?: string
-  UserID?: string
-  ProviderID?: string
-  ProviderUserID?: string
-  UserProviderInfo?: string
-  CreateAt?: number
-  UpdateAt?: number
+  id?: string
+  userID?: string
+  providerID?: string
+  providerUserID?: string
+  userProviderInfo?: string
+  createAt?: number
+  updateAt?: number
 }
 
 export type BindThirdPartyRequest = {
-  AppID?: string
-  UserID?: string
-  ProviderID?: string
-  ProviderUserID?: string
-  UserProviderInfo?: string
+  appID?: string
+  userID?: string
+  providerID?: string
+  providerUserID?: string
+  userProviderInfo?: string
 }
 
 export type BindThirdPartyResponse = {
-  Info?: UserProvider
+  info?: UserProvider
 }
 
 export type UnbindThirdPartyRequest = {
-  AppID?: string
-  UserID?: string
-  ProviderID?: string
+  appID?: string
+  userID?: string
+  providerID?: string
 }
 
 export type UnbindThirdPartyResponse = {
-  Info?: UserProvider
+  info?: UserProvider
 }
 
 export type ChangeUserPasswordRequest = {
-  AppID?: string
-  UserID?: string
-  VerifyParam?: string
-  VerifyType?: string
-  OldPassword?: string
-  Password?: string
-  Code?: string
+  appID?: string
+  userID?: string
+  verifyParam?: string
+  verifyType?: string
+  oldPassword?: string
+  password?: string
+  code?: string
 }
 
 export type ChangeUserPasswordResponse = {
-  Info?: string
+  info?: string
 }
 
 export type CertificateKycRequest = {
-  AppID?: string
-  UserID?: string
-  FirstName?: string
-  LastName?: string
-  FrontCardImg?: string
-  BackCardImg?: string
-  UserCardImg?: string
-  CardType?: string
-  CardID?: string
-  Region?: string
+  appID?: string
+  userID?: string
+  firstName?: string
+  lastName?: string
+  frontCardImg?: string
+  backCardImg?: string
+  userCardImg?: string
+  cardType?: string
+  cardID?: string
+  region?: string
 }
 
 export type CertificateKycResponse = {
-  Info?: string
+  info?: string
 }
 
 export type GetGaQRCodeRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetGaQRCodeResponse = {
-  Info?: string
+  info?: string
 }
 
 export type ForgetPasswordRequest = {
-  AppID?: string
-  VerifyParam?: string
-  VerifyType?: string
-  Password?: string
-  Code?: string
+  appID?: string
+  verifyParam?: string
+  verifyType?: string
+  password?: string
+  code?: string
 }
 
 export type ForgetPasswordResponse = {
-  Info?: string
+  info?: string
 }
 
 export type DeleteUserRequest = {
-  AppID?: string
-  DeleteUserIDs?: string[]
+  appID?: string
+  deleteUserIDs?: string[]
 }
 
 export type DeleteUserResponse = {
-  Info?: string
+  info?: string
 }
 
 export type AddUserRequest = {
-  AppID?: string
-  UserInfo?: UserBasicInfo
+  appID?: string
+  userInfo?: UserBasicInfo
 }
 
 export type AddUserResponse = {
-  Info?: UserBasicInfo
+  info?: UserBasicInfo
 }
 
 export type FrozenUser = {
-  ID?: string
-  UserID?: string
-  FrozenBy?: string
-  FrozenCause?: string
-  StartAt?: number
-  EndAt?: number
-  Status?: string
-  UnfrozenBy?: string
+  id?: string
+  userID?: string
+  frozenBy?: string
+  frozenCause?: string
+  startAt?: number
+  endAt?: number
+  status?: string
+  unfrozenBy?: string
 }
 
 export type FrozenUserRequest = {
-  AppID?: string
-  UserID?: string
-  FrozenBy?: string
-  FrozenCause?: string
+  appID?: string
+  userID?: string
+  frozenBy?: string
+  frozenCause?: string
 }
 
 export type FrozenUserResponse = {
-  Info?: FrozenUser
+  info?: FrozenUser
 }
 
 export type QueryUserFrozenRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type QueryUserFrozenResponse = {
-  Info?: FrozenUser
+  info?: FrozenUser
 }
 
 export type UnfrozenUserRequest = {
-  AppID?: string
-  ID?: string
-  UserID?: string
-  UnfrozenBy?: string
+  appID?: string
+  id?: string
+  userID?: string
+  unfrozenBy?: string
 }
 
 export type UnfrozenUserResponse = {
-  Info?: FrozenUser
+  info?: FrozenUser
 }
 
 export type GetFrozenUsersRequest = {
-  AppID?: string
-  Info?: NpoolV1Npool.PageInfo
+  appID?: string
+  info?: NpoolV1Npool.PageInfo
 }
 
 export type GetFrozenUsersResponse = {
-  Infos?: FrozenUser[]
+  infos?: FrozenUser[]
 }
 
 export type GetUserProvidersRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetUserProvidersResponse = {
-  Infos?: UserProvider[]
+  infos?: UserProvider[]
 }
 
 export type QueryUserExistRequest = {
-  AppID?: string
-  Username?: string
-  Password?: string
+  appID?: string
+  username?: string
+  password?: string
 }
 
 export type QueryUserExistResponse = {
-  Info?: UserBasicInfo
+  info?: UserBasicInfo
 }
 
 export type QueryProviderUserInfo = {
-  UserProviderInfo?: UserProvider
-  UserBasicInfo?: UserBasicInfo
+  userProviderInfo?: UserProvider
+  userBasicInfo?: UserBasicInfo
 }
 
 export type QueryUserByUserProviderIDRequest = {
-  AppID?: string
-  ProviderID?: string
-  ProviderUserID?: string
+  appID?: string
+  providerID?: string
+  providerUserID?: string
 }
 
 export type QueryUserByUserProviderIDResponse = {
-  Info?: QueryProviderUserInfo
+  info?: QueryProviderUserInfo
 }
 
 export type SetPasswordRequest = {
-  AppID?: string
-  Username?: string
-  Password?: string
+  appID?: string
+  username?: string
+  password?: string
 }
 
 export type SetPasswordResponse = {
-  Info?: string
+  info?: string
 }
 
 export type GetUserDetailsRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type UserDetails = {
-  UserBasicInfo?: UserBasicInfo
-  UserAppInfo?: ApplicationManagementV1Application-management.ApplicationUserDetail
+  userBasicInfo?: UserBasicInfo
+  userAppInfo?: ApplicationManagementV1Application-management.ApplicationUserDetail
 }
 
 export type GetUserDetailsResponse = {
-  Info?: UserDetails
+  info?: UserDetails
 }
 
 export type UpdateUserEmailRequest = {
-  AppID?: string
-  UserID?: string
-  OldEmail?: string
-  OldCode?: string
-  NewEmail?: string
-  NewCode?: string
+  appID?: string
+  userID?: string
+  oldEmail?: string
+  oldCode?: string
+  newEmail?: string
+  newCode?: string
 }
 
 export type UpdateUserEmailResponse = {
-  Info?: string
+  info?: string
 }
 
 export type UpdateUserPhoneRequest = {
-  AppID?: string
-  UserID?: string
-  OldPhone?: string
-  OldCode?: string
-  NewPhone?: string
-  NewCode?: string
+  appID?: string
+  userID?: string
+  oldPhone?: string
+  oldCode?: string
+  newPhone?: string
+  newCode?: string
 }
 
 export type UpdateUserPhoneResponse = {
-  Info?: string
+  info?: string
 }
 
 export class User {

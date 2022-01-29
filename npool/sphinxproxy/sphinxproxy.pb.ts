@@ -30,114 +30,114 @@ export enum TransactionState {
 }
 
 export type VersionResponse = {
-  Info?: string
+  info?: string
 }
 
 export type GetBalanceRequest = {
-  Name?: string
-  Address?: string
+  name?: string
+  address?: string
 }
 
 export type BalanceInfo = {
-  Balance?: number
-  BalanceStr?: string
+  balance?: number
+  balanceStr?: string
 }
 
 export type GetBalanceResponse = {
-  Info?: BalanceInfo
+  info?: BalanceInfo
 }
 
 export type CreateWalletRequest = {
-  Name?: string
+  name?: string
 }
 
 export type WalletInfo = {
-  Address?: string
+  address?: string
 }
 
 export type CreateWalletResponse = {
-  Info?: WalletInfo
+  info?: WalletInfo
 }
 
 export type CreateTransactionRequest = {
-  Name?: string
-  TransactionID?: string
-  Amount?: number
-  From?: string
-  To?: string
+  name?: string
+  transactionID?: string
+  amount?: number
+  from?: string
+  to?: string
 }
 
 export type CreateTransactionResponse = {
 }
 
 export type GetTransactionRequest = {
-  TransactionID?: string
+  transactionID?: string
 }
 
 export type TransactionInfo = {
-  TransactionID?: string
-  Name?: string
-  Amount?: number
-  From?: string
-  To?: string
-  TransactionState?: TransactionState
-  CID?: string
-  ExitCode?: string
-  CreatedAt?: number
-  UpdatedAt?: number
+  transactionID?: string
+  name?: string
+  amount?: number
+  from?: string
+  to?: string
+  transactionState?: TransactionState
+  cID?: string
+  exitCode?: string
+  createdAt?: number
+  updatedAt?: number
 }
 
 export type GetTransactionResponse = {
-  Info?: TransactionInfo
+  info?: TransactionInfo
 }
 
 export type ProxyPluginResponse = {
-  CoinType?: SphinxPluginV1Sphinxplugin.CoinType
-  TransactionType?: TransactionType
-  ENV?: string
-  Unit?: string
-  TransactionID?: string
-  Nonce?: string
-  Unspent?: SphinxPluginV1Sphinxplugin.Unspent[]
-  CID?: string
-  Balance?: number
-  BalanceStr?: string
-  Message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
-  ExitCode?: string
-  MsgTx?: SphinxPluginV1Sphinxplugin.MsgTx
+  coinType?: SphinxPluginV1Sphinxplugin.CoinType
+  transactionType?: TransactionType
+  eNV?: string
+  unit?: string
+  transactionID?: string
+  nonce?: string
+  unspent?: SphinxPluginV1Sphinxplugin.Unspent[]
+  cID?: string
+  balance?: number
+  balanceStr?: string
+  message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
+  exitCode?: string
+  msgTx?: SphinxPluginV1Sphinxplugin.MsgTx
 }
 
 export type ProxyPluginRequest = {
-  CoinType?: SphinxPluginV1Sphinxplugin.CoinType
-  TransactionType?: TransactionType
-  TransactionID?: string
-  Address?: string
-  Message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
-  Signature?: SphinxPluginV1Sphinxplugin.Signature
-  MsgTx?: SphinxPluginV1Sphinxplugin.MsgTx
-  CID?: string
+  coinType?: SphinxPluginV1Sphinxplugin.CoinType
+  transactionType?: TransactionType
+  transactionID?: string
+  address?: string
+  message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
+  signature?: SphinxPluginV1Sphinxplugin.Signature
+  msgTx?: SphinxPluginV1Sphinxplugin.MsgTx
+  cID?: string
 }
 
 export type ProxySignRequest = {
-  CoinType?: SphinxPluginV1Sphinxplugin.CoinType
-  TransactionType?: TransactionType
-  TransactionID?: string
-  Message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
-  MsgTx?: SphinxPluginV1Sphinxplugin.MsgTx
+  coinType?: SphinxPluginV1Sphinxplugin.CoinType
+  transactionType?: TransactionType
+  transactionID?: string
+  message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
+  msgTx?: SphinxPluginV1Sphinxplugin.MsgTx
 }
 
 export type ProxySignResponse = {
-  CoinType?: SphinxPluginV1Sphinxplugin.CoinType
-  TransactionType?: TransactionType
-  TransactionID?: string
-  Info?: ProxySignResponseInfo
-  MsgTx?: SphinxPluginV1Sphinxplugin.MsgTx
+  coinType?: SphinxPluginV1Sphinxplugin.CoinType
+  transactionType?: TransactionType
+  transactionID?: string
+  info?: ProxySignResponseInfo
+  msgTx?: SphinxPluginV1Sphinxplugin.MsgTx
 }
 
 export type ProxySignResponseInfo = {
-  Address?: string
-  Message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
-  Signature?: SphinxPluginV1Sphinxplugin.Signature
+  address?: string
+  message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
+  signature?: SphinxPluginV1Sphinxplugin.Signature
 }
 
 export class SphinxProxy {

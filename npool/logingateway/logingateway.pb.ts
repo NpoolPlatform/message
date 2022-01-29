@@ -9,56 +9,56 @@ import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as AppUserManagerV1Appusermgr from "../appusermgr/appusermgr.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type LoginRequest = {
-  AppID?: string
-  Account?: string
-  PasswordHash?: string
-  ManMachineSpec?: string
-  EnvironmentSpec?: string
-  LoginType?: string
-  Token?: string
+  appID?: string
+  account?: string
+  passwordHash?: string
+  manMachineSpec?: string
+  environmentSpec?: string
+  loginType?: string
+  token?: string
 }
 
 export type LoginResponse = {
-  Info?: AppUserManagerV1Appusermgr.AppUserInfo
-  Token?: string
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
+  token?: string
 }
 
 export type LoginedRequest = {
-  AppID?: string
-  UserID?: string
-  Token?: string
+  appID?: string
+  userID?: string
+  token?: string
 }
 
 export type LoginedResponse = {
-  Info?: AppUserManagerV1Appusermgr.AppUserInfo
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
 }
 
 export type LogoutRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type LogoutResponse = {
-  Info?: AppUserManagerV1Appusermgr.AppUserInfo
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
 }
 
 export type LoginHistory = {
-  ID?: string
-  AppID?: string
-  UserID?: string
-  ClientIP?: string
-  UserAgent?: string
-  CreateAt?: number
+  id?: string
+  appID?: string
+  userID?: string
+  clientIP?: string
+  userAgent?: string
+  createAt?: number
 }
 
 export type GetLoginHistoriesRequest = {
-  AppID?: string
-  UserID?: string
-  PageInfo?: NpoolV1Npool.PageInfo
+  appID?: string
+  userID?: string
+  pageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetLoginHistoriesResponse = {
-  Infos?: LoginHistory[]
+  infos?: LoginHistory[]
 }
 
 export class LoginGateway {

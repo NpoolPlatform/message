@@ -7,127 +7,127 @@
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 export type VersionResponse = {
-  Info?: string
+  info?: string
 }
 
 export type Review = {
-  ID?: string
-  ObjectType?: string
-  AppID?: string
-  ReviewerID?: string
-  State?: string
-  Message?: string
-  ObjectID?: string
-  Domain?: string
-  CreateAt?: number
+  id?: string
+  objectType?: string
+  appID?: string
+  reviewerID?: string
+  state?: string
+  message?: string
+  objectID?: string
+  domain?: string
+  createAt?: number
 }
 
 export type CreateReviewRequest = {
-  Info?: Review
+  info?: Review
 }
 
 export type CreateReviewResponse = {
-  Info?: Review
+  info?: Review
 }
 
 export type UpdateReviewRequest = {
-  Info?: Review
+  info?: Review
 }
 
 export type UpdateReviewResponse = {
-  Info?: Review
+  info?: Review
 }
 
 export type GetReviewsByDomainRequest = {
-  Domain?: string
+  domain?: string
 }
 
 export type GetReviewsByDomainResponse = {
-  Infos?: Review[]
+  infos?: Review[]
 }
 
 export type GetReviewsByAppDomainRequest = {
-  AppID?: string
-  Domain?: string
+  appID?: string
+  domain?: string
 }
 
 export type GetReviewsByAppDomainResponse = {
-  Infos?: Review[]
+  infos?: Review[]
 }
 
 export type GetReviewsByAppDomainObjectTypeIDRequest = {
-  AppID?: string
-  Domain?: string
-  ObjectType?: string
-  ObjectID?: string
+  appID?: string
+  domain?: string
+  objectType?: string
+  objectID?: string
 }
 
 export type GetReviewsByAppDomainObjectTypeIDResponse = {
-  Infos?: Review[]
+  infos?: Review[]
 }
 
 export type SubmitReviewRequest = {
-  Info?: Review
+  info?: Review
 }
 
 export type SubmitReviewResponse = {
-  Info?: Review
+  info?: Review
 }
 
 export type ReviewRule = {
-  ID?: string
-  ObjectType?: string
-  Domain?: string
-  Rules?: string
+  id?: string
+  objectType?: string
+  domain?: string
+  rules?: string
 }
 
 export type CreateReviewRuleRequest = {
-  Info?: ReviewRule
+  info?: ReviewRule
 }
 
 export type CreateReviewRuleResponse = {
-  Info?: ReviewRule
+  info?: ReviewRule
 }
 
 export type UpdateReviewRuleRequest = {
-  Info?: ReviewRule
+  info?: ReviewRule
 }
 
 export type UpdateReviewRuleResponse = {
-  Info?: ReviewRule
+  info?: ReviewRule
 }
 
 export type GetReviewRuleRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetReviewRuleResponse = {
-  Info?: ReviewRule
+  info?: ReviewRule
 }
 
 export type GetReviewRulesByDomainRequest = {
-  Domain?: string
+  domain?: string
 }
 
 export type GetReviewRulesByDomainResponse = {
-  Infos?: ReviewRule[]
+  infos?: ReviewRule[]
 }
 
 export type GetReviewRuleByDomainObjectTypeRequest = {
-  Domain?: string
-  ObjectType?: string
+  domain?: string
+  objectType?: string
 }
 
 export type GetReviewRuleByDomainObjectTypeResponse = {
-  Info?: ReviewRule
+  info?: ReviewRule
 }
 
 export type SubmitReviewResultRequest = {
-  Info?: Review
+  info?: Review
 }
 
 export type SubmitReviewResultResponse = {
-  Info?: Review
+  info?: Review
 }
 
 export class ReviewService {

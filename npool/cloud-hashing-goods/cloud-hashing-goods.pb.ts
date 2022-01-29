@@ -8,670 +8,670 @@ import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type VendorLocationInfo = {
-  ID?: string
-  Country?: string
-  Province?: string
-  City?: string
-  Address?: string
+  id?: string
+  country?: string
+  province?: string
+  city?: string
+  address?: string
 }
 
 export type CreateVendorLocationRequest = {
-  Info?: VendorLocationInfo
+  info?: VendorLocationInfo
 }
 
 export type CreateVendorLocationResponse = {
-  Info?: VendorLocationInfo
+  info?: VendorLocationInfo
 }
 
 export type GetVendorLocationRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetVendorLocationResponse = {
-  Info?: VendorLocationInfo
+  info?: VendorLocationInfo
 }
 
 export type UpdateVendorLocationRequest = {
-  Info?: VendorLocationInfo
+  info?: VendorLocationInfo
 }
 
 export type UpdateVendorLocationResponse = {
-  Info?: VendorLocationInfo
+  info?: VendorLocationInfo
 }
 
 export type DeleteVendorLocationRequest = {
-  ID?: string
+  id?: string
 }
 
 export type DeleteVendorLocationResponse = {
-  Info?: VendorLocationInfo
+  info?: VendorLocationInfo
 }
 
 export type GetVendorLocationsRequest = {
-  PageInfo?: NpoolV1Npool.PageInfo
+  pageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetVendorLocationsResponse = {
-  Infos?: VendorLocationInfo[]
-  Total?: number
+  infos?: VendorLocationInfo[]
+  total?: number
 }
 
 export type TargetAreaInfo = {
-  ID?: string
-  Continent?: string
-  Country?: string
+  id?: string
+  continent?: string
+  country?: string
 }
 
 export type CreateTargetAreaRequest = {
-  Info?: TargetAreaInfo
+  info?: TargetAreaInfo
 }
 
 export type CreateTargetAreaResponse = {
-  Info?: TargetAreaInfo
+  info?: TargetAreaInfo
 }
 
 export type GetTargetAreaRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetTargetAreaResponse = {
-  Info?: TargetAreaInfo
+  info?: TargetAreaInfo
 }
 
 export type UpdateTargetAreaRequest = {
-  Info?: TargetAreaInfo
+  info?: TargetAreaInfo
 }
 
 export type UpdateTargetAreaResponse = {
-  Info?: TargetAreaInfo
+  info?: TargetAreaInfo
 }
 
 export type DeleteTargetAreaRequest = {
-  ID?: string
+  id?: string
 }
 
 export type DeleteTargetAreaResponse = {
-  Info?: TargetAreaInfo
+  info?: TargetAreaInfo
 }
 
 export type DeleteTargetAreaByContinentCountryRequest = {
-  Continent?: string
-  Country?: string
+  continent?: string
+  country?: string
 }
 
 export type DeleteTargetAreaByContinentCountryResponse = {
-  Info?: TargetAreaInfo
+  info?: TargetAreaInfo
 }
 
 export type GetTargetAreasRequest = {
-  PageInfo?: NpoolV1Npool.PageInfo
+  pageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetTargetAreasResponse = {
-  Infos?: TargetAreaInfo[]
-  Total?: number
+  infos?: TargetAreaInfo[]
+  total?: number
 }
 
 export type DeviceInfo = {
-  ID?: string
-  Type?: string
-  Manufacturer?: string
-  PowerComsuption?: number
-  ShipmentAt?: number
+  id?: string
+  type?: string
+  manufacturer?: string
+  powerComsuption?: number
+  shipmentAt?: number
 }
 
 export type CreateDeviceInfoRequest = {
-  Info?: DeviceInfo
+  info?: DeviceInfo
 }
 
 export type CreateDeviceInfoResponse = {
-  Info?: DeviceInfo
+  info?: DeviceInfo
 }
 
 export type UpdateDeviceInfoRequest = {
-  Info?: DeviceInfo
+  info?: DeviceInfo
 }
 
 export type UpdateDeviceInfoResponse = {
-  Info?: DeviceInfo
+  info?: DeviceInfo
 }
 
 export type GetDeviceInfoRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetDeviceInfoResponse = {
-  Info?: DeviceInfo
+  info?: DeviceInfo
 }
 
 export type DeleteDeviceInfoRequest = {
-  ID?: string
+  id?: string
 }
 
 export type DeleteDeviceInfoResponse = {
-  Info?: DeviceInfo
+  info?: DeviceInfo
 }
 
 export type GetDeviceInfosRequest = {
-  PageInfo?: NpoolV1Npool.PageInfo
+  pageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetDeviceInfosResponse = {
-  Infos?: DeviceInfo[]
-  Total?: number
+  infos?: DeviceInfo[]
+  total?: number
 }
 
 export type GoodInfo = {
-  ID?: string
-  DeviceInfoID?: string
-  SeparateFee?: boolean
-  UnitPower?: number
-  DurationDays?: number
-  CoinInfoID?: string
-  Actuals?: boolean
-  DeliveryAt?: number
-  InheritFromGoodID?: string
-  VendorLocationID?: string
-  Price?: number
-  BenefitType?: string
-  Classic?: boolean
-  SupportCoinTypeIDs?: string[]
-  Total?: number
-  PriceCurrency?: string
-  Title?: string
-  Unit?: string
-  FeeIDs?: string[]
+  id?: string
+  deviceInfoID?: string
+  separateFee?: boolean
+  unitPower?: number
+  durationDays?: number
+  coinInfoID?: string
+  actuals?: boolean
+  deliveryAt?: number
+  inheritFromGoodID?: string
+  vendorLocationID?: string
+  price?: number
+  benefitType?: string
+  classic?: boolean
+  supportCoinTypeIDs?: string[]
+  total?: number
+  priceCurrency?: string
+  title?: string
+  unit?: string
+  feeIDs?: string[]
 }
 
 export type CreateGoodRequest = {
-  Info?: GoodInfo
+  info?: GoodInfo
 }
 
 export type CreateGoodResponse = {
-  Info?: GoodInfo
+  info?: GoodInfo
 }
 
 export type UpdateGoodRequest = {
-  Info?: GoodInfo
+  info?: GoodInfo
 }
 
 export type UpdateGoodResponse = {
-  Info?: GoodInfo
+  info?: GoodInfo
 }
 
 export type GetGoodRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetGoodResponse = {
-  Info?: GoodInfo
+  info?: GoodInfo
 }
 
 export type PriceCurrency = {
-  ID?: string
-  Name?: string
-  Unit?: string
-  Symbol?: string
+  id?: string
+  name?: string
+  unit?: string
+  symbol?: string
 }
 
 export type CreatePriceCurrencyRequest = {
-  Info?: PriceCurrency
+  info?: PriceCurrency
 }
 
 export type CreatePriceCurrencyResponse = {
-  Info?: PriceCurrency
+  info?: PriceCurrency
 }
 
 export type UpdatePriceCurrencyRequest = {
-  Info?: PriceCurrency
+  info?: PriceCurrency
 }
 
 export type UpdatePriceCurrencyResponse = {
-  Info?: PriceCurrency
+  info?: PriceCurrency
 }
 
 export type GetPriceCurrencyRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetPriceCurrencyResponse = {
-  Info?: PriceCurrency
+  info?: PriceCurrency
 }
 
 export type GetPriceCurrencysRequest = {
-  PageInfo?: NpoolV1Npool.PageInfo
+  pageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetPriceCurrencysResponse = {
-  Infos?: PriceCurrency[]
+  infos?: PriceCurrency[]
 }
 
 export type FeeDetail = {
-  ID?: string
-  AppID?: string
-  Fee?: FeeType
-  Value?: number
+  id?: string
+  appID?: string
+  fee?: FeeType
+  value?: number
 }
 
 export type GoodDetail = {
-  ID?: string
-  DeviceInfo?: DeviceInfo
-  SeparateFee?: boolean
-  UnitPower?: number
-  DurationDays?: number
-  CoinInfoID?: string
-  Actuals?: boolean
-  DeliveryAt?: number
-  InheritFromGood?: GoodInfo
-  VendorLocation?: VendorLocationInfo
-  Price?: number
-  BenefitType?: string
-  Classic?: boolean
-  SupportCoinTypeIDs?: string[]
-  Total?: number
-  Extra?: GoodExtraInfo
-  Title?: string
-  Unit?: string
-  PriceCurrency?: PriceCurrency
-  Fees?: FeeDetail[]
+  id?: string
+  deviceInfo?: DeviceInfo
+  separateFee?: boolean
+  unitPower?: number
+  durationDays?: number
+  coinInfoID?: string
+  actuals?: boolean
+  deliveryAt?: number
+  inheritFromGood?: GoodInfo
+  vendorLocation?: VendorLocationInfo
+  price?: number
+  benefitType?: string
+  classic?: boolean
+  supportCoinTypeIDs?: string[]
+  total?: number
+  extra?: GoodExtraInfo
+  title?: string
+  unit?: string
+  priceCurrency?: PriceCurrency
+  fees?: FeeDetail[]
 }
 
 export type GetGoodDetailRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetGoodDetailResponse = {
-  Detail?: GoodDetail
+  detail?: GoodDetail
 }
 
 export type GetGoodsDetailRequest = {
-  PageInfo?: NpoolV1Npool.PageInfo
+  pageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetGoodsDetailResponse = {
-  Details?: GoodDetail[]
-  Total?: number
+  details?: GoodDetail[]
+  total?: number
 }
 
 export type DeleteGoodRequest = {
-  ID?: string
+  id?: string
 }
 
 export type DeleteGoodResponse = {
-  Info?: GoodInfo
+  info?: GoodInfo
 }
 
 export type GetGoodsRequest = {
-  PageInfo?: NpoolV1Npool.PageInfo
+  pageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetGoodsResponse = {
-  Infos?: GoodInfo[]
-  Total?: number
+  infos?: GoodInfo[]
+  total?: number
 }
 
 export type Recommend = {
-  ID?: string
-  AppID?: string
-  GoodID?: string
-  RecommenderID?: string
-  Message?: string
+  id?: string
+  appID?: string
+  goodID?: string
+  recommenderID?: string
+  message?: string
 }
 
 export type CreateRecommendRequest = {
-  Info?: Recommend
+  info?: Recommend
 }
 
 export type CreateRecommendResponse = {
-  Info?: Recommend
+  info?: Recommend
 }
 
 export type UpdateRecommendRequest = {
-  Info?: Recommend
+  info?: Recommend
 }
 
 export type UpdateRecommendResponse = {
-  Info?: Recommend
+  info?: Recommend
 }
 
 export type GetRecommendsByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetRecommendsByAppResponse = {
-  Infos?: Recommend[]
+  infos?: Recommend[]
 }
 
 export type GetRecommendsByRecommenderRequest = {
-  UserID?: string
+  userID?: string
 }
 
 export type GetRecommendsByRecommenderResponse = {
-  Infos?: Recommend[]
+  infos?: Recommend[]
 }
 
 export type DeleteRecommendRequest = {
-  ID?: string
+  id?: string
 }
 
 export type DeleteRecommendResponse = {
-  Info?: Recommend
+  info?: Recommend
 }
 
 export type RecommendGood = {
-  Recommend?: Recommend
-  Good?: GoodDetail
+  recommend?: Recommend
+  good?: GoodDetail
 }
 
 export type GetRecommendGoodsByAppRequest = {
-  AppID?: string
+  appID?: string
 }
 
 export type GetRecommendGoodsByAppResponse = {
-  Infos?: RecommendGood[]
+  infos?: RecommendGood[]
 }
 
 export type GetRecommendGoodsByRecommenderRequest = {
-  UserID?: string
+  userID?: string
 }
 
 export type GetRecommendGoodsByRecommenderResponse = {
-  Infos?: RecommendGood[]
+  infos?: RecommendGood[]
 }
 
 export type AppGoodInfo = {
-  ID?: string
-  AppID?: string
-  GoodID?: string
-  Price?: number
-  Authorized?: boolean
-  Online?: boolean
-  InitAreaStrategy?: string
+  id?: string
+  appID?: string
+  goodID?: string
+  price?: number
+  authorized?: boolean
+  online?: boolean
+  initAreaStrategy?: string
 }
 
 export type SetAppGoodPriceRequest = {
-  Info?: AppGoodInfo
+  info?: AppGoodInfo
 }
 
 export type SetAppGoodPriceResponse = {
-  Info?: AppGoodInfo
+  info?: AppGoodInfo
 }
 
 export type CheckAppGoodRequest = {
-  Info?: AppGoodInfo
+  info?: AppGoodInfo
 }
 
 export type CheckAppGoodResponse = {
-  Info?: AppGoodInfo
+  info?: AppGoodInfo
 }
 
 export type OnsaleAppGoodRequest = {
-  Info?: AppGoodInfo
+  info?: AppGoodInfo
 }
 
 export type OnsaleAppGoodResponse = {
-  Info?: AppGoodInfo
+  info?: AppGoodInfo
 }
 
 export type OffsaleAppGoodRequest = {
-  Info?: AppGoodInfo
+  info?: AppGoodInfo
 }
 
 export type OffsaleAppGoodResponse = {
-  Info?: AppGoodInfo
+  info?: AppGoodInfo
 }
 
 export type AuthorizeAppGoodRequest = {
-  Info?: AppGoodInfo
+  info?: AppGoodInfo
 }
 
 export type AuthorizeAppGoodResponse = {
-  Info?: AppGoodInfo
+  info?: AppGoodInfo
 }
 
 export type UnauthorizeAppGoodRequest = {
-  Info?: AppGoodInfo
+  info?: AppGoodInfo
 }
 
 export type UnauthorizeAppGoodResponse = {
-  Info?: AppGoodInfo
+  info?: AppGoodInfo
 }
 
 export type AppTargetAreaInfo = {
-  ID?: string
-  AppID?: string
-  TargetAreaID?: string
+  id?: string
+  appID?: string
+  targetAreaID?: string
 }
 
 export type AuthorizeAppTargetAreaRequest = {
-  Info?: AppTargetAreaInfo
+  info?: AppTargetAreaInfo
 }
 
 export type AuthorizeAppTargetAreaResponse = {
-  Info?: AppTargetAreaInfo
+  info?: AppTargetAreaInfo
 }
 
 export type CheckAppTargetAreaRequest = {
-  Info?: AppTargetAreaInfo
+  info?: AppTargetAreaInfo
 }
 
 export type CheckAppTargetAreaResponse = {
-  Info?: AppTargetAreaInfo
-  Authorized?: boolean
+  info?: AppTargetAreaInfo
+  authorized?: boolean
 }
 
 export type UnauthorizeAppTargetAreaRequest = {
-  ID?: string
+  id?: string
 }
 
 export type UnauthorizeAppTargetAreaResponse = {
-  Info?: AppTargetAreaInfo
-  Authorized?: boolean
+  info?: AppTargetAreaInfo
+  authorized?: boolean
 }
 
 export type AppGoodTargetAreaInfo = {
-  ID?: string
-  AppID?: string
-  GoodID?: string
-  TargetAreaID?: string
+  id?: string
+  appID?: string
+  goodID?: string
+  targetAreaID?: string
 }
 
 export type AuthorizeAppGoodTargetAreaRequest = {
-  Info?: AppGoodTargetAreaInfo
+  info?: AppGoodTargetAreaInfo
 }
 
 export type AuthorizeAppGoodTargetAreaResponse = {
-  Info?: AppGoodTargetAreaInfo
+  info?: AppGoodTargetAreaInfo
 }
 
 export type CheckAppGoodTargetAreaRequest = {
-  Info?: AppGoodTargetAreaInfo
+  info?: AppGoodTargetAreaInfo
 }
 
 export type CheckAppGoodTargetAreaResponse = {
-  Info?: AppGoodTargetAreaInfo
+  info?: AppGoodTargetAreaInfo
 }
 
 export type UnauthorizeAppGoodTargetAreaRequest = {
-  Info?: AppGoodTargetAreaInfo
+  info?: AppGoodTargetAreaInfo
 }
 
 export type UnauthorizeAppGoodTargetAreaResponse = {
-  Info?: AppGoodTargetAreaInfo
+  info?: AppGoodTargetAreaInfo
 }
 
 export type GoodComment = {
-  ID?: string
-  AppID?: string
-  UserID?: string
-  ReplyToID?: string
-  GoodID?: string
-  OrderID?: string
-  Content?: string
+  id?: string
+  appID?: string
+  userID?: string
+  replyToID?: string
+  goodID?: string
+  orderID?: string
+  content?: string
 }
 
 export type CreateGoodCommentRequest = {
-  Comment?: GoodComment
+  comment?: GoodComment
 }
 
 export type CreateGoodCommentResponse = {
-  Comment?: GoodComment
+  comment?: GoodComment
 }
 
 export type UpdateGoodCommentRequest = {
-  Comment?: GoodComment
+  comment?: GoodComment
 }
 
 export type UpdateGoodCommentResponse = {
-  Comment?: GoodComment
+  comment?: GoodComment
 }
 
 export type GetGoodCommentsRequest = {
-  PageInfo?: NpoolV1Npool.PageInfo
-  GoodID?: string
+  pageInfo?: NpoolV1Npool.PageInfo
+  goodID?: string
 }
 
 export type GetGoodCommentsResponse = {
-  Comments?: GoodComment[]
-  Total?: number
+  comments?: GoodComment[]
+  total?: number
 }
 
 export type GoodExtraInfo = {
-  ID?: string
-  GoodID?: string
-  Posters?: string[]
-  Labels?: string[]
-  OutSale?: boolean
-  PreSale?: boolean
-  VoteCount?: number
-  Rating?: number
+  id?: string
+  goodID?: string
+  posters?: string[]
+  labels?: string[]
+  outSale?: boolean
+  preSale?: boolean
+  voteCount?: number
+  rating?: number
 }
 
 export type CreateGoodExtraInfoRequest = {
-  Info?: GoodExtraInfo
+  info?: GoodExtraInfo
 }
 
 export type CreateGoodExtraInfoResponse = {
-  Info?: GoodExtraInfo
+  info?: GoodExtraInfo
 }
 
 export type GetGoodExtraInfoRequest = {
-  GoodID?: string
+  goodID?: string
 }
 
 export type GetGoodExtraInfoResponse = {
-  Info?: GoodExtraInfo
+  info?: GoodExtraInfo
 }
 
 export type UpdateGoodExtraInfoRequest = {
-  Info?: GoodExtraInfo
+  info?: GoodExtraInfo
 }
 
 export type UpdateGoodExtraInfoResponse = {
-  Info?: GoodExtraInfo
+  info?: GoodExtraInfo
 }
 
 export type GoodReviewInfo = {
-  ID?: string
-  Type?: string
-  ReviewerID?: string
-  State?: string
-  Message?: string
-  ReviewedID?: string
+  id?: string
+  type?: string
+  reviewerID?: string
+  state?: string
+  message?: string
+  reviewedID?: string
 }
 
 export type CreateGoodReviewRequest = {
-  Info?: GoodReviewInfo
+  info?: GoodReviewInfo
 }
 
 export type CreateGoodReviewResponse = {
-  Info?: GoodReviewInfo
+  info?: GoodReviewInfo
 }
 
 export type UpdateGoodReviewRequest = {
-  Info?: GoodReviewInfo
+  info?: GoodReviewInfo
 }
 
 export type UpdateGoodReviewResponse = {
-  Info?: GoodReviewInfo
+  info?: GoodReviewInfo
 }
 
 export type GetGoodReviewRequest = {
-  Info?: GoodReviewInfo
+  info?: GoodReviewInfo
 }
 
 export type GetGoodReviewResponse = {
-  Info?: GoodReviewInfo
+  info?: GoodReviewInfo
 }
 
 export type FeeType = {
-  ID?: string
-  FeeType?: string
-  FeeDescription?: string
-  PayType?: string
+  id?: string
+  feeType?: string
+  feeDescription?: string
+  payType?: string
 }
 
 export type CreateFeeTypeRequest = {
-  Info?: FeeType
+  info?: FeeType
 }
 
 export type CreateFeeTypeResponse = {
-  Info?: FeeType
+  info?: FeeType
 }
 
 export type UpdateFeeTypeRequest = {
-  Info?: FeeType
+  info?: FeeType
 }
 
 export type UpdateFeeTypeResponse = {
-  Info?: FeeType
+  info?: FeeType
 }
 
 export type GetFeeTypeRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetFeeTypeResponse = {
-  Info?: FeeType
+  info?: FeeType
 }
 
 export type GetFeeTypesRequest = {
-  PageInfo?: NpoolV1Npool.PageInfo
+  pageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetFeeTypesResponse = {
-  Infos?: FeeType[]
+  infos?: FeeType[]
 }
 
 export type Fee = {
-  ID?: string
-  AppID?: string
-  FeeTypeID?: string
-  Value?: number
+  id?: string
+  appID?: string
+  feeTypeID?: string
+  value?: number
 }
 
 export type CreateFeeRequest = {
-  Info?: Fee
+  info?: Fee
 }
 
 export type CreateFeeResponse = {
-  Info?: Fee
+  info?: Fee
 }
 
 export type GetFeeRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetFeeResponse = {
-  Info?: Fee
+  info?: Fee
 }
 
 export type GetFeesRequest = {
-  PageInfo?: NpoolV1Npool.PageInfo
+  pageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetFeesResponse = {
-  Infos?: Fee[]
+  infos?: Fee[]
 }
 
 export class CloudHashingGoods {

@@ -8,317 +8,317 @@ import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type CoinAccountInfo = {
-  ID?: string
-  CoinTypeID?: string
-  Address?: string
-  GeneratedBy?: string
-  UsedFor?: string
-  Idle?: boolean
-  AppID?: string
-  UserID?: string
+  id?: string
+  coinTypeID?: string
+  address?: string
+  generatedBy?: string
+  usedFor?: string
+  idle?: boolean
+  appID?: string
+  userID?: string
 }
 
 export type CreateCoinAccountRequest = {
-  Info?: CoinAccountInfo
+  info?: CoinAccountInfo
 }
 
 export type CreateCoinAccountResponse = {
-  Info?: CoinAccountInfo
+  info?: CoinAccountInfo
 }
 
 export type GetCoinAccountRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetCoinAccountResponse = {
-  Info?: CoinAccountInfo
+  info?: CoinAccountInfo
 }
 
 export type GetCoinAccountByCoinAddressRequest = {
-  CoinInfoID?: string
-  Address?: string
+  coinInfoID?: string
+  address?: string
 }
 
 export type GetCoinAccountByCoinAddressResponse = {
-  Info?: CoinAccountInfo
+  info?: CoinAccountInfo
 }
 
 export type GetCoinAccountsByAppUserRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetCoinAccountsByAppUserResponse = {
-  Infos?: CoinAccountInfo[]
+  infos?: CoinAccountInfo[]
 }
 
 export type DeleteCoinAccountRequest = {
-  ID?: string
+  id?: string
 }
 
 export type DeleteCoinAccountResponse = {
-  Info?: CoinAccountInfo
+  info?: CoinAccountInfo
 }
 
 export type CoinAccountTransaction = {
-  ID?: string
-  AppID?: string
-  UserID?: string
-  FromAddressID?: string
-  ToAddressID?: string
-  CoinTypeID?: string
-  Amount?: number
-  Message?: string
-  CreateAt?: number
-  State?: string
-  ChainTransactionID?: string
-  PlatformTransactionID?: string
+  id?: string
+  appID?: string
+  userID?: string
+  fromAddressID?: string
+  toAddressID?: string
+  coinTypeID?: string
+  amount?: number
+  message?: string
+  createAt?: number
+  state?: string
+  chainTransactionID?: string
+  platformTransactionID?: string
 }
 
 export type CreateCoinAccountTransactionRequest = {
-  Info?: CoinAccountTransaction
+  info?: CoinAccountTransaction
 }
 
 export type CreateCoinAccountTransactionResponse = {
-  Info?: CoinAccountTransaction
+  info?: CoinAccountTransaction
 }
 
 export type GetCoinAccountTransactionRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetCoinAccountTransactionResponse = {
-  Info?: CoinAccountTransaction
+  info?: CoinAccountTransaction
 }
 
 export type CoinAccountTransactionDetail = {
-  ID?: string
-  AppID?: string
-  UserID?: string
-  FromAddress?: CoinAccountInfo
-  ToAddress?: CoinAccountInfo
-  CoinTypeID?: string
-  Amount?: number
-  Message?: string
-  CreateAt?: number
-  State?: string
-  ChainTransactionID?: string
-  PlatformTransactionID?: string
+  id?: string
+  appID?: string
+  userID?: string
+  fromAddress?: CoinAccountInfo
+  toAddress?: CoinAccountInfo
+  coinTypeID?: string
+  amount?: number
+  message?: string
+  createAt?: number
+  state?: string
+  chainTransactionID?: string
+  platformTransactionID?: string
 }
 
 export type GetCoinAccountTransactionDetailRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetCoinAccountTransactionDetailResponse = {
-  Detail?: CoinAccountTransactionDetail
+  detail?: CoinAccountTransactionDetail
 }
 
 export type GetCoinAccountTransactionsByCoinAccountRequest = {
-  CoinTypeID?: string
-  AddressID?: string
+  coinTypeID?: string
+  addressID?: string
 }
 
 export type GetCoinAccountTransactionsByCoinAccountResponse = {
-  Infos?: CoinAccountTransaction[]
+  infos?: CoinAccountTransaction[]
 }
 
 export type GetCoinAccountTransactionsByStateRequest = {
-  State?: string
+  state?: string
 }
 
 export type GetCoinAccountTransactionsByStateResponse = {
-  Infos?: CoinAccountTransaction[]
+  infos?: CoinAccountTransaction[]
 }
 
 export type GetCoinAccountTransactionsByCoinRequest = {
-  CoinTypeID?: string
+  coinTypeID?: string
 }
 
 export type GetCoinAccountTransactionsByCoinResponse = {
-  Infos?: CoinAccountTransaction[]
+  infos?: CoinAccountTransaction[]
 }
 
 export type UpdateCoinAccountTransactionRequest = {
-  Info?: CoinAccountTransaction
+  info?: CoinAccountTransaction
 }
 
 export type UpdateCoinAccountTransactionResponse = {
-  Info?: CoinAccountTransaction
+  info?: CoinAccountTransaction
 }
 
 export type DeleteCoinAccountTransactionRequest = {
-  ID?: string
+  id?: string
 }
 
 export type DeleteCoinAccountTransactionResponse = {
-  Info?: CoinAccountTransaction
+  info?: CoinAccountTransaction
 }
 
 export type PlatformBenefit = {
-  ID?: string
-  GoodID?: string
-  BenefitAccountID?: string
-  Amount?: number
-  CreateAt?: number
-  ChainTransactionID?: string
-  LastBenefitTimestamp?: number
+  id?: string
+  goodID?: string
+  benefitAccountID?: string
+  amount?: number
+  createAt?: number
+  chainTransactionID?: string
+  lastBenefitTimestamp?: number
 }
 
 export type CreatePlatformBenefitRequest = {
-  Info?: PlatformBenefit
+  info?: PlatformBenefit
 }
 
 export type CreatePlatformBenefitResponse = {
-  Info?: PlatformBenefit
+  info?: PlatformBenefit
 }
 
 export type GetPlatformBenefitsByGoodRequest = {
-  GoodID?: string
+  goodID?: string
 }
 
 export type GetPlatformBenefitsByGoodResponse = {
-  Infos?: PlatformBenefit[]
+  infos?: PlatformBenefit[]
 }
 
 export type PlatformBenefitDetail = {
-  ID?: string
-  GoodID?: string
-  BenefitAddress?: CoinAccountInfo
-  Amount?: number
-  CreateAt?: number
-  ChainTransactionID?: string
+  id?: string
+  goodID?: string
+  benefitAddress?: CoinAccountInfo
+  amount?: number
+  createAt?: number
+  chainTransactionID?: string
 }
 
 export type GetPlatformBenefitDetailRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetPlatformBenefitDetailResponse = {
-  Detail?: PlatformBenefitDetail
+  detail?: PlatformBenefitDetail
 }
 
 export type GetPlatformBenefitRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetPlatformBenefitResponse = {
-  Info?: PlatformBenefit
+  info?: PlatformBenefit
 }
 
 export type GetLatestPlatformBenefitByGoodRequest = {
-  GoodID?: string
+  goodID?: string
 }
 
 export type GetLatestPlatformBenefitByGoodResponse = {
-  Info?: PlatformBenefit
+  info?: PlatformBenefit
 }
 
 export type PlatformSetting = {
-  ID?: string
-  GoodID?: string
-  BenefitAccountID?: string
-  PlatformOfflineAccountID?: string
-  UserOnlineAccountID?: string
-  UserOfflineAccountID?: string
-  BenefitIntervalHours?: number
+  id?: string
+  goodID?: string
+  benefitAccountID?: string
+  platformOfflineAccountID?: string
+  userOnlineAccountID?: string
+  userOfflineAccountID?: string
+  benefitIntervalHours?: number
 }
 
 export type CreatePlatformSettingRequest = {
-  Info?: PlatformSetting
+  info?: PlatformSetting
 }
 
 export type CreatePlatformSettingResponse = {
-  Info?: PlatformSetting
+  info?: PlatformSetting
 }
 
 export type UpdatePlatformSettingRequest = {
-  Info?: PlatformSetting
+  info?: PlatformSetting
 }
 
 export type UpdatePlatformSettingResponse = {
-  Info?: PlatformSetting
+  info?: PlatformSetting
 }
 
 export type GetPlatformSettingByGoodRequest = {
-  GoodID?: string
+  goodID?: string
 }
 
 export type GetPlatformSettingByGoodResponse = {
-  Info?: PlatformSetting
+  info?: PlatformSetting
 }
 
 export type PlatformSettingDetail = {
-  ID?: string
-  GoodID?: string
-  BenefitAddress?: CoinAccountInfo
-  PlatformOfflineAddress?: CoinAccountInfo
-  UserOnlineAddress?: CoinAccountInfo
-  UserOfflineAddress?: CoinAccountInfo
-  BenefitIntervalHours?: number
+  id?: string
+  goodID?: string
+  benefitAddress?: CoinAccountInfo
+  platformOfflineAddress?: CoinAccountInfo
+  userOnlineAddress?: CoinAccountInfo
+  userOfflineAddress?: CoinAccountInfo
+  benefitIntervalHours?: number
 }
 
 export type GetPlatformSettingDetailRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetPlatformSettingDetailResponse = {
-  Detail?: PlatformSettingDetail
+  detail?: PlatformSettingDetail
 }
 
 export type GetPlatformSettingRequest = {
-  ID?: string
+  id?: string
 }
 
 export type GetPlatformSettingResponse = {
-  Info?: PlatformSetting
+  info?: PlatformSetting
 }
 
 export type UserBenefit = {
-  ID?: string
-  UserID?: string
-  AppID?: string
-  GoodID?: string
-  Amount?: number
-  CreateAt?: number
-  OrderID?: string
-  LastBenefitTimestamp?: number
+  id?: string
+  userID?: string
+  appID?: string
+  goodID?: string
+  amount?: number
+  createAt?: number
+  orderID?: string
+  lastBenefitTimestamp?: number
 }
 
 export type CreateUserBenefitRequest = {
-  Info?: UserBenefit
+  info?: UserBenefit
 }
 
 export type CreateUserBenefitResponse = {
-  Info?: UserBenefit
+  info?: UserBenefit
 }
 
 export type GetUserBenefitsByAppUserRequest = {
-  AppID?: string
-  UserID?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetUserBenefitsByAppUserResponse = {
-  Infos?: UserBenefit[]
+  infos?: UserBenefit[]
 }
 
 export type GetUserBenefitsByAppRequest = {
-  AppID?: string
-  PageInfo?: NpoolV1Npool.PageInfo
+  appID?: string
+  pageInfo?: NpoolV1Npool.PageInfo
 }
 
 export type GetUserBenefitsByAppResponse = {
-  Infos?: UserBenefit[]
+  infos?: UserBenefit[]
 }
 
 export type GetLatestUserBenefitByGoodAppUserRequest = {
-  AppID?: string
-  UserID?: string
-  GoodID?: string
+  appID?: string
+  userID?: string
+  goodID?: string
 }
 
 export type GetLatestUserBenefitByGoodAppUserResponse = {
-  Info?: UserBenefit
+  info?: UserBenefit
 }
 
 export class CloudHashingBilling {

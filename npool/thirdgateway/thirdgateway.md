@@ -3,36 +3,20 @@
 
 ## Table of Contents
 
-- [npool/sphinxsign/sphinxsign.proto](#npool/sphinxsign/sphinxsign.proto)
-    - [AccountInfo](#sphinx.sign.v1.AccountInfo)
+- [npool/thirdgateway/thirdgateway.proto](#npool/thirdgateway/thirdgateway.proto)
+    - [ThirdGateway](#third.gateway.v1.ThirdGateway)
   
-- [npool/sphinxsign/sphinxsign.proto](#npool/sphinxsign/sphinxsign.proto)
-    - [AccountInfo](#sphinx.sign.v1.AccountInfo)
+- [npool/thirdgateway/thirdgateway.proto](#npool/thirdgateway/thirdgateway.proto)
+    - [ThirdGateway](#third.gateway.v1.ThirdGateway)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool/sphinxsign/sphinxsign.proto"></a>
+<a name="npool/thirdgateway/thirdgateway.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/sphinxsign/sphinxsign.proto
-
-
-
-<a name="sphinx.sign.v1.AccountInfo"></a>
-
-### AccountInfo
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| SigType | [string](#string) |  | secp256k1 |
-| Address | [string](#string) |  |  |
-
-
-
+## npool/thirdgateway/thirdgateway.proto
 
 
  
@@ -41,30 +25,24 @@
 
  
 
+
+<a name="third.gateway.v1.ThirdGateway"></a>
+
+### ThirdGateway
+Service Name
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
+
  
 
 
 
-<a name="npool/sphinxsign/sphinxsign.proto"></a>
+<a name="npool/thirdgateway/thirdgateway.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/sphinxsign/sphinxsign.proto
-
-
-
-<a name="sphinx.sign.v1.AccountInfo"></a>
-
-### AccountInfo
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| SigType | [string](#string) |  | secp256k1 |
-| Address | [string](#string) |  |  |
-
-
-
+## npool/thirdgateway/thirdgateway.proto
 
 
  
@@ -72,6 +50,16 @@
  
 
  
+
+
+<a name="third.gateway.v1.ThirdGateway"></a>
+
+### ThirdGateway
+Service Name
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
 
  
 
