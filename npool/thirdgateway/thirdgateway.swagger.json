@@ -11,6 +11,134 @@
     "application/json"
   ],
   "paths": {
+    "/v1/send/email/code": {
+      "post": {
+        "operationId": "ThirdGateway_SendEmailCode",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SendEmailCodeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SendEmailCodeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
+    "/v1/send/sms/code": {
+      "post": {
+        "operationId": "ThirdGateway_SendSMSCode",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SendSMSCodeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SendSMSCodeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
+    "/v1/verify/email/code": {
+      "post": {
+        "operationId": "ThirdGateway_VerifyEmailCode",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VerifyEmailCodeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1VerifyEmailCodeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
+    "/v1/verify/sms/code": {
+      "post": {
+        "operationId": "ThirdGateway_VerifySMSCode",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VerifySMSCodeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1VerifySMSCodeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "summary": "Method Version",
@@ -76,6 +204,104 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1SendEmailCodeRequest": {
+      "type": "object",
+      "properties": {
+        "EmailAddress": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SendEmailCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SendSMSCodeRequest": {
+      "type": "object",
+      "properties": {
+        "PhoneNO": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SendSMSCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1VerifyEmailCodeRequest": {
+      "type": "object",
+      "properties": {
+        "EmailAddress": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        }
+      }
+    },
+    "v1VerifyEmailCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1VerifySMSCodeRequest": {
+      "type": "object",
+      "properties": {
+        "PhoneNO": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        }
+      }
+    },
+    "v1VerifySMSCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Message": {
+          "type": "string"
         }
       }
     },

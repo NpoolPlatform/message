@@ -17,4 +17,72 @@ service ThirdGateway {
             body: "*"
         };
     }
+
+    rpc SendSMSCode (SendSMSCodeRequest) returns (SendSMSCodeResponse) {
+        option (google.api.http) = {
+            post: "/v1/send/sms/code",
+            body: "*"
+        };
+    }
+    rpc VerifySMSCode (VerifySMSCodeRequest) returns (VerifySMSCodeResponse) {
+        option (google.api.http) = {
+            post: "/v1/verify/sms/code",
+            body: "*"
+        };
+    }
+
+    rpc SendEmailCode (SendEmailCodeRequest) returns (SendEmailCodeResponse) {
+        option (google.api.http) = {
+            post: "/v1/send/email/code",
+            body: "*"
+        };
+    }
+    rpc VerifyEmailCode (VerifyEmailCodeRequest) returns (VerifyEmailCodeResponse) {
+        option (google.api.http) = {
+            post: "/v1/verify/email/code",
+            body: "*"
+        };
+    }
+}
+
+message SendSMSCodeRequest {
+    string PhoneNO = 10;
+    string UsedFor = 20;
+}
+
+message SendSMSCodeResponse {
+    int32 Code = 10;
+    string Message = 20;
+}
+
+message VerifySMSCodeRequest {
+    string PhoneNO = 10;
+    string UsedFor = 20;
+    string Code = 30;
+}
+
+message VerifySMSCodeResponse {
+    int32 Code = 10;
+    string Message = 20;
+}
+
+message SendEmailCodeRequest {
+    string EmailAddress = 10;
+    string UsedFor = 20;
+}
+
+message SendEmailCodeResponse {
+    int32 Code = 10;
+    string Message = 20;
+}
+
+message VerifyEmailCodeRequest {
+    string EmailAddress = 10;
+    string UsedFor = 20;
+    string Code = 30;
+}
+
+message VerifyEmailCodeResponse {
+    int32 Code = 10;
+    string Message = 20;
 }

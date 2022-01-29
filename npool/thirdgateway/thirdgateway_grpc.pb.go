@@ -26,6 +26,10 @@ const _ = grpc.SupportPackageIsVersion7
 type ThirdGatewayClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
+	SendSMSCode(ctx context.Context, in *SendSMSCodeRequest, opts ...grpc.CallOption) (*SendSMSCodeResponse, error)
+	VerifySMSCode(ctx context.Context, in *VerifySMSCodeRequest, opts ...grpc.CallOption) (*VerifySMSCodeResponse, error)
+	SendEmailCode(ctx context.Context, in *SendEmailCodeRequest, opts ...grpc.CallOption) (*SendEmailCodeResponse, error)
+	VerifyEmailCode(ctx context.Context, in *VerifyEmailCodeRequest, opts ...grpc.CallOption) (*VerifyEmailCodeResponse, error)
 }
 
 type thirdGatewayClient struct {
@@ -45,12 +49,52 @@ func (c *thirdGatewayClient) Version(ctx context.Context, in *emptypb.Empty, opt
 	return out, nil
 }
 
+func (c *thirdGatewayClient) SendSMSCode(ctx context.Context, in *SendSMSCodeRequest, opts ...grpc.CallOption) (*SendSMSCodeResponse, error) {
+	out := new(SendSMSCodeResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/SendSMSCode", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *thirdGatewayClient) VerifySMSCode(ctx context.Context, in *VerifySMSCodeRequest, opts ...grpc.CallOption) (*VerifySMSCodeResponse, error) {
+	out := new(VerifySMSCodeResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/VerifySMSCode", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *thirdGatewayClient) SendEmailCode(ctx context.Context, in *SendEmailCodeRequest, opts ...grpc.CallOption) (*SendEmailCodeResponse, error) {
+	out := new(SendEmailCodeResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/SendEmailCode", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *thirdGatewayClient) VerifyEmailCode(ctx context.Context, in *VerifyEmailCodeRequest, opts ...grpc.CallOption) (*VerifyEmailCodeResponse, error) {
+	out := new(VerifyEmailCodeResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/VerifyEmailCode", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ThirdGatewayServer is the server API for ThirdGateway service.
 // All implementations must embed UnimplementedThirdGatewayServer
 // for forward compatibility
 type ThirdGatewayServer interface {
 	// Method Version
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
+	SendSMSCode(context.Context, *SendSMSCodeRequest) (*SendSMSCodeResponse, error)
+	VerifySMSCode(context.Context, *VerifySMSCodeRequest) (*VerifySMSCodeResponse, error)
+	SendEmailCode(context.Context, *SendEmailCodeRequest) (*SendEmailCodeResponse, error)
+	VerifyEmailCode(context.Context, *VerifyEmailCodeRequest) (*VerifyEmailCodeResponse, error)
 	mustEmbedUnimplementedThirdGatewayServer()
 }
 
@@ -60,6 +104,18 @@ type UnimplementedThirdGatewayServer struct {
 
 func (UnimplementedThirdGatewayServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
+}
+func (UnimplementedThirdGatewayServer) SendSMSCode(context.Context, *SendSMSCodeRequest) (*SendSMSCodeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SendSMSCode not implemented")
+}
+func (UnimplementedThirdGatewayServer) VerifySMSCode(context.Context, *VerifySMSCodeRequest) (*VerifySMSCodeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method VerifySMSCode not implemented")
+}
+func (UnimplementedThirdGatewayServer) SendEmailCode(context.Context, *SendEmailCodeRequest) (*SendEmailCodeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SendEmailCode not implemented")
+}
+func (UnimplementedThirdGatewayServer) VerifyEmailCode(context.Context, *VerifyEmailCodeRequest) (*VerifyEmailCodeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method VerifyEmailCode not implemented")
 }
 func (UnimplementedThirdGatewayServer) mustEmbedUnimplementedThirdGatewayServer() {}
 
@@ -92,6 +148,78 @@ func _ThirdGateway_Version_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ThirdGateway_SendSMSCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SendSMSCodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdGatewayServer).SendSMSCode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.v1.ThirdGateway/SendSMSCode",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdGatewayServer).SendSMSCode(ctx, req.(*SendSMSCodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ThirdGateway_VerifySMSCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifySMSCodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdGatewayServer).VerifySMSCode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.v1.ThirdGateway/VerifySMSCode",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdGatewayServer).VerifySMSCode(ctx, req.(*VerifySMSCodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ThirdGateway_SendEmailCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SendEmailCodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdGatewayServer).SendEmailCode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.v1.ThirdGateway/SendEmailCode",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdGatewayServer).SendEmailCode(ctx, req.(*SendEmailCodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ThirdGateway_VerifyEmailCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyEmailCodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdGatewayServer).VerifyEmailCode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.v1.ThirdGateway/VerifyEmailCode",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdGatewayServer).VerifyEmailCode(ctx, req.(*VerifyEmailCodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ThirdGateway_ServiceDesc is the grpc.ServiceDesc for ThirdGateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -102,6 +230,22 @@ var ThirdGateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Version",
 			Handler:    _ThirdGateway_Version_Handler,
+		},
+		{
+			MethodName: "SendSMSCode",
+			Handler:    _ThirdGateway_SendSMSCode_Handler,
+		},
+		{
+			MethodName: "VerifySMSCode",
+			Handler:    _ThirdGateway_VerifySMSCode_Handler,
+		},
+		{
+			MethodName: "SendEmailCode",
+			Handler:    _ThirdGateway_SendEmailCode_Handler,
+		},
+		{
+			MethodName: "VerifyEmailCode",
+			Handler:    _ThirdGateway_VerifyEmailCode_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

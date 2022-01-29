@@ -4,9 +4,27 @@
 ## Table of Contents
 
 - [npool/thirdgateway/thirdgateway.proto](#npool/thirdgateway/thirdgateway.proto)
+    - [SendEmailCodeRequest](#third.gateway.v1.SendEmailCodeRequest)
+    - [SendEmailCodeResponse](#third.gateway.v1.SendEmailCodeResponse)
+    - [SendSMSCodeRequest](#third.gateway.v1.SendSMSCodeRequest)
+    - [SendSMSCodeResponse](#third.gateway.v1.SendSMSCodeResponse)
+    - [VerifyEmailCodeRequest](#third.gateway.v1.VerifyEmailCodeRequest)
+    - [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse)
+    - [VerifySMSCodeRequest](#third.gateway.v1.VerifySMSCodeRequest)
+    - [VerifySMSCodeResponse](#third.gateway.v1.VerifySMSCodeResponse)
+  
     - [ThirdGateway](#third.gateway.v1.ThirdGateway)
   
 - [npool/thirdgateway/thirdgateway.proto](#npool/thirdgateway/thirdgateway.proto)
+    - [SendEmailCodeRequest](#third.gateway.v1.SendEmailCodeRequest)
+    - [SendEmailCodeResponse](#third.gateway.v1.SendEmailCodeResponse)
+    - [SendSMSCodeRequest](#third.gateway.v1.SendSMSCodeRequest)
+    - [SendSMSCodeResponse](#third.gateway.v1.SendSMSCodeResponse)
+    - [VerifyEmailCodeRequest](#third.gateway.v1.VerifyEmailCodeRequest)
+    - [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse)
+    - [VerifySMSCodeRequest](#third.gateway.v1.VerifySMSCodeRequest)
+    - [VerifySMSCodeResponse](#third.gateway.v1.VerifySMSCodeResponse)
+  
     - [ThirdGateway](#third.gateway.v1.ThirdGateway)
   
 - [Scalar Value Types](#scalar-value-types)
@@ -19,6 +37,136 @@
 ## npool/thirdgateway/thirdgateway.proto
 
 
+
+<a name="third.gateway.v1.SendEmailCodeRequest"></a>
+
+### SendEmailCodeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| EmailAddress | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.SendEmailCodeResponse"></a>
+
+### SendEmailCodeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.SendSMSCodeRequest"></a>
+
+### SendSMSCodeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| PhoneNO | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.SendSMSCodeResponse"></a>
+
+### SendSMSCodeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.VerifyEmailCodeRequest"></a>
+
+### VerifyEmailCodeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| EmailAddress | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+| Code | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.VerifyEmailCodeResponse"></a>
+
+### VerifyEmailCodeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.VerifySMSCodeRequest"></a>
+
+### VerifySMSCodeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| PhoneNO | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+| Code | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.VerifySMSCodeResponse"></a>
+
+### VerifySMSCodeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
  
 
  
@@ -34,6 +182,10 @@ Service Name
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
+| SendSMSCode | [SendSMSCodeRequest](#third.gateway.v1.SendSMSCodeRequest) | [SendSMSCodeResponse](#third.gateway.v1.SendSMSCodeResponse) |  |
+| VerifySMSCode | [VerifySMSCodeRequest](#third.gateway.v1.VerifySMSCodeRequest) | [VerifySMSCodeResponse](#third.gateway.v1.VerifySMSCodeResponse) |  |
+| SendEmailCode | [SendEmailCodeRequest](#third.gateway.v1.SendEmailCodeRequest) | [SendEmailCodeResponse](#third.gateway.v1.SendEmailCodeResponse) |  |
+| VerifyEmailCode | [VerifyEmailCodeRequest](#third.gateway.v1.VerifyEmailCodeRequest) | [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse) |  |
 
  
 
@@ -45,6 +197,136 @@ Service Name
 ## npool/thirdgateway/thirdgateway.proto
 
 
+
+<a name="third.gateway.v1.SendEmailCodeRequest"></a>
+
+### SendEmailCodeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| EmailAddress | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.SendEmailCodeResponse"></a>
+
+### SendEmailCodeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.SendSMSCodeRequest"></a>
+
+### SendSMSCodeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| PhoneNO | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.SendSMSCodeResponse"></a>
+
+### SendSMSCodeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.VerifyEmailCodeRequest"></a>
+
+### VerifyEmailCodeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| EmailAddress | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+| Code | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.VerifyEmailCodeResponse"></a>
+
+### VerifyEmailCodeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.VerifySMSCodeRequest"></a>
+
+### VerifySMSCodeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| PhoneNO | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+| Code | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.VerifySMSCodeResponse"></a>
+
+### VerifySMSCodeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
  
 
  
@@ -60,6 +342,10 @@ Service Name
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
+| SendSMSCode | [SendSMSCodeRequest](#third.gateway.v1.SendSMSCodeRequest) | [SendSMSCodeResponse](#third.gateway.v1.SendSMSCodeResponse) |  |
+| VerifySMSCode | [VerifySMSCodeRequest](#third.gateway.v1.VerifySMSCodeRequest) | [VerifySMSCodeResponse](#third.gateway.v1.VerifySMSCodeResponse) |  |
+| SendEmailCode | [SendEmailCodeRequest](#third.gateway.v1.SendEmailCodeRequest) | [SendEmailCodeResponse](#third.gateway.v1.SendEmailCodeResponse) |  |
+| VerifyEmailCode | [VerifyEmailCodeRequest](#third.gateway.v1.VerifyEmailCodeRequest) | [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse) |  |
 
  
 
