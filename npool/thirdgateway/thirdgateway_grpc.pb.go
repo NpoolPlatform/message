@@ -26,6 +26,10 @@ const _ = grpc.SupportPackageIsVersion7
 type ThirdGatewayClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
+	CreateAppSMSTemplate(ctx context.Context, in *CreateAppSMSTemplateRequest, opts ...grpc.CallOption) (*CreateAppSMSTemplateResponse, error)
+	UpdateAppSMSTemplate(ctx context.Context, in *UpdateAppSMSTemplateRequest, opts ...grpc.CallOption) (*UpdateAppSMSTemplateResponse, error)
+	CreateAppEmailTemplate(ctx context.Context, in *CreateAppEmailTemplateRequest, opts ...grpc.CallOption) (*CreateAppEmailTemplateResponse, error)
+	UpdateAppEmailTemplate(ctx context.Context, in *UpdateAppEmailTemplateRequest, opts ...grpc.CallOption) (*UpdateAppEmailTemplateResponse, error)
 	SendSMSCode(ctx context.Context, in *SendSMSCodeRequest, opts ...grpc.CallOption) (*SendSMSCodeResponse, error)
 	VerifySMSCode(ctx context.Context, in *VerifySMSCodeRequest, opts ...grpc.CallOption) (*VerifySMSCodeResponse, error)
 	SendEmailCode(ctx context.Context, in *SendEmailCodeRequest, opts ...grpc.CallOption) (*SendEmailCodeResponse, error)
@@ -43,6 +47,42 @@ func NewThirdGatewayClient(cc grpc.ClientConnInterface) ThirdGatewayClient {
 func (c *thirdGatewayClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
 	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/Version", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *thirdGatewayClient) CreateAppSMSTemplate(ctx context.Context, in *CreateAppSMSTemplateRequest, opts ...grpc.CallOption) (*CreateAppSMSTemplateResponse, error) {
+	out := new(CreateAppSMSTemplateResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/CreateAppSMSTemplate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *thirdGatewayClient) UpdateAppSMSTemplate(ctx context.Context, in *UpdateAppSMSTemplateRequest, opts ...grpc.CallOption) (*UpdateAppSMSTemplateResponse, error) {
+	out := new(UpdateAppSMSTemplateResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/UpdateAppSMSTemplate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *thirdGatewayClient) CreateAppEmailTemplate(ctx context.Context, in *CreateAppEmailTemplateRequest, opts ...grpc.CallOption) (*CreateAppEmailTemplateResponse, error) {
+	out := new(CreateAppEmailTemplateResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/CreateAppEmailTemplate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *thirdGatewayClient) UpdateAppEmailTemplate(ctx context.Context, in *UpdateAppEmailTemplateRequest, opts ...grpc.CallOption) (*UpdateAppEmailTemplateResponse, error) {
+	out := new(UpdateAppEmailTemplateResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/UpdateAppEmailTemplate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -91,6 +131,10 @@ func (c *thirdGatewayClient) VerifyEmailCode(ctx context.Context, in *VerifyEmai
 type ThirdGatewayServer interface {
 	// Method Version
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
+	CreateAppSMSTemplate(context.Context, *CreateAppSMSTemplateRequest) (*CreateAppSMSTemplateResponse, error)
+	UpdateAppSMSTemplate(context.Context, *UpdateAppSMSTemplateRequest) (*UpdateAppSMSTemplateResponse, error)
+	CreateAppEmailTemplate(context.Context, *CreateAppEmailTemplateRequest) (*CreateAppEmailTemplateResponse, error)
+	UpdateAppEmailTemplate(context.Context, *UpdateAppEmailTemplateRequest) (*UpdateAppEmailTemplateResponse, error)
 	SendSMSCode(context.Context, *SendSMSCodeRequest) (*SendSMSCodeResponse, error)
 	VerifySMSCode(context.Context, *VerifySMSCodeRequest) (*VerifySMSCodeResponse, error)
 	SendEmailCode(context.Context, *SendEmailCodeRequest) (*SendEmailCodeResponse, error)
@@ -104,6 +148,18 @@ type UnimplementedThirdGatewayServer struct {
 
 func (UnimplementedThirdGatewayServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
+}
+func (UnimplementedThirdGatewayServer) CreateAppSMSTemplate(context.Context, *CreateAppSMSTemplateRequest) (*CreateAppSMSTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppSMSTemplate not implemented")
+}
+func (UnimplementedThirdGatewayServer) UpdateAppSMSTemplate(context.Context, *UpdateAppSMSTemplateRequest) (*UpdateAppSMSTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppSMSTemplate not implemented")
+}
+func (UnimplementedThirdGatewayServer) CreateAppEmailTemplate(context.Context, *CreateAppEmailTemplateRequest) (*CreateAppEmailTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppEmailTemplate not implemented")
+}
+func (UnimplementedThirdGatewayServer) UpdateAppEmailTemplate(context.Context, *UpdateAppEmailTemplateRequest) (*UpdateAppEmailTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppEmailTemplate not implemented")
 }
 func (UnimplementedThirdGatewayServer) SendSMSCode(context.Context, *SendSMSCodeRequest) (*SendSMSCodeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendSMSCode not implemented")
@@ -144,6 +200,78 @@ func _ThirdGateway_Version_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ThirdGatewayServer).Version(ctx, req.(*emptypb.Empty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ThirdGateway_CreateAppSMSTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppSMSTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdGatewayServer).CreateAppSMSTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.v1.ThirdGateway/CreateAppSMSTemplate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdGatewayServer).CreateAppSMSTemplate(ctx, req.(*CreateAppSMSTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ThirdGateway_UpdateAppSMSTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppSMSTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdGatewayServer).UpdateAppSMSTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.v1.ThirdGateway/UpdateAppSMSTemplate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdGatewayServer).UpdateAppSMSTemplate(ctx, req.(*UpdateAppSMSTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ThirdGateway_CreateAppEmailTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppEmailTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdGatewayServer).CreateAppEmailTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.v1.ThirdGateway/CreateAppEmailTemplate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdGatewayServer).CreateAppEmailTemplate(ctx, req.(*CreateAppEmailTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ThirdGateway_UpdateAppEmailTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppEmailTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdGatewayServer).UpdateAppEmailTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.v1.ThirdGateway/UpdateAppEmailTemplate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdGatewayServer).UpdateAppEmailTemplate(ctx, req.(*UpdateAppEmailTemplateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -230,6 +358,22 @@ var ThirdGateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Version",
 			Handler:    _ThirdGateway_Version_Handler,
+		},
+		{
+			MethodName: "CreateAppSMSTemplate",
+			Handler:    _ThirdGateway_CreateAppSMSTemplate_Handler,
+		},
+		{
+			MethodName: "UpdateAppSMSTemplate",
+			Handler:    _ThirdGateway_UpdateAppSMSTemplate_Handler,
+		},
+		{
+			MethodName: "CreateAppEmailTemplate",
+			Handler:    _ThirdGateway_CreateAppEmailTemplate_Handler,
+		},
+		{
+			MethodName: "UpdateAppEmailTemplate",
+			Handler:    _ThirdGateway_UpdateAppEmailTemplate_Handler,
 		},
 		{
 			MethodName: "SendSMSCode",

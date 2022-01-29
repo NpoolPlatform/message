@@ -559,6 +559,564 @@ func (x *VerifyEmailCodeResponse) GetMessage() string {
 	return ""
 }
 
+type AppSMSTemplate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AppID   string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	LangID  string `protobuf:"bytes,20,opt,name=LangID,proto3" json:"LangID,omitempty"`
+	UsedFor string `protobuf:"bytes,30,opt,name=UsedFor,proto3" json:"UsedFor,omitempty"`
+	Subject string `protobuf:"bytes,40,opt,name=Subject,proto3" json:"Subject,omitempty"`
+	Message string `protobuf:"bytes,50,opt,name=Message,proto3" json:"Message,omitempty"`
+}
+
+func (x *AppSMSTemplate) Reset() {
+	*x = AppSMSTemplate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AppSMSTemplate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AppSMSTemplate) ProtoMessage() {}
+
+func (x *AppSMSTemplate) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AppSMSTemplate.ProtoReflect.Descriptor instead.
+func (*AppSMSTemplate) Descriptor() ([]byte, []int) {
+	return file_npool_thirdgateway_thirdgateway_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *AppSMSTemplate) GetAppID() string {
+	if x != nil {
+		return x.AppID
+	}
+	return ""
+}
+
+func (x *AppSMSTemplate) GetLangID() string {
+	if x != nil {
+		return x.LangID
+	}
+	return ""
+}
+
+func (x *AppSMSTemplate) GetUsedFor() string {
+	if x != nil {
+		return x.UsedFor
+	}
+	return ""
+}
+
+func (x *AppSMSTemplate) GetSubject() string {
+	if x != nil {
+		return x.Subject
+	}
+	return ""
+}
+
+func (x *AppSMSTemplate) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+type CreateAppSMSTemplateRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AppSMSTemplate `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *CreateAppSMSTemplateRequest) Reset() {
+	*x = CreateAppSMSTemplateRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateAppSMSTemplateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateAppSMSTemplateRequest) ProtoMessage() {}
+
+func (x *CreateAppSMSTemplateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateAppSMSTemplateRequest.ProtoReflect.Descriptor instead.
+func (*CreateAppSMSTemplateRequest) Descriptor() ([]byte, []int) {
+	return file_npool_thirdgateway_thirdgateway_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *CreateAppSMSTemplateRequest) GetInfo() *AppSMSTemplate {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type CreateAppSMSTemplateResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AppSMSTemplate `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *CreateAppSMSTemplateResponse) Reset() {
+	*x = CreateAppSMSTemplateResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateAppSMSTemplateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateAppSMSTemplateResponse) ProtoMessage() {}
+
+func (x *CreateAppSMSTemplateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateAppSMSTemplateResponse.ProtoReflect.Descriptor instead.
+func (*CreateAppSMSTemplateResponse) Descriptor() ([]byte, []int) {
+	return file_npool_thirdgateway_thirdgateway_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *CreateAppSMSTemplateResponse) GetInfo() *AppSMSTemplate {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type UpdateAppSMSTemplateRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AppSMSTemplate `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateAppSMSTemplateRequest) Reset() {
+	*x = UpdateAppSMSTemplateRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateAppSMSTemplateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateAppSMSTemplateRequest) ProtoMessage() {}
+
+func (x *UpdateAppSMSTemplateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateAppSMSTemplateRequest.ProtoReflect.Descriptor instead.
+func (*UpdateAppSMSTemplateRequest) Descriptor() ([]byte, []int) {
+	return file_npool_thirdgateway_thirdgateway_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *UpdateAppSMSTemplateRequest) GetInfo() *AppSMSTemplate {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type UpdateAppSMSTemplateResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AppSMSTemplate `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateAppSMSTemplateResponse) Reset() {
+	*x = UpdateAppSMSTemplateResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateAppSMSTemplateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateAppSMSTemplateResponse) ProtoMessage() {}
+
+func (x *UpdateAppSMSTemplateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateAppSMSTemplateResponse.ProtoReflect.Descriptor instead.
+func (*UpdateAppSMSTemplateResponse) Descriptor() ([]byte, []int) {
+	return file_npool_thirdgateway_thirdgateway_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *UpdateAppSMSTemplateResponse) GetInfo() *AppSMSTemplate {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type AppEmailTemplate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AppID    string   `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	LangID   string   `protobuf:"bytes,20,opt,name=LangID,proto3" json:"LangID,omitempty"`
+	UsedFor  string   `protobuf:"bytes,30,opt,name=UsedFor,proto3" json:"UsedFor,omitempty"`
+	Sender   string   `protobuf:"bytes,40,opt,name=Sender,proto3" json:"Sender,omitempty"`
+	ReplyTos []string `protobuf:"bytes,50,rep,name=ReplyTos,proto3" json:"ReplyTos,omitempty"`
+	CCTos    []string `protobuf:"bytes,60,rep,name=CCTos,proto3" json:"CCTos,omitempty"`
+	Subject  string   `protobuf:"bytes,70,opt,name=Subject,proto3" json:"Subject,omitempty"`
+	Body     string   `protobuf:"bytes,80,opt,name=Body,proto3" json:"Body,omitempty"`
+}
+
+func (x *AppEmailTemplate) Reset() {
+	*x = AppEmailTemplate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AppEmailTemplate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AppEmailTemplate) ProtoMessage() {}
+
+func (x *AppEmailTemplate) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AppEmailTemplate.ProtoReflect.Descriptor instead.
+func (*AppEmailTemplate) Descriptor() ([]byte, []int) {
+	return file_npool_thirdgateway_thirdgateway_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *AppEmailTemplate) GetAppID() string {
+	if x != nil {
+		return x.AppID
+	}
+	return ""
+}
+
+func (x *AppEmailTemplate) GetLangID() string {
+	if x != nil {
+		return x.LangID
+	}
+	return ""
+}
+
+func (x *AppEmailTemplate) GetUsedFor() string {
+	if x != nil {
+		return x.UsedFor
+	}
+	return ""
+}
+
+func (x *AppEmailTemplate) GetSender() string {
+	if x != nil {
+		return x.Sender
+	}
+	return ""
+}
+
+func (x *AppEmailTemplate) GetReplyTos() []string {
+	if x != nil {
+		return x.ReplyTos
+	}
+	return nil
+}
+
+func (x *AppEmailTemplate) GetCCTos() []string {
+	if x != nil {
+		return x.CCTos
+	}
+	return nil
+}
+
+func (x *AppEmailTemplate) GetSubject() string {
+	if x != nil {
+		return x.Subject
+	}
+	return ""
+}
+
+func (x *AppEmailTemplate) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+type CreateAppEmailTemplateRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AppEmailTemplate `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *CreateAppEmailTemplateRequest) Reset() {
+	*x = CreateAppEmailTemplateRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateAppEmailTemplateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateAppEmailTemplateRequest) ProtoMessage() {}
+
+func (x *CreateAppEmailTemplateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateAppEmailTemplateRequest.ProtoReflect.Descriptor instead.
+func (*CreateAppEmailTemplateRequest) Descriptor() ([]byte, []int) {
+	return file_npool_thirdgateway_thirdgateway_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *CreateAppEmailTemplateRequest) GetInfo() *AppEmailTemplate {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type CreateAppEmailTemplateResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AppEmailTemplate `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *CreateAppEmailTemplateResponse) Reset() {
+	*x = CreateAppEmailTemplateResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateAppEmailTemplateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateAppEmailTemplateResponse) ProtoMessage() {}
+
+func (x *CreateAppEmailTemplateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateAppEmailTemplateResponse.ProtoReflect.Descriptor instead.
+func (*CreateAppEmailTemplateResponse) Descriptor() ([]byte, []int) {
+	return file_npool_thirdgateway_thirdgateway_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *CreateAppEmailTemplateResponse) GetInfo() *AppEmailTemplate {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type UpdateAppEmailTemplateRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AppEmailTemplate `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateAppEmailTemplateRequest) Reset() {
+	*x = UpdateAppEmailTemplateRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateAppEmailTemplateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateAppEmailTemplateRequest) ProtoMessage() {}
+
+func (x *UpdateAppEmailTemplateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateAppEmailTemplateRequest.ProtoReflect.Descriptor instead.
+func (*UpdateAppEmailTemplateRequest) Descriptor() ([]byte, []int) {
+	return file_npool_thirdgateway_thirdgateway_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *UpdateAppEmailTemplateRequest) GetInfo() *AppEmailTemplate {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type UpdateAppEmailTemplateResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AppEmailTemplate `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateAppEmailTemplateResponse) Reset() {
+	*x = UpdateAppEmailTemplateResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateAppEmailTemplateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateAppEmailTemplateResponse) ProtoMessage() {}
+
+func (x *UpdateAppEmailTemplateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateAppEmailTemplateResponse.ProtoReflect.Descriptor instead.
+func (*UpdateAppEmailTemplateResponse) Descriptor() ([]byte, []int) {
+	return file_npool_thirdgateway_thirdgateway_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *UpdateAppEmailTemplateResponse) GetInfo() *AppEmailTemplate {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 var File_npool_thirdgateway_thirdgateway_proto protoreflect.FileDescriptor
 
 var file_npool_thirdgateway_thirdgateway_proto_rawDesc = []byte{
@@ -625,13 +1183,120 @@ var file_npool_thirdgateway_thirdgateway_proto_rawDesc = []byte{
 	0x6c, 0x43, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a,
 	0x04, 0x43, 0x6f, 0x64, 0x65, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x43, 0x6f, 0x64,
 	0x65, 0x12, 0x18, 0x0a, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x14, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x32, 0xec, 0x04, 0x0a, 0x0c,
+	0x28, 0x09, 0x52, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x8c, 0x01, 0x0a, 0x0e,
+	0x41, 0x70, 0x70, 0x53, 0x4d, 0x53, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x12, 0x14,
+	0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41,
+	0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44, 0x18, 0x14,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07,
+	0x55, 0x73, 0x65, 0x64, 0x46, 0x6f, 0x72, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x55,
+	0x73, 0x65, 0x64, 0x46, 0x6f, 0x72, 0x12, 0x18, 0x0a, 0x07, 0x53, 0x75, 0x62, 0x6a, 0x65, 0x63,
+	0x74, 0x18, 0x28, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x53, 0x75, 0x62, 0x6a, 0x65, 0x63, 0x74,
+	0x12, 0x18, 0x0a, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x32, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x53, 0x0a, 0x1b, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x53, 0x4d, 0x53, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61,
+	0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66,
+	0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x2e,
+	0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x53, 0x4d,
+	0x53, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22,
+	0x54, 0x0a, 0x1c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x53, 0x4d, 0x53, 0x54,
+	0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e,
+	0x74, 0x68, 0x69, 0x72, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x76, 0x31,
+	0x2e, 0x41, 0x70, 0x70, 0x53, 0x4d, 0x53, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52,
+	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x53, 0x0a, 0x1b, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41,
+	0x70, 0x70, 0x53, 0x4d, 0x53, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x20, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77,
+	0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x53, 0x4d, 0x53, 0x54, 0x65, 0x6d, 0x70,
+	0x6c, 0x61, 0x74, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x54, 0x0a, 0x1c, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x53, 0x4d, 0x53, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61,
+	0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e,
+	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64,
+	0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x53,
+	0x4d, 0x53, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
+	0x22, 0xd2, 0x01, 0x0a, 0x10, 0x41, 0x70, 0x70, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x54, 0x65, 0x6d,
+	0x70, 0x6c, 0x61, 0x74, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x4c,
+	0x61, 0x6e, 0x67, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x4c, 0x61, 0x6e,
+	0x67, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x55, 0x73, 0x65, 0x64, 0x46, 0x6f, 0x72, 0x18, 0x1e,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x55, 0x73, 0x65, 0x64, 0x46, 0x6f, 0x72, 0x12, 0x16, 0x0a,
+	0x06, 0x53, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x18, 0x28, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x53,
+	0x65, 0x6e, 0x64, 0x65, 0x72, 0x12, 0x1a, 0x0a, 0x08, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x54, 0x6f,
+	0x73, 0x18, 0x32, 0x20, 0x03, 0x28, 0x09, 0x52, 0x08, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x54, 0x6f,
+	0x73, 0x12, 0x14, 0x0a, 0x05, 0x43, 0x43, 0x54, 0x6f, 0x73, 0x18, 0x3c, 0x20, 0x03, 0x28, 0x09,
+	0x52, 0x05, 0x43, 0x43, 0x54, 0x6f, 0x73, 0x12, 0x18, 0x0a, 0x07, 0x53, 0x75, 0x62, 0x6a, 0x65,
+	0x63, 0x74, 0x18, 0x46, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x53, 0x75, 0x62, 0x6a, 0x65, 0x63,
+	0x74, 0x12, 0x12, 0x0a, 0x04, 0x42, 0x6f, 0x64, 0x79, 0x18, 0x50, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x04, 0x42, 0x6f, 0x64, 0x79, 0x22, 0x57, 0x0a, 0x1d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41,
+	0x70, 0x70, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x36, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x2e, 0x67, 0x61, 0x74,
+	0x65, 0x77, 0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x45, 0x6d, 0x61, 0x69, 0x6c,
+	0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x58,
+	0x0a, 0x1e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x45, 0x6d, 0x61, 0x69, 0x6c,
+	0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x36, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22,
+	0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x76,
+	0x31, 0x2e, 0x41, 0x70, 0x70, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61,
+	0x74, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x57, 0x0a, 0x1d, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x41, 0x70, 0x70, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61,
+	0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x36, 0x0a, 0x04, 0x49, 0x6e, 0x66,
+	0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x2e,
+	0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x45, 0x6d,
+	0x61, 0x69, 0x6c, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66,
+	0x6f, 0x22, 0x58, 0x0a, 0x1e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x45, 0x6d,
+	0x61, 0x69, 0x6c, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x36, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x22, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61,
+	0x79, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x54, 0x65, 0x6d,
+	0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xfc, 0x09, 0x0a, 0x0c,
 	0x54, 0x68, 0x69, 0x72, 0x64, 0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12, 0x51, 0x0a, 0x07,
 	0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a,
 	0x19, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x65, 0x72, 0x73, 0x69,
 	0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x13, 0x82, 0xd3, 0xe4, 0x93,
 	0x02, 0x0d, 0x22, 0x08, 0x2f, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x3a, 0x01, 0x2a, 0x12,
+	0x9d, 0x01, 0x0a, 0x14, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x53, 0x4d, 0x53,
+	0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x12, 0x2d, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64,
+	0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x41, 0x70, 0x70, 0x53, 0x4d, 0x53, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x2e,
+	0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x41, 0x70, 0x70, 0x53, 0x4d, 0x53, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x20, 0x22,
+	0x1b, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f,
+	0x73, 0x6d, 0x73, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x3a, 0x01, 0x2a, 0x12,
+	0x9d, 0x01, 0x0a, 0x14, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x53, 0x4d, 0x53,
+	0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x12, 0x2d, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64,
+	0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x41, 0x70, 0x70, 0x53, 0x4d, 0x53, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x2e,
+	0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x41, 0x70, 0x70, 0x53, 0x4d, 0x53, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x20, 0x22,
+	0x1b, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f,
+	0x73, 0x6d, 0x73, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x3a, 0x01, 0x2a, 0x12,
+	0xa5, 0x01, 0x0a, 0x16, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x45, 0x6d, 0x61,
+	0x69, 0x6c, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x12, 0x2f, 0x2e, 0x74, 0x68, 0x69,
+	0x72, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x54, 0x65, 0x6d, 0x70,
+	0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x30, 0x2e, 0x74, 0x68,
+	0x69, 0x72, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x54, 0x65, 0x6d,
+	0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x28, 0x82,
+	0xd3, 0xe4, 0x93, 0x02, 0x22, 0x22, 0x1d, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x2f, 0x74, 0x65, 0x6d, 0x70,
+	0x6c, 0x61, 0x74, 0x65, 0x3a, 0x01, 0x2a, 0x12, 0xa5, 0x01, 0x0a, 0x16, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x41, 0x70, 0x70, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61,
+	0x74, 0x65, 0x12, 0x2f, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77,
+	0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x45,
+	0x6d, 0x61, 0x69, 0x6c, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x30, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65,
+	0x77, 0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70,
+	0x45, 0x6d, 0x61, 0x69, 0x6c, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x28, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x22, 0x22, 0x1d, 0x2f,
+	0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x65, 0x6d,
+	0x61, 0x69, 0x6c, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x3a, 0x01, 0x2a, 0x12,
 	0x78, 0x0a, 0x0b, 0x53, 0x65, 0x6e, 0x64, 0x53, 0x4d, 0x53, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x24,
 	0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x76,
 	0x31, 0x2e, 0x53, 0x65, 0x6e, 0x64, 0x53, 0x4d, 0x53, 0x43, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x71,
@@ -683,35 +1348,61 @@ func file_npool_thirdgateway_thirdgateway_proto_rawDescGZIP() []byte {
 	return file_npool_thirdgateway_thirdgateway_proto_rawDescData
 }
 
-var file_npool_thirdgateway_thirdgateway_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_npool_thirdgateway_thirdgateway_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
 var file_npool_thirdgateway_thirdgateway_proto_goTypes = []interface{}{
-	(*SendSMSCodeRequest)(nil),      // 0: third.gateway.v1.SendSMSCodeRequest
-	(*SendSMSCodeResponse)(nil),     // 1: third.gateway.v1.SendSMSCodeResponse
-	(*VerifySMSCodeRequest)(nil),    // 2: third.gateway.v1.VerifySMSCodeRequest
-	(*VerifySMSCodeResponse)(nil),   // 3: third.gateway.v1.VerifySMSCodeResponse
-	(*SendEmailCodeRequest)(nil),    // 4: third.gateway.v1.SendEmailCodeRequest
-	(*SendEmailCodeResponse)(nil),   // 5: third.gateway.v1.SendEmailCodeResponse
-	(*VerifyEmailCodeRequest)(nil),  // 6: third.gateway.v1.VerifyEmailCodeRequest
-	(*VerifyEmailCodeResponse)(nil), // 7: third.gateway.v1.VerifyEmailCodeResponse
-	(*emptypb.Empty)(nil),           // 8: google.protobuf.Empty
-	(*npool.VersionResponse)(nil),   // 9: npool.v1.VersionResponse
+	(*SendSMSCodeRequest)(nil),             // 0: third.gateway.v1.SendSMSCodeRequest
+	(*SendSMSCodeResponse)(nil),            // 1: third.gateway.v1.SendSMSCodeResponse
+	(*VerifySMSCodeRequest)(nil),           // 2: third.gateway.v1.VerifySMSCodeRequest
+	(*VerifySMSCodeResponse)(nil),          // 3: third.gateway.v1.VerifySMSCodeResponse
+	(*SendEmailCodeRequest)(nil),           // 4: third.gateway.v1.SendEmailCodeRequest
+	(*SendEmailCodeResponse)(nil),          // 5: third.gateway.v1.SendEmailCodeResponse
+	(*VerifyEmailCodeRequest)(nil),         // 6: third.gateway.v1.VerifyEmailCodeRequest
+	(*VerifyEmailCodeResponse)(nil),        // 7: third.gateway.v1.VerifyEmailCodeResponse
+	(*AppSMSTemplate)(nil),                 // 8: third.gateway.v1.AppSMSTemplate
+	(*CreateAppSMSTemplateRequest)(nil),    // 9: third.gateway.v1.CreateAppSMSTemplateRequest
+	(*CreateAppSMSTemplateResponse)(nil),   // 10: third.gateway.v1.CreateAppSMSTemplateResponse
+	(*UpdateAppSMSTemplateRequest)(nil),    // 11: third.gateway.v1.UpdateAppSMSTemplateRequest
+	(*UpdateAppSMSTemplateResponse)(nil),   // 12: third.gateway.v1.UpdateAppSMSTemplateResponse
+	(*AppEmailTemplate)(nil),               // 13: third.gateway.v1.AppEmailTemplate
+	(*CreateAppEmailTemplateRequest)(nil),  // 14: third.gateway.v1.CreateAppEmailTemplateRequest
+	(*CreateAppEmailTemplateResponse)(nil), // 15: third.gateway.v1.CreateAppEmailTemplateResponse
+	(*UpdateAppEmailTemplateRequest)(nil),  // 16: third.gateway.v1.UpdateAppEmailTemplateRequest
+	(*UpdateAppEmailTemplateResponse)(nil), // 17: third.gateway.v1.UpdateAppEmailTemplateResponse
+	(*emptypb.Empty)(nil),                  // 18: google.protobuf.Empty
+	(*npool.VersionResponse)(nil),          // 19: npool.v1.VersionResponse
 }
 var file_npool_thirdgateway_thirdgateway_proto_depIdxs = []int32{
-	8, // 0: third.gateway.v1.ThirdGateway.Version:input_type -> google.protobuf.Empty
-	0, // 1: third.gateway.v1.ThirdGateway.SendSMSCode:input_type -> third.gateway.v1.SendSMSCodeRequest
-	2, // 2: third.gateway.v1.ThirdGateway.VerifySMSCode:input_type -> third.gateway.v1.VerifySMSCodeRequest
-	4, // 3: third.gateway.v1.ThirdGateway.SendEmailCode:input_type -> third.gateway.v1.SendEmailCodeRequest
-	6, // 4: third.gateway.v1.ThirdGateway.VerifyEmailCode:input_type -> third.gateway.v1.VerifyEmailCodeRequest
-	9, // 5: third.gateway.v1.ThirdGateway.Version:output_type -> npool.v1.VersionResponse
-	1, // 6: third.gateway.v1.ThirdGateway.SendSMSCode:output_type -> third.gateway.v1.SendSMSCodeResponse
-	3, // 7: third.gateway.v1.ThirdGateway.VerifySMSCode:output_type -> third.gateway.v1.VerifySMSCodeResponse
-	5, // 8: third.gateway.v1.ThirdGateway.SendEmailCode:output_type -> third.gateway.v1.SendEmailCodeResponse
-	7, // 9: third.gateway.v1.ThirdGateway.VerifyEmailCode:output_type -> third.gateway.v1.VerifyEmailCodeResponse
-	5, // [5:10] is the sub-list for method output_type
-	0, // [0:5] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	8,  // 0: third.gateway.v1.CreateAppSMSTemplateRequest.Info:type_name -> third.gateway.v1.AppSMSTemplate
+	8,  // 1: third.gateway.v1.CreateAppSMSTemplateResponse.Info:type_name -> third.gateway.v1.AppSMSTemplate
+	8,  // 2: third.gateway.v1.UpdateAppSMSTemplateRequest.Info:type_name -> third.gateway.v1.AppSMSTemplate
+	8,  // 3: third.gateway.v1.UpdateAppSMSTemplateResponse.Info:type_name -> third.gateway.v1.AppSMSTemplate
+	13, // 4: third.gateway.v1.CreateAppEmailTemplateRequest.Info:type_name -> third.gateway.v1.AppEmailTemplate
+	13, // 5: third.gateway.v1.CreateAppEmailTemplateResponse.Info:type_name -> third.gateway.v1.AppEmailTemplate
+	13, // 6: third.gateway.v1.UpdateAppEmailTemplateRequest.Info:type_name -> third.gateway.v1.AppEmailTemplate
+	13, // 7: third.gateway.v1.UpdateAppEmailTemplateResponse.Info:type_name -> third.gateway.v1.AppEmailTemplate
+	18, // 8: third.gateway.v1.ThirdGateway.Version:input_type -> google.protobuf.Empty
+	9,  // 9: third.gateway.v1.ThirdGateway.CreateAppSMSTemplate:input_type -> third.gateway.v1.CreateAppSMSTemplateRequest
+	11, // 10: third.gateway.v1.ThirdGateway.UpdateAppSMSTemplate:input_type -> third.gateway.v1.UpdateAppSMSTemplateRequest
+	14, // 11: third.gateway.v1.ThirdGateway.CreateAppEmailTemplate:input_type -> third.gateway.v1.CreateAppEmailTemplateRequest
+	16, // 12: third.gateway.v1.ThirdGateway.UpdateAppEmailTemplate:input_type -> third.gateway.v1.UpdateAppEmailTemplateRequest
+	0,  // 13: third.gateway.v1.ThirdGateway.SendSMSCode:input_type -> third.gateway.v1.SendSMSCodeRequest
+	2,  // 14: third.gateway.v1.ThirdGateway.VerifySMSCode:input_type -> third.gateway.v1.VerifySMSCodeRequest
+	4,  // 15: third.gateway.v1.ThirdGateway.SendEmailCode:input_type -> third.gateway.v1.SendEmailCodeRequest
+	6,  // 16: third.gateway.v1.ThirdGateway.VerifyEmailCode:input_type -> third.gateway.v1.VerifyEmailCodeRequest
+	19, // 17: third.gateway.v1.ThirdGateway.Version:output_type -> npool.v1.VersionResponse
+	10, // 18: third.gateway.v1.ThirdGateway.CreateAppSMSTemplate:output_type -> third.gateway.v1.CreateAppSMSTemplateResponse
+	12, // 19: third.gateway.v1.ThirdGateway.UpdateAppSMSTemplate:output_type -> third.gateway.v1.UpdateAppSMSTemplateResponse
+	15, // 20: third.gateway.v1.ThirdGateway.CreateAppEmailTemplate:output_type -> third.gateway.v1.CreateAppEmailTemplateResponse
+	17, // 21: third.gateway.v1.ThirdGateway.UpdateAppEmailTemplate:output_type -> third.gateway.v1.UpdateAppEmailTemplateResponse
+	1,  // 22: third.gateway.v1.ThirdGateway.SendSMSCode:output_type -> third.gateway.v1.SendSMSCodeResponse
+	3,  // 23: third.gateway.v1.ThirdGateway.VerifySMSCode:output_type -> third.gateway.v1.VerifySMSCodeResponse
+	5,  // 24: third.gateway.v1.ThirdGateway.SendEmailCode:output_type -> third.gateway.v1.SendEmailCodeResponse
+	7,  // 25: third.gateway.v1.ThirdGateway.VerifyEmailCode:output_type -> third.gateway.v1.VerifyEmailCodeResponse
+	17, // [17:26] is the sub-list for method output_type
+	8,  // [8:17] is the sub-list for method input_type
+	8,  // [8:8] is the sub-list for extension type_name
+	8,  // [8:8] is the sub-list for extension extendee
+	0,  // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_npool_thirdgateway_thirdgateway_proto_init() }
@@ -816,6 +1507,126 @@ func file_npool_thirdgateway_thirdgateway_proto_init() {
 				return nil
 			}
 		}
+		file_npool_thirdgateway_thirdgateway_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AppSMSTemplate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_thirdgateway_thirdgateway_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateAppSMSTemplateRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_thirdgateway_thirdgateway_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateAppSMSTemplateResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_thirdgateway_thirdgateway_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateAppSMSTemplateRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_thirdgateway_thirdgateway_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateAppSMSTemplateResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_thirdgateway_thirdgateway_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AppEmailTemplate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_thirdgateway_thirdgateway_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateAppEmailTemplateRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_thirdgateway_thirdgateway_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateAppEmailTemplateResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_thirdgateway_thirdgateway_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateAppEmailTemplateRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_thirdgateway_thirdgateway_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateAppEmailTemplateResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -823,7 +1634,7 @@ func file_npool_thirdgateway_thirdgateway_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_thirdgateway_thirdgateway_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   18,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

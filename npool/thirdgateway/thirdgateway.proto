@@ -18,6 +18,31 @@ service ThirdGateway {
         };
     }
 
+    rpc CreateAppSMSTemplate (CreateAppSMSTemplateRequest) returns (CreateAppSMSTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/sms/template"
+            body: "*"
+        };
+    }
+    rpc UpdateAppSMSTemplate (UpdateAppSMSTemplateRequest) returns (UpdateAppSMSTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/sms/template"
+            body: "*"
+        };
+    }
+    rpc CreateAppEmailTemplate (CreateAppEmailTemplateRequest) returns (CreateAppEmailTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/email/template"
+            body: "*"
+        };
+    }
+    rpc UpdateAppEmailTemplate (UpdateAppEmailTemplateRequest) returns (UpdateAppEmailTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/email/template"
+            body: "*"
+        };
+    }
+
     rpc SendSMSCode (SendSMSCodeRequest) returns (SendSMSCodeResponse) {
         option (google.api.http) = {
             post: "/v1/send/sms/code",
@@ -96,3 +121,55 @@ message VerifyEmailCodeResponse {
     int32 Code = 10;
     string Message = 20;
 }
+
+message AppSMSTemplate {
+    string AppID = 10;
+    string LangID = 20;
+    string UsedFor = 30;
+    string Subject = 40;
+    string Message = 50;
+}
+
+message CreateAppSMSTemplateRequest {
+    AppSMSTemplate Info = 10;
+}
+
+message CreateAppSMSTemplateResponse {
+    AppSMSTemplate Info = 10;
+}
+
+message UpdateAppSMSTemplateRequest {
+    AppSMSTemplate Info = 10;
+}
+
+message UpdateAppSMSTemplateResponse {
+    AppSMSTemplate Info = 10;
+}
+
+message AppEmailTemplate {
+    string AppID = 10;
+    string LangID = 20;
+    string UsedFor = 30;
+    string Sender = 40;
+    repeated string ReplyTos = 50;
+    repeated string CCTos = 60;
+    string Subject = 70;
+    string Body = 80;
+}
+
+message CreateAppEmailTemplateRequest {
+    AppEmailTemplate Info = 10;
+}
+
+message CreateAppEmailTemplateResponse {
+    AppEmailTemplate Info = 10;
+}
+
+message UpdateAppEmailTemplateRequest {
+    AppEmailTemplate Info = 10;
+}
+
+message UpdateAppEmailTemplateResponse {
+    AppEmailTemplate Info = 10;
+}
+
