@@ -576,15 +576,6 @@ export type GetAppUserInfoResponse = {
   info?: AppUserInfo
 }
 
-export type GetAppUserInfosRequest = {
-  pageInfo?: NpoolV1Npool.PageInfo
-}
-
-export type GetAppUserInfosResponse = {
-  infos?: AppUserInfo[]
-  total?: number
-}
-
 export type GetAppUserInfosByAppRequest = {
   appID?: string
   pageInfo?: NpoolV1Npool.PageInfo
@@ -788,9 +779,6 @@ export class AppUserManager {
   }
   static GetAppUserInfo(req: GetAppUserInfoRequest, initReq?: fm.InitReq): Promise<GetAppUserInfoResponse> {
     return fm.fetchReq<GetAppUserInfoRequest, GetAppUserInfoResponse>(`/v1/get/app/userinfo`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetAppUserInfos(req: GetAppUserInfosRequest, initReq?: fm.InitReq): Promise<GetAppUserInfosResponse> {
-    return fm.fetchReq<GetAppUserInfosRequest, GetAppUserInfosResponse>(`/v1/get/app/userinfos`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppUserInfosByApp(req: GetAppUserInfosByAppRequest, initReq?: fm.InitReq): Promise<GetAppUserInfosByAppResponse> {
     return fm.fetchReq<GetAppUserInfosByAppRequest, GetAppUserInfosByAppResponse>(`/v1/get/app/userinfos/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})

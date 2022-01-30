@@ -367,12 +367,6 @@ service AppUserManager {
             body: "*"
         };
     }
-    rpc GetAppUserInfos (GetAppUserInfosRequest) returns (GetAppUserInfosResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/userinfos"
-            body: "*"
-        };
-    }
     rpc GetAppUserInfosByApp (GetAppUserInfosByAppRequest) returns (GetAppUserInfosByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/userinfos/by/app"
@@ -956,15 +950,6 @@ message GetAppUserInfoRequest {
 
 message GetAppUserInfoResponse {
     AppUserInfo Info = 10;
-}
-
-message GetAppUserInfosRequest {
-    npool.v1.PageInfo PageInfo = 10;
-}
-
-message GetAppUserInfosResponse {
-    repeated AppUserInfo Infos = 10;
-    uint32 Total = 20;
 }
 
 message GetAppUserInfosByAppRequest {

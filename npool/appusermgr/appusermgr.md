@@ -90,8 +90,6 @@
     - [GetAppUserInfoResponse](#app.user.manager.v1.GetAppUserInfoResponse)
     - [GetAppUserInfosByAppRequest](#app.user.manager.v1.GetAppUserInfosByAppRequest)
     - [GetAppUserInfosByAppResponse](#app.user.manager.v1.GetAppUserInfosByAppResponse)
-    - [GetAppUserInfosRequest](#app.user.manager.v1.GetAppUserInfosRequest)
-    - [GetAppUserInfosResponse](#app.user.manager.v1.GetAppUserInfosResponse)
     - [GetAppUserRequest](#app.user.manager.v1.GetAppUserRequest)
     - [GetAppUserResponse](#app.user.manager.v1.GetAppUserResponse)
     - [GetAppUserSecretByAppUserRequest](#app.user.manager.v1.GetAppUserSecretByAppUserRequest)
@@ -226,8 +224,6 @@
     - [GetAppUserInfoResponse](#app.user.manager.v1.GetAppUserInfoResponse)
     - [GetAppUserInfosByAppRequest](#app.user.manager.v1.GetAppUserInfosByAppRequest)
     - [GetAppUserInfosByAppResponse](#app.user.manager.v1.GetAppUserInfosByAppResponse)
-    - [GetAppUserInfosRequest](#app.user.manager.v1.GetAppUserInfosRequest)
-    - [GetAppUserInfosResponse](#app.user.manager.v1.GetAppUserInfosResponse)
     - [GetAppUserRequest](#app.user.manager.v1.GetAppUserRequest)
     - [GetAppUserResponse](#app.user.manager.v1.GetAppUserResponse)
     - [GetAppUserSecretByAppUserRequest](#app.user.manager.v1.GetAppUserSecretByAppUserRequest)
@@ -1631,37 +1627,6 @@
 
 
 
-<a name="app.user.manager.v1.GetAppUserInfosRequest"></a>
-
-### GetAppUserInfosRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
-
-
-
-
-
-
-<a name="app.user.manager.v1.GetAppUserInfosResponse"></a>
-
-### GetAppUserInfosResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Infos | [AppUserInfo](#app.user.manager.v1.AppUserInfo) | repeated |  |
-| Total | [uint32](#uint32) |  |  |
-
-
-
-
-
-
 <a name="app.user.manager.v1.GetAppUserRequest"></a>
 
 ### GetAppUserRequest
@@ -2400,7 +2365,6 @@
 | GetUserRolesByAppUser | [GetUserRolesByAppUserRequest](#app.user.manager.v1.GetUserRolesByAppUserRequest) | [GetUserRolesByAppUserResponse](#app.user.manager.v1.GetUserRolesByAppUserResponse) |  |
 | DeleteAppRoleUser | [DeleteAppRoleUserRequest](#app.user.manager.v1.DeleteAppRoleUserRequest) | [DeleteAppRoleUserResponse](#app.user.manager.v1.DeleteAppRoleUserResponse) |  |
 | GetAppUserInfo | [GetAppUserInfoRequest](#app.user.manager.v1.GetAppUserInfoRequest) | [GetAppUserInfoResponse](#app.user.manager.v1.GetAppUserInfoResponse) |  |
-| GetAppUserInfos | [GetAppUserInfosRequest](#app.user.manager.v1.GetAppUserInfosRequest) | [GetAppUserInfosResponse](#app.user.manager.v1.GetAppUserInfosResponse) |  |
 | GetAppUserInfosByApp | [GetAppUserInfosByAppRequest](#app.user.manager.v1.GetAppUserInfosByAppRequest) | [GetAppUserInfosByAppResponse](#app.user.manager.v1.GetAppUserInfosByAppResponse) |  |
 | CreateAppUserWithSecret | [CreateAppUserWithSecretRequest](#app.user.manager.v1.CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app.user.manager.v1.CreateAppUserWithSecretResponse) |  |
 
@@ -3760,37 +3724,6 @@
 
 
 
-<a name="app.user.manager.v1.GetAppUserInfosRequest"></a>
-
-### GetAppUserInfosRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
-
-
-
-
-
-
-<a name="app.user.manager.v1.GetAppUserInfosResponse"></a>
-
-### GetAppUserInfosResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Infos | [AppUserInfo](#app.user.manager.v1.AppUserInfo) | repeated |  |
-| Total | [uint32](#uint32) |  |  |
-
-
-
-
-
-
 <a name="app.user.manager.v1.GetAppUserRequest"></a>
 
 ### GetAppUserRequest
@@ -4529,7 +4462,6 @@
 | GetUserRolesByAppUser | [GetUserRolesByAppUserRequest](#app.user.manager.v1.GetUserRolesByAppUserRequest) | [GetUserRolesByAppUserResponse](#app.user.manager.v1.GetUserRolesByAppUserResponse) |  |
 | DeleteAppRoleUser | [DeleteAppRoleUserRequest](#app.user.manager.v1.DeleteAppRoleUserRequest) | [DeleteAppRoleUserResponse](#app.user.manager.v1.DeleteAppRoleUserResponse) |  |
 | GetAppUserInfo | [GetAppUserInfoRequest](#app.user.manager.v1.GetAppUserInfoRequest) | [GetAppUserInfoResponse](#app.user.manager.v1.GetAppUserInfoResponse) |  |
-| GetAppUserInfos | [GetAppUserInfosRequest](#app.user.manager.v1.GetAppUserInfosRequest) | [GetAppUserInfosResponse](#app.user.manager.v1.GetAppUserInfosResponse) |  |
 | GetAppUserInfosByApp | [GetAppUserInfosByAppRequest](#app.user.manager.v1.GetAppUserInfosByAppRequest) | [GetAppUserInfosByAppResponse](#app.user.manager.v1.GetAppUserInfosByAppResponse) |  |
 | CreateAppUserWithSecret | [CreateAppUserWithSecretRequest](#app.user.manager.v1.CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app.user.manager.v1.CreateAppUserWithSecretResponse) |  |
 
