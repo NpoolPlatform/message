@@ -148,11 +148,12 @@ message VerifyEmailCodeResponse {
 }
 
 message AppSMSTemplate {
-    string AppID = 10;
-    string LangID = 20;
-    string UsedFor = 30;
-    string Subject = 40;
-    string Message = 50;
+    string ID = 10;
+    string AppID = 20;
+    string LangID = 30;
+    string UsedFor = 40;
+    string Subject = 50;
+    string Message = 60;
 }
 
 message CreateAppSMSTemplateRequest {
@@ -190,14 +191,15 @@ message GetAppSMSTemplateByAppLangUsedForResponse {
 }
 
 message AppEmailTemplate {
-    string AppID = 10;
-    string LangID = 20;
-    string UsedFor = 30;
-    string Sender = 40;
-    repeated string ReplyTos = 50;
-    repeated string CCTos = 60;
-    string Subject = 70;
-    string Body = 80;
+    string ID = 10;
+    string AppID = 20;
+    string LangID = 30;
+    string UsedFor = 40;
+    string Sender = 50;
+    repeated string ReplyTos = 60;
+    repeated string CCTos = 70;
+    string Subject = 80;
+    string Body = 90;
 }
 
 message CreateAppEmailTemplateRequest {

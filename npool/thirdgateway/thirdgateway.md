@@ -82,6 +82,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | LangID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
@@ -104,6 +105,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | LangID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
@@ -545,6 +547,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | LangID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
@@ -567,6 +570,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | LangID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |

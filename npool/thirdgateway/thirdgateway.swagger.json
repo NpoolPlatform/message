@@ -466,6 +466,9 @@
     "v1AppEmailTemplate": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "AppID": {
           "type": "string"
         },
@@ -501,6 +504,9 @@
     "v1AppSMSTemplate": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "AppID": {
           "type": "string"
         },

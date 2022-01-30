@@ -60,6 +60,7 @@ export type VerifyEmailCodeResponse = {
 }
 
 export type AppSMSTemplate = {
+  id?: string
   appID?: string
   langID?: string
   usedFor?: string
@@ -102,6 +103,7 @@ export type GetAppSMSTemplateByAppLangUsedForResponse = {
 }
 
 export type AppEmailTemplate = {
+  id?: string
   appID?: string
   langID?: string
   usedFor?: string
