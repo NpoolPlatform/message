@@ -641,6 +641,9 @@
         "UserID": {
           "type": "string"
         },
+        "LangID": {
+          "type": "string"
+        },
         "EmailAddress": {
           "type": "string"
         },
@@ -764,9 +767,6 @@
           "type": "string"
         },
         "UserID": {
-          "type": "string"
-        },
-        "LangID": {
           "type": "string"
         },
         "PhoneNO": {

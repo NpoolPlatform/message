@@ -111,10 +111,9 @@ message SendSMSCodeResponse {
 message VerifySMSCodeRequest {
     string AppID = 10;
     string UserID = 20;
-    string LangID = 30;
-    string PhoneNO = 40;
-    string UsedFor = 50;
-    string Code = 60;
+    string PhoneNO = 30;
+    string UsedFor = 40;
+    string Code = 50;
 }
 
 message VerifySMSCodeResponse {
@@ -125,8 +124,9 @@ message VerifySMSCodeResponse {
 message SendEmailCodeRequest {
     string AppID = 10;
     string UserID = 20;
-    string EmailAddress = 30;
-    string UsedFor = 40;
+    string LangID = 30;
+    string EmailAddress = 40;
+    string UsedFor = 50;
 }
 
 message SendEmailCodeResponse {
@@ -137,9 +137,9 @@ message SendEmailCodeResponse {
 message VerifyEmailCodeRequest {
     string AppID = 10;
     string UserID = 20;
-    string EmailAddress = 30;
-    string UsedFor = 40;
-    string Code = 50;
+    string EmailAddress = 40;
+    string UsedFor = 50;
+    string Code = 60;
 }
 
 message VerifyEmailCodeResponse {

@@ -23,7 +23,6 @@ export type SendSMSCodeResponse = {
 export type VerifySMSCodeRequest = {
   appID?: string
   userID?: string
-  langID?: string
   phoneNO?: string
   usedFor?: string
   code?: string
@@ -37,6 +36,7 @@ export type VerifySMSCodeResponse = {
 export type SendEmailCodeRequest = {
   appID?: string
   userID?: string
+  langID?: string
   emailAddress?: string
   usedFor?: string
 }
