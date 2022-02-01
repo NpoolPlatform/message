@@ -6,10 +6,7 @@
 
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
-export type VersionResponse = {
-  info?: string
-}
-
+import * as NpoolV1Npool from "../npool.pb"
 export type Lang = {
   id?: string
   lang?: string
@@ -99,8 +96,8 @@ export type GetMessageByLangIDMessageIDResponse = {
 }
 
 export class Internationalization {
-  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static AddLang(req: AddLangRequest, initReq?: fm.InitReq): Promise<AddLangResponse> {
     return fm.fetchReq<AddLangRequest, AddLangResponse>(`/v1/add/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})

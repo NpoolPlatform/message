@@ -8,6 +8,7 @@ package npool
 
 import (
 	context "context"
+	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -24,7 +25,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type InternationalizationClient interface {
 	// Method Version
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	AddLang(ctx context.Context, in *AddLangRequest, opts ...grpc.CallOption) (*AddLangResponse, error)
 	UpdateLang(ctx context.Context, in *UpdateLangRequest, opts ...grpc.CallOption) (*UpdateLangResponse, error)
 	GetLangs(ctx context.Context, in *GetLangsRequest, opts ...grpc.CallOption) (*GetLangsResponse, error)
@@ -44,8 +45,8 @@ func NewInternationalizationClient(cc grpc.ClientConnInterface) Internationaliza
 	return &internationalizationClient{cc}
 }
 
-func (c *internationalizationClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error) {
-	out := new(VersionResponse)
+func (c *internationalizationClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+	out := new(npool.VersionResponse)
 	err := c.cc.Invoke(ctx, "/internationalization.v1.Internationalization/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -139,7 +140,7 @@ func (c *internationalizationClient) GetMessageByLangIDMessageID(ctx context.Con
 // for forward compatibility
 type InternationalizationServer interface {
 	// Method Version
-	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
+	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	AddLang(context.Context, *AddLangRequest) (*AddLangResponse, error)
 	UpdateLang(context.Context, *UpdateLangRequest) (*UpdateLangResponse, error)
 	GetLangs(context.Context, *GetLangsRequest) (*GetLangsResponse, error)
@@ -156,7 +157,7 @@ type InternationalizationServer interface {
 type UnimplementedInternationalizationServer struct {
 }
 
-func (UnimplementedInternationalizationServer) Version(context.Context, *emptypb.Empty) (*VersionResponse, error) {
+func (UnimplementedInternationalizationServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
 func (UnimplementedInternationalizationServer) AddLang(context.Context, *AddLangRequest) (*AddLangResponse, error) {

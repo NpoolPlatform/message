@@ -24,7 +24,6 @@
     - [UpdateMessageResponse](#internationalization.v1.UpdateMessageResponse)
     - [UpdateMessagesRequest](#internationalization.v1.UpdateMessagesRequest)
     - [UpdateMessagesResponse](#internationalization.v1.UpdateMessagesResponse)
-    - [VersionResponse](#internationalization.v1.VersionResponse)
   
     - [Internationalization](#internationalization.v1.Internationalization)
   
@@ -49,7 +48,6 @@
     - [UpdateMessageResponse](#internationalization.v1.UpdateMessageResponse)
     - [UpdateMessagesRequest](#internationalization.v1.UpdateMessagesRequest)
     - [UpdateMessagesResponse](#internationalization.v1.UpdateMessagesResponse)
-    - [VersionResponse](#internationalization.v1.VersionResponse)
   
     - [Internationalization](#internationalization.v1.Internationalization)
   
@@ -367,21 +365,6 @@
 
 
 
-
-<a name="internationalization.v1.VersionResponse"></a>
-
-### VersionResponse
-request body and response
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [string](#string) |  |  |
-
-
-
-
-
  
 
  
@@ -396,7 +379,7 @@ Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#internationalization.v1.VersionResponse) | Method Version |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
 | AddLang | [AddLangRequest](#internationalization.v1.AddLangRequest) | [AddLangResponse](#internationalization.v1.AddLangResponse) |  |
 | UpdateLang | [UpdateLangRequest](#internationalization.v1.UpdateLangRequest) | [UpdateLangResponse](#internationalization.v1.UpdateLangResponse) |  |
 | GetLangs | [GetLangsRequest](#internationalization.v1.GetLangsRequest) | [GetLangsResponse](#internationalization.v1.GetLangsResponse) |  |
@@ -721,21 +704,6 @@ Service Name
 
 
 
-
-<a name="internationalization.v1.VersionResponse"></a>
-
-### VersionResponse
-request body and response
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [string](#string) |  |  |
-
-
-
-
-
  
 
  
@@ -750,7 +718,7 @@ Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#internationalization.v1.VersionResponse) | Method Version |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
 | AddLang | [AddLangRequest](#internationalization.v1.AddLangRequest) | [AddLangResponse](#internationalization.v1.AddLangResponse) |  |
 | UpdateLang | [UpdateLangRequest](#internationalization.v1.UpdateLangRequest) | [UpdateLangResponse](#internationalization.v1.UpdateLangResponse) |  |
 | GetLangs | [GetLangsRequest](#internationalization.v1.GetLangsRequest) | [GetLangsResponse](#internationalization.v1.GetLangsResponse) |  |
