@@ -24,6 +24,12 @@ service Internationalization {
             body: "*"
         };
     }
+    rpc GetLang(GetLangRequest) returns (GetLangResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/lang"
+            body: "*"
+        };
+    }
     rpc UpdateLang(UpdateLangRequest) returns (UpdateLangResponse) {
         option (google.api.http) = {
             post: "/v1/update/lang"
@@ -112,6 +118,14 @@ message AddLangRequest {
 }
 
 message AddLangResponse {
+    Lang Info = 10;
+}
+
+message GetLangRequest {
+    string ID = 10;
+}
+
+message GetLangResponse {
     Lang Info = 10;
 }
 

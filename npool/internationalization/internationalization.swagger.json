@@ -235,6 +235,38 @@
         ]
       }
     },
+    "/v1/get/lang": {
+      "post": {
+        "operationId": "Internationalization_GetLang",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetLangResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetLangRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
     "/v1/get/langs": {
       "post": {
         "operationId": "Internationalization_GetLangs",
@@ -641,6 +673,22 @@
           "items": {
             "$ref": "#/definitions/v1AppLang"
           }
+        }
+      }
+    },
+    "v1GetLangRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetLangResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Lang"
         }
       }
     },

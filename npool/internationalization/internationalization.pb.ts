@@ -22,6 +22,14 @@ export type AddLangResponse = {
   info?: Lang
 }
 
+export type GetLangRequest = {
+  id?: string
+}
+
+export type GetLangResponse = {
+  info?: Lang
+}
+
 export type UpdateLangRequest = {
   info?: Lang
 }
@@ -144,6 +152,9 @@ export class Internationalization {
   }
   static AddLang(req: AddLangRequest, initReq?: fm.InitReq): Promise<AddLangResponse> {
     return fm.fetchReq<AddLangRequest, AddLangResponse>(`/v1/add/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetLang(req: GetLangRequest, initReq?: fm.InitReq): Promise<GetLangResponse> {
+    return fm.fetchReq<GetLangRequest, GetLangResponse>(`/v1/get/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateLang(req: UpdateLangRequest, initReq?: fm.InitReq): Promise<UpdateLangResponse> {
     return fm.fetchReq<UpdateLangRequest, UpdateLangResponse>(`/v1/update/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
