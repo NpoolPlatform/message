@@ -6,10 +6,17 @@
 - [npool/internationalization/internationalization.proto](#npool/internationalization/internationalization.proto)
     - [AddLangRequest](#internationalization.v1.AddLangRequest)
     - [AddLangResponse](#internationalization.v1.AddLangResponse)
+    - [AppLang](#internationalization.v1.AppLang)
+    - [CreateAppLangRequest](#internationalization.v1.CreateAppLangRequest)
+    - [CreateAppLangResponse](#internationalization.v1.CreateAppLangResponse)
     - [CreateMessageRequest](#internationalization.v1.CreateMessageRequest)
     - [CreateMessageResponse](#internationalization.v1.CreateMessageResponse)
     - [CreateMessagesRequest](#internationalization.v1.CreateMessagesRequest)
     - [CreateMessagesResponse](#internationalization.v1.CreateMessagesResponse)
+    - [GetAppLangRequest](#internationalization.v1.GetAppLangRequest)
+    - [GetAppLangResponse](#internationalization.v1.GetAppLangResponse)
+    - [GetAppLangsByAppRequest](#internationalization.v1.GetAppLangsByAppRequest)
+    - [GetAppLangsByAppResponse](#internationalization.v1.GetAppLangsByAppResponse)
     - [GetLangsByAppRequest](#internationalization.v1.GetLangsByAppRequest)
     - [GetLangsByAppResponse](#internationalization.v1.GetLangsByAppResponse)
     - [GetLangsRequest](#internationalization.v1.GetLangsRequest)
@@ -32,10 +39,17 @@
 - [npool/internationalization/internationalization.proto](#npool/internationalization/internationalization.proto)
     - [AddLangRequest](#internationalization.v1.AddLangRequest)
     - [AddLangResponse](#internationalization.v1.AddLangResponse)
+    - [AppLang](#internationalization.v1.AppLang)
+    - [CreateAppLangRequest](#internationalization.v1.CreateAppLangRequest)
+    - [CreateAppLangResponse](#internationalization.v1.CreateAppLangResponse)
     - [CreateMessageRequest](#internationalization.v1.CreateMessageRequest)
     - [CreateMessageResponse](#internationalization.v1.CreateMessageResponse)
     - [CreateMessagesRequest](#internationalization.v1.CreateMessagesRequest)
     - [CreateMessagesResponse](#internationalization.v1.CreateMessagesResponse)
+    - [GetAppLangRequest](#internationalization.v1.GetAppLangRequest)
+    - [GetAppLangResponse](#internationalization.v1.GetAppLangResponse)
+    - [GetAppLangsByAppRequest](#internationalization.v1.GetAppLangsByAppRequest)
+    - [GetAppLangsByAppResponse](#internationalization.v1.GetAppLangsByAppResponse)
     - [GetLangsByAppRequest](#internationalization.v1.GetLangsByAppRequest)
     - [GetLangsByAppResponse](#internationalization.v1.GetLangsByAppResponse)
     - [GetLangsRequest](#internationalization.v1.GetLangsRequest)
@@ -96,6 +110,53 @@
 
 
 
+<a name="internationalization.v1.AppLang"></a>
+
+### AppLang
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="internationalization.v1.CreateAppLangRequest"></a>
+
+### CreateAppLangRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppLang](#internationalization.v1.AppLang) |  |  |
+
+
+
+
+
+
+<a name="internationalization.v1.CreateAppLangResponse"></a>
+
+### CreateAppLangResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppLang](#internationalization.v1.AppLang) |  |  |
+
+
+
+
+
+
 <a name="internationalization.v1.CreateMessageRequest"></a>
 
 ### CreateMessageRequest
@@ -150,6 +211,66 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [Message](#internationalization.v1.Message) | repeated |  |
+
+
+
+
+
+
+<a name="internationalization.v1.GetAppLangRequest"></a>
+
+### GetAppLangRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="internationalization.v1.GetAppLangResponse"></a>
+
+### GetAppLangResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppLang](#internationalization.v1.AppLang) |  |  |
+
+
+
+
+
+
+<a name="internationalization.v1.GetAppLangsByAppRequest"></a>
+
+### GetAppLangsByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="internationalization.v1.GetAppLangsByAppResponse"></a>
+
+### GetAppLangsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AppLang](#internationalization.v1.AppLang) | repeated |  |
 
 
 
@@ -418,6 +539,9 @@ Service Name
 | UpdateLang | [UpdateLangRequest](#internationalization.v1.UpdateLangRequest) | [UpdateLangResponse](#internationalization.v1.UpdateLangResponse) |  |
 | GetLangsByApp | [GetLangsByAppRequest](#internationalization.v1.GetLangsByAppRequest) | [GetLangsByAppResponse](#internationalization.v1.GetLangsByAppResponse) |  |
 | GetLangs | [GetLangsRequest](#internationalization.v1.GetLangsRequest) | [GetLangsResponse](#internationalization.v1.GetLangsResponse) |  |
+| CreateAppLang | [CreateAppLangRequest](#internationalization.v1.CreateAppLangRequest) | [CreateAppLangResponse](#internationalization.v1.CreateAppLangResponse) |  |
+| GetAppLang | [GetAppLangRequest](#internationalization.v1.GetAppLangRequest) | [GetAppLangResponse](#internationalization.v1.GetAppLangResponse) |  |
+| GetAppLangsByApp | [GetAppLangsByAppRequest](#internationalization.v1.GetAppLangsByAppRequest) | [GetAppLangsByAppResponse](#internationalization.v1.GetAppLangsByAppResponse) |  |
 | CreateMessage | [CreateMessageRequest](#internationalization.v1.CreateMessageRequest) | [CreateMessageResponse](#internationalization.v1.CreateMessageResponse) |  |
 | CreateMessages | [CreateMessagesRequest](#internationalization.v1.CreateMessagesRequest) | [CreateMessagesResponse](#internationalization.v1.CreateMessagesResponse) |  |
 | UpdateMessage | [UpdateMessageRequest](#internationalization.v1.UpdateMessageRequest) | [UpdateMessageResponse](#internationalization.v1.UpdateMessageResponse) |  |
@@ -466,6 +590,53 @@ Service Name
 
 
 
+<a name="internationalization.v1.AppLang"></a>
+
+### AppLang
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="internationalization.v1.CreateAppLangRequest"></a>
+
+### CreateAppLangRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppLang](#internationalization.v1.AppLang) |  |  |
+
+
+
+
+
+
+<a name="internationalization.v1.CreateAppLangResponse"></a>
+
+### CreateAppLangResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppLang](#internationalization.v1.AppLang) |  |  |
+
+
+
+
+
+
 <a name="internationalization.v1.CreateMessageRequest"></a>
 
 ### CreateMessageRequest
@@ -520,6 +691,66 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [Message](#internationalization.v1.Message) | repeated |  |
+
+
+
+
+
+
+<a name="internationalization.v1.GetAppLangRequest"></a>
+
+### GetAppLangRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="internationalization.v1.GetAppLangResponse"></a>
+
+### GetAppLangResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppLang](#internationalization.v1.AppLang) |  |  |
+
+
+
+
+
+
+<a name="internationalization.v1.GetAppLangsByAppRequest"></a>
+
+### GetAppLangsByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="internationalization.v1.GetAppLangsByAppResponse"></a>
+
+### GetAppLangsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AppLang](#internationalization.v1.AppLang) | repeated |  |
 
 
 
@@ -788,6 +1019,9 @@ Service Name
 | UpdateLang | [UpdateLangRequest](#internationalization.v1.UpdateLangRequest) | [UpdateLangResponse](#internationalization.v1.UpdateLangResponse) |  |
 | GetLangsByApp | [GetLangsByAppRequest](#internationalization.v1.GetLangsByAppRequest) | [GetLangsByAppResponse](#internationalization.v1.GetLangsByAppResponse) |  |
 | GetLangs | [GetLangsRequest](#internationalization.v1.GetLangsRequest) | [GetLangsResponse](#internationalization.v1.GetLangsResponse) |  |
+| CreateAppLang | [CreateAppLangRequest](#internationalization.v1.CreateAppLangRequest) | [CreateAppLangResponse](#internationalization.v1.CreateAppLangResponse) |  |
+| GetAppLang | [GetAppLangRequest](#internationalization.v1.GetAppLangRequest) | [GetAppLangResponse](#internationalization.v1.GetAppLangResponse) |  |
+| GetAppLangsByApp | [GetAppLangsByAppRequest](#internationalization.v1.GetAppLangsByAppRequest) | [GetAppLangsByAppResponse](#internationalization.v1.GetAppLangsByAppResponse) |  |
 | CreateMessage | [CreateMessageRequest](#internationalization.v1.CreateMessageRequest) | [CreateMessageResponse](#internationalization.v1.CreateMessageResponse) |  |
 | CreateMessages | [CreateMessagesRequest](#internationalization.v1.CreateMessagesRequest) | [CreateMessagesResponse](#internationalization.v1.CreateMessagesResponse) |  |
 | UpdateMessage | [UpdateMessageRequest](#internationalization.v1.UpdateMessageRequest) | [UpdateMessageResponse](#internationalization.v1.UpdateMessageResponse) |  |

@@ -103,6 +103,36 @@ export type GetMessageByLangIDMessageIDResponse = {
   info?: Message
 }
 
+export type AppLang = {
+  id?: string
+  appID?: string
+  langID?: string
+}
+
+export type CreateAppLangRequest = {
+  info?: AppLang
+}
+
+export type CreateAppLangResponse = {
+  info?: AppLang
+}
+
+export type GetAppLangRequest = {
+  id?: string
+}
+
+export type GetAppLangResponse = {
+  info?: AppLang
+}
+
+export type GetAppLangsByAppRequest = {
+  appID?: string
+}
+
+export type GetAppLangsByAppResponse = {
+  infos?: AppLang[]
+}
+
 export class Internationalization {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -118,6 +148,15 @@ export class Internationalization {
   }
   static GetLangs(req: GetLangsRequest, initReq?: fm.InitReq): Promise<GetLangsResponse> {
     return fm.fetchReq<GetLangsRequest, GetLangsResponse>(`/v1/get/langs`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppLang(req: CreateAppLangRequest, initReq?: fm.InitReq): Promise<CreateAppLangResponse> {
+    return fm.fetchReq<CreateAppLangRequest, CreateAppLangResponse>(`/v1/create/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppLang(req: GetAppLangRequest, initReq?: fm.InitReq): Promise<GetAppLangResponse> {
+    return fm.fetchReq<GetAppLangRequest, GetAppLangResponse>(`/v1/get/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppLangsByApp(req: GetAppLangsByAppRequest, initReq?: fm.InitReq): Promise<GetAppLangsByAppResponse> {
+    return fm.fetchReq<GetAppLangsByAppRequest, GetAppLangsByAppResponse>(`/v1/get/app/langs/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateMessage(req: CreateMessageRequest, initReq?: fm.InitReq): Promise<CreateMessageResponse> {
     return fm.fetchReq<CreateMessageRequest, CreateMessageResponse>(`/v1/create/message`, {...initReq, method: "POST", body: JSON.stringify(req)})

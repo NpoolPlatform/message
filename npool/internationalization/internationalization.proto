@@ -43,6 +43,25 @@ service Internationalization {
         };
     }
 
+    rpc CreateAppLang (CreateAppLangRequest) returns (CreateAppLangResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/lang"
+            body: "*"
+        };
+    }
+    rpc GetAppLang (GetAppLangRequest) returns (GetAppLangResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/lang"
+            body: "*"
+        };
+    }
+    rpc GetAppLangsByApp (GetAppLangsByAppRequest) returns (GetAppLangsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/langs/by/app"
+            body: "*"
+        };
+    }
+
     rpc CreateMessage(CreateMessageRequest) returns (CreateMessageResponse) {
         option (google.api.http) = {
             post: "/v1/create/message"
@@ -176,4 +195,34 @@ message GetMessageByLangIDMessageIDRequest {
 
 message GetMessageByLangIDMessageIDResponse {
     Message Info = 10;
+}
+
+message AppLang {
+    string ID = 10;
+    string AppID = 20;
+    string LangID = 30;
+}
+
+message CreateAppLangRequest {
+    AppLang Info = 10;
+}
+
+message CreateAppLangResponse {
+    AppLang Info = 10;
+}
+
+message GetAppLangRequest {
+    string ID = 10;
+}
+
+message GetAppLangResponse {
+    AppLang Info = 10;
+}
+
+message GetAppLangsByAppRequest {
+    string AppID = 10;
+}
+
+message GetAppLangsByAppResponse {
+    repeated AppLang Infos = 10;
 }
