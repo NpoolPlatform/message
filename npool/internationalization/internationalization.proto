@@ -30,12 +30,6 @@ service Internationalization {
             body: "*"
         };
     }
-    rpc GetLangsByApp(GetLangsByAppRequest) returns (GetLangsByAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/langs/by/app",
-            body: "*"
-        };
-    }
     rpc GetLangs(GetLangsRequest) returns (GetLangsResponse) {
         option (google.api.http) = {
             post: "/v1/get/langs",
@@ -103,15 +97,6 @@ message UpdateLangRequest {
 message UpdateLangResponse {
     Lang Info = 10;
 }
-
-message GetLangsByAppRequest {
-    string AppID = 10;
-}
-
-message GetLangsByAppResponse {
-    repeated Lang Infos = 10;
-}
-
 
 message GetLangsRequest {
 }

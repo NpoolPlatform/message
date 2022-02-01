@@ -139,38 +139,6 @@
         ]
       }
     },
-    "/v1/get/langs/by/app": {
-      "post": {
-        "operationId": "Internationalization_GetLangsByApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetLangsByAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetLangsByAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Internationalization"
-        ]
-      }
-    },
     "/v1/get/message/by/lang/id/message/id": {
       "post": {
         "operationId": "Internationalization_GetMessageByLangIDMessageID",
@@ -449,25 +417,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Message"
-          }
-        }
-      }
-    },
-    "v1GetLangsByAppRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetLangsByAppResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Lang"
           }
         }
       }
