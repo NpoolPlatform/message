@@ -36,6 +36,12 @@ service ThirdGateway {
             body: "*"
         };
     }
+    rpc GetAppSMSTemplateByAppLang (GetAppSMSTemplateByAppLangRequest) returns (GetAppSMSTemplateByAppLangResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/sms/template/by/app"
+            body: "*"
+        };
+    }
     rpc GetAppSMSTemplateByAppLangUsedFor (GetAppSMSTemplateByAppLangUsedForRequest) returns (GetAppSMSTemplateByAppLangUsedForResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/sms/template/by/app/lang/usedfor"
@@ -58,6 +64,12 @@ service ThirdGateway {
     rpc UpdateAppEmailTemplate (UpdateAppEmailTemplateRequest) returns (UpdateAppEmailTemplateResponse) {
         option (google.api.http) = {
             post: "/v1/update/app/email/template"
+            body: "*"
+        };
+    }
+    rpc GetAppEmailTemplateByAppLang (GetAppEmailTemplateByAppLangRequest) returns (GetAppEmailTemplateByAppLangResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/email/template/by/app"
             body: "*"
         };
     }
@@ -190,6 +202,15 @@ message GetAppSMSTemplateByAppLangUsedForResponse {
     AppSMSTemplate Info = 10;
 }
 
+message GetAppSMSTemplateByAppLangRequest {
+    string AppID = 10;
+}
+
+message GetAppSMSTemplateByAppLangResponse {
+    repeated AppSMSTemplate Infos = 10;
+}
+
+
 message AppEmailTemplate {
     string ID = 10;
     string AppID = 20;
@@ -234,5 +255,13 @@ message GetAppEmailTemplateByAppLangUsedForRequest {
 
 message GetAppEmailTemplateByAppLangUsedForResponse {
     AppEmailTemplate Info = 10;
+}
+
+message GetAppEmailTemplateByAppLangRequest {
+    string AppID = 10;
+}
+
+message GetAppEmailTemplateByAppLangResponse {
+    repeated AppEmailTemplate Infos = 10;
 }
 

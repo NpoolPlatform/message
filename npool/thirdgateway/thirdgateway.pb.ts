@@ -102,6 +102,14 @@ export type GetAppSMSTemplateByAppLangUsedForResponse = {
   info?: AppSMSTemplate
 }
 
+export type GetAppSMSTemplateByAppLangRequest = {
+  appID?: string
+}
+
+export type GetAppSMSTemplateByAppLangResponse = {
+  infos?: AppSMSTemplate[]
+}
+
 export type AppEmailTemplate = {
   id?: string
   appID?: string
@@ -148,6 +156,14 @@ export type GetAppEmailTemplateByAppLangUsedForResponse = {
   info?: AppEmailTemplate
 }
 
+export type GetAppEmailTemplateByAppLangRequest = {
+  appID?: string
+}
+
+export type GetAppEmailTemplateByAppLangResponse = {
+  infos?: AppEmailTemplate[]
+}
+
 export class ThirdGateway {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -161,6 +177,9 @@ export class ThirdGateway {
   static UpdateAppSMSTemplate(req: UpdateAppSMSTemplateRequest, initReq?: fm.InitReq): Promise<UpdateAppSMSTemplateResponse> {
     return fm.fetchReq<UpdateAppSMSTemplateRequest, UpdateAppSMSTemplateResponse>(`/v1/update/app/sms/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetAppSMSTemplateByAppLang(req: GetAppSMSTemplateByAppLangRequest, initReq?: fm.InitReq): Promise<GetAppSMSTemplateByAppLangResponse> {
+    return fm.fetchReq<GetAppSMSTemplateByAppLangRequest, GetAppSMSTemplateByAppLangResponse>(`/v1/get/app/sms/template/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetAppSMSTemplateByAppLangUsedFor(req: GetAppSMSTemplateByAppLangUsedForRequest, initReq?: fm.InitReq): Promise<GetAppSMSTemplateByAppLangUsedForResponse> {
     return fm.fetchReq<GetAppSMSTemplateByAppLangUsedForRequest, GetAppSMSTemplateByAppLangUsedForResponse>(`/v1/get/app/sms/template/by/app/lang/usedfor`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -172,6 +191,9 @@ export class ThirdGateway {
   }
   static UpdateAppEmailTemplate(req: UpdateAppEmailTemplateRequest, initReq?: fm.InitReq): Promise<UpdateAppEmailTemplateResponse> {
     return fm.fetchReq<UpdateAppEmailTemplateRequest, UpdateAppEmailTemplateResponse>(`/v1/update/app/email/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppEmailTemplateByAppLang(req: GetAppEmailTemplateByAppLangRequest, initReq?: fm.InitReq): Promise<GetAppEmailTemplateByAppLangResponse> {
+    return fm.fetchReq<GetAppEmailTemplateByAppLangRequest, GetAppEmailTemplateByAppLangResponse>(`/v1/get/app/email/template/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppEmailTemplateByAppLangUsedFor(req: GetAppEmailTemplateByAppLangUsedForRequest, initReq?: fm.InitReq): Promise<GetAppEmailTemplateByAppLangUsedForResponse> {
     return fm.fetchReq<GetAppEmailTemplateByAppLangUsedForRequest, GetAppEmailTemplateByAppLangUsedForResponse>(`/v1/get/app/email/template/by/app/lang/usedfor`, {...initReq, method: "POST", body: JSON.stringify(req)})
