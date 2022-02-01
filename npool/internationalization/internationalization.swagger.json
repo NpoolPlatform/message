@@ -1,0 +1,580 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/internationalization/internationalization.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/add/lang": {
+      "post": {
+        "operationId": "Internationalization_AddLang",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AddLangResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AddLangRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
+    "/v1/create/message": {
+      "post": {
+        "operationId": "Internationalization_CreateMessage",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateMessageRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
+    "/v1/create/messages": {
+      "post": {
+        "operationId": "Internationalization_CreateMessages",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateMessagesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateMessagesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
+    "/v1/get/langs": {
+      "post": {
+        "operationId": "Internationalization_GetLangs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetLangsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetLangsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
+    "/v1/get/message/by/lang/id/message/id": {
+      "post": {
+        "operationId": "Internationalization_GetMessageByLangIDMessageID",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetMessageByLangIDMessageIDResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetMessageByLangIDMessageIDRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
+    "/v1/get/messages/by/lang/id": {
+      "post": {
+        "operationId": "Internationalization_GetMessagesByLangID",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetMessagesByLangIDResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetMessagesByLangIDRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
+    "/v1/update/lang": {
+      "post": {
+        "operationId": "Internationalization_UpdateLang",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateLangResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateLangRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
+    "/v1/update/message": {
+      "post": {
+        "operationId": "Internationalization_UpdateMessage",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateMessageRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
+    "/v1/update/messages": {
+      "post": {
+        "operationId": "Internationalization_UpdateMessages",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateMessagesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateMessagesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
+    "/version": {
+      "post": {
+        "summary": "Method Version",
+        "operationId": "Internationalization_Version",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AddLangRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Lang"
+        }
+      }
+    },
+    "v1AddLangResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Lang"
+        }
+      }
+    },
+    "v1CreateMessageRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Message"
+        }
+      }
+    },
+    "v1CreateMessageResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Message"
+        }
+      }
+    },
+    "v1CreateMessagesRequest": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Message"
+          }
+        }
+      }
+    },
+    "v1CreateMessagesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Message"
+          }
+        }
+      }
+    },
+    "v1GetLangsRequest": {
+      "type": "object"
+    },
+    "v1GetLangsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Lang"
+          }
+        }
+      }
+    },
+    "v1GetMessageByLangIDMessageIDRequest": {
+      "type": "object",
+      "properties": {
+        "LangID": {
+          "type": "string"
+        },
+        "MessageID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetMessageByLangIDMessageIDResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Message"
+        }
+      }
+    },
+    "v1GetMessagesByLangIDRequest": {
+      "type": "object",
+      "properties": {
+        "LangID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetMessagesByLangIDResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Message"
+          }
+        }
+      }
+    },
+    "v1Lang": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Lang": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Message": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "MessageID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "BatchGet": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateLangRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Lang"
+        }
+      }
+    },
+    "v1UpdateLangResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Lang"
+        }
+      }
+    },
+    "v1UpdateMessageRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Message"
+        }
+      }
+    },
+    "v1UpdateMessageResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Message"
+        }
+      }
+    },
+    "v1UpdateMessagesRequest": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Message"
+          }
+        }
+      }
+    },
+    "v1UpdateMessagesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Message"
+          }
+        }
+      }
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      },
+      "title": "request body and response"
+    }
+  }
+}

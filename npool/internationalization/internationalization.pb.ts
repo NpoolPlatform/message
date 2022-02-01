@@ -1,0 +1,132 @@
+/* eslint-disable */
+// @ts-nocheck
+/*
+* This file is a generated Typescript file for GRPC Gateway, DO NOT MODIFY
+*/
+
+import * as fm from "../../fetch.pb"
+import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
+export type VersionResponse = {
+  info?: string
+}
+
+export type Lang = {
+  id?: string
+  lang?: string
+  logo?: string
+  name?: string
+}
+
+export type AddLangRequest = {
+  info?: Lang
+}
+
+export type AddLangResponse = {
+  info?: Lang
+}
+
+export type UpdateLangRequest = {
+  info?: Lang
+}
+
+export type UpdateLangResponse = {
+  info?: Lang
+}
+
+export type GetLangsRequest = {
+}
+
+export type GetLangsResponse = {
+  infos?: Lang[]
+}
+
+export type Message = {
+  id?: string
+  appID?: string
+  messageID?: string
+  langID?: string
+  message?: string
+  batchGet?: boolean
+}
+
+export type CreateMessageRequest = {
+  info?: Message
+}
+
+export type CreateMessageResponse = {
+  info?: Message
+}
+
+export type CreateMessagesRequest = {
+  infos?: Message[]
+}
+
+export type CreateMessagesResponse = {
+  infos?: Message[]
+}
+
+export type UpdateMessageRequest = {
+  info?: Message
+}
+
+export type UpdateMessageResponse = {
+  info?: Message
+}
+
+export type UpdateMessagesRequest = {
+  infos?: Message[]
+}
+
+export type UpdateMessagesResponse = {
+  infos?: Message[]
+}
+
+export type GetMessagesByLangIDRequest = {
+  langID?: string
+}
+
+export type GetMessagesByLangIDResponse = {
+  infos?: Message[]
+}
+
+export type GetMessageByLangIDMessageIDRequest = {
+  langID?: string
+  messageID?: string
+}
+
+export type GetMessageByLangIDMessageIDResponse = {
+  info?: Message
+}
+
+export class Internationalization {
+  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static AddLang(req: AddLangRequest, initReq?: fm.InitReq): Promise<AddLangResponse> {
+    return fm.fetchReq<AddLangRequest, AddLangResponse>(`/v1/add/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateLang(req: UpdateLangRequest, initReq?: fm.InitReq): Promise<UpdateLangResponse> {
+    return fm.fetchReq<UpdateLangRequest, UpdateLangResponse>(`/v1/update/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetLangs(req: GetLangsRequest, initReq?: fm.InitReq): Promise<GetLangsResponse> {
+    return fm.fetchReq<GetLangsRequest, GetLangsResponse>(`/v1/get/langs`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateMessage(req: CreateMessageRequest, initReq?: fm.InitReq): Promise<CreateMessageResponse> {
+    return fm.fetchReq<CreateMessageRequest, CreateMessageResponse>(`/v1/create/message`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateMessages(req: CreateMessagesRequest, initReq?: fm.InitReq): Promise<CreateMessagesResponse> {
+    return fm.fetchReq<CreateMessagesRequest, CreateMessagesResponse>(`/v1/create/messages`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateMessage(req: UpdateMessageRequest, initReq?: fm.InitReq): Promise<UpdateMessageResponse> {
+    return fm.fetchReq<UpdateMessageRequest, UpdateMessageResponse>(`/v1/update/message`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateMessages(req: UpdateMessagesRequest, initReq?: fm.InitReq): Promise<UpdateMessagesResponse> {
+    return fm.fetchReq<UpdateMessagesRequest, UpdateMessagesResponse>(`/v1/update/messages`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetMessagesByLangID(req: GetMessagesByLangIDRequest, initReq?: fm.InitReq): Promise<GetMessagesByLangIDResponse> {
+    return fm.fetchReq<GetMessagesByLangIDRequest, GetMessagesByLangIDResponse>(`/v1/get/messages/by/lang/id`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetMessageByLangIDMessageID(req: GetMessageByLangIDMessageIDRequest, initReq?: fm.InitReq): Promise<GetMessageByLangIDMessageIDResponse> {
+    return fm.fetchReq<GetMessageByLangIDMessageIDRequest, GetMessageByLangIDMessageIDResponse>(`/v1/get/message/by/lang/id/message/id`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+}

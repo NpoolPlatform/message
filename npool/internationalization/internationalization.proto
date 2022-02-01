@@ -1,0 +1,168 @@
+syntax = "proto3";
+
+package internationalization.v1;
+
+option go_package = "github.com/NpoolPlatform/internationalization/message/npool";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+// Service Name
+service Internationalization {
+    // Method Version
+    rpc Version (google.protobuf.Empty) returns (VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+
+    rpc AddLang(AddLangRequest) returns (AddLangResponse) {
+        option (google.api.http) = {
+            post: "/v1/add/lang"
+            body: "*"
+        };
+    }
+    rpc UpdateLang(UpdateLangRequest) returns (UpdateLangResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/lang"
+            body: "*"
+        };
+    }
+    rpc GetLangs(GetLangsRequest) returns (GetLangsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/langs",
+            body: "*"
+        };
+    }
+
+    rpc CreateMessage(CreateMessageRequest) returns (CreateMessageResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/message"
+            body: "*"
+        };
+    }
+    rpc CreateMessages(CreateMessagesRequest) returns (CreateMessagesResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/messages"
+            body: "*"
+        };
+    }
+    rpc UpdateMessage(UpdateMessageRequest) returns (UpdateMessageResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/message"
+            body: "*"
+        };
+    }
+    rpc UpdateMessages(UpdateMessagesRequest) returns (UpdateMessagesResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/messages"
+            body: "*"
+        };
+    }
+    rpc GetMessagesByLangID(GetMessagesByLangIDRequest) returns (GetMessagesByLangIDResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/messages/by/lang/id"
+            body: "*"
+        };
+    }
+    rpc GetMessageByLangIDMessageID(GetMessageByLangIDMessageIDRequest) returns (GetMessageByLangIDMessageIDResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/message/by/lang/id/message/id"
+            body: "*"
+        };
+    }
+}
+
+// request body and response
+message VersionResponse {
+    string Info = 1;
+}
+
+message Lang {
+    string ID = 10;
+    string Lang = 20;
+    string Logo = 30;
+    string Name = 40;
+}
+
+message AddLangRequest {
+    Lang Info = 10;
+}
+
+message AddLangResponse {
+    Lang Info = 10;
+}
+
+message UpdateLangRequest {
+    Lang Info = 10;
+}
+
+message UpdateLangResponse {
+    Lang Info = 10;
+}
+
+message GetLangsRequest {
+}
+
+message GetLangsResponse {
+    repeated Lang Infos = 10;
+}
+
+message Message {
+    string ID = 10;
+    string AppID = 20;
+    string MessageID = 30;
+    string LangID = 40;
+    string Message = 50;
+    bool BatchGet = 60;
+}
+
+message CreateMessageRequest {
+    Message Info = 10;
+}
+
+message CreateMessageResponse {
+    Message Info = 10;
+}
+
+message CreateMessagesRequest {
+    repeated Message Infos = 10;
+}
+
+message CreateMessagesResponse {
+    repeated Message Infos = 10;
+}
+
+message UpdateMessageRequest {
+    Message Info = 10;
+}
+
+message UpdateMessageResponse {
+    Message Info = 10;
+}
+
+message UpdateMessagesRequest {
+    repeated Message Infos = 10;
+}
+
+message UpdateMessagesResponse {
+    repeated Message Infos = 10;
+}
+
+message GetMessagesByLangIDRequest {
+    string LangID = 10;
+}
+
+message GetMessagesByLangIDResponse {
+    repeated Message Infos = 10;
+}
+
+message GetMessageByLangIDMessageIDRequest {
+    string LangID = 10;
+    string MessageID = 20;
+}
+
+message GetMessageByLangIDMessageIDResponse {
+    Message Info = 10;
+}
