@@ -107,38 +107,6 @@
         ]
       }
     },
-    "/v1/get/app/email/template/by/app": {
-      "post": {
-        "operationId": "ThirdGateway_GetAppEmailTemplateByApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppEmailTemplateByAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppEmailTemplateByAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "ThirdGateway"
-        ]
-      }
-    },
     "/v1/get/app/email/template/by/app/lang/usedfor": {
       "post": {
         "operationId": "ThirdGateway_GetAppEmailTemplateByAppLangUsedFor",
@@ -163,6 +131,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppEmailTemplateByAppLangUsedForRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
+    "/v1/get/app/email/templates/by/app": {
+      "post": {
+        "operationId": "ThirdGateway_GetAppEmailTemplatesByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppEmailTemplatesByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppEmailTemplatesByAppRequest"
             }
           }
         ],
@@ -203,38 +203,6 @@
         ]
       }
     },
-    "/v1/get/app/sms/template/by/app": {
-      "post": {
-        "operationId": "ThirdGateway_GetAppSMSTemplateByApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppSMSTemplateByAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppSMSTemplateByAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "ThirdGateway"
-        ]
-      }
-    },
     "/v1/get/app/sms/template/by/app/lang/usedfor": {
       "post": {
         "operationId": "ThirdGateway_GetAppSMSTemplateByAppLangUsedFor",
@@ -259,6 +227,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppSMSTemplateByAppLangUsedForRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
+    "/v1/get/app/sms/templates/by/app": {
+      "post": {
+        "operationId": "ThirdGateway_GetAppSMSTemplatesByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppSMSTemplatesByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppSMSTemplatesByAppRequest"
             }
           }
         ],
@@ -642,25 +642,6 @@
         }
       }
     },
-    "v1GetAppEmailTemplateByAppRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppEmailTemplateByAppResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AppEmailTemplate"
-          }
-        }
-      }
-    },
     "v1GetAppEmailTemplateRequest": {
       "type": "object",
       "properties": {
@@ -674,6 +655,25 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppEmailTemplate"
+        }
+      }
+    },
+    "v1GetAppEmailTemplatesByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppEmailTemplatesByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppEmailTemplate"
+          }
         }
       }
     },
@@ -699,25 +699,6 @@
         }
       }
     },
-    "v1GetAppSMSTemplateByAppRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppSMSTemplateByAppResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AppSMSTemplate"
-          }
-        }
-      }
-    },
     "v1GetAppSMSTemplateRequest": {
       "type": "object",
       "properties": {
@@ -731,6 +712,25 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppSMSTemplate"
+        }
+      }
+    },
+    "v1GetAppSMSTemplatesByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppSMSTemplatesByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppSMSTemplate"
+          }
         }
       }
     },

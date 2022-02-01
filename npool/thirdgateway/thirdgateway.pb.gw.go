@@ -168,8 +168,8 @@ func local_request_ThirdGateway_UpdateAppSMSTemplate_0(ctx context.Context, mars
 
 }
 
-func request_ThirdGateway_GetAppSMSTemplateByApp_0(ctx context.Context, marshaler runtime.Marshaler, client ThirdGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppSMSTemplateByAppRequest
+func request_ThirdGateway_GetAppSMSTemplatesByApp_0(ctx context.Context, marshaler runtime.Marshaler, client ThirdGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppSMSTemplatesByAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -180,13 +180,13 @@ func request_ThirdGateway_GetAppSMSTemplateByApp_0(ctx context.Context, marshale
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetAppSMSTemplateByApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppSMSTemplatesByApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_ThirdGateway_GetAppSMSTemplateByApp_0(ctx context.Context, marshaler runtime.Marshaler, server ThirdGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppSMSTemplateByAppRequest
+func local_request_ThirdGateway_GetAppSMSTemplatesByApp_0(ctx context.Context, marshaler runtime.Marshaler, server ThirdGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppSMSTemplatesByAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -197,7 +197,7 @@ func local_request_ThirdGateway_GetAppSMSTemplateByApp_0(ctx context.Context, ma
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetAppSMSTemplateByApp(ctx, &protoReq)
+	msg, err := server.GetAppSMSTemplatesByApp(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -338,8 +338,8 @@ func local_request_ThirdGateway_UpdateAppEmailTemplate_0(ctx context.Context, ma
 
 }
 
-func request_ThirdGateway_GetAppEmailTemplateByApp_0(ctx context.Context, marshaler runtime.Marshaler, client ThirdGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppEmailTemplateByAppRequest
+func request_ThirdGateway_GetAppEmailTemplatesByApp_0(ctx context.Context, marshaler runtime.Marshaler, client ThirdGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppEmailTemplatesByAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -350,13 +350,13 @@ func request_ThirdGateway_GetAppEmailTemplateByApp_0(ctx context.Context, marsha
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetAppEmailTemplateByApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppEmailTemplatesByApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_ThirdGateway_GetAppEmailTemplateByApp_0(ctx context.Context, marshaler runtime.Marshaler, server ThirdGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppEmailTemplateByAppRequest
+func local_request_ThirdGateway_GetAppEmailTemplatesByApp_0(ctx context.Context, marshaler runtime.Marshaler, server ThirdGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppEmailTemplatesByAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -367,7 +367,7 @@ func local_request_ThirdGateway_GetAppEmailTemplateByApp_0(ctx context.Context, 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetAppEmailTemplateByApp(ctx, &protoReq)
+	msg, err := server.GetAppEmailTemplatesByApp(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -640,18 +640,18 @@ func RegisterThirdGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMu
 
 	})
 
-	mux.Handle("POST", pattern_ThirdGateway_GetAppSMSTemplateByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ThirdGateway_GetAppSMSTemplatesByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/third.gateway.v1.ThirdGateway/GetAppSMSTemplateByApp", runtime.WithHTTPPathPattern("/v1/get/app/sms/template/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/third.gateway.v1.ThirdGateway/GetAppSMSTemplatesByApp", runtime.WithHTTPPathPattern("/v1/get/app/sms/templates/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ThirdGateway_GetAppSMSTemplateByApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ThirdGateway_GetAppSMSTemplatesByApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -659,7 +659,7 @@ func RegisterThirdGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMu
 			return
 		}
 
-		forward_ThirdGateway_GetAppSMSTemplateByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ThirdGateway_GetAppSMSTemplatesByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -755,18 +755,18 @@ func RegisterThirdGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMu
 
 	})
 
-	mux.Handle("POST", pattern_ThirdGateway_GetAppEmailTemplateByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ThirdGateway_GetAppEmailTemplatesByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/third.gateway.v1.ThirdGateway/GetAppEmailTemplateByApp", runtime.WithHTTPPathPattern("/v1/get/app/email/template/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/third.gateway.v1.ThirdGateway/GetAppEmailTemplatesByApp", runtime.WithHTTPPathPattern("/v1/get/app/email/templates/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ThirdGateway_GetAppEmailTemplateByApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ThirdGateway_GetAppEmailTemplatesByApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -774,7 +774,7 @@ func RegisterThirdGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMu
 			return
 		}
 
-		forward_ThirdGateway_GetAppEmailTemplateByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ThirdGateway_GetAppEmailTemplatesByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1014,23 +1014,23 @@ func RegisterThirdGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMu
 
 	})
 
-	mux.Handle("POST", pattern_ThirdGateway_GetAppSMSTemplateByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ThirdGateway_GetAppSMSTemplatesByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/third.gateway.v1.ThirdGateway/GetAppSMSTemplateByApp", runtime.WithHTTPPathPattern("/v1/get/app/sms/template/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/third.gateway.v1.ThirdGateway/GetAppSMSTemplatesByApp", runtime.WithHTTPPathPattern("/v1/get/app/sms/templates/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ThirdGateway_GetAppSMSTemplateByApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ThirdGateway_GetAppSMSTemplatesByApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ThirdGateway_GetAppSMSTemplateByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ThirdGateway_GetAppSMSTemplatesByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1114,23 +1114,23 @@ func RegisterThirdGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMu
 
 	})
 
-	mux.Handle("POST", pattern_ThirdGateway_GetAppEmailTemplateByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ThirdGateway_GetAppEmailTemplatesByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/third.gateway.v1.ThirdGateway/GetAppEmailTemplateByApp", runtime.WithHTTPPathPattern("/v1/get/app/email/template/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/third.gateway.v1.ThirdGateway/GetAppEmailTemplatesByApp", runtime.WithHTTPPathPattern("/v1/get/app/email/templates/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ThirdGateway_GetAppEmailTemplateByApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ThirdGateway_GetAppEmailTemplatesByApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ThirdGateway_GetAppEmailTemplateByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ThirdGateway_GetAppEmailTemplatesByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1246,7 +1246,7 @@ var (
 
 	pattern_ThirdGateway_UpdateAppSMSTemplate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "update", "app", "sms", "template"}, ""))
 
-	pattern_ThirdGateway_GetAppSMSTemplateByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2}, []string{"v1", "get", "app", "sms", "template", "by"}, ""))
+	pattern_ThirdGateway_GetAppSMSTemplatesByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2}, []string{"v1", "get", "app", "sms", "templates", "by"}, ""))
 
 	pattern_ThirdGateway_GetAppSMSTemplateByAppLangUsedFor_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2, 2, 6, 2, 7}, []string{"v1", "get", "app", "sms", "template", "by", "lang", "usedfor"}, ""))
 
@@ -1256,7 +1256,7 @@ var (
 
 	pattern_ThirdGateway_UpdateAppEmailTemplate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "update", "app", "email", "template"}, ""))
 
-	pattern_ThirdGateway_GetAppEmailTemplateByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2}, []string{"v1", "get", "app", "email", "template", "by"}, ""))
+	pattern_ThirdGateway_GetAppEmailTemplatesByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2}, []string{"v1", "get", "app", "email", "templates", "by"}, ""))
 
 	pattern_ThirdGateway_GetAppEmailTemplateByAppLangUsedFor_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2, 2, 6, 2, 7}, []string{"v1", "get", "app", "email", "template", "by", "lang", "usedfor"}, ""))
 
@@ -1278,7 +1278,7 @@ var (
 
 	forward_ThirdGateway_UpdateAppSMSTemplate_0 = runtime.ForwardResponseMessage
 
-	forward_ThirdGateway_GetAppSMSTemplateByApp_0 = runtime.ForwardResponseMessage
+	forward_ThirdGateway_GetAppSMSTemplatesByApp_0 = runtime.ForwardResponseMessage
 
 	forward_ThirdGateway_GetAppSMSTemplateByAppLangUsedFor_0 = runtime.ForwardResponseMessage
 
@@ -1288,7 +1288,7 @@ var (
 
 	forward_ThirdGateway_UpdateAppEmailTemplate_0 = runtime.ForwardResponseMessage
 
-	forward_ThirdGateway_GetAppEmailTemplateByApp_0 = runtime.ForwardResponseMessage
+	forward_ThirdGateway_GetAppEmailTemplatesByApp_0 = runtime.ForwardResponseMessage
 
 	forward_ThirdGateway_GetAppEmailTemplateByAppLangUsedFor_0 = runtime.ForwardResponseMessage
 
