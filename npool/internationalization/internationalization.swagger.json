@@ -171,6 +171,38 @@
         ]
       }
     },
+    "/v1/get/app/lang/infos/by/app": {
+      "post": {
+        "operationId": "Internationalization_GetAppLangInfosByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppLangInfosByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppLangInfosByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
     "/v1/get/app/langs/by/app": {
       "post": {
         "operationId": "Internationalization_GetAppLangsByApp",
@@ -525,6 +557,17 @@
         }
       }
     },
+    "v1AppLangInfo": {
+      "type": "object",
+      "properties": {
+        "AppLang": {
+          "$ref": "#/definitions/v1AppLang"
+        },
+        "Lang": {
+          "$ref": "#/definitions/v1Lang"
+        }
+      }
+    },
     "v1CreateAppLangRequest": {
       "type": "object",
       "properties": {
@@ -575,6 +618,25 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Message"
+          }
+        }
+      }
+    },
+    "v1GetAppLangInfosByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppLangInfosByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppLangInfo"
           }
         }
       }

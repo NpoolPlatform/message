@@ -133,6 +133,19 @@ export type GetAppLangsByAppResponse = {
   infos?: AppLang[]
 }
 
+export type AppLangInfo = {
+  appLang?: AppLang
+  lang?: Lang
+}
+
+export type GetAppLangInfosByAppRequest = {
+  appID?: string
+}
+
+export type GetAppLangInfosByAppResponse = {
+  infos?: AppLangInfo[]
+}
+
 export class Internationalization {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -157,6 +170,9 @@ export class Internationalization {
   }
   static GetAppLangsByApp(req: GetAppLangsByAppRequest, initReq?: fm.InitReq): Promise<GetAppLangsByAppResponse> {
     return fm.fetchReq<GetAppLangsByAppRequest, GetAppLangsByAppResponse>(`/v1/get/app/langs/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppLangInfosByApp(req: GetAppLangInfosByAppRequest, initReq?: fm.InitReq): Promise<GetAppLangInfosByAppResponse> {
+    return fm.fetchReq<GetAppLangInfosByAppRequest, GetAppLangInfosByAppResponse>(`/v1/get/app/lang/infos/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateMessage(req: CreateMessageRequest, initReq?: fm.InitReq): Promise<CreateMessageResponse> {
     return fm.fetchReq<CreateMessageRequest, CreateMessageResponse>(`/v1/create/message`, {...initReq, method: "POST", body: JSON.stringify(req)})

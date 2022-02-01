@@ -33,6 +33,7 @@ type InternationalizationClient interface {
 	CreateAppLang(ctx context.Context, in *CreateAppLangRequest, opts ...grpc.CallOption) (*CreateAppLangResponse, error)
 	GetAppLang(ctx context.Context, in *GetAppLangRequest, opts ...grpc.CallOption) (*GetAppLangResponse, error)
 	GetAppLangsByApp(ctx context.Context, in *GetAppLangsByAppRequest, opts ...grpc.CallOption) (*GetAppLangsByAppResponse, error)
+	GetAppLangInfosByApp(ctx context.Context, in *GetAppLangInfosByAppRequest, opts ...grpc.CallOption) (*GetAppLangInfosByAppResponse, error)
 	CreateMessage(ctx context.Context, in *CreateMessageRequest, opts ...grpc.CallOption) (*CreateMessageResponse, error)
 	CreateMessages(ctx context.Context, in *CreateMessagesRequest, opts ...grpc.CallOption) (*CreateMessagesResponse, error)
 	UpdateMessage(ctx context.Context, in *UpdateMessageRequest, opts ...grpc.CallOption) (*UpdateMessageResponse, error)
@@ -121,6 +122,15 @@ func (c *internationalizationClient) GetAppLangsByApp(ctx context.Context, in *G
 	return out, nil
 }
 
+func (c *internationalizationClient) GetAppLangInfosByApp(ctx context.Context, in *GetAppLangInfosByAppRequest, opts ...grpc.CallOption) (*GetAppLangInfosByAppResponse, error) {
+	out := new(GetAppLangInfosByAppResponse)
+	err := c.cc.Invoke(ctx, "/internationalization.v1.Internationalization/GetAppLangInfosByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *internationalizationClient) CreateMessage(ctx context.Context, in *CreateMessageRequest, opts ...grpc.CallOption) (*CreateMessageResponse, error) {
 	out := new(CreateMessageResponse)
 	err := c.cc.Invoke(ctx, "/internationalization.v1.Internationalization/CreateMessage", in, out, opts...)
@@ -188,6 +198,7 @@ type InternationalizationServer interface {
 	CreateAppLang(context.Context, *CreateAppLangRequest) (*CreateAppLangResponse, error)
 	GetAppLang(context.Context, *GetAppLangRequest) (*GetAppLangResponse, error)
 	GetAppLangsByApp(context.Context, *GetAppLangsByAppRequest) (*GetAppLangsByAppResponse, error)
+	GetAppLangInfosByApp(context.Context, *GetAppLangInfosByAppRequest) (*GetAppLangInfosByAppResponse, error)
 	CreateMessage(context.Context, *CreateMessageRequest) (*CreateMessageResponse, error)
 	CreateMessages(context.Context, *CreateMessagesRequest) (*CreateMessagesResponse, error)
 	UpdateMessage(context.Context, *UpdateMessageRequest) (*UpdateMessageResponse, error)
@@ -224,6 +235,9 @@ func (UnimplementedInternationalizationServer) GetAppLang(context.Context, *GetA
 }
 func (UnimplementedInternationalizationServer) GetAppLangsByApp(context.Context, *GetAppLangsByAppRequest) (*GetAppLangsByAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppLangsByApp not implemented")
+}
+func (UnimplementedInternationalizationServer) GetAppLangInfosByApp(context.Context, *GetAppLangInfosByAppRequest) (*GetAppLangInfosByAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppLangInfosByApp not implemented")
 }
 func (UnimplementedInternationalizationServer) CreateMessage(context.Context, *CreateMessageRequest) (*CreateMessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateMessage not implemented")
@@ -400,6 +414,24 @@ func _Internationalization_GetAppLangsByApp_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Internationalization_GetAppLangInfosByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppLangInfosByAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(InternationalizationServer).GetAppLangInfosByApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/internationalization.v1.Internationalization/GetAppLangInfosByApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(InternationalizationServer).GetAppLangInfosByApp(ctx, req.(*GetAppLangInfosByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Internationalization_CreateMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateMessageRequest)
 	if err := dec(in); err != nil {
@@ -546,6 +578,10 @@ var Internationalization_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppLangsByApp",
 			Handler:    _Internationalization_GetAppLangsByApp_Handler,
+		},
+		{
+			MethodName: "GetAppLangInfosByApp",
+			Handler:    _Internationalization_GetAppLangInfosByApp_Handler,
 		},
 		{
 			MethodName: "CreateMessage",
