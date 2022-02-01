@@ -30,14 +30,6 @@ export type UpdateLangResponse = {
   info?: Lang
 }
 
-export type GetLangsByAppRequest = {
-  appID?: string
-}
-
-export type GetLangsByAppResponse = {
-  infos?: Lang[]
-}
-
 export type GetLangsRequest = {
 }
 
@@ -155,9 +147,6 @@ export class Internationalization {
   }
   static UpdateLang(req: UpdateLangRequest, initReq?: fm.InitReq): Promise<UpdateLangResponse> {
     return fm.fetchReq<UpdateLangRequest, UpdateLangResponse>(`/v1/update/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetLangsByApp(req: GetLangsByAppRequest, initReq?: fm.InitReq): Promise<GetLangsByAppResponse> {
-    return fm.fetchReq<GetLangsByAppRequest, GetLangsByAppResponse>(`/v1/get/langs/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetLangs(req: GetLangsRequest, initReq?: fm.InitReq): Promise<GetLangsResponse> {
     return fm.fetchReq<GetLangsRequest, GetLangsResponse>(`/v1/get/langs`, {...initReq, method: "POST", body: JSON.stringify(req)})

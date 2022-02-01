@@ -20,8 +20,6 @@
     - [GetAppLangResponse](#internationalization.v1.GetAppLangResponse)
     - [GetAppLangsByAppRequest](#internationalization.v1.GetAppLangsByAppRequest)
     - [GetAppLangsByAppResponse](#internationalization.v1.GetAppLangsByAppResponse)
-    - [GetLangsByAppRequest](#internationalization.v1.GetLangsByAppRequest)
-    - [GetLangsByAppResponse](#internationalization.v1.GetLangsByAppResponse)
     - [GetLangsRequest](#internationalization.v1.GetLangsRequest)
     - [GetLangsResponse](#internationalization.v1.GetLangsResponse)
     - [GetMessageByLangIDMessageIDRequest](#internationalization.v1.GetMessageByLangIDMessageIDRequest)
@@ -56,8 +54,6 @@
     - [GetAppLangResponse](#internationalization.v1.GetAppLangResponse)
     - [GetAppLangsByAppRequest](#internationalization.v1.GetAppLangsByAppRequest)
     - [GetAppLangsByAppResponse](#internationalization.v1.GetAppLangsByAppResponse)
-    - [GetLangsByAppRequest](#internationalization.v1.GetLangsByAppRequest)
-    - [GetLangsByAppResponse](#internationalization.v1.GetLangsByAppResponse)
     - [GetLangsRequest](#internationalization.v1.GetLangsRequest)
     - [GetLangsResponse](#internationalization.v1.GetLangsResponse)
     - [GetMessageByLangIDMessageIDRequest](#internationalization.v1.GetMessageByLangIDMessageIDRequest)
@@ -329,36 +325,6 @@
 
 
 
-<a name="internationalization.v1.GetLangsByAppRequest"></a>
-
-### GetLangsByAppRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="internationalization.v1.GetLangsByAppResponse"></a>
-
-### GetLangsByAppResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Infos | [Lang](#internationalization.v1.Lang) | repeated |  |
-
-
-
-
-
-
 <a name="internationalization.v1.GetLangsRequest"></a>
 
 ### GetLangsRequest
@@ -589,7 +555,6 @@ Service Name
 | Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
 | AddLang | [AddLangRequest](#internationalization.v1.AddLangRequest) | [AddLangResponse](#internationalization.v1.AddLangResponse) |  |
 | UpdateLang | [UpdateLangRequest](#internationalization.v1.UpdateLangRequest) | [UpdateLangResponse](#internationalization.v1.UpdateLangResponse) |  |
-| GetLangsByApp | [GetLangsByAppRequest](#internationalization.v1.GetLangsByAppRequest) | [GetLangsByAppResponse](#internationalization.v1.GetLangsByAppResponse) |  |
 | GetLangs | [GetLangsRequest](#internationalization.v1.GetLangsRequest) | [GetLangsResponse](#internationalization.v1.GetLangsResponse) |  |
 | CreateAppLang | [CreateAppLangRequest](#internationalization.v1.CreateAppLangRequest) | [CreateAppLangResponse](#internationalization.v1.CreateAppLangResponse) |  |
 | GetAppLang | [GetAppLangRequest](#internationalization.v1.GetAppLangRequest) | [GetAppLangResponse](#internationalization.v1.GetAppLangResponse) |  |
@@ -856,36 +821,6 @@ Service Name
 
 
 
-<a name="internationalization.v1.GetLangsByAppRequest"></a>
-
-### GetLangsByAppRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="internationalization.v1.GetLangsByAppResponse"></a>
-
-### GetLangsByAppResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Infos | [Lang](#internationalization.v1.Lang) | repeated |  |
-
-
-
-
-
-
 <a name="internationalization.v1.GetLangsRequest"></a>
 
 ### GetLangsRequest
@@ -1116,7 +1051,6 @@ Service Name
 | Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
 | AddLang | [AddLangRequest](#internationalization.v1.AddLangRequest) | [AddLangResponse](#internationalization.v1.AddLangResponse) |  |
 | UpdateLang | [UpdateLangRequest](#internationalization.v1.UpdateLangRequest) | [UpdateLangResponse](#internationalization.v1.UpdateLangResponse) |  |
-| GetLangsByApp | [GetLangsByAppRequest](#internationalization.v1.GetLangsByAppRequest) | [GetLangsByAppResponse](#internationalization.v1.GetLangsByAppResponse) |  |
 | GetLangs | [GetLangsRequest](#internationalization.v1.GetLangsRequest) | [GetLangsResponse](#internationalization.v1.GetLangsResponse) |  |
 | CreateAppLang | [CreateAppLangRequest](#internationalization.v1.CreateAppLangRequest) | [CreateAppLangResponse](#internationalization.v1.CreateAppLangResponse) |  |
 | GetAppLang | [GetAppLangRequest](#internationalization.v1.GetAppLangRequest) | [GetAppLangResponse](#internationalization.v1.GetAppLangResponse) |  |
