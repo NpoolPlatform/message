@@ -109,12 +109,12 @@
     },
     "/v1/get/app/email/template/by/app": {
       "post": {
-        "operationId": "ThirdGateway_GetAppEmailTemplateByAppLang",
+        "operationId": "ThirdGateway_GetAppEmailTemplateByApp",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppEmailTemplateByAppLangResponse"
+              "$ref": "#/definitions/v1GetAppEmailTemplateByAppResponse"
             }
           },
           "default": {
@@ -130,7 +130,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppEmailTemplateByAppLangRequest"
+              "$ref": "#/definitions/v1GetAppEmailTemplateByAppRequest"
             }
           }
         ],
@@ -205,12 +205,12 @@
     },
     "/v1/get/app/sms/template/by/app": {
       "post": {
-        "operationId": "ThirdGateway_GetAppSMSTemplateByAppLang",
+        "operationId": "ThirdGateway_GetAppSMSTemplateByApp",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppSMSTemplateByAppLangResponse"
+              "$ref": "#/definitions/v1GetAppSMSTemplateByAppResponse"
             }
           },
           "default": {
@@ -226,7 +226,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppSMSTemplateByAppLangRequest"
+              "$ref": "#/definitions/v1GetAppSMSTemplateByAppRequest"
             }
           }
         ],
@@ -620,25 +620,6 @@
         }
       }
     },
-    "v1GetAppEmailTemplateByAppLangRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppEmailTemplateByAppLangResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AppEmailTemplate"
-          }
-        }
-      }
-    },
     "v1GetAppEmailTemplateByAppLangUsedForRequest": {
       "type": "object",
       "properties": {
@@ -661,6 +642,25 @@
         }
       }
     },
+    "v1GetAppEmailTemplateByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppEmailTemplateByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppEmailTemplate"
+          }
+        }
+      }
+    },
     "v1GetAppEmailTemplateRequest": {
       "type": "object",
       "properties": {
@@ -674,25 +674,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppEmailTemplate"
-        }
-      }
-    },
-    "v1GetAppSMSTemplateByAppLangRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppSMSTemplateByAppLangResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AppSMSTemplate"
-          }
         }
       }
     },
@@ -715,6 +696,25 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppSMSTemplate"
+        }
+      }
+    },
+    "v1GetAppSMSTemplateByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppSMSTemplateByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppSMSTemplate"
+          }
         }
       }
     },
