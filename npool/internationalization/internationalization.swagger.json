@@ -203,6 +203,38 @@
         ]
       }
     },
+    "/v1/get/app/lang/infos/by/other/app": {
+      "post": {
+        "operationId": "Internationalization_GetAppLangInfosByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppLangInfosByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppLangInfosByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
     "/v1/get/app/langs/by/app": {
       "post": {
         "operationId": "Internationalization_GetAppLangsByApp",
@@ -631,6 +663,25 @@
       }
     },
     "v1GetAppLangInfosByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppLangInfo"
+          }
+        }
+      }
+    },
+    "v1GetAppLangInfosByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppLangInfosByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {
