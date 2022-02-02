@@ -143,7 +143,7 @@ export type SignupRequest = {
 }
 
 export type SignupResponse = {
-  info?: AppUserManagerV1Appusermgr.AppUserInfo
+  info?: AppUserManagerV1Appusermgr.AppUser
 }
 
 export type InvitationSummary = {

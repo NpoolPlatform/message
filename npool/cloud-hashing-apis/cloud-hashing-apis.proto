@@ -273,7 +273,7 @@ message SignupRequest {
 }
 
 message SignupResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    app.user.manager.v1.AppUser Info = 10;
 }
 
 message InvitationSummary {

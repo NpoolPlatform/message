@@ -845,7 +845,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
+| Info | [app.user.manager.v1.AppUser](#app.user.manager.v1.AppUser) |  |  |
 
 
 
@@ -1685,7 +1685,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
+| Info | [app.user.manager.v1.AppUser](#app.user.manager.v1.AppUser) |  |  |
 
 
 
