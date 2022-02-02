@@ -256,6 +256,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| TargetAppID | [string](#string) |  |  |
 
 
 
@@ -348,6 +349,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| TargetAppID | [string](#string) |  |  |
 
 
 
@@ -783,6 +785,7 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| TargetAppID | [string](#string) |  |  |
 
 
 
@@ -875,6 +878,7 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| TargetAppID | [string](#string) |  |  |
 
 
 

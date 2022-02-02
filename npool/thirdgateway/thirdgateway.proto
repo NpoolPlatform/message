@@ -204,6 +204,7 @@ message GetAppSMSTemplateByAppLangUsedForResponse {
 
 message GetAppSMSTemplatesByAppRequest {
     string AppID = 10;
+    string TargetAppID = 20;
 }
 
 message GetAppSMSTemplatesByAppResponse {
@@ -259,6 +260,7 @@ message GetAppEmailTemplateByAppLangUsedForResponse {
 
 message GetAppEmailTemplatesByAppRequest {
     string AppID = 10;
+    string TargetAppID = 20;
 }
 
 message GetAppEmailTemplatesByAppResponse {

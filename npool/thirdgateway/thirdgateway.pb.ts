@@ -104,6 +104,7 @@ export type GetAppSMSTemplateByAppLangUsedForResponse = {
 
 export type GetAppSMSTemplatesByAppRequest = {
   appID?: string
+  targetAppID?: string
 }
 
 export type GetAppSMSTemplatesByAppResponse = {
@@ -158,6 +159,7 @@ export type GetAppEmailTemplateByAppLangUsedForResponse = {
 
 export type GetAppEmailTemplatesByAppRequest = {
   appID?: string
+  targetAppID?: string
 }
 
 export type GetAppEmailTemplatesByAppResponse = {

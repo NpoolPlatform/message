@@ -663,6 +663,9 @@
       "properties": {
         "AppID": {
           "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
         }
       }
     },
@@ -719,6 +722,9 @@
       "type": "object",
       "properties": {
         "AppID": {
+          "type": "string"
+        },
+        "TargetAppID": {
           "type": "string"
         }
       }
