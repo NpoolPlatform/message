@@ -825,7 +825,7 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Username | [string](#string) |  |  |
-| Password | [string](#string) |  |  |
+| PasswordHash | [string](#string) |  |  |
 | EmailAddress | [string](#string) |  |  |
 | PhoneNumber | [string](#string) |  |  |
 | VerificationCode | [string](#string) |  |  |
@@ -1665,7 +1665,7 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Username | [string](#string) |  |  |
-| Password | [string](#string) |  |  |
+| PasswordHash | [string](#string) |  |  |
 | EmailAddress | [string](#string) |  |  |
 | PhoneNumber | [string](#string) |  |  |
 | VerificationCode | [string](#string) |  |  |

@@ -830,7 +830,7 @@
         "Username": {
           "type": "string"
         },
-        "Password": {
+        "PasswordHash": {
           "type": "string"
         },
         "EmailAddress": {
