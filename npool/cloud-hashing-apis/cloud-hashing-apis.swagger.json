@@ -1995,10 +1995,10 @@
         "PasswordHash": {
           "type": "string"
         },
-        "EmailAddress": {
+        "Account": {
           "type": "string"
         },
-        "PhoneNumber": {
+        "AccountType": {
           "type": "string"
         },
         "VerificationCode": {

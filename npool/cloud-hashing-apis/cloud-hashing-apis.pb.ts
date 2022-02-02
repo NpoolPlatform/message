@@ -135,8 +135,8 @@ export type CreateOrderPaymentResponse = {
 export type SignupRequest = {
   username?: string
   passwordHash?: string
-  emailAddress?: string
-  phoneNumber?: string
+  account?: string
+  accountType?: string
   verificationCode?: string
   appID?: string
   invitationCode?: string

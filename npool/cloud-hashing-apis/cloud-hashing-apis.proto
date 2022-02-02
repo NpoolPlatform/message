@@ -265,8 +265,8 @@ message CreateOrderPaymentResponse {
 message SignupRequest {
     string Username = 10;
     string PasswordHash = 20;
-    string EmailAddress = 30;
-    string PhoneNumber = 40;
+    string Account = 30;
+    string AccountType = 40;
     string VerificationCode = 50;
     string AppID = 60;
     string InvitationCode = 70;

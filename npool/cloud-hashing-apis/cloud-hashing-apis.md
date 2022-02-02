@@ -826,8 +826,8 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | Username | [string](#string) |  |  |
 | PasswordHash | [string](#string) |  |  |
-| EmailAddress | [string](#string) |  |  |
-| PhoneNumber | [string](#string) |  |  |
+| Account | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
 | VerificationCode | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | InvitationCode | [string](#string) |  |  |
@@ -1666,8 +1666,8 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | Username | [string](#string) |  |  |
 | PasswordHash | [string](#string) |  |  |
-| EmailAddress | [string](#string) |  |  |
-| PhoneNumber | [string](#string) |  |  |
+| Account | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
 | VerificationCode | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | InvitationCode | [string](#string) |  |  |
