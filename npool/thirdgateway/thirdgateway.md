@@ -16,12 +16,16 @@
     - [GetAppEmailTemplateResponse](#third.gateway.v1.GetAppEmailTemplateResponse)
     - [GetAppEmailTemplatesByAppRequest](#third.gateway.v1.GetAppEmailTemplatesByAppRequest)
     - [GetAppEmailTemplatesByAppResponse](#third.gateway.v1.GetAppEmailTemplatesByAppResponse)
+    - [GetAppEmailTemplatesByOtherAppRequest](#third.gateway.v1.GetAppEmailTemplatesByOtherAppRequest)
+    - [GetAppEmailTemplatesByOtherAppResponse](#third.gateway.v1.GetAppEmailTemplatesByOtherAppResponse)
     - [GetAppSMSTemplateByAppLangUsedForRequest](#third.gateway.v1.GetAppSMSTemplateByAppLangUsedForRequest)
     - [GetAppSMSTemplateByAppLangUsedForResponse](#third.gateway.v1.GetAppSMSTemplateByAppLangUsedForResponse)
     - [GetAppSMSTemplateRequest](#third.gateway.v1.GetAppSMSTemplateRequest)
     - [GetAppSMSTemplateResponse](#third.gateway.v1.GetAppSMSTemplateResponse)
     - [GetAppSMSTemplatesByAppRequest](#third.gateway.v1.GetAppSMSTemplatesByAppRequest)
     - [GetAppSMSTemplatesByAppResponse](#third.gateway.v1.GetAppSMSTemplatesByAppResponse)
+    - [GetAppSMSTemplatesByOtherAppRequest](#third.gateway.v1.GetAppSMSTemplatesByOtherAppRequest)
+    - [GetAppSMSTemplatesByOtherAppResponse](#third.gateway.v1.GetAppSMSTemplatesByOtherAppResponse)
     - [SendEmailCodeRequest](#third.gateway.v1.SendEmailCodeRequest)
     - [SendEmailCodeResponse](#third.gateway.v1.SendEmailCodeResponse)
     - [SendSMSCodeRequest](#third.gateway.v1.SendSMSCodeRequest)
@@ -50,12 +54,16 @@
     - [GetAppEmailTemplateResponse](#third.gateway.v1.GetAppEmailTemplateResponse)
     - [GetAppEmailTemplatesByAppRequest](#third.gateway.v1.GetAppEmailTemplatesByAppRequest)
     - [GetAppEmailTemplatesByAppResponse](#third.gateway.v1.GetAppEmailTemplatesByAppResponse)
+    - [GetAppEmailTemplatesByOtherAppRequest](#third.gateway.v1.GetAppEmailTemplatesByOtherAppRequest)
+    - [GetAppEmailTemplatesByOtherAppResponse](#third.gateway.v1.GetAppEmailTemplatesByOtherAppResponse)
     - [GetAppSMSTemplateByAppLangUsedForRequest](#third.gateway.v1.GetAppSMSTemplateByAppLangUsedForRequest)
     - [GetAppSMSTemplateByAppLangUsedForResponse](#third.gateway.v1.GetAppSMSTemplateByAppLangUsedForResponse)
     - [GetAppSMSTemplateRequest](#third.gateway.v1.GetAppSMSTemplateRequest)
     - [GetAppSMSTemplateResponse](#third.gateway.v1.GetAppSMSTemplateResponse)
     - [GetAppSMSTemplatesByAppRequest](#third.gateway.v1.GetAppSMSTemplatesByAppRequest)
     - [GetAppSMSTemplatesByAppResponse](#third.gateway.v1.GetAppSMSTemplatesByAppResponse)
+    - [GetAppSMSTemplatesByOtherAppRequest](#third.gateway.v1.GetAppSMSTemplatesByOtherAppRequest)
+    - [GetAppSMSTemplatesByOtherAppResponse](#third.gateway.v1.GetAppSMSTemplatesByOtherAppResponse)
     - [SendEmailCodeRequest](#third.gateway.v1.SendEmailCodeRequest)
     - [SendEmailCodeResponse](#third.gateway.v1.SendEmailCodeResponse)
     - [SendSMSCodeRequest](#third.gateway.v1.SendSMSCodeRequest)
@@ -256,7 +264,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| TargetAppID | [string](#string) |  |  |
 
 
 
@@ -266,6 +273,36 @@
 <a name="third.gateway.v1.GetAppEmailTemplatesByAppResponse"></a>
 
 ### GetAppEmailTemplatesByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AppEmailTemplate](#third.gateway.v1.AppEmailTemplate) | repeated |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.GetAppEmailTemplatesByOtherAppRequest"></a>
+
+### GetAppEmailTemplatesByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.GetAppEmailTemplatesByOtherAppResponse"></a>
+
+### GetAppEmailTemplatesByOtherAppResponse
 
 
 
@@ -349,7 +386,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| TargetAppID | [string](#string) |  |  |
 
 
 
@@ -359,6 +395,36 @@
 <a name="third.gateway.v1.GetAppSMSTemplatesByAppResponse"></a>
 
 ### GetAppSMSTemplatesByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AppSMSTemplate](#third.gateway.v1.AppSMSTemplate) | repeated |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.GetAppSMSTemplatesByOtherAppRequest"></a>
+
+### GetAppSMSTemplatesByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.GetAppSMSTemplatesByOtherAppResponse"></a>
+
+### GetAppSMSTemplatesByOtherAppResponse
 
 
 
@@ -589,11 +655,13 @@ Service Name
 | GetAppSMSTemplate | [GetAppSMSTemplateRequest](#third.gateway.v1.GetAppSMSTemplateRequest) | [GetAppSMSTemplateResponse](#third.gateway.v1.GetAppSMSTemplateResponse) |  |
 | UpdateAppSMSTemplate | [UpdateAppSMSTemplateRequest](#third.gateway.v1.UpdateAppSMSTemplateRequest) | [UpdateAppSMSTemplateResponse](#third.gateway.v1.UpdateAppSMSTemplateResponse) |  |
 | GetAppSMSTemplatesByApp | [GetAppSMSTemplatesByAppRequest](#third.gateway.v1.GetAppSMSTemplatesByAppRequest) | [GetAppSMSTemplatesByAppResponse](#third.gateway.v1.GetAppSMSTemplatesByAppResponse) |  |
+| GetAppSMSTemplatesByOtherApp | [GetAppSMSTemplatesByOtherAppRequest](#third.gateway.v1.GetAppSMSTemplatesByOtherAppRequest) | [GetAppSMSTemplatesByOtherAppResponse](#third.gateway.v1.GetAppSMSTemplatesByOtherAppResponse) |  |
 | GetAppSMSTemplateByAppLangUsedFor | [GetAppSMSTemplateByAppLangUsedForRequest](#third.gateway.v1.GetAppSMSTemplateByAppLangUsedForRequest) | [GetAppSMSTemplateByAppLangUsedForResponse](#third.gateway.v1.GetAppSMSTemplateByAppLangUsedForResponse) |  |
 | CreateAppEmailTemplate | [CreateAppEmailTemplateRequest](#third.gateway.v1.CreateAppEmailTemplateRequest) | [CreateAppEmailTemplateResponse](#third.gateway.v1.CreateAppEmailTemplateResponse) |  |
 | GetAppEmailTemplate | [GetAppEmailTemplateRequest](#third.gateway.v1.GetAppEmailTemplateRequest) | [GetAppEmailTemplateResponse](#third.gateway.v1.GetAppEmailTemplateResponse) |  |
 | UpdateAppEmailTemplate | [UpdateAppEmailTemplateRequest](#third.gateway.v1.UpdateAppEmailTemplateRequest) | [UpdateAppEmailTemplateResponse](#third.gateway.v1.UpdateAppEmailTemplateResponse) |  |
 | GetAppEmailTemplatesByApp | [GetAppEmailTemplatesByAppRequest](#third.gateway.v1.GetAppEmailTemplatesByAppRequest) | [GetAppEmailTemplatesByAppResponse](#third.gateway.v1.GetAppEmailTemplatesByAppResponse) |  |
+| GetAppEmailTemplatesByOtherApp | [GetAppEmailTemplatesByOtherAppRequest](#third.gateway.v1.GetAppEmailTemplatesByOtherAppRequest) | [GetAppEmailTemplatesByOtherAppResponse](#third.gateway.v1.GetAppEmailTemplatesByOtherAppResponse) |  |
 | GetAppEmailTemplateByAppLangUsedFor | [GetAppEmailTemplateByAppLangUsedForRequest](#third.gateway.v1.GetAppEmailTemplateByAppLangUsedForRequest) | [GetAppEmailTemplateByAppLangUsedForResponse](#third.gateway.v1.GetAppEmailTemplateByAppLangUsedForResponse) |  |
 | SendSMSCode | [SendSMSCodeRequest](#third.gateway.v1.SendSMSCodeRequest) | [SendSMSCodeResponse](#third.gateway.v1.SendSMSCodeResponse) |  |
 | VerifySMSCode | [VerifySMSCodeRequest](#third.gateway.v1.VerifySMSCodeRequest) | [VerifySMSCodeResponse](#third.gateway.v1.VerifySMSCodeResponse) |  |
@@ -785,7 +853,6 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| TargetAppID | [string](#string) |  |  |
 
 
 
@@ -795,6 +862,36 @@ Service Name
 <a name="third.gateway.v1.GetAppEmailTemplatesByAppResponse"></a>
 
 ### GetAppEmailTemplatesByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AppEmailTemplate](#third.gateway.v1.AppEmailTemplate) | repeated |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.GetAppEmailTemplatesByOtherAppRequest"></a>
+
+### GetAppEmailTemplatesByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.GetAppEmailTemplatesByOtherAppResponse"></a>
+
+### GetAppEmailTemplatesByOtherAppResponse
 
 
 
@@ -878,7 +975,6 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| TargetAppID | [string](#string) |  |  |
 
 
 
@@ -888,6 +984,36 @@ Service Name
 <a name="third.gateway.v1.GetAppSMSTemplatesByAppResponse"></a>
 
 ### GetAppSMSTemplatesByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AppSMSTemplate](#third.gateway.v1.AppSMSTemplate) | repeated |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.GetAppSMSTemplatesByOtherAppRequest"></a>
+
+### GetAppSMSTemplatesByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.GetAppSMSTemplatesByOtherAppResponse"></a>
+
+### GetAppSMSTemplatesByOtherAppResponse
 
 
 
@@ -1118,11 +1244,13 @@ Service Name
 | GetAppSMSTemplate | [GetAppSMSTemplateRequest](#third.gateway.v1.GetAppSMSTemplateRequest) | [GetAppSMSTemplateResponse](#third.gateway.v1.GetAppSMSTemplateResponse) |  |
 | UpdateAppSMSTemplate | [UpdateAppSMSTemplateRequest](#third.gateway.v1.UpdateAppSMSTemplateRequest) | [UpdateAppSMSTemplateResponse](#third.gateway.v1.UpdateAppSMSTemplateResponse) |  |
 | GetAppSMSTemplatesByApp | [GetAppSMSTemplatesByAppRequest](#third.gateway.v1.GetAppSMSTemplatesByAppRequest) | [GetAppSMSTemplatesByAppResponse](#third.gateway.v1.GetAppSMSTemplatesByAppResponse) |  |
+| GetAppSMSTemplatesByOtherApp | [GetAppSMSTemplatesByOtherAppRequest](#third.gateway.v1.GetAppSMSTemplatesByOtherAppRequest) | [GetAppSMSTemplatesByOtherAppResponse](#third.gateway.v1.GetAppSMSTemplatesByOtherAppResponse) |  |
 | GetAppSMSTemplateByAppLangUsedFor | [GetAppSMSTemplateByAppLangUsedForRequest](#third.gateway.v1.GetAppSMSTemplateByAppLangUsedForRequest) | [GetAppSMSTemplateByAppLangUsedForResponse](#third.gateway.v1.GetAppSMSTemplateByAppLangUsedForResponse) |  |
 | CreateAppEmailTemplate | [CreateAppEmailTemplateRequest](#third.gateway.v1.CreateAppEmailTemplateRequest) | [CreateAppEmailTemplateResponse](#third.gateway.v1.CreateAppEmailTemplateResponse) |  |
 | GetAppEmailTemplate | [GetAppEmailTemplateRequest](#third.gateway.v1.GetAppEmailTemplateRequest) | [GetAppEmailTemplateResponse](#third.gateway.v1.GetAppEmailTemplateResponse) |  |
 | UpdateAppEmailTemplate | [UpdateAppEmailTemplateRequest](#third.gateway.v1.UpdateAppEmailTemplateRequest) | [UpdateAppEmailTemplateResponse](#third.gateway.v1.UpdateAppEmailTemplateResponse) |  |
 | GetAppEmailTemplatesByApp | [GetAppEmailTemplatesByAppRequest](#third.gateway.v1.GetAppEmailTemplatesByAppRequest) | [GetAppEmailTemplatesByAppResponse](#third.gateway.v1.GetAppEmailTemplatesByAppResponse) |  |
+| GetAppEmailTemplatesByOtherApp | [GetAppEmailTemplatesByOtherAppRequest](#third.gateway.v1.GetAppEmailTemplatesByOtherAppRequest) | [GetAppEmailTemplatesByOtherAppResponse](#third.gateway.v1.GetAppEmailTemplatesByOtherAppResponse) |  |
 | GetAppEmailTemplateByAppLangUsedFor | [GetAppEmailTemplateByAppLangUsedForRequest](#third.gateway.v1.GetAppEmailTemplateByAppLangUsedForRequest) | [GetAppEmailTemplateByAppLangUsedForResponse](#third.gateway.v1.GetAppEmailTemplateByAppLangUsedForResponse) |  |
 | SendSMSCode | [SendSMSCodeRequest](#third.gateway.v1.SendSMSCodeRequest) | [SendSMSCodeResponse](#third.gateway.v1.SendSMSCodeResponse) |  |
 | VerifySMSCode | [VerifySMSCodeRequest](#third.gateway.v1.VerifySMSCodeRequest) | [VerifySMSCodeResponse](#third.gateway.v1.VerifySMSCodeResponse) |  |

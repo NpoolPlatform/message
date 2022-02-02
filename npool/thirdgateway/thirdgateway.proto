@@ -42,6 +42,12 @@ service ThirdGateway {
             body: "*"
         };
     }
+    rpc GetAppSMSTemplatesByOtherApp (GetAppSMSTemplatesByOtherAppRequest) returns (GetAppSMSTemplatesByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/sms/templates/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetAppSMSTemplateByAppLangUsedFor (GetAppSMSTemplateByAppLangUsedForRequest) returns (GetAppSMSTemplateByAppLangUsedForResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/sms/template/by/app/lang/usedfor"
@@ -70,6 +76,12 @@ service ThirdGateway {
     rpc GetAppEmailTemplatesByApp (GetAppEmailTemplatesByAppRequest) returns (GetAppEmailTemplatesByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/email/templates/by/app"
+            body: "*"
+        };
+    }
+    rpc GetAppEmailTemplatesByOtherApp (GetAppEmailTemplatesByOtherAppRequest) returns (GetAppEmailTemplatesByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/email/templates/by/other/app"
             body: "*"
         };
     }
@@ -204,13 +216,19 @@ message GetAppSMSTemplateByAppLangUsedForResponse {
 
 message GetAppSMSTemplatesByAppRequest {
     string AppID = 10;
-    string TargetAppID = 20;
 }
 
 message GetAppSMSTemplatesByAppResponse {
     repeated AppSMSTemplate Infos = 10;
 }
 
+message GetAppSMSTemplatesByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetAppSMSTemplatesByOtherAppResponse {
+    repeated AppSMSTemplate Infos = 10;
+}
 
 message AppEmailTemplate {
     string ID = 10;
@@ -260,10 +278,17 @@ message GetAppEmailTemplateByAppLangUsedForResponse {
 
 message GetAppEmailTemplatesByAppRequest {
     string AppID = 10;
-    string TargetAppID = 20;
 }
 
 message GetAppEmailTemplatesByAppResponse {
+    repeated AppEmailTemplate Infos = 10;
+}
+
+message GetAppEmailTemplatesByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetAppEmailTemplatesByOtherAppResponse {
     repeated AppEmailTemplate Infos = 10;
 }
 
