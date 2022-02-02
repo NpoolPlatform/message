@@ -220,6 +220,15 @@ export type GetAppUserResponse = {
   info?: AppUser
 }
 
+export type GetAppUserByAppUserRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetAppUserByAppUserResponse = {
+  info?: AppUser
+}
+
 export type GetAppUserByAppAccountRequest = {
   appID?: string
   account?: string
@@ -672,6 +681,9 @@ export class AppUserManager {
   }
   static GetAppUser(req: GetAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserResponse> {
     return fm.fetchReq<GetAppUserRequest, GetAppUserResponse>(`/v1/get/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUserByAppUser(req: GetAppUserByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserByAppUserResponse> {
+    return fm.fetchReq<GetAppUserByAppUserRequest, GetAppUserByAppUserResponse>(`/v1/get/app/user/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppUserByAppAccount(req: GetAppUserByAppAccountRequest, initReq?: fm.InitReq): Promise<GetAppUserByAppAccountResponse> {
     return fm.fetchReq<GetAppUserByAppAccountRequest, GetAppUserByAppAccountResponse>(`/v1/get/app/user/by/account`, {...initReq, method: "POST", body: JSON.stringify(req)})

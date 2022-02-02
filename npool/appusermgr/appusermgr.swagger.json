@@ -939,6 +939,38 @@
         ]
       }
     },
+    "/v1/get/app/user/by/app/user": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/get/app/user/control": {
       "post": {
         "operationId": "AppUserManager_GetAppUserControl",
@@ -2779,6 +2811,25 @@
       }
     },
     "v1GetAppUserByAppAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUser"
+        }
+      }
+    },
+    "v1GetAppUserByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserByAppUserResponse": {
       "type": "object",
       "properties": {
         "Info": {

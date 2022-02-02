@@ -78,6 +78,8 @@
     - [GetAppRolesByAppResponse](#app.user.manager.v1.GetAppRolesByAppResponse)
     - [GetAppUserByAppAccountRequest](#app.user.manager.v1.GetAppUserByAppAccountRequest)
     - [GetAppUserByAppAccountResponse](#app.user.manager.v1.GetAppUserByAppAccountResponse)
+    - [GetAppUserByAppUserRequest](#app.user.manager.v1.GetAppUserByAppUserRequest)
+    - [GetAppUserByAppUserResponse](#app.user.manager.v1.GetAppUserByAppUserResponse)
     - [GetAppUserControlByAppUserRequest](#app.user.manager.v1.GetAppUserControlByAppUserRequest)
     - [GetAppUserControlByAppUserResponse](#app.user.manager.v1.GetAppUserControlByAppUserResponse)
     - [GetAppUserControlRequest](#app.user.manager.v1.GetAppUserControlRequest)
@@ -212,6 +214,8 @@
     - [GetAppRolesByAppResponse](#app.user.manager.v1.GetAppRolesByAppResponse)
     - [GetAppUserByAppAccountRequest](#app.user.manager.v1.GetAppUserByAppAccountRequest)
     - [GetAppUserByAppAccountResponse](#app.user.manager.v1.GetAppUserByAppAccountResponse)
+    - [GetAppUserByAppUserRequest](#app.user.manager.v1.GetAppUserByAppUserRequest)
+    - [GetAppUserByAppUserResponse](#app.user.manager.v1.GetAppUserByAppUserResponse)
     - [GetAppUserControlByAppUserRequest](#app.user.manager.v1.GetAppUserControlByAppUserRequest)
     - [GetAppUserControlByAppUserResponse](#app.user.manager.v1.GetAppUserControlByAppUserResponse)
     - [GetAppUserControlRequest](#app.user.manager.v1.GetAppUserControlRequest)
@@ -1444,6 +1448,37 @@
 
 
 
+<a name="app.user.manager.v1.GetAppUserByAppUserRequest"></a>
+
+### GetAppUserByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppUserByAppUserResponse"></a>
+
+### GetAppUserByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUser](#app.user.manager.v1.AppUser) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.GetAppUserControlByAppUserRequest"></a>
 
 ### GetAppUserControlByAppUserRequest
@@ -2330,6 +2365,7 @@
 | GetAppInfosByCreator | [GetAppInfosByCreatorRequest](#app.user.manager.v1.GetAppInfosByCreatorRequest) | [GetAppInfosByCreatorResponse](#app.user.manager.v1.GetAppInfosByCreatorResponse) |  |
 | CreateAppUser | [CreateAppUserRequest](#app.user.manager.v1.CreateAppUserRequest) | [CreateAppUserResponse](#app.user.manager.v1.CreateAppUserResponse) |  |
 | GetAppUser | [GetAppUserRequest](#app.user.manager.v1.GetAppUserRequest) | [GetAppUserResponse](#app.user.manager.v1.GetAppUserResponse) |  |
+| GetAppUserByAppUser | [GetAppUserByAppUserRequest](#app.user.manager.v1.GetAppUserByAppUserRequest) | [GetAppUserByAppUserResponse](#app.user.manager.v1.GetAppUserByAppUserResponse) |  |
 | GetAppUserByAppAccount | [GetAppUserByAppAccountRequest](#app.user.manager.v1.GetAppUserByAppAccountRequest) | [GetAppUserByAppAccountResponse](#app.user.manager.v1.GetAppUserByAppAccountResponse) |  |
 | VerifyAppUserByAppAccountPassword | [VerifyAppUserByAppAccountPasswordRequest](#app.user.manager.v1.VerifyAppUserByAppAccountPasswordRequest) | [VerifyAppUserByAppAccountPasswordResponse](#app.user.manager.v1.VerifyAppUserByAppAccountPasswordResponse) |  |
 | GetAppUsersByApp | [GetAppUsersByAppRequest](#app.user.manager.v1.GetAppUsersByAppRequest) | [GetAppUsersByAppResponse](#app.user.manager.v1.GetAppUsersByAppResponse) |  |
@@ -3542,6 +3578,37 @@
 
 
 
+<a name="app.user.manager.v1.GetAppUserByAppUserRequest"></a>
+
+### GetAppUserByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.GetAppUserByAppUserResponse"></a>
+
+### GetAppUserByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUser](#app.user.manager.v1.AppUser) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.GetAppUserControlByAppUserRequest"></a>
 
 ### GetAppUserControlByAppUserRequest
@@ -4428,6 +4495,7 @@
 | GetAppInfosByCreator | [GetAppInfosByCreatorRequest](#app.user.manager.v1.GetAppInfosByCreatorRequest) | [GetAppInfosByCreatorResponse](#app.user.manager.v1.GetAppInfosByCreatorResponse) |  |
 | CreateAppUser | [CreateAppUserRequest](#app.user.manager.v1.CreateAppUserRequest) | [CreateAppUserResponse](#app.user.manager.v1.CreateAppUserResponse) |  |
 | GetAppUser | [GetAppUserRequest](#app.user.manager.v1.GetAppUserRequest) | [GetAppUserResponse](#app.user.manager.v1.GetAppUserResponse) |  |
+| GetAppUserByAppUser | [GetAppUserByAppUserRequest](#app.user.manager.v1.GetAppUserByAppUserRequest) | [GetAppUserByAppUserResponse](#app.user.manager.v1.GetAppUserByAppUserResponse) |  |
 | GetAppUserByAppAccount | [GetAppUserByAppAccountRequest](#app.user.manager.v1.GetAppUserByAppAccountRequest) | [GetAppUserByAppAccountResponse](#app.user.manager.v1.GetAppUserByAppAccountResponse) |  |
 | VerifyAppUserByAppAccountPassword | [VerifyAppUserByAppAccountPasswordRequest](#app.user.manager.v1.VerifyAppUserByAppAccountPasswordRequest) | [VerifyAppUserByAppAccountPasswordResponse](#app.user.manager.v1.VerifyAppUserByAppAccountPasswordResponse) |  |
 | GetAppUsersByApp | [GetAppUsersByAppRequest](#app.user.manager.v1.GetAppUsersByAppRequest) | [GetAppUsersByAppResponse](#app.user.manager.v1.GetAppUsersByAppResponse) |  |
