@@ -14,7 +14,7 @@ import "npool/cloud-hashing-billing/cloud-hashing-billing.proto";
 import "npool/cloud-hashing-inspire/cloud-hashing-inspire.proto";
 import "npool/kyc/kyc-management.proto";
 import "npool/review-service/review-service.proto";
-import "npool/user/user-management.proto";
+import "npool/appusermgr/appusermgr.proto";
 import "npool/coininfo/coininfo.proto";
 
 // Cloud Hashing Goods
@@ -273,7 +273,7 @@ message SignupRequest {
 }
 
 message SignupResponse {
-    user.v1.UserBasicInfo Info = 10;
+    app.user.manager.v1.AppUserInfo Info = 10;
 }
 
 message InvitationSummary {
@@ -319,7 +319,7 @@ message GetMyDirectInvitationsResponse {
 
 message KycReview {
     review.service.v1.Review Review = 10;
-    user.v1.UserBasicInfo User = 20;
+    app.user.manager.v1.AppUserInfo User = 20;
     kyc.management.v1.KycInfo Kyc = 30;
 }
 
@@ -333,7 +333,7 @@ message GetKycReviewsResponse {
 
 message GoodReview {
     review.service.v1.Review Review = 10;
-    user.v1.UserBasicInfo User = 20;
+    app.user.manager.v1.AppUserInfo CreatedBy = 20;
     cloud.hashing.goods.v1.GoodDetail Good = 30;
 }
 

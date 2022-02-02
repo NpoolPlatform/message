@@ -498,7 +498,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/hashingapisv1SignupResponse"
+              "$ref": "#/definitions/v1SignupResponse"
             }
           },
           "default": {
@@ -514,7 +514,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/hashingapisv1SignupRequest"
+              "$ref": "#/definitions/v1SignupRequest"
             }
           }
         ],
@@ -824,40 +824,6 @@
         }
       }
     },
-    "hashingapisv1SignupRequest": {
-      "type": "object",
-      "properties": {
-        "Username": {
-          "type": "string"
-        },
-        "PasswordHash": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNumber": {
-          "type": "string"
-        },
-        "VerificationCode": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "InvitationCode": {
-          "type": "string"
-        }
-      }
-    },
-    "hashingapisv1SignupResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1UserBasicInfo"
-        }
-      }
-    },
     "hashingapisv1UpdateKycRequest": {
       "type": "object",
       "properties": {
@@ -912,6 +878,150 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AppRole": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Default": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1AppUser": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "ImportFromApp": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AppUserControl": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AppUserExtra": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Organization": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AppUserInfo": {
+      "type": "object",
+      "properties": {
+        "User": {
+          "$ref": "#/definitions/v1AppUser"
+        },
+        "Extra": {
+          "$ref": "#/definitions/v1AppUserExtra"
+        },
+        "Ctrl": {
+          "$ref": "#/definitions/v1AppUserControl"
+        },
+        "Ban": {
+          "$ref": "#/definitions/v1BanAppUser"
+        },
+        "Roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppRole"
+          }
+        }
+      }
+    },
+    "v1BanAppUser": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
         }
       }
     },
@@ -1528,8 +1638,8 @@
         "Review": {
           "$ref": "#/definitions/v1Review"
         },
-        "User": {
-          "$ref": "#/definitions/v1UserBasicInfo"
+        "CreatedBy": {
+          "$ref": "#/definitions/v1AppUserInfo"
         },
         "Good": {
           "$ref": "#/definitions/v1GoodDetail"
@@ -1659,7 +1769,7 @@
           "$ref": "#/definitions/v1Review"
         },
         "User": {
-          "$ref": "#/definitions/v1UserBasicInfo"
+          "$ref": "#/definitions/v1AppUserInfo"
         },
         "Kyc": {
           "$ref": "#/definitions/v1KycInfo"
@@ -1876,6 +1986,40 @@
         }
       }
     },
+    "v1SignupRequest": {
+      "type": "object",
+      "properties": {
+        "Username": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "type": "string"
+        },
+        "VerificationCode": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "InvitationCode": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SignupResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
+        }
+      }
+    },
     "v1SubmitOrderRequest": {
       "type": "object",
       "properties": {
@@ -1910,90 +2054,6 @@
           "$ref": "#/definitions/hashingapisv1Order"
         }
       }
-    },
-    "v1UserBasicInfo": {
-      "type": "object",
-      "properties": {
-        "UserID": {
-          "type": "string"
-        },
-        "Username": {
-          "type": "string"
-        },
-        "Password": {
-          "type": "string"
-        },
-        "Avatar": {
-          "type": "string"
-        },
-        "Age": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Gender": {
-          "type": "string"
-        },
-        "Region": {
-          "type": "string"
-        },
-        "Birthday": {
-          "type": "string"
-        },
-        "Country": {
-          "type": "string"
-        },
-        "Province": {
-          "type": "string"
-        },
-        "City": {
-          "type": "string"
-        },
-        "PhoneNumber": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "CreateAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdateAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SignupMethod": {
-          "type": "string"
-        },
-        "Career": {
-          "type": "string"
-        },
-        "DisplayName": {
-          "type": "string"
-        },
-        "FirstName": {
-          "type": "string"
-        },
-        "LastName": {
-          "type": "string"
-        },
-        "StreetAddress1": {
-          "type": "string"
-        },
-        "StreetAddress2": {
-          "type": "string"
-        },
-        "Compony": {
-          "type": "string"
-        },
-        "PostalCode": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        }
-      },
-      "title": "request body and response"
     },
     "v1UserSpecialReduction": {
       "type": "object",

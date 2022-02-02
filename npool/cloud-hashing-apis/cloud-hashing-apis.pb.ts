@@ -6,6 +6,7 @@
 
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
+import * as AppUserManagerV1Appusermgr from "../appusermgr/appusermgr.pb"
 import * as CloudHashingBillingV1Cloud-hashing-billing from "../cloud-hashing-billing/cloud-hashing-billing.pb"
 import * as CloudHashingGoodsV1Cloud-hashing-goods from "../cloud-hashing-goods/cloud-hashing-goods.pb"
 import * as CloudHashingInspireV1Cloud-hashing-inspire from "../cloud-hashing-inspire/cloud-hashing-inspire.pb"
@@ -14,7 +15,6 @@ import * as SphinxCoininfoV1Coininfo from "../coininfo/coininfo.pb"
 import * as KycManagementV1Kyc-management from "../kyc/kyc-management.pb"
 import * as NpoolV1Npool from "../npool.pb"
 import * as ReviewServiceV1Review-service from "../review-service/review-service.pb"
-import * as UserV1User-management from "../user/user-management.pb"
 export type Good = {
   good?: CloudHashingGoodsV1Cloud-hashing-goods.GoodDetail
   main?: SphinxCoininfoV1Coininfo.CoinInfo
@@ -143,7 +143,7 @@ export type SignupRequest = {
 }
 
 export type SignupResponse = {
-  info?: UserV1User-management.UserBasicInfo
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
 }
 
 export type InvitationSummary = {
@@ -189,7 +189,7 @@ export type GetMyDirectInvitationsResponse = {
 
 export type KycReview = {
   review?: ReviewServiceV1Review-service.Review
-  user?: UserV1User-management.UserBasicInfo
+  user?: AppUserManagerV1Appusermgr.AppUserInfo
   kyc?: KycManagementV1Kyc-management.KycInfo
 }
 
@@ -203,7 +203,7 @@ export type GetKycReviewsResponse = {
 
 export type GoodReview = {
   review?: ReviewServiceV1Review-service.Review
-  user?: UserV1User-management.UserBasicInfo
+  createdBy?: AppUserManagerV1Appusermgr.AppUserInfo
   good?: CloudHashingGoodsV1Cloud-hashing-goods.GoodDetail
 }
 

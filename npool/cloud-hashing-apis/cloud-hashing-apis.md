@@ -635,7 +635,7 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
-| User | [user.v1.UserBasicInfo](#user.v1.UserBasicInfo) |  |  |
+| CreatedBy | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 | Good | [cloud.hashing.goods.v1.GoodDetail](#cloud.hashing.goods.v1.GoodDetail) |  |  |
 
 
@@ -755,7 +755,7 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
-| User | [user.v1.UserBasicInfo](#user.v1.UserBasicInfo) |  |  |
+| User | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 | Kyc | [kyc.management.v1.KycInfo](#kyc.management.v1.KycInfo) |  |  |
 
 
@@ -845,7 +845,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [user.v1.UserBasicInfo](#user.v1.UserBasicInfo) |  |  |
+| Info | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 
 
 
@@ -1475,7 +1475,7 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
-| User | [user.v1.UserBasicInfo](#user.v1.UserBasicInfo) |  |  |
+| CreatedBy | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 | Good | [cloud.hashing.goods.v1.GoodDetail](#cloud.hashing.goods.v1.GoodDetail) |  |  |
 
 
@@ -1595,7 +1595,7 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
-| User | [user.v1.UserBasicInfo](#user.v1.UserBasicInfo) |  |  |
+| User | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 | Kyc | [kyc.management.v1.KycInfo](#kyc.management.v1.KycInfo) |  |  |
 
 
@@ -1685,7 +1685,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [user.v1.UserBasicInfo](#user.v1.UserBasicInfo) |  |  |
+| Info | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 
 
 
