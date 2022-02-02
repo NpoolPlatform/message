@@ -140,17 +140,10 @@ export type AppLangInfo = {
 
 export type GetAppLangInfosByAppRequest = {
   appID?: string
-}
-
-export type GetAppLangInfosByAppResponse = {
-  infos?: AppLangInfo[]
-}
-
-export type GetAppLangInfosByOtherAppRequest = {
   targetAppID?: string
 }
 
-export type GetAppLangInfosByOtherAppResponse = {
+export type GetAppLangInfosByAppResponse = {
   infos?: AppLangInfo[]
 }
 
@@ -181,9 +174,6 @@ export class Internationalization {
   }
   static GetAppLangInfosByApp(req: GetAppLangInfosByAppRequest, initReq?: fm.InitReq): Promise<GetAppLangInfosByAppResponse> {
     return fm.fetchReq<GetAppLangInfosByAppRequest, GetAppLangInfosByAppResponse>(`/v1/get/app/lang/infos/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetAppLangInfosByOtherApp(req: GetAppLangInfosByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppLangInfosByOtherAppResponse> {
-    return fm.fetchReq<GetAppLangInfosByOtherAppRequest, GetAppLangInfosByOtherAppResponse>(`/v1/get/app/lang/infos/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateMessage(req: CreateMessageRequest, initReq?: fm.InitReq): Promise<CreateMessageResponse> {
     return fm.fetchReq<CreateMessageRequest, CreateMessageResponse>(`/v1/create/message`, {...initReq, method: "POST", body: JSON.stringify(req)})
