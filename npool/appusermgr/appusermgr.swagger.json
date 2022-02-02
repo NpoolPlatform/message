@@ -2020,6 +2020,9 @@
         },
         "SigninVerifyEnable": {
           "type": "boolean"
+        },
+        "InvitationCodeMust": {
+          "type": "boolean"
         }
       }
     },

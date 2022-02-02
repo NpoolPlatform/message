@@ -457,6 +457,7 @@ message AppControl {
     string RecaptchaMethod = 50;
     bool KycEnable = 60;
     bool SigninVerifyEnable = 70;
+    bool InvitationCodeMust = 80;
 }
 
 message CreateAppControlRequest {

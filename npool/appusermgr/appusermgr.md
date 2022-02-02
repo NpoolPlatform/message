@@ -317,6 +317,7 @@
 | RecaptchaMethod | [string](#string) |  |  |
 | KycEnable | [bool](#bool) |  |  |
 | SigninVerifyEnable | [bool](#bool) |  |  |
+| InvitationCodeMust | [bool](#bool) |  |  |
 
 
 
@@ -2414,6 +2415,7 @@
 | RecaptchaMethod | [string](#string) |  |  |
 | KycEnable | [bool](#bool) |  |  |
 | SigninVerifyEnable | [bool](#bool) |  |  |
+| InvitationCodeMust | [bool](#bool) |  |  |
 
 
 

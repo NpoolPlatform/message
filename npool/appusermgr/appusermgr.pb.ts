@@ -81,6 +81,7 @@ export type AppControl = {
   recaptchaMethod?: string
   kycEnable?: boolean
   signinVerifyEnable?: boolean
+  invitationCodeMust?: boolean
 }
 
 export type CreateAppControlRequest = {
