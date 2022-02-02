@@ -586,6 +586,15 @@ export type GetAppUserInfoResponse = {
   info?: AppUserInfo
 }
 
+export type GetAppUserInfoByAppUserRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetAppUserInfoByAppUserResponse = {
+  info?: AppUserInfo
+}
+
 export type GetAppUserInfosByAppRequest = {
   appID?: string
   pageInfo?: NpoolV1Npool.PageInfo
@@ -792,6 +801,9 @@ export class AppUserManager {
   }
   static GetAppUserInfo(req: GetAppUserInfoRequest, initReq?: fm.InitReq): Promise<GetAppUserInfoResponse> {
     return fm.fetchReq<GetAppUserInfoRequest, GetAppUserInfoResponse>(`/v1/get/app/userinfo`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUserInfoByAppUser(req: GetAppUserInfoByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserInfoByAppUserResponse> {
+    return fm.fetchReq<GetAppUserInfoByAppUserRequest, GetAppUserInfoByAppUserResponse>(`/v1/get/app/userinfo/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppUserInfosByApp(req: GetAppUserInfosByAppRequest, initReq?: fm.InitReq): Promise<GetAppUserInfosByAppResponse> {
     return fm.fetchReq<GetAppUserInfosByAppRequest, GetAppUserInfosByAppResponse>(`/v1/get/app/userinfos/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})

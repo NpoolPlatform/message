@@ -373,6 +373,12 @@ service AppUserManager {
             body: "*"
         };
     }
+    rpc GetAppUserInfoByAppUser (GetAppUserInfoByAppUserRequest) returns (GetAppUserInfoByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/userinfo/by/app/user"
+            body: "*"
+        };
+    }
     rpc GetAppUserInfosByApp (GetAppUserInfosByAppRequest) returns (GetAppUserInfosByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/userinfos/by/app"
@@ -965,6 +971,15 @@ message GetAppUserInfoRequest {
 }
 
 message GetAppUserInfoResponse {
+    AppUserInfo Info = 10;
+}
+
+message GetAppUserInfoByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetAppUserInfoByAppUserResponse {
     AppUserInfo Info = 10;
 }
 
