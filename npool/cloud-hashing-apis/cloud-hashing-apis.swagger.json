@@ -939,6 +939,9 @@
         },
         "UserID": {
           "type": "string"
+        },
+        "SigninVerifyByGoogleAuthentication": {
+          "type": "boolean"
         }
       }
     },
@@ -981,6 +984,12 @@
           "type": "string"
         },
         "Organization": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
           "type": "string"
         }
       }
@@ -1363,7 +1372,7 @@
         "AppID": {
           "type": "string"
         },
-        "InviterID": {
+        "UserID": {
           "type": "string"
         }
       }
@@ -1388,7 +1397,7 @@
         "AppID": {
           "type": "string"
         },
-        "InviterID": {
+        "UserID": {
           "type": "string"
         }
       }

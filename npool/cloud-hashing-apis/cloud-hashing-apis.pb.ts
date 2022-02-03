@@ -169,7 +169,7 @@ export type Invitation = {
 
 export type GetMyInvitationsRequest = {
   appID?: string
-  inviterID?: string
+  userID?: string
 }
 
 export type GetMyInvitationsResponse = {
@@ -179,7 +179,7 @@ export type GetMyInvitationsResponse = {
 
 export type GetMyDirectInvitationsRequest = {
   appID?: string
-  inviterID?: string
+  userID?: string
 }
 
 export type GetMyDirectInvitationsResponse = {

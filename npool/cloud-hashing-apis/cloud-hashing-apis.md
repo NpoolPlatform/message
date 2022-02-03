@@ -370,7 +370,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| InviterID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 
 
 
@@ -418,7 +418,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| InviterID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 
 
 
@@ -1210,7 +1210,7 @@ Cloud Hashing Goods
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| InviterID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 
 
 
@@ -1258,7 +1258,7 @@ Cloud Hashing Goods
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| InviterID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 
 
 

@@ -299,7 +299,7 @@ message Invitation {
 
 message GetMyInvitationsRequest {
     string AppID = 10;
-    string InviterID = 20;
+    string UserID = 20;
 }
 
 message GetMyInvitationsResponse {
@@ -309,7 +309,7 @@ message GetMyInvitationsResponse {
 
 message GetMyDirectInvitationsRequest {
     string AppID = 10;
-    string InviterID = 20;
+    string UserID = 20;
 }
 
 message GetMyDirectInvitationsResponse {
