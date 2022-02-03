@@ -587,6 +587,38 @@
         ]
       }
     },
+    "/v1/update/password": {
+      "post": {
+        "operationId": "CloudHashingApis_UpdatePassword",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdatePasswordResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdatePasswordRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "operationId": "CloudHashingApis_Version",
@@ -1014,6 +1046,29 @@
           "items": {
             "$ref": "#/definitions/v1AppRole"
           }
+        }
+      }
+    },
+    "v1AppUserSecret": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        },
+        "Salt": {
+          "type": "string"
+        },
+        "GoogleSecret": {
+          "type": "string"
         }
       }
     },
@@ -2061,6 +2116,28 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/hashingapisv1Order"
+        }
+      }
+    },
+    "v1UpdatePasswordRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdatePasswordResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserSecret"
         }
       }
     },

@@ -1867,38 +1867,6 @@
         ]
       }
     },
-    "/v1/update/app/user/secret/by/app/user": {
-      "post": {
-        "operationId": "AppUserManager_UpdateAppUserSecretByAppUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateAppUserSecretByAppUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateAppUserSecretByAppUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppUserManager"
-        ]
-      }
-    },
     "/v1/update/ban/app": {
       "post": {
         "operationId": "AppUserManager_UpdateBanApp",
@@ -3380,28 +3348,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUser"
-        }
-      }
-    },
-    "v1UpdateAppUserSecretByAppUserRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "PasswordHash": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateAppUserSecretByAppUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserSecret"
         }
       }
     },

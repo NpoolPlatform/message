@@ -199,12 +199,6 @@ service AppUserManager {
             body: "*"
         };
     }
-    rpc UpdateAppUserSecretByAppUser (UpdateAppUserSecretByAppUserRequest) returns (UpdateAppUserSecretByAppUserResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/app/user/secret/by/app/user"
-            body: "*"
-        };
-    }
     rpc CreateAppUserExtra (CreateAppUserExtraRequest) returns (CreateAppUserExtraResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/user/extra"
@@ -689,16 +683,6 @@ message UpdateAppUserSecretRequest {
 }
 
 message UpdateAppUserSecretResponse {
-    AppUserSecret Info = 10;
-}
-
-message UpdateAppUserSecretByAppUserRequest {
-    string AppID = 10;
-    string UserID = 20;
-    string PasswordHash = 30;
-}
-
-message UpdateAppUserSecretByAppUserResponse {
     AppUserSecret Info = 10;
 }
 

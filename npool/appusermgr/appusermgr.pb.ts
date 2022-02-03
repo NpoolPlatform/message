@@ -298,16 +298,6 @@ export type UpdateAppUserSecretResponse = {
   info?: AppUserSecret
 }
 
-export type UpdateAppUserSecretByAppUserRequest = {
-  appID?: string
-  userID?: string
-  passwordHash?: string
-}
-
-export type UpdateAppUserSecretByAppUserResponse = {
-  info?: AppUserSecret
-}
-
 export type AppUserExtra = {
   id?: string
   appID?: string
@@ -730,9 +720,6 @@ export class AppUserManager {
   }
   static UpdateAppUserSecret(req: UpdateAppUserSecretRequest, initReq?: fm.InitReq): Promise<UpdateAppUserSecretResponse> {
     return fm.fetchReq<UpdateAppUserSecretRequest, UpdateAppUserSecretResponse>(`/v1/update/app/user/secret`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static UpdateAppUserSecretByAppUser(req: UpdateAppUserSecretByAppUserRequest, initReq?: fm.InitReq): Promise<UpdateAppUserSecretByAppUserResponse> {
-    return fm.fetchReq<UpdateAppUserSecretByAppUserRequest, UpdateAppUserSecretByAppUserResponse>(`/v1/update/app/user/secret/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateAppUserExtra(req: CreateAppUserExtraRequest, initReq?: fm.InitReq): Promise<CreateAppUserExtraResponse> {
     return fm.fetchReq<CreateAppUserExtraRequest, CreateAppUserExtraResponse>(`/v1/create/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req)})

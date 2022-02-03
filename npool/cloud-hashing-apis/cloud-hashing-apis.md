@@ -54,6 +54,8 @@
     - [SubmitOrderResponse](#cloud.hashing.apis.v1.SubmitOrderResponse)
     - [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest)
     - [UpdateKycResponse](#cloud.hashing.apis.v1.UpdateKycResponse)
+    - [UpdatePasswordRequest](#cloud.hashing.apis.v1.UpdatePasswordRequest)
+    - [UpdatePasswordResponse](#cloud.hashing.apis.v1.UpdatePasswordResponse)
   
     - [CloudHashingApis](#cloud.hashing.apis.v1.CloudHashingApis)
   
@@ -108,6 +110,8 @@
     - [SubmitOrderResponse](#cloud.hashing.apis.v1.SubmitOrderResponse)
     - [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest)
     - [UpdateKycResponse](#cloud.hashing.apis.v1.UpdateKycResponse)
+    - [UpdatePasswordRequest](#cloud.hashing.apis.v1.UpdatePasswordRequest)
+    - [UpdatePasswordResponse](#cloud.hashing.apis.v1.UpdatePasswordResponse)
   
     - [CloudHashingApis](#cloud.hashing.apis.v1.CloudHashingApis)
   
@@ -917,6 +921,38 @@ Request body and response
 
 
 
+
+<a name="cloud.hashing.apis.v1.UpdatePasswordRequest"></a>
+
+### UpdatePasswordRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| PasswordHash | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.UpdatePasswordResponse"></a>
+
+### UpdatePasswordResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [app.user.manager.v1.AppUserSecret](#app.user.manager.v1.AppUserSecret) |  |  |
+
+
+
+
+
  
 
  
@@ -943,6 +979,7 @@ Cloud Hashing Goods
 | GetOrdersByApp | [GetOrdersByAppRequest](#cloud.hashing.apis.v1.GetOrdersByAppRequest) | [GetOrdersByAppResponse](#cloud.hashing.apis.v1.GetOrdersByAppResponse) |  |
 | GetOrdersByGood | [GetOrdersByGoodRequest](#cloud.hashing.apis.v1.GetOrdersByGoodRequest) | [GetOrdersByGoodResponse](#cloud.hashing.apis.v1.GetOrdersByGoodResponse) |  |
 | Signup | [SignupRequest](#cloud.hashing.apis.v1.SignupRequest) | [SignupResponse](#cloud.hashing.apis.v1.SignupResponse) |  |
+| UpdatePassword | [UpdatePasswordRequest](#cloud.hashing.apis.v1.UpdatePasswordRequest) | [UpdatePasswordResponse](#cloud.hashing.apis.v1.UpdatePasswordResponse) |  |
 | GetMyInvitations | [GetMyInvitationsRequest](#cloud.hashing.apis.v1.GetMyInvitationsRequest) | [GetMyInvitationsResponse](#cloud.hashing.apis.v1.GetMyInvitationsResponse) |  |
 | GetMyDirectInvitations | [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest) | [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse) |  |
@@ -1757,6 +1794,38 @@ Request body and response
 
 
 
+
+<a name="cloud.hashing.apis.v1.UpdatePasswordRequest"></a>
+
+### UpdatePasswordRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| PasswordHash | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.UpdatePasswordResponse"></a>
+
+### UpdatePasswordResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [app.user.manager.v1.AppUserSecret](#app.user.manager.v1.AppUserSecret) |  |  |
+
+
+
+
+
  
 
  
@@ -1783,6 +1852,7 @@ Cloud Hashing Goods
 | GetOrdersByApp | [GetOrdersByAppRequest](#cloud.hashing.apis.v1.GetOrdersByAppRequest) | [GetOrdersByAppResponse](#cloud.hashing.apis.v1.GetOrdersByAppResponse) |  |
 | GetOrdersByGood | [GetOrdersByGoodRequest](#cloud.hashing.apis.v1.GetOrdersByGoodRequest) | [GetOrdersByGoodResponse](#cloud.hashing.apis.v1.GetOrdersByGoodResponse) |  |
 | Signup | [SignupRequest](#cloud.hashing.apis.v1.SignupRequest) | [SignupResponse](#cloud.hashing.apis.v1.SignupResponse) |  |
+| UpdatePassword | [UpdatePasswordRequest](#cloud.hashing.apis.v1.UpdatePasswordRequest) | [UpdatePasswordResponse](#cloud.hashing.apis.v1.UpdatePasswordResponse) |  |
 | GetMyInvitations | [GetMyInvitationsRequest](#cloud.hashing.apis.v1.GetMyInvitationsRequest) | [GetMyInvitationsResponse](#cloud.hashing.apis.v1.GetMyInvitationsResponse) |  |
 | GetMyDirectInvitations | [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest) | [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse) |  |

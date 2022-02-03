@@ -146,6 +146,16 @@ export type SignupResponse = {
   info?: AppUserManagerV1Appusermgr.AppUser
 }
 
+export type UpdatePasswordRequest = {
+  appID?: string
+  userID?: string
+  passwordHash?: string
+}
+
+export type UpdatePasswordResponse = {
+  info?: AppUserManagerV1Appusermgr.AppUserSecret
+}
+
 export type InvitationSummary = {
   units?: number
   amount?: number
@@ -281,6 +291,9 @@ export class CloudHashingApis {
   }
   static Signup(req: SignupRequest, initReq?: fm.InitReq): Promise<SignupResponse> {
     return fm.fetchReq<SignupRequest, SignupResponse>(`/v1/signup`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdatePassword(req: UpdatePasswordRequest, initReq?: fm.InitReq): Promise<UpdatePasswordResponse> {
+    return fm.fetchReq<UpdatePasswordRequest, UpdatePasswordResponse>(`/v1/update/password`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetMyInvitations(req: GetMyInvitationsRequest, initReq?: fm.InitReq): Promise<GetMyInvitationsResponse> {
     return fm.fetchReq<GetMyInvitationsRequest, GetMyInvitationsResponse>(`/v1/get/my/invitations`, {...initReq, method: "POST", body: JSON.stringify(req)})
