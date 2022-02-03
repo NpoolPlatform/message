@@ -417,7 +417,7 @@
         "EnvironmentSpec": {
           "type": "string"
         },
-        "LoginType": {
+        "AccountType": {
           "type": "string"
         },
         "Token": {

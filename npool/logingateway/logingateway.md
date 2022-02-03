@@ -105,7 +105,7 @@
 | PasswordHash | [string](#string) |  |  |
 | ManMachineSpec | [string](#string) |  |  |
 | EnvironmentSpec | [string](#string) |  |  |
-| LoginType | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
 | Token | [string](#string) |  |  |
 
 
@@ -287,7 +287,7 @@
 | PasswordHash | [string](#string) |  |  |
 | ManMachineSpec | [string](#string) |  |  |
 | EnvironmentSpec | [string](#string) |  |  |
-| LoginType | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
 | Token | [string](#string) |  |  |
 
 

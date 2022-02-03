@@ -14,7 +14,7 @@ export type LoginRequest = {
   passwordHash?: string
   manMachineSpec?: string
   environmentSpec?: string
-  loginType?: string
+  accountType?: string
   token?: string
 }
 
