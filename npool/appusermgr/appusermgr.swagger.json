@@ -1611,14 +1611,14 @@
         ]
       }
     },
-    "/v1/get/genesis/app/role/user/by/app": {
+    "/v1/get/genesis/app/role/users/by/other/app": {
       "post": {
-        "operationId": "AppUserManager_GetGenesisAppRoleUserByApp",
+        "operationId": "AppUserManager_GetGenesisAppRoleUsersByOtherApp",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetGenesisAppRoleUserByAppResponse"
+              "$ref": "#/definitions/v1GetGenesisAppRoleUsersByOtherAppResponse"
             }
           },
           "default": {
@@ -1634,7 +1634,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetGenesisAppRoleUserByAppRequest"
+              "$ref": "#/definitions/v1GetGenesisAppRoleUsersByOtherAppRequest"
             }
           }
         ],
@@ -3315,7 +3315,7 @@
         }
       }
     },
-    "v1GetGenesisAppRoleUserByAppRequest": {
+    "v1GetGenesisAppRoleUsersByOtherAppRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -3326,7 +3326,7 @@
         }
       }
     },
-    "v1GetGenesisAppRoleUserByAppResponse": {
+    "v1GetGenesisAppRoleUsersByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {

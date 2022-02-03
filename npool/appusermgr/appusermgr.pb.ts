@@ -463,12 +463,12 @@ export type GetGenesisRoleResponse = {
   info?: AppRole
 }
 
-export type GetGenesisAppRoleUserByAppRequest = {
+export type GetGenesisAppRoleUsersByOtherAppRequest = {
   appID?: string
   targetAppID?: string
 }
 
-export type GetGenesisAppRoleUserByAppResponse = {
+export type GetGenesisAppRoleUsersByOtherAppResponse = {
   infos?: AppRoleUser[]
   total?: number
 }
@@ -795,8 +795,8 @@ export class AppUserManager {
   static GetGenesisRole(req: GetGenesisRoleRequest, initReq?: fm.InitReq): Promise<GetGenesisRoleResponse> {
     return fm.fetchReq<GetGenesisRoleRequest, GetGenesisRoleResponse>(`/v1/get/genesis/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetGenesisAppRoleUserByApp(req: GetGenesisAppRoleUserByAppRequest, initReq?: fm.InitReq): Promise<GetGenesisAppRoleUserByAppResponse> {
-    return fm.fetchReq<GetGenesisAppRoleUserByAppRequest, GetGenesisAppRoleUserByAppResponse>(`/v1/get/genesis/app/role/user/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetGenesisAppRoleUsersByOtherApp(req: GetGenesisAppRoleUsersByOtherAppRequest, initReq?: fm.InitReq): Promise<GetGenesisAppRoleUsersByOtherAppResponse> {
+    return fm.fetchReq<GetGenesisAppRoleUsersByOtherAppRequest, GetGenesisAppRoleUsersByOtherAppResponse>(`/v1/get/genesis/app/role/users/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateGenesisRoleUser(req: CreateGenesisRoleUserRequest, initReq?: fm.InitReq): Promise<CreateGenesisRoleUserResponse> {
     return fm.fetchReq<CreateGenesisRoleUserRequest, CreateGenesisRoleUserResponse>(`/v1/create/genesis/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})

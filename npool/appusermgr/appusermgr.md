@@ -117,8 +117,8 @@
     - [GetBanAppUserByAppUserResponse](#app.user.manager.v1.GetBanAppUserByAppUserResponse)
     - [GetBanAppUserRequest](#app.user.manager.v1.GetBanAppUserRequest)
     - [GetBanAppUserResponse](#app.user.manager.v1.GetBanAppUserResponse)
-    - [GetGenesisAppRoleUserByAppRequest](#app.user.manager.v1.GetGenesisAppRoleUserByAppRequest)
-    - [GetGenesisAppRoleUserByAppResponse](#app.user.manager.v1.GetGenesisAppRoleUserByAppResponse)
+    - [GetGenesisAppRoleUsersByOtherAppRequest](#app.user.manager.v1.GetGenesisAppRoleUsersByOtherAppRequest)
+    - [GetGenesisAppRoleUsersByOtherAppResponse](#app.user.manager.v1.GetGenesisAppRoleUsersByOtherAppResponse)
     - [GetGenesisRoleRequest](#app.user.manager.v1.GetGenesisRoleRequest)
     - [GetGenesisRoleResponse](#app.user.manager.v1.GetGenesisRoleResponse)
     - [GetUserRolesByAppUserRequest](#app.user.manager.v1.GetUserRolesByAppUserRequest)
@@ -260,8 +260,8 @@
     - [GetBanAppUserByAppUserResponse](#app.user.manager.v1.GetBanAppUserByAppUserResponse)
     - [GetBanAppUserRequest](#app.user.manager.v1.GetBanAppUserRequest)
     - [GetBanAppUserResponse](#app.user.manager.v1.GetBanAppUserResponse)
-    - [GetGenesisAppRoleUserByAppRequest](#app.user.manager.v1.GetGenesisAppRoleUserByAppRequest)
-    - [GetGenesisAppRoleUserByAppResponse](#app.user.manager.v1.GetGenesisAppRoleUserByAppResponse)
+    - [GetGenesisAppRoleUsersByOtherAppRequest](#app.user.manager.v1.GetGenesisAppRoleUsersByOtherAppRequest)
+    - [GetGenesisAppRoleUsersByOtherAppResponse](#app.user.manager.v1.GetGenesisAppRoleUsersByOtherAppResponse)
     - [GetGenesisRoleRequest](#app.user.manager.v1.GetGenesisRoleRequest)
     - [GetGenesisRoleResponse](#app.user.manager.v1.GetGenesisRoleResponse)
     - [GetUserRolesByAppUserRequest](#app.user.manager.v1.GetUserRolesByAppUserRequest)
@@ -2070,9 +2070,9 @@
 
 
 
-<a name="app.user.manager.v1.GetGenesisAppRoleUserByAppRequest"></a>
+<a name="app.user.manager.v1.GetGenesisAppRoleUsersByOtherAppRequest"></a>
 
-### GetGenesisAppRoleUserByAppRequest
+### GetGenesisAppRoleUsersByOtherAppRequest
 
 
 
@@ -2086,9 +2086,9 @@
 
 
 
-<a name="app.user.manager.v1.GetGenesisAppRoleUserByAppResponse"></a>
+<a name="app.user.manager.v1.GetGenesisAppRoleUsersByOtherAppResponse"></a>
 
-### GetGenesisAppRoleUserByAppResponse
+### GetGenesisAppRoleUsersByOtherAppResponse
 
 
 
@@ -2521,7 +2521,7 @@
 | UpdateAppUserControl | [UpdateAppUserControlRequest](#app.user.manager.v1.UpdateAppUserControlRequest) | [UpdateAppUserControlResponse](#app.user.manager.v1.UpdateAppUserControlResponse) |  |
 | CreateGenesisRole | [CreateGenesisRoleRequest](#app.user.manager.v1.CreateGenesisRoleRequest) | [CreateGenesisRoleResponse](#app.user.manager.v1.CreateGenesisRoleResponse) |  |
 | GetGenesisRole | [GetGenesisRoleRequest](#app.user.manager.v1.GetGenesisRoleRequest) | [GetGenesisRoleResponse](#app.user.manager.v1.GetGenesisRoleResponse) |  |
-| GetGenesisAppRoleUserByApp | [GetGenesisAppRoleUserByAppRequest](#app.user.manager.v1.GetGenesisAppRoleUserByAppRequest) | [GetGenesisAppRoleUserByAppResponse](#app.user.manager.v1.GetGenesisAppRoleUserByAppResponse) |  |
+| GetGenesisAppRoleUsersByOtherApp | [GetGenesisAppRoleUsersByOtherAppRequest](#app.user.manager.v1.GetGenesisAppRoleUsersByOtherAppRequest) | [GetGenesisAppRoleUsersByOtherAppResponse](#app.user.manager.v1.GetGenesisAppRoleUsersByOtherAppResponse) |  |
 | CreateGenesisRoleUser | [CreateGenesisRoleUserRequest](#app.user.manager.v1.CreateGenesisRoleUserRequest) | [CreateGenesisRoleUserResponse](#app.user.manager.v1.CreateGenesisRoleUserResponse) |  |
 | CreateAppRole | [CreateAppRoleRequest](#app.user.manager.v1.CreateAppRoleRequest) | [CreateAppRoleResponse](#app.user.manager.v1.CreateAppRoleResponse) |  |
 | GetAppRole | [GetAppRoleRequest](#app.user.manager.v1.GetAppRoleRequest) | [GetAppRoleResponse](#app.user.manager.v1.GetAppRoleResponse) |  |
@@ -4321,9 +4321,9 @@
 
 
 
-<a name="app.user.manager.v1.GetGenesisAppRoleUserByAppRequest"></a>
+<a name="app.user.manager.v1.GetGenesisAppRoleUsersByOtherAppRequest"></a>
 
-### GetGenesisAppRoleUserByAppRequest
+### GetGenesisAppRoleUsersByOtherAppRequest
 
 
 
@@ -4337,9 +4337,9 @@
 
 
 
-<a name="app.user.manager.v1.GetGenesisAppRoleUserByAppResponse"></a>
+<a name="app.user.manager.v1.GetGenesisAppRoleUsersByOtherAppResponse"></a>
 
-### GetGenesisAppRoleUserByAppResponse
+### GetGenesisAppRoleUsersByOtherAppResponse
 
 
 
@@ -4772,7 +4772,7 @@
 | UpdateAppUserControl | [UpdateAppUserControlRequest](#app.user.manager.v1.UpdateAppUserControlRequest) | [UpdateAppUserControlResponse](#app.user.manager.v1.UpdateAppUserControlResponse) |  |
 | CreateGenesisRole | [CreateGenesisRoleRequest](#app.user.manager.v1.CreateGenesisRoleRequest) | [CreateGenesisRoleResponse](#app.user.manager.v1.CreateGenesisRoleResponse) |  |
 | GetGenesisRole | [GetGenesisRoleRequest](#app.user.manager.v1.GetGenesisRoleRequest) | [GetGenesisRoleResponse](#app.user.manager.v1.GetGenesisRoleResponse) |  |
-| GetGenesisAppRoleUserByApp | [GetGenesisAppRoleUserByAppRequest](#app.user.manager.v1.GetGenesisAppRoleUserByAppRequest) | [GetGenesisAppRoleUserByAppResponse](#app.user.manager.v1.GetGenesisAppRoleUserByAppResponse) |  |
+| GetGenesisAppRoleUsersByOtherApp | [GetGenesisAppRoleUsersByOtherAppRequest](#app.user.manager.v1.GetGenesisAppRoleUsersByOtherAppRequest) | [GetGenesisAppRoleUsersByOtherAppResponse](#app.user.manager.v1.GetGenesisAppRoleUsersByOtherAppResponse) |  |
 | CreateGenesisRoleUser | [CreateGenesisRoleUserRequest](#app.user.manager.v1.CreateGenesisRoleUserRequest) | [CreateGenesisRoleUserResponse](#app.user.manager.v1.CreateGenesisRoleUserResponse) |  |
 | CreateAppRole | [CreateAppRoleRequest](#app.user.manager.v1.CreateAppRoleRequest) | [CreateAppRoleResponse](#app.user.manager.v1.CreateAppRoleResponse) |  |
 | GetAppRole | [GetAppRoleRequest](#app.user.manager.v1.GetAppRoleRequest) | [GetAppRoleResponse](#app.user.manager.v1.GetAppRoleResponse) |  |

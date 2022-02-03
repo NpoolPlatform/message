@@ -291,9 +291,9 @@ service AppUserManager {
             body: "*"
         };
     }
-    rpc GetGenesisAppRoleUserByApp (GetGenesisAppRoleUserByAppRequest) returns (GetGenesisAppRoleUserByAppResponse) {
+    rpc GetGenesisAppRoleUsersByOtherApp (GetGenesisAppRoleUsersByOtherAppRequest) returns (GetGenesisAppRoleUsersByOtherAppResponse) {
         option (google.api.http) = {
-            post: "/v1/get/genesis/app/role/user/by/app"
+            post: "/v1/get/genesis/app/role/users/by/other/app"
             body: "*"
         };
     }
@@ -863,12 +863,12 @@ message GetGenesisRoleResponse {
     AppRole Info = 10;
 }
 
-message GetGenesisAppRoleUserByAppRequest {
+message GetGenesisAppRoleUsersByOtherAppRequest {
     string AppID = 10;
     string TargetAppID = 20;
 }
 
-message GetGenesisAppRoleUserByAppResponse {
+message GetGenesisAppRoleUsersByOtherAppResponse {
     repeated AppRoleUser Infos = 10;
     uint32 Total = 20;
 }
