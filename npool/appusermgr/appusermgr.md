@@ -418,6 +418,7 @@
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
+| SigninVerifyByGoogleAuthentication | [bool](#bool) |  |  |
 
 
 
@@ -2582,6 +2583,7 @@
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
+| SigninVerifyByGoogleAuthentication | [bool](#bool) |  |  |
 
 
 

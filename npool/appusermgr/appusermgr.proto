@@ -787,6 +787,7 @@ message AppUserControl {
     string ID = 10;
     string AppID = 20;
     string UserID = 30;
+    bool SigninVerifyByGoogleAuthentication = 40;
 }
 
 message CreateAppUserControlRequest {
