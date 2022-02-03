@@ -130,6 +130,8 @@
     - [UpdateAppUserExtraResponse](#app.user.manager.v1.UpdateAppUserExtraResponse)
     - [UpdateAppUserRequest](#app.user.manager.v1.UpdateAppUserRequest)
     - [UpdateAppUserResponse](#app.user.manager.v1.UpdateAppUserResponse)
+    - [UpdateAppUserSecretByAppUserRequest](#app.user.manager.v1.UpdateAppUserSecretByAppUserRequest)
+    - [UpdateAppUserSecretByAppUserResponse](#app.user.manager.v1.UpdateAppUserSecretByAppUserResponse)
     - [UpdateAppUserSecretRequest](#app.user.manager.v1.UpdateAppUserSecretRequest)
     - [UpdateAppUserSecretResponse](#app.user.manager.v1.UpdateAppUserSecretResponse)
     - [UpdateBanAppRequest](#app.user.manager.v1.UpdateBanAppRequest)
@@ -268,6 +270,8 @@
     - [UpdateAppUserExtraResponse](#app.user.manager.v1.UpdateAppUserExtraResponse)
     - [UpdateAppUserRequest](#app.user.manager.v1.UpdateAppUserRequest)
     - [UpdateAppUserResponse](#app.user.manager.v1.UpdateAppUserResponse)
+    - [UpdateAppUserSecretByAppUserRequest](#app.user.manager.v1.UpdateAppUserSecretByAppUserRequest)
+    - [UpdateAppUserSecretByAppUserResponse](#app.user.manager.v1.UpdateAppUserSecretByAppUserResponse)
     - [UpdateAppUserSecretRequest](#app.user.manager.v1.UpdateAppUserSecretRequest)
     - [UpdateAppUserSecretResponse](#app.user.manager.v1.UpdateAppUserSecretResponse)
     - [UpdateBanAppRequest](#app.user.manager.v1.UpdateBanAppRequest)
@@ -2246,6 +2250,38 @@
 
 
 
+<a name="app.user.manager.v1.UpdateAppUserSecretByAppUserRequest"></a>
+
+### UpdateAppUserSecretByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| PasswordHash | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.UpdateAppUserSecretByAppUserResponse"></a>
+
+### UpdateAppUserSecretByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserSecret](#app.user.manager.v1.AppUserSecret) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.UpdateAppUserSecretRequest"></a>
 
 ### UpdateAppUserSecretRequest
@@ -2412,6 +2448,7 @@
 | GetAppUserSecret | [GetAppUserSecretRequest](#app.user.manager.v1.GetAppUserSecretRequest) | [GetAppUserSecretResponse](#app.user.manager.v1.GetAppUserSecretResponse) |  |
 | GetAppUserSecretByAppUser | [GetAppUserSecretByAppUserRequest](#app.user.manager.v1.GetAppUserSecretByAppUserRequest) | [GetAppUserSecretByAppUserResponse](#app.user.manager.v1.GetAppUserSecretByAppUserResponse) |  |
 | UpdateAppUserSecret | [UpdateAppUserSecretRequest](#app.user.manager.v1.UpdateAppUserSecretRequest) | [UpdateAppUserSecretResponse](#app.user.manager.v1.UpdateAppUserSecretResponse) |  |
+| UpdateAppUserSecretByAppUser | [UpdateAppUserSecretByAppUserRequest](#app.user.manager.v1.UpdateAppUserSecretByAppUserRequest) | [UpdateAppUserSecretByAppUserResponse](#app.user.manager.v1.UpdateAppUserSecretByAppUserResponse) |  |
 | CreateAppUserExtra | [CreateAppUserExtraRequest](#app.user.manager.v1.CreateAppUserExtraRequest) | [CreateAppUserExtraResponse](#app.user.manager.v1.CreateAppUserExtraResponse) |  |
 | GetAppUserExtra | [GetAppUserExtraRequest](#app.user.manager.v1.GetAppUserExtraRequest) | [GetAppUserExtraResponse](#app.user.manager.v1.GetAppUserExtraResponse) |  |
 | GetAppUserExtraByAppUser | [GetAppUserExtraByAppUserRequest](#app.user.manager.v1.GetAppUserExtraByAppUserRequest) | [GetAppUserExtraByAppUserResponse](#app.user.manager.v1.GetAppUserExtraByAppUserResponse) |  |
@@ -4411,6 +4448,38 @@
 
 
 
+<a name="app.user.manager.v1.UpdateAppUserSecretByAppUserRequest"></a>
+
+### UpdateAppUserSecretByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| PasswordHash | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.UpdateAppUserSecretByAppUserResponse"></a>
+
+### UpdateAppUserSecretByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserSecret](#app.user.manager.v1.AppUserSecret) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.UpdateAppUserSecretRequest"></a>
 
 ### UpdateAppUserSecretRequest
@@ -4577,6 +4646,7 @@
 | GetAppUserSecret | [GetAppUserSecretRequest](#app.user.manager.v1.GetAppUserSecretRequest) | [GetAppUserSecretResponse](#app.user.manager.v1.GetAppUserSecretResponse) |  |
 | GetAppUserSecretByAppUser | [GetAppUserSecretByAppUserRequest](#app.user.manager.v1.GetAppUserSecretByAppUserRequest) | [GetAppUserSecretByAppUserResponse](#app.user.manager.v1.GetAppUserSecretByAppUserResponse) |  |
 | UpdateAppUserSecret | [UpdateAppUserSecretRequest](#app.user.manager.v1.UpdateAppUserSecretRequest) | [UpdateAppUserSecretResponse](#app.user.manager.v1.UpdateAppUserSecretResponse) |  |
+| UpdateAppUserSecretByAppUser | [UpdateAppUserSecretByAppUserRequest](#app.user.manager.v1.UpdateAppUserSecretByAppUserRequest) | [UpdateAppUserSecretByAppUserResponse](#app.user.manager.v1.UpdateAppUserSecretByAppUserResponse) |  |
 | CreateAppUserExtra | [CreateAppUserExtraRequest](#app.user.manager.v1.CreateAppUserExtraRequest) | [CreateAppUserExtraResponse](#app.user.manager.v1.CreateAppUserExtraResponse) |  |
 | GetAppUserExtra | [GetAppUserExtraRequest](#app.user.manager.v1.GetAppUserExtraRequest) | [GetAppUserExtraResponse](#app.user.manager.v1.GetAppUserExtraResponse) |  |
 | GetAppUserExtraByAppUser | [GetAppUserExtraByAppUserRequest](#app.user.manager.v1.GetAppUserExtraByAppUserRequest) | [GetAppUserExtraByAppUserResponse](#app.user.manager.v1.GetAppUserExtraByAppUserResponse) |  |
