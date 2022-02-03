@@ -619,6 +619,38 @@
         ]
       }
     },
+    "/v1/update/password/by/app/user": {
+      "post": {
+        "operationId": "CloudHashingApis_UpdatePasswordByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdatePasswordByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdatePasswordByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "operationId": "CloudHashingApis_Version",
@@ -2116,6 +2148,37 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/hashingapisv1Order"
+        }
+      }
+    },
+    "v1UpdatePasswordByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "AccountType": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        },
+        "VerificationCode": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdatePasswordByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserSecret"
         }
       }
     },

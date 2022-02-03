@@ -102,6 +102,12 @@ service CloudHashingApis {
             body: "*"
         };
     }
+    rpc UpdatePasswordByAppUser(UpdatePasswordByAppUserRequest) returns (UpdatePasswordByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/password/by/app/user"
+            body: "*"
+        };
+    }
 
     rpc GetMyInvitations(GetMyInvitationsRequest) returns (GetMyInvitationsResponse) {
         option (google.api.http) = {
@@ -291,6 +297,19 @@ message UpdatePasswordRequest {
 }
 
 message UpdatePasswordResponse {
+    app.user.manager.v1.AppUserSecret Info = 10;
+}
+
+message UpdatePasswordByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string Account = 30;
+    string AccountType = 40;
+    string PasswordHash = 50;
+    string VerificationCode = 60;
+}
+
+message UpdatePasswordByAppUserResponse {
     app.user.manager.v1.AppUserSecret Info = 10;
 }
 
