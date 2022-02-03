@@ -938,6 +938,7 @@ Request body and response
 | UserID | [string](#string) |  |  |
 | Account | [string](#string) |  |  |
 | AccountType | [string](#string) |  |  |
+| OldPasswordHash | [string](#string) |  |  |
 | PasswordHash | [string](#string) |  |  |
 | VerificationCode | [string](#string) |  |  |
 
@@ -1849,6 +1850,7 @@ Request body and response
 | UserID | [string](#string) |  |  |
 | Account | [string](#string) |  |  |
 | AccountType | [string](#string) |  |  |
+| OldPasswordHash | [string](#string) |  |  |
 | PasswordHash | [string](#string) |  |  |
 | VerificationCode | [string](#string) |  |  |
 

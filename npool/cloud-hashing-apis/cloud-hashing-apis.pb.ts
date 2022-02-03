@@ -163,6 +163,7 @@ export type UpdatePasswordByAppUserRequest = {
   userID?: string
   account?: string
   accountType?: string
+  oldPasswordHash?: string
   passwordHash?: string
   verificationCode?: string
 }

@@ -305,8 +305,9 @@ message UpdatePasswordByAppUserRequest {
     string UserID = 20;
     string Account = 30;
     string AccountType = 40;
-    string PasswordHash = 50;
-    string VerificationCode = 60;
+    string OldPasswordHash = 50;
+    string PasswordHash = 60;
+    string VerificationCode = 70;
 }
 
 message UpdatePasswordByAppUserResponse {
