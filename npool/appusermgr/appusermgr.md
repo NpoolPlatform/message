@@ -14,6 +14,7 @@
     - [AppUserExtra](#app.user.manager.v1.AppUserExtra)
     - [AppUserInfo](#app.user.manager.v1.AppUserInfo)
     - [AppUserSecret](#app.user.manager.v1.AppUserSecret)
+    - [AppUserSecretMap](#app.user.manager.v1.AppUserSecretMap)
     - [BanApp](#app.user.manager.v1.BanApp)
     - [BanAppUser](#app.user.manager.v1.BanAppUser)
     - [CreateAdminAppsRequest](#app.user.manager.v1.CreateAdminAppsRequest)
@@ -152,6 +153,7 @@
     - [AppUserExtra](#app.user.manager.v1.AppUserExtra)
     - [AppUserInfo](#app.user.manager.v1.AppUserInfo)
     - [AppUserSecret](#app.user.manager.v1.AppUserSecret)
+    - [AppUserSecretMap](#app.user.manager.v1.AppUserSecretMap)
     - [BanApp](#app.user.manager.v1.BanApp)
     - [BanAppUser](#app.user.manager.v1.BanAppUser)
     - [CreateAdminAppsRequest](#app.user.manager.v1.CreateAdminAppsRequest)
@@ -465,6 +467,7 @@
 | Ctrl | [AppUserControl](#app.user.manager.v1.AppUserControl) |  |  |
 | Ban | [BanAppUser](#app.user.manager.v1.BanAppUser) |  |  |
 | Roles | [AppRole](#app.user.manager.v1.AppRole) | repeated |  |
+| SecretMap | [AppUserSecretMap](#app.user.manager.v1.AppUserSecretMap) |  |  |
 
 
 
@@ -485,6 +488,21 @@
 | PasswordHash | [string](#string) |  |  |
 | Salt | [string](#string) |  |  |
 | GoogleSecret | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.AppUserSecretMap"></a>
+
+### AppUserSecretMap
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| HasGoogleSecret | [bool](#bool) |  |  |
 
 
 
@@ -2630,6 +2648,7 @@
 | Ctrl | [AppUserControl](#app.user.manager.v1.AppUserControl) |  |  |
 | Ban | [BanAppUser](#app.user.manager.v1.BanAppUser) |  |  |
 | Roles | [AppRole](#app.user.manager.v1.AppRole) | repeated |  |
+| SecretMap | [AppUserSecretMap](#app.user.manager.v1.AppUserSecretMap) |  |  |
 
 
 
@@ -2650,6 +2669,21 @@
 | PasswordHash | [string](#string) |  |  |
 | Salt | [string](#string) |  |  |
 | GoogleSecret | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.AppUserSecretMap"></a>
+
+### AppUserSecretMap
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| HasGoogleSecret | [bool](#bool) |  |  |
 
 
 

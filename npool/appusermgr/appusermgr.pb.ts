@@ -265,6 +265,10 @@ export type AppUserSecret = {
   googleSecret?: string
 }
 
+export type AppUserSecretMap = {
+  hasGoogleSecret?: boolean
+}
+
 export type CreateAppUserSecretRequest = {
   info?: AppUserSecret
 }
@@ -579,6 +583,7 @@ export type AppUserInfo = {
   ctrl?: AppUserControl
   ban?: BanAppUser
   roles?: AppRole[]
+  secretMap?: AppUserSecretMap
 }
 
 export type GetAppUserInfoRequest = {

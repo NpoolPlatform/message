@@ -2254,6 +2254,9 @@
           "items": {
             "$ref": "#/definitions/v1AppRole"
           }
+        },
+        "SecretMap": {
+          "$ref": "#/definitions/v1AppUserSecretMap"
         }
       }
     },
@@ -2277,6 +2280,14 @@
         },
         "GoogleSecret": {
           "type": "string"
+        }
+      }
+    },
+    "v1AppUserSecretMap": {
+      "type": "object",
+      "properties": {
+        "HasGoogleSecret": {
+          "type": "boolean"
         }
       }
     },

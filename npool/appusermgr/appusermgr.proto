@@ -653,6 +653,10 @@ message AppUserSecret {
     string GoogleSecret = 60;
 }
 
+message AppUserSecretMap {
+    bool HasGoogleSecret = 10;
+}
+
 message CreateAppUserSecretRequest {
     AppUserSecret Info = 10;
 }
@@ -967,6 +971,7 @@ message AppUserInfo {
     AppUserControl Ctrl = 30;
     BanAppUser Ban = 40;
     repeated AppRole Roles = 50;
+    AppUserSecretMap SecretMap = 60;
 }
 
 message GetAppUserInfoRequest {
