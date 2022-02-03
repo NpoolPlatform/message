@@ -2222,6 +2222,12 @@
         },
         "Organization": {
           "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
         }
       }
     },

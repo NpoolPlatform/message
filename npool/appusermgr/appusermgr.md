@@ -443,6 +443,8 @@
 | Birthday | [uint32](#uint32) |  |  |
 | Avatar | [string](#string) |  |  |
 | Organization | [string](#string) |  |  |
+| FirstName | [string](#string) |  |  |
+| LastName | [string](#string) |  |  |
 
 
 
@@ -2605,6 +2607,8 @@
 | Birthday | [uint32](#uint32) |  |  |
 | Avatar | [string](#string) |  |  |
 | Organization | [string](#string) |  |  |
+| FirstName | [string](#string) |  |  |
+| LastName | [string](#string) |  |  |
 
 
 

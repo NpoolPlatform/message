@@ -310,6 +310,8 @@ export type AppUserExtra = {
   birthday?: number
   avatar?: string
   organization?: string
+  firstName?: string
+  lastName?: string
 }
 
 export type CreateAppUserExtraRequest = {
