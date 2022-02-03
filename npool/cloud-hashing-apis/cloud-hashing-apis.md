@@ -934,7 +934,7 @@ Request body and response
 | Account | [string](#string) |  |  |
 | AccountType | [string](#string) |  |  |
 | PasswordHash | [string](#string) |  |  |
-| Code | [string](#string) |  |  |
+| VerificationCode | [string](#string) |  |  |
 
 
 
@@ -1809,7 +1809,7 @@ Request body and response
 | Account | [string](#string) |  |  |
 | AccountType | [string](#string) |  |  |
 | PasswordHash | [string](#string) |  |  |
-| Code | [string](#string) |  |  |
+| VerificationCode | [string](#string) |  |  |
 
 
 

@@ -151,7 +151,7 @@ export type UpdatePasswordRequest = {
   account?: string
   accountType?: string
   passwordHash?: string
-  code?: string
+  verificationCode?: string
 }
 
 export type UpdatePasswordResponse = {

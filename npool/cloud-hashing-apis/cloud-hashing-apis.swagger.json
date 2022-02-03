@@ -2134,7 +2134,7 @@
         "PasswordHash": {
           "type": "string"
         },
-        "Code": {
+        "VerificationCode": {
           "type": "string"
         }
       }
