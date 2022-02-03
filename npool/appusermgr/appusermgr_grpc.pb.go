@@ -70,6 +70,7 @@ type AppUserManagerClient interface {
 	UpdateAppUserControl(ctx context.Context, in *UpdateAppUserControlRequest, opts ...grpc.CallOption) (*UpdateAppUserControlResponse, error)
 	CreateGenesisRole(ctx context.Context, in *CreateGenesisRoleRequest, opts ...grpc.CallOption) (*CreateGenesisRoleResponse, error)
 	GetGenesisRole(ctx context.Context, in *GetGenesisRoleRequest, opts ...grpc.CallOption) (*GetGenesisRoleResponse, error)
+	GetGenesisAppRoleUserByApp(ctx context.Context, in *GetGenesisAppRoleUserByAppRequest, opts ...grpc.CallOption) (*GetGenesisAppRoleUserByAppResponse, error)
 	CreateGenesisRoleUser(ctx context.Context, in *CreateGenesisRoleUserRequest, opts ...grpc.CallOption) (*CreateGenesisRoleUserResponse, error)
 	CreateAppRole(ctx context.Context, in *CreateAppRoleRequest, opts ...grpc.CallOption) (*CreateAppRoleResponse, error)
 	GetAppRole(ctx context.Context, in *GetAppRoleRequest, opts ...grpc.CallOption) (*GetAppRoleResponse, error)
@@ -80,6 +81,7 @@ type AppUserManagerClient interface {
 	GetAppRoleUser(ctx context.Context, in *GetAppRoleUserRequest, opts ...grpc.CallOption) (*GetAppRoleUserResponse, error)
 	GetAppRoleUserByAppUser(ctx context.Context, in *GetAppRoleUserByAppUserRequest, opts ...grpc.CallOption) (*GetAppRoleUserByAppUserResponse, error)
 	GetAppRoleUsersByAppRole(ctx context.Context, in *GetAppRoleUsersByAppRoleRequest, opts ...grpc.CallOption) (*GetAppRoleUsersByAppRoleResponse, error)
+	GetAppRoleUsersByOtherAppRole(ctx context.Context, in *GetAppRoleUsersByOtherAppRoleRequest, opts ...grpc.CallOption) (*GetAppRoleUsersByOtherAppRoleResponse, error)
 	GetUserRolesByAppUser(ctx context.Context, in *GetUserRolesByAppUserRequest, opts ...grpc.CallOption) (*GetUserRolesByAppUserResponse, error)
 	DeleteAppRoleUser(ctx context.Context, in *DeleteAppRoleUserRequest, opts ...grpc.CallOption) (*DeleteAppRoleUserResponse, error)
 	GetAppUserInfo(ctx context.Context, in *GetAppUserInfoRequest, opts ...grpc.CallOption) (*GetAppUserInfoResponse, error)
@@ -510,6 +512,15 @@ func (c *appUserManagerClient) GetGenesisRole(ctx context.Context, in *GetGenesi
 	return out, nil
 }
 
+func (c *appUserManagerClient) GetGenesisAppRoleUserByApp(ctx context.Context, in *GetGenesisAppRoleUserByAppRequest, opts ...grpc.CallOption) (*GetGenesisAppRoleUserByAppResponse, error) {
+	out := new(GetGenesisAppRoleUserByAppResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetGenesisAppRoleUserByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *appUserManagerClient) CreateGenesisRoleUser(ctx context.Context, in *CreateGenesisRoleUserRequest, opts ...grpc.CallOption) (*CreateGenesisRoleUserResponse, error) {
 	out := new(CreateGenesisRoleUserResponse)
 	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateGenesisRoleUser", in, out, opts...)
@@ -594,6 +605,15 @@ func (c *appUserManagerClient) GetAppRoleUserByAppUser(ctx context.Context, in *
 func (c *appUserManagerClient) GetAppRoleUsersByAppRole(ctx context.Context, in *GetAppRoleUsersByAppRoleRequest, opts ...grpc.CallOption) (*GetAppRoleUsersByAppRoleResponse, error) {
 	out := new(GetAppRoleUsersByAppRoleResponse)
 	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByAppRole", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetAppRoleUsersByOtherAppRole(ctx context.Context, in *GetAppRoleUsersByOtherAppRoleRequest, opts ...grpc.CallOption) (*GetAppRoleUsersByOtherAppRoleResponse, error) {
+	out := new(GetAppRoleUsersByOtherAppRoleResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByOtherAppRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -704,6 +724,7 @@ type AppUserManagerServer interface {
 	UpdateAppUserControl(context.Context, *UpdateAppUserControlRequest) (*UpdateAppUserControlResponse, error)
 	CreateGenesisRole(context.Context, *CreateGenesisRoleRequest) (*CreateGenesisRoleResponse, error)
 	GetGenesisRole(context.Context, *GetGenesisRoleRequest) (*GetGenesisRoleResponse, error)
+	GetGenesisAppRoleUserByApp(context.Context, *GetGenesisAppRoleUserByAppRequest) (*GetGenesisAppRoleUserByAppResponse, error)
 	CreateGenesisRoleUser(context.Context, *CreateGenesisRoleUserRequest) (*CreateGenesisRoleUserResponse, error)
 	CreateAppRole(context.Context, *CreateAppRoleRequest) (*CreateAppRoleResponse, error)
 	GetAppRole(context.Context, *GetAppRoleRequest) (*GetAppRoleResponse, error)
@@ -714,6 +735,7 @@ type AppUserManagerServer interface {
 	GetAppRoleUser(context.Context, *GetAppRoleUserRequest) (*GetAppRoleUserResponse, error)
 	GetAppRoleUserByAppUser(context.Context, *GetAppRoleUserByAppUserRequest) (*GetAppRoleUserByAppUserResponse, error)
 	GetAppRoleUsersByAppRole(context.Context, *GetAppRoleUsersByAppRoleRequest) (*GetAppRoleUsersByAppRoleResponse, error)
+	GetAppRoleUsersByOtherAppRole(context.Context, *GetAppRoleUsersByOtherAppRoleRequest) (*GetAppRoleUsersByOtherAppRoleResponse, error)
 	GetUserRolesByAppUser(context.Context, *GetUserRolesByAppUserRequest) (*GetUserRolesByAppUserResponse, error)
 	DeleteAppRoleUser(context.Context, *DeleteAppRoleUserRequest) (*DeleteAppRoleUserResponse, error)
 	GetAppUserInfo(context.Context, *GetAppUserInfoRequest) (*GetAppUserInfoResponse, error)
@@ -865,6 +887,9 @@ func (UnimplementedAppUserManagerServer) CreateGenesisRole(context.Context, *Cre
 func (UnimplementedAppUserManagerServer) GetGenesisRole(context.Context, *GetGenesisRoleRequest) (*GetGenesisRoleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGenesisRole not implemented")
 }
+func (UnimplementedAppUserManagerServer) GetGenesisAppRoleUserByApp(context.Context, *GetGenesisAppRoleUserByAppRequest) (*GetGenesisAppRoleUserByAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGenesisAppRoleUserByApp not implemented")
+}
 func (UnimplementedAppUserManagerServer) CreateGenesisRoleUser(context.Context, *CreateGenesisRoleUserRequest) (*CreateGenesisRoleUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateGenesisRoleUser not implemented")
 }
@@ -894,6 +919,9 @@ func (UnimplementedAppUserManagerServer) GetAppRoleUserByAppUser(context.Context
 }
 func (UnimplementedAppUserManagerServer) GetAppRoleUsersByAppRole(context.Context, *GetAppRoleUsersByAppRoleRequest) (*GetAppRoleUsersByAppRoleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppRoleUsersByAppRole not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppRoleUsersByOtherAppRole(context.Context, *GetAppRoleUsersByOtherAppRoleRequest) (*GetAppRoleUsersByOtherAppRoleResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppRoleUsersByOtherAppRole not implemented")
 }
 func (UnimplementedAppUserManagerServer) GetUserRolesByAppUser(context.Context, *GetUserRolesByAppUserRequest) (*GetUserRolesByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserRolesByAppUser not implemented")
@@ -1754,6 +1782,24 @@ func _AppUserManager_GetGenesisRole_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AppUserManager_GetGenesisAppRoleUserByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGenesisAppRoleUserByAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetGenesisAppRoleUserByApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetGenesisAppRoleUserByApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetGenesisAppRoleUserByApp(ctx, req.(*GetGenesisAppRoleUserByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AppUserManager_CreateGenesisRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateGenesisRoleUserRequest)
 	if err := dec(in); err != nil {
@@ -1930,6 +1976,24 @@ func _AppUserManager_GetAppRoleUsersByAppRole_Handler(srv interface{}, ctx conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppRoleUsersByAppRole(ctx, req.(*GetAppRoleUsersByAppRoleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_GetAppRoleUsersByOtherAppRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppRoleUsersByOtherAppRoleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppRoleUsersByOtherAppRole(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByOtherAppRole",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppRoleUsersByOtherAppRole(ctx, req.(*GetAppRoleUsersByOtherAppRoleRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2234,6 +2298,10 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AppUserManager_GetGenesisRole_Handler,
 		},
 		{
+			MethodName: "GetGenesisAppRoleUserByApp",
+			Handler:    _AppUserManager_GetGenesisAppRoleUserByApp_Handler,
+		},
+		{
 			MethodName: "CreateGenesisRoleUser",
 			Handler:    _AppUserManager_CreateGenesisRoleUser_Handler,
 		},
@@ -2272,6 +2340,10 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppRoleUsersByAppRole",
 			Handler:    _AppUserManager_GetAppRoleUsersByAppRole_Handler,
+		},
+		{
+			MethodName: "GetAppRoleUsersByOtherAppRole",
+			Handler:    _AppUserManager_GetAppRoleUsersByOtherAppRole_Handler,
 		},
 		{
 			MethodName: "GetUserRolesByAppUser",

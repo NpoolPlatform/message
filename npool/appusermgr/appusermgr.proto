@@ -291,6 +291,12 @@ service AppUserManager {
             body: "*"
         };
     }
+    rpc GetGenesisAppRoleUserByApp (GetGenesisAppRoleUserByAppRequest) returns (GetGenesisAppRoleUserByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/genesis/app/role/user/by/app"
+            body: "*"
+        };
+    }
 
     rpc CreateGenesisRoleUser (CreateGenesisRoleUserRequest) returns (CreateGenesisRoleUserResponse) {
         option (google.api.http) = {
@@ -351,6 +357,12 @@ service AppUserManager {
     rpc GetAppRoleUsersByAppRole (GetAppRoleUsersByAppRoleRequest) returns (GetAppRoleUsersByAppRoleResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/role/users/by/app/role"
+            body: "*"
+        };
+    }
+    rpc GetAppRoleUsersByOtherAppRole (GetAppRoleUsersByOtherAppRoleRequest) returns (GetAppRoleUsersByOtherAppRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/role/users/by/other/app/role"
             body: "*"
         };
     }
@@ -851,6 +863,16 @@ message GetGenesisRoleResponse {
     AppRole Info = 10;
 }
 
+message GetGenesisAppRoleUserByAppRequest {
+    string AppID = 10;
+    string TargetAppID = 20;
+}
+
+message GetGenesisAppRoleUserByAppResponse {
+    repeated AppRoleUser Infos = 10;
+    uint32 Total = 20;
+}
+
 message CreateAppRoleRequest {
     AppRole Info = 10;
 }
@@ -943,6 +965,19 @@ message GetAppRoleUsersByAppRoleRequest {
 }
 
 message GetAppRoleUsersByAppRoleResponse {
+    repeated AppRoleUser Infos = 10;
+    uint32 Total = 20;
+}
+
+message GetAppRoleUsersByOtherAppRoleRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string RoleID = 30;
+    string TargetAppID = 40;
+    npool.v1.PageInfo PageInfo = 50;
+}
+
+message GetAppRoleUsersByOtherAppRoleResponse {
     repeated AppRoleUser Infos = 10;
     uint32 Total = 20;
 }
