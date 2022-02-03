@@ -30,12 +30,16 @@
     - [SendEmailCodeResponse](#third.gateway.v1.SendEmailCodeResponse)
     - [SendSMSCodeRequest](#third.gateway.v1.SendSMSCodeRequest)
     - [SendSMSCodeResponse](#third.gateway.v1.SendSMSCodeResponse)
+    - [SetupGoogleAuthenticationRequest](#third.gateway.v1.SetupGoogleAuthenticationRequest)
+    - [SetupGoogleAuthenticationResponse](#third.gateway.v1.SetupGoogleAuthenticationResponse)
     - [UpdateAppEmailTemplateRequest](#third.gateway.v1.UpdateAppEmailTemplateRequest)
     - [UpdateAppEmailTemplateResponse](#third.gateway.v1.UpdateAppEmailTemplateResponse)
     - [UpdateAppSMSTemplateRequest](#third.gateway.v1.UpdateAppSMSTemplateRequest)
     - [UpdateAppSMSTemplateResponse](#third.gateway.v1.UpdateAppSMSTemplateResponse)
     - [VerifyEmailCodeRequest](#third.gateway.v1.VerifyEmailCodeRequest)
     - [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse)
+    - [VerifyGoogleAuthenticationRequest](#third.gateway.v1.VerifyGoogleAuthenticationRequest)
+    - [VerifyGoogleAuthenticationResponse](#third.gateway.v1.VerifyGoogleAuthenticationResponse)
     - [VerifySMSCodeRequest](#third.gateway.v1.VerifySMSCodeRequest)
     - [VerifySMSCodeResponse](#third.gateway.v1.VerifySMSCodeResponse)
   
@@ -68,12 +72,16 @@
     - [SendEmailCodeResponse](#third.gateway.v1.SendEmailCodeResponse)
     - [SendSMSCodeRequest](#third.gateway.v1.SendSMSCodeRequest)
     - [SendSMSCodeResponse](#third.gateway.v1.SendSMSCodeResponse)
+    - [SetupGoogleAuthenticationRequest](#third.gateway.v1.SetupGoogleAuthenticationRequest)
+    - [SetupGoogleAuthenticationResponse](#third.gateway.v1.SetupGoogleAuthenticationResponse)
     - [UpdateAppEmailTemplateRequest](#third.gateway.v1.UpdateAppEmailTemplateRequest)
     - [UpdateAppEmailTemplateResponse](#third.gateway.v1.UpdateAppEmailTemplateResponse)
     - [UpdateAppSMSTemplateRequest](#third.gateway.v1.UpdateAppSMSTemplateRequest)
     - [UpdateAppSMSTemplateResponse](#third.gateway.v1.UpdateAppSMSTemplateResponse)
     - [VerifyEmailCodeRequest](#third.gateway.v1.VerifyEmailCodeRequest)
     - [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse)
+    - [VerifyGoogleAuthenticationRequest](#third.gateway.v1.VerifyGoogleAuthenticationRequest)
+    - [VerifyGoogleAuthenticationResponse](#third.gateway.v1.VerifyGoogleAuthenticationResponse)
     - [VerifySMSCodeRequest](#third.gateway.v1.VerifySMSCodeRequest)
     - [VerifySMSCodeResponse](#third.gateway.v1.VerifySMSCodeResponse)
   
@@ -507,6 +515,38 @@
 
 
 
+<a name="third.gateway.v1.SetupGoogleAuthenticationRequest"></a>
+
+### SetupGoogleAuthenticationRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.SetupGoogleAuthenticationResponse"></a>
+
+### SetupGoogleAuthenticationResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| OTPAuth | [string](#string) |  |  |
+| Secret | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="third.gateway.v1.UpdateAppEmailTemplateRequest"></a>
 
 ### UpdateAppEmailTemplateRequest
@@ -602,6 +642,39 @@
 
 
 
+<a name="third.gateway.v1.VerifyGoogleAuthenticationRequest"></a>
+
+### VerifyGoogleAuthenticationRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| Code | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.VerifyGoogleAuthenticationResponse"></a>
+
+### VerifyGoogleAuthenticationResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="third.gateway.v1.VerifySMSCodeRequest"></a>
 
 ### VerifySMSCodeRequest
@@ -667,6 +740,8 @@ Service Name
 | VerifySMSCode | [VerifySMSCodeRequest](#third.gateway.v1.VerifySMSCodeRequest) | [VerifySMSCodeResponse](#third.gateway.v1.VerifySMSCodeResponse) |  |
 | SendEmailCode | [SendEmailCodeRequest](#third.gateway.v1.SendEmailCodeRequest) | [SendEmailCodeResponse](#third.gateway.v1.SendEmailCodeResponse) |  |
 | VerifyEmailCode | [VerifyEmailCodeRequest](#third.gateway.v1.VerifyEmailCodeRequest) | [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse) |  |
+| SetupGoogleAuthentication | [SetupGoogleAuthenticationRequest](#third.gateway.v1.SetupGoogleAuthenticationRequest) | [SetupGoogleAuthenticationResponse](#third.gateway.v1.SetupGoogleAuthenticationResponse) |  |
+| VerifyGoogleAuthentication | [VerifyGoogleAuthenticationRequest](#third.gateway.v1.VerifyGoogleAuthenticationRequest) | [VerifyGoogleAuthenticationResponse](#third.gateway.v1.VerifyGoogleAuthenticationResponse) |  |
 
  
 
@@ -1096,6 +1171,38 @@ Service Name
 
 
 
+<a name="third.gateway.v1.SetupGoogleAuthenticationRequest"></a>
+
+### SetupGoogleAuthenticationRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.SetupGoogleAuthenticationResponse"></a>
+
+### SetupGoogleAuthenticationResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| OTPAuth | [string](#string) |  |  |
+| Secret | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="third.gateway.v1.UpdateAppEmailTemplateRequest"></a>
 
 ### UpdateAppEmailTemplateRequest
@@ -1191,6 +1298,39 @@ Service Name
 
 
 
+<a name="third.gateway.v1.VerifyGoogleAuthenticationRequest"></a>
+
+### VerifyGoogleAuthenticationRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| Code | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.VerifyGoogleAuthenticationResponse"></a>
+
+### VerifyGoogleAuthenticationResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="third.gateway.v1.VerifySMSCodeRequest"></a>
 
 ### VerifySMSCodeRequest
@@ -1256,6 +1396,8 @@ Service Name
 | VerifySMSCode | [VerifySMSCodeRequest](#third.gateway.v1.VerifySMSCodeRequest) | [VerifySMSCodeResponse](#third.gateway.v1.VerifySMSCodeResponse) |  |
 | SendEmailCode | [SendEmailCodeRequest](#third.gateway.v1.SendEmailCodeRequest) | [SendEmailCodeResponse](#third.gateway.v1.SendEmailCodeResponse) |  |
 | VerifyEmailCode | [VerifyEmailCodeRequest](#third.gateway.v1.VerifyEmailCodeRequest) | [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse) |  |
+| SetupGoogleAuthentication | [SetupGoogleAuthenticationRequest](#third.gateway.v1.SetupGoogleAuthenticationRequest) | [SetupGoogleAuthenticationResponse](#third.gateway.v1.SetupGoogleAuthenticationResponse) |  |
+| VerifyGoogleAuthentication | [VerifyGoogleAuthenticationRequest](#third.gateway.v1.VerifyGoogleAuthenticationRequest) | [VerifyGoogleAuthenticationResponse](#third.gateway.v1.VerifyGoogleAuthenticationResponse) |  |
 
  
 

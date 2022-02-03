@@ -117,6 +117,19 @@ service ThirdGateway {
             body: "*"
         };
     }
+
+    rpc SetupGoogleAuthentication (SetupGoogleAuthenticationRequest) returns (SetupGoogleAuthenticationResponse) {
+        option (google.api.http) = {
+            post: "/v1/setup/google/authentication"
+            body: "*"
+        };
+    }
+    rpc VerifyGoogleAuthentication (VerifyGoogleAuthenticationRequest) returns (VerifyGoogleAuthenticationResponse) {
+        option (google.api.http) = {
+            post: "/v1/verify/google/authentication"
+            body: "*"
+        };
+    }
 }
 
 message SendSMSCodeRequest {
@@ -292,3 +305,23 @@ message GetAppEmailTemplatesByOtherAppResponse {
     repeated AppEmailTemplate Infos = 10;
 }
 
+message SetupGoogleAuthenticationRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message SetupGoogleAuthenticationResponse {
+    string OTPAuth = 10;
+    string Secret = 20;
+}
+
+message VerifyGoogleAuthenticationRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string Code = 30;
+}
+
+message VerifyGoogleAuthenticationResponse {
+    int32 Code = 10;
+    string Message = 20;
+}

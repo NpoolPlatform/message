@@ -180,6 +180,27 @@ export type GetAppEmailTemplatesByOtherAppResponse = {
   infos?: AppEmailTemplate[]
 }
 
+export type SetupGoogleAuthenticationRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type SetupGoogleAuthenticationResponse = {
+  oTPAuth?: string
+  secret?: string
+}
+
+export type VerifyGoogleAuthenticationRequest = {
+  appID?: string
+  userID?: string
+  code?: string
+}
+
+export type VerifyGoogleAuthenticationResponse = {
+  code?: number
+  message?: string
+}
+
 export class ThirdGateway {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -231,5 +252,11 @@ export class ThirdGateway {
   }
   static VerifyEmailCode(req: VerifyEmailCodeRequest, initReq?: fm.InitReq): Promise<VerifyEmailCodeResponse> {
     return fm.fetchReq<VerifyEmailCodeRequest, VerifyEmailCodeResponse>(`/v1/verify/email/code`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static SetupGoogleAuthentication(req: SetupGoogleAuthenticationRequest, initReq?: fm.InitReq): Promise<SetupGoogleAuthenticationResponse> {
+    return fm.fetchReq<SetupGoogleAuthenticationRequest, SetupGoogleAuthenticationResponse>(`/v1/setup/google/authentication`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static VerifyGoogleAuthentication(req: VerifyGoogleAuthenticationRequest, initReq?: fm.InitReq): Promise<VerifyGoogleAuthenticationResponse> {
+    return fm.fetchReq<VerifyGoogleAuthenticationRequest, VerifyGoogleAuthenticationResponse>(`/v1/verify/google/authentication`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
