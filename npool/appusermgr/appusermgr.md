@@ -421,6 +421,7 @@
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | SigninVerifyByGoogleAuthentication | [bool](#bool) |  |  |
+| GoogleAuthenticationVerified | [bool](#bool) |  |  |
 
 
 
@@ -2602,6 +2603,7 @@
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | SigninVerifyByGoogleAuthentication | [bool](#bool) |  |  |
+| GoogleAuthenticationVerified | [bool](#bool) |  |  |
 
 
 

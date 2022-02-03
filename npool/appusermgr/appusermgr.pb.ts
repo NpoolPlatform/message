@@ -404,6 +404,7 @@ export type AppUserControl = {
   appID?: string
   userID?: string
   signinVerifyByGoogleAuthentication?: boolean
+  googleAuthenticationVerified?: boolean
 }
 
 export type CreateAppUserControlRequest = {

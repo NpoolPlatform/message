@@ -2182,6 +2182,9 @@
         },
         "SigninVerifyByGoogleAuthentication": {
           "type": "boolean"
+        },
+        "GoogleAuthenticationVerified": {
+          "type": "boolean"
         }
       }
     },
