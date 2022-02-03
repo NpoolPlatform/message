@@ -148,8 +148,10 @@ export type SignupResponse = {
 
 export type UpdatePasswordRequest = {
   appID?: string
-  userID?: string
+  account?: string
+  accountType?: string
   passwordHash?: string
+  code?: string
 }
 
 export type UpdatePasswordResponse = {

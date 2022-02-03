@@ -284,8 +284,10 @@ message SignupResponse {
 
 message UpdatePasswordRequest {
     string AppID = 10;
-    string UserID = 20;
-    string PasswordHash = 30;
+    string Account = 20;
+    string AccountType = 30;
+    string PasswordHash = 40;
+    string Code = 50;
 }
 
 message UpdatePasswordResponse {

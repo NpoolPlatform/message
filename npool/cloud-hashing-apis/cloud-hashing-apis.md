@@ -931,8 +931,10 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
+| Account | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
 | PasswordHash | [string](#string) |  |  |
+| Code | [string](#string) |  |  |
 
 
 
@@ -1804,8 +1806,10 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
+| Account | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
 | PasswordHash | [string](#string) |  |  |
+| Code | [string](#string) |  |  |
 
 
 

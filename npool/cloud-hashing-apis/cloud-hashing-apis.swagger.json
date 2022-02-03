@@ -2125,10 +2125,16 @@
         "AppID": {
           "type": "string"
         },
-        "UserID": {
+        "Account": {
+          "type": "string"
+        },
+        "AccountType": {
           "type": "string"
         },
         "PasswordHash": {
+          "type": "string"
+        },
+        "Code": {
           "type": "string"
         }
       }
