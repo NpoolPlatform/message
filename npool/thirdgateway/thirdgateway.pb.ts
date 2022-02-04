@@ -39,6 +39,7 @@ export type SendEmailCodeRequest = {
   langID?: string
   emailAddress?: string
   usedFor?: string
+  toUsername?: string
 }
 
 export type SendEmailCodeResponse = {

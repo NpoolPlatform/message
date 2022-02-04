@@ -164,6 +164,7 @@ message SendEmailCodeRequest {
     string LangID = 30;
     string EmailAddress = 40;
     string UsedFor = 50;
+    string ToUsername = 60;
 }
 
 message SendEmailCodeResponse {

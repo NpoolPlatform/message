@@ -917,6 +917,9 @@
         },
         "UsedFor": {
           "type": "string"
+        },
+        "ToUsername": {
+          "type": "string"
         }
       }
     },
