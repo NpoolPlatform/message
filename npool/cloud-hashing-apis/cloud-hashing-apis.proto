@@ -108,6 +108,18 @@ service CloudHashingApis {
             body: "*"
         };
     }
+    rpc UpdateEmailAddress(UpdateEmailAddressRequest) returns (UpdateEmailAddressResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/emailaddress"
+            body: "*"
+        };
+    }
+    rpc UpdatePhoneNO(UpdatePhoneNORequest) returns (UpdatePhoneNOResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/phoneno"
+            body: "*"
+        };
+    }
 
     rpc GetMyInvitations(GetMyInvitationsRequest) returns (GetMyInvitationsResponse) {
         option (google.api.http) = {
@@ -312,6 +324,32 @@ message UpdatePasswordByAppUserRequest {
 
 message UpdatePasswordByAppUserResponse {
     app.user.manager.v1.AppUserSecret Info = 10;
+}
+
+message UpdateEmailAddressRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string OldVerificationCode = 30;
+    string NewEmailAddress = 40;
+    string NewEmailVerificationCode = 50;
+}
+
+message UpdateEmailAddressResponse {
+    int32 Code = 10;
+    string Message = 20;
+}
+
+message UpdatePhoneNORequest {
+    string AppID = 10;
+    string UserID = 20;
+    string OldVerificationCode = 30;
+    string NewPhoneNO = 40;
+    string NewPhoneVerificationCode = 50;
+}
+
+message UpdatePhoneNOResponse {
+    int32 Code = 10;
+    string Message = 20;
 }
 
 message InvitationSummary {

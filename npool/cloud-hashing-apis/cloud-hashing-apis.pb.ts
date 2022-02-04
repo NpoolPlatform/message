@@ -172,6 +172,32 @@ export type UpdatePasswordByAppUserResponse = {
   info?: AppUserManagerV1Appusermgr.AppUserSecret
 }
 
+export type UpdateEmailAddressRequest = {
+  appID?: string
+  userID?: string
+  oldVerificationCode?: string
+  newEmailAddress?: string
+  newEmailVerificationCode?: string
+}
+
+export type UpdateEmailAddressResponse = {
+  code?: number
+  message?: string
+}
+
+export type UpdatePhoneNORequest = {
+  appID?: string
+  userID?: string
+  oldVerificationCode?: string
+  newPhoneNO?: string
+  newPhoneVerificationCode?: string
+}
+
+export type UpdatePhoneNOResponse = {
+  code?: number
+  message?: string
+}
+
 export type InvitationSummary = {
   units?: number
   amount?: number
@@ -313,6 +339,12 @@ export class CloudHashingApis {
   }
   static UpdatePasswordByAppUser(req: UpdatePasswordByAppUserRequest, initReq?: fm.InitReq): Promise<UpdatePasswordByAppUserResponse> {
     return fm.fetchReq<UpdatePasswordByAppUserRequest, UpdatePasswordByAppUserResponse>(`/v1/update/password/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateEmailAddress(req: UpdateEmailAddressRequest, initReq?: fm.InitReq): Promise<UpdateEmailAddressResponse> {
+    return fm.fetchReq<UpdateEmailAddressRequest, UpdateEmailAddressResponse>(`/v1/update/emailaddress`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdatePhoneNO(req: UpdatePhoneNORequest, initReq?: fm.InitReq): Promise<UpdatePhoneNOResponse> {
+    return fm.fetchReq<UpdatePhoneNORequest, UpdatePhoneNOResponse>(`/v1/update/phoneno`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetMyInvitations(req: GetMyInvitationsRequest, initReq?: fm.InitReq): Promise<GetMyInvitationsResponse> {
     return fm.fetchReq<GetMyInvitationsRequest, GetMyInvitationsResponse>(`/v1/get/my/invitations`, {...initReq, method: "POST", body: JSON.stringify(req)})

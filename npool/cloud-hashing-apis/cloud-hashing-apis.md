@@ -52,12 +52,16 @@
     - [SignupResponse](#cloud.hashing.apis.v1.SignupResponse)
     - [SubmitOrderRequest](#cloud.hashing.apis.v1.SubmitOrderRequest)
     - [SubmitOrderResponse](#cloud.hashing.apis.v1.SubmitOrderResponse)
+    - [UpdateEmailAddressRequest](#cloud.hashing.apis.v1.UpdateEmailAddressRequest)
+    - [UpdateEmailAddressResponse](#cloud.hashing.apis.v1.UpdateEmailAddressResponse)
     - [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest)
     - [UpdateKycResponse](#cloud.hashing.apis.v1.UpdateKycResponse)
     - [UpdatePasswordByAppUserRequest](#cloud.hashing.apis.v1.UpdatePasswordByAppUserRequest)
     - [UpdatePasswordByAppUserResponse](#cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse)
     - [UpdatePasswordRequest](#cloud.hashing.apis.v1.UpdatePasswordRequest)
     - [UpdatePasswordResponse](#cloud.hashing.apis.v1.UpdatePasswordResponse)
+    - [UpdatePhoneNORequest](#cloud.hashing.apis.v1.UpdatePhoneNORequest)
+    - [UpdatePhoneNOResponse](#cloud.hashing.apis.v1.UpdatePhoneNOResponse)
   
     - [CloudHashingApis](#cloud.hashing.apis.v1.CloudHashingApis)
   
@@ -110,12 +114,16 @@
     - [SignupResponse](#cloud.hashing.apis.v1.SignupResponse)
     - [SubmitOrderRequest](#cloud.hashing.apis.v1.SubmitOrderRequest)
     - [SubmitOrderResponse](#cloud.hashing.apis.v1.SubmitOrderResponse)
+    - [UpdateEmailAddressRequest](#cloud.hashing.apis.v1.UpdateEmailAddressRequest)
+    - [UpdateEmailAddressResponse](#cloud.hashing.apis.v1.UpdateEmailAddressResponse)
     - [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest)
     - [UpdateKycResponse](#cloud.hashing.apis.v1.UpdateKycResponse)
     - [UpdatePasswordByAppUserRequest](#cloud.hashing.apis.v1.UpdatePasswordByAppUserRequest)
     - [UpdatePasswordByAppUserResponse](#cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse)
     - [UpdatePasswordRequest](#cloud.hashing.apis.v1.UpdatePasswordRequest)
     - [UpdatePasswordResponse](#cloud.hashing.apis.v1.UpdatePasswordResponse)
+    - [UpdatePhoneNORequest](#cloud.hashing.apis.v1.UpdatePhoneNORequest)
+    - [UpdatePhoneNOResponse](#cloud.hashing.apis.v1.UpdatePhoneNOResponse)
   
     - [CloudHashingApis](#cloud.hashing.apis.v1.CloudHashingApis)
   
@@ -896,6 +904,41 @@ Request body and response
 
 
 
+<a name="cloud.hashing.apis.v1.UpdateEmailAddressRequest"></a>
+
+### UpdateEmailAddressRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| OldVerificationCode | [string](#string) |  |  |
+| NewEmailAddress | [string](#string) |  |  |
+| NewEmailVerificationCode | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.UpdateEmailAddressResponse"></a>
+
+### UpdateEmailAddressResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.UpdateKycRequest"></a>
 
 ### UpdateKycRequest
@@ -995,6 +1038,41 @@ Request body and response
 
 
 
+
+<a name="cloud.hashing.apis.v1.UpdatePhoneNORequest"></a>
+
+### UpdatePhoneNORequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| OldVerificationCode | [string](#string) |  |  |
+| NewPhoneNO | [string](#string) |  |  |
+| NewPhoneVerificationCode | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.UpdatePhoneNOResponse"></a>
+
+### UpdatePhoneNOResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
  
 
  
@@ -1023,6 +1101,8 @@ Cloud Hashing Goods
 | Signup | [SignupRequest](#cloud.hashing.apis.v1.SignupRequest) | [SignupResponse](#cloud.hashing.apis.v1.SignupResponse) |  |
 | UpdatePassword | [UpdatePasswordRequest](#cloud.hashing.apis.v1.UpdatePasswordRequest) | [UpdatePasswordResponse](#cloud.hashing.apis.v1.UpdatePasswordResponse) |  |
 | UpdatePasswordByAppUser | [UpdatePasswordByAppUserRequest](#cloud.hashing.apis.v1.UpdatePasswordByAppUserRequest) | [UpdatePasswordByAppUserResponse](#cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse) |  |
+| UpdateEmailAddress | [UpdateEmailAddressRequest](#cloud.hashing.apis.v1.UpdateEmailAddressRequest) | [UpdateEmailAddressResponse](#cloud.hashing.apis.v1.UpdateEmailAddressResponse) |  |
+| UpdatePhoneNO | [UpdatePhoneNORequest](#cloud.hashing.apis.v1.UpdatePhoneNORequest) | [UpdatePhoneNOResponse](#cloud.hashing.apis.v1.UpdatePhoneNOResponse) |  |
 | GetMyInvitations | [GetMyInvitationsRequest](#cloud.hashing.apis.v1.GetMyInvitationsRequest) | [GetMyInvitationsResponse](#cloud.hashing.apis.v1.GetMyInvitationsResponse) |  |
 | GetMyDirectInvitations | [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest) | [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse) |  |
@@ -1808,6 +1888,41 @@ Request body and response
 
 
 
+<a name="cloud.hashing.apis.v1.UpdateEmailAddressRequest"></a>
+
+### UpdateEmailAddressRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| OldVerificationCode | [string](#string) |  |  |
+| NewEmailAddress | [string](#string) |  |  |
+| NewEmailVerificationCode | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.UpdateEmailAddressResponse"></a>
+
+### UpdateEmailAddressResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.UpdateKycRequest"></a>
 
 ### UpdateKycRequest
@@ -1907,6 +2022,41 @@ Request body and response
 
 
 
+
+<a name="cloud.hashing.apis.v1.UpdatePhoneNORequest"></a>
+
+### UpdatePhoneNORequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| OldVerificationCode | [string](#string) |  |  |
+| NewPhoneNO | [string](#string) |  |  |
+| NewPhoneVerificationCode | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.UpdatePhoneNOResponse"></a>
+
+### UpdatePhoneNOResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
  
 
  
@@ -1935,6 +2085,8 @@ Cloud Hashing Goods
 | Signup | [SignupRequest](#cloud.hashing.apis.v1.SignupRequest) | [SignupResponse](#cloud.hashing.apis.v1.SignupResponse) |  |
 | UpdatePassword | [UpdatePasswordRequest](#cloud.hashing.apis.v1.UpdatePasswordRequest) | [UpdatePasswordResponse](#cloud.hashing.apis.v1.UpdatePasswordResponse) |  |
 | UpdatePasswordByAppUser | [UpdatePasswordByAppUserRequest](#cloud.hashing.apis.v1.UpdatePasswordByAppUserRequest) | [UpdatePasswordByAppUserResponse](#cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse) |  |
+| UpdateEmailAddress | [UpdateEmailAddressRequest](#cloud.hashing.apis.v1.UpdateEmailAddressRequest) | [UpdateEmailAddressResponse](#cloud.hashing.apis.v1.UpdateEmailAddressResponse) |  |
+| UpdatePhoneNO | [UpdatePhoneNORequest](#cloud.hashing.apis.v1.UpdatePhoneNORequest) | [UpdatePhoneNOResponse](#cloud.hashing.apis.v1.UpdatePhoneNOResponse) |  |
 | GetMyInvitations | [GetMyInvitationsRequest](#cloud.hashing.apis.v1.GetMyInvitationsRequest) | [GetMyInvitationsResponse](#cloud.hashing.apis.v1.GetMyInvitationsResponse) |  |
 | GetMyDirectInvitations | [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest) | [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse) |  |

@@ -555,6 +555,38 @@
         ]
       }
     },
+    "/v1/update/emailaddress": {
+      "post": {
+        "operationId": "CloudHashingApis_UpdateEmailAddress",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateEmailAddressResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateEmailAddressRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/update/kyc": {
       "post": {
         "operationId": "CloudHashingApis_UpdateKyc",
@@ -643,6 +675,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1UpdatePasswordByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/update/phoneno": {
+      "post": {
+        "operationId": "CloudHashingApis_UpdatePhoneNO",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdatePhoneNOResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdatePhoneNORequest"
             }
           }
         ],
@@ -1005,6 +1069,9 @@
           "type": "string"
         },
         "SigninVerifyByGoogleAuthentication": {
+          "type": "boolean"
+        },
+        "GoogleAuthenticationVerified": {
           "type": "boolean"
         }
       }
@@ -2162,6 +2229,38 @@
         }
       }
     },
+    "v1UpdateEmailAddressRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "OldVerificationCode": {
+          "type": "string"
+        },
+        "NewEmailAddress": {
+          "type": "string"
+        },
+        "NewEmailVerificationCode": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateEmailAddressResponse": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
     "v1UpdatePasswordByAppUserRequest": {
       "type": "object",
       "properties": {
@@ -2221,6 +2320,38 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserSecret"
+        }
+      }
+    },
+    "v1UpdatePhoneNORequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "OldVerificationCode": {
+          "type": "string"
+        },
+        "NewPhoneNO": {
+          "type": "string"
+        },
+        "NewPhoneVerificationCode": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdatePhoneNOResponse": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Message": {
+          "type": "string"
         }
       }
     },

@@ -38,6 +38,8 @@ type CloudHashingApisClient interface {
 	Signup(ctx context.Context, in *SignupRequest, opts ...grpc.CallOption) (*SignupResponse, error)
 	UpdatePassword(ctx context.Context, in *UpdatePasswordRequest, opts ...grpc.CallOption) (*UpdatePasswordResponse, error)
 	UpdatePasswordByAppUser(ctx context.Context, in *UpdatePasswordByAppUserRequest, opts ...grpc.CallOption) (*UpdatePasswordByAppUserResponse, error)
+	UpdateEmailAddress(ctx context.Context, in *UpdateEmailAddressRequest, opts ...grpc.CallOption) (*UpdateEmailAddressResponse, error)
+	UpdatePhoneNO(ctx context.Context, in *UpdatePhoneNORequest, opts ...grpc.CallOption) (*UpdatePhoneNOResponse, error)
 	GetMyInvitations(ctx context.Context, in *GetMyInvitationsRequest, opts ...grpc.CallOption) (*GetMyInvitationsResponse, error)
 	GetMyDirectInvitations(ctx context.Context, in *GetMyDirectInvitationsRequest, opts ...grpc.CallOption) (*GetMyDirectInvitationsResponse, error)
 	GetKycReviews(ctx context.Context, in *GetKycReviewsRequest, opts ...grpc.CallOption) (*GetKycReviewsResponse, error)
@@ -181,6 +183,24 @@ func (c *cloudHashingApisClient) UpdatePasswordByAppUser(ctx context.Context, in
 	return out, nil
 }
 
+func (c *cloudHashingApisClient) UpdateEmailAddress(ctx context.Context, in *UpdateEmailAddressRequest, opts ...grpc.CallOption) (*UpdateEmailAddressResponse, error) {
+	out := new(UpdateEmailAddressResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/UpdateEmailAddress", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) UpdatePhoneNO(ctx context.Context, in *UpdatePhoneNORequest, opts ...grpc.CallOption) (*UpdatePhoneNOResponse, error) {
+	out := new(UpdatePhoneNOResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/UpdatePhoneNO", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingApisClient) GetMyInvitations(ctx context.Context, in *GetMyInvitationsRequest, opts ...grpc.CallOption) (*GetMyInvitationsResponse, error) {
 	out := new(GetMyInvitationsResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetMyInvitations", in, out, opts...)
@@ -262,6 +282,8 @@ type CloudHashingApisServer interface {
 	Signup(context.Context, *SignupRequest) (*SignupResponse, error)
 	UpdatePassword(context.Context, *UpdatePasswordRequest) (*UpdatePasswordResponse, error)
 	UpdatePasswordByAppUser(context.Context, *UpdatePasswordByAppUserRequest) (*UpdatePasswordByAppUserResponse, error)
+	UpdateEmailAddress(context.Context, *UpdateEmailAddressRequest) (*UpdateEmailAddressResponse, error)
+	UpdatePhoneNO(context.Context, *UpdatePhoneNORequest) (*UpdatePhoneNOResponse, error)
 	GetMyInvitations(context.Context, *GetMyInvitationsRequest) (*GetMyInvitationsResponse, error)
 	GetMyDirectInvitations(context.Context, *GetMyDirectInvitationsRequest) (*GetMyDirectInvitationsResponse, error)
 	GetKycReviews(context.Context, *GetKycReviewsRequest) (*GetKycReviewsResponse, error)
@@ -317,6 +339,12 @@ func (UnimplementedCloudHashingApisServer) UpdatePassword(context.Context, *Upda
 }
 func (UnimplementedCloudHashingApisServer) UpdatePasswordByAppUser(context.Context, *UpdatePasswordByAppUserRequest) (*UpdatePasswordByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePasswordByAppUser not implemented")
+}
+func (UnimplementedCloudHashingApisServer) UpdateEmailAddress(context.Context, *UpdateEmailAddressRequest) (*UpdateEmailAddressResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateEmailAddress not implemented")
+}
+func (UnimplementedCloudHashingApisServer) UpdatePhoneNO(context.Context, *UpdatePhoneNORequest) (*UpdatePhoneNOResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdatePhoneNO not implemented")
 }
 func (UnimplementedCloudHashingApisServer) GetMyInvitations(context.Context, *GetMyInvitationsRequest) (*GetMyInvitationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMyInvitations not implemented")
@@ -604,6 +632,42 @@ func _CloudHashingApis_UpdatePasswordByAppUser_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingApis_UpdateEmailAddress_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateEmailAddressRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).UpdateEmailAddress(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/UpdateEmailAddress",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).UpdateEmailAddress(ctx, req.(*UpdateEmailAddressRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_UpdatePhoneNO_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdatePhoneNORequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).UpdatePhoneNO(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/UpdatePhoneNO",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).UpdatePhoneNO(ctx, req.(*UpdatePhoneNORequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingApis_GetMyInvitations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetMyInvitationsRequest)
 	if err := dec(in); err != nil {
@@ -792,6 +856,14 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdatePasswordByAppUser",
 			Handler:    _CloudHashingApis_UpdatePasswordByAppUser_Handler,
+		},
+		{
+			MethodName: "UpdateEmailAddress",
+			Handler:    _CloudHashingApis_UpdateEmailAddress_Handler,
+		},
+		{
+			MethodName: "UpdatePhoneNO",
+			Handler:    _CloudHashingApis_UpdatePhoneNO_Handler,
 		},
 		{
 			MethodName: "GetMyInvitations",
