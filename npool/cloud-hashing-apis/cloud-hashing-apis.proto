@@ -330,8 +330,10 @@ message UpdateEmailAddressRequest {
     string AppID = 10;
     string UserID = 20;
     string OldVerificationCode = 30;
-    string NewEmailAddress = 40;
-    string NewEmailVerificationCode = 50;
+    string OldAccount = 40;
+    string OldAccountType = 50;
+    string NewEmailAddress = 60;
+    string NewEmailVerificationCode = 70;
 }
 
 message UpdateEmailAddressResponse {
@@ -343,8 +345,10 @@ message UpdatePhoneNORequest {
     string AppID = 10;
     string UserID = 20;
     string OldVerificationCode = 30;
-    string NewPhoneNO = 40;
-    string NewPhoneVerificationCode = 50;
+    string OldAccount = 40;
+    string OldAccountType = 50;
+    string NewPhoneNO = 60;
+    string NewPhoneVerificationCode = 70;
 }
 
 message UpdatePhoneNOResponse {

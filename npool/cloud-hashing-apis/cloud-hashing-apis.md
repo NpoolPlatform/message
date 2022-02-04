@@ -915,6 +915,8 @@ Request body and response
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | OldVerificationCode | [string](#string) |  |  |
+| OldAccount | [string](#string) |  |  |
+| OldAccountType | [string](#string) |  |  |
 | NewEmailAddress | [string](#string) |  |  |
 | NewEmailVerificationCode | [string](#string) |  |  |
 
@@ -1050,6 +1052,8 @@ Request body and response
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | OldVerificationCode | [string](#string) |  |  |
+| OldAccount | [string](#string) |  |  |
+| OldAccountType | [string](#string) |  |  |
 | NewPhoneNO | [string](#string) |  |  |
 | NewPhoneVerificationCode | [string](#string) |  |  |
 
@@ -1899,6 +1903,8 @@ Request body and response
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | OldVerificationCode | [string](#string) |  |  |
+| OldAccount | [string](#string) |  |  |
+| OldAccountType | [string](#string) |  |  |
 | NewEmailAddress | [string](#string) |  |  |
 | NewEmailVerificationCode | [string](#string) |  |  |
 
@@ -2034,6 +2040,8 @@ Request body and response
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | OldVerificationCode | [string](#string) |  |  |
+| OldAccount | [string](#string) |  |  |
+| OldAccountType | [string](#string) |  |  |
 | NewPhoneNO | [string](#string) |  |  |
 | NewPhoneVerificationCode | [string](#string) |  |  |
 

@@ -176,6 +176,8 @@ export type UpdateEmailAddressRequest = {
   appID?: string
   userID?: string
   oldVerificationCode?: string
+  oldAccount?: string
+  oldAccountType?: string
   newEmailAddress?: string
   newEmailVerificationCode?: string
 }
@@ -189,6 +191,8 @@ export type UpdatePhoneNORequest = {
   appID?: string
   userID?: string
   oldVerificationCode?: string
+  oldAccount?: string
+  oldAccountType?: string
   newPhoneNO?: string
   newPhoneVerificationCode?: string
 }

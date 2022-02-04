@@ -2241,6 +2241,12 @@
         "OldVerificationCode": {
           "type": "string"
         },
+        "OldAccount": {
+          "type": "string"
+        },
+        "OldAccountType": {
+          "type": "string"
+        },
         "NewEmailAddress": {
           "type": "string"
         },
@@ -2333,6 +2339,12 @@
           "type": "string"
         },
         "OldVerificationCode": {
+          "type": "string"
+        },
+        "OldAccount": {
+          "type": "string"
+        },
+        "OldAccountType": {
           "type": "string"
         },
         "NewPhoneNO": {
