@@ -690,6 +690,9 @@
         },
         "Body": {
           "type": "string"
+        },
+        "DefaultToUsername": {
+          "type": "string"
         }
       }
     },

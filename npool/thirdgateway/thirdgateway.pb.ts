@@ -129,6 +129,7 @@ export type AppEmailTemplate = {
   cCTos?: string[]
   subject?: string
   body?: string
+  defaultToUsername?: string
 }
 
 export type CreateAppEmailTemplateRequest = {

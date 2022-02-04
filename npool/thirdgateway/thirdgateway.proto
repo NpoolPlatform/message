@@ -254,6 +254,7 @@ message AppEmailTemplate {
     repeated string CCTos = 70;
     string Subject = 80;
     string Body = 90;
+    string DefaultToUsername = 100;
 }
 
 message CreateAppEmailTemplateRequest {
