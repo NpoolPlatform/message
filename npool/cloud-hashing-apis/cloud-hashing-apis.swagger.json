@@ -2258,12 +2258,8 @@
     "v1UpdateEmailAddressResponse": {
       "type": "object",
       "properties": {
-        "Code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Message": {
-          "type": "string"
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
         }
       }
     },
@@ -2358,12 +2354,8 @@
     "v1UpdatePhoneNOResponse": {
       "type": "object",
       "properties": {
-        "Code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Message": {
-          "type": "string"
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
         }
       }
     },

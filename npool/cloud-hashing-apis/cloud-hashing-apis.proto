@@ -337,8 +337,7 @@ message UpdateEmailAddressRequest {
 }
 
 message UpdateEmailAddressResponse {
-    int32 Code = 10;
-    string Message = 20;
+    app.user.manager.v1.AppUserInfo Info = 10;
 }
 
 message UpdatePhoneNORequest {
@@ -352,8 +351,7 @@ message UpdatePhoneNORequest {
 }
 
 message UpdatePhoneNOResponse {
-    int32 Code = 10;
-    string Message = 20;
+    app.user.manager.v1.AppUserInfo Info = 10;
 }
 
 message InvitationSummary {

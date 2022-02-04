@@ -183,8 +183,7 @@ export type UpdateEmailAddressRequest = {
 }
 
 export type UpdateEmailAddressResponse = {
-  code?: number
-  message?: string
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
 }
 
 export type UpdatePhoneNORequest = {
@@ -198,8 +197,7 @@ export type UpdatePhoneNORequest = {
 }
 
 export type UpdatePhoneNOResponse = {
-  code?: number
-  message?: string
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
 }
 
 export type InvitationSummary = {

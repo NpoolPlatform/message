@@ -933,8 +933,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Code | [int32](#int32) |  |  |
-| Message | [string](#string) |  |  |
+| Info | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 
 
 
@@ -1070,8 +1069,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Code | [int32](#int32) |  |  |
-| Message | [string](#string) |  |  |
+| Info | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 
 
 
@@ -1921,8 +1919,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Code | [int32](#int32) |  |  |
-| Message | [string](#string) |  |  |
+| Info | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 
 
 
@@ -2058,8 +2055,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Code | [int32](#int32) |  |  |
-| Message | [string](#string) |  |  |
+| Info | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 
 
 
