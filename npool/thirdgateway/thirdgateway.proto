@@ -434,7 +434,7 @@ message ContactRequest {
     string AppID = 10;
     string UserID = 20;
     string UsedFor = 30;
-    string FromEmailAddress = 40;
+    string Sender = 40;
     string Subject = 60;
     string Body = 70;
 }

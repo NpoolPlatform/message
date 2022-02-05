@@ -202,7 +202,7 @@
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
-| FromEmailAddress | [string](#string) |  |  |
+| Sender | [string](#string) |  |  |
 | Subject | [string](#string) |  |  |
 | Body | [string](#string) |  |  |
 
@@ -1104,7 +1104,7 @@ Service Name
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
-| FromEmailAddress | [string](#string) |  |  |
+| Sender | [string](#string) |  |  |
 | Subject | [string](#string) |  |  |
 | Body | [string](#string) |  |  |
 

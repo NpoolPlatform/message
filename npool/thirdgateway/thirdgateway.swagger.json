@@ -975,7 +975,7 @@
         "UsedFor": {
           "type": "string"
         },
-        "FromEmailAddress": {
+        "Sender": {
           "type": "string"
         },
         "Subject": {

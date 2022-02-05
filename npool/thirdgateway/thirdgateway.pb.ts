@@ -265,7 +265,7 @@ export type ContactRequest = {
   appID?: string
   userID?: string
   usedFor?: string
-  fromEmailAddress?: string
+  sender?: string
   subject?: string
   body?: string
 }
