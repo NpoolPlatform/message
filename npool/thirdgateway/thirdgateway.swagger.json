@@ -896,6 +896,9 @@
         },
         "AccountType": {
           "type": "string"
+        },
+        "Sender": {
+          "type": "string"
         }
       }
     },

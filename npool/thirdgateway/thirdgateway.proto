@@ -357,6 +357,7 @@ message AppContact {
     string UsedFor = 30;
     string Account = 40;
     string AccountType = 50;
+    string Sender = 60;
 }
 
 message CreateAppContactRequest {
