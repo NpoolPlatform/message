@@ -15,8 +15,8 @@
     - [CreateAppEmailTemplateResponse](#third.gateway.v1.CreateAppEmailTemplateResponse)
     - [CreateAppSMSTemplateRequest](#third.gateway.v1.CreateAppSMSTemplateRequest)
     - [CreateAppSMSTemplateResponse](#third.gateway.v1.CreateAppSMSTemplateResponse)
-    - [GetAppContactByAppUsedForRequest](#third.gateway.v1.GetAppContactByAppUsedForRequest)
-    - [GetAppContactByAppUsedForResponse](#third.gateway.v1.GetAppContactByAppUsedForResponse)
+    - [GetAppContactByAppUsedForAccountTypeRequest](#third.gateway.v1.GetAppContactByAppUsedForAccountTypeRequest)
+    - [GetAppContactByAppUsedForAccountTypeResponse](#third.gateway.v1.GetAppContactByAppUsedForAccountTypeResponse)
     - [GetAppContactRequest](#third.gateway.v1.GetAppContactRequest)
     - [GetAppContactResponse](#third.gateway.v1.GetAppContactResponse)
     - [GetAppContactsByAppRequest](#third.gateway.v1.GetAppContactsByAppRequest)
@@ -72,8 +72,8 @@
     - [CreateAppEmailTemplateResponse](#third.gateway.v1.CreateAppEmailTemplateResponse)
     - [CreateAppSMSTemplateRequest](#third.gateway.v1.CreateAppSMSTemplateRequest)
     - [CreateAppSMSTemplateResponse](#third.gateway.v1.CreateAppSMSTemplateResponse)
-    - [GetAppContactByAppUsedForRequest](#third.gateway.v1.GetAppContactByAppUsedForRequest)
-    - [GetAppContactByAppUsedForResponse](#third.gateway.v1.GetAppContactByAppUsedForResponse)
+    - [GetAppContactByAppUsedForAccountTypeRequest](#third.gateway.v1.GetAppContactByAppUsedForAccountTypeRequest)
+    - [GetAppContactByAppUsedForAccountTypeResponse](#third.gateway.v1.GetAppContactByAppUsedForAccountTypeResponse)
     - [GetAppContactRequest](#third.gateway.v1.GetAppContactRequest)
     - [GetAppContactResponse](#third.gateway.v1.GetAppContactResponse)
     - [GetAppContactsByAppRequest](#third.gateway.v1.GetAppContactsByAppRequest)
@@ -317,9 +317,9 @@
 
 
 
-<a name="third.gateway.v1.GetAppContactByAppUsedForRequest"></a>
+<a name="third.gateway.v1.GetAppContactByAppUsedForAccountTypeRequest"></a>
 
-### GetAppContactByAppUsedForRequest
+### GetAppContactByAppUsedForAccountTypeRequest
 
 
 
@@ -327,15 +327,16 @@
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="third.gateway.v1.GetAppContactByAppUsedForResponse"></a>
+<a name="third.gateway.v1.GetAppContactByAppUsedForAccountTypeResponse"></a>
 
-### GetAppContactByAppUsedForResponse
+### GetAppContactByAppUsedForAccountTypeResponse
 
 
 
@@ -1009,7 +1010,7 @@ Service Name
 | UpdateAppContact | [UpdateAppContactRequest](#third.gateway.v1.UpdateAppContactRequest) | [UpdateAppContactResponse](#third.gateway.v1.UpdateAppContactResponse) |  |
 | GetAppContactsByApp | [GetAppContactsByAppRequest](#third.gateway.v1.GetAppContactsByAppRequest) | [GetAppContactsByAppResponse](#third.gateway.v1.GetAppContactsByAppResponse) |  |
 | GetAppContactsByOtherApp | [GetAppContactsByOtherAppRequest](#third.gateway.v1.GetAppContactsByOtherAppRequest) | [GetAppContactsByOtherAppResponse](#third.gateway.v1.GetAppContactsByOtherAppResponse) |  |
-| GetAppContactByAppUsedFor | [GetAppContactByAppUsedForRequest](#third.gateway.v1.GetAppContactByAppUsedForRequest) | [GetAppContactByAppUsedForResponse](#third.gateway.v1.GetAppContactByAppUsedForResponse) |  |
+| GetAppContactByAppUsedForAccountType | [GetAppContactByAppUsedForAccountTypeRequest](#third.gateway.v1.GetAppContactByAppUsedForAccountTypeRequest) | [GetAppContactByAppUsedForAccountTypeResponse](#third.gateway.v1.GetAppContactByAppUsedForAccountTypeResponse) |  |
 | SendSMSCode | [SendSMSCodeRequest](#third.gateway.v1.SendSMSCodeRequest) | [SendSMSCodeResponse](#third.gateway.v1.SendSMSCodeResponse) |  |
 | VerifySMSCode | [VerifySMSCodeRequest](#third.gateway.v1.VerifySMSCodeRequest) | [VerifySMSCodeResponse](#third.gateway.v1.VerifySMSCodeResponse) |  |
 | SendEmailCode | [SendEmailCodeRequest](#third.gateway.v1.SendEmailCodeRequest) | [SendEmailCodeResponse](#third.gateway.v1.SendEmailCodeResponse) |  |
@@ -1218,9 +1219,9 @@ Service Name
 
 
 
-<a name="third.gateway.v1.GetAppContactByAppUsedForRequest"></a>
+<a name="third.gateway.v1.GetAppContactByAppUsedForAccountTypeRequest"></a>
 
-### GetAppContactByAppUsedForRequest
+### GetAppContactByAppUsedForAccountTypeRequest
 
 
 
@@ -1228,15 +1229,16 @@ Service Name
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="third.gateway.v1.GetAppContactByAppUsedForResponse"></a>
+<a name="third.gateway.v1.GetAppContactByAppUsedForAccountTypeResponse"></a>
 
-### GetAppContactByAppUsedForResponse
+### GetAppContactByAppUsedForAccountTypeResponse
 
 
 
@@ -1910,7 +1912,7 @@ Service Name
 | UpdateAppContact | [UpdateAppContactRequest](#third.gateway.v1.UpdateAppContactRequest) | [UpdateAppContactResponse](#third.gateway.v1.UpdateAppContactResponse) |  |
 | GetAppContactsByApp | [GetAppContactsByAppRequest](#third.gateway.v1.GetAppContactsByAppRequest) | [GetAppContactsByAppResponse](#third.gateway.v1.GetAppContactsByAppResponse) |  |
 | GetAppContactsByOtherApp | [GetAppContactsByOtherAppRequest](#third.gateway.v1.GetAppContactsByOtherAppRequest) | [GetAppContactsByOtherAppResponse](#third.gateway.v1.GetAppContactsByOtherAppResponse) |  |
-| GetAppContactByAppUsedFor | [GetAppContactByAppUsedForRequest](#third.gateway.v1.GetAppContactByAppUsedForRequest) | [GetAppContactByAppUsedForResponse](#third.gateway.v1.GetAppContactByAppUsedForResponse) |  |
+| GetAppContactByAppUsedForAccountType | [GetAppContactByAppUsedForAccountTypeRequest](#third.gateway.v1.GetAppContactByAppUsedForAccountTypeRequest) | [GetAppContactByAppUsedForAccountTypeResponse](#third.gateway.v1.GetAppContactByAppUsedForAccountTypeResponse) |  |
 | SendSMSCode | [SendSMSCodeRequest](#third.gateway.v1.SendSMSCodeRequest) | [SendSMSCodeResponse](#third.gateway.v1.SendSMSCodeResponse) |  |
 | VerifySMSCode | [VerifySMSCodeRequest](#third.gateway.v1.VerifySMSCodeRequest) | [VerifySMSCodeResponse](#third.gateway.v1.VerifySMSCodeResponse) |  |
 | SendEmailCode | [SendEmailCodeRequest](#third.gateway.v1.SendEmailCodeRequest) | [SendEmailCodeResponse](#third.gateway.v1.SendEmailCodeResponse) |  |

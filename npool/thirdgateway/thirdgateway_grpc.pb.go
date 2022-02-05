@@ -43,7 +43,7 @@ type ThirdGatewayClient interface {
 	UpdateAppContact(ctx context.Context, in *UpdateAppContactRequest, opts ...grpc.CallOption) (*UpdateAppContactResponse, error)
 	GetAppContactsByApp(ctx context.Context, in *GetAppContactsByAppRequest, opts ...grpc.CallOption) (*GetAppContactsByAppResponse, error)
 	GetAppContactsByOtherApp(ctx context.Context, in *GetAppContactsByOtherAppRequest, opts ...grpc.CallOption) (*GetAppContactsByOtherAppResponse, error)
-	GetAppContactByAppUsedFor(ctx context.Context, in *GetAppContactByAppUsedForRequest, opts ...grpc.CallOption) (*GetAppContactByAppUsedForResponse, error)
+	GetAppContactByAppUsedForAccountType(ctx context.Context, in *GetAppContactByAppUsedForAccountTypeRequest, opts ...grpc.CallOption) (*GetAppContactByAppUsedForAccountTypeResponse, error)
 	SendSMSCode(ctx context.Context, in *SendSMSCodeRequest, opts ...grpc.CallOption) (*SendSMSCodeResponse, error)
 	VerifySMSCode(ctx context.Context, in *VerifySMSCodeRequest, opts ...grpc.CallOption) (*VerifySMSCodeResponse, error)
 	SendEmailCode(ctx context.Context, in *SendEmailCodeRequest, opts ...grpc.CallOption) (*SendEmailCodeResponse, error)
@@ -223,9 +223,9 @@ func (c *thirdGatewayClient) GetAppContactsByOtherApp(ctx context.Context, in *G
 	return out, nil
 }
 
-func (c *thirdGatewayClient) GetAppContactByAppUsedFor(ctx context.Context, in *GetAppContactByAppUsedForRequest, opts ...grpc.CallOption) (*GetAppContactByAppUsedForResponse, error) {
-	out := new(GetAppContactByAppUsedForResponse)
-	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/GetAppContactByAppUsedFor", in, out, opts...)
+func (c *thirdGatewayClient) GetAppContactByAppUsedForAccountType(ctx context.Context, in *GetAppContactByAppUsedForAccountTypeRequest, opts ...grpc.CallOption) (*GetAppContactByAppUsedForAccountTypeResponse, error) {
+	out := new(GetAppContactByAppUsedForAccountTypeResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/GetAppContactByAppUsedForAccountType", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -318,7 +318,7 @@ type ThirdGatewayServer interface {
 	UpdateAppContact(context.Context, *UpdateAppContactRequest) (*UpdateAppContactResponse, error)
 	GetAppContactsByApp(context.Context, *GetAppContactsByAppRequest) (*GetAppContactsByAppResponse, error)
 	GetAppContactsByOtherApp(context.Context, *GetAppContactsByOtherAppRequest) (*GetAppContactsByOtherAppResponse, error)
-	GetAppContactByAppUsedFor(context.Context, *GetAppContactByAppUsedForRequest) (*GetAppContactByAppUsedForResponse, error)
+	GetAppContactByAppUsedForAccountType(context.Context, *GetAppContactByAppUsedForAccountTypeRequest) (*GetAppContactByAppUsedForAccountTypeResponse, error)
 	SendSMSCode(context.Context, *SendSMSCodeRequest) (*SendSMSCodeResponse, error)
 	VerifySMSCode(context.Context, *VerifySMSCodeRequest) (*VerifySMSCodeResponse, error)
 	SendEmailCode(context.Context, *SendEmailCodeRequest) (*SendEmailCodeResponse, error)
@@ -387,8 +387,8 @@ func (UnimplementedThirdGatewayServer) GetAppContactsByApp(context.Context, *Get
 func (UnimplementedThirdGatewayServer) GetAppContactsByOtherApp(context.Context, *GetAppContactsByOtherAppRequest) (*GetAppContactsByOtherAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppContactsByOtherApp not implemented")
 }
-func (UnimplementedThirdGatewayServer) GetAppContactByAppUsedFor(context.Context, *GetAppContactByAppUsedForRequest) (*GetAppContactByAppUsedForResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppContactByAppUsedFor not implemented")
+func (UnimplementedThirdGatewayServer) GetAppContactByAppUsedForAccountType(context.Context, *GetAppContactByAppUsedForAccountTypeRequest) (*GetAppContactByAppUsedForAccountTypeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppContactByAppUsedForAccountType not implemented")
 }
 func (UnimplementedThirdGatewayServer) SendSMSCode(context.Context, *SendSMSCodeRequest) (*SendSMSCodeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendSMSCode not implemented")
@@ -748,20 +748,20 @@ func _ThirdGateway_GetAppContactsByOtherApp_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ThirdGateway_GetAppContactByAppUsedFor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppContactByAppUsedForRequest)
+func _ThirdGateway_GetAppContactByAppUsedForAccountType_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppContactByAppUsedForAccountTypeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ThirdGatewayServer).GetAppContactByAppUsedFor(ctx, in)
+		return srv.(ThirdGatewayServer).GetAppContactByAppUsedForAccountType(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/third.gateway.v1.ThirdGateway/GetAppContactByAppUsedFor",
+		FullMethod: "/third.gateway.v1.ThirdGateway/GetAppContactByAppUsedForAccountType",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ThirdGatewayServer).GetAppContactByAppUsedFor(ctx, req.(*GetAppContactByAppUsedForRequest))
+		return srv.(ThirdGatewayServer).GetAppContactByAppUsedForAccountType(ctx, req.(*GetAppContactByAppUsedForAccountTypeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -972,8 +972,8 @@ var ThirdGateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ThirdGateway_GetAppContactsByOtherApp_Handler,
 		},
 		{
-			MethodName: "GetAppContactByAppUsedFor",
-			Handler:    _ThirdGateway_GetAppContactByAppUsedFor_Handler,
+			MethodName: "GetAppContactByAppUsedForAccountType",
+			Handler:    _ThirdGateway_GetAppContactByAppUsedForAccountType_Handler,
 		},
 		{
 			MethodName: "SendSMSCode",

@@ -214,12 +214,13 @@ export type UpdateAppContactResponse = {
   info?: AppContact
 }
 
-export type GetAppContactByAppUsedForRequest = {
+export type GetAppContactByAppUsedForAccountTypeRequest = {
   appID?: string
   usedFor?: string
+  accountType?: string
 }
 
-export type GetAppContactByAppUsedForResponse = {
+export type GetAppContactByAppUsedForAccountTypeResponse = {
   info?: AppContact
 }
 
@@ -329,8 +330,8 @@ export class ThirdGateway {
   static GetAppContactsByOtherApp(req: GetAppContactsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppContactsByOtherAppResponse> {
     return fm.fetchReq<GetAppContactsByOtherAppRequest, GetAppContactsByOtherAppResponse>(`/v1/get/app/contacts/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppContactByAppUsedFor(req: GetAppContactByAppUsedForRequest, initReq?: fm.InitReq): Promise<GetAppContactByAppUsedForResponse> {
-    return fm.fetchReq<GetAppContactByAppUsedForRequest, GetAppContactByAppUsedForResponse>(`/v1/get/app/contact/by/app/usedfor`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppContactByAppUsedForAccountType(req: GetAppContactByAppUsedForAccountTypeRequest, initReq?: fm.InitReq): Promise<GetAppContactByAppUsedForAccountTypeResponse> {
+    return fm.fetchReq<GetAppContactByAppUsedForAccountTypeRequest, GetAppContactByAppUsedForAccountTypeResponse>(`/v1/get/app/contact/by/app/usedfor/accounttype`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static SendSMSCode(req: SendSMSCodeRequest, initReq?: fm.InitReq): Promise<SendSMSCodeResponse> {
     return fm.fetchReq<SendSMSCodeRequest, SendSMSCodeResponse>(`/v1/send/sms/code`, {...initReq, method: "POST", body: JSON.stringify(req)})

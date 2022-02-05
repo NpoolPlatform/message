@@ -171,14 +171,14 @@
         ]
       }
     },
-    "/v1/get/app/contact/by/app/usedfor": {
+    "/v1/get/app/contact/by/app/usedfor/accounttype": {
       "post": {
-        "operationId": "ThirdGateway_GetAppContactByAppUsedFor",
+        "operationId": "ThirdGateway_GetAppContactByAppUsedForAccountType",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppContactByAppUsedForResponse"
+              "$ref": "#/definitions/v1GetAppContactByAppUsedForAccountTypeResponse"
             }
           },
           "default": {
@@ -194,7 +194,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppContactByAppUsedForRequest"
+              "$ref": "#/definitions/v1GetAppContactByAppUsedForAccountTypeRequest"
             }
           }
         ],
@@ -1046,7 +1046,7 @@
         }
       }
     },
-    "v1GetAppContactByAppUsedForRequest": {
+    "v1GetAppContactByAppUsedForAccountTypeRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -1054,10 +1054,13 @@
         },
         "UsedFor": {
           "type": "string"
+        },
+        "AccountType": {
+          "type": "string"
         }
       }
     },
-    "v1GetAppContactByAppUsedForResponse": {
+    "v1GetAppContactByAppUsedForAccountTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {

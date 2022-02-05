@@ -122,9 +122,9 @@ service ThirdGateway {
             body: "*"
         };
     }
-    rpc GetAppContactByAppUsedFor (GetAppContactByAppUsedForRequest) returns (GetAppContactByAppUsedForResponse) {
+    rpc GetAppContactByAppUsedForAccountType (GetAppContactByAppUsedForAccountTypeRequest) returns (GetAppContactByAppUsedForAccountTypeResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/contact/by/app/usedfor"
+            post: "/v1/get/app/contact/by/app/usedfor/accounttype"
             body: "*"
         };
     }
@@ -383,12 +383,13 @@ message UpdateAppContactResponse {
     AppContact Info = 10;
 }
 
-message GetAppContactByAppUsedForRequest {
+message GetAppContactByAppUsedForAccountTypeRequest {
     string AppID = 10;
     string UsedFor = 20;
+    string AccountType = 30;
 }
 
-message GetAppContactByAppUsedForResponse {
+message GetAppContactByAppUsedForAccountTypeResponse {
     AppContact Info = 10;
 }
 
