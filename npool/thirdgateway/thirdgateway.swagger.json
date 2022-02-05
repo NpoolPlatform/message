@@ -11,14 +11,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/contact": {
+    "/v1/contact/by/email": {
       "post": {
-        "operationId": "ThirdGateway_Contact",
+        "operationId": "ThirdGateway_ContactByEmail",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1ContactResponse"
+              "$ref": "#/definitions/v1ContactByEmailResponse"
             }
           },
           "default": {
@@ -34,7 +34,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1ContactRequest"
+              "$ref": "#/definitions/v1ContactByEmailRequest"
             }
           }
         ],
@@ -963,7 +963,7 @@
         }
       }
     },
-    "v1ContactRequest": {
+    "v1ContactByEmailRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -986,7 +986,7 @@
         }
       }
     },
-    "v1ContactResponse": {
+    "v1ContactByEmailResponse": {
       "type": "object",
       "properties": {
         "Code": {

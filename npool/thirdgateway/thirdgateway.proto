@@ -168,9 +168,9 @@ service ThirdGateway {
         };
     }
 
-    rpc Contact (ContactRequest) returns (ContactResponse) {
+    rpc ContactByEmail (ContactByEmailRequest) returns (ContactByEmailResponse) {
         option (google.api.http) = {
-            post: "/v1/contact"
+            post: "/v1/contact/by/email"
             body: "*"
         };
     }
@@ -430,7 +430,7 @@ message VerifyGoogleAuthenticationResponse {
     string Message = 20;
 }
 
-message ContactRequest {
+message ContactByEmailRequest {
     string AppID = 10;
     string UserID = 20;
     string UsedFor = 30;
@@ -439,7 +439,7 @@ message ContactRequest {
     string Body = 70;
 }
 
-message ContactResponse {
+message ContactByEmailResponse {
     int32 Code = 10;
     string Message = 20;
 }

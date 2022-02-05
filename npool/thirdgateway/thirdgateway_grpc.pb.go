@@ -50,7 +50,7 @@ type ThirdGatewayClient interface {
 	VerifyEmailCode(ctx context.Context, in *VerifyEmailCodeRequest, opts ...grpc.CallOption) (*VerifyEmailCodeResponse, error)
 	SetupGoogleAuthentication(ctx context.Context, in *SetupGoogleAuthenticationRequest, opts ...grpc.CallOption) (*SetupGoogleAuthenticationResponse, error)
 	VerifyGoogleAuthentication(ctx context.Context, in *VerifyGoogleAuthenticationRequest, opts ...grpc.CallOption) (*VerifyGoogleAuthenticationResponse, error)
-	Contact(ctx context.Context, in *ContactRequest, opts ...grpc.CallOption) (*ContactResponse, error)
+	ContactByEmail(ctx context.Context, in *ContactByEmailRequest, opts ...grpc.CallOption) (*ContactByEmailResponse, error)
 }
 
 type thirdGatewayClient struct {
@@ -286,9 +286,9 @@ func (c *thirdGatewayClient) VerifyGoogleAuthentication(ctx context.Context, in 
 	return out, nil
 }
 
-func (c *thirdGatewayClient) Contact(ctx context.Context, in *ContactRequest, opts ...grpc.CallOption) (*ContactResponse, error) {
-	out := new(ContactResponse)
-	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/Contact", in, out, opts...)
+func (c *thirdGatewayClient) ContactByEmail(ctx context.Context, in *ContactByEmailRequest, opts ...grpc.CallOption) (*ContactByEmailResponse, error) {
+	out := new(ContactByEmailResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/ContactByEmail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -325,7 +325,7 @@ type ThirdGatewayServer interface {
 	VerifyEmailCode(context.Context, *VerifyEmailCodeRequest) (*VerifyEmailCodeResponse, error)
 	SetupGoogleAuthentication(context.Context, *SetupGoogleAuthenticationRequest) (*SetupGoogleAuthenticationResponse, error)
 	VerifyGoogleAuthentication(context.Context, *VerifyGoogleAuthenticationRequest) (*VerifyGoogleAuthenticationResponse, error)
-	Contact(context.Context, *ContactRequest) (*ContactResponse, error)
+	ContactByEmail(context.Context, *ContactByEmailRequest) (*ContactByEmailResponse, error)
 	mustEmbedUnimplementedThirdGatewayServer()
 }
 
@@ -408,8 +408,8 @@ func (UnimplementedThirdGatewayServer) SetupGoogleAuthentication(context.Context
 func (UnimplementedThirdGatewayServer) VerifyGoogleAuthentication(context.Context, *VerifyGoogleAuthenticationRequest) (*VerifyGoogleAuthenticationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VerifyGoogleAuthentication not implemented")
 }
-func (UnimplementedThirdGatewayServer) Contact(context.Context, *ContactRequest) (*ContactResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Contact not implemented")
+func (UnimplementedThirdGatewayServer) ContactByEmail(context.Context, *ContactByEmailRequest) (*ContactByEmailResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ContactByEmail not implemented")
 }
 func (UnimplementedThirdGatewayServer) mustEmbedUnimplementedThirdGatewayServer() {}
 
@@ -874,20 +874,20 @@ func _ThirdGateway_VerifyGoogleAuthentication_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ThirdGateway_Contact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ContactRequest)
+func _ThirdGateway_ContactByEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ContactByEmailRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ThirdGatewayServer).Contact(ctx, in)
+		return srv.(ThirdGatewayServer).ContactByEmail(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/third.gateway.v1.ThirdGateway/Contact",
+		FullMethod: "/third.gateway.v1.ThirdGateway/ContactByEmail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ThirdGatewayServer).Contact(ctx, req.(*ContactRequest))
+		return srv.(ThirdGatewayServer).ContactByEmail(ctx, req.(*ContactByEmailRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1000,8 +1000,8 @@ var ThirdGateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ThirdGateway_VerifyGoogleAuthentication_Handler,
 		},
 		{
-			MethodName: "Contact",
-			Handler:    _ThirdGateway_Contact_Handler,
+			MethodName: "ContactByEmail",
+			Handler:    _ThirdGateway_ContactByEmail_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

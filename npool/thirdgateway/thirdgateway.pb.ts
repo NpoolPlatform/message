@@ -261,7 +261,7 @@ export type VerifyGoogleAuthenticationResponse = {
   message?: string
 }
 
-export type ContactRequest = {
+export type ContactByEmailRequest = {
   appID?: string
   userID?: string
   usedFor?: string
@@ -270,7 +270,7 @@ export type ContactRequest = {
   body?: string
 }
 
-export type ContactResponse = {
+export type ContactByEmailResponse = {
   code?: number
   message?: string
 }
@@ -351,7 +351,7 @@ export class ThirdGateway {
   static VerifyGoogleAuthentication(req: VerifyGoogleAuthenticationRequest, initReq?: fm.InitReq): Promise<VerifyGoogleAuthenticationResponse> {
     return fm.fetchReq<VerifyGoogleAuthenticationRequest, VerifyGoogleAuthenticationResponse>(`/v1/verify/google/authentication`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static Contact(req: ContactRequest, initReq?: fm.InitReq): Promise<ContactResponse> {
-    return fm.fetchReq<ContactRequest, ContactResponse>(`/v1/contact`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static ContactByEmail(req: ContactByEmailRequest, initReq?: fm.InitReq): Promise<ContactByEmailResponse> {
+    return fm.fetchReq<ContactByEmailRequest, ContactByEmailResponse>(`/v1/contact/by/email`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

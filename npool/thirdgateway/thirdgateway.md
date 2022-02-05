@@ -7,8 +7,8 @@
     - [AppContact](#third.gateway.v1.AppContact)
     - [AppEmailTemplate](#third.gateway.v1.AppEmailTemplate)
     - [AppSMSTemplate](#third.gateway.v1.AppSMSTemplate)
-    - [ContactRequest](#third.gateway.v1.ContactRequest)
-    - [ContactResponse](#third.gateway.v1.ContactResponse)
+    - [ContactByEmailRequest](#third.gateway.v1.ContactByEmailRequest)
+    - [ContactByEmailResponse](#third.gateway.v1.ContactByEmailResponse)
     - [CreateAppContactRequest](#third.gateway.v1.CreateAppContactRequest)
     - [CreateAppContactResponse](#third.gateway.v1.CreateAppContactResponse)
     - [CreateAppEmailTemplateRequest](#third.gateway.v1.CreateAppEmailTemplateRequest)
@@ -64,8 +64,8 @@
     - [AppContact](#third.gateway.v1.AppContact)
     - [AppEmailTemplate](#third.gateway.v1.AppEmailTemplate)
     - [AppSMSTemplate](#third.gateway.v1.AppSMSTemplate)
-    - [ContactRequest](#third.gateway.v1.ContactRequest)
-    - [ContactResponse](#third.gateway.v1.ContactResponse)
+    - [ContactByEmailRequest](#third.gateway.v1.ContactByEmailRequest)
+    - [ContactByEmailResponse](#third.gateway.v1.ContactByEmailResponse)
     - [CreateAppContactRequest](#third.gateway.v1.CreateAppContactRequest)
     - [CreateAppContactResponse](#third.gateway.v1.CreateAppContactResponse)
     - [CreateAppEmailTemplateRequest](#third.gateway.v1.CreateAppEmailTemplateRequest)
@@ -191,9 +191,9 @@
 
 
 
-<a name="third.gateway.v1.ContactRequest"></a>
+<a name="third.gateway.v1.ContactByEmailRequest"></a>
 
-### ContactRequest
+### ContactByEmailRequest
 
 
 
@@ -211,9 +211,9 @@
 
 
 
-<a name="third.gateway.v1.ContactResponse"></a>
+<a name="third.gateway.v1.ContactByEmailResponse"></a>
 
-### ContactResponse
+### ContactByEmailResponse
 
 
 
@@ -1017,7 +1017,7 @@ Service Name
 | VerifyEmailCode | [VerifyEmailCodeRequest](#third.gateway.v1.VerifyEmailCodeRequest) | [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse) |  |
 | SetupGoogleAuthentication | [SetupGoogleAuthenticationRequest](#third.gateway.v1.SetupGoogleAuthenticationRequest) | [SetupGoogleAuthenticationResponse](#third.gateway.v1.SetupGoogleAuthenticationResponse) |  |
 | VerifyGoogleAuthentication | [VerifyGoogleAuthenticationRequest](#third.gateway.v1.VerifyGoogleAuthenticationRequest) | [VerifyGoogleAuthenticationResponse](#third.gateway.v1.VerifyGoogleAuthenticationResponse) |  |
-| Contact | [ContactRequest](#third.gateway.v1.ContactRequest) | [ContactResponse](#third.gateway.v1.ContactResponse) |  |
+| ContactByEmail | [ContactByEmailRequest](#third.gateway.v1.ContactByEmailRequest) | [ContactByEmailResponse](#third.gateway.v1.ContactByEmailResponse) |  |
 
  
 
@@ -1093,9 +1093,9 @@ Service Name
 
 
 
-<a name="third.gateway.v1.ContactRequest"></a>
+<a name="third.gateway.v1.ContactByEmailRequest"></a>
 
-### ContactRequest
+### ContactByEmailRequest
 
 
 
@@ -1113,9 +1113,9 @@ Service Name
 
 
 
-<a name="third.gateway.v1.ContactResponse"></a>
+<a name="third.gateway.v1.ContactByEmailResponse"></a>
 
-### ContactResponse
+### ContactByEmailResponse
 
 
 
@@ -1919,7 +1919,7 @@ Service Name
 | VerifyEmailCode | [VerifyEmailCodeRequest](#third.gateway.v1.VerifyEmailCodeRequest) | [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse) |  |
 | SetupGoogleAuthentication | [SetupGoogleAuthenticationRequest](#third.gateway.v1.SetupGoogleAuthenticationRequest) | [SetupGoogleAuthenticationResponse](#third.gateway.v1.SetupGoogleAuthenticationResponse) |  |
 | VerifyGoogleAuthentication | [VerifyGoogleAuthenticationRequest](#third.gateway.v1.VerifyGoogleAuthenticationRequest) | [VerifyGoogleAuthenticationResponse](#third.gateway.v1.VerifyGoogleAuthenticationResponse) |  |
-| Contact | [ContactRequest](#third.gateway.v1.ContactRequest) | [ContactResponse](#third.gateway.v1.ContactResponse) |  |
+| ContactByEmail | [ContactByEmailRequest](#third.gateway.v1.ContactByEmailRequest) | [ContactByEmailResponse](#third.gateway.v1.ContactByEmailResponse) |  |
 
  
 
