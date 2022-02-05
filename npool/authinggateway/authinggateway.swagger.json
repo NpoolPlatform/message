@@ -179,6 +179,12 @@
       "properties": {
         "AppID": {
           "type": "string"
+        },
+        "Resource": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string"
         }
       }
     },

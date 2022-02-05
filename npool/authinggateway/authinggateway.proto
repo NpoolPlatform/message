@@ -39,6 +39,8 @@ service AuthingGateway {
 
 message AuthByAppRequest {
     string AppID = 10;
+    string Resource = 20;
+    string Method = 30;
 }
 
 message AuthByAppResponse {

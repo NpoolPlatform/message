@@ -45,6 +45,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| Resource | [string](#string) |  |  |
+| Method | [string](#string) |  |  |
 
 
 
@@ -190,6 +192,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| Resource | [string](#string) |  |  |
+| Method | [string](#string) |  |  |
 
 
 

@@ -9,6 +9,8 @@ import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type AuthByAppRequest = {
   appID?: string
+  resource?: string
+  method?: string
 }
 
 export type AuthByAppResponse = {
