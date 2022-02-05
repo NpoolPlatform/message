@@ -167,6 +167,12 @@ service ThirdGateway {
             body: "*"
         };
     }
+    rpc VerifyGoogleRecaptchaV3 (VerifyGoogleRecaptchaV3Request) returns (VerifyGoogleRecaptchaV3Response) {
+        option (google.api.http) = {
+            post: "/v1/verify/google/recaptcha/v3"
+            body: "*"
+        };
+    }
 
     rpc ContactByEmail (ContactByEmailRequest) returns (ContactByEmailResponse) {
         option (google.api.http) = {
@@ -427,6 +433,15 @@ message VerifyGoogleAuthenticationRequest {
 }
 
 message VerifyGoogleAuthenticationResponse {
+    int32 Code = 10;
+    string Message = 20;
+}
+
+message VerifyGoogleRecaptchaV3Request {
+    string RecaptchaToken = 10;
+}
+
+message VerifyGoogleRecaptchaV3Response {
     int32 Code = 10;
     string Message = 20;
 }

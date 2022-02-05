@@ -779,6 +779,38 @@
         ]
       }
     },
+    "/v1/verify/google/recaptcha/v3": {
+      "post": {
+        "operationId": "ThirdGateway_VerifyGoogleRecaptchaV3",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VerifyGoogleRecaptchaV3Response"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1VerifyGoogleRecaptchaV3Request"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
     "/v1/verify/sms/code": {
       "post": {
         "operationId": "ThirdGateway_VerifySMSCode",
@@ -1464,6 +1496,26 @@
       }
     },
     "v1VerifyGoogleAuthenticationResponse": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1VerifyGoogleRecaptchaV3Request": {
+      "type": "object",
+      "properties": {
+        "RecaptchaToken": {
+          "type": "string"
+        }
+      }
+    },
+    "v1VerifyGoogleRecaptchaV3Response": {
       "type": "object",
       "properties": {
         "Code": {

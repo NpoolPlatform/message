@@ -55,6 +55,8 @@
     - [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse)
     - [VerifyGoogleAuthenticationRequest](#third.gateway.v1.VerifyGoogleAuthenticationRequest)
     - [VerifyGoogleAuthenticationResponse](#third.gateway.v1.VerifyGoogleAuthenticationResponse)
+    - [VerifyGoogleRecaptchaV3Request](#third.gateway.v1.VerifyGoogleRecaptchaV3Request)
+    - [VerifyGoogleRecaptchaV3Response](#third.gateway.v1.VerifyGoogleRecaptchaV3Response)
     - [VerifySMSCodeRequest](#third.gateway.v1.VerifySMSCodeRequest)
     - [VerifySMSCodeResponse](#third.gateway.v1.VerifySMSCodeResponse)
   
@@ -112,6 +114,8 @@
     - [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse)
     - [VerifyGoogleAuthenticationRequest](#third.gateway.v1.VerifyGoogleAuthenticationRequest)
     - [VerifyGoogleAuthenticationResponse](#third.gateway.v1.VerifyGoogleAuthenticationResponse)
+    - [VerifyGoogleRecaptchaV3Request](#third.gateway.v1.VerifyGoogleRecaptchaV3Request)
+    - [VerifyGoogleRecaptchaV3Response](#third.gateway.v1.VerifyGoogleRecaptchaV3Response)
     - [VerifySMSCodeRequest](#third.gateway.v1.VerifySMSCodeRequest)
     - [VerifySMSCodeResponse](#third.gateway.v1.VerifySMSCodeResponse)
   
@@ -946,6 +950,37 @@
 
 
 
+<a name="third.gateway.v1.VerifyGoogleRecaptchaV3Request"></a>
+
+### VerifyGoogleRecaptchaV3Request
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| RecaptchaToken | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.VerifyGoogleRecaptchaV3Response"></a>
+
+### VerifyGoogleRecaptchaV3Response
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="third.gateway.v1.VerifySMSCodeRequest"></a>
 
 ### VerifySMSCodeRequest
@@ -1019,6 +1054,7 @@ Service Name
 | VerifyEmailCode | [VerifyEmailCodeRequest](#third.gateway.v1.VerifyEmailCodeRequest) | [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse) |  |
 | SetupGoogleAuthentication | [SetupGoogleAuthenticationRequest](#third.gateway.v1.SetupGoogleAuthenticationRequest) | [SetupGoogleAuthenticationResponse](#third.gateway.v1.SetupGoogleAuthenticationResponse) |  |
 | VerifyGoogleAuthentication | [VerifyGoogleAuthenticationRequest](#third.gateway.v1.VerifyGoogleAuthenticationRequest) | [VerifyGoogleAuthenticationResponse](#third.gateway.v1.VerifyGoogleAuthenticationResponse) |  |
+| VerifyGoogleRecaptchaV3 | [VerifyGoogleRecaptchaV3Request](#third.gateway.v1.VerifyGoogleRecaptchaV3Request) | [VerifyGoogleRecaptchaV3Response](#third.gateway.v1.VerifyGoogleRecaptchaV3Response) |  |
 | ContactByEmail | [ContactByEmailRequest](#third.gateway.v1.ContactByEmailRequest) | [ContactByEmailResponse](#third.gateway.v1.ContactByEmailResponse) |  |
 
  
@@ -1850,6 +1886,37 @@ Service Name
 
 
 
+<a name="third.gateway.v1.VerifyGoogleRecaptchaV3Request"></a>
+
+### VerifyGoogleRecaptchaV3Request
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| RecaptchaToken | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.VerifyGoogleRecaptchaV3Response"></a>
+
+### VerifyGoogleRecaptchaV3Response
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="third.gateway.v1.VerifySMSCodeRequest"></a>
 
 ### VerifySMSCodeRequest
@@ -1923,6 +1990,7 @@ Service Name
 | VerifyEmailCode | [VerifyEmailCodeRequest](#third.gateway.v1.VerifyEmailCodeRequest) | [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse) |  |
 | SetupGoogleAuthentication | [SetupGoogleAuthenticationRequest](#third.gateway.v1.SetupGoogleAuthenticationRequest) | [SetupGoogleAuthenticationResponse](#third.gateway.v1.SetupGoogleAuthenticationResponse) |  |
 | VerifyGoogleAuthentication | [VerifyGoogleAuthenticationRequest](#third.gateway.v1.VerifyGoogleAuthenticationRequest) | [VerifyGoogleAuthenticationResponse](#third.gateway.v1.VerifyGoogleAuthenticationResponse) |  |
+| VerifyGoogleRecaptchaV3 | [VerifyGoogleRecaptchaV3Request](#third.gateway.v1.VerifyGoogleRecaptchaV3Request) | [VerifyGoogleRecaptchaV3Response](#third.gateway.v1.VerifyGoogleRecaptchaV3Response) |  |
 | ContactByEmail | [ContactByEmailRequest](#third.gateway.v1.ContactByEmailRequest) | [ContactByEmailResponse](#third.gateway.v1.ContactByEmailResponse) |  |
 
  

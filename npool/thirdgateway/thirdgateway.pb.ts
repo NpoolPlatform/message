@@ -262,6 +262,15 @@ export type VerifyGoogleAuthenticationResponse = {
   message?: string
 }
 
+export type VerifyGoogleRecaptchaV3Request = {
+  recaptchaToken?: string
+}
+
+export type VerifyGoogleRecaptchaV3Response = {
+  code?: number
+  message?: string
+}
+
 export type ContactByEmailRequest = {
   appID?: string
   userID?: string
@@ -352,6 +361,9 @@ export class ThirdGateway {
   }
   static VerifyGoogleAuthentication(req: VerifyGoogleAuthenticationRequest, initReq?: fm.InitReq): Promise<VerifyGoogleAuthenticationResponse> {
     return fm.fetchReq<VerifyGoogleAuthenticationRequest, VerifyGoogleAuthenticationResponse>(`/v1/verify/google/authentication`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static VerifyGoogleRecaptchaV3(req: VerifyGoogleRecaptchaV3Request, initReq?: fm.InitReq): Promise<VerifyGoogleRecaptchaV3Response> {
+    return fm.fetchReq<VerifyGoogleRecaptchaV3Request, VerifyGoogleRecaptchaV3Response>(`/v1/verify/google/recaptcha/v3`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static ContactByEmail(req: ContactByEmailRequest, initReq?: fm.InitReq): Promise<ContactByEmailResponse> {
     return fm.fetchReq<ContactByEmailRequest, ContactByEmailResponse>(`/v1/contact/by/email`, {...initReq, method: "POST", body: JSON.stringify(req)})
