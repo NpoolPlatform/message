@@ -983,6 +983,9 @@
         },
         "Body": {
           "type": "string"
+        },
+        "SenderName": {
+          "type": "string"
         }
       }
     },

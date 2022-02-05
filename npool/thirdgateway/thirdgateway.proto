@@ -437,6 +437,7 @@ message ContactByEmailRequest {
     string Sender = 40;
     string Subject = 60;
     string Body = 70;
+    string SenderName = 80;
 }
 
 message ContactByEmailResponse {

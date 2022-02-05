@@ -205,6 +205,7 @@
 | Sender | [string](#string) |  |  |
 | Subject | [string](#string) |  |  |
 | Body | [string](#string) |  |  |
+| SenderName | [string](#string) |  |  |
 
 
 
@@ -1107,6 +1108,7 @@ Service Name
 | Sender | [string](#string) |  |  |
 | Subject | [string](#string) |  |  |
 | Body | [string](#string) |  |  |
+| SenderName | [string](#string) |  |  |
 
 
 

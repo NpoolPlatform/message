@@ -268,6 +268,7 @@ export type ContactByEmailRequest = {
   sender?: string
   subject?: string
   body?: string
+  senderName?: string
 }
 
 export type ContactByEmailResponse = {
