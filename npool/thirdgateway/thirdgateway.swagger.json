@@ -11,6 +11,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/contact": {
+      "post": {
+        "operationId": "ThirdGateway_Contact",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ContactResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ContactRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
     "/v1/create/app/contact": {
       "post": {
         "operationId": "ThirdGateway_CreateAppContact",
@@ -523,38 +555,6 @@
         ]
       }
     },
-    "/v1/send/email/to": {
-      "post": {
-        "operationId": "ThirdGateway_SendEmailTo",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1SendEmailToResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1SendEmailToRequest"
-            }
-          }
-        ],
-        "tags": [
-          "ThirdGateway"
-        ]
-      }
-    },
     "/v1/send/sms/code": {
       "post": {
         "operationId": "ThirdGateway_SendSMSCode",
@@ -960,6 +960,41 @@
         }
       }
     },
+    "v1ContactRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        },
+        "FromEmailAddress": {
+          "type": "string"
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "Body": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ContactResponse": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
     "v1CreateAppContactRequest": {
       "type": "object",
       "properties": {
@@ -1257,41 +1292,6 @@
       }
     },
     "v1SendEmailCodeResponse": {
-      "type": "object",
-      "properties": {
-        "Code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Message": {
-          "type": "string"
-        }
-      }
-    },
-    "v1SendEmailToRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "FromEmailAddress": {
-          "type": "string"
-        },
-        "ToEmailAddress": {
-          "type": "string"
-        },
-        "Subject": {
-          "type": "string"
-        },
-        "Body": {
-          "type": "string"
-        }
-      }
-    },
-    "v1SendEmailToResponse": {
       "type": "object",
       "properties": {
         "Code": {

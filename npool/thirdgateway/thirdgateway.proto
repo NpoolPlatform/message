@@ -168,9 +168,9 @@ service ThirdGateway {
         };
     }
 
-    rpc SendEmailTo (SendEmailToRequest) returns (SendEmailToResponse) {
+    rpc Contact (ContactRequest) returns (ContactResponse) {
         option (google.api.http) = {
-            post: "/v1/send/email/to"
+            post: "/v1/contact"
             body: "*"
         };
     }
@@ -428,16 +428,16 @@ message VerifyGoogleAuthenticationResponse {
     string Message = 20;
 }
 
-message SendEmailToRequest {
+message ContactRequest {
     string AppID = 10;
     string UserID = 20;
-    string FromEmailAddress = 30;
-    string ToEmailAddress = 40;
-    string Subject = 50;
-    string Body = 60;
+    string UsedFor = 30;
+    string FromEmailAddress = 40;
+    string Subject = 60;
+    string Body = 70;
 }
 
-message SendEmailToResponse {
+message ContactResponse {
     int32 Code = 10;
     string Message = 20;
 }
