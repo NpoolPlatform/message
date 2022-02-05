@@ -255,6 +255,14 @@ export type GetKycReviewsResponse = {
   infos?: KycReview[]
 }
 
+export type GetKycReviewsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetKycReviewsByOtherAppResponse = {
+  infos?: KycReview[]
+}
+
 export type GoodReview = {
   review?: ReviewServiceV1Review-service.Review
   createdBy?: AppUserManagerV1Appusermgr.AppUserInfo
@@ -356,6 +364,9 @@ export class CloudHashingApis {
   }
   static GetKycReviews(req: GetKycReviewsRequest, initReq?: fm.InitReq): Promise<GetKycReviewsResponse> {
     return fm.fetchReq<GetKycReviewsRequest, GetKycReviewsResponse>(`/v1/get/kyc/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetKycReviewsByOtherApp(req: GetKycReviewsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetKycReviewsByOtherAppResponse> {
+    return fm.fetchReq<GetKycReviewsByOtherAppRequest, GetKycReviewsByOtherAppResponse>(`/v1/get/kyc/reviews/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetGoodReviews(req: GetGoodReviewsRequest, initReq?: fm.InitReq): Promise<GetGoodReviewsResponse> {
     return fm.fetchReq<GetGoodReviewsRequest, GetGoodReviewsResponse>(`/v1/get/good/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})

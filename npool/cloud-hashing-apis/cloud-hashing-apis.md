@@ -18,6 +18,8 @@
     - [GetGoodsResponse](#cloud.hashing.apis.v1.GetGoodsResponse)
     - [GetKycByAppUserRequest](#cloud.hashing.apis.v1.GetKycByAppUserRequest)
     - [GetKycByAppUserResponse](#cloud.hashing.apis.v1.GetKycByAppUserResponse)
+    - [GetKycReviewsByOtherAppRequest](#cloud.hashing.apis.v1.GetKycReviewsByOtherAppRequest)
+    - [GetKycReviewsByOtherAppResponse](#cloud.hashing.apis.v1.GetKycReviewsByOtherAppResponse)
     - [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest)
     - [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse)
     - [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest)
@@ -80,6 +82,8 @@
     - [GetGoodsResponse](#cloud.hashing.apis.v1.GetGoodsResponse)
     - [GetKycByAppUserRequest](#cloud.hashing.apis.v1.GetKycByAppUserRequest)
     - [GetKycByAppUserResponse](#cloud.hashing.apis.v1.GetKycByAppUserResponse)
+    - [GetKycReviewsByOtherAppRequest](#cloud.hashing.apis.v1.GetKycReviewsByOtherAppRequest)
+    - [GetKycReviewsByOtherAppResponse](#cloud.hashing.apis.v1.GetKycReviewsByOtherAppResponse)
     - [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest)
     - [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse)
     - [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest)
@@ -347,6 +351,36 @@
 
 
 
+<a name="cloud.hashing.apis.v1.GetKycReviewsByOtherAppRequest"></a>
+
+### GetKycReviewsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetKycReviewsByOtherAppResponse"></a>
+
+### GetKycReviewsByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [KycReview](#cloud.hashing.apis.v1.KycReview) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.GetKycReviewsRequest"></a>
 
 ### GetKycReviewsRequest
@@ -1108,6 +1142,7 @@ Cloud Hashing Goods
 | GetMyInvitations | [GetMyInvitationsRequest](#cloud.hashing.apis.v1.GetMyInvitationsRequest) | [GetMyInvitationsResponse](#cloud.hashing.apis.v1.GetMyInvitationsResponse) |  |
 | GetMyDirectInvitations | [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest) | [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse) |  |
+| GetKycReviewsByOtherApp | [GetKycReviewsByOtherAppRequest](#cloud.hashing.apis.v1.GetKycReviewsByOtherAppRequest) | [GetKycReviewsByOtherAppResponse](#cloud.hashing.apis.v1.GetKycReviewsByOtherAppResponse) |  |
 | GetGoodReviews | [GetGoodReviewsRequest](#cloud.hashing.apis.v1.GetGoodReviewsRequest) | [GetGoodReviewsResponse](#cloud.hashing.apis.v1.GetGoodReviewsResponse) |  |
 | CreateKyc | [CreateKycRequest](#cloud.hashing.apis.v1.CreateKycRequest) | [CreateKycResponse](#cloud.hashing.apis.v1.CreateKycResponse) |  |
 | UpdateKyc | [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest) | [UpdateKycResponse](#cloud.hashing.apis.v1.UpdateKycResponse) |  |
@@ -1333,6 +1368,36 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud.hashing.apis.v1.GetKycReviewsByOtherAppRequest"></a>
+
+### GetKycReviewsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetKycReviewsByOtherAppResponse"></a>
+
+### GetKycReviewsByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [KycReview](#cloud.hashing.apis.v1.KycReview) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.GetKycReviewsRequest"></a>
 
 ### GetKycReviewsRequest
@@ -2094,6 +2159,7 @@ Cloud Hashing Goods
 | GetMyInvitations | [GetMyInvitationsRequest](#cloud.hashing.apis.v1.GetMyInvitationsRequest) | [GetMyInvitationsResponse](#cloud.hashing.apis.v1.GetMyInvitationsResponse) |  |
 | GetMyDirectInvitations | [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest) | [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse) |  |
+| GetKycReviewsByOtherApp | [GetKycReviewsByOtherAppRequest](#cloud.hashing.apis.v1.GetKycReviewsByOtherAppRequest) | [GetKycReviewsByOtherAppResponse](#cloud.hashing.apis.v1.GetKycReviewsByOtherAppResponse) |  |
 | GetGoodReviews | [GetGoodReviewsRequest](#cloud.hashing.apis.v1.GetGoodReviewsRequest) | [GetGoodReviewsResponse](#cloud.hashing.apis.v1.GetGoodReviewsResponse) |  |
 | CreateKyc | [CreateKycRequest](#cloud.hashing.apis.v1.CreateKycRequest) | [CreateKycResponse](#cloud.hashing.apis.v1.CreateKycResponse) |  |
 | UpdateKyc | [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest) | [UpdateKycResponse](#cloud.hashing.apis.v1.UpdateKycResponse) |  |

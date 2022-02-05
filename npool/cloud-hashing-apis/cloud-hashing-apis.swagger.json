@@ -267,6 +267,38 @@
         ]
       }
     },
+    "/v1/get/kyc/reviews/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingApis_GetKycReviewsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetKycReviewsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetKycReviewsByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/my/direct/invitations": {
       "post": {
         "operationId": "CloudHashingApis_GetMyDirectInvitations",
@@ -1509,6 +1541,25 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Kyc"
+        }
+      }
+    },
+    "v1GetKycReviewsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetKycReviewsByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1KycReview"
+          }
         }
       }
     },
