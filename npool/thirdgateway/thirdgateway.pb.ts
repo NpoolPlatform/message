@@ -182,6 +182,62 @@ export type GetAppEmailTemplatesByOtherAppResponse = {
   infos?: AppEmailTemplate[]
 }
 
+export type AppContact = {
+  id?: string
+  appID?: string
+  usedFor?: string
+  account?: string
+}
+
+export type CreateAppContactRequest = {
+  info?: AppContact
+}
+
+export type CreateAppContactResponse = {
+  info?: AppContact
+}
+
+export type GetAppContactRequest = {
+  id?: string
+}
+
+export type GetAppContactResponse = {
+  info?: AppContact
+}
+
+export type UpdateAppContactRequest = {
+  info?: AppContact
+}
+
+export type UpdateAppContactResponse = {
+  info?: AppContact
+}
+
+export type GetAppContactByAppUsedForRequest = {
+  appID?: string
+  usedFor?: string
+}
+
+export type GetAppContactByAppUsedForResponse = {
+  info?: AppContact
+}
+
+export type GetAppContactsByAppRequest = {
+  appID?: string
+}
+
+export type GetAppContactsByAppResponse = {
+  infos?: AppContact[]
+}
+
+export type GetAppContactsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetAppContactsByOtherAppResponse = {
+  infos?: AppContact[]
+}
+
 export type SetupGoogleAuthenticationRequest = {
   appID?: string
   userID?: string
@@ -256,6 +312,24 @@ export class ThirdGateway {
   }
   static GetAppEmailTemplateByAppLangUsedFor(req: GetAppEmailTemplateByAppLangUsedForRequest, initReq?: fm.InitReq): Promise<GetAppEmailTemplateByAppLangUsedForResponse> {
     return fm.fetchReq<GetAppEmailTemplateByAppLangUsedForRequest, GetAppEmailTemplateByAppLangUsedForResponse>(`/v1/get/app/email/template/by/app/lang/usedfor`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppContact(req: CreateAppContactRequest, initReq?: fm.InitReq): Promise<CreateAppContactResponse> {
+    return fm.fetchReq<CreateAppContactRequest, CreateAppContactResponse>(`/v1/create/app/contact`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppContact(req: GetAppContactRequest, initReq?: fm.InitReq): Promise<GetAppContactResponse> {
+    return fm.fetchReq<GetAppContactRequest, GetAppContactResponse>(`/v1/get/app/contact`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateAppContact(req: UpdateAppContactRequest, initReq?: fm.InitReq): Promise<UpdateAppContactResponse> {
+    return fm.fetchReq<UpdateAppContactRequest, UpdateAppContactResponse>(`/v1/update/app/contact`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppContactsByApp(req: GetAppContactsByAppRequest, initReq?: fm.InitReq): Promise<GetAppContactsByAppResponse> {
+    return fm.fetchReq<GetAppContactsByAppRequest, GetAppContactsByAppResponse>(`/v1/get/app/contacts/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppContactsByOtherApp(req: GetAppContactsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppContactsByOtherAppResponse> {
+    return fm.fetchReq<GetAppContactsByOtherAppRequest, GetAppContactsByOtherAppResponse>(`/v1/get/app/contacts/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppContactByAppUsedFor(req: GetAppContactByAppUsedForRequest, initReq?: fm.InitReq): Promise<GetAppContactByAppUsedForResponse> {
+    return fm.fetchReq<GetAppContactByAppUsedForRequest, GetAppContactByAppUsedForResponse>(`/v1/get/app/contact/by/app/usedfor`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static SendSMSCode(req: SendSMSCodeRequest, initReq?: fm.InitReq): Promise<SendSMSCodeResponse> {
     return fm.fetchReq<SendSMSCodeRequest, SendSMSCodeResponse>(`/v1/send/sms/code`, {...initReq, method: "POST", body: JSON.stringify(req)})

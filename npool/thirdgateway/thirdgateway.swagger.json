@@ -11,6 +11,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/app/contact": {
+      "post": {
+        "operationId": "ThirdGateway_CreateAppContact",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppContactResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppContactRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
     "/v1/create/app/email/template": {
       "post": {
         "operationId": "ThirdGateway_CreateAppEmailTemplate",
@@ -67,6 +99,134 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateAppSMSTemplateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
+    "/v1/get/app/contact": {
+      "post": {
+        "operationId": "ThirdGateway_GetAppContact",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppContactResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppContactRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
+    "/v1/get/app/contact/by/app/usedfor": {
+      "post": {
+        "operationId": "ThirdGateway_GetAppContactByAppUsedFor",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppContactByAppUsedForResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppContactByAppUsedForRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
+    "/v1/get/app/contacts/by/app": {
+      "post": {
+        "operationId": "ThirdGateway_GetAppContactsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppContactsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppContactsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
+    "/v1/get/app/contacts/by/other/app": {
+      "post": {
+        "operationId": "ThirdGateway_GetAppContactsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppContactsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppContactsByOtherAppRequest"
             }
           }
         ],
@@ -459,6 +619,38 @@
         ]
       }
     },
+    "/v1/update/app/contact": {
+      "post": {
+        "operationId": "ThirdGateway_UpdateAppContact",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppContactResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppContactRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
     "/v1/update/app/email/template": {
       "post": {
         "operationId": "ThirdGateway_UpdateAppEmailTemplate",
@@ -687,6 +879,23 @@
         }
       }
     },
+    "v1AppContact": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        }
+      }
+    },
     "v1AppEmailTemplate": {
       "type": "object",
       "properties": {
@@ -751,6 +960,22 @@
         }
       }
     },
+    "v1CreateAppContactRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppContact"
+        }
+      }
+    },
+    "v1CreateAppContactResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppContact"
+        }
+      }
+    },
     "v1CreateAppEmailTemplateRequest": {
       "type": "object",
       "properties": {
@@ -780,6 +1005,79 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppSMSTemplate"
+        }
+      }
+    },
+    "v1GetAppContactByAppUsedForRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppContactByAppUsedForResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppContact"
+        }
+      }
+    },
+    "v1GetAppContactRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppContactResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppContact"
+        }
+      }
+    },
+    "v1GetAppContactsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppContactsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppContact"
+          }
+        }
+      }
+    },
+    "v1GetAppContactsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppContactsByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppContact"
+          }
         }
       }
     },
@@ -1056,6 +1354,22 @@
         },
         "Secret": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateAppContactRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppContact"
+        }
+      }
+    },
+    "v1UpdateAppContactResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppContact"
         }
       }
     },

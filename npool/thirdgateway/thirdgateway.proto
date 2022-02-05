@@ -92,6 +92,43 @@ service ThirdGateway {
         };
     }
 
+    rpc CreateAppContact (CreateAppContactRequest) returns (CreateAppContactResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/contact"
+            body: "*"
+        };
+    }
+    rpc GetAppContact (GetAppContactRequest) returns (GetAppContactResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/contact"
+            body: "*"
+        };
+    }
+    rpc UpdateAppContact (UpdateAppContactRequest) returns (UpdateAppContactResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/contact"
+            body: "*"
+        };
+    }
+    rpc GetAppContactsByApp (GetAppContactsByAppRequest) returns (GetAppContactsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/contacts/by/app"
+            body: "*"
+        };
+    }
+    rpc GetAppContactsByOtherApp (GetAppContactsByOtherAppRequest) returns (GetAppContactsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/contacts/by/other/app"
+            body: "*"
+        };
+    }
+    rpc GetAppContactByAppUsedFor (GetAppContactByAppUsedForRequest) returns (GetAppContactByAppUsedForResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/contact/by/app/usedfor"
+            body: "*"
+        };
+    }
+
     rpc SendSMSCode (SendSMSCodeRequest) returns (SendSMSCodeResponse) {
         option (google.api.http) = {
             post: "/v1/send/sms/code",
@@ -312,6 +349,62 @@ message GetAppEmailTemplatesByOtherAppRequest {
 
 message GetAppEmailTemplatesByOtherAppResponse {
     repeated AppEmailTemplate Infos = 10;
+}
+
+message AppContact {
+    string ID = 10;
+    string AppID = 20;
+    string UsedFor = 30;
+    string Account = 40;
+}
+
+message CreateAppContactRequest {
+    AppContact Info = 10;
+}
+
+message CreateAppContactResponse {
+    AppContact Info = 10;
+}
+
+message GetAppContactRequest {
+    string ID = 10;
+}
+
+message GetAppContactResponse {
+    AppContact Info = 10;
+}
+
+message UpdateAppContactRequest {
+    AppContact Info = 10;
+}
+
+message UpdateAppContactResponse {
+    AppContact Info = 10;
+}
+
+message GetAppContactByAppUsedForRequest {
+    string AppID = 10;
+    string UsedFor = 20;
+}
+
+message GetAppContactByAppUsedForResponse {
+    AppContact Info = 10;
+}
+
+message GetAppContactsByAppRequest {
+    string AppID = 10;
+}
+
+message GetAppContactsByAppResponse {
+    repeated AppContact Infos = 10;
+}
+
+message GetAppContactsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetAppContactsByOtherAppResponse {
+    repeated AppContact Infos = 10;
 }
 
 message SetupGoogleAuthenticationRequest {
