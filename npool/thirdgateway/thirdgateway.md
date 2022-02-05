@@ -140,6 +140,7 @@
 | AppID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 | Account | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
 
 
 
@@ -1040,6 +1041,7 @@ Service Name
 | AppID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 | Account | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
 
 
 

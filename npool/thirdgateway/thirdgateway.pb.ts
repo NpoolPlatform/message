@@ -187,6 +187,7 @@ export type AppContact = {
   appID?: string
   usedFor?: string
   account?: string
+  accountType?: string
 }
 
 export type CreateAppContactRequest = {

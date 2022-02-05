@@ -893,6 +893,9 @@
         },
         "Account": {
           "type": "string"
+        },
+        "AccountType": {
+          "type": "string"
         }
       }
     },
