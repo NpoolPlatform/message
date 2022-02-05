@@ -28,6 +28,13 @@ service AuthingGateway {
             body: "*"
         };
     }
+
+    rpc GetAuthHistories (GetAuthHistoriesRequest) returns (GetAuthHistoriesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/auth/histories"
+            body: "*"
+        };
+    }
 }
 
 message AuthByAppRequest {
@@ -50,3 +57,21 @@ message AuthByAppRoleUserResponse {
     bool Allowed = 10;
 }
 
+message AuthHistory {
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    string Resource = 40;
+    string Method = 50;
+    bool Allowed = 60;
+    uint32 CreateAt = 70;
+}
+
+message GetAuthHistoriesRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetAuthHistoriesResponse {
+    repeated AuthHistory Infos = 10;
+}

@@ -75,6 +75,38 @@
         ]
       }
     },
+    "/v1/get/auth/histories": {
+      "post": {
+        "operationId": "AuthingGateway_GetAuthHistories",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAuthHistoriesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAuthHistoriesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AuthingGateway"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "operationId": "AuthingGateway_Version",
@@ -183,6 +215,55 @@
       "properties": {
         "Allowed": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1AuthHistory": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Resource": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string"
+        },
+        "Allowed": {
+          "type": "boolean"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAuthHistoriesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAuthHistoriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AuthHistory"
+          }
         }
       }
     },

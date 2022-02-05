@@ -8,6 +8,9 @@
     - [AuthByAppResponse](#authing.gateway.v1.AuthByAppResponse)
     - [AuthByAppRoleUserRequest](#authing.gateway.v1.AuthByAppRoleUserRequest)
     - [AuthByAppRoleUserResponse](#authing.gateway.v1.AuthByAppRoleUserResponse)
+    - [AuthHistory](#authing.gateway.v1.AuthHistory)
+    - [GetAuthHistoriesRequest](#authing.gateway.v1.GetAuthHistoriesRequest)
+    - [GetAuthHistoriesResponse](#authing.gateway.v1.GetAuthHistoriesResponse)
   
     - [AuthingGateway](#authing.gateway.v1.AuthingGateway)
   
@@ -16,6 +19,9 @@
     - [AuthByAppResponse](#authing.gateway.v1.AuthByAppResponse)
     - [AuthByAppRoleUserRequest](#authing.gateway.v1.AuthByAppRoleUserRequest)
     - [AuthByAppRoleUserResponse](#authing.gateway.v1.AuthByAppRoleUserResponse)
+    - [AuthHistory](#authing.gateway.v1.AuthHistory)
+    - [GetAuthHistoriesRequest](#authing.gateway.v1.GetAuthHistoriesRequest)
+    - [GetAuthHistoriesResponse](#authing.gateway.v1.GetAuthHistoriesResponse)
   
     - [AuthingGateway](#authing.gateway.v1.AuthingGateway)
   
@@ -93,6 +99,58 @@
 
 
 
+
+<a name="authing.gateway.v1.AuthHistory"></a>
+
+### AuthHistory
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| Resource | [string](#string) |  |  |
+| Method | [string](#string) |  |  |
+| Allowed | [bool](#bool) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="authing.gateway.v1.GetAuthHistoriesRequest"></a>
+
+### GetAuthHistoriesRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="authing.gateway.v1.GetAuthHistoriesResponse"></a>
+
+### GetAuthHistoriesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AuthHistory](#authing.gateway.v1.AuthHistory) | repeated |  |
+
+
+
+
+
  
 
  
@@ -110,6 +168,7 @@
 | Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) |  |
 | AuthByApp | [AuthByAppRequest](#authing.gateway.v1.AuthByAppRequest) | [AuthByAppResponse](#authing.gateway.v1.AuthByAppResponse) |  |
 | AuthByAppRoleUser | [AuthByAppRoleUserRequest](#authing.gateway.v1.AuthByAppRoleUserRequest) | [AuthByAppRoleUserResponse](#authing.gateway.v1.AuthByAppRoleUserResponse) |  |
+| GetAuthHistories | [GetAuthHistoriesRequest](#authing.gateway.v1.GetAuthHistoriesRequest) | [GetAuthHistoriesResponse](#authing.gateway.v1.GetAuthHistoriesResponse) |  |
 
  
 
@@ -185,6 +244,58 @@
 
 
 
+
+<a name="authing.gateway.v1.AuthHistory"></a>
+
+### AuthHistory
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| Resource | [string](#string) |  |  |
+| Method | [string](#string) |  |  |
+| Allowed | [bool](#bool) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="authing.gateway.v1.GetAuthHistoriesRequest"></a>
+
+### GetAuthHistoriesRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="authing.gateway.v1.GetAuthHistoriesResponse"></a>
+
+### GetAuthHistoriesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AuthHistory](#authing.gateway.v1.AuthHistory) | repeated |  |
+
+
+
+
+
  
 
  
@@ -202,6 +313,7 @@
 | Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) |  |
 | AuthByApp | [AuthByAppRequest](#authing.gateway.v1.AuthByAppRequest) | [AuthByAppResponse](#authing.gateway.v1.AuthByAppResponse) |  |
 | AuthByAppRoleUser | [AuthByAppRoleUserRequest](#authing.gateway.v1.AuthByAppRoleUserRequest) | [AuthByAppRoleUserResponse](#authing.gateway.v1.AuthByAppRoleUserResponse) |  |
+| GetAuthHistories | [GetAuthHistoriesRequest](#authing.gateway.v1.GetAuthHistoriesRequest) | [GetAuthHistoriesResponse](#authing.gateway.v1.GetAuthHistoriesResponse) |  |
 
  
 

@@ -27,6 +27,25 @@ export type AuthByAppRoleUserResponse = {
   allowed?: boolean
 }
 
+export type AuthHistory = {
+  id?: string
+  appID?: string
+  userID?: string
+  resource?: string
+  method?: string
+  allowed?: boolean
+  createAt?: number
+}
+
+export type GetAuthHistoriesRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetAuthHistoriesResponse = {
+  infos?: AuthHistory[]
+}
+
 export class AuthingGateway {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -36,5 +55,8 @@ export class AuthingGateway {
   }
   static AuthByAppRoleUser(req: AuthByAppRoleUserRequest, initReq?: fm.InitReq): Promise<AuthByAppRoleUserResponse> {
     return fm.fetchReq<AuthByAppRoleUserRequest, AuthByAppRoleUserResponse>(`/v1/auth/by/app/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAuthHistories(req: GetAuthHistoriesRequest, initReq?: fm.InitReq): Promise<GetAuthHistoriesResponse> {
+    return fm.fetchReq<GetAuthHistoriesRequest, GetAuthHistoriesResponse>(`/v1/get/auth/histories`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
