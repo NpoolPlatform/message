@@ -84,6 +84,7 @@ message LoginHistory {
     string ClientIP = 40;
     string UserAgent = 50;
     uint32 CreateAt = 60;
+    string Location = 70;
 }
 
 message GetLoginHistoriesRequest {

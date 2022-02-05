@@ -264,6 +264,12 @@
         },
         "UserID": {
           "type": "string"
+        },
+        "SigninVerifyByGoogleAuthentication": {
+          "type": "boolean"
+        },
+        "GoogleAuthenticationVerified": {
+          "type": "boolean"
         }
       }
     },
@@ -307,6 +313,12 @@
         },
         "Organization": {
           "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
         }
       }
     },
@@ -330,6 +342,17 @@
           "items": {
             "$ref": "#/definitions/v1AppRole"
           }
+        },
+        "SecretMap": {
+          "$ref": "#/definitions/v1AppUserSecretMap"
+        }
+      }
+    },
+    "v1AppUserSecretMap": {
+      "type": "object",
+      "properties": {
+        "HasGoogleSecret": {
+          "type": "boolean"
         }
       }
     },
@@ -396,6 +419,9 @@
         "CreateAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Location": {
+          "type": "string"
         }
       }
     },

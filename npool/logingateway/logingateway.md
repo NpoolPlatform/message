@@ -86,6 +86,7 @@
 | ClientIP | [string](#string) |  |  |
 | UserAgent | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
+| Location | [string](#string) |  |  |
 
 
 
@@ -268,6 +269,7 @@
 | ClientIP | [string](#string) |  |  |
 | UserAgent | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
+| Location | [string](#string) |  |  |
 
 
 

@@ -49,6 +49,7 @@ export type LoginHistory = {
   clientIP?: string
   userAgent?: string
   createAt?: number
+  location?: string
 }
 
 export type GetLoginHistoriesRequest = {
