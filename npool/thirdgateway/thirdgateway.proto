@@ -130,6 +130,13 @@ service ThirdGateway {
             body: "*"
         };
     }
+
+    rpc SendEmailTo (SendEmailToRequest) returns (SendEmailToResponse) {
+        option (google.api.http) = {
+            post: "/v1/send/email/to"
+            body: "*"
+        };
+    }
 }
 
 message SendSMSCodeRequest {
@@ -324,6 +331,20 @@ message VerifyGoogleAuthenticationRequest {
 }
 
 message VerifyGoogleAuthenticationResponse {
+    int32 Code = 10;
+    string Message = 20;
+}
+
+message SendEmailToRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string FromEmailAddress = 30;
+    string ToEmailAddress = 40;
+    string Subject = 50;
+    string Body = 60;
+}
+
+message SendEmailToResponse {
     int32 Code = 10;
     string Message = 20;
 }

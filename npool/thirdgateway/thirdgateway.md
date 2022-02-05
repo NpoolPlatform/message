@@ -28,6 +28,8 @@
     - [GetAppSMSTemplatesByOtherAppResponse](#third.gateway.v1.GetAppSMSTemplatesByOtherAppResponse)
     - [SendEmailCodeRequest](#third.gateway.v1.SendEmailCodeRequest)
     - [SendEmailCodeResponse](#third.gateway.v1.SendEmailCodeResponse)
+    - [SendEmailToRequest](#third.gateway.v1.SendEmailToRequest)
+    - [SendEmailToResponse](#third.gateway.v1.SendEmailToResponse)
     - [SendSMSCodeRequest](#third.gateway.v1.SendSMSCodeRequest)
     - [SendSMSCodeResponse](#third.gateway.v1.SendSMSCodeResponse)
     - [SetupGoogleAuthenticationRequest](#third.gateway.v1.SetupGoogleAuthenticationRequest)
@@ -70,6 +72,8 @@
     - [GetAppSMSTemplatesByOtherAppResponse](#third.gateway.v1.GetAppSMSTemplatesByOtherAppResponse)
     - [SendEmailCodeRequest](#third.gateway.v1.SendEmailCodeRequest)
     - [SendEmailCodeResponse](#third.gateway.v1.SendEmailCodeResponse)
+    - [SendEmailToRequest](#third.gateway.v1.SendEmailToRequest)
+    - [SendEmailToResponse](#third.gateway.v1.SendEmailToResponse)
     - [SendSMSCodeRequest](#third.gateway.v1.SendSMSCodeRequest)
     - [SendSMSCodeResponse](#third.gateway.v1.SendSMSCodeResponse)
     - [SetupGoogleAuthenticationRequest](#third.gateway.v1.SetupGoogleAuthenticationRequest)
@@ -482,6 +486,42 @@
 
 
 
+<a name="third.gateway.v1.SendEmailToRequest"></a>
+
+### SendEmailToRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| FromEmailAddress | [string](#string) |  |  |
+| ToEmailAddress | [string](#string) |  |  |
+| Subject | [string](#string) |  |  |
+| Body | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.SendEmailToResponse"></a>
+
+### SendEmailToResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="third.gateway.v1.SendSMSCodeRequest"></a>
 
 ### SendSMSCodeRequest
@@ -744,6 +784,7 @@ Service Name
 | VerifyEmailCode | [VerifyEmailCodeRequest](#third.gateway.v1.VerifyEmailCodeRequest) | [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse) |  |
 | SetupGoogleAuthentication | [SetupGoogleAuthenticationRequest](#third.gateway.v1.SetupGoogleAuthenticationRequest) | [SetupGoogleAuthenticationResponse](#third.gateway.v1.SetupGoogleAuthenticationResponse) |  |
 | VerifyGoogleAuthentication | [VerifyGoogleAuthenticationRequest](#third.gateway.v1.VerifyGoogleAuthenticationRequest) | [VerifyGoogleAuthenticationResponse](#third.gateway.v1.VerifyGoogleAuthenticationResponse) |  |
+| SendEmailTo | [SendEmailToRequest](#third.gateway.v1.SendEmailToRequest) | [SendEmailToResponse](#third.gateway.v1.SendEmailToResponse) |  |
 
  
 
@@ -1140,6 +1181,42 @@ Service Name
 
 
 
+<a name="third.gateway.v1.SendEmailToRequest"></a>
+
+### SendEmailToRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| FromEmailAddress | [string](#string) |  |  |
+| ToEmailAddress | [string](#string) |  |  |
+| Subject | [string](#string) |  |  |
+| Body | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third.gateway.v1.SendEmailToResponse"></a>
+
+### SendEmailToResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="third.gateway.v1.SendSMSCodeRequest"></a>
 
 ### SendSMSCodeRequest
@@ -1402,6 +1479,7 @@ Service Name
 | VerifyEmailCode | [VerifyEmailCodeRequest](#third.gateway.v1.VerifyEmailCodeRequest) | [VerifyEmailCodeResponse](#third.gateway.v1.VerifyEmailCodeResponse) |  |
 | SetupGoogleAuthentication | [SetupGoogleAuthenticationRequest](#third.gateway.v1.SetupGoogleAuthenticationRequest) | [SetupGoogleAuthenticationResponse](#third.gateway.v1.SetupGoogleAuthenticationResponse) |  |
 | VerifyGoogleAuthentication | [VerifyGoogleAuthenticationRequest](#third.gateway.v1.VerifyGoogleAuthenticationRequest) | [VerifyGoogleAuthenticationResponse](#third.gateway.v1.VerifyGoogleAuthenticationResponse) |  |
+| SendEmailTo | [SendEmailToRequest](#third.gateway.v1.SendEmailToRequest) | [SendEmailToResponse](#third.gateway.v1.SendEmailToResponse) |  |
 
  
 

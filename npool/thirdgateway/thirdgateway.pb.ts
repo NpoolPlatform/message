@@ -203,6 +203,20 @@ export type VerifyGoogleAuthenticationResponse = {
   message?: string
 }
 
+export type SendEmailToRequest = {
+  appID?: string
+  userID?: string
+  fromEmailAddress?: string
+  toEmailAddress?: string
+  subject?: string
+  body?: string
+}
+
+export type SendEmailToResponse = {
+  code?: number
+  message?: string
+}
+
 export class ThirdGateway {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -260,5 +274,8 @@ export class ThirdGateway {
   }
   static VerifyGoogleAuthentication(req: VerifyGoogleAuthenticationRequest, initReq?: fm.InitReq): Promise<VerifyGoogleAuthenticationResponse> {
     return fm.fetchReq<VerifyGoogleAuthenticationRequest, VerifyGoogleAuthenticationResponse>(`/v1/verify/google/authentication`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static SendEmailTo(req: SendEmailToRequest, initReq?: fm.InitReq): Promise<SendEmailToResponse> {
+    return fm.fetchReq<SendEmailToRequest, SendEmailToResponse>(`/v1/send/email/to`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
