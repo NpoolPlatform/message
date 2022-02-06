@@ -87,6 +87,7 @@ type AppUserManagerClient interface {
 	GetAppUserInfo(ctx context.Context, in *GetAppUserInfoRequest, opts ...grpc.CallOption) (*GetAppUserInfoResponse, error)
 	GetAppUserInfoByAppUser(ctx context.Context, in *GetAppUserInfoByAppUserRequest, opts ...grpc.CallOption) (*GetAppUserInfoByAppUserResponse, error)
 	GetAppUserInfosByApp(ctx context.Context, in *GetAppUserInfosByAppRequest, opts ...grpc.CallOption) (*GetAppUserInfosByAppResponse, error)
+	GetAppUserInfosByOtherApp(ctx context.Context, in *GetAppUserInfosByOtherAppRequest, opts ...grpc.CallOption) (*GetAppUserInfosByOtherAppResponse, error)
 	CreateAppUserWithSecret(ctx context.Context, in *CreateAppUserWithSecretRequest, opts ...grpc.CallOption) (*CreateAppUserWithSecretResponse, error)
 }
 
@@ -665,6 +666,15 @@ func (c *appUserManagerClient) GetAppUserInfosByApp(ctx context.Context, in *Get
 	return out, nil
 }
 
+func (c *appUserManagerClient) GetAppUserInfosByOtherApp(ctx context.Context, in *GetAppUserInfosByOtherAppRequest, opts ...grpc.CallOption) (*GetAppUserInfosByOtherAppResponse, error) {
+	out := new(GetAppUserInfosByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserInfosByOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *appUserManagerClient) CreateAppUserWithSecret(ctx context.Context, in *CreateAppUserWithSecretRequest, opts ...grpc.CallOption) (*CreateAppUserWithSecretResponse, error) {
 	out := new(CreateAppUserWithSecretResponse)
 	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppUserWithSecret", in, out, opts...)
@@ -741,6 +751,7 @@ type AppUserManagerServer interface {
 	GetAppUserInfo(context.Context, *GetAppUserInfoRequest) (*GetAppUserInfoResponse, error)
 	GetAppUserInfoByAppUser(context.Context, *GetAppUserInfoByAppUserRequest) (*GetAppUserInfoByAppUserResponse, error)
 	GetAppUserInfosByApp(context.Context, *GetAppUserInfosByAppRequest) (*GetAppUserInfosByAppResponse, error)
+	GetAppUserInfosByOtherApp(context.Context, *GetAppUserInfosByOtherAppRequest) (*GetAppUserInfosByOtherAppResponse, error)
 	CreateAppUserWithSecret(context.Context, *CreateAppUserWithSecretRequest) (*CreateAppUserWithSecretResponse, error)
 	mustEmbedUnimplementedAppUserManagerServer()
 }
@@ -937,6 +948,9 @@ func (UnimplementedAppUserManagerServer) GetAppUserInfoByAppUser(context.Context
 }
 func (UnimplementedAppUserManagerServer) GetAppUserInfosByApp(context.Context, *GetAppUserInfosByAppRequest) (*GetAppUserInfosByAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserInfosByApp not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppUserInfosByOtherApp(context.Context, *GetAppUserInfosByOtherAppRequest) (*GetAppUserInfosByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserInfosByOtherApp not implemented")
 }
 func (UnimplementedAppUserManagerServer) CreateAppUserWithSecret(context.Context, *CreateAppUserWithSecretRequest) (*CreateAppUserWithSecretResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserWithSecret not implemented")
@@ -2088,6 +2102,24 @@ func _AppUserManager_GetAppUserInfosByApp_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AppUserManager_GetAppUserInfosByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppUserInfosByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppUserInfosByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserInfosByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppUserInfosByOtherApp(ctx, req.(*GetAppUserInfosByOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AppUserManager_CreateAppUserWithSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppUserWithSecretRequest)
 	if err := dec(in); err != nil {
@@ -2364,6 +2396,10 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppUserInfosByApp",
 			Handler:    _AppUserManager_GetAppUserInfosByApp_Handler,
+		},
+		{
+			MethodName: "GetAppUserInfosByOtherApp",
+			Handler:    _AppUserManager_GetAppUserInfosByOtherApp_Handler,
 		},
 		{
 			MethodName: "CreateAppUserWithSecret",

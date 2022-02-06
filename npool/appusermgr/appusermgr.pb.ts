@@ -637,6 +637,16 @@ export type GetAppUserInfosByAppResponse = {
   total?: number
 }
 
+export type GetAppUserInfosByOtherAppRequest = {
+  appID?: string
+  pageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetAppUserInfosByOtherAppResponse = {
+  infos?: AppUserInfo[]
+  total?: number
+}
+
 export type CreateAppUserWithSecretRequest = {
   user?: AppUser
   secret?: AppUserSecret
@@ -845,6 +855,9 @@ export class AppUserManager {
   }
   static GetAppUserInfosByApp(req: GetAppUserInfosByAppRequest, initReq?: fm.InitReq): Promise<GetAppUserInfosByAppResponse> {
     return fm.fetchReq<GetAppUserInfosByAppRequest, GetAppUserInfosByAppResponse>(`/v1/get/app/userinfos/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUserInfosByOtherApp(req: GetAppUserInfosByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppUserInfosByOtherAppResponse> {
+    return fm.fetchReq<GetAppUserInfosByOtherAppRequest, GetAppUserInfosByOtherAppResponse>(`/v1/get/app/userinfos/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateAppUserWithSecret(req: CreateAppUserWithSecretRequest, initReq?: fm.InitReq): Promise<CreateAppUserWithSecretResponse> {
     return fm.fetchReq<CreateAppUserWithSecretRequest, CreateAppUserWithSecretResponse>(`/v1/create/app/user/with/secret`, {...initReq, method: "POST", body: JSON.stringify(req)})
