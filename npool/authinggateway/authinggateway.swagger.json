@@ -887,11 +887,11 @@
         "AppID": {
           "type": "string"
         },
-        "Resources": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Resource"
-          }
+        "Resource": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string"
         }
       }
     },
@@ -1499,17 +1499,6 @@
           "items": {
             "$ref": "#/definitions/v1Auth"
           }
-        }
-      }
-    },
-    "v1Resource": {
-      "type": "object",
-      "properties": {
-        "Resource": {
-          "type": "string"
-        },
-        "Method": {
-          "type": "string"
         }
       }
     },

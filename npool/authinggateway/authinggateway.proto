@@ -228,17 +228,6 @@ message GetAuthHistoriesByOtherAppResponse {
     repeated AuthHistory Infos = 10;
 }
 
-message Resource {
-    string Resource = 10;
-    string Method = 20;
-}
-
-message AppAuth {
-    string ID = 10;
-    string AppID = 20;
-    repeated Resource Resources = 30;
-}
-
 message Auth {
     string ID = 10;
     string AppID = 20;
@@ -246,6 +235,13 @@ message Auth {
     string UserID = 40;
     string Resource = 50;
     string Method = 60;
+}
+
+message AppAuth {
+    string ID = 10;
+    string AppID = 20;
+    string Resource = 30;
+    string Method = 40;
 }
 
 message CreateAppAuthForOtherAppRequest {

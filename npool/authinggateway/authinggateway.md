@@ -59,7 +59,6 @@
     - [GetAuthsByOtherAppRoleResponse](#authing.gateway.v1.GetAuthsByOtherAppRoleResponse)
     - [GetAuthsByOtherAppUserRequest](#authing.gateway.v1.GetAuthsByOtherAppUserRequest)
     - [GetAuthsByOtherAppUserResponse](#authing.gateway.v1.GetAuthsByOtherAppUserResponse)
-    - [Resource](#authing.gateway.v1.Resource)
   
     - [AuthingGateway](#authing.gateway.v1.AuthingGateway)
   
@@ -119,7 +118,6 @@
     - [GetAuthsByOtherAppRoleResponse](#authing.gateway.v1.GetAuthsByOtherAppRoleResponse)
     - [GetAuthsByOtherAppUserRequest](#authing.gateway.v1.GetAuthsByOtherAppUserRequest)
     - [GetAuthsByOtherAppUserResponse](#authing.gateway.v1.GetAuthsByOtherAppUserResponse)
-    - [Resource](#authing.gateway.v1.Resource)
   
     - [AuthingGateway](#authing.gateway.v1.AuthingGateway)
   
@@ -144,7 +142,8 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
-| Resources | [Resource](#authing.gateway.v1.Resource) | repeated |  |
+| Resource | [string](#string) |  |  |
+| Method | [string](#string) |  |  |
 
 
 
@@ -1002,22 +1001,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
-
-
-
-
-
-
-<a name="authing.gateway.v1.Resource"></a>
-
-### Resource
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Resource | [string](#string) |  |  |
-| Method | [string](#string) |  |  |
 
 
 
@@ -1085,7 +1068,8 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
-| Resources | [Resource](#authing.gateway.v1.Resource) | repeated |  |
+| Resource | [string](#string) |  |  |
+| Method | [string](#string) |  |  |
 
 
 
@@ -1943,22 +1927,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
-
-
-
-
-
-
-<a name="authing.gateway.v1.Resource"></a>
-
-### Resource
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Resource | [string](#string) |  |  |
-| Method | [string](#string) |  |  |
 
 
 

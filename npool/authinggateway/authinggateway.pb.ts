@@ -64,7 +64,11 @@ export type GetAuthHistoriesByOtherAppResponse = {
   infos?: AuthHistory[]
 }
 
-export type Resource = {
+export type Auth = {
+  id?: string
+  appID?: string
+  roleID?: string
+  userID?: string
   resource?: string
   method?: string
 }
@@ -72,14 +76,6 @@ export type Resource = {
 export type AppAuth = {
   id?: string
   appID?: string
-  resources?: Resource[]
-}
-
-export type Auth = {
-  id?: string
-  appID?: string
-  roleID?: string
-  userID?: string
   resource?: string
   method?: string
 }
