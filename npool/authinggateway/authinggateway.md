@@ -660,7 +660,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
@@ -1586,7 +1586,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 

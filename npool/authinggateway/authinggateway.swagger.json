@@ -1258,11 +1258,8 @@
     "v1GetAppAuthByOtherAppResourceMethodResponse": {
       "type": "object",
       "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Auth"
-          }
+        "Info": {
+          "$ref": "#/definitions/v1Auth"
         }
       }
     },

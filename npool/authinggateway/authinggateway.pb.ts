@@ -106,7 +106,7 @@ export type GetAppAuthByOtherAppResourceMethodRequest = {
 }
 
 export type GetAppAuthByOtherAppResourceMethodResponse = {
-  infos?: Auth[]
+  info?: Auth
 }
 
 export type DeleteAppAuthRequest = {
