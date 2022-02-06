@@ -3157,7 +3157,7 @@
     "v1GetAppUserInfosByOtherAppRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
         "PageInfo": {

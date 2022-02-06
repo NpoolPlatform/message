@@ -1044,7 +1044,7 @@ message GetAppUserInfosByAppResponse {
 }
 
 message GetAppUserInfosByOtherAppRequest {
-    string AppID = 10;
+    string TargetAppID = 10;
     npool.v1.PageInfo PageInfo = 20;
 }
 

@@ -638,7 +638,7 @@ export type GetAppUserInfosByAppResponse = {
 }
 
 export type GetAppUserInfosByOtherAppRequest = {
-  appID?: string
+  targetAppID?: string
   pageInfo?: NpoolV1Npool.PageInfo
 }
 
