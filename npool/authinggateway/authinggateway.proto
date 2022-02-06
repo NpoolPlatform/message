@@ -35,6 +35,12 @@ service AuthingGateway {
             body: "*"
         };
     }
+    rpc GetAuthHistoriesByApp (GetAuthHistoriesByAppRequest) returns (GetAuthHistoriesByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/auth/histories/by/app"
+            body: "*"
+        };
+    }
     rpc GetAuthHistoriesByOtherApp (GetAuthHistoriesByOtherAppRequest) returns (GetAuthHistoriesByOtherAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/auth/histories/by/other/app"
@@ -81,6 +87,14 @@ message GetAuthHistoriesRequest {
 }
 
 message GetAuthHistoriesResponse {
+    repeated AuthHistory Infos = 10;
+}
+
+message GetAuthHistoriesByAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetAuthHistoriesByAppResponse {
     repeated AuthHistory Infos = 10;
 }
 

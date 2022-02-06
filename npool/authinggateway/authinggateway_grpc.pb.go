@@ -28,6 +28,7 @@ type AuthingGatewayClient interface {
 	AuthByApp(ctx context.Context, in *AuthByAppRequest, opts ...grpc.CallOption) (*AuthByAppResponse, error)
 	AuthByAppRoleUser(ctx context.Context, in *AuthByAppRoleUserRequest, opts ...grpc.CallOption) (*AuthByAppRoleUserResponse, error)
 	GetAuthHistories(ctx context.Context, in *GetAuthHistoriesRequest, opts ...grpc.CallOption) (*GetAuthHistoriesResponse, error)
+	GetAuthHistoriesByApp(ctx context.Context, in *GetAuthHistoriesByAppRequest, opts ...grpc.CallOption) (*GetAuthHistoriesByAppResponse, error)
 	GetAuthHistoriesByOtherApp(ctx context.Context, in *GetAuthHistoriesByOtherAppRequest, opts ...grpc.CallOption) (*GetAuthHistoriesByOtherAppResponse, error)
 }
 
@@ -75,6 +76,15 @@ func (c *authingGatewayClient) GetAuthHistories(ctx context.Context, in *GetAuth
 	return out, nil
 }
 
+func (c *authingGatewayClient) GetAuthHistoriesByApp(ctx context.Context, in *GetAuthHistoriesByAppRequest, opts ...grpc.CallOption) (*GetAuthHistoriesByAppResponse, error) {
+	out := new(GetAuthHistoriesByAppResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/GetAuthHistoriesByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *authingGatewayClient) GetAuthHistoriesByOtherApp(ctx context.Context, in *GetAuthHistoriesByOtherAppRequest, opts ...grpc.CallOption) (*GetAuthHistoriesByOtherAppResponse, error) {
 	out := new(GetAuthHistoriesByOtherAppResponse)
 	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/GetAuthHistoriesByOtherApp", in, out, opts...)
@@ -92,6 +102,7 @@ type AuthingGatewayServer interface {
 	AuthByApp(context.Context, *AuthByAppRequest) (*AuthByAppResponse, error)
 	AuthByAppRoleUser(context.Context, *AuthByAppRoleUserRequest) (*AuthByAppRoleUserResponse, error)
 	GetAuthHistories(context.Context, *GetAuthHistoriesRequest) (*GetAuthHistoriesResponse, error)
+	GetAuthHistoriesByApp(context.Context, *GetAuthHistoriesByAppRequest) (*GetAuthHistoriesByAppResponse, error)
 	GetAuthHistoriesByOtherApp(context.Context, *GetAuthHistoriesByOtherAppRequest) (*GetAuthHistoriesByOtherAppResponse, error)
 	mustEmbedUnimplementedAuthingGatewayServer()
 }
@@ -111,6 +122,9 @@ func (UnimplementedAuthingGatewayServer) AuthByAppRoleUser(context.Context, *Aut
 }
 func (UnimplementedAuthingGatewayServer) GetAuthHistories(context.Context, *GetAuthHistoriesRequest) (*GetAuthHistoriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAuthHistories not implemented")
+}
+func (UnimplementedAuthingGatewayServer) GetAuthHistoriesByApp(context.Context, *GetAuthHistoriesByAppRequest) (*GetAuthHistoriesByAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAuthHistoriesByApp not implemented")
 }
 func (UnimplementedAuthingGatewayServer) GetAuthHistoriesByOtherApp(context.Context, *GetAuthHistoriesByOtherAppRequest) (*GetAuthHistoriesByOtherAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAuthHistoriesByOtherApp not implemented")
@@ -200,6 +214,24 @@ func _AuthingGateway_GetAuthHistories_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AuthingGateway_GetAuthHistoriesByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAuthHistoriesByAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).GetAuthHistoriesByApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/GetAuthHistoriesByApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).GetAuthHistoriesByApp(ctx, req.(*GetAuthHistoriesByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AuthingGateway_GetAuthHistoriesByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAuthHistoriesByOtherAppRequest)
 	if err := dec(in); err != nil {
@@ -240,6 +272,10 @@ var AuthingGateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAuthHistories",
 			Handler:    _AuthingGateway_GetAuthHistories_Handler,
+		},
+		{
+			MethodName: "GetAuthHistoriesByApp",
+			Handler:    _AuthingGateway_GetAuthHistoriesByApp_Handler,
 		},
 		{
 			MethodName: "GetAuthHistoriesByOtherApp",

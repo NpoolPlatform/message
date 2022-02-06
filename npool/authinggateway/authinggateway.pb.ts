@@ -48,6 +48,14 @@ export type GetAuthHistoriesResponse = {
   infos?: AuthHistory[]
 }
 
+export type GetAuthHistoriesByAppRequest = {
+  targetAppID?: string
+}
+
+export type GetAuthHistoriesByAppResponse = {
+  infos?: AuthHistory[]
+}
+
 export type GetAuthHistoriesByOtherAppRequest = {
   targetAppID?: string
 }
@@ -68,6 +76,9 @@ export class AuthingGateway {
   }
   static GetAuthHistories(req: GetAuthHistoriesRequest, initReq?: fm.InitReq): Promise<GetAuthHistoriesResponse> {
     return fm.fetchReq<GetAuthHistoriesRequest, GetAuthHistoriesResponse>(`/v1/get/auth/histories`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAuthHistoriesByApp(req: GetAuthHistoriesByAppRequest, initReq?: fm.InitReq): Promise<GetAuthHistoriesByAppResponse> {
+    return fm.fetchReq<GetAuthHistoriesByAppRequest, GetAuthHistoriesByAppResponse>(`/v1/get/auth/histories/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAuthHistoriesByOtherApp(req: GetAuthHistoriesByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAuthHistoriesByOtherAppResponse> {
     return fm.fetchReq<GetAuthHistoriesByOtherAppRequest, GetAuthHistoriesByOtherAppResponse>(`/v1/get/auth/histories/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
