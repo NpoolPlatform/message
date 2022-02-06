@@ -210,6 +210,7 @@ export type GetAppUserAuthByAppUserResourceMethodResponse = {
 
 export type GetAppUserAuthByOtherAppUserResourceMethodRequest = {
   targetAppID?: string
+  targetUserID?: string
   resource?: string
   method?: string
 }

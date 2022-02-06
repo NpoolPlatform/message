@@ -1297,6 +1297,9 @@
         "TargetAppID": {
           "type": "string"
         },
+        "TargetUserID": {
+          "type": "string"
+        },
         "Resource": {
           "type": "string"
         },

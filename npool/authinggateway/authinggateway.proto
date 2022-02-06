@@ -374,8 +374,9 @@ message GetAppUserAuthByAppUserResourceMethodResponse {
 
 message GetAppUserAuthByOtherAppUserResourceMethodRequest {
     string TargetAppID = 10;
-    string Resource = 20;
-    string Method = 30;
+    string TargetUserID = 20;
+    string Resource = 30;
+    string Method = 40;
 }
 
 message GetAppUserAuthByOtherAppUserResourceMethodResponse {

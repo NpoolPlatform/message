@@ -710,6 +710,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
 | Resource | [string](#string) |  |  |
 | Method | [string](#string) |  |  |
 
@@ -1637,6 +1638,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
 | Resource | [string](#string) |  |  |
 | Method | [string](#string) |  |  |
 
