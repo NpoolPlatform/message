@@ -47,6 +47,128 @@ service AuthingGateway {
             body: "*"
         };
     }
+
+    rpc CreateAppAuthForOtherApp (CreateAppAuthForOtherAppRequest) returns (CreateAppAuthForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/auth/for/other/app"
+            body: "*"
+        };
+    }
+    rpc GetAppAuthByAppResourceMethod (GetAppAuthByAppResourceMethodRequest) returns (GetAppAuthByAppResourceMethodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/auth/by/app/resource/method"
+            body: "*"
+        };
+    }
+    rpc GetAppAuthByOtherAppResourceMethod (GetAppAuthByOtherAppResourceMethodRequest) returns (GetAppAuthByOtherAppResourceMethodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/auth/by/other/app/resource/method"
+            body: "*"
+        };
+    }
+    rpc DeleteAppAuth (DeleteAppAuthRequest) returns (DeleteAppAuthResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/app/auth"
+            body: "*"
+        };
+    }
+    rpc CreateAppRoleAuth (CreateAppRoleAuthRequest) returns (CreateAppRoleAuthResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/role/auth"
+            body: "*"
+        };
+    }
+    rpc CreateAppRoleAuthForOtherApp (CreateAppRoleAuthForOtherAppRequest) returns (CreateAppRoleAuthForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/role/auth/for/other/app"
+            body: "*"
+        };
+    }
+    rpc GetAppAuthByAppRoleResourceMethod (GetAppAuthByAppRoleResourceMethodRequest) returns (GetAppAuthByAppRoleResourceMethodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/auth/by/app/role/resource/method"
+            body: "*"
+        };
+    }
+    rpc GetAppAuthByOtherAppRoleResourceMethod (GetAppAuthByOtherAppRoleResourceMethodRequest) returns (GetAppAuthByOtherAppRoleResourceMethodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/auth/by/other/app/role/resource/method"
+            body: "*"
+        };
+    }
+    rpc DeleteAppRoleAuth (DeleteAppRoleAuthRequest) returns (DeleteAppRoleAuthResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/app/role/auth"
+            body: "*"
+        };
+    }
+    rpc CreateAppUserAuth (CreateAppUserAuthRequest) returns (CreateAppUserAuthResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/auth"
+            body: "*"
+        };
+    }
+    rpc CreateAppUserAuthForOtherApp (CreateAppUserAuthForOtherAppRequest) returns (CreateAppUserAuthForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/auth/for/other/app"
+            body: "*"
+        };
+    }
+    rpc GetAppAuthByAppUserResourceMethod (GetAppAuthByAppUserResourceMethodRequest) returns (GetAppAuthByAppUserResourceMethodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/auth/by/app/user/resource/method"
+            body: "*"
+        };
+    }
+    rpc GetAppAuthByOtherAppUserResourceMethod (GetAppAuthByOtherAppUserResourceMethodRequest) returns (GetAppAuthByOtherAppUserResourceMethodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/auth/by/other/app/user/resource/method"
+            body: "*"
+        };
+    }
+    rpc DeleteAppUserAuth (DeleteAppUserAuthRequest) returns (DeleteAppUserAuthResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/app/user/auth"
+            body: "*"
+        };
+    }
+
+    rpc GetAuthsByApp (GetAuthsByAppRequest) returns (GetAuthsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/auths/by/app"
+            body: "*"
+        };
+    }
+    rpc GetAuthsByOtherApp (GetAuthsByOtherAppRequest) returns (GetAuthsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/auths/by/other/app"
+            body: "*"
+        };
+    }
+    rpc GetAuthsByAppRole (GetAuthsByAppRoleRequest) returns (GetAuthsByAppRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/auths/by/app/role"
+            body: "*"
+        };
+    }
+    rpc GetAuthsByOtherAppRole (GetAuthsByOtherAppRoleRequest) returns (GetAuthsByOtherAppRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/auths/by/other/app/role"
+            body: "*"
+        };
+    }
+    rpc GetAuthsByAppUser (GetAuthsByAppUserRequest) returns (GetAuthsByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/auths/by/app/user"
+            body: "*"
+        };
+    }
+    rpc GetAuthsByOtherAppUser (GetAuthsByOtherAppUserRequest) returns (GetAuthsByOtherAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/auths/by/other/app/user"
+            body: "*"
+        };
+    }
 }
 
 message AuthByAppRequest {
@@ -104,4 +226,221 @@ message GetAuthHistoriesByOtherAppRequest {
 
 message GetAuthHistoriesByOtherAppResponse {
     repeated AuthHistory Infos = 10;
+}
+
+message Resource {
+    string Resource = 10;
+    string Method = 20;
+}
+
+message AppAuth {
+    string ID = 10;
+    string AppID = 20;
+    repeated Resource Resources = 30;
+}
+
+message Auth {
+    string ID = 10;
+    string AppID = 20;
+    string RoleID = 30;
+    string UserID = 40;
+    string Resource = 50;
+    string Method = 60;
+}
+
+message CreateAppAuthForOtherAppRequest {
+    string TargetAppID = 10;
+    AppAuth Info = 20;
+}
+
+message CreateAppAuthForOtherAppResponse {
+    AppAuth Info = 10;
+}
+
+message GetAppAuthByAppResourceMethodRequest {
+    string AppID = 10;
+    string Resource = 20;
+    string Method = 30;
+}
+
+message GetAppAuthByAppResourceMethodResponse {
+    repeated Auth Infos = 10;
+}
+
+message GetAppAuthByOtherAppResourceMethodRequest {
+    string TargetAppID = 10;
+    string Resource = 20;
+    string Method = 30;
+}
+
+message GetAppAuthByOtherAppResourceMethodResponse {
+    repeated Auth Infos = 10;
+}
+
+message DeleteAppAuthRequest {
+    string ID = 10;
+}
+
+message DeleteAppAuthResponse {
+    Auth Info = 10;
+}
+
+message AppRoleAuth {
+    string ID = 10;
+    string AppID = 20;
+    string RoleID = 30;
+    string Resource = 40;
+    string Method = 50;
+}
+
+message CreateAppRoleAuthRequest {
+    AppRoleAuth Info = 10;
+}
+
+message CreateAppRoleAuthResponse {
+    AppRoleAuth Info = 10;
+}
+
+message CreateAppRoleAuthForOtherAppRequest {
+    string TargetAppID = 10;
+    AppRoleAuth Info = 20;
+}
+
+message CreateAppRoleAuthForOtherAppResponse {
+    Auth Info = 10;
+}
+
+message GetAppAuthByAppRoleResourceMethodRequest {
+    string AppID = 10;
+    string RoleID = 20;
+    string Resource = 30;
+    string Method = 40;
+}
+
+message GetAppAuthByAppRoleResourceMethodResponse {
+    Auth Info = 10;
+}
+
+message GetAppAuthByOtherAppRoleResourceMethodRequest {
+    string TargetAppID = 10;
+    string RoleID = 20;
+    string Resource = 30;
+    string Method = 40;
+}
+
+message GetAppAuthByOtherAppRoleResourceMethodResponse {
+    Auth Info = 10;
+}
+
+message DeleteAppRoleAuthRequest {
+    string ID = 10;
+}
+
+message DeleteAppRoleAuthResponse {
+    Auth Info = 10;
+}
+
+message AppUserAuth {
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    string Resource = 40;
+    string Method = 50;
+}
+
+message CreateAppUserAuthRequest {
+    AppUserAuth Info = 10;
+}
+
+message CreateAppUserAuthResponse {
+    AppUserAuth Info = 10;
+}
+
+message CreateAppUserAuthForOtherAppRequest {
+    string TargetAppID = 10;
+    AppUserAuth Info = 20;
+}
+
+message CreateAppUserAuthForOtherAppResponse {
+    AppUserAuth Info = 10;
+}
+
+message GetAppAuthByAppUserResourceMethodRequest {
+    string AppID = 10;
+    string Resource = 20;
+    string Method = 30;
+}
+
+message GetAppAuthByAppUserResourceMethodResponse {
+    Auth Info = 10;
+}
+
+message GetAppAuthByOtherAppUserResourceMethodRequest {
+    string TargetAppID = 10;
+    string Resource = 20;
+    string Method = 30;
+}
+
+message GetAppAuthByOtherAppUserResourceMethodResponse {
+    Auth Info = 10;
+}
+
+message DeleteAppUserAuthRequest {
+    string ID = 10;
+}
+
+message DeleteAppUserAuthResponse {
+    Auth Info = 10;
+}
+
+message GetAuthsByAppRequest {
+    string AppID = 10;
+}
+
+message GetAuthsByAppResponse {
+    repeated Auth Infos = 10;
+}
+
+message GetAuthsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetAuthsByOtherAppResponse {
+    repeated Auth Infos = 10;
+}
+
+message GetAuthsByAppRoleRequest {
+    string AppID = 10;
+    string RoleID = 20;
+}
+
+message GetAuthsByAppRoleResponse {
+    repeated Auth Infos = 10;
+}
+
+message GetAuthsByOtherAppRoleRequest {
+    string TargetAppID = 10;
+    string RoleID = 20;
+}
+
+message GetAuthsByOtherAppRoleResponse {
+    repeated Auth Infos = 10;
+}
+
+message GetAuthsByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetAuthsByAppUserResponse {
+    repeated Auth Infos = 10;
+}
+
+message GetAuthsByOtherAppUserRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
+}
+
+message GetAuthsByOtherAppUserResponse {
+    repeated Auth Infos = 10;
 }

@@ -30,6 +30,26 @@ type AuthingGatewayClient interface {
 	GetAuthHistories(ctx context.Context, in *GetAuthHistoriesRequest, opts ...grpc.CallOption) (*GetAuthHistoriesResponse, error)
 	GetAuthHistoriesByApp(ctx context.Context, in *GetAuthHistoriesByAppRequest, opts ...grpc.CallOption) (*GetAuthHistoriesByAppResponse, error)
 	GetAuthHistoriesByOtherApp(ctx context.Context, in *GetAuthHistoriesByOtherAppRequest, opts ...grpc.CallOption) (*GetAuthHistoriesByOtherAppResponse, error)
+	CreateAppAuthForOtherApp(ctx context.Context, in *CreateAppAuthForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppAuthForOtherAppResponse, error)
+	GetAppAuthByAppResourceMethod(ctx context.Context, in *GetAppAuthByAppResourceMethodRequest, opts ...grpc.CallOption) (*GetAppAuthByAppResourceMethodResponse, error)
+	GetAppAuthByOtherAppResourceMethod(ctx context.Context, in *GetAppAuthByOtherAppResourceMethodRequest, opts ...grpc.CallOption) (*GetAppAuthByOtherAppResourceMethodResponse, error)
+	DeleteAppAuth(ctx context.Context, in *DeleteAppAuthRequest, opts ...grpc.CallOption) (*DeleteAppAuthResponse, error)
+	CreateAppRoleAuth(ctx context.Context, in *CreateAppRoleAuthRequest, opts ...grpc.CallOption) (*CreateAppRoleAuthResponse, error)
+	CreateAppRoleAuthForOtherApp(ctx context.Context, in *CreateAppRoleAuthForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppRoleAuthForOtherAppResponse, error)
+	GetAppAuthByAppRoleResourceMethod(ctx context.Context, in *GetAppAuthByAppRoleResourceMethodRequest, opts ...grpc.CallOption) (*GetAppAuthByAppRoleResourceMethodResponse, error)
+	GetAppAuthByOtherAppRoleResourceMethod(ctx context.Context, in *GetAppAuthByOtherAppRoleResourceMethodRequest, opts ...grpc.CallOption) (*GetAppAuthByOtherAppRoleResourceMethodResponse, error)
+	DeleteAppRoleAuth(ctx context.Context, in *DeleteAppRoleAuthRequest, opts ...grpc.CallOption) (*DeleteAppRoleAuthResponse, error)
+	CreateAppUserAuth(ctx context.Context, in *CreateAppUserAuthRequest, opts ...grpc.CallOption) (*CreateAppUserAuthResponse, error)
+	CreateAppUserAuthForOtherApp(ctx context.Context, in *CreateAppUserAuthForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppUserAuthForOtherAppResponse, error)
+	GetAppAuthByAppUserResourceMethod(ctx context.Context, in *GetAppAuthByAppUserResourceMethodRequest, opts ...grpc.CallOption) (*GetAppAuthByAppUserResourceMethodResponse, error)
+	GetAppAuthByOtherAppUserResourceMethod(ctx context.Context, in *GetAppAuthByOtherAppUserResourceMethodRequest, opts ...grpc.CallOption) (*GetAppAuthByOtherAppUserResourceMethodResponse, error)
+	DeleteAppUserAuth(ctx context.Context, in *DeleteAppUserAuthRequest, opts ...grpc.CallOption) (*DeleteAppUserAuthResponse, error)
+	GetAuthsByApp(ctx context.Context, in *GetAuthsByAppRequest, opts ...grpc.CallOption) (*GetAuthsByAppResponse, error)
+	GetAuthsByOtherApp(ctx context.Context, in *GetAuthsByOtherAppRequest, opts ...grpc.CallOption) (*GetAuthsByOtherAppResponse, error)
+	GetAuthsByAppRole(ctx context.Context, in *GetAuthsByAppRoleRequest, opts ...grpc.CallOption) (*GetAuthsByAppRoleResponse, error)
+	GetAuthsByOtherAppRole(ctx context.Context, in *GetAuthsByOtherAppRoleRequest, opts ...grpc.CallOption) (*GetAuthsByOtherAppRoleResponse, error)
+	GetAuthsByAppUser(ctx context.Context, in *GetAuthsByAppUserRequest, opts ...grpc.CallOption) (*GetAuthsByAppUserResponse, error)
+	GetAuthsByOtherAppUser(ctx context.Context, in *GetAuthsByOtherAppUserRequest, opts ...grpc.CallOption) (*GetAuthsByOtherAppUserResponse, error)
 }
 
 type authingGatewayClient struct {
@@ -94,6 +114,186 @@ func (c *authingGatewayClient) GetAuthHistoriesByOtherApp(ctx context.Context, i
 	return out, nil
 }
 
+func (c *authingGatewayClient) CreateAppAuthForOtherApp(ctx context.Context, in *CreateAppAuthForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppAuthForOtherAppResponse, error) {
+	out := new(CreateAppAuthForOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/CreateAppAuthForOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) GetAppAuthByAppResourceMethod(ctx context.Context, in *GetAppAuthByAppResourceMethodRequest, opts ...grpc.CallOption) (*GetAppAuthByAppResourceMethodResponse, error) {
+	out := new(GetAppAuthByAppResourceMethodResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/GetAppAuthByAppResourceMethod", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) GetAppAuthByOtherAppResourceMethod(ctx context.Context, in *GetAppAuthByOtherAppResourceMethodRequest, opts ...grpc.CallOption) (*GetAppAuthByOtherAppResourceMethodResponse, error) {
+	out := new(GetAppAuthByOtherAppResourceMethodResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/GetAppAuthByOtherAppResourceMethod", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) DeleteAppAuth(ctx context.Context, in *DeleteAppAuthRequest, opts ...grpc.CallOption) (*DeleteAppAuthResponse, error) {
+	out := new(DeleteAppAuthResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/DeleteAppAuth", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) CreateAppRoleAuth(ctx context.Context, in *CreateAppRoleAuthRequest, opts ...grpc.CallOption) (*CreateAppRoleAuthResponse, error) {
+	out := new(CreateAppRoleAuthResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/CreateAppRoleAuth", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) CreateAppRoleAuthForOtherApp(ctx context.Context, in *CreateAppRoleAuthForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppRoleAuthForOtherAppResponse, error) {
+	out := new(CreateAppRoleAuthForOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/CreateAppRoleAuthForOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) GetAppAuthByAppRoleResourceMethod(ctx context.Context, in *GetAppAuthByAppRoleResourceMethodRequest, opts ...grpc.CallOption) (*GetAppAuthByAppRoleResourceMethodResponse, error) {
+	out := new(GetAppAuthByAppRoleResourceMethodResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/GetAppAuthByAppRoleResourceMethod", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) GetAppAuthByOtherAppRoleResourceMethod(ctx context.Context, in *GetAppAuthByOtherAppRoleResourceMethodRequest, opts ...grpc.CallOption) (*GetAppAuthByOtherAppRoleResourceMethodResponse, error) {
+	out := new(GetAppAuthByOtherAppRoleResourceMethodResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/GetAppAuthByOtherAppRoleResourceMethod", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) DeleteAppRoleAuth(ctx context.Context, in *DeleteAppRoleAuthRequest, opts ...grpc.CallOption) (*DeleteAppRoleAuthResponse, error) {
+	out := new(DeleteAppRoleAuthResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/DeleteAppRoleAuth", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) CreateAppUserAuth(ctx context.Context, in *CreateAppUserAuthRequest, opts ...grpc.CallOption) (*CreateAppUserAuthResponse, error) {
+	out := new(CreateAppUserAuthResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/CreateAppUserAuth", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) CreateAppUserAuthForOtherApp(ctx context.Context, in *CreateAppUserAuthForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppUserAuthForOtherAppResponse, error) {
+	out := new(CreateAppUserAuthForOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/CreateAppUserAuthForOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) GetAppAuthByAppUserResourceMethod(ctx context.Context, in *GetAppAuthByAppUserResourceMethodRequest, opts ...grpc.CallOption) (*GetAppAuthByAppUserResourceMethodResponse, error) {
+	out := new(GetAppAuthByAppUserResourceMethodResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/GetAppAuthByAppUserResourceMethod", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) GetAppAuthByOtherAppUserResourceMethod(ctx context.Context, in *GetAppAuthByOtherAppUserResourceMethodRequest, opts ...grpc.CallOption) (*GetAppAuthByOtherAppUserResourceMethodResponse, error) {
+	out := new(GetAppAuthByOtherAppUserResourceMethodResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/GetAppAuthByOtherAppUserResourceMethod", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) DeleteAppUserAuth(ctx context.Context, in *DeleteAppUserAuthRequest, opts ...grpc.CallOption) (*DeleteAppUserAuthResponse, error) {
+	out := new(DeleteAppUserAuthResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/DeleteAppUserAuth", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) GetAuthsByApp(ctx context.Context, in *GetAuthsByAppRequest, opts ...grpc.CallOption) (*GetAuthsByAppResponse, error) {
+	out := new(GetAuthsByAppResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/GetAuthsByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) GetAuthsByOtherApp(ctx context.Context, in *GetAuthsByOtherAppRequest, opts ...grpc.CallOption) (*GetAuthsByOtherAppResponse, error) {
+	out := new(GetAuthsByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/GetAuthsByOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) GetAuthsByAppRole(ctx context.Context, in *GetAuthsByAppRoleRequest, opts ...grpc.CallOption) (*GetAuthsByAppRoleResponse, error) {
+	out := new(GetAuthsByAppRoleResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/GetAuthsByAppRole", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) GetAuthsByOtherAppRole(ctx context.Context, in *GetAuthsByOtherAppRoleRequest, opts ...grpc.CallOption) (*GetAuthsByOtherAppRoleResponse, error) {
+	out := new(GetAuthsByOtherAppRoleResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/GetAuthsByOtherAppRole", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) GetAuthsByAppUser(ctx context.Context, in *GetAuthsByAppUserRequest, opts ...grpc.CallOption) (*GetAuthsByAppUserResponse, error) {
+	out := new(GetAuthsByAppUserResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/GetAuthsByAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authingGatewayClient) GetAuthsByOtherAppUser(ctx context.Context, in *GetAuthsByOtherAppUserRequest, opts ...grpc.CallOption) (*GetAuthsByOtherAppUserResponse, error) {
+	out := new(GetAuthsByOtherAppUserResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/GetAuthsByOtherAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AuthingGatewayServer is the server API for AuthingGateway service.
 // All implementations must embed UnimplementedAuthingGatewayServer
 // for forward compatibility
@@ -104,6 +304,26 @@ type AuthingGatewayServer interface {
 	GetAuthHistories(context.Context, *GetAuthHistoriesRequest) (*GetAuthHistoriesResponse, error)
 	GetAuthHistoriesByApp(context.Context, *GetAuthHistoriesByAppRequest) (*GetAuthHistoriesByAppResponse, error)
 	GetAuthHistoriesByOtherApp(context.Context, *GetAuthHistoriesByOtherAppRequest) (*GetAuthHistoriesByOtherAppResponse, error)
+	CreateAppAuthForOtherApp(context.Context, *CreateAppAuthForOtherAppRequest) (*CreateAppAuthForOtherAppResponse, error)
+	GetAppAuthByAppResourceMethod(context.Context, *GetAppAuthByAppResourceMethodRequest) (*GetAppAuthByAppResourceMethodResponse, error)
+	GetAppAuthByOtherAppResourceMethod(context.Context, *GetAppAuthByOtherAppResourceMethodRequest) (*GetAppAuthByOtherAppResourceMethodResponse, error)
+	DeleteAppAuth(context.Context, *DeleteAppAuthRequest) (*DeleteAppAuthResponse, error)
+	CreateAppRoleAuth(context.Context, *CreateAppRoleAuthRequest) (*CreateAppRoleAuthResponse, error)
+	CreateAppRoleAuthForOtherApp(context.Context, *CreateAppRoleAuthForOtherAppRequest) (*CreateAppRoleAuthForOtherAppResponse, error)
+	GetAppAuthByAppRoleResourceMethod(context.Context, *GetAppAuthByAppRoleResourceMethodRequest) (*GetAppAuthByAppRoleResourceMethodResponse, error)
+	GetAppAuthByOtherAppRoleResourceMethod(context.Context, *GetAppAuthByOtherAppRoleResourceMethodRequest) (*GetAppAuthByOtherAppRoleResourceMethodResponse, error)
+	DeleteAppRoleAuth(context.Context, *DeleteAppRoleAuthRequest) (*DeleteAppRoleAuthResponse, error)
+	CreateAppUserAuth(context.Context, *CreateAppUserAuthRequest) (*CreateAppUserAuthResponse, error)
+	CreateAppUserAuthForOtherApp(context.Context, *CreateAppUserAuthForOtherAppRequest) (*CreateAppUserAuthForOtherAppResponse, error)
+	GetAppAuthByAppUserResourceMethod(context.Context, *GetAppAuthByAppUserResourceMethodRequest) (*GetAppAuthByAppUserResourceMethodResponse, error)
+	GetAppAuthByOtherAppUserResourceMethod(context.Context, *GetAppAuthByOtherAppUserResourceMethodRequest) (*GetAppAuthByOtherAppUserResourceMethodResponse, error)
+	DeleteAppUserAuth(context.Context, *DeleteAppUserAuthRequest) (*DeleteAppUserAuthResponse, error)
+	GetAuthsByApp(context.Context, *GetAuthsByAppRequest) (*GetAuthsByAppResponse, error)
+	GetAuthsByOtherApp(context.Context, *GetAuthsByOtherAppRequest) (*GetAuthsByOtherAppResponse, error)
+	GetAuthsByAppRole(context.Context, *GetAuthsByAppRoleRequest) (*GetAuthsByAppRoleResponse, error)
+	GetAuthsByOtherAppRole(context.Context, *GetAuthsByOtherAppRoleRequest) (*GetAuthsByOtherAppRoleResponse, error)
+	GetAuthsByAppUser(context.Context, *GetAuthsByAppUserRequest) (*GetAuthsByAppUserResponse, error)
+	GetAuthsByOtherAppUser(context.Context, *GetAuthsByOtherAppUserRequest) (*GetAuthsByOtherAppUserResponse, error)
 	mustEmbedUnimplementedAuthingGatewayServer()
 }
 
@@ -128,6 +348,66 @@ func (UnimplementedAuthingGatewayServer) GetAuthHistoriesByApp(context.Context, 
 }
 func (UnimplementedAuthingGatewayServer) GetAuthHistoriesByOtherApp(context.Context, *GetAuthHistoriesByOtherAppRequest) (*GetAuthHistoriesByOtherAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAuthHistoriesByOtherApp not implemented")
+}
+func (UnimplementedAuthingGatewayServer) CreateAppAuthForOtherApp(context.Context, *CreateAppAuthForOtherAppRequest) (*CreateAppAuthForOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppAuthForOtherApp not implemented")
+}
+func (UnimplementedAuthingGatewayServer) GetAppAuthByAppResourceMethod(context.Context, *GetAppAuthByAppResourceMethodRequest) (*GetAppAuthByAppResourceMethodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppAuthByAppResourceMethod not implemented")
+}
+func (UnimplementedAuthingGatewayServer) GetAppAuthByOtherAppResourceMethod(context.Context, *GetAppAuthByOtherAppResourceMethodRequest) (*GetAppAuthByOtherAppResourceMethodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppAuthByOtherAppResourceMethod not implemented")
+}
+func (UnimplementedAuthingGatewayServer) DeleteAppAuth(context.Context, *DeleteAppAuthRequest) (*DeleteAppAuthResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppAuth not implemented")
+}
+func (UnimplementedAuthingGatewayServer) CreateAppRoleAuth(context.Context, *CreateAppRoleAuthRequest) (*CreateAppRoleAuthResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppRoleAuth not implemented")
+}
+func (UnimplementedAuthingGatewayServer) CreateAppRoleAuthForOtherApp(context.Context, *CreateAppRoleAuthForOtherAppRequest) (*CreateAppRoleAuthForOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppRoleAuthForOtherApp not implemented")
+}
+func (UnimplementedAuthingGatewayServer) GetAppAuthByAppRoleResourceMethod(context.Context, *GetAppAuthByAppRoleResourceMethodRequest) (*GetAppAuthByAppRoleResourceMethodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppAuthByAppRoleResourceMethod not implemented")
+}
+func (UnimplementedAuthingGatewayServer) GetAppAuthByOtherAppRoleResourceMethod(context.Context, *GetAppAuthByOtherAppRoleResourceMethodRequest) (*GetAppAuthByOtherAppRoleResourceMethodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppAuthByOtherAppRoleResourceMethod not implemented")
+}
+func (UnimplementedAuthingGatewayServer) DeleteAppRoleAuth(context.Context, *DeleteAppRoleAuthRequest) (*DeleteAppRoleAuthResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppRoleAuth not implemented")
+}
+func (UnimplementedAuthingGatewayServer) CreateAppUserAuth(context.Context, *CreateAppUserAuthRequest) (*CreateAppUserAuthResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserAuth not implemented")
+}
+func (UnimplementedAuthingGatewayServer) CreateAppUserAuthForOtherApp(context.Context, *CreateAppUserAuthForOtherAppRequest) (*CreateAppUserAuthForOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserAuthForOtherApp not implemented")
+}
+func (UnimplementedAuthingGatewayServer) GetAppAuthByAppUserResourceMethod(context.Context, *GetAppAuthByAppUserResourceMethodRequest) (*GetAppAuthByAppUserResourceMethodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppAuthByAppUserResourceMethod not implemented")
+}
+func (UnimplementedAuthingGatewayServer) GetAppAuthByOtherAppUserResourceMethod(context.Context, *GetAppAuthByOtherAppUserResourceMethodRequest) (*GetAppAuthByOtherAppUserResourceMethodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppAuthByOtherAppUserResourceMethod not implemented")
+}
+func (UnimplementedAuthingGatewayServer) DeleteAppUserAuth(context.Context, *DeleteAppUserAuthRequest) (*DeleteAppUserAuthResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppUserAuth not implemented")
+}
+func (UnimplementedAuthingGatewayServer) GetAuthsByApp(context.Context, *GetAuthsByAppRequest) (*GetAuthsByAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAuthsByApp not implemented")
+}
+func (UnimplementedAuthingGatewayServer) GetAuthsByOtherApp(context.Context, *GetAuthsByOtherAppRequest) (*GetAuthsByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAuthsByOtherApp not implemented")
+}
+func (UnimplementedAuthingGatewayServer) GetAuthsByAppRole(context.Context, *GetAuthsByAppRoleRequest) (*GetAuthsByAppRoleResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAuthsByAppRole not implemented")
+}
+func (UnimplementedAuthingGatewayServer) GetAuthsByOtherAppRole(context.Context, *GetAuthsByOtherAppRoleRequest) (*GetAuthsByOtherAppRoleResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAuthsByOtherAppRole not implemented")
+}
+func (UnimplementedAuthingGatewayServer) GetAuthsByAppUser(context.Context, *GetAuthsByAppUserRequest) (*GetAuthsByAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAuthsByAppUser not implemented")
+}
+func (UnimplementedAuthingGatewayServer) GetAuthsByOtherAppUser(context.Context, *GetAuthsByOtherAppUserRequest) (*GetAuthsByOtherAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAuthsByOtherAppUser not implemented")
 }
 func (UnimplementedAuthingGatewayServer) mustEmbedUnimplementedAuthingGatewayServer() {}
 
@@ -250,6 +530,366 @@ func _AuthingGateway_GetAuthHistoriesByOtherApp_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AuthingGateway_CreateAppAuthForOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppAuthForOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).CreateAppAuthForOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/CreateAppAuthForOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).CreateAppAuthForOtherApp(ctx, req.(*CreateAppAuthForOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_GetAppAuthByAppResourceMethod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppAuthByAppResourceMethodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).GetAppAuthByAppResourceMethod(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/GetAppAuthByAppResourceMethod",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).GetAppAuthByAppResourceMethod(ctx, req.(*GetAppAuthByAppResourceMethodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_GetAppAuthByOtherAppResourceMethod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppAuthByOtherAppResourceMethodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).GetAppAuthByOtherAppResourceMethod(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/GetAppAuthByOtherAppResourceMethod",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).GetAppAuthByOtherAppResourceMethod(ctx, req.(*GetAppAuthByOtherAppResourceMethodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_DeleteAppAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppAuthRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).DeleteAppAuth(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/DeleteAppAuth",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).DeleteAppAuth(ctx, req.(*DeleteAppAuthRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_CreateAppRoleAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppRoleAuthRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).CreateAppRoleAuth(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/CreateAppRoleAuth",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).CreateAppRoleAuth(ctx, req.(*CreateAppRoleAuthRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_CreateAppRoleAuthForOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppRoleAuthForOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).CreateAppRoleAuthForOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/CreateAppRoleAuthForOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).CreateAppRoleAuthForOtherApp(ctx, req.(*CreateAppRoleAuthForOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_GetAppAuthByAppRoleResourceMethod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppAuthByAppRoleResourceMethodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).GetAppAuthByAppRoleResourceMethod(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/GetAppAuthByAppRoleResourceMethod",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).GetAppAuthByAppRoleResourceMethod(ctx, req.(*GetAppAuthByAppRoleResourceMethodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_GetAppAuthByOtherAppRoleResourceMethod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppAuthByOtherAppRoleResourceMethodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).GetAppAuthByOtherAppRoleResourceMethod(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/GetAppAuthByOtherAppRoleResourceMethod",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).GetAppAuthByOtherAppRoleResourceMethod(ctx, req.(*GetAppAuthByOtherAppRoleResourceMethodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_DeleteAppRoleAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppRoleAuthRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).DeleteAppRoleAuth(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/DeleteAppRoleAuth",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).DeleteAppRoleAuth(ctx, req.(*DeleteAppRoleAuthRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_CreateAppUserAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppUserAuthRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).CreateAppUserAuth(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/CreateAppUserAuth",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).CreateAppUserAuth(ctx, req.(*CreateAppUserAuthRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_CreateAppUserAuthForOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppUserAuthForOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).CreateAppUserAuthForOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/CreateAppUserAuthForOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).CreateAppUserAuthForOtherApp(ctx, req.(*CreateAppUserAuthForOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_GetAppAuthByAppUserResourceMethod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppAuthByAppUserResourceMethodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).GetAppAuthByAppUserResourceMethod(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/GetAppAuthByAppUserResourceMethod",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).GetAppAuthByAppUserResourceMethod(ctx, req.(*GetAppAuthByAppUserResourceMethodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_GetAppAuthByOtherAppUserResourceMethod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppAuthByOtherAppUserResourceMethodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).GetAppAuthByOtherAppUserResourceMethod(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/GetAppAuthByOtherAppUserResourceMethod",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).GetAppAuthByOtherAppUserResourceMethod(ctx, req.(*GetAppAuthByOtherAppUserResourceMethodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_DeleteAppUserAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppUserAuthRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).DeleteAppUserAuth(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/DeleteAppUserAuth",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).DeleteAppUserAuth(ctx, req.(*DeleteAppUserAuthRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_GetAuthsByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAuthsByAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).GetAuthsByApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/GetAuthsByApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).GetAuthsByApp(ctx, req.(*GetAuthsByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_GetAuthsByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAuthsByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).GetAuthsByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/GetAuthsByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).GetAuthsByOtherApp(ctx, req.(*GetAuthsByOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_GetAuthsByAppRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAuthsByAppRoleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).GetAuthsByAppRole(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/GetAuthsByAppRole",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).GetAuthsByAppRole(ctx, req.(*GetAuthsByAppRoleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_GetAuthsByOtherAppRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAuthsByOtherAppRoleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).GetAuthsByOtherAppRole(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/GetAuthsByOtherAppRole",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).GetAuthsByOtherAppRole(ctx, req.(*GetAuthsByOtherAppRoleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_GetAuthsByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAuthsByAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).GetAuthsByAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/GetAuthsByAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).GetAuthsByAppUser(ctx, req.(*GetAuthsByAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthingGateway_GetAuthsByOtherAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAuthsByOtherAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).GetAuthsByOtherAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/GetAuthsByOtherAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).GetAuthsByOtherAppUser(ctx, req.(*GetAuthsByOtherAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AuthingGateway_ServiceDesc is the grpc.ServiceDesc for AuthingGateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -280,6 +920,86 @@ var AuthingGateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAuthHistoriesByOtherApp",
 			Handler:    _AuthingGateway_GetAuthHistoriesByOtherApp_Handler,
+		},
+		{
+			MethodName: "CreateAppAuthForOtherApp",
+			Handler:    _AuthingGateway_CreateAppAuthForOtherApp_Handler,
+		},
+		{
+			MethodName: "GetAppAuthByAppResourceMethod",
+			Handler:    _AuthingGateway_GetAppAuthByAppResourceMethod_Handler,
+		},
+		{
+			MethodName: "GetAppAuthByOtherAppResourceMethod",
+			Handler:    _AuthingGateway_GetAppAuthByOtherAppResourceMethod_Handler,
+		},
+		{
+			MethodName: "DeleteAppAuth",
+			Handler:    _AuthingGateway_DeleteAppAuth_Handler,
+		},
+		{
+			MethodName: "CreateAppRoleAuth",
+			Handler:    _AuthingGateway_CreateAppRoleAuth_Handler,
+		},
+		{
+			MethodName: "CreateAppRoleAuthForOtherApp",
+			Handler:    _AuthingGateway_CreateAppRoleAuthForOtherApp_Handler,
+		},
+		{
+			MethodName: "GetAppAuthByAppRoleResourceMethod",
+			Handler:    _AuthingGateway_GetAppAuthByAppRoleResourceMethod_Handler,
+		},
+		{
+			MethodName: "GetAppAuthByOtherAppRoleResourceMethod",
+			Handler:    _AuthingGateway_GetAppAuthByOtherAppRoleResourceMethod_Handler,
+		},
+		{
+			MethodName: "DeleteAppRoleAuth",
+			Handler:    _AuthingGateway_DeleteAppRoleAuth_Handler,
+		},
+		{
+			MethodName: "CreateAppUserAuth",
+			Handler:    _AuthingGateway_CreateAppUserAuth_Handler,
+		},
+		{
+			MethodName: "CreateAppUserAuthForOtherApp",
+			Handler:    _AuthingGateway_CreateAppUserAuthForOtherApp_Handler,
+		},
+		{
+			MethodName: "GetAppAuthByAppUserResourceMethod",
+			Handler:    _AuthingGateway_GetAppAuthByAppUserResourceMethod_Handler,
+		},
+		{
+			MethodName: "GetAppAuthByOtherAppUserResourceMethod",
+			Handler:    _AuthingGateway_GetAppAuthByOtherAppUserResourceMethod_Handler,
+		},
+		{
+			MethodName: "DeleteAppUserAuth",
+			Handler:    _AuthingGateway_DeleteAppUserAuth_Handler,
+		},
+		{
+			MethodName: "GetAuthsByApp",
+			Handler:    _AuthingGateway_GetAuthsByApp_Handler,
+		},
+		{
+			MethodName: "GetAuthsByOtherApp",
+			Handler:    _AuthingGateway_GetAuthsByOtherApp_Handler,
+		},
+		{
+			MethodName: "GetAuthsByAppRole",
+			Handler:    _AuthingGateway_GetAuthsByAppRole_Handler,
+		},
+		{
+			MethodName: "GetAuthsByOtherAppRole",
+			Handler:    _AuthingGateway_GetAuthsByOtherAppRole_Handler,
+		},
+		{
+			MethodName: "GetAuthsByAppUser",
+			Handler:    _AuthingGateway_GetAuthsByAppUser_Handler,
+		},
+		{
+			MethodName: "GetAuthsByOtherAppUser",
+			Handler:    _AuthingGateway_GetAuthsByOtherAppUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
