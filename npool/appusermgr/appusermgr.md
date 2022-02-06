@@ -373,6 +373,7 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | CreatedBy | [string](#string) |  |  |
 | Role | [string](#string) |  |  |
 | Description | [string](#string) |  |  |
@@ -2657,6 +2658,7 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | CreatedBy | [string](#string) |  |  |
 | Role | [string](#string) |  |  |
 | Description | [string](#string) |  |  |

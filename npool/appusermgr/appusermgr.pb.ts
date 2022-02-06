@@ -443,6 +443,7 @@ export type UpdateAppUserControlResponse = {
 export type AppRole = {
   id?: string
   appID?: string
+  userID?: string
   createdBy?: string
   role?: string
   description?: string

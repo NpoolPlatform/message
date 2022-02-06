@@ -849,10 +849,11 @@ message UpdateAppUserControlResponse {
 message AppRole {
     string ID = 10;
     string AppID = 20;
-    string CreatedBy = 30;
-    string Role = 40;
-    string Description = 50;
-    bool Default = 60;
+    string UserID = 30;
+    string CreatedBy = 40;
+    string Role = 50;
+    string Description = 60;
+    bool Default = 70;
 }
 
 message CreateGenesisRoleRequest {
