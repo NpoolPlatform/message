@@ -365,12 +365,12 @@
     },
     "/v1/get/app/auth/by/app/role/resource/method": {
       "post": {
-        "operationId": "AuthingGateway_GetAppAuthByAppRoleResourceMethod",
+        "operationId": "AuthingGateway_GetAppRoleAuthByAppRoleResourceMethod",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppAuthByAppRoleResourceMethodResponse"
+              "$ref": "#/definitions/v1GetAppRoleAuthByAppRoleResourceMethodResponse"
             }
           },
           "default": {
@@ -386,7 +386,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppAuthByAppRoleResourceMethodRequest"
+              "$ref": "#/definitions/v1GetAppRoleAuthByAppRoleResourceMethodRequest"
             }
           }
         ],
@@ -397,12 +397,12 @@
     },
     "/v1/get/app/auth/by/app/user/resource/method": {
       "post": {
-        "operationId": "AuthingGateway_GetAppAuthByAppUserResourceMethod",
+        "operationId": "AuthingGateway_GetAppUserAuthByAppUserResourceMethod",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppAuthByAppUserResourceMethodResponse"
+              "$ref": "#/definitions/v1GetAppUserAuthByAppUserResourceMethodResponse"
             }
           },
           "default": {
@@ -418,7 +418,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppAuthByAppUserResourceMethodRequest"
+              "$ref": "#/definitions/v1GetAppUserAuthByAppUserResourceMethodRequest"
             }
           }
         ],
@@ -461,12 +461,12 @@
     },
     "/v1/get/app/auth/by/other/app/role/resource/method": {
       "post": {
-        "operationId": "AuthingGateway_GetAppAuthByOtherAppRoleResourceMethod",
+        "operationId": "AuthingGateway_GetAppRoleAuthByOtherAppRoleResourceMethod",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppAuthByOtherAppRoleResourceMethodResponse"
+              "$ref": "#/definitions/v1GetAppRoleAuthByOtherAppRoleResourceMethodResponse"
             }
           },
           "default": {
@@ -482,7 +482,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppAuthByOtherAppRoleResourceMethodRequest"
+              "$ref": "#/definitions/v1GetAppRoleAuthByOtherAppRoleResourceMethodRequest"
             }
           }
         ],
@@ -493,12 +493,12 @@
     },
     "/v1/get/app/auth/by/other/app/user/resource/method": {
       "post": {
-        "operationId": "AuthingGateway_GetAppAuthByOtherAppUserResourceMethod",
+        "operationId": "AuthingGateway_GetAppUserAuthByOtherAppUserResourceMethod",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppAuthByOtherAppUserResourceMethodResponse"
+              "$ref": "#/definitions/v1GetAppUserAuthByOtherAppUserResourceMethodResponse"
             }
           },
           "default": {
@@ -514,7 +514,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppAuthByOtherAppUserResourceMethodRequest"
+              "$ref": "#/definitions/v1GetAppUserAuthByOtherAppUserResourceMethodRequest"
             }
           }
         ],
@@ -1194,53 +1194,6 @@
         }
       }
     },
-    "v1GetAppAuthByAppRoleResourceMethodRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "RoleID": {
-          "type": "string"
-        },
-        "Resource": {
-          "type": "string"
-        },
-        "Method": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppAuthByAppRoleResourceMethodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Auth"
-        }
-      }
-    },
-    "v1GetAppAuthByAppUserResourceMethodRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Resource": {
-          "type": "string"
-        },
-        "Method": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppAuthByAppUserResourceMethodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Auth"
-        }
-      }
-    },
     "v1GetAppAuthByOtherAppResourceMethodRequest": {
       "type": "object",
       "properties": {
@@ -1263,7 +1216,32 @@
         }
       }
     },
-    "v1GetAppAuthByOtherAppRoleResourceMethodRequest": {
+    "v1GetAppRoleAuthByAppRoleResourceMethodRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "Resource": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppRoleAuthByAppRoleResourceMethodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Auth"
+        }
+      }
+    },
+    "v1GetAppRoleAuthByOtherAppRoleResourceMethodRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -1280,7 +1258,7 @@
         }
       }
     },
-    "v1GetAppAuthByOtherAppRoleResourceMethodResponse": {
+    "v1GetAppRoleAuthByOtherAppRoleResourceMethodResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -1288,7 +1266,29 @@
         }
       }
     },
-    "v1GetAppAuthByOtherAppUserResourceMethodRequest": {
+    "v1GetAppUserAuthByAppUserResourceMethodRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Resource": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserAuthByAppUserResourceMethodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Auth"
+        }
+      }
+    },
+    "v1GetAppUserAuthByOtherAppUserResourceMethodRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -1302,7 +1302,7 @@
         }
       }
     },
-    "v1GetAppAuthByOtherAppUserResourceMethodResponse": {
+    "v1GetAppUserAuthByOtherAppUserResourceMethodResponse": {
       "type": "object",
       "properties": {
         "Info": {

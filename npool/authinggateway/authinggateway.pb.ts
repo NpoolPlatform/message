@@ -142,25 +142,25 @@ export type CreateAppRoleAuthForOtherAppResponse = {
   info?: Auth
 }
 
-export type GetAppAuthByAppRoleResourceMethodRequest = {
+export type GetAppRoleAuthByAppRoleResourceMethodRequest = {
   appID?: string
   roleID?: string
   resource?: string
   method?: string
 }
 
-export type GetAppAuthByAppRoleResourceMethodResponse = {
+export type GetAppRoleAuthByAppRoleResourceMethodResponse = {
   info?: Auth
 }
 
-export type GetAppAuthByOtherAppRoleResourceMethodRequest = {
+export type GetAppRoleAuthByOtherAppRoleResourceMethodRequest = {
   targetAppID?: string
   roleID?: string
   resource?: string
   method?: string
 }
 
-export type GetAppAuthByOtherAppRoleResourceMethodResponse = {
+export type GetAppRoleAuthByOtherAppRoleResourceMethodResponse = {
   info?: Auth
 }
 
@@ -197,23 +197,23 @@ export type CreateAppUserAuthForOtherAppResponse = {
   info?: Auth
 }
 
-export type GetAppAuthByAppUserResourceMethodRequest = {
+export type GetAppUserAuthByAppUserResourceMethodRequest = {
   appID?: string
   resource?: string
   method?: string
 }
 
-export type GetAppAuthByAppUserResourceMethodResponse = {
+export type GetAppUserAuthByAppUserResourceMethodResponse = {
   info?: Auth
 }
 
-export type GetAppAuthByOtherAppUserResourceMethodRequest = {
+export type GetAppUserAuthByOtherAppUserResourceMethodRequest = {
   targetAppID?: string
   resource?: string
   method?: string
 }
 
-export type GetAppAuthByOtherAppUserResourceMethodResponse = {
+export type GetAppUserAuthByOtherAppUserResourceMethodResponse = {
   info?: Auth
 }
 
@@ -314,11 +314,11 @@ export class AuthingGateway {
   static CreateAppRoleAuthForOtherApp(req: CreateAppRoleAuthForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppRoleAuthForOtherAppResponse> {
     return fm.fetchReq<CreateAppRoleAuthForOtherAppRequest, CreateAppRoleAuthForOtherAppResponse>(`/v1/create/app/role/auth/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppAuthByAppRoleResourceMethod(req: GetAppAuthByAppRoleResourceMethodRequest, initReq?: fm.InitReq): Promise<GetAppAuthByAppRoleResourceMethodResponse> {
-    return fm.fetchReq<GetAppAuthByAppRoleResourceMethodRequest, GetAppAuthByAppRoleResourceMethodResponse>(`/v1/get/app/auth/by/app/role/resource/method`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppRoleAuthByAppRoleResourceMethod(req: GetAppRoleAuthByAppRoleResourceMethodRequest, initReq?: fm.InitReq): Promise<GetAppRoleAuthByAppRoleResourceMethodResponse> {
+    return fm.fetchReq<GetAppRoleAuthByAppRoleResourceMethodRequest, GetAppRoleAuthByAppRoleResourceMethodResponse>(`/v1/get/app/auth/by/app/role/resource/method`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppAuthByOtherAppRoleResourceMethod(req: GetAppAuthByOtherAppRoleResourceMethodRequest, initReq?: fm.InitReq): Promise<GetAppAuthByOtherAppRoleResourceMethodResponse> {
-    return fm.fetchReq<GetAppAuthByOtherAppRoleResourceMethodRequest, GetAppAuthByOtherAppRoleResourceMethodResponse>(`/v1/get/app/auth/by/other/app/role/resource/method`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppRoleAuthByOtherAppRoleResourceMethod(req: GetAppRoleAuthByOtherAppRoleResourceMethodRequest, initReq?: fm.InitReq): Promise<GetAppRoleAuthByOtherAppRoleResourceMethodResponse> {
+    return fm.fetchReq<GetAppRoleAuthByOtherAppRoleResourceMethodRequest, GetAppRoleAuthByOtherAppRoleResourceMethodResponse>(`/v1/get/app/auth/by/other/app/role/resource/method`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static DeleteAppRoleAuth(req: DeleteAppRoleAuthRequest, initReq?: fm.InitReq): Promise<DeleteAppRoleAuthResponse> {
     return fm.fetchReq<DeleteAppRoleAuthRequest, DeleteAppRoleAuthResponse>(`/v1/delete/app/role/auth`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -329,11 +329,11 @@ export class AuthingGateway {
   static CreateAppUserAuthForOtherApp(req: CreateAppUserAuthForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppUserAuthForOtherAppResponse> {
     return fm.fetchReq<CreateAppUserAuthForOtherAppRequest, CreateAppUserAuthForOtherAppResponse>(`/v1/create/app/user/auth/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppAuthByAppUserResourceMethod(req: GetAppAuthByAppUserResourceMethodRequest, initReq?: fm.InitReq): Promise<GetAppAuthByAppUserResourceMethodResponse> {
-    return fm.fetchReq<GetAppAuthByAppUserResourceMethodRequest, GetAppAuthByAppUserResourceMethodResponse>(`/v1/get/app/auth/by/app/user/resource/method`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppUserAuthByAppUserResourceMethod(req: GetAppUserAuthByAppUserResourceMethodRequest, initReq?: fm.InitReq): Promise<GetAppUserAuthByAppUserResourceMethodResponse> {
+    return fm.fetchReq<GetAppUserAuthByAppUserResourceMethodRequest, GetAppUserAuthByAppUserResourceMethodResponse>(`/v1/get/app/auth/by/app/user/resource/method`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppAuthByOtherAppUserResourceMethod(req: GetAppAuthByOtherAppUserResourceMethodRequest, initReq?: fm.InitReq): Promise<GetAppAuthByOtherAppUserResourceMethodResponse> {
-    return fm.fetchReq<GetAppAuthByOtherAppUserResourceMethodRequest, GetAppAuthByOtherAppUserResourceMethodResponse>(`/v1/get/app/auth/by/other/app/user/resource/method`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppUserAuthByOtherAppUserResourceMethod(req: GetAppUserAuthByOtherAppUserResourceMethodRequest, initReq?: fm.InitReq): Promise<GetAppUserAuthByOtherAppUserResourceMethodResponse> {
+    return fm.fetchReq<GetAppUserAuthByOtherAppUserResourceMethodRequest, GetAppUserAuthByOtherAppUserResourceMethodResponse>(`/v1/get/app/auth/by/other/app/user/resource/method`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static DeleteAppUserAuth(req: DeleteAppUserAuthRequest, initReq?: fm.InitReq): Promise<DeleteAppUserAuthResponse> {
     return fm.fetchReq<DeleteAppUserAuthRequest, DeleteAppUserAuthResponse>(`/v1/delete/app/user/auth`, {...initReq, method: "POST", body: JSON.stringify(req)})

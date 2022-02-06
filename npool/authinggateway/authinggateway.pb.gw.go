@@ -440,8 +440,8 @@ func local_request_AuthingGateway_CreateAppRoleAuthForOtherApp_0(ctx context.Con
 
 }
 
-func request_AuthingGateway_GetAppAuthByAppRoleResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, client AuthingGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppAuthByAppRoleResourceMethodRequest
+func request_AuthingGateway_GetAppRoleAuthByAppRoleResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, client AuthingGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppRoleAuthByAppRoleResourceMethodRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -452,13 +452,13 @@ func request_AuthingGateway_GetAppAuthByAppRoleResourceMethod_0(ctx context.Cont
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetAppAuthByAppRoleResourceMethod(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppRoleAuthByAppRoleResourceMethod(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_AuthingGateway_GetAppAuthByAppRoleResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, server AuthingGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppAuthByAppRoleResourceMethodRequest
+func local_request_AuthingGateway_GetAppRoleAuthByAppRoleResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, server AuthingGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppRoleAuthByAppRoleResourceMethodRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -469,13 +469,13 @@ func local_request_AuthingGateway_GetAppAuthByAppRoleResourceMethod_0(ctx contex
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetAppAuthByAppRoleResourceMethod(ctx, &protoReq)
+	msg, err := server.GetAppRoleAuthByAppRoleResourceMethod(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_AuthingGateway_GetAppAuthByOtherAppRoleResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, client AuthingGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppAuthByOtherAppRoleResourceMethodRequest
+func request_AuthingGateway_GetAppRoleAuthByOtherAppRoleResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, client AuthingGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppRoleAuthByOtherAppRoleResourceMethodRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -486,13 +486,13 @@ func request_AuthingGateway_GetAppAuthByOtherAppRoleResourceMethod_0(ctx context
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetAppAuthByOtherAppRoleResourceMethod(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppRoleAuthByOtherAppRoleResourceMethod(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_AuthingGateway_GetAppAuthByOtherAppRoleResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, server AuthingGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppAuthByOtherAppRoleResourceMethodRequest
+func local_request_AuthingGateway_GetAppRoleAuthByOtherAppRoleResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, server AuthingGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppRoleAuthByOtherAppRoleResourceMethodRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -503,7 +503,7 @@ func local_request_AuthingGateway_GetAppAuthByOtherAppRoleResourceMethod_0(ctx c
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetAppAuthByOtherAppRoleResourceMethod(ctx, &protoReq)
+	msg, err := server.GetAppRoleAuthByOtherAppRoleResourceMethod(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -610,8 +610,8 @@ func local_request_AuthingGateway_CreateAppUserAuthForOtherApp_0(ctx context.Con
 
 }
 
-func request_AuthingGateway_GetAppAuthByAppUserResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, client AuthingGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppAuthByAppUserResourceMethodRequest
+func request_AuthingGateway_GetAppUserAuthByAppUserResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, client AuthingGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppUserAuthByAppUserResourceMethodRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -622,13 +622,13 @@ func request_AuthingGateway_GetAppAuthByAppUserResourceMethod_0(ctx context.Cont
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetAppAuthByAppUserResourceMethod(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppUserAuthByAppUserResourceMethod(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_AuthingGateway_GetAppAuthByAppUserResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, server AuthingGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppAuthByAppUserResourceMethodRequest
+func local_request_AuthingGateway_GetAppUserAuthByAppUserResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, server AuthingGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppUserAuthByAppUserResourceMethodRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -639,13 +639,13 @@ func local_request_AuthingGateway_GetAppAuthByAppUserResourceMethod_0(ctx contex
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetAppAuthByAppUserResourceMethod(ctx, &protoReq)
+	msg, err := server.GetAppUserAuthByAppUserResourceMethod(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_AuthingGateway_GetAppAuthByOtherAppUserResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, client AuthingGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppAuthByOtherAppUserResourceMethodRequest
+func request_AuthingGateway_GetAppUserAuthByOtherAppUserResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, client AuthingGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppUserAuthByOtherAppUserResourceMethodRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -656,13 +656,13 @@ func request_AuthingGateway_GetAppAuthByOtherAppUserResourceMethod_0(ctx context
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetAppAuthByOtherAppUserResourceMethod(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppUserAuthByOtherAppUserResourceMethod(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_AuthingGateway_GetAppAuthByOtherAppUserResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, server AuthingGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppAuthByOtherAppUserResourceMethodRequest
+func local_request_AuthingGateway_GetAppUserAuthByOtherAppUserResourceMethod_0(ctx context.Context, marshaler runtime.Marshaler, server AuthingGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppUserAuthByOtherAppUserResourceMethodRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -673,7 +673,7 @@ func local_request_AuthingGateway_GetAppAuthByOtherAppUserResourceMethod_0(ctx c
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetAppAuthByOtherAppUserResourceMethod(ctx, &protoReq)
+	msg, err := server.GetAppUserAuthByOtherAppUserResourceMethod(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -1198,18 +1198,18 @@ func RegisterAuthingGatewayHandlerServer(ctx context.Context, mux *runtime.Serve
 
 	})
 
-	mux.Handle("POST", pattern_AuthingGateway_GetAppAuthByAppRoleResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AuthingGateway_GetAppRoleAuthByAppRoleResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppAuthByAppRoleResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/app/role/resource/method"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppRoleAuthByAppRoleResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/app/role/resource/method"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AuthingGateway_GetAppAuthByAppRoleResourceMethod_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AuthingGateway_GetAppRoleAuthByAppRoleResourceMethod_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1217,22 +1217,22 @@ func RegisterAuthingGatewayHandlerServer(ctx context.Context, mux *runtime.Serve
 			return
 		}
 
-		forward_AuthingGateway_GetAppAuthByAppRoleResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AuthingGateway_GetAppRoleAuthByAppRoleResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AuthingGateway_GetAppAuthByOtherAppRoleResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AuthingGateway_GetAppRoleAuthByOtherAppRoleResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppAuthByOtherAppRoleResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/other/app/role/resource/method"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppRoleAuthByOtherAppRoleResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/other/app/role/resource/method"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AuthingGateway_GetAppAuthByOtherAppRoleResourceMethod_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AuthingGateway_GetAppRoleAuthByOtherAppRoleResourceMethod_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1240,7 +1240,7 @@ func RegisterAuthingGatewayHandlerServer(ctx context.Context, mux *runtime.Serve
 			return
 		}
 
-		forward_AuthingGateway_GetAppAuthByOtherAppRoleResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AuthingGateway_GetAppRoleAuthByOtherAppRoleResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1313,18 +1313,18 @@ func RegisterAuthingGatewayHandlerServer(ctx context.Context, mux *runtime.Serve
 
 	})
 
-	mux.Handle("POST", pattern_AuthingGateway_GetAppAuthByAppUserResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AuthingGateway_GetAppUserAuthByAppUserResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppAuthByAppUserResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/app/user/resource/method"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppUserAuthByAppUserResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/app/user/resource/method"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AuthingGateway_GetAppAuthByAppUserResourceMethod_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AuthingGateway_GetAppUserAuthByAppUserResourceMethod_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1332,22 +1332,22 @@ func RegisterAuthingGatewayHandlerServer(ctx context.Context, mux *runtime.Serve
 			return
 		}
 
-		forward_AuthingGateway_GetAppAuthByAppUserResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AuthingGateway_GetAppUserAuthByAppUserResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AuthingGateway_GetAppAuthByOtherAppUserResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AuthingGateway_GetAppUserAuthByOtherAppUserResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppAuthByOtherAppUserResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/other/app/user/resource/method"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppUserAuthByOtherAppUserResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/other/app/user/resource/method"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AuthingGateway_GetAppAuthByOtherAppUserResourceMethod_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AuthingGateway_GetAppUserAuthByOtherAppUserResourceMethod_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1355,7 +1355,7 @@ func RegisterAuthingGatewayHandlerServer(ctx context.Context, mux *runtime.Serve
 			return
 		}
 
-		forward_AuthingGateway_GetAppAuthByOtherAppUserResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AuthingGateway_GetAppUserAuthByOtherAppUserResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1801,43 +1801,43 @@ func RegisterAuthingGatewayHandlerClient(ctx context.Context, mux *runtime.Serve
 
 	})
 
-	mux.Handle("POST", pattern_AuthingGateway_GetAppAuthByAppRoleResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AuthingGateway_GetAppRoleAuthByAppRoleResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppAuthByAppRoleResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/app/role/resource/method"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppRoleAuthByAppRoleResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/app/role/resource/method"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AuthingGateway_GetAppAuthByAppRoleResourceMethod_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AuthingGateway_GetAppRoleAuthByAppRoleResourceMethod_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AuthingGateway_GetAppAuthByAppRoleResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AuthingGateway_GetAppRoleAuthByAppRoleResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AuthingGateway_GetAppAuthByOtherAppRoleResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AuthingGateway_GetAppRoleAuthByOtherAppRoleResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppAuthByOtherAppRoleResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/other/app/role/resource/method"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppRoleAuthByOtherAppRoleResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/other/app/role/resource/method"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AuthingGateway_GetAppAuthByOtherAppRoleResourceMethod_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AuthingGateway_GetAppRoleAuthByOtherAppRoleResourceMethod_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AuthingGateway_GetAppAuthByOtherAppRoleResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AuthingGateway_GetAppRoleAuthByOtherAppRoleResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1901,43 +1901,43 @@ func RegisterAuthingGatewayHandlerClient(ctx context.Context, mux *runtime.Serve
 
 	})
 
-	mux.Handle("POST", pattern_AuthingGateway_GetAppAuthByAppUserResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AuthingGateway_GetAppUserAuthByAppUserResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppAuthByAppUserResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/app/user/resource/method"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppUserAuthByAppUserResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/app/user/resource/method"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AuthingGateway_GetAppAuthByAppUserResourceMethod_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AuthingGateway_GetAppUserAuthByAppUserResourceMethod_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AuthingGateway_GetAppAuthByAppUserResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AuthingGateway_GetAppUserAuthByAppUserResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AuthingGateway_GetAppAuthByOtherAppUserResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AuthingGateway_GetAppUserAuthByOtherAppUserResourceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppAuthByOtherAppUserResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/other/app/user/resource/method"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/authing.gateway.v1.AuthingGateway/GetAppUserAuthByOtherAppUserResourceMethod", runtime.WithHTTPPathPattern("/v1/get/app/auth/by/other/app/user/resource/method"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AuthingGateway_GetAppAuthByOtherAppUserResourceMethod_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AuthingGateway_GetAppUserAuthByOtherAppUserResourceMethod_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AuthingGateway_GetAppAuthByOtherAppUserResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AuthingGateway_GetAppUserAuthByOtherAppUserResourceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -2109,9 +2109,9 @@ var (
 
 	pattern_AuthingGateway_CreateAppRoleAuthForOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 2}, []string{"v1", "create", "app", "role", "auth", "for", "other"}, ""))
 
-	pattern_AuthingGateway_GetAppAuthByAppRoleResourceMethod_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 2, 2, 5, 2, 6, 2, 7}, []string{"v1", "get", "app", "auth", "by", "role", "resource", "method"}, ""))
+	pattern_AuthingGateway_GetAppRoleAuthByAppRoleResourceMethod_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 2, 2, 5, 2, 6, 2, 7}, []string{"v1", "get", "app", "auth", "by", "role", "resource", "method"}, ""))
 
-	pattern_AuthingGateway_GetAppAuthByOtherAppRoleResourceMethod_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2, 2, 6, 2, 7, 2, 8}, []string{"v1", "get", "app", "auth", "by", "other", "role", "resource", "method"}, ""))
+	pattern_AuthingGateway_GetAppRoleAuthByOtherAppRoleResourceMethod_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2, 2, 6, 2, 7, 2, 8}, []string{"v1", "get", "app", "auth", "by", "other", "role", "resource", "method"}, ""))
 
 	pattern_AuthingGateway_DeleteAppRoleAuth_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "delete", "app", "role", "auth"}, ""))
 
@@ -2119,9 +2119,9 @@ var (
 
 	pattern_AuthingGateway_CreateAppUserAuthForOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 2}, []string{"v1", "create", "app", "user", "auth", "for", "other"}, ""))
 
-	pattern_AuthingGateway_GetAppAuthByAppUserResourceMethod_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 2, 2, 5, 2, 6, 2, 7}, []string{"v1", "get", "app", "auth", "by", "user", "resource", "method"}, ""))
+	pattern_AuthingGateway_GetAppUserAuthByAppUserResourceMethod_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 2, 2, 5, 2, 6, 2, 7}, []string{"v1", "get", "app", "auth", "by", "user", "resource", "method"}, ""))
 
-	pattern_AuthingGateway_GetAppAuthByOtherAppUserResourceMethod_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2, 2, 6, 2, 7, 2, 8}, []string{"v1", "get", "app", "auth", "by", "other", "user", "resource", "method"}, ""))
+	pattern_AuthingGateway_GetAppUserAuthByOtherAppUserResourceMethod_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2, 2, 6, 2, 7, 2, 8}, []string{"v1", "get", "app", "auth", "by", "other", "user", "resource", "method"}, ""))
 
 	pattern_AuthingGateway_DeleteAppUserAuth_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "delete", "app", "user", "auth"}, ""))
 
@@ -2163,9 +2163,9 @@ var (
 
 	forward_AuthingGateway_CreateAppRoleAuthForOtherApp_0 = runtime.ForwardResponseMessage
 
-	forward_AuthingGateway_GetAppAuthByAppRoleResourceMethod_0 = runtime.ForwardResponseMessage
+	forward_AuthingGateway_GetAppRoleAuthByAppRoleResourceMethod_0 = runtime.ForwardResponseMessage
 
-	forward_AuthingGateway_GetAppAuthByOtherAppRoleResourceMethod_0 = runtime.ForwardResponseMessage
+	forward_AuthingGateway_GetAppRoleAuthByOtherAppRoleResourceMethod_0 = runtime.ForwardResponseMessage
 
 	forward_AuthingGateway_DeleteAppRoleAuth_0 = runtime.ForwardResponseMessage
 
@@ -2173,9 +2173,9 @@ var (
 
 	forward_AuthingGateway_CreateAppUserAuthForOtherApp_0 = runtime.ForwardResponseMessage
 
-	forward_AuthingGateway_GetAppAuthByAppUserResourceMethod_0 = runtime.ForwardResponseMessage
+	forward_AuthingGateway_GetAppUserAuthByAppUserResourceMethod_0 = runtime.ForwardResponseMessage
 
-	forward_AuthingGateway_GetAppAuthByOtherAppUserResourceMethod_0 = runtime.ForwardResponseMessage
+	forward_AuthingGateway_GetAppUserAuthByOtherAppUserResourceMethod_0 = runtime.ForwardResponseMessage
 
 	forward_AuthingGateway_DeleteAppUserAuth_0 = runtime.ForwardResponseMessage
 

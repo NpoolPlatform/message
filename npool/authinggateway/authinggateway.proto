@@ -84,13 +84,13 @@ service AuthingGateway {
             body: "*"
         };
     }
-    rpc GetAppAuthByAppRoleResourceMethod (GetAppAuthByAppRoleResourceMethodRequest) returns (GetAppAuthByAppRoleResourceMethodResponse) {
+    rpc GetAppRoleAuthByAppRoleResourceMethod (GetAppRoleAuthByAppRoleResourceMethodRequest) returns (GetAppRoleAuthByAppRoleResourceMethodResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/auth/by/app/role/resource/method"
             body: "*"
         };
     }
-    rpc GetAppAuthByOtherAppRoleResourceMethod (GetAppAuthByOtherAppRoleResourceMethodRequest) returns (GetAppAuthByOtherAppRoleResourceMethodResponse) {
+    rpc GetAppRoleAuthByOtherAppRoleResourceMethod (GetAppRoleAuthByOtherAppRoleResourceMethodRequest) returns (GetAppRoleAuthByOtherAppRoleResourceMethodResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/auth/by/other/app/role/resource/method"
             body: "*"
@@ -114,13 +114,13 @@ service AuthingGateway {
             body: "*"
         };
     }
-    rpc GetAppAuthByAppUserResourceMethod (GetAppAuthByAppUserResourceMethodRequest) returns (GetAppAuthByAppUserResourceMethodResponse) {
+    rpc GetAppUserAuthByAppUserResourceMethod (GetAppUserAuthByAppUserResourceMethodRequest) returns (GetAppUserAuthByAppUserResourceMethodResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/auth/by/app/user/resource/method"
             body: "*"
         };
     }
-    rpc GetAppAuthByOtherAppUserResourceMethod (GetAppAuthByOtherAppUserResourceMethodRequest) returns (GetAppAuthByOtherAppUserResourceMethodResponse) {
+    rpc GetAppUserAuthByOtherAppUserResourceMethod (GetAppUserAuthByOtherAppUserResourceMethodRequest) returns (GetAppUserAuthByOtherAppUserResourceMethodResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/auth/by/other/app/user/resource/method"
             body: "*"
@@ -306,25 +306,25 @@ message CreateAppRoleAuthForOtherAppResponse {
     Auth Info = 10;
 }
 
-message GetAppAuthByAppRoleResourceMethodRequest {
+message GetAppRoleAuthByAppRoleResourceMethodRequest {
     string AppID = 10;
     string RoleID = 20;
     string Resource = 30;
     string Method = 40;
 }
 
-message GetAppAuthByAppRoleResourceMethodResponse {
+message GetAppRoleAuthByAppRoleResourceMethodResponse {
     Auth Info = 10;
 }
 
-message GetAppAuthByOtherAppRoleResourceMethodRequest {
+message GetAppRoleAuthByOtherAppRoleResourceMethodRequest {
     string TargetAppID = 10;
     string RoleID = 20;
     string Resource = 30;
     string Method = 40;
 }
 
-message GetAppAuthByOtherAppRoleResourceMethodResponse {
+message GetAppRoleAuthByOtherAppRoleResourceMethodResponse {
     Auth Info = 10;
 }
 
@@ -361,23 +361,23 @@ message CreateAppUserAuthForOtherAppResponse {
     Auth Info = 10;
 }
 
-message GetAppAuthByAppUserResourceMethodRequest {
+message GetAppUserAuthByAppUserResourceMethodRequest {
     string AppID = 10;
     string Resource = 20;
     string Method = 30;
 }
 
-message GetAppAuthByAppUserResourceMethodResponse {
+message GetAppUserAuthByAppUserResourceMethodResponse {
     Auth Info = 10;
 }
 
-message GetAppAuthByOtherAppUserResourceMethodRequest {
+message GetAppUserAuthByOtherAppUserResourceMethodRequest {
     string TargetAppID = 10;
     string Resource = 20;
     string Method = 30;
 }
 
-message GetAppAuthByOtherAppUserResourceMethodResponse {
+message GetAppUserAuthByOtherAppUserResourceMethodResponse {
     Auth Info = 10;
 }
 
