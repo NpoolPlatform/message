@@ -363,8 +363,9 @@ message CreateAppUserAuthForOtherAppResponse {
 
 message GetAppUserAuthByAppUserResourceMethodRequest {
     string AppID = 10;
-    string Resource = 20;
-    string Method = 30;
+    string UserID = 20;
+    string Resource = 30;
+    string Method = 40;
 }
 
 message GetAppUserAuthByAppUserResourceMethodResponse {

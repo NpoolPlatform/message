@@ -1272,6 +1272,9 @@
         "AppID": {
           "type": "string"
         },
+        "UserID": {
+          "type": "string"
+        },
         "Resource": {
           "type": "string"
         },

@@ -677,6 +677,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | Resource | [string](#string) |  |  |
 | Method | [string](#string) |  |  |
 
@@ -1603,6 +1604,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | Resource | [string](#string) |  |  |
 | Method | [string](#string) |  |  |
 

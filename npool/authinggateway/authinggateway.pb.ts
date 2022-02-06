@@ -199,6 +199,7 @@ export type CreateAppUserAuthForOtherAppResponse = {
 
 export type GetAppUserAuthByAppUserResourceMethodRequest = {
   appID?: string
+  userID?: string
   resource?: string
   method?: string
 }
