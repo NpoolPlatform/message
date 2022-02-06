@@ -27,6 +27,8 @@
     - [CreateAppRoleForOtherAppResponse](#app.user.manager.v1.CreateAppRoleForOtherAppResponse)
     - [CreateAppRoleRequest](#app.user.manager.v1.CreateAppRoleRequest)
     - [CreateAppRoleResponse](#app.user.manager.v1.CreateAppRoleResponse)
+    - [CreateAppRoleUserForOtherAppRequest](#app.user.manager.v1.CreateAppRoleUserForOtherAppRequest)
+    - [CreateAppRoleUserForOtherAppResponse](#app.user.manager.v1.CreateAppRoleUserForOtherAppResponse)
     - [CreateAppRoleUserRequest](#app.user.manager.v1.CreateAppRoleUserRequest)
     - [CreateAppRoleUserResponse](#app.user.manager.v1.CreateAppRoleUserResponse)
     - [CreateAppUserControlRequest](#app.user.manager.v1.CreateAppUserControlRequest)
@@ -180,6 +182,8 @@
     - [CreateAppRoleForOtherAppResponse](#app.user.manager.v1.CreateAppRoleForOtherAppResponse)
     - [CreateAppRoleRequest](#app.user.manager.v1.CreateAppRoleRequest)
     - [CreateAppRoleResponse](#app.user.manager.v1.CreateAppRoleResponse)
+    - [CreateAppRoleUserForOtherAppRequest](#app.user.manager.v1.CreateAppRoleUserForOtherAppRequest)
+    - [CreateAppRoleUserForOtherAppResponse](#app.user.manager.v1.CreateAppRoleUserForOtherAppResponse)
     - [CreateAppRoleUserRequest](#app.user.manager.v1.CreateAppRoleUserRequest)
     - [CreateAppRoleUserResponse](#app.user.manager.v1.CreateAppRoleUserResponse)
     - [CreateAppUserControlRequest](#app.user.manager.v1.CreateAppUserControlRequest)
@@ -721,6 +725,37 @@
 
 
 
+<a name="app.user.manager.v1.CreateAppRoleUserForOtherAppRequest"></a>
+
+### CreateAppRoleUserForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [AppRoleUser](#app.user.manager.v1.AppRoleUser) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.CreateAppRoleUserForOtherAppResponse"></a>
+
+### CreateAppRoleUserForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppRoleUser](#app.user.manager.v1.AppRoleUser) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.CreateAppRoleUserRequest"></a>
 
 ### CreateAppRoleUserRequest
@@ -2712,6 +2747,7 @@
 | GetAppRolesByOtherApp | [GetAppRolesByOtherAppRequest](#app.user.manager.v1.GetAppRolesByOtherAppRequest) | [GetAppRolesByOtherAppResponse](#app.user.manager.v1.GetAppRolesByOtherAppResponse) |  |
 | UpdateAppRole | [UpdateAppRoleRequest](#app.user.manager.v1.UpdateAppRoleRequest) | [UpdateAppRoleResponse](#app.user.manager.v1.UpdateAppRoleResponse) |  |
 | CreateAppRoleUser | [CreateAppRoleUserRequest](#app.user.manager.v1.CreateAppRoleUserRequest) | [CreateAppRoleUserResponse](#app.user.manager.v1.CreateAppRoleUserResponse) |  |
+| CreateAppRoleUserForOtherApp | [CreateAppRoleUserForOtherAppRequest](#app.user.manager.v1.CreateAppRoleUserForOtherAppRequest) | [CreateAppRoleUserForOtherAppResponse](#app.user.manager.v1.CreateAppRoleUserForOtherAppResponse) |  |
 | GetAppRoleUser | [GetAppRoleUserRequest](#app.user.manager.v1.GetAppRoleUserRequest) | [GetAppRoleUserResponse](#app.user.manager.v1.GetAppRoleUserResponse) |  |
 | GetAppRoleUserByAppUser | [GetAppRoleUserByAppUserRequest](#app.user.manager.v1.GetAppRoleUserByAppUserRequest) | [GetAppRoleUserByAppUserResponse](#app.user.manager.v1.GetAppRoleUserByAppUserResponse) |  |
 | GetAppRoleUsersByAppRole | [GetAppRoleUsersByAppRoleRequest](#app.user.manager.v1.GetAppRoleUsersByAppRoleRequest) | [GetAppRoleUsersByAppRoleResponse](#app.user.manager.v1.GetAppRoleUsersByAppRoleResponse) |  |
@@ -3138,6 +3174,37 @@
 
 
 
+<a name="app.user.manager.v1.CreateAppRoleUserForOtherAppRequest"></a>
+
+### CreateAppRoleUserForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [AppRoleUser](#app.user.manager.v1.AppRoleUser) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.CreateAppRoleUserForOtherAppResponse"></a>
+
+### CreateAppRoleUserForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppRoleUser](#app.user.manager.v1.AppRoleUser) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.CreateAppRoleUserRequest"></a>
 
 ### CreateAppRoleUserRequest
@@ -5129,6 +5196,7 @@
 | GetAppRolesByOtherApp | [GetAppRolesByOtherAppRequest](#app.user.manager.v1.GetAppRolesByOtherAppRequest) | [GetAppRolesByOtherAppResponse](#app.user.manager.v1.GetAppRolesByOtherAppResponse) |  |
 | UpdateAppRole | [UpdateAppRoleRequest](#app.user.manager.v1.UpdateAppRoleRequest) | [UpdateAppRoleResponse](#app.user.manager.v1.UpdateAppRoleResponse) |  |
 | CreateAppRoleUser | [CreateAppRoleUserRequest](#app.user.manager.v1.CreateAppRoleUserRequest) | [CreateAppRoleUserResponse](#app.user.manager.v1.CreateAppRoleUserResponse) |  |
+| CreateAppRoleUserForOtherApp | [CreateAppRoleUserForOtherAppRequest](#app.user.manager.v1.CreateAppRoleUserForOtherAppRequest) | [CreateAppRoleUserForOtherAppResponse](#app.user.manager.v1.CreateAppRoleUserForOtherAppResponse) |  |
 | GetAppRoleUser | [GetAppRoleUserRequest](#app.user.manager.v1.GetAppRoleUserRequest) | [GetAppRoleUserResponse](#app.user.manager.v1.GetAppRoleUserResponse) |  |
 | GetAppRoleUserByAppUser | [GetAppRoleUserByAppUserRequest](#app.user.manager.v1.GetAppRoleUserByAppUserRequest) | [GetAppRoleUserByAppUserResponse](#app.user.manager.v1.GetAppRoleUserByAppUserResponse) |  |
 | GetAppRoleUsersByAppRole | [GetAppRoleUsersByAppRoleRequest](#app.user.manager.v1.GetAppRoleUsersByAppRoleRequest) | [GetAppRoleUsersByAppRoleResponse](#app.user.manager.v1.GetAppRoleUsersByAppRoleResponse) |  |
