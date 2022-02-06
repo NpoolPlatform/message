@@ -28,6 +28,7 @@ type AuthingGatewayClient interface {
 	AuthByApp(ctx context.Context, in *AuthByAppRequest, opts ...grpc.CallOption) (*AuthByAppResponse, error)
 	AuthByAppRoleUser(ctx context.Context, in *AuthByAppRoleUserRequest, opts ...grpc.CallOption) (*AuthByAppRoleUserResponse, error)
 	GetAuthHistories(ctx context.Context, in *GetAuthHistoriesRequest, opts ...grpc.CallOption) (*GetAuthHistoriesResponse, error)
+	GetAuthHistoriesByOtherApp(ctx context.Context, in *GetAuthHistoriesByOtherAppRequest, opts ...grpc.CallOption) (*GetAuthHistoriesByOtherAppResponse, error)
 }
 
 type authingGatewayClient struct {
@@ -74,6 +75,15 @@ func (c *authingGatewayClient) GetAuthHistories(ctx context.Context, in *GetAuth
 	return out, nil
 }
 
+func (c *authingGatewayClient) GetAuthHistoriesByOtherApp(ctx context.Context, in *GetAuthHistoriesByOtherAppRequest, opts ...grpc.CallOption) (*GetAuthHistoriesByOtherAppResponse, error) {
+	out := new(GetAuthHistoriesByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/GetAuthHistoriesByOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AuthingGatewayServer is the server API for AuthingGateway service.
 // All implementations must embed UnimplementedAuthingGatewayServer
 // for forward compatibility
@@ -82,6 +92,7 @@ type AuthingGatewayServer interface {
 	AuthByApp(context.Context, *AuthByAppRequest) (*AuthByAppResponse, error)
 	AuthByAppRoleUser(context.Context, *AuthByAppRoleUserRequest) (*AuthByAppRoleUserResponse, error)
 	GetAuthHistories(context.Context, *GetAuthHistoriesRequest) (*GetAuthHistoriesResponse, error)
+	GetAuthHistoriesByOtherApp(context.Context, *GetAuthHistoriesByOtherAppRequest) (*GetAuthHistoriesByOtherAppResponse, error)
 	mustEmbedUnimplementedAuthingGatewayServer()
 }
 
@@ -100,6 +111,9 @@ func (UnimplementedAuthingGatewayServer) AuthByAppRoleUser(context.Context, *Aut
 }
 func (UnimplementedAuthingGatewayServer) GetAuthHistories(context.Context, *GetAuthHistoriesRequest) (*GetAuthHistoriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAuthHistories not implemented")
+}
+func (UnimplementedAuthingGatewayServer) GetAuthHistoriesByOtherApp(context.Context, *GetAuthHistoriesByOtherAppRequest) (*GetAuthHistoriesByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAuthHistoriesByOtherApp not implemented")
 }
 func (UnimplementedAuthingGatewayServer) mustEmbedUnimplementedAuthingGatewayServer() {}
 
@@ -186,6 +200,24 @@ func _AuthingGateway_GetAuthHistories_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AuthingGateway_GetAuthHistoriesByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAuthHistoriesByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).GetAuthHistoriesByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/GetAuthHistoriesByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).GetAuthHistoriesByOtherApp(ctx, req.(*GetAuthHistoriesByOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AuthingGateway_ServiceDesc is the grpc.ServiceDesc for AuthingGateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -208,6 +240,10 @@ var AuthingGateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAuthHistories",
 			Handler:    _AuthingGateway_GetAuthHistories_Handler,
+		},
+		{
+			MethodName: "GetAuthHistoriesByOtherApp",
+			Handler:    _AuthingGateway_GetAuthHistoriesByOtherApp_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

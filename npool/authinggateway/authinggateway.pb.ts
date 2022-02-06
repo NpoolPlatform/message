@@ -48,6 +48,14 @@ export type GetAuthHistoriesResponse = {
   infos?: AuthHistory[]
 }
 
+export type GetAuthHistoriesByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetAuthHistoriesByOtherAppResponse = {
+  infos?: AuthHistory[]
+}
+
 export class AuthingGateway {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -60,5 +68,8 @@ export class AuthingGateway {
   }
   static GetAuthHistories(req: GetAuthHistoriesRequest, initReq?: fm.InitReq): Promise<GetAuthHistoriesResponse> {
     return fm.fetchReq<GetAuthHistoriesRequest, GetAuthHistoriesResponse>(`/v1/get/auth/histories`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAuthHistoriesByOtherApp(req: GetAuthHistoriesByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAuthHistoriesByOtherAppResponse> {
+    return fm.fetchReq<GetAuthHistoriesByOtherAppRequest, GetAuthHistoriesByOtherAppResponse>(`/v1/get/auth/histories/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

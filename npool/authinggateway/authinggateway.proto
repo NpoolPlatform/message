@@ -35,6 +35,12 @@ service AuthingGateway {
             body: "*"
         };
     }
+    rpc GetAuthHistoriesByOtherApp (GetAuthHistoriesByOtherAppRequest) returns (GetAuthHistoriesByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/auth/histories/by/other/app"
+            body: "*"
+        };
+    }
 }
 
 message AuthByAppRequest {
@@ -75,5 +81,13 @@ message GetAuthHistoriesRequest {
 }
 
 message GetAuthHistoriesResponse {
+    repeated AuthHistory Infos = 10;
+}
+
+message GetAuthHistoriesByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetAuthHistoriesByOtherAppResponse {
     repeated AuthHistory Infos = 10;
 }

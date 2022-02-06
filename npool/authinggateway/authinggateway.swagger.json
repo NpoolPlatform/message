@@ -107,6 +107,38 @@
         ]
       }
     },
+    "/v1/get/auth/histories/by/other/app": {
+      "post": {
+        "operationId": "AuthingGateway_GetAuthHistoriesByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAuthHistoriesByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAuthHistoriesByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AuthingGateway"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "operationId": "AuthingGateway_Version",
@@ -248,6 +280,25 @@
         "CreateAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1GetAuthHistoriesByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAuthHistoriesByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AuthHistory"
+          }
         }
       }
     },

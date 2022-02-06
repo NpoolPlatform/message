@@ -9,6 +9,8 @@
     - [AuthByAppRoleUserRequest](#authing.gateway.v1.AuthByAppRoleUserRequest)
     - [AuthByAppRoleUserResponse](#authing.gateway.v1.AuthByAppRoleUserResponse)
     - [AuthHistory](#authing.gateway.v1.AuthHistory)
+    - [GetAuthHistoriesByOtherAppRequest](#authing.gateway.v1.GetAuthHistoriesByOtherAppRequest)
+    - [GetAuthHistoriesByOtherAppResponse](#authing.gateway.v1.GetAuthHistoriesByOtherAppResponse)
     - [GetAuthHistoriesRequest](#authing.gateway.v1.GetAuthHistoriesRequest)
     - [GetAuthHistoriesResponse](#authing.gateway.v1.GetAuthHistoriesResponse)
   
@@ -20,6 +22,8 @@
     - [AuthByAppRoleUserRequest](#authing.gateway.v1.AuthByAppRoleUserRequest)
     - [AuthByAppRoleUserResponse](#authing.gateway.v1.AuthByAppRoleUserResponse)
     - [AuthHistory](#authing.gateway.v1.AuthHistory)
+    - [GetAuthHistoriesByOtherAppRequest](#authing.gateway.v1.GetAuthHistoriesByOtherAppRequest)
+    - [GetAuthHistoriesByOtherAppResponse](#authing.gateway.v1.GetAuthHistoriesByOtherAppResponse)
     - [GetAuthHistoriesRequest](#authing.gateway.v1.GetAuthHistoriesRequest)
     - [GetAuthHistoriesResponse](#authing.gateway.v1.GetAuthHistoriesResponse)
   
@@ -123,6 +127,36 @@
 
 
 
+<a name="authing.gateway.v1.GetAuthHistoriesByOtherAppRequest"></a>
+
+### GetAuthHistoriesByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="authing.gateway.v1.GetAuthHistoriesByOtherAppResponse"></a>
+
+### GetAuthHistoriesByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AuthHistory](#authing.gateway.v1.AuthHistory) | repeated |  |
+
+
+
+
+
+
 <a name="authing.gateway.v1.GetAuthHistoriesRequest"></a>
 
 ### GetAuthHistoriesRequest
@@ -171,6 +205,7 @@
 | AuthByApp | [AuthByAppRequest](#authing.gateway.v1.AuthByAppRequest) | [AuthByAppResponse](#authing.gateway.v1.AuthByAppResponse) |  |
 | AuthByAppRoleUser | [AuthByAppRoleUserRequest](#authing.gateway.v1.AuthByAppRoleUserRequest) | [AuthByAppRoleUserResponse](#authing.gateway.v1.AuthByAppRoleUserResponse) |  |
 | GetAuthHistories | [GetAuthHistoriesRequest](#authing.gateway.v1.GetAuthHistoriesRequest) | [GetAuthHistoriesResponse](#authing.gateway.v1.GetAuthHistoriesResponse) |  |
+| GetAuthHistoriesByOtherApp | [GetAuthHistoriesByOtherAppRequest](#authing.gateway.v1.GetAuthHistoriesByOtherAppRequest) | [GetAuthHistoriesByOtherAppResponse](#authing.gateway.v1.GetAuthHistoriesByOtherAppResponse) |  |
 
  
 
@@ -270,6 +305,36 @@
 
 
 
+<a name="authing.gateway.v1.GetAuthHistoriesByOtherAppRequest"></a>
+
+### GetAuthHistoriesByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="authing.gateway.v1.GetAuthHistoriesByOtherAppResponse"></a>
+
+### GetAuthHistoriesByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AuthHistory](#authing.gateway.v1.AuthHistory) | repeated |  |
+
+
+
+
+
+
 <a name="authing.gateway.v1.GetAuthHistoriesRequest"></a>
 
 ### GetAuthHistoriesRequest
@@ -318,6 +383,7 @@
 | AuthByApp | [AuthByAppRequest](#authing.gateway.v1.AuthByAppRequest) | [AuthByAppResponse](#authing.gateway.v1.AuthByAppResponse) |  |
 | AuthByAppRoleUser | [AuthByAppRoleUserRequest](#authing.gateway.v1.AuthByAppRoleUserRequest) | [AuthByAppRoleUserResponse](#authing.gateway.v1.AuthByAppRoleUserResponse) |  |
 | GetAuthHistories | [GetAuthHistoriesRequest](#authing.gateway.v1.GetAuthHistoriesRequest) | [GetAuthHistoriesResponse](#authing.gateway.v1.GetAuthHistoriesResponse) |  |
+| GetAuthHistoriesByOtherApp | [GetAuthHistoriesByOtherAppRequest](#authing.gateway.v1.GetAuthHistoriesByOtherAppRequest) | [GetAuthHistoriesByOtherAppResponse](#authing.gateway.v1.GetAuthHistoriesByOtherAppResponse) |  |
 
  
 
