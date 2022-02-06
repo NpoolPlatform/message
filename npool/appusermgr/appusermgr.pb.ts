@@ -443,7 +443,6 @@ export type UpdateAppUserControlResponse = {
 export type AppRole = {
   id?: string
   appID?: string
-  userID?: string
   createdBy?: string
   role?: string
   description?: string
@@ -475,10 +474,21 @@ export type GetGenesisAppRoleUsersByOtherAppResponse = {
 }
 
 export type CreateAppRoleRequest = {
+  userID?: string
   info?: AppRole
 }
 
 export type CreateAppRoleResponse = {
+  info?: AppRole
+}
+
+export type CreateAppRoleForOtherAppRequest = {
+  targetAppID?: string
+  userID?: string
+  info?: AppRole
+}
+
+export type CreateAppRoleForOtherAppResponse = {
   info?: AppRole
 }
 
@@ -505,6 +515,16 @@ export type GetAppRolesByAppRequest = {
 }
 
 export type GetAppRolesByAppResponse = {
+  infos?: AppRole[]
+  total?: number
+}
+
+export type GetAppRolesByOtherAppRequest = {
+  targetAppID?: string
+  pageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetAppRolesByOtherAppResponse = {
   infos?: AppRole[]
   total?: number
 }
@@ -815,6 +835,9 @@ export class AppUserManager {
   static CreateAppRole(req: CreateAppRoleRequest, initReq?: fm.InitReq): Promise<CreateAppRoleResponse> {
     return fm.fetchReq<CreateAppRoleRequest, CreateAppRoleResponse>(`/v1/create/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateAppRoleForOtherApp(req: CreateAppRoleForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppRoleForOtherAppResponse> {
+    return fm.fetchReq<CreateAppRoleForOtherAppRequest, CreateAppRoleForOtherAppResponse>(`/v1/create/app/role/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetAppRole(req: GetAppRoleRequest, initReq?: fm.InitReq): Promise<GetAppRoleResponse> {
     return fm.fetchReq<GetAppRoleRequest, GetAppRoleResponse>(`/v1/get/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -823,6 +846,9 @@ export class AppUserManager {
   }
   static GetAppRolesByApp(req: GetAppRolesByAppRequest, initReq?: fm.InitReq): Promise<GetAppRolesByAppResponse> {
     return fm.fetchReq<GetAppRolesByAppRequest, GetAppRolesByAppResponse>(`/v1/get/app/roles/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppRolesByOtherApp(req: GetAppRolesByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppRolesByOtherAppResponse> {
+    return fm.fetchReq<GetAppRolesByOtherAppRequest, GetAppRolesByOtherAppResponse>(`/v1/get/app/roles/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateAppRole(req: UpdateAppRoleRequest, initReq?: fm.InitReq): Promise<UpdateAppRoleResponse> {
     return fm.fetchReq<UpdateAppRoleRequest, UpdateAppRoleResponse>(`/v1/update/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})

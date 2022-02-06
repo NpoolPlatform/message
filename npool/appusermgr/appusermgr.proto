@@ -311,6 +311,12 @@ service AppUserManager {
             body: "*"
         };
     }
+    rpc CreateAppRoleForOtherApp (CreateAppRoleForOtherAppRequest) returns (CreateAppRoleForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/role/for/other/app"
+            body: "*"
+        };
+    }
     rpc GetAppRole (GetAppRoleRequest) returns (GetAppRoleResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/role"
@@ -326,6 +332,12 @@ service AppUserManager {
     rpc GetAppRolesByApp (GetAppRolesByAppRequest) returns (GetAppRolesByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/roles/by/app"
+            body: "*"
+        };
+    }
+    rpc GetAppRolesByOtherApp (GetAppRolesByOtherAppRequest) returns (GetAppRolesByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/roles/by/other/app"
             body: "*"
         };
     }
@@ -849,11 +861,10 @@ message UpdateAppUserControlResponse {
 message AppRole {
     string ID = 10;
     string AppID = 20;
-    string UserID = 30;
-    string CreatedBy = 40;
-    string Role = 50;
-    string Description = 60;
-    bool Default = 70;
+    string CreatedBy = 30;
+    string Role = 40;
+    string Description = 50;
+    bool Default = 60;
 }
 
 message CreateGenesisRoleRequest {
@@ -881,10 +892,21 @@ message GetGenesisAppRoleUsersByOtherAppResponse {
 }
 
 message CreateAppRoleRequest {
-    AppRole Info = 10;
+    string UserID = 10;
+    AppRole Info = 20;
 }
 
 message CreateAppRoleResponse {
+    AppRole Info = 10;
+}
+
+message CreateAppRoleForOtherAppRequest {
+    string TargetAppID = 10;
+    string UserID = 20;
+    AppRole Info = 30;
+}
+
+message CreateAppRoleForOtherAppResponse {
     AppRole Info = 10;
 }
 
@@ -911,6 +933,16 @@ message GetAppRolesByAppRequest {
 }
 
 message GetAppRolesByAppResponse {
+    repeated AppRole Infos = 10;
+    uint32 Total = 20;
+}
+
+message GetAppRolesByOtherAppRequest {
+    string TargetAppID = 10;
+    npool.v1.PageInfo PageInfo = 20;
+}
+
+message GetAppRolesByOtherAppResponse {
     repeated AppRole Infos = 10;
     uint32 Total = 20;
 }
