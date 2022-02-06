@@ -260,7 +260,7 @@ message GetAppAuthByAppResourceMethodRequest {
 }
 
 message GetAppAuthByAppResourceMethodResponse {
-    repeated Auth Infos = 10;
+    Auth Info = 10;
 }
 
 message GetAppAuthByOtherAppResourceMethodRequest {
