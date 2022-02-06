@@ -49,7 +49,7 @@ export type GetAuthHistoriesResponse = {
 }
 
 export type GetAuthHistoriesByAppRequest = {
-  targetAppID?: string
+  appID?: string
 }
 
 export type GetAuthHistoriesByAppResponse = {

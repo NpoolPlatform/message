@@ -91,7 +91,7 @@ message GetAuthHistoriesResponse {
 }
 
 message GetAuthHistoriesByAppRequest {
-    string TargetAppID = 10;
+    string AppID = 10;
 }
 
 message GetAuthHistoriesByAppResponse {

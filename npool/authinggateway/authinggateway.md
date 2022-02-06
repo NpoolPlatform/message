@@ -139,7 +139,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
 
 
 
@@ -348,7 +348,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
 
 
 

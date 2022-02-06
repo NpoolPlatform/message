@@ -318,7 +318,7 @@
     "v1GetAuthHistoriesByAppRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
+        "AppID": {
           "type": "string"
         }
       }
