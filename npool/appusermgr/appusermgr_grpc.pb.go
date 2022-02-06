@@ -84,6 +84,8 @@ type AppUserManagerClient interface {
 	GetAppRoleUserByAppUser(ctx context.Context, in *GetAppRoleUserByAppUserRequest, opts ...grpc.CallOption) (*GetAppRoleUserByAppUserResponse, error)
 	GetAppRoleUsersByAppRole(ctx context.Context, in *GetAppRoleUsersByAppRoleRequest, opts ...grpc.CallOption) (*GetAppRoleUsersByAppRoleResponse, error)
 	GetAppRoleUsersByOtherAppRole(ctx context.Context, in *GetAppRoleUsersByOtherAppRoleRequest, opts ...grpc.CallOption) (*GetAppRoleUsersByOtherAppRoleResponse, error)
+	GetAppRoleUsersByApp(ctx context.Context, in *GetAppRoleUsersByAppRequest, opts ...grpc.CallOption) (*GetAppRoleUsersByAppResponse, error)
+	GetAppRoleUsersByOtherApp(ctx context.Context, in *GetAppRoleUsersByOtherAppRequest, opts ...grpc.CallOption) (*GetAppRoleUsersByOtherAppResponse, error)
 	GetUserRolesByAppUser(ctx context.Context, in *GetUserRolesByAppUserRequest, opts ...grpc.CallOption) (*GetUserRolesByAppUserResponse, error)
 	DeleteAppRoleUser(ctx context.Context, in *DeleteAppRoleUserRequest, opts ...grpc.CallOption) (*DeleteAppRoleUserResponse, error)
 	GetAppUserInfo(ctx context.Context, in *GetAppUserInfoRequest, opts ...grpc.CallOption) (*GetAppUserInfoResponse, error)
@@ -641,6 +643,24 @@ func (c *appUserManagerClient) GetAppRoleUsersByOtherAppRole(ctx context.Context
 	return out, nil
 }
 
+func (c *appUserManagerClient) GetAppRoleUsersByApp(ctx context.Context, in *GetAppRoleUsersByAppRequest, opts ...grpc.CallOption) (*GetAppRoleUsersByAppResponse, error) {
+	out := new(GetAppRoleUsersByAppResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetAppRoleUsersByOtherApp(ctx context.Context, in *GetAppRoleUsersByOtherAppRequest, opts ...grpc.CallOption) (*GetAppRoleUsersByOtherAppResponse, error) {
+	out := new(GetAppRoleUsersByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *appUserManagerClient) GetUserRolesByAppUser(ctx context.Context, in *GetUserRolesByAppUserRequest, opts ...grpc.CallOption) (*GetUserRolesByAppUserResponse, error) {
 	out := new(GetUserRolesByAppUserResponse)
 	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetUserRolesByAppUser", in, out, opts...)
@@ -768,6 +788,8 @@ type AppUserManagerServer interface {
 	GetAppRoleUserByAppUser(context.Context, *GetAppRoleUserByAppUserRequest) (*GetAppRoleUserByAppUserResponse, error)
 	GetAppRoleUsersByAppRole(context.Context, *GetAppRoleUsersByAppRoleRequest) (*GetAppRoleUsersByAppRoleResponse, error)
 	GetAppRoleUsersByOtherAppRole(context.Context, *GetAppRoleUsersByOtherAppRoleRequest) (*GetAppRoleUsersByOtherAppRoleResponse, error)
+	GetAppRoleUsersByApp(context.Context, *GetAppRoleUsersByAppRequest) (*GetAppRoleUsersByAppResponse, error)
+	GetAppRoleUsersByOtherApp(context.Context, *GetAppRoleUsersByOtherAppRequest) (*GetAppRoleUsersByOtherAppResponse, error)
 	GetUserRolesByAppUser(context.Context, *GetUserRolesByAppUserRequest) (*GetUserRolesByAppUserResponse, error)
 	DeleteAppRoleUser(context.Context, *DeleteAppRoleUserRequest) (*DeleteAppRoleUserResponse, error)
 	GetAppUserInfo(context.Context, *GetAppUserInfoRequest) (*GetAppUserInfoResponse, error)
@@ -961,6 +983,12 @@ func (UnimplementedAppUserManagerServer) GetAppRoleUsersByAppRole(context.Contex
 }
 func (UnimplementedAppUserManagerServer) GetAppRoleUsersByOtherAppRole(context.Context, *GetAppRoleUsersByOtherAppRoleRequest) (*GetAppRoleUsersByOtherAppRoleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppRoleUsersByOtherAppRole not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppRoleUsersByApp(context.Context, *GetAppRoleUsersByAppRequest) (*GetAppRoleUsersByAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppRoleUsersByApp not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppRoleUsersByOtherApp(context.Context, *GetAppRoleUsersByOtherAppRequest) (*GetAppRoleUsersByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppRoleUsersByOtherApp not implemented")
 }
 func (UnimplementedAppUserManagerServer) GetUserRolesByAppUser(context.Context, *GetUserRolesByAppUserRequest) (*GetUserRolesByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserRolesByAppUser not implemented")
@@ -2076,6 +2104,42 @@ func _AppUserManager_GetAppRoleUsersByOtherAppRole_Handler(srv interface{}, ctx 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AppUserManager_GetAppRoleUsersByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppRoleUsersByAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppRoleUsersByApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppRoleUsersByApp(ctx, req.(*GetAppRoleUsersByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_GetAppRoleUsersByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppRoleUsersByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppRoleUsersByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppRoleUsersByOtherApp(ctx, req.(*GetAppRoleUsersByOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AppUserManager_GetUserRolesByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserRolesByAppUserRequest)
 	if err := dec(in); err != nil {
@@ -2448,6 +2512,14 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppRoleUsersByOtherAppRole",
 			Handler:    _AppUserManager_GetAppRoleUsersByOtherAppRole_Handler,
+		},
+		{
+			MethodName: "GetAppRoleUsersByApp",
+			Handler:    _AppUserManager_GetAppRoleUsersByApp_Handler,
+		},
+		{
+			MethodName: "GetAppRoleUsersByOtherApp",
+			Handler:    _AppUserManager_GetAppRoleUsersByOtherApp_Handler,
 		},
 		{
 			MethodName: "GetUserRolesByAppUser",

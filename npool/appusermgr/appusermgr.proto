@@ -378,6 +378,18 @@ service AppUserManager {
             body: "*"
         };
     }
+    rpc GetAppRoleUsersByApp (GetAppRoleUsersByAppRequest) returns (GetAppRoleUsersByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/role/users/by/app"
+            body: "*"
+        };
+    }
+    rpc GetAppRoleUsersByOtherApp (GetAppRoleUsersByOtherAppRequest) returns (GetAppRoleUsersByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/role/users/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetUserRolesByAppUser (GetUserRolesByAppUserRequest) returns (GetUserRolesByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/roles/by/app/user"
@@ -1017,6 +1029,26 @@ message GetAppRoleUsersByOtherAppRoleRequest {
 }
 
 message GetAppRoleUsersByOtherAppRoleResponse {
+    repeated AppRoleUser Infos = 10;
+    uint32 Total = 20;
+}
+
+message GetAppRoleUsersByAppRequest {
+    string AppID = 10;
+    npool.v1.PageInfo PageInfo = 20;
+}
+
+message GetAppRoleUsersByAppResponse {
+    repeated AppRoleUser Infos = 10;
+    uint32 Total = 20;
+}
+
+message GetAppRoleUsersByOtherAppRequest {
+    string TargetAppID = 10;
+    npool.v1.PageInfo PageInfo = 20;
+}
+
+message GetAppRoleUsersByOtherAppResponse {
     repeated AppRoleUser Infos = 10;
     uint32 Total = 20;
 }

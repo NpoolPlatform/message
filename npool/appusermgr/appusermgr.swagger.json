@@ -843,6 +843,38 @@
         ]
       }
     },
+    "/v1/get/app/role/users/by/app": {
+      "post": {
+        "operationId": "AppUserManager_GetAppRoleUsersByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUsersByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUsersByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/get/app/role/users/by/app/role": {
       "post": {
         "operationId": "AppUserManager_GetAppRoleUsersByAppRole",
@@ -867,6 +899,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppRoleUsersByAppRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/role/users/by/other/app": {
+      "post": {
+        "operationId": "AppUserManager_GetAppRoleUsersByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUsersByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUsersByOtherAppRequest"
             }
           }
         ],
@@ -2984,6 +3048,32 @@
         }
       }
     },
+    "v1GetAppRoleUsersByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppRoleUsersByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppRoleUser"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetAppRoleUsersByAppRoleRequest": {
       "type": "object",
       "properties": {
@@ -2999,6 +3089,32 @@
       }
     },
     "v1GetAppRoleUsersByAppRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppRoleUser"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppRoleUsersByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppRoleUsersByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {
