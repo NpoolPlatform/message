@@ -319,7 +319,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppAuth](#authing.gateway.v1.AppAuth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
@@ -380,7 +380,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppRoleAuth](#authing.gateway.v1.AppRoleAuth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
@@ -411,7 +411,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppUserAuth](#authing.gateway.v1.AppUserAuth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
@@ -441,7 +441,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppUserAuth](#authing.gateway.v1.AppUserAuth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
@@ -1245,7 +1245,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppAuth](#authing.gateway.v1.AppAuth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
@@ -1306,7 +1306,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppRoleAuth](#authing.gateway.v1.AppRoleAuth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
@@ -1337,7 +1337,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppUserAuth](#authing.gateway.v1.AppUserAuth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
@@ -1367,7 +1367,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppUserAuth](#authing.gateway.v1.AppUserAuth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 

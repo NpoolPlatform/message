@@ -250,7 +250,7 @@ message CreateAppAuthForOtherAppRequest {
 }
 
 message CreateAppAuthForOtherAppResponse {
-    AppAuth Info = 10;
+    Auth Info = 10;
 }
 
 message GetAppAuthByAppResourceMethodRequest {
@@ -294,7 +294,7 @@ message CreateAppRoleAuthRequest {
 }
 
 message CreateAppRoleAuthResponse {
-    AppRoleAuth Info = 10;
+    Auth Info = 10;
 }
 
 message CreateAppRoleAuthForOtherAppRequest {
@@ -349,7 +349,7 @@ message CreateAppUserAuthRequest {
 }
 
 message CreateAppUserAuthResponse {
-    AppUserAuth Info = 10;
+    Auth Info = 10;
 }
 
 message CreateAppUserAuthForOtherAppRequest {
@@ -358,7 +358,7 @@ message CreateAppUserAuthForOtherAppRequest {
 }
 
 message CreateAppUserAuthForOtherAppResponse {
-    AppUserAuth Info = 10;
+    Auth Info = 10;
 }
 
 message GetAppAuthByAppUserResourceMethodRequest {

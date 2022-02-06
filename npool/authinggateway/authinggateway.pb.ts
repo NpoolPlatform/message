@@ -86,7 +86,7 @@ export type CreateAppAuthForOtherAppRequest = {
 }
 
 export type CreateAppAuthForOtherAppResponse = {
-  info?: AppAuth
+  info?: Auth
 }
 
 export type GetAppAuthByAppResourceMethodRequest = {
@@ -130,7 +130,7 @@ export type CreateAppRoleAuthRequest = {
 }
 
 export type CreateAppRoleAuthResponse = {
-  info?: AppRoleAuth
+  info?: Auth
 }
 
 export type CreateAppRoleAuthForOtherAppRequest = {
@@ -185,7 +185,7 @@ export type CreateAppUserAuthRequest = {
 }
 
 export type CreateAppUserAuthResponse = {
-  info?: AppUserAuth
+  info?: Auth
 }
 
 export type CreateAppUserAuthForOtherAppRequest = {
@@ -194,7 +194,7 @@ export type CreateAppUserAuthForOtherAppRequest = {
 }
 
 export type CreateAppUserAuthForOtherAppResponse = {
-  info?: AppUserAuth
+  info?: Auth
 }
 
 export type GetAppAuthByAppUserResourceMethodRequest = {

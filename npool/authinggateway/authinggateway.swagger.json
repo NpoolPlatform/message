@@ -1050,7 +1050,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppAuth"
+          "$ref": "#/definitions/v1Auth"
         }
       }
     },
@@ -1085,7 +1085,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppRoleAuth"
+          "$ref": "#/definitions/v1Auth"
         }
       }
     },
@@ -1104,7 +1104,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppUserAuth"
+          "$ref": "#/definitions/v1Auth"
         }
       }
     },
@@ -1120,7 +1120,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppUserAuth"
+          "$ref": "#/definitions/v1Auth"
         }
       }
     },
