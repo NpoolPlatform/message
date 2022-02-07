@@ -203,14 +203,14 @@
         ]
       }
     },
-    "/v1/create/app/role/user/for/other/app": {
+    "/v1/create/app/role/user/for/other/app/user": {
       "post": {
-        "operationId": "AppUserManager_CreateAppRoleUserForOtherApp",
+        "operationId": "AppUserManager_CreateAppRoleUserForOtherAppUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAppRoleUserForOtherAppResponse"
+              "$ref": "#/definitions/v1CreateAppRoleUserForOtherAppUserResponse"
             }
           },
           "default": {
@@ -226,7 +226,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAppRoleUserForOtherAppRequest"
+              "$ref": "#/definitions/v1CreateAppRoleUserForOtherAppUserRequest"
             }
           }
         ],
@@ -2668,10 +2668,13 @@
         }
       }
     },
-    "v1CreateAppRoleUserForOtherAppRequest": {
+    "v1CreateAppRoleUserForOtherAppUserRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
           "type": "string"
         },
         "Info": {
@@ -2679,7 +2682,7 @@
         }
       }
     },
-    "v1CreateAppRoleUserForOtherAppResponse": {
+    "v1CreateAppRoleUserForOtherAppUserResponse": {
       "type": "object",
       "properties": {
         "Info": {

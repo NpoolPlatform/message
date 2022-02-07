@@ -1936,8 +1936,8 @@ func local_request_AppUserManager_CreateAppRoleUser_0(ctx context.Context, marsh
 
 }
 
-func request_AppUserManager_CreateAppRoleUserForOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateAppRoleUserForOtherAppRequest
+func request_AppUserManager_CreateAppRoleUserForOtherAppUser_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppRoleUserForOtherAppUserRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -1948,13 +1948,13 @@ func request_AppUserManager_CreateAppRoleUserForOtherApp_0(ctx context.Context, 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateAppRoleUserForOtherApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateAppRoleUserForOtherAppUser(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_AppUserManager_CreateAppRoleUserForOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateAppRoleUserForOtherAppRequest
+func local_request_AppUserManager_CreateAppRoleUserForOtherAppUser_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppRoleUserForOtherAppUserRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -1965,7 +1965,7 @@ func local_request_AppUserManager_CreateAppRoleUserForOtherApp_0(ctx context.Con
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateAppRoleUserForOtherApp(ctx, &protoReq)
+	msg, err := server.CreateAppRoleUserForOtherAppUser(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -3706,18 +3706,18 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 
 	})
 
-	mux.Handle("POST", pattern_AppUserManager_CreateAppRoleUserForOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserManager_CreateAppRoleUserForOtherAppUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppRoleUserForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/role/user/for/other/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppRoleUserForOtherAppUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user/for/other/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserManager_CreateAppRoleUserForOtherApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppUserManager_CreateAppRoleUserForOtherAppUser_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3725,7 +3725,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 			return
 		}
 
-		forward_AppUserManager_CreateAppRoleUserForOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserManager_CreateAppRoleUserForOtherAppUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -5189,23 +5189,23 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 
 	})
 
-	mux.Handle("POST", pattern_AppUserManager_CreateAppRoleUserForOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserManager_CreateAppRoleUserForOtherAppUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppRoleUserForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/role/user/for/other/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppRoleUserForOtherAppUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user/for/other/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserManager_CreateAppRoleUserForOtherApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppUserManager_CreateAppRoleUserForOtherAppUser_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserManager_CreateAppRoleUserForOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserManager_CreateAppRoleUserForOtherAppUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -5585,7 +5585,7 @@ var (
 
 	pattern_AppUserManager_CreateAppRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "create", "app", "role", "user"}, ""))
 
-	pattern_AppUserManager_CreateAppRoleUserForOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 2}, []string{"v1", "create", "app", "role", "user", "for", "other"}, ""))
+	pattern_AppUserManager_CreateAppRoleUserForOtherAppUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 2, 2, 4}, []string{"v1", "create", "app", "role", "user", "for", "other"}, ""))
 
 	pattern_AppUserManager_GetAppRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "app", "role", "user"}, ""))
 
@@ -5727,7 +5727,7 @@ var (
 
 	forward_AppUserManager_CreateAppRoleUser_0 = runtime.ForwardResponseMessage
 
-	forward_AppUserManager_CreateAppRoleUserForOtherApp_0 = runtime.ForwardResponseMessage
+	forward_AppUserManager_CreateAppRoleUserForOtherAppUser_0 = runtime.ForwardResponseMessage
 
 	forward_AppUserManager_GetAppRoleUser_0 = runtime.ForwardResponseMessage
 

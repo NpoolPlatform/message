@@ -562,12 +562,13 @@ export type CreateAppRoleUserResponse = {
   info?: AppRoleUser
 }
 
-export type CreateAppRoleUserForOtherAppRequest = {
+export type CreateAppRoleUserForOtherAppUserRequest = {
   targetAppID?: string
+  targetUserID?: string
   info?: AppRoleUser
 }
 
-export type CreateAppRoleUserForOtherAppResponse = {
+export type CreateAppRoleUserForOtherAppUserResponse = {
   info?: AppRoleUser
 }
 
@@ -885,8 +886,8 @@ export class AppUserManager {
   static CreateAppRoleUser(req: CreateAppRoleUserRequest, initReq?: fm.InitReq): Promise<CreateAppRoleUserResponse> {
     return fm.fetchReq<CreateAppRoleUserRequest, CreateAppRoleUserResponse>(`/v1/create/app/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static CreateAppRoleUserForOtherApp(req: CreateAppRoleUserForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppRoleUserForOtherAppResponse> {
-    return fm.fetchReq<CreateAppRoleUserForOtherAppRequest, CreateAppRoleUserForOtherAppResponse>(`/v1/create/app/role/user/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateAppRoleUserForOtherAppUser(req: CreateAppRoleUserForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateAppRoleUserForOtherAppUserResponse> {
+    return fm.fetchReq<CreateAppRoleUserForOtherAppUserRequest, CreateAppRoleUserForOtherAppUserResponse>(`/v1/create/app/role/user/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppRoleUser(req: GetAppRoleUserRequest, initReq?: fm.InitReq): Promise<GetAppRoleUserResponse> {
     return fm.fetchReq<GetAppRoleUserRequest, GetAppRoleUserResponse>(`/v1/get/app/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
