@@ -40,6 +40,7 @@ type AuthingGatewayClient interface {
 	GetAppRoleAuthByOtherAppRoleResourceMethod(ctx context.Context, in *GetAppRoleAuthByOtherAppRoleResourceMethodRequest, opts ...grpc.CallOption) (*GetAppRoleAuthByOtherAppRoleResourceMethodResponse, error)
 	DeleteAppRoleAuth(ctx context.Context, in *DeleteAppRoleAuthRequest, opts ...grpc.CallOption) (*DeleteAppRoleAuthResponse, error)
 	CreateAppUserAuth(ctx context.Context, in *CreateAppUserAuthRequest, opts ...grpc.CallOption) (*CreateAppUserAuthResponse, error)
+	CreateGenesisAppUserAuth(ctx context.Context, in *CreateGenesisAppUserAuthRequest, opts ...grpc.CallOption) (*CreateGenesisAppUserAuthResponse, error)
 	CreateAppUserAuthForOtherApp(ctx context.Context, in *CreateAppUserAuthForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppUserAuthForOtherAppResponse, error)
 	GetAppUserAuthByAppUserResourceMethod(ctx context.Context, in *GetAppUserAuthByAppUserResourceMethodRequest, opts ...grpc.CallOption) (*GetAppUserAuthByAppUserResourceMethodResponse, error)
 	GetAppUserAuthByOtherAppUserResourceMethod(ctx context.Context, in *GetAppUserAuthByOtherAppUserResourceMethodRequest, opts ...grpc.CallOption) (*GetAppUserAuthByOtherAppUserResourceMethodResponse, error)
@@ -204,6 +205,15 @@ func (c *authingGatewayClient) CreateAppUserAuth(ctx context.Context, in *Create
 	return out, nil
 }
 
+func (c *authingGatewayClient) CreateGenesisAppUserAuth(ctx context.Context, in *CreateGenesisAppUserAuthRequest, opts ...grpc.CallOption) (*CreateGenesisAppUserAuthResponse, error) {
+	out := new(CreateGenesisAppUserAuthResponse)
+	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/CreateGenesisAppUserAuth", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *authingGatewayClient) CreateAppUserAuthForOtherApp(ctx context.Context, in *CreateAppUserAuthForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppUserAuthForOtherAppResponse, error) {
 	out := new(CreateAppUserAuthForOtherAppResponse)
 	err := c.cc.Invoke(ctx, "/authing.gateway.v1.AuthingGateway/CreateAppUserAuthForOtherApp", in, out, opts...)
@@ -314,6 +324,7 @@ type AuthingGatewayServer interface {
 	GetAppRoleAuthByOtherAppRoleResourceMethod(context.Context, *GetAppRoleAuthByOtherAppRoleResourceMethodRequest) (*GetAppRoleAuthByOtherAppRoleResourceMethodResponse, error)
 	DeleteAppRoleAuth(context.Context, *DeleteAppRoleAuthRequest) (*DeleteAppRoleAuthResponse, error)
 	CreateAppUserAuth(context.Context, *CreateAppUserAuthRequest) (*CreateAppUserAuthResponse, error)
+	CreateGenesisAppUserAuth(context.Context, *CreateGenesisAppUserAuthRequest) (*CreateGenesisAppUserAuthResponse, error)
 	CreateAppUserAuthForOtherApp(context.Context, *CreateAppUserAuthForOtherAppRequest) (*CreateAppUserAuthForOtherAppResponse, error)
 	GetAppUserAuthByAppUserResourceMethod(context.Context, *GetAppUserAuthByAppUserResourceMethodRequest) (*GetAppUserAuthByAppUserResourceMethodResponse, error)
 	GetAppUserAuthByOtherAppUserResourceMethod(context.Context, *GetAppUserAuthByOtherAppUserResourceMethodRequest) (*GetAppUserAuthByOtherAppUserResourceMethodResponse, error)
@@ -378,6 +389,9 @@ func (UnimplementedAuthingGatewayServer) DeleteAppRoleAuth(context.Context, *Del
 }
 func (UnimplementedAuthingGatewayServer) CreateAppUserAuth(context.Context, *CreateAppUserAuthRequest) (*CreateAppUserAuthResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserAuth not implemented")
+}
+func (UnimplementedAuthingGatewayServer) CreateGenesisAppUserAuth(context.Context, *CreateGenesisAppUserAuthRequest) (*CreateGenesisAppUserAuthResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateGenesisAppUserAuth not implemented")
 }
 func (UnimplementedAuthingGatewayServer) CreateAppUserAuthForOtherApp(context.Context, *CreateAppUserAuthForOtherAppRequest) (*CreateAppUserAuthForOtherAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserAuthForOtherApp not implemented")
@@ -710,6 +724,24 @@ func _AuthingGateway_CreateAppUserAuth_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AuthingGateway_CreateGenesisAppUserAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateGenesisAppUserAuthRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthingGatewayServer).CreateGenesisAppUserAuth(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authing.gateway.v1.AuthingGateway/CreateGenesisAppUserAuth",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthingGatewayServer).CreateGenesisAppUserAuth(ctx, req.(*CreateGenesisAppUserAuthRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AuthingGateway_CreateAppUserAuthForOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppUserAuthForOtherAppRequest)
 	if err := dec(in); err != nil {
@@ -960,6 +992,10 @@ var AuthingGateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAppUserAuth",
 			Handler:    _AuthingGateway_CreateAppUserAuth_Handler,
+		},
+		{
+			MethodName: "CreateGenesisAppUserAuth",
+			Handler:    _AuthingGateway_CreateGenesisAppUserAuth_Handler,
 		},
 		{
 			MethodName: "CreateAppUserAuthForOtherApp",

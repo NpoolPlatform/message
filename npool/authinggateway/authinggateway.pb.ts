@@ -188,6 +188,13 @@ export type CreateAppUserAuthResponse = {
   info?: Auth
 }
 
+export type CreateGenesisAppUserAuthRequest = {
+}
+
+export type CreateGenesisAppUserAuthResponse = {
+  infos?: Auth[]
+}
+
 export type CreateAppUserAuthForOtherAppRequest = {
   targetAppID?: string
   info?: AppUserAuth
@@ -327,6 +334,9 @@ export class AuthingGateway {
   }
   static CreateAppUserAuth(req: CreateAppUserAuthRequest, initReq?: fm.InitReq): Promise<CreateAppUserAuthResponse> {
     return fm.fetchReq<CreateAppUserAuthRequest, CreateAppUserAuthResponse>(`/v1/create/app/user/auth`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateGenesisAppUserAuth(req: CreateGenesisAppUserAuthRequest, initReq?: fm.InitReq): Promise<CreateGenesisAppUserAuthResponse> {
+    return fm.fetchReq<CreateGenesisAppUserAuthRequest, CreateGenesisAppUserAuthResponse>(`/v1/create/genesis/app/user/auth`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateAppUserAuthForOtherApp(req: CreateAppUserAuthForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppUserAuthForOtherAppResponse> {
     return fm.fetchReq<CreateAppUserAuthForOtherAppRequest, CreateAppUserAuthForOtherAppResponse>(`/v1/create/app/user/auth/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})

@@ -108,6 +108,12 @@ service AuthingGateway {
             body: "*"
         };
     }
+    rpc CreateGenesisAppUserAuth (CreateGenesisAppUserAuthRequest) returns (CreateGenesisAppUserAuthResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/genesis/app/user/auth"
+            body: "*"
+        };
+    }
     rpc CreateAppUserAuthForOtherApp (CreateAppUserAuthForOtherAppRequest) returns (CreateAppUserAuthForOtherAppResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/user/auth/for/other/app"
@@ -350,6 +356,13 @@ message CreateAppUserAuthRequest {
 
 message CreateAppUserAuthResponse {
     Auth Info = 10;
+}
+
+message CreateGenesisAppUserAuthRequest {
+}
+
+message CreateGenesisAppUserAuthResponse {
+    repeated Auth Infos = 10;
 }
 
 message CreateAppUserAuthForOtherAppRequest {

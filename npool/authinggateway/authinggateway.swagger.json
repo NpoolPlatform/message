@@ -235,6 +235,38 @@
         ]
       }
     },
+    "/v1/create/genesis/app/user/auth": {
+      "post": {
+        "operationId": "AuthingGateway_CreateGenesisAppUserAuth",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateGenesisAppUserAuthResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateGenesisAppUserAuthRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AuthingGateway"
+        ]
+      }
+    },
     "/v1/delete/app/auth": {
       "post": {
         "operationId": "AuthingGateway_DeleteAppAuth",
@@ -1121,6 +1153,20 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Auth"
+        }
+      }
+    },
+    "v1CreateGenesisAppUserAuthRequest": {
+      "type": "object"
+    },
+    "v1CreateGenesisAppUserAuthResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Auth"
+          }
         }
       }
     },
