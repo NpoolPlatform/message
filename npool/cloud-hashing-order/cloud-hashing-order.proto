@@ -317,6 +317,7 @@ message Payment {
     string State = 70;
     string ChainTransactionID = 80;
     string PlatformTransactionID = 90;
+    uint32 CreateAt = 100;
 }
 
 message CreatePaymentRequest {

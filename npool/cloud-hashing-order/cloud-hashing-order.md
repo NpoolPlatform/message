@@ -900,6 +900,7 @@ request body and response
 | State | [string](#string) |  |  |
 | ChainTransactionID | [string](#string) |  |  |
 | PlatformTransactionID | [string](#string) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
 
 
 
@@ -1760,6 +1761,7 @@ request body and response
 | State | [string](#string) |  |  |
 | ChainTransactionID | [string](#string) |  |  |
 | PlatformTransactionID | [string](#string) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
 
 
 

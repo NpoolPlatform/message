@@ -164,6 +164,7 @@ export type Payment = {
   state?: string
   chainTransactionID?: string
   platformTransactionID?: string
+  createAt?: number
 }
 
 export type CreatePaymentRequest = {
