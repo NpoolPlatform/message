@@ -77,6 +77,15 @@ export type CreateAppSMSTemplateResponse = {
   info?: AppSMSTemplate
 }
 
+export type CreateAppSMSTemplateForOtherAppRequest = {
+  targetAppID?: string
+  info?: AppSMSTemplate
+}
+
+export type CreateAppSMSTemplateForOtherAppResponse = {
+  info?: AppSMSTemplate
+}
+
 export type GetAppSMSTemplateRequest = {
   id?: string
 }
@@ -137,6 +146,15 @@ export type CreateAppEmailTemplateRequest = {
 }
 
 export type CreateAppEmailTemplateResponse = {
+  info?: AppEmailTemplate
+}
+
+export type CreateAppEmailTemplateForOtherAppRequest = {
+  targetAppID?: string
+  info?: AppEmailTemplate
+}
+
+export type CreateAppEmailTemplateForOtherAppResponse = {
   info?: AppEmailTemplate
 }
 
@@ -293,6 +311,9 @@ export class ThirdGateway {
   static CreateAppSMSTemplate(req: CreateAppSMSTemplateRequest, initReq?: fm.InitReq): Promise<CreateAppSMSTemplateResponse> {
     return fm.fetchReq<CreateAppSMSTemplateRequest, CreateAppSMSTemplateResponse>(`/v1/create/app/sms/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateAppSMSTemplateForOtherApp(req: CreateAppSMSTemplateForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppSMSTemplateForOtherAppResponse> {
+    return fm.fetchReq<CreateAppSMSTemplateForOtherAppRequest, CreateAppSMSTemplateForOtherAppResponse>(`/v1/create/app/sms/template/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetAppSMSTemplate(req: GetAppSMSTemplateRequest, initReq?: fm.InitReq): Promise<GetAppSMSTemplateResponse> {
     return fm.fetchReq<GetAppSMSTemplateRequest, GetAppSMSTemplateResponse>(`/v1/get/app/sms/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -310,6 +331,9 @@ export class ThirdGateway {
   }
   static CreateAppEmailTemplate(req: CreateAppEmailTemplateRequest, initReq?: fm.InitReq): Promise<CreateAppEmailTemplateResponse> {
     return fm.fetchReq<CreateAppEmailTemplateRequest, CreateAppEmailTemplateResponse>(`/v1/create/app/email/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppEmailTemplateForOtherApp(req: CreateAppEmailTemplateForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppEmailTemplateForOtherAppResponse> {
+    return fm.fetchReq<CreateAppEmailTemplateForOtherAppRequest, CreateAppEmailTemplateForOtherAppResponse>(`/v1/create/app/email/template/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppEmailTemplate(req: GetAppEmailTemplateRequest, initReq?: fm.InitReq): Promise<GetAppEmailTemplateResponse> {
     return fm.fetchReq<GetAppEmailTemplateRequest, GetAppEmailTemplateResponse>(`/v1/get/app/email/template`, {...initReq, method: "POST", body: JSON.stringify(req)})

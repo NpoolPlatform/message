@@ -24,6 +24,12 @@ service ThirdGateway {
             body: "*"
         };
     }
+    rpc CreateAppSMSTemplateForOtherApp (CreateAppSMSTemplateForOtherAppRequest) returns (CreateAppSMSTemplateForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/sms/template/for/other/app"
+            body: "*"
+        };
+    }
     rpc GetAppSMSTemplate (GetAppSMSTemplateRequest) returns (GetAppSMSTemplateResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/sms/template"
@@ -58,6 +64,12 @@ service ThirdGateway {
     rpc CreateAppEmailTemplate (CreateAppEmailTemplateRequest) returns (CreateAppEmailTemplateResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/email/template"
+            body: "*"
+        };
+    }
+    rpc CreateAppEmailTemplateForOtherApp (CreateAppEmailTemplateForOtherAppRequest) returns (CreateAppEmailTemplateForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/email/template/for/other/app"
             body: "*"
         };
     }
@@ -252,6 +264,15 @@ message CreateAppSMSTemplateResponse {
     AppSMSTemplate Info = 10;
 }
 
+message CreateAppSMSTemplateForOtherAppRequest {
+    string TargetAppID = 10;
+    AppSMSTemplate Info = 20;
+}
+
+message CreateAppSMSTemplateForOtherAppResponse {
+    AppSMSTemplate Info = 10;
+}
+
 message GetAppSMSTemplateRequest {
     string ID = 10;
 }
@@ -312,6 +333,15 @@ message CreateAppEmailTemplateRequest {
 }
 
 message CreateAppEmailTemplateResponse {
+    AppEmailTemplate Info = 10;
+}
+
+message CreateAppEmailTemplateForOtherAppRequest {
+    string TargetAppID = 10;
+    AppEmailTemplate Info = 20;
+}
+
+message CreateAppEmailTemplateForOtherAppResponse {
     AppEmailTemplate Info = 10;
 }
 
