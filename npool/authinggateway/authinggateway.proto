@@ -367,7 +367,8 @@ message CreateGenesisAppUserAuthResponse {
 
 message CreateAppUserAuthForOtherAppRequest {
     string TargetAppID = 10;
-    AppUserAuth Info = 20;
+    string TargetUserID = 20;
+    AppUserAuth Info = 30;
 }
 
 message CreateAppUserAuthForOtherAppResponse {

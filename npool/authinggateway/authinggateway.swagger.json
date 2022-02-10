@@ -1127,6 +1127,9 @@
         "TargetAppID": {
           "type": "string"
         },
+        "TargetUserID": {
+          "type": "string"
+        },
         "Info": {
           "$ref": "#/definitions/v1AppUserAuth"
         }

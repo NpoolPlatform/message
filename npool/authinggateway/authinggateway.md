@@ -400,6 +400,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
 | Info | [AppUserAuth](#authing.gateway.v1.AppUserAuth) |  |  |
 
 
@@ -1354,6 +1355,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
 | Info | [AppUserAuth](#authing.gateway.v1.AppUserAuth) |  |  |
 
 

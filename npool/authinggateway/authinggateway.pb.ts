@@ -197,6 +197,7 @@ export type CreateGenesisAppUserAuthResponse = {
 
 export type CreateAppUserAuthForOtherAppRequest = {
   targetAppID?: string
+  targetUserID?: string
   info?: AppUserAuth
 }
 
