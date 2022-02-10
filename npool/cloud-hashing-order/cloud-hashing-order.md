@@ -860,6 +860,7 @@ request body and response
 | Start | [uint32](#uint32) |  |  |
 | End | [uint32](#uint32) |  |  |
 | CouponID | [string](#string) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
 
 
 
@@ -1723,6 +1724,7 @@ request body and response
 | Start | [uint32](#uint32) |  |  |
 | End | [uint32](#uint32) |  |  |
 | CouponID | [string](#string) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
 
 
 

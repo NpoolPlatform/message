@@ -370,6 +370,7 @@ message OrderDetail {
     uint32 Start = 130;
     uint32 End = 140;
     string CouponID = 150;
+    uint32 CreateAt = 160;
 }
 
 message GetOrderDetailRequest {

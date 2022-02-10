@@ -217,6 +217,7 @@ export type OrderDetail = {
   start?: number
   end?: number
   couponID?: string
+  createAt?: number
 }
 
 export type GetOrderDetailRequest = {
