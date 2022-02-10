@@ -33,6 +33,7 @@ type AppUserManagerClient interface {
 	GetAppsByCreator(ctx context.Context, in *GetAppsByCreatorRequest, opts ...grpc.CallOption) (*GetAppsByCreatorResponse, error)
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	CreateAppControl(ctx context.Context, in *CreateAppControlRequest, opts ...grpc.CallOption) (*CreateAppControlResponse, error)
+	CreateAppControlForOtherApp(ctx context.Context, in *CreateAppControlForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppControlForOtherAppResponse, error)
 	GetAppControl(ctx context.Context, in *GetAppControlRequest, opts ...grpc.CallOption) (*GetAppControlResponse, error)
 	GetAppControlByApp(ctx context.Context, in *GetAppControlByAppRequest, opts ...grpc.CallOption) (*GetAppControlByAppResponse, error)
 	UpdateAppControl(ctx context.Context, in *UpdateAppControlRequest, opts ...grpc.CallOption) (*UpdateAppControlResponse, error)
@@ -179,6 +180,15 @@ func (c *appUserManagerClient) UpdateApp(ctx context.Context, in *UpdateAppReque
 func (c *appUserManagerClient) CreateAppControl(ctx context.Context, in *CreateAppControlRequest, opts ...grpc.CallOption) (*CreateAppControlResponse, error) {
 	out := new(CreateAppControlResponse)
 	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppControl", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) CreateAppControlForOtherApp(ctx context.Context, in *CreateAppControlForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppControlForOtherAppResponse, error) {
+	out := new(CreateAppControlForOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppControlForOtherApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -747,6 +757,7 @@ type AppUserManagerServer interface {
 	GetAppsByCreator(context.Context, *GetAppsByCreatorRequest) (*GetAppsByCreatorResponse, error)
 	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
 	CreateAppControl(context.Context, *CreateAppControlRequest) (*CreateAppControlResponse, error)
+	CreateAppControlForOtherApp(context.Context, *CreateAppControlForOtherAppRequest) (*CreateAppControlForOtherAppResponse, error)
 	GetAppControl(context.Context, *GetAppControlRequest) (*GetAppControlResponse, error)
 	GetAppControlByApp(context.Context, *GetAppControlByAppRequest) (*GetAppControlByAppResponse, error)
 	UpdateAppControl(context.Context, *UpdateAppControlRequest) (*UpdateAppControlResponse, error)
@@ -841,6 +852,9 @@ func (UnimplementedAppUserManagerServer) UpdateApp(context.Context, *UpdateAppRe
 }
 func (UnimplementedAppUserManagerServer) CreateAppControl(context.Context, *CreateAppControlRequest) (*CreateAppControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppControl not implemented")
+}
+func (UnimplementedAppUserManagerServer) CreateAppControlForOtherApp(context.Context, *CreateAppControlForOtherAppRequest) (*CreateAppControlForOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppControlForOtherApp not implemented")
 }
 func (UnimplementedAppUserManagerServer) GetAppControl(context.Context, *GetAppControlRequest) (*GetAppControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppControl not implemented")
@@ -1196,6 +1210,24 @@ func _AppUserManager_CreateAppControl_Handler(srv interface{}, ctx context.Conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppControl(ctx, req.(*CreateAppControlRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_CreateAppControlForOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppControlForOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).CreateAppControlForOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppControlForOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).CreateAppControlForOtherApp(ctx, req.(*CreateAppControlForOtherAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2340,6 +2372,10 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAppControl",
 			Handler:    _AppUserManager_CreateAppControl_Handler,
+		},
+		{
+			MethodName: "CreateAppControlForOtherApp",
+			Handler:    _AppUserManager_CreateAppControlForOtherApp_Handler,
 		},
 		{
 			MethodName: "GetAppControl",

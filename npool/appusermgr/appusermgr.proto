@@ -65,6 +65,12 @@ service AppUserManager {
             body: "*"
         };
     }
+    rpc CreateAppControlForOtherApp (CreateAppControlForOtherAppRequest) returns (CreateAppControlForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/control/for/other/app"
+            body: "*"
+        };
+    }
     rpc GetAppControl (GetAppControlRequest) returns (GetAppControlResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/control"
@@ -525,6 +531,15 @@ message CreateAppControlRequest {
 }
 
 message CreateAppControlResponse {
+    AppControl Info = 10;
+}
+
+message CreateAppControlForOtherAppRequest {
+    string TargetAppID = 10;
+    AppControl Info = 20;
+}
+
+message CreateAppControlForOtherAppResponse {
     AppControl Info = 10;
 }
 

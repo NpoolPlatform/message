@@ -107,6 +107,38 @@
         ]
       }
     },
+    "/v1/create/app/control/for/other/app": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppControlForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppControlForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppControlForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/create/app/role": {
       "post": {
         "operationId": "AppUserManager_CreateAppRole",
@@ -2592,6 +2624,25 @@
           "items": {
             "$ref": "#/definitions/v1App"
           }
+        }
+      }
+    },
+    "v1CreateAppControlForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppControl"
+        }
+      }
+    },
+    "v1CreateAppControlForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppControl"
         }
       }
     },

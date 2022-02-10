@@ -19,6 +19,8 @@
     - [BanAppUser](#app.user.manager.v1.BanAppUser)
     - [CreateAdminAppsRequest](#app.user.manager.v1.CreateAdminAppsRequest)
     - [CreateAdminAppsResponse](#app.user.manager.v1.CreateAdminAppsResponse)
+    - [CreateAppControlForOtherAppRequest](#app.user.manager.v1.CreateAppControlForOtherAppRequest)
+    - [CreateAppControlForOtherAppResponse](#app.user.manager.v1.CreateAppControlForOtherAppResponse)
     - [CreateAppControlRequest](#app.user.manager.v1.CreateAppControlRequest)
     - [CreateAppControlResponse](#app.user.manager.v1.CreateAppControlResponse)
     - [CreateAppRequest](#app.user.manager.v1.CreateAppRequest)
@@ -174,6 +176,8 @@
     - [BanAppUser](#app.user.manager.v1.BanAppUser)
     - [CreateAdminAppsRequest](#app.user.manager.v1.CreateAdminAppsRequest)
     - [CreateAdminAppsResponse](#app.user.manager.v1.CreateAdminAppsResponse)
+    - [CreateAppControlForOtherAppRequest](#app.user.manager.v1.CreateAppControlForOtherAppRequest)
+    - [CreateAppControlForOtherAppResponse](#app.user.manager.v1.CreateAppControlForOtherAppResponse)
     - [CreateAppControlRequest](#app.user.manager.v1.CreateAppControlRequest)
     - [CreateAppControlResponse](#app.user.manager.v1.CreateAppControlResponse)
     - [CreateAppRequest](#app.user.manager.v1.CreateAppRequest)
@@ -602,6 +606,37 @@
 
 
 
+<a name="app.user.manager.v1.CreateAppControlForOtherAppRequest"></a>
+
+### CreateAppControlForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [AppControl](#app.user.manager.v1.AppControl) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.CreateAppControlForOtherAppResponse"></a>
+
+### CreateAppControlForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppControl](#app.user.manager.v1.AppControl) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.CreateAppControlRequest"></a>
 
 ### CreateAppControlRequest
@@ -2701,6 +2736,7 @@
 | GetAppsByCreator | [GetAppsByCreatorRequest](#app.user.manager.v1.GetAppsByCreatorRequest) | [GetAppsByCreatorResponse](#app.user.manager.v1.GetAppsByCreatorResponse) |  |
 | UpdateApp | [UpdateAppRequest](#app.user.manager.v1.UpdateAppRequest) | [UpdateAppResponse](#app.user.manager.v1.UpdateAppResponse) |  |
 | CreateAppControl | [CreateAppControlRequest](#app.user.manager.v1.CreateAppControlRequest) | [CreateAppControlResponse](#app.user.manager.v1.CreateAppControlResponse) |  |
+| CreateAppControlForOtherApp | [CreateAppControlForOtherAppRequest](#app.user.manager.v1.CreateAppControlForOtherAppRequest) | [CreateAppControlForOtherAppResponse](#app.user.manager.v1.CreateAppControlForOtherAppResponse) |  |
 | GetAppControl | [GetAppControlRequest](#app.user.manager.v1.GetAppControlRequest) | [GetAppControlResponse](#app.user.manager.v1.GetAppControlResponse) |  |
 | GetAppControlByApp | [GetAppControlByAppRequest](#app.user.manager.v1.GetAppControlByAppRequest) | [GetAppControlByAppResponse](#app.user.manager.v1.GetAppControlByAppResponse) |  |
 | UpdateAppControl | [UpdateAppControlRequest](#app.user.manager.v1.UpdateAppControlRequest) | [UpdateAppControlResponse](#app.user.manager.v1.UpdateAppControlResponse) |  |
@@ -3052,6 +3088,37 @@
 
 
 
+<a name="app.user.manager.v1.CreateAppControlForOtherAppRequest"></a>
+
+### CreateAppControlForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [AppControl](#app.user.manager.v1.AppControl) |  |  |
+
+
+
+
+
+
+<a name="app.user.manager.v1.CreateAppControlForOtherAppResponse"></a>
+
+### CreateAppControlForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppControl](#app.user.manager.v1.AppControl) |  |  |
+
+
+
+
+
+
 <a name="app.user.manager.v1.CreateAppControlRequest"></a>
 
 ### CreateAppControlRequest
@@ -5151,6 +5218,7 @@
 | GetAppsByCreator | [GetAppsByCreatorRequest](#app.user.manager.v1.GetAppsByCreatorRequest) | [GetAppsByCreatorResponse](#app.user.manager.v1.GetAppsByCreatorResponse) |  |
 | UpdateApp | [UpdateAppRequest](#app.user.manager.v1.UpdateAppRequest) | [UpdateAppResponse](#app.user.manager.v1.UpdateAppResponse) |  |
 | CreateAppControl | [CreateAppControlRequest](#app.user.manager.v1.CreateAppControlRequest) | [CreateAppControlResponse](#app.user.manager.v1.CreateAppControlResponse) |  |
+| CreateAppControlForOtherApp | [CreateAppControlForOtherAppRequest](#app.user.manager.v1.CreateAppControlForOtherAppRequest) | [CreateAppControlForOtherAppResponse](#app.user.manager.v1.CreateAppControlForOtherAppResponse) |  |
 | GetAppControl | [GetAppControlRequest](#app.user.manager.v1.GetAppControlRequest) | [GetAppControlResponse](#app.user.manager.v1.GetAppControlResponse) |  |
 | GetAppControlByApp | [GetAppControlByAppRequest](#app.user.manager.v1.GetAppControlByAppRequest) | [GetAppControlByAppResponse](#app.user.manager.v1.GetAppControlByAppResponse) |  |
 | UpdateAppControl | [UpdateAppControlRequest](#app.user.manager.v1.UpdateAppControlRequest) | [UpdateAppControlResponse](#app.user.manager.v1.UpdateAppControlResponse) |  |
