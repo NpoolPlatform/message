@@ -901,6 +901,7 @@ request body and response
 | ChainTransactionID | [string](#string) |  |  |
 | PlatformTransactionID | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
+| CoinUSDCurrency | [double](#double) |  |  |
 
 
 
@@ -1762,6 +1763,7 @@ request body and response
 | ChainTransactionID | [string](#string) |  |  |
 | PlatformTransactionID | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
+| CoinUSDCurrency | [double](#double) |  |  |
 
 
 

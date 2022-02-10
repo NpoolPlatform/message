@@ -318,6 +318,7 @@ message Payment {
     string ChainTransactionID = 80;
     string PlatformTransactionID = 90;
     uint32 CreateAt = 100;
+    double CoinUSDCurrency = 110;
 }
 
 message CreatePaymentRequest {

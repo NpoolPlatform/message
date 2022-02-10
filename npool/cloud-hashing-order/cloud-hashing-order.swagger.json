@@ -1370,6 +1370,10 @@
         "CreateAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "CoinUSDCurrency": {
+          "type": "number",
+          "format": "double"
         }
       }
     },
