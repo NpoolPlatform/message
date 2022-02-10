@@ -217,6 +217,7 @@ message Order {
     uint32 Start = 80;
     uint32 End = 90;
     string CouponID = 100;
+    uint32 CreateAt = 110;
 }
 
 message CreateOrderRequest {
