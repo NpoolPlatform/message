@@ -75,6 +75,38 @@
         ]
       }
     },
+    "/v1/create/app/contact/for/other/app": {
+      "post": {
+        "operationId": "ThirdGateway_CreateAppContactForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppContactForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppContactForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
     "/v1/create/app/email/template": {
       "post": {
         "operationId": "ThirdGateway_CreateAppEmailTemplate",
@@ -1097,6 +1129,25 @@
         },
         "Message": {
           "type": "string"
+        }
+      }
+    },
+    "v1CreateAppContactForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppContact"
+        }
+      }
+    },
+    "v1CreateAppContactForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppContact"
         }
       }
     },

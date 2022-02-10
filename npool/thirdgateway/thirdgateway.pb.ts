@@ -217,6 +217,15 @@ export type CreateAppContactResponse = {
   info?: AppContact
 }
 
+export type CreateAppContactForOtherAppRequest = {
+  targetAppID?: string
+  info?: AppContact
+}
+
+export type CreateAppContactForOtherAppResponse = {
+  info?: AppContact
+}
+
 export type GetAppContactRequest = {
   id?: string
 }
@@ -352,6 +361,9 @@ export class ThirdGateway {
   }
   static CreateAppContact(req: CreateAppContactRequest, initReq?: fm.InitReq): Promise<CreateAppContactResponse> {
     return fm.fetchReq<CreateAppContactRequest, CreateAppContactResponse>(`/v1/create/app/contact`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppContactForOtherApp(req: CreateAppContactForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppContactForOtherAppResponse> {
+    return fm.fetchReq<CreateAppContactForOtherAppRequest, CreateAppContactForOtherAppResponse>(`/v1/create/app/contact/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppContact(req: GetAppContactRequest, initReq?: fm.InitReq): Promise<GetAppContactResponse> {
     return fm.fetchReq<GetAppContactRequest, GetAppContactResponse>(`/v1/get/app/contact`, {...initReq, method: "POST", body: JSON.stringify(req)})

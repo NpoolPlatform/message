@@ -110,6 +110,12 @@ service ThirdGateway {
             body: "*"
         };
     }
+    rpc CreateAppContactForOtherApp (CreateAppContactForOtherAppRequest) returns (CreateAppContactForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/contact/for/other/app"
+            body: "*"
+        };
+    }
     rpc GetAppContact (GetAppContactRequest) returns (GetAppContactResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/contact"
@@ -401,6 +407,15 @@ message CreateAppContactRequest {
 }
 
 message CreateAppContactResponse {
+    AppContact Info = 10;
+}
+
+message CreateAppContactForOtherAppRequest {
+    string TargetAppID = 10;
+    AppContact Info = 20;
+}
+
+message CreateAppContactForOtherAppResponse {
     AppContact Info = 10;
 }
 
