@@ -377,7 +377,7 @@
     "v1GetKycByAppIDRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
         "PageInfo": {

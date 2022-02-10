@@ -125,7 +125,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
+| TargetAppID | [string](#string) |  |  |
 | PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
@@ -432,7 +432,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
+| TargetAppID | [string](#string) |  |  |
 | PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 

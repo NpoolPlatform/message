@@ -38,7 +38,7 @@ export type GetKycByUserIDResponse = {
 }
 
 export type GetKycByAppIDRequest = {
-  appID?: string
+  targetAppID?: string
   pageInfo?: NpoolV1Npool.PageInfo
 }
 
