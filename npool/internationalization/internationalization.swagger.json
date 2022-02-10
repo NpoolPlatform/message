@@ -75,14 +75,14 @@
         ]
       }
     },
-    "/v1/create/app/lang/by/other/app": {
+    "/v1/create/app/lang/for/other/app": {
       "post": {
-        "operationId": "Internationalization_CreateAppLangByOtherApp",
+        "operationId": "Internationalization_CreateAppLangForOtherApp",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAppLangByOtherAppResponse"
+              "$ref": "#/definitions/v1CreateAppLangForOtherAppResponse"
             }
           },
           "default": {
@@ -98,7 +98,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAppLangByOtherAppRequest"
+              "$ref": "#/definitions/v1CreateAppLangForOtherAppRequest"
             }
           }
         ],
@@ -632,7 +632,7 @@
         }
       }
     },
-    "v1CreateAppLangByOtherAppRequest": {
+    "v1CreateAppLangForOtherAppRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -643,7 +643,7 @@
         }
       }
     },
-    "v1CreateAppLangByOtherAppResponse": {
+    "v1CreateAppLangForOtherAppResponse": {
       "type": "object",
       "properties": {
         "Info": {
