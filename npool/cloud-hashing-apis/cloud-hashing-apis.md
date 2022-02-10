@@ -828,6 +828,7 @@ Request body and response
 | FixAmountCoupon | [cloud.hashing.inspire.v1.CouponAllocatedDetail](#cloud.hashing.inspire.v1.CouponAllocatedDetail) |  |  |
 | DiscountCoupon | [cloud.hashing.inspire.v1.CouponAllocatedDetail](#cloud.hashing.inspire.v1.CouponAllocatedDetail) |  |  |
 | UserSpecialReduction | [cloud.hashing.inspire.v1.UserSpecialReduction](#cloud.hashing.inspire.v1.UserSpecialReduction) |  |  |
+| PaymentDeadline | [uint32](#uint32) |  |  |
 
 
 
@@ -1845,6 +1846,7 @@ Request body and response
 | FixAmountCoupon | [cloud.hashing.inspire.v1.CouponAllocatedDetail](#cloud.hashing.inspire.v1.CouponAllocatedDetail) |  |  |
 | DiscountCoupon | [cloud.hashing.inspire.v1.CouponAllocatedDetail](#cloud.hashing.inspire.v1.CouponAllocatedDetail) |  |  |
 | UserSpecialReduction | [cloud.hashing.inspire.v1.UserSpecialReduction](#cloud.hashing.inspire.v1.UserSpecialReduction) |  |  |
+| PaymentDeadline | [uint32](#uint32) |  |  |
 
 
 

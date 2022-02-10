@@ -228,6 +228,7 @@ message Order {
     cloud.hashing.inspire.v1.CouponAllocatedDetail FixAmountCoupon = 50;
     cloud.hashing.inspire.v1.CouponAllocatedDetail DiscountCoupon = 60;
     cloud.hashing.inspire.v1.UserSpecialReduction UserSpecialReduction = 70;
+    uint32 PaymentDeadline = 80;
 }
 
 message GetOrderRequest {

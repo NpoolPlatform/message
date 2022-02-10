@@ -970,6 +970,10 @@
         },
         "UserSpecialReduction": {
           "$ref": "#/definitions/v1UserSpecialReduction"
+        },
+        "PaymentDeadline": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -2138,6 +2142,14 @@
         },
         "PlatformTransactionID": {
           "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CoinUSDCurrency": {
+          "type": "number",
+          "format": "double"
         }
       }
     },
