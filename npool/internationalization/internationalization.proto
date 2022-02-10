@@ -49,6 +49,12 @@ service Internationalization {
             body: "*"
         };
     }
+    rpc CreateAppLangByOtherApp (CreateAppLangByOtherAppRequest) returns (CreateAppLangByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/lang/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetAppLang (GetAppLangRequest) returns (GetAppLangResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/lang"
@@ -221,6 +227,16 @@ message CreateAppLangRequest {
 message CreateAppLangResponse {
     AppLang Info = 10;
 }
+
+message CreateAppLangByOtherAppRequest {
+    string TargetAppID = 10;
+    AppLang Info = 20;
+}
+
+message CreateAppLangByOtherAppResponse {
+    AppLang Info = 10;
+}
+
 
 message GetAppLangRequest {
     string ID = 10;

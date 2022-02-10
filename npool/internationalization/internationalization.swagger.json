@@ -75,6 +75,38 @@
         ]
       }
     },
+    "/v1/create/app/lang/by/other/app": {
+      "post": {
+        "operationId": "Internationalization_CreateAppLangByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppLangByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppLangByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
     "/v1/create/message": {
       "post": {
         "operationId": "Internationalization_CreateMessage",
@@ -597,6 +629,25 @@
         },
         "Lang": {
           "$ref": "#/definitions/v1Lang"
+        }
+      }
+    },
+    "v1CreateAppLangByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppLang"
+        }
+      }
+    },
+    "v1CreateAppLangByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppLang"
         }
       }
     },

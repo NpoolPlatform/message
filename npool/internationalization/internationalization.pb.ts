@@ -117,6 +117,15 @@ export type CreateAppLangResponse = {
   info?: AppLang
 }
 
+export type CreateAppLangByOtherAppRequest = {
+  targetAppID?: string
+  info?: AppLang
+}
+
+export type CreateAppLangByOtherAppResponse = {
+  info?: AppLang
+}
+
 export type GetAppLangRequest = {
   id?: string
 }
@@ -172,6 +181,9 @@ export class Internationalization {
   }
   static CreateAppLang(req: CreateAppLangRequest, initReq?: fm.InitReq): Promise<CreateAppLangResponse> {
     return fm.fetchReq<CreateAppLangRequest, CreateAppLangResponse>(`/v1/create/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppLangByOtherApp(req: CreateAppLangByOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppLangByOtherAppResponse> {
+    return fm.fetchReq<CreateAppLangByOtherAppRequest, CreateAppLangByOtherAppResponse>(`/v1/create/app/lang/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppLang(req: GetAppLangRequest, initReq?: fm.InitReq): Promise<GetAppLangResponse> {
     return fm.fetchReq<GetAppLangRequest, GetAppLangResponse>(`/v1/get/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
