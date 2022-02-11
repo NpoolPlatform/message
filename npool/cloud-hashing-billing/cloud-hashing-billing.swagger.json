@@ -139,6 +139,38 @@
         ]
       }
     },
+    "/v1/create/platform/setting/for/other/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_CreatePlatformSettingForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreatePlatformSettingForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreatePlatformSettingForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/create/user/benefit": {
       "post": {
         "operationId": "CloudHashingBilling_CreateUserBenefit",
@@ -683,14 +715,14 @@
         ]
       }
     },
-    "/v1/get/platform/setting/by/good": {
+    "/v1/get/platform/setting/by/app": {
       "post": {
-        "operationId": "CloudHashingBilling_GetPlatformSettingByGood",
+        "operationId": "CloudHashingBilling_GetPlatformSettingByApp",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetPlatformSettingByGoodResponse"
+              "$ref": "#/definitions/v1GetPlatformSettingByAppResponse"
             }
           },
           "default": {
@@ -706,7 +738,39 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetPlatformSettingByGoodRequest"
+              "$ref": "#/definitions/v1GetPlatformSettingByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/platform/setting/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetPlatformSettingByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetPlatformSettingByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetPlatformSettingByOtherAppRequest"
             }
           }
         ],
@@ -1056,6 +1120,25 @@
         }
       }
     },
+    "v1CreatePlatformSettingForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1PlatformSetting"
+        }
+      }
+    },
+    "v1CreatePlatformSettingForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1PlatformSetting"
+        }
+      }
+    },
     "v1CreatePlatformSettingRequest": {
       "type": "object",
       "properties": {
@@ -1358,15 +1441,31 @@
         }
       }
     },
-    "v1GetPlatformSettingByGoodRequest": {
+    "v1GetPlatformSettingByAppRequest": {
       "type": "object",
       "properties": {
-        "GoodID": {
+        "AppID": {
           "type": "string"
         }
       }
     },
-    "v1GetPlatformSettingByGoodResponse": {
+    "v1GetPlatformSettingByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1PlatformSetting"
+        }
+      }
+    },
+    "v1GetPlatformSettingByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetPlatformSettingByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -1507,11 +1606,10 @@
         "ID": {
           "type": "string"
         },
-        "WarmAccountUSDAmount": {
-          "type": "number",
-          "format": "double"
+        "AppID": {
+          "type": "string"
         },
-        "WarmAccountCoinAmount": {
+        "WarmAccountUSDAmount": {
           "type": "number",
           "format": "double"
         }

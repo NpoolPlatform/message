@@ -136,15 +136,27 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc CreatePlatformSettingForOtherApp(CreatePlatformSettingForOtherAppRequest) returns (CreatePlatformSettingForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/platform/setting/for/other/app"
+            body: "*"
+        };
+    }
     rpc UpdatePlatformSetting(UpdatePlatformSettingRequest) returns (UpdatePlatformSettingResponse) {
         option (google.api.http) = {
             post: "/v1/update/platform/setting"
             body: "*"
         };
     }
-    rpc GetPlatformSettingByGood(GetPlatformSettingByGoodRequest) returns (GetPlatformSettingByGoodResponse) {
+    rpc GetPlatformSettingByApp(GetPlatformSettingByAppRequest) returns (GetPlatformSettingByAppResponse) {
         option (google.api.http) = {
-            post: "/v1/get/platform/setting/by/good"
+            post: "/v1/get/platform/setting/by/app"
+            body: "*"
+        };
+    }
+    rpc GetPlatformSettingByOtherApp(GetPlatformSettingByOtherAppRequest) returns (GetPlatformSettingByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/platform/setting/by/other/app"
             body: "*"
         };
     }
@@ -384,8 +396,8 @@ message GetLatestPlatformBenefitByGoodResponse {
 
 message PlatformSetting {
     string ID = 10;
-    double WarmAccountUSDAmount = 20;
-    double WarmAccountCoinAmount = 30;
+    string AppID = 20;
+    double WarmAccountUSDAmount = 30;
 }
 
 message CreatePlatformSettingRequest {
@@ -393,6 +405,15 @@ message CreatePlatformSettingRequest {
 }
 
 message CreatePlatformSettingResponse {
+    PlatformSetting Info = 10;
+}
+
+message CreatePlatformSettingForOtherAppRequest {
+    string TargetAppID = 10;
+    PlatformSetting Info = 20;
+}
+
+message CreatePlatformSettingForOtherAppResponse {
     PlatformSetting Info = 10;
 }
 
@@ -417,6 +438,22 @@ message GetPlatformSettingRequest {
 }
 
 message GetPlatformSettingResponse {
+    PlatformSetting Info = 10;
+}
+
+message GetPlatformSettingByAppRequest {
+    string AppID = 10;
+}
+
+message GetPlatformSettingByAppResponse {
+    PlatformSetting Info = 10;
+}
+
+message GetPlatformSettingByOtherAppRequest {
+    string AppID = 10;
+}
+
+message GetPlatformSettingByOtherAppResponse {
     PlatformSetting Info = 10;
 }
 
