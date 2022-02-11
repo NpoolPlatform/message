@@ -68,7 +68,6 @@ export type CoinAccountTransaction = {
   createAt?: number
   state?: string
   chainTransactionID?: string
-  platformTransactionID?: string
 }
 
 export type CreateCoinAccountTransactionRequest = {
@@ -99,7 +98,6 @@ export type CoinAccountTransactionDetail = {
   createAt?: number
   state?: string
   chainTransactionID?: string
-  platformTransactionID?: string
 }
 
 export type GetCoinAccountTransactionDetailRequest = {
@@ -212,12 +210,8 @@ export type GetLatestPlatformBenefitByGoodResponse = {
 
 export type PlatformSetting = {
   id?: string
-  goodID?: string
-  benefitAccountID?: string
-  platformOfflineAccountID?: string
-  userOnlineAccountID?: string
-  userOfflineAccountID?: string
-  benefitIntervalHours?: number
+  warmAccountUSDAmount?: number
+  warmAccountCoinAmount?: number
 }
 
 export type CreatePlatformSettingRequest = {

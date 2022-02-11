@@ -183,7 +183,6 @@
 | CreateAt | [uint32](#uint32) |  |  |
 | State | [string](#string) |  |  |
 | ChainTransactionID | [string](#string) |  |  |
-| PlatformTransactionID | [string](#string) |  |  |
 
 
 
@@ -209,7 +208,6 @@
 | CreateAt | [uint32](#uint32) |  |  |
 | State | [string](#string) |  |  |
 | ChainTransactionID | [string](#string) |  |  |
-| PlatformTransactionID | [string](#string) |  |  |
 
 
 
@@ -1023,12 +1021,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
-| GoodID | [string](#string) |  |  |
-| BenefitAccountID | [string](#string) |  |  |
-| PlatformOfflineAccountID | [string](#string) |  |  |
-| UserOnlineAccountID | [string](#string) |  |  |
-| UserOfflineAccountID | [string](#string) |  |  |
-| BenefitIntervalHours | [int32](#int32) |  |  |
+| WarmAccountUSDAmount | [double](#double) |  |  |
+| WarmAccountCoinAmount | [double](#double) |  |  |
 
 
 
@@ -1228,7 +1222,6 @@ Cloud Hashing Billing
 | CreateAt | [uint32](#uint32) |  |  |
 | State | [string](#string) |  |  |
 | ChainTransactionID | [string](#string) |  |  |
-| PlatformTransactionID | [string](#string) |  |  |
 
 
 
@@ -1254,7 +1247,6 @@ Cloud Hashing Billing
 | CreateAt | [uint32](#uint32) |  |  |
 | State | [string](#string) |  |  |
 | ChainTransactionID | [string](#string) |  |  |
-| PlatformTransactionID | [string](#string) |  |  |
 
 
 
@@ -2068,12 +2060,8 @@ Cloud Hashing Billing
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
-| GoodID | [string](#string) |  |  |
-| BenefitAccountID | [string](#string) |  |  |
-| PlatformOfflineAccountID | [string](#string) |  |  |
-| UserOnlineAccountID | [string](#string) |  |  |
-| UserOfflineAccountID | [string](#string) |  |  |
-| BenefitIntervalHours | [int32](#int32) |  |  |
+| WarmAccountUSDAmount | [double](#double) |  |  |
+| WarmAccountCoinAmount | [double](#double) |  |  |
 
 
 

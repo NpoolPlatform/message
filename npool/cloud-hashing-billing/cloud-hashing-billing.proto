@@ -248,7 +248,6 @@ message CoinAccountTransaction {
     uint32 CreateAt = 90;
     string State = 100;
     string ChainTransactionID = 110;
-    string PlatformTransactionID = 120;
 }
 
 message CreateCoinAccountTransactionRequest {
@@ -279,7 +278,6 @@ message CoinAccountTransactionDetail {
     uint32 CreateAt = 90;
     string State = 100;
     string ChainTransactionID = 110;
-    string PlatformTransactionID = 120;
 }
 
 message GetCoinAccountTransactionDetailRequest {
@@ -392,12 +390,8 @@ message GetLatestPlatformBenefitByGoodResponse {
 
 message PlatformSetting {
     string ID = 10;
-    string GoodID = 20;
-    string BenefitAccountID = 30;
-    string PlatformOfflineAccountID = 40;
-    string UserOnlineAccountID = 50;
-    string UserOfflineAccountID = 60;
-    int32 BenefitIntervalHours = 70;
+    double WarmAccountUSDAmount = 20;
+    double WarmAccountCoinAmount = 30;
 }
 
 message CreatePlatformSettingRequest {

@@ -997,9 +997,6 @@
         },
         "ChainTransactionID": {
           "type": "string"
-        },
-        "PlatformTransactionID": {
-          "type": "string"
         }
       }
     },
@@ -1039,9 +1036,6 @@
           "type": "string"
         },
         "ChainTransactionID": {
-          "type": "string"
-        },
-        "PlatformTransactionID": {
           "type": "string"
         }
       }
@@ -1561,24 +1555,13 @@
         "ID": {
           "type": "string"
         },
-        "GoodID": {
-          "type": "string"
+        "WarmAccountUSDAmount": {
+          "type": "number",
+          "format": "double"
         },
-        "BenefitAccountID": {
-          "type": "string"
-        },
-        "PlatformOfflineAccountID": {
-          "type": "string"
-        },
-        "UserOnlineAccountID": {
-          "type": "string"
-        },
-        "UserOfflineAccountID": {
-          "type": "string"
-        },
-        "BenefitIntervalHours": {
-          "type": "integer",
-          "format": "int32"
+        "WarmAccountCoinAmount": {
+          "type": "number",
+          "format": "double"
         }
       }
     },
