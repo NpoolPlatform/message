@@ -9,11 +9,8 @@ import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type CoinAccountInfo = {
   id?: string
-  appID?: string
-  userID?: string
   coinTypeID?: string
   address?: string
-  generatedBy?: string
   platformHoldPrivateKey?: boolean
 }
 

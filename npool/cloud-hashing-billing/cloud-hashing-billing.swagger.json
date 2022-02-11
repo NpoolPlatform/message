@@ -949,19 +949,10 @@
         "ID": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
         "CoinTypeID": {
           "type": "string"
         },
         "Address": {
-          "type": "string"
-        },
-        "GeneratedBy": {
           "type": "string"
         },
         "PlatformHoldPrivateKey": {
