@@ -2591,195 +2591,6 @@ func (x *GetPlatformSettingByGoodResponse) GetInfo() *PlatformSetting {
 	return nil
 }
 
-type PlatformSettingDetail struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ID                     string           `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	GoodID                 string           `protobuf:"bytes,20,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
-	BenefitAddress         *CoinAccountInfo `protobuf:"bytes,30,opt,name=BenefitAddress,proto3" json:"BenefitAddress,omitempty"`
-	PlatformOfflineAddress *CoinAccountInfo `protobuf:"bytes,40,opt,name=PlatformOfflineAddress,proto3" json:"PlatformOfflineAddress,omitempty"`
-	UserOnlineAddress      *CoinAccountInfo `protobuf:"bytes,50,opt,name=UserOnlineAddress,proto3" json:"UserOnlineAddress,omitempty"`
-	UserOfflineAddress     *CoinAccountInfo `protobuf:"bytes,60,opt,name=UserOfflineAddress,proto3" json:"UserOfflineAddress,omitempty"`
-	BenefitIntervalHours   int32            `protobuf:"varint,70,opt,name=BenefitIntervalHours,proto3" json:"BenefitIntervalHours,omitempty"`
-}
-
-func (x *PlatformSettingDetail) Reset() {
-	*x = PlatformSettingDetail{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[48]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *PlatformSettingDetail) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*PlatformSettingDetail) ProtoMessage() {}
-
-func (x *PlatformSettingDetail) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[48]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use PlatformSettingDetail.ProtoReflect.Descriptor instead.
-func (*PlatformSettingDetail) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{48}
-}
-
-func (x *PlatformSettingDetail) GetID() string {
-	if x != nil {
-		return x.ID
-	}
-	return ""
-}
-
-func (x *PlatformSettingDetail) GetGoodID() string {
-	if x != nil {
-		return x.GoodID
-	}
-	return ""
-}
-
-func (x *PlatformSettingDetail) GetBenefitAddress() *CoinAccountInfo {
-	if x != nil {
-		return x.BenefitAddress
-	}
-	return nil
-}
-
-func (x *PlatformSettingDetail) GetPlatformOfflineAddress() *CoinAccountInfo {
-	if x != nil {
-		return x.PlatformOfflineAddress
-	}
-	return nil
-}
-
-func (x *PlatformSettingDetail) GetUserOnlineAddress() *CoinAccountInfo {
-	if x != nil {
-		return x.UserOnlineAddress
-	}
-	return nil
-}
-
-func (x *PlatformSettingDetail) GetUserOfflineAddress() *CoinAccountInfo {
-	if x != nil {
-		return x.UserOfflineAddress
-	}
-	return nil
-}
-
-func (x *PlatformSettingDetail) GetBenefitIntervalHours() int32 {
-	if x != nil {
-		return x.BenefitIntervalHours
-	}
-	return 0
-}
-
-type GetPlatformSettingDetailRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-}
-
-func (x *GetPlatformSettingDetailRequest) Reset() {
-	*x = GetPlatformSettingDetailRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[49]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetPlatformSettingDetailRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetPlatformSettingDetailRequest) ProtoMessage() {}
-
-func (x *GetPlatformSettingDetailRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[49]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetPlatformSettingDetailRequest.ProtoReflect.Descriptor instead.
-func (*GetPlatformSettingDetailRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{49}
-}
-
-func (x *GetPlatformSettingDetailRequest) GetID() string {
-	if x != nil {
-		return x.ID
-	}
-	return ""
-}
-
-type GetPlatformSettingDetailResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Detail *PlatformSettingDetail `protobuf:"bytes,10,opt,name=Detail,proto3" json:"Detail,omitempty"`
-}
-
-func (x *GetPlatformSettingDetailResponse) Reset() {
-	*x = GetPlatformSettingDetailResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[50]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetPlatformSettingDetailResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetPlatformSettingDetailResponse) ProtoMessage() {}
-
-func (x *GetPlatformSettingDetailResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[50]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetPlatformSettingDetailResponse.ProtoReflect.Descriptor instead.
-func (*GetPlatformSettingDetailResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{50}
-}
-
-func (x *GetPlatformSettingDetailResponse) GetDetail() *PlatformSettingDetail {
-	if x != nil {
-		return x.Detail
-	}
-	return nil
-}
-
 type GetPlatformSettingRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2791,7 +2602,7 @@ type GetPlatformSettingRequest struct {
 func (x *GetPlatformSettingRequest) Reset() {
 	*x = GetPlatformSettingRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[51]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[48]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2804,7 +2615,7 @@ func (x *GetPlatformSettingRequest) String() string {
 func (*GetPlatformSettingRequest) ProtoMessage() {}
 
 func (x *GetPlatformSettingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[51]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[48]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2817,7 +2628,7 @@ func (x *GetPlatformSettingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPlatformSettingRequest.ProtoReflect.Descriptor instead.
 func (*GetPlatformSettingRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{51}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *GetPlatformSettingRequest) GetID() string {
@@ -2838,7 +2649,7 @@ type GetPlatformSettingResponse struct {
 func (x *GetPlatformSettingResponse) Reset() {
 	*x = GetPlatformSettingResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[52]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[49]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2851,7 +2662,7 @@ func (x *GetPlatformSettingResponse) String() string {
 func (*GetPlatformSettingResponse) ProtoMessage() {}
 
 func (x *GetPlatformSettingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[52]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[49]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2864,7 +2675,7 @@ func (x *GetPlatformSettingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPlatformSettingResponse.ProtoReflect.Descriptor instead.
 func (*GetPlatformSettingResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{52}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *GetPlatformSettingResponse) GetInfo() *PlatformSetting {
@@ -2892,7 +2703,7 @@ type UserBenefit struct {
 func (x *UserBenefit) Reset() {
 	*x = UserBenefit{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[53]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[50]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2905,7 +2716,7 @@ func (x *UserBenefit) String() string {
 func (*UserBenefit) ProtoMessage() {}
 
 func (x *UserBenefit) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[53]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[50]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2918,7 +2729,7 @@ func (x *UserBenefit) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserBenefit.ProtoReflect.Descriptor instead.
 func (*UserBenefit) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{53}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{50}
 }
 
 func (x *UserBenefit) GetID() string {
@@ -2988,7 +2799,7 @@ type CreateUserBenefitRequest struct {
 func (x *CreateUserBenefitRequest) Reset() {
 	*x = CreateUserBenefitRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[54]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[51]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3001,7 +2812,7 @@ func (x *CreateUserBenefitRequest) String() string {
 func (*CreateUserBenefitRequest) ProtoMessage() {}
 
 func (x *CreateUserBenefitRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[54]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[51]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3014,7 +2825,7 @@ func (x *CreateUserBenefitRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserBenefitRequest.ProtoReflect.Descriptor instead.
 func (*CreateUserBenefitRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{54}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *CreateUserBenefitRequest) GetInfo() *UserBenefit {
@@ -3035,7 +2846,7 @@ type CreateUserBenefitResponse struct {
 func (x *CreateUserBenefitResponse) Reset() {
 	*x = CreateUserBenefitResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[55]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[52]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3048,7 +2859,7 @@ func (x *CreateUserBenefitResponse) String() string {
 func (*CreateUserBenefitResponse) ProtoMessage() {}
 
 func (x *CreateUserBenefitResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[55]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[52]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3061,7 +2872,7 @@ func (x *CreateUserBenefitResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserBenefitResponse.ProtoReflect.Descriptor instead.
 func (*CreateUserBenefitResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{55}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{52}
 }
 
 func (x *CreateUserBenefitResponse) GetInfo() *UserBenefit {
@@ -3083,7 +2894,7 @@ type GetUserBenefitsByAppUserRequest struct {
 func (x *GetUserBenefitsByAppUserRequest) Reset() {
 	*x = GetUserBenefitsByAppUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[56]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[53]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3096,7 +2907,7 @@ func (x *GetUserBenefitsByAppUserRequest) String() string {
 func (*GetUserBenefitsByAppUserRequest) ProtoMessage() {}
 
 func (x *GetUserBenefitsByAppUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[56]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[53]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3109,7 +2920,7 @@ func (x *GetUserBenefitsByAppUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserBenefitsByAppUserRequest.ProtoReflect.Descriptor instead.
 func (*GetUserBenefitsByAppUserRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{56}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{53}
 }
 
 func (x *GetUserBenefitsByAppUserRequest) GetAppID() string {
@@ -3137,7 +2948,7 @@ type GetUserBenefitsByAppUserResponse struct {
 func (x *GetUserBenefitsByAppUserResponse) Reset() {
 	*x = GetUserBenefitsByAppUserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[57]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[54]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3150,7 +2961,7 @@ func (x *GetUserBenefitsByAppUserResponse) String() string {
 func (*GetUserBenefitsByAppUserResponse) ProtoMessage() {}
 
 func (x *GetUserBenefitsByAppUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[57]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[54]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3163,7 +2974,7 @@ func (x *GetUserBenefitsByAppUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserBenefitsByAppUserResponse.ProtoReflect.Descriptor instead.
 func (*GetUserBenefitsByAppUserResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{57}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{54}
 }
 
 func (x *GetUserBenefitsByAppUserResponse) GetInfos() []*UserBenefit {
@@ -3185,7 +2996,7 @@ type GetUserBenefitsByAppRequest struct {
 func (x *GetUserBenefitsByAppRequest) Reset() {
 	*x = GetUserBenefitsByAppRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[58]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[55]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3198,7 +3009,7 @@ func (x *GetUserBenefitsByAppRequest) String() string {
 func (*GetUserBenefitsByAppRequest) ProtoMessage() {}
 
 func (x *GetUserBenefitsByAppRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[58]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[55]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3211,7 +3022,7 @@ func (x *GetUserBenefitsByAppRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserBenefitsByAppRequest.ProtoReflect.Descriptor instead.
 func (*GetUserBenefitsByAppRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{58}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *GetUserBenefitsByAppRequest) GetAppID() string {
@@ -3239,7 +3050,7 @@ type GetUserBenefitsByAppResponse struct {
 func (x *GetUserBenefitsByAppResponse) Reset() {
 	*x = GetUserBenefitsByAppResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[59]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[56]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3252,7 +3063,7 @@ func (x *GetUserBenefitsByAppResponse) String() string {
 func (*GetUserBenefitsByAppResponse) ProtoMessage() {}
 
 func (x *GetUserBenefitsByAppResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[59]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[56]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3265,7 +3076,7 @@ func (x *GetUserBenefitsByAppResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserBenefitsByAppResponse.ProtoReflect.Descriptor instead.
 func (*GetUserBenefitsByAppResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{59}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *GetUserBenefitsByAppResponse) GetInfos() []*UserBenefit {
@@ -3288,7 +3099,7 @@ type GetLatestUserBenefitByGoodAppUserRequest struct {
 func (x *GetLatestUserBenefitByGoodAppUserRequest) Reset() {
 	*x = GetLatestUserBenefitByGoodAppUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[60]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[57]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3301,7 +3112,7 @@ func (x *GetLatestUserBenefitByGoodAppUserRequest) String() string {
 func (*GetLatestUserBenefitByGoodAppUserRequest) ProtoMessage() {}
 
 func (x *GetLatestUserBenefitByGoodAppUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[60]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[57]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3314,7 +3125,7 @@ func (x *GetLatestUserBenefitByGoodAppUserRequest) ProtoReflect() protoreflect.M
 
 // Deprecated: Use GetLatestUserBenefitByGoodAppUserRequest.ProtoReflect.Descriptor instead.
 func (*GetLatestUserBenefitByGoodAppUserRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{60}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *GetLatestUserBenefitByGoodAppUserRequest) GetAppID() string {
@@ -3349,7 +3160,7 @@ type GetLatestUserBenefitByGoodAppUserResponse struct {
 func (x *GetLatestUserBenefitByGoodAppUserResponse) Reset() {
 	*x = GetLatestUserBenefitByGoodAppUserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[61]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[58]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3362,7 +3173,7 @@ func (x *GetLatestUserBenefitByGoodAppUserResponse) String() string {
 func (*GetLatestUserBenefitByGoodAppUserResponse) ProtoMessage() {}
 
 func (x *GetLatestUserBenefitByGoodAppUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[61]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[58]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3375,7 +3186,7 @@ func (x *GetLatestUserBenefitByGoodAppUserResponse) ProtoReflect() protoreflect.
 
 // Deprecated: Use GetLatestUserBenefitByGoodAppUserResponse.ProtoReflect.Descriptor instead.
 func (*GetLatestUserBenefitByGoodAppUserResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{61}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *GetLatestUserBenefitByGoodAppUserResponse) GetInfo() *UserBenefit {
@@ -3729,47 +3540,7 @@ var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDesc = []byt
 	0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x29, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
 	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e,
 	0x67, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x53, 0x65, 0x74,
-	0x74, 0x69, 0x6e, 0x67, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0xdd, 0x03, 0x0a, 0x15, 0x50,
-	0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x44, 0x65,
-	0x74, 0x61, 0x69, 0x6c, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x02, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x14,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x12, 0x51, 0x0a, 0x0e,
-	0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x18, 0x1e,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x29, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73,
-	0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e,
-	0x43, 0x6f, 0x69, 0x6e, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x52,
-	0x0e, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x12,
-	0x61, 0x0a, 0x16, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x4f, 0x66, 0x66, 0x6c, 0x69,
-	0x6e, 0x65, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x18, 0x28, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x29, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e,
-	0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x69, 0x6e, 0x41,
-	0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x16, 0x50, 0x6c, 0x61, 0x74,
-	0x66, 0x6f, 0x72, 0x6d, 0x4f, 0x66, 0x66, 0x6c, 0x69, 0x6e, 0x65, 0x41, 0x64, 0x64, 0x72, 0x65,
-	0x73, 0x73, 0x12, 0x57, 0x0a, 0x11, 0x55, 0x73, 0x65, 0x72, 0x4f, 0x6e, 0x6c, 0x69, 0x6e, 0x65,
-	0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x18, 0x32, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x29, 0x2e,
-	0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69,
-	0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x69, 0x6e, 0x41, 0x63, 0x63,
-	0x6f, 0x75, 0x6e, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x11, 0x55, 0x73, 0x65, 0x72, 0x4f, 0x6e,
-	0x6c, 0x69, 0x6e, 0x65, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x12, 0x59, 0x0a, 0x12, 0x55,
-	0x73, 0x65, 0x72, 0x4f, 0x66, 0x66, 0x6c, 0x69, 0x6e, 0x65, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73,
-	0x73, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x29, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e,
-	0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e,
-	0x76, 0x31, 0x2e, 0x43, 0x6f, 0x69, 0x6e, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x6e,
-	0x66, 0x6f, 0x52, 0x12, 0x55, 0x73, 0x65, 0x72, 0x4f, 0x66, 0x66, 0x6c, 0x69, 0x6e, 0x65, 0x41,
-	0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x12, 0x32, 0x0a, 0x14, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69,
-	0x74, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x76, 0x61, 0x6c, 0x48, 0x6f, 0x75, 0x72, 0x73, 0x18, 0x46,
-	0x20, 0x01, 0x28, 0x05, 0x52, 0x14, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x49, 0x6e, 0x74,
-	0x65, 0x72, 0x76, 0x61, 0x6c, 0x48, 0x6f, 0x75, 0x72, 0x73, 0x22, 0x31, 0x0a, 0x1f, 0x47, 0x65,
-	0x74, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67,
-	0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a,
-	0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x6b, 0x0a,
-	0x20, 0x47, 0x65, 0x74, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x53, 0x65, 0x74, 0x74,
-	0x69, 0x6e, 0x67, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x12, 0x47, 0x0a, 0x06, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x18, 0x0a, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x2f, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e,
-	0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x6c, 0x61,
-	0x74, 0x66, 0x6f, 0x72, 0x6d, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x44, 0x65, 0x74, 0x61,
-	0x69, 0x6c, 0x52, 0x06, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x22, 0x2b, 0x0a, 0x19, 0x47, 0x65,
+	0x74, 0x69, 0x6e, 0x67, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x2b, 0x0a, 0x19, 0x47, 0x65,
 	0x74, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20,
 	0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x5b, 0x0a, 0x1a, 0x47, 0x65, 0x74, 0x50, 0x6c,
@@ -3840,7 +3611,7 @@ var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDesc = []byt
 	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x63,
 	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c,
 	0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x42, 0x65, 0x6e, 0x65,
-	0x66, 0x69, 0x74, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xf2, 0x29, 0x0a, 0x13, 0x43, 0x6c,
+	0x66, 0x69, 0x74, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xb2, 0x28, 0x0a, 0x13, 0x43, 0x6c,
 	0x6f, 0x75, 0x64, 0x48, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x42, 0x69, 0x6c, 0x6c, 0x69, 0x6e,
 	0x67, 0x12, 0x51, 0x0a, 0x07, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x16, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45,
@@ -4105,19 +3876,7 @@ var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDesc = []byt
 	0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2b, 0x82, 0xd3,
 	0xe4, 0x93, 0x02, 0x25, 0x22, 0x20, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x70, 0x6c,
 	0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x73, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x2f, 0x62,
-	0x79, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x3a, 0x01, 0x2a, 0x12, 0xbd, 0x01, 0x0a, 0x18, 0x47, 0x65,
-	0x74, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67,
-	0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x12, 0x39, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68,
-	0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76,
-	0x31, 0x2e, 0x47, 0x65, 0x74, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x53, 0x65, 0x74,
-	0x74, 0x69, 0x6e, 0x67, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x3a, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e,
-	0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
-	0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x44,
-	0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2a, 0x82,
-	0xd3, 0xe4, 0x93, 0x02, 0x24, 0x22, 0x1f, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x70,
-	0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x73, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x2f,
-	0x64, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x3a, 0x01, 0x2a, 0x12, 0xa4, 0x01, 0x0a, 0x12, 0x47, 0x65,
+	0x79, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x3a, 0x01, 0x2a, 0x12, 0xa4, 0x01, 0x0a, 0x12, 0x47, 0x65,
 	0x74, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67,
 	0x12, 0x33, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67,
 	0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x50,
@@ -4195,7 +3954,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP() 
 	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescData
 }
 
-var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes = make([]protoimpl.MessageInfo, 62)
+var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes = make([]protoimpl.MessageInfo, 59)
 var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_goTypes = []interface{}{
 	(*CoinAccountInfo)(nil),                                 // 0: cloud.hashing.billing.v1.CoinAccountInfo
 	(*CreateCoinAccountRequest)(nil),                        // 1: cloud.hashing.billing.v1.CreateCoinAccountRequest
@@ -4245,23 +4004,20 @@ var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_goTypes = []int
 	(*UpdatePlatformSettingResponse)(nil),                   // 45: cloud.hashing.billing.v1.UpdatePlatformSettingResponse
 	(*GetPlatformSettingByGoodRequest)(nil),                 // 46: cloud.hashing.billing.v1.GetPlatformSettingByGoodRequest
 	(*GetPlatformSettingByGoodResponse)(nil),                // 47: cloud.hashing.billing.v1.GetPlatformSettingByGoodResponse
-	(*PlatformSettingDetail)(nil),                           // 48: cloud.hashing.billing.v1.PlatformSettingDetail
-	(*GetPlatformSettingDetailRequest)(nil),                 // 49: cloud.hashing.billing.v1.GetPlatformSettingDetailRequest
-	(*GetPlatformSettingDetailResponse)(nil),                // 50: cloud.hashing.billing.v1.GetPlatformSettingDetailResponse
-	(*GetPlatformSettingRequest)(nil),                       // 51: cloud.hashing.billing.v1.GetPlatformSettingRequest
-	(*GetPlatformSettingResponse)(nil),                      // 52: cloud.hashing.billing.v1.GetPlatformSettingResponse
-	(*UserBenefit)(nil),                                     // 53: cloud.hashing.billing.v1.UserBenefit
-	(*CreateUserBenefitRequest)(nil),                        // 54: cloud.hashing.billing.v1.CreateUserBenefitRequest
-	(*CreateUserBenefitResponse)(nil),                       // 55: cloud.hashing.billing.v1.CreateUserBenefitResponse
-	(*GetUserBenefitsByAppUserRequest)(nil),                 // 56: cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest
-	(*GetUserBenefitsByAppUserResponse)(nil),                // 57: cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse
-	(*GetUserBenefitsByAppRequest)(nil),                     // 58: cloud.hashing.billing.v1.GetUserBenefitsByAppRequest
-	(*GetUserBenefitsByAppResponse)(nil),                    // 59: cloud.hashing.billing.v1.GetUserBenefitsByAppResponse
-	(*GetLatestUserBenefitByGoodAppUserRequest)(nil),        // 60: cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserRequest
-	(*GetLatestUserBenefitByGoodAppUserResponse)(nil),       // 61: cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse
-	(*npool.PageInfo)(nil),                                  // 62: npool.v1.PageInfo
-	(*emptypb.Empty)(nil),                                   // 63: google.protobuf.Empty
-	(*npool.VersionResponse)(nil),                           // 64: npool.v1.VersionResponse
+	(*GetPlatformSettingRequest)(nil),                       // 48: cloud.hashing.billing.v1.GetPlatformSettingRequest
+	(*GetPlatformSettingResponse)(nil),                      // 49: cloud.hashing.billing.v1.GetPlatformSettingResponse
+	(*UserBenefit)(nil),                                     // 50: cloud.hashing.billing.v1.UserBenefit
+	(*CreateUserBenefitRequest)(nil),                        // 51: cloud.hashing.billing.v1.CreateUserBenefitRequest
+	(*CreateUserBenefitResponse)(nil),                       // 52: cloud.hashing.billing.v1.CreateUserBenefitResponse
+	(*GetUserBenefitsByAppUserRequest)(nil),                 // 53: cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest
+	(*GetUserBenefitsByAppUserResponse)(nil),                // 54: cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse
+	(*GetUserBenefitsByAppRequest)(nil),                     // 55: cloud.hashing.billing.v1.GetUserBenefitsByAppRequest
+	(*GetUserBenefitsByAppResponse)(nil),                    // 56: cloud.hashing.billing.v1.GetUserBenefitsByAppResponse
+	(*GetLatestUserBenefitByGoodAppUserRequest)(nil),        // 57: cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserRequest
+	(*GetLatestUserBenefitByGoodAppUserResponse)(nil),       // 58: cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse
+	(*npool.PageInfo)(nil),                                  // 59: npool.v1.PageInfo
+	(*emptypb.Empty)(nil),                                   // 60: google.protobuf.Empty
+	(*npool.VersionResponse)(nil),                           // 61: npool.v1.VersionResponse
 }
 var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_depIdxs = []int32{
 	0,  // 0: cloud.hashing.billing.v1.CreateCoinAccountRequest.Info:type_name -> cloud.hashing.billing.v1.CoinAccountInfo
@@ -4294,79 +4050,72 @@ var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_depIdxs = []int
 	41, // 27: cloud.hashing.billing.v1.UpdatePlatformSettingRequest.Info:type_name -> cloud.hashing.billing.v1.PlatformSetting
 	41, // 28: cloud.hashing.billing.v1.UpdatePlatformSettingResponse.Info:type_name -> cloud.hashing.billing.v1.PlatformSetting
 	41, // 29: cloud.hashing.billing.v1.GetPlatformSettingByGoodResponse.Info:type_name -> cloud.hashing.billing.v1.PlatformSetting
-	0,  // 30: cloud.hashing.billing.v1.PlatformSettingDetail.BenefitAddress:type_name -> cloud.hashing.billing.v1.CoinAccountInfo
-	0,  // 31: cloud.hashing.billing.v1.PlatformSettingDetail.PlatformOfflineAddress:type_name -> cloud.hashing.billing.v1.CoinAccountInfo
-	0,  // 32: cloud.hashing.billing.v1.PlatformSettingDetail.UserOnlineAddress:type_name -> cloud.hashing.billing.v1.CoinAccountInfo
-	0,  // 33: cloud.hashing.billing.v1.PlatformSettingDetail.UserOfflineAddress:type_name -> cloud.hashing.billing.v1.CoinAccountInfo
-	48, // 34: cloud.hashing.billing.v1.GetPlatformSettingDetailResponse.Detail:type_name -> cloud.hashing.billing.v1.PlatformSettingDetail
-	41, // 35: cloud.hashing.billing.v1.GetPlatformSettingResponse.Info:type_name -> cloud.hashing.billing.v1.PlatformSetting
-	53, // 36: cloud.hashing.billing.v1.CreateUserBenefitRequest.Info:type_name -> cloud.hashing.billing.v1.UserBenefit
-	53, // 37: cloud.hashing.billing.v1.CreateUserBenefitResponse.Info:type_name -> cloud.hashing.billing.v1.UserBenefit
-	53, // 38: cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse.Infos:type_name -> cloud.hashing.billing.v1.UserBenefit
-	62, // 39: cloud.hashing.billing.v1.GetUserBenefitsByAppRequest.PageInfo:type_name -> npool.v1.PageInfo
-	53, // 40: cloud.hashing.billing.v1.GetUserBenefitsByAppResponse.Infos:type_name -> cloud.hashing.billing.v1.UserBenefit
-	53, // 41: cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse.Info:type_name -> cloud.hashing.billing.v1.UserBenefit
-	63, // 42: cloud.hashing.billing.v1.CloudHashingBilling.Version:input_type -> google.protobuf.Empty
-	1,  // 43: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccount:input_type -> cloud.hashing.billing.v1.CreateCoinAccountRequest
-	3,  // 44: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccount:input_type -> cloud.hashing.billing.v1.GetCoinAccountRequest
-	5,  // 45: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountByCoinAddress:input_type -> cloud.hashing.billing.v1.GetCoinAccountByCoinAddressRequest
-	7,  // 46: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountsByAppUser:input_type -> cloud.hashing.billing.v1.GetCoinAccountsByAppUserRequest
-	9,  // 47: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccount:input_type -> cloud.hashing.billing.v1.DeleteCoinAccountRequest
-	12, // 48: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.CreateCoinAccountTransactionRequest
-	14, // 49: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionRequest
-	19, // 50: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoinAccount:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountRequest
-	21, // 51: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByState:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateRequest
-	23, // 52: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoin:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinRequest
-	25, // 53: cloud.hashing.billing.v1.CloudHashingBilling.UpdateCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.UpdateCoinAccountTransactionRequest
-	17, // 54: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionDetail:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionDetailRequest
-	27, // 55: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.DeleteCoinAccountTransactionRequest
-	30, // 56: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformBenefit:input_type -> cloud.hashing.billing.v1.CreatePlatformBenefitRequest
-	39, // 57: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestPlatformBenefitByGood:input_type -> cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodRequest
-	32, // 58: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitsByGood:input_type -> cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest
-	37, // 59: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefit:input_type -> cloud.hashing.billing.v1.GetPlatformBenefitRequest
-	35, // 60: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitDetail:input_type -> cloud.hashing.billing.v1.GetPlatformBenefitDetailRequest
-	42, // 61: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformSetting:input_type -> cloud.hashing.billing.v1.CreatePlatformSettingRequest
-	44, // 62: cloud.hashing.billing.v1.CloudHashingBilling.UpdatePlatformSetting:input_type -> cloud.hashing.billing.v1.UpdatePlatformSettingRequest
-	46, // 63: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformSettingByGood:input_type -> cloud.hashing.billing.v1.GetPlatformSettingByGoodRequest
-	49, // 64: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformSettingDetail:input_type -> cloud.hashing.billing.v1.GetPlatformSettingDetailRequest
-	51, // 65: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformSetting:input_type -> cloud.hashing.billing.v1.GetPlatformSettingRequest
-	54, // 66: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserBenefit:input_type -> cloud.hashing.billing.v1.CreateUserBenefitRequest
-	56, // 67: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByAppUser:input_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest
-	58, // 68: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByApp:input_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppRequest
-	60, // 69: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestUserBenefitByGoodAppUser:input_type -> cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserRequest
-	64, // 70: cloud.hashing.billing.v1.CloudHashingBilling.Version:output_type -> npool.v1.VersionResponse
-	2,  // 71: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccount:output_type -> cloud.hashing.billing.v1.CreateCoinAccountResponse
-	4,  // 72: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccount:output_type -> cloud.hashing.billing.v1.GetCoinAccountResponse
-	6,  // 73: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountByCoinAddress:output_type -> cloud.hashing.billing.v1.GetCoinAccountByCoinAddressResponse
-	8,  // 74: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountsByAppUser:output_type -> cloud.hashing.billing.v1.GetCoinAccountsByAppUserResponse
-	10, // 75: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccount:output_type -> cloud.hashing.billing.v1.DeleteCoinAccountResponse
-	13, // 76: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.CreateCoinAccountTransactionResponse
-	15, // 77: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionResponse
-	20, // 78: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoinAccount:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountResponse
-	22, // 79: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByState:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateResponse
-	24, // 80: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoin:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinResponse
-	26, // 81: cloud.hashing.billing.v1.CloudHashingBilling.UpdateCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.UpdateCoinAccountTransactionResponse
-	18, // 82: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionDetail:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionDetailResponse
-	28, // 83: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.DeleteCoinAccountTransactionResponse
-	31, // 84: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformBenefit:output_type -> cloud.hashing.billing.v1.CreatePlatformBenefitResponse
-	40, // 85: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestPlatformBenefitByGood:output_type -> cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodResponse
-	33, // 86: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitsByGood:output_type -> cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse
-	38, // 87: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefit:output_type -> cloud.hashing.billing.v1.GetPlatformBenefitResponse
-	36, // 88: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitDetail:output_type -> cloud.hashing.billing.v1.GetPlatformBenefitDetailResponse
-	43, // 89: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformSetting:output_type -> cloud.hashing.billing.v1.CreatePlatformSettingResponse
-	45, // 90: cloud.hashing.billing.v1.CloudHashingBilling.UpdatePlatformSetting:output_type -> cloud.hashing.billing.v1.UpdatePlatformSettingResponse
-	47, // 91: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformSettingByGood:output_type -> cloud.hashing.billing.v1.GetPlatformSettingByGoodResponse
-	50, // 92: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformSettingDetail:output_type -> cloud.hashing.billing.v1.GetPlatformSettingDetailResponse
-	52, // 93: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformSetting:output_type -> cloud.hashing.billing.v1.GetPlatformSettingResponse
-	55, // 94: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserBenefit:output_type -> cloud.hashing.billing.v1.CreateUserBenefitResponse
-	57, // 95: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByAppUser:output_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse
-	59, // 96: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByApp:output_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppResponse
-	61, // 97: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestUserBenefitByGoodAppUser:output_type -> cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse
-	70, // [70:98] is the sub-list for method output_type
-	42, // [42:70] is the sub-list for method input_type
-	42, // [42:42] is the sub-list for extension type_name
-	42, // [42:42] is the sub-list for extension extendee
-	0,  // [0:42] is the sub-list for field type_name
+	41, // 30: cloud.hashing.billing.v1.GetPlatformSettingResponse.Info:type_name -> cloud.hashing.billing.v1.PlatformSetting
+	50, // 31: cloud.hashing.billing.v1.CreateUserBenefitRequest.Info:type_name -> cloud.hashing.billing.v1.UserBenefit
+	50, // 32: cloud.hashing.billing.v1.CreateUserBenefitResponse.Info:type_name -> cloud.hashing.billing.v1.UserBenefit
+	50, // 33: cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse.Infos:type_name -> cloud.hashing.billing.v1.UserBenefit
+	59, // 34: cloud.hashing.billing.v1.GetUserBenefitsByAppRequest.PageInfo:type_name -> npool.v1.PageInfo
+	50, // 35: cloud.hashing.billing.v1.GetUserBenefitsByAppResponse.Infos:type_name -> cloud.hashing.billing.v1.UserBenefit
+	50, // 36: cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse.Info:type_name -> cloud.hashing.billing.v1.UserBenefit
+	60, // 37: cloud.hashing.billing.v1.CloudHashingBilling.Version:input_type -> google.protobuf.Empty
+	1,  // 38: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccount:input_type -> cloud.hashing.billing.v1.CreateCoinAccountRequest
+	3,  // 39: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccount:input_type -> cloud.hashing.billing.v1.GetCoinAccountRequest
+	5,  // 40: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountByCoinAddress:input_type -> cloud.hashing.billing.v1.GetCoinAccountByCoinAddressRequest
+	7,  // 41: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountsByAppUser:input_type -> cloud.hashing.billing.v1.GetCoinAccountsByAppUserRequest
+	9,  // 42: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccount:input_type -> cloud.hashing.billing.v1.DeleteCoinAccountRequest
+	12, // 43: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.CreateCoinAccountTransactionRequest
+	14, // 44: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionRequest
+	19, // 45: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoinAccount:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountRequest
+	21, // 46: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByState:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateRequest
+	23, // 47: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoin:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinRequest
+	25, // 48: cloud.hashing.billing.v1.CloudHashingBilling.UpdateCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.UpdateCoinAccountTransactionRequest
+	17, // 49: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionDetail:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionDetailRequest
+	27, // 50: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.DeleteCoinAccountTransactionRequest
+	30, // 51: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformBenefit:input_type -> cloud.hashing.billing.v1.CreatePlatformBenefitRequest
+	39, // 52: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestPlatformBenefitByGood:input_type -> cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodRequest
+	32, // 53: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitsByGood:input_type -> cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest
+	37, // 54: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefit:input_type -> cloud.hashing.billing.v1.GetPlatformBenefitRequest
+	35, // 55: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitDetail:input_type -> cloud.hashing.billing.v1.GetPlatformBenefitDetailRequest
+	42, // 56: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformSetting:input_type -> cloud.hashing.billing.v1.CreatePlatformSettingRequest
+	44, // 57: cloud.hashing.billing.v1.CloudHashingBilling.UpdatePlatformSetting:input_type -> cloud.hashing.billing.v1.UpdatePlatformSettingRequest
+	46, // 58: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformSettingByGood:input_type -> cloud.hashing.billing.v1.GetPlatformSettingByGoodRequest
+	48, // 59: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformSetting:input_type -> cloud.hashing.billing.v1.GetPlatformSettingRequest
+	51, // 60: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserBenefit:input_type -> cloud.hashing.billing.v1.CreateUserBenefitRequest
+	53, // 61: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByAppUser:input_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest
+	55, // 62: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByApp:input_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppRequest
+	57, // 63: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestUserBenefitByGoodAppUser:input_type -> cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserRequest
+	61, // 64: cloud.hashing.billing.v1.CloudHashingBilling.Version:output_type -> npool.v1.VersionResponse
+	2,  // 65: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccount:output_type -> cloud.hashing.billing.v1.CreateCoinAccountResponse
+	4,  // 66: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccount:output_type -> cloud.hashing.billing.v1.GetCoinAccountResponse
+	6,  // 67: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountByCoinAddress:output_type -> cloud.hashing.billing.v1.GetCoinAccountByCoinAddressResponse
+	8,  // 68: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountsByAppUser:output_type -> cloud.hashing.billing.v1.GetCoinAccountsByAppUserResponse
+	10, // 69: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccount:output_type -> cloud.hashing.billing.v1.DeleteCoinAccountResponse
+	13, // 70: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.CreateCoinAccountTransactionResponse
+	15, // 71: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionResponse
+	20, // 72: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoinAccount:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountResponse
+	22, // 73: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByState:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateResponse
+	24, // 74: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoin:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinResponse
+	26, // 75: cloud.hashing.billing.v1.CloudHashingBilling.UpdateCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.UpdateCoinAccountTransactionResponse
+	18, // 76: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionDetail:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionDetailResponse
+	28, // 77: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.DeleteCoinAccountTransactionResponse
+	31, // 78: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformBenefit:output_type -> cloud.hashing.billing.v1.CreatePlatformBenefitResponse
+	40, // 79: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestPlatformBenefitByGood:output_type -> cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodResponse
+	33, // 80: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitsByGood:output_type -> cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse
+	38, // 81: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefit:output_type -> cloud.hashing.billing.v1.GetPlatformBenefitResponse
+	36, // 82: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitDetail:output_type -> cloud.hashing.billing.v1.GetPlatformBenefitDetailResponse
+	43, // 83: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformSetting:output_type -> cloud.hashing.billing.v1.CreatePlatformSettingResponse
+	45, // 84: cloud.hashing.billing.v1.CloudHashingBilling.UpdatePlatformSetting:output_type -> cloud.hashing.billing.v1.UpdatePlatformSettingResponse
+	47, // 85: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformSettingByGood:output_type -> cloud.hashing.billing.v1.GetPlatformSettingByGoodResponse
+	49, // 86: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformSetting:output_type -> cloud.hashing.billing.v1.GetPlatformSettingResponse
+	52, // 87: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserBenefit:output_type -> cloud.hashing.billing.v1.CreateUserBenefitResponse
+	54, // 88: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByAppUser:output_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse
+	56, // 89: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByApp:output_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppResponse
+	58, // 90: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestUserBenefitByGoodAppUser:output_type -> cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse
+	64, // [64:91] is the sub-list for method output_type
+	37, // [37:64] is the sub-list for method input_type
+	37, // [37:37] is the sub-list for extension type_name
+	37, // [37:37] is the sub-list for extension extendee
+	0,  // [0:37] is the sub-list for field type_name
 }
 
 func init() { file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() }
@@ -4952,42 +4701,6 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 			}
 		}
 		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PlatformSettingDetail); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetPlatformSettingDetailRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetPlatformSettingDetailResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetPlatformSettingRequest); i {
 			case 0:
 				return &v.state
@@ -4999,7 +4712,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetPlatformSettingResponse); i {
 			case 0:
 				return &v.state
@@ -5011,7 +4724,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserBenefit); i {
 			case 0:
 				return &v.state
@@ -5023,7 +4736,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUserBenefitRequest); i {
 			case 0:
 				return &v.state
@@ -5035,7 +4748,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[55].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUserBenefitResponse); i {
 			case 0:
 				return &v.state
@@ -5047,7 +4760,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[56].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserBenefitsByAppUserRequest); i {
 			case 0:
 				return &v.state
@@ -5059,7 +4772,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[57].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserBenefitsByAppUserResponse); i {
 			case 0:
 				return &v.state
@@ -5071,7 +4784,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[55].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserBenefitsByAppRequest); i {
 			case 0:
 				return &v.state
@@ -5083,7 +4796,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[59].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[56].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserBenefitsByAppResponse); i {
 			case 0:
 				return &v.state
@@ -5095,7 +4808,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[60].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[57].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLatestUserBenefitByGoodAppUserRequest); i {
 			case 0:
 				return &v.state
@@ -5107,7 +4820,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[61].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLatestUserBenefitByGoodAppUserResponse); i {
 			case 0:
 				return &v.state
@@ -5126,7 +4839,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   62,
+			NumMessages:   59,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

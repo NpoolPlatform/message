@@ -715,38 +715,6 @@
         ]
       }
     },
-    "/v1/get/platform/setting/detail": {
-      "post": {
-        "operationId": "CloudHashingBilling_GetPlatformSettingDetail",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetPlatformSettingDetailResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetPlatformSettingDetailRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingBilling"
-        ]
-      }
-    },
     "/v1/get/user/benefits/by/app": {
       "post": {
         "operationId": "CloudHashingBilling_GetUserBenefitsByApp",
@@ -1406,22 +1374,6 @@
         }
       }
     },
-    "v1GetPlatformSettingDetailRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetPlatformSettingDetailResponse": {
-      "type": "object",
-      "properties": {
-        "Detail": {
-          "$ref": "#/definitions/v1PlatformSettingDetail"
-        }
-      }
-    },
     "v1GetPlatformSettingRequest": {
       "type": "object",
       "properties": {
@@ -1562,33 +1514,6 @@
         "WarmAccountCoinAmount": {
           "type": "number",
           "format": "double"
-        }
-      }
-    },
-    "v1PlatformSettingDetail": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "BenefitAddress": {
-          "$ref": "#/definitions/v1CoinAccountInfo"
-        },
-        "PlatformOfflineAddress": {
-          "$ref": "#/definitions/v1CoinAccountInfo"
-        },
-        "UserOnlineAddress": {
-          "$ref": "#/definitions/v1CoinAccountInfo"
-        },
-        "UserOfflineAddress": {
-          "$ref": "#/definitions/v1CoinAccountInfo"
-        },
-        "BenefitIntervalHours": {
-          "type": "integer",
-          "format": "int32"
         }
       }
     },

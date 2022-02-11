@@ -238,24 +238,6 @@ export type GetPlatformSettingByGoodResponse = {
   info?: PlatformSetting
 }
 
-export type PlatformSettingDetail = {
-  id?: string
-  goodID?: string
-  benefitAddress?: CoinAccountInfo
-  platformOfflineAddress?: CoinAccountInfo
-  userOnlineAddress?: CoinAccountInfo
-  userOfflineAddress?: CoinAccountInfo
-  benefitIntervalHours?: number
-}
-
-export type GetPlatformSettingDetailRequest = {
-  id?: string
-}
-
-export type GetPlatformSettingDetailResponse = {
-  detail?: PlatformSettingDetail
-}
-
 export type GetPlatformSettingRequest = {
   id?: string
 }
@@ -377,9 +359,6 @@ export class CloudHashingBilling {
   }
   static GetPlatformSettingByGood(req: GetPlatformSettingByGoodRequest, initReq?: fm.InitReq): Promise<GetPlatformSettingByGoodResponse> {
     return fm.fetchReq<GetPlatformSettingByGoodRequest, GetPlatformSettingByGoodResponse>(`/v1/get/platform/setting/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetPlatformSettingDetail(req: GetPlatformSettingDetailRequest, initReq?: fm.InitReq): Promise<GetPlatformSettingDetailResponse> {
-    return fm.fetchReq<GetPlatformSettingDetailRequest, GetPlatformSettingDetailResponse>(`/v1/get/platform/setting/detail`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetPlatformSetting(req: GetPlatformSettingRequest, initReq?: fm.InitReq): Promise<GetPlatformSettingResponse> {
     return fm.fetchReq<GetPlatformSettingRequest, GetPlatformSettingResponse>(`/v1/get/platform/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})

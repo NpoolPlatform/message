@@ -148,12 +148,6 @@ service CloudHashingBilling {
             body: "*"
         };
     }
-    rpc GetPlatformSettingDetail(GetPlatformSettingDetailRequest) returns (GetPlatformSettingDetailResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/platform/setting/detail"
-            body: "*"
-        };
-    }
     rpc GetPlatformSetting(GetPlatformSettingRequest) returns (GetPlatformSettingResponse) {
         option (google.api.http) = {
             post: "/v1/get/platform/setting"
@@ -416,24 +410,6 @@ message GetPlatformSettingByGoodRequest {
 
 message GetPlatformSettingByGoodResponse {
     PlatformSetting Info = 10;
-}
-
-message PlatformSettingDetail {
-    string ID = 10;
-    string GoodID = 20;
-    CoinAccountInfo BenefitAddress = 30;
-    CoinAccountInfo PlatformOfflineAddress = 40;
-    CoinAccountInfo UserOnlineAddress = 50;
-    CoinAccountInfo UserOfflineAddress = 60;
-    int32 BenefitIntervalHours = 70;
-}
-
-message GetPlatformSettingDetailRequest {
-    string ID = 10;
-}
-
-message GetPlatformSettingDetailResponse {
-    PlatformSettingDetail Detail = 10;
 }
 
 message GetPlatformSettingRequest {
