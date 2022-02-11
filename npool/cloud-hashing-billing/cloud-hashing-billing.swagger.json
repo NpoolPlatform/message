@@ -971,6 +971,38 @@
         ]
       }
     },
+    "/v1/get/idle/good/payments/by/good/payment/coin": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetIdleGoodPaymentsByGoodPaymentCoin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetIdleGoodPaymentsByGoodPaymentCoinResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetIdleGoodPaymentsByGoodPaymentCoinRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/latest/platform/benefit/by/good": {
       "post": {
         "operationId": "CloudHashingBilling_GetLatestPlatformBenefitByGood",
@@ -2247,6 +2279,31 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1GoodSetting"
+        }
+      }
+    },
+    "v1GetIdleGoodPaymentsByGoodPaymentCoinRequest": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        },
+        "PaymentCoinTypeID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetIdleGoodPaymentsByGoodPaymentCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodPayment"
+          }
         }
       }
     },

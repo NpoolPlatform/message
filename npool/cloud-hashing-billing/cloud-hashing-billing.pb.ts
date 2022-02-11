@@ -423,6 +423,16 @@ export type GetIdleGoodPaymentsByGoodResponse = {
   infos?: GoodPayment[]
 }
 
+export type GetIdleGoodPaymentsByGoodPaymentCoinRequest = {
+  goodID?: string
+  paymentCoinTypeID?: string
+  pageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetIdleGoodPaymentsByGoodPaymentCoinResponse = {
+  infos?: GoodPayment[]
+}
+
 export type GetGoodPaymentByAccountRequest = {
   accountID?: string
 }
@@ -647,6 +657,9 @@ export class CloudHashingBilling {
   }
   static GetIdleGoodPaymentsByGood(req: GetIdleGoodPaymentsByGoodRequest, initReq?: fm.InitReq): Promise<GetIdleGoodPaymentsByGoodResponse> {
     return fm.fetchReq<GetIdleGoodPaymentsByGoodRequest, GetIdleGoodPaymentsByGoodResponse>(`/v1/get/idle/good/payments/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetIdleGoodPaymentsByGoodPaymentCoin(req: GetIdleGoodPaymentsByGoodPaymentCoinRequest, initReq?: fm.InitReq): Promise<GetIdleGoodPaymentsByGoodPaymentCoinResponse> {
+    return fm.fetchReq<GetIdleGoodPaymentsByGoodPaymentCoinRequest, GetIdleGoodPaymentsByGoodPaymentCoinResponse>(`/v1/get/idle/good/payments/by/good/payment/coin`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetGoodPaymentByAccount(req: GetGoodPaymentByAccountRequest, initReq?: fm.InitReq): Promise<GetGoodPaymentByAccountResponse> {
     return fm.fetchReq<GetGoodPaymentByAccountRequest, GetGoodPaymentByAccountResponse>(`/v1/get/good/payment/by/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
