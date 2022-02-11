@@ -464,6 +464,7 @@ export type UserWithdraw = {
   id?: string
   appID?: string
   userID?: string
+  coinTypeID?: string
   accountID?: string
   name?: string
   message?: string

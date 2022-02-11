@@ -1955,6 +1955,7 @@
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
 | AccountID | [string](#string) |  |  |
 | Name | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
@@ -3751,6 +3752,7 @@ Cloud Hashing Billing
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
 | AccountID | [string](#string) |  |  |
 | Name | [string](#string) |  |  |
 | Message | [string](#string) |  |  |

@@ -776,9 +776,10 @@ message UserWithdraw {
     string ID = 10;
     string AppID = 20;
     string UserID = 30;
-    string AccountID = 40;
-    string Name = 50;
-    string Message = 60;
+    string CoinTypeID = 40;
+    string AccountID = 50;
+    string Name = 60;
+    string Message = 70;
 }
 
 message CreateUserWithdrawRequest {
