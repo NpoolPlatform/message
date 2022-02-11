@@ -267,6 +267,38 @@
         ]
       }
     },
+    "/v1/get/kyc/reviews/by/app": {
+      "post": {
+        "operationId": "CloudHashingApis_GetKycReviewsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetKycReviewsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetKycReviewsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/kyc/reviews/by/other/app": {
       "post": {
         "operationId": "CloudHashingApis_GetKycReviewsByOtherApp",
@@ -1548,6 +1580,25 @@
         }
       }
     },
+    "v1GetKycReviewsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetKycReviewsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1KycReview"
+          }
+        }
+      }
+    },
     "v1GetKycReviewsByOtherAppRequest": {
       "type": "object",
       "properties": {
@@ -2064,6 +2115,10 @@
         },
         "CouponID": {
           "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

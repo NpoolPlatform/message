@@ -140,6 +140,12 @@ service CloudHashingApis {
             body: "*"
         };
     }
+    rpc GetKycReviewsByApp(GetKycReviewsByAppRequest) returns (GetKycReviewsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/kyc/reviews/by/app"
+            body: "*"
+        };
+    }
     rpc GetKycReviewsByOtherApp(GetKycReviewsByOtherAppRequest) returns (GetKycReviewsByOtherAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/kyc/reviews/by/other/app"
@@ -413,6 +419,14 @@ message GetKycReviewsRequest {
 }
 
 message GetKycReviewsResponse {
+    repeated  KycReview Infos = 10;
+}
+
+message GetKycReviewsByAppRequest {
+    string AppID = 10;
+}
+
+message GetKycReviewsByAppResponse {
     repeated  KycReview Infos = 10;
 }
 
