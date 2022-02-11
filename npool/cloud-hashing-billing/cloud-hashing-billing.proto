@@ -688,7 +688,7 @@ message GetGoodBenefitByGoodResponse {
 message GoodPayment {
     string ID = 10;
     string GoodID = 20;
-    string CoinTypeID = 30;
+    string PaymentCoinTypeID = 30;
     string AccountID = 40;
     bool Idle = 50;
 }

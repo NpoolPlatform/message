@@ -1627,7 +1627,7 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
-| CoinTypeID | [string](#string) |  |  |
+| PaymentCoinTypeID | [string](#string) |  |  |
 | AccountID | [string](#string) |  |  |
 | Idle | [bool](#bool) |  |  |
 
@@ -3423,7 +3423,7 @@ Cloud Hashing Billing
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
-| CoinTypeID | [string](#string) |  |  |
+| PaymentCoinTypeID | [string](#string) |  |  |
 | AccountID | [string](#string) |  |  |
 | Idle | [bool](#bool) |  |  |
 
