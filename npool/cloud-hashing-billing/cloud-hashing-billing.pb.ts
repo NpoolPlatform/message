@@ -264,7 +264,7 @@ export type GetPlatformSettingByAppResponse = {
 }
 
 export type GetPlatformSettingByOtherAppRequest = {
-  appID?: string
+  targetAppID?: string
 }
 
 export type GetPlatformSettingByOtherAppResponse = {

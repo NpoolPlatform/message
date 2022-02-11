@@ -1460,7 +1460,7 @@
     "v1GetPlatformSettingByOtherAppRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         }
       }

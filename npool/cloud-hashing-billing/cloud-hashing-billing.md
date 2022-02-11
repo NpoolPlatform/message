@@ -924,7 +924,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
+| TargetAppID | [string](#string) |  |  |
 
 
 
@@ -2004,7 +2004,7 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
+| TargetAppID | [string](#string) |  |  |
 
 
 
