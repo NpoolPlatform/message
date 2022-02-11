@@ -13,8 +13,6 @@
     - [CreateCoinAccountTransactionResponse](#cloud.hashing.billing.v1.CreateCoinAccountTransactionResponse)
     - [CreatePlatformBenefitRequest](#cloud.hashing.billing.v1.CreatePlatformBenefitRequest)
     - [CreatePlatformBenefitResponse](#cloud.hashing.billing.v1.CreatePlatformBenefitResponse)
-    - [CreatePlatformSettingForOtherAppRequest](#cloud.hashing.billing.v1.CreatePlatformSettingForOtherAppRequest)
-    - [CreatePlatformSettingForOtherAppResponse](#cloud.hashing.billing.v1.CreatePlatformSettingForOtherAppResponse)
     - [CreatePlatformSettingRequest](#cloud.hashing.billing.v1.CreatePlatformSettingRequest)
     - [CreatePlatformSettingResponse](#cloud.hashing.billing.v1.CreatePlatformSettingResponse)
     - [CreateUserBenefitRequest](#cloud.hashing.billing.v1.CreateUserBenefitRequest)
@@ -49,12 +47,8 @@
     - [GetPlatformBenefitResponse](#cloud.hashing.billing.v1.GetPlatformBenefitResponse)
     - [GetPlatformBenefitsByGoodRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest)
     - [GetPlatformBenefitsByGoodResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse)
-    - [GetPlatformSettingByAppRequest](#cloud.hashing.billing.v1.GetPlatformSettingByAppRequest)
-    - [GetPlatformSettingByAppResponse](#cloud.hashing.billing.v1.GetPlatformSettingByAppResponse)
     - [GetPlatformSettingByGoodRequest](#cloud.hashing.billing.v1.GetPlatformSettingByGoodRequest)
     - [GetPlatformSettingByGoodResponse](#cloud.hashing.billing.v1.GetPlatformSettingByGoodResponse)
-    - [GetPlatformSettingByOtherAppRequest](#cloud.hashing.billing.v1.GetPlatformSettingByOtherAppRequest)
-    - [GetPlatformSettingByOtherAppResponse](#cloud.hashing.billing.v1.GetPlatformSettingByOtherAppResponse)
     - [GetPlatformSettingRequest](#cloud.hashing.billing.v1.GetPlatformSettingRequest)
     - [GetPlatformSettingResponse](#cloud.hashing.billing.v1.GetPlatformSettingResponse)
     - [GetUserBenefitsByAppRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppRequest)
@@ -82,8 +76,6 @@
     - [CreateCoinAccountTransactionResponse](#cloud.hashing.billing.v1.CreateCoinAccountTransactionResponse)
     - [CreatePlatformBenefitRequest](#cloud.hashing.billing.v1.CreatePlatformBenefitRequest)
     - [CreatePlatformBenefitResponse](#cloud.hashing.billing.v1.CreatePlatformBenefitResponse)
-    - [CreatePlatformSettingForOtherAppRequest](#cloud.hashing.billing.v1.CreatePlatformSettingForOtherAppRequest)
-    - [CreatePlatformSettingForOtherAppResponse](#cloud.hashing.billing.v1.CreatePlatformSettingForOtherAppResponse)
     - [CreatePlatformSettingRequest](#cloud.hashing.billing.v1.CreatePlatformSettingRequest)
     - [CreatePlatformSettingResponse](#cloud.hashing.billing.v1.CreatePlatformSettingResponse)
     - [CreateUserBenefitRequest](#cloud.hashing.billing.v1.CreateUserBenefitRequest)
@@ -118,12 +110,8 @@
     - [GetPlatformBenefitResponse](#cloud.hashing.billing.v1.GetPlatformBenefitResponse)
     - [GetPlatformBenefitsByGoodRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest)
     - [GetPlatformBenefitsByGoodResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse)
-    - [GetPlatformSettingByAppRequest](#cloud.hashing.billing.v1.GetPlatformSettingByAppRequest)
-    - [GetPlatformSettingByAppResponse](#cloud.hashing.billing.v1.GetPlatformSettingByAppResponse)
     - [GetPlatformSettingByGoodRequest](#cloud.hashing.billing.v1.GetPlatformSettingByGoodRequest)
     - [GetPlatformSettingByGoodResponse](#cloud.hashing.billing.v1.GetPlatformSettingByGoodResponse)
-    - [GetPlatformSettingByOtherAppRequest](#cloud.hashing.billing.v1.GetPlatformSettingByOtherAppRequest)
-    - [GetPlatformSettingByOtherAppResponse](#cloud.hashing.billing.v1.GetPlatformSettingByOtherAppResponse)
     - [GetPlatformSettingRequest](#cloud.hashing.billing.v1.GetPlatformSettingRequest)
     - [GetPlatformSettingResponse](#cloud.hashing.billing.v1.GetPlatformSettingResponse)
     - [GetUserBenefitsByAppRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppRequest)
@@ -310,37 +298,6 @@
 
 
 
-<a name="cloud.hashing.billing.v1.CreatePlatformSettingForOtherAppRequest"></a>
-
-### CreatePlatformSettingForOtherAppRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.CreatePlatformSettingForOtherAppResponse"></a>
-
-### CreatePlatformSettingForOtherAppResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
-
-
-
-
-
-
 <a name="cloud.hashing.billing.v1.CreatePlatformSettingRequest"></a>
 
 ### CreatePlatformSettingRequest
@@ -856,36 +813,6 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformSettingByAppRequest"></a>
-
-### GetPlatformSettingByAppRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.GetPlatformSettingByAppResponse"></a>
-
-### GetPlatformSettingByAppResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
-
-
-
-
-
-
 <a name="cloud.hashing.billing.v1.GetPlatformSettingByGoodRequest"></a>
 
 ### GetPlatformSettingByGoodRequest
@@ -904,36 +831,6 @@
 <a name="cloud.hashing.billing.v1.GetPlatformSettingByGoodResponse"></a>
 
 ### GetPlatformSettingByGoodResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.GetPlatformSettingByOtherAppRequest"></a>
-
-### GetPlatformSettingByOtherAppRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.GetPlatformSettingByOtherAppResponse"></a>
-
-### GetPlatformSettingByOtherAppResponse
 
 
 
@@ -1211,10 +1108,7 @@ Cloud Hashing Billing
 | GetPlatformBenefit | [GetPlatformBenefitRequest](#cloud.hashing.billing.v1.GetPlatformBenefitRequest) | [GetPlatformBenefitResponse](#cloud.hashing.billing.v1.GetPlatformBenefitResponse) |  |
 | GetPlatformBenefitDetail | [GetPlatformBenefitDetailRequest](#cloud.hashing.billing.v1.GetPlatformBenefitDetailRequest) | [GetPlatformBenefitDetailResponse](#cloud.hashing.billing.v1.GetPlatformBenefitDetailResponse) |  |
 | CreatePlatformSetting | [CreatePlatformSettingRequest](#cloud.hashing.billing.v1.CreatePlatformSettingRequest) | [CreatePlatformSettingResponse](#cloud.hashing.billing.v1.CreatePlatformSettingResponse) |  |
-| CreatePlatformSettingForOtherApp | [CreatePlatformSettingForOtherAppRequest](#cloud.hashing.billing.v1.CreatePlatformSettingForOtherAppRequest) | [CreatePlatformSettingForOtherAppResponse](#cloud.hashing.billing.v1.CreatePlatformSettingForOtherAppResponse) |  |
 | UpdatePlatformSetting | [UpdatePlatformSettingRequest](#cloud.hashing.billing.v1.UpdatePlatformSettingRequest) | [UpdatePlatformSettingResponse](#cloud.hashing.billing.v1.UpdatePlatformSettingResponse) |  |
-| GetPlatformSettingByApp | [GetPlatformSettingByAppRequest](#cloud.hashing.billing.v1.GetPlatformSettingByAppRequest) | [GetPlatformSettingByAppResponse](#cloud.hashing.billing.v1.GetPlatformSettingByAppResponse) |  |
-| GetPlatformSettingByOtherApp | [GetPlatformSettingByOtherAppRequest](#cloud.hashing.billing.v1.GetPlatformSettingByOtherAppRequest) | [GetPlatformSettingByOtherAppResponse](#cloud.hashing.billing.v1.GetPlatformSettingByOtherAppResponse) |  |
 | GetPlatformSetting | [GetPlatformSettingRequest](#cloud.hashing.billing.v1.GetPlatformSettingRequest) | [GetPlatformSettingResponse](#cloud.hashing.billing.v1.GetPlatformSettingResponse) |  |
 | CreateUserBenefit | [CreateUserBenefitRequest](#cloud.hashing.billing.v1.CreateUserBenefitRequest) | [CreateUserBenefitResponse](#cloud.hashing.billing.v1.CreateUserBenefitResponse) |  |
 | GetUserBenefitsByAppUser | [GetUserBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest) | [GetUserBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse) |  |
@@ -1390,37 +1284,6 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.CreatePlatformSettingForOtherAppRequest"></a>
-
-### CreatePlatformSettingForOtherAppRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.CreatePlatformSettingForOtherAppResponse"></a>
-
-### CreatePlatformSettingForOtherAppResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
-
-
-
-
-
-
 <a name="cloud.hashing.billing.v1.CreatePlatformSettingRequest"></a>
 
 ### CreatePlatformSettingRequest
@@ -1936,36 +1799,6 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformSettingByAppRequest"></a>
-
-### GetPlatformSettingByAppRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.GetPlatformSettingByAppResponse"></a>
-
-### GetPlatformSettingByAppResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
-
-
-
-
-
-
 <a name="cloud.hashing.billing.v1.GetPlatformSettingByGoodRequest"></a>
 
 ### GetPlatformSettingByGoodRequest
@@ -1984,36 +1817,6 @@ Cloud Hashing Billing
 <a name="cloud.hashing.billing.v1.GetPlatformSettingByGoodResponse"></a>
 
 ### GetPlatformSettingByGoodResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.GetPlatformSettingByOtherAppRequest"></a>
-
-### GetPlatformSettingByOtherAppRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.GetPlatformSettingByOtherAppResponse"></a>
-
-### GetPlatformSettingByOtherAppResponse
 
 
 
@@ -2291,10 +2094,7 @@ Cloud Hashing Billing
 | GetPlatformBenefit | [GetPlatformBenefitRequest](#cloud.hashing.billing.v1.GetPlatformBenefitRequest) | [GetPlatformBenefitResponse](#cloud.hashing.billing.v1.GetPlatformBenefitResponse) |  |
 | GetPlatformBenefitDetail | [GetPlatformBenefitDetailRequest](#cloud.hashing.billing.v1.GetPlatformBenefitDetailRequest) | [GetPlatformBenefitDetailResponse](#cloud.hashing.billing.v1.GetPlatformBenefitDetailResponse) |  |
 | CreatePlatformSetting | [CreatePlatformSettingRequest](#cloud.hashing.billing.v1.CreatePlatformSettingRequest) | [CreatePlatformSettingResponse](#cloud.hashing.billing.v1.CreatePlatformSettingResponse) |  |
-| CreatePlatformSettingForOtherApp | [CreatePlatformSettingForOtherAppRequest](#cloud.hashing.billing.v1.CreatePlatformSettingForOtherAppRequest) | [CreatePlatformSettingForOtherAppResponse](#cloud.hashing.billing.v1.CreatePlatformSettingForOtherAppResponse) |  |
 | UpdatePlatformSetting | [UpdatePlatformSettingRequest](#cloud.hashing.billing.v1.UpdatePlatformSettingRequest) | [UpdatePlatformSettingResponse](#cloud.hashing.billing.v1.UpdatePlatformSettingResponse) |  |
-| GetPlatformSettingByApp | [GetPlatformSettingByAppRequest](#cloud.hashing.billing.v1.GetPlatformSettingByAppRequest) | [GetPlatformSettingByAppResponse](#cloud.hashing.billing.v1.GetPlatformSettingByAppResponse) |  |
-| GetPlatformSettingByOtherApp | [GetPlatformSettingByOtherAppRequest](#cloud.hashing.billing.v1.GetPlatformSettingByOtherAppRequest) | [GetPlatformSettingByOtherAppResponse](#cloud.hashing.billing.v1.GetPlatformSettingByOtherAppResponse) |  |
 | GetPlatformSetting | [GetPlatformSettingRequest](#cloud.hashing.billing.v1.GetPlatformSettingRequest) | [GetPlatformSettingResponse](#cloud.hashing.billing.v1.GetPlatformSettingResponse) |  |
 | CreateUserBenefit | [CreateUserBenefitRequest](#cloud.hashing.billing.v1.CreateUserBenefitRequest) | [CreateUserBenefitResponse](#cloud.hashing.billing.v1.CreateUserBenefitResponse) |  |
 | GetUserBenefitsByAppUser | [GetUserBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest) | [GetUserBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse) |  |

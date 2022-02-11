@@ -222,15 +222,6 @@ export type CreatePlatformSettingResponse = {
   info?: PlatformSetting
 }
 
-export type CreatePlatformSettingForOtherAppRequest = {
-  targetAppID?: string
-  info?: PlatformSetting
-}
-
-export type CreatePlatformSettingForOtherAppResponse = {
-  info?: PlatformSetting
-}
-
 export type UpdatePlatformSettingRequest = {
   info?: PlatformSetting
 }
@@ -252,22 +243,6 @@ export type GetPlatformSettingRequest = {
 }
 
 export type GetPlatformSettingResponse = {
-  info?: PlatformSetting
-}
-
-export type GetPlatformSettingByAppRequest = {
-  appID?: string
-}
-
-export type GetPlatformSettingByAppResponse = {
-  info?: PlatformSetting
-}
-
-export type GetPlatformSettingByOtherAppRequest = {
-  targetAppID?: string
-}
-
-export type GetPlatformSettingByOtherAppResponse = {
   info?: PlatformSetting
 }
 
@@ -379,17 +354,8 @@ export class CloudHashingBilling {
   static CreatePlatformSetting(req: CreatePlatformSettingRequest, initReq?: fm.InitReq): Promise<CreatePlatformSettingResponse> {
     return fm.fetchReq<CreatePlatformSettingRequest, CreatePlatformSettingResponse>(`/v1/create/platform/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static CreatePlatformSettingForOtherApp(req: CreatePlatformSettingForOtherAppRequest, initReq?: fm.InitReq): Promise<CreatePlatformSettingForOtherAppResponse> {
-    return fm.fetchReq<CreatePlatformSettingForOtherAppRequest, CreatePlatformSettingForOtherAppResponse>(`/v1/create/platform/setting/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
   static UpdatePlatformSetting(req: UpdatePlatformSettingRequest, initReq?: fm.InitReq): Promise<UpdatePlatformSettingResponse> {
     return fm.fetchReq<UpdatePlatformSettingRequest, UpdatePlatformSettingResponse>(`/v1/update/platform/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetPlatformSettingByApp(req: GetPlatformSettingByAppRequest, initReq?: fm.InitReq): Promise<GetPlatformSettingByAppResponse> {
-    return fm.fetchReq<GetPlatformSettingByAppRequest, GetPlatformSettingByAppResponse>(`/v1/get/platform/setting/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetPlatformSettingByOtherApp(req: GetPlatformSettingByOtherAppRequest, initReq?: fm.InitReq): Promise<GetPlatformSettingByOtherAppResponse> {
-    return fm.fetchReq<GetPlatformSettingByOtherAppRequest, GetPlatformSettingByOtherAppResponse>(`/v1/get/platform/setting/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetPlatformSetting(req: GetPlatformSettingRequest, initReq?: fm.InitReq): Promise<GetPlatformSettingResponse> {
     return fm.fetchReq<GetPlatformSettingRequest, GetPlatformSettingResponse>(`/v1/get/platform/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
