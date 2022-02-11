@@ -2693,9 +2693,6 @@
         "ID": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
         "WarmAccountUSDAmount": {
           "type": "number",
           "format": "double"

@@ -533,7 +533,6 @@ message GetLatestPlatformBenefitByGoodResponse {
 
 message PlatformSetting {
     string ID = 10;
-    string AppID = 20;
     double WarmAccountUSDAmount = 30;
 }
 

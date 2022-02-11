@@ -1776,7 +1776,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
 | WarmAccountUSDAmount | [double](#double) |  |  |
 
 
@@ -3639,7 +3638,6 @@ Cloud Hashing Billing
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
 | WarmAccountUSDAmount | [double](#double) |  |  |
 
 

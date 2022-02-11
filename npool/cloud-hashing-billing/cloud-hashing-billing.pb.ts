@@ -210,7 +210,6 @@ export type GetLatestPlatformBenefitByGoodResponse = {
 
 export type PlatformSetting = {
   id?: string
-  appID?: string
   warmAccountUSDAmount?: number
 }
 
