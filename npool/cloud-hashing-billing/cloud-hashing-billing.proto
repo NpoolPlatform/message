@@ -248,6 +248,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetIdleGoodPaymentsByGood (GetIdleGoodPaymentsByGoodRequest) returns (GetIdleGoodPaymentsByGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/idle/good/payments/by/good"
+            body: "*"
+        };
+    }
     rpc GetGoodPaymentByAccount (GetGoodPaymentByAccountRequest) returns (GetGoodPaymentByAccountResponse) {
         option (google.api.http) = {
             post: "/v1/get/good/payment/by/account"
@@ -719,9 +725,19 @@ message GetGoodPaymentResponse {
 
 message GetGoodPaymentsByGoodRequest {
     string GoodID = 10;
+    npool.v1.PageInfo PageInfo = 20;
 }
 
 message GetGoodPaymentsByGoodResponse {
+    repeated GoodPayment Infos = 10;
+}
+
+message GetIdleGoodPaymentsByGoodRequest {
+    string GoodID = 10;
+    npool.v1.PageInfo PageInfo = 20;
+}
+
+message GetIdleGoodPaymentsByGoodResponse {
     repeated GoodPayment Infos = 10;
 }
 

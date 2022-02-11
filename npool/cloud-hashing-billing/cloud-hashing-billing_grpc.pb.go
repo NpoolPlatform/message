@@ -63,6 +63,7 @@ type CloudHashingBillingClient interface {
 	UpdateGoodPayment(ctx context.Context, in *UpdateGoodPaymentRequest, opts ...grpc.CallOption) (*UpdateGoodPaymentResponse, error)
 	GetGoodPayment(ctx context.Context, in *GetGoodPaymentRequest, opts ...grpc.CallOption) (*GetGoodPaymentResponse, error)
 	GetGoodPaymentsByGood(ctx context.Context, in *GetGoodPaymentsByGoodRequest, opts ...grpc.CallOption) (*GetGoodPaymentsByGoodResponse, error)
+	GetIdleGoodPaymentsByGood(ctx context.Context, in *GetIdleGoodPaymentsByGoodRequest, opts ...grpc.CallOption) (*GetIdleGoodPaymentsByGoodResponse, error)
 	GetGoodPaymentByAccount(ctx context.Context, in *GetGoodPaymentByAccountRequest, opts ...grpc.CallOption) (*GetGoodPaymentByAccountResponse, error)
 	CreateGoodSetting(ctx context.Context, in *CreateGoodSettingRequest, opts ...grpc.CallOption) (*CreateGoodSettingResponse, error)
 	UpdateGoodSetting(ctx context.Context, in *UpdateGoodSettingRequest, opts ...grpc.CallOption) (*UpdateGoodSettingResponse, error)
@@ -426,6 +427,15 @@ func (c *cloudHashingBillingClient) GetGoodPaymentsByGood(ctx context.Context, i
 	return out, nil
 }
 
+func (c *cloudHashingBillingClient) GetIdleGoodPaymentsByGood(ctx context.Context, in *GetIdleGoodPaymentsByGoodRequest, opts ...grpc.CallOption) (*GetIdleGoodPaymentsByGoodResponse, error) {
+	out := new(GetIdleGoodPaymentsByGoodResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetIdleGoodPaymentsByGood", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingBillingClient) GetGoodPaymentByAccount(ctx context.Context, in *GetGoodPaymentByAccountRequest, opts ...grpc.CallOption) (*GetGoodPaymentByAccountResponse, error) {
 	out := new(GetGoodPaymentByAccountResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodPaymentByAccount", in, out, opts...)
@@ -568,6 +578,7 @@ type CloudHashingBillingServer interface {
 	UpdateGoodPayment(context.Context, *UpdateGoodPaymentRequest) (*UpdateGoodPaymentResponse, error)
 	GetGoodPayment(context.Context, *GetGoodPaymentRequest) (*GetGoodPaymentResponse, error)
 	GetGoodPaymentsByGood(context.Context, *GetGoodPaymentsByGoodRequest) (*GetGoodPaymentsByGoodResponse, error)
+	GetIdleGoodPaymentsByGood(context.Context, *GetIdleGoodPaymentsByGoodRequest) (*GetIdleGoodPaymentsByGoodResponse, error)
 	GetGoodPaymentByAccount(context.Context, *GetGoodPaymentByAccountRequest) (*GetGoodPaymentByAccountResponse, error)
 	CreateGoodSetting(context.Context, *CreateGoodSettingRequest) (*CreateGoodSettingResponse, error)
 	UpdateGoodSetting(context.Context, *UpdateGoodSettingRequest) (*UpdateGoodSettingResponse, error)
@@ -699,6 +710,9 @@ func (UnimplementedCloudHashingBillingServer) GetGoodPayment(context.Context, *G
 }
 func (UnimplementedCloudHashingBillingServer) GetGoodPaymentsByGood(context.Context, *GetGoodPaymentsByGoodRequest) (*GetGoodPaymentsByGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodPaymentsByGood not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetIdleGoodPaymentsByGood(context.Context, *GetIdleGoodPaymentsByGoodRequest) (*GetIdleGoodPaymentsByGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetIdleGoodPaymentsByGood not implemented")
 }
 func (UnimplementedCloudHashingBillingServer) GetGoodPaymentByAccount(context.Context, *GetGoodPaymentByAccountRequest) (*GetGoodPaymentByAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodPaymentByAccount not implemented")
@@ -1430,6 +1444,24 @@ func _CloudHashingBilling_GetGoodPaymentsByGood_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingBilling_GetIdleGoodPaymentsByGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIdleGoodPaymentsByGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetIdleGoodPaymentsByGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetIdleGoodPaymentsByGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetIdleGoodPaymentsByGood(ctx, req.(*GetIdleGoodPaymentsByGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingBilling_GetGoodPaymentByAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetGoodPaymentByAccountRequest)
 	if err := dec(in); err != nil {
@@ -1786,6 +1818,10 @@ var CloudHashingBilling_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetGoodPaymentsByGood",
 			Handler:    _CloudHashingBilling_GetGoodPaymentsByGood_Handler,
+		},
+		{
+			MethodName: "GetIdleGoodPaymentsByGood",
+			Handler:    _CloudHashingBilling_GetIdleGoodPaymentsByGood_Handler,
 		},
 		{
 			MethodName: "GetGoodPaymentByAccount",
