@@ -376,6 +376,7 @@ export type GetGoodBenefitByGoodResponse = {
 export type GoodPayment = {
   id?: string
   goodID?: string
+  coinTypeID?: string
   accountID?: string
   idle?: boolean
 }

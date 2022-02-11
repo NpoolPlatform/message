@@ -2476,6 +2476,9 @@
         "GoodID": {
           "type": "string"
         },
+        "CoinTypeID": {
+          "type": "string"
+        },
         "AccountID": {
           "type": "string"
         },
