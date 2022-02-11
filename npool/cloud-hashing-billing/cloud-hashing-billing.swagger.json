@@ -1722,7 +1722,8 @@
           "type": "string"
         },
         "WarmAccountCoinAmount": {
-          "type": "string"
+          "type": "number",
+          "format": "double"
         }
       }
     },

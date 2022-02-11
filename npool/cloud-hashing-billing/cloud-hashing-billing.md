@@ -320,7 +320,7 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
-| WarmAccountCoinAmount | [string](#string) |  |  |
+| WarmAccountCoinAmount | [double](#double) |  |  |
 
 
 
@@ -2115,7 +2115,7 @@ Cloud Hashing Billing
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
-| WarmAccountCoinAmount | [string](#string) |  |  |
+| WarmAccountCoinAmount | [double](#double) |  |  |
 
 
 

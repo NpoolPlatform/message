@@ -608,7 +608,7 @@ message GetLatestUserBenefitByGoodAppUserResponse {
 message CoinSetting {
     string ID = 10;
     string CoinTypeID = 20;
-    string WarmAccountCoinAmount = 30;
+    double WarmAccountCoinAmount = 30;
 }
 
 message CreateCoinSettingRequest {

@@ -296,7 +296,7 @@ export type GetLatestUserBenefitByGoodAppUserResponse = {
 export type CoinSetting = {
   id?: string
   coinTypeID?: string
-  warmAccountCoinAmount?: string
+  warmAccountCoinAmount?: number
 }
 
 export type CreateCoinSettingRequest = {
