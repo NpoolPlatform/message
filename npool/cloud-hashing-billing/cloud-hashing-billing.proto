@@ -19,157 +19,300 @@ service CloudHashingBilling {
         };
     }
 
-    rpc CreateCoinAccount(CreateCoinAccountRequest) returns (CreateCoinAccountResponse) {
+    rpc CreateCoinAccount (CreateCoinAccountRequest) returns (CreateCoinAccountResponse) {
         option (google.api.http) = {
             post: "/v1/create/coin/account"
             body: "*"
         };
     }
-    rpc GetCoinAccount(GetCoinAccountRequest) returns (GetCoinAccountResponse) {
+    rpc GetCoinAccount (GetCoinAccountRequest) returns (GetCoinAccountResponse) {
         option (google.api.http) = {
             post: "/v1/get/coin/account"
             body: "*"
         };
     }
-    rpc GetCoinAccountByCoinAddress(GetCoinAccountByCoinAddressRequest) returns (GetCoinAccountByCoinAddressResponse) {
+    rpc GetCoinAccountByCoinAddress (GetCoinAccountByCoinAddressRequest) returns (GetCoinAccountByCoinAddressResponse) {
         option (google.api.http) = {
             post: "/v1/get/coin/account/by/coin/address"
             body: "*"
         };
     }
-    rpc GetCoinAccountsByAppUser(GetCoinAccountsByAppUserRequest) returns (GetCoinAccountsByAppUserResponse) {
+    rpc GetCoinAccountsByAppUser (GetCoinAccountsByAppUserRequest) returns (GetCoinAccountsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/coin/accounts/by/app/user"
             body: "*"
         };
     }
-    rpc DeleteCoinAccount(DeleteCoinAccountRequest) returns (DeleteCoinAccountResponse) {
+    rpc DeleteCoinAccount (DeleteCoinAccountRequest) returns (DeleteCoinAccountResponse) {
         option (google.api.http) = {
             post: "/v1/delete/coin/account"
             body: "*"
         };
     }
 
-    rpc CreateCoinAccountTransaction(CreateCoinAccountTransactionRequest) returns (CreateCoinAccountTransactionResponse) {
+    rpc CreateCoinAccountTransaction (CreateCoinAccountTransactionRequest) returns (CreateCoinAccountTransactionResponse) {
         option (google.api.http) = {
             post: "/v1/create/coin/account/transaction"
             body: "*"
         };
     }
-    rpc GetCoinAccountTransaction(GetCoinAccountTransactionRequest) returns (GetCoinAccountTransactionResponse) {
+    rpc GetCoinAccountTransaction (GetCoinAccountTransactionRequest) returns (GetCoinAccountTransactionResponse) {
         option (google.api.http) = {
             post: "/v1/get/coin/account/transaction"
             body: "*"
         };
     }
-    rpc GetCoinAccountTransactionsByCoinAccount(GetCoinAccountTransactionsByCoinAccountRequest) returns (GetCoinAccountTransactionsByCoinAccountResponse) {
+    rpc GetCoinAccountTransactionsByCoinAccount (GetCoinAccountTransactionsByCoinAccountRequest) returns (GetCoinAccountTransactionsByCoinAccountResponse) {
         option (google.api.http) = {
             post: "/v1/get/coin/account/transactions/by/coin/account"
             body: "*"
         };
     }
-    rpc GetCoinAccountTransactionsByState(GetCoinAccountTransactionsByStateRequest) returns (GetCoinAccountTransactionsByStateResponse) {
+    rpc GetCoinAccountTransactionsByState (GetCoinAccountTransactionsByStateRequest) returns (GetCoinAccountTransactionsByStateResponse) {
         option (google.api.http) = {
             post: "/v1/get/coin/account/transactions/by/state"
             body: "*"
         };
     }
-    rpc GetCoinAccountTransactionsByCoin(GetCoinAccountTransactionsByCoinRequest) returns (GetCoinAccountTransactionsByCoinResponse) {
+    rpc GetCoinAccountTransactionsByCoin (GetCoinAccountTransactionsByCoinRequest) returns (GetCoinAccountTransactionsByCoinResponse) {
         option (google.api.http) = {
             post: "/v1/get/coin/account/transactions/by/coin"
             body: "*"
         };
     }
-    rpc UpdateCoinAccountTransaction(UpdateCoinAccountTransactionRequest) returns (UpdateCoinAccountTransactionResponse) {
+    rpc UpdateCoinAccountTransaction (UpdateCoinAccountTransactionRequest) returns (UpdateCoinAccountTransactionResponse) {
         option (google.api.http) = {
             post: "/v1/update/coin/account/transaction"
             body: "*"
         };
     }
-    rpc GetCoinAccountTransactionDetail(GetCoinAccountTransactionDetailRequest) returns (GetCoinAccountTransactionDetailResponse) {
+    rpc GetCoinAccountTransactionDetail (GetCoinAccountTransactionDetailRequest) returns (GetCoinAccountTransactionDetailResponse) {
         option (google.api.http) = {
             post: "/v1/get/coin/account/transaction/detail"
             body: "*"
         };
     }
-    rpc DeleteCoinAccountTransaction(DeleteCoinAccountTransactionRequest) returns (DeleteCoinAccountTransactionResponse) {
+    rpc DeleteCoinAccountTransaction (DeleteCoinAccountTransactionRequest) returns (DeleteCoinAccountTransactionResponse) {
         option (google.api.http) = {
             post: "/v1/delete/coin/account/transaction"
             body: "*"
         };
     }
 
-    rpc CreatePlatformBenefit(CreatePlatformBenefitRequest) returns (CreatePlatformBenefitResponse) {
+    rpc CreatePlatformBenefit (CreatePlatformBenefitRequest) returns (CreatePlatformBenefitResponse) {
         option (google.api.http) = {
             post: "/v1/create/platform/benefit",
             body: "*"
         };
     }
-    rpc GetLatestPlatformBenefitByGood(GetLatestPlatformBenefitByGoodRequest) returns (GetLatestPlatformBenefitByGoodResponse) {
+    rpc GetLatestPlatformBenefitByGood (GetLatestPlatformBenefitByGoodRequest) returns (GetLatestPlatformBenefitByGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/latest/platform/benefit/by/good"
             body: "*"
         };
     }
-    rpc GetPlatformBenefitsByGood(GetPlatformBenefitsByGoodRequest) returns (GetPlatformBenefitsByGoodResponse) {
+    rpc GetPlatformBenefitsByGood (GetPlatformBenefitsByGoodRequest) returns (GetPlatformBenefitsByGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/platform/benefits/by/good"
             body: "*"
         };
     }
-    rpc GetPlatformBenefit(GetPlatformBenefitRequest) returns (GetPlatformBenefitResponse) {
+    rpc GetPlatformBenefit (GetPlatformBenefitRequest) returns (GetPlatformBenefitResponse) {
         option (google.api.http) = {
             post: "/v1/get/platform/benefit"
             body: "*"
         };
     }
-    rpc GetPlatformBenefitDetail(GetPlatformBenefitDetailRequest) returns (GetPlatformBenefitDetailResponse) {
+    rpc GetPlatformBenefitDetail (GetPlatformBenefitDetailRequest) returns (GetPlatformBenefitDetailResponse) {
         option (google.api.http) = {
             post: "/v1/get/platform/benefit/detail"
             body: "*"
         };
     }
 
-    rpc CreatePlatformSetting(CreatePlatformSettingRequest) returns (CreatePlatformSettingResponse) {
+    rpc CreatePlatformSetting (CreatePlatformSettingRequest) returns (CreatePlatformSettingResponse) {
         option (google.api.http) = {
             post: "/v1/create/platform/setting"
             body: "*"
         };
     }
-    rpc UpdatePlatformSetting(UpdatePlatformSettingRequest) returns (UpdatePlatformSettingResponse) {
+    rpc UpdatePlatformSetting (UpdatePlatformSettingRequest) returns (UpdatePlatformSettingResponse) {
         option (google.api.http) = {
             post: "/v1/update/platform/setting"
             body: "*"
         };
     }
-    rpc GetPlatformSetting(GetPlatformSettingRequest) returns (GetPlatformSettingResponse) {
+    rpc GetPlatformSetting (GetPlatformSettingRequest) returns (GetPlatformSettingResponse) {
         option (google.api.http) = {
             post: "/v1/get/platform/setting"
             body: "*"
         };
     }
 
-    rpc CreateUserBenefit(CreateUserBenefitRequest) returns (CreateUserBenefitResponse) {
+    rpc CreateUserBenefit (CreateUserBenefitRequest) returns (CreateUserBenefitResponse) {
         option (google.api.http) = {
             post: "/v1/create/user/benefit"
             body: "*"
         };
     }
-    rpc GetUserBenefitsByAppUser(GetUserBenefitsByAppUserRequest) returns (GetUserBenefitsByAppUserResponse) {
+    rpc GetUserBenefitsByAppUser (GetUserBenefitsByAppUserRequest) returns (GetUserBenefitsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/benefits/by/app/user"
             body: "*"
         };
     }
-    rpc GetUserBenefitsByApp(GetUserBenefitsByAppRequest) returns (GetUserBenefitsByAppResponse) {
+    rpc GetUserBenefitsByApp (GetUserBenefitsByAppRequest) returns (GetUserBenefitsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/benefits/by/app"
             body: "*"
         };
     }
-    rpc GetLatestUserBenefitByGoodAppUser(GetLatestUserBenefitByGoodAppUserRequest) returns (GetLatestUserBenefitByGoodAppUserResponse) {
+    rpc GetLatestUserBenefitByGoodAppUser (GetLatestUserBenefitByGoodAppUserRequest) returns (GetLatestUserBenefitByGoodAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/latest/user/benefit/by/good/app/user"
+            body: "*"
+        };
+    }
+
+    rpc CreateCoinSetting (CreateCoinSettingRequest) returns (CreateCoinSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/coin/setting"
+            body: "*"
+        };
+    }
+    rpc UpdateCoinSetting (UpdateCoinSettingRequest) returns (UpdateCoinSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/coin/setting"
+            body: "*"
+        };
+    }
+    rpc GetCoinSetting (GetCoinSettingRequest) returns (GetCoinSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coin/setting"
+            body: "*"
+        };
+    }
+    rpc GetCoinSettingByCoin (GetCoinSettingByCoinRequest) returns (GetCoinSettingByCoinResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coin/setting/by/coin"
+            body: "*"
+        };
+    }
+
+    rpc CreateGoodBenefit (CreateGoodBenefitRequest) returns (CreateGoodBenefitResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/good/benefit"
+            body: "*"
+        };
+    }
+    rpc UpdateGoodBenefit (UpdateGoodBenefitRequest) returns (UpdateGoodBenefitResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/good/benefit"
+            body: "*"
+        };
+    }
+    rpc GetGoodBenefit (GetGoodBenefitRequest) returns (GetGoodBenefitResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/benefit"
+            body: "*"
+        };
+    }
+    rpc GetGoodBenefitByGood (GetGoodBenefitByGoodRequest) returns (GetGoodBenefitByGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/benefit/by/good"
+            body: "*"
+        };
+    }
+
+    rpc CreateGoodPayment (CreateGoodPaymentRequest) returns (CreateGoodPaymentResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/good/payment"
+            body: "*"
+        };
+    }
+    rpc UpdateGoodPayment (UpdateGoodPaymentRequest) returns (UpdateGoodPaymentResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/good/payment"
+            body: "*"
+        };
+    }
+    rpc GetGoodPayment (GetGoodPaymentRequest) returns (GetGoodPaymentResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/payment"
+            body: "*"
+        };
+    }
+    rpc GetGoodPaymentsByGood (GetGoodPaymentsByGoodRequest) returns (GetGoodPaymentsByGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/payments/by/good"
+            body: "*"
+        };
+    }
+    rpc GetGoodPaymentByAccount (GetGoodPaymentByAccountRequest) returns (GetGoodPaymentByAccountResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/payment/by/account"
+            body: "*"
+        };
+    }
+
+    rpc CreateGoodSetting (CreateGoodSettingRequest) returns (CreateGoodSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/good/setting"
+            body: "*"
+        };
+    }
+    rpc UpdateGoodSetting (UpdateGoodSettingRequest) returns (UpdateGoodSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/good/setting"
+            body: "*"
+        };
+    }
+    rpc GetGoodSetting (GetGoodSettingRequest) returns (GetGoodSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/setting"
+            body: "*"
+        };
+    }
+    rpc GetGoodSettingByGood (GetGoodSettingByGoodRequest) returns (GetGoodSettingByGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/setting/by/good"
+            body: "*"
+        };
+    }
+
+    rpc CreateUserWithdraw (CreateUserWithdrawRequest) returns (CreateUserWithdrawResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/withdraw"
+            body: "*"
+        };
+    }
+    rpc UpdateUserWithdraw (UpdateUserWithdrawRequest) returns (UpdateUserWithdrawResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user/withdraw"
+            body: "*"
+        };
+    }
+    rpc GetUserWithdraw (GetUserWithdrawRequest) returns (GetUserWithdrawResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraw"
+            body: "*"
+        };
+    }
+    rpc GetUserWithdrawsByAppUser (GetUserWithdrawsByAppUserRequest) returns (GetUserWithdrawsByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraws/by/app/user"
+            body: "*"
+        };
+    }
+    rpc GetUserWithdrawsByOtherAppUser (GetUserWithdrawsByOtherAppUserRequest) returns (GetUserWithdrawsByOtherAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraws/by/other/app/user"
+            body: "*"
+        };
+    }
+    rpc GetUserWithdrawByAccount (GetUserWithdrawByAccountRequest) returns (GetUserWithdrawByAccountResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraw/by/account"
             body: "*"
         };
     }
@@ -461,3 +604,228 @@ message GetLatestUserBenefitByGoodAppUserResponse {
     UserBenefit Info = 10;
 }
 
+
+message CoinSetting {
+    string ID = 10;
+    string CoinTypeID = 20;
+    string WarmAccountCoinAmount = 30;
+}
+
+message CreateCoinSettingRequest {
+    CoinSetting Info = 10;
+}
+
+message CreateCoinSettingResponse {
+    CoinSetting Info = 10;
+}
+
+message UpdateCoinSettingRequest {
+    CoinSetting Info = 10;
+}
+
+message UpdateCoinSettingResponse {
+    CoinSetting Info = 10;
+}
+
+message GetCoinSettingRequest {
+    string ID = 10;
+}
+
+message GetCoinSettingResponse {
+    CoinSetting Info = 10;
+}
+
+message GetCoinSettingByCoinRequest {
+    string CoinTypeID = 10;
+}
+
+message GetCoinSettingByCoinResponse {
+    CoinSetting Info = 10;
+}
+
+message GoodBenefit {
+    string ID = 10;
+    string GoodID = 20;
+    string BenefitAccountID = 30;
+    string PlatformOfflineAccountID = 40;
+    string UserOfflineAccountID = 50;
+    string UserOnlineAccountID = 60;
+    uint32 BenefitIntervalHours = 70;
+}
+
+message CreateGoodBenefitRequest {
+    GoodBenefit Info = 10;
+}
+
+message CreateGoodBenefitResponse {
+    GoodBenefit Info = 10;
+}
+
+message UpdateGoodBenefitRequest {
+    GoodBenefit Info = 10;
+}
+
+message UpdateGoodBenefitResponse {
+    GoodBenefit Info = 10;
+}
+
+message GetGoodBenefitRequest {
+    string ID = 10;
+}
+
+message GetGoodBenefitResponse {
+    GoodBenefit Info = 10;
+}
+
+message GetGoodBenefitByGoodRequest {
+    string GoodID = 10;
+}
+
+message GetGoodBenefitByGoodResponse {
+    GoodBenefit Info = 10;
+}
+
+message GoodPayment {
+    string ID = 10;
+    string GoodID = 20;
+    string AccountID = 30;
+    bool Idle = 40;
+}
+
+message CreateGoodPaymentRequest {
+    GoodPayment Info = 10;
+}
+
+message CreateGoodPaymentResponse {
+    GoodPayment Info = 10;
+}
+
+message UpdateGoodPaymentRequest {
+    GoodPayment Info = 10;
+}
+
+message UpdateGoodPaymentResponse {
+    GoodPayment Info = 10;
+}
+
+message GetGoodPaymentRequest {
+    string ID = 10;
+}
+
+message GetGoodPaymentResponse {
+    GoodPayment Info = 10;
+}
+
+message GetGoodPaymentsByGoodRequest {
+    string GoodID = 10;
+}
+
+message GetGoodPaymentsByGoodResponse {
+    repeated GoodPayment Infos = 10;
+}
+
+message GetGoodPaymentByAccountRequest {
+    string AccountID = 10;
+}
+
+message GetGoodPaymentByAccountResponse {
+    GoodPayment Info = 10;
+}
+
+message GoodSetting {
+    string ID = 10;
+    string GoodID = 20;
+    double WarmAccountUSDAmount = 30;
+    double WarmAccountCoinAmount = 40;
+}
+
+message CreateGoodSettingRequest {
+    GoodSetting Info = 10;
+}
+
+message CreateGoodSettingResponse {
+    GoodSetting Info = 10;
+}
+
+message UpdateGoodSettingRequest {
+    GoodSetting Info = 10;
+}
+
+message UpdateGoodSettingResponse {
+    GoodSetting Info = 10;
+}
+
+message GetGoodSettingRequest {
+    string ID = 10;
+}
+
+message GetGoodSettingResponse {
+    GoodSetting Info = 10;
+}
+
+message GetGoodSettingByGoodRequest {
+    string GoodID = 10;
+}
+
+message GetGoodSettingByGoodResponse {
+    GoodSetting Info = 10;
+}
+
+message UserWithdraw {
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    string AccountID = 40;
+    string Name = 50;
+    string Message = 60;
+}
+
+message CreateUserWithdrawRequest {
+    UserWithdraw Info = 10;
+}
+
+message CreateUserWithdrawResponse {
+    UserWithdraw Info = 10;
+}
+
+message UpdateUserWithdrawRequest {
+    UserWithdraw Info = 10;
+}
+
+message UpdateUserWithdrawResponse {
+    UserWithdraw Info = 10;
+}
+
+message GetUserWithdrawRequest {
+    string ID = 10;
+}
+
+message GetUserWithdrawResponse {
+    UserWithdraw Info = 10;
+}
+
+message GetUserWithdrawsByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetUserWithdrawsByAppUserResponse {
+    repeated UserWithdraw Infos = 10;
+}
+
+message GetUserWithdrawsByOtherAppUserRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
+}
+
+message GetUserWithdrawsByOtherAppUserResponse {
+    repeated UserWithdraw Infos = 10;
+}
+
+message GetUserWithdrawByAccountRequest {
+    string AccountID = 10;
+}
+
+message GetUserWithdrawByAccountResponse {
+    UserWithdraw Info = 10;
+}

@@ -51,6 +51,29 @@ type CloudHashingBillingClient interface {
 	GetUserBenefitsByAppUser(ctx context.Context, in *GetUserBenefitsByAppUserRequest, opts ...grpc.CallOption) (*GetUserBenefitsByAppUserResponse, error)
 	GetUserBenefitsByApp(ctx context.Context, in *GetUserBenefitsByAppRequest, opts ...grpc.CallOption) (*GetUserBenefitsByAppResponse, error)
 	GetLatestUserBenefitByGoodAppUser(ctx context.Context, in *GetLatestUserBenefitByGoodAppUserRequest, opts ...grpc.CallOption) (*GetLatestUserBenefitByGoodAppUserResponse, error)
+	CreateCoinSetting(ctx context.Context, in *CreateCoinSettingRequest, opts ...grpc.CallOption) (*CreateCoinSettingResponse, error)
+	UpdateCoinSetting(ctx context.Context, in *UpdateCoinSettingRequest, opts ...grpc.CallOption) (*UpdateCoinSettingResponse, error)
+	GetCoinSetting(ctx context.Context, in *GetCoinSettingRequest, opts ...grpc.CallOption) (*GetCoinSettingResponse, error)
+	GetCoinSettingByCoin(ctx context.Context, in *GetCoinSettingByCoinRequest, opts ...grpc.CallOption) (*GetCoinSettingByCoinResponse, error)
+	CreateGoodBenefit(ctx context.Context, in *CreateGoodBenefitRequest, opts ...grpc.CallOption) (*CreateGoodBenefitResponse, error)
+	UpdateGoodBenefit(ctx context.Context, in *UpdateGoodBenefitRequest, opts ...grpc.CallOption) (*UpdateGoodBenefitResponse, error)
+	GetGoodBenefit(ctx context.Context, in *GetGoodBenefitRequest, opts ...grpc.CallOption) (*GetGoodBenefitResponse, error)
+	GetGoodBenefitByGood(ctx context.Context, in *GetGoodBenefitByGoodRequest, opts ...grpc.CallOption) (*GetGoodBenefitByGoodResponse, error)
+	CreateGoodPayment(ctx context.Context, in *CreateGoodPaymentRequest, opts ...grpc.CallOption) (*CreateGoodPaymentResponse, error)
+	UpdateGoodPayment(ctx context.Context, in *UpdateGoodPaymentRequest, opts ...grpc.CallOption) (*UpdateGoodPaymentResponse, error)
+	GetGoodPayment(ctx context.Context, in *GetGoodPaymentRequest, opts ...grpc.CallOption) (*GetGoodPaymentResponse, error)
+	GetGoodPaymentsByGood(ctx context.Context, in *GetGoodPaymentsByGoodRequest, opts ...grpc.CallOption) (*GetGoodPaymentsByGoodResponse, error)
+	GetGoodPaymentByAccount(ctx context.Context, in *GetGoodPaymentByAccountRequest, opts ...grpc.CallOption) (*GetGoodPaymentByAccountResponse, error)
+	CreateGoodSetting(ctx context.Context, in *CreateGoodSettingRequest, opts ...grpc.CallOption) (*CreateGoodSettingResponse, error)
+	UpdateGoodSetting(ctx context.Context, in *UpdateGoodSettingRequest, opts ...grpc.CallOption) (*UpdateGoodSettingResponse, error)
+	GetGoodSetting(ctx context.Context, in *GetGoodSettingRequest, opts ...grpc.CallOption) (*GetGoodSettingResponse, error)
+	GetGoodSettingByGood(ctx context.Context, in *GetGoodSettingByGoodRequest, opts ...grpc.CallOption) (*GetGoodSettingByGoodResponse, error)
+	CreateUserWithdraw(ctx context.Context, in *CreateUserWithdrawRequest, opts ...grpc.CallOption) (*CreateUserWithdrawResponse, error)
+	UpdateUserWithdraw(ctx context.Context, in *UpdateUserWithdrawRequest, opts ...grpc.CallOption) (*UpdateUserWithdrawResponse, error)
+	GetUserWithdraw(ctx context.Context, in *GetUserWithdrawRequest, opts ...grpc.CallOption) (*GetUserWithdrawResponse, error)
+	GetUserWithdrawsByAppUser(ctx context.Context, in *GetUserWithdrawsByAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawsByAppUserResponse, error)
+	GetUserWithdrawsByOtherAppUser(ctx context.Context, in *GetUserWithdrawsByOtherAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawsByOtherAppUserResponse, error)
+	GetUserWithdrawByAccount(ctx context.Context, in *GetUserWithdrawByAccountRequest, opts ...grpc.CallOption) (*GetUserWithdrawByAccountResponse, error)
 }
 
 type cloudHashingBillingClient struct {
@@ -295,6 +318,213 @@ func (c *cloudHashingBillingClient) GetLatestUserBenefitByGoodAppUser(ctx contex
 	return out, nil
 }
 
+func (c *cloudHashingBillingClient) CreateCoinSetting(ctx context.Context, in *CreateCoinSettingRequest, opts ...grpc.CallOption) (*CreateCoinSettingResponse, error) {
+	out := new(CreateCoinSettingResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/CreateCoinSetting", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) UpdateCoinSetting(ctx context.Context, in *UpdateCoinSettingRequest, opts ...grpc.CallOption) (*UpdateCoinSettingResponse, error) {
+	out := new(UpdateCoinSettingResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateCoinSetting", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetCoinSetting(ctx context.Context, in *GetCoinSettingRequest, opts ...grpc.CallOption) (*GetCoinSettingResponse, error) {
+	out := new(GetCoinSettingResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetCoinSetting", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetCoinSettingByCoin(ctx context.Context, in *GetCoinSettingByCoinRequest, opts ...grpc.CallOption) (*GetCoinSettingByCoinResponse, error) {
+	out := new(GetCoinSettingByCoinResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetCoinSettingByCoin", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) CreateGoodBenefit(ctx context.Context, in *CreateGoodBenefitRequest, opts ...grpc.CallOption) (*CreateGoodBenefitResponse, error) {
+	out := new(CreateGoodBenefitResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/CreateGoodBenefit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) UpdateGoodBenefit(ctx context.Context, in *UpdateGoodBenefitRequest, opts ...grpc.CallOption) (*UpdateGoodBenefitResponse, error) {
+	out := new(UpdateGoodBenefitResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateGoodBenefit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetGoodBenefit(ctx context.Context, in *GetGoodBenefitRequest, opts ...grpc.CallOption) (*GetGoodBenefitResponse, error) {
+	out := new(GetGoodBenefitResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodBenefit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetGoodBenefitByGood(ctx context.Context, in *GetGoodBenefitByGoodRequest, opts ...grpc.CallOption) (*GetGoodBenefitByGoodResponse, error) {
+	out := new(GetGoodBenefitByGoodResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodBenefitByGood", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) CreateGoodPayment(ctx context.Context, in *CreateGoodPaymentRequest, opts ...grpc.CallOption) (*CreateGoodPaymentResponse, error) {
+	out := new(CreateGoodPaymentResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/CreateGoodPayment", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) UpdateGoodPayment(ctx context.Context, in *UpdateGoodPaymentRequest, opts ...grpc.CallOption) (*UpdateGoodPaymentResponse, error) {
+	out := new(UpdateGoodPaymentResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateGoodPayment", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetGoodPayment(ctx context.Context, in *GetGoodPaymentRequest, opts ...grpc.CallOption) (*GetGoodPaymentResponse, error) {
+	out := new(GetGoodPaymentResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodPayment", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetGoodPaymentsByGood(ctx context.Context, in *GetGoodPaymentsByGoodRequest, opts ...grpc.CallOption) (*GetGoodPaymentsByGoodResponse, error) {
+	out := new(GetGoodPaymentsByGoodResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodPaymentsByGood", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetGoodPaymentByAccount(ctx context.Context, in *GetGoodPaymentByAccountRequest, opts ...grpc.CallOption) (*GetGoodPaymentByAccountResponse, error) {
+	out := new(GetGoodPaymentByAccountResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodPaymentByAccount", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) CreateGoodSetting(ctx context.Context, in *CreateGoodSettingRequest, opts ...grpc.CallOption) (*CreateGoodSettingResponse, error) {
+	out := new(CreateGoodSettingResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/CreateGoodSetting", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) UpdateGoodSetting(ctx context.Context, in *UpdateGoodSettingRequest, opts ...grpc.CallOption) (*UpdateGoodSettingResponse, error) {
+	out := new(UpdateGoodSettingResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateGoodSetting", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetGoodSetting(ctx context.Context, in *GetGoodSettingRequest, opts ...grpc.CallOption) (*GetGoodSettingResponse, error) {
+	out := new(GetGoodSettingResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodSetting", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetGoodSettingByGood(ctx context.Context, in *GetGoodSettingByGoodRequest, opts ...grpc.CallOption) (*GetGoodSettingByGoodResponse, error) {
+	out := new(GetGoodSettingByGoodResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodSettingByGood", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) CreateUserWithdraw(ctx context.Context, in *CreateUserWithdrawRequest, opts ...grpc.CallOption) (*CreateUserWithdrawResponse, error) {
+	out := new(CreateUserWithdrawResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/CreateUserWithdraw", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) UpdateUserWithdraw(ctx context.Context, in *UpdateUserWithdrawRequest, opts ...grpc.CallOption) (*UpdateUserWithdrawResponse, error) {
+	out := new(UpdateUserWithdrawResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateUserWithdraw", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetUserWithdraw(ctx context.Context, in *GetUserWithdrawRequest, opts ...grpc.CallOption) (*GetUserWithdrawResponse, error) {
+	out := new(GetUserWithdrawResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserWithdraw", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetUserWithdrawsByAppUser(ctx context.Context, in *GetUserWithdrawsByAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawsByAppUserResponse, error) {
+	out := new(GetUserWithdrawsByAppUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserWithdrawsByAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetUserWithdrawsByOtherAppUser(ctx context.Context, in *GetUserWithdrawsByOtherAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawsByOtherAppUserResponse, error) {
+	out := new(GetUserWithdrawsByOtherAppUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserWithdrawsByOtherAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetUserWithdrawByAccount(ctx context.Context, in *GetUserWithdrawByAccountRequest, opts ...grpc.CallOption) (*GetUserWithdrawByAccountResponse, error) {
+	out := new(GetUserWithdrawByAccountResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserWithdrawByAccount", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CloudHashingBillingServer is the server API for CloudHashingBilling service.
 // All implementations must embed UnimplementedCloudHashingBillingServer
 // for forward compatibility
@@ -326,6 +556,29 @@ type CloudHashingBillingServer interface {
 	GetUserBenefitsByAppUser(context.Context, *GetUserBenefitsByAppUserRequest) (*GetUserBenefitsByAppUserResponse, error)
 	GetUserBenefitsByApp(context.Context, *GetUserBenefitsByAppRequest) (*GetUserBenefitsByAppResponse, error)
 	GetLatestUserBenefitByGoodAppUser(context.Context, *GetLatestUserBenefitByGoodAppUserRequest) (*GetLatestUserBenefitByGoodAppUserResponse, error)
+	CreateCoinSetting(context.Context, *CreateCoinSettingRequest) (*CreateCoinSettingResponse, error)
+	UpdateCoinSetting(context.Context, *UpdateCoinSettingRequest) (*UpdateCoinSettingResponse, error)
+	GetCoinSetting(context.Context, *GetCoinSettingRequest) (*GetCoinSettingResponse, error)
+	GetCoinSettingByCoin(context.Context, *GetCoinSettingByCoinRequest) (*GetCoinSettingByCoinResponse, error)
+	CreateGoodBenefit(context.Context, *CreateGoodBenefitRequest) (*CreateGoodBenefitResponse, error)
+	UpdateGoodBenefit(context.Context, *UpdateGoodBenefitRequest) (*UpdateGoodBenefitResponse, error)
+	GetGoodBenefit(context.Context, *GetGoodBenefitRequest) (*GetGoodBenefitResponse, error)
+	GetGoodBenefitByGood(context.Context, *GetGoodBenefitByGoodRequest) (*GetGoodBenefitByGoodResponse, error)
+	CreateGoodPayment(context.Context, *CreateGoodPaymentRequest) (*CreateGoodPaymentResponse, error)
+	UpdateGoodPayment(context.Context, *UpdateGoodPaymentRequest) (*UpdateGoodPaymentResponse, error)
+	GetGoodPayment(context.Context, *GetGoodPaymentRequest) (*GetGoodPaymentResponse, error)
+	GetGoodPaymentsByGood(context.Context, *GetGoodPaymentsByGoodRequest) (*GetGoodPaymentsByGoodResponse, error)
+	GetGoodPaymentByAccount(context.Context, *GetGoodPaymentByAccountRequest) (*GetGoodPaymentByAccountResponse, error)
+	CreateGoodSetting(context.Context, *CreateGoodSettingRequest) (*CreateGoodSettingResponse, error)
+	UpdateGoodSetting(context.Context, *UpdateGoodSettingRequest) (*UpdateGoodSettingResponse, error)
+	GetGoodSetting(context.Context, *GetGoodSettingRequest) (*GetGoodSettingResponse, error)
+	GetGoodSettingByGood(context.Context, *GetGoodSettingByGoodRequest) (*GetGoodSettingByGoodResponse, error)
+	CreateUserWithdraw(context.Context, *CreateUserWithdrawRequest) (*CreateUserWithdrawResponse, error)
+	UpdateUserWithdraw(context.Context, *UpdateUserWithdrawRequest) (*UpdateUserWithdrawResponse, error)
+	GetUserWithdraw(context.Context, *GetUserWithdrawRequest) (*GetUserWithdrawResponse, error)
+	GetUserWithdrawsByAppUser(context.Context, *GetUserWithdrawsByAppUserRequest) (*GetUserWithdrawsByAppUserResponse, error)
+	GetUserWithdrawsByOtherAppUser(context.Context, *GetUserWithdrawsByOtherAppUserRequest) (*GetUserWithdrawsByOtherAppUserResponse, error)
+	GetUserWithdrawByAccount(context.Context, *GetUserWithdrawByAccountRequest) (*GetUserWithdrawByAccountResponse, error)
 	mustEmbedUnimplementedCloudHashingBillingServer()
 }
 
@@ -410,6 +663,75 @@ func (UnimplementedCloudHashingBillingServer) GetUserBenefitsByApp(context.Conte
 }
 func (UnimplementedCloudHashingBillingServer) GetLatestUserBenefitByGoodAppUser(context.Context, *GetLatestUserBenefitByGoodAppUserRequest) (*GetLatestUserBenefitByGoodAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLatestUserBenefitByGoodAppUser not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) CreateCoinSetting(context.Context, *CreateCoinSettingRequest) (*CreateCoinSettingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCoinSetting not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) UpdateCoinSetting(context.Context, *UpdateCoinSettingRequest) (*UpdateCoinSettingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCoinSetting not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetCoinSetting(context.Context, *GetCoinSettingRequest) (*GetCoinSettingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCoinSetting not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetCoinSettingByCoin(context.Context, *GetCoinSettingByCoinRequest) (*GetCoinSettingByCoinResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCoinSettingByCoin not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) CreateGoodBenefit(context.Context, *CreateGoodBenefitRequest) (*CreateGoodBenefitResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateGoodBenefit not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) UpdateGoodBenefit(context.Context, *UpdateGoodBenefitRequest) (*UpdateGoodBenefitResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateGoodBenefit not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetGoodBenefit(context.Context, *GetGoodBenefitRequest) (*GetGoodBenefitResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodBenefit not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetGoodBenefitByGood(context.Context, *GetGoodBenefitByGoodRequest) (*GetGoodBenefitByGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodBenefitByGood not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) CreateGoodPayment(context.Context, *CreateGoodPaymentRequest) (*CreateGoodPaymentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateGoodPayment not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) UpdateGoodPayment(context.Context, *UpdateGoodPaymentRequest) (*UpdateGoodPaymentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateGoodPayment not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetGoodPayment(context.Context, *GetGoodPaymentRequest) (*GetGoodPaymentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodPayment not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetGoodPaymentsByGood(context.Context, *GetGoodPaymentsByGoodRequest) (*GetGoodPaymentsByGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodPaymentsByGood not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetGoodPaymentByAccount(context.Context, *GetGoodPaymentByAccountRequest) (*GetGoodPaymentByAccountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodPaymentByAccount not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) CreateGoodSetting(context.Context, *CreateGoodSettingRequest) (*CreateGoodSettingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateGoodSetting not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) UpdateGoodSetting(context.Context, *UpdateGoodSettingRequest) (*UpdateGoodSettingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateGoodSetting not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetGoodSetting(context.Context, *GetGoodSettingRequest) (*GetGoodSettingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodSetting not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetGoodSettingByGood(context.Context, *GetGoodSettingByGoodRequest) (*GetGoodSettingByGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodSettingByGood not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) CreateUserWithdraw(context.Context, *CreateUserWithdrawRequest) (*CreateUserWithdrawResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUserWithdraw not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) UpdateUserWithdraw(context.Context, *UpdateUserWithdrawRequest) (*UpdateUserWithdrawResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserWithdraw not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetUserWithdraw(context.Context, *GetUserWithdrawRequest) (*GetUserWithdrawResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserWithdraw not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetUserWithdrawsByAppUser(context.Context, *GetUserWithdrawsByAppUserRequest) (*GetUserWithdrawsByAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserWithdrawsByAppUser not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetUserWithdrawsByOtherAppUser(context.Context, *GetUserWithdrawsByOtherAppUserRequest) (*GetUserWithdrawsByOtherAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserWithdrawsByOtherAppUser not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetUserWithdrawByAccount(context.Context, *GetUserWithdrawByAccountRequest) (*GetUserWithdrawByAccountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserWithdrawByAccount not implemented")
 }
 func (UnimplementedCloudHashingBillingServer) mustEmbedUnimplementedCloudHashingBillingServer() {}
 
@@ -892,6 +1214,420 @@ func _CloudHashingBilling_GetLatestUserBenefitByGoodAppUser_Handler(srv interfac
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingBilling_CreateCoinSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCoinSettingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).CreateCoinSetting(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/CreateCoinSetting",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).CreateCoinSetting(ctx, req.(*CreateCoinSettingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_UpdateCoinSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCoinSettingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).UpdateCoinSetting(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateCoinSetting",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).UpdateCoinSetting(ctx, req.(*UpdateCoinSettingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetCoinSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoinSettingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetCoinSetting(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetCoinSetting",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetCoinSetting(ctx, req.(*GetCoinSettingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetCoinSettingByCoin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoinSettingByCoinRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetCoinSettingByCoin(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetCoinSettingByCoin",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetCoinSettingByCoin(ctx, req.(*GetCoinSettingByCoinRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_CreateGoodBenefit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateGoodBenefitRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).CreateGoodBenefit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/CreateGoodBenefit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).CreateGoodBenefit(ctx, req.(*CreateGoodBenefitRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_UpdateGoodBenefit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateGoodBenefitRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).UpdateGoodBenefit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateGoodBenefit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).UpdateGoodBenefit(ctx, req.(*UpdateGoodBenefitRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetGoodBenefit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodBenefitRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetGoodBenefit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodBenefit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetGoodBenefit(ctx, req.(*GetGoodBenefitRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetGoodBenefitByGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodBenefitByGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetGoodBenefitByGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodBenefitByGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetGoodBenefitByGood(ctx, req.(*GetGoodBenefitByGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_CreateGoodPayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateGoodPaymentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).CreateGoodPayment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/CreateGoodPayment",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).CreateGoodPayment(ctx, req.(*CreateGoodPaymentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_UpdateGoodPayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateGoodPaymentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).UpdateGoodPayment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateGoodPayment",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).UpdateGoodPayment(ctx, req.(*UpdateGoodPaymentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetGoodPayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodPaymentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetGoodPayment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodPayment",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetGoodPayment(ctx, req.(*GetGoodPaymentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetGoodPaymentsByGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodPaymentsByGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetGoodPaymentsByGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodPaymentsByGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetGoodPaymentsByGood(ctx, req.(*GetGoodPaymentsByGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetGoodPaymentByAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodPaymentByAccountRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetGoodPaymentByAccount(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodPaymentByAccount",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetGoodPaymentByAccount(ctx, req.(*GetGoodPaymentByAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_CreateGoodSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateGoodSettingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).CreateGoodSetting(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/CreateGoodSetting",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).CreateGoodSetting(ctx, req.(*CreateGoodSettingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_UpdateGoodSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateGoodSettingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).UpdateGoodSetting(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateGoodSetting",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).UpdateGoodSetting(ctx, req.(*UpdateGoodSettingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetGoodSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodSettingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetGoodSetting(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodSetting",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetGoodSetting(ctx, req.(*GetGoodSettingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetGoodSettingByGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodSettingByGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetGoodSettingByGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodSettingByGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetGoodSettingByGood(ctx, req.(*GetGoodSettingByGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_CreateUserWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateUserWithdrawRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).CreateUserWithdraw(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/CreateUserWithdraw",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).CreateUserWithdraw(ctx, req.(*CreateUserWithdrawRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_UpdateUserWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateUserWithdrawRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).UpdateUserWithdraw(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateUserWithdraw",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).UpdateUserWithdraw(ctx, req.(*UpdateUserWithdrawRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetUserWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserWithdrawRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetUserWithdraw(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserWithdraw",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetUserWithdraw(ctx, req.(*GetUserWithdrawRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetUserWithdrawsByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserWithdrawsByAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetUserWithdrawsByAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserWithdrawsByAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetUserWithdrawsByAppUser(ctx, req.(*GetUserWithdrawsByAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetUserWithdrawsByOtherAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserWithdrawsByOtherAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetUserWithdrawsByOtherAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserWithdrawsByOtherAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetUserWithdrawsByOtherAppUser(ctx, req.(*GetUserWithdrawsByOtherAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetUserWithdrawByAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserWithdrawByAccountRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetUserWithdrawByAccount(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserWithdrawByAccount",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetUserWithdrawByAccount(ctx, req.(*GetUserWithdrawByAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CloudHashingBilling_ServiceDesc is the grpc.ServiceDesc for CloudHashingBilling service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1002,6 +1738,98 @@ var CloudHashingBilling_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetLatestUserBenefitByGoodAppUser",
 			Handler:    _CloudHashingBilling_GetLatestUserBenefitByGoodAppUser_Handler,
+		},
+		{
+			MethodName: "CreateCoinSetting",
+			Handler:    _CloudHashingBilling_CreateCoinSetting_Handler,
+		},
+		{
+			MethodName: "UpdateCoinSetting",
+			Handler:    _CloudHashingBilling_UpdateCoinSetting_Handler,
+		},
+		{
+			MethodName: "GetCoinSetting",
+			Handler:    _CloudHashingBilling_GetCoinSetting_Handler,
+		},
+		{
+			MethodName: "GetCoinSettingByCoin",
+			Handler:    _CloudHashingBilling_GetCoinSettingByCoin_Handler,
+		},
+		{
+			MethodName: "CreateGoodBenefit",
+			Handler:    _CloudHashingBilling_CreateGoodBenefit_Handler,
+		},
+		{
+			MethodName: "UpdateGoodBenefit",
+			Handler:    _CloudHashingBilling_UpdateGoodBenefit_Handler,
+		},
+		{
+			MethodName: "GetGoodBenefit",
+			Handler:    _CloudHashingBilling_GetGoodBenefit_Handler,
+		},
+		{
+			MethodName: "GetGoodBenefitByGood",
+			Handler:    _CloudHashingBilling_GetGoodBenefitByGood_Handler,
+		},
+		{
+			MethodName: "CreateGoodPayment",
+			Handler:    _CloudHashingBilling_CreateGoodPayment_Handler,
+		},
+		{
+			MethodName: "UpdateGoodPayment",
+			Handler:    _CloudHashingBilling_UpdateGoodPayment_Handler,
+		},
+		{
+			MethodName: "GetGoodPayment",
+			Handler:    _CloudHashingBilling_GetGoodPayment_Handler,
+		},
+		{
+			MethodName: "GetGoodPaymentsByGood",
+			Handler:    _CloudHashingBilling_GetGoodPaymentsByGood_Handler,
+		},
+		{
+			MethodName: "GetGoodPaymentByAccount",
+			Handler:    _CloudHashingBilling_GetGoodPaymentByAccount_Handler,
+		},
+		{
+			MethodName: "CreateGoodSetting",
+			Handler:    _CloudHashingBilling_CreateGoodSetting_Handler,
+		},
+		{
+			MethodName: "UpdateGoodSetting",
+			Handler:    _CloudHashingBilling_UpdateGoodSetting_Handler,
+		},
+		{
+			MethodName: "GetGoodSetting",
+			Handler:    _CloudHashingBilling_GetGoodSetting_Handler,
+		},
+		{
+			MethodName: "GetGoodSettingByGood",
+			Handler:    _CloudHashingBilling_GetGoodSettingByGood_Handler,
+		},
+		{
+			MethodName: "CreateUserWithdraw",
+			Handler:    _CloudHashingBilling_CreateUserWithdraw_Handler,
+		},
+		{
+			MethodName: "UpdateUserWithdraw",
+			Handler:    _CloudHashingBilling_UpdateUserWithdraw_Handler,
+		},
+		{
+			MethodName: "GetUserWithdraw",
+			Handler:    _CloudHashingBilling_GetUserWithdraw_Handler,
+		},
+		{
+			MethodName: "GetUserWithdrawsByAppUser",
+			Handler:    _CloudHashingBilling_GetUserWithdrawsByAppUser_Handler,
+		},
+		{
+			MethodName: "GetUserWithdrawsByOtherAppUser",
+			Handler:    _CloudHashingBilling_GetUserWithdrawsByOtherAppUser_Handler,
+		},
+		{
+			MethodName: "GetUserWithdrawByAccount",
+			Handler:    _CloudHashingBilling_GetUserWithdrawByAccount_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

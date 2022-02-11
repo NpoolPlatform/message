@@ -293,6 +293,231 @@ export type GetLatestUserBenefitByGoodAppUserResponse = {
   info?: UserBenefit
 }
 
+export type CoinSetting = {
+  id?: string
+  coinTypeID?: string
+  warmAccountCoinAmount?: string
+}
+
+export type CreateCoinSettingRequest = {
+  info?: CoinSetting
+}
+
+export type CreateCoinSettingResponse = {
+  info?: CoinSetting
+}
+
+export type UpdateCoinSettingRequest = {
+  info?: CoinSetting
+}
+
+export type UpdateCoinSettingResponse = {
+  info?: CoinSetting
+}
+
+export type GetCoinSettingRequest = {
+  id?: string
+}
+
+export type GetCoinSettingResponse = {
+  info?: CoinSetting
+}
+
+export type GetCoinSettingByCoinRequest = {
+  coinTypeID?: string
+}
+
+export type GetCoinSettingByCoinResponse = {
+  info?: CoinSetting
+}
+
+export type GoodBenefit = {
+  id?: string
+  goodID?: string
+  benefitAccountID?: string
+  platformOfflineAccountID?: string
+  userOfflineAccountID?: string
+  userOnlineAccountID?: string
+  benefitIntervalHours?: number
+}
+
+export type CreateGoodBenefitRequest = {
+  info?: GoodBenefit
+}
+
+export type CreateGoodBenefitResponse = {
+  info?: GoodBenefit
+}
+
+export type UpdateGoodBenefitRequest = {
+  info?: GoodBenefit
+}
+
+export type UpdateGoodBenefitResponse = {
+  info?: GoodBenefit
+}
+
+export type GetGoodBenefitRequest = {
+  id?: string
+}
+
+export type GetGoodBenefitResponse = {
+  info?: GoodBenefit
+}
+
+export type GetGoodBenefitByGoodRequest = {
+  goodID?: string
+}
+
+export type GetGoodBenefitByGoodResponse = {
+  info?: GoodBenefit
+}
+
+export type GoodPayment = {
+  id?: string
+  goodID?: string
+  accountID?: string
+  idle?: boolean
+}
+
+export type CreateGoodPaymentRequest = {
+  info?: GoodPayment
+}
+
+export type CreateGoodPaymentResponse = {
+  info?: GoodPayment
+}
+
+export type UpdateGoodPaymentRequest = {
+  info?: GoodPayment
+}
+
+export type UpdateGoodPaymentResponse = {
+  info?: GoodPayment
+}
+
+export type GetGoodPaymentRequest = {
+  id?: string
+}
+
+export type GetGoodPaymentResponse = {
+  info?: GoodPayment
+}
+
+export type GetGoodPaymentsByGoodRequest = {
+  goodID?: string
+}
+
+export type GetGoodPaymentsByGoodResponse = {
+  infos?: GoodPayment[]
+}
+
+export type GetGoodPaymentByAccountRequest = {
+  accountID?: string
+}
+
+export type GetGoodPaymentByAccountResponse = {
+  info?: GoodPayment
+}
+
+export type GoodSetting = {
+  id?: string
+  goodID?: string
+  warmAccountUSDAmount?: number
+  warmAccountCoinAmount?: number
+}
+
+export type CreateGoodSettingRequest = {
+  info?: GoodSetting
+}
+
+export type CreateGoodSettingResponse = {
+  info?: GoodSetting
+}
+
+export type UpdateGoodSettingRequest = {
+  info?: GoodSetting
+}
+
+export type UpdateGoodSettingResponse = {
+  info?: GoodSetting
+}
+
+export type GetGoodSettingRequest = {
+  id?: string
+}
+
+export type GetGoodSettingResponse = {
+  info?: GoodSetting
+}
+
+export type GetGoodSettingByGoodRequest = {
+  goodID?: string
+}
+
+export type GetGoodSettingByGoodResponse = {
+  info?: GoodSetting
+}
+
+export type UserWithdraw = {
+  id?: string
+  appID?: string
+  userID?: string
+  accountID?: string
+  name?: string
+  message?: string
+}
+
+export type CreateUserWithdrawRequest = {
+  info?: UserWithdraw
+}
+
+export type CreateUserWithdrawResponse = {
+  info?: UserWithdraw
+}
+
+export type UpdateUserWithdrawRequest = {
+  info?: UserWithdraw
+}
+
+export type UpdateUserWithdrawResponse = {
+  info?: UserWithdraw
+}
+
+export type GetUserWithdrawRequest = {
+  id?: string
+}
+
+export type GetUserWithdrawResponse = {
+  info?: UserWithdraw
+}
+
+export type GetUserWithdrawsByAppUserRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetUserWithdrawsByAppUserResponse = {
+  infos?: UserWithdraw[]
+}
+
+export type GetUserWithdrawsByOtherAppUserRequest = {
+  targetAppID?: string
+  targetUserID?: string
+}
+
+export type GetUserWithdrawsByOtherAppUserResponse = {
+  infos?: UserWithdraw[]
+}
+
+export type GetUserWithdrawByAccountRequest = {
+  accountID?: string
+}
+
+export type GetUserWithdrawByAccountResponse = {
+  info?: UserWithdraw
+}
+
 export class CloudHashingBilling {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -371,5 +596,74 @@ export class CloudHashingBilling {
   }
   static GetLatestUserBenefitByGoodAppUser(req: GetLatestUserBenefitByGoodAppUserRequest, initReq?: fm.InitReq): Promise<GetLatestUserBenefitByGoodAppUserResponse> {
     return fm.fetchReq<GetLatestUserBenefitByGoodAppUserRequest, GetLatestUserBenefitByGoodAppUserResponse>(`/v1/get/latest/user/benefit/by/good/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateCoinSetting(req: CreateCoinSettingRequest, initReq?: fm.InitReq): Promise<CreateCoinSettingResponse> {
+    return fm.fetchReq<CreateCoinSettingRequest, CreateCoinSettingResponse>(`/v1/create/coin/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateCoinSetting(req: UpdateCoinSettingRequest, initReq?: fm.InitReq): Promise<UpdateCoinSettingResponse> {
+    return fm.fetchReq<UpdateCoinSettingRequest, UpdateCoinSettingResponse>(`/v1/update/coin/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCoinSetting(req: GetCoinSettingRequest, initReq?: fm.InitReq): Promise<GetCoinSettingResponse> {
+    return fm.fetchReq<GetCoinSettingRequest, GetCoinSettingResponse>(`/v1/get/coin/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCoinSettingByCoin(req: GetCoinSettingByCoinRequest, initReq?: fm.InitReq): Promise<GetCoinSettingByCoinResponse> {
+    return fm.fetchReq<GetCoinSettingByCoinRequest, GetCoinSettingByCoinResponse>(`/v1/get/coin/setting/by/coin`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateGoodBenefit(req: CreateGoodBenefitRequest, initReq?: fm.InitReq): Promise<CreateGoodBenefitResponse> {
+    return fm.fetchReq<CreateGoodBenefitRequest, CreateGoodBenefitResponse>(`/v1/create/good/benefit`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateGoodBenefit(req: UpdateGoodBenefitRequest, initReq?: fm.InitReq): Promise<UpdateGoodBenefitResponse> {
+    return fm.fetchReq<UpdateGoodBenefitRequest, UpdateGoodBenefitResponse>(`/v1/update/good/benefit`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodBenefit(req: GetGoodBenefitRequest, initReq?: fm.InitReq): Promise<GetGoodBenefitResponse> {
+    return fm.fetchReq<GetGoodBenefitRequest, GetGoodBenefitResponse>(`/v1/get/good/benefit`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodBenefitByGood(req: GetGoodBenefitByGoodRequest, initReq?: fm.InitReq): Promise<GetGoodBenefitByGoodResponse> {
+    return fm.fetchReq<GetGoodBenefitByGoodRequest, GetGoodBenefitByGoodResponse>(`/v1/get/good/benefit/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateGoodPayment(req: CreateGoodPaymentRequest, initReq?: fm.InitReq): Promise<CreateGoodPaymentResponse> {
+    return fm.fetchReq<CreateGoodPaymentRequest, CreateGoodPaymentResponse>(`/v1/create/good/payment`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateGoodPayment(req: UpdateGoodPaymentRequest, initReq?: fm.InitReq): Promise<UpdateGoodPaymentResponse> {
+    return fm.fetchReq<UpdateGoodPaymentRequest, UpdateGoodPaymentResponse>(`/v1/update/good/payment`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodPayment(req: GetGoodPaymentRequest, initReq?: fm.InitReq): Promise<GetGoodPaymentResponse> {
+    return fm.fetchReq<GetGoodPaymentRequest, GetGoodPaymentResponse>(`/v1/get/good/payment`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodPaymentsByGood(req: GetGoodPaymentsByGoodRequest, initReq?: fm.InitReq): Promise<GetGoodPaymentsByGoodResponse> {
+    return fm.fetchReq<GetGoodPaymentsByGoodRequest, GetGoodPaymentsByGoodResponse>(`/v1/get/good/payments/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodPaymentByAccount(req: GetGoodPaymentByAccountRequest, initReq?: fm.InitReq): Promise<GetGoodPaymentByAccountResponse> {
+    return fm.fetchReq<GetGoodPaymentByAccountRequest, GetGoodPaymentByAccountResponse>(`/v1/get/good/payment/by/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateGoodSetting(req: CreateGoodSettingRequest, initReq?: fm.InitReq): Promise<CreateGoodSettingResponse> {
+    return fm.fetchReq<CreateGoodSettingRequest, CreateGoodSettingResponse>(`/v1/create/good/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateGoodSetting(req: UpdateGoodSettingRequest, initReq?: fm.InitReq): Promise<UpdateGoodSettingResponse> {
+    return fm.fetchReq<UpdateGoodSettingRequest, UpdateGoodSettingResponse>(`/v1/update/good/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodSetting(req: GetGoodSettingRequest, initReq?: fm.InitReq): Promise<GetGoodSettingResponse> {
+    return fm.fetchReq<GetGoodSettingRequest, GetGoodSettingResponse>(`/v1/get/good/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodSettingByGood(req: GetGoodSettingByGoodRequest, initReq?: fm.InitReq): Promise<GetGoodSettingByGoodResponse> {
+    return fm.fetchReq<GetGoodSettingByGoodRequest, GetGoodSettingByGoodResponse>(`/v1/get/good/setting/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateUserWithdraw(req: CreateUserWithdrawRequest, initReq?: fm.InitReq): Promise<CreateUserWithdrawResponse> {
+    return fm.fetchReq<CreateUserWithdrawRequest, CreateUserWithdrawResponse>(`/v1/create/user/withdraw`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateUserWithdraw(req: UpdateUserWithdrawRequest, initReq?: fm.InitReq): Promise<UpdateUserWithdrawResponse> {
+    return fm.fetchReq<UpdateUserWithdrawRequest, UpdateUserWithdrawResponse>(`/v1/update/user/withdraw`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserWithdraw(req: GetUserWithdrawRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawResponse> {
+    return fm.fetchReq<GetUserWithdrawRequest, GetUserWithdrawResponse>(`/v1/get/user/withdraw`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserWithdrawsByAppUser(req: GetUserWithdrawsByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawsByAppUserResponse> {
+    return fm.fetchReq<GetUserWithdrawsByAppUserRequest, GetUserWithdrawsByAppUserResponse>(`/v1/get/user/withdraws/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserWithdrawsByOtherAppUser(req: GetUserWithdrawsByOtherAppUserRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawsByOtherAppUserResponse> {
+    return fm.fetchReq<GetUserWithdrawsByOtherAppUserRequest, GetUserWithdrawsByOtherAppUserResponse>(`/v1/get/user/withdraws/by/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserWithdrawByAccount(req: GetUserWithdrawByAccountRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawByAccountResponse> {
+    return fm.fetchReq<GetUserWithdrawByAccountRequest, GetUserWithdrawByAccountResponse>(`/v1/get/user/withdraw/by/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
