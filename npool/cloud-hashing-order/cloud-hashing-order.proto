@@ -132,6 +132,12 @@ service CloudHashingOrder {
             body: "*"
         };
     }
+    rpc GetPaymentsByState(GetPaymentsByStateRequest) returns (GetPaymentsByStateResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/payments/by/state"
+            body: "*"
+        };
+    }
 
     rpc GetOrdersDetailByAppUser(GetOrdersDetailByAppUserRequest) returns (GetOrdersDetailByAppUserResponse) {
         option (google.api.http) = {
@@ -352,6 +358,14 @@ message GetPaymentByOrderRequest {
 
 message GetPaymentByOrderResponse {
     Payment Info = 10;
+}
+
+message GetPaymentsByStateRequest {
+    string State = 10;
+}
+
+message GetPaymentsByStateResponse {
+    repeated Payment Infos = 10;
 }
 
 message OrderDetail {
