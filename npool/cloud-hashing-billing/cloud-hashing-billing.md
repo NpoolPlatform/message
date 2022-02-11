@@ -155,13 +155,12 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | Address | [string](#string) |  |  |
 | GeneratedBy | [string](#string) |  |  |
-| UsedFor | [string](#string) |  |  |
-| Idle | [bool](#bool) |  |  |
-| AppID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
+| PlatformHoldPrivateKey | [bool](#bool) |  |  |
 
 
 
@@ -1204,13 +1203,12 @@ Cloud Hashing Billing
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | Address | [string](#string) |  |  |
 | GeneratedBy | [string](#string) |  |  |
-| UsedFor | [string](#string) |  |  |
-| Idle | [bool](#bool) |  |  |
-| AppID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
+| PlatformHoldPrivateKey | [bool](#bool) |  |  |
 
 
 

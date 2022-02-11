@@ -189,13 +189,12 @@ service CloudHashingBilling {
 
 message CoinAccountInfo {
     string ID = 10;
-    string CoinTypeID = 20;
-    string Address = 30;
-    string GeneratedBy = 40;
-    string UsedFor = 50;
-    bool Idle = 60;
-    string AppID = 70;
-    string UserID = 80;
+    string AppID = 20;
+    string UserID = 30;
+    string CoinTypeID = 40;
+    string Address = 50;
+    string GeneratedBy = 60;
+    bool PlatformHoldPrivateKey = 70;
 }
 
 message CreateCoinAccountRequest {

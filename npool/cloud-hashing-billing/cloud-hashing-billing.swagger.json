@@ -949,6 +949,12 @@
         "ID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },
@@ -958,17 +964,8 @@
         "GeneratedBy": {
           "type": "string"
         },
-        "UsedFor": {
-          "type": "string"
-        },
-        "Idle": {
+        "PlatformHoldPrivateKey": {
           "type": "boolean"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
         }
       }
     },
