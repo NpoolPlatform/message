@@ -242,6 +242,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetGoodPayments (GetGoodPaymentsRequest) returns (GetGoodPaymentsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/payments"
+            body: "*"
+        };
+    }
     rpc GetGoodPaymentsByGood (GetGoodPaymentsByGoodRequest) returns (GetGoodPaymentsByGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/good/payments/by/good"
@@ -725,6 +731,14 @@ message GetGoodPaymentRequest {
 message GetGoodPaymentResponse {
     GoodPayment Info = 10;
 }
+
+message GetGoodPaymentsRequest {
+}
+
+message GetGoodPaymentsResponse {
+    repeated GoodPayment Infos = 10;
+}
+
 
 message GetGoodPaymentsByGoodRequest {
     string GoodID = 10;

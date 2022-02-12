@@ -402,6 +402,13 @@ export type GetGoodPaymentResponse = {
   info?: GoodPayment
 }
 
+export type GetGoodPaymentsRequest = {
+}
+
+export type GetGoodPaymentsResponse = {
+  infos?: GoodPayment[]
+}
+
 export type GetGoodPaymentsByGoodRequest = {
   goodID?: string
   pageInfo?: NpoolV1Npool.PageInfo
@@ -648,6 +655,9 @@ export class CloudHashingBilling {
   }
   static GetGoodPayment(req: GetGoodPaymentRequest, initReq?: fm.InitReq): Promise<GetGoodPaymentResponse> {
     return fm.fetchReq<GetGoodPaymentRequest, GetGoodPaymentResponse>(`/v1/get/good/payment`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodPayments(req: GetGoodPaymentsRequest, initReq?: fm.InitReq): Promise<GetGoodPaymentsResponse> {
+    return fm.fetchReq<GetGoodPaymentsRequest, GetGoodPaymentsResponse>(`/v1/get/good/payments`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetGoodPaymentsByGood(req: GetGoodPaymentsByGoodRequest, initReq?: fm.InitReq): Promise<GetGoodPaymentsByGoodResponse> {
     return fm.fetchReq<GetGoodPaymentsByGoodRequest, GetGoodPaymentsByGoodResponse>(`/v1/get/good/payments/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
