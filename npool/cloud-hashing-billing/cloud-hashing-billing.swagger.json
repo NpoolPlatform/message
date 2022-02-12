@@ -619,14 +619,14 @@
         ]
       }
     },
-    "/v1/get/coin/accounts/by/app/user": {
+    "/v1/get/coin/accounts": {
       "post": {
-        "operationId": "CloudHashingBilling_GetCoinAccountsByAppUser",
+        "operationId": "CloudHashingBilling_GetCoinAccounts",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetCoinAccountsByAppUserResponse"
+              "$ref": "#/definitions/v1GetCoinAccountsResponse"
             }
           },
           "default": {
@@ -642,7 +642,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetCoinAccountsByAppUserRequest"
+              "$ref": "#/definitions/v1GetCoinAccountsRequest"
             }
           }
         ],
@@ -2110,18 +2110,10 @@
         }
       }
     },
-    "v1GetCoinAccountsByAppUserRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
+    "v1GetCoinAccountsRequest": {
+      "type": "object"
     },
-    "v1GetCoinAccountsByAppUserResponse": {
+    "v1GetCoinAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {

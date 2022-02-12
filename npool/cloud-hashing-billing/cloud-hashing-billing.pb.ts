@@ -39,12 +39,10 @@ export type GetCoinAccountByCoinAddressResponse = {
   info?: CoinAccountInfo
 }
 
-export type GetCoinAccountsByAppUserRequest = {
-  appID?: string
-  userID?: string
+export type GetCoinAccountsRequest = {
 }
 
-export type GetCoinAccountsByAppUserResponse = {
+export type GetCoinAccountsResponse = {
   infos?: CoinAccountInfo[]
 }
 
@@ -552,8 +550,8 @@ export class CloudHashingBilling {
   static GetCoinAccountByCoinAddress(req: GetCoinAccountByCoinAddressRequest, initReq?: fm.InitReq): Promise<GetCoinAccountByCoinAddressResponse> {
     return fm.fetchReq<GetCoinAccountByCoinAddressRequest, GetCoinAccountByCoinAddressResponse>(`/v1/get/coin/account/by/coin/address`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetCoinAccountsByAppUser(req: GetCoinAccountsByAppUserRequest, initReq?: fm.InitReq): Promise<GetCoinAccountsByAppUserResponse> {
-    return fm.fetchReq<GetCoinAccountsByAppUserRequest, GetCoinAccountsByAppUserResponse>(`/v1/get/coin/accounts/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetCoinAccounts(req: GetCoinAccountsRequest, initReq?: fm.InitReq): Promise<GetCoinAccountsResponse> {
+    return fm.fetchReq<GetCoinAccountsRequest, GetCoinAccountsResponse>(`/v1/get/coin/accounts`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static DeleteCoinAccount(req: DeleteCoinAccountRequest, initReq?: fm.InitReq): Promise<DeleteCoinAccountResponse> {
     return fm.fetchReq<DeleteCoinAccountRequest, DeleteCoinAccountResponse>(`/v1/delete/coin/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
