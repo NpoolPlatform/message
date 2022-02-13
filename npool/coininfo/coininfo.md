@@ -59,6 +59,7 @@
 | ReservedAmount | [double](#double) |  | 预留金额 |
 | CreatedAt | [uint32](#uint32) |  |  |
 | UpdatedAt | [uint32](#uint32) |  |  |
+| ForPay | [bool](#bool) |  | 是否可用作支付货币 |
 
 
 
@@ -259,6 +260,7 @@
 | ReservedAmount | [double](#double) |  | 预留金额 |
 | CreatedAt | [uint32](#uint32) |  |  |
 | UpdatedAt | [uint32](#uint32) |  |  |
+| ForPay | [bool](#bool) |  | 是否可用作支付货币 |
 
 
 

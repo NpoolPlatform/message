@@ -8,36 +8,36 @@ import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 
 service SphinxCoinInfo {
-  rpc Version (google.protobuf.Empty) returns (VersionResponse){
-    option (google.api.http) = {
-      post: "/version"
+    rpc Version (google.protobuf.Empty) returns (VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+    rpc CreateCoinInfo (CreateCoinInfoRequest) returns (CreateCoinInfoResponse){
+        option (google.api.http) = {
+            post: "/v1/create/coininfo"
+            body: "*"
+        };
+    }
+    rpc GetCoinInfo (GetCoinInfoRequest) returns (GetCoinInfoResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coininfo"
       body: "*"
-    };
+        };
   }
-	rpc CreateCoinInfo (CreateCoinInfoRequest) returns (CreateCoinInfoResponse){
-		option (google.api.http) = {
-			post: "/v1/create/coininfo"
-			body: "*"
-		};
-	}
-	rpc GetCoinInfo (GetCoinInfoRequest) returns (GetCoinInfoResponse) {
-		option (google.api.http) = {
-			post: "/v1/get/coininfo"
+    rpc GetCoinInfos (GetCoinInfosRequest) returns (GetCoinInfosResponse){
+        option (google.api.http) = {
+            post: "/v1/get/coininfos"
       body: "*"
-		};
-  }
-	rpc GetCoinInfos (GetCoinInfosRequest) returns (GetCoinInfosResponse){
-		option (google.api.http) = {
-			post: "/v1/get/coininfos"
-      body: "*"
-		};
-	}
-	rpc UpdateCoinInfo (UpdateCoinInfoRequest) returns (UpdateCoinInfoResponse) {
-		option (google.api.http) = {
-			post: "/v1/update/coininfo"
-			body: "*"
-		};
-	}
+        };
+    }
+    rpc UpdateCoinInfo (UpdateCoinInfoRequest) returns (UpdateCoinInfoResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/coininfo"
+            body: "*"
+        };
+    }
 }
 
 message VersionResponse {
@@ -45,15 +45,16 @@ message VersionResponse {
 }
 
 message CoinInfo {
-	string  ID 				      = 100; // uuid
-	bool    PreSale         = 110; // 是否为预售，false为在售商品
-	string  Name 			      = 120; // 币种名称 FIL, BTC
-	string  Unit 			      = 130; // 单位：FIL
-	string  Logo				    = 140; // url; can be empty
-  string  ENV             = 150; // main or test
-	double  ReservedAmount  = 160; // 预留金额
-	uint32  CreatedAt 		  = 170;
-	uint32  UpdatedAt 		  = 180;
+    string  ID                    = 100; // uuid
+    bool    PreSale         = 110; // 是否为预售，false为在售商品
+    string  Name                  = 120; // 币种名称 FIL, BTC
+    string  Unit                  = 130; // 单位：FIL
+    string  Logo                    = 140; // url; can be empty
+    string  ENV             = 150; // main or test
+    double  ReservedAmount  = 160; // 预留金额
+    uint32  CreatedAt         = 170;
+    uint32  UpdatedAt         = 180;
+    bool ForPay = 190; // 是否可用作支付货币
 }
 
 message GetCoinInfoRequest {
@@ -67,35 +68,35 @@ message GetCoinInfoResponse {
 
 message CreateCoinInfoRequest {
   bool    PreSale = 100; // 是否为预售，false为在售商品
-	string  Name 	  = 110; // 币种名称 FIL, BTC
-	string  Unit 	  = 120; // 单位：FIL
-	string  Logo		= 130; // url; can be empty
+    string  Name      = 110; // 币种名称 FIL, BTC
+    string  Unit      = 120; // 单位：FIL
+    string  Logo        = 130; // url; can be empty
   string  ENV     = 140; // main or test
 }
 
 message CreateCoinInfoResponse {
-	CoinInfo Info = 100;
+    CoinInfo Info = 100;
 }
 
 message GetCoinInfosRequest {
-	bool    PreSale = 100; // 是否为预售，false为在售商品
-	string  Name 	  = 110; // 币种名称 FIL, BTC
-	int32   Offset 	= 120;
-	int32   Limit		= 130;
+    bool    PreSale = 100; // 是否为预售，false为在售商品
+    string  Name      = 110; // 币种名称 FIL, BTC
+    int32   Offset  = 120;
+    int32   Limit       = 130;
 }
 
 message GetCoinInfosResponse {
-	int32 Total 			      = 100;
-	repeated CoinInfo Infos = 110;
+    int32 Total                   = 100;
+    repeated CoinInfo Infos = 110;
 }
 
 message UpdateCoinInfoRequest {
-  string  ID 				      = 100;
-	bool    PreSale 			  = 110; // 是否为预售，false为在售商品
-	string  Logo            = 120; // url; can be empty
-	double  ReservedAmount  = 130;
+  string  ID                      = 100;
+    bool    PreSale               = 110; // 是否为预售，false为在售商品
+    string  Logo            = 120; // url; can be empty
+    double  ReservedAmount  = 130;
 }
 
 message UpdateCoinInfoResponse {
-	CoinInfo Info = 100;
+    CoinInfo Info = 100;
 }

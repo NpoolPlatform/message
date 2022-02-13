@@ -20,6 +20,7 @@ export type CoinInfo = {
   reservedAmount?: number
   createdAt?: number
   updatedAt?: number
+  forPay?: boolean
 }
 
 export type GetCoinInfoRequest = {
