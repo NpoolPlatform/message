@@ -2106,8 +2106,8 @@ func local_request_CloudHashingBilling_GetGoodIncoming_0(ctx context.Context, ma
 
 }
 
-func request_CloudHashingBilling_GetGoodIncomingByGood_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingBillingClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetGoodIncomingByGoodRequest
+func request_CloudHashingBilling_GetGoodIncomingsByGood_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingBillingClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetGoodIncomingsByGoodRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -2118,13 +2118,13 @@ func request_CloudHashingBilling_GetGoodIncomingByGood_0(ctx context.Context, ma
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetGoodIncomingByGood(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetGoodIncomingsByGood(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingBilling_GetGoodIncomingByGood_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingBillingServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetGoodIncomingByGoodRequest
+func local_request_CloudHashingBilling_GetGoodIncomingsByGood_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingBillingServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetGoodIncomingsByGoodRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -2135,7 +2135,7 @@ func local_request_CloudHashingBilling_GetGoodIncomingByGood_0(ctx context.Conte
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetGoodIncomingByGood(ctx, &protoReq)
+	msg, err := server.GetGoodIncomingsByGood(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -3583,18 +3583,18 @@ func RegisterCloudHashingBillingHandlerServer(ctx context.Context, mux *runtime.
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingBilling_GetGoodIncomingByGood_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingBilling_GetGoodIncomingsByGood_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodIncomingByGood", runtime.WithHTTPPathPattern("/v1/get/good/incoming/by/good"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodIncomingsByGood", runtime.WithHTTPPathPattern("/v1/get/good/incomings/by/good"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingBilling_GetGoodIncomingByGood_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingBilling_GetGoodIncomingsByGood_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3602,7 +3602,7 @@ func RegisterCloudHashingBillingHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingBilling_GetGoodIncomingByGood_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingBilling_GetGoodIncomingsByGood_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -4890,23 +4890,23 @@ func RegisterCloudHashingBillingHandlerClient(ctx context.Context, mux *runtime.
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingBilling_GetGoodIncomingByGood_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingBilling_GetGoodIncomingsByGood_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodIncomingByGood", runtime.WithHTTPPathPattern("/v1/get/good/incoming/by/good"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodIncomingsByGood", runtime.WithHTTPPathPattern("/v1/get/good/incomings/by/good"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingBilling_GetGoodIncomingByGood_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingBilling_GetGoodIncomingsByGood_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingBilling_GetGoodIncomingByGood_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingBilling_GetGoodIncomingsByGood_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -5056,7 +5056,7 @@ var (
 
 	pattern_CloudHashingBilling_GetGoodIncoming_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "good", "incoming"}, ""))
 
-	pattern_CloudHashingBilling_GetGoodIncomingByGood_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 2}, []string{"v1", "get", "good", "incoming", "by"}, ""))
+	pattern_CloudHashingBilling_GetGoodIncomingsByGood_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 2}, []string{"v1", "get", "good", "incomings", "by"}, ""))
 
 	pattern_CloudHashingBilling_GetGoodIncomingByGoodCoin_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 2, 2, 5}, []string{"v1", "get", "good", "incoming", "by", "coin"}, ""))
 )
@@ -5184,7 +5184,7 @@ var (
 
 	forward_CloudHashingBilling_GetGoodIncoming_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingBilling_GetGoodIncomingByGood_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingBilling_GetGoodIncomingsByGood_0 = runtime.ForwardResponseMessage
 
 	forward_CloudHashingBilling_GetGoodIncomingByGoodCoin_0 = runtime.ForwardResponseMessage
 )

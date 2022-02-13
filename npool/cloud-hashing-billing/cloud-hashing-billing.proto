@@ -390,9 +390,9 @@ service CloudHashingBilling {
             body: "*"
         };
     }
-    rpc GetGoodIncomingByGood (GetGoodIncomingByGoodRequest) returns (GetGoodIncomingByGoodResponse) {
+    rpc GetGoodIncomingsByGood (GetGoodIncomingsByGoodRequest) returns (GetGoodIncomingsByGoodResponse) {
         option (google.api.http) = {
-            post: "/v1/get/good/incoming/by/good"
+            post: "/v1/get/good/incomings/by/good"
             body: "*"
         };
     }
@@ -1032,11 +1032,11 @@ message GetGoodIncomingResponse {
     GoodIncoming Info = 10;
 }
 
-message GetGoodIncomingByGoodRequest {
+message GetGoodIncomingsByGoodRequest {
     string GoodID = 10;
 }
 
-message GetGoodIncomingByGoodResponse {
+message GetGoodIncomingsByGoodResponse {
     repeated GoodIncoming Infos = 10;
 }
 

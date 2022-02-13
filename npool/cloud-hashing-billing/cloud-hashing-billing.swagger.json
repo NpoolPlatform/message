@@ -875,38 +875,6 @@
         ]
       }
     },
-    "/v1/get/good/incoming/by/good": {
-      "post": {
-        "operationId": "CloudHashingBilling_GetGoodIncomingByGood",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodIncomingByGoodResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodIncomingByGoodRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingBilling"
-        ]
-      }
-    },
     "/v1/get/good/incoming/by/good/coin": {
       "post": {
         "operationId": "CloudHashingBilling_GetGoodIncomingByGoodCoin",
@@ -931,6 +899,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetGoodIncomingByGoodCoinRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/good/incomings/by/good": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetGoodIncomingsByGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodIncomingsByGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodIncomingsByGoodRequest"
             }
           }
         ],
@@ -2623,25 +2623,6 @@
         }
       }
     },
-    "v1GetGoodIncomingByGoodRequest": {
-      "type": "object",
-      "properties": {
-        "GoodID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetGoodIncomingByGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1GoodIncoming"
-          }
-        }
-      }
-    },
     "v1GetGoodIncomingRequest": {
       "type": "object",
       "properties": {
@@ -2655,6 +2636,25 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1GoodIncoming"
+        }
+      }
+    },
+    "v1GetGoodIncomingsByGoodRequest": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetGoodIncomingsByGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodIncoming"
+          }
         }
       }
     },

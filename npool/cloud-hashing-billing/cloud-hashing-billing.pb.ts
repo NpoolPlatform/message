@@ -633,11 +633,11 @@ export type GetGoodIncomingResponse = {
   info?: GoodIncoming
 }
 
-export type GetGoodIncomingByGoodRequest = {
+export type GetGoodIncomingsByGoodRequest = {
   goodID?: string
 }
 
-export type GetGoodIncomingByGoodResponse = {
+export type GetGoodIncomingsByGoodResponse = {
   infos?: GoodIncoming[]
 }
 
@@ -834,8 +834,8 @@ export class CloudHashingBilling {
   static GetGoodIncoming(req: GetGoodIncomingRequest, initReq?: fm.InitReq): Promise<GetGoodIncomingResponse> {
     return fm.fetchReq<GetGoodIncomingRequest, GetGoodIncomingResponse>(`/v1/get/good/incoming`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetGoodIncomingByGood(req: GetGoodIncomingByGoodRequest, initReq?: fm.InitReq): Promise<GetGoodIncomingByGoodResponse> {
-    return fm.fetchReq<GetGoodIncomingByGoodRequest, GetGoodIncomingByGoodResponse>(`/v1/get/good/incoming/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetGoodIncomingsByGood(req: GetGoodIncomingsByGoodRequest, initReq?: fm.InitReq): Promise<GetGoodIncomingsByGoodResponse> {
+    return fm.fetchReq<GetGoodIncomingsByGoodRequest, GetGoodIncomingsByGoodResponse>(`/v1/get/good/incomings/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetGoodIncomingByGoodCoin(req: GetGoodIncomingByGoodCoinRequest, initReq?: fm.InitReq): Promise<GetGoodIncomingByGoodCoinResponse> {
     return fm.fetchReq<GetGoodIncomingByGoodCoinRequest, GetGoodIncomingByGoodCoinResponse>(`/v1/get/good/incoming/by/good/coin`, {...initReq, method: "POST", body: JSON.stringify(req)})

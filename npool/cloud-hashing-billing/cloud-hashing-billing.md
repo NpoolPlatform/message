@@ -62,10 +62,10 @@
     - [GetGoodBenefitResponse](#cloud.hashing.billing.v1.GetGoodBenefitResponse)
     - [GetGoodIncomingByGoodCoinRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest)
     - [GetGoodIncomingByGoodCoinResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse)
-    - [GetGoodIncomingByGoodRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodRequest)
-    - [GetGoodIncomingByGoodResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodResponse)
     - [GetGoodIncomingRequest](#cloud.hashing.billing.v1.GetGoodIncomingRequest)
     - [GetGoodIncomingResponse](#cloud.hashing.billing.v1.GetGoodIncomingResponse)
+    - [GetGoodIncomingsByGoodRequest](#cloud.hashing.billing.v1.GetGoodIncomingsByGoodRequest)
+    - [GetGoodIncomingsByGoodResponse](#cloud.hashing.billing.v1.GetGoodIncomingsByGoodResponse)
     - [GetGoodPaymentByAccountRequest](#cloud.hashing.billing.v1.GetGoodPaymentByAccountRequest)
     - [GetGoodPaymentByAccountResponse](#cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse)
     - [GetGoodPaymentRequest](#cloud.hashing.billing.v1.GetGoodPaymentRequest)
@@ -206,10 +206,10 @@
     - [GetGoodBenefitResponse](#cloud.hashing.billing.v1.GetGoodBenefitResponse)
     - [GetGoodIncomingByGoodCoinRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest)
     - [GetGoodIncomingByGoodCoinResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse)
-    - [GetGoodIncomingByGoodRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodRequest)
-    - [GetGoodIncomingByGoodResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodResponse)
     - [GetGoodIncomingRequest](#cloud.hashing.billing.v1.GetGoodIncomingRequest)
     - [GetGoodIncomingResponse](#cloud.hashing.billing.v1.GetGoodIncomingResponse)
+    - [GetGoodIncomingsByGoodRequest](#cloud.hashing.billing.v1.GetGoodIncomingsByGoodRequest)
+    - [GetGoodIncomingsByGoodResponse](#cloud.hashing.billing.v1.GetGoodIncomingsByGoodResponse)
     - [GetGoodPaymentByAccountRequest](#cloud.hashing.billing.v1.GetGoodPaymentByAccountRequest)
     - [GetGoodPaymentByAccountResponse](#cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse)
     - [GetGoodPaymentRequest](#cloud.hashing.billing.v1.GetGoodPaymentRequest)
@@ -1195,36 +1195,6 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodIncomingByGoodRequest"></a>
-
-### GetGoodIncomingByGoodRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| GoodID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.GetGoodIncomingByGoodResponse"></a>
-
-### GetGoodIncomingByGoodResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Infos | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) | repeated |  |
-
-
-
-
-
-
 <a name="cloud.hashing.billing.v1.GetGoodIncomingRequest"></a>
 
 ### GetGoodIncomingRequest
@@ -1249,6 +1219,36 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingsByGoodRequest"></a>
+
+### GetGoodIncomingsByGoodRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| GoodID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingsByGoodResponse"></a>
+
+### GetGoodIncomingsByGoodResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) | repeated |  |
 
 
 
@@ -2551,7 +2551,7 @@ Cloud Hashing Billing
 | CreateGoodIncoming | [CreateGoodIncomingRequest](#cloud.hashing.billing.v1.CreateGoodIncomingRequest) | [CreateGoodIncomingResponse](#cloud.hashing.billing.v1.CreateGoodIncomingResponse) |  |
 | UpdateGoodIncoming | [UpdateGoodIncomingRequest](#cloud.hashing.billing.v1.UpdateGoodIncomingRequest) | [UpdateGoodIncomingResponse](#cloud.hashing.billing.v1.UpdateGoodIncomingResponse) |  |
 | GetGoodIncoming | [GetGoodIncomingRequest](#cloud.hashing.billing.v1.GetGoodIncomingRequest) | [GetGoodIncomingResponse](#cloud.hashing.billing.v1.GetGoodIncomingResponse) |  |
-| GetGoodIncomingByGood | [GetGoodIncomingByGoodRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodRequest) | [GetGoodIncomingByGoodResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodResponse) |  |
+| GetGoodIncomingsByGood | [GetGoodIncomingsByGoodRequest](#cloud.hashing.billing.v1.GetGoodIncomingsByGoodRequest) | [GetGoodIncomingsByGoodResponse](#cloud.hashing.billing.v1.GetGoodIncomingsByGoodResponse) |  |
 | GetGoodIncomingByGoodCoin | [GetGoodIncomingByGoodCoinRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest) | [GetGoodIncomingByGoodCoinResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse) |  |
 
  
@@ -3458,36 +3458,6 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodIncomingByGoodRequest"></a>
-
-### GetGoodIncomingByGoodRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| GoodID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.GetGoodIncomingByGoodResponse"></a>
-
-### GetGoodIncomingByGoodResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Infos | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) | repeated |  |
-
-
-
-
-
-
 <a name="cloud.hashing.billing.v1.GetGoodIncomingRequest"></a>
 
 ### GetGoodIncomingRequest
@@ -3512,6 +3482,36 @@ Cloud Hashing Billing
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingsByGoodRequest"></a>
+
+### GetGoodIncomingsByGoodRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| GoodID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingsByGoodResponse"></a>
+
+### GetGoodIncomingsByGoodResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) | repeated |  |
 
 
 
@@ -4814,7 +4814,7 @@ Cloud Hashing Billing
 | CreateGoodIncoming | [CreateGoodIncomingRequest](#cloud.hashing.billing.v1.CreateGoodIncomingRequest) | [CreateGoodIncomingResponse](#cloud.hashing.billing.v1.CreateGoodIncomingResponse) |  |
 | UpdateGoodIncoming | [UpdateGoodIncomingRequest](#cloud.hashing.billing.v1.UpdateGoodIncomingRequest) | [UpdateGoodIncomingResponse](#cloud.hashing.billing.v1.UpdateGoodIncomingResponse) |  |
 | GetGoodIncoming | [GetGoodIncomingRequest](#cloud.hashing.billing.v1.GetGoodIncomingRequest) | [GetGoodIncomingResponse](#cloud.hashing.billing.v1.GetGoodIncomingResponse) |  |
-| GetGoodIncomingByGood | [GetGoodIncomingByGoodRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodRequest) | [GetGoodIncomingByGoodResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodResponse) |  |
+| GetGoodIncomingsByGood | [GetGoodIncomingsByGoodRequest](#cloud.hashing.billing.v1.GetGoodIncomingsByGoodRequest) | [GetGoodIncomingsByGoodResponse](#cloud.hashing.billing.v1.GetGoodIncomingsByGoodResponse) |  |
 | GetGoodIncomingByGoodCoin | [GetGoodIncomingByGoodCoinRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest) | [GetGoodIncomingByGoodCoinResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse) |  |
 
  

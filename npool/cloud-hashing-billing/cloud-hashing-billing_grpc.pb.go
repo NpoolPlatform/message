@@ -86,7 +86,7 @@ type CloudHashingBillingClient interface {
 	CreateGoodIncoming(ctx context.Context, in *CreateGoodIncomingRequest, opts ...grpc.CallOption) (*CreateGoodIncomingResponse, error)
 	UpdateGoodIncoming(ctx context.Context, in *UpdateGoodIncomingRequest, opts ...grpc.CallOption) (*UpdateGoodIncomingResponse, error)
 	GetGoodIncoming(ctx context.Context, in *GetGoodIncomingRequest, opts ...grpc.CallOption) (*GetGoodIncomingResponse, error)
-	GetGoodIncomingByGood(ctx context.Context, in *GetGoodIncomingByGoodRequest, opts ...grpc.CallOption) (*GetGoodIncomingByGoodResponse, error)
+	GetGoodIncomingsByGood(ctx context.Context, in *GetGoodIncomingsByGoodRequest, opts ...grpc.CallOption) (*GetGoodIncomingsByGoodResponse, error)
 	GetGoodIncomingByGoodCoin(ctx context.Context, in *GetGoodIncomingByGoodCoinRequest, opts ...grpc.CallOption) (*GetGoodIncomingByGoodCoinResponse, error)
 }
 
@@ -647,9 +647,9 @@ func (c *cloudHashingBillingClient) GetGoodIncoming(ctx context.Context, in *Get
 	return out, nil
 }
 
-func (c *cloudHashingBillingClient) GetGoodIncomingByGood(ctx context.Context, in *GetGoodIncomingByGoodRequest, opts ...grpc.CallOption) (*GetGoodIncomingByGoodResponse, error) {
-	out := new(GetGoodIncomingByGoodResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodIncomingByGood", in, out, opts...)
+func (c *cloudHashingBillingClient) GetGoodIncomingsByGood(ctx context.Context, in *GetGoodIncomingsByGoodRequest, opts ...grpc.CallOption) (*GetGoodIncomingsByGoodResponse, error) {
+	out := new(GetGoodIncomingsByGoodResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodIncomingsByGood", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -731,7 +731,7 @@ type CloudHashingBillingServer interface {
 	CreateGoodIncoming(context.Context, *CreateGoodIncomingRequest) (*CreateGoodIncomingResponse, error)
 	UpdateGoodIncoming(context.Context, *UpdateGoodIncomingRequest) (*UpdateGoodIncomingResponse, error)
 	GetGoodIncoming(context.Context, *GetGoodIncomingRequest) (*GetGoodIncomingResponse, error)
-	GetGoodIncomingByGood(context.Context, *GetGoodIncomingByGoodRequest) (*GetGoodIncomingByGoodResponse, error)
+	GetGoodIncomingsByGood(context.Context, *GetGoodIncomingsByGoodRequest) (*GetGoodIncomingsByGoodResponse, error)
 	GetGoodIncomingByGoodCoin(context.Context, *GetGoodIncomingByGoodCoinRequest) (*GetGoodIncomingByGoodCoinResponse, error)
 	mustEmbedUnimplementedCloudHashingBillingServer()
 }
@@ -923,8 +923,8 @@ func (UnimplementedCloudHashingBillingServer) UpdateGoodIncoming(context.Context
 func (UnimplementedCloudHashingBillingServer) GetGoodIncoming(context.Context, *GetGoodIncomingRequest) (*GetGoodIncomingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodIncoming not implemented")
 }
-func (UnimplementedCloudHashingBillingServer) GetGoodIncomingByGood(context.Context, *GetGoodIncomingByGoodRequest) (*GetGoodIncomingByGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetGoodIncomingByGood not implemented")
+func (UnimplementedCloudHashingBillingServer) GetGoodIncomingsByGood(context.Context, *GetGoodIncomingsByGoodRequest) (*GetGoodIncomingsByGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodIncomingsByGood not implemented")
 }
 func (UnimplementedCloudHashingBillingServer) GetGoodIncomingByGoodCoin(context.Context, *GetGoodIncomingByGoodCoinRequest) (*GetGoodIncomingByGoodCoinResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodIncomingByGoodCoin not implemented")
@@ -2040,20 +2040,20 @@ func _CloudHashingBilling_GetGoodIncoming_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudHashingBilling_GetGoodIncomingByGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetGoodIncomingByGoodRequest)
+func _CloudHashingBilling_GetGoodIncomingsByGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodIncomingsByGoodRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudHashingBillingServer).GetGoodIncomingByGood(ctx, in)
+		return srv.(CloudHashingBillingServer).GetGoodIncomingsByGood(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodIncomingByGood",
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodIncomingsByGood",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingBillingServer).GetGoodIncomingByGood(ctx, req.(*GetGoodIncomingByGoodRequest))
+		return srv.(CloudHashingBillingServer).GetGoodIncomingsByGood(ctx, req.(*GetGoodIncomingsByGoodRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2328,8 +2328,8 @@ var CloudHashingBilling_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingBilling_GetGoodIncoming_Handler,
 		},
 		{
-			MethodName: "GetGoodIncomingByGood",
-			Handler:    _CloudHashingBilling_GetGoodIncomingByGood_Handler,
+			MethodName: "GetGoodIncomingsByGood",
+			Handler:    _CloudHashingBilling_GetGoodIncomingsByGood_Handler,
 		},
 		{
 			MethodName: "GetGoodIncomingByGoodCoin",
