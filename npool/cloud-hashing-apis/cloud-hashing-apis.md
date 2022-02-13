@@ -248,6 +248,11 @@
 
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinName | [string](#string) |  |  |
+
+
 
 
 
@@ -1321,6 +1326,11 @@ Cloud Hashing Goods
 
 ### CreatePlatformCoinAccountRequest
 
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinName | [string](#string) |  |  |
 
 
 

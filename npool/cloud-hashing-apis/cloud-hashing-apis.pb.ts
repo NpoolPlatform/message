@@ -317,6 +317,7 @@ export type UpdateKycResponse = {
 }
 
 export type CreatePlatformCoinAccountRequest = {
+  coinName?: string
 }
 
 export type CreatePlatformCoinAccountResponse = {

@@ -1458,7 +1458,12 @@
       }
     },
     "v1CreatePlatformCoinAccountRequest": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "CoinName": {
+          "type": "string"
+        }
+      }
     },
     "v1CreatePlatformCoinAccountResponse": {
       "type": "object",

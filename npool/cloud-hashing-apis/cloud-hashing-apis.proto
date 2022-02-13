@@ -490,6 +490,7 @@ message UpdateKycResponse {
 }
 
 message CreatePlatformCoinAccountRequest {
+    string CoinName = 10;
 }
 
 message CreatePlatformCoinAccountResponse {
