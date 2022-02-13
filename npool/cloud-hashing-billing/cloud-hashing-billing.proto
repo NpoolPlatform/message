@@ -334,6 +334,74 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+
+    rpc CreateUserDirectBenefit (CreateUserDirectBenefitRequest) returns (CreateUserDirectBenefitResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/direct/benefit"
+            body: "*"
+        };
+    }
+    rpc UpdateUserDirectBenefit (UpdateUserDirectBenefitRequest) returns (UpdateUserDirectBenefitResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user/direct/benefit"
+            body: "*"
+        };
+    }
+    rpc GetUserDirectBenefit (GetUserDirectBenefitRequest) returns (GetUserDirectBenefitResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/direct/benefit"
+            body: "*"
+        };
+    }
+    rpc GetUserDirectBenefitsByAppUser (GetUserDirectBenefitsByAppUserRequest) returns (GetUserDirectBenefitsByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/direct/benefits/by/app/user"
+            body: "*"
+        };
+    }
+    rpc GetUserDirectBenefitsByOtherAppUser (GetUserDirectBenefitsByOtherAppUserRequest) returns (GetUserDirectBenefitsByOtherAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/direct/benefits/by/other/app/user"
+            body: "*"
+        };
+    }
+    rpc GetUserDirectBenefitByAccount (GetUserDirectBenefitByAccountRequest) returns (GetUserDirectBenefitByAccountResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/direct/benefit/by/account"
+            body: "*"
+        };
+    }
+
+    rpc CreateGoodIncoming (CreateGoodIncomingRequest) returns (CreateGoodIncomingResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/good/incoming"
+            body: "*"
+        };
+    }
+    rpc UpdateGoodIncoming (UpdateGoodIncomingRequest) returns (UpdateGoodIncomingResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/good/incoming"
+            body: "*"
+        };
+    }
+    rpc GetGoodIncoming (GetGoodIncomingRequest) returns (GetGoodIncomingResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/incoming"
+            body: "*"
+        };
+    }
+    rpc GetGoodIncomingByGood (GetGoodIncomingByGoodRequest) returns (GetGoodIncomingByGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/incoming/by/good"
+            body: "*"
+        };
+    }
+    rpc GetGoodIncomingByGoodCoin (GetGoodIncomingByGoodCoinRequest) returns (GetGoodIncomingByGoodCoinResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/incoming/by/good/coin"
+            body: "*"
+        };
+    }
 }
 
 message CoinAccountInfo {
@@ -873,4 +941,110 @@ message GetUserWithdrawByAccountRequest {
 
 message GetUserWithdrawByAccountResponse {
     UserWithdraw Info = 10;
+}
+
+message UserDirectBenefit {
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    string CoinTypeID = 40;
+    string AccountID = 50;
+}
+
+message CreateUserDirectBenefitRequest {
+    UserDirectBenefit Info = 10;
+}
+
+message CreateUserDirectBenefitResponse {
+    UserDirectBenefit Info = 10;
+}
+
+message UpdateUserDirectBenefitRequest {
+    UserDirectBenefit Info = 10;
+}
+
+message UpdateUserDirectBenefitResponse {
+    UserDirectBenefit Info = 10;
+}
+
+message GetUserDirectBenefitRequest {
+    string ID = 10;
+}
+
+message GetUserDirectBenefitResponse {
+    UserDirectBenefit Info = 10;
+}
+
+message GetUserDirectBenefitsByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetUserDirectBenefitsByAppUserResponse {
+    repeated UserDirectBenefit Infos = 10;
+}
+
+message GetUserDirectBenefitsByOtherAppUserRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
+}
+
+message GetUserDirectBenefitsByOtherAppUserResponse {
+    repeated UserDirectBenefit Infos = 10;
+}
+
+message GetUserDirectBenefitByAccountRequest {
+    string AccountID = 10;
+}
+
+message GetUserDirectBenefitByAccountResponse {
+    UserDirectBenefit Info = 10;
+}
+
+message GoodIncoming {
+    string ID = 10;
+    string GoodID = 20;
+    string CoinTypeID = 30;
+    string AccountID = 40;
+}
+
+message CreateGoodIncomingRequest {
+    GoodIncoming Info = 10;
+}
+
+message CreateGoodIncomingResponse {
+    GoodIncoming Info = 10;
+}
+
+message UpdateGoodIncomingRequest {
+    GoodIncoming Info = 10;
+}
+
+message UpdateGoodIncomingResponse {
+    GoodIncoming Info = 10;
+}
+
+message GetGoodIncomingRequest {
+    string ID = 10;
+}
+
+message GetGoodIncomingResponse {
+    GoodIncoming Info = 10;
+}
+
+message GetGoodIncomingByGoodRequest {
+    string GoodID = 10;
+}
+
+message GetGoodIncomingByGoodResponse {
+    GoodIncoming Info = 10;
+}
+
+message GetGoodIncomingByGoodCoinRequest {
+    string GoodID = 10;
+    string CoinTypeID = 20;
+}
+
+message GetGoodIncomingByGoodCoinResponse {
+    GoodIncoming Info = 10;
 }

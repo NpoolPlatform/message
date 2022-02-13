@@ -139,6 +139,38 @@
         ]
       }
     },
+    "/v1/create/good/incoming": {
+      "post": {
+        "operationId": "CloudHashingBilling_CreateGoodIncoming",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateGoodIncomingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateGoodIncomingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/create/good/payment": {
       "post": {
         "operationId": "CloudHashingBilling_CreateGoodPayment",
@@ -291,6 +323,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateUserBenefitRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/create/user/direct/benefit": {
+      "post": {
+        "operationId": "CloudHashingBilling_CreateUserDirectBenefit",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserDirectBenefitResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserDirectBenefitRequest"
             }
           }
         ],
@@ -771,6 +835,102 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetGoodBenefitByGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/good/incoming": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetGoodIncoming",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodIncomingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodIncomingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/good/incoming/by/good": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetGoodIncomingByGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodIncomingByGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodIncomingByGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/good/incoming/by/good/coin": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetGoodIncomingByGoodCoin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodIncomingByGoodCoinResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodIncomingByGoodCoinRequest"
             }
           }
         ],
@@ -1291,6 +1451,134 @@
         ]
       }
     },
+    "/v1/get/user/direct/benefit": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserDirectBenefit",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserDirectBenefitResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserDirectBenefitRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/user/direct/benefit/by/account": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserDirectBenefitByAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserDirectBenefitByAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserDirectBenefitByAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/user/direct/benefits/by/app/user": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserDirectBenefitsByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserDirectBenefitsByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserDirectBenefitsByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/user/direct/benefits/by/other/app/user": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserDirectBenefitsByOtherAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserDirectBenefitsByOtherAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserDirectBenefitsByOtherAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/user/withdraw": {
       "post": {
         "operationId": "CloudHashingBilling_GetUserWithdraw",
@@ -1515,6 +1803,38 @@
         ]
       }
     },
+    "/v1/update/good/incoming": {
+      "post": {
+        "operationId": "CloudHashingBilling_UpdateGoodIncoming",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateGoodIncomingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateGoodIncomingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/update/good/payment": {
       "post": {
         "operationId": "CloudHashingBilling_UpdateGoodPayment",
@@ -1603,6 +1923,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1UpdatePlatformSettingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/update/user/direct/benefit": {
+      "post": {
+        "operationId": "CloudHashingBilling_UpdateUserDirectBenefit",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserDirectBenefitResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserDirectBenefitRequest"
             }
           }
         ],
@@ -1887,6 +2239,22 @@
         }
       }
     },
+    "v1CreateGoodIncomingRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodIncoming"
+        }
+      }
+    },
+    "v1CreateGoodIncomingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodIncoming"
+        }
+      }
+    },
     "v1CreateGoodPaymentRequest": {
       "type": "object",
       "properties": {
@@ -1964,6 +2332,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1UserBenefit"
+        }
+      }
+    },
+    "v1CreateUserDirectBenefitRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserDirectBenefit"
+        }
+      }
+    },
+    "v1CreateUserDirectBenefitResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserDirectBenefit"
         }
       }
     },
@@ -2217,6 +2601,57 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1GoodBenefit"
+        }
+      }
+    },
+    "v1GetGoodIncomingByGoodCoinRequest": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetGoodIncomingByGoodCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodIncoming"
+        }
+      }
+    },
+    "v1GetGoodIncomingByGoodRequest": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetGoodIncomingByGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodIncoming"
+        }
+      }
+    },
+    "v1GetGoodIncomingRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetGoodIncomingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodIncoming"
         }
       }
     },
@@ -2516,6 +2951,82 @@
         }
       }
     },
+    "v1GetUserDirectBenefitByAccountRequest": {
+      "type": "object",
+      "properties": {
+        "AccountID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserDirectBenefitByAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserDirectBenefit"
+        }
+      }
+    },
+    "v1GetUserDirectBenefitRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserDirectBenefitResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserDirectBenefit"
+        }
+      }
+    },
+    "v1GetUserDirectBenefitsByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserDirectBenefitsByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserDirectBenefit"
+          }
+        }
+      }
+    },
+    "v1GetUserDirectBenefitsByOtherAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserDirectBenefitsByOtherAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserDirectBenefit"
+          }
+        }
+      }
+    },
     "v1GetUserWithdrawByAccountRequest": {
       "type": "object",
       "properties": {
@@ -2616,6 +3127,23 @@
         "BenefitIntervalHours": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1GoodIncoming": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
         }
       }
     },
@@ -2785,6 +3313,22 @@
         }
       }
     },
+    "v1UpdateGoodIncomingRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodIncoming"
+        }
+      }
+    },
+    "v1UpdateGoodIncomingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodIncoming"
+        }
+      }
+    },
     "v1UpdateGoodPaymentRequest": {
       "type": "object",
       "properties": {
@@ -2833,6 +3377,22 @@
         }
       }
     },
+    "v1UpdateUserDirectBenefitRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserDirectBenefit"
+        }
+      }
+    },
+    "v1UpdateUserDirectBenefitResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserDirectBenefit"
+        }
+      }
+    },
     "v1UpdateUserWithdrawRequest": {
       "type": "object",
       "properties": {
@@ -2878,6 +3438,26 @@
         "LastBenefitTimestamp": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UserDirectBenefit": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
         }
       }
     },

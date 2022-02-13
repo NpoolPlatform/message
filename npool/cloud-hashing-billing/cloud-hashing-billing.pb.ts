@@ -544,6 +544,112 @@ export type GetUserWithdrawByAccountResponse = {
   info?: UserWithdraw
 }
 
+export type UserDirectBenefit = {
+  id?: string
+  appID?: string
+  userID?: string
+  coinTypeID?: string
+  accountID?: string
+}
+
+export type CreateUserDirectBenefitRequest = {
+  info?: UserDirectBenefit
+}
+
+export type CreateUserDirectBenefitResponse = {
+  info?: UserDirectBenefit
+}
+
+export type UpdateUserDirectBenefitRequest = {
+  info?: UserDirectBenefit
+}
+
+export type UpdateUserDirectBenefitResponse = {
+  info?: UserDirectBenefit
+}
+
+export type GetUserDirectBenefitRequest = {
+  id?: string
+}
+
+export type GetUserDirectBenefitResponse = {
+  info?: UserDirectBenefit
+}
+
+export type GetUserDirectBenefitsByAppUserRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetUserDirectBenefitsByAppUserResponse = {
+  infos?: UserDirectBenefit[]
+}
+
+export type GetUserDirectBenefitsByOtherAppUserRequest = {
+  targetAppID?: string
+  targetUserID?: string
+}
+
+export type GetUserDirectBenefitsByOtherAppUserResponse = {
+  infos?: UserDirectBenefit[]
+}
+
+export type GetUserDirectBenefitByAccountRequest = {
+  accountID?: string
+}
+
+export type GetUserDirectBenefitByAccountResponse = {
+  info?: UserDirectBenefit
+}
+
+export type GoodIncoming = {
+  id?: string
+  goodID?: string
+  coinTypeID?: string
+  accountID?: string
+}
+
+export type CreateGoodIncomingRequest = {
+  info?: GoodIncoming
+}
+
+export type CreateGoodIncomingResponse = {
+  info?: GoodIncoming
+}
+
+export type UpdateGoodIncomingRequest = {
+  info?: GoodIncoming
+}
+
+export type UpdateGoodIncomingResponse = {
+  info?: GoodIncoming
+}
+
+export type GetGoodIncomingRequest = {
+  id?: string
+}
+
+export type GetGoodIncomingResponse = {
+  info?: GoodIncoming
+}
+
+export type GetGoodIncomingByGoodRequest = {
+  goodID?: string
+}
+
+export type GetGoodIncomingByGoodResponse = {
+  info?: GoodIncoming
+}
+
+export type GetGoodIncomingByGoodCoinRequest = {
+  goodID?: string
+  coinTypeID?: string
+}
+
+export type GetGoodIncomingByGoodCoinResponse = {
+  info?: GoodIncoming
+}
+
 export class CloudHashingBilling {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -700,5 +806,38 @@ export class CloudHashingBilling {
   }
   static GetUserWithdrawByAccount(req: GetUserWithdrawByAccountRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawByAccountResponse> {
     return fm.fetchReq<GetUserWithdrawByAccountRequest, GetUserWithdrawByAccountResponse>(`/v1/get/user/withdraw/by/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateUserDirectBenefit(req: CreateUserDirectBenefitRequest, initReq?: fm.InitReq): Promise<CreateUserDirectBenefitResponse> {
+    return fm.fetchReq<CreateUserDirectBenefitRequest, CreateUserDirectBenefitResponse>(`/v1/create/user/direct/benefit`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateUserDirectBenefit(req: UpdateUserDirectBenefitRequest, initReq?: fm.InitReq): Promise<UpdateUserDirectBenefitResponse> {
+    return fm.fetchReq<UpdateUserDirectBenefitRequest, UpdateUserDirectBenefitResponse>(`/v1/update/user/direct/benefit`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserDirectBenefit(req: GetUserDirectBenefitRequest, initReq?: fm.InitReq): Promise<GetUserDirectBenefitResponse> {
+    return fm.fetchReq<GetUserDirectBenefitRequest, GetUserDirectBenefitResponse>(`/v1/get/user/direct/benefit`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserDirectBenefitsByAppUser(req: GetUserDirectBenefitsByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserDirectBenefitsByAppUserResponse> {
+    return fm.fetchReq<GetUserDirectBenefitsByAppUserRequest, GetUserDirectBenefitsByAppUserResponse>(`/v1/get/user/direct/benefits/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserDirectBenefitsByOtherAppUser(req: GetUserDirectBenefitsByOtherAppUserRequest, initReq?: fm.InitReq): Promise<GetUserDirectBenefitsByOtherAppUserResponse> {
+    return fm.fetchReq<GetUserDirectBenefitsByOtherAppUserRequest, GetUserDirectBenefitsByOtherAppUserResponse>(`/v1/get/user/direct/benefits/by/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserDirectBenefitByAccount(req: GetUserDirectBenefitByAccountRequest, initReq?: fm.InitReq): Promise<GetUserDirectBenefitByAccountResponse> {
+    return fm.fetchReq<GetUserDirectBenefitByAccountRequest, GetUserDirectBenefitByAccountResponse>(`/v1/get/user/direct/benefit/by/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateGoodIncoming(req: CreateGoodIncomingRequest, initReq?: fm.InitReq): Promise<CreateGoodIncomingResponse> {
+    return fm.fetchReq<CreateGoodIncomingRequest, CreateGoodIncomingResponse>(`/v1/create/good/incoming`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateGoodIncoming(req: UpdateGoodIncomingRequest, initReq?: fm.InitReq): Promise<UpdateGoodIncomingResponse> {
+    return fm.fetchReq<UpdateGoodIncomingRequest, UpdateGoodIncomingResponse>(`/v1/update/good/incoming`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodIncoming(req: GetGoodIncomingRequest, initReq?: fm.InitReq): Promise<GetGoodIncomingResponse> {
+    return fm.fetchReq<GetGoodIncomingRequest, GetGoodIncomingResponse>(`/v1/get/good/incoming`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodIncomingByGood(req: GetGoodIncomingByGoodRequest, initReq?: fm.InitReq): Promise<GetGoodIncomingByGoodResponse> {
+    return fm.fetchReq<GetGoodIncomingByGoodRequest, GetGoodIncomingByGoodResponse>(`/v1/get/good/incoming/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodIncomingByGoodCoin(req: GetGoodIncomingByGoodCoinRequest, initReq?: fm.InitReq): Promise<GetGoodIncomingByGoodCoinResponse> {
+    return fm.fetchReq<GetGoodIncomingByGoodCoinRequest, GetGoodIncomingByGoodCoinResponse>(`/v1/get/good/incoming/by/good/coin`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

@@ -16,6 +16,8 @@
     - [CreateCoinSettingResponse](#cloud.hashing.billing.v1.CreateCoinSettingResponse)
     - [CreateGoodBenefitRequest](#cloud.hashing.billing.v1.CreateGoodBenefitRequest)
     - [CreateGoodBenefitResponse](#cloud.hashing.billing.v1.CreateGoodBenefitResponse)
+    - [CreateGoodIncomingRequest](#cloud.hashing.billing.v1.CreateGoodIncomingRequest)
+    - [CreateGoodIncomingResponse](#cloud.hashing.billing.v1.CreateGoodIncomingResponse)
     - [CreateGoodPaymentRequest](#cloud.hashing.billing.v1.CreateGoodPaymentRequest)
     - [CreateGoodPaymentResponse](#cloud.hashing.billing.v1.CreateGoodPaymentResponse)
     - [CreateGoodSettingRequest](#cloud.hashing.billing.v1.CreateGoodSettingRequest)
@@ -26,6 +28,8 @@
     - [CreatePlatformSettingResponse](#cloud.hashing.billing.v1.CreatePlatformSettingResponse)
     - [CreateUserBenefitRequest](#cloud.hashing.billing.v1.CreateUserBenefitRequest)
     - [CreateUserBenefitResponse](#cloud.hashing.billing.v1.CreateUserBenefitResponse)
+    - [CreateUserDirectBenefitRequest](#cloud.hashing.billing.v1.CreateUserDirectBenefitRequest)
+    - [CreateUserDirectBenefitResponse](#cloud.hashing.billing.v1.CreateUserDirectBenefitResponse)
     - [CreateUserWithdrawRequest](#cloud.hashing.billing.v1.CreateUserWithdrawRequest)
     - [CreateUserWithdrawResponse](#cloud.hashing.billing.v1.CreateUserWithdrawResponse)
     - [DeleteCoinAccountRequest](#cloud.hashing.billing.v1.DeleteCoinAccountRequest)
@@ -56,6 +60,12 @@
     - [GetGoodBenefitByGoodResponse](#cloud.hashing.billing.v1.GetGoodBenefitByGoodResponse)
     - [GetGoodBenefitRequest](#cloud.hashing.billing.v1.GetGoodBenefitRequest)
     - [GetGoodBenefitResponse](#cloud.hashing.billing.v1.GetGoodBenefitResponse)
+    - [GetGoodIncomingByGoodCoinRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest)
+    - [GetGoodIncomingByGoodCoinResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse)
+    - [GetGoodIncomingByGoodRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodRequest)
+    - [GetGoodIncomingByGoodResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodResponse)
+    - [GetGoodIncomingRequest](#cloud.hashing.billing.v1.GetGoodIncomingRequest)
+    - [GetGoodIncomingResponse](#cloud.hashing.billing.v1.GetGoodIncomingResponse)
     - [GetGoodPaymentByAccountRequest](#cloud.hashing.billing.v1.GetGoodPaymentByAccountRequest)
     - [GetGoodPaymentByAccountResponse](#cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse)
     - [GetGoodPaymentRequest](#cloud.hashing.billing.v1.GetGoodPaymentRequest)
@@ -90,6 +100,14 @@
     - [GetUserBenefitsByAppResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppResponse)
     - [GetUserBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest)
     - [GetUserBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse)
+    - [GetUserDirectBenefitByAccountRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest)
+    - [GetUserDirectBenefitByAccountResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse)
+    - [GetUserDirectBenefitRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitRequest)
+    - [GetUserDirectBenefitResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitResponse)
+    - [GetUserDirectBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest)
+    - [GetUserDirectBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse)
+    - [GetUserDirectBenefitsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest)
+    - [GetUserDirectBenefitsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse)
     - [GetUserWithdrawByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest)
     - [GetUserWithdrawByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse)
     - [GetUserWithdrawRequest](#cloud.hashing.billing.v1.GetUserWithdrawRequest)
@@ -99,6 +117,7 @@
     - [GetUserWithdrawsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest)
     - [GetUserWithdrawsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse)
     - [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit)
+    - [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming)
     - [GoodPayment](#cloud.hashing.billing.v1.GoodPayment)
     - [GoodSetting](#cloud.hashing.billing.v1.GoodSetting)
     - [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit)
@@ -110,15 +129,20 @@
     - [UpdateCoinSettingResponse](#cloud.hashing.billing.v1.UpdateCoinSettingResponse)
     - [UpdateGoodBenefitRequest](#cloud.hashing.billing.v1.UpdateGoodBenefitRequest)
     - [UpdateGoodBenefitResponse](#cloud.hashing.billing.v1.UpdateGoodBenefitResponse)
+    - [UpdateGoodIncomingRequest](#cloud.hashing.billing.v1.UpdateGoodIncomingRequest)
+    - [UpdateGoodIncomingResponse](#cloud.hashing.billing.v1.UpdateGoodIncomingResponse)
     - [UpdateGoodPaymentRequest](#cloud.hashing.billing.v1.UpdateGoodPaymentRequest)
     - [UpdateGoodPaymentResponse](#cloud.hashing.billing.v1.UpdateGoodPaymentResponse)
     - [UpdateGoodSettingRequest](#cloud.hashing.billing.v1.UpdateGoodSettingRequest)
     - [UpdateGoodSettingResponse](#cloud.hashing.billing.v1.UpdateGoodSettingResponse)
     - [UpdatePlatformSettingRequest](#cloud.hashing.billing.v1.UpdatePlatformSettingRequest)
     - [UpdatePlatformSettingResponse](#cloud.hashing.billing.v1.UpdatePlatformSettingResponse)
+    - [UpdateUserDirectBenefitRequest](#cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest)
+    - [UpdateUserDirectBenefitResponse](#cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse)
     - [UpdateUserWithdrawRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawRequest)
     - [UpdateUserWithdrawResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawResponse)
     - [UserBenefit](#cloud.hashing.billing.v1.UserBenefit)
+    - [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit)
     - [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw)
   
     - [CloudHashingBilling](#cloud.hashing.billing.v1.CloudHashingBilling)
@@ -136,6 +160,8 @@
     - [CreateCoinSettingResponse](#cloud.hashing.billing.v1.CreateCoinSettingResponse)
     - [CreateGoodBenefitRequest](#cloud.hashing.billing.v1.CreateGoodBenefitRequest)
     - [CreateGoodBenefitResponse](#cloud.hashing.billing.v1.CreateGoodBenefitResponse)
+    - [CreateGoodIncomingRequest](#cloud.hashing.billing.v1.CreateGoodIncomingRequest)
+    - [CreateGoodIncomingResponse](#cloud.hashing.billing.v1.CreateGoodIncomingResponse)
     - [CreateGoodPaymentRequest](#cloud.hashing.billing.v1.CreateGoodPaymentRequest)
     - [CreateGoodPaymentResponse](#cloud.hashing.billing.v1.CreateGoodPaymentResponse)
     - [CreateGoodSettingRequest](#cloud.hashing.billing.v1.CreateGoodSettingRequest)
@@ -146,6 +172,8 @@
     - [CreatePlatformSettingResponse](#cloud.hashing.billing.v1.CreatePlatformSettingResponse)
     - [CreateUserBenefitRequest](#cloud.hashing.billing.v1.CreateUserBenefitRequest)
     - [CreateUserBenefitResponse](#cloud.hashing.billing.v1.CreateUserBenefitResponse)
+    - [CreateUserDirectBenefitRequest](#cloud.hashing.billing.v1.CreateUserDirectBenefitRequest)
+    - [CreateUserDirectBenefitResponse](#cloud.hashing.billing.v1.CreateUserDirectBenefitResponse)
     - [CreateUserWithdrawRequest](#cloud.hashing.billing.v1.CreateUserWithdrawRequest)
     - [CreateUserWithdrawResponse](#cloud.hashing.billing.v1.CreateUserWithdrawResponse)
     - [DeleteCoinAccountRequest](#cloud.hashing.billing.v1.DeleteCoinAccountRequest)
@@ -176,6 +204,12 @@
     - [GetGoodBenefitByGoodResponse](#cloud.hashing.billing.v1.GetGoodBenefitByGoodResponse)
     - [GetGoodBenefitRequest](#cloud.hashing.billing.v1.GetGoodBenefitRequest)
     - [GetGoodBenefitResponse](#cloud.hashing.billing.v1.GetGoodBenefitResponse)
+    - [GetGoodIncomingByGoodCoinRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest)
+    - [GetGoodIncomingByGoodCoinResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse)
+    - [GetGoodIncomingByGoodRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodRequest)
+    - [GetGoodIncomingByGoodResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodResponse)
+    - [GetGoodIncomingRequest](#cloud.hashing.billing.v1.GetGoodIncomingRequest)
+    - [GetGoodIncomingResponse](#cloud.hashing.billing.v1.GetGoodIncomingResponse)
     - [GetGoodPaymentByAccountRequest](#cloud.hashing.billing.v1.GetGoodPaymentByAccountRequest)
     - [GetGoodPaymentByAccountResponse](#cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse)
     - [GetGoodPaymentRequest](#cloud.hashing.billing.v1.GetGoodPaymentRequest)
@@ -210,6 +244,14 @@
     - [GetUserBenefitsByAppResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppResponse)
     - [GetUserBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest)
     - [GetUserBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse)
+    - [GetUserDirectBenefitByAccountRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest)
+    - [GetUserDirectBenefitByAccountResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse)
+    - [GetUserDirectBenefitRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitRequest)
+    - [GetUserDirectBenefitResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitResponse)
+    - [GetUserDirectBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest)
+    - [GetUserDirectBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse)
+    - [GetUserDirectBenefitsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest)
+    - [GetUserDirectBenefitsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse)
     - [GetUserWithdrawByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest)
     - [GetUserWithdrawByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse)
     - [GetUserWithdrawRequest](#cloud.hashing.billing.v1.GetUserWithdrawRequest)
@@ -219,6 +261,7 @@
     - [GetUserWithdrawsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest)
     - [GetUserWithdrawsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse)
     - [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit)
+    - [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming)
     - [GoodPayment](#cloud.hashing.billing.v1.GoodPayment)
     - [GoodSetting](#cloud.hashing.billing.v1.GoodSetting)
     - [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit)
@@ -230,15 +273,20 @@
     - [UpdateCoinSettingResponse](#cloud.hashing.billing.v1.UpdateCoinSettingResponse)
     - [UpdateGoodBenefitRequest](#cloud.hashing.billing.v1.UpdateGoodBenefitRequest)
     - [UpdateGoodBenefitResponse](#cloud.hashing.billing.v1.UpdateGoodBenefitResponse)
+    - [UpdateGoodIncomingRequest](#cloud.hashing.billing.v1.UpdateGoodIncomingRequest)
+    - [UpdateGoodIncomingResponse](#cloud.hashing.billing.v1.UpdateGoodIncomingResponse)
     - [UpdateGoodPaymentRequest](#cloud.hashing.billing.v1.UpdateGoodPaymentRequest)
     - [UpdateGoodPaymentResponse](#cloud.hashing.billing.v1.UpdateGoodPaymentResponse)
     - [UpdateGoodSettingRequest](#cloud.hashing.billing.v1.UpdateGoodSettingRequest)
     - [UpdateGoodSettingResponse](#cloud.hashing.billing.v1.UpdateGoodSettingResponse)
     - [UpdatePlatformSettingRequest](#cloud.hashing.billing.v1.UpdatePlatformSettingRequest)
     - [UpdatePlatformSettingResponse](#cloud.hashing.billing.v1.UpdatePlatformSettingResponse)
+    - [UpdateUserDirectBenefitRequest](#cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest)
+    - [UpdateUserDirectBenefitResponse](#cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse)
     - [UpdateUserWithdrawRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawRequest)
     - [UpdateUserWithdrawResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawResponse)
     - [UserBenefit](#cloud.hashing.billing.v1.UserBenefit)
+    - [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit)
     - [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw)
   
     - [CloudHashingBilling](#cloud.hashing.billing.v1.CloudHashingBilling)
@@ -459,6 +507,36 @@
 
 
 
+<a name="cloud.hashing.billing.v1.CreateGoodIncomingRequest"></a>
+
+### CreateGoodIncomingRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateGoodIncomingResponse"></a>
+
+### CreateGoodIncomingResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.CreateGoodPaymentRequest"></a>
 
 ### CreateGoodPaymentRequest
@@ -603,6 +681,36 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateUserDirectBenefitRequest"></a>
+
+### CreateUserDirectBenefitRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateUserDirectBenefitResponse"></a>
+
+### CreateUserDirectBenefitResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
 
 
 
@@ -1050,6 +1158,97 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest"></a>
+
+### GetGoodIncomingByGoodCoinRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| GoodID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse"></a>
+
+### GetGoodIncomingByGoodCoinResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingByGoodRequest"></a>
+
+### GetGoodIncomingByGoodRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| GoodID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingByGoodResponse"></a>
+
+### GetGoodIncomingByGoodResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingRequest"></a>
+
+### GetGoodIncomingRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingResponse"></a>
+
+### GetGoodIncomingResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
 
 
 
@@ -1569,6 +1768,128 @@
 
 
 
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest"></a>
+
+### GetUserDirectBenefitByAccountRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AccountID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse"></a>
+
+### GetUserDirectBenefitByAccountResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitRequest"></a>
+
+### GetUserDirectBenefitRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitResponse"></a>
+
+### GetUserDirectBenefitResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest"></a>
+
+### GetUserDirectBenefitsByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse"></a>
+
+### GetUserDirectBenefitsByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest"></a>
+
+### GetUserDirectBenefitsByOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse"></a>
+
+### GetUserDirectBenefitsByOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest"></a>
 
 ### GetUserWithdrawByAccountRequest
@@ -1706,6 +2027,24 @@
 | UserOfflineAccountID | [string](#string) |  |  |
 | UserOnlineAccountID | [string](#string) |  |  |
 | BenefitIntervalHours | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GoodIncoming"></a>
+
+### GoodIncoming
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| AccountID | [string](#string) |  |  |
 
 
 
@@ -1896,6 +2235,36 @@
 
 
 
+<a name="cloud.hashing.billing.v1.UpdateGoodIncomingRequest"></a>
+
+### UpdateGoodIncomingRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.UpdateGoodIncomingResponse"></a>
+
+### UpdateGoodIncomingResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.UpdateGoodPaymentRequest"></a>
 
 ### UpdateGoodPaymentRequest
@@ -1986,6 +2355,36 @@
 
 
 
+<a name="cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest"></a>
+
+### UpdateUserDirectBenefitRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse"></a>
+
+### UpdateUserDirectBenefitResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.UpdateUserWithdrawRequest"></a>
 
 ### UpdateUserWithdrawRequest
@@ -2032,6 +2431,25 @@
 | CreateAt | [uint32](#uint32) |  |  |
 | OrderID | [string](#string) |  |  |
 | LastBenefitTimestamp | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.UserDirectBenefit"></a>
+
+### UserDirectBenefit
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| AccountID | [string](#string) |  |  |
 
 
 
@@ -2124,6 +2542,17 @@ Cloud Hashing Billing
 | GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse) |  |
 | GetUserWithdrawsByOtherAppUser | [GetUserWithdrawsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest) | [GetUserWithdrawsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse) |  |
 | GetUserWithdrawByAccount | [GetUserWithdrawByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest) | [GetUserWithdrawByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse) |  |
+| CreateUserDirectBenefit | [CreateUserDirectBenefitRequest](#cloud.hashing.billing.v1.CreateUserDirectBenefitRequest) | [CreateUserDirectBenefitResponse](#cloud.hashing.billing.v1.CreateUserDirectBenefitResponse) |  |
+| UpdateUserDirectBenefit | [UpdateUserDirectBenefitRequest](#cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest) | [UpdateUserDirectBenefitResponse](#cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse) |  |
+| GetUserDirectBenefit | [GetUserDirectBenefitRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitRequest) | [GetUserDirectBenefitResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitResponse) |  |
+| GetUserDirectBenefitsByAppUser | [GetUserDirectBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest) | [GetUserDirectBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse) |  |
+| GetUserDirectBenefitsByOtherAppUser | [GetUserDirectBenefitsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest) | [GetUserDirectBenefitsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse) |  |
+| GetUserDirectBenefitByAccount | [GetUserDirectBenefitByAccountRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest) | [GetUserDirectBenefitByAccountResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse) |  |
+| CreateGoodIncoming | [CreateGoodIncomingRequest](#cloud.hashing.billing.v1.CreateGoodIncomingRequest) | [CreateGoodIncomingResponse](#cloud.hashing.billing.v1.CreateGoodIncomingResponse) |  |
+| UpdateGoodIncoming | [UpdateGoodIncomingRequest](#cloud.hashing.billing.v1.UpdateGoodIncomingRequest) | [UpdateGoodIncomingResponse](#cloud.hashing.billing.v1.UpdateGoodIncomingResponse) |  |
+| GetGoodIncoming | [GetGoodIncomingRequest](#cloud.hashing.billing.v1.GetGoodIncomingRequest) | [GetGoodIncomingResponse](#cloud.hashing.billing.v1.GetGoodIncomingResponse) |  |
+| GetGoodIncomingByGood | [GetGoodIncomingByGoodRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodRequest) | [GetGoodIncomingByGoodResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodResponse) |  |
+| GetGoodIncomingByGoodCoin | [GetGoodIncomingByGoodCoinRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest) | [GetGoodIncomingByGoodCoinResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse) |  |
 
  
 
@@ -2341,6 +2770,36 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.CreateGoodIncomingRequest"></a>
+
+### CreateGoodIncomingRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateGoodIncomingResponse"></a>
+
+### CreateGoodIncomingResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.CreateGoodPaymentRequest"></a>
 
 ### CreateGoodPaymentRequest
@@ -2485,6 +2944,36 @@ Cloud Hashing Billing
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateUserDirectBenefitRequest"></a>
+
+### CreateUserDirectBenefitRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateUserDirectBenefitResponse"></a>
+
+### CreateUserDirectBenefitResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
 
 
 
@@ -2932,6 +3421,97 @@ Cloud Hashing Billing
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest"></a>
+
+### GetGoodIncomingByGoodCoinRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| GoodID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse"></a>
+
+### GetGoodIncomingByGoodCoinResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingByGoodRequest"></a>
+
+### GetGoodIncomingByGoodRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| GoodID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingByGoodResponse"></a>
+
+### GetGoodIncomingByGoodResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingRequest"></a>
+
+### GetGoodIncomingRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetGoodIncomingResponse"></a>
+
+### GetGoodIncomingResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
 
 
 
@@ -3451,6 +4031,128 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest"></a>
+
+### GetUserDirectBenefitByAccountRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AccountID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse"></a>
+
+### GetUserDirectBenefitByAccountResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitRequest"></a>
+
+### GetUserDirectBenefitRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitResponse"></a>
+
+### GetUserDirectBenefitResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest"></a>
+
+### GetUserDirectBenefitsByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse"></a>
+
+### GetUserDirectBenefitsByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest"></a>
+
+### GetUserDirectBenefitsByOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse"></a>
+
+### GetUserDirectBenefitsByOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest"></a>
 
 ### GetUserWithdrawByAccountRequest
@@ -3588,6 +4290,24 @@ Cloud Hashing Billing
 | UserOfflineAccountID | [string](#string) |  |  |
 | UserOnlineAccountID | [string](#string) |  |  |
 | BenefitIntervalHours | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GoodIncoming"></a>
+
+### GoodIncoming
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| AccountID | [string](#string) |  |  |
 
 
 
@@ -3778,6 +4498,36 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.UpdateGoodIncomingRequest"></a>
+
+### UpdateGoodIncomingRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.UpdateGoodIncomingResponse"></a>
+
+### UpdateGoodIncomingResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.UpdateGoodPaymentRequest"></a>
 
 ### UpdateGoodPaymentRequest
@@ -3868,6 +4618,36 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest"></a>
+
+### UpdateUserDirectBenefitRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse"></a>
+
+### UpdateUserDirectBenefitResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.UpdateUserWithdrawRequest"></a>
 
 ### UpdateUserWithdrawRequest
@@ -3914,6 +4694,25 @@ Cloud Hashing Billing
 | CreateAt | [uint32](#uint32) |  |  |
 | OrderID | [string](#string) |  |  |
 | LastBenefitTimestamp | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.UserDirectBenefit"></a>
+
+### UserDirectBenefit
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| AccountID | [string](#string) |  |  |
 
 
 
@@ -4006,6 +4805,17 @@ Cloud Hashing Billing
 | GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse) |  |
 | GetUserWithdrawsByOtherAppUser | [GetUserWithdrawsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest) | [GetUserWithdrawsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse) |  |
 | GetUserWithdrawByAccount | [GetUserWithdrawByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest) | [GetUserWithdrawByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse) |  |
+| CreateUserDirectBenefit | [CreateUserDirectBenefitRequest](#cloud.hashing.billing.v1.CreateUserDirectBenefitRequest) | [CreateUserDirectBenefitResponse](#cloud.hashing.billing.v1.CreateUserDirectBenefitResponse) |  |
+| UpdateUserDirectBenefit | [UpdateUserDirectBenefitRequest](#cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest) | [UpdateUserDirectBenefitResponse](#cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse) |  |
+| GetUserDirectBenefit | [GetUserDirectBenefitRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitRequest) | [GetUserDirectBenefitResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitResponse) |  |
+| GetUserDirectBenefitsByAppUser | [GetUserDirectBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest) | [GetUserDirectBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse) |  |
+| GetUserDirectBenefitsByOtherAppUser | [GetUserDirectBenefitsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest) | [GetUserDirectBenefitsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse) |  |
+| GetUserDirectBenefitByAccount | [GetUserDirectBenefitByAccountRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest) | [GetUserDirectBenefitByAccountResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse) |  |
+| CreateGoodIncoming | [CreateGoodIncomingRequest](#cloud.hashing.billing.v1.CreateGoodIncomingRequest) | [CreateGoodIncomingResponse](#cloud.hashing.billing.v1.CreateGoodIncomingResponse) |  |
+| UpdateGoodIncoming | [UpdateGoodIncomingRequest](#cloud.hashing.billing.v1.UpdateGoodIncomingRequest) | [UpdateGoodIncomingResponse](#cloud.hashing.billing.v1.UpdateGoodIncomingResponse) |  |
+| GetGoodIncoming | [GetGoodIncomingRequest](#cloud.hashing.billing.v1.GetGoodIncomingRequest) | [GetGoodIncomingResponse](#cloud.hashing.billing.v1.GetGoodIncomingResponse) |  |
+| GetGoodIncomingByGood | [GetGoodIncomingByGoodRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodRequest) | [GetGoodIncomingByGoodResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodResponse) |  |
+| GetGoodIncomingByGoodCoin | [GetGoodIncomingByGoodCoinRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest) | [GetGoodIncomingByGoodCoinResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse) |  |
 
  
 

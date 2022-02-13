@@ -77,6 +77,17 @@ type CloudHashingBillingClient interface {
 	GetUserWithdrawsByAppUser(ctx context.Context, in *GetUserWithdrawsByAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawsByAppUserResponse, error)
 	GetUserWithdrawsByOtherAppUser(ctx context.Context, in *GetUserWithdrawsByOtherAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawsByOtherAppUserResponse, error)
 	GetUserWithdrawByAccount(ctx context.Context, in *GetUserWithdrawByAccountRequest, opts ...grpc.CallOption) (*GetUserWithdrawByAccountResponse, error)
+	CreateUserDirectBenefit(ctx context.Context, in *CreateUserDirectBenefitRequest, opts ...grpc.CallOption) (*CreateUserDirectBenefitResponse, error)
+	UpdateUserDirectBenefit(ctx context.Context, in *UpdateUserDirectBenefitRequest, opts ...grpc.CallOption) (*UpdateUserDirectBenefitResponse, error)
+	GetUserDirectBenefit(ctx context.Context, in *GetUserDirectBenefitRequest, opts ...grpc.CallOption) (*GetUserDirectBenefitResponse, error)
+	GetUserDirectBenefitsByAppUser(ctx context.Context, in *GetUserDirectBenefitsByAppUserRequest, opts ...grpc.CallOption) (*GetUserDirectBenefitsByAppUserResponse, error)
+	GetUserDirectBenefitsByOtherAppUser(ctx context.Context, in *GetUserDirectBenefitsByOtherAppUserRequest, opts ...grpc.CallOption) (*GetUserDirectBenefitsByOtherAppUserResponse, error)
+	GetUserDirectBenefitByAccount(ctx context.Context, in *GetUserDirectBenefitByAccountRequest, opts ...grpc.CallOption) (*GetUserDirectBenefitByAccountResponse, error)
+	CreateGoodIncoming(ctx context.Context, in *CreateGoodIncomingRequest, opts ...grpc.CallOption) (*CreateGoodIncomingResponse, error)
+	UpdateGoodIncoming(ctx context.Context, in *UpdateGoodIncomingRequest, opts ...grpc.CallOption) (*UpdateGoodIncomingResponse, error)
+	GetGoodIncoming(ctx context.Context, in *GetGoodIncomingRequest, opts ...grpc.CallOption) (*GetGoodIncomingResponse, error)
+	GetGoodIncomingByGood(ctx context.Context, in *GetGoodIncomingByGoodRequest, opts ...grpc.CallOption) (*GetGoodIncomingByGoodResponse, error)
+	GetGoodIncomingByGoodCoin(ctx context.Context, in *GetGoodIncomingByGoodCoinRequest, opts ...grpc.CallOption) (*GetGoodIncomingByGoodCoinResponse, error)
 }
 
 type cloudHashingBillingClient struct {
@@ -555,6 +566,105 @@ func (c *cloudHashingBillingClient) GetUserWithdrawByAccount(ctx context.Context
 	return out, nil
 }
 
+func (c *cloudHashingBillingClient) CreateUserDirectBenefit(ctx context.Context, in *CreateUserDirectBenefitRequest, opts ...grpc.CallOption) (*CreateUserDirectBenefitResponse, error) {
+	out := new(CreateUserDirectBenefitResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/CreateUserDirectBenefit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) UpdateUserDirectBenefit(ctx context.Context, in *UpdateUserDirectBenefitRequest, opts ...grpc.CallOption) (*UpdateUserDirectBenefitResponse, error) {
+	out := new(UpdateUserDirectBenefitResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateUserDirectBenefit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetUserDirectBenefit(ctx context.Context, in *GetUserDirectBenefitRequest, opts ...grpc.CallOption) (*GetUserDirectBenefitResponse, error) {
+	out := new(GetUserDirectBenefitResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserDirectBenefit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetUserDirectBenefitsByAppUser(ctx context.Context, in *GetUserDirectBenefitsByAppUserRequest, opts ...grpc.CallOption) (*GetUserDirectBenefitsByAppUserResponse, error) {
+	out := new(GetUserDirectBenefitsByAppUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserDirectBenefitsByAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetUserDirectBenefitsByOtherAppUser(ctx context.Context, in *GetUserDirectBenefitsByOtherAppUserRequest, opts ...grpc.CallOption) (*GetUserDirectBenefitsByOtherAppUserResponse, error) {
+	out := new(GetUserDirectBenefitsByOtherAppUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserDirectBenefitsByOtherAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetUserDirectBenefitByAccount(ctx context.Context, in *GetUserDirectBenefitByAccountRequest, opts ...grpc.CallOption) (*GetUserDirectBenefitByAccountResponse, error) {
+	out := new(GetUserDirectBenefitByAccountResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserDirectBenefitByAccount", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) CreateGoodIncoming(ctx context.Context, in *CreateGoodIncomingRequest, opts ...grpc.CallOption) (*CreateGoodIncomingResponse, error) {
+	out := new(CreateGoodIncomingResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/CreateGoodIncoming", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) UpdateGoodIncoming(ctx context.Context, in *UpdateGoodIncomingRequest, opts ...grpc.CallOption) (*UpdateGoodIncomingResponse, error) {
+	out := new(UpdateGoodIncomingResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateGoodIncoming", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetGoodIncoming(ctx context.Context, in *GetGoodIncomingRequest, opts ...grpc.CallOption) (*GetGoodIncomingResponse, error) {
+	out := new(GetGoodIncomingResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodIncoming", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetGoodIncomingByGood(ctx context.Context, in *GetGoodIncomingByGoodRequest, opts ...grpc.CallOption) (*GetGoodIncomingByGoodResponse, error) {
+	out := new(GetGoodIncomingByGoodResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodIncomingByGood", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetGoodIncomingByGoodCoin(ctx context.Context, in *GetGoodIncomingByGoodCoinRequest, opts ...grpc.CallOption) (*GetGoodIncomingByGoodCoinResponse, error) {
+	out := new(GetGoodIncomingByGoodCoinResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodIncomingByGoodCoin", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CloudHashingBillingServer is the server API for CloudHashingBilling service.
 // All implementations must embed UnimplementedCloudHashingBillingServer
 // for forward compatibility
@@ -612,6 +722,17 @@ type CloudHashingBillingServer interface {
 	GetUserWithdrawsByAppUser(context.Context, *GetUserWithdrawsByAppUserRequest) (*GetUserWithdrawsByAppUserResponse, error)
 	GetUserWithdrawsByOtherAppUser(context.Context, *GetUserWithdrawsByOtherAppUserRequest) (*GetUserWithdrawsByOtherAppUserResponse, error)
 	GetUserWithdrawByAccount(context.Context, *GetUserWithdrawByAccountRequest) (*GetUserWithdrawByAccountResponse, error)
+	CreateUserDirectBenefit(context.Context, *CreateUserDirectBenefitRequest) (*CreateUserDirectBenefitResponse, error)
+	UpdateUserDirectBenefit(context.Context, *UpdateUserDirectBenefitRequest) (*UpdateUserDirectBenefitResponse, error)
+	GetUserDirectBenefit(context.Context, *GetUserDirectBenefitRequest) (*GetUserDirectBenefitResponse, error)
+	GetUserDirectBenefitsByAppUser(context.Context, *GetUserDirectBenefitsByAppUserRequest) (*GetUserDirectBenefitsByAppUserResponse, error)
+	GetUserDirectBenefitsByOtherAppUser(context.Context, *GetUserDirectBenefitsByOtherAppUserRequest) (*GetUserDirectBenefitsByOtherAppUserResponse, error)
+	GetUserDirectBenefitByAccount(context.Context, *GetUserDirectBenefitByAccountRequest) (*GetUserDirectBenefitByAccountResponse, error)
+	CreateGoodIncoming(context.Context, *CreateGoodIncomingRequest) (*CreateGoodIncomingResponse, error)
+	UpdateGoodIncoming(context.Context, *UpdateGoodIncomingRequest) (*UpdateGoodIncomingResponse, error)
+	GetGoodIncoming(context.Context, *GetGoodIncomingRequest) (*GetGoodIncomingResponse, error)
+	GetGoodIncomingByGood(context.Context, *GetGoodIncomingByGoodRequest) (*GetGoodIncomingByGoodResponse, error)
+	GetGoodIncomingByGoodCoin(context.Context, *GetGoodIncomingByGoodCoinRequest) (*GetGoodIncomingByGoodCoinResponse, error)
 	mustEmbedUnimplementedCloudHashingBillingServer()
 }
 
@@ -774,6 +895,39 @@ func (UnimplementedCloudHashingBillingServer) GetUserWithdrawsByOtherAppUser(con
 }
 func (UnimplementedCloudHashingBillingServer) GetUserWithdrawByAccount(context.Context, *GetUserWithdrawByAccountRequest) (*GetUserWithdrawByAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserWithdrawByAccount not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) CreateUserDirectBenefit(context.Context, *CreateUserDirectBenefitRequest) (*CreateUserDirectBenefitResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUserDirectBenefit not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) UpdateUserDirectBenefit(context.Context, *UpdateUserDirectBenefitRequest) (*UpdateUserDirectBenefitResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserDirectBenefit not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetUserDirectBenefit(context.Context, *GetUserDirectBenefitRequest) (*GetUserDirectBenefitResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserDirectBenefit not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetUserDirectBenefitsByAppUser(context.Context, *GetUserDirectBenefitsByAppUserRequest) (*GetUserDirectBenefitsByAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserDirectBenefitsByAppUser not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetUserDirectBenefitsByOtherAppUser(context.Context, *GetUserDirectBenefitsByOtherAppUserRequest) (*GetUserDirectBenefitsByOtherAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserDirectBenefitsByOtherAppUser not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetUserDirectBenefitByAccount(context.Context, *GetUserDirectBenefitByAccountRequest) (*GetUserDirectBenefitByAccountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserDirectBenefitByAccount not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) CreateGoodIncoming(context.Context, *CreateGoodIncomingRequest) (*CreateGoodIncomingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateGoodIncoming not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) UpdateGoodIncoming(context.Context, *UpdateGoodIncomingRequest) (*UpdateGoodIncomingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateGoodIncoming not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetGoodIncoming(context.Context, *GetGoodIncomingRequest) (*GetGoodIncomingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodIncoming not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetGoodIncomingByGood(context.Context, *GetGoodIncomingByGoodRequest) (*GetGoodIncomingByGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodIncomingByGood not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetGoodIncomingByGoodCoin(context.Context, *GetGoodIncomingByGoodCoinRequest) (*GetGoodIncomingByGoodCoinResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodIncomingByGoodCoin not implemented")
 }
 func (UnimplementedCloudHashingBillingServer) mustEmbedUnimplementedCloudHashingBillingServer() {}
 
@@ -1724,6 +1878,204 @@ func _CloudHashingBilling_GetUserWithdrawByAccount_Handler(srv interface{}, ctx 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingBilling_CreateUserDirectBenefit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateUserDirectBenefitRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).CreateUserDirectBenefit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/CreateUserDirectBenefit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).CreateUserDirectBenefit(ctx, req.(*CreateUserDirectBenefitRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_UpdateUserDirectBenefit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateUserDirectBenefitRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).UpdateUserDirectBenefit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateUserDirectBenefit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).UpdateUserDirectBenefit(ctx, req.(*UpdateUserDirectBenefitRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetUserDirectBenefit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserDirectBenefitRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetUserDirectBenefit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserDirectBenefit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetUserDirectBenefit(ctx, req.(*GetUserDirectBenefitRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetUserDirectBenefitsByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserDirectBenefitsByAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetUserDirectBenefitsByAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserDirectBenefitsByAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetUserDirectBenefitsByAppUser(ctx, req.(*GetUserDirectBenefitsByAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetUserDirectBenefitsByOtherAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserDirectBenefitsByOtherAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetUserDirectBenefitsByOtherAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserDirectBenefitsByOtherAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetUserDirectBenefitsByOtherAppUser(ctx, req.(*GetUserDirectBenefitsByOtherAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetUserDirectBenefitByAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserDirectBenefitByAccountRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetUserDirectBenefitByAccount(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserDirectBenefitByAccount",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetUserDirectBenefitByAccount(ctx, req.(*GetUserDirectBenefitByAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_CreateGoodIncoming_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateGoodIncomingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).CreateGoodIncoming(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/CreateGoodIncoming",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).CreateGoodIncoming(ctx, req.(*CreateGoodIncomingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_UpdateGoodIncoming_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateGoodIncomingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).UpdateGoodIncoming(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateGoodIncoming",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).UpdateGoodIncoming(ctx, req.(*UpdateGoodIncomingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetGoodIncoming_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodIncomingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetGoodIncoming(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodIncoming",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetGoodIncoming(ctx, req.(*GetGoodIncomingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetGoodIncomingByGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodIncomingByGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetGoodIncomingByGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodIncomingByGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetGoodIncomingByGood(ctx, req.(*GetGoodIncomingByGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetGoodIncomingByGoodCoin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodIncomingByGoodCoinRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetGoodIncomingByGoodCoin(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodIncomingByGoodCoin",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetGoodIncomingByGoodCoin(ctx, req.(*GetGoodIncomingByGoodCoinRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CloudHashingBilling_ServiceDesc is the grpc.ServiceDesc for CloudHashingBilling service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1938,6 +2290,50 @@ var CloudHashingBilling_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetUserWithdrawByAccount",
 			Handler:    _CloudHashingBilling_GetUserWithdrawByAccount_Handler,
+		},
+		{
+			MethodName: "CreateUserDirectBenefit",
+			Handler:    _CloudHashingBilling_CreateUserDirectBenefit_Handler,
+		},
+		{
+			MethodName: "UpdateUserDirectBenefit",
+			Handler:    _CloudHashingBilling_UpdateUserDirectBenefit_Handler,
+		},
+		{
+			MethodName: "GetUserDirectBenefit",
+			Handler:    _CloudHashingBilling_GetUserDirectBenefit_Handler,
+		},
+		{
+			MethodName: "GetUserDirectBenefitsByAppUser",
+			Handler:    _CloudHashingBilling_GetUserDirectBenefitsByAppUser_Handler,
+		},
+		{
+			MethodName: "GetUserDirectBenefitsByOtherAppUser",
+			Handler:    _CloudHashingBilling_GetUserDirectBenefitsByOtherAppUser_Handler,
+		},
+		{
+			MethodName: "GetUserDirectBenefitByAccount",
+			Handler:    _CloudHashingBilling_GetUserDirectBenefitByAccount_Handler,
+		},
+		{
+			MethodName: "CreateGoodIncoming",
+			Handler:    _CloudHashingBilling_CreateGoodIncoming_Handler,
+		},
+		{
+			MethodName: "UpdateGoodIncoming",
+			Handler:    _CloudHashingBilling_UpdateGoodIncoming_Handler,
+		},
+		{
+			MethodName: "GetGoodIncoming",
+			Handler:    _CloudHashingBilling_GetGoodIncoming_Handler,
+		},
+		{
+			MethodName: "GetGoodIncomingByGood",
+			Handler:    _CloudHashingBilling_GetGoodIncomingByGood_Handler,
+		},
+		{
+			MethodName: "GetGoodIncomingByGoodCoin",
+			Handler:    _CloudHashingBilling_GetGoodIncomingByGoodCoin_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
