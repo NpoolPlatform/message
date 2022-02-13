@@ -1460,7 +1460,7 @@
     "v1CreatePlatformCoinAccountRequest": {
       "type": "object",
       "properties": {
-        "CoinName": {
+        "CoinTypeID": {
           "type": "string"
         }
       }

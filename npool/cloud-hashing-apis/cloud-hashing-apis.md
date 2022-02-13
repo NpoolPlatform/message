@@ -250,7 +250,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinName | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
 
 
 
@@ -1330,7 +1330,7 @@ Cloud Hashing Goods
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinName | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
 
 
 
