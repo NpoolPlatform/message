@@ -10,6 +10,8 @@
     - [CreateKycResponse](#cloud.hashing.apis.v1.CreateKycResponse)
     - [CreateOrderPaymentRequest](#cloud.hashing.apis.v1.CreateOrderPaymentRequest)
     - [CreateOrderPaymentResponse](#cloud.hashing.apis.v1.CreateOrderPaymentResponse)
+    - [CreatePlatformCoinAccountRequest](#cloud.hashing.apis.v1.CreatePlatformCoinAccountRequest)
+    - [CreatePlatformCoinAccountResponse](#cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse)
     - [GetGoodRequest](#cloud.hashing.apis.v1.GetGoodRequest)
     - [GetGoodResponse](#cloud.hashing.apis.v1.GetGoodResponse)
     - [GetGoodReviewsRequest](#cloud.hashing.apis.v1.GetGoodReviewsRequest)
@@ -76,6 +78,8 @@
     - [CreateKycResponse](#cloud.hashing.apis.v1.CreateKycResponse)
     - [CreateOrderPaymentRequest](#cloud.hashing.apis.v1.CreateOrderPaymentRequest)
     - [CreateOrderPaymentResponse](#cloud.hashing.apis.v1.CreateOrderPaymentResponse)
+    - [CreatePlatformCoinAccountRequest](#cloud.hashing.apis.v1.CreatePlatformCoinAccountRequest)
+    - [CreatePlatformCoinAccountResponse](#cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse)
     - [GetGoodRequest](#cloud.hashing.apis.v1.GetGoodRequest)
     - [GetGoodResponse](#cloud.hashing.apis.v1.GetGoodResponse)
     - [GetGoodReviewsRequest](#cloud.hashing.apis.v1.GetGoodReviewsRequest)
@@ -238,6 +242,31 @@
 
 
 
+<a name="cloud.hashing.apis.v1.CreatePlatformCoinAccountRequest"></a>
+
+### CreatePlatformCoinAccountRequest
+
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse"></a>
+
+### CreatePlatformCoinAccountResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.billing.v1.CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.GetGoodRequest"></a>
 
 ### GetGoodRequest
@@ -1183,6 +1212,7 @@ Cloud Hashing Goods
 | CreateKyc | [CreateKycRequest](#cloud.hashing.apis.v1.CreateKycRequest) | [CreateKycResponse](#cloud.hashing.apis.v1.CreateKycResponse) |  |
 | UpdateKyc | [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest) | [UpdateKycResponse](#cloud.hashing.apis.v1.UpdateKycResponse) |  |
 | GetKycByAppUser | [GetKycByAppUserRequest](#cloud.hashing.apis.v1.GetKycByAppUserRequest) | [GetKycByAppUserResponse](#cloud.hashing.apis.v1.GetKycByAppUserResponse) |  |
+| CreatePlatformCoinAccount | [CreatePlatformCoinAccountRequest](#cloud.hashing.apis.v1.CreatePlatformCoinAccountRequest) | [CreatePlatformCoinAccountResponse](#cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse) |  |
 
  
 
@@ -1287,6 +1317,31 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud.hashing.apis.v1.CreatePlatformCoinAccountRequest"></a>
+
+### CreatePlatformCoinAccountRequest
+
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse"></a>
+
+### CreatePlatformCoinAccountResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.billing.v1.CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.GetGoodRequest"></a>
 
 ### GetGoodRequest
@@ -2232,6 +2287,7 @@ Cloud Hashing Goods
 | CreateKyc | [CreateKycRequest](#cloud.hashing.apis.v1.CreateKycRequest) | [CreateKycResponse](#cloud.hashing.apis.v1.CreateKycResponse) |  |
 | UpdateKyc | [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest) | [UpdateKycResponse](#cloud.hashing.apis.v1.UpdateKycResponse) |  |
 | GetKycByAppUser | [GetKycByAppUserRequest](#cloud.hashing.apis.v1.GetKycByAppUserRequest) | [GetKycByAppUserResponse](#cloud.hashing.apis.v1.GetKycByAppUserResponse) |  |
+| CreatePlatformCoinAccount | [CreatePlatformCoinAccountRequest](#cloud.hashing.apis.v1.CreatePlatformCoinAccountRequest) | [CreatePlatformCoinAccountResponse](#cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse) |  |
 
  
 

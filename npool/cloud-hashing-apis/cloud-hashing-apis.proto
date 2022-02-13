@@ -177,6 +177,13 @@ service CloudHashingApis {
             body: "*"
         };
     }
+
+    rpc CreatePlatformCoinAccount (CreatePlatformCoinAccountRequest) returns (CreatePlatformCoinAccountResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/platform/coin/account"
+            body: "*"
+        };
+    }
 }
 
 // Request body and response
@@ -480,4 +487,11 @@ message UpdateKycRequest {
 
 message UpdateKycResponse {
     Kyc Info = 10;
+}
+
+message CreatePlatformCoinAccountRequest {
+}
+
+message CreatePlatformCoinAccountResponse {
+    cloud.hashing.billing.v1.CoinAccountInfo Info = 10;
 }

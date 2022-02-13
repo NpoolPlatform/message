@@ -316,6 +316,13 @@ export type UpdateKycResponse = {
   info?: Kyc
 }
 
+export type CreatePlatformCoinAccountRequest = {
+}
+
+export type CreatePlatformCoinAccountResponse = {
+  info?: CloudHashingBillingV1Cloud-hashing-billing.CoinAccountInfo
+}
+
 export class CloudHashingApis {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -391,5 +398,8 @@ export class CloudHashingApis {
   }
   static GetKycByAppUser(req: GetKycByAppUserRequest, initReq?: fm.InitReq): Promise<GetKycByAppUserResponse> {
     return fm.fetchReq<GetKycByAppUserRequest, GetKycByAppUserResponse>(`/v1/get/kyc/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreatePlatformCoinAccount(req: CreatePlatformCoinAccountRequest, initReq?: fm.InitReq): Promise<CreatePlatformCoinAccountResponse> {
+    return fm.fetchReq<CreatePlatformCoinAccountRequest, CreatePlatformCoinAccountResponse>(`/v1/create/platform/coin/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
