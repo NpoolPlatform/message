@@ -139,6 +139,38 @@
         ]
       }
     },
+    "/v1/create/user/coin/account": {
+      "post": {
+        "operationId": "CloudHashingApis_CreateUserCoinAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserCoinAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserCoinAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/good": {
       "post": {
         "operationId": "CloudHashingApis_GetGood",
@@ -1466,6 +1498,22 @@
       }
     },
     "v1CreatePlatformCoinAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinAccountInfo"
+        }
+      }
+    },
+    "v1CreateUserCoinAccountRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinAccountInfo"
+        }
+      }
+    },
+    "v1CreateUserCoinAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {

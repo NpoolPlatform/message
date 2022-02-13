@@ -50,6 +50,7 @@ type CloudHashingApisClient interface {
 	UpdateKyc(ctx context.Context, in *UpdateKycRequest, opts ...grpc.CallOption) (*UpdateKycResponse, error)
 	GetKycByAppUser(ctx context.Context, in *GetKycByAppUserRequest, opts ...grpc.CallOption) (*GetKycByAppUserResponse, error)
 	CreatePlatformCoinAccount(ctx context.Context, in *CreatePlatformCoinAccountRequest, opts ...grpc.CallOption) (*CreatePlatformCoinAccountResponse, error)
+	CreateUserCoinAccount(ctx context.Context, in *CreateUserCoinAccountRequest, opts ...grpc.CallOption) (*CreateUserCoinAccountResponse, error)
 }
 
 type cloudHashingApisClient struct {
@@ -294,6 +295,15 @@ func (c *cloudHashingApisClient) CreatePlatformCoinAccount(ctx context.Context, 
 	return out, nil
 }
 
+func (c *cloudHashingApisClient) CreateUserCoinAccount(ctx context.Context, in *CreateUserCoinAccountRequest, opts ...grpc.CallOption) (*CreateUserCoinAccountResponse, error) {
+	out := new(CreateUserCoinAccountResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/CreateUserCoinAccount", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CloudHashingApisServer is the server API for CloudHashingApis service.
 // All implementations must embed UnimplementedCloudHashingApisServer
 // for forward compatibility
@@ -324,6 +334,7 @@ type CloudHashingApisServer interface {
 	UpdateKyc(context.Context, *UpdateKycRequest) (*UpdateKycResponse, error)
 	GetKycByAppUser(context.Context, *GetKycByAppUserRequest) (*GetKycByAppUserResponse, error)
 	CreatePlatformCoinAccount(context.Context, *CreatePlatformCoinAccountRequest) (*CreatePlatformCoinAccountResponse, error)
+	CreateUserCoinAccount(context.Context, *CreateUserCoinAccountRequest) (*CreateUserCoinAccountResponse, error)
 	mustEmbedUnimplementedCloudHashingApisServer()
 }
 
@@ -408,6 +419,9 @@ func (UnimplementedCloudHashingApisServer) GetKycByAppUser(context.Context, *Get
 }
 func (UnimplementedCloudHashingApisServer) CreatePlatformCoinAccount(context.Context, *CreatePlatformCoinAccountRequest) (*CreatePlatformCoinAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePlatformCoinAccount not implemented")
+}
+func (UnimplementedCloudHashingApisServer) CreateUserCoinAccount(context.Context, *CreateUserCoinAccountRequest) (*CreateUserCoinAccountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUserCoinAccount not implemented")
 }
 func (UnimplementedCloudHashingApisServer) mustEmbedUnimplementedCloudHashingApisServer() {}
 
@@ -890,6 +904,24 @@ func _CloudHashingApis_CreatePlatformCoinAccount_Handler(srv interface{}, ctx co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingApis_CreateUserCoinAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateUserCoinAccountRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).CreateUserCoinAccount(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/CreateUserCoinAccount",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).CreateUserCoinAccount(ctx, req.(*CreateUserCoinAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CloudHashingApis_ServiceDesc is the grpc.ServiceDesc for CloudHashingApis service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1000,6 +1032,10 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreatePlatformCoinAccount",
 			Handler:    _CloudHashingApis_CreatePlatformCoinAccount_Handler,
+		},
+		{
+			MethodName: "CreateUserCoinAccount",
+			Handler:    _CloudHashingApis_CreateUserCoinAccount_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

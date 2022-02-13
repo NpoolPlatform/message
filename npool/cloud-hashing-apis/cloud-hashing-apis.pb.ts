@@ -324,6 +324,14 @@ export type CreatePlatformCoinAccountResponse = {
   info?: CloudHashingBillingV1Cloud-hashing-billing.CoinAccountInfo
 }
 
+export type CreateUserCoinAccountRequest = {
+  info?: CloudHashingBillingV1Cloud-hashing-billing.CoinAccountInfo
+}
+
+export type CreateUserCoinAccountResponse = {
+  info?: CloudHashingBillingV1Cloud-hashing-billing.CoinAccountInfo
+}
+
 export class CloudHashingApis {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -402,5 +410,8 @@ export class CloudHashingApis {
   }
   static CreatePlatformCoinAccount(req: CreatePlatformCoinAccountRequest, initReq?: fm.InitReq): Promise<CreatePlatformCoinAccountResponse> {
     return fm.fetchReq<CreatePlatformCoinAccountRequest, CreatePlatformCoinAccountResponse>(`/v1/create/platform/coin/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateUserCoinAccount(req: CreateUserCoinAccountRequest, initReq?: fm.InitReq): Promise<CreateUserCoinAccountResponse> {
+    return fm.fetchReq<CreateUserCoinAccountRequest, CreateUserCoinAccountResponse>(`/v1/create/user/coin/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

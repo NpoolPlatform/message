@@ -184,6 +184,12 @@ service CloudHashingApis {
             body: "*"
         };
     }
+    rpc CreateUserCoinAccount (CreateUserCoinAccountRequest) returns (CreateUserCoinAccountResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/coin/account"
+            body: "*"
+        };
+    }
 }
 
 // Request body and response
@@ -494,5 +500,13 @@ message CreatePlatformCoinAccountRequest {
 }
 
 message CreatePlatformCoinAccountResponse {
+    cloud.hashing.billing.v1.CoinAccountInfo Info = 10;
+}
+
+message CreateUserCoinAccountRequest {
+    cloud.hashing.billing.v1.CoinAccountInfo Info = 10;
+}
+
+message CreateUserCoinAccountResponse {
     cloud.hashing.billing.v1.CoinAccountInfo Info = 10;
 }
