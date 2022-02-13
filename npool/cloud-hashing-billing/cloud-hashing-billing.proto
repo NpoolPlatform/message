@@ -1037,7 +1037,7 @@ message GetGoodIncomingByGoodRequest {
 }
 
 message GetGoodIncomingByGoodResponse {
-    GoodIncoming Info = 10;
+    repeated GoodIncoming Infos = 10;
 }
 
 message GetGoodIncomingByGoodCoinRequest {

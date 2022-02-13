@@ -638,7 +638,7 @@ export type GetGoodIncomingByGoodRequest = {
 }
 
 export type GetGoodIncomingByGoodResponse = {
-  info?: GoodIncoming
+  infos?: GoodIncoming[]
 }
 
 export type GetGoodIncomingByGoodCoinRequest = {

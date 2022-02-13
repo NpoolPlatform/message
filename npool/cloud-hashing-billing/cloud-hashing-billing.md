@@ -1218,7 +1218,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+| Infos | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) | repeated |  |
 
 
 
@@ -3481,7 +3481,7 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) |  |  |
+| Infos | [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming) | repeated |  |
 
 
 

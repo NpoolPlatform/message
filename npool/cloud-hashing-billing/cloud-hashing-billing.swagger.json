@@ -2634,8 +2634,11 @@
     "v1GetGoodIncomingByGoodResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1GoodIncoming"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodIncoming"
+          }
         }
       }
     },
