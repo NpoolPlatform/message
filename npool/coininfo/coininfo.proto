@@ -91,10 +91,11 @@ message GetCoinInfosResponse {
 }
 
 message UpdateCoinInfoRequest {
-  string  ID                      = 100;
+    string  ID                      = 100;
     bool    PreSale               = 110; // 是否为预售，false为在售商品
     string  Logo            = 120; // url; can be empty
     double  ReservedAmount  = 130;
+    bool ForPay = 140;
 }
 
 message UpdateCoinInfoResponse {

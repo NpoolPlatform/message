@@ -177,6 +177,7 @@
 | PreSale | [bool](#bool) |  | 是否为预售，false为在售商品 |
 | Logo | [string](#string) |  | url; can be empty |
 | ReservedAmount | [double](#double) |  |  |
+| ForPay | [bool](#bool) |  |  |
 
 
 
@@ -378,6 +379,7 @@
 | PreSale | [bool](#bool) |  | 是否为预售，false为在售商品 |
 | Logo | [string](#string) |  | url; can be empty |
 | ReservedAmount | [double](#double) |  |  |
+| ForPay | [bool](#bool) |  |  |
 
 
 

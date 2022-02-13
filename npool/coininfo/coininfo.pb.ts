@@ -61,6 +61,7 @@ export type UpdateCoinInfoRequest = {
   preSale?: boolean
   logo?: string
   reservedAmount?: number
+  forPay?: boolean
 }
 
 export type UpdateCoinInfoResponse = {
