@@ -372,6 +372,7 @@ export type WithdrawReview = {
 }
 
 export type GetWithdrawReviewsRequest = {
+  appID?: string
 }
 
 export type GetWithdrawReviewsResponse = {

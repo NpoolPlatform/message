@@ -588,6 +588,7 @@ message WithdrawReview {
 }
 
 message GetWithdrawReviewsRequest {
+    string AppID = 10;
 }
 
 message GetWithdrawReviewsResponse {

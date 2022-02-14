@@ -885,6 +885,11 @@
 
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
 
 
 
@@ -2212,6 +2217,11 @@ Cloud Hashing Goods
 
 ### GetWithdrawReviewsRequest
 
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 
 
 

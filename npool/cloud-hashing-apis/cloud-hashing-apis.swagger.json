@@ -2041,7 +2041,12 @@
       }
     },
     "v1GetWithdrawReviewsRequest": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
     },
     "v1GetWithdrawReviewsResponse": {
       "type": "object",
