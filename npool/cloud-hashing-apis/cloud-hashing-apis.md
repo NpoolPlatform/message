@@ -1395,6 +1395,8 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| ReviewerAppID | [string](#string) |  |  |
+| ReviewerUserID | [string](#string) |  |  |
 | Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 
 
@@ -2722,6 +2724,8 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| ReviewerAppID | [string](#string) |  |  |
+| ReviewerUserID | [string](#string) |  |  |
 | Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 
 

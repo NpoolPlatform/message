@@ -2642,6 +2642,9 @@
         "CreateAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Trigger": {
+          "type": "string"
         }
       }
     },
@@ -2863,6 +2866,12 @@
     "v1UpdateUserWithdrawReviewRequest": {
       "type": "object",
       "properties": {
+        "ReviewerAppID": {
+          "type": "string"
+        },
+        "ReviewerUserID": {
+          "type": "string"
+        },
         "Review": {
           "$ref": "#/definitions/v1Review"
         }
