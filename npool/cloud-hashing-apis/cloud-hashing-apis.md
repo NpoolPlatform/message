@@ -44,6 +44,8 @@
     - [GetOrdersByGoodResponse](#cloud.hashing.apis.v1.GetOrdersByGoodResponse)
     - [GetRecommendGoodsByAppRequest](#cloud.hashing.apis.v1.GetRecommendGoodsByAppRequest)
     - [GetRecommendGoodsByAppResponse](#cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse)
+    - [GetUserWithdrawsByAppUserRequest](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserRequest)
+    - [GetUserWithdrawsByAppUserResponse](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse)
     - [Good](#cloud.hashing.apis.v1.Good)
     - [GoodReview](#cloud.hashing.apis.v1.GoodReview)
     - [Invitation](#cloud.hashing.apis.v1.Invitation)
@@ -74,6 +76,7 @@
     - [UpdatePhoneNOResponse](#cloud.hashing.apis.v1.UpdatePhoneNOResponse)
     - [UpdateUserWithdrawReviewRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest)
     - [UpdateUserWithdrawReviewResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse)
+    - [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw)
   
     - [CloudHashingApis](#cloud.hashing.apis.v1.CloudHashingApis)
   
@@ -118,6 +121,8 @@
     - [GetOrdersByGoodResponse](#cloud.hashing.apis.v1.GetOrdersByGoodResponse)
     - [GetRecommendGoodsByAppRequest](#cloud.hashing.apis.v1.GetRecommendGoodsByAppRequest)
     - [GetRecommendGoodsByAppResponse](#cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse)
+    - [GetUserWithdrawsByAppUserRequest](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserRequest)
+    - [GetUserWithdrawsByAppUserResponse](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse)
     - [Good](#cloud.hashing.apis.v1.Good)
     - [GoodReview](#cloud.hashing.apis.v1.GoodReview)
     - [Invitation](#cloud.hashing.apis.v1.Invitation)
@@ -148,6 +153,7 @@
     - [UpdatePhoneNOResponse](#cloud.hashing.apis.v1.UpdatePhoneNOResponse)
     - [UpdateUserWithdrawReviewRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest)
     - [UpdateUserWithdrawReviewResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse)
+    - [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw)
   
     - [CloudHashingApis](#cloud.hashing.apis.v1.CloudHashingApis)
   
@@ -768,6 +774,37 @@
 
 
 
+<a name="cloud.hashing.apis.v1.GetUserWithdrawsByAppUserRequest"></a>
+
+### GetUserWithdrawsByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse"></a>
+
+### GetUserWithdrawsByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.Good"></a>
 
 ### Good
@@ -1072,8 +1109,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
-| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+| Info | [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw) |  |  |
 
 
 
@@ -1275,6 +1311,21 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| Info | [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.UserWithdraw"></a>
+
+### UserWithdraw
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
 | Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
 | Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 
@@ -1325,6 +1376,7 @@ Cloud Hashing Goods
 | CreateUserCoinAccount | [CreateUserCoinAccountRequest](#cloud.hashing.apis.v1.CreateUserCoinAccountRequest) | [CreateUserCoinAccountResponse](#cloud.hashing.apis.v1.CreateUserCoinAccountResponse) |  |
 | SubmitUserWithdraw | [SubmitUserWithdrawRequest](#cloud.hashing.apis.v1.SubmitUserWithdrawRequest) | [SubmitUserWithdrawResponse](#cloud.hashing.apis.v1.SubmitUserWithdrawResponse) |  |
 | UpdateUserWithdrawReview | [UpdateUserWithdrawReviewRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest) | [UpdateUserWithdrawReviewResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse) |  |
+| GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse) |  |
 
  
 
@@ -1943,6 +1995,37 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud.hashing.apis.v1.GetUserWithdrawsByAppUserRequest"></a>
+
+### GetUserWithdrawsByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse"></a>
+
+### GetUserWithdrawsByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.Good"></a>
 
 ### Good
@@ -2247,8 +2330,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
-| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+| Info | [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw) |  |  |
 
 
 
@@ -2450,6 +2532,21 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| Info | [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.UserWithdraw"></a>
+
+### UserWithdraw
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
 | Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
 | Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 
@@ -2500,6 +2597,7 @@ Cloud Hashing Goods
 | CreateUserCoinAccount | [CreateUserCoinAccountRequest](#cloud.hashing.apis.v1.CreateUserCoinAccountRequest) | [CreateUserCoinAccountResponse](#cloud.hashing.apis.v1.CreateUserCoinAccountResponse) |  |
 | SubmitUserWithdraw | [SubmitUserWithdrawRequest](#cloud.hashing.apis.v1.SubmitUserWithdrawRequest) | [SubmitUserWithdrawResponse](#cloud.hashing.apis.v1.SubmitUserWithdrawResponse) |  |
 | UpdateUserWithdrawReview | [UpdateUserWithdrawReviewRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest) | [UpdateUserWithdrawReviewResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse) |  |
+| GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse) |  |
 
  
 

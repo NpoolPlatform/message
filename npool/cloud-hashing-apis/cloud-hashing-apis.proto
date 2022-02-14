@@ -203,6 +203,12 @@ service CloudHashingApis {
             body: "*"
         };
     }
+    rpc GetUserWithdrawsByAppUser (GetUserWithdrawsByAppUserRequest) returns (GetUserWithdrawsByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraws/by/app/user"
+            body: "*"
+        };
+    }
 }
 
 // Request body and response
@@ -528,9 +534,13 @@ message SubmitUserWithdrawRequest {
     cloud.hashing.billing.v1.UserWithdrawItem Info = 10;
 }
 
-message SubmitUserWithdrawResponse {
+message UserWithdraw {
     cloud.hashing.billing.v1.UserWithdrawItem Info = 10;
     review.service.v1.Review Review = 20;
+}
+
+message SubmitUserWithdrawResponse {
+    UserWithdraw Info = 10;
 }
 
 message UpdateUserWithdrawReviewRequest {
@@ -538,6 +548,14 @@ message UpdateUserWithdrawReviewRequest {
 }
 
 message UpdateUserWithdrawReviewResponse {
-    cloud.hashing.billing.v1.UserWithdrawItem Info = 10;
-    review.service.v1.Review Review = 20;
+    UserWithdraw Info = 10;
+}
+
+message GetUserWithdrawsByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetUserWithdrawsByAppUserResponse {
+    repeated UserWithdraw Infos = 10;
 }

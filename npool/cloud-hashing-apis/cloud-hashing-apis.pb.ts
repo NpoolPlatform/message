@@ -336,9 +336,13 @@ export type SubmitUserWithdrawRequest = {
   info?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdrawItem
 }
 
-export type SubmitUserWithdrawResponse = {
+export type UserWithdraw = {
   info?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdrawItem
   review?: ReviewServiceV1Review-service.Review
+}
+
+export type SubmitUserWithdrawResponse = {
+  info?: UserWithdraw
 }
 
 export type UpdateUserWithdrawReviewRequest = {
@@ -346,8 +350,16 @@ export type UpdateUserWithdrawReviewRequest = {
 }
 
 export type UpdateUserWithdrawReviewResponse = {
-  info?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdrawItem
-  review?: ReviewServiceV1Review-service.Review
+  info?: UserWithdraw
+}
+
+export type GetUserWithdrawsByAppUserRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetUserWithdrawsByAppUserResponse = {
+  infos?: UserWithdraw[]
 }
 
 export class CloudHashingApis {
@@ -437,5 +449,8 @@ export class CloudHashingApis {
   }
   static UpdateUserWithdrawReview(req: UpdateUserWithdrawReviewRequest, initReq?: fm.InitReq): Promise<UpdateUserWithdrawReviewResponse> {
     return fm.fetchReq<UpdateUserWithdrawReviewRequest, UpdateUserWithdrawReviewResponse>(`/v1/update/user/withdraw/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserWithdrawsByAppUser(req: GetUserWithdrawsByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawsByAppUserResponse> {
+    return fm.fetchReq<GetUserWithdrawsByAppUserRequest, GetUserWithdrawsByAppUserResponse>(`/v1/get/user/withdraws/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

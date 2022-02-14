@@ -3544,7 +3544,7 @@ func (x *SubmitUserWithdrawRequest) GetInfo() *cloud_hashing_billing.UserWithdra
 	return nil
 }
 
-type SubmitUserWithdrawResponse struct {
+type UserWithdraw struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -3553,10 +3553,64 @@ type SubmitUserWithdrawResponse struct {
 	Review *review_service.Review                  `protobuf:"bytes,20,opt,name=Review,proto3" json:"Review,omitempty"`
 }
 
+func (x *UserWithdraw) Reset() {
+	*x = UserWithdraw{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[63]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UserWithdraw) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserWithdraw) ProtoMessage() {}
+
+func (x *UserWithdraw) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[63]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserWithdraw.ProtoReflect.Descriptor instead.
+func (*UserWithdraw) Descriptor() ([]byte, []int) {
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{63}
+}
+
+func (x *UserWithdraw) GetInfo() *cloud_hashing_billing.UserWithdrawItem {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+func (x *UserWithdraw) GetReview() *review_service.Review {
+	if x != nil {
+		return x.Review
+	}
+	return nil
+}
+
+type SubmitUserWithdrawResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *UserWithdraw `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
 func (x *SubmitUserWithdrawResponse) Reset() {
 	*x = SubmitUserWithdrawResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[63]
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[64]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3569,7 +3623,7 @@ func (x *SubmitUserWithdrawResponse) String() string {
 func (*SubmitUserWithdrawResponse) ProtoMessage() {}
 
 func (x *SubmitUserWithdrawResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[63]
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[64]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3582,19 +3636,12 @@ func (x *SubmitUserWithdrawResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubmitUserWithdrawResponse.ProtoReflect.Descriptor instead.
 func (*SubmitUserWithdrawResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{63}
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{64}
 }
 
-func (x *SubmitUserWithdrawResponse) GetInfo() *cloud_hashing_billing.UserWithdrawItem {
+func (x *SubmitUserWithdrawResponse) GetInfo() *UserWithdraw {
 	if x != nil {
 		return x.Info
-	}
-	return nil
-}
-
-func (x *SubmitUserWithdrawResponse) GetReview() *review_service.Review {
-	if x != nil {
-		return x.Review
 	}
 	return nil
 }
@@ -3610,7 +3657,7 @@ type UpdateUserWithdrawReviewRequest struct {
 func (x *UpdateUserWithdrawReviewRequest) Reset() {
 	*x = UpdateUserWithdrawReviewRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[64]
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[65]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3623,7 +3670,7 @@ func (x *UpdateUserWithdrawReviewRequest) String() string {
 func (*UpdateUserWithdrawReviewRequest) ProtoMessage() {}
 
 func (x *UpdateUserWithdrawReviewRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[64]
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[65]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3636,7 +3683,7 @@ func (x *UpdateUserWithdrawReviewRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateUserWithdrawReviewRequest.ProtoReflect.Descriptor instead.
 func (*UpdateUserWithdrawReviewRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{64}
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{65}
 }
 
 func (x *UpdateUserWithdrawReviewRequest) GetReview() *review_service.Review {
@@ -3651,14 +3698,13 @@ type UpdateUserWithdrawReviewResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info   *cloud_hashing_billing.UserWithdrawItem `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-	Review *review_service.Review                  `protobuf:"bytes,20,opt,name=Review,proto3" json:"Review,omitempty"`
+	Info *UserWithdraw `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *UpdateUserWithdrawReviewResponse) Reset() {
 	*x = UpdateUserWithdrawReviewResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[65]
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[66]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3671,7 +3717,7 @@ func (x *UpdateUserWithdrawReviewResponse) String() string {
 func (*UpdateUserWithdrawReviewResponse) ProtoMessage() {}
 
 func (x *UpdateUserWithdrawReviewResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[65]
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[66]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3684,19 +3730,114 @@ func (x *UpdateUserWithdrawReviewResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateUserWithdrawReviewResponse.ProtoReflect.Descriptor instead.
 func (*UpdateUserWithdrawReviewResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{65}
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{66}
 }
 
-func (x *UpdateUserWithdrawReviewResponse) GetInfo() *cloud_hashing_billing.UserWithdrawItem {
+func (x *UpdateUserWithdrawReviewResponse) GetInfo() *UserWithdraw {
 	if x != nil {
 		return x.Info
 	}
 	return nil
 }
 
-func (x *UpdateUserWithdrawReviewResponse) GetReview() *review_service.Review {
+type GetUserWithdrawsByAppUserRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AppID  string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	UserID string `protobuf:"bytes,20,opt,name=UserID,proto3" json:"UserID,omitempty"`
+}
+
+func (x *GetUserWithdrawsByAppUserRequest) Reset() {
+	*x = GetUserWithdrawsByAppUserRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[67]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetUserWithdrawsByAppUserRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUserWithdrawsByAppUserRequest) ProtoMessage() {}
+
+func (x *GetUserWithdrawsByAppUserRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[67]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUserWithdrawsByAppUserRequest.ProtoReflect.Descriptor instead.
+func (*GetUserWithdrawsByAppUserRequest) Descriptor() ([]byte, []int) {
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{67}
+}
+
+func (x *GetUserWithdrawsByAppUserRequest) GetAppID() string {
 	if x != nil {
-		return x.Review
+		return x.AppID
+	}
+	return ""
+}
+
+func (x *GetUserWithdrawsByAppUserRequest) GetUserID() string {
+	if x != nil {
+		return x.UserID
+	}
+	return ""
+}
+
+type GetUserWithdrawsByAppUserResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos []*UserWithdraw `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+}
+
+func (x *GetUserWithdrawsByAppUserResponse) Reset() {
+	*x = GetUserWithdrawsByAppUserResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[68]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetUserWithdrawsByAppUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUserWithdrawsByAppUserResponse) ProtoMessage() {}
+
+func (x *GetUserWithdrawsByAppUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[68]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUserWithdrawsByAppUserResponse.ProtoReflect.Descriptor instead.
+func (*GetUserWithdrawsByAppUserResponse) Descriptor() ([]byte, []int) {
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{68}
+}
+
+func (x *GetUserWithdrawsByAppUserResponse) GetInfos() []*UserWithdraw {
+	if x != nil {
+		return x.Infos
 	}
 	return nil
 }
@@ -4213,31 +4354,43 @@ var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDesc = []byte{
 	0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2a, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e,
 	0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e,
 	0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x49,
-	0x74, 0x65, 0x6d, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x8f, 0x01, 0x0a, 0x1a, 0x53, 0x75,
-	0x62, 0x6d, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3e, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
-	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2a, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68,
-	0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76,
-	0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x49, 0x74,
-	0x65, 0x6d, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x31, 0x0a, 0x06, 0x52, 0x65, 0x76, 0x69,
-	0x65, 0x77, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x72, 0x65, 0x76, 0x69, 0x65,
-	0x77, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x76,
-	0x69, 0x65, 0x77, 0x52, 0x06, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x22, 0x54, 0x0a, 0x1f, 0x55,
-	0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61,
-	0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x31,
-	0x0a, 0x06, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19,
-	0x2e, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e,
-	0x76, 0x31, 0x2e, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x06, 0x52, 0x65, 0x76, 0x69, 0x65,
-	0x77, 0x22, 0x95, 0x01, 0x0a, 0x20, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72,
-	0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3e, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x2a, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73,
-	0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e,
-	0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x49, 0x74, 0x65, 0x6d,
-	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x31, 0x0a, 0x06, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77,
-	0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x2e,
-	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x76, 0x69, 0x65,
-	0x77, 0x52, 0x06, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x32, 0xe1, 0x21, 0x0a, 0x10, 0x43, 0x6c,
+	0x74, 0x65, 0x6d, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x81, 0x01, 0x0a, 0x0c, 0x55, 0x73,
+	0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x12, 0x3e, 0x0a, 0x04, 0x49, 0x6e,
+	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2a, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64,
+	0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67,
+	0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77,
+	0x49, 0x74, 0x65, 0x6d, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x31, 0x0a, 0x06, 0x52, 0x65,
+	0x76, 0x69, 0x65, 0x77, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x72, 0x65, 0x76,
+	0x69, 0x65, 0x77, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52,
+	0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x06, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x22, 0x55, 0x0a,
+	0x1a, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64,
+	0x72, 0x61, 0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x37, 0x0a, 0x04, 0x49,
+	0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
+	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76,
+	0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x04,
+	0x49, 0x6e, 0x66, 0x6f, 0x22, 0x54, 0x0a, 0x1f, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73,
+	0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x31, 0x0a, 0x06, 0x52, 0x65, 0x76, 0x69, 0x65,
+	0x77, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77,
+	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x76, 0x69,
+	0x65, 0x77, 0x52, 0x06, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x22, 0x5b, 0x0a, 0x20, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77,
+	0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x37,
+	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x63,
+	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69,
+	0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61,
+	0x77, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x50, 0x0a, 0x20, 0x47, 0x65, 0x74, 0x55, 0x73,
+	0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70,
+	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41,
+	0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49,
+	0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x5e, 0x0a, 0x21, 0x47, 0x65, 0x74,
+	0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x41,
+	0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x39,
+	0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x23, 0x2e,
+	0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70,
+	0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72,
+	0x61, 0x77, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x32, 0xa1, 0x23, 0x0a, 0x10, 0x43, 0x6c,
 	0x6f, 0x75, 0x64, 0x48, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x41, 0x70, 0x69, 0x73, 0x12, 0x51,
 	0x0a, 0x07, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74,
@@ -4507,7 +4660,19 @@ var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDesc = []byte{
 	0x72, 0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x22, 0x2a, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x24, 0x22, 0x1f, 0x2f, 0x76, 0x31, 0x2f, 0x75,
 	0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x77, 0x69, 0x74, 0x68, 0x64,
-	0x72, 0x61, 0x77, 0x2f, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x3a, 0x01, 0x2a, 0x42, 0x3b, 0x5a,
+	0x72, 0x61, 0x77, 0x2f, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x3a, 0x01, 0x2a, 0x12, 0xbd, 0x01,
+	0x0a, 0x19, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61,
+	0x77, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x37, 0x2e, 0x63, 0x6c,
+	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73,
+	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64,
+	0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x38, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73,
+	0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
+	0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x41,
+	0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2d,
+	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x27, 0x22, 0x22, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f,
+	0x75, 0x73, 0x65, 0x72, 0x2f, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x2f, 0x62,
+	0x79, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x42, 0x3b, 0x5a,
 	0x39, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f,
 	0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
 	0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2d, 0x68, 0x61,
@@ -4527,116 +4692,119 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP() []byte
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescData
 }
 
-var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes = make([]protoimpl.MessageInfo, 70)
+var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes = make([]protoimpl.MessageInfo, 73)
 var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_goTypes = []interface{}{
-	(*Good)(nil),                                        // 0: cloud.hashing.apis.v1.Good
-	(*RecommendGood)(nil),                               // 1: cloud.hashing.apis.v1.RecommendGood
-	(*CreateGoodRequest)(nil),                           // 2: cloud.hashing.apis.v1.CreateGoodRequest
-	(*CreateGoodResponse)(nil),                          // 3: cloud.hashing.apis.v1.CreateGoodResponse
-	(*GetGoodRequest)(nil),                              // 4: cloud.hashing.apis.v1.GetGoodRequest
-	(*GetGoodResponse)(nil),                             // 5: cloud.hashing.apis.v1.GetGoodResponse
-	(*GetGoodsRequest)(nil),                             // 6: cloud.hashing.apis.v1.GetGoodsRequest
-	(*GetGoodsResponse)(nil),                            // 7: cloud.hashing.apis.v1.GetGoodsResponse
-	(*GetRecommendGoodsByAppRequest)(nil),               // 8: cloud.hashing.apis.v1.GetRecommendGoodsByAppRequest
-	(*GetRecommendGoodsByAppResponse)(nil),              // 9: cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse
-	(*Order)(nil),                                       // 10: cloud.hashing.apis.v1.Order
-	(*GetOrderRequest)(nil),                             // 11: cloud.hashing.apis.v1.GetOrderRequest
-	(*GetOrderResponse)(nil),                            // 12: cloud.hashing.apis.v1.GetOrderResponse
-	(*GetOrdersByAppUserRequest)(nil),                   // 13: cloud.hashing.apis.v1.GetOrdersByAppUserRequest
-	(*GetOrdersByAppUserResponse)(nil),                  // 14: cloud.hashing.apis.v1.GetOrdersByAppUserResponse
-	(*GetOrdersByAppRequest)(nil),                       // 15: cloud.hashing.apis.v1.GetOrdersByAppRequest
-	(*GetOrdersByAppResponse)(nil),                      // 16: cloud.hashing.apis.v1.GetOrdersByAppResponse
-	(*GetOrdersByGoodRequest)(nil),                      // 17: cloud.hashing.apis.v1.GetOrdersByGoodRequest
-	(*GetOrdersByGoodResponse)(nil),                     // 18: cloud.hashing.apis.v1.GetOrdersByGoodResponse
-	(*OrderFee)(nil),                                    // 19: cloud.hashing.apis.v1.OrderFee
-	(*SubmitOrderRequest)(nil),                          // 20: cloud.hashing.apis.v1.SubmitOrderRequest
-	(*SubmitOrderResponse)(nil),                         // 21: cloud.hashing.apis.v1.SubmitOrderResponse
-	(*CreateOrderPaymentRequest)(nil),                   // 22: cloud.hashing.apis.v1.CreateOrderPaymentRequest
-	(*CreateOrderPaymentResponse)(nil),                  // 23: cloud.hashing.apis.v1.CreateOrderPaymentResponse
-	(*SignupRequest)(nil),                               // 24: cloud.hashing.apis.v1.SignupRequest
-	(*SignupResponse)(nil),                              // 25: cloud.hashing.apis.v1.SignupResponse
-	(*UpdatePasswordRequest)(nil),                       // 26: cloud.hashing.apis.v1.UpdatePasswordRequest
-	(*UpdatePasswordResponse)(nil),                      // 27: cloud.hashing.apis.v1.UpdatePasswordResponse
-	(*UpdatePasswordByAppUserRequest)(nil),              // 28: cloud.hashing.apis.v1.UpdatePasswordByAppUserRequest
-	(*UpdatePasswordByAppUserResponse)(nil),             // 29: cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse
-	(*UpdateEmailAddressRequest)(nil),                   // 30: cloud.hashing.apis.v1.UpdateEmailAddressRequest
-	(*UpdateEmailAddressResponse)(nil),                  // 31: cloud.hashing.apis.v1.UpdateEmailAddressResponse
-	(*UpdatePhoneNORequest)(nil),                        // 32: cloud.hashing.apis.v1.UpdatePhoneNORequest
-	(*UpdatePhoneNOResponse)(nil),                       // 33: cloud.hashing.apis.v1.UpdatePhoneNOResponse
-	(*InvitationSummary)(nil),                           // 34: cloud.hashing.apis.v1.InvitationSummary
-	(*InvitationUserInfo)(nil),                          // 35: cloud.hashing.apis.v1.InvitationUserInfo
-	(*Invitation)(nil),                                  // 36: cloud.hashing.apis.v1.Invitation
-	(*GetMyInvitationsRequest)(nil),                     // 37: cloud.hashing.apis.v1.GetMyInvitationsRequest
-	(*GetMyInvitationsResponse)(nil),                    // 38: cloud.hashing.apis.v1.GetMyInvitationsResponse
-	(*GetMyDirectInvitationsRequest)(nil),               // 39: cloud.hashing.apis.v1.GetMyDirectInvitationsRequest
-	(*GetMyDirectInvitationsResponse)(nil),              // 40: cloud.hashing.apis.v1.GetMyDirectInvitationsResponse
-	(*KycReview)(nil),                                   // 41: cloud.hashing.apis.v1.KycReview
-	(*GetKycReviewsRequest)(nil),                        // 42: cloud.hashing.apis.v1.GetKycReviewsRequest
-	(*GetKycReviewsResponse)(nil),                       // 43: cloud.hashing.apis.v1.GetKycReviewsResponse
-	(*GetKycReviewsByAppRequest)(nil),                   // 44: cloud.hashing.apis.v1.GetKycReviewsByAppRequest
-	(*GetKycReviewsByAppResponse)(nil),                  // 45: cloud.hashing.apis.v1.GetKycReviewsByAppResponse
-	(*GetKycReviewsByOtherAppRequest)(nil),              // 46: cloud.hashing.apis.v1.GetKycReviewsByOtherAppRequest
-	(*GetKycReviewsByOtherAppResponse)(nil),             // 47: cloud.hashing.apis.v1.GetKycReviewsByOtherAppResponse
-	(*GoodReview)(nil),                                  // 48: cloud.hashing.apis.v1.GoodReview
-	(*GetGoodReviewsRequest)(nil),                       // 49: cloud.hashing.apis.v1.GetGoodReviewsRequest
-	(*GetGoodReviewsResponse)(nil),                      // 50: cloud.hashing.apis.v1.GetGoodReviewsResponse
-	(*Kyc)(nil),                                         // 51: cloud.hashing.apis.v1.Kyc
-	(*GetKycByAppUserRequest)(nil),                      // 52: cloud.hashing.apis.v1.GetKycByAppUserRequest
-	(*GetKycByAppUserResponse)(nil),                     // 53: cloud.hashing.apis.v1.GetKycByAppUserResponse
-	(*CreateKycRequest)(nil),                            // 54: cloud.hashing.apis.v1.CreateKycRequest
-	(*CreateKycResponse)(nil),                           // 55: cloud.hashing.apis.v1.CreateKycResponse
-	(*UpdateKycRequest)(nil),                            // 56: cloud.hashing.apis.v1.UpdateKycRequest
-	(*UpdateKycResponse)(nil),                           // 57: cloud.hashing.apis.v1.UpdateKycResponse
-	(*CreatePlatformCoinAccountRequest)(nil),            // 58: cloud.hashing.apis.v1.CreatePlatformCoinAccountRequest
-	(*CreatePlatformCoinAccountResponse)(nil),           // 59: cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse
-	(*CreateUserCoinAccountRequest)(nil),                // 60: cloud.hashing.apis.v1.CreateUserCoinAccountRequest
-	(*CreateUserCoinAccountResponse)(nil),               // 61: cloud.hashing.apis.v1.CreateUserCoinAccountResponse
-	(*SubmitUserWithdrawRequest)(nil),                   // 62: cloud.hashing.apis.v1.SubmitUserWithdrawRequest
-	(*SubmitUserWithdrawResponse)(nil),                  // 63: cloud.hashing.apis.v1.SubmitUserWithdrawResponse
-	(*UpdateUserWithdrawReviewRequest)(nil),             // 64: cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest
-	(*UpdateUserWithdrawReviewResponse)(nil),            // 65: cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse
-	nil,                                                 // 66: cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry
-	nil,                                                 // 67: cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry
-	nil,                                                 // 68: cloud.hashing.apis.v1.GetMyInvitationsResponse.InfosEntry
-	nil,                                                 // 69: cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry
-	(*cloud_hashing_goods.GoodDetail)(nil),              // 70: cloud.hashing.goods.v1.GoodDetail
-	(*coininfo.CoinInfo)(nil),                           // 71: sphinx.coininfo.v1.CoinInfo
-	(*review_service.Review)(nil),                       // 72: review.service.v1.Review
-	(*cloud_hashing_goods.Recommend)(nil),               // 73: cloud.hashing.goods.v1.Recommend
-	(*cloud_hashing_goods.GoodInfo)(nil),                // 74: cloud.hashing.goods.v1.GoodInfo
-	(*npool.PageInfo)(nil),                              // 75: npool.v1.PageInfo
-	(*cloud_hashing_order.OrderDetail)(nil),             // 76: cloud.hashing.order.v1.OrderDetail
-	(*cloud_hashing_billing.CoinAccountInfo)(nil),       // 77: cloud.hashing.billing.v1.CoinAccountInfo
-	(*cloud_hashing_inspire.CouponAllocatedDetail)(nil), // 78: cloud.hashing.inspire.v1.CouponAllocatedDetail
-	(*cloud_hashing_inspire.UserSpecialReduction)(nil),  // 79: cloud.hashing.inspire.v1.UserSpecialReduction
-	(*appusermgr.AppUser)(nil),                          // 80: app.user.manager.v1.AppUser
-	(*appusermgr.AppUserSecret)(nil),                    // 81: app.user.manager.v1.AppUserSecret
-	(*appusermgr.AppUserInfo)(nil),                      // 82: app.user.manager.v1.AppUserInfo
-	(*kyc.KycInfo)(nil),                                 // 83: kyc.management.v1.KycInfo
-	(*cloud_hashing_billing.UserWithdrawItem)(nil),      // 84: cloud.hashing.billing.v1.UserWithdrawItem
-	(*emptypb.Empty)(nil),                               // 85: google.protobuf.Empty
-	(*npool.VersionResponse)(nil),                       // 86: npool.v1.VersionResponse
+	(*Good)(nil),                              // 0: cloud.hashing.apis.v1.Good
+	(*RecommendGood)(nil),                     // 1: cloud.hashing.apis.v1.RecommendGood
+	(*CreateGoodRequest)(nil),                 // 2: cloud.hashing.apis.v1.CreateGoodRequest
+	(*CreateGoodResponse)(nil),                // 3: cloud.hashing.apis.v1.CreateGoodResponse
+	(*GetGoodRequest)(nil),                    // 4: cloud.hashing.apis.v1.GetGoodRequest
+	(*GetGoodResponse)(nil),                   // 5: cloud.hashing.apis.v1.GetGoodResponse
+	(*GetGoodsRequest)(nil),                   // 6: cloud.hashing.apis.v1.GetGoodsRequest
+	(*GetGoodsResponse)(nil),                  // 7: cloud.hashing.apis.v1.GetGoodsResponse
+	(*GetRecommendGoodsByAppRequest)(nil),     // 8: cloud.hashing.apis.v1.GetRecommendGoodsByAppRequest
+	(*GetRecommendGoodsByAppResponse)(nil),    // 9: cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse
+	(*Order)(nil),                             // 10: cloud.hashing.apis.v1.Order
+	(*GetOrderRequest)(nil),                   // 11: cloud.hashing.apis.v1.GetOrderRequest
+	(*GetOrderResponse)(nil),                  // 12: cloud.hashing.apis.v1.GetOrderResponse
+	(*GetOrdersByAppUserRequest)(nil),         // 13: cloud.hashing.apis.v1.GetOrdersByAppUserRequest
+	(*GetOrdersByAppUserResponse)(nil),        // 14: cloud.hashing.apis.v1.GetOrdersByAppUserResponse
+	(*GetOrdersByAppRequest)(nil),             // 15: cloud.hashing.apis.v1.GetOrdersByAppRequest
+	(*GetOrdersByAppResponse)(nil),            // 16: cloud.hashing.apis.v1.GetOrdersByAppResponse
+	(*GetOrdersByGoodRequest)(nil),            // 17: cloud.hashing.apis.v1.GetOrdersByGoodRequest
+	(*GetOrdersByGoodResponse)(nil),           // 18: cloud.hashing.apis.v1.GetOrdersByGoodResponse
+	(*OrderFee)(nil),                          // 19: cloud.hashing.apis.v1.OrderFee
+	(*SubmitOrderRequest)(nil),                // 20: cloud.hashing.apis.v1.SubmitOrderRequest
+	(*SubmitOrderResponse)(nil),               // 21: cloud.hashing.apis.v1.SubmitOrderResponse
+	(*CreateOrderPaymentRequest)(nil),         // 22: cloud.hashing.apis.v1.CreateOrderPaymentRequest
+	(*CreateOrderPaymentResponse)(nil),        // 23: cloud.hashing.apis.v1.CreateOrderPaymentResponse
+	(*SignupRequest)(nil),                     // 24: cloud.hashing.apis.v1.SignupRequest
+	(*SignupResponse)(nil),                    // 25: cloud.hashing.apis.v1.SignupResponse
+	(*UpdatePasswordRequest)(nil),             // 26: cloud.hashing.apis.v1.UpdatePasswordRequest
+	(*UpdatePasswordResponse)(nil),            // 27: cloud.hashing.apis.v1.UpdatePasswordResponse
+	(*UpdatePasswordByAppUserRequest)(nil),    // 28: cloud.hashing.apis.v1.UpdatePasswordByAppUserRequest
+	(*UpdatePasswordByAppUserResponse)(nil),   // 29: cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse
+	(*UpdateEmailAddressRequest)(nil),         // 30: cloud.hashing.apis.v1.UpdateEmailAddressRequest
+	(*UpdateEmailAddressResponse)(nil),        // 31: cloud.hashing.apis.v1.UpdateEmailAddressResponse
+	(*UpdatePhoneNORequest)(nil),              // 32: cloud.hashing.apis.v1.UpdatePhoneNORequest
+	(*UpdatePhoneNOResponse)(nil),             // 33: cloud.hashing.apis.v1.UpdatePhoneNOResponse
+	(*InvitationSummary)(nil),                 // 34: cloud.hashing.apis.v1.InvitationSummary
+	(*InvitationUserInfo)(nil),                // 35: cloud.hashing.apis.v1.InvitationUserInfo
+	(*Invitation)(nil),                        // 36: cloud.hashing.apis.v1.Invitation
+	(*GetMyInvitationsRequest)(nil),           // 37: cloud.hashing.apis.v1.GetMyInvitationsRequest
+	(*GetMyInvitationsResponse)(nil),          // 38: cloud.hashing.apis.v1.GetMyInvitationsResponse
+	(*GetMyDirectInvitationsRequest)(nil),     // 39: cloud.hashing.apis.v1.GetMyDirectInvitationsRequest
+	(*GetMyDirectInvitationsResponse)(nil),    // 40: cloud.hashing.apis.v1.GetMyDirectInvitationsResponse
+	(*KycReview)(nil),                         // 41: cloud.hashing.apis.v1.KycReview
+	(*GetKycReviewsRequest)(nil),              // 42: cloud.hashing.apis.v1.GetKycReviewsRequest
+	(*GetKycReviewsResponse)(nil),             // 43: cloud.hashing.apis.v1.GetKycReviewsResponse
+	(*GetKycReviewsByAppRequest)(nil),         // 44: cloud.hashing.apis.v1.GetKycReviewsByAppRequest
+	(*GetKycReviewsByAppResponse)(nil),        // 45: cloud.hashing.apis.v1.GetKycReviewsByAppResponse
+	(*GetKycReviewsByOtherAppRequest)(nil),    // 46: cloud.hashing.apis.v1.GetKycReviewsByOtherAppRequest
+	(*GetKycReviewsByOtherAppResponse)(nil),   // 47: cloud.hashing.apis.v1.GetKycReviewsByOtherAppResponse
+	(*GoodReview)(nil),                        // 48: cloud.hashing.apis.v1.GoodReview
+	(*GetGoodReviewsRequest)(nil),             // 49: cloud.hashing.apis.v1.GetGoodReviewsRequest
+	(*GetGoodReviewsResponse)(nil),            // 50: cloud.hashing.apis.v1.GetGoodReviewsResponse
+	(*Kyc)(nil),                               // 51: cloud.hashing.apis.v1.Kyc
+	(*GetKycByAppUserRequest)(nil),            // 52: cloud.hashing.apis.v1.GetKycByAppUserRequest
+	(*GetKycByAppUserResponse)(nil),           // 53: cloud.hashing.apis.v1.GetKycByAppUserResponse
+	(*CreateKycRequest)(nil),                  // 54: cloud.hashing.apis.v1.CreateKycRequest
+	(*CreateKycResponse)(nil),                 // 55: cloud.hashing.apis.v1.CreateKycResponse
+	(*UpdateKycRequest)(nil),                  // 56: cloud.hashing.apis.v1.UpdateKycRequest
+	(*UpdateKycResponse)(nil),                 // 57: cloud.hashing.apis.v1.UpdateKycResponse
+	(*CreatePlatformCoinAccountRequest)(nil),  // 58: cloud.hashing.apis.v1.CreatePlatformCoinAccountRequest
+	(*CreatePlatformCoinAccountResponse)(nil), // 59: cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse
+	(*CreateUserCoinAccountRequest)(nil),      // 60: cloud.hashing.apis.v1.CreateUserCoinAccountRequest
+	(*CreateUserCoinAccountResponse)(nil),     // 61: cloud.hashing.apis.v1.CreateUserCoinAccountResponse
+	(*SubmitUserWithdrawRequest)(nil),         // 62: cloud.hashing.apis.v1.SubmitUserWithdrawRequest
+	(*UserWithdraw)(nil),                      // 63: cloud.hashing.apis.v1.UserWithdraw
+	(*SubmitUserWithdrawResponse)(nil),        // 64: cloud.hashing.apis.v1.SubmitUserWithdrawResponse
+	(*UpdateUserWithdrawReviewRequest)(nil),   // 65: cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest
+	(*UpdateUserWithdrawReviewResponse)(nil),  // 66: cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse
+	(*GetUserWithdrawsByAppUserRequest)(nil),  // 67: cloud.hashing.apis.v1.GetUserWithdrawsByAppUserRequest
+	(*GetUserWithdrawsByAppUserResponse)(nil), // 68: cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse
+	nil,                                     // 69: cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry
+	nil,                                     // 70: cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry
+	nil,                                     // 71: cloud.hashing.apis.v1.GetMyInvitationsResponse.InfosEntry
+	nil,                                     // 72: cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry
+	(*cloud_hashing_goods.GoodDetail)(nil),  // 73: cloud.hashing.goods.v1.GoodDetail
+	(*coininfo.CoinInfo)(nil),               // 74: sphinx.coininfo.v1.CoinInfo
+	(*review_service.Review)(nil),           // 75: review.service.v1.Review
+	(*cloud_hashing_goods.Recommend)(nil),   // 76: cloud.hashing.goods.v1.Recommend
+	(*cloud_hashing_goods.GoodInfo)(nil),    // 77: cloud.hashing.goods.v1.GoodInfo
+	(*npool.PageInfo)(nil),                  // 78: npool.v1.PageInfo
+	(*cloud_hashing_order.OrderDetail)(nil), // 79: cloud.hashing.order.v1.OrderDetail
+	(*cloud_hashing_billing.CoinAccountInfo)(nil),       // 80: cloud.hashing.billing.v1.CoinAccountInfo
+	(*cloud_hashing_inspire.CouponAllocatedDetail)(nil), // 81: cloud.hashing.inspire.v1.CouponAllocatedDetail
+	(*cloud_hashing_inspire.UserSpecialReduction)(nil),  // 82: cloud.hashing.inspire.v1.UserSpecialReduction
+	(*appusermgr.AppUser)(nil),                          // 83: app.user.manager.v1.AppUser
+	(*appusermgr.AppUserSecret)(nil),                    // 84: app.user.manager.v1.AppUserSecret
+	(*appusermgr.AppUserInfo)(nil),                      // 85: app.user.manager.v1.AppUserInfo
+	(*kyc.KycInfo)(nil),                                 // 86: kyc.management.v1.KycInfo
+	(*cloud_hashing_billing.UserWithdrawItem)(nil),      // 87: cloud.hashing.billing.v1.UserWithdrawItem
+	(*emptypb.Empty)(nil),                               // 88: google.protobuf.Empty
+	(*npool.VersionResponse)(nil),                       // 89: npool.v1.VersionResponse
 }
 var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_depIdxs = []int32{
-	70, // 0: cloud.hashing.apis.v1.Good.Good:type_name -> cloud.hashing.goods.v1.GoodDetail
-	71, // 1: cloud.hashing.apis.v1.Good.Main:type_name -> sphinx.coininfo.v1.CoinInfo
-	71, // 2: cloud.hashing.apis.v1.Good.SupportCoins:type_name -> sphinx.coininfo.v1.CoinInfo
-	72, // 3: cloud.hashing.apis.v1.Good.Reviews:type_name -> review.service.v1.Review
+	73, // 0: cloud.hashing.apis.v1.Good.Good:type_name -> cloud.hashing.goods.v1.GoodDetail
+	74, // 1: cloud.hashing.apis.v1.Good.Main:type_name -> sphinx.coininfo.v1.CoinInfo
+	74, // 2: cloud.hashing.apis.v1.Good.SupportCoins:type_name -> sphinx.coininfo.v1.CoinInfo
+	75, // 3: cloud.hashing.apis.v1.Good.Reviews:type_name -> review.service.v1.Review
 	0,  // 4: cloud.hashing.apis.v1.RecommendGood.Good:type_name -> cloud.hashing.apis.v1.Good
-	73, // 5: cloud.hashing.apis.v1.RecommendGood.Recommend:type_name -> cloud.hashing.goods.v1.Recommend
-	74, // 6: cloud.hashing.apis.v1.CreateGoodRequest.Info:type_name -> cloud.hashing.goods.v1.GoodInfo
+	76, // 5: cloud.hashing.apis.v1.RecommendGood.Recommend:type_name -> cloud.hashing.goods.v1.Recommend
+	77, // 6: cloud.hashing.apis.v1.CreateGoodRequest.Info:type_name -> cloud.hashing.goods.v1.GoodInfo
 	0,  // 7: cloud.hashing.apis.v1.CreateGoodResponse.Info:type_name -> cloud.hashing.apis.v1.Good
 	0,  // 8: cloud.hashing.apis.v1.GetGoodResponse.Info:type_name -> cloud.hashing.apis.v1.Good
-	75, // 9: cloud.hashing.apis.v1.GetGoodsRequest.PageInfo:type_name -> npool.v1.PageInfo
+	78, // 9: cloud.hashing.apis.v1.GetGoodsRequest.PageInfo:type_name -> npool.v1.PageInfo
 	0,  // 10: cloud.hashing.apis.v1.GetGoodsResponse.Infos:type_name -> cloud.hashing.apis.v1.Good
 	1,  // 11: cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse.Infos:type_name -> cloud.hashing.apis.v1.RecommendGood
-	76, // 12: cloud.hashing.apis.v1.Order.Order:type_name -> cloud.hashing.order.v1.OrderDetail
-	77, // 13: cloud.hashing.apis.v1.Order.PayToAccount:type_name -> cloud.hashing.billing.v1.CoinAccountInfo
+	79, // 12: cloud.hashing.apis.v1.Order.Order:type_name -> cloud.hashing.order.v1.OrderDetail
+	80, // 13: cloud.hashing.apis.v1.Order.PayToAccount:type_name -> cloud.hashing.billing.v1.CoinAccountInfo
 	0,  // 14: cloud.hashing.apis.v1.Order.Good:type_name -> cloud.hashing.apis.v1.Good
-	71, // 15: cloud.hashing.apis.v1.Order.PayWithCoin:type_name -> sphinx.coininfo.v1.CoinInfo
-	78, // 16: cloud.hashing.apis.v1.Order.FixAmountCoupon:type_name -> cloud.hashing.inspire.v1.CouponAllocatedDetail
-	78, // 17: cloud.hashing.apis.v1.Order.DiscountCoupon:type_name -> cloud.hashing.inspire.v1.CouponAllocatedDetail
-	79, // 18: cloud.hashing.apis.v1.Order.UserSpecialReduction:type_name -> cloud.hashing.inspire.v1.UserSpecialReduction
+	74, // 15: cloud.hashing.apis.v1.Order.PayWithCoin:type_name -> sphinx.coininfo.v1.CoinInfo
+	81, // 16: cloud.hashing.apis.v1.Order.FixAmountCoupon:type_name -> cloud.hashing.inspire.v1.CouponAllocatedDetail
+	81, // 17: cloud.hashing.apis.v1.Order.DiscountCoupon:type_name -> cloud.hashing.inspire.v1.CouponAllocatedDetail
+	82, // 18: cloud.hashing.apis.v1.Order.UserSpecialReduction:type_name -> cloud.hashing.inspire.v1.UserSpecialReduction
 	10, // 19: cloud.hashing.apis.v1.GetOrderResponse.Info:type_name -> cloud.hashing.apis.v1.Order
 	10, // 20: cloud.hashing.apis.v1.GetOrdersByAppUserResponse.Infos:type_name -> cloud.hashing.apis.v1.Order
 	10, // 21: cloud.hashing.apis.v1.GetOrdersByAppResponse.Infos:type_name -> cloud.hashing.apis.v1.Order
@@ -4644,110 +4812,113 @@ var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_depIdxs = []int32{
 	10, // 23: cloud.hashing.apis.v1.SubmitOrderResponse.Info:type_name -> cloud.hashing.apis.v1.Order
 	19, // 24: cloud.hashing.apis.v1.CreateOrderPaymentRequest.Fees:type_name -> cloud.hashing.apis.v1.OrderFee
 	10, // 25: cloud.hashing.apis.v1.CreateOrderPaymentResponse.Info:type_name -> cloud.hashing.apis.v1.Order
-	80, // 26: cloud.hashing.apis.v1.SignupResponse.Info:type_name -> app.user.manager.v1.AppUser
-	81, // 27: cloud.hashing.apis.v1.UpdatePasswordResponse.Info:type_name -> app.user.manager.v1.AppUserSecret
-	81, // 28: cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse.Info:type_name -> app.user.manager.v1.AppUserSecret
-	82, // 29: cloud.hashing.apis.v1.UpdateEmailAddressResponse.Info:type_name -> app.user.manager.v1.AppUserInfo
-	82, // 30: cloud.hashing.apis.v1.UpdatePhoneNOResponse.Info:type_name -> app.user.manager.v1.AppUserInfo
-	66, // 31: cloud.hashing.apis.v1.InvitationUserInfo.Summarys:type_name -> cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry
-	67, // 32: cloud.hashing.apis.v1.InvitationUserInfo.MySummarys:type_name -> cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry
+	83, // 26: cloud.hashing.apis.v1.SignupResponse.Info:type_name -> app.user.manager.v1.AppUser
+	84, // 27: cloud.hashing.apis.v1.UpdatePasswordResponse.Info:type_name -> app.user.manager.v1.AppUserSecret
+	84, // 28: cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse.Info:type_name -> app.user.manager.v1.AppUserSecret
+	85, // 29: cloud.hashing.apis.v1.UpdateEmailAddressResponse.Info:type_name -> app.user.manager.v1.AppUserInfo
+	85, // 30: cloud.hashing.apis.v1.UpdatePhoneNOResponse.Info:type_name -> app.user.manager.v1.AppUserInfo
+	69, // 31: cloud.hashing.apis.v1.InvitationUserInfo.Summarys:type_name -> cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry
+	70, // 32: cloud.hashing.apis.v1.InvitationUserInfo.MySummarys:type_name -> cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry
 	35, // 33: cloud.hashing.apis.v1.Invitation.Invitees:type_name -> cloud.hashing.apis.v1.InvitationUserInfo
 	35, // 34: cloud.hashing.apis.v1.GetMyInvitationsResponse.MySelf:type_name -> cloud.hashing.apis.v1.InvitationUserInfo
-	68, // 35: cloud.hashing.apis.v1.GetMyInvitationsResponse.Infos:type_name -> cloud.hashing.apis.v1.GetMyInvitationsResponse.InfosEntry
+	71, // 35: cloud.hashing.apis.v1.GetMyInvitationsResponse.Infos:type_name -> cloud.hashing.apis.v1.GetMyInvitationsResponse.InfosEntry
 	35, // 36: cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.MySelf:type_name -> cloud.hashing.apis.v1.InvitationUserInfo
-	69, // 37: cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.Infos:type_name -> cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry
-	72, // 38: cloud.hashing.apis.v1.KycReview.Review:type_name -> review.service.v1.Review
-	82, // 39: cloud.hashing.apis.v1.KycReview.User:type_name -> app.user.manager.v1.AppUserInfo
-	83, // 40: cloud.hashing.apis.v1.KycReview.Kyc:type_name -> kyc.management.v1.KycInfo
+	72, // 37: cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.Infos:type_name -> cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry
+	75, // 38: cloud.hashing.apis.v1.KycReview.Review:type_name -> review.service.v1.Review
+	85, // 39: cloud.hashing.apis.v1.KycReview.User:type_name -> app.user.manager.v1.AppUserInfo
+	86, // 40: cloud.hashing.apis.v1.KycReview.Kyc:type_name -> kyc.management.v1.KycInfo
 	41, // 41: cloud.hashing.apis.v1.GetKycReviewsResponse.Infos:type_name -> cloud.hashing.apis.v1.KycReview
 	41, // 42: cloud.hashing.apis.v1.GetKycReviewsByAppResponse.Infos:type_name -> cloud.hashing.apis.v1.KycReview
 	41, // 43: cloud.hashing.apis.v1.GetKycReviewsByOtherAppResponse.Infos:type_name -> cloud.hashing.apis.v1.KycReview
-	72, // 44: cloud.hashing.apis.v1.GoodReview.Review:type_name -> review.service.v1.Review
-	82, // 45: cloud.hashing.apis.v1.GoodReview.CreatedBy:type_name -> app.user.manager.v1.AppUserInfo
-	70, // 46: cloud.hashing.apis.v1.GoodReview.Good:type_name -> cloud.hashing.goods.v1.GoodDetail
+	75, // 44: cloud.hashing.apis.v1.GoodReview.Review:type_name -> review.service.v1.Review
+	85, // 45: cloud.hashing.apis.v1.GoodReview.CreatedBy:type_name -> app.user.manager.v1.AppUserInfo
+	73, // 46: cloud.hashing.apis.v1.GoodReview.Good:type_name -> cloud.hashing.goods.v1.GoodDetail
 	48, // 47: cloud.hashing.apis.v1.GetGoodReviewsResponse.Infos:type_name -> cloud.hashing.apis.v1.GoodReview
-	83, // 48: cloud.hashing.apis.v1.Kyc.Kyc:type_name -> kyc.management.v1.KycInfo
+	86, // 48: cloud.hashing.apis.v1.Kyc.Kyc:type_name -> kyc.management.v1.KycInfo
 	51, // 49: cloud.hashing.apis.v1.GetKycByAppUserResponse.Info:type_name -> cloud.hashing.apis.v1.Kyc
-	83, // 50: cloud.hashing.apis.v1.CreateKycRequest.Info:type_name -> kyc.management.v1.KycInfo
+	86, // 50: cloud.hashing.apis.v1.CreateKycRequest.Info:type_name -> kyc.management.v1.KycInfo
 	51, // 51: cloud.hashing.apis.v1.CreateKycResponse.Info:type_name -> cloud.hashing.apis.v1.Kyc
-	83, // 52: cloud.hashing.apis.v1.UpdateKycRequest.Info:type_name -> kyc.management.v1.KycInfo
+	86, // 52: cloud.hashing.apis.v1.UpdateKycRequest.Info:type_name -> kyc.management.v1.KycInfo
 	51, // 53: cloud.hashing.apis.v1.UpdateKycResponse.Info:type_name -> cloud.hashing.apis.v1.Kyc
-	77, // 54: cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse.Info:type_name -> cloud.hashing.billing.v1.CoinAccountInfo
-	77, // 55: cloud.hashing.apis.v1.CreateUserCoinAccountRequest.Info:type_name -> cloud.hashing.billing.v1.CoinAccountInfo
-	77, // 56: cloud.hashing.apis.v1.CreateUserCoinAccountResponse.Info:type_name -> cloud.hashing.billing.v1.CoinAccountInfo
-	84, // 57: cloud.hashing.apis.v1.SubmitUserWithdrawRequest.Info:type_name -> cloud.hashing.billing.v1.UserWithdrawItem
-	84, // 58: cloud.hashing.apis.v1.SubmitUserWithdrawResponse.Info:type_name -> cloud.hashing.billing.v1.UserWithdrawItem
-	72, // 59: cloud.hashing.apis.v1.SubmitUserWithdrawResponse.Review:type_name -> review.service.v1.Review
-	72, // 60: cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest.Review:type_name -> review.service.v1.Review
-	84, // 61: cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse.Info:type_name -> cloud.hashing.billing.v1.UserWithdrawItem
-	72, // 62: cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse.Review:type_name -> review.service.v1.Review
-	34, // 63: cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry.value:type_name -> cloud.hashing.apis.v1.InvitationSummary
-	34, // 64: cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry.value:type_name -> cloud.hashing.apis.v1.InvitationSummary
-	36, // 65: cloud.hashing.apis.v1.GetMyInvitationsResponse.InfosEntry.value:type_name -> cloud.hashing.apis.v1.Invitation
-	36, // 66: cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry.value:type_name -> cloud.hashing.apis.v1.Invitation
-	85, // 67: cloud.hashing.apis.v1.CloudHashingApis.Version:input_type -> google.protobuf.Empty
-	6,  // 68: cloud.hashing.apis.v1.CloudHashingApis.GetGoods:input_type -> cloud.hashing.apis.v1.GetGoodsRequest
-	2,  // 69: cloud.hashing.apis.v1.CloudHashingApis.CreateGood:input_type -> cloud.hashing.apis.v1.CreateGoodRequest
-	4,  // 70: cloud.hashing.apis.v1.CloudHashingApis.GetGood:input_type -> cloud.hashing.apis.v1.GetGoodRequest
-	8,  // 71: cloud.hashing.apis.v1.CloudHashingApis.GetRecommendGoodsByApp:input_type -> cloud.hashing.apis.v1.GetRecommendGoodsByAppRequest
-	20, // 72: cloud.hashing.apis.v1.CloudHashingApis.SubmitOrder:input_type -> cloud.hashing.apis.v1.SubmitOrderRequest
-	22, // 73: cloud.hashing.apis.v1.CloudHashingApis.CreateOrderPayment:input_type -> cloud.hashing.apis.v1.CreateOrderPaymentRequest
-	11, // 74: cloud.hashing.apis.v1.CloudHashingApis.GetOrder:input_type -> cloud.hashing.apis.v1.GetOrderRequest
-	13, // 75: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByAppUser:input_type -> cloud.hashing.apis.v1.GetOrdersByAppUserRequest
-	15, // 76: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByApp:input_type -> cloud.hashing.apis.v1.GetOrdersByAppRequest
-	17, // 77: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByGood:input_type -> cloud.hashing.apis.v1.GetOrdersByGoodRequest
-	24, // 78: cloud.hashing.apis.v1.CloudHashingApis.Signup:input_type -> cloud.hashing.apis.v1.SignupRequest
-	26, // 79: cloud.hashing.apis.v1.CloudHashingApis.UpdatePassword:input_type -> cloud.hashing.apis.v1.UpdatePasswordRequest
-	28, // 80: cloud.hashing.apis.v1.CloudHashingApis.UpdatePasswordByAppUser:input_type -> cloud.hashing.apis.v1.UpdatePasswordByAppUserRequest
-	30, // 81: cloud.hashing.apis.v1.CloudHashingApis.UpdateEmailAddress:input_type -> cloud.hashing.apis.v1.UpdateEmailAddressRequest
-	32, // 82: cloud.hashing.apis.v1.CloudHashingApis.UpdatePhoneNO:input_type -> cloud.hashing.apis.v1.UpdatePhoneNORequest
-	37, // 83: cloud.hashing.apis.v1.CloudHashingApis.GetMyInvitations:input_type -> cloud.hashing.apis.v1.GetMyInvitationsRequest
-	39, // 84: cloud.hashing.apis.v1.CloudHashingApis.GetMyDirectInvitations:input_type -> cloud.hashing.apis.v1.GetMyDirectInvitationsRequest
-	42, // 85: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviews:input_type -> cloud.hashing.apis.v1.GetKycReviewsRequest
-	44, // 86: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviewsByApp:input_type -> cloud.hashing.apis.v1.GetKycReviewsByAppRequest
-	46, // 87: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviewsByOtherApp:input_type -> cloud.hashing.apis.v1.GetKycReviewsByOtherAppRequest
-	49, // 88: cloud.hashing.apis.v1.CloudHashingApis.GetGoodReviews:input_type -> cloud.hashing.apis.v1.GetGoodReviewsRequest
-	54, // 89: cloud.hashing.apis.v1.CloudHashingApis.CreateKyc:input_type -> cloud.hashing.apis.v1.CreateKycRequest
-	56, // 90: cloud.hashing.apis.v1.CloudHashingApis.UpdateKyc:input_type -> cloud.hashing.apis.v1.UpdateKycRequest
-	52, // 91: cloud.hashing.apis.v1.CloudHashingApis.GetKycByAppUser:input_type -> cloud.hashing.apis.v1.GetKycByAppUserRequest
-	58, // 92: cloud.hashing.apis.v1.CloudHashingApis.CreatePlatformCoinAccount:input_type -> cloud.hashing.apis.v1.CreatePlatformCoinAccountRequest
-	60, // 93: cloud.hashing.apis.v1.CloudHashingApis.CreateUserCoinAccount:input_type -> cloud.hashing.apis.v1.CreateUserCoinAccountRequest
-	62, // 94: cloud.hashing.apis.v1.CloudHashingApis.SubmitUserWithdraw:input_type -> cloud.hashing.apis.v1.SubmitUserWithdrawRequest
-	64, // 95: cloud.hashing.apis.v1.CloudHashingApis.UpdateUserWithdrawReview:input_type -> cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest
-	86, // 96: cloud.hashing.apis.v1.CloudHashingApis.Version:output_type -> npool.v1.VersionResponse
-	7,  // 97: cloud.hashing.apis.v1.CloudHashingApis.GetGoods:output_type -> cloud.hashing.apis.v1.GetGoodsResponse
-	3,  // 98: cloud.hashing.apis.v1.CloudHashingApis.CreateGood:output_type -> cloud.hashing.apis.v1.CreateGoodResponse
-	5,  // 99: cloud.hashing.apis.v1.CloudHashingApis.GetGood:output_type -> cloud.hashing.apis.v1.GetGoodResponse
-	9,  // 100: cloud.hashing.apis.v1.CloudHashingApis.GetRecommendGoodsByApp:output_type -> cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse
-	21, // 101: cloud.hashing.apis.v1.CloudHashingApis.SubmitOrder:output_type -> cloud.hashing.apis.v1.SubmitOrderResponse
-	23, // 102: cloud.hashing.apis.v1.CloudHashingApis.CreateOrderPayment:output_type -> cloud.hashing.apis.v1.CreateOrderPaymentResponse
-	12, // 103: cloud.hashing.apis.v1.CloudHashingApis.GetOrder:output_type -> cloud.hashing.apis.v1.GetOrderResponse
-	14, // 104: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByAppUser:output_type -> cloud.hashing.apis.v1.GetOrdersByAppUserResponse
-	16, // 105: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByApp:output_type -> cloud.hashing.apis.v1.GetOrdersByAppResponse
-	18, // 106: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByGood:output_type -> cloud.hashing.apis.v1.GetOrdersByGoodResponse
-	25, // 107: cloud.hashing.apis.v1.CloudHashingApis.Signup:output_type -> cloud.hashing.apis.v1.SignupResponse
-	27, // 108: cloud.hashing.apis.v1.CloudHashingApis.UpdatePassword:output_type -> cloud.hashing.apis.v1.UpdatePasswordResponse
-	29, // 109: cloud.hashing.apis.v1.CloudHashingApis.UpdatePasswordByAppUser:output_type -> cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse
-	31, // 110: cloud.hashing.apis.v1.CloudHashingApis.UpdateEmailAddress:output_type -> cloud.hashing.apis.v1.UpdateEmailAddressResponse
-	33, // 111: cloud.hashing.apis.v1.CloudHashingApis.UpdatePhoneNO:output_type -> cloud.hashing.apis.v1.UpdatePhoneNOResponse
-	38, // 112: cloud.hashing.apis.v1.CloudHashingApis.GetMyInvitations:output_type -> cloud.hashing.apis.v1.GetMyInvitationsResponse
-	40, // 113: cloud.hashing.apis.v1.CloudHashingApis.GetMyDirectInvitations:output_type -> cloud.hashing.apis.v1.GetMyDirectInvitationsResponse
-	43, // 114: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviews:output_type -> cloud.hashing.apis.v1.GetKycReviewsResponse
-	45, // 115: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviewsByApp:output_type -> cloud.hashing.apis.v1.GetKycReviewsByAppResponse
-	47, // 116: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviewsByOtherApp:output_type -> cloud.hashing.apis.v1.GetKycReviewsByOtherAppResponse
-	50, // 117: cloud.hashing.apis.v1.CloudHashingApis.GetGoodReviews:output_type -> cloud.hashing.apis.v1.GetGoodReviewsResponse
-	55, // 118: cloud.hashing.apis.v1.CloudHashingApis.CreateKyc:output_type -> cloud.hashing.apis.v1.CreateKycResponse
-	57, // 119: cloud.hashing.apis.v1.CloudHashingApis.UpdateKyc:output_type -> cloud.hashing.apis.v1.UpdateKycResponse
-	53, // 120: cloud.hashing.apis.v1.CloudHashingApis.GetKycByAppUser:output_type -> cloud.hashing.apis.v1.GetKycByAppUserResponse
-	59, // 121: cloud.hashing.apis.v1.CloudHashingApis.CreatePlatformCoinAccount:output_type -> cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse
-	61, // 122: cloud.hashing.apis.v1.CloudHashingApis.CreateUserCoinAccount:output_type -> cloud.hashing.apis.v1.CreateUserCoinAccountResponse
-	63, // 123: cloud.hashing.apis.v1.CloudHashingApis.SubmitUserWithdraw:output_type -> cloud.hashing.apis.v1.SubmitUserWithdrawResponse
-	65, // 124: cloud.hashing.apis.v1.CloudHashingApis.UpdateUserWithdrawReview:output_type -> cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse
-	96, // [96:125] is the sub-list for method output_type
-	67, // [67:96] is the sub-list for method input_type
-	67, // [67:67] is the sub-list for extension type_name
-	67, // [67:67] is the sub-list for extension extendee
-	0,  // [0:67] is the sub-list for field type_name
+	80, // 54: cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse.Info:type_name -> cloud.hashing.billing.v1.CoinAccountInfo
+	80, // 55: cloud.hashing.apis.v1.CreateUserCoinAccountRequest.Info:type_name -> cloud.hashing.billing.v1.CoinAccountInfo
+	80, // 56: cloud.hashing.apis.v1.CreateUserCoinAccountResponse.Info:type_name -> cloud.hashing.billing.v1.CoinAccountInfo
+	87, // 57: cloud.hashing.apis.v1.SubmitUserWithdrawRequest.Info:type_name -> cloud.hashing.billing.v1.UserWithdrawItem
+	87, // 58: cloud.hashing.apis.v1.UserWithdraw.Info:type_name -> cloud.hashing.billing.v1.UserWithdrawItem
+	75, // 59: cloud.hashing.apis.v1.UserWithdraw.Review:type_name -> review.service.v1.Review
+	63, // 60: cloud.hashing.apis.v1.SubmitUserWithdrawResponse.Info:type_name -> cloud.hashing.apis.v1.UserWithdraw
+	75, // 61: cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest.Review:type_name -> review.service.v1.Review
+	63, // 62: cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse.Info:type_name -> cloud.hashing.apis.v1.UserWithdraw
+	63, // 63: cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse.Infos:type_name -> cloud.hashing.apis.v1.UserWithdraw
+	34, // 64: cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry.value:type_name -> cloud.hashing.apis.v1.InvitationSummary
+	34, // 65: cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry.value:type_name -> cloud.hashing.apis.v1.InvitationSummary
+	36, // 66: cloud.hashing.apis.v1.GetMyInvitationsResponse.InfosEntry.value:type_name -> cloud.hashing.apis.v1.Invitation
+	36, // 67: cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry.value:type_name -> cloud.hashing.apis.v1.Invitation
+	88, // 68: cloud.hashing.apis.v1.CloudHashingApis.Version:input_type -> google.protobuf.Empty
+	6,  // 69: cloud.hashing.apis.v1.CloudHashingApis.GetGoods:input_type -> cloud.hashing.apis.v1.GetGoodsRequest
+	2,  // 70: cloud.hashing.apis.v1.CloudHashingApis.CreateGood:input_type -> cloud.hashing.apis.v1.CreateGoodRequest
+	4,  // 71: cloud.hashing.apis.v1.CloudHashingApis.GetGood:input_type -> cloud.hashing.apis.v1.GetGoodRequest
+	8,  // 72: cloud.hashing.apis.v1.CloudHashingApis.GetRecommendGoodsByApp:input_type -> cloud.hashing.apis.v1.GetRecommendGoodsByAppRequest
+	20, // 73: cloud.hashing.apis.v1.CloudHashingApis.SubmitOrder:input_type -> cloud.hashing.apis.v1.SubmitOrderRequest
+	22, // 74: cloud.hashing.apis.v1.CloudHashingApis.CreateOrderPayment:input_type -> cloud.hashing.apis.v1.CreateOrderPaymentRequest
+	11, // 75: cloud.hashing.apis.v1.CloudHashingApis.GetOrder:input_type -> cloud.hashing.apis.v1.GetOrderRequest
+	13, // 76: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByAppUser:input_type -> cloud.hashing.apis.v1.GetOrdersByAppUserRequest
+	15, // 77: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByApp:input_type -> cloud.hashing.apis.v1.GetOrdersByAppRequest
+	17, // 78: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByGood:input_type -> cloud.hashing.apis.v1.GetOrdersByGoodRequest
+	24, // 79: cloud.hashing.apis.v1.CloudHashingApis.Signup:input_type -> cloud.hashing.apis.v1.SignupRequest
+	26, // 80: cloud.hashing.apis.v1.CloudHashingApis.UpdatePassword:input_type -> cloud.hashing.apis.v1.UpdatePasswordRequest
+	28, // 81: cloud.hashing.apis.v1.CloudHashingApis.UpdatePasswordByAppUser:input_type -> cloud.hashing.apis.v1.UpdatePasswordByAppUserRequest
+	30, // 82: cloud.hashing.apis.v1.CloudHashingApis.UpdateEmailAddress:input_type -> cloud.hashing.apis.v1.UpdateEmailAddressRequest
+	32, // 83: cloud.hashing.apis.v1.CloudHashingApis.UpdatePhoneNO:input_type -> cloud.hashing.apis.v1.UpdatePhoneNORequest
+	37, // 84: cloud.hashing.apis.v1.CloudHashingApis.GetMyInvitations:input_type -> cloud.hashing.apis.v1.GetMyInvitationsRequest
+	39, // 85: cloud.hashing.apis.v1.CloudHashingApis.GetMyDirectInvitations:input_type -> cloud.hashing.apis.v1.GetMyDirectInvitationsRequest
+	42, // 86: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviews:input_type -> cloud.hashing.apis.v1.GetKycReviewsRequest
+	44, // 87: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviewsByApp:input_type -> cloud.hashing.apis.v1.GetKycReviewsByAppRequest
+	46, // 88: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviewsByOtherApp:input_type -> cloud.hashing.apis.v1.GetKycReviewsByOtherAppRequest
+	49, // 89: cloud.hashing.apis.v1.CloudHashingApis.GetGoodReviews:input_type -> cloud.hashing.apis.v1.GetGoodReviewsRequest
+	54, // 90: cloud.hashing.apis.v1.CloudHashingApis.CreateKyc:input_type -> cloud.hashing.apis.v1.CreateKycRequest
+	56, // 91: cloud.hashing.apis.v1.CloudHashingApis.UpdateKyc:input_type -> cloud.hashing.apis.v1.UpdateKycRequest
+	52, // 92: cloud.hashing.apis.v1.CloudHashingApis.GetKycByAppUser:input_type -> cloud.hashing.apis.v1.GetKycByAppUserRequest
+	58, // 93: cloud.hashing.apis.v1.CloudHashingApis.CreatePlatformCoinAccount:input_type -> cloud.hashing.apis.v1.CreatePlatformCoinAccountRequest
+	60, // 94: cloud.hashing.apis.v1.CloudHashingApis.CreateUserCoinAccount:input_type -> cloud.hashing.apis.v1.CreateUserCoinAccountRequest
+	62, // 95: cloud.hashing.apis.v1.CloudHashingApis.SubmitUserWithdraw:input_type -> cloud.hashing.apis.v1.SubmitUserWithdrawRequest
+	65, // 96: cloud.hashing.apis.v1.CloudHashingApis.UpdateUserWithdrawReview:input_type -> cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest
+	67, // 97: cloud.hashing.apis.v1.CloudHashingApis.GetUserWithdrawsByAppUser:input_type -> cloud.hashing.apis.v1.GetUserWithdrawsByAppUserRequest
+	89, // 98: cloud.hashing.apis.v1.CloudHashingApis.Version:output_type -> npool.v1.VersionResponse
+	7,  // 99: cloud.hashing.apis.v1.CloudHashingApis.GetGoods:output_type -> cloud.hashing.apis.v1.GetGoodsResponse
+	3,  // 100: cloud.hashing.apis.v1.CloudHashingApis.CreateGood:output_type -> cloud.hashing.apis.v1.CreateGoodResponse
+	5,  // 101: cloud.hashing.apis.v1.CloudHashingApis.GetGood:output_type -> cloud.hashing.apis.v1.GetGoodResponse
+	9,  // 102: cloud.hashing.apis.v1.CloudHashingApis.GetRecommendGoodsByApp:output_type -> cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse
+	21, // 103: cloud.hashing.apis.v1.CloudHashingApis.SubmitOrder:output_type -> cloud.hashing.apis.v1.SubmitOrderResponse
+	23, // 104: cloud.hashing.apis.v1.CloudHashingApis.CreateOrderPayment:output_type -> cloud.hashing.apis.v1.CreateOrderPaymentResponse
+	12, // 105: cloud.hashing.apis.v1.CloudHashingApis.GetOrder:output_type -> cloud.hashing.apis.v1.GetOrderResponse
+	14, // 106: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByAppUser:output_type -> cloud.hashing.apis.v1.GetOrdersByAppUserResponse
+	16, // 107: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByApp:output_type -> cloud.hashing.apis.v1.GetOrdersByAppResponse
+	18, // 108: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByGood:output_type -> cloud.hashing.apis.v1.GetOrdersByGoodResponse
+	25, // 109: cloud.hashing.apis.v1.CloudHashingApis.Signup:output_type -> cloud.hashing.apis.v1.SignupResponse
+	27, // 110: cloud.hashing.apis.v1.CloudHashingApis.UpdatePassword:output_type -> cloud.hashing.apis.v1.UpdatePasswordResponse
+	29, // 111: cloud.hashing.apis.v1.CloudHashingApis.UpdatePasswordByAppUser:output_type -> cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse
+	31, // 112: cloud.hashing.apis.v1.CloudHashingApis.UpdateEmailAddress:output_type -> cloud.hashing.apis.v1.UpdateEmailAddressResponse
+	33, // 113: cloud.hashing.apis.v1.CloudHashingApis.UpdatePhoneNO:output_type -> cloud.hashing.apis.v1.UpdatePhoneNOResponse
+	38, // 114: cloud.hashing.apis.v1.CloudHashingApis.GetMyInvitations:output_type -> cloud.hashing.apis.v1.GetMyInvitationsResponse
+	40, // 115: cloud.hashing.apis.v1.CloudHashingApis.GetMyDirectInvitations:output_type -> cloud.hashing.apis.v1.GetMyDirectInvitationsResponse
+	43, // 116: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviews:output_type -> cloud.hashing.apis.v1.GetKycReviewsResponse
+	45, // 117: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviewsByApp:output_type -> cloud.hashing.apis.v1.GetKycReviewsByAppResponse
+	47, // 118: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviewsByOtherApp:output_type -> cloud.hashing.apis.v1.GetKycReviewsByOtherAppResponse
+	50, // 119: cloud.hashing.apis.v1.CloudHashingApis.GetGoodReviews:output_type -> cloud.hashing.apis.v1.GetGoodReviewsResponse
+	55, // 120: cloud.hashing.apis.v1.CloudHashingApis.CreateKyc:output_type -> cloud.hashing.apis.v1.CreateKycResponse
+	57, // 121: cloud.hashing.apis.v1.CloudHashingApis.UpdateKyc:output_type -> cloud.hashing.apis.v1.UpdateKycResponse
+	53, // 122: cloud.hashing.apis.v1.CloudHashingApis.GetKycByAppUser:output_type -> cloud.hashing.apis.v1.GetKycByAppUserResponse
+	59, // 123: cloud.hashing.apis.v1.CloudHashingApis.CreatePlatformCoinAccount:output_type -> cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse
+	61, // 124: cloud.hashing.apis.v1.CloudHashingApis.CreateUserCoinAccount:output_type -> cloud.hashing.apis.v1.CreateUserCoinAccountResponse
+	64, // 125: cloud.hashing.apis.v1.CloudHashingApis.SubmitUserWithdraw:output_type -> cloud.hashing.apis.v1.SubmitUserWithdrawResponse
+	66, // 126: cloud.hashing.apis.v1.CloudHashingApis.UpdateUserWithdrawReview:output_type -> cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse
+	68, // 127: cloud.hashing.apis.v1.CloudHashingApis.GetUserWithdrawsByAppUser:output_type -> cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse
+	98, // [98:128] is the sub-list for method output_type
+	68, // [68:98] is the sub-list for method input_type
+	68, // [68:68] is the sub-list for extension type_name
+	68, // [68:68] is the sub-list for extension extendee
+	0,  // [0:68] is the sub-list for field type_name
 }
 
 func init() { file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() }
@@ -5513,7 +5684,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[63].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SubmitUserWithdrawResponse); i {
+			switch v := v.(*UserWithdraw); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5525,7 +5696,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[64].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateUserWithdrawReviewRequest); i {
+			switch v := v.(*SubmitUserWithdrawResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5537,7 +5708,43 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[65].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateUserWithdrawReviewRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[66].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateUserWithdrawReviewResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[67].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetUserWithdrawsByAppUserRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[68].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetUserWithdrawsByAppUserResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5555,7 +5762,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   70,
+			NumMessages:   73,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
