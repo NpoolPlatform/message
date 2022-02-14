@@ -4,10 +4,13 @@
 ## Table of Contents
 
 - [npool/cloud-hashing-billing/cloud-hashing-billing.proto](#npool/cloud-hashing-billing/cloud-hashing-billing.proto)
+    - [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting)
     - [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo)
     - [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction)
     - [CoinAccountTransactionDetail](#cloud.hashing.billing.v1.CoinAccountTransactionDetail)
     - [CoinSetting](#cloud.hashing.billing.v1.CoinSetting)
+    - [CreateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest)
+    - [CreateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse)
     - [CreateCoinAccountRequest](#cloud.hashing.billing.v1.CreateCoinAccountRequest)
     - [CreateCoinAccountResponse](#cloud.hashing.billing.v1.CreateCoinAccountResponse)
     - [CreateCoinAccountTransactionRequest](#cloud.hashing.billing.v1.CreateCoinAccountTransactionRequest)
@@ -28,12 +31,20 @@
     - [CreateUserBenefitResponse](#cloud.hashing.billing.v1.CreateUserBenefitResponse)
     - [CreateUserDirectBenefitRequest](#cloud.hashing.billing.v1.CreateUserDirectBenefitRequest)
     - [CreateUserDirectBenefitResponse](#cloud.hashing.billing.v1.CreateUserDirectBenefitResponse)
+    - [CreateUserWithdrawItemRequest](#cloud.hashing.billing.v1.CreateUserWithdrawItemRequest)
+    - [CreateUserWithdrawItemResponse](#cloud.hashing.billing.v1.CreateUserWithdrawItemResponse)
     - [CreateUserWithdrawRequest](#cloud.hashing.billing.v1.CreateUserWithdrawRequest)
     - [CreateUserWithdrawResponse](#cloud.hashing.billing.v1.CreateUserWithdrawResponse)
     - [DeleteCoinAccountRequest](#cloud.hashing.billing.v1.DeleteCoinAccountRequest)
     - [DeleteCoinAccountResponse](#cloud.hashing.billing.v1.DeleteCoinAccountResponse)
     - [DeleteCoinAccountTransactionRequest](#cloud.hashing.billing.v1.DeleteCoinAccountTransactionRequest)
     - [DeleteCoinAccountTransactionResponse](#cloud.hashing.billing.v1.DeleteCoinAccountTransactionResponse)
+    - [GetAppWithdrawSettingByAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppRequest)
+    - [GetAppWithdrawSettingByAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppResponse)
+    - [GetAppWithdrawSettingByOtherAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingByOtherAppRequest)
+    - [GetAppWithdrawSettingByOtherAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingByOtherAppResponse)
+    - [GetAppWithdrawSettingRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingRequest)
+    - [GetAppWithdrawSettingResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingResponse)
     - [GetCoinAccountByCoinAddressRequest](#cloud.hashing.billing.v1.GetCoinAccountByCoinAddressRequest)
     - [GetCoinAccountByCoinAddressResponse](#cloud.hashing.billing.v1.GetCoinAccountByCoinAddressResponse)
     - [GetCoinAccountRequest](#cloud.hashing.billing.v1.GetCoinAccountRequest)
@@ -104,6 +115,12 @@
     - [GetUserDirectBenefitsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse)
     - [GetUserWithdrawByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest)
     - [GetUserWithdrawByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse)
+    - [GetUserWithdrawItemRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemRequest)
+    - [GetUserWithdrawItemResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemResponse)
+    - [GetUserWithdrawItemsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest)
+    - [GetUserWithdrawItemsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse)
+    - [GetUserWithdrawItemsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest)
+    - [GetUserWithdrawItemsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse)
     - [GetUserWithdrawRequest](#cloud.hashing.billing.v1.GetUserWithdrawRequest)
     - [GetUserWithdrawResponse](#cloud.hashing.billing.v1.GetUserWithdrawResponse)
     - [GetUserWithdrawsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest)
@@ -116,6 +133,8 @@
     - [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit)
     - [PlatformBenefitDetail](#cloud.hashing.billing.v1.PlatformBenefitDetail)
     - [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting)
+    - [UpdateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest)
+    - [UpdateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse)
     - [UpdateCoinAccountTransactionRequest](#cloud.hashing.billing.v1.UpdateCoinAccountTransactionRequest)
     - [UpdateCoinAccountTransactionResponse](#cloud.hashing.billing.v1.UpdateCoinAccountTransactionResponse)
     - [UpdateCoinSettingRequest](#cloud.hashing.billing.v1.UpdateCoinSettingRequest)
@@ -130,19 +149,25 @@
     - [UpdatePlatformSettingResponse](#cloud.hashing.billing.v1.UpdatePlatformSettingResponse)
     - [UpdateUserDirectBenefitRequest](#cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest)
     - [UpdateUserDirectBenefitResponse](#cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse)
+    - [UpdateUserWithdrawItemRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawItemRequest)
+    - [UpdateUserWithdrawItemResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawItemResponse)
     - [UpdateUserWithdrawRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawRequest)
     - [UpdateUserWithdrawResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawResponse)
     - [UserBenefit](#cloud.hashing.billing.v1.UserBenefit)
     - [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit)
     - [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw)
+    - [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem)
   
     - [CloudHashingBilling](#cloud.hashing.billing.v1.CloudHashingBilling)
   
 - [npool/cloud-hashing-billing/cloud-hashing-billing.proto](#npool/cloud-hashing-billing/cloud-hashing-billing.proto)
+    - [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting)
     - [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo)
     - [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction)
     - [CoinAccountTransactionDetail](#cloud.hashing.billing.v1.CoinAccountTransactionDetail)
     - [CoinSetting](#cloud.hashing.billing.v1.CoinSetting)
+    - [CreateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest)
+    - [CreateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse)
     - [CreateCoinAccountRequest](#cloud.hashing.billing.v1.CreateCoinAccountRequest)
     - [CreateCoinAccountResponse](#cloud.hashing.billing.v1.CreateCoinAccountResponse)
     - [CreateCoinAccountTransactionRequest](#cloud.hashing.billing.v1.CreateCoinAccountTransactionRequest)
@@ -163,12 +188,20 @@
     - [CreateUserBenefitResponse](#cloud.hashing.billing.v1.CreateUserBenefitResponse)
     - [CreateUserDirectBenefitRequest](#cloud.hashing.billing.v1.CreateUserDirectBenefitRequest)
     - [CreateUserDirectBenefitResponse](#cloud.hashing.billing.v1.CreateUserDirectBenefitResponse)
+    - [CreateUserWithdrawItemRequest](#cloud.hashing.billing.v1.CreateUserWithdrawItemRequest)
+    - [CreateUserWithdrawItemResponse](#cloud.hashing.billing.v1.CreateUserWithdrawItemResponse)
     - [CreateUserWithdrawRequest](#cloud.hashing.billing.v1.CreateUserWithdrawRequest)
     - [CreateUserWithdrawResponse](#cloud.hashing.billing.v1.CreateUserWithdrawResponse)
     - [DeleteCoinAccountRequest](#cloud.hashing.billing.v1.DeleteCoinAccountRequest)
     - [DeleteCoinAccountResponse](#cloud.hashing.billing.v1.DeleteCoinAccountResponse)
     - [DeleteCoinAccountTransactionRequest](#cloud.hashing.billing.v1.DeleteCoinAccountTransactionRequest)
     - [DeleteCoinAccountTransactionResponse](#cloud.hashing.billing.v1.DeleteCoinAccountTransactionResponse)
+    - [GetAppWithdrawSettingByAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppRequest)
+    - [GetAppWithdrawSettingByAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppResponse)
+    - [GetAppWithdrawSettingByOtherAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingByOtherAppRequest)
+    - [GetAppWithdrawSettingByOtherAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingByOtherAppResponse)
+    - [GetAppWithdrawSettingRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingRequest)
+    - [GetAppWithdrawSettingResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingResponse)
     - [GetCoinAccountByCoinAddressRequest](#cloud.hashing.billing.v1.GetCoinAccountByCoinAddressRequest)
     - [GetCoinAccountByCoinAddressResponse](#cloud.hashing.billing.v1.GetCoinAccountByCoinAddressResponse)
     - [GetCoinAccountRequest](#cloud.hashing.billing.v1.GetCoinAccountRequest)
@@ -239,6 +272,12 @@
     - [GetUserDirectBenefitsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse)
     - [GetUserWithdrawByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest)
     - [GetUserWithdrawByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse)
+    - [GetUserWithdrawItemRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemRequest)
+    - [GetUserWithdrawItemResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemResponse)
+    - [GetUserWithdrawItemsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest)
+    - [GetUserWithdrawItemsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse)
+    - [GetUserWithdrawItemsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest)
+    - [GetUserWithdrawItemsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse)
     - [GetUserWithdrawRequest](#cloud.hashing.billing.v1.GetUserWithdrawRequest)
     - [GetUserWithdrawResponse](#cloud.hashing.billing.v1.GetUserWithdrawResponse)
     - [GetUserWithdrawsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest)
@@ -251,6 +290,8 @@
     - [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit)
     - [PlatformBenefitDetail](#cloud.hashing.billing.v1.PlatformBenefitDetail)
     - [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting)
+    - [UpdateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest)
+    - [UpdateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse)
     - [UpdateCoinAccountTransactionRequest](#cloud.hashing.billing.v1.UpdateCoinAccountTransactionRequest)
     - [UpdateCoinAccountTransactionResponse](#cloud.hashing.billing.v1.UpdateCoinAccountTransactionResponse)
     - [UpdateCoinSettingRequest](#cloud.hashing.billing.v1.UpdateCoinSettingRequest)
@@ -265,11 +306,14 @@
     - [UpdatePlatformSettingResponse](#cloud.hashing.billing.v1.UpdatePlatformSettingResponse)
     - [UpdateUserDirectBenefitRequest](#cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest)
     - [UpdateUserDirectBenefitResponse](#cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse)
+    - [UpdateUserWithdrawItemRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawItemRequest)
+    - [UpdateUserWithdrawItemResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawItemResponse)
     - [UpdateUserWithdrawRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawRequest)
     - [UpdateUserWithdrawResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawResponse)
     - [UserBenefit](#cloud.hashing.billing.v1.UserBenefit)
     - [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit)
     - [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw)
+    - [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem)
   
     - [CloudHashingBilling](#cloud.hashing.billing.v1.CloudHashingBilling)
   
@@ -284,6 +328,23 @@
 
 
 
+<a name="cloud.hashing.billing.v1.AppWithdrawSetting"></a>
+
+### AppWithdrawSetting
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| WithdrawAutoReviewAmount | [double](#double) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.CoinAccountInfo"></a>
 
 ### CoinAccountInfo
@@ -364,6 +425,36 @@
 | CoinTypeID | [string](#string) |  |  |
 | WarmAccountCoinAmount | [double](#double) |  |  |
 | PaymentAccountCoinAmount | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest"></a>
+
+### CreateAppWithdrawSettingRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse"></a>
+
+### CreateAppWithdrawSettingResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
 
 
 
@@ -670,6 +761,36 @@
 
 
 
+<a name="cloud.hashing.billing.v1.CreateUserWithdrawItemRequest"></a>
+
+### CreateUserWithdrawItemRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateUserWithdrawItemResponse"></a>
+
+### CreateUserWithdrawItemResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.CreateUserWithdrawRequest"></a>
 
 ### CreateUserWithdrawRequest
@@ -754,6 +875,96 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingByAppRequest"></a>
+
+### GetAppWithdrawSettingByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingByAppResponse"></a>
+
+### GetAppWithdrawSettingByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingByOtherAppRequest"></a>
+
+### GetAppWithdrawSettingByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingByOtherAppResponse"></a>
+
+### GetAppWithdrawSettingByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingRequest"></a>
+
+### GetAppWithdrawSettingRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingResponse"></a>
+
+### GetAppWithdrawSettingResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
 
 
 
@@ -1813,6 +2024,98 @@
 
 
 
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemRequest"></a>
+
+### GetUserWithdrawItemRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemResponse"></a>
+
+### GetUserWithdrawItemResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest"></a>
+
+### GetUserWithdrawItemsByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse"></a>
+
+### GetUserWithdrawItemsByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest"></a>
+
+### GetUserWithdrawItemsByOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse"></a>
+
+### GetUserWithdrawItemsByOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.GetUserWithdrawRequest"></a>
 
 ### GetUserWithdrawRequest
@@ -2016,6 +2319,37 @@
 | ID | [string](#string) |  |  |
 | WarmAccountUSDAmount | [double](#double) |  |  |
 | PaymentAccountUSDAmount | [double](#double) |  |  |
+| WithdrawAutoReviewAmount | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest"></a>
+
+### UpdateAppWithdrawSettingRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse"></a>
+
+### UpdateAppWithdrawSettingResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
 
 
 
@@ -2232,6 +2566,36 @@
 
 
 
+<a name="cloud.hashing.billing.v1.UpdateUserWithdrawItemRequest"></a>
+
+### UpdateUserWithdrawItemRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.UpdateUserWithdrawItemResponse"></a>
+
+### UpdateUserWithdrawItemResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.UpdateUserWithdrawRequest"></a>
 
 ### UpdateUserWithdrawRequest
@@ -2323,6 +2687,26 @@
 
 
 
+
+<a name="cloud.hashing.billing.v1.UserWithdrawItem"></a>
+
+### UserWithdrawItem
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| WithdrawToAccountID | [string](#string) |  |  |
+| Amount | [double](#double) |  |  |
+
+
+
+
+
  
 
  
@@ -2396,6 +2780,16 @@ Cloud Hashing Billing
 | GetGoodIncoming | [GetGoodIncomingRequest](#cloud.hashing.billing.v1.GetGoodIncomingRequest) | [GetGoodIncomingResponse](#cloud.hashing.billing.v1.GetGoodIncomingResponse) |  |
 | GetGoodIncomingsByGood | [GetGoodIncomingsByGoodRequest](#cloud.hashing.billing.v1.GetGoodIncomingsByGoodRequest) | [GetGoodIncomingsByGoodResponse](#cloud.hashing.billing.v1.GetGoodIncomingsByGoodResponse) |  |
 | GetGoodIncomingByGoodCoin | [GetGoodIncomingByGoodCoinRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest) | [GetGoodIncomingByGoodCoinResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse) |  |
+| CreateUserWithdrawItem | [CreateUserWithdrawItemRequest](#cloud.hashing.billing.v1.CreateUserWithdrawItemRequest) | [CreateUserWithdrawItemResponse](#cloud.hashing.billing.v1.CreateUserWithdrawItemResponse) |  |
+| UpdateUserWithdrawItem | [UpdateUserWithdrawItemRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawItemRequest) | [UpdateUserWithdrawItemResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawItemResponse) |  |
+| GetUserWithdrawItem | [GetUserWithdrawItemRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemRequest) | [GetUserWithdrawItemResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemResponse) |  |
+| GetUserWithdrawItemsByAppUser | [GetUserWithdrawItemsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest) | [GetUserWithdrawItemsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse) |  |
+| GetUserWithdrawItemsByOtherAppUser | [GetUserWithdrawItemsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest) | [GetUserWithdrawItemsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse) |  |
+| CreateAppWithdrawSetting | [CreateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest) | [CreateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse) |  |
+| UpdateAppWithdrawSetting | [UpdateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest) | [UpdateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse) |  |
+| GetAppWithdrawSetting | [GetAppWithdrawSettingRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingRequest) | [GetAppWithdrawSettingResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingResponse) |  |
+| GetAppWithdrawSettingByApp | [GetAppWithdrawSettingByAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppRequest) | [GetAppWithdrawSettingByAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppResponse) |  |
+| GetAppWithdrawSettingByOtherApp | [GetAppWithdrawSettingByOtherAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingByOtherAppRequest) | [GetAppWithdrawSettingByOtherAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingByOtherAppResponse) |  |
 
  
 
@@ -2408,6 +2802,23 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.AppWithdrawSetting"></a>
+
+### AppWithdrawSetting
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| WithdrawAutoReviewAmount | [double](#double) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.CoinAccountInfo"></a>
 
 ### CoinAccountInfo
@@ -2488,6 +2899,36 @@ Cloud Hashing Billing
 | CoinTypeID | [string](#string) |  |  |
 | WarmAccountCoinAmount | [double](#double) |  |  |
 | PaymentAccountCoinAmount | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest"></a>
+
+### CreateAppWithdrawSettingRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse"></a>
+
+### CreateAppWithdrawSettingResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
 
 
 
@@ -2794,6 +3235,36 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.CreateUserWithdrawItemRequest"></a>
+
+### CreateUserWithdrawItemRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateUserWithdrawItemResponse"></a>
+
+### CreateUserWithdrawItemResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.CreateUserWithdrawRequest"></a>
 
 ### CreateUserWithdrawRequest
@@ -2878,6 +3349,96 @@ Cloud Hashing Billing
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingByAppRequest"></a>
+
+### GetAppWithdrawSettingByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingByAppResponse"></a>
+
+### GetAppWithdrawSettingByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingByOtherAppRequest"></a>
+
+### GetAppWithdrawSettingByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingByOtherAppResponse"></a>
+
+### GetAppWithdrawSettingByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingRequest"></a>
+
+### GetAppWithdrawSettingRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingResponse"></a>
+
+### GetAppWithdrawSettingResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
 
 
 
@@ -3937,6 +4498,98 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemRequest"></a>
+
+### GetUserWithdrawItemRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemResponse"></a>
+
+### GetUserWithdrawItemResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest"></a>
+
+### GetUserWithdrawItemsByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse"></a>
+
+### GetUserWithdrawItemsByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest"></a>
+
+### GetUserWithdrawItemsByOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse"></a>
+
+### GetUserWithdrawItemsByOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.GetUserWithdrawRequest"></a>
 
 ### GetUserWithdrawRequest
@@ -4140,6 +4793,37 @@ Cloud Hashing Billing
 | ID | [string](#string) |  |  |
 | WarmAccountUSDAmount | [double](#double) |  |  |
 | PaymentAccountUSDAmount | [double](#double) |  |  |
+| WithdrawAutoReviewAmount | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest"></a>
+
+### UpdateAppWithdrawSettingRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse"></a>
+
+### UpdateAppWithdrawSettingResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
 
 
 
@@ -4356,6 +5040,36 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.UpdateUserWithdrawItemRequest"></a>
+
+### UpdateUserWithdrawItemRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.UpdateUserWithdrawItemResponse"></a>
+
+### UpdateUserWithdrawItemResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.UpdateUserWithdrawRequest"></a>
 
 ### UpdateUserWithdrawRequest
@@ -4447,6 +5161,26 @@ Cloud Hashing Billing
 
 
 
+
+<a name="cloud.hashing.billing.v1.UserWithdrawItem"></a>
+
+### UserWithdrawItem
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| WithdrawToAccountID | [string](#string) |  |  |
+| Amount | [double](#double) |  |  |
+
+
+
+
+
  
 
  
@@ -4520,6 +5254,16 @@ Cloud Hashing Billing
 | GetGoodIncoming | [GetGoodIncomingRequest](#cloud.hashing.billing.v1.GetGoodIncomingRequest) | [GetGoodIncomingResponse](#cloud.hashing.billing.v1.GetGoodIncomingResponse) |  |
 | GetGoodIncomingsByGood | [GetGoodIncomingsByGoodRequest](#cloud.hashing.billing.v1.GetGoodIncomingsByGoodRequest) | [GetGoodIncomingsByGoodResponse](#cloud.hashing.billing.v1.GetGoodIncomingsByGoodResponse) |  |
 | GetGoodIncomingByGoodCoin | [GetGoodIncomingByGoodCoinRequest](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest) | [GetGoodIncomingByGoodCoinResponse](#cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse) |  |
+| CreateUserWithdrawItem | [CreateUserWithdrawItemRequest](#cloud.hashing.billing.v1.CreateUserWithdrawItemRequest) | [CreateUserWithdrawItemResponse](#cloud.hashing.billing.v1.CreateUserWithdrawItemResponse) |  |
+| UpdateUserWithdrawItem | [UpdateUserWithdrawItemRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawItemRequest) | [UpdateUserWithdrawItemResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawItemResponse) |  |
+| GetUserWithdrawItem | [GetUserWithdrawItemRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemRequest) | [GetUserWithdrawItemResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemResponse) |  |
+| GetUserWithdrawItemsByAppUser | [GetUserWithdrawItemsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest) | [GetUserWithdrawItemsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse) |  |
+| GetUserWithdrawItemsByOtherAppUser | [GetUserWithdrawItemsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest) | [GetUserWithdrawItemsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse) |  |
+| CreateAppWithdrawSetting | [CreateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest) | [CreateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse) |  |
+| UpdateAppWithdrawSetting | [UpdateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest) | [UpdateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse) |  |
+| GetAppWithdrawSetting | [GetAppWithdrawSettingRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingRequest) | [GetAppWithdrawSettingResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingResponse) |  |
+| GetAppWithdrawSettingByApp | [GetAppWithdrawSettingByAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppRequest) | [GetAppWithdrawSettingByAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppResponse) |  |
+| GetAppWithdrawSettingByOtherApp | [GetAppWithdrawSettingByOtherAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingByOtherAppRequest) | [GetAppWithdrawSettingByOtherAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingByOtherAppResponse) |  |
 
  
 

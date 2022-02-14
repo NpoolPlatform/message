@@ -377,6 +377,68 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+
+    rpc CreateUserWithdrawItem (CreateUserWithdrawItemRequest) returns (CreateUserWithdrawItemResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/withdraw/item"
+            body: "*"
+        };
+    }
+    rpc UpdateUserWithdrawItem (UpdateUserWithdrawItemRequest) returns (UpdateUserWithdrawItemResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user/withdraw/item"
+            body: "*"
+        };
+    }
+    rpc GetUserWithdrawItem (GetUserWithdrawItemRequest) returns (GetUserWithdrawItemResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraw/item"
+            body: "*"
+        };
+    }
+    rpc GetUserWithdrawItemsByAppUser (GetUserWithdrawItemsByAppUserRequest) returns (GetUserWithdrawItemsByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraw/items/by/app/user"
+            body: "*"
+        };
+    }
+    rpc GetUserWithdrawItemsByOtherAppUser (GetUserWithdrawItemsByOtherAppUserRequest) returns (GetUserWithdrawItemsByOtherAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraw/items/by/other/app/user"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppWithdrawSetting (CreateAppWithdrawSettingRequest) returns (CreateAppWithdrawSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/withdraw/setting"
+            body: "*"
+        };
+    }
+    rpc UpdateAppWithdrawSetting (UpdateAppWithdrawSettingRequest) returns (UpdateAppWithdrawSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/withdraw/setting"
+            body: "*"
+        };
+    }
+    rpc GetAppWithdrawSetting (GetAppWithdrawSettingRequest) returns (GetAppWithdrawSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/withdraw/setting"
+            body: "*"
+        };
+    }
+    rpc GetAppWithdrawSettingByApp (GetAppWithdrawSettingByAppRequest) returns (GetAppWithdrawSettingByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/withdraw/setting/by/app"
+            body: "*"
+        };
+    }
+    rpc GetAppWithdrawSettingByOtherApp (GetAppWithdrawSettingByOtherAppRequest) returns (GetAppWithdrawSettingByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/withdraw/setting/by/other/app"
+            body: "*"
+        };
+    }
 }
 
 message CoinAccountInfo {
@@ -582,6 +644,7 @@ message PlatformSetting {
     string ID = 10;
     double WarmAccountUSDAmount = 20;
     double PaymentAccountUSDAmount = 30;
+    double WithdrawAutoReviewAmount = 40;
 }
 
 message CreatePlatformSettingRequest {
@@ -987,3 +1050,101 @@ message GetGoodIncomingByGoodCoinRequest {
 message GetGoodIncomingByGoodCoinResponse {
     GoodIncoming Info = 10;
 }
+
+message UserWithdrawItem {
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    string CoinTypeID = 40;
+    string WithdrawToAccountID = 50;
+    double Amount = 60;
+}
+
+message CreateUserWithdrawItemRequest {
+    UserWithdrawItem Info = 10;
+}
+
+message CreateUserWithdrawItemResponse {
+    UserWithdrawItem Info = 10;
+}
+
+message UpdateUserWithdrawItemRequest {
+    UserWithdrawItem Info = 10;
+}
+
+message UpdateUserWithdrawItemResponse {
+    UserWithdrawItem Info = 10;
+}
+
+message GetUserWithdrawItemRequest {
+    string ID = 10;
+}
+
+message GetUserWithdrawItemResponse {
+    UserWithdrawItem Info = 10;
+}
+
+message GetUserWithdrawItemsByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetUserWithdrawItemsByAppUserResponse {
+    repeated UserWithdrawItem Infos = 10;
+}
+
+message GetUserWithdrawItemsByOtherAppUserRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
+}
+
+message GetUserWithdrawItemsByOtherAppUserResponse {
+    repeated UserWithdrawItem Infos = 10;
+}
+
+message AppWithdrawSetting {
+    string ID = 10;
+    string AppID = 20;
+    double WithdrawAutoReviewAmount = 30;
+}
+
+message CreateAppWithdrawSettingRequest {
+    AppWithdrawSetting Info = 10;
+}
+
+message CreateAppWithdrawSettingResponse {
+    AppWithdrawSetting Info = 10;
+}
+
+message UpdateAppWithdrawSettingRequest {
+    AppWithdrawSetting Info = 10;
+}
+
+message UpdateAppWithdrawSettingResponse {
+    AppWithdrawSetting Info = 10;
+}
+
+message GetAppWithdrawSettingRequest {
+    string ID = 10;
+}
+
+message GetAppWithdrawSettingResponse {
+    AppWithdrawSetting Info = 10;
+}
+
+message GetAppWithdrawSettingByAppRequest {
+    string AppID = 10;
+}
+
+message GetAppWithdrawSettingByAppResponse {
+    AppWithdrawSetting Info = 10;
+}
+
+message GetAppWithdrawSettingByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetAppWithdrawSettingByOtherAppResponse {
+    AppWithdrawSetting Info = 10;
+}
+
