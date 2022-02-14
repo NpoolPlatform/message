@@ -209,6 +209,7 @@ export type GetLatestPlatformBenefitByGoodResponse = {
 export type PlatformSetting = {
   id?: string
   warmAccountUSDAmount?: number
+  paymentAccountUSDAmount?: number
 }
 
 export type CreatePlatformSettingRequest = {
@@ -294,6 +295,7 @@ export type CoinSetting = {
   id?: string
   coinTypeID?: string
   warmAccountCoinAmount?: number
+  paymentAccountCoinAmount?: number
 }
 
 export type CreateCoinSettingRequest = {

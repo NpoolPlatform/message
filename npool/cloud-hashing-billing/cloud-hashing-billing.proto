@@ -580,7 +580,8 @@ message GetLatestPlatformBenefitByGoodResponse {
 
 message PlatformSetting {
     string ID = 10;
-    double WarmAccountUSDAmount = 30;
+    double WarmAccountUSDAmount = 20;
+    double PaymentAccountUSDAmount = 30;
 }
 
 message CreatePlatformSettingRequest {
@@ -667,6 +668,7 @@ message CoinSetting {
     string ID = 10;
     string CoinTypeID = 20;
     double WarmAccountCoinAmount = 30;
+    double PaymentAccountCoinAmount = 40;
 }
 
 message CreateCoinSettingRequest {

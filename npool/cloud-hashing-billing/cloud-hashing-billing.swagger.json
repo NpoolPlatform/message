@@ -2044,6 +2044,10 @@
         "WarmAccountCoinAmount": {
           "type": "number",
           "format": "double"
+        },
+        "PaymentAccountCoinAmount": {
+          "type": "number",
+          "format": "double"
         }
       }
     },
@@ -3071,6 +3075,10 @@
           "type": "string"
         },
         "WarmAccountUSDAmount": {
+          "type": "number",
+          "format": "double"
+        },
+        "PaymentAccountUSDAmount": {
           "type": "number",
           "format": "double"
         }

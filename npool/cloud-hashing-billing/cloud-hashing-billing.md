@@ -363,6 +363,7 @@
 | ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | WarmAccountCoinAmount | [double](#double) |  |  |
+| PaymentAccountCoinAmount | [double](#double) |  |  |
 
 
 
@@ -2014,6 +2015,7 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | WarmAccountUSDAmount | [double](#double) |  |  |
+| PaymentAccountUSDAmount | [double](#double) |  |  |
 
 
 
@@ -2485,6 +2487,7 @@ Cloud Hashing Billing
 | ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | WarmAccountCoinAmount | [double](#double) |  |  |
+| PaymentAccountCoinAmount | [double](#double) |  |  |
 
 
 
@@ -4136,6 +4139,7 @@ Cloud Hashing Billing
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | WarmAccountUSDAmount | [double](#double) |  |  |
+| PaymentAccountUSDAmount | [double](#double) |  |  |
 
 
 
