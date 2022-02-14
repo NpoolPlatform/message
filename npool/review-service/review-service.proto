@@ -107,6 +107,7 @@ message Review {
     string ObjectID = 70;
     string Domain = 80;
     uint32 CreateAt = 90;
+    string Trigger = 100;
 }
 
 message CreateReviewRequest {

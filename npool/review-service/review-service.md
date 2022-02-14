@@ -338,6 +338,7 @@
 | ObjectID | [string](#string) |  |  |
 | Domain | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
+| Trigger | [string](#string) |  |  |
 
 
 
@@ -797,6 +798,7 @@ Service Name
 | ObjectID | [string](#string) |  |  |
 | Domain | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
+| Trigger | [string](#string) |  |  |
 
 
 

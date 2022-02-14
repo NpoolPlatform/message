@@ -648,6 +648,9 @@
         "CreateAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Trigger": {
+          "type": "string"
         }
       }
     },

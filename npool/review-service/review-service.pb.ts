@@ -20,6 +20,7 @@ export type Review = {
   objectID?: string
   domain?: string
   createAt?: number
+  trigger?: string
 }
 
 export type CreateReviewRequest = {
