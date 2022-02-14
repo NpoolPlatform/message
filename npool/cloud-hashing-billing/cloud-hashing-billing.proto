@@ -1164,6 +1164,7 @@ message GetAppWithdrawSettingsByAppResponse {
 
 message GetAppWithdrawSettingByAppCoinRequest {
     string AppID = 10;
+    string CoinTypeID = 20;
 }
 
 message GetAppWithdrawSettingByAppCoinResponse {

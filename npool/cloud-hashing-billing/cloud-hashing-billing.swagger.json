@@ -2698,6 +2698,9 @@
       "properties": {
         "AppID": {
           "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
         }
       }
     },

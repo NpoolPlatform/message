@@ -899,6 +899,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
 
 
 
@@ -3437,6 +3438,7 @@ Cloud Hashing Billing
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
 
 
 

@@ -716,6 +716,7 @@ export type GetAppWithdrawSettingsByAppResponse = {
 
 export type GetAppWithdrawSettingByAppCoinRequest = {
   appID?: string
+  coinTypeID?: string
 }
 
 export type GetAppWithdrawSettingByAppCoinResponse = {
