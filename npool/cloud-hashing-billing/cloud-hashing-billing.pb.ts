@@ -300,6 +300,7 @@ export type CoinSetting = {
   platformOfflineAccountID?: string
   userOfflineAccountID?: string
   userOnlineAccountID?: string
+  goodIncomingAccountID?: string
 }
 
 export type CreateCoinSettingRequest = {

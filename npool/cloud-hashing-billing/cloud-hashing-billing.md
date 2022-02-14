@@ -415,6 +415,7 @@
 | PlatformOfflineAccountID | [string](#string) |  |  |
 | UserOfflineAccountID | [string](#string) |  |  |
 | UserOnlineAccountID | [string](#string) |  |  |
+| GoodIncomingAccountID | [string](#string) |  |  |
 
 
 
@@ -2780,6 +2781,7 @@ Cloud Hashing Billing
 | PlatformOfflineAccountID | [string](#string) |  |  |
 | UserOfflineAccountID | [string](#string) |  |  |
 | UserOnlineAccountID | [string](#string) |  |  |
+| GoodIncomingAccountID | [string](#string) |  |  |
 
 
 
