@@ -4935,453 +4935,6 @@ func (x *GetGoodPaymentByAccountResponse) GetInfo() *GoodPayment {
 	return nil
 }
 
-type GoodSetting struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ID                    string  `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	GoodID                string  `protobuf:"bytes,20,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
-	WarmAccountUSDAmount  float64 `protobuf:"fixed64,30,opt,name=WarmAccountUSDAmount,proto3" json:"WarmAccountUSDAmount,omitempty"`
-	WarmAccountCoinAmount float64 `protobuf:"fixed64,40,opt,name=WarmAccountCoinAmount,proto3" json:"WarmAccountCoinAmount,omitempty"`
-}
-
-func (x *GoodSetting) Reset() {
-	*x = GoodSetting{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[94]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GoodSetting) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GoodSetting) ProtoMessage() {}
-
-func (x *GoodSetting) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[94]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GoodSetting.ProtoReflect.Descriptor instead.
-func (*GoodSetting) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{94}
-}
-
-func (x *GoodSetting) GetID() string {
-	if x != nil {
-		return x.ID
-	}
-	return ""
-}
-
-func (x *GoodSetting) GetGoodID() string {
-	if x != nil {
-		return x.GoodID
-	}
-	return ""
-}
-
-func (x *GoodSetting) GetWarmAccountUSDAmount() float64 {
-	if x != nil {
-		return x.WarmAccountUSDAmount
-	}
-	return 0
-}
-
-func (x *GoodSetting) GetWarmAccountCoinAmount() float64 {
-	if x != nil {
-		return x.WarmAccountCoinAmount
-	}
-	return 0
-}
-
-type CreateGoodSettingRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *GoodSetting `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *CreateGoodSettingRequest) Reset() {
-	*x = CreateGoodSettingRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[95]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateGoodSettingRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateGoodSettingRequest) ProtoMessage() {}
-
-func (x *CreateGoodSettingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[95]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateGoodSettingRequest.ProtoReflect.Descriptor instead.
-func (*CreateGoodSettingRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{95}
-}
-
-func (x *CreateGoodSettingRequest) GetInfo() *GoodSetting {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type CreateGoodSettingResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *GoodSetting `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *CreateGoodSettingResponse) Reset() {
-	*x = CreateGoodSettingResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[96]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateGoodSettingResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateGoodSettingResponse) ProtoMessage() {}
-
-func (x *CreateGoodSettingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[96]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateGoodSettingResponse.ProtoReflect.Descriptor instead.
-func (*CreateGoodSettingResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{96}
-}
-
-func (x *CreateGoodSettingResponse) GetInfo() *GoodSetting {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type UpdateGoodSettingRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *GoodSetting `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *UpdateGoodSettingRequest) Reset() {
-	*x = UpdateGoodSettingRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[97]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UpdateGoodSettingRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateGoodSettingRequest) ProtoMessage() {}
-
-func (x *UpdateGoodSettingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[97]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateGoodSettingRequest.ProtoReflect.Descriptor instead.
-func (*UpdateGoodSettingRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{97}
-}
-
-func (x *UpdateGoodSettingRequest) GetInfo() *GoodSetting {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type UpdateGoodSettingResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *GoodSetting `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *UpdateGoodSettingResponse) Reset() {
-	*x = UpdateGoodSettingResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[98]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UpdateGoodSettingResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateGoodSettingResponse) ProtoMessage() {}
-
-func (x *UpdateGoodSettingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[98]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateGoodSettingResponse.ProtoReflect.Descriptor instead.
-func (*UpdateGoodSettingResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{98}
-}
-
-func (x *UpdateGoodSettingResponse) GetInfo() *GoodSetting {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type GetGoodSettingRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-}
-
-func (x *GetGoodSettingRequest) Reset() {
-	*x = GetGoodSettingRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[99]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetGoodSettingRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetGoodSettingRequest) ProtoMessage() {}
-
-func (x *GetGoodSettingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[99]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetGoodSettingRequest.ProtoReflect.Descriptor instead.
-func (*GetGoodSettingRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{99}
-}
-
-func (x *GetGoodSettingRequest) GetID() string {
-	if x != nil {
-		return x.ID
-	}
-	return ""
-}
-
-type GetGoodSettingResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *GoodSetting `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *GetGoodSettingResponse) Reset() {
-	*x = GetGoodSettingResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[100]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetGoodSettingResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetGoodSettingResponse) ProtoMessage() {}
-
-func (x *GetGoodSettingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[100]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetGoodSettingResponse.ProtoReflect.Descriptor instead.
-func (*GetGoodSettingResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{100}
-}
-
-func (x *GetGoodSettingResponse) GetInfo() *GoodSetting {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type GetGoodSettingByGoodRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	GoodID string `protobuf:"bytes,10,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
-}
-
-func (x *GetGoodSettingByGoodRequest) Reset() {
-	*x = GetGoodSettingByGoodRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[101]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetGoodSettingByGoodRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetGoodSettingByGoodRequest) ProtoMessage() {}
-
-func (x *GetGoodSettingByGoodRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[101]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetGoodSettingByGoodRequest.ProtoReflect.Descriptor instead.
-func (*GetGoodSettingByGoodRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{101}
-}
-
-func (x *GetGoodSettingByGoodRequest) GetGoodID() string {
-	if x != nil {
-		return x.GoodID
-	}
-	return ""
-}
-
-type GetGoodSettingByGoodResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *GoodSetting `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *GetGoodSettingByGoodResponse) Reset() {
-	*x = GetGoodSettingByGoodResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[102]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetGoodSettingByGoodResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetGoodSettingByGoodResponse) ProtoMessage() {}
-
-func (x *GetGoodSettingByGoodResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[102]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetGoodSettingByGoodResponse.ProtoReflect.Descriptor instead.
-func (*GetGoodSettingByGoodResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{102}
-}
-
-func (x *GetGoodSettingByGoodResponse) GetInfo() *GoodSetting {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
 type UserWithdraw struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -5399,7 +4952,7 @@ type UserWithdraw struct {
 func (x *UserWithdraw) Reset() {
 	*x = UserWithdraw{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[103]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[94]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5412,7 +4965,7 @@ func (x *UserWithdraw) String() string {
 func (*UserWithdraw) ProtoMessage() {}
 
 func (x *UserWithdraw) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[103]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[94]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5425,7 +4978,7 @@ func (x *UserWithdraw) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserWithdraw.ProtoReflect.Descriptor instead.
 func (*UserWithdraw) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{103}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{94}
 }
 
 func (x *UserWithdraw) GetID() string {
@@ -5488,7 +5041,7 @@ type CreateUserWithdrawRequest struct {
 func (x *CreateUserWithdrawRequest) Reset() {
 	*x = CreateUserWithdrawRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[104]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[95]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5501,7 +5054,7 @@ func (x *CreateUserWithdrawRequest) String() string {
 func (*CreateUserWithdrawRequest) ProtoMessage() {}
 
 func (x *CreateUserWithdrawRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[104]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[95]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5514,7 +5067,7 @@ func (x *CreateUserWithdrawRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserWithdrawRequest.ProtoReflect.Descriptor instead.
 func (*CreateUserWithdrawRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{104}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{95}
 }
 
 func (x *CreateUserWithdrawRequest) GetInfo() *UserWithdraw {
@@ -5535,7 +5088,7 @@ type CreateUserWithdrawResponse struct {
 func (x *CreateUserWithdrawResponse) Reset() {
 	*x = CreateUserWithdrawResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[105]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[96]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5548,7 +5101,7 @@ func (x *CreateUserWithdrawResponse) String() string {
 func (*CreateUserWithdrawResponse) ProtoMessage() {}
 
 func (x *CreateUserWithdrawResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[105]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[96]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5561,7 +5114,7 @@ func (x *CreateUserWithdrawResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserWithdrawResponse.ProtoReflect.Descriptor instead.
 func (*CreateUserWithdrawResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{105}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{96}
 }
 
 func (x *CreateUserWithdrawResponse) GetInfo() *UserWithdraw {
@@ -5582,7 +5135,7 @@ type UpdateUserWithdrawRequest struct {
 func (x *UpdateUserWithdrawRequest) Reset() {
 	*x = UpdateUserWithdrawRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[106]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[97]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5595,7 +5148,7 @@ func (x *UpdateUserWithdrawRequest) String() string {
 func (*UpdateUserWithdrawRequest) ProtoMessage() {}
 
 func (x *UpdateUserWithdrawRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[106]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[97]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5608,7 +5161,7 @@ func (x *UpdateUserWithdrawRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateUserWithdrawRequest.ProtoReflect.Descriptor instead.
 func (*UpdateUserWithdrawRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{106}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{97}
 }
 
 func (x *UpdateUserWithdrawRequest) GetInfo() *UserWithdraw {
@@ -5629,7 +5182,7 @@ type UpdateUserWithdrawResponse struct {
 func (x *UpdateUserWithdrawResponse) Reset() {
 	*x = UpdateUserWithdrawResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[107]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[98]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5642,7 +5195,7 @@ func (x *UpdateUserWithdrawResponse) String() string {
 func (*UpdateUserWithdrawResponse) ProtoMessage() {}
 
 func (x *UpdateUserWithdrawResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[107]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[98]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5655,7 +5208,7 @@ func (x *UpdateUserWithdrawResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateUserWithdrawResponse.ProtoReflect.Descriptor instead.
 func (*UpdateUserWithdrawResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{107}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{98}
 }
 
 func (x *UpdateUserWithdrawResponse) GetInfo() *UserWithdraw {
@@ -5676,7 +5229,7 @@ type GetUserWithdrawRequest struct {
 func (x *GetUserWithdrawRequest) Reset() {
 	*x = GetUserWithdrawRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[108]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[99]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5689,7 +5242,7 @@ func (x *GetUserWithdrawRequest) String() string {
 func (*GetUserWithdrawRequest) ProtoMessage() {}
 
 func (x *GetUserWithdrawRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[108]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[99]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5702,7 +5255,7 @@ func (x *GetUserWithdrawRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserWithdrawRequest.ProtoReflect.Descriptor instead.
 func (*GetUserWithdrawRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{108}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{99}
 }
 
 func (x *GetUserWithdrawRequest) GetID() string {
@@ -5723,7 +5276,7 @@ type GetUserWithdrawResponse struct {
 func (x *GetUserWithdrawResponse) Reset() {
 	*x = GetUserWithdrawResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[109]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[100]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5736,7 +5289,7 @@ func (x *GetUserWithdrawResponse) String() string {
 func (*GetUserWithdrawResponse) ProtoMessage() {}
 
 func (x *GetUserWithdrawResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[109]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[100]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5749,7 +5302,7 @@ func (x *GetUserWithdrawResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserWithdrawResponse.ProtoReflect.Descriptor instead.
 func (*GetUserWithdrawResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{109}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{100}
 }
 
 func (x *GetUserWithdrawResponse) GetInfo() *UserWithdraw {
@@ -5771,7 +5324,7 @@ type GetUserWithdrawsByAppUserRequest struct {
 func (x *GetUserWithdrawsByAppUserRequest) Reset() {
 	*x = GetUserWithdrawsByAppUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[110]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[101]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5784,7 +5337,7 @@ func (x *GetUserWithdrawsByAppUserRequest) String() string {
 func (*GetUserWithdrawsByAppUserRequest) ProtoMessage() {}
 
 func (x *GetUserWithdrawsByAppUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[110]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[101]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5797,7 +5350,7 @@ func (x *GetUserWithdrawsByAppUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserWithdrawsByAppUserRequest.ProtoReflect.Descriptor instead.
 func (*GetUserWithdrawsByAppUserRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{110}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{101}
 }
 
 func (x *GetUserWithdrawsByAppUserRequest) GetAppID() string {
@@ -5825,7 +5378,7 @@ type GetUserWithdrawsByAppUserResponse struct {
 func (x *GetUserWithdrawsByAppUserResponse) Reset() {
 	*x = GetUserWithdrawsByAppUserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[111]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[102]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5838,7 +5391,7 @@ func (x *GetUserWithdrawsByAppUserResponse) String() string {
 func (*GetUserWithdrawsByAppUserResponse) ProtoMessage() {}
 
 func (x *GetUserWithdrawsByAppUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[111]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[102]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5851,7 +5404,7 @@ func (x *GetUserWithdrawsByAppUserResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetUserWithdrawsByAppUserResponse.ProtoReflect.Descriptor instead.
 func (*GetUserWithdrawsByAppUserResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{111}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{102}
 }
 
 func (x *GetUserWithdrawsByAppUserResponse) GetInfos() []*UserWithdraw {
@@ -5873,7 +5426,7 @@ type GetUserWithdrawsByOtherAppUserRequest struct {
 func (x *GetUserWithdrawsByOtherAppUserRequest) Reset() {
 	*x = GetUserWithdrawsByOtherAppUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[112]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[103]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5886,7 +5439,7 @@ func (x *GetUserWithdrawsByOtherAppUserRequest) String() string {
 func (*GetUserWithdrawsByOtherAppUserRequest) ProtoMessage() {}
 
 func (x *GetUserWithdrawsByOtherAppUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[112]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[103]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5899,7 +5452,7 @@ func (x *GetUserWithdrawsByOtherAppUserRequest) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use GetUserWithdrawsByOtherAppUserRequest.ProtoReflect.Descriptor instead.
 func (*GetUserWithdrawsByOtherAppUserRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{112}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{103}
 }
 
 func (x *GetUserWithdrawsByOtherAppUserRequest) GetTargetAppID() string {
@@ -5927,7 +5480,7 @@ type GetUserWithdrawsByOtherAppUserResponse struct {
 func (x *GetUserWithdrawsByOtherAppUserResponse) Reset() {
 	*x = GetUserWithdrawsByOtherAppUserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[113]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[104]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5940,7 +5493,7 @@ func (x *GetUserWithdrawsByOtherAppUserResponse) String() string {
 func (*GetUserWithdrawsByOtherAppUserResponse) ProtoMessage() {}
 
 func (x *GetUserWithdrawsByOtherAppUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[113]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[104]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5953,7 +5506,7 @@ func (x *GetUserWithdrawsByOtherAppUserResponse) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use GetUserWithdrawsByOtherAppUserResponse.ProtoReflect.Descriptor instead.
 func (*GetUserWithdrawsByOtherAppUserResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{113}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{104}
 }
 
 func (x *GetUserWithdrawsByOtherAppUserResponse) GetInfos() []*UserWithdraw {
@@ -5974,7 +5527,7 @@ type GetUserWithdrawByAccountRequest struct {
 func (x *GetUserWithdrawByAccountRequest) Reset() {
 	*x = GetUserWithdrawByAccountRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[114]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[105]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5987,7 +5540,7 @@ func (x *GetUserWithdrawByAccountRequest) String() string {
 func (*GetUserWithdrawByAccountRequest) ProtoMessage() {}
 
 func (x *GetUserWithdrawByAccountRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[114]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[105]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6000,7 +5553,7 @@ func (x *GetUserWithdrawByAccountRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserWithdrawByAccountRequest.ProtoReflect.Descriptor instead.
 func (*GetUserWithdrawByAccountRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{114}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{105}
 }
 
 func (x *GetUserWithdrawByAccountRequest) GetAccountID() string {
@@ -6021,7 +5574,7 @@ type GetUserWithdrawByAccountResponse struct {
 func (x *GetUserWithdrawByAccountResponse) Reset() {
 	*x = GetUserWithdrawByAccountResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[115]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[106]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6034,7 +5587,7 @@ func (x *GetUserWithdrawByAccountResponse) String() string {
 func (*GetUserWithdrawByAccountResponse) ProtoMessage() {}
 
 func (x *GetUserWithdrawByAccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[115]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[106]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6047,7 +5600,7 @@ func (x *GetUserWithdrawByAccountResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserWithdrawByAccountResponse.ProtoReflect.Descriptor instead.
 func (*GetUserWithdrawByAccountResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{115}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{106}
 }
 
 func (x *GetUserWithdrawByAccountResponse) GetInfo() *UserWithdraw {
@@ -6072,7 +5625,7 @@ type UserDirectBenefit struct {
 func (x *UserDirectBenefit) Reset() {
 	*x = UserDirectBenefit{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[116]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[107]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6085,7 +5638,7 @@ func (x *UserDirectBenefit) String() string {
 func (*UserDirectBenefit) ProtoMessage() {}
 
 func (x *UserDirectBenefit) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[116]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[107]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6098,7 +5651,7 @@ func (x *UserDirectBenefit) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserDirectBenefit.ProtoReflect.Descriptor instead.
 func (*UserDirectBenefit) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{116}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{107}
 }
 
 func (x *UserDirectBenefit) GetID() string {
@@ -6147,7 +5700,7 @@ type CreateUserDirectBenefitRequest struct {
 func (x *CreateUserDirectBenefitRequest) Reset() {
 	*x = CreateUserDirectBenefitRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[117]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[108]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6160,7 +5713,7 @@ func (x *CreateUserDirectBenefitRequest) String() string {
 func (*CreateUserDirectBenefitRequest) ProtoMessage() {}
 
 func (x *CreateUserDirectBenefitRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[117]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[108]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6173,7 +5726,7 @@ func (x *CreateUserDirectBenefitRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserDirectBenefitRequest.ProtoReflect.Descriptor instead.
 func (*CreateUserDirectBenefitRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{117}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{108}
 }
 
 func (x *CreateUserDirectBenefitRequest) GetInfo() *UserDirectBenefit {
@@ -6194,7 +5747,7 @@ type CreateUserDirectBenefitResponse struct {
 func (x *CreateUserDirectBenefitResponse) Reset() {
 	*x = CreateUserDirectBenefitResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[118]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[109]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6207,7 +5760,7 @@ func (x *CreateUserDirectBenefitResponse) String() string {
 func (*CreateUserDirectBenefitResponse) ProtoMessage() {}
 
 func (x *CreateUserDirectBenefitResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[118]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[109]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6220,7 +5773,7 @@ func (x *CreateUserDirectBenefitResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserDirectBenefitResponse.ProtoReflect.Descriptor instead.
 func (*CreateUserDirectBenefitResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{118}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{109}
 }
 
 func (x *CreateUserDirectBenefitResponse) GetInfo() *UserDirectBenefit {
@@ -6241,7 +5794,7 @@ type UpdateUserDirectBenefitRequest struct {
 func (x *UpdateUserDirectBenefitRequest) Reset() {
 	*x = UpdateUserDirectBenefitRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[119]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[110]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6254,7 +5807,7 @@ func (x *UpdateUserDirectBenefitRequest) String() string {
 func (*UpdateUserDirectBenefitRequest) ProtoMessage() {}
 
 func (x *UpdateUserDirectBenefitRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[119]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[110]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6267,7 +5820,7 @@ func (x *UpdateUserDirectBenefitRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateUserDirectBenefitRequest.ProtoReflect.Descriptor instead.
 func (*UpdateUserDirectBenefitRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{119}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{110}
 }
 
 func (x *UpdateUserDirectBenefitRequest) GetInfo() *UserDirectBenefit {
@@ -6288,7 +5841,7 @@ type UpdateUserDirectBenefitResponse struct {
 func (x *UpdateUserDirectBenefitResponse) Reset() {
 	*x = UpdateUserDirectBenefitResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[120]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[111]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6301,7 +5854,7 @@ func (x *UpdateUserDirectBenefitResponse) String() string {
 func (*UpdateUserDirectBenefitResponse) ProtoMessage() {}
 
 func (x *UpdateUserDirectBenefitResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[120]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[111]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6314,7 +5867,7 @@ func (x *UpdateUserDirectBenefitResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateUserDirectBenefitResponse.ProtoReflect.Descriptor instead.
 func (*UpdateUserDirectBenefitResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{120}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{111}
 }
 
 func (x *UpdateUserDirectBenefitResponse) GetInfo() *UserDirectBenefit {
@@ -6335,7 +5888,7 @@ type GetUserDirectBenefitRequest struct {
 func (x *GetUserDirectBenefitRequest) Reset() {
 	*x = GetUserDirectBenefitRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[121]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[112]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6348,7 +5901,7 @@ func (x *GetUserDirectBenefitRequest) String() string {
 func (*GetUserDirectBenefitRequest) ProtoMessage() {}
 
 func (x *GetUserDirectBenefitRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[121]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[112]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6361,7 +5914,7 @@ func (x *GetUserDirectBenefitRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserDirectBenefitRequest.ProtoReflect.Descriptor instead.
 func (*GetUserDirectBenefitRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{121}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{112}
 }
 
 func (x *GetUserDirectBenefitRequest) GetID() string {
@@ -6382,7 +5935,7 @@ type GetUserDirectBenefitResponse struct {
 func (x *GetUserDirectBenefitResponse) Reset() {
 	*x = GetUserDirectBenefitResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[122]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[113]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6395,7 +5948,7 @@ func (x *GetUserDirectBenefitResponse) String() string {
 func (*GetUserDirectBenefitResponse) ProtoMessage() {}
 
 func (x *GetUserDirectBenefitResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[122]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[113]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6408,7 +5961,7 @@ func (x *GetUserDirectBenefitResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserDirectBenefitResponse.ProtoReflect.Descriptor instead.
 func (*GetUserDirectBenefitResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{122}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{113}
 }
 
 func (x *GetUserDirectBenefitResponse) GetInfo() *UserDirectBenefit {
@@ -6430,7 +5983,7 @@ type GetUserDirectBenefitsByAppUserRequest struct {
 func (x *GetUserDirectBenefitsByAppUserRequest) Reset() {
 	*x = GetUserDirectBenefitsByAppUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[123]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[114]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6443,7 +5996,7 @@ func (x *GetUserDirectBenefitsByAppUserRequest) String() string {
 func (*GetUserDirectBenefitsByAppUserRequest) ProtoMessage() {}
 
 func (x *GetUserDirectBenefitsByAppUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[123]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[114]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6456,7 +6009,7 @@ func (x *GetUserDirectBenefitsByAppUserRequest) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use GetUserDirectBenefitsByAppUserRequest.ProtoReflect.Descriptor instead.
 func (*GetUserDirectBenefitsByAppUserRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{123}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{114}
 }
 
 func (x *GetUserDirectBenefitsByAppUserRequest) GetAppID() string {
@@ -6484,7 +6037,7 @@ type GetUserDirectBenefitsByAppUserResponse struct {
 func (x *GetUserDirectBenefitsByAppUserResponse) Reset() {
 	*x = GetUserDirectBenefitsByAppUserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[124]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[115]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6497,7 +6050,7 @@ func (x *GetUserDirectBenefitsByAppUserResponse) String() string {
 func (*GetUserDirectBenefitsByAppUserResponse) ProtoMessage() {}
 
 func (x *GetUserDirectBenefitsByAppUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[124]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[115]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6510,7 +6063,7 @@ func (x *GetUserDirectBenefitsByAppUserResponse) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use GetUserDirectBenefitsByAppUserResponse.ProtoReflect.Descriptor instead.
 func (*GetUserDirectBenefitsByAppUserResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{124}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{115}
 }
 
 func (x *GetUserDirectBenefitsByAppUserResponse) GetInfos() []*UserDirectBenefit {
@@ -6532,7 +6085,7 @@ type GetUserDirectBenefitsByOtherAppUserRequest struct {
 func (x *GetUserDirectBenefitsByOtherAppUserRequest) Reset() {
 	*x = GetUserDirectBenefitsByOtherAppUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[125]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[116]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6545,7 +6098,7 @@ func (x *GetUserDirectBenefitsByOtherAppUserRequest) String() string {
 func (*GetUserDirectBenefitsByOtherAppUserRequest) ProtoMessage() {}
 
 func (x *GetUserDirectBenefitsByOtherAppUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[125]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[116]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6558,7 +6111,7 @@ func (x *GetUserDirectBenefitsByOtherAppUserRequest) ProtoReflect() protoreflect
 
 // Deprecated: Use GetUserDirectBenefitsByOtherAppUserRequest.ProtoReflect.Descriptor instead.
 func (*GetUserDirectBenefitsByOtherAppUserRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{125}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{116}
 }
 
 func (x *GetUserDirectBenefitsByOtherAppUserRequest) GetTargetAppID() string {
@@ -6586,7 +6139,7 @@ type GetUserDirectBenefitsByOtherAppUserResponse struct {
 func (x *GetUserDirectBenefitsByOtherAppUserResponse) Reset() {
 	*x = GetUserDirectBenefitsByOtherAppUserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[126]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[117]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6599,7 +6152,7 @@ func (x *GetUserDirectBenefitsByOtherAppUserResponse) String() string {
 func (*GetUserDirectBenefitsByOtherAppUserResponse) ProtoMessage() {}
 
 func (x *GetUserDirectBenefitsByOtherAppUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[126]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[117]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6612,7 +6165,7 @@ func (x *GetUserDirectBenefitsByOtherAppUserResponse) ProtoReflect() protoreflec
 
 // Deprecated: Use GetUserDirectBenefitsByOtherAppUserResponse.ProtoReflect.Descriptor instead.
 func (*GetUserDirectBenefitsByOtherAppUserResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{126}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{117}
 }
 
 func (x *GetUserDirectBenefitsByOtherAppUserResponse) GetInfos() []*UserDirectBenefit {
@@ -6633,7 +6186,7 @@ type GetUserDirectBenefitByAccountRequest struct {
 func (x *GetUserDirectBenefitByAccountRequest) Reset() {
 	*x = GetUserDirectBenefitByAccountRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[127]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[118]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6646,7 +6199,7 @@ func (x *GetUserDirectBenefitByAccountRequest) String() string {
 func (*GetUserDirectBenefitByAccountRequest) ProtoMessage() {}
 
 func (x *GetUserDirectBenefitByAccountRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[127]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[118]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6659,7 +6212,7 @@ func (x *GetUserDirectBenefitByAccountRequest) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use GetUserDirectBenefitByAccountRequest.ProtoReflect.Descriptor instead.
 func (*GetUserDirectBenefitByAccountRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{127}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{118}
 }
 
 func (x *GetUserDirectBenefitByAccountRequest) GetAccountID() string {
@@ -6680,7 +6233,7 @@ type GetUserDirectBenefitByAccountResponse struct {
 func (x *GetUserDirectBenefitByAccountResponse) Reset() {
 	*x = GetUserDirectBenefitByAccountResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[128]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[119]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6693,7 +6246,7 @@ func (x *GetUserDirectBenefitByAccountResponse) String() string {
 func (*GetUserDirectBenefitByAccountResponse) ProtoMessage() {}
 
 func (x *GetUserDirectBenefitByAccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[128]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[119]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6706,7 +6259,7 @@ func (x *GetUserDirectBenefitByAccountResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use GetUserDirectBenefitByAccountResponse.ProtoReflect.Descriptor instead.
 func (*GetUserDirectBenefitByAccountResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{128}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{119}
 }
 
 func (x *GetUserDirectBenefitByAccountResponse) GetInfo() *UserDirectBenefit {
@@ -6730,7 +6283,7 @@ type GoodIncoming struct {
 func (x *GoodIncoming) Reset() {
 	*x = GoodIncoming{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[129]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[120]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6743,7 +6296,7 @@ func (x *GoodIncoming) String() string {
 func (*GoodIncoming) ProtoMessage() {}
 
 func (x *GoodIncoming) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[129]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[120]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6756,7 +6309,7 @@ func (x *GoodIncoming) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GoodIncoming.ProtoReflect.Descriptor instead.
 func (*GoodIncoming) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{129}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{120}
 }
 
 func (x *GoodIncoming) GetID() string {
@@ -6798,7 +6351,7 @@ type CreateGoodIncomingRequest struct {
 func (x *CreateGoodIncomingRequest) Reset() {
 	*x = CreateGoodIncomingRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[130]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[121]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6811,7 +6364,7 @@ func (x *CreateGoodIncomingRequest) String() string {
 func (*CreateGoodIncomingRequest) ProtoMessage() {}
 
 func (x *CreateGoodIncomingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[130]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[121]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6824,7 +6377,7 @@ func (x *CreateGoodIncomingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateGoodIncomingRequest.ProtoReflect.Descriptor instead.
 func (*CreateGoodIncomingRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{130}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{121}
 }
 
 func (x *CreateGoodIncomingRequest) GetInfo() *GoodIncoming {
@@ -6845,7 +6398,7 @@ type CreateGoodIncomingResponse struct {
 func (x *CreateGoodIncomingResponse) Reset() {
 	*x = CreateGoodIncomingResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[131]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[122]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6858,7 +6411,7 @@ func (x *CreateGoodIncomingResponse) String() string {
 func (*CreateGoodIncomingResponse) ProtoMessage() {}
 
 func (x *CreateGoodIncomingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[131]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[122]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6871,7 +6424,7 @@ func (x *CreateGoodIncomingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateGoodIncomingResponse.ProtoReflect.Descriptor instead.
 func (*CreateGoodIncomingResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{131}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{122}
 }
 
 func (x *CreateGoodIncomingResponse) GetInfo() *GoodIncoming {
@@ -6892,7 +6445,7 @@ type UpdateGoodIncomingRequest struct {
 func (x *UpdateGoodIncomingRequest) Reset() {
 	*x = UpdateGoodIncomingRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[132]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[123]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6905,7 +6458,7 @@ func (x *UpdateGoodIncomingRequest) String() string {
 func (*UpdateGoodIncomingRequest) ProtoMessage() {}
 
 func (x *UpdateGoodIncomingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[132]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[123]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6918,7 +6471,7 @@ func (x *UpdateGoodIncomingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateGoodIncomingRequest.ProtoReflect.Descriptor instead.
 func (*UpdateGoodIncomingRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{132}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{123}
 }
 
 func (x *UpdateGoodIncomingRequest) GetInfo() *GoodIncoming {
@@ -6939,7 +6492,7 @@ type UpdateGoodIncomingResponse struct {
 func (x *UpdateGoodIncomingResponse) Reset() {
 	*x = UpdateGoodIncomingResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[133]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[124]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6952,7 +6505,7 @@ func (x *UpdateGoodIncomingResponse) String() string {
 func (*UpdateGoodIncomingResponse) ProtoMessage() {}
 
 func (x *UpdateGoodIncomingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[133]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[124]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6965,7 +6518,7 @@ func (x *UpdateGoodIncomingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateGoodIncomingResponse.ProtoReflect.Descriptor instead.
 func (*UpdateGoodIncomingResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{133}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{124}
 }
 
 func (x *UpdateGoodIncomingResponse) GetInfo() *GoodIncoming {
@@ -6986,7 +6539,7 @@ type GetGoodIncomingRequest struct {
 func (x *GetGoodIncomingRequest) Reset() {
 	*x = GetGoodIncomingRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[134]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[125]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6999,7 +6552,7 @@ func (x *GetGoodIncomingRequest) String() string {
 func (*GetGoodIncomingRequest) ProtoMessage() {}
 
 func (x *GetGoodIncomingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[134]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[125]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7012,7 +6565,7 @@ func (x *GetGoodIncomingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetGoodIncomingRequest.ProtoReflect.Descriptor instead.
 func (*GetGoodIncomingRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{134}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{125}
 }
 
 func (x *GetGoodIncomingRequest) GetID() string {
@@ -7033,7 +6586,7 @@ type GetGoodIncomingResponse struct {
 func (x *GetGoodIncomingResponse) Reset() {
 	*x = GetGoodIncomingResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[135]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[126]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7046,7 +6599,7 @@ func (x *GetGoodIncomingResponse) String() string {
 func (*GetGoodIncomingResponse) ProtoMessage() {}
 
 func (x *GetGoodIncomingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[135]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[126]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7059,7 +6612,7 @@ func (x *GetGoodIncomingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetGoodIncomingResponse.ProtoReflect.Descriptor instead.
 func (*GetGoodIncomingResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{135}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{126}
 }
 
 func (x *GetGoodIncomingResponse) GetInfo() *GoodIncoming {
@@ -7080,7 +6633,7 @@ type GetGoodIncomingsByGoodRequest struct {
 func (x *GetGoodIncomingsByGoodRequest) Reset() {
 	*x = GetGoodIncomingsByGoodRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[136]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[127]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7093,7 +6646,7 @@ func (x *GetGoodIncomingsByGoodRequest) String() string {
 func (*GetGoodIncomingsByGoodRequest) ProtoMessage() {}
 
 func (x *GetGoodIncomingsByGoodRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[136]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[127]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7106,7 +6659,7 @@ func (x *GetGoodIncomingsByGoodRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetGoodIncomingsByGoodRequest.ProtoReflect.Descriptor instead.
 func (*GetGoodIncomingsByGoodRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{136}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{127}
 }
 
 func (x *GetGoodIncomingsByGoodRequest) GetGoodID() string {
@@ -7127,7 +6680,7 @@ type GetGoodIncomingsByGoodResponse struct {
 func (x *GetGoodIncomingsByGoodResponse) Reset() {
 	*x = GetGoodIncomingsByGoodResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[137]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[128]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7140,7 +6693,7 @@ func (x *GetGoodIncomingsByGoodResponse) String() string {
 func (*GetGoodIncomingsByGoodResponse) ProtoMessage() {}
 
 func (x *GetGoodIncomingsByGoodResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[137]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[128]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7153,7 +6706,7 @@ func (x *GetGoodIncomingsByGoodResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetGoodIncomingsByGoodResponse.ProtoReflect.Descriptor instead.
 func (*GetGoodIncomingsByGoodResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{137}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{128}
 }
 
 func (x *GetGoodIncomingsByGoodResponse) GetInfos() []*GoodIncoming {
@@ -7175,7 +6728,7 @@ type GetGoodIncomingByGoodCoinRequest struct {
 func (x *GetGoodIncomingByGoodCoinRequest) Reset() {
 	*x = GetGoodIncomingByGoodCoinRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[138]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[129]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7188,7 +6741,7 @@ func (x *GetGoodIncomingByGoodCoinRequest) String() string {
 func (*GetGoodIncomingByGoodCoinRequest) ProtoMessage() {}
 
 func (x *GetGoodIncomingByGoodCoinRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[138]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[129]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7201,7 +6754,7 @@ func (x *GetGoodIncomingByGoodCoinRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetGoodIncomingByGoodCoinRequest.ProtoReflect.Descriptor instead.
 func (*GetGoodIncomingByGoodCoinRequest) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{138}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{129}
 }
 
 func (x *GetGoodIncomingByGoodCoinRequest) GetGoodID() string {
@@ -7229,7 +6782,7 @@ type GetGoodIncomingByGoodCoinResponse struct {
 func (x *GetGoodIncomingByGoodCoinResponse) Reset() {
 	*x = GetGoodIncomingByGoodCoinResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[139]
+		mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[130]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7242,7 +6795,7 @@ func (x *GetGoodIncomingByGoodCoinResponse) String() string {
 func (*GetGoodIncomingByGoodCoinResponse) ProtoMessage() {}
 
 func (x *GetGoodIncomingByGoodCoinResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[139]
+	mi := &file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[130]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7255,7 +6808,7 @@ func (x *GetGoodIncomingByGoodCoinResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetGoodIncomingByGoodCoinResponse.ProtoReflect.Descriptor instead.
 func (*GetGoodIncomingByGoodCoinResponse) Descriptor() ([]byte, []int) {
-	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{139}
+	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP(), []int{130}
 }
 
 func (x *GetGoodIncomingByGoodCoinResponse) GetInfo() *GoodIncoming {
@@ -7877,55 +7430,6 @@ var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDesc = []byt
 	0x01, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
 	0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47,
 	0x6f, 0x6f, 0x64, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
-	0x22, 0x9f, 0x01, 0x0a, 0x0b, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67,
-	0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44,
-	0x12, 0x16, 0x0a, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x12, 0x32, 0x0a, 0x14, 0x57, 0x61, 0x72, 0x6d,
-	0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x55, 0x53, 0x44, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74,
-	0x18, 0x1e, 0x20, 0x01, 0x28, 0x01, 0x52, 0x14, 0x57, 0x61, 0x72, 0x6d, 0x41, 0x63, 0x63, 0x6f,
-	0x75, 0x6e, 0x74, 0x55, 0x53, 0x44, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x34, 0x0a, 0x15,
-	0x57, 0x61, 0x72, 0x6d, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x43, 0x6f, 0x69, 0x6e, 0x41,
-	0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x28, 0x20, 0x01, 0x28, 0x01, 0x52, 0x15, 0x57, 0x61, 0x72,
-	0x6d, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x43, 0x6f, 0x69, 0x6e, 0x41, 0x6d, 0x6f, 0x75,
-	0x6e, 0x74, 0x22, 0x55, 0x0a, 0x18, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64,
-	0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x39,
-	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x63,
-	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c,
-	0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74,
-	0x69, 0x6e, 0x67, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x56, 0x0a, 0x19, 0x43, 0x72, 0x65,
-	0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x39, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73,
-	0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e,
-	0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x04, 0x49, 0x6e, 0x66,
-	0x6f, 0x22, 0x55, 0x0a, 0x18, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x53,
-	0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x39, 0x0a,
-	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6c,
-	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c,
-	0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69,
-	0x6e, 0x67, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x56, 0x0a, 0x19, 0x55, 0x70, 0x64, 0x61,
-	0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x39, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
-	0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
-	0x22, 0x27, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69,
-	0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18,
-	0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x53, 0x0a, 0x16, 0x47, 0x65, 0x74,
-	0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x12, 0x39, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e,
-	0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x6f, 0x6f,
-	0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x35,
-	0x0a, 0x1b, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67,
-	0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a,
-	0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x47,
-	0x6f, 0x6f, 0x64, 0x49, 0x44, 0x22, 0x59, 0x0a, 0x1c, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64,
-	0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x39, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
-	0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
 	0x22, 0xb8, 0x01, 0x0a, 0x0c, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61,
 	0x77, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49,
 	0x44, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09,
@@ -8142,7 +7646,7 @@ var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDesc = []byt
 	0x12, 0x3a, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26,
 	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62,
 	0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e,
-	0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x94, 0x5a, 0x0a,
+	0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x86, 0x55, 0x0a,
 	0x13, 0x43, 0x6c, 0x6f, 0x75, 0x64, 0x48, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x42, 0x69, 0x6c,
 	0x6c, 0x69, 0x6e, 0x67, 0x12, 0x51, 0x0a, 0x07, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12,
 	0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
@@ -8623,252 +8127,211 @@ var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDesc = []byt
 	0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2a, 0x82,
 	0xd3, 0xe4, 0x93, 0x02, 0x24, 0x22, 0x1f, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x67,
 	0x6f, 0x6f, 0x64, 0x2f, 0x70, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x2f, 0x62, 0x79, 0x2f, 0x61,
-	0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x3a, 0x01, 0x2a, 0x12, 0xa0, 0x01, 0x0a, 0x11, 0x43, 0x72,
-	0x65, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x12,
-	0x32, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e,
-	0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74,
-	0x65, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x33, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
-	0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x22, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1c,
-	0x22, 0x17, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x67, 0x6f, 0x6f,
-	0x64, 0x2f, 0x73, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x3a, 0x01, 0x2a, 0x12, 0xa0, 0x01, 0x0a,
-	0x11, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69,
-	0x6e, 0x67, 0x12, 0x32, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69,
-	0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x33, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68,
-	0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76,
-	0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74,
-	0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x22, 0x82, 0xd3, 0xe4,
-	0x93, 0x02, 0x1c, 0x22, 0x17, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f,
-	0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x73, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x3a, 0x01, 0x2a, 0x12,
-	0x94, 0x01, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69,
-	0x6e, 0x67, 0x12, 0x2f, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69,
-	0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
-	0x74, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x30, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
-	0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1f, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x19, 0x22, 0x14, 0x2f,
-	0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x73, 0x65, 0x74, 0x74,
-	0x69, 0x6e, 0x67, 0x3a, 0x01, 0x2a, 0x12, 0xae, 0x01, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x47, 0x6f,
-	0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x12,
-	0x35, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e,
-	0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f,
-	0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x36, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68,
-	0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76,
-	0x31, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67,
-	0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x27,
-	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x21, 0x22, 0x1c, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f,
-	0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x73, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x2f, 0x62, 0x79, 0x2f,
-	0x67, 0x6f, 0x6f, 0x64, 0x3a, 0x01, 0x2a, 0x12, 0xa4, 0x01, 0x0a, 0x12, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x12, 0x33,
-	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62,
-	0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
-	0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
-	0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61,
-	0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x23, 0x82, 0xd3, 0xe4, 0x93, 0x02,
-	0x1d, 0x22, 0x18, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x75, 0x73,
-	0x65, 0x72, 0x2f, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x3a, 0x01, 0x2a, 0x12, 0xa4,
-	0x01, 0x0a, 0x12, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74,
-	0x68, 0x64, 0x72, 0x61, 0x77, 0x12, 0x33, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61,
+	0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x3a, 0x01, 0x2a, 0x12, 0xa4, 0x01, 0x0a, 0x12, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77,
+	0x12, 0x33, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67,
+	0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61,
 	0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31,
-	0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64,
-	0x72, 0x61, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x63, 0x6c, 0x6f,
-	0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69,
-	0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72,
-	0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x23, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1d, 0x22, 0x18, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72,
-	0x61, 0x77, 0x3a, 0x01, 0x2a, 0x12, 0x98, 0x01, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65,
-	0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x12, 0x30, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
-	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e,
-	0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68,
-	0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x63, 0x6c,
+	0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64,
+	0x72, 0x61, 0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x23, 0x82, 0xd3, 0xe4,
+	0x93, 0x02, 0x1d, 0x22, 0x18, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f,
+	0x75, 0x73, 0x65, 0x72, 0x2f, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x3a, 0x01, 0x2a,
+	0x12, 0xa4, 0x01, 0x0a, 0x12, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57,
+	0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x12, 0x33, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e,
+	0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e,
+	0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74,
+	0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x63,
+	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c,
+	0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73,
+	0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x23, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1d, 0x22, 0x18, 0x2f, 0x76, 0x31, 0x2f,
+	0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x77, 0x69, 0x74, 0x68,
+	0x64, 0x72, 0x61, 0x77, 0x3a, 0x01, 0x2a, 0x12, 0x98, 0x01, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x55,
+	0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x12, 0x30, 0x2e, 0x63, 0x6c,
 	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c,
 	0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69,
-	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x20,
-	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1a, 0x22, 0x15, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f,
-	0x75, 0x73, 0x65, 0x72, 0x2f, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x3a, 0x01, 0x2a,
-	0x12, 0xc3, 0x01, 0x0a, 0x19, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68,
-	0x64, 0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x3a,
-	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62,
-	0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65,
-	0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55,
-	0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3b, 0x2e, 0x63, 0x6c, 0x6f,
+	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e,
+	0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69,
+	0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72,
+	0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x20, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1a, 0x22, 0x15, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65,
+	0x74, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x3a,
+	0x01, 0x2a, 0x12, 0xc3, 0x01, 0x0a, 0x19, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69,
+	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72,
+	0x12, 0x3a, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67,
+	0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55,
+	0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x41, 0x70,
+	0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3b, 0x2e, 0x63,
+	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c,
+	0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57,
+	0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
+	0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2d, 0x82, 0xd3, 0xe4, 0x93, 0x02,
+	0x27, 0x22, 0x22, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f,
+	0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70,
+	0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0xd8, 0x01, 0x0a, 0x1e, 0x47, 0x65, 0x74,
+	0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x4f,
+	0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x3f, 0x2e, 0x63, 0x6c,
+	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c,
+	0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69,
+	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70,
+	0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x40, 0x2e, 0x63,
+	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c,
+	0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57,
+	0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41,
+	0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x33,
+	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x2d, 0x22, 0x28, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f,
+	0x75, 0x73, 0x65, 0x72, 0x2f, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x2f, 0x62,
+	0x79, 0x2f, 0x6f, 0x74, 0x68, 0x65, 0x72, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72,
+	0x3a, 0x01, 0x2a, 0x12, 0xbe, 0x01, 0x0a, 0x18, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57,
+	0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x42, 0x79, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74,
+	0x12, 0x39, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67,
+	0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55,
+	0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x42, 0x79, 0x41, 0x63, 0x63,
+	0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3a, 0x2e, 0x63, 0x6c,
+	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c,
+	0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69,
+	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x42, 0x79, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x25, 0x22,
+	0x20, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x77, 0x69,
+	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e,
+	0x74, 0x3a, 0x01, 0x2a, 0x12, 0xb9, 0x01, 0x0a, 0x17, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55,
+	0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74,
+	0x12, 0x38, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67,
+	0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65,
+	0x66, 0x69, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x39, 0x2e, 0x63, 0x6c, 0x6f,
 	0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69,
-	0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74,
-	0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x27, 0x22,
-	0x22, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x77, 0x69,
-	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75,
-	0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0xd8, 0x01, 0x0a, 0x1e, 0x47, 0x65, 0x74, 0x55, 0x73,
-	0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68,
-	0x65, 0x72, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x3f, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
-	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e,
-	0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68,
-	0x64, 0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x55,
-	0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x40, 0x2e, 0x63, 0x6c, 0x6f,
-	0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69,
-	0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74,
-	0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70,
-	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x33, 0x82, 0xd3,
-	0xe4, 0x93, 0x02, 0x2d, 0x22, 0x28, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x75, 0x73,
-	0x65, 0x72, 0x2f, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x73, 0x2f, 0x62, 0x79, 0x2f,
-	0x6f, 0x74, 0x68, 0x65, 0x72, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01,
-	0x2a, 0x12, 0xbe, 0x01, 0x0a, 0x18, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74,
-	0x68, 0x64, 0x72, 0x61, 0x77, 0x42, 0x79, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x39,
-	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62,
-	0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65,
-	0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x42, 0x79, 0x41, 0x63, 0x63, 0x6f, 0x75,
-	0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3a, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
-	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e,
-	0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68,
-	0x64, 0x72, 0x61, 0x77, 0x42, 0x79, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x25, 0x22, 0x20, 0x2f,
-	0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x77, 0x69, 0x74, 0x68,
-	0x64, 0x72, 0x61, 0x77, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x3a,
-	0x01, 0x2a, 0x12, 0xb9, 0x01, 0x0a, 0x17, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65,
-	0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x12, 0x38,
-	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62,
-	0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
-	0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69,
-	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x39, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64,
-	0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67,
-	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69,
-	0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x29, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x23, 0x22, 0x1e, 0x2f, 0x76, 0x31,
-	0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x64, 0x69, 0x72,
-	0x65, 0x63, 0x74, 0x2f, 0x62, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x3a, 0x01, 0x2a, 0x12, 0xb9,
-	0x01, 0x0a, 0x17, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72,
-	0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x12, 0x38, 0x2e, 0x63, 0x6c, 0x6f,
-	0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69,
-	0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72,
-	0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x39, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73,
-	0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e,
-	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74,
-	0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x29, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x23, 0x22, 0x1e, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64,
-	0x61, 0x74, 0x65, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x64, 0x69, 0x72, 0x65, 0x63, 0x74, 0x2f,
-	0x62, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x3a, 0x01, 0x2a, 0x12, 0xad, 0x01, 0x0a, 0x14, 0x47,
-	0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65,
-	0x66, 0x69, 0x74, 0x12, 0x35, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
-	0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65,
-	0x66, 0x69, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x36, 0x2e, 0x63, 0x6c, 0x6f,
-	0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69,
-	0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72,
-	0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x20, 0x22, 0x1b, 0x2f, 0x76, 0x31, 0x2f,
+	0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72,
+	0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x29, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x23, 0x22, 0x1e, 0x2f,
+	0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x64,
+	0x69, 0x72, 0x65, 0x63, 0x74, 0x2f, 0x62, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x3a, 0x01, 0x2a,
+	0x12, 0xb9, 0x01, 0x0a, 0x17, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x44,
+	0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x12, 0x38, 0x2e, 0x63,
+	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c,
+	0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73,
+	0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x39, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68,
+	0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76,
+	0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65,
+	0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x29, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x23, 0x22, 0x1e, 0x2f, 0x76, 0x31, 0x2f, 0x75,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x64, 0x69, 0x72, 0x65, 0x63,
+	0x74, 0x2f, 0x62, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x3a, 0x01, 0x2a, 0x12, 0xad, 0x01, 0x0a,
+	0x14, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65,
+	0x6e, 0x65, 0x66, 0x69, 0x74, 0x12, 0x35, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61,
+	0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31,
+	0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65,
+	0x6e, 0x65, 0x66, 0x69, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x36, 0x2e, 0x63,
+	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c,
+	0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x44,
+	0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x20, 0x22, 0x1b, 0x2f, 0x76,
+	0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x64, 0x69, 0x72, 0x65, 0x63,
+	0x74, 0x2f, 0x62, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x3a, 0x01, 0x2a, 0x12, 0xd8, 0x01, 0x0a,
+	0x1e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65,
+	0x6e, 0x65, 0x66, 0x69, 0x74, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12,
+	0x3f, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e,
+	0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73,
+	0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x73,
+	0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x40, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67,
+	0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55,
+	0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74,
+	0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x33, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x2d, 0x22, 0x28, 0x2f, 0x76, 0x31, 0x2f,
 	0x67, 0x65, 0x74, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x64, 0x69, 0x72, 0x65, 0x63, 0x74, 0x2f,
-	0x62, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x3a, 0x01, 0x2a, 0x12, 0xd8, 0x01, 0x0a, 0x1e, 0x47,
-	0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65,
-	0x66, 0x69, 0x74, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x3f, 0x2e,
-	0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69,
-	0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72,
-	0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x73, 0x42, 0x79,
-	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x40,
-	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62,
-	0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65,
-	0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x73, 0x42,
-	0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x33, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x2d, 0x22, 0x28, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65,
-	0x74, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x64, 0x69, 0x72, 0x65, 0x63, 0x74, 0x2f, 0x62, 0x65,
-	0x6e, 0x65, 0x66, 0x69, 0x74, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73,
-	0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0xed, 0x01, 0x0a, 0x23, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65,
-	0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x73, 0x42,
-	0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x44, 0x2e,
-	0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69,
-	0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72,
-	0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x73, 0x42, 0x79,
-	0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x45, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
-	0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65,
-	0x66, 0x69, 0x74, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x55, 0x73,
-	0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x39, 0x82, 0xd3, 0xe4, 0x93,
-	0x02, 0x33, 0x22, 0x2e, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x75, 0x73, 0x65, 0x72,
-	0x2f, 0x64, 0x69, 0x72, 0x65, 0x63, 0x74, 0x2f, 0x62, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x73,
-	0x2f, 0x62, 0x79, 0x2f, 0x6f, 0x74, 0x68, 0x65, 0x72, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73,
-	0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0xd3, 0x01, 0x0a, 0x1d, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65,
-	0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x42, 0x79,
-	0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x3e, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e,
-	0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e,
-	0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74,
-	0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x42, 0x79, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3f, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e,
-	0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e,
-	0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74,
-	0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x42, 0x79, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x31, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x2b,
-	0x22, 0x26, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x64,
-	0x69, 0x72, 0x65, 0x63, 0x74, 0x2f, 0x62, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x2f, 0x62, 0x79,
-	0x2f, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x3a, 0x01, 0x2a, 0x12, 0xa4, 0x01, 0x0a, 0x12,
-	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69,
-	0x6e, 0x67, 0x12, 0x33, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69,
-	0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72,
-	0x65, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e,
-	0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e,
-	0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63,
-	0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x23, 0x82,
-	0xd3, 0xe4, 0x93, 0x02, 0x1d, 0x22, 0x18, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74,
-	0x65, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x69, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x3a,
-	0x01, 0x2a, 0x12, 0xa4, 0x01, 0x0a, 0x12, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f,
-	0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x12, 0x33, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
+	0x62, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x2f,
+	0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0xed, 0x01, 0x0a, 0x23, 0x47, 0x65, 0x74, 0x55,
+	0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74,
+	0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12,
+	0x44, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e,
+	0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73,
+	0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x73,
+	0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x45, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61,
+	0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31,
+	0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65,
+	0x6e, 0x65, 0x66, 0x69, 0x74, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70,
+	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x39, 0x82, 0xd3,
+	0xe4, 0x93, 0x02, 0x33, 0x22, 0x2e, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x75, 0x73,
+	0x65, 0x72, 0x2f, 0x64, 0x69, 0x72, 0x65, 0x63, 0x74, 0x2f, 0x62, 0x65, 0x6e, 0x65, 0x66, 0x69,
+	0x74, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x6f, 0x74, 0x68, 0x65, 0x72, 0x2f, 0x61, 0x70, 0x70, 0x2f,
+	0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0xd3, 0x01, 0x0a, 0x1d, 0x47, 0x65, 0x74, 0x55,
+	0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74,
+	0x42, 0x79, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x3e, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
 	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e,
-	0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x49,
-	0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x34,
-	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62,
-	0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65,
+	0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x42, 0x79, 0x41, 0x63, 0x63, 0x6f, 0x75,
+	0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3f, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
+	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e,
+	0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x44, 0x69, 0x72, 0x65,
+	0x63, 0x74, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x42, 0x79, 0x41, 0x63, 0x63, 0x6f, 0x75,
+	0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x31, 0x82, 0xd3, 0xe4, 0x93,
+	0x02, 0x2b, 0x22, 0x26, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x75, 0x73, 0x65, 0x72,
+	0x2f, 0x64, 0x69, 0x72, 0x65, 0x63, 0x74, 0x2f, 0x62, 0x65, 0x6e, 0x65, 0x66, 0x69, 0x74, 0x2f,
+	0x62, 0x79, 0x2f, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x3a, 0x01, 0x2a, 0x12, 0xa4, 0x01,
+	0x0a, 0x12, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f,
+	0x6d, 0x69, 0x6e, 0x67, 0x12, 0x33, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73,
+	0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69,
+	0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
+	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e,
+	0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x49,
+	0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x23, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1d, 0x22, 0x18, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x69, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e,
+	0x67, 0x3a, 0x01, 0x2a, 0x12, 0xa4, 0x01, 0x0a, 0x12, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x47,
+	0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x12, 0x33, 0x2e, 0x63, 0x6c,
+	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c,
+	0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f,
+	0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x34, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67,
+	0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x23, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1d, 0x22, 0x18,
+	0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f,
+	0x69, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x3a, 0x01, 0x2a, 0x12, 0x98, 0x01, 0x0a, 0x0f,
+	0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x12,
+	0x30, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e,
+	0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f,
+	0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x31, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e,
+	0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
 	0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x23, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1d, 0x22, 0x18, 0x2f, 0x76,
-	0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x69, 0x6e,
-	0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x3a, 0x01, 0x2a, 0x12, 0x98, 0x01, 0x0a, 0x0f, 0x47, 0x65,
-	0x74, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x12, 0x30, 0x2e,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x20, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1a, 0x22, 0x15, 0x2f, 0x76,
+	0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x69, 0x6e, 0x63, 0x6f, 0x6d,
+	0x69, 0x6e, 0x67, 0x3a, 0x01, 0x2a, 0x12, 0xb6, 0x01, 0x0a, 0x16, 0x47, 0x65, 0x74, 0x47, 0x6f,
+	0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x79, 0x47, 0x6f, 0x6f,
+	0x64, 0x12, 0x37, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e,
+	0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
+	0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x79, 0x47,
+	0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x38, 0x2e, 0x63, 0x6c, 0x6f,
+	0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69,
+	0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63,
+	0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x29, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x23, 0x22, 0x1e, 0x2f, 0x76,
+	0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x69, 0x6e, 0x63, 0x6f, 0x6d,
+	0x69, 0x6e, 0x67, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x3a, 0x01, 0x2a, 0x12,
+	0xc3, 0x01, 0x0a, 0x19, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d,
+	0x69, 0x6e, 0x67, 0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x69, 0x6e, 0x12, 0x3a, 0x2e,
 	0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69,
 	0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64,
-	0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x31, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e,
-	0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f,
-	0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x20, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1a, 0x22, 0x15, 0x2f, 0x76, 0x31, 0x2f,
-	0x67, 0x65, 0x74, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x69, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e,
-	0x67, 0x3a, 0x01, 0x2a, 0x12, 0xb6, 0x01, 0x0a, 0x16, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64,
-	0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x12,
-	0x37, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e,
-	0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f,
-	0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x79, 0x47, 0x6f, 0x6f,
-	0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x38, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64,
-	0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67,
-	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d,
-	0x69, 0x6e, 0x67, 0x73, 0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x29, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x23, 0x22, 0x1e, 0x2f, 0x76, 0x31, 0x2f,
-	0x67, 0x65, 0x74, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x69, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e,
-	0x67, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x3a, 0x01, 0x2a, 0x12, 0xc3, 0x01,
-	0x0a, 0x19, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e,
-	0x67, 0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x69, 0x6e, 0x12, 0x3a, 0x2e, 0x63, 0x6c,
-	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c,
-	0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e,
-	0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x69, 0x6e,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3b, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e,
-	0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e,
-	0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69,
-	0x6e, 0x67, 0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x27, 0x22, 0x22, 0x2f, 0x76,
-	0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x69, 0x6e, 0x63, 0x6f, 0x6d,
-	0x69, 0x6e, 0x67, 0x2f, 0x62, 0x79, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x63, 0x6f, 0x69, 0x6e,
-	0x3a, 0x01, 0x2a, 0x42, 0x3e, 0x5a, 0x3c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f,
-	0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x63, 0x6c,
-	0x6f, 0x75, 0x64, 0x2d, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2d, 0x62, 0x69, 0x6c, 0x6c,
-	0x69, 0x6e, 0x67, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f,
+	0x69, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3b, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
+	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e,
+	0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x6e, 0x63, 0x6f,
+	0x6d, 0x69, 0x6e, 0x67, 0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x27, 0x22, 0x22,
+	0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x69, 0x6e, 0x63,
+	0x6f, 0x6d, 0x69, 0x6e, 0x67, 0x2f, 0x62, 0x79, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x63, 0x6f,
+	0x69, 0x6e, 0x3a, 0x01, 0x2a, 0x42, 0x3e, 0x5a, 0x3c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
+	0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72,
+	0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f,
+	0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2d, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2d, 0x62, 0x69,
+	0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -8883,7 +8346,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescGZIP() 
 	return file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDescData
 }
 
-var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes = make([]protoimpl.MessageInfo, 140)
+var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes = make([]protoimpl.MessageInfo, 131)
 var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_goTypes = []interface{}{
 	(*CoinAccountInfo)(nil),                                 // 0: cloud.hashing.billing.v1.CoinAccountInfo
 	(*CreateCoinAccountRequest)(nil),                        // 1: cloud.hashing.billing.v1.CreateCoinAccountRequest
@@ -8979,55 +8442,46 @@ var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_goTypes = []int
 	(*GetIdleGoodPaymentsByGoodPaymentCoinResponse)(nil),    // 91: cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinResponse
 	(*GetGoodPaymentByAccountRequest)(nil),                  // 92: cloud.hashing.billing.v1.GetGoodPaymentByAccountRequest
 	(*GetGoodPaymentByAccountResponse)(nil),                 // 93: cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse
-	(*GoodSetting)(nil),                                     // 94: cloud.hashing.billing.v1.GoodSetting
-	(*CreateGoodSettingRequest)(nil),                        // 95: cloud.hashing.billing.v1.CreateGoodSettingRequest
-	(*CreateGoodSettingResponse)(nil),                       // 96: cloud.hashing.billing.v1.CreateGoodSettingResponse
-	(*UpdateGoodSettingRequest)(nil),                        // 97: cloud.hashing.billing.v1.UpdateGoodSettingRequest
-	(*UpdateGoodSettingResponse)(nil),                       // 98: cloud.hashing.billing.v1.UpdateGoodSettingResponse
-	(*GetGoodSettingRequest)(nil),                           // 99: cloud.hashing.billing.v1.GetGoodSettingRequest
-	(*GetGoodSettingResponse)(nil),                          // 100: cloud.hashing.billing.v1.GetGoodSettingResponse
-	(*GetGoodSettingByGoodRequest)(nil),                     // 101: cloud.hashing.billing.v1.GetGoodSettingByGoodRequest
-	(*GetGoodSettingByGoodResponse)(nil),                    // 102: cloud.hashing.billing.v1.GetGoodSettingByGoodResponse
-	(*UserWithdraw)(nil),                                    // 103: cloud.hashing.billing.v1.UserWithdraw
-	(*CreateUserWithdrawRequest)(nil),                       // 104: cloud.hashing.billing.v1.CreateUserWithdrawRequest
-	(*CreateUserWithdrawResponse)(nil),                      // 105: cloud.hashing.billing.v1.CreateUserWithdrawResponse
-	(*UpdateUserWithdrawRequest)(nil),                       // 106: cloud.hashing.billing.v1.UpdateUserWithdrawRequest
-	(*UpdateUserWithdrawResponse)(nil),                      // 107: cloud.hashing.billing.v1.UpdateUserWithdrawResponse
-	(*GetUserWithdrawRequest)(nil),                          // 108: cloud.hashing.billing.v1.GetUserWithdrawRequest
-	(*GetUserWithdrawResponse)(nil),                         // 109: cloud.hashing.billing.v1.GetUserWithdrawResponse
-	(*GetUserWithdrawsByAppUserRequest)(nil),                // 110: cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest
-	(*GetUserWithdrawsByAppUserResponse)(nil),               // 111: cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse
-	(*GetUserWithdrawsByOtherAppUserRequest)(nil),           // 112: cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest
-	(*GetUserWithdrawsByOtherAppUserResponse)(nil),          // 113: cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse
-	(*GetUserWithdrawByAccountRequest)(nil),                 // 114: cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest
-	(*GetUserWithdrawByAccountResponse)(nil),                // 115: cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse
-	(*UserDirectBenefit)(nil),                               // 116: cloud.hashing.billing.v1.UserDirectBenefit
-	(*CreateUserDirectBenefitRequest)(nil),                  // 117: cloud.hashing.billing.v1.CreateUserDirectBenefitRequest
-	(*CreateUserDirectBenefitResponse)(nil),                 // 118: cloud.hashing.billing.v1.CreateUserDirectBenefitResponse
-	(*UpdateUserDirectBenefitRequest)(nil),                  // 119: cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest
-	(*UpdateUserDirectBenefitResponse)(nil),                 // 120: cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse
-	(*GetUserDirectBenefitRequest)(nil),                     // 121: cloud.hashing.billing.v1.GetUserDirectBenefitRequest
-	(*GetUserDirectBenefitResponse)(nil),                    // 122: cloud.hashing.billing.v1.GetUserDirectBenefitResponse
-	(*GetUserDirectBenefitsByAppUserRequest)(nil),           // 123: cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest
-	(*GetUserDirectBenefitsByAppUserResponse)(nil),          // 124: cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse
-	(*GetUserDirectBenefitsByOtherAppUserRequest)(nil),      // 125: cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest
-	(*GetUserDirectBenefitsByOtherAppUserResponse)(nil),     // 126: cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse
-	(*GetUserDirectBenefitByAccountRequest)(nil),            // 127: cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest
-	(*GetUserDirectBenefitByAccountResponse)(nil),           // 128: cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse
-	(*GoodIncoming)(nil),                                    // 129: cloud.hashing.billing.v1.GoodIncoming
-	(*CreateGoodIncomingRequest)(nil),                       // 130: cloud.hashing.billing.v1.CreateGoodIncomingRequest
-	(*CreateGoodIncomingResponse)(nil),                      // 131: cloud.hashing.billing.v1.CreateGoodIncomingResponse
-	(*UpdateGoodIncomingRequest)(nil),                       // 132: cloud.hashing.billing.v1.UpdateGoodIncomingRequest
-	(*UpdateGoodIncomingResponse)(nil),                      // 133: cloud.hashing.billing.v1.UpdateGoodIncomingResponse
-	(*GetGoodIncomingRequest)(nil),                          // 134: cloud.hashing.billing.v1.GetGoodIncomingRequest
-	(*GetGoodIncomingResponse)(nil),                         // 135: cloud.hashing.billing.v1.GetGoodIncomingResponse
-	(*GetGoodIncomingsByGoodRequest)(nil),                   // 136: cloud.hashing.billing.v1.GetGoodIncomingsByGoodRequest
-	(*GetGoodIncomingsByGoodResponse)(nil),                  // 137: cloud.hashing.billing.v1.GetGoodIncomingsByGoodResponse
-	(*GetGoodIncomingByGoodCoinRequest)(nil),                // 138: cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest
-	(*GetGoodIncomingByGoodCoinResponse)(nil),               // 139: cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse
-	(*npool.PageInfo)(nil),                                  // 140: npool.v1.PageInfo
-	(*emptypb.Empty)(nil),                                   // 141: google.protobuf.Empty
-	(*npool.VersionResponse)(nil),                           // 142: npool.v1.VersionResponse
+	(*UserWithdraw)(nil),                                    // 94: cloud.hashing.billing.v1.UserWithdraw
+	(*CreateUserWithdrawRequest)(nil),                       // 95: cloud.hashing.billing.v1.CreateUserWithdrawRequest
+	(*CreateUserWithdrawResponse)(nil),                      // 96: cloud.hashing.billing.v1.CreateUserWithdrawResponse
+	(*UpdateUserWithdrawRequest)(nil),                       // 97: cloud.hashing.billing.v1.UpdateUserWithdrawRequest
+	(*UpdateUserWithdrawResponse)(nil),                      // 98: cloud.hashing.billing.v1.UpdateUserWithdrawResponse
+	(*GetUserWithdrawRequest)(nil),                          // 99: cloud.hashing.billing.v1.GetUserWithdrawRequest
+	(*GetUserWithdrawResponse)(nil),                         // 100: cloud.hashing.billing.v1.GetUserWithdrawResponse
+	(*GetUserWithdrawsByAppUserRequest)(nil),                // 101: cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest
+	(*GetUserWithdrawsByAppUserResponse)(nil),               // 102: cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse
+	(*GetUserWithdrawsByOtherAppUserRequest)(nil),           // 103: cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest
+	(*GetUserWithdrawsByOtherAppUserResponse)(nil),          // 104: cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse
+	(*GetUserWithdrawByAccountRequest)(nil),                 // 105: cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest
+	(*GetUserWithdrawByAccountResponse)(nil),                // 106: cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse
+	(*UserDirectBenefit)(nil),                               // 107: cloud.hashing.billing.v1.UserDirectBenefit
+	(*CreateUserDirectBenefitRequest)(nil),                  // 108: cloud.hashing.billing.v1.CreateUserDirectBenefitRequest
+	(*CreateUserDirectBenefitResponse)(nil),                 // 109: cloud.hashing.billing.v1.CreateUserDirectBenefitResponse
+	(*UpdateUserDirectBenefitRequest)(nil),                  // 110: cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest
+	(*UpdateUserDirectBenefitResponse)(nil),                 // 111: cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse
+	(*GetUserDirectBenefitRequest)(nil),                     // 112: cloud.hashing.billing.v1.GetUserDirectBenefitRequest
+	(*GetUserDirectBenefitResponse)(nil),                    // 113: cloud.hashing.billing.v1.GetUserDirectBenefitResponse
+	(*GetUserDirectBenefitsByAppUserRequest)(nil),           // 114: cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest
+	(*GetUserDirectBenefitsByAppUserResponse)(nil),          // 115: cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse
+	(*GetUserDirectBenefitsByOtherAppUserRequest)(nil),      // 116: cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest
+	(*GetUserDirectBenefitsByOtherAppUserResponse)(nil),     // 117: cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse
+	(*GetUserDirectBenefitByAccountRequest)(nil),            // 118: cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest
+	(*GetUserDirectBenefitByAccountResponse)(nil),           // 119: cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse
+	(*GoodIncoming)(nil),                                    // 120: cloud.hashing.billing.v1.GoodIncoming
+	(*CreateGoodIncomingRequest)(nil),                       // 121: cloud.hashing.billing.v1.CreateGoodIncomingRequest
+	(*CreateGoodIncomingResponse)(nil),                      // 122: cloud.hashing.billing.v1.CreateGoodIncomingResponse
+	(*UpdateGoodIncomingRequest)(nil),                       // 123: cloud.hashing.billing.v1.UpdateGoodIncomingRequest
+	(*UpdateGoodIncomingResponse)(nil),                      // 124: cloud.hashing.billing.v1.UpdateGoodIncomingResponse
+	(*GetGoodIncomingRequest)(nil),                          // 125: cloud.hashing.billing.v1.GetGoodIncomingRequest
+	(*GetGoodIncomingResponse)(nil),                         // 126: cloud.hashing.billing.v1.GetGoodIncomingResponse
+	(*GetGoodIncomingsByGoodRequest)(nil),                   // 127: cloud.hashing.billing.v1.GetGoodIncomingsByGoodRequest
+	(*GetGoodIncomingsByGoodResponse)(nil),                  // 128: cloud.hashing.billing.v1.GetGoodIncomingsByGoodResponse
+	(*GetGoodIncomingByGoodCoinRequest)(nil),                // 129: cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest
+	(*GetGoodIncomingByGoodCoinResponse)(nil),               // 130: cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse
+	(*npool.PageInfo)(nil),                                  // 131: npool.v1.PageInfo
+	(*emptypb.Empty)(nil),                                   // 132: google.protobuf.Empty
+	(*npool.VersionResponse)(nil),                           // 133: npool.v1.VersionResponse
 }
 var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_depIdxs = []int32{
 	0,   // 0: cloud.hashing.billing.v1.CreateCoinAccountRequest.Info:type_name -> cloud.hashing.billing.v1.CoinAccountInfo
@@ -9064,7 +8518,7 @@ var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_depIdxs = []int
 	50,  // 31: cloud.hashing.billing.v1.CreateUserBenefitRequest.Info:type_name -> cloud.hashing.billing.v1.UserBenefit
 	50,  // 32: cloud.hashing.billing.v1.CreateUserBenefitResponse.Info:type_name -> cloud.hashing.billing.v1.UserBenefit
 	50,  // 33: cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse.Infos:type_name -> cloud.hashing.billing.v1.UserBenefit
-	140, // 34: cloud.hashing.billing.v1.GetUserBenefitsByAppRequest.PageInfo:type_name -> npool.v1.PageInfo
+	131, // 34: cloud.hashing.billing.v1.GetUserBenefitsByAppRequest.PageInfo:type_name -> npool.v1.PageInfo
 	50,  // 35: cloud.hashing.billing.v1.GetUserBenefitsByAppResponse.Infos:type_name -> cloud.hashing.billing.v1.UserBenefit
 	50,  // 36: cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse.Info:type_name -> cloud.hashing.billing.v1.UserBenefit
 	59,  // 37: cloud.hashing.billing.v1.CreateCoinSettingRequest.Info:type_name -> cloud.hashing.billing.v1.CoinSetting
@@ -9085,173 +8539,159 @@ var file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_depIdxs = []int
 	77,  // 52: cloud.hashing.billing.v1.UpdateGoodPaymentResponse.Info:type_name -> cloud.hashing.billing.v1.GoodPayment
 	77,  // 53: cloud.hashing.billing.v1.GetGoodPaymentResponse.Info:type_name -> cloud.hashing.billing.v1.GoodPayment
 	77,  // 54: cloud.hashing.billing.v1.GetGoodPaymentsResponse.Infos:type_name -> cloud.hashing.billing.v1.GoodPayment
-	140, // 55: cloud.hashing.billing.v1.GetGoodPaymentsByGoodRequest.PageInfo:type_name -> npool.v1.PageInfo
+	131, // 55: cloud.hashing.billing.v1.GetGoodPaymentsByGoodRequest.PageInfo:type_name -> npool.v1.PageInfo
 	77,  // 56: cloud.hashing.billing.v1.GetGoodPaymentsByGoodResponse.Infos:type_name -> cloud.hashing.billing.v1.GoodPayment
-	140, // 57: cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodRequest.PageInfo:type_name -> npool.v1.PageInfo
+	131, // 57: cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodRequest.PageInfo:type_name -> npool.v1.PageInfo
 	77,  // 58: cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodResponse.Infos:type_name -> cloud.hashing.billing.v1.GoodPayment
-	140, // 59: cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest.PageInfo:type_name -> npool.v1.PageInfo
+	131, // 59: cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest.PageInfo:type_name -> npool.v1.PageInfo
 	77,  // 60: cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinResponse.Infos:type_name -> cloud.hashing.billing.v1.GoodPayment
 	77,  // 61: cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse.Info:type_name -> cloud.hashing.billing.v1.GoodPayment
-	94,  // 62: cloud.hashing.billing.v1.CreateGoodSettingRequest.Info:type_name -> cloud.hashing.billing.v1.GoodSetting
-	94,  // 63: cloud.hashing.billing.v1.CreateGoodSettingResponse.Info:type_name -> cloud.hashing.billing.v1.GoodSetting
-	94,  // 64: cloud.hashing.billing.v1.UpdateGoodSettingRequest.Info:type_name -> cloud.hashing.billing.v1.GoodSetting
-	94,  // 65: cloud.hashing.billing.v1.UpdateGoodSettingResponse.Info:type_name -> cloud.hashing.billing.v1.GoodSetting
-	94,  // 66: cloud.hashing.billing.v1.GetGoodSettingResponse.Info:type_name -> cloud.hashing.billing.v1.GoodSetting
-	94,  // 67: cloud.hashing.billing.v1.GetGoodSettingByGoodResponse.Info:type_name -> cloud.hashing.billing.v1.GoodSetting
-	103, // 68: cloud.hashing.billing.v1.CreateUserWithdrawRequest.Info:type_name -> cloud.hashing.billing.v1.UserWithdraw
-	103, // 69: cloud.hashing.billing.v1.CreateUserWithdrawResponse.Info:type_name -> cloud.hashing.billing.v1.UserWithdraw
-	103, // 70: cloud.hashing.billing.v1.UpdateUserWithdrawRequest.Info:type_name -> cloud.hashing.billing.v1.UserWithdraw
-	103, // 71: cloud.hashing.billing.v1.UpdateUserWithdrawResponse.Info:type_name -> cloud.hashing.billing.v1.UserWithdraw
-	103, // 72: cloud.hashing.billing.v1.GetUserWithdrawResponse.Info:type_name -> cloud.hashing.billing.v1.UserWithdraw
-	103, // 73: cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse.Infos:type_name -> cloud.hashing.billing.v1.UserWithdraw
-	103, // 74: cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse.Infos:type_name -> cloud.hashing.billing.v1.UserWithdraw
-	103, // 75: cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse.Info:type_name -> cloud.hashing.billing.v1.UserWithdraw
-	116, // 76: cloud.hashing.billing.v1.CreateUserDirectBenefitRequest.Info:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
-	116, // 77: cloud.hashing.billing.v1.CreateUserDirectBenefitResponse.Info:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
-	116, // 78: cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest.Info:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
-	116, // 79: cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse.Info:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
-	116, // 80: cloud.hashing.billing.v1.GetUserDirectBenefitResponse.Info:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
-	116, // 81: cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse.Infos:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
-	116, // 82: cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse.Infos:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
-	116, // 83: cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse.Info:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
-	129, // 84: cloud.hashing.billing.v1.CreateGoodIncomingRequest.Info:type_name -> cloud.hashing.billing.v1.GoodIncoming
-	129, // 85: cloud.hashing.billing.v1.CreateGoodIncomingResponse.Info:type_name -> cloud.hashing.billing.v1.GoodIncoming
-	129, // 86: cloud.hashing.billing.v1.UpdateGoodIncomingRequest.Info:type_name -> cloud.hashing.billing.v1.GoodIncoming
-	129, // 87: cloud.hashing.billing.v1.UpdateGoodIncomingResponse.Info:type_name -> cloud.hashing.billing.v1.GoodIncoming
-	129, // 88: cloud.hashing.billing.v1.GetGoodIncomingResponse.Info:type_name -> cloud.hashing.billing.v1.GoodIncoming
-	129, // 89: cloud.hashing.billing.v1.GetGoodIncomingsByGoodResponse.Infos:type_name -> cloud.hashing.billing.v1.GoodIncoming
-	129, // 90: cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse.Info:type_name -> cloud.hashing.billing.v1.GoodIncoming
-	141, // 91: cloud.hashing.billing.v1.CloudHashingBilling.Version:input_type -> google.protobuf.Empty
-	1,   // 92: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccount:input_type -> cloud.hashing.billing.v1.CreateCoinAccountRequest
-	3,   // 93: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccount:input_type -> cloud.hashing.billing.v1.GetCoinAccountRequest
-	5,   // 94: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountByCoinAddress:input_type -> cloud.hashing.billing.v1.GetCoinAccountByCoinAddressRequest
-	7,   // 95: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccounts:input_type -> cloud.hashing.billing.v1.GetCoinAccountsRequest
-	9,   // 96: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccount:input_type -> cloud.hashing.billing.v1.DeleteCoinAccountRequest
-	12,  // 97: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.CreateCoinAccountTransactionRequest
-	14,  // 98: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionRequest
-	19,  // 99: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoinAccount:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountRequest
-	21,  // 100: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByState:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateRequest
-	23,  // 101: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoin:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinRequest
-	25,  // 102: cloud.hashing.billing.v1.CloudHashingBilling.UpdateCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.UpdateCoinAccountTransactionRequest
-	17,  // 103: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionDetail:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionDetailRequest
-	27,  // 104: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.DeleteCoinAccountTransactionRequest
-	30,  // 105: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformBenefit:input_type -> cloud.hashing.billing.v1.CreatePlatformBenefitRequest
-	39,  // 106: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestPlatformBenefitByGood:input_type -> cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodRequest
-	32,  // 107: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitsByGood:input_type -> cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest
-	37,  // 108: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefit:input_type -> cloud.hashing.billing.v1.GetPlatformBenefitRequest
-	35,  // 109: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitDetail:input_type -> cloud.hashing.billing.v1.GetPlatformBenefitDetailRequest
-	42,  // 110: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformSetting:input_type -> cloud.hashing.billing.v1.CreatePlatformSettingRequest
-	44,  // 111: cloud.hashing.billing.v1.CloudHashingBilling.UpdatePlatformSetting:input_type -> cloud.hashing.billing.v1.UpdatePlatformSettingRequest
-	48,  // 112: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformSetting:input_type -> cloud.hashing.billing.v1.GetPlatformSettingRequest
-	51,  // 113: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserBenefit:input_type -> cloud.hashing.billing.v1.CreateUserBenefitRequest
-	53,  // 114: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByAppUser:input_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest
-	55,  // 115: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByApp:input_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppRequest
-	57,  // 116: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestUserBenefitByGoodAppUser:input_type -> cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserRequest
-	60,  // 117: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinSetting:input_type -> cloud.hashing.billing.v1.CreateCoinSettingRequest
-	62,  // 118: cloud.hashing.billing.v1.CloudHashingBilling.UpdateCoinSetting:input_type -> cloud.hashing.billing.v1.UpdateCoinSettingRequest
-	64,  // 119: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinSetting:input_type -> cloud.hashing.billing.v1.GetCoinSettingRequest
-	66,  // 120: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinSettingByCoin:input_type -> cloud.hashing.billing.v1.GetCoinSettingByCoinRequest
-	69,  // 121: cloud.hashing.billing.v1.CloudHashingBilling.CreateGoodBenefit:input_type -> cloud.hashing.billing.v1.CreateGoodBenefitRequest
-	71,  // 122: cloud.hashing.billing.v1.CloudHashingBilling.UpdateGoodBenefit:input_type -> cloud.hashing.billing.v1.UpdateGoodBenefitRequest
-	73,  // 123: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodBenefit:input_type -> cloud.hashing.billing.v1.GetGoodBenefitRequest
-	75,  // 124: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodBenefitByGood:input_type -> cloud.hashing.billing.v1.GetGoodBenefitByGoodRequest
-	78,  // 125: cloud.hashing.billing.v1.CloudHashingBilling.CreateGoodPayment:input_type -> cloud.hashing.billing.v1.CreateGoodPaymentRequest
-	80,  // 126: cloud.hashing.billing.v1.CloudHashingBilling.UpdateGoodPayment:input_type -> cloud.hashing.billing.v1.UpdateGoodPaymentRequest
-	82,  // 127: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPayment:input_type -> cloud.hashing.billing.v1.GetGoodPaymentRequest
-	84,  // 128: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPayments:input_type -> cloud.hashing.billing.v1.GetGoodPaymentsRequest
-	86,  // 129: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPaymentsByGood:input_type -> cloud.hashing.billing.v1.GetGoodPaymentsByGoodRequest
-	88,  // 130: cloud.hashing.billing.v1.CloudHashingBilling.GetIdleGoodPaymentsByGood:input_type -> cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodRequest
-	90,  // 131: cloud.hashing.billing.v1.CloudHashingBilling.GetIdleGoodPaymentsByGoodPaymentCoin:input_type -> cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest
-	92,  // 132: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPaymentByAccount:input_type -> cloud.hashing.billing.v1.GetGoodPaymentByAccountRequest
-	95,  // 133: cloud.hashing.billing.v1.CloudHashingBilling.CreateGoodSetting:input_type -> cloud.hashing.billing.v1.CreateGoodSettingRequest
-	97,  // 134: cloud.hashing.billing.v1.CloudHashingBilling.UpdateGoodSetting:input_type -> cloud.hashing.billing.v1.UpdateGoodSettingRequest
-	99,  // 135: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodSetting:input_type -> cloud.hashing.billing.v1.GetGoodSettingRequest
-	101, // 136: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodSettingByGood:input_type -> cloud.hashing.billing.v1.GetGoodSettingByGoodRequest
-	104, // 137: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserWithdraw:input_type -> cloud.hashing.billing.v1.CreateUserWithdrawRequest
-	106, // 138: cloud.hashing.billing.v1.CloudHashingBilling.UpdateUserWithdraw:input_type -> cloud.hashing.billing.v1.UpdateUserWithdrawRequest
-	108, // 139: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdraw:input_type -> cloud.hashing.billing.v1.GetUserWithdrawRequest
-	110, // 140: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdrawsByAppUser:input_type -> cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest
-	112, // 141: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdrawsByOtherAppUser:input_type -> cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest
-	114, // 142: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdrawByAccount:input_type -> cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest
-	117, // 143: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserDirectBenefit:input_type -> cloud.hashing.billing.v1.CreateUserDirectBenefitRequest
-	119, // 144: cloud.hashing.billing.v1.CloudHashingBilling.UpdateUserDirectBenefit:input_type -> cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest
-	121, // 145: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefit:input_type -> cloud.hashing.billing.v1.GetUserDirectBenefitRequest
-	123, // 146: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefitsByAppUser:input_type -> cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest
-	125, // 147: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefitsByOtherAppUser:input_type -> cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest
-	127, // 148: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefitByAccount:input_type -> cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest
-	130, // 149: cloud.hashing.billing.v1.CloudHashingBilling.CreateGoodIncoming:input_type -> cloud.hashing.billing.v1.CreateGoodIncomingRequest
-	132, // 150: cloud.hashing.billing.v1.CloudHashingBilling.UpdateGoodIncoming:input_type -> cloud.hashing.billing.v1.UpdateGoodIncomingRequest
-	134, // 151: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodIncoming:input_type -> cloud.hashing.billing.v1.GetGoodIncomingRequest
-	136, // 152: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodIncomingsByGood:input_type -> cloud.hashing.billing.v1.GetGoodIncomingsByGoodRequest
-	138, // 153: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodIncomingByGoodCoin:input_type -> cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest
-	142, // 154: cloud.hashing.billing.v1.CloudHashingBilling.Version:output_type -> npool.v1.VersionResponse
-	2,   // 155: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccount:output_type -> cloud.hashing.billing.v1.CreateCoinAccountResponse
-	4,   // 156: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccount:output_type -> cloud.hashing.billing.v1.GetCoinAccountResponse
-	6,   // 157: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountByCoinAddress:output_type -> cloud.hashing.billing.v1.GetCoinAccountByCoinAddressResponse
-	8,   // 158: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccounts:output_type -> cloud.hashing.billing.v1.GetCoinAccountsResponse
-	10,  // 159: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccount:output_type -> cloud.hashing.billing.v1.DeleteCoinAccountResponse
-	13,  // 160: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.CreateCoinAccountTransactionResponse
-	15,  // 161: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionResponse
-	20,  // 162: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoinAccount:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountResponse
-	22,  // 163: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByState:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateResponse
-	24,  // 164: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoin:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinResponse
-	26,  // 165: cloud.hashing.billing.v1.CloudHashingBilling.UpdateCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.UpdateCoinAccountTransactionResponse
-	18,  // 166: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionDetail:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionDetailResponse
-	28,  // 167: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.DeleteCoinAccountTransactionResponse
-	31,  // 168: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformBenefit:output_type -> cloud.hashing.billing.v1.CreatePlatformBenefitResponse
-	40,  // 169: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestPlatformBenefitByGood:output_type -> cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodResponse
-	33,  // 170: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitsByGood:output_type -> cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse
-	38,  // 171: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefit:output_type -> cloud.hashing.billing.v1.GetPlatformBenefitResponse
-	36,  // 172: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitDetail:output_type -> cloud.hashing.billing.v1.GetPlatformBenefitDetailResponse
-	43,  // 173: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformSetting:output_type -> cloud.hashing.billing.v1.CreatePlatformSettingResponse
-	45,  // 174: cloud.hashing.billing.v1.CloudHashingBilling.UpdatePlatformSetting:output_type -> cloud.hashing.billing.v1.UpdatePlatformSettingResponse
-	49,  // 175: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformSetting:output_type -> cloud.hashing.billing.v1.GetPlatformSettingResponse
-	52,  // 176: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserBenefit:output_type -> cloud.hashing.billing.v1.CreateUserBenefitResponse
-	54,  // 177: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByAppUser:output_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse
-	56,  // 178: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByApp:output_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppResponse
-	58,  // 179: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestUserBenefitByGoodAppUser:output_type -> cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse
-	61,  // 180: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinSetting:output_type -> cloud.hashing.billing.v1.CreateCoinSettingResponse
-	63,  // 181: cloud.hashing.billing.v1.CloudHashingBilling.UpdateCoinSetting:output_type -> cloud.hashing.billing.v1.UpdateCoinSettingResponse
-	65,  // 182: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinSetting:output_type -> cloud.hashing.billing.v1.GetCoinSettingResponse
-	67,  // 183: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinSettingByCoin:output_type -> cloud.hashing.billing.v1.GetCoinSettingByCoinResponse
-	70,  // 184: cloud.hashing.billing.v1.CloudHashingBilling.CreateGoodBenefit:output_type -> cloud.hashing.billing.v1.CreateGoodBenefitResponse
-	72,  // 185: cloud.hashing.billing.v1.CloudHashingBilling.UpdateGoodBenefit:output_type -> cloud.hashing.billing.v1.UpdateGoodBenefitResponse
-	74,  // 186: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodBenefit:output_type -> cloud.hashing.billing.v1.GetGoodBenefitResponse
-	76,  // 187: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodBenefitByGood:output_type -> cloud.hashing.billing.v1.GetGoodBenefitByGoodResponse
-	79,  // 188: cloud.hashing.billing.v1.CloudHashingBilling.CreateGoodPayment:output_type -> cloud.hashing.billing.v1.CreateGoodPaymentResponse
-	81,  // 189: cloud.hashing.billing.v1.CloudHashingBilling.UpdateGoodPayment:output_type -> cloud.hashing.billing.v1.UpdateGoodPaymentResponse
-	83,  // 190: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPayment:output_type -> cloud.hashing.billing.v1.GetGoodPaymentResponse
-	85,  // 191: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPayments:output_type -> cloud.hashing.billing.v1.GetGoodPaymentsResponse
-	87,  // 192: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPaymentsByGood:output_type -> cloud.hashing.billing.v1.GetGoodPaymentsByGoodResponse
-	89,  // 193: cloud.hashing.billing.v1.CloudHashingBilling.GetIdleGoodPaymentsByGood:output_type -> cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodResponse
-	91,  // 194: cloud.hashing.billing.v1.CloudHashingBilling.GetIdleGoodPaymentsByGoodPaymentCoin:output_type -> cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinResponse
-	93,  // 195: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPaymentByAccount:output_type -> cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse
-	96,  // 196: cloud.hashing.billing.v1.CloudHashingBilling.CreateGoodSetting:output_type -> cloud.hashing.billing.v1.CreateGoodSettingResponse
-	98,  // 197: cloud.hashing.billing.v1.CloudHashingBilling.UpdateGoodSetting:output_type -> cloud.hashing.billing.v1.UpdateGoodSettingResponse
-	100, // 198: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodSetting:output_type -> cloud.hashing.billing.v1.GetGoodSettingResponse
-	102, // 199: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodSettingByGood:output_type -> cloud.hashing.billing.v1.GetGoodSettingByGoodResponse
-	105, // 200: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserWithdraw:output_type -> cloud.hashing.billing.v1.CreateUserWithdrawResponse
-	107, // 201: cloud.hashing.billing.v1.CloudHashingBilling.UpdateUserWithdraw:output_type -> cloud.hashing.billing.v1.UpdateUserWithdrawResponse
-	109, // 202: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdraw:output_type -> cloud.hashing.billing.v1.GetUserWithdrawResponse
-	111, // 203: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdrawsByAppUser:output_type -> cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse
-	113, // 204: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdrawsByOtherAppUser:output_type -> cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse
-	115, // 205: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdrawByAccount:output_type -> cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse
-	118, // 206: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserDirectBenefit:output_type -> cloud.hashing.billing.v1.CreateUserDirectBenefitResponse
-	120, // 207: cloud.hashing.billing.v1.CloudHashingBilling.UpdateUserDirectBenefit:output_type -> cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse
-	122, // 208: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefit:output_type -> cloud.hashing.billing.v1.GetUserDirectBenefitResponse
-	124, // 209: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefitsByAppUser:output_type -> cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse
-	126, // 210: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefitsByOtherAppUser:output_type -> cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse
-	128, // 211: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefitByAccount:output_type -> cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse
-	131, // 212: cloud.hashing.billing.v1.CloudHashingBilling.CreateGoodIncoming:output_type -> cloud.hashing.billing.v1.CreateGoodIncomingResponse
-	133, // 213: cloud.hashing.billing.v1.CloudHashingBilling.UpdateGoodIncoming:output_type -> cloud.hashing.billing.v1.UpdateGoodIncomingResponse
-	135, // 214: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodIncoming:output_type -> cloud.hashing.billing.v1.GetGoodIncomingResponse
-	137, // 215: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodIncomingsByGood:output_type -> cloud.hashing.billing.v1.GetGoodIncomingsByGoodResponse
-	139, // 216: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodIncomingByGoodCoin:output_type -> cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse
-	154, // [154:217] is the sub-list for method output_type
-	91,  // [91:154] is the sub-list for method input_type
-	91,  // [91:91] is the sub-list for extension type_name
-	91,  // [91:91] is the sub-list for extension extendee
-	0,   // [0:91] is the sub-list for field type_name
+	94,  // 62: cloud.hashing.billing.v1.CreateUserWithdrawRequest.Info:type_name -> cloud.hashing.billing.v1.UserWithdraw
+	94,  // 63: cloud.hashing.billing.v1.CreateUserWithdrawResponse.Info:type_name -> cloud.hashing.billing.v1.UserWithdraw
+	94,  // 64: cloud.hashing.billing.v1.UpdateUserWithdrawRequest.Info:type_name -> cloud.hashing.billing.v1.UserWithdraw
+	94,  // 65: cloud.hashing.billing.v1.UpdateUserWithdrawResponse.Info:type_name -> cloud.hashing.billing.v1.UserWithdraw
+	94,  // 66: cloud.hashing.billing.v1.GetUserWithdrawResponse.Info:type_name -> cloud.hashing.billing.v1.UserWithdraw
+	94,  // 67: cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse.Infos:type_name -> cloud.hashing.billing.v1.UserWithdraw
+	94,  // 68: cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse.Infos:type_name -> cloud.hashing.billing.v1.UserWithdraw
+	94,  // 69: cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse.Info:type_name -> cloud.hashing.billing.v1.UserWithdraw
+	107, // 70: cloud.hashing.billing.v1.CreateUserDirectBenefitRequest.Info:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
+	107, // 71: cloud.hashing.billing.v1.CreateUserDirectBenefitResponse.Info:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
+	107, // 72: cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest.Info:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
+	107, // 73: cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse.Info:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
+	107, // 74: cloud.hashing.billing.v1.GetUserDirectBenefitResponse.Info:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
+	107, // 75: cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse.Infos:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
+	107, // 76: cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse.Infos:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
+	107, // 77: cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse.Info:type_name -> cloud.hashing.billing.v1.UserDirectBenefit
+	120, // 78: cloud.hashing.billing.v1.CreateGoodIncomingRequest.Info:type_name -> cloud.hashing.billing.v1.GoodIncoming
+	120, // 79: cloud.hashing.billing.v1.CreateGoodIncomingResponse.Info:type_name -> cloud.hashing.billing.v1.GoodIncoming
+	120, // 80: cloud.hashing.billing.v1.UpdateGoodIncomingRequest.Info:type_name -> cloud.hashing.billing.v1.GoodIncoming
+	120, // 81: cloud.hashing.billing.v1.UpdateGoodIncomingResponse.Info:type_name -> cloud.hashing.billing.v1.GoodIncoming
+	120, // 82: cloud.hashing.billing.v1.GetGoodIncomingResponse.Info:type_name -> cloud.hashing.billing.v1.GoodIncoming
+	120, // 83: cloud.hashing.billing.v1.GetGoodIncomingsByGoodResponse.Infos:type_name -> cloud.hashing.billing.v1.GoodIncoming
+	120, // 84: cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse.Info:type_name -> cloud.hashing.billing.v1.GoodIncoming
+	132, // 85: cloud.hashing.billing.v1.CloudHashingBilling.Version:input_type -> google.protobuf.Empty
+	1,   // 86: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccount:input_type -> cloud.hashing.billing.v1.CreateCoinAccountRequest
+	3,   // 87: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccount:input_type -> cloud.hashing.billing.v1.GetCoinAccountRequest
+	5,   // 88: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountByCoinAddress:input_type -> cloud.hashing.billing.v1.GetCoinAccountByCoinAddressRequest
+	7,   // 89: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccounts:input_type -> cloud.hashing.billing.v1.GetCoinAccountsRequest
+	9,   // 90: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccount:input_type -> cloud.hashing.billing.v1.DeleteCoinAccountRequest
+	12,  // 91: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.CreateCoinAccountTransactionRequest
+	14,  // 92: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionRequest
+	19,  // 93: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoinAccount:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountRequest
+	21,  // 94: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByState:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateRequest
+	23,  // 95: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoin:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinRequest
+	25,  // 96: cloud.hashing.billing.v1.CloudHashingBilling.UpdateCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.UpdateCoinAccountTransactionRequest
+	17,  // 97: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionDetail:input_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionDetailRequest
+	27,  // 98: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccountTransaction:input_type -> cloud.hashing.billing.v1.DeleteCoinAccountTransactionRequest
+	30,  // 99: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformBenefit:input_type -> cloud.hashing.billing.v1.CreatePlatformBenefitRequest
+	39,  // 100: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestPlatformBenefitByGood:input_type -> cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodRequest
+	32,  // 101: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitsByGood:input_type -> cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest
+	37,  // 102: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefit:input_type -> cloud.hashing.billing.v1.GetPlatformBenefitRequest
+	35,  // 103: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitDetail:input_type -> cloud.hashing.billing.v1.GetPlatformBenefitDetailRequest
+	42,  // 104: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformSetting:input_type -> cloud.hashing.billing.v1.CreatePlatformSettingRequest
+	44,  // 105: cloud.hashing.billing.v1.CloudHashingBilling.UpdatePlatformSetting:input_type -> cloud.hashing.billing.v1.UpdatePlatformSettingRequest
+	48,  // 106: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformSetting:input_type -> cloud.hashing.billing.v1.GetPlatformSettingRequest
+	51,  // 107: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserBenefit:input_type -> cloud.hashing.billing.v1.CreateUserBenefitRequest
+	53,  // 108: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByAppUser:input_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest
+	55,  // 109: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByApp:input_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppRequest
+	57,  // 110: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestUserBenefitByGoodAppUser:input_type -> cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserRequest
+	60,  // 111: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinSetting:input_type -> cloud.hashing.billing.v1.CreateCoinSettingRequest
+	62,  // 112: cloud.hashing.billing.v1.CloudHashingBilling.UpdateCoinSetting:input_type -> cloud.hashing.billing.v1.UpdateCoinSettingRequest
+	64,  // 113: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinSetting:input_type -> cloud.hashing.billing.v1.GetCoinSettingRequest
+	66,  // 114: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinSettingByCoin:input_type -> cloud.hashing.billing.v1.GetCoinSettingByCoinRequest
+	69,  // 115: cloud.hashing.billing.v1.CloudHashingBilling.CreateGoodBenefit:input_type -> cloud.hashing.billing.v1.CreateGoodBenefitRequest
+	71,  // 116: cloud.hashing.billing.v1.CloudHashingBilling.UpdateGoodBenefit:input_type -> cloud.hashing.billing.v1.UpdateGoodBenefitRequest
+	73,  // 117: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodBenefit:input_type -> cloud.hashing.billing.v1.GetGoodBenefitRequest
+	75,  // 118: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodBenefitByGood:input_type -> cloud.hashing.billing.v1.GetGoodBenefitByGoodRequest
+	78,  // 119: cloud.hashing.billing.v1.CloudHashingBilling.CreateGoodPayment:input_type -> cloud.hashing.billing.v1.CreateGoodPaymentRequest
+	80,  // 120: cloud.hashing.billing.v1.CloudHashingBilling.UpdateGoodPayment:input_type -> cloud.hashing.billing.v1.UpdateGoodPaymentRequest
+	82,  // 121: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPayment:input_type -> cloud.hashing.billing.v1.GetGoodPaymentRequest
+	84,  // 122: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPayments:input_type -> cloud.hashing.billing.v1.GetGoodPaymentsRequest
+	86,  // 123: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPaymentsByGood:input_type -> cloud.hashing.billing.v1.GetGoodPaymentsByGoodRequest
+	88,  // 124: cloud.hashing.billing.v1.CloudHashingBilling.GetIdleGoodPaymentsByGood:input_type -> cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodRequest
+	90,  // 125: cloud.hashing.billing.v1.CloudHashingBilling.GetIdleGoodPaymentsByGoodPaymentCoin:input_type -> cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest
+	92,  // 126: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPaymentByAccount:input_type -> cloud.hashing.billing.v1.GetGoodPaymentByAccountRequest
+	95,  // 127: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserWithdraw:input_type -> cloud.hashing.billing.v1.CreateUserWithdrawRequest
+	97,  // 128: cloud.hashing.billing.v1.CloudHashingBilling.UpdateUserWithdraw:input_type -> cloud.hashing.billing.v1.UpdateUserWithdrawRequest
+	99,  // 129: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdraw:input_type -> cloud.hashing.billing.v1.GetUserWithdrawRequest
+	101, // 130: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdrawsByAppUser:input_type -> cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest
+	103, // 131: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdrawsByOtherAppUser:input_type -> cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest
+	105, // 132: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdrawByAccount:input_type -> cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest
+	108, // 133: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserDirectBenefit:input_type -> cloud.hashing.billing.v1.CreateUserDirectBenefitRequest
+	110, // 134: cloud.hashing.billing.v1.CloudHashingBilling.UpdateUserDirectBenefit:input_type -> cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest
+	112, // 135: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefit:input_type -> cloud.hashing.billing.v1.GetUserDirectBenefitRequest
+	114, // 136: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefitsByAppUser:input_type -> cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest
+	116, // 137: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefitsByOtherAppUser:input_type -> cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest
+	118, // 138: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefitByAccount:input_type -> cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest
+	121, // 139: cloud.hashing.billing.v1.CloudHashingBilling.CreateGoodIncoming:input_type -> cloud.hashing.billing.v1.CreateGoodIncomingRequest
+	123, // 140: cloud.hashing.billing.v1.CloudHashingBilling.UpdateGoodIncoming:input_type -> cloud.hashing.billing.v1.UpdateGoodIncomingRequest
+	125, // 141: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodIncoming:input_type -> cloud.hashing.billing.v1.GetGoodIncomingRequest
+	127, // 142: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodIncomingsByGood:input_type -> cloud.hashing.billing.v1.GetGoodIncomingsByGoodRequest
+	129, // 143: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodIncomingByGoodCoin:input_type -> cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinRequest
+	133, // 144: cloud.hashing.billing.v1.CloudHashingBilling.Version:output_type -> npool.v1.VersionResponse
+	2,   // 145: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccount:output_type -> cloud.hashing.billing.v1.CreateCoinAccountResponse
+	4,   // 146: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccount:output_type -> cloud.hashing.billing.v1.GetCoinAccountResponse
+	6,   // 147: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountByCoinAddress:output_type -> cloud.hashing.billing.v1.GetCoinAccountByCoinAddressResponse
+	8,   // 148: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccounts:output_type -> cloud.hashing.billing.v1.GetCoinAccountsResponse
+	10,  // 149: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccount:output_type -> cloud.hashing.billing.v1.DeleteCoinAccountResponse
+	13,  // 150: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.CreateCoinAccountTransactionResponse
+	15,  // 151: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionResponse
+	20,  // 152: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoinAccount:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountResponse
+	22,  // 153: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByState:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateResponse
+	24,  // 154: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionsByCoin:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinResponse
+	26,  // 155: cloud.hashing.billing.v1.CloudHashingBilling.UpdateCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.UpdateCoinAccountTransactionResponse
+	18,  // 156: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinAccountTransactionDetail:output_type -> cloud.hashing.billing.v1.GetCoinAccountTransactionDetailResponse
+	28,  // 157: cloud.hashing.billing.v1.CloudHashingBilling.DeleteCoinAccountTransaction:output_type -> cloud.hashing.billing.v1.DeleteCoinAccountTransactionResponse
+	31,  // 158: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformBenefit:output_type -> cloud.hashing.billing.v1.CreatePlatformBenefitResponse
+	40,  // 159: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestPlatformBenefitByGood:output_type -> cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodResponse
+	33,  // 160: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitsByGood:output_type -> cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse
+	38,  // 161: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefit:output_type -> cloud.hashing.billing.v1.GetPlatformBenefitResponse
+	36,  // 162: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformBenefitDetail:output_type -> cloud.hashing.billing.v1.GetPlatformBenefitDetailResponse
+	43,  // 163: cloud.hashing.billing.v1.CloudHashingBilling.CreatePlatformSetting:output_type -> cloud.hashing.billing.v1.CreatePlatformSettingResponse
+	45,  // 164: cloud.hashing.billing.v1.CloudHashingBilling.UpdatePlatformSetting:output_type -> cloud.hashing.billing.v1.UpdatePlatformSettingResponse
+	49,  // 165: cloud.hashing.billing.v1.CloudHashingBilling.GetPlatformSetting:output_type -> cloud.hashing.billing.v1.GetPlatformSettingResponse
+	52,  // 166: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserBenefit:output_type -> cloud.hashing.billing.v1.CreateUserBenefitResponse
+	54,  // 167: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByAppUser:output_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse
+	56,  // 168: cloud.hashing.billing.v1.CloudHashingBilling.GetUserBenefitsByApp:output_type -> cloud.hashing.billing.v1.GetUserBenefitsByAppResponse
+	58,  // 169: cloud.hashing.billing.v1.CloudHashingBilling.GetLatestUserBenefitByGoodAppUser:output_type -> cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse
+	61,  // 170: cloud.hashing.billing.v1.CloudHashingBilling.CreateCoinSetting:output_type -> cloud.hashing.billing.v1.CreateCoinSettingResponse
+	63,  // 171: cloud.hashing.billing.v1.CloudHashingBilling.UpdateCoinSetting:output_type -> cloud.hashing.billing.v1.UpdateCoinSettingResponse
+	65,  // 172: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinSetting:output_type -> cloud.hashing.billing.v1.GetCoinSettingResponse
+	67,  // 173: cloud.hashing.billing.v1.CloudHashingBilling.GetCoinSettingByCoin:output_type -> cloud.hashing.billing.v1.GetCoinSettingByCoinResponse
+	70,  // 174: cloud.hashing.billing.v1.CloudHashingBilling.CreateGoodBenefit:output_type -> cloud.hashing.billing.v1.CreateGoodBenefitResponse
+	72,  // 175: cloud.hashing.billing.v1.CloudHashingBilling.UpdateGoodBenefit:output_type -> cloud.hashing.billing.v1.UpdateGoodBenefitResponse
+	74,  // 176: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodBenefit:output_type -> cloud.hashing.billing.v1.GetGoodBenefitResponse
+	76,  // 177: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodBenefitByGood:output_type -> cloud.hashing.billing.v1.GetGoodBenefitByGoodResponse
+	79,  // 178: cloud.hashing.billing.v1.CloudHashingBilling.CreateGoodPayment:output_type -> cloud.hashing.billing.v1.CreateGoodPaymentResponse
+	81,  // 179: cloud.hashing.billing.v1.CloudHashingBilling.UpdateGoodPayment:output_type -> cloud.hashing.billing.v1.UpdateGoodPaymentResponse
+	83,  // 180: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPayment:output_type -> cloud.hashing.billing.v1.GetGoodPaymentResponse
+	85,  // 181: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPayments:output_type -> cloud.hashing.billing.v1.GetGoodPaymentsResponse
+	87,  // 182: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPaymentsByGood:output_type -> cloud.hashing.billing.v1.GetGoodPaymentsByGoodResponse
+	89,  // 183: cloud.hashing.billing.v1.CloudHashingBilling.GetIdleGoodPaymentsByGood:output_type -> cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodResponse
+	91,  // 184: cloud.hashing.billing.v1.CloudHashingBilling.GetIdleGoodPaymentsByGoodPaymentCoin:output_type -> cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinResponse
+	93,  // 185: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodPaymentByAccount:output_type -> cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse
+	96,  // 186: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserWithdraw:output_type -> cloud.hashing.billing.v1.CreateUserWithdrawResponse
+	98,  // 187: cloud.hashing.billing.v1.CloudHashingBilling.UpdateUserWithdraw:output_type -> cloud.hashing.billing.v1.UpdateUserWithdrawResponse
+	100, // 188: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdraw:output_type -> cloud.hashing.billing.v1.GetUserWithdrawResponse
+	102, // 189: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdrawsByAppUser:output_type -> cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse
+	104, // 190: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdrawsByOtherAppUser:output_type -> cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse
+	106, // 191: cloud.hashing.billing.v1.CloudHashingBilling.GetUserWithdrawByAccount:output_type -> cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse
+	109, // 192: cloud.hashing.billing.v1.CloudHashingBilling.CreateUserDirectBenefit:output_type -> cloud.hashing.billing.v1.CreateUserDirectBenefitResponse
+	111, // 193: cloud.hashing.billing.v1.CloudHashingBilling.UpdateUserDirectBenefit:output_type -> cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse
+	113, // 194: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefit:output_type -> cloud.hashing.billing.v1.GetUserDirectBenefitResponse
+	115, // 195: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefitsByAppUser:output_type -> cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse
+	117, // 196: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefitsByOtherAppUser:output_type -> cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse
+	119, // 197: cloud.hashing.billing.v1.CloudHashingBilling.GetUserDirectBenefitByAccount:output_type -> cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse
+	122, // 198: cloud.hashing.billing.v1.CloudHashingBilling.CreateGoodIncoming:output_type -> cloud.hashing.billing.v1.CreateGoodIncomingResponse
+	124, // 199: cloud.hashing.billing.v1.CloudHashingBilling.UpdateGoodIncoming:output_type -> cloud.hashing.billing.v1.UpdateGoodIncomingResponse
+	126, // 200: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodIncoming:output_type -> cloud.hashing.billing.v1.GetGoodIncomingResponse
+	128, // 201: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodIncomingsByGood:output_type -> cloud.hashing.billing.v1.GetGoodIncomingsByGoodResponse
+	130, // 202: cloud.hashing.billing.v1.CloudHashingBilling.GetGoodIncomingByGoodCoin:output_type -> cloud.hashing.billing.v1.GetGoodIncomingByGoodCoinResponse
+	144, // [144:203] is the sub-list for method output_type
+	85,  // [85:144] is the sub-list for method input_type
+	85,  // [85:85] is the sub-list for extension type_name
+	85,  // [85:85] is the sub-list for extension extendee
+	0,   // [0:85] is the sub-list for field type_name
 }
 
 func init() { file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() }
@@ -10389,114 +9829,6 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 			}
 		}
 		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[94].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GoodSetting); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[95].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateGoodSettingRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[96].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateGoodSettingResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[97].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateGoodSettingRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[98].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateGoodSettingResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[99].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetGoodSettingRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[100].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetGoodSettingResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[101].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetGoodSettingByGoodRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[102].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetGoodSettingByGoodResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[103].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserWithdraw); i {
 			case 0:
 				return &v.state
@@ -10508,7 +9840,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[104].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[95].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUserWithdrawRequest); i {
 			case 0:
 				return &v.state
@@ -10520,7 +9852,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[105].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[96].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUserWithdrawResponse); i {
 			case 0:
 				return &v.state
@@ -10532,7 +9864,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[106].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[97].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateUserWithdrawRequest); i {
 			case 0:
 				return &v.state
@@ -10544,7 +9876,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[107].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[98].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateUserWithdrawResponse); i {
 			case 0:
 				return &v.state
@@ -10556,7 +9888,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[108].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[99].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserWithdrawRequest); i {
 			case 0:
 				return &v.state
@@ -10568,7 +9900,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[109].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[100].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserWithdrawResponse); i {
 			case 0:
 				return &v.state
@@ -10580,7 +9912,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[110].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[101].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserWithdrawsByAppUserRequest); i {
 			case 0:
 				return &v.state
@@ -10592,7 +9924,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[111].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[102].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserWithdrawsByAppUserResponse); i {
 			case 0:
 				return &v.state
@@ -10604,7 +9936,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[112].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[103].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserWithdrawsByOtherAppUserRequest); i {
 			case 0:
 				return &v.state
@@ -10616,7 +9948,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[113].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[104].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserWithdrawsByOtherAppUserResponse); i {
 			case 0:
 				return &v.state
@@ -10628,7 +9960,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[114].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[105].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserWithdrawByAccountRequest); i {
 			case 0:
 				return &v.state
@@ -10640,7 +9972,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[115].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[106].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserWithdrawByAccountResponse); i {
 			case 0:
 				return &v.state
@@ -10652,7 +9984,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[116].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[107].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserDirectBenefit); i {
 			case 0:
 				return &v.state
@@ -10664,7 +9996,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[117].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[108].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUserDirectBenefitRequest); i {
 			case 0:
 				return &v.state
@@ -10676,7 +10008,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[118].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[109].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUserDirectBenefitResponse); i {
 			case 0:
 				return &v.state
@@ -10688,7 +10020,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[119].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[110].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateUserDirectBenefitRequest); i {
 			case 0:
 				return &v.state
@@ -10700,7 +10032,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[120].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[111].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateUserDirectBenefitResponse); i {
 			case 0:
 				return &v.state
@@ -10712,7 +10044,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[121].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[112].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserDirectBenefitRequest); i {
 			case 0:
 				return &v.state
@@ -10724,7 +10056,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[122].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[113].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserDirectBenefitResponse); i {
 			case 0:
 				return &v.state
@@ -10736,7 +10068,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[123].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[114].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserDirectBenefitsByAppUserRequest); i {
 			case 0:
 				return &v.state
@@ -10748,7 +10080,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[124].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[115].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserDirectBenefitsByAppUserResponse); i {
 			case 0:
 				return &v.state
@@ -10760,7 +10092,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[125].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[116].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserDirectBenefitsByOtherAppUserRequest); i {
 			case 0:
 				return &v.state
@@ -10772,7 +10104,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[126].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[117].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserDirectBenefitsByOtherAppUserResponse); i {
 			case 0:
 				return &v.state
@@ -10784,7 +10116,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[127].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[118].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserDirectBenefitByAccountRequest); i {
 			case 0:
 				return &v.state
@@ -10796,7 +10128,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[128].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[119].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserDirectBenefitByAccountResponse); i {
 			case 0:
 				return &v.state
@@ -10808,7 +10140,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[129].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[120].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GoodIncoming); i {
 			case 0:
 				return &v.state
@@ -10820,7 +10152,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[130].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[121].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateGoodIncomingRequest); i {
 			case 0:
 				return &v.state
@@ -10832,7 +10164,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[131].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[122].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateGoodIncomingResponse); i {
 			case 0:
 				return &v.state
@@ -10844,7 +10176,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[132].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[123].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateGoodIncomingRequest); i {
 			case 0:
 				return &v.state
@@ -10856,7 +10188,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[133].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[124].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateGoodIncomingResponse); i {
 			case 0:
 				return &v.state
@@ -10868,7 +10200,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[134].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[125].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetGoodIncomingRequest); i {
 			case 0:
 				return &v.state
@@ -10880,7 +10212,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[135].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[126].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetGoodIncomingResponse); i {
 			case 0:
 				return &v.state
@@ -10892,7 +10224,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[136].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[127].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetGoodIncomingsByGoodRequest); i {
 			case 0:
 				return &v.state
@@ -10904,7 +10236,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[137].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[128].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetGoodIncomingsByGoodResponse); i {
 			case 0:
 				return &v.state
@@ -10916,7 +10248,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[138].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[129].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetGoodIncomingByGoodCoinRequest); i {
 			case 0:
 				return &v.state
@@ -10928,7 +10260,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 				return nil
 			}
 		}
-		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[139].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_msgTypes[130].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetGoodIncomingByGoodCoinResponse); i {
 			case 0:
 				return &v.state
@@ -10947,7 +10279,7 @@ func file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_cloud_hashing_billing_cloud_hashing_billing_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   140,
+			NumMessages:   131,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

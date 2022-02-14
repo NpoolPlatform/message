@@ -445,45 +445,6 @@ export type GetGoodPaymentByAccountResponse = {
   info?: GoodPayment
 }
 
-export type GoodSetting = {
-  id?: string
-  goodID?: string
-  warmAccountUSDAmount?: number
-  warmAccountCoinAmount?: number
-}
-
-export type CreateGoodSettingRequest = {
-  info?: GoodSetting
-}
-
-export type CreateGoodSettingResponse = {
-  info?: GoodSetting
-}
-
-export type UpdateGoodSettingRequest = {
-  info?: GoodSetting
-}
-
-export type UpdateGoodSettingResponse = {
-  info?: GoodSetting
-}
-
-export type GetGoodSettingRequest = {
-  id?: string
-}
-
-export type GetGoodSettingResponse = {
-  info?: GoodSetting
-}
-
-export type GetGoodSettingByGoodRequest = {
-  goodID?: string
-}
-
-export type GetGoodSettingByGoodResponse = {
-  info?: GoodSetting
-}
-
 export type UserWithdraw = {
   id?: string
   appID?: string
@@ -776,18 +737,6 @@ export class CloudHashingBilling {
   }
   static GetGoodPaymentByAccount(req: GetGoodPaymentByAccountRequest, initReq?: fm.InitReq): Promise<GetGoodPaymentByAccountResponse> {
     return fm.fetchReq<GetGoodPaymentByAccountRequest, GetGoodPaymentByAccountResponse>(`/v1/get/good/payment/by/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static CreateGoodSetting(req: CreateGoodSettingRequest, initReq?: fm.InitReq): Promise<CreateGoodSettingResponse> {
-    return fm.fetchReq<CreateGoodSettingRequest, CreateGoodSettingResponse>(`/v1/create/good/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static UpdateGoodSetting(req: UpdateGoodSettingRequest, initReq?: fm.InitReq): Promise<UpdateGoodSettingResponse> {
-    return fm.fetchReq<UpdateGoodSettingRequest, UpdateGoodSettingResponse>(`/v1/update/good/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetGoodSetting(req: GetGoodSettingRequest, initReq?: fm.InitReq): Promise<GetGoodSettingResponse> {
-    return fm.fetchReq<GetGoodSettingRequest, GetGoodSettingResponse>(`/v1/get/good/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetGoodSettingByGood(req: GetGoodSettingByGoodRequest, initReq?: fm.InitReq): Promise<GetGoodSettingByGoodResponse> {
-    return fm.fetchReq<GetGoodSettingByGoodRequest, GetGoodSettingByGoodResponse>(`/v1/get/good/setting/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateUserWithdraw(req: CreateUserWithdrawRequest, initReq?: fm.InitReq): Promise<CreateUserWithdrawResponse> {
     return fm.fetchReq<CreateUserWithdrawRequest, CreateUserWithdrawResponse>(`/v1/create/user/withdraw`, {...initReq, method: "POST", body: JSON.stringify(req)})

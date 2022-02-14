@@ -20,8 +20,6 @@
     - [CreateGoodIncomingResponse](#cloud.hashing.billing.v1.CreateGoodIncomingResponse)
     - [CreateGoodPaymentRequest](#cloud.hashing.billing.v1.CreateGoodPaymentRequest)
     - [CreateGoodPaymentResponse](#cloud.hashing.billing.v1.CreateGoodPaymentResponse)
-    - [CreateGoodSettingRequest](#cloud.hashing.billing.v1.CreateGoodSettingRequest)
-    - [CreateGoodSettingResponse](#cloud.hashing.billing.v1.CreateGoodSettingResponse)
     - [CreatePlatformBenefitRequest](#cloud.hashing.billing.v1.CreatePlatformBenefitRequest)
     - [CreatePlatformBenefitResponse](#cloud.hashing.billing.v1.CreatePlatformBenefitResponse)
     - [CreatePlatformSettingRequest](#cloud.hashing.billing.v1.CreatePlatformSettingRequest)
@@ -74,10 +72,6 @@
     - [GetGoodPaymentsByGoodResponse](#cloud.hashing.billing.v1.GetGoodPaymentsByGoodResponse)
     - [GetGoodPaymentsRequest](#cloud.hashing.billing.v1.GetGoodPaymentsRequest)
     - [GetGoodPaymentsResponse](#cloud.hashing.billing.v1.GetGoodPaymentsResponse)
-    - [GetGoodSettingByGoodRequest](#cloud.hashing.billing.v1.GetGoodSettingByGoodRequest)
-    - [GetGoodSettingByGoodResponse](#cloud.hashing.billing.v1.GetGoodSettingByGoodResponse)
-    - [GetGoodSettingRequest](#cloud.hashing.billing.v1.GetGoodSettingRequest)
-    - [GetGoodSettingResponse](#cloud.hashing.billing.v1.GetGoodSettingResponse)
     - [GetIdleGoodPaymentsByGoodPaymentCoinRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest)
     - [GetIdleGoodPaymentsByGoodPaymentCoinResponse](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinResponse)
     - [GetIdleGoodPaymentsByGoodRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodRequest)
@@ -119,7 +113,6 @@
     - [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit)
     - [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming)
     - [GoodPayment](#cloud.hashing.billing.v1.GoodPayment)
-    - [GoodSetting](#cloud.hashing.billing.v1.GoodSetting)
     - [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit)
     - [PlatformBenefitDetail](#cloud.hashing.billing.v1.PlatformBenefitDetail)
     - [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting)
@@ -133,8 +126,6 @@
     - [UpdateGoodIncomingResponse](#cloud.hashing.billing.v1.UpdateGoodIncomingResponse)
     - [UpdateGoodPaymentRequest](#cloud.hashing.billing.v1.UpdateGoodPaymentRequest)
     - [UpdateGoodPaymentResponse](#cloud.hashing.billing.v1.UpdateGoodPaymentResponse)
-    - [UpdateGoodSettingRequest](#cloud.hashing.billing.v1.UpdateGoodSettingRequest)
-    - [UpdateGoodSettingResponse](#cloud.hashing.billing.v1.UpdateGoodSettingResponse)
     - [UpdatePlatformSettingRequest](#cloud.hashing.billing.v1.UpdatePlatformSettingRequest)
     - [UpdatePlatformSettingResponse](#cloud.hashing.billing.v1.UpdatePlatformSettingResponse)
     - [UpdateUserDirectBenefitRequest](#cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest)
@@ -164,8 +155,6 @@
     - [CreateGoodIncomingResponse](#cloud.hashing.billing.v1.CreateGoodIncomingResponse)
     - [CreateGoodPaymentRequest](#cloud.hashing.billing.v1.CreateGoodPaymentRequest)
     - [CreateGoodPaymentResponse](#cloud.hashing.billing.v1.CreateGoodPaymentResponse)
-    - [CreateGoodSettingRequest](#cloud.hashing.billing.v1.CreateGoodSettingRequest)
-    - [CreateGoodSettingResponse](#cloud.hashing.billing.v1.CreateGoodSettingResponse)
     - [CreatePlatformBenefitRequest](#cloud.hashing.billing.v1.CreatePlatformBenefitRequest)
     - [CreatePlatformBenefitResponse](#cloud.hashing.billing.v1.CreatePlatformBenefitResponse)
     - [CreatePlatformSettingRequest](#cloud.hashing.billing.v1.CreatePlatformSettingRequest)
@@ -218,10 +207,6 @@
     - [GetGoodPaymentsByGoodResponse](#cloud.hashing.billing.v1.GetGoodPaymentsByGoodResponse)
     - [GetGoodPaymentsRequest](#cloud.hashing.billing.v1.GetGoodPaymentsRequest)
     - [GetGoodPaymentsResponse](#cloud.hashing.billing.v1.GetGoodPaymentsResponse)
-    - [GetGoodSettingByGoodRequest](#cloud.hashing.billing.v1.GetGoodSettingByGoodRequest)
-    - [GetGoodSettingByGoodResponse](#cloud.hashing.billing.v1.GetGoodSettingByGoodResponse)
-    - [GetGoodSettingRequest](#cloud.hashing.billing.v1.GetGoodSettingRequest)
-    - [GetGoodSettingResponse](#cloud.hashing.billing.v1.GetGoodSettingResponse)
     - [GetIdleGoodPaymentsByGoodPaymentCoinRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest)
     - [GetIdleGoodPaymentsByGoodPaymentCoinResponse](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinResponse)
     - [GetIdleGoodPaymentsByGoodRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodRequest)
@@ -263,7 +248,6 @@
     - [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit)
     - [GoodIncoming](#cloud.hashing.billing.v1.GoodIncoming)
     - [GoodPayment](#cloud.hashing.billing.v1.GoodPayment)
-    - [GoodSetting](#cloud.hashing.billing.v1.GoodSetting)
     - [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit)
     - [PlatformBenefitDetail](#cloud.hashing.billing.v1.PlatformBenefitDetail)
     - [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting)
@@ -277,8 +261,6 @@
     - [UpdateGoodIncomingResponse](#cloud.hashing.billing.v1.UpdateGoodIncomingResponse)
     - [UpdateGoodPaymentRequest](#cloud.hashing.billing.v1.UpdateGoodPaymentRequest)
     - [UpdateGoodPaymentResponse](#cloud.hashing.billing.v1.UpdateGoodPaymentResponse)
-    - [UpdateGoodSettingRequest](#cloud.hashing.billing.v1.UpdateGoodSettingRequest)
-    - [UpdateGoodSettingResponse](#cloud.hashing.billing.v1.UpdateGoodSettingResponse)
     - [UpdatePlatformSettingRequest](#cloud.hashing.billing.v1.UpdatePlatformSettingRequest)
     - [UpdatePlatformSettingResponse](#cloud.hashing.billing.v1.UpdatePlatformSettingResponse)
     - [UpdateUserDirectBenefitRequest](#cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest)
@@ -561,36 +543,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.CreateGoodSettingRequest"></a>
-
-### CreateGoodSettingRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [GoodSetting](#cloud.hashing.billing.v1.GoodSetting) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.CreateGoodSettingResponse"></a>
-
-### CreateGoodSettingResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [GoodSetting](#cloud.hashing.billing.v1.GoodSetting) |  |  |
 
 
 
@@ -1371,66 +1323,6 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodSettingByGoodRequest"></a>
-
-### GetGoodSettingByGoodRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| GoodID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.GetGoodSettingByGoodResponse"></a>
-
-### GetGoodSettingByGoodResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [GoodSetting](#cloud.hashing.billing.v1.GoodSetting) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.GetGoodSettingRequest"></a>
-
-### GetGoodSettingRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.GetGoodSettingResponse"></a>
-
-### GetGoodSettingResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [GoodSetting](#cloud.hashing.billing.v1.GoodSetting) |  |  |
-
-
-
-
-
-
 <a name="cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest"></a>
 
 ### GetIdleGoodPaymentsByGoodPaymentCoinRequest
@@ -2070,24 +1962,6 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GoodSetting"></a>
-
-### GoodSetting
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| GoodID | [string](#string) |  |  |
-| WarmAccountUSDAmount | [double](#double) |  |  |
-| WarmAccountCoinAmount | [double](#double) |  |  |
-
-
-
-
-
-
 <a name="cloud.hashing.billing.v1.PlatformBenefit"></a>
 
 ### PlatformBenefit
@@ -2289,36 +2163,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.UpdateGoodSettingRequest"></a>
-
-### UpdateGoodSettingRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [GoodSetting](#cloud.hashing.billing.v1.GoodSetting) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.UpdateGoodSettingResponse"></a>
-
-### UpdateGoodSettingResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [GoodSetting](#cloud.hashing.billing.v1.GoodSetting) |  |  |
 
 
 
@@ -2532,10 +2376,6 @@ Cloud Hashing Billing
 | GetIdleGoodPaymentsByGood | [GetIdleGoodPaymentsByGoodRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodRequest) | [GetIdleGoodPaymentsByGoodResponse](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodResponse) |  |
 | GetIdleGoodPaymentsByGoodPaymentCoin | [GetIdleGoodPaymentsByGoodPaymentCoinRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest) | [GetIdleGoodPaymentsByGoodPaymentCoinResponse](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinResponse) |  |
 | GetGoodPaymentByAccount | [GetGoodPaymentByAccountRequest](#cloud.hashing.billing.v1.GetGoodPaymentByAccountRequest) | [GetGoodPaymentByAccountResponse](#cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse) |  |
-| CreateGoodSetting | [CreateGoodSettingRequest](#cloud.hashing.billing.v1.CreateGoodSettingRequest) | [CreateGoodSettingResponse](#cloud.hashing.billing.v1.CreateGoodSettingResponse) |  |
-| UpdateGoodSetting | [UpdateGoodSettingRequest](#cloud.hashing.billing.v1.UpdateGoodSettingRequest) | [UpdateGoodSettingResponse](#cloud.hashing.billing.v1.UpdateGoodSettingResponse) |  |
-| GetGoodSetting | [GetGoodSettingRequest](#cloud.hashing.billing.v1.GetGoodSettingRequest) | [GetGoodSettingResponse](#cloud.hashing.billing.v1.GetGoodSettingResponse) |  |
-| GetGoodSettingByGood | [GetGoodSettingByGoodRequest](#cloud.hashing.billing.v1.GetGoodSettingByGoodRequest) | [GetGoodSettingByGoodResponse](#cloud.hashing.billing.v1.GetGoodSettingByGoodResponse) |  |
 | CreateUserWithdraw | [CreateUserWithdrawRequest](#cloud.hashing.billing.v1.CreateUserWithdrawRequest) | [CreateUserWithdrawResponse](#cloud.hashing.billing.v1.CreateUserWithdrawResponse) |  |
 | UpdateUserWithdraw | [UpdateUserWithdrawRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawRequest) | [UpdateUserWithdrawResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawResponse) |  |
 | GetUserWithdraw | [GetUserWithdrawRequest](#cloud.hashing.billing.v1.GetUserWithdrawRequest) | [GetUserWithdrawResponse](#cloud.hashing.billing.v1.GetUserWithdrawResponse) |  |
@@ -2830,36 +2670,6 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.CreateGoodSettingRequest"></a>
-
-### CreateGoodSettingRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [GoodSetting](#cloud.hashing.billing.v1.GoodSetting) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.CreateGoodSettingResponse"></a>
-
-### CreateGoodSettingResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [GoodSetting](#cloud.hashing.billing.v1.GoodSetting) |  |  |
-
-
-
-
-
-
 <a name="cloud.hashing.billing.v1.CreatePlatformBenefitRequest"></a>
 
 ### CreatePlatformBenefitRequest
@@ -3634,66 +3444,6 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodSettingByGoodRequest"></a>
-
-### GetGoodSettingByGoodRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| GoodID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.GetGoodSettingByGoodResponse"></a>
-
-### GetGoodSettingByGoodResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [GoodSetting](#cloud.hashing.billing.v1.GoodSetting) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.GetGoodSettingRequest"></a>
-
-### GetGoodSettingRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.GetGoodSettingResponse"></a>
-
-### GetGoodSettingResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [GoodSetting](#cloud.hashing.billing.v1.GoodSetting) |  |  |
-
-
-
-
-
-
 <a name="cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest"></a>
 
 ### GetIdleGoodPaymentsByGoodPaymentCoinRequest
@@ -4333,24 +4083,6 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GoodSetting"></a>
-
-### GoodSetting
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| GoodID | [string](#string) |  |  |
-| WarmAccountUSDAmount | [double](#double) |  |  |
-| WarmAccountCoinAmount | [double](#double) |  |  |
-
-
-
-
-
-
 <a name="cloud.hashing.billing.v1.PlatformBenefit"></a>
 
 ### PlatformBenefit
@@ -4552,36 +4284,6 @@ Cloud Hashing Billing
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.UpdateGoodSettingRequest"></a>
-
-### UpdateGoodSettingRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [GoodSetting](#cloud.hashing.billing.v1.GoodSetting) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.billing.v1.UpdateGoodSettingResponse"></a>
-
-### UpdateGoodSettingResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [GoodSetting](#cloud.hashing.billing.v1.GoodSetting) |  |  |
 
 
 
@@ -4795,10 +4497,6 @@ Cloud Hashing Billing
 | GetIdleGoodPaymentsByGood | [GetIdleGoodPaymentsByGoodRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodRequest) | [GetIdleGoodPaymentsByGoodResponse](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodResponse) |  |
 | GetIdleGoodPaymentsByGoodPaymentCoin | [GetIdleGoodPaymentsByGoodPaymentCoinRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest) | [GetIdleGoodPaymentsByGoodPaymentCoinResponse](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinResponse) |  |
 | GetGoodPaymentByAccount | [GetGoodPaymentByAccountRequest](#cloud.hashing.billing.v1.GetGoodPaymentByAccountRequest) | [GetGoodPaymentByAccountResponse](#cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse) |  |
-| CreateGoodSetting | [CreateGoodSettingRequest](#cloud.hashing.billing.v1.CreateGoodSettingRequest) | [CreateGoodSettingResponse](#cloud.hashing.billing.v1.CreateGoodSettingResponse) |  |
-| UpdateGoodSetting | [UpdateGoodSettingRequest](#cloud.hashing.billing.v1.UpdateGoodSettingRequest) | [UpdateGoodSettingResponse](#cloud.hashing.billing.v1.UpdateGoodSettingResponse) |  |
-| GetGoodSetting | [GetGoodSettingRequest](#cloud.hashing.billing.v1.GetGoodSettingRequest) | [GetGoodSettingResponse](#cloud.hashing.billing.v1.GetGoodSettingResponse) |  |
-| GetGoodSettingByGood | [GetGoodSettingByGoodRequest](#cloud.hashing.billing.v1.GetGoodSettingByGoodRequest) | [GetGoodSettingByGoodResponse](#cloud.hashing.billing.v1.GetGoodSettingByGoodResponse) |  |
 | CreateUserWithdraw | [CreateUserWithdrawRequest](#cloud.hashing.billing.v1.CreateUserWithdrawRequest) | [CreateUserWithdrawResponse](#cloud.hashing.billing.v1.CreateUserWithdrawResponse) |  |
 | UpdateUserWithdraw | [UpdateUserWithdrawRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawRequest) | [UpdateUserWithdrawResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawResponse) |  |
 | GetUserWithdraw | [GetUserWithdrawRequest](#cloud.hashing.billing.v1.GetUserWithdrawRequest) | [GetUserWithdrawResponse](#cloud.hashing.billing.v1.GetUserWithdrawResponse) |  |

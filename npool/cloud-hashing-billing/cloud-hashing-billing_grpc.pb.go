@@ -67,10 +67,6 @@ type CloudHashingBillingClient interface {
 	GetIdleGoodPaymentsByGood(ctx context.Context, in *GetIdleGoodPaymentsByGoodRequest, opts ...grpc.CallOption) (*GetIdleGoodPaymentsByGoodResponse, error)
 	GetIdleGoodPaymentsByGoodPaymentCoin(ctx context.Context, in *GetIdleGoodPaymentsByGoodPaymentCoinRequest, opts ...grpc.CallOption) (*GetIdleGoodPaymentsByGoodPaymentCoinResponse, error)
 	GetGoodPaymentByAccount(ctx context.Context, in *GetGoodPaymentByAccountRequest, opts ...grpc.CallOption) (*GetGoodPaymentByAccountResponse, error)
-	CreateGoodSetting(ctx context.Context, in *CreateGoodSettingRequest, opts ...grpc.CallOption) (*CreateGoodSettingResponse, error)
-	UpdateGoodSetting(ctx context.Context, in *UpdateGoodSettingRequest, opts ...grpc.CallOption) (*UpdateGoodSettingResponse, error)
-	GetGoodSetting(ctx context.Context, in *GetGoodSettingRequest, opts ...grpc.CallOption) (*GetGoodSettingResponse, error)
-	GetGoodSettingByGood(ctx context.Context, in *GetGoodSettingByGoodRequest, opts ...grpc.CallOption) (*GetGoodSettingByGoodResponse, error)
 	CreateUserWithdraw(ctx context.Context, in *CreateUserWithdrawRequest, opts ...grpc.CallOption) (*CreateUserWithdrawResponse, error)
 	UpdateUserWithdraw(ctx context.Context, in *UpdateUserWithdrawRequest, opts ...grpc.CallOption) (*UpdateUserWithdrawResponse, error)
 	GetUserWithdraw(ctx context.Context, in *GetUserWithdrawRequest, opts ...grpc.CallOption) (*GetUserWithdrawResponse, error)
@@ -476,42 +472,6 @@ func (c *cloudHashingBillingClient) GetGoodPaymentByAccount(ctx context.Context,
 	return out, nil
 }
 
-func (c *cloudHashingBillingClient) CreateGoodSetting(ctx context.Context, in *CreateGoodSettingRequest, opts ...grpc.CallOption) (*CreateGoodSettingResponse, error) {
-	out := new(CreateGoodSettingResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/CreateGoodSetting", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cloudHashingBillingClient) UpdateGoodSetting(ctx context.Context, in *UpdateGoodSettingRequest, opts ...grpc.CallOption) (*UpdateGoodSettingResponse, error) {
-	out := new(UpdateGoodSettingResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateGoodSetting", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cloudHashingBillingClient) GetGoodSetting(ctx context.Context, in *GetGoodSettingRequest, opts ...grpc.CallOption) (*GetGoodSettingResponse, error) {
-	out := new(GetGoodSettingResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodSetting", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cloudHashingBillingClient) GetGoodSettingByGood(ctx context.Context, in *GetGoodSettingByGoodRequest, opts ...grpc.CallOption) (*GetGoodSettingByGoodResponse, error) {
-	out := new(GetGoodSettingByGoodResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodSettingByGood", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *cloudHashingBillingClient) CreateUserWithdraw(ctx context.Context, in *CreateUserWithdrawRequest, opts ...grpc.CallOption) (*CreateUserWithdrawResponse, error) {
 	out := new(CreateUserWithdrawResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/CreateUserWithdraw", in, out, opts...)
@@ -712,10 +672,6 @@ type CloudHashingBillingServer interface {
 	GetIdleGoodPaymentsByGood(context.Context, *GetIdleGoodPaymentsByGoodRequest) (*GetIdleGoodPaymentsByGoodResponse, error)
 	GetIdleGoodPaymentsByGoodPaymentCoin(context.Context, *GetIdleGoodPaymentsByGoodPaymentCoinRequest) (*GetIdleGoodPaymentsByGoodPaymentCoinResponse, error)
 	GetGoodPaymentByAccount(context.Context, *GetGoodPaymentByAccountRequest) (*GetGoodPaymentByAccountResponse, error)
-	CreateGoodSetting(context.Context, *CreateGoodSettingRequest) (*CreateGoodSettingResponse, error)
-	UpdateGoodSetting(context.Context, *UpdateGoodSettingRequest) (*UpdateGoodSettingResponse, error)
-	GetGoodSetting(context.Context, *GetGoodSettingRequest) (*GetGoodSettingResponse, error)
-	GetGoodSettingByGood(context.Context, *GetGoodSettingByGoodRequest) (*GetGoodSettingByGoodResponse, error)
 	CreateUserWithdraw(context.Context, *CreateUserWithdrawRequest) (*CreateUserWithdrawResponse, error)
 	UpdateUserWithdraw(context.Context, *UpdateUserWithdrawRequest) (*UpdateUserWithdrawResponse, error)
 	GetUserWithdraw(context.Context, *GetUserWithdrawRequest) (*GetUserWithdrawResponse, error)
@@ -865,18 +821,6 @@ func (UnimplementedCloudHashingBillingServer) GetIdleGoodPaymentsByGoodPaymentCo
 }
 func (UnimplementedCloudHashingBillingServer) GetGoodPaymentByAccount(context.Context, *GetGoodPaymentByAccountRequest) (*GetGoodPaymentByAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodPaymentByAccount not implemented")
-}
-func (UnimplementedCloudHashingBillingServer) CreateGoodSetting(context.Context, *CreateGoodSettingRequest) (*CreateGoodSettingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateGoodSetting not implemented")
-}
-func (UnimplementedCloudHashingBillingServer) UpdateGoodSetting(context.Context, *UpdateGoodSettingRequest) (*UpdateGoodSettingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateGoodSetting not implemented")
-}
-func (UnimplementedCloudHashingBillingServer) GetGoodSetting(context.Context, *GetGoodSettingRequest) (*GetGoodSettingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetGoodSetting not implemented")
-}
-func (UnimplementedCloudHashingBillingServer) GetGoodSettingByGood(context.Context, *GetGoodSettingByGoodRequest) (*GetGoodSettingByGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetGoodSettingByGood not implemented")
 }
 func (UnimplementedCloudHashingBillingServer) CreateUserWithdraw(context.Context, *CreateUserWithdrawRequest) (*CreateUserWithdrawResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUserWithdraw not implemented")
@@ -1698,78 +1642,6 @@ func _CloudHashingBilling_GetGoodPaymentByAccount_Handler(srv interface{}, ctx c
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudHashingBilling_CreateGoodSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateGoodSettingRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudHashingBillingServer).CreateGoodSetting(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/CreateGoodSetting",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingBillingServer).CreateGoodSetting(ctx, req.(*CreateGoodSettingRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CloudHashingBilling_UpdateGoodSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateGoodSettingRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudHashingBillingServer).UpdateGoodSetting(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateGoodSetting",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingBillingServer).UpdateGoodSetting(ctx, req.(*UpdateGoodSettingRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CloudHashingBilling_GetGoodSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetGoodSettingRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudHashingBillingServer).GetGoodSetting(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodSetting",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingBillingServer).GetGoodSetting(ctx, req.(*GetGoodSettingRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CloudHashingBilling_GetGoodSettingByGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetGoodSettingByGoodRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudHashingBillingServer).GetGoodSettingByGood(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetGoodSettingByGood",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingBillingServer).GetGoodSettingByGood(ctx, req.(*GetGoodSettingByGoodRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _CloudHashingBilling_CreateUserWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateUserWithdrawRequest)
 	if err := dec(in); err != nil {
@@ -2250,22 +2122,6 @@ var CloudHashingBilling_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetGoodPaymentByAccount",
 			Handler:    _CloudHashingBilling_GetGoodPaymentByAccount_Handler,
-		},
-		{
-			MethodName: "CreateGoodSetting",
-			Handler:    _CloudHashingBilling_CreateGoodSetting_Handler,
-		},
-		{
-			MethodName: "UpdateGoodSetting",
-			Handler:    _CloudHashingBilling_UpdateGoodSetting_Handler,
-		},
-		{
-			MethodName: "GetGoodSetting",
-			Handler:    _CloudHashingBilling_GetGoodSetting_Handler,
-		},
-		{
-			MethodName: "GetGoodSettingByGood",
-			Handler:    _CloudHashingBilling_GetGoodSettingByGood_Handler,
 		},
 		{
 			MethodName: "CreateUserWithdraw",

@@ -273,31 +273,6 @@ service CloudHashingBilling {
         };
     }
 
-    rpc CreateGoodSetting (CreateGoodSettingRequest) returns (CreateGoodSettingResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/good/setting"
-            body: "*"
-        };
-    }
-    rpc UpdateGoodSetting (UpdateGoodSettingRequest) returns (UpdateGoodSettingResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/good/setting"
-            body: "*"
-        };
-    }
-    rpc GetGoodSetting (GetGoodSettingRequest) returns (GetGoodSettingResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/good/setting"
-            body: "*"
-        };
-    }
-    rpc GetGoodSettingByGood (GetGoodSettingByGoodRequest) returns (GetGoodSettingByGoodResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/good/setting/by/good"
-            body: "*"
-        };
-    }
-
     rpc CreateUserWithdraw (CreateUserWithdrawRequest) returns (CreateUserWithdrawResponse) {
         option (google.api.http) = {
             post: "/v1/create/user/withdraw"
@@ -842,45 +817,6 @@ message GetGoodPaymentByAccountRequest {
 
 message GetGoodPaymentByAccountResponse {
     GoodPayment Info = 10;
-}
-
-message GoodSetting {
-    string ID = 10;
-    string GoodID = 20;
-    double WarmAccountUSDAmount = 30;
-    double WarmAccountCoinAmount = 40;
-}
-
-message CreateGoodSettingRequest {
-    GoodSetting Info = 10;
-}
-
-message CreateGoodSettingResponse {
-    GoodSetting Info = 10;
-}
-
-message UpdateGoodSettingRequest {
-    GoodSetting Info = 10;
-}
-
-message UpdateGoodSettingResponse {
-    GoodSetting Info = 10;
-}
-
-message GetGoodSettingRequest {
-    string ID = 10;
-}
-
-message GetGoodSettingResponse {
-    GoodSetting Info = 10;
-}
-
-message GetGoodSettingByGoodRequest {
-    string GoodID = 10;
-}
-
-message GetGoodSettingByGoodResponse {
-    GoodSetting Info = 10;
 }
 
 message UserWithdraw {
