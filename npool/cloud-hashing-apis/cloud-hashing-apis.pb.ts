@@ -347,8 +347,8 @@ export type SubmitUserWithdrawResponse = {
 }
 
 export type UpdateUserWithdrawReviewRequest = {
-  reviewerAppID?: string
-  reviewerUserID?: string
+  appID?: string
+  userID?: string
   review?: ReviewServiceV1Review-service.Review
 }
 

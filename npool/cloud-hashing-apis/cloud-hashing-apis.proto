@@ -563,8 +563,8 @@ message SubmitUserWithdrawResponse {
 }
 
 message UpdateUserWithdrawReviewRequest {
-    string ReviewerAppID = 10;
-    string ReviewerUserID = 20;
+    string AppID = 10;
+    string UserID = 20;
     review.service.v1.Review Review = 30;
 }
 

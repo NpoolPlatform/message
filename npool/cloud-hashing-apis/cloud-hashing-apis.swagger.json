@@ -2866,10 +2866,10 @@
     "v1UpdateUserWithdrawReviewRequest": {
       "type": "object",
       "properties": {
-        "ReviewerAppID": {
+        "AppID": {
           "type": "string"
         },
-        "ReviewerUserID": {
+        "UserID": {
           "type": "string"
         },
         "Review": {
