@@ -347,37 +347,6 @@ service CloudHashingBilling {
         };
     }
 
-    rpc CreateGoodIncoming (CreateGoodIncomingRequest) returns (CreateGoodIncomingResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/good/incoming"
-            body: "*"
-        };
-    }
-    rpc UpdateGoodIncoming (UpdateGoodIncomingRequest) returns (UpdateGoodIncomingResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/good/incoming"
-            body: "*"
-        };
-    }
-    rpc GetGoodIncoming (GetGoodIncomingRequest) returns (GetGoodIncomingResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/good/incoming"
-            body: "*"
-        };
-    }
-    rpc GetGoodIncomingsByGood (GetGoodIncomingsByGoodRequest) returns (GetGoodIncomingsByGoodResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/good/incomings/by/good"
-            body: "*"
-        };
-    }
-    rpc GetGoodIncomingByGoodCoin (GetGoodIncomingByGoodCoinRequest) returns (GetGoodIncomingByGoodCoinResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/good/incoming/by/good/coin"
-            body: "*"
-        };
-    }
-
     rpc CreateUserWithdrawItem (CreateUserWithdrawItemRequest) returns (CreateUserWithdrawItemResponse) {
         option (google.api.http) = {
             post: "/v1/create/user/withdraw/item"
@@ -744,6 +713,9 @@ message CoinSetting {
     string CoinTypeID = 20;
     double WarmAccountCoinAmount = 30;
     double PaymentAccountCoinAmount = 40;
+    string PlatformOfflineAccountID = 50;
+    string UserOfflineAccountID = 60;
+    string UserOnlineAccountID = 70;
 }
 
 message CreateCoinSettingRequest {
@@ -782,9 +754,6 @@ message GoodBenefit {
     string ID = 10;
     string GoodID = 20;
     string BenefitAccountID = 30;
-    string PlatformOfflineAccountID = 40;
-    string UserOfflineAccountID = 50;
-    string UserOnlineAccountID = 60;
     uint32 BenefitIntervalHours = 70;
 }
 
@@ -1013,54 +982,6 @@ message GetUserDirectBenefitByAccountRequest {
 
 message GetUserDirectBenefitByAccountResponse {
     UserDirectBenefit Info = 10;
-}
-
-message GoodIncoming {
-    string ID = 10;
-    string GoodID = 20;
-    string CoinTypeID = 30;
-    string AccountID = 40;
-}
-
-message CreateGoodIncomingRequest {
-    GoodIncoming Info = 10;
-}
-
-message CreateGoodIncomingResponse {
-    GoodIncoming Info = 10;
-}
-
-message UpdateGoodIncomingRequest {
-    GoodIncoming Info = 10;
-}
-
-message UpdateGoodIncomingResponse {
-    GoodIncoming Info = 10;
-}
-
-message GetGoodIncomingRequest {
-    string ID = 10;
-}
-
-message GetGoodIncomingResponse {
-    GoodIncoming Info = 10;
-}
-
-message GetGoodIncomingsByGoodRequest {
-    string GoodID = 10;
-}
-
-message GetGoodIncomingsByGoodResponse {
-    repeated GoodIncoming Infos = 10;
-}
-
-message GetGoodIncomingByGoodCoinRequest {
-    string GoodID = 10;
-    string CoinTypeID = 20;
-}
-
-message GetGoodIncomingByGoodCoinResponse {
-    GoodIncoming Info = 10;
 }
 
 message UserWithdrawItem {

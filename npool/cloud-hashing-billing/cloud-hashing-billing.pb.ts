@@ -297,6 +297,9 @@ export type CoinSetting = {
   coinTypeID?: string
   warmAccountCoinAmount?: number
   paymentAccountCoinAmount?: number
+  platformOfflineAccountID?: string
+  userOfflineAccountID?: string
+  userOnlineAccountID?: string
 }
 
 export type CreateCoinSettingRequest = {
@@ -335,9 +338,6 @@ export type GoodBenefit = {
   id?: string
   goodID?: string
   benefitAccountID?: string
-  platformOfflineAccountID?: string
-  userOfflineAccountID?: string
-  userOnlineAccountID?: string
   benefitIntervalHours?: number
 }
 
@@ -565,54 +565,6 @@ export type GetUserDirectBenefitByAccountRequest = {
 
 export type GetUserDirectBenefitByAccountResponse = {
   info?: UserDirectBenefit
-}
-
-export type GoodIncoming = {
-  id?: string
-  goodID?: string
-  coinTypeID?: string
-  accountID?: string
-}
-
-export type CreateGoodIncomingRequest = {
-  info?: GoodIncoming
-}
-
-export type CreateGoodIncomingResponse = {
-  info?: GoodIncoming
-}
-
-export type UpdateGoodIncomingRequest = {
-  info?: GoodIncoming
-}
-
-export type UpdateGoodIncomingResponse = {
-  info?: GoodIncoming
-}
-
-export type GetGoodIncomingRequest = {
-  id?: string
-}
-
-export type GetGoodIncomingResponse = {
-  info?: GoodIncoming
-}
-
-export type GetGoodIncomingsByGoodRequest = {
-  goodID?: string
-}
-
-export type GetGoodIncomingsByGoodResponse = {
-  infos?: GoodIncoming[]
-}
-
-export type GetGoodIncomingByGoodCoinRequest = {
-  goodID?: string
-  coinTypeID?: string
-}
-
-export type GetGoodIncomingByGoodCoinResponse = {
-  info?: GoodIncoming
 }
 
 export type UserWithdrawItem = {
@@ -893,21 +845,6 @@ export class CloudHashingBilling {
   }
   static GetUserDirectBenefitByAccount(req: GetUserDirectBenefitByAccountRequest, initReq?: fm.InitReq): Promise<GetUserDirectBenefitByAccountResponse> {
     return fm.fetchReq<GetUserDirectBenefitByAccountRequest, GetUserDirectBenefitByAccountResponse>(`/v1/get/user/direct/benefit/by/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static CreateGoodIncoming(req: CreateGoodIncomingRequest, initReq?: fm.InitReq): Promise<CreateGoodIncomingResponse> {
-    return fm.fetchReq<CreateGoodIncomingRequest, CreateGoodIncomingResponse>(`/v1/create/good/incoming`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static UpdateGoodIncoming(req: UpdateGoodIncomingRequest, initReq?: fm.InitReq): Promise<UpdateGoodIncomingResponse> {
-    return fm.fetchReq<UpdateGoodIncomingRequest, UpdateGoodIncomingResponse>(`/v1/update/good/incoming`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetGoodIncoming(req: GetGoodIncomingRequest, initReq?: fm.InitReq): Promise<GetGoodIncomingResponse> {
-    return fm.fetchReq<GetGoodIncomingRequest, GetGoodIncomingResponse>(`/v1/get/good/incoming`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetGoodIncomingsByGood(req: GetGoodIncomingsByGoodRequest, initReq?: fm.InitReq): Promise<GetGoodIncomingsByGoodResponse> {
-    return fm.fetchReq<GetGoodIncomingsByGoodRequest, GetGoodIncomingsByGoodResponse>(`/v1/get/good/incomings/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetGoodIncomingByGoodCoin(req: GetGoodIncomingByGoodCoinRequest, initReq?: fm.InitReq): Promise<GetGoodIncomingByGoodCoinResponse> {
-    return fm.fetchReq<GetGoodIncomingByGoodCoinRequest, GetGoodIncomingByGoodCoinResponse>(`/v1/get/good/incoming/by/good/coin`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateUserWithdrawItem(req: CreateUserWithdrawItemRequest, initReq?: fm.InitReq): Promise<CreateUserWithdrawItemResponse> {
     return fm.fetchReq<CreateUserWithdrawItemRequest, CreateUserWithdrawItemResponse>(`/v1/create/user/withdraw/item`, {...initReq, method: "POST", body: JSON.stringify(req)})

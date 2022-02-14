@@ -171,38 +171,6 @@
         ]
       }
     },
-    "/v1/create/good/incoming": {
-      "post": {
-        "operationId": "CloudHashingBilling_CreateGoodIncoming",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateGoodIncomingResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateGoodIncomingRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingBilling"
-        ]
-      }
-    },
     "/v1/create/good/payment": {
       "post": {
         "operationId": "CloudHashingBilling_CreateGoodPayment",
@@ -995,102 +963,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetGoodBenefitByGoodRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingBilling"
-        ]
-      }
-    },
-    "/v1/get/good/incoming": {
-      "post": {
-        "operationId": "CloudHashingBilling_GetGoodIncoming",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodIncomingResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodIncomingRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingBilling"
-        ]
-      }
-    },
-    "/v1/get/good/incoming/by/good/coin": {
-      "post": {
-        "operationId": "CloudHashingBilling_GetGoodIncomingByGoodCoin",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodIncomingByGoodCoinResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodIncomingByGoodCoinRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingBilling"
-        ]
-      }
-    },
-    "/v1/get/good/incomings/by/good": {
-      "post": {
-        "operationId": "CloudHashingBilling_GetGoodIncomingsByGood",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodIncomingsByGoodResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodIncomingsByGoodRequest"
             }
           }
         ],
@@ -2059,38 +1931,6 @@
         ]
       }
     },
-    "/v1/update/good/incoming": {
-      "post": {
-        "operationId": "CloudHashingBilling_UpdateGoodIncoming",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateGoodIncomingResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateGoodIncomingRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingBilling"
-        ]
-      }
-    },
     "/v1/update/good/payment": {
       "post": {
         "operationId": "CloudHashingBilling_UpdateGoodPayment",
@@ -2450,6 +2290,15 @@
         "PaymentAccountCoinAmount": {
           "type": "number",
           "format": "double"
+        },
+        "PlatformOfflineAccountID": {
+          "type": "string"
+        },
+        "UserOfflineAccountID": {
+          "type": "string"
+        },
+        "UserOnlineAccountID": {
+          "type": "string"
         }
       }
     },
@@ -2530,22 +2379,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1GoodBenefit"
-        }
-      }
-    },
-    "v1CreateGoodIncomingRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1GoodIncoming"
-        }
-      }
-    },
-    "v1CreateGoodIncomingResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1GoodIncoming"
         }
       }
     },
@@ -2968,60 +2801,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1GoodBenefit"
-        }
-      }
-    },
-    "v1GetGoodIncomingByGoodCoinRequest": {
-      "type": "object",
-      "properties": {
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetGoodIncomingByGoodCoinResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1GoodIncoming"
-        }
-      }
-    },
-    "v1GetGoodIncomingRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetGoodIncomingResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1GoodIncoming"
-        }
-      }
-    },
-    "v1GetGoodIncomingsByGoodRequest": {
-      "type": "object",
-      "properties": {
-        "GoodID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetGoodIncomingsByGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1GoodIncoming"
-          }
         }
       }
     },
@@ -3532,35 +3311,9 @@
         "BenefitAccountID": {
           "type": "string"
         },
-        "PlatformOfflineAccountID": {
-          "type": "string"
-        },
-        "UserOfflineAccountID": {
-          "type": "string"
-        },
-        "UserOnlineAccountID": {
-          "type": "string"
-        },
         "BenefitIntervalHours": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1GoodIncoming": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "AccountID": {
-          "type": "string"
         }
       }
     },
@@ -3735,22 +3488,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1GoodBenefit"
-        }
-      }
-    },
-    "v1UpdateGoodIncomingRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1GoodIncoming"
-        }
-      }
-    },
-    "v1UpdateGoodIncomingResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1GoodIncoming"
         }
       }
     },
