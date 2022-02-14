@@ -23,6 +23,12 @@ service ReviewService {
             body: "*"
         };
     }
+    rpc GetReview(GetReviewRequest) returns (GetReviewResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/review"
+            body: "*"
+        };
+    }
     rpc UpdateReview(UpdateReviewRequest) returns (UpdateReviewResponse) {
         option (google.api.http) = {
             post: "/v1/update/review"
@@ -115,6 +121,14 @@ message CreateReviewRequest {
 }
 
 message CreateReviewResponse {
+    Review Info = 10;
+}
+
+message GetReviewRequest {
+    string ID = 10;
+}
+
+message GetReviewResponse {
     Review Info = 10;
 }
 

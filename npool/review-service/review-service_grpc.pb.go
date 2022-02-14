@@ -26,6 +26,7 @@ type ReviewServiceClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
 	CreateReview(ctx context.Context, in *CreateReviewRequest, opts ...grpc.CallOption) (*CreateReviewResponse, error)
+	GetReview(ctx context.Context, in *GetReviewRequest, opts ...grpc.CallOption) (*GetReviewResponse, error)
 	UpdateReview(ctx context.Context, in *UpdateReviewRequest, opts ...grpc.CallOption) (*UpdateReviewResponse, error)
 	GetReviewsByDomain(ctx context.Context, in *GetReviewsByDomainRequest, opts ...grpc.CallOption) (*GetReviewsByDomainResponse, error)
 	GetReviewsByAppDomain(ctx context.Context, in *GetReviewsByAppDomainRequest, opts ...grpc.CallOption) (*GetReviewsByAppDomainResponse, error)
@@ -59,6 +60,15 @@ func (c *reviewServiceClient) Version(ctx context.Context, in *emptypb.Empty, op
 func (c *reviewServiceClient) CreateReview(ctx context.Context, in *CreateReviewRequest, opts ...grpc.CallOption) (*CreateReviewResponse, error) {
 	out := new(CreateReviewResponse)
 	err := c.cc.Invoke(ctx, "/review.service.v1.ReviewService/CreateReview", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *reviewServiceClient) GetReview(ctx context.Context, in *GetReviewRequest, opts ...grpc.CallOption) (*GetReviewResponse, error) {
+	out := new(GetReviewResponse)
+	err := c.cc.Invoke(ctx, "/review.service.v1.ReviewService/GetReview", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -171,6 +181,7 @@ type ReviewServiceServer interface {
 	// Method Version
 	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
 	CreateReview(context.Context, *CreateReviewRequest) (*CreateReviewResponse, error)
+	GetReview(context.Context, *GetReviewRequest) (*GetReviewResponse, error)
 	UpdateReview(context.Context, *UpdateReviewRequest) (*UpdateReviewResponse, error)
 	GetReviewsByDomain(context.Context, *GetReviewsByDomainRequest) (*GetReviewsByDomainResponse, error)
 	GetReviewsByAppDomain(context.Context, *GetReviewsByAppDomainRequest) (*GetReviewsByAppDomainResponse, error)
@@ -194,6 +205,9 @@ func (UnimplementedReviewServiceServer) Version(context.Context, *emptypb.Empty)
 }
 func (UnimplementedReviewServiceServer) CreateReview(context.Context, *CreateReviewRequest) (*CreateReviewResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateReview not implemented")
+}
+func (UnimplementedReviewServiceServer) GetReview(context.Context, *GetReviewRequest) (*GetReviewResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetReview not implemented")
 }
 func (UnimplementedReviewServiceServer) UpdateReview(context.Context, *UpdateReviewRequest) (*UpdateReviewResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateReview not implemented")
@@ -273,6 +287,24 @@ func _ReviewService_CreateReview_Handler(srv interface{}, ctx context.Context, d
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ReviewServiceServer).CreateReview(ctx, req.(*CreateReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ReviewService_GetReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ReviewServiceServer).GetReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/review.service.v1.ReviewService/GetReview",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ReviewServiceServer).GetReview(ctx, req.(*GetReviewRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -489,6 +521,10 @@ var ReviewService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateReview",
 			Handler:    _ReviewService_CreateReview_Handler,
+		},
+		{
+			MethodName: "GetReview",
+			Handler:    _ReviewService_GetReview_Handler,
 		},
 		{
 			MethodName: "UpdateReview",

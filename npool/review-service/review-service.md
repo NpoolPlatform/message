@@ -8,6 +8,8 @@
     - [CreateReviewResponse](#review.service.v1.CreateReviewResponse)
     - [CreateReviewRuleRequest](#review.service.v1.CreateReviewRuleRequest)
     - [CreateReviewRuleResponse](#review.service.v1.CreateReviewRuleResponse)
+    - [GetReviewRequest](#review.service.v1.GetReviewRequest)
+    - [GetReviewResponse](#review.service.v1.GetReviewResponse)
     - [GetReviewRuleByDomainObjectTypeRequest](#review.service.v1.GetReviewRuleByDomainObjectTypeRequest)
     - [GetReviewRuleByDomainObjectTypeResponse](#review.service.v1.GetReviewRuleByDomainObjectTypeResponse)
     - [GetReviewRuleRequest](#review.service.v1.GetReviewRuleRequest)
@@ -39,6 +41,8 @@
     - [CreateReviewResponse](#review.service.v1.CreateReviewResponse)
     - [CreateReviewRuleRequest](#review.service.v1.CreateReviewRuleRequest)
     - [CreateReviewRuleResponse](#review.service.v1.CreateReviewRuleResponse)
+    - [GetReviewRequest](#review.service.v1.GetReviewRequest)
+    - [GetReviewResponse](#review.service.v1.GetReviewResponse)
     - [GetReviewRuleByDomainObjectTypeRequest](#review.service.v1.GetReviewRuleByDomainObjectTypeRequest)
     - [GetReviewRuleByDomainObjectTypeResponse](#review.service.v1.GetReviewRuleByDomainObjectTypeResponse)
     - [GetReviewRuleRequest](#review.service.v1.GetReviewRuleRequest)
@@ -136,6 +140,36 @@
 
 
 
+<a name="review.service.v1.GetReviewRequest"></a>
+
+### GetReviewRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="review.service.v1.GetReviewResponse"></a>
+
+### GetReviewResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Review](#review.service.v1.Review) |  |  |
+
+
+
+
+
+
 <a name="review.service.v1.GetReviewRuleByDomainObjectTypeRequest"></a>
 
 ### GetReviewRuleByDomainObjectTypeRequest
@@ -513,6 +547,7 @@ Service Name
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#review.service.v1.VersionResponse) | Method Version |
 | CreateReview | [CreateReviewRequest](#review.service.v1.CreateReviewRequest) | [CreateReviewResponse](#review.service.v1.CreateReviewResponse) |  |
+| GetReview | [GetReviewRequest](#review.service.v1.GetReviewRequest) | [GetReviewResponse](#review.service.v1.GetReviewResponse) |  |
 | UpdateReview | [UpdateReviewRequest](#review.service.v1.UpdateReviewRequest) | [UpdateReviewResponse](#review.service.v1.UpdateReviewResponse) |  |
 | GetReviewsByDomain | [GetReviewsByDomainRequest](#review.service.v1.GetReviewsByDomainRequest) | [GetReviewsByDomainResponse](#review.service.v1.GetReviewsByDomainResponse) |  |
 | GetReviewsByAppDomain | [GetReviewsByAppDomainRequest](#review.service.v1.GetReviewsByAppDomainRequest) | [GetReviewsByAppDomainResponse](#review.service.v1.GetReviewsByAppDomainResponse) |  |
@@ -596,6 +631,36 @@ Service Name
 
 
 
+<a name="review.service.v1.GetReviewRequest"></a>
+
+### GetReviewRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="review.service.v1.GetReviewResponse"></a>
+
+### GetReviewResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Review](#review.service.v1.Review) |  |  |
+
+
+
+
+
+
 <a name="review.service.v1.GetReviewRuleByDomainObjectTypeRequest"></a>
 
 ### GetReviewRuleByDomainObjectTypeRequest
@@ -973,6 +1038,7 @@ Service Name
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#review.service.v1.VersionResponse) | Method Version |
 | CreateReview | [CreateReviewRequest](#review.service.v1.CreateReviewRequest) | [CreateReviewResponse](#review.service.v1.CreateReviewResponse) |  |
+| GetReview | [GetReviewRequest](#review.service.v1.GetReviewRequest) | [GetReviewResponse](#review.service.v1.GetReviewResponse) |  |
 | UpdateReview | [UpdateReviewRequest](#review.service.v1.UpdateReviewRequest) | [UpdateReviewResponse](#review.service.v1.UpdateReviewResponse) |  |
 | GetReviewsByDomain | [GetReviewsByDomainRequest](#review.service.v1.GetReviewsByDomainRequest) | [GetReviewsByDomainResponse](#review.service.v1.GetReviewsByDomainResponse) |  |
 | GetReviewsByAppDomain | [GetReviewsByAppDomainRequest](#review.service.v1.GetReviewsByAppDomainRequest) | [GetReviewsByAppDomainResponse](#review.service.v1.GetReviewsByAppDomainResponse) |  |

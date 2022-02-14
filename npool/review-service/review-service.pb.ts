@@ -31,6 +31,14 @@ export type CreateReviewResponse = {
   info?: Review
 }
 
+export type GetReviewRequest = {
+  id?: string
+}
+
+export type GetReviewResponse = {
+  info?: Review
+}
+
 export type UpdateReviewRequest = {
   info?: Review
 }
@@ -137,6 +145,9 @@ export class ReviewService {
   }
   static CreateReview(req: CreateReviewRequest, initReq?: fm.InitReq): Promise<CreateReviewResponse> {
     return fm.fetchReq<CreateReviewRequest, CreateReviewResponse>(`/v1/create/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetReview(req: GetReviewRequest, initReq?: fm.InitReq): Promise<GetReviewResponse> {
+    return fm.fetchReq<GetReviewRequest, GetReviewResponse>(`/v1/get/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateReview(req: UpdateReviewRequest, initReq?: fm.InitReq): Promise<UpdateReviewResponse> {
     return fm.fetchReq<UpdateReviewRequest, UpdateReviewResponse>(`/v1/update/review`, {...initReq, method: "POST", body: JSON.stringify(req)})

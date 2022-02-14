@@ -75,6 +75,38 @@
         ]
       }
     },
+    "/v1/get/review": {
+      "post": {
+        "operationId": "ReviewService_GetReview",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetReviewResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetReviewRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ReviewService"
+        ]
+      }
+    },
     "/v1/get/review/rule": {
       "post": {
         "operationId": "ReviewService_GetReviewRule",
@@ -492,6 +524,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1ReviewRule"
+        }
+      }
+    },
+    "v1GetReviewRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Review"
         }
       }
     },
