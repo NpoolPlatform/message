@@ -648,6 +648,14 @@ export type GetUserWithdrawItemResponse = {
   info?: UserWithdrawItem
 }
 
+export type GetUserWithdrawItemsByAccountRequest = {
+  accountID?: string
+}
+
+export type GetUserWithdrawItemsByAccountResponse = {
+  infos?: UserWithdrawItem[]
+}
+
 export type GetUserWithdrawItemsByAppUserRequest = {
   appID?: string
   userID?: string
@@ -898,6 +906,9 @@ export class CloudHashingBilling {
   }
   static GetUserWithdrawItem(req: GetUserWithdrawItemRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawItemResponse> {
     return fm.fetchReq<GetUserWithdrawItemRequest, GetUserWithdrawItemResponse>(`/v1/get/user/withdraw/item`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserWithdrawItemsByAccount(req: GetUserWithdrawItemsByAccountRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawItemsByAccountResponse> {
+    return fm.fetchReq<GetUserWithdrawItemsByAccountRequest, GetUserWithdrawItemsByAccountResponse>(`/v1/get/user/withdraw/items/by/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserWithdrawItemsByAppUser(req: GetUserWithdrawItemsByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawItemsByAppUserResponse> {
     return fm.fetchReq<GetUserWithdrawItemsByAppUserRequest, GetUserWithdrawItemsByAppUserResponse>(`/v1/get/user/withdraw/items/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
