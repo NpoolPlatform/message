@@ -584,7 +584,7 @@ message GetUserWithdrawsByAppUserResponse {
 message WithdrawReview {
     review.service.v1.Review Review = 10;
     app.user.manager.v1.AppUserInfo User = 20;
-    cloud.hashing.billing.v1.UserWithdrawItem Info = 30;
+    cloud.hashing.billing.v1.UserWithdrawItem Withdraw = 30;
 }
 
 message GetWithdrawReviewsRequest {

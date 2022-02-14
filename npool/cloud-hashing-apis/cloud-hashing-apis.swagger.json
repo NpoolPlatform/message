@@ -2974,7 +2974,7 @@
         "User": {
           "$ref": "#/definitions/v1AppUserInfo"
         },
-        "Info": {
+        "Withdraw": {
           "$ref": "#/definitions/v1UserWithdrawItem"
         }
       }

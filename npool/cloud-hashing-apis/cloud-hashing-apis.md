@@ -1446,7 +1446,7 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 | User | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
-| Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Withdraw | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
 
 
 
@@ -2775,7 +2775,7 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 | User | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
-| Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Withdraw | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
 
 
 

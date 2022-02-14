@@ -368,7 +368,7 @@ export type GetUserWithdrawsByAppUserResponse = {
 export type WithdrawReview = {
   review?: ReviewServiceV1Review-service.Review
   user?: AppUserManagerV1Appusermgr.AppUserInfo
-  info?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdrawItem
+  withdraw?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdrawItem
 }
 
 export type GetWithdrawReviewsRequest = {
