@@ -26,135 +26,153 @@ service CloudHashingApis {
         };
     }
 
-    rpc GetGoods(GetGoodsRequest) returns (GetGoodsResponse) {
+    rpc GetGoods (GetGoodsRequest) returns (GetGoodsResponse) {
         option (google.api.http) = {
             post: "/v1/get/goods"
             body: "*"
         };
     }
-    rpc CreateGood(CreateGoodRequest) returns (CreateGoodResponse) {
+    rpc CreateGood (CreateGoodRequest) returns (CreateGoodResponse) {
         option (google.api.http) = {
             post: "/v1/create/good"
             body: "*"
         };
     }
-    rpc GetGood(GetGoodRequest) returns (GetGoodResponse) {
+    rpc GetGood (GetGoodRequest) returns (GetGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/good"
             body: "*"
         };
     }
-    rpc GetRecommendGoodsByApp(GetRecommendGoodsByAppRequest) returns (GetRecommendGoodsByAppResponse) {
+    rpc GetRecommendGoodsByApp (GetRecommendGoodsByAppRequest) returns (GetRecommendGoodsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/recommend/goods/by/app"
             body: "*"
         };
     }
 
-    rpc SubmitOrder(SubmitOrderRequest) returns (SubmitOrderResponse) {
+    rpc SubmitOrder (SubmitOrderRequest) returns (SubmitOrderResponse) {
         option (google.api.http) = {
             post: "/v1/submit/order"
             body: "*"
         };
     }
-    rpc CreateOrderPayment(CreateOrderPaymentRequest) returns (CreateOrderPaymentResponse) {
+    rpc CreateOrderPayment (CreateOrderPaymentRequest) returns (CreateOrderPaymentResponse) {
         option (google.api.http) = {
             post: "/v1/create/order/payment"
             body: "*"
         };
     }
 
-    rpc GetOrder(GetOrderRequest) returns (GetOrderResponse) {
+    rpc GetOrder (GetOrderRequest) returns (GetOrderResponse) {
         option (google.api.http) = {
             post: "/v1/get/order"
             body: "*"
         };
     }
 
-    rpc GetOrdersByAppUser(GetOrdersByAppUserRequest) returns (GetOrdersByAppUserResponse) {
+    rpc GetOrdersByAppUser (GetOrdersByAppUserRequest) returns (GetOrdersByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders/by/app/user"
             body: "*"
         };
     }
-    rpc GetOrdersByApp(GetOrdersByAppRequest) returns (GetOrdersByAppResponse) {
+    rpc GetOrdersByApp (GetOrdersByAppRequest) returns (GetOrdersByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders/by/app"
             body: "*"
         };
     }
-    rpc GetOrdersByGood(GetOrdersByGoodRequest) returns (GetOrdersByGoodResponse) {
+    rpc GetOrdersByGood (GetOrdersByGoodRequest) returns (GetOrdersByGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders/by/good"
             body: "*"
         };
     }
 
-    rpc Signup(SignupRequest) returns (SignupResponse) {
+    rpc Signup (SignupRequest) returns (SignupResponse) {
         option (google.api.http) = {
             post: "/v1/signup"
             body: "*"
         };
     }
-    rpc UpdatePassword(UpdatePasswordRequest) returns (UpdatePasswordResponse) {
+    rpc UpdatePassword (UpdatePasswordRequest) returns (UpdatePasswordResponse) {
         option (google.api.http) = {
             post: "/v1/update/password"
             body: "*"
         };
     }
-    rpc UpdatePasswordByAppUser(UpdatePasswordByAppUserRequest) returns (UpdatePasswordByAppUserResponse) {
+    rpc UpdatePasswordByAppUser (UpdatePasswordByAppUserRequest) returns (UpdatePasswordByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/update/password/by/app/user"
             body: "*"
         };
     }
-    rpc UpdateEmailAddress(UpdateEmailAddressRequest) returns (UpdateEmailAddressResponse) {
+    rpc UpdateEmailAddress (UpdateEmailAddressRequest) returns (UpdateEmailAddressResponse) {
         option (google.api.http) = {
             post: "/v1/update/emailaddress"
             body: "*"
         };
     }
-    rpc UpdatePhoneNO(UpdatePhoneNORequest) returns (UpdatePhoneNOResponse) {
+    rpc UpdatePhoneNO (UpdatePhoneNORequest) returns (UpdatePhoneNOResponse) {
         option (google.api.http) = {
             post: "/v1/update/phoneno"
             body: "*"
         };
     }
 
-    rpc GetMyInvitations(GetMyInvitationsRequest) returns (GetMyInvitationsResponse) {
+    rpc GetMyInvitations (GetMyInvitationsRequest) returns (GetMyInvitationsResponse) {
         option (google.api.http) = {
             post: "/v1/get/my/invitations"
             body: "*"
         };
     }
-    rpc GetMyDirectInvitations(GetMyDirectInvitationsRequest) returns (GetMyDirectInvitationsResponse) {
+    rpc GetMyDirectInvitations (GetMyDirectInvitationsRequest) returns (GetMyDirectInvitationsResponse) {
         option (google.api.http) = {
             post: "/v1/get/my/direct/invitations"
             body: "*"
         };
     }
 
-    rpc GetKycReviews(GetKycReviewsRequest) returns (GetKycReviewsResponse) {
+    rpc GetKycReviews (GetKycReviewsRequest) returns (GetKycReviewsResponse) {
         option (google.api.http) = {
             post: "/v1/get/kyc/reviews"
             body: "*"
         };
     }
-    rpc GetKycReviewsByApp(GetKycReviewsByAppRequest) returns (GetKycReviewsByAppResponse) {
+    rpc GetKycReviewsByApp (GetKycReviewsByAppRequest) returns (GetKycReviewsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/kyc/reviews/by/app"
             body: "*"
         };
     }
-    rpc GetKycReviewsByOtherApp(GetKycReviewsByOtherAppRequest) returns (GetKycReviewsByOtherAppResponse) {
+    rpc GetKycReviewsByOtherApp (GetKycReviewsByOtherAppRequest) returns (GetKycReviewsByOtherAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/kyc/reviews/by/other/app"
             body: "*"
         };
     }
-    rpc GetGoodReviews(GetGoodReviewsRequest) returns (GetGoodReviewsResponse) {
+    rpc GetGoodReviews (GetGoodReviewsRequest) returns (GetGoodReviewsResponse) {
         option (google.api.http) = {
             post: "/v1/get/good/reviews"
+            body: "*"
+        };
+    }
+    rpc GetWithdrawReviews (GetWithdrawReviewsRequest) returns (GetWithdrawReviewsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/withdraw/reviews"
+            body: "*"
+        };
+    }
+    rpc GetWithdrawReviewsByApp (GetWithdrawReviewsByAppRequest) returns (GetWithdrawReviewsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/withdraw/reviews/by/app"
+            body: "*"
+        };
+    }
+    rpc GetWithdrawReviewsByOtherApp (GetWithdrawReviewsByOtherAppRequest) returns (GetWithdrawReviewsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/withdraw/reviews/by/other/app"
             body: "*"
         };
     }
@@ -536,7 +554,8 @@ message SubmitUserWithdrawRequest {
 
 message UserWithdraw {
     cloud.hashing.billing.v1.UserWithdrawItem Info = 10;
-    review.service.v1.Review Review = 20;
+    string State = 20;
+    string Message = 30;
 }
 
 message SubmitUserWithdrawResponse {
@@ -558,4 +577,33 @@ message GetUserWithdrawsByAppUserRequest {
 
 message GetUserWithdrawsByAppUserResponse {
     repeated UserWithdraw Infos = 10;
+}
+
+message WithdrawReview {
+    review.service.v1.Review Review = 10;
+    app.user.manager.v1.AppUserInfo User = 20;
+    cloud.hashing.billing.v1.UserWithdrawItem Info = 30;
+}
+
+message GetWithdrawReviewsRequest {
+}
+
+message GetWithdrawReviewsResponse {
+    repeated WithdrawReview Infos = 10;
+}
+
+message GetWithdrawReviewsByAppRequest {
+    string AppID = 10;
+}
+
+message GetWithdrawReviewsByAppResponse {
+    repeated WithdrawReview Infos = 10;
+}
+
+message GetWithdrawReviewsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetWithdrawReviewsByOtherAppResponse {
+    repeated WithdrawReview Infos = 10;
 }

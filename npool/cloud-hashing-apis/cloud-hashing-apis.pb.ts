@@ -338,7 +338,8 @@ export type SubmitUserWithdrawRequest = {
 
 export type UserWithdraw = {
   info?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdrawItem
-  review?: ReviewServiceV1Review-service.Review
+  state?: string
+  message?: string
 }
 
 export type SubmitUserWithdrawResponse = {
@@ -360,6 +361,35 @@ export type GetUserWithdrawsByAppUserRequest = {
 
 export type GetUserWithdrawsByAppUserResponse = {
   infos?: UserWithdraw[]
+}
+
+export type WithdrawReview = {
+  review?: ReviewServiceV1Review-service.Review
+  user?: AppUserManagerV1Appusermgr.AppUserInfo
+  info?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdrawItem
+}
+
+export type GetWithdrawReviewsRequest = {
+}
+
+export type GetWithdrawReviewsResponse = {
+  infos?: WithdrawReview[]
+}
+
+export type GetWithdrawReviewsByAppRequest = {
+  appID?: string
+}
+
+export type GetWithdrawReviewsByAppResponse = {
+  infos?: WithdrawReview[]
+}
+
+export type GetWithdrawReviewsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetWithdrawReviewsByOtherAppResponse = {
+  infos?: WithdrawReview[]
 }
 
 export class CloudHashingApis {
@@ -428,6 +458,15 @@ export class CloudHashingApis {
   }
   static GetGoodReviews(req: GetGoodReviewsRequest, initReq?: fm.InitReq): Promise<GetGoodReviewsResponse> {
     return fm.fetchReq<GetGoodReviewsRequest, GetGoodReviewsResponse>(`/v1/get/good/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetWithdrawReviews(req: GetWithdrawReviewsRequest, initReq?: fm.InitReq): Promise<GetWithdrawReviewsResponse> {
+    return fm.fetchReq<GetWithdrawReviewsRequest, GetWithdrawReviewsResponse>(`/v1/get/withdraw/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetWithdrawReviewsByApp(req: GetWithdrawReviewsByAppRequest, initReq?: fm.InitReq): Promise<GetWithdrawReviewsByAppResponse> {
+    return fm.fetchReq<GetWithdrawReviewsByAppRequest, GetWithdrawReviewsByAppResponse>(`/v1/get/withdraw/reviews/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetWithdrawReviewsByOtherApp(req: GetWithdrawReviewsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetWithdrawReviewsByOtherAppResponse> {
+    return fm.fetchReq<GetWithdrawReviewsByOtherAppRequest, GetWithdrawReviewsByOtherAppResponse>(`/v1/get/withdraw/reviews/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateKyc(req: CreateKycRequest, initReq?: fm.InitReq): Promise<CreateKycResponse> {
     return fm.fetchReq<CreateKycRequest, CreateKycResponse>(`/v1/create/kyc`, {...initReq, method: "POST", body: JSON.stringify(req)})
