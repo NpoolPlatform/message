@@ -210,7 +210,7 @@ export type PlatformSetting = {
   id?: string
   warmAccountUSDAmount?: number
   paymentAccountUSDAmount?: number
-  withdrawAutoReviewAmount?: number
+  withdrawAutoReviewUSDAmount?: number
 }
 
 export type CreatePlatformSettingRequest = {
@@ -678,7 +678,8 @@ export type GetUserWithdrawItemsByOtherAppUserResponse = {
 export type AppWithdrawSetting = {
   id?: string
   appID?: string
-  withdrawAutoReviewAmount?: number
+  coinTypeID?: string
+  withdrawAutoReviewCoinAmount?: number
 }
 
 export type CreateAppWithdrawSettingRequest = {
@@ -705,20 +706,28 @@ export type GetAppWithdrawSettingResponse = {
   info?: AppWithdrawSetting
 }
 
-export type GetAppWithdrawSettingByAppRequest = {
+export type GetAppWithdrawSettingsByAppRequest = {
   appID?: string
 }
 
-export type GetAppWithdrawSettingByAppResponse = {
+export type GetAppWithdrawSettingsByAppResponse = {
+  infos?: AppWithdrawSetting[]
+}
+
+export type GetAppWithdrawSettingByAppCoinRequest = {
+  appID?: string
+}
+
+export type GetAppWithdrawSettingByAppCoinResponse = {
   info?: AppWithdrawSetting
 }
 
-export type GetAppWithdrawSettingByOtherAppRequest = {
+export type GetAppWithdrawSettingsByOtherAppRequest = {
   targetAppID?: string
 }
 
-export type GetAppWithdrawSettingByOtherAppResponse = {
-  info?: AppWithdrawSetting
+export type GetAppWithdrawSettingsByOtherAppResponse = {
+  infos?: AppWithdrawSetting[]
 }
 
 export class CloudHashingBilling {
@@ -926,10 +935,13 @@ export class CloudHashingBilling {
   static GetAppWithdrawSetting(req: GetAppWithdrawSettingRequest, initReq?: fm.InitReq): Promise<GetAppWithdrawSettingResponse> {
     return fm.fetchReq<GetAppWithdrawSettingRequest, GetAppWithdrawSettingResponse>(`/v1/get/app/withdraw/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppWithdrawSettingByApp(req: GetAppWithdrawSettingByAppRequest, initReq?: fm.InitReq): Promise<GetAppWithdrawSettingByAppResponse> {
-    return fm.fetchReq<GetAppWithdrawSettingByAppRequest, GetAppWithdrawSettingByAppResponse>(`/v1/get/app/withdraw/setting/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppWithdrawSettingsByApp(req: GetAppWithdrawSettingsByAppRequest, initReq?: fm.InitReq): Promise<GetAppWithdrawSettingsByAppResponse> {
+    return fm.fetchReq<GetAppWithdrawSettingsByAppRequest, GetAppWithdrawSettingsByAppResponse>(`/v1/get/app/withdraw/settings/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppWithdrawSettingByOtherApp(req: GetAppWithdrawSettingByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppWithdrawSettingByOtherAppResponse> {
-    return fm.fetchReq<GetAppWithdrawSettingByOtherAppRequest, GetAppWithdrawSettingByOtherAppResponse>(`/v1/get/app/withdraw/setting/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppWithdrawSettingByAppCoin(req: GetAppWithdrawSettingByAppCoinRequest, initReq?: fm.InitReq): Promise<GetAppWithdrawSettingByAppCoinResponse> {
+    return fm.fetchReq<GetAppWithdrawSettingByAppCoinRequest, GetAppWithdrawSettingByAppCoinResponse>(`/v1/get/app/withdraw/setting/by/app/coin`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppWithdrawSettingsByOtherApp(req: GetAppWithdrawSettingsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppWithdrawSettingsByOtherAppResponse> {
+    return fm.fetchReq<GetAppWithdrawSettingsByOtherAppRequest, GetAppWithdrawSettingsByOtherAppResponse>(`/v1/get/app/withdraw/settings/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

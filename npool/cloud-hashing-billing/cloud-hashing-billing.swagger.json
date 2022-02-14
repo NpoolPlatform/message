@@ -523,14 +523,14 @@
         ]
       }
     },
-    "/v1/get/app/withdraw/setting/by/app": {
+    "/v1/get/app/withdraw/setting/by/app/coin": {
       "post": {
-        "operationId": "CloudHashingBilling_GetAppWithdrawSettingByApp",
+        "operationId": "CloudHashingBilling_GetAppWithdrawSettingByAppCoin",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppWithdrawSettingByAppResponse"
+              "$ref": "#/definitions/v1GetAppWithdrawSettingByAppCoinResponse"
             }
           },
           "default": {
@@ -546,7 +546,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppWithdrawSettingByAppRequest"
+              "$ref": "#/definitions/v1GetAppWithdrawSettingByAppCoinRequest"
             }
           }
         ],
@@ -555,14 +555,14 @@
         ]
       }
     },
-    "/v1/get/app/withdraw/setting/by/other/app": {
+    "/v1/get/app/withdraw/settings/by/app": {
       "post": {
-        "operationId": "CloudHashingBilling_GetAppWithdrawSettingByOtherApp",
+        "operationId": "CloudHashingBilling_GetAppWithdrawSettingsByApp",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppWithdrawSettingByOtherAppResponse"
+              "$ref": "#/definitions/v1GetAppWithdrawSettingsByAppResponse"
             }
           },
           "default": {
@@ -578,7 +578,39 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppWithdrawSettingByOtherAppRequest"
+              "$ref": "#/definitions/v1GetAppWithdrawSettingsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/app/withdraw/settings/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetAppWithdrawSettingsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppWithdrawSettingsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppWithdrawSettingsByOtherAppRequest"
             }
           }
         ],
@@ -2296,7 +2328,10 @@
         "AppID": {
           "type": "string"
         },
-        "WithdrawAutoReviewAmount": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "WithdrawAutoReviewCoinAmount": {
           "type": "number",
           "format": "double"
         }
@@ -2658,7 +2693,7 @@
         }
       }
     },
-    "v1GetAppWithdrawSettingByAppRequest": {
+    "v1GetAppWithdrawSettingByAppCoinRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -2666,23 +2701,7 @@
         }
       }
     },
-    "v1GetAppWithdrawSettingByAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppWithdrawSetting"
-        }
-      }
-    },
-    "v1GetAppWithdrawSettingByOtherAppRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppWithdrawSettingByOtherAppResponse": {
+    "v1GetAppWithdrawSettingByAppCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -2703,6 +2722,44 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppWithdrawSetting"
+        }
+      }
+    },
+    "v1GetAppWithdrawSettingsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppWithdrawSettingsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppWithdrawSetting"
+          }
+        }
+      }
+    },
+    "v1GetAppWithdrawSettingsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppWithdrawSettingsByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppWithdrawSetting"
+          }
         }
       }
     },
@@ -3608,7 +3665,7 @@
           "type": "number",
           "format": "double"
         },
-        "WithdrawAutoReviewAmount": {
+        "WithdrawAutoReviewUSDAmount": {
           "type": "number",
           "format": "double"
         }

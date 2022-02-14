@@ -433,15 +433,21 @@ service CloudHashingBilling {
             body: "*"
         };
     }
-    rpc GetAppWithdrawSettingByApp (GetAppWithdrawSettingByAppRequest) returns (GetAppWithdrawSettingByAppResponse) {
+    rpc GetAppWithdrawSettingsByApp (GetAppWithdrawSettingsByAppRequest) returns (GetAppWithdrawSettingsByAppResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/withdraw/setting/by/app"
+            post: "/v1/get/app/withdraw/settings/by/app"
             body: "*"
         };
     }
-    rpc GetAppWithdrawSettingByOtherApp (GetAppWithdrawSettingByOtherAppRequest) returns (GetAppWithdrawSettingByOtherAppResponse) {
+    rpc GetAppWithdrawSettingByAppCoin (GetAppWithdrawSettingByAppCoinRequest) returns (GetAppWithdrawSettingByAppCoinResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/withdraw/setting/by/other/app"
+            post: "/v1/get/app/withdraw/setting/by/app/coin"
+            body: "*"
+        };
+    }
+    rpc GetAppWithdrawSettingsByOtherApp (GetAppWithdrawSettingsByOtherAppRequest) returns (GetAppWithdrawSettingsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/withdraw/settings/by/other/app"
             body: "*"
         };
     }
@@ -650,7 +656,7 @@ message PlatformSetting {
     string ID = 10;
     double WarmAccountUSDAmount = 20;
     double PaymentAccountUSDAmount = 30;
-    double WithdrawAutoReviewAmount = 40;
+    double WithdrawAutoReviewUSDAmount = 40;
 }
 
 message CreatePlatformSettingRequest {
@@ -1120,7 +1126,8 @@ message GetUserWithdrawItemsByOtherAppUserResponse {
 message AppWithdrawSetting {
     string ID = 10;
     string AppID = 20;
-    double WithdrawAutoReviewAmount = 30;
+    string CoinTypeID = 30;
+    double WithdrawAutoReviewCoinAmount = 40;
 }
 
 message CreateAppWithdrawSettingRequest {
@@ -1147,19 +1154,27 @@ message GetAppWithdrawSettingResponse {
     AppWithdrawSetting Info = 10;
 }
 
-message GetAppWithdrawSettingByAppRequest {
+message GetAppWithdrawSettingsByAppRequest {
     string AppID = 10;
 }
 
-message GetAppWithdrawSettingByAppResponse {
+message GetAppWithdrawSettingsByAppResponse {
+    repeated AppWithdrawSetting Infos = 10;
+}
+
+message GetAppWithdrawSettingByAppCoinRequest {
+    string AppID = 10;
+}
+
+message GetAppWithdrawSettingByAppCoinResponse {
     AppWithdrawSetting Info = 10;
 }
 
-message GetAppWithdrawSettingByOtherAppRequest {
+message GetAppWithdrawSettingsByOtherAppRequest {
     string TargetAppID = 10;
 }
 
-message GetAppWithdrawSettingByOtherAppResponse {
-    AppWithdrawSetting Info = 10;
+message GetAppWithdrawSettingsByOtherAppResponse {
+    repeated AppWithdrawSetting Infos = 10;
 }
 
