@@ -749,6 +749,7 @@ message GoodPayment {
     string PaymentCoinTypeID = 30;
     string AccountID = 40;
     bool Idle = 50;
+    string OccupiedBy = 60;
 }
 
 message CreateGoodPaymentRequest {

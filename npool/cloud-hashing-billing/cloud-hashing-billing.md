@@ -1956,6 +1956,7 @@
 | PaymentCoinTypeID | [string](#string) |  |  |
 | AccountID | [string](#string) |  |  |
 | Idle | [bool](#bool) |  |  |
+| OccupiedBy | [string](#string) |  |  |
 
 
 
@@ -4077,6 +4078,7 @@ Cloud Hashing Billing
 | PaymentCoinTypeID | [string](#string) |  |  |
 | AccountID | [string](#string) |  |  |
 | Idle | [bool](#bool) |  |  |
+| OccupiedBy | [string](#string) |  |  |
 
 
 

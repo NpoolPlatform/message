@@ -376,6 +376,7 @@ export type GoodPayment = {
   paymentCoinTypeID?: string
   accountID?: string
   idle?: boolean
+  occupiedBy?: string
 }
 
 export type CreateGoodPaymentRequest = {

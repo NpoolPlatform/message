@@ -2991,6 +2991,9 @@
         },
         "Idle": {
           "type": "boolean"
+        },
+        "OccupiedBy": {
+          "type": "string"
         }
       }
     },
