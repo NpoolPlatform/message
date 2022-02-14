@@ -3873,6 +3873,9 @@
         "Amount": {
           "type": "number",
           "format": "double"
+        },
+        "PlatformTransactionID": {
+          "type": "string"
         }
       }
     },

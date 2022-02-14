@@ -2736,6 +2736,7 @@
 | CoinTypeID | [string](#string) |  |  |
 | WithdrawToAccountID | [string](#string) |  |  |
 | Amount | [double](#double) |  |  |
+| PlatformTransactionID | [string](#string) |  |  |
 
 
 
@@ -5241,6 +5242,7 @@ Cloud Hashing Billing
 | CoinTypeID | [string](#string) |  |  |
 | WithdrawToAccountID | [string](#string) |  |  |
 | Amount | [double](#double) |  |  |
+| PlatformTransactionID | [string](#string) |  |  |
 
 
 
