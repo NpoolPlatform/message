@@ -683,6 +683,38 @@
         ]
       }
     },
+    "/v1/submit/user/withdraw": {
+      "post": {
+        "operationId": "CloudHashingApis_SubmitUserWithdraw",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SubmitUserWithdrawResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SubmitUserWithdrawRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/update/emailaddress": {
       "post": {
         "operationId": "CloudHashingApis_UpdateEmailAddress",
@@ -835,6 +867,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1UpdatePhoneNORequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/update/user/withdraw/review": {
+      "post": {
+        "operationId": "CloudHashingApis_UpdateUserWithdrawReview",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserWithdrawReviewResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserWithdrawReviewRequest"
             }
           }
         ],
@@ -1380,6 +1444,9 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "ForPay": {
+          "type": "boolean"
         }
       }
     },
@@ -2431,6 +2498,25 @@
         }
       }
     },
+    "v1SubmitUserWithdrawRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserWithdrawItem"
+        }
+      }
+    },
+    "v1SubmitUserWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserWithdrawItem"
+        },
+        "Review": {
+          "$ref": "#/definitions/v1Review"
+        }
+      }
+    },
     "v1UpdateEmailAddressRequest": {
       "type": "object",
       "properties": {
@@ -2561,6 +2647,25 @@
         }
       }
     },
+    "v1UpdateUserWithdrawReviewRequest": {
+      "type": "object",
+      "properties": {
+        "Review": {
+          "$ref": "#/definitions/v1Review"
+        }
+      }
+    },
+    "v1UpdateUserWithdrawReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserWithdrawItem"
+        },
+        "Review": {
+          "$ref": "#/definitions/v1Review"
+        }
+      }
+    },
     "v1UserSpecialReduction": {
       "type": "object",
       "properties": {
@@ -2589,6 +2694,33 @@
           "format": "int32"
         },
         "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UserWithdrawItem": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "WithdrawToAccountID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "PlatformTransactionID": {
           "type": "string"
         }
       }

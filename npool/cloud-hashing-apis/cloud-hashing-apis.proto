@@ -190,6 +190,19 @@ service CloudHashingApis {
             body: "*"
         };
     }
+
+    rpc SubmitUserWithdraw (SubmitUserWithdrawRequest) returns (SubmitUserWithdrawResponse) {
+        option (google.api.http) = {
+            post: "/v1/submit/user/withdraw"
+            body: "*"
+        };
+    }
+    rpc UpdateUserWithdrawReview (UpdateUserWithdrawReviewRequest) returns (UpdateUserWithdrawReviewResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user/withdraw/review"
+            body: "*"
+        };
+    }
 }
 
 // Request body and response
@@ -509,4 +522,22 @@ message CreateUserCoinAccountRequest {
 
 message CreateUserCoinAccountResponse {
     cloud.hashing.billing.v1.CoinAccountInfo Info = 10;
+}
+
+message SubmitUserWithdrawRequest {
+    cloud.hashing.billing.v1.UserWithdrawItem Info = 10;
+}
+
+message SubmitUserWithdrawResponse {
+    cloud.hashing.billing.v1.UserWithdrawItem Info = 10;
+    review.service.v1.Review Review = 20;
+}
+
+message UpdateUserWithdrawReviewRequest {
+    review.service.v1.Review Review = 20;
+}
+
+message UpdateUserWithdrawReviewResponse {
+    cloud.hashing.billing.v1.UserWithdrawItem Info = 10;
+    review.service.v1.Review Review = 20;
 }

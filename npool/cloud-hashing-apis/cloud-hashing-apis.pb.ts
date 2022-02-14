@@ -332,6 +332,24 @@ export type CreateUserCoinAccountResponse = {
   info?: CloudHashingBillingV1Cloud-hashing-billing.CoinAccountInfo
 }
 
+export type SubmitUserWithdrawRequest = {
+  info?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdrawItem
+}
+
+export type SubmitUserWithdrawResponse = {
+  info?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdrawItem
+  review?: ReviewServiceV1Review-service.Review
+}
+
+export type UpdateUserWithdrawReviewRequest = {
+  review?: ReviewServiceV1Review-service.Review
+}
+
+export type UpdateUserWithdrawReviewResponse = {
+  info?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdrawItem
+  review?: ReviewServiceV1Review-service.Review
+}
+
 export class CloudHashingApis {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -413,5 +431,11 @@ export class CloudHashingApis {
   }
   static CreateUserCoinAccount(req: CreateUserCoinAccountRequest, initReq?: fm.InitReq): Promise<CreateUserCoinAccountResponse> {
     return fm.fetchReq<CreateUserCoinAccountRequest, CreateUserCoinAccountResponse>(`/v1/create/user/coin/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static SubmitUserWithdraw(req: SubmitUserWithdrawRequest, initReq?: fm.InitReq): Promise<SubmitUserWithdrawResponse> {
+    return fm.fetchReq<SubmitUserWithdrawRequest, SubmitUserWithdrawResponse>(`/v1/submit/user/withdraw`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateUserWithdrawReview(req: UpdateUserWithdrawReviewRequest, initReq?: fm.InitReq): Promise<UpdateUserWithdrawReviewResponse> {
+    return fm.fetchReq<UpdateUserWithdrawReviewRequest, UpdateUserWithdrawReviewResponse>(`/v1/update/user/withdraw/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

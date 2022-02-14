@@ -51,6 +51,8 @@ type CloudHashingApisClient interface {
 	GetKycByAppUser(ctx context.Context, in *GetKycByAppUserRequest, opts ...grpc.CallOption) (*GetKycByAppUserResponse, error)
 	CreatePlatformCoinAccount(ctx context.Context, in *CreatePlatformCoinAccountRequest, opts ...grpc.CallOption) (*CreatePlatformCoinAccountResponse, error)
 	CreateUserCoinAccount(ctx context.Context, in *CreateUserCoinAccountRequest, opts ...grpc.CallOption) (*CreateUserCoinAccountResponse, error)
+	SubmitUserWithdraw(ctx context.Context, in *SubmitUserWithdrawRequest, opts ...grpc.CallOption) (*SubmitUserWithdrawResponse, error)
+	UpdateUserWithdrawReview(ctx context.Context, in *UpdateUserWithdrawReviewRequest, opts ...grpc.CallOption) (*UpdateUserWithdrawReviewResponse, error)
 }
 
 type cloudHashingApisClient struct {
@@ -304,6 +306,24 @@ func (c *cloudHashingApisClient) CreateUserCoinAccount(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *cloudHashingApisClient) SubmitUserWithdraw(ctx context.Context, in *SubmitUserWithdrawRequest, opts ...grpc.CallOption) (*SubmitUserWithdrawResponse, error) {
+	out := new(SubmitUserWithdrawResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/SubmitUserWithdraw", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) UpdateUserWithdrawReview(ctx context.Context, in *UpdateUserWithdrawReviewRequest, opts ...grpc.CallOption) (*UpdateUserWithdrawReviewResponse, error) {
+	out := new(UpdateUserWithdrawReviewResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/UpdateUserWithdrawReview", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CloudHashingApisServer is the server API for CloudHashingApis service.
 // All implementations must embed UnimplementedCloudHashingApisServer
 // for forward compatibility
@@ -335,6 +355,8 @@ type CloudHashingApisServer interface {
 	GetKycByAppUser(context.Context, *GetKycByAppUserRequest) (*GetKycByAppUserResponse, error)
 	CreatePlatformCoinAccount(context.Context, *CreatePlatformCoinAccountRequest) (*CreatePlatformCoinAccountResponse, error)
 	CreateUserCoinAccount(context.Context, *CreateUserCoinAccountRequest) (*CreateUserCoinAccountResponse, error)
+	SubmitUserWithdraw(context.Context, *SubmitUserWithdrawRequest) (*SubmitUserWithdrawResponse, error)
+	UpdateUserWithdrawReview(context.Context, *UpdateUserWithdrawReviewRequest) (*UpdateUserWithdrawReviewResponse, error)
 	mustEmbedUnimplementedCloudHashingApisServer()
 }
 
@@ -422,6 +444,12 @@ func (UnimplementedCloudHashingApisServer) CreatePlatformCoinAccount(context.Con
 }
 func (UnimplementedCloudHashingApisServer) CreateUserCoinAccount(context.Context, *CreateUserCoinAccountRequest) (*CreateUserCoinAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUserCoinAccount not implemented")
+}
+func (UnimplementedCloudHashingApisServer) SubmitUserWithdraw(context.Context, *SubmitUserWithdrawRequest) (*SubmitUserWithdrawResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitUserWithdraw not implemented")
+}
+func (UnimplementedCloudHashingApisServer) UpdateUserWithdrawReview(context.Context, *UpdateUserWithdrawReviewRequest) (*UpdateUserWithdrawReviewResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserWithdrawReview not implemented")
 }
 func (UnimplementedCloudHashingApisServer) mustEmbedUnimplementedCloudHashingApisServer() {}
 
@@ -922,6 +950,42 @@ func _CloudHashingApis_CreateUserCoinAccount_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingApis_SubmitUserWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitUserWithdrawRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).SubmitUserWithdraw(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/SubmitUserWithdraw",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).SubmitUserWithdraw(ctx, req.(*SubmitUserWithdrawRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_UpdateUserWithdrawReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateUserWithdrawReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).UpdateUserWithdrawReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/UpdateUserWithdrawReview",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).UpdateUserWithdrawReview(ctx, req.(*UpdateUserWithdrawReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CloudHashingApis_ServiceDesc is the grpc.ServiceDesc for CloudHashingApis service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1036,6 +1100,14 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateUserCoinAccount",
 			Handler:    _CloudHashingApis_CreateUserCoinAccount_Handler,
+		},
+		{
+			MethodName: "SubmitUserWithdraw",
+			Handler:    _CloudHashingApis_SubmitUserWithdraw_Handler,
+		},
+		{
+			MethodName: "UpdateUserWithdrawReview",
+			Handler:    _CloudHashingApis_UpdateUserWithdrawReview_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

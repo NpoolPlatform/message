@@ -60,6 +60,8 @@
     - [SignupResponse](#cloud.hashing.apis.v1.SignupResponse)
     - [SubmitOrderRequest](#cloud.hashing.apis.v1.SubmitOrderRequest)
     - [SubmitOrderResponse](#cloud.hashing.apis.v1.SubmitOrderResponse)
+    - [SubmitUserWithdrawRequest](#cloud.hashing.apis.v1.SubmitUserWithdrawRequest)
+    - [SubmitUserWithdrawResponse](#cloud.hashing.apis.v1.SubmitUserWithdrawResponse)
     - [UpdateEmailAddressRequest](#cloud.hashing.apis.v1.UpdateEmailAddressRequest)
     - [UpdateEmailAddressResponse](#cloud.hashing.apis.v1.UpdateEmailAddressResponse)
     - [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest)
@@ -70,6 +72,8 @@
     - [UpdatePasswordResponse](#cloud.hashing.apis.v1.UpdatePasswordResponse)
     - [UpdatePhoneNORequest](#cloud.hashing.apis.v1.UpdatePhoneNORequest)
     - [UpdatePhoneNOResponse](#cloud.hashing.apis.v1.UpdatePhoneNOResponse)
+    - [UpdateUserWithdrawReviewRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest)
+    - [UpdateUserWithdrawReviewResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse)
   
     - [CloudHashingApis](#cloud.hashing.apis.v1.CloudHashingApis)
   
@@ -130,6 +134,8 @@
     - [SignupResponse](#cloud.hashing.apis.v1.SignupResponse)
     - [SubmitOrderRequest](#cloud.hashing.apis.v1.SubmitOrderRequest)
     - [SubmitOrderResponse](#cloud.hashing.apis.v1.SubmitOrderResponse)
+    - [SubmitUserWithdrawRequest](#cloud.hashing.apis.v1.SubmitUserWithdrawRequest)
+    - [SubmitUserWithdrawResponse](#cloud.hashing.apis.v1.SubmitUserWithdrawResponse)
     - [UpdateEmailAddressRequest](#cloud.hashing.apis.v1.UpdateEmailAddressRequest)
     - [UpdateEmailAddressResponse](#cloud.hashing.apis.v1.UpdateEmailAddressResponse)
     - [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest)
@@ -140,6 +146,8 @@
     - [UpdatePasswordResponse](#cloud.hashing.apis.v1.UpdatePasswordResponse)
     - [UpdatePhoneNORequest](#cloud.hashing.apis.v1.UpdatePhoneNORequest)
     - [UpdatePhoneNOResponse](#cloud.hashing.apis.v1.UpdatePhoneNOResponse)
+    - [UpdateUserWithdrawReviewRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest)
+    - [UpdateUserWithdrawReviewResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse)
   
     - [CloudHashingApis](#cloud.hashing.apis.v1.CloudHashingApis)
   
@@ -1041,6 +1049,37 @@ Request body and response
 
 
 
+<a name="cloud.hashing.apis.v1.SubmitUserWithdrawRequest"></a>
+
+### SubmitUserWithdrawRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.SubmitUserWithdrawResponse"></a>
+
+### SubmitUserWithdrawResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.UpdateEmailAddressRequest"></a>
 
 ### UpdateEmailAddressRequest
@@ -1212,6 +1251,37 @@ Request body and response
 
 
 
+
+<a name="cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest"></a>
+
+### UpdateUserWithdrawReviewRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse"></a>
+
+### UpdateUserWithdrawReviewResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+
+
+
+
+
  
 
  
@@ -1253,6 +1323,8 @@ Cloud Hashing Goods
 | GetKycByAppUser | [GetKycByAppUserRequest](#cloud.hashing.apis.v1.GetKycByAppUserRequest) | [GetKycByAppUserResponse](#cloud.hashing.apis.v1.GetKycByAppUserResponse) |  |
 | CreatePlatformCoinAccount | [CreatePlatformCoinAccountRequest](#cloud.hashing.apis.v1.CreatePlatformCoinAccountRequest) | [CreatePlatformCoinAccountResponse](#cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse) |  |
 | CreateUserCoinAccount | [CreateUserCoinAccountRequest](#cloud.hashing.apis.v1.CreateUserCoinAccountRequest) | [CreateUserCoinAccountResponse](#cloud.hashing.apis.v1.CreateUserCoinAccountResponse) |  |
+| SubmitUserWithdraw | [SubmitUserWithdrawRequest](#cloud.hashing.apis.v1.SubmitUserWithdrawRequest) | [SubmitUserWithdrawResponse](#cloud.hashing.apis.v1.SubmitUserWithdrawResponse) |  |
+| UpdateUserWithdrawReview | [UpdateUserWithdrawReviewRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest) | [UpdateUserWithdrawReviewResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse) |  |
 
  
 
@@ -2152,6 +2224,37 @@ Request body and response
 
 
 
+<a name="cloud.hashing.apis.v1.SubmitUserWithdrawRequest"></a>
+
+### SubmitUserWithdrawRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.SubmitUserWithdrawResponse"></a>
+
+### SubmitUserWithdrawResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.UpdateEmailAddressRequest"></a>
 
 ### UpdateEmailAddressRequest
@@ -2323,6 +2426,37 @@ Request body and response
 
 
 
+
+<a name="cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest"></a>
+
+### UpdateUserWithdrawReviewRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse"></a>
+
+### UpdateUserWithdrawReviewResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+
+
+
+
+
  
 
  
@@ -2364,6 +2498,8 @@ Cloud Hashing Goods
 | GetKycByAppUser | [GetKycByAppUserRequest](#cloud.hashing.apis.v1.GetKycByAppUserRequest) | [GetKycByAppUserResponse](#cloud.hashing.apis.v1.GetKycByAppUserResponse) |  |
 | CreatePlatformCoinAccount | [CreatePlatformCoinAccountRequest](#cloud.hashing.apis.v1.CreatePlatformCoinAccountRequest) | [CreatePlatformCoinAccountResponse](#cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse) |  |
 | CreateUserCoinAccount | [CreateUserCoinAccountRequest](#cloud.hashing.apis.v1.CreateUserCoinAccountRequest) | [CreateUserCoinAccountResponse](#cloud.hashing.apis.v1.CreateUserCoinAccountResponse) |  |
+| SubmitUserWithdraw | [SubmitUserWithdrawRequest](#cloud.hashing.apis.v1.SubmitUserWithdrawRequest) | [SubmitUserWithdrawResponse](#cloud.hashing.apis.v1.SubmitUserWithdrawResponse) |  |
+| UpdateUserWithdrawReview | [UpdateUserWithdrawReviewRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest) | [UpdateUserWithdrawReviewResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse) |  |
 
  
 
