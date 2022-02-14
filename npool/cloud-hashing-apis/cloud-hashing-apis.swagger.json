@@ -1317,7 +1317,7 @@
     "hashingapisv1UserWithdraw": {
       "type": "object",
       "properties": {
-        "Info": {
+        "Withdraw": {
           "$ref": "#/definitions/v1UserWithdrawItem"
         },
         "State": {

@@ -553,7 +553,7 @@ message SubmitUserWithdrawRequest {
 }
 
 message UserWithdraw {
-    cloud.hashing.billing.v1.UserWithdrawItem Info = 10;
+    cloud.hashing.billing.v1.UserWithdrawItem Withdraw = 10;
     string State = 20;
     string Message = 30;
 }

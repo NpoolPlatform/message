@@ -1425,7 +1425,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Withdraw | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
 | State | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
 
@@ -2752,7 +2752,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Withdraw | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
 | State | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
 

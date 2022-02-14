@@ -337,7 +337,7 @@ export type SubmitUserWithdrawRequest = {
 }
 
 export type UserWithdraw = {
-  info?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdrawItem
+  withdraw?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdrawItem
   state?: string
   message?: string
 }
