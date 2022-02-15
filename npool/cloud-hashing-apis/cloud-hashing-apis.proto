@@ -627,6 +627,7 @@ message WithdrawAddress {
     cloud.hashing.billing.v1.UserWithdraw Address = 10;
     string State = 20;
     string Message = 30;
+    cloud.hashing.billing.v1.CoinAccountInfo Account = 40;
 }
 
 message SetWithdrawAddressRequest {

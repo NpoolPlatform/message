@@ -399,6 +399,7 @@ export type WithdrawAddress = {
   address?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdraw
   state?: string
   message?: string
+  account?: CloudHashingBillingV1Cloud-hashing-billing.CoinAccountInfo
 }
 
 export type SetWithdrawAddressRequest = {

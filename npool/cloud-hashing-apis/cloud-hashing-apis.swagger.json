@@ -3111,6 +3111,9 @@
         },
         "Message": {
           "type": "string"
+        },
+        "Account": {
+          "$ref": "#/definitions/v1CoinAccountInfo"
         }
       }
     },

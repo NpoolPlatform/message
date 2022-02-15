@@ -1530,6 +1530,7 @@ Request body and response
 | Address | [cloud.hashing.billing.v1.UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
 | State | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
+| Account | [cloud.hashing.billing.v1.CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
 
 
 
@@ -2967,6 +2968,7 @@ Request body and response
 | Address | [cloud.hashing.billing.v1.UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
 | State | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
+| Account | [cloud.hashing.billing.v1.CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
 
 
 
