@@ -428,7 +428,7 @@ export type GetWithdrawAddressesByAppUserRequest = {
 }
 
 export type GetWithdrawAddressesByAppUserResponse = {
-  infos?: WithdrawAddressReview[]
+  infos?: WithdrawAddress[]
 }
 
 export class CloudHashingApis {

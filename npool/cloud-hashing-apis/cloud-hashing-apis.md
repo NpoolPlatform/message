@@ -855,7 +855,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [WithdrawAddressReview](#cloud.hashing.apis.v1.WithdrawAddressReview) | repeated |  |
+| Infos | [WithdrawAddress](#cloud.hashing.apis.v1.WithdrawAddress) | repeated |  |
 
 
 
@@ -2293,7 +2293,7 @@ Cloud Hashing Goods
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [WithdrawAddressReview](#cloud.hashing.apis.v1.WithdrawAddressReview) | repeated |  |
+| Infos | [WithdrawAddress](#cloud.hashing.apis.v1.WithdrawAddress) | repeated |  |
 
 
 

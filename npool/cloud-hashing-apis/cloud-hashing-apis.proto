@@ -656,5 +656,5 @@ message GetWithdrawAddressesByAppUserRequest {
 }
 
 message GetWithdrawAddressesByAppUserResponse {
-    repeated WithdrawAddressReview Infos = 10;
+    repeated WithdrawAddress Infos = 10;
 }

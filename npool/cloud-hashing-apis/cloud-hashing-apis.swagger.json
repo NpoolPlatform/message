@@ -2088,7 +2088,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1WithdrawAddressReview"
+            "$ref": "#/definitions/v1WithdrawAddress"
           }
         }
       }
@@ -3111,23 +3111,6 @@
         },
         "Message": {
           "type": "string"
-        },
-        "Account": {
-          "$ref": "#/definitions/v1CoinAccountInfo"
-        }
-      }
-    },
-    "v1WithdrawAddressReview": {
-      "type": "object",
-      "properties": {
-        "Review": {
-          "$ref": "#/definitions/v1Review"
-        },
-        "User": {
-          "$ref": "#/definitions/v1AppUserInfo"
-        },
-        "Address": {
-          "$ref": "#/definitions/hashingbillingv1UserWithdraw"
         },
         "Account": {
           "$ref": "#/definitions/v1CoinAccountInfo"
