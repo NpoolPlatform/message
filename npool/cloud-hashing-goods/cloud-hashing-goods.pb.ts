@@ -275,6 +275,7 @@ export type GoodDetail = {
   unit?: string
   priceCurrency?: PriceCurrency
   fees?: FeeDetail[]
+  startAt?: number
 }
 
 export type GetGoodDetailRequest = {

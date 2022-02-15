@@ -673,6 +673,7 @@ message GoodDetail {
     string Unit = 180;
     PriceCurrency PriceCurrency = 190;
     repeated FeeDetail Fees = 200;
+    uint32 StartAt = 210;
 }
 
 message GetGoodDetailRequest {

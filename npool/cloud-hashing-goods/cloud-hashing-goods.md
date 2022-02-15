@@ -1871,6 +1871,7 @@
 | Unit | [string](#string) |  |  |
 | PriceCurrency | [PriceCurrency](#cloud.hashing.goods.v1.PriceCurrency) |  |  |
 | Fees | [FeeDetail](#cloud.hashing.goods.v1.FeeDetail) | repeated |  |
+| StartAt | [uint32](#uint32) |  |  |
 
 
 
@@ -4178,6 +4179,7 @@ Cloud Hashing Goods
 | Unit | [string](#string) |  |  |
 | PriceCurrency | [PriceCurrency](#cloud.hashing.goods.v1.PriceCurrency) |  |  |
 | Fees | [FeeDetail](#cloud.hashing.goods.v1.FeeDetail) | repeated |  |
+| StartAt | [uint32](#uint32) |  |  |
 
 
 
