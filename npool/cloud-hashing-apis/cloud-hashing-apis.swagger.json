@@ -651,6 +651,102 @@
         ]
       }
     },
+    "/v1/get/withdraw/address/reviews": {
+      "post": {
+        "operationId": "CloudHashingApis_GetWithdrawAddressReviews",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetWithdrawAddressReviewsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetWithdrawAddressReviewsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/get/withdraw/address/reviews/by/app": {
+      "post": {
+        "operationId": "CloudHashingApis_GetWithdrawAddressReviewsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetWithdrawAddressReviewsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetWithdrawAddressReviewsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/get/withdraw/address/reviews/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingApis_GetWithdrawAddressReviewsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetWithdrawAddressReviewsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetWithdrawAddressReviewsByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/withdraw/addresses/by/app/user": {
       "post": {
         "operationId": "CloudHashingApis_GetWithdrawAddressesByAppUser",
@@ -2082,6 +2178,63 @@
         }
       }
     },
+    "v1GetWithdrawAddressReviewsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetWithdrawAddressReviewsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1WithdrawAddressReview"
+          }
+        }
+      }
+    },
+    "v1GetWithdrawAddressReviewsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetWithdrawAddressReviewsByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1WithdrawAddressReview"
+          }
+        }
+      }
+    },
+    "v1GetWithdrawAddressReviewsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetWithdrawAddressReviewsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1WithdrawAddressReview"
+          }
+        }
+      }
+    },
     "v1GetWithdrawAddressesByAppUserResponse": {
       "type": "object",
       "properties": {
@@ -3111,6 +3264,23 @@
         },
         "Message": {
           "type": "string"
+        },
+        "Account": {
+          "$ref": "#/definitions/v1CoinAccountInfo"
+        }
+      }
+    },
+    "v1WithdrawAddressReview": {
+      "type": "object",
+      "properties": {
+        "Review": {
+          "$ref": "#/definitions/v1Review"
+        },
+        "User": {
+          "$ref": "#/definitions/v1AppUserInfo"
+        },
+        "Address": {
+          "$ref": "#/definitions/hashingbillingv1UserWithdraw"
         },
         "Account": {
           "$ref": "#/definitions/v1CoinAccountInfo"

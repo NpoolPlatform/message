@@ -46,6 +46,12 @@
     - [GetRecommendGoodsByAppResponse](#cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse)
     - [GetUserWithdrawsByAppUserRequest](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserRequest)
     - [GetUserWithdrawsByAppUserResponse](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse)
+    - [GetWithdrawAddressReviewsByAppRequest](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByAppRequest)
+    - [GetWithdrawAddressReviewsByAppResponse](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByAppResponse)
+    - [GetWithdrawAddressReviewsByOtherAppRequest](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByOtherAppRequest)
+    - [GetWithdrawAddressReviewsByOtherAppResponse](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByOtherAppResponse)
+    - [GetWithdrawAddressReviewsRequest](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsRequest)
+    - [GetWithdrawAddressReviewsResponse](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsResponse)
     - [GetWithdrawAddressesByAppUserRequest](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserRequest)
     - [GetWithdrawAddressesByAppUserResponse](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserResponse)
     - [GetWithdrawReviewsByAppRequest](#cloud.hashing.apis.v1.GetWithdrawReviewsByAppRequest)
@@ -136,6 +142,12 @@
     - [GetRecommendGoodsByAppResponse](#cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse)
     - [GetUserWithdrawsByAppUserRequest](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserRequest)
     - [GetUserWithdrawsByAppUserResponse](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse)
+    - [GetWithdrawAddressReviewsByAppRequest](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByAppRequest)
+    - [GetWithdrawAddressReviewsByAppResponse](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByAppResponse)
+    - [GetWithdrawAddressReviewsByOtherAppRequest](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByOtherAppRequest)
+    - [GetWithdrawAddressReviewsByOtherAppResponse](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByOtherAppResponse)
+    - [GetWithdrawAddressReviewsRequest](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsRequest)
+    - [GetWithdrawAddressReviewsResponse](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsResponse)
     - [GetWithdrawAddressesByAppUserRequest](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserRequest)
     - [GetWithdrawAddressesByAppUserResponse](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserResponse)
     - [GetWithdrawReviewsByAppRequest](#cloud.hashing.apis.v1.GetWithdrawReviewsByAppRequest)
@@ -831,6 +843,96 @@
 
 
 
+<a name="cloud.hashing.apis.v1.GetWithdrawAddressReviewsByAppRequest"></a>
+
+### GetWithdrawAddressReviewsByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetWithdrawAddressReviewsByAppResponse"></a>
+
+### GetWithdrawAddressReviewsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [WithdrawAddressReview](#cloud.hashing.apis.v1.WithdrawAddressReview) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetWithdrawAddressReviewsByOtherAppRequest"></a>
+
+### GetWithdrawAddressReviewsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetWithdrawAddressReviewsByOtherAppResponse"></a>
+
+### GetWithdrawAddressReviewsByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [WithdrawAddressReview](#cloud.hashing.apis.v1.WithdrawAddressReview) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetWithdrawAddressReviewsRequest"></a>
+
+### GetWithdrawAddressReviewsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetWithdrawAddressReviewsResponse"></a>
+
+### GetWithdrawAddressReviewsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [WithdrawAddressReview](#cloud.hashing.apis.v1.WithdrawAddressReview) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserRequest"></a>
 
 ### GetWithdrawAddressesByAppUserRequest
@@ -1610,6 +1712,9 @@ Cloud Hashing Goods
 | GetWithdrawReviews | [GetWithdrawReviewsRequest](#cloud.hashing.apis.v1.GetWithdrawReviewsRequest) | [GetWithdrawReviewsResponse](#cloud.hashing.apis.v1.GetWithdrawReviewsResponse) |  |
 | GetWithdrawReviewsByApp | [GetWithdrawReviewsByAppRequest](#cloud.hashing.apis.v1.GetWithdrawReviewsByAppRequest) | [GetWithdrawReviewsByAppResponse](#cloud.hashing.apis.v1.GetWithdrawReviewsByAppResponse) |  |
 | GetWithdrawReviewsByOtherApp | [GetWithdrawReviewsByOtherAppRequest](#cloud.hashing.apis.v1.GetWithdrawReviewsByOtherAppRequest) | [GetWithdrawReviewsByOtherAppResponse](#cloud.hashing.apis.v1.GetWithdrawReviewsByOtherAppResponse) |  |
+| GetWithdrawAddressReviews | [GetWithdrawAddressReviewsRequest](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsRequest) | [GetWithdrawAddressReviewsResponse](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsResponse) |  |
+| GetWithdrawAddressReviewsByApp | [GetWithdrawAddressReviewsByAppRequest](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByAppRequest) | [GetWithdrawAddressReviewsByAppResponse](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByAppResponse) |  |
+| GetWithdrawAddressReviewsByOtherApp | [GetWithdrawAddressReviewsByOtherAppRequest](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByOtherAppRequest) | [GetWithdrawAddressReviewsByOtherAppResponse](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByOtherAppResponse) |  |
 | CreateKyc | [CreateKycRequest](#cloud.hashing.apis.v1.CreateKycRequest) | [CreateKycResponse](#cloud.hashing.apis.v1.CreateKycResponse) |  |
 | UpdateKyc | [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest) | [UpdateKycResponse](#cloud.hashing.apis.v1.UpdateKycResponse) |  |
 | GetKycByAppUser | [GetKycByAppUserRequest](#cloud.hashing.apis.v1.GetKycByAppUserRequest) | [GetKycByAppUserResponse](#cloud.hashing.apis.v1.GetKycByAppUserResponse) |  |
@@ -2269,6 +2374,96 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud.hashing.apis.v1.GetWithdrawAddressReviewsByAppRequest"></a>
+
+### GetWithdrawAddressReviewsByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetWithdrawAddressReviewsByAppResponse"></a>
+
+### GetWithdrawAddressReviewsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [WithdrawAddressReview](#cloud.hashing.apis.v1.WithdrawAddressReview) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetWithdrawAddressReviewsByOtherAppRequest"></a>
+
+### GetWithdrawAddressReviewsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetWithdrawAddressReviewsByOtherAppResponse"></a>
+
+### GetWithdrawAddressReviewsByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [WithdrawAddressReview](#cloud.hashing.apis.v1.WithdrawAddressReview) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetWithdrawAddressReviewsRequest"></a>
+
+### GetWithdrawAddressReviewsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetWithdrawAddressReviewsResponse"></a>
+
+### GetWithdrawAddressReviewsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [WithdrawAddressReview](#cloud.hashing.apis.v1.WithdrawAddressReview) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserRequest"></a>
 
 ### GetWithdrawAddressesByAppUserRequest
@@ -3048,6 +3243,9 @@ Cloud Hashing Goods
 | GetWithdrawReviews | [GetWithdrawReviewsRequest](#cloud.hashing.apis.v1.GetWithdrawReviewsRequest) | [GetWithdrawReviewsResponse](#cloud.hashing.apis.v1.GetWithdrawReviewsResponse) |  |
 | GetWithdrawReviewsByApp | [GetWithdrawReviewsByAppRequest](#cloud.hashing.apis.v1.GetWithdrawReviewsByAppRequest) | [GetWithdrawReviewsByAppResponse](#cloud.hashing.apis.v1.GetWithdrawReviewsByAppResponse) |  |
 | GetWithdrawReviewsByOtherApp | [GetWithdrawReviewsByOtherAppRequest](#cloud.hashing.apis.v1.GetWithdrawReviewsByOtherAppRequest) | [GetWithdrawReviewsByOtherAppResponse](#cloud.hashing.apis.v1.GetWithdrawReviewsByOtherAppResponse) |  |
+| GetWithdrawAddressReviews | [GetWithdrawAddressReviewsRequest](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsRequest) | [GetWithdrawAddressReviewsResponse](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsResponse) |  |
+| GetWithdrawAddressReviewsByApp | [GetWithdrawAddressReviewsByAppRequest](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByAppRequest) | [GetWithdrawAddressReviewsByAppResponse](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByAppResponse) |  |
+| GetWithdrawAddressReviewsByOtherApp | [GetWithdrawAddressReviewsByOtherAppRequest](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByOtherAppRequest) | [GetWithdrawAddressReviewsByOtherAppResponse](#cloud.hashing.apis.v1.GetWithdrawAddressReviewsByOtherAppResponse) |  |
 | CreateKyc | [CreateKycRequest](#cloud.hashing.apis.v1.CreateKycRequest) | [CreateKycResponse](#cloud.hashing.apis.v1.CreateKycResponse) |  |
 | UpdateKyc | [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest) | [UpdateKycResponse](#cloud.hashing.apis.v1.UpdateKycResponse) |  |
 | GetKycByAppUser | [GetKycByAppUserRequest](#cloud.hashing.apis.v1.GetKycByAppUserRequest) | [GetKycByAppUserResponse](#cloud.hashing.apis.v1.GetKycByAppUserResponse) |  |

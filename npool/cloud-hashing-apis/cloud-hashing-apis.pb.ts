@@ -415,13 +415,6 @@ export type SetWithdrawAddressResponse = {
   info?: WithdrawAddress
 }
 
-export type WithdrawAddressReview = {
-  review?: ReviewServiceV1Review-service.Review
-  user?: AppUserManagerV1Appusermgr.AppUserInfo
-  address?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdraw
-  account?: CloudHashingBillingV1Cloud-hashing-billing.CoinAccountInfo
-}
-
 export type GetWithdrawAddressesByAppUserRequest = {
   appID?: string
   userID?: string
@@ -429,6 +422,37 @@ export type GetWithdrawAddressesByAppUserRequest = {
 
 export type GetWithdrawAddressesByAppUserResponse = {
   infos?: WithdrawAddress[]
+}
+
+export type WithdrawAddressReview = {
+  review?: ReviewServiceV1Review-service.Review
+  user?: AppUserManagerV1Appusermgr.AppUserInfo
+  address?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdraw
+  account?: CloudHashingBillingV1Cloud-hashing-billing.CoinAccountInfo
+}
+
+export type GetWithdrawAddressReviewsRequest = {
+  appID?: string
+}
+
+export type GetWithdrawAddressReviewsResponse = {
+  infos?: WithdrawAddressReview[]
+}
+
+export type GetWithdrawAddressReviewsByAppRequest = {
+  appID?: string
+}
+
+export type GetWithdrawAddressReviewsByAppResponse = {
+  infos?: WithdrawAddressReview[]
+}
+
+export type GetWithdrawAddressReviewsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetWithdrawAddressReviewsByOtherAppResponse = {
+  infos?: WithdrawAddressReview[]
 }
 
 export class CloudHashingApis {
@@ -506,6 +530,15 @@ export class CloudHashingApis {
   }
   static GetWithdrawReviewsByOtherApp(req: GetWithdrawReviewsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetWithdrawReviewsByOtherAppResponse> {
     return fm.fetchReq<GetWithdrawReviewsByOtherAppRequest, GetWithdrawReviewsByOtherAppResponse>(`/v1/get/withdraw/reviews/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetWithdrawAddressReviews(req: GetWithdrawAddressReviewsRequest, initReq?: fm.InitReq): Promise<GetWithdrawAddressReviewsResponse> {
+    return fm.fetchReq<GetWithdrawAddressReviewsRequest, GetWithdrawAddressReviewsResponse>(`/v1/get/withdraw/address/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetWithdrawAddressReviewsByApp(req: GetWithdrawAddressReviewsByAppRequest, initReq?: fm.InitReq): Promise<GetWithdrawAddressReviewsByAppResponse> {
+    return fm.fetchReq<GetWithdrawAddressReviewsByAppRequest, GetWithdrawAddressReviewsByAppResponse>(`/v1/get/withdraw/address/reviews/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetWithdrawAddressReviewsByOtherApp(req: GetWithdrawAddressReviewsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetWithdrawAddressReviewsByOtherAppResponse> {
+    return fm.fetchReq<GetWithdrawAddressReviewsByOtherAppRequest, GetWithdrawAddressReviewsByOtherAppResponse>(`/v1/get/withdraw/address/reviews/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateKyc(req: CreateKycRequest, initReq?: fm.InitReq): Promise<CreateKycResponse> {
     return fm.fetchReq<CreateKycRequest, CreateKycResponse>(`/v1/create/kyc`, {...initReq, method: "POST", body: JSON.stringify(req)})

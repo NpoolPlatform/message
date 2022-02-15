@@ -176,6 +176,24 @@ service CloudHashingApis {
             body: "*"
         };
     }
+    rpc GetWithdrawAddressReviews (GetWithdrawAddressReviewsRequest) returns (GetWithdrawAddressReviewsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/withdraw/address/reviews"
+            body: "*"
+        };
+    }
+    rpc GetWithdrawAddressReviewsByApp (GetWithdrawAddressReviewsByAppRequest) returns (GetWithdrawAddressReviewsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/withdraw/address/reviews/by/app"
+            body: "*"
+        };
+    }
+    rpc GetWithdrawAddressReviewsByOtherApp (GetWithdrawAddressReviewsByOtherAppRequest) returns (GetWithdrawAddressReviewsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/withdraw/address/reviews/by/other/app"
+            body: "*"
+        };
+    }
 
     rpc CreateKyc (CreateKycRequest) returns (CreateKycResponse) {
         option (google.api.http) = {
@@ -643,13 +661,6 @@ message SetWithdrawAddressResponse {
     WithdrawAddress Info = 10;
 }
 
-message WithdrawAddressReview {
-    review.service.v1.Review Review = 10;
-    app.user.manager.v1.AppUserInfo User = 20;
-    cloud.hashing.billing.v1.UserWithdraw Address = 30;
-    cloud.hashing.billing.v1.CoinAccountInfo Account = 40;
-}
-
 message GetWithdrawAddressesByAppUserRequest {
     string AppID = 10;
     string UserID = 20;
@@ -658,3 +669,35 @@ message GetWithdrawAddressesByAppUserRequest {
 message GetWithdrawAddressesByAppUserResponse {
     repeated WithdrawAddress Infos = 10;
 }
+
+message WithdrawAddressReview {
+    review.service.v1.Review Review = 10;
+    app.user.manager.v1.AppUserInfo User = 20;
+    cloud.hashing.billing.v1.UserWithdraw Address = 30;
+    cloud.hashing.billing.v1.CoinAccountInfo Account = 40;
+}
+
+message GetWithdrawAddressReviewsRequest {
+    string AppID = 10;
+}
+
+message GetWithdrawAddressReviewsResponse {
+    repeated WithdrawAddressReview Infos = 10;
+}
+
+message GetWithdrawAddressReviewsByAppRequest {
+    string AppID = 10;
+}
+
+message GetWithdrawAddressReviewsByAppResponse {
+    repeated WithdrawAddressReview Infos = 10;
+}
+
+message GetWithdrawAddressReviewsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetWithdrawAddressReviewsByOtherAppResponse {
+    repeated WithdrawAddressReview Infos = 10;
+}
+

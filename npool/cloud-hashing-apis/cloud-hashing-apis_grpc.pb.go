@@ -49,6 +49,9 @@ type CloudHashingApisClient interface {
 	GetWithdrawReviews(ctx context.Context, in *GetWithdrawReviewsRequest, opts ...grpc.CallOption) (*GetWithdrawReviewsResponse, error)
 	GetWithdrawReviewsByApp(ctx context.Context, in *GetWithdrawReviewsByAppRequest, opts ...grpc.CallOption) (*GetWithdrawReviewsByAppResponse, error)
 	GetWithdrawReviewsByOtherApp(ctx context.Context, in *GetWithdrawReviewsByOtherAppRequest, opts ...grpc.CallOption) (*GetWithdrawReviewsByOtherAppResponse, error)
+	GetWithdrawAddressReviews(ctx context.Context, in *GetWithdrawAddressReviewsRequest, opts ...grpc.CallOption) (*GetWithdrawAddressReviewsResponse, error)
+	GetWithdrawAddressReviewsByApp(ctx context.Context, in *GetWithdrawAddressReviewsByAppRequest, opts ...grpc.CallOption) (*GetWithdrawAddressReviewsByAppResponse, error)
+	GetWithdrawAddressReviewsByOtherApp(ctx context.Context, in *GetWithdrawAddressReviewsByOtherAppRequest, opts ...grpc.CallOption) (*GetWithdrawAddressReviewsByOtherAppResponse, error)
 	CreateKyc(ctx context.Context, in *CreateKycRequest, opts ...grpc.CallOption) (*CreateKycResponse, error)
 	UpdateKyc(ctx context.Context, in *UpdateKycRequest, opts ...grpc.CallOption) (*UpdateKycResponse, error)
 	GetKycByAppUser(ctx context.Context, in *GetKycByAppUserRequest, opts ...grpc.CallOption) (*GetKycByAppUserResponse, error)
@@ -294,6 +297,33 @@ func (c *cloudHashingApisClient) GetWithdrawReviewsByOtherApp(ctx context.Contex
 	return out, nil
 }
 
+func (c *cloudHashingApisClient) GetWithdrawAddressReviews(ctx context.Context, in *GetWithdrawAddressReviewsRequest, opts ...grpc.CallOption) (*GetWithdrawAddressReviewsResponse, error) {
+	out := new(GetWithdrawAddressReviewsResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetWithdrawAddressReviews", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetWithdrawAddressReviewsByApp(ctx context.Context, in *GetWithdrawAddressReviewsByAppRequest, opts ...grpc.CallOption) (*GetWithdrawAddressReviewsByAppResponse, error) {
+	out := new(GetWithdrawAddressReviewsByAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetWithdrawAddressReviewsByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetWithdrawAddressReviewsByOtherApp(ctx context.Context, in *GetWithdrawAddressReviewsByOtherAppRequest, opts ...grpc.CallOption) (*GetWithdrawAddressReviewsByOtherAppResponse, error) {
+	out := new(GetWithdrawAddressReviewsByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetWithdrawAddressReviewsByOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingApisClient) CreateKyc(ctx context.Context, in *CreateKycRequest, opts ...grpc.CallOption) (*CreateKycResponse, error) {
 	out := new(CreateKycResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/CreateKyc", in, out, opts...)
@@ -413,6 +443,9 @@ type CloudHashingApisServer interface {
 	GetWithdrawReviews(context.Context, *GetWithdrawReviewsRequest) (*GetWithdrawReviewsResponse, error)
 	GetWithdrawReviewsByApp(context.Context, *GetWithdrawReviewsByAppRequest) (*GetWithdrawReviewsByAppResponse, error)
 	GetWithdrawReviewsByOtherApp(context.Context, *GetWithdrawReviewsByOtherAppRequest) (*GetWithdrawReviewsByOtherAppResponse, error)
+	GetWithdrawAddressReviews(context.Context, *GetWithdrawAddressReviewsRequest) (*GetWithdrawAddressReviewsResponse, error)
+	GetWithdrawAddressReviewsByApp(context.Context, *GetWithdrawAddressReviewsByAppRequest) (*GetWithdrawAddressReviewsByAppResponse, error)
+	GetWithdrawAddressReviewsByOtherApp(context.Context, *GetWithdrawAddressReviewsByOtherAppRequest) (*GetWithdrawAddressReviewsByOtherAppResponse, error)
 	CreateKyc(context.Context, *CreateKycRequest) (*CreateKycResponse, error)
 	UpdateKyc(context.Context, *UpdateKycRequest) (*UpdateKycResponse, error)
 	GetKycByAppUser(context.Context, *GetKycByAppUserRequest) (*GetKycByAppUserResponse, error)
@@ -504,6 +537,15 @@ func (UnimplementedCloudHashingApisServer) GetWithdrawReviewsByApp(context.Conte
 }
 func (UnimplementedCloudHashingApisServer) GetWithdrawReviewsByOtherApp(context.Context, *GetWithdrawReviewsByOtherAppRequest) (*GetWithdrawReviewsByOtherAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetWithdrawReviewsByOtherApp not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetWithdrawAddressReviews(context.Context, *GetWithdrawAddressReviewsRequest) (*GetWithdrawAddressReviewsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetWithdrawAddressReviews not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetWithdrawAddressReviewsByApp(context.Context, *GetWithdrawAddressReviewsByAppRequest) (*GetWithdrawAddressReviewsByAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetWithdrawAddressReviewsByApp not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetWithdrawAddressReviewsByOtherApp(context.Context, *GetWithdrawAddressReviewsByOtherAppRequest) (*GetWithdrawAddressReviewsByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetWithdrawAddressReviewsByOtherApp not implemented")
 }
 func (UnimplementedCloudHashingApisServer) CreateKyc(context.Context, *CreateKycRequest) (*CreateKycResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateKyc not implemented")
@@ -998,6 +1040,60 @@ func _CloudHashingApis_GetWithdrawReviewsByOtherApp_Handler(srv interface{}, ctx
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingApis_GetWithdrawAddressReviews_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWithdrawAddressReviewsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetWithdrawAddressReviews(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetWithdrawAddressReviews",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetWithdrawAddressReviews(ctx, req.(*GetWithdrawAddressReviewsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetWithdrawAddressReviewsByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWithdrawAddressReviewsByAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetWithdrawAddressReviewsByApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetWithdrawAddressReviewsByApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetWithdrawAddressReviewsByApp(ctx, req.(*GetWithdrawAddressReviewsByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetWithdrawAddressReviewsByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWithdrawAddressReviewsByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetWithdrawAddressReviewsByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetWithdrawAddressReviewsByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetWithdrawAddressReviewsByOtherApp(ctx, req.(*GetWithdrawAddressReviewsByOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingApis_CreateKyc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateKycRequest)
 	if err := dec(in); err != nil {
@@ -1284,6 +1380,18 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetWithdrawReviewsByOtherApp",
 			Handler:    _CloudHashingApis_GetWithdrawReviewsByOtherApp_Handler,
+		},
+		{
+			MethodName: "GetWithdrawAddressReviews",
+			Handler:    _CloudHashingApis_GetWithdrawAddressReviews_Handler,
+		},
+		{
+			MethodName: "GetWithdrawAddressReviewsByApp",
+			Handler:    _CloudHashingApis_GetWithdrawAddressReviewsByApp_Handler,
+		},
+		{
+			MethodName: "GetWithdrawAddressReviewsByOtherApp",
+			Handler:    _CloudHashingApis_GetWithdrawAddressReviewsByOtherApp_Handler,
 		},
 		{
 			MethodName: "CreateKyc",
