@@ -395,6 +395,35 @@ export type GetWithdrawReviewsByOtherAppResponse = {
   infos?: WithdrawReview[]
 }
 
+export type WithdrawAddress = {
+  address?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdraw
+  state?: string
+  message?: string
+}
+
+export type SetWithdrawAddressRequest = {
+  info?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdraw
+}
+
+export type SetWithdrawAddressResponse = {
+  info?: WithdrawAddress
+}
+
+export type WithdrawAddressReview = {
+  review?: ReviewServiceV1Review-service.Review
+  user?: AppUserManagerV1Appusermgr.AppUserInfo
+  address?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdraw
+}
+
+export type GetWithdrawAddressesByAppUserRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetWithdrawAddressesByAppUserResponse = {
+  infos?: WithdrawAddressReview[]
+}
+
 export class CloudHashingApis {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -494,5 +523,11 @@ export class CloudHashingApis {
   }
   static GetUserWithdrawsByAppUser(req: GetUserWithdrawsByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawsByAppUserResponse> {
     return fm.fetchReq<GetUserWithdrawsByAppUserRequest, GetUserWithdrawsByAppUserResponse>(`/v1/get/user/withdraws/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static SetWithdrawAddress(req: SetWithdrawAddressRequest, initReq?: fm.InitReq): Promise<SetWithdrawAddressResponse> {
+    return fm.fetchReq<SetWithdrawAddressRequest, SetWithdrawAddressResponse>(`/v1/set/withdraw/address`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetWithdrawAddressesByAppUser(req: GetWithdrawAddressesByAppUserRequest, initReq?: fm.InitReq): Promise<GetWithdrawAddressesByAppUserResponse> {
+    return fm.fetchReq<GetWithdrawAddressesByAppUserRequest, GetWithdrawAddressesByAppUserResponse>(`/v1/get/withdraw/addresses/by/app/user`, {...initReq, method: "POST"})
   }
 }

@@ -57,6 +57,8 @@ type CloudHashingApisClient interface {
 	SubmitUserWithdraw(ctx context.Context, in *SubmitUserWithdrawRequest, opts ...grpc.CallOption) (*SubmitUserWithdrawResponse, error)
 	UpdateUserWithdrawReview(ctx context.Context, in *UpdateUserWithdrawReviewRequest, opts ...grpc.CallOption) (*UpdateUserWithdrawReviewResponse, error)
 	GetUserWithdrawsByAppUser(ctx context.Context, in *GetUserWithdrawsByAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawsByAppUserResponse, error)
+	SetWithdrawAddress(ctx context.Context, in *SetWithdrawAddressRequest, opts ...grpc.CallOption) (*SetWithdrawAddressResponse, error)
+	GetWithdrawAddressesByAppUser(ctx context.Context, in *GetWithdrawAddressesByAppUserRequest, opts ...grpc.CallOption) (*GetWithdrawAddressesByAppUserResponse, error)
 }
 
 type cloudHashingApisClient struct {
@@ -364,6 +366,24 @@ func (c *cloudHashingApisClient) GetUserWithdrawsByAppUser(ctx context.Context, 
 	return out, nil
 }
 
+func (c *cloudHashingApisClient) SetWithdrawAddress(ctx context.Context, in *SetWithdrawAddressRequest, opts ...grpc.CallOption) (*SetWithdrawAddressResponse, error) {
+	out := new(SetWithdrawAddressResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/SetWithdrawAddress", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetWithdrawAddressesByAppUser(ctx context.Context, in *GetWithdrawAddressesByAppUserRequest, opts ...grpc.CallOption) (*GetWithdrawAddressesByAppUserResponse, error) {
+	out := new(GetWithdrawAddressesByAppUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetWithdrawAddressesByAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CloudHashingApisServer is the server API for CloudHashingApis service.
 // All implementations must embed UnimplementedCloudHashingApisServer
 // for forward compatibility
@@ -401,6 +421,8 @@ type CloudHashingApisServer interface {
 	SubmitUserWithdraw(context.Context, *SubmitUserWithdrawRequest) (*SubmitUserWithdrawResponse, error)
 	UpdateUserWithdrawReview(context.Context, *UpdateUserWithdrawReviewRequest) (*UpdateUserWithdrawReviewResponse, error)
 	GetUserWithdrawsByAppUser(context.Context, *GetUserWithdrawsByAppUserRequest) (*GetUserWithdrawsByAppUserResponse, error)
+	SetWithdrawAddress(context.Context, *SetWithdrawAddressRequest) (*SetWithdrawAddressResponse, error)
+	GetWithdrawAddressesByAppUser(context.Context, *GetWithdrawAddressesByAppUserRequest) (*GetWithdrawAddressesByAppUserResponse, error)
 	mustEmbedUnimplementedCloudHashingApisServer()
 }
 
@@ -506,6 +528,12 @@ func (UnimplementedCloudHashingApisServer) UpdateUserWithdrawReview(context.Cont
 }
 func (UnimplementedCloudHashingApisServer) GetUserWithdrawsByAppUser(context.Context, *GetUserWithdrawsByAppUserRequest) (*GetUserWithdrawsByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserWithdrawsByAppUser not implemented")
+}
+func (UnimplementedCloudHashingApisServer) SetWithdrawAddress(context.Context, *SetWithdrawAddressRequest) (*SetWithdrawAddressResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetWithdrawAddress not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetWithdrawAddressesByAppUser(context.Context, *GetWithdrawAddressesByAppUserRequest) (*GetWithdrawAddressesByAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetWithdrawAddressesByAppUser not implemented")
 }
 func (UnimplementedCloudHashingApisServer) mustEmbedUnimplementedCloudHashingApisServer() {}
 
@@ -1114,6 +1142,42 @@ func _CloudHashingApis_GetUserWithdrawsByAppUser_Handler(srv interface{}, ctx co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingApis_SetWithdrawAddress_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetWithdrawAddressRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).SetWithdrawAddress(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/SetWithdrawAddress",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).SetWithdrawAddress(ctx, req.(*SetWithdrawAddressRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetWithdrawAddressesByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWithdrawAddressesByAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetWithdrawAddressesByAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetWithdrawAddressesByAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetWithdrawAddressesByAppUser(ctx, req.(*GetWithdrawAddressesByAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CloudHashingApis_ServiceDesc is the grpc.ServiceDesc for CloudHashingApis service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1252,6 +1316,14 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetUserWithdrawsByAppUser",
 			Handler:    _CloudHashingApis_GetUserWithdrawsByAppUser_Handler,
+		},
+		{
+			MethodName: "SetWithdrawAddress",
+			Handler:    _CloudHashingApis_SetWithdrawAddress_Handler,
+		},
+		{
+			MethodName: "GetWithdrawAddressesByAppUser",
+			Handler:    _CloudHashingApis_GetWithdrawAddressesByAppUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

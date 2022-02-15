@@ -227,6 +227,18 @@ service CloudHashingApis {
             body: "*"
         };
     }
+
+    rpc SetWithdrawAddress (SetWithdrawAddressRequest) returns (SetWithdrawAddressResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/withdraw/address"
+            body: "*"
+        };
+    }
+    rpc GetWithdrawAddressesByAppUser (GetWithdrawAddressesByAppUserRequest) returns (GetWithdrawAddressesByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/withdraw/addresses/by/app/user"
+        };
+    }
 }
 
 // Request body and response
@@ -525,7 +537,7 @@ message CreateKycResponse {
 }
 
 message UpdateKycRequest {
-    kyc.management.v1.KycInfo Info = 10;
+    kyc.management.v1.KycInfo Info = 30;
 }
 
 message UpdateKycResponse {
@@ -609,4 +621,33 @@ message GetWithdrawReviewsByOtherAppRequest {
 
 message GetWithdrawReviewsByOtherAppResponse {
     repeated WithdrawReview Infos = 10;
+}
+
+message WithdrawAddress {
+    cloud.hashing.billing.v1.UserWithdraw Address = 10;
+    string State = 20;
+    string Message = 30;
+}
+
+message SetWithdrawAddressRequest {
+    cloud.hashing.billing.v1.UserWithdraw Info = 10;
+}
+
+message SetWithdrawAddressResponse {
+    WithdrawAddress Info = 10;
+}
+
+message WithdrawAddressReview {
+    review.service.v1.Review Review = 10;
+    app.user.manager.v1.AppUserInfo User = 20;
+    cloud.hashing.billing.v1.UserWithdraw Address = 30;
+}
+
+message GetWithdrawAddressesByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetWithdrawAddressesByAppUserResponse {
+    repeated WithdrawAddressReview Infos = 10;
 }

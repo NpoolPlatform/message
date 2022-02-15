@@ -651,6 +651,28 @@
         ]
       }
     },
+    "/v1/get/withdraw/addresses/by/app/user": {
+      "post": {
+        "operationId": "CloudHashingApis_GetWithdrawAddressesByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetWithdrawAddressesByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/withdraw/reviews": {
       "post": {
         "operationId": "CloudHashingApis_GetWithdrawReviews",
@@ -739,6 +761,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetWithdrawReviewsByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/set/withdraw/address": {
+      "post": {
+        "operationId": "CloudHashingApis_SetWithdrawAddress",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SetWithdrawAddressResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetWithdrawAddressRequest"
             }
           }
         ],
@@ -1321,6 +1375,32 @@
           "$ref": "#/definitions/v1UserWithdrawItem"
         },
         "State": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "hashingbillingv1UserWithdraw": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Name": {
           "type": "string"
         },
         "Message": {
@@ -2002,6 +2082,17 @@
         }
       }
     },
+    "v1GetWithdrawAddressesByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1WithdrawAddressReview"
+          }
+        }
+      }
+    },
     "v1GetWithdrawReviewsByAppRequest": {
       "type": "object",
       "properties": {
@@ -2156,6 +2247,10 @@
           "items": {
             "$ref": "#/definitions/v1FeeDetail"
           }
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -2266,6 +2361,10 @@
           "items": {
             "type": "string"
           }
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -2653,6 +2752,22 @@
         }
       }
     },
+    "v1SetWithdrawAddressRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/hashingbillingv1UserWithdraw"
+        }
+      }
+    },
+    "v1SetWithdrawAddressResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1WithdrawAddress"
+        }
+      }
+    },
     "v1SignupRequest": {
       "type": "object",
       "properties": {
@@ -2969,6 +3084,34 @@
         }
       },
       "title": "Request body and response"
+    },
+    "v1WithdrawAddress": {
+      "type": "object",
+      "properties": {
+        "Address": {
+          "$ref": "#/definitions/hashingbillingv1UserWithdraw"
+        },
+        "State": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1WithdrawAddressReview": {
+      "type": "object",
+      "properties": {
+        "Review": {
+          "$ref": "#/definitions/v1Review"
+        },
+        "User": {
+          "$ref": "#/definitions/v1AppUserInfo"
+        },
+        "Address": {
+          "$ref": "#/definitions/hashingbillingv1UserWithdraw"
+        }
+      }
     },
     "v1WithdrawReview": {
       "type": "object",
