@@ -402,7 +402,12 @@ export type WithdrawAddress = {
 }
 
 export type SetWithdrawAddressRequest = {
-  info?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdraw
+  appID?: string
+  userID?: string
+  coinTypeID?: string
+  address?: string
+  name?: string
+  message?: string
 }
 
 export type SetWithdrawAddressResponse = {

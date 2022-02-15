@@ -2755,8 +2755,23 @@
     "v1SetWithdrawAddressRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/hashingbillingv1UserWithdraw"
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
         }
       }
     },

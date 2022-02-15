@@ -1169,7 +1169,12 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [cloud.hashing.billing.v1.UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| Address | [string](#string) |  |  |
+| Name | [string](#string) |  |  |
+| Message | [string](#string) |  |  |
 
 
 
@@ -2600,7 +2605,12 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [cloud.hashing.billing.v1.UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| Address | [string](#string) |  |  |
+| Name | [string](#string) |  |  |
+| Message | [string](#string) |  |  |
 
 
 

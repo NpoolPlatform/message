@@ -630,7 +630,12 @@ message WithdrawAddress {
 }
 
 message SetWithdrawAddressRequest {
-    cloud.hashing.billing.v1.UserWithdraw Info = 10;
+    string AppID = 10;
+    string UserID = 20;
+    string CoinTypeID = 30;
+    string Address = 40;
+    string Name = 50;
+    string Message = 60;
 }
 
 message SetWithdrawAddressResponse {
