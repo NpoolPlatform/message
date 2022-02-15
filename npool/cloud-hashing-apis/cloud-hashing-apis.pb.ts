@@ -418,6 +418,7 @@ export type WithdrawAddressReview = {
   review?: ReviewServiceV1Review-service.Review
   user?: AppUserManagerV1Appusermgr.AppUserInfo
   address?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdraw
+  account?: CloudHashingBillingV1Cloud-hashing-billing.CoinAccountInfo
 }
 
 export type GetWithdrawAddressesByAppUserRequest = {

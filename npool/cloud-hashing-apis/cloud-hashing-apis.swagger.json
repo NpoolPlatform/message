@@ -3125,6 +3125,9 @@
         },
         "Address": {
           "$ref": "#/definitions/hashingbillingv1UserWithdraw"
+        },
+        "Account": {
+          "$ref": "#/definitions/v1CoinAccountInfo"
         }
       }
     },

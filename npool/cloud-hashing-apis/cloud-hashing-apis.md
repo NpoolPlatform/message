@@ -1547,6 +1547,7 @@ Request body and response
 | Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 | User | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 | Address | [cloud.hashing.billing.v1.UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Account | [cloud.hashing.billing.v1.CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
 
 
 
@@ -2983,6 +2984,7 @@ Request body and response
 | Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 | User | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 | Address | [cloud.hashing.billing.v1.UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Account | [cloud.hashing.billing.v1.CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
 
 
 

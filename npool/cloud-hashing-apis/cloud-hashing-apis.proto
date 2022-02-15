@@ -646,6 +646,7 @@ message WithdrawAddressReview {
     review.service.v1.Review Review = 10;
     app.user.manager.v1.AppUserInfo User = 20;
     cloud.hashing.billing.v1.UserWithdraw Address = 30;
+    cloud.hashing.billing.v1.CoinAccountInfo Account = 40;
 }
 
 message GetWithdrawAddressesByAppUserRequest {
