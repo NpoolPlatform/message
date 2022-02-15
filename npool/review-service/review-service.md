@@ -18,6 +18,8 @@
     - [GetReviewRulesByDomainResponse](#review.service.v1.GetReviewRulesByDomainResponse)
     - [GetReviewsByAppDomainObjectTypeIDRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeIDRequest)
     - [GetReviewsByAppDomainObjectTypeIDResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeIDResponse)
+    - [GetReviewsByAppDomainObjectTypeRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeRequest)
+    - [GetReviewsByAppDomainObjectTypeResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeResponse)
     - [GetReviewsByAppDomainRequest](#review.service.v1.GetReviewsByAppDomainRequest)
     - [GetReviewsByAppDomainResponse](#review.service.v1.GetReviewsByAppDomainResponse)
     - [GetReviewsByDomainRequest](#review.service.v1.GetReviewsByDomainRequest)
@@ -51,6 +53,8 @@
     - [GetReviewRulesByDomainResponse](#review.service.v1.GetReviewRulesByDomainResponse)
     - [GetReviewsByAppDomainObjectTypeIDRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeIDRequest)
     - [GetReviewsByAppDomainObjectTypeIDResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeIDResponse)
+    - [GetReviewsByAppDomainObjectTypeRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeRequest)
+    - [GetReviewsByAppDomainObjectTypeResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeResponse)
     - [GetReviewsByAppDomainRequest](#review.service.v1.GetReviewsByAppDomainRequest)
     - [GetReviewsByAppDomainResponse](#review.service.v1.GetReviewsByAppDomainResponse)
     - [GetReviewsByDomainRequest](#review.service.v1.GetReviewsByDomainRequest)
@@ -294,6 +298,38 @@
 
 
 
+<a name="review.service.v1.GetReviewsByAppDomainObjectTypeRequest"></a>
+
+### GetReviewsByAppDomainObjectTypeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| Domain | [string](#string) |  |  |
+| ObjectType | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="review.service.v1.GetReviewsByAppDomainObjectTypeResponse"></a>
+
+### GetReviewsByAppDomainObjectTypeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Review](#review.service.v1.Review) | repeated |  |
+
+
+
+
+
+
 <a name="review.service.v1.GetReviewsByAppDomainRequest"></a>
 
 ### GetReviewsByAppDomainRequest
@@ -551,6 +587,7 @@ Service Name
 | UpdateReview | [UpdateReviewRequest](#review.service.v1.UpdateReviewRequest) | [UpdateReviewResponse](#review.service.v1.UpdateReviewResponse) |  |
 | GetReviewsByDomain | [GetReviewsByDomainRequest](#review.service.v1.GetReviewsByDomainRequest) | [GetReviewsByDomainResponse](#review.service.v1.GetReviewsByDomainResponse) |  |
 | GetReviewsByAppDomain | [GetReviewsByAppDomainRequest](#review.service.v1.GetReviewsByAppDomainRequest) | [GetReviewsByAppDomainResponse](#review.service.v1.GetReviewsByAppDomainResponse) |  |
+| GetReviewsByAppDomainObjectType | [GetReviewsByAppDomainObjectTypeRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeRequest) | [GetReviewsByAppDomainObjectTypeResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeResponse) |  |
 | GetReviewsByAppDomainObjectTypeID | [GetReviewsByAppDomainObjectTypeIDRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeIDRequest) | [GetReviewsByAppDomainObjectTypeIDResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeIDResponse) |  |
 | SubmitReview | [SubmitReviewRequest](#review.service.v1.SubmitReviewRequest) | [SubmitReviewResponse](#review.service.v1.SubmitReviewResponse) |  |
 | SubmitReviewResult | [SubmitReviewResultRequest](#review.service.v1.SubmitReviewResultRequest) | [SubmitReviewResultResponse](#review.service.v1.SubmitReviewResultResponse) |  |
@@ -785,6 +822,38 @@ Service Name
 
 
 
+<a name="review.service.v1.GetReviewsByAppDomainObjectTypeRequest"></a>
+
+### GetReviewsByAppDomainObjectTypeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| Domain | [string](#string) |  |  |
+| ObjectType | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="review.service.v1.GetReviewsByAppDomainObjectTypeResponse"></a>
+
+### GetReviewsByAppDomainObjectTypeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Review](#review.service.v1.Review) | repeated |  |
+
+
+
+
+
+
 <a name="review.service.v1.GetReviewsByAppDomainRequest"></a>
 
 ### GetReviewsByAppDomainRequest
@@ -1042,6 +1111,7 @@ Service Name
 | UpdateReview | [UpdateReviewRequest](#review.service.v1.UpdateReviewRequest) | [UpdateReviewResponse](#review.service.v1.UpdateReviewResponse) |  |
 | GetReviewsByDomain | [GetReviewsByDomainRequest](#review.service.v1.GetReviewsByDomainRequest) | [GetReviewsByDomainResponse](#review.service.v1.GetReviewsByDomainResponse) |  |
 | GetReviewsByAppDomain | [GetReviewsByAppDomainRequest](#review.service.v1.GetReviewsByAppDomainRequest) | [GetReviewsByAppDomainResponse](#review.service.v1.GetReviewsByAppDomainResponse) |  |
+| GetReviewsByAppDomainObjectType | [GetReviewsByAppDomainObjectTypeRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeRequest) | [GetReviewsByAppDomainObjectTypeResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeResponse) |  |
 | GetReviewsByAppDomainObjectTypeID | [GetReviewsByAppDomainObjectTypeIDRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeIDRequest) | [GetReviewsByAppDomainObjectTypeIDResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeIDResponse) |  |
 | SubmitReview | [SubmitReviewRequest](#review.service.v1.SubmitReviewRequest) | [SubmitReviewResponse](#review.service.v1.SubmitReviewResponse) |  |
 | SubmitReviewResult | [SubmitReviewResultRequest](#review.service.v1.SubmitReviewResultRequest) | [SubmitReviewResultResponse](#review.service.v1.SubmitReviewResultResponse) |  |

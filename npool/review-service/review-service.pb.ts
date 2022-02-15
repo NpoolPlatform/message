@@ -64,6 +64,16 @@ export type GetReviewsByAppDomainResponse = {
   infos?: Review[]
 }
 
+export type GetReviewsByAppDomainObjectTypeRequest = {
+  appID?: string
+  domain?: string
+  objectType?: string
+}
+
+export type GetReviewsByAppDomainObjectTypeResponse = {
+  infos?: Review[]
+}
+
 export type GetReviewsByAppDomainObjectTypeIDRequest = {
   appID?: string
   domain?: string
@@ -157,6 +167,9 @@ export class ReviewService {
   }
   static GetReviewsByAppDomain(req: GetReviewsByAppDomainRequest, initReq?: fm.InitReq): Promise<GetReviewsByAppDomainResponse> {
     return fm.fetchReq<GetReviewsByAppDomainRequest, GetReviewsByAppDomainResponse>(`/v1/get/reviews/by/app/domain`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetReviewsByAppDomainObjectType(req: GetReviewsByAppDomainObjectTypeRequest, initReq?: fm.InitReq): Promise<GetReviewsByAppDomainObjectTypeResponse> {
+    return fm.fetchReq<GetReviewsByAppDomainObjectTypeRequest, GetReviewsByAppDomainObjectTypeResponse>(`/v1/get/reviews/by/app/domain/object/type`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetReviewsByAppDomainObjectTypeID(req: GetReviewsByAppDomainObjectTypeIDRequest, initReq?: fm.InitReq): Promise<GetReviewsByAppDomainObjectTypeIDResponse> {
     return fm.fetchReq<GetReviewsByAppDomainObjectTypeIDRequest, GetReviewsByAppDomainObjectTypeIDResponse>(`/v1/get/reviews/by/app/domain/object/type/id`, {...initReq, method: "POST", body: JSON.stringify(req)})
