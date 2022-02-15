@@ -1926,6 +1926,7 @@
 | Title | [string](#string) |  |  |
 | Unit | [string](#string) |  |  |
 | FeeIDs | [string](#string) | repeated |  |
+| StartAt | [uint32](#uint32) |  |  |
 
 
 
@@ -4232,6 +4233,7 @@ Cloud Hashing Goods
 | Title | [string](#string) |  |  |
 | Unit | [string](#string) |  |  |
 | FeeIDs | [string](#string) | repeated |  |
+| StartAt | [uint32](#uint32) |  |  |
 
 
 

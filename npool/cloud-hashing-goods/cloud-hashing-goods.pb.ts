@@ -181,6 +181,7 @@ export type GoodInfo = {
   title?: string
   unit?: string
   feeIDs?: string[]
+  startAt?: number
 }
 
 export type CreateGoodRequest = {
