@@ -1096,7 +1096,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| State | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 
 
 
@@ -3493,7 +3494,8 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| State | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 
 
 

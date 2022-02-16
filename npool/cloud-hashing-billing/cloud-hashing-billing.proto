@@ -545,7 +545,8 @@ message GetCoinAccountTransactionsByStateResponse {
 }
 
 message GetCoinAccountTransactionsByAppUserRequest {
-    string State = 10;
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message GetCoinAccountTransactionsByAppUserResponse {

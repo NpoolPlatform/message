@@ -124,7 +124,8 @@ export type GetCoinAccountTransactionsByStateResponse = {
 }
 
 export type GetCoinAccountTransactionsByAppUserRequest = {
-  state?: string
+  appID?: string
+  userID?: string
 }
 
 export type GetCoinAccountTransactionsByAppUserResponse = {

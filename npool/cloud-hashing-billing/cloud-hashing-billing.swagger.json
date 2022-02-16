@@ -2704,7 +2704,10 @@
     "v1GetCoinAccountTransactionsByAppUserRequest": {
       "type": "object",
       "properties": {
-        "State": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         }
       }
