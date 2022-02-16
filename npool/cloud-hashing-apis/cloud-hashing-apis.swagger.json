@@ -764,6 +764,16 @@
             }
           }
         },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetWithdrawAddressesByAppUserRequest"
+            }
+          }
+        ],
         "tags": [
           "CloudHashingApis"
         ]
@@ -2240,6 +2250,17 @@
           "items": {
             "$ref": "#/definitions/v1WithdrawAddressReview"
           }
+        }
+      }
+    },
+    "v1GetWithdrawAddressesByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
         }
       }
     },

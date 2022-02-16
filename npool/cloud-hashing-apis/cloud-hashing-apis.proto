@@ -255,6 +255,7 @@ service CloudHashingApis {
     rpc GetWithdrawAddressesByAppUser (GetWithdrawAddressesByAppUserRequest) returns (GetWithdrawAddressesByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/withdraw/addresses/by/app/user"
+            body: "*"
         };
     }
 }

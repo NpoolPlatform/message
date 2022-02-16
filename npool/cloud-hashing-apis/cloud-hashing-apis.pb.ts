@@ -571,6 +571,6 @@ export class CloudHashingApis {
     return fm.fetchReq<SetWithdrawAddressRequest, SetWithdrawAddressResponse>(`/v1/set/withdraw/address`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetWithdrawAddressesByAppUser(req: GetWithdrawAddressesByAppUserRequest, initReq?: fm.InitReq): Promise<GetWithdrawAddressesByAppUserResponse> {
-    return fm.fetchReq<GetWithdrawAddressesByAppUserRequest, GetWithdrawAddressesByAppUserResponse>(`/v1/get/withdraw/addresses/by/app/user`, {...initReq, method: "POST"})
+    return fm.fetchReq<GetWithdrawAddressesByAppUserRequest, GetWithdrawAddressesByAppUserResponse>(`/v1/get/withdraw/addresses/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
