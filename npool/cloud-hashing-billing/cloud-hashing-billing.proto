@@ -309,6 +309,24 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetUserWithdrawAccount (GetUserWithdrawAccountRequest) returns (GetUserWithdrawAccountResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraw/account"
+            body: "*"
+        };
+    }
+    rpc GetUserWithdrawAccountsByAppUser (GetUserWithdrawAccountsByAppUserRequest) returns (GetUserWithdrawAccountsByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraw/accounts/by/app/user"
+            body: "*"
+        };
+    }
+    rpc GetUserWithdrawAccountsByOtherAppUser (GetUserWithdrawAccountsByOtherAppUserRequest) returns (GetUserWithdrawAccountsByOtherAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraw/accounts/by/other/app/user"
+            body: "*"
+        };
+    }
     rpc GetUserWithdrawByAccount (GetUserWithdrawByAccountRequest) returns (GetUserWithdrawByAccountResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/withdraw/by/account"
@@ -932,6 +950,37 @@ message GetUserWithdrawsByOtherAppUserRequest {
 
 message GetUserWithdrawsByOtherAppUserResponse {
     repeated UserWithdraw Infos = 10;
+}
+
+message UserWithdrawAccount {
+    UserWithdraw Withdraw = 10;
+    CoinAccountInfo Account = 20;
+}
+
+message GetUserWithdrawAccountRequest {
+    string ID = 10;
+}
+
+message GetUserWithdrawAccountResponse {
+    UserWithdrawAccount Info = 10;
+}
+
+message GetUserWithdrawAccountsByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetUserWithdrawAccountsByAppUserResponse {
+    repeated UserWithdrawAccount Infos = 10;
+}
+
+message GetUserWithdrawAccountsByOtherAppUserRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
+}
+
+message GetUserWithdrawAccountsByOtherAppUserResponse {
+    repeated UserWithdrawAccount Infos = 10;
 }
 
 message GetUserWithdrawByAccountRequest {

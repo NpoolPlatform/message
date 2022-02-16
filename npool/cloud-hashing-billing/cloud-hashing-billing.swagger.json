@@ -1611,6 +1611,102 @@
         ]
       }
     },
+    "/v1/get/user/withdraw/account": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserWithdrawAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/user/withdraw/accounts/by/app/user": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserWithdrawAccountsByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawAccountsByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawAccountsByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/user/withdraw/accounts/by/other/app/user": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserWithdrawAccountsByOtherAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawAccountsByOtherAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawAccountsByOtherAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/user/withdraw/by/account": {
       "post": {
         "operationId": "CloudHashingBilling_GetUserWithdrawByAccount",
@@ -3201,6 +3297,66 @@
         }
       }
     },
+    "v1GetUserWithdrawAccountRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserWithdrawAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserWithdrawAccount"
+        }
+      }
+    },
+    "v1GetUserWithdrawAccountsByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserWithdrawAccountsByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserWithdrawAccount"
+          }
+        }
+      }
+    },
+    "v1GetUserWithdrawAccountsByOtherAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserWithdrawAccountsByOtherAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserWithdrawAccount"
+          }
+        }
+      }
+    },
     "v1GetUserWithdrawByAccountRequest": {
       "type": "object",
       "properties": {
@@ -3703,6 +3859,17 @@
         },
         "Message": {
           "type": "string"
+        }
+      }
+    },
+    "v1UserWithdrawAccount": {
+      "type": "object",
+      "properties": {
+        "Withdraw": {
+          "$ref": "#/definitions/v1UserWithdraw"
+        },
+        "Account": {
+          "$ref": "#/definitions/v1CoinAccountInfo"
         }
       }
     },

@@ -109,6 +109,12 @@
     - [GetUserDirectBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse)
     - [GetUserDirectBenefitsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest)
     - [GetUserDirectBenefitsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse)
+    - [GetUserWithdrawAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountRequest)
+    - [GetUserWithdrawAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountResponse)
+    - [GetUserWithdrawAccountsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserRequest)
+    - [GetUserWithdrawAccountsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserResponse)
+    - [GetUserWithdrawAccountsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserRequest)
+    - [GetUserWithdrawAccountsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserResponse)
     - [GetUserWithdrawByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest)
     - [GetUserWithdrawByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse)
     - [GetUserWithdrawItemRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemRequest)
@@ -151,6 +157,7 @@
     - [UserBenefit](#cloud.hashing.billing.v1.UserBenefit)
     - [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit)
     - [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw)
+    - [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount)
     - [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem)
   
     - [CloudHashingBilling](#cloud.hashing.billing.v1.CloudHashingBilling)
@@ -261,6 +268,12 @@
     - [GetUserDirectBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse)
     - [GetUserDirectBenefitsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest)
     - [GetUserDirectBenefitsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse)
+    - [GetUserWithdrawAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountRequest)
+    - [GetUserWithdrawAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountResponse)
+    - [GetUserWithdrawAccountsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserRequest)
+    - [GetUserWithdrawAccountsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserResponse)
+    - [GetUserWithdrawAccountsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserRequest)
+    - [GetUserWithdrawAccountsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserResponse)
     - [GetUserWithdrawByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest)
     - [GetUserWithdrawByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse)
     - [GetUserWithdrawItemRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemRequest)
@@ -303,6 +316,7 @@
     - [UserBenefit](#cloud.hashing.billing.v1.UserBenefit)
     - [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit)
     - [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw)
+    - [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount)
     - [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem)
   
     - [CloudHashingBilling](#cloud.hashing.billing.v1.CloudHashingBilling)
@@ -1930,6 +1944,98 @@
 
 
 
+<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountRequest"></a>
+
+### GetUserWithdrawAccountRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountResponse"></a>
+
+### GetUserWithdrawAccountResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserRequest"></a>
+
+### GetUserWithdrawAccountsByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserResponse"></a>
+
+### GetUserWithdrawAccountsByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserRequest"></a>
+
+### GetUserWithdrawAccountsByOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserResponse"></a>
+
+### GetUserWithdrawAccountsByOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest"></a>
 
 ### GetUserWithdrawByAccountRequest
@@ -2603,6 +2709,22 @@
 
 
 
+<a name="cloud.hashing.billing.v1.UserWithdrawAccount"></a>
+
+### UserWithdrawAccount
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Withdraw | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Account | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.UserWithdrawItem"></a>
 
 ### UserWithdrawItem
@@ -2685,6 +2807,9 @@ Cloud Hashing Billing
 | GetUserWithdraw | [GetUserWithdrawRequest](#cloud.hashing.billing.v1.GetUserWithdrawRequest) | [GetUserWithdrawResponse](#cloud.hashing.billing.v1.GetUserWithdrawResponse) |  |
 | GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse) |  |
 | GetUserWithdrawsByOtherAppUser | [GetUserWithdrawsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest) | [GetUserWithdrawsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse) |  |
+| GetUserWithdrawAccount | [GetUserWithdrawAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountRequest) | [GetUserWithdrawAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountResponse) |  |
+| GetUserWithdrawAccountsByAppUser | [GetUserWithdrawAccountsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserRequest) | [GetUserWithdrawAccountsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserResponse) |  |
+| GetUserWithdrawAccountsByOtherAppUser | [GetUserWithdrawAccountsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserRequest) | [GetUserWithdrawAccountsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserResponse) |  |
 | GetUserWithdrawByAccount | [GetUserWithdrawByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest) | [GetUserWithdrawByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse) |  |
 | CreateUserDirectBenefit | [CreateUserDirectBenefitRequest](#cloud.hashing.billing.v1.CreateUserDirectBenefitRequest) | [CreateUserDirectBenefitResponse](#cloud.hashing.billing.v1.CreateUserDirectBenefitResponse) |  |
 | UpdateUserDirectBenefit | [UpdateUserDirectBenefitRequest](#cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest) | [UpdateUserDirectBenefitResponse](#cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse) |  |
@@ -4328,6 +4453,98 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountRequest"></a>
+
+### GetUserWithdrawAccountRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountResponse"></a>
+
+### GetUserWithdrawAccountResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserRequest"></a>
+
+### GetUserWithdrawAccountsByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserResponse"></a>
+
+### GetUserWithdrawAccountsByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserRequest"></a>
+
+### GetUserWithdrawAccountsByOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserResponse"></a>
+
+### GetUserWithdrawAccountsByOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest"></a>
 
 ### GetUserWithdrawByAccountRequest
@@ -5001,6 +5218,22 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.UserWithdrawAccount"></a>
+
+### UserWithdrawAccount
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Withdraw | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Account | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.UserWithdrawItem"></a>
 
 ### UserWithdrawItem
@@ -5083,6 +5316,9 @@ Cloud Hashing Billing
 | GetUserWithdraw | [GetUserWithdrawRequest](#cloud.hashing.billing.v1.GetUserWithdrawRequest) | [GetUserWithdrawResponse](#cloud.hashing.billing.v1.GetUserWithdrawResponse) |  |
 | GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse) |  |
 | GetUserWithdrawsByOtherAppUser | [GetUserWithdrawsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest) | [GetUserWithdrawsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse) |  |
+| GetUserWithdrawAccount | [GetUserWithdrawAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountRequest) | [GetUserWithdrawAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountResponse) |  |
+| GetUserWithdrawAccountsByAppUser | [GetUserWithdrawAccountsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserRequest) | [GetUserWithdrawAccountsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserResponse) |  |
+| GetUserWithdrawAccountsByOtherAppUser | [GetUserWithdrawAccountsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserRequest) | [GetUserWithdrawAccountsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserResponse) |  |
 | GetUserWithdrawByAccount | [GetUserWithdrawByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest) | [GetUserWithdrawByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse) |  |
 | CreateUserDirectBenefit | [CreateUserDirectBenefitRequest](#cloud.hashing.billing.v1.CreateUserDirectBenefitRequest) | [CreateUserDirectBenefitResponse](#cloud.hashing.billing.v1.CreateUserDirectBenefitResponse) |  |
 | UpdateUserDirectBenefit | [UpdateUserDirectBenefitRequest](#cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest) | [UpdateUserDirectBenefitResponse](#cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse) |  |
