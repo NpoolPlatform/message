@@ -1277,6 +1277,9 @@ Request body and response
 | Address | [string](#string) |  |  |
 | Name | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
+| Account | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
+| VerificationCode | [string](#string) |  |  |
 
 
 
@@ -2808,6 +2811,9 @@ Request body and response
 | Address | [string](#string) |  |  |
 | Name | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
+| Account | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
+| VerificationCode | [string](#string) |  |  |
 
 
 

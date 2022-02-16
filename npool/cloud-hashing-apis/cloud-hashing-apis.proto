@@ -655,6 +655,9 @@ message SetWithdrawAddressRequest {
     string Address = 40;
     string Name = 50;
     string Message = 60;
+    string Account = 70;
+    string AccountType = 80;
+    string VerificationCode = 90;
 }
 
 message SetWithdrawAddressResponse {

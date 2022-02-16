@@ -409,6 +409,9 @@ export type SetWithdrawAddressRequest = {
   address?: string
   name?: string
   message?: string
+  account?: string
+  accountType?: string
+  verificationCode?: string
 }
 
 export type SetWithdrawAddressResponse = {
