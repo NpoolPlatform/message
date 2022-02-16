@@ -123,6 +123,14 @@ export type GetCoinAccountTransactionsByStateResponse = {
   infos?: CoinAccountTransaction[]
 }
 
+export type GetCoinAccountTransactionsByAppUserRequest = {
+  state?: string
+}
+
+export type GetCoinAccountTransactionsByAppUserResponse = {
+  infos?: CoinAccountTransaction[]
+}
+
 export type GetCoinAccountTransactionsByCoinRequest = {
   coinTypeID?: string
 }
@@ -714,6 +722,9 @@ export class CloudHashingBilling {
   }
   static GetCoinAccountTransactionsByState(req: GetCoinAccountTransactionsByStateRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsByStateResponse> {
     return fm.fetchReq<GetCoinAccountTransactionsByStateRequest, GetCoinAccountTransactionsByStateResponse>(`/v1/get/coin/account/transactions/by/state`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCoinAccountTransactionsByAppUser(req: GetCoinAccountTransactionsByAppUserRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsByAppUserResponse> {
+    return fm.fetchReq<GetCoinAccountTransactionsByAppUserRequest, GetCoinAccountTransactionsByAppUserResponse>(`/v1/get/coin/account/transactions/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetCoinAccountTransactionsByCoin(req: GetCoinAccountTransactionsByCoinRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsByCoinResponse> {
     return fm.fetchReq<GetCoinAccountTransactionsByCoinRequest, GetCoinAccountTransactionsByCoinResponse>(`/v1/get/coin/account/transactions/by/coin`, {...initReq, method: "POST", body: JSON.stringify(req)})
