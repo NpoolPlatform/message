@@ -362,6 +362,7 @@
 | CoinTypeID | [string](#string) |  |  |
 | Address | [string](#string) |  |  |
 | PlatformHoldPrivateKey | [bool](#bool) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
 
 
 
@@ -2703,6 +2704,7 @@
 | AccountID | [string](#string) |  |  |
 | Name | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
 
 
 
@@ -2871,6 +2873,7 @@ Cloud Hashing Billing
 | CoinTypeID | [string](#string) |  |  |
 | Address | [string](#string) |  |  |
 | PlatformHoldPrivateKey | [bool](#bool) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
 
 
 
@@ -5212,6 +5215,7 @@ Cloud Hashing Billing
 | AccountID | [string](#string) |  |  |
 | Name | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
 
 
 

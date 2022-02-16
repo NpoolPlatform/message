@@ -2319,6 +2319,10 @@
         },
         "PlatformHoldPrivateKey": {
           "type": "boolean"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -3859,6 +3863,10 @@
         },
         "Message": {
           "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

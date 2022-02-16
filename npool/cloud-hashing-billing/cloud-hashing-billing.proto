@@ -451,6 +451,7 @@ message CoinAccountInfo {
     string CoinTypeID = 20;
     string Address = 30;
     bool PlatformHoldPrivateKey = 40;
+    uint32 CreateAt = 50;
 }
 
 message CreateCoinAccountRequest {
@@ -908,6 +909,7 @@ message UserWithdraw {
     string AccountID = 50;
     string Name = 60;
     string Message = 70;
+    uint32 CreateAt = 80;
 }
 
 message CreateUserWithdrawRequest {

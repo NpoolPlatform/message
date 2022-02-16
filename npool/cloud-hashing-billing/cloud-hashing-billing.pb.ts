@@ -12,6 +12,7 @@ export type CoinAccountInfo = {
   coinTypeID?: string
   address?: string
   platformHoldPrivateKey?: boolean
+  createAt?: number
 }
 
 export type CreateCoinAccountRequest = {
@@ -467,6 +468,7 @@ export type UserWithdraw = {
   accountID?: string
   name?: string
   message?: string
+  createAt?: number
 }
 
 export type CreateUserWithdrawRequest = {
