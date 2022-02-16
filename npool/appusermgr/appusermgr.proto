@@ -366,6 +366,12 @@ service AppUserManager {
             body: "*"
         };
     }
+    rpc CreateAppRoleUserForAppOtherUser (CreateAppRoleUserForAppOtherUserRequest) returns (CreateAppRoleUserForAppOtherUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/role/user/for/app/other/user"
+            body: "*"
+        };
+    }
     rpc GetAppRoleUser (GetAppRoleUserRequest) returns (GetAppRoleUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/role/user"
@@ -1020,6 +1026,15 @@ message CreateAppRoleUserForOtherAppUserRequest {
 }
 
 message CreateAppRoleUserForOtherAppUserResponse {
+    AppRoleUser Info = 10;
+}
+
+message CreateAppRoleUserForAppOtherUserRequest {
+    string TargetUserID = 10;
+    AppRoleUser Info = 20;
+}
+
+message CreateAppRoleUserForAppOtherUserResponse {
     AppRoleUser Info = 10;
 }
 

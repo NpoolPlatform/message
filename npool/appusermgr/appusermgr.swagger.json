@@ -235,6 +235,38 @@
         ]
       }
     },
+    "/v1/create/app/role/user/for/app/other/user": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppRoleUserForAppOtherUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRoleUserForAppOtherUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRoleUserForAppOtherUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/create/app/role/user/for/other/app/user": {
       "post": {
         "operationId": "AppUserManager_CreateAppRoleUserForOtherAppUser",
@@ -2716,6 +2748,25 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppRole"
+        }
+      }
+    },
+    "v1CreateAppRoleUserForAppOtherUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppRoleUser"
+        }
+      }
+    },
+    "v1CreateAppRoleUserForAppOtherUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRoleUser"
         }
       }
     },
