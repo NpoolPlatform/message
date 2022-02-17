@@ -665,7 +665,7 @@ message GetGoodDetailRequest {
 }
 
 message GetGoodDetailResponse {
-    GoodDetail Detail = 10;
+    GoodDetail Info = 10;
 }
 
 message GetGoodsDetailRequest {

@@ -2672,7 +2672,7 @@
     "v1GetGoodDetailResponse": {
       "type": "object",
       "properties": {
-        "Detail": {
+        "Info": {
           "$ref": "#/definitions/v1GoodDetail"
         }
       }

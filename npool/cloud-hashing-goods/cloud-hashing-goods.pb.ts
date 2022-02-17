@@ -267,7 +267,7 @@ export type GetGoodDetailRequest = {
 }
 
 export type GetGoodDetailResponse = {
-  detail?: GoodDetail
+  info?: GoodDetail
 }
 
 export type GetGoodsDetailRequest = {

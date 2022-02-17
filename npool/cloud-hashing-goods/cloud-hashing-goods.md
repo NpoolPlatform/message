@@ -1359,7 +1359,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Detail | [GoodDetail](#cloud.hashing.goods.v1.GoodDetail) |  |  |
+| Info | [GoodDetail](#cloud.hashing.goods.v1.GoodDetail) |  |  |
 
 
 
@@ -3651,7 +3651,7 @@ Cloud Hashing Goods
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Detail | [GoodDetail](#cloud.hashing.goods.v1.GoodDetail) |  |  |
+| Info | [GoodDetail](#cloud.hashing.goods.v1.GoodDetail) |  |  |
 
 
 
