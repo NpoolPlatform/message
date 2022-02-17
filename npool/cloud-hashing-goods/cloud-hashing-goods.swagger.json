@@ -526,12 +526,12 @@
     },
     "/v1/create/recommend/for/other/app": {
       "post": {
-        "operationId": "CloudHashingGoods_CreateRecommentForOtherApp",
+        "operationId": "CloudHashingGoods_CreateRecommendForOtherApp",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateRecommentForOtherAppResponse"
+              "$ref": "#/definitions/v1CreateRecommendForOtherAppResponse"
             }
           },
           "default": {
@@ -547,7 +547,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateRecommentForOtherAppRequest"
+              "$ref": "#/definitions/v1CreateRecommendForOtherAppRequest"
             }
           }
         ],
@@ -2522,23 +2522,7 @@
         }
       }
     },
-    "v1CreateRecommendRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Recommend"
-        }
-      }
-    },
-    "v1CreateRecommendResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Recommend"
-        }
-      }
-    },
-    "v1CreateRecommentForOtherAppRequest": {
+    "v1CreateRecommendForOtherAppRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -2549,7 +2533,23 @@
         }
       }
     },
-    "v1CreateRecommentForOtherAppResponse": {
+    "v1CreateRecommendForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Recommend"
+        }
+      }
+    },
+    "v1CreateRecommendRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Recommend"
+        }
+      }
+    },
+    "v1CreateRecommendResponse": {
       "type": "object",
       "properties": {
         "Info": {

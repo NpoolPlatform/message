@@ -55,7 +55,7 @@ type CloudHashingGoodsClient interface {
 	GetGoodDetail(ctx context.Context, in *GetGoodDetailRequest, opts ...grpc.CallOption) (*GetGoodDetailResponse, error)
 	GetGoodsDetail(ctx context.Context, in *GetGoodsDetailRequest, opts ...grpc.CallOption) (*GetGoodsDetailResponse, error)
 	CreateRecommend(ctx context.Context, in *CreateRecommendRequest, opts ...grpc.CallOption) (*CreateRecommendResponse, error)
-	CreateRecommentForOtherApp(ctx context.Context, in *CreateRecommentForOtherAppRequest, opts ...grpc.CallOption) (*CreateRecommentForOtherAppResponse, error)
+	CreateRecommendForOtherApp(ctx context.Context, in *CreateRecommendForOtherAppRequest, opts ...grpc.CallOption) (*CreateRecommendForOtherAppResponse, error)
 	UpdateRecommend(ctx context.Context, in *UpdateRecommendRequest, opts ...grpc.CallOption) (*UpdateRecommendResponse, error)
 	GetRecommendsByApp(ctx context.Context, in *GetRecommendsByAppRequest, opts ...grpc.CallOption) (*GetRecommendsByAppResponse, error)
 	GetRecommendsByOtherApp(ctx context.Context, in *GetRecommendsByOtherAppRequest, opts ...grpc.CallOption) (*GetRecommendsByOtherAppResponse, error)
@@ -366,9 +366,9 @@ func (c *cloudHashingGoodsClient) CreateRecommend(ctx context.Context, in *Creat
 	return out, nil
 }
 
-func (c *cloudHashingGoodsClient) CreateRecommentForOtherApp(ctx context.Context, in *CreateRecommentForOtherAppRequest, opts ...grpc.CallOption) (*CreateRecommentForOtherAppResponse, error) {
-	out := new(CreateRecommentForOtherAppResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.goods.v1.CloudHashingGoods/CreateRecommentForOtherApp", in, out, opts...)
+func (c *cloudHashingGoodsClient) CreateRecommendForOtherApp(ctx context.Context, in *CreateRecommendForOtherAppRequest, opts ...grpc.CallOption) (*CreateRecommendForOtherAppResponse, error) {
+	out := new(CreateRecommendForOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.goods.v1.CloudHashingGoods/CreateRecommendForOtherApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -761,7 +761,7 @@ type CloudHashingGoodsServer interface {
 	GetGoodDetail(context.Context, *GetGoodDetailRequest) (*GetGoodDetailResponse, error)
 	GetGoodsDetail(context.Context, *GetGoodsDetailRequest) (*GetGoodsDetailResponse, error)
 	CreateRecommend(context.Context, *CreateRecommendRequest) (*CreateRecommendResponse, error)
-	CreateRecommentForOtherApp(context.Context, *CreateRecommentForOtherAppRequest) (*CreateRecommentForOtherAppResponse, error)
+	CreateRecommendForOtherApp(context.Context, *CreateRecommendForOtherAppRequest) (*CreateRecommendForOtherAppResponse, error)
 	UpdateRecommend(context.Context, *UpdateRecommendRequest) (*UpdateRecommendResponse, error)
 	GetRecommendsByApp(context.Context, *GetRecommendsByAppRequest) (*GetRecommendsByAppResponse, error)
 	GetRecommendsByOtherApp(context.Context, *GetRecommendsByOtherAppRequest) (*GetRecommendsByOtherAppResponse, error)
@@ -895,8 +895,8 @@ func (UnimplementedCloudHashingGoodsServer) GetGoodsDetail(context.Context, *Get
 func (UnimplementedCloudHashingGoodsServer) CreateRecommend(context.Context, *CreateRecommendRequest) (*CreateRecommendResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateRecommend not implemented")
 }
-func (UnimplementedCloudHashingGoodsServer) CreateRecommentForOtherApp(context.Context, *CreateRecommentForOtherAppRequest) (*CreateRecommentForOtherAppResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateRecommentForOtherApp not implemented")
+func (UnimplementedCloudHashingGoodsServer) CreateRecommendForOtherApp(context.Context, *CreateRecommendForOtherAppRequest) (*CreateRecommendForOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateRecommendForOtherApp not implemented")
 }
 func (UnimplementedCloudHashingGoodsServer) UpdateRecommend(context.Context, *UpdateRecommendRequest) (*UpdateRecommendResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateRecommend not implemented")
@@ -1550,20 +1550,20 @@ func _CloudHashingGoods_CreateRecommend_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudHashingGoods_CreateRecommentForOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateRecommentForOtherAppRequest)
+func _CloudHashingGoods_CreateRecommendForOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateRecommendForOtherAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudHashingGoodsServer).CreateRecommentForOtherApp(ctx, in)
+		return srv.(CloudHashingGoodsServer).CreateRecommendForOtherApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud.hashing.goods.v1.CloudHashingGoods/CreateRecommentForOtherApp",
+		FullMethod: "/cloud.hashing.goods.v1.CloudHashingGoods/CreateRecommendForOtherApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingGoodsServer).CreateRecommentForOtherApp(ctx, req.(*CreateRecommentForOtherAppRequest))
+		return srv.(CloudHashingGoodsServer).CreateRecommendForOtherApp(ctx, req.(*CreateRecommendForOtherAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2394,8 +2394,8 @@ var CloudHashingGoods_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingGoods_CreateRecommend_Handler,
 		},
 		{
-			MethodName: "CreateRecommentForOtherApp",
-			Handler:    _CloudHashingGoods_CreateRecommentForOtherApp_Handler,
+			MethodName: "CreateRecommendForOtherApp",
+			Handler:    _CloudHashingGoods_CreateRecommendForOtherApp_Handler,
 		},
 		{
 			MethodName: "UpdateRecommend",

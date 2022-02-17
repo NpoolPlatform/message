@@ -3424,7 +3424,7 @@ func (x *CreateRecommendResponse) GetInfo() *Recommend {
 	return nil
 }
 
-type CreateRecommentForOtherAppRequest struct {
+type CreateRecommendForOtherAppRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -3433,8 +3433,8 @@ type CreateRecommentForOtherAppRequest struct {
 	Info        *Recommend `protobuf:"bytes,20,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
-func (x *CreateRecommentForOtherAppRequest) Reset() {
-	*x = CreateRecommentForOtherAppRequest{}
+func (x *CreateRecommendForOtherAppRequest) Reset() {
+	*x = CreateRecommendForOtherAppRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_msgTypes[64]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3442,13 +3442,13 @@ func (x *CreateRecommentForOtherAppRequest) Reset() {
 	}
 }
 
-func (x *CreateRecommentForOtherAppRequest) String() string {
+func (x *CreateRecommendForOtherAppRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateRecommentForOtherAppRequest) ProtoMessage() {}
+func (*CreateRecommendForOtherAppRequest) ProtoMessage() {}
 
-func (x *CreateRecommentForOtherAppRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateRecommendForOtherAppRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_msgTypes[64]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3460,26 +3460,26 @@ func (x *CreateRecommentForOtherAppRequest) ProtoReflect() protoreflect.Message 
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateRecommentForOtherAppRequest.ProtoReflect.Descriptor instead.
-func (*CreateRecommentForOtherAppRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateRecommendForOtherAppRequest.ProtoReflect.Descriptor instead.
+func (*CreateRecommendForOtherAppRequest) Descriptor() ([]byte, []int) {
 	return file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_rawDescGZIP(), []int{64}
 }
 
-func (x *CreateRecommentForOtherAppRequest) GetTargetAppID() string {
+func (x *CreateRecommendForOtherAppRequest) GetTargetAppID() string {
 	if x != nil {
 		return x.TargetAppID
 	}
 	return ""
 }
 
-func (x *CreateRecommentForOtherAppRequest) GetInfo() *Recommend {
+func (x *CreateRecommendForOtherAppRequest) GetInfo() *Recommend {
 	if x != nil {
 		return x.Info
 	}
 	return nil
 }
 
-type CreateRecommentForOtherAppResponse struct {
+type CreateRecommendForOtherAppResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -3487,8 +3487,8 @@ type CreateRecommentForOtherAppResponse struct {
 	Info *Recommend `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
-func (x *CreateRecommentForOtherAppResponse) Reset() {
-	*x = CreateRecommentForOtherAppResponse{}
+func (x *CreateRecommendForOtherAppResponse) Reset() {
+	*x = CreateRecommendForOtherAppResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_msgTypes[65]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3496,13 +3496,13 @@ func (x *CreateRecommentForOtherAppResponse) Reset() {
 	}
 }
 
-func (x *CreateRecommentForOtherAppResponse) String() string {
+func (x *CreateRecommendForOtherAppResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateRecommentForOtherAppResponse) ProtoMessage() {}
+func (*CreateRecommendForOtherAppResponse) ProtoMessage() {}
 
-func (x *CreateRecommentForOtherAppResponse) ProtoReflect() protoreflect.Message {
+func (x *CreateRecommendForOtherAppResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_msgTypes[65]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3514,12 +3514,12 @@ func (x *CreateRecommentForOtherAppResponse) ProtoReflect() protoreflect.Message
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateRecommentForOtherAppResponse.ProtoReflect.Descriptor instead.
-func (*CreateRecommentForOtherAppResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateRecommendForOtherAppResponse.ProtoReflect.Descriptor instead.
+func (*CreateRecommendForOtherAppResponse) Descriptor() ([]byte, []int) {
 	return file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_rawDescGZIP(), []int{65}
 }
 
-func (x *CreateRecommentForOtherAppResponse) GetInfo() *Recommend {
+func (x *CreateRecommendForOtherAppResponse) GetInfo() *Recommend {
 	if x != nil {
 		return x.Info
 	}
@@ -8349,7 +8349,7 @@ var file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_rawDesc = []byte{
 	0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
 	0x69, 0x6e, 0x67, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63,
 	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x7c, 0x0a, 0x21,
-	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x46,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x46,
 	0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x12, 0x20, 0x0a, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44,
 	0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70,
@@ -8357,7 +8357,7 @@ var file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_rawDesc = []byte{
 	0x0b, 0x32, 0x21, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e,
 	0x67, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x6d,
 	0x6d, 0x65, 0x6e, 0x64, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x5b, 0x0a, 0x22, 0x43, 0x72,
-	0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x46, 0x6f, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x46, 0x6f, 0x72,
 	0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x12, 0x35, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21,
 	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x67,
@@ -9121,13 +9121,13 @@ var file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_rawDesc = []byte{
 	0xe4, 0x93, 0x02, 0x19, 0x22, 0x14, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65,
 	0x2f, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x3a, 0x01, 0x2a, 0x12, 0xc2, 0x01,
 	0x0a, 0x1a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e,
-	0x74, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x12, 0x39, 0x2e, 0x63,
+	0x64, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x12, 0x39, 0x2e, 0x63,
 	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x67, 0x6f, 0x6f,
 	0x64, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x63, 0x6f,
-	0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70,
+	0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3a, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e,
 	0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74,
+	0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64,
 	0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x22, 0x2d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x27, 0x22, 0x22, 0x2f, 0x76, 0x31,
 	0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e,
@@ -9609,8 +9609,8 @@ var file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_goTypes = []interfa
 	(*Recommend)(nil),                                  // 61: cloud.hashing.goods.v1.Recommend
 	(*CreateRecommendRequest)(nil),                     // 62: cloud.hashing.goods.v1.CreateRecommendRequest
 	(*CreateRecommendResponse)(nil),                    // 63: cloud.hashing.goods.v1.CreateRecommendResponse
-	(*CreateRecommentForOtherAppRequest)(nil),          // 64: cloud.hashing.goods.v1.CreateRecommentForOtherAppRequest
-	(*CreateRecommentForOtherAppResponse)(nil),         // 65: cloud.hashing.goods.v1.CreateRecommentForOtherAppResponse
+	(*CreateRecommendForOtherAppRequest)(nil),          // 64: cloud.hashing.goods.v1.CreateRecommendForOtherAppRequest
+	(*CreateRecommendForOtherAppResponse)(nil),         // 65: cloud.hashing.goods.v1.CreateRecommendForOtherAppResponse
 	(*UpdateRecommendRequest)(nil),                     // 66: cloud.hashing.goods.v1.UpdateRecommendRequest
 	(*UpdateRecommendResponse)(nil),                    // 67: cloud.hashing.goods.v1.UpdateRecommendResponse
 	(*GetRecommendsByAppRequest)(nil),                  // 68: cloud.hashing.goods.v1.GetRecommendsByAppRequest
@@ -9757,8 +9757,8 @@ var file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_depIdxs = []int32{
 	35,  // 51: cloud.hashing.goods.v1.GetGoodsResponse.Infos:type_name -> cloud.hashing.goods.v1.GoodInfo
 	61,  // 52: cloud.hashing.goods.v1.CreateRecommendRequest.Info:type_name -> cloud.hashing.goods.v1.Recommend
 	61,  // 53: cloud.hashing.goods.v1.CreateRecommendResponse.Info:type_name -> cloud.hashing.goods.v1.Recommend
-	61,  // 54: cloud.hashing.goods.v1.CreateRecommentForOtherAppRequest.Info:type_name -> cloud.hashing.goods.v1.Recommend
-	61,  // 55: cloud.hashing.goods.v1.CreateRecommentForOtherAppResponse.Info:type_name -> cloud.hashing.goods.v1.Recommend
+	61,  // 54: cloud.hashing.goods.v1.CreateRecommendForOtherAppRequest.Info:type_name -> cloud.hashing.goods.v1.Recommend
+	61,  // 55: cloud.hashing.goods.v1.CreateRecommendForOtherAppResponse.Info:type_name -> cloud.hashing.goods.v1.Recommend
 	61,  // 56: cloud.hashing.goods.v1.UpdateRecommendRequest.Info:type_name -> cloud.hashing.goods.v1.Recommend
 	61,  // 57: cloud.hashing.goods.v1.UpdateRecommendResponse.Info:type_name -> cloud.hashing.goods.v1.Recommend
 	61,  // 58: cloud.hashing.goods.v1.GetRecommendsByAppResponse.Infos:type_name -> cloud.hashing.goods.v1.Recommend
@@ -9853,7 +9853,7 @@ var file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_depIdxs = []int32{
 	53,  // 147: cloud.hashing.goods.v1.CloudHashingGoods.GetGoodDetail:input_type -> cloud.hashing.goods.v1.GetGoodDetailRequest
 	55,  // 148: cloud.hashing.goods.v1.CloudHashingGoods.GetGoodsDetail:input_type -> cloud.hashing.goods.v1.GetGoodsDetailRequest
 	62,  // 149: cloud.hashing.goods.v1.CloudHashingGoods.CreateRecommend:input_type -> cloud.hashing.goods.v1.CreateRecommendRequest
-	64,  // 150: cloud.hashing.goods.v1.CloudHashingGoods.CreateRecommentForOtherApp:input_type -> cloud.hashing.goods.v1.CreateRecommentForOtherAppRequest
+	64,  // 150: cloud.hashing.goods.v1.CloudHashingGoods.CreateRecommendForOtherApp:input_type -> cloud.hashing.goods.v1.CreateRecommendForOtherAppRequest
 	66,  // 151: cloud.hashing.goods.v1.CloudHashingGoods.UpdateRecommend:input_type -> cloud.hashing.goods.v1.UpdateRecommendRequest
 	68,  // 152: cloud.hashing.goods.v1.CloudHashingGoods.GetRecommendsByApp:input_type -> cloud.hashing.goods.v1.GetRecommendsByAppRequest
 	70,  // 153: cloud.hashing.goods.v1.CloudHashingGoods.GetRecommendsByOtherApp:input_type -> cloud.hashing.goods.v1.GetRecommendsByOtherAppRequest
@@ -9922,7 +9922,7 @@ var file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_depIdxs = []int32{
 	54,  // 216: cloud.hashing.goods.v1.CloudHashingGoods.GetGoodDetail:output_type -> cloud.hashing.goods.v1.GetGoodDetailResponse
 	56,  // 217: cloud.hashing.goods.v1.CloudHashingGoods.GetGoodsDetail:output_type -> cloud.hashing.goods.v1.GetGoodsDetailResponse
 	63,  // 218: cloud.hashing.goods.v1.CloudHashingGoods.CreateRecommend:output_type -> cloud.hashing.goods.v1.CreateRecommendResponse
-	65,  // 219: cloud.hashing.goods.v1.CloudHashingGoods.CreateRecommentForOtherApp:output_type -> cloud.hashing.goods.v1.CreateRecommentForOtherAppResponse
+	65,  // 219: cloud.hashing.goods.v1.CloudHashingGoods.CreateRecommendForOtherApp:output_type -> cloud.hashing.goods.v1.CreateRecommendForOtherAppResponse
 	67,  // 220: cloud.hashing.goods.v1.CloudHashingGoods.UpdateRecommend:output_type -> cloud.hashing.goods.v1.UpdateRecommendResponse
 	69,  // 221: cloud.hashing.goods.v1.CloudHashingGoods.GetRecommendsByApp:output_type -> cloud.hashing.goods.v1.GetRecommendsByAppResponse
 	71,  // 222: cloud.hashing.goods.v1.CloudHashingGoods.GetRecommendsByOtherApp:output_type -> cloud.hashing.goods.v1.GetRecommendsByOtherAppResponse
@@ -10744,7 +10744,7 @@ func file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_init() {
 			}
 		}
 		file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_msgTypes[64].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateRecommentForOtherAppRequest); i {
+			switch v := v.(*CreateRecommendForOtherAppRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10756,7 +10756,7 @@ func file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_init() {
 			}
 		}
 		file_npool_cloud_hashing_goods_cloud_hashing_goods_proto_msgTypes[65].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateRecommentForOtherAppResponse); i {
+			switch v := v.(*CreateRecommendForOtherAppResponse); i {
 			case 0:
 				return &v.state
 			case 1:

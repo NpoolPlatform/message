@@ -190,7 +190,7 @@ service CloudHashingGoods {
             body: "*"
         };
     }
-    rpc CreateRecommentForOtherApp (CreateRecommentForOtherAppRequest) returns (CreateRecommentForOtherAppResponse) {
+    rpc CreateRecommendForOtherApp (CreateRecommendForOtherAppRequest) returns (CreateRecommendForOtherAppResponse) {
         option (google.api.http) = {
             post: "/v1/create/recommend/for/other/app"
             body: "*"
@@ -746,12 +746,12 @@ message CreateRecommendResponse {
     Recommend Info = 10;
 }
 
-message CreateRecommentForOtherAppRequest {
+message CreateRecommendForOtherAppRequest {
     string TargetAppID = 10;
     Recommend Info = 20;
 }
 
-message CreateRecommentForOtherAppResponse {
+message CreateRecommendForOtherAppResponse {
     Recommend Info = 10;
 }
 

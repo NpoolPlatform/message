@@ -312,12 +312,12 @@ export type CreateRecommendResponse = {
   info?: Recommend
 }
 
-export type CreateRecommentForOtherAppRequest = {
+export type CreateRecommendForOtherAppRequest = {
   targetAppID?: string
   info?: Recommend
 }
 
-export type CreateRecommentForOtherAppResponse = {
+export type CreateRecommendForOtherAppResponse = {
   info?: Recommend
 }
 
@@ -798,8 +798,8 @@ export class CloudHashingGoods {
   static CreateRecommend(req: CreateRecommendRequest, initReq?: fm.InitReq): Promise<CreateRecommendResponse> {
     return fm.fetchReq<CreateRecommendRequest, CreateRecommendResponse>(`/v1/create/recommend`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static CreateRecommentForOtherApp(req: CreateRecommentForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateRecommentForOtherAppResponse> {
-    return fm.fetchReq<CreateRecommentForOtherAppRequest, CreateRecommentForOtherAppResponse>(`/v1/create/recommend/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateRecommendForOtherApp(req: CreateRecommendForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateRecommendForOtherAppResponse> {
+    return fm.fetchReq<CreateRecommendForOtherAppRequest, CreateRecommendForOtherAppResponse>(`/v1/create/recommend/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateRecommend(req: UpdateRecommendRequest, initReq?: fm.InitReq): Promise<UpdateRecommendResponse> {
     return fm.fetchReq<UpdateRecommendRequest, UpdateRecommendResponse>(`/v1/update/recommend`, {...initReq, method: "POST", body: JSON.stringify(req)})
