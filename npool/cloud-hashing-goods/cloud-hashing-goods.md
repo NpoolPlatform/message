@@ -1173,7 +1173,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
+| TargetAppID | [string](#string) |  |  |
 
 
 
@@ -3558,7 +3558,7 @@ Cloud Hashing Goods
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
+| TargetAppID | [string](#string) |  |  |
 
 
 

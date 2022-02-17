@@ -440,7 +440,7 @@ export type GetAppGoodsResponse = {
 }
 
 export type GetAppGoodsByOtherAppRequest = {
-  appID?: string
+  targetAppID?: string
 }
 
 export type GetAppGoodsByOtherAppResponse = {

@@ -2641,7 +2641,7 @@
     "v1GetAppGoodsByOtherAppRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         }
       }
