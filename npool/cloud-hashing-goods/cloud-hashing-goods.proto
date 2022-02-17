@@ -17,122 +17,122 @@ service CloudHashingGoods {
         };
     }
 
-    rpc CreateVendorLocation(CreateVendorLocationRequest) returns (CreateVendorLocationResponse) {
+    rpc CreateVendorLocation (CreateVendorLocationRequest) returns (CreateVendorLocationResponse) {
         option (google.api.http) = {
             post: "/v1/create/vendor-location"
             body: "*"
         };
     }
-    rpc UpdateVendorLocation(UpdateVendorLocationRequest) returns (UpdateVendorLocationResponse) {
+    rpc UpdateVendorLocation (UpdateVendorLocationRequest) returns (UpdateVendorLocationResponse) {
         option (google.api.http) = {
             post: "/v1/update/vendor-location"
             body: "*"
         };
     }
-    rpc GetVendorLocation(GetVendorLocationRequest) returns (GetVendorLocationResponse) {
+    rpc GetVendorLocation (GetVendorLocationRequest) returns (GetVendorLocationResponse) {
         option (google.api.http) = {
             post: "/v1/get/vendor-location"
             body: "*"
         };
     }
-    rpc DeleteVendorLocation(DeleteVendorLocationRequest) returns (DeleteVendorLocationResponse) {
+    rpc DeleteVendorLocation (DeleteVendorLocationRequest) returns (DeleteVendorLocationResponse) {
         option (google.api.http) = {
             post: "/v1/delete/vendor-location"
             body: "*"
         };
     }
-    rpc GetVendorLocations(GetVendorLocationsRequest) returns (GetVendorLocationsResponse) {
+    rpc GetVendorLocations (GetVendorLocationsRequest) returns (GetVendorLocationsResponse) {
         option (google.api.http) = {
             post: "/v1/get/vendor-locations"
             body: "*"
         };
     }
 
-    rpc CreatePriceCurrency(CreatePriceCurrencyRequest) returns (CreatePriceCurrencyResponse) {
+    rpc CreatePriceCurrency (CreatePriceCurrencyRequest) returns (CreatePriceCurrencyResponse) {
         option (google.api.http) = {
             post: "/v1/create/price-currency"
             body: "*"
         };
     }
-    rpc UpdatePriceCurrency(UpdatePriceCurrencyRequest) returns (UpdatePriceCurrencyResponse) {
+    rpc UpdatePriceCurrency (UpdatePriceCurrencyRequest) returns (UpdatePriceCurrencyResponse) {
         option (google.api.http) = {
             post: "/v1/update/price-currency"
             body: "*"
         };
     }
-    rpc GetPriceCurrency(GetPriceCurrencyRequest) returns (GetPriceCurrencyResponse) {
+    rpc GetPriceCurrency (GetPriceCurrencyRequest) returns (GetPriceCurrencyResponse) {
         option (google.api.http) = {
             post: "/v1/get/price-currency"
             body: "*"
         };
     }
-    rpc GetPriceCurrencys(GetPriceCurrencysRequest) returns (GetPriceCurrencysResponse) {
+    rpc GetPriceCurrencys (GetPriceCurrencysRequest) returns (GetPriceCurrencysResponse) {
         option (google.api.http) = {
             post: "/v1/get/price-currencys"
         };
     }
 
-    rpc CreateTargetArea(CreateTargetAreaRequest) returns (CreateTargetAreaResponse) {
+    rpc CreateTargetArea (CreateTargetAreaRequest) returns (CreateTargetAreaResponse) {
         option (google.api.http) = {
             post: "/v1/create/target-area"
             body: "*"
         };
     }
-    rpc UpdateTargetArea(UpdateTargetAreaRequest) returns (UpdateTargetAreaResponse) {
+    rpc UpdateTargetArea (UpdateTargetAreaRequest) returns (UpdateTargetAreaResponse) {
         option (google.api.http) = {
             post: "/v1/update/target-area"
             body: "*"
         };
     }
-    rpc GetTargetArea(GetTargetAreaRequest) returns (GetTargetAreaResponse) {
+    rpc GetTargetArea (GetTargetAreaRequest) returns (GetTargetAreaResponse) {
         option (google.api.http) = {
             post: "/v1/get/target-area"
             body: "*"
         };
     }
-    rpc DeleteTargetArea(DeleteTargetAreaRequest) returns (DeleteTargetAreaResponse) {
+    rpc DeleteTargetArea (DeleteTargetAreaRequest) returns (DeleteTargetAreaResponse) {
         option (google.api.http) = {
             post: "/v1/delete/target-area"
             body: "*"
         };
     }
-    rpc DeleteTargetAreaByContinentCountry(DeleteTargetAreaByContinentCountryRequest) returns (DeleteTargetAreaByContinentCountryResponse) {
+    rpc DeleteTargetAreaByContinentCountry (DeleteTargetAreaByContinentCountryRequest) returns (DeleteTargetAreaByContinentCountryResponse) {
         option (google.api.http) = {
             post: "/v1/delete/target-area/continent/country"
             body: "*"
         };
     }
-    rpc GetTargetAreas(GetTargetAreasRequest) returns (GetTargetAreasResponse) {
+    rpc GetTargetAreas (GetTargetAreasRequest) returns (GetTargetAreasResponse) {
         option (google.api.http) = {
             post: "/v1/get/target-areas"
         };
     }
 
-    rpc CreateDeviceInfo(CreateDeviceInfoRequest) returns (CreateDeviceInfoResponse) {
+    rpc CreateDeviceInfo (CreateDeviceInfoRequest) returns (CreateDeviceInfoResponse) {
         option (google.api.http) = {
             post: "/v1/create/device"
             body: "*"
         };
     }
-    rpc UpdateDeviceInfo(UpdateDeviceInfoRequest) returns (UpdateDeviceInfoResponse) {
+    rpc UpdateDeviceInfo (UpdateDeviceInfoRequest) returns (UpdateDeviceInfoResponse) {
         option (google.api.http) = {
             post: "/v1/update/device"
             body: "*"
         };
     }
-    rpc GetDeviceInfo(GetDeviceInfoRequest) returns (GetDeviceInfoResponse) {
+    rpc GetDeviceInfo (GetDeviceInfoRequest) returns (GetDeviceInfoResponse) {
         option (google.api.http) = {
             post: "/v1/get/device"
             body: "*"
         };
     }
-    rpc DeleteDeviceInfo(DeleteDeviceInfoRequest) returns (DeleteDeviceInfoResponse) {
+    rpc DeleteDeviceInfo (DeleteDeviceInfoRequest) returns (DeleteDeviceInfoResponse) {
         option (google.api.http) = {
             post: "/v1/delete/device"
             body: "*"
         };
     }
-    rpc GetDeviceInfos(GetDeviceInfosRequest) returns (GetDeviceInfosResponse) {
+    rpc GetDeviceInfos (GetDeviceInfosRequest) returns (GetDeviceInfosResponse) {
         option (google.api.http) = {
             post: "/v1/get/devices"
             body: "*"
@@ -140,263 +140,281 @@ service CloudHashingGoods {
     }
 
     // Good information for CRUD
-    rpc CreateGood(CreateGoodRequest) returns (CreateGoodResponse) {
+    rpc CreateGood (CreateGoodRequest) returns (CreateGoodResponse) {
         option (google.api.http) = {
             post: "/v1/create/good"
             body: "*"
         };
     }
-    rpc UpdateGood(UpdateGoodRequest) returns (UpdateGoodResponse) {
+    rpc UpdateGood (UpdateGoodRequest) returns (UpdateGoodResponse) {
         option (google.api.http) = {
             post: "/v1/update/good"
             body: "*"
         };
     }
-    rpc GetGood(GetGoodRequest) returns (GetGoodResponse) {
+    rpc GetGood (GetGoodRequest) returns (GetGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/good"
             body: "*"
         };
     }
-    rpc DeleteGood(DeleteGoodRequest) returns (DeleteGoodResponse) {
+    rpc DeleteGood (DeleteGoodRequest) returns (DeleteGoodResponse) {
         option (google.api.http) = {
             post: "/v1/delete/good"
             body: "*"
         };
     }
-    rpc GetGoods(GetGoodsRequest) returns (GetGoodsResponse) {
+    rpc GetGoods (GetGoodsRequest) returns (GetGoodsResponse) {
         option (google.api.http) = {
             post: "/v1/get/goods"
             body: "*"
         };
     }
     // Good information for API
-    rpc GetGoodDetail(GetGoodDetailRequest) returns (GetGoodDetailResponse) {
+    rpc GetGoodDetail (GetGoodDetailRequest) returns (GetGoodDetailResponse) {
         option (google.api.http) = {
             post: "/v1/get/good/detail"
             body: "*"
         };
     }
-    rpc GetGoodsDetail(GetGoodsDetailRequest) returns (GetGoodsDetailResponse) {
+    rpc GetGoodsDetail (GetGoodsDetailRequest) returns (GetGoodsDetailResponse) {
         option (google.api.http) = {
             post: "/v1/get/goods/detail"
             body: "*"
         };
     }
 
-    rpc CreateRecommend(CreateRecommendRequest) returns (CreateRecommendResponse) {
+    rpc CreateRecommend (CreateRecommendRequest) returns (CreateRecommendResponse) {
         option (google.api.http) = {
             post: "/v1/create/recommend"
             body: "*"
         };
     }
-    rpc UpdateRecommend(UpdateRecommendRequest) returns (UpdateRecommendResponse) {
+    rpc UpdateRecommend (UpdateRecommendRequest) returns (UpdateRecommendResponse) {
         option (google.api.http) = {
             post: "/v1/update/recommend"
             body: "*"
         };
     }
-    rpc GetRecommendsByApp(GetRecommendsByAppRequest) returns (GetRecommendsByAppResponse) {
+    rpc GetRecommendsByApp (GetRecommendsByAppRequest) returns (GetRecommendsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/recommends/by/app"
             body: "*"
         };
     }
-    rpc GetRecommendsByRecommender(GetRecommendsByRecommenderRequest) returns (GetRecommendsByRecommenderResponse) {
+    rpc GetRecommendsByRecommender (GetRecommendsByRecommenderRequest) returns (GetRecommendsByRecommenderResponse) {
         option (google.api.http) = {
             post: "/v1/get/recommends/by/recommender"
             body: "*"
         };
     }
-    rpc DeleteRecommend(DeleteRecommendRequest) returns (DeleteRecommendResponse) {
+    rpc DeleteRecommend (DeleteRecommendRequest) returns (DeleteRecommendResponse) {
         option (google.api.http) = {
             post: "/v1/delete/recommend"
             body: "*"
         };
     }
-    rpc GetRecommendGoodsByApp(GetRecommendGoodsByAppRequest) returns (GetRecommendGoodsByAppResponse) {
+    rpc GetRecommendGoodsByApp (GetRecommendGoodsByAppRequest) returns (GetRecommendGoodsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/recommend/goods/by/app"
             body: "*"
         };
     }
-    rpc GetRecommendGoodsByRecommender(GetRecommendGoodsByRecommenderRequest) returns (GetRecommendGoodsByRecommenderResponse) {
+    rpc GetRecommendGoodsByRecommender (GetRecommendGoodsByRecommenderRequest) returns (GetRecommendGoodsByRecommenderResponse) {
         option (google.api.http) = {
             post: "/v1/get/recommend/goods/by/recommender"
             body: "*"
         };
     }
 
-    rpc AuthorizeAppGood(AuthorizeAppGoodRequest) returns (AuthorizeAppGoodResponse) {
+    rpc AuthorizeAppGood (AuthorizeAppGoodRequest) returns (AuthorizeAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/authorize/app/good"
             body: "*"
         };
     }
-    rpc SetAppGoodPrice(SetAppGoodPriceRequest) returns (SetAppGoodPriceResponse) {
+    rpc AuthorizeForOtherApp (AuthorizeForOtherAppRequest) returns (AuthorizeForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/authorize/app/good/for/other/app"
+            body: "*"
+        };
+    }
+    rpc SetAppGoodPrice (SetAppGoodPriceRequest) returns (SetAppGoodPriceResponse) {
         option (google.api.http) = {
             post: "/v1/set/app/good/price"
             body: "*"
         };
     }
-    rpc CheckAppGood(CheckAppGoodRequest) returns (CheckAppGoodResponse) {
+    rpc CheckAppGood (CheckAppGoodRequest) returns (CheckAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/check/app/good"
             body: "*"
         };
     }
-    rpc OnsaleAppGood(OnsaleAppGoodRequest) returns (OnsaleAppGoodResponse) {
+    rpc OnsaleAppGood (OnsaleAppGoodRequest) returns (OnsaleAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/onsale/app/good"
             body: "*"
         };
     }
-    rpc OffsaleAppGood(OffsaleAppGoodRequest) returns (OffsaleAppGoodResponse) {
+    rpc OffsaleAppGood (OffsaleAppGoodRequest) returns (OffsaleAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/offsale/app/good"
             body: "*"
         };
     }
-    rpc UnauthorizeAppGood(UnauthorizeAppGoodRequest) returns (UnauthorizeAppGoodResponse) {
+    rpc UnauthorizeAppGood (UnauthorizeAppGoodRequest) returns (UnauthorizeAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/unauthorize/app/good"
             body: "*"
         };
     }
+    rpc GetAppGoods (GetAppGoodsRequest) returns (GetAppGoodsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/goods"
+            body: "*"
+        };
+    }
+    rpc GetAppGoodsByOtherApp (GetAppGoodsByOtherAppRequest) returns (GetAppGoodsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/goods/by/other/app"
+            body: "*"
+        };
+    }
 
-    rpc AuthorizeAppTargetArea(AuthorizeAppTargetAreaRequest) returns (AuthorizeAppTargetAreaResponse) {
+    rpc AuthorizeAppTargetArea (AuthorizeAppTargetAreaRequest) returns (AuthorizeAppTargetAreaResponse) {
         option (google.api.http) = {
             post: "/v1/authorize/app/target-area"
             body: "*"
         };
     }
-    rpc CheckAppTargetArea(CheckAppTargetAreaRequest) returns (CheckAppTargetAreaResponse) {
+    rpc CheckAppTargetArea (CheckAppTargetAreaRequest) returns (CheckAppTargetAreaResponse) {
         option (google.api.http) = {
             post: "/v1/check/app/target-area"
             body: "*"
         };
     }
-    rpc UnauthorizeAppTargetArea(UnauthorizeAppTargetAreaRequest) returns (UnauthorizeAppTargetAreaResponse) {
+    rpc UnauthorizeAppTargetArea (UnauthorizeAppTargetAreaRequest) returns (UnauthorizeAppTargetAreaResponse) {
         option (google.api.http) = {
             post: "/v1/unauthorize/app/target-area"
             body: "*"
         };
     }
 
-    rpc AuthorizeAppGoodTargetArea(AuthorizeAppGoodTargetAreaRequest) returns (AuthorizeAppGoodTargetAreaResponse) {
+    rpc AuthorizeAppGoodTargetArea (AuthorizeAppGoodTargetAreaRequest) returns (AuthorizeAppGoodTargetAreaResponse) {
         option (google.api.http) = {
             post: "/v1/authorize/app/good/target-area"
             body: "*"
         };
     }
-    rpc CheckAppGoodTargetArea(CheckAppGoodTargetAreaRequest) returns (CheckAppGoodTargetAreaResponse) {
+    rpc CheckAppGoodTargetArea (CheckAppGoodTargetAreaRequest) returns (CheckAppGoodTargetAreaResponse) {
         option (google.api.http) = {
             post: "/v1/check/app/good/target-area"
             body: "*"
         };
     }
-    rpc UnauthorizeAppGoodTargetArea(UnauthorizeAppGoodTargetAreaRequest) returns (UnauthorizeAppGoodTargetAreaResponse) {
+    rpc UnauthorizeAppGoodTargetArea (UnauthorizeAppGoodTargetAreaRequest) returns (UnauthorizeAppGoodTargetAreaResponse) {
         option (google.api.http) = {
             post: "/v1/unauthorize/app/good/target-area"
             body: "*"
         };
     }
 
-    rpc CreateGoodComment(CreateGoodCommentRequest) returns (CreateGoodCommentResponse) {
+    rpc CreateGoodComment (CreateGoodCommentRequest) returns (CreateGoodCommentResponse) {
         option (google.api.http) = {
             post: "/v1/create/good/comment"
             body: "*"
         };
     }
-    rpc UpdateGoodComment(UpdateGoodCommentRequest) returns (UpdateGoodCommentResponse) {
+    rpc UpdateGoodComment (UpdateGoodCommentRequest) returns (UpdateGoodCommentResponse) {
         option (google.api.http) = {
             post: "/v1/update/good/comment"
             body: "*"
         };
     }
-    rpc GetGoodComments(GetGoodCommentsRequest) returns (GetGoodCommentsResponse) {
+    rpc GetGoodComments (GetGoodCommentsRequest) returns (GetGoodCommentsResponse) {
         option (google.api.http) = {
             post: "/v1/get/good/comments"
             body: "*"
         };
     }
 
-    rpc CreateGoodExtraInfo(CreateGoodExtraInfoRequest) returns (CreateGoodExtraInfoRequest) {
+    rpc CreateGoodExtraInfo (CreateGoodExtraInfoRequest) returns (CreateGoodExtraInfoRequest) {
         option (google.api.http) = {
             post: "/v1/create/good/extra"
             body: "*"
         };
     }
-    rpc GetGoodExtraInfo(GetGoodExtraInfoRequest) returns (GetGoodExtraInfoRequest) {
+    rpc GetGoodExtraInfo (GetGoodExtraInfoRequest) returns (GetGoodExtraInfoRequest) {
         option (google.api.http) = {
             post: "/v1/get/good/extra"
             body: "*"
         };
     }
-    rpc UpdateGoodExtraInfo(UpdateGoodExtraInfoRequest) returns (UpdateGoodExtraInfoRequest) {
+    rpc UpdateGoodExtraInfo (UpdateGoodExtraInfoRequest) returns (UpdateGoodExtraInfoRequest) {
         option (google.api.http) = {
             post: "/v1/update/good/extra"
             body: "*"
         };
     }
 
-    rpc CreateGoodReview(CreateGoodReviewRequest) returns (CreateGoodReviewResponse) {
+    rpc CreateGoodReview (CreateGoodReviewRequest) returns (CreateGoodReviewResponse) {
         option (google.api.http) = {
             post: "/v1/create/good/review"
             body: "*"
         };
     }
-    rpc UpdateGoodReview(UpdateGoodReviewRequest) returns (UpdateGoodReviewResponse) {
+    rpc UpdateGoodReview (UpdateGoodReviewRequest) returns (UpdateGoodReviewResponse) {
         option (google.api.http) = {
             post: "/v1/update/good/review"
             body: "*"
         };
     }
-    rpc GetGoodReview(GetGoodReviewRequest) returns (GetGoodReviewResponse) {
+    rpc GetGoodReview (GetGoodReviewRequest) returns (GetGoodReviewResponse) {
         option (google.api.http) = {
             post: "/v1/get/good/review"
             body: "*"
         };
     }
 
-    rpc CreateFee(CreateFeeRequest) returns (CreateFeeResponse) {
+    rpc CreateFee (CreateFeeRequest) returns (CreateFeeResponse) {
         option (google.api.http) = {
             post: "/v1/create/fee"
             body: "*"
         };
     }
-    rpc GetFee(GetFeeRequest) returns (GetFeeResponse) {
+    rpc GetFee (GetFeeRequest) returns (GetFeeResponse) {
         option (google.api.http) = {
             post: "/v1/get/fee"
             body: "*"
         };
     }
-    rpc GetFees(GetFeesRequest) returns (GetFeesResponse) {
+    rpc GetFees (GetFeesRequest) returns (GetFeesResponse) {
         option (google.api.http) = {
             post: "/v1/get/fees"
             body: "*"
         };
     }
 
-    rpc CreateFeeType(CreateFeeTypeRequest) returns (CreateFeeTypeResponse) {
+    rpc CreateFeeType (CreateFeeTypeRequest) returns (CreateFeeTypeResponse) {
         option (google.api.http) = {
             post: "/v1/create/fee/type"
             body: "*"
         };
     }
-    rpc UpdateFeeType(UpdateFeeTypeRequest) returns (UpdateFeeTypeResponse) {
+    rpc UpdateFeeType (UpdateFeeTypeRequest) returns (UpdateFeeTypeResponse) {
         option (google.api.http) = {
             post: "/v1/update/fee/type"
             body: "*"
         };
     }
-    rpc GetFeeType(GetFeeTypeRequest) returns (GetFeeTypeResponse) {
+    rpc GetFeeType (GetFeeTypeRequest) returns (GetFeeTypeResponse) {
         option (google.api.http) = {
             post: "/v1/get/fee/type"
             body: "*"
         };
     }
-    rpc GetFeeTypes(GetFeeTypesRequest) returns (GetFeeTypesResponse) {
+    rpc GetFeeTypes (GetFeeTypesRequest) returns (GetFeeTypesResponse) {
         option (google.api.http) = {
             post: "/v1/get/fee/types"
             body: "*"
@@ -812,12 +830,37 @@ message AuthorizeAppGoodResponse {
     AppGoodInfo Info = 10;
 }
 
+message AuthorizeForOtherAppRequest {
+    string TargetAppID = 10;
+    AppGoodInfo Info = 20;
+}
+
+message AuthorizeForOtherAppResponse {
+    AppGoodInfo Info = 10;
+}
+
 message UnauthorizeAppGoodRequest {
     AppGoodInfo Info = 10;
 }
 
 message UnauthorizeAppGoodResponse {
     AppGoodInfo Info = 10;
+}
+
+message GetAppGoodsRequest {
+    string AppID = 10;
+}
+
+message GetAppGoodsResponse {
+    repeated AppGoodInfo Infos = 10;
+}
+
+message GetAppGoodsByOtherAppRequest {
+    string AppID = 10;
+}
+
+message GetAppGoodsByOtherAppResponse {
+    repeated AppGoodInfo Infos = 10;
 }
 
 message AppTargetAreaInfo {

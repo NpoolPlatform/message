@@ -43,6 +43,38 @@
         ]
       }
     },
+    "/v1/authorize/app/good/for/other/app": {
+      "post": {
+        "operationId": "CloudHashingGoods_AuthorizeForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AuthorizeForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AuthorizeForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
     "/v1/authorize/app/good/target-area": {
       "post": {
         "operationId": "CloudHashingGoods_AuthorizeAppGoodTargetArea",
@@ -740,6 +772,70 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1DeleteVendorLocationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/get/app/goods": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetAppGoods",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/get/app/goods/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetAppGoodsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodsByOtherAppRequest"
             }
           }
         ],
@@ -2137,6 +2233,25 @@
         }
       }
     },
+    "v1AuthorizeForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodInfo"
+        }
+      }
+    },
+    "v1AuthorizeForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodInfo"
+        }
+      }
+    },
     "v1CheckAppGoodRequest": {
       "type": "object",
       "properties": {
@@ -2520,6 +2635,44 @@
         },
         "PayType": {
           "type": "string"
+        }
+      }
+    },
+    "v1GetAppGoodsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppGoodsByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppGoodInfo"
+          }
+        }
+      }
+    },
+    "v1GetAppGoodsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppGoodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppGoodInfo"
+          }
         }
       }
     },

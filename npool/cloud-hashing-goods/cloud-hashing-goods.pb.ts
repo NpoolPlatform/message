@@ -414,12 +414,37 @@ export type AuthorizeAppGoodResponse = {
   info?: AppGoodInfo
 }
 
+export type AuthorizeForOtherAppRequest = {
+  targetAppID?: string
+  info?: AppGoodInfo
+}
+
+export type AuthorizeForOtherAppResponse = {
+  info?: AppGoodInfo
+}
+
 export type UnauthorizeAppGoodRequest = {
   info?: AppGoodInfo
 }
 
 export type UnauthorizeAppGoodResponse = {
   info?: AppGoodInfo
+}
+
+export type GetAppGoodsRequest = {
+  appID?: string
+}
+
+export type GetAppGoodsResponse = {
+  infos?: AppGoodInfo[]
+}
+
+export type GetAppGoodsByOtherAppRequest = {
+  appID?: string
+}
+
+export type GetAppGoodsByOtherAppResponse = {
+  infos?: AppGoodInfo[]
 }
 
 export type AppTargetAreaInfo = {
@@ -768,6 +793,9 @@ export class CloudHashingGoods {
   static AuthorizeAppGood(req: AuthorizeAppGoodRequest, initReq?: fm.InitReq): Promise<AuthorizeAppGoodResponse> {
     return fm.fetchReq<AuthorizeAppGoodRequest, AuthorizeAppGoodResponse>(`/v1/authorize/app/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static AuthorizeForOtherApp(req: AuthorizeForOtherAppRequest, initReq?: fm.InitReq): Promise<AuthorizeForOtherAppResponse> {
+    return fm.fetchReq<AuthorizeForOtherAppRequest, AuthorizeForOtherAppResponse>(`/v1/authorize/app/good/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static SetAppGoodPrice(req: SetAppGoodPriceRequest, initReq?: fm.InitReq): Promise<SetAppGoodPriceResponse> {
     return fm.fetchReq<SetAppGoodPriceRequest, SetAppGoodPriceResponse>(`/v1/set/app/good/price`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -782,6 +810,12 @@ export class CloudHashingGoods {
   }
   static UnauthorizeAppGood(req: UnauthorizeAppGoodRequest, initReq?: fm.InitReq): Promise<UnauthorizeAppGoodResponse> {
     return fm.fetchReq<UnauthorizeAppGoodRequest, UnauthorizeAppGoodResponse>(`/v1/unauthorize/app/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppGoods(req: GetAppGoodsRequest, initReq?: fm.InitReq): Promise<GetAppGoodsResponse> {
+    return fm.fetchReq<GetAppGoodsRequest, GetAppGoodsResponse>(`/v1/get/app/goods`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppGoodsByOtherApp(req: GetAppGoodsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppGoodsByOtherAppResponse> {
+    return fm.fetchReq<GetAppGoodsByOtherAppRequest, GetAppGoodsByOtherAppResponse>(`/v1/get/app/goods/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static AuthorizeAppTargetArea(req: AuthorizeAppTargetAreaRequest, initReq?: fm.InitReq): Promise<AuthorizeAppTargetAreaResponse> {
     return fm.fetchReq<AuthorizeAppTargetAreaRequest, AuthorizeAppTargetAreaResponse>(`/v1/authorize/app/target-area`, {...initReq, method: "POST", body: JSON.stringify(req)})
