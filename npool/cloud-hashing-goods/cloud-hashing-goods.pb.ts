@@ -257,7 +257,6 @@ export type GoodDetail = {
   deviceInfo?: DeviceInfo
   inheritFromGood?: GoodInfo
   vendorLocation?: VendorLocationInfo
-  supportCoinTypeIDs?: string[]
   extra?: GoodExtraInfo
   priceCurrency?: PriceCurrency
   fees?: FeeDetail[]

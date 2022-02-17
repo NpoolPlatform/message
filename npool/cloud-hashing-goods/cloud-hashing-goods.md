@@ -1853,7 +1853,6 @@
 | DeviceInfo | [DeviceInfo](#cloud.hashing.goods.v1.DeviceInfo) |  |  |
 | InheritFromGood | [GoodInfo](#cloud.hashing.goods.v1.GoodInfo) |  |  |
 | VendorLocation | [VendorLocationInfo](#cloud.hashing.goods.v1.VendorLocationInfo) |  |  |
-| SupportCoinTypeIDs | [string](#string) | repeated |  |
 | Extra | [GoodExtraInfo](#cloud.hashing.goods.v1.GoodExtraInfo) |  |  |
 | PriceCurrency | [PriceCurrency](#cloud.hashing.goods.v1.PriceCurrency) |  |  |
 | Fees | [FeeDetail](#cloud.hashing.goods.v1.FeeDetail) | repeated |  |
@@ -4146,7 +4145,6 @@ Cloud Hashing Goods
 | DeviceInfo | [DeviceInfo](#cloud.hashing.goods.v1.DeviceInfo) |  |  |
 | InheritFromGood | [GoodInfo](#cloud.hashing.goods.v1.GoodInfo) |  |  |
 | VendorLocation | [VendorLocationInfo](#cloud.hashing.goods.v1.VendorLocationInfo) |  |  |
-| SupportCoinTypeIDs | [string](#string) | repeated |  |
 | Extra | [GoodExtraInfo](#cloud.hashing.goods.v1.GoodExtraInfo) |  |  |
 | PriceCurrency | [PriceCurrency](#cloud.hashing.goods.v1.PriceCurrency) |  |  |
 | Fees | [FeeDetail](#cloud.hashing.goods.v1.FeeDetail) | repeated |  |

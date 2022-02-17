@@ -655,10 +655,9 @@ message GoodDetail {
     DeviceInfo DeviceInfo = 20;
     GoodInfo InheritFromGood = 30;
     VendorLocationInfo VendorLocation = 40;
-    repeated string SupportCoinTypeIDs = 50;
-    GoodExtraInfo Extra = 60;
-    PriceCurrency PriceCurrency = 70;
-    repeated FeeDetail Fees = 80;
+    GoodExtraInfo Extra = 50;
+    PriceCurrency PriceCurrency = 60;
+    repeated FeeDetail Fees = 70;
 }
 
 message GetGoodDetailRequest {
