@@ -2255,8 +2255,11 @@
     "v1CheckAppGoodRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppGoodInfo"
+        "AppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
         }
       }
     },

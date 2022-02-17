@@ -500,7 +500,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo) |  |  |
+| AppID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
 
 
 
@@ -2885,7 +2886,8 @@ Cloud Hashing Goods
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo) |  |  |
+| AppID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
 
 
 

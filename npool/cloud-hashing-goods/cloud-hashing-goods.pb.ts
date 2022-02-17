@@ -383,7 +383,8 @@ export type SetAppGoodPriceResponse = {
 }
 
 export type CheckAppGoodRequest = {
-  info?: AppGoodInfo
+  appID?: string
+  goodID?: string
 }
 
 export type CheckAppGoodResponse = {

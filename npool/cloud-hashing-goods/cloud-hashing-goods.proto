@@ -799,7 +799,8 @@ message SetAppGoodPriceResponse {
 }
 
 message CheckAppGoodRequest {
-    AppGoodInfo Info = 10;
+    string AppID = 10;
+    string GoodID = 20;
 }
 
 message CheckAppGoodResponse {
