@@ -370,7 +370,6 @@ export type AppGoodInfo = {
   appID?: string
   goodID?: string
   price?: number
-  authorized?: boolean
   online?: boolean
   initAreaStrategy?: string
 }

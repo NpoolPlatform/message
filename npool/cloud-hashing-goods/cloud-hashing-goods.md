@@ -316,7 +316,6 @@
 | AppID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
 | Price | [double](#double) |  |  |
-| Authorized | [bool](#bool) |  |  |
 | Online | [bool](#bool) |  |  |
 | InitAreaStrategy | [string](#string) |  |  |
 
@@ -2608,7 +2607,6 @@ Cloud Hashing Goods
 | AppID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
 | Price | [double](#double) |  |  |
-| Authorized | [bool](#bool) |  |  |
 | Online | [bool](#bool) |  |  |
 | InitAreaStrategy | [string](#string) |  |  |
 

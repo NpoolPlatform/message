@@ -768,9 +768,8 @@ message AppGoodInfo {
     string AppID = 20;
     string GoodID = 30;
     double Price = 40;
-    bool Authorized = 50;
-    bool Online = 60;
-    string InitAreaStrategy = 70;
+    bool Online = 50;
+    string InitAreaStrategy = 60;
 }
 
 message SetAppGoodPriceRequest {
