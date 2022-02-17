@@ -427,6 +427,15 @@ export type SetAppGoodPriceResponse = {
   info?: AppGoodInfo
 }
 
+export type SetAppGoodPriceForOtherAppRequest = {
+  targetAppID?: string
+  info?: AppGoodInfo
+}
+
+export type SetAppGoodPriceForOtherAppResponse = {
+  info?: AppGoodInfo
+}
+
 export type CheckAppGoodRequest = {
   appID?: string
   goodID?: string
@@ -444,11 +453,29 @@ export type OnsaleAppGoodResponse = {
   info?: AppGoodInfo
 }
 
+export type OnsaleAppGoodForOtherAppRequest = {
+  targetAppID?: string
+  info?: AppGoodInfo
+}
+
+export type OnsaleAppGoodForOtherAppResponse = {
+  info?: AppGoodInfo
+}
+
 export type OffsaleAppGoodRequest = {
   info?: AppGoodInfo
 }
 
 export type OffsaleAppGoodResponse = {
+  info?: AppGoodInfo
+}
+
+export type OffsaleAppGoodForOtherAppRequest = {
+  targetAppID?: string
+  info?: AppGoodInfo
+}
+
+export type OffsaleAppGoodForOtherAppResponse = {
   info?: AppGoodInfo
 }
 
@@ -860,14 +887,23 @@ export class CloudHashingGoods {
   static SetAppGoodPrice(req: SetAppGoodPriceRequest, initReq?: fm.InitReq): Promise<SetAppGoodPriceResponse> {
     return fm.fetchReq<SetAppGoodPriceRequest, SetAppGoodPriceResponse>(`/v1/set/app/good/price`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static SetAppGoodPriceForOtherApp(req: SetAppGoodPriceForOtherAppRequest, initReq?: fm.InitReq): Promise<SetAppGoodPriceForOtherAppResponse> {
+    return fm.fetchReq<SetAppGoodPriceForOtherAppRequest, SetAppGoodPriceForOtherAppResponse>(`/v1/set/app/good/price/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static CheckAppGood(req: CheckAppGoodRequest, initReq?: fm.InitReq): Promise<CheckAppGoodResponse> {
     return fm.fetchReq<CheckAppGoodRequest, CheckAppGoodResponse>(`/v1/check/app/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static OnsaleAppGood(req: OnsaleAppGoodRequest, initReq?: fm.InitReq): Promise<OnsaleAppGoodResponse> {
     return fm.fetchReq<OnsaleAppGoodRequest, OnsaleAppGoodResponse>(`/v1/onsale/app/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static OnsaleAppGoodForOtherApp(req: OnsaleAppGoodForOtherAppRequest, initReq?: fm.InitReq): Promise<OnsaleAppGoodForOtherAppResponse> {
+    return fm.fetchReq<OnsaleAppGoodForOtherAppRequest, OnsaleAppGoodForOtherAppResponse>(`/v1/onsale/app/good/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static OffsaleAppGood(req: OffsaleAppGoodRequest, initReq?: fm.InitReq): Promise<OffsaleAppGoodResponse> {
     return fm.fetchReq<OffsaleAppGoodRequest, OffsaleAppGoodResponse>(`/v1/offsale/app/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static OffsaleAppGoodForOtherApp(req: OffsaleAppGoodForOtherAppRequest, initReq?: fm.InitReq): Promise<OffsaleAppGoodForOtherAppResponse> {
+    return fm.fetchReq<OffsaleAppGoodForOtherAppRequest, OffsaleAppGoodForOtherAppResponse>(`/v1/offsale/app/good/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UnauthorizeAppGood(req: UnauthorizeAppGoodRequest, initReq?: fm.InitReq): Promise<UnauthorizeAppGoodResponse> {
     return fm.fetchReq<UnauthorizeAppGoodRequest, UnauthorizeAppGoodResponse>(`/v1/unauthorize/app/good`, {...initReq, method: "POST", body: JSON.stringify(req)})

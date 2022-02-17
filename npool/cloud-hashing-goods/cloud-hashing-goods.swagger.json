@@ -1753,6 +1753,38 @@
         ]
       }
     },
+    "/v1/offsale/app/good/for/other/app": {
+      "post": {
+        "operationId": "CloudHashingGoods_OffsaleAppGoodForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1OffsaleAppGoodForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1OffsaleAppGoodForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
     "/v1/onsale/app/good": {
       "post": {
         "operationId": "CloudHashingGoods_OnsaleAppGood",
@@ -1785,6 +1817,38 @@
         ]
       }
     },
+    "/v1/onsale/app/good/for/other/app": {
+      "post": {
+        "operationId": "CloudHashingGoods_OnsaleAppGoodForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1OnsaleAppGoodForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1OnsaleAppGoodForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
     "/v1/set/app/good/price": {
       "post": {
         "operationId": "CloudHashingGoods_SetAppGoodPrice",
@@ -1809,6 +1873,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1SetAppGoodPriceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/set/app/good/price/for/other/app": {
+      "post": {
+        "operationId": "CloudHashingGoods_SetAppGoodPriceForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SetAppGoodPriceForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetAppGoodPriceForOtherAppRequest"
             }
           }
         ],
@@ -3550,6 +3646,25 @@
         }
       }
     },
+    "v1OffsaleAppGoodForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodInfo"
+        }
+      }
+    },
+    "v1OffsaleAppGoodForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodInfo"
+        }
+      }
+    },
     "v1OffsaleAppGoodRequest": {
       "type": "object",
       "properties": {
@@ -3559,6 +3674,25 @@
       }
     },
     "v1OffsaleAppGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodInfo"
+        }
+      }
+    },
+    "v1OnsaleAppGoodForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodInfo"
+        }
+      }
+    },
+    "v1OnsaleAppGoodForOtherAppResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -3640,6 +3774,25 @@
         },
         "Good": {
           "$ref": "#/definitions/v1GoodDetail"
+        }
+      }
+    },
+    "v1SetAppGoodPriceForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodInfo"
+        }
+      }
+    },
+    "v1SetAppGoodPriceForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodInfo"
         }
       }
     },

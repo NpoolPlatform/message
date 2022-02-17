@@ -276,6 +276,12 @@ service CloudHashingGoods {
             body: "*"
         };
     }
+    rpc SetAppGoodPriceForOtherApp (SetAppGoodPriceForOtherAppRequest) returns (SetAppGoodPriceForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/app/good/price/for/other/app"
+            body: "*"
+        };
+    }
     rpc CheckAppGood (CheckAppGoodRequest) returns (CheckAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/check/app/good"
@@ -288,9 +294,21 @@ service CloudHashingGoods {
             body: "*"
         };
     }
+    rpc OnsaleAppGoodForOtherApp (OnsaleAppGoodForOtherAppRequest) returns (OnsaleAppGoodForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/onsale/app/good/for/other/app"
+            body: "*"
+        };
+    }
     rpc OffsaleAppGood (OffsaleAppGoodRequest) returns (OffsaleAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/offsale/app/good"
+            body: "*"
+        };
+    }
+    rpc OffsaleAppGoodForOtherApp (OffsaleAppGoodForOtherAppRequest) returns (OffsaleAppGoodForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/offsale/app/good/for/other/app"
             body: "*"
         };
     }
@@ -875,6 +893,15 @@ message SetAppGoodPriceResponse {
     AppGoodInfo Info = 10;
 }
 
+message SetAppGoodPriceForOtherAppRequest {
+    string TargetAppID = 10;
+    AppGoodInfo Info = 20;
+}
+
+message SetAppGoodPriceForOtherAppResponse {
+    AppGoodInfo Info = 10;
+}
+
 message CheckAppGoodRequest {
     string AppID = 10;
     string GoodID = 20;
@@ -892,11 +919,29 @@ message OnsaleAppGoodResponse {
     AppGoodInfo Info = 10;
 }
 
+message OnsaleAppGoodForOtherAppRequest {
+    string TargetAppID = 10;
+    AppGoodInfo Info = 20;
+}
+
+message OnsaleAppGoodForOtherAppResponse {
+    AppGoodInfo Info = 10;
+}
+
 message OffsaleAppGoodRequest {
     AppGoodInfo Info = 10;
 }
 
 message OffsaleAppGoodResponse {
+    AppGoodInfo Info = 10;
+}
+
+message OffsaleAppGoodForOtherAppRequest {
+    string TargetAppID = 10;
+    AppGoodInfo Info = 20;
+}
+
+message OffsaleAppGoodForOtherAppResponse {
     AppGoodInfo Info = 10;
 }
 
