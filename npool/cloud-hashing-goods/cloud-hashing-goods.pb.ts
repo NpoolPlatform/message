@@ -312,6 +312,15 @@ export type CreateRecommendResponse = {
   info?: Recommend
 }
 
+export type CreateRecommentForOtherAppRequest = {
+  targetAppID?: string
+  info?: Recommend
+}
+
+export type CreateRecommentForOtherAppResponse = {
+  info?: Recommend
+}
+
 export type UpdateRecommendRequest = {
   info?: Recommend
 }
@@ -328,8 +337,16 @@ export type GetRecommendsByAppResponse = {
   infos?: Recommend[]
 }
 
+export type GetRecommendsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetRecommendsByOtherAppResponse = {
+  infos?: Recommend[]
+}
+
 export type GetRecommendsByRecommenderRequest = {
-  userID?: string
+  recommenderID?: string
 }
 
 export type GetRecommendsByRecommenderResponse = {
@@ -357,8 +374,16 @@ export type GetRecommendGoodsByAppResponse = {
   infos?: RecommendGood[]
 }
 
+export type GetRecommendGoodsByOtherAppRequest = {
+  appID?: string
+}
+
+export type GetRecommendGoodsByOtherAppResponse = {
+  infos?: RecommendGood[]
+}
+
 export type GetRecommendGoodsByRecommenderRequest = {
-  userID?: string
+  recommenderID?: string
 }
 
 export type GetRecommendGoodsByRecommenderResponse = {
@@ -773,11 +798,17 @@ export class CloudHashingGoods {
   static CreateRecommend(req: CreateRecommendRequest, initReq?: fm.InitReq): Promise<CreateRecommendResponse> {
     return fm.fetchReq<CreateRecommendRequest, CreateRecommendResponse>(`/v1/create/recommend`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateRecommentForOtherApp(req: CreateRecommentForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateRecommentForOtherAppResponse> {
+    return fm.fetchReq<CreateRecommentForOtherAppRequest, CreateRecommentForOtherAppResponse>(`/v1/create/recommend/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static UpdateRecommend(req: UpdateRecommendRequest, initReq?: fm.InitReq): Promise<UpdateRecommendResponse> {
     return fm.fetchReq<UpdateRecommendRequest, UpdateRecommendResponse>(`/v1/update/recommend`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetRecommendsByApp(req: GetRecommendsByAppRequest, initReq?: fm.InitReq): Promise<GetRecommendsByAppResponse> {
     return fm.fetchReq<GetRecommendsByAppRequest, GetRecommendsByAppResponse>(`/v1/get/recommends/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetRecommendsByOtherApp(req: GetRecommendsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetRecommendsByOtherAppResponse> {
+    return fm.fetchReq<GetRecommendsByOtherAppRequest, GetRecommendsByOtherAppResponse>(`/v1/get/recommends/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetRecommendsByRecommender(req: GetRecommendsByRecommenderRequest, initReq?: fm.InitReq): Promise<GetRecommendsByRecommenderResponse> {
     return fm.fetchReq<GetRecommendsByRecommenderRequest, GetRecommendsByRecommenderResponse>(`/v1/get/recommends/by/recommender`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -787,6 +818,9 @@ export class CloudHashingGoods {
   }
   static GetRecommendGoodsByApp(req: GetRecommendGoodsByAppRequest, initReq?: fm.InitReq): Promise<GetRecommendGoodsByAppResponse> {
     return fm.fetchReq<GetRecommendGoodsByAppRequest, GetRecommendGoodsByAppResponse>(`/v1/get/recommend/goods/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetRecommendGoodsByOtherApp(req: GetRecommendGoodsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetRecommendGoodsByOtherAppResponse> {
+    return fm.fetchReq<GetRecommendGoodsByOtherAppRequest, GetRecommendGoodsByOtherAppResponse>(`/v1/get/recommend/goods/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetRecommendGoodsByRecommender(req: GetRecommendGoodsByRecommenderRequest, initReq?: fm.InitReq): Promise<GetRecommendGoodsByRecommenderResponse> {
     return fm.fetchReq<GetRecommendGoodsByRecommenderRequest, GetRecommendGoodsByRecommenderResponse>(`/v1/get/recommend/goods/by/recommender`, {...initReq, method: "POST", body: JSON.stringify(req)})

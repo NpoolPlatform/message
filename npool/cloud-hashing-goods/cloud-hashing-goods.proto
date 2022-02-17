@@ -190,6 +190,12 @@ service CloudHashingGoods {
             body: "*"
         };
     }
+    rpc CreateRecommentForOtherApp (CreateRecommentForOtherAppRequest) returns (CreateRecommentForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/recommend/for/other/app"
+            body: "*"
+        };
+    }
     rpc UpdateRecommend (UpdateRecommendRequest) returns (UpdateRecommendResponse) {
         option (google.api.http) = {
             post: "/v1/update/recommend"
@@ -199,6 +205,12 @@ service CloudHashingGoods {
     rpc GetRecommendsByApp (GetRecommendsByAppRequest) returns (GetRecommendsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/recommends/by/app"
+            body: "*"
+        };
+    }
+    rpc GetRecommendsByOtherApp (GetRecommendsByOtherAppRequest) returns (GetRecommendsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/recommends/by/other/app"
             body: "*"
         };
     }
@@ -217,6 +229,12 @@ service CloudHashingGoods {
     rpc GetRecommendGoodsByApp (GetRecommendGoodsByAppRequest) returns (GetRecommendGoodsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/recommend/goods/by/app"
+            body: "*"
+        };
+    }
+    rpc GetRecommendGoodsByOtherApp (GetRecommendGoodsByOtherAppRequest) returns (GetRecommendGoodsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/recommend/goods/by/other/app"
             body: "*"
         };
     }
@@ -728,6 +746,15 @@ message CreateRecommendResponse {
     Recommend Info = 10;
 }
 
+message CreateRecommentForOtherAppRequest {
+    string TargetAppID = 10;
+    Recommend Info = 20;
+}
+
+message CreateRecommentForOtherAppResponse {
+    Recommend Info = 10;
+}
+
 message UpdateRecommendRequest {
     Recommend Info = 10;
 }
@@ -744,8 +771,16 @@ message GetRecommendsByAppResponse {
     repeated Recommend Infos = 10;
 }
 
+message GetRecommendsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetRecommendsByOtherAppResponse {
+    repeated Recommend Infos = 10;
+}
+
 message GetRecommendsByRecommenderRequest {
-    string UserID = 10;
+    string RecommenderID = 10;
 }
 
 message GetRecommendsByRecommenderResponse {
@@ -773,8 +808,16 @@ message GetRecommendGoodsByAppResponse {
     repeated RecommendGood Infos = 10;
 }
 
+message GetRecommendGoodsByOtherAppRequest {
+    string AppID = 10;
+}
+
+message GetRecommendGoodsByOtherAppResponse {
+    repeated RecommendGood Infos = 10;
+}
+
 message GetRecommendGoodsByRecommenderRequest {
-    string UserID = 10;
+    string RecommenderID = 10;
 }
 
 message GetRecommendGoodsByRecommenderResponse {

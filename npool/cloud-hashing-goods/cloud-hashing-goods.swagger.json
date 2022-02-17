@@ -524,6 +524,38 @@
         ]
       }
     },
+    "/v1/create/recommend/for/other/app": {
+      "post": {
+        "operationId": "CloudHashingGoods_CreateRecommentForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateRecommentForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateRecommentForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
     "/v1/create/target-area": {
       "post": {
         "operationId": "CloudHashingGoods_CreateTargetArea",
@@ -1347,6 +1379,38 @@
         ]
       }
     },
+    "/v1/get/recommend/goods/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetRecommendGoodsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRecommendGoodsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRecommendGoodsByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
     "/v1/get/recommend/goods/by/recommender": {
       "post": {
         "operationId": "CloudHashingGoods_GetRecommendGoodsByRecommender",
@@ -1403,6 +1467,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetRecommendsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/get/recommends/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetRecommendsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRecommendsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRecommendsByOtherAppRequest"
             }
           }
         ],
@@ -2442,6 +2538,25 @@
         }
       }
     },
+    "v1CreateRecommentForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1Recommend"
+        }
+      }
+    },
+    "v1CreateRecommentForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Recommend"
+        }
+      }
+    },
     "v1CreateTargetAreaRequest": {
       "type": "object",
       "properties": {
@@ -2962,10 +3077,29 @@
         }
       }
     },
+    "v1GetRecommendGoodsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetRecommendGoodsByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RecommendGood"
+          }
+        }
+      }
+    },
     "v1GetRecommendGoodsByRecommenderRequest": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "RecommenderID": {
           "type": "string"
         }
       }
@@ -3000,10 +3134,29 @@
         }
       }
     },
+    "v1GetRecommendsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetRecommendsByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Recommend"
+          }
+        }
+      }
+    },
     "v1GetRecommendsByRecommenderRequest": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "RecommenderID": {
           "type": "string"
         }
       }
