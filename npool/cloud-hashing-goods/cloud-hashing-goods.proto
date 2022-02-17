@@ -233,7 +233,7 @@ service CloudHashingGoods {
             body: "*"
         };
     }
-    rpc AuthorizeForOtherApp (AuthorizeForOtherAppRequest) returns (AuthorizeForOtherAppResponse) {
+    rpc AuthorizeAppGoodForOtherApp (AuthorizeAppGoodForOtherAppRequest) returns (AuthorizeAppGoodForOtherAppResponse) {
         option (google.api.http) = {
             post: "/v1/authorize/app/good/for/other/app"
             body: "*"
@@ -830,12 +830,12 @@ message AuthorizeAppGoodResponse {
     AppGoodInfo Info = 10;
 }
 
-message AuthorizeForOtherAppRequest {
+message AuthorizeAppGoodForOtherAppRequest {
     string TargetAppID = 10;
     AppGoodInfo Info = 20;
 }
 
-message AuthorizeForOtherAppResponse {
+message AuthorizeAppGoodForOtherAppResponse {
     AppGoodInfo Info = 10;
 }
 

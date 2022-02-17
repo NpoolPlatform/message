@@ -45,12 +45,12 @@
     },
     "/v1/authorize/app/good/for/other/app": {
       "post": {
-        "operationId": "CloudHashingGoods_AuthorizeForOtherApp",
+        "operationId": "CloudHashingGoods_AuthorizeAppGoodForOtherApp",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AuthorizeForOtherAppResponse"
+              "$ref": "#/definitions/v1AuthorizeAppGoodForOtherAppResponse"
             }
           },
           "default": {
@@ -66,7 +66,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AuthorizeForOtherAppRequest"
+              "$ref": "#/definitions/v1AuthorizeAppGoodForOtherAppRequest"
             }
           }
         ],
@@ -2185,6 +2185,25 @@
         }
       }
     },
+    "v1AuthorizeAppGoodForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodInfo"
+        }
+      }
+    },
+    "v1AuthorizeAppGoodForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodInfo"
+        }
+      }
+    },
     "v1AuthorizeAppGoodRequest": {
       "type": "object",
       "properties": {
@@ -2230,25 +2249,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppTargetAreaInfo"
-        }
-      }
-    },
-    "v1AuthorizeForOtherAppRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Info": {
-          "$ref": "#/definitions/v1AppGoodInfo"
-        }
-      }
-    },
-    "v1AuthorizeForOtherAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppGoodInfo"
         }
       }
     },
