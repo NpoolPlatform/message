@@ -2728,7 +2728,7 @@
     "v1GetGoodsDetailResponse": {
       "type": "object",
       "properties": {
-        "Details": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1GoodDetail"

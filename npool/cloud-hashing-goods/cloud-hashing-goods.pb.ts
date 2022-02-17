@@ -275,7 +275,7 @@ export type GetGoodsDetailRequest = {
 }
 
 export type GetGoodsDetailResponse = {
-  details?: GoodDetail[]
+  infos?: GoodDetail[]
   total?: number
 }
 

@@ -673,7 +673,7 @@ message GetGoodsDetailRequest {
 }
 
 message GetGoodsDetailResponse {
-    repeated GoodDetail Details = 10;
+    repeated GoodDetail Infos = 10;
     int32 Total = 20;
 }
 
