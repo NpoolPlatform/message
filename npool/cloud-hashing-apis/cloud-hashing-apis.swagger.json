@@ -267,6 +267,38 @@
         ]
       }
     },
+    "/v1/get/goods/by/app": {
+      "post": {
+        "operationId": "CloudHashingApis_GetGoodsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/kyc/by/app/user": {
       "post": {
         "operationId": "CloudHashingApis_GetKycByAppUser",
@@ -2000,7 +2032,7 @@
         }
       }
     },
-    "v1FeeDetail": {
+    "v1Fee": {
       "type": "object",
       "properties": {
         "ID": {
@@ -2009,12 +2041,23 @@
         "AppID": {
           "type": "string"
         },
-        "Fee": {
-          "$ref": "#/definitions/v1FeeType"
+        "FeeTypeID": {
+          "type": "string"
         },
         "Value": {
           "type": "number",
           "format": "double"
+        }
+      }
+    },
+    "v1FeeDetail": {
+      "type": "object",
+      "properties": {
+        "Fee": {
+          "$ref": "#/definitions/v1Fee"
+        },
+        "FeeType": {
+          "$ref": "#/definitions/v1FeeType"
         }
       }
     },
@@ -2067,6 +2110,32 @@
           "items": {
             "$ref": "#/definitions/v1GoodReview"
           }
+        }
+      }
+    },
+    "v1GetGoodsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetGoodsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Good"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -2359,32 +2428,11 @@
     "v1GoodDetail": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
+        "Good": {
+          "$ref": "#/definitions/v1GoodInfo"
         },
         "DeviceInfo": {
           "$ref": "#/definitions/v1DeviceInfo"
-        },
-        "SeparateFee": {
-          "type": "boolean"
-        },
-        "UnitPower": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "CoinInfoID": {
-          "type": "string"
-        },
-        "Actuals": {
-          "type": "boolean"
-        },
-        "DeliveryAt": {
-          "type": "integer",
-          "format": "int64"
         },
         "InheritFromGood": {
           "$ref": "#/definitions/v1GoodInfo"
@@ -2392,34 +2440,8 @@
         "VendorLocation": {
           "$ref": "#/definitions/v1VendorLocationInfo"
         },
-        "Price": {
-          "type": "number",
-          "format": "double"
-        },
-        "BenefitType": {
-          "type": "string"
-        },
-        "Classic": {
-          "type": "boolean"
-        },
-        "SupportCoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int32"
-        },
         "Extra": {
           "$ref": "#/definitions/v1GoodExtraInfo"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Unit": {
-          "type": "string"
         },
         "PriceCurrency": {
           "$ref": "#/definitions/v1PriceCurrency"
@@ -2429,10 +2451,6 @@
           "items": {
             "$ref": "#/definitions/v1FeeDetail"
           }
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

@@ -52,6 +52,16 @@ export type GetGoodsResponse = {
   total?: number
 }
 
+export type GetGoodsByAppRequest = {
+  appID?: string
+  pageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetGoodsByAppResponse = {
+  infos?: Good[]
+  total?: number
+}
+
 export type GetRecommendGoodsByAppRequest = {
   appID?: string
 }
@@ -464,6 +474,9 @@ export class CloudHashingApis {
   }
   static GetGoods(req: GetGoodsRequest, initReq?: fm.InitReq): Promise<GetGoodsResponse> {
     return fm.fetchReq<GetGoodsRequest, GetGoodsResponse>(`/v1/get/goods`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodsByApp(req: GetGoodsByAppRequest, initReq?: fm.InitReq): Promise<GetGoodsByAppResponse> {
+    return fm.fetchReq<GetGoodsByAppRequest, GetGoodsByAppResponse>(`/v1/get/goods/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateGood(req: CreateGoodRequest, initReq?: fm.InitReq): Promise<CreateGoodResponse> {
     return fm.fetchReq<CreateGoodRequest, CreateGoodResponse>(`/v1/create/good`, {...initReq, method: "POST", body: JSON.stringify(req)})

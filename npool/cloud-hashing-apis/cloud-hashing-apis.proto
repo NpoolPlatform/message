@@ -32,6 +32,12 @@ service CloudHashingApis {
             body: "*"
         };
     }
+    rpc GetGoodsByApp (GetGoodsByAppRequest) returns (GetGoodsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/goods/by/app"
+            body: "*"
+        };
+    }
     rpc CreateGood (CreateGoodRequest) returns (CreateGoodResponse) {
         option (google.api.http) = {
             post: "/v1/create/good"
@@ -289,12 +295,21 @@ message GetGoodResponse {
     Good Info = 10;
 }
 
-
 message GetGoodsRequest {
     npool.v1.PageInfo PageInfo = 10;
 }
 
 message GetGoodsResponse {
+    repeated Good Infos = 10;
+    int32 Total = 20;
+}
+
+message GetGoodsByAppRequest {
+    string AppID = 10;
+    npool.v1.PageInfo PageInfo = 20;
+}
+
+message GetGoodsByAppResponse {
     repeated Good Infos = 10;
     int32 Total = 20;
 }

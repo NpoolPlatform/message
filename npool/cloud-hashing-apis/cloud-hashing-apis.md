@@ -18,6 +18,8 @@
     - [GetGoodResponse](#cloud.hashing.apis.v1.GetGoodResponse)
     - [GetGoodReviewsRequest](#cloud.hashing.apis.v1.GetGoodReviewsRequest)
     - [GetGoodReviewsResponse](#cloud.hashing.apis.v1.GetGoodReviewsResponse)
+    - [GetGoodsByAppRequest](#cloud.hashing.apis.v1.GetGoodsByAppRequest)
+    - [GetGoodsByAppResponse](#cloud.hashing.apis.v1.GetGoodsByAppResponse)
     - [GetGoodsRequest](#cloud.hashing.apis.v1.GetGoodsRequest)
     - [GetGoodsResponse](#cloud.hashing.apis.v1.GetGoodsResponse)
     - [GetKycByAppUserRequest](#cloud.hashing.apis.v1.GetKycByAppUserRequest)
@@ -114,6 +116,8 @@
     - [GetGoodResponse](#cloud.hashing.apis.v1.GetGoodResponse)
     - [GetGoodReviewsRequest](#cloud.hashing.apis.v1.GetGoodReviewsRequest)
     - [GetGoodReviewsResponse](#cloud.hashing.apis.v1.GetGoodReviewsResponse)
+    - [GetGoodsByAppRequest](#cloud.hashing.apis.v1.GetGoodsByAppRequest)
+    - [GetGoodsByAppResponse](#cloud.hashing.apis.v1.GetGoodsByAppResponse)
     - [GetGoodsRequest](#cloud.hashing.apis.v1.GetGoodsRequest)
     - [GetGoodsResponse](#cloud.hashing.apis.v1.GetGoodsResponse)
     - [GetKycByAppUserRequest](#cloud.hashing.apis.v1.GetKycByAppUserRequest)
@@ -413,6 +417,38 @@
 
 
 
+<a name="cloud.hashing.apis.v1.GetGoodsByAppRequest"></a>
+
+### GetGoodsByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetGoodsByAppResponse"></a>
+
+### GetGoodsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Good](#cloud.hashing.apis.v1.Good) | repeated |  |
+| Total | [int32](#int32) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.GetGoodsRequest"></a>
 
 ### GetGoodsRequest
@@ -1692,6 +1728,7 @@ Cloud Hashing Goods
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) |  |
 | GetGoods | [GetGoodsRequest](#cloud.hashing.apis.v1.GetGoodsRequest) | [GetGoodsResponse](#cloud.hashing.apis.v1.GetGoodsResponse) |  |
+| GetGoodsByApp | [GetGoodsByAppRequest](#cloud.hashing.apis.v1.GetGoodsByAppRequest) | [GetGoodsByAppResponse](#cloud.hashing.apis.v1.GetGoodsByAppResponse) |  |
 | CreateGood | [CreateGoodRequest](#cloud.hashing.apis.v1.CreateGoodRequest) | [CreateGoodResponse](#cloud.hashing.apis.v1.CreateGoodResponse) |  |
 | GetGood | [GetGoodRequest](#cloud.hashing.apis.v1.GetGoodRequest) | [GetGoodResponse](#cloud.hashing.apis.v1.GetGoodResponse) |  |
 | GetRecommendGoodsByApp | [GetRecommendGoodsByAppRequest](#cloud.hashing.apis.v1.GetRecommendGoodsByAppRequest) | [GetRecommendGoodsByAppResponse](#cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse) |  |
@@ -1947,6 +1984,38 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud.hashing.apis.v1.GetGoodsByAppRequest"></a>
+
+### GetGoodsByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetGoodsByAppResponse"></a>
+
+### GetGoodsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Good](#cloud.hashing.apis.v1.Good) | repeated |  |
+| Total | [int32](#int32) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.GetGoodsRequest"></a>
 
 ### GetGoodsRequest
@@ -3226,6 +3295,7 @@ Cloud Hashing Goods
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) |  |
 | GetGoods | [GetGoodsRequest](#cloud.hashing.apis.v1.GetGoodsRequest) | [GetGoodsResponse](#cloud.hashing.apis.v1.GetGoodsResponse) |  |
+| GetGoodsByApp | [GetGoodsByAppRequest](#cloud.hashing.apis.v1.GetGoodsByAppRequest) | [GetGoodsByAppResponse](#cloud.hashing.apis.v1.GetGoodsByAppResponse) |  |
 | CreateGood | [CreateGoodRequest](#cloud.hashing.apis.v1.CreateGoodRequest) | [CreateGoodResponse](#cloud.hashing.apis.v1.CreateGoodResponse) |  |
 | GetGood | [GetGoodRequest](#cloud.hashing.apis.v1.GetGoodRequest) | [GetGoodResponse](#cloud.hashing.apis.v1.GetGoodResponse) |  |
 | GetRecommendGoodsByApp | [GetRecommendGoodsByAppRequest](#cloud.hashing.apis.v1.GetRecommendGoodsByAppRequest) | [GetRecommendGoodsByAppResponse](#cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse) |  |

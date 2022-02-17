@@ -26,6 +26,7 @@ const _ = grpc.SupportPackageIsVersion7
 type CloudHashingApisClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	GetGoods(ctx context.Context, in *GetGoodsRequest, opts ...grpc.CallOption) (*GetGoodsResponse, error)
+	GetGoodsByApp(ctx context.Context, in *GetGoodsByAppRequest, opts ...grpc.CallOption) (*GetGoodsByAppResponse, error)
 	CreateGood(ctx context.Context, in *CreateGoodRequest, opts ...grpc.CallOption) (*CreateGoodResponse, error)
 	GetGood(ctx context.Context, in *GetGoodRequest, opts ...grpc.CallOption) (*GetGoodResponse, error)
 	GetRecommendGoodsByApp(ctx context.Context, in *GetRecommendGoodsByAppRequest, opts ...grpc.CallOption) (*GetRecommendGoodsByAppResponse, error)
@@ -84,6 +85,15 @@ func (c *cloudHashingApisClient) Version(ctx context.Context, in *emptypb.Empty,
 func (c *cloudHashingApisClient) GetGoods(ctx context.Context, in *GetGoodsRequest, opts ...grpc.CallOption) (*GetGoodsResponse, error) {
 	out := new(GetGoodsResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetGoods", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetGoodsByApp(ctx context.Context, in *GetGoodsByAppRequest, opts ...grpc.CallOption) (*GetGoodsByAppResponse, error) {
+	out := new(GetGoodsByAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetGoodsByApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -420,6 +430,7 @@ func (c *cloudHashingApisClient) GetWithdrawAddressesByAppUser(ctx context.Conte
 type CloudHashingApisServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	GetGoods(context.Context, *GetGoodsRequest) (*GetGoodsResponse, error)
+	GetGoodsByApp(context.Context, *GetGoodsByAppRequest) (*GetGoodsByAppResponse, error)
 	CreateGood(context.Context, *CreateGoodRequest) (*CreateGoodResponse, error)
 	GetGood(context.Context, *GetGoodRequest) (*GetGoodResponse, error)
 	GetRecommendGoodsByApp(context.Context, *GetRecommendGoodsByAppRequest) (*GetRecommendGoodsByAppResponse, error)
@@ -468,6 +479,9 @@ func (UnimplementedCloudHashingApisServer) Version(context.Context, *emptypb.Emp
 }
 func (UnimplementedCloudHashingApisServer) GetGoods(context.Context, *GetGoodsRequest) (*GetGoodsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoods not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetGoodsByApp(context.Context, *GetGoodsByAppRequest) (*GetGoodsByAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodsByApp not implemented")
 }
 func (UnimplementedCloudHashingApisServer) CreateGood(context.Context, *CreateGoodRequest) (*CreateGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateGood not implemented")
@@ -622,6 +636,24 @@ func _CloudHashingApis_GetGoods_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingApisServer).GetGoods(ctx, req.(*GetGoodsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetGoodsByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodsByAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetGoodsByApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetGoodsByApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetGoodsByApp(ctx, req.(*GetGoodsByAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1288,6 +1320,10 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetGoods",
 			Handler:    _CloudHashingApis_GetGoods_Handler,
+		},
+		{
+			MethodName: "GetGoodsByApp",
+			Handler:    _CloudHashingApis_GetGoodsByApp_Handler,
 		},
 		{
 			MethodName: "CreateGood",
