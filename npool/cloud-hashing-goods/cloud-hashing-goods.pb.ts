@@ -248,34 +248,19 @@ export type GetPriceCurrencysResponse = {
 }
 
 export type FeeDetail = {
-  id?: string
-  appID?: string
-  fee?: FeeType
-  value?: number
+  fee?: Fee
+  feeType?: FeeType
 }
 
 export type GoodDetail = {
-  id?: string
+  good?: GoodInfo
   deviceInfo?: DeviceInfo
-  separateFee?: boolean
-  unitPower?: number
-  durationDays?: number
-  coinInfoID?: string
-  actuals?: boolean
-  deliveryAt?: number
   inheritFromGood?: GoodInfo
   vendorLocation?: VendorLocationInfo
-  price?: number
-  benefitType?: string
-  classic?: boolean
   supportCoinTypeIDs?: string[]
-  total?: number
   extra?: GoodExtraInfo
-  title?: string
-  unit?: string
   priceCurrency?: PriceCurrency
   fees?: FeeDetail[]
-  startAt?: number
 }
 
 export type GetGoodDetailRequest = {

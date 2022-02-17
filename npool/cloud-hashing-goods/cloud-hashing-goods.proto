@@ -646,34 +646,19 @@ message GetPriceCurrencysResponse {
 }
 
 message FeeDetail {
-    string ID = 10;
-    string AppID = 20;
-    FeeType Fee = 30;
-    double Value = 40;
+    Fee Fee = 10;
+    FeeType FeeType = 20;
 }
 
 message GoodDetail {
-    string ID = 10;
+    GoodInfo Good = 10;
     DeviceInfo DeviceInfo = 20;
-    bool SeparateFee = 30;
-    int32 UnitPower = 40;
-    int32 DurationDays = 50;
-    string CoinInfoID = 60;
-    bool Actuals = 70;
-    uint32 DeliveryAt = 80;
-    GoodInfo InheritFromGood = 90;
-    VendorLocationInfo VendorLocation = 100;
-    double Price = 110;
-    string BenefitType = 120;
-    bool Classic = 130;
-    repeated string SupportCoinTypeIDs = 140;
-    int32 Total = 150;
-    GoodExtraInfo Extra = 160;
-    string Title = 170;
-    string Unit = 180;
-    PriceCurrency PriceCurrency = 190;
-    repeated FeeDetail Fees = 200;
-    uint32 StartAt = 210;
+    GoodInfo InheritFromGood = 30;
+    VendorLocationInfo VendorLocation = 40;
+    repeated string SupportCoinTypeIDs = 50;
+    GoodExtraInfo Extra = 60;
+    PriceCurrency PriceCurrency = 70;
+    repeated FeeDetail Fees = 80;
 }
 
 message GetGoodDetailRequest {

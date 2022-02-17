@@ -1097,10 +1097,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| Fee | [FeeType](#cloud.hashing.goods.v1.FeeType) |  |  |
-| Value | [double](#double) |  |  |
+| Fee | [Fee](#cloud.hashing.goods.v1.Fee) |  |  |
+| FeeType | [FeeType](#cloud.hashing.goods.v1.FeeType) |  |  |
 
 
 
@@ -1851,27 +1849,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
+| Good | [GoodInfo](#cloud.hashing.goods.v1.GoodInfo) |  |  |
 | DeviceInfo | [DeviceInfo](#cloud.hashing.goods.v1.DeviceInfo) |  |  |
-| SeparateFee | [bool](#bool) |  |  |
-| UnitPower | [int32](#int32) |  |  |
-| DurationDays | [int32](#int32) |  |  |
-| CoinInfoID | [string](#string) |  |  |
-| Actuals | [bool](#bool) |  |  |
-| DeliveryAt | [uint32](#uint32) |  |  |
 | InheritFromGood | [GoodInfo](#cloud.hashing.goods.v1.GoodInfo) |  |  |
 | VendorLocation | [VendorLocationInfo](#cloud.hashing.goods.v1.VendorLocationInfo) |  |  |
-| Price | [double](#double) |  |  |
-| BenefitType | [string](#string) |  |  |
-| Classic | [bool](#bool) |  |  |
 | SupportCoinTypeIDs | [string](#string) | repeated |  |
-| Total | [int32](#int32) |  |  |
 | Extra | [GoodExtraInfo](#cloud.hashing.goods.v1.GoodExtraInfo) |  |  |
-| Title | [string](#string) |  |  |
-| Unit | [string](#string) |  |  |
 | PriceCurrency | [PriceCurrency](#cloud.hashing.goods.v1.PriceCurrency) |  |  |
 | Fees | [FeeDetail](#cloud.hashing.goods.v1.FeeDetail) | repeated |  |
-| StartAt | [uint32](#uint32) |  |  |
 
 
 
@@ -3405,10 +3390,8 @@ Cloud Hashing Goods
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| Fee | [FeeType](#cloud.hashing.goods.v1.FeeType) |  |  |
-| Value | [double](#double) |  |  |
+| Fee | [Fee](#cloud.hashing.goods.v1.Fee) |  |  |
+| FeeType | [FeeType](#cloud.hashing.goods.v1.FeeType) |  |  |
 
 
 
@@ -4159,27 +4142,14 @@ Cloud Hashing Goods
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
+| Good | [GoodInfo](#cloud.hashing.goods.v1.GoodInfo) |  |  |
 | DeviceInfo | [DeviceInfo](#cloud.hashing.goods.v1.DeviceInfo) |  |  |
-| SeparateFee | [bool](#bool) |  |  |
-| UnitPower | [int32](#int32) |  |  |
-| DurationDays | [int32](#int32) |  |  |
-| CoinInfoID | [string](#string) |  |  |
-| Actuals | [bool](#bool) |  |  |
-| DeliveryAt | [uint32](#uint32) |  |  |
 | InheritFromGood | [GoodInfo](#cloud.hashing.goods.v1.GoodInfo) |  |  |
 | VendorLocation | [VendorLocationInfo](#cloud.hashing.goods.v1.VendorLocationInfo) |  |  |
-| Price | [double](#double) |  |  |
-| BenefitType | [string](#string) |  |  |
-| Classic | [bool](#bool) |  |  |
 | SupportCoinTypeIDs | [string](#string) | repeated |  |
-| Total | [int32](#int32) |  |  |
 | Extra | [GoodExtraInfo](#cloud.hashing.goods.v1.GoodExtraInfo) |  |  |
-| Title | [string](#string) |  |  |
-| Unit | [string](#string) |  |  |
 | PriceCurrency | [PriceCurrency](#cloud.hashing.goods.v1.PriceCurrency) |  |  |
 | Fees | [FeeDetail](#cloud.hashing.goods.v1.FeeDetail) | repeated |  |
-| StartAt | [uint32](#uint32) |  |  |
 
 
 

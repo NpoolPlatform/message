@@ -2501,18 +2501,11 @@
     "v1FeeDetail": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
         "Fee": {
-          "$ref": "#/definitions/v1FeeType"
+          "$ref": "#/definitions/v1Fee"
         },
-        "Value": {
-          "type": "number",
-          "format": "double"
+        "FeeType": {
+          "$ref": "#/definitions/v1FeeType"
         }
       }
     },
@@ -2972,32 +2965,11 @@
     "v1GoodDetail": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
+        "Good": {
+          "$ref": "#/definitions/v1GoodInfo"
         },
         "DeviceInfo": {
           "$ref": "#/definitions/v1DeviceInfo"
-        },
-        "SeparateFee": {
-          "type": "boolean"
-        },
-        "UnitPower": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "CoinInfoID": {
-          "type": "string"
-        },
-        "Actuals": {
-          "type": "boolean"
-        },
-        "DeliveryAt": {
-          "type": "integer",
-          "format": "int64"
         },
         "InheritFromGood": {
           "$ref": "#/definitions/v1GoodInfo"
@@ -3005,34 +2977,14 @@
         "VendorLocation": {
           "$ref": "#/definitions/v1VendorLocationInfo"
         },
-        "Price": {
-          "type": "number",
-          "format": "double"
-        },
-        "BenefitType": {
-          "type": "string"
-        },
-        "Classic": {
-          "type": "boolean"
-        },
         "SupportCoinTypeIDs": {
           "type": "array",
           "items": {
             "type": "string"
           }
         },
-        "Total": {
-          "type": "integer",
-          "format": "int32"
-        },
         "Extra": {
           "$ref": "#/definitions/v1GoodExtraInfo"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Unit": {
-          "type": "string"
         },
         "PriceCurrency": {
           "$ref": "#/definitions/v1PriceCurrency"
@@ -3042,10 +2994,6 @@
           "items": {
             "$ref": "#/definitions/v1FeeDetail"
           }
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
