@@ -424,7 +424,7 @@ export type AuthorizeAppGoodForOtherAppResponse = {
 }
 
 export type UnauthorizeAppGoodRequest = {
-  info?: AppGoodInfo
+  id?: string
 }
 
 export type UnauthorizeAppGoodResponse = {

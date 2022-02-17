@@ -3404,8 +3404,8 @@
     "v1UnauthorizeAppGoodRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppGoodInfo"
+        "ID": {
+          "type": "string"
         }
       }
     },

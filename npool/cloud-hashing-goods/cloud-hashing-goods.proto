@@ -840,7 +840,7 @@ message AuthorizeAppGoodForOtherAppResponse {
 }
 
 message UnauthorizeAppGoodRequest {
-    AppGoodInfo Info = 10;
+    string ID = 10;
 }
 
 message UnauthorizeAppGoodResponse {
