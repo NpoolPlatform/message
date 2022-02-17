@@ -307,6 +307,7 @@ export type GetGoodsResponse = {
 }
 
 export type GetGoodsByAppRequest = {
+  appID?: string
   pageInfo?: NpoolV1Npool.PageInfo
 }
 

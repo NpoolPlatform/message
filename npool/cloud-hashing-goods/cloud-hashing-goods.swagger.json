@@ -3052,6 +3052,9 @@
     "v1GetGoodsByAppRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "PageInfo": {
           "$ref": "#/definitions/v1PageInfo"
         }

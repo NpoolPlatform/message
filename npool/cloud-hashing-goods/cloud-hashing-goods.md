@@ -1618,6 +1618,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
@@ -4163,6 +4164,7 @@ Cloud Hashing Goods
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 

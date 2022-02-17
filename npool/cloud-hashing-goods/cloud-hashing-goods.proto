@@ -755,7 +755,8 @@ message GetGoodsResponse {
 }
 
 message GetGoodsByAppRequest {
-    npool.v1.PageInfo PageInfo = 10;
+    string AppID = 10;
+    npool.v1.PageInfo PageInfo = 20;
 }
 
 message GetGoodsByAppResponse {
