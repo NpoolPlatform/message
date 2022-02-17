@@ -279,6 +279,16 @@ export type GetGoodsDetailResponse = {
   total?: number
 }
 
+export type GetGoodsDetailByAppRequest = {
+  appID?: string
+  pageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetGoodsDetailByAppResponse = {
+  infos?: GoodDetail[]
+  total?: number
+}
+
 export type DeleteGoodRequest = {
   id?: string
 }
@@ -292,6 +302,15 @@ export type GetGoodsRequest = {
 }
 
 export type GetGoodsResponse = {
+  infos?: GoodInfo[]
+  total?: number
+}
+
+export type GetGoodsByAppRequest = {
+  pageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetGoodsByAppResponse = {
   infos?: GoodInfo[]
   total?: number
 }
@@ -789,11 +808,17 @@ export class CloudHashingGoods {
   static GetGoods(req: GetGoodsRequest, initReq?: fm.InitReq): Promise<GetGoodsResponse> {
     return fm.fetchReq<GetGoodsRequest, GetGoodsResponse>(`/v1/get/goods`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetGoodsByApp(req: GetGoodsByAppRequest, initReq?: fm.InitReq): Promise<GetGoodsByAppResponse> {
+    return fm.fetchReq<GetGoodsByAppRequest, GetGoodsByAppResponse>(`/v1/get/goods/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetGoodDetail(req: GetGoodDetailRequest, initReq?: fm.InitReq): Promise<GetGoodDetailResponse> {
     return fm.fetchReq<GetGoodDetailRequest, GetGoodDetailResponse>(`/v1/get/good/detail`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetGoodsDetail(req: GetGoodsDetailRequest, initReq?: fm.InitReq): Promise<GetGoodsDetailResponse> {
     return fm.fetchReq<GetGoodsDetailRequest, GetGoodsDetailResponse>(`/v1/get/goods/detail`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodsDetailByApp(req: GetGoodsDetailByAppRequest, initReq?: fm.InitReq): Promise<GetGoodsDetailByAppResponse> {
+    return fm.fetchReq<GetGoodsDetailByAppRequest, GetGoodsDetailByAppResponse>(`/v1/get/goods/detail/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateRecommend(req: CreateRecommendRequest, initReq?: fm.InitReq): Promise<CreateRecommendResponse> {
     return fm.fetchReq<CreateRecommendRequest, CreateRecommendResponse>(`/v1/create/recommend`, {...initReq, method: "POST", body: JSON.stringify(req)})

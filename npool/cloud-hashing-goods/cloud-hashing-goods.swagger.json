@@ -1261,6 +1261,38 @@
         ]
       }
     },
+    "/v1/get/goods/by/app": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetGoodsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
     "/v1/get/goods/detail": {
       "post": {
         "operationId": "CloudHashingGoods_GetGoodsDetail",
@@ -1285,6 +1317,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetGoodsDetailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/get/goods/detail/by/app": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetGoodsDetailByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodsDetailByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodsDetailByAppRequest"
             }
           }
         ],
@@ -2982,6 +3046,55 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1GoodReviewInfo"
+        }
+      }
+    },
+    "v1GetGoodsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetGoodsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodInfo"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetGoodsDetailByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetGoodsDetailByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodDetail"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
