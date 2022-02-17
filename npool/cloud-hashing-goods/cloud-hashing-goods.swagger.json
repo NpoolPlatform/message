@@ -3080,7 +3080,7 @@
     "v1GetRecommendGoodsByOtherAppRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         }
       }

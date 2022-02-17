@@ -375,7 +375,7 @@ export type GetRecommendGoodsByAppResponse = {
 }
 
 export type GetRecommendGoodsByOtherAppRequest = {
-  appID?: string
+  targetAppID?: string
 }
 
 export type GetRecommendGoodsByOtherAppResponse = {

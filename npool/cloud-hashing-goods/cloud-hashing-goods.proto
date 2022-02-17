@@ -809,7 +809,7 @@ message GetRecommendGoodsByAppResponse {
 }
 
 message GetRecommendGoodsByOtherAppRequest {
-    string AppID = 10;
+    string TargetAppID = 10;
 }
 
 message GetRecommendGoodsByOtherAppResponse {
