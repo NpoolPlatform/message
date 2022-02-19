@@ -443,7 +443,6 @@
 | CoinTypeID | [string](#string) |  |  |
 | WarmAccountCoinAmount | [double](#double) |  |  |
 | PaymentAccountCoinAmount | [double](#double) |  |  |
-| WithdrawAutoReviewCoinAmount | [double](#double) |  |  |
 | PlatformOfflineAccountID | [string](#string) |  |  |
 | UserOfflineAccountID | [string](#string) |  |  |
 | UserOnlineAccountID | [string](#string) |  |  |
@@ -3055,7 +3054,6 @@ Cloud Hashing Billing
 | CoinTypeID | [string](#string) |  |  |
 | WarmAccountCoinAmount | [double](#double) |  |  |
 | PaymentAccountCoinAmount | [double](#double) |  |  |
-| WithdrawAutoReviewCoinAmount | [double](#double) |  |  |
 | PlatformOfflineAccountID | [string](#string) |  |  |
 | UserOfflineAccountID | [string](#string) |  |  |
 | UserOnlineAccountID | [string](#string) |  |  |

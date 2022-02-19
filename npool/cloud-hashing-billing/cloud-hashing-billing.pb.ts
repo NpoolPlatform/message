@@ -328,7 +328,6 @@ export type CoinSetting = {
   coinTypeID?: string
   warmAccountCoinAmount?: number
   paymentAccountCoinAmount?: number
-  withdrawAutoReviewCoinAmount?: number
   platformOfflineAccountID?: string
   userOfflineAccountID?: string
   userOnlineAccountID?: string
