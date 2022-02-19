@@ -92,6 +92,8 @@
     - [UpdatePasswordResponse](#cloud.hashing.apis.v1.UpdatePasswordResponse)
     - [UpdatePhoneNORequest](#cloud.hashing.apis.v1.UpdatePhoneNORequest)
     - [UpdatePhoneNOResponse](#cloud.hashing.apis.v1.UpdatePhoneNOResponse)
+    - [UpdateUserWithdrawReviewForOtherAppUserRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserRequest)
+    - [UpdateUserWithdrawReviewForOtherAppUserResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserResponse)
     - [UpdateUserWithdrawReviewRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest)
     - [UpdateUserWithdrawReviewResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse)
     - [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw)
@@ -190,6 +192,8 @@
     - [UpdatePasswordResponse](#cloud.hashing.apis.v1.UpdatePasswordResponse)
     - [UpdatePhoneNORequest](#cloud.hashing.apis.v1.UpdatePhoneNORequest)
     - [UpdatePhoneNOResponse](#cloud.hashing.apis.v1.UpdatePhoneNOResponse)
+    - [UpdateUserWithdrawReviewForOtherAppUserRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserRequest)
+    - [UpdateUserWithdrawReviewForOtherAppUserResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserResponse)
     - [UpdateUserWithdrawReviewRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest)
     - [UpdateUserWithdrawReviewResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse)
     - [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw)
@@ -1614,6 +1618,38 @@ Request body and response
 
 
 
+<a name="cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserRequest"></a>
+
+### UpdateUserWithdrawReviewForOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserResponse"></a>
+
+### UpdateUserWithdrawReviewForOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest"></a>
 
 ### UpdateUserWithdrawReviewRequest
@@ -1765,6 +1801,7 @@ Cloud Hashing Goods
 | CreateUserCoinAccount | [CreateUserCoinAccountRequest](#cloud.hashing.apis.v1.CreateUserCoinAccountRequest) | [CreateUserCoinAccountResponse](#cloud.hashing.apis.v1.CreateUserCoinAccountResponse) |  |
 | SubmitUserWithdraw | [SubmitUserWithdrawRequest](#cloud.hashing.apis.v1.SubmitUserWithdrawRequest) | [SubmitUserWithdrawResponse](#cloud.hashing.apis.v1.SubmitUserWithdrawResponse) |  |
 | UpdateUserWithdrawReview | [UpdateUserWithdrawReviewRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest) | [UpdateUserWithdrawReviewResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse) |  |
+| UpdateUserWithdrawReviewForOtherAppUser | [UpdateUserWithdrawReviewForOtherAppUserRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserRequest) | [UpdateUserWithdrawReviewForOtherAppUserResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserResponse) |  |
 | GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse) |  |
 | SetWithdrawAddress | [SetWithdrawAddressRequest](#cloud.hashing.apis.v1.SetWithdrawAddressRequest) | [SetWithdrawAddressResponse](#cloud.hashing.apis.v1.SetWithdrawAddressResponse) |  |
 | GetWithdrawAddressesByAppUser | [GetWithdrawAddressesByAppUserRequest](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserRequest) | [GetWithdrawAddressesByAppUserResponse](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserResponse) |  |
@@ -3184,6 +3221,38 @@ Request body and response
 
 
 
+<a name="cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserRequest"></a>
+
+### UpdateUserWithdrawReviewForOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserResponse"></a>
+
+### UpdateUserWithdrawReviewForOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest"></a>
 
 ### UpdateUserWithdrawReviewRequest
@@ -3335,6 +3404,7 @@ Cloud Hashing Goods
 | CreateUserCoinAccount | [CreateUserCoinAccountRequest](#cloud.hashing.apis.v1.CreateUserCoinAccountRequest) | [CreateUserCoinAccountResponse](#cloud.hashing.apis.v1.CreateUserCoinAccountResponse) |  |
 | SubmitUserWithdraw | [SubmitUserWithdrawRequest](#cloud.hashing.apis.v1.SubmitUserWithdrawRequest) | [SubmitUserWithdrawResponse](#cloud.hashing.apis.v1.SubmitUserWithdrawResponse) |  |
 | UpdateUserWithdrawReview | [UpdateUserWithdrawReviewRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest) | [UpdateUserWithdrawReviewResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse) |  |
+| UpdateUserWithdrawReviewForOtherAppUser | [UpdateUserWithdrawReviewForOtherAppUserRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserRequest) | [UpdateUserWithdrawReviewForOtherAppUserResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserResponse) |  |
 | GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse) |  |
 | SetWithdrawAddress | [SetWithdrawAddressRequest](#cloud.hashing.apis.v1.SetWithdrawAddressRequest) | [SetWithdrawAddressResponse](#cloud.hashing.apis.v1.SetWithdrawAddressResponse) |  |
 | GetWithdrawAddressesByAppUser | [GetWithdrawAddressesByAppUserRequest](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserRequest) | [GetWithdrawAddressesByAppUserResponse](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserResponse) |  |

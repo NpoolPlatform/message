@@ -369,6 +369,16 @@ export type UpdateUserWithdrawReviewResponse = {
   info?: UserWithdraw
 }
 
+export type UpdateUserWithdrawReviewForOtherAppUserRequest = {
+  targetAppID?: string
+  targetUserID?: string
+  review?: ReviewServiceV1Review-service.Review
+}
+
+export type UpdateUserWithdrawReviewForOtherAppUserResponse = {
+  info?: UserWithdraw
+}
+
 export type GetUserWithdrawsByAppUserRequest = {
   appID?: string
   userID?: string
@@ -579,6 +589,9 @@ export class CloudHashingApis {
   }
   static UpdateUserWithdrawReview(req: UpdateUserWithdrawReviewRequest, initReq?: fm.InitReq): Promise<UpdateUserWithdrawReviewResponse> {
     return fm.fetchReq<UpdateUserWithdrawReviewRequest, UpdateUserWithdrawReviewResponse>(`/v1/update/user/withdraw/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateUserWithdrawReviewForOtherAppUser(req: UpdateUserWithdrawReviewForOtherAppUserRequest, initReq?: fm.InitReq): Promise<UpdateUserWithdrawReviewForOtherAppUserResponse> {
+    return fm.fetchReq<UpdateUserWithdrawReviewForOtherAppUserRequest, UpdateUserWithdrawReviewForOtherAppUserResponse>(`/v1/update/user/withdraw/review/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserWithdrawsByAppUser(req: GetUserWithdrawsByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawsByAppUserResponse> {
     return fm.fetchReq<GetUserWithdrawsByAppUserRequest, GetUserWithdrawsByAppUserResponse>(`/v1/get/user/withdraws/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})

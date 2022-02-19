@@ -245,6 +245,12 @@ service CloudHashingApis {
             body: "*"
         };
     }
+    rpc UpdateUserWithdrawReviewForOtherAppUser (UpdateUserWithdrawReviewForOtherAppUserRequest) returns (UpdateUserWithdrawReviewForOtherAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user/withdraw/review/for/other/app/user"
+            body: "*"
+        };
+    }
     rpc GetUserWithdrawsByAppUser (GetUserWithdrawsByAppUserRequest) returns (GetUserWithdrawsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/withdraws/by/app/user"
@@ -618,6 +624,16 @@ message UpdateUserWithdrawReviewRequest {
 }
 
 message UpdateUserWithdrawReviewResponse {
+    UserWithdraw Info = 10;
+}
+
+message UpdateUserWithdrawReviewForOtherAppUserRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
+    review.service.v1.Review Review = 30;
+}
+
+message UpdateUserWithdrawReviewForOtherAppUserResponse {
     UserWithdraw Info = 10;
 }
 

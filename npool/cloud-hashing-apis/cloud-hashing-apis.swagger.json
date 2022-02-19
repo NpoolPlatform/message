@@ -1227,6 +1227,38 @@
         ]
       }
     },
+    "/v1/update/user/withdraw/review/for/other/app/user": {
+      "post": {
+        "operationId": "CloudHashingApis_UpdateUserWithdrawReviewForOtherAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserWithdrawReviewForOtherAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserWithdrawReviewForOtherAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "operationId": "CloudHashingApis_Version",
@@ -3213,6 +3245,28 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserInfo"
+        }
+      }
+    },
+    "v1UpdateUserWithdrawReviewForOtherAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Review": {
+          "$ref": "#/definitions/v1Review"
+        }
+      }
+    },
+    "v1UpdateUserWithdrawReviewForOtherAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/hashingapisv1UserWithdraw"
         }
       }
     },

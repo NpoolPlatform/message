@@ -60,6 +60,7 @@ type CloudHashingApisClient interface {
 	CreateUserCoinAccount(ctx context.Context, in *CreateUserCoinAccountRequest, opts ...grpc.CallOption) (*CreateUserCoinAccountResponse, error)
 	SubmitUserWithdraw(ctx context.Context, in *SubmitUserWithdrawRequest, opts ...grpc.CallOption) (*SubmitUserWithdrawResponse, error)
 	UpdateUserWithdrawReview(ctx context.Context, in *UpdateUserWithdrawReviewRequest, opts ...grpc.CallOption) (*UpdateUserWithdrawReviewResponse, error)
+	UpdateUserWithdrawReviewForOtherAppUser(ctx context.Context, in *UpdateUserWithdrawReviewForOtherAppUserRequest, opts ...grpc.CallOption) (*UpdateUserWithdrawReviewForOtherAppUserResponse, error)
 	GetUserWithdrawsByAppUser(ctx context.Context, in *GetUserWithdrawsByAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawsByAppUserResponse, error)
 	SetWithdrawAddress(ctx context.Context, in *SetWithdrawAddressRequest, opts ...grpc.CallOption) (*SetWithdrawAddressResponse, error)
 	GetWithdrawAddressesByAppUser(ctx context.Context, in *GetWithdrawAddressesByAppUserRequest, opts ...grpc.CallOption) (*GetWithdrawAddressesByAppUserResponse, error)
@@ -397,6 +398,15 @@ func (c *cloudHashingApisClient) UpdateUserWithdrawReview(ctx context.Context, i
 	return out, nil
 }
 
+func (c *cloudHashingApisClient) UpdateUserWithdrawReviewForOtherAppUser(ctx context.Context, in *UpdateUserWithdrawReviewForOtherAppUserRequest, opts ...grpc.CallOption) (*UpdateUserWithdrawReviewForOtherAppUserResponse, error) {
+	out := new(UpdateUserWithdrawReviewForOtherAppUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/UpdateUserWithdrawReviewForOtherAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingApisClient) GetUserWithdrawsByAppUser(ctx context.Context, in *GetUserWithdrawsByAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawsByAppUserResponse, error) {
 	out := new(GetUserWithdrawsByAppUserResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetUserWithdrawsByAppUser", in, out, opts...)
@@ -464,6 +474,7 @@ type CloudHashingApisServer interface {
 	CreateUserCoinAccount(context.Context, *CreateUserCoinAccountRequest) (*CreateUserCoinAccountResponse, error)
 	SubmitUserWithdraw(context.Context, *SubmitUserWithdrawRequest) (*SubmitUserWithdrawResponse, error)
 	UpdateUserWithdrawReview(context.Context, *UpdateUserWithdrawReviewRequest) (*UpdateUserWithdrawReviewResponse, error)
+	UpdateUserWithdrawReviewForOtherAppUser(context.Context, *UpdateUserWithdrawReviewForOtherAppUserRequest) (*UpdateUserWithdrawReviewForOtherAppUserResponse, error)
 	GetUserWithdrawsByAppUser(context.Context, *GetUserWithdrawsByAppUserRequest) (*GetUserWithdrawsByAppUserResponse, error)
 	SetWithdrawAddress(context.Context, *SetWithdrawAddressRequest) (*SetWithdrawAddressResponse, error)
 	GetWithdrawAddressesByAppUser(context.Context, *GetWithdrawAddressesByAppUserRequest) (*GetWithdrawAddressesByAppUserResponse, error)
@@ -581,6 +592,9 @@ func (UnimplementedCloudHashingApisServer) SubmitUserWithdraw(context.Context, *
 }
 func (UnimplementedCloudHashingApisServer) UpdateUserWithdrawReview(context.Context, *UpdateUserWithdrawReviewRequest) (*UpdateUserWithdrawReviewResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserWithdrawReview not implemented")
+}
+func (UnimplementedCloudHashingApisServer) UpdateUserWithdrawReviewForOtherAppUser(context.Context, *UpdateUserWithdrawReviewForOtherAppUserRequest) (*UpdateUserWithdrawReviewForOtherAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserWithdrawReviewForOtherAppUser not implemented")
 }
 func (UnimplementedCloudHashingApisServer) GetUserWithdrawsByAppUser(context.Context, *GetUserWithdrawsByAppUserRequest) (*GetUserWithdrawsByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserWithdrawsByAppUser not implemented")
@@ -1252,6 +1266,24 @@ func _CloudHashingApis_UpdateUserWithdrawReview_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingApis_UpdateUserWithdrawReviewForOtherAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateUserWithdrawReviewForOtherAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).UpdateUserWithdrawReviewForOtherAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/UpdateUserWithdrawReviewForOtherAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).UpdateUserWithdrawReviewForOtherAppUser(ctx, req.(*UpdateUserWithdrawReviewForOtherAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingApis_GetUserWithdrawsByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserWithdrawsByAppUserRequest)
 	if err := dec(in); err != nil {
@@ -1456,6 +1488,10 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateUserWithdrawReview",
 			Handler:    _CloudHashingApis_UpdateUserWithdrawReview_Handler,
+		},
+		{
+			MethodName: "UpdateUserWithdrawReviewForOtherAppUser",
+			Handler:    _CloudHashingApis_UpdateUserWithdrawReviewForOtherAppUser_Handler,
 		},
 		{
 			MethodName: "GetUserWithdrawsByAppUser",
