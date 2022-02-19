@@ -80,6 +80,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetCoinAccountTransactionsByAppUserCoin (GetCoinAccountTransactionsByAppUserCoinRequest) returns (GetCoinAccountTransactionsByAppUserCoinResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coin/account/transactions/by/app/user/coin"
+            body: "*"
+        };
+    }
     rpc GetCoinAccountTransactionsByCoin (GetCoinAccountTransactionsByCoinRequest) returns (GetCoinAccountTransactionsByCoinResponse) {
         option (google.api.http) = {
             post: "/v1/get/coin/account/transactions/by/coin"
@@ -306,6 +312,12 @@ service CloudHashingBilling {
     rpc GetUserWithdrawsByAppUser (GetUserWithdrawsByAppUserRequest) returns (GetUserWithdrawsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/withdraws/by/app/user"
+            body: "*"
+        };
+    }
+    rpc GetUserWithdrawsByAppUserCoin (GetUserWithdrawsByAppUserCoinRequest) returns (GetUserWithdrawsByAppUserCoinResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraws/by/app/user/coin"
             body: "*"
         };
     }
@@ -575,6 +587,16 @@ message GetCoinAccountTransactionsByAppUserRequest {
 }
 
 message GetCoinAccountTransactionsByAppUserResponse {
+    repeated CoinAccountTransaction Infos = 10;
+}
+
+message GetCoinAccountTransactionsByAppUserCoinRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string CoinTypeID = 30;
+}
+
+message GetCoinAccountTransactionsByAppUserCoinResponse {
     repeated CoinAccountTransaction Infos = 10;
 }
 
@@ -959,6 +981,16 @@ message GetUserWithdrawsByAppUserRequest {
 }
 
 message GetUserWithdrawsByAppUserResponse {
+    repeated UserWithdraw Infos = 10;
+}
+
+message GetUserWithdrawsByAppUserCoinRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string CoinTypeID = 30;
+}
+
+message GetUserWithdrawsByAppUserCoinResponse {
     repeated UserWithdraw Infos = 10;
 }
 

@@ -747,6 +747,38 @@
         ]
       }
     },
+    "/v1/get/coin/account/transactions/by/app/user/coin": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetCoinAccountTransactionsByAppUserCoin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinAccountTransactionsByAppUserCoinResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinAccountTransactionsByAppUserCoinRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/coin/account/transactions/by/coin": {
       "post": {
         "operationId": "CloudHashingBilling_GetCoinAccountTransactionsByCoin",
@@ -1931,6 +1963,38 @@
         ]
       }
     },
+    "/v1/get/user/withdraws/by/app/user/coin": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserWithdrawsByAppUserCoin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawsByAppUserCoinResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawsByAppUserCoinRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/user/withdraws/by/other/app/user": {
       "post": {
         "operationId": "CloudHashingBilling_GetUserWithdrawsByOtherAppUser",
@@ -2833,6 +2897,31 @@
         }
       }
     },
+    "v1GetCoinAccountTransactionsByAppUserCoinRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetCoinAccountTransactionsByAppUserCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinAccountTransaction"
+          }
+        }
+      }
+    },
     "v1GetCoinAccountTransactionsByAppUserRequest": {
       "type": "object",
       "properties": {
@@ -3526,6 +3615,31 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1UserWithdraw"
+        }
+      }
+    },
+    "v1GetUserWithdrawsByAppUserCoinRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserWithdrawsByAppUserCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserWithdraw"
+          }
         }
       }
     },
