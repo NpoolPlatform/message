@@ -3254,7 +3254,7 @@
         "TargetAppID": {
           "type": "string"
         },
-        "Review": {
+        "Info": {
           "$ref": "#/definitions/v1Review"
         }
       }

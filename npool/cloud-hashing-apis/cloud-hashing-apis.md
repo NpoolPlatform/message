@@ -1627,7 +1627,7 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+| Info | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 
 
 
@@ -3227,7 +3227,7 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| Review | [review.service.v1.Review](#review.service.v1.Review) |  |  |
+| Info | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 
 
 

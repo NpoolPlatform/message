@@ -627,7 +627,7 @@ message UpdateUserWithdrawReviewResponse {
 
 message UpdateUserWithdrawReviewForOtherAppUserRequest {
     string TargetAppID = 10;
-    review.service.v1.Review Review = 20;
+    review.service.v1.Review Info = 20;
 }
 
 message UpdateUserWithdrawReviewForOtherAppUserResponse {
