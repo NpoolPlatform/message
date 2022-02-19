@@ -3254,9 +3254,6 @@
         "TargetAppID": {
           "type": "string"
         },
-        "TargetUserID": {
-          "type": "string"
-        },
         "Review": {
           "$ref": "#/definitions/v1Review"
         }
@@ -3273,13 +3270,7 @@
     "v1UpdateUserWithdrawReviewRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Review": {
+        "Info": {
           "$ref": "#/definitions/v1Review"
         }
       }
