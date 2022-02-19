@@ -1418,6 +1418,9 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Account | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
+| VerificationCode | [string](#string) |  |  |
 
 
 
@@ -2985,6 +2988,9 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [cloud.hashing.billing.v1.UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Account | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
+| VerificationCode | [string](#string) |  |  |
 
 
 

@@ -596,6 +596,9 @@ message CreateUserCoinAccountResponse {
 
 message SubmitUserWithdrawRequest {
     cloud.hashing.billing.v1.UserWithdrawItem Info = 10;
+    string Account = 20;
+    string AccountType = 30;
+    string VerificationCode = 40;
 }
 
 message UserWithdraw {

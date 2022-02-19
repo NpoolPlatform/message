@@ -344,6 +344,9 @@ export type CreateUserCoinAccountResponse = {
 
 export type SubmitUserWithdrawRequest = {
   info?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdrawItem
+  account?: string
+  accountType?: string
+  verificationCode?: string
 }
 
 export type UserWithdraw = {
