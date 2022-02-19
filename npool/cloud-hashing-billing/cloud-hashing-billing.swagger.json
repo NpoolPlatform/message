@@ -2519,6 +2519,10 @@
           "type": "number",
           "format": "double"
         },
+        "WithdrawAutoReviewCoinAmount": {
+          "type": "number",
+          "format": "double"
+        },
         "PlatformOfflineAccountID": {
           "type": "string"
         },

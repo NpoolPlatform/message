@@ -786,10 +786,11 @@ message CoinSetting {
     string CoinTypeID = 20;
     double WarmAccountCoinAmount = 30;
     double PaymentAccountCoinAmount = 40;
-    string PlatformOfflineAccountID = 50;
-    string UserOfflineAccountID = 60;
-    string UserOnlineAccountID = 70;
-    string GoodIncomingAccountID = 80;
+    double WithdrawAutoReviewCoinAmount = 50;
+    string PlatformOfflineAccountID = 60;
+    string UserOfflineAccountID = 70;
+    string UserOnlineAccountID = 80;
+    string GoodIncomingAccountID = 90;
 }
 
 message CreateCoinSettingRequest {
