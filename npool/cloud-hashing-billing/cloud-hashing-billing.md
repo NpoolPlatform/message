@@ -99,6 +99,8 @@
     - [GetPlatformSettingResponse](#cloud.hashing.billing.v1.GetPlatformSettingResponse)
     - [GetUserBenefitsByAppRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppRequest)
     - [GetUserBenefitsByAppResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppResponse)
+    - [GetUserBenefitsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinRequest)
+    - [GetUserBenefitsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinResponse)
     - [GetUserBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest)
     - [GetUserBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse)
     - [GetUserDirectBenefitByAccountRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest)
@@ -258,6 +260,8 @@
     - [GetPlatformSettingResponse](#cloud.hashing.billing.v1.GetPlatformSettingResponse)
     - [GetUserBenefitsByAppRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppRequest)
     - [GetUserBenefitsByAppResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppResponse)
+    - [GetUserBenefitsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinRequest)
+    - [GetUserBenefitsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinResponse)
     - [GetUserBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest)
     - [GetUserBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse)
     - [GetUserDirectBenefitByAccountRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest)
@@ -1792,6 +1796,38 @@
 
 
 
+<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinRequest"></a>
+
+### GetUserBenefitsByAppUserCoinRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinResponse"></a>
+
+### GetUserBenefitsByAppUserCoinResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest"></a>
 
 ### GetUserBenefitsByAppUserRequest
@@ -2787,6 +2823,7 @@ Cloud Hashing Billing
 | GetPlatformSetting | [GetPlatformSettingRequest](#cloud.hashing.billing.v1.GetPlatformSettingRequest) | [GetPlatformSettingResponse](#cloud.hashing.billing.v1.GetPlatformSettingResponse) |  |
 | CreateUserBenefit | [CreateUserBenefitRequest](#cloud.hashing.billing.v1.CreateUserBenefitRequest) | [CreateUserBenefitResponse](#cloud.hashing.billing.v1.CreateUserBenefitResponse) |  |
 | GetUserBenefitsByAppUser | [GetUserBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest) | [GetUserBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse) |  |
+| GetUserBenefitsByAppUserCoin | [GetUserBenefitsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinRequest) | [GetUserBenefitsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinResponse) |  |
 | GetUserBenefitsByApp | [GetUserBenefitsByAppRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppRequest) | [GetUserBenefitsByAppResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppResponse) |  |
 | GetLatestUserBenefitByGoodAppUser | [GetLatestUserBenefitByGoodAppUserRequest](#cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserRequest) | [GetLatestUserBenefitByGoodAppUserResponse](#cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse) |  |
 | CreateCoinSetting | [CreateCoinSettingRequest](#cloud.hashing.billing.v1.CreateCoinSettingRequest) | [CreateCoinSettingResponse](#cloud.hashing.billing.v1.CreateCoinSettingResponse) |  |
@@ -4304,6 +4341,38 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinRequest"></a>
+
+### GetUserBenefitsByAppUserCoinRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinResponse"></a>
+
+### GetUserBenefitsByAppUserCoinResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest"></a>
 
 ### GetUserBenefitsByAppUserRequest
@@ -5299,6 +5368,7 @@ Cloud Hashing Billing
 | GetPlatformSetting | [GetPlatformSettingRequest](#cloud.hashing.billing.v1.GetPlatformSettingRequest) | [GetPlatformSettingResponse](#cloud.hashing.billing.v1.GetPlatformSettingResponse) |  |
 | CreateUserBenefit | [CreateUserBenefitRequest](#cloud.hashing.billing.v1.CreateUserBenefitRequest) | [CreateUserBenefitResponse](#cloud.hashing.billing.v1.CreateUserBenefitResponse) |  |
 | GetUserBenefitsByAppUser | [GetUserBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest) | [GetUserBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse) |  |
+| GetUserBenefitsByAppUserCoin | [GetUserBenefitsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinRequest) | [GetUserBenefitsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinResponse) |  |
 | GetUserBenefitsByApp | [GetUserBenefitsByAppRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppRequest) | [GetUserBenefitsByAppResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppResponse) |  |
 | GetLatestUserBenefitByGoodAppUser | [GetLatestUserBenefitByGoodAppUserRequest](#cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserRequest) | [GetLatestUserBenefitByGoodAppUserResponse](#cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse) |  |
 | CreateCoinSetting | [CreateCoinSettingRequest](#cloud.hashing.billing.v1.CreateCoinSettingRequest) | [CreateCoinSettingResponse](#cloud.hashing.billing.v1.CreateCoinSettingResponse) |  |

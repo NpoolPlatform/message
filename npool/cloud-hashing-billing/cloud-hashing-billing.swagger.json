@@ -1451,6 +1451,38 @@
         ]
       }
     },
+    "/v1/get/user/benefits/by/app/user/coin": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserBenefitsByAppUserCoin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserBenefitsByAppUserCoinResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserBenefitsByAppUserCoinRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/user/direct/benefit": {
       "post": {
         "operationId": "CloudHashingBilling_GetUserDirectBenefit",
@@ -3193,6 +3225,31 @@
       }
     },
     "v1GetUserBenefitsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserBenefit"
+          }
+        }
+      }
+    },
+    "v1GetUserBenefitsByAppUserCoinRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserBenefitsByAppUserCoinResponse": {
       "type": "object",
       "properties": {
         "Infos": {

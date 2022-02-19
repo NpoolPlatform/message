@@ -167,6 +167,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetUserBenefitsByAppUserCoin (GetUserBenefitsByAppUserCoinRequest) returns (GetUserBenefitsByAppUserCoinResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/benefits/by/app/user/coin"
+            body: "*"
+        };
+    }
     rpc GetUserBenefitsByApp (GetUserBenefitsByAppRequest) returns (GetUserBenefitsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/benefits/by/app"
@@ -720,6 +726,16 @@ message GetUserBenefitsByAppUserRequest {
 }
 
 message GetUserBenefitsByAppUserResponse {
+    repeated UserBenefit Infos = 10;
+}
+
+message GetUserBenefitsByAppUserCoinRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string CoinTypeID = 30;
+}
+
+message GetUserBenefitsByAppUserCoinResponse {
     repeated UserBenefit Infos = 10;
 }
 
