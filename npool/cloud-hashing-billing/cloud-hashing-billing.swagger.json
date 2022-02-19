@@ -43,6 +43,38 @@
         ]
       }
     },
+    "/v1/create/app/withdraw/setting/for/other/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_CreateAppWithdrawSettingForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppWithdrawSettingForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppWithdrawSettingForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/create/coin/account": {
       "post": {
         "operationId": "CloudHashingBilling_CreateCoinAccount",
@@ -2530,6 +2562,25 @@
         },
         "GoodIncomingAccountID": {
           "type": "string"
+        }
+      }
+    },
+    "v1CreateAppWithdrawSettingForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppWithdrawSetting"
+        }
+      }
+    },
+    "v1CreateAppWithdrawSettingForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppWithdrawSetting"
         }
       }
     },

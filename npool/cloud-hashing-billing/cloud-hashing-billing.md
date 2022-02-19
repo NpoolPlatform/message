@@ -9,6 +9,8 @@
     - [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction)
     - [CoinAccountTransactionDetail](#cloud.hashing.billing.v1.CoinAccountTransactionDetail)
     - [CoinSetting](#cloud.hashing.billing.v1.CoinSetting)
+    - [CreateAppWithdrawSettingForOtherAppRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppRequest)
+    - [CreateAppWithdrawSettingForOtherAppResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppResponse)
     - [CreateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest)
     - [CreateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse)
     - [CreateCoinAccountRequest](#cloud.hashing.billing.v1.CreateCoinAccountRequest)
@@ -174,6 +176,8 @@
     - [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction)
     - [CoinAccountTransactionDetail](#cloud.hashing.billing.v1.CoinAccountTransactionDetail)
     - [CoinSetting](#cloud.hashing.billing.v1.CoinSetting)
+    - [CreateAppWithdrawSettingForOtherAppRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppRequest)
+    - [CreateAppWithdrawSettingForOtherAppResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppResponse)
     - [CreateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest)
     - [CreateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse)
     - [CreateCoinAccountRequest](#cloud.hashing.billing.v1.CreateCoinAccountRequest)
@@ -453,6 +457,37 @@
 
 
 
+<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppRequest"></a>
+
+### CreateAppWithdrawSettingForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppResponse"></a>
+
+### CreateAppWithdrawSettingForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest"></a>
 
 ### CreateAppWithdrawSettingRequest
@@ -2938,6 +2973,7 @@ Cloud Hashing Billing
 | GetUserWithdrawItemsByAppUser | [GetUserWithdrawItemsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest) | [GetUserWithdrawItemsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse) |  |
 | GetUserWithdrawItemsByOtherAppUser | [GetUserWithdrawItemsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest) | [GetUserWithdrawItemsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse) |  |
 | CreateAppWithdrawSetting | [CreateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest) | [CreateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse) |  |
+| CreateAppWithdrawSettingForOtherApp | [CreateAppWithdrawSettingForOtherAppRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppRequest) | [CreateAppWithdrawSettingForOtherAppResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppResponse) |  |
 | UpdateAppWithdrawSetting | [UpdateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest) | [UpdateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse) |  |
 | GetAppWithdrawSetting | [GetAppWithdrawSettingRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingRequest) | [GetAppWithdrawSettingResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingResponse) |  |
 | GetAppWithdrawSettingsByApp | [GetAppWithdrawSettingsByAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppRequest) | [GetAppWithdrawSettingsByAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppResponse) |  |
@@ -3064,6 +3100,37 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppRequest"></a>
+
+### CreateAppWithdrawSettingForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppResponse"></a>
+
+### CreateAppWithdrawSettingForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest"></a>
 
 ### CreateAppWithdrawSettingRequest
@@ -5549,6 +5616,7 @@ Cloud Hashing Billing
 | GetUserWithdrawItemsByAppUser | [GetUserWithdrawItemsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest) | [GetUserWithdrawItemsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse) |  |
 | GetUserWithdrawItemsByOtherAppUser | [GetUserWithdrawItemsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest) | [GetUserWithdrawItemsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse) |  |
 | CreateAppWithdrawSetting | [CreateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest) | [CreateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse) |  |
+| CreateAppWithdrawSettingForOtherApp | [CreateAppWithdrawSettingForOtherAppRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppRequest) | [CreateAppWithdrawSettingForOtherAppResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppResponse) |  |
 | UpdateAppWithdrawSetting | [UpdateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest) | [UpdateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse) |  |
 | GetAppWithdrawSetting | [GetAppWithdrawSettingRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingRequest) | [GetAppWithdrawSettingResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingResponse) |  |
 | GetAppWithdrawSettingsByApp | [GetAppWithdrawSettingsByAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppRequest) | [GetAppWithdrawSettingsByAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppResponse) |  |

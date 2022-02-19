@@ -432,6 +432,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc CreateAppWithdrawSettingForOtherApp (CreateAppWithdrawSettingForOtherAppRequest) returns (CreateAppWithdrawSettingForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/withdraw/setting/for/other/app"
+            body: "*"
+        };
+    }
     rpc UpdateAppWithdrawSetting (UpdateAppWithdrawSettingRequest) returns (UpdateAppWithdrawSettingResponse) {
         option (google.api.http) = {
             post: "/v1/update/app/withdraw/setting"
@@ -1172,6 +1178,15 @@ message CreateAppWithdrawSettingRequest {
 }
 
 message CreateAppWithdrawSettingResponse {
+    AppWithdrawSetting Info = 10;
+}
+
+message CreateAppWithdrawSettingForOtherAppRequest {
+    string TargetAppID = 10;
+    AppWithdrawSetting Info = 20;
+}
+
+message CreateAppWithdrawSettingForOtherAppResponse {
     AppWithdrawSetting Info = 10;
 }
 

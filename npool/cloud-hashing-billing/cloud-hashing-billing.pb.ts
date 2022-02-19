@@ -716,6 +716,15 @@ export type CreateAppWithdrawSettingResponse = {
   info?: AppWithdrawSetting
 }
 
+export type CreateAppWithdrawSettingForOtherAppRequest = {
+  targetAppID?: string
+  info?: AppWithdrawSetting
+}
+
+export type CreateAppWithdrawSettingForOtherAppResponse = {
+  info?: AppWithdrawSetting
+}
+
 export type UpdateAppWithdrawSettingRequest = {
   info?: AppWithdrawSetting
 }
@@ -961,6 +970,9 @@ export class CloudHashingBilling {
   }
   static CreateAppWithdrawSetting(req: CreateAppWithdrawSettingRequest, initReq?: fm.InitReq): Promise<CreateAppWithdrawSettingResponse> {
     return fm.fetchReq<CreateAppWithdrawSettingRequest, CreateAppWithdrawSettingResponse>(`/v1/create/app/withdraw/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppWithdrawSettingForOtherApp(req: CreateAppWithdrawSettingForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppWithdrawSettingForOtherAppResponse> {
+    return fm.fetchReq<CreateAppWithdrawSettingForOtherAppRequest, CreateAppWithdrawSettingForOtherAppResponse>(`/v1/create/app/withdraw/setting/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateAppWithdrawSetting(req: UpdateAppWithdrawSettingRequest, initReq?: fm.InitReq): Promise<UpdateAppWithdrawSettingResponse> {
     return fm.fetchReq<UpdateAppWithdrawSettingRequest, UpdateAppWithdrawSettingResponse>(`/v1/update/app/withdraw/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})

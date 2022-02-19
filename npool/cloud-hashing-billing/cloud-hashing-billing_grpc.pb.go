@@ -93,6 +93,7 @@ type CloudHashingBillingClient interface {
 	GetUserWithdrawItemsByAppUser(ctx context.Context, in *GetUserWithdrawItemsByAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawItemsByAppUserResponse, error)
 	GetUserWithdrawItemsByOtherAppUser(ctx context.Context, in *GetUserWithdrawItemsByOtherAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawItemsByOtherAppUserResponse, error)
 	CreateAppWithdrawSetting(ctx context.Context, in *CreateAppWithdrawSettingRequest, opts ...grpc.CallOption) (*CreateAppWithdrawSettingResponse, error)
+	CreateAppWithdrawSettingForOtherApp(ctx context.Context, in *CreateAppWithdrawSettingForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppWithdrawSettingForOtherAppResponse, error)
 	UpdateAppWithdrawSetting(ctx context.Context, in *UpdateAppWithdrawSettingRequest, opts ...grpc.CallOption) (*UpdateAppWithdrawSettingResponse, error)
 	GetAppWithdrawSetting(ctx context.Context, in *GetAppWithdrawSettingRequest, opts ...grpc.CallOption) (*GetAppWithdrawSettingResponse, error)
 	GetAppWithdrawSettingsByApp(ctx context.Context, in *GetAppWithdrawSettingsByAppRequest, opts ...grpc.CallOption) (*GetAppWithdrawSettingsByAppResponse, error)
@@ -720,6 +721,15 @@ func (c *cloudHashingBillingClient) CreateAppWithdrawSetting(ctx context.Context
 	return out, nil
 }
 
+func (c *cloudHashingBillingClient) CreateAppWithdrawSettingForOtherApp(ctx context.Context, in *CreateAppWithdrawSettingForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppWithdrawSettingForOtherAppResponse, error) {
+	out := new(CreateAppWithdrawSettingForOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/CreateAppWithdrawSettingForOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingBillingClient) UpdateAppWithdrawSetting(ctx context.Context, in *UpdateAppWithdrawSettingRequest, opts ...grpc.CallOption) (*UpdateAppWithdrawSettingResponse, error) {
 	out := new(UpdateAppWithdrawSettingResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateAppWithdrawSetting", in, out, opts...)
@@ -838,6 +848,7 @@ type CloudHashingBillingServer interface {
 	GetUserWithdrawItemsByAppUser(context.Context, *GetUserWithdrawItemsByAppUserRequest) (*GetUserWithdrawItemsByAppUserResponse, error)
 	GetUserWithdrawItemsByOtherAppUser(context.Context, *GetUserWithdrawItemsByOtherAppUserRequest) (*GetUserWithdrawItemsByOtherAppUserResponse, error)
 	CreateAppWithdrawSetting(context.Context, *CreateAppWithdrawSettingRequest) (*CreateAppWithdrawSettingResponse, error)
+	CreateAppWithdrawSettingForOtherApp(context.Context, *CreateAppWithdrawSettingForOtherAppRequest) (*CreateAppWithdrawSettingForOtherAppResponse, error)
 	UpdateAppWithdrawSetting(context.Context, *UpdateAppWithdrawSettingRequest) (*UpdateAppWithdrawSettingResponse, error)
 	GetAppWithdrawSetting(context.Context, *GetAppWithdrawSettingRequest) (*GetAppWithdrawSettingResponse, error)
 	GetAppWithdrawSettingsByApp(context.Context, *GetAppWithdrawSettingsByAppRequest) (*GetAppWithdrawSettingsByAppResponse, error)
@@ -1053,6 +1064,9 @@ func (UnimplementedCloudHashingBillingServer) GetUserWithdrawItemsByOtherAppUser
 }
 func (UnimplementedCloudHashingBillingServer) CreateAppWithdrawSetting(context.Context, *CreateAppWithdrawSettingRequest) (*CreateAppWithdrawSettingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppWithdrawSetting not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) CreateAppWithdrawSettingForOtherApp(context.Context, *CreateAppWithdrawSettingForOtherAppRequest) (*CreateAppWithdrawSettingForOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppWithdrawSettingForOtherApp not implemented")
 }
 func (UnimplementedCloudHashingBillingServer) UpdateAppWithdrawSetting(context.Context, *UpdateAppWithdrawSettingRequest) (*UpdateAppWithdrawSettingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppWithdrawSetting not implemented")
@@ -2306,6 +2320,24 @@ func _CloudHashingBilling_CreateAppWithdrawSetting_Handler(srv interface{}, ctx 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingBilling_CreateAppWithdrawSettingForOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppWithdrawSettingForOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).CreateAppWithdrawSettingForOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/CreateAppWithdrawSettingForOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).CreateAppWithdrawSettingForOtherApp(ctx, req.(*CreateAppWithdrawSettingForOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingBilling_UpdateAppWithdrawSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppWithdrawSettingRequest)
 	if err := dec(in); err != nil {
@@ -2674,6 +2706,10 @@ var CloudHashingBilling_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAppWithdrawSetting",
 			Handler:    _CloudHashingBilling_CreateAppWithdrawSetting_Handler,
+		},
+		{
+			MethodName: "CreateAppWithdrawSettingForOtherApp",
+			Handler:    _CloudHashingBilling_CreateAppWithdrawSettingForOtherApp_Handler,
 		},
 		{
 			MethodName: "UpdateAppWithdrawSetting",
