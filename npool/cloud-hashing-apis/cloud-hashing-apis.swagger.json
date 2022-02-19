@@ -3251,8 +3251,16 @@
     "v1UpdateUserWithdrawReviewForOtherAppUserRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
+        "AppID": {
+          "type": "string",
+          "title": "Reviewer"
+        },
+        "UserID": {
           "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string",
+          "title": "Target"
         },
         "Info": {
           "$ref": "#/definitions/v1Review"
@@ -3270,6 +3278,13 @@
     "v1UpdateUserWithdrawReviewRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string",
+          "title": "Reviewer"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "Info": {
           "$ref": "#/definitions/v1Review"
         }

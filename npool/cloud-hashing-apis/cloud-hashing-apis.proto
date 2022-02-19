@@ -618,7 +618,10 @@ message SubmitUserWithdrawResponse {
 }
 
 message UpdateUserWithdrawReviewRequest {
-    review.service.v1.Review Info = 10;
+    // Reviewer
+    string AppID = 10;
+    string UserID = 20;
+    review.service.v1.Review Info = 30;
 }
 
 message UpdateUserWithdrawReviewResponse {
@@ -626,8 +629,12 @@ message UpdateUserWithdrawReviewResponse {
 }
 
 message UpdateUserWithdrawReviewForOtherAppUserRequest {
-    string TargetAppID = 10;
-    review.service.v1.Review Info = 20;
+    // Reviewer
+    string AppID = 10;
+    string UserID = 20;
+    // Target
+    string TargetAppID = 30;
+    review.service.v1.Review Info = 40;
 }
 
 message UpdateUserWithdrawReviewForOtherAppUserResponse {

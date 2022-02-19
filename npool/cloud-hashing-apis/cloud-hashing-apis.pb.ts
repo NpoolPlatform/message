@@ -360,6 +360,8 @@ export type SubmitUserWithdrawResponse = {
 }
 
 export type UpdateUserWithdrawReviewRequest = {
+  appID?: string
+  userID?: string
   info?: ReviewServiceV1Review-service.Review
 }
 
@@ -368,6 +370,8 @@ export type UpdateUserWithdrawReviewResponse = {
 }
 
 export type UpdateUserWithdrawReviewForOtherAppUserRequest = {
+  appID?: string
+  userID?: string
   targetAppID?: string
   info?: ReviewServiceV1Review-service.Review
 }

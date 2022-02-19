@@ -1626,7 +1626,9 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
+| AppID | [string](#string) |  | Reviewer |
+| UserID | [string](#string) |  |  |
+| TargetAppID | [string](#string) |  | Target |
 | Info | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 
 
@@ -1657,6 +1659,8 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  | Reviewer |
+| UserID | [string](#string) |  |  |
 | Info | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 
 
@@ -3226,7 +3230,9 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
+| AppID | [string](#string) |  | Reviewer |
+| UserID | [string](#string) |  |  |
+| TargetAppID | [string](#string) |  | Target |
 | Info | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 
 
@@ -3257,6 +3263,8 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  | Reviewer |
+| UserID | [string](#string) |  |  |
 | Info | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 
 
