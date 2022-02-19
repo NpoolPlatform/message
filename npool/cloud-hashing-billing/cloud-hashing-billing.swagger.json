@@ -3803,6 +3803,9 @@
         "GoodID": {
           "type": "string"
         },
+        "CoinTypeID": {
+          "type": "string"
+        },
         "Amount": {
           "type": "number",
           "format": "double"

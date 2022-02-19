@@ -699,10 +699,11 @@ message UserBenefit {
     string UserID = 20;
     string AppID = 30;
     string GoodID = 40;
-    double Amount = 50;
-    uint32 CreateAt = 60;
-    string OrderID = 70;
-    uint32 LastBenefitTimestamp = 80;
+    string CoinTypeID = 50;
+    double Amount = 60;
+    uint32 CreateAt = 70;
+    string OrderID = 80;
+    uint32 LastBenefitTimestamp = 90;
 }
 
 message CreateUserBenefitRequest {

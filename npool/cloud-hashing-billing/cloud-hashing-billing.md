@@ -2660,6 +2660,7 @@
 | UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
 | Amount | [double](#double) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
 | OrderID | [string](#string) |  |  |
@@ -5171,6 +5172,7 @@ Cloud Hashing Billing
 | UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
 | Amount | [double](#double) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
 | OrderID | [string](#string) |  |  |

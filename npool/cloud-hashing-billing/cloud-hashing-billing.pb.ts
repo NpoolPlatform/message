@@ -260,6 +260,7 @@ export type UserBenefit = {
   userID?: string
   appID?: string
   goodID?: string
+  coinTypeID?: string
   amount?: number
   createAt?: number
   orderID?: string
