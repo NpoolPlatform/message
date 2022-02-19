@@ -2232,7 +2232,7 @@ func RegisterCloudHashingApisHandlerServer(ctx context.Context, mux *runtime.Ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.apis.v1.CloudHashingApis/UpdateUserWithdrawReviewForOtherAppUser", runtime.WithHTTPPathPattern("/v1/update/user/withdraw/review/for/other/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.apis.v1.CloudHashingApis/UpdateUserWithdrawReviewForOtherAppUser", runtime.WithHTTPPathPattern("/v1/update/user/withdraw/review/for/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3083,7 +3083,7 @@ func RegisterCloudHashingApisHandlerClient(ctx context.Context, mux *runtime.Ser
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.apis.v1.CloudHashingApis/UpdateUserWithdrawReviewForOtherAppUser", runtime.WithHTTPPathPattern("/v1/update/user/withdraw/review/for/other/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.apis.v1.CloudHashingApis/UpdateUserWithdrawReviewForOtherAppUser", runtime.WithHTTPPathPattern("/v1/update/user/withdraw/review/for/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3235,7 +3235,7 @@ var (
 
 	pattern_CloudHashingApis_UpdateUserWithdrawReview_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "update", "user", "withdraw", "review"}, ""))
 
-	pattern_CloudHashingApis_UpdateUserWithdrawReviewForOtherAppUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 7, 2, 2}, []string{"v1", "update", "user", "withdraw", "review", "for", "other", "app"}, ""))
+	pattern_CloudHashingApis_UpdateUserWithdrawReviewForOtherAppUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 7}, []string{"v1", "update", "user", "withdraw", "review", "for", "other", "app"}, ""))
 
 	pattern_CloudHashingApis_GetUserWithdrawsByAppUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2}, []string{"v1", "get", "user", "withdraws", "by", "app"}, ""))
 

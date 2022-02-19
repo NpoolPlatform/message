@@ -1227,7 +1227,7 @@
         ]
       }
     },
-    "/v1/update/user/withdraw/review/for/other/app/user": {
+    "/v1/update/user/withdraw/review/for/other/app": {
       "post": {
         "operationId": "CloudHashingApis_UpdateUserWithdrawReviewForOtherAppUser",
         "responses": {

@@ -247,7 +247,7 @@ service CloudHashingApis {
     }
     rpc UpdateUserWithdrawReviewForOtherAppUser (UpdateUserWithdrawReviewForOtherAppUserRequest) returns (UpdateUserWithdrawReviewForOtherAppUserResponse) {
         option (google.api.http) = {
-            post: "/v1/update/user/withdraw/review/for/other/app/user"
+            post: "/v1/update/user/withdraw/review/for/other/app"
             body: "*"
         };
     }
