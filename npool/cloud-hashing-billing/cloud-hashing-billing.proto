@@ -74,6 +74,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetCoinAccountTransactions (GetCoinAccountTransactionsRequest) returns (GetCoinAccountTransactionsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coin/account/transactions"
+            body: "*"
+        };
+    }
     rpc GetCoinAccountTransactionsByAppUser (GetCoinAccountTransactionsByAppUserRequest) returns (GetCoinAccountTransactionsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/coin/account/transactions/by/app/user"
@@ -188,6 +194,12 @@ service CloudHashingBilling {
     rpc GetUserBenefitsByApp (GetUserBenefitsByAppRequest) returns (GetUserBenefitsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/benefits/by/app"
+            body: "*"
+        };
+    }
+    rpc GetUserBenefits (GetUserBenefitsRequest) returns (GetUserBenefitsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/benefits"
             body: "*"
         };
     }
@@ -593,6 +605,13 @@ message GetCoinAccountTransactionsByStateResponse {
     repeated CoinAccountTransaction Infos = 10;
 }
 
+message GetCoinAccountTransactionsRequest {
+}
+
+message GetCoinAccountTransactionsResponse {
+    repeated CoinAccountTransaction Infos = 10;
+}
+
 message GetCoinAccountTransactionsByAppUserRequest {
     string AppID = 10;
     string UserID = 20;
@@ -786,6 +805,14 @@ message GetUserBenefitsByAppRequest {
 }
 
 message GetUserBenefitsByAppResponse {
+    repeated UserBenefit Infos = 10;
+}
+
+message GetUserBenefitsRequest {
+    npool.v1.PageInfo PageInfo = 10;
+}
+
+message GetUserBenefitsResponse {
     repeated UserBenefit Infos = 10;
 }
 

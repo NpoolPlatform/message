@@ -124,6 +124,13 @@ export type GetCoinAccountTransactionsByStateResponse = {
   infos?: CoinAccountTransaction[]
 }
 
+export type GetCoinAccountTransactionsRequest = {
+}
+
+export type GetCoinAccountTransactionsResponse = {
+  infos?: CoinAccountTransaction[]
+}
+
 export type GetCoinAccountTransactionsByAppUserRequest = {
   appID?: string
   userID?: string
@@ -317,6 +324,14 @@ export type GetUserBenefitsByAppRequest = {
 }
 
 export type GetUserBenefitsByAppResponse = {
+  infos?: UserBenefit[]
+}
+
+export type GetUserBenefitsRequest = {
+  pageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetUserBenefitsResponse = {
   infos?: UserBenefit[]
 }
 
@@ -804,6 +819,9 @@ export class CloudHashingBilling {
   static GetCoinAccountTransactionsByState(req: GetCoinAccountTransactionsByStateRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsByStateResponse> {
     return fm.fetchReq<GetCoinAccountTransactionsByStateRequest, GetCoinAccountTransactionsByStateResponse>(`/v1/get/coin/account/transactions/by/state`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetCoinAccountTransactions(req: GetCoinAccountTransactionsRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsResponse> {
+    return fm.fetchReq<GetCoinAccountTransactionsRequest, GetCoinAccountTransactionsResponse>(`/v1/get/coin/account/transactions`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetCoinAccountTransactionsByAppUser(req: GetCoinAccountTransactionsByAppUserRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsByAppUserResponse> {
     return fm.fetchReq<GetCoinAccountTransactionsByAppUserRequest, GetCoinAccountTransactionsByAppUserResponse>(`/v1/get/coin/account/transactions/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -860,6 +878,9 @@ export class CloudHashingBilling {
   }
   static GetUserBenefitsByApp(req: GetUserBenefitsByAppRequest, initReq?: fm.InitReq): Promise<GetUserBenefitsByAppResponse> {
     return fm.fetchReq<GetUserBenefitsByAppRequest, GetUserBenefitsByAppResponse>(`/v1/get/user/benefits/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserBenefits(req: GetUserBenefitsRequest, initReq?: fm.InitReq): Promise<GetUserBenefitsResponse> {
+    return fm.fetchReq<GetUserBenefitsRequest, GetUserBenefitsResponse>(`/v1/get/user/benefits`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetLatestUserBenefitByGoodAppUser(req: GetLatestUserBenefitByGoodAppUserRequest, initReq?: fm.InitReq): Promise<GetLatestUserBenefitByGoodAppUserResponse> {
     return fm.fetchReq<GetLatestUserBenefitByGoodAppUserRequest, GetLatestUserBenefitByGoodAppUserResponse>(`/v1/get/latest/user/benefit/by/good/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
