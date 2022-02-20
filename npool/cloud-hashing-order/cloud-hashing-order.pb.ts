@@ -209,6 +209,30 @@ export type GetPaymentsByStateResponse = {
   infos?: Payment[]
 }
 
+export type GetPaymentsByAppRequest = {
+  appID?: string
+}
+
+export type GetPaymentsByAppResponse = {
+  infos?: Payment[]
+}
+
+export type GetPaymentsByAppUserRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetPaymentsByAppUserResponse = {
+  infos?: Payment[]
+}
+
+export type GetPaymentsRequest = {
+}
+
+export type GetPaymentsResponse = {
+  infos?: Payment[]
+}
+
 export type OrderDetail = {
   id?: string
   goodID?: string
@@ -330,6 +354,15 @@ export class CloudHashingOrder {
   }
   static GetPaymentsByState(req: GetPaymentsByStateRequest, initReq?: fm.InitReq): Promise<GetPaymentsByStateResponse> {
     return fm.fetchReq<GetPaymentsByStateRequest, GetPaymentsByStateResponse>(`/v1/get/payments/by/state`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetPaymentsByApp(req: GetPaymentsByAppRequest, initReq?: fm.InitReq): Promise<GetPaymentsByAppResponse> {
+    return fm.fetchReq<GetPaymentsByAppRequest, GetPaymentsByAppResponse>(`/v1/get/payments/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetPaymentsByAppUser(req: GetPaymentsByAppUserRequest, initReq?: fm.InitReq): Promise<GetPaymentsByAppUserResponse> {
+    return fm.fetchReq<GetPaymentsByAppUserRequest, GetPaymentsByAppUserResponse>(`/v1/get/payments/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetPayments(req: GetPaymentsRequest, initReq?: fm.InitReq): Promise<GetPaymentsResponse> {
+    return fm.fetchReq<GetPaymentsRequest, GetPaymentsResponse>(`/v1/get/payments`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetOrdersDetailByAppUser(req: GetOrdersDetailByAppUserRequest, initReq?: fm.InitReq): Promise<GetOrdersDetailByAppUserResponse> {
     return fm.fetchReq<GetOrdersDetailByAppUserRequest, GetOrdersDetailByAppUserResponse>(`/v1/get/orders/detail/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
