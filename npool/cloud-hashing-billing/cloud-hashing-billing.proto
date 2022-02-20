@@ -443,6 +443,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetUserWithdrawItems (GetUserWithdrawItemsRequest) returns (GetUserWithdrawItemsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraw/items"
+            body: "*"
+        };
+    }
 
     rpc CreateAppWithdrawSetting (CreateAppWithdrawSettingRequest) returns (CreateAppWithdrawSettingResponse) {
         option (google.api.http) = {
@@ -1203,6 +1209,13 @@ message GetUserWithdrawItemsByOtherAppUserRequest {
 }
 
 message GetUserWithdrawItemsByOtherAppUserResponse {
+    repeated UserWithdrawItem Infos = 10;
+}
+
+message GetUserWithdrawItemsRequest {
+}
+
+message GetUserWithdrawItemsResponse {
     repeated UserWithdrawItem Infos = 10;
 }
 

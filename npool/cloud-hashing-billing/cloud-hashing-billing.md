@@ -137,6 +137,8 @@
     - [GetUserWithdrawItemsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse)
     - [GetUserWithdrawItemsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest)
     - [GetUserWithdrawItemsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse)
+    - [GetUserWithdrawItemsRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsRequest)
+    - [GetUserWithdrawItemsResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsResponse)
     - [GetUserWithdrawRequest](#cloud.hashing.billing.v1.GetUserWithdrawRequest)
     - [GetUserWithdrawResponse](#cloud.hashing.billing.v1.GetUserWithdrawResponse)
     - [GetUserWithdrawsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserCoinRequest)
@@ -310,6 +312,8 @@
     - [GetUserWithdrawItemsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse)
     - [GetUserWithdrawItemsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest)
     - [GetUserWithdrawItemsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse)
+    - [GetUserWithdrawItemsRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsRequest)
+    - [GetUserWithdrawItemsResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsResponse)
     - [GetUserWithdrawRequest](#cloud.hashing.billing.v1.GetUserWithdrawRequest)
     - [GetUserWithdrawResponse](#cloud.hashing.billing.v1.GetUserWithdrawResponse)
     - [GetUserWithdrawsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserCoinRequest)
@@ -2392,6 +2396,31 @@
 
 
 
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsRequest"></a>
+
+### GetUserWithdrawItemsRequest
+
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsResponse"></a>
+
+### GetUserWithdrawItemsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.GetUserWithdrawRequest"></a>
 
 ### GetUserWithdrawRequest
@@ -3067,6 +3096,7 @@ Cloud Hashing Billing
 | GetUserWithdrawItemsByAccount | [GetUserWithdrawItemsByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountRequest) | [GetUserWithdrawItemsByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountResponse) |  |
 | GetUserWithdrawItemsByAppUser | [GetUserWithdrawItemsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest) | [GetUserWithdrawItemsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse) |  |
 | GetUserWithdrawItemsByOtherAppUser | [GetUserWithdrawItemsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest) | [GetUserWithdrawItemsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse) |  |
+| GetUserWithdrawItems | [GetUserWithdrawItemsRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsRequest) | [GetUserWithdrawItemsResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsResponse) |  |
 | CreateAppWithdrawSetting | [CreateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest) | [CreateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse) |  |
 | CreateAppWithdrawSettingForOtherApp | [CreateAppWithdrawSettingForOtherAppRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppRequest) | [CreateAppWithdrawSettingForOtherAppResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppResponse) |  |
 | UpdateAppWithdrawSetting | [UpdateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest) | [UpdateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse) |  |
@@ -5118,6 +5148,31 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsRequest"></a>
+
+### GetUserWithdrawItemsRequest
+
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsResponse"></a>
+
+### GetUserWithdrawItemsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.GetUserWithdrawRequest"></a>
 
 ### GetUserWithdrawRequest
@@ -5793,6 +5848,7 @@ Cloud Hashing Billing
 | GetUserWithdrawItemsByAccount | [GetUserWithdrawItemsByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountRequest) | [GetUserWithdrawItemsByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountResponse) |  |
 | GetUserWithdrawItemsByAppUser | [GetUserWithdrawItemsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest) | [GetUserWithdrawItemsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse) |  |
 | GetUserWithdrawItemsByOtherAppUser | [GetUserWithdrawItemsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest) | [GetUserWithdrawItemsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse) |  |
+| GetUserWithdrawItems | [GetUserWithdrawItemsRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsRequest) | [GetUserWithdrawItemsResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsResponse) |  |
 | CreateAppWithdrawSetting | [CreateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest) | [CreateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse) |  |
 | CreateAppWithdrawSettingForOtherApp | [CreateAppWithdrawSettingForOtherAppRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppRequest) | [CreateAppWithdrawSettingForOtherAppResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppResponse) |  |
 | UpdateAppWithdrawSetting | [UpdateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest) | [UpdateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse) |  |

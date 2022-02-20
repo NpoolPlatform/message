@@ -1963,6 +1963,38 @@
         ]
       }
     },
+    "/v1/get/user/withdraw/items": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserWithdrawItems",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawItemsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawItemsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/user/withdraw/items/by/account": {
       "post": {
         "operationId": "CloudHashingBilling_GetUserWithdrawItemsByAccount",
@@ -3786,6 +3818,20 @@
       }
     },
     "v1GetUserWithdrawItemsByOtherAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserWithdrawItem"
+          }
+        }
+      }
+    },
+    "v1GetUserWithdrawItemsRequest": {
+      "type": "object"
+    },
+    "v1GetUserWithdrawItemsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
