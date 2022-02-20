@@ -157,6 +157,8 @@ export type GetOutOfGasesByOrderResponse = {
 
 export type Payment = {
   id?: string
+  appID?: string
+  userID?: string
   orderID?: string
   accountID?: string
   startAmount?: number

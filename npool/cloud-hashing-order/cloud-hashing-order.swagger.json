@@ -1551,6 +1551,12 @@
         "ID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "OrderID": {
           "type": "string"
         },

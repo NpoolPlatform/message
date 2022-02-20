@@ -1026,6 +1026,8 @@ request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | OrderID | [string](#string) |  |  |
 | AccountID | [string](#string) |  |  |
 | StartAmount | [double](#double) |  |  |
@@ -2010,6 +2012,8 @@ request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | OrderID | [string](#string) |  |  |
 | AccountID | [string](#string) |  |  |
 | StartAmount | [double](#double) |  |  |
