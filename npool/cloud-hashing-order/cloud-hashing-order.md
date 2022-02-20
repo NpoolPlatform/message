@@ -1028,6 +1028,7 @@ request body and response
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
 | OrderID | [string](#string) |  |  |
 | AccountID | [string](#string) |  |  |
 | StartAmount | [double](#double) |  |  |
@@ -2014,6 +2015,7 @@ request body and response
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
 | OrderID | [string](#string) |  |  |
 | AccountID | [string](#string) |  |  |
 | StartAmount | [double](#double) |  |  |

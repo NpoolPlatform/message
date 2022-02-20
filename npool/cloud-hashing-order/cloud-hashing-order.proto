@@ -336,6 +336,7 @@ message Payment {
     string ID = 10;
     string AppID = 11;
     string UserID = 12;
+    string GoodID = 13;
     string OrderID = 20;
     string AccountID = 30;
     double StartAmount = 40;

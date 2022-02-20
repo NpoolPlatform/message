@@ -159,6 +159,7 @@ export type Payment = {
   id?: string
   appID?: string
   userID?: string
+  goodID?: string
   orderID?: string
   accountID?: string
   startAmount?: number
