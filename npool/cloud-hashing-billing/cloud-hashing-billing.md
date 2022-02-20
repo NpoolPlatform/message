@@ -97,6 +97,8 @@
     - [GetPlatformBenefitResponse](#cloud.hashing.billing.v1.GetPlatformBenefitResponse)
     - [GetPlatformBenefitsByGoodRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest)
     - [GetPlatformBenefitsByGoodResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse)
+    - [GetPlatformBenefitsRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsRequest)
+    - [GetPlatformBenefitsResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsResponse)
     - [GetPlatformSettingByGoodRequest](#cloud.hashing.billing.v1.GetPlatformSettingByGoodRequest)
     - [GetPlatformSettingByGoodResponse](#cloud.hashing.billing.v1.GetPlatformSettingByGoodResponse)
     - [GetPlatformSettingRequest](#cloud.hashing.billing.v1.GetPlatformSettingRequest)
@@ -264,6 +266,8 @@
     - [GetPlatformBenefitResponse](#cloud.hashing.billing.v1.GetPlatformBenefitResponse)
     - [GetPlatformBenefitsByGoodRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest)
     - [GetPlatformBenefitsByGoodResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse)
+    - [GetPlatformBenefitsRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsRequest)
+    - [GetPlatformBenefitsResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsResponse)
     - [GetPlatformSettingByGoodRequest](#cloud.hashing.billing.v1.GetPlatformSettingByGoodRequest)
     - [GetPlatformSettingByGoodResponse](#cloud.hashing.billing.v1.GetPlatformSettingByGoodResponse)
     - [GetPlatformSettingRequest](#cloud.hashing.billing.v1.GetPlatformSettingRequest)
@@ -1780,6 +1784,31 @@
 
 
 
+<a name="cloud.hashing.billing.v1.GetPlatformBenefitsRequest"></a>
+
+### GetPlatformBenefitsRequest
+
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetPlatformBenefitsResponse"></a>
+
+### GetPlatformBenefitsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.GetPlatformSettingByGoodRequest"></a>
 
 ### GetPlatformSettingByGoodRequest
@@ -2924,6 +2953,7 @@ Cloud Hashing Billing
 | CreatePlatformBenefit | [CreatePlatformBenefitRequest](#cloud.hashing.billing.v1.CreatePlatformBenefitRequest) | [CreatePlatformBenefitResponse](#cloud.hashing.billing.v1.CreatePlatformBenefitResponse) |  |
 | GetLatestPlatformBenefitByGood | [GetLatestPlatformBenefitByGoodRequest](#cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodRequest) | [GetLatestPlatformBenefitByGoodResponse](#cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodResponse) |  |
 | GetPlatformBenefitsByGood | [GetPlatformBenefitsByGoodRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest) | [GetPlatformBenefitsByGoodResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse) |  |
+| GetPlatformBenefits | [GetPlatformBenefitsRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsRequest) | [GetPlatformBenefitsResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsResponse) |  |
 | GetPlatformBenefit | [GetPlatformBenefitRequest](#cloud.hashing.billing.v1.GetPlatformBenefitRequest) | [GetPlatformBenefitResponse](#cloud.hashing.billing.v1.GetPlatformBenefitResponse) |  |
 | GetPlatformBenefitDetail | [GetPlatformBenefitDetailRequest](#cloud.hashing.billing.v1.GetPlatformBenefitDetailRequest) | [GetPlatformBenefitDetailResponse](#cloud.hashing.billing.v1.GetPlatformBenefitDetailResponse) |  |
 | CreatePlatformSetting | [CreatePlatformSettingRequest](#cloud.hashing.billing.v1.CreatePlatformSettingRequest) | [CreatePlatformSettingResponse](#cloud.hashing.billing.v1.CreatePlatformSettingResponse) |  |
@@ -4423,6 +4453,31 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.GetPlatformBenefitsRequest"></a>
+
+### GetPlatformBenefitsRequest
+
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetPlatformBenefitsResponse"></a>
+
+### GetPlatformBenefitsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.GetPlatformSettingByGoodRequest"></a>
 
 ### GetPlatformSettingByGoodRequest
@@ -5567,6 +5622,7 @@ Cloud Hashing Billing
 | CreatePlatformBenefit | [CreatePlatformBenefitRequest](#cloud.hashing.billing.v1.CreatePlatformBenefitRequest) | [CreatePlatformBenefitResponse](#cloud.hashing.billing.v1.CreatePlatformBenefitResponse) |  |
 | GetLatestPlatformBenefitByGood | [GetLatestPlatformBenefitByGoodRequest](#cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodRequest) | [GetLatestPlatformBenefitByGoodResponse](#cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodResponse) |  |
 | GetPlatformBenefitsByGood | [GetPlatformBenefitsByGoodRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest) | [GetPlatformBenefitsByGoodResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse) |  |
+| GetPlatformBenefits | [GetPlatformBenefitsRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsRequest) | [GetPlatformBenefitsResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsResponse) |  |
 | GetPlatformBenefit | [GetPlatformBenefitRequest](#cloud.hashing.billing.v1.GetPlatformBenefitRequest) | [GetPlatformBenefitResponse](#cloud.hashing.billing.v1.GetPlatformBenefitResponse) |  |
 | GetPlatformBenefitDetail | [GetPlatformBenefitDetailRequest](#cloud.hashing.billing.v1.GetPlatformBenefitDetailRequest) | [GetPlatformBenefitDetailResponse](#cloud.hashing.billing.v1.GetPlatformBenefitDetailResponse) |  |
 | CreatePlatformSetting | [CreatePlatformSettingRequest](#cloud.hashing.billing.v1.CreatePlatformSettingRequest) | [CreatePlatformSettingResponse](#cloud.hashing.billing.v1.CreatePlatformSettingResponse) |  |

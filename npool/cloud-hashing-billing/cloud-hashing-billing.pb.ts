@@ -193,6 +193,13 @@ export type GetPlatformBenefitsByGoodResponse = {
   infos?: PlatformBenefit[]
 }
 
+export type GetPlatformBenefitsRequest = {
+}
+
+export type GetPlatformBenefitsResponse = {
+  infos?: PlatformBenefit[]
+}
+
 export type PlatformBenefitDetail = {
   id?: string
   goodID?: string
@@ -823,6 +830,9 @@ export class CloudHashingBilling {
   }
   static GetPlatformBenefitsByGood(req: GetPlatformBenefitsByGoodRequest, initReq?: fm.InitReq): Promise<GetPlatformBenefitsByGoodResponse> {
     return fm.fetchReq<GetPlatformBenefitsByGoodRequest, GetPlatformBenefitsByGoodResponse>(`/v1/get/platform/benefits/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetPlatformBenefits(req: GetPlatformBenefitsRequest, initReq?: fm.InitReq): Promise<GetPlatformBenefitsResponse> {
+    return fm.fetchReq<GetPlatformBenefitsRequest, GetPlatformBenefitsResponse>(`/v1/get/platform/benefits`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetPlatformBenefit(req: GetPlatformBenefitRequest, initReq?: fm.InitReq): Promise<GetPlatformBenefitResponse> {
     return fm.fetchReq<GetPlatformBenefitRequest, GetPlatformBenefitResponse>(`/v1/get/platform/benefit`, {...initReq, method: "POST", body: JSON.stringify(req)})

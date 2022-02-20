@@ -129,6 +129,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetPlatformBenefits (GetPlatformBenefitsRequest) returns (GetPlatformBenefitsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/platform/benefits"
+            body: "*"
+        };
+    }
     rpc GetPlatformBenefit (GetPlatformBenefitRequest) returns (GetPlatformBenefitResponse) {
         option (google.api.http) = {
             post: "/v1/get/platform/benefit"
@@ -653,6 +659,13 @@ message GetPlatformBenefitsByGoodRequest {
 }
 
 message GetPlatformBenefitsByGoodResponse {
+    repeated PlatformBenefit Infos = 10;
+}
+
+message GetPlatformBenefitsRequest {
+}
+
+message GetPlatformBenefitsResponse {
     repeated PlatformBenefit Infos = 10;
 }
 

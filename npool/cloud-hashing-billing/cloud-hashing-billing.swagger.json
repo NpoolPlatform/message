@@ -1387,6 +1387,38 @@
         ]
       }
     },
+    "/v1/get/platform/benefits": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetPlatformBenefits",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetPlatformBenefitsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetPlatformBenefitsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/platform/benefits/by/good": {
       "post": {
         "operationId": "CloudHashingBilling_GetPlatformBenefitsByGood",
@@ -3327,6 +3359,20 @@
       }
     },
     "v1GetPlatformBenefitsByGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PlatformBenefit"
+          }
+        }
+      }
+    },
+    "v1GetPlatformBenefitsRequest": {
+      "type": "object"
+    },
+    "v1GetPlatformBenefitsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
