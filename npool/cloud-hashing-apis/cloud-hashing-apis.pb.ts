@@ -355,6 +355,12 @@ export type UserWithdraw = {
   message?: string
 }
 
+export type WithdrawReview = {
+  review?: ReviewServiceV1Review-service.Review
+  user?: AppUserManagerV1Appusermgr.AppUserInfo
+  withdraw?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdrawItem
+}
+
 export type SubmitUserWithdrawResponse = {
   info?: UserWithdraw
 }
@@ -366,7 +372,7 @@ export type UpdateUserWithdrawReviewRequest = {
 }
 
 export type UpdateUserWithdrawReviewResponse = {
-  info?: UserWithdraw
+  info?: WithdrawReview
 }
 
 export type UpdateUserWithdrawReviewForOtherAppUserRequest = {
@@ -377,7 +383,7 @@ export type UpdateUserWithdrawReviewForOtherAppUserRequest = {
 }
 
 export type UpdateUserWithdrawReviewForOtherAppUserResponse = {
-  info?: UserWithdraw
+  info?: WithdrawReview
 }
 
 export type GetUserWithdrawsByAppUserRequest = {
@@ -387,12 +393,6 @@ export type GetUserWithdrawsByAppUserRequest = {
 
 export type GetUserWithdrawsByAppUserResponse = {
   infos?: UserWithdraw[]
-}
-
-export type WithdrawReview = {
-  review?: ReviewServiceV1Review-service.Review
-  user?: AppUserManagerV1Appusermgr.AppUserInfo
-  withdraw?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdrawItem
 }
 
 export type GetWithdrawReviewsRequest = {

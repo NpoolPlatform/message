@@ -1644,7 +1644,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw) |  |  |
+| Info | [WithdrawReview](#cloud.hashing.apis.v1.WithdrawReview) |  |  |
 
 
 
@@ -1676,7 +1676,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw) |  |  |
+| Info | [WithdrawReview](#cloud.hashing.apis.v1.WithdrawReview) |  |  |
 
 
 
@@ -3248,7 +3248,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw) |  |  |
+| Info | [WithdrawReview](#cloud.hashing.apis.v1.WithdrawReview) |  |  |
 
 
 
@@ -3280,7 +3280,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw) |  |  |
+| Info | [WithdrawReview](#cloud.hashing.apis.v1.WithdrawReview) |  |  |
 
 
 

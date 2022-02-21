@@ -2875,6 +2875,15 @@
         "ID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
         "OrderID": {
           "type": "string"
         },
@@ -3271,7 +3280,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/hashingapisv1UserWithdraw"
+          "$ref": "#/definitions/v1WithdrawReview"
         }
       }
     },
@@ -3294,7 +3303,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/hashingapisv1UserWithdraw"
+          "$ref": "#/definitions/v1WithdrawReview"
         }
       }
     },

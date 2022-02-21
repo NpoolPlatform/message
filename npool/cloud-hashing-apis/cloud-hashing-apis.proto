@@ -613,6 +613,13 @@ message UserWithdraw {
     string Message = 30;
 }
 
+message WithdrawReview {
+    review.service.v1.Review Review = 10;
+    app.user.manager.v1.AppUserInfo User = 20;
+    cloud.hashing.billing.v1.UserWithdrawItem Withdraw = 30;
+}
+
+
 message SubmitUserWithdrawResponse {
     UserWithdraw Info = 10;
 }
@@ -625,7 +632,7 @@ message UpdateUserWithdrawReviewRequest {
 }
 
 message UpdateUserWithdrawReviewResponse {
-    UserWithdraw Info = 10;
+    WithdrawReview Info = 10;
 }
 
 message UpdateUserWithdrawReviewForOtherAppUserRequest {
@@ -638,7 +645,7 @@ message UpdateUserWithdrawReviewForOtherAppUserRequest {
 }
 
 message UpdateUserWithdrawReviewForOtherAppUserResponse {
-    UserWithdraw Info = 10;
+    WithdrawReview Info = 10;
 }
 
 message GetUserWithdrawsByAppUserRequest {
@@ -648,12 +655,6 @@ message GetUserWithdrawsByAppUserRequest {
 
 message GetUserWithdrawsByAppUserResponse {
     repeated UserWithdraw Infos = 10;
-}
-
-message WithdrawReview {
-    review.service.v1.Review Review = 10;
-    app.user.manager.v1.AppUserInfo User = 20;
-    cloud.hashing.billing.v1.UserWithdrawItem Withdraw = 30;
 }
 
 message GetWithdrawReviewsRequest {
