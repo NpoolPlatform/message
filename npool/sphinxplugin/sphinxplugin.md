@@ -177,10 +177,10 @@ fil
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | CoinTypeUnKnow | 0 |  |
-| CoinTypeFIL | 1 |  |
-| CoinTypeBTC | 2 |  |
-| CoinTypeETH | 3 |  |
-| CoinTypeSpaceMesh | 4 |  |
+| CoinTypefil | 1 |  |
+| CoinTypebtc | 2 |  |
+| CoinTypeeth | 3 |  |
+| CoinTypespacemesh | 4 |  |
 
 
  
@@ -339,10 +339,10 @@ fil
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | CoinTypeUnKnow | 0 |  |
-| CoinTypeFIL | 1 |  |
-| CoinTypeBTC | 2 |  |
-| CoinTypeETH | 3 |  |
-| CoinTypeSpaceMesh | 4 |  |
+| CoinTypefil | 1 |  |
+| CoinTypebtc | 2 |  |
+| CoinTypeeth | 3 |  |
+| CoinTypespacemesh | 4 |  |
 
 
  

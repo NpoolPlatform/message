@@ -248,10 +248,10 @@
       "type": "string",
       "enum": [
         "CoinTypeUnKnow",
-        "CoinTypeFIL",
-        "CoinTypeBTC",
-        "CoinTypeETH",
-        "CoinTypeSpaceMesh"
+        "CoinTypefil",
+        "CoinTypebtc",
+        "CoinTypeeth",
+        "CoinTypespacemesh"
       ],
       "default": "CoinTypeUnKnow"
     },

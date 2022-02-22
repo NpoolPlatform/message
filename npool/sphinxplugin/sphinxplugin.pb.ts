@@ -6,10 +6,10 @@
 
 export enum CoinType {
   CoinTypeUnKnow = "CoinTypeUnKnow",
-  CoinTypeFIL = "CoinTypeFIL",
-  CoinTypeBTC = "CoinTypeBTC",
-  CoinTypeETH = "CoinTypeETH",
-  CoinTypeSpaceMesh = "CoinTypeSpaceMesh",
+  CoinTypefil = "CoinTypefil",
+  CoinTypebtc = "CoinTypebtc",
+  CoinTypeeth = "CoinTypeeth",
+  CoinTypespacemesh = "CoinTypespacemesh",
 }
 
 export type UnsignedMessage = {
