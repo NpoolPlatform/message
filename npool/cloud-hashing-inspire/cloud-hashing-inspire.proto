@@ -19,416 +19,484 @@ service CloudHashingInspire {
         };
     }
 
-    rpc CreateNewUserRewardSetting(CreateNewUserRewardSettingRequest) returns (CreateNewUserRewardSettingResponse) {
+    rpc CreateNewUserRewardSetting (CreateNewUserRewardSettingRequest) returns (CreateNewUserRewardSettingResponse) {
         option (google.api.http) = {
             post: "/v1/create/new/user/reward/setting"
             body: "*"
         };
     }
-    rpc GetNewUserRewardSetting(GetNewUserRewardSettingRequest) returns (GetNewUserRewardSettingResponse) {
+    rpc GetNewUserRewardSetting (GetNewUserRewardSettingRequest) returns (GetNewUserRewardSettingResponse) {
         option (google.api.http) = {
             post: "/v1/get/new/user/reward/setting"
             body: "*"
         };
     }
-    rpc GetNewUserRewardSettingDetail(GetNewUserRewardSettingDetailRequest) returns (GetNewUserRewardSettingDetailResponse) {
+    rpc GetNewUserRewardSettingDetail (GetNewUserRewardSettingDetailRequest) returns (GetNewUserRewardSettingDetailResponse) {
         option (google.api.http) = {
             post: "/v1/get/new/user/reward/setting/detail"
             body: "*"
         };
     }
-    rpc GetNewUserRewardSettingByApp(GetNewUserRewardSettingByAppRequest) returns (GetNewUserRewardSettingByAppResponse) {
+    rpc GetNewUserRewardSettingByApp (GetNewUserRewardSettingByAppRequest) returns (GetNewUserRewardSettingByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/new/user/reward/setting/by/app"
             body: "*"
         };
     }
-    rpc UpdateNewUserRewardSetting(UpdateNewUserRewardSettingRequest) returns (UpdateNewUserRewardSettingResponse) {
+    rpc UpdateNewUserRewardSetting (UpdateNewUserRewardSettingRequest) returns (UpdateNewUserRewardSettingResponse) {
         option (google.api.http) = {
             post: "/v1/get/update/user/reward/setting"
             body: "*"
         };
     }
 
-    rpc CreateAgencySetting(CreateAgencySettingRequest) returns (CreateAgencySettingResponse) {
+    rpc CreateAgencySetting (CreateAgencySettingRequest) returns (CreateAgencySettingResponse) {
         option (google.api.http) = {
             post: "/v1/create/agency/setting"
             body: "*"
         };
     }
-    rpc GetAgencySetting(GetAgencySettingRequest) returns (GetAgencySettingResponse) {
+    rpc GetAgencySetting (GetAgencySettingRequest) returns (GetAgencySettingResponse) {
         option (google.api.http) = {
             post: "/v1/get/agency/setting"
             body: "*"
         };
     }
-    rpc GetAgencySettingByApp(GetAgencySettingByAppRequest) returns (GetAgencySettingByAppResponse) {
+    rpc GetAgencySettingByApp (GetAgencySettingByAppRequest) returns (GetAgencySettingByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/agency/setting/by/app"
             body: "*"
         };
     }
-    rpc UpdateAgencySetting(UpdateAgencySettingRequest) returns (UpdateAgencySettingResponse) {
+    rpc UpdateAgencySetting (UpdateAgencySettingRequest) returns (UpdateAgencySettingResponse) {
         option (google.api.http) = {
             post: "/v1/update/agency/setting"
             body: "*"
         };
     }
-    rpc GetAgencySettingDetail(GetAgencySettingDetailRequest) returns (GetAgencySettingDetailResponse) {
+    rpc GetAgencySettingDetail (GetAgencySettingDetailRequest) returns (GetAgencySettingDetailResponse) {
         option (google.api.http) = {
             post: "/v1/get/agency/setting/detail"
             body: "*"
         };
     }
-    rpc GetAgencySettingDetailByApp(GetAgencySettingDetailByAppRequest) returns (GetAgencySettingDetailByAppResponse) {
+    rpc GetAgencySettingDetailByApp (GetAgencySettingDetailByAppRequest) returns (GetAgencySettingDetailByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/agency/setting/detail/by/app"
             body: "*"
         };
     }
 
-    rpc CreatePurchaseInvitation(CreatePurchaseInvitationRequest) returns (CreatePurchaseInvitationResponse) {
+    rpc CreatePurchaseInvitation (CreatePurchaseInvitationRequest) returns (CreatePurchaseInvitationResponse) {
         option (google.api.http) = {
             post: "/v1/create/purchase/invitation"
             body: "*"
         };
     }
-    rpc UpdatePurchaseInvitation(UpdatePurchaseInvitationRequest) returns (UpdatePurchaseInvitationResponse) {
+    rpc UpdatePurchaseInvitation (UpdatePurchaseInvitationRequest) returns (UpdatePurchaseInvitationResponse) {
         option (google.api.http) = {
             post: "/v1/update/purchase/invitation"
             body: "*"
         };
     }
-    rpc GetPurchaseInvitation(GetPurchaseInvitationRequest) returns (GetPurchaseInvitationResponse) {
+    rpc GetPurchaseInvitation (GetPurchaseInvitationRequest) returns (GetPurchaseInvitationResponse) {
         option (google.api.http) = {
             post: "/v1/get/purchase/invitation"
             body: "*"
         };
     }
-    rpc GetPurchaseInvitationsByApp(GetPurchaseInvitationsByAppRequest) returns (GetPurchaseInvitationsByAppResponse) {
+    rpc GetPurchaseInvitationsByApp (GetPurchaseInvitationsByAppRequest) returns (GetPurchaseInvitationsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/purchase/invitations/by/app"
             body: "*"
         };
     }
-    rpc GetPurchaseInvitationByAppOrder(GetPurchaseInvitationByAppOrderRequest) returns (GetPurchaseInvitationByAppOrderResponse) {
+    rpc GetPurchaseInvitationByAppOrder (GetPurchaseInvitationByAppOrderRequest) returns (GetPurchaseInvitationByAppOrderResponse) {
         option (google.api.http) = {
             post: "/v1/get/purchase/invitation/by/app/order"
             body: "*"
         };
     }
 
-    rpc CreateRegistrationInvitation(CreateRegistrationInvitationRequest) returns (CreateRegistrationInvitationResponse) {
+    rpc CreateRegistrationInvitation (CreateRegistrationInvitationRequest) returns (CreateRegistrationInvitationResponse) {
         option (google.api.http) = {
             post: "/v1/create/registration/invitation"
             body: "*"
         };
     }
-    rpc UpdateRegistrationInvitation(UpdateRegistrationInvitationRequest) returns (UpdateRegistrationInvitationResponse) {
+    rpc UpdateRegistrationInvitation (UpdateRegistrationInvitationRequest) returns (UpdateRegistrationInvitationResponse) {
         option (google.api.http) = {
             post: "/v1/update/registration/invitation"
             body: "*"
         };
     }
-    rpc GetRegistrationInvitation(GetRegistrationInvitationRequest) returns (GetRegistrationInvitationResponse) {
+    rpc GetRegistrationInvitation (GetRegistrationInvitationRequest) returns (GetRegistrationInvitationResponse) {
         option (google.api.http) = {
             post: "/v1/get/registration/invitation"
             body: "*"
         };
     }
-    rpc GetRegistrationInvitationsByApp(GetRegistrationInvitationsByAppRequest) returns (GetRegistrationInvitationsByAppResponse) {
+    rpc GetRegistrationInvitationsByApp (GetRegistrationInvitationsByAppRequest) returns (GetRegistrationInvitationsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/registration/invitations/by/app"
             body: "*"
         };
     }
-    rpc GetRegistrationInvitationsByAppInviter(GetRegistrationInvitationsByAppInviterRequest) returns (GetRegistrationInvitationsByAppInviterResponse) {
+    rpc GetRegistrationInvitationsByAppInviter (GetRegistrationInvitationsByAppInviterRequest) returns (GetRegistrationInvitationsByAppInviterResponse) {
         option (google.api.http) = {
             post: "/v1/get/registration/invitations/by/app/inviter"
             body: "*"
         };
     }
-    rpc GetRegistrationInvitationByAppInvitee(GetRegistrationInvitationByAppInviteeRequest) returns (GetRegistrationInvitationByAppInviteeResponse) {
+    rpc GetRegistrationInvitationByAppInvitee (GetRegistrationInvitationByAppInviteeRequest) returns (GetRegistrationInvitationByAppInviteeResponse) {
         option (google.api.http) = {
             post: "/v1/get/registration/invitations/by/app/invitee"
             body: "*"
         };
     }
 
-    rpc CreateUserInvitationCode(CreateUserInvitationCodeRequest) returns (CreateUserInvitationCodeResponse) {
+    rpc CreateUserInvitationCode (CreateUserInvitationCodeRequest) returns (CreateUserInvitationCodeResponse) {
         option (google.api.http) = {
             post: "/v1/create/user/invitation/code"
             body: "*"
         };
     }
-    rpc CreateUserInvitationCodeForOtherAppUser(CreateUserInvitationCodeForOtherAppUserRequest) returns (CreateUserInvitationCodeForOtherAppUserResponse) {
+    rpc CreateUserInvitationCodeForOtherAppUser (CreateUserInvitationCodeForOtherAppUserRequest) returns (CreateUserInvitationCodeForOtherAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/create/user/invitation/code/for/other/app/user"
             body: "*"
         };
     }
-    rpc CreateUserInvitationCodeForAppOtherUser(CreateUserInvitationCodeForAppOtherUserRequest) returns (CreateUserInvitationCodeForAppOtherUserResponse) {
+    rpc CreateUserInvitationCodeForAppOtherUser (CreateUserInvitationCodeForAppOtherUserRequest) returns (CreateUserInvitationCodeForAppOtherUserResponse) {
         option (google.api.http) = {
             post: "/v1/create/user/invitation/code/for/app/other/user"
             body: "*"
         };
     }
-    rpc GetUserInvitationCode(GetUserInvitationCodeRequest) returns (GetUserInvitationCodeResponse) {
+    rpc GetUserInvitationCode (GetUserInvitationCodeRequest) returns (GetUserInvitationCodeResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/invitation/code"
             body: "*"
         };
     }
-    rpc GetUserInvitationCodeByAppUser(GetUserInvitationCodeByAppUserRequest) returns (GetUserInvitationCodeByAppUserResponse) {
+    rpc GetUserInvitationCodeByAppUser (GetUserInvitationCodeByAppUserRequest) returns (GetUserInvitationCodeByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/invitation/code/by/app/user"
             body: "*"
         };
     }
-    rpc GetUserInvitationCodes(GetUserInvitationCodesRequest) returns (GetUserInvitationCodesResponse) {
+    rpc GetUserInvitationCodes (GetUserInvitationCodesRequest) returns (GetUserInvitationCodesResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/invitation/codes"
             body: "*"
         };
     }
-    rpc GetUserInvitationCodesByApp(GetUserInvitationCodesByAppRequest) returns (GetUserInvitationCodesByAppResponse) {
+    rpc GetUserInvitationCodesByApp (GetUserInvitationCodesByAppRequest) returns (GetUserInvitationCodesByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/invitation/codes/by/app"
             body: "*"
         };
     }
-    rpc GetUserInvitationCodesByOtherApp(GetUserInvitationCodesByOtherAppRequest) returns (GetUserInvitationCodesByOtherAppResponse) {
+    rpc GetUserInvitationCodesByOtherApp (GetUserInvitationCodesByOtherAppRequest) returns (GetUserInvitationCodesByOtherAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/invitation/codes/by/other/app"
             body: "*"
         };
     }
-    rpc GetUserInvitationCodeByCode(GetUserInvitationCodeByCodeRequest) returns (GetUserInvitationCodeByCodeResponse) {
+    rpc GetUserInvitationCodeByCode (GetUserInvitationCodeByCodeRequest) returns (GetUserInvitationCodeByCodeResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/invitation/code/by/code"
             body: "*"
         };
     }
 
-    rpc CreateCouponAllocated(CreateCouponAllocatedRequest) returns (CreateCouponAllocatedResponse) {
+    rpc CreateCouponAllocated (CreateCouponAllocatedRequest) returns (CreateCouponAllocatedResponse) {
         option (google.api.http) = {
             post: "/v1/create/coupon/allocated"
             body: "*"
         };
     }
-    rpc GetCouponAllocated(GetCouponAllocatedRequest) returns (GetCouponAllocatedResponse) {
+    rpc GetCouponAllocated (GetCouponAllocatedRequest) returns (GetCouponAllocatedResponse) {
         option (google.api.http) = {
             post: "/v1/get/coupon/allocated"
             body: "*"
         };
     }
-    rpc GetCouponsAllocatedByApp(GetCouponsAllocatedByAppRequest) returns (GetCouponsAllocatedByAppResponse) {
+    rpc GetCouponsAllocatedByApp (GetCouponsAllocatedByAppRequest) returns (GetCouponsAllocatedByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/coupons/allocated/by/app"
             body: "*"
         };
     }
-    rpc GetCouponsAllocatedByAppUser(GetCouponsAllocatedByAppUserRequest) returns (GetCouponsAllocatedByAppUserResponse) {
+    rpc GetCouponsAllocatedByAppUser (GetCouponsAllocatedByAppUserRequest) returns (GetCouponsAllocatedByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/coupons/allocated/by/app/user"
             body: "*"
         };
     }
-    rpc UpdateCouponAllocated(UpdateCouponAllocatedRequest) returns (UpdateCouponAllocatedResponse) {
+    rpc UpdateCouponAllocated (UpdateCouponAllocatedRequest) returns (UpdateCouponAllocatedResponse) {
         option (google.api.http) = {
             post: "/v1/update/coupon/allocated"
             body: "*"
         };
     }
-    rpc GetCouponAllocatedDetail(GetCouponAllocatedDetailRequest) returns (GetCouponAllocatedDetailResponse) {
+    rpc GetCouponAllocatedDetail (GetCouponAllocatedDetailRequest) returns (GetCouponAllocatedDetailResponse) {
         option (google.api.http) = {
             post: "/v1/get/coupon/allocated/detail"
             body: "*"
         };
     }
-    rpc GetCouponsAllocatedDetailByApp(GetCouponsAllocatedDetailByAppRequest) returns (GetCouponsAllocatedDetailByAppResponse) {
+    rpc GetCouponsAllocatedDetailByApp (GetCouponsAllocatedDetailByAppRequest) returns (GetCouponsAllocatedDetailByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/coupons/allocated/detail/by/app"
             body: "*"
         };
     }
-    rpc GetCouponsAllocatedDetailByAppUser(GetCouponsAllocatedDetailByAppUserRequest) returns (GetCouponsAllocatedDetailByAppUserResponse) {
+    rpc GetCouponsAllocatedDetailByAppUser (GetCouponsAllocatedDetailByAppUserRequest) returns (GetCouponsAllocatedDetailByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/coupons/allocated/detail/by/app/user"
             body: "*"
         };
     }
 
-    rpc CreateCouponPool(CreateCouponPoolRequest) returns (CreateCouponPoolResponse) {
+    rpc CreateCouponPool (CreateCouponPoolRequest) returns (CreateCouponPoolResponse) {
         option (google.api.http) = {
             post: "/v1/create/coupon/pool"
             body: "*"
         };
     }
-    rpc UpdateCouponPool(UpdateCouponPoolRequest) returns (UpdateCouponPoolResponse) {
+    rpc UpdateCouponPool (UpdateCouponPoolRequest) returns (UpdateCouponPoolResponse) {
         option (google.api.http) = {
             post: "/v1/update/coupon/pool"
             body: "*"
         };
     }
-    rpc GetCouponPool(GetCouponPoolRequest) returns (GetCouponPoolResponse) {
+    rpc GetCouponPool (GetCouponPoolRequest) returns (GetCouponPoolResponse) {
         option (google.api.http) = {
             post: "/v1/get/coupon/pool"
             body: "*"
         };
     }
-    rpc GetCouponPoolsByApp(GetCouponPoolsByAppRequest) returns (GetCouponPoolsByAppResponse) {
+    rpc GetCouponPoolsByApp (GetCouponPoolsByAppRequest) returns (GetCouponPoolsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/coupon/pools/by/app"
             body: "*"
         };
     }
-    rpc GetCouponPoolsByAppReleaser(GetCouponPoolsByAppReleaserRequest) returns (GetCouponPoolsByAppReleaserResponse) {
+    rpc GetCouponPoolsByAppReleaser (GetCouponPoolsByAppReleaserRequest) returns (GetCouponPoolsByAppReleaserResponse) {
         option (google.api.http) = {
             post: "/v1/get/coupon/pools/by/app/releaser"
             body: "*"
         };
     }
 
-    rpc CreateDiscountPool(CreateDiscountPoolRequest) returns (CreateDiscountPoolResponse) {
+    rpc CreateDiscountPool (CreateDiscountPoolRequest) returns (CreateDiscountPoolResponse) {
         option (google.api.http) = {
             post: "/v1/create/discount/pool"
             body: "*"
         };
     }
-    rpc UpdateDiscountPool(UpdateDiscountPoolRequest) returns (UpdateDiscountPoolResponse) {
+    rpc UpdateDiscountPool (UpdateDiscountPoolRequest) returns (UpdateDiscountPoolResponse) {
         option (google.api.http) = {
             post: "/v1/update/discount/pool"
             body: "*"
         };
     }
-    rpc GetDiscountPool(GetDiscountPoolRequest) returns (GetDiscountPoolResponse) {
+    rpc GetDiscountPool (GetDiscountPoolRequest) returns (GetDiscountPoolResponse) {
         option (google.api.http) = {
             post: "/v1/get/discount/pool"
             body: "*"
         };
     }
-    rpc GetDiscountPoolsByApp(GetDiscountPoolsByAppRequest) returns (GetDiscountPoolsByAppResponse) {
+    rpc GetDiscountPoolsByApp (GetDiscountPoolsByAppRequest) returns (GetDiscountPoolsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/discount/pools/by/app"
             body: "*"
         };
     }
-    rpc GetDiscountPoolsByAppReleaser(GetDiscountPoolsByAppReleaserRequest) returns (GetDiscountPoolsByAppReleaserResponse) {
+    rpc GetDiscountPoolsByAppReleaser (GetDiscountPoolsByAppReleaserRequest) returns (GetDiscountPoolsByAppReleaserResponse) {
         option (google.api.http) = {
             post: "/v1/get/discount/pools/by/app/releaser"
             body: "*"
         };
     }
 
-    rpc CreateAppCouponSetting(CreateAppCouponSettingRequest) returns (CreateAppCouponSettingResponse) {
+    rpc CreateAppCouponSetting (CreateAppCouponSettingRequest) returns (CreateAppCouponSettingResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/coupon/setting"
             body: "*"
         };
     }
-    rpc GetAppCouponSetting(GetAppCouponSettingRequest) returns (GetAppCouponSettingResponse) {
+    rpc GetAppCouponSetting (GetAppCouponSettingRequest) returns (GetAppCouponSettingResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/coupon/setting"
             body: "*"
         };
     }
-    rpc GetAppCouponSettingByApp(GetAppCouponSettingByAppRequest) returns (GetAppCouponSettingByAppResponse) {
+    rpc GetAppCouponSettingByApp (GetAppCouponSettingByAppRequest) returns (GetAppCouponSettingByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/coupon/setting/by/app"
             body: "*"
         };
     }
-    rpc UpdateAppCouponSetting(UpdateAppCouponSettingRequest) returns (UpdateAppCouponSettingResponse) {
+    rpc UpdateAppCouponSetting (UpdateAppCouponSettingRequest) returns (UpdateAppCouponSettingResponse) {
         option (google.api.http) = {
             post: "/v1/update/app/coupon/setting"
             body: "*"
         };
     }
 
-    rpc CreateDefaultKpiSetting(CreateDefaultKpiSettingRequest) returns (CreateDefaultKpiSettingResponse) {
+    rpc CreateDefaultKpiSetting (CreateDefaultKpiSettingRequest) returns (CreateDefaultKpiSettingResponse) {
         option (google.api.http) = {
             post: "/v1/create/default/kpi/setting"
             body: "*"
         };
     }
-    rpc GetDefaultKpiSetting(GetDefaultKpiSettingRequest) returns (GetDefaultKpiSettingResponse) {
+    rpc GetDefaultKpiSetting (GetDefaultKpiSettingRequest) returns (GetDefaultKpiSettingResponse) {
         option (google.api.http) = {
             post: "/v1/get/default/kpi/setting"
             body: "*"
         };
     }
-    rpc GetDefaultKpiSettingByAppGood(GetDefaultKpiSettingByAppGoodRequest) returns (GetDefaultKpiSettingByAppGoodResponse) {
+    rpc GetDefaultKpiSettingByAppGood (GetDefaultKpiSettingByAppGoodRequest) returns (GetDefaultKpiSettingByAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/default/kpi/setting/by/app/good"
             body: "*"
         };
     }
-    rpc UpdateDefaultKpiSetting(UpdateDefaultKpiSettingRequest) returns (UpdateDefaultKpiSettingResponse) {
+    rpc UpdateDefaultKpiSetting (UpdateDefaultKpiSettingRequest) returns (UpdateDefaultKpiSettingResponse) {
         option (google.api.http) = {
             post: "/v1/update/default/kpi/setting"
             body: "*"
         };
     }
 
-    rpc CreateUserKpiSetting(CreateUserKpiSettingRequest) returns (CreateUserKpiSettingResponse) {
+    rpc CreateUserKpiSetting (CreateUserKpiSettingRequest) returns (CreateUserKpiSettingResponse) {
         option (google.api.http) = {
             post: "/v1/create/user/kpi/setting"
             body: "*"
         };
     }
-    rpc GetUserKpiSetting(GetUserKpiSettingRequest) returns (GetUserKpiSettingResponse) {
+    rpc GetUserKpiSetting (GetUserKpiSettingRequest) returns (GetUserKpiSettingResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/kpi/setting"
             body: "*"
         };
     }
-    rpc GetUserKpiSettingByAppGood(GetUserKpiSettingByAppGoodRequest) returns (GetUserKpiSettingByAppGoodResponse) {
+    rpc GetUserKpiSettingByAppGood (GetUserKpiSettingByAppGoodRequest) returns (GetUserKpiSettingByAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/kpi/setting/by/app/good"
             body: "*"
         };
     }
-    rpc UpdateUserKpiSetting(UpdateUserKpiSettingRequest) returns (UpdateUserKpiSettingResponse) {
+    rpc UpdateUserKpiSetting (UpdateUserKpiSettingRequest) returns (UpdateUserKpiSettingResponse) {
         option (google.api.http) = {
             post: "/v1/update/user/kpi/setting"
             body: "*"
         };
     }
 
-    rpc CreateUserSpecialReduction(CreateUserSpecialReductionRequest) returns (CreateUserSpecialReductionResponse) {
+    rpc CreateUserSpecialReduction (CreateUserSpecialReductionRequest) returns (CreateUserSpecialReductionResponse) {
         option (google.api.http) = {
             post: "/v1/create/user/special/reduction"
             body: "*"
         };
     }
-    rpc GetUserSpecialReduction(GetUserSpecialReductionRequest) returns (GetUserSpecialReductionResponse) {
+    rpc GetUserSpecialReduction (GetUserSpecialReductionRequest) returns (GetUserSpecialReductionResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/special/reduction"
             body: "*"
         };
     }
-    rpc GetUserSpecialReductionsByApp(GetUserSpecialReductionsByAppRequest) returns (GetUserSpecialReductionsByAppResponse) {
+    rpc GetUserSpecialReductionsByApp (GetUserSpecialReductionsByAppRequest) returns (GetUserSpecialReductionsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/special/reductions/by/app"
             body: "*"
         };
     }
-    rpc GetUserSpecialReductionsByAppReleaser(GetUserSpecialReductionsByAppReleaserRequest) returns (GetUserSpecialReductionsByAppReleaserResponse) {
+    rpc GetUserSpecialReductionsByAppReleaser (GetUserSpecialReductionsByAppReleaserRequest) returns (GetUserSpecialReductionsByAppReleaserResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/special/reductions/by/app/releaser"
             body: "*"
         };
     }
-    rpc GetUserSpecialReductionsByAppUser(GetUserSpecialReductionsByAppUserRequest) returns (GetUserSpecialReductionsByAppUserResponse) {
+    rpc GetUserSpecialReductionsByAppUser (GetUserSpecialReductionsByAppUserRequest) returns (GetUserSpecialReductionsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/special/reductions/by/app/user"
             body: "*"
         };
     }
-    rpc UpdateUserSpecialReduction(UpdateUserSpecialReductionRequest) returns (UpdateUserSpecialReductionResponse) {
+    rpc UpdateUserSpecialReduction (UpdateUserSpecialReductionRequest) returns (UpdateUserSpecialReductionResponse) {
         option (google.api.http) = {
             post: "/v1/update/user/special/reduction"
+            body: "*"
+        };
+    }
+
+    rpc CreateActivity (CreateActivityRequest) returns (CreateActivityResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/activity"
+            body: "*"
+        };
+    }
+    rpc CreateActivityForOtherApp (CreateActivityForOtherAppRequest) returns (CreateActivityForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/activity/for/other/app"
+            body: "*"
+        };
+    }
+    rpc GetActivity (GetActivityRequest) returns (GetActivityResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/activity"
+            body: "*"
+        };
+    }
+    rpc GetActivityByAppName (GetActivityByAppNameRequest) returns (GetActivityByAppNameResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/activity/by/app/name"
+            body: "*"
+        };
+    }
+    rpc GetActivitiesByApp (GetActivitiesByAppRequest) returns (GetActivitiesByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/activities/by/app"
+            body: "*"
+        };
+    }
+    rpc GetActivitiesByOtherApp (GetActivitiesByOtherAppRequest) returns (GetActivitiesByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/activities/by/other/app"
+            body: "*"
+        };
+    }
+
+    rpc CreateEventCoupon (CreateEventCouponRequest) returns (CreateEventCouponResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/event/coupon"
+            body: "*"
+        };
+    }
+    rpc CreateEventCouponForOtherApp (CreateEventCouponForOtherAppRequest) returns (CreateEventCouponForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/event/coupon/for/other/app"
+            body: "*"
+        };
+    }
+    rpc GetEventCoupon (GetEventCouponRequest) returns (GetEventCouponResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/event/coupon"
+            body: "*"
+        };
+    }
+    rpc GetEventCouponsByAppActivityEvent (GetEventCouponsByAppActivityEventRequest) returns (GetEventCouponsByAppActivityEventResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/event/coupons/by/app/activity/event"
+            body: "*"
+        };
+    }
+    rpc GetEventCouponsByApp (GetEventCouponsByAppRequest) returns (GetEventCouponsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/event/coupons/by/app"
             body: "*"
         };
     }
@@ -1122,4 +1190,113 @@ message GetUserSpecialReductionsByAppReleaserRequest {
 
 message GetUserSpecialReductionsByAppReleaserResponse {
     repeated UserSpecialReduction Infos = 10;
+}
+
+message Activity {
+    string ID = 10;
+    string AppID = 20;
+    string Name = 30;
+    uint32 Start = 40;
+    uint32 End = 50;
+}
+
+message CreateActivityRequest {
+    Activity Info = 10;
+}
+
+message CreateActivityResponse {
+    Activity Info = 10;
+}
+
+message CreateActivityForOtherAppRequest {
+    string TargetAppID = 10;
+    Activity Info = 20;
+}
+
+message CreateActivityForOtherAppResponse {
+    Activity Info = 10;
+}
+
+message GetActivityRequest {
+    string ID = 10;
+}
+
+message GetActivityResponse {
+    Activity Info = 10;
+}
+
+message GetActivityByAppNameRequest {
+    string AppID = 10;
+    string Name = 20;
+}
+
+message GetActivityByAppNameResponse {
+    Activity Info = 10;
+}
+
+message GetActivitiesByAppRequest {
+    string AppID = 10;
+}
+
+message GetActivitiesByAppResponse {
+    repeated Activity Infos = 10;
+}
+
+message GetActivitiesByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetActivitiesByOtherAppResponse {
+    repeated Activity Infos = 10;
+}
+
+message EventCoupon {
+    string ID = 10;
+    string AppID = 20;
+    string ActivityID = 30;
+    string Event = 40;
+    string CouponID = 50;
+}
+
+message CreateEventCouponRequest {
+    EventCoupon Info = 10;
+}
+
+message CreateEventCouponResponse {
+    EventCoupon Info = 10;
+}
+
+message CreateEventCouponForOtherAppRequest {
+    string TargetAppID = 10;
+    EventCoupon Info = 20;
+}
+
+message CreateEventCouponForOtherAppResponse {
+    EventCoupon Info = 10;
+}
+
+message GetEventCouponRequest {
+    string ID = 10;
+}
+
+message GetEventCouponResponse {
+    EventCoupon Info = 10;
+}
+
+message GetEventCouponsByAppActivityEventRequest {
+    string AppID = 10;
+    string ActivityID = 20;
+    string Event = 30;
+}
+
+message GetEventCouponsByAppActivityEventResponse {
+    repeated EventCoupon Infos = 10;
+}
+
+message GetEventCouponsByAppRequest {
+    string AppID = 10;
+}
+
+message GetEventCouponsByAppResponse {
+    repeated EventCoupon Infos = 10;
 }

@@ -11,6 +11,70 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/activity": {
+      "post": {
+        "operationId": "CloudHashingInspire_CreateActivity",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateActivityResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateActivityRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/create/activity/for/other/app": {
+      "post": {
+        "operationId": "CloudHashingInspire_CreateActivityForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateActivityForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateActivityForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/create/agency/setting": {
       "post": {
         "operationId": "CloudHashingInspire_CreateAgencySetting",
@@ -195,6 +259,70 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateDiscountPoolRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/create/event/coupon": {
+      "post": {
+        "operationId": "CloudHashingInspire_CreateEventCoupon",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateEventCouponResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateEventCouponRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/create/event/coupon/for/other/app": {
+      "post": {
+        "operationId": "CloudHashingInspire_CreateEventCouponForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateEventCouponForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateEventCouponForOtherAppRequest"
             }
           }
         ],
@@ -451,6 +579,134 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateUserSpecialReductionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/get/activities/by/app": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetActivitiesByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetActivitiesByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetActivitiesByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/get/activities/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetActivitiesByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetActivitiesByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetActivitiesByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/get/activity": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetActivity",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetActivityResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetActivityRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/get/activity/by/app/name": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetActivityByAppName",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetActivityByAppNameResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetActivityByAppNameRequest"
             }
           }
         ],
@@ -1091,6 +1347,102 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetDiscountPoolsByAppReleaserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/get/event/coupon": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetEventCoupon",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetEventCouponResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetEventCouponRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/get/event/coupons/by/app": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetEventCouponsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetEventCouponsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetEventCouponsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/get/event/coupons/by/app/activity/event": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetEventCouponsByAppActivityEvent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetEventCouponsByAppActivityEventResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetEventCouponsByAppActivityEventRequest"
             }
           }
         ],
@@ -2223,6 +2575,28 @@
         }
       }
     },
+    "v1Activity": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "End": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1AgencySetting": {
       "type": "object",
       "properties": {
@@ -2401,6 +2775,41 @@
         }
       }
     },
+    "v1CreateActivityForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1Activity"
+        }
+      }
+    },
+    "v1CreateActivityForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Activity"
+        }
+      }
+    },
+    "v1CreateActivityRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Activity"
+        }
+      }
+    },
+    "v1CreateActivityResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Activity"
+        }
+      }
+    },
     "v1CreateAgencySettingRequest": {
       "type": "object",
       "properties": {
@@ -2494,6 +2903,41 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1DiscountPool"
+        }
+      }
+    },
+    "v1CreateEventCouponForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1EventCoupon"
+        }
+      }
+    },
+    "v1CreateEventCouponForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EventCoupon"
+        }
+      }
+    },
+    "v1CreateEventCouponRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EventCoupon"
+        }
+      }
+    },
+    "v1CreateEventCouponResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EventCoupon"
         }
       }
     },
@@ -2685,6 +3129,99 @@
         },
         "Name": {
           "type": "string"
+        }
+      }
+    },
+    "v1EventCoupon": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "ActivityID": {
+          "type": "string"
+        },
+        "Event": {
+          "type": "string"
+        },
+        "CouponID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetActivitiesByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetActivitiesByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Activity"
+          }
+        }
+      }
+    },
+    "v1GetActivitiesByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetActivitiesByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Activity"
+          }
+        }
+      }
+    },
+    "v1GetActivityByAppNameRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetActivityByAppNameResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Activity"
+        }
+      }
+    },
+    "v1GetActivityRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetActivityResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Activity"
         }
       }
     },
@@ -3043,6 +3580,66 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1DiscountPool"
+          }
+        }
+      }
+    },
+    "v1GetEventCouponRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetEventCouponResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EventCoupon"
+        }
+      }
+    },
+    "v1GetEventCouponsByAppActivityEventRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "ActivityID": {
+          "type": "string"
+        },
+        "Event": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetEventCouponsByAppActivityEventResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EventCoupon"
+          }
+        }
+      }
+    },
+    "v1GetEventCouponsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetEventCouponsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EventCoupon"
           }
         }
       }

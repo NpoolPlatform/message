@@ -4,12 +4,17 @@
 ## Table of Contents
 
 - [npool/cloud-hashing-inspire/cloud-hashing-inspire.proto](#npool/cloud-hashing-inspire/cloud-hashing-inspire.proto)
+    - [Activity](#cloud.hashing.inspire.v1.Activity)
     - [AgencySetting](#cloud.hashing.inspire.v1.AgencySetting)
     - [AgencySettingDetail](#cloud.hashing.inspire.v1.AgencySettingDetail)
     - [AppCouponSetting](#cloud.hashing.inspire.v1.AppCouponSetting)
     - [CouponAllocated](#cloud.hashing.inspire.v1.CouponAllocated)
     - [CouponAllocatedDetail](#cloud.hashing.inspire.v1.CouponAllocatedDetail)
     - [CouponPool](#cloud.hashing.inspire.v1.CouponPool)
+    - [CreateActivityForOtherAppRequest](#cloud.hashing.inspire.v1.CreateActivityForOtherAppRequest)
+    - [CreateActivityForOtherAppResponse](#cloud.hashing.inspire.v1.CreateActivityForOtherAppResponse)
+    - [CreateActivityRequest](#cloud.hashing.inspire.v1.CreateActivityRequest)
+    - [CreateActivityResponse](#cloud.hashing.inspire.v1.CreateActivityResponse)
     - [CreateAgencySettingRequest](#cloud.hashing.inspire.v1.CreateAgencySettingRequest)
     - [CreateAgencySettingResponse](#cloud.hashing.inspire.v1.CreateAgencySettingResponse)
     - [CreateAppCouponSettingRequest](#cloud.hashing.inspire.v1.CreateAppCouponSettingRequest)
@@ -22,6 +27,10 @@
     - [CreateDefaultKpiSettingResponse](#cloud.hashing.inspire.v1.CreateDefaultKpiSettingResponse)
     - [CreateDiscountPoolRequest](#cloud.hashing.inspire.v1.CreateDiscountPoolRequest)
     - [CreateDiscountPoolResponse](#cloud.hashing.inspire.v1.CreateDiscountPoolResponse)
+    - [CreateEventCouponForOtherAppRequest](#cloud.hashing.inspire.v1.CreateEventCouponForOtherAppRequest)
+    - [CreateEventCouponForOtherAppResponse](#cloud.hashing.inspire.v1.CreateEventCouponForOtherAppResponse)
+    - [CreateEventCouponRequest](#cloud.hashing.inspire.v1.CreateEventCouponRequest)
+    - [CreateEventCouponResponse](#cloud.hashing.inspire.v1.CreateEventCouponResponse)
     - [CreateNewUserRewardSettingRequest](#cloud.hashing.inspire.v1.CreateNewUserRewardSettingRequest)
     - [CreateNewUserRewardSettingResponse](#cloud.hashing.inspire.v1.CreateNewUserRewardSettingResponse)
     - [CreatePurchaseInvitationRequest](#cloud.hashing.inspire.v1.CreatePurchaseInvitationRequest)
@@ -40,6 +49,15 @@
     - [CreateUserSpecialReductionResponse](#cloud.hashing.inspire.v1.CreateUserSpecialReductionResponse)
     - [DefaultKpiSetting](#cloud.hashing.inspire.v1.DefaultKpiSetting)
     - [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool)
+    - [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon)
+    - [GetActivitiesByAppRequest](#cloud.hashing.inspire.v1.GetActivitiesByAppRequest)
+    - [GetActivitiesByAppResponse](#cloud.hashing.inspire.v1.GetActivitiesByAppResponse)
+    - [GetActivitiesByOtherAppRequest](#cloud.hashing.inspire.v1.GetActivitiesByOtherAppRequest)
+    - [GetActivitiesByOtherAppResponse](#cloud.hashing.inspire.v1.GetActivitiesByOtherAppResponse)
+    - [GetActivityByAppNameRequest](#cloud.hashing.inspire.v1.GetActivityByAppNameRequest)
+    - [GetActivityByAppNameResponse](#cloud.hashing.inspire.v1.GetActivityByAppNameResponse)
+    - [GetActivityRequest](#cloud.hashing.inspire.v1.GetActivityRequest)
+    - [GetActivityResponse](#cloud.hashing.inspire.v1.GetActivityResponse)
     - [GetAgencySettingByAppRequest](#cloud.hashing.inspire.v1.GetAgencySettingByAppRequest)
     - [GetAgencySettingByAppResponse](#cloud.hashing.inspire.v1.GetAgencySettingByAppResponse)
     - [GetAgencySettingDetailByAppRequest](#cloud.hashing.inspire.v1.GetAgencySettingDetailByAppRequest)
@@ -80,6 +98,12 @@
     - [GetDiscountPoolsByAppReleaserResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppReleaserResponse)
     - [GetDiscountPoolsByAppRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppRequest)
     - [GetDiscountPoolsByAppResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppResponse)
+    - [GetEventCouponRequest](#cloud.hashing.inspire.v1.GetEventCouponRequest)
+    - [GetEventCouponResponse](#cloud.hashing.inspire.v1.GetEventCouponResponse)
+    - [GetEventCouponsByAppActivityEventRequest](#cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventRequest)
+    - [GetEventCouponsByAppActivityEventResponse](#cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventResponse)
+    - [GetEventCouponsByAppRequest](#cloud.hashing.inspire.v1.GetEventCouponsByAppRequest)
+    - [GetEventCouponsByAppResponse](#cloud.hashing.inspire.v1.GetEventCouponsByAppResponse)
     - [GetNewUserRewardSettingByAppRequest](#cloud.hashing.inspire.v1.GetNewUserRewardSettingByAppRequest)
     - [GetNewUserRewardSettingByAppResponse](#cloud.hashing.inspire.v1.GetNewUserRewardSettingByAppResponse)
     - [GetNewUserRewardSettingDetailRequest](#cloud.hashing.inspire.v1.GetNewUserRewardSettingDetailRequest)
@@ -157,12 +181,17 @@
     - [CloudHashingInspire](#cloud.hashing.inspire.v1.CloudHashingInspire)
   
 - [npool/cloud-hashing-inspire/cloud-hashing-inspire.proto](#npool/cloud-hashing-inspire/cloud-hashing-inspire.proto)
+    - [Activity](#cloud.hashing.inspire.v1.Activity)
     - [AgencySetting](#cloud.hashing.inspire.v1.AgencySetting)
     - [AgencySettingDetail](#cloud.hashing.inspire.v1.AgencySettingDetail)
     - [AppCouponSetting](#cloud.hashing.inspire.v1.AppCouponSetting)
     - [CouponAllocated](#cloud.hashing.inspire.v1.CouponAllocated)
     - [CouponAllocatedDetail](#cloud.hashing.inspire.v1.CouponAllocatedDetail)
     - [CouponPool](#cloud.hashing.inspire.v1.CouponPool)
+    - [CreateActivityForOtherAppRequest](#cloud.hashing.inspire.v1.CreateActivityForOtherAppRequest)
+    - [CreateActivityForOtherAppResponse](#cloud.hashing.inspire.v1.CreateActivityForOtherAppResponse)
+    - [CreateActivityRequest](#cloud.hashing.inspire.v1.CreateActivityRequest)
+    - [CreateActivityResponse](#cloud.hashing.inspire.v1.CreateActivityResponse)
     - [CreateAgencySettingRequest](#cloud.hashing.inspire.v1.CreateAgencySettingRequest)
     - [CreateAgencySettingResponse](#cloud.hashing.inspire.v1.CreateAgencySettingResponse)
     - [CreateAppCouponSettingRequest](#cloud.hashing.inspire.v1.CreateAppCouponSettingRequest)
@@ -175,6 +204,10 @@
     - [CreateDefaultKpiSettingResponse](#cloud.hashing.inspire.v1.CreateDefaultKpiSettingResponse)
     - [CreateDiscountPoolRequest](#cloud.hashing.inspire.v1.CreateDiscountPoolRequest)
     - [CreateDiscountPoolResponse](#cloud.hashing.inspire.v1.CreateDiscountPoolResponse)
+    - [CreateEventCouponForOtherAppRequest](#cloud.hashing.inspire.v1.CreateEventCouponForOtherAppRequest)
+    - [CreateEventCouponForOtherAppResponse](#cloud.hashing.inspire.v1.CreateEventCouponForOtherAppResponse)
+    - [CreateEventCouponRequest](#cloud.hashing.inspire.v1.CreateEventCouponRequest)
+    - [CreateEventCouponResponse](#cloud.hashing.inspire.v1.CreateEventCouponResponse)
     - [CreateNewUserRewardSettingRequest](#cloud.hashing.inspire.v1.CreateNewUserRewardSettingRequest)
     - [CreateNewUserRewardSettingResponse](#cloud.hashing.inspire.v1.CreateNewUserRewardSettingResponse)
     - [CreatePurchaseInvitationRequest](#cloud.hashing.inspire.v1.CreatePurchaseInvitationRequest)
@@ -193,6 +226,15 @@
     - [CreateUserSpecialReductionResponse](#cloud.hashing.inspire.v1.CreateUserSpecialReductionResponse)
     - [DefaultKpiSetting](#cloud.hashing.inspire.v1.DefaultKpiSetting)
     - [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool)
+    - [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon)
+    - [GetActivitiesByAppRequest](#cloud.hashing.inspire.v1.GetActivitiesByAppRequest)
+    - [GetActivitiesByAppResponse](#cloud.hashing.inspire.v1.GetActivitiesByAppResponse)
+    - [GetActivitiesByOtherAppRequest](#cloud.hashing.inspire.v1.GetActivitiesByOtherAppRequest)
+    - [GetActivitiesByOtherAppResponse](#cloud.hashing.inspire.v1.GetActivitiesByOtherAppResponse)
+    - [GetActivityByAppNameRequest](#cloud.hashing.inspire.v1.GetActivityByAppNameRequest)
+    - [GetActivityByAppNameResponse](#cloud.hashing.inspire.v1.GetActivityByAppNameResponse)
+    - [GetActivityRequest](#cloud.hashing.inspire.v1.GetActivityRequest)
+    - [GetActivityResponse](#cloud.hashing.inspire.v1.GetActivityResponse)
     - [GetAgencySettingByAppRequest](#cloud.hashing.inspire.v1.GetAgencySettingByAppRequest)
     - [GetAgencySettingByAppResponse](#cloud.hashing.inspire.v1.GetAgencySettingByAppResponse)
     - [GetAgencySettingDetailByAppRequest](#cloud.hashing.inspire.v1.GetAgencySettingDetailByAppRequest)
@@ -233,6 +275,12 @@
     - [GetDiscountPoolsByAppReleaserResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppReleaserResponse)
     - [GetDiscountPoolsByAppRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppRequest)
     - [GetDiscountPoolsByAppResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppResponse)
+    - [GetEventCouponRequest](#cloud.hashing.inspire.v1.GetEventCouponRequest)
+    - [GetEventCouponResponse](#cloud.hashing.inspire.v1.GetEventCouponResponse)
+    - [GetEventCouponsByAppActivityEventRequest](#cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventRequest)
+    - [GetEventCouponsByAppActivityEventResponse](#cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventResponse)
+    - [GetEventCouponsByAppRequest](#cloud.hashing.inspire.v1.GetEventCouponsByAppRequest)
+    - [GetEventCouponsByAppResponse](#cloud.hashing.inspire.v1.GetEventCouponsByAppResponse)
     - [GetNewUserRewardSettingByAppRequest](#cloud.hashing.inspire.v1.GetNewUserRewardSettingByAppRequest)
     - [GetNewUserRewardSettingByAppResponse](#cloud.hashing.inspire.v1.GetNewUserRewardSettingByAppResponse)
     - [GetNewUserRewardSettingDetailRequest](#cloud.hashing.inspire.v1.GetNewUserRewardSettingDetailRequest)
@@ -320,6 +368,25 @@
 
 
 
+<a name="cloud.hashing.inspire.v1.Activity"></a>
+
+### Activity
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| Name | [string](#string) |  |  |
+| Start | [uint32](#uint32) |  |  |
+| End | [uint32](#uint32) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.AgencySetting"></a>
 
 ### AgencySetting
@@ -442,6 +509,67 @@
 | DurationDays | [int32](#int32) |  |  |
 | Message | [string](#string) |  |  |
 | Name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateActivityForOtherAppRequest"></a>
+
+### CreateActivityForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateActivityForOtherAppResponse"></a>
+
+### CreateActivityForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateActivityRequest"></a>
+
+### CreateActivityRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateActivityResponse"></a>
+
+### CreateActivityResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
 
 
 
@@ -622,6 +750,67 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateEventCouponForOtherAppRequest"></a>
+
+### CreateEventCouponForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateEventCouponForOtherAppResponse"></a>
+
+### CreateEventCouponForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateEventCouponRequest"></a>
+
+### CreateEventCouponRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateEventCouponResponse"></a>
+
+### CreateEventCouponResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) |  |  |
 
 
 
@@ -906,6 +1095,146 @@
 | DurationDays | [int32](#int32) |  |  |
 | Message | [string](#string) |  |  |
 | Name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.EventCoupon"></a>
+
+### EventCoupon
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| ActivityID | [string](#string) |  |  |
+| Event | [string](#string) |  |  |
+| CouponID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivitiesByAppRequest"></a>
+
+### GetActivitiesByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivitiesByAppResponse"></a>
+
+### GetActivitiesByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Activity](#cloud.hashing.inspire.v1.Activity) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivitiesByOtherAppRequest"></a>
+
+### GetActivitiesByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivitiesByOtherAppResponse"></a>
+
+### GetActivitiesByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Activity](#cloud.hashing.inspire.v1.Activity) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivityByAppNameRequest"></a>
+
+### GetActivityByAppNameRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| Name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivityByAppNameResponse"></a>
+
+### GetActivityByAppNameResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivityRequest"></a>
+
+### GetActivityRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivityResponse"></a>
+
+### GetActivityResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
 
 
 
@@ -1511,6 +1840,98 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetEventCouponRequest"></a>
+
+### GetEventCouponRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetEventCouponResponse"></a>
+
+### GetEventCouponResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventRequest"></a>
+
+### GetEventCouponsByAppActivityEventRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| ActivityID | [string](#string) |  |  |
+| Event | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventResponse"></a>
+
+### GetEventCouponsByAppActivityEventResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetEventCouponsByAppRequest"></a>
+
+### GetEventCouponsByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetEventCouponsByAppResponse"></a>
+
+### GetEventCouponsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) | repeated |  |
 
 
 
@@ -2725,6 +3146,17 @@ Service Name
 | GetUserSpecialReductionsByAppReleaser | [GetUserSpecialReductionsByAppReleaserRequest](#cloud.hashing.inspire.v1.GetUserSpecialReductionsByAppReleaserRequest) | [GetUserSpecialReductionsByAppReleaserResponse](#cloud.hashing.inspire.v1.GetUserSpecialReductionsByAppReleaserResponse) |  |
 | GetUserSpecialReductionsByAppUser | [GetUserSpecialReductionsByAppUserRequest](#cloud.hashing.inspire.v1.GetUserSpecialReductionsByAppUserRequest) | [GetUserSpecialReductionsByAppUserResponse](#cloud.hashing.inspire.v1.GetUserSpecialReductionsByAppUserResponse) |  |
 | UpdateUserSpecialReduction | [UpdateUserSpecialReductionRequest](#cloud.hashing.inspire.v1.UpdateUserSpecialReductionRequest) | [UpdateUserSpecialReductionResponse](#cloud.hashing.inspire.v1.UpdateUserSpecialReductionResponse) |  |
+| CreateActivity | [CreateActivityRequest](#cloud.hashing.inspire.v1.CreateActivityRequest) | [CreateActivityResponse](#cloud.hashing.inspire.v1.CreateActivityResponse) |  |
+| CreateActivityForOtherApp | [CreateActivityForOtherAppRequest](#cloud.hashing.inspire.v1.CreateActivityForOtherAppRequest) | [CreateActivityForOtherAppResponse](#cloud.hashing.inspire.v1.CreateActivityForOtherAppResponse) |  |
+| GetActivity | [GetActivityRequest](#cloud.hashing.inspire.v1.GetActivityRequest) | [GetActivityResponse](#cloud.hashing.inspire.v1.GetActivityResponse) |  |
+| GetActivityByAppName | [GetActivityByAppNameRequest](#cloud.hashing.inspire.v1.GetActivityByAppNameRequest) | [GetActivityByAppNameResponse](#cloud.hashing.inspire.v1.GetActivityByAppNameResponse) |  |
+| GetActivitiesByApp | [GetActivitiesByAppRequest](#cloud.hashing.inspire.v1.GetActivitiesByAppRequest) | [GetActivitiesByAppResponse](#cloud.hashing.inspire.v1.GetActivitiesByAppResponse) |  |
+| GetActivitiesByOtherApp | [GetActivitiesByOtherAppRequest](#cloud.hashing.inspire.v1.GetActivitiesByOtherAppRequest) | [GetActivitiesByOtherAppResponse](#cloud.hashing.inspire.v1.GetActivitiesByOtherAppResponse) |  |
+| CreateEventCoupon | [CreateEventCouponRequest](#cloud.hashing.inspire.v1.CreateEventCouponRequest) | [CreateEventCouponResponse](#cloud.hashing.inspire.v1.CreateEventCouponResponse) |  |
+| CreateEventCouponForOtherApp | [CreateEventCouponForOtherAppRequest](#cloud.hashing.inspire.v1.CreateEventCouponForOtherAppRequest) | [CreateEventCouponForOtherAppResponse](#cloud.hashing.inspire.v1.CreateEventCouponForOtherAppResponse) |  |
+| GetEventCoupon | [GetEventCouponRequest](#cloud.hashing.inspire.v1.GetEventCouponRequest) | [GetEventCouponResponse](#cloud.hashing.inspire.v1.GetEventCouponResponse) |  |
+| GetEventCouponsByAppActivityEvent | [GetEventCouponsByAppActivityEventRequest](#cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventRequest) | [GetEventCouponsByAppActivityEventResponse](#cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventResponse) |  |
+| GetEventCouponsByApp | [GetEventCouponsByAppRequest](#cloud.hashing.inspire.v1.GetEventCouponsByAppRequest) | [GetEventCouponsByAppResponse](#cloud.hashing.inspire.v1.GetEventCouponsByAppResponse) |  |
 
  
 
@@ -2737,6 +3169,25 @@ Service Name
 
 
 
+<a name="cloud.hashing.inspire.v1.Activity"></a>
+
+### Activity
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| Name | [string](#string) |  |  |
+| Start | [uint32](#uint32) |  |  |
+| End | [uint32](#uint32) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.AgencySetting"></a>
 
 ### AgencySetting
@@ -2859,6 +3310,67 @@ Service Name
 | DurationDays | [int32](#int32) |  |  |
 | Message | [string](#string) |  |  |
 | Name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateActivityForOtherAppRequest"></a>
+
+### CreateActivityForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateActivityForOtherAppResponse"></a>
+
+### CreateActivityForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateActivityRequest"></a>
+
+### CreateActivityRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateActivityResponse"></a>
+
+### CreateActivityResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
 
 
 
@@ -3039,6 +3551,67 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateEventCouponForOtherAppRequest"></a>
+
+### CreateEventCouponForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateEventCouponForOtherAppResponse"></a>
+
+### CreateEventCouponForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateEventCouponRequest"></a>
+
+### CreateEventCouponRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateEventCouponResponse"></a>
+
+### CreateEventCouponResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) |  |  |
 
 
 
@@ -3323,6 +3896,146 @@ Service Name
 | DurationDays | [int32](#int32) |  |  |
 | Message | [string](#string) |  |  |
 | Name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.EventCoupon"></a>
+
+### EventCoupon
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| ActivityID | [string](#string) |  |  |
+| Event | [string](#string) |  |  |
+| CouponID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivitiesByAppRequest"></a>
+
+### GetActivitiesByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivitiesByAppResponse"></a>
+
+### GetActivitiesByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Activity](#cloud.hashing.inspire.v1.Activity) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivitiesByOtherAppRequest"></a>
+
+### GetActivitiesByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivitiesByOtherAppResponse"></a>
+
+### GetActivitiesByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Activity](#cloud.hashing.inspire.v1.Activity) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivityByAppNameRequest"></a>
+
+### GetActivityByAppNameRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| Name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivityByAppNameResponse"></a>
+
+### GetActivityByAppNameResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivityRequest"></a>
+
+### GetActivityRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetActivityResponse"></a>
+
+### GetActivityResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
 
 
 
@@ -3928,6 +4641,98 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetEventCouponRequest"></a>
+
+### GetEventCouponRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetEventCouponResponse"></a>
+
+### GetEventCouponResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventRequest"></a>
+
+### GetEventCouponsByAppActivityEventRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| ActivityID | [string](#string) |  |  |
+| Event | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventResponse"></a>
+
+### GetEventCouponsByAppActivityEventResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetEventCouponsByAppRequest"></a>
+
+### GetEventCouponsByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetEventCouponsByAppResponse"></a>
+
+### GetEventCouponsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) | repeated |  |
 
 
 
@@ -5142,6 +5947,17 @@ Service Name
 | GetUserSpecialReductionsByAppReleaser | [GetUserSpecialReductionsByAppReleaserRequest](#cloud.hashing.inspire.v1.GetUserSpecialReductionsByAppReleaserRequest) | [GetUserSpecialReductionsByAppReleaserResponse](#cloud.hashing.inspire.v1.GetUserSpecialReductionsByAppReleaserResponse) |  |
 | GetUserSpecialReductionsByAppUser | [GetUserSpecialReductionsByAppUserRequest](#cloud.hashing.inspire.v1.GetUserSpecialReductionsByAppUserRequest) | [GetUserSpecialReductionsByAppUserResponse](#cloud.hashing.inspire.v1.GetUserSpecialReductionsByAppUserResponse) |  |
 | UpdateUserSpecialReduction | [UpdateUserSpecialReductionRequest](#cloud.hashing.inspire.v1.UpdateUserSpecialReductionRequest) | [UpdateUserSpecialReductionResponse](#cloud.hashing.inspire.v1.UpdateUserSpecialReductionResponse) |  |
+| CreateActivity | [CreateActivityRequest](#cloud.hashing.inspire.v1.CreateActivityRequest) | [CreateActivityResponse](#cloud.hashing.inspire.v1.CreateActivityResponse) |  |
+| CreateActivityForOtherApp | [CreateActivityForOtherAppRequest](#cloud.hashing.inspire.v1.CreateActivityForOtherAppRequest) | [CreateActivityForOtherAppResponse](#cloud.hashing.inspire.v1.CreateActivityForOtherAppResponse) |  |
+| GetActivity | [GetActivityRequest](#cloud.hashing.inspire.v1.GetActivityRequest) | [GetActivityResponse](#cloud.hashing.inspire.v1.GetActivityResponse) |  |
+| GetActivityByAppName | [GetActivityByAppNameRequest](#cloud.hashing.inspire.v1.GetActivityByAppNameRequest) | [GetActivityByAppNameResponse](#cloud.hashing.inspire.v1.GetActivityByAppNameResponse) |  |
+| GetActivitiesByApp | [GetActivitiesByAppRequest](#cloud.hashing.inspire.v1.GetActivitiesByAppRequest) | [GetActivitiesByAppResponse](#cloud.hashing.inspire.v1.GetActivitiesByAppResponse) |  |
+| GetActivitiesByOtherApp | [GetActivitiesByOtherAppRequest](#cloud.hashing.inspire.v1.GetActivitiesByOtherAppRequest) | [GetActivitiesByOtherAppResponse](#cloud.hashing.inspire.v1.GetActivitiesByOtherAppResponse) |  |
+| CreateEventCoupon | [CreateEventCouponRequest](#cloud.hashing.inspire.v1.CreateEventCouponRequest) | [CreateEventCouponResponse](#cloud.hashing.inspire.v1.CreateEventCouponResponse) |  |
+| CreateEventCouponForOtherApp | [CreateEventCouponForOtherAppRequest](#cloud.hashing.inspire.v1.CreateEventCouponForOtherAppRequest) | [CreateEventCouponForOtherAppResponse](#cloud.hashing.inspire.v1.CreateEventCouponForOtherAppResponse) |  |
+| GetEventCoupon | [GetEventCouponRequest](#cloud.hashing.inspire.v1.GetEventCouponRequest) | [GetEventCouponResponse](#cloud.hashing.inspire.v1.GetEventCouponResponse) |  |
+| GetEventCouponsByAppActivityEvent | [GetEventCouponsByAppActivityEventRequest](#cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventRequest) | [GetEventCouponsByAppActivityEventResponse](#cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventResponse) |  |
+| GetEventCouponsByApp | [GetEventCouponsByAppRequest](#cloud.hashing.inspire.v1.GetEventCouponsByAppRequest) | [GetEventCouponsByAppResponse](#cloud.hashing.inspire.v1.GetEventCouponsByAppResponse) |  |
 
  
 

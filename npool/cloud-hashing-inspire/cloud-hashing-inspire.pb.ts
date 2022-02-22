@@ -696,6 +696,115 @@ export type GetUserSpecialReductionsByAppReleaserResponse = {
   infos?: UserSpecialReduction[]
 }
 
+export type Activity = {
+  id?: string
+  appID?: string
+  name?: string
+  start?: number
+  end?: number
+}
+
+export type CreateActivityRequest = {
+  info?: Activity
+}
+
+export type CreateActivityResponse = {
+  info?: Activity
+}
+
+export type CreateActivityForOtherAppRequest = {
+  targetAppID?: string
+  info?: Activity
+}
+
+export type CreateActivityForOtherAppResponse = {
+  info?: Activity
+}
+
+export type GetActivityRequest = {
+  id?: string
+}
+
+export type GetActivityResponse = {
+  info?: Activity
+}
+
+export type GetActivityByAppNameRequest = {
+  appID?: string
+  name?: string
+}
+
+export type GetActivityByAppNameResponse = {
+  info?: Activity
+}
+
+export type GetActivitiesByAppRequest = {
+  appID?: string
+}
+
+export type GetActivitiesByAppResponse = {
+  infos?: Activity[]
+}
+
+export type GetActivitiesByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetActivitiesByOtherAppResponse = {
+  infos?: Activity[]
+}
+
+export type EventCoupon = {
+  id?: string
+  appID?: string
+  activityID?: string
+  event?: string
+  couponID?: string
+}
+
+export type CreateEventCouponRequest = {
+  info?: EventCoupon
+}
+
+export type CreateEventCouponResponse = {
+  info?: EventCoupon
+}
+
+export type CreateEventCouponForOtherAppRequest = {
+  targetAppID?: string
+  info?: EventCoupon
+}
+
+export type CreateEventCouponForOtherAppResponse = {
+  info?: EventCoupon
+}
+
+export type GetEventCouponRequest = {
+  id?: string
+}
+
+export type GetEventCouponResponse = {
+  info?: EventCoupon
+}
+
+export type GetEventCouponsByAppActivityEventRequest = {
+  appID?: string
+  activityID?: string
+  event?: string
+}
+
+export type GetEventCouponsByAppActivityEventResponse = {
+  infos?: EventCoupon[]
+}
+
+export type GetEventCouponsByAppRequest = {
+  appID?: string
+}
+
+export type GetEventCouponsByAppResponse = {
+  infos?: EventCoupon[]
+}
+
 export class CloudHashingInspire {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -900,5 +1009,38 @@ export class CloudHashingInspire {
   }
   static UpdateUserSpecialReduction(req: UpdateUserSpecialReductionRequest, initReq?: fm.InitReq): Promise<UpdateUserSpecialReductionResponse> {
     return fm.fetchReq<UpdateUserSpecialReductionRequest, UpdateUserSpecialReductionResponse>(`/v1/update/user/special/reduction`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateActivity(req: CreateActivityRequest, initReq?: fm.InitReq): Promise<CreateActivityResponse> {
+    return fm.fetchReq<CreateActivityRequest, CreateActivityResponse>(`/v1/create/activity`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateActivityForOtherApp(req: CreateActivityForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateActivityForOtherAppResponse> {
+    return fm.fetchReq<CreateActivityForOtherAppRequest, CreateActivityForOtherAppResponse>(`/v1/create/activity/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetActivity(req: GetActivityRequest, initReq?: fm.InitReq): Promise<GetActivityResponse> {
+    return fm.fetchReq<GetActivityRequest, GetActivityResponse>(`/v1/get/activity`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetActivityByAppName(req: GetActivityByAppNameRequest, initReq?: fm.InitReq): Promise<GetActivityByAppNameResponse> {
+    return fm.fetchReq<GetActivityByAppNameRequest, GetActivityByAppNameResponse>(`/v1/get/activity/by/app/name`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetActivitiesByApp(req: GetActivitiesByAppRequest, initReq?: fm.InitReq): Promise<GetActivitiesByAppResponse> {
+    return fm.fetchReq<GetActivitiesByAppRequest, GetActivitiesByAppResponse>(`/v1/get/activities/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetActivitiesByOtherApp(req: GetActivitiesByOtherAppRequest, initReq?: fm.InitReq): Promise<GetActivitiesByOtherAppResponse> {
+    return fm.fetchReq<GetActivitiesByOtherAppRequest, GetActivitiesByOtherAppResponse>(`/v1/get/activities/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateEventCoupon(req: CreateEventCouponRequest, initReq?: fm.InitReq): Promise<CreateEventCouponResponse> {
+    return fm.fetchReq<CreateEventCouponRequest, CreateEventCouponResponse>(`/v1/create/event/coupon`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateEventCouponForOtherApp(req: CreateEventCouponForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateEventCouponForOtherAppResponse> {
+    return fm.fetchReq<CreateEventCouponForOtherAppRequest, CreateEventCouponForOtherAppResponse>(`/v1/create/event/coupon/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetEventCoupon(req: GetEventCouponRequest, initReq?: fm.InitReq): Promise<GetEventCouponResponse> {
+    return fm.fetchReq<GetEventCouponRequest, GetEventCouponResponse>(`/v1/get/event/coupon`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetEventCouponsByAppActivityEvent(req: GetEventCouponsByAppActivityEventRequest, initReq?: fm.InitReq): Promise<GetEventCouponsByAppActivityEventResponse> {
+    return fm.fetchReq<GetEventCouponsByAppActivityEventRequest, GetEventCouponsByAppActivityEventResponse>(`/v1/get/event/coupons/by/app/activity/event`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetEventCouponsByApp(req: GetEventCouponsByAppRequest, initReq?: fm.InitReq): Promise<GetEventCouponsByAppResponse> {
+    return fm.fetchReq<GetEventCouponsByAppRequest, GetEventCouponsByAppResponse>(`/v1/get/event/coupons/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
