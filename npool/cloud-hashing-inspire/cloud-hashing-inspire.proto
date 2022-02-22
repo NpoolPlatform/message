@@ -161,6 +161,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc CreateUserInvitationCodeForOtherAppUser(CreateUserInvitationCodeForOtherAppUserRequest) returns (CreateUserInvitationCodeForOtherAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/invitation/code/for/other/app/user"
+            body: "*"
+        };
+    }
     rpc GetUserInvitationCode(GetUserInvitationCodeRequest) returns (GetUserInvitationCodeResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/invitation/code"
@@ -170,6 +176,24 @@ service CloudHashingInspire {
     rpc GetUserInvitationCodeByAppUser(GetUserInvitationCodeByAppUserRequest) returns (GetUserInvitationCodeByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/invitation/code/by/app/user"
+            body: "*"
+        };
+    }
+    rpc GetUserInvitationCodes(GetUserInvitationCodesRequest) returns (GetUserInvitationCodesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/invitation/codes"
+            body: "*"
+        };
+    }
+    rpc GetUserInvitationCodesByApp(GetUserInvitationCodesByAppRequest) returns (GetUserInvitationCodesByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/invitation/codes/by/app"
+            body: "*"
+        };
+    }
+    rpc GetUserInvitationCodesByOtherApp(GetUserInvitationCodesByOtherAppRequest) returns (GetUserInvitationCodesByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/invitation/codes/by/other/app"
             body: "*"
         };
     }
@@ -611,6 +635,16 @@ message CreateUserInvitationCodeResponse {
     UserInvitationCode Info = 10;
 }
 
+message CreateUserInvitationCodeForOtherAppUserRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
+    UserInvitationCode Info = 30;
+}
+
+message CreateUserInvitationCodeForOtherAppUserResponse {
+    UserInvitationCode Info = 10;
+}
+
 message GetUserInvitationCodeRequest {
     string ID = 10;
 }
@@ -626,6 +660,29 @@ message GetUserInvitationCodeByAppUserRequest {
 
 message GetUserInvitationCodeByAppUserResponse {
     UserInvitationCode Info = 10;
+}
+
+message GetUserInvitationCodesRequest {
+}
+
+message GetUserInvitationCodesResponse {
+    repeated UserInvitationCode Infos = 10;
+}
+
+message GetUserInvitationCodesByAppRequest {
+    string AppID = 10;
+}
+
+message GetUserInvitationCodesByAppResponse {
+    repeated UserInvitationCode Infos = 10;
+}
+
+message GetUserInvitationCodesByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetUserInvitationCodesByOtherAppResponse {
+    repeated UserInvitationCode Infos = 10;
 }
 
 message GetUserInvitationCodeByCodeRequest {

@@ -213,6 +213,16 @@ export type CreateUserInvitationCodeResponse = {
   info?: UserInvitationCode
 }
 
+export type CreateUserInvitationCodeForOtherAppUserRequest = {
+  targetAppID?: string
+  targetUserID?: string
+  info?: UserInvitationCode
+}
+
+export type CreateUserInvitationCodeForOtherAppUserResponse = {
+  info?: UserInvitationCode
+}
+
 export type GetUserInvitationCodeRequest = {
   id?: string
 }
@@ -228,6 +238,29 @@ export type GetUserInvitationCodeByAppUserRequest = {
 
 export type GetUserInvitationCodeByAppUserResponse = {
   info?: UserInvitationCode
+}
+
+export type GetUserInvitationCodesRequest = {
+}
+
+export type GetUserInvitationCodesResponse = {
+  infos?: UserInvitationCode[]
+}
+
+export type GetUserInvitationCodesByAppRequest = {
+  appID?: string
+}
+
+export type GetUserInvitationCodesByAppResponse = {
+  infos?: UserInvitationCode[]
+}
+
+export type GetUserInvitationCodesByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetUserInvitationCodesByOtherAppResponse = {
+  infos?: UserInvitationCode[]
 }
 
 export type GetUserInvitationCodeByCodeRequest = {
@@ -727,11 +760,23 @@ export class CloudHashingInspire {
   static CreateUserInvitationCode(req: CreateUserInvitationCodeRequest, initReq?: fm.InitReq): Promise<CreateUserInvitationCodeResponse> {
     return fm.fetchReq<CreateUserInvitationCodeRequest, CreateUserInvitationCodeResponse>(`/v1/create/user/invitation/code`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateUserInvitationCodeForOtherAppUser(req: CreateUserInvitationCodeForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateUserInvitationCodeForOtherAppUserResponse> {
+    return fm.fetchReq<CreateUserInvitationCodeForOtherAppUserRequest, CreateUserInvitationCodeForOtherAppUserResponse>(`/v1/create/user/invitation/code/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetUserInvitationCode(req: GetUserInvitationCodeRequest, initReq?: fm.InitReq): Promise<GetUserInvitationCodeResponse> {
     return fm.fetchReq<GetUserInvitationCodeRequest, GetUserInvitationCodeResponse>(`/v1/get/user/invitation/code`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserInvitationCodeByAppUser(req: GetUserInvitationCodeByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserInvitationCodeByAppUserResponse> {
     return fm.fetchReq<GetUserInvitationCodeByAppUserRequest, GetUserInvitationCodeByAppUserResponse>(`/v1/get/user/invitation/code/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserInvitationCodes(req: GetUserInvitationCodesRequest, initReq?: fm.InitReq): Promise<GetUserInvitationCodesResponse> {
+    return fm.fetchReq<GetUserInvitationCodesRequest, GetUserInvitationCodesResponse>(`/v1/get/user/invitation/codes`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserInvitationCodesByApp(req: GetUserInvitationCodesByAppRequest, initReq?: fm.InitReq): Promise<GetUserInvitationCodesByAppResponse> {
+    return fm.fetchReq<GetUserInvitationCodesByAppRequest, GetUserInvitationCodesByAppResponse>(`/v1/get/user/invitation/codes/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserInvitationCodesByOtherApp(req: GetUserInvitationCodesByOtherAppRequest, initReq?: fm.InitReq): Promise<GetUserInvitationCodesByOtherAppResponse> {
+    return fm.fetchReq<GetUserInvitationCodesByOtherAppRequest, GetUserInvitationCodesByOtherAppResponse>(`/v1/get/user/invitation/codes/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserInvitationCodeByCode(req: GetUserInvitationCodeByCodeRequest, initReq?: fm.InitReq): Promise<GetUserInvitationCodeByCodeResponse> {
     return fm.fetchReq<GetUserInvitationCodeByCodeRequest, GetUserInvitationCodeByCodeResponse>(`/v1/get/user/invitation/code/by/code`, {...initReq, method: "POST", body: JSON.stringify(req)})

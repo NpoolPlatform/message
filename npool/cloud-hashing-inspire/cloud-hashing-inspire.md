@@ -28,6 +28,8 @@
     - [CreatePurchaseInvitationResponse](#cloud.hashing.inspire.v1.CreatePurchaseInvitationResponse)
     - [CreateRegistrationInvitationRequest](#cloud.hashing.inspire.v1.CreateRegistrationInvitationRequest)
     - [CreateRegistrationInvitationResponse](#cloud.hashing.inspire.v1.CreateRegistrationInvitationResponse)
+    - [CreateUserInvitationCodeForOtherAppUserRequest](#cloud.hashing.inspire.v1.CreateUserInvitationCodeForOtherAppUserRequest)
+    - [CreateUserInvitationCodeForOtherAppUserResponse](#cloud.hashing.inspire.v1.CreateUserInvitationCodeForOtherAppUserResponse)
     - [CreateUserInvitationCodeRequest](#cloud.hashing.inspire.v1.CreateUserInvitationCodeRequest)
     - [CreateUserInvitationCodeResponse](#cloud.hashing.inspire.v1.CreateUserInvitationCodeResponse)
     - [CreateUserKpiSettingRequest](#cloud.hashing.inspire.v1.CreateUserKpiSettingRequest)
@@ -102,6 +104,12 @@
     - [GetUserInvitationCodeByCodeResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodeByCodeResponse)
     - [GetUserInvitationCodeRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodeRequest)
     - [GetUserInvitationCodeResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodeResponse)
+    - [GetUserInvitationCodesByAppRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodesByAppRequest)
+    - [GetUserInvitationCodesByAppResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodesByAppResponse)
+    - [GetUserInvitationCodesByOtherAppRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodesByOtherAppRequest)
+    - [GetUserInvitationCodesByOtherAppResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodesByOtherAppResponse)
+    - [GetUserInvitationCodesRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodesRequest)
+    - [GetUserInvitationCodesResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodesResponse)
     - [GetUserKpiSettingByAppGoodRequest](#cloud.hashing.inspire.v1.GetUserKpiSettingByAppGoodRequest)
     - [GetUserKpiSettingByAppGoodResponse](#cloud.hashing.inspire.v1.GetUserKpiSettingByAppGoodResponse)
     - [GetUserKpiSettingRequest](#cloud.hashing.inspire.v1.GetUserKpiSettingRequest)
@@ -171,6 +179,8 @@
     - [CreatePurchaseInvitationResponse](#cloud.hashing.inspire.v1.CreatePurchaseInvitationResponse)
     - [CreateRegistrationInvitationRequest](#cloud.hashing.inspire.v1.CreateRegistrationInvitationRequest)
     - [CreateRegistrationInvitationResponse](#cloud.hashing.inspire.v1.CreateRegistrationInvitationResponse)
+    - [CreateUserInvitationCodeForOtherAppUserRequest](#cloud.hashing.inspire.v1.CreateUserInvitationCodeForOtherAppUserRequest)
+    - [CreateUserInvitationCodeForOtherAppUserResponse](#cloud.hashing.inspire.v1.CreateUserInvitationCodeForOtherAppUserResponse)
     - [CreateUserInvitationCodeRequest](#cloud.hashing.inspire.v1.CreateUserInvitationCodeRequest)
     - [CreateUserInvitationCodeResponse](#cloud.hashing.inspire.v1.CreateUserInvitationCodeResponse)
     - [CreateUserKpiSettingRequest](#cloud.hashing.inspire.v1.CreateUserKpiSettingRequest)
@@ -245,6 +255,12 @@
     - [GetUserInvitationCodeByCodeResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodeByCodeResponse)
     - [GetUserInvitationCodeRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodeRequest)
     - [GetUserInvitationCodeResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodeResponse)
+    - [GetUserInvitationCodesByAppRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodesByAppRequest)
+    - [GetUserInvitationCodesByAppResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodesByAppResponse)
+    - [GetUserInvitationCodesByOtherAppRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodesByOtherAppRequest)
+    - [GetUserInvitationCodesByOtherAppResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodesByOtherAppResponse)
+    - [GetUserInvitationCodesRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodesRequest)
+    - [GetUserInvitationCodesResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodesResponse)
     - [GetUserKpiSettingByAppGoodRequest](#cloud.hashing.inspire.v1.GetUserKpiSettingByAppGoodRequest)
     - [GetUserKpiSettingByAppGoodResponse](#cloud.hashing.inspire.v1.GetUserKpiSettingByAppGoodResponse)
     - [GetUserKpiSettingRequest](#cloud.hashing.inspire.v1.GetUserKpiSettingRequest)
@@ -698,6 +714,38 @@
 
 
 
+<a name="cloud.hashing.inspire.v1.CreateUserInvitationCodeForOtherAppUserRequest"></a>
+
+### CreateUserInvitationCodeForOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Info | [UserInvitationCode](#cloud.hashing.inspire.v1.UserInvitationCode) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateUserInvitationCodeForOtherAppUserResponse"></a>
+
+### CreateUserInvitationCodeForOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserInvitationCode](#cloud.hashing.inspire.v1.UserInvitationCode) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.CreateUserInvitationCodeRequest"></a>
 
 ### CreateUserInvitationCodeRequest
@@ -1828,6 +1876,91 @@
 
 
 
+<a name="cloud.hashing.inspire.v1.GetUserInvitationCodesByAppRequest"></a>
+
+### GetUserInvitationCodesByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetUserInvitationCodesByAppResponse"></a>
+
+### GetUserInvitationCodesByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserInvitationCode](#cloud.hashing.inspire.v1.UserInvitationCode) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetUserInvitationCodesByOtherAppRequest"></a>
+
+### GetUserInvitationCodesByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetUserInvitationCodesByOtherAppResponse"></a>
+
+### GetUserInvitationCodesByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserInvitationCode](#cloud.hashing.inspire.v1.UserInvitationCode) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetUserInvitationCodesRequest"></a>
+
+### GetUserInvitationCodesRequest
+
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetUserInvitationCodesResponse"></a>
+
+### GetUserInvitationCodesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserInvitationCode](#cloud.hashing.inspire.v1.UserInvitationCode) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.GetUserKpiSettingByAppGoodRequest"></a>
 
 ### GetUserKpiSettingByAppGoodRequest
@@ -2513,8 +2646,12 @@ Service Name
 | GetRegistrationInvitationsByAppInviter | [GetRegistrationInvitationsByAppInviterRequest](#cloud.hashing.inspire.v1.GetRegistrationInvitationsByAppInviterRequest) | [GetRegistrationInvitationsByAppInviterResponse](#cloud.hashing.inspire.v1.GetRegistrationInvitationsByAppInviterResponse) |  |
 | GetRegistrationInvitationByAppInvitee | [GetRegistrationInvitationByAppInviteeRequest](#cloud.hashing.inspire.v1.GetRegistrationInvitationByAppInviteeRequest) | [GetRegistrationInvitationByAppInviteeResponse](#cloud.hashing.inspire.v1.GetRegistrationInvitationByAppInviteeResponse) |  |
 | CreateUserInvitationCode | [CreateUserInvitationCodeRequest](#cloud.hashing.inspire.v1.CreateUserInvitationCodeRequest) | [CreateUserInvitationCodeResponse](#cloud.hashing.inspire.v1.CreateUserInvitationCodeResponse) |  |
+| CreateUserInvitationCodeForOtherAppUser | [CreateUserInvitationCodeForOtherAppUserRequest](#cloud.hashing.inspire.v1.CreateUserInvitationCodeForOtherAppUserRequest) | [CreateUserInvitationCodeForOtherAppUserResponse](#cloud.hashing.inspire.v1.CreateUserInvitationCodeForOtherAppUserResponse) |  |
 | GetUserInvitationCode | [GetUserInvitationCodeRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodeRequest) | [GetUserInvitationCodeResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodeResponse) |  |
 | GetUserInvitationCodeByAppUser | [GetUserInvitationCodeByAppUserRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodeByAppUserRequest) | [GetUserInvitationCodeByAppUserResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodeByAppUserResponse) |  |
+| GetUserInvitationCodes | [GetUserInvitationCodesRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodesRequest) | [GetUserInvitationCodesResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodesResponse) |  |
+| GetUserInvitationCodesByApp | [GetUserInvitationCodesByAppRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodesByAppRequest) | [GetUserInvitationCodesByAppResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodesByAppResponse) |  |
+| GetUserInvitationCodesByOtherApp | [GetUserInvitationCodesByOtherAppRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodesByOtherAppRequest) | [GetUserInvitationCodesByOtherAppResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodesByOtherAppResponse) |  |
 | GetUserInvitationCodeByCode | [GetUserInvitationCodeByCodeRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodeByCodeRequest) | [GetUserInvitationCodeByCodeResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodeByCodeResponse) |  |
 | CreateCouponAllocated | [CreateCouponAllocatedRequest](#cloud.hashing.inspire.v1.CreateCouponAllocatedRequest) | [CreateCouponAllocatedResponse](#cloud.hashing.inspire.v1.CreateCouponAllocatedResponse) |  |
 | GetCouponAllocated | [GetCouponAllocatedRequest](#cloud.hashing.inspire.v1.GetCouponAllocatedRequest) | [GetCouponAllocatedResponse](#cloud.hashing.inspire.v1.GetCouponAllocatedResponse) |  |
@@ -2962,6 +3099,38 @@ Service Name
 
 
 
+<a name="cloud.hashing.inspire.v1.CreateUserInvitationCodeForOtherAppUserRequest"></a>
+
+### CreateUserInvitationCodeForOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Info | [UserInvitationCode](#cloud.hashing.inspire.v1.UserInvitationCode) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateUserInvitationCodeForOtherAppUserResponse"></a>
+
+### CreateUserInvitationCodeForOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserInvitationCode](#cloud.hashing.inspire.v1.UserInvitationCode) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.CreateUserInvitationCodeRequest"></a>
 
 ### CreateUserInvitationCodeRequest
@@ -4092,6 +4261,91 @@ Service Name
 
 
 
+<a name="cloud.hashing.inspire.v1.GetUserInvitationCodesByAppRequest"></a>
+
+### GetUserInvitationCodesByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetUserInvitationCodesByAppResponse"></a>
+
+### GetUserInvitationCodesByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserInvitationCode](#cloud.hashing.inspire.v1.UserInvitationCode) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetUserInvitationCodesByOtherAppRequest"></a>
+
+### GetUserInvitationCodesByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetUserInvitationCodesByOtherAppResponse"></a>
+
+### GetUserInvitationCodesByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserInvitationCode](#cloud.hashing.inspire.v1.UserInvitationCode) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetUserInvitationCodesRequest"></a>
+
+### GetUserInvitationCodesRequest
+
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetUserInvitationCodesResponse"></a>
+
+### GetUserInvitationCodesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserInvitationCode](#cloud.hashing.inspire.v1.UserInvitationCode) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.GetUserKpiSettingByAppGoodRequest"></a>
 
 ### GetUserKpiSettingByAppGoodRequest
@@ -4777,8 +5031,12 @@ Service Name
 | GetRegistrationInvitationsByAppInviter | [GetRegistrationInvitationsByAppInviterRequest](#cloud.hashing.inspire.v1.GetRegistrationInvitationsByAppInviterRequest) | [GetRegistrationInvitationsByAppInviterResponse](#cloud.hashing.inspire.v1.GetRegistrationInvitationsByAppInviterResponse) |  |
 | GetRegistrationInvitationByAppInvitee | [GetRegistrationInvitationByAppInviteeRequest](#cloud.hashing.inspire.v1.GetRegistrationInvitationByAppInviteeRequest) | [GetRegistrationInvitationByAppInviteeResponse](#cloud.hashing.inspire.v1.GetRegistrationInvitationByAppInviteeResponse) |  |
 | CreateUserInvitationCode | [CreateUserInvitationCodeRequest](#cloud.hashing.inspire.v1.CreateUserInvitationCodeRequest) | [CreateUserInvitationCodeResponse](#cloud.hashing.inspire.v1.CreateUserInvitationCodeResponse) |  |
+| CreateUserInvitationCodeForOtherAppUser | [CreateUserInvitationCodeForOtherAppUserRequest](#cloud.hashing.inspire.v1.CreateUserInvitationCodeForOtherAppUserRequest) | [CreateUserInvitationCodeForOtherAppUserResponse](#cloud.hashing.inspire.v1.CreateUserInvitationCodeForOtherAppUserResponse) |  |
 | GetUserInvitationCode | [GetUserInvitationCodeRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodeRequest) | [GetUserInvitationCodeResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodeResponse) |  |
 | GetUserInvitationCodeByAppUser | [GetUserInvitationCodeByAppUserRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodeByAppUserRequest) | [GetUserInvitationCodeByAppUserResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodeByAppUserResponse) |  |
+| GetUserInvitationCodes | [GetUserInvitationCodesRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodesRequest) | [GetUserInvitationCodesResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodesResponse) |  |
+| GetUserInvitationCodesByApp | [GetUserInvitationCodesByAppRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodesByAppRequest) | [GetUserInvitationCodesByAppResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodesByAppResponse) |  |
+| GetUserInvitationCodesByOtherApp | [GetUserInvitationCodesByOtherAppRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodesByOtherAppRequest) | [GetUserInvitationCodesByOtherAppResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodesByOtherAppResponse) |  |
 | GetUserInvitationCodeByCode | [GetUserInvitationCodeByCodeRequest](#cloud.hashing.inspire.v1.GetUserInvitationCodeByCodeRequest) | [GetUserInvitationCodeByCodeResponse](#cloud.hashing.inspire.v1.GetUserInvitationCodeByCodeResponse) |  |
 | CreateCouponAllocated | [CreateCouponAllocatedRequest](#cloud.hashing.inspire.v1.CreateCouponAllocatedRequest) | [CreateCouponAllocatedResponse](#cloud.hashing.inspire.v1.CreateCouponAllocatedResponse) |  |
 | GetCouponAllocated | [GetCouponAllocatedRequest](#cloud.hashing.inspire.v1.GetCouponAllocatedRequest) | [GetCouponAllocatedResponse](#cloud.hashing.inspire.v1.GetCouponAllocatedResponse) |  |

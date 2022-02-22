@@ -331,6 +331,38 @@
         ]
       }
     },
+    "/v1/create/user/invitation/code/for/other/app/user": {
+      "post": {
+        "operationId": "CloudHashingInspire_CreateUserInvitationCodeForOtherAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserInvitationCodeForOtherAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserInvitationCodeForOtherAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/create/user/kpi/setting": {
       "post": {
         "operationId": "CloudHashingInspire_CreateUserKpiSetting",
@@ -1483,6 +1515,102 @@
         ]
       }
     },
+    "/v1/get/user/invitation/codes": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetUserInvitationCodes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserInvitationCodesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserInvitationCodesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/get/user/invitation/codes/by/app": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetUserInvitationCodesByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserInvitationCodesByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserInvitationCodesByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/get/user/invitation/codes/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetUserInvitationCodesByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserInvitationCodesByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserInvitationCodesByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/get/user/kpi/setting": {
       "post": {
         "operationId": "CloudHashingInspire_GetUserKpiSetting",
@@ -2385,6 +2513,28 @@
         }
       }
     },
+    "v1CreateUserInvitationCodeForOtherAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1UserInvitationCode"
+        }
+      }
+    },
+    "v1CreateUserInvitationCodeForOtherAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserInvitationCode"
+        }
+      }
+    },
     "v1CreateUserInvitationCodeRequest": {
       "type": "object",
       "properties": {
@@ -3072,6 +3222,58 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1UserInvitationCode"
+        }
+      }
+    },
+    "v1GetUserInvitationCodesByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserInvitationCodesByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserInvitationCode"
+          }
+        }
+      }
+    },
+    "v1GetUserInvitationCodesByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserInvitationCodesByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserInvitationCode"
+          }
+        }
+      }
+    },
+    "v1GetUserInvitationCodesRequest": {
+      "type": "object"
+    },
+    "v1GetUserInvitationCodesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserInvitationCode"
+          }
         }
       }
     },
