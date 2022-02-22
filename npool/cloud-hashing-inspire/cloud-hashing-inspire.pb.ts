@@ -713,6 +713,14 @@ export type CreateActivityResponse = {
   info?: Activity
 }
 
+export type UpdateActivityRequest = {
+  info?: Activity
+}
+
+export type UpdateActivityResponse = {
+  info?: Activity
+}
+
 export type CreateActivityForOtherAppRequest = {
   targetAppID?: string
   info?: Activity
@@ -1016,6 +1024,9 @@ export class CloudHashingInspire {
   }
   static CreateActivityForOtherApp(req: CreateActivityForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateActivityForOtherAppResponse> {
     return fm.fetchReq<CreateActivityForOtherAppRequest, CreateActivityForOtherAppResponse>(`/v1/create/activity/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateActivity(req: UpdateActivityRequest, initReq?: fm.InitReq): Promise<UpdateActivityResponse> {
+    return fm.fetchReq<UpdateActivityRequest, UpdateActivityResponse>(`/v1/update/activity`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetActivity(req: GetActivityRequest, initReq?: fm.InitReq): Promise<GetActivityResponse> {
     return fm.fetchReq<GetActivityRequest, GetActivityResponse>(`/v1/get/activity`, {...initReq, method: "POST", body: JSON.stringify(req)})

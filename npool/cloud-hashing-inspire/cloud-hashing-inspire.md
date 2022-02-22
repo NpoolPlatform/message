@@ -152,6 +152,8 @@
     - [NewUserRewardSettingDetail](#cloud.hashing.inspire.v1.NewUserRewardSettingDetail)
     - [PurchaseInvitation](#cloud.hashing.inspire.v1.PurchaseInvitation)
     - [RegistrationInvitation](#cloud.hashing.inspire.v1.RegistrationInvitation)
+    - [UpdateActivityRequest](#cloud.hashing.inspire.v1.UpdateActivityRequest)
+    - [UpdateActivityResponse](#cloud.hashing.inspire.v1.UpdateActivityResponse)
     - [UpdateAgencySettingRequest](#cloud.hashing.inspire.v1.UpdateAgencySettingRequest)
     - [UpdateAgencySettingResponse](#cloud.hashing.inspire.v1.UpdateAgencySettingResponse)
     - [UpdateAppCouponSettingRequest](#cloud.hashing.inspire.v1.UpdateAppCouponSettingRequest)
@@ -329,6 +331,8 @@
     - [NewUserRewardSettingDetail](#cloud.hashing.inspire.v1.NewUserRewardSettingDetail)
     - [PurchaseInvitation](#cloud.hashing.inspire.v1.PurchaseInvitation)
     - [RegistrationInvitation](#cloud.hashing.inspire.v1.RegistrationInvitation)
+    - [UpdateActivityRequest](#cloud.hashing.inspire.v1.UpdateActivityRequest)
+    - [UpdateActivityResponse](#cloud.hashing.inspire.v1.UpdateActivityResponse)
     - [UpdateAgencySettingRequest](#cloud.hashing.inspire.v1.UpdateAgencySettingRequest)
     - [UpdateAgencySettingResponse](#cloud.hashing.inspire.v1.UpdateAgencySettingResponse)
     - [UpdateAppCouponSettingRequest](#cloud.hashing.inspire.v1.UpdateAppCouponSettingRequest)
@@ -2676,6 +2680,36 @@ request body and response
 
 
 
+<a name="cloud.hashing.inspire.v1.UpdateActivityRequest"></a>
+
+### UpdateActivityRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.UpdateActivityResponse"></a>
+
+### UpdateActivityResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.UpdateAgencySettingRequest"></a>
 
 ### UpdateAgencySettingRequest
@@ -3149,6 +3183,7 @@ Service Name
 | UpdateUserSpecialReduction | [UpdateUserSpecialReductionRequest](#cloud.hashing.inspire.v1.UpdateUserSpecialReductionRequest) | [UpdateUserSpecialReductionResponse](#cloud.hashing.inspire.v1.UpdateUserSpecialReductionResponse) |  |
 | CreateActivity | [CreateActivityRequest](#cloud.hashing.inspire.v1.CreateActivityRequest) | [CreateActivityResponse](#cloud.hashing.inspire.v1.CreateActivityResponse) |  |
 | CreateActivityForOtherApp | [CreateActivityForOtherAppRequest](#cloud.hashing.inspire.v1.CreateActivityForOtherAppRequest) | [CreateActivityForOtherAppResponse](#cloud.hashing.inspire.v1.CreateActivityForOtherAppResponse) |  |
+| UpdateActivity | [UpdateActivityRequest](#cloud.hashing.inspire.v1.UpdateActivityRequest) | [UpdateActivityResponse](#cloud.hashing.inspire.v1.UpdateActivityResponse) |  |
 | GetActivity | [GetActivityRequest](#cloud.hashing.inspire.v1.GetActivityRequest) | [GetActivityResponse](#cloud.hashing.inspire.v1.GetActivityResponse) |  |
 | GetActivityByAppName | [GetActivityByAppNameRequest](#cloud.hashing.inspire.v1.GetActivityByAppNameRequest) | [GetActivityByAppNameResponse](#cloud.hashing.inspire.v1.GetActivityByAppNameResponse) |  |
 | GetActivitiesByApp | [GetActivitiesByAppRequest](#cloud.hashing.inspire.v1.GetActivitiesByAppRequest) | [GetActivitiesByAppResponse](#cloud.hashing.inspire.v1.GetActivitiesByAppResponse) |  |
@@ -5478,6 +5513,36 @@ request body and response
 
 
 
+<a name="cloud.hashing.inspire.v1.UpdateActivityRequest"></a>
+
+### UpdateActivityRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.UpdateActivityResponse"></a>
+
+### UpdateActivityResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Activity](#cloud.hashing.inspire.v1.Activity) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.UpdateAgencySettingRequest"></a>
 
 ### UpdateAgencySettingRequest
@@ -5951,6 +6016,7 @@ Service Name
 | UpdateUserSpecialReduction | [UpdateUserSpecialReductionRequest](#cloud.hashing.inspire.v1.UpdateUserSpecialReductionRequest) | [UpdateUserSpecialReductionResponse](#cloud.hashing.inspire.v1.UpdateUserSpecialReductionResponse) |  |
 | CreateActivity | [CreateActivityRequest](#cloud.hashing.inspire.v1.CreateActivityRequest) | [CreateActivityResponse](#cloud.hashing.inspire.v1.CreateActivityResponse) |  |
 | CreateActivityForOtherApp | [CreateActivityForOtherAppRequest](#cloud.hashing.inspire.v1.CreateActivityForOtherAppRequest) | [CreateActivityForOtherAppResponse](#cloud.hashing.inspire.v1.CreateActivityForOtherAppResponse) |  |
+| UpdateActivity | [UpdateActivityRequest](#cloud.hashing.inspire.v1.UpdateActivityRequest) | [UpdateActivityResponse](#cloud.hashing.inspire.v1.UpdateActivityResponse) |  |
 | GetActivity | [GetActivityRequest](#cloud.hashing.inspire.v1.GetActivityRequest) | [GetActivityResponse](#cloud.hashing.inspire.v1.GetActivityResponse) |  |
 | GetActivityByAppName | [GetActivityByAppNameRequest](#cloud.hashing.inspire.v1.GetActivityByAppNameRequest) | [GetActivityByAppNameResponse](#cloud.hashing.inspire.v1.GetActivityByAppNameResponse) |  |
 | GetActivitiesByApp | [GetActivitiesByAppRequest](#cloud.hashing.inspire.v1.GetActivitiesByAppRequest) | [GetActivitiesByAppResponse](#cloud.hashing.inspire.v1.GetActivitiesByAppResponse) |  |

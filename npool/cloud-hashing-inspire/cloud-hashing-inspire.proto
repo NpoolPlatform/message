@@ -445,6 +445,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc UpdateActivity (UpdateActivityRequest) returns (UpdateActivityResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/activity"
+            body: "*"
+        };
+    }
     rpc GetActivity (GetActivityRequest) returns (GetActivityResponse) {
         option (google.api.http) = {
             post: "/v1/get/activity"
@@ -1206,6 +1212,14 @@ message CreateActivityRequest {
 }
 
 message CreateActivityResponse {
+    Activity Info = 10;
+}
+
+message UpdateActivityRequest {
+    Activity Info = 10;
+}
+
+message UpdateActivityResponse {
     Activity Info = 10;
 }
 

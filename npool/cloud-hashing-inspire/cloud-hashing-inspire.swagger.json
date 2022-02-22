@@ -2187,6 +2187,38 @@
         ]
       }
     },
+    "/v1/update/activity": {
+      "post": {
+        "operationId": "CloudHashingInspire_UpdateActivity",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateActivityResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateActivityRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/update/agency/setting": {
       "post": {
         "operationId": "CloudHashingInspire_UpdateAgencySetting",
@@ -4118,6 +4150,22 @@
         "CreateAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UpdateActivityRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Activity"
+        }
+      }
+    },
+    "v1UpdateActivityResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Activity"
         }
       }
     },

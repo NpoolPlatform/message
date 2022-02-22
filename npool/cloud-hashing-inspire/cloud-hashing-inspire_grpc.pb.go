@@ -95,6 +95,7 @@ type CloudHashingInspireClient interface {
 	UpdateUserSpecialReduction(ctx context.Context, in *UpdateUserSpecialReductionRequest, opts ...grpc.CallOption) (*UpdateUserSpecialReductionResponse, error)
 	CreateActivity(ctx context.Context, in *CreateActivityRequest, opts ...grpc.CallOption) (*CreateActivityResponse, error)
 	CreateActivityForOtherApp(ctx context.Context, in *CreateActivityForOtherAppRequest, opts ...grpc.CallOption) (*CreateActivityForOtherAppResponse, error)
+	UpdateActivity(ctx context.Context, in *UpdateActivityRequest, opts ...grpc.CallOption) (*UpdateActivityResponse, error)
 	GetActivity(ctx context.Context, in *GetActivityRequest, opts ...grpc.CallOption) (*GetActivityResponse, error)
 	GetActivityByAppName(ctx context.Context, in *GetActivityByAppNameRequest, opts ...grpc.CallOption) (*GetActivityByAppNameResponse, error)
 	GetActivitiesByApp(ctx context.Context, in *GetActivitiesByAppRequest, opts ...grpc.CallOption) (*GetActivitiesByAppResponse, error)
@@ -744,6 +745,15 @@ func (c *cloudHashingInspireClient) CreateActivityForOtherApp(ctx context.Contex
 	return out, nil
 }
 
+func (c *cloudHashingInspireClient) UpdateActivity(ctx context.Context, in *UpdateActivityRequest, opts ...grpc.CallOption) (*UpdateActivityResponse, error) {
+	out := new(UpdateActivityResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateActivity", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingInspireClient) GetActivity(ctx context.Context, in *GetActivityRequest, opts ...grpc.CallOption) (*GetActivityResponse, error) {
 	out := new(GetActivityResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetActivity", in, out, opts...)
@@ -900,6 +910,7 @@ type CloudHashingInspireServer interface {
 	UpdateUserSpecialReduction(context.Context, *UpdateUserSpecialReductionRequest) (*UpdateUserSpecialReductionResponse, error)
 	CreateActivity(context.Context, *CreateActivityRequest) (*CreateActivityResponse, error)
 	CreateActivityForOtherApp(context.Context, *CreateActivityForOtherAppRequest) (*CreateActivityForOtherAppResponse, error)
+	UpdateActivity(context.Context, *UpdateActivityRequest) (*UpdateActivityResponse, error)
 	GetActivity(context.Context, *GetActivityRequest) (*GetActivityResponse, error)
 	GetActivityByAppName(context.Context, *GetActivityByAppNameRequest) (*GetActivityByAppNameResponse, error)
 	GetActivitiesByApp(context.Context, *GetActivitiesByAppRequest) (*GetActivitiesByAppResponse, error)
@@ -1125,6 +1136,9 @@ func (UnimplementedCloudHashingInspireServer) CreateActivity(context.Context, *C
 }
 func (UnimplementedCloudHashingInspireServer) CreateActivityForOtherApp(context.Context, *CreateActivityForOtherAppRequest) (*CreateActivityForOtherAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateActivityForOtherApp not implemented")
+}
+func (UnimplementedCloudHashingInspireServer) UpdateActivity(context.Context, *UpdateActivityRequest) (*UpdateActivityResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateActivity not implemented")
 }
 func (UnimplementedCloudHashingInspireServer) GetActivity(context.Context, *GetActivityRequest) (*GetActivityResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetActivity not implemented")
@@ -2426,6 +2440,24 @@ func _CloudHashingInspire_CreateActivityForOtherApp_Handler(srv interface{}, ctx
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingInspire_UpdateActivity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateActivityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).UpdateActivity(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateActivity",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).UpdateActivity(ctx, req.(*UpdateActivityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingInspire_GetActivity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetActivityRequest)
 	if err := dec(in); err != nil {
@@ -2874,6 +2906,10 @@ var CloudHashingInspire_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateActivityForOtherApp",
 			Handler:    _CloudHashingInspire_CreateActivityForOtherApp_Handler,
+		},
+		{
+			MethodName: "UpdateActivity",
+			Handler:    _CloudHashingInspire_UpdateActivity_Handler,
 		},
 		{
 			MethodName: "GetActivity",
