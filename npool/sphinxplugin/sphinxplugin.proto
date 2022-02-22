@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/sphinxplugin";
 
 enum CoinType {
   CoinTypeUnKnow    = 0;
-  CoinTypefil       = 1;
+  CoinTypefilecoin  = 1;
   CoinTypebtc       = 2;
   CoinTypeeth       = 3;
   CoinTypespacemesh = 4;

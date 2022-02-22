@@ -6,7 +6,7 @@
 
 export enum CoinType {
   CoinTypeUnKnow = "CoinTypeUnKnow",
-  CoinTypefil = "CoinTypefil",
+  CoinTypefilecoin = "CoinTypefilecoin",
   CoinTypebtc = "CoinTypebtc",
   CoinTypeeth = "CoinTypeeth",
   CoinTypespacemesh = "CoinTypespacemesh",

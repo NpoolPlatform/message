@@ -248,7 +248,7 @@
       "type": "string",
       "enum": [
         "CoinTypeUnKnow",
-        "CoinTypefil",
+        "CoinTypefilecoin",
         "CoinTypebtc",
         "CoinTypeeth",
         "CoinTypespacemesh"

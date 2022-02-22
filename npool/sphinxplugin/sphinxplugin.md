@@ -177,7 +177,7 @@ fil
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | CoinTypeUnKnow | 0 |  |
-| CoinTypefil | 1 |  |
+| CoinTypefilecoin | 1 |  |
 | CoinTypebtc | 2 |  |
 | CoinTypeeth | 3 |  |
 | CoinTypespacemesh | 4 |  |
@@ -339,7 +339,7 @@ fil
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | CoinTypeUnKnow | 0 |  |
-| CoinTypefil | 1 |  |
+| CoinTypefilecoin | 1 |  |
 | CoinTypebtc | 2 |  |
 | CoinTypeeth | 3 |  |
 | CoinTypespacemesh | 4 |  |
