@@ -506,6 +506,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc GetEventCouponsByOtherApp (GetEventCouponsByOtherAppRequest) returns (GetEventCouponsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/event/coupons/by/other/app"
+            body: "*"
+        };
+    }
 }
 
 // request body and response
@@ -1313,5 +1319,13 @@ message GetEventCouponsByAppRequest {
 }
 
 message GetEventCouponsByAppResponse {
+    repeated EventCoupon Infos = 10;
+}
+
+message GetEventCouponsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetEventCouponsByOtherAppResponse {
     repeated EventCoupon Infos = 10;
 }

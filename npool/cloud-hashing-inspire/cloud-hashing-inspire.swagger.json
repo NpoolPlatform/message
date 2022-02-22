@@ -1451,6 +1451,38 @@
         ]
       }
     },
+    "/v1/get/event/coupons/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetEventCouponsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetEventCouponsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetEventCouponsByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/get/new/user/reward/setting": {
       "post": {
         "operationId": "CloudHashingInspire_GetNewUserRewardSetting",
@@ -3669,6 +3701,25 @@
       }
     },
     "v1GetEventCouponsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EventCoupon"
+          }
+        }
+      }
+    },
+    "v1GetEventCouponsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetEventCouponsByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {

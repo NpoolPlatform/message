@@ -105,6 +105,7 @@ type CloudHashingInspireClient interface {
 	GetEventCoupon(ctx context.Context, in *GetEventCouponRequest, opts ...grpc.CallOption) (*GetEventCouponResponse, error)
 	GetEventCouponsByAppActivityEvent(ctx context.Context, in *GetEventCouponsByAppActivityEventRequest, opts ...grpc.CallOption) (*GetEventCouponsByAppActivityEventResponse, error)
 	GetEventCouponsByApp(ctx context.Context, in *GetEventCouponsByAppRequest, opts ...grpc.CallOption) (*GetEventCouponsByAppResponse, error)
+	GetEventCouponsByOtherApp(ctx context.Context, in *GetEventCouponsByOtherAppRequest, opts ...grpc.CallOption) (*GetEventCouponsByOtherAppResponse, error)
 }
 
 type cloudHashingInspireClient struct {
@@ -835,6 +836,15 @@ func (c *cloudHashingInspireClient) GetEventCouponsByApp(ctx context.Context, in
 	return out, nil
 }
 
+func (c *cloudHashingInspireClient) GetEventCouponsByOtherApp(ctx context.Context, in *GetEventCouponsByOtherAppRequest, opts ...grpc.CallOption) (*GetEventCouponsByOtherAppResponse, error) {
+	out := new(GetEventCouponsByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetEventCouponsByOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CloudHashingInspireServer is the server API for CloudHashingInspire service.
 // All implementations must embed UnimplementedCloudHashingInspireServer
 // for forward compatibility
@@ -920,6 +930,7 @@ type CloudHashingInspireServer interface {
 	GetEventCoupon(context.Context, *GetEventCouponRequest) (*GetEventCouponResponse, error)
 	GetEventCouponsByAppActivityEvent(context.Context, *GetEventCouponsByAppActivityEventRequest) (*GetEventCouponsByAppActivityEventResponse, error)
 	GetEventCouponsByApp(context.Context, *GetEventCouponsByAppRequest) (*GetEventCouponsByAppResponse, error)
+	GetEventCouponsByOtherApp(context.Context, *GetEventCouponsByOtherAppRequest) (*GetEventCouponsByOtherAppResponse, error)
 	mustEmbedUnimplementedCloudHashingInspireServer()
 }
 
@@ -1166,6 +1177,9 @@ func (UnimplementedCloudHashingInspireServer) GetEventCouponsByAppActivityEvent(
 }
 func (UnimplementedCloudHashingInspireServer) GetEventCouponsByApp(context.Context, *GetEventCouponsByAppRequest) (*GetEventCouponsByAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEventCouponsByApp not implemented")
+}
+func (UnimplementedCloudHashingInspireServer) GetEventCouponsByOtherApp(context.Context, *GetEventCouponsByOtherAppRequest) (*GetEventCouponsByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetEventCouponsByOtherApp not implemented")
 }
 func (UnimplementedCloudHashingInspireServer) mustEmbedUnimplementedCloudHashingInspireServer() {}
 
@@ -2620,6 +2634,24 @@ func _CloudHashingInspire_GetEventCouponsByApp_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingInspire_GetEventCouponsByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEventCouponsByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).GetEventCouponsByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/GetEventCouponsByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).GetEventCouponsByOtherApp(ctx, req.(*GetEventCouponsByOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CloudHashingInspire_ServiceDesc is the grpc.ServiceDesc for CloudHashingInspire service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -2946,6 +2978,10 @@ var CloudHashingInspire_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetEventCouponsByApp",
 			Handler:    _CloudHashingInspire_GetEventCouponsByApp_Handler,
+		},
+		{
+			MethodName: "GetEventCouponsByOtherApp",
+			Handler:    _CloudHashingInspire_GetEventCouponsByOtherApp_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -814,6 +814,14 @@ export type GetEventCouponsByAppResponse = {
   infos?: EventCoupon[]
 }
 
+export type GetEventCouponsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetEventCouponsByOtherAppResponse = {
+  infos?: EventCoupon[]
+}
+
 export class CloudHashingInspire {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -1054,5 +1062,8 @@ export class CloudHashingInspire {
   }
   static GetEventCouponsByApp(req: GetEventCouponsByAppRequest, initReq?: fm.InitReq): Promise<GetEventCouponsByAppResponse> {
     return fm.fetchReq<GetEventCouponsByAppRequest, GetEventCouponsByAppResponse>(`/v1/get/event/coupons/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetEventCouponsByOtherApp(req: GetEventCouponsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetEventCouponsByOtherAppResponse> {
+    return fm.fetchReq<GetEventCouponsByOtherAppRequest, GetEventCouponsByOtherAppResponse>(`/v1/get/event/coupons/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
