@@ -882,6 +882,40 @@ func local_request_CloudHashingInspire_CreateUserInvitationCodeForOtherAppUser_0
 
 }
 
+func request_CloudHashingInspire_CreateUserInvitationCodeForAppOtherUser_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateUserInvitationCodeForAppOtherUserRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.CreateUserInvitationCodeForAppOtherUser(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func local_request_CloudHashingInspire_CreateUserInvitationCodeForAppOtherUser_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateUserInvitationCodeForAppOtherUserRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := server.CreateUserInvitationCodeForAppOtherUser(ctx, &protoReq)
+	return msg, metadata, err
+
+}
+
 func request_CloudHashingInspire_GetUserInvitationCode_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetUserInvitationCodeRequest
 	var metadata runtime.ServerMetadata
@@ -2891,6 +2925,29 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 
 	})
 
+	mux.Handle("POST", pattern_CloudHashingInspire_CreateUserInvitationCodeForAppOtherUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateUserInvitationCodeForAppOtherUser", runtime.WithHTTPPathPattern("/v1/create/user/invitation/code/for/app/other/user"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_CloudHashingInspire_CreateUserInvitationCodeForAppOtherUser_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_CloudHashingInspire_CreateUserInvitationCodeForAppOtherUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
 	mux.Handle("POST", pattern_CloudHashingInspire_GetUserInvitationCode_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -4398,6 +4455,26 @@ func RegisterCloudHashingInspireHandlerClient(ctx context.Context, mux *runtime.
 
 	})
 
+	mux.Handle("POST", pattern_CloudHashingInspire_CreateUserInvitationCodeForAppOtherUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateUserInvitationCodeForAppOtherUser", runtime.WithHTTPPathPattern("/v1/create/user/invitation/code/for/app/other/user"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_CloudHashingInspire_CreateUserInvitationCodeForAppOtherUser_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_CloudHashingInspire_CreateUserInvitationCodeForAppOtherUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
 	mux.Handle("POST", pattern_CloudHashingInspire_GetUserInvitationCode_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -5292,6 +5369,8 @@ var (
 
 	pattern_CloudHashingInspire_CreateUserInvitationCodeForOtherAppUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 7, 2, 2}, []string{"v1", "create", "user", "invitation", "code", "for", "other", "app"}, ""))
 
+	pattern_CloudHashingInspire_CreateUserInvitationCodeForAppOtherUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 7, 2, 2}, []string{"v1", "create", "user", "invitation", "code", "for", "app", "other"}, ""))
+
 	pattern_CloudHashingInspire_GetUserInvitationCode_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "user", "invitation", "code"}, ""))
 
 	pattern_CloudHashingInspire_GetUserInvitationCodeByAppUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 2}, []string{"v1", "get", "user", "invitation", "code", "by", "app"}, ""))
@@ -5427,6 +5506,8 @@ var (
 	forward_CloudHashingInspire_CreateUserInvitationCode_0 = runtime.ForwardResponseMessage
 
 	forward_CloudHashingInspire_CreateUserInvitationCodeForOtherAppUser_0 = runtime.ForwardResponseMessage
+
+	forward_CloudHashingInspire_CreateUserInvitationCodeForAppOtherUser_0 = runtime.ForwardResponseMessage
 
 	forward_CloudHashingInspire_GetUserInvitationCode_0 = runtime.ForwardResponseMessage
 
