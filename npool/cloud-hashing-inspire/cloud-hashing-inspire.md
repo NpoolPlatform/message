@@ -168,6 +168,8 @@
     - [UpdateDefaultKpiSettingResponse](#cloud.hashing.inspire.v1.UpdateDefaultKpiSettingResponse)
     - [UpdateDiscountPoolRequest](#cloud.hashing.inspire.v1.UpdateDiscountPoolRequest)
     - [UpdateDiscountPoolResponse](#cloud.hashing.inspire.v1.UpdateDiscountPoolResponse)
+    - [UpdateEventCouponRequest](#cloud.hashing.inspire.v1.UpdateEventCouponRequest)
+    - [UpdateEventCouponResponse](#cloud.hashing.inspire.v1.UpdateEventCouponResponse)
     - [UpdateNewUserRewardSettingRequest](#cloud.hashing.inspire.v1.UpdateNewUserRewardSettingRequest)
     - [UpdateNewUserRewardSettingResponse](#cloud.hashing.inspire.v1.UpdateNewUserRewardSettingResponse)
     - [UpdatePurchaseInvitationRequest](#cloud.hashing.inspire.v1.UpdatePurchaseInvitationRequest)
@@ -349,6 +351,8 @@
     - [UpdateDefaultKpiSettingResponse](#cloud.hashing.inspire.v1.UpdateDefaultKpiSettingResponse)
     - [UpdateDiscountPoolRequest](#cloud.hashing.inspire.v1.UpdateDiscountPoolRequest)
     - [UpdateDiscountPoolResponse](#cloud.hashing.inspire.v1.UpdateDiscountPoolResponse)
+    - [UpdateEventCouponRequest](#cloud.hashing.inspire.v1.UpdateEventCouponRequest)
+    - [UpdateEventCouponResponse](#cloud.hashing.inspire.v1.UpdateEventCouponResponse)
     - [UpdateNewUserRewardSettingRequest](#cloud.hashing.inspire.v1.UpdateNewUserRewardSettingRequest)
     - [UpdateNewUserRewardSettingResponse](#cloud.hashing.inspire.v1.UpdateNewUserRewardSettingResponse)
     - [UpdatePurchaseInvitationRequest](#cloud.hashing.inspire.v1.UpdatePurchaseInvitationRequest)
@@ -2924,6 +2928,36 @@ request body and response
 
 
 
+<a name="cloud.hashing.inspire.v1.UpdateEventCouponRequest"></a>
+
+### UpdateEventCouponRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.UpdateEventCouponResponse"></a>
+
+### UpdateEventCouponResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.UpdateNewUserRewardSettingRequest"></a>
 
 ### UpdateNewUserRewardSettingRequest
@@ -3224,6 +3258,7 @@ Service Name
 | GetActivitiesByOtherApp | [GetActivitiesByOtherAppRequest](#cloud.hashing.inspire.v1.GetActivitiesByOtherAppRequest) | [GetActivitiesByOtherAppResponse](#cloud.hashing.inspire.v1.GetActivitiesByOtherAppResponse) |  |
 | CreateEventCoupon | [CreateEventCouponRequest](#cloud.hashing.inspire.v1.CreateEventCouponRequest) | [CreateEventCouponResponse](#cloud.hashing.inspire.v1.CreateEventCouponResponse) |  |
 | CreateEventCouponForOtherApp | [CreateEventCouponForOtherAppRequest](#cloud.hashing.inspire.v1.CreateEventCouponForOtherAppRequest) | [CreateEventCouponForOtherAppResponse](#cloud.hashing.inspire.v1.CreateEventCouponForOtherAppResponse) |  |
+| UpdateEventCoupon | [UpdateEventCouponRequest](#cloud.hashing.inspire.v1.UpdateEventCouponRequest) | [UpdateEventCouponResponse](#cloud.hashing.inspire.v1.UpdateEventCouponResponse) |  |
 | GetEventCoupon | [GetEventCouponRequest](#cloud.hashing.inspire.v1.GetEventCouponRequest) | [GetEventCouponResponse](#cloud.hashing.inspire.v1.GetEventCouponResponse) |  |
 | GetEventCouponsByAppActivityEvent | [GetEventCouponsByAppActivityEventRequest](#cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventRequest) | [GetEventCouponsByAppActivityEventResponse](#cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventResponse) |  |
 | GetEventCouponsByApp | [GetEventCouponsByAppRequest](#cloud.hashing.inspire.v1.GetEventCouponsByAppRequest) | [GetEventCouponsByAppResponse](#cloud.hashing.inspire.v1.GetEventCouponsByAppResponse) |  |
@@ -5788,6 +5823,36 @@ request body and response
 
 
 
+<a name="cloud.hashing.inspire.v1.UpdateEventCouponRequest"></a>
+
+### UpdateEventCouponRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.UpdateEventCouponResponse"></a>
+
+### UpdateEventCouponResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [EventCoupon](#cloud.hashing.inspire.v1.EventCoupon) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.UpdateNewUserRewardSettingRequest"></a>
 
 ### UpdateNewUserRewardSettingRequest
@@ -6088,6 +6153,7 @@ Service Name
 | GetActivitiesByOtherApp | [GetActivitiesByOtherAppRequest](#cloud.hashing.inspire.v1.GetActivitiesByOtherAppRequest) | [GetActivitiesByOtherAppResponse](#cloud.hashing.inspire.v1.GetActivitiesByOtherAppResponse) |  |
 | CreateEventCoupon | [CreateEventCouponRequest](#cloud.hashing.inspire.v1.CreateEventCouponRequest) | [CreateEventCouponResponse](#cloud.hashing.inspire.v1.CreateEventCouponResponse) |  |
 | CreateEventCouponForOtherApp | [CreateEventCouponForOtherAppRequest](#cloud.hashing.inspire.v1.CreateEventCouponForOtherAppRequest) | [CreateEventCouponForOtherAppResponse](#cloud.hashing.inspire.v1.CreateEventCouponForOtherAppResponse) |  |
+| UpdateEventCoupon | [UpdateEventCouponRequest](#cloud.hashing.inspire.v1.UpdateEventCouponRequest) | [UpdateEventCouponResponse](#cloud.hashing.inspire.v1.UpdateEventCouponResponse) |  |
 | GetEventCoupon | [GetEventCouponRequest](#cloud.hashing.inspire.v1.GetEventCouponRequest) | [GetEventCouponResponse](#cloud.hashing.inspire.v1.GetEventCouponResponse) |  |
 | GetEventCouponsByAppActivityEvent | [GetEventCouponsByAppActivityEventRequest](#cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventRequest) | [GetEventCouponsByAppActivityEventResponse](#cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventResponse) |  |
 | GetEventCouponsByApp | [GetEventCouponsByAppRequest](#cloud.hashing.inspire.v1.GetEventCouponsByAppRequest) | [GetEventCouponsByAppResponse](#cloud.hashing.inspire.v1.GetEventCouponsByAppResponse) |  |

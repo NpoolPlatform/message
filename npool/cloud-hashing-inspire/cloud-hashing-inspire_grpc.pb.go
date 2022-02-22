@@ -102,6 +102,7 @@ type CloudHashingInspireClient interface {
 	GetActivitiesByOtherApp(ctx context.Context, in *GetActivitiesByOtherAppRequest, opts ...grpc.CallOption) (*GetActivitiesByOtherAppResponse, error)
 	CreateEventCoupon(ctx context.Context, in *CreateEventCouponRequest, opts ...grpc.CallOption) (*CreateEventCouponResponse, error)
 	CreateEventCouponForOtherApp(ctx context.Context, in *CreateEventCouponForOtherAppRequest, opts ...grpc.CallOption) (*CreateEventCouponForOtherAppResponse, error)
+	UpdateEventCoupon(ctx context.Context, in *UpdateEventCouponRequest, opts ...grpc.CallOption) (*UpdateEventCouponResponse, error)
 	GetEventCoupon(ctx context.Context, in *GetEventCouponRequest, opts ...grpc.CallOption) (*GetEventCouponResponse, error)
 	GetEventCouponsByAppActivityEvent(ctx context.Context, in *GetEventCouponsByAppActivityEventRequest, opts ...grpc.CallOption) (*GetEventCouponsByAppActivityEventResponse, error)
 	GetEventCouponsByApp(ctx context.Context, in *GetEventCouponsByAppRequest, opts ...grpc.CallOption) (*GetEventCouponsByAppResponse, error)
@@ -809,6 +810,15 @@ func (c *cloudHashingInspireClient) CreateEventCouponForOtherApp(ctx context.Con
 	return out, nil
 }
 
+func (c *cloudHashingInspireClient) UpdateEventCoupon(ctx context.Context, in *UpdateEventCouponRequest, opts ...grpc.CallOption) (*UpdateEventCouponResponse, error) {
+	out := new(UpdateEventCouponResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateEventCoupon", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingInspireClient) GetEventCoupon(ctx context.Context, in *GetEventCouponRequest, opts ...grpc.CallOption) (*GetEventCouponResponse, error) {
 	out := new(GetEventCouponResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetEventCoupon", in, out, opts...)
@@ -927,6 +937,7 @@ type CloudHashingInspireServer interface {
 	GetActivitiesByOtherApp(context.Context, *GetActivitiesByOtherAppRequest) (*GetActivitiesByOtherAppResponse, error)
 	CreateEventCoupon(context.Context, *CreateEventCouponRequest) (*CreateEventCouponResponse, error)
 	CreateEventCouponForOtherApp(context.Context, *CreateEventCouponForOtherAppRequest) (*CreateEventCouponForOtherAppResponse, error)
+	UpdateEventCoupon(context.Context, *UpdateEventCouponRequest) (*UpdateEventCouponResponse, error)
 	GetEventCoupon(context.Context, *GetEventCouponRequest) (*GetEventCouponResponse, error)
 	GetEventCouponsByAppActivityEvent(context.Context, *GetEventCouponsByAppActivityEventRequest) (*GetEventCouponsByAppActivityEventResponse, error)
 	GetEventCouponsByApp(context.Context, *GetEventCouponsByAppRequest) (*GetEventCouponsByAppResponse, error)
@@ -1168,6 +1179,9 @@ func (UnimplementedCloudHashingInspireServer) CreateEventCoupon(context.Context,
 }
 func (UnimplementedCloudHashingInspireServer) CreateEventCouponForOtherApp(context.Context, *CreateEventCouponForOtherAppRequest) (*CreateEventCouponForOtherAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateEventCouponForOtherApp not implemented")
+}
+func (UnimplementedCloudHashingInspireServer) UpdateEventCoupon(context.Context, *UpdateEventCouponRequest) (*UpdateEventCouponResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateEventCoupon not implemented")
 }
 func (UnimplementedCloudHashingInspireServer) GetEventCoupon(context.Context, *GetEventCouponRequest) (*GetEventCouponResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEventCoupon not implemented")
@@ -2580,6 +2594,24 @@ func _CloudHashingInspire_CreateEventCouponForOtherApp_Handler(srv interface{}, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingInspire_UpdateEventCoupon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateEventCouponRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).UpdateEventCoupon(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateEventCoupon",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).UpdateEventCoupon(ctx, req.(*UpdateEventCouponRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingInspire_GetEventCoupon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetEventCouponRequest)
 	if err := dec(in); err != nil {
@@ -2966,6 +2998,10 @@ var CloudHashingInspire_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateEventCouponForOtherApp",
 			Handler:    _CloudHashingInspire_CreateEventCouponForOtherApp_Handler,
+		},
+		{
+			MethodName: "UpdateEventCoupon",
+			Handler:    _CloudHashingInspire_UpdateEventCoupon_Handler,
 		},
 		{
 			MethodName: "GetEventCoupon",

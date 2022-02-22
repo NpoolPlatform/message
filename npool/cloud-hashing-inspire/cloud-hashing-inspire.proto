@@ -488,6 +488,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc UpdateEventCoupon (UpdateEventCouponRequest) returns (UpdateEventCouponResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/event/coupon"
+            body: "*"
+        };
+    }
     rpc GetEventCoupon (GetEventCouponRequest) returns (GetEventCouponResponse) {
         option (google.api.http) = {
             post: "/v1/get/event/coupon"
@@ -1293,6 +1299,14 @@ message CreateEventCouponForOtherAppRequest {
 }
 
 message CreateEventCouponForOtherAppResponse {
+    EventCoupon Info = 10;
+}
+
+message UpdateEventCouponRequest {
+    EventCoupon Info = 10;
+}
+
+message UpdateEventCouponResponse {
     EventCoupon Info = 10;
 }
 

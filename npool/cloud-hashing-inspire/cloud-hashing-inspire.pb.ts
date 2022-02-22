@@ -788,6 +788,14 @@ export type CreateEventCouponForOtherAppResponse = {
   info?: EventCoupon
 }
 
+export type UpdateEventCouponRequest = {
+  info?: EventCoupon
+}
+
+export type UpdateEventCouponResponse = {
+  info?: EventCoupon
+}
+
 export type GetEventCouponRequest = {
   id?: string
 }
@@ -1053,6 +1061,9 @@ export class CloudHashingInspire {
   }
   static CreateEventCouponForOtherApp(req: CreateEventCouponForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateEventCouponForOtherAppResponse> {
     return fm.fetchReq<CreateEventCouponForOtherAppRequest, CreateEventCouponForOtherAppResponse>(`/v1/create/event/coupon/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateEventCoupon(req: UpdateEventCouponRequest, initReq?: fm.InitReq): Promise<UpdateEventCouponResponse> {
+    return fm.fetchReq<UpdateEventCouponRequest, UpdateEventCouponResponse>(`/v1/update/event/coupon`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetEventCoupon(req: GetEventCouponRequest, initReq?: fm.InitReq): Promise<GetEventCouponResponse> {
     return fm.fetchReq<GetEventCouponRequest, GetEventCouponResponse>(`/v1/get/event/coupon`, {...initReq, method: "POST", body: JSON.stringify(req)})
