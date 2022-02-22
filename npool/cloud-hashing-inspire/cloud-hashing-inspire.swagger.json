@@ -2584,6 +2584,9 @@
         "AppID": {
           "type": "string"
         },
+        "CreatedBy": {
+          "type": "string"
+        },
         "Name": {
           "type": "string"
         },

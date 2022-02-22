@@ -1195,9 +1195,10 @@ message GetUserSpecialReductionsByAppReleaserResponse {
 message Activity {
     string ID = 10;
     string AppID = 20;
-    string Name = 30;
-    uint32 Start = 40;
-    uint32 End = 50;
+    string CreatedBy = 30;
+    string Name = 40;
+    uint32 Start = 50;
+    uint32 End = 60;
 }
 
 message CreateActivityRequest {

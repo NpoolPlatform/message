@@ -699,6 +699,7 @@ export type GetUserSpecialReductionsByAppReleaserResponse = {
 export type Activity = {
   id?: string
   appID?: string
+  createdBy?: string
   name?: string
   start?: number
   end?: number
