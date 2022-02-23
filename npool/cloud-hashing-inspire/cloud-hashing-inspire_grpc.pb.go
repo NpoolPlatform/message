@@ -66,10 +66,13 @@ type CloudHashingInspireClient interface {
 	GetCouponsAllocatedDetailByApp(ctx context.Context, in *GetCouponsAllocatedDetailByAppRequest, opts ...grpc.CallOption) (*GetCouponsAllocatedDetailByAppResponse, error)
 	GetCouponsAllocatedDetailByAppUser(ctx context.Context, in *GetCouponsAllocatedDetailByAppUserRequest, opts ...grpc.CallOption) (*GetCouponsAllocatedDetailByAppUserResponse, error)
 	CreateCouponPool(ctx context.Context, in *CreateCouponPoolRequest, opts ...grpc.CallOption) (*CreateCouponPoolResponse, error)
+	CreateCouponPoolForOtherApp(ctx context.Context, in *CreateCouponPoolForOtherAppRequest, opts ...grpc.CallOption) (*CreateCouponPoolForOtherAppResponse, error)
 	UpdateCouponPool(ctx context.Context, in *UpdateCouponPoolRequest, opts ...grpc.CallOption) (*UpdateCouponPoolResponse, error)
 	GetCouponPool(ctx context.Context, in *GetCouponPoolRequest, opts ...grpc.CallOption) (*GetCouponPoolResponse, error)
 	GetCouponPoolsByApp(ctx context.Context, in *GetCouponPoolsByAppRequest, opts ...grpc.CallOption) (*GetCouponPoolsByAppResponse, error)
+	GetCouponPoolsByOtherApp(ctx context.Context, in *GetCouponPoolsByOtherAppRequest, opts ...grpc.CallOption) (*GetCouponPoolsByOtherAppResponse, error)
 	GetCouponPoolsByAppReleaser(ctx context.Context, in *GetCouponPoolsByAppReleaserRequest, opts ...grpc.CallOption) (*GetCouponPoolsByAppReleaserResponse, error)
+	GetCouponPoolsByOtherAppReleaser(ctx context.Context, in *GetCouponPoolsByOtherAppReleaserRequest, opts ...grpc.CallOption) (*GetCouponPoolsByOtherAppReleaserResponse, error)
 	CreateDiscountPool(ctx context.Context, in *CreateDiscountPoolRequest, opts ...grpc.CallOption) (*CreateDiscountPoolResponse, error)
 	UpdateDiscountPool(ctx context.Context, in *UpdateDiscountPoolRequest, opts ...grpc.CallOption) (*UpdateDiscountPoolResponse, error)
 	GetDiscountPool(ctx context.Context, in *GetDiscountPoolRequest, opts ...grpc.CallOption) (*GetDiscountPoolResponse, error)
@@ -486,6 +489,15 @@ func (c *cloudHashingInspireClient) CreateCouponPool(ctx context.Context, in *Cr
 	return out, nil
 }
 
+func (c *cloudHashingInspireClient) CreateCouponPoolForOtherApp(ctx context.Context, in *CreateCouponPoolForOtherAppRequest, opts ...grpc.CallOption) (*CreateCouponPoolForOtherAppResponse, error) {
+	out := new(CreateCouponPoolForOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateCouponPoolForOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingInspireClient) UpdateCouponPool(ctx context.Context, in *UpdateCouponPoolRequest, opts ...grpc.CallOption) (*UpdateCouponPoolResponse, error) {
 	out := new(UpdateCouponPoolResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateCouponPool", in, out, opts...)
@@ -513,9 +525,27 @@ func (c *cloudHashingInspireClient) GetCouponPoolsByApp(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *cloudHashingInspireClient) GetCouponPoolsByOtherApp(ctx context.Context, in *GetCouponPoolsByOtherAppRequest, opts ...grpc.CallOption) (*GetCouponPoolsByOtherAppResponse, error) {
+	out := new(GetCouponPoolsByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetCouponPoolsByOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingInspireClient) GetCouponPoolsByAppReleaser(ctx context.Context, in *GetCouponPoolsByAppReleaserRequest, opts ...grpc.CallOption) (*GetCouponPoolsByAppReleaserResponse, error) {
 	out := new(GetCouponPoolsByAppReleaserResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetCouponPoolsByAppReleaser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingInspireClient) GetCouponPoolsByOtherAppReleaser(ctx context.Context, in *GetCouponPoolsByOtherAppReleaserRequest, opts ...grpc.CallOption) (*GetCouponPoolsByOtherAppReleaserResponse, error) {
+	out := new(GetCouponPoolsByOtherAppReleaserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetCouponPoolsByOtherAppReleaser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -901,10 +931,13 @@ type CloudHashingInspireServer interface {
 	GetCouponsAllocatedDetailByApp(context.Context, *GetCouponsAllocatedDetailByAppRequest) (*GetCouponsAllocatedDetailByAppResponse, error)
 	GetCouponsAllocatedDetailByAppUser(context.Context, *GetCouponsAllocatedDetailByAppUserRequest) (*GetCouponsAllocatedDetailByAppUserResponse, error)
 	CreateCouponPool(context.Context, *CreateCouponPoolRequest) (*CreateCouponPoolResponse, error)
+	CreateCouponPoolForOtherApp(context.Context, *CreateCouponPoolForOtherAppRequest) (*CreateCouponPoolForOtherAppResponse, error)
 	UpdateCouponPool(context.Context, *UpdateCouponPoolRequest) (*UpdateCouponPoolResponse, error)
 	GetCouponPool(context.Context, *GetCouponPoolRequest) (*GetCouponPoolResponse, error)
 	GetCouponPoolsByApp(context.Context, *GetCouponPoolsByAppRequest) (*GetCouponPoolsByAppResponse, error)
+	GetCouponPoolsByOtherApp(context.Context, *GetCouponPoolsByOtherAppRequest) (*GetCouponPoolsByOtherAppResponse, error)
 	GetCouponPoolsByAppReleaser(context.Context, *GetCouponPoolsByAppReleaserRequest) (*GetCouponPoolsByAppReleaserResponse, error)
+	GetCouponPoolsByOtherAppReleaser(context.Context, *GetCouponPoolsByOtherAppReleaserRequest) (*GetCouponPoolsByOtherAppReleaserResponse, error)
 	CreateDiscountPool(context.Context, *CreateDiscountPoolRequest) (*CreateDiscountPoolResponse, error)
 	UpdateDiscountPool(context.Context, *UpdateDiscountPoolRequest) (*UpdateDiscountPoolResponse, error)
 	GetDiscountPool(context.Context, *GetDiscountPoolRequest) (*GetDiscountPoolResponse, error)
@@ -1072,6 +1105,9 @@ func (UnimplementedCloudHashingInspireServer) GetCouponsAllocatedDetailByAppUser
 func (UnimplementedCloudHashingInspireServer) CreateCouponPool(context.Context, *CreateCouponPoolRequest) (*CreateCouponPoolResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCouponPool not implemented")
 }
+func (UnimplementedCloudHashingInspireServer) CreateCouponPoolForOtherApp(context.Context, *CreateCouponPoolForOtherAppRequest) (*CreateCouponPoolForOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCouponPoolForOtherApp not implemented")
+}
 func (UnimplementedCloudHashingInspireServer) UpdateCouponPool(context.Context, *UpdateCouponPoolRequest) (*UpdateCouponPoolResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCouponPool not implemented")
 }
@@ -1081,8 +1117,14 @@ func (UnimplementedCloudHashingInspireServer) GetCouponPool(context.Context, *Ge
 func (UnimplementedCloudHashingInspireServer) GetCouponPoolsByApp(context.Context, *GetCouponPoolsByAppRequest) (*GetCouponPoolsByAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCouponPoolsByApp not implemented")
 }
+func (UnimplementedCloudHashingInspireServer) GetCouponPoolsByOtherApp(context.Context, *GetCouponPoolsByOtherAppRequest) (*GetCouponPoolsByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCouponPoolsByOtherApp not implemented")
+}
 func (UnimplementedCloudHashingInspireServer) GetCouponPoolsByAppReleaser(context.Context, *GetCouponPoolsByAppReleaserRequest) (*GetCouponPoolsByAppReleaserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCouponPoolsByAppReleaser not implemented")
+}
+func (UnimplementedCloudHashingInspireServer) GetCouponPoolsByOtherAppReleaser(context.Context, *GetCouponPoolsByOtherAppReleaserRequest) (*GetCouponPoolsByOtherAppReleaserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCouponPoolsByOtherAppReleaser not implemented")
 }
 func (UnimplementedCloudHashingInspireServer) CreateDiscountPool(context.Context, *CreateDiscountPoolRequest) (*CreateDiscountPoolResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateDiscountPool not implemented")
@@ -1946,6 +1988,24 @@ func _CloudHashingInspire_CreateCouponPool_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingInspire_CreateCouponPoolForOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCouponPoolForOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).CreateCouponPoolForOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateCouponPoolForOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).CreateCouponPoolForOtherApp(ctx, req.(*CreateCouponPoolForOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingInspire_UpdateCouponPool_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateCouponPoolRequest)
 	if err := dec(in); err != nil {
@@ -2000,6 +2060,24 @@ func _CloudHashingInspire_GetCouponPoolsByApp_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingInspire_GetCouponPoolsByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCouponPoolsByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).GetCouponPoolsByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/GetCouponPoolsByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).GetCouponPoolsByOtherApp(ctx, req.(*GetCouponPoolsByOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingInspire_GetCouponPoolsByAppReleaser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCouponPoolsByAppReleaserRequest)
 	if err := dec(in); err != nil {
@@ -2014,6 +2092,24 @@ func _CloudHashingInspire_GetCouponPoolsByAppReleaser_Handler(srv interface{}, c
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingInspireServer).GetCouponPoolsByAppReleaser(ctx, req.(*GetCouponPoolsByAppReleaserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingInspire_GetCouponPoolsByOtherAppReleaser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCouponPoolsByOtherAppReleaserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).GetCouponPoolsByOtherAppReleaser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/GetCouponPoolsByOtherAppReleaser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).GetCouponPoolsByOtherAppReleaser(ctx, req.(*GetCouponPoolsByOtherAppReleaserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2856,6 +2952,10 @@ var CloudHashingInspire_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingInspire_CreateCouponPool_Handler,
 		},
 		{
+			MethodName: "CreateCouponPoolForOtherApp",
+			Handler:    _CloudHashingInspire_CreateCouponPoolForOtherApp_Handler,
+		},
+		{
 			MethodName: "UpdateCouponPool",
 			Handler:    _CloudHashingInspire_UpdateCouponPool_Handler,
 		},
@@ -2868,8 +2968,16 @@ var CloudHashingInspire_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingInspire_GetCouponPoolsByApp_Handler,
 		},
 		{
+			MethodName: "GetCouponPoolsByOtherApp",
+			Handler:    _CloudHashingInspire_GetCouponPoolsByOtherApp_Handler,
+		},
+		{
 			MethodName: "GetCouponPoolsByAppReleaser",
 			Handler:    _CloudHashingInspire_GetCouponPoolsByAppReleaser_Handler,
+		},
+		{
+			MethodName: "GetCouponPoolsByOtherAppReleaser",
+			Handler:    _CloudHashingInspire_GetCouponPoolsByOtherAppReleaser_Handler,
 		},
 		{
 			MethodName: "CreateDiscountPool",

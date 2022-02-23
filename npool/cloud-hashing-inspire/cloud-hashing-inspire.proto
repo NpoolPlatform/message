@@ -265,6 +265,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc CreateCouponPoolForOtherApp (CreateCouponPoolForOtherAppRequest) returns (CreateCouponPoolForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/coupon/pool/for/other/app"
+            body: "*"
+        };
+    }
     rpc UpdateCouponPool (UpdateCouponPoolRequest) returns (UpdateCouponPoolResponse) {
         option (google.api.http) = {
             post: "/v1/update/coupon/pool"
@@ -283,9 +289,21 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc GetCouponPoolsByOtherApp (GetCouponPoolsByOtherAppRequest) returns (GetCouponPoolsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coupon/pools/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetCouponPoolsByAppReleaser (GetCouponPoolsByAppReleaserRequest) returns (GetCouponPoolsByAppReleaserResponse) {
         option (google.api.http) = {
             post: "/v1/get/coupon/pools/by/app/releaser"
+            body: "*"
+        };
+    }
+    rpc GetCouponPoolsByOtherAppReleaser (GetCouponPoolsByOtherAppReleaserRequest) returns (GetCouponPoolsByOtherAppReleaserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coupon/pools/by/other/app/releaser"
             body: "*"
         };
     }
@@ -863,6 +881,15 @@ message CreateCouponPoolResponse {
     CouponPool Info = 10;
 }
 
+message CreateCouponPoolForOtherAppRequest {
+    string TargetAppID = 10;
+    CouponPool Info = 20;
+}
+
+message CreateCouponPoolForOtherAppResponse {
+    CouponPool Info = 10;
+}
+
 message UpdateCouponPoolRequest {
     CouponPool Info = 10;
 }
@@ -887,12 +914,29 @@ message GetCouponPoolsByAppResponse {
     repeated CouponPool Infos = 10;
 }
 
+message GetCouponPoolsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetCouponPoolsByOtherAppResponse {
+    repeated CouponPool Infos = 10;
+}
+
 message GetCouponPoolsByAppReleaserRequest {
     string AppID = 10;
     string UserID = 20;
 }
 
 message GetCouponPoolsByAppReleaserResponse {
+    repeated CouponPool Infos = 10;
+}
+
+message GetCouponPoolsByOtherAppReleaserRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
+}
+
+message GetCouponPoolsByOtherAppReleaserResponse {
     repeated CouponPool Infos = 10;
 }
 

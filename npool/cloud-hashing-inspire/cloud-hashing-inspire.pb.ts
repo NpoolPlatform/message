@@ -349,6 +349,15 @@ export type CreateCouponPoolResponse = {
   info?: CouponPool
 }
 
+export type CreateCouponPoolForOtherAppRequest = {
+  targetAppID?: string
+  info?: CouponPool
+}
+
+export type CreateCouponPoolForOtherAppResponse = {
+  info?: CouponPool
+}
+
 export type UpdateCouponPoolRequest = {
   info?: CouponPool
 }
@@ -373,12 +382,29 @@ export type GetCouponPoolsByAppResponse = {
   infos?: CouponPool[]
 }
 
+export type GetCouponPoolsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetCouponPoolsByOtherAppResponse = {
+  infos?: CouponPool[]
+}
+
 export type GetCouponPoolsByAppReleaserRequest = {
   appID?: string
   userID?: string
 }
 
 export type GetCouponPoolsByAppReleaserResponse = {
+  infos?: CouponPool[]
+}
+
+export type GetCouponPoolsByOtherAppReleaserRequest = {
+  targetAppID?: string
+  targetUserID?: string
+}
+
+export type GetCouponPoolsByOtherAppReleaserResponse = {
   infos?: CouponPool[]
 }
 
@@ -955,6 +981,9 @@ export class CloudHashingInspire {
   static CreateCouponPool(req: CreateCouponPoolRequest, initReq?: fm.InitReq): Promise<CreateCouponPoolResponse> {
     return fm.fetchReq<CreateCouponPoolRequest, CreateCouponPoolResponse>(`/v1/create/coupon/pool`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateCouponPoolForOtherApp(req: CreateCouponPoolForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateCouponPoolForOtherAppResponse> {
+    return fm.fetchReq<CreateCouponPoolForOtherAppRequest, CreateCouponPoolForOtherAppResponse>(`/v1/create/coupon/pool/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static UpdateCouponPool(req: UpdateCouponPoolRequest, initReq?: fm.InitReq): Promise<UpdateCouponPoolResponse> {
     return fm.fetchReq<UpdateCouponPoolRequest, UpdateCouponPoolResponse>(`/v1/update/coupon/pool`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -964,8 +993,14 @@ export class CloudHashingInspire {
   static GetCouponPoolsByApp(req: GetCouponPoolsByAppRequest, initReq?: fm.InitReq): Promise<GetCouponPoolsByAppResponse> {
     return fm.fetchReq<GetCouponPoolsByAppRequest, GetCouponPoolsByAppResponse>(`/v1/get/coupon/pools/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetCouponPoolsByOtherApp(req: GetCouponPoolsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetCouponPoolsByOtherAppResponse> {
+    return fm.fetchReq<GetCouponPoolsByOtherAppRequest, GetCouponPoolsByOtherAppResponse>(`/v1/get/coupon/pools/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetCouponPoolsByAppReleaser(req: GetCouponPoolsByAppReleaserRequest, initReq?: fm.InitReq): Promise<GetCouponPoolsByAppReleaserResponse> {
     return fm.fetchReq<GetCouponPoolsByAppReleaserRequest, GetCouponPoolsByAppReleaserResponse>(`/v1/get/coupon/pools/by/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCouponPoolsByOtherAppReleaser(req: GetCouponPoolsByOtherAppReleaserRequest, initReq?: fm.InitReq): Promise<GetCouponPoolsByOtherAppReleaserResponse> {
+    return fm.fetchReq<GetCouponPoolsByOtherAppReleaserRequest, GetCouponPoolsByOtherAppReleaserResponse>(`/v1/get/coupon/pools/by/other/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateDiscountPool(req: CreateDiscountPoolRequest, initReq?: fm.InitReq): Promise<CreateDiscountPoolResponse> {
     return fm.fetchReq<CreateDiscountPoolRequest, CreateDiscountPoolResponse>(`/v1/create/discount/pool`, {...initReq, method: "POST", body: JSON.stringify(req)})
