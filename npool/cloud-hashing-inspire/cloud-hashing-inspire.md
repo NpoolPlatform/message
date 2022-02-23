@@ -1295,6 +1295,7 @@
 | Event | [string](#string) |  |  |
 | CouponID | [string](#string) |  |  |
 | Type | [string](#string) |  |  |
+| Count | [uint32](#uint32) |  |  |
 
 
 
@@ -4510,6 +4511,7 @@ Service Name
 | Event | [string](#string) |  |  |
 | CouponID | [string](#string) |  |  |
 | Type | [string](#string) |  |  |
+| Count | [uint32](#uint32) |  |  |
 
 
 

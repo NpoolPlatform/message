@@ -1433,6 +1433,7 @@ message EventCoupon {
     string Event = 40;
     string CouponID = 50;
     string Type = 60;
+    uint32 Count = 70;
 }
 
 message CreateEventCouponRequest {

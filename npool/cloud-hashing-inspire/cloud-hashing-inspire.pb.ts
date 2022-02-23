@@ -859,6 +859,7 @@ export type EventCoupon = {
   event?: string
   couponID?: string
   type?: string
+  count?: number
 }
 
 export type CreateEventCouponRequest = {

@@ -3656,6 +3656,10 @@
         },
         "Type": {
           "type": "string"
+        },
+        "Count": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
