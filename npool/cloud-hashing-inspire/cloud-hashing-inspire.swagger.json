@@ -171,6 +171,38 @@
         ]
       }
     },
+    "/v1/create/coupon/allocated/for/other/app/user": {
+      "post": {
+        "operationId": "CloudHashingInspire_CreateCouponAllocatedForOtherAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateCouponAllocatedForOtherAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateCouponAllocatedForOtherAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/create/coupon/pool": {
       "post": {
         "operationId": "CloudHashingInspire_CreateCouponPool",
@@ -1283,6 +1315,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetCouponsAllocatedByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/get/coupons/allocated/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetCouponsAllocatedByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCouponsAllocatedByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCouponsAllocatedByOtherAppRequest"
             }
           }
         ],
@@ -3200,6 +3264,28 @@
         }
       }
     },
+    "v1CreateCouponAllocatedForOtherAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1CouponAllocated"
+        }
+      }
+    },
+    "v1CreateCouponAllocatedForOtherAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CouponAllocated"
+        }
+      }
+    },
     "v1CreateCouponAllocatedRequest": {
       "type": "object",
       "properties": {
@@ -3900,6 +3986,25 @@
       }
     },
     "v1GetCouponsAllocatedByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CouponAllocated"
+          }
+        }
+      }
+    },
+    "v1GetCouponsAllocatedByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetCouponsAllocatedByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {

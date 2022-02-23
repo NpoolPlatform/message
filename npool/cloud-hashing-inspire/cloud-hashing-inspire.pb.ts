@@ -296,6 +296,16 @@ export type CreateCouponAllocatedResponse = {
   info?: CouponAllocated
 }
 
+export type CreateCouponAllocatedForOtherAppUserRequest = {
+  targetAppID?: string
+  targetUserID?: string
+  info?: CouponAllocated
+}
+
+export type CreateCouponAllocatedForOtherAppUserResponse = {
+  info?: CouponAllocated
+}
+
 export type GetCouponAllocatedRequest = {
   id?: string
 }
@@ -309,6 +319,14 @@ export type GetCouponsAllocatedByAppRequest = {
 }
 
 export type GetCouponsAllocatedByAppResponse = {
+  infos?: CouponAllocated[]
+}
+
+export type GetCouponsAllocatedByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetCouponsAllocatedByOtherAppResponse = {
   infos?: CouponAllocated[]
 }
 
@@ -1001,11 +1019,17 @@ export class CloudHashingInspire {
   static CreateCouponAllocated(req: CreateCouponAllocatedRequest, initReq?: fm.InitReq): Promise<CreateCouponAllocatedResponse> {
     return fm.fetchReq<CreateCouponAllocatedRequest, CreateCouponAllocatedResponse>(`/v1/create/coupon/allocated`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateCouponAllocatedForOtherAppUser(req: CreateCouponAllocatedForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateCouponAllocatedForOtherAppUserResponse> {
+    return fm.fetchReq<CreateCouponAllocatedForOtherAppUserRequest, CreateCouponAllocatedForOtherAppUserResponse>(`/v1/create/coupon/allocated/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetCouponAllocated(req: GetCouponAllocatedRequest, initReq?: fm.InitReq): Promise<GetCouponAllocatedResponse> {
     return fm.fetchReq<GetCouponAllocatedRequest, GetCouponAllocatedResponse>(`/v1/get/coupon/allocated`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetCouponsAllocatedByApp(req: GetCouponsAllocatedByAppRequest, initReq?: fm.InitReq): Promise<GetCouponsAllocatedByAppResponse> {
     return fm.fetchReq<GetCouponsAllocatedByAppRequest, GetCouponsAllocatedByAppResponse>(`/v1/get/coupons/allocated/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCouponsAllocatedByOtherApp(req: GetCouponsAllocatedByOtherAppRequest, initReq?: fm.InitReq): Promise<GetCouponsAllocatedByOtherAppResponse> {
+    return fm.fetchReq<GetCouponsAllocatedByOtherAppRequest, GetCouponsAllocatedByOtherAppResponse>(`/v1/get/coupons/allocated/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetCouponsAllocatedByAppUser(req: GetCouponsAllocatedByAppUserRequest, initReq?: fm.InitReq): Promise<GetCouponsAllocatedByAppUserResponse> {
     return fm.fetchReq<GetCouponsAllocatedByAppUserRequest, GetCouponsAllocatedByAppUserResponse>(`/v1/get/coupons/allocated/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})

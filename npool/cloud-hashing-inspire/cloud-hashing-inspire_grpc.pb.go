@@ -58,8 +58,10 @@ type CloudHashingInspireClient interface {
 	GetUserInvitationCodesByOtherApp(ctx context.Context, in *GetUserInvitationCodesByOtherAppRequest, opts ...grpc.CallOption) (*GetUserInvitationCodesByOtherAppResponse, error)
 	GetUserInvitationCodeByCode(ctx context.Context, in *GetUserInvitationCodeByCodeRequest, opts ...grpc.CallOption) (*GetUserInvitationCodeByCodeResponse, error)
 	CreateCouponAllocated(ctx context.Context, in *CreateCouponAllocatedRequest, opts ...grpc.CallOption) (*CreateCouponAllocatedResponse, error)
+	CreateCouponAllocatedForOtherAppUser(ctx context.Context, in *CreateCouponAllocatedForOtherAppUserRequest, opts ...grpc.CallOption) (*CreateCouponAllocatedForOtherAppUserResponse, error)
 	GetCouponAllocated(ctx context.Context, in *GetCouponAllocatedRequest, opts ...grpc.CallOption) (*GetCouponAllocatedResponse, error)
 	GetCouponsAllocatedByApp(ctx context.Context, in *GetCouponsAllocatedByAppRequest, opts ...grpc.CallOption) (*GetCouponsAllocatedByAppResponse, error)
+	GetCouponsAllocatedByOtherApp(ctx context.Context, in *GetCouponsAllocatedByOtherAppRequest, opts ...grpc.CallOption) (*GetCouponsAllocatedByOtherAppResponse, error)
 	GetCouponsAllocatedByAppUser(ctx context.Context, in *GetCouponsAllocatedByAppUserRequest, opts ...grpc.CallOption) (*GetCouponsAllocatedByAppUserResponse, error)
 	UpdateCouponAllocated(ctx context.Context, in *UpdateCouponAllocatedRequest, opts ...grpc.CallOption) (*UpdateCouponAllocatedResponse, error)
 	GetCouponAllocatedDetail(ctx context.Context, in *GetCouponAllocatedDetailRequest, opts ...grpc.CallOption) (*GetCouponAllocatedDetailResponse, error)
@@ -422,6 +424,15 @@ func (c *cloudHashingInspireClient) CreateCouponAllocated(ctx context.Context, i
 	return out, nil
 }
 
+func (c *cloudHashingInspireClient) CreateCouponAllocatedForOtherAppUser(ctx context.Context, in *CreateCouponAllocatedForOtherAppUserRequest, opts ...grpc.CallOption) (*CreateCouponAllocatedForOtherAppUserResponse, error) {
+	out := new(CreateCouponAllocatedForOtherAppUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateCouponAllocatedForOtherAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingInspireClient) GetCouponAllocated(ctx context.Context, in *GetCouponAllocatedRequest, opts ...grpc.CallOption) (*GetCouponAllocatedResponse, error) {
 	out := new(GetCouponAllocatedResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetCouponAllocated", in, out, opts...)
@@ -434,6 +445,15 @@ func (c *cloudHashingInspireClient) GetCouponAllocated(ctx context.Context, in *
 func (c *cloudHashingInspireClient) GetCouponsAllocatedByApp(ctx context.Context, in *GetCouponsAllocatedByAppRequest, opts ...grpc.CallOption) (*GetCouponsAllocatedByAppResponse, error) {
 	out := new(GetCouponsAllocatedByAppResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetCouponsAllocatedByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingInspireClient) GetCouponsAllocatedByOtherApp(ctx context.Context, in *GetCouponsAllocatedByOtherAppRequest, opts ...grpc.CallOption) (*GetCouponsAllocatedByOtherAppResponse, error) {
+	out := new(GetCouponsAllocatedByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetCouponsAllocatedByOtherApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -973,8 +993,10 @@ type CloudHashingInspireServer interface {
 	GetUserInvitationCodesByOtherApp(context.Context, *GetUserInvitationCodesByOtherAppRequest) (*GetUserInvitationCodesByOtherAppResponse, error)
 	GetUserInvitationCodeByCode(context.Context, *GetUserInvitationCodeByCodeRequest) (*GetUserInvitationCodeByCodeResponse, error)
 	CreateCouponAllocated(context.Context, *CreateCouponAllocatedRequest) (*CreateCouponAllocatedResponse, error)
+	CreateCouponAllocatedForOtherAppUser(context.Context, *CreateCouponAllocatedForOtherAppUserRequest) (*CreateCouponAllocatedForOtherAppUserResponse, error)
 	GetCouponAllocated(context.Context, *GetCouponAllocatedRequest) (*GetCouponAllocatedResponse, error)
 	GetCouponsAllocatedByApp(context.Context, *GetCouponsAllocatedByAppRequest) (*GetCouponsAllocatedByAppResponse, error)
+	GetCouponsAllocatedByOtherApp(context.Context, *GetCouponsAllocatedByOtherAppRequest) (*GetCouponsAllocatedByOtherAppResponse, error)
 	GetCouponsAllocatedByAppUser(context.Context, *GetCouponsAllocatedByAppUserRequest) (*GetCouponsAllocatedByAppUserResponse, error)
 	UpdateCouponAllocated(context.Context, *UpdateCouponAllocatedRequest) (*UpdateCouponAllocatedResponse, error)
 	GetCouponAllocatedDetail(context.Context, *GetCouponAllocatedDetailRequest) (*GetCouponAllocatedDetailResponse, error)
@@ -1136,11 +1158,17 @@ func (UnimplementedCloudHashingInspireServer) GetUserInvitationCodeByCode(contex
 func (UnimplementedCloudHashingInspireServer) CreateCouponAllocated(context.Context, *CreateCouponAllocatedRequest) (*CreateCouponAllocatedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCouponAllocated not implemented")
 }
+func (UnimplementedCloudHashingInspireServer) CreateCouponAllocatedForOtherAppUser(context.Context, *CreateCouponAllocatedForOtherAppUserRequest) (*CreateCouponAllocatedForOtherAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCouponAllocatedForOtherAppUser not implemented")
+}
 func (UnimplementedCloudHashingInspireServer) GetCouponAllocated(context.Context, *GetCouponAllocatedRequest) (*GetCouponAllocatedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCouponAllocated not implemented")
 }
 func (UnimplementedCloudHashingInspireServer) GetCouponsAllocatedByApp(context.Context, *GetCouponsAllocatedByAppRequest) (*GetCouponsAllocatedByAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCouponsAllocatedByApp not implemented")
+}
+func (UnimplementedCloudHashingInspireServer) GetCouponsAllocatedByOtherApp(context.Context, *GetCouponsAllocatedByOtherAppRequest) (*GetCouponsAllocatedByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCouponsAllocatedByOtherApp not implemented")
 }
 func (UnimplementedCloudHashingInspireServer) GetCouponsAllocatedByAppUser(context.Context, *GetCouponsAllocatedByAppUserRequest) (*GetCouponsAllocatedByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCouponsAllocatedByAppUser not implemented")
@@ -1914,6 +1942,24 @@ func _CloudHashingInspire_CreateCouponAllocated_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingInspire_CreateCouponAllocatedForOtherAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCouponAllocatedForOtherAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).CreateCouponAllocatedForOtherAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateCouponAllocatedForOtherAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).CreateCouponAllocatedForOtherAppUser(ctx, req.(*CreateCouponAllocatedForOtherAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingInspire_GetCouponAllocated_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCouponAllocatedRequest)
 	if err := dec(in); err != nil {
@@ -1946,6 +1992,24 @@ func _CloudHashingInspire_GetCouponsAllocatedByApp_Handler(srv interface{}, ctx 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingInspireServer).GetCouponsAllocatedByApp(ctx, req.(*GetCouponsAllocatedByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingInspire_GetCouponsAllocatedByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCouponsAllocatedByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).GetCouponsAllocatedByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/GetCouponsAllocatedByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).GetCouponsAllocatedByOtherApp(ctx, req.(*GetCouponsAllocatedByOtherAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3080,12 +3144,20 @@ var CloudHashingInspire_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingInspire_CreateCouponAllocated_Handler,
 		},
 		{
+			MethodName: "CreateCouponAllocatedForOtherAppUser",
+			Handler:    _CloudHashingInspire_CreateCouponAllocatedForOtherAppUser_Handler,
+		},
+		{
 			MethodName: "GetCouponAllocated",
 			Handler:    _CloudHashingInspire_GetCouponAllocated_Handler,
 		},
 		{
 			MethodName: "GetCouponsAllocatedByApp",
 			Handler:    _CloudHashingInspire_GetCouponsAllocatedByApp_Handler,
+		},
+		{
+			MethodName: "GetCouponsAllocatedByOtherApp",
+			Handler:    _CloudHashingInspire_GetCouponsAllocatedByOtherApp_Handler,
 		},
 		{
 			MethodName: "GetCouponsAllocatedByAppUser",

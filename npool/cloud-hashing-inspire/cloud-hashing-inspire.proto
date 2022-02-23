@@ -216,6 +216,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc CreateCouponAllocatedForOtherAppUser (CreateCouponAllocatedForOtherAppUserRequest) returns (CreateCouponAllocatedForOtherAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/coupon/allocated/for/other/app/user"
+            body: "*"
+        };
+    }
     rpc GetCouponAllocated (GetCouponAllocatedRequest) returns (GetCouponAllocatedResponse) {
         option (google.api.http) = {
             post: "/v1/get/coupon/allocated"
@@ -225,6 +231,12 @@ service CloudHashingInspire {
     rpc GetCouponsAllocatedByApp (GetCouponsAllocatedByAppRequest) returns (GetCouponsAllocatedByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/coupons/allocated/by/app"
+            body: "*"
+        };
+    }
+    rpc GetCouponsAllocatedByOtherApp (GetCouponsAllocatedByOtherAppRequest) returns (GetCouponsAllocatedByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coupons/allocated/by/other/app"
             body: "*"
         };
     }
@@ -858,6 +870,16 @@ message CreateCouponAllocatedResponse {
     CouponAllocated Info = 10;
 }
 
+message CreateCouponAllocatedForOtherAppUserRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
+    CouponAllocated Info = 30;
+}
+
+message CreateCouponAllocatedForOtherAppUserResponse {
+    CouponAllocated Info = 10;
+}
+
 message GetCouponAllocatedRequest {
     string ID = 10;
 }
@@ -871,6 +893,14 @@ message GetCouponsAllocatedByAppRequest {
 }
 
 message GetCouponsAllocatedByAppResponse {
+    repeated CouponAllocated Infos = 10;
+}
+
+message GetCouponsAllocatedByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetCouponsAllocatedByOtherAppResponse {
     repeated CouponAllocated Infos = 10;
 }
 
