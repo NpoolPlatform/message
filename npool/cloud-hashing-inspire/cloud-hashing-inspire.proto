@@ -438,6 +438,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc CreateUserSpecialReductionForOtherApp (CreateUserSpecialReductionForOtherAppRequest) returns (CreateUserSpecialReductionForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/special/reduction/for/other/app"
+            body: "*"
+        };
+    }
     rpc GetUserSpecialReduction (GetUserSpecialReductionRequest) returns (GetUserSpecialReductionResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/special/reduction"
@@ -447,6 +453,12 @@ service CloudHashingInspire {
     rpc GetUserSpecialReductionsByApp (GetUserSpecialReductionsByAppRequest) returns (GetUserSpecialReductionsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/special/reductions/by/app"
+            body: "*"
+        };
+    }
+    rpc GetUserSpecialReductionsByOtherApp (GetUserSpecialReductionsByOtherAppRequest) returns (GetUserSpecialReductionsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/special/reductions/by/other/app"
             body: "*"
         };
     }
@@ -1256,6 +1268,15 @@ message CreateUserSpecialReductionResponse {
     UserSpecialReduction Info = 10;
 }
 
+message CreateUserSpecialReductionForOtherAppRequest {
+    string TargetAppID = 10;
+    UserSpecialReduction Info = 20;
+}
+
+message CreateUserSpecialReductionForOtherAppResponse {
+    UserSpecialReduction Info = 10;
+}
+
 message GetUserSpecialReductionRequest {
     string ID = 10;
 }
@@ -1269,6 +1290,14 @@ message GetUserSpecialReductionsByAppRequest {
 }
 
 message GetUserSpecialReductionsByAppResponse {
+    repeated UserSpecialReduction Infos = 10;
+}
+
+message GetUserSpecialReductionsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetUserSpecialReductionsByOtherAppResponse {
     repeated UserSpecialReduction Infos = 10;
 }
 

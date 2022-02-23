@@ -651,6 +651,38 @@
         ]
       }
     },
+    "/v1/create/user/special/reduction/for/other/app": {
+      "post": {
+        "operationId": "CloudHashingInspire_CreateUserSpecialReductionForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserSpecialReductionForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserSpecialReductionForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/get/activities/by/app": {
       "post": {
         "operationId": "CloudHashingInspire_GetActivitiesByApp",
@@ -2411,6 +2443,38 @@
         ]
       }
     },
+    "/v1/get/user/special/reductions/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetUserSpecialReductionsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserSpecialReductionsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserSpecialReductionsByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/update/activity": {
       "post": {
         "operationId": "CloudHashingInspire_UpdateActivity",
@@ -3391,6 +3455,25 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1UserKpiSetting"
+        }
+      }
+    },
+    "v1CreateUserSpecialReductionForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1UserSpecialReduction"
+        }
+      }
+    },
+    "v1CreateUserSpecialReductionForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserSpecialReduction"
         }
       }
     },
@@ -4462,6 +4545,25 @@
       }
     },
     "v1GetUserSpecialReductionsByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserSpecialReduction"
+          }
+        }
+      }
+    },
+    "v1GetUserSpecialReductionsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserSpecialReductionsByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {

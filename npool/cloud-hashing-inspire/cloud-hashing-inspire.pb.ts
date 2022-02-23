@@ -706,6 +706,15 @@ export type CreateUserSpecialReductionResponse = {
   info?: UserSpecialReduction
 }
 
+export type CreateUserSpecialReductionForOtherAppRequest = {
+  targetAppID?: string
+  info?: UserSpecialReduction
+}
+
+export type CreateUserSpecialReductionForOtherAppResponse = {
+  info?: UserSpecialReduction
+}
+
 export type GetUserSpecialReductionRequest = {
   id?: string
 }
@@ -719,6 +728,14 @@ export type GetUserSpecialReductionsByAppRequest = {
 }
 
 export type GetUserSpecialReductionsByAppResponse = {
+  infos?: UserSpecialReduction[]
+}
+
+export type GetUserSpecialReductionsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetUserSpecialReductionsByOtherAppResponse = {
   infos?: UserSpecialReduction[]
 }
 
@@ -1091,11 +1108,17 @@ export class CloudHashingInspire {
   static CreateUserSpecialReduction(req: CreateUserSpecialReductionRequest, initReq?: fm.InitReq): Promise<CreateUserSpecialReductionResponse> {
     return fm.fetchReq<CreateUserSpecialReductionRequest, CreateUserSpecialReductionResponse>(`/v1/create/user/special/reduction`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateUserSpecialReductionForOtherApp(req: CreateUserSpecialReductionForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateUserSpecialReductionForOtherAppResponse> {
+    return fm.fetchReq<CreateUserSpecialReductionForOtherAppRequest, CreateUserSpecialReductionForOtherAppResponse>(`/v1/create/user/special/reduction/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetUserSpecialReduction(req: GetUserSpecialReductionRequest, initReq?: fm.InitReq): Promise<GetUserSpecialReductionResponse> {
     return fm.fetchReq<GetUserSpecialReductionRequest, GetUserSpecialReductionResponse>(`/v1/get/user/special/reduction`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserSpecialReductionsByApp(req: GetUserSpecialReductionsByAppRequest, initReq?: fm.InitReq): Promise<GetUserSpecialReductionsByAppResponse> {
     return fm.fetchReq<GetUserSpecialReductionsByAppRequest, GetUserSpecialReductionsByAppResponse>(`/v1/get/user/special/reductions/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserSpecialReductionsByOtherApp(req: GetUserSpecialReductionsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetUserSpecialReductionsByOtherAppResponse> {
+    return fm.fetchReq<GetUserSpecialReductionsByOtherAppRequest, GetUserSpecialReductionsByOtherAppResponse>(`/v1/get/user/special/reductions/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserSpecialReductionsByAppReleaser(req: GetUserSpecialReductionsByAppReleaserRequest, initReq?: fm.InitReq): Promise<GetUserSpecialReductionsByAppReleaserResponse> {
     return fm.fetchReq<GetUserSpecialReductionsByAppReleaserRequest, GetUserSpecialReductionsByAppReleaserResponse>(`/v1/get/user/special/reductions/by/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req)})

@@ -94,8 +94,10 @@ type CloudHashingInspireClient interface {
 	GetUserKpiSettingByAppGood(ctx context.Context, in *GetUserKpiSettingByAppGoodRequest, opts ...grpc.CallOption) (*GetUserKpiSettingByAppGoodResponse, error)
 	UpdateUserKpiSetting(ctx context.Context, in *UpdateUserKpiSettingRequest, opts ...grpc.CallOption) (*UpdateUserKpiSettingResponse, error)
 	CreateUserSpecialReduction(ctx context.Context, in *CreateUserSpecialReductionRequest, opts ...grpc.CallOption) (*CreateUserSpecialReductionResponse, error)
+	CreateUserSpecialReductionForOtherApp(ctx context.Context, in *CreateUserSpecialReductionForOtherAppRequest, opts ...grpc.CallOption) (*CreateUserSpecialReductionForOtherAppResponse, error)
 	GetUserSpecialReduction(ctx context.Context, in *GetUserSpecialReductionRequest, opts ...grpc.CallOption) (*GetUserSpecialReductionResponse, error)
 	GetUserSpecialReductionsByApp(ctx context.Context, in *GetUserSpecialReductionsByAppRequest, opts ...grpc.CallOption) (*GetUserSpecialReductionsByAppResponse, error)
+	GetUserSpecialReductionsByOtherApp(ctx context.Context, in *GetUserSpecialReductionsByOtherAppRequest, opts ...grpc.CallOption) (*GetUserSpecialReductionsByOtherAppResponse, error)
 	GetUserSpecialReductionsByAppReleaser(ctx context.Context, in *GetUserSpecialReductionsByAppReleaserRequest, opts ...grpc.CallOption) (*GetUserSpecialReductionsByAppReleaserResponse, error)
 	GetUserSpecialReductionsByAppUser(ctx context.Context, in *GetUserSpecialReductionsByAppUserRequest, opts ...grpc.CallOption) (*GetUserSpecialReductionsByAppUserResponse, error)
 	UpdateUserSpecialReduction(ctx context.Context, in *UpdateUserSpecialReductionRequest, opts ...grpc.CallOption) (*UpdateUserSpecialReductionResponse, error)
@@ -744,6 +746,15 @@ func (c *cloudHashingInspireClient) CreateUserSpecialReduction(ctx context.Conte
 	return out, nil
 }
 
+func (c *cloudHashingInspireClient) CreateUserSpecialReductionForOtherApp(ctx context.Context, in *CreateUserSpecialReductionForOtherAppRequest, opts ...grpc.CallOption) (*CreateUserSpecialReductionForOtherAppResponse, error) {
+	out := new(CreateUserSpecialReductionForOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateUserSpecialReductionForOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingInspireClient) GetUserSpecialReduction(ctx context.Context, in *GetUserSpecialReductionRequest, opts ...grpc.CallOption) (*GetUserSpecialReductionResponse, error) {
 	out := new(GetUserSpecialReductionResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetUserSpecialReduction", in, out, opts...)
@@ -756,6 +767,15 @@ func (c *cloudHashingInspireClient) GetUserSpecialReduction(ctx context.Context,
 func (c *cloudHashingInspireClient) GetUserSpecialReductionsByApp(ctx context.Context, in *GetUserSpecialReductionsByAppRequest, opts ...grpc.CallOption) (*GetUserSpecialReductionsByAppResponse, error) {
 	out := new(GetUserSpecialReductionsByAppResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetUserSpecialReductionsByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingInspireClient) GetUserSpecialReductionsByOtherApp(ctx context.Context, in *GetUserSpecialReductionsByOtherAppRequest, opts ...grpc.CallOption) (*GetUserSpecialReductionsByOtherAppResponse, error) {
+	out := new(GetUserSpecialReductionsByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetUserSpecialReductionsByOtherApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -989,8 +1009,10 @@ type CloudHashingInspireServer interface {
 	GetUserKpiSettingByAppGood(context.Context, *GetUserKpiSettingByAppGoodRequest) (*GetUserKpiSettingByAppGoodResponse, error)
 	UpdateUserKpiSetting(context.Context, *UpdateUserKpiSettingRequest) (*UpdateUserKpiSettingResponse, error)
 	CreateUserSpecialReduction(context.Context, *CreateUserSpecialReductionRequest) (*CreateUserSpecialReductionResponse, error)
+	CreateUserSpecialReductionForOtherApp(context.Context, *CreateUserSpecialReductionForOtherAppRequest) (*CreateUserSpecialReductionForOtherAppResponse, error)
 	GetUserSpecialReduction(context.Context, *GetUserSpecialReductionRequest) (*GetUserSpecialReductionResponse, error)
 	GetUserSpecialReductionsByApp(context.Context, *GetUserSpecialReductionsByAppRequest) (*GetUserSpecialReductionsByAppResponse, error)
+	GetUserSpecialReductionsByOtherApp(context.Context, *GetUserSpecialReductionsByOtherAppRequest) (*GetUserSpecialReductionsByOtherAppResponse, error)
 	GetUserSpecialReductionsByAppReleaser(context.Context, *GetUserSpecialReductionsByAppReleaserRequest) (*GetUserSpecialReductionsByAppReleaserResponse, error)
 	GetUserSpecialReductionsByAppUser(context.Context, *GetUserSpecialReductionsByAppUserRequest) (*GetUserSpecialReductionsByAppUserResponse, error)
 	UpdateUserSpecialReduction(context.Context, *UpdateUserSpecialReductionRequest) (*UpdateUserSpecialReductionResponse, error)
@@ -1222,11 +1244,17 @@ func (UnimplementedCloudHashingInspireServer) UpdateUserKpiSetting(context.Conte
 func (UnimplementedCloudHashingInspireServer) CreateUserSpecialReduction(context.Context, *CreateUserSpecialReductionRequest) (*CreateUserSpecialReductionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUserSpecialReduction not implemented")
 }
+func (UnimplementedCloudHashingInspireServer) CreateUserSpecialReductionForOtherApp(context.Context, *CreateUserSpecialReductionForOtherAppRequest) (*CreateUserSpecialReductionForOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUserSpecialReductionForOtherApp not implemented")
+}
 func (UnimplementedCloudHashingInspireServer) GetUserSpecialReduction(context.Context, *GetUserSpecialReductionRequest) (*GetUserSpecialReductionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserSpecialReduction not implemented")
 }
 func (UnimplementedCloudHashingInspireServer) GetUserSpecialReductionsByApp(context.Context, *GetUserSpecialReductionsByAppRequest) (*GetUserSpecialReductionsByAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserSpecialReductionsByApp not implemented")
+}
+func (UnimplementedCloudHashingInspireServer) GetUserSpecialReductionsByOtherApp(context.Context, *GetUserSpecialReductionsByOtherAppRequest) (*GetUserSpecialReductionsByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserSpecialReductionsByOtherApp not implemented")
 }
 func (UnimplementedCloudHashingInspireServer) GetUserSpecialReductionsByAppReleaser(context.Context, *GetUserSpecialReductionsByAppReleaserRequest) (*GetUserSpecialReductionsByAppReleaserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserSpecialReductionsByAppReleaser not implemented")
@@ -2534,6 +2562,24 @@ func _CloudHashingInspire_CreateUserSpecialReduction_Handler(srv interface{}, ct
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingInspire_CreateUserSpecialReductionForOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateUserSpecialReductionForOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).CreateUserSpecialReductionForOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateUserSpecialReductionForOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).CreateUserSpecialReductionForOtherApp(ctx, req.(*CreateUserSpecialReductionForOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingInspire_GetUserSpecialReduction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserSpecialReductionRequest)
 	if err := dec(in); err != nil {
@@ -2566,6 +2612,24 @@ func _CloudHashingInspire_GetUserSpecialReductionsByApp_Handler(srv interface{},
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingInspireServer).GetUserSpecialReductionsByApp(ctx, req.(*GetUserSpecialReductionsByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingInspire_GetUserSpecialReductionsByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserSpecialReductionsByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).GetUserSpecialReductionsByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/GetUserSpecialReductionsByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).GetUserSpecialReductionsByOtherApp(ctx, req.(*GetUserSpecialReductionsByOtherAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3160,12 +3224,20 @@ var CloudHashingInspire_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingInspire_CreateUserSpecialReduction_Handler,
 		},
 		{
+			MethodName: "CreateUserSpecialReductionForOtherApp",
+			Handler:    _CloudHashingInspire_CreateUserSpecialReductionForOtherApp_Handler,
+		},
+		{
 			MethodName: "GetUserSpecialReduction",
 			Handler:    _CloudHashingInspire_GetUserSpecialReduction_Handler,
 		},
 		{
 			MethodName: "GetUserSpecialReductionsByApp",
 			Handler:    _CloudHashingInspire_GetUserSpecialReductionsByApp_Handler,
+		},
+		{
+			MethodName: "GetUserSpecialReductionsByOtherApp",
+			Handler:    _CloudHashingInspire_GetUserSpecialReductionsByOtherApp_Handler,
 		},
 		{
 			MethodName: "GetUserSpecialReductionsByAppReleaser",
