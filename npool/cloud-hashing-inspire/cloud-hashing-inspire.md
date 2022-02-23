@@ -27,6 +27,8 @@
     - [CreateCouponPoolResponse](#cloud.hashing.inspire.v1.CreateCouponPoolResponse)
     - [CreateDefaultKpiSettingRequest](#cloud.hashing.inspire.v1.CreateDefaultKpiSettingRequest)
     - [CreateDefaultKpiSettingResponse](#cloud.hashing.inspire.v1.CreateDefaultKpiSettingResponse)
+    - [CreateDiscountPoolForOtherAppRequest](#cloud.hashing.inspire.v1.CreateDiscountPoolForOtherAppRequest)
+    - [CreateDiscountPoolForOtherAppResponse](#cloud.hashing.inspire.v1.CreateDiscountPoolForOtherAppResponse)
     - [CreateDiscountPoolRequest](#cloud.hashing.inspire.v1.CreateDiscountPoolRequest)
     - [CreateDiscountPoolResponse](#cloud.hashing.inspire.v1.CreateDiscountPoolResponse)
     - [CreateEventCouponForOtherAppRequest](#cloud.hashing.inspire.v1.CreateEventCouponForOtherAppRequest)
@@ -104,6 +106,10 @@
     - [GetDiscountPoolsByAppReleaserResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppReleaserResponse)
     - [GetDiscountPoolsByAppRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppRequest)
     - [GetDiscountPoolsByAppResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppResponse)
+    - [GetDiscountPoolsByOtherAppReleaserRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppReleaserRequest)
+    - [GetDiscountPoolsByOtherAppReleaserResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppReleaserResponse)
+    - [GetDiscountPoolsByOtherAppRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppRequest)
+    - [GetDiscountPoolsByOtherAppResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppResponse)
     - [GetEventCouponRequest](#cloud.hashing.inspire.v1.GetEventCouponRequest)
     - [GetEventCouponResponse](#cloud.hashing.inspire.v1.GetEventCouponResponse)
     - [GetEventCouponsByAppActivityEventRequest](#cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventRequest)
@@ -216,6 +222,8 @@
     - [CreateCouponPoolResponse](#cloud.hashing.inspire.v1.CreateCouponPoolResponse)
     - [CreateDefaultKpiSettingRequest](#cloud.hashing.inspire.v1.CreateDefaultKpiSettingRequest)
     - [CreateDefaultKpiSettingResponse](#cloud.hashing.inspire.v1.CreateDefaultKpiSettingResponse)
+    - [CreateDiscountPoolForOtherAppRequest](#cloud.hashing.inspire.v1.CreateDiscountPoolForOtherAppRequest)
+    - [CreateDiscountPoolForOtherAppResponse](#cloud.hashing.inspire.v1.CreateDiscountPoolForOtherAppResponse)
     - [CreateDiscountPoolRequest](#cloud.hashing.inspire.v1.CreateDiscountPoolRequest)
     - [CreateDiscountPoolResponse](#cloud.hashing.inspire.v1.CreateDiscountPoolResponse)
     - [CreateEventCouponForOtherAppRequest](#cloud.hashing.inspire.v1.CreateEventCouponForOtherAppRequest)
@@ -293,6 +301,10 @@
     - [GetDiscountPoolsByAppReleaserResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppReleaserResponse)
     - [GetDiscountPoolsByAppRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppRequest)
     - [GetDiscountPoolsByAppResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppResponse)
+    - [GetDiscountPoolsByOtherAppReleaserRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppReleaserRequest)
+    - [GetDiscountPoolsByOtherAppReleaserResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppReleaserResponse)
+    - [GetDiscountPoolsByOtherAppRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppRequest)
+    - [GetDiscountPoolsByOtherAppResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppResponse)
     - [GetEventCouponRequest](#cloud.hashing.inspire.v1.GetEventCouponRequest)
     - [GetEventCouponResponse](#cloud.hashing.inspire.v1.GetEventCouponResponse)
     - [GetEventCouponsByAppActivityEventRequest](#cloud.hashing.inspire.v1.GetEventCouponsByAppActivityEventRequest)
@@ -783,6 +795,37 @@
 
 
 
+<a name="cloud.hashing.inspire.v1.CreateDiscountPoolForOtherAppRequest"></a>
+
+### CreateDiscountPoolForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateDiscountPoolForOtherAppResponse"></a>
+
+### CreateDiscountPoolForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.CreateDiscountPoolRequest"></a>
 
 ### CreateDiscountPoolRequest
@@ -1952,6 +1995,67 @@
 <a name="cloud.hashing.inspire.v1.GetDiscountPoolsByAppResponse"></a>
 
 ### GetDiscountPoolsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppReleaserRequest"></a>
+
+### GetDiscountPoolsByOtherAppReleaserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppReleaserResponse"></a>
+
+### GetDiscountPoolsByOtherAppReleaserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppRequest"></a>
+
+### GetDiscountPoolsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppResponse"></a>
+
+### GetDiscountPoolsByOtherAppResponse
 
 
 
@@ -3335,10 +3439,13 @@ Service Name
 | GetCouponPoolsByAppReleaser | [GetCouponPoolsByAppReleaserRequest](#cloud.hashing.inspire.v1.GetCouponPoolsByAppReleaserRequest) | [GetCouponPoolsByAppReleaserResponse](#cloud.hashing.inspire.v1.GetCouponPoolsByAppReleaserResponse) |  |
 | GetCouponPoolsByOtherAppReleaser | [GetCouponPoolsByOtherAppReleaserRequest](#cloud.hashing.inspire.v1.GetCouponPoolsByOtherAppReleaserRequest) | [GetCouponPoolsByOtherAppReleaserResponse](#cloud.hashing.inspire.v1.GetCouponPoolsByOtherAppReleaserResponse) |  |
 | CreateDiscountPool | [CreateDiscountPoolRequest](#cloud.hashing.inspire.v1.CreateDiscountPoolRequest) | [CreateDiscountPoolResponse](#cloud.hashing.inspire.v1.CreateDiscountPoolResponse) |  |
+| CreateDiscountPoolForOtherApp | [CreateDiscountPoolForOtherAppRequest](#cloud.hashing.inspire.v1.CreateDiscountPoolForOtherAppRequest) | [CreateDiscountPoolForOtherAppResponse](#cloud.hashing.inspire.v1.CreateDiscountPoolForOtherAppResponse) |  |
 | UpdateDiscountPool | [UpdateDiscountPoolRequest](#cloud.hashing.inspire.v1.UpdateDiscountPoolRequest) | [UpdateDiscountPoolResponse](#cloud.hashing.inspire.v1.UpdateDiscountPoolResponse) |  |
 | GetDiscountPool | [GetDiscountPoolRequest](#cloud.hashing.inspire.v1.GetDiscountPoolRequest) | [GetDiscountPoolResponse](#cloud.hashing.inspire.v1.GetDiscountPoolResponse) |  |
 | GetDiscountPoolsByApp | [GetDiscountPoolsByAppRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppRequest) | [GetDiscountPoolsByAppResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppResponse) |  |
+| GetDiscountPoolsByOtherApp | [GetDiscountPoolsByOtherAppRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppRequest) | [GetDiscountPoolsByOtherAppResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppResponse) |  |
 | GetDiscountPoolsByAppReleaser | [GetDiscountPoolsByAppReleaserRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppReleaserRequest) | [GetDiscountPoolsByAppReleaserResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppReleaserResponse) |  |
+| GetDiscountPoolsByOtherAppReleaser | [GetDiscountPoolsByOtherAppReleaserRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppReleaserRequest) | [GetDiscountPoolsByOtherAppReleaserResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppReleaserResponse) |  |
 | CreateAppCouponSetting | [CreateAppCouponSettingRequest](#cloud.hashing.inspire.v1.CreateAppCouponSettingRequest) | [CreateAppCouponSettingResponse](#cloud.hashing.inspire.v1.CreateAppCouponSettingResponse) |  |
 | GetAppCouponSetting | [GetAppCouponSettingRequest](#cloud.hashing.inspire.v1.GetAppCouponSettingRequest) | [GetAppCouponSettingResponse](#cloud.hashing.inspire.v1.GetAppCouponSettingResponse) |  |
 | GetAppCouponSettingByApp | [GetAppCouponSettingByAppRequest](#cloud.hashing.inspire.v1.GetAppCouponSettingByAppRequest) | [GetAppCouponSettingByAppResponse](#cloud.hashing.inspire.v1.GetAppCouponSettingByAppResponse) |  |
@@ -3774,6 +3881,37 @@ Service Name
 
 
 
+<a name="cloud.hashing.inspire.v1.CreateDiscountPoolForOtherAppRequest"></a>
+
+### CreateDiscountPoolForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateDiscountPoolForOtherAppResponse"></a>
+
+### CreateDiscountPoolForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.CreateDiscountPoolRequest"></a>
 
 ### CreateDiscountPoolRequest
@@ -4943,6 +5081,67 @@ Service Name
 <a name="cloud.hashing.inspire.v1.GetDiscountPoolsByAppResponse"></a>
 
 ### GetDiscountPoolsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppReleaserRequest"></a>
+
+### GetDiscountPoolsByOtherAppReleaserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppReleaserResponse"></a>
+
+### GetDiscountPoolsByOtherAppReleaserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppRequest"></a>
+
+### GetDiscountPoolsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppResponse"></a>
+
+### GetDiscountPoolsByOtherAppResponse
 
 
 
@@ -6326,10 +6525,13 @@ Service Name
 | GetCouponPoolsByAppReleaser | [GetCouponPoolsByAppReleaserRequest](#cloud.hashing.inspire.v1.GetCouponPoolsByAppReleaserRequest) | [GetCouponPoolsByAppReleaserResponse](#cloud.hashing.inspire.v1.GetCouponPoolsByAppReleaserResponse) |  |
 | GetCouponPoolsByOtherAppReleaser | [GetCouponPoolsByOtherAppReleaserRequest](#cloud.hashing.inspire.v1.GetCouponPoolsByOtherAppReleaserRequest) | [GetCouponPoolsByOtherAppReleaserResponse](#cloud.hashing.inspire.v1.GetCouponPoolsByOtherAppReleaserResponse) |  |
 | CreateDiscountPool | [CreateDiscountPoolRequest](#cloud.hashing.inspire.v1.CreateDiscountPoolRequest) | [CreateDiscountPoolResponse](#cloud.hashing.inspire.v1.CreateDiscountPoolResponse) |  |
+| CreateDiscountPoolForOtherApp | [CreateDiscountPoolForOtherAppRequest](#cloud.hashing.inspire.v1.CreateDiscountPoolForOtherAppRequest) | [CreateDiscountPoolForOtherAppResponse](#cloud.hashing.inspire.v1.CreateDiscountPoolForOtherAppResponse) |  |
 | UpdateDiscountPool | [UpdateDiscountPoolRequest](#cloud.hashing.inspire.v1.UpdateDiscountPoolRequest) | [UpdateDiscountPoolResponse](#cloud.hashing.inspire.v1.UpdateDiscountPoolResponse) |  |
 | GetDiscountPool | [GetDiscountPoolRequest](#cloud.hashing.inspire.v1.GetDiscountPoolRequest) | [GetDiscountPoolResponse](#cloud.hashing.inspire.v1.GetDiscountPoolResponse) |  |
 | GetDiscountPoolsByApp | [GetDiscountPoolsByAppRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppRequest) | [GetDiscountPoolsByAppResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppResponse) |  |
+| GetDiscountPoolsByOtherApp | [GetDiscountPoolsByOtherAppRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppRequest) | [GetDiscountPoolsByOtherAppResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppResponse) |  |
 | GetDiscountPoolsByAppReleaser | [GetDiscountPoolsByAppReleaserRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppReleaserRequest) | [GetDiscountPoolsByAppReleaserResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByAppReleaserResponse) |  |
+| GetDiscountPoolsByOtherAppReleaser | [GetDiscountPoolsByOtherAppReleaserRequest](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppReleaserRequest) | [GetDiscountPoolsByOtherAppReleaserResponse](#cloud.hashing.inspire.v1.GetDiscountPoolsByOtherAppReleaserResponse) |  |
 | CreateAppCouponSetting | [CreateAppCouponSettingRequest](#cloud.hashing.inspire.v1.CreateAppCouponSettingRequest) | [CreateAppCouponSettingResponse](#cloud.hashing.inspire.v1.CreateAppCouponSettingResponse) |  |
 | GetAppCouponSetting | [GetAppCouponSettingRequest](#cloud.hashing.inspire.v1.GetAppCouponSettingRequest) | [GetAppCouponSettingResponse](#cloud.hashing.inspire.v1.GetAppCouponSettingResponse) |  |
 | GetAppCouponSettingByApp | [GetAppCouponSettingByAppRequest](#cloud.hashing.inspire.v1.GetAppCouponSettingByAppRequest) | [GetAppCouponSettingByAppResponse](#cloud.hashing.inspire.v1.GetAppCouponSettingByAppResponse) |  |

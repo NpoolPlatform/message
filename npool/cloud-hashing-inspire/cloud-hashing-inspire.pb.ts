@@ -628,6 +628,15 @@ export type CreateDiscountPoolResponse = {
   info?: DiscountPool
 }
 
+export type CreateDiscountPoolForOtherAppRequest = {
+  targetAppID?: string
+  info?: DiscountPool
+}
+
+export type CreateDiscountPoolForOtherAppResponse = {
+  info?: DiscountPool
+}
+
 export type UpdateDiscountPoolRequest = {
   info?: DiscountPool
 }
@@ -652,12 +661,29 @@ export type GetDiscountPoolsByAppResponse = {
   infos?: DiscountPool[]
 }
 
+export type GetDiscountPoolsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetDiscountPoolsByOtherAppResponse = {
+  infos?: DiscountPool[]
+}
+
 export type GetDiscountPoolsByAppReleaserRequest = {
   appID?: string
   userID?: string
 }
 
 export type GetDiscountPoolsByAppReleaserResponse = {
+  infos?: DiscountPool[]
+}
+
+export type GetDiscountPoolsByOtherAppReleaserRequest = {
+  targetAppID?: string
+  targetUserID?: string
+}
+
+export type GetDiscountPoolsByOtherAppReleaserResponse = {
   infos?: DiscountPool[]
 }
 
@@ -1005,6 +1031,9 @@ export class CloudHashingInspire {
   static CreateDiscountPool(req: CreateDiscountPoolRequest, initReq?: fm.InitReq): Promise<CreateDiscountPoolResponse> {
     return fm.fetchReq<CreateDiscountPoolRequest, CreateDiscountPoolResponse>(`/v1/create/discount/pool`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateDiscountPoolForOtherApp(req: CreateDiscountPoolForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateDiscountPoolForOtherAppResponse> {
+    return fm.fetchReq<CreateDiscountPoolForOtherAppRequest, CreateDiscountPoolForOtherAppResponse>(`/v1/create/discount/pool/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static UpdateDiscountPool(req: UpdateDiscountPoolRequest, initReq?: fm.InitReq): Promise<UpdateDiscountPoolResponse> {
     return fm.fetchReq<UpdateDiscountPoolRequest, UpdateDiscountPoolResponse>(`/v1/update/discount/pool`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -1014,8 +1043,14 @@ export class CloudHashingInspire {
   static GetDiscountPoolsByApp(req: GetDiscountPoolsByAppRequest, initReq?: fm.InitReq): Promise<GetDiscountPoolsByAppResponse> {
     return fm.fetchReq<GetDiscountPoolsByAppRequest, GetDiscountPoolsByAppResponse>(`/v1/get/discount/pools/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetDiscountPoolsByOtherApp(req: GetDiscountPoolsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetDiscountPoolsByOtherAppResponse> {
+    return fm.fetchReq<GetDiscountPoolsByOtherAppRequest, GetDiscountPoolsByOtherAppResponse>(`/v1/get/discount/pools/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetDiscountPoolsByAppReleaser(req: GetDiscountPoolsByAppReleaserRequest, initReq?: fm.InitReq): Promise<GetDiscountPoolsByAppReleaserResponse> {
     return fm.fetchReq<GetDiscountPoolsByAppReleaserRequest, GetDiscountPoolsByAppReleaserResponse>(`/v1/get/discount/pools/by/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetDiscountPoolsByOtherAppReleaser(req: GetDiscountPoolsByOtherAppReleaserRequest, initReq?: fm.InitReq): Promise<GetDiscountPoolsByOtherAppReleaserResponse> {
+    return fm.fetchReq<GetDiscountPoolsByOtherAppReleaserRequest, GetDiscountPoolsByOtherAppReleaserResponse>(`/v1/get/discount/pools/by/other/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateAppCouponSetting(req: CreateAppCouponSettingRequest, initReq?: fm.InitReq): Promise<CreateAppCouponSettingResponse> {
     return fm.fetchReq<CreateAppCouponSettingRequest, CreateAppCouponSettingResponse>(`/v1/create/app/coupon/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})

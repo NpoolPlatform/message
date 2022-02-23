@@ -299,6 +299,38 @@
         ]
       }
     },
+    "/v1/create/discount/pool/for/other/app": {
+      "post": {
+        "operationId": "CloudHashingInspire_CreateDiscountPoolForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateDiscountPoolForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateDiscountPoolForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/create/event/coupon": {
       "post": {
         "operationId": "CloudHashingInspire_CreateEventCoupon",
@@ -1443,6 +1475,70 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetDiscountPoolsByAppReleaserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/get/discount/pools/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetDiscountPoolsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetDiscountPoolsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetDiscountPoolsByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/get/discount/pools/by/other/app/releaser": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetDiscountPoolsByOtherAppReleaser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetDiscountPoolsByOtherAppReleaserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetDiscountPoolsByOtherAppReleaserRequest"
             }
           }
         ],
@@ -3107,6 +3203,25 @@
         }
       }
     },
+    "v1CreateDiscountPoolForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1DiscountPool"
+        }
+      }
+    },
+    "v1CreateDiscountPoolForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1DiscountPool"
+        }
+      }
+    },
     "v1CreateDiscountPoolRequest": {
       "type": "object",
       "properties": {
@@ -3832,6 +3947,47 @@
       }
     },
     "v1GetDiscountPoolsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1DiscountPool"
+          }
+        }
+      }
+    },
+    "v1GetDiscountPoolsByOtherAppReleaserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetDiscountPoolsByOtherAppReleaserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1DiscountPool"
+          }
+        }
+      }
+    },
+    "v1GetDiscountPoolsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetDiscountPoolsByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {

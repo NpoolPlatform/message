@@ -314,6 +314,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc CreateDiscountPoolForOtherApp (CreateDiscountPoolForOtherAppRequest) returns (CreateDiscountPoolForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/discount/pool/for/other/app"
+            body: "*"
+        };
+    }
     rpc UpdateDiscountPool (UpdateDiscountPoolRequest) returns (UpdateDiscountPoolResponse) {
         option (google.api.http) = {
             post: "/v1/update/discount/pool"
@@ -332,9 +338,21 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc GetDiscountPoolsByOtherApp (GetDiscountPoolsByOtherAppRequest) returns (GetDiscountPoolsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/discount/pools/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetDiscountPoolsByAppReleaser (GetDiscountPoolsByAppReleaserRequest) returns (GetDiscountPoolsByAppReleaserResponse) {
         option (google.api.http) = {
             post: "/v1/get/discount/pools/by/app/releaser"
+            body: "*"
+        };
+    }
+    rpc GetDiscountPoolsByOtherAppReleaser (GetDiscountPoolsByOtherAppReleaserRequest) returns (GetDiscountPoolsByOtherAppReleaserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/discount/pools/by/other/app/releaser"
             body: "*"
         };
     }
@@ -1160,6 +1178,15 @@ message CreateDiscountPoolResponse {
     DiscountPool Info = 10;
 }
 
+message CreateDiscountPoolForOtherAppRequest {
+    string TargetAppID = 10;
+    DiscountPool Info = 20;
+}
+
+message CreateDiscountPoolForOtherAppResponse {
+    DiscountPool Info = 10;
+}
+
 message UpdateDiscountPoolRequest {
     DiscountPool Info = 10;
 }
@@ -1184,12 +1211,29 @@ message GetDiscountPoolsByAppResponse {
     repeated DiscountPool Infos = 10;
 }
 
+message GetDiscountPoolsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetDiscountPoolsByOtherAppResponse {
+    repeated DiscountPool Infos = 10;
+}
+
 message GetDiscountPoolsByAppReleaserRequest {
     string AppID = 10;
     string UserID = 20;
 }
 
 message GetDiscountPoolsByAppReleaserResponse {
+    repeated DiscountPool Infos = 10;
+}
+
+message GetDiscountPoolsByOtherAppReleaserRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
+}
+
+message GetDiscountPoolsByOtherAppReleaserResponse {
     repeated DiscountPool Infos = 10;
 }
 
