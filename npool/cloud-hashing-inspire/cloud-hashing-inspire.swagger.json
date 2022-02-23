@@ -651,14 +651,14 @@
         ]
       }
     },
-    "/v1/create/user/special/reduction/for/other/app": {
+    "/v1/create/user/special/reduction/for/other/app/user": {
       "post": {
-        "operationId": "CloudHashingInspire_CreateUserSpecialReductionForOtherApp",
+        "operationId": "CloudHashingInspire_CreateUserSpecialReductionForOtherAppUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateUserSpecialReductionForOtherAppResponse"
+              "$ref": "#/definitions/v1CreateUserSpecialReductionForOtherAppUserResponse"
             }
           },
           "default": {
@@ -674,7 +674,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateUserSpecialReductionForOtherAppRequest"
+              "$ref": "#/definitions/v1CreateUserSpecialReductionForOtherAppUserRequest"
             }
           }
         ],
@@ -3458,10 +3458,13 @@
         }
       }
     },
-    "v1CreateUserSpecialReductionForOtherAppRequest": {
+    "v1CreateUserSpecialReductionForOtherAppUserRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
           "type": "string"
         },
         "Info": {
@@ -3469,7 +3472,7 @@
         }
       }
     },
-    "v1CreateUserSpecialReductionForOtherAppResponse": {
+    "v1CreateUserSpecialReductionForOtherAppUserResponse": {
       "type": "object",
       "properties": {
         "Info": {

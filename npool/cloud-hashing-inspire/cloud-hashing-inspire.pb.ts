@@ -706,12 +706,13 @@ export type CreateUserSpecialReductionResponse = {
   info?: UserSpecialReduction
 }
 
-export type CreateUserSpecialReductionForOtherAppRequest = {
+export type CreateUserSpecialReductionForOtherAppUserRequest = {
   targetAppID?: string
+  targetUserID?: string
   info?: UserSpecialReduction
 }
 
-export type CreateUserSpecialReductionForOtherAppResponse = {
+export type CreateUserSpecialReductionForOtherAppUserResponse = {
   info?: UserSpecialReduction
 }
 
@@ -1108,8 +1109,8 @@ export class CloudHashingInspire {
   static CreateUserSpecialReduction(req: CreateUserSpecialReductionRequest, initReq?: fm.InitReq): Promise<CreateUserSpecialReductionResponse> {
     return fm.fetchReq<CreateUserSpecialReductionRequest, CreateUserSpecialReductionResponse>(`/v1/create/user/special/reduction`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static CreateUserSpecialReductionForOtherApp(req: CreateUserSpecialReductionForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateUserSpecialReductionForOtherAppResponse> {
-    return fm.fetchReq<CreateUserSpecialReductionForOtherAppRequest, CreateUserSpecialReductionForOtherAppResponse>(`/v1/create/user/special/reduction/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateUserSpecialReductionForOtherAppUser(req: CreateUserSpecialReductionForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateUserSpecialReductionForOtherAppUserResponse> {
+    return fm.fetchReq<CreateUserSpecialReductionForOtherAppUserRequest, CreateUserSpecialReductionForOtherAppUserResponse>(`/v1/create/user/special/reduction/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserSpecialReduction(req: GetUserSpecialReductionRequest, initReq?: fm.InitReq): Promise<GetUserSpecialReductionResponse> {
     return fm.fetchReq<GetUserSpecialReductionRequest, GetUserSpecialReductionResponse>(`/v1/get/user/special/reduction`, {...initReq, method: "POST", body: JSON.stringify(req)})
