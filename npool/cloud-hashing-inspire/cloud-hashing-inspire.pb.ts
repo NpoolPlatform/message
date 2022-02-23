@@ -858,6 +858,7 @@ export type EventCoupon = {
   activityID?: string
   event?: string
   couponID?: string
+  type?: string
 }
 
 export type CreateEventCouponRequest = {

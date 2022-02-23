@@ -1294,6 +1294,7 @@
 | ActivityID | [string](#string) |  |  |
 | Event | [string](#string) |  |  |
 | CouponID | [string](#string) |  |  |
+| Type | [string](#string) |  |  |
 
 
 
@@ -4508,6 +4509,7 @@ Service Name
 | ActivityID | [string](#string) |  |  |
 | Event | [string](#string) |  |  |
 | CouponID | [string](#string) |  |  |
+| Type | [string](#string) |  |  |
 
 
 

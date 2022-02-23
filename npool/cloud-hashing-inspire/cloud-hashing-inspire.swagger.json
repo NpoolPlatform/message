@@ -3653,6 +3653,9 @@
         },
         "CouponID": {
           "type": "string"
+        },
+        "Type": {
+          "type": "string"
         }
       }
     },
