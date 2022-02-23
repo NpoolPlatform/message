@@ -394,6 +394,7 @@
 | Name | [string](#string) |  |  |
 | Start | [uint32](#uint32) |  |  |
 | End | [uint32](#uint32) |  |  |
+| SystemActivity | [bool](#bool) |  |  |
 
 
 
@@ -3289,6 +3290,7 @@ Service Name
 | Name | [string](#string) |  |  |
 | Start | [uint32](#uint32) |  |  |
 | End | [uint32](#uint32) |  |  |
+| SystemActivity | [bool](#bool) |  |  |
 
 
 

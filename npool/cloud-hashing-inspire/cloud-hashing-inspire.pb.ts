@@ -703,6 +703,7 @@ export type Activity = {
   name?: string
   start?: number
   end?: number
+  systemActivity?: boolean
 }
 
 export type CreateActivityRequest = {

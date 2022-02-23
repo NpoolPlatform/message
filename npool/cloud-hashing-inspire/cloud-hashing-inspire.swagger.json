@@ -2693,6 +2693,9 @@
         "End": {
           "type": "integer",
           "format": "int64"
+        },
+        "SystemActivity": {
+          "type": "boolean"
         }
       }
     },

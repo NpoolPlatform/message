@@ -1217,6 +1217,7 @@ message Activity {
     string Name = 40;
     uint32 Start = 50;
     uint32 End = 60;
+    bool SystemActivity = 70;
 }
 
 message CreateActivityRequest {
