@@ -92,6 +92,17 @@ export type GetOrdersByAppUserResponse = {
   infos?: Order[]
 }
 
+export type GetOrderByAppUserCouponTypeIDRequest = {
+  appID?: string
+  userID?: string
+  couponType?: string
+  couponID?: string
+}
+
+export type GetOrderByAppUserCouponTypeIDResponse = {
+  info?: Order
+}
+
 export type GetOrdersByAppRequest = {
   appID?: string
 }
@@ -324,6 +335,9 @@ export class CloudHashingOrder {
   }
   static GetOrdersByAppUser(req: GetOrdersByAppUserRequest, initReq?: fm.InitReq): Promise<GetOrdersByAppUserResponse> {
     return fm.fetchReq<GetOrdersByAppUserRequest, GetOrdersByAppUserResponse>(`/v1/get/orders/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetOrderByAppUserCouponTypeID(req: GetOrderByAppUserCouponTypeIDRequest, initReq?: fm.InitReq): Promise<GetOrderByAppUserCouponTypeIDResponse> {
+    return fm.fetchReq<GetOrderByAppUserCouponTypeIDRequest, GetOrderByAppUserCouponTypeIDResponse>(`/v1/get/order/by/app/user/coupon/type/id`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetOrdersByApp(req: GetOrdersByAppRequest, initReq?: fm.InitReq): Promise<GetOrdersByAppResponse> {
     return fm.fetchReq<GetOrdersByAppRequest, GetOrdersByAppResponse>(`/v1/get/orders/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})

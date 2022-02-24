@@ -331,6 +331,38 @@
         ]
       }
     },
+    "/v1/get/order/by/app/user/coupon/type/id": {
+      "post": {
+        "operationId": "CloudHashingOrder_GetOrderByAppUserCouponTypeID",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetOrderByAppUserCouponTypeIDResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetOrderByAppUserCouponTypeIDRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingOrder"
+        ]
+      }
+    },
     "/v1/get/order/detail": {
       "post": {
         "operationId": "CloudHashingOrder_GetOrderDetail",
@@ -1101,6 +1133,31 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1GoodPaying"
+        }
+      }
+    },
+    "v1GetOrderByAppUserCouponTypeIDRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CouponType": {
+          "type": "string"
+        },
+        "CouponID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetOrderByAppUserCouponTypeIDResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Order"
         }
       }
     },

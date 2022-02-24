@@ -69,6 +69,12 @@ service CloudHashingOrder {
             body: "*"
         };
     }
+    rpc GetOrderByAppUserCouponTypeID(GetOrderByAppUserCouponTypeIDRequest) returns (GetOrderByAppUserCouponTypeIDResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/order/by/app/user/coupon/type/id"
+            body: "*"
+        };
+    }
     rpc GetOrdersByApp(GetOrdersByAppRequest) returns (GetOrdersByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders/by/app"
@@ -267,6 +273,17 @@ message GetOrdersByAppUserRequest {
 
 message GetOrdersByAppUserResponse {
     repeated Order Infos = 10;
+}
+
+message GetOrderByAppUserCouponTypeIDRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string CouponType = 30;
+    string CouponID = 40;
+}
+
+message GetOrderByAppUserCouponTypeIDResponse {
+    Order Info = 10;
 }
 
 message GetOrdersByAppRequest {
