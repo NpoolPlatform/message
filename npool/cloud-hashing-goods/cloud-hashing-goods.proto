@@ -488,6 +488,12 @@ service CloudHashingGoods {
             body: "*"
         };
     }
+    rpc DeleteAppGoodPromotion (DeleteAppGoodPromotionRequest) returns (DeleteAppGoodPromotionResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/app/good/promotion"
+            body: "*"
+        };
+    }
     rpc GetAppGoodPromotions (GetAppGoodPromotionsRequest) returns (GetAppGoodPromotionsResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/good/promotions"
@@ -1298,6 +1304,14 @@ message UpdateAppGoodPromotionRequest {
 }
 
 message UpdateAppGoodPromotionResponse {
+    AppGoodPromotion Info = 20;
+}
+
+message DeleteAppGoodPromotionRequest {
+    string ID = 10;
+}
+
+message DeleteAppGoodPromotionResponse {
     AppGoodPromotion Info = 20;
 }
 

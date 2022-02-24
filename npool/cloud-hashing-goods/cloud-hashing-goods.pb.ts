@@ -792,6 +792,14 @@ export type UpdateAppGoodPromotionResponse = {
   info?: AppGoodPromotion
 }
 
+export type DeleteAppGoodPromotionRequest = {
+  id?: string
+}
+
+export type DeleteAppGoodPromotionResponse = {
+  info?: AppGoodPromotion
+}
+
 export type GetAppGoodPromotionsRequest = {
 }
 
@@ -1059,6 +1067,9 @@ export class CloudHashingGoods {
   }
   static UpdateAppGoodPromotion(req: UpdateAppGoodPromotionRequest, initReq?: fm.InitReq): Promise<UpdateAppGoodPromotionResponse> {
     return fm.fetchReq<UpdateAppGoodPromotionRequest, UpdateAppGoodPromotionResponse>(`/v1/update/app/good/promotion`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static DeleteAppGoodPromotion(req: DeleteAppGoodPromotionRequest, initReq?: fm.InitReq): Promise<DeleteAppGoodPromotionResponse> {
+    return fm.fetchReq<DeleteAppGoodPromotionRequest, DeleteAppGoodPromotionResponse>(`/v1/delete/app/good/promotion`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppGoodPromotions(req: GetAppGoodPromotionsRequest, initReq?: fm.InitReq): Promise<GetAppGoodPromotionsResponse> {
     return fm.fetchReq<GetAppGoodPromotionsRequest, GetAppGoodPromotionsResponse>(`/v1/get/app/good/promotions`, {...initReq, method: "POST", body: JSON.stringify(req)})

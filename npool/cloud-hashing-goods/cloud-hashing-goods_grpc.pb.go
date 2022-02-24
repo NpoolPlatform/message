@@ -103,6 +103,7 @@ type CloudHashingGoodsClient interface {
 	CreateAppGoodPromotion(ctx context.Context, in *CreateAppGoodPromotionRequest, opts ...grpc.CallOption) (*CreateAppGoodPromotionResponse, error)
 	CreateAppGoodPromotionForOtherApp(ctx context.Context, in *CreateAppGoodPromotionForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppGoodPromotionForOtherAppResponse, error)
 	UpdateAppGoodPromotion(ctx context.Context, in *UpdateAppGoodPromotionRequest, opts ...grpc.CallOption) (*UpdateAppGoodPromotionResponse, error)
+	DeleteAppGoodPromotion(ctx context.Context, in *DeleteAppGoodPromotionRequest, opts ...grpc.CallOption) (*DeleteAppGoodPromotionResponse, error)
 	GetAppGoodPromotions(ctx context.Context, in *GetAppGoodPromotionsRequest, opts ...grpc.CallOption) (*GetAppGoodPromotionsResponse, error)
 	GetAppGoodPromotionByAppGoodStartEnd(ctx context.Context, in *GetAppGoodPromotionByAppGoodStartEndRequest, opts ...grpc.CallOption) (*GetAppGoodPromotionByAppGoodStartEndResponse, error)
 	GetAppGoodPromotionsByAppGood(ctx context.Context, in *GetAppGoodPromotionsByAppGoodRequest, opts ...grpc.CallOption) (*GetAppGoodPromotionsByAppGoodResponse, error)
@@ -810,6 +811,15 @@ func (c *cloudHashingGoodsClient) UpdateAppGoodPromotion(ctx context.Context, in
 	return out, nil
 }
 
+func (c *cloudHashingGoodsClient) DeleteAppGoodPromotion(ctx context.Context, in *DeleteAppGoodPromotionRequest, opts ...grpc.CallOption) (*DeleteAppGoodPromotionResponse, error) {
+	out := new(DeleteAppGoodPromotionResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.goods.v1.CloudHashingGoods/DeleteAppGoodPromotion", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingGoodsClient) GetAppGoodPromotions(ctx context.Context, in *GetAppGoodPromotionsRequest, opts ...grpc.CallOption) (*GetAppGoodPromotionsResponse, error) {
 	out := new(GetAppGoodPromotionsResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotions", in, out, opts...)
@@ -929,6 +939,7 @@ type CloudHashingGoodsServer interface {
 	CreateAppGoodPromotion(context.Context, *CreateAppGoodPromotionRequest) (*CreateAppGoodPromotionResponse, error)
 	CreateAppGoodPromotionForOtherApp(context.Context, *CreateAppGoodPromotionForOtherAppRequest) (*CreateAppGoodPromotionForOtherAppResponse, error)
 	UpdateAppGoodPromotion(context.Context, *UpdateAppGoodPromotionRequest) (*UpdateAppGoodPromotionResponse, error)
+	DeleteAppGoodPromotion(context.Context, *DeleteAppGoodPromotionRequest) (*DeleteAppGoodPromotionResponse, error)
 	GetAppGoodPromotions(context.Context, *GetAppGoodPromotionsRequest) (*GetAppGoodPromotionsResponse, error)
 	GetAppGoodPromotionByAppGoodStartEnd(context.Context, *GetAppGoodPromotionByAppGoodStartEndRequest) (*GetAppGoodPromotionByAppGoodStartEndResponse, error)
 	GetAppGoodPromotionsByAppGood(context.Context, *GetAppGoodPromotionsByAppGoodRequest) (*GetAppGoodPromotionsByAppGoodResponse, error)
@@ -1170,6 +1181,9 @@ func (UnimplementedCloudHashingGoodsServer) CreateAppGoodPromotionForOtherApp(co
 }
 func (UnimplementedCloudHashingGoodsServer) UpdateAppGoodPromotion(context.Context, *UpdateAppGoodPromotionRequest) (*UpdateAppGoodPromotionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppGoodPromotion not implemented")
+}
+func (UnimplementedCloudHashingGoodsServer) DeleteAppGoodPromotion(context.Context, *DeleteAppGoodPromotionRequest) (*DeleteAppGoodPromotionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppGoodPromotion not implemented")
 }
 func (UnimplementedCloudHashingGoodsServer) GetAppGoodPromotions(context.Context, *GetAppGoodPromotionsRequest) (*GetAppGoodPromotionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodPromotions not implemented")
@@ -2582,6 +2596,24 @@ func _CloudHashingGoods_UpdateAppGoodPromotion_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingGoods_DeleteAppGoodPromotion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppGoodPromotionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingGoodsServer).DeleteAppGoodPromotion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.goods.v1.CloudHashingGoods/DeleteAppGoodPromotion",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingGoodsServer).DeleteAppGoodPromotion(ctx, req.(*DeleteAppGoodPromotionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingGoods_GetAppGoodPromotions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppGoodPromotionsRequest)
 	if err := dec(in); err != nil {
@@ -2968,6 +3000,10 @@ var CloudHashingGoods_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateAppGoodPromotion",
 			Handler:    _CloudHashingGoods_UpdateAppGoodPromotion_Handler,
+		},
+		{
+			MethodName: "DeleteAppGoodPromotion",
+			Handler:    _CloudHashingGoods_DeleteAppGoodPromotion_Handler,
 		},
 		{
 			MethodName: "GetAppGoodPromotions",

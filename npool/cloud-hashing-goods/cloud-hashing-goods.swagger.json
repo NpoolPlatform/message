@@ -684,6 +684,38 @@
         ]
       }
     },
+    "/v1/delete/app/good/promotion": {
+      "post": {
+        "operationId": "CloudHashingGoods_DeleteAppGoodPromotion",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppGoodPromotionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppGoodPromotionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
     "/v1/delete/device": {
       "post": {
         "operationId": "CloudHashingGoods_DeleteDeviceInfo",
@@ -3034,6 +3066,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1VendorLocationInfo"
+        }
+      }
+    },
+    "v1DeleteAppGoodPromotionRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteAppGoodPromotionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodPromotion"
         }
       }
     },
