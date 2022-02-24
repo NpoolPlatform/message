@@ -1534,6 +1534,12 @@
         "PaymentDeadline": {
           "type": "integer",
           "format": "int64"
+        },
+        "AppGood": {
+          "$ref": "#/definitions/v1AppGoodInfo"
+        },
+        "InPromotion": {
+          "type": "boolean"
         }
       }
     },
@@ -1608,6 +1614,48 @@
         }
       }
     },
+    "hashingorderv1Order": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DiscountCouponID": {
+          "type": "string"
+        },
+        "UserSpecialReductionID": {
+          "type": "string"
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "End": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CouponID": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "npoolv1VersionResponse": {
       "type": "object",
       "properties": {
@@ -1646,6 +1694,30 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AppGoodInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Price": {
+          "type": "number",
+          "format": "double"
+        },
+        "Online": {
+          "type": "boolean"
+        },
+        "InitAreaStrategy": {
+          "type": "string"
         }
       }
     },
@@ -1920,7 +1992,7 @@
         }
       }
     },
-    "v1CouponAllocatedDetail": {
+    "v1CouponAllocated": {
       "type": "object",
       "properties": {
         "ID": {
@@ -1934,6 +2006,17 @@
         },
         "Type": {
           "type": "string"
+        },
+        "CouponID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CouponAllocatedDetail": {
+      "type": "object",
+      "properties": {
+        "Allocated": {
+          "$ref": "#/definitions/v1CouponAllocated"
         },
         "Coupon": {
           "$ref": "#/definitions/v1CouponPool"
@@ -2762,27 +2845,8 @@
     "v1OrderDetail": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DiscountCouponID": {
-          "type": "string"
-        },
-        "UserSpecialReductionID": {
-          "type": "string"
+        "Order": {
+          "$ref": "#/definitions/hashingorderv1Order"
         },
         "GoodPaying": {
           "$ref": "#/definitions/v1GoodPaying"
@@ -2807,21 +2871,6 @@
         },
         "Payment": {
           "$ref": "#/definitions/v1Payment"
-        },
-        "Start": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "End": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CouponID": {
-          "type": "string"
-        },
-        "CreateAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

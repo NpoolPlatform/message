@@ -1265,6 +1265,8 @@ Request body and response
 | DiscountCoupon | [cloud.hashing.inspire.v1.CouponAllocatedDetail](#cloud.hashing.inspire.v1.CouponAllocatedDetail) |  |  |
 | UserSpecialReduction | [cloud.hashing.inspire.v1.UserSpecialReduction](#cloud.hashing.inspire.v1.UserSpecialReduction) |  |  |
 | PaymentDeadline | [uint32](#uint32) |  |  |
+| AppGood | [cloud.hashing.goods.v1.AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo) |  |  |
+| InPromotion | [bool](#bool) |  |  |
 
 
 
@@ -2869,6 +2871,8 @@ Request body and response
 | DiscountCoupon | [cloud.hashing.inspire.v1.CouponAllocatedDetail](#cloud.hashing.inspire.v1.CouponAllocatedDetail) |  |  |
 | UserSpecialReduction | [cloud.hashing.inspire.v1.UserSpecialReduction](#cloud.hashing.inspire.v1.UserSpecialReduction) |  |  |
 | PaymentDeadline | [uint32](#uint32) |  |  |
+| AppGood | [cloud.hashing.goods.v1.AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo) |  |  |
+| InPromotion | [bool](#bool) |  |  |
 
 
 

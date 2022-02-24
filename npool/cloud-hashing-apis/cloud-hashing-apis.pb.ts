@@ -79,6 +79,8 @@ export type Order = {
   discountCoupon?: CloudHashingInspireV1Cloud-hashing-inspire.CouponAllocatedDetail
   userSpecialReduction?: CloudHashingInspireV1Cloud-hashing-inspire.UserSpecialReduction
   paymentDeadline?: number
+  appGood?: CloudHashingGoodsV1Cloud-hashing-goods.AppGoodInfo
+  inPromotion?: boolean
 }
 
 export type GetOrderRequest = {
