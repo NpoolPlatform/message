@@ -4,6 +4,8 @@
 ## Table of Contents
 
 - [npool/cloud-hashing-apis/cloud-hashing-apis.proto](#npool/cloud-hashing-apis/cloud-hashing-apis.proto)
+    - [Coupon](#cloud.hashing.apis.v1.Coupon)
+    - [Coupons](#cloud.hashing.apis.v1.Coupons)
     - [CreateGoodRequest](#cloud.hashing.apis.v1.CreateGoodRequest)
     - [CreateGoodResponse](#cloud.hashing.apis.v1.CreateGoodResponse)
     - [CreateKycRequest](#cloud.hashing.apis.v1.CreateKycRequest)
@@ -14,6 +16,8 @@
     - [CreatePlatformCoinAccountResponse](#cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse)
     - [CreateUserCoinAccountRequest](#cloud.hashing.apis.v1.CreateUserCoinAccountRequest)
     - [CreateUserCoinAccountResponse](#cloud.hashing.apis.v1.CreateUserCoinAccountResponse)
+    - [GetCouponsByAppUserRequest](#cloud.hashing.apis.v1.GetCouponsByAppUserRequest)
+    - [GetCouponsByAppUserResponse](#cloud.hashing.apis.v1.GetCouponsByAppUserResponse)
     - [GetGoodRequest](#cloud.hashing.apis.v1.GetGoodRequest)
     - [GetGoodResponse](#cloud.hashing.apis.v1.GetGoodResponse)
     - [GetGoodReviewsRequest](#cloud.hashing.apis.v1.GetGoodReviewsRequest)
@@ -96,6 +100,7 @@
     - [UpdateUserWithdrawReviewForOtherAppUserResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserResponse)
     - [UpdateUserWithdrawReviewRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest)
     - [UpdateUserWithdrawReviewResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse)
+    - [UserSpecial](#cloud.hashing.apis.v1.UserSpecial)
     - [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw)
     - [WithdrawAddress](#cloud.hashing.apis.v1.WithdrawAddress)
     - [WithdrawAddressReview](#cloud.hashing.apis.v1.WithdrawAddressReview)
@@ -104,6 +109,8 @@
     - [CloudHashingApis](#cloud.hashing.apis.v1.CloudHashingApis)
   
 - [npool/cloud-hashing-apis/cloud-hashing-apis.proto](#npool/cloud-hashing-apis/cloud-hashing-apis.proto)
+    - [Coupon](#cloud.hashing.apis.v1.Coupon)
+    - [Coupons](#cloud.hashing.apis.v1.Coupons)
     - [CreateGoodRequest](#cloud.hashing.apis.v1.CreateGoodRequest)
     - [CreateGoodResponse](#cloud.hashing.apis.v1.CreateGoodResponse)
     - [CreateKycRequest](#cloud.hashing.apis.v1.CreateKycRequest)
@@ -114,6 +121,8 @@
     - [CreatePlatformCoinAccountResponse](#cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse)
     - [CreateUserCoinAccountRequest](#cloud.hashing.apis.v1.CreateUserCoinAccountRequest)
     - [CreateUserCoinAccountResponse](#cloud.hashing.apis.v1.CreateUserCoinAccountResponse)
+    - [GetCouponsByAppUserRequest](#cloud.hashing.apis.v1.GetCouponsByAppUserRequest)
+    - [GetCouponsByAppUserResponse](#cloud.hashing.apis.v1.GetCouponsByAppUserResponse)
     - [GetGoodRequest](#cloud.hashing.apis.v1.GetGoodRequest)
     - [GetGoodResponse](#cloud.hashing.apis.v1.GetGoodResponse)
     - [GetGoodReviewsRequest](#cloud.hashing.apis.v1.GetGoodReviewsRequest)
@@ -196,6 +205,7 @@
     - [UpdateUserWithdrawReviewForOtherAppUserResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserResponse)
     - [UpdateUserWithdrawReviewRequest](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewRequest)
     - [UpdateUserWithdrawReviewResponse](#cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse)
+    - [UserSpecial](#cloud.hashing.apis.v1.UserSpecial)
     - [UserWithdraw](#cloud.hashing.apis.v1.UserWithdraw)
     - [WithdrawAddress](#cloud.hashing.apis.v1.WithdrawAddress)
     - [WithdrawAddressReview](#cloud.hashing.apis.v1.WithdrawAddressReview)
@@ -214,6 +224,38 @@
 
 
 
+<a name="cloud.hashing.apis.v1.Coupon"></a>
+
+### Coupon
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Coupon | [cloud.hashing.inspire.v1.CouponAllocatedDetail](#cloud.hashing.inspire.v1.CouponAllocatedDetail) |  |  |
+| Order | [cloud.hashing.order.v1.Order](#cloud.hashing.order.v1.Order) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.Coupons"></a>
+
+### Coupons
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Coupons | [Coupon](#cloud.hashing.apis.v1.Coupon) | repeated |  |
+| Offers | [UserSpecial](#cloud.hashing.apis.v1.UserSpecial) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.CreateGoodRequest"></a>
 
 ### CreateGoodRequest
@@ -360,6 +402,37 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [cloud.hashing.billing.v1.CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetCouponsByAppUserRequest"></a>
+
+### GetCouponsByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetCouponsByAppUserResponse"></a>
+
+### GetCouponsByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Coupons](#cloud.hashing.apis.v1.Coupons) |  |  |
 
 
 
@@ -1685,6 +1758,22 @@ Request body and response
 
 
 
+<a name="cloud.hashing.apis.v1.UserSpecial"></a>
+
+### UserSpecial
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Coupon | [cloud.hashing.inspire.v1.UserSpecialReduction](#cloud.hashing.inspire.v1.UserSpecialReduction) |  |  |
+| Order | [cloud.hashing.order.v1.Order](#cloud.hashing.order.v1.Order) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.UserWithdraw"></a>
 
 ### UserWithdraw
@@ -1808,6 +1897,7 @@ Cloud Hashing Goods
 | GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse) |  |
 | SetWithdrawAddress | [SetWithdrawAddressRequest](#cloud.hashing.apis.v1.SetWithdrawAddressRequest) | [SetWithdrawAddressResponse](#cloud.hashing.apis.v1.SetWithdrawAddressResponse) |  |
 | GetWithdrawAddressesByAppUser | [GetWithdrawAddressesByAppUserRequest](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserRequest) | [GetWithdrawAddressesByAppUserResponse](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserResponse) |  |
+| GetCouponsByAppUser | [GetCouponsByAppUserRequest](#cloud.hashing.apis.v1.GetCouponsByAppUserRequest) | [GetCouponsByAppUserResponse](#cloud.hashing.apis.v1.GetCouponsByAppUserResponse) |  |
 
  
 
@@ -1820,6 +1910,38 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud.hashing.apis.v1.Coupon"></a>
+
+### Coupon
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Coupon | [cloud.hashing.inspire.v1.CouponAllocatedDetail](#cloud.hashing.inspire.v1.CouponAllocatedDetail) |  |  |
+| Order | [cloud.hashing.order.v1.Order](#cloud.hashing.order.v1.Order) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.Coupons"></a>
+
+### Coupons
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Coupons | [Coupon](#cloud.hashing.apis.v1.Coupon) | repeated |  |
+| Offers | [UserSpecial](#cloud.hashing.apis.v1.UserSpecial) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.CreateGoodRequest"></a>
 
 ### CreateGoodRequest
@@ -1966,6 +2088,37 @@ Cloud Hashing Goods
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [cloud.hashing.billing.v1.CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetCouponsByAppUserRequest"></a>
+
+### GetCouponsByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetCouponsByAppUserResponse"></a>
+
+### GetCouponsByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Coupons](#cloud.hashing.apis.v1.Coupons) |  |  |
 
 
 
@@ -3291,6 +3444,22 @@ Request body and response
 
 
 
+<a name="cloud.hashing.apis.v1.UserSpecial"></a>
+
+### UserSpecial
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Coupon | [cloud.hashing.inspire.v1.UserSpecialReduction](#cloud.hashing.inspire.v1.UserSpecialReduction) |  |  |
+| Order | [cloud.hashing.order.v1.Order](#cloud.hashing.order.v1.Order) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.UserWithdraw"></a>
 
 ### UserWithdraw
@@ -3414,6 +3583,7 @@ Cloud Hashing Goods
 | GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse) |  |
 | SetWithdrawAddress | [SetWithdrawAddressRequest](#cloud.hashing.apis.v1.SetWithdrawAddressRequest) | [SetWithdrawAddressResponse](#cloud.hashing.apis.v1.SetWithdrawAddressResponse) |  |
 | GetWithdrawAddressesByAppUser | [GetWithdrawAddressesByAppUserRequest](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserRequest) | [GetWithdrawAddressesByAppUserResponse](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserResponse) |  |
+| GetCouponsByAppUser | [GetCouponsByAppUserRequest](#cloud.hashing.apis.v1.GetCouponsByAppUserRequest) | [GetCouponsByAppUserResponse](#cloud.hashing.apis.v1.GetCouponsByAppUserResponse) |  |
 
  
 

@@ -171,6 +171,38 @@
         ]
       }
     },
+    "/v1/get/coupons/by/app/user": {
+      "post": {
+        "operationId": "CloudHashingApis_GetCouponsByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCouponsByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCouponsByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/good": {
       "post": {
         "operationId": "CloudHashingApis_GetGood",
@@ -2024,6 +2056,17 @@
         }
       }
     },
+    "v1Coupon": {
+      "type": "object",
+      "properties": {
+        "Coupon": {
+          "$ref": "#/definitions/v1CouponAllocatedDetail"
+        },
+        "Order": {
+          "$ref": "#/definitions/hashingorderv1Order"
+        }
+      }
+    },
     "v1CouponAllocated": {
       "type": "object",
       "properties": {
@@ -2091,6 +2134,23 @@
         },
         "Name": {
           "type": "string"
+        }
+      }
+    },
+    "v1Coupons": {
+      "type": "object",
+      "properties": {
+        "Coupons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Coupon"
+          }
+        },
+        "Offers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserSpecial"
+          }
         }
       }
     },
@@ -2269,6 +2329,25 @@
         },
         "FeeTypeID": {
           "type": "string"
+        }
+      }
+    },
+    "v1GetCouponsByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetCouponsByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coupons"
         }
       }
     },
@@ -3385,6 +3464,17 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1WithdrawReview"
+        }
+      }
+    },
+    "v1UserSpecial": {
+      "type": "object",
+      "properties": {
+        "Coupon": {
+          "$ref": "#/definitions/v1UserSpecialReduction"
+        },
+        "Order": {
+          "$ref": "#/definitions/hashingorderv1Order"
         }
       }
     },

@@ -64,6 +64,7 @@ type CloudHashingApisClient interface {
 	GetUserWithdrawsByAppUser(ctx context.Context, in *GetUserWithdrawsByAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawsByAppUserResponse, error)
 	SetWithdrawAddress(ctx context.Context, in *SetWithdrawAddressRequest, opts ...grpc.CallOption) (*SetWithdrawAddressResponse, error)
 	GetWithdrawAddressesByAppUser(ctx context.Context, in *GetWithdrawAddressesByAppUserRequest, opts ...grpc.CallOption) (*GetWithdrawAddressesByAppUserResponse, error)
+	GetCouponsByAppUser(ctx context.Context, in *GetCouponsByAppUserRequest, opts ...grpc.CallOption) (*GetCouponsByAppUserResponse, error)
 }
 
 type cloudHashingApisClient struct {
@@ -434,6 +435,15 @@ func (c *cloudHashingApisClient) GetWithdrawAddressesByAppUser(ctx context.Conte
 	return out, nil
 }
 
+func (c *cloudHashingApisClient) GetCouponsByAppUser(ctx context.Context, in *GetCouponsByAppUserRequest, opts ...grpc.CallOption) (*GetCouponsByAppUserResponse, error) {
+	out := new(GetCouponsByAppUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetCouponsByAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CloudHashingApisServer is the server API for CloudHashingApis service.
 // All implementations must embed UnimplementedCloudHashingApisServer
 // for forward compatibility
@@ -478,6 +488,7 @@ type CloudHashingApisServer interface {
 	GetUserWithdrawsByAppUser(context.Context, *GetUserWithdrawsByAppUserRequest) (*GetUserWithdrawsByAppUserResponse, error)
 	SetWithdrawAddress(context.Context, *SetWithdrawAddressRequest) (*SetWithdrawAddressResponse, error)
 	GetWithdrawAddressesByAppUser(context.Context, *GetWithdrawAddressesByAppUserRequest) (*GetWithdrawAddressesByAppUserResponse, error)
+	GetCouponsByAppUser(context.Context, *GetCouponsByAppUserRequest) (*GetCouponsByAppUserResponse, error)
 	mustEmbedUnimplementedCloudHashingApisServer()
 }
 
@@ -604,6 +615,9 @@ func (UnimplementedCloudHashingApisServer) SetWithdrawAddress(context.Context, *
 }
 func (UnimplementedCloudHashingApisServer) GetWithdrawAddressesByAppUser(context.Context, *GetWithdrawAddressesByAppUserRequest) (*GetWithdrawAddressesByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetWithdrawAddressesByAppUser not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetCouponsByAppUser(context.Context, *GetCouponsByAppUserRequest) (*GetCouponsByAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCouponsByAppUser not implemented")
 }
 func (UnimplementedCloudHashingApisServer) mustEmbedUnimplementedCloudHashingApisServer() {}
 
@@ -1338,6 +1352,24 @@ func _CloudHashingApis_GetWithdrawAddressesByAppUser_Handler(srv interface{}, ct
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingApis_GetCouponsByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCouponsByAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetCouponsByAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetCouponsByAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetCouponsByAppUser(ctx, req.(*GetCouponsByAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CloudHashingApis_ServiceDesc is the grpc.ServiceDesc for CloudHashingApis service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1504,6 +1536,10 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetWithdrawAddressesByAppUser",
 			Handler:    _CloudHashingApis_GetWithdrawAddressesByAppUser_Handler,
+		},
+		{
+			MethodName: "GetCouponsByAppUser",
+			Handler:    _CloudHashingApis_GetCouponsByAppUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
