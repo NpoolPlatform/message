@@ -100,6 +100,13 @@ type CloudHashingGoodsClient interface {
 	UpdateFeeType(ctx context.Context, in *UpdateFeeTypeRequest, opts ...grpc.CallOption) (*UpdateFeeTypeResponse, error)
 	GetFeeType(ctx context.Context, in *GetFeeTypeRequest, opts ...grpc.CallOption) (*GetFeeTypeResponse, error)
 	GetFeeTypes(ctx context.Context, in *GetFeeTypesRequest, opts ...grpc.CallOption) (*GetFeeTypesResponse, error)
+	CreateAppGoodPromotion(ctx context.Context, in *CreateAppGoodPromotionRequest, opts ...grpc.CallOption) (*CreateAppGoodPromotionResponse, error)
+	CreateAppGoodPromotionForOtherApp(ctx context.Context, in *CreateAppGoodPromotionForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppGoodPromotionForOtherAppResponse, error)
+	UpdateAppGoodPromotion(ctx context.Context, in *UpdateAppGoodPromotionRequest, opts ...grpc.CallOption) (*UpdateAppGoodPromotionResponse, error)
+	GetAppGoodPromotions(ctx context.Context, in *GetAppGoodPromotionsRequest, opts ...grpc.CallOption) (*GetAppGoodPromotionsResponse, error)
+	GetAppGoodPromotionByAppGoodStartEnd(ctx context.Context, in *GetAppGoodPromotionByAppGoodStartEndRequest, opts ...grpc.CallOption) (*GetAppGoodPromotionByAppGoodStartEndResponse, error)
+	GetAppGoodPromotionsByAppGood(ctx context.Context, in *GetAppGoodPromotionsByAppGoodRequest, opts ...grpc.CallOption) (*GetAppGoodPromotionsByAppGoodResponse, error)
+	GetAppGoodPromotionsByOtherAppGood(ctx context.Context, in *GetAppGoodPromotionsByOtherAppGoodRequest, opts ...grpc.CallOption) (*GetAppGoodPromotionsByOtherAppGoodResponse, error)
 }
 
 type cloudHashingGoodsClient struct {
@@ -776,6 +783,69 @@ func (c *cloudHashingGoodsClient) GetFeeTypes(ctx context.Context, in *GetFeeTyp
 	return out, nil
 }
 
+func (c *cloudHashingGoodsClient) CreateAppGoodPromotion(ctx context.Context, in *CreateAppGoodPromotionRequest, opts ...grpc.CallOption) (*CreateAppGoodPromotionResponse, error) {
+	out := new(CreateAppGoodPromotionResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.goods.v1.CloudHashingGoods/CreateAppGoodPromotion", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingGoodsClient) CreateAppGoodPromotionForOtherApp(ctx context.Context, in *CreateAppGoodPromotionForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppGoodPromotionForOtherAppResponse, error) {
+	out := new(CreateAppGoodPromotionForOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.goods.v1.CloudHashingGoods/CreateAppGoodPromotionForOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingGoodsClient) UpdateAppGoodPromotion(ctx context.Context, in *UpdateAppGoodPromotionRequest, opts ...grpc.CallOption) (*UpdateAppGoodPromotionResponse, error) {
+	out := new(UpdateAppGoodPromotionResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.goods.v1.CloudHashingGoods/UpdateAppGoodPromotion", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingGoodsClient) GetAppGoodPromotions(ctx context.Context, in *GetAppGoodPromotionsRequest, opts ...grpc.CallOption) (*GetAppGoodPromotionsResponse, error) {
+	out := new(GetAppGoodPromotionsResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotions", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingGoodsClient) GetAppGoodPromotionByAppGoodStartEnd(ctx context.Context, in *GetAppGoodPromotionByAppGoodStartEndRequest, opts ...grpc.CallOption) (*GetAppGoodPromotionByAppGoodStartEndResponse, error) {
+	out := new(GetAppGoodPromotionByAppGoodStartEndResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionByAppGoodStartEnd", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingGoodsClient) GetAppGoodPromotionsByAppGood(ctx context.Context, in *GetAppGoodPromotionsByAppGoodRequest, opts ...grpc.CallOption) (*GetAppGoodPromotionsByAppGoodResponse, error) {
+	out := new(GetAppGoodPromotionsByAppGoodResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByAppGood", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingGoodsClient) GetAppGoodPromotionsByOtherAppGood(ctx context.Context, in *GetAppGoodPromotionsByOtherAppGoodRequest, opts ...grpc.CallOption) (*GetAppGoodPromotionsByOtherAppGoodResponse, error) {
+	out := new(GetAppGoodPromotionsByOtherAppGoodResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByOtherAppGood", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CloudHashingGoodsServer is the server API for CloudHashingGoods service.
 // All implementations must embed UnimplementedCloudHashingGoodsServer
 // for forward compatibility
@@ -856,6 +926,13 @@ type CloudHashingGoodsServer interface {
 	UpdateFeeType(context.Context, *UpdateFeeTypeRequest) (*UpdateFeeTypeResponse, error)
 	GetFeeType(context.Context, *GetFeeTypeRequest) (*GetFeeTypeResponse, error)
 	GetFeeTypes(context.Context, *GetFeeTypesRequest) (*GetFeeTypesResponse, error)
+	CreateAppGoodPromotion(context.Context, *CreateAppGoodPromotionRequest) (*CreateAppGoodPromotionResponse, error)
+	CreateAppGoodPromotionForOtherApp(context.Context, *CreateAppGoodPromotionForOtherAppRequest) (*CreateAppGoodPromotionForOtherAppResponse, error)
+	UpdateAppGoodPromotion(context.Context, *UpdateAppGoodPromotionRequest) (*UpdateAppGoodPromotionResponse, error)
+	GetAppGoodPromotions(context.Context, *GetAppGoodPromotionsRequest) (*GetAppGoodPromotionsResponse, error)
+	GetAppGoodPromotionByAppGoodStartEnd(context.Context, *GetAppGoodPromotionByAppGoodStartEndRequest) (*GetAppGoodPromotionByAppGoodStartEndResponse, error)
+	GetAppGoodPromotionsByAppGood(context.Context, *GetAppGoodPromotionsByAppGoodRequest) (*GetAppGoodPromotionsByAppGoodResponse, error)
+	GetAppGoodPromotionsByOtherAppGood(context.Context, *GetAppGoodPromotionsByOtherAppGoodRequest) (*GetAppGoodPromotionsByOtherAppGoodResponse, error)
 	mustEmbedUnimplementedCloudHashingGoodsServer()
 }
 
@@ -1084,6 +1161,27 @@ func (UnimplementedCloudHashingGoodsServer) GetFeeType(context.Context, *GetFeeT
 }
 func (UnimplementedCloudHashingGoodsServer) GetFeeTypes(context.Context, *GetFeeTypesRequest) (*GetFeeTypesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFeeTypes not implemented")
+}
+func (UnimplementedCloudHashingGoodsServer) CreateAppGoodPromotion(context.Context, *CreateAppGoodPromotionRequest) (*CreateAppGoodPromotionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppGoodPromotion not implemented")
+}
+func (UnimplementedCloudHashingGoodsServer) CreateAppGoodPromotionForOtherApp(context.Context, *CreateAppGoodPromotionForOtherAppRequest) (*CreateAppGoodPromotionForOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppGoodPromotionForOtherApp not implemented")
+}
+func (UnimplementedCloudHashingGoodsServer) UpdateAppGoodPromotion(context.Context, *UpdateAppGoodPromotionRequest) (*UpdateAppGoodPromotionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppGoodPromotion not implemented")
+}
+func (UnimplementedCloudHashingGoodsServer) GetAppGoodPromotions(context.Context, *GetAppGoodPromotionsRequest) (*GetAppGoodPromotionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodPromotions not implemented")
+}
+func (UnimplementedCloudHashingGoodsServer) GetAppGoodPromotionByAppGoodStartEnd(context.Context, *GetAppGoodPromotionByAppGoodStartEndRequest) (*GetAppGoodPromotionByAppGoodStartEndResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodPromotionByAppGoodStartEnd not implemented")
+}
+func (UnimplementedCloudHashingGoodsServer) GetAppGoodPromotionsByAppGood(context.Context, *GetAppGoodPromotionsByAppGoodRequest) (*GetAppGoodPromotionsByAppGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodPromotionsByAppGood not implemented")
+}
+func (UnimplementedCloudHashingGoodsServer) GetAppGoodPromotionsByOtherAppGood(context.Context, *GetAppGoodPromotionsByOtherAppGoodRequest) (*GetAppGoodPromotionsByOtherAppGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodPromotionsByOtherAppGood not implemented")
 }
 func (UnimplementedCloudHashingGoodsServer) mustEmbedUnimplementedCloudHashingGoodsServer() {}
 
@@ -2430,6 +2528,132 @@ func _CloudHashingGoods_GetFeeTypes_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingGoods_CreateAppGoodPromotion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppGoodPromotionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingGoodsServer).CreateAppGoodPromotion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.goods.v1.CloudHashingGoods/CreateAppGoodPromotion",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingGoodsServer).CreateAppGoodPromotion(ctx, req.(*CreateAppGoodPromotionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingGoods_CreateAppGoodPromotionForOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppGoodPromotionForOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingGoodsServer).CreateAppGoodPromotionForOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.goods.v1.CloudHashingGoods/CreateAppGoodPromotionForOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingGoodsServer).CreateAppGoodPromotionForOtherApp(ctx, req.(*CreateAppGoodPromotionForOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingGoods_UpdateAppGoodPromotion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppGoodPromotionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingGoodsServer).UpdateAppGoodPromotion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.goods.v1.CloudHashingGoods/UpdateAppGoodPromotion",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingGoodsServer).UpdateAppGoodPromotion(ctx, req.(*UpdateAppGoodPromotionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingGoods_GetAppGoodPromotions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppGoodPromotionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingGoodsServer).GetAppGoodPromotions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotions",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingGoodsServer).GetAppGoodPromotions(ctx, req.(*GetAppGoodPromotionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingGoods_GetAppGoodPromotionByAppGoodStartEnd_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppGoodPromotionByAppGoodStartEndRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingGoodsServer).GetAppGoodPromotionByAppGoodStartEnd(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionByAppGoodStartEnd",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingGoodsServer).GetAppGoodPromotionByAppGoodStartEnd(ctx, req.(*GetAppGoodPromotionByAppGoodStartEndRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingGoods_GetAppGoodPromotionsByAppGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppGoodPromotionsByAppGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingGoodsServer).GetAppGoodPromotionsByAppGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByAppGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingGoodsServer).GetAppGoodPromotionsByAppGood(ctx, req.(*GetAppGoodPromotionsByAppGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingGoods_GetAppGoodPromotionsByOtherAppGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppGoodPromotionsByOtherAppGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingGoodsServer).GetAppGoodPromotionsByOtherAppGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByOtherAppGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingGoodsServer).GetAppGoodPromotionsByOtherAppGood(ctx, req.(*GetAppGoodPromotionsByOtherAppGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CloudHashingGoods_ServiceDesc is the grpc.ServiceDesc for CloudHashingGoods service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -2732,6 +2956,34 @@ var CloudHashingGoods_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetFeeTypes",
 			Handler:    _CloudHashingGoods_GetFeeTypes_Handler,
+		},
+		{
+			MethodName: "CreateAppGoodPromotion",
+			Handler:    _CloudHashingGoods_CreateAppGoodPromotion_Handler,
+		},
+		{
+			MethodName: "CreateAppGoodPromotionForOtherApp",
+			Handler:    _CloudHashingGoods_CreateAppGoodPromotionForOtherApp_Handler,
+		},
+		{
+			MethodName: "UpdateAppGoodPromotion",
+			Handler:    _CloudHashingGoods_UpdateAppGoodPromotion_Handler,
+		},
+		{
+			MethodName: "GetAppGoodPromotions",
+			Handler:    _CloudHashingGoods_GetAppGoodPromotions_Handler,
+		},
+		{
+			MethodName: "GetAppGoodPromotionByAppGoodStartEnd",
+			Handler:    _CloudHashingGoods_GetAppGoodPromotionByAppGoodStartEnd_Handler,
+		},
+		{
+			MethodName: "GetAppGoodPromotionsByAppGood",
+			Handler:    _CloudHashingGoods_GetAppGoodPromotionsByAppGood_Handler,
+		},
+		{
+			MethodName: "GetAppGoodPromotionsByOtherAppGood",
+			Handler:    _CloudHashingGoods_GetAppGoodPromotionsByOtherAppGood_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -757,6 +757,77 @@ export type GetFeesResponse = {
   infos?: Fee[]
 }
 
+export type AppGoodPromotion = {
+  id?: string
+  appID?: string
+  goodID?: string
+  message?: string
+  start?: number
+  end?: number
+  price?: number
+}
+
+export type CreateAppGoodPromotionRequest = {
+  info?: AppGoodPromotion
+}
+
+export type CreateAppGoodPromotionResponse = {
+  info?: AppGoodPromotion
+}
+
+export type CreateAppGoodPromotionForOtherAppRequest = {
+  targetAppID?: string
+  info?: AppGoodPromotion
+}
+
+export type CreateAppGoodPromotionForOtherAppResponse = {
+  info?: AppGoodPromotion
+}
+
+export type UpdateAppGoodPromotionRequest = {
+  info?: AppGoodPromotion
+}
+
+export type UpdateAppGoodPromotionResponse = {
+  info?: AppGoodPromotion
+}
+
+export type GetAppGoodPromotionsRequest = {
+}
+
+export type GetAppGoodPromotionsResponse = {
+  infos?: AppGoodPromotion[]
+}
+
+export type GetAppGoodPromotionByAppGoodStartEndRequest = {
+  appID?: string
+  goodID?: string
+  start?: number
+  end?: number
+}
+
+export type GetAppGoodPromotionByAppGoodStartEndResponse = {
+  infos?: AppGoodPromotion[]
+}
+
+export type GetAppGoodPromotionsByAppGoodRequest = {
+  appID?: string
+  goodID?: string
+}
+
+export type GetAppGoodPromotionsByAppGoodResponse = {
+  infos?: AppGoodPromotion[]
+}
+
+export type GetAppGoodPromotionsByOtherAppGoodRequest = {
+  targetAppID?: string
+  goodID?: string
+}
+
+export type GetAppGoodPromotionsByOtherAppGoodResponse = {
+  infos?: AppGoodPromotion[]
+}
+
 export class CloudHashingGoods {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version?${fm.renderURLSearchParams(req, [])}`, {...initReq, method: "GET"})
@@ -979,5 +1050,26 @@ export class CloudHashingGoods {
   }
   static GetFeeTypes(req: GetFeeTypesRequest, initReq?: fm.InitReq): Promise<GetFeeTypesResponse> {
     return fm.fetchReq<GetFeeTypesRequest, GetFeeTypesResponse>(`/v1/get/fee/types`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppGoodPromotion(req: CreateAppGoodPromotionRequest, initReq?: fm.InitReq): Promise<CreateAppGoodPromotionResponse> {
+    return fm.fetchReq<CreateAppGoodPromotionRequest, CreateAppGoodPromotionResponse>(`/v1/create/app/good/promotion`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppGoodPromotionForOtherApp(req: CreateAppGoodPromotionForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppGoodPromotionForOtherAppResponse> {
+    return fm.fetchReq<CreateAppGoodPromotionForOtherAppRequest, CreateAppGoodPromotionForOtherAppResponse>(`/v1/create/app/good/promotion/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateAppGoodPromotion(req: UpdateAppGoodPromotionRequest, initReq?: fm.InitReq): Promise<UpdateAppGoodPromotionResponse> {
+    return fm.fetchReq<UpdateAppGoodPromotionRequest, UpdateAppGoodPromotionResponse>(`/v1/update/app/good/promotion`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppGoodPromotions(req: GetAppGoodPromotionsRequest, initReq?: fm.InitReq): Promise<GetAppGoodPromotionsResponse> {
+    return fm.fetchReq<GetAppGoodPromotionsRequest, GetAppGoodPromotionsResponse>(`/v1/get/app/good/promotions`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppGoodPromotionByAppGoodStartEnd(req: GetAppGoodPromotionByAppGoodStartEndRequest, initReq?: fm.InitReq): Promise<GetAppGoodPromotionByAppGoodStartEndResponse> {
+    return fm.fetchReq<GetAppGoodPromotionByAppGoodStartEndRequest, GetAppGoodPromotionByAppGoodStartEndResponse>(`/v1/get/app/good/promotion/by/app/good/start/end`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppGoodPromotionsByAppGood(req: GetAppGoodPromotionsByAppGoodRequest, initReq?: fm.InitReq): Promise<GetAppGoodPromotionsByAppGoodResponse> {
+    return fm.fetchReq<GetAppGoodPromotionsByAppGoodRequest, GetAppGoodPromotionsByAppGoodResponse>(`/v1/get/app/good/promotion/by/app/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppGoodPromotionsByOtherAppGood(req: GetAppGoodPromotionsByOtherAppGoodRequest, initReq?: fm.InitReq): Promise<GetAppGoodPromotionsByOtherAppGoodResponse> {
+    return fm.fetchReq<GetAppGoodPromotionsByOtherAppGoodRequest, GetAppGoodPromotionsByOtherAppGoodResponse>(`/v1/get/app/good/promotion/by/other/app/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
