@@ -1000,6 +1000,7 @@ request body and response
 | End | [uint32](#uint32) |  |  |
 | CouponID | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
+| PromotionID | [string](#string) |  |  |
 
 
 
@@ -2011,6 +2012,7 @@ request body and response
 | End | [uint32](#uint32) |  |  |
 | CouponID | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
+| PromotionID | [string](#string) |  |  |
 
 
 

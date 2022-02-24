@@ -65,6 +65,7 @@ export type Order = {
   end?: number
   couponID?: string
   createAt?: number
+  promotionID?: string
 }
 
 export type CreateOrderRequest = {
