@@ -338,7 +338,7 @@ message Order {
     cloud.hashing.inspire.v1.UserSpecialReduction UserSpecialReduction = 70;
     uint32 PaymentDeadline = 80;
     cloud.hashing.goods.v1.AppGoodInfo AppGood = 90;
-    bool InPromotion = 100;
+    cloud.hashing.goods.v1.AppGoodPromotion Promotion = 100;
 }
 
 message GetOrderRequest {

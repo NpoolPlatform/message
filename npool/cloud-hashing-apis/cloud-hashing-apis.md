@@ -1266,7 +1266,7 @@ Request body and response
 | UserSpecialReduction | [cloud.hashing.inspire.v1.UserSpecialReduction](#cloud.hashing.inspire.v1.UserSpecialReduction) |  |  |
 | PaymentDeadline | [uint32](#uint32) |  |  |
 | AppGood | [cloud.hashing.goods.v1.AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo) |  |  |
-| InPromotion | [bool](#bool) |  |  |
+| Promotion | [cloud.hashing.goods.v1.AppGoodPromotion](#cloud.hashing.goods.v1.AppGoodPromotion) |  |  |
 
 
 
@@ -2872,7 +2872,7 @@ Request body and response
 | UserSpecialReduction | [cloud.hashing.inspire.v1.UserSpecialReduction](#cloud.hashing.inspire.v1.UserSpecialReduction) |  |  |
 | PaymentDeadline | [uint32](#uint32) |  |  |
 | AppGood | [cloud.hashing.goods.v1.AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo) |  |  |
-| InPromotion | [bool](#bool) |  |  |
+| Promotion | [cloud.hashing.goods.v1.AppGoodPromotion](#cloud.hashing.goods.v1.AppGoodPromotion) |  |  |
 
 
 

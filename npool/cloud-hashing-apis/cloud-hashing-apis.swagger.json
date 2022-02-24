@@ -1538,8 +1538,8 @@
         "AppGood": {
           "$ref": "#/definitions/v1AppGoodInfo"
         },
-        "InPromotion": {
-          "type": "boolean"
+        "Promotion": {
+          "$ref": "#/definitions/v1AppGoodPromotion"
         }
       }
     },
@@ -1653,6 +1653,9 @@
         "CreateAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "PromotionID": {
+          "type": "string"
         }
       }
     },
@@ -1718,6 +1721,35 @@
         },
         "InitAreaStrategy": {
           "type": "string"
+        }
+      }
+    },
+    "v1AppGoodPromotion": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "End": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Price": {
+          "type": "number",
+          "format": "double"
         }
       }
     },

@@ -80,7 +80,7 @@ export type Order = {
   userSpecialReduction?: CloudHashingInspireV1Cloud-hashing-inspire.UserSpecialReduction
   paymentDeadline?: number
   appGood?: CloudHashingGoodsV1Cloud-hashing-goods.AppGoodInfo
-  inPromotion?: boolean
+  promotion?: CloudHashingGoodsV1Cloud-hashing-goods.AppGoodPromotion
 }
 
 export type GetOrderRequest = {
