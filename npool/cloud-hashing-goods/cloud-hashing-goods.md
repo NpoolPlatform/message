@@ -68,6 +68,8 @@
     - [Fee](#cloud.hashing.goods.v1.Fee)
     - [FeeDetail](#cloud.hashing.goods.v1.FeeDetail)
     - [FeeType](#cloud.hashing.goods.v1.FeeType)
+    - [GetAppGoodByAppGoodRequest](#cloud.hashing.goods.v1.GetAppGoodByAppGoodRequest)
+    - [GetAppGoodByAppGoodResponse](#cloud.hashing.goods.v1.GetAppGoodByAppGoodResponse)
     - [GetAppGoodPromotionByAppGoodStartEndRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodStartEndRequest)
     - [GetAppGoodPromotionByAppGoodStartEndResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodStartEndResponse)
     - [GetAppGoodPromotionByAppGoodTimestampRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodTimestampRequest)
@@ -260,6 +262,8 @@
     - [Fee](#cloud.hashing.goods.v1.Fee)
     - [FeeDetail](#cloud.hashing.goods.v1.FeeDetail)
     - [FeeType](#cloud.hashing.goods.v1.FeeType)
+    - [GetAppGoodByAppGoodRequest](#cloud.hashing.goods.v1.GetAppGoodByAppGoodRequest)
+    - [GetAppGoodByAppGoodResponse](#cloud.hashing.goods.v1.GetAppGoodByAppGoodResponse)
     - [GetAppGoodPromotionByAppGoodStartEndRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodStartEndRequest)
     - [GetAppGoodPromotionByAppGoodStartEndResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodStartEndResponse)
     - [GetAppGoodPromotionByAppGoodTimestampRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodTimestampRequest)
@@ -1391,6 +1395,37 @@
 
 
 
+<a name="cloud.hashing.goods.v1.GetAppGoodByAppGoodRequest"></a>
+
+### GetAppGoodByAppGoodRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.goods.v1.GetAppGoodByAppGoodResponse"></a>
+
+### GetAppGoodByAppGoodResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodStartEndRequest"></a>
 
 ### GetAppGoodPromotionByAppGoodStartEndRequest
@@ -3390,6 +3425,7 @@ Cloud Hashing Goods
 | UnauthorizeAppGood | [UnauthorizeAppGoodRequest](#cloud.hashing.goods.v1.UnauthorizeAppGoodRequest) | [UnauthorizeAppGoodResponse](#cloud.hashing.goods.v1.UnauthorizeAppGoodResponse) |  |
 | GetAppGoods | [GetAppGoodsRequest](#cloud.hashing.goods.v1.GetAppGoodsRequest) | [GetAppGoodsResponse](#cloud.hashing.goods.v1.GetAppGoodsResponse) |  |
 | GetAppGoodsByOtherApp | [GetAppGoodsByOtherAppRequest](#cloud.hashing.goods.v1.GetAppGoodsByOtherAppRequest) | [GetAppGoodsByOtherAppResponse](#cloud.hashing.goods.v1.GetAppGoodsByOtherAppResponse) |  |
+| GetAppGoodByAppGood | [GetAppGoodByAppGoodRequest](#cloud.hashing.goods.v1.GetAppGoodByAppGoodRequest) | [GetAppGoodByAppGoodResponse](#cloud.hashing.goods.v1.GetAppGoodByAppGoodResponse) |  |
 | AuthorizeAppTargetArea | [AuthorizeAppTargetAreaRequest](#cloud.hashing.goods.v1.AuthorizeAppTargetAreaRequest) | [AuthorizeAppTargetAreaResponse](#cloud.hashing.goods.v1.AuthorizeAppTargetAreaResponse) |  |
 | CheckAppTargetArea | [CheckAppTargetAreaRequest](#cloud.hashing.goods.v1.CheckAppTargetAreaRequest) | [CheckAppTargetAreaResponse](#cloud.hashing.goods.v1.CheckAppTargetAreaResponse) |  |
 | UnauthorizeAppTargetArea | [UnauthorizeAppTargetAreaRequest](#cloud.hashing.goods.v1.UnauthorizeAppTargetAreaRequest) | [UnauthorizeAppTargetAreaResponse](#cloud.hashing.goods.v1.UnauthorizeAppTargetAreaResponse) |  |
@@ -4429,6 +4465,37 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud.hashing.goods.v1.GetAppGoodByAppGoodRequest"></a>
+
+### GetAppGoodByAppGoodRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.goods.v1.GetAppGoodByAppGoodResponse"></a>
+
+### GetAppGoodByAppGoodResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodStartEndRequest"></a>
 
 ### GetAppGoodPromotionByAppGoodStartEndRequest
@@ -6428,6 +6495,7 @@ Cloud Hashing Goods
 | UnauthorizeAppGood | [UnauthorizeAppGoodRequest](#cloud.hashing.goods.v1.UnauthorizeAppGoodRequest) | [UnauthorizeAppGoodResponse](#cloud.hashing.goods.v1.UnauthorizeAppGoodResponse) |  |
 | GetAppGoods | [GetAppGoodsRequest](#cloud.hashing.goods.v1.GetAppGoodsRequest) | [GetAppGoodsResponse](#cloud.hashing.goods.v1.GetAppGoodsResponse) |  |
 | GetAppGoodsByOtherApp | [GetAppGoodsByOtherAppRequest](#cloud.hashing.goods.v1.GetAppGoodsByOtherAppRequest) | [GetAppGoodsByOtherAppResponse](#cloud.hashing.goods.v1.GetAppGoodsByOtherAppResponse) |  |
+| GetAppGoodByAppGood | [GetAppGoodByAppGoodRequest](#cloud.hashing.goods.v1.GetAppGoodByAppGoodRequest) | [GetAppGoodByAppGoodResponse](#cloud.hashing.goods.v1.GetAppGoodByAppGoodResponse) |  |
 | AuthorizeAppTargetArea | [AuthorizeAppTargetAreaRequest](#cloud.hashing.goods.v1.AuthorizeAppTargetAreaRequest) | [AuthorizeAppTargetAreaResponse](#cloud.hashing.goods.v1.AuthorizeAppTargetAreaResponse) |  |
 | CheckAppTargetArea | [CheckAppTargetAreaRequest](#cloud.hashing.goods.v1.CheckAppTargetAreaRequest) | [CheckAppTargetAreaResponse](#cloud.hashing.goods.v1.CheckAppTargetAreaResponse) |  |
 | UnauthorizeAppTargetArea | [UnauthorizeAppTargetAreaRequest](#cloud.hashing.goods.v1.UnauthorizeAppTargetAreaRequest) | [UnauthorizeAppTargetAreaResponse](#cloud.hashing.goods.v1.UnauthorizeAppTargetAreaResponse) |  |

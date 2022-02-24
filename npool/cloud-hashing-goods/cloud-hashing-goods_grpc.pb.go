@@ -78,6 +78,7 @@ type CloudHashingGoodsClient interface {
 	UnauthorizeAppGood(ctx context.Context, in *UnauthorizeAppGoodRequest, opts ...grpc.CallOption) (*UnauthorizeAppGoodResponse, error)
 	GetAppGoods(ctx context.Context, in *GetAppGoodsRequest, opts ...grpc.CallOption) (*GetAppGoodsResponse, error)
 	GetAppGoodsByOtherApp(ctx context.Context, in *GetAppGoodsByOtherAppRequest, opts ...grpc.CallOption) (*GetAppGoodsByOtherAppResponse, error)
+	GetAppGoodByAppGood(ctx context.Context, in *GetAppGoodByAppGoodRequest, opts ...grpc.CallOption) (*GetAppGoodByAppGoodResponse, error)
 	AuthorizeAppTargetArea(ctx context.Context, in *AuthorizeAppTargetAreaRequest, opts ...grpc.CallOption) (*AuthorizeAppTargetAreaResponse, error)
 	CheckAppTargetArea(ctx context.Context, in *CheckAppTargetAreaRequest, opts ...grpc.CallOption) (*CheckAppTargetAreaResponse, error)
 	UnauthorizeAppTargetArea(ctx context.Context, in *UnauthorizeAppTargetAreaRequest, opts ...grpc.CallOption) (*UnauthorizeAppTargetAreaResponse, error)
@@ -590,6 +591,15 @@ func (c *cloudHashingGoodsClient) GetAppGoodsByOtherApp(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *cloudHashingGoodsClient) GetAppGoodByAppGood(ctx context.Context, in *GetAppGoodByAppGoodRequest, opts ...grpc.CallOption) (*GetAppGoodByAppGoodResponse, error) {
+	out := new(GetAppGoodByAppGoodResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodByAppGood", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingGoodsClient) AuthorizeAppTargetArea(ctx context.Context, in *AuthorizeAppTargetAreaRequest, opts ...grpc.CallOption) (*AuthorizeAppTargetAreaResponse, error) {
 	out := new(AuthorizeAppTargetAreaResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.goods.v1.CloudHashingGoods/AuthorizeAppTargetArea", in, out, opts...)
@@ -954,6 +964,7 @@ type CloudHashingGoodsServer interface {
 	UnauthorizeAppGood(context.Context, *UnauthorizeAppGoodRequest) (*UnauthorizeAppGoodResponse, error)
 	GetAppGoods(context.Context, *GetAppGoodsRequest) (*GetAppGoodsResponse, error)
 	GetAppGoodsByOtherApp(context.Context, *GetAppGoodsByOtherAppRequest) (*GetAppGoodsByOtherAppResponse, error)
+	GetAppGoodByAppGood(context.Context, *GetAppGoodByAppGoodRequest) (*GetAppGoodByAppGoodResponse, error)
 	AuthorizeAppTargetArea(context.Context, *AuthorizeAppTargetAreaRequest) (*AuthorizeAppTargetAreaResponse, error)
 	CheckAppTargetArea(context.Context, *CheckAppTargetAreaRequest) (*CheckAppTargetAreaResponse, error)
 	UnauthorizeAppTargetArea(context.Context, *UnauthorizeAppTargetAreaRequest) (*UnauthorizeAppTargetAreaResponse, error)
@@ -1150,6 +1161,9 @@ func (UnimplementedCloudHashingGoodsServer) GetAppGoods(context.Context, *GetApp
 }
 func (UnimplementedCloudHashingGoodsServer) GetAppGoodsByOtherApp(context.Context, *GetAppGoodsByOtherAppRequest) (*GetAppGoodsByOtherAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodsByOtherApp not implemented")
+}
+func (UnimplementedCloudHashingGoodsServer) GetAppGoodByAppGood(context.Context, *GetAppGoodByAppGoodRequest) (*GetAppGoodByAppGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodByAppGood not implemented")
 }
 func (UnimplementedCloudHashingGoodsServer) AuthorizeAppTargetArea(context.Context, *AuthorizeAppTargetAreaRequest) (*AuthorizeAppTargetAreaResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AuthorizeAppTargetArea not implemented")
@@ -2202,6 +2216,24 @@ func _CloudHashingGoods_GetAppGoodsByOtherApp_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingGoods_GetAppGoodByAppGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppGoodByAppGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingGoodsServer).GetAppGoodByAppGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodByAppGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingGoodsServer).GetAppGoodByAppGood(ctx, req.(*GetAppGoodByAppGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingGoods_AuthorizeAppTargetArea_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AuthorizeAppTargetAreaRequest)
 	if err := dec(in); err != nil {
@@ -3028,6 +3060,10 @@ var CloudHashingGoods_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppGoodsByOtherApp",
 			Handler:    _CloudHashingGoods_GetAppGoodsByOtherApp_Handler,
+		},
+		{
+			MethodName: "GetAppGoodByAppGood",
+			Handler:    _CloudHashingGoods_GetAppGoodByAppGood_Handler,
 		},
 		{
 			MethodName: "AuthorizeAppTargetArea",

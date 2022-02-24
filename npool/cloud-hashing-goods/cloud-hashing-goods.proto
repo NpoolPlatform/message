@@ -330,6 +330,12 @@ service CloudHashingGoods {
             body: "*"
         };
     }
+    rpc GetAppGoodByAppGood (GetAppGoodByAppGoodRequest) returns (GetAppGoodByAppGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/goods/by/app/good"
+            body: "*"
+        };
+    }
 
     rpc AuthorizeAppTargetArea (AuthorizeAppTargetAreaRequest) returns (AuthorizeAppTargetAreaResponse) {
         option (google.api.http) = {
@@ -1057,6 +1063,15 @@ message GetAppGoodsByOtherAppRequest {
 
 message GetAppGoodsByOtherAppResponse {
     repeated AppGoodInfo Infos = 10;
+}
+
+message GetAppGoodByAppGoodRequest {
+    string AppID = 10;
+    string GoodID = 20;
+}
+
+message GetAppGoodByAppGoodResponse {
+    AppGoodInfo Info = 10;
 }
 
 message AppTargetAreaInfo {

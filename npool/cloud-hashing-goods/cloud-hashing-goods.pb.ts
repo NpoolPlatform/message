@@ -520,6 +520,15 @@ export type GetAppGoodsByOtherAppResponse = {
   infos?: AppGoodInfo[]
 }
 
+export type GetAppGoodByAppGoodRequest = {
+  appID?: string
+  goodID?: string
+}
+
+export type GetAppGoodByAppGoodResponse = {
+  info?: AppGoodInfo
+}
+
 export type AppTargetAreaInfo = {
   id?: string
   appID?: string
@@ -1026,6 +1035,9 @@ export class CloudHashingGoods {
   }
   static GetAppGoodsByOtherApp(req: GetAppGoodsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppGoodsByOtherAppResponse> {
     return fm.fetchReq<GetAppGoodsByOtherAppRequest, GetAppGoodsByOtherAppResponse>(`/v1/get/app/goods/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppGoodByAppGood(req: GetAppGoodByAppGoodRequest, initReq?: fm.InitReq): Promise<GetAppGoodByAppGoodResponse> {
+    return fm.fetchReq<GetAppGoodByAppGoodRequest, GetAppGoodByAppGoodResponse>(`/v1/get/app/goods/by/app/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static AuthorizeAppTargetArea(req: AuthorizeAppTargetAreaRequest, initReq?: fm.InitReq): Promise<AuthorizeAppTargetAreaResponse> {
     return fm.fetchReq<AuthorizeAppTargetAreaRequest, AuthorizeAppTargetAreaResponse>(`/v1/authorize/app/target-area`, {...initReq, method: "POST", body: JSON.stringify(req)})
