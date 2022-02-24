@@ -494,6 +494,12 @@ service CloudHashingGoods {
             body: "*"
         };
     }
+    rpc GetAppGoodPromotion (GetAppGoodPromotionRequest) returns (GetAppGoodPromotionResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/good/promotion"
+            body: "*"
+        };
+    }
     rpc GetAppGoodPromotions (GetAppGoodPromotionsRequest) returns (GetAppGoodPromotionsResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/good/promotions"
@@ -515,6 +521,18 @@ service CloudHashingGoods {
     rpc GetAppGoodPromotionsByOtherAppGood (GetAppGoodPromotionsByOtherAppGoodRequest) returns (GetAppGoodPromotionsByOtherAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/good/promotion/by/other/app/good"
+            body: "*"
+        };
+    }
+    rpc GetAppGoodPromotionsByApp (GetAppGoodPromotionsByAppRequest) returns (GetAppGoodPromotionsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/good/promotion/by/app"
+            body: "*"
+        };
+    }
+    rpc GetAppGoodPromotionsByOtherApp (GetAppGoodPromotionsByOtherAppRequest) returns (GetAppGoodPromotionsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/good/promotion/by/other/app"
             body: "*"
         };
     }
@@ -1315,6 +1333,14 @@ message DeleteAppGoodPromotionResponse {
     AppGoodPromotion Info = 20;
 }
 
+message GetAppGoodPromotionRequest {
+    string ID = 10;
+}
+
+message GetAppGoodPromotionResponse {
+    AppGoodPromotion Info = 10;
+}
+
 message GetAppGoodPromotionsRequest {
 }
 
@@ -1348,5 +1374,21 @@ message GetAppGoodPromotionsByOtherAppGoodRequest {
 }
 
 message GetAppGoodPromotionsByOtherAppGoodResponse {
+    repeated AppGoodPromotion Infos = 10;
+}
+
+message GetAppGoodPromotionsByAppRequest {
+    string AppID = 10;
+}
+
+message GetAppGoodPromotionsByAppResponse {
+    repeated AppGoodPromotion Infos = 10;
+}
+
+message GetAppGoodPromotionsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetAppGoodPromotionsByOtherAppResponse {
     repeated AppGoodPromotion Infos = 10;
 }

@@ -908,6 +908,70 @@
         ]
       }
     },
+    "/v1/get/app/good/promotion": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetAppGoodPromotion",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodPromotionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodPromotionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/get/app/good/promotion/by/app": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetAppGoodPromotionsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodPromotionsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodPromotionsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
     "/v1/get/app/good/promotion/by/app/good": {
       "post": {
         "operationId": "CloudHashingGoods_GetAppGoodPromotionsByAppGood",
@@ -964,6 +1028,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppGoodPromotionByAppGoodStartEndRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/get/app/good/promotion/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetAppGoodPromotionsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodPromotionsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodPromotionsByOtherAppRequest"
             }
           }
         ],
@@ -3282,6 +3378,22 @@
         }
       }
     },
+    "v1GetAppGoodPromotionRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppGoodPromotionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodPromotion"
+        }
+      }
+    },
     "v1GetAppGoodPromotionsByAppGoodRequest": {
       "type": "object",
       "properties": {
@@ -3304,6 +3416,25 @@
         }
       }
     },
+    "v1GetAppGoodPromotionsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppGoodPromotionsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppGoodPromotion"
+          }
+        }
+      }
+    },
     "v1GetAppGoodPromotionsByOtherAppGoodRequest": {
       "type": "object",
       "properties": {
@@ -3316,6 +3447,25 @@
       }
     },
     "v1GetAppGoodPromotionsByOtherAppGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppGoodPromotion"
+          }
+        }
+      }
+    },
+    "v1GetAppGoodPromotionsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppGoodPromotionsByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {
