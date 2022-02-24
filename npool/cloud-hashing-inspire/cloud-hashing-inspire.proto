@@ -1001,11 +1001,9 @@ message GetCouponPoolsByOtherAppReleaserResponse {
 }
 
 message NewUserRewardSettingDetail {
-    string ID = 10;
-    string AppID = 20;
-    bool AutoGenerateInvitationCode = 30;
-    CouponPool RegistrationCoupon = 40;
-    CouponPool KycCoupon = 50;
+    NewUserRewardSetting Setting = 10;
+    CouponPool RegistrationCoupon = 20;
+    CouponPool KycCoupon = 30;
 }
 
 message GetNewUserRewardSettingDetailRequest {
@@ -1139,16 +1137,9 @@ message UpdateUserKpiSettingResponse {
 }
 
 message AgencySettingDetail {
-    string ID = 10;
-    string AppID = 20;
-    string GoodID = 30;
-    int32 RegistrationRewardThreshold = 40;
-    CouponPool RegistrationCoupon = 50;
-    int32 KycRewardThreshold = 60;
-    CouponPool KycCoupon = 70;
-    int32 TotalPurchaseRewardPercent = 80;
-    int32 PurchaseRewardChainLevels = 90;
-    int32 LevelPurchaseRewardPercent = 100;
+    AgencySetting Setting = 10;
+    CouponPool RegistrationCoupon = 20;
+    CouponPool KycCoupon = 30;
 }
 
 message GetAgencySettingDetailRequest {
@@ -1168,12 +1159,9 @@ message GetAgencySettingDetailByAppResponse {
 }
 
 message CouponAllocatedDetail {
-    string ID = 10;
-    string UserID = 20;
-    string AppID = 30;
-    string Type = 40;
-    CouponPool Coupon = 50;
-    DiscountPool Discount = 60;
+    CouponAllocated Allocated = 10;
+    CouponPool Coupon = 20;
+    DiscountPool Discount = 30;
 }
 
 message GetCouponAllocatedDetailRequest {

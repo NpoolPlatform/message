@@ -3062,40 +3062,14 @@
     "v1AgencySettingDetail": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "RegistrationRewardThreshold": {
-          "type": "integer",
-          "format": "int32"
+        "Setting": {
+          "$ref": "#/definitions/v1AgencySetting"
         },
         "RegistrationCoupon": {
           "$ref": "#/definitions/v1CouponPool"
         },
-        "KycRewardThreshold": {
-          "type": "integer",
-          "format": "int32"
-        },
         "KycCoupon": {
           "$ref": "#/definitions/v1CouponPool"
-        },
-        "TotalPurchaseRewardPercent": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "PurchaseRewardChainLevels": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "LevelPurchaseRewardPercent": {
-          "type": "integer",
-          "format": "int32"
         }
       }
     },
@@ -3141,17 +3115,8 @@
     "v1CouponAllocatedDetail": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "Type": {
-          "type": "string"
+        "Allocated": {
+          "$ref": "#/definitions/v1CouponAllocated"
         },
         "Coupon": {
           "$ref": "#/definitions/v1CouponPool"
@@ -4713,14 +4678,8 @@
     "v1NewUserRewardSettingDetail": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "AutoGenerateInvitationCode": {
-          "type": "boolean"
+        "Setting": {
+          "$ref": "#/definitions/v1NewUserRewardSetting"
         },
         "RegistrationCoupon": {
           "$ref": "#/definitions/v1CouponPool"

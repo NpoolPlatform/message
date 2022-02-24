@@ -473,16 +473,9 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| GoodID | [string](#string) |  |  |
-| RegistrationRewardThreshold | [int32](#int32) |  |  |
+| Setting | [AgencySetting](#cloud.hashing.inspire.v1.AgencySetting) |  |  |
 | RegistrationCoupon | [CouponPool](#cloud.hashing.inspire.v1.CouponPool) |  |  |
-| KycRewardThreshold | [int32](#int32) |  |  |
 | KycCoupon | [CouponPool](#cloud.hashing.inspire.v1.CouponPool) |  |  |
-| TotalPurchaseRewardPercent | [int32](#int32) |  |  |
-| PurchaseRewardChainLevels | [int32](#int32) |  |  |
-| LevelPurchaseRewardPercent | [int32](#int32) |  |  |
 
 
 
@@ -534,10 +527,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| Type | [string](#string) |  |  |
+| Allocated | [CouponAllocated](#cloud.hashing.inspire.v1.CouponAllocated) |  |  |
 | Coupon | [CouponPool](#cloud.hashing.inspire.v1.CouponPool) |  |  |
 | Discount | [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool) |  |  |
 
@@ -3021,9 +3011,7 @@ request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| AutoGenerateInvitationCode | [bool](#bool) |  |  |
+| Setting | [NewUserRewardSetting](#cloud.hashing.inspire.v1.NewUserRewardSetting) |  |  |
 | RegistrationCoupon | [CouponPool](#cloud.hashing.inspire.v1.CouponPool) |  |  |
 | KycCoupon | [CouponPool](#cloud.hashing.inspire.v1.CouponPool) |  |  |
 
@@ -3689,16 +3677,9 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| GoodID | [string](#string) |  |  |
-| RegistrationRewardThreshold | [int32](#int32) |  |  |
+| Setting | [AgencySetting](#cloud.hashing.inspire.v1.AgencySetting) |  |  |
 | RegistrationCoupon | [CouponPool](#cloud.hashing.inspire.v1.CouponPool) |  |  |
-| KycRewardThreshold | [int32](#int32) |  |  |
 | KycCoupon | [CouponPool](#cloud.hashing.inspire.v1.CouponPool) |  |  |
-| TotalPurchaseRewardPercent | [int32](#int32) |  |  |
-| PurchaseRewardChainLevels | [int32](#int32) |  |  |
-| LevelPurchaseRewardPercent | [int32](#int32) |  |  |
 
 
 
@@ -3750,10 +3731,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| Type | [string](#string) |  |  |
+| Allocated | [CouponAllocated](#cloud.hashing.inspire.v1.CouponAllocated) |  |  |
 | Coupon | [CouponPool](#cloud.hashing.inspire.v1.CouponPool) |  |  |
 | Discount | [DiscountPool](#cloud.hashing.inspire.v1.DiscountPool) |  |  |
 
@@ -6237,9 +6215,7 @@ request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| AutoGenerateInvitationCode | [bool](#bool) |  |  |
+| Setting | [NewUserRewardSetting](#cloud.hashing.inspire.v1.NewUserRewardSetting) |  |  |
 | RegistrationCoupon | [CouponPool](#cloud.hashing.inspire.v1.CouponPool) |  |  |
 | KycCoupon | [CouponPool](#cloud.hashing.inspire.v1.CouponPool) |  |  |
 

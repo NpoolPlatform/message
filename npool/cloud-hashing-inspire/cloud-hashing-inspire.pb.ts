@@ -427,9 +427,7 @@ export type GetCouponPoolsByOtherAppReleaserResponse = {
 }
 
 export type NewUserRewardSettingDetail = {
-  id?: string
-  appID?: string
-  autoGenerateInvitationCode?: boolean
+  setting?: NewUserRewardSetting
   registrationCoupon?: CouponPool
   kycCoupon?: CouponPool
 }
@@ -565,16 +563,9 @@ export type UpdateUserKpiSettingResponse = {
 }
 
 export type AgencySettingDetail = {
-  id?: string
-  appID?: string
-  goodID?: string
-  registrationRewardThreshold?: number
+  setting?: AgencySetting
   registrationCoupon?: CouponPool
-  kycRewardThreshold?: number
   kycCoupon?: CouponPool
-  totalPurchaseRewardPercent?: number
-  purchaseRewardChainLevels?: number
-  levelPurchaseRewardPercent?: number
 }
 
 export type GetAgencySettingDetailRequest = {
@@ -594,10 +585,7 @@ export type GetAgencySettingDetailByAppResponse = {
 }
 
 export type CouponAllocatedDetail = {
-  id?: string
-  userID?: string
-  appID?: string
-  type?: string
+  allocated?: CouponAllocated
   coupon?: CouponPool
   discount?: DiscountPool
 }
