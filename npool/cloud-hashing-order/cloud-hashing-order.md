@@ -508,7 +508,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Detail | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) |  |  |
+| Info | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) |  |  |
 
 
 
@@ -659,7 +659,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Details | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
+| Infos | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
 
 
 
@@ -690,7 +690,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Details | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
+| Infos | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
 
 
 
@@ -720,7 +720,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Details | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
+| Infos | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
 
 
 
@@ -751,7 +751,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Details | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
+| Infos | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
 
 
 
@@ -1014,22 +1014,12 @@ request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| GoodID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
-| Units | [uint32](#uint32) |  |  |
-| DiscountCouponID | [string](#string) |  |  |
-| UserSpecialReductionID | [string](#string) |  |  |
+| Order | [Order](#cloud.hashing.order.v1.Order) |  |  |
 | GoodPaying | [GoodPaying](#cloud.hashing.order.v1.GoodPaying) |  |  |
 | GasPayings | [GasPaying](#cloud.hashing.order.v1.GasPaying) | repeated |  |
 | Compensates | [Compensate](#cloud.hashing.order.v1.Compensate) | repeated |  |
 | OutOfGases | [OutOfGas](#cloud.hashing.order.v1.OutOfGas) | repeated |  |
 | Payment | [Payment](#cloud.hashing.order.v1.Payment) |  |  |
-| Start | [uint32](#uint32) |  |  |
-| End | [uint32](#uint32) |  |  |
-| CouponID | [string](#string) |  |  |
-| CreateAt | [uint32](#uint32) |  |  |
 
 
 
@@ -1529,7 +1519,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Detail | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) |  |  |
+| Info | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) |  |  |
 
 
 
@@ -1680,7 +1670,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Details | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
+| Infos | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
 
 
 
@@ -1711,7 +1701,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Details | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
+| Infos | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
 
 
 
@@ -1741,7 +1731,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Details | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
+| Infos | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
 
 
 
@@ -1772,7 +1762,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Details | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
+| Infos | [OrderDetail](#cloud.hashing.order.v1.OrderDetail) | repeated |  |
 
 
 
@@ -2035,22 +2025,12 @@ request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| GoodID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
-| Units | [uint32](#uint32) |  |  |
-| DiscountCouponID | [string](#string) |  |  |
-| UserSpecialReductionID | [string](#string) |  |  |
+| Order | [Order](#cloud.hashing.order.v1.Order) |  |  |
 | GoodPaying | [GoodPaying](#cloud.hashing.order.v1.GoodPaying) |  |  |
 | GasPayings | [GasPaying](#cloud.hashing.order.v1.GasPaying) | repeated |  |
 | Compensates | [Compensate](#cloud.hashing.order.v1.Compensate) | repeated |  |
 | OutOfGases | [OutOfGas](#cloud.hashing.order.v1.OutOfGas) | repeated |  |
 | Payment | [Payment](#cloud.hashing.order.v1.Payment) |  |  |
-| Start | [uint32](#uint32) |  |  |
-| End | [uint32](#uint32) |  |  |
-| CouponID | [string](#string) |  |  |
-| CreateAt | [uint32](#uint32) |  |  |
 
 
 

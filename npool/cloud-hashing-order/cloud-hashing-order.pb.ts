@@ -248,22 +248,12 @@ export type GetPaymentsResponse = {
 }
 
 export type OrderDetail = {
-  id?: string
-  goodID?: string
-  appID?: string
-  userID?: string
-  units?: number
-  discountCouponID?: string
-  userSpecialReductionID?: string
+  order?: Order
   goodPaying?: GoodPaying
   gasPayings?: GasPaying[]
   compensates?: Compensate[]
   outOfGases?: OutOfGas[]
   payment?: Payment
-  start?: number
-  end?: number
-  couponID?: string
-  createAt?: number
 }
 
 export type GetOrderDetailRequest = {
@@ -271,7 +261,7 @@ export type GetOrderDetailRequest = {
 }
 
 export type GetOrderDetailResponse = {
-  detail?: OrderDetail
+  info?: OrderDetail
 }
 
 export type GetOrdersDetailByAppUserRequest = {
@@ -280,7 +270,7 @@ export type GetOrdersDetailByAppUserRequest = {
 }
 
 export type GetOrdersDetailByAppUserResponse = {
-  details?: OrderDetail[]
+  infos?: OrderDetail[]
 }
 
 export type GetOrdersShortDetailByAppUserRequest = {
@@ -289,7 +279,7 @@ export type GetOrdersShortDetailByAppUserRequest = {
 }
 
 export type GetOrdersShortDetailByAppUserResponse = {
-  details?: OrderDetail[]
+  infos?: OrderDetail[]
 }
 
 export type GetOrdersDetailByAppRequest = {
@@ -297,7 +287,7 @@ export type GetOrdersDetailByAppRequest = {
 }
 
 export type GetOrdersDetailByAppResponse = {
-  details?: OrderDetail[]
+  infos?: OrderDetail[]
 }
 
 export type GetOrdersDetailByGoodRequest = {
@@ -305,7 +295,7 @@ export type GetOrdersDetailByGoodRequest = {
 }
 
 export type GetOrdersDetailByGoodResponse = {
-  details?: OrderDetail[]
+  infos?: OrderDetail[]
 }
 
 export class CloudHashingOrder {

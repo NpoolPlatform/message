@@ -1172,7 +1172,7 @@
     "v1GetOrderDetailResponse": {
       "type": "object",
       "properties": {
-        "Detail": {
+        "Info": {
           "$ref": "#/definitions/v1OrderDetail"
         }
       }
@@ -1264,7 +1264,7 @@
     "v1GetOrdersDetailByAppResponse": {
       "type": "object",
       "properties": {
-        "Details": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1OrderDetail"
@@ -1286,7 +1286,7 @@
     "v1GetOrdersDetailByAppUserResponse": {
       "type": "object",
       "properties": {
-        "Details": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1OrderDetail"
@@ -1305,7 +1305,7 @@
     "v1GetOrdersDetailByGoodResponse": {
       "type": "object",
       "properties": {
-        "Details": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1OrderDetail"
@@ -1327,7 +1327,7 @@
     "v1GetOrdersShortDetailByAppUserResponse": {
       "type": "object",
       "properties": {
-        "Details": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1OrderDetail"
@@ -1520,27 +1520,8 @@
     "v1OrderDetail": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DiscountCouponID": {
-          "type": "string"
-        },
-        "UserSpecialReductionID": {
-          "type": "string"
+        "Order": {
+          "$ref": "#/definitions/v1Order"
         },
         "GoodPaying": {
           "$ref": "#/definitions/v1GoodPaying"
@@ -1565,21 +1546,6 @@
         },
         "Payment": {
           "$ref": "#/definitions/v1Payment"
-        },
-        "Start": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "End": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CouponID": {
-          "type": "string"
-        },
-        "CreateAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

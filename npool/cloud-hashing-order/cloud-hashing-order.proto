@@ -431,22 +431,12 @@ message GetPaymentsResponse {
 }
 
 message OrderDetail {
-    string ID = 10;
-    string GoodID = 20;
-    string AppID = 30;
-    string UserID = 40;
-    uint32 Units = 50;
-    string DiscountCouponID = 60;
-    string UserSpecialReductionID = 70;
+    Order Order = 10;
     GoodPaying GoodPaying = 80;
     repeated GasPaying GasPayings = 90;
     repeated Compensate Compensates = 100;
     repeated OutOfGas OutOfGases = 110;
     Payment Payment = 120;
-    uint32 Start = 130;
-    uint32 End = 140;
-    string CouponID = 150;
-    uint32 CreateAt = 160;
 }
 
 message GetOrderDetailRequest {
@@ -454,7 +444,7 @@ message GetOrderDetailRequest {
 }
 
 message GetOrderDetailResponse {
-    OrderDetail Detail = 10;
+    OrderDetail Info = 10;
 }
 
 message GetOrdersDetailByAppUserRequest {
@@ -463,7 +453,7 @@ message GetOrdersDetailByAppUserRequest {
 }
 
 message GetOrdersDetailByAppUserResponse {
-    repeated OrderDetail Details = 10;
+    repeated OrderDetail Infos = 10;
 }
 
 message GetOrdersShortDetailByAppUserRequest {
@@ -472,7 +462,7 @@ message GetOrdersShortDetailByAppUserRequest {
 }
 
 message GetOrdersShortDetailByAppUserResponse {
-    repeated OrderDetail Details = 10;
+    repeated OrderDetail Infos = 10;
 }
 
 message GetOrdersDetailByAppRequest {
@@ -480,7 +470,7 @@ message GetOrdersDetailByAppRequest {
 }
 
 message GetOrdersDetailByAppResponse {
-    repeated OrderDetail Details = 10;
+    repeated OrderDetail Infos = 10;
 }
 
 message GetOrdersDetailByGoodRequest {
@@ -488,5 +478,5 @@ message GetOrdersDetailByGoodRequest {
 }
 
 message GetOrdersDetailByGoodResponse {
-    repeated OrderDetail Details = 10;
+    repeated OrderDetail Infos = 10;
 }
