@@ -1356,7 +1356,7 @@ message GetAppGoodPromotionByAppGoodStartEndRequest {
 }
 
 message GetAppGoodPromotionByAppGoodStartEndResponse {
-    repeated AppGoodPromotion Infos = 10;
+    AppGoodPromotion Info = 10;
 }
 
 message GetAppGoodPromotionsByAppGoodRequest {

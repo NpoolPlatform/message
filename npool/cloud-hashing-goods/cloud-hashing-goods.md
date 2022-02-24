@@ -1413,7 +1413,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [AppGoodPromotion](#cloud.hashing.goods.v1.AppGoodPromotion) | repeated |  |
+| Info | [AppGoodPromotion](#cloud.hashing.goods.v1.AppGoodPromotion) |  |  |
 
 
 
@@ -4418,7 +4418,7 @@ Cloud Hashing Goods
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [AppGoodPromotion](#cloud.hashing.goods.v1.AppGoodPromotion) | repeated |  |
+| Info | [AppGoodPromotion](#cloud.hashing.goods.v1.AppGoodPromotion) |  |  |
 
 
 

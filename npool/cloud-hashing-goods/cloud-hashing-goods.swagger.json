@@ -3370,11 +3370,8 @@
     "v1GetAppGoodPromotionByAppGoodStartEndResponse": {
       "type": "object",
       "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AppGoodPromotion"
-          }
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodPromotion"
         }
       }
     },

@@ -823,7 +823,7 @@ export type GetAppGoodPromotionByAppGoodStartEndRequest = {
 }
 
 export type GetAppGoodPromotionByAppGoodStartEndResponse = {
-  infos?: AppGoodPromotion[]
+  info?: AppGoodPromotion
 }
 
 export type GetAppGoodPromotionsByAppGoodRequest = {
