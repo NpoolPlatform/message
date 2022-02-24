@@ -270,6 +270,13 @@ service CloudHashingApis {
             body: "*"
         };
     }
+
+    rpc GetCouponsByAppUser (GetCouponsByAppUserRequest) returns (GetCouponsByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coupons/by/app/user"
+            body: "*"
+        };
+    }
 }
 
 // Request body and response
@@ -337,6 +344,8 @@ message Order {
     cloud.hashing.inspire.v1.CouponAllocatedDetail DiscountCoupon = 60;
     cloud.hashing.inspire.v1.UserSpecialReduction UserSpecialReduction = 70;
     uint32 PaymentDeadline = 80;
+    cloud.hashing.goods.v1.AppGoodInfo AppGood = 90;
+    cloud.hashing.goods.v1.AppGoodPromotion Promotion = 100;
 }
 
 message GetOrderRequest {
@@ -744,3 +753,27 @@ message GetWithdrawAddressReviewsByOtherAppResponse {
     repeated WithdrawAddressReview Infos = 10;
 }
 
+
+message Coupon {
+    cloud.hashing.inspire.v1.CouponAllocatedDetail Coupon = 10;
+    cloud.hashing.order.v1.Order Order = 20;
+}
+
+message UserSpecial {
+    cloud.hashing.inspire.v1.UserSpecialReduction Coupon = 10;
+    cloud.hashing.order.v1.Order Order = 20;
+}
+
+message Coupons {
+    repeated Coupon Coupons = 10;
+    repeated UserSpecial Offers = 20;
+}
+
+message GetCouponsByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetCouponsByAppUserResponse {
+    Coupons Info = 10;
+}

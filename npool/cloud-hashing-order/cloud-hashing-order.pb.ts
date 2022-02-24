@@ -65,6 +65,7 @@ export type Order = {
   end?: number
   couponID?: string
   createAt?: number
+  promotionID?: string
 }
 
 export type CreateOrderRequest = {
@@ -90,6 +91,17 @@ export type GetOrdersByAppUserRequest = {
 
 export type GetOrdersByAppUserResponse = {
   infos?: Order[]
+}
+
+export type GetOrderByAppUserCouponTypeIDRequest = {
+  appID?: string
+  userID?: string
+  couponType?: string
+  couponID?: string
+}
+
+export type GetOrderByAppUserCouponTypeIDResponse = {
+  info?: Order
 }
 
 export type GetOrdersByAppRequest = {
@@ -237,22 +249,12 @@ export type GetPaymentsResponse = {
 }
 
 export type OrderDetail = {
-  id?: string
-  goodID?: string
-  appID?: string
-  userID?: string
-  units?: number
-  discountCouponID?: string
-  userSpecialReductionID?: string
+  order?: Order
   goodPaying?: GoodPaying
   gasPayings?: GasPaying[]
   compensates?: Compensate[]
   outOfGases?: OutOfGas[]
   payment?: Payment
-  start?: number
-  end?: number
-  couponID?: string
-  createAt?: number
 }
 
 export type GetOrderDetailRequest = {
@@ -260,7 +262,7 @@ export type GetOrderDetailRequest = {
 }
 
 export type GetOrderDetailResponse = {
-  detail?: OrderDetail
+  info?: OrderDetail
 }
 
 export type GetOrdersDetailByAppUserRequest = {
@@ -269,7 +271,7 @@ export type GetOrdersDetailByAppUserRequest = {
 }
 
 export type GetOrdersDetailByAppUserResponse = {
-  details?: OrderDetail[]
+  infos?: OrderDetail[]
 }
 
 export type GetOrdersShortDetailByAppUserRequest = {
@@ -278,7 +280,7 @@ export type GetOrdersShortDetailByAppUserRequest = {
 }
 
 export type GetOrdersShortDetailByAppUserResponse = {
-  details?: OrderDetail[]
+  infos?: OrderDetail[]
 }
 
 export type GetOrdersDetailByAppRequest = {
@@ -286,7 +288,7 @@ export type GetOrdersDetailByAppRequest = {
 }
 
 export type GetOrdersDetailByAppResponse = {
-  details?: OrderDetail[]
+  infos?: OrderDetail[]
 }
 
 export type GetOrdersDetailByGoodRequest = {
@@ -294,7 +296,7 @@ export type GetOrdersDetailByGoodRequest = {
 }
 
 export type GetOrdersDetailByGoodResponse = {
-  details?: OrderDetail[]
+  infos?: OrderDetail[]
 }
 
 export class CloudHashingOrder {
@@ -324,6 +326,9 @@ export class CloudHashingOrder {
   }
   static GetOrdersByAppUser(req: GetOrdersByAppUserRequest, initReq?: fm.InitReq): Promise<GetOrdersByAppUserResponse> {
     return fm.fetchReq<GetOrdersByAppUserRequest, GetOrdersByAppUserResponse>(`/v1/get/orders/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetOrderByAppUserCouponTypeID(req: GetOrderByAppUserCouponTypeIDRequest, initReq?: fm.InitReq): Promise<GetOrderByAppUserCouponTypeIDResponse> {
+    return fm.fetchReq<GetOrderByAppUserCouponTypeIDRequest, GetOrderByAppUserCouponTypeIDResponse>(`/v1/get/order/by/app/user/coupon/type/id`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetOrdersByApp(req: GetOrdersByAppRequest, initReq?: fm.InitReq): Promise<GetOrdersByAppResponse> {
     return fm.fetchReq<GetOrdersByAppRequest, GetOrdersByAppResponse>(`/v1/get/orders/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})

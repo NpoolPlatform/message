@@ -331,6 +331,38 @@
         ]
       }
     },
+    "/v1/get/order/by/app/user/coupon/type/id": {
+      "post": {
+        "operationId": "CloudHashingOrder_GetOrderByAppUserCouponTypeID",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetOrderByAppUserCouponTypeIDResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetOrderByAppUserCouponTypeIDRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingOrder"
+        ]
+      }
+    },
     "/v1/get/order/detail": {
       "post": {
         "operationId": "CloudHashingOrder_GetOrderDetail",
@@ -1104,6 +1136,31 @@
         }
       }
     },
+    "v1GetOrderByAppUserCouponTypeIDRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CouponType": {
+          "type": "string"
+        },
+        "CouponID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetOrderByAppUserCouponTypeIDResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Order"
+        }
+      }
+    },
     "v1GetOrderDetailRequest": {
       "type": "object",
       "properties": {
@@ -1115,7 +1172,7 @@
     "v1GetOrderDetailResponse": {
       "type": "object",
       "properties": {
-        "Detail": {
+        "Info": {
           "$ref": "#/definitions/v1OrderDetail"
         }
       }
@@ -1207,7 +1264,7 @@
     "v1GetOrdersDetailByAppResponse": {
       "type": "object",
       "properties": {
-        "Details": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1OrderDetail"
@@ -1229,7 +1286,7 @@
     "v1GetOrdersDetailByAppUserResponse": {
       "type": "object",
       "properties": {
-        "Details": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1OrderDetail"
@@ -1248,7 +1305,7 @@
     "v1GetOrdersDetailByGoodResponse": {
       "type": "object",
       "properties": {
-        "Details": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1OrderDetail"
@@ -1270,7 +1327,7 @@
     "v1GetOrdersShortDetailByAppUserResponse": {
       "type": "object",
       "properties": {
-        "Details": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1OrderDetail"
@@ -1457,33 +1514,17 @@
         "CreateAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "PromotionID": {
+          "type": "string"
         }
       }
     },
     "v1OrderDetail": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DiscountCouponID": {
-          "type": "string"
-        },
-        "UserSpecialReductionID": {
-          "type": "string"
+        "Order": {
+          "$ref": "#/definitions/v1Order"
         },
         "GoodPaying": {
           "$ref": "#/definitions/v1GoodPaying"
@@ -1508,21 +1549,6 @@
         },
         "Payment": {
           "$ref": "#/definitions/v1Payment"
-        },
-        "Start": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "End": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CouponID": {
-          "type": "string"
-        },
-        "CreateAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

@@ -296,6 +296,16 @@ export type CreateCouponAllocatedResponse = {
   info?: CouponAllocated
 }
 
+export type CreateCouponAllocatedForOtherAppUserRequest = {
+  targetAppID?: string
+  targetUserID?: string
+  info?: CouponAllocated
+}
+
+export type CreateCouponAllocatedForOtherAppUserResponse = {
+  info?: CouponAllocated
+}
+
 export type GetCouponAllocatedRequest = {
   id?: string
 }
@@ -309,6 +319,14 @@ export type GetCouponsAllocatedByAppRequest = {
 }
 
 export type GetCouponsAllocatedByAppResponse = {
+  infos?: CouponAllocated[]
+}
+
+export type GetCouponsAllocatedByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetCouponsAllocatedByOtherAppResponse = {
   infos?: CouponAllocated[]
 }
 
@@ -349,6 +367,15 @@ export type CreateCouponPoolResponse = {
   info?: CouponPool
 }
 
+export type CreateCouponPoolForOtherAppRequest = {
+  targetAppID?: string
+  info?: CouponPool
+}
+
+export type CreateCouponPoolForOtherAppResponse = {
+  info?: CouponPool
+}
+
 export type UpdateCouponPoolRequest = {
   info?: CouponPool
 }
@@ -373,6 +400,14 @@ export type GetCouponPoolsByAppResponse = {
   infos?: CouponPool[]
 }
 
+export type GetCouponPoolsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetCouponPoolsByOtherAppResponse = {
+  infos?: CouponPool[]
+}
+
 export type GetCouponPoolsByAppReleaserRequest = {
   appID?: string
   userID?: string
@@ -382,10 +417,17 @@ export type GetCouponPoolsByAppReleaserResponse = {
   infos?: CouponPool[]
 }
 
+export type GetCouponPoolsByOtherAppReleaserRequest = {
+  targetAppID?: string
+  targetUserID?: string
+}
+
+export type GetCouponPoolsByOtherAppReleaserResponse = {
+  infos?: CouponPool[]
+}
+
 export type NewUserRewardSettingDetail = {
-  id?: string
-  appID?: string
-  autoGenerateInvitationCode?: boolean
+  setting?: NewUserRewardSetting
   registrationCoupon?: CouponPool
   kycCoupon?: CouponPool
 }
@@ -521,16 +563,9 @@ export type UpdateUserKpiSettingResponse = {
 }
 
 export type AgencySettingDetail = {
-  id?: string
-  appID?: string
-  goodID?: string
-  registrationRewardThreshold?: number
+  setting?: AgencySetting
   registrationCoupon?: CouponPool
-  kycRewardThreshold?: number
   kycCoupon?: CouponPool
-  totalPurchaseRewardPercent?: number
-  purchaseRewardChainLevels?: number
-  levelPurchaseRewardPercent?: number
 }
 
 export type GetAgencySettingDetailRequest = {
@@ -550,10 +585,7 @@ export type GetAgencySettingDetailByAppResponse = {
 }
 
 export type CouponAllocatedDetail = {
-  id?: string
-  userID?: string
-  appID?: string
-  type?: string
+  allocated?: CouponAllocated
   coupon?: CouponPool
   discount?: DiscountPool
 }
@@ -602,6 +634,15 @@ export type CreateDiscountPoolResponse = {
   info?: DiscountPool
 }
 
+export type CreateDiscountPoolForOtherAppRequest = {
+  targetAppID?: string
+  info?: DiscountPool
+}
+
+export type CreateDiscountPoolForOtherAppResponse = {
+  info?: DiscountPool
+}
+
 export type UpdateDiscountPoolRequest = {
   info?: DiscountPool
 }
@@ -626,12 +667,29 @@ export type GetDiscountPoolsByAppResponse = {
   infos?: DiscountPool[]
 }
 
+export type GetDiscountPoolsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetDiscountPoolsByOtherAppResponse = {
+  infos?: DiscountPool[]
+}
+
 export type GetDiscountPoolsByAppReleaserRequest = {
   appID?: string
   userID?: string
 }
 
 export type GetDiscountPoolsByAppReleaserResponse = {
+  infos?: DiscountPool[]
+}
+
+export type GetDiscountPoolsByOtherAppReleaserRequest = {
+  targetAppID?: string
+  targetUserID?: string
+}
+
+export type GetDiscountPoolsByOtherAppReleaserResponse = {
   infos?: DiscountPool[]
 }
 
@@ -654,6 +712,16 @@ export type CreateUserSpecialReductionResponse = {
   info?: UserSpecialReduction
 }
 
+export type CreateUserSpecialReductionForOtherAppUserRequest = {
+  targetAppID?: string
+  targetUserID?: string
+  info?: UserSpecialReduction
+}
+
+export type CreateUserSpecialReductionForOtherAppUserResponse = {
+  info?: UserSpecialReduction
+}
+
 export type GetUserSpecialReductionRequest = {
   id?: string
 }
@@ -667,6 +735,14 @@ export type GetUserSpecialReductionsByAppRequest = {
 }
 
 export type GetUserSpecialReductionsByAppResponse = {
+  infos?: UserSpecialReduction[]
+}
+
+export type GetUserSpecialReductionsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetUserSpecialReductionsByOtherAppResponse = {
   infos?: UserSpecialReduction[]
 }
 
@@ -694,6 +770,143 @@ export type GetUserSpecialReductionsByAppReleaserRequest = {
 
 export type GetUserSpecialReductionsByAppReleaserResponse = {
   infos?: UserSpecialReduction[]
+}
+
+export type Activity = {
+  id?: string
+  appID?: string
+  createdBy?: string
+  name?: string
+  start?: number
+  end?: number
+  systemActivity?: boolean
+}
+
+export type CreateActivityRequest = {
+  info?: Activity
+}
+
+export type CreateActivityResponse = {
+  info?: Activity
+}
+
+export type UpdateActivityRequest = {
+  info?: Activity
+}
+
+export type UpdateActivityResponse = {
+  info?: Activity
+}
+
+export type CreateActivityForOtherAppRequest = {
+  targetAppID?: string
+  info?: Activity
+}
+
+export type CreateActivityForOtherAppResponse = {
+  info?: Activity
+}
+
+export type GetActivityRequest = {
+  id?: string
+}
+
+export type GetActivityResponse = {
+  info?: Activity
+}
+
+export type GetActivityByAppNameRequest = {
+  appID?: string
+  name?: string
+}
+
+export type GetActivityByAppNameResponse = {
+  info?: Activity
+}
+
+export type GetActivitiesByAppRequest = {
+  appID?: string
+}
+
+export type GetActivitiesByAppResponse = {
+  infos?: Activity[]
+}
+
+export type GetActivitiesByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetActivitiesByOtherAppResponse = {
+  infos?: Activity[]
+}
+
+export type EventCoupon = {
+  id?: string
+  appID?: string
+  activityID?: string
+  event?: string
+  couponID?: string
+  type?: string
+  count?: number
+}
+
+export type CreateEventCouponRequest = {
+  info?: EventCoupon
+}
+
+export type CreateEventCouponResponse = {
+  info?: EventCoupon
+}
+
+export type CreateEventCouponForOtherAppRequest = {
+  targetAppID?: string
+  info?: EventCoupon
+}
+
+export type CreateEventCouponForOtherAppResponse = {
+  info?: EventCoupon
+}
+
+export type UpdateEventCouponRequest = {
+  info?: EventCoupon
+}
+
+export type UpdateEventCouponResponse = {
+  info?: EventCoupon
+}
+
+export type GetEventCouponRequest = {
+  id?: string
+}
+
+export type GetEventCouponResponse = {
+  info?: EventCoupon
+}
+
+export type GetEventCouponsByAppActivityEventRequest = {
+  appID?: string
+  activityID?: string
+  event?: string
+}
+
+export type GetEventCouponsByAppActivityEventResponse = {
+  infos?: EventCoupon[]
+}
+
+export type GetEventCouponsByAppRequest = {
+  appID?: string
+}
+
+export type GetEventCouponsByAppResponse = {
+  infos?: EventCoupon[]
+}
+
+export type GetEventCouponsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetEventCouponsByOtherAppResponse = {
+  infos?: EventCoupon[]
 }
 
 export class CloudHashingInspire {
@@ -796,11 +1009,17 @@ export class CloudHashingInspire {
   static CreateCouponAllocated(req: CreateCouponAllocatedRequest, initReq?: fm.InitReq): Promise<CreateCouponAllocatedResponse> {
     return fm.fetchReq<CreateCouponAllocatedRequest, CreateCouponAllocatedResponse>(`/v1/create/coupon/allocated`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateCouponAllocatedForOtherAppUser(req: CreateCouponAllocatedForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateCouponAllocatedForOtherAppUserResponse> {
+    return fm.fetchReq<CreateCouponAllocatedForOtherAppUserRequest, CreateCouponAllocatedForOtherAppUserResponse>(`/v1/create/coupon/allocated/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetCouponAllocated(req: GetCouponAllocatedRequest, initReq?: fm.InitReq): Promise<GetCouponAllocatedResponse> {
     return fm.fetchReq<GetCouponAllocatedRequest, GetCouponAllocatedResponse>(`/v1/get/coupon/allocated`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetCouponsAllocatedByApp(req: GetCouponsAllocatedByAppRequest, initReq?: fm.InitReq): Promise<GetCouponsAllocatedByAppResponse> {
     return fm.fetchReq<GetCouponsAllocatedByAppRequest, GetCouponsAllocatedByAppResponse>(`/v1/get/coupons/allocated/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCouponsAllocatedByOtherApp(req: GetCouponsAllocatedByOtherAppRequest, initReq?: fm.InitReq): Promise<GetCouponsAllocatedByOtherAppResponse> {
+    return fm.fetchReq<GetCouponsAllocatedByOtherAppRequest, GetCouponsAllocatedByOtherAppResponse>(`/v1/get/coupons/allocated/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetCouponsAllocatedByAppUser(req: GetCouponsAllocatedByAppUserRequest, initReq?: fm.InitReq): Promise<GetCouponsAllocatedByAppUserResponse> {
     return fm.fetchReq<GetCouponsAllocatedByAppUserRequest, GetCouponsAllocatedByAppUserResponse>(`/v1/get/coupons/allocated/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -820,6 +1039,9 @@ export class CloudHashingInspire {
   static CreateCouponPool(req: CreateCouponPoolRequest, initReq?: fm.InitReq): Promise<CreateCouponPoolResponse> {
     return fm.fetchReq<CreateCouponPoolRequest, CreateCouponPoolResponse>(`/v1/create/coupon/pool`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateCouponPoolForOtherApp(req: CreateCouponPoolForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateCouponPoolForOtherAppResponse> {
+    return fm.fetchReq<CreateCouponPoolForOtherAppRequest, CreateCouponPoolForOtherAppResponse>(`/v1/create/coupon/pool/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static UpdateCouponPool(req: UpdateCouponPoolRequest, initReq?: fm.InitReq): Promise<UpdateCouponPoolResponse> {
     return fm.fetchReq<UpdateCouponPoolRequest, UpdateCouponPoolResponse>(`/v1/update/coupon/pool`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -829,11 +1051,20 @@ export class CloudHashingInspire {
   static GetCouponPoolsByApp(req: GetCouponPoolsByAppRequest, initReq?: fm.InitReq): Promise<GetCouponPoolsByAppResponse> {
     return fm.fetchReq<GetCouponPoolsByAppRequest, GetCouponPoolsByAppResponse>(`/v1/get/coupon/pools/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetCouponPoolsByOtherApp(req: GetCouponPoolsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetCouponPoolsByOtherAppResponse> {
+    return fm.fetchReq<GetCouponPoolsByOtherAppRequest, GetCouponPoolsByOtherAppResponse>(`/v1/get/coupon/pools/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetCouponPoolsByAppReleaser(req: GetCouponPoolsByAppReleaserRequest, initReq?: fm.InitReq): Promise<GetCouponPoolsByAppReleaserResponse> {
     return fm.fetchReq<GetCouponPoolsByAppReleaserRequest, GetCouponPoolsByAppReleaserResponse>(`/v1/get/coupon/pools/by/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetCouponPoolsByOtherAppReleaser(req: GetCouponPoolsByOtherAppReleaserRequest, initReq?: fm.InitReq): Promise<GetCouponPoolsByOtherAppReleaserResponse> {
+    return fm.fetchReq<GetCouponPoolsByOtherAppReleaserRequest, GetCouponPoolsByOtherAppReleaserResponse>(`/v1/get/coupon/pools/by/other/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static CreateDiscountPool(req: CreateDiscountPoolRequest, initReq?: fm.InitReq): Promise<CreateDiscountPoolResponse> {
     return fm.fetchReq<CreateDiscountPoolRequest, CreateDiscountPoolResponse>(`/v1/create/discount/pool`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateDiscountPoolForOtherApp(req: CreateDiscountPoolForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateDiscountPoolForOtherAppResponse> {
+    return fm.fetchReq<CreateDiscountPoolForOtherAppRequest, CreateDiscountPoolForOtherAppResponse>(`/v1/create/discount/pool/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateDiscountPool(req: UpdateDiscountPoolRequest, initReq?: fm.InitReq): Promise<UpdateDiscountPoolResponse> {
     return fm.fetchReq<UpdateDiscountPoolRequest, UpdateDiscountPoolResponse>(`/v1/update/discount/pool`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -844,8 +1075,14 @@ export class CloudHashingInspire {
   static GetDiscountPoolsByApp(req: GetDiscountPoolsByAppRequest, initReq?: fm.InitReq): Promise<GetDiscountPoolsByAppResponse> {
     return fm.fetchReq<GetDiscountPoolsByAppRequest, GetDiscountPoolsByAppResponse>(`/v1/get/discount/pools/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetDiscountPoolsByOtherApp(req: GetDiscountPoolsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetDiscountPoolsByOtherAppResponse> {
+    return fm.fetchReq<GetDiscountPoolsByOtherAppRequest, GetDiscountPoolsByOtherAppResponse>(`/v1/get/discount/pools/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetDiscountPoolsByAppReleaser(req: GetDiscountPoolsByAppReleaserRequest, initReq?: fm.InitReq): Promise<GetDiscountPoolsByAppReleaserResponse> {
     return fm.fetchReq<GetDiscountPoolsByAppReleaserRequest, GetDiscountPoolsByAppReleaserResponse>(`/v1/get/discount/pools/by/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetDiscountPoolsByOtherAppReleaser(req: GetDiscountPoolsByOtherAppReleaserRequest, initReq?: fm.InitReq): Promise<GetDiscountPoolsByOtherAppReleaserResponse> {
+    return fm.fetchReq<GetDiscountPoolsByOtherAppReleaserRequest, GetDiscountPoolsByOtherAppReleaserResponse>(`/v1/get/discount/pools/by/other/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateAppCouponSetting(req: CreateAppCouponSettingRequest, initReq?: fm.InitReq): Promise<CreateAppCouponSettingResponse> {
     return fm.fetchReq<CreateAppCouponSettingRequest, CreateAppCouponSettingResponse>(`/v1/create/app/coupon/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -886,11 +1123,17 @@ export class CloudHashingInspire {
   static CreateUserSpecialReduction(req: CreateUserSpecialReductionRequest, initReq?: fm.InitReq): Promise<CreateUserSpecialReductionResponse> {
     return fm.fetchReq<CreateUserSpecialReductionRequest, CreateUserSpecialReductionResponse>(`/v1/create/user/special/reduction`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateUserSpecialReductionForOtherAppUser(req: CreateUserSpecialReductionForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateUserSpecialReductionForOtherAppUserResponse> {
+    return fm.fetchReq<CreateUserSpecialReductionForOtherAppUserRequest, CreateUserSpecialReductionForOtherAppUserResponse>(`/v1/create/user/special/reduction/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetUserSpecialReduction(req: GetUserSpecialReductionRequest, initReq?: fm.InitReq): Promise<GetUserSpecialReductionResponse> {
     return fm.fetchReq<GetUserSpecialReductionRequest, GetUserSpecialReductionResponse>(`/v1/get/user/special/reduction`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserSpecialReductionsByApp(req: GetUserSpecialReductionsByAppRequest, initReq?: fm.InitReq): Promise<GetUserSpecialReductionsByAppResponse> {
     return fm.fetchReq<GetUserSpecialReductionsByAppRequest, GetUserSpecialReductionsByAppResponse>(`/v1/get/user/special/reductions/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserSpecialReductionsByOtherApp(req: GetUserSpecialReductionsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetUserSpecialReductionsByOtherAppResponse> {
+    return fm.fetchReq<GetUserSpecialReductionsByOtherAppRequest, GetUserSpecialReductionsByOtherAppResponse>(`/v1/get/user/special/reductions/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserSpecialReductionsByAppReleaser(req: GetUserSpecialReductionsByAppReleaserRequest, initReq?: fm.InitReq): Promise<GetUserSpecialReductionsByAppReleaserResponse> {
     return fm.fetchReq<GetUserSpecialReductionsByAppReleaserRequest, GetUserSpecialReductionsByAppReleaserResponse>(`/v1/get/user/special/reductions/by/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -900,5 +1143,47 @@ export class CloudHashingInspire {
   }
   static UpdateUserSpecialReduction(req: UpdateUserSpecialReductionRequest, initReq?: fm.InitReq): Promise<UpdateUserSpecialReductionResponse> {
     return fm.fetchReq<UpdateUserSpecialReductionRequest, UpdateUserSpecialReductionResponse>(`/v1/update/user/special/reduction`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateActivity(req: CreateActivityRequest, initReq?: fm.InitReq): Promise<CreateActivityResponse> {
+    return fm.fetchReq<CreateActivityRequest, CreateActivityResponse>(`/v1/create/activity`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateActivityForOtherApp(req: CreateActivityForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateActivityForOtherAppResponse> {
+    return fm.fetchReq<CreateActivityForOtherAppRequest, CreateActivityForOtherAppResponse>(`/v1/create/activity/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateActivity(req: UpdateActivityRequest, initReq?: fm.InitReq): Promise<UpdateActivityResponse> {
+    return fm.fetchReq<UpdateActivityRequest, UpdateActivityResponse>(`/v1/update/activity`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetActivity(req: GetActivityRequest, initReq?: fm.InitReq): Promise<GetActivityResponse> {
+    return fm.fetchReq<GetActivityRequest, GetActivityResponse>(`/v1/get/activity`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetActivityByAppName(req: GetActivityByAppNameRequest, initReq?: fm.InitReq): Promise<GetActivityByAppNameResponse> {
+    return fm.fetchReq<GetActivityByAppNameRequest, GetActivityByAppNameResponse>(`/v1/get/activity/by/app/name`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetActivitiesByApp(req: GetActivitiesByAppRequest, initReq?: fm.InitReq): Promise<GetActivitiesByAppResponse> {
+    return fm.fetchReq<GetActivitiesByAppRequest, GetActivitiesByAppResponse>(`/v1/get/activities/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetActivitiesByOtherApp(req: GetActivitiesByOtherAppRequest, initReq?: fm.InitReq): Promise<GetActivitiesByOtherAppResponse> {
+    return fm.fetchReq<GetActivitiesByOtherAppRequest, GetActivitiesByOtherAppResponse>(`/v1/get/activities/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateEventCoupon(req: CreateEventCouponRequest, initReq?: fm.InitReq): Promise<CreateEventCouponResponse> {
+    return fm.fetchReq<CreateEventCouponRequest, CreateEventCouponResponse>(`/v1/create/event/coupon`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateEventCouponForOtherApp(req: CreateEventCouponForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateEventCouponForOtherAppResponse> {
+    return fm.fetchReq<CreateEventCouponForOtherAppRequest, CreateEventCouponForOtherAppResponse>(`/v1/create/event/coupon/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateEventCoupon(req: UpdateEventCouponRequest, initReq?: fm.InitReq): Promise<UpdateEventCouponResponse> {
+    return fm.fetchReq<UpdateEventCouponRequest, UpdateEventCouponResponse>(`/v1/update/event/coupon`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetEventCoupon(req: GetEventCouponRequest, initReq?: fm.InitReq): Promise<GetEventCouponResponse> {
+    return fm.fetchReq<GetEventCouponRequest, GetEventCouponResponse>(`/v1/get/event/coupon`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetEventCouponsByAppActivityEvent(req: GetEventCouponsByAppActivityEventRequest, initReq?: fm.InitReq): Promise<GetEventCouponsByAppActivityEventResponse> {
+    return fm.fetchReq<GetEventCouponsByAppActivityEventRequest, GetEventCouponsByAppActivityEventResponse>(`/v1/get/event/coupons/by/app/activity/event`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetEventCouponsByApp(req: GetEventCouponsByAppRequest, initReq?: fm.InitReq): Promise<GetEventCouponsByAppResponse> {
+    return fm.fetchReq<GetEventCouponsByAppRequest, GetEventCouponsByAppResponse>(`/v1/get/event/coupons/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetEventCouponsByOtherApp(req: GetEventCouponsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetEventCouponsByOtherAppResponse> {
+    return fm.fetchReq<GetEventCouponsByOtherAppRequest, GetEventCouponsByOtherAppResponse>(`/v1/get/event/coupons/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

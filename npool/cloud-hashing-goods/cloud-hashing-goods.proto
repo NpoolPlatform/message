@@ -330,6 +330,12 @@ service CloudHashingGoods {
             body: "*"
         };
     }
+    rpc GetAppGoodByAppGood (GetAppGoodByAppGoodRequest) returns (GetAppGoodByAppGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/goods/by/app/good"
+            body: "*"
+        };
+    }
 
     rpc AuthorizeAppTargetArea (AuthorizeAppTargetAreaRequest) returns (AuthorizeAppTargetAreaResponse) {
         option (google.api.http) = {
@@ -466,6 +472,79 @@ service CloudHashingGoods {
     rpc GetFeeTypes (GetFeeTypesRequest) returns (GetFeeTypesResponse) {
         option (google.api.http) = {
             post: "/v1/get/fee/types"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppGoodPromotion (CreateAppGoodPromotionRequest) returns (CreateAppGoodPromotionResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/good/promotion"
+            body: "*"
+        };
+    }
+    rpc CreateAppGoodPromotionForOtherApp (CreateAppGoodPromotionForOtherAppRequest) returns (CreateAppGoodPromotionForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/good/promotion/for/other/app"
+            body: "*"
+        };
+    }
+    rpc UpdateAppGoodPromotion (UpdateAppGoodPromotionRequest) returns (UpdateAppGoodPromotionResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/good/promotion"
+            body: "*"
+        };
+    }
+    rpc DeleteAppGoodPromotion (DeleteAppGoodPromotionRequest) returns (DeleteAppGoodPromotionResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/app/good/promotion"
+            body: "*"
+        };
+    }
+    rpc GetAppGoodPromotion (GetAppGoodPromotionRequest) returns (GetAppGoodPromotionResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/good/promotion"
+            body: "*"
+        };
+    }
+    rpc GetAppGoodPromotions (GetAppGoodPromotionsRequest) returns (GetAppGoodPromotionsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/good/promotions"
+            body: "*"
+        };
+    }
+    rpc GetAppGoodPromotionByAppGoodStartEnd (GetAppGoodPromotionByAppGoodStartEndRequest) returns (GetAppGoodPromotionByAppGoodStartEndResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/good/promotion/by/app/good/start/end"
+            body: "*"
+        };
+    }
+    rpc GetAppGoodPromotionByAppGoodTimestamp (GetAppGoodPromotionByAppGoodTimestampRequest) returns (GetAppGoodPromotionByAppGoodTimestampResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/good/promotion/by/app/good/timestamp"
+            body: "*"
+        };
+    }
+    rpc GetAppGoodPromotionsByAppGood (GetAppGoodPromotionsByAppGoodRequest) returns (GetAppGoodPromotionsByAppGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/good/promotion/by/app/good"
+            body: "*"
+        };
+    }
+    rpc GetAppGoodPromotionsByOtherAppGood (GetAppGoodPromotionsByOtherAppGoodRequest) returns (GetAppGoodPromotionsByOtherAppGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/good/promotion/by/other/app/good"
+            body: "*"
+        };
+    }
+    rpc GetAppGoodPromotionsByApp (GetAppGoodPromotionsByAppRequest) returns (GetAppGoodPromotionsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/good/promotion/by/app"
+            body: "*"
+        };
+    }
+    rpc GetAppGoodPromotionsByOtherApp (GetAppGoodPromotionsByOtherAppRequest) returns (GetAppGoodPromotionsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/good/promotion/by/other/app"
             body: "*"
         };
     }
@@ -986,6 +1065,15 @@ message GetAppGoodsByOtherAppResponse {
     repeated AppGoodInfo Infos = 10;
 }
 
+message GetAppGoodByAppGoodRequest {
+    string AppID = 10;
+    string GoodID = 20;
+}
+
+message GetAppGoodByAppGoodResponse {
+    AppGoodInfo Info = 10;
+}
+
 message AppTargetAreaInfo {
     string ID = 10;
     string AppID = 20;
@@ -1221,4 +1309,117 @@ message GetFeesRequest {
 
 message GetFeesResponse {
     repeated Fee Infos = 10;
+}
+
+message AppGoodPromotion {
+    string ID = 10;
+    string AppID = 20;
+    string GoodID = 30;
+    string Message = 40;
+    uint32 Start = 50;
+    uint32 End = 60;
+    double Price = 70;
+}
+
+message CreateAppGoodPromotionRequest {
+    AppGoodPromotion Info = 10;
+}
+
+message CreateAppGoodPromotionResponse {
+    AppGoodPromotion Info = 20;
+}
+
+message CreateAppGoodPromotionForOtherAppRequest {
+    string TargetAppID = 10;
+    AppGoodPromotion Info = 20;
+}
+
+message CreateAppGoodPromotionForOtherAppResponse {
+    AppGoodPromotion Info = 20;
+}
+
+message UpdateAppGoodPromotionRequest {
+    AppGoodPromotion Info = 10;
+}
+
+message UpdateAppGoodPromotionResponse {
+    AppGoodPromotion Info = 20;
+}
+
+message DeleteAppGoodPromotionRequest {
+    string ID = 10;
+}
+
+message DeleteAppGoodPromotionResponse {
+    AppGoodPromotion Info = 20;
+}
+
+message GetAppGoodPromotionRequest {
+    string ID = 10;
+}
+
+message GetAppGoodPromotionResponse {
+    AppGoodPromotion Info = 10;
+}
+
+message GetAppGoodPromotionsRequest {
+}
+
+message GetAppGoodPromotionsResponse {
+    repeated AppGoodPromotion Infos = 10;
+}
+
+message GetAppGoodPromotionByAppGoodStartEndRequest {
+    string AppID = 10;
+    string GoodID = 20;
+    uint32 Start = 30;
+    uint32 End = 40;
+}
+
+message GetAppGoodPromotionByAppGoodStartEndResponse {
+    AppGoodPromotion Info = 10;
+}
+
+message GetAppGoodPromotionByAppGoodTimestampRequest {
+    string AppID = 10;
+    string GoodID = 20;
+    uint32 Timestamp = 30;
+}
+
+message GetAppGoodPromotionByAppGoodTimestampResponse {
+    AppGoodPromotion Info = 10;
+}
+
+message GetAppGoodPromotionsByAppGoodRequest {
+    string AppID = 10;
+    string GoodID = 20;
+}
+
+message GetAppGoodPromotionsByAppGoodResponse {
+    repeated AppGoodPromotion Infos = 10;
+}
+
+message GetAppGoodPromotionsByOtherAppGoodRequest {
+    string TargetAppID = 10;
+    string GoodID = 20;
+}
+
+message GetAppGoodPromotionsByOtherAppGoodResponse {
+    repeated AppGoodPromotion Infos = 10;
+}
+
+message GetAppGoodPromotionsByAppRequest {
+    string AppID = 10;
+}
+
+message GetAppGoodPromotionsByAppResponse {
+    repeated AppGoodPromotion Infos = 10;
+}
+
+message GetAppGoodPromotionsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetAppGoodPromotionsByOtherAppResponse {
+    repeated AppGoodPromotion Infos = 10;
 }

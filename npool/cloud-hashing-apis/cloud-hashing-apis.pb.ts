@@ -79,6 +79,8 @@ export type Order = {
   discountCoupon?: CloudHashingInspireV1Cloud-hashing-inspire.CouponAllocatedDetail
   userSpecialReduction?: CloudHashingInspireV1Cloud-hashing-inspire.UserSpecialReduction
   paymentDeadline?: number
+  appGood?: CloudHashingGoodsV1Cloud-hashing-goods.AppGoodInfo
+  promotion?: CloudHashingGoodsV1Cloud-hashing-goods.AppGoodPromotion
 }
 
 export type GetOrderRequest = {
@@ -482,6 +484,30 @@ export type GetWithdrawAddressReviewsByOtherAppResponse = {
   infos?: WithdrawAddressReview[]
 }
 
+export type Coupon = {
+  coupon?: CloudHashingInspireV1Cloud-hashing-inspire.CouponAllocatedDetail
+  order?: CloudHashingOrderV1Cloud-hashing-order.Order
+}
+
+export type UserSpecial = {
+  coupon?: CloudHashingInspireV1Cloud-hashing-inspire.UserSpecialReduction
+  order?: CloudHashingOrderV1Cloud-hashing-order.Order
+}
+
+export type Coupons = {
+  coupons?: Coupon[]
+  offers?: UserSpecial[]
+}
+
+export type GetCouponsByAppUserRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetCouponsByAppUserResponse = {
+  info?: Coupons
+}
+
 export class CloudHashingApis {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -602,5 +628,8 @@ export class CloudHashingApis {
   }
   static GetWithdrawAddressesByAppUser(req: GetWithdrawAddressesByAppUserRequest, initReq?: fm.InitReq): Promise<GetWithdrawAddressesByAppUserResponse> {
     return fm.fetchReq<GetWithdrawAddressesByAppUserRequest, GetWithdrawAddressesByAppUserResponse>(`/v1/get/withdraw/addresses/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCouponsByAppUser(req: GetCouponsByAppUserRequest, initReq?: fm.InitReq): Promise<GetCouponsByAppUserResponse> {
+    return fm.fetchReq<GetCouponsByAppUserRequest, GetCouponsByAppUserResponse>(`/v1/get/coupons/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
