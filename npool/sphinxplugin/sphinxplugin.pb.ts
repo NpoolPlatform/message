@@ -7,8 +7,8 @@
 export enum CoinType {
   CoinTypeUnKnow = "CoinTypeUnKnow",
   CoinTypefilecoin = "CoinTypefilecoin",
-  CoinTypebtc = "CoinTypebtc",
-  CoinTypeeth = "CoinTypeeth",
+  CoinTypebitcoin = "CoinTypebitcoin",
+  CoinTypeethereum = "CoinTypeethereum",
   CoinTypespacemesh = "CoinTypespacemesh",
 }
 
@@ -16,13 +16,14 @@ export type UnsignedMessage = {
   version?: string
   to?: string
   from?: string
-  nonce?: string
   value?: number
+  nonce?: string
   gasLimit?: string
   gasFeeCap?: string
   gasPremium?: string
   method?: string
   params?: Uint8Array
+  unspent?: Unspent[]
 }
 
 export type Signature = {

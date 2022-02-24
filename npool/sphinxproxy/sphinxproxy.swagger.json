@@ -249,8 +249,8 @@
       "enum": [
         "CoinTypeUnKnow",
         "CoinTypefilecoin",
-        "CoinTypebtc",
-        "CoinTypeeth",
+        "CoinTypebitcoin",
+        "CoinTypeethereum",
         "CoinTypespacemesh"
       ],
       "default": "CoinTypeUnKnow"
@@ -382,14 +382,15 @@
           "type": "string"
         },
         "Address": {
-          "type": "string"
+          "type": "string",
+          "title": "query wallet account"
         },
         "Message": {
-          "$ref": "#/definitions/v1UnsignedMessage",
-          "title": "fil"
+          "$ref": "#/definitions/v1UnsignedMessage"
         },
         "Signature": {
-          "$ref": "#/definitions/v1Signature"
+          "$ref": "#/definitions/v1Signature",
+          "title": "fil"
         },
         "MsgTx": {
           "$ref": "#/definitions/v1MsgTx",
@@ -414,12 +415,7 @@
           "type": "string"
         },
         "Message": {
-          "$ref": "#/definitions/v1UnsignedMessage",
-          "title": "fil"
-        },
-        "MsgTx": {
-          "$ref": "#/definitions/v1MsgTx",
-          "title": "btc"
+          "$ref": "#/definitions/v1UnsignedMessage"
         }
       }
     },
@@ -564,13 +560,14 @@
         "From": {
           "type": "string"
         },
-        "Nonce": {
-          "type": "string",
-          "format": "uint64"
-        },
         "Value": {
           "type": "number",
           "format": "double"
+        },
+        "Nonce": {
+          "type": "string",
+          "format": "uint64",
+          "title": "fil"
         },
         "GasLimit": {
           "type": "string",
@@ -591,6 +588,13 @@
         "Params": {
           "type": "string",
           "format": "byte"
+        },
+        "Unspent": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Unspent"
+          },
+          "title": "btc"
         }
       },
       "title": "fil"

@@ -97,14 +97,11 @@ export type ProxyPluginResponse = {
   eNV?: string
   unit?: string
   transactionID?: string
-  nonce?: string
-  unspent?: SphinxPluginV1Sphinxplugin.Unspent[]
   cID?: string
   balance?: number
   balanceStr?: string
   message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
   exitCode?: string
-  msgTx?: SphinxPluginV1Sphinxplugin.MsgTx
 }
 
 export type ProxyPluginRequest = {
@@ -123,7 +120,6 @@ export type ProxySignRequest = {
   transactionType?: TransactionType
   transactionID?: string
   message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
-  msgTx?: SphinxPluginV1Sphinxplugin.MsgTx
 }
 
 export type ProxySignResponse = {
