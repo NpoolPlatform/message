@@ -512,6 +512,12 @@ service CloudHashingGoods {
             body: "*"
         };
     }
+    rpc GetAppGoodPromotionByAppGoodTimestamp (GetAppGoodPromotionByAppGoodTimestampRequest) returns (GetAppGoodPromotionByAppGoodTimestampResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/good/promotion/by/app/good/timestamp"
+            body: "*"
+        };
+    }
     rpc GetAppGoodPromotionsByAppGood (GetAppGoodPromotionsByAppGoodRequest) returns (GetAppGoodPromotionsByAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/good/promotion/by/app/good"
@@ -1356,6 +1362,16 @@ message GetAppGoodPromotionByAppGoodStartEndRequest {
 }
 
 message GetAppGoodPromotionByAppGoodStartEndResponse {
+    AppGoodPromotion Info = 10;
+}
+
+message GetAppGoodPromotionByAppGoodTimestampRequest {
+    string AppID = 10;
+    string GoodID = 20;
+    uint32 Timestamp = 30;
+}
+
+message GetAppGoodPromotionByAppGoodTimestampResponse {
     AppGoodPromotion Info = 10;
 }
 

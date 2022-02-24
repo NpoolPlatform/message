@@ -70,6 +70,8 @@
     - [FeeType](#cloud.hashing.goods.v1.FeeType)
     - [GetAppGoodPromotionByAppGoodStartEndRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodStartEndRequest)
     - [GetAppGoodPromotionByAppGoodStartEndResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodStartEndResponse)
+    - [GetAppGoodPromotionByAppGoodTimestampRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodTimestampRequest)
+    - [GetAppGoodPromotionByAppGoodTimestampResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodTimestampResponse)
     - [GetAppGoodPromotionRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionRequest)
     - [GetAppGoodPromotionResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionResponse)
     - [GetAppGoodPromotionsByAppGoodRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionsByAppGoodRequest)
@@ -260,6 +262,8 @@
     - [FeeType](#cloud.hashing.goods.v1.FeeType)
     - [GetAppGoodPromotionByAppGoodStartEndRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodStartEndRequest)
     - [GetAppGoodPromotionByAppGoodStartEndResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodStartEndResponse)
+    - [GetAppGoodPromotionByAppGoodTimestampRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodTimestampRequest)
+    - [GetAppGoodPromotionByAppGoodTimestampResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodTimestampResponse)
     - [GetAppGoodPromotionRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionRequest)
     - [GetAppGoodPromotionResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionResponse)
     - [GetAppGoodPromotionsByAppGoodRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionsByAppGoodRequest)
@@ -1420,6 +1424,38 @@
 
 
 
+<a name="cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodTimestampRequest"></a>
+
+### GetAppGoodPromotionByAppGoodTimestampRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
+| Timestamp | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodTimestampResponse"></a>
+
+### GetAppGoodPromotionByAppGoodTimestampResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppGoodPromotion](#cloud.hashing.goods.v1.AppGoodPromotion) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.goods.v1.GetAppGoodPromotionRequest"></a>
 
 ### GetAppGoodPromotionRequest
@@ -3383,6 +3419,7 @@ Cloud Hashing Goods
 | GetAppGoodPromotion | [GetAppGoodPromotionRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionRequest) | [GetAppGoodPromotionResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionResponse) |  |
 | GetAppGoodPromotions | [GetAppGoodPromotionsRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionsRequest) | [GetAppGoodPromotionsResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionsResponse) |  |
 | GetAppGoodPromotionByAppGoodStartEnd | [GetAppGoodPromotionByAppGoodStartEndRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodStartEndRequest) | [GetAppGoodPromotionByAppGoodStartEndResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodStartEndResponse) |  |
+| GetAppGoodPromotionByAppGoodTimestamp | [GetAppGoodPromotionByAppGoodTimestampRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodTimestampRequest) | [GetAppGoodPromotionByAppGoodTimestampResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodTimestampResponse) |  |
 | GetAppGoodPromotionsByAppGood | [GetAppGoodPromotionsByAppGoodRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionsByAppGoodRequest) | [GetAppGoodPromotionsByAppGoodResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionsByAppGoodResponse) |  |
 | GetAppGoodPromotionsByOtherAppGood | [GetAppGoodPromotionsByOtherAppGoodRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionsByOtherAppGoodRequest) | [GetAppGoodPromotionsByOtherAppGoodResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionsByOtherAppGoodResponse) |  |
 | GetAppGoodPromotionsByApp | [GetAppGoodPromotionsByAppRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionsByAppRequest) | [GetAppGoodPromotionsByAppResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionsByAppResponse) |  |
@@ -4425,6 +4462,38 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodTimestampRequest"></a>
+
+### GetAppGoodPromotionByAppGoodTimestampRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
+| Timestamp | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodTimestampResponse"></a>
+
+### GetAppGoodPromotionByAppGoodTimestampResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppGoodPromotion](#cloud.hashing.goods.v1.AppGoodPromotion) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.goods.v1.GetAppGoodPromotionRequest"></a>
 
 ### GetAppGoodPromotionRequest
@@ -6388,6 +6457,7 @@ Cloud Hashing Goods
 | GetAppGoodPromotion | [GetAppGoodPromotionRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionRequest) | [GetAppGoodPromotionResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionResponse) |  |
 | GetAppGoodPromotions | [GetAppGoodPromotionsRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionsRequest) | [GetAppGoodPromotionsResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionsResponse) |  |
 | GetAppGoodPromotionByAppGoodStartEnd | [GetAppGoodPromotionByAppGoodStartEndRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodStartEndRequest) | [GetAppGoodPromotionByAppGoodStartEndResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodStartEndResponse) |  |
+| GetAppGoodPromotionByAppGoodTimestamp | [GetAppGoodPromotionByAppGoodTimestampRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodTimestampRequest) | [GetAppGoodPromotionByAppGoodTimestampResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionByAppGoodTimestampResponse) |  |
 | GetAppGoodPromotionsByAppGood | [GetAppGoodPromotionsByAppGoodRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionsByAppGoodRequest) | [GetAppGoodPromotionsByAppGoodResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionsByAppGoodResponse) |  |
 | GetAppGoodPromotionsByOtherAppGood | [GetAppGoodPromotionsByOtherAppGoodRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionsByOtherAppGoodRequest) | [GetAppGoodPromotionsByOtherAppGoodResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionsByOtherAppGoodResponse) |  |
 | GetAppGoodPromotionsByApp | [GetAppGoodPromotionsByAppRequest](#cloud.hashing.goods.v1.GetAppGoodPromotionsByAppRequest) | [GetAppGoodPromotionsByAppResponse](#cloud.hashing.goods.v1.GetAppGoodPromotionsByAppResponse) |  |

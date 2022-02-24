@@ -826,6 +826,16 @@ export type GetAppGoodPromotionByAppGoodStartEndResponse = {
   info?: AppGoodPromotion
 }
 
+export type GetAppGoodPromotionByAppGoodTimestampRequest = {
+  appID?: string
+  goodID?: string
+  timestamp?: number
+}
+
+export type GetAppGoodPromotionByAppGoodTimestampResponse = {
+  info?: AppGoodPromotion
+}
+
 export type GetAppGoodPromotionsByAppGoodRequest = {
   appID?: string
   goodID?: string
@@ -1103,6 +1113,9 @@ export class CloudHashingGoods {
   }
   static GetAppGoodPromotionByAppGoodStartEnd(req: GetAppGoodPromotionByAppGoodStartEndRequest, initReq?: fm.InitReq): Promise<GetAppGoodPromotionByAppGoodStartEndResponse> {
     return fm.fetchReq<GetAppGoodPromotionByAppGoodStartEndRequest, GetAppGoodPromotionByAppGoodStartEndResponse>(`/v1/get/app/good/promotion/by/app/good/start/end`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppGoodPromotionByAppGoodTimestamp(req: GetAppGoodPromotionByAppGoodTimestampRequest, initReq?: fm.InitReq): Promise<GetAppGoodPromotionByAppGoodTimestampResponse> {
+    return fm.fetchReq<GetAppGoodPromotionByAppGoodTimestampRequest, GetAppGoodPromotionByAppGoodTimestampResponse>(`/v1/get/app/good/promotion/by/app/good/timestamp`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppGoodPromotionsByAppGood(req: GetAppGoodPromotionsByAppGoodRequest, initReq?: fm.InitReq): Promise<GetAppGoodPromotionsByAppGoodResponse> {
     return fm.fetchReq<GetAppGoodPromotionsByAppGoodRequest, GetAppGoodPromotionsByAppGoodResponse>(`/v1/get/app/good/promotion/by/app/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
