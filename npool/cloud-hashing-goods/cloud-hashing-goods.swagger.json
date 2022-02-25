@@ -940,70 +940,6 @@
         ]
       }
     },
-    "/v1/get/app/good/promotion/by/app": {
-      "post": {
-        "operationId": "CloudHashingGoods_GetAppGoodPromotionsByApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppGoodPromotionsByAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppGoodPromotionsByAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingGoods"
-        ]
-      }
-    },
-    "/v1/get/app/good/promotion/by/app/good": {
-      "post": {
-        "operationId": "CloudHashingGoods_GetAppGoodPromotionsByAppGood",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppGoodPromotionsByAppGoodResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppGoodPromotionsByAppGoodRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingGoods"
-        ]
-      }
-    },
     "/v1/get/app/good/promotion/by/app/good/start/end": {
       "post": {
         "operationId": "CloudHashingGoods_GetAppGoodPromotionByAppGoodStartEnd",
@@ -1068,7 +1004,103 @@
         ]
       }
     },
-    "/v1/get/app/good/promotion/by/other/app": {
+    "/v1/get/app/good/promotions": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetAppGoodPromotions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodPromotionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodPromotionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/get/app/good/promotions/by/app": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetAppGoodPromotionsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodPromotionsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodPromotionsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/get/app/good/promotions/by/app/good": {
+      "post": {
+        "operationId": "CloudHashingGoods_GetAppGoodPromotionsByAppGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodPromotionsByAppGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodPromotionsByAppGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
+    "/v1/get/app/good/promotions/by/other/app": {
       "post": {
         "operationId": "CloudHashingGoods_GetAppGoodPromotionsByOtherApp",
         "responses": {
@@ -1100,7 +1132,7 @@
         ]
       }
     },
-    "/v1/get/app/good/promotion/by/other/app/good": {
+    "/v1/get/app/good/promotions/by/other/app/good": {
       "post": {
         "operationId": "CloudHashingGoods_GetAppGoodPromotionsByOtherAppGood",
         "responses": {
@@ -1124,38 +1156,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppGoodPromotionsByOtherAppGoodRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingGoods"
-        ]
-      }
-    },
-    "/v1/get/app/good/promotions": {
-      "post": {
-        "operationId": "CloudHashingGoods_GetAppGoodPromotions",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppGoodPromotionsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppGoodPromotionsRequest"
             }
           }
         ],

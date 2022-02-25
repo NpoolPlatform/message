@@ -4899,7 +4899,7 @@ func RegisterCloudHashingGoodsHandlerServer(ctx context.Context, mux *runtime.Se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByAppGood", runtime.WithHTTPPathPattern("/v1/get/app/good/promotion/by/app/good"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByAppGood", runtime.WithHTTPPathPattern("/v1/get/app/good/promotions/by/app/good"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4922,7 +4922,7 @@ func RegisterCloudHashingGoodsHandlerServer(ctx context.Context, mux *runtime.Se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByOtherAppGood", runtime.WithHTTPPathPattern("/v1/get/app/good/promotion/by/other/app/good"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByOtherAppGood", runtime.WithHTTPPathPattern("/v1/get/app/good/promotions/by/other/app/good"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4945,7 +4945,7 @@ func RegisterCloudHashingGoodsHandlerServer(ctx context.Context, mux *runtime.Se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByApp", runtime.WithHTTPPathPattern("/v1/get/app/good/promotion/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByApp", runtime.WithHTTPPathPattern("/v1/get/app/good/promotions/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4968,7 +4968,7 @@ func RegisterCloudHashingGoodsHandlerServer(ctx context.Context, mux *runtime.Se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/good/promotion/by/other/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/good/promotions/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -6690,7 +6690,7 @@ func RegisterCloudHashingGoodsHandlerClient(ctx context.Context, mux *runtime.Se
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByAppGood", runtime.WithHTTPPathPattern("/v1/get/app/good/promotion/by/app/good"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByAppGood", runtime.WithHTTPPathPattern("/v1/get/app/good/promotions/by/app/good"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -6710,7 +6710,7 @@ func RegisterCloudHashingGoodsHandlerClient(ctx context.Context, mux *runtime.Se
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByOtherAppGood", runtime.WithHTTPPathPattern("/v1/get/app/good/promotion/by/other/app/good"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByOtherAppGood", runtime.WithHTTPPathPattern("/v1/get/app/good/promotions/by/other/app/good"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -6730,7 +6730,7 @@ func RegisterCloudHashingGoodsHandlerClient(ctx context.Context, mux *runtime.Se
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByApp", runtime.WithHTTPPathPattern("/v1/get/app/good/promotion/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByApp", runtime.WithHTTPPathPattern("/v1/get/app/good/promotions/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -6750,7 +6750,7 @@ func RegisterCloudHashingGoodsHandlerClient(ctx context.Context, mux *runtime.Se
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/good/promotion/by/other/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.goods.v1.CloudHashingGoods/GetAppGoodPromotionsByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/good/promotions/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -6936,13 +6936,13 @@ var (
 
 	pattern_CloudHashingGoods_GetAppGoodPromotionByAppGoodTimestamp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2, 2, 3, 2, 6}, []string{"v1", "get", "app", "good", "promotion", "by", "timestamp"}, ""))
 
-	pattern_CloudHashingGoods_GetAppGoodPromotionsByAppGood_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2, 2, 3}, []string{"v1", "get", "app", "good", "promotion", "by"}, ""))
+	pattern_CloudHashingGoods_GetAppGoodPromotionsByAppGood_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2, 2, 3}, []string{"v1", "get", "app", "good", "promotions", "by"}, ""))
 
-	pattern_CloudHashingGoods_GetAppGoodPromotionsByOtherAppGood_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 2, 2, 3}, []string{"v1", "get", "app", "good", "promotion", "by", "other"}, ""))
+	pattern_CloudHashingGoods_GetAppGoodPromotionsByOtherAppGood_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 2, 2, 3}, []string{"v1", "get", "app", "good", "promotions", "by", "other"}, ""))
 
-	pattern_CloudHashingGoods_GetAppGoodPromotionsByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2}, []string{"v1", "get", "app", "good", "promotion", "by"}, ""))
+	pattern_CloudHashingGoods_GetAppGoodPromotionsByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2}, []string{"v1", "get", "app", "good", "promotions", "by"}, ""))
 
-	pattern_CloudHashingGoods_GetAppGoodPromotionsByOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 2}, []string{"v1", "get", "app", "good", "promotion", "by", "other"}, ""))
+	pattern_CloudHashingGoods_GetAppGoodPromotionsByOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 2}, []string{"v1", "get", "app", "good", "promotions", "by", "other"}, ""))
 )
 
 var (

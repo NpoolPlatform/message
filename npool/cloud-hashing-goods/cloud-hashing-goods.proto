@@ -526,25 +526,25 @@ service CloudHashingGoods {
     }
     rpc GetAppGoodPromotionsByAppGood (GetAppGoodPromotionsByAppGoodRequest) returns (GetAppGoodPromotionsByAppGoodResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/good/promotion/by/app/good"
+            post: "/v1/get/app/good/promotions/by/app/good"
             body: "*"
         };
     }
     rpc GetAppGoodPromotionsByOtherAppGood (GetAppGoodPromotionsByOtherAppGoodRequest) returns (GetAppGoodPromotionsByOtherAppGoodResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/good/promotion/by/other/app/good"
+            post: "/v1/get/app/good/promotions/by/other/app/good"
             body: "*"
         };
     }
     rpc GetAppGoodPromotionsByApp (GetAppGoodPromotionsByAppRequest) returns (GetAppGoodPromotionsByAppResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/good/promotion/by/app"
+            post: "/v1/get/app/good/promotions/by/app"
             body: "*"
         };
     }
     rpc GetAppGoodPromotionsByOtherApp (GetAppGoodPromotionsByOtherAppRequest) returns (GetAppGoodPromotionsByOtherAppResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/good/promotion/by/other/app"
+            post: "/v1/get/app/good/promotions/by/other/app"
             body: "*"
         };
     }
