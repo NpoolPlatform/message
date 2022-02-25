@@ -4576,7 +4576,8 @@
           "type": "string"
         },
         "Amount": {
-          "type": "string"
+          "type": "number",
+          "format": "double"
         }
       }
     },

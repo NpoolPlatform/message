@@ -800,7 +800,7 @@ export type UserPaymentBalance = {
   appID?: string
   userID?: string
   paymentID?: string
-  amount?: string
+  amount?: number
 }
 
 export type CreateUserPaymentBalanceRequest = {

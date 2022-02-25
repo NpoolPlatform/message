@@ -3175,7 +3175,7 @@
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | PaymentID | [string](#string) |  |  |
-| Amount | [string](#string) |  |  |
+| Amount | [double](#double) |  |  |
 
 
 
@@ -6135,7 +6135,7 @@ Cloud Hashing Billing
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | PaymentID | [string](#string) |  |  |
-| Amount | [string](#string) |  |  |
+| Amount | [double](#double) |  |  |
 
 
 
