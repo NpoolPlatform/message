@@ -3176,6 +3176,7 @@
 | UserID | [string](#string) |  |  |
 | PaymentID | [string](#string) |  |  |
 | Amount | [double](#double) |  |  |
+| UsedByPaymentID | [string](#string) |  |  |
 
 
 
@@ -6136,6 +6137,7 @@ Cloud Hashing Billing
 | UserID | [string](#string) |  |  |
 | PaymentID | [string](#string) |  |  |
 | Amount | [double](#double) |  |  |
+| UsedByPaymentID | [string](#string) |  |  |
 
 
 

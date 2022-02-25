@@ -4578,6 +4578,9 @@
         "Amount": {
           "type": "number",
           "format": "double"
+        },
+        "UsedByPaymentID": {
+          "type": "string"
         }
       }
     },

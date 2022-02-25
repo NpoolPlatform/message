@@ -801,6 +801,7 @@ export type UserPaymentBalance = {
   userID?: string
   paymentID?: string
   amount?: number
+  usedByPaymentID?: string
 }
 
 export type CreateUserPaymentBalanceRequest = {

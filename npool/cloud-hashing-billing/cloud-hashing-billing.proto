@@ -1327,6 +1327,7 @@ message UserPaymentBalance {
     string UserID = 30;
     string PaymentID = 40;
     double Amount = 50;
+    string UsedByPaymentID = 60;
 }
 
 message CreateUserPaymentBalanceRequest {
