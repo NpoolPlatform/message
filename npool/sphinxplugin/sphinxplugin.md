@@ -131,13 +131,14 @@ fil
 | Version | [uint64](#uint64) |  |  |
 | To | [string](#string) |  |  |
 | From | [string](#string) |  |  |
-| Nonce | [uint64](#uint64) |  |  |
 | Value | [double](#double) |  |  |
+| Nonce | [uint64](#uint64) |  | fil |
 | GasLimit | [int64](#int64) |  |  |
 | GasFeeCap | [uint64](#uint64) |  |  |
 | GasPremium | [uint64](#uint64) |  |  |
 | Method | [uint64](#uint64) |  |  |
 | Params | [bytes](#bytes) |  |  |
+| Unspent | [Unspent](#sphinx.plugin.v1.Unspent) | repeated | btc |
 
 
 
@@ -178,8 +179,8 @@ fil
 | ---- | ------ | ----------- |
 | CoinTypeUnKnow | 0 |  |
 | CoinTypefilecoin | 1 |  |
-| CoinTypebtc | 2 |  |
-| CoinTypeeth | 3 |  |
+| CoinTypebitcoin | 2 |  |
+| CoinTypeethereum | 3 |  |
 | CoinTypespacemesh | 4 |  |
 
 
@@ -293,13 +294,14 @@ fil
 | Version | [uint64](#uint64) |  |  |
 | To | [string](#string) |  |  |
 | From | [string](#string) |  |  |
-| Nonce | [uint64](#uint64) |  |  |
 | Value | [double](#double) |  |  |
+| Nonce | [uint64](#uint64) |  | fil |
 | GasLimit | [int64](#int64) |  |  |
 | GasFeeCap | [uint64](#uint64) |  |  |
 | GasPremium | [uint64](#uint64) |  |  |
 | Method | [uint64](#uint64) |  |  |
 | Params | [bytes](#bytes) |  |  |
+| Unspent | [Unspent](#sphinx.plugin.v1.Unspent) | repeated | btc |
 
 
 
@@ -340,8 +342,8 @@ fil
 | ---- | ------ | ----------- |
 | CoinTypeUnKnow | 0 |  |
 | CoinTypefilecoin | 1 |  |
-| CoinTypebtc | 2 |  |
-| CoinTypeeth | 3 |  |
+| CoinTypebitcoin | 2 |  |
+| CoinTypeethereum | 3 |  |
 | CoinTypespacemesh | 4 |  |
 
 

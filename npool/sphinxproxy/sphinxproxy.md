@@ -209,9 +209,9 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
-| Address | [string](#string) |  |  |
-| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  | fil |
-| Signature | [sphinx.plugin.v1.Signature](#sphinx.plugin.v1.Signature) |  |  |
+| Address | [string](#string) |  | query wallet account |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
+| Signature | [sphinx.plugin.v1.Signature](#sphinx.plugin.v1.Signature) |  | fil |
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
 | CID | [string](#string) |  |  |
 
@@ -233,14 +233,11 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | ENV | [string](#string) |  | main or test |
 | Unit | [string](#string) |  |  |
 | TransactionID | [string](#string) |  |  |
-| Nonce | [uint64](#uint64) |  | fil Nonce |
-| Unspent | [sphinx.plugin.v1.Unspent](#sphinx.plugin.v1.Unspent) | repeated | btc UTXO |
 | CID | [string](#string) |  |  |
 | Balance | [double](#double) |  |  |
 | BalanceStr | [string](#string) |  |  |
-| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  | fil |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 | ExitCode | [int64](#int64) |  | -1 find cid state on chain internal server error |
-| MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
 
 
 
@@ -258,8 +255,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
-| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  | fil |
-| MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 
 
 
@@ -570,9 +566,9 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
-| Address | [string](#string) |  |  |
-| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  | fil |
-| Signature | [sphinx.plugin.v1.Signature](#sphinx.plugin.v1.Signature) |  |  |
+| Address | [string](#string) |  | query wallet account |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
+| Signature | [sphinx.plugin.v1.Signature](#sphinx.plugin.v1.Signature) |  | fil |
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
 | CID | [string](#string) |  |  |
 
@@ -594,14 +590,11 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | ENV | [string](#string) |  | main or test |
 | Unit | [string](#string) |  |  |
 | TransactionID | [string](#string) |  |  |
-| Nonce | [uint64](#uint64) |  | fil Nonce |
-| Unspent | [sphinx.plugin.v1.Unspent](#sphinx.plugin.v1.Unspent) | repeated | btc UTXO |
 | CID | [string](#string) |  |  |
 | Balance | [double](#double) |  |  |
 | BalanceStr | [string](#string) |  |  |
-| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  | fil |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 | ExitCode | [int64](#int64) |  | -1 find cid state on chain internal server error |
-| MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
 
 
 
@@ -619,8 +612,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
-| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  | fil |
-| MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
+| Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 
 
 
