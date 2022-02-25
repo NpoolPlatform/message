@@ -363,6 +363,70 @@
         ]
       }
     },
+    "/v1/create/user/payment/balance": {
+      "post": {
+        "operationId": "CloudHashingBilling_CreateUserPaymentBalance",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserPaymentBalanceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserPaymentBalanceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/create/user/payment/balance/for/other/app/user": {
+      "post": {
+        "operationId": "CloudHashingBilling_CreateUserPaymentBalanceForOtherAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserPaymentBalanceForOtherAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserPaymentBalanceForOtherAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/create/user/withdraw": {
       "post": {
         "operationId": "CloudHashingBilling_CreateUserWithdraw",
@@ -1771,6 +1835,134 @@
         ]
       }
     },
+    "/v1/get/user/payment/balance": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserPaymentBalance",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserPaymentBalanceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserPaymentBalanceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/user/payment/balances/by/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserPaymentBalancesByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserPaymentBalancesByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserPaymentBalancesByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/user/payment/balances/by/app/user": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserPaymentBalancesByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserPaymentBalancesByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserPaymentBalancesByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/user/payment/balances/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserPaymentBalancesByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserPaymentBalancesByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserPaymentBalancesByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/user/withdraw": {
       "post": {
         "operationId": "CloudHashingBilling_GetUserWithdraw",
@@ -2872,6 +3064,44 @@
         }
       }
     },
+    "v1CreateUserPaymentBalanceForOtherAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1UserPaymentBalance"
+        }
+      }
+    },
+    "v1CreateUserPaymentBalanceForOtherAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserPaymentBalance"
+        }
+      }
+    },
+    "v1CreateUserPaymentBalanceRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserPaymentBalance"
+        }
+      }
+    },
+    "v1CreateUserPaymentBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserPaymentBalance"
+        }
+      }
+    },
     "v1CreateUserWithdrawItemRequest": {
       "type": "object",
       "properties": {
@@ -3673,6 +3903,82 @@
         }
       }
     },
+    "v1GetUserPaymentBalanceRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserPaymentBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserPaymentBalance"
+        }
+      }
+    },
+    "v1GetUserPaymentBalancesByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserPaymentBalancesByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserPaymentBalance"
+          }
+        }
+      }
+    },
+    "v1GetUserPaymentBalancesByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserPaymentBalancesByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserPaymentBalance"
+          }
+        }
+      }
+    },
+    "v1GetUserPaymentBalancesByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserPaymentBalancesByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserPaymentBalance"
+          }
+        }
+      }
+    },
     "v1GetUserWithdrawAccountRequest": {
       "type": "object",
       "properties": {
@@ -4250,6 +4556,26 @@
           "type": "string"
         },
         "AccountID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UserPaymentBalance": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PaymentID": {
+          "type": "string"
+        },
+        "Amount": {
           "type": "string"
         }
       }

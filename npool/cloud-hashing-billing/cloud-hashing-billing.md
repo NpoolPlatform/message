@@ -31,6 +31,10 @@
     - [CreateUserBenefitResponse](#cloud.hashing.billing.v1.CreateUserBenefitResponse)
     - [CreateUserDirectBenefitRequest](#cloud.hashing.billing.v1.CreateUserDirectBenefitRequest)
     - [CreateUserDirectBenefitResponse](#cloud.hashing.billing.v1.CreateUserDirectBenefitResponse)
+    - [CreateUserPaymentBalanceForOtherAppUserRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserRequest)
+    - [CreateUserPaymentBalanceForOtherAppUserResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserResponse)
+    - [CreateUserPaymentBalanceRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceRequest)
+    - [CreateUserPaymentBalanceResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceResponse)
     - [CreateUserWithdrawItemRequest](#cloud.hashing.billing.v1.CreateUserWithdrawItemRequest)
     - [CreateUserWithdrawItemResponse](#cloud.hashing.billing.v1.CreateUserWithdrawItemResponse)
     - [CreateUserWithdrawRequest](#cloud.hashing.billing.v1.CreateUserWithdrawRequest)
@@ -121,6 +125,14 @@
     - [GetUserDirectBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse)
     - [GetUserDirectBenefitsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest)
     - [GetUserDirectBenefitsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse)
+    - [GetUserPaymentBalanceRequest](#cloud.hashing.billing.v1.GetUserPaymentBalanceRequest)
+    - [GetUserPaymentBalanceResponse](#cloud.hashing.billing.v1.GetUserPaymentBalanceResponse)
+    - [GetUserPaymentBalancesByAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppRequest)
+    - [GetUserPaymentBalancesByAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppResponse)
+    - [GetUserPaymentBalancesByAppUserRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserRequest)
+    - [GetUserPaymentBalancesByAppUserResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserResponse)
+    - [GetUserPaymentBalancesByOtherAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppRequest)
+    - [GetUserPaymentBalancesByOtherAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppResponse)
     - [GetUserWithdrawAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountRequest)
     - [GetUserWithdrawAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountResponse)
     - [GetUserWithdrawAccountsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserRequest)
@@ -172,6 +184,7 @@
     - [UpdateUserWithdrawResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawResponse)
     - [UserBenefit](#cloud.hashing.billing.v1.UserBenefit)
     - [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit)
+    - [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance)
     - [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw)
     - [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount)
     - [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem)
@@ -206,6 +219,10 @@
     - [CreateUserBenefitResponse](#cloud.hashing.billing.v1.CreateUserBenefitResponse)
     - [CreateUserDirectBenefitRequest](#cloud.hashing.billing.v1.CreateUserDirectBenefitRequest)
     - [CreateUserDirectBenefitResponse](#cloud.hashing.billing.v1.CreateUserDirectBenefitResponse)
+    - [CreateUserPaymentBalanceForOtherAppUserRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserRequest)
+    - [CreateUserPaymentBalanceForOtherAppUserResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserResponse)
+    - [CreateUserPaymentBalanceRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceRequest)
+    - [CreateUserPaymentBalanceResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceResponse)
     - [CreateUserWithdrawItemRequest](#cloud.hashing.billing.v1.CreateUserWithdrawItemRequest)
     - [CreateUserWithdrawItemResponse](#cloud.hashing.billing.v1.CreateUserWithdrawItemResponse)
     - [CreateUserWithdrawRequest](#cloud.hashing.billing.v1.CreateUserWithdrawRequest)
@@ -296,6 +313,14 @@
     - [GetUserDirectBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse)
     - [GetUserDirectBenefitsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest)
     - [GetUserDirectBenefitsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse)
+    - [GetUserPaymentBalanceRequest](#cloud.hashing.billing.v1.GetUserPaymentBalanceRequest)
+    - [GetUserPaymentBalanceResponse](#cloud.hashing.billing.v1.GetUserPaymentBalanceResponse)
+    - [GetUserPaymentBalancesByAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppRequest)
+    - [GetUserPaymentBalancesByAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppResponse)
+    - [GetUserPaymentBalancesByAppUserRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserRequest)
+    - [GetUserPaymentBalancesByAppUserResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserResponse)
+    - [GetUserPaymentBalancesByOtherAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppRequest)
+    - [GetUserPaymentBalancesByOtherAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppResponse)
     - [GetUserWithdrawAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountRequest)
     - [GetUserWithdrawAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountResponse)
     - [GetUserWithdrawAccountsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserRequest)
@@ -347,6 +372,7 @@
     - [UpdateUserWithdrawResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawResponse)
     - [UserBenefit](#cloud.hashing.billing.v1.UserBenefit)
     - [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit)
+    - [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance)
     - [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw)
     - [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount)
     - [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem)
@@ -804,6 +830,68 @@
 
 
 
+<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserRequest"></a>
+
+### CreateUserPaymentBalanceForOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserResponse"></a>
+
+### CreateUserPaymentBalanceForOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceRequest"></a>
+
+### CreateUserPaymentBalanceRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceResponse"></a>
+
+### CreateUserPaymentBalanceResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.CreateUserWithdrawItemRequest"></a>
 
 ### CreateUserWithdrawItemRequest
@@ -2152,6 +2240,127 @@
 
 
 
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalanceRequest"></a>
+
+### GetUserPaymentBalanceRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalanceResponse"></a>
+
+### GetUserPaymentBalanceResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppRequest"></a>
+
+### GetUserPaymentBalancesByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppResponse"></a>
+
+### GetUserPaymentBalancesByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserRequest"></a>
+
+### GetUserPaymentBalancesByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserResponse"></a>
+
+### GetUserPaymentBalancesByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppRequest"></a>
+
+### GetUserPaymentBalancesByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppResponse"></a>
+
+### GetUserPaymentBalancesByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.GetUserWithdrawAccountRequest"></a>
 
 ### GetUserWithdrawAccountRequest
@@ -2954,6 +3163,25 @@
 
 
 
+<a name="cloud.hashing.billing.v1.UserPaymentBalance"></a>
+
+### UserPaymentBalance
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| PaymentID | [string](#string) |  |  |
+| Amount | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.UserWithdraw"></a>
 
 ### UserWithdraw
@@ -3104,6 +3332,12 @@ Cloud Hashing Billing
 | GetAppWithdrawSettingsByApp | [GetAppWithdrawSettingsByAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppRequest) | [GetAppWithdrawSettingsByAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppResponse) |  |
 | GetAppWithdrawSettingByAppCoin | [GetAppWithdrawSettingByAppCoinRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinRequest) | [GetAppWithdrawSettingByAppCoinResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinResponse) |  |
 | GetAppWithdrawSettingsByOtherApp | [GetAppWithdrawSettingsByOtherAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppRequest) | [GetAppWithdrawSettingsByOtherAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppResponse) |  |
+| CreateUserPaymentBalance | [CreateUserPaymentBalanceRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceRequest) | [CreateUserPaymentBalanceResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceResponse) |  |
+| CreateUserPaymentBalanceForOtherAppUser | [CreateUserPaymentBalanceForOtherAppUserRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserRequest) | [CreateUserPaymentBalanceForOtherAppUserResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserResponse) |  |
+| GetUserPaymentBalance | [GetUserPaymentBalanceRequest](#cloud.hashing.billing.v1.GetUserPaymentBalanceRequest) | [GetUserPaymentBalanceResponse](#cloud.hashing.billing.v1.GetUserPaymentBalanceResponse) |  |
+| GetUserPaymentBalancesByApp | [GetUserPaymentBalancesByAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppRequest) | [GetUserPaymentBalancesByAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppResponse) |  |
+| GetUserPaymentBalancesByOtherApp | [GetUserPaymentBalancesByOtherAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppRequest) | [GetUserPaymentBalancesByOtherAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppResponse) |  |
+| GetUserPaymentBalancesByAppUser | [GetUserPaymentBalancesByAppUserRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserRequest) | [GetUserPaymentBalancesByAppUserResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserResponse) |  |
 
  
 
@@ -3556,6 +3790,68 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserRequest"></a>
+
+### CreateUserPaymentBalanceForOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserResponse"></a>
+
+### CreateUserPaymentBalanceForOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceRequest"></a>
+
+### CreateUserPaymentBalanceRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceResponse"></a>
+
+### CreateUserPaymentBalanceResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.CreateUserWithdrawItemRequest"></a>
 
 ### CreateUserWithdrawItemRequest
@@ -4904,6 +5200,127 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalanceRequest"></a>
+
+### GetUserPaymentBalanceRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalanceResponse"></a>
+
+### GetUserPaymentBalanceResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppRequest"></a>
+
+### GetUserPaymentBalancesByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppResponse"></a>
+
+### GetUserPaymentBalancesByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserRequest"></a>
+
+### GetUserPaymentBalancesByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserResponse"></a>
+
+### GetUserPaymentBalancesByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppRequest"></a>
+
+### GetUserPaymentBalancesByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppResponse"></a>
+
+### GetUserPaymentBalancesByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.GetUserWithdrawAccountRequest"></a>
 
 ### GetUserWithdrawAccountRequest
@@ -5706,6 +6123,25 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud.hashing.billing.v1.UserPaymentBalance"></a>
+
+### UserPaymentBalance
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| PaymentID | [string](#string) |  |  |
+| Amount | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.billing.v1.UserWithdraw"></a>
 
 ### UserWithdraw
@@ -5856,6 +6292,12 @@ Cloud Hashing Billing
 | GetAppWithdrawSettingsByApp | [GetAppWithdrawSettingsByAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppRequest) | [GetAppWithdrawSettingsByAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppResponse) |  |
 | GetAppWithdrawSettingByAppCoin | [GetAppWithdrawSettingByAppCoinRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinRequest) | [GetAppWithdrawSettingByAppCoinResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinResponse) |  |
 | GetAppWithdrawSettingsByOtherApp | [GetAppWithdrawSettingsByOtherAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppRequest) | [GetAppWithdrawSettingsByOtherAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppResponse) |  |
+| CreateUserPaymentBalance | [CreateUserPaymentBalanceRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceRequest) | [CreateUserPaymentBalanceResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceResponse) |  |
+| CreateUserPaymentBalanceForOtherAppUser | [CreateUserPaymentBalanceForOtherAppUserRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserRequest) | [CreateUserPaymentBalanceForOtherAppUserResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserResponse) |  |
+| GetUserPaymentBalance | [GetUserPaymentBalanceRequest](#cloud.hashing.billing.v1.GetUserPaymentBalanceRequest) | [GetUserPaymentBalanceResponse](#cloud.hashing.billing.v1.GetUserPaymentBalanceResponse) |  |
+| GetUserPaymentBalancesByApp | [GetUserPaymentBalancesByAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppRequest) | [GetUserPaymentBalancesByAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppResponse) |  |
+| GetUserPaymentBalancesByOtherApp | [GetUserPaymentBalancesByOtherAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppRequest) | [GetUserPaymentBalancesByOtherAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppResponse) |  |
+| GetUserPaymentBalancesByAppUser | [GetUserPaymentBalancesByAppUserRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserRequest) | [GetUserPaymentBalancesByAppUserResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserResponse) |  |
 
  
 

@@ -492,6 +492,43 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+
+    rpc CreateUserPaymentBalance (CreateUserPaymentBalanceRequest) returns (CreateUserPaymentBalanceResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/payment/balance"
+            body: "*"
+        };
+    }
+    rpc CreateUserPaymentBalanceForOtherAppUser (CreateUserPaymentBalanceForOtherAppUserRequest) returns (CreateUserPaymentBalanceForOtherAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/payment/balance/for/other/app/user"
+            body: "*"
+        };
+    }
+    rpc GetUserPaymentBalance (GetUserPaymentBalanceRequest) returns (GetUserPaymentBalanceResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/payment/balance"
+            body: "*"
+        };
+    }
+    rpc GetUserPaymentBalancesByApp (GetUserPaymentBalancesByAppRequest) returns (GetUserPaymentBalancesByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/payment/balances/by/app"
+            body: "*"
+        };
+    }
+    rpc GetUserPaymentBalancesByOtherApp (GetUserPaymentBalancesByOtherAppRequest) returns (GetUserPaymentBalancesByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/payment/balances/by/other/app"
+            body: "*"
+        };
+    }
+    rpc GetUserPaymentBalancesByAppUser (GetUserPaymentBalancesByAppUserRequest) returns (GetUserPaymentBalancesByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/payment/balances/by/app/user"
+            body: "*"
+        };
+    }
 }
 
 message CoinAccountInfo {
@@ -1284,3 +1321,61 @@ message GetAppWithdrawSettingsByOtherAppResponse {
     repeated AppWithdrawSetting Infos = 10;
 }
 
+message UserPaymentBalance {
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    string PaymentID = 40;
+    string Amount = 50;
+}
+
+message CreateUserPaymentBalanceRequest {
+    UserPaymentBalance Info = 10;
+}
+
+message CreateUserPaymentBalanceResponse {
+    UserPaymentBalance Info = 10;
+}
+
+message CreateUserPaymentBalanceForOtherAppUserRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
+    UserPaymentBalance Info = 30;
+}
+
+message CreateUserPaymentBalanceForOtherAppUserResponse {
+    UserPaymentBalance Info = 10;
+}
+
+message GetUserPaymentBalanceRequest {
+    string ID = 10;
+}
+
+message GetUserPaymentBalanceResponse {
+    UserPaymentBalance Info = 10;
+}
+
+message GetUserPaymentBalancesByAppRequest {
+    string AppID = 10;
+}
+
+message GetUserPaymentBalancesByAppResponse {
+    repeated UserPaymentBalance Infos = 10;
+}
+
+message GetUserPaymentBalancesByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetUserPaymentBalancesByOtherAppResponse {
+    repeated UserPaymentBalance Infos = 10;
+}
+
+message GetUserPaymentBalancesByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetUserPaymentBalancesByAppUserResponse {
+    repeated UserPaymentBalance Infos = 10;
+}

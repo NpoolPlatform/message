@@ -795,6 +795,65 @@ export type GetAppWithdrawSettingsByOtherAppResponse = {
   infos?: AppWithdrawSetting[]
 }
 
+export type UserPaymentBalance = {
+  id?: string
+  appID?: string
+  userID?: string
+  paymentID?: string
+  amount?: string
+}
+
+export type CreateUserPaymentBalanceRequest = {
+  info?: UserPaymentBalance
+}
+
+export type CreateUserPaymentBalanceResponse = {
+  info?: UserPaymentBalance
+}
+
+export type CreateUserPaymentBalanceForOtherAppUserRequest = {
+  targetAppID?: string
+  targetUserID?: string
+  info?: UserPaymentBalance
+}
+
+export type CreateUserPaymentBalanceForOtherAppUserResponse = {
+  info?: UserPaymentBalance
+}
+
+export type GetUserPaymentBalanceRequest = {
+  id?: string
+}
+
+export type GetUserPaymentBalanceResponse = {
+  info?: UserPaymentBalance
+}
+
+export type GetUserPaymentBalancesByAppRequest = {
+  appID?: string
+}
+
+export type GetUserPaymentBalancesByAppResponse = {
+  infos?: UserPaymentBalance[]
+}
+
+export type GetUserPaymentBalancesByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetUserPaymentBalancesByOtherAppResponse = {
+  infos?: UserPaymentBalance[]
+}
+
+export type GetUserPaymentBalancesByAppUserRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetUserPaymentBalancesByAppUserResponse = {
+  infos?: UserPaymentBalance[]
+}
+
 export class CloudHashingBilling {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -1029,5 +1088,23 @@ export class CloudHashingBilling {
   }
   static GetAppWithdrawSettingsByOtherApp(req: GetAppWithdrawSettingsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppWithdrawSettingsByOtherAppResponse> {
     return fm.fetchReq<GetAppWithdrawSettingsByOtherAppRequest, GetAppWithdrawSettingsByOtherAppResponse>(`/v1/get/app/withdraw/settings/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateUserPaymentBalance(req: CreateUserPaymentBalanceRequest, initReq?: fm.InitReq): Promise<CreateUserPaymentBalanceResponse> {
+    return fm.fetchReq<CreateUserPaymentBalanceRequest, CreateUserPaymentBalanceResponse>(`/v1/create/user/payment/balance`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateUserPaymentBalanceForOtherAppUser(req: CreateUserPaymentBalanceForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateUserPaymentBalanceForOtherAppUserResponse> {
+    return fm.fetchReq<CreateUserPaymentBalanceForOtherAppUserRequest, CreateUserPaymentBalanceForOtherAppUserResponse>(`/v1/create/user/payment/balance/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserPaymentBalance(req: GetUserPaymentBalanceRequest, initReq?: fm.InitReq): Promise<GetUserPaymentBalanceResponse> {
+    return fm.fetchReq<GetUserPaymentBalanceRequest, GetUserPaymentBalanceResponse>(`/v1/get/user/payment/balance`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserPaymentBalancesByApp(req: GetUserPaymentBalancesByAppRequest, initReq?: fm.InitReq): Promise<GetUserPaymentBalancesByAppResponse> {
+    return fm.fetchReq<GetUserPaymentBalancesByAppRequest, GetUserPaymentBalancesByAppResponse>(`/v1/get/user/payment/balances/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserPaymentBalancesByOtherApp(req: GetUserPaymentBalancesByOtherAppRequest, initReq?: fm.InitReq): Promise<GetUserPaymentBalancesByOtherAppResponse> {
+    return fm.fetchReq<GetUserPaymentBalancesByOtherAppRequest, GetUserPaymentBalancesByOtherAppResponse>(`/v1/get/user/payment/balances/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserPaymentBalancesByAppUser(req: GetUserPaymentBalancesByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserPaymentBalancesByAppUserResponse> {
+    return fm.fetchReq<GetUserPaymentBalancesByAppUserRequest, GetUserPaymentBalancesByAppUserResponse>(`/v1/get/user/payment/balances/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
