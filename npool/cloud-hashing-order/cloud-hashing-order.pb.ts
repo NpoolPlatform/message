@@ -182,6 +182,7 @@ export type Payment = {
   platformTransactionID?: string
   createAt?: number
   coinUSDCurrency?: number
+  finishAmount?: number
 }
 
 export type CreatePaymentRequest = {

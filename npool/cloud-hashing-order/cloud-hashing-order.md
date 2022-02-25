@@ -1067,6 +1067,7 @@ request body and response
 | PlatformTransactionID | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
 | CoinUSDCurrency | [double](#double) |  |  |
+| FinishAmount | [double](#double) |  |  |
 
 
 
@@ -2079,6 +2080,7 @@ request body and response
 | PlatformTransactionID | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
 | CoinUSDCurrency | [double](#double) |  |  |
+| FinishAmount | [double](#double) |  |  |
 
 
 
