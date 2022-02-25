@@ -822,6 +822,14 @@ export type CreateUserPaymentBalanceForOtherAppUserResponse = {
   info?: UserPaymentBalance
 }
 
+export type UpdateUserPaymentBalanceRequest = {
+  info?: UserPaymentBalance
+}
+
+export type UpdateUserPaymentBalanceResponse = {
+  info?: UserPaymentBalance
+}
+
 export type GetUserPaymentBalanceRequest = {
   id?: string
 }
@@ -1095,6 +1103,9 @@ export class CloudHashingBilling {
   }
   static CreateUserPaymentBalanceForOtherAppUser(req: CreateUserPaymentBalanceForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateUserPaymentBalanceForOtherAppUserResponse> {
     return fm.fetchReq<CreateUserPaymentBalanceForOtherAppUserRequest, CreateUserPaymentBalanceForOtherAppUserResponse>(`/v1/create/user/payment/balance/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateUserPaymentBalance(req: UpdateUserPaymentBalanceRequest, initReq?: fm.InitReq): Promise<UpdateUserPaymentBalanceResponse> {
+    return fm.fetchReq<UpdateUserPaymentBalanceRequest, UpdateUserPaymentBalanceResponse>(`/v1/update/user/payment/balance`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserPaymentBalance(req: GetUserPaymentBalanceRequest, initReq?: fm.InitReq): Promise<GetUserPaymentBalanceResponse> {
     return fm.fetchReq<GetUserPaymentBalanceRequest, GetUserPaymentBalanceResponse>(`/v1/get/user/payment/balance`, {...initReq, method: "POST", body: JSON.stringify(req)})

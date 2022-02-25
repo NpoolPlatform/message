@@ -105,6 +105,7 @@ type CloudHashingBillingClient interface {
 	GetAppWithdrawSettingsByOtherApp(ctx context.Context, in *GetAppWithdrawSettingsByOtherAppRequest, opts ...grpc.CallOption) (*GetAppWithdrawSettingsByOtherAppResponse, error)
 	CreateUserPaymentBalance(ctx context.Context, in *CreateUserPaymentBalanceRequest, opts ...grpc.CallOption) (*CreateUserPaymentBalanceResponse, error)
 	CreateUserPaymentBalanceForOtherAppUser(ctx context.Context, in *CreateUserPaymentBalanceForOtherAppUserRequest, opts ...grpc.CallOption) (*CreateUserPaymentBalanceForOtherAppUserResponse, error)
+	UpdateUserPaymentBalance(ctx context.Context, in *UpdateUserPaymentBalanceRequest, opts ...grpc.CallOption) (*UpdateUserPaymentBalanceResponse, error)
 	GetUserPaymentBalance(ctx context.Context, in *GetUserPaymentBalanceRequest, opts ...grpc.CallOption) (*GetUserPaymentBalanceResponse, error)
 	GetUserPaymentBalancesByApp(ctx context.Context, in *GetUserPaymentBalancesByAppRequest, opts ...grpc.CallOption) (*GetUserPaymentBalancesByAppResponse, error)
 	GetUserPaymentBalancesByOtherApp(ctx context.Context, in *GetUserPaymentBalancesByOtherAppRequest, opts ...grpc.CallOption) (*GetUserPaymentBalancesByOtherAppResponse, error)
@@ -839,6 +840,15 @@ func (c *cloudHashingBillingClient) CreateUserPaymentBalanceForOtherAppUser(ctx 
 	return out, nil
 }
 
+func (c *cloudHashingBillingClient) UpdateUserPaymentBalance(ctx context.Context, in *UpdateUserPaymentBalanceRequest, opts ...grpc.CallOption) (*UpdateUserPaymentBalanceResponse, error) {
+	out := new(UpdateUserPaymentBalanceResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateUserPaymentBalance", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingBillingClient) GetUserPaymentBalance(ctx context.Context, in *GetUserPaymentBalanceRequest, opts ...grpc.CallOption) (*GetUserPaymentBalanceResponse, error) {
 	out := new(GetUserPaymentBalanceResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserPaymentBalance", in, out, opts...)
@@ -960,6 +970,7 @@ type CloudHashingBillingServer interface {
 	GetAppWithdrawSettingsByOtherApp(context.Context, *GetAppWithdrawSettingsByOtherAppRequest) (*GetAppWithdrawSettingsByOtherAppResponse, error)
 	CreateUserPaymentBalance(context.Context, *CreateUserPaymentBalanceRequest) (*CreateUserPaymentBalanceResponse, error)
 	CreateUserPaymentBalanceForOtherAppUser(context.Context, *CreateUserPaymentBalanceForOtherAppUserRequest) (*CreateUserPaymentBalanceForOtherAppUserResponse, error)
+	UpdateUserPaymentBalance(context.Context, *UpdateUserPaymentBalanceRequest) (*UpdateUserPaymentBalanceResponse, error)
 	GetUserPaymentBalance(context.Context, *GetUserPaymentBalanceRequest) (*GetUserPaymentBalanceResponse, error)
 	GetUserPaymentBalancesByApp(context.Context, *GetUserPaymentBalancesByAppRequest) (*GetUserPaymentBalancesByAppResponse, error)
 	GetUserPaymentBalancesByOtherApp(context.Context, *GetUserPaymentBalancesByOtherAppRequest) (*GetUserPaymentBalancesByOtherAppResponse, error)
@@ -1210,6 +1221,9 @@ func (UnimplementedCloudHashingBillingServer) CreateUserPaymentBalance(context.C
 }
 func (UnimplementedCloudHashingBillingServer) CreateUserPaymentBalanceForOtherAppUser(context.Context, *CreateUserPaymentBalanceForOtherAppUserRequest) (*CreateUserPaymentBalanceForOtherAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUserPaymentBalanceForOtherAppUser not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) UpdateUserPaymentBalance(context.Context, *UpdateUserPaymentBalanceRequest) (*UpdateUserPaymentBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserPaymentBalance not implemented")
 }
 func (UnimplementedCloudHashingBillingServer) GetUserPaymentBalance(context.Context, *GetUserPaymentBalanceRequest) (*GetUserPaymentBalanceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserPaymentBalance not implemented")
@@ -2676,6 +2690,24 @@ func _CloudHashingBilling_CreateUserPaymentBalanceForOtherAppUser_Handler(srv in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingBilling_UpdateUserPaymentBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateUserPaymentBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).UpdateUserPaymentBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/UpdateUserPaymentBalance",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).UpdateUserPaymentBalance(ctx, req.(*UpdateUserPaymentBalanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingBilling_GetUserPaymentBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserPaymentBalanceRequest)
 	if err := dec(in); err != nil {
@@ -3074,6 +3106,10 @@ var CloudHashingBilling_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateUserPaymentBalanceForOtherAppUser",
 			Handler:    _CloudHashingBilling_CreateUserPaymentBalanceForOtherAppUser_Handler,
+		},
+		{
+			MethodName: "UpdateUserPaymentBalance",
+			Handler:    _CloudHashingBilling_UpdateUserPaymentBalance_Handler,
 		},
 		{
 			MethodName: "GetUserPaymentBalance",

@@ -505,6 +505,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc UpdateUserPaymentBalance (UpdateUserPaymentBalanceRequest) returns (UpdateUserPaymentBalanceResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user/payment/balance"
+            body: "*"
+        };
+    }
     rpc GetUserPaymentBalance (GetUserPaymentBalanceRequest) returns (GetUserPaymentBalanceResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/payment/balance"
@@ -1345,6 +1351,14 @@ message CreateUserPaymentBalanceForOtherAppUserRequest {
 }
 
 message CreateUserPaymentBalanceForOtherAppUserResponse {
+    UserPaymentBalance Info = 10;
+}
+
+message UpdateUserPaymentBalanceRequest {
+    UserPaymentBalance Info = 10;
+}
+
+message UpdateUserPaymentBalanceResponse {
     UserPaymentBalance Info = 10;
 }
 

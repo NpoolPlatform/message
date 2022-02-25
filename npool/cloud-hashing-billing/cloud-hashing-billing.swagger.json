@@ -2603,6 +2603,38 @@
         ]
       }
     },
+    "/v1/update/user/payment/balance": {
+      "post": {
+        "operationId": "CloudHashingBilling_UpdateUserPaymentBalance",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserPaymentBalanceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserPaymentBalanceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/update/user/withdraw": {
       "post": {
         "operationId": "CloudHashingBilling_UpdateUserWithdraw",
@@ -4470,6 +4502,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1UserDirectBenefit"
+        }
+      }
+    },
+    "v1UpdateUserPaymentBalanceRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserPaymentBalance"
+        }
+      }
+    },
+    "v1UpdateUserPaymentBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserPaymentBalance"
         }
       }
     },
