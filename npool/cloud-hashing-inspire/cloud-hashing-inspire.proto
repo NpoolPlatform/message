@@ -685,6 +685,7 @@ message AppCommissionSetting {
     string Type = 30;
     uint32 Level = 40;
     bool InvitationDiscount = 50;
+    bool UniqueSetting = 60;
 }
 
 message CreateAppCommissionSettingRequest {

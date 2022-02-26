@@ -13,6 +13,7 @@ export type AppCommissionSetting = {
   type?: string
   level?: number
   invitationDiscount?: boolean
+  uniqueSetting?: boolean
 }
 
 export type CreateAppCommissionSettingRequest = {

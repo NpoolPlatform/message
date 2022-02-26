@@ -518,6 +518,7 @@ request body and response
 | Type | [string](#string) |  |  |
 | Level | [uint32](#uint32) |  |  |
 | InvitationDiscount | [bool](#bool) |  |  |
+| UniqueSetting | [bool](#bool) |  |  |
 
 
 
@@ -4236,6 +4237,7 @@ request body and response
 | Type | [string](#string) |  |  |
 | Level | [uint32](#uint32) |  |  |
 | InvitationDiscount | [bool](#bool) |  |  |
+| UniqueSetting | [bool](#bool) |  |  |
 
 
 

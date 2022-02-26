@@ -3549,6 +3549,9 @@
         },
         "InvitationDiscount": {
           "type": "boolean"
+        },
+        "UniqueSetting": {
+          "type": "boolean"
         }
       },
       "title": "request body and response"
