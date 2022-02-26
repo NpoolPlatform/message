@@ -614,6 +614,7 @@ message SubmitUserWithdrawRequest {
     string Account = 20;
     string AccountType = 30;
     string VerificationCode = 40;
+    string WithdrawType = 50;
 }
 
 message UserWithdraw {

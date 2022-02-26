@@ -349,6 +349,7 @@ export type SubmitUserWithdrawRequest = {
   account?: string
   accountType?: string
   verificationCode?: string
+  withdrawType?: string
 }
 
 export type UserWithdraw = {

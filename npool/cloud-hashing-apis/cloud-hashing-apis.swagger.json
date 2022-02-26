@@ -3077,6 +3077,10 @@
         "CoinUSDCurrency": {
           "type": "number",
           "format": "double"
+        },
+        "FinishAmount": {
+          "type": "number",
+          "format": "double"
         }
       }
     },
@@ -3275,6 +3279,9 @@
           "type": "string"
         },
         "VerificationCode": {
+          "type": "string"
+        },
+        "WithdrawType": {
           "type": "string"
         }
       }
@@ -3533,6 +3540,9 @@
           "format": "double"
         },
         "PlatformTransactionID": {
+          "type": "string"
+        },
+        "WithdrawType": {
           "type": "string"
         }
       }

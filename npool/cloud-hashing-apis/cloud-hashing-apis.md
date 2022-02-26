@@ -1500,6 +1500,7 @@ Request body and response
 | Account | [string](#string) |  |  |
 | AccountType | [string](#string) |  |  |
 | VerificationCode | [string](#string) |  |  |
+| WithdrawType | [string](#string) |  |  |
 
 
 
@@ -3186,6 +3187,7 @@ Request body and response
 | Account | [string](#string) |  |  |
 | AccountType | [string](#string) |  |  |
 | VerificationCode | [string](#string) |  |  |
+| WithdrawType | [string](#string) |  |  |
 
 
 
