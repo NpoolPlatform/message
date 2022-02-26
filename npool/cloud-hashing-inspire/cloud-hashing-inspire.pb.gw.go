@@ -66,8 +66,8 @@ func local_request_CloudHashingInspire_Version_0(ctx context.Context, marshaler 
 
 }
 
-func request_CloudHashingInspire_CreateNewUserRewardSetting_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateNewUserRewardSettingRequest
+func request_CloudHashingInspire_CreateAppCommissionSetting_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppCommissionSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -78,13 +78,13 @@ func request_CloudHashingInspire_CreateNewUserRewardSetting_0(ctx context.Contex
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateNewUserRewardSetting(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateAppCommissionSetting(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_CreateNewUserRewardSetting_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateNewUserRewardSettingRequest
+func local_request_CloudHashingInspire_CreateAppCommissionSetting_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppCommissionSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -95,13 +95,13 @@ func local_request_CloudHashingInspire_CreateNewUserRewardSetting_0(ctx context.
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateNewUserRewardSetting(ctx, &protoReq)
+	msg, err := server.CreateAppCommissionSetting(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudHashingInspire_GetNewUserRewardSetting_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetNewUserRewardSettingRequest
+func request_CloudHashingInspire_CreateAppCommissionSettingForOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppCommissionSettingForOtherAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -112,13 +112,13 @@ func request_CloudHashingInspire_GetNewUserRewardSetting_0(ctx context.Context, 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetNewUserRewardSetting(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateAppCommissionSettingForOtherApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_GetNewUserRewardSetting_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetNewUserRewardSettingRequest
+func local_request_CloudHashingInspire_CreateAppCommissionSettingForOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppCommissionSettingForOtherAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -129,13 +129,13 @@ func local_request_CloudHashingInspire_GetNewUserRewardSetting_0(ctx context.Con
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetNewUserRewardSetting(ctx, &protoReq)
+	msg, err := server.CreateAppCommissionSettingForOtherApp(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudHashingInspire_GetNewUserRewardSettingDetail_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetNewUserRewardSettingDetailRequest
+func request_CloudHashingInspire_UpdateAppCommissionSetting_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateAppCommissionSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -146,13 +146,13 @@ func request_CloudHashingInspire_GetNewUserRewardSettingDetail_0(ctx context.Con
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetNewUserRewardSettingDetail(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.UpdateAppCommissionSetting(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_GetNewUserRewardSettingDetail_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetNewUserRewardSettingDetailRequest
+func local_request_CloudHashingInspire_UpdateAppCommissionSetting_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateAppCommissionSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -163,13 +163,13 @@ func local_request_CloudHashingInspire_GetNewUserRewardSettingDetail_0(ctx conte
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetNewUserRewardSettingDetail(ctx, &protoReq)
+	msg, err := server.UpdateAppCommissionSetting(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudHashingInspire_GetNewUserRewardSettingByApp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetNewUserRewardSettingByAppRequest
+func request_CloudHashingInspire_GetAppCommissionSetting_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppCommissionSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -180,13 +180,13 @@ func request_CloudHashingInspire_GetNewUserRewardSettingByApp_0(ctx context.Cont
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetNewUserRewardSettingByApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppCommissionSetting(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_GetNewUserRewardSettingByApp_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetNewUserRewardSettingByAppRequest
+func local_request_CloudHashingInspire_GetAppCommissionSetting_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppCommissionSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -197,13 +197,13 @@ func local_request_CloudHashingInspire_GetNewUserRewardSettingByApp_0(ctx contex
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetNewUserRewardSettingByApp(ctx, &protoReq)
+	msg, err := server.GetAppCommissionSetting(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudHashingInspire_UpdateNewUserRewardSetting_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateNewUserRewardSettingRequest
+func request_CloudHashingInspire_GetAppCommissionSettingByApp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppCommissionSettingByAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -214,13 +214,13 @@ func request_CloudHashingInspire_UpdateNewUserRewardSetting_0(ctx context.Contex
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.UpdateNewUserRewardSetting(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppCommissionSettingByApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_UpdateNewUserRewardSetting_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateNewUserRewardSettingRequest
+func local_request_CloudHashingInspire_GetAppCommissionSettingByApp_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppCommissionSettingByAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -231,13 +231,13 @@ func local_request_CloudHashingInspire_UpdateNewUserRewardSetting_0(ctx context.
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.UpdateNewUserRewardSetting(ctx, &protoReq)
+	msg, err := server.GetAppCommissionSettingByApp(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudHashingInspire_CreateAgencySetting_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateAgencySettingRequest
+func request_CloudHashingInspire_GetAppCommissionSettingByOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppCommissionSettingByOtherAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -248,13 +248,13 @@ func request_CloudHashingInspire_CreateAgencySetting_0(ctx context.Context, mars
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateAgencySetting(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppCommissionSettingByOtherApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_CreateAgencySetting_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateAgencySettingRequest
+func local_request_CloudHashingInspire_GetAppCommissionSettingByOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppCommissionSettingByOtherAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -265,13 +265,13 @@ func local_request_CloudHashingInspire_CreateAgencySetting_0(ctx context.Context
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateAgencySetting(ctx, &protoReq)
+	msg, err := server.GetAppCommissionSettingByOtherApp(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudHashingInspire_GetAgencySetting_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAgencySettingRequest
+func request_CloudHashingInspire_CreateAppInvitationSetting_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppInvitationSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -282,13 +282,13 @@ func request_CloudHashingInspire_GetAgencySetting_0(ctx context.Context, marshal
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetAgencySetting(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateAppInvitationSetting(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_GetAgencySetting_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAgencySettingRequest
+func local_request_CloudHashingInspire_CreateAppInvitationSetting_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppInvitationSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -299,13 +299,13 @@ func local_request_CloudHashingInspire_GetAgencySetting_0(ctx context.Context, m
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetAgencySetting(ctx, &protoReq)
+	msg, err := server.CreateAppInvitationSetting(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudHashingInspire_GetAgencySettingByApp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAgencySettingByAppRequest
+func request_CloudHashingInspire_CreateAppInvitationSettingForOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppInvitationSettingForOtherAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -316,13 +316,13 @@ func request_CloudHashingInspire_GetAgencySettingByApp_0(ctx context.Context, ma
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetAgencySettingByApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateAppInvitationSettingForOtherApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_GetAgencySettingByApp_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAgencySettingByAppRequest
+func local_request_CloudHashingInspire_CreateAppInvitationSettingForOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppInvitationSettingForOtherAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -333,13 +333,13 @@ func local_request_CloudHashingInspire_GetAgencySettingByApp_0(ctx context.Conte
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetAgencySettingByApp(ctx, &protoReq)
+	msg, err := server.CreateAppInvitationSettingForOtherApp(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudHashingInspire_UpdateAgencySetting_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateAgencySettingRequest
+func request_CloudHashingInspire_GetAppInvitationSetting_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppInvitationSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -350,13 +350,13 @@ func request_CloudHashingInspire_UpdateAgencySetting_0(ctx context.Context, mars
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.UpdateAgencySetting(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppInvitationSetting(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_UpdateAgencySetting_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateAgencySettingRequest
+func local_request_CloudHashingInspire_GetAppInvitationSetting_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppInvitationSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -367,13 +367,13 @@ func local_request_CloudHashingInspire_UpdateAgencySetting_0(ctx context.Context
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.UpdateAgencySetting(ctx, &protoReq)
+	msg, err := server.GetAppInvitationSetting(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudHashingInspire_GetAgencySettingDetail_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAgencySettingDetailRequest
+func request_CloudHashingInspire_GetAppInvitationSettingsByApp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppInvitationSettingsByAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -384,13 +384,13 @@ func request_CloudHashingInspire_GetAgencySettingDetail_0(ctx context.Context, m
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetAgencySettingDetail(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppInvitationSettingsByApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_GetAgencySettingDetail_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAgencySettingDetailRequest
+func local_request_CloudHashingInspire_GetAppInvitationSettingsByApp_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppInvitationSettingsByAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -401,13 +401,13 @@ func local_request_CloudHashingInspire_GetAgencySettingDetail_0(ctx context.Cont
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetAgencySettingDetail(ctx, &protoReq)
+	msg, err := server.GetAppInvitationSettingsByApp(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudHashingInspire_GetAgencySettingDetailByApp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAgencySettingDetailByAppRequest
+func request_CloudHashingInspire_GetAppInvitationSettingsByOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppInvitationSettingsByOtherAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -418,13 +418,13 @@ func request_CloudHashingInspire_GetAgencySettingDetailByApp_0(ctx context.Conte
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetAgencySettingDetailByApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppInvitationSettingsByOtherApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_GetAgencySettingDetailByApp_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAgencySettingDetailByAppRequest
+func local_request_CloudHashingInspire_GetAppInvitationSettingsByOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppInvitationSettingsByOtherAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -435,13 +435,13 @@ func local_request_CloudHashingInspire_GetAgencySettingDetailByApp_0(ctx context
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetAgencySettingDetailByApp(ctx, &protoReq)
+	msg, err := server.GetAppInvitationSettingsByOtherApp(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudHashingInspire_CreatePurchaseInvitation_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreatePurchaseInvitationRequest
+func request_CloudHashingInspire_UpdateAppInvitationSetting_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateAppInvitationSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -452,13 +452,13 @@ func request_CloudHashingInspire_CreatePurchaseInvitation_0(ctx context.Context,
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreatePurchaseInvitation(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.UpdateAppInvitationSetting(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_CreatePurchaseInvitation_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreatePurchaseInvitationRequest
+func local_request_CloudHashingInspire_UpdateAppInvitationSetting_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateAppInvitationSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -469,13 +469,13 @@ func local_request_CloudHashingInspire_CreatePurchaseInvitation_0(ctx context.Co
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreatePurchaseInvitation(ctx, &protoReq)
+	msg, err := server.UpdateAppInvitationSetting(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudHashingInspire_UpdatePurchaseInvitation_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdatePurchaseInvitationRequest
+func request_CloudHashingInspire_CreateAppPurchaseAmountSetting_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppPurchaseAmountSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -486,13 +486,13 @@ func request_CloudHashingInspire_UpdatePurchaseInvitation_0(ctx context.Context,
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.UpdatePurchaseInvitation(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateAppPurchaseAmountSetting(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_UpdatePurchaseInvitation_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdatePurchaseInvitationRequest
+func local_request_CloudHashingInspire_CreateAppPurchaseAmountSetting_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppPurchaseAmountSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -503,13 +503,13 @@ func local_request_CloudHashingInspire_UpdatePurchaseInvitation_0(ctx context.Co
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.UpdatePurchaseInvitation(ctx, &protoReq)
+	msg, err := server.CreateAppPurchaseAmountSetting(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudHashingInspire_GetPurchaseInvitation_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetPurchaseInvitationRequest
+func request_CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppPurchaseAmountSettingForOtherAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -520,13 +520,13 @@ func request_CloudHashingInspire_GetPurchaseInvitation_0(ctx context.Context, ma
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetPurchaseInvitation(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateAppPurchaseAmountSettingForOtherApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_GetPurchaseInvitation_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetPurchaseInvitationRequest
+func local_request_CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppPurchaseAmountSettingForOtherAppRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -537,13 +537,13 @@ func local_request_CloudHashingInspire_GetPurchaseInvitation_0(ctx context.Conte
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetPurchaseInvitation(ctx, &protoReq)
+	msg, err := server.CreateAppPurchaseAmountSettingForOtherApp(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudHashingInspire_GetPurchaseInvitationsByApp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetPurchaseInvitationsByAppRequest
+func request_CloudHashingInspire_UpdateAppPurchaseAmountSetting_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateAppPurchaseAmountSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -554,13 +554,13 @@ func request_CloudHashingInspire_GetPurchaseInvitationsByApp_0(ctx context.Conte
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetPurchaseInvitationsByApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.UpdateAppPurchaseAmountSetting(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_GetPurchaseInvitationsByApp_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetPurchaseInvitationsByAppRequest
+func local_request_CloudHashingInspire_UpdateAppPurchaseAmountSetting_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateAppPurchaseAmountSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -571,13 +571,13 @@ func local_request_CloudHashingInspire_GetPurchaseInvitationsByApp_0(ctx context
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetPurchaseInvitationsByApp(ctx, &protoReq)
+	msg, err := server.UpdateAppPurchaseAmountSetting(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudHashingInspire_GetPurchaseInvitationByAppOrder_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetPurchaseInvitationByAppOrderRequest
+func request_CloudHashingInspire_GetAppPurchaseAmountSetting_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppPurchaseAmountSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -588,13 +588,13 @@ func request_CloudHashingInspire_GetPurchaseInvitationByAppOrder_0(ctx context.C
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetPurchaseInvitationByAppOrder(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppPurchaseAmountSetting(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudHashingInspire_GetPurchaseInvitationByAppOrder_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetPurchaseInvitationByAppOrderRequest
+func local_request_CloudHashingInspire_GetAppPurchaseAmountSetting_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppPurchaseAmountSettingRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -605,7 +605,75 @@ func local_request_CloudHashingInspire_GetPurchaseInvitationByAppOrder_0(ctx con
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetPurchaseInvitationByAppOrder(ctx, &protoReq)
+	msg, err := server.GetAppPurchaseAmountSetting(ctx, &protoReq)
+	return msg, metadata, err
+
+}
+
+func request_CloudHashingInspire_GetAppPurchaseAmountSettingsByApp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppPurchaseAmountSettingsByAppRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.GetAppPurchaseAmountSettingsByApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func local_request_CloudHashingInspire_GetAppPurchaseAmountSettingsByApp_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppPurchaseAmountSettingsByAppRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := server.GetAppPurchaseAmountSettingsByApp(ctx, &protoReq)
+	return msg, metadata, err
+
+}
+
+func request_CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudHashingInspireClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppPurchaseAmountSettingsByOtherAppRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.GetAppPurchaseAmountSettingsByOtherApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func local_request_CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, server CloudHashingInspireServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppPurchaseAmountSettingsByOtherAppRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := server.GetAppPurchaseAmountSettingsByOtherApp(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -3189,18 +3257,18 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_CreateNewUserRewardSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_CreateAppCommissionSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateNewUserRewardSetting", runtime.WithHTTPPathPattern("/v1/create/new/user/reward/setting"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppCommissionSetting", runtime.WithHTTPPathPattern("/v1/create/app/commission/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_CreateNewUserRewardSetting_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_CreateAppCommissionSetting_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3208,22 +3276,22 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_CreateNewUserRewardSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_CreateAppCommissionSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetNewUserRewardSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_CreateAppCommissionSettingForOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetNewUserRewardSetting", runtime.WithHTTPPathPattern("/v1/get/new/user/reward/setting"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppCommissionSettingForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/commission/setting/for/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_GetNewUserRewardSetting_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_CreateAppCommissionSettingForOtherApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3231,22 +3299,22 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_GetNewUserRewardSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_CreateAppCommissionSettingForOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetNewUserRewardSettingDetail_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_UpdateAppCommissionSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetNewUserRewardSettingDetail", runtime.WithHTTPPathPattern("/v1/get/new/user/reward/setting/detail"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateAppCommissionSetting", runtime.WithHTTPPathPattern("/v1/update/app/commission/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_GetNewUserRewardSettingDetail_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_UpdateAppCommissionSetting_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3254,22 +3322,22 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_GetNewUserRewardSettingDetail_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_UpdateAppCommissionSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetNewUserRewardSettingByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppCommissionSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetNewUserRewardSettingByApp", runtime.WithHTTPPathPattern("/v1/get/new/user/reward/setting/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppCommissionSetting", runtime.WithHTTPPathPattern("/v1/get/app/commission/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_GetNewUserRewardSettingByApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_GetAppCommissionSetting_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3277,22 +3345,22 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_GetNewUserRewardSettingByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_GetAppCommissionSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_UpdateNewUserRewardSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppCommissionSettingByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateNewUserRewardSetting", runtime.WithHTTPPathPattern("/v1/get/update/user/reward/setting"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppCommissionSettingByApp", runtime.WithHTTPPathPattern("/v1/get/app/commission/setting/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_UpdateNewUserRewardSetting_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_GetAppCommissionSettingByApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3300,22 +3368,22 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_UpdateNewUserRewardSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_GetAppCommissionSettingByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_CreateAgencySetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppCommissionSettingByOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAgencySetting", runtime.WithHTTPPathPattern("/v1/create/agency/setting"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppCommissionSettingByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/commission/setting/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_CreateAgencySetting_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_GetAppCommissionSettingByOtherApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3323,22 +3391,22 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_CreateAgencySetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_GetAppCommissionSettingByOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetAgencySetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_CreateAppInvitationSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAgencySetting", runtime.WithHTTPPathPattern("/v1/get/agency/setting"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppInvitationSetting", runtime.WithHTTPPathPattern("/v1/create/app/invitation/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_GetAgencySetting_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_CreateAppInvitationSetting_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3346,22 +3414,22 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_GetAgencySetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_CreateAppInvitationSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetAgencySettingByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_CreateAppInvitationSettingForOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAgencySettingByApp", runtime.WithHTTPPathPattern("/v1/get/agency/setting/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppInvitationSettingForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/invitation/setting/for/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_GetAgencySettingByApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_CreateAppInvitationSettingForOtherApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3369,22 +3437,22 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_GetAgencySettingByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_CreateAppInvitationSettingForOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_UpdateAgencySetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppInvitationSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateAgencySetting", runtime.WithHTTPPathPattern("/v1/update/agency/setting"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppInvitationSetting", runtime.WithHTTPPathPattern("/v1/get/app/invitation/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_UpdateAgencySetting_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_GetAppInvitationSetting_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3392,22 +3460,22 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_UpdateAgencySetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_GetAppInvitationSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetAgencySettingDetail_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppInvitationSettingsByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAgencySettingDetail", runtime.WithHTTPPathPattern("/v1/get/agency/setting/detail"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppInvitationSettingsByApp", runtime.WithHTTPPathPattern("/v1/get/app/invitation/settings/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_GetAgencySettingDetail_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_GetAppInvitationSettingsByApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3415,22 +3483,22 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_GetAgencySettingDetail_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_GetAppInvitationSettingsByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetAgencySettingDetailByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppInvitationSettingsByOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAgencySettingDetailByApp", runtime.WithHTTPPathPattern("/v1/get/agency/setting/detail/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppInvitationSettingsByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/invitation/settings/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_GetAgencySettingDetailByApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_GetAppInvitationSettingsByOtherApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3438,22 +3506,22 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_GetAgencySettingDetailByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_GetAppInvitationSettingsByOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_CreatePurchaseInvitation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_UpdateAppInvitationSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreatePurchaseInvitation", runtime.WithHTTPPathPattern("/v1/create/purchase/invitation"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateAppInvitationSetting", runtime.WithHTTPPathPattern("/v1/update/app/invitation/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_CreatePurchaseInvitation_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_UpdateAppInvitationSetting_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3461,22 +3529,22 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_CreatePurchaseInvitation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_UpdateAppInvitationSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_UpdatePurchaseInvitation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_CreateAppPurchaseAmountSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdatePurchaseInvitation", runtime.WithHTTPPathPattern("/v1/update/purchase/invitation"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppPurchaseAmountSetting", runtime.WithHTTPPathPattern("/v1/create/app/purchase/amount/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_UpdatePurchaseInvitation_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_CreateAppPurchaseAmountSetting_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3484,22 +3552,22 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_UpdatePurchaseInvitation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_CreateAppPurchaseAmountSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetPurchaseInvitation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetPurchaseInvitation", runtime.WithHTTPPathPattern("/v1/get/purchase/invitation"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppPurchaseAmountSettingForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/purchase/amount/setting/for/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_GetPurchaseInvitation_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3507,22 +3575,22 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_GetPurchaseInvitation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetPurchaseInvitationsByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_UpdateAppPurchaseAmountSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetPurchaseInvitationsByApp", runtime.WithHTTPPathPattern("/v1/get/purchase/invitations/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateAppPurchaseAmountSetting", runtime.WithHTTPPathPattern("/v1/update/app/purchase/amount/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_GetPurchaseInvitationsByApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_UpdateAppPurchaseAmountSetting_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3530,22 +3598,22 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_GetPurchaseInvitationsByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_UpdateAppPurchaseAmountSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetPurchaseInvitationByAppOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppPurchaseAmountSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetPurchaseInvitationByAppOrder", runtime.WithHTTPPathPattern("/v1/get/purchase/invitation/by/app/order"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppPurchaseAmountSetting", runtime.WithHTTPPathPattern("/v1/get/app/purchase/amount/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudHashingInspire_GetPurchaseInvitationByAppOrder_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudHashingInspire_GetAppPurchaseAmountSetting_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -3553,7 +3621,53 @@ func RegisterCloudHashingInspireHandlerServer(ctx context.Context, mux *runtime.
 			return
 		}
 
-		forward_CloudHashingInspire_GetPurchaseInvitationByAppOrder_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_GetAppPurchaseAmountSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppPurchaseAmountSettingsByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppPurchaseAmountSettingsByApp", runtime.WithHTTPPathPattern("/v1/get/app/purchase/amount/settings/by/app"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_CloudHashingInspire_GetAppPurchaseAmountSettingsByApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_CloudHashingInspire_GetAppPurchaseAmountSettingsByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppPurchaseAmountSettingsByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/purchase/amount/settings/by/other/app"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -5343,323 +5457,363 @@ func RegisterCloudHashingInspireHandlerClient(ctx context.Context, mux *runtime.
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_CreateNewUserRewardSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_CreateAppCommissionSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateNewUserRewardSetting", runtime.WithHTTPPathPattern("/v1/create/new/user/reward/setting"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppCommissionSetting", runtime.WithHTTPPathPattern("/v1/create/app/commission/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_CreateNewUserRewardSetting_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_CreateAppCommissionSetting_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_CreateNewUserRewardSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_CreateAppCommissionSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetNewUserRewardSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_CreateAppCommissionSettingForOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetNewUserRewardSetting", runtime.WithHTTPPathPattern("/v1/get/new/user/reward/setting"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppCommissionSettingForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/commission/setting/for/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_GetNewUserRewardSetting_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_CreateAppCommissionSettingForOtherApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_GetNewUserRewardSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_CreateAppCommissionSettingForOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetNewUserRewardSettingDetail_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_UpdateAppCommissionSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetNewUserRewardSettingDetail", runtime.WithHTTPPathPattern("/v1/get/new/user/reward/setting/detail"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateAppCommissionSetting", runtime.WithHTTPPathPattern("/v1/update/app/commission/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_GetNewUserRewardSettingDetail_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_UpdateAppCommissionSetting_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_GetNewUserRewardSettingDetail_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_UpdateAppCommissionSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetNewUserRewardSettingByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppCommissionSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetNewUserRewardSettingByApp", runtime.WithHTTPPathPattern("/v1/get/new/user/reward/setting/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppCommissionSetting", runtime.WithHTTPPathPattern("/v1/get/app/commission/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_GetNewUserRewardSettingByApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_GetAppCommissionSetting_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_GetNewUserRewardSettingByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_GetAppCommissionSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_UpdateNewUserRewardSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppCommissionSettingByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateNewUserRewardSetting", runtime.WithHTTPPathPattern("/v1/get/update/user/reward/setting"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppCommissionSettingByApp", runtime.WithHTTPPathPattern("/v1/get/app/commission/setting/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_UpdateNewUserRewardSetting_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_GetAppCommissionSettingByApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_UpdateNewUserRewardSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_GetAppCommissionSettingByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_CreateAgencySetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppCommissionSettingByOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAgencySetting", runtime.WithHTTPPathPattern("/v1/create/agency/setting"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppCommissionSettingByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/commission/setting/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_CreateAgencySetting_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_GetAppCommissionSettingByOtherApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_CreateAgencySetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_GetAppCommissionSettingByOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetAgencySetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_CreateAppInvitationSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAgencySetting", runtime.WithHTTPPathPattern("/v1/get/agency/setting"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppInvitationSetting", runtime.WithHTTPPathPattern("/v1/create/app/invitation/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_GetAgencySetting_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_CreateAppInvitationSetting_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_GetAgencySetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_CreateAppInvitationSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetAgencySettingByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_CreateAppInvitationSettingForOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAgencySettingByApp", runtime.WithHTTPPathPattern("/v1/get/agency/setting/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppInvitationSettingForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/invitation/setting/for/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_GetAgencySettingByApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_CreateAppInvitationSettingForOtherApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_GetAgencySettingByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_CreateAppInvitationSettingForOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_UpdateAgencySetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppInvitationSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateAgencySetting", runtime.WithHTTPPathPattern("/v1/update/agency/setting"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppInvitationSetting", runtime.WithHTTPPathPattern("/v1/get/app/invitation/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_UpdateAgencySetting_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_GetAppInvitationSetting_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_UpdateAgencySetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_GetAppInvitationSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetAgencySettingDetail_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppInvitationSettingsByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAgencySettingDetail", runtime.WithHTTPPathPattern("/v1/get/agency/setting/detail"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppInvitationSettingsByApp", runtime.WithHTTPPathPattern("/v1/get/app/invitation/settings/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_GetAgencySettingDetail_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_GetAppInvitationSettingsByApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_GetAgencySettingDetail_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_GetAppInvitationSettingsByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetAgencySettingDetailByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppInvitationSettingsByOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAgencySettingDetailByApp", runtime.WithHTTPPathPattern("/v1/get/agency/setting/detail/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppInvitationSettingsByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/invitation/settings/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_GetAgencySettingDetailByApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_GetAppInvitationSettingsByOtherApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_GetAgencySettingDetailByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_GetAppInvitationSettingsByOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_CreatePurchaseInvitation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_UpdateAppInvitationSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreatePurchaseInvitation", runtime.WithHTTPPathPattern("/v1/create/purchase/invitation"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateAppInvitationSetting", runtime.WithHTTPPathPattern("/v1/update/app/invitation/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_CreatePurchaseInvitation_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_UpdateAppInvitationSetting_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_CreatePurchaseInvitation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_UpdateAppInvitationSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_UpdatePurchaseInvitation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_CreateAppPurchaseAmountSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdatePurchaseInvitation", runtime.WithHTTPPathPattern("/v1/update/purchase/invitation"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppPurchaseAmountSetting", runtime.WithHTTPPathPattern("/v1/create/app/purchase/amount/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_UpdatePurchaseInvitation_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_CreateAppPurchaseAmountSetting_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_UpdatePurchaseInvitation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_CreateAppPurchaseAmountSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetPurchaseInvitation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetPurchaseInvitation", runtime.WithHTTPPathPattern("/v1/get/purchase/invitation"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppPurchaseAmountSettingForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/purchase/amount/setting/for/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_GetPurchaseInvitation_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_GetPurchaseInvitation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetPurchaseInvitationsByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_UpdateAppPurchaseAmountSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetPurchaseInvitationsByApp", runtime.WithHTTPPathPattern("/v1/get/purchase/invitations/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateAppPurchaseAmountSetting", runtime.WithHTTPPathPattern("/v1/update/app/purchase/amount/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_GetPurchaseInvitationsByApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_UpdateAppPurchaseAmountSetting_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_GetPurchaseInvitationsByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_UpdateAppPurchaseAmountSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudHashingInspire_GetPurchaseInvitationByAppOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppPurchaseAmountSetting_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetPurchaseInvitationByAppOrder", runtime.WithHTTPPathPattern("/v1/get/purchase/invitation/by/app/order"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppPurchaseAmountSetting", runtime.WithHTTPPathPattern("/v1/get/app/purchase/amount/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudHashingInspire_GetPurchaseInvitationByAppOrder_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudHashingInspire_GetAppPurchaseAmountSetting_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudHashingInspire_GetPurchaseInvitationByAppOrder_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudHashingInspire_GetAppPurchaseAmountSetting_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppPurchaseAmountSettingsByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppPurchaseAmountSettingsByApp", runtime.WithHTTPPathPattern("/v1/get/app/purchase/amount/settings/by/app"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_CloudHashingInspire_GetAppPurchaseAmountSettingsByApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_CloudHashingInspire_GetAppPurchaseAmountSettingsByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
+	mux.Handle("POST", pattern_CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppPurchaseAmountSettingsByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/purchase/amount/settings/by/other/app"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -7169,37 +7323,41 @@ func RegisterCloudHashingInspireHandlerClient(ctx context.Context, mux *runtime.
 var (
 	pattern_CloudHashingInspire_Version_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"version"}, ""))
 
-	pattern_CloudHashingInspire_CreateNewUserRewardSetting_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "create", "new", "user", "reward", "setting"}, ""))
+	pattern_CloudHashingInspire_CreateAppCommissionSetting_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "create", "app", "commission", "setting"}, ""))
 
-	pattern_CloudHashingInspire_GetNewUserRewardSetting_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "new", "user", "reward", "setting"}, ""))
+	pattern_CloudHashingInspire_CreateAppCommissionSettingForOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 2}, []string{"v1", "create", "app", "commission", "setting", "for", "other"}, ""))
 
-	pattern_CloudHashingInspire_GetNewUserRewardSettingDetail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6}, []string{"v1", "get", "new", "user", "reward", "setting", "detail"}, ""))
+	pattern_CloudHashingInspire_UpdateAppCommissionSetting_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "update", "app", "commission", "setting"}, ""))
 
-	pattern_CloudHashingInspire_GetNewUserRewardSettingByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 7}, []string{"v1", "get", "new", "user", "reward", "setting", "by", "app"}, ""))
+	pattern_CloudHashingInspire_GetAppCommissionSetting_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "app", "commission", "setting"}, ""))
 
-	pattern_CloudHashingInspire_UpdateNewUserRewardSetting_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "update", "user", "reward", "setting"}, ""))
+	pattern_CloudHashingInspire_GetAppCommissionSettingByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2}, []string{"v1", "get", "app", "commission", "setting", "by"}, ""))
 
-	pattern_CloudHashingInspire_CreateAgencySetting_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "agency", "setting"}, ""))
+	pattern_CloudHashingInspire_GetAppCommissionSettingByOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 2}, []string{"v1", "get", "app", "commission", "setting", "by", "other"}, ""))
 
-	pattern_CloudHashingInspire_GetAgencySetting_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "agency", "setting"}, ""))
+	pattern_CloudHashingInspire_CreateAppInvitationSetting_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "create", "app", "invitation", "setting"}, ""))
 
-	pattern_CloudHashingInspire_GetAgencySettingByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "agency", "setting", "by", "app"}, ""))
+	pattern_CloudHashingInspire_CreateAppInvitationSettingForOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 2}, []string{"v1", "create", "app", "invitation", "setting", "for", "other"}, ""))
 
-	pattern_CloudHashingInspire_UpdateAgencySetting_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "update", "agency", "setting"}, ""))
+	pattern_CloudHashingInspire_GetAppInvitationSetting_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "app", "invitation", "setting"}, ""))
 
-	pattern_CloudHashingInspire_GetAgencySettingDetail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "agency", "setting", "detail"}, ""))
+	pattern_CloudHashingInspire_GetAppInvitationSettingsByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2}, []string{"v1", "get", "app", "invitation", "settings", "by"}, ""))
 
-	pattern_CloudHashingInspire_GetAgencySettingDetailByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6}, []string{"v1", "get", "agency", "setting", "detail", "by", "app"}, ""))
+	pattern_CloudHashingInspire_GetAppInvitationSettingsByOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 2}, []string{"v1", "get", "app", "invitation", "settings", "by", "other"}, ""))
 
-	pattern_CloudHashingInspire_CreatePurchaseInvitation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "purchase", "invitation"}, ""))
+	pattern_CloudHashingInspire_UpdateAppInvitationSetting_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "update", "app", "invitation", "setting"}, ""))
 
-	pattern_CloudHashingInspire_UpdatePurchaseInvitation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "update", "purchase", "invitation"}, ""))
+	pattern_CloudHashingInspire_CreateAppPurchaseAmountSetting_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "create", "app", "purchase", "amount", "setting"}, ""))
 
-	pattern_CloudHashingInspire_GetPurchaseInvitation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "purchase", "invitation"}, ""))
+	pattern_CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 7, 2, 2}, []string{"v1", "create", "app", "purchase", "amount", "setting", "for", "other"}, ""))
 
-	pattern_CloudHashingInspire_GetPurchaseInvitationsByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "purchase", "invitations", "by", "app"}, ""))
+	pattern_CloudHashingInspire_UpdateAppPurchaseAmountSetting_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "update", "app", "purchase", "amount", "setting"}, ""))
 
-	pattern_CloudHashingInspire_GetPurchaseInvitationByAppOrder_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6}, []string{"v1", "get", "purchase", "invitation", "by", "app", "order"}, ""))
+	pattern_CloudHashingInspire_GetAppPurchaseAmountSetting_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "app", "purchase", "amount", "setting"}, ""))
+
+	pattern_CloudHashingInspire_GetAppPurchaseAmountSettingsByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 2}, []string{"v1", "get", "app", "purchase", "amount", "settings", "by"}, ""))
+
+	pattern_CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 7, 2, 2}, []string{"v1", "get", "app", "purchase", "amount", "settings", "by", "other"}, ""))
 
 	pattern_CloudHashingInspire_CreateRegistrationInvitation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "registration", "invitation"}, ""))
 
@@ -7355,37 +7513,41 @@ var (
 var (
 	forward_CloudHashingInspire_Version_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_CreateNewUserRewardSetting_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_CreateAppCommissionSetting_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_GetNewUserRewardSetting_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_CreateAppCommissionSettingForOtherApp_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_GetNewUserRewardSettingDetail_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_UpdateAppCommissionSetting_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_GetNewUserRewardSettingByApp_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_GetAppCommissionSetting_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_UpdateNewUserRewardSetting_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_GetAppCommissionSettingByApp_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_CreateAgencySetting_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_GetAppCommissionSettingByOtherApp_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_GetAgencySetting_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_CreateAppInvitationSetting_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_GetAgencySettingByApp_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_CreateAppInvitationSettingForOtherApp_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_UpdateAgencySetting_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_GetAppInvitationSetting_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_GetAgencySettingDetail_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_GetAppInvitationSettingsByApp_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_GetAgencySettingDetailByApp_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_GetAppInvitationSettingsByOtherApp_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_CreatePurchaseInvitation_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_UpdateAppInvitationSetting_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_UpdatePurchaseInvitation_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_CreateAppPurchaseAmountSetting_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_GetPurchaseInvitation_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherApp_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_GetPurchaseInvitationsByApp_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_UpdateAppPurchaseAmountSetting_0 = runtime.ForwardResponseMessage
 
-	forward_CloudHashingInspire_GetPurchaseInvitationByAppOrder_0 = runtime.ForwardResponseMessage
+	forward_CloudHashingInspire_GetAppPurchaseAmountSetting_0 = runtime.ForwardResponseMessage
+
+	forward_CloudHashingInspire_GetAppPurchaseAmountSettingsByApp_0 = runtime.ForwardResponseMessage
+
+	forward_CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherApp_0 = runtime.ForwardResponseMessage
 
 	forward_CloudHashingInspire_CreateRegistrationInvitation_0 = runtime.ForwardResponseMessage
 

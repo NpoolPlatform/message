@@ -19,101 +19,113 @@ service CloudHashingInspire {
         };
     }
 
-    rpc CreateNewUserRewardSetting (CreateNewUserRewardSettingRequest) returns (CreateNewUserRewardSettingResponse) {
+    rpc CreateAppCommissionSetting (CreateAppCommissionSettingRequest) returns (CreateAppCommissionSettingResponse) {
         option (google.api.http) = {
-            post: "/v1/create/new/user/reward/setting"
+            post: "/v1/create/app/commission/setting"
             body: "*"
         };
     }
-    rpc GetNewUserRewardSetting (GetNewUserRewardSettingRequest) returns (GetNewUserRewardSettingResponse) {
+    rpc CreateAppCommissionSettingForOtherApp (CreateAppCommissionSettingForOtherAppRequest) returns (CreateAppCommissionSettingForOtherAppResponse) {
         option (google.api.http) = {
-            post: "/v1/get/new/user/reward/setting"
+            post: "/v1/create/app/commission/setting/for/other/app"
             body: "*"
         };
     }
-    rpc GetNewUserRewardSettingDetail (GetNewUserRewardSettingDetailRequest) returns (GetNewUserRewardSettingDetailResponse) {
+    rpc UpdateAppCommissionSetting (UpdateAppCommissionSettingRequest) returns (UpdateAppCommissionSettingResponse) {
         option (google.api.http) = {
-            post: "/v1/get/new/user/reward/setting/detail"
+            post: "/v1/update/app/commission/setting"
             body: "*"
         };
     }
-    rpc GetNewUserRewardSettingByApp (GetNewUserRewardSettingByAppRequest) returns (GetNewUserRewardSettingByAppResponse) {
+    rpc GetAppCommissionSetting (GetAppCommissionSettingRequest) returns (GetAppCommissionSettingResponse) {
         option (google.api.http) = {
-            post: "/v1/get/new/user/reward/setting/by/app"
+            post: "/v1/get/app/commission/setting"
             body: "*"
         };
     }
-    rpc UpdateNewUserRewardSetting (UpdateNewUserRewardSettingRequest) returns (UpdateNewUserRewardSettingResponse) {
+    rpc GetAppCommissionSettingByApp (GetAppCommissionSettingByAppRequest) returns (GetAppCommissionSettingByAppResponse) {
         option (google.api.http) = {
-            post: "/v1/get/update/user/reward/setting"
+            post: "/v1/get/app/commission/setting/by/app"
             body: "*"
         };
     }
-
-    rpc CreateAgencySetting (CreateAgencySettingRequest) returns (CreateAgencySettingResponse) {
+    rpc GetAppCommissionSettingByOtherApp (GetAppCommissionSettingByOtherAppRequest) returns (GetAppCommissionSettingByOtherAppResponse) {
         option (google.api.http) = {
-            post: "/v1/create/agency/setting"
-            body: "*"
-        };
-    }
-    rpc GetAgencySetting (GetAgencySettingRequest) returns (GetAgencySettingResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/agency/setting"
-            body: "*"
-        };
-    }
-    rpc GetAgencySettingByApp (GetAgencySettingByAppRequest) returns (GetAgencySettingByAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/agency/setting/by/app"
-            body: "*"
-        };
-    }
-    rpc UpdateAgencySetting (UpdateAgencySettingRequest) returns (UpdateAgencySettingResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/agency/setting"
-            body: "*"
-        };
-    }
-    rpc GetAgencySettingDetail (GetAgencySettingDetailRequest) returns (GetAgencySettingDetailResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/agency/setting/detail"
-            body: "*"
-        };
-    }
-    rpc GetAgencySettingDetailByApp (GetAgencySettingDetailByAppRequest) returns (GetAgencySettingDetailByAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/agency/setting/detail/by/app"
+            post: "/v1/get/app/commission/setting/by/other/app"
             body: "*"
         };
     }
 
-    rpc CreatePurchaseInvitation (CreatePurchaseInvitationRequest) returns (CreatePurchaseInvitationResponse) {
+    rpc CreateAppInvitationSetting (CreateAppInvitationSettingRequest) returns (CreateAppInvitationSettingResponse) {
         option (google.api.http) = {
-            post: "/v1/create/purchase/invitation"
+            post: "/v1/create/app/invitation/setting"
             body: "*"
         };
     }
-    rpc UpdatePurchaseInvitation (UpdatePurchaseInvitationRequest) returns (UpdatePurchaseInvitationResponse) {
+    rpc CreateAppInvitationSettingForOtherApp (CreateAppInvitationSettingForOtherAppRequest) returns (CreateAppInvitationSettingForOtherAppResponse) {
         option (google.api.http) = {
-            post: "/v1/update/purchase/invitation"
+            post: "/v1/create/app/invitation/setting/for/other/app"
             body: "*"
         };
     }
-    rpc GetPurchaseInvitation (GetPurchaseInvitationRequest) returns (GetPurchaseInvitationResponse) {
+    rpc GetAppInvitationSetting (GetAppInvitationSettingRequest) returns (GetAppInvitationSettingResponse) {
         option (google.api.http) = {
-            post: "/v1/get/purchase/invitation"
+            post: "/v1/get/app/invitation/setting"
             body: "*"
         };
     }
-    rpc GetPurchaseInvitationsByApp (GetPurchaseInvitationsByAppRequest) returns (GetPurchaseInvitationsByAppResponse) {
+    rpc GetAppInvitationSettingsByApp (GetAppInvitationSettingsByAppRequest) returns (GetAppInvitationSettingsByAppResponse) {
         option (google.api.http) = {
-            post: "/v1/get/purchase/invitations/by/app"
+            post: "/v1/get/app/invitation/settings/by/app"
             body: "*"
         };
     }
-    rpc GetPurchaseInvitationByAppOrder (GetPurchaseInvitationByAppOrderRequest) returns (GetPurchaseInvitationByAppOrderResponse) {
+    rpc GetAppInvitationSettingsByOtherApp (GetAppInvitationSettingsByOtherAppRequest) returns (GetAppInvitationSettingsByOtherAppResponse) {
         option (google.api.http) = {
-            post: "/v1/get/purchase/invitation/by/app/order"
+            post: "/v1/get/app/invitation/settings/by/other/app"
+            body: "*"
+        };
+    }
+    rpc UpdateAppInvitationSetting (UpdateAppInvitationSettingRequest) returns (UpdateAppInvitationSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/invitation/setting"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppPurchaseAmountSetting (CreateAppPurchaseAmountSettingRequest) returns (CreateAppPurchaseAmountSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/purchase/amount/setting"
+            body: "*"
+        };
+    }
+    rpc CreateAppPurchaseAmountSettingForOtherApp (CreateAppPurchaseAmountSettingForOtherAppRequest) returns (CreateAppPurchaseAmountSettingForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/purchase/amount/setting/for/other/app"
+            body: "*"
+        };
+    }
+    rpc UpdateAppPurchaseAmountSetting (UpdateAppPurchaseAmountSettingRequest) returns (UpdateAppPurchaseAmountSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/purchase/amount/setting"
+            body: "*"
+        };
+    }
+    rpc GetAppPurchaseAmountSetting (GetAppPurchaseAmountSettingRequest) returns (GetAppPurchaseAmountSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/purchase/amount/setting"
+            body: "*"
+        };
+    }
+    rpc GetAppPurchaseAmountSettingsByApp (GetAppPurchaseAmountSettingsByAppRequest) returns (GetAppPurchaseAmountSettingsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/purchase/amount/settings/by/app"
+            body: "*"
+        };
+    }
+    rpc GetAppPurchaseAmountSettingsByOtherApp (GetAppPurchaseAmountSettingsByOtherAppRequest) returns (GetAppPurchaseAmountSettingsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/purchase/amount/settings/by/other/app"
             body: "*"
         };
     }
@@ -581,137 +593,179 @@ service CloudHashingInspire {
 }
 
 // request body and response
-message NewUserRewardSetting {
+message AppCommissionSetting {
     string ID = 10;
     string AppID = 20;
-    string RegistrationCouponID = 30;
-    string KycCouponID = 40;
-    bool AutoGenerateInvitationCode = 50;
+    string Type = 30;
+    uint32 Level = 40;
+    bool InvitationDiscount = 50;
 }
 
-message CreateNewUserRewardSettingRequest {
-    NewUserRewardSetting Info = 10;
+message CreateAppCommissionSettingRequest {
+    AppCommissionSetting Info = 10;
 }
 
-message CreateNewUserRewardSettingResponse {
-    NewUserRewardSetting Info = 10;
+message CreateAppCommissionSettingResponse {
+    AppCommissionSetting Info = 10;
 }
 
-message GetNewUserRewardSettingRequest {
+message CreateAppCommissionSettingForOtherAppRequest {
+    string TargetAppID = 10;
+    AppCommissionSetting Info = 20;
+}
+
+message CreateAppCommissionSettingForOtherAppResponse {
+    AppCommissionSetting Info = 10;
+}
+
+message UpdateAppCommissionSettingRequest {
+    AppCommissionSetting Info = 10;
+}
+
+message UpdateAppCommissionSettingResponse {
+    AppCommissionSetting Info = 10;
+}
+
+message GetAppCommissionSettingRequest {
     string ID = 10;
 }
 
-message GetNewUserRewardSettingResponse {
-    NewUserRewardSetting Info = 10;
+message GetAppCommissionSettingResponse {
+    AppCommissionSetting Info = 10;
 }
 
-message GetNewUserRewardSettingByAppRequest {
+message GetAppCommissionSettingByAppRequest {
     string AppID = 10;
 }
 
-message GetNewUserRewardSettingByAppResponse {
-    NewUserRewardSetting Info = 10;
+message GetAppCommissionSettingByAppResponse {
+    AppCommissionSetting Info = 10;
 }
 
-message UpdateNewUserRewardSettingRequest {
-    NewUserRewardSetting Info = 10;
+message GetAppCommissionSettingByOtherAppRequest {
+    string TargetAppID = 10;
 }
 
-message UpdateNewUserRewardSettingResponse {
-    NewUserRewardSetting Info = 10;
+message GetAppCommissionSettingByOtherAppResponse {
+    AppCommissionSetting Info = 10;
 }
 
-message AgencySetting {
+message AppInvitationSetting {
     string ID = 10;
     string AppID = 20;
-    string GoodID = 30;
-    int32 RegistrationRewardThreshold = 40;
-    string RegistrationCouponID = 50;
-    int32 KycRewardThreshold = 60;
-    string KycCouponID = 70;
-    int32 TotalPurchaseRewardPercent = 80;
-    int32 PurchaseRewardChainLevels = 90;
-    int32 LevelPurchaseRewardPercent = 100;
+    uint32 Count = 30;
+    uint32 Discount = 40;
+    string Title = 50;
+    string BadgeLarge = 60;
+    string BadgeSmall = 70;
 }
 
-message CreateAgencySettingRequest {
-    AgencySetting Info = 10;
+message CreateAppInvitationSettingRequest {
+    AppInvitationSetting Info = 10;
 }
 
-message CreateAgencySettingResponse {
-    AgencySetting Info = 10;
+message CreateAppInvitationSettingResponse {
+    AppInvitationSetting Info = 10;
 }
 
-message GetAgencySettingRequest {
+message CreateAppInvitationSettingForOtherAppRequest {
+    string TargetAppID = 10;
+    AppInvitationSetting Info = 20;
+}
+
+message CreateAppInvitationSettingForOtherAppResponse {
+    AppInvitationSetting Info = 10;
+}
+
+message GetAppInvitationSettingRequest {
     string ID = 10;
 }
 
-message GetAgencySettingResponse {
-    AgencySetting Info = 10;
+message GetAppInvitationSettingResponse {
+    AppInvitationSetting Info = 10;
 }
 
-message GetAgencySettingByAppRequest {
+message GetAppInvitationSettingsByAppRequest {
     string AppID = 10;
 }
 
-message GetAgencySettingByAppResponse {
-    AgencySetting Info = 10;
+message GetAppInvitationSettingsByAppResponse {
+    repeated AppInvitationSetting Infos = 10;
 }
 
-message UpdateAgencySettingRequest {
-    AgencySetting Info = 10;
+message GetAppInvitationSettingsByOtherAppRequest {
+    string TargetAppID = 10;
 }
 
-message UpdateAgencySettingResponse {
-    AgencySetting Info = 10;
+message GetAppInvitationSettingsByOtherAppResponse {
+    repeated AppInvitationSetting Infos = 10;
 }
 
-message PurchaseInvitation {
+message UpdateAppInvitationSettingRequest {
+    AppInvitationSetting Info = 10;
+}
+
+message UpdateAppInvitationSettingResponse {
+    AppInvitationSetting Info = 10;
+}
+
+message AppPurchaseAmountSetting {
     string ID = 10;
     string AppID = 20;
-    string OrderID = 30;
-    string InvitationCodeID = 40;
+    uint64 Amount = 30;
+    uint32 Percent = 40;
+    string Title = 50;
+    string BadgeLarge = 60;
+    string BadgeSmall = 70;
 }
 
-message CreatePurchaseInvitationRequest {
-    PurchaseInvitation Info = 10;
+message CreateAppPurchaseAmountSettingRequest {
+    AppPurchaseAmountSetting Info = 10;
 }
 
-message CreatePurchaseInvitationResponse {
-    PurchaseInvitation Info = 10;
+message CreateAppPurchaseAmountSettingResponse {
+    AppPurchaseAmountSetting Info = 10;
 }
 
-message UpdatePurchaseInvitationRequest {
-    PurchaseInvitation Info = 10;
+message CreateAppPurchaseAmountSettingForOtherAppRequest {
+    string TargetAppID = 10;
+    AppPurchaseAmountSetting Info = 20;
 }
 
-message UpdatePurchaseInvitationResponse {
-    PurchaseInvitation Info = 10;
+message CreateAppPurchaseAmountSettingForOtherAppResponse {
+    AppPurchaseAmountSetting Info = 10;
 }
 
-message GetPurchaseInvitationRequest {
+message UpdateAppPurchaseAmountSettingRequest {
+    AppPurchaseAmountSetting Info = 10;
+}
+
+message UpdateAppPurchaseAmountSettingResponse {
+    AppPurchaseAmountSetting Info = 10;
+}
+
+message GetAppPurchaseAmountSettingRequest {
     string ID = 10;
 }
 
-message GetPurchaseInvitationResponse {
-    PurchaseInvitation Info = 10;
+message GetAppPurchaseAmountSettingResponse {
+    AppPurchaseAmountSetting Info = 10;
 }
 
-message GetPurchaseInvitationsByAppRequest {
+message GetAppPurchaseAmountSettingsByAppRequest {
     string AppID = 10;
 }
 
-message GetPurchaseInvitationsByAppResponse {
-    repeated PurchaseInvitation Infos = 10;
+message GetAppPurchaseAmountSettingsByAppResponse {
+    repeated AppPurchaseAmountSetting Infos = 10;
 }
 
-message GetPurchaseInvitationByAppOrderRequest {
-    string AppID = 10;
-    string OrderID = 20;
+message GetAppPurchaseAmountSettingsByOtherAppRequest {
+    string TargetAppID = 10;
 }
 
-message GetPurchaseInvitationByAppOrderResponse {
-    PurchaseInvitation Info = 10;
+message GetAppPurchaseAmountSettingsByOtherAppResponse {
+    repeated AppPurchaseAmountSetting Infos = 10;
 }
 
 message RegistrationInvitation {
@@ -1000,20 +1054,6 @@ message GetCouponPoolsByOtherAppReleaserResponse {
     repeated CouponPool Infos = 10;
 }
 
-message NewUserRewardSettingDetail {
-    NewUserRewardSetting Setting = 10;
-    CouponPool RegistrationCoupon = 20;
-    CouponPool KycCoupon = 30;
-}
-
-message GetNewUserRewardSettingDetailRequest {
-    string ID = 10;
-}
-
-message GetNewUserRewardSettingDetailResponse {
-    NewUserRewardSettingDetail Info = 10;
-}
-
 message AppCouponSetting {
     string ID = 10;
     string AppID = 20;
@@ -1134,28 +1174,6 @@ message UpdateUserKpiSettingRequest {
 
 message UpdateUserKpiSettingResponse {
     UserKpiSetting Info = 10;
-}
-
-message AgencySettingDetail {
-    AgencySetting Setting = 10;
-    CouponPool RegistrationCoupon = 20;
-    CouponPool KycCoupon = 30;
-}
-
-message GetAgencySettingDetailRequest {
-    string ID = 10;
-}
-
-message GetAgencySettingDetailResponse {
-    AgencySettingDetail Info = 10;
-}
-
-message GetAgencySettingDetailByAppRequest {
-    string AppID = 10;
-}
-
-message GetAgencySettingDetailByAppResponse {
-    AgencySettingDetail Info = 10;
 }
 
 message CouponAllocatedDetail {

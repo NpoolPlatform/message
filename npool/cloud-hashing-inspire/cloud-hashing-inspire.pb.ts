@@ -7,137 +7,179 @@
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
-export type NewUserRewardSetting = {
+export type AppCommissionSetting = {
   id?: string
   appID?: string
-  registrationCouponID?: string
-  kycCouponID?: string
-  autoGenerateInvitationCode?: boolean
+  type?: string
+  level?: number
+  invitationDiscount?: boolean
 }
 
-export type CreateNewUserRewardSettingRequest = {
-  info?: NewUserRewardSetting
+export type CreateAppCommissionSettingRequest = {
+  info?: AppCommissionSetting
 }
 
-export type CreateNewUserRewardSettingResponse = {
-  info?: NewUserRewardSetting
+export type CreateAppCommissionSettingResponse = {
+  info?: AppCommissionSetting
 }
 
-export type GetNewUserRewardSettingRequest = {
-  id?: string
+export type CreateAppCommissionSettingForOtherAppRequest = {
+  targetAppID?: string
+  info?: AppCommissionSetting
 }
 
-export type GetNewUserRewardSettingResponse = {
-  info?: NewUserRewardSetting
+export type CreateAppCommissionSettingForOtherAppResponse = {
+  info?: AppCommissionSetting
 }
 
-export type GetNewUserRewardSettingByAppRequest = {
-  appID?: string
+export type UpdateAppCommissionSettingRequest = {
+  info?: AppCommissionSetting
 }
 
-export type GetNewUserRewardSettingByAppResponse = {
-  info?: NewUserRewardSetting
+export type UpdateAppCommissionSettingResponse = {
+  info?: AppCommissionSetting
 }
 
-export type UpdateNewUserRewardSettingRequest = {
-  info?: NewUserRewardSetting
-}
-
-export type UpdateNewUserRewardSettingResponse = {
-  info?: NewUserRewardSetting
-}
-
-export type AgencySetting = {
-  id?: string
-  appID?: string
-  goodID?: string
-  registrationRewardThreshold?: number
-  registrationCouponID?: string
-  kycRewardThreshold?: number
-  kycCouponID?: string
-  totalPurchaseRewardPercent?: number
-  purchaseRewardChainLevels?: number
-  levelPurchaseRewardPercent?: number
-}
-
-export type CreateAgencySettingRequest = {
-  info?: AgencySetting
-}
-
-export type CreateAgencySettingResponse = {
-  info?: AgencySetting
-}
-
-export type GetAgencySettingRequest = {
+export type GetAppCommissionSettingRequest = {
   id?: string
 }
 
-export type GetAgencySettingResponse = {
-  info?: AgencySetting
+export type GetAppCommissionSettingResponse = {
+  info?: AppCommissionSetting
 }
 
-export type GetAgencySettingByAppRequest = {
+export type GetAppCommissionSettingByAppRequest = {
   appID?: string
 }
 
-export type GetAgencySettingByAppResponse = {
-  info?: AgencySetting
+export type GetAppCommissionSettingByAppResponse = {
+  info?: AppCommissionSetting
 }
 
-export type UpdateAgencySettingRequest = {
-  info?: AgencySetting
+export type GetAppCommissionSettingByOtherAppRequest = {
+  targetAppID?: string
 }
 
-export type UpdateAgencySettingResponse = {
-  info?: AgencySetting
+export type GetAppCommissionSettingByOtherAppResponse = {
+  info?: AppCommissionSetting
 }
 
-export type PurchaseInvitation = {
+export type AppInvitationSetting = {
   id?: string
   appID?: string
-  orderID?: string
-  invitationCodeID?: string
+  count?: number
+  discount?: number
+  title?: string
+  badgeLarge?: string
+  badgeSmall?: string
 }
 
-export type CreatePurchaseInvitationRequest = {
-  info?: PurchaseInvitation
+export type CreateAppInvitationSettingRequest = {
+  info?: AppInvitationSetting
 }
 
-export type CreatePurchaseInvitationResponse = {
-  info?: PurchaseInvitation
+export type CreateAppInvitationSettingResponse = {
+  info?: AppInvitationSetting
 }
 
-export type UpdatePurchaseInvitationRequest = {
-  info?: PurchaseInvitation
+export type CreateAppInvitationSettingForOtherAppRequest = {
+  targetAppID?: string
+  info?: AppInvitationSetting
 }
 
-export type UpdatePurchaseInvitationResponse = {
-  info?: PurchaseInvitation
+export type CreateAppInvitationSettingForOtherAppResponse = {
+  info?: AppInvitationSetting
 }
 
-export type GetPurchaseInvitationRequest = {
+export type GetAppInvitationSettingRequest = {
   id?: string
 }
 
-export type GetPurchaseInvitationResponse = {
-  info?: PurchaseInvitation
+export type GetAppInvitationSettingResponse = {
+  info?: AppInvitationSetting
 }
 
-export type GetPurchaseInvitationsByAppRequest = {
+export type GetAppInvitationSettingsByAppRequest = {
   appID?: string
 }
 
-export type GetPurchaseInvitationsByAppResponse = {
-  infos?: PurchaseInvitation[]
+export type GetAppInvitationSettingsByAppResponse = {
+  infos?: AppInvitationSetting[]
 }
 
-export type GetPurchaseInvitationByAppOrderRequest = {
+export type GetAppInvitationSettingsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetAppInvitationSettingsByOtherAppResponse = {
+  infos?: AppInvitationSetting[]
+}
+
+export type UpdateAppInvitationSettingRequest = {
+  info?: AppInvitationSetting
+}
+
+export type UpdateAppInvitationSettingResponse = {
+  info?: AppInvitationSetting
+}
+
+export type AppPurchaseAmountSetting = {
+  id?: string
   appID?: string
-  orderID?: string
+  amount?: string
+  percent?: number
+  title?: string
+  badgeLarge?: string
+  badgeSmall?: string
 }
 
-export type GetPurchaseInvitationByAppOrderResponse = {
-  info?: PurchaseInvitation
+export type CreateAppPurchaseAmountSettingRequest = {
+  info?: AppPurchaseAmountSetting
+}
+
+export type CreateAppPurchaseAmountSettingResponse = {
+  info?: AppPurchaseAmountSetting
+}
+
+export type CreateAppPurchaseAmountSettingForOtherAppRequest = {
+  targetAppID?: string
+  info?: AppPurchaseAmountSetting
+}
+
+export type CreateAppPurchaseAmountSettingForOtherAppResponse = {
+  info?: AppPurchaseAmountSetting
+}
+
+export type UpdateAppPurchaseAmountSettingRequest = {
+  info?: AppPurchaseAmountSetting
+}
+
+export type UpdateAppPurchaseAmountSettingResponse = {
+  info?: AppPurchaseAmountSetting
+}
+
+export type GetAppPurchaseAmountSettingRequest = {
+  id?: string
+}
+
+export type GetAppPurchaseAmountSettingResponse = {
+  info?: AppPurchaseAmountSetting
+}
+
+export type GetAppPurchaseAmountSettingsByAppRequest = {
+  appID?: string
+}
+
+export type GetAppPurchaseAmountSettingsByAppResponse = {
+  infos?: AppPurchaseAmountSetting[]
+}
+
+export type GetAppPurchaseAmountSettingsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetAppPurchaseAmountSettingsByOtherAppResponse = {
+  infos?: AppPurchaseAmountSetting[]
 }
 
 export type RegistrationInvitation = {
@@ -426,20 +468,6 @@ export type GetCouponPoolsByOtherAppReleaserResponse = {
   infos?: CouponPool[]
 }
 
-export type NewUserRewardSettingDetail = {
-  setting?: NewUserRewardSetting
-  registrationCoupon?: CouponPool
-  kycCoupon?: CouponPool
-}
-
-export type GetNewUserRewardSettingDetailRequest = {
-  id?: string
-}
-
-export type GetNewUserRewardSettingDetailResponse = {
-  info?: NewUserRewardSettingDetail
-}
-
 export type AppCouponSetting = {
   id?: string
   appID?: string
@@ -560,28 +588,6 @@ export type UpdateUserKpiSettingRequest = {
 
 export type UpdateUserKpiSettingResponse = {
   info?: UserKpiSetting
-}
-
-export type AgencySettingDetail = {
-  setting?: AgencySetting
-  registrationCoupon?: CouponPool
-  kycCoupon?: CouponPool
-}
-
-export type GetAgencySettingDetailRequest = {
-  id?: string
-}
-
-export type GetAgencySettingDetailResponse = {
-  info?: AgencySettingDetail
-}
-
-export type GetAgencySettingDetailByAppRequest = {
-  appID?: string
-}
-
-export type GetAgencySettingDetailByAppResponse = {
-  info?: AgencySettingDetail
 }
 
 export type CouponAllocatedDetail = {
@@ -913,53 +919,59 @@ export class CloudHashingInspire {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static CreateNewUserRewardSetting(req: CreateNewUserRewardSettingRequest, initReq?: fm.InitReq): Promise<CreateNewUserRewardSettingResponse> {
-    return fm.fetchReq<CreateNewUserRewardSettingRequest, CreateNewUserRewardSettingResponse>(`/v1/create/new/user/reward/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateAppCommissionSetting(req: CreateAppCommissionSettingRequest, initReq?: fm.InitReq): Promise<CreateAppCommissionSettingResponse> {
+    return fm.fetchReq<CreateAppCommissionSettingRequest, CreateAppCommissionSettingResponse>(`/v1/create/app/commission/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetNewUserRewardSetting(req: GetNewUserRewardSettingRequest, initReq?: fm.InitReq): Promise<GetNewUserRewardSettingResponse> {
-    return fm.fetchReq<GetNewUserRewardSettingRequest, GetNewUserRewardSettingResponse>(`/v1/get/new/user/reward/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateAppCommissionSettingForOtherApp(req: CreateAppCommissionSettingForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppCommissionSettingForOtherAppResponse> {
+    return fm.fetchReq<CreateAppCommissionSettingForOtherAppRequest, CreateAppCommissionSettingForOtherAppResponse>(`/v1/create/app/commission/setting/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetNewUserRewardSettingDetail(req: GetNewUserRewardSettingDetailRequest, initReq?: fm.InitReq): Promise<GetNewUserRewardSettingDetailResponse> {
-    return fm.fetchReq<GetNewUserRewardSettingDetailRequest, GetNewUserRewardSettingDetailResponse>(`/v1/get/new/user/reward/setting/detail`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static UpdateAppCommissionSetting(req: UpdateAppCommissionSettingRequest, initReq?: fm.InitReq): Promise<UpdateAppCommissionSettingResponse> {
+    return fm.fetchReq<UpdateAppCommissionSettingRequest, UpdateAppCommissionSettingResponse>(`/v1/update/app/commission/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetNewUserRewardSettingByApp(req: GetNewUserRewardSettingByAppRequest, initReq?: fm.InitReq): Promise<GetNewUserRewardSettingByAppResponse> {
-    return fm.fetchReq<GetNewUserRewardSettingByAppRequest, GetNewUserRewardSettingByAppResponse>(`/v1/get/new/user/reward/setting/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppCommissionSetting(req: GetAppCommissionSettingRequest, initReq?: fm.InitReq): Promise<GetAppCommissionSettingResponse> {
+    return fm.fetchReq<GetAppCommissionSettingRequest, GetAppCommissionSettingResponse>(`/v1/get/app/commission/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static UpdateNewUserRewardSetting(req: UpdateNewUserRewardSettingRequest, initReq?: fm.InitReq): Promise<UpdateNewUserRewardSettingResponse> {
-    return fm.fetchReq<UpdateNewUserRewardSettingRequest, UpdateNewUserRewardSettingResponse>(`/v1/get/update/user/reward/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppCommissionSettingByApp(req: GetAppCommissionSettingByAppRequest, initReq?: fm.InitReq): Promise<GetAppCommissionSettingByAppResponse> {
+    return fm.fetchReq<GetAppCommissionSettingByAppRequest, GetAppCommissionSettingByAppResponse>(`/v1/get/app/commission/setting/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static CreateAgencySetting(req: CreateAgencySettingRequest, initReq?: fm.InitReq): Promise<CreateAgencySettingResponse> {
-    return fm.fetchReq<CreateAgencySettingRequest, CreateAgencySettingResponse>(`/v1/create/agency/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppCommissionSettingByOtherApp(req: GetAppCommissionSettingByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppCommissionSettingByOtherAppResponse> {
+    return fm.fetchReq<GetAppCommissionSettingByOtherAppRequest, GetAppCommissionSettingByOtherAppResponse>(`/v1/get/app/commission/setting/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAgencySetting(req: GetAgencySettingRequest, initReq?: fm.InitReq): Promise<GetAgencySettingResponse> {
-    return fm.fetchReq<GetAgencySettingRequest, GetAgencySettingResponse>(`/v1/get/agency/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateAppInvitationSetting(req: CreateAppInvitationSettingRequest, initReq?: fm.InitReq): Promise<CreateAppInvitationSettingResponse> {
+    return fm.fetchReq<CreateAppInvitationSettingRequest, CreateAppInvitationSettingResponse>(`/v1/create/app/invitation/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAgencySettingByApp(req: GetAgencySettingByAppRequest, initReq?: fm.InitReq): Promise<GetAgencySettingByAppResponse> {
-    return fm.fetchReq<GetAgencySettingByAppRequest, GetAgencySettingByAppResponse>(`/v1/get/agency/setting/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateAppInvitationSettingForOtherApp(req: CreateAppInvitationSettingForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppInvitationSettingForOtherAppResponse> {
+    return fm.fetchReq<CreateAppInvitationSettingForOtherAppRequest, CreateAppInvitationSettingForOtherAppResponse>(`/v1/create/app/invitation/setting/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static UpdateAgencySetting(req: UpdateAgencySettingRequest, initReq?: fm.InitReq): Promise<UpdateAgencySettingResponse> {
-    return fm.fetchReq<UpdateAgencySettingRequest, UpdateAgencySettingResponse>(`/v1/update/agency/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppInvitationSetting(req: GetAppInvitationSettingRequest, initReq?: fm.InitReq): Promise<GetAppInvitationSettingResponse> {
+    return fm.fetchReq<GetAppInvitationSettingRequest, GetAppInvitationSettingResponse>(`/v1/get/app/invitation/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAgencySettingDetail(req: GetAgencySettingDetailRequest, initReq?: fm.InitReq): Promise<GetAgencySettingDetailResponse> {
-    return fm.fetchReq<GetAgencySettingDetailRequest, GetAgencySettingDetailResponse>(`/v1/get/agency/setting/detail`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppInvitationSettingsByApp(req: GetAppInvitationSettingsByAppRequest, initReq?: fm.InitReq): Promise<GetAppInvitationSettingsByAppResponse> {
+    return fm.fetchReq<GetAppInvitationSettingsByAppRequest, GetAppInvitationSettingsByAppResponse>(`/v1/get/app/invitation/settings/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAgencySettingDetailByApp(req: GetAgencySettingDetailByAppRequest, initReq?: fm.InitReq): Promise<GetAgencySettingDetailByAppResponse> {
-    return fm.fetchReq<GetAgencySettingDetailByAppRequest, GetAgencySettingDetailByAppResponse>(`/v1/get/agency/setting/detail/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppInvitationSettingsByOtherApp(req: GetAppInvitationSettingsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppInvitationSettingsByOtherAppResponse> {
+    return fm.fetchReq<GetAppInvitationSettingsByOtherAppRequest, GetAppInvitationSettingsByOtherAppResponse>(`/v1/get/app/invitation/settings/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static CreatePurchaseInvitation(req: CreatePurchaseInvitationRequest, initReq?: fm.InitReq): Promise<CreatePurchaseInvitationResponse> {
-    return fm.fetchReq<CreatePurchaseInvitationRequest, CreatePurchaseInvitationResponse>(`/v1/create/purchase/invitation`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static UpdateAppInvitationSetting(req: UpdateAppInvitationSettingRequest, initReq?: fm.InitReq): Promise<UpdateAppInvitationSettingResponse> {
+    return fm.fetchReq<UpdateAppInvitationSettingRequest, UpdateAppInvitationSettingResponse>(`/v1/update/app/invitation/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static UpdatePurchaseInvitation(req: UpdatePurchaseInvitationRequest, initReq?: fm.InitReq): Promise<UpdatePurchaseInvitationResponse> {
-    return fm.fetchReq<UpdatePurchaseInvitationRequest, UpdatePurchaseInvitationResponse>(`/v1/update/purchase/invitation`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateAppPurchaseAmountSetting(req: CreateAppPurchaseAmountSettingRequest, initReq?: fm.InitReq): Promise<CreateAppPurchaseAmountSettingResponse> {
+    return fm.fetchReq<CreateAppPurchaseAmountSettingRequest, CreateAppPurchaseAmountSettingResponse>(`/v1/create/app/purchase/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetPurchaseInvitation(req: GetPurchaseInvitationRequest, initReq?: fm.InitReq): Promise<GetPurchaseInvitationResponse> {
-    return fm.fetchReq<GetPurchaseInvitationRequest, GetPurchaseInvitationResponse>(`/v1/get/purchase/invitation`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateAppPurchaseAmountSettingForOtherApp(req: CreateAppPurchaseAmountSettingForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppPurchaseAmountSettingForOtherAppResponse> {
+    return fm.fetchReq<CreateAppPurchaseAmountSettingForOtherAppRequest, CreateAppPurchaseAmountSettingForOtherAppResponse>(`/v1/create/app/purchase/amount/setting/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetPurchaseInvitationsByApp(req: GetPurchaseInvitationsByAppRequest, initReq?: fm.InitReq): Promise<GetPurchaseInvitationsByAppResponse> {
-    return fm.fetchReq<GetPurchaseInvitationsByAppRequest, GetPurchaseInvitationsByAppResponse>(`/v1/get/purchase/invitations/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static UpdateAppPurchaseAmountSetting(req: UpdateAppPurchaseAmountSettingRequest, initReq?: fm.InitReq): Promise<UpdateAppPurchaseAmountSettingResponse> {
+    return fm.fetchReq<UpdateAppPurchaseAmountSettingRequest, UpdateAppPurchaseAmountSettingResponse>(`/v1/update/app/purchase/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetPurchaseInvitationByAppOrder(req: GetPurchaseInvitationByAppOrderRequest, initReq?: fm.InitReq): Promise<GetPurchaseInvitationByAppOrderResponse> {
-    return fm.fetchReq<GetPurchaseInvitationByAppOrderRequest, GetPurchaseInvitationByAppOrderResponse>(`/v1/get/purchase/invitation/by/app/order`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppPurchaseAmountSetting(req: GetAppPurchaseAmountSettingRequest, initReq?: fm.InitReq): Promise<GetAppPurchaseAmountSettingResponse> {
+    return fm.fetchReq<GetAppPurchaseAmountSettingRequest, GetAppPurchaseAmountSettingResponse>(`/v1/get/app/purchase/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppPurchaseAmountSettingsByApp(req: GetAppPurchaseAmountSettingsByAppRequest, initReq?: fm.InitReq): Promise<GetAppPurchaseAmountSettingsByAppResponse> {
+    return fm.fetchReq<GetAppPurchaseAmountSettingsByAppRequest, GetAppPurchaseAmountSettingsByAppResponse>(`/v1/get/app/purchase/amount/settings/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppPurchaseAmountSettingsByOtherApp(req: GetAppPurchaseAmountSettingsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppPurchaseAmountSettingsByOtherAppResponse> {
+    return fm.fetchReq<GetAppPurchaseAmountSettingsByOtherAppRequest, GetAppPurchaseAmountSettingsByOtherAppResponse>(`/v1/get/app/purchase/amount/settings/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateRegistrationInvitation(req: CreateRegistrationInvitationRequest, initReq?: fm.InitReq): Promise<CreateRegistrationInvitationResponse> {
     return fm.fetchReq<CreateRegistrationInvitationRequest, CreateRegistrationInvitationResponse>(`/v1/create/registration/invitation`, {...initReq, method: "POST", body: JSON.stringify(req)})
