@@ -2253,12 +2253,12 @@
     },
     "/v1/get/user/withdraw/items/by/app/user/coin/withdraw/type": {
       "post": {
-        "operationId": "CloudHashingBilling_GetUserCoinWithdrawItemsByAppUserCoinCWithdrawType",
+        "operationId": "CloudHashingBilling_GetUserWithdrawItemsByAppUserCoinWithdrawType",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetUserCoinWithdrawItemsByAppUserCoinWithdrawTypeResponse"
+              "$ref": "#/definitions/v1GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse"
             }
           },
           "default": {
@@ -2274,7 +2274,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetUserCoinWithdrawItemsByAppUserCoinWithdrawTypeRequest"
+              "$ref": "#/definitions/v1GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest"
             }
           }
         ],
@@ -3891,34 +3891,6 @@
         }
       }
     },
-    "v1GetUserCoinWithdrawItemsByAppUserCoinWithdrawTypeRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "WithdrawType": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetUserCoinWithdrawItemsByAppUserCoinWithdrawTypeResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1UserWithdrawItem"
-          }
-        }
-      }
-    },
     "v1GetUserDirectBenefitByAccountRequest": {
       "type": "object",
       "properties": {
@@ -4172,6 +4144,34 @@
       }
     },
     "v1GetUserWithdrawItemsByAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserWithdrawItem"
+          }
+        }
+      }
+    },
+    "v1GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "WithdrawType": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse": {
       "type": "object",
       "properties": {
         "Infos": {

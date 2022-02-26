@@ -437,7 +437,7 @@ service CloudHashingBilling {
             body: "*"
         };
     }
-    rpc GetUserCoinWithdrawItemsByAppUserCoinCWithdrawType (GetUserCoinWithdrawItemsByAppUserCoinWithdrawTypeRequest) returns (GetUserCoinWithdrawItemsByAppUserCoinWithdrawTypeResponse) {
+    rpc GetUserWithdrawItemsByAppUserCoinWithdrawType (GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest) returns (GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/withdraw/items/by/app/user/coin/withdraw/type"
             body: "*"
@@ -1253,14 +1253,14 @@ message GetUserWithdrawItemsByAppUserResponse {
     repeated UserWithdrawItem Infos = 10;
 }
 
-message GetUserCoinWithdrawItemsByAppUserCoinWithdrawTypeRequest {
+message GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest {
     string AppID = 10;
     string UserID = 20;
     string CoinTypeID = 30;
     string WithdrawType = 40;
 }
 
-message GetUserCoinWithdrawItemsByAppUserCoinWithdrawTypeResponse {
+message GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse {
     repeated UserWithdrawItem Infos = 10;
 }
 

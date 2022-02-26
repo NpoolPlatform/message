@@ -715,14 +715,14 @@ export type GetUserWithdrawItemsByAppUserResponse = {
   infos?: UserWithdrawItem[]
 }
 
-export type GetUserCoinWithdrawItemsByAppUserCoinWithdrawTypeRequest = {
+export type GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest = {
   appID?: string
   userID?: string
   coinTypeID?: string
   withdrawType?: string
 }
 
-export type GetUserCoinWithdrawItemsByAppUserCoinWithdrawTypeResponse = {
+export type GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse = {
   infos?: UserWithdrawItem[]
 }
 
@@ -1083,8 +1083,8 @@ export class CloudHashingBilling {
   static GetUserWithdrawItemsByAppUser(req: GetUserWithdrawItemsByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawItemsByAppUserResponse> {
     return fm.fetchReq<GetUserWithdrawItemsByAppUserRequest, GetUserWithdrawItemsByAppUserResponse>(`/v1/get/user/withdraw/items/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetUserCoinWithdrawItemsByAppUserCoinCWithdrawType(req: GetUserCoinWithdrawItemsByAppUserCoinWithdrawTypeRequest, initReq?: fm.InitReq): Promise<GetUserCoinWithdrawItemsByAppUserCoinWithdrawTypeResponse> {
-    return fm.fetchReq<GetUserCoinWithdrawItemsByAppUserCoinWithdrawTypeRequest, GetUserCoinWithdrawItemsByAppUserCoinWithdrawTypeResponse>(`/v1/get/user/withdraw/items/by/app/user/coin/withdraw/type`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetUserWithdrawItemsByAppUserCoinWithdrawType(req: GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse> {
+    return fm.fetchReq<GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest, GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse>(`/v1/get/user/withdraw/items/by/app/user/coin/withdraw/type`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserWithdrawItemsByOtherAppUser(req: GetUserWithdrawItemsByOtherAppUserRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawItemsByOtherAppUserResponse> {
     return fm.fetchReq<GetUserWithdrawItemsByOtherAppUserRequest, GetUserWithdrawItemsByOtherAppUserResponse>(`/v1/get/user/withdraw/items/by/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
