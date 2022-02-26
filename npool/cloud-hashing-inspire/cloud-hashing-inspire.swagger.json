@@ -427,6 +427,38 @@
         ]
       }
     },
+    "/v1/create/commission/coin/setting": {
+      "post": {
+        "operationId": "CloudHashingInspire_CreateCommissionCoinSetting",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateCommissionCoinSettingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateCommissionCoinSettingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/create/coupon/allocated": {
       "post": {
         "operationId": "CloudHashingInspire_CreateCouponAllocated",
@@ -1667,6 +1699,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppUserPurchaseAmountSettingsByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/get/commission/coin/setting": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetCommissionCoinSetting",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCommissionCoinSettingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCommissionCoinSettingRequest"
             }
           }
         ],
@@ -3179,6 +3243,38 @@
         ]
       }
     },
+    "/v1/update/commission/coin/setting": {
+      "post": {
+        "operationId": "CloudHashingInspire_UpdateCommissionCoinSetting",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCommissionCoinSettingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCommissionCoinSettingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/update/coupon/allocated": {
       "post": {
         "operationId": "CloudHashingInspire_UpdateCouponAllocated",
@@ -3553,8 +3649,7 @@
         "UniqueSetting": {
           "type": "boolean"
         }
-      },
-      "title": "request body and response"
+      }
     },
     "v1AppCouponSetting": {
       "type": "object",
@@ -3692,6 +3787,18 @@
           "type": "string"
         }
       }
+    },
+    "v1CommissionCoinSetting": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        }
+      },
+      "title": "request body and response"
     },
     "v1CouponAllocated": {
       "type": "object",
@@ -3992,6 +4099,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserPurchaseAmountSetting"
+        }
+      }
+    },
+    "v1CreateCommissionCoinSettingRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CommissionCoinSetting"
+        }
+      }
+    },
+    "v1CreateCommissionCoinSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CommissionCoinSetting"
         }
       }
     },
@@ -4772,6 +4895,17 @@
           "items": {
             "$ref": "#/definitions/v1AppUserPurchaseAmountSetting"
           }
+        }
+      }
+    },
+    "v1GetCommissionCoinSettingRequest": {
+      "type": "object"
+    },
+    "v1GetCommissionCoinSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CommissionCoinSetting"
         }
       }
     },
@@ -5660,6 +5794,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserPurchaseAmountSetting"
+        }
+      }
+    },
+    "v1UpdateCommissionCoinSettingRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CommissionCoinSetting"
+        }
+      }
+    },
+    "v1UpdateCommissionCoinSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CommissionCoinSetting"
         }
       }
     },

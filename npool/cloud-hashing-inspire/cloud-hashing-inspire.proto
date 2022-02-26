@@ -19,6 +19,25 @@ service CloudHashingInspire {
         };
     }
 
+    rpc CreateCommissionCoinSetting (CreateCommissionCoinSettingRequest) returns (CreateCommissionCoinSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/commission/coin/setting"
+            body: "*"
+        };
+    }
+    rpc UpdateCommissionCoinSetting (UpdateCommissionCoinSettingRequest) returns (UpdateCommissionCoinSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/commission/coin/setting"
+            body: "*"
+        };
+    }
+    rpc GetCommissionCoinSetting (GetCommissionCoinSettingRequest) returns (GetCommissionCoinSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/commission/coin/setting"
+            body: "*"
+        };
+    }
+
     rpc CreateAppCommissionSetting (CreateAppCommissionSettingRequest) returns (CreateAppCommissionSettingResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/commission/setting"
@@ -679,6 +698,34 @@ service CloudHashingInspire {
 }
 
 // request body and response
+message CommissionCoinSetting {
+    string ID = 10;
+    string CoinTypeID = 20;
+}
+
+message CreateCommissionCoinSettingRequest {
+    CommissionCoinSetting Info = 10;
+}
+
+message CreateCommissionCoinSettingResponse {
+    CommissionCoinSetting Info = 10;
+}
+
+message UpdateCommissionCoinSettingRequest {
+    CommissionCoinSetting Info = 10;
+}
+
+message UpdateCommissionCoinSettingResponse {
+    CommissionCoinSetting Info = 10;
+}
+
+message GetCommissionCoinSettingRequest {
+}
+
+message GetCommissionCoinSettingResponse {
+    CommissionCoinSetting Info = 10;
+}
+
 message AppCommissionSetting {
     string ID = 10;
     string AppID = 20;

@@ -7,6 +7,34 @@
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
+export type CommissionCoinSetting = {
+  id?: string
+  coinTypeID?: string
+}
+
+export type CreateCommissionCoinSettingRequest = {
+  info?: CommissionCoinSetting
+}
+
+export type CreateCommissionCoinSettingResponse = {
+  info?: CommissionCoinSetting
+}
+
+export type UpdateCommissionCoinSettingRequest = {
+  info?: CommissionCoinSetting
+}
+
+export type UpdateCommissionCoinSettingResponse = {
+  info?: CommissionCoinSetting
+}
+
+export type GetCommissionCoinSettingRequest = {
+}
+
+export type GetCommissionCoinSettingResponse = {
+  info?: CommissionCoinSetting
+}
+
 export type AppCommissionSetting = {
   id?: string
   appID?: string
@@ -1059,6 +1087,15 @@ export type GetEventCouponsByOtherAppResponse = {
 export class CloudHashingInspire {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateCommissionCoinSetting(req: CreateCommissionCoinSettingRequest, initReq?: fm.InitReq): Promise<CreateCommissionCoinSettingResponse> {
+    return fm.fetchReq<CreateCommissionCoinSettingRequest, CreateCommissionCoinSettingResponse>(`/v1/create/commission/coin/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateCommissionCoinSetting(req: UpdateCommissionCoinSettingRequest, initReq?: fm.InitReq): Promise<UpdateCommissionCoinSettingResponse> {
+    return fm.fetchReq<UpdateCommissionCoinSettingRequest, UpdateCommissionCoinSettingResponse>(`/v1/update/commission/coin/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCommissionCoinSetting(req: GetCommissionCoinSettingRequest, initReq?: fm.InitReq): Promise<GetCommissionCoinSettingResponse> {
+    return fm.fetchReq<GetCommissionCoinSettingRequest, GetCommissionCoinSettingResponse>(`/v1/get/commission/coin/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateAppCommissionSetting(req: CreateAppCommissionSettingRequest, initReq?: fm.InitReq): Promise<CreateAppCommissionSettingResponse> {
     return fm.fetchReq<CreateAppCommissionSettingRequest, CreateAppCommissionSettingResponse>(`/v1/create/app/commission/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})

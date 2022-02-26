@@ -26,6 +26,9 @@ const _ = grpc.SupportPackageIsVersion7
 type CloudHashingInspireClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
+	CreateCommissionCoinSetting(ctx context.Context, in *CreateCommissionCoinSettingRequest, opts ...grpc.CallOption) (*CreateCommissionCoinSettingResponse, error)
+	UpdateCommissionCoinSetting(ctx context.Context, in *UpdateCommissionCoinSettingRequest, opts ...grpc.CallOption) (*UpdateCommissionCoinSettingResponse, error)
+	GetCommissionCoinSetting(ctx context.Context, in *GetCommissionCoinSettingRequest, opts ...grpc.CallOption) (*GetCommissionCoinSettingResponse, error)
 	CreateAppCommissionSetting(ctx context.Context, in *CreateAppCommissionSettingRequest, opts ...grpc.CallOption) (*CreateAppCommissionSettingResponse, error)
 	CreateAppCommissionSettingForOtherApp(ctx context.Context, in *CreateAppCommissionSettingForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppCommissionSettingForOtherAppResponse, error)
 	UpdateAppCommissionSetting(ctx context.Context, in *UpdateAppCommissionSettingRequest, opts ...grpc.CallOption) (*UpdateAppCommissionSettingResponse, error)
@@ -146,6 +149,33 @@ func NewCloudHashingInspireClient(cc grpc.ClientConnInterface) CloudHashingInspi
 func (c *cloudHashingInspireClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/Version", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingInspireClient) CreateCommissionCoinSetting(ctx context.Context, in *CreateCommissionCoinSettingRequest, opts ...grpc.CallOption) (*CreateCommissionCoinSettingResponse, error) {
+	out := new(CreateCommissionCoinSettingResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateCommissionCoinSetting", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingInspireClient) UpdateCommissionCoinSetting(ctx context.Context, in *UpdateCommissionCoinSettingRequest, opts ...grpc.CallOption) (*UpdateCommissionCoinSettingResponse, error) {
+	out := new(UpdateCommissionCoinSettingResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateCommissionCoinSetting", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingInspireClient) GetCommissionCoinSetting(ctx context.Context, in *GetCommissionCoinSettingRequest, opts ...grpc.CallOption) (*GetCommissionCoinSettingResponse, error) {
+	out := new(GetCommissionCoinSettingResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetCommissionCoinSetting", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1121,6 +1151,9 @@ func (c *cloudHashingInspireClient) GetEventCouponsByOtherApp(ctx context.Contex
 type CloudHashingInspireServer interface {
 	// Method Version
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
+	CreateCommissionCoinSetting(context.Context, *CreateCommissionCoinSettingRequest) (*CreateCommissionCoinSettingResponse, error)
+	UpdateCommissionCoinSetting(context.Context, *UpdateCommissionCoinSettingRequest) (*UpdateCommissionCoinSettingResponse, error)
+	GetCommissionCoinSetting(context.Context, *GetCommissionCoinSettingRequest) (*GetCommissionCoinSettingResponse, error)
 	CreateAppCommissionSetting(context.Context, *CreateAppCommissionSettingRequest) (*CreateAppCommissionSettingResponse, error)
 	CreateAppCommissionSettingForOtherApp(context.Context, *CreateAppCommissionSettingForOtherAppRequest) (*CreateAppCommissionSettingForOtherAppResponse, error)
 	UpdateAppCommissionSetting(context.Context, *UpdateAppCommissionSettingRequest) (*UpdateAppCommissionSettingResponse, error)
@@ -1237,6 +1270,15 @@ type UnimplementedCloudHashingInspireServer struct {
 
 func (UnimplementedCloudHashingInspireServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
+}
+func (UnimplementedCloudHashingInspireServer) CreateCommissionCoinSetting(context.Context, *CreateCommissionCoinSettingRequest) (*CreateCommissionCoinSettingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCommissionCoinSetting not implemented")
+}
+func (UnimplementedCloudHashingInspireServer) UpdateCommissionCoinSetting(context.Context, *UpdateCommissionCoinSettingRequest) (*UpdateCommissionCoinSettingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCommissionCoinSetting not implemented")
+}
+func (UnimplementedCloudHashingInspireServer) GetCommissionCoinSetting(context.Context, *GetCommissionCoinSettingRequest) (*GetCommissionCoinSettingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCommissionCoinSetting not implemented")
 }
 func (UnimplementedCloudHashingInspireServer) CreateAppCommissionSetting(context.Context, *CreateAppCommissionSettingRequest) (*CreateAppCommissionSettingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppCommissionSetting not implemented")
@@ -1586,6 +1628,60 @@ func _CloudHashingInspire_Version_Handler(srv interface{}, ctx context.Context, 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingInspireServer).Version(ctx, req.(*emptypb.Empty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingInspire_CreateCommissionCoinSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCommissionCoinSettingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).CreateCommissionCoinSetting(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateCommissionCoinSetting",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).CreateCommissionCoinSetting(ctx, req.(*CreateCommissionCoinSettingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingInspire_UpdateCommissionCoinSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCommissionCoinSettingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).UpdateCommissionCoinSetting(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateCommissionCoinSetting",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).UpdateCommissionCoinSetting(ctx, req.(*UpdateCommissionCoinSettingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingInspire_GetCommissionCoinSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCommissionCoinSettingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).GetCommissionCoinSetting(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/GetCommissionCoinSetting",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).GetCommissionCoinSetting(ctx, req.(*GetCommissionCoinSettingRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3526,6 +3622,18 @@ var CloudHashingInspire_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Version",
 			Handler:    _CloudHashingInspire_Version_Handler,
+		},
+		{
+			MethodName: "CreateCommissionCoinSetting",
+			Handler:    _CloudHashingInspire_CreateCommissionCoinSetting_Handler,
+		},
+		{
+			MethodName: "UpdateCommissionCoinSetting",
+			Handler:    _CloudHashingInspire_UpdateCommissionCoinSetting_Handler,
+		},
+		{
+			MethodName: "GetCommissionCoinSetting",
+			Handler:    _CloudHashingInspire_GetCommissionCoinSetting_Handler,
 		},
 		{
 			MethodName: "CreateAppCommissionSetting",
