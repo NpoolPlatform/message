@@ -354,6 +354,7 @@ export type CoinSetting = {
   userOfflineAccountID?: string
   userOnlineAccountID?: string
   goodIncomingAccountID?: string
+  userCommissionAccountID?: string
 }
 
 export type CreateCoinSettingRequest = {
