@@ -718,6 +718,7 @@ export type GetUserWithdrawItemsByAppUserResponse = {
 export type GetUserWithdrawItemsByAppUserWithdrawTypeRequest = {
   appID?: string
   userID?: string
+  withdrawType?: string
 }
 
 export type GetUserWithdrawItemsByAppUserWithdrawTypeResponse = {

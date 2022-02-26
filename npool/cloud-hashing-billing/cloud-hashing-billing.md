@@ -2592,6 +2592,7 @@
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
+| WithdrawType | [string](#string) |  |  |
 
 
 
@@ -5617,6 +5618,7 @@ Cloud Hashing Billing
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
+| WithdrawType | [string](#string) |  |  |
 
 
 

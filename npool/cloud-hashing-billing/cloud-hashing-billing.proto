@@ -1256,6 +1256,7 @@ message GetUserWithdrawItemsByAppUserResponse {
 message GetUserWithdrawItemsByAppUserWithdrawTypeRequest {
     string AppID = 10;
     string UserID = 20;
+    string WithdrawType = 30;
 }
 
 message GetUserWithdrawItemsByAppUserWithdrawTypeResponse {
