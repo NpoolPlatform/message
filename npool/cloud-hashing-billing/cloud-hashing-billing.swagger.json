@@ -2914,9 +2914,6 @@
         },
         "GoodIncomingAccountID": {
           "type": "string"
-        },
-        "UserCommissionAccountID": {
-          "type": "string"
         }
       }
     },
