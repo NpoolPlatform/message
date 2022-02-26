@@ -3270,6 +3270,7 @@
 | WithdrawToAccountID | [string](#string) |  |  |
 | Amount | [double](#double) |  |  |
 | PlatformTransactionID | [string](#string) |  |  |
+| WithdrawType | [string](#string) |  |  |
 
 
 
@@ -6262,6 +6263,7 @@ Cloud Hashing Billing
 | WithdrawToAccountID | [string](#string) |  |  |
 | Amount | [double](#double) |  |  |
 | PlatformTransactionID | [string](#string) |  |  |
+| WithdrawType | [string](#string) |  |  |
 
 
 

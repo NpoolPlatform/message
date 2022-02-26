@@ -1203,6 +1203,7 @@ message UserWithdrawItem {
     string WithdrawToAccountID = 50;
     double Amount = 60;
     string PlatformTransactionID = 70;
+    string WithdrawType = 80;
 }
 
 message CreateUserWithdrawItemRequest {

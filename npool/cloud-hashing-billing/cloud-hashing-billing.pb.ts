@@ -671,6 +671,7 @@ export type UserWithdrawItem = {
   withdrawToAccountID?: string
   amount?: number
   platformTransactionID?: string
+  withdrawType?: string
 }
 
 export type CreateUserWithdrawItemRequest = {
