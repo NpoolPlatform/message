@@ -1707,14 +1707,14 @@
         ]
       }
     },
-    "/v1/get/commission/coin/setting": {
+    "/v1/get/commission/coin/settings": {
       "post": {
-        "operationId": "CloudHashingInspire_GetCommissionCoinSetting",
+        "operationId": "CloudHashingInspire_GetCommissionCoinSettings",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetCommissionCoinSettingResponse"
+              "$ref": "#/definitions/v1GetCommissionCoinSettingsResponse"
             }
           },
           "default": {
@@ -1730,7 +1730,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetCommissionCoinSettingRequest"
+              "$ref": "#/definitions/v1GetCommissionCoinSettingsRequest"
             }
           }
         ],
@@ -3796,6 +3796,9 @@
         },
         "CoinTypeID": {
           "type": "string"
+        },
+        "Using": {
+          "type": "boolean"
         }
       },
       "title": "request body and response"
@@ -4898,14 +4901,17 @@
         }
       }
     },
-    "v1GetCommissionCoinSettingRequest": {
+    "v1GetCommissionCoinSettingsRequest": {
       "type": "object"
     },
-    "v1GetCommissionCoinSettingResponse": {
+    "v1GetCommissionCoinSettingsResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CommissionCoinSetting"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CommissionCoinSetting"
+          }
         }
       }
     },

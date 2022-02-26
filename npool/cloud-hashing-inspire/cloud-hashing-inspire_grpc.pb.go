@@ -28,7 +28,7 @@ type CloudHashingInspireClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateCommissionCoinSetting(ctx context.Context, in *CreateCommissionCoinSettingRequest, opts ...grpc.CallOption) (*CreateCommissionCoinSettingResponse, error)
 	UpdateCommissionCoinSetting(ctx context.Context, in *UpdateCommissionCoinSettingRequest, opts ...grpc.CallOption) (*UpdateCommissionCoinSettingResponse, error)
-	GetCommissionCoinSetting(ctx context.Context, in *GetCommissionCoinSettingRequest, opts ...grpc.CallOption) (*GetCommissionCoinSettingResponse, error)
+	GetCommissionCoinSettings(ctx context.Context, in *GetCommissionCoinSettingsRequest, opts ...grpc.CallOption) (*GetCommissionCoinSettingsResponse, error)
 	CreateAppCommissionSetting(ctx context.Context, in *CreateAppCommissionSettingRequest, opts ...grpc.CallOption) (*CreateAppCommissionSettingResponse, error)
 	CreateAppCommissionSettingForOtherApp(ctx context.Context, in *CreateAppCommissionSettingForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppCommissionSettingForOtherAppResponse, error)
 	UpdateAppCommissionSetting(ctx context.Context, in *UpdateAppCommissionSettingRequest, opts ...grpc.CallOption) (*UpdateAppCommissionSettingResponse, error)
@@ -173,9 +173,9 @@ func (c *cloudHashingInspireClient) UpdateCommissionCoinSetting(ctx context.Cont
 	return out, nil
 }
 
-func (c *cloudHashingInspireClient) GetCommissionCoinSetting(ctx context.Context, in *GetCommissionCoinSettingRequest, opts ...grpc.CallOption) (*GetCommissionCoinSettingResponse, error) {
-	out := new(GetCommissionCoinSettingResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetCommissionCoinSetting", in, out, opts...)
+func (c *cloudHashingInspireClient) GetCommissionCoinSettings(ctx context.Context, in *GetCommissionCoinSettingsRequest, opts ...grpc.CallOption) (*GetCommissionCoinSettingsResponse, error) {
+	out := new(GetCommissionCoinSettingsResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetCommissionCoinSettings", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1153,7 +1153,7 @@ type CloudHashingInspireServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateCommissionCoinSetting(context.Context, *CreateCommissionCoinSettingRequest) (*CreateCommissionCoinSettingResponse, error)
 	UpdateCommissionCoinSetting(context.Context, *UpdateCommissionCoinSettingRequest) (*UpdateCommissionCoinSettingResponse, error)
-	GetCommissionCoinSetting(context.Context, *GetCommissionCoinSettingRequest) (*GetCommissionCoinSettingResponse, error)
+	GetCommissionCoinSettings(context.Context, *GetCommissionCoinSettingsRequest) (*GetCommissionCoinSettingsResponse, error)
 	CreateAppCommissionSetting(context.Context, *CreateAppCommissionSettingRequest) (*CreateAppCommissionSettingResponse, error)
 	CreateAppCommissionSettingForOtherApp(context.Context, *CreateAppCommissionSettingForOtherAppRequest) (*CreateAppCommissionSettingForOtherAppResponse, error)
 	UpdateAppCommissionSetting(context.Context, *UpdateAppCommissionSettingRequest) (*UpdateAppCommissionSettingResponse, error)
@@ -1277,8 +1277,8 @@ func (UnimplementedCloudHashingInspireServer) CreateCommissionCoinSetting(contex
 func (UnimplementedCloudHashingInspireServer) UpdateCommissionCoinSetting(context.Context, *UpdateCommissionCoinSettingRequest) (*UpdateCommissionCoinSettingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCommissionCoinSetting not implemented")
 }
-func (UnimplementedCloudHashingInspireServer) GetCommissionCoinSetting(context.Context, *GetCommissionCoinSettingRequest) (*GetCommissionCoinSettingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCommissionCoinSetting not implemented")
+func (UnimplementedCloudHashingInspireServer) GetCommissionCoinSettings(context.Context, *GetCommissionCoinSettingsRequest) (*GetCommissionCoinSettingsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCommissionCoinSettings not implemented")
 }
 func (UnimplementedCloudHashingInspireServer) CreateAppCommissionSetting(context.Context, *CreateAppCommissionSettingRequest) (*CreateAppCommissionSettingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppCommissionSetting not implemented")
@@ -1668,20 +1668,20 @@ func _CloudHashingInspire_UpdateCommissionCoinSetting_Handler(srv interface{}, c
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudHashingInspire_GetCommissionCoinSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCommissionCoinSettingRequest)
+func _CloudHashingInspire_GetCommissionCoinSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCommissionCoinSettingsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudHashingInspireServer).GetCommissionCoinSetting(ctx, in)
+		return srv.(CloudHashingInspireServer).GetCommissionCoinSettings(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/GetCommissionCoinSetting",
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/GetCommissionCoinSettings",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingInspireServer).GetCommissionCoinSetting(ctx, req.(*GetCommissionCoinSettingRequest))
+		return srv.(CloudHashingInspireServer).GetCommissionCoinSettings(ctx, req.(*GetCommissionCoinSettingsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3632,8 +3632,8 @@ var CloudHashingInspire_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingInspire_UpdateCommissionCoinSetting_Handler,
 		},
 		{
-			MethodName: "GetCommissionCoinSetting",
-			Handler:    _CloudHashingInspire_GetCommissionCoinSetting_Handler,
+			MethodName: "GetCommissionCoinSettings",
+			Handler:    _CloudHashingInspire_GetCommissionCoinSettings_Handler,
 		},
 		{
 			MethodName: "CreateAppCommissionSetting",

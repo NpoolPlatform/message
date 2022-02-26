@@ -124,8 +124,8 @@
     - [GetAppUserPurchaseAmountSettingsByAppUserResponse](#cloud.hashing.inspire.v1.GetAppUserPurchaseAmountSettingsByAppUserResponse)
     - [GetAppUserPurchaseAmountSettingsByOtherAppRequest](#cloud.hashing.inspire.v1.GetAppUserPurchaseAmountSettingsByOtherAppRequest)
     - [GetAppUserPurchaseAmountSettingsByOtherAppResponse](#cloud.hashing.inspire.v1.GetAppUserPurchaseAmountSettingsByOtherAppResponse)
-    - [GetCommissionCoinSettingRequest](#cloud.hashing.inspire.v1.GetCommissionCoinSettingRequest)
-    - [GetCommissionCoinSettingResponse](#cloud.hashing.inspire.v1.GetCommissionCoinSettingResponse)
+    - [GetCommissionCoinSettingsRequest](#cloud.hashing.inspire.v1.GetCommissionCoinSettingsRequest)
+    - [GetCommissionCoinSettingsResponse](#cloud.hashing.inspire.v1.GetCommissionCoinSettingsResponse)
     - [GetCouponAllocatedDetailRequest](#cloud.hashing.inspire.v1.GetCouponAllocatedDetailRequest)
     - [GetCouponAllocatedDetailResponse](#cloud.hashing.inspire.v1.GetCouponAllocatedDetailResponse)
     - [GetCouponAllocatedRequest](#cloud.hashing.inspire.v1.GetCouponAllocatedRequest)
@@ -366,8 +366,8 @@
     - [GetAppUserPurchaseAmountSettingsByAppUserResponse](#cloud.hashing.inspire.v1.GetAppUserPurchaseAmountSettingsByAppUserResponse)
     - [GetAppUserPurchaseAmountSettingsByOtherAppRequest](#cloud.hashing.inspire.v1.GetAppUserPurchaseAmountSettingsByOtherAppRequest)
     - [GetAppUserPurchaseAmountSettingsByOtherAppResponse](#cloud.hashing.inspire.v1.GetAppUserPurchaseAmountSettingsByOtherAppResponse)
-    - [GetCommissionCoinSettingRequest](#cloud.hashing.inspire.v1.GetCommissionCoinSettingRequest)
-    - [GetCommissionCoinSettingResponse](#cloud.hashing.inspire.v1.GetCommissionCoinSettingResponse)
+    - [GetCommissionCoinSettingsRequest](#cloud.hashing.inspire.v1.GetCommissionCoinSettingsRequest)
+    - [GetCommissionCoinSettingsResponse](#cloud.hashing.inspire.v1.GetCommissionCoinSettingsResponse)
     - [GetCouponAllocatedDetailRequest](#cloud.hashing.inspire.v1.GetCouponAllocatedDetailRequest)
     - [GetCouponAllocatedDetailResponse](#cloud.hashing.inspire.v1.GetCouponAllocatedDetailResponse)
     - [GetCouponAllocatedRequest](#cloud.hashing.inspire.v1.GetCouponAllocatedRequest)
@@ -653,6 +653,7 @@ request body and response
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
+| Using | [bool](#bool) |  |  |
 
 
 
@@ -2391,25 +2392,25 @@ request body and response
 
 
 
-<a name="cloud.hashing.inspire.v1.GetCommissionCoinSettingRequest"></a>
+<a name="cloud.hashing.inspire.v1.GetCommissionCoinSettingsRequest"></a>
 
-### GetCommissionCoinSettingRequest
-
-
+### GetCommissionCoinSettingsRequest
 
 
 
 
 
-<a name="cloud.hashing.inspire.v1.GetCommissionCoinSettingResponse"></a>
 
-### GetCommissionCoinSettingResponse
+
+<a name="cloud.hashing.inspire.v1.GetCommissionCoinSettingsResponse"></a>
+
+### GetCommissionCoinSettingsResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CommissionCoinSetting](#cloud.hashing.inspire.v1.CommissionCoinSetting) |  |  |
+| Infos | [CommissionCoinSetting](#cloud.hashing.inspire.v1.CommissionCoinSetting) | repeated |  |
 
 
 
@@ -4201,7 +4202,7 @@ Service Name
 | Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
 | CreateCommissionCoinSetting | [CreateCommissionCoinSettingRequest](#cloud.hashing.inspire.v1.CreateCommissionCoinSettingRequest) | [CreateCommissionCoinSettingResponse](#cloud.hashing.inspire.v1.CreateCommissionCoinSettingResponse) |  |
 | UpdateCommissionCoinSetting | [UpdateCommissionCoinSettingRequest](#cloud.hashing.inspire.v1.UpdateCommissionCoinSettingRequest) | [UpdateCommissionCoinSettingResponse](#cloud.hashing.inspire.v1.UpdateCommissionCoinSettingResponse) |  |
-| GetCommissionCoinSetting | [GetCommissionCoinSettingRequest](#cloud.hashing.inspire.v1.GetCommissionCoinSettingRequest) | [GetCommissionCoinSettingResponse](#cloud.hashing.inspire.v1.GetCommissionCoinSettingResponse) |  |
+| GetCommissionCoinSettings | [GetCommissionCoinSettingsRequest](#cloud.hashing.inspire.v1.GetCommissionCoinSettingsRequest) | [GetCommissionCoinSettingsResponse](#cloud.hashing.inspire.v1.GetCommissionCoinSettingsResponse) |  |
 | CreateAppCommissionSetting | [CreateAppCommissionSettingRequest](#cloud.hashing.inspire.v1.CreateAppCommissionSettingRequest) | [CreateAppCommissionSettingResponse](#cloud.hashing.inspire.v1.CreateAppCommissionSettingResponse) |  |
 | CreateAppCommissionSettingForOtherApp | [CreateAppCommissionSettingForOtherAppRequest](#cloud.hashing.inspire.v1.CreateAppCommissionSettingForOtherAppRequest) | [CreateAppCommissionSettingForOtherAppResponse](#cloud.hashing.inspire.v1.CreateAppCommissionSettingForOtherAppResponse) |  |
 | UpdateAppCommissionSetting | [UpdateAppCommissionSettingRequest](#cloud.hashing.inspire.v1.UpdateAppCommissionSettingRequest) | [UpdateAppCommissionSettingResponse](#cloud.hashing.inspire.v1.UpdateAppCommissionSettingResponse) |  |
@@ -4476,6 +4477,7 @@ request body and response
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
+| Using | [bool](#bool) |  |  |
 
 
 
@@ -6214,25 +6216,25 @@ request body and response
 
 
 
-<a name="cloud.hashing.inspire.v1.GetCommissionCoinSettingRequest"></a>
+<a name="cloud.hashing.inspire.v1.GetCommissionCoinSettingsRequest"></a>
 
-### GetCommissionCoinSettingRequest
-
-
+### GetCommissionCoinSettingsRequest
 
 
 
 
 
-<a name="cloud.hashing.inspire.v1.GetCommissionCoinSettingResponse"></a>
 
-### GetCommissionCoinSettingResponse
+
+<a name="cloud.hashing.inspire.v1.GetCommissionCoinSettingsResponse"></a>
+
+### GetCommissionCoinSettingsResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CommissionCoinSetting](#cloud.hashing.inspire.v1.CommissionCoinSetting) |  |  |
+| Infos | [CommissionCoinSetting](#cloud.hashing.inspire.v1.CommissionCoinSetting) | repeated |  |
 
 
 
@@ -8024,7 +8026,7 @@ Service Name
 | Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
 | CreateCommissionCoinSetting | [CreateCommissionCoinSettingRequest](#cloud.hashing.inspire.v1.CreateCommissionCoinSettingRequest) | [CreateCommissionCoinSettingResponse](#cloud.hashing.inspire.v1.CreateCommissionCoinSettingResponse) |  |
 | UpdateCommissionCoinSetting | [UpdateCommissionCoinSettingRequest](#cloud.hashing.inspire.v1.UpdateCommissionCoinSettingRequest) | [UpdateCommissionCoinSettingResponse](#cloud.hashing.inspire.v1.UpdateCommissionCoinSettingResponse) |  |
-| GetCommissionCoinSetting | [GetCommissionCoinSettingRequest](#cloud.hashing.inspire.v1.GetCommissionCoinSettingRequest) | [GetCommissionCoinSettingResponse](#cloud.hashing.inspire.v1.GetCommissionCoinSettingResponse) |  |
+| GetCommissionCoinSettings | [GetCommissionCoinSettingsRequest](#cloud.hashing.inspire.v1.GetCommissionCoinSettingsRequest) | [GetCommissionCoinSettingsResponse](#cloud.hashing.inspire.v1.GetCommissionCoinSettingsResponse) |  |
 | CreateAppCommissionSetting | [CreateAppCommissionSettingRequest](#cloud.hashing.inspire.v1.CreateAppCommissionSettingRequest) | [CreateAppCommissionSettingResponse](#cloud.hashing.inspire.v1.CreateAppCommissionSettingResponse) |  |
 | CreateAppCommissionSettingForOtherApp | [CreateAppCommissionSettingForOtherAppRequest](#cloud.hashing.inspire.v1.CreateAppCommissionSettingForOtherAppRequest) | [CreateAppCommissionSettingForOtherAppResponse](#cloud.hashing.inspire.v1.CreateAppCommissionSettingForOtherAppResponse) |  |
 | UpdateAppCommissionSetting | [UpdateAppCommissionSettingRequest](#cloud.hashing.inspire.v1.UpdateAppCommissionSettingRequest) | [UpdateAppCommissionSettingResponse](#cloud.hashing.inspire.v1.UpdateAppCommissionSettingResponse) |  |

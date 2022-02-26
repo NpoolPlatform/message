@@ -10,6 +10,7 @@ import * as NpoolV1Npool from "../npool.pb"
 export type CommissionCoinSetting = {
   id?: string
   coinTypeID?: string
+  using?: boolean
 }
 
 export type CreateCommissionCoinSettingRequest = {
@@ -28,11 +29,11 @@ export type UpdateCommissionCoinSettingResponse = {
   info?: CommissionCoinSetting
 }
 
-export type GetCommissionCoinSettingRequest = {
+export type GetCommissionCoinSettingsRequest = {
 }
 
-export type GetCommissionCoinSettingResponse = {
-  info?: CommissionCoinSetting
+export type GetCommissionCoinSettingsResponse = {
+  infos?: CommissionCoinSetting[]
 }
 
 export type AppCommissionSetting = {
@@ -1094,8 +1095,8 @@ export class CloudHashingInspire {
   static UpdateCommissionCoinSetting(req: UpdateCommissionCoinSettingRequest, initReq?: fm.InitReq): Promise<UpdateCommissionCoinSettingResponse> {
     return fm.fetchReq<UpdateCommissionCoinSettingRequest, UpdateCommissionCoinSettingResponse>(`/v1/update/commission/coin/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetCommissionCoinSetting(req: GetCommissionCoinSettingRequest, initReq?: fm.InitReq): Promise<GetCommissionCoinSettingResponse> {
-    return fm.fetchReq<GetCommissionCoinSettingRequest, GetCommissionCoinSettingResponse>(`/v1/get/commission/coin/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetCommissionCoinSettings(req: GetCommissionCoinSettingsRequest, initReq?: fm.InitReq): Promise<GetCommissionCoinSettingsResponse> {
+    return fm.fetchReq<GetCommissionCoinSettingsRequest, GetCommissionCoinSettingsResponse>(`/v1/get/commission/coin/settings`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateAppCommissionSetting(req: CreateAppCommissionSettingRequest, initReq?: fm.InitReq): Promise<CreateAppCommissionSettingResponse> {
     return fm.fetchReq<CreateAppCommissionSettingRequest, CreateAppCommissionSettingResponse>(`/v1/create/app/commission/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})

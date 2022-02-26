@@ -31,9 +31,9 @@ service CloudHashingInspire {
             body: "*"
         };
     }
-    rpc GetCommissionCoinSetting (GetCommissionCoinSettingRequest) returns (GetCommissionCoinSettingResponse) {
+    rpc GetCommissionCoinSettings (GetCommissionCoinSettingsRequest) returns (GetCommissionCoinSettingsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/commission/coin/setting"
+            post: "/v1/get/commission/coin/settings"
             body: "*"
         };
     }
@@ -701,6 +701,7 @@ service CloudHashingInspire {
 message CommissionCoinSetting {
     string ID = 10;
     string CoinTypeID = 20;
+    bool Using = 30;
 }
 
 message CreateCommissionCoinSettingRequest {
@@ -719,11 +720,11 @@ message UpdateCommissionCoinSettingResponse {
     CommissionCoinSetting Info = 10;
 }
 
-message GetCommissionCoinSettingRequest {
+message GetCommissionCoinSettingsRequest {
 }
 
-message GetCommissionCoinSettingResponse {
-    CommissionCoinSetting Info = 10;
+message GetCommissionCoinSettingsResponse {
+    repeated CommissionCoinSetting Infos = 10;
 }
 
 message AppCommissionSetting {
