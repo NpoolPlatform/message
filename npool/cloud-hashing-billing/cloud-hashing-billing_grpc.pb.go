@@ -94,6 +94,7 @@ type CloudHashingBillingClient interface {
 	GetUserWithdrawItem(ctx context.Context, in *GetUserWithdrawItemRequest, opts ...grpc.CallOption) (*GetUserWithdrawItemResponse, error)
 	GetUserWithdrawItemsByAccount(ctx context.Context, in *GetUserWithdrawItemsByAccountRequest, opts ...grpc.CallOption) (*GetUserWithdrawItemsByAccountResponse, error)
 	GetUserWithdrawItemsByAppUser(ctx context.Context, in *GetUserWithdrawItemsByAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawItemsByAppUserResponse, error)
+	GetUserWithdrawItemsByAppUserWithdrawType(ctx context.Context, in *GetUserWithdrawItemsByAppUserWithdrawTypeRequest, opts ...grpc.CallOption) (*GetUserWithdrawItemsByAppUserWithdrawTypeResponse, error)
 	GetUserWithdrawItemsByOtherAppUser(ctx context.Context, in *GetUserWithdrawItemsByOtherAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawItemsByOtherAppUserResponse, error)
 	GetUserWithdrawItems(ctx context.Context, in *GetUserWithdrawItemsRequest, opts ...grpc.CallOption) (*GetUserWithdrawItemsResponse, error)
 	CreateAppWithdrawSetting(ctx context.Context, in *CreateAppWithdrawSettingRequest, opts ...grpc.CallOption) (*CreateAppWithdrawSettingResponse, error)
@@ -741,6 +742,15 @@ func (c *cloudHashingBillingClient) GetUserWithdrawItemsByAppUser(ctx context.Co
 	return out, nil
 }
 
+func (c *cloudHashingBillingClient) GetUserWithdrawItemsByAppUserWithdrawType(ctx context.Context, in *GetUserWithdrawItemsByAppUserWithdrawTypeRequest, opts ...grpc.CallOption) (*GetUserWithdrawItemsByAppUserWithdrawTypeResponse, error) {
+	out := new(GetUserWithdrawItemsByAppUserWithdrawTypeResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserWithdrawItemsByAppUserWithdrawType", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingBillingClient) GetUserWithdrawItemsByOtherAppUser(ctx context.Context, in *GetUserWithdrawItemsByOtherAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawItemsByOtherAppUserResponse, error) {
 	out := new(GetUserWithdrawItemsByOtherAppUserResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserWithdrawItemsByOtherAppUser", in, out, opts...)
@@ -959,6 +969,7 @@ type CloudHashingBillingServer interface {
 	GetUserWithdrawItem(context.Context, *GetUserWithdrawItemRequest) (*GetUserWithdrawItemResponse, error)
 	GetUserWithdrawItemsByAccount(context.Context, *GetUserWithdrawItemsByAccountRequest) (*GetUserWithdrawItemsByAccountResponse, error)
 	GetUserWithdrawItemsByAppUser(context.Context, *GetUserWithdrawItemsByAppUserRequest) (*GetUserWithdrawItemsByAppUserResponse, error)
+	GetUserWithdrawItemsByAppUserWithdrawType(context.Context, *GetUserWithdrawItemsByAppUserWithdrawTypeRequest) (*GetUserWithdrawItemsByAppUserWithdrawTypeResponse, error)
 	GetUserWithdrawItemsByOtherAppUser(context.Context, *GetUserWithdrawItemsByOtherAppUserRequest) (*GetUserWithdrawItemsByOtherAppUserResponse, error)
 	GetUserWithdrawItems(context.Context, *GetUserWithdrawItemsRequest) (*GetUserWithdrawItemsResponse, error)
 	CreateAppWithdrawSetting(context.Context, *CreateAppWithdrawSettingRequest) (*CreateAppWithdrawSettingResponse, error)
@@ -1188,6 +1199,9 @@ func (UnimplementedCloudHashingBillingServer) GetUserWithdrawItemsByAccount(cont
 }
 func (UnimplementedCloudHashingBillingServer) GetUserWithdrawItemsByAppUser(context.Context, *GetUserWithdrawItemsByAppUserRequest) (*GetUserWithdrawItemsByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserWithdrawItemsByAppUser not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetUserWithdrawItemsByAppUserWithdrawType(context.Context, *GetUserWithdrawItemsByAppUserWithdrawTypeRequest) (*GetUserWithdrawItemsByAppUserWithdrawTypeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserWithdrawItemsByAppUserWithdrawType not implemented")
 }
 func (UnimplementedCloudHashingBillingServer) GetUserWithdrawItemsByOtherAppUser(context.Context, *GetUserWithdrawItemsByOtherAppUserRequest) (*GetUserWithdrawItemsByOtherAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserWithdrawItemsByOtherAppUser not implemented")
@@ -2492,6 +2506,24 @@ func _CloudHashingBilling_GetUserWithdrawItemsByAppUser_Handler(srv interface{},
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingBilling_GetUserWithdrawItemsByAppUserWithdrawType_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserWithdrawItemsByAppUserWithdrawTypeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetUserWithdrawItemsByAppUserWithdrawType(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserWithdrawItemsByAppUserWithdrawType",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetUserWithdrawItemsByAppUserWithdrawType(ctx, req.(*GetUserWithdrawItemsByAppUserWithdrawTypeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingBilling_GetUserWithdrawItemsByOtherAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserWithdrawItemsByOtherAppUserRequest)
 	if err := dec(in); err != nil {
@@ -3062,6 +3094,10 @@ var CloudHashingBilling_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetUserWithdrawItemsByAppUser",
 			Handler:    _CloudHashingBilling_GetUserWithdrawItemsByAppUser_Handler,
+		},
+		{
+			MethodName: "GetUserWithdrawItemsByAppUserWithdrawType",
+			Handler:    _CloudHashingBilling_GetUserWithdrawItemsByAppUserWithdrawType_Handler,
 		},
 		{
 			MethodName: "GetUserWithdrawItemsByOtherAppUser",

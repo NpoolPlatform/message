@@ -2251,6 +2251,38 @@
         ]
       }
     },
+    "/v1/get/user/withdraw/items/by/app/user/withdraw/type": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserWithdrawItemsByAppUserWithdrawType",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawItemsByAppUserWithdrawTypeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawItemsByAppUserWithdrawTypeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/user/withdraw/items/by/other/app/user": {
       "post": {
         "operationId": "CloudHashingBilling_GetUserWithdrawItemsByOtherAppUser",
@@ -4134,6 +4166,28 @@
       }
     },
     "v1GetUserWithdrawItemsByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserWithdrawItem"
+          }
+        }
+      }
+    },
+    "v1GetUserWithdrawItemsByAppUserWithdrawTypeRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserWithdrawItemsByAppUserWithdrawTypeResponse": {
       "type": "object",
       "properties": {
         "Infos": {

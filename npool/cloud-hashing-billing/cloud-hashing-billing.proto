@@ -437,6 +437,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetUserWithdrawItemsByAppUserWithdrawType (GetUserWithdrawItemsByAppUserWithdrawTypeRequest) returns (GetUserWithdrawItemsByAppUserWithdrawTypeResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraw/items/by/app/user/withdraw/type"
+            body: "*"
+        };
+    }
     rpc GetUserWithdrawItemsByOtherAppUser (GetUserWithdrawItemsByOtherAppUserRequest) returns (GetUserWithdrawItemsByOtherAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/withdraw/items/by/other/app/user"
@@ -1244,6 +1250,15 @@ message GetUserWithdrawItemsByAppUserRequest {
 }
 
 message GetUserWithdrawItemsByAppUserResponse {
+    repeated UserWithdrawItem Infos = 10;
+}
+
+message GetUserWithdrawItemsByAppUserWithdrawTypeRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetUserWithdrawItemsByAppUserWithdrawTypeResponse {
     repeated UserWithdrawItem Infos = 10;
 }
 
