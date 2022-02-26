@@ -126,7 +126,7 @@ export type UpdateAppInvitationSettingResponse = {
 export type AppPurchaseAmountSetting = {
   id?: string
   appID?: string
-  amount?: string
+  amount?: number
   percent?: number
   title?: string
   badgeLarge?: string

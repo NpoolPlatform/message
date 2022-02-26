@@ -1347,13 +1347,13 @@ type AppPurchaseAmountSetting struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID         string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	AppID      string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	Amount     uint64 `protobuf:"varint,30,opt,name=Amount,proto3" json:"Amount,omitempty"`
-	Percent    uint32 `protobuf:"varint,40,opt,name=Percent,proto3" json:"Percent,omitempty"`
-	Title      string `protobuf:"bytes,50,opt,name=Title,proto3" json:"Title,omitempty"`
-	BadgeLarge string `protobuf:"bytes,60,opt,name=BadgeLarge,proto3" json:"BadgeLarge,omitempty"`
-	BadgeSmall string `protobuf:"bytes,70,opt,name=BadgeSmall,proto3" json:"BadgeSmall,omitempty"`
+	ID         string  `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+	AppID      string  `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	Amount     float64 `protobuf:"fixed64,30,opt,name=Amount,proto3" json:"Amount,omitempty"`
+	Percent    uint32  `protobuf:"varint,40,opt,name=Percent,proto3" json:"Percent,omitempty"`
+	Title      string  `protobuf:"bytes,50,opt,name=Title,proto3" json:"Title,omitempty"`
+	BadgeLarge string  `protobuf:"bytes,60,opt,name=BadgeLarge,proto3" json:"BadgeLarge,omitempty"`
+	BadgeSmall string  `protobuf:"bytes,70,opt,name=BadgeSmall,proto3" json:"BadgeSmall,omitempty"`
 }
 
 func (x *AppPurchaseAmountSetting) Reset() {
@@ -1402,7 +1402,7 @@ func (x *AppPurchaseAmountSetting) GetAppID() string {
 	return ""
 }
 
-func (x *AppPurchaseAmountSetting) GetAmount() uint64 {
+func (x *AppPurchaseAmountSetting) GetAmount() float64 {
 	if x != nil {
 		return x.Amount
 	}
@@ -10493,7 +10493,7 @@ var file_npool_cloud_hashing_inspire_cloud_hashing_inspire_proto_rawDesc = []byt
 	0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05,
 	0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70,
 	0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x1e, 0x20, 0x01,
-	0x28, 0x04, 0x52, 0x06, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x50, 0x65,
+	0x28, 0x01, 0x52, 0x06, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x50, 0x65,
 	0x72, 0x63, 0x65, 0x6e, 0x74, 0x18, 0x28, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x07, 0x50, 0x65, 0x72,
 	0x63, 0x65, 0x6e, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x32, 0x20,
 	0x01, 0x28, 0x09, 0x52, 0x05, 0x54, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x1e, 0x0a, 0x0a, 0x42, 0x61,

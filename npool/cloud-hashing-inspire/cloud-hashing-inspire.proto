@@ -712,7 +712,7 @@ message UpdateAppInvitationSettingResponse {
 message AppPurchaseAmountSetting {
     string ID = 10;
     string AppID = 20;
-    uint64 Amount = 30;
+    double Amount = 30;
     uint32 Percent = 40;
     string Title = 50;
     string BadgeLarge = 60;

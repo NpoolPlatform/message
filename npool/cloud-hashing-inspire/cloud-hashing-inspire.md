@@ -513,7 +513,7 @@ request body and response
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
-| Amount | [uint64](#uint64) |  |  |
+| Amount | [double](#double) |  |  |
 | Percent | [uint32](#uint32) |  |  |
 | Title | [string](#string) |  |  |
 | BadgeLarge | [string](#string) |  |  |
@@ -3747,7 +3747,7 @@ request body and response
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
-| Amount | [uint64](#uint64) |  |  |
+| Amount | [double](#double) |  |  |
 | Percent | [uint32](#uint32) |  |  |
 | Title | [string](#string) |  |  |
 | BadgeLarge | [string](#string) |  |  |

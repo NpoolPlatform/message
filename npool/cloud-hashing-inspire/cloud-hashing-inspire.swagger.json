@@ -3162,8 +3162,8 @@
           "type": "string"
         },
         "Amount": {
-          "type": "string",
-          "format": "uint64"
+          "type": "number",
+          "format": "double"
         },
         "Percent": {
           "type": "integer",
