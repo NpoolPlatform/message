@@ -593,6 +593,8 @@
 | Title | [string](#string) |  |  |
 | BadgeLarge | [string](#string) |  |  |
 | BadgeSmall | [string](#string) |  |  |
+| Start | [uint32](#uint32) |  |  |
+| End | [uint32](#uint32) |  |  |
 
 
 
@@ -637,6 +639,8 @@
 | Title | [string](#string) |  |  |
 | BadgeLarge | [string](#string) |  |  |
 | BadgeSmall | [string](#string) |  |  |
+| Start | [uint32](#uint32) |  |  |
+| End | [uint32](#uint32) |  |  |
 
 
 
@@ -4417,6 +4421,8 @@ Service Name
 | Title | [string](#string) |  |  |
 | BadgeLarge | [string](#string) |  |  |
 | BadgeSmall | [string](#string) |  |  |
+| Start | [uint32](#uint32) |  |  |
+| End | [uint32](#uint32) |  |  |
 
 
 
@@ -4461,6 +4467,8 @@ Service Name
 | Title | [string](#string) |  |  |
 | BadgeLarge | [string](#string) |  |  |
 | BadgeSmall | [string](#string) |  |  |
+| Start | [uint32](#uint32) |  |  |
+| End | [uint32](#uint32) |  |  |
 
 
 

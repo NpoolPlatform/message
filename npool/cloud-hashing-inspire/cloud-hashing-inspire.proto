@@ -923,6 +923,8 @@ message AppPurchaseAmountSetting {
     string Title = 50;
     string BadgeLarge = 60;
     string BadgeSmall = 70;
+    uint32 Start = 80;
+    uint32 End = 90;
 }
 
 message CreateAppPurchaseAmountSettingRequest {
@@ -983,6 +985,8 @@ message AppUserPurchaseAmountSetting {
     string Title = 60;
     string BadgeLarge = 70;
     string BadgeSmall = 80;
+    uint32 Start = 90;
+    uint32 End = 100;
 }
 
 message CreateAppUserPurchaseAmountSettingRequest {

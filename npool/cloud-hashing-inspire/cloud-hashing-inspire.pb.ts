@@ -231,6 +231,8 @@ export type AppPurchaseAmountSetting = {
   title?: string
   badgeLarge?: string
   badgeSmall?: string
+  start?: number
+  end?: number
 }
 
 export type CreateAppPurchaseAmountSettingRequest = {
@@ -291,6 +293,8 @@ export type AppUserPurchaseAmountSetting = {
   title?: string
   badgeLarge?: string
   badgeSmall?: string
+  start?: number
+  end?: number
 }
 
 export type CreateAppUserPurchaseAmountSettingRequest = {

@@ -3723,6 +3723,14 @@
         },
         "BadgeSmall": {
           "type": "string"
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "End": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -3785,6 +3793,14 @@
         },
         "BadgeSmall": {
           "type": "string"
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "End": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
