@@ -4,6 +4,7 @@
 ## Table of Contents
 
 - [npool/cloud-hashing-apis/cloud-hashing-apis.proto](#npool/cloud-hashing-apis/cloud-hashing-apis.proto)
+    - [Commission](#cloud.hashing.apis.v1.Commission)
     - [Coupon](#cloud.hashing.apis.v1.Coupon)
     - [Coupons](#cloud.hashing.apis.v1.Coupons)
     - [CreateGoodRequest](#cloud.hashing.apis.v1.CreateGoodRequest)
@@ -16,6 +17,8 @@
     - [CreatePlatformCoinAccountResponse](#cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse)
     - [CreateUserCoinAccountRequest](#cloud.hashing.apis.v1.CreateUserCoinAccountRequest)
     - [CreateUserCoinAccountResponse](#cloud.hashing.apis.v1.CreateUserCoinAccountResponse)
+    - [GetCommissionByAppUserRequest](#cloud.hashing.apis.v1.GetCommissionByAppUserRequest)
+    - [GetCommissionByAppUserResponse](#cloud.hashing.apis.v1.GetCommissionByAppUserResponse)
     - [GetCouponsByAppUserRequest](#cloud.hashing.apis.v1.GetCouponsByAppUserRequest)
     - [GetCouponsByAppUserResponse](#cloud.hashing.apis.v1.GetCouponsByAppUserResponse)
     - [GetGoodRequest](#cloud.hashing.apis.v1.GetGoodRequest)
@@ -109,6 +112,7 @@
     - [CloudHashingApis](#cloud.hashing.apis.v1.CloudHashingApis)
   
 - [npool/cloud-hashing-apis/cloud-hashing-apis.proto](#npool/cloud-hashing-apis/cloud-hashing-apis.proto)
+    - [Commission](#cloud.hashing.apis.v1.Commission)
     - [Coupon](#cloud.hashing.apis.v1.Coupon)
     - [Coupons](#cloud.hashing.apis.v1.Coupons)
     - [CreateGoodRequest](#cloud.hashing.apis.v1.CreateGoodRequest)
@@ -121,6 +125,8 @@
     - [CreatePlatformCoinAccountResponse](#cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse)
     - [CreateUserCoinAccountRequest](#cloud.hashing.apis.v1.CreateUserCoinAccountRequest)
     - [CreateUserCoinAccountResponse](#cloud.hashing.apis.v1.CreateUserCoinAccountResponse)
+    - [GetCommissionByAppUserRequest](#cloud.hashing.apis.v1.GetCommissionByAppUserRequest)
+    - [GetCommissionByAppUserResponse](#cloud.hashing.apis.v1.GetCommissionByAppUserResponse)
     - [GetCouponsByAppUserRequest](#cloud.hashing.apis.v1.GetCouponsByAppUserRequest)
     - [GetCouponsByAppUserResponse](#cloud.hashing.apis.v1.GetCouponsByAppUserResponse)
     - [GetGoodRequest](#cloud.hashing.apis.v1.GetGoodRequest)
@@ -224,6 +230,21 @@
 
 
 
+<a name="cloud.hashing.apis.v1.Commission"></a>
+
+### Commission
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Amount | [double](#double) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.Coupon"></a>
 
 ### Coupon
@@ -402,6 +423,37 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [cloud.hashing.billing.v1.CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetCommissionByAppUserRequest"></a>
+
+### GetCommissionByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetCommissionByAppUserResponse"></a>
+
+### GetCommissionByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Commission](#cloud.hashing.apis.v1.Commission) |  |  |
 
 
 
@@ -1900,6 +1952,7 @@ Cloud Hashing Goods
 | SetWithdrawAddress | [SetWithdrawAddressRequest](#cloud.hashing.apis.v1.SetWithdrawAddressRequest) | [SetWithdrawAddressResponse](#cloud.hashing.apis.v1.SetWithdrawAddressResponse) |  |
 | GetWithdrawAddressesByAppUser | [GetWithdrawAddressesByAppUserRequest](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserRequest) | [GetWithdrawAddressesByAppUserResponse](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserResponse) |  |
 | GetCouponsByAppUser | [GetCouponsByAppUserRequest](#cloud.hashing.apis.v1.GetCouponsByAppUserRequest) | [GetCouponsByAppUserResponse](#cloud.hashing.apis.v1.GetCouponsByAppUserResponse) |  |
+| GetCommissionByAppUser | [GetCommissionByAppUserRequest](#cloud.hashing.apis.v1.GetCommissionByAppUserRequest) | [GetCommissionByAppUserResponse](#cloud.hashing.apis.v1.GetCommissionByAppUserResponse) |  |
 
  
 
@@ -1912,6 +1965,21 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud.hashing.apis.v1.Commission"></a>
+
+### Commission
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Amount | [double](#double) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.Coupon"></a>
 
 ### Coupon
@@ -2090,6 +2158,37 @@ Cloud Hashing Goods
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [cloud.hashing.billing.v1.CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetCommissionByAppUserRequest"></a>
+
+### GetCommissionByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.GetCommissionByAppUserResponse"></a>
+
+### GetCommissionByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Commission](#cloud.hashing.apis.v1.Commission) |  |  |
 
 
 
@@ -3588,6 +3687,7 @@ Cloud Hashing Goods
 | SetWithdrawAddress | [SetWithdrawAddressRequest](#cloud.hashing.apis.v1.SetWithdrawAddressRequest) | [SetWithdrawAddressResponse](#cloud.hashing.apis.v1.SetWithdrawAddressResponse) |  |
 | GetWithdrawAddressesByAppUser | [GetWithdrawAddressesByAppUserRequest](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserRequest) | [GetWithdrawAddressesByAppUserResponse](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserResponse) |  |
 | GetCouponsByAppUser | [GetCouponsByAppUserRequest](#cloud.hashing.apis.v1.GetCouponsByAppUserRequest) | [GetCouponsByAppUserResponse](#cloud.hashing.apis.v1.GetCouponsByAppUserResponse) |  |
+| GetCommissionByAppUser | [GetCommissionByAppUserRequest](#cloud.hashing.apis.v1.GetCommissionByAppUserRequest) | [GetCommissionByAppUserResponse](#cloud.hashing.apis.v1.GetCommissionByAppUserResponse) |  |
 
  
 

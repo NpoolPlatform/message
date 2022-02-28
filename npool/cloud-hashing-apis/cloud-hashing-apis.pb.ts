@@ -510,6 +510,19 @@ export type GetCouponsByAppUserResponse = {
   info?: Coupons
 }
 
+export type Commission = {
+  amount?: number
+}
+
+export type GetCommissionByAppUserRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetCommissionByAppUserResponse = {
+  info?: Commission
+}
+
 export class CloudHashingApis {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -633,5 +646,8 @@ export class CloudHashingApis {
   }
   static GetCouponsByAppUser(req: GetCouponsByAppUserRequest, initReq?: fm.InitReq): Promise<GetCouponsByAppUserResponse> {
     return fm.fetchReq<GetCouponsByAppUserRequest, GetCouponsByAppUserResponse>(`/v1/get/coupons/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCommissionByAppUser(req: GetCommissionByAppUserRequest, initReq?: fm.InitReq): Promise<GetCommissionByAppUserResponse> {
+    return fm.fetchReq<GetCommissionByAppUserRequest, GetCommissionByAppUserResponse>(`/v1/get/commission/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

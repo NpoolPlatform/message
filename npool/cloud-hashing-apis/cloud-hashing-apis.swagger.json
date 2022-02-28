@@ -171,6 +171,38 @@
         ]
       }
     },
+    "/v1/get/commission/by/app/user": {
+      "post": {
+        "operationId": "CloudHashingApis_GetCommissionByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCommissionByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCommissionByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/coupons/by/app/user": {
       "post": {
         "operationId": "CloudHashingApis_GetCouponsByAppUser",
@@ -2034,6 +2066,15 @@
         }
       }
     },
+    "v1Commission": {
+      "type": "object",
+      "properties": {
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
     "v1Compensate": {
       "type": "object",
       "properties": {
@@ -2329,6 +2370,25 @@
         },
         "FeeTypeID": {
           "type": "string"
+        }
+      }
+    },
+    "v1GetCommissionByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetCommissionByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Commission"
         }
       }
     },

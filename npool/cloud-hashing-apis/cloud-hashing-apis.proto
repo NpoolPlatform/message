@@ -277,6 +277,13 @@ service CloudHashingApis {
             body: "*"
         };
     }
+
+    rpc GetCommissionByAppUser (GetCommissionByAppUserRequest) returns (GetCommissionByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/commission/by/app/user"
+            body: "*"
+        };
+    }
 }
 
 // Request body and response
@@ -778,4 +785,17 @@ message GetCouponsByAppUserRequest {
 
 message GetCouponsByAppUserResponse {
     Coupons Info = 10;
+}
+
+message Commission {
+    double Amount = 10;
+}
+
+message GetCommissionByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetCommissionByAppUserResponse {
+    Commission Info = 10;
 }

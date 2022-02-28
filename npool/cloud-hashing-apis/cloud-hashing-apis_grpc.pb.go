@@ -65,6 +65,7 @@ type CloudHashingApisClient interface {
 	SetWithdrawAddress(ctx context.Context, in *SetWithdrawAddressRequest, opts ...grpc.CallOption) (*SetWithdrawAddressResponse, error)
 	GetWithdrawAddressesByAppUser(ctx context.Context, in *GetWithdrawAddressesByAppUserRequest, opts ...grpc.CallOption) (*GetWithdrawAddressesByAppUserResponse, error)
 	GetCouponsByAppUser(ctx context.Context, in *GetCouponsByAppUserRequest, opts ...grpc.CallOption) (*GetCouponsByAppUserResponse, error)
+	GetCommissionByAppUser(ctx context.Context, in *GetCommissionByAppUserRequest, opts ...grpc.CallOption) (*GetCommissionByAppUserResponse, error)
 }
 
 type cloudHashingApisClient struct {
@@ -444,6 +445,15 @@ func (c *cloudHashingApisClient) GetCouponsByAppUser(ctx context.Context, in *Ge
 	return out, nil
 }
 
+func (c *cloudHashingApisClient) GetCommissionByAppUser(ctx context.Context, in *GetCommissionByAppUserRequest, opts ...grpc.CallOption) (*GetCommissionByAppUserResponse, error) {
+	out := new(GetCommissionByAppUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetCommissionByAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CloudHashingApisServer is the server API for CloudHashingApis service.
 // All implementations must embed UnimplementedCloudHashingApisServer
 // for forward compatibility
@@ -489,6 +499,7 @@ type CloudHashingApisServer interface {
 	SetWithdrawAddress(context.Context, *SetWithdrawAddressRequest) (*SetWithdrawAddressResponse, error)
 	GetWithdrawAddressesByAppUser(context.Context, *GetWithdrawAddressesByAppUserRequest) (*GetWithdrawAddressesByAppUserResponse, error)
 	GetCouponsByAppUser(context.Context, *GetCouponsByAppUserRequest) (*GetCouponsByAppUserResponse, error)
+	GetCommissionByAppUser(context.Context, *GetCommissionByAppUserRequest) (*GetCommissionByAppUserResponse, error)
 	mustEmbedUnimplementedCloudHashingApisServer()
 }
 
@@ -618,6 +629,9 @@ func (UnimplementedCloudHashingApisServer) GetWithdrawAddressesByAppUser(context
 }
 func (UnimplementedCloudHashingApisServer) GetCouponsByAppUser(context.Context, *GetCouponsByAppUserRequest) (*GetCouponsByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCouponsByAppUser not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetCommissionByAppUser(context.Context, *GetCommissionByAppUserRequest) (*GetCommissionByAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCommissionByAppUser not implemented")
 }
 func (UnimplementedCloudHashingApisServer) mustEmbedUnimplementedCloudHashingApisServer() {}
 
@@ -1370,6 +1384,24 @@ func _CloudHashingApis_GetCouponsByAppUser_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingApis_GetCommissionByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCommissionByAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetCommissionByAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetCommissionByAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetCommissionByAppUser(ctx, req.(*GetCommissionByAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CloudHashingApis_ServiceDesc is the grpc.ServiceDesc for CloudHashingApis service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1540,6 +1572,10 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCouponsByAppUser",
 			Handler:    _CloudHashingApis_GetCouponsByAppUser_Handler,
+		},
+		{
+			MethodName: "GetCommissionByAppUser",
+			Handler:    _CloudHashingApis_GetCommissionByAppUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
