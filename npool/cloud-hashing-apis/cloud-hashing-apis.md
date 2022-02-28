@@ -1227,6 +1227,8 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | Units | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
+| CoinUSDCurrency | [double](#double) |  |  |
+| Commission | [double](#double) |  |  |
 
 
 
@@ -2914,6 +2916,8 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | Units | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
+| CoinUSDCurrency | [double](#double) |  |  |
+| Commission | [double](#double) |  |  |
 
 
 

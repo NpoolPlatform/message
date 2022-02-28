@@ -216,6 +216,8 @@ export type UpdatePhoneNOResponse = {
 export type InvitationSummary = {
   units?: number
   amount?: number
+  coinUSDCurrency?: number
+  commission?: number
 }
 
 export type InvitationUserInfo = {

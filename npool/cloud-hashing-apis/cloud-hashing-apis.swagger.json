@@ -2844,6 +2844,14 @@
         "Amount": {
           "type": "number",
           "format": "double"
+        },
+        "CoinUSDCurrency": {
+          "type": "number",
+          "format": "double"
+        },
+        "Commission": {
+          "type": "number",
+          "format": "double"
         }
       }
     },

@@ -481,6 +481,8 @@ message UpdatePhoneNOResponse {
 message InvitationSummary {
     uint32 Units = 10;
     double Amount = 20;
+    double CoinUSDCurrency = 30;
+    double Commission = 40;
 }
 
 message InvitationUserInfo {
