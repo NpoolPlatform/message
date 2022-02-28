@@ -511,7 +511,8 @@ export type GetCouponsByAppUserResponse = {
 }
 
 export type Commission = {
-  amount?: number
+  total?: number
+  balance?: number
 }
 
 export type GetCommissionByAppUserRequest = {

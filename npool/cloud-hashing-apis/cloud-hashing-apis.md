@@ -238,7 +238,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Amount | [double](#double) |  |  |
+| Total | [double](#double) |  |  |
+| Balance | [double](#double) |  |  |
 
 
 
@@ -1973,7 +1974,8 @@ Cloud Hashing Goods
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Amount | [double](#double) |  |  |
+| Total | [double](#double) |  |  |
+| Balance | [double](#double) |  |  |
 
 
 

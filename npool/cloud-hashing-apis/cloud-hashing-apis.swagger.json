@@ -2069,7 +2069,11 @@
     "v1Commission": {
       "type": "object",
       "properties": {
-        "Amount": {
+        "Total": {
+          "type": "number",
+          "format": "double"
+        },
+        "Balance": {
           "type": "number",
           "format": "double"
         }

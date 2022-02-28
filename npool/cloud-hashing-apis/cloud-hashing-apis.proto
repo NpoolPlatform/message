@@ -788,7 +788,8 @@ message GetCouponsByAppUserResponse {
 }
 
 message Commission {
-    double Amount = 10;
+    double Total = 10;
+    double Balance = 20;
 }
 
 message GetCommissionByAppUserRequest {
