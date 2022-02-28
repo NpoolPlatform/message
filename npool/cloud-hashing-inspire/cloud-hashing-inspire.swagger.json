@@ -299,70 +299,6 @@
         ]
       }
     },
-    "/v1/create/app/user/invitation/setting": {
-      "post": {
-        "operationId": "CloudHashingInspire_CreateAppUserInvitationSetting",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateAppUserInvitationSettingResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateAppUserInvitationSettingRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingInspire"
-        ]
-      }
-    },
-    "/v1/create/app/user/invitation/setting/for/other/app/user": {
-      "post": {
-        "operationId": "CloudHashingInspire_CreateAppUserInvitationSettingForOtherAppUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateAppUserInvitationSettingForOtherAppUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateAppUserInvitationSettingForOtherAppUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingInspire"
-        ]
-      }
-    },
     "/v1/create/app/user/purchase/amount/setting": {
       "post": {
         "operationId": "CloudHashingInspire_CreateAppUserPurchaseAmountSetting",
@@ -1443,134 +1379,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppPurchaseAmountSettingsByOtherAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingInspire"
-        ]
-      }
-    },
-    "/v1/get/app/user/invitation/setting": {
-      "post": {
-        "operationId": "CloudHashingInspire_GetAppUserInvitationSetting",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppUserInvitationSettingResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppUserInvitationSettingRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingInspire"
-        ]
-      }
-    },
-    "/v1/get/app/user/invitation/settings/by/app": {
-      "post": {
-        "operationId": "CloudHashingInspire_GetAppUserInvitationSettingsByApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppUserInvitationSettingsByAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppUserInvitationSettingsByAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingInspire"
-        ]
-      }
-    },
-    "/v1/get/app/user/invitation/settings/by/app/user": {
-      "post": {
-        "operationId": "CloudHashingInspire_GetAppUserInvitationSettingsByAppUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppUserInvitationSettingsByAppUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppUserInvitationSettingsByAppUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingInspire"
-        ]
-      }
-    },
-    "/v1/get/app/user/invitation/settings/by/other/app": {
-      "post": {
-        "operationId": "CloudHashingInspire_GetAppUserInvitationSettingsByOtherApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppUserInvitationSettingsByOtherAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppUserInvitationSettingsByOtherAppRequest"
             }
           }
         ],
@@ -3179,38 +2987,6 @@
         ]
       }
     },
-    "/v1/update/app/user/invitation/setting": {
-      "post": {
-        "operationId": "CloudHashingInspire_UpdateAppUserInvitationSetting",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateAppUserInvitationSettingResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateAppUserInvitationSettingRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingInspire"
-        ]
-      }
-    },
     "/v1/update/app/user/purchase/amount/setting": {
       "post": {
         "operationId": "CloudHashingInspire_UpdateAppUserPurchaseAmountSetting",
@@ -3734,37 +3510,6 @@
         }
       }
     },
-    "v1AppUserInvitationSetting": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Count": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Discount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "BadgeLarge": {
-          "type": "string"
-        },
-        "BadgeSmall": {
-          "type": "string"
-        }
-      }
-    },
     "v1AppUserPurchaseAmountSetting": {
       "type": "object",
       "properties": {
@@ -4042,44 +3787,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppPurchaseAmountSetting"
-        }
-      }
-    },
-    "v1CreateAppUserInvitationSettingForOtherAppUserRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "Info": {
-          "$ref": "#/definitions/v1AppUserInvitationSetting"
-        }
-      }
-    },
-    "v1CreateAppUserInvitationSettingForOtherAppUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserInvitationSetting"
-        }
-      }
-    },
-    "v1CreateAppUserInvitationSettingRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserInvitationSetting"
-        }
-      }
-    },
-    "v1CreateAppUserInvitationSettingResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserInvitationSetting"
         }
       }
     },
@@ -4761,82 +4468,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1AppPurchaseAmountSetting"
-          }
-        }
-      }
-    },
-    "v1GetAppUserInvitationSettingRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppUserInvitationSettingResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserInvitationSetting"
-        }
-      }
-    },
-    "v1GetAppUserInvitationSettingsByAppRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppUserInvitationSettingsByAppResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AppUserInvitationSetting"
-          }
-        }
-      }
-    },
-    "v1GetAppUserInvitationSettingsByAppUserRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppUserInvitationSettingsByAppUserResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AppUserInvitationSetting"
-          }
-        }
-      }
-    },
-    "v1GetAppUserInvitationSettingsByOtherAppRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppUserInvitationSettingsByOtherAppResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AppUserInvitationSetting"
           }
         }
       }
@@ -5784,22 +5415,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppPurchaseAmountSetting"
-        }
-      }
-    },
-    "v1UpdateAppUserInvitationSettingRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserInvitationSetting"
-        }
-      }
-    },
-    "v1UpdateAppUserInvitationSettingResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserInvitationSetting"
         }
       }
     },

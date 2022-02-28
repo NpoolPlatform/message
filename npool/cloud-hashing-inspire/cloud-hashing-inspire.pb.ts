@@ -153,76 +153,6 @@ export type UpdateAppInvitationSettingResponse = {
   info?: AppInvitationSetting
 }
 
-export type AppUserInvitationSetting = {
-  id?: string
-  appID?: string
-  userID?: string
-  count?: number
-  discount?: number
-  title?: string
-  badgeLarge?: string
-  badgeSmall?: string
-}
-
-export type CreateAppUserInvitationSettingRequest = {
-  info?: AppUserInvitationSetting
-}
-
-export type CreateAppUserInvitationSettingResponse = {
-  info?: AppUserInvitationSetting
-}
-
-export type CreateAppUserInvitationSettingForOtherAppUserRequest = {
-  targetAppID?: string
-  targetUserID?: string
-  info?: AppUserInvitationSetting
-}
-
-export type CreateAppUserInvitationSettingForOtherAppUserResponse = {
-  info?: AppUserInvitationSetting
-}
-
-export type GetAppUserInvitationSettingRequest = {
-  id?: string
-}
-
-export type GetAppUserInvitationSettingResponse = {
-  info?: AppUserInvitationSetting
-}
-
-export type GetAppUserInvitationSettingsByAppRequest = {
-  appID?: string
-}
-
-export type GetAppUserInvitationSettingsByAppResponse = {
-  infos?: AppUserInvitationSetting[]
-}
-
-export type GetAppUserInvitationSettingsByOtherAppRequest = {
-  targetAppID?: string
-}
-
-export type GetAppUserInvitationSettingsByOtherAppResponse = {
-  infos?: AppUserInvitationSetting[]
-}
-
-export type GetAppUserInvitationSettingsByAppUserRequest = {
-  appID?: string
-  userID?: string
-}
-
-export type GetAppUserInvitationSettingsByAppUserResponse = {
-  infos?: AppUserInvitationSetting[]
-}
-
-export type UpdateAppUserInvitationSettingRequest = {
-  info?: AppUserInvitationSetting
-}
-
-export type UpdateAppUserInvitationSettingResponse = {
-  info?: AppUserInvitationSetting
-}
-
 export type AppPurchaseAmountSetting = {
   id?: string
   appID?: string
@@ -1137,27 +1067,6 @@ export class CloudHashingInspire {
   }
   static UpdateAppInvitationSetting(req: UpdateAppInvitationSettingRequest, initReq?: fm.InitReq): Promise<UpdateAppInvitationSettingResponse> {
     return fm.fetchReq<UpdateAppInvitationSettingRequest, UpdateAppInvitationSettingResponse>(`/v1/update/app/invitation/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static CreateAppUserInvitationSetting(req: CreateAppUserInvitationSettingRequest, initReq?: fm.InitReq): Promise<CreateAppUserInvitationSettingResponse> {
-    return fm.fetchReq<CreateAppUserInvitationSettingRequest, CreateAppUserInvitationSettingResponse>(`/v1/create/app/user/invitation/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static CreateAppUserInvitationSettingForOtherAppUser(req: CreateAppUserInvitationSettingForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateAppUserInvitationSettingForOtherAppUserResponse> {
-    return fm.fetchReq<CreateAppUserInvitationSettingForOtherAppUserRequest, CreateAppUserInvitationSettingForOtherAppUserResponse>(`/v1/create/app/user/invitation/setting/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetAppUserInvitationSetting(req: GetAppUserInvitationSettingRequest, initReq?: fm.InitReq): Promise<GetAppUserInvitationSettingResponse> {
-    return fm.fetchReq<GetAppUserInvitationSettingRequest, GetAppUserInvitationSettingResponse>(`/v1/get/app/user/invitation/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetAppUserInvitationSettingsByApp(req: GetAppUserInvitationSettingsByAppRequest, initReq?: fm.InitReq): Promise<GetAppUserInvitationSettingsByAppResponse> {
-    return fm.fetchReq<GetAppUserInvitationSettingsByAppRequest, GetAppUserInvitationSettingsByAppResponse>(`/v1/get/app/user/invitation/settings/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetAppUserInvitationSettingsByOtherApp(req: GetAppUserInvitationSettingsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppUserInvitationSettingsByOtherAppResponse> {
-    return fm.fetchReq<GetAppUserInvitationSettingsByOtherAppRequest, GetAppUserInvitationSettingsByOtherAppResponse>(`/v1/get/app/user/invitation/settings/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetAppUserInvitationSettingsByAppUser(req: GetAppUserInvitationSettingsByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserInvitationSettingsByAppUserResponse> {
-    return fm.fetchReq<GetAppUserInvitationSettingsByAppUserRequest, GetAppUserInvitationSettingsByAppUserResponse>(`/v1/get/app/user/invitation/settings/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static UpdateAppUserInvitationSetting(req: UpdateAppUserInvitationSettingRequest, initReq?: fm.InitReq): Promise<UpdateAppUserInvitationSettingResponse> {
-    return fm.fetchReq<UpdateAppUserInvitationSettingRequest, UpdateAppUserInvitationSettingResponse>(`/v1/update/app/user/invitation/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateAppPurchaseAmountSetting(req: CreateAppPurchaseAmountSettingRequest, initReq?: fm.InitReq): Promise<CreateAppPurchaseAmountSettingResponse> {
     return fm.fetchReq<CreateAppPurchaseAmountSettingRequest, CreateAppPurchaseAmountSettingResponse>(`/v1/create/app/purchase/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})

@@ -112,49 +112,6 @@ service CloudHashingInspire {
         };
     }
 
-    rpc CreateAppUserInvitationSetting (CreateAppUserInvitationSettingRequest) returns (CreateAppUserInvitationSettingResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/app/user/invitation/setting"
-            body: "*"
-        };
-    }
-    rpc CreateAppUserInvitationSettingForOtherAppUser (CreateAppUserInvitationSettingForOtherAppUserRequest) returns (CreateAppUserInvitationSettingForOtherAppUserResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/app/user/invitation/setting/for/other/app/user"
-            body: "*"
-        };
-    }
-    rpc GetAppUserInvitationSetting (GetAppUserInvitationSettingRequest) returns (GetAppUserInvitationSettingResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/user/invitation/setting"
-            body: "*"
-        };
-    }
-    rpc GetAppUserInvitationSettingsByApp (GetAppUserInvitationSettingsByAppRequest) returns (GetAppUserInvitationSettingsByAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/user/invitation/settings/by/app"
-            body: "*"
-        };
-    }
-    rpc GetAppUserInvitationSettingsByOtherApp (GetAppUserInvitationSettingsByOtherAppRequest) returns (GetAppUserInvitationSettingsByOtherAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/user/invitation/settings/by/other/app"
-            body: "*"
-        };
-    }
-    rpc GetAppUserInvitationSettingsByAppUser (GetAppUserInvitationSettingsByAppUserRequest) returns (GetAppUserInvitationSettingsByAppUserResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/user/invitation/settings/by/app/user"
-            body: "*"
-        };
-    }
-    rpc UpdateAppUserInvitationSetting (UpdateAppUserInvitationSettingRequest) returns (UpdateAppUserInvitationSettingResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/app/user/invitation/setting"
-            body: "*"
-        };
-    }
-
     rpc CreateAppPurchaseAmountSetting (CreateAppPurchaseAmountSettingRequest) returns (CreateAppPurchaseAmountSettingResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/purchase/amount/setting"
@@ -842,77 +799,6 @@ message UpdateAppInvitationSettingRequest {
 
 message UpdateAppInvitationSettingResponse {
     AppInvitationSetting Info = 10;
-}
-
-message AppUserInvitationSetting {
-    string ID = 10;
-    string AppID = 20;
-    string UserID = 30;
-    uint32 Count = 40;
-    uint32 Discount = 50;
-    string Title = 60;
-    string BadgeLarge = 70;
-    string BadgeSmall = 80;
-}
-
-message CreateAppUserInvitationSettingRequest {
-    AppUserInvitationSetting Info = 10;
-}
-
-message CreateAppUserInvitationSettingResponse {
-    AppUserInvitationSetting Info = 10;
-}
-
-message CreateAppUserInvitationSettingForOtherAppUserRequest {
-    string TargetAppID = 10;
-    string TargetUserID = 20;
-    AppUserInvitationSetting Info = 30;
-}
-
-message CreateAppUserInvitationSettingForOtherAppUserResponse {
-    AppUserInvitationSetting Info = 10;
-}
-
-message GetAppUserInvitationSettingRequest {
-    string ID = 10;
-}
-
-message GetAppUserInvitationSettingResponse {
-    AppUserInvitationSetting Info = 10;
-}
-
-message GetAppUserInvitationSettingsByAppRequest {
-    string AppID = 10;
-}
-
-message GetAppUserInvitationSettingsByAppResponse {
-    repeated AppUserInvitationSetting Infos = 10;
-}
-
-message GetAppUserInvitationSettingsByOtherAppRequest {
-    string TargetAppID = 10;
-}
-
-message GetAppUserInvitationSettingsByOtherAppResponse {
-    repeated AppUserInvitationSetting Infos = 10;
-}
-
-message GetAppUserInvitationSettingsByAppUserRequest {
-    string AppID = 10;
-    string UserID = 20;
-}
-
-message GetAppUserInvitationSettingsByAppUserResponse {
-    repeated AppUserInvitationSetting Infos = 10;
-}
-
-
-message UpdateAppUserInvitationSettingRequest {
-    AppUserInvitationSetting Info = 10;
-}
-
-message UpdateAppUserInvitationSettingResponse {
-    AppUserInvitationSetting Info = 10;
 }
 
 message AppPurchaseAmountSetting {

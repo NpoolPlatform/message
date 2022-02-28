@@ -41,13 +41,6 @@ type CloudHashingInspireClient interface {
 	GetAppInvitationSettingsByApp(ctx context.Context, in *GetAppInvitationSettingsByAppRequest, opts ...grpc.CallOption) (*GetAppInvitationSettingsByAppResponse, error)
 	GetAppInvitationSettingsByOtherApp(ctx context.Context, in *GetAppInvitationSettingsByOtherAppRequest, opts ...grpc.CallOption) (*GetAppInvitationSettingsByOtherAppResponse, error)
 	UpdateAppInvitationSetting(ctx context.Context, in *UpdateAppInvitationSettingRequest, opts ...grpc.CallOption) (*UpdateAppInvitationSettingResponse, error)
-	CreateAppUserInvitationSetting(ctx context.Context, in *CreateAppUserInvitationSettingRequest, opts ...grpc.CallOption) (*CreateAppUserInvitationSettingResponse, error)
-	CreateAppUserInvitationSettingForOtherAppUser(ctx context.Context, in *CreateAppUserInvitationSettingForOtherAppUserRequest, opts ...grpc.CallOption) (*CreateAppUserInvitationSettingForOtherAppUserResponse, error)
-	GetAppUserInvitationSetting(ctx context.Context, in *GetAppUserInvitationSettingRequest, opts ...grpc.CallOption) (*GetAppUserInvitationSettingResponse, error)
-	GetAppUserInvitationSettingsByApp(ctx context.Context, in *GetAppUserInvitationSettingsByAppRequest, opts ...grpc.CallOption) (*GetAppUserInvitationSettingsByAppResponse, error)
-	GetAppUserInvitationSettingsByOtherApp(ctx context.Context, in *GetAppUserInvitationSettingsByOtherAppRequest, opts ...grpc.CallOption) (*GetAppUserInvitationSettingsByOtherAppResponse, error)
-	GetAppUserInvitationSettingsByAppUser(ctx context.Context, in *GetAppUserInvitationSettingsByAppUserRequest, opts ...grpc.CallOption) (*GetAppUserInvitationSettingsByAppUserResponse, error)
-	UpdateAppUserInvitationSetting(ctx context.Context, in *UpdateAppUserInvitationSettingRequest, opts ...grpc.CallOption) (*UpdateAppUserInvitationSettingResponse, error)
 	CreateAppPurchaseAmountSetting(ctx context.Context, in *CreateAppPurchaseAmountSettingRequest, opts ...grpc.CallOption) (*CreateAppPurchaseAmountSettingResponse, error)
 	CreateAppPurchaseAmountSettingForOtherApp(ctx context.Context, in *CreateAppPurchaseAmountSettingForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppPurchaseAmountSettingForOtherAppResponse, error)
 	UpdateAppPurchaseAmountSetting(ctx context.Context, in *UpdateAppPurchaseAmountSettingRequest, opts ...grpc.CallOption) (*UpdateAppPurchaseAmountSettingResponse, error)
@@ -284,69 +277,6 @@ func (c *cloudHashingInspireClient) GetAppInvitationSettingsByOtherApp(ctx conte
 func (c *cloudHashingInspireClient) UpdateAppInvitationSetting(ctx context.Context, in *UpdateAppInvitationSettingRequest, opts ...grpc.CallOption) (*UpdateAppInvitationSettingResponse, error) {
 	out := new(UpdateAppInvitationSettingResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateAppInvitationSetting", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cloudHashingInspireClient) CreateAppUserInvitationSetting(ctx context.Context, in *CreateAppUserInvitationSettingRequest, opts ...grpc.CallOption) (*CreateAppUserInvitationSettingResponse, error) {
-	out := new(CreateAppUserInvitationSettingResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppUserInvitationSetting", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cloudHashingInspireClient) CreateAppUserInvitationSettingForOtherAppUser(ctx context.Context, in *CreateAppUserInvitationSettingForOtherAppUserRequest, opts ...grpc.CallOption) (*CreateAppUserInvitationSettingForOtherAppUserResponse, error) {
-	out := new(CreateAppUserInvitationSettingForOtherAppUserResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppUserInvitationSettingForOtherAppUser", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cloudHashingInspireClient) GetAppUserInvitationSetting(ctx context.Context, in *GetAppUserInvitationSettingRequest, opts ...grpc.CallOption) (*GetAppUserInvitationSettingResponse, error) {
-	out := new(GetAppUserInvitationSettingResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppUserInvitationSetting", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cloudHashingInspireClient) GetAppUserInvitationSettingsByApp(ctx context.Context, in *GetAppUserInvitationSettingsByAppRequest, opts ...grpc.CallOption) (*GetAppUserInvitationSettingsByAppResponse, error) {
-	out := new(GetAppUserInvitationSettingsByAppResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppUserInvitationSettingsByApp", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cloudHashingInspireClient) GetAppUserInvitationSettingsByOtherApp(ctx context.Context, in *GetAppUserInvitationSettingsByOtherAppRequest, opts ...grpc.CallOption) (*GetAppUserInvitationSettingsByOtherAppResponse, error) {
-	out := new(GetAppUserInvitationSettingsByOtherAppResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppUserInvitationSettingsByOtherApp", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cloudHashingInspireClient) GetAppUserInvitationSettingsByAppUser(ctx context.Context, in *GetAppUserInvitationSettingsByAppUserRequest, opts ...grpc.CallOption) (*GetAppUserInvitationSettingsByAppUserResponse, error) {
-	out := new(GetAppUserInvitationSettingsByAppUserResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppUserInvitationSettingsByAppUser", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cloudHashingInspireClient) UpdateAppUserInvitationSetting(ctx context.Context, in *UpdateAppUserInvitationSettingRequest, opts ...grpc.CallOption) (*UpdateAppUserInvitationSettingResponse, error) {
-	out := new(UpdateAppUserInvitationSettingResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateAppUserInvitationSetting", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1166,13 +1096,6 @@ type CloudHashingInspireServer interface {
 	GetAppInvitationSettingsByApp(context.Context, *GetAppInvitationSettingsByAppRequest) (*GetAppInvitationSettingsByAppResponse, error)
 	GetAppInvitationSettingsByOtherApp(context.Context, *GetAppInvitationSettingsByOtherAppRequest) (*GetAppInvitationSettingsByOtherAppResponse, error)
 	UpdateAppInvitationSetting(context.Context, *UpdateAppInvitationSettingRequest) (*UpdateAppInvitationSettingResponse, error)
-	CreateAppUserInvitationSetting(context.Context, *CreateAppUserInvitationSettingRequest) (*CreateAppUserInvitationSettingResponse, error)
-	CreateAppUserInvitationSettingForOtherAppUser(context.Context, *CreateAppUserInvitationSettingForOtherAppUserRequest) (*CreateAppUserInvitationSettingForOtherAppUserResponse, error)
-	GetAppUserInvitationSetting(context.Context, *GetAppUserInvitationSettingRequest) (*GetAppUserInvitationSettingResponse, error)
-	GetAppUserInvitationSettingsByApp(context.Context, *GetAppUserInvitationSettingsByAppRequest) (*GetAppUserInvitationSettingsByAppResponse, error)
-	GetAppUserInvitationSettingsByOtherApp(context.Context, *GetAppUserInvitationSettingsByOtherAppRequest) (*GetAppUserInvitationSettingsByOtherAppResponse, error)
-	GetAppUserInvitationSettingsByAppUser(context.Context, *GetAppUserInvitationSettingsByAppUserRequest) (*GetAppUserInvitationSettingsByAppUserResponse, error)
-	UpdateAppUserInvitationSetting(context.Context, *UpdateAppUserInvitationSettingRequest) (*UpdateAppUserInvitationSettingResponse, error)
 	CreateAppPurchaseAmountSetting(context.Context, *CreateAppPurchaseAmountSettingRequest) (*CreateAppPurchaseAmountSettingResponse, error)
 	CreateAppPurchaseAmountSettingForOtherApp(context.Context, *CreateAppPurchaseAmountSettingForOtherAppRequest) (*CreateAppPurchaseAmountSettingForOtherAppResponse, error)
 	UpdateAppPurchaseAmountSetting(context.Context, *UpdateAppPurchaseAmountSettingRequest) (*UpdateAppPurchaseAmountSettingResponse, error)
@@ -1315,27 +1238,6 @@ func (UnimplementedCloudHashingInspireServer) GetAppInvitationSettingsByOtherApp
 }
 func (UnimplementedCloudHashingInspireServer) UpdateAppInvitationSetting(context.Context, *UpdateAppInvitationSettingRequest) (*UpdateAppInvitationSettingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppInvitationSetting not implemented")
-}
-func (UnimplementedCloudHashingInspireServer) CreateAppUserInvitationSetting(context.Context, *CreateAppUserInvitationSettingRequest) (*CreateAppUserInvitationSettingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserInvitationSetting not implemented")
-}
-func (UnimplementedCloudHashingInspireServer) CreateAppUserInvitationSettingForOtherAppUser(context.Context, *CreateAppUserInvitationSettingForOtherAppUserRequest) (*CreateAppUserInvitationSettingForOtherAppUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserInvitationSettingForOtherAppUser not implemented")
-}
-func (UnimplementedCloudHashingInspireServer) GetAppUserInvitationSetting(context.Context, *GetAppUserInvitationSettingRequest) (*GetAppUserInvitationSettingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserInvitationSetting not implemented")
-}
-func (UnimplementedCloudHashingInspireServer) GetAppUserInvitationSettingsByApp(context.Context, *GetAppUserInvitationSettingsByAppRequest) (*GetAppUserInvitationSettingsByAppResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserInvitationSettingsByApp not implemented")
-}
-func (UnimplementedCloudHashingInspireServer) GetAppUserInvitationSettingsByOtherApp(context.Context, *GetAppUserInvitationSettingsByOtherAppRequest) (*GetAppUserInvitationSettingsByOtherAppResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserInvitationSettingsByOtherApp not implemented")
-}
-func (UnimplementedCloudHashingInspireServer) GetAppUserInvitationSettingsByAppUser(context.Context, *GetAppUserInvitationSettingsByAppUserRequest) (*GetAppUserInvitationSettingsByAppUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserInvitationSettingsByAppUser not implemented")
-}
-func (UnimplementedCloudHashingInspireServer) UpdateAppUserInvitationSetting(context.Context, *UpdateAppUserInvitationSettingRequest) (*UpdateAppUserInvitationSettingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUserInvitationSetting not implemented")
 }
 func (UnimplementedCloudHashingInspireServer) CreateAppPurchaseAmountSetting(context.Context, *CreateAppPurchaseAmountSettingRequest) (*CreateAppPurchaseAmountSettingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppPurchaseAmountSetting not implemented")
@@ -1898,132 +1800,6 @@ func _CloudHashingInspire_UpdateAppInvitationSetting_Handler(srv interface{}, ct
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingInspireServer).UpdateAppInvitationSetting(ctx, req.(*UpdateAppInvitationSettingRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CloudHashingInspire_CreateAppUserInvitationSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAppUserInvitationSettingRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudHashingInspireServer).CreateAppUserInvitationSetting(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppUserInvitationSetting",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingInspireServer).CreateAppUserInvitationSetting(ctx, req.(*CreateAppUserInvitationSettingRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CloudHashingInspire_CreateAppUserInvitationSettingForOtherAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAppUserInvitationSettingForOtherAppUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudHashingInspireServer).CreateAppUserInvitationSettingForOtherAppUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppUserInvitationSettingForOtherAppUser",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingInspireServer).CreateAppUserInvitationSettingForOtherAppUser(ctx, req.(*CreateAppUserInvitationSettingForOtherAppUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CloudHashingInspire_GetAppUserInvitationSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppUserInvitationSettingRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudHashingInspireServer).GetAppUserInvitationSetting(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppUserInvitationSetting",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingInspireServer).GetAppUserInvitationSetting(ctx, req.(*GetAppUserInvitationSettingRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CloudHashingInspire_GetAppUserInvitationSettingsByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppUserInvitationSettingsByAppRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudHashingInspireServer).GetAppUserInvitationSettingsByApp(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppUserInvitationSettingsByApp",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingInspireServer).GetAppUserInvitationSettingsByApp(ctx, req.(*GetAppUserInvitationSettingsByAppRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CloudHashingInspire_GetAppUserInvitationSettingsByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppUserInvitationSettingsByOtherAppRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudHashingInspireServer).GetAppUserInvitationSettingsByOtherApp(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppUserInvitationSettingsByOtherApp",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingInspireServer).GetAppUserInvitationSettingsByOtherApp(ctx, req.(*GetAppUserInvitationSettingsByOtherAppRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CloudHashingInspire_GetAppUserInvitationSettingsByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppUserInvitationSettingsByAppUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudHashingInspireServer).GetAppUserInvitationSettingsByAppUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppUserInvitationSettingsByAppUser",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingInspireServer).GetAppUserInvitationSettingsByAppUser(ctx, req.(*GetAppUserInvitationSettingsByAppUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CloudHashingInspire_UpdateAppUserInvitationSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateAppUserInvitationSettingRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudHashingInspireServer).UpdateAppUserInvitationSetting(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateAppUserInvitationSetting",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingInspireServer).UpdateAppUserInvitationSetting(ctx, req.(*UpdateAppUserInvitationSettingRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3682,34 +3458,6 @@ var CloudHashingInspire_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateAppInvitationSetting",
 			Handler:    _CloudHashingInspire_UpdateAppInvitationSetting_Handler,
-		},
-		{
-			MethodName: "CreateAppUserInvitationSetting",
-			Handler:    _CloudHashingInspire_CreateAppUserInvitationSetting_Handler,
-		},
-		{
-			MethodName: "CreateAppUserInvitationSettingForOtherAppUser",
-			Handler:    _CloudHashingInspire_CreateAppUserInvitationSettingForOtherAppUser_Handler,
-		},
-		{
-			MethodName: "GetAppUserInvitationSetting",
-			Handler:    _CloudHashingInspire_GetAppUserInvitationSetting_Handler,
-		},
-		{
-			MethodName: "GetAppUserInvitationSettingsByApp",
-			Handler:    _CloudHashingInspire_GetAppUserInvitationSettingsByApp_Handler,
-		},
-		{
-			MethodName: "GetAppUserInvitationSettingsByOtherApp",
-			Handler:    _CloudHashingInspire_GetAppUserInvitationSettingsByOtherApp_Handler,
-		},
-		{
-			MethodName: "GetAppUserInvitationSettingsByAppUser",
-			Handler:    _CloudHashingInspire_GetAppUserInvitationSettingsByAppUser_Handler,
-		},
-		{
-			MethodName: "UpdateAppUserInvitationSetting",
-			Handler:    _CloudHashingInspire_UpdateAppUserInvitationSetting_Handler,
 		},
 		{
 			MethodName: "CreateAppPurchaseAmountSetting",
