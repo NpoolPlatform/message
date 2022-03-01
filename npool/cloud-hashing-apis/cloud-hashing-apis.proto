@@ -488,7 +488,11 @@ message UpdatePhoneNOResponse {
 message InvitationSummary {
     uint32 Units = 10;
     double Amount = 20;
-    double Commission = 30;
+}
+
+message CommissionAmount {
+    uint32 Percent = 10;
+    double Amount = 20;
 }
 
 message InvitationUserInfo {
@@ -501,6 +505,7 @@ message InvitationUserInfo {
     map<string, InvitationSummary> MySummarys = 70;
     uint32 InvitedCount = 80;
     uint32 JoinDate = 90;
+    repeated CommissionAmount Commissions = 100;
 }
 
 message Invitation {

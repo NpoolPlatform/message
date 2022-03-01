@@ -216,7 +216,11 @@ export type UpdatePhoneNOResponse = {
 export type InvitationSummary = {
   units?: number
   amount?: number
-  commission?: number
+}
+
+export type CommissionAmount = {
+  percent?: number
+  amount?: number
 }
 
 export type InvitationUserInfo = {
@@ -229,6 +233,7 @@ export type InvitationUserInfo = {
   mySummarys?: {[key: string]: InvitationSummary}
   invitedCount?: number
   joinDate?: number
+  commissions?: CommissionAmount[]
 }
 
 export type Invitation = {

@@ -5,6 +5,7 @@
 
 - [npool/cloud-hashing-apis/cloud-hashing-apis.proto](#npool/cloud-hashing-apis/cloud-hashing-apis.proto)
     - [Commission](#cloud.hashing.apis.v1.Commission)
+    - [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount)
     - [Coupon](#cloud.hashing.apis.v1.Coupon)
     - [Coupons](#cloud.hashing.apis.v1.Coupons)
     - [CreateGoodRequest](#cloud.hashing.apis.v1.CreateGoodRequest)
@@ -113,6 +114,7 @@
   
 - [npool/cloud-hashing-apis/cloud-hashing-apis.proto](#npool/cloud-hashing-apis/cloud-hashing-apis.proto)
     - [Commission](#cloud.hashing.apis.v1.Commission)
+    - [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount)
     - [Coupon](#cloud.hashing.apis.v1.Coupon)
     - [Coupons](#cloud.hashing.apis.v1.Coupons)
     - [CreateGoodRequest](#cloud.hashing.apis.v1.CreateGoodRequest)
@@ -240,6 +242,22 @@
 | ----- | ---- | ----- | ----------- |
 | Total | [double](#double) |  |  |
 | Balance | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.CommissionAmount"></a>
+
+### CommissionAmount
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Percent | [uint32](#uint32) |  |  |
+| Amount | [double](#double) |  |  |
 
 
 
@@ -1280,7 +1298,6 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | Units | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
-| Commission | [double](#double) |  |  |
 
 
 
@@ -1304,6 +1321,7 @@ Request body and response
 | MySummarys | [InvitationUserInfo.MySummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry) | repeated |  |
 | InvitedCount | [uint32](#uint32) |  |  |
 | JoinDate | [uint32](#uint32) |  |  |
+| Commissions | [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount) | repeated |  |
 
 
 
@@ -1982,6 +2000,22 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud.hashing.apis.v1.CommissionAmount"></a>
+
+### CommissionAmount
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Percent | [uint32](#uint32) |  |  |
+| Amount | [double](#double) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.Coupon"></a>
 
 ### Coupon
@@ -3016,7 +3050,6 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | Units | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
-| Commission | [double](#double) |  |  |
 
 
 
@@ -3040,6 +3073,7 @@ Request body and response
 | MySummarys | [InvitationUserInfo.MySummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry) | repeated |  |
 | InvitedCount | [uint32](#uint32) |  |  |
 | JoinDate | [uint32](#uint32) |  |  |
+| Commissions | [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount) | repeated |  |
 
 
 

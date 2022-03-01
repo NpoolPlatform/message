@@ -2079,6 +2079,19 @@
         }
       }
     },
+    "v1CommissionAmount": {
+      "type": "object",
+      "properties": {
+        "Percent": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
     "v1Compensate": {
       "type": "object",
       "properties": {
@@ -2908,10 +2921,6 @@
         "Amount": {
           "type": "number",
           "format": "double"
-        },
-        "Commission": {
-          "type": "number",
-          "format": "double"
         }
       }
     },
@@ -2952,6 +2961,12 @@
         "JoinDate": {
           "type": "integer",
           "format": "int64"
+        },
+        "Commissions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CommissionAmount"
+          }
         }
       }
     },
