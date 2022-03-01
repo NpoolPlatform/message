@@ -191,6 +191,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc GetAppUserPurchaseAmountSettingsByOtherAppUser (GetAppUserPurchaseAmountSettingsByOtherAppUserRequest) returns (GetAppUserPurchaseAmountSettingsByOtherAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/user/purchase/amount/settings/by/other/app/user"
+            body: "*"
+        };
+    }
 
     rpc CreateRegistrationInvitation (CreateRegistrationInvitationRequest) returns (CreateRegistrationInvitationResponse) {
         option (google.api.http) = {
@@ -931,6 +937,15 @@ message GetAppUserPurchaseAmountSettingsByAppUserRequest {
 }
 
 message GetAppUserPurchaseAmountSettingsByAppUserResponse {
+    repeated AppUserPurchaseAmountSetting Infos = 10;
+}
+
+message GetAppUserPurchaseAmountSettingsByOtherAppUserRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
+}
+
+message GetAppUserPurchaseAmountSettingsByOtherAppUserResponse {
     repeated AppUserPurchaseAmountSetting Infos = 10;
 }
 

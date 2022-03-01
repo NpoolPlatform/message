@@ -1515,6 +1515,38 @@
         ]
       }
     },
+    "/v1/get/app/user/purchase/amount/settings/by/other/app/user": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetAppUserPurchaseAmountSettingsByOtherAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserPurchaseAmountSettingsByOtherAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserPurchaseAmountSettingsByOtherAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/get/commission/coin/settings": {
       "post": {
         "operationId": "CloudHashingInspire_GetCommissionCoinSettings",
@@ -4538,6 +4570,28 @@
       }
     },
     "v1GetAppUserPurchaseAmountSettingsByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppUserPurchaseAmountSetting"
+          }
+        }
+      }
+    },
+    "v1GetAppUserPurchaseAmountSettingsByOtherAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserPurchaseAmountSettingsByOtherAppUserResponse": {
       "type": "object",
       "properties": {
         "Infos": {

@@ -286,6 +286,15 @@ export type GetAppUserPurchaseAmountSettingsByAppUserResponse = {
   infos?: AppUserPurchaseAmountSetting[]
 }
 
+export type GetAppUserPurchaseAmountSettingsByOtherAppUserRequest = {
+  targetAppID?: string
+  targetUserID?: string
+}
+
+export type GetAppUserPurchaseAmountSettingsByOtherAppUserResponse = {
+  infos?: AppUserPurchaseAmountSetting[]
+}
+
 export type RegistrationInvitation = {
   id?: string
   appID?: string
@@ -1106,6 +1115,9 @@ export class CloudHashingInspire {
   }
   static GetAppUserPurchaseAmountSettingsByAppUser(req: GetAppUserPurchaseAmountSettingsByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserPurchaseAmountSettingsByAppUserResponse> {
     return fm.fetchReq<GetAppUserPurchaseAmountSettingsByAppUserRequest, GetAppUserPurchaseAmountSettingsByAppUserResponse>(`/v1/get/app/user/purchase/amount/settings/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUserPurchaseAmountSettingsByOtherAppUser(req: GetAppUserPurchaseAmountSettingsByOtherAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserPurchaseAmountSettingsByOtherAppUserResponse> {
+    return fm.fetchReq<GetAppUserPurchaseAmountSettingsByOtherAppUserRequest, GetAppUserPurchaseAmountSettingsByOtherAppUserResponse>(`/v1/get/app/user/purchase/amount/settings/by/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateRegistrationInvitation(req: CreateRegistrationInvitationRequest, initReq?: fm.InitReq): Promise<CreateRegistrationInvitationResponse> {
     return fm.fetchReq<CreateRegistrationInvitationRequest, CreateRegistrationInvitationResponse>(`/v1/create/registration/invitation`, {...initReq, method: "POST", body: JSON.stringify(req)})
