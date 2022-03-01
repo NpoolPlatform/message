@@ -2082,6 +2082,14 @@
     "v1CommissionAmount": {
       "type": "object",
       "properties": {
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "End": {
+          "type": "integer",
+          "format": "int64"
+        },
         "Percent": {
           "type": "integer",
           "format": "int64"

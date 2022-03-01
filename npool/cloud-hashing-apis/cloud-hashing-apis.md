@@ -256,6 +256,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| Start | [uint32](#uint32) |  |  |
+| End | [uint32](#uint32) |  |  |
 | Percent | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
 
@@ -2008,6 +2010,8 @@ Cloud Hashing Goods
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| Start | [uint32](#uint32) |  |  |
+| End | [uint32](#uint32) |  |  |
 | Percent | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
 

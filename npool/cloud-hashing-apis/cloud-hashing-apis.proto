@@ -491,8 +491,10 @@ message InvitationSummary {
 }
 
 message CommissionAmount {
-    uint32 Percent = 10;
-    double Amount = 20;
+    uint32 Start = 10;
+    uint32 End = 20;
+    uint32 Percent = 30;
+    double Amount = 40;
 }
 
 message InvitationUserInfo {

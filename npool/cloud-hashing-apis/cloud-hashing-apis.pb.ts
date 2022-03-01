@@ -219,6 +219,8 @@ export type InvitationSummary = {
 }
 
 export type CommissionAmount = {
+  start?: number
+  end?: number
   percent?: number
   amount?: number
 }
