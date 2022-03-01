@@ -223,6 +223,7 @@ export type CommissionAmount = {
   end?: number
   percent?: number
   amount?: number
+  payAmount?: number
 }
 
 export type InvitationUserInfo = {

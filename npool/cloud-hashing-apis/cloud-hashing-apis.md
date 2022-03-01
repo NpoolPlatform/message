@@ -260,6 +260,7 @@
 | End | [uint32](#uint32) |  |  |
 | Percent | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
+| PayAmount | [double](#double) |  |  |
 
 
 
@@ -2014,6 +2015,7 @@ Cloud Hashing Goods
 | End | [uint32](#uint32) |  |  |
 | Percent | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
+| PayAmount | [double](#double) |  |  |
 
 
 
