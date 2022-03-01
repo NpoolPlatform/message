@@ -261,6 +261,7 @@
 | Percent | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
 | PayAmount | [double](#double) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
 
 
 
@@ -2018,6 +2019,7 @@ Cloud Hashing Goods
 | Percent | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
 | PayAmount | [double](#double) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
 
 
 

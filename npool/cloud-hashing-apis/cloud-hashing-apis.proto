@@ -496,6 +496,7 @@ message CommissionAmount {
     uint32 Percent = 30;
     double Amount = 40;
     double PayAmount = 50;
+    uint32 CreateAt = 60;
 }
 
 message InvitationUserInfo {

@@ -2101,6 +2101,10 @@
         "PayAmount": {
           "type": "number",
           "format": "double"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

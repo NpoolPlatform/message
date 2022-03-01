@@ -224,6 +224,7 @@ export type CommissionAmount = {
   percent?: number
   amount?: number
   payAmount?: number
+  createAt?: number
 }
 
 export type InvitationUserInfo = {
