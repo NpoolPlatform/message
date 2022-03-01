@@ -1324,6 +1324,7 @@ Request body and response
 | MySummarys | [InvitationUserInfo.MySummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry) | repeated |  |
 | InvitedCount | [uint32](#uint32) |  |  |
 | JoinDate | [uint32](#uint32) |  |  |
+| MyCommissions | [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount) | repeated |  |
 | Commissions | [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount) | repeated |  |
 
 
@@ -3079,6 +3080,7 @@ Request body and response
 | MySummarys | [InvitationUserInfo.MySummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry) | repeated |  |
 | InvitedCount | [uint32](#uint32) |  |  |
 | JoinDate | [uint32](#uint32) |  |  |
+| MyCommissions | [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount) | repeated |  |
 | Commissions | [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount) | repeated |  |
 
 

@@ -236,6 +236,7 @@ export type InvitationUserInfo = {
   mySummarys?: {[key: string]: InvitationSummary}
   invitedCount?: number
   joinDate?: number
+  myCommissions?: CommissionAmount[]
   commissions?: CommissionAmount[]
 }
 

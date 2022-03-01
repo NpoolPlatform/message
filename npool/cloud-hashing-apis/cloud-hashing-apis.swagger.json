@@ -2974,6 +2974,12 @@
           "type": "integer",
           "format": "int64"
         },
+        "MyCommissions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CommissionAmount"
+          }
+        },
         "Commissions": {
           "type": "array",
           "items": {

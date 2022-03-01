@@ -508,7 +508,8 @@ message InvitationUserInfo {
     map<string, InvitationSummary> MySummarys = 70;
     uint32 InvitedCount = 80;
     uint32 JoinDate = 90;
-    repeated CommissionAmount Commissions = 100;
+    repeated CommissionAmount MyCommissions = 100;
+    repeated CommissionAmount Commissions = 110;
 }
 
 message Invitation {
