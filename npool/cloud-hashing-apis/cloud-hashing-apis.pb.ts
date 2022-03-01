@@ -238,6 +238,7 @@ export type InvitationUserInfo = {
   joinDate?: number
   myCommissions?: CommissionAmount[]
   commissions?: CommissionAmount[]
+  commissionAmount?: number
 }
 
 export type Invitation = {

@@ -2985,6 +2985,10 @@
           "items": {
             "$ref": "#/definitions/v1CommissionAmount"
           }
+        },
+        "CommissionAmount": {
+          "type": "number",
+          "format": "double"
         }
       }
     },

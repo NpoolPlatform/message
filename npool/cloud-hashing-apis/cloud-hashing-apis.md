@@ -1326,6 +1326,7 @@ Request body and response
 | JoinDate | [uint32](#uint32) |  |  |
 | MyCommissions | [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount) | repeated |  |
 | Commissions | [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount) | repeated |  |
+| CommissionAmount | [double](#double) |  |  |
 
 
 
@@ -3082,6 +3083,7 @@ Request body and response
 | JoinDate | [uint32](#uint32) |  |  |
 | MyCommissions | [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount) | repeated |  |
 | Commissions | [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount) | repeated |  |
+| CommissionAmount | [double](#double) |  |  |
 
 
 

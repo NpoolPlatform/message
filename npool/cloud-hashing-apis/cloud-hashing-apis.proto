@@ -510,6 +510,7 @@ message InvitationUserInfo {
     uint32 JoinDate = 90;
     repeated CommissionAmount MyCommissions = 100;
     repeated CommissionAmount Commissions = 110;
+    double CommissionAmount = 120;
 }
 
 message Invitation {
