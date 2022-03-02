@@ -124,6 +124,8 @@ message ProxyPluginResponse {
   string BalanceStr                         = 160;
   sphinx.plugin.v1.UnsignedMessage  Message = 170;
   int64  ExitCode                           = 180; // -1 find cid state on chain internal server error
+
+  string RPCExitMessage                     = 1000;
 }
 
 // MpoolGetNonce WalletBalance MpoolPush ..
@@ -158,6 +160,8 @@ message ProxySignResponse {
   ProxySignResponseInfo Info                  = 130;
   // btc
   sphinx.plugin.v1.MsgTx           MsgTx      = 140;
+
+  string RPCExitMessage                       = 1000;
 }
 
 message ProxySignResponseInfo {
