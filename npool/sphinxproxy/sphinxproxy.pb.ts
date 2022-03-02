@@ -116,6 +116,7 @@ export type ProxyPluginRequest = {
 }
 
 export type ProxySignRequest = {
+  netENV?: string
   coinType?: SphinxPluginV1Sphinxplugin.CoinType
   transactionType?: TransactionType
   transactionID?: string

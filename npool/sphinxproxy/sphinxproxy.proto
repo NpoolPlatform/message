@@ -143,10 +143,11 @@ message ProxyPluginRequest {
 }
 
 message ProxySignRequest {
-  sphinx.plugin.v1.CoinType CoinType          = 100;
-  TransactionType TransactionType             = 110;
-  string TransactionID                        = 120;
-  sphinx.plugin.v1.UnsignedMessage Message    = 130;
+  string NetENV                               = 100;
+  sphinx.plugin.v1.CoinType CoinType          = 110;
+  TransactionType TransactionType             = 120;
+  string TransactionID                        = 130;
+  sphinx.plugin.v1.UnsignedMessage Message    = 140;
 }
 
 message ProxySignResponse {

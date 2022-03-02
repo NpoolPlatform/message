@@ -405,6 +405,9 @@
     "v1ProxySignRequest": {
       "type": "object",
       "properties": {
+        "NetENV": {
+          "type": "string"
+        },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
