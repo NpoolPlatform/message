@@ -178,10 +178,14 @@ fil
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | CoinTypeUnKnow | 0 |  |
-| CoinTypefilecoin | 1 |  |
+| CoinTypefilecoin | 1 | mainnet |
 | CoinTypebitcoin | 2 |  |
 | CoinTypeethereum | 3 |  |
 | CoinTypespacemesh | 4 |  |
+| CoinTypetfilecoin | 100 | testnet |
+| CoinTypetbitcoin | 101 |  |
+| CoinTypetethereum | 102 |  |
+| CoinTypetspacemesh | 103 |  |
 
 
  
@@ -341,10 +345,14 @@ fil
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | CoinTypeUnKnow | 0 |  |
-| CoinTypefilecoin | 1 |  |
+| CoinTypefilecoin | 1 | mainnet |
 | CoinTypebitcoin | 2 |  |
 | CoinTypeethereum | 3 |  |
 | CoinTypespacemesh | 4 |  |
+| CoinTypetfilecoin | 100 | testnet |
+| CoinTypetbitcoin | 101 |  |
+| CoinTypetethereum | 102 |  |
+| CoinTypetspacemesh | 103 |  |
 
 
  
