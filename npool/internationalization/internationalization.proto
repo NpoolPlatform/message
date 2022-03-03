@@ -104,15 +104,15 @@ service Internationalization {
             body: "*"
         };
     }
-    rpc GetMessagesByLangID(GetMessagesByLangIDRequest) returns (GetMessagesByLangIDResponse) {
+    rpc GetMessagesByAppLang(GetMessagesByAppLangRequest) returns (GetMessagesByAppLangResponse) {
         option (google.api.http) = {
-            post: "/v1/get/messages/by/lang/id"
+            post: "/v1/get/messages/by/app/lang"
             body: "*"
         };
     }
-    rpc GetMessageByLangIDMessageID(GetMessageByLangIDMessageIDRequest) returns (GetMessageByLangIDMessageIDResponse) {
+    rpc GetMessageByAppLangMessage(GetMessageByAppLangMessageRequest) returns (GetMessageByAppLangMessageResponse) {
         option (google.api.http) = {
-            post: "/v1/get/message/by/lang/id/message/id"
+            post: "/v1/get/message/by/app/lang/message"
             body: "*"
         };
     }
@@ -198,20 +198,22 @@ message UpdateMessagesResponse {
     repeated Message Infos = 10;
 }
 
-message GetMessagesByLangIDRequest {
-    string LangID = 10;
+message GetMessagesByAppLangRequest {
+    string AppID = 10;
+    string LangID = 20;
 }
 
-message GetMessagesByLangIDResponse {
+message GetMessagesByAppLangResponse {
     repeated Message Infos = 10;
 }
 
-message GetMessageByLangIDMessageIDRequest {
-    string LangID = 10;
-    string MessageID = 20;
+message GetMessageByAppLangMessageRequest {
+    string AppID = 10;
+    string LangID = 20;
+    string MessageID = 30;
 }
 
-message GetMessageByLangIDMessageIDResponse {
+message GetMessageByAppLangMessageResponse {
     Message Info = 10;
 }
 

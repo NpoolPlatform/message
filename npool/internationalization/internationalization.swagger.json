@@ -363,14 +363,14 @@
         ]
       }
     },
-    "/v1/get/message/by/lang/id/message/id": {
+    "/v1/get/message/by/app/lang/message": {
       "post": {
-        "operationId": "Internationalization_GetMessageByLangIDMessageID",
+        "operationId": "Internationalization_GetMessageByAppLangMessage",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetMessageByLangIDMessageIDResponse"
+              "$ref": "#/definitions/v1GetMessageByAppLangMessageResponse"
             }
           },
           "default": {
@@ -386,7 +386,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetMessageByLangIDMessageIDRequest"
+              "$ref": "#/definitions/v1GetMessageByAppLangMessageRequest"
             }
           }
         ],
@@ -395,14 +395,14 @@
         ]
       }
     },
-    "/v1/get/messages/by/lang/id": {
+    "/v1/get/messages/by/app/lang": {
       "post": {
-        "operationId": "Internationalization_GetMessagesByLangID",
+        "operationId": "Internationalization_GetMessagesByAppLang",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetMessagesByLangIDResponse"
+              "$ref": "#/definitions/v1GetMessagesByAppLangResponse"
             }
           },
           "default": {
@@ -418,7 +418,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetMessagesByLangIDRequest"
+              "$ref": "#/definitions/v1GetMessagesByAppLangRequest"
             }
           }
         ],
@@ -808,9 +808,12 @@
         }
       }
     },
-    "v1GetMessageByLangIDMessageIDRequest": {
+    "v1GetMessageByAppLangMessageRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "LangID": {
           "type": "string"
         },
@@ -819,7 +822,7 @@
         }
       }
     },
-    "v1GetMessageByLangIDMessageIDResponse": {
+    "v1GetMessageByAppLangMessageResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -827,15 +830,18 @@
         }
       }
     },
-    "v1GetMessagesByLangIDRequest": {
+    "v1GetMessagesByAppLangRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "LangID": {
           "type": "string"
         }
       }
     },
-    "v1GetMessagesByLangIDResponse": {
+    "v1GetMessagesByAppLangResponse": {
       "type": "object",
       "properties": {
         "Infos": {
