@@ -440,6 +440,40 @@ func local_request_Internationalization_CreateMessage_0(ctx context.Context, mar
 
 }
 
+func request_Internationalization_CreateMessageForOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, client InternationalizationClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateMessageForOtherAppRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.CreateMessageForOtherApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func local_request_Internationalization_CreateMessageForOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, server InternationalizationServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateMessageForOtherAppRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := server.CreateMessageForOtherApp(ctx, &protoReq)
+	return msg, metadata, err
+
+}
+
 func request_Internationalization_CreateMessages_0(ctx context.Context, marshaler runtime.Marshaler, client InternationalizationClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateMessagesRequest
 	var metadata runtime.ServerMetadata
@@ -572,6 +606,40 @@ func local_request_Internationalization_GetMessagesByAppLang_0(ctx context.Conte
 	}
 
 	msg, err := server.GetMessagesByAppLang(ctx, &protoReq)
+	return msg, metadata, err
+
+}
+
+func request_Internationalization_GetMessagesByOtherAppLang_0(ctx context.Context, marshaler runtime.Marshaler, client InternationalizationClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetMessagesByOtherAppLangRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.GetMessagesByOtherAppLang(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func local_request_Internationalization_GetMessagesByOtherAppLang_0(ctx context.Context, marshaler runtime.Marshaler, server InternationalizationServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetMessagesByOtherAppLangRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := server.GetMessagesByOtherAppLang(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -892,6 +960,29 @@ func RegisterInternationalizationHandlerServer(ctx context.Context, mux *runtime
 
 	})
 
+	mux.Handle("POST", pattern_Internationalization_CreateMessageForOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/internationalization.v1.Internationalization/CreateMessageForOtherApp", runtime.WithHTTPPathPattern("/v1/create/message/for/other/app"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_Internationalization_CreateMessageForOtherApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_Internationalization_CreateMessageForOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
 	mux.Handle("POST", pattern_Internationalization_CreateMessages_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -981,6 +1072,29 @@ func RegisterInternationalizationHandlerServer(ctx context.Context, mux *runtime
 		}
 
 		forward_Internationalization_GetMessagesByAppLang_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
+	mux.Handle("POST", pattern_Internationalization_GetMessagesByOtherAppLang_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/internationalization.v1.Internationalization/GetMessagesByOtherAppLang", runtime.WithHTTPPathPattern("/v1/get/messages/by/other/app/lang"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_Internationalization_GetMessagesByOtherAppLang_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_Internationalization_GetMessagesByOtherAppLang_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1288,6 +1402,26 @@ func RegisterInternationalizationHandlerClient(ctx context.Context, mux *runtime
 
 	})
 
+	mux.Handle("POST", pattern_Internationalization_CreateMessageForOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/internationalization.v1.Internationalization/CreateMessageForOtherApp", runtime.WithHTTPPathPattern("/v1/create/message/for/other/app"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_Internationalization_CreateMessageForOtherApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_Internationalization_CreateMessageForOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
 	mux.Handle("POST", pattern_Internationalization_CreateMessages_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -1368,6 +1502,26 @@ func RegisterInternationalizationHandlerClient(ctx context.Context, mux *runtime
 
 	})
 
+	mux.Handle("POST", pattern_Internationalization_GetMessagesByOtherAppLang_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/internationalization.v1.Internationalization/GetMessagesByOtherAppLang", runtime.WithHTTPPathPattern("/v1/get/messages/by/other/app/lang"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_Internationalization_GetMessagesByOtherAppLang_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_Internationalization_GetMessagesByOtherAppLang_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
 	mux.Handle("POST", pattern_Internationalization_GetMessageByAppLangMessage_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -1416,6 +1570,8 @@ var (
 
 	pattern_Internationalization_CreateMessage_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "message"}, ""))
 
+	pattern_Internationalization_CreateMessageForOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "create", "message", "for", "other", "app"}, ""))
+
 	pattern_Internationalization_CreateMessages_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "messages"}, ""))
 
 	pattern_Internationalization_UpdateMessage_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "message"}, ""))
@@ -1423,6 +1579,8 @@ var (
 	pattern_Internationalization_UpdateMessages_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "messages"}, ""))
 
 	pattern_Internationalization_GetMessagesByAppLang_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "messages", "by", "app", "lang"}, ""))
+
+	pattern_Internationalization_GetMessagesByOtherAppLang_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6}, []string{"v1", "get", "messages", "by", "other", "app", "lang"}, ""))
 
 	pattern_Internationalization_GetMessageByAppLangMessage_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2}, []string{"v1", "get", "message", "by", "app", "lang"}, ""))
 )
@@ -1452,6 +1610,8 @@ var (
 
 	forward_Internationalization_CreateMessage_0 = runtime.ForwardResponseMessage
 
+	forward_Internationalization_CreateMessageForOtherApp_0 = runtime.ForwardResponseMessage
+
 	forward_Internationalization_CreateMessages_0 = runtime.ForwardResponseMessage
 
 	forward_Internationalization_UpdateMessage_0 = runtime.ForwardResponseMessage
@@ -1459,6 +1619,8 @@ var (
 	forward_Internationalization_UpdateMessages_0 = runtime.ForwardResponseMessage
 
 	forward_Internationalization_GetMessagesByAppLang_0 = runtime.ForwardResponseMessage
+
+	forward_Internationalization_GetMessagesByOtherAppLang_0 = runtime.ForwardResponseMessage
 
 	forward_Internationalization_GetMessageByAppLangMessage_0 = runtime.ForwardResponseMessage
 )

@@ -86,6 +86,12 @@ service Internationalization {
             body: "*"
         };
     }
+    rpc CreateMessageForOtherApp(CreateMessageForOtherAppRequest) returns (CreateMessageForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/message/for/other/app"
+            body: "*"
+        };
+    }
     rpc CreateMessages(CreateMessagesRequest) returns (CreateMessagesResponse) {
         option (google.api.http) = {
             post: "/v1/create/messages"
@@ -107,6 +113,12 @@ service Internationalization {
     rpc GetMessagesByAppLang(GetMessagesByAppLangRequest) returns (GetMessagesByAppLangResponse) {
         option (google.api.http) = {
             post: "/v1/get/messages/by/app/lang"
+            body: "*"
+        };
+    }
+    rpc GetMessagesByOtherAppLang(GetMessagesByOtherAppLangRequest) returns (GetMessagesByOtherAppLangResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/messages/by/other/app/lang"
             body: "*"
         };
     }
@@ -174,6 +186,15 @@ message CreateMessageResponse {
     Message Info = 10;
 }
 
+message CreateMessageForOtherAppRequest {
+    string TargetAppID = 10;
+    Message Info = 20;
+}
+
+message CreateMessageForOtherAppResponse {
+    Message Info = 10;
+}
+
 message CreateMessagesRequest {
     repeated Message Infos = 10;
 }
@@ -204,6 +225,15 @@ message GetMessagesByAppLangRequest {
 }
 
 message GetMessagesByAppLangResponse {
+    repeated Message Infos = 10;
+}
+
+message GetMessagesByOtherAppLangRequest {
+    string TargetAppID = 10;
+    string LangID = 20;
+}
+
+message GetMessagesByOtherAppLangResponse {
     repeated Message Infos = 10;
 }
 

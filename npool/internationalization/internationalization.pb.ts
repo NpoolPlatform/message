@@ -63,6 +63,15 @@ export type CreateMessageResponse = {
   info?: Message
 }
 
+export type CreateMessageForOtherAppRequest = {
+  targetAppID?: string
+  info?: Message
+}
+
+export type CreateMessageForOtherAppResponse = {
+  info?: Message
+}
+
 export type CreateMessagesRequest = {
   infos?: Message[]
 }
@@ -93,6 +102,15 @@ export type GetMessagesByAppLangRequest = {
 }
 
 export type GetMessagesByAppLangResponse = {
+  infos?: Message[]
+}
+
+export type GetMessagesByOtherAppLangRequest = {
+  targetAppID?: string
+  langID?: string
+}
+
+export type GetMessagesByOtherAppLangResponse = {
   infos?: Message[]
 }
 
@@ -203,6 +221,9 @@ export class Internationalization {
   static CreateMessage(req: CreateMessageRequest, initReq?: fm.InitReq): Promise<CreateMessageResponse> {
     return fm.fetchReq<CreateMessageRequest, CreateMessageResponse>(`/v1/create/message`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateMessageForOtherApp(req: CreateMessageForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateMessageForOtherAppResponse> {
+    return fm.fetchReq<CreateMessageForOtherAppRequest, CreateMessageForOtherAppResponse>(`/v1/create/message/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static CreateMessages(req: CreateMessagesRequest, initReq?: fm.InitReq): Promise<CreateMessagesResponse> {
     return fm.fetchReq<CreateMessagesRequest, CreateMessagesResponse>(`/v1/create/messages`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -214,6 +235,9 @@ export class Internationalization {
   }
   static GetMessagesByAppLang(req: GetMessagesByAppLangRequest, initReq?: fm.InitReq): Promise<GetMessagesByAppLangResponse> {
     return fm.fetchReq<GetMessagesByAppLangRequest, GetMessagesByAppLangResponse>(`/v1/get/messages/by/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetMessagesByOtherAppLang(req: GetMessagesByOtherAppLangRequest, initReq?: fm.InitReq): Promise<GetMessagesByOtherAppLangResponse> {
+    return fm.fetchReq<GetMessagesByOtherAppLangRequest, GetMessagesByOtherAppLangResponse>(`/v1/get/messages/by/other/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetMessageByAppLangMessage(req: GetMessageByAppLangMessageRequest, initReq?: fm.InitReq): Promise<GetMessageByAppLangMessageResponse> {
     return fm.fetchReq<GetMessageByAppLangMessageRequest, GetMessageByAppLangMessageResponse>(`/v1/get/message/by/app/lang/message`, {...initReq, method: "POST", body: JSON.stringify(req)})

@@ -650,6 +650,108 @@ func (x *CreateMessageResponse) GetInfo() *Message {
 	return nil
 }
 
+type CreateMessageForOtherAppRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TargetAppID string   `protobuf:"bytes,10,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
+	Info        *Message `protobuf:"bytes,20,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *CreateMessageForOtherAppRequest) Reset() {
+	*x = CreateMessageForOtherAppRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateMessageForOtherAppRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateMessageForOtherAppRequest) ProtoMessage() {}
+
+func (x *CreateMessageForOtherAppRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateMessageForOtherAppRequest.ProtoReflect.Descriptor instead.
+func (*CreateMessageForOtherAppRequest) Descriptor() ([]byte, []int) {
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *CreateMessageForOtherAppRequest) GetTargetAppID() string {
+	if x != nil {
+		return x.TargetAppID
+	}
+	return ""
+}
+
+func (x *CreateMessageForOtherAppRequest) GetInfo() *Message {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type CreateMessageForOtherAppResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *Message `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *CreateMessageForOtherAppResponse) Reset() {
+	*x = CreateMessageForOtherAppResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateMessageForOtherAppResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateMessageForOtherAppResponse) ProtoMessage() {}
+
+func (x *CreateMessageForOtherAppResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateMessageForOtherAppResponse.ProtoReflect.Descriptor instead.
+func (*CreateMessageForOtherAppResponse) Descriptor() ([]byte, []int) {
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *CreateMessageForOtherAppResponse) GetInfo() *Message {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 type CreateMessagesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -661,7 +763,7 @@ type CreateMessagesRequest struct {
 func (x *CreateMessagesRequest) Reset() {
 	*x = CreateMessagesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[12]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -674,7 +776,7 @@ func (x *CreateMessagesRequest) String() string {
 func (*CreateMessagesRequest) ProtoMessage() {}
 
 func (x *CreateMessagesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[12]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -687,7 +789,7 @@ func (x *CreateMessagesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateMessagesRequest.ProtoReflect.Descriptor instead.
 func (*CreateMessagesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{12}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *CreateMessagesRequest) GetInfos() []*Message {
@@ -708,7 +810,7 @@ type CreateMessagesResponse struct {
 func (x *CreateMessagesResponse) Reset() {
 	*x = CreateMessagesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[13]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -721,7 +823,7 @@ func (x *CreateMessagesResponse) String() string {
 func (*CreateMessagesResponse) ProtoMessage() {}
 
 func (x *CreateMessagesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[13]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -734,7 +836,7 @@ func (x *CreateMessagesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateMessagesResponse.ProtoReflect.Descriptor instead.
 func (*CreateMessagesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{13}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *CreateMessagesResponse) GetInfos() []*Message {
@@ -755,7 +857,7 @@ type UpdateMessageRequest struct {
 func (x *UpdateMessageRequest) Reset() {
 	*x = UpdateMessageRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[14]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -768,7 +870,7 @@ func (x *UpdateMessageRequest) String() string {
 func (*UpdateMessageRequest) ProtoMessage() {}
 
 func (x *UpdateMessageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[14]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -781,7 +883,7 @@ func (x *UpdateMessageRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateMessageRequest.ProtoReflect.Descriptor instead.
 func (*UpdateMessageRequest) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{14}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *UpdateMessageRequest) GetInfo() *Message {
@@ -802,7 +904,7 @@ type UpdateMessageResponse struct {
 func (x *UpdateMessageResponse) Reset() {
 	*x = UpdateMessageResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[15]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -815,7 +917,7 @@ func (x *UpdateMessageResponse) String() string {
 func (*UpdateMessageResponse) ProtoMessage() {}
 
 func (x *UpdateMessageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[15]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -828,7 +930,7 @@ func (x *UpdateMessageResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateMessageResponse.ProtoReflect.Descriptor instead.
 func (*UpdateMessageResponse) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{15}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *UpdateMessageResponse) GetInfo() *Message {
@@ -849,7 +951,7 @@ type UpdateMessagesRequest struct {
 func (x *UpdateMessagesRequest) Reset() {
 	*x = UpdateMessagesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[16]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -862,7 +964,7 @@ func (x *UpdateMessagesRequest) String() string {
 func (*UpdateMessagesRequest) ProtoMessage() {}
 
 func (x *UpdateMessagesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[16]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -875,7 +977,7 @@ func (x *UpdateMessagesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateMessagesRequest.ProtoReflect.Descriptor instead.
 func (*UpdateMessagesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{16}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *UpdateMessagesRequest) GetInfos() []*Message {
@@ -896,7 +998,7 @@ type UpdateMessagesResponse struct {
 func (x *UpdateMessagesResponse) Reset() {
 	*x = UpdateMessagesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[17]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -909,7 +1011,7 @@ func (x *UpdateMessagesResponse) String() string {
 func (*UpdateMessagesResponse) ProtoMessage() {}
 
 func (x *UpdateMessagesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[17]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -922,7 +1024,7 @@ func (x *UpdateMessagesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateMessagesResponse.ProtoReflect.Descriptor instead.
 func (*UpdateMessagesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{17}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *UpdateMessagesResponse) GetInfos() []*Message {
@@ -944,7 +1046,7 @@ type GetMessagesByAppLangRequest struct {
 func (x *GetMessagesByAppLangRequest) Reset() {
 	*x = GetMessagesByAppLangRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[18]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -957,7 +1059,7 @@ func (x *GetMessagesByAppLangRequest) String() string {
 func (*GetMessagesByAppLangRequest) ProtoMessage() {}
 
 func (x *GetMessagesByAppLangRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[18]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -970,7 +1072,7 @@ func (x *GetMessagesByAppLangRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMessagesByAppLangRequest.ProtoReflect.Descriptor instead.
 func (*GetMessagesByAppLangRequest) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{18}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *GetMessagesByAppLangRequest) GetAppID() string {
@@ -998,7 +1100,7 @@ type GetMessagesByAppLangResponse struct {
 func (x *GetMessagesByAppLangResponse) Reset() {
 	*x = GetMessagesByAppLangResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[19]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1011,7 +1113,7 @@ func (x *GetMessagesByAppLangResponse) String() string {
 func (*GetMessagesByAppLangResponse) ProtoMessage() {}
 
 func (x *GetMessagesByAppLangResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[19]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1024,10 +1126,112 @@ func (x *GetMessagesByAppLangResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMessagesByAppLangResponse.ProtoReflect.Descriptor instead.
 func (*GetMessagesByAppLangResponse) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{19}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *GetMessagesByAppLangResponse) GetInfos() []*Message {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+type GetMessagesByOtherAppLangRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TargetAppID string `protobuf:"bytes,10,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
+	LangID      string `protobuf:"bytes,20,opt,name=LangID,proto3" json:"LangID,omitempty"`
+}
+
+func (x *GetMessagesByOtherAppLangRequest) Reset() {
+	*x = GetMessagesByOtherAppLangRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[22]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetMessagesByOtherAppLangRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetMessagesByOtherAppLangRequest) ProtoMessage() {}
+
+func (x *GetMessagesByOtherAppLangRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[22]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetMessagesByOtherAppLangRequest.ProtoReflect.Descriptor instead.
+func (*GetMessagesByOtherAppLangRequest) Descriptor() ([]byte, []int) {
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *GetMessagesByOtherAppLangRequest) GetTargetAppID() string {
+	if x != nil {
+		return x.TargetAppID
+	}
+	return ""
+}
+
+func (x *GetMessagesByOtherAppLangRequest) GetLangID() string {
+	if x != nil {
+		return x.LangID
+	}
+	return ""
+}
+
+type GetMessagesByOtherAppLangResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos []*Message `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+}
+
+func (x *GetMessagesByOtherAppLangResponse) Reset() {
+	*x = GetMessagesByOtherAppLangResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[23]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetMessagesByOtherAppLangResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetMessagesByOtherAppLangResponse) ProtoMessage() {}
+
+func (x *GetMessagesByOtherAppLangResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[23]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetMessagesByOtherAppLangResponse.ProtoReflect.Descriptor instead.
+func (*GetMessagesByOtherAppLangResponse) Descriptor() ([]byte, []int) {
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *GetMessagesByOtherAppLangResponse) GetInfos() []*Message {
 	if x != nil {
 		return x.Infos
 	}
@@ -1047,7 +1251,7 @@ type GetMessageByAppLangMessageRequest struct {
 func (x *GetMessageByAppLangMessageRequest) Reset() {
 	*x = GetMessageByAppLangMessageRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[20]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1060,7 +1264,7 @@ func (x *GetMessageByAppLangMessageRequest) String() string {
 func (*GetMessageByAppLangMessageRequest) ProtoMessage() {}
 
 func (x *GetMessageByAppLangMessageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[20]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1073,7 +1277,7 @@ func (x *GetMessageByAppLangMessageRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetMessageByAppLangMessageRequest.ProtoReflect.Descriptor instead.
 func (*GetMessageByAppLangMessageRequest) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{20}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *GetMessageByAppLangMessageRequest) GetAppID() string {
@@ -1108,7 +1312,7 @@ type GetMessageByAppLangMessageResponse struct {
 func (x *GetMessageByAppLangMessageResponse) Reset() {
 	*x = GetMessageByAppLangMessageResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[21]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1121,7 +1325,7 @@ func (x *GetMessageByAppLangMessageResponse) String() string {
 func (*GetMessageByAppLangMessageResponse) ProtoMessage() {}
 
 func (x *GetMessageByAppLangMessageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[21]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1134,7 +1338,7 @@ func (x *GetMessageByAppLangMessageResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use GetMessageByAppLangMessageResponse.ProtoReflect.Descriptor instead.
 func (*GetMessageByAppLangMessageResponse) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{21}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *GetMessageByAppLangMessageResponse) GetInfo() *Message {
@@ -1157,7 +1361,7 @@ type AppLang struct {
 func (x *AppLang) Reset() {
 	*x = AppLang{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[22]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1170,7 +1374,7 @@ func (x *AppLang) String() string {
 func (*AppLang) ProtoMessage() {}
 
 func (x *AppLang) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[22]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1183,7 +1387,7 @@ func (x *AppLang) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppLang.ProtoReflect.Descriptor instead.
 func (*AppLang) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{22}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *AppLang) GetID() string {
@@ -1218,7 +1422,7 @@ type CreateAppLangRequest struct {
 func (x *CreateAppLangRequest) Reset() {
 	*x = CreateAppLangRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[23]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1231,7 +1435,7 @@ func (x *CreateAppLangRequest) String() string {
 func (*CreateAppLangRequest) ProtoMessage() {}
 
 func (x *CreateAppLangRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[23]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1244,7 +1448,7 @@ func (x *CreateAppLangRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAppLangRequest.ProtoReflect.Descriptor instead.
 func (*CreateAppLangRequest) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{23}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *CreateAppLangRequest) GetInfo() *AppLang {
@@ -1265,7 +1469,7 @@ type CreateAppLangResponse struct {
 func (x *CreateAppLangResponse) Reset() {
 	*x = CreateAppLangResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[24]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1278,7 +1482,7 @@ func (x *CreateAppLangResponse) String() string {
 func (*CreateAppLangResponse) ProtoMessage() {}
 
 func (x *CreateAppLangResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[24]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1291,7 +1495,7 @@ func (x *CreateAppLangResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAppLangResponse.ProtoReflect.Descriptor instead.
 func (*CreateAppLangResponse) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{24}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *CreateAppLangResponse) GetInfo() *AppLang {
@@ -1313,7 +1517,7 @@ type CreateAppLangForOtherAppRequest struct {
 func (x *CreateAppLangForOtherAppRequest) Reset() {
 	*x = CreateAppLangForOtherAppRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[25]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1326,7 +1530,7 @@ func (x *CreateAppLangForOtherAppRequest) String() string {
 func (*CreateAppLangForOtherAppRequest) ProtoMessage() {}
 
 func (x *CreateAppLangForOtherAppRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[25]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1339,7 +1543,7 @@ func (x *CreateAppLangForOtherAppRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAppLangForOtherAppRequest.ProtoReflect.Descriptor instead.
 func (*CreateAppLangForOtherAppRequest) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{25}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *CreateAppLangForOtherAppRequest) GetTargetAppID() string {
@@ -1367,7 +1571,7 @@ type CreateAppLangForOtherAppResponse struct {
 func (x *CreateAppLangForOtherAppResponse) Reset() {
 	*x = CreateAppLangForOtherAppResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[26]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1380,7 +1584,7 @@ func (x *CreateAppLangForOtherAppResponse) String() string {
 func (*CreateAppLangForOtherAppResponse) ProtoMessage() {}
 
 func (x *CreateAppLangForOtherAppResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[26]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1393,7 +1597,7 @@ func (x *CreateAppLangForOtherAppResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAppLangForOtherAppResponse.ProtoReflect.Descriptor instead.
 func (*CreateAppLangForOtherAppResponse) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{26}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *CreateAppLangForOtherAppResponse) GetInfo() *AppLang {
@@ -1414,7 +1618,7 @@ type GetAppLangRequest struct {
 func (x *GetAppLangRequest) Reset() {
 	*x = GetAppLangRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[27]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1427,7 +1631,7 @@ func (x *GetAppLangRequest) String() string {
 func (*GetAppLangRequest) ProtoMessage() {}
 
 func (x *GetAppLangRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[27]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1440,7 +1644,7 @@ func (x *GetAppLangRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppLangRequest.ProtoReflect.Descriptor instead.
 func (*GetAppLangRequest) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{27}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *GetAppLangRequest) GetID() string {
@@ -1461,7 +1665,7 @@ type GetAppLangResponse struct {
 func (x *GetAppLangResponse) Reset() {
 	*x = GetAppLangResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[28]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1474,7 +1678,7 @@ func (x *GetAppLangResponse) String() string {
 func (*GetAppLangResponse) ProtoMessage() {}
 
 func (x *GetAppLangResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[28]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1487,7 +1691,7 @@ func (x *GetAppLangResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppLangResponse.ProtoReflect.Descriptor instead.
 func (*GetAppLangResponse) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{28}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *GetAppLangResponse) GetInfo() *AppLang {
@@ -1508,7 +1712,7 @@ type GetAppLangsByAppRequest struct {
 func (x *GetAppLangsByAppRequest) Reset() {
 	*x = GetAppLangsByAppRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[29]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1521,7 +1725,7 @@ func (x *GetAppLangsByAppRequest) String() string {
 func (*GetAppLangsByAppRequest) ProtoMessage() {}
 
 func (x *GetAppLangsByAppRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[29]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1534,7 +1738,7 @@ func (x *GetAppLangsByAppRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppLangsByAppRequest.ProtoReflect.Descriptor instead.
 func (*GetAppLangsByAppRequest) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{29}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *GetAppLangsByAppRequest) GetAppID() string {
@@ -1555,7 +1759,7 @@ type GetAppLangsByAppResponse struct {
 func (x *GetAppLangsByAppResponse) Reset() {
 	*x = GetAppLangsByAppResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[30]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1568,7 +1772,7 @@ func (x *GetAppLangsByAppResponse) String() string {
 func (*GetAppLangsByAppResponse) ProtoMessage() {}
 
 func (x *GetAppLangsByAppResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[30]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1581,7 +1785,7 @@ func (x *GetAppLangsByAppResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppLangsByAppResponse.ProtoReflect.Descriptor instead.
 func (*GetAppLangsByAppResponse) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{30}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *GetAppLangsByAppResponse) GetInfos() []*AppLang {
@@ -1603,7 +1807,7 @@ type AppLangInfo struct {
 func (x *AppLangInfo) Reset() {
 	*x = AppLangInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[31]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[35]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1616,7 +1820,7 @@ func (x *AppLangInfo) String() string {
 func (*AppLangInfo) ProtoMessage() {}
 
 func (x *AppLangInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[31]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[35]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1629,7 +1833,7 @@ func (x *AppLangInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppLangInfo.ProtoReflect.Descriptor instead.
 func (*AppLangInfo) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{31}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *AppLangInfo) GetAppLang() *AppLang {
@@ -1657,7 +1861,7 @@ type GetAppLangInfosByAppRequest struct {
 func (x *GetAppLangInfosByAppRequest) Reset() {
 	*x = GetAppLangInfosByAppRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[32]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[36]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1670,7 +1874,7 @@ func (x *GetAppLangInfosByAppRequest) String() string {
 func (*GetAppLangInfosByAppRequest) ProtoMessage() {}
 
 func (x *GetAppLangInfosByAppRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[32]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[36]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1683,7 +1887,7 @@ func (x *GetAppLangInfosByAppRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppLangInfosByAppRequest.ProtoReflect.Descriptor instead.
 func (*GetAppLangInfosByAppRequest) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{32}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *GetAppLangInfosByAppRequest) GetAppID() string {
@@ -1704,7 +1908,7 @@ type GetAppLangInfosByAppResponse struct {
 func (x *GetAppLangInfosByAppResponse) Reset() {
 	*x = GetAppLangInfosByAppResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[33]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[37]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1717,7 +1921,7 @@ func (x *GetAppLangInfosByAppResponse) String() string {
 func (*GetAppLangInfosByAppResponse) ProtoMessage() {}
 
 func (x *GetAppLangInfosByAppResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[33]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[37]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1730,7 +1934,7 @@ func (x *GetAppLangInfosByAppResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppLangInfosByAppResponse.ProtoReflect.Descriptor instead.
 func (*GetAppLangInfosByAppResponse) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{33}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *GetAppLangInfosByAppResponse) GetInfos() []*AppLangInfo {
@@ -1751,7 +1955,7 @@ type GetAppLangInfosByOtherAppRequest struct {
 func (x *GetAppLangInfosByOtherAppRequest) Reset() {
 	*x = GetAppLangInfosByOtherAppRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[34]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[38]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1764,7 +1968,7 @@ func (x *GetAppLangInfosByOtherAppRequest) String() string {
 func (*GetAppLangInfosByOtherAppRequest) ProtoMessage() {}
 
 func (x *GetAppLangInfosByOtherAppRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[34]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[38]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1777,7 +1981,7 @@ func (x *GetAppLangInfosByOtherAppRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppLangInfosByOtherAppRequest.ProtoReflect.Descriptor instead.
 func (*GetAppLangInfosByOtherAppRequest) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{34}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *GetAppLangInfosByOtherAppRequest) GetTargetAppID() string {
@@ -1798,7 +2002,7 @@ type GetAppLangInfosByOtherAppResponse struct {
 func (x *GetAppLangInfosByOtherAppResponse) Reset() {
 	*x = GetAppLangInfosByOtherAppResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_internationalization_internationalization_proto_msgTypes[35]
+		mi := &file_npool_internationalization_internationalization_proto_msgTypes[39]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1811,7 +2015,7 @@ func (x *GetAppLangInfosByOtherAppResponse) String() string {
 func (*GetAppLangInfosByOtherAppResponse) ProtoMessage() {}
 
 func (x *GetAppLangInfosByOtherAppResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_internationalization_internationalization_proto_msgTypes[35]
+	mi := &file_npool_internationalization_internationalization_proto_msgTypes[39]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1824,7 +2028,7 @@ func (x *GetAppLangInfosByOtherAppResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetAppLangInfosByOtherAppResponse.ProtoReflect.Descriptor instead.
 func (*GetAppLangInfosByOtherAppResponse) Descriptor() ([]byte, []int) {
-	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{35}
+	return file_npool_internationalization_internationalization_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *GetAppLangInfosByOtherAppResponse) GetInfos() []*AppLangInfo {
@@ -1903,43 +2107,68 @@ var file_npool_internationalization_internationalization_proto_rawDesc = []byte{
 	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x69, 0x6e,
 	0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x04, 0x49,
-	0x6e, 0x66, 0x6f, 0x22, 0x4f, 0x0a, 0x15, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73,
-	0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x36, 0x0a, 0x05,
-	0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x69, 0x6e,
-	0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x05, 0x49,
-	0x6e, 0x66, 0x6f, 0x73, 0x22, 0x50, 0x0a, 0x16, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65,
-	0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x36,
-	0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x20, 0x2e,
-	0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61,
-	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52,
-	0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x4c, 0x0a, 0x14, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
-	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x34,
-	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x69,
-	0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x04,
-	0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4d, 0x0a, 0x15, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x65,
-	0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x34, 0x0a,
-	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x69, 0x6e,
-	0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x04, 0x49,
-	0x6e, 0x66, 0x6f, 0x22, 0x4f, 0x0a, 0x15, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73,
-	0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x36, 0x0a, 0x05,
-	0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x69, 0x6e,
-	0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x05, 0x49,
-	0x6e, 0x66, 0x6f, 0x73, 0x22, 0x50, 0x0a, 0x16, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x65,
-	0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x36,
-	0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x20, 0x2e,
-	0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61,
-	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52,
-	0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x4b, 0x0a, 0x1b, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73,
-	0x73, 0x61, 0x67, 0x65, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x4c,
-	0x61, 0x6e, 0x67, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x4c, 0x61, 0x6e,
-	0x67, 0x49, 0x44, 0x22, 0x56, 0x0a, 0x1c, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67,
-	0x65, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x66, 0x6f, 0x22, 0x79, 0x0a, 0x1f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74,
+	0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x54, 0x61, 0x72,
+	0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
+	0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31,
+	0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x58,
+	0x0a, 0x20, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x46,
+	0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x20, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c,
+	0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61,
+	0x67, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4f, 0x0a, 0x15, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x36, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b,
+	0x32, 0x20, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c,
+	0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61,
+	0x67, 0x65, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x50, 0x0a, 0x16, 0x43, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x36, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03,
+	0x28, 0x0b, 0x32, 0x20, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x4c, 0x0a, 0x14, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x20, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61,
+	0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73, 0x73,
+	0x61, 0x67, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4d, 0x0a, 0x15, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x20, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c,
+	0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61,
+	0x67, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4f, 0x0a, 0x15, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x36, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b,
+	0x32, 0x20, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c,
+	0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61,
+	0x67, 0x65, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x50, 0x0a, 0x16, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x36, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03,
+	0x28, 0x0b, 0x32, 0x20, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x4b, 0x0a, 0x1b, 0x47,
+	0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x4c,
+	0x61, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70,
+	0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44,
+	0x12, 0x16, 0x0a, 0x06, 0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x06, 0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44, 0x22, 0x56, 0x0a, 0x1c, 0x47, 0x65, 0x74, 0x4d,
+	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x36, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f,
+	0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76,
+	0x31, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73,
+	0x22, 0x5c, 0x0a, 0x20, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x42,
+	0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70,
+	0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65,
+	0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44,
+	0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44, 0x22, 0x5b,
+	0x0a, 0x21, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x42, 0x79, 0x4f,
+	0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x12, 0x36, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03,
 	0x28, 0x0b, 0x32, 0x20, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73,
@@ -2027,7 +2256,7 @@ var file_npool_internationalization_internationalization_proto_rawDesc = []byte{
 	0x28, 0x0b, 0x32, 0x24, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70,
 	0x4c, 0x61, 0x6e, 0x67, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x32,
-	0xff, 0x13, 0x0a, 0x14, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61,
+	0x82, 0x17, 0x0a, 0x14, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61,
 	0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x51, 0x0a, 0x07, 0x56, 0x65, 0x72, 0x73,
 	0x69, 0x6f, 0x6e, 0x12, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x19, 0x2e, 0x6e, 0x70,
@@ -2136,62 +2365,86 @@ var file_npool_internationalization_internationalization_proto_rawDesc = []byte{
 	0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x22, 0x1d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x17, 0x22, 0x12, 0x2f, 0x76, 0x31,
 	0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x3a,
-	0x01, 0x2a, 0x12, 0x91, 0x01, 0x0a, 0x0e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73,
-	0x73, 0x61, 0x67, 0x65, 0x73, 0x12, 0x2e, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e,
-	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e,
-	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x22, 0x13,
-	0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61,
-	0x67, 0x65, 0x73, 0x3a, 0x01, 0x2a, 0x12, 0x8d, 0x01, 0x0a, 0x0d, 0x55, 0x70, 0x64, 0x61, 0x74,
-	0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x2d, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72,
-	0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e,
-	0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e,
+	0x01, 0x2a, 0x12, 0xbc, 0x01, 0x0a, 0x18, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x12,
+	0x38, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69,
+	0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41,
+	0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x39, 0x2e, 0x69, 0x6e, 0x74, 0x65,
+	0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67,
+	0x65, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x25, 0x22, 0x20, 0x2f, 0x76,
+	0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
+	0x2f, 0x66, 0x6f, 0x72, 0x2f, 0x6f, 0x74, 0x68, 0x65, 0x72, 0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01,
+	0x2a, 0x12, 0x91, 0x01, 0x0a, 0x0e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73,
+	0x61, 0x67, 0x65, 0x73, 0x12, 0x2e, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x22, 0x13, 0x2f,
+	0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
+	0x65, 0x73, 0x3a, 0x01, 0x2a, 0x12, 0x8d, 0x01, 0x0a, 0x0d, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x2d, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76,
 	0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x17, 0x22,
-	0x12, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x6d, 0x65, 0x73, 0x73,
-	0x61, 0x67, 0x65, 0x3a, 0x01, 0x2a, 0x12, 0x91, 0x01, 0x0a, 0x0e, 0x55, 0x70, 0x64, 0x61, 0x74,
-	0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x12, 0x2e, 0x2e, 0x69, 0x6e, 0x74, 0x65,
-	0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67,
-	0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x69, 0x6e, 0x74, 0x65,
-	0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67,
-	0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93,
-	0x02, 0x18, 0x22, 0x13, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x6d,
-	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x3a, 0x01, 0x2a, 0x12, 0xac, 0x01, 0x0a, 0x14, 0x47,
-	0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x4c,
-	0x61, 0x6e, 0x67, 0x12, 0x34, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
-	0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x4c, 0x61,
-	0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x35, 0x2e, 0x69, 0x6e, 0x74, 0x65,
-	0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x42,
-	0x79, 0x41, 0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x27, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x21, 0x22, 0x1c, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65,
-	0x74, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70,
-	0x70, 0x2f, 0x6c, 0x61, 0x6e, 0x67, 0x3a, 0x01, 0x2a, 0x12, 0xc5, 0x01, 0x0a, 0x1a, 0x47, 0x65,
-	0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x42, 0x79, 0x41, 0x70, 0x70, 0x4c, 0x61, 0x6e,
-	0x67, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x3a, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31,
+	0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x17, 0x22, 0x12,
+	0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61,
+	0x67, 0x65, 0x3a, 0x01, 0x2a, 0x12, 0x91, 0x01, 0x0a, 0x0e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x12, 0x2e, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72,
 	0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e,
-	0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x42, 0x79, 0x41,
-	0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x3b, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x42, 0x79, 0x41, 0x70, 0x70, 0x4c, 0x61,
-	0x6e, 0x67, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x2e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x28, 0x22, 0x23, 0x2f, 0x76, 0x31, 0x2f, 0x67,
-	0x65, 0x74, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70,
-	0x70, 0x2f, 0x6c, 0x61, 0x6e, 0x67, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x3a, 0x01,
-	0x2a, 0x42, 0x3d, 0x5a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
-	0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x69, 0x6e,
+	0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
+	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72,
+	0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e,
+	0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
+	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02,
+	0x18, 0x22, 0x13, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x6d, 0x65,
+	0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x3a, 0x01, 0x2a, 0x12, 0xac, 0x01, 0x0a, 0x14, 0x47, 0x65,
+	0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x4c, 0x61,
+	0x6e, 0x67, 0x12, 0x34, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
+	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x4c, 0x61, 0x6e,
+	0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x35, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72,
+	0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e,
+	0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x42, 0x79,
+	0x41, 0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x27, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x21, 0x22, 0x1c, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74,
+	0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70,
+	0x2f, 0x6c, 0x61, 0x6e, 0x67, 0x3a, 0x01, 0x2a, 0x12, 0xc1, 0x01, 0x0a, 0x19, 0x47, 0x65, 0x74,
+	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41,
+	0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67, 0x12, 0x39, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31,
+	0x2e, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x42, 0x79, 0x4f, 0x74,
+	0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x3a, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61,
+	0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d,
+	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70,
+	0x70, 0x4c, 0x61, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2d, 0x82,
+	0xd3, 0xe4, 0x93, 0x02, 0x27, 0x22, 0x22, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x6d,
+	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x6f, 0x74, 0x68, 0x65, 0x72,
+	0x2f, 0x61, 0x70, 0x70, 0x2f, 0x6c, 0x61, 0x6e, 0x67, 0x3a, 0x01, 0x2a, 0x12, 0xc5, 0x01, 0x0a,
+	0x1a, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x42, 0x79, 0x41, 0x70, 0x70,
+	0x4c, 0x61, 0x6e, 0x67, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x3a, 0x2e, 0x69, 0x6e,
 	0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
+	0x42, 0x79, 0x41, 0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3b, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76,
+	0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x42, 0x79, 0x41, 0x70,
+	0x70, 0x4c, 0x61, 0x6e, 0x67, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x28, 0x22, 0x23, 0x2f, 0x76,
+	0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x62, 0x79,
+	0x2f, 0x61, 0x70, 0x70, 0x2f, 0x6c, 0x61, 0x6e, 0x67, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
+	0x65, 0x3a, 0x01, 0x2a, 0x42, 0x3d, 0x5a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d,
+	0x2f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69, 0x7a,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70,
+	0x6f, 0x6f, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2206,7 +2459,7 @@ func file_npool_internationalization_internationalization_proto_rawDescGZIP() []
 	return file_npool_internationalization_internationalization_proto_rawDescData
 }
 
-var file_npool_internationalization_internationalization_proto_msgTypes = make([]protoimpl.MessageInfo, 36)
+var file_npool_internationalization_internationalization_proto_msgTypes = make([]protoimpl.MessageInfo, 40)
 var file_npool_internationalization_internationalization_proto_goTypes = []interface{}{
 	(*Lang)(nil),                               // 0: internationalization.v1.Lang
 	(*AddLangRequest)(nil),                     // 1: internationalization.v1.AddLangRequest
@@ -2220,32 +2473,36 @@ var file_npool_internationalization_internationalization_proto_goTypes = []inter
 	(*Message)(nil),                            // 9: internationalization.v1.Message
 	(*CreateMessageRequest)(nil),               // 10: internationalization.v1.CreateMessageRequest
 	(*CreateMessageResponse)(nil),              // 11: internationalization.v1.CreateMessageResponse
-	(*CreateMessagesRequest)(nil),              // 12: internationalization.v1.CreateMessagesRequest
-	(*CreateMessagesResponse)(nil),             // 13: internationalization.v1.CreateMessagesResponse
-	(*UpdateMessageRequest)(nil),               // 14: internationalization.v1.UpdateMessageRequest
-	(*UpdateMessageResponse)(nil),              // 15: internationalization.v1.UpdateMessageResponse
-	(*UpdateMessagesRequest)(nil),              // 16: internationalization.v1.UpdateMessagesRequest
-	(*UpdateMessagesResponse)(nil),             // 17: internationalization.v1.UpdateMessagesResponse
-	(*GetMessagesByAppLangRequest)(nil),        // 18: internationalization.v1.GetMessagesByAppLangRequest
-	(*GetMessagesByAppLangResponse)(nil),       // 19: internationalization.v1.GetMessagesByAppLangResponse
-	(*GetMessageByAppLangMessageRequest)(nil),  // 20: internationalization.v1.GetMessageByAppLangMessageRequest
-	(*GetMessageByAppLangMessageResponse)(nil), // 21: internationalization.v1.GetMessageByAppLangMessageResponse
-	(*AppLang)(nil),                            // 22: internationalization.v1.AppLang
-	(*CreateAppLangRequest)(nil),               // 23: internationalization.v1.CreateAppLangRequest
-	(*CreateAppLangResponse)(nil),              // 24: internationalization.v1.CreateAppLangResponse
-	(*CreateAppLangForOtherAppRequest)(nil),    // 25: internationalization.v1.CreateAppLangForOtherAppRequest
-	(*CreateAppLangForOtherAppResponse)(nil),   // 26: internationalization.v1.CreateAppLangForOtherAppResponse
-	(*GetAppLangRequest)(nil),                  // 27: internationalization.v1.GetAppLangRequest
-	(*GetAppLangResponse)(nil),                 // 28: internationalization.v1.GetAppLangResponse
-	(*GetAppLangsByAppRequest)(nil),            // 29: internationalization.v1.GetAppLangsByAppRequest
-	(*GetAppLangsByAppResponse)(nil),           // 30: internationalization.v1.GetAppLangsByAppResponse
-	(*AppLangInfo)(nil),                        // 31: internationalization.v1.AppLangInfo
-	(*GetAppLangInfosByAppRequest)(nil),        // 32: internationalization.v1.GetAppLangInfosByAppRequest
-	(*GetAppLangInfosByAppResponse)(nil),       // 33: internationalization.v1.GetAppLangInfosByAppResponse
-	(*GetAppLangInfosByOtherAppRequest)(nil),   // 34: internationalization.v1.GetAppLangInfosByOtherAppRequest
-	(*GetAppLangInfosByOtherAppResponse)(nil),  // 35: internationalization.v1.GetAppLangInfosByOtherAppResponse
-	(*emptypb.Empty)(nil),                      // 36: google.protobuf.Empty
-	(*npool.VersionResponse)(nil),              // 37: npool.v1.VersionResponse
+	(*CreateMessageForOtherAppRequest)(nil),    // 12: internationalization.v1.CreateMessageForOtherAppRequest
+	(*CreateMessageForOtherAppResponse)(nil),   // 13: internationalization.v1.CreateMessageForOtherAppResponse
+	(*CreateMessagesRequest)(nil),              // 14: internationalization.v1.CreateMessagesRequest
+	(*CreateMessagesResponse)(nil),             // 15: internationalization.v1.CreateMessagesResponse
+	(*UpdateMessageRequest)(nil),               // 16: internationalization.v1.UpdateMessageRequest
+	(*UpdateMessageResponse)(nil),              // 17: internationalization.v1.UpdateMessageResponse
+	(*UpdateMessagesRequest)(nil),              // 18: internationalization.v1.UpdateMessagesRequest
+	(*UpdateMessagesResponse)(nil),             // 19: internationalization.v1.UpdateMessagesResponse
+	(*GetMessagesByAppLangRequest)(nil),        // 20: internationalization.v1.GetMessagesByAppLangRequest
+	(*GetMessagesByAppLangResponse)(nil),       // 21: internationalization.v1.GetMessagesByAppLangResponse
+	(*GetMessagesByOtherAppLangRequest)(nil),   // 22: internationalization.v1.GetMessagesByOtherAppLangRequest
+	(*GetMessagesByOtherAppLangResponse)(nil),  // 23: internationalization.v1.GetMessagesByOtherAppLangResponse
+	(*GetMessageByAppLangMessageRequest)(nil),  // 24: internationalization.v1.GetMessageByAppLangMessageRequest
+	(*GetMessageByAppLangMessageResponse)(nil), // 25: internationalization.v1.GetMessageByAppLangMessageResponse
+	(*AppLang)(nil),                            // 26: internationalization.v1.AppLang
+	(*CreateAppLangRequest)(nil),               // 27: internationalization.v1.CreateAppLangRequest
+	(*CreateAppLangResponse)(nil),              // 28: internationalization.v1.CreateAppLangResponse
+	(*CreateAppLangForOtherAppRequest)(nil),    // 29: internationalization.v1.CreateAppLangForOtherAppRequest
+	(*CreateAppLangForOtherAppResponse)(nil),   // 30: internationalization.v1.CreateAppLangForOtherAppResponse
+	(*GetAppLangRequest)(nil),                  // 31: internationalization.v1.GetAppLangRequest
+	(*GetAppLangResponse)(nil),                 // 32: internationalization.v1.GetAppLangResponse
+	(*GetAppLangsByAppRequest)(nil),            // 33: internationalization.v1.GetAppLangsByAppRequest
+	(*GetAppLangsByAppResponse)(nil),           // 34: internationalization.v1.GetAppLangsByAppResponse
+	(*AppLangInfo)(nil),                        // 35: internationalization.v1.AppLangInfo
+	(*GetAppLangInfosByAppRequest)(nil),        // 36: internationalization.v1.GetAppLangInfosByAppRequest
+	(*GetAppLangInfosByAppResponse)(nil),       // 37: internationalization.v1.GetAppLangInfosByAppResponse
+	(*GetAppLangInfosByOtherAppRequest)(nil),   // 38: internationalization.v1.GetAppLangInfosByOtherAppRequest
+	(*GetAppLangInfosByOtherAppResponse)(nil),  // 39: internationalization.v1.GetAppLangInfosByOtherAppResponse
+	(*emptypb.Empty)(nil),                      // 40: google.protobuf.Empty
+	(*npool.VersionResponse)(nil),              // 41: npool.v1.VersionResponse
 }
 var file_npool_internationalization_internationalization_proto_depIdxs = []int32{
 	0,  // 0: internationalization.v1.AddLangRequest.Info:type_name -> internationalization.v1.Lang
@@ -2256,63 +2513,70 @@ var file_npool_internationalization_internationalization_proto_depIdxs = []int32
 	0,  // 5: internationalization.v1.GetLangsResponse.Infos:type_name -> internationalization.v1.Lang
 	9,  // 6: internationalization.v1.CreateMessageRequest.Info:type_name -> internationalization.v1.Message
 	9,  // 7: internationalization.v1.CreateMessageResponse.Info:type_name -> internationalization.v1.Message
-	9,  // 8: internationalization.v1.CreateMessagesRequest.Infos:type_name -> internationalization.v1.Message
-	9,  // 9: internationalization.v1.CreateMessagesResponse.Infos:type_name -> internationalization.v1.Message
-	9,  // 10: internationalization.v1.UpdateMessageRequest.Info:type_name -> internationalization.v1.Message
-	9,  // 11: internationalization.v1.UpdateMessageResponse.Info:type_name -> internationalization.v1.Message
-	9,  // 12: internationalization.v1.UpdateMessagesRequest.Infos:type_name -> internationalization.v1.Message
-	9,  // 13: internationalization.v1.UpdateMessagesResponse.Infos:type_name -> internationalization.v1.Message
-	9,  // 14: internationalization.v1.GetMessagesByAppLangResponse.Infos:type_name -> internationalization.v1.Message
-	9,  // 15: internationalization.v1.GetMessageByAppLangMessageResponse.Info:type_name -> internationalization.v1.Message
-	22, // 16: internationalization.v1.CreateAppLangRequest.Info:type_name -> internationalization.v1.AppLang
-	22, // 17: internationalization.v1.CreateAppLangResponse.Info:type_name -> internationalization.v1.AppLang
-	22, // 18: internationalization.v1.CreateAppLangForOtherAppRequest.Info:type_name -> internationalization.v1.AppLang
-	22, // 19: internationalization.v1.CreateAppLangForOtherAppResponse.Info:type_name -> internationalization.v1.AppLang
-	22, // 20: internationalization.v1.GetAppLangResponse.Info:type_name -> internationalization.v1.AppLang
-	22, // 21: internationalization.v1.GetAppLangsByAppResponse.Infos:type_name -> internationalization.v1.AppLang
-	22, // 22: internationalization.v1.AppLangInfo.AppLang:type_name -> internationalization.v1.AppLang
-	0,  // 23: internationalization.v1.AppLangInfo.Lang:type_name -> internationalization.v1.Lang
-	31, // 24: internationalization.v1.GetAppLangInfosByAppResponse.Infos:type_name -> internationalization.v1.AppLangInfo
-	31, // 25: internationalization.v1.GetAppLangInfosByOtherAppResponse.Infos:type_name -> internationalization.v1.AppLangInfo
-	36, // 26: internationalization.v1.Internationalization.Version:input_type -> google.protobuf.Empty
-	1,  // 27: internationalization.v1.Internationalization.AddLang:input_type -> internationalization.v1.AddLangRequest
-	3,  // 28: internationalization.v1.Internationalization.GetLang:input_type -> internationalization.v1.GetLangRequest
-	5,  // 29: internationalization.v1.Internationalization.UpdateLang:input_type -> internationalization.v1.UpdateLangRequest
-	7,  // 30: internationalization.v1.Internationalization.GetLangs:input_type -> internationalization.v1.GetLangsRequest
-	23, // 31: internationalization.v1.Internationalization.CreateAppLang:input_type -> internationalization.v1.CreateAppLangRequest
-	25, // 32: internationalization.v1.Internationalization.CreateAppLangForOtherApp:input_type -> internationalization.v1.CreateAppLangForOtherAppRequest
-	27, // 33: internationalization.v1.Internationalization.GetAppLang:input_type -> internationalization.v1.GetAppLangRequest
-	29, // 34: internationalization.v1.Internationalization.GetAppLangsByApp:input_type -> internationalization.v1.GetAppLangsByAppRequest
-	32, // 35: internationalization.v1.Internationalization.GetAppLangInfosByApp:input_type -> internationalization.v1.GetAppLangInfosByAppRequest
-	34, // 36: internationalization.v1.Internationalization.GetAppLangInfosByOtherApp:input_type -> internationalization.v1.GetAppLangInfosByOtherAppRequest
-	10, // 37: internationalization.v1.Internationalization.CreateMessage:input_type -> internationalization.v1.CreateMessageRequest
-	12, // 38: internationalization.v1.Internationalization.CreateMessages:input_type -> internationalization.v1.CreateMessagesRequest
-	14, // 39: internationalization.v1.Internationalization.UpdateMessage:input_type -> internationalization.v1.UpdateMessageRequest
-	16, // 40: internationalization.v1.Internationalization.UpdateMessages:input_type -> internationalization.v1.UpdateMessagesRequest
-	18, // 41: internationalization.v1.Internationalization.GetMessagesByAppLang:input_type -> internationalization.v1.GetMessagesByAppLangRequest
-	20, // 42: internationalization.v1.Internationalization.GetMessageByAppLangMessage:input_type -> internationalization.v1.GetMessageByAppLangMessageRequest
-	37, // 43: internationalization.v1.Internationalization.Version:output_type -> npool.v1.VersionResponse
-	2,  // 44: internationalization.v1.Internationalization.AddLang:output_type -> internationalization.v1.AddLangResponse
-	4,  // 45: internationalization.v1.Internationalization.GetLang:output_type -> internationalization.v1.GetLangResponse
-	6,  // 46: internationalization.v1.Internationalization.UpdateLang:output_type -> internationalization.v1.UpdateLangResponse
-	8,  // 47: internationalization.v1.Internationalization.GetLangs:output_type -> internationalization.v1.GetLangsResponse
-	24, // 48: internationalization.v1.Internationalization.CreateAppLang:output_type -> internationalization.v1.CreateAppLangResponse
-	26, // 49: internationalization.v1.Internationalization.CreateAppLangForOtherApp:output_type -> internationalization.v1.CreateAppLangForOtherAppResponse
-	28, // 50: internationalization.v1.Internationalization.GetAppLang:output_type -> internationalization.v1.GetAppLangResponse
-	30, // 51: internationalization.v1.Internationalization.GetAppLangsByApp:output_type -> internationalization.v1.GetAppLangsByAppResponse
-	33, // 52: internationalization.v1.Internationalization.GetAppLangInfosByApp:output_type -> internationalization.v1.GetAppLangInfosByAppResponse
-	35, // 53: internationalization.v1.Internationalization.GetAppLangInfosByOtherApp:output_type -> internationalization.v1.GetAppLangInfosByOtherAppResponse
-	11, // 54: internationalization.v1.Internationalization.CreateMessage:output_type -> internationalization.v1.CreateMessageResponse
-	13, // 55: internationalization.v1.Internationalization.CreateMessages:output_type -> internationalization.v1.CreateMessagesResponse
-	15, // 56: internationalization.v1.Internationalization.UpdateMessage:output_type -> internationalization.v1.UpdateMessageResponse
-	17, // 57: internationalization.v1.Internationalization.UpdateMessages:output_type -> internationalization.v1.UpdateMessagesResponse
-	19, // 58: internationalization.v1.Internationalization.GetMessagesByAppLang:output_type -> internationalization.v1.GetMessagesByAppLangResponse
-	21, // 59: internationalization.v1.Internationalization.GetMessageByAppLangMessage:output_type -> internationalization.v1.GetMessageByAppLangMessageResponse
-	43, // [43:60] is the sub-list for method output_type
-	26, // [26:43] is the sub-list for method input_type
-	26, // [26:26] is the sub-list for extension type_name
-	26, // [26:26] is the sub-list for extension extendee
-	0,  // [0:26] is the sub-list for field type_name
+	9,  // 8: internationalization.v1.CreateMessageForOtherAppRequest.Info:type_name -> internationalization.v1.Message
+	9,  // 9: internationalization.v1.CreateMessageForOtherAppResponse.Info:type_name -> internationalization.v1.Message
+	9,  // 10: internationalization.v1.CreateMessagesRequest.Infos:type_name -> internationalization.v1.Message
+	9,  // 11: internationalization.v1.CreateMessagesResponse.Infos:type_name -> internationalization.v1.Message
+	9,  // 12: internationalization.v1.UpdateMessageRequest.Info:type_name -> internationalization.v1.Message
+	9,  // 13: internationalization.v1.UpdateMessageResponse.Info:type_name -> internationalization.v1.Message
+	9,  // 14: internationalization.v1.UpdateMessagesRequest.Infos:type_name -> internationalization.v1.Message
+	9,  // 15: internationalization.v1.UpdateMessagesResponse.Infos:type_name -> internationalization.v1.Message
+	9,  // 16: internationalization.v1.GetMessagesByAppLangResponse.Infos:type_name -> internationalization.v1.Message
+	9,  // 17: internationalization.v1.GetMessagesByOtherAppLangResponse.Infos:type_name -> internationalization.v1.Message
+	9,  // 18: internationalization.v1.GetMessageByAppLangMessageResponse.Info:type_name -> internationalization.v1.Message
+	26, // 19: internationalization.v1.CreateAppLangRequest.Info:type_name -> internationalization.v1.AppLang
+	26, // 20: internationalization.v1.CreateAppLangResponse.Info:type_name -> internationalization.v1.AppLang
+	26, // 21: internationalization.v1.CreateAppLangForOtherAppRequest.Info:type_name -> internationalization.v1.AppLang
+	26, // 22: internationalization.v1.CreateAppLangForOtherAppResponse.Info:type_name -> internationalization.v1.AppLang
+	26, // 23: internationalization.v1.GetAppLangResponse.Info:type_name -> internationalization.v1.AppLang
+	26, // 24: internationalization.v1.GetAppLangsByAppResponse.Infos:type_name -> internationalization.v1.AppLang
+	26, // 25: internationalization.v1.AppLangInfo.AppLang:type_name -> internationalization.v1.AppLang
+	0,  // 26: internationalization.v1.AppLangInfo.Lang:type_name -> internationalization.v1.Lang
+	35, // 27: internationalization.v1.GetAppLangInfosByAppResponse.Infos:type_name -> internationalization.v1.AppLangInfo
+	35, // 28: internationalization.v1.GetAppLangInfosByOtherAppResponse.Infos:type_name -> internationalization.v1.AppLangInfo
+	40, // 29: internationalization.v1.Internationalization.Version:input_type -> google.protobuf.Empty
+	1,  // 30: internationalization.v1.Internationalization.AddLang:input_type -> internationalization.v1.AddLangRequest
+	3,  // 31: internationalization.v1.Internationalization.GetLang:input_type -> internationalization.v1.GetLangRequest
+	5,  // 32: internationalization.v1.Internationalization.UpdateLang:input_type -> internationalization.v1.UpdateLangRequest
+	7,  // 33: internationalization.v1.Internationalization.GetLangs:input_type -> internationalization.v1.GetLangsRequest
+	27, // 34: internationalization.v1.Internationalization.CreateAppLang:input_type -> internationalization.v1.CreateAppLangRequest
+	29, // 35: internationalization.v1.Internationalization.CreateAppLangForOtherApp:input_type -> internationalization.v1.CreateAppLangForOtherAppRequest
+	31, // 36: internationalization.v1.Internationalization.GetAppLang:input_type -> internationalization.v1.GetAppLangRequest
+	33, // 37: internationalization.v1.Internationalization.GetAppLangsByApp:input_type -> internationalization.v1.GetAppLangsByAppRequest
+	36, // 38: internationalization.v1.Internationalization.GetAppLangInfosByApp:input_type -> internationalization.v1.GetAppLangInfosByAppRequest
+	38, // 39: internationalization.v1.Internationalization.GetAppLangInfosByOtherApp:input_type -> internationalization.v1.GetAppLangInfosByOtherAppRequest
+	10, // 40: internationalization.v1.Internationalization.CreateMessage:input_type -> internationalization.v1.CreateMessageRequest
+	12, // 41: internationalization.v1.Internationalization.CreateMessageForOtherApp:input_type -> internationalization.v1.CreateMessageForOtherAppRequest
+	14, // 42: internationalization.v1.Internationalization.CreateMessages:input_type -> internationalization.v1.CreateMessagesRequest
+	16, // 43: internationalization.v1.Internationalization.UpdateMessage:input_type -> internationalization.v1.UpdateMessageRequest
+	18, // 44: internationalization.v1.Internationalization.UpdateMessages:input_type -> internationalization.v1.UpdateMessagesRequest
+	20, // 45: internationalization.v1.Internationalization.GetMessagesByAppLang:input_type -> internationalization.v1.GetMessagesByAppLangRequest
+	22, // 46: internationalization.v1.Internationalization.GetMessagesByOtherAppLang:input_type -> internationalization.v1.GetMessagesByOtherAppLangRequest
+	24, // 47: internationalization.v1.Internationalization.GetMessageByAppLangMessage:input_type -> internationalization.v1.GetMessageByAppLangMessageRequest
+	41, // 48: internationalization.v1.Internationalization.Version:output_type -> npool.v1.VersionResponse
+	2,  // 49: internationalization.v1.Internationalization.AddLang:output_type -> internationalization.v1.AddLangResponse
+	4,  // 50: internationalization.v1.Internationalization.GetLang:output_type -> internationalization.v1.GetLangResponse
+	6,  // 51: internationalization.v1.Internationalization.UpdateLang:output_type -> internationalization.v1.UpdateLangResponse
+	8,  // 52: internationalization.v1.Internationalization.GetLangs:output_type -> internationalization.v1.GetLangsResponse
+	28, // 53: internationalization.v1.Internationalization.CreateAppLang:output_type -> internationalization.v1.CreateAppLangResponse
+	30, // 54: internationalization.v1.Internationalization.CreateAppLangForOtherApp:output_type -> internationalization.v1.CreateAppLangForOtherAppResponse
+	32, // 55: internationalization.v1.Internationalization.GetAppLang:output_type -> internationalization.v1.GetAppLangResponse
+	34, // 56: internationalization.v1.Internationalization.GetAppLangsByApp:output_type -> internationalization.v1.GetAppLangsByAppResponse
+	37, // 57: internationalization.v1.Internationalization.GetAppLangInfosByApp:output_type -> internationalization.v1.GetAppLangInfosByAppResponse
+	39, // 58: internationalization.v1.Internationalization.GetAppLangInfosByOtherApp:output_type -> internationalization.v1.GetAppLangInfosByOtherAppResponse
+	11, // 59: internationalization.v1.Internationalization.CreateMessage:output_type -> internationalization.v1.CreateMessageResponse
+	13, // 60: internationalization.v1.Internationalization.CreateMessageForOtherApp:output_type -> internationalization.v1.CreateMessageForOtherAppResponse
+	15, // 61: internationalization.v1.Internationalization.CreateMessages:output_type -> internationalization.v1.CreateMessagesResponse
+	17, // 62: internationalization.v1.Internationalization.UpdateMessage:output_type -> internationalization.v1.UpdateMessageResponse
+	19, // 63: internationalization.v1.Internationalization.UpdateMessages:output_type -> internationalization.v1.UpdateMessagesResponse
+	21, // 64: internationalization.v1.Internationalization.GetMessagesByAppLang:output_type -> internationalization.v1.GetMessagesByAppLangResponse
+	23, // 65: internationalization.v1.Internationalization.GetMessagesByOtherAppLang:output_type -> internationalization.v1.GetMessagesByOtherAppLangResponse
+	25, // 66: internationalization.v1.Internationalization.GetMessageByAppLangMessage:output_type -> internationalization.v1.GetMessageByAppLangMessageResponse
+	48, // [48:67] is the sub-list for method output_type
+	29, // [29:48] is the sub-list for method input_type
+	29, // [29:29] is the sub-list for extension type_name
+	29, // [29:29] is the sub-list for extension extendee
+	0,  // [0:29] is the sub-list for field type_name
 }
 
 func init() { file_npool_internationalization_internationalization_proto_init() }
@@ -2466,7 +2730,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateMessagesRequest); i {
+			switch v := v.(*CreateMessageForOtherAppRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2478,7 +2742,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateMessagesResponse); i {
+			switch v := v.(*CreateMessageForOtherAppResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2490,7 +2754,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateMessageRequest); i {
+			switch v := v.(*CreateMessagesRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2502,7 +2766,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateMessageResponse); i {
+			switch v := v.(*CreateMessagesResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2514,7 +2778,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateMessagesRequest); i {
+			switch v := v.(*UpdateMessageRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2526,7 +2790,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateMessagesResponse); i {
+			switch v := v.(*UpdateMessageResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2538,7 +2802,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetMessagesByAppLangRequest); i {
+			switch v := v.(*UpdateMessagesRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2550,7 +2814,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetMessagesByAppLangResponse); i {
+			switch v := v.(*UpdateMessagesResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2562,7 +2826,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetMessageByAppLangMessageRequest); i {
+			switch v := v.(*GetMessagesByAppLangRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2574,7 +2838,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetMessageByAppLangMessageResponse); i {
+			switch v := v.(*GetMessagesByAppLangResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2586,7 +2850,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AppLang); i {
+			switch v := v.(*GetMessagesByOtherAppLangRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2598,7 +2862,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateAppLangRequest); i {
+			switch v := v.(*GetMessagesByOtherAppLangResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2610,7 +2874,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateAppLangResponse); i {
+			switch v := v.(*GetMessageByAppLangMessageRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2622,7 +2886,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateAppLangForOtherAppRequest); i {
+			switch v := v.(*GetMessageByAppLangMessageResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2634,7 +2898,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateAppLangForOtherAppResponse); i {
+			switch v := v.(*AppLang); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2646,7 +2910,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppLangRequest); i {
+			switch v := v.(*CreateAppLangRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2658,7 +2922,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppLangResponse); i {
+			switch v := v.(*CreateAppLangResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2670,7 +2934,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppLangsByAppRequest); i {
+			switch v := v.(*CreateAppLangForOtherAppRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2682,7 +2946,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppLangsByAppResponse); i {
+			switch v := v.(*CreateAppLangForOtherAppResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2694,7 +2958,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AppLangInfo); i {
+			switch v := v.(*GetAppLangRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2706,7 +2970,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppLangInfosByAppRequest); i {
+			switch v := v.(*GetAppLangResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2718,7 +2982,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppLangInfosByAppResponse); i {
+			switch v := v.(*GetAppLangsByAppRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2730,7 +2994,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppLangInfosByOtherAppRequest); i {
+			switch v := v.(*GetAppLangsByAppResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2742,6 +3006,54 @@ func file_npool_internationalization_internationalization_proto_init() {
 			}
 		}
 		file_npool_internationalization_internationalization_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AppLangInfo); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_internationalization_internationalization_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetAppLangInfosByAppRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_internationalization_internationalization_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetAppLangInfosByAppResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_internationalization_internationalization_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetAppLangInfosByOtherAppRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_internationalization_internationalization_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAppLangInfosByOtherAppResponse); i {
 			case 0:
 				return &v.state
@@ -2760,7 +3072,7 @@ func file_npool_internationalization_internationalization_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_internationalization_internationalization_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   36,
+			NumMessages:   40,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
