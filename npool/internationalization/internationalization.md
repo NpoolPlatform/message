@@ -526,6 +526,7 @@
 | Lang | [string](#string) |  |  |
 | Logo | [string](#string) |  |  |
 | Name | [string](#string) |  |  |
+| Short | [string](#string) |  |  |
 
 
 
@@ -1116,6 +1117,7 @@ Service Name
 | Lang | [string](#string) |  |  |
 | Logo | [string](#string) |  |  |
 | Name | [string](#string) |  |  |
+| Short | [string](#string) |  |  |
 
 
 

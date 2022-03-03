@@ -12,6 +12,7 @@ export type Lang = {
   lang?: string
   logo?: string
   name?: string
+  short?: string
 }
 
 export type AddLangRequest = {

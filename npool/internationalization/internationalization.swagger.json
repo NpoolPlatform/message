@@ -860,6 +860,9 @@
         },
         "Name": {
           "type": "string"
+        },
+        "Short": {
+          "type": "string"
         }
       }
     },
