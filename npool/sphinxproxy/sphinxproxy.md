@@ -238,6 +238,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | BalanceStr | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 | ExitCode | [int64](#int64) |  | -1 find cid state on chain internal server error |
+| RPCExitMessage | [string](#string) |  |  |
 
 
 
@@ -252,6 +253,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| NetENV | [string](#string) |  |  |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
@@ -275,6 +277,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | TransactionID | [string](#string) |  |  |
 | Info | [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo) |  | fil |
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
+| RPCExitMessage | [string](#string) |  |  |
 
 
 
@@ -595,6 +598,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | BalanceStr | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage) |  |  |
 | ExitCode | [int64](#int64) |  | -1 find cid state on chain internal server error |
+| RPCExitMessage | [string](#string) |  |  |
 
 
 
@@ -609,6 +613,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| NetENV | [string](#string) |  |  |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
@@ -632,6 +637,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | TransactionID | [string](#string) |  |  |
 | Info | [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo) |  | fil |
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
+| RPCExitMessage | [string](#string) |  |  |
 
 
 

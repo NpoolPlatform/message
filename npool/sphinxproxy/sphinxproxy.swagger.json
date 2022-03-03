@@ -251,9 +251,14 @@
         "CoinTypefilecoin",
         "CoinTypebitcoin",
         "CoinTypeethereum",
-        "CoinTypespacemesh"
+        "CoinTypespacemesh",
+        "CoinTypetfilecoin",
+        "CoinTypetbitcoin",
+        "CoinTypetethereum",
+        "CoinTypetspacemesh"
       ],
-      "default": "CoinTypeUnKnow"
+      "default": "CoinTypeUnKnow",
+      "title": "- CoinTypefilecoin: mainnet\n - CoinTypetfilecoin: testnet"
     },
     "v1CreateTransactionRequest": {
       "type": "object",
@@ -405,6 +410,9 @@
     "v1ProxySignRequest": {
       "type": "object",
       "properties": {
+        "NetENV": {
+          "type": "string"
+        },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },

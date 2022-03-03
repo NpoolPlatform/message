@@ -102,6 +102,7 @@ export type ProxyPluginResponse = {
   balanceStr?: string
   message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
   exitCode?: string
+  rPCExitMessage?: string
 }
 
 export type ProxyPluginRequest = {
@@ -116,6 +117,7 @@ export type ProxyPluginRequest = {
 }
 
 export type ProxySignRequest = {
+  netENV?: string
   coinType?: SphinxPluginV1Sphinxplugin.CoinType
   transactionType?: TransactionType
   transactionID?: string
@@ -128,6 +130,7 @@ export type ProxySignResponse = {
   transactionID?: string
   info?: ProxySignResponseInfo
   msgTx?: SphinxPluginV1Sphinxplugin.MsgTx
+  rPCExitMessage?: string
 }
 
 export type ProxySignResponseInfo = {
