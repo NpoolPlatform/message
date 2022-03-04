@@ -512,6 +512,7 @@ export type UserWithdraw = {
   name?: string
   message?: string
   createAt?: number
+  labels?: string[]
 }
 
 export type CreateUserWithdrawRequest = {

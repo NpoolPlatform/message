@@ -3306,6 +3306,7 @@
 | Name | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
+| Labels | [string](#string) | repeated |  |
 
 
 
@@ -6366,6 +6367,7 @@ Cloud Hashing Billing
 | Name | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
+| Labels | [string](#string) | repeated |  |
 
 
 

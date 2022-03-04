@@ -4776,6 +4776,12 @@
         "CreateAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
