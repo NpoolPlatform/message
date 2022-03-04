@@ -253,7 +253,6 @@ MpoolGetNonce WalletBalance MpoolPush ..
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| NetENV | [string](#string) |  |  |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
@@ -613,7 +612,6 @@ MpoolGetNonce WalletBalance MpoolPush ..
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| NetENV | [string](#string) |  |  |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx.plugin.v1.CoinType) |  |  |
 | TransactionType | [TransactionType](#sphinx.proxy.v1.TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
