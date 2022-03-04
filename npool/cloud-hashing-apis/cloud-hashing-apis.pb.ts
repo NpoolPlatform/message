@@ -451,6 +451,7 @@ export type SetWithdrawAddressRequest = {
   account?: string
   accountType?: string
   verificationCode?: string
+  labels?: string[]
 }
 
 export type SetWithdrawAddressResponse = {

@@ -1473,6 +1473,7 @@ Request body and response
 | Account | [string](#string) |  |  |
 | AccountType | [string](#string) |  |  |
 | VerificationCode | [string](#string) |  |  |
+| Labels | [string](#string) | repeated |  |
 
 
 
@@ -3231,6 +3232,7 @@ Request body and response
 | Account | [string](#string) |  |  |
 | AccountType | [string](#string) |  |  |
 | VerificationCode | [string](#string) |  |  |
+| Labels | [string](#string) | repeated |  |
 
 
 

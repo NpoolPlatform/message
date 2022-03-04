@@ -727,6 +727,7 @@ message SetWithdrawAddressRequest {
     string Account = 70;
     string AccountType = 80;
     string VerificationCode = 90;
+    repeated string Labels = 100;
 }
 
 message SetWithdrawAddressResponse {

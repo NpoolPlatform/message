@@ -1675,6 +1675,12 @@
         "CreateAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -3295,6 +3301,12 @@
         },
         "VerificationCode": {
           "type": "string"
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
