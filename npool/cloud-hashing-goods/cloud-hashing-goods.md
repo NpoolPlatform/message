@@ -173,6 +173,8 @@
     - [UnauthorizeAppTargetAreaResponse](#cloud.hashing.goods.v1.UnauthorizeAppTargetAreaResponse)
     - [UpdateAppGoodPromotionRequest](#cloud.hashing.goods.v1.UpdateAppGoodPromotionRequest)
     - [UpdateAppGoodPromotionResponse](#cloud.hashing.goods.v1.UpdateAppGoodPromotionResponse)
+    - [UpdateAppGoodRequest](#cloud.hashing.goods.v1.UpdateAppGoodRequest)
+    - [UpdateAppGoodResponse](#cloud.hashing.goods.v1.UpdateAppGoodResponse)
     - [UpdateDeviceInfoRequest](#cloud.hashing.goods.v1.UpdateDeviceInfoRequest)
     - [UpdateDeviceInfoResponse](#cloud.hashing.goods.v1.UpdateDeviceInfoResponse)
     - [UpdateFeeTypeRequest](#cloud.hashing.goods.v1.UpdateFeeTypeRequest)
@@ -367,6 +369,8 @@
     - [UnauthorizeAppTargetAreaResponse](#cloud.hashing.goods.v1.UnauthorizeAppTargetAreaResponse)
     - [UpdateAppGoodPromotionRequest](#cloud.hashing.goods.v1.UpdateAppGoodPromotionRequest)
     - [UpdateAppGoodPromotionResponse](#cloud.hashing.goods.v1.UpdateAppGoodPromotionResponse)
+    - [UpdateAppGoodRequest](#cloud.hashing.goods.v1.UpdateAppGoodRequest)
+    - [UpdateAppGoodResponse](#cloud.hashing.goods.v1.UpdateAppGoodResponse)
     - [UpdateDeviceInfoRequest](#cloud.hashing.goods.v1.UpdateDeviceInfoRequest)
     - [UpdateDeviceInfoResponse](#cloud.hashing.goods.v1.UpdateDeviceInfoResponse)
     - [UpdateFeeTypeRequest](#cloud.hashing.goods.v1.UpdateFeeTypeRequest)
@@ -3042,6 +3046,36 @@
 
 
 
+<a name="cloud.hashing.goods.v1.UpdateAppGoodRequest"></a>
+
+### UpdateAppGoodRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.goods.v1.UpdateAppGoodResponse"></a>
+
+### UpdateAppGoodResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.goods.v1.UpdateDeviceInfoRequest"></a>
 
 ### UpdateDeviceInfoRequest
@@ -3416,6 +3450,7 @@ Cloud Hashing Goods
 | GetRecommendGoodsByRecommender | [GetRecommendGoodsByRecommenderRequest](#cloud.hashing.goods.v1.GetRecommendGoodsByRecommenderRequest) | [GetRecommendGoodsByRecommenderResponse](#cloud.hashing.goods.v1.GetRecommendGoodsByRecommenderResponse) |  |
 | AuthorizeAppGood | [AuthorizeAppGoodRequest](#cloud.hashing.goods.v1.AuthorizeAppGoodRequest) | [AuthorizeAppGoodResponse](#cloud.hashing.goods.v1.AuthorizeAppGoodResponse) |  |
 | AuthorizeAppGoodForOtherApp | [AuthorizeAppGoodForOtherAppRequest](#cloud.hashing.goods.v1.AuthorizeAppGoodForOtherAppRequest) | [AuthorizeAppGoodForOtherAppResponse](#cloud.hashing.goods.v1.AuthorizeAppGoodForOtherAppResponse) |  |
+| UpdateAppGood | [UpdateAppGoodRequest](#cloud.hashing.goods.v1.UpdateAppGoodRequest) | [UpdateAppGoodResponse](#cloud.hashing.goods.v1.UpdateAppGoodResponse) |  |
 | SetAppGoodPrice | [SetAppGoodPriceRequest](#cloud.hashing.goods.v1.SetAppGoodPriceRequest) | [SetAppGoodPriceResponse](#cloud.hashing.goods.v1.SetAppGoodPriceResponse) |  |
 | SetAppGoodPriceForOtherApp | [SetAppGoodPriceForOtherAppRequest](#cloud.hashing.goods.v1.SetAppGoodPriceForOtherAppRequest) | [SetAppGoodPriceForOtherAppResponse](#cloud.hashing.goods.v1.SetAppGoodPriceForOtherAppResponse) |  |
 | CheckAppGood | [CheckAppGoodRequest](#cloud.hashing.goods.v1.CheckAppGoodRequest) | [CheckAppGoodResponse](#cloud.hashing.goods.v1.CheckAppGoodResponse) |  |
@@ -6113,6 +6148,36 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud.hashing.goods.v1.UpdateAppGoodRequest"></a>
+
+### UpdateAppGoodRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.goods.v1.UpdateAppGoodResponse"></a>
+
+### UpdateAppGoodResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.goods.v1.UpdateDeviceInfoRequest"></a>
 
 ### UpdateDeviceInfoRequest
@@ -6487,6 +6552,7 @@ Cloud Hashing Goods
 | GetRecommendGoodsByRecommender | [GetRecommendGoodsByRecommenderRequest](#cloud.hashing.goods.v1.GetRecommendGoodsByRecommenderRequest) | [GetRecommendGoodsByRecommenderResponse](#cloud.hashing.goods.v1.GetRecommendGoodsByRecommenderResponse) |  |
 | AuthorizeAppGood | [AuthorizeAppGoodRequest](#cloud.hashing.goods.v1.AuthorizeAppGoodRequest) | [AuthorizeAppGoodResponse](#cloud.hashing.goods.v1.AuthorizeAppGoodResponse) |  |
 | AuthorizeAppGoodForOtherApp | [AuthorizeAppGoodForOtherAppRequest](#cloud.hashing.goods.v1.AuthorizeAppGoodForOtherAppRequest) | [AuthorizeAppGoodForOtherAppResponse](#cloud.hashing.goods.v1.AuthorizeAppGoodForOtherAppResponse) |  |
+| UpdateAppGood | [UpdateAppGoodRequest](#cloud.hashing.goods.v1.UpdateAppGoodRequest) | [UpdateAppGoodResponse](#cloud.hashing.goods.v1.UpdateAppGoodResponse) |  |
 | SetAppGoodPrice | [SetAppGoodPriceRequest](#cloud.hashing.goods.v1.SetAppGoodPriceRequest) | [SetAppGoodPriceResponse](#cloud.hashing.goods.v1.SetAppGoodPriceResponse) |  |
 | SetAppGoodPriceForOtherApp | [SetAppGoodPriceForOtherAppRequest](#cloud.hashing.goods.v1.SetAppGoodPriceForOtherAppRequest) | [SetAppGoodPriceForOtherAppResponse](#cloud.hashing.goods.v1.SetAppGoodPriceForOtherAppResponse) |  |
 | CheckAppGood | [CheckAppGoodRequest](#cloud.hashing.goods.v1.CheckAppGoodRequest) | [CheckAppGoodResponse](#cloud.hashing.goods.v1.CheckAppGoodResponse) |  |

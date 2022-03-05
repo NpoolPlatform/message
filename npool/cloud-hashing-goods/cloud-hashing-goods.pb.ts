@@ -497,6 +497,14 @@ export type AuthorizeAppGoodForOtherAppResponse = {
   info?: AppGoodInfo
 }
 
+export type UpdateAppGoodRequest = {
+  info?: AppGoodInfo
+}
+
+export type UpdateAppGoodResponse = {
+  info?: AppGoodInfo
+}
+
 export type UnauthorizeAppGoodRequest = {
   id?: string
 }
@@ -1006,6 +1014,9 @@ export class CloudHashingGoods {
   }
   static AuthorizeAppGoodForOtherApp(req: AuthorizeAppGoodForOtherAppRequest, initReq?: fm.InitReq): Promise<AuthorizeAppGoodForOtherAppResponse> {
     return fm.fetchReq<AuthorizeAppGoodForOtherAppRequest, AuthorizeAppGoodForOtherAppResponse>(`/v1/authorize/app/good/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateAppGood(req: UpdateAppGoodRequest, initReq?: fm.InitReq): Promise<UpdateAppGoodResponse> {
+    return fm.fetchReq<UpdateAppGoodRequest, UpdateAppGoodResponse>(`/v1/update/app/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static SetAppGoodPrice(req: SetAppGoodPriceRequest, initReq?: fm.InitReq): Promise<SetAppGoodPriceResponse> {
     return fm.fetchReq<SetAppGoodPriceRequest, SetAppGoodPriceResponse>(`/v1/set/app/good/price`, {...initReq, method: "POST", body: JSON.stringify(req)})

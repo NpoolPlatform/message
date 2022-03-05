@@ -2393,6 +2393,38 @@
         ]
       }
     },
+    "/v1/update/app/good": {
+      "post": {
+        "operationId": "CloudHashingGoods_UpdateAppGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingGoods"
+        ]
+      }
+    },
     "/v1/update/app/good/promotion": {
       "post": {
         "operationId": "CloudHashingGoods_UpdateAppGoodPromotion",
@@ -4571,6 +4603,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppGoodPromotion"
+        }
+      }
+    },
+    "v1UpdateAppGoodRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodInfo"
+        }
+      }
+    },
+    "v1UpdateAppGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodInfo"
         }
       }
     },

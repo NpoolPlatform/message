@@ -270,6 +270,12 @@ service CloudHashingGoods {
             body: "*"
         };
     }
+    rpc UpdateAppGood (UpdateAppGoodRequest) returns (UpdateAppGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/good"
+            body: "*"
+        };
+    }
     rpc SetAppGoodPrice (SetAppGoodPriceRequest) returns (SetAppGoodPriceResponse) {
         option (google.api.http) = {
             post: "/v1/set/app/good/price"
@@ -1039,6 +1045,14 @@ message AuthorizeAppGoodForOtherAppRequest {
 }
 
 message AuthorizeAppGoodForOtherAppResponse {
+    AppGoodInfo Info = 10;
+}
+
+message UpdateAppGoodRequest {
+    AppGoodInfo Info = 10;
+}
+
+message UpdateAppGoodResponse {
     AppGoodInfo Info = 10;
 }
 
