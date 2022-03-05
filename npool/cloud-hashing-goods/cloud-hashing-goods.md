@@ -416,6 +416,7 @@
 | Price | [double](#double) |  |  |
 | Online | [bool](#bool) |  |  |
 | InitAreaStrategy | [string](#string) |  |  |
+| DisplayIndex | [uint32](#uint32) |  |  |
 
 
 
@@ -3486,6 +3487,7 @@ Cloud Hashing Goods
 | Price | [double](#double) |  |  |
 | Online | [bool](#bool) |  |  |
 | InitAreaStrategy | [string](#string) |  |  |
+| DisplayIndex | [uint32](#uint32) |  |  |
 
 
 

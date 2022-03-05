@@ -962,6 +962,7 @@ message AppGoodInfo {
     double Price = 40;
     bool Online = 50;
     string InitAreaStrategy = 60;
+    uint32 DisplayIndex = 70;
 }
 
 message SetAppGoodPriceRequest {

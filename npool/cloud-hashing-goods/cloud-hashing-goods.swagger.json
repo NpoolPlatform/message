@@ -2823,6 +2823,10 @@
         },
         "InitAreaStrategy": {
           "type": "string"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
