@@ -74,6 +74,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetCoinAccountTransactionsByGoodState (GetCoinAccountTransactionsByGoodStateRequest) returns (GetCoinAccountTransactionsByGoodStateResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coin/account/transactions/by/good/state"
+            body: "*"
+        };
+    }
     rpc GetCoinAccountTransactions (GetCoinAccountTransactionsRequest) returns (GetCoinAccountTransactionsResponse) {
         option (google.api.http) = {
             post: "/v1/get/coin/account/transactions"
@@ -663,6 +669,15 @@ message GetCoinAccountTransactionsByStateRequest {
 }
 
 message GetCoinAccountTransactionsByStateResponse {
+    repeated CoinAccountTransaction Infos = 10;
+}
+
+message GetCoinAccountTransactionsByGoodStateRequest {
+    string GoodID = 10;
+    string State = 20;
+}
+
+message GetCoinAccountTransactionsByGoodStateResponse {
     repeated CoinAccountTransaction Infos = 10;
 }
 
