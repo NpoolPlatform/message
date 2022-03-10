@@ -740,7 +740,6 @@ message PlatformBenefit {
     uint32 CreateAt = 50;
     string ChainTransactionID = 60;
     uint32 LastBenefitTimestamp = 70;
-    string PlatformTransactionID = 80;
 }
 
 message CreatePlatformBenefitRequest {

@@ -4519,9 +4519,6 @@
         "LastBenefitTimestamp": {
           "type": "integer",
           "format": "int64"
-        },
-        "PlatformTransactionID": {
-          "type": "string"
         }
       }
     },

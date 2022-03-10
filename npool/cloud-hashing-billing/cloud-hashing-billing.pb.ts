@@ -192,7 +192,6 @@ export type PlatformBenefit = {
   createAt?: number
   chainTransactionID?: string
   lastBenefitTimestamp?: number
-  platformTransactionID?: string
 }
 
 export type CreatePlatformBenefitRequest = {
