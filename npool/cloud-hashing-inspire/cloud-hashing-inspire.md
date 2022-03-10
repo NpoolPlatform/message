@@ -2086,6 +2086,7 @@ request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | TargetUserID | [string](#string) |  |  |
 
 
@@ -5735,6 +5736,7 @@ request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | TargetUserID | [string](#string) |  |  |
 
 

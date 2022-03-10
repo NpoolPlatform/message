@@ -956,7 +956,8 @@ message GetAppUserPurchaseAmountSettingsByOtherAppUserResponse {
 }
 
 message GetAppUserPurchaseAmountSettingsByAppOtherUserRequest {
-    string TargetUserID = 10;
+    string AppID = 10;
+    string TargetUserID = 20;
 }
 
 message GetAppUserPurchaseAmountSettingsByAppOtherUserResponse {

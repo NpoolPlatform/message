@@ -4555,6 +4555,9 @@
     "v1GetAppUserPurchaseAmountSettingsByAppOtherUserRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "TargetUserID": {
           "type": "string"
         }

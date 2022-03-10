@@ -296,6 +296,7 @@ export type GetAppUserPurchaseAmountSettingsByOtherAppUserResponse = {
 }
 
 export type GetAppUserPurchaseAmountSettingsByAppOtherUserRequest = {
+  appID?: string
   targetUserID?: string
 }
 
