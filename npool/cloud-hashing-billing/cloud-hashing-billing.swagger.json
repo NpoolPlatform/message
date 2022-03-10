@@ -2939,6 +2939,9 @@
         },
         "ChainTransactionID": {
           "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
         }
       }
     },

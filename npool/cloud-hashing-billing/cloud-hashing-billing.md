@@ -462,6 +462,7 @@
 | CreateAt | [uint32](#uint32) |  |  |
 | State | [string](#string) |  |  |
 | ChainTransactionID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
 
 
 
@@ -3557,6 +3558,7 @@ Cloud Hashing Billing
 | CreateAt | [uint32](#uint32) |  |  |
 | State | [string](#string) |  |  |
 | ChainTransactionID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
 
 
 

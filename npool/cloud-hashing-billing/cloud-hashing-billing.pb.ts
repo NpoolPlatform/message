@@ -67,6 +67,7 @@ export type CoinAccountTransaction = {
   createAt?: number
   state?: string
   chainTransactionID?: string
+  goodID?: string
 }
 
 export type CreateCoinAccountTransactionRequest = {

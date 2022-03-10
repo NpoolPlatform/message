@@ -615,6 +615,7 @@ message CoinAccountTransaction {
     uint32 CreateAt = 90;
     string State = 100;
     string ChainTransactionID = 110;
+    string GoodID = 120;
 }
 
 message CreateCoinAccountTransactionRequest {
