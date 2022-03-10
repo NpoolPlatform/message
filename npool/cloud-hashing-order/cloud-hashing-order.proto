@@ -19,169 +19,175 @@ service CloudHashingOrder {
         };
     }
 
-    rpc CreateGoodPaying(CreateGoodPayingRequest) returns (CreateGoodPayingResponse) {
+    rpc CreateGoodPaying (CreateGoodPayingRequest) returns  (CreateGoodPayingResponse) {
         option (google.api.http) = {
             post: "/v1/create/good/paying"
             body: "*"
         };
     }
-    rpc GetGoodPayingByOrder(GetGoodPayingByOrderRequest) returns (GetGoodPayingByOrderResponse) {
+    rpc GetGoodPayingByOrder (GetGoodPayingByOrderRequest) returns  (GetGoodPayingByOrderResponse) {
         option (google.api.http) = {
             post: "/v1/get/good/paying/by/order"
             body: "*"
         };
     }
 
-    rpc CreateGasPaying(CreateGasPayingRequest) returns (CreateGasPayingResponse) {
+    rpc CreateGasPaying (CreateGasPayingRequest) returns  (CreateGasPayingResponse) {
         option (google.api.http) = {
             post: "/v1/create/gas/paying"
             body: "*"
         };
     }
-    rpc GetGasPayingsByOrder(GetGasPayingsByOrderRequest) returns (GetGasPayingsByOrderResponse) {
+    rpc GetGasPayingsByOrder (GetGasPayingsByOrderRequest) returns  (GetGasPayingsByOrderResponse) {
         option (google.api.http) = {
             post: "/v1/get/gas/payings/by/order"
             body: "*"
         };
     }
 
-    rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse) {
+    rpc CreateOrder (CreateOrderRequest) returns  (CreateOrderResponse) {
         option (google.api.http) = {
             post: "/v1/create/order"
             body: "*"
         };
     }
-    rpc GetOrder(GetOrderRequest) returns (GetOrderResponse) {
+    rpc GetOrder (GetOrderRequest) returns  (GetOrderResponse) {
         option (google.api.http) = {
             post: "/v1/get/order"
             body: "*"
         };
     }
-    rpc GetOrderDetail(GetOrderDetailRequest) returns (GetOrderDetailResponse) {
+    rpc GetOrderDetail (GetOrderDetailRequest) returns  (GetOrderDetailResponse) {
         option (google.api.http) = {
             post: "/v1/get/order/detail"
             body: "*"
         };
     }
-    rpc GetOrdersByAppUser(GetOrdersByAppUserRequest) returns (GetOrdersByAppUserResponse) {
+    rpc GetOrdersByAppUser (GetOrdersByAppUserRequest) returns  (GetOrdersByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders/by/app/user"
             body: "*"
         };
     }
-    rpc GetOrderByAppUserCouponTypeID(GetOrderByAppUserCouponTypeIDRequest) returns (GetOrderByAppUserCouponTypeIDResponse) {
+    rpc GetOrderByAppUserCouponTypeID (GetOrderByAppUserCouponTypeIDRequest) returns  (GetOrderByAppUserCouponTypeIDResponse) {
         option (google.api.http) = {
             post: "/v1/get/order/by/app/user/coupon/type/id"
             body: "*"
         };
     }
-    rpc GetOrdersByApp(GetOrdersByAppRequest) returns (GetOrdersByAppResponse) {
+    rpc GetOrdersByApp (GetOrdersByAppRequest) returns  (GetOrdersByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders/by/app"
             body: "*"
         };
     }
-    rpc GetOrdersByGood(GetOrdersByGoodRequest) returns (GetOrdersByGoodResponse) {
+    rpc GetOrdersByGood (GetOrdersByGoodRequest) returns  (GetOrdersByGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders/by/good"
             body: "*"
         };
     }
+    rpc GetSoldByGood (GetSoldByGoodRequest) returns  (GetSoldByGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/sold/by/good"
+            body: "*"
+        };
+    }
 
-    rpc CreateCompensate(CreateCompensateRequest) returns (CreateCompensateResponse) {
+    rpc CreateCompensate (CreateCompensateRequest) returns  (CreateCompensateResponse) {
         option (google.api.http) = {
             post: "/v1/create/compensate"
             body: "*"
         };
     }
-    rpc GetCompensatesByOrder(GetCompensatesByOrderRequest) returns (GetCompensatesByOrderResponse) {
+    rpc GetCompensatesByOrder (GetCompensatesByOrderRequest) returns  (GetCompensatesByOrderResponse) {
         option (google.api.http) = {
             post: "/v1/get/compensates/by/order"
             body: "*"
         };
     }
 
-    rpc CreateOutOfGas(CreateOutOfGasRequest) returns (CreateOutOfGasResponse) {
+    rpc CreateOutOfGas (CreateOutOfGasRequest) returns  (CreateOutOfGasResponse) {
         option (google.api.http) = {
             post: "/v1/create/out-of-gas"
             body: "*"
         };
     }
-    rpc GetOutOfGasesByOrder(GetOutOfGasesByOrderRequest) returns (GetOutOfGasesByOrderResponse) {
+    rpc GetOutOfGasesByOrder (GetOutOfGasesByOrderRequest) returns  (GetOutOfGasesByOrderResponse) {
         option (google.api.http) = {
             post: "/v1/get/out-of-gases/by/order"
             body: "*"
         };
     }
 
-    rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {
+    rpc CreatePayment (CreatePaymentRequest) returns  (CreatePaymentResponse) {
         option (google.api.http) = {
             post: "/v1/create/payment"
             body: "*"
         };
     }
-    rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse) {
+    rpc GetPayment (GetPaymentRequest) returns  (GetPaymentResponse) {
         option (google.api.http) = {
             post: "/v1/get/payment"
             body: "*"
         };
     }
-    rpc UpdatePayment(UpdatePaymentRequest) returns (UpdatePaymentResponse) {
+    rpc UpdatePayment (UpdatePaymentRequest) returns  (UpdatePaymentResponse) {
         option (google.api.http) = {
             post: "/v1/update/payment"
             body: "*"
         };
     }
-    rpc GetPaymentByOrder(GetPaymentByOrderRequest) returns (GetPaymentByOrderResponse) {
+    rpc GetPaymentByOrder (GetPaymentByOrderRequest) returns  (GetPaymentByOrderResponse) {
         option (google.api.http) = {
             post: "/v1/get/payment/by/order"
             body: "*"
         };
     }
-    rpc GetPaymentsByState(GetPaymentsByStateRequest) returns (GetPaymentsByStateResponse) {
+    rpc GetPaymentsByState (GetPaymentsByStateRequest) returns  (GetPaymentsByStateResponse) {
         option (google.api.http) = {
             post: "/v1/get/payments/by/state"
             body: "*"
         };
     }
-    rpc GetPaymentsByApp(GetPaymentsByAppRequest) returns (GetPaymentsByAppResponse) {
+    rpc GetPaymentsByApp (GetPaymentsByAppRequest) returns  (GetPaymentsByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/payments/by/app"
             body: "*"
         };
     }
-    rpc GetPaymentsByAppUser(GetPaymentsByAppUserRequest) returns (GetPaymentsByAppUserResponse) {
+    rpc GetPaymentsByAppUser (GetPaymentsByAppUserRequest) returns  (GetPaymentsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/payments/by/app/user"
             body: "*"
         };
     }
-    rpc GetPayments(GetPaymentsRequest) returns (GetPaymentsResponse) {
+    rpc GetPayments (GetPaymentsRequest) returns  (GetPaymentsResponse) {
         option (google.api.http) = {
             post: "/v1/get/payments"
             body: "*"
         };
     }
 
-    rpc GetOrdersDetailByAppUser(GetOrdersDetailByAppUserRequest) returns (GetOrdersDetailByAppUserResponse) {
+    rpc GetOrdersDetailByAppUser (GetOrdersDetailByAppUserRequest) returns  (GetOrdersDetailByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders/detail/by/app/user"
             body: "*"
         };
     }
-    rpc GetOrdersShortDetailByAppUser(GetOrdersShortDetailByAppUserRequest) returns (GetOrdersShortDetailByAppUserResponse) {
+    rpc GetOrdersShortDetailByAppUser (GetOrdersShortDetailByAppUserRequest) returns  (GetOrdersShortDetailByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders/short/detail/by/app/user"
             body: "*"
         };
     }
-    rpc GetOrdersDetailByApp(GetOrdersDetailByAppRequest) returns (GetOrdersDetailByAppResponse) {
+    rpc GetOrdersDetailByApp (GetOrdersDetailByAppRequest) returns  (GetOrdersDetailByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders/detail/by/app"
             body: "*"
         };
     }
-    rpc GetOrdersDetailByGood(GetOrdersDetailByGoodRequest) returns (GetOrdersDetailByGoodResponse) {
+    rpc GetOrdersDetailByGood (GetOrdersDetailByGoodRequest) returns  (GetOrdersDetailByGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders/detail/by/good"
             body: "*"
@@ -301,6 +307,14 @@ message GetOrdersByGoodRequest {
 
 message GetOrdersByGoodResponse {
     repeated Order Infos = 10;
+}
+
+message GetSoldByGoodRequest {
+    string GoodID = 10;
+}
+
+message GetSoldByGoodResponse {
+    uint32 Sold = 10;
 }
 
 message Compensate {

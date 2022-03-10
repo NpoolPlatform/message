@@ -120,6 +120,14 @@ export type GetOrdersByGoodResponse = {
   infos?: Order[]
 }
 
+export type GetSoldByGoodRequest = {
+  goodID?: string
+}
+
+export type GetSoldByGoodResponse = {
+  sold?: number
+}
+
 export type Compensate = {
   id?: string
   orderID?: string
@@ -336,6 +344,9 @@ export class CloudHashingOrder {
   }
   static GetOrdersByGood(req: GetOrdersByGoodRequest, initReq?: fm.InitReq): Promise<GetOrdersByGoodResponse> {
     return fm.fetchReq<GetOrdersByGoodRequest, GetOrdersByGoodResponse>(`/v1/get/orders/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetSoldByGood(req: GetSoldByGoodRequest, initReq?: fm.InitReq): Promise<GetSoldByGoodResponse> {
+    return fm.fetchReq<GetSoldByGoodRequest, GetSoldByGoodResponse>(`/v1/get/sold/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateCompensate(req: CreateCompensateRequest, initReq?: fm.InitReq): Promise<CreateCompensateResponse> {
     return fm.fetchReq<CreateCompensateRequest, CreateCompensateResponse>(`/v1/create/compensate`, {...initReq, method: "POST", body: JSON.stringify(req)})

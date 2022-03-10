@@ -843,6 +843,38 @@
         ]
       }
     },
+    "/v1/get/sold/by/good": {
+      "post": {
+        "operationId": "CloudHashingOrder_GetSoldByGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetSoldByGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetSoldByGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingOrder"
+        ]
+      }
+    },
     "/v1/update/payment": {
       "post": {
         "operationId": "CloudHashingOrder_UpdatePayment",
@@ -1457,6 +1489,23 @@
           "items": {
             "$ref": "#/definitions/v1Payment"
           }
+        }
+      }
+    },
+    "v1GetSoldByGoodRequest": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetSoldByGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Sold": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
