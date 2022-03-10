@@ -191,6 +191,7 @@ export type PlatformBenefit = {
   createAt?: number
   chainTransactionID?: string
   lastBenefitTimestamp?: number
+  platformTransactionID?: string
 }
 
 export type CreatePlatformBenefitRequest = {
@@ -298,6 +299,7 @@ export type UserBenefit = {
   createAt?: number
   orderID?: string
   lastBenefitTimestamp?: number
+  platformTransactionID?: string
 }
 
 export type CreateUserBenefitRequest = {

@@ -2919,6 +2919,7 @@
 | CreateAt | [uint32](#uint32) |  |  |
 | ChainTransactionID | [string](#string) |  |  |
 | LastBenefitTimestamp | [uint32](#uint32) |  |  |
+| PlatformTransactionID | [string](#string) |  |  |
 
 
 
@@ -3280,6 +3281,7 @@
 | CreateAt | [uint32](#uint32) |  |  |
 | OrderID | [string](#string) |  |  |
 | LastBenefitTimestamp | [uint32](#uint32) |  |  |
+| PlatformTransactionID | [string](#string) |  |  |
 
 
 
@@ -6012,6 +6014,7 @@ Cloud Hashing Billing
 | CreateAt | [uint32](#uint32) |  |  |
 | ChainTransactionID | [string](#string) |  |  |
 | LastBenefitTimestamp | [uint32](#uint32) |  |  |
+| PlatformTransactionID | [string](#string) |  |  |
 
 
 
@@ -6373,6 +6376,7 @@ Cloud Hashing Billing
 | CreateAt | [uint32](#uint32) |  |  |
 | OrderID | [string](#string) |  |  |
 | LastBenefitTimestamp | [uint32](#uint32) |  |  |
+| PlatformTransactionID | [string](#string) |  |  |
 
 
 
