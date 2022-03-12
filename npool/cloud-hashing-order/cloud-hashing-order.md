@@ -977,6 +977,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | GoodID | [string](#string) |  |  |
+| DurationDays | [uint32](#uint32) |  |  |
 
 
 
@@ -2021,6 +2022,7 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | GoodID | [string](#string) |  |  |
+| DurationDays | [uint32](#uint32) |  |  |
 
 
 

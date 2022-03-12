@@ -122,6 +122,7 @@ export type GetOrdersByGoodResponse = {
 
 export type GetSoldByGoodRequest = {
   goodID?: string
+  durationDays?: number
 }
 
 export type GetSoldByGoodResponse = {
