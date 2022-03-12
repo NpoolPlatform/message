@@ -2590,7 +2590,6 @@
 | Extra | [GoodExtraInfo](#cloud.hashing.goods.v1.GoodExtraInfo) |  |  |
 | PriceCurrency | [PriceCurrency](#cloud.hashing.goods.v1.PriceCurrency) |  |  |
 | Fees | [FeeDetail](#cloud.hashing.goods.v1.FeeDetail) | repeated |  |
-| AppGood | [AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo) |  |  |
 
 
 
@@ -5693,7 +5692,6 @@ Cloud Hashing Goods
 | Extra | [GoodExtraInfo](#cloud.hashing.goods.v1.GoodExtraInfo) |  |  |
 | PriceCurrency | [PriceCurrency](#cloud.hashing.goods.v1.PriceCurrency) |  |  |
 | Fees | [FeeDetail](#cloud.hashing.goods.v1.FeeDetail) | repeated |  |
-| AppGood | [AppGoodInfo](#cloud.hashing.goods.v1.AppGoodInfo) |  |  |
 
 
 

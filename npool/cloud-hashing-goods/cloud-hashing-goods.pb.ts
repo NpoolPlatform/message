@@ -260,7 +260,6 @@ export type GoodDetail = {
   extra?: GoodExtraInfo
   priceCurrency?: PriceCurrency
   fees?: FeeDetail[]
-  appGood?: AppGoodInfo
 }
 
 export type GetGoodDetailRequest = {
