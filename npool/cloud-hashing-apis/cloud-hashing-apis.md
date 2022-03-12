@@ -1254,6 +1254,7 @@ Request body and response
 | Main | [sphinx.coininfo.v1.CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
 | SupportCoins | [sphinx.coininfo.v1.CoinInfo](#sphinx.coininfo.v1.CoinInfo) | repeated |  |
 | Reviews | [review.service.v1.Review](#review.service.v1.Review) | repeated |  |
+| Sold | [uint32](#uint32) |  |  |
 
 
 
@@ -3013,6 +3014,7 @@ Request body and response
 | Main | [sphinx.coininfo.v1.CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
 | SupportCoins | [sphinx.coininfo.v1.CoinInfo](#sphinx.coininfo.v1.CoinInfo) | repeated |  |
 | Reviews | [review.service.v1.Review](#review.service.v1.Review) | repeated |  |
+| Sold | [uint32](#uint32) |  |  |
 
 
 

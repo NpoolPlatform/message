@@ -20,6 +20,7 @@ export type Good = {
   main?: SphinxCoininfoV1Coininfo.CoinInfo
   supportCoins?: SphinxCoininfoV1Coininfo.CoinInfo[]
   reviews?: ReviewServiceV1Review-service.Review[]
+  sold?: number
 }
 
 export type RecommendGood = {

@@ -4219,6 +4219,9 @@
           "items": {
             "$ref": "#/definitions/v1FeeDetail"
           }
+        },
+        "AppGood": {
+          "$ref": "#/definitions/v1AppGoodInfo"
         }
       }
     },

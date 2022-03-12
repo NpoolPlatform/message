@@ -1791,6 +1791,10 @@
         },
         "InitAreaStrategy": {
           "type": "string"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -2746,6 +2750,10 @@
           "items": {
             "$ref": "#/definitions/v1Review"
           }
+        },
+        "Sold": {
+          "type": "integer",
+          "format": "int64"
         }
       },
       "title": "Request body and response"
@@ -2776,6 +2784,9 @@
           "items": {
             "$ref": "#/definitions/v1FeeDetail"
           }
+        },
+        "AppGood": {
+          "$ref": "#/definitions/v1AppGoodInfo"
         }
       }
     },

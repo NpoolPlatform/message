@@ -292,6 +292,7 @@ message Good {
     sphinx.coininfo.v1.CoinInfo Main = 20;
     repeated sphinx.coininfo.v1.CoinInfo SupportCoins = 30;
     repeated review.service.v1.Review Reviews = 40;
+    uint32 Sold = 50;
 }
 
 message RecommendGood {

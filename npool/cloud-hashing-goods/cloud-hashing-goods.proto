@@ -810,6 +810,7 @@ message GoodDetail {
     GoodExtraInfo Extra = 50;
     PriceCurrency PriceCurrency = 60;
     repeated FeeDetail Fees = 70;
+    AppGoodInfo AppGood = 80;
 }
 
 message GetGoodDetailRequest {
