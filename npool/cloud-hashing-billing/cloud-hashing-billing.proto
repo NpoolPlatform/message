@@ -616,6 +616,7 @@ message CoinAccountTransaction {
     string State = 100;
     string ChainTransactionID = 110;
     string GoodID = 120;
+    bool FailHold = 130;
 }
 
 message CreateCoinAccountTransactionRequest {

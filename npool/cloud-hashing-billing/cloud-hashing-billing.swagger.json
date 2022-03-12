@@ -2942,6 +2942,9 @@
         },
         "GoodID": {
           "type": "string"
+        },
+        "FailHold": {
+          "type": "boolean"
         }
       }
     },

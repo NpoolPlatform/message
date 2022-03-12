@@ -463,6 +463,7 @@
 | State | [string](#string) |  |  |
 | ChainTransactionID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
+| FailHold | [bool](#bool) |  |  |
 
 
 
@@ -3558,6 +3559,7 @@ Cloud Hashing Billing
 | State | [string](#string) |  |  |
 | ChainTransactionID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
+| FailHold | [bool](#bool) |  |  |
 
 
 
