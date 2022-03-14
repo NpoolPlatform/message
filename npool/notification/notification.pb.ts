@@ -6,10 +6,7 @@
 
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
-export type VersionResponse = {
-  info?: string
-}
-
+import * as NpoolV1Npool from "../npool.pb"
 export type Announcement = {
   id?: string
   appID?: string
@@ -129,8 +126,8 @@ export type UpdateMailResponse = {
 }
 
 export class Notification {
-  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateAnnouncement(req: CreateAnnouncementRequest, initReq?: fm.InitReq): Promise<CreateAnnouncementResponse> {
     return fm.fetchReq<CreateAnnouncementRequest, CreateAnnouncementResponse>(`/create/announcement`, {...initReq, method: "POST", body: JSON.stringify(req)})

@@ -28,7 +28,6 @@
     - [UpdateNotificationRequest](#notification-v1-UpdateNotificationRequest)
     - [UpdateNotificationResponse](#notification-v1-UpdateNotificationResponse)
     - [UserNotification](#notification-v1-UserNotification)
-    - [VersionResponse](#notification-v1-VersionResponse)
   
     - [Notification](#notification-v1-Notification)
   
@@ -57,7 +56,6 @@
     - [UpdateNotificationRequest](#notification-v1-UpdateNotificationRequest)
     - [UpdateNotificationResponse](#notification-v1-UpdateNotificationResponse)
     - [UserNotification](#notification-v1-UserNotification)
-    - [VersionResponse](#notification-v1-VersionResponse)
   
     - [Notification](#notification-v1-Notification)
   
@@ -453,21 +451,6 @@
 
 
 
-
-<a name="notification-v1-VersionResponse"></a>
-
-### VersionResponse
-request body and response
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [string](#string) |  |  |
-
-
-
-
-
  
 
  
@@ -482,7 +465,7 @@ Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [VersionResponse](#notification-v1-VersionResponse) | Method Version |
+| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) | Method Version |
 | CreateAnnouncement | [CreateAnnouncementRequest](#notification-v1-CreateAnnouncementRequest) | [CreateAnnouncementResponse](#notification-v1-CreateAnnouncementResponse) |  |
 | UpdateAnnouncement | [UpdateAnnouncementRequest](#notification-v1-UpdateAnnouncementRequest) | [UpdateAnnouncementResponse](#notification-v1-UpdateAnnouncementResponse) |  |
 | GetAnnouncementsByApp | [GetAnnouncementsByAppRequest](#notification-v1-GetAnnouncementsByAppRequest) | [GetAnnouncementsByAppResponse](#notification-v1-GetAnnouncementsByAppResponse) |  |
@@ -886,21 +869,6 @@ Service Name
 
 
 
-
-<a name="notification-v1-VersionResponse"></a>
-
-### VersionResponse
-request body and response
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [string](#string) |  |  |
-
-
-
-
-
  
 
  
@@ -915,7 +883,7 @@ Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [VersionResponse](#notification-v1-VersionResponse) | Method Version |
+| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) | Method Version |
 | CreateAnnouncement | [CreateAnnouncementRequest](#notification-v1-CreateAnnouncementRequest) | [CreateAnnouncementResponse](#notification-v1-CreateAnnouncementResponse) |  |
 | UpdateAnnouncement | [UpdateAnnouncementRequest](#notification-v1-UpdateAnnouncementRequest) | [UpdateAnnouncementResponse](#notification-v1-UpdateAnnouncementResponse) |  |
 | GetAnnouncementsByApp | [GetAnnouncementsByAppRequest](#notification-v1-GetAnnouncementsByAppRequest) | [GetAnnouncementsByAppResponse](#notification-v1-GetAnnouncementsByAppResponse) |  |
