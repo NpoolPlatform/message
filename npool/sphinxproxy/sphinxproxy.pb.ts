@@ -129,6 +129,7 @@ export type ProxySignResponse = {
   transactionID?: string
   info?: ProxySignResponseInfo
   msgTx?: SphinxPluginV1Sphinxplugin.MsgTx
+  signedRawTxHex?: string
   rPCExitMessage?: string
 }
 
