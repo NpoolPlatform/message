@@ -3,17 +3,17 @@
 
 ## Table of Contents
 
-- [npool/go-service-app-template/service-sample.proto](#npool/go-service-app-template/service-sample.proto)
-    - [ServiceExample](#service.sample.v1.ServiceExample)
+- [npool/go-service-app-template/service-sample.proto](#npool_go-service-app-template_service-sample-proto)
+    - [ServiceExample](#service-sample-v1-ServiceExample)
   
-- [npool/go-service-app-template/service-sample.proto](#npool/go-service-app-template/service-sample.proto)
-    - [ServiceExample](#service.sample.v1.ServiceExample)
+- [npool/go-service-app-template/service-sample.proto](#npool_go-service-app-template_service-sample-proto)
+    - [ServiceExample](#service-sample-v1-ServiceExample)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool/go-service-app-template/service-sample.proto"></a>
+<a name="npool_go-service-app-template_service-sample-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/go-service-app-template/service-sample.proto
@@ -26,20 +26,20 @@
  
 
 
-<a name="service.sample.v1.ServiceExample"></a>
+<a name="service-sample-v1-ServiceExample"></a>
 
 ### ServiceExample
 Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
+| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) | Method Version |
 
  
 
 
 
-<a name="npool/go-service-app-template/service-sample.proto"></a>
+<a name="npool_go-service-app-template_service-sample-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/go-service-app-template/service-sample.proto
@@ -52,14 +52,14 @@ Service Name
  
 
 
-<a name="service.sample.v1.ServiceExample"></a>
+<a name="service-sample-v1-ServiceExample"></a>
 
 ### ServiceExample
 Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
+| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) | Method Version |
 
  
 

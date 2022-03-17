@@ -132,9 +132,11 @@ fil
 | To | [string](#string) |  |  |
 | From | [string](#string) |  |  |
 | Value | [double](#double) |  |  |
-| Nonce | [uint64](#uint64) |  | fil |
+| Nonce | [uint64](#uint64) |  | fil/eth/erc20 |
 | GasLimit | [int64](#int64) |  |  |
-| GasFeeCap | [uint64](#uint64) |  |  |
+| GasPrice | [int64](#int64) |  | eth/erc20 |
+| ChainID | [int64](#int64) |  |  |
+| GasFeeCap | [uint64](#uint64) |  | fil |
 | GasPremium | [uint64](#uint64) |  |  |
 | Method | [uint64](#uint64) |  |  |
 | Params | [bytes](#bytes) |  |  |
@@ -181,11 +183,13 @@ fil
 | CoinTypefilecoin | 1 | mainnet |
 | CoinTypebitcoin | 2 |  |
 | CoinTypeethereum | 3 |  |
-| CoinTypespacemesh | 4 |  |
+| CoinTypeusdt | 4 |  |
+| CoinTypespacemesh | 5 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
-| CoinTypetspacemesh | 103 |  |
+| CoinTypetusdt | 103 |  |
+| CoinTypetspacemesh | 104 |  |
 
 
  
@@ -299,9 +303,11 @@ fil
 | To | [string](#string) |  |  |
 | From | [string](#string) |  |  |
 | Value | [double](#double) |  |  |
-| Nonce | [uint64](#uint64) |  | fil |
+| Nonce | [uint64](#uint64) |  | fil/eth/erc20 |
 | GasLimit | [int64](#int64) |  |  |
-| GasFeeCap | [uint64](#uint64) |  |  |
+| GasPrice | [int64](#int64) |  | eth/erc20 |
+| ChainID | [int64](#int64) |  |  |
+| GasFeeCap | [uint64](#uint64) |  | fil |
 | GasPremium | [uint64](#uint64) |  |  |
 | Method | [uint64](#uint64) |  |  |
 | Params | [bytes](#bytes) |  |  |
@@ -348,11 +354,13 @@ fil
 | CoinTypefilecoin | 1 | mainnet |
 | CoinTypebitcoin | 2 |  |
 | CoinTypeethereum | 3 |  |
-| CoinTypespacemesh | 4 |  |
+| CoinTypeusdt | 4 |  |
+| CoinTypespacemesh | 5 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
-| CoinTypetspacemesh | 103 |  |
+| CoinTypetusdt | 103 |  |
+| CoinTypetspacemesh | 104 |  |
 
 
  

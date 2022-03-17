@@ -9,10 +9,12 @@ export enum CoinType {
   CoinTypefilecoin = "CoinTypefilecoin",
   CoinTypebitcoin = "CoinTypebitcoin",
   CoinTypeethereum = "CoinTypeethereum",
+  CoinTypeusdt = "CoinTypeusdt",
   CoinTypespacemesh = "CoinTypespacemesh",
   CoinTypetfilecoin = "CoinTypetfilecoin",
   CoinTypetbitcoin = "CoinTypetbitcoin",
   CoinTypetethereum = "CoinTypetethereum",
+  CoinTypetusdt = "CoinTypetusdt",
   CoinTypetspacemesh = "CoinTypetspacemesh",
 }
 
@@ -23,6 +25,8 @@ export type UnsignedMessage = {
   value?: number
   nonce?: string
   gasLimit?: string
+  gasPrice?: string
+  chainID?: string
   gasFeeCap?: string
   gasPremium?: string
   method?: string

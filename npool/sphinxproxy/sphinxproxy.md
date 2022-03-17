@@ -276,6 +276,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | TransactionID | [string](#string) |  |  |
 | Info | [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo) |  | fil |
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
+| SignedRawTxHex | [string](#string) |  | eth/erc20 |
 | RPCExitMessage | [string](#string) |  |  |
 
 
@@ -635,6 +636,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | TransactionID | [string](#string) |  |  |
 | Info | [ProxySignResponseInfo](#sphinx.proxy.v1.ProxySignResponseInfo) |  | fil |
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx.plugin.v1.MsgTx) |  | btc |
+| SignedRawTxHex | [string](#string) |  | eth/erc20 |
 | RPCExitMessage | [string](#string) |  |  |
 
 

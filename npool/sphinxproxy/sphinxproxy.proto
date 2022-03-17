@@ -152,15 +152,17 @@ message ProxySignRequest {
 }
 
 message ProxySignResponse {
-  sphinx.plugin.v1.CoinType CoinType          = 100;
-  TransactionType TransactionType             = 110;
-  string TransactionID                        = 120;
+  sphinx.plugin.v1.CoinType CoinType  = 100;
+  TransactionType TransactionType     = 110;
+  string TransactionID                = 120;
   // fil
-  ProxySignResponseInfo Info                  = 130;
+  ProxySignResponseInfo Info          = 130;
   // btc
-  sphinx.plugin.v1.MsgTx           MsgTx      = 140;
+  sphinx.plugin.v1.MsgTx  MsgTx       = 140;
+  // eth/erc20
+  string  SignedRawTxHex              = 150;
 
-  string RPCExitMessage                       = 1000;
+  string RPCExitMessage               = 1000;
 }
 
 message ProxySignResponseInfo {

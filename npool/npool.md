@@ -3,26 +3,26 @@
 
 ## Table of Contents
 
-- [npool/npool.proto](#npool/npool.proto)
-    - [PageInfo](#npool.v1.PageInfo)
-    - [VersionResponse](#npool.v1.VersionResponse)
+- [npool/npool.proto](#npool_npool-proto)
+    - [PageInfo](#npool-v1-PageInfo)
+    - [VersionResponse](#npool-v1-VersionResponse)
   
-- [npool/npool.proto](#npool/npool.proto)
-    - [PageInfo](#npool.v1.PageInfo)
-    - [VersionResponse](#npool.v1.VersionResponse)
+- [npool/npool.proto](#npool_npool-proto)
+    - [PageInfo](#npool-v1-PageInfo)
+    - [VersionResponse](#npool-v1-VersionResponse)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool/npool.proto"></a>
+<a name="npool_npool-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/npool.proto
 
 
 
-<a name="npool.v1.PageInfo"></a>
+<a name="npool-v1-PageInfo"></a>
 
 ### PageInfo
 
@@ -38,7 +38,7 @@
 
 
 
-<a name="npool.v1.VersionResponse"></a>
+<a name="npool-v1-VersionResponse"></a>
 
 ### VersionResponse
 
@@ -62,14 +62,14 @@
 
 
 
-<a name="npool/npool.proto"></a>
+<a name="npool_npool-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/npool.proto
 
 
 
-<a name="npool.v1.PageInfo"></a>
+<a name="npool-v1-PageInfo"></a>
 
 ### PageInfo
 
@@ -85,7 +85,7 @@
 
 
 
-<a name="npool.v1.VersionResponse"></a>
+<a name="npool-v1-VersionResponse"></a>
 
 ### VersionResponse
 

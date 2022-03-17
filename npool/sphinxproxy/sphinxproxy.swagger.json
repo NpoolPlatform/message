@@ -251,10 +251,12 @@
         "CoinTypefilecoin",
         "CoinTypebitcoin",
         "CoinTypeethereum",
+        "CoinTypeusdt",
         "CoinTypespacemesh",
         "CoinTypetfilecoin",
         "CoinTypetbitcoin",
         "CoinTypetethereum",
+        "CoinTypetusdt",
         "CoinTypetspacemesh"
       ],
       "default": "CoinTypeUnKnow",
@@ -572,15 +574,25 @@
         "Nonce": {
           "type": "string",
           "format": "uint64",
-          "title": "fil"
+          "title": "fil/eth/erc20"
         },
         "GasLimit": {
           "type": "string",
           "format": "int64"
         },
+        "GasPrice": {
+          "type": "string",
+          "format": "int64",
+          "title": "eth/erc20"
+        },
+        "ChainID": {
+          "type": "string",
+          "format": "int64"
+        },
         "GasFeeCap": {
           "type": "string",
-          "format": "uint64"
+          "format": "uint64",
+          "title": "fil"
         },
         "GasPremium": {
           "type": "string",
