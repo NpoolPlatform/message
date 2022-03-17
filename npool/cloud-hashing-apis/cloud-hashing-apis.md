@@ -82,7 +82,6 @@
     - [Order](#cloud-hashing-apis-v1-Order)
     - [OrderFee](#cloud-hashing-apis-v1-OrderFee)
     - [RecommendGood](#cloud-hashing-apis-v1-RecommendGood)
-    - [Review](#cloud-hashing-apis-v1-Review)
     - [SetWithdrawAddressRequest](#cloud-hashing-apis-v1-SetWithdrawAddressRequest)
     - [SetWithdrawAddressResponse](#cloud-hashing-apis-v1-SetWithdrawAddressResponse)
     - [SignupRequest](#cloud-hashing-apis-v1-SignupRequest)
@@ -194,7 +193,6 @@
     - [Order](#cloud-hashing-apis-v1-Order)
     - [OrderFee](#cloud-hashing-apis-v1-OrderFee)
     - [RecommendGood](#cloud-hashing-apis-v1-RecommendGood)
-    - [Review](#cloud-hashing-apis-v1-Review)
     - [SetWithdrawAddressRequest](#cloud-hashing-apis-v1-SetWithdrawAddressRequest)
     - [SetWithdrawAddressResponse](#cloud-hashing-apis-v1-SetWithdrawAddressResponse)
     - [SignupRequest](#cloud-hashing-apis-v1-SignupRequest)
@@ -1463,30 +1461,6 @@ Request body and response
 
 
 
-<a name="cloud-hashing-apis-v1-Review"></a>
-
-### Review
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| ObjectType | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| ReviewerID | [string](#string) |  |  |
-| State | [string](#string) |  |  |
-| Message | [string](#string) |  |  |
-| ObjectID | [string](#string) |  |  |
-| Domain | [string](#string) |  |  |
-| CreateAt | [uint32](#uint32) |  |  |
-| Trigger | [string](#string) |  |  |
-
-
-
-
-
-
 <a name="cloud-hashing-apis-v1-SetWithdrawAddressRequest"></a>
 
 ### SetWithdrawAddressRequest
@@ -1706,7 +1680,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#cloud-hashing-apis-v1-Review) |  |  |
+| Review | [review.service.v1.UpdateReviewRequest](#review-service-v1-UpdateReviewRequest) |  |  |
 
 
 
@@ -1721,7 +1695,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#cloud-hashing-apis-v1-Review) |  |  |
+| Info | [review.service.v1.UpdateReviewResponse](#review-service-v1-UpdateReviewResponse) |  |  |
 
 
 
@@ -3278,30 +3252,6 @@ Request body and response
 
 
 
-<a name="cloud-hashing-apis-v1-Review"></a>
-
-### Review
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| ObjectType | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| ReviewerID | [string](#string) |  |  |
-| State | [string](#string) |  |  |
-| Message | [string](#string) |  |  |
-| ObjectID | [string](#string) |  |  |
-| Domain | [string](#string) |  |  |
-| CreateAt | [uint32](#uint32) |  |  |
-| Trigger | [string](#string) |  |  |
-
-
-
-
-
-
 <a name="cloud-hashing-apis-v1-SetWithdrawAddressRequest"></a>
 
 ### SetWithdrawAddressRequest
@@ -3521,7 +3471,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#cloud-hashing-apis-v1-Review) |  |  |
+| Review | [review.service.v1.UpdateReviewRequest](#review-service-v1-UpdateReviewRequest) |  |  |
 
 
 
@@ -3536,7 +3486,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#cloud-hashing-apis-v1-Review) |  |  |
+| Info | [review.service.v1.UpdateReviewResponse](#review-service-v1-UpdateReviewResponse) |  |  |
 
 
 

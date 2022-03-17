@@ -537,25 +537,12 @@ export type GetCommissionByAppUserResponse = {
   info?: Commission
 }
 
-export type Review = {
-  id?: string
-  objectType?: string
-  appID?: string
-  reviewerID?: string
-  state?: string
-  message?: string
-  objectID?: string
-  domain?: string
-  createAt?: number
-  trigger?: string
-}
-
 export type UpdateKycReviewRequest = {
-  info?: Review
+  review?: ReviewServiceV1Review-service.UpdateReviewRequest
 }
 
 export type UpdateKycReviewResponse = {
-  info?: Review
+  info?: ReviewServiceV1Review-service.UpdateReviewResponse
 }
 
 export class CloudHashingApis {
