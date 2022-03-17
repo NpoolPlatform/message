@@ -214,96 +214,6 @@ export type GetAppPurchaseAmountSettingsByOtherAppResponse = {
   infos?: AppPurchaseAmountSetting[]
 }
 
-export type AppUserPurchaseAmountSetting = {
-  id?: string
-  appID?: string
-  userID?: string
-  amount?: number
-  percent?: number
-  title?: string
-  badgeLarge?: string
-  badgeSmall?: string
-  start?: number
-  end?: number
-}
-
-export type CreateAppUserPurchaseAmountSettingRequest = {
-  info?: AppUserPurchaseAmountSetting
-}
-
-export type CreateAppUserPurchaseAmountSettingResponse = {
-  info?: AppUserPurchaseAmountSetting
-}
-
-export type CreateAppUserPurchaseAmountSettingForOtherAppUserRequest = {
-  targetAppID?: string
-  targetUserID?: string
-  info?: AppUserPurchaseAmountSetting
-}
-
-export type CreateAppUserPurchaseAmountSettingForOtherAppUserResponse = {
-  info?: AppUserPurchaseAmountSetting
-}
-
-export type UpdateAppUserPurchaseAmountSettingRequest = {
-  info?: AppUserPurchaseAmountSetting
-}
-
-export type UpdateAppUserPurchaseAmountSettingResponse = {
-  info?: AppUserPurchaseAmountSetting
-}
-
-export type GetAppUserPurchaseAmountSettingRequest = {
-  id?: string
-}
-
-export type GetAppUserPurchaseAmountSettingResponse = {
-  info?: AppUserPurchaseAmountSetting
-}
-
-export type GetAppUserPurchaseAmountSettingsByAppRequest = {
-  appID?: string
-}
-
-export type GetAppUserPurchaseAmountSettingsByAppResponse = {
-  infos?: AppUserPurchaseAmountSetting[]
-}
-
-export type GetAppUserPurchaseAmountSettingsByOtherAppRequest = {
-  targetAppID?: string
-}
-
-export type GetAppUserPurchaseAmountSettingsByOtherAppResponse = {
-  infos?: AppUserPurchaseAmountSetting[]
-}
-
-export type GetAppUserPurchaseAmountSettingsByAppUserRequest = {
-  appID?: string
-  userID?: string
-}
-
-export type GetAppUserPurchaseAmountSettingsByAppUserResponse = {
-  infos?: AppUserPurchaseAmountSetting[]
-}
-
-export type GetAppUserPurchaseAmountSettingsByOtherAppUserRequest = {
-  targetAppID?: string
-  targetUserID?: string
-}
-
-export type GetAppUserPurchaseAmountSettingsByOtherAppUserResponse = {
-  infos?: AppUserPurchaseAmountSetting[]
-}
-
-export type GetAppUserPurchaseAmountSettingsByAppOtherUserRequest = {
-  appID?: string
-  targetUserID?: string
-}
-
-export type GetAppUserPurchaseAmountSettingsByAppOtherUserResponse = {
-  infos?: AppUserPurchaseAmountSetting[]
-}
-
 export type RegistrationInvitation = {
   id?: string
   appID?: string
@@ -1103,33 +1013,6 @@ export class CloudHashingInspire {
   }
   static GetAppPurchaseAmountSettingsByOtherApp(req: GetAppPurchaseAmountSettingsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppPurchaseAmountSettingsByOtherAppResponse> {
     return fm.fetchReq<GetAppPurchaseAmountSettingsByOtherAppRequest, GetAppPurchaseAmountSettingsByOtherAppResponse>(`/v1/get/app/purchase/amount/settings/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static CreateAppUserPurchaseAmountSetting(req: CreateAppUserPurchaseAmountSettingRequest, initReq?: fm.InitReq): Promise<CreateAppUserPurchaseAmountSettingResponse> {
-    return fm.fetchReq<CreateAppUserPurchaseAmountSettingRequest, CreateAppUserPurchaseAmountSettingResponse>(`/v1/create/app/user/purchase/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static CreateAppUserPurchaseAmountSettingForOtherAppUser(req: CreateAppUserPurchaseAmountSettingForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateAppUserPurchaseAmountSettingForOtherAppUserResponse> {
-    return fm.fetchReq<CreateAppUserPurchaseAmountSettingForOtherAppUserRequest, CreateAppUserPurchaseAmountSettingForOtherAppUserResponse>(`/v1/create/app/user/purchase/amount/setting/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static UpdateAppUserPurchaseAmountSetting(req: UpdateAppUserPurchaseAmountSettingRequest, initReq?: fm.InitReq): Promise<UpdateAppUserPurchaseAmountSettingResponse> {
-    return fm.fetchReq<UpdateAppUserPurchaseAmountSettingRequest, UpdateAppUserPurchaseAmountSettingResponse>(`/v1/update/app/user/purchase/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetAppUserPurchaseAmountSetting(req: GetAppUserPurchaseAmountSettingRequest, initReq?: fm.InitReq): Promise<GetAppUserPurchaseAmountSettingResponse> {
-    return fm.fetchReq<GetAppUserPurchaseAmountSettingRequest, GetAppUserPurchaseAmountSettingResponse>(`/v1/get/app/user/purchase/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetAppUserPurchaseAmountSettingsByApp(req: GetAppUserPurchaseAmountSettingsByAppRequest, initReq?: fm.InitReq): Promise<GetAppUserPurchaseAmountSettingsByAppResponse> {
-    return fm.fetchReq<GetAppUserPurchaseAmountSettingsByAppRequest, GetAppUserPurchaseAmountSettingsByAppResponse>(`/v1/get/app/user/purchase/amount/settings/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetAppUserPurchaseAmountSettingsByOtherApp(req: GetAppUserPurchaseAmountSettingsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppUserPurchaseAmountSettingsByOtherAppResponse> {
-    return fm.fetchReq<GetAppUserPurchaseAmountSettingsByOtherAppRequest, GetAppUserPurchaseAmountSettingsByOtherAppResponse>(`/v1/get/app/user/purchase/amount/settings/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetAppUserPurchaseAmountSettingsByAppUser(req: GetAppUserPurchaseAmountSettingsByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserPurchaseAmountSettingsByAppUserResponse> {
-    return fm.fetchReq<GetAppUserPurchaseAmountSettingsByAppUserRequest, GetAppUserPurchaseAmountSettingsByAppUserResponse>(`/v1/get/app/user/purchase/amount/settings/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetAppUserPurchaseAmountSettingsByOtherAppUser(req: GetAppUserPurchaseAmountSettingsByOtherAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserPurchaseAmountSettingsByOtherAppUserResponse> {
-    return fm.fetchReq<GetAppUserPurchaseAmountSettingsByOtherAppUserRequest, GetAppUserPurchaseAmountSettingsByOtherAppUserResponse>(`/v1/get/app/user/purchase/amount/settings/by/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetAppUserPurchaseAmountSettingsByAppOtherUser(req: GetAppUserPurchaseAmountSettingsByAppOtherUserRequest, initReq?: fm.InitReq): Promise<GetAppUserPurchaseAmountSettingsByAppOtherUserResponse> {
-    return fm.fetchReq<GetAppUserPurchaseAmountSettingsByAppOtherUserRequest, GetAppUserPurchaseAmountSettingsByAppOtherUserResponse>(`/v1/get/app/user/purchase/amount/settings/by/app/other/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateRegistrationInvitation(req: CreateRegistrationInvitationRequest, initReq?: fm.InitReq): Promise<CreateRegistrationInvitationResponse> {
     return fm.fetchReq<CreateRegistrationInvitationRequest, CreateRegistrationInvitationResponse>(`/v1/create/registration/invitation`, {...initReq, method: "POST", body: JSON.stringify(req)})
