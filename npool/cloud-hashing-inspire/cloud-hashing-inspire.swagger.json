@@ -3283,6 +3283,9 @@
         "End": {
           "type": "integer",
           "format": "int64"
+        },
+        "UserID": {
+          "type": "string"
         }
       }
     },

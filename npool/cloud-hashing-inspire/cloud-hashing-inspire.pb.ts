@@ -163,6 +163,7 @@ export type AppPurchaseAmountSetting = {
   badgeSmall?: string
   start?: number
   end?: number
+  userID?: string
 }
 
 export type CreateAppPurchaseAmountSettingRequest = {

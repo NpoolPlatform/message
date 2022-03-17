@@ -768,6 +768,7 @@ message AppPurchaseAmountSetting {
     string BadgeSmall = 70;
     uint32 Start = 80;
     uint32 End = 90;
+    string UserID = 100;
 }
 
 message CreateAppPurchaseAmountSettingRequest {
