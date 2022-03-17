@@ -267,6 +267,33 @@ export type GetMyDirectInvitationsResponse = {
   infos?: {[key: string]: Invitation}
 }
 
+export type Referral = {
+  user?: AppUserManagerV1Appusermgr.AppUser
+  extra?: AppUserManagerV1Appusermgr.AppUserExtra
+  invitation?: CloudHashingInspireV1Cloud-hashing-inspire.RegistrationInvitation
+  uSDAmount?: number
+  subUSDAmount?: number
+  kol?: boolean
+}
+
+export type GetReferralsRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetReferralsResponse = {
+  infos?: Referral[]
+}
+
+export type GetLayeredReferralsRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetLayeredReferralsResponse = {
+  infos?: Referral[]
+}
+
 export type KycReview = {
   review?: ReviewServiceV1Review-service.Review
   user?: AppUserManagerV1Appusermgr.AppUserInfo
@@ -594,6 +621,12 @@ export class CloudHashingApis {
   }
   static GetMyDirectInvitations(req: GetMyDirectInvitationsRequest, initReq?: fm.InitReq): Promise<GetMyDirectInvitationsResponse> {
     return fm.fetchReq<GetMyDirectInvitationsRequest, GetMyDirectInvitationsResponse>(`/v1/get/my/direct/invitations`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetReferrals(req: GetReferralsRequest, initReq?: fm.InitReq): Promise<GetReferralsResponse> {
+    return fm.fetchReq<GetReferralsRequest, GetReferralsResponse>(`/v1/get/referrals`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetLayeredReferrals(req: GetLayeredReferralsRequest, initReq?: fm.InitReq): Promise<GetLayeredReferralsResponse> {
+    return fm.fetchReq<GetLayeredReferralsRequest, GetLayeredReferralsResponse>(`/v1/get/layered/referrals`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetKycReviews(req: GetKycReviewsRequest, initReq?: fm.InitReq): Promise<GetKycReviewsResponse> {
     return fm.fetchReq<GetKycReviewsRequest, GetKycReviewsResponse>(`/v1/get/kyc/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})

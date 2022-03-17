@@ -43,6 +43,8 @@ type CloudHashingApisClient interface {
 	UpdatePhoneNO(ctx context.Context, in *UpdatePhoneNORequest, opts ...grpc.CallOption) (*UpdatePhoneNOResponse, error)
 	GetMyInvitations(ctx context.Context, in *GetMyInvitationsRequest, opts ...grpc.CallOption) (*GetMyInvitationsResponse, error)
 	GetMyDirectInvitations(ctx context.Context, in *GetMyDirectInvitationsRequest, opts ...grpc.CallOption) (*GetMyDirectInvitationsResponse, error)
+	GetReferrals(ctx context.Context, in *GetReferralsRequest, opts ...grpc.CallOption) (*GetReferralsResponse, error)
+	GetLayeredReferrals(ctx context.Context, in *GetLayeredReferralsRequest, opts ...grpc.CallOption) (*GetLayeredReferralsResponse, error)
 	GetKycReviews(ctx context.Context, in *GetKycReviewsRequest, opts ...grpc.CallOption) (*GetKycReviewsResponse, error)
 	GetKycReviewsByApp(ctx context.Context, in *GetKycReviewsByAppRequest, opts ...grpc.CallOption) (*GetKycReviewsByAppResponse, error)
 	GetKycReviewsByOtherApp(ctx context.Context, in *GetKycReviewsByOtherAppRequest, opts ...grpc.CallOption) (*GetKycReviewsByOtherAppResponse, error)
@@ -241,6 +243,24 @@ func (c *cloudHashingApisClient) GetMyInvitations(ctx context.Context, in *GetMy
 func (c *cloudHashingApisClient) GetMyDirectInvitations(ctx context.Context, in *GetMyDirectInvitationsRequest, opts ...grpc.CallOption) (*GetMyDirectInvitationsResponse, error) {
 	out := new(GetMyDirectInvitationsResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetMyDirectInvitations", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetReferrals(ctx context.Context, in *GetReferralsRequest, opts ...grpc.CallOption) (*GetReferralsResponse, error) {
+	out := new(GetReferralsResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetReferrals", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetLayeredReferrals(ctx context.Context, in *GetLayeredReferralsRequest, opts ...grpc.CallOption) (*GetLayeredReferralsResponse, error) {
+	out := new(GetLayeredReferralsResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetLayeredReferrals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -477,6 +497,8 @@ type CloudHashingApisServer interface {
 	UpdatePhoneNO(context.Context, *UpdatePhoneNORequest) (*UpdatePhoneNOResponse, error)
 	GetMyInvitations(context.Context, *GetMyInvitationsRequest) (*GetMyInvitationsResponse, error)
 	GetMyDirectInvitations(context.Context, *GetMyDirectInvitationsRequest) (*GetMyDirectInvitationsResponse, error)
+	GetReferrals(context.Context, *GetReferralsRequest) (*GetReferralsResponse, error)
+	GetLayeredReferrals(context.Context, *GetLayeredReferralsRequest) (*GetLayeredReferralsResponse, error)
 	GetKycReviews(context.Context, *GetKycReviewsRequest) (*GetKycReviewsResponse, error)
 	GetKycReviewsByApp(context.Context, *GetKycReviewsByAppRequest) (*GetKycReviewsByAppResponse, error)
 	GetKycReviewsByOtherApp(context.Context, *GetKycReviewsByOtherAppRequest) (*GetKycReviewsByOtherAppResponse, error)
@@ -563,6 +585,12 @@ func (UnimplementedCloudHashingApisServer) GetMyInvitations(context.Context, *Ge
 }
 func (UnimplementedCloudHashingApisServer) GetMyDirectInvitations(context.Context, *GetMyDirectInvitationsRequest) (*GetMyDirectInvitationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMyDirectInvitations not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetReferrals(context.Context, *GetReferralsRequest) (*GetReferralsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetReferrals not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetLayeredReferrals(context.Context, *GetLayeredReferralsRequest) (*GetLayeredReferralsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLayeredReferrals not implemented")
 }
 func (UnimplementedCloudHashingApisServer) GetKycReviews(context.Context, *GetKycReviewsRequest) (*GetKycReviewsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetKycReviews not implemented")
@@ -984,6 +1012,42 @@ func _CloudHashingApis_GetMyDirectInvitations_Handler(srv interface{}, ctx conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingApisServer).GetMyDirectInvitations(ctx, req.(*GetMyDirectInvitationsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetReferrals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetReferralsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetReferrals(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetReferrals",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetReferrals(ctx, req.(*GetReferralsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetLayeredReferrals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLayeredReferralsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetLayeredReferrals(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetLayeredReferrals",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetLayeredReferrals(ctx, req.(*GetLayeredReferralsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1484,6 +1548,14 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetMyDirectInvitations",
 			Handler:    _CloudHashingApis_GetMyDirectInvitations_Handler,
+		},
+		{
+			MethodName: "GetReferrals",
+			Handler:    _CloudHashingApis_GetReferrals_Handler,
+		},
+		{
+			MethodName: "GetLayeredReferrals",
+			Handler:    _CloudHashingApis_GetLayeredReferrals_Handler,
 		},
 		{
 			MethodName: "GetKycReviews",

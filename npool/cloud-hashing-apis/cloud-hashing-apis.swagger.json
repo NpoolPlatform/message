@@ -491,6 +491,38 @@
         ]
       }
     },
+    "/v1/get/layered/referrals": {
+      "post": {
+        "operationId": "CloudHashingApis_GetLayeredReferrals",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetLayeredReferralsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetLayeredReferralsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/my/direct/invitations": {
       "post": {
         "operationId": "CloudHashingApis_GetMyDirectInvitations",
@@ -707,6 +739,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/hashingapisv1GetRecommendGoodsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/get/referrals": {
+      "post": {
+        "operationId": "CloudHashingApis_GetReferrals",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetReferralsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetReferralsRequest"
             }
           }
         ],
@@ -2544,6 +2608,28 @@
         }
       }
     },
+    "v1GetLayeredReferralsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetLayeredReferralsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Referral"
+          }
+        }
+      }
+    },
     "v1GetMyDirectInvitationsRequest": {
       "type": "object",
       "properties": {
@@ -2590,6 +2676,28 @@
           "type": "object",
           "additionalProperties": {
             "$ref": "#/definitions/v1Invitation"
+          }
+        }
+      }
+    },
+    "v1GetReferralsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetReferralsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Referral"
           }
         }
       }
@@ -3241,6 +3349,52 @@
         },
         "Message": {
           "type": "string"
+        }
+      }
+    },
+    "v1Referral": {
+      "type": "object",
+      "properties": {
+        "User": {
+          "$ref": "#/definitions/v1AppUser"
+        },
+        "Extra": {
+          "$ref": "#/definitions/v1AppUserExtra"
+        },
+        "Invitation": {
+          "$ref": "#/definitions/v1RegistrationInvitation"
+        },
+        "USDAmount": {
+          "type": "number",
+          "format": "double"
+        },
+        "SubUSDAmount": {
+          "type": "number",
+          "format": "double"
+        },
+        "Kol": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1RegistrationInvitation": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "InviterID": {
+          "type": "string"
+        },
+        "InviteeID": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

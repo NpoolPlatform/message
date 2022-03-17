@@ -140,6 +140,19 @@ service CloudHashingApis {
         };
     }
 
+    rpc GetReferrals (GetReferralsRequest) returns (GetReferralsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/referrals",
+            body: "*"
+        };
+    }
+    rpc GetLayeredReferrals (GetLayeredReferralsRequest) returns (GetLayeredReferralsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/layered/referrals"
+            body: "*"
+        };
+    }
+
     rpc GetKycReviews (GetKycReviewsRequest) returns (GetKycReviewsResponse) {
         option (google.api.http) = {
             post: "/v1/get/kyc/reviews"
@@ -537,6 +550,33 @@ message GetMyDirectInvitationsRequest {
 message GetMyDirectInvitationsResponse {
     InvitationUserInfo MySelf = 10;
     map<string, Invitation> Infos = 20;
+}
+
+message Referral {
+    app.user.manager.v1.AppUser User = 10;
+    app.user.manager.v1.AppUserExtra Extra = 20;
+    cloud.hashing.inspire.v1.RegistrationInvitation Invitation = 30;
+    double USDAmount = 40;
+    double SubUSDAmount = 50;
+    bool Kol = 60;
+}
+
+message GetReferralsRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetReferralsResponse {
+    repeated Referral Infos = 10;
+}
+
+message GetLayeredReferralsRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetLayeredReferralsResponse {
+    repeated Referral Infos = 10;
 }
 
 message KycReview {
