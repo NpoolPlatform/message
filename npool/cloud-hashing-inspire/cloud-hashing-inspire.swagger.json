@@ -267,6 +267,38 @@
         ]
       }
     },
+    "/v1/create/app/purchase/amount/setting/for/app/other/user": {
+      "post": {
+        "operationId": "CloudHashingInspire_CreateAppPurchaseAmountSettingForAppOtherUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppPurchaseAmountSettingForAppOtherUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppPurchaseAmountSettingForAppOtherUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/create/app/purchase/amount/setting/for/other/app": {
       "post": {
         "operationId": "CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherApp",
@@ -291,6 +323,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateAppPurchaseAmountSettingForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/create/app/purchase/amount/setting/for/other/app/user": {
+      "post": {
+        "operationId": "CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppPurchaseAmountSettingForOtherAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppPurchaseAmountSettingForOtherAppUserRequest"
             }
           }
         ],
@@ -1291,6 +1355,38 @@
         ]
       }
     },
+    "/v1/get/app/purchase/amount/settings/by/app/user": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetAppPurchaseAmountSettingsByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppPurchaseAmountSettingsByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppPurchaseAmountSettingsByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/get/app/purchase/amount/settings/by/other/app": {
       "post": {
         "operationId": "CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherApp",
@@ -1315,6 +1411,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppPurchaseAmountSettingsByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
+    "/v1/get/app/purchase/amount/settings/by/other/app/user": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppPurchaseAmountSettingsByOtherAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppPurchaseAmountSettingsByOtherAppUserRequest"
             }
           }
         ],
@@ -3495,6 +3623,25 @@
         }
       }
     },
+    "v1CreateAppPurchaseAmountSettingForAppOtherUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+        }
+      }
+    },
+    "v1CreateAppPurchaseAmountSettingForAppOtherUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+        }
+      }
+    },
     "v1CreateAppPurchaseAmountSettingForOtherAppRequest": {
       "type": "object",
       "properties": {
@@ -3507,6 +3654,28 @@
       }
     },
     "v1CreateAppPurchaseAmountSettingForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+        }
+      }
+    },
+    "v1CreateAppPurchaseAmountSettingForOtherAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+        }
+      }
+    },
+    "v1CreateAppPurchaseAmountSettingForOtherAppUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -4155,6 +4324,28 @@
         }
       }
     },
+    "v1GetAppPurchaseAmountSettingsByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppPurchaseAmountSettingsByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+          }
+        }
+      }
+    },
     "v1GetAppPurchaseAmountSettingsByOtherAppRequest": {
       "type": "object",
       "properties": {
@@ -4164,6 +4355,28 @@
       }
     },
     "v1GetAppPurchaseAmountSettingsByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+          }
+        }
+      }
+    },
+    "v1GetAppPurchaseAmountSettingsByOtherAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppPurchaseAmountSettingsByOtherAppUserResponse": {
       "type": "object",
       "properties": {
         "Infos": {

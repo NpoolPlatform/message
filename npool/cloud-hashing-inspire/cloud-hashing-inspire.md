@@ -27,8 +27,12 @@
     - [CreateAppInvitationSettingForOtherAppResponse](#cloud.hashing.inspire.v1.CreateAppInvitationSettingForOtherAppResponse)
     - [CreateAppInvitationSettingRequest](#cloud.hashing.inspire.v1.CreateAppInvitationSettingRequest)
     - [CreateAppInvitationSettingResponse](#cloud.hashing.inspire.v1.CreateAppInvitationSettingResponse)
+    - [CreateAppPurchaseAmountSettingForAppOtherUserRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForAppOtherUserRequest)
+    - [CreateAppPurchaseAmountSettingForAppOtherUserResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForAppOtherUserResponse)
     - [CreateAppPurchaseAmountSettingForOtherAppRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppRequest)
     - [CreateAppPurchaseAmountSettingForOtherAppResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppResponse)
+    - [CreateAppPurchaseAmountSettingForOtherAppUserRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppUserRequest)
+    - [CreateAppPurchaseAmountSettingForOtherAppUserResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppUserResponse)
     - [CreateAppPurchaseAmountSettingRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingRequest)
     - [CreateAppPurchaseAmountSettingResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingResponse)
     - [CreateCommissionCoinSettingRequest](#cloud.hashing.inspire.v1.CreateCommissionCoinSettingRequest)
@@ -96,8 +100,12 @@
     - [GetAppPurchaseAmountSettingResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingResponse)
     - [GetAppPurchaseAmountSettingsByAppRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppRequest)
     - [GetAppPurchaseAmountSettingsByAppResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppResponse)
+    - [GetAppPurchaseAmountSettingsByAppUserRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppUserRequest)
+    - [GetAppPurchaseAmountSettingsByAppUserResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppUserResponse)
     - [GetAppPurchaseAmountSettingsByOtherAppRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppRequest)
     - [GetAppPurchaseAmountSettingsByOtherAppResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppResponse)
+    - [GetAppPurchaseAmountSettingsByOtherAppUserRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppUserRequest)
+    - [GetAppPurchaseAmountSettingsByOtherAppUserResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppUserResponse)
     - [GetCommissionCoinSettingsRequest](#cloud.hashing.inspire.v1.GetCommissionCoinSettingsRequest)
     - [GetCommissionCoinSettingsResponse](#cloud.hashing.inspire.v1.GetCommissionCoinSettingsResponse)
     - [GetCouponAllocatedDetailRequest](#cloud.hashing.inspire.v1.GetCouponAllocatedDetailRequest)
@@ -239,8 +247,12 @@
     - [CreateAppInvitationSettingForOtherAppResponse](#cloud.hashing.inspire.v1.CreateAppInvitationSettingForOtherAppResponse)
     - [CreateAppInvitationSettingRequest](#cloud.hashing.inspire.v1.CreateAppInvitationSettingRequest)
     - [CreateAppInvitationSettingResponse](#cloud.hashing.inspire.v1.CreateAppInvitationSettingResponse)
+    - [CreateAppPurchaseAmountSettingForAppOtherUserRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForAppOtherUserRequest)
+    - [CreateAppPurchaseAmountSettingForAppOtherUserResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForAppOtherUserResponse)
     - [CreateAppPurchaseAmountSettingForOtherAppRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppRequest)
     - [CreateAppPurchaseAmountSettingForOtherAppResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppResponse)
+    - [CreateAppPurchaseAmountSettingForOtherAppUserRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppUserRequest)
+    - [CreateAppPurchaseAmountSettingForOtherAppUserResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppUserResponse)
     - [CreateAppPurchaseAmountSettingRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingRequest)
     - [CreateAppPurchaseAmountSettingResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingResponse)
     - [CreateCommissionCoinSettingRequest](#cloud.hashing.inspire.v1.CreateCommissionCoinSettingRequest)
@@ -308,8 +320,12 @@
     - [GetAppPurchaseAmountSettingResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingResponse)
     - [GetAppPurchaseAmountSettingsByAppRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppRequest)
     - [GetAppPurchaseAmountSettingsByAppResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppResponse)
+    - [GetAppPurchaseAmountSettingsByAppUserRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppUserRequest)
+    - [GetAppPurchaseAmountSettingsByAppUserResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppUserResponse)
     - [GetAppPurchaseAmountSettingsByOtherAppRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppRequest)
     - [GetAppPurchaseAmountSettingsByOtherAppResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppResponse)
+    - [GetAppPurchaseAmountSettingsByOtherAppUserRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppUserRequest)
+    - [GetAppPurchaseAmountSettingsByOtherAppUserResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppUserResponse)
     - [GetCommissionCoinSettingsRequest](#cloud.hashing.inspire.v1.GetCommissionCoinSettingsRequest)
     - [GetCommissionCoinSettingsResponse](#cloud.hashing.inspire.v1.GetCommissionCoinSettingsResponse)
     - [GetCouponAllocatedDetailRequest](#cloud.hashing.inspire.v1.GetCouponAllocatedDetailRequest)
@@ -831,6 +847,37 @@ request body and response
 
 
 
+<a name="cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForAppOtherUserRequest"></a>
+
+### CreateAppPurchaseAmountSettingForAppOtherUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetUserID | [string](#string) |  |  |
+| Info | [AppPurchaseAmountSetting](#cloud.hashing.inspire.v1.AppPurchaseAmountSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForAppOtherUserResponse"></a>
+
+### CreateAppPurchaseAmountSettingForAppOtherUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppPurchaseAmountSetting](#cloud.hashing.inspire.v1.AppPurchaseAmountSetting) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppRequest"></a>
 
 ### CreateAppPurchaseAmountSettingForOtherAppRequest
@@ -850,6 +897,38 @@ request body and response
 <a name="cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppResponse"></a>
 
 ### CreateAppPurchaseAmountSettingForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppPurchaseAmountSetting](#cloud.hashing.inspire.v1.AppPurchaseAmountSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppUserRequest"></a>
+
+### CreateAppPurchaseAmountSettingForOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Info | [AppPurchaseAmountSetting](#cloud.hashing.inspire.v1.AppPurchaseAmountSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppUserResponse"></a>
+
+### CreateAppPurchaseAmountSettingForOtherAppUserResponse
 
 
 
@@ -1895,6 +1974,37 @@ request body and response
 
 
 
+<a name="cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppUserRequest"></a>
+
+### GetAppPurchaseAmountSettingsByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppUserResponse"></a>
+
+### GetAppPurchaseAmountSettingsByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AppPurchaseAmountSetting](#cloud.hashing.inspire.v1.AppPurchaseAmountSetting) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppRequest"></a>
 
 ### GetAppPurchaseAmountSettingsByOtherAppRequest
@@ -1913,6 +2023,37 @@ request body and response
 <a name="cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppResponse"></a>
 
 ### GetAppPurchaseAmountSettingsByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AppPurchaseAmountSetting](#cloud.hashing.inspire.v1.AppPurchaseAmountSetting) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppUserRequest"></a>
+
+### GetAppPurchaseAmountSettingsByOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppUserResponse"></a>
+
+### GetAppPurchaseAmountSettingsByOtherAppUserResponse
 
 
 
@@ -3690,10 +3831,14 @@ Service Name
 | UpdateAppInvitationSetting | [UpdateAppInvitationSettingRequest](#cloud.hashing.inspire.v1.UpdateAppInvitationSettingRequest) | [UpdateAppInvitationSettingResponse](#cloud.hashing.inspire.v1.UpdateAppInvitationSettingResponse) |  |
 | CreateAppPurchaseAmountSetting | [CreateAppPurchaseAmountSettingRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingRequest) | [CreateAppPurchaseAmountSettingResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingResponse) |  |
 | CreateAppPurchaseAmountSettingForOtherApp | [CreateAppPurchaseAmountSettingForOtherAppRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppRequest) | [CreateAppPurchaseAmountSettingForOtherAppResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppResponse) |  |
+| CreateAppPurchaseAmountSettingForOtherAppUser | [CreateAppPurchaseAmountSettingForOtherAppUserRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppUserRequest) | [CreateAppPurchaseAmountSettingForOtherAppUserResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppUserResponse) |  |
+| CreateAppPurchaseAmountSettingForAppOtherUser | [CreateAppPurchaseAmountSettingForAppOtherUserRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForAppOtherUserRequest) | [CreateAppPurchaseAmountSettingForAppOtherUserResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForAppOtherUserResponse) |  |
 | UpdateAppPurchaseAmountSetting | [UpdateAppPurchaseAmountSettingRequest](#cloud.hashing.inspire.v1.UpdateAppPurchaseAmountSettingRequest) | [UpdateAppPurchaseAmountSettingResponse](#cloud.hashing.inspire.v1.UpdateAppPurchaseAmountSettingResponse) |  |
 | GetAppPurchaseAmountSetting | [GetAppPurchaseAmountSettingRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingRequest) | [GetAppPurchaseAmountSettingResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingResponse) |  |
 | GetAppPurchaseAmountSettingsByApp | [GetAppPurchaseAmountSettingsByAppRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppRequest) | [GetAppPurchaseAmountSettingsByAppResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppResponse) |  |
+| GetAppPurchaseAmountSettingsByAppUser | [GetAppPurchaseAmountSettingsByAppUserRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppUserRequest) | [GetAppPurchaseAmountSettingsByAppUserResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppUserResponse) |  |
 | GetAppPurchaseAmountSettingsByOtherApp | [GetAppPurchaseAmountSettingsByOtherAppRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppRequest) | [GetAppPurchaseAmountSettingsByOtherAppResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppResponse) |  |
+| GetAppPurchaseAmountSettingsByOtherAppUser | [GetAppPurchaseAmountSettingsByOtherAppUserRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppUserRequest) | [GetAppPurchaseAmountSettingsByOtherAppUserResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppUserResponse) |  |
 | CreateRegistrationInvitation | [CreateRegistrationInvitationRequest](#cloud.hashing.inspire.v1.CreateRegistrationInvitationRequest) | [CreateRegistrationInvitationResponse](#cloud.hashing.inspire.v1.CreateRegistrationInvitationResponse) |  |
 | UpdateRegistrationInvitation | [UpdateRegistrationInvitationRequest](#cloud.hashing.inspire.v1.UpdateRegistrationInvitationRequest) | [UpdateRegistrationInvitationResponse](#cloud.hashing.inspire.v1.UpdateRegistrationInvitationResponse) |  |
 | GetRegistrationInvitation | [GetRegistrationInvitationRequest](#cloud.hashing.inspire.v1.GetRegistrationInvitationRequest) | [GetRegistrationInvitationResponse](#cloud.hashing.inspire.v1.GetRegistrationInvitationResponse) |  |
@@ -4174,6 +4319,37 @@ request body and response
 
 
 
+<a name="cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForAppOtherUserRequest"></a>
+
+### CreateAppPurchaseAmountSettingForAppOtherUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetUserID | [string](#string) |  |  |
+| Info | [AppPurchaseAmountSetting](#cloud.hashing.inspire.v1.AppPurchaseAmountSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForAppOtherUserResponse"></a>
+
+### CreateAppPurchaseAmountSettingForAppOtherUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppPurchaseAmountSetting](#cloud.hashing.inspire.v1.AppPurchaseAmountSetting) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppRequest"></a>
 
 ### CreateAppPurchaseAmountSettingForOtherAppRequest
@@ -4193,6 +4369,38 @@ request body and response
 <a name="cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppResponse"></a>
 
 ### CreateAppPurchaseAmountSettingForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppPurchaseAmountSetting](#cloud.hashing.inspire.v1.AppPurchaseAmountSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppUserRequest"></a>
+
+### CreateAppPurchaseAmountSettingForOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Info | [AppPurchaseAmountSetting](#cloud.hashing.inspire.v1.AppPurchaseAmountSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppUserResponse"></a>
+
+### CreateAppPurchaseAmountSettingForOtherAppUserResponse
 
 
 
@@ -5238,6 +5446,37 @@ request body and response
 
 
 
+<a name="cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppUserRequest"></a>
+
+### GetAppPurchaseAmountSettingsByAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppUserResponse"></a>
+
+### GetAppPurchaseAmountSettingsByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AppPurchaseAmountSetting](#cloud.hashing.inspire.v1.AppPurchaseAmountSetting) | repeated |  |
+
+
+
+
+
+
 <a name="cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppRequest"></a>
 
 ### GetAppPurchaseAmountSettingsByOtherAppRequest
@@ -5256,6 +5495,37 @@ request body and response
 <a name="cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppResponse"></a>
 
 ### GetAppPurchaseAmountSettingsByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [AppPurchaseAmountSetting](#cloud.hashing.inspire.v1.AppPurchaseAmountSetting) | repeated |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppUserRequest"></a>
+
+### GetAppPurchaseAmountSettingsByOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppUserResponse"></a>
+
+### GetAppPurchaseAmountSettingsByOtherAppUserResponse
 
 
 
@@ -7033,10 +7303,14 @@ Service Name
 | UpdateAppInvitationSetting | [UpdateAppInvitationSettingRequest](#cloud.hashing.inspire.v1.UpdateAppInvitationSettingRequest) | [UpdateAppInvitationSettingResponse](#cloud.hashing.inspire.v1.UpdateAppInvitationSettingResponse) |  |
 | CreateAppPurchaseAmountSetting | [CreateAppPurchaseAmountSettingRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingRequest) | [CreateAppPurchaseAmountSettingResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingResponse) |  |
 | CreateAppPurchaseAmountSettingForOtherApp | [CreateAppPurchaseAmountSettingForOtherAppRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppRequest) | [CreateAppPurchaseAmountSettingForOtherAppResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppResponse) |  |
+| CreateAppPurchaseAmountSettingForOtherAppUser | [CreateAppPurchaseAmountSettingForOtherAppUserRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppUserRequest) | [CreateAppPurchaseAmountSettingForOtherAppUserResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForOtherAppUserResponse) |  |
+| CreateAppPurchaseAmountSettingForAppOtherUser | [CreateAppPurchaseAmountSettingForAppOtherUserRequest](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForAppOtherUserRequest) | [CreateAppPurchaseAmountSettingForAppOtherUserResponse](#cloud.hashing.inspire.v1.CreateAppPurchaseAmountSettingForAppOtherUserResponse) |  |
 | UpdateAppPurchaseAmountSetting | [UpdateAppPurchaseAmountSettingRequest](#cloud.hashing.inspire.v1.UpdateAppPurchaseAmountSettingRequest) | [UpdateAppPurchaseAmountSettingResponse](#cloud.hashing.inspire.v1.UpdateAppPurchaseAmountSettingResponse) |  |
 | GetAppPurchaseAmountSetting | [GetAppPurchaseAmountSettingRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingRequest) | [GetAppPurchaseAmountSettingResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingResponse) |  |
 | GetAppPurchaseAmountSettingsByApp | [GetAppPurchaseAmountSettingsByAppRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppRequest) | [GetAppPurchaseAmountSettingsByAppResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppResponse) |  |
+| GetAppPurchaseAmountSettingsByAppUser | [GetAppPurchaseAmountSettingsByAppUserRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppUserRequest) | [GetAppPurchaseAmountSettingsByAppUserResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByAppUserResponse) |  |
 | GetAppPurchaseAmountSettingsByOtherApp | [GetAppPurchaseAmountSettingsByOtherAppRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppRequest) | [GetAppPurchaseAmountSettingsByOtherAppResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppResponse) |  |
+| GetAppPurchaseAmountSettingsByOtherAppUser | [GetAppPurchaseAmountSettingsByOtherAppUserRequest](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppUserRequest) | [GetAppPurchaseAmountSettingsByOtherAppUserResponse](#cloud.hashing.inspire.v1.GetAppPurchaseAmountSettingsByOtherAppUserResponse) |  |
 | CreateRegistrationInvitation | [CreateRegistrationInvitationRequest](#cloud.hashing.inspire.v1.CreateRegistrationInvitationRequest) | [CreateRegistrationInvitationResponse](#cloud.hashing.inspire.v1.CreateRegistrationInvitationResponse) |  |
 | UpdateRegistrationInvitation | [UpdateRegistrationInvitationRequest](#cloud.hashing.inspire.v1.UpdateRegistrationInvitationRequest) | [UpdateRegistrationInvitationResponse](#cloud.hashing.inspire.v1.UpdateRegistrationInvitationResponse) |  |
 | GetRegistrationInvitation | [GetRegistrationInvitationRequest](#cloud.hashing.inspire.v1.GetRegistrationInvitationRequest) | [GetRegistrationInvitationResponse](#cloud.hashing.inspire.v1.GetRegistrationInvitationResponse) |  |

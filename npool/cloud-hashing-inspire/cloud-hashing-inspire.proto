@@ -124,6 +124,18 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc CreateAppPurchaseAmountSettingForOtherAppUser (CreateAppPurchaseAmountSettingForOtherAppUserRequest) returns (CreateAppPurchaseAmountSettingForOtherAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/purchase/amount/setting/for/other/app/user"
+            body: "*"
+        };
+    }
+    rpc CreateAppPurchaseAmountSettingForAppOtherUser (CreateAppPurchaseAmountSettingForAppOtherUserRequest) returns (CreateAppPurchaseAmountSettingForAppOtherUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/purchase/amount/setting/for/app/other/user"
+            body: "*"
+        };
+    }
     rpc UpdateAppPurchaseAmountSetting (UpdateAppPurchaseAmountSettingRequest) returns (UpdateAppPurchaseAmountSettingResponse) {
         option (google.api.http) = {
             post: "/v1/update/app/purchase/amount/setting"
@@ -142,9 +154,21 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc GetAppPurchaseAmountSettingsByAppUser (GetAppPurchaseAmountSettingsByAppUserRequest) returns (GetAppPurchaseAmountSettingsByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/purchase/amount/settings/by/app/user"
+            body: "*"
+        };
+    }
     rpc GetAppPurchaseAmountSettingsByOtherApp (GetAppPurchaseAmountSettingsByOtherAppRequest) returns (GetAppPurchaseAmountSettingsByOtherAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/purchase/amount/settings/by/other/app"
+            body: "*"
+        };
+    }
+    rpc GetAppPurchaseAmountSettingsByOtherAppUser (GetAppPurchaseAmountSettingsByOtherAppUserRequest) returns (GetAppPurchaseAmountSettingsByOtherAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/purchase/amount/settings/by/other/app/user"
             body: "*"
         };
     }
@@ -788,6 +812,26 @@ message CreateAppPurchaseAmountSettingForOtherAppResponse {
     AppPurchaseAmountSetting Info = 10;
 }
 
+message CreateAppPurchaseAmountSettingForOtherAppUserRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
+    AppPurchaseAmountSetting Info = 30;
+}
+
+message CreateAppPurchaseAmountSettingForOtherAppUserResponse {
+    AppPurchaseAmountSetting Info = 10;
+}
+
+message CreateAppPurchaseAmountSettingForAppOtherUserRequest {
+    string TargetUserID = 10;
+    AppPurchaseAmountSetting Info = 20;
+}
+
+message CreateAppPurchaseAmountSettingForAppOtherUserResponse {
+    AppPurchaseAmountSetting Info = 10;
+}
+
+
 message UpdateAppPurchaseAmountSettingRequest {
     AppPurchaseAmountSetting Info = 10;
 }
@@ -812,11 +856,29 @@ message GetAppPurchaseAmountSettingsByAppResponse {
     repeated AppPurchaseAmountSetting Infos = 10;
 }
 
+message GetAppPurchaseAmountSettingsByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetAppPurchaseAmountSettingsByAppUserResponse {
+    repeated AppPurchaseAmountSetting Infos = 10;
+}
+
 message GetAppPurchaseAmountSettingsByOtherAppRequest {
     string TargetAppID = 10;
 }
 
 message GetAppPurchaseAmountSettingsByOtherAppResponse {
+    repeated AppPurchaseAmountSetting Infos = 10;
+}
+
+message GetAppPurchaseAmountSettingsByOtherAppUserRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
+}
+
+message GetAppPurchaseAmountSettingsByOtherAppUserResponse {
     repeated AppPurchaseAmountSetting Infos = 10;
 }
 

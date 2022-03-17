@@ -43,10 +43,14 @@ type CloudHashingInspireClient interface {
 	UpdateAppInvitationSetting(ctx context.Context, in *UpdateAppInvitationSettingRequest, opts ...grpc.CallOption) (*UpdateAppInvitationSettingResponse, error)
 	CreateAppPurchaseAmountSetting(ctx context.Context, in *CreateAppPurchaseAmountSettingRequest, opts ...grpc.CallOption) (*CreateAppPurchaseAmountSettingResponse, error)
 	CreateAppPurchaseAmountSettingForOtherApp(ctx context.Context, in *CreateAppPurchaseAmountSettingForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppPurchaseAmountSettingForOtherAppResponse, error)
+	CreateAppPurchaseAmountSettingForOtherAppUser(ctx context.Context, in *CreateAppPurchaseAmountSettingForOtherAppUserRequest, opts ...grpc.CallOption) (*CreateAppPurchaseAmountSettingForOtherAppUserResponse, error)
+	CreateAppPurchaseAmountSettingForAppOtherUser(ctx context.Context, in *CreateAppPurchaseAmountSettingForAppOtherUserRequest, opts ...grpc.CallOption) (*CreateAppPurchaseAmountSettingForAppOtherUserResponse, error)
 	UpdateAppPurchaseAmountSetting(ctx context.Context, in *UpdateAppPurchaseAmountSettingRequest, opts ...grpc.CallOption) (*UpdateAppPurchaseAmountSettingResponse, error)
 	GetAppPurchaseAmountSetting(ctx context.Context, in *GetAppPurchaseAmountSettingRequest, opts ...grpc.CallOption) (*GetAppPurchaseAmountSettingResponse, error)
 	GetAppPurchaseAmountSettingsByApp(ctx context.Context, in *GetAppPurchaseAmountSettingsByAppRequest, opts ...grpc.CallOption) (*GetAppPurchaseAmountSettingsByAppResponse, error)
+	GetAppPurchaseAmountSettingsByAppUser(ctx context.Context, in *GetAppPurchaseAmountSettingsByAppUserRequest, opts ...grpc.CallOption) (*GetAppPurchaseAmountSettingsByAppUserResponse, error)
 	GetAppPurchaseAmountSettingsByOtherApp(ctx context.Context, in *GetAppPurchaseAmountSettingsByOtherAppRequest, opts ...grpc.CallOption) (*GetAppPurchaseAmountSettingsByOtherAppResponse, error)
+	GetAppPurchaseAmountSettingsByOtherAppUser(ctx context.Context, in *GetAppPurchaseAmountSettingsByOtherAppUserRequest, opts ...grpc.CallOption) (*GetAppPurchaseAmountSettingsByOtherAppUserResponse, error)
 	CreateRegistrationInvitation(ctx context.Context, in *CreateRegistrationInvitationRequest, opts ...grpc.CallOption) (*CreateRegistrationInvitationResponse, error)
 	UpdateRegistrationInvitation(ctx context.Context, in *UpdateRegistrationInvitationRequest, opts ...grpc.CallOption) (*UpdateRegistrationInvitationResponse, error)
 	GetRegistrationInvitation(ctx context.Context, in *GetRegistrationInvitationRequest, opts ...grpc.CallOption) (*GetRegistrationInvitationResponse, error)
@@ -294,6 +298,24 @@ func (c *cloudHashingInspireClient) CreateAppPurchaseAmountSettingForOtherApp(ct
 	return out, nil
 }
 
+func (c *cloudHashingInspireClient) CreateAppPurchaseAmountSettingForOtherAppUser(ctx context.Context, in *CreateAppPurchaseAmountSettingForOtherAppUserRequest, opts ...grpc.CallOption) (*CreateAppPurchaseAmountSettingForOtherAppUserResponse, error) {
+	out := new(CreateAppPurchaseAmountSettingForOtherAppUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppPurchaseAmountSettingForOtherAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingInspireClient) CreateAppPurchaseAmountSettingForAppOtherUser(ctx context.Context, in *CreateAppPurchaseAmountSettingForAppOtherUserRequest, opts ...grpc.CallOption) (*CreateAppPurchaseAmountSettingForAppOtherUserResponse, error) {
+	out := new(CreateAppPurchaseAmountSettingForAppOtherUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppPurchaseAmountSettingForAppOtherUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingInspireClient) UpdateAppPurchaseAmountSetting(ctx context.Context, in *UpdateAppPurchaseAmountSettingRequest, opts ...grpc.CallOption) (*UpdateAppPurchaseAmountSettingResponse, error) {
 	out := new(UpdateAppPurchaseAmountSettingResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/UpdateAppPurchaseAmountSetting", in, out, opts...)
@@ -321,9 +343,27 @@ func (c *cloudHashingInspireClient) GetAppPurchaseAmountSettingsByApp(ctx contex
 	return out, nil
 }
 
+func (c *cloudHashingInspireClient) GetAppPurchaseAmountSettingsByAppUser(ctx context.Context, in *GetAppPurchaseAmountSettingsByAppUserRequest, opts ...grpc.CallOption) (*GetAppPurchaseAmountSettingsByAppUserResponse, error) {
+	out := new(GetAppPurchaseAmountSettingsByAppUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppPurchaseAmountSettingsByAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingInspireClient) GetAppPurchaseAmountSettingsByOtherApp(ctx context.Context, in *GetAppPurchaseAmountSettingsByOtherAppRequest, opts ...grpc.CallOption) (*GetAppPurchaseAmountSettingsByOtherAppResponse, error) {
 	out := new(GetAppPurchaseAmountSettingsByOtherAppResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppPurchaseAmountSettingsByOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingInspireClient) GetAppPurchaseAmountSettingsByOtherAppUser(ctx context.Context, in *GetAppPurchaseAmountSettingsByOtherAppUserRequest, opts ...grpc.CallOption) (*GetAppPurchaseAmountSettingsByOtherAppUserResponse, error) {
+	out := new(GetAppPurchaseAmountSettingsByOtherAppUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppPurchaseAmountSettingsByOtherAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1028,10 +1068,14 @@ type CloudHashingInspireServer interface {
 	UpdateAppInvitationSetting(context.Context, *UpdateAppInvitationSettingRequest) (*UpdateAppInvitationSettingResponse, error)
 	CreateAppPurchaseAmountSetting(context.Context, *CreateAppPurchaseAmountSettingRequest) (*CreateAppPurchaseAmountSettingResponse, error)
 	CreateAppPurchaseAmountSettingForOtherApp(context.Context, *CreateAppPurchaseAmountSettingForOtherAppRequest) (*CreateAppPurchaseAmountSettingForOtherAppResponse, error)
+	CreateAppPurchaseAmountSettingForOtherAppUser(context.Context, *CreateAppPurchaseAmountSettingForOtherAppUserRequest) (*CreateAppPurchaseAmountSettingForOtherAppUserResponse, error)
+	CreateAppPurchaseAmountSettingForAppOtherUser(context.Context, *CreateAppPurchaseAmountSettingForAppOtherUserRequest) (*CreateAppPurchaseAmountSettingForAppOtherUserResponse, error)
 	UpdateAppPurchaseAmountSetting(context.Context, *UpdateAppPurchaseAmountSettingRequest) (*UpdateAppPurchaseAmountSettingResponse, error)
 	GetAppPurchaseAmountSetting(context.Context, *GetAppPurchaseAmountSettingRequest) (*GetAppPurchaseAmountSettingResponse, error)
 	GetAppPurchaseAmountSettingsByApp(context.Context, *GetAppPurchaseAmountSettingsByAppRequest) (*GetAppPurchaseAmountSettingsByAppResponse, error)
+	GetAppPurchaseAmountSettingsByAppUser(context.Context, *GetAppPurchaseAmountSettingsByAppUserRequest) (*GetAppPurchaseAmountSettingsByAppUserResponse, error)
 	GetAppPurchaseAmountSettingsByOtherApp(context.Context, *GetAppPurchaseAmountSettingsByOtherAppRequest) (*GetAppPurchaseAmountSettingsByOtherAppResponse, error)
+	GetAppPurchaseAmountSettingsByOtherAppUser(context.Context, *GetAppPurchaseAmountSettingsByOtherAppUserRequest) (*GetAppPurchaseAmountSettingsByOtherAppUserResponse, error)
 	CreateRegistrationInvitation(context.Context, *CreateRegistrationInvitationRequest) (*CreateRegistrationInvitationResponse, error)
 	UpdateRegistrationInvitation(context.Context, *UpdateRegistrationInvitationRequest) (*UpdateRegistrationInvitationResponse, error)
 	GetRegistrationInvitation(context.Context, *GetRegistrationInvitationRequest) (*GetRegistrationInvitationResponse, error)
@@ -1168,6 +1212,12 @@ func (UnimplementedCloudHashingInspireServer) CreateAppPurchaseAmountSetting(con
 func (UnimplementedCloudHashingInspireServer) CreateAppPurchaseAmountSettingForOtherApp(context.Context, *CreateAppPurchaseAmountSettingForOtherAppRequest) (*CreateAppPurchaseAmountSettingForOtherAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppPurchaseAmountSettingForOtherApp not implemented")
 }
+func (UnimplementedCloudHashingInspireServer) CreateAppPurchaseAmountSettingForOtherAppUser(context.Context, *CreateAppPurchaseAmountSettingForOtherAppUserRequest) (*CreateAppPurchaseAmountSettingForOtherAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppPurchaseAmountSettingForOtherAppUser not implemented")
+}
+func (UnimplementedCloudHashingInspireServer) CreateAppPurchaseAmountSettingForAppOtherUser(context.Context, *CreateAppPurchaseAmountSettingForAppOtherUserRequest) (*CreateAppPurchaseAmountSettingForAppOtherUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppPurchaseAmountSettingForAppOtherUser not implemented")
+}
 func (UnimplementedCloudHashingInspireServer) UpdateAppPurchaseAmountSetting(context.Context, *UpdateAppPurchaseAmountSettingRequest) (*UpdateAppPurchaseAmountSettingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppPurchaseAmountSetting not implemented")
 }
@@ -1177,8 +1227,14 @@ func (UnimplementedCloudHashingInspireServer) GetAppPurchaseAmountSetting(contex
 func (UnimplementedCloudHashingInspireServer) GetAppPurchaseAmountSettingsByApp(context.Context, *GetAppPurchaseAmountSettingsByAppRequest) (*GetAppPurchaseAmountSettingsByAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppPurchaseAmountSettingsByApp not implemented")
 }
+func (UnimplementedCloudHashingInspireServer) GetAppPurchaseAmountSettingsByAppUser(context.Context, *GetAppPurchaseAmountSettingsByAppUserRequest) (*GetAppPurchaseAmountSettingsByAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppPurchaseAmountSettingsByAppUser not implemented")
+}
 func (UnimplementedCloudHashingInspireServer) GetAppPurchaseAmountSettingsByOtherApp(context.Context, *GetAppPurchaseAmountSettingsByOtherAppRequest) (*GetAppPurchaseAmountSettingsByOtherAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppPurchaseAmountSettingsByOtherApp not implemented")
+}
+func (UnimplementedCloudHashingInspireServer) GetAppPurchaseAmountSettingsByOtherAppUser(context.Context, *GetAppPurchaseAmountSettingsByOtherAppUserRequest) (*GetAppPurchaseAmountSettingsByOtherAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppPurchaseAmountSettingsByOtherAppUser not implemented")
 }
 func (UnimplementedCloudHashingInspireServer) CreateRegistrationInvitation(context.Context, *CreateRegistrationInvitationRequest) (*CreateRegistrationInvitationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateRegistrationInvitation not implemented")
@@ -1742,6 +1798,42 @@ func _CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherApp_Handler(srv 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppPurchaseAmountSettingForOtherAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).CreateAppPurchaseAmountSettingForOtherAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppPurchaseAmountSettingForOtherAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).CreateAppPurchaseAmountSettingForOtherAppUser(ctx, req.(*CreateAppPurchaseAmountSettingForOtherAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingInspire_CreateAppPurchaseAmountSettingForAppOtherUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppPurchaseAmountSettingForAppOtherUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).CreateAppPurchaseAmountSettingForAppOtherUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateAppPurchaseAmountSettingForAppOtherUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).CreateAppPurchaseAmountSettingForAppOtherUser(ctx, req.(*CreateAppPurchaseAmountSettingForAppOtherUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingInspire_UpdateAppPurchaseAmountSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppPurchaseAmountSettingRequest)
 	if err := dec(in); err != nil {
@@ -1796,6 +1888,24 @@ func _CloudHashingInspire_GetAppPurchaseAmountSettingsByApp_Handler(srv interfac
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingInspire_GetAppPurchaseAmountSettingsByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppPurchaseAmountSettingsByAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).GetAppPurchaseAmountSettingsByAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppPurchaseAmountSettingsByAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).GetAppPurchaseAmountSettingsByAppUser(ctx, req.(*GetAppPurchaseAmountSettingsByAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppPurchaseAmountSettingsByOtherAppRequest)
 	if err := dec(in); err != nil {
@@ -1810,6 +1920,24 @@ func _CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherApp_Handler(srv int
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingInspireServer).GetAppPurchaseAmountSettingsByOtherApp(ctx, req.(*GetAppPurchaseAmountSettingsByOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppPurchaseAmountSettingsByOtherAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).GetAppPurchaseAmountSettingsByOtherAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/GetAppPurchaseAmountSettingsByOtherAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).GetAppPurchaseAmountSettingsByOtherAppUser(ctx, req.(*GetAppPurchaseAmountSettingsByOtherAppUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3244,6 +3372,14 @@ var CloudHashingInspire_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherApp_Handler,
 		},
 		{
+			MethodName: "CreateAppPurchaseAmountSettingForOtherAppUser",
+			Handler:    _CloudHashingInspire_CreateAppPurchaseAmountSettingForOtherAppUser_Handler,
+		},
+		{
+			MethodName: "CreateAppPurchaseAmountSettingForAppOtherUser",
+			Handler:    _CloudHashingInspire_CreateAppPurchaseAmountSettingForAppOtherUser_Handler,
+		},
+		{
 			MethodName: "UpdateAppPurchaseAmountSetting",
 			Handler:    _CloudHashingInspire_UpdateAppPurchaseAmountSetting_Handler,
 		},
@@ -3256,8 +3392,16 @@ var CloudHashingInspire_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingInspire_GetAppPurchaseAmountSettingsByApp_Handler,
 		},
 		{
+			MethodName: "GetAppPurchaseAmountSettingsByAppUser",
+			Handler:    _CloudHashingInspire_GetAppPurchaseAmountSettingsByAppUser_Handler,
+		},
+		{
 			MethodName: "GetAppPurchaseAmountSettingsByOtherApp",
 			Handler:    _CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherApp_Handler,
+		},
+		{
+			MethodName: "GetAppPurchaseAmountSettingsByOtherAppUser",
+			Handler:    _CloudHashingInspire_GetAppPurchaseAmountSettingsByOtherAppUser_Handler,
 		},
 		{
 			MethodName: "CreateRegistrationInvitation",
