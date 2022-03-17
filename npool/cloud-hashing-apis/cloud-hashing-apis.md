@@ -1980,6 +1980,7 @@ Cloud Hashing Goods
 | GetWithdrawAddressesByAppUser | [GetWithdrawAddressesByAppUserRequest](#cloud-hashing-apis-v1-GetWithdrawAddressesByAppUserRequest) | [GetWithdrawAddressesByAppUserResponse](#cloud-hashing-apis-v1-GetWithdrawAddressesByAppUserResponse) |  |
 | GetCouponsByAppUser | [GetCouponsByAppUserRequest](#cloud-hashing-apis-v1-GetCouponsByAppUserRequest) | [GetCouponsByAppUserResponse](#cloud-hashing-apis-v1-GetCouponsByAppUserResponse) |  |
 | GetCommissionByAppUser | [GetCommissionByAppUserRequest](#cloud-hashing-apis-v1-GetCommissionByAppUserRequest) | [GetCommissionByAppUserResponse](#cloud-hashing-apis-v1-GetCommissionByAppUserResponse) |  |
+| UpdateReview | [.review.service.v1.UpdateReviewRequest](#review-service-v1-UpdateReviewRequest) | [.review.service.v1.UpdateReviewResponse](#review-service-v1-UpdateReviewResponse) |  |
 
  
 
@@ -3740,6 +3741,7 @@ Cloud Hashing Goods
 | GetWithdrawAddressesByAppUser | [GetWithdrawAddressesByAppUserRequest](#cloud-hashing-apis-v1-GetWithdrawAddressesByAppUserRequest) | [GetWithdrawAddressesByAppUserResponse](#cloud-hashing-apis-v1-GetWithdrawAddressesByAppUserResponse) |  |
 | GetCouponsByAppUser | [GetCouponsByAppUserRequest](#cloud-hashing-apis-v1-GetCouponsByAppUserRequest) | [GetCouponsByAppUserResponse](#cloud-hashing-apis-v1-GetCouponsByAppUserResponse) |  |
 | GetCommissionByAppUser | [GetCommissionByAppUserRequest](#cloud-hashing-apis-v1-GetCommissionByAppUserRequest) | [GetCommissionByAppUserResponse](#cloud-hashing-apis-v1-GetCommissionByAppUserResponse) |  |
+| UpdateReview | [.review.service.v1.UpdateReviewRequest](#review-service-v1-UpdateReviewRequest) | [.review.service.v1.UpdateReviewResponse](#review-service-v1-UpdateReviewResponse) |  |
 
  
 

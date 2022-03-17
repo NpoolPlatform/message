@@ -664,4 +664,7 @@ export class CloudHashingApis {
   static GetCommissionByAppUser(req: GetCommissionByAppUserRequest, initReq?: fm.InitReq): Promise<GetCommissionByAppUserResponse> {
     return fm.fetchReq<GetCommissionByAppUserRequest, GetCommissionByAppUserResponse>(`/v1/get/commission/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static UpdateReview(req: ReviewServiceV1Review-service.UpdateReviewRequest, initReq?: fm.InitReq): Promise<ReviewServiceV1Review-service.UpdateReviewResponse> {
+    return fm.fetchReq<ReviewServiceV1Review-service.UpdateReviewRequest, ReviewServiceV1Review-service.UpdateReviewResponse>(`/v1/update/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
 }

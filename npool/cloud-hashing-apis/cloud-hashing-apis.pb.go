@@ -6538,7 +6538,7 @@ var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDesc = []byte{
 	0x12, 0x35, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21,
 	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61,
 	0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f,
-	0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x8e, 0x35, 0x0a, 0x10, 0x43, 0x6c, 0x6f, 0x75,
+	0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x8d, 0x36, 0x0a, 0x10, 0x43, 0x6c, 0x6f, 0x75,
 	0x64, 0x48, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x41, 0x70, 0x69, 0x73, 0x12, 0x51, 0x0a, 0x07,
 	0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a,
@@ -6963,11 +6963,19 @@ var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDesc = []byte{
 	0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x29, 0x82,
 	0xd3, 0xe4, 0x93, 0x02, 0x23, 0x22, 0x1e, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x63,
 	0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70,
-	0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x42, 0x3b, 0x5a, 0x39, 0x67, 0x69, 0x74, 0x68,
-	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74,
-	0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f,
-	0x6f, 0x6c, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2d, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67,
-	0x2d, 0x61, 0x70, 0x69, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x7d, 0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x12, 0x26, 0x2e, 0x72, 0x65, 0x76, 0x69, 0x65,
+	0x77, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x27, 0x2e, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65,
+	0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1c, 0x82, 0xd3, 0xe4, 0x93, 0x02,
+	0x16, 0x22, 0x11, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x72, 0x65,
+	0x76, 0x69, 0x65, 0x77, 0x3a, 0x01, 0x2a, 0x42, 0x3b, 0x5a, 0x39, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66,
+	0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f,
+	0x6c, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2d, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2d,
+	0x61, 0x70, 0x69, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -7109,7 +7117,9 @@ var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_goTypes = []interface
 	(*cloud_hashing_billing.UserWithdraw)(nil),              // 122: cloud.hashing.billing.v1.UserWithdraw
 	(*cloud_hashing_order.Order)(nil),                       // 123: cloud.hashing.order.v1.Order
 	(*emptypb.Empty)(nil),                                   // 124: google.protobuf.Empty
-	(*npool.VersionResponse)(nil),                           // 125: npool.v1.VersionResponse
+	(*review_service.UpdateReviewRequest)(nil),              // 125: review.service.v1.UpdateReviewRequest
+	(*npool.VersionResponse)(nil),                           // 126: npool.v1.VersionResponse
+	(*review_service.UpdateReviewResponse)(nil),             // 127: review.service.v1.UpdateReviewResponse
 }
 var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_depIdxs = []int32{
 	105, // 0: cloud.hashing.apis.v1.Good.Good:type_name -> cloud.hashing.goods.v1.GoodDetail
@@ -7254,50 +7264,52 @@ var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_depIdxs = []int32{
 	84,  // 139: cloud.hashing.apis.v1.CloudHashingApis.GetWithdrawAddressesByAppUser:input_type -> cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserRequest
 	96,  // 140: cloud.hashing.apis.v1.CloudHashingApis.GetCouponsByAppUser:input_type -> cloud.hashing.apis.v1.GetCouponsByAppUserRequest
 	99,  // 141: cloud.hashing.apis.v1.CloudHashingApis.GetCommissionByAppUser:input_type -> cloud.hashing.apis.v1.GetCommissionByAppUserRequest
-	125, // 142: cloud.hashing.apis.v1.CloudHashingApis.Version:output_type -> npool.v1.VersionResponse
-	7,   // 143: cloud.hashing.apis.v1.CloudHashingApis.GetGoods:output_type -> cloud.hashing.apis.v1.GetGoodsResponse
-	9,   // 144: cloud.hashing.apis.v1.CloudHashingApis.GetGoodsByApp:output_type -> cloud.hashing.apis.v1.GetGoodsByAppResponse
-	3,   // 145: cloud.hashing.apis.v1.CloudHashingApis.CreateGood:output_type -> cloud.hashing.apis.v1.CreateGoodResponse
-	5,   // 146: cloud.hashing.apis.v1.CloudHashingApis.GetGood:output_type -> cloud.hashing.apis.v1.GetGoodResponse
-	11,  // 147: cloud.hashing.apis.v1.CloudHashingApis.GetRecommendGoodsByApp:output_type -> cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse
-	23,  // 148: cloud.hashing.apis.v1.CloudHashingApis.SubmitOrder:output_type -> cloud.hashing.apis.v1.SubmitOrderResponse
-	25,  // 149: cloud.hashing.apis.v1.CloudHashingApis.CreateOrderPayment:output_type -> cloud.hashing.apis.v1.CreateOrderPaymentResponse
-	14,  // 150: cloud.hashing.apis.v1.CloudHashingApis.GetOrder:output_type -> cloud.hashing.apis.v1.GetOrderResponse
-	16,  // 151: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByAppUser:output_type -> cloud.hashing.apis.v1.GetOrdersByAppUserResponse
-	18,  // 152: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByApp:output_type -> cloud.hashing.apis.v1.GetOrdersByAppResponse
-	20,  // 153: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByGood:output_type -> cloud.hashing.apis.v1.GetOrdersByGoodResponse
-	27,  // 154: cloud.hashing.apis.v1.CloudHashingApis.Signup:output_type -> cloud.hashing.apis.v1.SignupResponse
-	29,  // 155: cloud.hashing.apis.v1.CloudHashingApis.UpdatePassword:output_type -> cloud.hashing.apis.v1.UpdatePasswordResponse
-	31,  // 156: cloud.hashing.apis.v1.CloudHashingApis.UpdatePasswordByAppUser:output_type -> cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse
-	33,  // 157: cloud.hashing.apis.v1.CloudHashingApis.UpdateEmailAddress:output_type -> cloud.hashing.apis.v1.UpdateEmailAddressResponse
-	35,  // 158: cloud.hashing.apis.v1.CloudHashingApis.UpdatePhoneNO:output_type -> cloud.hashing.apis.v1.UpdatePhoneNOResponse
-	41,  // 159: cloud.hashing.apis.v1.CloudHashingApis.GetMyInvitations:output_type -> cloud.hashing.apis.v1.GetMyInvitationsResponse
-	43,  // 160: cloud.hashing.apis.v1.CloudHashingApis.GetMyDirectInvitations:output_type -> cloud.hashing.apis.v1.GetMyDirectInvitationsResponse
-	46,  // 161: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviews:output_type -> cloud.hashing.apis.v1.GetKycReviewsResponse
-	48,  // 162: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviewsByApp:output_type -> cloud.hashing.apis.v1.GetKycReviewsByAppResponse
-	50,  // 163: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviewsByOtherApp:output_type -> cloud.hashing.apis.v1.GetKycReviewsByOtherAppResponse
-	53,  // 164: cloud.hashing.apis.v1.CloudHashingApis.GetGoodReviews:output_type -> cloud.hashing.apis.v1.GetGoodReviewsResponse
-	76,  // 165: cloud.hashing.apis.v1.CloudHashingApis.GetWithdrawReviews:output_type -> cloud.hashing.apis.v1.GetWithdrawReviewsResponse
-	78,  // 166: cloud.hashing.apis.v1.CloudHashingApis.GetWithdrawReviewsByApp:output_type -> cloud.hashing.apis.v1.GetWithdrawReviewsByAppResponse
-	80,  // 167: cloud.hashing.apis.v1.CloudHashingApis.GetWithdrawReviewsByOtherApp:output_type -> cloud.hashing.apis.v1.GetWithdrawReviewsByOtherAppResponse
-	88,  // 168: cloud.hashing.apis.v1.CloudHashingApis.GetWithdrawAddressReviews:output_type -> cloud.hashing.apis.v1.GetWithdrawAddressReviewsResponse
-	90,  // 169: cloud.hashing.apis.v1.CloudHashingApis.GetWithdrawAddressReviewsByApp:output_type -> cloud.hashing.apis.v1.GetWithdrawAddressReviewsByAppResponse
-	92,  // 170: cloud.hashing.apis.v1.CloudHashingApis.GetWithdrawAddressReviewsByOtherApp:output_type -> cloud.hashing.apis.v1.GetWithdrawAddressReviewsByOtherAppResponse
-	58,  // 171: cloud.hashing.apis.v1.CloudHashingApis.CreateKyc:output_type -> cloud.hashing.apis.v1.CreateKycResponse
-	60,  // 172: cloud.hashing.apis.v1.CloudHashingApis.UpdateKyc:output_type -> cloud.hashing.apis.v1.UpdateKycResponse
-	56,  // 173: cloud.hashing.apis.v1.CloudHashingApis.GetKycByAppUser:output_type -> cloud.hashing.apis.v1.GetKycByAppUserResponse
-	62,  // 174: cloud.hashing.apis.v1.CloudHashingApis.CreatePlatformCoinAccount:output_type -> cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse
-	64,  // 175: cloud.hashing.apis.v1.CloudHashingApis.CreateUserCoinAccount:output_type -> cloud.hashing.apis.v1.CreateUserCoinAccountResponse
-	68,  // 176: cloud.hashing.apis.v1.CloudHashingApis.SubmitUserWithdraw:output_type -> cloud.hashing.apis.v1.SubmitUserWithdrawResponse
-	70,  // 177: cloud.hashing.apis.v1.CloudHashingApis.UpdateUserWithdrawReview:output_type -> cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse
-	72,  // 178: cloud.hashing.apis.v1.CloudHashingApis.UpdateUserWithdrawReviewForOtherAppUser:output_type -> cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserResponse
-	74,  // 179: cloud.hashing.apis.v1.CloudHashingApis.GetUserWithdrawsByAppUser:output_type -> cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse
-	83,  // 180: cloud.hashing.apis.v1.CloudHashingApis.SetWithdrawAddress:output_type -> cloud.hashing.apis.v1.SetWithdrawAddressResponse
-	85,  // 181: cloud.hashing.apis.v1.CloudHashingApis.GetWithdrawAddressesByAppUser:output_type -> cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserResponse
-	97,  // 182: cloud.hashing.apis.v1.CloudHashingApis.GetCouponsByAppUser:output_type -> cloud.hashing.apis.v1.GetCouponsByAppUserResponse
-	100, // 183: cloud.hashing.apis.v1.CloudHashingApis.GetCommissionByAppUser:output_type -> cloud.hashing.apis.v1.GetCommissionByAppUserResponse
-	142, // [142:184] is the sub-list for method output_type
-	100, // [100:142] is the sub-list for method input_type
+	125, // 142: cloud.hashing.apis.v1.CloudHashingApis.UpdateReview:input_type -> review.service.v1.UpdateReviewRequest
+	126, // 143: cloud.hashing.apis.v1.CloudHashingApis.Version:output_type -> npool.v1.VersionResponse
+	7,   // 144: cloud.hashing.apis.v1.CloudHashingApis.GetGoods:output_type -> cloud.hashing.apis.v1.GetGoodsResponse
+	9,   // 145: cloud.hashing.apis.v1.CloudHashingApis.GetGoodsByApp:output_type -> cloud.hashing.apis.v1.GetGoodsByAppResponse
+	3,   // 146: cloud.hashing.apis.v1.CloudHashingApis.CreateGood:output_type -> cloud.hashing.apis.v1.CreateGoodResponse
+	5,   // 147: cloud.hashing.apis.v1.CloudHashingApis.GetGood:output_type -> cloud.hashing.apis.v1.GetGoodResponse
+	11,  // 148: cloud.hashing.apis.v1.CloudHashingApis.GetRecommendGoodsByApp:output_type -> cloud.hashing.apis.v1.GetRecommendGoodsByAppResponse
+	23,  // 149: cloud.hashing.apis.v1.CloudHashingApis.SubmitOrder:output_type -> cloud.hashing.apis.v1.SubmitOrderResponse
+	25,  // 150: cloud.hashing.apis.v1.CloudHashingApis.CreateOrderPayment:output_type -> cloud.hashing.apis.v1.CreateOrderPaymentResponse
+	14,  // 151: cloud.hashing.apis.v1.CloudHashingApis.GetOrder:output_type -> cloud.hashing.apis.v1.GetOrderResponse
+	16,  // 152: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByAppUser:output_type -> cloud.hashing.apis.v1.GetOrdersByAppUserResponse
+	18,  // 153: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByApp:output_type -> cloud.hashing.apis.v1.GetOrdersByAppResponse
+	20,  // 154: cloud.hashing.apis.v1.CloudHashingApis.GetOrdersByGood:output_type -> cloud.hashing.apis.v1.GetOrdersByGoodResponse
+	27,  // 155: cloud.hashing.apis.v1.CloudHashingApis.Signup:output_type -> cloud.hashing.apis.v1.SignupResponse
+	29,  // 156: cloud.hashing.apis.v1.CloudHashingApis.UpdatePassword:output_type -> cloud.hashing.apis.v1.UpdatePasswordResponse
+	31,  // 157: cloud.hashing.apis.v1.CloudHashingApis.UpdatePasswordByAppUser:output_type -> cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse
+	33,  // 158: cloud.hashing.apis.v1.CloudHashingApis.UpdateEmailAddress:output_type -> cloud.hashing.apis.v1.UpdateEmailAddressResponse
+	35,  // 159: cloud.hashing.apis.v1.CloudHashingApis.UpdatePhoneNO:output_type -> cloud.hashing.apis.v1.UpdatePhoneNOResponse
+	41,  // 160: cloud.hashing.apis.v1.CloudHashingApis.GetMyInvitations:output_type -> cloud.hashing.apis.v1.GetMyInvitationsResponse
+	43,  // 161: cloud.hashing.apis.v1.CloudHashingApis.GetMyDirectInvitations:output_type -> cloud.hashing.apis.v1.GetMyDirectInvitationsResponse
+	46,  // 162: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviews:output_type -> cloud.hashing.apis.v1.GetKycReviewsResponse
+	48,  // 163: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviewsByApp:output_type -> cloud.hashing.apis.v1.GetKycReviewsByAppResponse
+	50,  // 164: cloud.hashing.apis.v1.CloudHashingApis.GetKycReviewsByOtherApp:output_type -> cloud.hashing.apis.v1.GetKycReviewsByOtherAppResponse
+	53,  // 165: cloud.hashing.apis.v1.CloudHashingApis.GetGoodReviews:output_type -> cloud.hashing.apis.v1.GetGoodReviewsResponse
+	76,  // 166: cloud.hashing.apis.v1.CloudHashingApis.GetWithdrawReviews:output_type -> cloud.hashing.apis.v1.GetWithdrawReviewsResponse
+	78,  // 167: cloud.hashing.apis.v1.CloudHashingApis.GetWithdrawReviewsByApp:output_type -> cloud.hashing.apis.v1.GetWithdrawReviewsByAppResponse
+	80,  // 168: cloud.hashing.apis.v1.CloudHashingApis.GetWithdrawReviewsByOtherApp:output_type -> cloud.hashing.apis.v1.GetWithdrawReviewsByOtherAppResponse
+	88,  // 169: cloud.hashing.apis.v1.CloudHashingApis.GetWithdrawAddressReviews:output_type -> cloud.hashing.apis.v1.GetWithdrawAddressReviewsResponse
+	90,  // 170: cloud.hashing.apis.v1.CloudHashingApis.GetWithdrawAddressReviewsByApp:output_type -> cloud.hashing.apis.v1.GetWithdrawAddressReviewsByAppResponse
+	92,  // 171: cloud.hashing.apis.v1.CloudHashingApis.GetWithdrawAddressReviewsByOtherApp:output_type -> cloud.hashing.apis.v1.GetWithdrawAddressReviewsByOtherAppResponse
+	58,  // 172: cloud.hashing.apis.v1.CloudHashingApis.CreateKyc:output_type -> cloud.hashing.apis.v1.CreateKycResponse
+	60,  // 173: cloud.hashing.apis.v1.CloudHashingApis.UpdateKyc:output_type -> cloud.hashing.apis.v1.UpdateKycResponse
+	56,  // 174: cloud.hashing.apis.v1.CloudHashingApis.GetKycByAppUser:output_type -> cloud.hashing.apis.v1.GetKycByAppUserResponse
+	62,  // 175: cloud.hashing.apis.v1.CloudHashingApis.CreatePlatformCoinAccount:output_type -> cloud.hashing.apis.v1.CreatePlatformCoinAccountResponse
+	64,  // 176: cloud.hashing.apis.v1.CloudHashingApis.CreateUserCoinAccount:output_type -> cloud.hashing.apis.v1.CreateUserCoinAccountResponse
+	68,  // 177: cloud.hashing.apis.v1.CloudHashingApis.SubmitUserWithdraw:output_type -> cloud.hashing.apis.v1.SubmitUserWithdrawResponse
+	70,  // 178: cloud.hashing.apis.v1.CloudHashingApis.UpdateUserWithdrawReview:output_type -> cloud.hashing.apis.v1.UpdateUserWithdrawReviewResponse
+	72,  // 179: cloud.hashing.apis.v1.CloudHashingApis.UpdateUserWithdrawReviewForOtherAppUser:output_type -> cloud.hashing.apis.v1.UpdateUserWithdrawReviewForOtherAppUserResponse
+	74,  // 180: cloud.hashing.apis.v1.CloudHashingApis.GetUserWithdrawsByAppUser:output_type -> cloud.hashing.apis.v1.GetUserWithdrawsByAppUserResponse
+	83,  // 181: cloud.hashing.apis.v1.CloudHashingApis.SetWithdrawAddress:output_type -> cloud.hashing.apis.v1.SetWithdrawAddressResponse
+	85,  // 182: cloud.hashing.apis.v1.CloudHashingApis.GetWithdrawAddressesByAppUser:output_type -> cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserResponse
+	97,  // 183: cloud.hashing.apis.v1.CloudHashingApis.GetCouponsByAppUser:output_type -> cloud.hashing.apis.v1.GetCouponsByAppUserResponse
+	100, // 184: cloud.hashing.apis.v1.CloudHashingApis.GetCommissionByAppUser:output_type -> cloud.hashing.apis.v1.GetCommissionByAppUserResponse
+	127, // 185: cloud.hashing.apis.v1.CloudHashingApis.UpdateReview:output_type -> review.service.v1.UpdateReviewResponse
+	143, // [143:186] is the sub-list for method output_type
+	100, // [100:143] is the sub-list for method input_type
 	100, // [100:100] is the sub-list for extension type_name
 	100, // [100:100] is the sub-list for extension extendee
 	0,   // [0:100] is the sub-list for field type_name

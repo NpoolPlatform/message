@@ -284,6 +284,13 @@ service CloudHashingApis {
             body: "*"
         };
     }
+
+    rpc UpdateReview(review.service.v1.UpdateReviewRequest) returns (review.service.v1.UpdateReviewResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/review"
+            body: "*"
+        };
+    }
 }
 
 // Request body and response
