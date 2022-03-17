@@ -297,6 +297,13 @@ service CloudHashingApis {
             body: "*"
         };
     }
+
+    rpc UpdateKycReview(UpdateKycReviewRequest) returns (UpdateKycReviewResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/kyc/review"
+            body: "*"
+        };
+    }
 }
 
 // Request body and response
@@ -852,4 +859,12 @@ message GetCommissionByAppUserRequest {
 
 message GetCommissionByAppUserResponse {
     Commission Info = 10;
+}
+
+message UpdateKycReviewRequest {
+    review.service.v1.UpdateReviewRequest Review = 10;
+}
+
+message UpdateKycReviewResponse {
+    review.service.v1.UpdateReviewResponse Info = 10;
 }

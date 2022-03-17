@@ -3,140 +3,140 @@
 
 ## Table of Contents
 
-- [npool/authinggateway/authinggateway.proto](#npool_authinggateway_authinggateway-proto)
-    - [AppAuth](#authing-gateway-v1-AppAuth)
-    - [AppRoleAuth](#authing-gateway-v1-AppRoleAuth)
-    - [AppUserAuth](#authing-gateway-v1-AppUserAuth)
-    - [Auth](#authing-gateway-v1-Auth)
-    - [AuthByAppRequest](#authing-gateway-v1-AuthByAppRequest)
-    - [AuthByAppResponse](#authing-gateway-v1-AuthByAppResponse)
-    - [AuthByAppRoleUserRequest](#authing-gateway-v1-AuthByAppRoleUserRequest)
-    - [AuthByAppRoleUserResponse](#authing-gateway-v1-AuthByAppRoleUserResponse)
-    - [AuthHistory](#authing-gateway-v1-AuthHistory)
-    - [CreateAppAuthForOtherAppRequest](#authing-gateway-v1-CreateAppAuthForOtherAppRequest)
-    - [CreateAppAuthForOtherAppResponse](#authing-gateway-v1-CreateAppAuthForOtherAppResponse)
-    - [CreateAppRoleAuthForOtherAppRequest](#authing-gateway-v1-CreateAppRoleAuthForOtherAppRequest)
-    - [CreateAppRoleAuthForOtherAppResponse](#authing-gateway-v1-CreateAppRoleAuthForOtherAppResponse)
-    - [CreateAppRoleAuthRequest](#authing-gateway-v1-CreateAppRoleAuthRequest)
-    - [CreateAppRoleAuthResponse](#authing-gateway-v1-CreateAppRoleAuthResponse)
-    - [CreateAppUserAuthForOtherAppRequest](#authing-gateway-v1-CreateAppUserAuthForOtherAppRequest)
-    - [CreateAppUserAuthForOtherAppResponse](#authing-gateway-v1-CreateAppUserAuthForOtherAppResponse)
-    - [CreateAppUserAuthRequest](#authing-gateway-v1-CreateAppUserAuthRequest)
-    - [CreateAppUserAuthResponse](#authing-gateway-v1-CreateAppUserAuthResponse)
-    - [CreateGenesisAppUserAuthRequest](#authing-gateway-v1-CreateGenesisAppUserAuthRequest)
-    - [CreateGenesisAppUserAuthResponse](#authing-gateway-v1-CreateGenesisAppUserAuthResponse)
-    - [DeleteAppAuthRequest](#authing-gateway-v1-DeleteAppAuthRequest)
-    - [DeleteAppAuthResponse](#authing-gateway-v1-DeleteAppAuthResponse)
-    - [DeleteAppRoleAuthRequest](#authing-gateway-v1-DeleteAppRoleAuthRequest)
-    - [DeleteAppRoleAuthResponse](#authing-gateway-v1-DeleteAppRoleAuthResponse)
-    - [DeleteAppUserAuthRequest](#authing-gateway-v1-DeleteAppUserAuthRequest)
-    - [DeleteAppUserAuthResponse](#authing-gateway-v1-DeleteAppUserAuthResponse)
-    - [GetAppAuthByAppResourceMethodRequest](#authing-gateway-v1-GetAppAuthByAppResourceMethodRequest)
-    - [GetAppAuthByAppResourceMethodResponse](#authing-gateway-v1-GetAppAuthByAppResourceMethodResponse)
-    - [GetAppAuthByOtherAppResourceMethodRequest](#authing-gateway-v1-GetAppAuthByOtherAppResourceMethodRequest)
-    - [GetAppAuthByOtherAppResourceMethodResponse](#authing-gateway-v1-GetAppAuthByOtherAppResourceMethodResponse)
-    - [GetAppRoleAuthByAppRoleResourceMethodRequest](#authing-gateway-v1-GetAppRoleAuthByAppRoleResourceMethodRequest)
-    - [GetAppRoleAuthByAppRoleResourceMethodResponse](#authing-gateway-v1-GetAppRoleAuthByAppRoleResourceMethodResponse)
-    - [GetAppRoleAuthByOtherAppRoleResourceMethodRequest](#authing-gateway-v1-GetAppRoleAuthByOtherAppRoleResourceMethodRequest)
-    - [GetAppRoleAuthByOtherAppRoleResourceMethodResponse](#authing-gateway-v1-GetAppRoleAuthByOtherAppRoleResourceMethodResponse)
-    - [GetAppUserAuthByAppUserResourceMethodRequest](#authing-gateway-v1-GetAppUserAuthByAppUserResourceMethodRequest)
-    - [GetAppUserAuthByAppUserResourceMethodResponse](#authing-gateway-v1-GetAppUserAuthByAppUserResourceMethodResponse)
-    - [GetAppUserAuthByOtherAppUserResourceMethodRequest](#authing-gateway-v1-GetAppUserAuthByOtherAppUserResourceMethodRequest)
-    - [GetAppUserAuthByOtherAppUserResourceMethodResponse](#authing-gateway-v1-GetAppUserAuthByOtherAppUserResourceMethodResponse)
-    - [GetAuthHistoriesByAppRequest](#authing-gateway-v1-GetAuthHistoriesByAppRequest)
-    - [GetAuthHistoriesByAppResponse](#authing-gateway-v1-GetAuthHistoriesByAppResponse)
-    - [GetAuthHistoriesByOtherAppRequest](#authing-gateway-v1-GetAuthHistoriesByOtherAppRequest)
-    - [GetAuthHistoriesByOtherAppResponse](#authing-gateway-v1-GetAuthHistoriesByOtherAppResponse)
-    - [GetAuthHistoriesRequest](#authing-gateway-v1-GetAuthHistoriesRequest)
-    - [GetAuthHistoriesResponse](#authing-gateway-v1-GetAuthHistoriesResponse)
-    - [GetAuthsByAppRequest](#authing-gateway-v1-GetAuthsByAppRequest)
-    - [GetAuthsByAppResponse](#authing-gateway-v1-GetAuthsByAppResponse)
-    - [GetAuthsByAppRoleRequest](#authing-gateway-v1-GetAuthsByAppRoleRequest)
-    - [GetAuthsByAppRoleResponse](#authing-gateway-v1-GetAuthsByAppRoleResponse)
-    - [GetAuthsByAppUserRequest](#authing-gateway-v1-GetAuthsByAppUserRequest)
-    - [GetAuthsByAppUserResponse](#authing-gateway-v1-GetAuthsByAppUserResponse)
-    - [GetAuthsByOtherAppRequest](#authing-gateway-v1-GetAuthsByOtherAppRequest)
-    - [GetAuthsByOtherAppResponse](#authing-gateway-v1-GetAuthsByOtherAppResponse)
-    - [GetAuthsByOtherAppRoleRequest](#authing-gateway-v1-GetAuthsByOtherAppRoleRequest)
-    - [GetAuthsByOtherAppRoleResponse](#authing-gateway-v1-GetAuthsByOtherAppRoleResponse)
-    - [GetAuthsByOtherAppUserRequest](#authing-gateway-v1-GetAuthsByOtherAppUserRequest)
-    - [GetAuthsByOtherAppUserResponse](#authing-gateway-v1-GetAuthsByOtherAppUserResponse)
+- [npool/authinggateway/authinggateway.proto](#npool/authinggateway/authinggateway.proto)
+    - [AppAuth](#authing.gateway.v1.AppAuth)
+    - [AppRoleAuth](#authing.gateway.v1.AppRoleAuth)
+    - [AppUserAuth](#authing.gateway.v1.AppUserAuth)
+    - [Auth](#authing.gateway.v1.Auth)
+    - [AuthByAppRequest](#authing.gateway.v1.AuthByAppRequest)
+    - [AuthByAppResponse](#authing.gateway.v1.AuthByAppResponse)
+    - [AuthByAppRoleUserRequest](#authing.gateway.v1.AuthByAppRoleUserRequest)
+    - [AuthByAppRoleUserResponse](#authing.gateway.v1.AuthByAppRoleUserResponse)
+    - [AuthHistory](#authing.gateway.v1.AuthHistory)
+    - [CreateAppAuthForOtherAppRequest](#authing.gateway.v1.CreateAppAuthForOtherAppRequest)
+    - [CreateAppAuthForOtherAppResponse](#authing.gateway.v1.CreateAppAuthForOtherAppResponse)
+    - [CreateAppRoleAuthForOtherAppRequest](#authing.gateway.v1.CreateAppRoleAuthForOtherAppRequest)
+    - [CreateAppRoleAuthForOtherAppResponse](#authing.gateway.v1.CreateAppRoleAuthForOtherAppResponse)
+    - [CreateAppRoleAuthRequest](#authing.gateway.v1.CreateAppRoleAuthRequest)
+    - [CreateAppRoleAuthResponse](#authing.gateway.v1.CreateAppRoleAuthResponse)
+    - [CreateAppUserAuthForOtherAppRequest](#authing.gateway.v1.CreateAppUserAuthForOtherAppRequest)
+    - [CreateAppUserAuthForOtherAppResponse](#authing.gateway.v1.CreateAppUserAuthForOtherAppResponse)
+    - [CreateAppUserAuthRequest](#authing.gateway.v1.CreateAppUserAuthRequest)
+    - [CreateAppUserAuthResponse](#authing.gateway.v1.CreateAppUserAuthResponse)
+    - [CreateGenesisAppUserAuthRequest](#authing.gateway.v1.CreateGenesisAppUserAuthRequest)
+    - [CreateGenesisAppUserAuthResponse](#authing.gateway.v1.CreateGenesisAppUserAuthResponse)
+    - [DeleteAppAuthRequest](#authing.gateway.v1.DeleteAppAuthRequest)
+    - [DeleteAppAuthResponse](#authing.gateway.v1.DeleteAppAuthResponse)
+    - [DeleteAppRoleAuthRequest](#authing.gateway.v1.DeleteAppRoleAuthRequest)
+    - [DeleteAppRoleAuthResponse](#authing.gateway.v1.DeleteAppRoleAuthResponse)
+    - [DeleteAppUserAuthRequest](#authing.gateway.v1.DeleteAppUserAuthRequest)
+    - [DeleteAppUserAuthResponse](#authing.gateway.v1.DeleteAppUserAuthResponse)
+    - [GetAppAuthByAppResourceMethodRequest](#authing.gateway.v1.GetAppAuthByAppResourceMethodRequest)
+    - [GetAppAuthByAppResourceMethodResponse](#authing.gateway.v1.GetAppAuthByAppResourceMethodResponse)
+    - [GetAppAuthByOtherAppResourceMethodRequest](#authing.gateway.v1.GetAppAuthByOtherAppResourceMethodRequest)
+    - [GetAppAuthByOtherAppResourceMethodResponse](#authing.gateway.v1.GetAppAuthByOtherAppResourceMethodResponse)
+    - [GetAppRoleAuthByAppRoleResourceMethodRequest](#authing.gateway.v1.GetAppRoleAuthByAppRoleResourceMethodRequest)
+    - [GetAppRoleAuthByAppRoleResourceMethodResponse](#authing.gateway.v1.GetAppRoleAuthByAppRoleResourceMethodResponse)
+    - [GetAppRoleAuthByOtherAppRoleResourceMethodRequest](#authing.gateway.v1.GetAppRoleAuthByOtherAppRoleResourceMethodRequest)
+    - [GetAppRoleAuthByOtherAppRoleResourceMethodResponse](#authing.gateway.v1.GetAppRoleAuthByOtherAppRoleResourceMethodResponse)
+    - [GetAppUserAuthByAppUserResourceMethodRequest](#authing.gateway.v1.GetAppUserAuthByAppUserResourceMethodRequest)
+    - [GetAppUserAuthByAppUserResourceMethodResponse](#authing.gateway.v1.GetAppUserAuthByAppUserResourceMethodResponse)
+    - [GetAppUserAuthByOtherAppUserResourceMethodRequest](#authing.gateway.v1.GetAppUserAuthByOtherAppUserResourceMethodRequest)
+    - [GetAppUserAuthByOtherAppUserResourceMethodResponse](#authing.gateway.v1.GetAppUserAuthByOtherAppUserResourceMethodResponse)
+    - [GetAuthHistoriesByAppRequest](#authing.gateway.v1.GetAuthHistoriesByAppRequest)
+    - [GetAuthHistoriesByAppResponse](#authing.gateway.v1.GetAuthHistoriesByAppResponse)
+    - [GetAuthHistoriesByOtherAppRequest](#authing.gateway.v1.GetAuthHistoriesByOtherAppRequest)
+    - [GetAuthHistoriesByOtherAppResponse](#authing.gateway.v1.GetAuthHistoriesByOtherAppResponse)
+    - [GetAuthHistoriesRequest](#authing.gateway.v1.GetAuthHistoriesRequest)
+    - [GetAuthHistoriesResponse](#authing.gateway.v1.GetAuthHistoriesResponse)
+    - [GetAuthsByAppRequest](#authing.gateway.v1.GetAuthsByAppRequest)
+    - [GetAuthsByAppResponse](#authing.gateway.v1.GetAuthsByAppResponse)
+    - [GetAuthsByAppRoleRequest](#authing.gateway.v1.GetAuthsByAppRoleRequest)
+    - [GetAuthsByAppRoleResponse](#authing.gateway.v1.GetAuthsByAppRoleResponse)
+    - [GetAuthsByAppUserRequest](#authing.gateway.v1.GetAuthsByAppUserRequest)
+    - [GetAuthsByAppUserResponse](#authing.gateway.v1.GetAuthsByAppUserResponse)
+    - [GetAuthsByOtherAppRequest](#authing.gateway.v1.GetAuthsByOtherAppRequest)
+    - [GetAuthsByOtherAppResponse](#authing.gateway.v1.GetAuthsByOtherAppResponse)
+    - [GetAuthsByOtherAppRoleRequest](#authing.gateway.v1.GetAuthsByOtherAppRoleRequest)
+    - [GetAuthsByOtherAppRoleResponse](#authing.gateway.v1.GetAuthsByOtherAppRoleResponse)
+    - [GetAuthsByOtherAppUserRequest](#authing.gateway.v1.GetAuthsByOtherAppUserRequest)
+    - [GetAuthsByOtherAppUserResponse](#authing.gateway.v1.GetAuthsByOtherAppUserResponse)
   
-    - [AuthingGateway](#authing-gateway-v1-AuthingGateway)
+    - [AuthingGateway](#authing.gateway.v1.AuthingGateway)
   
-- [npool/authinggateway/authinggateway.proto](#npool_authinggateway_authinggateway-proto)
-    - [AppAuth](#authing-gateway-v1-AppAuth)
-    - [AppRoleAuth](#authing-gateway-v1-AppRoleAuth)
-    - [AppUserAuth](#authing-gateway-v1-AppUserAuth)
-    - [Auth](#authing-gateway-v1-Auth)
-    - [AuthByAppRequest](#authing-gateway-v1-AuthByAppRequest)
-    - [AuthByAppResponse](#authing-gateway-v1-AuthByAppResponse)
-    - [AuthByAppRoleUserRequest](#authing-gateway-v1-AuthByAppRoleUserRequest)
-    - [AuthByAppRoleUserResponse](#authing-gateway-v1-AuthByAppRoleUserResponse)
-    - [AuthHistory](#authing-gateway-v1-AuthHistory)
-    - [CreateAppAuthForOtherAppRequest](#authing-gateway-v1-CreateAppAuthForOtherAppRequest)
-    - [CreateAppAuthForOtherAppResponse](#authing-gateway-v1-CreateAppAuthForOtherAppResponse)
-    - [CreateAppRoleAuthForOtherAppRequest](#authing-gateway-v1-CreateAppRoleAuthForOtherAppRequest)
-    - [CreateAppRoleAuthForOtherAppResponse](#authing-gateway-v1-CreateAppRoleAuthForOtherAppResponse)
-    - [CreateAppRoleAuthRequest](#authing-gateway-v1-CreateAppRoleAuthRequest)
-    - [CreateAppRoleAuthResponse](#authing-gateway-v1-CreateAppRoleAuthResponse)
-    - [CreateAppUserAuthForOtherAppRequest](#authing-gateway-v1-CreateAppUserAuthForOtherAppRequest)
-    - [CreateAppUserAuthForOtherAppResponse](#authing-gateway-v1-CreateAppUserAuthForOtherAppResponse)
-    - [CreateAppUserAuthRequest](#authing-gateway-v1-CreateAppUserAuthRequest)
-    - [CreateAppUserAuthResponse](#authing-gateway-v1-CreateAppUserAuthResponse)
-    - [CreateGenesisAppUserAuthRequest](#authing-gateway-v1-CreateGenesisAppUserAuthRequest)
-    - [CreateGenesisAppUserAuthResponse](#authing-gateway-v1-CreateGenesisAppUserAuthResponse)
-    - [DeleteAppAuthRequest](#authing-gateway-v1-DeleteAppAuthRequest)
-    - [DeleteAppAuthResponse](#authing-gateway-v1-DeleteAppAuthResponse)
-    - [DeleteAppRoleAuthRequest](#authing-gateway-v1-DeleteAppRoleAuthRequest)
-    - [DeleteAppRoleAuthResponse](#authing-gateway-v1-DeleteAppRoleAuthResponse)
-    - [DeleteAppUserAuthRequest](#authing-gateway-v1-DeleteAppUserAuthRequest)
-    - [DeleteAppUserAuthResponse](#authing-gateway-v1-DeleteAppUserAuthResponse)
-    - [GetAppAuthByAppResourceMethodRequest](#authing-gateway-v1-GetAppAuthByAppResourceMethodRequest)
-    - [GetAppAuthByAppResourceMethodResponse](#authing-gateway-v1-GetAppAuthByAppResourceMethodResponse)
-    - [GetAppAuthByOtherAppResourceMethodRequest](#authing-gateway-v1-GetAppAuthByOtherAppResourceMethodRequest)
-    - [GetAppAuthByOtherAppResourceMethodResponse](#authing-gateway-v1-GetAppAuthByOtherAppResourceMethodResponse)
-    - [GetAppRoleAuthByAppRoleResourceMethodRequest](#authing-gateway-v1-GetAppRoleAuthByAppRoleResourceMethodRequest)
-    - [GetAppRoleAuthByAppRoleResourceMethodResponse](#authing-gateway-v1-GetAppRoleAuthByAppRoleResourceMethodResponse)
-    - [GetAppRoleAuthByOtherAppRoleResourceMethodRequest](#authing-gateway-v1-GetAppRoleAuthByOtherAppRoleResourceMethodRequest)
-    - [GetAppRoleAuthByOtherAppRoleResourceMethodResponse](#authing-gateway-v1-GetAppRoleAuthByOtherAppRoleResourceMethodResponse)
-    - [GetAppUserAuthByAppUserResourceMethodRequest](#authing-gateway-v1-GetAppUserAuthByAppUserResourceMethodRequest)
-    - [GetAppUserAuthByAppUserResourceMethodResponse](#authing-gateway-v1-GetAppUserAuthByAppUserResourceMethodResponse)
-    - [GetAppUserAuthByOtherAppUserResourceMethodRequest](#authing-gateway-v1-GetAppUserAuthByOtherAppUserResourceMethodRequest)
-    - [GetAppUserAuthByOtherAppUserResourceMethodResponse](#authing-gateway-v1-GetAppUserAuthByOtherAppUserResourceMethodResponse)
-    - [GetAuthHistoriesByAppRequest](#authing-gateway-v1-GetAuthHistoriesByAppRequest)
-    - [GetAuthHistoriesByAppResponse](#authing-gateway-v1-GetAuthHistoriesByAppResponse)
-    - [GetAuthHistoriesByOtherAppRequest](#authing-gateway-v1-GetAuthHistoriesByOtherAppRequest)
-    - [GetAuthHistoriesByOtherAppResponse](#authing-gateway-v1-GetAuthHistoriesByOtherAppResponse)
-    - [GetAuthHistoriesRequest](#authing-gateway-v1-GetAuthHistoriesRequest)
-    - [GetAuthHistoriesResponse](#authing-gateway-v1-GetAuthHistoriesResponse)
-    - [GetAuthsByAppRequest](#authing-gateway-v1-GetAuthsByAppRequest)
-    - [GetAuthsByAppResponse](#authing-gateway-v1-GetAuthsByAppResponse)
-    - [GetAuthsByAppRoleRequest](#authing-gateway-v1-GetAuthsByAppRoleRequest)
-    - [GetAuthsByAppRoleResponse](#authing-gateway-v1-GetAuthsByAppRoleResponse)
-    - [GetAuthsByAppUserRequest](#authing-gateway-v1-GetAuthsByAppUserRequest)
-    - [GetAuthsByAppUserResponse](#authing-gateway-v1-GetAuthsByAppUserResponse)
-    - [GetAuthsByOtherAppRequest](#authing-gateway-v1-GetAuthsByOtherAppRequest)
-    - [GetAuthsByOtherAppResponse](#authing-gateway-v1-GetAuthsByOtherAppResponse)
-    - [GetAuthsByOtherAppRoleRequest](#authing-gateway-v1-GetAuthsByOtherAppRoleRequest)
-    - [GetAuthsByOtherAppRoleResponse](#authing-gateway-v1-GetAuthsByOtherAppRoleResponse)
-    - [GetAuthsByOtherAppUserRequest](#authing-gateway-v1-GetAuthsByOtherAppUserRequest)
-    - [GetAuthsByOtherAppUserResponse](#authing-gateway-v1-GetAuthsByOtherAppUserResponse)
+- [npool/authinggateway/authinggateway.proto](#npool/authinggateway/authinggateway.proto)
+    - [AppAuth](#authing.gateway.v1.AppAuth)
+    - [AppRoleAuth](#authing.gateway.v1.AppRoleAuth)
+    - [AppUserAuth](#authing.gateway.v1.AppUserAuth)
+    - [Auth](#authing.gateway.v1.Auth)
+    - [AuthByAppRequest](#authing.gateway.v1.AuthByAppRequest)
+    - [AuthByAppResponse](#authing.gateway.v1.AuthByAppResponse)
+    - [AuthByAppRoleUserRequest](#authing.gateway.v1.AuthByAppRoleUserRequest)
+    - [AuthByAppRoleUserResponse](#authing.gateway.v1.AuthByAppRoleUserResponse)
+    - [AuthHistory](#authing.gateway.v1.AuthHistory)
+    - [CreateAppAuthForOtherAppRequest](#authing.gateway.v1.CreateAppAuthForOtherAppRequest)
+    - [CreateAppAuthForOtherAppResponse](#authing.gateway.v1.CreateAppAuthForOtherAppResponse)
+    - [CreateAppRoleAuthForOtherAppRequest](#authing.gateway.v1.CreateAppRoleAuthForOtherAppRequest)
+    - [CreateAppRoleAuthForOtherAppResponse](#authing.gateway.v1.CreateAppRoleAuthForOtherAppResponse)
+    - [CreateAppRoleAuthRequest](#authing.gateway.v1.CreateAppRoleAuthRequest)
+    - [CreateAppRoleAuthResponse](#authing.gateway.v1.CreateAppRoleAuthResponse)
+    - [CreateAppUserAuthForOtherAppRequest](#authing.gateway.v1.CreateAppUserAuthForOtherAppRequest)
+    - [CreateAppUserAuthForOtherAppResponse](#authing.gateway.v1.CreateAppUserAuthForOtherAppResponse)
+    - [CreateAppUserAuthRequest](#authing.gateway.v1.CreateAppUserAuthRequest)
+    - [CreateAppUserAuthResponse](#authing.gateway.v1.CreateAppUserAuthResponse)
+    - [CreateGenesisAppUserAuthRequest](#authing.gateway.v1.CreateGenesisAppUserAuthRequest)
+    - [CreateGenesisAppUserAuthResponse](#authing.gateway.v1.CreateGenesisAppUserAuthResponse)
+    - [DeleteAppAuthRequest](#authing.gateway.v1.DeleteAppAuthRequest)
+    - [DeleteAppAuthResponse](#authing.gateway.v1.DeleteAppAuthResponse)
+    - [DeleteAppRoleAuthRequest](#authing.gateway.v1.DeleteAppRoleAuthRequest)
+    - [DeleteAppRoleAuthResponse](#authing.gateway.v1.DeleteAppRoleAuthResponse)
+    - [DeleteAppUserAuthRequest](#authing.gateway.v1.DeleteAppUserAuthRequest)
+    - [DeleteAppUserAuthResponse](#authing.gateway.v1.DeleteAppUserAuthResponse)
+    - [GetAppAuthByAppResourceMethodRequest](#authing.gateway.v1.GetAppAuthByAppResourceMethodRequest)
+    - [GetAppAuthByAppResourceMethodResponse](#authing.gateway.v1.GetAppAuthByAppResourceMethodResponse)
+    - [GetAppAuthByOtherAppResourceMethodRequest](#authing.gateway.v1.GetAppAuthByOtherAppResourceMethodRequest)
+    - [GetAppAuthByOtherAppResourceMethodResponse](#authing.gateway.v1.GetAppAuthByOtherAppResourceMethodResponse)
+    - [GetAppRoleAuthByAppRoleResourceMethodRequest](#authing.gateway.v1.GetAppRoleAuthByAppRoleResourceMethodRequest)
+    - [GetAppRoleAuthByAppRoleResourceMethodResponse](#authing.gateway.v1.GetAppRoleAuthByAppRoleResourceMethodResponse)
+    - [GetAppRoleAuthByOtherAppRoleResourceMethodRequest](#authing.gateway.v1.GetAppRoleAuthByOtherAppRoleResourceMethodRequest)
+    - [GetAppRoleAuthByOtherAppRoleResourceMethodResponse](#authing.gateway.v1.GetAppRoleAuthByOtherAppRoleResourceMethodResponse)
+    - [GetAppUserAuthByAppUserResourceMethodRequest](#authing.gateway.v1.GetAppUserAuthByAppUserResourceMethodRequest)
+    - [GetAppUserAuthByAppUserResourceMethodResponse](#authing.gateway.v1.GetAppUserAuthByAppUserResourceMethodResponse)
+    - [GetAppUserAuthByOtherAppUserResourceMethodRequest](#authing.gateway.v1.GetAppUserAuthByOtherAppUserResourceMethodRequest)
+    - [GetAppUserAuthByOtherAppUserResourceMethodResponse](#authing.gateway.v1.GetAppUserAuthByOtherAppUserResourceMethodResponse)
+    - [GetAuthHistoriesByAppRequest](#authing.gateway.v1.GetAuthHistoriesByAppRequest)
+    - [GetAuthHistoriesByAppResponse](#authing.gateway.v1.GetAuthHistoriesByAppResponse)
+    - [GetAuthHistoriesByOtherAppRequest](#authing.gateway.v1.GetAuthHistoriesByOtherAppRequest)
+    - [GetAuthHistoriesByOtherAppResponse](#authing.gateway.v1.GetAuthHistoriesByOtherAppResponse)
+    - [GetAuthHistoriesRequest](#authing.gateway.v1.GetAuthHistoriesRequest)
+    - [GetAuthHistoriesResponse](#authing.gateway.v1.GetAuthHistoriesResponse)
+    - [GetAuthsByAppRequest](#authing.gateway.v1.GetAuthsByAppRequest)
+    - [GetAuthsByAppResponse](#authing.gateway.v1.GetAuthsByAppResponse)
+    - [GetAuthsByAppRoleRequest](#authing.gateway.v1.GetAuthsByAppRoleRequest)
+    - [GetAuthsByAppRoleResponse](#authing.gateway.v1.GetAuthsByAppRoleResponse)
+    - [GetAuthsByAppUserRequest](#authing.gateway.v1.GetAuthsByAppUserRequest)
+    - [GetAuthsByAppUserResponse](#authing.gateway.v1.GetAuthsByAppUserResponse)
+    - [GetAuthsByOtherAppRequest](#authing.gateway.v1.GetAuthsByOtherAppRequest)
+    - [GetAuthsByOtherAppResponse](#authing.gateway.v1.GetAuthsByOtherAppResponse)
+    - [GetAuthsByOtherAppRoleRequest](#authing.gateway.v1.GetAuthsByOtherAppRoleRequest)
+    - [GetAuthsByOtherAppRoleResponse](#authing.gateway.v1.GetAuthsByOtherAppRoleResponse)
+    - [GetAuthsByOtherAppUserRequest](#authing.gateway.v1.GetAuthsByOtherAppUserRequest)
+    - [GetAuthsByOtherAppUserResponse](#authing.gateway.v1.GetAuthsByOtherAppUserResponse)
   
-    - [AuthingGateway](#authing-gateway-v1-AuthingGateway)
+    - [AuthingGateway](#authing.gateway.v1.AuthingGateway)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool_authinggateway_authinggateway-proto"></a>
+<a name="npool/authinggateway/authinggateway.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/authinggateway/authinggateway.proto
 
 
 
-<a name="authing-gateway-v1-AppAuth"></a>
+<a name="authing.gateway.v1.AppAuth"></a>
 
 ### AppAuth
 
@@ -154,7 +154,7 @@
 
 
 
-<a name="authing-gateway-v1-AppRoleAuth"></a>
+<a name="authing.gateway.v1.AppRoleAuth"></a>
 
 ### AppRoleAuth
 
@@ -173,7 +173,7 @@
 
 
 
-<a name="authing-gateway-v1-AppUserAuth"></a>
+<a name="authing.gateway.v1.AppUserAuth"></a>
 
 ### AppUserAuth
 
@@ -192,7 +192,7 @@
 
 
 
-<a name="authing-gateway-v1-Auth"></a>
+<a name="authing.gateway.v1.Auth"></a>
 
 ### Auth
 
@@ -212,7 +212,7 @@
 
 
 
-<a name="authing-gateway-v1-AuthByAppRequest"></a>
+<a name="authing.gateway.v1.AuthByAppRequest"></a>
 
 ### AuthByAppRequest
 
@@ -229,7 +229,7 @@
 
 
 
-<a name="authing-gateway-v1-AuthByAppResponse"></a>
+<a name="authing.gateway.v1.AuthByAppResponse"></a>
 
 ### AuthByAppResponse
 
@@ -244,7 +244,7 @@
 
 
 
-<a name="authing-gateway-v1-AuthByAppRoleUserRequest"></a>
+<a name="authing.gateway.v1.AuthByAppRoleUserRequest"></a>
 
 ### AuthByAppRoleUserRequest
 
@@ -263,7 +263,7 @@
 
 
 
-<a name="authing-gateway-v1-AuthByAppRoleUserResponse"></a>
+<a name="authing.gateway.v1.AuthByAppRoleUserResponse"></a>
 
 ### AuthByAppRoleUserResponse
 
@@ -278,7 +278,7 @@
 
 
 
-<a name="authing-gateway-v1-AuthHistory"></a>
+<a name="authing.gateway.v1.AuthHistory"></a>
 
 ### AuthHistory
 
@@ -299,7 +299,7 @@
 
 
 
-<a name="authing-gateway-v1-CreateAppAuthForOtherAppRequest"></a>
+<a name="authing.gateway.v1.CreateAppAuthForOtherAppRequest"></a>
 
 ### CreateAppAuthForOtherAppRequest
 
@@ -308,14 +308,14 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| Info | [AppAuth](#authing-gateway-v1-AppAuth) |  |  |
+| Info | [AppAuth](#authing.gateway.v1.AppAuth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppAuthForOtherAppResponse"></a>
+<a name="authing.gateway.v1.CreateAppAuthForOtherAppResponse"></a>
 
 ### CreateAppAuthForOtherAppResponse
 
@@ -323,14 +323,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppRoleAuthForOtherAppRequest"></a>
+<a name="authing.gateway.v1.CreateAppRoleAuthForOtherAppRequest"></a>
 
 ### CreateAppRoleAuthForOtherAppRequest
 
@@ -339,14 +339,14 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| Info | [AppRoleAuth](#authing-gateway-v1-AppRoleAuth) |  |  |
+| Info | [AppRoleAuth](#authing.gateway.v1.AppRoleAuth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppRoleAuthForOtherAppResponse"></a>
+<a name="authing.gateway.v1.CreateAppRoleAuthForOtherAppResponse"></a>
 
 ### CreateAppRoleAuthForOtherAppResponse
 
@@ -354,14 +354,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppRoleAuthRequest"></a>
+<a name="authing.gateway.v1.CreateAppRoleAuthRequest"></a>
 
 ### CreateAppRoleAuthRequest
 
@@ -369,14 +369,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppRoleAuth](#authing-gateway-v1-AppRoleAuth) |  |  |
+| Info | [AppRoleAuth](#authing.gateway.v1.AppRoleAuth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppRoleAuthResponse"></a>
+<a name="authing.gateway.v1.CreateAppRoleAuthResponse"></a>
 
 ### CreateAppRoleAuthResponse
 
@@ -384,14 +384,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppUserAuthForOtherAppRequest"></a>
+<a name="authing.gateway.v1.CreateAppUserAuthForOtherAppRequest"></a>
 
 ### CreateAppUserAuthForOtherAppRequest
 
@@ -401,14 +401,14 @@
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
 | TargetUserID | [string](#string) |  |  |
-| Info | [AppUserAuth](#authing-gateway-v1-AppUserAuth) |  |  |
+| Info | [AppUserAuth](#authing.gateway.v1.AppUserAuth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppUserAuthForOtherAppResponse"></a>
+<a name="authing.gateway.v1.CreateAppUserAuthForOtherAppResponse"></a>
 
 ### CreateAppUserAuthForOtherAppResponse
 
@@ -416,14 +416,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppUserAuthRequest"></a>
+<a name="authing.gateway.v1.CreateAppUserAuthRequest"></a>
 
 ### CreateAppUserAuthRequest
 
@@ -431,14 +431,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppUserAuth](#authing-gateway-v1-AppUserAuth) |  |  |
+| Info | [AppUserAuth](#authing.gateway.v1.AppUserAuth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppUserAuthResponse"></a>
+<a name="authing.gateway.v1.CreateAppUserAuthResponse"></a>
 
 ### CreateAppUserAuthResponse
 
@@ -446,14 +446,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateGenesisAppUserAuthRequest"></a>
+<a name="authing.gateway.v1.CreateGenesisAppUserAuthRequest"></a>
 
 ### CreateGenesisAppUserAuthRequest
 
@@ -463,7 +463,7 @@
 
 
 
-<a name="authing-gateway-v1-CreateGenesisAppUserAuthResponse"></a>
+<a name="authing.gateway.v1.CreateGenesisAppUserAuthResponse"></a>
 
 ### CreateGenesisAppUserAuthResponse
 
@@ -471,14 +471,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing-gateway-v1-Auth) | repeated |  |
+| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-DeleteAppAuthRequest"></a>
+<a name="authing.gateway.v1.DeleteAppAuthRequest"></a>
 
 ### DeleteAppAuthRequest
 
@@ -493,7 +493,7 @@
 
 
 
-<a name="authing-gateway-v1-DeleteAppAuthResponse"></a>
+<a name="authing.gateway.v1.DeleteAppAuthResponse"></a>
 
 ### DeleteAppAuthResponse
 
@@ -501,14 +501,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-DeleteAppRoleAuthRequest"></a>
+<a name="authing.gateway.v1.DeleteAppRoleAuthRequest"></a>
 
 ### DeleteAppRoleAuthRequest
 
@@ -523,7 +523,7 @@
 
 
 
-<a name="authing-gateway-v1-DeleteAppRoleAuthResponse"></a>
+<a name="authing.gateway.v1.DeleteAppRoleAuthResponse"></a>
 
 ### DeleteAppRoleAuthResponse
 
@@ -531,14 +531,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-DeleteAppUserAuthRequest"></a>
+<a name="authing.gateway.v1.DeleteAppUserAuthRequest"></a>
 
 ### DeleteAppUserAuthRequest
 
@@ -553,7 +553,7 @@
 
 
 
-<a name="authing-gateway-v1-DeleteAppUserAuthResponse"></a>
+<a name="authing.gateway.v1.DeleteAppUserAuthResponse"></a>
 
 ### DeleteAppUserAuthResponse
 
@@ -561,14 +561,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAppAuthByAppResourceMethodRequest"></a>
+<a name="authing.gateway.v1.GetAppAuthByAppResourceMethodRequest"></a>
 
 ### GetAppAuthByAppResourceMethodRequest
 
@@ -585,7 +585,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAppAuthByAppResourceMethodResponse"></a>
+<a name="authing.gateway.v1.GetAppAuthByAppResourceMethodResponse"></a>
 
 ### GetAppAuthByAppResourceMethodResponse
 
@@ -593,14 +593,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAppAuthByOtherAppResourceMethodRequest"></a>
+<a name="authing.gateway.v1.GetAppAuthByOtherAppResourceMethodRequest"></a>
 
 ### GetAppAuthByOtherAppResourceMethodRequest
 
@@ -617,7 +617,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAppAuthByOtherAppResourceMethodResponse"></a>
+<a name="authing.gateway.v1.GetAppAuthByOtherAppResourceMethodResponse"></a>
 
 ### GetAppAuthByOtherAppResourceMethodResponse
 
@@ -625,14 +625,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAppRoleAuthByAppRoleResourceMethodRequest"></a>
+<a name="authing.gateway.v1.GetAppRoleAuthByAppRoleResourceMethodRequest"></a>
 
 ### GetAppRoleAuthByAppRoleResourceMethodRequest
 
@@ -650,7 +650,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAppRoleAuthByAppRoleResourceMethodResponse"></a>
+<a name="authing.gateway.v1.GetAppRoleAuthByAppRoleResourceMethodResponse"></a>
 
 ### GetAppRoleAuthByAppRoleResourceMethodResponse
 
@@ -658,14 +658,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAppRoleAuthByOtherAppRoleResourceMethodRequest"></a>
+<a name="authing.gateway.v1.GetAppRoleAuthByOtherAppRoleResourceMethodRequest"></a>
 
 ### GetAppRoleAuthByOtherAppRoleResourceMethodRequest
 
@@ -683,7 +683,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAppRoleAuthByOtherAppRoleResourceMethodResponse"></a>
+<a name="authing.gateway.v1.GetAppRoleAuthByOtherAppRoleResourceMethodResponse"></a>
 
 ### GetAppRoleAuthByOtherAppRoleResourceMethodResponse
 
@@ -691,14 +691,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAppUserAuthByAppUserResourceMethodRequest"></a>
+<a name="authing.gateway.v1.GetAppUserAuthByAppUserResourceMethodRequest"></a>
 
 ### GetAppUserAuthByAppUserResourceMethodRequest
 
@@ -716,7 +716,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAppUserAuthByAppUserResourceMethodResponse"></a>
+<a name="authing.gateway.v1.GetAppUserAuthByAppUserResourceMethodResponse"></a>
 
 ### GetAppUserAuthByAppUserResourceMethodResponse
 
@@ -724,14 +724,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAppUserAuthByOtherAppUserResourceMethodRequest"></a>
+<a name="authing.gateway.v1.GetAppUserAuthByOtherAppUserResourceMethodRequest"></a>
 
 ### GetAppUserAuthByOtherAppUserResourceMethodRequest
 
@@ -749,7 +749,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAppUserAuthByOtherAppUserResourceMethodResponse"></a>
+<a name="authing.gateway.v1.GetAppUserAuthByOtherAppUserResourceMethodResponse"></a>
 
 ### GetAppUserAuthByOtherAppUserResourceMethodResponse
 
@@ -757,14 +757,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthHistoriesByAppRequest"></a>
+<a name="authing.gateway.v1.GetAuthHistoriesByAppRequest"></a>
 
 ### GetAuthHistoriesByAppRequest
 
@@ -779,7 +779,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthHistoriesByAppResponse"></a>
+<a name="authing.gateway.v1.GetAuthHistoriesByAppResponse"></a>
 
 ### GetAuthHistoriesByAppResponse
 
@@ -787,14 +787,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [AuthHistory](#authing-gateway-v1-AuthHistory) | repeated |  |
+| Infos | [AuthHistory](#authing.gateway.v1.AuthHistory) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthHistoriesByOtherAppRequest"></a>
+<a name="authing.gateway.v1.GetAuthHistoriesByOtherAppRequest"></a>
 
 ### GetAuthHistoriesByOtherAppRequest
 
@@ -809,7 +809,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthHistoriesByOtherAppResponse"></a>
+<a name="authing.gateway.v1.GetAuthHistoriesByOtherAppResponse"></a>
 
 ### GetAuthHistoriesByOtherAppResponse
 
@@ -817,14 +817,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [AuthHistory](#authing-gateway-v1-AuthHistory) | repeated |  |
+| Infos | [AuthHistory](#authing.gateway.v1.AuthHistory) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthHistoriesRequest"></a>
+<a name="authing.gateway.v1.GetAuthHistoriesRequest"></a>
 
 ### GetAuthHistoriesRequest
 
@@ -840,7 +840,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthHistoriesResponse"></a>
+<a name="authing.gateway.v1.GetAuthHistoriesResponse"></a>
 
 ### GetAuthHistoriesResponse
 
@@ -848,14 +848,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [AuthHistory](#authing-gateway-v1-AuthHistory) | repeated |  |
+| Infos | [AuthHistory](#authing.gateway.v1.AuthHistory) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthsByAppRequest"></a>
+<a name="authing.gateway.v1.GetAuthsByAppRequest"></a>
 
 ### GetAuthsByAppRequest
 
@@ -870,7 +870,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthsByAppResponse"></a>
+<a name="authing.gateway.v1.GetAuthsByAppResponse"></a>
 
 ### GetAuthsByAppResponse
 
@@ -878,14 +878,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing-gateway-v1-Auth) | repeated |  |
+| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthsByAppRoleRequest"></a>
+<a name="authing.gateway.v1.GetAuthsByAppRoleRequest"></a>
 
 ### GetAuthsByAppRoleRequest
 
@@ -901,7 +901,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthsByAppRoleResponse"></a>
+<a name="authing.gateway.v1.GetAuthsByAppRoleResponse"></a>
 
 ### GetAuthsByAppRoleResponse
 
@@ -909,14 +909,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing-gateway-v1-Auth) | repeated |  |
+| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthsByAppUserRequest"></a>
+<a name="authing.gateway.v1.GetAuthsByAppUserRequest"></a>
 
 ### GetAuthsByAppUserRequest
 
@@ -932,7 +932,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthsByAppUserResponse"></a>
+<a name="authing.gateway.v1.GetAuthsByAppUserResponse"></a>
 
 ### GetAuthsByAppUserResponse
 
@@ -940,14 +940,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing-gateway-v1-Auth) | repeated |  |
+| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthsByOtherAppRequest"></a>
+<a name="authing.gateway.v1.GetAuthsByOtherAppRequest"></a>
 
 ### GetAuthsByOtherAppRequest
 
@@ -962,7 +962,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthsByOtherAppResponse"></a>
+<a name="authing.gateway.v1.GetAuthsByOtherAppResponse"></a>
 
 ### GetAuthsByOtherAppResponse
 
@@ -970,14 +970,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing-gateway-v1-Auth) | repeated |  |
+| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthsByOtherAppRoleRequest"></a>
+<a name="authing.gateway.v1.GetAuthsByOtherAppRoleRequest"></a>
 
 ### GetAuthsByOtherAppRoleRequest
 
@@ -993,7 +993,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthsByOtherAppRoleResponse"></a>
+<a name="authing.gateway.v1.GetAuthsByOtherAppRoleResponse"></a>
 
 ### GetAuthsByOtherAppRoleResponse
 
@@ -1001,14 +1001,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing-gateway-v1-Auth) | repeated |  |
+| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthsByOtherAppUserRequest"></a>
+<a name="authing.gateway.v1.GetAuthsByOtherAppUserRequest"></a>
 
 ### GetAuthsByOtherAppUserRequest
 
@@ -1024,7 +1024,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthsByOtherAppUserResponse"></a>
+<a name="authing.gateway.v1.GetAuthsByOtherAppUserResponse"></a>
 
 ### GetAuthsByOtherAppUserResponse
 
@@ -1032,7 +1032,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing-gateway-v1-Auth) | repeated |  |
+| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
 
 
 
@@ -1045,53 +1045,53 @@
  
 
 
-<a name="authing-gateway-v1-AuthingGateway"></a>
+<a name="authing.gateway.v1.AuthingGateway"></a>
 
 ### AuthingGateway
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
-| AuthByApp | [AuthByAppRequest](#authing-gateway-v1-AuthByAppRequest) | [AuthByAppResponse](#authing-gateway-v1-AuthByAppResponse) |  |
-| AuthByAppRoleUser | [AuthByAppRoleUserRequest](#authing-gateway-v1-AuthByAppRoleUserRequest) | [AuthByAppRoleUserResponse](#authing-gateway-v1-AuthByAppRoleUserResponse) |  |
-| GetAuthHistories | [GetAuthHistoriesRequest](#authing-gateway-v1-GetAuthHistoriesRequest) | [GetAuthHistoriesResponse](#authing-gateway-v1-GetAuthHistoriesResponse) |  |
-| GetAuthHistoriesByApp | [GetAuthHistoriesByAppRequest](#authing-gateway-v1-GetAuthHistoriesByAppRequest) | [GetAuthHistoriesByAppResponse](#authing-gateway-v1-GetAuthHistoriesByAppResponse) |  |
-| GetAuthHistoriesByOtherApp | [GetAuthHistoriesByOtherAppRequest](#authing-gateway-v1-GetAuthHistoriesByOtherAppRequest) | [GetAuthHistoriesByOtherAppResponse](#authing-gateway-v1-GetAuthHistoriesByOtherAppResponse) |  |
-| CreateAppAuthForOtherApp | [CreateAppAuthForOtherAppRequest](#authing-gateway-v1-CreateAppAuthForOtherAppRequest) | [CreateAppAuthForOtherAppResponse](#authing-gateway-v1-CreateAppAuthForOtherAppResponse) |  |
-| GetAppAuthByAppResourceMethod | [GetAppAuthByAppResourceMethodRequest](#authing-gateway-v1-GetAppAuthByAppResourceMethodRequest) | [GetAppAuthByAppResourceMethodResponse](#authing-gateway-v1-GetAppAuthByAppResourceMethodResponse) |  |
-| GetAppAuthByOtherAppResourceMethod | [GetAppAuthByOtherAppResourceMethodRequest](#authing-gateway-v1-GetAppAuthByOtherAppResourceMethodRequest) | [GetAppAuthByOtherAppResourceMethodResponse](#authing-gateway-v1-GetAppAuthByOtherAppResourceMethodResponse) |  |
-| DeleteAppAuth | [DeleteAppAuthRequest](#authing-gateway-v1-DeleteAppAuthRequest) | [DeleteAppAuthResponse](#authing-gateway-v1-DeleteAppAuthResponse) |  |
-| CreateAppRoleAuth | [CreateAppRoleAuthRequest](#authing-gateway-v1-CreateAppRoleAuthRequest) | [CreateAppRoleAuthResponse](#authing-gateway-v1-CreateAppRoleAuthResponse) |  |
-| CreateAppRoleAuthForOtherApp | [CreateAppRoleAuthForOtherAppRequest](#authing-gateway-v1-CreateAppRoleAuthForOtherAppRequest) | [CreateAppRoleAuthForOtherAppResponse](#authing-gateway-v1-CreateAppRoleAuthForOtherAppResponse) |  |
-| GetAppRoleAuthByAppRoleResourceMethod | [GetAppRoleAuthByAppRoleResourceMethodRequest](#authing-gateway-v1-GetAppRoleAuthByAppRoleResourceMethodRequest) | [GetAppRoleAuthByAppRoleResourceMethodResponse](#authing-gateway-v1-GetAppRoleAuthByAppRoleResourceMethodResponse) |  |
-| GetAppRoleAuthByOtherAppRoleResourceMethod | [GetAppRoleAuthByOtherAppRoleResourceMethodRequest](#authing-gateway-v1-GetAppRoleAuthByOtherAppRoleResourceMethodRequest) | [GetAppRoleAuthByOtherAppRoleResourceMethodResponse](#authing-gateway-v1-GetAppRoleAuthByOtherAppRoleResourceMethodResponse) |  |
-| DeleteAppRoleAuth | [DeleteAppRoleAuthRequest](#authing-gateway-v1-DeleteAppRoleAuthRequest) | [DeleteAppRoleAuthResponse](#authing-gateway-v1-DeleteAppRoleAuthResponse) |  |
-| CreateAppUserAuth | [CreateAppUserAuthRequest](#authing-gateway-v1-CreateAppUserAuthRequest) | [CreateAppUserAuthResponse](#authing-gateway-v1-CreateAppUserAuthResponse) |  |
-| CreateGenesisAppUserAuth | [CreateGenesisAppUserAuthRequest](#authing-gateway-v1-CreateGenesisAppUserAuthRequest) | [CreateGenesisAppUserAuthResponse](#authing-gateway-v1-CreateGenesisAppUserAuthResponse) |  |
-| CreateAppUserAuthForOtherApp | [CreateAppUserAuthForOtherAppRequest](#authing-gateway-v1-CreateAppUserAuthForOtherAppRequest) | [CreateAppUserAuthForOtherAppResponse](#authing-gateway-v1-CreateAppUserAuthForOtherAppResponse) |  |
-| GetAppUserAuthByAppUserResourceMethod | [GetAppUserAuthByAppUserResourceMethodRequest](#authing-gateway-v1-GetAppUserAuthByAppUserResourceMethodRequest) | [GetAppUserAuthByAppUserResourceMethodResponse](#authing-gateway-v1-GetAppUserAuthByAppUserResourceMethodResponse) |  |
-| GetAppUserAuthByOtherAppUserResourceMethod | [GetAppUserAuthByOtherAppUserResourceMethodRequest](#authing-gateway-v1-GetAppUserAuthByOtherAppUserResourceMethodRequest) | [GetAppUserAuthByOtherAppUserResourceMethodResponse](#authing-gateway-v1-GetAppUserAuthByOtherAppUserResourceMethodResponse) |  |
-| DeleteAppUserAuth | [DeleteAppUserAuthRequest](#authing-gateway-v1-DeleteAppUserAuthRequest) | [DeleteAppUserAuthResponse](#authing-gateway-v1-DeleteAppUserAuthResponse) |  |
-| GetAuthsByApp | [GetAuthsByAppRequest](#authing-gateway-v1-GetAuthsByAppRequest) | [GetAuthsByAppResponse](#authing-gateway-v1-GetAuthsByAppResponse) |  |
-| GetAuthsByOtherApp | [GetAuthsByOtherAppRequest](#authing-gateway-v1-GetAuthsByOtherAppRequest) | [GetAuthsByOtherAppResponse](#authing-gateway-v1-GetAuthsByOtherAppResponse) |  |
-| GetAuthsByAppRole | [GetAuthsByAppRoleRequest](#authing-gateway-v1-GetAuthsByAppRoleRequest) | [GetAuthsByAppRoleResponse](#authing-gateway-v1-GetAuthsByAppRoleResponse) |  |
-| GetAuthsByOtherAppRole | [GetAuthsByOtherAppRoleRequest](#authing-gateway-v1-GetAuthsByOtherAppRoleRequest) | [GetAuthsByOtherAppRoleResponse](#authing-gateway-v1-GetAuthsByOtherAppRoleResponse) |  |
-| GetAuthsByAppUser | [GetAuthsByAppUserRequest](#authing-gateway-v1-GetAuthsByAppUserRequest) | [GetAuthsByAppUserResponse](#authing-gateway-v1-GetAuthsByAppUserResponse) |  |
-| GetAuthsByOtherAppUser | [GetAuthsByOtherAppUserRequest](#authing-gateway-v1-GetAuthsByOtherAppUserRequest) | [GetAuthsByOtherAppUserResponse](#authing-gateway-v1-GetAuthsByOtherAppUserResponse) |  |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) |  |
+| AuthByApp | [AuthByAppRequest](#authing.gateway.v1.AuthByAppRequest) | [AuthByAppResponse](#authing.gateway.v1.AuthByAppResponse) |  |
+| AuthByAppRoleUser | [AuthByAppRoleUserRequest](#authing.gateway.v1.AuthByAppRoleUserRequest) | [AuthByAppRoleUserResponse](#authing.gateway.v1.AuthByAppRoleUserResponse) |  |
+| GetAuthHistories | [GetAuthHistoriesRequest](#authing.gateway.v1.GetAuthHistoriesRequest) | [GetAuthHistoriesResponse](#authing.gateway.v1.GetAuthHistoriesResponse) |  |
+| GetAuthHistoriesByApp | [GetAuthHistoriesByAppRequest](#authing.gateway.v1.GetAuthHistoriesByAppRequest) | [GetAuthHistoriesByAppResponse](#authing.gateway.v1.GetAuthHistoriesByAppResponse) |  |
+| GetAuthHistoriesByOtherApp | [GetAuthHistoriesByOtherAppRequest](#authing.gateway.v1.GetAuthHistoriesByOtherAppRequest) | [GetAuthHistoriesByOtherAppResponse](#authing.gateway.v1.GetAuthHistoriesByOtherAppResponse) |  |
+| CreateAppAuthForOtherApp | [CreateAppAuthForOtherAppRequest](#authing.gateway.v1.CreateAppAuthForOtherAppRequest) | [CreateAppAuthForOtherAppResponse](#authing.gateway.v1.CreateAppAuthForOtherAppResponse) |  |
+| GetAppAuthByAppResourceMethod | [GetAppAuthByAppResourceMethodRequest](#authing.gateway.v1.GetAppAuthByAppResourceMethodRequest) | [GetAppAuthByAppResourceMethodResponse](#authing.gateway.v1.GetAppAuthByAppResourceMethodResponse) |  |
+| GetAppAuthByOtherAppResourceMethod | [GetAppAuthByOtherAppResourceMethodRequest](#authing.gateway.v1.GetAppAuthByOtherAppResourceMethodRequest) | [GetAppAuthByOtherAppResourceMethodResponse](#authing.gateway.v1.GetAppAuthByOtherAppResourceMethodResponse) |  |
+| DeleteAppAuth | [DeleteAppAuthRequest](#authing.gateway.v1.DeleteAppAuthRequest) | [DeleteAppAuthResponse](#authing.gateway.v1.DeleteAppAuthResponse) |  |
+| CreateAppRoleAuth | [CreateAppRoleAuthRequest](#authing.gateway.v1.CreateAppRoleAuthRequest) | [CreateAppRoleAuthResponse](#authing.gateway.v1.CreateAppRoleAuthResponse) |  |
+| CreateAppRoleAuthForOtherApp | [CreateAppRoleAuthForOtherAppRequest](#authing.gateway.v1.CreateAppRoleAuthForOtherAppRequest) | [CreateAppRoleAuthForOtherAppResponse](#authing.gateway.v1.CreateAppRoleAuthForOtherAppResponse) |  |
+| GetAppRoleAuthByAppRoleResourceMethod | [GetAppRoleAuthByAppRoleResourceMethodRequest](#authing.gateway.v1.GetAppRoleAuthByAppRoleResourceMethodRequest) | [GetAppRoleAuthByAppRoleResourceMethodResponse](#authing.gateway.v1.GetAppRoleAuthByAppRoleResourceMethodResponse) |  |
+| GetAppRoleAuthByOtherAppRoleResourceMethod | [GetAppRoleAuthByOtherAppRoleResourceMethodRequest](#authing.gateway.v1.GetAppRoleAuthByOtherAppRoleResourceMethodRequest) | [GetAppRoleAuthByOtherAppRoleResourceMethodResponse](#authing.gateway.v1.GetAppRoleAuthByOtherAppRoleResourceMethodResponse) |  |
+| DeleteAppRoleAuth | [DeleteAppRoleAuthRequest](#authing.gateway.v1.DeleteAppRoleAuthRequest) | [DeleteAppRoleAuthResponse](#authing.gateway.v1.DeleteAppRoleAuthResponse) |  |
+| CreateAppUserAuth | [CreateAppUserAuthRequest](#authing.gateway.v1.CreateAppUserAuthRequest) | [CreateAppUserAuthResponse](#authing.gateway.v1.CreateAppUserAuthResponse) |  |
+| CreateGenesisAppUserAuth | [CreateGenesisAppUserAuthRequest](#authing.gateway.v1.CreateGenesisAppUserAuthRequest) | [CreateGenesisAppUserAuthResponse](#authing.gateway.v1.CreateGenesisAppUserAuthResponse) |  |
+| CreateAppUserAuthForOtherApp | [CreateAppUserAuthForOtherAppRequest](#authing.gateway.v1.CreateAppUserAuthForOtherAppRequest) | [CreateAppUserAuthForOtherAppResponse](#authing.gateway.v1.CreateAppUserAuthForOtherAppResponse) |  |
+| GetAppUserAuthByAppUserResourceMethod | [GetAppUserAuthByAppUserResourceMethodRequest](#authing.gateway.v1.GetAppUserAuthByAppUserResourceMethodRequest) | [GetAppUserAuthByAppUserResourceMethodResponse](#authing.gateway.v1.GetAppUserAuthByAppUserResourceMethodResponse) |  |
+| GetAppUserAuthByOtherAppUserResourceMethod | [GetAppUserAuthByOtherAppUserResourceMethodRequest](#authing.gateway.v1.GetAppUserAuthByOtherAppUserResourceMethodRequest) | [GetAppUserAuthByOtherAppUserResourceMethodResponse](#authing.gateway.v1.GetAppUserAuthByOtherAppUserResourceMethodResponse) |  |
+| DeleteAppUserAuth | [DeleteAppUserAuthRequest](#authing.gateway.v1.DeleteAppUserAuthRequest) | [DeleteAppUserAuthResponse](#authing.gateway.v1.DeleteAppUserAuthResponse) |  |
+| GetAuthsByApp | [GetAuthsByAppRequest](#authing.gateway.v1.GetAuthsByAppRequest) | [GetAuthsByAppResponse](#authing.gateway.v1.GetAuthsByAppResponse) |  |
+| GetAuthsByOtherApp | [GetAuthsByOtherAppRequest](#authing.gateway.v1.GetAuthsByOtherAppRequest) | [GetAuthsByOtherAppResponse](#authing.gateway.v1.GetAuthsByOtherAppResponse) |  |
+| GetAuthsByAppRole | [GetAuthsByAppRoleRequest](#authing.gateway.v1.GetAuthsByAppRoleRequest) | [GetAuthsByAppRoleResponse](#authing.gateway.v1.GetAuthsByAppRoleResponse) |  |
+| GetAuthsByOtherAppRole | [GetAuthsByOtherAppRoleRequest](#authing.gateway.v1.GetAuthsByOtherAppRoleRequest) | [GetAuthsByOtherAppRoleResponse](#authing.gateway.v1.GetAuthsByOtherAppRoleResponse) |  |
+| GetAuthsByAppUser | [GetAuthsByAppUserRequest](#authing.gateway.v1.GetAuthsByAppUserRequest) | [GetAuthsByAppUserResponse](#authing.gateway.v1.GetAuthsByAppUserResponse) |  |
+| GetAuthsByOtherAppUser | [GetAuthsByOtherAppUserRequest](#authing.gateway.v1.GetAuthsByOtherAppUserRequest) | [GetAuthsByOtherAppUserResponse](#authing.gateway.v1.GetAuthsByOtherAppUserResponse) |  |
 
  
 
 
 
-<a name="npool_authinggateway_authinggateway-proto"></a>
+<a name="npool/authinggateway/authinggateway.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/authinggateway/authinggateway.proto
 
 
 
-<a name="authing-gateway-v1-AppAuth"></a>
+<a name="authing.gateway.v1.AppAuth"></a>
 
 ### AppAuth
 
@@ -1109,7 +1109,7 @@
 
 
 
-<a name="authing-gateway-v1-AppRoleAuth"></a>
+<a name="authing.gateway.v1.AppRoleAuth"></a>
 
 ### AppRoleAuth
 
@@ -1128,7 +1128,7 @@
 
 
 
-<a name="authing-gateway-v1-AppUserAuth"></a>
+<a name="authing.gateway.v1.AppUserAuth"></a>
 
 ### AppUserAuth
 
@@ -1147,7 +1147,7 @@
 
 
 
-<a name="authing-gateway-v1-Auth"></a>
+<a name="authing.gateway.v1.Auth"></a>
 
 ### Auth
 
@@ -1167,7 +1167,7 @@
 
 
 
-<a name="authing-gateway-v1-AuthByAppRequest"></a>
+<a name="authing.gateway.v1.AuthByAppRequest"></a>
 
 ### AuthByAppRequest
 
@@ -1184,7 +1184,7 @@
 
 
 
-<a name="authing-gateway-v1-AuthByAppResponse"></a>
+<a name="authing.gateway.v1.AuthByAppResponse"></a>
 
 ### AuthByAppResponse
 
@@ -1199,7 +1199,7 @@
 
 
 
-<a name="authing-gateway-v1-AuthByAppRoleUserRequest"></a>
+<a name="authing.gateway.v1.AuthByAppRoleUserRequest"></a>
 
 ### AuthByAppRoleUserRequest
 
@@ -1218,7 +1218,7 @@
 
 
 
-<a name="authing-gateway-v1-AuthByAppRoleUserResponse"></a>
+<a name="authing.gateway.v1.AuthByAppRoleUserResponse"></a>
 
 ### AuthByAppRoleUserResponse
 
@@ -1233,7 +1233,7 @@
 
 
 
-<a name="authing-gateway-v1-AuthHistory"></a>
+<a name="authing.gateway.v1.AuthHistory"></a>
 
 ### AuthHistory
 
@@ -1254,7 +1254,7 @@
 
 
 
-<a name="authing-gateway-v1-CreateAppAuthForOtherAppRequest"></a>
+<a name="authing.gateway.v1.CreateAppAuthForOtherAppRequest"></a>
 
 ### CreateAppAuthForOtherAppRequest
 
@@ -1263,14 +1263,14 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| Info | [AppAuth](#authing-gateway-v1-AppAuth) |  |  |
+| Info | [AppAuth](#authing.gateway.v1.AppAuth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppAuthForOtherAppResponse"></a>
+<a name="authing.gateway.v1.CreateAppAuthForOtherAppResponse"></a>
 
 ### CreateAppAuthForOtherAppResponse
 
@@ -1278,14 +1278,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppRoleAuthForOtherAppRequest"></a>
+<a name="authing.gateway.v1.CreateAppRoleAuthForOtherAppRequest"></a>
 
 ### CreateAppRoleAuthForOtherAppRequest
 
@@ -1294,14 +1294,14 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| Info | [AppRoleAuth](#authing-gateway-v1-AppRoleAuth) |  |  |
+| Info | [AppRoleAuth](#authing.gateway.v1.AppRoleAuth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppRoleAuthForOtherAppResponse"></a>
+<a name="authing.gateway.v1.CreateAppRoleAuthForOtherAppResponse"></a>
 
 ### CreateAppRoleAuthForOtherAppResponse
 
@@ -1309,14 +1309,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppRoleAuthRequest"></a>
+<a name="authing.gateway.v1.CreateAppRoleAuthRequest"></a>
 
 ### CreateAppRoleAuthRequest
 
@@ -1324,14 +1324,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppRoleAuth](#authing-gateway-v1-AppRoleAuth) |  |  |
+| Info | [AppRoleAuth](#authing.gateway.v1.AppRoleAuth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppRoleAuthResponse"></a>
+<a name="authing.gateway.v1.CreateAppRoleAuthResponse"></a>
 
 ### CreateAppRoleAuthResponse
 
@@ -1339,14 +1339,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppUserAuthForOtherAppRequest"></a>
+<a name="authing.gateway.v1.CreateAppUserAuthForOtherAppRequest"></a>
 
 ### CreateAppUserAuthForOtherAppRequest
 
@@ -1356,14 +1356,14 @@
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
 | TargetUserID | [string](#string) |  |  |
-| Info | [AppUserAuth](#authing-gateway-v1-AppUserAuth) |  |  |
+| Info | [AppUserAuth](#authing.gateway.v1.AppUserAuth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppUserAuthForOtherAppResponse"></a>
+<a name="authing.gateway.v1.CreateAppUserAuthForOtherAppResponse"></a>
 
 ### CreateAppUserAuthForOtherAppResponse
 
@@ -1371,14 +1371,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppUserAuthRequest"></a>
+<a name="authing.gateway.v1.CreateAppUserAuthRequest"></a>
 
 ### CreateAppUserAuthRequest
 
@@ -1386,14 +1386,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppUserAuth](#authing-gateway-v1-AppUserAuth) |  |  |
+| Info | [AppUserAuth](#authing.gateway.v1.AppUserAuth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateAppUserAuthResponse"></a>
+<a name="authing.gateway.v1.CreateAppUserAuthResponse"></a>
 
 ### CreateAppUserAuthResponse
 
@@ -1401,14 +1401,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-CreateGenesisAppUserAuthRequest"></a>
+<a name="authing.gateway.v1.CreateGenesisAppUserAuthRequest"></a>
 
 ### CreateGenesisAppUserAuthRequest
 
@@ -1418,7 +1418,7 @@
 
 
 
-<a name="authing-gateway-v1-CreateGenesisAppUserAuthResponse"></a>
+<a name="authing.gateway.v1.CreateGenesisAppUserAuthResponse"></a>
 
 ### CreateGenesisAppUserAuthResponse
 
@@ -1426,14 +1426,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing-gateway-v1-Auth) | repeated |  |
+| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-DeleteAppAuthRequest"></a>
+<a name="authing.gateway.v1.DeleteAppAuthRequest"></a>
 
 ### DeleteAppAuthRequest
 
@@ -1448,7 +1448,7 @@
 
 
 
-<a name="authing-gateway-v1-DeleteAppAuthResponse"></a>
+<a name="authing.gateway.v1.DeleteAppAuthResponse"></a>
 
 ### DeleteAppAuthResponse
 
@@ -1456,14 +1456,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-DeleteAppRoleAuthRequest"></a>
+<a name="authing.gateway.v1.DeleteAppRoleAuthRequest"></a>
 
 ### DeleteAppRoleAuthRequest
 
@@ -1478,7 +1478,7 @@
 
 
 
-<a name="authing-gateway-v1-DeleteAppRoleAuthResponse"></a>
+<a name="authing.gateway.v1.DeleteAppRoleAuthResponse"></a>
 
 ### DeleteAppRoleAuthResponse
 
@@ -1486,14 +1486,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-DeleteAppUserAuthRequest"></a>
+<a name="authing.gateway.v1.DeleteAppUserAuthRequest"></a>
 
 ### DeleteAppUserAuthRequest
 
@@ -1508,7 +1508,7 @@
 
 
 
-<a name="authing-gateway-v1-DeleteAppUserAuthResponse"></a>
+<a name="authing.gateway.v1.DeleteAppUserAuthResponse"></a>
 
 ### DeleteAppUserAuthResponse
 
@@ -1516,14 +1516,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAppAuthByAppResourceMethodRequest"></a>
+<a name="authing.gateway.v1.GetAppAuthByAppResourceMethodRequest"></a>
 
 ### GetAppAuthByAppResourceMethodRequest
 
@@ -1540,7 +1540,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAppAuthByAppResourceMethodResponse"></a>
+<a name="authing.gateway.v1.GetAppAuthByAppResourceMethodResponse"></a>
 
 ### GetAppAuthByAppResourceMethodResponse
 
@@ -1548,14 +1548,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAppAuthByOtherAppResourceMethodRequest"></a>
+<a name="authing.gateway.v1.GetAppAuthByOtherAppResourceMethodRequest"></a>
 
 ### GetAppAuthByOtherAppResourceMethodRequest
 
@@ -1572,7 +1572,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAppAuthByOtherAppResourceMethodResponse"></a>
+<a name="authing.gateway.v1.GetAppAuthByOtherAppResourceMethodResponse"></a>
 
 ### GetAppAuthByOtherAppResourceMethodResponse
 
@@ -1580,14 +1580,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAppRoleAuthByAppRoleResourceMethodRequest"></a>
+<a name="authing.gateway.v1.GetAppRoleAuthByAppRoleResourceMethodRequest"></a>
 
 ### GetAppRoleAuthByAppRoleResourceMethodRequest
 
@@ -1605,7 +1605,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAppRoleAuthByAppRoleResourceMethodResponse"></a>
+<a name="authing.gateway.v1.GetAppRoleAuthByAppRoleResourceMethodResponse"></a>
 
 ### GetAppRoleAuthByAppRoleResourceMethodResponse
 
@@ -1613,14 +1613,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAppRoleAuthByOtherAppRoleResourceMethodRequest"></a>
+<a name="authing.gateway.v1.GetAppRoleAuthByOtherAppRoleResourceMethodRequest"></a>
 
 ### GetAppRoleAuthByOtherAppRoleResourceMethodRequest
 
@@ -1638,7 +1638,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAppRoleAuthByOtherAppRoleResourceMethodResponse"></a>
+<a name="authing.gateway.v1.GetAppRoleAuthByOtherAppRoleResourceMethodResponse"></a>
 
 ### GetAppRoleAuthByOtherAppRoleResourceMethodResponse
 
@@ -1646,14 +1646,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAppUserAuthByAppUserResourceMethodRequest"></a>
+<a name="authing.gateway.v1.GetAppUserAuthByAppUserResourceMethodRequest"></a>
 
 ### GetAppUserAuthByAppUserResourceMethodRequest
 
@@ -1671,7 +1671,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAppUserAuthByAppUserResourceMethodResponse"></a>
+<a name="authing.gateway.v1.GetAppUserAuthByAppUserResourceMethodResponse"></a>
 
 ### GetAppUserAuthByAppUserResourceMethodResponse
 
@@ -1679,14 +1679,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAppUserAuthByOtherAppUserResourceMethodRequest"></a>
+<a name="authing.gateway.v1.GetAppUserAuthByOtherAppUserResourceMethodRequest"></a>
 
 ### GetAppUserAuthByOtherAppUserResourceMethodRequest
 
@@ -1704,7 +1704,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAppUserAuthByOtherAppUserResourceMethodResponse"></a>
+<a name="authing.gateway.v1.GetAppUserAuthByOtherAppUserResourceMethodResponse"></a>
 
 ### GetAppUserAuthByOtherAppUserResourceMethodResponse
 
@@ -1712,14 +1712,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#authing-gateway-v1-Auth) |  |  |
+| Info | [Auth](#authing.gateway.v1.Auth) |  |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthHistoriesByAppRequest"></a>
+<a name="authing.gateway.v1.GetAuthHistoriesByAppRequest"></a>
 
 ### GetAuthHistoriesByAppRequest
 
@@ -1734,7 +1734,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthHistoriesByAppResponse"></a>
+<a name="authing.gateway.v1.GetAuthHistoriesByAppResponse"></a>
 
 ### GetAuthHistoriesByAppResponse
 
@@ -1742,14 +1742,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [AuthHistory](#authing-gateway-v1-AuthHistory) | repeated |  |
+| Infos | [AuthHistory](#authing.gateway.v1.AuthHistory) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthHistoriesByOtherAppRequest"></a>
+<a name="authing.gateway.v1.GetAuthHistoriesByOtherAppRequest"></a>
 
 ### GetAuthHistoriesByOtherAppRequest
 
@@ -1764,7 +1764,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthHistoriesByOtherAppResponse"></a>
+<a name="authing.gateway.v1.GetAuthHistoriesByOtherAppResponse"></a>
 
 ### GetAuthHistoriesByOtherAppResponse
 
@@ -1772,14 +1772,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [AuthHistory](#authing-gateway-v1-AuthHistory) | repeated |  |
+| Infos | [AuthHistory](#authing.gateway.v1.AuthHistory) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthHistoriesRequest"></a>
+<a name="authing.gateway.v1.GetAuthHistoriesRequest"></a>
 
 ### GetAuthHistoriesRequest
 
@@ -1795,7 +1795,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthHistoriesResponse"></a>
+<a name="authing.gateway.v1.GetAuthHistoriesResponse"></a>
 
 ### GetAuthHistoriesResponse
 
@@ -1803,14 +1803,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [AuthHistory](#authing-gateway-v1-AuthHistory) | repeated |  |
+| Infos | [AuthHistory](#authing.gateway.v1.AuthHistory) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthsByAppRequest"></a>
+<a name="authing.gateway.v1.GetAuthsByAppRequest"></a>
 
 ### GetAuthsByAppRequest
 
@@ -1825,7 +1825,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthsByAppResponse"></a>
+<a name="authing.gateway.v1.GetAuthsByAppResponse"></a>
 
 ### GetAuthsByAppResponse
 
@@ -1833,14 +1833,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing-gateway-v1-Auth) | repeated |  |
+| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthsByAppRoleRequest"></a>
+<a name="authing.gateway.v1.GetAuthsByAppRoleRequest"></a>
 
 ### GetAuthsByAppRoleRequest
 
@@ -1856,7 +1856,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthsByAppRoleResponse"></a>
+<a name="authing.gateway.v1.GetAuthsByAppRoleResponse"></a>
 
 ### GetAuthsByAppRoleResponse
 
@@ -1864,14 +1864,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing-gateway-v1-Auth) | repeated |  |
+| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthsByAppUserRequest"></a>
+<a name="authing.gateway.v1.GetAuthsByAppUserRequest"></a>
 
 ### GetAuthsByAppUserRequest
 
@@ -1887,7 +1887,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthsByAppUserResponse"></a>
+<a name="authing.gateway.v1.GetAuthsByAppUserResponse"></a>
 
 ### GetAuthsByAppUserResponse
 
@@ -1895,14 +1895,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing-gateway-v1-Auth) | repeated |  |
+| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthsByOtherAppRequest"></a>
+<a name="authing.gateway.v1.GetAuthsByOtherAppRequest"></a>
 
 ### GetAuthsByOtherAppRequest
 
@@ -1917,7 +1917,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthsByOtherAppResponse"></a>
+<a name="authing.gateway.v1.GetAuthsByOtherAppResponse"></a>
 
 ### GetAuthsByOtherAppResponse
 
@@ -1925,14 +1925,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing-gateway-v1-Auth) | repeated |  |
+| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthsByOtherAppRoleRequest"></a>
+<a name="authing.gateway.v1.GetAuthsByOtherAppRoleRequest"></a>
 
 ### GetAuthsByOtherAppRoleRequest
 
@@ -1948,7 +1948,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthsByOtherAppRoleResponse"></a>
+<a name="authing.gateway.v1.GetAuthsByOtherAppRoleResponse"></a>
 
 ### GetAuthsByOtherAppRoleResponse
 
@@ -1956,14 +1956,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing-gateway-v1-Auth) | repeated |  |
+| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
 
 
 
 
 
 
-<a name="authing-gateway-v1-GetAuthsByOtherAppUserRequest"></a>
+<a name="authing.gateway.v1.GetAuthsByOtherAppUserRequest"></a>
 
 ### GetAuthsByOtherAppUserRequest
 
@@ -1979,7 +1979,7 @@
 
 
 
-<a name="authing-gateway-v1-GetAuthsByOtherAppUserResponse"></a>
+<a name="authing.gateway.v1.GetAuthsByOtherAppUserResponse"></a>
 
 ### GetAuthsByOtherAppUserResponse
 
@@ -1987,7 +1987,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#authing-gateway-v1-Auth) | repeated |  |
+| Infos | [Auth](#authing.gateway.v1.Auth) | repeated |  |
 
 
 
@@ -2000,40 +2000,40 @@
  
 
 
-<a name="authing-gateway-v1-AuthingGateway"></a>
+<a name="authing.gateway.v1.AuthingGateway"></a>
 
 ### AuthingGateway
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
-| AuthByApp | [AuthByAppRequest](#authing-gateway-v1-AuthByAppRequest) | [AuthByAppResponse](#authing-gateway-v1-AuthByAppResponse) |  |
-| AuthByAppRoleUser | [AuthByAppRoleUserRequest](#authing-gateway-v1-AuthByAppRoleUserRequest) | [AuthByAppRoleUserResponse](#authing-gateway-v1-AuthByAppRoleUserResponse) |  |
-| GetAuthHistories | [GetAuthHistoriesRequest](#authing-gateway-v1-GetAuthHistoriesRequest) | [GetAuthHistoriesResponse](#authing-gateway-v1-GetAuthHistoriesResponse) |  |
-| GetAuthHistoriesByApp | [GetAuthHistoriesByAppRequest](#authing-gateway-v1-GetAuthHistoriesByAppRequest) | [GetAuthHistoriesByAppResponse](#authing-gateway-v1-GetAuthHistoriesByAppResponse) |  |
-| GetAuthHistoriesByOtherApp | [GetAuthHistoriesByOtherAppRequest](#authing-gateway-v1-GetAuthHistoriesByOtherAppRequest) | [GetAuthHistoriesByOtherAppResponse](#authing-gateway-v1-GetAuthHistoriesByOtherAppResponse) |  |
-| CreateAppAuthForOtherApp | [CreateAppAuthForOtherAppRequest](#authing-gateway-v1-CreateAppAuthForOtherAppRequest) | [CreateAppAuthForOtherAppResponse](#authing-gateway-v1-CreateAppAuthForOtherAppResponse) |  |
-| GetAppAuthByAppResourceMethod | [GetAppAuthByAppResourceMethodRequest](#authing-gateway-v1-GetAppAuthByAppResourceMethodRequest) | [GetAppAuthByAppResourceMethodResponse](#authing-gateway-v1-GetAppAuthByAppResourceMethodResponse) |  |
-| GetAppAuthByOtherAppResourceMethod | [GetAppAuthByOtherAppResourceMethodRequest](#authing-gateway-v1-GetAppAuthByOtherAppResourceMethodRequest) | [GetAppAuthByOtherAppResourceMethodResponse](#authing-gateway-v1-GetAppAuthByOtherAppResourceMethodResponse) |  |
-| DeleteAppAuth | [DeleteAppAuthRequest](#authing-gateway-v1-DeleteAppAuthRequest) | [DeleteAppAuthResponse](#authing-gateway-v1-DeleteAppAuthResponse) |  |
-| CreateAppRoleAuth | [CreateAppRoleAuthRequest](#authing-gateway-v1-CreateAppRoleAuthRequest) | [CreateAppRoleAuthResponse](#authing-gateway-v1-CreateAppRoleAuthResponse) |  |
-| CreateAppRoleAuthForOtherApp | [CreateAppRoleAuthForOtherAppRequest](#authing-gateway-v1-CreateAppRoleAuthForOtherAppRequest) | [CreateAppRoleAuthForOtherAppResponse](#authing-gateway-v1-CreateAppRoleAuthForOtherAppResponse) |  |
-| GetAppRoleAuthByAppRoleResourceMethod | [GetAppRoleAuthByAppRoleResourceMethodRequest](#authing-gateway-v1-GetAppRoleAuthByAppRoleResourceMethodRequest) | [GetAppRoleAuthByAppRoleResourceMethodResponse](#authing-gateway-v1-GetAppRoleAuthByAppRoleResourceMethodResponse) |  |
-| GetAppRoleAuthByOtherAppRoleResourceMethod | [GetAppRoleAuthByOtherAppRoleResourceMethodRequest](#authing-gateway-v1-GetAppRoleAuthByOtherAppRoleResourceMethodRequest) | [GetAppRoleAuthByOtherAppRoleResourceMethodResponse](#authing-gateway-v1-GetAppRoleAuthByOtherAppRoleResourceMethodResponse) |  |
-| DeleteAppRoleAuth | [DeleteAppRoleAuthRequest](#authing-gateway-v1-DeleteAppRoleAuthRequest) | [DeleteAppRoleAuthResponse](#authing-gateway-v1-DeleteAppRoleAuthResponse) |  |
-| CreateAppUserAuth | [CreateAppUserAuthRequest](#authing-gateway-v1-CreateAppUserAuthRequest) | [CreateAppUserAuthResponse](#authing-gateway-v1-CreateAppUserAuthResponse) |  |
-| CreateGenesisAppUserAuth | [CreateGenesisAppUserAuthRequest](#authing-gateway-v1-CreateGenesisAppUserAuthRequest) | [CreateGenesisAppUserAuthResponse](#authing-gateway-v1-CreateGenesisAppUserAuthResponse) |  |
-| CreateAppUserAuthForOtherApp | [CreateAppUserAuthForOtherAppRequest](#authing-gateway-v1-CreateAppUserAuthForOtherAppRequest) | [CreateAppUserAuthForOtherAppResponse](#authing-gateway-v1-CreateAppUserAuthForOtherAppResponse) |  |
-| GetAppUserAuthByAppUserResourceMethod | [GetAppUserAuthByAppUserResourceMethodRequest](#authing-gateway-v1-GetAppUserAuthByAppUserResourceMethodRequest) | [GetAppUserAuthByAppUserResourceMethodResponse](#authing-gateway-v1-GetAppUserAuthByAppUserResourceMethodResponse) |  |
-| GetAppUserAuthByOtherAppUserResourceMethod | [GetAppUserAuthByOtherAppUserResourceMethodRequest](#authing-gateway-v1-GetAppUserAuthByOtherAppUserResourceMethodRequest) | [GetAppUserAuthByOtherAppUserResourceMethodResponse](#authing-gateway-v1-GetAppUserAuthByOtherAppUserResourceMethodResponse) |  |
-| DeleteAppUserAuth | [DeleteAppUserAuthRequest](#authing-gateway-v1-DeleteAppUserAuthRequest) | [DeleteAppUserAuthResponse](#authing-gateway-v1-DeleteAppUserAuthResponse) |  |
-| GetAuthsByApp | [GetAuthsByAppRequest](#authing-gateway-v1-GetAuthsByAppRequest) | [GetAuthsByAppResponse](#authing-gateway-v1-GetAuthsByAppResponse) |  |
-| GetAuthsByOtherApp | [GetAuthsByOtherAppRequest](#authing-gateway-v1-GetAuthsByOtherAppRequest) | [GetAuthsByOtherAppResponse](#authing-gateway-v1-GetAuthsByOtherAppResponse) |  |
-| GetAuthsByAppRole | [GetAuthsByAppRoleRequest](#authing-gateway-v1-GetAuthsByAppRoleRequest) | [GetAuthsByAppRoleResponse](#authing-gateway-v1-GetAuthsByAppRoleResponse) |  |
-| GetAuthsByOtherAppRole | [GetAuthsByOtherAppRoleRequest](#authing-gateway-v1-GetAuthsByOtherAppRoleRequest) | [GetAuthsByOtherAppRoleResponse](#authing-gateway-v1-GetAuthsByOtherAppRoleResponse) |  |
-| GetAuthsByAppUser | [GetAuthsByAppUserRequest](#authing-gateway-v1-GetAuthsByAppUserRequest) | [GetAuthsByAppUserResponse](#authing-gateway-v1-GetAuthsByAppUserResponse) |  |
-| GetAuthsByOtherAppUser | [GetAuthsByOtherAppUserRequest](#authing-gateway-v1-GetAuthsByOtherAppUserRequest) | [GetAuthsByOtherAppUserResponse](#authing-gateway-v1-GetAuthsByOtherAppUserResponse) |  |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) |  |
+| AuthByApp | [AuthByAppRequest](#authing.gateway.v1.AuthByAppRequest) | [AuthByAppResponse](#authing.gateway.v1.AuthByAppResponse) |  |
+| AuthByAppRoleUser | [AuthByAppRoleUserRequest](#authing.gateway.v1.AuthByAppRoleUserRequest) | [AuthByAppRoleUserResponse](#authing.gateway.v1.AuthByAppRoleUserResponse) |  |
+| GetAuthHistories | [GetAuthHistoriesRequest](#authing.gateway.v1.GetAuthHistoriesRequest) | [GetAuthHistoriesResponse](#authing.gateway.v1.GetAuthHistoriesResponse) |  |
+| GetAuthHistoriesByApp | [GetAuthHistoriesByAppRequest](#authing.gateway.v1.GetAuthHistoriesByAppRequest) | [GetAuthHistoriesByAppResponse](#authing.gateway.v1.GetAuthHistoriesByAppResponse) |  |
+| GetAuthHistoriesByOtherApp | [GetAuthHistoriesByOtherAppRequest](#authing.gateway.v1.GetAuthHistoriesByOtherAppRequest) | [GetAuthHistoriesByOtherAppResponse](#authing.gateway.v1.GetAuthHistoriesByOtherAppResponse) |  |
+| CreateAppAuthForOtherApp | [CreateAppAuthForOtherAppRequest](#authing.gateway.v1.CreateAppAuthForOtherAppRequest) | [CreateAppAuthForOtherAppResponse](#authing.gateway.v1.CreateAppAuthForOtherAppResponse) |  |
+| GetAppAuthByAppResourceMethod | [GetAppAuthByAppResourceMethodRequest](#authing.gateway.v1.GetAppAuthByAppResourceMethodRequest) | [GetAppAuthByAppResourceMethodResponse](#authing.gateway.v1.GetAppAuthByAppResourceMethodResponse) |  |
+| GetAppAuthByOtherAppResourceMethod | [GetAppAuthByOtherAppResourceMethodRequest](#authing.gateway.v1.GetAppAuthByOtherAppResourceMethodRequest) | [GetAppAuthByOtherAppResourceMethodResponse](#authing.gateway.v1.GetAppAuthByOtherAppResourceMethodResponse) |  |
+| DeleteAppAuth | [DeleteAppAuthRequest](#authing.gateway.v1.DeleteAppAuthRequest) | [DeleteAppAuthResponse](#authing.gateway.v1.DeleteAppAuthResponse) |  |
+| CreateAppRoleAuth | [CreateAppRoleAuthRequest](#authing.gateway.v1.CreateAppRoleAuthRequest) | [CreateAppRoleAuthResponse](#authing.gateway.v1.CreateAppRoleAuthResponse) |  |
+| CreateAppRoleAuthForOtherApp | [CreateAppRoleAuthForOtherAppRequest](#authing.gateway.v1.CreateAppRoleAuthForOtherAppRequest) | [CreateAppRoleAuthForOtherAppResponse](#authing.gateway.v1.CreateAppRoleAuthForOtherAppResponse) |  |
+| GetAppRoleAuthByAppRoleResourceMethod | [GetAppRoleAuthByAppRoleResourceMethodRequest](#authing.gateway.v1.GetAppRoleAuthByAppRoleResourceMethodRequest) | [GetAppRoleAuthByAppRoleResourceMethodResponse](#authing.gateway.v1.GetAppRoleAuthByAppRoleResourceMethodResponse) |  |
+| GetAppRoleAuthByOtherAppRoleResourceMethod | [GetAppRoleAuthByOtherAppRoleResourceMethodRequest](#authing.gateway.v1.GetAppRoleAuthByOtherAppRoleResourceMethodRequest) | [GetAppRoleAuthByOtherAppRoleResourceMethodResponse](#authing.gateway.v1.GetAppRoleAuthByOtherAppRoleResourceMethodResponse) |  |
+| DeleteAppRoleAuth | [DeleteAppRoleAuthRequest](#authing.gateway.v1.DeleteAppRoleAuthRequest) | [DeleteAppRoleAuthResponse](#authing.gateway.v1.DeleteAppRoleAuthResponse) |  |
+| CreateAppUserAuth | [CreateAppUserAuthRequest](#authing.gateway.v1.CreateAppUserAuthRequest) | [CreateAppUserAuthResponse](#authing.gateway.v1.CreateAppUserAuthResponse) |  |
+| CreateGenesisAppUserAuth | [CreateGenesisAppUserAuthRequest](#authing.gateway.v1.CreateGenesisAppUserAuthRequest) | [CreateGenesisAppUserAuthResponse](#authing.gateway.v1.CreateGenesisAppUserAuthResponse) |  |
+| CreateAppUserAuthForOtherApp | [CreateAppUserAuthForOtherAppRequest](#authing.gateway.v1.CreateAppUserAuthForOtherAppRequest) | [CreateAppUserAuthForOtherAppResponse](#authing.gateway.v1.CreateAppUserAuthForOtherAppResponse) |  |
+| GetAppUserAuthByAppUserResourceMethod | [GetAppUserAuthByAppUserResourceMethodRequest](#authing.gateway.v1.GetAppUserAuthByAppUserResourceMethodRequest) | [GetAppUserAuthByAppUserResourceMethodResponse](#authing.gateway.v1.GetAppUserAuthByAppUserResourceMethodResponse) |  |
+| GetAppUserAuthByOtherAppUserResourceMethod | [GetAppUserAuthByOtherAppUserResourceMethodRequest](#authing.gateway.v1.GetAppUserAuthByOtherAppUserResourceMethodRequest) | [GetAppUserAuthByOtherAppUserResourceMethodResponse](#authing.gateway.v1.GetAppUserAuthByOtherAppUserResourceMethodResponse) |  |
+| DeleteAppUserAuth | [DeleteAppUserAuthRequest](#authing.gateway.v1.DeleteAppUserAuthRequest) | [DeleteAppUserAuthResponse](#authing.gateway.v1.DeleteAppUserAuthResponse) |  |
+| GetAuthsByApp | [GetAuthsByAppRequest](#authing.gateway.v1.GetAuthsByAppRequest) | [GetAuthsByAppResponse](#authing.gateway.v1.GetAuthsByAppResponse) |  |
+| GetAuthsByOtherApp | [GetAuthsByOtherAppRequest](#authing.gateway.v1.GetAuthsByOtherAppRequest) | [GetAuthsByOtherAppResponse](#authing.gateway.v1.GetAuthsByOtherAppResponse) |  |
+| GetAuthsByAppRole | [GetAuthsByAppRoleRequest](#authing.gateway.v1.GetAuthsByAppRoleRequest) | [GetAuthsByAppRoleResponse](#authing.gateway.v1.GetAuthsByAppRoleResponse) |  |
+| GetAuthsByOtherAppRole | [GetAuthsByOtherAppRoleRequest](#authing.gateway.v1.GetAuthsByOtherAppRoleRequest) | [GetAuthsByOtherAppRoleResponse](#authing.gateway.v1.GetAuthsByOtherAppRoleResponse) |  |
+| GetAuthsByAppUser | [GetAuthsByAppUserRequest](#authing.gateway.v1.GetAuthsByAppUserRequest) | [GetAuthsByAppUserResponse](#authing.gateway.v1.GetAuthsByAppUserResponse) |  |
+| GetAuthsByOtherAppUser | [GetAuthsByOtherAppUserRequest](#authing.gateway.v1.GetAuthsByOtherAppUserRequest) | [GetAuthsByOtherAppUserResponse](#authing.gateway.v1.GetAuthsByOtherAppUserResponse) |  |
 
  
 

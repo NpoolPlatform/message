@@ -3,46 +3,46 @@
 
 ## Table of Contents
 
-- [npool/coininfo/coininfo.proto](#npool_coininfo_coininfo-proto)
-    - [CoinInfo](#sphinx-coininfo-v1-CoinInfo)
-    - [CreateCoinInfoRequest](#sphinx-coininfo-v1-CreateCoinInfoRequest)
-    - [CreateCoinInfoResponse](#sphinx-coininfo-v1-CreateCoinInfoResponse)
-    - [GetCoinInfoRequest](#sphinx-coininfo-v1-GetCoinInfoRequest)
-    - [GetCoinInfoResponse](#sphinx-coininfo-v1-GetCoinInfoResponse)
-    - [GetCoinInfosRequest](#sphinx-coininfo-v1-GetCoinInfosRequest)
-    - [GetCoinInfosResponse](#sphinx-coininfo-v1-GetCoinInfosResponse)
-    - [UpdateCoinInfoRequest](#sphinx-coininfo-v1-UpdateCoinInfoRequest)
-    - [UpdateCoinInfoResponse](#sphinx-coininfo-v1-UpdateCoinInfoResponse)
-    - [VersionResponse](#sphinx-coininfo-v1-VersionResponse)
+- [npool/coininfo/coininfo.proto](#npool/coininfo/coininfo.proto)
+    - [CoinInfo](#sphinx.coininfo.v1.CoinInfo)
+    - [CreateCoinInfoRequest](#sphinx.coininfo.v1.CreateCoinInfoRequest)
+    - [CreateCoinInfoResponse](#sphinx.coininfo.v1.CreateCoinInfoResponse)
+    - [GetCoinInfoRequest](#sphinx.coininfo.v1.GetCoinInfoRequest)
+    - [GetCoinInfoResponse](#sphinx.coininfo.v1.GetCoinInfoResponse)
+    - [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest)
+    - [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse)
+    - [UpdateCoinInfoRequest](#sphinx.coininfo.v1.UpdateCoinInfoRequest)
+    - [UpdateCoinInfoResponse](#sphinx.coininfo.v1.UpdateCoinInfoResponse)
+    - [VersionResponse](#sphinx.coininfo.v1.VersionResponse)
   
-    - [SphinxCoinInfo](#sphinx-coininfo-v1-SphinxCoinInfo)
+    - [SphinxCoinInfo](#sphinx.coininfo.v1.SphinxCoinInfo)
   
-- [npool/coininfo/coininfo.proto](#npool_coininfo_coininfo-proto)
-    - [CoinInfo](#sphinx-coininfo-v1-CoinInfo)
-    - [CreateCoinInfoRequest](#sphinx-coininfo-v1-CreateCoinInfoRequest)
-    - [CreateCoinInfoResponse](#sphinx-coininfo-v1-CreateCoinInfoResponse)
-    - [GetCoinInfoRequest](#sphinx-coininfo-v1-GetCoinInfoRequest)
-    - [GetCoinInfoResponse](#sphinx-coininfo-v1-GetCoinInfoResponse)
-    - [GetCoinInfosRequest](#sphinx-coininfo-v1-GetCoinInfosRequest)
-    - [GetCoinInfosResponse](#sphinx-coininfo-v1-GetCoinInfosResponse)
-    - [UpdateCoinInfoRequest](#sphinx-coininfo-v1-UpdateCoinInfoRequest)
-    - [UpdateCoinInfoResponse](#sphinx-coininfo-v1-UpdateCoinInfoResponse)
-    - [VersionResponse](#sphinx-coininfo-v1-VersionResponse)
+- [npool/coininfo/coininfo.proto](#npool/coininfo/coininfo.proto)
+    - [CoinInfo](#sphinx.coininfo.v1.CoinInfo)
+    - [CreateCoinInfoRequest](#sphinx.coininfo.v1.CreateCoinInfoRequest)
+    - [CreateCoinInfoResponse](#sphinx.coininfo.v1.CreateCoinInfoResponse)
+    - [GetCoinInfoRequest](#sphinx.coininfo.v1.GetCoinInfoRequest)
+    - [GetCoinInfoResponse](#sphinx.coininfo.v1.GetCoinInfoResponse)
+    - [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest)
+    - [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse)
+    - [UpdateCoinInfoRequest](#sphinx.coininfo.v1.UpdateCoinInfoRequest)
+    - [UpdateCoinInfoResponse](#sphinx.coininfo.v1.UpdateCoinInfoResponse)
+    - [VersionResponse](#sphinx.coininfo.v1.VersionResponse)
   
-    - [SphinxCoinInfo](#sphinx-coininfo-v1-SphinxCoinInfo)
+    - [SphinxCoinInfo](#sphinx.coininfo.v1.SphinxCoinInfo)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool_coininfo_coininfo-proto"></a>
+<a name="npool/coininfo/coininfo.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/coininfo/coininfo.proto
 
 
 
-<a name="sphinx-coininfo-v1-CoinInfo"></a>
+<a name="sphinx.coininfo.v1.CoinInfo"></a>
 
 ### CoinInfo
 
@@ -66,7 +66,7 @@
 
 
 
-<a name="sphinx-coininfo-v1-CreateCoinInfoRequest"></a>
+<a name="sphinx.coininfo.v1.CreateCoinInfoRequest"></a>
 
 ### CreateCoinInfoRequest
 
@@ -85,7 +85,7 @@
 
 
 
-<a name="sphinx-coininfo-v1-CreateCoinInfoResponse"></a>
+<a name="sphinx.coininfo.v1.CreateCoinInfoResponse"></a>
 
 ### CreateCoinInfoResponse
 
@@ -93,14 +93,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinInfo](#sphinx-coininfo-v1-CoinInfo) |  |  |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
 
 
 
 
 
 
-<a name="sphinx-coininfo-v1-GetCoinInfoRequest"></a>
+<a name="sphinx.coininfo.v1.GetCoinInfoRequest"></a>
 
 ### GetCoinInfoRequest
 
@@ -116,7 +116,7 @@
 
 
 
-<a name="sphinx-coininfo-v1-GetCoinInfoResponse"></a>
+<a name="sphinx.coininfo.v1.GetCoinInfoResponse"></a>
 
 ### GetCoinInfoResponse
 
@@ -124,14 +124,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinInfo](#sphinx-coininfo-v1-CoinInfo) |  |  |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
 
 
 
 
 
 
-<a name="sphinx-coininfo-v1-GetCoinInfosRequest"></a>
+<a name="sphinx.coininfo.v1.GetCoinInfosRequest"></a>
 
 ### GetCoinInfosRequest
 
@@ -149,7 +149,7 @@
 
 
 
-<a name="sphinx-coininfo-v1-GetCoinInfosResponse"></a>
+<a name="sphinx.coininfo.v1.GetCoinInfosResponse"></a>
 
 ### GetCoinInfosResponse
 
@@ -158,14 +158,14 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Total | [int32](#int32) |  |  |
-| Infos | [CoinInfo](#sphinx-coininfo-v1-CoinInfo) | repeated |  |
+| Infos | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) | repeated |  |
 
 
 
 
 
 
-<a name="sphinx-coininfo-v1-UpdateCoinInfoRequest"></a>
+<a name="sphinx.coininfo.v1.UpdateCoinInfoRequest"></a>
 
 ### UpdateCoinInfoRequest
 
@@ -184,7 +184,7 @@
 
 
 
-<a name="sphinx-coininfo-v1-UpdateCoinInfoResponse"></a>
+<a name="sphinx.coininfo.v1.UpdateCoinInfoResponse"></a>
 
 ### UpdateCoinInfoResponse
 
@@ -192,14 +192,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinInfo](#sphinx-coininfo-v1-CoinInfo) |  |  |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
 
 
 
 
 
 
-<a name="sphinx-coininfo-v1-VersionResponse"></a>
+<a name="sphinx.coininfo.v1.VersionResponse"></a>
 
 ### VersionResponse
 
@@ -220,31 +220,31 @@
  
 
 
-<a name="sphinx-coininfo-v1-SphinxCoinInfo"></a>
+<a name="sphinx.coininfo.v1.SphinxCoinInfo"></a>
 
 ### SphinxCoinInfo
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [VersionResponse](#sphinx-coininfo-v1-VersionResponse) |  |
-| CreateCoinInfo | [CreateCoinInfoRequest](#sphinx-coininfo-v1-CreateCoinInfoRequest) | [CreateCoinInfoResponse](#sphinx-coininfo-v1-CreateCoinInfoResponse) |  |
-| GetCoinInfo | [GetCoinInfoRequest](#sphinx-coininfo-v1-GetCoinInfoRequest) | [GetCoinInfoResponse](#sphinx-coininfo-v1-GetCoinInfoResponse) |  |
-| GetCoinInfos | [GetCoinInfosRequest](#sphinx-coininfo-v1-GetCoinInfosRequest) | [GetCoinInfosResponse](#sphinx-coininfo-v1-GetCoinInfosResponse) |  |
-| UpdateCoinInfo | [UpdateCoinInfoRequest](#sphinx-coininfo-v1-UpdateCoinInfoRequest) | [UpdateCoinInfoResponse](#sphinx-coininfo-v1-UpdateCoinInfoResponse) |  |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#sphinx.coininfo.v1.VersionResponse) |  |
+| CreateCoinInfo | [CreateCoinInfoRequest](#sphinx.coininfo.v1.CreateCoinInfoRequest) | [CreateCoinInfoResponse](#sphinx.coininfo.v1.CreateCoinInfoResponse) |  |
+| GetCoinInfo | [GetCoinInfoRequest](#sphinx.coininfo.v1.GetCoinInfoRequest) | [GetCoinInfoResponse](#sphinx.coininfo.v1.GetCoinInfoResponse) |  |
+| GetCoinInfos | [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest) | [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse) |  |
+| UpdateCoinInfo | [UpdateCoinInfoRequest](#sphinx.coininfo.v1.UpdateCoinInfoRequest) | [UpdateCoinInfoResponse](#sphinx.coininfo.v1.UpdateCoinInfoResponse) |  |
 
  
 
 
 
-<a name="npool_coininfo_coininfo-proto"></a>
+<a name="npool/coininfo/coininfo.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/coininfo/coininfo.proto
 
 
 
-<a name="sphinx-coininfo-v1-CoinInfo"></a>
+<a name="sphinx.coininfo.v1.CoinInfo"></a>
 
 ### CoinInfo
 
@@ -268,7 +268,7 @@
 
 
 
-<a name="sphinx-coininfo-v1-CreateCoinInfoRequest"></a>
+<a name="sphinx.coininfo.v1.CreateCoinInfoRequest"></a>
 
 ### CreateCoinInfoRequest
 
@@ -287,7 +287,7 @@
 
 
 
-<a name="sphinx-coininfo-v1-CreateCoinInfoResponse"></a>
+<a name="sphinx.coininfo.v1.CreateCoinInfoResponse"></a>
 
 ### CreateCoinInfoResponse
 
@@ -295,14 +295,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinInfo](#sphinx-coininfo-v1-CoinInfo) |  |  |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
 
 
 
 
 
 
-<a name="sphinx-coininfo-v1-GetCoinInfoRequest"></a>
+<a name="sphinx.coininfo.v1.GetCoinInfoRequest"></a>
 
 ### GetCoinInfoRequest
 
@@ -318,7 +318,7 @@
 
 
 
-<a name="sphinx-coininfo-v1-GetCoinInfoResponse"></a>
+<a name="sphinx.coininfo.v1.GetCoinInfoResponse"></a>
 
 ### GetCoinInfoResponse
 
@@ -326,14 +326,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinInfo](#sphinx-coininfo-v1-CoinInfo) |  |  |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
 
 
 
 
 
 
-<a name="sphinx-coininfo-v1-GetCoinInfosRequest"></a>
+<a name="sphinx.coininfo.v1.GetCoinInfosRequest"></a>
 
 ### GetCoinInfosRequest
 
@@ -351,7 +351,7 @@
 
 
 
-<a name="sphinx-coininfo-v1-GetCoinInfosResponse"></a>
+<a name="sphinx.coininfo.v1.GetCoinInfosResponse"></a>
 
 ### GetCoinInfosResponse
 
@@ -360,14 +360,14 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Total | [int32](#int32) |  |  |
-| Infos | [CoinInfo](#sphinx-coininfo-v1-CoinInfo) | repeated |  |
+| Infos | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) | repeated |  |
 
 
 
 
 
 
-<a name="sphinx-coininfo-v1-UpdateCoinInfoRequest"></a>
+<a name="sphinx.coininfo.v1.UpdateCoinInfoRequest"></a>
 
 ### UpdateCoinInfoRequest
 
@@ -386,7 +386,7 @@
 
 
 
-<a name="sphinx-coininfo-v1-UpdateCoinInfoResponse"></a>
+<a name="sphinx.coininfo.v1.UpdateCoinInfoResponse"></a>
 
 ### UpdateCoinInfoResponse
 
@@ -394,14 +394,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinInfo](#sphinx-coininfo-v1-CoinInfo) |  |  |
+| Info | [CoinInfo](#sphinx.coininfo.v1.CoinInfo) |  |  |
 
 
 
 
 
 
-<a name="sphinx-coininfo-v1-VersionResponse"></a>
+<a name="sphinx.coininfo.v1.VersionResponse"></a>
 
 ### VersionResponse
 
@@ -422,18 +422,18 @@
  
 
 
-<a name="sphinx-coininfo-v1-SphinxCoinInfo"></a>
+<a name="sphinx.coininfo.v1.SphinxCoinInfo"></a>
 
 ### SphinxCoinInfo
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [VersionResponse](#sphinx-coininfo-v1-VersionResponse) |  |
-| CreateCoinInfo | [CreateCoinInfoRequest](#sphinx-coininfo-v1-CreateCoinInfoRequest) | [CreateCoinInfoResponse](#sphinx-coininfo-v1-CreateCoinInfoResponse) |  |
-| GetCoinInfo | [GetCoinInfoRequest](#sphinx-coininfo-v1-GetCoinInfoRequest) | [GetCoinInfoResponse](#sphinx-coininfo-v1-GetCoinInfoResponse) |  |
-| GetCoinInfos | [GetCoinInfosRequest](#sphinx-coininfo-v1-GetCoinInfosRequest) | [GetCoinInfosResponse](#sphinx-coininfo-v1-GetCoinInfosResponse) |  |
-| UpdateCoinInfo | [UpdateCoinInfoRequest](#sphinx-coininfo-v1-UpdateCoinInfoRequest) | [UpdateCoinInfoResponse](#sphinx-coininfo-v1-UpdateCoinInfoResponse) |  |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#sphinx.coininfo.v1.VersionResponse) |  |
+| CreateCoinInfo | [CreateCoinInfoRequest](#sphinx.coininfo.v1.CreateCoinInfoRequest) | [CreateCoinInfoResponse](#sphinx.coininfo.v1.CreateCoinInfoResponse) |  |
+| GetCoinInfo | [GetCoinInfoRequest](#sphinx.coininfo.v1.GetCoinInfoRequest) | [GetCoinInfoResponse](#sphinx.coininfo.v1.GetCoinInfoResponse) |  |
+| GetCoinInfos | [GetCoinInfosRequest](#sphinx.coininfo.v1.GetCoinInfosRequest) | [GetCoinInfosResponse](#sphinx.coininfo.v1.GetCoinInfosResponse) |  |
+| UpdateCoinInfo | [UpdateCoinInfoRequest](#sphinx.coininfo.v1.UpdateCoinInfoRequest) | [UpdateCoinInfoResponse](#sphinx.coininfo.v1.UpdateCoinInfoResponse) |  |
 
  
 

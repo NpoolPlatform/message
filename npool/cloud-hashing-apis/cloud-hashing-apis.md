@@ -99,6 +99,8 @@
     - [UpdateEmailAddressResponse](#cloud.hashing.apis.v1.UpdateEmailAddressResponse)
     - [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest)
     - [UpdateKycResponse](#cloud.hashing.apis.v1.UpdateKycResponse)
+    - [UpdateKycReviewRequest](#cloud.hashing.apis.v1.UpdateKycReviewRequest)
+    - [UpdateKycReviewResponse](#cloud.hashing.apis.v1.UpdateKycReviewResponse)
     - [UpdatePasswordByAppUserRequest](#cloud.hashing.apis.v1.UpdatePasswordByAppUserRequest)
     - [UpdatePasswordByAppUserResponse](#cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse)
     - [UpdatePasswordRequest](#cloud.hashing.apis.v1.UpdatePasswordRequest)
@@ -213,6 +215,8 @@
     - [UpdateEmailAddressResponse](#cloud.hashing.apis.v1.UpdateEmailAddressResponse)
     - [UpdateKycRequest](#cloud.hashing.apis.v1.UpdateKycRequest)
     - [UpdateKycResponse](#cloud.hashing.apis.v1.UpdateKycResponse)
+    - [UpdateKycReviewRequest](#cloud.hashing.apis.v1.UpdateKycReviewRequest)
+    - [UpdateKycReviewResponse](#cloud.hashing.apis.v1.UpdateKycReviewResponse)
     - [UpdatePasswordByAppUserRequest](#cloud.hashing.apis.v1.UpdatePasswordByAppUserRequest)
     - [UpdatePasswordByAppUserResponse](#cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse)
     - [UpdatePasswordRequest](#cloud.hashing.apis.v1.UpdatePasswordRequest)
@@ -1760,6 +1764,36 @@ Request body and response
 
 
 
+<a name="cloud.hashing.apis.v1.UpdateKycReviewRequest"></a>
+
+### UpdateKycReviewRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Review | [review.service.v1.UpdateReviewRequest](#review.service.v1.UpdateReviewRequest) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.UpdateKycReviewResponse"></a>
+
+### UpdateKycReviewResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [review.service.v1.UpdateReviewResponse](#review.service.v1.UpdateReviewResponse) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.UpdatePasswordByAppUserRequest"></a>
 
 ### UpdatePasswordByAppUserRequest
@@ -2074,6 +2108,7 @@ Cloud Hashing Goods
 | GetWithdrawAddressesByAppUser | [GetWithdrawAddressesByAppUserRequest](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserRequest) | [GetWithdrawAddressesByAppUserResponse](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserResponse) |  |
 | GetCouponsByAppUser | [GetCouponsByAppUserRequest](#cloud.hashing.apis.v1.GetCouponsByAppUserRequest) | [GetCouponsByAppUserResponse](#cloud.hashing.apis.v1.GetCouponsByAppUserResponse) |  |
 | GetCommissionByAppUser | [GetCommissionByAppUserRequest](#cloud.hashing.apis.v1.GetCommissionByAppUserRequest) | [GetCommissionByAppUserResponse](#cloud.hashing.apis.v1.GetCommissionByAppUserResponse) |  |
+| UpdateKycReview | [UpdateKycReviewRequest](#cloud.hashing.apis.v1.UpdateKycReviewRequest) | [UpdateKycReviewResponse](#cloud.hashing.apis.v1.UpdateKycReviewResponse) |  |
 
  
 
@@ -3604,6 +3639,36 @@ Request body and response
 
 
 
+<a name="cloud.hashing.apis.v1.UpdateKycReviewRequest"></a>
+
+### UpdateKycReviewRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Review | [review.service.v1.UpdateReviewRequest](#review.service.v1.UpdateReviewRequest) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.apis.v1.UpdateKycReviewResponse"></a>
+
+### UpdateKycReviewResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [review.service.v1.UpdateReviewResponse](#review.service.v1.UpdateReviewResponse) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.UpdatePasswordByAppUserRequest"></a>
 
 ### UpdatePasswordByAppUserRequest
@@ -3918,6 +3983,7 @@ Cloud Hashing Goods
 | GetWithdrawAddressesByAppUser | [GetWithdrawAddressesByAppUserRequest](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserRequest) | [GetWithdrawAddressesByAppUserResponse](#cloud.hashing.apis.v1.GetWithdrawAddressesByAppUserResponse) |  |
 | GetCouponsByAppUser | [GetCouponsByAppUserRequest](#cloud.hashing.apis.v1.GetCouponsByAppUserRequest) | [GetCouponsByAppUserResponse](#cloud.hashing.apis.v1.GetCouponsByAppUserResponse) |  |
 | GetCommissionByAppUser | [GetCommissionByAppUserRequest](#cloud.hashing.apis.v1.GetCommissionByAppUserRequest) | [GetCommissionByAppUserResponse](#cloud.hashing.apis.v1.GetCommissionByAppUserResponse) |  |
+| UpdateKycReview | [UpdateKycReviewRequest](#cloud.hashing.apis.v1.UpdateKycReviewRequest) | [UpdateKycReviewResponse](#cloud.hashing.apis.v1.UpdateKycReviewResponse) |  |
 
  
 

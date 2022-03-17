@@ -3,24 +3,24 @@
 
 ## Table of Contents
 
-- [npool/sphinxsign/sphinxsign.proto](#npool_sphinxsign_sphinxsign-proto)
-    - [AccountInfo](#sphinx-sign-v1-AccountInfo)
+- [npool/sphinxsign/sphinxsign.proto](#npool/sphinxsign/sphinxsign.proto)
+    - [AccountInfo](#sphinx.sign.v1.AccountInfo)
   
-- [npool/sphinxsign/sphinxsign.proto](#npool_sphinxsign_sphinxsign-proto)
-    - [AccountInfo](#sphinx-sign-v1-AccountInfo)
+- [npool/sphinxsign/sphinxsign.proto](#npool/sphinxsign/sphinxsign.proto)
+    - [AccountInfo](#sphinx.sign.v1.AccountInfo)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool_sphinxsign_sphinxsign-proto"></a>
+<a name="npool/sphinxsign/sphinxsign.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/sphinxsign/sphinxsign.proto
 
 
 
-<a name="sphinx-sign-v1-AccountInfo"></a>
+<a name="sphinx.sign.v1.AccountInfo"></a>
 
 ### AccountInfo
 
@@ -45,14 +45,14 @@
 
 
 
-<a name="npool_sphinxsign_sphinxsign-proto"></a>
+<a name="npool/sphinxsign/sphinxsign.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/sphinxsign/sphinxsign.proto
 
 
 
-<a name="sphinx-sign-v1-AccountInfo"></a>
+<a name="sphinx.sign.v1.AccountInfo"></a>
 
 ### AccountInfo
 

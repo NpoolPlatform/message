@@ -3,44 +3,44 @@
 
 ## Table of Contents
 
-- [npool/logingateway/logingateway.proto](#npool_logingateway_logingateway-proto)
-    - [GetLoginHistoriesRequest](#login-gateway-v1-GetLoginHistoriesRequest)
-    - [GetLoginHistoriesResponse](#login-gateway-v1-GetLoginHistoriesResponse)
-    - [LoginHistory](#login-gateway-v1-LoginHistory)
-    - [LoginRequest](#login-gateway-v1-LoginRequest)
-    - [LoginResponse](#login-gateway-v1-LoginResponse)
-    - [LoginedRequest](#login-gateway-v1-LoginedRequest)
-    - [LoginedResponse](#login-gateway-v1-LoginedResponse)
-    - [LogoutRequest](#login-gateway-v1-LogoutRequest)
-    - [LogoutResponse](#login-gateway-v1-LogoutResponse)
+- [npool/logingateway/logingateway.proto](#npool/logingateway/logingateway.proto)
+    - [GetLoginHistoriesRequest](#login.gateway.v1.GetLoginHistoriesRequest)
+    - [GetLoginHistoriesResponse](#login.gateway.v1.GetLoginHistoriesResponse)
+    - [LoginHistory](#login.gateway.v1.LoginHistory)
+    - [LoginRequest](#login.gateway.v1.LoginRequest)
+    - [LoginResponse](#login.gateway.v1.LoginResponse)
+    - [LoginedRequest](#login.gateway.v1.LoginedRequest)
+    - [LoginedResponse](#login.gateway.v1.LoginedResponse)
+    - [LogoutRequest](#login.gateway.v1.LogoutRequest)
+    - [LogoutResponse](#login.gateway.v1.LogoutResponse)
   
-    - [LoginGateway](#login-gateway-v1-LoginGateway)
+    - [LoginGateway](#login.gateway.v1.LoginGateway)
   
-- [npool/logingateway/logingateway.proto](#npool_logingateway_logingateway-proto)
-    - [GetLoginHistoriesRequest](#login-gateway-v1-GetLoginHistoriesRequest)
-    - [GetLoginHistoriesResponse](#login-gateway-v1-GetLoginHistoriesResponse)
-    - [LoginHistory](#login-gateway-v1-LoginHistory)
-    - [LoginRequest](#login-gateway-v1-LoginRequest)
-    - [LoginResponse](#login-gateway-v1-LoginResponse)
-    - [LoginedRequest](#login-gateway-v1-LoginedRequest)
-    - [LoginedResponse](#login-gateway-v1-LoginedResponse)
-    - [LogoutRequest](#login-gateway-v1-LogoutRequest)
-    - [LogoutResponse](#login-gateway-v1-LogoutResponse)
+- [npool/logingateway/logingateway.proto](#npool/logingateway/logingateway.proto)
+    - [GetLoginHistoriesRequest](#login.gateway.v1.GetLoginHistoriesRequest)
+    - [GetLoginHistoriesResponse](#login.gateway.v1.GetLoginHistoriesResponse)
+    - [LoginHistory](#login.gateway.v1.LoginHistory)
+    - [LoginRequest](#login.gateway.v1.LoginRequest)
+    - [LoginResponse](#login.gateway.v1.LoginResponse)
+    - [LoginedRequest](#login.gateway.v1.LoginedRequest)
+    - [LoginedResponse](#login.gateway.v1.LoginedResponse)
+    - [LogoutRequest](#login.gateway.v1.LogoutRequest)
+    - [LogoutResponse](#login.gateway.v1.LogoutResponse)
   
-    - [LoginGateway](#login-gateway-v1-LoginGateway)
+    - [LoginGateway](#login.gateway.v1.LoginGateway)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool_logingateway_logingateway-proto"></a>
+<a name="npool/logingateway/logingateway.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/logingateway/logingateway.proto
 
 
 
-<a name="login-gateway-v1-GetLoginHistoriesRequest"></a>
+<a name="login.gateway.v1.GetLoginHistoriesRequest"></a>
 
 ### GetLoginHistoriesRequest
 
@@ -50,14 +50,14 @@
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
-| PageInfo | [npool.v1.PageInfo](#npool-v1-PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
 
 
 
-<a name="login-gateway-v1-GetLoginHistoriesResponse"></a>
+<a name="login.gateway.v1.GetLoginHistoriesResponse"></a>
 
 ### GetLoginHistoriesResponse
 
@@ -65,14 +65,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [LoginHistory](#login-gateway-v1-LoginHistory) | repeated |  |
+| Infos | [LoginHistory](#login.gateway.v1.LoginHistory) | repeated |  |
 
 
 
 
 
 
-<a name="login-gateway-v1-LoginHistory"></a>
+<a name="login.gateway.v1.LoginHistory"></a>
 
 ### LoginHistory
 
@@ -93,7 +93,7 @@
 
 
 
-<a name="login-gateway-v1-LoginRequest"></a>
+<a name="login.gateway.v1.LoginRequest"></a>
 
 ### LoginRequest
 
@@ -114,7 +114,7 @@
 
 
 
-<a name="login-gateway-v1-LoginResponse"></a>
+<a name="login.gateway.v1.LoginResponse"></a>
 
 ### LoginResponse
 
@@ -122,7 +122,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+| Info | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 | Token | [string](#string) |  |  |
 
 
@@ -130,7 +130,7 @@
 
 
 
-<a name="login-gateway-v1-LoginedRequest"></a>
+<a name="login.gateway.v1.LoginedRequest"></a>
 
 ### LoginedRequest
 
@@ -147,7 +147,7 @@
 
 
 
-<a name="login-gateway-v1-LoginedResponse"></a>
+<a name="login.gateway.v1.LoginedResponse"></a>
 
 ### LoginedResponse
 
@@ -155,14 +155,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+| Info | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 
 
 
 
 
 
-<a name="login-gateway-v1-LogoutRequest"></a>
+<a name="login.gateway.v1.LogoutRequest"></a>
 
 ### LogoutRequest
 
@@ -178,7 +178,7 @@
 
 
 
-<a name="login-gateway-v1-LogoutResponse"></a>
+<a name="login.gateway.v1.LogoutResponse"></a>
 
 ### LogoutResponse
 
@@ -186,7 +186,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+| Info | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 
 
 
@@ -199,31 +199,31 @@
  
 
 
-<a name="login-gateway-v1-LoginGateway"></a>
+<a name="login.gateway.v1.LoginGateway"></a>
 
 ### LoginGateway
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
-| Login | [LoginRequest](#login-gateway-v1-LoginRequest) | [LoginResponse](#login-gateway-v1-LoginResponse) |  |
-| Logined | [LoginedRequest](#login-gateway-v1-LoginedRequest) | [LoginedResponse](#login-gateway-v1-LoginedResponse) |  |
-| Logout | [LogoutRequest](#login-gateway-v1-LogoutRequest) | [LogoutResponse](#login-gateway-v1-LogoutResponse) |  |
-| GetLoginHistories | [GetLoginHistoriesRequest](#login-gateway-v1-GetLoginHistoriesRequest) | [GetLoginHistoriesResponse](#login-gateway-v1-GetLoginHistoriesResponse) |  |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) |  |
+| Login | [LoginRequest](#login.gateway.v1.LoginRequest) | [LoginResponse](#login.gateway.v1.LoginResponse) |  |
+| Logined | [LoginedRequest](#login.gateway.v1.LoginedRequest) | [LoginedResponse](#login.gateway.v1.LoginedResponse) |  |
+| Logout | [LogoutRequest](#login.gateway.v1.LogoutRequest) | [LogoutResponse](#login.gateway.v1.LogoutResponse) |  |
+| GetLoginHistories | [GetLoginHistoriesRequest](#login.gateway.v1.GetLoginHistoriesRequest) | [GetLoginHistoriesResponse](#login.gateway.v1.GetLoginHistoriesResponse) |  |
 
  
 
 
 
-<a name="npool_logingateway_logingateway-proto"></a>
+<a name="npool/logingateway/logingateway.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/logingateway/logingateway.proto
 
 
 
-<a name="login-gateway-v1-GetLoginHistoriesRequest"></a>
+<a name="login.gateway.v1.GetLoginHistoriesRequest"></a>
 
 ### GetLoginHistoriesRequest
 
@@ -233,14 +233,14 @@
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
-| PageInfo | [npool.v1.PageInfo](#npool-v1-PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
 
 
 
 
 
 
-<a name="login-gateway-v1-GetLoginHistoriesResponse"></a>
+<a name="login.gateway.v1.GetLoginHistoriesResponse"></a>
 
 ### GetLoginHistoriesResponse
 
@@ -248,14 +248,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [LoginHistory](#login-gateway-v1-LoginHistory) | repeated |  |
+| Infos | [LoginHistory](#login.gateway.v1.LoginHistory) | repeated |  |
 
 
 
 
 
 
-<a name="login-gateway-v1-LoginHistory"></a>
+<a name="login.gateway.v1.LoginHistory"></a>
 
 ### LoginHistory
 
@@ -276,7 +276,7 @@
 
 
 
-<a name="login-gateway-v1-LoginRequest"></a>
+<a name="login.gateway.v1.LoginRequest"></a>
 
 ### LoginRequest
 
@@ -297,7 +297,7 @@
 
 
 
-<a name="login-gateway-v1-LoginResponse"></a>
+<a name="login.gateway.v1.LoginResponse"></a>
 
 ### LoginResponse
 
@@ -305,7 +305,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+| Info | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 | Token | [string](#string) |  |  |
 
 
@@ -313,7 +313,7 @@
 
 
 
-<a name="login-gateway-v1-LoginedRequest"></a>
+<a name="login.gateway.v1.LoginedRequest"></a>
 
 ### LoginedRequest
 
@@ -330,7 +330,7 @@
 
 
 
-<a name="login-gateway-v1-LoginedResponse"></a>
+<a name="login.gateway.v1.LoginedResponse"></a>
 
 ### LoginedResponse
 
@@ -338,14 +338,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+| Info | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 
 
 
 
 
 
-<a name="login-gateway-v1-LogoutRequest"></a>
+<a name="login.gateway.v1.LogoutRequest"></a>
 
 ### LogoutRequest
 
@@ -361,7 +361,7 @@
 
 
 
-<a name="login-gateway-v1-LogoutResponse"></a>
+<a name="login.gateway.v1.LogoutResponse"></a>
 
 ### LogoutResponse
 
@@ -369,7 +369,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+| Info | [app.user.manager.v1.AppUserInfo](#app.user.manager.v1.AppUserInfo) |  |  |
 
 
 
@@ -382,18 +382,18 @@
  
 
 
-<a name="login-gateway-v1-LoginGateway"></a>
+<a name="login.gateway.v1.LoginGateway"></a>
 
 ### LoginGateway
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
-| Login | [LoginRequest](#login-gateway-v1-LoginRequest) | [LoginResponse](#login-gateway-v1-LoginResponse) |  |
-| Logined | [LoginedRequest](#login-gateway-v1-LoginedRequest) | [LoginedResponse](#login-gateway-v1-LoginedResponse) |  |
-| Logout | [LogoutRequest](#login-gateway-v1-LogoutRequest) | [LogoutResponse](#login-gateway-v1-LogoutResponse) |  |
-| GetLoginHistories | [GetLoginHistoriesRequest](#login-gateway-v1-GetLoginHistoriesRequest) | [GetLoginHistoriesResponse](#login-gateway-v1-GetLoginHistoriesResponse) |  |
+| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) |  |
+| Login | [LoginRequest](#login.gateway.v1.LoginRequest) | [LoginResponse](#login.gateway.v1.LoginResponse) |  |
+| Logined | [LoginedRequest](#login.gateway.v1.LoginedRequest) | [LoginedResponse](#login.gateway.v1.LoginedResponse) |  |
+| Logout | [LogoutRequest](#login.gateway.v1.LogoutRequest) | [LogoutResponse](#login.gateway.v1.LogoutResponse) |  |
+| GetLoginHistories | [GetLoginHistoriesRequest](#login.gateway.v1.GetLoginHistoriesRequest) | [GetLoginHistoriesResponse](#login.gateway.v1.GetLoginHistoriesResponse) |  |
 
  
 
