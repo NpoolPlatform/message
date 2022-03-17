@@ -1261,12 +1261,12 @@
     },
     "/v1/update/review": {
       "post": {
-        "operationId": "CloudHashingApis_UpdateReview",
+        "operationId": "CloudHashingApis_UpdateKycReview",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateReviewResponse"
+              "$ref": "#/definitions/v1UpdateKycReviewResponse"
             }
           },
           "default": {
@@ -1282,7 +1282,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateReviewRequest"
+              "$ref": "#/definitions/v1UpdateKycReviewRequest"
             }
           }
         ],
@@ -3486,6 +3486,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserInfo"
+        }
+      }
+    },
+    "v1UpdateKycReviewRequest": {
+      "type": "object",
+      "properties": {
+        "Review": {
+          "$ref": "#/definitions/v1UpdateReviewRequest"
+        }
+      }
+    },
+    "v1UpdateKycReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UpdateReviewResponse"
         }
       }
     },

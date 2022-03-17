@@ -285,7 +285,7 @@ service CloudHashingApis {
         };
     }
 
-    rpc UpdateReview(review.service.v1.UpdateReviewRequest) returns (review.service.v1.UpdateReviewResponse) {
+    rpc UpdateKycReview(UpdateKycReviewRequest) returns (UpdateKycReviewResponse) {
         option (google.api.http) = {
             post: "/v1/update/review"
             body: "*"
@@ -819,4 +819,12 @@ message GetCommissionByAppUserRequest {
 
 message GetCommissionByAppUserResponse {
     Commission Info = 10;
+}
+
+message UpdateKycReviewRequest {
+    review.service.v1.UpdateReviewRequest Review = 10;
+}
+
+message UpdateKycReviewResponse {
+    review.service.v1.UpdateReviewResponse Info = 10;
 }

@@ -537,6 +537,14 @@ export type GetCommissionByAppUserResponse = {
   info?: Commission
 }
 
+export type UpdateKycReviewRequest = {
+  review?: ReviewServiceV1Review-service.UpdateReviewRequest
+}
+
+export type UpdateKycReviewResponse = {
+  info?: ReviewServiceV1Review-service.UpdateReviewResponse
+}
+
 export class CloudHashingApis {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -664,7 +672,7 @@ export class CloudHashingApis {
   static GetCommissionByAppUser(req: GetCommissionByAppUserRequest, initReq?: fm.InitReq): Promise<GetCommissionByAppUserResponse> {
     return fm.fetchReq<GetCommissionByAppUserRequest, GetCommissionByAppUserResponse>(`/v1/get/commission/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static UpdateReview(req: ReviewServiceV1Review-service.UpdateReviewRequest, initReq?: fm.InitReq): Promise<ReviewServiceV1Review-service.UpdateReviewResponse> {
-    return fm.fetchReq<ReviewServiceV1Review-service.UpdateReviewRequest, ReviewServiceV1Review-service.UpdateReviewResponse>(`/v1/update/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static UpdateKycReview(req: UpdateKycReviewRequest, initReq?: fm.InitReq): Promise<UpdateKycReviewResponse> {
+    return fm.fetchReq<UpdateKycReviewRequest, UpdateKycReviewResponse>(`/v1/update/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
