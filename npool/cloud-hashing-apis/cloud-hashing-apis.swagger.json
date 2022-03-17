@@ -1163,6 +1163,38 @@
         ]
       }
     },
+    "/v1/update/kyc/review": {
+      "post": {
+        "operationId": "CloudHashingApis_UpdateKycReview",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateKycReviewResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateKycReviewRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/update/password": {
       "post": {
         "operationId": "CloudHashingApis_UpdatePassword",
@@ -3457,6 +3489,22 @@
         }
       }
     },
+    "v1UpdateKycReviewRequest": {
+      "type": "object",
+      "properties": {
+        "Review": {
+          "$ref": "#/definitions/v1UpdateReviewRequest"
+        }
+      }
+    },
+    "v1UpdateKycReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UpdateReviewResponse"
+        }
+      }
+    },
     "v1UpdatePasswordByAppUserRequest": {
       "type": "object",
       "properties": {
@@ -3550,6 +3598,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserInfo"
+        }
+      }
+    },
+    "v1UpdateReviewRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Review"
+        }
+      }
+    },
+    "v1UpdateReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Review"
         }
       }
     },
