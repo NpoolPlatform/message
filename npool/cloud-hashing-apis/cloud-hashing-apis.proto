@@ -287,7 +287,7 @@ service CloudHashingApis {
 
     rpc UpdateKycReview(UpdateKycReviewRequest) returns (UpdateKycReviewResponse) {
         option (google.api.http) = {
-            post: "/v1/update/review"
+            post: "/v1/update/kyc/review"
             body: "*"
         };
     }
@@ -821,10 +821,23 @@ message GetCommissionByAppUserResponse {
     Commission Info = 10;
 }
 
+message Review {
+    string ID = 10;
+    string ObjectType = 20;
+    string AppID = 30;
+    string ReviewerID = 40;
+    string State = 50;
+    string Message = 60;
+    string ObjectID = 70;
+    string Domain = 80;
+    uint32 CreateAt = 90;
+    string Trigger = 100;
+}
+
 message UpdateKycReviewRequest {
-    review.service.v1.UpdateReviewRequest Review = 10;
+    Review Info = 10;
 }
 
 message UpdateKycReviewResponse {
-    review.service.v1.UpdateReviewResponse Info = 10;
+    Review Info = 10;
 }
