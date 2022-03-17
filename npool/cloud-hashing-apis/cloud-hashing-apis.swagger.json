@@ -1163,6 +1163,38 @@
         ]
       }
     },
+    "/v1/update/kyc/review": {
+      "post": {
+        "operationId": "CloudHashingApis_UpdateKycReview",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateKycReviewResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateKycReviewRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/update/password": {
       "post": {
         "operationId": "CloudHashingApis_UpdatePassword",
@@ -1251,38 +1283,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1UpdatePhoneNORequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/update/review": {
-      "post": {
-        "operationId": "CloudHashingApis_UpdateKycReview",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateKycReviewResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateKycReviewRequest"
             }
           }
         ],
@@ -1650,6 +1650,42 @@
         }
       }
     },
+    "hashingapisv1Review": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "ObjectType": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "ReviewerID": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "ObjectID": {
+          "type": "string"
+        },
+        "Domain": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Trigger": {
+          "type": "string"
+        }
+      }
+    },
     "hashingapisv1UpdateKycRequest": {
       "type": "object",
       "properties": {
@@ -1778,6 +1814,42 @@
         "value": {
           "type": "string",
           "format": "byte"
+        }
+      }
+    },
+    "reviewservicev1Review": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "ObjectType": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "ReviewerID": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "ObjectID": {
+          "type": "string"
+        },
+        "Domain": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Trigger": {
+          "type": "string"
         }
       }
     },
@@ -2780,7 +2852,7 @@
         "Reviews": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Review"
+            "$ref": "#/definitions/reviewservicev1Review"
           }
         },
         "Sold": {
@@ -2952,7 +3024,7 @@
       "type": "object",
       "properties": {
         "Review": {
-          "$ref": "#/definitions/v1Review"
+          "$ref": "#/definitions/reviewservicev1Review"
         },
         "CreatedBy": {
           "$ref": "#/definitions/v1AppUserInfo"
@@ -3098,7 +3170,7 @@
       "type": "object",
       "properties": {
         "Review": {
-          "$ref": "#/definitions/v1Review"
+          "$ref": "#/definitions/reviewservicev1Review"
         },
         "User": {
           "$ref": "#/definitions/v1AppUserInfo"
@@ -3272,42 +3344,6 @@
           "type": "string"
         },
         "Message": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Review": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "ObjectType": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "ReviewerID": {
-          "type": "string"
-        },
-        "State": {
-          "type": "string"
-        },
-        "Message": {
-          "type": "string"
-        },
-        "ObjectID": {
-          "type": "string"
-        },
-        "Domain": {
-          "type": "string"
-        },
-        "CreateAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Trigger": {
           "type": "string"
         }
       }
@@ -3492,8 +3528,8 @@
     "v1UpdateKycReviewRequest": {
       "type": "object",
       "properties": {
-        "Review": {
-          "$ref": "#/definitions/v1UpdateReviewRequest"
+        "Info": {
+          "$ref": "#/definitions/hashingapisv1Review"
         }
       }
     },
@@ -3501,7 +3537,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UpdateReviewResponse"
+          "$ref": "#/definitions/hashingapisv1Review"
         }
       }
     },
@@ -3601,22 +3637,6 @@
         }
       }
     },
-    "v1UpdateReviewRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Review"
-        }
-      }
-    },
-    "v1UpdateReviewResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Review"
-        }
-      }
-    },
     "v1UpdateUserWithdrawReviewForOtherAppUserRequest": {
       "type": "object",
       "properties": {
@@ -3632,7 +3652,7 @@
           "title": "Target"
         },
         "Info": {
-          "$ref": "#/definitions/v1Review"
+          "$ref": "#/definitions/reviewservicev1Review"
         }
       }
     },
@@ -3655,7 +3675,7 @@
           "type": "string"
         },
         "Info": {
-          "$ref": "#/definitions/v1Review"
+          "$ref": "#/definitions/reviewservicev1Review"
         }
       }
     },
@@ -3782,7 +3802,7 @@
       "type": "object",
       "properties": {
         "Review": {
-          "$ref": "#/definitions/v1Review"
+          "$ref": "#/definitions/reviewservicev1Review"
         },
         "User": {
           "$ref": "#/definitions/v1AppUserInfo"
@@ -3799,7 +3819,7 @@
       "type": "object",
       "properties": {
         "Review": {
-          "$ref": "#/definitions/v1Review"
+          "$ref": "#/definitions/reviewservicev1Review"
         },
         "User": {
           "$ref": "#/definitions/v1AppUserInfo"

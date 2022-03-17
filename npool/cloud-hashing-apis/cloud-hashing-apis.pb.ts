@@ -537,12 +537,25 @@ export type GetCommissionByAppUserResponse = {
   info?: Commission
 }
 
+export type Review = {
+  id?: string
+  objectType?: string
+  appID?: string
+  reviewerID?: string
+  state?: string
+  message?: string
+  objectID?: string
+  domain?: string
+  createAt?: number
+  trigger?: string
+}
+
 export type UpdateKycReviewRequest = {
-  review?: ReviewServiceV1Review-service.UpdateReviewRequest
+  info?: Review
 }
 
 export type UpdateKycReviewResponse = {
-  info?: ReviewServiceV1Review-service.UpdateReviewResponse
+  info?: Review
 }
 
 export class CloudHashingApis {
@@ -673,6 +686,6 @@ export class CloudHashingApis {
     return fm.fetchReq<GetCommissionByAppUserRequest, GetCommissionByAppUserResponse>(`/v1/get/commission/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateKycReview(req: UpdateKycReviewRequest, initReq?: fm.InitReq): Promise<UpdateKycReviewResponse> {
-    return fm.fetchReq<UpdateKycReviewRequest, UpdateKycReviewResponse>(`/v1/update/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateKycReviewRequest, UpdateKycReviewResponse>(`/v1/update/kyc/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
