@@ -1547,6 +1547,7 @@ Request body and response
 | USDAmount | [double](#double) |  |  |
 | SubUSDAmount | [double](#double) |  |  |
 | Kol | [bool](#bool) |  |  |
+| InvitedCount | [uint32](#uint32) |  |  |
 
 
 
@@ -3422,6 +3423,7 @@ Request body and response
 | USDAmount | [double](#double) |  |  |
 | SubUSDAmount | [double](#double) |  |  |
 | Kol | [bool](#bool) |  |  |
+| InvitedCount | [uint32](#uint32) |  |  |
 
 
 

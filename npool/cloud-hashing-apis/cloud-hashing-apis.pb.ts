@@ -274,6 +274,7 @@ export type Referral = {
   uSDAmount?: number
   subUSDAmount?: number
   kol?: boolean
+  invitedCount?: number
 }
 
 export type GetReferralsRequest = {

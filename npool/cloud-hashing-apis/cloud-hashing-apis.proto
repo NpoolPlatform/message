@@ -566,6 +566,7 @@ message Referral {
     double USDAmount = 40;
     double SubUSDAmount = 50;
     bool Kol = 60;
+    uint32 InvitedCount = 70;
 }
 
 message GetReferralsRequest {
