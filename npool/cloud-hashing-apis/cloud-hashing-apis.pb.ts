@@ -566,11 +566,11 @@ export type GetCommissionByAppUserResponse = {
 }
 
 export type UpdateKycReviewRequest = {
-  review?: ReviewServiceV1Review-service.UpdateReviewRequest
+  info?: ReviewServiceV1Review-service.Review
 }
 
 export type UpdateKycReviewResponse = {
-  info?: ReviewServiceV1Review-service.UpdateReviewResponse
+  info?: KycReview
 }
 
 export class CloudHashingApis {

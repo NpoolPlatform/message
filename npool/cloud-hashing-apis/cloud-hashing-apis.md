@@ -1773,7 +1773,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Review | [review.service.v1.UpdateReviewRequest](#review.service.v1.UpdateReviewRequest) |  |  |
+| Info | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 
 
 
@@ -1788,7 +1788,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [review.service.v1.UpdateReviewResponse](#review.service.v1.UpdateReviewResponse) |  |  |
+| Info | [KycReview](#cloud.hashing.apis.v1.KycReview) |  |  |
 
 
 
@@ -3649,7 +3649,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Review | [review.service.v1.UpdateReviewRequest](#review.service.v1.UpdateReviewRequest) |  |  |
+| Info | [review.service.v1.Review](#review.service.v1.Review) |  |  |
 
 
 
@@ -3664,7 +3664,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [review.service.v1.UpdateReviewResponse](#review.service.v1.UpdateReviewResponse) |  |  |
+| Info | [KycReview](#cloud.hashing.apis.v1.KycReview) |  |  |
 
 
 
