@@ -43,6 +43,7 @@ export type AppCommissionSetting = {
   level?: number
   invitationDiscount?: boolean
   uniqueSetting?: boolean
+  kPISetting?: boolean
 }
 
 export type CreateAppCommissionSettingRequest = {

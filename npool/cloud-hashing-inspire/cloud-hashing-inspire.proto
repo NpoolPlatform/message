@@ -672,6 +672,7 @@ message AppCommissionSetting {
     uint32 Level = 40;
     bool InvitationDiscount = 50;
     bool UniqueSetting = 60;
+    bool KPISetting = 70;
 }
 
 message CreateAppCommissionSettingRequest {

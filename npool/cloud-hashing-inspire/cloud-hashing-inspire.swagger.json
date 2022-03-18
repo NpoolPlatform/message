@@ -3328,6 +3328,9 @@
         },
         "UniqueSetting": {
           "type": "boolean"
+        },
+        "KPISetting": {
+          "type": "boolean"
         }
       }
     },

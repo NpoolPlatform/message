@@ -489,6 +489,7 @@
 | Level | [uint32](#uint32) |  |  |
 | InvitationDiscount | [bool](#bool) |  |  |
 | UniqueSetting | [bool](#bool) |  |  |
+| KPISetting | [bool](#bool) |  |  |
 
 
 
@@ -3961,6 +3962,7 @@ Service Name
 | Level | [uint32](#uint32) |  |  |
 | InvitationDiscount | [bool](#bool) |  |  |
 | UniqueSetting | [bool](#bool) |  |  |
+| KPISetting | [bool](#bool) |  |  |
 
 
 
