@@ -3646,8 +3646,8 @@
     "v1UpdateKycReviewRequest": {
       "type": "object",
       "properties": {
-        "Review": {
-          "$ref": "#/definitions/v1UpdateReviewRequest"
+        "Info": {
+          "$ref": "#/definitions/v1Review"
         }
       }
     },
@@ -3655,7 +3655,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UpdateReviewResponse"
+          "$ref": "#/definitions/v1KycReview"
         }
       }
     },
@@ -3752,22 +3752,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserInfo"
-        }
-      }
-    },
-    "v1UpdateReviewRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Review"
-        }
-      }
-    },
-    "v1UpdateReviewResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Review"
         }
       }
     },

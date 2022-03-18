@@ -862,9 +862,9 @@ message GetCommissionByAppUserResponse {
 }
 
 message UpdateKycReviewRequest {
-    review.service.v1.UpdateReviewRequest Review = 10;
+    review.service.v1.Review Info = 10;
 }
 
 message UpdateKycReviewResponse {
-    review.service.v1.UpdateReviewResponse Info = 10;
+    KycReview Info = 10;
 }
