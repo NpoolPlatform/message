@@ -2114,6 +2114,9 @@
         "CoinTypeID": {
           "type": "string"
         },
+        "CoinName": {
+          "type": "string"
+        },
         "Units": {
           "type": "integer",
           "format": "int64"

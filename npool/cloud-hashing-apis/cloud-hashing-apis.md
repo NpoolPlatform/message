@@ -233,6 +233,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinTypeID | [string](#string) |  |  |
+| CoinName | [string](#string) |  |  |
 | Units | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
 | Unit | [string](#string) |  |  |
@@ -1921,6 +1922,7 @@ Cloud Hashing Goods
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinTypeID | [string](#string) |  |  |
+| CoinName | [string](#string) |  |  |
 | Units | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
 | Unit | [string](#string) |  |  |

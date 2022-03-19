@@ -216,6 +216,7 @@ export type UpdatePhoneNOResponse = {
 
 export type CoinSummary = {
   coinTypeID?: string
+  coinName?: string
   units?: number
   amount?: number
   unit?: string

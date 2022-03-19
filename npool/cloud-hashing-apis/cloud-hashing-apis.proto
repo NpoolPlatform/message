@@ -495,9 +495,10 @@ message UpdatePhoneNOResponse {
 
 message CoinSummary {
     string CoinTypeID = 10;
-    uint32 Units = 20;
-    double Amount = 30;
-    string Unit = 40;
+    string CoinName = 20;
+    uint32 Units = 30;
+    double Amount = 40;
+    string Unit = 50;
 }
 
 message Referral {
