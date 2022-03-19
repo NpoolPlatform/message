@@ -40,12 +40,6 @@
     - [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse)
     - [GetLayeredReferralsRequest](#cloud.hashing.apis.v1.GetLayeredReferralsRequest)
     - [GetLayeredReferralsResponse](#cloud.hashing.apis.v1.GetLayeredReferralsResponse)
-    - [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest)
-    - [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse)
-    - [GetMyDirectInvitationsResponse.InfosEntry](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry)
-    - [GetMyInvitationsRequest](#cloud.hashing.apis.v1.GetMyInvitationsRequest)
-    - [GetMyInvitationsResponse](#cloud.hashing.apis.v1.GetMyInvitationsResponse)
-    - [GetMyInvitationsResponse.InfosEntry](#cloud.hashing.apis.v1.GetMyInvitationsResponse.InfosEntry)
     - [GetOrderRequest](#cloud.hashing.apis.v1.GetOrderRequest)
     - [GetOrderResponse](#cloud.hashing.apis.v1.GetOrderResponse)
     - [GetOrdersByAppRequest](#cloud.hashing.apis.v1.GetOrdersByAppRequest)
@@ -76,11 +70,7 @@
     - [GetWithdrawReviewsResponse](#cloud.hashing.apis.v1.GetWithdrawReviewsResponse)
     - [Good](#cloud.hashing.apis.v1.Good)
     - [GoodReview](#cloud.hashing.apis.v1.GoodReview)
-    - [Invitation](#cloud.hashing.apis.v1.Invitation)
     - [InvitationSummary](#cloud.hashing.apis.v1.InvitationSummary)
-    - [InvitationUserInfo](#cloud.hashing.apis.v1.InvitationUserInfo)
-    - [InvitationUserInfo.MySummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry)
-    - [InvitationUserInfo.SummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry)
     - [Kyc](#cloud.hashing.apis.v1.Kyc)
     - [KycReview](#cloud.hashing.apis.v1.KycReview)
     - [Order](#cloud.hashing.apis.v1.Order)
@@ -156,12 +146,6 @@
     - [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse)
     - [GetLayeredReferralsRequest](#cloud.hashing.apis.v1.GetLayeredReferralsRequest)
     - [GetLayeredReferralsResponse](#cloud.hashing.apis.v1.GetLayeredReferralsResponse)
-    - [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest)
-    - [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse)
-    - [GetMyDirectInvitationsResponse.InfosEntry](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry)
-    - [GetMyInvitationsRequest](#cloud.hashing.apis.v1.GetMyInvitationsRequest)
-    - [GetMyInvitationsResponse](#cloud.hashing.apis.v1.GetMyInvitationsResponse)
-    - [GetMyInvitationsResponse.InfosEntry](#cloud.hashing.apis.v1.GetMyInvitationsResponse.InfosEntry)
     - [GetOrderRequest](#cloud.hashing.apis.v1.GetOrderRequest)
     - [GetOrderResponse](#cloud.hashing.apis.v1.GetOrderResponse)
     - [GetOrdersByAppRequest](#cloud.hashing.apis.v1.GetOrdersByAppRequest)
@@ -192,11 +176,7 @@
     - [GetWithdrawReviewsResponse](#cloud.hashing.apis.v1.GetWithdrawReviewsResponse)
     - [Good](#cloud.hashing.apis.v1.Good)
     - [GoodReview](#cloud.hashing.apis.v1.GoodReview)
-    - [Invitation](#cloud.hashing.apis.v1.Invitation)
     - [InvitationSummary](#cloud.hashing.apis.v1.InvitationSummary)
-    - [InvitationUserInfo](#cloud.hashing.apis.v1.InvitationUserInfo)
-    - [InvitationUserInfo.MySummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry)
-    - [InvitationUserInfo.SummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry)
     - [Kyc](#cloud.hashing.apis.v1.Kyc)
     - [KycReview](#cloud.hashing.apis.v1.KycReview)
     - [Order](#cloud.hashing.apis.v1.Order)
@@ -798,102 +778,6 @@
 
 
 
-<a name="cloud.hashing.apis.v1.GetMyDirectInvitationsRequest"></a>
-
-### GetMyDirectInvitationsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.GetMyDirectInvitationsResponse"></a>
-
-### GetMyDirectInvitationsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| MySelf | [InvitationUserInfo](#cloud.hashing.apis.v1.InvitationUserInfo) |  |  |
-| Infos | [GetMyDirectInvitationsResponse.InfosEntry](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry) | repeated |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry"></a>
-
-### GetMyDirectInvitationsResponse.InfosEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [Invitation](#cloud.hashing.apis.v1.Invitation) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.GetMyInvitationsRequest"></a>
-
-### GetMyInvitationsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.GetMyInvitationsResponse"></a>
-
-### GetMyInvitationsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| MySelf | [InvitationUserInfo](#cloud.hashing.apis.v1.InvitationUserInfo) |  |  |
-| Infos | [GetMyInvitationsResponse.InfosEntry](#cloud.hashing.apis.v1.GetMyInvitationsResponse.InfosEntry) | repeated |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.GetMyInvitationsResponse.InfosEntry"></a>
-
-### GetMyInvitationsResponse.InfosEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [Invitation](#cloud.hashing.apis.v1.Invitation) |  |  |
-
-
-
-
-
-
 <a name="cloud.hashing.apis.v1.GetOrderRequest"></a>
 
 ### GetOrderRequest
@@ -1354,21 +1238,6 @@ Request body and response
 
 
 
-<a name="cloud.hashing.apis.v1.Invitation"></a>
-
-### Invitation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Invitees | [InvitationUserInfo](#cloud.hashing.apis.v1.InvitationUserInfo) | repeated |  |
-
-
-
-
-
-
 <a name="cloud.hashing.apis.v1.InvitationSummary"></a>
 
 ### InvitationSummary
@@ -1379,64 +1248,6 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | Units | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.InvitationUserInfo"></a>
-
-### InvitationUserInfo
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| UserID | [string](#string) |  |  |
-| Username | [string](#string) |  |  |
-| Avatar | [string](#string) |  |  |
-| EmailAddress | [string](#string) |  |  |
-| Kol | [bool](#bool) |  |  |
-| Summarys | [InvitationUserInfo.SummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry) | repeated |  |
-| MySummarys | [InvitationUserInfo.MySummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry) | repeated |  |
-| InvitedCount | [uint32](#uint32) |  |  |
-| JoinDate | [uint32](#uint32) |  |  |
-| MyCommissions | [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount) | repeated |  |
-| Commissions | [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount) | repeated |  |
-| CommissionAmount | [double](#double) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry"></a>
-
-### InvitationUserInfo.MySummarysEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [InvitationSummary](#cloud.hashing.apis.v1.InvitationSummary) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry"></a>
-
-### InvitationUserInfo.SummarysEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [InvitationSummary](#cloud.hashing.apis.v1.InvitationSummary) |  |  |
 
 
 
@@ -2082,8 +1893,6 @@ Cloud Hashing Goods
 | UpdatePasswordByAppUser | [UpdatePasswordByAppUserRequest](#cloud.hashing.apis.v1.UpdatePasswordByAppUserRequest) | [UpdatePasswordByAppUserResponse](#cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse) |  |
 | UpdateEmailAddress | [UpdateEmailAddressRequest](#cloud.hashing.apis.v1.UpdateEmailAddressRequest) | [UpdateEmailAddressResponse](#cloud.hashing.apis.v1.UpdateEmailAddressResponse) |  |
 | UpdatePhoneNO | [UpdatePhoneNORequest](#cloud.hashing.apis.v1.UpdatePhoneNORequest) | [UpdatePhoneNOResponse](#cloud.hashing.apis.v1.UpdatePhoneNOResponse) |  |
-| GetMyInvitations | [GetMyInvitationsRequest](#cloud.hashing.apis.v1.GetMyInvitationsRequest) | [GetMyInvitationsResponse](#cloud.hashing.apis.v1.GetMyInvitationsResponse) |  |
-| GetMyDirectInvitations | [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest) | [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse) |  |
 | GetReferrals | [GetReferralsRequest](#cloud.hashing.apis.v1.GetReferralsRequest) | [GetReferralsResponse](#cloud.hashing.apis.v1.GetReferralsResponse) |  |
 | GetLayeredReferrals | [GetLayeredReferralsRequest](#cloud.hashing.apis.v1.GetLayeredReferralsRequest) | [GetLayeredReferralsResponse](#cloud.hashing.apis.v1.GetLayeredReferralsResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse) |  |
@@ -2674,102 +2483,6 @@ Cloud Hashing Goods
 
 
 
-<a name="cloud.hashing.apis.v1.GetMyDirectInvitationsRequest"></a>
-
-### GetMyDirectInvitationsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.GetMyDirectInvitationsResponse"></a>
-
-### GetMyDirectInvitationsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| MySelf | [InvitationUserInfo](#cloud.hashing.apis.v1.InvitationUserInfo) |  |  |
-| Infos | [GetMyDirectInvitationsResponse.InfosEntry](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry) | repeated |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.GetMyDirectInvitationsResponse.InfosEntry"></a>
-
-### GetMyDirectInvitationsResponse.InfosEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [Invitation](#cloud.hashing.apis.v1.Invitation) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.GetMyInvitationsRequest"></a>
-
-### GetMyInvitationsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-| UserID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.GetMyInvitationsResponse"></a>
-
-### GetMyInvitationsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| MySelf | [InvitationUserInfo](#cloud.hashing.apis.v1.InvitationUserInfo) |  |  |
-| Infos | [GetMyInvitationsResponse.InfosEntry](#cloud.hashing.apis.v1.GetMyInvitationsResponse.InfosEntry) | repeated |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.GetMyInvitationsResponse.InfosEntry"></a>
-
-### GetMyInvitationsResponse.InfosEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [Invitation](#cloud.hashing.apis.v1.Invitation) |  |  |
-
-
-
-
-
-
 <a name="cloud.hashing.apis.v1.GetOrderRequest"></a>
 
 ### GetOrderRequest
@@ -3230,21 +2943,6 @@ Request body and response
 
 
 
-<a name="cloud.hashing.apis.v1.Invitation"></a>
-
-### Invitation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Invitees | [InvitationUserInfo](#cloud.hashing.apis.v1.InvitationUserInfo) | repeated |  |
-
-
-
-
-
-
 <a name="cloud.hashing.apis.v1.InvitationSummary"></a>
 
 ### InvitationSummary
@@ -3255,64 +2953,6 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | Units | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.InvitationUserInfo"></a>
-
-### InvitationUserInfo
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| UserID | [string](#string) |  |  |
-| Username | [string](#string) |  |  |
-| Avatar | [string](#string) |  |  |
-| EmailAddress | [string](#string) |  |  |
-| Kol | [bool](#bool) |  |  |
-| Summarys | [InvitationUserInfo.SummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry) | repeated |  |
-| MySummarys | [InvitationUserInfo.MySummarysEntry](#cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry) | repeated |  |
-| InvitedCount | [uint32](#uint32) |  |  |
-| JoinDate | [uint32](#uint32) |  |  |
-| MyCommissions | [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount) | repeated |  |
-| Commissions | [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount) | repeated |  |
-| CommissionAmount | [double](#double) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.InvitationUserInfo.MySummarysEntry"></a>
-
-### InvitationUserInfo.MySummarysEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [InvitationSummary](#cloud.hashing.apis.v1.InvitationSummary) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.InvitationUserInfo.SummarysEntry"></a>
-
-### InvitationUserInfo.SummarysEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [InvitationSummary](#cloud.hashing.apis.v1.InvitationSummary) |  |  |
 
 
 
@@ -3958,8 +3598,6 @@ Cloud Hashing Goods
 | UpdatePasswordByAppUser | [UpdatePasswordByAppUserRequest](#cloud.hashing.apis.v1.UpdatePasswordByAppUserRequest) | [UpdatePasswordByAppUserResponse](#cloud.hashing.apis.v1.UpdatePasswordByAppUserResponse) |  |
 | UpdateEmailAddress | [UpdateEmailAddressRequest](#cloud.hashing.apis.v1.UpdateEmailAddressRequest) | [UpdateEmailAddressResponse](#cloud.hashing.apis.v1.UpdateEmailAddressResponse) |  |
 | UpdatePhoneNO | [UpdatePhoneNORequest](#cloud.hashing.apis.v1.UpdatePhoneNORequest) | [UpdatePhoneNOResponse](#cloud.hashing.apis.v1.UpdatePhoneNOResponse) |  |
-| GetMyInvitations | [GetMyInvitationsRequest](#cloud.hashing.apis.v1.GetMyInvitationsRequest) | [GetMyInvitationsResponse](#cloud.hashing.apis.v1.GetMyInvitationsResponse) |  |
-| GetMyDirectInvitations | [GetMyDirectInvitationsRequest](#cloud.hashing.apis.v1.GetMyDirectInvitationsRequest) | [GetMyDirectInvitationsResponse](#cloud.hashing.apis.v1.GetMyDirectInvitationsResponse) |  |
 | GetReferrals | [GetReferralsRequest](#cloud.hashing.apis.v1.GetReferralsRequest) | [GetReferralsResponse](#cloud.hashing.apis.v1.GetReferralsResponse) |  |
 | GetLayeredReferrals | [GetLayeredReferralsRequest](#cloud.hashing.apis.v1.GetLayeredReferralsRequest) | [GetLayeredReferralsResponse](#cloud.hashing.apis.v1.GetLayeredReferralsResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud.hashing.apis.v1.GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud.hashing.apis.v1.GetKycReviewsResponse) |  |

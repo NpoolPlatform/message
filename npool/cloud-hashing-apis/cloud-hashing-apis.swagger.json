@@ -523,70 +523,6 @@
         ]
       }
     },
-    "/v1/get/my/direct/invitations": {
-      "post": {
-        "operationId": "CloudHashingApis_GetMyDirectInvitations",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetMyDirectInvitationsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetMyDirectInvitationsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/get/my/invitations": {
-      "post": {
-        "operationId": "CloudHashingApis_GetMyInvitations",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetMyInvitationsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetMyInvitationsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
     "/v1/get/order": {
       "post": {
         "operationId": "CloudHashingApis_GetOrder",
@@ -2185,35 +2121,6 @@
         }
       }
     },
-    "v1CommissionAmount": {
-      "type": "object",
-      "properties": {
-        "Start": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "End": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Percent": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Amount": {
-          "type": "number",
-          "format": "double"
-        },
-        "PayAmount": {
-          "type": "number",
-          "format": "double"
-        },
-        "CreateAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1Compensate": {
       "type": "object",
       "properties": {
@@ -2662,56 +2569,6 @@
         }
       }
     },
-    "v1GetMyDirectInvitationsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetMyDirectInvitationsResponse": {
-      "type": "object",
-      "properties": {
-        "MySelf": {
-          "$ref": "#/definitions/v1InvitationUserInfo"
-        },
-        "Infos": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/v1Invitation"
-          }
-        }
-      }
-    },
-    "v1GetMyInvitationsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetMyInvitationsResponse": {
-      "type": "object",
-      "properties": {
-        "MySelf": {
-          "$ref": "#/definitions/v1InvitationUserInfo"
-        },
-        "Infos": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/v1Invitation"
-          }
-        }
-      }
-    },
     "v1GetReferralsRequest": {
       "type": "object",
       "properties": {
@@ -3067,86 +2924,6 @@
         },
         "Good": {
           "$ref": "#/definitions/v1GoodDetail"
-        }
-      }
-    },
-    "v1Invitation": {
-      "type": "object",
-      "properties": {
-        "Invitees": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1InvitationUserInfo"
-          }
-        }
-      }
-    },
-    "v1InvitationSummary": {
-      "type": "object",
-      "properties": {
-        "Units": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Amount": {
-          "type": "number",
-          "format": "double"
-        }
-      }
-    },
-    "v1InvitationUserInfo": {
-      "type": "object",
-      "properties": {
-        "UserID": {
-          "type": "string"
-        },
-        "Username": {
-          "type": "string"
-        },
-        "Avatar": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "Kol": {
-          "type": "boolean"
-        },
-        "Summarys": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/v1InvitationSummary"
-          }
-        },
-        "MySummarys": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/v1InvitationSummary"
-          }
-        },
-        "InvitedCount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "JoinDate": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MyCommissions": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1CommissionAmount"
-          }
-        },
-        "Commissions": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1CommissionAmount"
-          }
-        },
-        "CommissionAmount": {
-          "type": "number",
-          "format": "double"
         }
       }
     },

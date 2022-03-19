@@ -41,8 +41,6 @@ type CloudHashingApisClient interface {
 	UpdatePasswordByAppUser(ctx context.Context, in *UpdatePasswordByAppUserRequest, opts ...grpc.CallOption) (*UpdatePasswordByAppUserResponse, error)
 	UpdateEmailAddress(ctx context.Context, in *UpdateEmailAddressRequest, opts ...grpc.CallOption) (*UpdateEmailAddressResponse, error)
 	UpdatePhoneNO(ctx context.Context, in *UpdatePhoneNORequest, opts ...grpc.CallOption) (*UpdatePhoneNOResponse, error)
-	GetMyInvitations(ctx context.Context, in *GetMyInvitationsRequest, opts ...grpc.CallOption) (*GetMyInvitationsResponse, error)
-	GetMyDirectInvitations(ctx context.Context, in *GetMyDirectInvitationsRequest, opts ...grpc.CallOption) (*GetMyDirectInvitationsResponse, error)
 	GetReferrals(ctx context.Context, in *GetReferralsRequest, opts ...grpc.CallOption) (*GetReferralsResponse, error)
 	GetLayeredReferrals(ctx context.Context, in *GetLayeredReferralsRequest, opts ...grpc.CallOption) (*GetLayeredReferralsResponse, error)
 	GetKycReviews(ctx context.Context, in *GetKycReviewsRequest, opts ...grpc.CallOption) (*GetKycReviewsResponse, error)
@@ -226,24 +224,6 @@ func (c *cloudHashingApisClient) UpdateEmailAddress(ctx context.Context, in *Upd
 func (c *cloudHashingApisClient) UpdatePhoneNO(ctx context.Context, in *UpdatePhoneNORequest, opts ...grpc.CallOption) (*UpdatePhoneNOResponse, error) {
 	out := new(UpdatePhoneNOResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/UpdatePhoneNO", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cloudHashingApisClient) GetMyInvitations(ctx context.Context, in *GetMyInvitationsRequest, opts ...grpc.CallOption) (*GetMyInvitationsResponse, error) {
-	out := new(GetMyInvitationsResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetMyInvitations", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cloudHashingApisClient) GetMyDirectInvitations(ctx context.Context, in *GetMyDirectInvitationsRequest, opts ...grpc.CallOption) (*GetMyDirectInvitationsResponse, error) {
-	out := new(GetMyDirectInvitationsResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetMyDirectInvitations", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -505,8 +485,6 @@ type CloudHashingApisServer interface {
 	UpdatePasswordByAppUser(context.Context, *UpdatePasswordByAppUserRequest) (*UpdatePasswordByAppUserResponse, error)
 	UpdateEmailAddress(context.Context, *UpdateEmailAddressRequest) (*UpdateEmailAddressResponse, error)
 	UpdatePhoneNO(context.Context, *UpdatePhoneNORequest) (*UpdatePhoneNOResponse, error)
-	GetMyInvitations(context.Context, *GetMyInvitationsRequest) (*GetMyInvitationsResponse, error)
-	GetMyDirectInvitations(context.Context, *GetMyDirectInvitationsRequest) (*GetMyDirectInvitationsResponse, error)
 	GetReferrals(context.Context, *GetReferralsRequest) (*GetReferralsResponse, error)
 	GetLayeredReferrals(context.Context, *GetLayeredReferralsRequest) (*GetLayeredReferralsResponse, error)
 	GetKycReviews(context.Context, *GetKycReviewsRequest) (*GetKycReviewsResponse, error)
@@ -590,12 +568,6 @@ func (UnimplementedCloudHashingApisServer) UpdateEmailAddress(context.Context, *
 }
 func (UnimplementedCloudHashingApisServer) UpdatePhoneNO(context.Context, *UpdatePhoneNORequest) (*UpdatePhoneNOResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePhoneNO not implemented")
-}
-func (UnimplementedCloudHashingApisServer) GetMyInvitations(context.Context, *GetMyInvitationsRequest) (*GetMyInvitationsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetMyInvitations not implemented")
-}
-func (UnimplementedCloudHashingApisServer) GetMyDirectInvitations(context.Context, *GetMyDirectInvitationsRequest) (*GetMyDirectInvitationsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetMyDirectInvitations not implemented")
 }
 func (UnimplementedCloudHashingApisServer) GetReferrals(context.Context, *GetReferralsRequest) (*GetReferralsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetReferrals not implemented")
@@ -990,42 +962,6 @@ func _CloudHashingApis_UpdatePhoneNO_Handler(srv interface{}, ctx context.Contex
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingApisServer).UpdatePhoneNO(ctx, req.(*UpdatePhoneNORequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CloudHashingApis_GetMyInvitations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetMyInvitationsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudHashingApisServer).GetMyInvitations(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetMyInvitations",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingApisServer).GetMyInvitations(ctx, req.(*GetMyInvitationsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CloudHashingApis_GetMyDirectInvitations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetMyDirectInvitationsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudHashingApisServer).GetMyDirectInvitations(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetMyDirectInvitations",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingApisServer).GetMyDirectInvitations(ctx, req.(*GetMyDirectInvitationsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1572,14 +1508,6 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdatePhoneNO",
 			Handler:    _CloudHashingApis_UpdatePhoneNO_Handler,
-		},
-		{
-			MethodName: "GetMyInvitations",
-			Handler:    _CloudHashingApis_GetMyInvitations_Handler,
-		},
-		{
-			MethodName: "GetMyDirectInvitations",
-			Handler:    _CloudHashingApis_GetMyDirectInvitations_Handler,
 		},
 		{
 			MethodName: "GetReferrals",

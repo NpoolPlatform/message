@@ -127,19 +127,6 @@ service CloudHashingApis {
         };
     }
 
-    rpc GetMyInvitations (GetMyInvitationsRequest) returns (GetMyInvitationsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/my/invitations"
-            body: "*"
-        };
-    }
-    rpc GetMyDirectInvitations (GetMyDirectInvitationsRequest) returns (GetMyDirectInvitationsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/my/direct/invitations"
-            body: "*"
-        };
-    }
-
     rpc GetReferrals (GetReferralsRequest) returns (GetReferralsResponse) {
         option (google.api.http) = {
             post: "/v1/get/referrals",
@@ -518,45 +505,6 @@ message CommissionAmount {
     double Amount = 40;
     double PayAmount = 50;
     uint32 CreateAt = 60;
-}
-
-message InvitationUserInfo {
-    string UserID = 10;
-    string Username = 20;
-    string Avatar = 30;
-    string EmailAddress = 40;
-    bool Kol = 50;
-    map<string, InvitationSummary> Summarys = 60;
-    map<string, InvitationSummary> MySummarys = 70;
-    uint32 InvitedCount = 80;
-    uint32 JoinDate = 90;
-    repeated CommissionAmount MyCommissions = 100;
-    repeated CommissionAmount Commissions = 110;
-    double CommissionAmount = 120;
-}
-
-message Invitation {
-    repeated InvitationUserInfo Invitees = 10;
-}
-
-message GetMyInvitationsRequest {
-    string AppID = 10;
-    string UserID = 20;
-}
-
-message GetMyInvitationsResponse {
-    InvitationUserInfo MySelf = 10;
-    map<string, Invitation> Infos = 20;
-}
-
-message GetMyDirectInvitationsRequest {
-    string AppID = 10;
-    string UserID = 20;
-}
-
-message GetMyDirectInvitationsResponse {
-    InvitationUserInfo MySelf = 10;
-    map<string, Invitation> Infos = 20;
 }
 
 message Referral {

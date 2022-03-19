@@ -228,45 +228,6 @@ export type CommissionAmount = {
   createAt?: number
 }
 
-export type InvitationUserInfo = {
-  userID?: string
-  username?: string
-  avatar?: string
-  emailAddress?: string
-  kol?: boolean
-  summarys?: {[key: string]: InvitationSummary}
-  mySummarys?: {[key: string]: InvitationSummary}
-  invitedCount?: number
-  joinDate?: number
-  myCommissions?: CommissionAmount[]
-  commissions?: CommissionAmount[]
-  commissionAmount?: number
-}
-
-export type Invitation = {
-  invitees?: InvitationUserInfo[]
-}
-
-export type GetMyInvitationsRequest = {
-  appID?: string
-  userID?: string
-}
-
-export type GetMyInvitationsResponse = {
-  mySelf?: InvitationUserInfo
-  infos?: {[key: string]: Invitation}
-}
-
-export type GetMyDirectInvitationsRequest = {
-  appID?: string
-  userID?: string
-}
-
-export type GetMyDirectInvitationsResponse = {
-  mySelf?: InvitationUserInfo
-  infos?: {[key: string]: Invitation}
-}
-
 export type Referral = {
   user?: AppUserManagerV1Appusermgr.AppUser
   extra?: AppUserManagerV1Appusermgr.AppUserExtra
@@ -624,12 +585,6 @@ export class CloudHashingApis {
   }
   static UpdatePhoneNO(req: UpdatePhoneNORequest, initReq?: fm.InitReq): Promise<UpdatePhoneNOResponse> {
     return fm.fetchReq<UpdatePhoneNORequest, UpdatePhoneNOResponse>(`/v1/update/phoneno`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetMyInvitations(req: GetMyInvitationsRequest, initReq?: fm.InitReq): Promise<GetMyInvitationsResponse> {
-    return fm.fetchReq<GetMyInvitationsRequest, GetMyInvitationsResponse>(`/v1/get/my/invitations`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetMyDirectInvitations(req: GetMyDirectInvitationsRequest, initReq?: fm.InitReq): Promise<GetMyDirectInvitationsResponse> {
-    return fm.fetchReq<GetMyDirectInvitationsRequest, GetMyDirectInvitationsResponse>(`/v1/get/my/direct/invitations`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetReferrals(req: GetReferralsRequest, initReq?: fm.InitReq): Promise<GetReferralsResponse> {
     return fm.fetchReq<GetReferralsRequest, GetReferralsResponse>(`/v1/get/referrals`, {...initReq, method: "POST", body: JSON.stringify(req)})
