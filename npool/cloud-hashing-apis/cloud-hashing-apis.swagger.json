@@ -2108,6 +2108,22 @@
         }
       }
     },
+    "v1CoinSummary": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
     "v1Commission": {
       "type": "object",
       "properties": {
@@ -3187,6 +3203,12 @@
         "InvitedCount": {
           "type": "integer",
           "format": "int64"
+        },
+        "Summaries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinSummary"
+          }
         }
       }
     },

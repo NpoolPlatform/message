@@ -214,18 +214,10 @@ export type UpdatePhoneNOResponse = {
   info?: AppUserManagerV1Appusermgr.AppUserInfo
 }
 
-export type InvitationSummary = {
+export type CoinSummary = {
+  coinTypeID?: string
   units?: number
   amount?: number
-}
-
-export type CommissionAmount = {
-  start?: number
-  end?: number
-  percent?: number
-  amount?: number
-  payAmount?: number
-  createAt?: number
 }
 
 export type Referral = {
@@ -236,6 +228,7 @@ export type Referral = {
   subUSDAmount?: number
   kol?: boolean
   invitedCount?: number
+  summaries?: CoinSummary[]
 }
 
 export type GetReferralsRequest = {

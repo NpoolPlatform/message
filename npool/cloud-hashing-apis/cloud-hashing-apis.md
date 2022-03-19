@@ -4,8 +4,8 @@
 ## Table of Contents
 
 - [npool/cloud-hashing-apis/cloud-hashing-apis.proto](#npool/cloud-hashing-apis/cloud-hashing-apis.proto)
+    - [CoinSummary](#cloud.hashing.apis.v1.CoinSummary)
     - [Commission](#cloud.hashing.apis.v1.Commission)
-    - [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount)
     - [Coupon](#cloud.hashing.apis.v1.Coupon)
     - [Coupons](#cloud.hashing.apis.v1.Coupons)
     - [CreateGoodRequest](#cloud.hashing.apis.v1.CreateGoodRequest)
@@ -70,7 +70,6 @@
     - [GetWithdrawReviewsResponse](#cloud.hashing.apis.v1.GetWithdrawReviewsResponse)
     - [Good](#cloud.hashing.apis.v1.Good)
     - [GoodReview](#cloud.hashing.apis.v1.GoodReview)
-    - [InvitationSummary](#cloud.hashing.apis.v1.InvitationSummary)
     - [Kyc](#cloud.hashing.apis.v1.Kyc)
     - [KycReview](#cloud.hashing.apis.v1.KycReview)
     - [Order](#cloud.hashing.apis.v1.Order)
@@ -110,8 +109,8 @@
     - [CloudHashingApis](#cloud.hashing.apis.v1.CloudHashingApis)
   
 - [npool/cloud-hashing-apis/cloud-hashing-apis.proto](#npool/cloud-hashing-apis/cloud-hashing-apis.proto)
+    - [CoinSummary](#cloud.hashing.apis.v1.CoinSummary)
     - [Commission](#cloud.hashing.apis.v1.Commission)
-    - [CommissionAmount](#cloud.hashing.apis.v1.CommissionAmount)
     - [Coupon](#cloud.hashing.apis.v1.Coupon)
     - [Coupons](#cloud.hashing.apis.v1.Coupons)
     - [CreateGoodRequest](#cloud.hashing.apis.v1.CreateGoodRequest)
@@ -176,7 +175,6 @@
     - [GetWithdrawReviewsResponse](#cloud.hashing.apis.v1.GetWithdrawReviewsResponse)
     - [Good](#cloud.hashing.apis.v1.Good)
     - [GoodReview](#cloud.hashing.apis.v1.GoodReview)
-    - [InvitationSummary](#cloud.hashing.apis.v1.InvitationSummary)
     - [Kyc](#cloud.hashing.apis.v1.Kyc)
     - [KycReview](#cloud.hashing.apis.v1.KycReview)
     - [Order](#cloud.hashing.apis.v1.Order)
@@ -226,6 +224,23 @@
 
 
 
+<a name="cloud.hashing.apis.v1.CoinSummary"></a>
+
+### CoinSummary
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinTypeID | [string](#string) |  |  |
+| Units | [uint32](#uint32) |  |  |
+| Amount | [double](#double) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.Commission"></a>
 
 ### Commission
@@ -236,26 +251,6 @@
 | ----- | ---- | ----- | ----------- |
 | Total | [double](#double) |  |  |
 | Balance | [double](#double) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.CommissionAmount"></a>
-
-### CommissionAmount
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Start | [uint32](#uint32) |  |  |
-| End | [uint32](#uint32) |  |  |
-| Percent | [uint32](#uint32) |  |  |
-| Amount | [double](#double) |  |  |
-| PayAmount | [double](#double) |  |  |
-| CreateAt | [uint32](#uint32) |  |  |
 
 
 
@@ -1238,22 +1233,6 @@ Request body and response
 
 
 
-<a name="cloud.hashing.apis.v1.InvitationSummary"></a>
-
-### InvitationSummary
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Units | [uint32](#uint32) |  |  |
-| Amount | [double](#double) |  |  |
-
-
-
-
-
-
 <a name="cloud.hashing.apis.v1.Kyc"></a>
 
 ### Kyc
@@ -1359,6 +1338,7 @@ Request body and response
 | SubUSDAmount | [double](#double) |  |  |
 | Kol | [bool](#bool) |  |  |
 | InvitedCount | [uint32](#uint32) |  |  |
+| Summaries | [CoinSummary](#cloud.hashing.apis.v1.CoinSummary) | repeated |  |
 
 
 
@@ -1931,6 +1911,23 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud.hashing.apis.v1.CoinSummary"></a>
+
+### CoinSummary
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinTypeID | [string](#string) |  |  |
+| Units | [uint32](#uint32) |  |  |
+| Amount | [double](#double) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.apis.v1.Commission"></a>
 
 ### Commission
@@ -1941,26 +1938,6 @@ Cloud Hashing Goods
 | ----- | ---- | ----- | ----------- |
 | Total | [double](#double) |  |  |
 | Balance | [double](#double) |  |  |
-
-
-
-
-
-
-<a name="cloud.hashing.apis.v1.CommissionAmount"></a>
-
-### CommissionAmount
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Start | [uint32](#uint32) |  |  |
-| End | [uint32](#uint32) |  |  |
-| Percent | [uint32](#uint32) |  |  |
-| Amount | [double](#double) |  |  |
-| PayAmount | [double](#double) |  |  |
-| CreateAt | [uint32](#uint32) |  |  |
 
 
 
@@ -2943,22 +2920,6 @@ Request body and response
 
 
 
-<a name="cloud.hashing.apis.v1.InvitationSummary"></a>
-
-### InvitationSummary
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Units | [uint32](#uint32) |  |  |
-| Amount | [double](#double) |  |  |
-
-
-
-
-
-
 <a name="cloud.hashing.apis.v1.Kyc"></a>
 
 ### Kyc
@@ -3064,6 +3025,7 @@ Request body and response
 | SubUSDAmount | [double](#double) |  |  |
 | Kol | [bool](#bool) |  |  |
 | InvitedCount | [uint32](#uint32) |  |  |
+| Summaries | [CoinSummary](#cloud.hashing.apis.v1.CoinSummary) | repeated |  |
 
 
 

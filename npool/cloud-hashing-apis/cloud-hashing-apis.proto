@@ -493,18 +493,10 @@ message UpdatePhoneNOResponse {
     app.user.manager.v1.AppUserInfo Info = 10;
 }
 
-message InvitationSummary {
-    uint32 Units = 10;
-    double Amount = 20;
-}
-
-message CommissionAmount {
-    uint32 Start = 10;
-    uint32 End = 20;
-    uint32 Percent = 30;
-    double Amount = 40;
-    double PayAmount = 50;
-    uint32 CreateAt = 60;
+message CoinSummary {
+    string CoinTypeID = 10;
+    uint32 Units = 20;
+    double Amount = 30;
 }
 
 message Referral {
@@ -515,6 +507,7 @@ message Referral {
     double SubUSDAmount = 50;
     bool Kol = 60;
     uint32 InvitedCount = 70;
+    repeated CoinSummary Summaries = 80;
 }
 
 message GetReferralsRequest {
