@@ -218,6 +218,7 @@ export type CoinSummary = {
   coinTypeID?: string
   units?: number
   amount?: number
+  unit?: string
 }
 
 export type Referral = {

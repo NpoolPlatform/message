@@ -497,6 +497,7 @@ message CoinSummary {
     string CoinTypeID = 10;
     uint32 Units = 20;
     double Amount = 30;
+    string Unit = 40;
 }
 
 message Referral {

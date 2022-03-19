@@ -235,6 +235,7 @@
 | CoinTypeID | [string](#string) |  |  |
 | Units | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
+| Unit | [string](#string) |  |  |
 
 
 
@@ -1922,6 +1923,7 @@ Cloud Hashing Goods
 | CoinTypeID | [string](#string) |  |  |
 | Units | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
+| Unit | [string](#string) |  |  |
 
 
 
