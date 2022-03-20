@@ -193,7 +193,6 @@ export type Payment = {
   coinUSDCurrency?: number
   finishAmount?: number
   userSetPaid?: boolean
-  userPaymentTXID?: string
 }
 
 export type CreatePaymentRequest = {

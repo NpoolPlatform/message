@@ -1108,7 +1108,6 @@ request body and response
 | CoinUSDCurrency | [double](#double) |  |  |
 | FinishAmount | [double](#double) |  |  |
 | UserSetPaid | [bool](#bool) |  |  |
-| UserPaymentTXID | [string](#string) |  |  |
 
 
 
@@ -2186,7 +2185,6 @@ request body and response
 | CoinUSDCurrency | [double](#double) |  |  |
 | FinishAmount | [double](#double) |  |  |
 | UserSetPaid | [bool](#bool) |  |  |
-| UserPaymentTXID | [string](#string) |  |  |
 
 
 

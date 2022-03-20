@@ -1711,9 +1711,6 @@
         },
         "UserSetPaid": {
           "type": "boolean"
-        },
-        "UserPaymentTXID": {
-          "type": "string"
         }
       }
     },
