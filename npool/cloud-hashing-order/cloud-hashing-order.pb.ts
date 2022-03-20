@@ -220,6 +220,14 @@ export type UpdatePaymentResponse = {
   info?: Payment
 }
 
+export type UpdatePaymentByUserRequest = {
+  info?: Payment
+}
+
+export type UpdatePaymentByUserResponse = {
+  info?: Payment
+}
+
 export type GetPaymentByOrderRequest = {
   orderID?: string
 }
@@ -371,6 +379,9 @@ export class CloudHashingOrder {
   }
   static UpdatePayment(req: UpdatePaymentRequest, initReq?: fm.InitReq): Promise<UpdatePaymentResponse> {
     return fm.fetchReq<UpdatePaymentRequest, UpdatePaymentResponse>(`/v1/update/payment`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdatePaymentByUser(req: UpdatePaymentByUserRequest, initReq?: fm.InitReq): Promise<UpdatePaymentByUserResponse> {
+    return fm.fetchReq<UpdatePaymentByUserRequest, UpdatePaymentByUserResponse>(`/v1/update/payment/by/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetPaymentByOrder(req: GetPaymentByOrderRequest, initReq?: fm.InitReq): Promise<GetPaymentByOrderResponse> {
     return fm.fetchReq<GetPaymentByOrderRequest, GetPaymentByOrderResponse>(`/v1/get/payment/by/order`, {...initReq, method: "POST", body: JSON.stringify(req)})

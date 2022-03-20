@@ -45,6 +45,7 @@ type CloudHashingOrderClient interface {
 	CreatePayment(ctx context.Context, in *CreatePaymentRequest, opts ...grpc.CallOption) (*CreatePaymentResponse, error)
 	GetPayment(ctx context.Context, in *GetPaymentRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error)
 	UpdatePayment(ctx context.Context, in *UpdatePaymentRequest, opts ...grpc.CallOption) (*UpdatePaymentResponse, error)
+	UpdatePaymentByUser(ctx context.Context, in *UpdatePaymentByUserRequest, opts ...grpc.CallOption) (*UpdatePaymentByUserResponse, error)
 	GetPaymentByOrder(ctx context.Context, in *GetPaymentByOrderRequest, opts ...grpc.CallOption) (*GetPaymentByOrderResponse, error)
 	GetPaymentsByState(ctx context.Context, in *GetPaymentsByStateRequest, opts ...grpc.CallOption) (*GetPaymentsByStateResponse, error)
 	GetPaymentsByApp(ctx context.Context, in *GetPaymentsByAppRequest, opts ...grpc.CallOption) (*GetPaymentsByAppResponse, error)
@@ -244,6 +245,15 @@ func (c *cloudHashingOrderClient) UpdatePayment(ctx context.Context, in *UpdateP
 	return out, nil
 }
 
+func (c *cloudHashingOrderClient) UpdatePaymentByUser(ctx context.Context, in *UpdatePaymentByUserRequest, opts ...grpc.CallOption) (*UpdatePaymentByUserResponse, error) {
+	out := new(UpdatePaymentByUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/UpdatePaymentByUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingOrderClient) GetPaymentByOrder(ctx context.Context, in *GetPaymentByOrderRequest, opts ...grpc.CallOption) (*GetPaymentByOrderResponse, error) {
 	out := new(GetPaymentByOrderResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/GetPaymentByOrder", in, out, opts...)
@@ -350,6 +360,7 @@ type CloudHashingOrderServer interface {
 	CreatePayment(context.Context, *CreatePaymentRequest) (*CreatePaymentResponse, error)
 	GetPayment(context.Context, *GetPaymentRequest) (*GetPaymentResponse, error)
 	UpdatePayment(context.Context, *UpdatePaymentRequest) (*UpdatePaymentResponse, error)
+	UpdatePaymentByUser(context.Context, *UpdatePaymentByUserRequest) (*UpdatePaymentByUserResponse, error)
 	GetPaymentByOrder(context.Context, *GetPaymentByOrderRequest) (*GetPaymentByOrderResponse, error)
 	GetPaymentsByState(context.Context, *GetPaymentsByStateRequest) (*GetPaymentsByStateResponse, error)
 	GetPaymentsByApp(context.Context, *GetPaymentsByAppRequest) (*GetPaymentsByAppResponse, error)
@@ -425,6 +436,9 @@ func (UnimplementedCloudHashingOrderServer) GetPayment(context.Context, *GetPaym
 }
 func (UnimplementedCloudHashingOrderServer) UpdatePayment(context.Context, *UpdatePaymentRequest) (*UpdatePaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePayment not implemented")
+}
+func (UnimplementedCloudHashingOrderServer) UpdatePaymentByUser(context.Context, *UpdatePaymentByUserRequest) (*UpdatePaymentByUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdatePaymentByUser not implemented")
 }
 func (UnimplementedCloudHashingOrderServer) GetPaymentByOrder(context.Context, *GetPaymentByOrderRequest) (*GetPaymentByOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPaymentByOrder not implemented")
@@ -826,6 +840,24 @@ func _CloudHashingOrder_UpdatePayment_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingOrder_UpdatePaymentByUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdatePaymentByUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingOrderServer).UpdatePaymentByUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.order.v1.CloudHashingOrder/UpdatePaymentByUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingOrderServer).UpdatePaymentByUser(ctx, req.(*UpdatePaymentByUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingOrder_GetPaymentByOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetPaymentByOrderRequest)
 	if err := dec(in); err != nil {
@@ -1074,6 +1106,10 @@ var CloudHashingOrder_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdatePayment",
 			Handler:    _CloudHashingOrder_UpdatePayment_Handler,
+		},
+		{
+			MethodName: "UpdatePaymentByUser",
+			Handler:    _CloudHashingOrder_UpdatePaymentByUser_Handler,
 		},
 		{
 			MethodName: "GetPaymentByOrder",

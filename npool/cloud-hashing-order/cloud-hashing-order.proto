@@ -138,6 +138,12 @@ service CloudHashingOrder {
             body: "*"
         };
     }
+    rpc UpdatePaymentByUser (UpdatePaymentByUserRequest) returns  (UpdatePaymentByUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/payment/by/user"
+            body: "*"
+        };
+    }
     rpc GetPaymentByOrder (GetPaymentByOrderRequest) returns  (GetPaymentByOrderResponse) {
         option (google.api.http) = {
             post: "/v1/get/payment/by/order"
@@ -406,6 +412,14 @@ message UpdatePaymentRequest {
 }
 
 message UpdatePaymentResponse {
+    Payment Info = 10;
+}
+
+message UpdatePaymentByUserRequest {
+    Payment Info = 10;
+}
+
+message UpdatePaymentByUserResponse {
     Payment Info = 10;
 }
 

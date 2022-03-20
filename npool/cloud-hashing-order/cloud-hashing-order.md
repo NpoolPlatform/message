@@ -65,6 +65,8 @@
     - [OrderDetail](#cloud.hashing.order.v1.OrderDetail)
     - [OutOfGas](#cloud.hashing.order.v1.OutOfGas)
     - [Payment](#cloud.hashing.order.v1.Payment)
+    - [UpdatePaymentByUserRequest](#cloud.hashing.order.v1.UpdatePaymentByUserRequest)
+    - [UpdatePaymentByUserResponse](#cloud.hashing.order.v1.UpdatePaymentByUserResponse)
     - [UpdatePaymentRequest](#cloud.hashing.order.v1.UpdatePaymentRequest)
     - [UpdatePaymentResponse](#cloud.hashing.order.v1.UpdatePaymentResponse)
   
@@ -132,6 +134,8 @@
     - [OrderDetail](#cloud.hashing.order.v1.OrderDetail)
     - [OutOfGas](#cloud.hashing.order.v1.OutOfGas)
     - [Payment](#cloud.hashing.order.v1.Payment)
+    - [UpdatePaymentByUserRequest](#cloud.hashing.order.v1.UpdatePaymentByUserRequest)
+    - [UpdatePaymentByUserResponse](#cloud.hashing.order.v1.UpdatePaymentByUserResponse)
     - [UpdatePaymentRequest](#cloud.hashing.order.v1.UpdatePaymentRequest)
     - [UpdatePaymentResponse](#cloud.hashing.order.v1.UpdatePaymentResponse)
   
@@ -1111,6 +1115,36 @@ request body and response
 
 
 
+<a name="cloud.hashing.order.v1.UpdatePaymentByUserRequest"></a>
+
+### UpdatePaymentByUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Payment](#cloud.hashing.order.v1.Payment) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.order.v1.UpdatePaymentByUserResponse"></a>
+
+### UpdatePaymentByUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Payment](#cloud.hashing.order.v1.Payment) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.order.v1.UpdatePaymentRequest"></a>
 
 ### UpdatePaymentRequest
@@ -1174,6 +1208,7 @@ Service Name
 | CreatePayment | [CreatePaymentRequest](#cloud.hashing.order.v1.CreatePaymentRequest) | [CreatePaymentResponse](#cloud.hashing.order.v1.CreatePaymentResponse) |  |
 | GetPayment | [GetPaymentRequest](#cloud.hashing.order.v1.GetPaymentRequest) | [GetPaymentResponse](#cloud.hashing.order.v1.GetPaymentResponse) |  |
 | UpdatePayment | [UpdatePaymentRequest](#cloud.hashing.order.v1.UpdatePaymentRequest) | [UpdatePaymentResponse](#cloud.hashing.order.v1.UpdatePaymentResponse) |  |
+| UpdatePaymentByUser | [UpdatePaymentByUserRequest](#cloud.hashing.order.v1.UpdatePaymentByUserRequest) | [UpdatePaymentByUserResponse](#cloud.hashing.order.v1.UpdatePaymentByUserResponse) |  |
 | GetPaymentByOrder | [GetPaymentByOrderRequest](#cloud.hashing.order.v1.GetPaymentByOrderRequest) | [GetPaymentByOrderResponse](#cloud.hashing.order.v1.GetPaymentByOrderResponse) |  |
 | GetPaymentsByState | [GetPaymentsByStateRequest](#cloud.hashing.order.v1.GetPaymentsByStateRequest) | [GetPaymentsByStateResponse](#cloud.hashing.order.v1.GetPaymentsByStateResponse) |  |
 | GetPaymentsByApp | [GetPaymentsByAppRequest](#cloud.hashing.order.v1.GetPaymentsByAppRequest) | [GetPaymentsByAppResponse](#cloud.hashing.order.v1.GetPaymentsByAppResponse) |  |
@@ -2158,6 +2193,36 @@ request body and response
 
 
 
+<a name="cloud.hashing.order.v1.UpdatePaymentByUserRequest"></a>
+
+### UpdatePaymentByUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Payment](#cloud.hashing.order.v1.Payment) |  |  |
+
+
+
+
+
+
+<a name="cloud.hashing.order.v1.UpdatePaymentByUserResponse"></a>
+
+### UpdatePaymentByUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Payment](#cloud.hashing.order.v1.Payment) |  |  |
+
+
+
+
+
+
 <a name="cloud.hashing.order.v1.UpdatePaymentRequest"></a>
 
 ### UpdatePaymentRequest
@@ -2221,6 +2286,7 @@ Service Name
 | CreatePayment | [CreatePaymentRequest](#cloud.hashing.order.v1.CreatePaymentRequest) | [CreatePaymentResponse](#cloud.hashing.order.v1.CreatePaymentResponse) |  |
 | GetPayment | [GetPaymentRequest](#cloud.hashing.order.v1.GetPaymentRequest) | [GetPaymentResponse](#cloud.hashing.order.v1.GetPaymentResponse) |  |
 | UpdatePayment | [UpdatePaymentRequest](#cloud.hashing.order.v1.UpdatePaymentRequest) | [UpdatePaymentResponse](#cloud.hashing.order.v1.UpdatePaymentResponse) |  |
+| UpdatePaymentByUser | [UpdatePaymentByUserRequest](#cloud.hashing.order.v1.UpdatePaymentByUserRequest) | [UpdatePaymentByUserResponse](#cloud.hashing.order.v1.UpdatePaymentByUserResponse) |  |
 | GetPaymentByOrder | [GetPaymentByOrderRequest](#cloud.hashing.order.v1.GetPaymentByOrderRequest) | [GetPaymentByOrderResponse](#cloud.hashing.order.v1.GetPaymentByOrderResponse) |  |
 | GetPaymentsByState | [GetPaymentsByStateRequest](#cloud.hashing.order.v1.GetPaymentsByStateRequest) | [GetPaymentsByStateResponse](#cloud.hashing.order.v1.GetPaymentsByStateResponse) |  |
 | GetPaymentsByApp | [GetPaymentsByAppRequest](#cloud.hashing.order.v1.GetPaymentsByAppRequest) | [GetPaymentsByAppResponse](#cloud.hashing.order.v1.GetPaymentsByAppResponse) |  |
