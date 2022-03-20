@@ -1103,6 +1103,8 @@ request body and response
 | CreateAt | [uint32](#uint32) |  |  |
 | CoinUSDCurrency | [double](#double) |  |  |
 | FinishAmount | [double](#double) |  |  |
+| UserSetPaid | [bool](#bool) |  |  |
+| UserPaymentTXID | [string](#string) |  |  |
 
 
 
@@ -2148,6 +2150,8 @@ request body and response
 | CreateAt | [uint32](#uint32) |  |  |
 | CoinUSDCurrency | [double](#double) |  |  |
 | FinishAmount | [double](#double) |  |  |
+| UserSetPaid | [bool](#bool) |  |  |
+| UserPaymentTXID | [string](#string) |  |  |
 
 
 

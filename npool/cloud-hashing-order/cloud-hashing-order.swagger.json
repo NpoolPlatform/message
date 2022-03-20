@@ -1676,6 +1676,12 @@
         "FinishAmount": {
           "type": "number",
           "format": "double"
+        },
+        "UserSetPaid": {
+          "type": "boolean"
+        },
+        "UserPaymentTXID": {
+          "type": "string"
         }
       }
     },

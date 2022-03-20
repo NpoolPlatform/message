@@ -381,6 +381,8 @@ message Payment {
     uint32 CreateAt = 100;
     double CoinUSDCurrency = 110;
     double FinishAmount = 120;
+    bool UserSetPaid = 130;
+    string UserPaymentTXID = 140;
 }
 
 message CreatePaymentRequest {
