@@ -936,7 +936,7 @@
         "AppID": {
           "type": "string"
         },
-        "LangId": {
+        "LangID": {
           "type": "string"
         },
         "UsedFor": {

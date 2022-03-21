@@ -129,7 +129,7 @@ export type UpdateMailResponse = {
 export type Template = {
   id?: string
   appID?: string
-  langId?: string
+  langID?: string
   usedFor?: string
   title?: string
   content?: string

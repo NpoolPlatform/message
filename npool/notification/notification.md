@@ -564,7 +564,7 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
-| LangId | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 | Title | [string](#string) |  |  |
 | Content | [string](#string) |  |  |
@@ -1224,7 +1224,7 @@ Service Name
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
-| LangId | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 | Title | [string](#string) |  |  |
 | Content | [string](#string) |  |  |
