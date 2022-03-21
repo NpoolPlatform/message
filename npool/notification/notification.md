@@ -710,6 +710,7 @@
 | Content | [string](#string) |  |  |
 | AlreadyRead | [bool](#bool) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
+| UpdateAt | [uint32](#uint32) |  |  |
 
 
 
@@ -1369,6 +1370,7 @@ Service Name
 | Content | [string](#string) |  |  |
 | AlreadyRead | [bool](#bool) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
+| UpdateAt | [uint32](#uint32) |  |  |
 
 
 

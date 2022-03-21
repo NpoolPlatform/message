@@ -1042,6 +1042,10 @@
         "CreateAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "UpdateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

@@ -167,6 +167,7 @@ message UserNotification {
     string Content = 50;
     bool AlreadyRead = 60;
     uint32 CreateAt = 70;
+    uint32 UpdateAt = 80;
 }
 
 message CreateNotificationRequest {

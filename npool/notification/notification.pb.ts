@@ -47,6 +47,7 @@ export type UserNotification = {
   content?: string
   alreadyRead?: boolean
   createAt?: number
+  updateAt?: number
 }
 
 export type CreateNotificationRequest = {
