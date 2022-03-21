@@ -36,6 +36,13 @@ type NotificationClient interface {
 	CheckReadUser(ctx context.Context, in *CheckReadUserRequest, opts ...grpc.CallOption) (*CheckReadUserResponse, error)
 	CreateMail(ctx context.Context, in *CreateMailRequest, opts ...grpc.CallOption) (*CreateMailResponse, error)
 	UpdateMail(ctx context.Context, in *UpdateMailRequest, opts ...grpc.CallOption) (*UpdateMailResponse, error)
+	CreateTemplate(ctx context.Context, in *CreateTemplateRequest, opts ...grpc.CallOption) (*CreateTemplateResponse, error)
+	CreateTemplateForOtherApp(ctx context.Context, in *CreateTemplateForOtherAppRequest, opts ...grpc.CallOption) (*CreateTemplateForOtherAppResponse, error)
+	GetTemplate(ctx context.Context, in *GetTemplateRequest, opts ...grpc.CallOption) (*GetTemplateResponse, error)
+	UpdateTemplate(ctx context.Context, in *UpdateTemplateRequest, opts ...grpc.CallOption) (*UpdateTemplateResponse, error)
+	GetTemplatesByApp(ctx context.Context, in *GetTemplatesByAppRequest, opts ...grpc.CallOption) (*GetTemplatesByAppResponse, error)
+	GetTemplatesByOtherApp(ctx context.Context, in *GetTemplatesByOtherAppRequest, opts ...grpc.CallOption) (*GetTemplatesByOtherAppResponse, error)
+	GetTemplateByAppLangUsedFor(ctx context.Context, in *GetTemplateByAppLangUsedForRequest, opts ...grpc.CallOption) (*GetTemplateByAppLangUsedForResponse, error)
 }
 
 type notificationClient struct {
@@ -145,6 +152,69 @@ func (c *notificationClient) UpdateMail(ctx context.Context, in *UpdateMailReque
 	return out, nil
 }
 
+func (c *notificationClient) CreateTemplate(ctx context.Context, in *CreateTemplateRequest, opts ...grpc.CallOption) (*CreateTemplateResponse, error) {
+	out := new(CreateTemplateResponse)
+	err := c.cc.Invoke(ctx, "/notification.v1.Notification/CreateTemplate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *notificationClient) CreateTemplateForOtherApp(ctx context.Context, in *CreateTemplateForOtherAppRequest, opts ...grpc.CallOption) (*CreateTemplateForOtherAppResponse, error) {
+	out := new(CreateTemplateForOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/notification.v1.Notification/CreateTemplateForOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *notificationClient) GetTemplate(ctx context.Context, in *GetTemplateRequest, opts ...grpc.CallOption) (*GetTemplateResponse, error) {
+	out := new(GetTemplateResponse)
+	err := c.cc.Invoke(ctx, "/notification.v1.Notification/GetTemplate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *notificationClient) UpdateTemplate(ctx context.Context, in *UpdateTemplateRequest, opts ...grpc.CallOption) (*UpdateTemplateResponse, error) {
+	out := new(UpdateTemplateResponse)
+	err := c.cc.Invoke(ctx, "/notification.v1.Notification/UpdateTemplate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *notificationClient) GetTemplatesByApp(ctx context.Context, in *GetTemplatesByAppRequest, opts ...grpc.CallOption) (*GetTemplatesByAppResponse, error) {
+	out := new(GetTemplatesByAppResponse)
+	err := c.cc.Invoke(ctx, "/notification.v1.Notification/GetTemplatesByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *notificationClient) GetTemplatesByOtherApp(ctx context.Context, in *GetTemplatesByOtherAppRequest, opts ...grpc.CallOption) (*GetTemplatesByOtherAppResponse, error) {
+	out := new(GetTemplatesByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/notification.v1.Notification/GetTemplatesByOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *notificationClient) GetTemplateByAppLangUsedFor(ctx context.Context, in *GetTemplateByAppLangUsedForRequest, opts ...grpc.CallOption) (*GetTemplateByAppLangUsedForResponse, error) {
+	out := new(GetTemplateByAppLangUsedForResponse)
+	err := c.cc.Invoke(ctx, "/notification.v1.Notification/GetTemplateByAppLangUsedFor", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // NotificationServer is the server API for Notification service.
 // All implementations must embed UnimplementedNotificationServer
 // for forward compatibility
@@ -161,6 +231,13 @@ type NotificationServer interface {
 	CheckReadUser(context.Context, *CheckReadUserRequest) (*CheckReadUserResponse, error)
 	CreateMail(context.Context, *CreateMailRequest) (*CreateMailResponse, error)
 	UpdateMail(context.Context, *UpdateMailRequest) (*UpdateMailResponse, error)
+	CreateTemplate(context.Context, *CreateTemplateRequest) (*CreateTemplateResponse, error)
+	CreateTemplateForOtherApp(context.Context, *CreateTemplateForOtherAppRequest) (*CreateTemplateForOtherAppResponse, error)
+	GetTemplate(context.Context, *GetTemplateRequest) (*GetTemplateResponse, error)
+	UpdateTemplate(context.Context, *UpdateTemplateRequest) (*UpdateTemplateResponse, error)
+	GetTemplatesByApp(context.Context, *GetTemplatesByAppRequest) (*GetTemplatesByAppResponse, error)
+	GetTemplatesByOtherApp(context.Context, *GetTemplatesByOtherAppRequest) (*GetTemplatesByOtherAppResponse, error)
+	GetTemplateByAppLangUsedFor(context.Context, *GetTemplateByAppLangUsedForRequest) (*GetTemplateByAppLangUsedForResponse, error)
 	mustEmbedUnimplementedNotificationServer()
 }
 
@@ -200,6 +277,27 @@ func (UnimplementedNotificationServer) CreateMail(context.Context, *CreateMailRe
 }
 func (UnimplementedNotificationServer) UpdateMail(context.Context, *UpdateMailRequest) (*UpdateMailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateMail not implemented")
+}
+func (UnimplementedNotificationServer) CreateTemplate(context.Context, *CreateTemplateRequest) (*CreateTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTemplate not implemented")
+}
+func (UnimplementedNotificationServer) CreateTemplateForOtherApp(context.Context, *CreateTemplateForOtherAppRequest) (*CreateTemplateForOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTemplateForOtherApp not implemented")
+}
+func (UnimplementedNotificationServer) GetTemplate(context.Context, *GetTemplateRequest) (*GetTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTemplate not implemented")
+}
+func (UnimplementedNotificationServer) UpdateTemplate(context.Context, *UpdateTemplateRequest) (*UpdateTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateTemplate not implemented")
+}
+func (UnimplementedNotificationServer) GetTemplatesByApp(context.Context, *GetTemplatesByAppRequest) (*GetTemplatesByAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTemplatesByApp not implemented")
+}
+func (UnimplementedNotificationServer) GetTemplatesByOtherApp(context.Context, *GetTemplatesByOtherAppRequest) (*GetTemplatesByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTemplatesByOtherApp not implemented")
+}
+func (UnimplementedNotificationServer) GetTemplateByAppLangUsedFor(context.Context, *GetTemplateByAppLangUsedForRequest) (*GetTemplateByAppLangUsedForResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTemplateByAppLangUsedFor not implemented")
 }
 func (UnimplementedNotificationServer) mustEmbedUnimplementedNotificationServer() {}
 
@@ -412,6 +510,132 @@ func _Notification_UpdateMail_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Notification_CreateTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NotificationServer).CreateTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notification.v1.Notification/CreateTemplate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NotificationServer).CreateTemplate(ctx, req.(*CreateTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Notification_CreateTemplateForOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTemplateForOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NotificationServer).CreateTemplateForOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notification.v1.Notification/CreateTemplateForOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NotificationServer).CreateTemplateForOtherApp(ctx, req.(*CreateTemplateForOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Notification_GetTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NotificationServer).GetTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notification.v1.Notification/GetTemplate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NotificationServer).GetTemplate(ctx, req.(*GetTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Notification_UpdateTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NotificationServer).UpdateTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notification.v1.Notification/UpdateTemplate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NotificationServer).UpdateTemplate(ctx, req.(*UpdateTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Notification_GetTemplatesByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTemplatesByAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NotificationServer).GetTemplatesByApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notification.v1.Notification/GetTemplatesByApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NotificationServer).GetTemplatesByApp(ctx, req.(*GetTemplatesByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Notification_GetTemplatesByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTemplatesByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NotificationServer).GetTemplatesByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notification.v1.Notification/GetTemplatesByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NotificationServer).GetTemplatesByOtherApp(ctx, req.(*GetTemplatesByOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Notification_GetTemplateByAppLangUsedFor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTemplateByAppLangUsedForRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NotificationServer).GetTemplateByAppLangUsedFor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notification.v1.Notification/GetTemplateByAppLangUsedFor",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NotificationServer).GetTemplateByAppLangUsedFor(ctx, req.(*GetTemplateByAppLangUsedForRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Notification_ServiceDesc is the grpc.ServiceDesc for Notification service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -462,6 +686,34 @@ var Notification_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateMail",
 			Handler:    _Notification_UpdateMail_Handler,
+		},
+		{
+			MethodName: "CreateTemplate",
+			Handler:    _Notification_CreateTemplate_Handler,
+		},
+		{
+			MethodName: "CreateTemplateForOtherApp",
+			Handler:    _Notification_CreateTemplateForOtherApp_Handler,
+		},
+		{
+			MethodName: "GetTemplate",
+			Handler:    _Notification_GetTemplate_Handler,
+		},
+		{
+			MethodName: "UpdateTemplate",
+			Handler:    _Notification_UpdateTemplate_Handler,
+		},
+		{
+			MethodName: "GetTemplatesByApp",
+			Handler:    _Notification_GetTemplatesByApp_Handler,
+		},
+		{
+			MethodName: "GetTemplatesByOtherApp",
+			Handler:    _Notification_GetTemplatesByOtherApp_Handler,
+		},
+		{
+			MethodName: "GetTemplateByAppLangUsedFor",
+			Handler:    _Notification_GetTemplateByAppLangUsedFor_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
