@@ -125,6 +125,75 @@ export type UpdateMailResponse = {
   info?: Mail
 }
 
+export type Template = {
+  id?: string
+  appID?: string
+  langId?: string
+  usedFor?: string
+  title?: string
+  content?: string
+  createAt?: number
+}
+
+export type CreateTemplateRequest = {
+  info?: Template
+}
+
+export type CreateTemplateResponse = {
+  info?: Template
+}
+
+export type CreateTemplateForOtherAppRequest = {
+  targetAppID?: string
+  info?: Template
+}
+
+export type CreateTemplateForOtherAppResponse = {
+  info?: Template
+}
+
+export type GetTemplateRequest = {
+  id?: string
+}
+
+export type GetTemplateResponse = {
+  info?: Template
+}
+
+export type UpdateTemplateRequest = {
+  info?: Template
+}
+
+export type UpdateTemplateResponse = {
+  info?: Template
+}
+
+export type GetTemplateByAppLangUsedForRequest = {
+  appID?: string
+  langID?: string
+  usedFor?: string
+}
+
+export type GetTemplateByAppLangUsedForResponse = {
+  info?: Template
+}
+
+export type GetTemplatesByAppRequest = {
+  appID?: string
+}
+
+export type GetTemplatesByAppResponse = {
+  infos?: Template[]
+}
+
+export type GetTemplatesByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetTemplatesByOtherAppResponse = {
+  infos?: Template[]
+}
+
 export class Notification {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -158,5 +227,26 @@ export class Notification {
   }
   static UpdateMail(req: UpdateMailRequest, initReq?: fm.InitReq): Promise<UpdateMailResponse> {
     return fm.fetchReq<UpdateMailRequest, UpdateMailResponse>(`/update/mail`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateTemplate(req: CreateTemplateRequest, initReq?: fm.InitReq): Promise<CreateTemplateResponse> {
+    return fm.fetchReq<CreateTemplateRequest, CreateTemplateResponse>(`/create/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateTemplateForOtherApp(req: CreateTemplateForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateTemplateForOtherAppResponse> {
+    return fm.fetchReq<CreateTemplateForOtherAppRequest, CreateTemplateForOtherAppResponse>(`/create/template/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetTemplate(req: GetTemplateRequest, initReq?: fm.InitReq): Promise<GetTemplateResponse> {
+    return fm.fetchReq<GetTemplateRequest, GetTemplateResponse>(`/get/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateTemplate(req: UpdateTemplateRequest, initReq?: fm.InitReq): Promise<UpdateTemplateResponse> {
+    return fm.fetchReq<UpdateTemplateRequest, UpdateTemplateResponse>(`/update/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetTemplatesByApp(req: GetTemplatesByAppRequest, initReq?: fm.InitReq): Promise<GetTemplatesByAppResponse> {
+    return fm.fetchReq<GetTemplatesByAppRequest, GetTemplatesByAppResponse>(`/get/templates/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetTemplatesByOtherApp(req: GetTemplatesByOtherAppRequest, initReq?: fm.InitReq): Promise<GetTemplatesByOtherAppResponse> {
+    return fm.fetchReq<GetTemplatesByOtherAppRequest, GetTemplatesByOtherAppResponse>(`/get/templates/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetTemplateByAppLangUsedFor(req: GetTemplateByAppLangUsedForRequest, initReq?: fm.InitReq): Promise<GetTemplateByAppLangUsedForResponse> {
+    return fm.fetchReq<GetTemplateByAppLangUsedForRequest, GetTemplateByAppLangUsedForResponse>(`/get/template/by/app/lang/usedfor`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

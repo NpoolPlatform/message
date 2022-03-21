@@ -81,6 +81,49 @@ service Notification {
             body: "*"
         };
     }
+
+    rpc CreateTemplate (CreateTemplateRequest) returns (CreateTemplateResponse) {
+        option (google.api.http) = {
+            post: "/create/template"
+            body: "*"
+        };
+    }
+    rpc CreateTemplateForOtherApp (CreateTemplateForOtherAppRequest) returns (CreateTemplateForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/create/template/for/other/app"
+            body: "*"
+        };
+    }
+    rpc GetTemplate (GetTemplateRequest) returns (GetTemplateResponse) {
+        option (google.api.http) = {
+            post: "/get/template"
+            body: "*"
+        };
+    }
+    rpc UpdateTemplate (UpdateTemplateRequest) returns (UpdateTemplateResponse) {
+        option (google.api.http) = {
+            post: "/update/template"
+            body: "*"
+        };
+    }
+    rpc GetTemplatesByApp (GetTemplatesByAppRequest) returns (GetTemplatesByAppResponse) {
+        option (google.api.http) = {
+            post: "/get/templates/by/app"
+            body: "*"
+        };
+    }
+    rpc GetTemplatesByOtherApp (GetTemplatesByOtherAppRequest) returns (GetTemplatesByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/get/templates/by/other/app"
+            body: "*"
+        };
+    }
+    rpc GetTemplateByAppLangUsedFor (GetTemplateByAppLangUsedForRequest) returns (GetTemplateByAppLangUsedForResponse) {
+        option (google.api.http) = {
+            post: "/get/template/by/app/lang/usedfor"
+            body: "*"
+        };
+    }
 }
 
 
@@ -200,4 +243,73 @@ message UpdateMailRequest {
 
 message UpdateMailResponse {
     Mail Info = 10;
+}
+
+message Template {
+    string ID = 10;
+    string AppID = 20;
+    string LangId = 30;
+    string UsedFor = 40;
+    string Title = 50;
+    string Content = 60;
+    uint32 CreateAt = 80;
+}
+
+message CreateTemplateRequest {
+    Template Info = 10;
+}
+
+message CreateTemplateResponse {
+    Template Info = 10;
+}
+
+message CreateTemplateForOtherAppRequest {
+    string TargetAppID = 10;
+    Template Info = 20;
+}
+
+message CreateTemplateForOtherAppResponse {
+    Template Info = 10;
+}
+
+message GetTemplateRequest {
+    string ID = 10;
+}
+
+message GetTemplateResponse {
+    Template Info = 10;
+}
+
+message UpdateTemplateRequest {
+    Template Info = 10;
+}
+
+message UpdateTemplateResponse {
+    Template Info = 10;
+}
+
+message GetTemplateByAppLangUsedForRequest {
+    string AppID = 10;
+    string LangID = 20;
+    string UsedFor = 30;
+}
+
+message GetTemplateByAppLangUsedForResponse {
+    Template Info = 10;
+}
+
+message GetTemplatesByAppRequest {
+    string AppID = 10;
+}
+
+message GetTemplatesByAppResponse {
+    repeated Template Infos = 10;
+}
+
+message GetTemplatesByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetTemplatesByOtherAppResponse {
+    repeated Template Infos = 10;
 }

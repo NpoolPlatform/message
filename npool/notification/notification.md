@@ -3,74 +3,104 @@
 
 ## Table of Contents
 
-- [npool/notification/notification.proto](#npool/notification/notification.proto)
-    - [Announcement](#notification.v1.Announcement)
-    - [CheckReadUserRequest](#notification.v1.CheckReadUserRequest)
-    - [CheckReadUserResponse](#notification.v1.CheckReadUserResponse)
-    - [CreateAnnouncementRequest](#notification.v1.CreateAnnouncementRequest)
-    - [CreateAnnouncementResponse](#notification.v1.CreateAnnouncementResponse)
-    - [CreateMailRequest](#notification.v1.CreateMailRequest)
-    - [CreateMailResponse](#notification.v1.CreateMailResponse)
-    - [CreateNotificationRequest](#notification.v1.CreateNotificationRequest)
-    - [CreateNotificationResponse](#notification.v1.CreateNotificationResponse)
-    - [CreateReadUserRequest](#notification.v1.CreateReadUserRequest)
-    - [CreateReadUserResponse](#notification.v1.CreateReadUserResponse)
-    - [GetAnnouncementsByAppRequest](#notification.v1.GetAnnouncementsByAppRequest)
-    - [GetAnnouncementsByAppResponse](#notification.v1.GetAnnouncementsByAppResponse)
-    - [GetNotificationsByAppUserRequest](#notification.v1.GetNotificationsByAppUserRequest)
-    - [GetNotificationsByAppUserResponse](#notification.v1.GetNotificationsByAppUserResponse)
-    - [Mail](#notification.v1.Mail)
-    - [ReadUser](#notification.v1.ReadUser)
-    - [UpdateAnnouncementRequest](#notification.v1.UpdateAnnouncementRequest)
-    - [UpdateAnnouncementResponse](#notification.v1.UpdateAnnouncementResponse)
-    - [UpdateMailRequest](#notification.v1.UpdateMailRequest)
-    - [UpdateMailResponse](#notification.v1.UpdateMailResponse)
-    - [UpdateNotificationRequest](#notification.v1.UpdateNotificationRequest)
-    - [UpdateNotificationResponse](#notification.v1.UpdateNotificationResponse)
-    - [UserNotification](#notification.v1.UserNotification)
+- [npool/notification/notification.proto](#npool_notification_notification-proto)
+    - [Announcement](#notification-v1-Announcement)
+    - [CheckReadUserRequest](#notification-v1-CheckReadUserRequest)
+    - [CheckReadUserResponse](#notification-v1-CheckReadUserResponse)
+    - [CreateAnnouncementRequest](#notification-v1-CreateAnnouncementRequest)
+    - [CreateAnnouncementResponse](#notification-v1-CreateAnnouncementResponse)
+    - [CreateMailRequest](#notification-v1-CreateMailRequest)
+    - [CreateMailResponse](#notification-v1-CreateMailResponse)
+    - [CreateNotificationRequest](#notification-v1-CreateNotificationRequest)
+    - [CreateNotificationResponse](#notification-v1-CreateNotificationResponse)
+    - [CreateReadUserRequest](#notification-v1-CreateReadUserRequest)
+    - [CreateReadUserResponse](#notification-v1-CreateReadUserResponse)
+    - [CreateTemplateForOtherAppRequest](#notification-v1-CreateTemplateForOtherAppRequest)
+    - [CreateTemplateForOtherAppResponse](#notification-v1-CreateTemplateForOtherAppResponse)
+    - [CreateTemplateRequest](#notification-v1-CreateTemplateRequest)
+    - [CreateTemplateResponse](#notification-v1-CreateTemplateResponse)
+    - [GetAnnouncementsByAppRequest](#notification-v1-GetAnnouncementsByAppRequest)
+    - [GetAnnouncementsByAppResponse](#notification-v1-GetAnnouncementsByAppResponse)
+    - [GetNotificationsByAppUserRequest](#notification-v1-GetNotificationsByAppUserRequest)
+    - [GetNotificationsByAppUserResponse](#notification-v1-GetNotificationsByAppUserResponse)
+    - [GetTemplateByAppLangUsedForRequest](#notification-v1-GetTemplateByAppLangUsedForRequest)
+    - [GetTemplateByAppLangUsedForResponse](#notification-v1-GetTemplateByAppLangUsedForResponse)
+    - [GetTemplateRequest](#notification-v1-GetTemplateRequest)
+    - [GetTemplateResponse](#notification-v1-GetTemplateResponse)
+    - [GetTemplatesByAppRequest](#notification-v1-GetTemplatesByAppRequest)
+    - [GetTemplatesByAppResponse](#notification-v1-GetTemplatesByAppResponse)
+    - [GetTemplatesByOtherAppRequest](#notification-v1-GetTemplatesByOtherAppRequest)
+    - [GetTemplatesByOtherAppResponse](#notification-v1-GetTemplatesByOtherAppResponse)
+    - [Mail](#notification-v1-Mail)
+    - [ReadUser](#notification-v1-ReadUser)
+    - [Template](#notification-v1-Template)
+    - [UpdateAnnouncementRequest](#notification-v1-UpdateAnnouncementRequest)
+    - [UpdateAnnouncementResponse](#notification-v1-UpdateAnnouncementResponse)
+    - [UpdateMailRequest](#notification-v1-UpdateMailRequest)
+    - [UpdateMailResponse](#notification-v1-UpdateMailResponse)
+    - [UpdateNotificationRequest](#notification-v1-UpdateNotificationRequest)
+    - [UpdateNotificationResponse](#notification-v1-UpdateNotificationResponse)
+    - [UpdateTemplateRequest](#notification-v1-UpdateTemplateRequest)
+    - [UpdateTemplateResponse](#notification-v1-UpdateTemplateResponse)
+    - [UserNotification](#notification-v1-UserNotification)
   
-    - [Notification](#notification.v1.Notification)
+    - [Notification](#notification-v1-Notification)
   
-- [npool/notification/notification.proto](#npool/notification/notification.proto)
-    - [Announcement](#notification.v1.Announcement)
-    - [CheckReadUserRequest](#notification.v1.CheckReadUserRequest)
-    - [CheckReadUserResponse](#notification.v1.CheckReadUserResponse)
-    - [CreateAnnouncementRequest](#notification.v1.CreateAnnouncementRequest)
-    - [CreateAnnouncementResponse](#notification.v1.CreateAnnouncementResponse)
-    - [CreateMailRequest](#notification.v1.CreateMailRequest)
-    - [CreateMailResponse](#notification.v1.CreateMailResponse)
-    - [CreateNotificationRequest](#notification.v1.CreateNotificationRequest)
-    - [CreateNotificationResponse](#notification.v1.CreateNotificationResponse)
-    - [CreateReadUserRequest](#notification.v1.CreateReadUserRequest)
-    - [CreateReadUserResponse](#notification.v1.CreateReadUserResponse)
-    - [GetAnnouncementsByAppRequest](#notification.v1.GetAnnouncementsByAppRequest)
-    - [GetAnnouncementsByAppResponse](#notification.v1.GetAnnouncementsByAppResponse)
-    - [GetNotificationsByAppUserRequest](#notification.v1.GetNotificationsByAppUserRequest)
-    - [GetNotificationsByAppUserResponse](#notification.v1.GetNotificationsByAppUserResponse)
-    - [Mail](#notification.v1.Mail)
-    - [ReadUser](#notification.v1.ReadUser)
-    - [UpdateAnnouncementRequest](#notification.v1.UpdateAnnouncementRequest)
-    - [UpdateAnnouncementResponse](#notification.v1.UpdateAnnouncementResponse)
-    - [UpdateMailRequest](#notification.v1.UpdateMailRequest)
-    - [UpdateMailResponse](#notification.v1.UpdateMailResponse)
-    - [UpdateNotificationRequest](#notification.v1.UpdateNotificationRequest)
-    - [UpdateNotificationResponse](#notification.v1.UpdateNotificationResponse)
-    - [UserNotification](#notification.v1.UserNotification)
+- [npool/notification/notification.proto](#npool_notification_notification-proto)
+    - [Announcement](#notification-v1-Announcement)
+    - [CheckReadUserRequest](#notification-v1-CheckReadUserRequest)
+    - [CheckReadUserResponse](#notification-v1-CheckReadUserResponse)
+    - [CreateAnnouncementRequest](#notification-v1-CreateAnnouncementRequest)
+    - [CreateAnnouncementResponse](#notification-v1-CreateAnnouncementResponse)
+    - [CreateMailRequest](#notification-v1-CreateMailRequest)
+    - [CreateMailResponse](#notification-v1-CreateMailResponse)
+    - [CreateNotificationRequest](#notification-v1-CreateNotificationRequest)
+    - [CreateNotificationResponse](#notification-v1-CreateNotificationResponse)
+    - [CreateReadUserRequest](#notification-v1-CreateReadUserRequest)
+    - [CreateReadUserResponse](#notification-v1-CreateReadUserResponse)
+    - [CreateTemplateForOtherAppRequest](#notification-v1-CreateTemplateForOtherAppRequest)
+    - [CreateTemplateForOtherAppResponse](#notification-v1-CreateTemplateForOtherAppResponse)
+    - [CreateTemplateRequest](#notification-v1-CreateTemplateRequest)
+    - [CreateTemplateResponse](#notification-v1-CreateTemplateResponse)
+    - [GetAnnouncementsByAppRequest](#notification-v1-GetAnnouncementsByAppRequest)
+    - [GetAnnouncementsByAppResponse](#notification-v1-GetAnnouncementsByAppResponse)
+    - [GetNotificationsByAppUserRequest](#notification-v1-GetNotificationsByAppUserRequest)
+    - [GetNotificationsByAppUserResponse](#notification-v1-GetNotificationsByAppUserResponse)
+    - [GetTemplateByAppLangUsedForRequest](#notification-v1-GetTemplateByAppLangUsedForRequest)
+    - [GetTemplateByAppLangUsedForResponse](#notification-v1-GetTemplateByAppLangUsedForResponse)
+    - [GetTemplateRequest](#notification-v1-GetTemplateRequest)
+    - [GetTemplateResponse](#notification-v1-GetTemplateResponse)
+    - [GetTemplatesByAppRequest](#notification-v1-GetTemplatesByAppRequest)
+    - [GetTemplatesByAppResponse](#notification-v1-GetTemplatesByAppResponse)
+    - [GetTemplatesByOtherAppRequest](#notification-v1-GetTemplatesByOtherAppRequest)
+    - [GetTemplatesByOtherAppResponse](#notification-v1-GetTemplatesByOtherAppResponse)
+    - [Mail](#notification-v1-Mail)
+    - [ReadUser](#notification-v1-ReadUser)
+    - [Template](#notification-v1-Template)
+    - [UpdateAnnouncementRequest](#notification-v1-UpdateAnnouncementRequest)
+    - [UpdateAnnouncementResponse](#notification-v1-UpdateAnnouncementResponse)
+    - [UpdateMailRequest](#notification-v1-UpdateMailRequest)
+    - [UpdateMailResponse](#notification-v1-UpdateMailResponse)
+    - [UpdateNotificationRequest](#notification-v1-UpdateNotificationRequest)
+    - [UpdateNotificationResponse](#notification-v1-UpdateNotificationResponse)
+    - [UpdateTemplateRequest](#notification-v1-UpdateTemplateRequest)
+    - [UpdateTemplateResponse](#notification-v1-UpdateTemplateResponse)
+    - [UserNotification](#notification-v1-UserNotification)
   
-    - [Notification](#notification.v1.Notification)
+    - [Notification](#notification-v1-Notification)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool/notification/notification.proto"></a>
+<a name="npool_notification_notification-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/notification/notification.proto
 
 
 
-<a name="notification.v1.Announcement"></a>
+<a name="notification-v1-Announcement"></a>
 
 ### Announcement
 
@@ -89,7 +119,7 @@
 
 
 
-<a name="notification.v1.CheckReadUserRequest"></a>
+<a name="notification-v1-CheckReadUserRequest"></a>
 
 ### CheckReadUserRequest
 
@@ -97,14 +127,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReadUser](#notification.v1.ReadUser) |  |  |
+| Info | [ReadUser](#notification-v1-ReadUser) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CheckReadUserResponse"></a>
+<a name="notification-v1-CheckReadUserResponse"></a>
 
 ### CheckReadUserResponse
 
@@ -112,14 +142,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReadUser](#notification.v1.ReadUser) |  |  |
+| Info | [ReadUser](#notification-v1-ReadUser) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateAnnouncementRequest"></a>
+<a name="notification-v1-CreateAnnouncementRequest"></a>
 
 ### CreateAnnouncementRequest
 
@@ -127,14 +157,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Announcement](#notification.v1.Announcement) |  |  |
+| Info | [Announcement](#notification-v1-Announcement) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateAnnouncementResponse"></a>
+<a name="notification-v1-CreateAnnouncementResponse"></a>
 
 ### CreateAnnouncementResponse
 
@@ -142,14 +172,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Announcement](#notification.v1.Announcement) |  |  |
+| Info | [Announcement](#notification-v1-Announcement) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateMailRequest"></a>
+<a name="notification-v1-CreateMailRequest"></a>
 
 ### CreateMailRequest
 
@@ -157,14 +187,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Mail](#notification.v1.Mail) |  |  |
+| Info | [Mail](#notification-v1-Mail) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateMailResponse"></a>
+<a name="notification-v1-CreateMailResponse"></a>
 
 ### CreateMailResponse
 
@@ -172,14 +202,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Mail](#notification.v1.Mail) |  |  |
+| Info | [Mail](#notification-v1-Mail) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateNotificationRequest"></a>
+<a name="notification-v1-CreateNotificationRequest"></a>
 
 ### CreateNotificationRequest
 
@@ -187,14 +217,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserNotification](#notification.v1.UserNotification) |  |  |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateNotificationResponse"></a>
+<a name="notification-v1-CreateNotificationResponse"></a>
 
 ### CreateNotificationResponse
 
@@ -202,14 +232,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserNotification](#notification.v1.UserNotification) |  |  |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateReadUserRequest"></a>
+<a name="notification-v1-CreateReadUserRequest"></a>
 
 ### CreateReadUserRequest
 
@@ -217,14 +247,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReadUser](#notification.v1.ReadUser) |  |  |
+| Info | [ReadUser](#notification-v1-ReadUser) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateReadUserResponse"></a>
+<a name="notification-v1-CreateReadUserResponse"></a>
 
 ### CreateReadUserResponse
 
@@ -232,14 +262,75 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReadUser](#notification.v1.ReadUser) |  |  |
+| Info | [ReadUser](#notification-v1-ReadUser) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.GetAnnouncementsByAppRequest"></a>
+<a name="notification-v1-CreateTemplateForOtherAppRequest"></a>
+
+### CreateTemplateForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateTemplateForOtherAppResponse"></a>
+
+### CreateTemplateForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateTemplateRequest"></a>
+
+### CreateTemplateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateTemplateResponse"></a>
+
+### CreateTemplateResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetAnnouncementsByAppRequest"></a>
 
 ### GetAnnouncementsByAppRequest
 
@@ -254,7 +345,7 @@
 
 
 
-<a name="notification.v1.GetAnnouncementsByAppResponse"></a>
+<a name="notification-v1-GetAnnouncementsByAppResponse"></a>
 
 ### GetAnnouncementsByAppResponse
 
@@ -262,14 +353,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Announcement](#notification.v1.Announcement) | repeated |  |
+| Infos | [Announcement](#notification-v1-Announcement) | repeated |  |
 
 
 
 
 
 
-<a name="notification.v1.GetNotificationsByAppUserRequest"></a>
+<a name="notification-v1-GetNotificationsByAppUserRequest"></a>
 
 ### GetNotificationsByAppUserRequest
 
@@ -285,7 +376,7 @@
 
 
 
-<a name="notification.v1.GetNotificationsByAppUserResponse"></a>
+<a name="notification-v1-GetNotificationsByAppUserResponse"></a>
 
 ### GetNotificationsByAppUserResponse
 
@@ -293,14 +384,136 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserNotification](#notification.v1.UserNotification) | repeated |  |
+| Infos | [UserNotification](#notification-v1-UserNotification) | repeated |  |
 
 
 
 
 
 
-<a name="notification.v1.Mail"></a>
+<a name="notification-v1-GetTemplateByAppLangUsedForRequest"></a>
+
+### GetTemplateByAppLangUsedForRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetTemplateByAppLangUsedForResponse"></a>
+
+### GetTemplateByAppLangUsedForResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetTemplateRequest"></a>
+
+### GetTemplateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetTemplateResponse"></a>
+
+### GetTemplateResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetTemplatesByAppRequest"></a>
+
+### GetTemplatesByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetTemplatesByAppResponse"></a>
+
+### GetTemplatesByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Template](#notification-v1-Template) | repeated |  |
+
+
+
+
+
+
+<a name="notification-v1-GetTemplatesByOtherAppRequest"></a>
+
+### GetTemplatesByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetTemplatesByOtherAppResponse"></a>
+
+### GetTemplatesByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Template](#notification-v1-Template) | repeated |  |
+
+
+
+
+
+
+<a name="notification-v1-Mail"></a>
 
 ### Mail
 
@@ -322,7 +535,7 @@
 
 
 
-<a name="notification.v1.ReadUser"></a>
+<a name="notification-v1-ReadUser"></a>
 
 ### ReadUser
 
@@ -341,7 +554,28 @@
 
 
 
-<a name="notification.v1.UpdateAnnouncementRequest"></a>
+<a name="notification-v1-Template"></a>
+
+### Template
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| LangId | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+| Title | [string](#string) |  |  |
+| Content | [string](#string) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-UpdateAnnouncementRequest"></a>
 
 ### UpdateAnnouncementRequest
 
@@ -349,14 +583,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Announcement](#notification.v1.Announcement) |  |  |
+| Info | [Announcement](#notification-v1-Announcement) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.UpdateAnnouncementResponse"></a>
+<a name="notification-v1-UpdateAnnouncementResponse"></a>
 
 ### UpdateAnnouncementResponse
 
@@ -364,14 +598,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Announcement](#notification.v1.Announcement) |  |  |
+| Info | [Announcement](#notification-v1-Announcement) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.UpdateMailRequest"></a>
+<a name="notification-v1-UpdateMailRequest"></a>
 
 ### UpdateMailRequest
 
@@ -379,14 +613,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Mail](#notification.v1.Mail) |  |  |
+| Info | [Mail](#notification-v1-Mail) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.UpdateMailResponse"></a>
+<a name="notification-v1-UpdateMailResponse"></a>
 
 ### UpdateMailResponse
 
@@ -394,14 +628,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Mail](#notification.v1.Mail) |  |  |
+| Info | [Mail](#notification-v1-Mail) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.UpdateNotificationRequest"></a>
+<a name="notification-v1-UpdateNotificationRequest"></a>
 
 ### UpdateNotificationRequest
 
@@ -409,14 +643,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserNotification](#notification.v1.UserNotification) |  |  |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.UpdateNotificationResponse"></a>
+<a name="notification-v1-UpdateNotificationResponse"></a>
 
 ### UpdateNotificationResponse
 
@@ -424,14 +658,44 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserNotification](#notification.v1.UserNotification) |  |  |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.UserNotification"></a>
+<a name="notification-v1-UpdateTemplateRequest"></a>
+
+### UpdateTemplateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-UpdateTemplateResponse"></a>
+
+### UpdateTemplateResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-UserNotification"></a>
 
 ### UserNotification
 
@@ -458,37 +722,44 @@
  
 
 
-<a name="notification.v1.Notification"></a>
+<a name="notification-v1-Notification"></a>
 
 ### Notification
 Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
-| CreateAnnouncement | [CreateAnnouncementRequest](#notification.v1.CreateAnnouncementRequest) | [CreateAnnouncementResponse](#notification.v1.CreateAnnouncementResponse) |  |
-| UpdateAnnouncement | [UpdateAnnouncementRequest](#notification.v1.UpdateAnnouncementRequest) | [UpdateAnnouncementResponse](#notification.v1.UpdateAnnouncementResponse) |  |
-| GetAnnouncementsByApp | [GetAnnouncementsByAppRequest](#notification.v1.GetAnnouncementsByAppRequest) | [GetAnnouncementsByAppResponse](#notification.v1.GetAnnouncementsByAppResponse) |  |
-| CreateNotification | [CreateNotificationRequest](#notification.v1.CreateNotificationRequest) | [CreateNotificationResponse](#notification.v1.CreateNotificationResponse) |  |
-| UpdateNotification | [UpdateNotificationRequest](#notification.v1.UpdateNotificationRequest) | [UpdateNotificationResponse](#notification.v1.UpdateNotificationResponse) |  |
-| GetNotificationsByAppUser | [GetNotificationsByAppUserRequest](#notification.v1.GetNotificationsByAppUserRequest) | [GetNotificationsByAppUserResponse](#notification.v1.GetNotificationsByAppUserResponse) |  |
-| CreateReadUser | [CreateReadUserRequest](#notification.v1.CreateReadUserRequest) | [CreateReadUserResponse](#notification.v1.CreateReadUserResponse) |  |
-| CheckReadUser | [CheckReadUserRequest](#notification.v1.CheckReadUserRequest) | [CheckReadUserResponse](#notification.v1.CheckReadUserResponse) |  |
-| CreateMail | [CreateMailRequest](#notification.v1.CreateMailRequest) | [CreateMailResponse](#notification.v1.CreateMailResponse) |  |
-| UpdateMail | [UpdateMailRequest](#notification.v1.UpdateMailRequest) | [UpdateMailResponse](#notification.v1.UpdateMailResponse) |  |
+| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) | Method Version |
+| CreateAnnouncement | [CreateAnnouncementRequest](#notification-v1-CreateAnnouncementRequest) | [CreateAnnouncementResponse](#notification-v1-CreateAnnouncementResponse) |  |
+| UpdateAnnouncement | [UpdateAnnouncementRequest](#notification-v1-UpdateAnnouncementRequest) | [UpdateAnnouncementResponse](#notification-v1-UpdateAnnouncementResponse) |  |
+| GetAnnouncementsByApp | [GetAnnouncementsByAppRequest](#notification-v1-GetAnnouncementsByAppRequest) | [GetAnnouncementsByAppResponse](#notification-v1-GetAnnouncementsByAppResponse) |  |
+| CreateNotification | [CreateNotificationRequest](#notification-v1-CreateNotificationRequest) | [CreateNotificationResponse](#notification-v1-CreateNotificationResponse) |  |
+| UpdateNotification | [UpdateNotificationRequest](#notification-v1-UpdateNotificationRequest) | [UpdateNotificationResponse](#notification-v1-UpdateNotificationResponse) |  |
+| GetNotificationsByAppUser | [GetNotificationsByAppUserRequest](#notification-v1-GetNotificationsByAppUserRequest) | [GetNotificationsByAppUserResponse](#notification-v1-GetNotificationsByAppUserResponse) |  |
+| CreateReadUser | [CreateReadUserRequest](#notification-v1-CreateReadUserRequest) | [CreateReadUserResponse](#notification-v1-CreateReadUserResponse) |  |
+| CheckReadUser | [CheckReadUserRequest](#notification-v1-CheckReadUserRequest) | [CheckReadUserResponse](#notification-v1-CheckReadUserResponse) |  |
+| CreateMail | [CreateMailRequest](#notification-v1-CreateMailRequest) | [CreateMailResponse](#notification-v1-CreateMailResponse) |  |
+| UpdateMail | [UpdateMailRequest](#notification-v1-UpdateMailRequest) | [UpdateMailResponse](#notification-v1-UpdateMailResponse) |  |
+| CreateTemplate | [CreateTemplateRequest](#notification-v1-CreateTemplateRequest) | [CreateTemplateResponse](#notification-v1-CreateTemplateResponse) |  |
+| CreateTemplateForOtherApp | [CreateTemplateForOtherAppRequest](#notification-v1-CreateTemplateForOtherAppRequest) | [CreateTemplateForOtherAppResponse](#notification-v1-CreateTemplateForOtherAppResponse) |  |
+| GetTemplate | [GetTemplateRequest](#notification-v1-GetTemplateRequest) | [GetTemplateResponse](#notification-v1-GetTemplateResponse) |  |
+| UpdateTemplate | [UpdateTemplateRequest](#notification-v1-UpdateTemplateRequest) | [UpdateTemplateResponse](#notification-v1-UpdateTemplateResponse) |  |
+| GetTemplatesByApp | [GetTemplatesByAppRequest](#notification-v1-GetTemplatesByAppRequest) | [GetTemplatesByAppResponse](#notification-v1-GetTemplatesByAppResponse) |  |
+| GetTemplatesByOtherApp | [GetTemplatesByOtherAppRequest](#notification-v1-GetTemplatesByOtherAppRequest) | [GetTemplatesByOtherAppResponse](#notification-v1-GetTemplatesByOtherAppResponse) |  |
+| GetTemplateByAppLangUsedFor | [GetTemplateByAppLangUsedForRequest](#notification-v1-GetTemplateByAppLangUsedForRequest) | [GetTemplateByAppLangUsedForResponse](#notification-v1-GetTemplateByAppLangUsedForResponse) |  |
 
  
 
 
 
-<a name="npool/notification/notification.proto"></a>
+<a name="npool_notification_notification-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/notification/notification.proto
 
 
 
-<a name="notification.v1.Announcement"></a>
+<a name="notification-v1-Announcement"></a>
 
 ### Announcement
 
@@ -507,7 +778,7 @@ Service Name
 
 
 
-<a name="notification.v1.CheckReadUserRequest"></a>
+<a name="notification-v1-CheckReadUserRequest"></a>
 
 ### CheckReadUserRequest
 
@@ -515,14 +786,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReadUser](#notification.v1.ReadUser) |  |  |
+| Info | [ReadUser](#notification-v1-ReadUser) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CheckReadUserResponse"></a>
+<a name="notification-v1-CheckReadUserResponse"></a>
 
 ### CheckReadUserResponse
 
@@ -530,14 +801,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReadUser](#notification.v1.ReadUser) |  |  |
+| Info | [ReadUser](#notification-v1-ReadUser) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateAnnouncementRequest"></a>
+<a name="notification-v1-CreateAnnouncementRequest"></a>
 
 ### CreateAnnouncementRequest
 
@@ -545,14 +816,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Announcement](#notification.v1.Announcement) |  |  |
+| Info | [Announcement](#notification-v1-Announcement) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateAnnouncementResponse"></a>
+<a name="notification-v1-CreateAnnouncementResponse"></a>
 
 ### CreateAnnouncementResponse
 
@@ -560,14 +831,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Announcement](#notification.v1.Announcement) |  |  |
+| Info | [Announcement](#notification-v1-Announcement) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateMailRequest"></a>
+<a name="notification-v1-CreateMailRequest"></a>
 
 ### CreateMailRequest
 
@@ -575,14 +846,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Mail](#notification.v1.Mail) |  |  |
+| Info | [Mail](#notification-v1-Mail) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateMailResponse"></a>
+<a name="notification-v1-CreateMailResponse"></a>
 
 ### CreateMailResponse
 
@@ -590,14 +861,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Mail](#notification.v1.Mail) |  |  |
+| Info | [Mail](#notification-v1-Mail) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateNotificationRequest"></a>
+<a name="notification-v1-CreateNotificationRequest"></a>
 
 ### CreateNotificationRequest
 
@@ -605,14 +876,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserNotification](#notification.v1.UserNotification) |  |  |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateNotificationResponse"></a>
+<a name="notification-v1-CreateNotificationResponse"></a>
 
 ### CreateNotificationResponse
 
@@ -620,14 +891,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserNotification](#notification.v1.UserNotification) |  |  |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateReadUserRequest"></a>
+<a name="notification-v1-CreateReadUserRequest"></a>
 
 ### CreateReadUserRequest
 
@@ -635,14 +906,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReadUser](#notification.v1.ReadUser) |  |  |
+| Info | [ReadUser](#notification-v1-ReadUser) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.CreateReadUserResponse"></a>
+<a name="notification-v1-CreateReadUserResponse"></a>
 
 ### CreateReadUserResponse
 
@@ -650,14 +921,75 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReadUser](#notification.v1.ReadUser) |  |  |
+| Info | [ReadUser](#notification-v1-ReadUser) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.GetAnnouncementsByAppRequest"></a>
+<a name="notification-v1-CreateTemplateForOtherAppRequest"></a>
+
+### CreateTemplateForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateTemplateForOtherAppResponse"></a>
+
+### CreateTemplateForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateTemplateRequest"></a>
+
+### CreateTemplateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateTemplateResponse"></a>
+
+### CreateTemplateResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetAnnouncementsByAppRequest"></a>
 
 ### GetAnnouncementsByAppRequest
 
@@ -672,7 +1004,7 @@ Service Name
 
 
 
-<a name="notification.v1.GetAnnouncementsByAppResponse"></a>
+<a name="notification-v1-GetAnnouncementsByAppResponse"></a>
 
 ### GetAnnouncementsByAppResponse
 
@@ -680,14 +1012,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Announcement](#notification.v1.Announcement) | repeated |  |
+| Infos | [Announcement](#notification-v1-Announcement) | repeated |  |
 
 
 
 
 
 
-<a name="notification.v1.GetNotificationsByAppUserRequest"></a>
+<a name="notification-v1-GetNotificationsByAppUserRequest"></a>
 
 ### GetNotificationsByAppUserRequest
 
@@ -703,7 +1035,7 @@ Service Name
 
 
 
-<a name="notification.v1.GetNotificationsByAppUserResponse"></a>
+<a name="notification-v1-GetNotificationsByAppUserResponse"></a>
 
 ### GetNotificationsByAppUserResponse
 
@@ -711,14 +1043,136 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserNotification](#notification.v1.UserNotification) | repeated |  |
+| Infos | [UserNotification](#notification-v1-UserNotification) | repeated |  |
 
 
 
 
 
 
-<a name="notification.v1.Mail"></a>
+<a name="notification-v1-GetTemplateByAppLangUsedForRequest"></a>
+
+### GetTemplateByAppLangUsedForRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetTemplateByAppLangUsedForResponse"></a>
+
+### GetTemplateByAppLangUsedForResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetTemplateRequest"></a>
+
+### GetTemplateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetTemplateResponse"></a>
+
+### GetTemplateResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetTemplatesByAppRequest"></a>
+
+### GetTemplatesByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetTemplatesByAppResponse"></a>
+
+### GetTemplatesByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Template](#notification-v1-Template) | repeated |  |
+
+
+
+
+
+
+<a name="notification-v1-GetTemplatesByOtherAppRequest"></a>
+
+### GetTemplatesByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetTemplatesByOtherAppResponse"></a>
+
+### GetTemplatesByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Template](#notification-v1-Template) | repeated |  |
+
+
+
+
+
+
+<a name="notification-v1-Mail"></a>
 
 ### Mail
 
@@ -740,7 +1194,7 @@ Service Name
 
 
 
-<a name="notification.v1.ReadUser"></a>
+<a name="notification-v1-ReadUser"></a>
 
 ### ReadUser
 
@@ -759,7 +1213,28 @@ Service Name
 
 
 
-<a name="notification.v1.UpdateAnnouncementRequest"></a>
+<a name="notification-v1-Template"></a>
+
+### Template
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| LangId | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+| Title | [string](#string) |  |  |
+| Content | [string](#string) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-UpdateAnnouncementRequest"></a>
 
 ### UpdateAnnouncementRequest
 
@@ -767,14 +1242,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Announcement](#notification.v1.Announcement) |  |  |
+| Info | [Announcement](#notification-v1-Announcement) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.UpdateAnnouncementResponse"></a>
+<a name="notification-v1-UpdateAnnouncementResponse"></a>
 
 ### UpdateAnnouncementResponse
 
@@ -782,14 +1257,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Announcement](#notification.v1.Announcement) |  |  |
+| Info | [Announcement](#notification-v1-Announcement) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.UpdateMailRequest"></a>
+<a name="notification-v1-UpdateMailRequest"></a>
 
 ### UpdateMailRequest
 
@@ -797,14 +1272,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Mail](#notification.v1.Mail) |  |  |
+| Info | [Mail](#notification-v1-Mail) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.UpdateMailResponse"></a>
+<a name="notification-v1-UpdateMailResponse"></a>
 
 ### UpdateMailResponse
 
@@ -812,14 +1287,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Mail](#notification.v1.Mail) |  |  |
+| Info | [Mail](#notification-v1-Mail) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.UpdateNotificationRequest"></a>
+<a name="notification-v1-UpdateNotificationRequest"></a>
 
 ### UpdateNotificationRequest
 
@@ -827,14 +1302,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserNotification](#notification.v1.UserNotification) |  |  |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.UpdateNotificationResponse"></a>
+<a name="notification-v1-UpdateNotificationResponse"></a>
 
 ### UpdateNotificationResponse
 
@@ -842,14 +1317,44 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserNotification](#notification.v1.UserNotification) |  |  |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
 
 
 
 
 
 
-<a name="notification.v1.UserNotification"></a>
+<a name="notification-v1-UpdateTemplateRequest"></a>
+
+### UpdateTemplateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-UpdateTemplateResponse"></a>
+
+### UpdateTemplateResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Template](#notification-v1-Template) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-UserNotification"></a>
 
 ### UserNotification
 
@@ -876,24 +1381,31 @@ Service Name
  
 
 
-<a name="notification.v1.Notification"></a>
+<a name="notification-v1-Notification"></a>
 
 ### Notification
 Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
-| CreateAnnouncement | [CreateAnnouncementRequest](#notification.v1.CreateAnnouncementRequest) | [CreateAnnouncementResponse](#notification.v1.CreateAnnouncementResponse) |  |
-| UpdateAnnouncement | [UpdateAnnouncementRequest](#notification.v1.UpdateAnnouncementRequest) | [UpdateAnnouncementResponse](#notification.v1.UpdateAnnouncementResponse) |  |
-| GetAnnouncementsByApp | [GetAnnouncementsByAppRequest](#notification.v1.GetAnnouncementsByAppRequest) | [GetAnnouncementsByAppResponse](#notification.v1.GetAnnouncementsByAppResponse) |  |
-| CreateNotification | [CreateNotificationRequest](#notification.v1.CreateNotificationRequest) | [CreateNotificationResponse](#notification.v1.CreateNotificationResponse) |  |
-| UpdateNotification | [UpdateNotificationRequest](#notification.v1.UpdateNotificationRequest) | [UpdateNotificationResponse](#notification.v1.UpdateNotificationResponse) |  |
-| GetNotificationsByAppUser | [GetNotificationsByAppUserRequest](#notification.v1.GetNotificationsByAppUserRequest) | [GetNotificationsByAppUserResponse](#notification.v1.GetNotificationsByAppUserResponse) |  |
-| CreateReadUser | [CreateReadUserRequest](#notification.v1.CreateReadUserRequest) | [CreateReadUserResponse](#notification.v1.CreateReadUserResponse) |  |
-| CheckReadUser | [CheckReadUserRequest](#notification.v1.CheckReadUserRequest) | [CheckReadUserResponse](#notification.v1.CheckReadUserResponse) |  |
-| CreateMail | [CreateMailRequest](#notification.v1.CreateMailRequest) | [CreateMailResponse](#notification.v1.CreateMailResponse) |  |
-| UpdateMail | [UpdateMailRequest](#notification.v1.UpdateMailRequest) | [UpdateMailResponse](#notification.v1.UpdateMailResponse) |  |
+| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) | Method Version |
+| CreateAnnouncement | [CreateAnnouncementRequest](#notification-v1-CreateAnnouncementRequest) | [CreateAnnouncementResponse](#notification-v1-CreateAnnouncementResponse) |  |
+| UpdateAnnouncement | [UpdateAnnouncementRequest](#notification-v1-UpdateAnnouncementRequest) | [UpdateAnnouncementResponse](#notification-v1-UpdateAnnouncementResponse) |  |
+| GetAnnouncementsByApp | [GetAnnouncementsByAppRequest](#notification-v1-GetAnnouncementsByAppRequest) | [GetAnnouncementsByAppResponse](#notification-v1-GetAnnouncementsByAppResponse) |  |
+| CreateNotification | [CreateNotificationRequest](#notification-v1-CreateNotificationRequest) | [CreateNotificationResponse](#notification-v1-CreateNotificationResponse) |  |
+| UpdateNotification | [UpdateNotificationRequest](#notification-v1-UpdateNotificationRequest) | [UpdateNotificationResponse](#notification-v1-UpdateNotificationResponse) |  |
+| GetNotificationsByAppUser | [GetNotificationsByAppUserRequest](#notification-v1-GetNotificationsByAppUserRequest) | [GetNotificationsByAppUserResponse](#notification-v1-GetNotificationsByAppUserResponse) |  |
+| CreateReadUser | [CreateReadUserRequest](#notification-v1-CreateReadUserRequest) | [CreateReadUserResponse](#notification-v1-CreateReadUserResponse) |  |
+| CheckReadUser | [CheckReadUserRequest](#notification-v1-CheckReadUserRequest) | [CheckReadUserResponse](#notification-v1-CheckReadUserResponse) |  |
+| CreateMail | [CreateMailRequest](#notification-v1-CreateMailRequest) | [CreateMailResponse](#notification-v1-CreateMailResponse) |  |
+| UpdateMail | [UpdateMailRequest](#notification-v1-UpdateMailRequest) | [UpdateMailResponse](#notification-v1-UpdateMailResponse) |  |
+| CreateTemplate | [CreateTemplateRequest](#notification-v1-CreateTemplateRequest) | [CreateTemplateResponse](#notification-v1-CreateTemplateResponse) |  |
+| CreateTemplateForOtherApp | [CreateTemplateForOtherAppRequest](#notification-v1-CreateTemplateForOtherAppRequest) | [CreateTemplateForOtherAppResponse](#notification-v1-CreateTemplateForOtherAppResponse) |  |
+| GetTemplate | [GetTemplateRequest](#notification-v1-GetTemplateRequest) | [GetTemplateResponse](#notification-v1-GetTemplateResponse) |  |
+| UpdateTemplate | [UpdateTemplateRequest](#notification-v1-UpdateTemplateRequest) | [UpdateTemplateResponse](#notification-v1-UpdateTemplateResponse) |  |
+| GetTemplatesByApp | [GetTemplatesByAppRequest](#notification-v1-GetTemplatesByAppRequest) | [GetTemplatesByAppResponse](#notification-v1-GetTemplatesByAppResponse) |  |
+| GetTemplatesByOtherApp | [GetTemplatesByOtherAppRequest](#notification-v1-GetTemplatesByOtherAppRequest) | [GetTemplatesByOtherAppResponse](#notification-v1-GetTemplatesByOtherAppResponse) |  |
+| GetTemplateByAppLangUsedFor | [GetTemplateByAppLangUsedForRequest](#notification-v1-GetTemplateByAppLangUsedForRequest) | [GetTemplateByAppLangUsedForResponse](#notification-v1-GetTemplateByAppLangUsedForResponse) |  |
 
  
 
