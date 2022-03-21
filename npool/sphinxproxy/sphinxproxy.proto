@@ -141,6 +141,8 @@ message ProxyPluginRequest {
   sphinx.plugin.v1.Signature       Signature  = 150;
   // btc
   sphinx.plugin.v1.MsgTx           MsgTx      = 151;
+  // eth/usdt
+  string  SignedRawTxHex                      = 152;
   string CID                                  = 160;
 }
 
@@ -159,7 +161,7 @@ message ProxySignResponse {
   ProxySignResponseInfo Info          = 130;
   // btc
   sphinx.plugin.v1.MsgTx  MsgTx       = 140;
-  // eth/erc20
+  // eth/usdt
   string  SignedRawTxHex              = 150;
 
   string RPCExitMessage               = 1000;

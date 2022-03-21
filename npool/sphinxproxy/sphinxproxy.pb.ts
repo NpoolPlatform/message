@@ -113,6 +113,7 @@ export type ProxyPluginRequest = {
   message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
   signature?: SphinxPluginV1Sphinxplugin.Signature
   msgTx?: SphinxPluginV1Sphinxplugin.MsgTx
+  signedRawTxHex?: string
   cID?: string
 }
 

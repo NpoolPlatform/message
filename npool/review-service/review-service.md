@@ -3,88 +3,88 @@
 
 ## Table of Contents
 
-- [npool/review-service/review-service.proto](#npool/review-service/review-service.proto)
-    - [CreateReviewRequest](#review.service.v1.CreateReviewRequest)
-    - [CreateReviewResponse](#review.service.v1.CreateReviewResponse)
-    - [CreateReviewRuleRequest](#review.service.v1.CreateReviewRuleRequest)
-    - [CreateReviewRuleResponse](#review.service.v1.CreateReviewRuleResponse)
-    - [GetReviewRequest](#review.service.v1.GetReviewRequest)
-    - [GetReviewResponse](#review.service.v1.GetReviewResponse)
-    - [GetReviewRuleByDomainObjectTypeRequest](#review.service.v1.GetReviewRuleByDomainObjectTypeRequest)
-    - [GetReviewRuleByDomainObjectTypeResponse](#review.service.v1.GetReviewRuleByDomainObjectTypeResponse)
-    - [GetReviewRuleRequest](#review.service.v1.GetReviewRuleRequest)
-    - [GetReviewRuleResponse](#review.service.v1.GetReviewRuleResponse)
-    - [GetReviewRulesByDomainRequest](#review.service.v1.GetReviewRulesByDomainRequest)
-    - [GetReviewRulesByDomainResponse](#review.service.v1.GetReviewRulesByDomainResponse)
-    - [GetReviewsByAppDomainObjectTypeIDRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeIDRequest)
-    - [GetReviewsByAppDomainObjectTypeIDResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeIDResponse)
-    - [GetReviewsByAppDomainObjectTypeRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeRequest)
-    - [GetReviewsByAppDomainObjectTypeResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeResponse)
-    - [GetReviewsByAppDomainRequest](#review.service.v1.GetReviewsByAppDomainRequest)
-    - [GetReviewsByAppDomainResponse](#review.service.v1.GetReviewsByAppDomainResponse)
-    - [GetReviewsByDomainRequest](#review.service.v1.GetReviewsByDomainRequest)
-    - [GetReviewsByDomainResponse](#review.service.v1.GetReviewsByDomainResponse)
-    - [Review](#review.service.v1.Review)
-    - [ReviewRule](#review.service.v1.ReviewRule)
-    - [SubmitReviewRequest](#review.service.v1.SubmitReviewRequest)
-    - [SubmitReviewResponse](#review.service.v1.SubmitReviewResponse)
-    - [SubmitReviewResultRequest](#review.service.v1.SubmitReviewResultRequest)
-    - [SubmitReviewResultResponse](#review.service.v1.SubmitReviewResultResponse)
-    - [UpdateReviewRequest](#review.service.v1.UpdateReviewRequest)
-    - [UpdateReviewResponse](#review.service.v1.UpdateReviewResponse)
-    - [UpdateReviewRuleRequest](#review.service.v1.UpdateReviewRuleRequest)
-    - [UpdateReviewRuleResponse](#review.service.v1.UpdateReviewRuleResponse)
-    - [VersionResponse](#review.service.v1.VersionResponse)
+- [npool/review-service/review-service.proto](#npool_review-service_review-service-proto)
+    - [CreateReviewRequest](#review-service-v1-CreateReviewRequest)
+    - [CreateReviewResponse](#review-service-v1-CreateReviewResponse)
+    - [CreateReviewRuleRequest](#review-service-v1-CreateReviewRuleRequest)
+    - [CreateReviewRuleResponse](#review-service-v1-CreateReviewRuleResponse)
+    - [GetReviewRequest](#review-service-v1-GetReviewRequest)
+    - [GetReviewResponse](#review-service-v1-GetReviewResponse)
+    - [GetReviewRuleByDomainObjectTypeRequest](#review-service-v1-GetReviewRuleByDomainObjectTypeRequest)
+    - [GetReviewRuleByDomainObjectTypeResponse](#review-service-v1-GetReviewRuleByDomainObjectTypeResponse)
+    - [GetReviewRuleRequest](#review-service-v1-GetReviewRuleRequest)
+    - [GetReviewRuleResponse](#review-service-v1-GetReviewRuleResponse)
+    - [GetReviewRulesByDomainRequest](#review-service-v1-GetReviewRulesByDomainRequest)
+    - [GetReviewRulesByDomainResponse](#review-service-v1-GetReviewRulesByDomainResponse)
+    - [GetReviewsByAppDomainObjectTypeIDRequest](#review-service-v1-GetReviewsByAppDomainObjectTypeIDRequest)
+    - [GetReviewsByAppDomainObjectTypeIDResponse](#review-service-v1-GetReviewsByAppDomainObjectTypeIDResponse)
+    - [GetReviewsByAppDomainObjectTypeRequest](#review-service-v1-GetReviewsByAppDomainObjectTypeRequest)
+    - [GetReviewsByAppDomainObjectTypeResponse](#review-service-v1-GetReviewsByAppDomainObjectTypeResponse)
+    - [GetReviewsByAppDomainRequest](#review-service-v1-GetReviewsByAppDomainRequest)
+    - [GetReviewsByAppDomainResponse](#review-service-v1-GetReviewsByAppDomainResponse)
+    - [GetReviewsByDomainRequest](#review-service-v1-GetReviewsByDomainRequest)
+    - [GetReviewsByDomainResponse](#review-service-v1-GetReviewsByDomainResponse)
+    - [Review](#review-service-v1-Review)
+    - [ReviewRule](#review-service-v1-ReviewRule)
+    - [SubmitReviewRequest](#review-service-v1-SubmitReviewRequest)
+    - [SubmitReviewResponse](#review-service-v1-SubmitReviewResponse)
+    - [SubmitReviewResultRequest](#review-service-v1-SubmitReviewResultRequest)
+    - [SubmitReviewResultResponse](#review-service-v1-SubmitReviewResultResponse)
+    - [UpdateReviewRequest](#review-service-v1-UpdateReviewRequest)
+    - [UpdateReviewResponse](#review-service-v1-UpdateReviewResponse)
+    - [UpdateReviewRuleRequest](#review-service-v1-UpdateReviewRuleRequest)
+    - [UpdateReviewRuleResponse](#review-service-v1-UpdateReviewRuleResponse)
+    - [VersionResponse](#review-service-v1-VersionResponse)
   
-    - [ReviewService](#review.service.v1.ReviewService)
+    - [ReviewService](#review-service-v1-ReviewService)
   
-- [npool/review-service/review-service.proto](#npool/review-service/review-service.proto)
-    - [CreateReviewRequest](#review.service.v1.CreateReviewRequest)
-    - [CreateReviewResponse](#review.service.v1.CreateReviewResponse)
-    - [CreateReviewRuleRequest](#review.service.v1.CreateReviewRuleRequest)
-    - [CreateReviewRuleResponse](#review.service.v1.CreateReviewRuleResponse)
-    - [GetReviewRequest](#review.service.v1.GetReviewRequest)
-    - [GetReviewResponse](#review.service.v1.GetReviewResponse)
-    - [GetReviewRuleByDomainObjectTypeRequest](#review.service.v1.GetReviewRuleByDomainObjectTypeRequest)
-    - [GetReviewRuleByDomainObjectTypeResponse](#review.service.v1.GetReviewRuleByDomainObjectTypeResponse)
-    - [GetReviewRuleRequest](#review.service.v1.GetReviewRuleRequest)
-    - [GetReviewRuleResponse](#review.service.v1.GetReviewRuleResponse)
-    - [GetReviewRulesByDomainRequest](#review.service.v1.GetReviewRulesByDomainRequest)
-    - [GetReviewRulesByDomainResponse](#review.service.v1.GetReviewRulesByDomainResponse)
-    - [GetReviewsByAppDomainObjectTypeIDRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeIDRequest)
-    - [GetReviewsByAppDomainObjectTypeIDResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeIDResponse)
-    - [GetReviewsByAppDomainObjectTypeRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeRequest)
-    - [GetReviewsByAppDomainObjectTypeResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeResponse)
-    - [GetReviewsByAppDomainRequest](#review.service.v1.GetReviewsByAppDomainRequest)
-    - [GetReviewsByAppDomainResponse](#review.service.v1.GetReviewsByAppDomainResponse)
-    - [GetReviewsByDomainRequest](#review.service.v1.GetReviewsByDomainRequest)
-    - [GetReviewsByDomainResponse](#review.service.v1.GetReviewsByDomainResponse)
-    - [Review](#review.service.v1.Review)
-    - [ReviewRule](#review.service.v1.ReviewRule)
-    - [SubmitReviewRequest](#review.service.v1.SubmitReviewRequest)
-    - [SubmitReviewResponse](#review.service.v1.SubmitReviewResponse)
-    - [SubmitReviewResultRequest](#review.service.v1.SubmitReviewResultRequest)
-    - [SubmitReviewResultResponse](#review.service.v1.SubmitReviewResultResponse)
-    - [UpdateReviewRequest](#review.service.v1.UpdateReviewRequest)
-    - [UpdateReviewResponse](#review.service.v1.UpdateReviewResponse)
-    - [UpdateReviewRuleRequest](#review.service.v1.UpdateReviewRuleRequest)
-    - [UpdateReviewRuleResponse](#review.service.v1.UpdateReviewRuleResponse)
-    - [VersionResponse](#review.service.v1.VersionResponse)
+- [npool/review-service/review-service.proto](#npool_review-service_review-service-proto)
+    - [CreateReviewRequest](#review-service-v1-CreateReviewRequest)
+    - [CreateReviewResponse](#review-service-v1-CreateReviewResponse)
+    - [CreateReviewRuleRequest](#review-service-v1-CreateReviewRuleRequest)
+    - [CreateReviewRuleResponse](#review-service-v1-CreateReviewRuleResponse)
+    - [GetReviewRequest](#review-service-v1-GetReviewRequest)
+    - [GetReviewResponse](#review-service-v1-GetReviewResponse)
+    - [GetReviewRuleByDomainObjectTypeRequest](#review-service-v1-GetReviewRuleByDomainObjectTypeRequest)
+    - [GetReviewRuleByDomainObjectTypeResponse](#review-service-v1-GetReviewRuleByDomainObjectTypeResponse)
+    - [GetReviewRuleRequest](#review-service-v1-GetReviewRuleRequest)
+    - [GetReviewRuleResponse](#review-service-v1-GetReviewRuleResponse)
+    - [GetReviewRulesByDomainRequest](#review-service-v1-GetReviewRulesByDomainRequest)
+    - [GetReviewRulesByDomainResponse](#review-service-v1-GetReviewRulesByDomainResponse)
+    - [GetReviewsByAppDomainObjectTypeIDRequest](#review-service-v1-GetReviewsByAppDomainObjectTypeIDRequest)
+    - [GetReviewsByAppDomainObjectTypeIDResponse](#review-service-v1-GetReviewsByAppDomainObjectTypeIDResponse)
+    - [GetReviewsByAppDomainObjectTypeRequest](#review-service-v1-GetReviewsByAppDomainObjectTypeRequest)
+    - [GetReviewsByAppDomainObjectTypeResponse](#review-service-v1-GetReviewsByAppDomainObjectTypeResponse)
+    - [GetReviewsByAppDomainRequest](#review-service-v1-GetReviewsByAppDomainRequest)
+    - [GetReviewsByAppDomainResponse](#review-service-v1-GetReviewsByAppDomainResponse)
+    - [GetReviewsByDomainRequest](#review-service-v1-GetReviewsByDomainRequest)
+    - [GetReviewsByDomainResponse](#review-service-v1-GetReviewsByDomainResponse)
+    - [Review](#review-service-v1-Review)
+    - [ReviewRule](#review-service-v1-ReviewRule)
+    - [SubmitReviewRequest](#review-service-v1-SubmitReviewRequest)
+    - [SubmitReviewResponse](#review-service-v1-SubmitReviewResponse)
+    - [SubmitReviewResultRequest](#review-service-v1-SubmitReviewResultRequest)
+    - [SubmitReviewResultResponse](#review-service-v1-SubmitReviewResultResponse)
+    - [UpdateReviewRequest](#review-service-v1-UpdateReviewRequest)
+    - [UpdateReviewResponse](#review-service-v1-UpdateReviewResponse)
+    - [UpdateReviewRuleRequest](#review-service-v1-UpdateReviewRuleRequest)
+    - [UpdateReviewRuleResponse](#review-service-v1-UpdateReviewRuleResponse)
+    - [VersionResponse](#review-service-v1-VersionResponse)
   
-    - [ReviewService](#review.service.v1.ReviewService)
+    - [ReviewService](#review-service-v1-ReviewService)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool/review-service/review-service.proto"></a>
+<a name="npool_review-service_review-service-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/review-service/review-service.proto
 
 
 
-<a name="review.service.v1.CreateReviewRequest"></a>
+<a name="review-service-v1-CreateReviewRequest"></a>
 
 ### CreateReviewRequest
 
@@ -92,14 +92,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.CreateReviewResponse"></a>
+<a name="review-service-v1-CreateReviewResponse"></a>
 
 ### CreateReviewResponse
 
@@ -107,14 +107,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.CreateReviewRuleRequest"></a>
+<a name="review-service-v1-CreateReviewRuleRequest"></a>
 
 ### CreateReviewRuleRequest
 
@@ -122,14 +122,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReviewRule](#review.service.v1.ReviewRule) |  |  |
+| Info | [ReviewRule](#review-service-v1-ReviewRule) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.CreateReviewRuleResponse"></a>
+<a name="review-service-v1-CreateReviewRuleResponse"></a>
 
 ### CreateReviewRuleResponse
 
@@ -137,14 +137,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReviewRule](#review.service.v1.ReviewRule) |  |  |
+| Info | [ReviewRule](#review-service-v1-ReviewRule) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewRequest"></a>
+<a name="review-service-v1-GetReviewRequest"></a>
 
 ### GetReviewRequest
 
@@ -159,7 +159,7 @@
 
 
 
-<a name="review.service.v1.GetReviewResponse"></a>
+<a name="review-service-v1-GetReviewResponse"></a>
 
 ### GetReviewResponse
 
@@ -167,14 +167,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewRuleByDomainObjectTypeRequest"></a>
+<a name="review-service-v1-GetReviewRuleByDomainObjectTypeRequest"></a>
 
 ### GetReviewRuleByDomainObjectTypeRequest
 
@@ -190,7 +190,7 @@
 
 
 
-<a name="review.service.v1.GetReviewRuleByDomainObjectTypeResponse"></a>
+<a name="review-service-v1-GetReviewRuleByDomainObjectTypeResponse"></a>
 
 ### GetReviewRuleByDomainObjectTypeResponse
 
@@ -198,14 +198,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReviewRule](#review.service.v1.ReviewRule) |  |  |
+| Info | [ReviewRule](#review-service-v1-ReviewRule) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewRuleRequest"></a>
+<a name="review-service-v1-GetReviewRuleRequest"></a>
 
 ### GetReviewRuleRequest
 
@@ -220,7 +220,7 @@
 
 
 
-<a name="review.service.v1.GetReviewRuleResponse"></a>
+<a name="review-service-v1-GetReviewRuleResponse"></a>
 
 ### GetReviewRuleResponse
 
@@ -228,14 +228,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReviewRule](#review.service.v1.ReviewRule) |  |  |
+| Info | [ReviewRule](#review-service-v1-ReviewRule) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewRulesByDomainRequest"></a>
+<a name="review-service-v1-GetReviewRulesByDomainRequest"></a>
 
 ### GetReviewRulesByDomainRequest
 
@@ -250,7 +250,7 @@
 
 
 
-<a name="review.service.v1.GetReviewRulesByDomainResponse"></a>
+<a name="review-service-v1-GetReviewRulesByDomainResponse"></a>
 
 ### GetReviewRulesByDomainResponse
 
@@ -258,14 +258,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [ReviewRule](#review.service.v1.ReviewRule) | repeated |  |
+| Infos | [ReviewRule](#review-service-v1-ReviewRule) | repeated |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewsByAppDomainObjectTypeIDRequest"></a>
+<a name="review-service-v1-GetReviewsByAppDomainObjectTypeIDRequest"></a>
 
 ### GetReviewsByAppDomainObjectTypeIDRequest
 
@@ -283,7 +283,7 @@
 
 
 
-<a name="review.service.v1.GetReviewsByAppDomainObjectTypeIDResponse"></a>
+<a name="review-service-v1-GetReviewsByAppDomainObjectTypeIDResponse"></a>
 
 ### GetReviewsByAppDomainObjectTypeIDResponse
 
@@ -291,14 +291,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Review](#review.service.v1.Review) | repeated |  |
+| Infos | [Review](#review-service-v1-Review) | repeated |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewsByAppDomainObjectTypeRequest"></a>
+<a name="review-service-v1-GetReviewsByAppDomainObjectTypeRequest"></a>
 
 ### GetReviewsByAppDomainObjectTypeRequest
 
@@ -315,7 +315,7 @@
 
 
 
-<a name="review.service.v1.GetReviewsByAppDomainObjectTypeResponse"></a>
+<a name="review-service-v1-GetReviewsByAppDomainObjectTypeResponse"></a>
 
 ### GetReviewsByAppDomainObjectTypeResponse
 
@@ -323,14 +323,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Review](#review.service.v1.Review) | repeated |  |
+| Infos | [Review](#review-service-v1-Review) | repeated |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewsByAppDomainRequest"></a>
+<a name="review-service-v1-GetReviewsByAppDomainRequest"></a>
 
 ### GetReviewsByAppDomainRequest
 
@@ -346,7 +346,7 @@
 
 
 
-<a name="review.service.v1.GetReviewsByAppDomainResponse"></a>
+<a name="review-service-v1-GetReviewsByAppDomainResponse"></a>
 
 ### GetReviewsByAppDomainResponse
 
@@ -354,14 +354,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Review](#review.service.v1.Review) | repeated |  |
+| Infos | [Review](#review-service-v1-Review) | repeated |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewsByDomainRequest"></a>
+<a name="review-service-v1-GetReviewsByDomainRequest"></a>
 
 ### GetReviewsByDomainRequest
 
@@ -376,7 +376,7 @@
 
 
 
-<a name="review.service.v1.GetReviewsByDomainResponse"></a>
+<a name="review-service-v1-GetReviewsByDomainResponse"></a>
 
 ### GetReviewsByDomainResponse
 
@@ -384,14 +384,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Review](#review.service.v1.Review) | repeated |  |
+| Infos | [Review](#review-service-v1-Review) | repeated |  |
 
 
 
 
 
 
-<a name="review.service.v1.Review"></a>
+<a name="review-service-v1-Review"></a>
 
 ### Review
 
@@ -415,7 +415,7 @@
 
 
 
-<a name="review.service.v1.ReviewRule"></a>
+<a name="review-service-v1-ReviewRule"></a>
 
 ### ReviewRule
 
@@ -433,7 +433,7 @@
 
 
 
-<a name="review.service.v1.SubmitReviewRequest"></a>
+<a name="review-service-v1-SubmitReviewRequest"></a>
 
 ### SubmitReviewRequest
 
@@ -441,14 +441,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.SubmitReviewResponse"></a>
+<a name="review-service-v1-SubmitReviewResponse"></a>
 
 ### SubmitReviewResponse
 
@@ -456,14 +456,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.SubmitReviewResultRequest"></a>
+<a name="review-service-v1-SubmitReviewResultRequest"></a>
 
 ### SubmitReviewResultRequest
 
@@ -471,14 +471,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.SubmitReviewResultResponse"></a>
+<a name="review-service-v1-SubmitReviewResultResponse"></a>
 
 ### SubmitReviewResultResponse
 
@@ -486,14 +486,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.UpdateReviewRequest"></a>
+<a name="review-service-v1-UpdateReviewRequest"></a>
 
 ### UpdateReviewRequest
 
@@ -501,14 +501,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.UpdateReviewResponse"></a>
+<a name="review-service-v1-UpdateReviewResponse"></a>
 
 ### UpdateReviewResponse
 
@@ -516,14 +516,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.UpdateReviewRuleRequest"></a>
+<a name="review-service-v1-UpdateReviewRuleRequest"></a>
 
 ### UpdateReviewRuleRequest
 
@@ -531,14 +531,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReviewRule](#review.service.v1.ReviewRule) |  |  |
+| Info | [ReviewRule](#review-service-v1-ReviewRule) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.UpdateReviewRuleResponse"></a>
+<a name="review-service-v1-UpdateReviewRuleResponse"></a>
 
 ### UpdateReviewRuleResponse
 
@@ -546,14 +546,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReviewRule](#review.service.v1.ReviewRule) |  |  |
+| Info | [ReviewRule](#review-service-v1-ReviewRule) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.VersionResponse"></a>
+<a name="review-service-v1-VersionResponse"></a>
 
 ### VersionResponse
 request body and response
@@ -574,41 +574,41 @@ request body and response
  
 
 
-<a name="review.service.v1.ReviewService"></a>
+<a name="review-service-v1-ReviewService"></a>
 
 ### ReviewService
 Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#review.service.v1.VersionResponse) | Method Version |
-| CreateReview | [CreateReviewRequest](#review.service.v1.CreateReviewRequest) | [CreateReviewResponse](#review.service.v1.CreateReviewResponse) |  |
-| GetReview | [GetReviewRequest](#review.service.v1.GetReviewRequest) | [GetReviewResponse](#review.service.v1.GetReviewResponse) |  |
-| UpdateReview | [UpdateReviewRequest](#review.service.v1.UpdateReviewRequest) | [UpdateReviewResponse](#review.service.v1.UpdateReviewResponse) |  |
-| GetReviewsByDomain | [GetReviewsByDomainRequest](#review.service.v1.GetReviewsByDomainRequest) | [GetReviewsByDomainResponse](#review.service.v1.GetReviewsByDomainResponse) |  |
-| GetReviewsByAppDomain | [GetReviewsByAppDomainRequest](#review.service.v1.GetReviewsByAppDomainRequest) | [GetReviewsByAppDomainResponse](#review.service.v1.GetReviewsByAppDomainResponse) |  |
-| GetReviewsByAppDomainObjectType | [GetReviewsByAppDomainObjectTypeRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeRequest) | [GetReviewsByAppDomainObjectTypeResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeResponse) |  |
-| GetReviewsByAppDomainObjectTypeID | [GetReviewsByAppDomainObjectTypeIDRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeIDRequest) | [GetReviewsByAppDomainObjectTypeIDResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeIDResponse) |  |
-| SubmitReview | [SubmitReviewRequest](#review.service.v1.SubmitReviewRequest) | [SubmitReviewResponse](#review.service.v1.SubmitReviewResponse) |  |
-| SubmitReviewResult | [SubmitReviewResultRequest](#review.service.v1.SubmitReviewResultRequest) | [SubmitReviewResultResponse](#review.service.v1.SubmitReviewResultResponse) |  |
-| CreateReviewRule | [CreateReviewRuleRequest](#review.service.v1.CreateReviewRuleRequest) | [CreateReviewRuleResponse](#review.service.v1.CreateReviewRuleResponse) |  |
-| UpdateReviewRule | [UpdateReviewRuleRequest](#review.service.v1.UpdateReviewRuleRequest) | [UpdateReviewRuleResponse](#review.service.v1.UpdateReviewRuleResponse) |  |
-| GetReviewRule | [GetReviewRuleRequest](#review.service.v1.GetReviewRuleRequest) | [GetReviewRuleResponse](#review.service.v1.GetReviewRuleResponse) |  |
-| GetReviewRulesByDomain | [GetReviewRulesByDomainRequest](#review.service.v1.GetReviewRulesByDomainRequest) | [GetReviewRulesByDomainResponse](#review.service.v1.GetReviewRulesByDomainResponse) |  |
-| GetReviewRuleByDomainObjectType | [GetReviewRuleByDomainObjectTypeRequest](#review.service.v1.GetReviewRuleByDomainObjectTypeRequest) | [GetReviewRuleByDomainObjectTypeResponse](#review.service.v1.GetReviewRuleByDomainObjectTypeResponse) |  |
+| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [VersionResponse](#review-service-v1-VersionResponse) | Method Version |
+| CreateReview | [CreateReviewRequest](#review-service-v1-CreateReviewRequest) | [CreateReviewResponse](#review-service-v1-CreateReviewResponse) |  |
+| GetReview | [GetReviewRequest](#review-service-v1-GetReviewRequest) | [GetReviewResponse](#review-service-v1-GetReviewResponse) |  |
+| UpdateReview | [UpdateReviewRequest](#review-service-v1-UpdateReviewRequest) | [UpdateReviewResponse](#review-service-v1-UpdateReviewResponse) |  |
+| GetReviewsByDomain | [GetReviewsByDomainRequest](#review-service-v1-GetReviewsByDomainRequest) | [GetReviewsByDomainResponse](#review-service-v1-GetReviewsByDomainResponse) |  |
+| GetReviewsByAppDomain | [GetReviewsByAppDomainRequest](#review-service-v1-GetReviewsByAppDomainRequest) | [GetReviewsByAppDomainResponse](#review-service-v1-GetReviewsByAppDomainResponse) |  |
+| GetReviewsByAppDomainObjectType | [GetReviewsByAppDomainObjectTypeRequest](#review-service-v1-GetReviewsByAppDomainObjectTypeRequest) | [GetReviewsByAppDomainObjectTypeResponse](#review-service-v1-GetReviewsByAppDomainObjectTypeResponse) |  |
+| GetReviewsByAppDomainObjectTypeID | [GetReviewsByAppDomainObjectTypeIDRequest](#review-service-v1-GetReviewsByAppDomainObjectTypeIDRequest) | [GetReviewsByAppDomainObjectTypeIDResponse](#review-service-v1-GetReviewsByAppDomainObjectTypeIDResponse) |  |
+| SubmitReview | [SubmitReviewRequest](#review-service-v1-SubmitReviewRequest) | [SubmitReviewResponse](#review-service-v1-SubmitReviewResponse) |  |
+| SubmitReviewResult | [SubmitReviewResultRequest](#review-service-v1-SubmitReviewResultRequest) | [SubmitReviewResultResponse](#review-service-v1-SubmitReviewResultResponse) |  |
+| CreateReviewRule | [CreateReviewRuleRequest](#review-service-v1-CreateReviewRuleRequest) | [CreateReviewRuleResponse](#review-service-v1-CreateReviewRuleResponse) |  |
+| UpdateReviewRule | [UpdateReviewRuleRequest](#review-service-v1-UpdateReviewRuleRequest) | [UpdateReviewRuleResponse](#review-service-v1-UpdateReviewRuleResponse) |  |
+| GetReviewRule | [GetReviewRuleRequest](#review-service-v1-GetReviewRuleRequest) | [GetReviewRuleResponse](#review-service-v1-GetReviewRuleResponse) |  |
+| GetReviewRulesByDomain | [GetReviewRulesByDomainRequest](#review-service-v1-GetReviewRulesByDomainRequest) | [GetReviewRulesByDomainResponse](#review-service-v1-GetReviewRulesByDomainResponse) |  |
+| GetReviewRuleByDomainObjectType | [GetReviewRuleByDomainObjectTypeRequest](#review-service-v1-GetReviewRuleByDomainObjectTypeRequest) | [GetReviewRuleByDomainObjectTypeResponse](#review-service-v1-GetReviewRuleByDomainObjectTypeResponse) |  |
 
  
 
 
 
-<a name="npool/review-service/review-service.proto"></a>
+<a name="npool_review-service_review-service-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/review-service/review-service.proto
 
 
 
-<a name="review.service.v1.CreateReviewRequest"></a>
+<a name="review-service-v1-CreateReviewRequest"></a>
 
 ### CreateReviewRequest
 
@@ -616,14 +616,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.CreateReviewResponse"></a>
+<a name="review-service-v1-CreateReviewResponse"></a>
 
 ### CreateReviewResponse
 
@@ -631,14 +631,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.CreateReviewRuleRequest"></a>
+<a name="review-service-v1-CreateReviewRuleRequest"></a>
 
 ### CreateReviewRuleRequest
 
@@ -646,14 +646,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReviewRule](#review.service.v1.ReviewRule) |  |  |
+| Info | [ReviewRule](#review-service-v1-ReviewRule) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.CreateReviewRuleResponse"></a>
+<a name="review-service-v1-CreateReviewRuleResponse"></a>
 
 ### CreateReviewRuleResponse
 
@@ -661,14 +661,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReviewRule](#review.service.v1.ReviewRule) |  |  |
+| Info | [ReviewRule](#review-service-v1-ReviewRule) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewRequest"></a>
+<a name="review-service-v1-GetReviewRequest"></a>
 
 ### GetReviewRequest
 
@@ -683,7 +683,7 @@ Service Name
 
 
 
-<a name="review.service.v1.GetReviewResponse"></a>
+<a name="review-service-v1-GetReviewResponse"></a>
 
 ### GetReviewResponse
 
@@ -691,14 +691,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewRuleByDomainObjectTypeRequest"></a>
+<a name="review-service-v1-GetReviewRuleByDomainObjectTypeRequest"></a>
 
 ### GetReviewRuleByDomainObjectTypeRequest
 
@@ -714,7 +714,7 @@ Service Name
 
 
 
-<a name="review.service.v1.GetReviewRuleByDomainObjectTypeResponse"></a>
+<a name="review-service-v1-GetReviewRuleByDomainObjectTypeResponse"></a>
 
 ### GetReviewRuleByDomainObjectTypeResponse
 
@@ -722,14 +722,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReviewRule](#review.service.v1.ReviewRule) |  |  |
+| Info | [ReviewRule](#review-service-v1-ReviewRule) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewRuleRequest"></a>
+<a name="review-service-v1-GetReviewRuleRequest"></a>
 
 ### GetReviewRuleRequest
 
@@ -744,7 +744,7 @@ Service Name
 
 
 
-<a name="review.service.v1.GetReviewRuleResponse"></a>
+<a name="review-service-v1-GetReviewRuleResponse"></a>
 
 ### GetReviewRuleResponse
 
@@ -752,14 +752,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReviewRule](#review.service.v1.ReviewRule) |  |  |
+| Info | [ReviewRule](#review-service-v1-ReviewRule) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewRulesByDomainRequest"></a>
+<a name="review-service-v1-GetReviewRulesByDomainRequest"></a>
 
 ### GetReviewRulesByDomainRequest
 
@@ -774,7 +774,7 @@ Service Name
 
 
 
-<a name="review.service.v1.GetReviewRulesByDomainResponse"></a>
+<a name="review-service-v1-GetReviewRulesByDomainResponse"></a>
 
 ### GetReviewRulesByDomainResponse
 
@@ -782,14 +782,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [ReviewRule](#review.service.v1.ReviewRule) | repeated |  |
+| Infos | [ReviewRule](#review-service-v1-ReviewRule) | repeated |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewsByAppDomainObjectTypeIDRequest"></a>
+<a name="review-service-v1-GetReviewsByAppDomainObjectTypeIDRequest"></a>
 
 ### GetReviewsByAppDomainObjectTypeIDRequest
 
@@ -807,7 +807,7 @@ Service Name
 
 
 
-<a name="review.service.v1.GetReviewsByAppDomainObjectTypeIDResponse"></a>
+<a name="review-service-v1-GetReviewsByAppDomainObjectTypeIDResponse"></a>
 
 ### GetReviewsByAppDomainObjectTypeIDResponse
 
@@ -815,14 +815,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Review](#review.service.v1.Review) | repeated |  |
+| Infos | [Review](#review-service-v1-Review) | repeated |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewsByAppDomainObjectTypeRequest"></a>
+<a name="review-service-v1-GetReviewsByAppDomainObjectTypeRequest"></a>
 
 ### GetReviewsByAppDomainObjectTypeRequest
 
@@ -839,7 +839,7 @@ Service Name
 
 
 
-<a name="review.service.v1.GetReviewsByAppDomainObjectTypeResponse"></a>
+<a name="review-service-v1-GetReviewsByAppDomainObjectTypeResponse"></a>
 
 ### GetReviewsByAppDomainObjectTypeResponse
 
@@ -847,14 +847,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Review](#review.service.v1.Review) | repeated |  |
+| Infos | [Review](#review-service-v1-Review) | repeated |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewsByAppDomainRequest"></a>
+<a name="review-service-v1-GetReviewsByAppDomainRequest"></a>
 
 ### GetReviewsByAppDomainRequest
 
@@ -870,7 +870,7 @@ Service Name
 
 
 
-<a name="review.service.v1.GetReviewsByAppDomainResponse"></a>
+<a name="review-service-v1-GetReviewsByAppDomainResponse"></a>
 
 ### GetReviewsByAppDomainResponse
 
@@ -878,14 +878,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Review](#review.service.v1.Review) | repeated |  |
+| Infos | [Review](#review-service-v1-Review) | repeated |  |
 
 
 
 
 
 
-<a name="review.service.v1.GetReviewsByDomainRequest"></a>
+<a name="review-service-v1-GetReviewsByDomainRequest"></a>
 
 ### GetReviewsByDomainRequest
 
@@ -900,7 +900,7 @@ Service Name
 
 
 
-<a name="review.service.v1.GetReviewsByDomainResponse"></a>
+<a name="review-service-v1-GetReviewsByDomainResponse"></a>
 
 ### GetReviewsByDomainResponse
 
@@ -908,14 +908,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Review](#review.service.v1.Review) | repeated |  |
+| Infos | [Review](#review-service-v1-Review) | repeated |  |
 
 
 
 
 
 
-<a name="review.service.v1.Review"></a>
+<a name="review-service-v1-Review"></a>
 
 ### Review
 
@@ -939,7 +939,7 @@ Service Name
 
 
 
-<a name="review.service.v1.ReviewRule"></a>
+<a name="review-service-v1-ReviewRule"></a>
 
 ### ReviewRule
 
@@ -957,7 +957,7 @@ Service Name
 
 
 
-<a name="review.service.v1.SubmitReviewRequest"></a>
+<a name="review-service-v1-SubmitReviewRequest"></a>
 
 ### SubmitReviewRequest
 
@@ -965,14 +965,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.SubmitReviewResponse"></a>
+<a name="review-service-v1-SubmitReviewResponse"></a>
 
 ### SubmitReviewResponse
 
@@ -980,14 +980,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.SubmitReviewResultRequest"></a>
+<a name="review-service-v1-SubmitReviewResultRequest"></a>
 
 ### SubmitReviewResultRequest
 
@@ -995,14 +995,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.SubmitReviewResultResponse"></a>
+<a name="review-service-v1-SubmitReviewResultResponse"></a>
 
 ### SubmitReviewResultResponse
 
@@ -1010,14 +1010,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.UpdateReviewRequest"></a>
+<a name="review-service-v1-UpdateReviewRequest"></a>
 
 ### UpdateReviewRequest
 
@@ -1025,14 +1025,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.UpdateReviewResponse"></a>
+<a name="review-service-v1-UpdateReviewResponse"></a>
 
 ### UpdateReviewResponse
 
@@ -1040,14 +1040,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Review](#review.service.v1.Review) |  |  |
+| Info | [Review](#review-service-v1-Review) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.UpdateReviewRuleRequest"></a>
+<a name="review-service-v1-UpdateReviewRuleRequest"></a>
 
 ### UpdateReviewRuleRequest
 
@@ -1055,14 +1055,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReviewRule](#review.service.v1.ReviewRule) |  |  |
+| Info | [ReviewRule](#review-service-v1-ReviewRule) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.UpdateReviewRuleResponse"></a>
+<a name="review-service-v1-UpdateReviewRuleResponse"></a>
 
 ### UpdateReviewRuleResponse
 
@@ -1070,14 +1070,14 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ReviewRule](#review.service.v1.ReviewRule) |  |  |
+| Info | [ReviewRule](#review-service-v1-ReviewRule) |  |  |
 
 
 
 
 
 
-<a name="review.service.v1.VersionResponse"></a>
+<a name="review-service-v1-VersionResponse"></a>
 
 ### VersionResponse
 request body and response
@@ -1098,28 +1098,28 @@ request body and response
  
 
 
-<a name="review.service.v1.ReviewService"></a>
+<a name="review-service-v1-ReviewService"></a>
 
 ### ReviewService
 Service Name
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [VersionResponse](#review.service.v1.VersionResponse) | Method Version |
-| CreateReview | [CreateReviewRequest](#review.service.v1.CreateReviewRequest) | [CreateReviewResponse](#review.service.v1.CreateReviewResponse) |  |
-| GetReview | [GetReviewRequest](#review.service.v1.GetReviewRequest) | [GetReviewResponse](#review.service.v1.GetReviewResponse) |  |
-| UpdateReview | [UpdateReviewRequest](#review.service.v1.UpdateReviewRequest) | [UpdateReviewResponse](#review.service.v1.UpdateReviewResponse) |  |
-| GetReviewsByDomain | [GetReviewsByDomainRequest](#review.service.v1.GetReviewsByDomainRequest) | [GetReviewsByDomainResponse](#review.service.v1.GetReviewsByDomainResponse) |  |
-| GetReviewsByAppDomain | [GetReviewsByAppDomainRequest](#review.service.v1.GetReviewsByAppDomainRequest) | [GetReviewsByAppDomainResponse](#review.service.v1.GetReviewsByAppDomainResponse) |  |
-| GetReviewsByAppDomainObjectType | [GetReviewsByAppDomainObjectTypeRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeRequest) | [GetReviewsByAppDomainObjectTypeResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeResponse) |  |
-| GetReviewsByAppDomainObjectTypeID | [GetReviewsByAppDomainObjectTypeIDRequest](#review.service.v1.GetReviewsByAppDomainObjectTypeIDRequest) | [GetReviewsByAppDomainObjectTypeIDResponse](#review.service.v1.GetReviewsByAppDomainObjectTypeIDResponse) |  |
-| SubmitReview | [SubmitReviewRequest](#review.service.v1.SubmitReviewRequest) | [SubmitReviewResponse](#review.service.v1.SubmitReviewResponse) |  |
-| SubmitReviewResult | [SubmitReviewResultRequest](#review.service.v1.SubmitReviewResultRequest) | [SubmitReviewResultResponse](#review.service.v1.SubmitReviewResultResponse) |  |
-| CreateReviewRule | [CreateReviewRuleRequest](#review.service.v1.CreateReviewRuleRequest) | [CreateReviewRuleResponse](#review.service.v1.CreateReviewRuleResponse) |  |
-| UpdateReviewRule | [UpdateReviewRuleRequest](#review.service.v1.UpdateReviewRuleRequest) | [UpdateReviewRuleResponse](#review.service.v1.UpdateReviewRuleResponse) |  |
-| GetReviewRule | [GetReviewRuleRequest](#review.service.v1.GetReviewRuleRequest) | [GetReviewRuleResponse](#review.service.v1.GetReviewRuleResponse) |  |
-| GetReviewRulesByDomain | [GetReviewRulesByDomainRequest](#review.service.v1.GetReviewRulesByDomainRequest) | [GetReviewRulesByDomainResponse](#review.service.v1.GetReviewRulesByDomainResponse) |  |
-| GetReviewRuleByDomainObjectType | [GetReviewRuleByDomainObjectTypeRequest](#review.service.v1.GetReviewRuleByDomainObjectTypeRequest) | [GetReviewRuleByDomainObjectTypeResponse](#review.service.v1.GetReviewRuleByDomainObjectTypeResponse) |  |
+| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [VersionResponse](#review-service-v1-VersionResponse) | Method Version |
+| CreateReview | [CreateReviewRequest](#review-service-v1-CreateReviewRequest) | [CreateReviewResponse](#review-service-v1-CreateReviewResponse) |  |
+| GetReview | [GetReviewRequest](#review-service-v1-GetReviewRequest) | [GetReviewResponse](#review-service-v1-GetReviewResponse) |  |
+| UpdateReview | [UpdateReviewRequest](#review-service-v1-UpdateReviewRequest) | [UpdateReviewResponse](#review-service-v1-UpdateReviewResponse) |  |
+| GetReviewsByDomain | [GetReviewsByDomainRequest](#review-service-v1-GetReviewsByDomainRequest) | [GetReviewsByDomainResponse](#review-service-v1-GetReviewsByDomainResponse) |  |
+| GetReviewsByAppDomain | [GetReviewsByAppDomainRequest](#review-service-v1-GetReviewsByAppDomainRequest) | [GetReviewsByAppDomainResponse](#review-service-v1-GetReviewsByAppDomainResponse) |  |
+| GetReviewsByAppDomainObjectType | [GetReviewsByAppDomainObjectTypeRequest](#review-service-v1-GetReviewsByAppDomainObjectTypeRequest) | [GetReviewsByAppDomainObjectTypeResponse](#review-service-v1-GetReviewsByAppDomainObjectTypeResponse) |  |
+| GetReviewsByAppDomainObjectTypeID | [GetReviewsByAppDomainObjectTypeIDRequest](#review-service-v1-GetReviewsByAppDomainObjectTypeIDRequest) | [GetReviewsByAppDomainObjectTypeIDResponse](#review-service-v1-GetReviewsByAppDomainObjectTypeIDResponse) |  |
+| SubmitReview | [SubmitReviewRequest](#review-service-v1-SubmitReviewRequest) | [SubmitReviewResponse](#review-service-v1-SubmitReviewResponse) |  |
+| SubmitReviewResult | [SubmitReviewResultRequest](#review-service-v1-SubmitReviewResultRequest) | [SubmitReviewResultResponse](#review-service-v1-SubmitReviewResultResponse) |  |
+| CreateReviewRule | [CreateReviewRuleRequest](#review-service-v1-CreateReviewRuleRequest) | [CreateReviewRuleResponse](#review-service-v1-CreateReviewRuleResponse) |  |
+| UpdateReviewRule | [UpdateReviewRuleRequest](#review-service-v1-UpdateReviewRuleRequest) | [UpdateReviewRuleResponse](#review-service-v1-UpdateReviewRuleResponse) |  |
+| GetReviewRule | [GetReviewRuleRequest](#review-service-v1-GetReviewRuleRequest) | [GetReviewRuleResponse](#review-service-v1-GetReviewRuleResponse) |  |
+| GetReviewRulesByDomain | [GetReviewRulesByDomainRequest](#review-service-v1-GetReviewRulesByDomainRequest) | [GetReviewRulesByDomainResponse](#review-service-v1-GetReviewRulesByDomainResponse) |  |
+| GetReviewRuleByDomainObjectType | [GetReviewRuleByDomainObjectTypeRequest](#review-service-v1-GetReviewRuleByDomainObjectTypeRequest) | [GetReviewRuleByDomainObjectTypeResponse](#review-service-v1-GetReviewRuleByDomainObjectTypeResponse) |  |
 
  
 

@@ -403,6 +403,10 @@
           "$ref": "#/definitions/v1MsgTx",
           "title": "btc"
         },
+        "SignedRawTxHex": {
+          "type": "string",
+          "title": "eth/usdt"
+        },
         "CID": {
           "type": "string"
         }

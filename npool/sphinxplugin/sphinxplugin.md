@@ -3,40 +3,40 @@
 
 ## Table of Contents
 
-- [npool/sphinxplugin/sphinxplugin.proto](#npool/sphinxplugin/sphinxplugin.proto)
-    - [MsgTx](#sphinx.plugin.v1.MsgTx)
-    - [OutPoint](#sphinx.plugin.v1.OutPoint)
-    - [Signature](#sphinx.plugin.v1.Signature)
-    - [TxIn](#sphinx.plugin.v1.TxIn)
-    - [TxOut](#sphinx.plugin.v1.TxOut)
-    - [UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage)
-    - [Unspent](#sphinx.plugin.v1.Unspent)
+- [npool/sphinxplugin/sphinxplugin.proto](#npool_sphinxplugin_sphinxplugin-proto)
+    - [MsgTx](#sphinx-plugin-v1-MsgTx)
+    - [OutPoint](#sphinx-plugin-v1-OutPoint)
+    - [Signature](#sphinx-plugin-v1-Signature)
+    - [TxIn](#sphinx-plugin-v1-TxIn)
+    - [TxOut](#sphinx-plugin-v1-TxOut)
+    - [UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage)
+    - [Unspent](#sphinx-plugin-v1-Unspent)
   
-    - [CoinType](#sphinx.plugin.v1.CoinType)
+    - [CoinType](#sphinx-plugin-v1-CoinType)
   
-- [npool/sphinxplugin/sphinxplugin.proto](#npool/sphinxplugin/sphinxplugin.proto)
-    - [MsgTx](#sphinx.plugin.v1.MsgTx)
-    - [OutPoint](#sphinx.plugin.v1.OutPoint)
-    - [Signature](#sphinx.plugin.v1.Signature)
-    - [TxIn](#sphinx.plugin.v1.TxIn)
-    - [TxOut](#sphinx.plugin.v1.TxOut)
-    - [UnsignedMessage](#sphinx.plugin.v1.UnsignedMessage)
-    - [Unspent](#sphinx.plugin.v1.Unspent)
+- [npool/sphinxplugin/sphinxplugin.proto](#npool_sphinxplugin_sphinxplugin-proto)
+    - [MsgTx](#sphinx-plugin-v1-MsgTx)
+    - [OutPoint](#sphinx-plugin-v1-OutPoint)
+    - [Signature](#sphinx-plugin-v1-Signature)
+    - [TxIn](#sphinx-plugin-v1-TxIn)
+    - [TxOut](#sphinx-plugin-v1-TxOut)
+    - [UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage)
+    - [Unspent](#sphinx-plugin-v1-Unspent)
   
-    - [CoinType](#sphinx.plugin.v1.CoinType)
+    - [CoinType](#sphinx-plugin-v1-CoinType)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool/sphinxplugin/sphinxplugin.proto"></a>
+<a name="npool_sphinxplugin_sphinxplugin-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/sphinxplugin/sphinxplugin.proto
 
 
 
-<a name="sphinx.plugin.v1.MsgTx"></a>
+<a name="sphinx-plugin-v1-MsgTx"></a>
 
 ### MsgTx
 
@@ -45,8 +45,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Version | [int32](#int32) |  |  |
-| TxIn | [TxIn](#sphinx.plugin.v1.TxIn) | repeated |  |
-| TxOut | [TxOut](#sphinx.plugin.v1.TxOut) | repeated |  |
+| TxIn | [TxIn](#sphinx-plugin-v1-TxIn) | repeated |  |
+| TxOut | [TxOut](#sphinx-plugin-v1-TxOut) | repeated |  |
 | LockTime | [uint32](#uint32) |  |  |
 
 
@@ -54,7 +54,7 @@
 
 
 
-<a name="sphinx.plugin.v1.OutPoint"></a>
+<a name="sphinx-plugin-v1-OutPoint"></a>
 
 ### OutPoint
 
@@ -70,7 +70,7 @@
 
 
 
-<a name="sphinx.plugin.v1.Signature"></a>
+<a name="sphinx-plugin-v1-Signature"></a>
 
 ### Signature
 
@@ -86,7 +86,7 @@
 
 
 
-<a name="sphinx.plugin.v1.TxIn"></a>
+<a name="sphinx-plugin-v1-TxIn"></a>
 
 ### TxIn
 
@@ -94,7 +94,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PreviousOutPoint | [OutPoint](#sphinx.plugin.v1.OutPoint) |  |  |
+| PreviousOutPoint | [OutPoint](#sphinx-plugin-v1-OutPoint) |  |  |
 | SignatureScript | [bytes](#bytes) |  |  |
 | Witness | [bytes](#bytes) | repeated |  |
 | Sequence | [uint32](#uint32) |  |  |
@@ -104,7 +104,7 @@
 
 
 
-<a name="sphinx.plugin.v1.TxOut"></a>
+<a name="sphinx-plugin-v1-TxOut"></a>
 
 ### TxOut
 
@@ -120,7 +120,7 @@
 
 
 
-<a name="sphinx.plugin.v1.UnsignedMessage"></a>
+<a name="sphinx-plugin-v1-UnsignedMessage"></a>
 
 ### UnsignedMessage
 fil
@@ -140,14 +140,14 @@ fil
 | GasPremium | [uint64](#uint64) |  |  |
 | Method | [uint64](#uint64) |  |  |
 | Params | [bytes](#bytes) |  |  |
-| Unspent | [Unspent](#sphinx.plugin.v1.Unspent) | repeated | btc |
+| Unspent | [Unspent](#sphinx-plugin-v1-Unspent) | repeated | btc |
 
 
 
 
 
 
-<a name="sphinx.plugin.v1.Unspent"></a>
+<a name="sphinx-plugin-v1-Unspent"></a>
 
 ### Unspent
 ============================= btc
@@ -172,7 +172,7 @@ fil
  
 
 
-<a name="sphinx.plugin.v1.CoinType"></a>
+<a name="sphinx-plugin-v1-CoinType"></a>
 
 ### CoinType
 
@@ -200,14 +200,14 @@ fil
 
 
 
-<a name="npool/sphinxplugin/sphinxplugin.proto"></a>
+<a name="npool_sphinxplugin_sphinxplugin-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/sphinxplugin/sphinxplugin.proto
 
 
 
-<a name="sphinx.plugin.v1.MsgTx"></a>
+<a name="sphinx-plugin-v1-MsgTx"></a>
 
 ### MsgTx
 
@@ -216,8 +216,8 @@ fil
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Version | [int32](#int32) |  |  |
-| TxIn | [TxIn](#sphinx.plugin.v1.TxIn) | repeated |  |
-| TxOut | [TxOut](#sphinx.plugin.v1.TxOut) | repeated |  |
+| TxIn | [TxIn](#sphinx-plugin-v1-TxIn) | repeated |  |
+| TxOut | [TxOut](#sphinx-plugin-v1-TxOut) | repeated |  |
 | LockTime | [uint32](#uint32) |  |  |
 
 
@@ -225,7 +225,7 @@ fil
 
 
 
-<a name="sphinx.plugin.v1.OutPoint"></a>
+<a name="sphinx-plugin-v1-OutPoint"></a>
 
 ### OutPoint
 
@@ -241,7 +241,7 @@ fil
 
 
 
-<a name="sphinx.plugin.v1.Signature"></a>
+<a name="sphinx-plugin-v1-Signature"></a>
 
 ### Signature
 
@@ -257,7 +257,7 @@ fil
 
 
 
-<a name="sphinx.plugin.v1.TxIn"></a>
+<a name="sphinx-plugin-v1-TxIn"></a>
 
 ### TxIn
 
@@ -265,7 +265,7 @@ fil
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PreviousOutPoint | [OutPoint](#sphinx.plugin.v1.OutPoint) |  |  |
+| PreviousOutPoint | [OutPoint](#sphinx-plugin-v1-OutPoint) |  |  |
 | SignatureScript | [bytes](#bytes) |  |  |
 | Witness | [bytes](#bytes) | repeated |  |
 | Sequence | [uint32](#uint32) |  |  |
@@ -275,7 +275,7 @@ fil
 
 
 
-<a name="sphinx.plugin.v1.TxOut"></a>
+<a name="sphinx-plugin-v1-TxOut"></a>
 
 ### TxOut
 
@@ -291,7 +291,7 @@ fil
 
 
 
-<a name="sphinx.plugin.v1.UnsignedMessage"></a>
+<a name="sphinx-plugin-v1-UnsignedMessage"></a>
 
 ### UnsignedMessage
 fil
@@ -311,14 +311,14 @@ fil
 | GasPremium | [uint64](#uint64) |  |  |
 | Method | [uint64](#uint64) |  |  |
 | Params | [bytes](#bytes) |  |  |
-| Unspent | [Unspent](#sphinx.plugin.v1.Unspent) | repeated | btc |
+| Unspent | [Unspent](#sphinx-plugin-v1-Unspent) | repeated | btc |
 
 
 
 
 
 
-<a name="sphinx.plugin.v1.Unspent"></a>
+<a name="sphinx-plugin-v1-Unspent"></a>
 
 ### Unspent
 ============================= btc
@@ -343,7 +343,7 @@ fil
  
 
 
-<a name="sphinx.plugin.v1.CoinType"></a>
+<a name="sphinx-plugin-v1-CoinType"></a>
 
 ### CoinType
 

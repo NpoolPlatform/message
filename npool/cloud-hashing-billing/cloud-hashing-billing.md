@@ -3,410 +3,410 @@
 
 ## Table of Contents
 
-- [npool/cloud-hashing-billing/cloud-hashing-billing.proto](#npool/cloud-hashing-billing/cloud-hashing-billing.proto)
-    - [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting)
-    - [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo)
-    - [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction)
-    - [CoinAccountTransactionDetail](#cloud.hashing.billing.v1.CoinAccountTransactionDetail)
-    - [CoinSetting](#cloud.hashing.billing.v1.CoinSetting)
-    - [CreateAppWithdrawSettingForOtherAppRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppRequest)
-    - [CreateAppWithdrawSettingForOtherAppResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppResponse)
-    - [CreateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest)
-    - [CreateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse)
-    - [CreateCoinAccountRequest](#cloud.hashing.billing.v1.CreateCoinAccountRequest)
-    - [CreateCoinAccountResponse](#cloud.hashing.billing.v1.CreateCoinAccountResponse)
-    - [CreateCoinAccountTransactionRequest](#cloud.hashing.billing.v1.CreateCoinAccountTransactionRequest)
-    - [CreateCoinAccountTransactionResponse](#cloud.hashing.billing.v1.CreateCoinAccountTransactionResponse)
-    - [CreateCoinSettingRequest](#cloud.hashing.billing.v1.CreateCoinSettingRequest)
-    - [CreateCoinSettingResponse](#cloud.hashing.billing.v1.CreateCoinSettingResponse)
-    - [CreateGoodBenefitRequest](#cloud.hashing.billing.v1.CreateGoodBenefitRequest)
-    - [CreateGoodBenefitResponse](#cloud.hashing.billing.v1.CreateGoodBenefitResponse)
-    - [CreateGoodPaymentRequest](#cloud.hashing.billing.v1.CreateGoodPaymentRequest)
-    - [CreateGoodPaymentResponse](#cloud.hashing.billing.v1.CreateGoodPaymentResponse)
-    - [CreatePlatformBenefitRequest](#cloud.hashing.billing.v1.CreatePlatformBenefitRequest)
-    - [CreatePlatformBenefitResponse](#cloud.hashing.billing.v1.CreatePlatformBenefitResponse)
-    - [CreatePlatformSettingRequest](#cloud.hashing.billing.v1.CreatePlatformSettingRequest)
-    - [CreatePlatformSettingResponse](#cloud.hashing.billing.v1.CreatePlatformSettingResponse)
-    - [CreateUserBenefitRequest](#cloud.hashing.billing.v1.CreateUserBenefitRequest)
-    - [CreateUserBenefitResponse](#cloud.hashing.billing.v1.CreateUserBenefitResponse)
-    - [CreateUserDirectBenefitRequest](#cloud.hashing.billing.v1.CreateUserDirectBenefitRequest)
-    - [CreateUserDirectBenefitResponse](#cloud.hashing.billing.v1.CreateUserDirectBenefitResponse)
-    - [CreateUserPaymentBalanceForOtherAppUserRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserRequest)
-    - [CreateUserPaymentBalanceForOtherAppUserResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserResponse)
-    - [CreateUserPaymentBalanceRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceRequest)
-    - [CreateUserPaymentBalanceResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceResponse)
-    - [CreateUserWithdrawItemRequest](#cloud.hashing.billing.v1.CreateUserWithdrawItemRequest)
-    - [CreateUserWithdrawItemResponse](#cloud.hashing.billing.v1.CreateUserWithdrawItemResponse)
-    - [CreateUserWithdrawRequest](#cloud.hashing.billing.v1.CreateUserWithdrawRequest)
-    - [CreateUserWithdrawResponse](#cloud.hashing.billing.v1.CreateUserWithdrawResponse)
-    - [DeleteCoinAccountRequest](#cloud.hashing.billing.v1.DeleteCoinAccountRequest)
-    - [DeleteCoinAccountResponse](#cloud.hashing.billing.v1.DeleteCoinAccountResponse)
-    - [DeleteCoinAccountTransactionRequest](#cloud.hashing.billing.v1.DeleteCoinAccountTransactionRequest)
-    - [DeleteCoinAccountTransactionResponse](#cloud.hashing.billing.v1.DeleteCoinAccountTransactionResponse)
-    - [GetAppWithdrawSettingByAppCoinRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinRequest)
-    - [GetAppWithdrawSettingByAppCoinResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinResponse)
-    - [GetAppWithdrawSettingRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingRequest)
-    - [GetAppWithdrawSettingResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingResponse)
-    - [GetAppWithdrawSettingsByAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppRequest)
-    - [GetAppWithdrawSettingsByAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppResponse)
-    - [GetAppWithdrawSettingsByOtherAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppRequest)
-    - [GetAppWithdrawSettingsByOtherAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppResponse)
-    - [GetCoinAccountByCoinAddressRequest](#cloud.hashing.billing.v1.GetCoinAccountByCoinAddressRequest)
-    - [GetCoinAccountByCoinAddressResponse](#cloud.hashing.billing.v1.GetCoinAccountByCoinAddressResponse)
-    - [GetCoinAccountRequest](#cloud.hashing.billing.v1.GetCoinAccountRequest)
-    - [GetCoinAccountResponse](#cloud.hashing.billing.v1.GetCoinAccountResponse)
-    - [GetCoinAccountTransactionDetailRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionDetailRequest)
-    - [GetCoinAccountTransactionDetailResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionDetailResponse)
-    - [GetCoinAccountTransactionRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionRequest)
-    - [GetCoinAccountTransactionResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionResponse)
-    - [GetCoinAccountTransactionsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserCoinRequest)
-    - [GetCoinAccountTransactionsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserCoinResponse)
-    - [GetCoinAccountTransactionsByAppUserRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserRequest)
-    - [GetCoinAccountTransactionsByAppUserResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserResponse)
-    - [GetCoinAccountTransactionsByCoinAccountRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountRequest)
-    - [GetCoinAccountTransactionsByCoinAccountResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountResponse)
-    - [GetCoinAccountTransactionsByCoinRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinRequest)
-    - [GetCoinAccountTransactionsByCoinResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinResponse)
-    - [GetCoinAccountTransactionsByGoodStateRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByGoodStateRequest)
-    - [GetCoinAccountTransactionsByGoodStateResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByGoodStateResponse)
-    - [GetCoinAccountTransactionsByStateRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateRequest)
-    - [GetCoinAccountTransactionsByStateResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateResponse)
-    - [GetCoinAccountTransactionsRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsRequest)
-    - [GetCoinAccountTransactionsResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsResponse)
-    - [GetCoinAccountsRequest](#cloud.hashing.billing.v1.GetCoinAccountsRequest)
-    - [GetCoinAccountsResponse](#cloud.hashing.billing.v1.GetCoinAccountsResponse)
-    - [GetCoinSettingByCoinRequest](#cloud.hashing.billing.v1.GetCoinSettingByCoinRequest)
-    - [GetCoinSettingByCoinResponse](#cloud.hashing.billing.v1.GetCoinSettingByCoinResponse)
-    - [GetCoinSettingRequest](#cloud.hashing.billing.v1.GetCoinSettingRequest)
-    - [GetCoinSettingResponse](#cloud.hashing.billing.v1.GetCoinSettingResponse)
-    - [GetGoodBenefitByGoodRequest](#cloud.hashing.billing.v1.GetGoodBenefitByGoodRequest)
-    - [GetGoodBenefitByGoodResponse](#cloud.hashing.billing.v1.GetGoodBenefitByGoodResponse)
-    - [GetGoodBenefitRequest](#cloud.hashing.billing.v1.GetGoodBenefitRequest)
-    - [GetGoodBenefitResponse](#cloud.hashing.billing.v1.GetGoodBenefitResponse)
-    - [GetGoodPaymentByAccountRequest](#cloud.hashing.billing.v1.GetGoodPaymentByAccountRequest)
-    - [GetGoodPaymentByAccountResponse](#cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse)
-    - [GetGoodPaymentRequest](#cloud.hashing.billing.v1.GetGoodPaymentRequest)
-    - [GetGoodPaymentResponse](#cloud.hashing.billing.v1.GetGoodPaymentResponse)
-    - [GetGoodPaymentsByGoodRequest](#cloud.hashing.billing.v1.GetGoodPaymentsByGoodRequest)
-    - [GetGoodPaymentsByGoodResponse](#cloud.hashing.billing.v1.GetGoodPaymentsByGoodResponse)
-    - [GetGoodPaymentsRequest](#cloud.hashing.billing.v1.GetGoodPaymentsRequest)
-    - [GetGoodPaymentsResponse](#cloud.hashing.billing.v1.GetGoodPaymentsResponse)
-    - [GetIdleGoodPaymentsByGoodPaymentCoinRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest)
-    - [GetIdleGoodPaymentsByGoodPaymentCoinResponse](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinResponse)
-    - [GetIdleGoodPaymentsByGoodRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodRequest)
-    - [GetIdleGoodPaymentsByGoodResponse](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodResponse)
-    - [GetLatestPlatformBenefitByGoodRequest](#cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodRequest)
-    - [GetLatestPlatformBenefitByGoodResponse](#cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodResponse)
-    - [GetLatestUserBenefitByGoodAppUserRequest](#cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserRequest)
-    - [GetLatestUserBenefitByGoodAppUserResponse](#cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse)
-    - [GetPlatformBenefitDetailRequest](#cloud.hashing.billing.v1.GetPlatformBenefitDetailRequest)
-    - [GetPlatformBenefitDetailResponse](#cloud.hashing.billing.v1.GetPlatformBenefitDetailResponse)
-    - [GetPlatformBenefitRequest](#cloud.hashing.billing.v1.GetPlatformBenefitRequest)
-    - [GetPlatformBenefitResponse](#cloud.hashing.billing.v1.GetPlatformBenefitResponse)
-    - [GetPlatformBenefitsByGoodRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest)
-    - [GetPlatformBenefitsByGoodResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse)
-    - [GetPlatformBenefitsRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsRequest)
-    - [GetPlatformBenefitsResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsResponse)
-    - [GetPlatformSettingByGoodRequest](#cloud.hashing.billing.v1.GetPlatformSettingByGoodRequest)
-    - [GetPlatformSettingByGoodResponse](#cloud.hashing.billing.v1.GetPlatformSettingByGoodResponse)
-    - [GetPlatformSettingRequest](#cloud.hashing.billing.v1.GetPlatformSettingRequest)
-    - [GetPlatformSettingResponse](#cloud.hashing.billing.v1.GetPlatformSettingResponse)
-    - [GetUserBenefitsByAppRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppRequest)
-    - [GetUserBenefitsByAppResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppResponse)
-    - [GetUserBenefitsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinRequest)
-    - [GetUserBenefitsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinResponse)
-    - [GetUserBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest)
-    - [GetUserBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse)
-    - [GetUserBenefitsRequest](#cloud.hashing.billing.v1.GetUserBenefitsRequest)
-    - [GetUserBenefitsResponse](#cloud.hashing.billing.v1.GetUserBenefitsResponse)
-    - [GetUserDirectBenefitByAccountRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest)
-    - [GetUserDirectBenefitByAccountResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse)
-    - [GetUserDirectBenefitRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitRequest)
-    - [GetUserDirectBenefitResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitResponse)
-    - [GetUserDirectBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest)
-    - [GetUserDirectBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse)
-    - [GetUserDirectBenefitsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest)
-    - [GetUserDirectBenefitsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse)
-    - [GetUserPaymentBalanceRequest](#cloud.hashing.billing.v1.GetUserPaymentBalanceRequest)
-    - [GetUserPaymentBalanceResponse](#cloud.hashing.billing.v1.GetUserPaymentBalanceResponse)
-    - [GetUserPaymentBalancesByAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppRequest)
-    - [GetUserPaymentBalancesByAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppResponse)
-    - [GetUserPaymentBalancesByAppUserRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserRequest)
-    - [GetUserPaymentBalancesByAppUserResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserResponse)
-    - [GetUserPaymentBalancesByOtherAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppRequest)
-    - [GetUserPaymentBalancesByOtherAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppResponse)
-    - [GetUserWithdrawAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountRequest)
-    - [GetUserWithdrawAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountResponse)
-    - [GetUserWithdrawAccountsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserRequest)
-    - [GetUserWithdrawAccountsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserResponse)
-    - [GetUserWithdrawAccountsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserRequest)
-    - [GetUserWithdrawAccountsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserResponse)
-    - [GetUserWithdrawByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest)
-    - [GetUserWithdrawByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse)
-    - [GetUserWithdrawItemRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemRequest)
-    - [GetUserWithdrawItemResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemResponse)
-    - [GetUserWithdrawItemsByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountRequest)
-    - [GetUserWithdrawItemsByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountResponse)
-    - [GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest)
-    - [GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse)
-    - [GetUserWithdrawItemsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest)
-    - [GetUserWithdrawItemsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse)
-    - [GetUserWithdrawItemsByAppUserWithdrawTypeRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserWithdrawTypeRequest)
-    - [GetUserWithdrawItemsByAppUserWithdrawTypeResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserWithdrawTypeResponse)
-    - [GetUserWithdrawItemsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest)
-    - [GetUserWithdrawItemsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse)
-    - [GetUserWithdrawItemsRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsRequest)
-    - [GetUserWithdrawItemsResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsResponse)
-    - [GetUserWithdrawRequest](#cloud.hashing.billing.v1.GetUserWithdrawRequest)
-    - [GetUserWithdrawResponse](#cloud.hashing.billing.v1.GetUserWithdrawResponse)
-    - [GetUserWithdrawsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserCoinRequest)
-    - [GetUserWithdrawsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserCoinResponse)
-    - [GetUserWithdrawsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest)
-    - [GetUserWithdrawsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse)
-    - [GetUserWithdrawsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest)
-    - [GetUserWithdrawsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse)
-    - [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit)
-    - [GoodPayment](#cloud.hashing.billing.v1.GoodPayment)
-    - [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit)
-    - [PlatformBenefitDetail](#cloud.hashing.billing.v1.PlatformBenefitDetail)
-    - [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting)
-    - [UpdateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest)
-    - [UpdateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse)
-    - [UpdateCoinAccountTransactionRequest](#cloud.hashing.billing.v1.UpdateCoinAccountTransactionRequest)
-    - [UpdateCoinAccountTransactionResponse](#cloud.hashing.billing.v1.UpdateCoinAccountTransactionResponse)
-    - [UpdateCoinSettingRequest](#cloud.hashing.billing.v1.UpdateCoinSettingRequest)
-    - [UpdateCoinSettingResponse](#cloud.hashing.billing.v1.UpdateCoinSettingResponse)
-    - [UpdateGoodBenefitRequest](#cloud.hashing.billing.v1.UpdateGoodBenefitRequest)
-    - [UpdateGoodBenefitResponse](#cloud.hashing.billing.v1.UpdateGoodBenefitResponse)
-    - [UpdateGoodPaymentRequest](#cloud.hashing.billing.v1.UpdateGoodPaymentRequest)
-    - [UpdateGoodPaymentResponse](#cloud.hashing.billing.v1.UpdateGoodPaymentResponse)
-    - [UpdatePlatformSettingRequest](#cloud.hashing.billing.v1.UpdatePlatformSettingRequest)
-    - [UpdatePlatformSettingResponse](#cloud.hashing.billing.v1.UpdatePlatformSettingResponse)
-    - [UpdateUserDirectBenefitRequest](#cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest)
-    - [UpdateUserDirectBenefitResponse](#cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse)
-    - [UpdateUserPaymentBalanceRequest](#cloud.hashing.billing.v1.UpdateUserPaymentBalanceRequest)
-    - [UpdateUserPaymentBalanceResponse](#cloud.hashing.billing.v1.UpdateUserPaymentBalanceResponse)
-    - [UpdateUserWithdrawItemRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawItemRequest)
-    - [UpdateUserWithdrawItemResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawItemResponse)
-    - [UpdateUserWithdrawRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawRequest)
-    - [UpdateUserWithdrawResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawResponse)
-    - [UserBenefit](#cloud.hashing.billing.v1.UserBenefit)
-    - [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit)
-    - [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance)
-    - [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw)
-    - [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount)
-    - [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem)
+- [npool/cloud-hashing-billing/cloud-hashing-billing.proto](#npool_cloud-hashing-billing_cloud-hashing-billing-proto)
+    - [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting)
+    - [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo)
+    - [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction)
+    - [CoinAccountTransactionDetail](#cloud-hashing-billing-v1-CoinAccountTransactionDetail)
+    - [CoinSetting](#cloud-hashing-billing-v1-CoinSetting)
+    - [CreateAppWithdrawSettingForOtherAppRequest](#cloud-hashing-billing-v1-CreateAppWithdrawSettingForOtherAppRequest)
+    - [CreateAppWithdrawSettingForOtherAppResponse](#cloud-hashing-billing-v1-CreateAppWithdrawSettingForOtherAppResponse)
+    - [CreateAppWithdrawSettingRequest](#cloud-hashing-billing-v1-CreateAppWithdrawSettingRequest)
+    - [CreateAppWithdrawSettingResponse](#cloud-hashing-billing-v1-CreateAppWithdrawSettingResponse)
+    - [CreateCoinAccountRequest](#cloud-hashing-billing-v1-CreateCoinAccountRequest)
+    - [CreateCoinAccountResponse](#cloud-hashing-billing-v1-CreateCoinAccountResponse)
+    - [CreateCoinAccountTransactionRequest](#cloud-hashing-billing-v1-CreateCoinAccountTransactionRequest)
+    - [CreateCoinAccountTransactionResponse](#cloud-hashing-billing-v1-CreateCoinAccountTransactionResponse)
+    - [CreateCoinSettingRequest](#cloud-hashing-billing-v1-CreateCoinSettingRequest)
+    - [CreateCoinSettingResponse](#cloud-hashing-billing-v1-CreateCoinSettingResponse)
+    - [CreateGoodBenefitRequest](#cloud-hashing-billing-v1-CreateGoodBenefitRequest)
+    - [CreateGoodBenefitResponse](#cloud-hashing-billing-v1-CreateGoodBenefitResponse)
+    - [CreateGoodPaymentRequest](#cloud-hashing-billing-v1-CreateGoodPaymentRequest)
+    - [CreateGoodPaymentResponse](#cloud-hashing-billing-v1-CreateGoodPaymentResponse)
+    - [CreatePlatformBenefitRequest](#cloud-hashing-billing-v1-CreatePlatformBenefitRequest)
+    - [CreatePlatformBenefitResponse](#cloud-hashing-billing-v1-CreatePlatformBenefitResponse)
+    - [CreatePlatformSettingRequest](#cloud-hashing-billing-v1-CreatePlatformSettingRequest)
+    - [CreatePlatformSettingResponse](#cloud-hashing-billing-v1-CreatePlatformSettingResponse)
+    - [CreateUserBenefitRequest](#cloud-hashing-billing-v1-CreateUserBenefitRequest)
+    - [CreateUserBenefitResponse](#cloud-hashing-billing-v1-CreateUserBenefitResponse)
+    - [CreateUserDirectBenefitRequest](#cloud-hashing-billing-v1-CreateUserDirectBenefitRequest)
+    - [CreateUserDirectBenefitResponse](#cloud-hashing-billing-v1-CreateUserDirectBenefitResponse)
+    - [CreateUserPaymentBalanceForOtherAppUserRequest](#cloud-hashing-billing-v1-CreateUserPaymentBalanceForOtherAppUserRequest)
+    - [CreateUserPaymentBalanceForOtherAppUserResponse](#cloud-hashing-billing-v1-CreateUserPaymentBalanceForOtherAppUserResponse)
+    - [CreateUserPaymentBalanceRequest](#cloud-hashing-billing-v1-CreateUserPaymentBalanceRequest)
+    - [CreateUserPaymentBalanceResponse](#cloud-hashing-billing-v1-CreateUserPaymentBalanceResponse)
+    - [CreateUserWithdrawItemRequest](#cloud-hashing-billing-v1-CreateUserWithdrawItemRequest)
+    - [CreateUserWithdrawItemResponse](#cloud-hashing-billing-v1-CreateUserWithdrawItemResponse)
+    - [CreateUserWithdrawRequest](#cloud-hashing-billing-v1-CreateUserWithdrawRequest)
+    - [CreateUserWithdrawResponse](#cloud-hashing-billing-v1-CreateUserWithdrawResponse)
+    - [DeleteCoinAccountRequest](#cloud-hashing-billing-v1-DeleteCoinAccountRequest)
+    - [DeleteCoinAccountResponse](#cloud-hashing-billing-v1-DeleteCoinAccountResponse)
+    - [DeleteCoinAccountTransactionRequest](#cloud-hashing-billing-v1-DeleteCoinAccountTransactionRequest)
+    - [DeleteCoinAccountTransactionResponse](#cloud-hashing-billing-v1-DeleteCoinAccountTransactionResponse)
+    - [GetAppWithdrawSettingByAppCoinRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingByAppCoinRequest)
+    - [GetAppWithdrawSettingByAppCoinResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingByAppCoinResponse)
+    - [GetAppWithdrawSettingRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingRequest)
+    - [GetAppWithdrawSettingResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingResponse)
+    - [GetAppWithdrawSettingsByAppRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByAppRequest)
+    - [GetAppWithdrawSettingsByAppResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByAppResponse)
+    - [GetAppWithdrawSettingsByOtherAppRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByOtherAppRequest)
+    - [GetAppWithdrawSettingsByOtherAppResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByOtherAppResponse)
+    - [GetCoinAccountByCoinAddressRequest](#cloud-hashing-billing-v1-GetCoinAccountByCoinAddressRequest)
+    - [GetCoinAccountByCoinAddressResponse](#cloud-hashing-billing-v1-GetCoinAccountByCoinAddressResponse)
+    - [GetCoinAccountRequest](#cloud-hashing-billing-v1-GetCoinAccountRequest)
+    - [GetCoinAccountResponse](#cloud-hashing-billing-v1-GetCoinAccountResponse)
+    - [GetCoinAccountTransactionDetailRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionDetailRequest)
+    - [GetCoinAccountTransactionDetailResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionDetailResponse)
+    - [GetCoinAccountTransactionRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionRequest)
+    - [GetCoinAccountTransactionResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionResponse)
+    - [GetCoinAccountTransactionsByAppUserCoinRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserCoinRequest)
+    - [GetCoinAccountTransactionsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserCoinResponse)
+    - [GetCoinAccountTransactionsByAppUserRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserRequest)
+    - [GetCoinAccountTransactionsByAppUserResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserResponse)
+    - [GetCoinAccountTransactionsByCoinAccountRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinAccountRequest)
+    - [GetCoinAccountTransactionsByCoinAccountResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinAccountResponse)
+    - [GetCoinAccountTransactionsByCoinRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinRequest)
+    - [GetCoinAccountTransactionsByCoinResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinResponse)
+    - [GetCoinAccountTransactionsByGoodStateRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByGoodStateRequest)
+    - [GetCoinAccountTransactionsByGoodStateResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByGoodStateResponse)
+    - [GetCoinAccountTransactionsByStateRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByStateRequest)
+    - [GetCoinAccountTransactionsByStateResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByStateResponse)
+    - [GetCoinAccountTransactionsRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsRequest)
+    - [GetCoinAccountTransactionsResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsResponse)
+    - [GetCoinAccountsRequest](#cloud-hashing-billing-v1-GetCoinAccountsRequest)
+    - [GetCoinAccountsResponse](#cloud-hashing-billing-v1-GetCoinAccountsResponse)
+    - [GetCoinSettingByCoinRequest](#cloud-hashing-billing-v1-GetCoinSettingByCoinRequest)
+    - [GetCoinSettingByCoinResponse](#cloud-hashing-billing-v1-GetCoinSettingByCoinResponse)
+    - [GetCoinSettingRequest](#cloud-hashing-billing-v1-GetCoinSettingRequest)
+    - [GetCoinSettingResponse](#cloud-hashing-billing-v1-GetCoinSettingResponse)
+    - [GetGoodBenefitByGoodRequest](#cloud-hashing-billing-v1-GetGoodBenefitByGoodRequest)
+    - [GetGoodBenefitByGoodResponse](#cloud-hashing-billing-v1-GetGoodBenefitByGoodResponse)
+    - [GetGoodBenefitRequest](#cloud-hashing-billing-v1-GetGoodBenefitRequest)
+    - [GetGoodBenefitResponse](#cloud-hashing-billing-v1-GetGoodBenefitResponse)
+    - [GetGoodPaymentByAccountRequest](#cloud-hashing-billing-v1-GetGoodPaymentByAccountRequest)
+    - [GetGoodPaymentByAccountResponse](#cloud-hashing-billing-v1-GetGoodPaymentByAccountResponse)
+    - [GetGoodPaymentRequest](#cloud-hashing-billing-v1-GetGoodPaymentRequest)
+    - [GetGoodPaymentResponse](#cloud-hashing-billing-v1-GetGoodPaymentResponse)
+    - [GetGoodPaymentsByGoodRequest](#cloud-hashing-billing-v1-GetGoodPaymentsByGoodRequest)
+    - [GetGoodPaymentsByGoodResponse](#cloud-hashing-billing-v1-GetGoodPaymentsByGoodResponse)
+    - [GetGoodPaymentsRequest](#cloud-hashing-billing-v1-GetGoodPaymentsRequest)
+    - [GetGoodPaymentsResponse](#cloud-hashing-billing-v1-GetGoodPaymentsResponse)
+    - [GetIdleGoodPaymentsByGoodPaymentCoinRequest](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodPaymentCoinRequest)
+    - [GetIdleGoodPaymentsByGoodPaymentCoinResponse](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodPaymentCoinResponse)
+    - [GetIdleGoodPaymentsByGoodRequest](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodRequest)
+    - [GetIdleGoodPaymentsByGoodResponse](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodResponse)
+    - [GetLatestPlatformBenefitByGoodRequest](#cloud-hashing-billing-v1-GetLatestPlatformBenefitByGoodRequest)
+    - [GetLatestPlatformBenefitByGoodResponse](#cloud-hashing-billing-v1-GetLatestPlatformBenefitByGoodResponse)
+    - [GetLatestUserBenefitByGoodAppUserRequest](#cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserRequest)
+    - [GetLatestUserBenefitByGoodAppUserResponse](#cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserResponse)
+    - [GetPlatformBenefitDetailRequest](#cloud-hashing-billing-v1-GetPlatformBenefitDetailRequest)
+    - [GetPlatformBenefitDetailResponse](#cloud-hashing-billing-v1-GetPlatformBenefitDetailResponse)
+    - [GetPlatformBenefitRequest](#cloud-hashing-billing-v1-GetPlatformBenefitRequest)
+    - [GetPlatformBenefitResponse](#cloud-hashing-billing-v1-GetPlatformBenefitResponse)
+    - [GetPlatformBenefitsByGoodRequest](#cloud-hashing-billing-v1-GetPlatformBenefitsByGoodRequest)
+    - [GetPlatformBenefitsByGoodResponse](#cloud-hashing-billing-v1-GetPlatformBenefitsByGoodResponse)
+    - [GetPlatformBenefitsRequest](#cloud-hashing-billing-v1-GetPlatformBenefitsRequest)
+    - [GetPlatformBenefitsResponse](#cloud-hashing-billing-v1-GetPlatformBenefitsResponse)
+    - [GetPlatformSettingByGoodRequest](#cloud-hashing-billing-v1-GetPlatformSettingByGoodRequest)
+    - [GetPlatformSettingByGoodResponse](#cloud-hashing-billing-v1-GetPlatformSettingByGoodResponse)
+    - [GetPlatformSettingRequest](#cloud-hashing-billing-v1-GetPlatformSettingRequest)
+    - [GetPlatformSettingResponse](#cloud-hashing-billing-v1-GetPlatformSettingResponse)
+    - [GetUserBenefitsByAppRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppRequest)
+    - [GetUserBenefitsByAppResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppResponse)
+    - [GetUserBenefitsByAppUserCoinRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinRequest)
+    - [GetUserBenefitsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinResponse)
+    - [GetUserBenefitsByAppUserRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserRequest)
+    - [GetUserBenefitsByAppUserResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserResponse)
+    - [GetUserBenefitsRequest](#cloud-hashing-billing-v1-GetUserBenefitsRequest)
+    - [GetUserBenefitsResponse](#cloud-hashing-billing-v1-GetUserBenefitsResponse)
+    - [GetUserDirectBenefitByAccountRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitByAccountRequest)
+    - [GetUserDirectBenefitByAccountResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitByAccountResponse)
+    - [GetUserDirectBenefitRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitRequest)
+    - [GetUserDirectBenefitResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitResponse)
+    - [GetUserDirectBenefitsByAppUserRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitsByAppUserRequest)
+    - [GetUserDirectBenefitsByAppUserResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitsByAppUserResponse)
+    - [GetUserDirectBenefitsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitsByOtherAppUserRequest)
+    - [GetUserDirectBenefitsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitsByOtherAppUserResponse)
+    - [GetUserPaymentBalanceRequest](#cloud-hashing-billing-v1-GetUserPaymentBalanceRequest)
+    - [GetUserPaymentBalanceResponse](#cloud-hashing-billing-v1-GetUserPaymentBalanceResponse)
+    - [GetUserPaymentBalancesByAppRequest](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppRequest)
+    - [GetUserPaymentBalancesByAppResponse](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppResponse)
+    - [GetUserPaymentBalancesByAppUserRequest](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppUserRequest)
+    - [GetUserPaymentBalancesByAppUserResponse](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppUserResponse)
+    - [GetUserPaymentBalancesByOtherAppRequest](#cloud-hashing-billing-v1-GetUserPaymentBalancesByOtherAppRequest)
+    - [GetUserPaymentBalancesByOtherAppResponse](#cloud-hashing-billing-v1-GetUserPaymentBalancesByOtherAppResponse)
+    - [GetUserWithdrawAccountRequest](#cloud-hashing-billing-v1-GetUserWithdrawAccountRequest)
+    - [GetUserWithdrawAccountResponse](#cloud-hashing-billing-v1-GetUserWithdrawAccountResponse)
+    - [GetUserWithdrawAccountsByAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByAppUserRequest)
+    - [GetUserWithdrawAccountsByAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByAppUserResponse)
+    - [GetUserWithdrawAccountsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByOtherAppUserRequest)
+    - [GetUserWithdrawAccountsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByOtherAppUserResponse)
+    - [GetUserWithdrawByAccountRequest](#cloud-hashing-billing-v1-GetUserWithdrawByAccountRequest)
+    - [GetUserWithdrawByAccountResponse](#cloud-hashing-billing-v1-GetUserWithdrawByAccountResponse)
+    - [GetUserWithdrawItemRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemRequest)
+    - [GetUserWithdrawItemResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemResponse)
+    - [GetUserWithdrawItemsByAccountRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAccountRequest)
+    - [GetUserWithdrawItemsByAccountResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAccountResponse)
+    - [GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest)
+    - [GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse)
+    - [GetUserWithdrawItemsByAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserRequest)
+    - [GetUserWithdrawItemsByAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserResponse)
+    - [GetUserWithdrawItemsByAppUserWithdrawTypeRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserWithdrawTypeRequest)
+    - [GetUserWithdrawItemsByAppUserWithdrawTypeResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserWithdrawTypeResponse)
+    - [GetUserWithdrawItemsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByOtherAppUserRequest)
+    - [GetUserWithdrawItemsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByOtherAppUserResponse)
+    - [GetUserWithdrawItemsRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsRequest)
+    - [GetUserWithdrawItemsResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsResponse)
+    - [GetUserWithdrawRequest](#cloud-hashing-billing-v1-GetUserWithdrawRequest)
+    - [GetUserWithdrawResponse](#cloud-hashing-billing-v1-GetUserWithdrawResponse)
+    - [GetUserWithdrawsByAppUserCoinRequest](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserCoinRequest)
+    - [GetUserWithdrawsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserCoinResponse)
+    - [GetUserWithdrawsByAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserRequest)
+    - [GetUserWithdrawsByAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserResponse)
+    - [GetUserWithdrawsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawsByOtherAppUserRequest)
+    - [GetUserWithdrawsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawsByOtherAppUserResponse)
+    - [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit)
+    - [GoodPayment](#cloud-hashing-billing-v1-GoodPayment)
+    - [PlatformBenefit](#cloud-hashing-billing-v1-PlatformBenefit)
+    - [PlatformBenefitDetail](#cloud-hashing-billing-v1-PlatformBenefitDetail)
+    - [PlatformSetting](#cloud-hashing-billing-v1-PlatformSetting)
+    - [UpdateAppWithdrawSettingRequest](#cloud-hashing-billing-v1-UpdateAppWithdrawSettingRequest)
+    - [UpdateAppWithdrawSettingResponse](#cloud-hashing-billing-v1-UpdateAppWithdrawSettingResponse)
+    - [UpdateCoinAccountTransactionRequest](#cloud-hashing-billing-v1-UpdateCoinAccountTransactionRequest)
+    - [UpdateCoinAccountTransactionResponse](#cloud-hashing-billing-v1-UpdateCoinAccountTransactionResponse)
+    - [UpdateCoinSettingRequest](#cloud-hashing-billing-v1-UpdateCoinSettingRequest)
+    - [UpdateCoinSettingResponse](#cloud-hashing-billing-v1-UpdateCoinSettingResponse)
+    - [UpdateGoodBenefitRequest](#cloud-hashing-billing-v1-UpdateGoodBenefitRequest)
+    - [UpdateGoodBenefitResponse](#cloud-hashing-billing-v1-UpdateGoodBenefitResponse)
+    - [UpdateGoodPaymentRequest](#cloud-hashing-billing-v1-UpdateGoodPaymentRequest)
+    - [UpdateGoodPaymentResponse](#cloud-hashing-billing-v1-UpdateGoodPaymentResponse)
+    - [UpdatePlatformSettingRequest](#cloud-hashing-billing-v1-UpdatePlatformSettingRequest)
+    - [UpdatePlatformSettingResponse](#cloud-hashing-billing-v1-UpdatePlatformSettingResponse)
+    - [UpdateUserDirectBenefitRequest](#cloud-hashing-billing-v1-UpdateUserDirectBenefitRequest)
+    - [UpdateUserDirectBenefitResponse](#cloud-hashing-billing-v1-UpdateUserDirectBenefitResponse)
+    - [UpdateUserPaymentBalanceRequest](#cloud-hashing-billing-v1-UpdateUserPaymentBalanceRequest)
+    - [UpdateUserPaymentBalanceResponse](#cloud-hashing-billing-v1-UpdateUserPaymentBalanceResponse)
+    - [UpdateUserWithdrawItemRequest](#cloud-hashing-billing-v1-UpdateUserWithdrawItemRequest)
+    - [UpdateUserWithdrawItemResponse](#cloud-hashing-billing-v1-UpdateUserWithdrawItemResponse)
+    - [UpdateUserWithdrawRequest](#cloud-hashing-billing-v1-UpdateUserWithdrawRequest)
+    - [UpdateUserWithdrawResponse](#cloud-hashing-billing-v1-UpdateUserWithdrawResponse)
+    - [UserBenefit](#cloud-hashing-billing-v1-UserBenefit)
+    - [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit)
+    - [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance)
+    - [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw)
+    - [UserWithdrawAccount](#cloud-hashing-billing-v1-UserWithdrawAccount)
+    - [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem)
   
-    - [CloudHashingBilling](#cloud.hashing.billing.v1.CloudHashingBilling)
+    - [CloudHashingBilling](#cloud-hashing-billing-v1-CloudHashingBilling)
   
-- [npool/cloud-hashing-billing/cloud-hashing-billing.proto](#npool/cloud-hashing-billing/cloud-hashing-billing.proto)
-    - [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting)
-    - [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo)
-    - [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction)
-    - [CoinAccountTransactionDetail](#cloud.hashing.billing.v1.CoinAccountTransactionDetail)
-    - [CoinSetting](#cloud.hashing.billing.v1.CoinSetting)
-    - [CreateAppWithdrawSettingForOtherAppRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppRequest)
-    - [CreateAppWithdrawSettingForOtherAppResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppResponse)
-    - [CreateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest)
-    - [CreateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse)
-    - [CreateCoinAccountRequest](#cloud.hashing.billing.v1.CreateCoinAccountRequest)
-    - [CreateCoinAccountResponse](#cloud.hashing.billing.v1.CreateCoinAccountResponse)
-    - [CreateCoinAccountTransactionRequest](#cloud.hashing.billing.v1.CreateCoinAccountTransactionRequest)
-    - [CreateCoinAccountTransactionResponse](#cloud.hashing.billing.v1.CreateCoinAccountTransactionResponse)
-    - [CreateCoinSettingRequest](#cloud.hashing.billing.v1.CreateCoinSettingRequest)
-    - [CreateCoinSettingResponse](#cloud.hashing.billing.v1.CreateCoinSettingResponse)
-    - [CreateGoodBenefitRequest](#cloud.hashing.billing.v1.CreateGoodBenefitRequest)
-    - [CreateGoodBenefitResponse](#cloud.hashing.billing.v1.CreateGoodBenefitResponse)
-    - [CreateGoodPaymentRequest](#cloud.hashing.billing.v1.CreateGoodPaymentRequest)
-    - [CreateGoodPaymentResponse](#cloud.hashing.billing.v1.CreateGoodPaymentResponse)
-    - [CreatePlatformBenefitRequest](#cloud.hashing.billing.v1.CreatePlatformBenefitRequest)
-    - [CreatePlatformBenefitResponse](#cloud.hashing.billing.v1.CreatePlatformBenefitResponse)
-    - [CreatePlatformSettingRequest](#cloud.hashing.billing.v1.CreatePlatformSettingRequest)
-    - [CreatePlatformSettingResponse](#cloud.hashing.billing.v1.CreatePlatformSettingResponse)
-    - [CreateUserBenefitRequest](#cloud.hashing.billing.v1.CreateUserBenefitRequest)
-    - [CreateUserBenefitResponse](#cloud.hashing.billing.v1.CreateUserBenefitResponse)
-    - [CreateUserDirectBenefitRequest](#cloud.hashing.billing.v1.CreateUserDirectBenefitRequest)
-    - [CreateUserDirectBenefitResponse](#cloud.hashing.billing.v1.CreateUserDirectBenefitResponse)
-    - [CreateUserPaymentBalanceForOtherAppUserRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserRequest)
-    - [CreateUserPaymentBalanceForOtherAppUserResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserResponse)
-    - [CreateUserPaymentBalanceRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceRequest)
-    - [CreateUserPaymentBalanceResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceResponse)
-    - [CreateUserWithdrawItemRequest](#cloud.hashing.billing.v1.CreateUserWithdrawItemRequest)
-    - [CreateUserWithdrawItemResponse](#cloud.hashing.billing.v1.CreateUserWithdrawItemResponse)
-    - [CreateUserWithdrawRequest](#cloud.hashing.billing.v1.CreateUserWithdrawRequest)
-    - [CreateUserWithdrawResponse](#cloud.hashing.billing.v1.CreateUserWithdrawResponse)
-    - [DeleteCoinAccountRequest](#cloud.hashing.billing.v1.DeleteCoinAccountRequest)
-    - [DeleteCoinAccountResponse](#cloud.hashing.billing.v1.DeleteCoinAccountResponse)
-    - [DeleteCoinAccountTransactionRequest](#cloud.hashing.billing.v1.DeleteCoinAccountTransactionRequest)
-    - [DeleteCoinAccountTransactionResponse](#cloud.hashing.billing.v1.DeleteCoinAccountTransactionResponse)
-    - [GetAppWithdrawSettingByAppCoinRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinRequest)
-    - [GetAppWithdrawSettingByAppCoinResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinResponse)
-    - [GetAppWithdrawSettingRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingRequest)
-    - [GetAppWithdrawSettingResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingResponse)
-    - [GetAppWithdrawSettingsByAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppRequest)
-    - [GetAppWithdrawSettingsByAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppResponse)
-    - [GetAppWithdrawSettingsByOtherAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppRequest)
-    - [GetAppWithdrawSettingsByOtherAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppResponse)
-    - [GetCoinAccountByCoinAddressRequest](#cloud.hashing.billing.v1.GetCoinAccountByCoinAddressRequest)
-    - [GetCoinAccountByCoinAddressResponse](#cloud.hashing.billing.v1.GetCoinAccountByCoinAddressResponse)
-    - [GetCoinAccountRequest](#cloud.hashing.billing.v1.GetCoinAccountRequest)
-    - [GetCoinAccountResponse](#cloud.hashing.billing.v1.GetCoinAccountResponse)
-    - [GetCoinAccountTransactionDetailRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionDetailRequest)
-    - [GetCoinAccountTransactionDetailResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionDetailResponse)
-    - [GetCoinAccountTransactionRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionRequest)
-    - [GetCoinAccountTransactionResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionResponse)
-    - [GetCoinAccountTransactionsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserCoinRequest)
-    - [GetCoinAccountTransactionsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserCoinResponse)
-    - [GetCoinAccountTransactionsByAppUserRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserRequest)
-    - [GetCoinAccountTransactionsByAppUserResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserResponse)
-    - [GetCoinAccountTransactionsByCoinAccountRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountRequest)
-    - [GetCoinAccountTransactionsByCoinAccountResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountResponse)
-    - [GetCoinAccountTransactionsByCoinRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinRequest)
-    - [GetCoinAccountTransactionsByCoinResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinResponse)
-    - [GetCoinAccountTransactionsByGoodStateRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByGoodStateRequest)
-    - [GetCoinAccountTransactionsByGoodStateResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByGoodStateResponse)
-    - [GetCoinAccountTransactionsByStateRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateRequest)
-    - [GetCoinAccountTransactionsByStateResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateResponse)
-    - [GetCoinAccountTransactionsRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsRequest)
-    - [GetCoinAccountTransactionsResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsResponse)
-    - [GetCoinAccountsRequest](#cloud.hashing.billing.v1.GetCoinAccountsRequest)
-    - [GetCoinAccountsResponse](#cloud.hashing.billing.v1.GetCoinAccountsResponse)
-    - [GetCoinSettingByCoinRequest](#cloud.hashing.billing.v1.GetCoinSettingByCoinRequest)
-    - [GetCoinSettingByCoinResponse](#cloud.hashing.billing.v1.GetCoinSettingByCoinResponse)
-    - [GetCoinSettingRequest](#cloud.hashing.billing.v1.GetCoinSettingRequest)
-    - [GetCoinSettingResponse](#cloud.hashing.billing.v1.GetCoinSettingResponse)
-    - [GetGoodBenefitByGoodRequest](#cloud.hashing.billing.v1.GetGoodBenefitByGoodRequest)
-    - [GetGoodBenefitByGoodResponse](#cloud.hashing.billing.v1.GetGoodBenefitByGoodResponse)
-    - [GetGoodBenefitRequest](#cloud.hashing.billing.v1.GetGoodBenefitRequest)
-    - [GetGoodBenefitResponse](#cloud.hashing.billing.v1.GetGoodBenefitResponse)
-    - [GetGoodPaymentByAccountRequest](#cloud.hashing.billing.v1.GetGoodPaymentByAccountRequest)
-    - [GetGoodPaymentByAccountResponse](#cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse)
-    - [GetGoodPaymentRequest](#cloud.hashing.billing.v1.GetGoodPaymentRequest)
-    - [GetGoodPaymentResponse](#cloud.hashing.billing.v1.GetGoodPaymentResponse)
-    - [GetGoodPaymentsByGoodRequest](#cloud.hashing.billing.v1.GetGoodPaymentsByGoodRequest)
-    - [GetGoodPaymentsByGoodResponse](#cloud.hashing.billing.v1.GetGoodPaymentsByGoodResponse)
-    - [GetGoodPaymentsRequest](#cloud.hashing.billing.v1.GetGoodPaymentsRequest)
-    - [GetGoodPaymentsResponse](#cloud.hashing.billing.v1.GetGoodPaymentsResponse)
-    - [GetIdleGoodPaymentsByGoodPaymentCoinRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest)
-    - [GetIdleGoodPaymentsByGoodPaymentCoinResponse](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinResponse)
-    - [GetIdleGoodPaymentsByGoodRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodRequest)
-    - [GetIdleGoodPaymentsByGoodResponse](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodResponse)
-    - [GetLatestPlatformBenefitByGoodRequest](#cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodRequest)
-    - [GetLatestPlatformBenefitByGoodResponse](#cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodResponse)
-    - [GetLatestUserBenefitByGoodAppUserRequest](#cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserRequest)
-    - [GetLatestUserBenefitByGoodAppUserResponse](#cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse)
-    - [GetPlatformBenefitDetailRequest](#cloud.hashing.billing.v1.GetPlatformBenefitDetailRequest)
-    - [GetPlatformBenefitDetailResponse](#cloud.hashing.billing.v1.GetPlatformBenefitDetailResponse)
-    - [GetPlatformBenefitRequest](#cloud.hashing.billing.v1.GetPlatformBenefitRequest)
-    - [GetPlatformBenefitResponse](#cloud.hashing.billing.v1.GetPlatformBenefitResponse)
-    - [GetPlatformBenefitsByGoodRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest)
-    - [GetPlatformBenefitsByGoodResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse)
-    - [GetPlatformBenefitsRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsRequest)
-    - [GetPlatformBenefitsResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsResponse)
-    - [GetPlatformSettingByGoodRequest](#cloud.hashing.billing.v1.GetPlatformSettingByGoodRequest)
-    - [GetPlatformSettingByGoodResponse](#cloud.hashing.billing.v1.GetPlatformSettingByGoodResponse)
-    - [GetPlatformSettingRequest](#cloud.hashing.billing.v1.GetPlatformSettingRequest)
-    - [GetPlatformSettingResponse](#cloud.hashing.billing.v1.GetPlatformSettingResponse)
-    - [GetUserBenefitsByAppRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppRequest)
-    - [GetUserBenefitsByAppResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppResponse)
-    - [GetUserBenefitsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinRequest)
-    - [GetUserBenefitsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinResponse)
-    - [GetUserBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest)
-    - [GetUserBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse)
-    - [GetUserBenefitsRequest](#cloud.hashing.billing.v1.GetUserBenefitsRequest)
-    - [GetUserBenefitsResponse](#cloud.hashing.billing.v1.GetUserBenefitsResponse)
-    - [GetUserDirectBenefitByAccountRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest)
-    - [GetUserDirectBenefitByAccountResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse)
-    - [GetUserDirectBenefitRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitRequest)
-    - [GetUserDirectBenefitResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitResponse)
-    - [GetUserDirectBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest)
-    - [GetUserDirectBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse)
-    - [GetUserDirectBenefitsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest)
-    - [GetUserDirectBenefitsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse)
-    - [GetUserPaymentBalanceRequest](#cloud.hashing.billing.v1.GetUserPaymentBalanceRequest)
-    - [GetUserPaymentBalanceResponse](#cloud.hashing.billing.v1.GetUserPaymentBalanceResponse)
-    - [GetUserPaymentBalancesByAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppRequest)
-    - [GetUserPaymentBalancesByAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppResponse)
-    - [GetUserPaymentBalancesByAppUserRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserRequest)
-    - [GetUserPaymentBalancesByAppUserResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserResponse)
-    - [GetUserPaymentBalancesByOtherAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppRequest)
-    - [GetUserPaymentBalancesByOtherAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppResponse)
-    - [GetUserWithdrawAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountRequest)
-    - [GetUserWithdrawAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountResponse)
-    - [GetUserWithdrawAccountsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserRequest)
-    - [GetUserWithdrawAccountsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserResponse)
-    - [GetUserWithdrawAccountsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserRequest)
-    - [GetUserWithdrawAccountsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserResponse)
-    - [GetUserWithdrawByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest)
-    - [GetUserWithdrawByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse)
-    - [GetUserWithdrawItemRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemRequest)
-    - [GetUserWithdrawItemResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemResponse)
-    - [GetUserWithdrawItemsByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountRequest)
-    - [GetUserWithdrawItemsByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountResponse)
-    - [GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest)
-    - [GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse)
-    - [GetUserWithdrawItemsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest)
-    - [GetUserWithdrawItemsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse)
-    - [GetUserWithdrawItemsByAppUserWithdrawTypeRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserWithdrawTypeRequest)
-    - [GetUserWithdrawItemsByAppUserWithdrawTypeResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserWithdrawTypeResponse)
-    - [GetUserWithdrawItemsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest)
-    - [GetUserWithdrawItemsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse)
-    - [GetUserWithdrawItemsRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsRequest)
-    - [GetUserWithdrawItemsResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsResponse)
-    - [GetUserWithdrawRequest](#cloud.hashing.billing.v1.GetUserWithdrawRequest)
-    - [GetUserWithdrawResponse](#cloud.hashing.billing.v1.GetUserWithdrawResponse)
-    - [GetUserWithdrawsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserCoinRequest)
-    - [GetUserWithdrawsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserCoinResponse)
-    - [GetUserWithdrawsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest)
-    - [GetUserWithdrawsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse)
-    - [GetUserWithdrawsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest)
-    - [GetUserWithdrawsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse)
-    - [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit)
-    - [GoodPayment](#cloud.hashing.billing.v1.GoodPayment)
-    - [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit)
-    - [PlatformBenefitDetail](#cloud.hashing.billing.v1.PlatformBenefitDetail)
-    - [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting)
-    - [UpdateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest)
-    - [UpdateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse)
-    - [UpdateCoinAccountTransactionRequest](#cloud.hashing.billing.v1.UpdateCoinAccountTransactionRequest)
-    - [UpdateCoinAccountTransactionResponse](#cloud.hashing.billing.v1.UpdateCoinAccountTransactionResponse)
-    - [UpdateCoinSettingRequest](#cloud.hashing.billing.v1.UpdateCoinSettingRequest)
-    - [UpdateCoinSettingResponse](#cloud.hashing.billing.v1.UpdateCoinSettingResponse)
-    - [UpdateGoodBenefitRequest](#cloud.hashing.billing.v1.UpdateGoodBenefitRequest)
-    - [UpdateGoodBenefitResponse](#cloud.hashing.billing.v1.UpdateGoodBenefitResponse)
-    - [UpdateGoodPaymentRequest](#cloud.hashing.billing.v1.UpdateGoodPaymentRequest)
-    - [UpdateGoodPaymentResponse](#cloud.hashing.billing.v1.UpdateGoodPaymentResponse)
-    - [UpdatePlatformSettingRequest](#cloud.hashing.billing.v1.UpdatePlatformSettingRequest)
-    - [UpdatePlatformSettingResponse](#cloud.hashing.billing.v1.UpdatePlatformSettingResponse)
-    - [UpdateUserDirectBenefitRequest](#cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest)
-    - [UpdateUserDirectBenefitResponse](#cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse)
-    - [UpdateUserPaymentBalanceRequest](#cloud.hashing.billing.v1.UpdateUserPaymentBalanceRequest)
-    - [UpdateUserPaymentBalanceResponse](#cloud.hashing.billing.v1.UpdateUserPaymentBalanceResponse)
-    - [UpdateUserWithdrawItemRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawItemRequest)
-    - [UpdateUserWithdrawItemResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawItemResponse)
-    - [UpdateUserWithdrawRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawRequest)
-    - [UpdateUserWithdrawResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawResponse)
-    - [UserBenefit](#cloud.hashing.billing.v1.UserBenefit)
-    - [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit)
-    - [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance)
-    - [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw)
-    - [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount)
-    - [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem)
+- [npool/cloud-hashing-billing/cloud-hashing-billing.proto](#npool_cloud-hashing-billing_cloud-hashing-billing-proto)
+    - [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting)
+    - [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo)
+    - [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction)
+    - [CoinAccountTransactionDetail](#cloud-hashing-billing-v1-CoinAccountTransactionDetail)
+    - [CoinSetting](#cloud-hashing-billing-v1-CoinSetting)
+    - [CreateAppWithdrawSettingForOtherAppRequest](#cloud-hashing-billing-v1-CreateAppWithdrawSettingForOtherAppRequest)
+    - [CreateAppWithdrawSettingForOtherAppResponse](#cloud-hashing-billing-v1-CreateAppWithdrawSettingForOtherAppResponse)
+    - [CreateAppWithdrawSettingRequest](#cloud-hashing-billing-v1-CreateAppWithdrawSettingRequest)
+    - [CreateAppWithdrawSettingResponse](#cloud-hashing-billing-v1-CreateAppWithdrawSettingResponse)
+    - [CreateCoinAccountRequest](#cloud-hashing-billing-v1-CreateCoinAccountRequest)
+    - [CreateCoinAccountResponse](#cloud-hashing-billing-v1-CreateCoinAccountResponse)
+    - [CreateCoinAccountTransactionRequest](#cloud-hashing-billing-v1-CreateCoinAccountTransactionRequest)
+    - [CreateCoinAccountTransactionResponse](#cloud-hashing-billing-v1-CreateCoinAccountTransactionResponse)
+    - [CreateCoinSettingRequest](#cloud-hashing-billing-v1-CreateCoinSettingRequest)
+    - [CreateCoinSettingResponse](#cloud-hashing-billing-v1-CreateCoinSettingResponse)
+    - [CreateGoodBenefitRequest](#cloud-hashing-billing-v1-CreateGoodBenefitRequest)
+    - [CreateGoodBenefitResponse](#cloud-hashing-billing-v1-CreateGoodBenefitResponse)
+    - [CreateGoodPaymentRequest](#cloud-hashing-billing-v1-CreateGoodPaymentRequest)
+    - [CreateGoodPaymentResponse](#cloud-hashing-billing-v1-CreateGoodPaymentResponse)
+    - [CreatePlatformBenefitRequest](#cloud-hashing-billing-v1-CreatePlatformBenefitRequest)
+    - [CreatePlatformBenefitResponse](#cloud-hashing-billing-v1-CreatePlatformBenefitResponse)
+    - [CreatePlatformSettingRequest](#cloud-hashing-billing-v1-CreatePlatformSettingRequest)
+    - [CreatePlatformSettingResponse](#cloud-hashing-billing-v1-CreatePlatformSettingResponse)
+    - [CreateUserBenefitRequest](#cloud-hashing-billing-v1-CreateUserBenefitRequest)
+    - [CreateUserBenefitResponse](#cloud-hashing-billing-v1-CreateUserBenefitResponse)
+    - [CreateUserDirectBenefitRequest](#cloud-hashing-billing-v1-CreateUserDirectBenefitRequest)
+    - [CreateUserDirectBenefitResponse](#cloud-hashing-billing-v1-CreateUserDirectBenefitResponse)
+    - [CreateUserPaymentBalanceForOtherAppUserRequest](#cloud-hashing-billing-v1-CreateUserPaymentBalanceForOtherAppUserRequest)
+    - [CreateUserPaymentBalanceForOtherAppUserResponse](#cloud-hashing-billing-v1-CreateUserPaymentBalanceForOtherAppUserResponse)
+    - [CreateUserPaymentBalanceRequest](#cloud-hashing-billing-v1-CreateUserPaymentBalanceRequest)
+    - [CreateUserPaymentBalanceResponse](#cloud-hashing-billing-v1-CreateUserPaymentBalanceResponse)
+    - [CreateUserWithdrawItemRequest](#cloud-hashing-billing-v1-CreateUserWithdrawItemRequest)
+    - [CreateUserWithdrawItemResponse](#cloud-hashing-billing-v1-CreateUserWithdrawItemResponse)
+    - [CreateUserWithdrawRequest](#cloud-hashing-billing-v1-CreateUserWithdrawRequest)
+    - [CreateUserWithdrawResponse](#cloud-hashing-billing-v1-CreateUserWithdrawResponse)
+    - [DeleteCoinAccountRequest](#cloud-hashing-billing-v1-DeleteCoinAccountRequest)
+    - [DeleteCoinAccountResponse](#cloud-hashing-billing-v1-DeleteCoinAccountResponse)
+    - [DeleteCoinAccountTransactionRequest](#cloud-hashing-billing-v1-DeleteCoinAccountTransactionRequest)
+    - [DeleteCoinAccountTransactionResponse](#cloud-hashing-billing-v1-DeleteCoinAccountTransactionResponse)
+    - [GetAppWithdrawSettingByAppCoinRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingByAppCoinRequest)
+    - [GetAppWithdrawSettingByAppCoinResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingByAppCoinResponse)
+    - [GetAppWithdrawSettingRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingRequest)
+    - [GetAppWithdrawSettingResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingResponse)
+    - [GetAppWithdrawSettingsByAppRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByAppRequest)
+    - [GetAppWithdrawSettingsByAppResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByAppResponse)
+    - [GetAppWithdrawSettingsByOtherAppRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByOtherAppRequest)
+    - [GetAppWithdrawSettingsByOtherAppResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByOtherAppResponse)
+    - [GetCoinAccountByCoinAddressRequest](#cloud-hashing-billing-v1-GetCoinAccountByCoinAddressRequest)
+    - [GetCoinAccountByCoinAddressResponse](#cloud-hashing-billing-v1-GetCoinAccountByCoinAddressResponse)
+    - [GetCoinAccountRequest](#cloud-hashing-billing-v1-GetCoinAccountRequest)
+    - [GetCoinAccountResponse](#cloud-hashing-billing-v1-GetCoinAccountResponse)
+    - [GetCoinAccountTransactionDetailRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionDetailRequest)
+    - [GetCoinAccountTransactionDetailResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionDetailResponse)
+    - [GetCoinAccountTransactionRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionRequest)
+    - [GetCoinAccountTransactionResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionResponse)
+    - [GetCoinAccountTransactionsByAppUserCoinRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserCoinRequest)
+    - [GetCoinAccountTransactionsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserCoinResponse)
+    - [GetCoinAccountTransactionsByAppUserRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserRequest)
+    - [GetCoinAccountTransactionsByAppUserResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserResponse)
+    - [GetCoinAccountTransactionsByCoinAccountRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinAccountRequest)
+    - [GetCoinAccountTransactionsByCoinAccountResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinAccountResponse)
+    - [GetCoinAccountTransactionsByCoinRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinRequest)
+    - [GetCoinAccountTransactionsByCoinResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinResponse)
+    - [GetCoinAccountTransactionsByGoodStateRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByGoodStateRequest)
+    - [GetCoinAccountTransactionsByGoodStateResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByGoodStateResponse)
+    - [GetCoinAccountTransactionsByStateRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByStateRequest)
+    - [GetCoinAccountTransactionsByStateResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByStateResponse)
+    - [GetCoinAccountTransactionsRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsRequest)
+    - [GetCoinAccountTransactionsResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsResponse)
+    - [GetCoinAccountsRequest](#cloud-hashing-billing-v1-GetCoinAccountsRequest)
+    - [GetCoinAccountsResponse](#cloud-hashing-billing-v1-GetCoinAccountsResponse)
+    - [GetCoinSettingByCoinRequest](#cloud-hashing-billing-v1-GetCoinSettingByCoinRequest)
+    - [GetCoinSettingByCoinResponse](#cloud-hashing-billing-v1-GetCoinSettingByCoinResponse)
+    - [GetCoinSettingRequest](#cloud-hashing-billing-v1-GetCoinSettingRequest)
+    - [GetCoinSettingResponse](#cloud-hashing-billing-v1-GetCoinSettingResponse)
+    - [GetGoodBenefitByGoodRequest](#cloud-hashing-billing-v1-GetGoodBenefitByGoodRequest)
+    - [GetGoodBenefitByGoodResponse](#cloud-hashing-billing-v1-GetGoodBenefitByGoodResponse)
+    - [GetGoodBenefitRequest](#cloud-hashing-billing-v1-GetGoodBenefitRequest)
+    - [GetGoodBenefitResponse](#cloud-hashing-billing-v1-GetGoodBenefitResponse)
+    - [GetGoodPaymentByAccountRequest](#cloud-hashing-billing-v1-GetGoodPaymentByAccountRequest)
+    - [GetGoodPaymentByAccountResponse](#cloud-hashing-billing-v1-GetGoodPaymentByAccountResponse)
+    - [GetGoodPaymentRequest](#cloud-hashing-billing-v1-GetGoodPaymentRequest)
+    - [GetGoodPaymentResponse](#cloud-hashing-billing-v1-GetGoodPaymentResponse)
+    - [GetGoodPaymentsByGoodRequest](#cloud-hashing-billing-v1-GetGoodPaymentsByGoodRequest)
+    - [GetGoodPaymentsByGoodResponse](#cloud-hashing-billing-v1-GetGoodPaymentsByGoodResponse)
+    - [GetGoodPaymentsRequest](#cloud-hashing-billing-v1-GetGoodPaymentsRequest)
+    - [GetGoodPaymentsResponse](#cloud-hashing-billing-v1-GetGoodPaymentsResponse)
+    - [GetIdleGoodPaymentsByGoodPaymentCoinRequest](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodPaymentCoinRequest)
+    - [GetIdleGoodPaymentsByGoodPaymentCoinResponse](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodPaymentCoinResponse)
+    - [GetIdleGoodPaymentsByGoodRequest](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodRequest)
+    - [GetIdleGoodPaymentsByGoodResponse](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodResponse)
+    - [GetLatestPlatformBenefitByGoodRequest](#cloud-hashing-billing-v1-GetLatestPlatformBenefitByGoodRequest)
+    - [GetLatestPlatformBenefitByGoodResponse](#cloud-hashing-billing-v1-GetLatestPlatformBenefitByGoodResponse)
+    - [GetLatestUserBenefitByGoodAppUserRequest](#cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserRequest)
+    - [GetLatestUserBenefitByGoodAppUserResponse](#cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserResponse)
+    - [GetPlatformBenefitDetailRequest](#cloud-hashing-billing-v1-GetPlatformBenefitDetailRequest)
+    - [GetPlatformBenefitDetailResponse](#cloud-hashing-billing-v1-GetPlatformBenefitDetailResponse)
+    - [GetPlatformBenefitRequest](#cloud-hashing-billing-v1-GetPlatformBenefitRequest)
+    - [GetPlatformBenefitResponse](#cloud-hashing-billing-v1-GetPlatformBenefitResponse)
+    - [GetPlatformBenefitsByGoodRequest](#cloud-hashing-billing-v1-GetPlatformBenefitsByGoodRequest)
+    - [GetPlatformBenefitsByGoodResponse](#cloud-hashing-billing-v1-GetPlatformBenefitsByGoodResponse)
+    - [GetPlatformBenefitsRequest](#cloud-hashing-billing-v1-GetPlatformBenefitsRequest)
+    - [GetPlatformBenefitsResponse](#cloud-hashing-billing-v1-GetPlatformBenefitsResponse)
+    - [GetPlatformSettingByGoodRequest](#cloud-hashing-billing-v1-GetPlatformSettingByGoodRequest)
+    - [GetPlatformSettingByGoodResponse](#cloud-hashing-billing-v1-GetPlatformSettingByGoodResponse)
+    - [GetPlatformSettingRequest](#cloud-hashing-billing-v1-GetPlatformSettingRequest)
+    - [GetPlatformSettingResponse](#cloud-hashing-billing-v1-GetPlatformSettingResponse)
+    - [GetUserBenefitsByAppRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppRequest)
+    - [GetUserBenefitsByAppResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppResponse)
+    - [GetUserBenefitsByAppUserCoinRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinRequest)
+    - [GetUserBenefitsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinResponse)
+    - [GetUserBenefitsByAppUserRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserRequest)
+    - [GetUserBenefitsByAppUserResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserResponse)
+    - [GetUserBenefitsRequest](#cloud-hashing-billing-v1-GetUserBenefitsRequest)
+    - [GetUserBenefitsResponse](#cloud-hashing-billing-v1-GetUserBenefitsResponse)
+    - [GetUserDirectBenefitByAccountRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitByAccountRequest)
+    - [GetUserDirectBenefitByAccountResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitByAccountResponse)
+    - [GetUserDirectBenefitRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitRequest)
+    - [GetUserDirectBenefitResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitResponse)
+    - [GetUserDirectBenefitsByAppUserRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitsByAppUserRequest)
+    - [GetUserDirectBenefitsByAppUserResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitsByAppUserResponse)
+    - [GetUserDirectBenefitsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitsByOtherAppUserRequest)
+    - [GetUserDirectBenefitsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitsByOtherAppUserResponse)
+    - [GetUserPaymentBalanceRequest](#cloud-hashing-billing-v1-GetUserPaymentBalanceRequest)
+    - [GetUserPaymentBalanceResponse](#cloud-hashing-billing-v1-GetUserPaymentBalanceResponse)
+    - [GetUserPaymentBalancesByAppRequest](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppRequest)
+    - [GetUserPaymentBalancesByAppResponse](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppResponse)
+    - [GetUserPaymentBalancesByAppUserRequest](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppUserRequest)
+    - [GetUserPaymentBalancesByAppUserResponse](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppUserResponse)
+    - [GetUserPaymentBalancesByOtherAppRequest](#cloud-hashing-billing-v1-GetUserPaymentBalancesByOtherAppRequest)
+    - [GetUserPaymentBalancesByOtherAppResponse](#cloud-hashing-billing-v1-GetUserPaymentBalancesByOtherAppResponse)
+    - [GetUserWithdrawAccountRequest](#cloud-hashing-billing-v1-GetUserWithdrawAccountRequest)
+    - [GetUserWithdrawAccountResponse](#cloud-hashing-billing-v1-GetUserWithdrawAccountResponse)
+    - [GetUserWithdrawAccountsByAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByAppUserRequest)
+    - [GetUserWithdrawAccountsByAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByAppUserResponse)
+    - [GetUserWithdrawAccountsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByOtherAppUserRequest)
+    - [GetUserWithdrawAccountsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByOtherAppUserResponse)
+    - [GetUserWithdrawByAccountRequest](#cloud-hashing-billing-v1-GetUserWithdrawByAccountRequest)
+    - [GetUserWithdrawByAccountResponse](#cloud-hashing-billing-v1-GetUserWithdrawByAccountResponse)
+    - [GetUserWithdrawItemRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemRequest)
+    - [GetUserWithdrawItemResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemResponse)
+    - [GetUserWithdrawItemsByAccountRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAccountRequest)
+    - [GetUserWithdrawItemsByAccountResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAccountResponse)
+    - [GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest)
+    - [GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse)
+    - [GetUserWithdrawItemsByAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserRequest)
+    - [GetUserWithdrawItemsByAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserResponse)
+    - [GetUserWithdrawItemsByAppUserWithdrawTypeRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserWithdrawTypeRequest)
+    - [GetUserWithdrawItemsByAppUserWithdrawTypeResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserWithdrawTypeResponse)
+    - [GetUserWithdrawItemsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByOtherAppUserRequest)
+    - [GetUserWithdrawItemsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByOtherAppUserResponse)
+    - [GetUserWithdrawItemsRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsRequest)
+    - [GetUserWithdrawItemsResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsResponse)
+    - [GetUserWithdrawRequest](#cloud-hashing-billing-v1-GetUserWithdrawRequest)
+    - [GetUserWithdrawResponse](#cloud-hashing-billing-v1-GetUserWithdrawResponse)
+    - [GetUserWithdrawsByAppUserCoinRequest](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserCoinRequest)
+    - [GetUserWithdrawsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserCoinResponse)
+    - [GetUserWithdrawsByAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserRequest)
+    - [GetUserWithdrawsByAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserResponse)
+    - [GetUserWithdrawsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawsByOtherAppUserRequest)
+    - [GetUserWithdrawsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawsByOtherAppUserResponse)
+    - [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit)
+    - [GoodPayment](#cloud-hashing-billing-v1-GoodPayment)
+    - [PlatformBenefit](#cloud-hashing-billing-v1-PlatformBenefit)
+    - [PlatformBenefitDetail](#cloud-hashing-billing-v1-PlatformBenefitDetail)
+    - [PlatformSetting](#cloud-hashing-billing-v1-PlatformSetting)
+    - [UpdateAppWithdrawSettingRequest](#cloud-hashing-billing-v1-UpdateAppWithdrawSettingRequest)
+    - [UpdateAppWithdrawSettingResponse](#cloud-hashing-billing-v1-UpdateAppWithdrawSettingResponse)
+    - [UpdateCoinAccountTransactionRequest](#cloud-hashing-billing-v1-UpdateCoinAccountTransactionRequest)
+    - [UpdateCoinAccountTransactionResponse](#cloud-hashing-billing-v1-UpdateCoinAccountTransactionResponse)
+    - [UpdateCoinSettingRequest](#cloud-hashing-billing-v1-UpdateCoinSettingRequest)
+    - [UpdateCoinSettingResponse](#cloud-hashing-billing-v1-UpdateCoinSettingResponse)
+    - [UpdateGoodBenefitRequest](#cloud-hashing-billing-v1-UpdateGoodBenefitRequest)
+    - [UpdateGoodBenefitResponse](#cloud-hashing-billing-v1-UpdateGoodBenefitResponse)
+    - [UpdateGoodPaymentRequest](#cloud-hashing-billing-v1-UpdateGoodPaymentRequest)
+    - [UpdateGoodPaymentResponse](#cloud-hashing-billing-v1-UpdateGoodPaymentResponse)
+    - [UpdatePlatformSettingRequest](#cloud-hashing-billing-v1-UpdatePlatformSettingRequest)
+    - [UpdatePlatformSettingResponse](#cloud-hashing-billing-v1-UpdatePlatformSettingResponse)
+    - [UpdateUserDirectBenefitRequest](#cloud-hashing-billing-v1-UpdateUserDirectBenefitRequest)
+    - [UpdateUserDirectBenefitResponse](#cloud-hashing-billing-v1-UpdateUserDirectBenefitResponse)
+    - [UpdateUserPaymentBalanceRequest](#cloud-hashing-billing-v1-UpdateUserPaymentBalanceRequest)
+    - [UpdateUserPaymentBalanceResponse](#cloud-hashing-billing-v1-UpdateUserPaymentBalanceResponse)
+    - [UpdateUserWithdrawItemRequest](#cloud-hashing-billing-v1-UpdateUserWithdrawItemRequest)
+    - [UpdateUserWithdrawItemResponse](#cloud-hashing-billing-v1-UpdateUserWithdrawItemResponse)
+    - [UpdateUserWithdrawRequest](#cloud-hashing-billing-v1-UpdateUserWithdrawRequest)
+    - [UpdateUserWithdrawResponse](#cloud-hashing-billing-v1-UpdateUserWithdrawResponse)
+    - [UserBenefit](#cloud-hashing-billing-v1-UserBenefit)
+    - [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit)
+    - [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance)
+    - [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw)
+    - [UserWithdrawAccount](#cloud-hashing-billing-v1-UserWithdrawAccount)
+    - [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem)
   
-    - [CloudHashingBilling](#cloud.hashing.billing.v1.CloudHashingBilling)
+    - [CloudHashingBilling](#cloud-hashing-billing-v1-CloudHashingBilling)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool/cloud-hashing-billing/cloud-hashing-billing.proto"></a>
+<a name="npool_cloud-hashing-billing_cloud-hashing-billing-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/cloud-hashing-billing/cloud-hashing-billing.proto
 
 
 
-<a name="cloud.hashing.billing.v1.AppWithdrawSetting"></a>
+<a name="cloud-hashing-billing-v1-AppWithdrawSetting"></a>
 
 ### AppWithdrawSetting
 
@@ -424,7 +424,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.CoinAccountInfo"></a>
+<a name="cloud-hashing-billing-v1-CoinAccountInfo"></a>
 
 ### CoinAccountInfo
 
@@ -443,7 +443,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.CoinAccountTransaction"></a>
+<a name="cloud-hashing-billing-v1-CoinAccountTransaction"></a>
 
 ### CoinAccountTransaction
 
@@ -470,7 +470,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.CoinAccountTransactionDetail"></a>
+<a name="cloud-hashing-billing-v1-CoinAccountTransactionDetail"></a>
 
 ### CoinAccountTransactionDetail
 
@@ -481,8 +481,8 @@
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
-| FromAddress | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
-| ToAddress | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| FromAddress | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
+| ToAddress | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | Amount | [double](#double) |  |  |
 | Message | [string](#string) |  |  |
@@ -495,7 +495,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.CoinSetting"></a>
+<a name="cloud-hashing-billing-v1-CoinSetting"></a>
 
 ### CoinSetting
 
@@ -517,7 +517,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateAppWithdrawSettingForOtherAppRequest"></a>
 
 ### CreateAppWithdrawSettingForOtherAppRequest
 
@@ -526,14 +526,14 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateAppWithdrawSettingForOtherAppResponse"></a>
 
 ### CreateAppWithdrawSettingForOtherAppResponse
 
@@ -541,14 +541,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateAppWithdrawSettingRequest"></a>
 
 ### CreateAppWithdrawSettingRequest
 
@@ -556,14 +556,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateAppWithdrawSettingResponse"></a>
 
 ### CreateAppWithdrawSettingResponse
 
@@ -571,14 +571,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateCoinAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateCoinAccountRequest"></a>
 
 ### CreateCoinAccountRequest
 
@@ -586,14 +586,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| Info | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateCoinAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateCoinAccountResponse"></a>
 
 ### CreateCoinAccountResponse
 
@@ -601,14 +601,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| Info | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateCoinAccountTransactionRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateCoinAccountTransactionRequest"></a>
 
 ### CreateCoinAccountTransactionRequest
 
@@ -616,14 +616,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) |  |  |
+| Info | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateCoinAccountTransactionResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateCoinAccountTransactionResponse"></a>
 
 ### CreateCoinAccountTransactionResponse
 
@@ -631,14 +631,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) |  |  |
+| Info | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateCoinSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateCoinSettingRequest"></a>
 
 ### CreateCoinSettingRequest
 
@@ -646,14 +646,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinSetting](#cloud.hashing.billing.v1.CoinSetting) |  |  |
+| Info | [CoinSetting](#cloud-hashing-billing-v1-CoinSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateCoinSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateCoinSettingResponse"></a>
 
 ### CreateCoinSettingResponse
 
@@ -661,14 +661,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinSetting](#cloud.hashing.billing.v1.CoinSetting) |  |  |
+| Info | [CoinSetting](#cloud-hashing-billing-v1-CoinSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateGoodBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateGoodBenefitRequest"></a>
 
 ### CreateGoodBenefitRequest
 
@@ -676,14 +676,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit) |  |  |
+| Info | [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateGoodBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateGoodBenefitResponse"></a>
 
 ### CreateGoodBenefitResponse
 
@@ -691,14 +691,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit) |  |  |
+| Info | [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateGoodPaymentRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateGoodPaymentRequest"></a>
 
 ### CreateGoodPaymentRequest
 
@@ -706,14 +706,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) |  |  |
+| Info | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateGoodPaymentResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateGoodPaymentResponse"></a>
 
 ### CreateGoodPaymentResponse
 
@@ -721,14 +721,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) |  |  |
+| Info | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreatePlatformBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-CreatePlatformBenefitRequest"></a>
 
 ### CreatePlatformBenefitRequest
 
@@ -736,14 +736,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit) |  |  |
+| Info | [PlatformBenefit](#cloud-hashing-billing-v1-PlatformBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreatePlatformBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-CreatePlatformBenefitResponse"></a>
 
 ### CreatePlatformBenefitResponse
 
@@ -751,14 +751,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit) |  |  |
+| Info | [PlatformBenefit](#cloud-hashing-billing-v1-PlatformBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreatePlatformSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-CreatePlatformSettingRequest"></a>
 
 ### CreatePlatformSettingRequest
 
@@ -766,14 +766,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
+| Info | [PlatformSetting](#cloud-hashing-billing-v1-PlatformSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreatePlatformSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-CreatePlatformSettingResponse"></a>
 
 ### CreatePlatformSettingResponse
 
@@ -781,14 +781,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
+| Info | [PlatformSetting](#cloud-hashing-billing-v1-PlatformSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateUserBenefitRequest"></a>
 
 ### CreateUserBenefitRequest
 
@@ -796,14 +796,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) |  |  |
+| Info | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateUserBenefitResponse"></a>
 
 ### CreateUserBenefitResponse
 
@@ -811,14 +811,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) |  |  |
+| Info | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserDirectBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateUserDirectBenefitRequest"></a>
 
 ### CreateUserDirectBenefitRequest
 
@@ -826,14 +826,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+| Info | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserDirectBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateUserDirectBenefitResponse"></a>
 
 ### CreateUserDirectBenefitResponse
 
@@ -841,14 +841,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+| Info | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateUserPaymentBalanceForOtherAppUserRequest"></a>
 
 ### CreateUserPaymentBalanceForOtherAppUserRequest
 
@@ -858,14 +858,14 @@
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
 | TargetUserID | [string](#string) |  |  |
-| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+| Info | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateUserPaymentBalanceForOtherAppUserResponse"></a>
 
 ### CreateUserPaymentBalanceForOtherAppUserResponse
 
@@ -873,14 +873,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+| Info | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateUserPaymentBalanceRequest"></a>
 
 ### CreateUserPaymentBalanceRequest
 
@@ -888,14 +888,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+| Info | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateUserPaymentBalanceResponse"></a>
 
 ### CreateUserPaymentBalanceResponse
 
@@ -903,14 +903,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+| Info | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserWithdrawItemRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateUserWithdrawItemRequest"></a>
 
 ### CreateUserWithdrawItemRequest
 
@@ -918,14 +918,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Info | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserWithdrawItemResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateUserWithdrawItemResponse"></a>
 
 ### CreateUserWithdrawItemResponse
 
@@ -933,14 +933,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Info | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserWithdrawRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateUserWithdrawRequest"></a>
 
 ### CreateUserWithdrawRequest
 
@@ -948,14 +948,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Info | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserWithdrawResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateUserWithdrawResponse"></a>
 
 ### CreateUserWithdrawResponse
 
@@ -963,14 +963,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Info | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.DeleteCoinAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-DeleteCoinAccountRequest"></a>
 
 ### DeleteCoinAccountRequest
 
@@ -985,7 +985,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.DeleteCoinAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-DeleteCoinAccountResponse"></a>
 
 ### DeleteCoinAccountResponse
 
@@ -993,14 +993,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| Info | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.DeleteCoinAccountTransactionRequest"></a>
+<a name="cloud-hashing-billing-v1-DeleteCoinAccountTransactionRequest"></a>
 
 ### DeleteCoinAccountTransactionRequest
 
@@ -1015,7 +1015,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.DeleteCoinAccountTransactionResponse"></a>
+<a name="cloud-hashing-billing-v1-DeleteCoinAccountTransactionResponse"></a>
 
 ### DeleteCoinAccountTransactionResponse
 
@@ -1023,14 +1023,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) |  |  |
+| Info | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinRequest"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingByAppCoinRequest"></a>
 
 ### GetAppWithdrawSettingByAppCoinRequest
 
@@ -1046,7 +1046,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinResponse"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingByAppCoinResponse"></a>
 
 ### GetAppWithdrawSettingByAppCoinResponse
 
@@ -1054,14 +1054,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingRequest"></a>
 
 ### GetAppWithdrawSettingRequest
 
@@ -1076,7 +1076,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingResponse"></a>
 
 ### GetAppWithdrawSettingResponse
 
@@ -1084,14 +1084,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppRequest"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingsByAppRequest"></a>
 
 ### GetAppWithdrawSettingsByAppRequest
 
@@ -1106,7 +1106,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppResponse"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingsByAppResponse"></a>
 
 ### GetAppWithdrawSettingsByAppResponse
 
@@ -1114,14 +1114,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) | repeated |  |
+| Infos | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppRequest"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingsByOtherAppRequest"></a>
 
 ### GetAppWithdrawSettingsByOtherAppRequest
 
@@ -1136,7 +1136,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppResponse"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingsByOtherAppResponse"></a>
 
 ### GetAppWithdrawSettingsByOtherAppResponse
 
@@ -1144,14 +1144,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) | repeated |  |
+| Infos | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountByCoinAddressRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountByCoinAddressRequest"></a>
 
 ### GetCoinAccountByCoinAddressRequest
 
@@ -1167,7 +1167,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountByCoinAddressResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountByCoinAddressResponse"></a>
 
 ### GetCoinAccountByCoinAddressResponse
 
@@ -1175,14 +1175,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| Info | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountRequest"></a>
 
 ### GetCoinAccountRequest
 
@@ -1197,7 +1197,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountResponse"></a>
 
 ### GetCoinAccountResponse
 
@@ -1205,14 +1205,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| Info | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionDetailRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionDetailRequest"></a>
 
 ### GetCoinAccountTransactionDetailRequest
 
@@ -1227,7 +1227,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionDetailResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionDetailResponse"></a>
 
 ### GetCoinAccountTransactionDetailResponse
 
@@ -1235,14 +1235,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Detail | [CoinAccountTransactionDetail](#cloud.hashing.billing.v1.CoinAccountTransactionDetail) |  |  |
+| Detail | [CoinAccountTransactionDetail](#cloud-hashing-billing-v1-CoinAccountTransactionDetail) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionRequest"></a>
 
 ### GetCoinAccountTransactionRequest
 
@@ -1257,7 +1257,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionResponse"></a>
 
 ### GetCoinAccountTransactionResponse
 
@@ -1265,14 +1265,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) |  |  |
+| Info | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserCoinRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserCoinRequest"></a>
 
 ### GetCoinAccountTransactionsByAppUserCoinRequest
 
@@ -1289,7 +1289,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserCoinResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserCoinResponse"></a>
 
 ### GetCoinAccountTransactionsByAppUserCoinResponse
 
@@ -1297,14 +1297,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) | repeated |  |
+| Infos | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserRequest"></a>
 
 ### GetCoinAccountTransactionsByAppUserRequest
 
@@ -1320,7 +1320,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserResponse"></a>
 
 ### GetCoinAccountTransactionsByAppUserResponse
 
@@ -1328,14 +1328,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) | repeated |  |
+| Infos | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinAccountRequest"></a>
 
 ### GetCoinAccountTransactionsByCoinAccountRequest
 
@@ -1351,7 +1351,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinAccountResponse"></a>
 
 ### GetCoinAccountTransactionsByCoinAccountResponse
 
@@ -1359,14 +1359,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) | repeated |  |
+| Infos | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinRequest"></a>
 
 ### GetCoinAccountTransactionsByCoinRequest
 
@@ -1381,7 +1381,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinResponse"></a>
 
 ### GetCoinAccountTransactionsByCoinResponse
 
@@ -1389,14 +1389,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) | repeated |  |
+| Infos | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByGoodStateRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByGoodStateRequest"></a>
 
 ### GetCoinAccountTransactionsByGoodStateRequest
 
@@ -1412,7 +1412,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByGoodStateResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByGoodStateResponse"></a>
 
 ### GetCoinAccountTransactionsByGoodStateResponse
 
@@ -1420,14 +1420,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) | repeated |  |
+| Infos | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByStateRequest"></a>
 
 ### GetCoinAccountTransactionsByStateRequest
 
@@ -1442,7 +1442,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByStateResponse"></a>
 
 ### GetCoinAccountTransactionsByStateResponse
 
@@ -1450,14 +1450,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) | repeated |  |
+| Infos | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsRequest"></a>
 
 ### GetCoinAccountTransactionsRequest
 
@@ -1467,7 +1467,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsResponse"></a>
 
 ### GetCoinAccountTransactionsResponse
 
@@ -1475,14 +1475,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) | repeated |  |
+| Infos | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountsRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountsRequest"></a>
 
 ### GetCoinAccountsRequest
 
@@ -1492,7 +1492,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountsResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountsResponse"></a>
 
 ### GetCoinAccountsResponse
 
@@ -1500,14 +1500,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) | repeated |  |
+| Infos | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinSettingByCoinRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinSettingByCoinRequest"></a>
 
 ### GetCoinSettingByCoinRequest
 
@@ -1522,7 +1522,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinSettingByCoinResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinSettingByCoinResponse"></a>
 
 ### GetCoinSettingByCoinResponse
 
@@ -1530,14 +1530,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinSetting](#cloud.hashing.billing.v1.CoinSetting) |  |  |
+| Info | [CoinSetting](#cloud-hashing-billing-v1-CoinSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinSettingRequest"></a>
 
 ### GetCoinSettingRequest
 
@@ -1552,7 +1552,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinSettingResponse"></a>
 
 ### GetCoinSettingResponse
 
@@ -1560,14 +1560,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinSetting](#cloud.hashing.billing.v1.CoinSetting) |  |  |
+| Info | [CoinSetting](#cloud-hashing-billing-v1-CoinSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodBenefitByGoodRequest"></a>
+<a name="cloud-hashing-billing-v1-GetGoodBenefitByGoodRequest"></a>
 
 ### GetGoodBenefitByGoodRequest
 
@@ -1582,7 +1582,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodBenefitByGoodResponse"></a>
+<a name="cloud-hashing-billing-v1-GetGoodBenefitByGoodResponse"></a>
 
 ### GetGoodBenefitByGoodResponse
 
@@ -1590,14 +1590,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit) |  |  |
+| Info | [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-GetGoodBenefitRequest"></a>
 
 ### GetGoodBenefitRequest
 
@@ -1612,7 +1612,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-GetGoodBenefitResponse"></a>
 
 ### GetGoodBenefitResponse
 
@@ -1620,14 +1620,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit) |  |  |
+| Info | [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentByAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentByAccountRequest"></a>
 
 ### GetGoodPaymentByAccountRequest
 
@@ -1642,7 +1642,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentByAccountResponse"></a>
 
 ### GetGoodPaymentByAccountResponse
 
@@ -1650,14 +1650,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) |  |  |
+| Info | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentRequest"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentRequest"></a>
 
 ### GetGoodPaymentRequest
 
@@ -1672,7 +1672,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentResponse"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentResponse"></a>
 
 ### GetGoodPaymentResponse
 
@@ -1680,14 +1680,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) |  |  |
+| Info | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentsByGoodRequest"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentsByGoodRequest"></a>
 
 ### GetGoodPaymentsByGoodRequest
 
@@ -1696,14 +1696,14 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | GoodID | [string](#string) |  |  |
-| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool-v1-PageInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentsByGoodResponse"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentsByGoodResponse"></a>
 
 ### GetGoodPaymentsByGoodResponse
 
@@ -1711,14 +1711,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) | repeated |  |
+| Infos | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentsRequest"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentsRequest"></a>
 
 ### GetGoodPaymentsRequest
 
@@ -1728,7 +1728,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentsResponse"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentsResponse"></a>
 
 ### GetGoodPaymentsResponse
 
@@ -1736,14 +1736,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) | repeated |  |
+| Infos | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest"></a>
+<a name="cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodPaymentCoinRequest"></a>
 
 ### GetIdleGoodPaymentsByGoodPaymentCoinRequest
 
@@ -1753,14 +1753,14 @@
 | ----- | ---- | ----- | ----------- |
 | GoodID | [string](#string) |  |  |
 | PaymentCoinTypeID | [string](#string) |  |  |
-| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool-v1-PageInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinResponse"></a>
+<a name="cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodPaymentCoinResponse"></a>
 
 ### GetIdleGoodPaymentsByGoodPaymentCoinResponse
 
@@ -1768,14 +1768,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) | repeated |  |
+| Infos | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodRequest"></a>
+<a name="cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodRequest"></a>
 
 ### GetIdleGoodPaymentsByGoodRequest
 
@@ -1784,14 +1784,14 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | GoodID | [string](#string) |  |  |
-| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool-v1-PageInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodResponse"></a>
+<a name="cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodResponse"></a>
 
 ### GetIdleGoodPaymentsByGoodResponse
 
@@ -1799,14 +1799,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) | repeated |  |
+| Infos | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodRequest"></a>
+<a name="cloud-hashing-billing-v1-GetLatestPlatformBenefitByGoodRequest"></a>
 
 ### GetLatestPlatformBenefitByGoodRequest
 
@@ -1821,7 +1821,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodResponse"></a>
+<a name="cloud-hashing-billing-v1-GetLatestPlatformBenefitByGoodResponse"></a>
 
 ### GetLatestPlatformBenefitByGoodResponse
 
@@ -1829,14 +1829,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit) |  |  |
+| Info | [PlatformBenefit](#cloud-hashing-billing-v1-PlatformBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserRequest"></a>
 
 ### GetLatestUserBenefitByGoodAppUserRequest
 
@@ -1853,7 +1853,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserResponse"></a>
 
 ### GetLatestUserBenefitByGoodAppUserResponse
 
@@ -1861,14 +1861,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) |  |  |
+| Info | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitDetailRequest"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitDetailRequest"></a>
 
 ### GetPlatformBenefitDetailRequest
 
@@ -1883,7 +1883,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitDetailResponse"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitDetailResponse"></a>
 
 ### GetPlatformBenefitDetailResponse
 
@@ -1891,14 +1891,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Detail | [PlatformBenefitDetail](#cloud.hashing.billing.v1.PlatformBenefitDetail) |  |  |
+| Detail | [PlatformBenefitDetail](#cloud-hashing-billing-v1-PlatformBenefitDetail) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitRequest"></a>
 
 ### GetPlatformBenefitRequest
 
@@ -1913,7 +1913,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitResponse"></a>
 
 ### GetPlatformBenefitResponse
 
@@ -1921,14 +1921,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit) |  |  |
+| Info | [PlatformBenefit](#cloud-hashing-billing-v1-PlatformBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitsByGoodRequest"></a>
 
 ### GetPlatformBenefitsByGoodRequest
 
@@ -1943,7 +1943,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitsByGoodResponse"></a>
 
 ### GetPlatformBenefitsByGoodResponse
 
@@ -1951,14 +1951,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit) | repeated |  |
+| Infos | [PlatformBenefit](#cloud-hashing-billing-v1-PlatformBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitsRequest"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitsRequest"></a>
 
 ### GetPlatformBenefitsRequest
 
@@ -1968,7 +1968,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitsResponse"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitsResponse"></a>
 
 ### GetPlatformBenefitsResponse
 
@@ -1976,14 +1976,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit) | repeated |  |
+| Infos | [PlatformBenefit](#cloud-hashing-billing-v1-PlatformBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformSettingByGoodRequest"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformSettingByGoodRequest"></a>
 
 ### GetPlatformSettingByGoodRequest
 
@@ -1998,7 +1998,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformSettingByGoodResponse"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformSettingByGoodResponse"></a>
 
 ### GetPlatformSettingByGoodResponse
 
@@ -2006,14 +2006,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
+| Info | [PlatformSetting](#cloud-hashing-billing-v1-PlatformSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformSettingRequest"></a>
 
 ### GetPlatformSettingRequest
 
@@ -2028,7 +2028,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformSettingResponse"></a>
 
 ### GetPlatformSettingResponse
 
@@ -2036,14 +2036,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
+| Info | [PlatformSetting](#cloud-hashing-billing-v1-PlatformSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByAppRequest"></a>
 
 ### GetUserBenefitsByAppRequest
 
@@ -2052,14 +2052,14 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool-v1-PageInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByAppResponse"></a>
 
 ### GetUserBenefitsByAppResponse
 
@@ -2067,14 +2067,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) | repeated |  |
+| Infos | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinRequest"></a>
 
 ### GetUserBenefitsByAppUserCoinRequest
 
@@ -2091,7 +2091,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinResponse"></a>
 
 ### GetUserBenefitsByAppUserCoinResponse
 
@@ -2099,14 +2099,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) | repeated |  |
+| Infos | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByAppUserRequest"></a>
 
 ### GetUserBenefitsByAppUserRequest
 
@@ -2122,7 +2122,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByAppUserResponse"></a>
 
 ### GetUserBenefitsByAppUserResponse
 
@@ -2130,14 +2130,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) | repeated |  |
+| Infos | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsRequest"></a>
 
 ### GetUserBenefitsRequest
 
@@ -2145,14 +2145,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool-v1-PageInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsResponse"></a>
 
 ### GetUserBenefitsResponse
 
@@ -2160,14 +2160,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) | repeated |  |
+| Infos | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitByAccountRequest"></a>
 
 ### GetUserDirectBenefitByAccountRequest
 
@@ -2182,7 +2182,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitByAccountResponse"></a>
 
 ### GetUserDirectBenefitByAccountResponse
 
@@ -2190,14 +2190,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+| Info | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitRequest"></a>
 
 ### GetUserDirectBenefitRequest
 
@@ -2212,7 +2212,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitResponse"></a>
 
 ### GetUserDirectBenefitResponse
 
@@ -2220,14 +2220,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+| Info | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitsByAppUserRequest"></a>
 
 ### GetUserDirectBenefitsByAppUserRequest
 
@@ -2243,7 +2243,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitsByAppUserResponse"></a>
 
 ### GetUserDirectBenefitsByAppUserResponse
 
@@ -2251,14 +2251,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) | repeated |  |
+| Infos | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitsByOtherAppUserRequest"></a>
 
 ### GetUserDirectBenefitsByOtherAppUserRequest
 
@@ -2274,7 +2274,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitsByOtherAppUserResponse"></a>
 
 ### GetUserDirectBenefitsByOtherAppUserResponse
 
@@ -2282,14 +2282,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) | repeated |  |
+| Infos | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalanceRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalanceRequest"></a>
 
 ### GetUserPaymentBalanceRequest
 
@@ -2304,7 +2304,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalanceResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalanceResponse"></a>
 
 ### GetUserPaymentBalanceResponse
 
@@ -2312,14 +2312,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+| Info | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalancesByAppRequest"></a>
 
 ### GetUserPaymentBalancesByAppRequest
 
@@ -2334,7 +2334,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalancesByAppResponse"></a>
 
 ### GetUserPaymentBalancesByAppResponse
 
@@ -2342,14 +2342,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) | repeated |  |
+| Infos | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalancesByAppUserRequest"></a>
 
 ### GetUserPaymentBalancesByAppUserRequest
 
@@ -2365,7 +2365,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalancesByAppUserResponse"></a>
 
 ### GetUserPaymentBalancesByAppUserResponse
 
@@ -2373,14 +2373,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) | repeated |  |
+| Infos | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalancesByOtherAppRequest"></a>
 
 ### GetUserPaymentBalancesByOtherAppRequest
 
@@ -2395,7 +2395,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalancesByOtherAppResponse"></a>
 
 ### GetUserPaymentBalancesByOtherAppResponse
 
@@ -2403,14 +2403,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) | repeated |  |
+| Infos | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawAccountRequest"></a>
 
 ### GetUserWithdrawAccountRequest
 
@@ -2425,7 +2425,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawAccountResponse"></a>
 
 ### GetUserWithdrawAccountResponse
 
@@ -2433,14 +2433,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount) |  |  |
+| Info | [UserWithdrawAccount](#cloud-hashing-billing-v1-UserWithdrawAccount) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawAccountsByAppUserRequest"></a>
 
 ### GetUserWithdrawAccountsByAppUserRequest
 
@@ -2456,7 +2456,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawAccountsByAppUserResponse"></a>
 
 ### GetUserWithdrawAccountsByAppUserResponse
 
@@ -2464,14 +2464,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount) | repeated |  |
+| Infos | [UserWithdrawAccount](#cloud-hashing-billing-v1-UserWithdrawAccount) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawAccountsByOtherAppUserRequest"></a>
 
 ### GetUserWithdrawAccountsByOtherAppUserRequest
 
@@ -2487,7 +2487,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawAccountsByOtherAppUserResponse"></a>
 
 ### GetUserWithdrawAccountsByOtherAppUserResponse
 
@@ -2495,14 +2495,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount) | repeated |  |
+| Infos | [UserWithdrawAccount](#cloud-hashing-billing-v1-UserWithdrawAccount) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawByAccountRequest"></a>
 
 ### GetUserWithdrawByAccountRequest
 
@@ -2517,7 +2517,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawByAccountResponse"></a>
 
 ### GetUserWithdrawByAccountResponse
 
@@ -2525,14 +2525,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Info | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemRequest"></a>
 
 ### GetUserWithdrawItemRequest
 
@@ -2547,7 +2547,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemResponse"></a>
 
 ### GetUserWithdrawItemResponse
 
@@ -2555,14 +2555,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Info | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAccountRequest"></a>
 
 ### GetUserWithdrawItemsByAccountRequest
 
@@ -2577,7 +2577,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAccountResponse"></a>
 
 ### GetUserWithdrawItemsByAccountResponse
 
@@ -2585,14 +2585,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+| Infos | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest"></a>
 
 ### GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest
 
@@ -2610,7 +2610,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse"></a>
 
 ### GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse
 
@@ -2618,14 +2618,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+| Infos | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserRequest"></a>
 
 ### GetUserWithdrawItemsByAppUserRequest
 
@@ -2641,7 +2641,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserResponse"></a>
 
 ### GetUserWithdrawItemsByAppUserResponse
 
@@ -2649,14 +2649,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+| Infos | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserWithdrawTypeRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserWithdrawTypeRequest"></a>
 
 ### GetUserWithdrawItemsByAppUserWithdrawTypeRequest
 
@@ -2673,7 +2673,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserWithdrawTypeResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserWithdrawTypeResponse"></a>
 
 ### GetUserWithdrawItemsByAppUserWithdrawTypeResponse
 
@@ -2681,14 +2681,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+| Infos | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByOtherAppUserRequest"></a>
 
 ### GetUserWithdrawItemsByOtherAppUserRequest
 
@@ -2704,7 +2704,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByOtherAppUserResponse"></a>
 
 ### GetUserWithdrawItemsByOtherAppUserResponse
 
@@ -2712,14 +2712,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+| Infos | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsRequest"></a>
 
 ### GetUserWithdrawItemsRequest
 
@@ -2729,7 +2729,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsResponse"></a>
 
 ### GetUserWithdrawItemsResponse
 
@@ -2737,14 +2737,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+| Infos | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawRequest"></a>
 
 ### GetUserWithdrawRequest
 
@@ -2759,7 +2759,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawResponse"></a>
 
 ### GetUserWithdrawResponse
 
@@ -2767,14 +2767,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Info | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawsByAppUserCoinRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawsByAppUserCoinRequest"></a>
 
 ### GetUserWithdrawsByAppUserCoinRequest
 
@@ -2791,7 +2791,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawsByAppUserCoinResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawsByAppUserCoinResponse"></a>
 
 ### GetUserWithdrawsByAppUserCoinResponse
 
@@ -2799,14 +2799,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) | repeated |  |
+| Infos | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawsByAppUserRequest"></a>
 
 ### GetUserWithdrawsByAppUserRequest
 
@@ -2822,7 +2822,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawsByAppUserResponse"></a>
 
 ### GetUserWithdrawsByAppUserResponse
 
@@ -2830,14 +2830,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) | repeated |  |
+| Infos | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawsByOtherAppUserRequest"></a>
 
 ### GetUserWithdrawsByOtherAppUserRequest
 
@@ -2853,7 +2853,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawsByOtherAppUserResponse"></a>
 
 ### GetUserWithdrawsByOtherAppUserResponse
 
@@ -2861,14 +2861,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) | repeated |  |
+| Infos | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GoodBenefit"></a>
+<a name="cloud-hashing-billing-v1-GoodBenefit"></a>
 
 ### GoodBenefit
 
@@ -2886,7 +2886,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.GoodPayment"></a>
+<a name="cloud-hashing-billing-v1-GoodPayment"></a>
 
 ### GoodPayment
 
@@ -2906,7 +2906,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.PlatformBenefit"></a>
+<a name="cloud-hashing-billing-v1-PlatformBenefit"></a>
 
 ### PlatformBenefit
 
@@ -2927,7 +2927,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.PlatformBenefitDetail"></a>
+<a name="cloud-hashing-billing-v1-PlatformBenefitDetail"></a>
 
 ### PlatformBenefitDetail
 
@@ -2937,7 +2937,7 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
-| BenefitAddress | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| BenefitAddress | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 | Amount | [double](#double) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
 | ChainTransactionID | [string](#string) |  |  |
@@ -2947,7 +2947,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.PlatformSetting"></a>
+<a name="cloud-hashing-billing-v1-PlatformSetting"></a>
 
 ### PlatformSetting
 
@@ -2965,7 +2965,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateAppWithdrawSettingRequest"></a>
 
 ### UpdateAppWithdrawSettingRequest
 
@@ -2973,14 +2973,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateAppWithdrawSettingResponse"></a>
 
 ### UpdateAppWithdrawSettingResponse
 
@@ -2988,14 +2988,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateCoinAccountTransactionRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateCoinAccountTransactionRequest"></a>
 
 ### UpdateCoinAccountTransactionRequest
 
@@ -3003,14 +3003,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) |  |  |
+| Info | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateCoinAccountTransactionResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateCoinAccountTransactionResponse"></a>
 
 ### UpdateCoinAccountTransactionResponse
 
@@ -3018,14 +3018,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) |  |  |
+| Info | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateCoinSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateCoinSettingRequest"></a>
 
 ### UpdateCoinSettingRequest
 
@@ -3033,14 +3033,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinSetting](#cloud.hashing.billing.v1.CoinSetting) |  |  |
+| Info | [CoinSetting](#cloud-hashing-billing-v1-CoinSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateCoinSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateCoinSettingResponse"></a>
 
 ### UpdateCoinSettingResponse
 
@@ -3048,14 +3048,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinSetting](#cloud.hashing.billing.v1.CoinSetting) |  |  |
+| Info | [CoinSetting](#cloud-hashing-billing-v1-CoinSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateGoodBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateGoodBenefitRequest"></a>
 
 ### UpdateGoodBenefitRequest
 
@@ -3063,14 +3063,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit) |  |  |
+| Info | [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateGoodBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateGoodBenefitResponse"></a>
 
 ### UpdateGoodBenefitResponse
 
@@ -3078,14 +3078,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit) |  |  |
+| Info | [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateGoodPaymentRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateGoodPaymentRequest"></a>
 
 ### UpdateGoodPaymentRequest
 
@@ -3093,14 +3093,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) |  |  |
+| Info | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateGoodPaymentResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateGoodPaymentResponse"></a>
 
 ### UpdateGoodPaymentResponse
 
@@ -3108,14 +3108,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) |  |  |
+| Info | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdatePlatformSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdatePlatformSettingRequest"></a>
 
 ### UpdatePlatformSettingRequest
 
@@ -3123,14 +3123,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
+| Info | [PlatformSetting](#cloud-hashing-billing-v1-PlatformSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdatePlatformSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdatePlatformSettingResponse"></a>
 
 ### UpdatePlatformSettingResponse
 
@@ -3138,14 +3138,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
+| Info | [PlatformSetting](#cloud-hashing-billing-v1-PlatformSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserDirectBenefitRequest"></a>
 
 ### UpdateUserDirectBenefitRequest
 
@@ -3153,14 +3153,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+| Info | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserDirectBenefitResponse"></a>
 
 ### UpdateUserDirectBenefitResponse
 
@@ -3168,14 +3168,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+| Info | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserPaymentBalanceRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserPaymentBalanceRequest"></a>
 
 ### UpdateUserPaymentBalanceRequest
 
@@ -3183,14 +3183,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+| Info | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserPaymentBalanceResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserPaymentBalanceResponse"></a>
 
 ### UpdateUserPaymentBalanceResponse
 
@@ -3198,14 +3198,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+| Info | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserWithdrawItemRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserWithdrawItemRequest"></a>
 
 ### UpdateUserWithdrawItemRequest
 
@@ -3213,14 +3213,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Info | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserWithdrawItemResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserWithdrawItemResponse"></a>
 
 ### UpdateUserWithdrawItemResponse
 
@@ -3228,14 +3228,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Info | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserWithdrawRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserWithdrawRequest"></a>
 
 ### UpdateUserWithdrawRequest
 
@@ -3243,14 +3243,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Info | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserWithdrawResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserWithdrawResponse"></a>
 
 ### UpdateUserWithdrawResponse
 
@@ -3258,14 +3258,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Info | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UserBenefit"></a>
+<a name="cloud-hashing-billing-v1-UserBenefit"></a>
 
 ### UserBenefit
 
@@ -3289,7 +3289,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.UserDirectBenefit"></a>
+<a name="cloud-hashing-billing-v1-UserDirectBenefit"></a>
 
 ### UserDirectBenefit
 
@@ -3308,7 +3308,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.UserPaymentBalance"></a>
+<a name="cloud-hashing-billing-v1-UserPaymentBalance"></a>
 
 ### UserPaymentBalance
 
@@ -3328,7 +3328,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.UserWithdraw"></a>
+<a name="cloud-hashing-billing-v1-UserWithdraw"></a>
 
 ### UserWithdraw
 
@@ -3351,7 +3351,7 @@
 
 
 
-<a name="cloud.hashing.billing.v1.UserWithdrawAccount"></a>
+<a name="cloud-hashing-billing-v1-UserWithdrawAccount"></a>
 
 ### UserWithdrawAccount
 
@@ -3359,15 +3359,15 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Withdraw | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
-| Account | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| Withdraw | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
+| Account | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UserWithdrawItem"></a>
+<a name="cloud-hashing-billing-v1-UserWithdrawItem"></a>
 
 ### UserWithdrawItem
 
@@ -3395,114 +3395,114 @@
  
 
 
-<a name="cloud.hashing.billing.v1.CloudHashingBilling"></a>
+<a name="cloud-hashing-billing-v1-CloudHashingBilling"></a>
 
 ### CloudHashingBilling
 Cloud Hashing Billing
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
-| CreateCoinAccount | [CreateCoinAccountRequest](#cloud.hashing.billing.v1.CreateCoinAccountRequest) | [CreateCoinAccountResponse](#cloud.hashing.billing.v1.CreateCoinAccountResponse) |  |
-| GetCoinAccount | [GetCoinAccountRequest](#cloud.hashing.billing.v1.GetCoinAccountRequest) | [GetCoinAccountResponse](#cloud.hashing.billing.v1.GetCoinAccountResponse) |  |
-| GetCoinAccountByCoinAddress | [GetCoinAccountByCoinAddressRequest](#cloud.hashing.billing.v1.GetCoinAccountByCoinAddressRequest) | [GetCoinAccountByCoinAddressResponse](#cloud.hashing.billing.v1.GetCoinAccountByCoinAddressResponse) |  |
-| GetCoinAccounts | [GetCoinAccountsRequest](#cloud.hashing.billing.v1.GetCoinAccountsRequest) | [GetCoinAccountsResponse](#cloud.hashing.billing.v1.GetCoinAccountsResponse) |  |
-| DeleteCoinAccount | [DeleteCoinAccountRequest](#cloud.hashing.billing.v1.DeleteCoinAccountRequest) | [DeleteCoinAccountResponse](#cloud.hashing.billing.v1.DeleteCoinAccountResponse) |  |
-| CreateCoinAccountTransaction | [CreateCoinAccountTransactionRequest](#cloud.hashing.billing.v1.CreateCoinAccountTransactionRequest) | [CreateCoinAccountTransactionResponse](#cloud.hashing.billing.v1.CreateCoinAccountTransactionResponse) |  |
-| GetCoinAccountTransaction | [GetCoinAccountTransactionRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionRequest) | [GetCoinAccountTransactionResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionResponse) |  |
-| GetCoinAccountTransactionsByCoinAccount | [GetCoinAccountTransactionsByCoinAccountRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountRequest) | [GetCoinAccountTransactionsByCoinAccountResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountResponse) |  |
-| GetCoinAccountTransactionsByState | [GetCoinAccountTransactionsByStateRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateRequest) | [GetCoinAccountTransactionsByStateResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateResponse) |  |
-| GetCoinAccountTransactionsByGoodState | [GetCoinAccountTransactionsByGoodStateRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByGoodStateRequest) | [GetCoinAccountTransactionsByGoodStateResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByGoodStateResponse) |  |
-| GetCoinAccountTransactions | [GetCoinAccountTransactionsRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsRequest) | [GetCoinAccountTransactionsResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsResponse) |  |
-| GetCoinAccountTransactionsByAppUser | [GetCoinAccountTransactionsByAppUserRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserRequest) | [GetCoinAccountTransactionsByAppUserResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserResponse) |  |
-| GetCoinAccountTransactionsByAppUserCoin | [GetCoinAccountTransactionsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserCoinRequest) | [GetCoinAccountTransactionsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserCoinResponse) |  |
-| GetCoinAccountTransactionsByCoin | [GetCoinAccountTransactionsByCoinRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinRequest) | [GetCoinAccountTransactionsByCoinResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinResponse) |  |
-| UpdateCoinAccountTransaction | [UpdateCoinAccountTransactionRequest](#cloud.hashing.billing.v1.UpdateCoinAccountTransactionRequest) | [UpdateCoinAccountTransactionResponse](#cloud.hashing.billing.v1.UpdateCoinAccountTransactionResponse) |  |
-| GetCoinAccountTransactionDetail | [GetCoinAccountTransactionDetailRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionDetailRequest) | [GetCoinAccountTransactionDetailResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionDetailResponse) |  |
-| DeleteCoinAccountTransaction | [DeleteCoinAccountTransactionRequest](#cloud.hashing.billing.v1.DeleteCoinAccountTransactionRequest) | [DeleteCoinAccountTransactionResponse](#cloud.hashing.billing.v1.DeleteCoinAccountTransactionResponse) |  |
-| CreatePlatformBenefit | [CreatePlatformBenefitRequest](#cloud.hashing.billing.v1.CreatePlatformBenefitRequest) | [CreatePlatformBenefitResponse](#cloud.hashing.billing.v1.CreatePlatformBenefitResponse) |  |
-| GetLatestPlatformBenefitByGood | [GetLatestPlatformBenefitByGoodRequest](#cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodRequest) | [GetLatestPlatformBenefitByGoodResponse](#cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodResponse) |  |
-| GetPlatformBenefitsByGood | [GetPlatformBenefitsByGoodRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest) | [GetPlatformBenefitsByGoodResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse) |  |
-| GetPlatformBenefits | [GetPlatformBenefitsRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsRequest) | [GetPlatformBenefitsResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsResponse) |  |
-| GetPlatformBenefit | [GetPlatformBenefitRequest](#cloud.hashing.billing.v1.GetPlatformBenefitRequest) | [GetPlatformBenefitResponse](#cloud.hashing.billing.v1.GetPlatformBenefitResponse) |  |
-| GetPlatformBenefitDetail | [GetPlatformBenefitDetailRequest](#cloud.hashing.billing.v1.GetPlatformBenefitDetailRequest) | [GetPlatformBenefitDetailResponse](#cloud.hashing.billing.v1.GetPlatformBenefitDetailResponse) |  |
-| CreatePlatformSetting | [CreatePlatformSettingRequest](#cloud.hashing.billing.v1.CreatePlatformSettingRequest) | [CreatePlatformSettingResponse](#cloud.hashing.billing.v1.CreatePlatformSettingResponse) |  |
-| UpdatePlatformSetting | [UpdatePlatformSettingRequest](#cloud.hashing.billing.v1.UpdatePlatformSettingRequest) | [UpdatePlatformSettingResponse](#cloud.hashing.billing.v1.UpdatePlatformSettingResponse) |  |
-| GetPlatformSetting | [GetPlatformSettingRequest](#cloud.hashing.billing.v1.GetPlatformSettingRequest) | [GetPlatformSettingResponse](#cloud.hashing.billing.v1.GetPlatformSettingResponse) |  |
-| CreateUserBenefit | [CreateUserBenefitRequest](#cloud.hashing.billing.v1.CreateUserBenefitRequest) | [CreateUserBenefitResponse](#cloud.hashing.billing.v1.CreateUserBenefitResponse) |  |
-| GetUserBenefitsByAppUser | [GetUserBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest) | [GetUserBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse) |  |
-| GetUserBenefitsByAppUserCoin | [GetUserBenefitsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinRequest) | [GetUserBenefitsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinResponse) |  |
-| GetUserBenefitsByApp | [GetUserBenefitsByAppRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppRequest) | [GetUserBenefitsByAppResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppResponse) |  |
-| GetUserBenefits | [GetUserBenefitsRequest](#cloud.hashing.billing.v1.GetUserBenefitsRequest) | [GetUserBenefitsResponse](#cloud.hashing.billing.v1.GetUserBenefitsResponse) |  |
-| GetLatestUserBenefitByGoodAppUser | [GetLatestUserBenefitByGoodAppUserRequest](#cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserRequest) | [GetLatestUserBenefitByGoodAppUserResponse](#cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse) |  |
-| CreateCoinSetting | [CreateCoinSettingRequest](#cloud.hashing.billing.v1.CreateCoinSettingRequest) | [CreateCoinSettingResponse](#cloud.hashing.billing.v1.CreateCoinSettingResponse) |  |
-| UpdateCoinSetting | [UpdateCoinSettingRequest](#cloud.hashing.billing.v1.UpdateCoinSettingRequest) | [UpdateCoinSettingResponse](#cloud.hashing.billing.v1.UpdateCoinSettingResponse) |  |
-| GetCoinSetting | [GetCoinSettingRequest](#cloud.hashing.billing.v1.GetCoinSettingRequest) | [GetCoinSettingResponse](#cloud.hashing.billing.v1.GetCoinSettingResponse) |  |
-| GetCoinSettingByCoin | [GetCoinSettingByCoinRequest](#cloud.hashing.billing.v1.GetCoinSettingByCoinRequest) | [GetCoinSettingByCoinResponse](#cloud.hashing.billing.v1.GetCoinSettingByCoinResponse) |  |
-| CreateGoodBenefit | [CreateGoodBenefitRequest](#cloud.hashing.billing.v1.CreateGoodBenefitRequest) | [CreateGoodBenefitResponse](#cloud.hashing.billing.v1.CreateGoodBenefitResponse) |  |
-| UpdateGoodBenefit | [UpdateGoodBenefitRequest](#cloud.hashing.billing.v1.UpdateGoodBenefitRequest) | [UpdateGoodBenefitResponse](#cloud.hashing.billing.v1.UpdateGoodBenefitResponse) |  |
-| GetGoodBenefit | [GetGoodBenefitRequest](#cloud.hashing.billing.v1.GetGoodBenefitRequest) | [GetGoodBenefitResponse](#cloud.hashing.billing.v1.GetGoodBenefitResponse) |  |
-| GetGoodBenefitByGood | [GetGoodBenefitByGoodRequest](#cloud.hashing.billing.v1.GetGoodBenefitByGoodRequest) | [GetGoodBenefitByGoodResponse](#cloud.hashing.billing.v1.GetGoodBenefitByGoodResponse) |  |
-| CreateGoodPayment | [CreateGoodPaymentRequest](#cloud.hashing.billing.v1.CreateGoodPaymentRequest) | [CreateGoodPaymentResponse](#cloud.hashing.billing.v1.CreateGoodPaymentResponse) |  |
-| UpdateGoodPayment | [UpdateGoodPaymentRequest](#cloud.hashing.billing.v1.UpdateGoodPaymentRequest) | [UpdateGoodPaymentResponse](#cloud.hashing.billing.v1.UpdateGoodPaymentResponse) |  |
-| GetGoodPayment | [GetGoodPaymentRequest](#cloud.hashing.billing.v1.GetGoodPaymentRequest) | [GetGoodPaymentResponse](#cloud.hashing.billing.v1.GetGoodPaymentResponse) |  |
-| GetGoodPayments | [GetGoodPaymentsRequest](#cloud.hashing.billing.v1.GetGoodPaymentsRequest) | [GetGoodPaymentsResponse](#cloud.hashing.billing.v1.GetGoodPaymentsResponse) |  |
-| GetGoodPaymentsByGood | [GetGoodPaymentsByGoodRequest](#cloud.hashing.billing.v1.GetGoodPaymentsByGoodRequest) | [GetGoodPaymentsByGoodResponse](#cloud.hashing.billing.v1.GetGoodPaymentsByGoodResponse) |  |
-| GetIdleGoodPaymentsByGood | [GetIdleGoodPaymentsByGoodRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodRequest) | [GetIdleGoodPaymentsByGoodResponse](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodResponse) |  |
-| GetIdleGoodPaymentsByGoodPaymentCoin | [GetIdleGoodPaymentsByGoodPaymentCoinRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest) | [GetIdleGoodPaymentsByGoodPaymentCoinResponse](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinResponse) |  |
-| GetGoodPaymentByAccount | [GetGoodPaymentByAccountRequest](#cloud.hashing.billing.v1.GetGoodPaymentByAccountRequest) | [GetGoodPaymentByAccountResponse](#cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse) |  |
-| CreateUserWithdraw | [CreateUserWithdrawRequest](#cloud.hashing.billing.v1.CreateUserWithdrawRequest) | [CreateUserWithdrawResponse](#cloud.hashing.billing.v1.CreateUserWithdrawResponse) |  |
-| UpdateUserWithdraw | [UpdateUserWithdrawRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawRequest) | [UpdateUserWithdrawResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawResponse) |  |
-| GetUserWithdraw | [GetUserWithdrawRequest](#cloud.hashing.billing.v1.GetUserWithdrawRequest) | [GetUserWithdrawResponse](#cloud.hashing.billing.v1.GetUserWithdrawResponse) |  |
-| GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse) |  |
-| GetUserWithdrawsByAppUserCoin | [GetUserWithdrawsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserCoinRequest) | [GetUserWithdrawsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserCoinResponse) |  |
-| GetUserWithdrawsByOtherAppUser | [GetUserWithdrawsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest) | [GetUserWithdrawsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse) |  |
-| GetUserWithdrawAccount | [GetUserWithdrawAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountRequest) | [GetUserWithdrawAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountResponse) |  |
-| GetUserWithdrawAccountsByAppUser | [GetUserWithdrawAccountsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserRequest) | [GetUserWithdrawAccountsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserResponse) |  |
-| GetUserWithdrawAccountsByOtherAppUser | [GetUserWithdrawAccountsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserRequest) | [GetUserWithdrawAccountsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserResponse) |  |
-| GetUserWithdrawByAccount | [GetUserWithdrawByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest) | [GetUserWithdrawByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse) |  |
-| CreateUserDirectBenefit | [CreateUserDirectBenefitRequest](#cloud.hashing.billing.v1.CreateUserDirectBenefitRequest) | [CreateUserDirectBenefitResponse](#cloud.hashing.billing.v1.CreateUserDirectBenefitResponse) |  |
-| UpdateUserDirectBenefit | [UpdateUserDirectBenefitRequest](#cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest) | [UpdateUserDirectBenefitResponse](#cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse) |  |
-| GetUserDirectBenefit | [GetUserDirectBenefitRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitRequest) | [GetUserDirectBenefitResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitResponse) |  |
-| GetUserDirectBenefitsByAppUser | [GetUserDirectBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest) | [GetUserDirectBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse) |  |
-| GetUserDirectBenefitsByOtherAppUser | [GetUserDirectBenefitsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest) | [GetUserDirectBenefitsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse) |  |
-| GetUserDirectBenefitByAccount | [GetUserDirectBenefitByAccountRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest) | [GetUserDirectBenefitByAccountResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse) |  |
-| CreateUserWithdrawItem | [CreateUserWithdrawItemRequest](#cloud.hashing.billing.v1.CreateUserWithdrawItemRequest) | [CreateUserWithdrawItemResponse](#cloud.hashing.billing.v1.CreateUserWithdrawItemResponse) |  |
-| UpdateUserWithdrawItem | [UpdateUserWithdrawItemRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawItemRequest) | [UpdateUserWithdrawItemResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawItemResponse) |  |
-| GetUserWithdrawItem | [GetUserWithdrawItemRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemRequest) | [GetUserWithdrawItemResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemResponse) |  |
-| GetUserWithdrawItemsByAccount | [GetUserWithdrawItemsByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountRequest) | [GetUserWithdrawItemsByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountResponse) |  |
-| GetUserWithdrawItemsByAppUser | [GetUserWithdrawItemsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest) | [GetUserWithdrawItemsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse) |  |
-| GetUserWithdrawItemsByAppUserWithdrawType | [GetUserWithdrawItemsByAppUserWithdrawTypeRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserWithdrawTypeRequest) | [GetUserWithdrawItemsByAppUserWithdrawTypeResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserWithdrawTypeResponse) |  |
-| GetUserWithdrawItemsByAppUserCoinWithdrawType | [GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest) | [GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse) |  |
-| GetUserWithdrawItemsByOtherAppUser | [GetUserWithdrawItemsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest) | [GetUserWithdrawItemsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse) |  |
-| GetUserWithdrawItems | [GetUserWithdrawItemsRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsRequest) | [GetUserWithdrawItemsResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsResponse) |  |
-| CreateAppWithdrawSetting | [CreateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest) | [CreateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse) |  |
-| CreateAppWithdrawSettingForOtherApp | [CreateAppWithdrawSettingForOtherAppRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppRequest) | [CreateAppWithdrawSettingForOtherAppResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppResponse) |  |
-| UpdateAppWithdrawSetting | [UpdateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest) | [UpdateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse) |  |
-| GetAppWithdrawSetting | [GetAppWithdrawSettingRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingRequest) | [GetAppWithdrawSettingResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingResponse) |  |
-| GetAppWithdrawSettingsByApp | [GetAppWithdrawSettingsByAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppRequest) | [GetAppWithdrawSettingsByAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppResponse) |  |
-| GetAppWithdrawSettingByAppCoin | [GetAppWithdrawSettingByAppCoinRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinRequest) | [GetAppWithdrawSettingByAppCoinResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinResponse) |  |
-| GetAppWithdrawSettingsByOtherApp | [GetAppWithdrawSettingsByOtherAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppRequest) | [GetAppWithdrawSettingsByOtherAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppResponse) |  |
-| CreateUserPaymentBalance | [CreateUserPaymentBalanceRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceRequest) | [CreateUserPaymentBalanceResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceResponse) |  |
-| CreateUserPaymentBalanceForOtherAppUser | [CreateUserPaymentBalanceForOtherAppUserRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserRequest) | [CreateUserPaymentBalanceForOtherAppUserResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserResponse) |  |
-| UpdateUserPaymentBalance | [UpdateUserPaymentBalanceRequest](#cloud.hashing.billing.v1.UpdateUserPaymentBalanceRequest) | [UpdateUserPaymentBalanceResponse](#cloud.hashing.billing.v1.UpdateUserPaymentBalanceResponse) |  |
-| GetUserPaymentBalance | [GetUserPaymentBalanceRequest](#cloud.hashing.billing.v1.GetUserPaymentBalanceRequest) | [GetUserPaymentBalanceResponse](#cloud.hashing.billing.v1.GetUserPaymentBalanceResponse) |  |
-| GetUserPaymentBalancesByApp | [GetUserPaymentBalancesByAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppRequest) | [GetUserPaymentBalancesByAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppResponse) |  |
-| GetUserPaymentBalancesByOtherApp | [GetUserPaymentBalancesByOtherAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppRequest) | [GetUserPaymentBalancesByOtherAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppResponse) |  |
-| GetUserPaymentBalancesByAppUser | [GetUserPaymentBalancesByAppUserRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserRequest) | [GetUserPaymentBalancesByAppUserResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserResponse) |  |
+| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) | Method Version |
+| CreateCoinAccount | [CreateCoinAccountRequest](#cloud-hashing-billing-v1-CreateCoinAccountRequest) | [CreateCoinAccountResponse](#cloud-hashing-billing-v1-CreateCoinAccountResponse) |  |
+| GetCoinAccount | [GetCoinAccountRequest](#cloud-hashing-billing-v1-GetCoinAccountRequest) | [GetCoinAccountResponse](#cloud-hashing-billing-v1-GetCoinAccountResponse) |  |
+| GetCoinAccountByCoinAddress | [GetCoinAccountByCoinAddressRequest](#cloud-hashing-billing-v1-GetCoinAccountByCoinAddressRequest) | [GetCoinAccountByCoinAddressResponse](#cloud-hashing-billing-v1-GetCoinAccountByCoinAddressResponse) |  |
+| GetCoinAccounts | [GetCoinAccountsRequest](#cloud-hashing-billing-v1-GetCoinAccountsRequest) | [GetCoinAccountsResponse](#cloud-hashing-billing-v1-GetCoinAccountsResponse) |  |
+| DeleteCoinAccount | [DeleteCoinAccountRequest](#cloud-hashing-billing-v1-DeleteCoinAccountRequest) | [DeleteCoinAccountResponse](#cloud-hashing-billing-v1-DeleteCoinAccountResponse) |  |
+| CreateCoinAccountTransaction | [CreateCoinAccountTransactionRequest](#cloud-hashing-billing-v1-CreateCoinAccountTransactionRequest) | [CreateCoinAccountTransactionResponse](#cloud-hashing-billing-v1-CreateCoinAccountTransactionResponse) |  |
+| GetCoinAccountTransaction | [GetCoinAccountTransactionRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionRequest) | [GetCoinAccountTransactionResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionResponse) |  |
+| GetCoinAccountTransactionsByCoinAccount | [GetCoinAccountTransactionsByCoinAccountRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinAccountRequest) | [GetCoinAccountTransactionsByCoinAccountResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinAccountResponse) |  |
+| GetCoinAccountTransactionsByState | [GetCoinAccountTransactionsByStateRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByStateRequest) | [GetCoinAccountTransactionsByStateResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByStateResponse) |  |
+| GetCoinAccountTransactionsByGoodState | [GetCoinAccountTransactionsByGoodStateRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByGoodStateRequest) | [GetCoinAccountTransactionsByGoodStateResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByGoodStateResponse) |  |
+| GetCoinAccountTransactions | [GetCoinAccountTransactionsRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsRequest) | [GetCoinAccountTransactionsResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsResponse) |  |
+| GetCoinAccountTransactionsByAppUser | [GetCoinAccountTransactionsByAppUserRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserRequest) | [GetCoinAccountTransactionsByAppUserResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserResponse) |  |
+| GetCoinAccountTransactionsByAppUserCoin | [GetCoinAccountTransactionsByAppUserCoinRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserCoinRequest) | [GetCoinAccountTransactionsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserCoinResponse) |  |
+| GetCoinAccountTransactionsByCoin | [GetCoinAccountTransactionsByCoinRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinRequest) | [GetCoinAccountTransactionsByCoinResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinResponse) |  |
+| UpdateCoinAccountTransaction | [UpdateCoinAccountTransactionRequest](#cloud-hashing-billing-v1-UpdateCoinAccountTransactionRequest) | [UpdateCoinAccountTransactionResponse](#cloud-hashing-billing-v1-UpdateCoinAccountTransactionResponse) |  |
+| GetCoinAccountTransactionDetail | [GetCoinAccountTransactionDetailRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionDetailRequest) | [GetCoinAccountTransactionDetailResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionDetailResponse) |  |
+| DeleteCoinAccountTransaction | [DeleteCoinAccountTransactionRequest](#cloud-hashing-billing-v1-DeleteCoinAccountTransactionRequest) | [DeleteCoinAccountTransactionResponse](#cloud-hashing-billing-v1-DeleteCoinAccountTransactionResponse) |  |
+| CreatePlatformBenefit | [CreatePlatformBenefitRequest](#cloud-hashing-billing-v1-CreatePlatformBenefitRequest) | [CreatePlatformBenefitResponse](#cloud-hashing-billing-v1-CreatePlatformBenefitResponse) |  |
+| GetLatestPlatformBenefitByGood | [GetLatestPlatformBenefitByGoodRequest](#cloud-hashing-billing-v1-GetLatestPlatformBenefitByGoodRequest) | [GetLatestPlatformBenefitByGoodResponse](#cloud-hashing-billing-v1-GetLatestPlatformBenefitByGoodResponse) |  |
+| GetPlatformBenefitsByGood | [GetPlatformBenefitsByGoodRequest](#cloud-hashing-billing-v1-GetPlatformBenefitsByGoodRequest) | [GetPlatformBenefitsByGoodResponse](#cloud-hashing-billing-v1-GetPlatformBenefitsByGoodResponse) |  |
+| GetPlatformBenefits | [GetPlatformBenefitsRequest](#cloud-hashing-billing-v1-GetPlatformBenefitsRequest) | [GetPlatformBenefitsResponse](#cloud-hashing-billing-v1-GetPlatformBenefitsResponse) |  |
+| GetPlatformBenefit | [GetPlatformBenefitRequest](#cloud-hashing-billing-v1-GetPlatformBenefitRequest) | [GetPlatformBenefitResponse](#cloud-hashing-billing-v1-GetPlatformBenefitResponse) |  |
+| GetPlatformBenefitDetail | [GetPlatformBenefitDetailRequest](#cloud-hashing-billing-v1-GetPlatformBenefitDetailRequest) | [GetPlatformBenefitDetailResponse](#cloud-hashing-billing-v1-GetPlatformBenefitDetailResponse) |  |
+| CreatePlatformSetting | [CreatePlatformSettingRequest](#cloud-hashing-billing-v1-CreatePlatformSettingRequest) | [CreatePlatformSettingResponse](#cloud-hashing-billing-v1-CreatePlatformSettingResponse) |  |
+| UpdatePlatformSetting | [UpdatePlatformSettingRequest](#cloud-hashing-billing-v1-UpdatePlatformSettingRequest) | [UpdatePlatformSettingResponse](#cloud-hashing-billing-v1-UpdatePlatformSettingResponse) |  |
+| GetPlatformSetting | [GetPlatformSettingRequest](#cloud-hashing-billing-v1-GetPlatformSettingRequest) | [GetPlatformSettingResponse](#cloud-hashing-billing-v1-GetPlatformSettingResponse) |  |
+| CreateUserBenefit | [CreateUserBenefitRequest](#cloud-hashing-billing-v1-CreateUserBenefitRequest) | [CreateUserBenefitResponse](#cloud-hashing-billing-v1-CreateUserBenefitResponse) |  |
+| GetUserBenefitsByAppUser | [GetUserBenefitsByAppUserRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserRequest) | [GetUserBenefitsByAppUserResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserResponse) |  |
+| GetUserBenefitsByAppUserCoin | [GetUserBenefitsByAppUserCoinRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinRequest) | [GetUserBenefitsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinResponse) |  |
+| GetUserBenefitsByApp | [GetUserBenefitsByAppRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppRequest) | [GetUserBenefitsByAppResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppResponse) |  |
+| GetUserBenefits | [GetUserBenefitsRequest](#cloud-hashing-billing-v1-GetUserBenefitsRequest) | [GetUserBenefitsResponse](#cloud-hashing-billing-v1-GetUserBenefitsResponse) |  |
+| GetLatestUserBenefitByGoodAppUser | [GetLatestUserBenefitByGoodAppUserRequest](#cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserRequest) | [GetLatestUserBenefitByGoodAppUserResponse](#cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserResponse) |  |
+| CreateCoinSetting | [CreateCoinSettingRequest](#cloud-hashing-billing-v1-CreateCoinSettingRequest) | [CreateCoinSettingResponse](#cloud-hashing-billing-v1-CreateCoinSettingResponse) |  |
+| UpdateCoinSetting | [UpdateCoinSettingRequest](#cloud-hashing-billing-v1-UpdateCoinSettingRequest) | [UpdateCoinSettingResponse](#cloud-hashing-billing-v1-UpdateCoinSettingResponse) |  |
+| GetCoinSetting | [GetCoinSettingRequest](#cloud-hashing-billing-v1-GetCoinSettingRequest) | [GetCoinSettingResponse](#cloud-hashing-billing-v1-GetCoinSettingResponse) |  |
+| GetCoinSettingByCoin | [GetCoinSettingByCoinRequest](#cloud-hashing-billing-v1-GetCoinSettingByCoinRequest) | [GetCoinSettingByCoinResponse](#cloud-hashing-billing-v1-GetCoinSettingByCoinResponse) |  |
+| CreateGoodBenefit | [CreateGoodBenefitRequest](#cloud-hashing-billing-v1-CreateGoodBenefitRequest) | [CreateGoodBenefitResponse](#cloud-hashing-billing-v1-CreateGoodBenefitResponse) |  |
+| UpdateGoodBenefit | [UpdateGoodBenefitRequest](#cloud-hashing-billing-v1-UpdateGoodBenefitRequest) | [UpdateGoodBenefitResponse](#cloud-hashing-billing-v1-UpdateGoodBenefitResponse) |  |
+| GetGoodBenefit | [GetGoodBenefitRequest](#cloud-hashing-billing-v1-GetGoodBenefitRequest) | [GetGoodBenefitResponse](#cloud-hashing-billing-v1-GetGoodBenefitResponse) |  |
+| GetGoodBenefitByGood | [GetGoodBenefitByGoodRequest](#cloud-hashing-billing-v1-GetGoodBenefitByGoodRequest) | [GetGoodBenefitByGoodResponse](#cloud-hashing-billing-v1-GetGoodBenefitByGoodResponse) |  |
+| CreateGoodPayment | [CreateGoodPaymentRequest](#cloud-hashing-billing-v1-CreateGoodPaymentRequest) | [CreateGoodPaymentResponse](#cloud-hashing-billing-v1-CreateGoodPaymentResponse) |  |
+| UpdateGoodPayment | [UpdateGoodPaymentRequest](#cloud-hashing-billing-v1-UpdateGoodPaymentRequest) | [UpdateGoodPaymentResponse](#cloud-hashing-billing-v1-UpdateGoodPaymentResponse) |  |
+| GetGoodPayment | [GetGoodPaymentRequest](#cloud-hashing-billing-v1-GetGoodPaymentRequest) | [GetGoodPaymentResponse](#cloud-hashing-billing-v1-GetGoodPaymentResponse) |  |
+| GetGoodPayments | [GetGoodPaymentsRequest](#cloud-hashing-billing-v1-GetGoodPaymentsRequest) | [GetGoodPaymentsResponse](#cloud-hashing-billing-v1-GetGoodPaymentsResponse) |  |
+| GetGoodPaymentsByGood | [GetGoodPaymentsByGoodRequest](#cloud-hashing-billing-v1-GetGoodPaymentsByGoodRequest) | [GetGoodPaymentsByGoodResponse](#cloud-hashing-billing-v1-GetGoodPaymentsByGoodResponse) |  |
+| GetIdleGoodPaymentsByGood | [GetIdleGoodPaymentsByGoodRequest](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodRequest) | [GetIdleGoodPaymentsByGoodResponse](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodResponse) |  |
+| GetIdleGoodPaymentsByGoodPaymentCoin | [GetIdleGoodPaymentsByGoodPaymentCoinRequest](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodPaymentCoinRequest) | [GetIdleGoodPaymentsByGoodPaymentCoinResponse](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodPaymentCoinResponse) |  |
+| GetGoodPaymentByAccount | [GetGoodPaymentByAccountRequest](#cloud-hashing-billing-v1-GetGoodPaymentByAccountRequest) | [GetGoodPaymentByAccountResponse](#cloud-hashing-billing-v1-GetGoodPaymentByAccountResponse) |  |
+| CreateUserWithdraw | [CreateUserWithdrawRequest](#cloud-hashing-billing-v1-CreateUserWithdrawRequest) | [CreateUserWithdrawResponse](#cloud-hashing-billing-v1-CreateUserWithdrawResponse) |  |
+| UpdateUserWithdraw | [UpdateUserWithdrawRequest](#cloud-hashing-billing-v1-UpdateUserWithdrawRequest) | [UpdateUserWithdrawResponse](#cloud-hashing-billing-v1-UpdateUserWithdrawResponse) |  |
+| GetUserWithdraw | [GetUserWithdrawRequest](#cloud-hashing-billing-v1-GetUserWithdrawRequest) | [GetUserWithdrawResponse](#cloud-hashing-billing-v1-GetUserWithdrawResponse) |  |
+| GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserResponse) |  |
+| GetUserWithdrawsByAppUserCoin | [GetUserWithdrawsByAppUserCoinRequest](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserCoinRequest) | [GetUserWithdrawsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserCoinResponse) |  |
+| GetUserWithdrawsByOtherAppUser | [GetUserWithdrawsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawsByOtherAppUserRequest) | [GetUserWithdrawsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawsByOtherAppUserResponse) |  |
+| GetUserWithdrawAccount | [GetUserWithdrawAccountRequest](#cloud-hashing-billing-v1-GetUserWithdrawAccountRequest) | [GetUserWithdrawAccountResponse](#cloud-hashing-billing-v1-GetUserWithdrawAccountResponse) |  |
+| GetUserWithdrawAccountsByAppUser | [GetUserWithdrawAccountsByAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByAppUserRequest) | [GetUserWithdrawAccountsByAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByAppUserResponse) |  |
+| GetUserWithdrawAccountsByOtherAppUser | [GetUserWithdrawAccountsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByOtherAppUserRequest) | [GetUserWithdrawAccountsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByOtherAppUserResponse) |  |
+| GetUserWithdrawByAccount | [GetUserWithdrawByAccountRequest](#cloud-hashing-billing-v1-GetUserWithdrawByAccountRequest) | [GetUserWithdrawByAccountResponse](#cloud-hashing-billing-v1-GetUserWithdrawByAccountResponse) |  |
+| CreateUserDirectBenefit | [CreateUserDirectBenefitRequest](#cloud-hashing-billing-v1-CreateUserDirectBenefitRequest) | [CreateUserDirectBenefitResponse](#cloud-hashing-billing-v1-CreateUserDirectBenefitResponse) |  |
+| UpdateUserDirectBenefit | [UpdateUserDirectBenefitRequest](#cloud-hashing-billing-v1-UpdateUserDirectBenefitRequest) | [UpdateUserDirectBenefitResponse](#cloud-hashing-billing-v1-UpdateUserDirectBenefitResponse) |  |
+| GetUserDirectBenefit | [GetUserDirectBenefitRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitRequest) | [GetUserDirectBenefitResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitResponse) |  |
+| GetUserDirectBenefitsByAppUser | [GetUserDirectBenefitsByAppUserRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitsByAppUserRequest) | [GetUserDirectBenefitsByAppUserResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitsByAppUserResponse) |  |
+| GetUserDirectBenefitsByOtherAppUser | [GetUserDirectBenefitsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitsByOtherAppUserRequest) | [GetUserDirectBenefitsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitsByOtherAppUserResponse) |  |
+| GetUserDirectBenefitByAccount | [GetUserDirectBenefitByAccountRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitByAccountRequest) | [GetUserDirectBenefitByAccountResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitByAccountResponse) |  |
+| CreateUserWithdrawItem | [CreateUserWithdrawItemRequest](#cloud-hashing-billing-v1-CreateUserWithdrawItemRequest) | [CreateUserWithdrawItemResponse](#cloud-hashing-billing-v1-CreateUserWithdrawItemResponse) |  |
+| UpdateUserWithdrawItem | [UpdateUserWithdrawItemRequest](#cloud-hashing-billing-v1-UpdateUserWithdrawItemRequest) | [UpdateUserWithdrawItemResponse](#cloud-hashing-billing-v1-UpdateUserWithdrawItemResponse) |  |
+| GetUserWithdrawItem | [GetUserWithdrawItemRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemRequest) | [GetUserWithdrawItemResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemResponse) |  |
+| GetUserWithdrawItemsByAccount | [GetUserWithdrawItemsByAccountRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAccountRequest) | [GetUserWithdrawItemsByAccountResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAccountResponse) |  |
+| GetUserWithdrawItemsByAppUser | [GetUserWithdrawItemsByAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserRequest) | [GetUserWithdrawItemsByAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserResponse) |  |
+| GetUserWithdrawItemsByAppUserWithdrawType | [GetUserWithdrawItemsByAppUserWithdrawTypeRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserWithdrawTypeRequest) | [GetUserWithdrawItemsByAppUserWithdrawTypeResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserWithdrawTypeResponse) |  |
+| GetUserWithdrawItemsByAppUserCoinWithdrawType | [GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest) | [GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse) |  |
+| GetUserWithdrawItemsByOtherAppUser | [GetUserWithdrawItemsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByOtherAppUserRequest) | [GetUserWithdrawItemsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByOtherAppUserResponse) |  |
+| GetUserWithdrawItems | [GetUserWithdrawItemsRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsRequest) | [GetUserWithdrawItemsResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsResponse) |  |
+| CreateAppWithdrawSetting | [CreateAppWithdrawSettingRequest](#cloud-hashing-billing-v1-CreateAppWithdrawSettingRequest) | [CreateAppWithdrawSettingResponse](#cloud-hashing-billing-v1-CreateAppWithdrawSettingResponse) |  |
+| CreateAppWithdrawSettingForOtherApp | [CreateAppWithdrawSettingForOtherAppRequest](#cloud-hashing-billing-v1-CreateAppWithdrawSettingForOtherAppRequest) | [CreateAppWithdrawSettingForOtherAppResponse](#cloud-hashing-billing-v1-CreateAppWithdrawSettingForOtherAppResponse) |  |
+| UpdateAppWithdrawSetting | [UpdateAppWithdrawSettingRequest](#cloud-hashing-billing-v1-UpdateAppWithdrawSettingRequest) | [UpdateAppWithdrawSettingResponse](#cloud-hashing-billing-v1-UpdateAppWithdrawSettingResponse) |  |
+| GetAppWithdrawSetting | [GetAppWithdrawSettingRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingRequest) | [GetAppWithdrawSettingResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingResponse) |  |
+| GetAppWithdrawSettingsByApp | [GetAppWithdrawSettingsByAppRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByAppRequest) | [GetAppWithdrawSettingsByAppResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByAppResponse) |  |
+| GetAppWithdrawSettingByAppCoin | [GetAppWithdrawSettingByAppCoinRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingByAppCoinRequest) | [GetAppWithdrawSettingByAppCoinResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingByAppCoinResponse) |  |
+| GetAppWithdrawSettingsByOtherApp | [GetAppWithdrawSettingsByOtherAppRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByOtherAppRequest) | [GetAppWithdrawSettingsByOtherAppResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByOtherAppResponse) |  |
+| CreateUserPaymentBalance | [CreateUserPaymentBalanceRequest](#cloud-hashing-billing-v1-CreateUserPaymentBalanceRequest) | [CreateUserPaymentBalanceResponse](#cloud-hashing-billing-v1-CreateUserPaymentBalanceResponse) |  |
+| CreateUserPaymentBalanceForOtherAppUser | [CreateUserPaymentBalanceForOtherAppUserRequest](#cloud-hashing-billing-v1-CreateUserPaymentBalanceForOtherAppUserRequest) | [CreateUserPaymentBalanceForOtherAppUserResponse](#cloud-hashing-billing-v1-CreateUserPaymentBalanceForOtherAppUserResponse) |  |
+| UpdateUserPaymentBalance | [UpdateUserPaymentBalanceRequest](#cloud-hashing-billing-v1-UpdateUserPaymentBalanceRequest) | [UpdateUserPaymentBalanceResponse](#cloud-hashing-billing-v1-UpdateUserPaymentBalanceResponse) |  |
+| GetUserPaymentBalance | [GetUserPaymentBalanceRequest](#cloud-hashing-billing-v1-GetUserPaymentBalanceRequest) | [GetUserPaymentBalanceResponse](#cloud-hashing-billing-v1-GetUserPaymentBalanceResponse) |  |
+| GetUserPaymentBalancesByApp | [GetUserPaymentBalancesByAppRequest](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppRequest) | [GetUserPaymentBalancesByAppResponse](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppResponse) |  |
+| GetUserPaymentBalancesByOtherApp | [GetUserPaymentBalancesByOtherAppRequest](#cloud-hashing-billing-v1-GetUserPaymentBalancesByOtherAppRequest) | [GetUserPaymentBalancesByOtherAppResponse](#cloud-hashing-billing-v1-GetUserPaymentBalancesByOtherAppResponse) |  |
+| GetUserPaymentBalancesByAppUser | [GetUserPaymentBalancesByAppUserRequest](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppUserRequest) | [GetUserPaymentBalancesByAppUserResponse](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppUserResponse) |  |
 
  
 
 
 
-<a name="npool/cloud-hashing-billing/cloud-hashing-billing.proto"></a>
+<a name="npool_cloud-hashing-billing_cloud-hashing-billing-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/cloud-hashing-billing/cloud-hashing-billing.proto
 
 
 
-<a name="cloud.hashing.billing.v1.AppWithdrawSetting"></a>
+<a name="cloud-hashing-billing-v1-AppWithdrawSetting"></a>
 
 ### AppWithdrawSetting
 
@@ -3520,7 +3520,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.CoinAccountInfo"></a>
+<a name="cloud-hashing-billing-v1-CoinAccountInfo"></a>
 
 ### CoinAccountInfo
 
@@ -3539,7 +3539,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.CoinAccountTransaction"></a>
+<a name="cloud-hashing-billing-v1-CoinAccountTransaction"></a>
 
 ### CoinAccountTransaction
 
@@ -3566,7 +3566,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.CoinAccountTransactionDetail"></a>
+<a name="cloud-hashing-billing-v1-CoinAccountTransactionDetail"></a>
 
 ### CoinAccountTransactionDetail
 
@@ -3577,8 +3577,8 @@ Cloud Hashing Billing
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
-| FromAddress | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
-| ToAddress | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| FromAddress | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
+| ToAddress | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | Amount | [double](#double) |  |  |
 | Message | [string](#string) |  |  |
@@ -3591,7 +3591,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.CoinSetting"></a>
+<a name="cloud-hashing-billing-v1-CoinSetting"></a>
 
 ### CoinSetting
 
@@ -3613,7 +3613,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateAppWithdrawSettingForOtherAppRequest"></a>
 
 ### CreateAppWithdrawSettingForOtherAppRequest
 
@@ -3622,14 +3622,14 @@ Cloud Hashing Billing
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateAppWithdrawSettingForOtherAppResponse"></a>
 
 ### CreateAppWithdrawSettingForOtherAppResponse
 
@@ -3637,14 +3637,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateAppWithdrawSettingRequest"></a>
 
 ### CreateAppWithdrawSettingRequest
 
@@ -3652,14 +3652,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateAppWithdrawSettingResponse"></a>
 
 ### CreateAppWithdrawSettingResponse
 
@@ -3667,14 +3667,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateCoinAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateCoinAccountRequest"></a>
 
 ### CreateCoinAccountRequest
 
@@ -3682,14 +3682,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| Info | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateCoinAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateCoinAccountResponse"></a>
 
 ### CreateCoinAccountResponse
 
@@ -3697,14 +3697,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| Info | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateCoinAccountTransactionRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateCoinAccountTransactionRequest"></a>
 
 ### CreateCoinAccountTransactionRequest
 
@@ -3712,14 +3712,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) |  |  |
+| Info | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateCoinAccountTransactionResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateCoinAccountTransactionResponse"></a>
 
 ### CreateCoinAccountTransactionResponse
 
@@ -3727,14 +3727,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) |  |  |
+| Info | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateCoinSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateCoinSettingRequest"></a>
 
 ### CreateCoinSettingRequest
 
@@ -3742,14 +3742,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinSetting](#cloud.hashing.billing.v1.CoinSetting) |  |  |
+| Info | [CoinSetting](#cloud-hashing-billing-v1-CoinSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateCoinSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateCoinSettingResponse"></a>
 
 ### CreateCoinSettingResponse
 
@@ -3757,14 +3757,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinSetting](#cloud.hashing.billing.v1.CoinSetting) |  |  |
+| Info | [CoinSetting](#cloud-hashing-billing-v1-CoinSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateGoodBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateGoodBenefitRequest"></a>
 
 ### CreateGoodBenefitRequest
 
@@ -3772,14 +3772,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit) |  |  |
+| Info | [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateGoodBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateGoodBenefitResponse"></a>
 
 ### CreateGoodBenefitResponse
 
@@ -3787,14 +3787,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit) |  |  |
+| Info | [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateGoodPaymentRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateGoodPaymentRequest"></a>
 
 ### CreateGoodPaymentRequest
 
@@ -3802,14 +3802,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) |  |  |
+| Info | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateGoodPaymentResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateGoodPaymentResponse"></a>
 
 ### CreateGoodPaymentResponse
 
@@ -3817,14 +3817,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) |  |  |
+| Info | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreatePlatformBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-CreatePlatformBenefitRequest"></a>
 
 ### CreatePlatformBenefitRequest
 
@@ -3832,14 +3832,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit) |  |  |
+| Info | [PlatformBenefit](#cloud-hashing-billing-v1-PlatformBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreatePlatformBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-CreatePlatformBenefitResponse"></a>
 
 ### CreatePlatformBenefitResponse
 
@@ -3847,14 +3847,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit) |  |  |
+| Info | [PlatformBenefit](#cloud-hashing-billing-v1-PlatformBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreatePlatformSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-CreatePlatformSettingRequest"></a>
 
 ### CreatePlatformSettingRequest
 
@@ -3862,14 +3862,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
+| Info | [PlatformSetting](#cloud-hashing-billing-v1-PlatformSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreatePlatformSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-CreatePlatformSettingResponse"></a>
 
 ### CreatePlatformSettingResponse
 
@@ -3877,14 +3877,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
+| Info | [PlatformSetting](#cloud-hashing-billing-v1-PlatformSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateUserBenefitRequest"></a>
 
 ### CreateUserBenefitRequest
 
@@ -3892,14 +3892,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) |  |  |
+| Info | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateUserBenefitResponse"></a>
 
 ### CreateUserBenefitResponse
 
@@ -3907,14 +3907,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) |  |  |
+| Info | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserDirectBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateUserDirectBenefitRequest"></a>
 
 ### CreateUserDirectBenefitRequest
 
@@ -3922,14 +3922,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+| Info | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserDirectBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateUserDirectBenefitResponse"></a>
 
 ### CreateUserDirectBenefitResponse
 
@@ -3937,14 +3937,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+| Info | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateUserPaymentBalanceForOtherAppUserRequest"></a>
 
 ### CreateUserPaymentBalanceForOtherAppUserRequest
 
@@ -3954,14 +3954,14 @@ Cloud Hashing Billing
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
 | TargetUserID | [string](#string) |  |  |
-| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+| Info | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateUserPaymentBalanceForOtherAppUserResponse"></a>
 
 ### CreateUserPaymentBalanceForOtherAppUserResponse
 
@@ -3969,14 +3969,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+| Info | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateUserPaymentBalanceRequest"></a>
 
 ### CreateUserPaymentBalanceRequest
 
@@ -3984,14 +3984,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+| Info | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserPaymentBalanceResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateUserPaymentBalanceResponse"></a>
 
 ### CreateUserPaymentBalanceResponse
 
@@ -3999,14 +3999,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+| Info | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserWithdrawItemRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateUserWithdrawItemRequest"></a>
 
 ### CreateUserWithdrawItemRequest
 
@@ -4014,14 +4014,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Info | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserWithdrawItemResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateUserWithdrawItemResponse"></a>
 
 ### CreateUserWithdrawItemResponse
 
@@ -4029,14 +4029,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Info | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserWithdrawRequest"></a>
+<a name="cloud-hashing-billing-v1-CreateUserWithdrawRequest"></a>
 
 ### CreateUserWithdrawRequest
 
@@ -4044,14 +4044,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Info | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.CreateUserWithdrawResponse"></a>
+<a name="cloud-hashing-billing-v1-CreateUserWithdrawResponse"></a>
 
 ### CreateUserWithdrawResponse
 
@@ -4059,14 +4059,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Info | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.DeleteCoinAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-DeleteCoinAccountRequest"></a>
 
 ### DeleteCoinAccountRequest
 
@@ -4081,7 +4081,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.DeleteCoinAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-DeleteCoinAccountResponse"></a>
 
 ### DeleteCoinAccountResponse
 
@@ -4089,14 +4089,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| Info | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.DeleteCoinAccountTransactionRequest"></a>
+<a name="cloud-hashing-billing-v1-DeleteCoinAccountTransactionRequest"></a>
 
 ### DeleteCoinAccountTransactionRequest
 
@@ -4111,7 +4111,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.DeleteCoinAccountTransactionResponse"></a>
+<a name="cloud-hashing-billing-v1-DeleteCoinAccountTransactionResponse"></a>
 
 ### DeleteCoinAccountTransactionResponse
 
@@ -4119,14 +4119,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) |  |  |
+| Info | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinRequest"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingByAppCoinRequest"></a>
 
 ### GetAppWithdrawSettingByAppCoinRequest
 
@@ -4142,7 +4142,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinResponse"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingByAppCoinResponse"></a>
 
 ### GetAppWithdrawSettingByAppCoinResponse
 
@@ -4150,14 +4150,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingRequest"></a>
 
 ### GetAppWithdrawSettingRequest
 
@@ -4172,7 +4172,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingResponse"></a>
 
 ### GetAppWithdrawSettingResponse
 
@@ -4180,14 +4180,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppRequest"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingsByAppRequest"></a>
 
 ### GetAppWithdrawSettingsByAppRequest
 
@@ -4202,7 +4202,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppResponse"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingsByAppResponse"></a>
 
 ### GetAppWithdrawSettingsByAppResponse
 
@@ -4210,14 +4210,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) | repeated |  |
+| Infos | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppRequest"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingsByOtherAppRequest"></a>
 
 ### GetAppWithdrawSettingsByOtherAppRequest
 
@@ -4232,7 +4232,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppResponse"></a>
+<a name="cloud-hashing-billing-v1-GetAppWithdrawSettingsByOtherAppResponse"></a>
 
 ### GetAppWithdrawSettingsByOtherAppResponse
 
@@ -4240,14 +4240,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) | repeated |  |
+| Infos | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountByCoinAddressRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountByCoinAddressRequest"></a>
 
 ### GetCoinAccountByCoinAddressRequest
 
@@ -4263,7 +4263,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountByCoinAddressResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountByCoinAddressResponse"></a>
 
 ### GetCoinAccountByCoinAddressResponse
 
@@ -4271,14 +4271,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| Info | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountRequest"></a>
 
 ### GetCoinAccountRequest
 
@@ -4293,7 +4293,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountResponse"></a>
 
 ### GetCoinAccountResponse
 
@@ -4301,14 +4301,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| Info | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionDetailRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionDetailRequest"></a>
 
 ### GetCoinAccountTransactionDetailRequest
 
@@ -4323,7 +4323,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionDetailResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionDetailResponse"></a>
 
 ### GetCoinAccountTransactionDetailResponse
 
@@ -4331,14 +4331,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Detail | [CoinAccountTransactionDetail](#cloud.hashing.billing.v1.CoinAccountTransactionDetail) |  |  |
+| Detail | [CoinAccountTransactionDetail](#cloud-hashing-billing-v1-CoinAccountTransactionDetail) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionRequest"></a>
 
 ### GetCoinAccountTransactionRequest
 
@@ -4353,7 +4353,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionResponse"></a>
 
 ### GetCoinAccountTransactionResponse
 
@@ -4361,14 +4361,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) |  |  |
+| Info | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserCoinRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserCoinRequest"></a>
 
 ### GetCoinAccountTransactionsByAppUserCoinRequest
 
@@ -4385,7 +4385,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserCoinResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserCoinResponse"></a>
 
 ### GetCoinAccountTransactionsByAppUserCoinResponse
 
@@ -4393,14 +4393,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) | repeated |  |
+| Infos | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserRequest"></a>
 
 ### GetCoinAccountTransactionsByAppUserRequest
 
@@ -4416,7 +4416,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserResponse"></a>
 
 ### GetCoinAccountTransactionsByAppUserResponse
 
@@ -4424,14 +4424,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) | repeated |  |
+| Infos | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinAccountRequest"></a>
 
 ### GetCoinAccountTransactionsByCoinAccountRequest
 
@@ -4447,7 +4447,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinAccountResponse"></a>
 
 ### GetCoinAccountTransactionsByCoinAccountResponse
 
@@ -4455,14 +4455,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) | repeated |  |
+| Infos | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinRequest"></a>
 
 ### GetCoinAccountTransactionsByCoinRequest
 
@@ -4477,7 +4477,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinResponse"></a>
 
 ### GetCoinAccountTransactionsByCoinResponse
 
@@ -4485,14 +4485,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) | repeated |  |
+| Infos | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByGoodStateRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByGoodStateRequest"></a>
 
 ### GetCoinAccountTransactionsByGoodStateRequest
 
@@ -4508,7 +4508,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByGoodStateResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByGoodStateResponse"></a>
 
 ### GetCoinAccountTransactionsByGoodStateResponse
 
@@ -4516,14 +4516,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) | repeated |  |
+| Infos | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByStateRequest"></a>
 
 ### GetCoinAccountTransactionsByStateRequest
 
@@ -4538,7 +4538,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsByStateResponse"></a>
 
 ### GetCoinAccountTransactionsByStateResponse
 
@@ -4546,14 +4546,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) | repeated |  |
+| Infos | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsRequest"></a>
 
 ### GetCoinAccountTransactionsRequest
 
@@ -4563,7 +4563,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountTransactionsResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountTransactionsResponse"></a>
 
 ### GetCoinAccountTransactionsResponse
 
@@ -4571,14 +4571,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) | repeated |  |
+| Infos | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountsRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountsRequest"></a>
 
 ### GetCoinAccountsRequest
 
@@ -4588,7 +4588,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinAccountsResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinAccountsResponse"></a>
 
 ### GetCoinAccountsResponse
 
@@ -4596,14 +4596,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) | repeated |  |
+| Infos | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinSettingByCoinRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinSettingByCoinRequest"></a>
 
 ### GetCoinSettingByCoinRequest
 
@@ -4618,7 +4618,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinSettingByCoinResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinSettingByCoinResponse"></a>
 
 ### GetCoinSettingByCoinResponse
 
@@ -4626,14 +4626,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinSetting](#cloud.hashing.billing.v1.CoinSetting) |  |  |
+| Info | [CoinSetting](#cloud-hashing-billing-v1-CoinSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-GetCoinSettingRequest"></a>
 
 ### GetCoinSettingRequest
 
@@ -4648,7 +4648,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetCoinSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-GetCoinSettingResponse"></a>
 
 ### GetCoinSettingResponse
 
@@ -4656,14 +4656,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinSetting](#cloud.hashing.billing.v1.CoinSetting) |  |  |
+| Info | [CoinSetting](#cloud-hashing-billing-v1-CoinSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodBenefitByGoodRequest"></a>
+<a name="cloud-hashing-billing-v1-GetGoodBenefitByGoodRequest"></a>
 
 ### GetGoodBenefitByGoodRequest
 
@@ -4678,7 +4678,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodBenefitByGoodResponse"></a>
+<a name="cloud-hashing-billing-v1-GetGoodBenefitByGoodResponse"></a>
 
 ### GetGoodBenefitByGoodResponse
 
@@ -4686,14 +4686,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit) |  |  |
+| Info | [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-GetGoodBenefitRequest"></a>
 
 ### GetGoodBenefitRequest
 
@@ -4708,7 +4708,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-GetGoodBenefitResponse"></a>
 
 ### GetGoodBenefitResponse
 
@@ -4716,14 +4716,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit) |  |  |
+| Info | [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentByAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentByAccountRequest"></a>
 
 ### GetGoodPaymentByAccountRequest
 
@@ -4738,7 +4738,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentByAccountResponse"></a>
 
 ### GetGoodPaymentByAccountResponse
 
@@ -4746,14 +4746,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) |  |  |
+| Info | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentRequest"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentRequest"></a>
 
 ### GetGoodPaymentRequest
 
@@ -4768,7 +4768,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentResponse"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentResponse"></a>
 
 ### GetGoodPaymentResponse
 
@@ -4776,14 +4776,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) |  |  |
+| Info | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentsByGoodRequest"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentsByGoodRequest"></a>
 
 ### GetGoodPaymentsByGoodRequest
 
@@ -4792,14 +4792,14 @@ Cloud Hashing Billing
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | GoodID | [string](#string) |  |  |
-| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool-v1-PageInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentsByGoodResponse"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentsByGoodResponse"></a>
 
 ### GetGoodPaymentsByGoodResponse
 
@@ -4807,14 +4807,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) | repeated |  |
+| Infos | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentsRequest"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentsRequest"></a>
 
 ### GetGoodPaymentsRequest
 
@@ -4824,7 +4824,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetGoodPaymentsResponse"></a>
+<a name="cloud-hashing-billing-v1-GetGoodPaymentsResponse"></a>
 
 ### GetGoodPaymentsResponse
 
@@ -4832,14 +4832,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) | repeated |  |
+| Infos | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest"></a>
+<a name="cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodPaymentCoinRequest"></a>
 
 ### GetIdleGoodPaymentsByGoodPaymentCoinRequest
 
@@ -4849,14 +4849,14 @@ Cloud Hashing Billing
 | ----- | ---- | ----- | ----------- |
 | GoodID | [string](#string) |  |  |
 | PaymentCoinTypeID | [string](#string) |  |  |
-| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool-v1-PageInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinResponse"></a>
+<a name="cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodPaymentCoinResponse"></a>
 
 ### GetIdleGoodPaymentsByGoodPaymentCoinResponse
 
@@ -4864,14 +4864,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) | repeated |  |
+| Infos | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodRequest"></a>
+<a name="cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodRequest"></a>
 
 ### GetIdleGoodPaymentsByGoodRequest
 
@@ -4880,14 +4880,14 @@ Cloud Hashing Billing
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | GoodID | [string](#string) |  |  |
-| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool-v1-PageInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodResponse"></a>
+<a name="cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodResponse"></a>
 
 ### GetIdleGoodPaymentsByGoodResponse
 
@@ -4895,14 +4895,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) | repeated |  |
+| Infos | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodRequest"></a>
+<a name="cloud-hashing-billing-v1-GetLatestPlatformBenefitByGoodRequest"></a>
 
 ### GetLatestPlatformBenefitByGoodRequest
 
@@ -4917,7 +4917,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodResponse"></a>
+<a name="cloud-hashing-billing-v1-GetLatestPlatformBenefitByGoodResponse"></a>
 
 ### GetLatestPlatformBenefitByGoodResponse
 
@@ -4925,14 +4925,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit) |  |  |
+| Info | [PlatformBenefit](#cloud-hashing-billing-v1-PlatformBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserRequest"></a>
 
 ### GetLatestUserBenefitByGoodAppUserRequest
 
@@ -4949,7 +4949,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserResponse"></a>
 
 ### GetLatestUserBenefitByGoodAppUserResponse
 
@@ -4957,14 +4957,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) |  |  |
+| Info | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitDetailRequest"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitDetailRequest"></a>
 
 ### GetPlatformBenefitDetailRequest
 
@@ -4979,7 +4979,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitDetailResponse"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitDetailResponse"></a>
 
 ### GetPlatformBenefitDetailResponse
 
@@ -4987,14 +4987,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Detail | [PlatformBenefitDetail](#cloud.hashing.billing.v1.PlatformBenefitDetail) |  |  |
+| Detail | [PlatformBenefitDetail](#cloud-hashing-billing-v1-PlatformBenefitDetail) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitRequest"></a>
 
 ### GetPlatformBenefitRequest
 
@@ -5009,7 +5009,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitResponse"></a>
 
 ### GetPlatformBenefitResponse
 
@@ -5017,14 +5017,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit) |  |  |
+| Info | [PlatformBenefit](#cloud-hashing-billing-v1-PlatformBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitsByGoodRequest"></a>
 
 ### GetPlatformBenefitsByGoodRequest
 
@@ -5039,7 +5039,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitsByGoodResponse"></a>
 
 ### GetPlatformBenefitsByGoodResponse
 
@@ -5047,14 +5047,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit) | repeated |  |
+| Infos | [PlatformBenefit](#cloud-hashing-billing-v1-PlatformBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitsRequest"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitsRequest"></a>
 
 ### GetPlatformBenefitsRequest
 
@@ -5064,7 +5064,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformBenefitsResponse"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformBenefitsResponse"></a>
 
 ### GetPlatformBenefitsResponse
 
@@ -5072,14 +5072,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [PlatformBenefit](#cloud.hashing.billing.v1.PlatformBenefit) | repeated |  |
+| Infos | [PlatformBenefit](#cloud-hashing-billing-v1-PlatformBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformSettingByGoodRequest"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformSettingByGoodRequest"></a>
 
 ### GetPlatformSettingByGoodRequest
 
@@ -5094,7 +5094,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformSettingByGoodResponse"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformSettingByGoodResponse"></a>
 
 ### GetPlatformSettingByGoodResponse
 
@@ -5102,14 +5102,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
+| Info | [PlatformSetting](#cloud-hashing-billing-v1-PlatformSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformSettingRequest"></a>
 
 ### GetPlatformSettingRequest
 
@@ -5124,7 +5124,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetPlatformSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-GetPlatformSettingResponse"></a>
 
 ### GetPlatformSettingResponse
 
@@ -5132,14 +5132,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
+| Info | [PlatformSetting](#cloud-hashing-billing-v1-PlatformSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByAppRequest"></a>
 
 ### GetUserBenefitsByAppRequest
 
@@ -5148,14 +5148,14 @@ Cloud Hashing Billing
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool-v1-PageInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByAppResponse"></a>
 
 ### GetUserBenefitsByAppResponse
 
@@ -5163,14 +5163,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) | repeated |  |
+| Infos | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinRequest"></a>
 
 ### GetUserBenefitsByAppUserCoinRequest
 
@@ -5187,7 +5187,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinResponse"></a>
 
 ### GetUserBenefitsByAppUserCoinResponse
 
@@ -5195,14 +5195,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) | repeated |  |
+| Infos | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByAppUserRequest"></a>
 
 ### GetUserBenefitsByAppUserRequest
 
@@ -5218,7 +5218,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByAppUserResponse"></a>
 
 ### GetUserBenefitsByAppUserResponse
 
@@ -5226,14 +5226,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) | repeated |  |
+| Infos | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsRequest"></a>
 
 ### GetUserBenefitsRequest
 
@@ -5241,14 +5241,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PageInfo | [npool.v1.PageInfo](#npool.v1.PageInfo) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool-v1-PageInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserBenefitsResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserBenefitsResponse"></a>
 
 ### GetUserBenefitsResponse
 
@@ -5256,14 +5256,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserBenefit](#cloud.hashing.billing.v1.UserBenefit) | repeated |  |
+| Infos | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitByAccountRequest"></a>
 
 ### GetUserDirectBenefitByAccountRequest
 
@@ -5278,7 +5278,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitByAccountResponse"></a>
 
 ### GetUserDirectBenefitByAccountResponse
 
@@ -5286,14 +5286,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+| Info | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitRequest"></a>
 
 ### GetUserDirectBenefitRequest
 
@@ -5308,7 +5308,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitResponse"></a>
 
 ### GetUserDirectBenefitResponse
 
@@ -5316,14 +5316,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+| Info | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitsByAppUserRequest"></a>
 
 ### GetUserDirectBenefitsByAppUserRequest
 
@@ -5339,7 +5339,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitsByAppUserResponse"></a>
 
 ### GetUserDirectBenefitsByAppUserResponse
 
@@ -5347,14 +5347,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) | repeated |  |
+| Infos | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitsByOtherAppUserRequest"></a>
 
 ### GetUserDirectBenefitsByOtherAppUserRequest
 
@@ -5370,7 +5370,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserDirectBenefitsByOtherAppUserResponse"></a>
 
 ### GetUserDirectBenefitsByOtherAppUserResponse
 
@@ -5378,14 +5378,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) | repeated |  |
+| Infos | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalanceRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalanceRequest"></a>
 
 ### GetUserPaymentBalanceRequest
 
@@ -5400,7 +5400,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalanceResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalanceResponse"></a>
 
 ### GetUserPaymentBalanceResponse
 
@@ -5408,14 +5408,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+| Info | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalancesByAppRequest"></a>
 
 ### GetUserPaymentBalancesByAppRequest
 
@@ -5430,7 +5430,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalancesByAppResponse"></a>
 
 ### GetUserPaymentBalancesByAppResponse
 
@@ -5438,14 +5438,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) | repeated |  |
+| Infos | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalancesByAppUserRequest"></a>
 
 ### GetUserPaymentBalancesByAppUserRequest
 
@@ -5461,7 +5461,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalancesByAppUserResponse"></a>
 
 ### GetUserPaymentBalancesByAppUserResponse
 
@@ -5469,14 +5469,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) | repeated |  |
+| Infos | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalancesByOtherAppRequest"></a>
 
 ### GetUserPaymentBalancesByOtherAppRequest
 
@@ -5491,7 +5491,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserPaymentBalancesByOtherAppResponse"></a>
 
 ### GetUserPaymentBalancesByOtherAppResponse
 
@@ -5499,14 +5499,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) | repeated |  |
+| Infos | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawAccountRequest"></a>
 
 ### GetUserWithdrawAccountRequest
 
@@ -5521,7 +5521,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawAccountResponse"></a>
 
 ### GetUserWithdrawAccountResponse
 
@@ -5529,14 +5529,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount) |  |  |
+| Info | [UserWithdrawAccount](#cloud-hashing-billing-v1-UserWithdrawAccount) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawAccountsByAppUserRequest"></a>
 
 ### GetUserWithdrawAccountsByAppUserRequest
 
@@ -5552,7 +5552,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawAccountsByAppUserResponse"></a>
 
 ### GetUserWithdrawAccountsByAppUserResponse
 
@@ -5560,14 +5560,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount) | repeated |  |
+| Infos | [UserWithdrawAccount](#cloud-hashing-billing-v1-UserWithdrawAccount) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawAccountsByOtherAppUserRequest"></a>
 
 ### GetUserWithdrawAccountsByOtherAppUserRequest
 
@@ -5583,7 +5583,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawAccountsByOtherAppUserResponse"></a>
 
 ### GetUserWithdrawAccountsByOtherAppUserResponse
 
@@ -5591,14 +5591,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawAccount](#cloud.hashing.billing.v1.UserWithdrawAccount) | repeated |  |
+| Infos | [UserWithdrawAccount](#cloud-hashing-billing-v1-UserWithdrawAccount) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawByAccountRequest"></a>
 
 ### GetUserWithdrawByAccountRequest
 
@@ -5613,7 +5613,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawByAccountResponse"></a>
 
 ### GetUserWithdrawByAccountResponse
 
@@ -5621,14 +5621,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Info | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemRequest"></a>
 
 ### GetUserWithdrawItemRequest
 
@@ -5643,7 +5643,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemResponse"></a>
 
 ### GetUserWithdrawItemResponse
 
@@ -5651,14 +5651,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Info | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAccountRequest"></a>
 
 ### GetUserWithdrawItemsByAccountRequest
 
@@ -5673,7 +5673,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAccountResponse"></a>
 
 ### GetUserWithdrawItemsByAccountResponse
 
@@ -5681,14 +5681,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+| Infos | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest"></a>
 
 ### GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest
 
@@ -5706,7 +5706,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse"></a>
 
 ### GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse
 
@@ -5714,14 +5714,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+| Infos | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserRequest"></a>
 
 ### GetUserWithdrawItemsByAppUserRequest
 
@@ -5737,7 +5737,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserResponse"></a>
 
 ### GetUserWithdrawItemsByAppUserResponse
 
@@ -5745,14 +5745,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+| Infos | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserWithdrawTypeRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserWithdrawTypeRequest"></a>
 
 ### GetUserWithdrawItemsByAppUserWithdrawTypeRequest
 
@@ -5769,7 +5769,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserWithdrawTypeResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserWithdrawTypeResponse"></a>
 
 ### GetUserWithdrawItemsByAppUserWithdrawTypeResponse
 
@@ -5777,14 +5777,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+| Infos | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByOtherAppUserRequest"></a>
 
 ### GetUserWithdrawItemsByOtherAppUserRequest
 
@@ -5800,7 +5800,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsByOtherAppUserResponse"></a>
 
 ### GetUserWithdrawItemsByOtherAppUserResponse
 
@@ -5808,14 +5808,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+| Infos | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsRequest"></a>
 
 ### GetUserWithdrawItemsRequest
 
@@ -5825,7 +5825,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawItemsResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawItemsResponse"></a>
 
 ### GetUserWithdrawItemsResponse
 
@@ -5833,14 +5833,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) | repeated |  |
+| Infos | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawRequest"></a>
 
 ### GetUserWithdrawRequest
 
@@ -5855,7 +5855,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawResponse"></a>
 
 ### GetUserWithdrawResponse
 
@@ -5863,14 +5863,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Info | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawsByAppUserCoinRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawsByAppUserCoinRequest"></a>
 
 ### GetUserWithdrawsByAppUserCoinRequest
 
@@ -5887,7 +5887,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawsByAppUserCoinResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawsByAppUserCoinResponse"></a>
 
 ### GetUserWithdrawsByAppUserCoinResponse
 
@@ -5895,14 +5895,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) | repeated |  |
+| Infos | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawsByAppUserRequest"></a>
 
 ### GetUserWithdrawsByAppUserRequest
 
@@ -5918,7 +5918,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawsByAppUserResponse"></a>
 
 ### GetUserWithdrawsByAppUserResponse
 
@@ -5926,14 +5926,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) | repeated |  |
+| Infos | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawsByOtherAppUserRequest"></a>
 
 ### GetUserWithdrawsByOtherAppUserRequest
 
@@ -5949,7 +5949,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse"></a>
+<a name="cloud-hashing-billing-v1-GetUserWithdrawsByOtherAppUserResponse"></a>
 
 ### GetUserWithdrawsByOtherAppUserResponse
 
@@ -5957,14 +5957,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) | repeated |  |
+| Infos | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) | repeated |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.GoodBenefit"></a>
+<a name="cloud-hashing-billing-v1-GoodBenefit"></a>
 
 ### GoodBenefit
 
@@ -5982,7 +5982,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.GoodPayment"></a>
+<a name="cloud-hashing-billing-v1-GoodPayment"></a>
 
 ### GoodPayment
 
@@ -6002,7 +6002,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.PlatformBenefit"></a>
+<a name="cloud-hashing-billing-v1-PlatformBenefit"></a>
 
 ### PlatformBenefit
 
@@ -6023,7 +6023,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.PlatformBenefitDetail"></a>
+<a name="cloud-hashing-billing-v1-PlatformBenefitDetail"></a>
 
 ### PlatformBenefitDetail
 
@@ -6033,7 +6033,7 @@ Cloud Hashing Billing
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
-| BenefitAddress | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| BenefitAddress | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 | Amount | [double](#double) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
 | ChainTransactionID | [string](#string) |  |  |
@@ -6043,7 +6043,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.PlatformSetting"></a>
+<a name="cloud-hashing-billing-v1-PlatformSetting"></a>
 
 ### PlatformSetting
 
@@ -6061,7 +6061,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateAppWithdrawSettingRequest"></a>
 
 ### UpdateAppWithdrawSettingRequest
 
@@ -6069,14 +6069,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateAppWithdrawSettingResponse"></a>
 
 ### UpdateAppWithdrawSettingResponse
 
@@ -6084,14 +6084,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [AppWithdrawSetting](#cloud.hashing.billing.v1.AppWithdrawSetting) |  |  |
+| Info | [AppWithdrawSetting](#cloud-hashing-billing-v1-AppWithdrawSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateCoinAccountTransactionRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateCoinAccountTransactionRequest"></a>
 
 ### UpdateCoinAccountTransactionRequest
 
@@ -6099,14 +6099,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) |  |  |
+| Info | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateCoinAccountTransactionResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateCoinAccountTransactionResponse"></a>
 
 ### UpdateCoinAccountTransactionResponse
 
@@ -6114,14 +6114,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinAccountTransaction](#cloud.hashing.billing.v1.CoinAccountTransaction) |  |  |
+| Info | [CoinAccountTransaction](#cloud-hashing-billing-v1-CoinAccountTransaction) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateCoinSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateCoinSettingRequest"></a>
 
 ### UpdateCoinSettingRequest
 
@@ -6129,14 +6129,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinSetting](#cloud.hashing.billing.v1.CoinSetting) |  |  |
+| Info | [CoinSetting](#cloud-hashing-billing-v1-CoinSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateCoinSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateCoinSettingResponse"></a>
 
 ### UpdateCoinSettingResponse
 
@@ -6144,14 +6144,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinSetting](#cloud.hashing.billing.v1.CoinSetting) |  |  |
+| Info | [CoinSetting](#cloud-hashing-billing-v1-CoinSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateGoodBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateGoodBenefitRequest"></a>
 
 ### UpdateGoodBenefitRequest
 
@@ -6159,14 +6159,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit) |  |  |
+| Info | [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateGoodBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateGoodBenefitResponse"></a>
 
 ### UpdateGoodBenefitResponse
 
@@ -6174,14 +6174,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodBenefit](#cloud.hashing.billing.v1.GoodBenefit) |  |  |
+| Info | [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateGoodPaymentRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateGoodPaymentRequest"></a>
 
 ### UpdateGoodPaymentRequest
 
@@ -6189,14 +6189,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) |  |  |
+| Info | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateGoodPaymentResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateGoodPaymentResponse"></a>
 
 ### UpdateGoodPaymentResponse
 
@@ -6204,14 +6204,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [GoodPayment](#cloud.hashing.billing.v1.GoodPayment) |  |  |
+| Info | [GoodPayment](#cloud-hashing-billing-v1-GoodPayment) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdatePlatformSettingRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdatePlatformSettingRequest"></a>
 
 ### UpdatePlatformSettingRequest
 
@@ -6219,14 +6219,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
+| Info | [PlatformSetting](#cloud-hashing-billing-v1-PlatformSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdatePlatformSettingResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdatePlatformSettingResponse"></a>
 
 ### UpdatePlatformSettingResponse
 
@@ -6234,14 +6234,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [PlatformSetting](#cloud.hashing.billing.v1.PlatformSetting) |  |  |
+| Info | [PlatformSetting](#cloud-hashing-billing-v1-PlatformSetting) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserDirectBenefitRequest"></a>
 
 ### UpdateUserDirectBenefitRequest
 
@@ -6249,14 +6249,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+| Info | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserDirectBenefitResponse"></a>
 
 ### UpdateUserDirectBenefitResponse
 
@@ -6264,14 +6264,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserDirectBenefit](#cloud.hashing.billing.v1.UserDirectBenefit) |  |  |
+| Info | [UserDirectBenefit](#cloud-hashing-billing-v1-UserDirectBenefit) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserPaymentBalanceRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserPaymentBalanceRequest"></a>
 
 ### UpdateUserPaymentBalanceRequest
 
@@ -6279,14 +6279,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+| Info | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserPaymentBalanceResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserPaymentBalanceResponse"></a>
 
 ### UpdateUserPaymentBalanceResponse
 
@@ -6294,14 +6294,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserPaymentBalance](#cloud.hashing.billing.v1.UserPaymentBalance) |  |  |
+| Info | [UserPaymentBalance](#cloud-hashing-billing-v1-UserPaymentBalance) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserWithdrawItemRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserWithdrawItemRequest"></a>
 
 ### UpdateUserWithdrawItemRequest
 
@@ -6309,14 +6309,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Info | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserWithdrawItemResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserWithdrawItemResponse"></a>
 
 ### UpdateUserWithdrawItemResponse
 
@@ -6324,14 +6324,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdrawItem](#cloud.hashing.billing.v1.UserWithdrawItem) |  |  |
+| Info | [UserWithdrawItem](#cloud-hashing-billing-v1-UserWithdrawItem) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserWithdrawRequest"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserWithdrawRequest"></a>
 
 ### UpdateUserWithdrawRequest
 
@@ -6339,14 +6339,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Info | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UpdateUserWithdrawResponse"></a>
+<a name="cloud-hashing-billing-v1-UpdateUserWithdrawResponse"></a>
 
 ### UpdateUserWithdrawResponse
 
@@ -6354,14 +6354,14 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
+| Info | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UserBenefit"></a>
+<a name="cloud-hashing-billing-v1-UserBenefit"></a>
 
 ### UserBenefit
 
@@ -6385,7 +6385,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.UserDirectBenefit"></a>
+<a name="cloud-hashing-billing-v1-UserDirectBenefit"></a>
 
 ### UserDirectBenefit
 
@@ -6404,7 +6404,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.UserPaymentBalance"></a>
+<a name="cloud-hashing-billing-v1-UserPaymentBalance"></a>
 
 ### UserPaymentBalance
 
@@ -6424,7 +6424,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.UserWithdraw"></a>
+<a name="cloud-hashing-billing-v1-UserWithdraw"></a>
 
 ### UserWithdraw
 
@@ -6447,7 +6447,7 @@ Cloud Hashing Billing
 
 
 
-<a name="cloud.hashing.billing.v1.UserWithdrawAccount"></a>
+<a name="cloud-hashing-billing-v1-UserWithdrawAccount"></a>
 
 ### UserWithdrawAccount
 
@@ -6455,15 +6455,15 @@ Cloud Hashing Billing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Withdraw | [UserWithdraw](#cloud.hashing.billing.v1.UserWithdraw) |  |  |
-| Account | [CoinAccountInfo](#cloud.hashing.billing.v1.CoinAccountInfo) |  |  |
+| Withdraw | [UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
+| Account | [CoinAccountInfo](#cloud-hashing-billing-v1-CoinAccountInfo) |  |  |
 
 
 
 
 
 
-<a name="cloud.hashing.billing.v1.UserWithdrawItem"></a>
+<a name="cloud-hashing-billing-v1-UserWithdrawItem"></a>
 
 ### UserWithdrawItem
 
@@ -6491,101 +6491,101 @@ Cloud Hashing Billing
  
 
 
-<a name="cloud.hashing.billing.v1.CloudHashingBilling"></a>
+<a name="cloud-hashing-billing-v1-CloudHashingBilling"></a>
 
 ### CloudHashingBilling
 Cloud Hashing Billing
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google.protobuf.Empty) | [.npool.v1.VersionResponse](#npool.v1.VersionResponse) | Method Version |
-| CreateCoinAccount | [CreateCoinAccountRequest](#cloud.hashing.billing.v1.CreateCoinAccountRequest) | [CreateCoinAccountResponse](#cloud.hashing.billing.v1.CreateCoinAccountResponse) |  |
-| GetCoinAccount | [GetCoinAccountRequest](#cloud.hashing.billing.v1.GetCoinAccountRequest) | [GetCoinAccountResponse](#cloud.hashing.billing.v1.GetCoinAccountResponse) |  |
-| GetCoinAccountByCoinAddress | [GetCoinAccountByCoinAddressRequest](#cloud.hashing.billing.v1.GetCoinAccountByCoinAddressRequest) | [GetCoinAccountByCoinAddressResponse](#cloud.hashing.billing.v1.GetCoinAccountByCoinAddressResponse) |  |
-| GetCoinAccounts | [GetCoinAccountsRequest](#cloud.hashing.billing.v1.GetCoinAccountsRequest) | [GetCoinAccountsResponse](#cloud.hashing.billing.v1.GetCoinAccountsResponse) |  |
-| DeleteCoinAccount | [DeleteCoinAccountRequest](#cloud.hashing.billing.v1.DeleteCoinAccountRequest) | [DeleteCoinAccountResponse](#cloud.hashing.billing.v1.DeleteCoinAccountResponse) |  |
-| CreateCoinAccountTransaction | [CreateCoinAccountTransactionRequest](#cloud.hashing.billing.v1.CreateCoinAccountTransactionRequest) | [CreateCoinAccountTransactionResponse](#cloud.hashing.billing.v1.CreateCoinAccountTransactionResponse) |  |
-| GetCoinAccountTransaction | [GetCoinAccountTransactionRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionRequest) | [GetCoinAccountTransactionResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionResponse) |  |
-| GetCoinAccountTransactionsByCoinAccount | [GetCoinAccountTransactionsByCoinAccountRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountRequest) | [GetCoinAccountTransactionsByCoinAccountResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinAccountResponse) |  |
-| GetCoinAccountTransactionsByState | [GetCoinAccountTransactionsByStateRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateRequest) | [GetCoinAccountTransactionsByStateResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByStateResponse) |  |
-| GetCoinAccountTransactionsByGoodState | [GetCoinAccountTransactionsByGoodStateRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByGoodStateRequest) | [GetCoinAccountTransactionsByGoodStateResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByGoodStateResponse) |  |
-| GetCoinAccountTransactions | [GetCoinAccountTransactionsRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsRequest) | [GetCoinAccountTransactionsResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsResponse) |  |
-| GetCoinAccountTransactionsByAppUser | [GetCoinAccountTransactionsByAppUserRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserRequest) | [GetCoinAccountTransactionsByAppUserResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserResponse) |  |
-| GetCoinAccountTransactionsByAppUserCoin | [GetCoinAccountTransactionsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserCoinRequest) | [GetCoinAccountTransactionsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByAppUserCoinResponse) |  |
-| GetCoinAccountTransactionsByCoin | [GetCoinAccountTransactionsByCoinRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinRequest) | [GetCoinAccountTransactionsByCoinResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionsByCoinResponse) |  |
-| UpdateCoinAccountTransaction | [UpdateCoinAccountTransactionRequest](#cloud.hashing.billing.v1.UpdateCoinAccountTransactionRequest) | [UpdateCoinAccountTransactionResponse](#cloud.hashing.billing.v1.UpdateCoinAccountTransactionResponse) |  |
-| GetCoinAccountTransactionDetail | [GetCoinAccountTransactionDetailRequest](#cloud.hashing.billing.v1.GetCoinAccountTransactionDetailRequest) | [GetCoinAccountTransactionDetailResponse](#cloud.hashing.billing.v1.GetCoinAccountTransactionDetailResponse) |  |
-| DeleteCoinAccountTransaction | [DeleteCoinAccountTransactionRequest](#cloud.hashing.billing.v1.DeleteCoinAccountTransactionRequest) | [DeleteCoinAccountTransactionResponse](#cloud.hashing.billing.v1.DeleteCoinAccountTransactionResponse) |  |
-| CreatePlatformBenefit | [CreatePlatformBenefitRequest](#cloud.hashing.billing.v1.CreatePlatformBenefitRequest) | [CreatePlatformBenefitResponse](#cloud.hashing.billing.v1.CreatePlatformBenefitResponse) |  |
-| GetLatestPlatformBenefitByGood | [GetLatestPlatformBenefitByGoodRequest](#cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodRequest) | [GetLatestPlatformBenefitByGoodResponse](#cloud.hashing.billing.v1.GetLatestPlatformBenefitByGoodResponse) |  |
-| GetPlatformBenefitsByGood | [GetPlatformBenefitsByGoodRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodRequest) | [GetPlatformBenefitsByGoodResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsByGoodResponse) |  |
-| GetPlatformBenefits | [GetPlatformBenefitsRequest](#cloud.hashing.billing.v1.GetPlatformBenefitsRequest) | [GetPlatformBenefitsResponse](#cloud.hashing.billing.v1.GetPlatformBenefitsResponse) |  |
-| GetPlatformBenefit | [GetPlatformBenefitRequest](#cloud.hashing.billing.v1.GetPlatformBenefitRequest) | [GetPlatformBenefitResponse](#cloud.hashing.billing.v1.GetPlatformBenefitResponse) |  |
-| GetPlatformBenefitDetail | [GetPlatformBenefitDetailRequest](#cloud.hashing.billing.v1.GetPlatformBenefitDetailRequest) | [GetPlatformBenefitDetailResponse](#cloud.hashing.billing.v1.GetPlatformBenefitDetailResponse) |  |
-| CreatePlatformSetting | [CreatePlatformSettingRequest](#cloud.hashing.billing.v1.CreatePlatformSettingRequest) | [CreatePlatformSettingResponse](#cloud.hashing.billing.v1.CreatePlatformSettingResponse) |  |
-| UpdatePlatformSetting | [UpdatePlatformSettingRequest](#cloud.hashing.billing.v1.UpdatePlatformSettingRequest) | [UpdatePlatformSettingResponse](#cloud.hashing.billing.v1.UpdatePlatformSettingResponse) |  |
-| GetPlatformSetting | [GetPlatformSettingRequest](#cloud.hashing.billing.v1.GetPlatformSettingRequest) | [GetPlatformSettingResponse](#cloud.hashing.billing.v1.GetPlatformSettingResponse) |  |
-| CreateUserBenefit | [CreateUserBenefitRequest](#cloud.hashing.billing.v1.CreateUserBenefitRequest) | [CreateUserBenefitResponse](#cloud.hashing.billing.v1.CreateUserBenefitResponse) |  |
-| GetUserBenefitsByAppUser | [GetUserBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserRequest) | [GetUserBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserResponse) |  |
-| GetUserBenefitsByAppUserCoin | [GetUserBenefitsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinRequest) | [GetUserBenefitsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppUserCoinResponse) |  |
-| GetUserBenefitsByApp | [GetUserBenefitsByAppRequest](#cloud.hashing.billing.v1.GetUserBenefitsByAppRequest) | [GetUserBenefitsByAppResponse](#cloud.hashing.billing.v1.GetUserBenefitsByAppResponse) |  |
-| GetUserBenefits | [GetUserBenefitsRequest](#cloud.hashing.billing.v1.GetUserBenefitsRequest) | [GetUserBenefitsResponse](#cloud.hashing.billing.v1.GetUserBenefitsResponse) |  |
-| GetLatestUserBenefitByGoodAppUser | [GetLatestUserBenefitByGoodAppUserRequest](#cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserRequest) | [GetLatestUserBenefitByGoodAppUserResponse](#cloud.hashing.billing.v1.GetLatestUserBenefitByGoodAppUserResponse) |  |
-| CreateCoinSetting | [CreateCoinSettingRequest](#cloud.hashing.billing.v1.CreateCoinSettingRequest) | [CreateCoinSettingResponse](#cloud.hashing.billing.v1.CreateCoinSettingResponse) |  |
-| UpdateCoinSetting | [UpdateCoinSettingRequest](#cloud.hashing.billing.v1.UpdateCoinSettingRequest) | [UpdateCoinSettingResponse](#cloud.hashing.billing.v1.UpdateCoinSettingResponse) |  |
-| GetCoinSetting | [GetCoinSettingRequest](#cloud.hashing.billing.v1.GetCoinSettingRequest) | [GetCoinSettingResponse](#cloud.hashing.billing.v1.GetCoinSettingResponse) |  |
-| GetCoinSettingByCoin | [GetCoinSettingByCoinRequest](#cloud.hashing.billing.v1.GetCoinSettingByCoinRequest) | [GetCoinSettingByCoinResponse](#cloud.hashing.billing.v1.GetCoinSettingByCoinResponse) |  |
-| CreateGoodBenefit | [CreateGoodBenefitRequest](#cloud.hashing.billing.v1.CreateGoodBenefitRequest) | [CreateGoodBenefitResponse](#cloud.hashing.billing.v1.CreateGoodBenefitResponse) |  |
-| UpdateGoodBenefit | [UpdateGoodBenefitRequest](#cloud.hashing.billing.v1.UpdateGoodBenefitRequest) | [UpdateGoodBenefitResponse](#cloud.hashing.billing.v1.UpdateGoodBenefitResponse) |  |
-| GetGoodBenefit | [GetGoodBenefitRequest](#cloud.hashing.billing.v1.GetGoodBenefitRequest) | [GetGoodBenefitResponse](#cloud.hashing.billing.v1.GetGoodBenefitResponse) |  |
-| GetGoodBenefitByGood | [GetGoodBenefitByGoodRequest](#cloud.hashing.billing.v1.GetGoodBenefitByGoodRequest) | [GetGoodBenefitByGoodResponse](#cloud.hashing.billing.v1.GetGoodBenefitByGoodResponse) |  |
-| CreateGoodPayment | [CreateGoodPaymentRequest](#cloud.hashing.billing.v1.CreateGoodPaymentRequest) | [CreateGoodPaymentResponse](#cloud.hashing.billing.v1.CreateGoodPaymentResponse) |  |
-| UpdateGoodPayment | [UpdateGoodPaymentRequest](#cloud.hashing.billing.v1.UpdateGoodPaymentRequest) | [UpdateGoodPaymentResponse](#cloud.hashing.billing.v1.UpdateGoodPaymentResponse) |  |
-| GetGoodPayment | [GetGoodPaymentRequest](#cloud.hashing.billing.v1.GetGoodPaymentRequest) | [GetGoodPaymentResponse](#cloud.hashing.billing.v1.GetGoodPaymentResponse) |  |
-| GetGoodPayments | [GetGoodPaymentsRequest](#cloud.hashing.billing.v1.GetGoodPaymentsRequest) | [GetGoodPaymentsResponse](#cloud.hashing.billing.v1.GetGoodPaymentsResponse) |  |
-| GetGoodPaymentsByGood | [GetGoodPaymentsByGoodRequest](#cloud.hashing.billing.v1.GetGoodPaymentsByGoodRequest) | [GetGoodPaymentsByGoodResponse](#cloud.hashing.billing.v1.GetGoodPaymentsByGoodResponse) |  |
-| GetIdleGoodPaymentsByGood | [GetIdleGoodPaymentsByGoodRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodRequest) | [GetIdleGoodPaymentsByGoodResponse](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodResponse) |  |
-| GetIdleGoodPaymentsByGoodPaymentCoin | [GetIdleGoodPaymentsByGoodPaymentCoinRequest](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinRequest) | [GetIdleGoodPaymentsByGoodPaymentCoinResponse](#cloud.hashing.billing.v1.GetIdleGoodPaymentsByGoodPaymentCoinResponse) |  |
-| GetGoodPaymentByAccount | [GetGoodPaymentByAccountRequest](#cloud.hashing.billing.v1.GetGoodPaymentByAccountRequest) | [GetGoodPaymentByAccountResponse](#cloud.hashing.billing.v1.GetGoodPaymentByAccountResponse) |  |
-| CreateUserWithdraw | [CreateUserWithdrawRequest](#cloud.hashing.billing.v1.CreateUserWithdrawRequest) | [CreateUserWithdrawResponse](#cloud.hashing.billing.v1.CreateUserWithdrawResponse) |  |
-| UpdateUserWithdraw | [UpdateUserWithdrawRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawRequest) | [UpdateUserWithdrawResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawResponse) |  |
-| GetUserWithdraw | [GetUserWithdrawRequest](#cloud.hashing.billing.v1.GetUserWithdrawRequest) | [GetUserWithdrawResponse](#cloud.hashing.billing.v1.GetUserWithdrawResponse) |  |
-| GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserResponse) |  |
-| GetUserWithdrawsByAppUserCoin | [GetUserWithdrawsByAppUserCoinRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserCoinRequest) | [GetUserWithdrawsByAppUserCoinResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByAppUserCoinResponse) |  |
-| GetUserWithdrawsByOtherAppUser | [GetUserWithdrawsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserRequest) | [GetUserWithdrawsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawsByOtherAppUserResponse) |  |
-| GetUserWithdrawAccount | [GetUserWithdrawAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountRequest) | [GetUserWithdrawAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountResponse) |  |
-| GetUserWithdrawAccountsByAppUser | [GetUserWithdrawAccountsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserRequest) | [GetUserWithdrawAccountsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByAppUserResponse) |  |
-| GetUserWithdrawAccountsByOtherAppUser | [GetUserWithdrawAccountsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserRequest) | [GetUserWithdrawAccountsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawAccountsByOtherAppUserResponse) |  |
-| GetUserWithdrawByAccount | [GetUserWithdrawByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawByAccountRequest) | [GetUserWithdrawByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawByAccountResponse) |  |
-| CreateUserDirectBenefit | [CreateUserDirectBenefitRequest](#cloud.hashing.billing.v1.CreateUserDirectBenefitRequest) | [CreateUserDirectBenefitResponse](#cloud.hashing.billing.v1.CreateUserDirectBenefitResponse) |  |
-| UpdateUserDirectBenefit | [UpdateUserDirectBenefitRequest](#cloud.hashing.billing.v1.UpdateUserDirectBenefitRequest) | [UpdateUserDirectBenefitResponse](#cloud.hashing.billing.v1.UpdateUserDirectBenefitResponse) |  |
-| GetUserDirectBenefit | [GetUserDirectBenefitRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitRequest) | [GetUserDirectBenefitResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitResponse) |  |
-| GetUserDirectBenefitsByAppUser | [GetUserDirectBenefitsByAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserRequest) | [GetUserDirectBenefitsByAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByAppUserResponse) |  |
-| GetUserDirectBenefitsByOtherAppUser | [GetUserDirectBenefitsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserRequest) | [GetUserDirectBenefitsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitsByOtherAppUserResponse) |  |
-| GetUserDirectBenefitByAccount | [GetUserDirectBenefitByAccountRequest](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountRequest) | [GetUserDirectBenefitByAccountResponse](#cloud.hashing.billing.v1.GetUserDirectBenefitByAccountResponse) |  |
-| CreateUserWithdrawItem | [CreateUserWithdrawItemRequest](#cloud.hashing.billing.v1.CreateUserWithdrawItemRequest) | [CreateUserWithdrawItemResponse](#cloud.hashing.billing.v1.CreateUserWithdrawItemResponse) |  |
-| UpdateUserWithdrawItem | [UpdateUserWithdrawItemRequest](#cloud.hashing.billing.v1.UpdateUserWithdrawItemRequest) | [UpdateUserWithdrawItemResponse](#cloud.hashing.billing.v1.UpdateUserWithdrawItemResponse) |  |
-| GetUserWithdrawItem | [GetUserWithdrawItemRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemRequest) | [GetUserWithdrawItemResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemResponse) |  |
-| GetUserWithdrawItemsByAccount | [GetUserWithdrawItemsByAccountRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountRequest) | [GetUserWithdrawItemsByAccountResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAccountResponse) |  |
-| GetUserWithdrawItemsByAppUser | [GetUserWithdrawItemsByAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserRequest) | [GetUserWithdrawItemsByAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserResponse) |  |
-| GetUserWithdrawItemsByAppUserWithdrawType | [GetUserWithdrawItemsByAppUserWithdrawTypeRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserWithdrawTypeRequest) | [GetUserWithdrawItemsByAppUserWithdrawTypeResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserWithdrawTypeResponse) |  |
-| GetUserWithdrawItemsByAppUserCoinWithdrawType | [GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest) | [GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse) |  |
-| GetUserWithdrawItemsByOtherAppUser | [GetUserWithdrawItemsByOtherAppUserRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserRequest) | [GetUserWithdrawItemsByOtherAppUserResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsByOtherAppUserResponse) |  |
-| GetUserWithdrawItems | [GetUserWithdrawItemsRequest](#cloud.hashing.billing.v1.GetUserWithdrawItemsRequest) | [GetUserWithdrawItemsResponse](#cloud.hashing.billing.v1.GetUserWithdrawItemsResponse) |  |
-| CreateAppWithdrawSetting | [CreateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingRequest) | [CreateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingResponse) |  |
-| CreateAppWithdrawSettingForOtherApp | [CreateAppWithdrawSettingForOtherAppRequest](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppRequest) | [CreateAppWithdrawSettingForOtherAppResponse](#cloud.hashing.billing.v1.CreateAppWithdrawSettingForOtherAppResponse) |  |
-| UpdateAppWithdrawSetting | [UpdateAppWithdrawSettingRequest](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingRequest) | [UpdateAppWithdrawSettingResponse](#cloud.hashing.billing.v1.UpdateAppWithdrawSettingResponse) |  |
-| GetAppWithdrawSetting | [GetAppWithdrawSettingRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingRequest) | [GetAppWithdrawSettingResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingResponse) |  |
-| GetAppWithdrawSettingsByApp | [GetAppWithdrawSettingsByAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppRequest) | [GetAppWithdrawSettingsByAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByAppResponse) |  |
-| GetAppWithdrawSettingByAppCoin | [GetAppWithdrawSettingByAppCoinRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinRequest) | [GetAppWithdrawSettingByAppCoinResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingByAppCoinResponse) |  |
-| GetAppWithdrawSettingsByOtherApp | [GetAppWithdrawSettingsByOtherAppRequest](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppRequest) | [GetAppWithdrawSettingsByOtherAppResponse](#cloud.hashing.billing.v1.GetAppWithdrawSettingsByOtherAppResponse) |  |
-| CreateUserPaymentBalance | [CreateUserPaymentBalanceRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceRequest) | [CreateUserPaymentBalanceResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceResponse) |  |
-| CreateUserPaymentBalanceForOtherAppUser | [CreateUserPaymentBalanceForOtherAppUserRequest](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserRequest) | [CreateUserPaymentBalanceForOtherAppUserResponse](#cloud.hashing.billing.v1.CreateUserPaymentBalanceForOtherAppUserResponse) |  |
-| UpdateUserPaymentBalance | [UpdateUserPaymentBalanceRequest](#cloud.hashing.billing.v1.UpdateUserPaymentBalanceRequest) | [UpdateUserPaymentBalanceResponse](#cloud.hashing.billing.v1.UpdateUserPaymentBalanceResponse) |  |
-| GetUserPaymentBalance | [GetUserPaymentBalanceRequest](#cloud.hashing.billing.v1.GetUserPaymentBalanceRequest) | [GetUserPaymentBalanceResponse](#cloud.hashing.billing.v1.GetUserPaymentBalanceResponse) |  |
-| GetUserPaymentBalancesByApp | [GetUserPaymentBalancesByAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppRequest) | [GetUserPaymentBalancesByAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppResponse) |  |
-| GetUserPaymentBalancesByOtherApp | [GetUserPaymentBalancesByOtherAppRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppRequest) | [GetUserPaymentBalancesByOtherAppResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByOtherAppResponse) |  |
-| GetUserPaymentBalancesByAppUser | [GetUserPaymentBalancesByAppUserRequest](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserRequest) | [GetUserPaymentBalancesByAppUserResponse](#cloud.hashing.billing.v1.GetUserPaymentBalancesByAppUserResponse) |  |
+| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) | Method Version |
+| CreateCoinAccount | [CreateCoinAccountRequest](#cloud-hashing-billing-v1-CreateCoinAccountRequest) | [CreateCoinAccountResponse](#cloud-hashing-billing-v1-CreateCoinAccountResponse) |  |
+| GetCoinAccount | [GetCoinAccountRequest](#cloud-hashing-billing-v1-GetCoinAccountRequest) | [GetCoinAccountResponse](#cloud-hashing-billing-v1-GetCoinAccountResponse) |  |
+| GetCoinAccountByCoinAddress | [GetCoinAccountByCoinAddressRequest](#cloud-hashing-billing-v1-GetCoinAccountByCoinAddressRequest) | [GetCoinAccountByCoinAddressResponse](#cloud-hashing-billing-v1-GetCoinAccountByCoinAddressResponse) |  |
+| GetCoinAccounts | [GetCoinAccountsRequest](#cloud-hashing-billing-v1-GetCoinAccountsRequest) | [GetCoinAccountsResponse](#cloud-hashing-billing-v1-GetCoinAccountsResponse) |  |
+| DeleteCoinAccount | [DeleteCoinAccountRequest](#cloud-hashing-billing-v1-DeleteCoinAccountRequest) | [DeleteCoinAccountResponse](#cloud-hashing-billing-v1-DeleteCoinAccountResponse) |  |
+| CreateCoinAccountTransaction | [CreateCoinAccountTransactionRequest](#cloud-hashing-billing-v1-CreateCoinAccountTransactionRequest) | [CreateCoinAccountTransactionResponse](#cloud-hashing-billing-v1-CreateCoinAccountTransactionResponse) |  |
+| GetCoinAccountTransaction | [GetCoinAccountTransactionRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionRequest) | [GetCoinAccountTransactionResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionResponse) |  |
+| GetCoinAccountTransactionsByCoinAccount | [GetCoinAccountTransactionsByCoinAccountRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinAccountRequest) | [GetCoinAccountTransactionsByCoinAccountResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinAccountResponse) |  |
+| GetCoinAccountTransactionsByState | [GetCoinAccountTransactionsByStateRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByStateRequest) | [GetCoinAccountTransactionsByStateResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByStateResponse) |  |
+| GetCoinAccountTransactionsByGoodState | [GetCoinAccountTransactionsByGoodStateRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByGoodStateRequest) | [GetCoinAccountTransactionsByGoodStateResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByGoodStateResponse) |  |
+| GetCoinAccountTransactions | [GetCoinAccountTransactionsRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsRequest) | [GetCoinAccountTransactionsResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsResponse) |  |
+| GetCoinAccountTransactionsByAppUser | [GetCoinAccountTransactionsByAppUserRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserRequest) | [GetCoinAccountTransactionsByAppUserResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserResponse) |  |
+| GetCoinAccountTransactionsByAppUserCoin | [GetCoinAccountTransactionsByAppUserCoinRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserCoinRequest) | [GetCoinAccountTransactionsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByAppUserCoinResponse) |  |
+| GetCoinAccountTransactionsByCoin | [GetCoinAccountTransactionsByCoinRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinRequest) | [GetCoinAccountTransactionsByCoinResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionsByCoinResponse) |  |
+| UpdateCoinAccountTransaction | [UpdateCoinAccountTransactionRequest](#cloud-hashing-billing-v1-UpdateCoinAccountTransactionRequest) | [UpdateCoinAccountTransactionResponse](#cloud-hashing-billing-v1-UpdateCoinAccountTransactionResponse) |  |
+| GetCoinAccountTransactionDetail | [GetCoinAccountTransactionDetailRequest](#cloud-hashing-billing-v1-GetCoinAccountTransactionDetailRequest) | [GetCoinAccountTransactionDetailResponse](#cloud-hashing-billing-v1-GetCoinAccountTransactionDetailResponse) |  |
+| DeleteCoinAccountTransaction | [DeleteCoinAccountTransactionRequest](#cloud-hashing-billing-v1-DeleteCoinAccountTransactionRequest) | [DeleteCoinAccountTransactionResponse](#cloud-hashing-billing-v1-DeleteCoinAccountTransactionResponse) |  |
+| CreatePlatformBenefit | [CreatePlatformBenefitRequest](#cloud-hashing-billing-v1-CreatePlatformBenefitRequest) | [CreatePlatformBenefitResponse](#cloud-hashing-billing-v1-CreatePlatformBenefitResponse) |  |
+| GetLatestPlatformBenefitByGood | [GetLatestPlatformBenefitByGoodRequest](#cloud-hashing-billing-v1-GetLatestPlatformBenefitByGoodRequest) | [GetLatestPlatformBenefitByGoodResponse](#cloud-hashing-billing-v1-GetLatestPlatformBenefitByGoodResponse) |  |
+| GetPlatformBenefitsByGood | [GetPlatformBenefitsByGoodRequest](#cloud-hashing-billing-v1-GetPlatformBenefitsByGoodRequest) | [GetPlatformBenefitsByGoodResponse](#cloud-hashing-billing-v1-GetPlatformBenefitsByGoodResponse) |  |
+| GetPlatformBenefits | [GetPlatformBenefitsRequest](#cloud-hashing-billing-v1-GetPlatformBenefitsRequest) | [GetPlatformBenefitsResponse](#cloud-hashing-billing-v1-GetPlatformBenefitsResponse) |  |
+| GetPlatformBenefit | [GetPlatformBenefitRequest](#cloud-hashing-billing-v1-GetPlatformBenefitRequest) | [GetPlatformBenefitResponse](#cloud-hashing-billing-v1-GetPlatformBenefitResponse) |  |
+| GetPlatformBenefitDetail | [GetPlatformBenefitDetailRequest](#cloud-hashing-billing-v1-GetPlatformBenefitDetailRequest) | [GetPlatformBenefitDetailResponse](#cloud-hashing-billing-v1-GetPlatformBenefitDetailResponse) |  |
+| CreatePlatformSetting | [CreatePlatformSettingRequest](#cloud-hashing-billing-v1-CreatePlatformSettingRequest) | [CreatePlatformSettingResponse](#cloud-hashing-billing-v1-CreatePlatformSettingResponse) |  |
+| UpdatePlatformSetting | [UpdatePlatformSettingRequest](#cloud-hashing-billing-v1-UpdatePlatformSettingRequest) | [UpdatePlatformSettingResponse](#cloud-hashing-billing-v1-UpdatePlatformSettingResponse) |  |
+| GetPlatformSetting | [GetPlatformSettingRequest](#cloud-hashing-billing-v1-GetPlatformSettingRequest) | [GetPlatformSettingResponse](#cloud-hashing-billing-v1-GetPlatformSettingResponse) |  |
+| CreateUserBenefit | [CreateUserBenefitRequest](#cloud-hashing-billing-v1-CreateUserBenefitRequest) | [CreateUserBenefitResponse](#cloud-hashing-billing-v1-CreateUserBenefitResponse) |  |
+| GetUserBenefitsByAppUser | [GetUserBenefitsByAppUserRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserRequest) | [GetUserBenefitsByAppUserResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserResponse) |  |
+| GetUserBenefitsByAppUserCoin | [GetUserBenefitsByAppUserCoinRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinRequest) | [GetUserBenefitsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinResponse) |  |
+| GetUserBenefitsByApp | [GetUserBenefitsByAppRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppRequest) | [GetUserBenefitsByAppResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppResponse) |  |
+| GetUserBenefits | [GetUserBenefitsRequest](#cloud-hashing-billing-v1-GetUserBenefitsRequest) | [GetUserBenefitsResponse](#cloud-hashing-billing-v1-GetUserBenefitsResponse) |  |
+| GetLatestUserBenefitByGoodAppUser | [GetLatestUserBenefitByGoodAppUserRequest](#cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserRequest) | [GetLatestUserBenefitByGoodAppUserResponse](#cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserResponse) |  |
+| CreateCoinSetting | [CreateCoinSettingRequest](#cloud-hashing-billing-v1-CreateCoinSettingRequest) | [CreateCoinSettingResponse](#cloud-hashing-billing-v1-CreateCoinSettingResponse) |  |
+| UpdateCoinSetting | [UpdateCoinSettingRequest](#cloud-hashing-billing-v1-UpdateCoinSettingRequest) | [UpdateCoinSettingResponse](#cloud-hashing-billing-v1-UpdateCoinSettingResponse) |  |
+| GetCoinSetting | [GetCoinSettingRequest](#cloud-hashing-billing-v1-GetCoinSettingRequest) | [GetCoinSettingResponse](#cloud-hashing-billing-v1-GetCoinSettingResponse) |  |
+| GetCoinSettingByCoin | [GetCoinSettingByCoinRequest](#cloud-hashing-billing-v1-GetCoinSettingByCoinRequest) | [GetCoinSettingByCoinResponse](#cloud-hashing-billing-v1-GetCoinSettingByCoinResponse) |  |
+| CreateGoodBenefit | [CreateGoodBenefitRequest](#cloud-hashing-billing-v1-CreateGoodBenefitRequest) | [CreateGoodBenefitResponse](#cloud-hashing-billing-v1-CreateGoodBenefitResponse) |  |
+| UpdateGoodBenefit | [UpdateGoodBenefitRequest](#cloud-hashing-billing-v1-UpdateGoodBenefitRequest) | [UpdateGoodBenefitResponse](#cloud-hashing-billing-v1-UpdateGoodBenefitResponse) |  |
+| GetGoodBenefit | [GetGoodBenefitRequest](#cloud-hashing-billing-v1-GetGoodBenefitRequest) | [GetGoodBenefitResponse](#cloud-hashing-billing-v1-GetGoodBenefitResponse) |  |
+| GetGoodBenefitByGood | [GetGoodBenefitByGoodRequest](#cloud-hashing-billing-v1-GetGoodBenefitByGoodRequest) | [GetGoodBenefitByGoodResponse](#cloud-hashing-billing-v1-GetGoodBenefitByGoodResponse) |  |
+| CreateGoodPayment | [CreateGoodPaymentRequest](#cloud-hashing-billing-v1-CreateGoodPaymentRequest) | [CreateGoodPaymentResponse](#cloud-hashing-billing-v1-CreateGoodPaymentResponse) |  |
+| UpdateGoodPayment | [UpdateGoodPaymentRequest](#cloud-hashing-billing-v1-UpdateGoodPaymentRequest) | [UpdateGoodPaymentResponse](#cloud-hashing-billing-v1-UpdateGoodPaymentResponse) |  |
+| GetGoodPayment | [GetGoodPaymentRequest](#cloud-hashing-billing-v1-GetGoodPaymentRequest) | [GetGoodPaymentResponse](#cloud-hashing-billing-v1-GetGoodPaymentResponse) |  |
+| GetGoodPayments | [GetGoodPaymentsRequest](#cloud-hashing-billing-v1-GetGoodPaymentsRequest) | [GetGoodPaymentsResponse](#cloud-hashing-billing-v1-GetGoodPaymentsResponse) |  |
+| GetGoodPaymentsByGood | [GetGoodPaymentsByGoodRequest](#cloud-hashing-billing-v1-GetGoodPaymentsByGoodRequest) | [GetGoodPaymentsByGoodResponse](#cloud-hashing-billing-v1-GetGoodPaymentsByGoodResponse) |  |
+| GetIdleGoodPaymentsByGood | [GetIdleGoodPaymentsByGoodRequest](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodRequest) | [GetIdleGoodPaymentsByGoodResponse](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodResponse) |  |
+| GetIdleGoodPaymentsByGoodPaymentCoin | [GetIdleGoodPaymentsByGoodPaymentCoinRequest](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodPaymentCoinRequest) | [GetIdleGoodPaymentsByGoodPaymentCoinResponse](#cloud-hashing-billing-v1-GetIdleGoodPaymentsByGoodPaymentCoinResponse) |  |
+| GetGoodPaymentByAccount | [GetGoodPaymentByAccountRequest](#cloud-hashing-billing-v1-GetGoodPaymentByAccountRequest) | [GetGoodPaymentByAccountResponse](#cloud-hashing-billing-v1-GetGoodPaymentByAccountResponse) |  |
+| CreateUserWithdraw | [CreateUserWithdrawRequest](#cloud-hashing-billing-v1-CreateUserWithdrawRequest) | [CreateUserWithdrawResponse](#cloud-hashing-billing-v1-CreateUserWithdrawResponse) |  |
+| UpdateUserWithdraw | [UpdateUserWithdrawRequest](#cloud-hashing-billing-v1-UpdateUserWithdrawRequest) | [UpdateUserWithdrawResponse](#cloud-hashing-billing-v1-UpdateUserWithdrawResponse) |  |
+| GetUserWithdraw | [GetUserWithdrawRequest](#cloud-hashing-billing-v1-GetUserWithdrawRequest) | [GetUserWithdrawResponse](#cloud-hashing-billing-v1-GetUserWithdrawResponse) |  |
+| GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserResponse) |  |
+| GetUserWithdrawsByAppUserCoin | [GetUserWithdrawsByAppUserCoinRequest](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserCoinRequest) | [GetUserWithdrawsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetUserWithdrawsByAppUserCoinResponse) |  |
+| GetUserWithdrawsByOtherAppUser | [GetUserWithdrawsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawsByOtherAppUserRequest) | [GetUserWithdrawsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawsByOtherAppUserResponse) |  |
+| GetUserWithdrawAccount | [GetUserWithdrawAccountRequest](#cloud-hashing-billing-v1-GetUserWithdrawAccountRequest) | [GetUserWithdrawAccountResponse](#cloud-hashing-billing-v1-GetUserWithdrawAccountResponse) |  |
+| GetUserWithdrawAccountsByAppUser | [GetUserWithdrawAccountsByAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByAppUserRequest) | [GetUserWithdrawAccountsByAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByAppUserResponse) |  |
+| GetUserWithdrawAccountsByOtherAppUser | [GetUserWithdrawAccountsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByOtherAppUserRequest) | [GetUserWithdrawAccountsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawAccountsByOtherAppUserResponse) |  |
+| GetUserWithdrawByAccount | [GetUserWithdrawByAccountRequest](#cloud-hashing-billing-v1-GetUserWithdrawByAccountRequest) | [GetUserWithdrawByAccountResponse](#cloud-hashing-billing-v1-GetUserWithdrawByAccountResponse) |  |
+| CreateUserDirectBenefit | [CreateUserDirectBenefitRequest](#cloud-hashing-billing-v1-CreateUserDirectBenefitRequest) | [CreateUserDirectBenefitResponse](#cloud-hashing-billing-v1-CreateUserDirectBenefitResponse) |  |
+| UpdateUserDirectBenefit | [UpdateUserDirectBenefitRequest](#cloud-hashing-billing-v1-UpdateUserDirectBenefitRequest) | [UpdateUserDirectBenefitResponse](#cloud-hashing-billing-v1-UpdateUserDirectBenefitResponse) |  |
+| GetUserDirectBenefit | [GetUserDirectBenefitRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitRequest) | [GetUserDirectBenefitResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitResponse) |  |
+| GetUserDirectBenefitsByAppUser | [GetUserDirectBenefitsByAppUserRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitsByAppUserRequest) | [GetUserDirectBenefitsByAppUserResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitsByAppUserResponse) |  |
+| GetUserDirectBenefitsByOtherAppUser | [GetUserDirectBenefitsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitsByOtherAppUserRequest) | [GetUserDirectBenefitsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitsByOtherAppUserResponse) |  |
+| GetUserDirectBenefitByAccount | [GetUserDirectBenefitByAccountRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitByAccountRequest) | [GetUserDirectBenefitByAccountResponse](#cloud-hashing-billing-v1-GetUserDirectBenefitByAccountResponse) |  |
+| CreateUserWithdrawItem | [CreateUserWithdrawItemRequest](#cloud-hashing-billing-v1-CreateUserWithdrawItemRequest) | [CreateUserWithdrawItemResponse](#cloud-hashing-billing-v1-CreateUserWithdrawItemResponse) |  |
+| UpdateUserWithdrawItem | [UpdateUserWithdrawItemRequest](#cloud-hashing-billing-v1-UpdateUserWithdrawItemRequest) | [UpdateUserWithdrawItemResponse](#cloud-hashing-billing-v1-UpdateUserWithdrawItemResponse) |  |
+| GetUserWithdrawItem | [GetUserWithdrawItemRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemRequest) | [GetUserWithdrawItemResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemResponse) |  |
+| GetUserWithdrawItemsByAccount | [GetUserWithdrawItemsByAccountRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAccountRequest) | [GetUserWithdrawItemsByAccountResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAccountResponse) |  |
+| GetUserWithdrawItemsByAppUser | [GetUserWithdrawItemsByAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserRequest) | [GetUserWithdrawItemsByAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserResponse) |  |
+| GetUserWithdrawItemsByAppUserWithdrawType | [GetUserWithdrawItemsByAppUserWithdrawTypeRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserWithdrawTypeRequest) | [GetUserWithdrawItemsByAppUserWithdrawTypeResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserWithdrawTypeResponse) |  |
+| GetUserWithdrawItemsByAppUserCoinWithdrawType | [GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest) | [GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByAppUserCoinWithdrawTypeResponse) |  |
+| GetUserWithdrawItemsByOtherAppUser | [GetUserWithdrawItemsByOtherAppUserRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsByOtherAppUserRequest) | [GetUserWithdrawItemsByOtherAppUserResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsByOtherAppUserResponse) |  |
+| GetUserWithdrawItems | [GetUserWithdrawItemsRequest](#cloud-hashing-billing-v1-GetUserWithdrawItemsRequest) | [GetUserWithdrawItemsResponse](#cloud-hashing-billing-v1-GetUserWithdrawItemsResponse) |  |
+| CreateAppWithdrawSetting | [CreateAppWithdrawSettingRequest](#cloud-hashing-billing-v1-CreateAppWithdrawSettingRequest) | [CreateAppWithdrawSettingResponse](#cloud-hashing-billing-v1-CreateAppWithdrawSettingResponse) |  |
+| CreateAppWithdrawSettingForOtherApp | [CreateAppWithdrawSettingForOtherAppRequest](#cloud-hashing-billing-v1-CreateAppWithdrawSettingForOtherAppRequest) | [CreateAppWithdrawSettingForOtherAppResponse](#cloud-hashing-billing-v1-CreateAppWithdrawSettingForOtherAppResponse) |  |
+| UpdateAppWithdrawSetting | [UpdateAppWithdrawSettingRequest](#cloud-hashing-billing-v1-UpdateAppWithdrawSettingRequest) | [UpdateAppWithdrawSettingResponse](#cloud-hashing-billing-v1-UpdateAppWithdrawSettingResponse) |  |
+| GetAppWithdrawSetting | [GetAppWithdrawSettingRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingRequest) | [GetAppWithdrawSettingResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingResponse) |  |
+| GetAppWithdrawSettingsByApp | [GetAppWithdrawSettingsByAppRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByAppRequest) | [GetAppWithdrawSettingsByAppResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByAppResponse) |  |
+| GetAppWithdrawSettingByAppCoin | [GetAppWithdrawSettingByAppCoinRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingByAppCoinRequest) | [GetAppWithdrawSettingByAppCoinResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingByAppCoinResponse) |  |
+| GetAppWithdrawSettingsByOtherApp | [GetAppWithdrawSettingsByOtherAppRequest](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByOtherAppRequest) | [GetAppWithdrawSettingsByOtherAppResponse](#cloud-hashing-billing-v1-GetAppWithdrawSettingsByOtherAppResponse) |  |
+| CreateUserPaymentBalance | [CreateUserPaymentBalanceRequest](#cloud-hashing-billing-v1-CreateUserPaymentBalanceRequest) | [CreateUserPaymentBalanceResponse](#cloud-hashing-billing-v1-CreateUserPaymentBalanceResponse) |  |
+| CreateUserPaymentBalanceForOtherAppUser | [CreateUserPaymentBalanceForOtherAppUserRequest](#cloud-hashing-billing-v1-CreateUserPaymentBalanceForOtherAppUserRequest) | [CreateUserPaymentBalanceForOtherAppUserResponse](#cloud-hashing-billing-v1-CreateUserPaymentBalanceForOtherAppUserResponse) |  |
+| UpdateUserPaymentBalance | [UpdateUserPaymentBalanceRequest](#cloud-hashing-billing-v1-UpdateUserPaymentBalanceRequest) | [UpdateUserPaymentBalanceResponse](#cloud-hashing-billing-v1-UpdateUserPaymentBalanceResponse) |  |
+| GetUserPaymentBalance | [GetUserPaymentBalanceRequest](#cloud-hashing-billing-v1-GetUserPaymentBalanceRequest) | [GetUserPaymentBalanceResponse](#cloud-hashing-billing-v1-GetUserPaymentBalanceResponse) |  |
+| GetUserPaymentBalancesByApp | [GetUserPaymentBalancesByAppRequest](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppRequest) | [GetUserPaymentBalancesByAppResponse](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppResponse) |  |
+| GetUserPaymentBalancesByOtherApp | [GetUserPaymentBalancesByOtherAppRequest](#cloud-hashing-billing-v1-GetUserPaymentBalancesByOtherAppRequest) | [GetUserPaymentBalancesByOtherAppResponse](#cloud-hashing-billing-v1-GetUserPaymentBalancesByOtherAppResponse) |  |
+| GetUserPaymentBalancesByAppUser | [GetUserPaymentBalancesByAppUserRequest](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppUserRequest) | [GetUserPaymentBalancesByAppUserResponse](#cloud-hashing-billing-v1-GetUserPaymentBalancesByAppUserResponse) |  |
 
  
 
