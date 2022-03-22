@@ -1567,6 +1567,7 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [review.service.v1.Review](#review-service-v1-Review) |  |  |
+| LangID | [string](#string) |  |  |
 
 
 
@@ -3256,6 +3257,7 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [review.service.v1.Review](#review-service-v1-Review) |  |  |
+| LangID | [string](#string) |  |  |
 
 
 
