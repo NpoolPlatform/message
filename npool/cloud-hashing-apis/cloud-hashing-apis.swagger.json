@@ -3463,6 +3463,9 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Review"
+        },
+        "LangID": {
+          "type": "string"
         }
       }
     },

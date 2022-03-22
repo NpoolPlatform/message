@@ -523,6 +523,7 @@ export type GetCommissionByAppUserResponse = {
 
 export type UpdateKycReviewRequest = {
   info?: ReviewServiceV1Review-service.Review
+  langID?: string
 }
 
 export type UpdateKycReviewResponse = {
