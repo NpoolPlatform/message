@@ -183,12 +183,12 @@ fil
 | CoinTypefilecoin | 1 | mainnet |
 | CoinTypebitcoin | 2 |  |
 | CoinTypeethereum | 3 |  |
-| CoinTypeusdt | 4 |  |
+| CoinTypeusdterc20 | 4 |  |
 | CoinTypespacemesh | 5 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
-| CoinTypetusdt | 103 |  |
+| CoinTypetusdterc20 | 103 |  |
 | CoinTypetspacemesh | 104 |  |
 
 
@@ -354,12 +354,12 @@ fil
 | CoinTypefilecoin | 1 | mainnet |
 | CoinTypebitcoin | 2 |  |
 | CoinTypeethereum | 3 |  |
-| CoinTypeusdt | 4 |  |
+| CoinTypeusdterc20 | 4 |  |
 | CoinTypespacemesh | 5 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
-| CoinTypetusdt | 103 |  |
+| CoinTypetusdterc20 | 103 |  |
 | CoinTypetspacemesh | 104 |  |
 
 

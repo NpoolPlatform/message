@@ -9,12 +9,12 @@ export enum CoinType {
   CoinTypefilecoin = "CoinTypefilecoin",
   CoinTypebitcoin = "CoinTypebitcoin",
   CoinTypeethereum = "CoinTypeethereum",
-  CoinTypeusdt = "CoinTypeusdt",
+  CoinTypeusdterc20 = "CoinTypeusdterc20",
   CoinTypespacemesh = "CoinTypespacemesh",
   CoinTypetfilecoin = "CoinTypetfilecoin",
   CoinTypetbitcoin = "CoinTypetbitcoin",
   CoinTypetethereum = "CoinTypetethereum",
-  CoinTypetusdt = "CoinTypetusdt",
+  CoinTypetusdterc20 = "CoinTypetusdterc20",
   CoinTypetspacemesh = "CoinTypetspacemesh",
 }
 
