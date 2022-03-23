@@ -77,6 +77,7 @@ type CloudHashingBillingClient interface {
 	GetGoodPaymentByAccount(ctx context.Context, in *GetGoodPaymentByAccountRequest, opts ...grpc.CallOption) (*GetGoodPaymentByAccountResponse, error)
 	CreateUserWithdraw(ctx context.Context, in *CreateUserWithdrawRequest, opts ...grpc.CallOption) (*CreateUserWithdrawResponse, error)
 	UpdateUserWithdraw(ctx context.Context, in *UpdateUserWithdrawRequest, opts ...grpc.CallOption) (*UpdateUserWithdrawResponse, error)
+	DeleteUserWithdraw(ctx context.Context, in *DeleteUserWithdrawRequest, opts ...grpc.CallOption) (*DeleteUserWithdrawResponse, error)
 	GetUserWithdraw(ctx context.Context, in *GetUserWithdrawRequest, opts ...grpc.CallOption) (*GetUserWithdrawResponse, error)
 	GetUserWithdrawsByAppUser(ctx context.Context, in *GetUserWithdrawsByAppUserRequest, opts ...grpc.CallOption) (*GetUserWithdrawsByAppUserResponse, error)
 	GetUserWithdrawsByAppUserCoin(ctx context.Context, in *GetUserWithdrawsByAppUserCoinRequest, opts ...grpc.CallOption) (*GetUserWithdrawsByAppUserCoinResponse, error)
@@ -592,6 +593,15 @@ func (c *cloudHashingBillingClient) UpdateUserWithdraw(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *cloudHashingBillingClient) DeleteUserWithdraw(ctx context.Context, in *DeleteUserWithdrawRequest, opts ...grpc.CallOption) (*DeleteUserWithdrawResponse, error) {
+	out := new(DeleteUserWithdrawResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/DeleteUserWithdraw", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingBillingClient) GetUserWithdraw(ctx context.Context, in *GetUserWithdrawRequest, opts ...grpc.CallOption) (*GetUserWithdrawResponse, error) {
 	out := new(GetUserWithdrawResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetUserWithdraw", in, out, opts...)
@@ -982,6 +992,7 @@ type CloudHashingBillingServer interface {
 	GetGoodPaymentByAccount(context.Context, *GetGoodPaymentByAccountRequest) (*GetGoodPaymentByAccountResponse, error)
 	CreateUserWithdraw(context.Context, *CreateUserWithdrawRequest) (*CreateUserWithdrawResponse, error)
 	UpdateUserWithdraw(context.Context, *UpdateUserWithdrawRequest) (*UpdateUserWithdrawResponse, error)
+	DeleteUserWithdraw(context.Context, *DeleteUserWithdrawRequest) (*DeleteUserWithdrawResponse, error)
 	GetUserWithdraw(context.Context, *GetUserWithdrawRequest) (*GetUserWithdrawResponse, error)
 	GetUserWithdrawsByAppUser(context.Context, *GetUserWithdrawsByAppUserRequest) (*GetUserWithdrawsByAppUserResponse, error)
 	GetUserWithdrawsByAppUserCoin(context.Context, *GetUserWithdrawsByAppUserCoinRequest) (*GetUserWithdrawsByAppUserCoinResponse, error)
@@ -1181,6 +1192,9 @@ func (UnimplementedCloudHashingBillingServer) CreateUserWithdraw(context.Context
 }
 func (UnimplementedCloudHashingBillingServer) UpdateUserWithdraw(context.Context, *UpdateUserWithdrawRequest) (*UpdateUserWithdrawResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserWithdraw not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) DeleteUserWithdraw(context.Context, *DeleteUserWithdrawRequest) (*DeleteUserWithdrawResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteUserWithdraw not implemented")
 }
 func (UnimplementedCloudHashingBillingServer) GetUserWithdraw(context.Context, *GetUserWithdrawRequest) (*GetUserWithdrawResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserWithdraw not implemented")
@@ -2242,6 +2256,24 @@ func _CloudHashingBilling_UpdateUserWithdraw_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingBilling_DeleteUserWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteUserWithdrawRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).DeleteUserWithdraw(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/DeleteUserWithdraw",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).DeleteUserWithdraw(ctx, req.(*DeleteUserWithdrawRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingBilling_GetUserWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserWithdrawRequest)
 	if err := dec(in); err != nil {
@@ -3122,6 +3154,10 @@ var CloudHashingBilling_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateUserWithdraw",
 			Handler:    _CloudHashingBilling_UpdateUserWithdraw_Handler,
+		},
+		{
+			MethodName: "DeleteUserWithdraw",
+			Handler:    _CloudHashingBilling_DeleteUserWithdraw_Handler,
 		},
 		{
 			MethodName: "GetUserWithdraw",

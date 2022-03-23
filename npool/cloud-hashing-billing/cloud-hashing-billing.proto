@@ -333,6 +333,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc DeleteUserWithdraw (DeleteUserWithdrawRequest) returns (DeleteUserWithdrawResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/user/withdraw"
+            body: "*"
+        };
+    }
     rpc GetUserWithdraw (GetUserWithdrawRequest) returns (GetUserWithdrawResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/withdraw"
@@ -1105,6 +1111,14 @@ message UpdateUserWithdrawRequest {
 }
 
 message UpdateUserWithdrawResponse {
+    UserWithdraw Info = 10;
+}
+
+message DeleteUserWithdrawRequest {
+    string ID = 10;
+}
+
+message DeleteUserWithdrawResponse {
     UserWithdraw Info = 10;
 }
 

@@ -552,6 +552,14 @@ export type UpdateUserWithdrawResponse = {
   info?: UserWithdraw
 }
 
+export type DeleteUserWithdrawRequest = {
+  id?: string
+}
+
+export type DeleteUserWithdrawResponse = {
+  info?: UserWithdraw
+}
+
 export type GetUserWithdrawRequest = {
   id?: string
 }
@@ -1063,6 +1071,9 @@ export class CloudHashingBilling {
   }
   static UpdateUserWithdraw(req: UpdateUserWithdrawRequest, initReq?: fm.InitReq): Promise<UpdateUserWithdrawResponse> {
     return fm.fetchReq<UpdateUserWithdrawRequest, UpdateUserWithdrawResponse>(`/v1/update/user/withdraw`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static DeleteUserWithdraw(req: DeleteUserWithdrawRequest, initReq?: fm.InitReq): Promise<DeleteUserWithdrawResponse> {
+    return fm.fetchReq<DeleteUserWithdrawRequest, DeleteUserWithdrawResponse>(`/v1/delete/user/withdraw`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserWithdraw(req: GetUserWithdrawRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawResponse> {
     return fm.fetchReq<GetUserWithdrawRequest, GetUserWithdrawResponse>(`/v1/get/user/withdraw`, {...initReq, method: "POST", body: JSON.stringify(req)})
