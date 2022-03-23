@@ -1355,6 +1355,70 @@
         ]
       }
     },
+    "/v1/update/withdraw/address/review": {
+      "post": {
+        "operationId": "CloudHashingApis_UpdateWithdrawAddressReview",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateWithdrawAddressReviewResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateWithdrawAddressReviewRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/update/withdraw/review": {
+      "post": {
+        "operationId": "CloudHashingApis_UpdateWithdrawReview",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateWithdrawReviewResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateWithdrawReviewRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "operationId": "CloudHashingApis_Version",
@@ -3616,6 +3680,44 @@
       }
     },
     "v1UpdateUserWithdrawReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1WithdrawReview"
+        }
+      }
+    },
+    "v1UpdateWithdrawAddressReviewRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Review"
+        },
+        "LangID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateWithdrawAddressReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1WithdrawAddressReview"
+        }
+      }
+    },
+    "v1UpdateWithdrawReviewRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Review"
+        },
+        "LangID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateWithdrawReviewResponse": {
       "type": "object",
       "properties": {
         "Info": {

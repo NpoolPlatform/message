@@ -291,6 +291,20 @@ service CloudHashingApis {
             body: "*"
         };
     }
+
+    rpc UpdateWithdrawReview(UpdateWithdrawReviewRequest) returns (UpdateWithdrawReviewResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/withdraw/review"
+            body: "*"
+        };
+    }
+
+    rpc UpdateWithdrawAddressReview(UpdateWithdrawAddressReviewRequest) returns (UpdateWithdrawAddressReviewResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/withdraw/address/review"
+            body: "*"
+        };
+    }
 }
 
 // Request body and response
@@ -813,3 +827,22 @@ message UpdateKycReviewRequest {
 message UpdateKycReviewResponse {
     KycReview Info = 10;
 }
+
+message UpdateWithdrawReviewRequest {
+    review.service.v1.Review Info = 10;
+    string LangID = 20;
+}
+
+message UpdateWithdrawReviewResponse {
+    WithdrawReview Info = 10;
+}
+
+message UpdateWithdrawAddressReviewRequest {
+    review.service.v1.Review Info = 10;
+    string LangID = 20;
+}
+
+message UpdateWithdrawAddressReviewResponse {
+    WithdrawAddressReview Info = 10;
+}
+

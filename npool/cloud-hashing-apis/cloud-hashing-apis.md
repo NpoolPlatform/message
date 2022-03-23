@@ -100,6 +100,10 @@
     - [UpdateUserWithdrawReviewForOtherAppUserResponse](#cloud-hashing-apis-v1-UpdateUserWithdrawReviewForOtherAppUserResponse)
     - [UpdateUserWithdrawReviewRequest](#cloud-hashing-apis-v1-UpdateUserWithdrawReviewRequest)
     - [UpdateUserWithdrawReviewResponse](#cloud-hashing-apis-v1-UpdateUserWithdrawReviewResponse)
+    - [UpdateWithdrawAddressReviewRequest](#cloud-hashing-apis-v1-UpdateWithdrawAddressReviewRequest)
+    - [UpdateWithdrawAddressReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawAddressReviewResponse)
+    - [UpdateWithdrawReviewRequest](#cloud-hashing-apis-v1-UpdateWithdrawReviewRequest)
+    - [UpdateWithdrawReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawReviewResponse)
     - [UserSpecial](#cloud-hashing-apis-v1-UserSpecial)
     - [UserWithdraw](#cloud-hashing-apis-v1-UserWithdraw)
     - [WithdrawAddress](#cloud-hashing-apis-v1-WithdrawAddress)
@@ -205,6 +209,10 @@
     - [UpdateUserWithdrawReviewForOtherAppUserResponse](#cloud-hashing-apis-v1-UpdateUserWithdrawReviewForOtherAppUserResponse)
     - [UpdateUserWithdrawReviewRequest](#cloud-hashing-apis-v1-UpdateUserWithdrawReviewRequest)
     - [UpdateUserWithdrawReviewResponse](#cloud-hashing-apis-v1-UpdateUserWithdrawReviewResponse)
+    - [UpdateWithdrawAddressReviewRequest](#cloud-hashing-apis-v1-UpdateWithdrawAddressReviewRequest)
+    - [UpdateWithdrawAddressReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawAddressReviewResponse)
+    - [UpdateWithdrawReviewRequest](#cloud-hashing-apis-v1-UpdateWithdrawReviewRequest)
+    - [UpdateWithdrawReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawReviewResponse)
     - [UserSpecial](#cloud-hashing-apis-v1-UserSpecial)
     - [UserWithdraw](#cloud-hashing-apis-v1-UserWithdraw)
     - [WithdrawAddress](#cloud-hashing-apis-v1-WithdrawAddress)
@@ -1760,6 +1768,68 @@ Request body and response
 
 
 
+<a name="cloud-hashing-apis-v1-UpdateWithdrawAddressReviewRequest"></a>
+
+### UpdateWithdrawAddressReviewRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [review.service.v1.Review](#review-service-v1-Review) |  |  |
+| LangID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-UpdateWithdrawAddressReviewResponse"></a>
+
+### UpdateWithdrawAddressReviewResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [WithdrawAddressReview](#cloud-hashing-apis-v1-WithdrawAddressReview) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-UpdateWithdrawReviewRequest"></a>
+
+### UpdateWithdrawReviewRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [review.service.v1.Review](#review-service-v1-Review) |  |  |
+| LangID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-UpdateWithdrawReviewResponse"></a>
+
+### UpdateWithdrawReviewResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [WithdrawReview](#cloud-hashing-apis-v1-WithdrawReview) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-UserSpecial"></a>
 
 ### UserSpecial
@@ -1902,6 +1972,8 @@ Cloud Hashing Goods
 | GetCouponsByAppUser | [GetCouponsByAppUserRequest](#cloud-hashing-apis-v1-GetCouponsByAppUserRequest) | [GetCouponsByAppUserResponse](#cloud-hashing-apis-v1-GetCouponsByAppUserResponse) |  |
 | GetCommissionByAppUser | [GetCommissionByAppUserRequest](#cloud-hashing-apis-v1-GetCommissionByAppUserRequest) | [GetCommissionByAppUserResponse](#cloud-hashing-apis-v1-GetCommissionByAppUserResponse) |  |
 | UpdateKycReview | [UpdateKycReviewRequest](#cloud-hashing-apis-v1-UpdateKycReviewRequest) | [UpdateKycReviewResponse](#cloud-hashing-apis-v1-UpdateKycReviewResponse) |  |
+| UpdateWithdrawReview | [UpdateWithdrawReviewRequest](#cloud-hashing-apis-v1-UpdateWithdrawReviewRequest) | [UpdateWithdrawReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawReviewResponse) |  |
+| UpdateWithdrawAddressReview | [UpdateWithdrawAddressReviewRequest](#cloud-hashing-apis-v1-UpdateWithdrawAddressReviewRequest) | [UpdateWithdrawAddressReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawAddressReviewResponse) |  |
 
  
 
@@ -3450,6 +3522,68 @@ Request body and response
 
 
 
+<a name="cloud-hashing-apis-v1-UpdateWithdrawAddressReviewRequest"></a>
+
+### UpdateWithdrawAddressReviewRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [review.service.v1.Review](#review-service-v1-Review) |  |  |
+| LangID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-UpdateWithdrawAddressReviewResponse"></a>
+
+### UpdateWithdrawAddressReviewResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [WithdrawAddressReview](#cloud-hashing-apis-v1-WithdrawAddressReview) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-UpdateWithdrawReviewRequest"></a>
+
+### UpdateWithdrawReviewRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [review.service.v1.Review](#review-service-v1-Review) |  |  |
+| LangID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-UpdateWithdrawReviewResponse"></a>
+
+### UpdateWithdrawReviewResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [WithdrawReview](#cloud-hashing-apis-v1-WithdrawReview) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-UserSpecial"></a>
 
 ### UserSpecial
@@ -3592,6 +3726,8 @@ Cloud Hashing Goods
 | GetCouponsByAppUser | [GetCouponsByAppUserRequest](#cloud-hashing-apis-v1-GetCouponsByAppUserRequest) | [GetCouponsByAppUserResponse](#cloud-hashing-apis-v1-GetCouponsByAppUserResponse) |  |
 | GetCommissionByAppUser | [GetCommissionByAppUserRequest](#cloud-hashing-apis-v1-GetCommissionByAppUserRequest) | [GetCommissionByAppUserResponse](#cloud-hashing-apis-v1-GetCommissionByAppUserResponse) |  |
 | UpdateKycReview | [UpdateKycReviewRequest](#cloud-hashing-apis-v1-UpdateKycReviewRequest) | [UpdateKycReviewResponse](#cloud-hashing-apis-v1-UpdateKycReviewResponse) |  |
+| UpdateWithdrawReview | [UpdateWithdrawReviewRequest](#cloud-hashing-apis-v1-UpdateWithdrawReviewRequest) | [UpdateWithdrawReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawReviewResponse) |  |
+| UpdateWithdrawAddressReview | [UpdateWithdrawAddressReviewRequest](#cloud-hashing-apis-v1-UpdateWithdrawAddressReviewRequest) | [UpdateWithdrawAddressReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawAddressReviewResponse) |  |
 
  
 
