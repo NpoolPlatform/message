@@ -530,6 +530,24 @@ export type UpdateKycReviewResponse = {
   info?: KycReview
 }
 
+export type UpdateWithdrawReviewRequest = {
+  info?: ReviewServiceV1Review-service.Review
+  langID?: string
+}
+
+export type UpdateWithdrawReviewResponse = {
+  info?: WithdrawReview
+}
+
+export type UpdateWithdrawAddressReviewRequest = {
+  info?: ReviewServiceV1Review-service.Review
+  langID?: string
+}
+
+export type UpdateWithdrawAddressReviewResponse = {
+  info?: WithdrawAddressReview
+}
+
 export class CloudHashingApis {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -659,5 +677,11 @@ export class CloudHashingApis {
   }
   static UpdateKycReview(req: UpdateKycReviewRequest, initReq?: fm.InitReq): Promise<UpdateKycReviewResponse> {
     return fm.fetchReq<UpdateKycReviewRequest, UpdateKycReviewResponse>(`/v1/update/kyc/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateWithdrawReview(req: UpdateWithdrawReviewRequest, initReq?: fm.InitReq): Promise<UpdateWithdrawReviewResponse> {
+    return fm.fetchReq<UpdateWithdrawReviewRequest, UpdateWithdrawReviewResponse>(`/v1/update/withdraw/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateWithdrawAddressReview(req: UpdateWithdrawAddressReviewRequest, initReq?: fm.InitReq): Promise<UpdateWithdrawAddressReviewResponse> {
+    return fm.fetchReq<UpdateWithdrawAddressReviewRequest, UpdateWithdrawAddressReviewResponse>(`/v1/update/withdraw/address/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
