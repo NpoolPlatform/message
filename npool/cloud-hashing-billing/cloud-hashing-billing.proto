@@ -43,6 +43,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetCoinAccountsByAppUser (GetCoinAccountsByAppUserRequest) returns (GetCoinAccountsByAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coin/accounts/by/app/user"
+            body: "*"
+        };
+    }
     rpc DeleteCoinAccount (DeleteCoinAccountRequest) returns (DeleteCoinAccountResponse) {
         option (google.api.http) = {
             post: "/v1/delete/coin/account"
@@ -592,6 +598,15 @@ message GetCoinAccountsRequest {
 }
 
 message GetCoinAccountsResponse {
+    repeated CoinAccountInfo Infos = 10;
+}
+
+message GetCoinAccountsByAppUserRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetCoinAccountsByAppUserResponse {
     repeated CoinAccountInfo Infos = 10;
 }
 

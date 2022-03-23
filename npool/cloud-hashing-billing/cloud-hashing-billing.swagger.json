@@ -1067,6 +1067,38 @@
         ]
       }
     },
+    "/v1/get/coin/accounts/by/app/user": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetCoinAccountsByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinAccountsByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinAccountsByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/coin/setting": {
       "post": {
         "operationId": "CloudHashingBilling_GetCoinSetting",
@@ -3579,6 +3611,28 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1CoinAccountTransaction"
+          }
+        }
+      }
+    },
+    "v1GetCoinAccountsByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetCoinAccountsByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinAccountInfo"
           }
         }
       }

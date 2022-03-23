@@ -47,6 +47,15 @@ export type GetCoinAccountsResponse = {
   infos?: CoinAccountInfo[]
 }
 
+export type GetCoinAccountsByAppUserRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetCoinAccountsByAppUserResponse = {
+  infos?: CoinAccountInfo[]
+}
+
 export type DeleteCoinAccountRequest = {
   id?: string
 }
@@ -913,6 +922,9 @@ export class CloudHashingBilling {
   }
   static GetCoinAccounts(req: GetCoinAccountsRequest, initReq?: fm.InitReq): Promise<GetCoinAccountsResponse> {
     return fm.fetchReq<GetCoinAccountsRequest, GetCoinAccountsResponse>(`/v1/get/coin/accounts`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCoinAccountsByAppUser(req: GetCoinAccountsByAppUserRequest, initReq?: fm.InitReq): Promise<GetCoinAccountsByAppUserResponse> {
+    return fm.fetchReq<GetCoinAccountsByAppUserRequest, GetCoinAccountsByAppUserResponse>(`/v1/get/coin/accounts/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static DeleteCoinAccount(req: DeleteCoinAccountRequest, initReq?: fm.InitReq): Promise<DeleteCoinAccountResponse> {
     return fm.fetchReq<DeleteCoinAccountRequest, DeleteCoinAccountResponse>(`/v1/delete/coin/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
