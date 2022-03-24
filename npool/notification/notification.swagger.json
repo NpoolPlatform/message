@@ -700,6 +700,15 @@
         },
         "Message": {
           "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        },
+        "UserName": {
+          "type": "string"
         }
       }
     },
