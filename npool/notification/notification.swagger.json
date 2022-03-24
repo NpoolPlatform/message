@@ -706,6 +706,9 @@
         },
         "UsedFor": {
           "type": "string"
+        },
+        "UserName": {
+          "type": "string"
         }
       }
     },

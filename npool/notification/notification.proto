@@ -175,6 +175,7 @@ message CreateNotificationRequest {
     string Message = 20;
     string LangId = 30;
     string UsedFor = 40;
+    string UserName = 50;
 }
 
 message CreateNotificationResponse {

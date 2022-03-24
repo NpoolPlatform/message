@@ -221,6 +221,7 @@
 | Message | [string](#string) |  |  |
 | LangId | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
+| UserName | [string](#string) |  |  |
 
 
 
@@ -884,6 +885,7 @@ Service Name
 | Message | [string](#string) |  |  |
 | LangId | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
+| UserName | [string](#string) |  |  |
 
 
 

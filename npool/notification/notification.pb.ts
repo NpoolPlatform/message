@@ -55,6 +55,7 @@ export type CreateNotificationRequest = {
   message?: string
   langId?: string
   usedFor?: string
+  userName?: string
 }
 
 export type CreateNotificationResponse = {
