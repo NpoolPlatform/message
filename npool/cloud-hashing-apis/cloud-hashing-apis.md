@@ -1516,9 +1516,9 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
-| NewVerificationCode | [string](#string) |  |  |
-| NewAccount | [string](#string) |  |  |
-| NewAccountType | [string](#string) |  |  |
+| VerificationCode | [string](#string) |  |  |
+| Account | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
 | VerificationCodes | [VerificationCode](#cloud-hashing-apis-v1-VerificationCode) | repeated |  |
 
 
@@ -3323,9 +3323,9 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
-| NewVerificationCode | [string](#string) |  |  |
-| NewAccount | [string](#string) |  |  |
-| NewAccountType | [string](#string) |  |  |
+| VerificationCode | [string](#string) |  |  |
+| Account | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
 | VerificationCodes | [VerificationCode](#cloud-hashing-apis-v1-VerificationCode) | repeated |  |
 
 

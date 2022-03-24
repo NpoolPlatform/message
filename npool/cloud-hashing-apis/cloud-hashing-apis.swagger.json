@@ -3529,13 +3529,13 @@
         "UserID": {
           "type": "string"
         },
-        "NewVerificationCode": {
+        "VerificationCode": {
           "type": "string"
         },
-        "NewAccount": {
+        "Account": {
           "type": "string"
         },
-        "NewAccountType": {
+        "AccountType": {
           "type": "string"
         },
         "VerificationCodes": {
