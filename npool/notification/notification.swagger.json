@@ -701,7 +701,7 @@
         "Message": {
           "type": "string"
         },
-        "LangId": {
+        "LangID": {
           "type": "string"
         },
         "UsedFor": {
