@@ -223,9 +223,6 @@ export type VerificationCode = {
 export type UpdateAccountRequest = {
   appID?: string
   userID?: string
-  oldVerificationCode?: string
-  oldAccount?: string
-  oldAccountType?: string
   newVerificationCode?: string
   newAccount?: string
   newAccountType?: string

@@ -3529,15 +3529,6 @@
         "UserID": {
           "type": "string"
         },
-        "OldVerificationCode": {
-          "type": "string"
-        },
-        "OldAccount": {
-          "type": "string"
-        },
-        "OldAccountType": {
-          "type": "string"
-        },
         "NewVerificationCode": {
           "type": "string"
         },

@@ -1516,9 +1516,6 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
-| OldVerificationCode | [string](#string) |  |  |
-| OldAccount | [string](#string) |  |  |
-| OldAccountType | [string](#string) |  |  |
 | NewVerificationCode | [string](#string) |  |  |
 | NewAccount | [string](#string) |  |  |
 | NewAccountType | [string](#string) |  |  |
@@ -3326,9 +3323,6 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
-| OldVerificationCode | [string](#string) |  |  |
-| OldAccount | [string](#string) |  |  |
-| OldAccountType | [string](#string) |  |  |
 | NewVerificationCode | [string](#string) |  |  |
 | NewAccount | [string](#string) |  |  |
 | NewAccountType | [string](#string) |  |  |

@@ -522,13 +522,10 @@ message VerificationCode {
 message UpdateAccountRequest {
     string AppID = 10;
     string UserID = 20;
-    string OldVerificationCode = 30;
-    string OldAccount = 40;
-    string OldAccountType = 50;
-    string NewVerificationCode = 60;
-    string NewAccount = 70;
-    string NewAccountType = 80;
-    repeated VerificationCode  VerificationCodes = 90;
+    string NewVerificationCode = 30;
+    string NewAccount = 40;
+    string NewAccountType = 50;
+    repeated VerificationCode VerificationCodes = 60;
 }
 
 message UpdateAccountResponse {
