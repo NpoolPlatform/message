@@ -697,6 +697,9 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1UserNotification"
+        },
+        "Message": {
+          "type": "string"
         }
       }
     },

@@ -291,21 +291,21 @@ service CloudHashingApis {
         };
     }
 
-    rpc UpdateKycReview(UpdateKycReviewRequest) returns (UpdateKycReviewResponse) {
+    rpc UpdateKycReview (UpdateKycReviewRequest) returns (UpdateKycReviewResponse) {
         option (google.api.http) = {
             post: "/v1/update/kyc/review"
             body: "*"
         };
     }
 
-    rpc UpdateWithdrawReview(UpdateWithdrawReviewRequest) returns (UpdateWithdrawReviewResponse) {
+    rpc UpdateWithdrawReview (UpdateWithdrawReviewRequest) returns (UpdateWithdrawReviewResponse) {
         option (google.api.http) = {
             post: "/v1/update/withdraw/review"
             body: "*"
         };
     }
 
-    rpc UpdateWithdrawAddressReview(UpdateWithdrawAddressReviewRequest) returns (UpdateWithdrawAddressReviewResponse) {
+    rpc UpdateWithdrawAddressReview (UpdateWithdrawAddressReviewRequest) returns (UpdateWithdrawAddressReviewResponse) {
         option (google.api.http) = {
             post: "/v1/update/withdraw/address/review"
             body: "*"

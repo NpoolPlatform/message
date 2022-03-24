@@ -52,6 +52,7 @@ export type UserNotification = {
 
 export type CreateNotificationRequest = {
   info?: UserNotification
+  message?: string
 }
 
 export type CreateNotificationResponse = {
