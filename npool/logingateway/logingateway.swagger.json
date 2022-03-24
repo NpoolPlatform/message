@@ -139,6 +139,38 @@
         ]
       }
     },
+    "/v1/update/cache": {
+      "post": {
+        "operationId": "LoginGateway_UpdateCache",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCacheResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCacheRequest"
+            }
+          }
+        ],
+        "tags": [
+          "LoginGateway"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "operationId": "LoginGateway_Version",
@@ -513,6 +545,22 @@
         "Limit": {
           "type": "integer",
           "format": "int32"
+        }
+      }
+    },
+    "v1UpdateCacheRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
+        }
+      }
+    },
+    "v1UpdateCacheResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
         }
       }
     },

@@ -13,6 +13,8 @@
     - [LoginedResponse](#login-gateway-v1-LoginedResponse)
     - [LogoutRequest](#login-gateway-v1-LogoutRequest)
     - [LogoutResponse](#login-gateway-v1-LogoutResponse)
+    - [UpdateCacheRequest](#login-gateway-v1-UpdateCacheRequest)
+    - [UpdateCacheResponse](#login-gateway-v1-UpdateCacheResponse)
   
     - [LoginGateway](#login-gateway-v1-LoginGateway)
   
@@ -26,6 +28,8 @@
     - [LoginedResponse](#login-gateway-v1-LoginedResponse)
     - [LogoutRequest](#login-gateway-v1-LogoutRequest)
     - [LogoutResponse](#login-gateway-v1-LogoutResponse)
+    - [UpdateCacheRequest](#login-gateway-v1-UpdateCacheRequest)
+    - [UpdateCacheResponse](#login-gateway-v1-UpdateCacheResponse)
   
     - [LoginGateway](#login-gateway-v1-LoginGateway)
   
@@ -192,6 +196,36 @@
 
 
 
+
+<a name="login-gateway-v1-UpdateCacheRequest"></a>
+
+### UpdateCacheRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+
+
+
+
+
+
+<a name="login-gateway-v1-UpdateCacheResponse"></a>
+
+### UpdateCacheResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+
+
+
+
+
  
 
  
@@ -209,6 +243,7 @@
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | Login | [LoginRequest](#login-gateway-v1-LoginRequest) | [LoginResponse](#login-gateway-v1-LoginResponse) |  |
 | Logined | [LoginedRequest](#login-gateway-v1-LoginedRequest) | [LoginedResponse](#login-gateway-v1-LoginedResponse) |  |
+| UpdateCache | [UpdateCacheRequest](#login-gateway-v1-UpdateCacheRequest) | [UpdateCacheResponse](#login-gateway-v1-UpdateCacheResponse) |  |
 | Logout | [LogoutRequest](#login-gateway-v1-LogoutRequest) | [LogoutResponse](#login-gateway-v1-LogoutResponse) |  |
 | GetLoginHistories | [GetLoginHistoriesRequest](#login-gateway-v1-GetLoginHistoriesRequest) | [GetLoginHistoriesResponse](#login-gateway-v1-GetLoginHistoriesResponse) |  |
 
@@ -375,6 +410,36 @@
 
 
 
+
+<a name="login-gateway-v1-UpdateCacheRequest"></a>
+
+### UpdateCacheRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+
+
+
+
+
+
+<a name="login-gateway-v1-UpdateCacheResponse"></a>
+
+### UpdateCacheResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+
+
+
+
+
  
 
  
@@ -392,6 +457,7 @@
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | Login | [LoginRequest](#login-gateway-v1-LoginRequest) | [LoginResponse](#login-gateway-v1-LoginResponse) |  |
 | Logined | [LoginedRequest](#login-gateway-v1-LoginedRequest) | [LoginedResponse](#login-gateway-v1-LoginedResponse) |  |
+| UpdateCache | [UpdateCacheRequest](#login-gateway-v1-UpdateCacheRequest) | [UpdateCacheResponse](#login-gateway-v1-UpdateCacheResponse) |  |
 | Logout | [LogoutRequest](#login-gateway-v1-LogoutRequest) | [LogoutResponse](#login-gateway-v1-LogoutResponse) |  |
 | GetLoginHistories | [GetLoginHistoriesRequest](#login-gateway-v1-GetLoginHistoriesRequest) | [GetLoginHistoriesResponse](#login-gateway-v1-GetLoginHistoriesResponse) |  |
 

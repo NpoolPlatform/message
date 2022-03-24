@@ -27,6 +27,7 @@ type LoginGatewayClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
 	Logined(ctx context.Context, in *LoginedRequest, opts ...grpc.CallOption) (*LoginedResponse, error)
+	UpdateCache(ctx context.Context, in *UpdateCacheRequest, opts ...grpc.CallOption) (*UpdateCacheResponse, error)
 	Logout(ctx context.Context, in *LogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error)
 	GetLoginHistories(ctx context.Context, in *GetLoginHistoriesRequest, opts ...grpc.CallOption) (*GetLoginHistoriesResponse, error)
 }
@@ -66,6 +67,15 @@ func (c *loginGatewayClient) Logined(ctx context.Context, in *LoginedRequest, op
 	return out, nil
 }
 
+func (c *loginGatewayClient) UpdateCache(ctx context.Context, in *UpdateCacheRequest, opts ...grpc.CallOption) (*UpdateCacheResponse, error) {
+	out := new(UpdateCacheResponse)
+	err := c.cc.Invoke(ctx, "/login.gateway.v1.LoginGateway/UpdateCache", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *loginGatewayClient) Logout(ctx context.Context, in *LogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error) {
 	out := new(LogoutResponse)
 	err := c.cc.Invoke(ctx, "/login.gateway.v1.LoginGateway/Logout", in, out, opts...)
@@ -91,6 +101,7 @@ type LoginGatewayServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	Login(context.Context, *LoginRequest) (*LoginResponse, error)
 	Logined(context.Context, *LoginedRequest) (*LoginedResponse, error)
+	UpdateCache(context.Context, *UpdateCacheRequest) (*UpdateCacheResponse, error)
 	Logout(context.Context, *LogoutRequest) (*LogoutResponse, error)
 	GetLoginHistories(context.Context, *GetLoginHistoriesRequest) (*GetLoginHistoriesResponse, error)
 	mustEmbedUnimplementedLoginGatewayServer()
@@ -108,6 +119,9 @@ func (UnimplementedLoginGatewayServer) Login(context.Context, *LoginRequest) (*L
 }
 func (UnimplementedLoginGatewayServer) Logined(context.Context, *LoginedRequest) (*LoginedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Logined not implemented")
+}
+func (UnimplementedLoginGatewayServer) UpdateCache(context.Context, *UpdateCacheRequest) (*UpdateCacheResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCache not implemented")
 }
 func (UnimplementedLoginGatewayServer) Logout(context.Context, *LogoutRequest) (*LogoutResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Logout not implemented")
@@ -182,6 +196,24 @@ func _LoginGateway_Logined_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LoginGateway_UpdateCache_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCacheRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LoginGatewayServer).UpdateCache(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/login.gateway.v1.LoginGateway/UpdateCache",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LoginGatewayServer).UpdateCache(ctx, req.(*UpdateCacheRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LoginGateway_Logout_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(LogoutRequest)
 	if err := dec(in); err != nil {
@@ -236,6 +268,10 @@ var LoginGateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Logined",
 			Handler:    _LoginGateway_Logined_Handler,
+		},
+		{
+			MethodName: "UpdateCache",
+			Handler:    _LoginGateway_UpdateCache_Handler,
 		},
 		{
 			MethodName: "Logout",

@@ -29,6 +29,12 @@ service LoginGateway {
             body: "*"
         };
     }
+    rpc UpdateCache (UpdateCacheRequest) returns (UpdateCacheResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/cache"
+            body: "*"
+        };
+    }
     rpc Logout (LogoutRequest) returns (LogoutResponse) {
         option (google.api.http) = {
             post: "/v1/logout"
@@ -65,6 +71,14 @@ message LoginedRequest {
 }
 
 message LoginedResponse {
+    app.user.manager.v1.AppUserInfo Info = 10;
+}
+
+message UpdateCacheRequest {
+    app.user.manager.v1.AppUserInfo Info = 10;
+}
+
+message UpdateCacheResponse {
     app.user.manager.v1.AppUserInfo Info = 10;
 }
 

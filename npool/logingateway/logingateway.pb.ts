@@ -33,6 +33,14 @@ export type LoginedResponse = {
   info?: AppUserManagerV1Appusermgr.AppUserInfo
 }
 
+export type UpdateCacheRequest = {
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
+}
+
+export type UpdateCacheResponse = {
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
+}
+
 export type LogoutRequest = {
   appID?: string
   userID?: string
@@ -71,6 +79,9 @@ export class LoginGateway {
   }
   static Logined(req: LoginedRequest, initReq?: fm.InitReq): Promise<LoginedResponse> {
     return fm.fetchReq<LoginedRequest, LoginedResponse>(`/v1/logined`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateCache(req: UpdateCacheRequest, initReq?: fm.InitReq): Promise<UpdateCacheResponse> {
+    return fm.fetchReq<UpdateCacheRequest, UpdateCacheResponse>(`/v1/update/cache`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static Logout(req: LogoutRequest, initReq?: fm.InitReq): Promise<LogoutResponse> {
     return fm.fetchReq<LogoutRequest, LogoutResponse>(`/v1/logout`, {...initReq, method: "POST", body: JSON.stringify(req)})
