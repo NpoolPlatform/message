@@ -126,6 +126,12 @@ service CloudHashingApis {
             body: "*"
         };
     }
+    rpc UpdateAccount (UpdateAccountRequest) returns (UpdateAccountResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/account"
+            body: "*"
+        };
+    }
 
     rpc GetReferrals (GetReferralsRequest) returns (GetReferralsResponse) {
         option (google.api.http) = {
@@ -504,6 +510,28 @@ message UpdatePhoneNORequest {
 }
 
 message UpdatePhoneNOResponse {
+    app.user.manager.v1.AppUserInfo Info = 10;
+}
+
+message VerificationCode {
+    string VerificationCode = 10;
+    string Account = 20;
+    string AccountType = 30;
+}
+
+message UpdateAccountRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string OldVerificationCode = 30;
+    string OldAccount = 40;
+    string OldAccountType = 50;
+    string NewVerificationCode = 60;
+    string NewAccount = 70;
+    string NewAccountType = 80;
+    repeated VerificationCode  VerificationCodes = 90;
+}
+
+message UpdateAccountResponse {
     app.user.manager.v1.AppUserInfo Info = 10;
 }
 

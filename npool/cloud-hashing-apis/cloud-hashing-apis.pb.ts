@@ -214,6 +214,28 @@ export type UpdatePhoneNOResponse = {
   info?: AppUserManagerV1Appusermgr.AppUserInfo
 }
 
+export type VerificationCode = {
+  verificationCode?: string
+  account?: string
+  accountType?: string
+}
+
+export type UpdateAccountRequest = {
+  appID?: string
+  userID?: string
+  oldVerificationCode?: string
+  oldAccount?: string
+  oldAccountType?: string
+  newVerificationCode?: string
+  newAccount?: string
+  newAccountType?: string
+  verificationCodes?: VerificationCode[]
+}
+
+export type UpdateAccountResponse = {
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
+}
+
 export type CoinSummary = {
   coinTypeID?: string
   coinName?: string
@@ -599,6 +621,9 @@ export class CloudHashingApis {
   }
   static UpdatePhoneNO(req: UpdatePhoneNORequest, initReq?: fm.InitReq): Promise<UpdatePhoneNOResponse> {
     return fm.fetchReq<UpdatePhoneNORequest, UpdatePhoneNOResponse>(`/v1/update/phoneno`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateAccount(req: UpdateAccountRequest, initReq?: fm.InitReq): Promise<UpdateAccountResponse> {
+    return fm.fetchReq<UpdateAccountRequest, UpdateAccountResponse>(`/v1/update/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetReferrals(req: GetReferralsRequest, initReq?: fm.InitReq): Promise<GetReferralsResponse> {
     return fm.fetchReq<GetReferralsRequest, GetReferralsResponse>(`/v1/get/referrals`, {...initReq, method: "POST", body: JSON.stringify(req)})

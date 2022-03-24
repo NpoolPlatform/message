@@ -1099,6 +1099,38 @@
         ]
       }
     },
+    "/v1/update/account": {
+      "post": {
+        "operationId": "CloudHashingApis_UpdateAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/update/emailaddress": {
       "post": {
         "operationId": "CloudHashingApis_UpdateEmailAddress",
@@ -3488,6 +3520,49 @@
         }
       }
     },
+    "v1UpdateAccountRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "OldVerificationCode": {
+          "type": "string"
+        },
+        "OldAccount": {
+          "type": "string"
+        },
+        "OldAccountType": {
+          "type": "string"
+        },
+        "NewVerificationCode": {
+          "type": "string"
+        },
+        "NewAccount": {
+          "type": "string"
+        },
+        "NewAccountType": {
+          "type": "string"
+        },
+        "VerificationCodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1VerificationCode"
+          }
+        }
+      }
+    },
+    "v1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
+        }
+      }
+    },
     "v1UpdateEmailAddressRequest": {
       "type": "object",
       "properties": {
@@ -3818,6 +3893,20 @@
         }
       },
       "title": "Request body and response"
+    },
+    "v1VerificationCode": {
+      "type": "object",
+      "properties": {
+        "VerificationCode": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "AccountType": {
+          "type": "string"
+        }
+      }
     },
     "v1WithdrawAddress": {
       "type": "object",

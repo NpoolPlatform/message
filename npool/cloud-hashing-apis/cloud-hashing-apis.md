@@ -84,6 +84,8 @@
     - [SubmitOrderResponse](#cloud-hashing-apis-v1-SubmitOrderResponse)
     - [SubmitUserWithdrawRequest](#cloud-hashing-apis-v1-SubmitUserWithdrawRequest)
     - [SubmitUserWithdrawResponse](#cloud-hashing-apis-v1-SubmitUserWithdrawResponse)
+    - [UpdateAccountRequest](#cloud-hashing-apis-v1-UpdateAccountRequest)
+    - [UpdateAccountResponse](#cloud-hashing-apis-v1-UpdateAccountResponse)
     - [UpdateEmailAddressRequest](#cloud-hashing-apis-v1-UpdateEmailAddressRequest)
     - [UpdateEmailAddressResponse](#cloud-hashing-apis-v1-UpdateEmailAddressResponse)
     - [UpdateKycRequest](#cloud-hashing-apis-v1-UpdateKycRequest)
@@ -106,6 +108,7 @@
     - [UpdateWithdrawReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawReviewResponse)
     - [UserSpecial](#cloud-hashing-apis-v1-UserSpecial)
     - [UserWithdraw](#cloud-hashing-apis-v1-UserWithdraw)
+    - [VerificationCode](#cloud-hashing-apis-v1-VerificationCode)
     - [WithdrawAddress](#cloud-hashing-apis-v1-WithdrawAddress)
     - [WithdrawAddressReview](#cloud-hashing-apis-v1-WithdrawAddressReview)
     - [WithdrawReview](#cloud-hashing-apis-v1-WithdrawReview)
@@ -193,6 +196,8 @@
     - [SubmitOrderResponse](#cloud-hashing-apis-v1-SubmitOrderResponse)
     - [SubmitUserWithdrawRequest](#cloud-hashing-apis-v1-SubmitUserWithdrawRequest)
     - [SubmitUserWithdrawResponse](#cloud-hashing-apis-v1-SubmitUserWithdrawResponse)
+    - [UpdateAccountRequest](#cloud-hashing-apis-v1-UpdateAccountRequest)
+    - [UpdateAccountResponse](#cloud-hashing-apis-v1-UpdateAccountResponse)
     - [UpdateEmailAddressRequest](#cloud-hashing-apis-v1-UpdateEmailAddressRequest)
     - [UpdateEmailAddressResponse](#cloud-hashing-apis-v1-UpdateEmailAddressResponse)
     - [UpdateKycRequest](#cloud-hashing-apis-v1-UpdateKycRequest)
@@ -215,6 +220,7 @@
     - [UpdateWithdrawReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawReviewResponse)
     - [UserSpecial](#cloud-hashing-apis-v1-UserSpecial)
     - [UserWithdraw](#cloud-hashing-apis-v1-UserWithdraw)
+    - [VerificationCode](#cloud-hashing-apis-v1-VerificationCode)
     - [WithdrawAddress](#cloud-hashing-apis-v1-WithdrawAddress)
     - [WithdrawAddressReview](#cloud-hashing-apis-v1-WithdrawAddressReview)
     - [WithdrawReview](#cloud-hashing-apis-v1-WithdrawReview)
@@ -1500,6 +1506,44 @@ Request body and response
 
 
 
+<a name="cloud-hashing-apis-v1-UpdateAccountRequest"></a>
+
+### UpdateAccountRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| OldVerificationCode | [string](#string) |  |  |
+| OldAccount | [string](#string) |  |  |
+| OldAccountType | [string](#string) |  |  |
+| NewVerificationCode | [string](#string) |  |  |
+| NewAccount | [string](#string) |  |  |
+| NewAccountType | [string](#string) |  |  |
+| VerificationCodes | [VerificationCode](#cloud-hashing-apis-v1-VerificationCode) | repeated |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-UpdateAccountResponse"></a>
+
+### UpdateAccountResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-UpdateEmailAddressRequest"></a>
 
 ### UpdateEmailAddressRequest
@@ -1863,6 +1907,23 @@ Request body and response
 
 
 
+<a name="cloud-hashing-apis-v1-VerificationCode"></a>
+
+### VerificationCode
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| VerificationCode | [string](#string) |  |  |
+| Account | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-WithdrawAddress"></a>
 
 ### WithdrawAddress
@@ -1946,6 +2007,7 @@ Cloud Hashing Goods
 | UpdatePasswordByAppUser | [UpdatePasswordByAppUserRequest](#cloud-hashing-apis-v1-UpdatePasswordByAppUserRequest) | [UpdatePasswordByAppUserResponse](#cloud-hashing-apis-v1-UpdatePasswordByAppUserResponse) |  |
 | UpdateEmailAddress | [UpdateEmailAddressRequest](#cloud-hashing-apis-v1-UpdateEmailAddressRequest) | [UpdateEmailAddressResponse](#cloud-hashing-apis-v1-UpdateEmailAddressResponse) |  |
 | UpdatePhoneNO | [UpdatePhoneNORequest](#cloud-hashing-apis-v1-UpdatePhoneNORequest) | [UpdatePhoneNOResponse](#cloud-hashing-apis-v1-UpdatePhoneNOResponse) |  |
+| UpdateAccount | [UpdateAccountRequest](#cloud-hashing-apis-v1-UpdateAccountRequest) | [UpdateAccountResponse](#cloud-hashing-apis-v1-UpdateAccountResponse) |  |
 | GetReferrals | [GetReferralsRequest](#cloud-hashing-apis-v1-GetReferralsRequest) | [GetReferralsResponse](#cloud-hashing-apis-v1-GetReferralsResponse) |  |
 | GetLayeredReferrals | [GetLayeredReferralsRequest](#cloud-hashing-apis-v1-GetLayeredReferralsRequest) | [GetLayeredReferralsResponse](#cloud-hashing-apis-v1-GetLayeredReferralsResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud-hashing-apis-v1-GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud-hashing-apis-v1-GetKycReviewsResponse) |  |
@@ -3254,6 +3316,44 @@ Request body and response
 
 
 
+<a name="cloud-hashing-apis-v1-UpdateAccountRequest"></a>
+
+### UpdateAccountRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| OldVerificationCode | [string](#string) |  |  |
+| OldAccount | [string](#string) |  |  |
+| OldAccountType | [string](#string) |  |  |
+| NewVerificationCode | [string](#string) |  |  |
+| NewAccount | [string](#string) |  |  |
+| NewAccountType | [string](#string) |  |  |
+| VerificationCodes | [VerificationCode](#cloud-hashing-apis-v1-VerificationCode) | repeated |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-UpdateAccountResponse"></a>
+
+### UpdateAccountResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-UpdateEmailAddressRequest"></a>
 
 ### UpdateEmailAddressRequest
@@ -3617,6 +3717,23 @@ Request body and response
 
 
 
+<a name="cloud-hashing-apis-v1-VerificationCode"></a>
+
+### VerificationCode
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| VerificationCode | [string](#string) |  |  |
+| Account | [string](#string) |  |  |
+| AccountType | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-WithdrawAddress"></a>
 
 ### WithdrawAddress
@@ -3700,6 +3817,7 @@ Cloud Hashing Goods
 | UpdatePasswordByAppUser | [UpdatePasswordByAppUserRequest](#cloud-hashing-apis-v1-UpdatePasswordByAppUserRequest) | [UpdatePasswordByAppUserResponse](#cloud-hashing-apis-v1-UpdatePasswordByAppUserResponse) |  |
 | UpdateEmailAddress | [UpdateEmailAddressRequest](#cloud-hashing-apis-v1-UpdateEmailAddressRequest) | [UpdateEmailAddressResponse](#cloud-hashing-apis-v1-UpdateEmailAddressResponse) |  |
 | UpdatePhoneNO | [UpdatePhoneNORequest](#cloud-hashing-apis-v1-UpdatePhoneNORequest) | [UpdatePhoneNOResponse](#cloud-hashing-apis-v1-UpdatePhoneNOResponse) |  |
+| UpdateAccount | [UpdateAccountRequest](#cloud-hashing-apis-v1-UpdateAccountRequest) | [UpdateAccountResponse](#cloud-hashing-apis-v1-UpdateAccountResponse) |  |
 | GetReferrals | [GetReferralsRequest](#cloud-hashing-apis-v1-GetReferralsRequest) | [GetReferralsResponse](#cloud-hashing-apis-v1-GetReferralsResponse) |  |
 | GetLayeredReferrals | [GetLayeredReferralsRequest](#cloud-hashing-apis-v1-GetLayeredReferralsRequest) | [GetLayeredReferralsResponse](#cloud-hashing-apis-v1-GetLayeredReferralsResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud-hashing-apis-v1-GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud-hashing-apis-v1-GetKycReviewsResponse) |  |
