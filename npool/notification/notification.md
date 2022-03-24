@@ -218,6 +218,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [UserNotification](#notification-v1-UserNotification) |  |  |
+| Message | [string](#string) |  |  |
 
 
 
@@ -878,6 +879,7 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [UserNotification](#notification-v1-UserNotification) |  |  |
+| Message | [string](#string) |  |  |
 
 
 
