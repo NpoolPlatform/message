@@ -703,6 +703,9 @@
         },
         "LangId": {
           "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
         }
       }
     },
