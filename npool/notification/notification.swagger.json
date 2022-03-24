@@ -700,6 +700,9 @@
         },
         "Message": {
           "type": "string"
+        },
+        "LangId": {
+          "type": "string"
         }
       }
     },
