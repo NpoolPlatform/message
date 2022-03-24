@@ -219,6 +219,7 @@
 | ----- | ---- | ----- | ----------- |
 | Info | [UserNotification](#notification-v1-UserNotification) |  |  |
 | Message | [string](#string) |  |  |
+| LangId | [string](#string) |  |  |
 
 
 
@@ -880,6 +881,7 @@ Service Name
 | ----- | ---- | ----- | ----------- |
 | Info | [UserNotification](#notification-v1-UserNotification) |  |  |
 | Message | [string](#string) |  |  |
+| LangId | [string](#string) |  |  |
 
 
 

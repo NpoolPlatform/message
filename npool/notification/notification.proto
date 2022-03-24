@@ -173,6 +173,7 @@ message UserNotification {
 message CreateNotificationRequest {
     UserNotification Info = 10;
     string Message = 20;
+    string LangId = 30;
 }
 
 message CreateNotificationResponse {
