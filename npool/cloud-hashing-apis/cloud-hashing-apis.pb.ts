@@ -234,7 +234,7 @@ export type UpdateAccountResponse = {
 }
 
 export type UpdateAppUserExtraRequest = {
-  info?: AppUserManagerV1Appusermgr.AppUserInfo
+  info?: AppUserManagerV1Appusermgr.AppUserExtra
 }
 
 export type UpdateAppUserExtraResponse = {

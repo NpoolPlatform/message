@@ -1782,7 +1782,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppUserInfo"
+          "$ref": "#/definitions/v1AppUserExtra"
         }
       }
     },

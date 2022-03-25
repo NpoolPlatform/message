@@ -539,7 +539,7 @@ message UpdateAccountResponse {
 }
 
 message UpdateAppUserExtraRequest {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    app.user.manager.v1.AppUserExtra Info = 10;
 }
 
 message UpdateAppUserExtraResponse {

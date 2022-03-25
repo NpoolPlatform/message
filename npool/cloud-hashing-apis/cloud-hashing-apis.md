@@ -1553,7 +1553,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+| Info | [app.user.manager.v1.AppUserExtra](#app-user-manager-v1-AppUserExtra) |  |  |
 
 
 
@@ -3391,7 +3391,7 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+| Info | [app.user.manager.v1.AppUserExtra](#app-user-manager-v1-AppUserExtra) |  |  |
 
 
 
