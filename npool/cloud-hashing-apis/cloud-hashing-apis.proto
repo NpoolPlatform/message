@@ -132,6 +132,12 @@ service CloudHashingApis {
             body: "*"
         };
     }
+    rpc UpdateAppUserExtra (UpdateAppUserExtraRequest) returns (UpdateAppUserExtraResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/user/extra"
+            body: "*"
+        };
+    }
 
     rpc GetReferrals (GetReferralsRequest) returns (GetReferralsResponse) {
         option (google.api.http) = {
@@ -529,6 +535,14 @@ message UpdateAccountRequest {
 }
 
 message UpdateAccountResponse {
+    app.user.manager.v1.AppUserInfo Info = 10;
+}
+
+message UpdateAppUserExtraRequest {
+    app.user.manager.v1.AppUserInfo Info = 10;
+}
+
+message UpdateAppUserExtraResponse {
     app.user.manager.v1.AppUserInfo Info = 10;
 }
 

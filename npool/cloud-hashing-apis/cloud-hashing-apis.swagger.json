@@ -1131,6 +1131,38 @@
         ]
       }
     },
+    "/v1/update/app/user/extra": {
+      "post": {
+        "operationId": "CloudHashingApis_UpdateAppUserExtra",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1UpdateAppUserExtraResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1UpdateAppUserExtraRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/update/emailaddress": {
       "post": {
         "operationId": "CloudHashingApis_UpdateEmailAddress",
@@ -1746,6 +1778,22 @@
         }
       }
     },
+    "hashingapisv1UpdateAppUserExtraRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
+        }
+      }
+    },
+    "hashingapisv1UpdateAppUserExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
+        }
+      }
+    },
     "hashingapisv1UpdateKycRequest": {
       "type": "object",
       "properties": {
@@ -2067,6 +2115,9 @@
           "type": "string"
         },
         "LastName": {
+          "type": "string"
+        },
+        "IDNumber": {
           "type": "string"
         }
       }

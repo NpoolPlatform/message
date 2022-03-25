@@ -233,6 +233,14 @@ export type UpdateAccountResponse = {
   info?: AppUserManagerV1Appusermgr.AppUserInfo
 }
 
+export type UpdateAppUserExtraRequest = {
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
+}
+
+export type UpdateAppUserExtraResponse = {
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
+}
+
 export type CoinSummary = {
   coinTypeID?: string
   coinName?: string
@@ -621,6 +629,9 @@ export class CloudHashingApis {
   }
   static UpdateAccount(req: UpdateAccountRequest, initReq?: fm.InitReq): Promise<UpdateAccountResponse> {
     return fm.fetchReq<UpdateAccountRequest, UpdateAccountResponse>(`/v1/update/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateAppUserExtra(req: UpdateAppUserExtraRequest, initReq?: fm.InitReq): Promise<UpdateAppUserExtraResponse> {
+    return fm.fetchReq<UpdateAppUserExtraRequest, UpdateAppUserExtraResponse>(`/v1/update/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetReferrals(req: GetReferralsRequest, initReq?: fm.InitReq): Promise<GetReferralsResponse> {
     return fm.fetchReq<GetReferralsRequest, GetReferralsResponse>(`/v1/get/referrals`, {...initReq, method: "POST", body: JSON.stringify(req)})
