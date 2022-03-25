@@ -11,6 +11,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/app/user/extra": {
+      "post": {
+        "operationId": "CloudHashingApis_CreateAppUserExtra",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1CreateAppUserExtraResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1CreateAppUserExtraRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/create/good": {
       "post": {
         "operationId": "CloudHashingApis_CreateGood",
@@ -1517,6 +1549,22 @@
     }
   },
   "definitions": {
+    "hashingapisv1CreateAppUserExtraRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserExtra"
+        }
+      }
+    },
+    "hashingapisv1CreateAppUserExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
+        }
+      }
+    },
     "hashingapisv1CreateGoodRequest": {
       "type": "object",
       "properties": {

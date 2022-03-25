@@ -132,6 +132,12 @@ service CloudHashingApis {
             body: "*"
         };
     }
+    rpc CreateAppUserExtra (CreateAppUserExtraRequest) returns (CreateAppUserExtraResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/extra"
+            body: "*"
+        };
+    }
     rpc UpdateAppUserExtra (UpdateAppUserExtraRequest) returns (UpdateAppUserExtraResponse) {
         option (google.api.http) = {
             post: "/v1/update/app/user/extra"
@@ -543,6 +549,14 @@ message UpdateAppUserExtraRequest {
 }
 
 message UpdateAppUserExtraResponse {
+    app.user.manager.v1.AppUserInfo Info = 10;
+}
+
+message CreateAppUserExtraRequest {
+    app.user.manager.v1.AppUserExtra Info = 10;
+}
+
+message CreateAppUserExtraResponse {
     app.user.manager.v1.AppUserInfo Info = 10;
 }
 

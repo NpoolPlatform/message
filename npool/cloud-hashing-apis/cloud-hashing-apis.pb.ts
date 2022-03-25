@@ -241,6 +241,14 @@ export type UpdateAppUserExtraResponse = {
   info?: AppUserManagerV1Appusermgr.AppUserInfo
 }
 
+export type CreateAppUserExtraRequest = {
+  info?: AppUserManagerV1Appusermgr.AppUserExtra
+}
+
+export type CreateAppUserExtraResponse = {
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
+}
+
 export type CoinSummary = {
   coinTypeID?: string
   coinName?: string
@@ -629,6 +637,9 @@ export class CloudHashingApis {
   }
   static UpdateAccount(req: UpdateAccountRequest, initReq?: fm.InitReq): Promise<UpdateAccountResponse> {
     return fm.fetchReq<UpdateAccountRequest, UpdateAccountResponse>(`/v1/update/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppUserExtra(req: CreateAppUserExtraRequest, initReq?: fm.InitReq): Promise<CreateAppUserExtraResponse> {
+    return fm.fetchReq<CreateAppUserExtraRequest, CreateAppUserExtraResponse>(`/v1/create/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateAppUserExtra(req: UpdateAppUserExtraRequest, initReq?: fm.InitReq): Promise<UpdateAppUserExtraResponse> {
     return fm.fetchReq<UpdateAppUserExtraRequest, UpdateAppUserExtraResponse>(`/v1/update/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req)})

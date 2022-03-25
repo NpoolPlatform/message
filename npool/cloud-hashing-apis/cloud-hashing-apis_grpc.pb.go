@@ -42,6 +42,7 @@ type CloudHashingApisClient interface {
 	UpdateEmailAddress(ctx context.Context, in *UpdateEmailAddressRequest, opts ...grpc.CallOption) (*UpdateEmailAddressResponse, error)
 	UpdatePhoneNO(ctx context.Context, in *UpdatePhoneNORequest, opts ...grpc.CallOption) (*UpdatePhoneNOResponse, error)
 	UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error)
+	CreateAppUserExtra(ctx context.Context, in *CreateAppUserExtraRequest, opts ...grpc.CallOption) (*CreateAppUserExtraResponse, error)
 	UpdateAppUserExtra(ctx context.Context, in *UpdateAppUserExtraRequest, opts ...grpc.CallOption) (*UpdateAppUserExtraResponse, error)
 	GetReferrals(ctx context.Context, in *GetReferralsRequest, opts ...grpc.CallOption) (*GetReferralsResponse, error)
 	GetLayeredReferrals(ctx context.Context, in *GetLayeredReferralsRequest, opts ...grpc.CallOption) (*GetLayeredReferralsResponse, error)
@@ -237,6 +238,15 @@ func (c *cloudHashingApisClient) UpdatePhoneNO(ctx context.Context, in *UpdatePh
 func (c *cloudHashingApisClient) UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error) {
 	out := new(UpdateAccountResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/UpdateAccount", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) CreateAppUserExtra(ctx context.Context, in *CreateAppUserExtraRequest, opts ...grpc.CallOption) (*CreateAppUserExtraResponse, error) {
+	out := new(CreateAppUserExtraResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/CreateAppUserExtra", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -526,6 +536,7 @@ type CloudHashingApisServer interface {
 	UpdateEmailAddress(context.Context, *UpdateEmailAddressRequest) (*UpdateEmailAddressResponse, error)
 	UpdatePhoneNO(context.Context, *UpdatePhoneNORequest) (*UpdatePhoneNOResponse, error)
 	UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error)
+	CreateAppUserExtra(context.Context, *CreateAppUserExtraRequest) (*CreateAppUserExtraResponse, error)
 	UpdateAppUserExtra(context.Context, *UpdateAppUserExtraRequest) (*UpdateAppUserExtraResponse, error)
 	GetReferrals(context.Context, *GetReferralsRequest) (*GetReferralsResponse, error)
 	GetLayeredReferrals(context.Context, *GetLayeredReferralsRequest) (*GetLayeredReferralsResponse, error)
@@ -615,6 +626,9 @@ func (UnimplementedCloudHashingApisServer) UpdatePhoneNO(context.Context, *Updat
 }
 func (UnimplementedCloudHashingApisServer) UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAccount not implemented")
+}
+func (UnimplementedCloudHashingApisServer) CreateAppUserExtra(context.Context, *CreateAppUserExtraRequest) (*CreateAppUserExtraResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserExtra not implemented")
 }
 func (UnimplementedCloudHashingApisServer) UpdateAppUserExtra(context.Context, *UpdateAppUserExtraRequest) (*UpdateAppUserExtraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUserExtra not implemented")
@@ -1036,6 +1050,24 @@ func _CloudHashingApis_UpdateAccount_Handler(srv interface{}, ctx context.Contex
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingApisServer).UpdateAccount(ctx, req.(*UpdateAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_CreateAppUserExtra_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppUserExtraRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).CreateAppUserExtra(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/CreateAppUserExtra",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).CreateAppUserExtra(ctx, req.(*CreateAppUserExtraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1640,6 +1672,10 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateAccount",
 			Handler:    _CloudHashingApis_UpdateAccount_Handler,
+		},
+		{
+			MethodName: "CreateAppUserExtra",
+			Handler:    _CloudHashingApis_CreateAppUserExtra_Handler,
 		},
 		{
 			MethodName: "UpdateAppUserExtra",

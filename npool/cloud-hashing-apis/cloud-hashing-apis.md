@@ -8,6 +8,8 @@
     - [Commission](#cloud-hashing-apis-v1-Commission)
     - [Coupon](#cloud-hashing-apis-v1-Coupon)
     - [Coupons](#cloud-hashing-apis-v1-Coupons)
+    - [CreateAppUserExtraRequest](#cloud-hashing-apis-v1-CreateAppUserExtraRequest)
+    - [CreateAppUserExtraResponse](#cloud-hashing-apis-v1-CreateAppUserExtraResponse)
     - [CreateGoodRequest](#cloud-hashing-apis-v1-CreateGoodRequest)
     - [CreateGoodResponse](#cloud-hashing-apis-v1-CreateGoodResponse)
     - [CreateKycRequest](#cloud-hashing-apis-v1-CreateKycRequest)
@@ -122,6 +124,8 @@
     - [Commission](#cloud-hashing-apis-v1-Commission)
     - [Coupon](#cloud-hashing-apis-v1-Coupon)
     - [Coupons](#cloud-hashing-apis-v1-Coupons)
+    - [CreateAppUserExtraRequest](#cloud-hashing-apis-v1-CreateAppUserExtraRequest)
+    - [CreateAppUserExtraResponse](#cloud-hashing-apis-v1-CreateAppUserExtraResponse)
     - [CreateGoodRequest](#cloud-hashing-apis-v1-CreateGoodRequest)
     - [CreateGoodResponse](#cloud-hashing-apis-v1-CreateGoodResponse)
     - [CreateKycRequest](#cloud-hashing-apis-v1-CreateKycRequest)
@@ -309,6 +313,36 @@
 
 
 
+<a name="cloud-hashing-apis-v1-CreateAppUserExtraRequest"></a>
+
+### CreateAppUserExtraRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [app.user.manager.v1.AppUserExtra](#app-user-manager-v1-AppUserExtra) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-CreateAppUserExtraResponse"></a>
+
+### CreateAppUserExtraResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-CreateGoodRequest"></a>
 
 ### CreateGoodRequest
@@ -2039,6 +2073,7 @@ Cloud Hashing Goods
 | UpdateEmailAddress | [UpdateEmailAddressRequest](#cloud-hashing-apis-v1-UpdateEmailAddressRequest) | [UpdateEmailAddressResponse](#cloud-hashing-apis-v1-UpdateEmailAddressResponse) |  |
 | UpdatePhoneNO | [UpdatePhoneNORequest](#cloud-hashing-apis-v1-UpdatePhoneNORequest) | [UpdatePhoneNOResponse](#cloud-hashing-apis-v1-UpdatePhoneNOResponse) |  |
 | UpdateAccount | [UpdateAccountRequest](#cloud-hashing-apis-v1-UpdateAccountRequest) | [UpdateAccountResponse](#cloud-hashing-apis-v1-UpdateAccountResponse) |  |
+| CreateAppUserExtra | [CreateAppUserExtraRequest](#cloud-hashing-apis-v1-CreateAppUserExtraRequest) | [CreateAppUserExtraResponse](#cloud-hashing-apis-v1-CreateAppUserExtraResponse) |  |
 | UpdateAppUserExtra | [UpdateAppUserExtraRequest](#cloud-hashing-apis-v1-UpdateAppUserExtraRequest) | [UpdateAppUserExtraResponse](#cloud-hashing-apis-v1-UpdateAppUserExtraResponse) |  |
 | GetReferrals | [GetReferralsRequest](#cloud-hashing-apis-v1-GetReferralsRequest) | [GetReferralsResponse](#cloud-hashing-apis-v1-GetReferralsResponse) |  |
 | GetLayeredReferrals | [GetLayeredReferralsRequest](#cloud-hashing-apis-v1-GetLayeredReferralsRequest) | [GetLayeredReferralsResponse](#cloud-hashing-apis-v1-GetLayeredReferralsResponse) |  |
@@ -2147,6 +2182,36 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud-hashing-apis-v1-CreateAppUserExtraRequest"></a>
+
+### CreateAppUserExtraRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [app.user.manager.v1.AppUserExtra](#app-user-manager-v1-AppUserExtra) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-CreateAppUserExtraResponse"></a>
+
+### CreateAppUserExtraResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-CreateGoodRequest"></a>
 
 ### CreateGoodRequest
@@ -3877,6 +3942,7 @@ Cloud Hashing Goods
 | UpdateEmailAddress | [UpdateEmailAddressRequest](#cloud-hashing-apis-v1-UpdateEmailAddressRequest) | [UpdateEmailAddressResponse](#cloud-hashing-apis-v1-UpdateEmailAddressResponse) |  |
 | UpdatePhoneNO | [UpdatePhoneNORequest](#cloud-hashing-apis-v1-UpdatePhoneNORequest) | [UpdatePhoneNOResponse](#cloud-hashing-apis-v1-UpdatePhoneNOResponse) |  |
 | UpdateAccount | [UpdateAccountRequest](#cloud-hashing-apis-v1-UpdateAccountRequest) | [UpdateAccountResponse](#cloud-hashing-apis-v1-UpdateAccountResponse) |  |
+| CreateAppUserExtra | [CreateAppUserExtraRequest](#cloud-hashing-apis-v1-CreateAppUserExtraRequest) | [CreateAppUserExtraResponse](#cloud-hashing-apis-v1-CreateAppUserExtraResponse) |  |
 | UpdateAppUserExtra | [UpdateAppUserExtraRequest](#cloud-hashing-apis-v1-UpdateAppUserExtraRequest) | [UpdateAppUserExtraResponse](#cloud-hashing-apis-v1-UpdateAppUserExtraResponse) |  |
 | GetReferrals | [GetReferralsRequest](#cloud-hashing-apis-v1-GetReferralsRequest) | [GetReferralsResponse](#cloud-hashing-apis-v1-GetReferralsResponse) |  |
 | GetLayeredReferrals | [GetLayeredReferralsRequest](#cloud-hashing-apis-v1-GetLayeredReferralsRequest) | [GetLayeredReferralsResponse](#cloud-hashing-apis-v1-GetLayeredReferralsResponse) |  |
