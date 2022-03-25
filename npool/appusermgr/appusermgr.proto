@@ -773,6 +773,7 @@ message AppUserExtra {
     string Organization = 110;
     string FirstName = 120;
     string LastName = 130;
+    string IDNumber = 140;
 }
 
 message CreateAppUserExtraRequest {

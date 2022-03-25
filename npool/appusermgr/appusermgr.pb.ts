@@ -325,6 +325,7 @@ export type AppUserExtra = {
   organization?: string
   firstName?: string
   lastName?: string
+  iDNumber?: string
 }
 
 export type CreateAppUserExtraRequest = {
