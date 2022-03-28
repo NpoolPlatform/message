@@ -801,6 +801,7 @@ message SetWithdrawAddressResponse {
 
 message DeleteWithdrawAddressRequest {
     string ID = 10;
+    string AppID = 20;
 }
 
 message DeleteWithdrawAddressResponse {

@@ -480,6 +480,7 @@ export type SetWithdrawAddressResponse = {
 
 export type DeleteWithdrawAddressRequest = {
   id?: string
+  appID?: string
 }
 
 export type DeleteWithdrawAddressResponse = {

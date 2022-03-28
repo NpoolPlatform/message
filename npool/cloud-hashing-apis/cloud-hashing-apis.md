@@ -508,6 +508,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
 
 
 
@@ -2408,6 +2409,7 @@ Cloud Hashing Goods
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
 
 
 
