@@ -478,6 +478,14 @@ export type SetWithdrawAddressResponse = {
   info?: WithdrawAddress
 }
 
+export type DeleteWithdrawAddressRequest = {
+  id?: string
+}
+
+export type DeleteWithdrawAddressResponse = {
+  info?: WithdrawAddress
+}
+
 export type GetWithdrawAddressesByAppUserRequest = {
   appID?: string
   userID?: string
@@ -709,6 +717,9 @@ export class CloudHashingApis {
   }
   static SetWithdrawAddress(req: SetWithdrawAddressRequest, initReq?: fm.InitReq): Promise<SetWithdrawAddressResponse> {
     return fm.fetchReq<SetWithdrawAddressRequest, SetWithdrawAddressResponse>(`/v1/set/withdraw/address`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static DeleteWithdrawAddress(req: DeleteWithdrawAddressRequest, initReq?: fm.InitReq): Promise<DeleteWithdrawAddressResponse> {
+    return fm.fetchReq<DeleteWithdrawAddressRequest, DeleteWithdrawAddressResponse>(`/v1/delete/withdraw/address`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetWithdrawAddressesByAppUser(req: GetWithdrawAddressesByAppUserRequest, initReq?: fm.InitReq): Promise<GetWithdrawAddressesByAppUserResponse> {
     return fm.fetchReq<GetWithdrawAddressesByAppUserRequest, GetWithdrawAddressesByAppUserResponse>(`/v1/get/withdraw/addresses/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})

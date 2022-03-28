@@ -203,6 +203,38 @@
         ]
       }
     },
+    "/v1/delete/withdraw/address": {
+      "post": {
+        "operationId": "CloudHashingApis_DeleteWithdrawAddress",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteWithdrawAddressResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteWithdrawAddressRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/commission/by/app/user": {
       "post": {
         "operationId": "CloudHashingApis_GetCommissionByAppUser",
@@ -2512,6 +2544,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1CoinAccountInfo"
+        }
+      }
+    },
+    "v1DeleteWithdrawAddressRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteWithdrawAddressResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1WithdrawAddress"
         }
       }
     },

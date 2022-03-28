@@ -20,6 +20,8 @@
     - [CreatePlatformCoinAccountResponse](#cloud-hashing-apis-v1-CreatePlatformCoinAccountResponse)
     - [CreateUserCoinAccountRequest](#cloud-hashing-apis-v1-CreateUserCoinAccountRequest)
     - [CreateUserCoinAccountResponse](#cloud-hashing-apis-v1-CreateUserCoinAccountResponse)
+    - [DeleteWithdrawAddressRequest](#cloud-hashing-apis-v1-DeleteWithdrawAddressRequest)
+    - [DeleteWithdrawAddressResponse](#cloud-hashing-apis-v1-DeleteWithdrawAddressResponse)
     - [GetCommissionByAppUserRequest](#cloud-hashing-apis-v1-GetCommissionByAppUserRequest)
     - [GetCommissionByAppUserResponse](#cloud-hashing-apis-v1-GetCommissionByAppUserResponse)
     - [GetCouponsByAppUserRequest](#cloud-hashing-apis-v1-GetCouponsByAppUserRequest)
@@ -136,6 +138,8 @@
     - [CreatePlatformCoinAccountResponse](#cloud-hashing-apis-v1-CreatePlatformCoinAccountResponse)
     - [CreateUserCoinAccountRequest](#cloud-hashing-apis-v1-CreateUserCoinAccountRequest)
     - [CreateUserCoinAccountResponse](#cloud-hashing-apis-v1-CreateUserCoinAccountResponse)
+    - [DeleteWithdrawAddressRequest](#cloud-hashing-apis-v1-DeleteWithdrawAddressRequest)
+    - [DeleteWithdrawAddressResponse](#cloud-hashing-apis-v1-DeleteWithdrawAddressResponse)
     - [GetCommissionByAppUserRequest](#cloud-hashing-apis-v1-GetCommissionByAppUserRequest)
     - [GetCommissionByAppUserResponse](#cloud-hashing-apis-v1-GetCommissionByAppUserResponse)
     - [GetCouponsByAppUserRequest](#cloud-hashing-apis-v1-GetCouponsByAppUserRequest)
@@ -495,6 +499,36 @@
 
 
 
+<a name="cloud-hashing-apis-v1-DeleteWithdrawAddressRequest"></a>
+
+### DeleteWithdrawAddressRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-DeleteWithdrawAddressResponse"></a>
+
+### DeleteWithdrawAddressResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [WithdrawAddress](#cloud-hashing-apis-v1-WithdrawAddress) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-GetCommissionByAppUserRequest"></a>
 
 ### GetCommissionByAppUserRequest
@@ -2097,6 +2131,7 @@ Cloud Hashing Goods
 | UpdateUserWithdrawReviewForOtherAppUser | [UpdateUserWithdrawReviewForOtherAppUserRequest](#cloud-hashing-apis-v1-UpdateUserWithdrawReviewForOtherAppUserRequest) | [UpdateUserWithdrawReviewForOtherAppUserResponse](#cloud-hashing-apis-v1-UpdateUserWithdrawReviewForOtherAppUserResponse) |  |
 | GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud-hashing-apis-v1-GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud-hashing-apis-v1-GetUserWithdrawsByAppUserResponse) |  |
 | SetWithdrawAddress | [SetWithdrawAddressRequest](#cloud-hashing-apis-v1-SetWithdrawAddressRequest) | [SetWithdrawAddressResponse](#cloud-hashing-apis-v1-SetWithdrawAddressResponse) |  |
+| DeleteWithdrawAddress | [DeleteWithdrawAddressRequest](#cloud-hashing-apis-v1-DeleteWithdrawAddressRequest) | [DeleteWithdrawAddressResponse](#cloud-hashing-apis-v1-DeleteWithdrawAddressResponse) |  |
 | GetWithdrawAddressesByAppUser | [GetWithdrawAddressesByAppUserRequest](#cloud-hashing-apis-v1-GetWithdrawAddressesByAppUserRequest) | [GetWithdrawAddressesByAppUserResponse](#cloud-hashing-apis-v1-GetWithdrawAddressesByAppUserResponse) |  |
 | GetCouponsByAppUser | [GetCouponsByAppUserRequest](#cloud-hashing-apis-v1-GetCouponsByAppUserRequest) | [GetCouponsByAppUserResponse](#cloud-hashing-apis-v1-GetCouponsByAppUserResponse) |  |
 | GetCommissionByAppUser | [GetCommissionByAppUserRequest](#cloud-hashing-apis-v1-GetCommissionByAppUserRequest) | [GetCommissionByAppUserResponse](#cloud-hashing-apis-v1-GetCommissionByAppUserResponse) |  |
@@ -2364,6 +2399,36 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud-hashing-apis-v1-DeleteWithdrawAddressRequest"></a>
+
+### DeleteWithdrawAddressRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-DeleteWithdrawAddressResponse"></a>
+
+### DeleteWithdrawAddressResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [WithdrawAddress](#cloud-hashing-apis-v1-WithdrawAddress) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-GetCommissionByAppUserRequest"></a>
 
 ### GetCommissionByAppUserRequest
@@ -3966,6 +4031,7 @@ Cloud Hashing Goods
 | UpdateUserWithdrawReviewForOtherAppUser | [UpdateUserWithdrawReviewForOtherAppUserRequest](#cloud-hashing-apis-v1-UpdateUserWithdrawReviewForOtherAppUserRequest) | [UpdateUserWithdrawReviewForOtherAppUserResponse](#cloud-hashing-apis-v1-UpdateUserWithdrawReviewForOtherAppUserResponse) |  |
 | GetUserWithdrawsByAppUser | [GetUserWithdrawsByAppUserRequest](#cloud-hashing-apis-v1-GetUserWithdrawsByAppUserRequest) | [GetUserWithdrawsByAppUserResponse](#cloud-hashing-apis-v1-GetUserWithdrawsByAppUserResponse) |  |
 | SetWithdrawAddress | [SetWithdrawAddressRequest](#cloud-hashing-apis-v1-SetWithdrawAddressRequest) | [SetWithdrawAddressResponse](#cloud-hashing-apis-v1-SetWithdrawAddressResponse) |  |
+| DeleteWithdrawAddress | [DeleteWithdrawAddressRequest](#cloud-hashing-apis-v1-DeleteWithdrawAddressRequest) | [DeleteWithdrawAddressResponse](#cloud-hashing-apis-v1-DeleteWithdrawAddressResponse) |  |
 | GetWithdrawAddressesByAppUser | [GetWithdrawAddressesByAppUserRequest](#cloud-hashing-apis-v1-GetWithdrawAddressesByAppUserRequest) | [GetWithdrawAddressesByAppUserResponse](#cloud-hashing-apis-v1-GetWithdrawAddressesByAppUserResponse) |  |
 | GetCouponsByAppUser | [GetCouponsByAppUserRequest](#cloud-hashing-apis-v1-GetCouponsByAppUserRequest) | [GetCouponsByAppUserResponse](#cloud-hashing-apis-v1-GetCouponsByAppUserResponse) |  |
 | GetCommissionByAppUser | [GetCommissionByAppUserRequest](#cloud-hashing-apis-v1-GetCommissionByAppUserRequest) | [GetCommissionByAppUserResponse](#cloud-hashing-apis-v1-GetCommissionByAppUserResponse) |  |

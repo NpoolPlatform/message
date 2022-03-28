@@ -282,6 +282,12 @@ service CloudHashingApis {
             body: "*"
         };
     }
+    rpc DeleteWithdrawAddress (DeleteWithdrawAddressRequest) returns (DeleteWithdrawAddressResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/withdraw/address"
+            body: "*"
+        };
+    }
     rpc GetWithdrawAddressesByAppUser (GetWithdrawAddressesByAppUserRequest) returns (GetWithdrawAddressesByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/withdraw/addresses/by/app/user"
@@ -790,6 +796,14 @@ message SetWithdrawAddressRequest {
 }
 
 message SetWithdrawAddressResponse {
+    WithdrawAddress Info = 10;
+}
+
+message DeleteWithdrawAddressRequest {
+    string ID = 10;
+}
+
+message DeleteWithdrawAddressResponse {
     WithdrawAddress Info = 10;
 }
 
