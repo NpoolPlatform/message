@@ -805,7 +805,7 @@ message DeleteWithdrawAddressRequest {
 }
 
 message DeleteWithdrawAddressResponse {
-    WithdrawAddress Info = 10;
+    cloud.hashing.billing.v1.UserWithdraw Info = 10;
 }
 
 message GetWithdrawAddressesByAppUserRequest {

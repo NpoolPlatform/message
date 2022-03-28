@@ -523,7 +523,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [WithdrawAddress](#cloud-hashing-apis-v1-WithdrawAddress) |  |  |
+| Info | [cloud.hashing.billing.v1.UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
 
 
 
@@ -2424,7 +2424,7 @@ Cloud Hashing Goods
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [WithdrawAddress](#cloud-hashing-apis-v1-WithdrawAddress) |  |  |
+| Info | [cloud.hashing.billing.v1.UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
 
 
 

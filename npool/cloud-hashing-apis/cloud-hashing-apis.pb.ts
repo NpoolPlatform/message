@@ -484,7 +484,7 @@ export type DeleteWithdrawAddressRequest = {
 }
 
 export type DeleteWithdrawAddressResponse = {
-  info?: WithdrawAddress
+  info?: CloudHashingBillingV1Cloud-hashing-billing.UserWithdraw
 }
 
 export type GetWithdrawAddressesByAppUserRequest = {

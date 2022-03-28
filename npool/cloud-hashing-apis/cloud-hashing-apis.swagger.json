@@ -2562,7 +2562,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1WithdrawAddress"
+          "$ref": "#/definitions/hashingbillingv1UserWithdraw"
         }
       }
     },
