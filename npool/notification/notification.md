@@ -7,6 +7,8 @@
     - [Announcement](#notification-v1-Announcement)
     - [CheckReadUserRequest](#notification-v1-CheckReadUserRequest)
     - [CheckReadUserResponse](#notification-v1-CheckReadUserResponse)
+    - [CreateAnnouncementForOtherAppRequest](#notification-v1-CreateAnnouncementForOtherAppRequest)
+    - [CreateAnnouncementForOtherAppResponse](#notification-v1-CreateAnnouncementForOtherAppResponse)
     - [CreateAnnouncementRequest](#notification-v1-CreateAnnouncementRequest)
     - [CreateAnnouncementResponse](#notification-v1-CreateAnnouncementResponse)
     - [CreateMailRequest](#notification-v1-CreateMailRequest)
@@ -21,6 +23,8 @@
     - [CreateTemplateResponse](#notification-v1-CreateTemplateResponse)
     - [GetAnnouncementsByAppRequest](#notification-v1-GetAnnouncementsByAppRequest)
     - [GetAnnouncementsByAppResponse](#notification-v1-GetAnnouncementsByAppResponse)
+    - [GetAnnouncementsByOtherAppRequest](#notification-v1-GetAnnouncementsByOtherAppRequest)
+    - [GetAnnouncementsByOtherAppResponse](#notification-v1-GetAnnouncementsByOtherAppResponse)
     - [GetNotificationsByAppUserRequest](#notification-v1-GetNotificationsByAppUserRequest)
     - [GetNotificationsByAppUserResponse](#notification-v1-GetNotificationsByAppUserResponse)
     - [GetTemplateByAppLangUsedForRequest](#notification-v1-GetTemplateByAppLangUsedForRequest)
@@ -50,6 +54,8 @@
     - [Announcement](#notification-v1-Announcement)
     - [CheckReadUserRequest](#notification-v1-CheckReadUserRequest)
     - [CheckReadUserResponse](#notification-v1-CheckReadUserResponse)
+    - [CreateAnnouncementForOtherAppRequest](#notification-v1-CreateAnnouncementForOtherAppRequest)
+    - [CreateAnnouncementForOtherAppResponse](#notification-v1-CreateAnnouncementForOtherAppResponse)
     - [CreateAnnouncementRequest](#notification-v1-CreateAnnouncementRequest)
     - [CreateAnnouncementResponse](#notification-v1-CreateAnnouncementResponse)
     - [CreateMailRequest](#notification-v1-CreateMailRequest)
@@ -64,6 +70,8 @@
     - [CreateTemplateResponse](#notification-v1-CreateTemplateResponse)
     - [GetAnnouncementsByAppRequest](#notification-v1-GetAnnouncementsByAppRequest)
     - [GetAnnouncementsByAppResponse](#notification-v1-GetAnnouncementsByAppResponse)
+    - [GetAnnouncementsByOtherAppRequest](#notification-v1-GetAnnouncementsByOtherAppRequest)
+    - [GetAnnouncementsByOtherAppResponse](#notification-v1-GetAnnouncementsByOtherAppResponse)
     - [GetNotificationsByAppUserRequest](#notification-v1-GetNotificationsByAppUserRequest)
     - [GetNotificationsByAppUserResponse](#notification-v1-GetNotificationsByAppUserResponse)
     - [GetTemplateByAppLangUsedForRequest](#notification-v1-GetTemplateByAppLangUsedForRequest)
@@ -149,6 +157,37 @@
 
 
 
+<a name="notification-v1-CreateAnnouncementForOtherAppRequest"></a>
+
+### CreateAnnouncementForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [Announcement](#notification-v1-Announcement) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateAnnouncementForOtherAppResponse"></a>
+
+### CreateAnnouncementForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Announcement](#notification-v1-Announcement) |  |  |
+
+
+
+
+
+
 <a name="notification-v1-CreateAnnouncementRequest"></a>
 
 ### CreateAnnouncementRequest
@@ -352,6 +391,36 @@
 <a name="notification-v1-GetAnnouncementsByAppResponse"></a>
 
 ### GetAnnouncementsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Announcement](#notification-v1-Announcement) | repeated |  |
+
+
+
+
+
+
+<a name="notification-v1-GetAnnouncementsByOtherAppRequest"></a>
+
+### GetAnnouncementsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetAnnouncementsByOtherAppResponse"></a>
+
+### GetAnnouncementsByOtherAppResponse
 
 
 
@@ -736,8 +805,10 @@ Service Name
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) | Method Version |
 | CreateAnnouncement | [CreateAnnouncementRequest](#notification-v1-CreateAnnouncementRequest) | [CreateAnnouncementResponse](#notification-v1-CreateAnnouncementResponse) |  |
+| CreateAnnouncementForOtherApp | [CreateAnnouncementForOtherAppRequest](#notification-v1-CreateAnnouncementForOtherAppRequest) | [CreateAnnouncementForOtherAppResponse](#notification-v1-CreateAnnouncementForOtherAppResponse) |  |
 | UpdateAnnouncement | [UpdateAnnouncementRequest](#notification-v1-UpdateAnnouncementRequest) | [UpdateAnnouncementResponse](#notification-v1-UpdateAnnouncementResponse) |  |
 | GetAnnouncementsByApp | [GetAnnouncementsByAppRequest](#notification-v1-GetAnnouncementsByAppRequest) | [GetAnnouncementsByAppResponse](#notification-v1-GetAnnouncementsByAppResponse) |  |
+| GetAnnouncementsByOtherApp | [GetAnnouncementsByOtherAppRequest](#notification-v1-GetAnnouncementsByOtherAppRequest) | [GetAnnouncementsByOtherAppResponse](#notification-v1-GetAnnouncementsByOtherAppResponse) |  |
 | CreateNotification | [CreateNotificationRequest](#notification-v1-CreateNotificationRequest) | [CreateNotificationResponse](#notification-v1-CreateNotificationResponse) |  |
 | UpdateNotification | [UpdateNotificationRequest](#notification-v1-UpdateNotificationRequest) | [UpdateNotificationResponse](#notification-v1-UpdateNotificationResponse) |  |
 | GetNotificationsByAppUser | [GetNotificationsByAppUserRequest](#notification-v1-GetNotificationsByAppUserRequest) | [GetNotificationsByAppUserResponse](#notification-v1-GetNotificationsByAppUserResponse) |  |
@@ -813,6 +884,37 @@ Service Name
 
 
 
+<a name="notification-v1-CreateAnnouncementForOtherAppRequest"></a>
+
+### CreateAnnouncementForOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [Announcement](#notification-v1-Announcement) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateAnnouncementForOtherAppResponse"></a>
+
+### CreateAnnouncementForOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Announcement](#notification-v1-Announcement) |  |  |
+
+
+
+
+
+
 <a name="notification-v1-CreateAnnouncementRequest"></a>
 
 ### CreateAnnouncementRequest
@@ -1016,6 +1118,36 @@ Service Name
 <a name="notification-v1-GetAnnouncementsByAppResponse"></a>
 
 ### GetAnnouncementsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Announcement](#notification-v1-Announcement) | repeated |  |
+
+
+
+
+
+
+<a name="notification-v1-GetAnnouncementsByOtherAppRequest"></a>
+
+### GetAnnouncementsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetAnnouncementsByOtherAppResponse"></a>
+
+### GetAnnouncementsByOtherAppResponse
 
 
 
@@ -1400,8 +1532,10 @@ Service Name
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) | Method Version |
 | CreateAnnouncement | [CreateAnnouncementRequest](#notification-v1-CreateAnnouncementRequest) | [CreateAnnouncementResponse](#notification-v1-CreateAnnouncementResponse) |  |
+| CreateAnnouncementForOtherApp | [CreateAnnouncementForOtherAppRequest](#notification-v1-CreateAnnouncementForOtherAppRequest) | [CreateAnnouncementForOtherAppResponse](#notification-v1-CreateAnnouncementForOtherAppResponse) |  |
 | UpdateAnnouncement | [UpdateAnnouncementRequest](#notification-v1-UpdateAnnouncementRequest) | [UpdateAnnouncementResponse](#notification-v1-UpdateAnnouncementResponse) |  |
 | GetAnnouncementsByApp | [GetAnnouncementsByAppRequest](#notification-v1-GetAnnouncementsByAppRequest) | [GetAnnouncementsByAppResponse](#notification-v1-GetAnnouncementsByAppResponse) |  |
+| GetAnnouncementsByOtherApp | [GetAnnouncementsByOtherAppRequest](#notification-v1-GetAnnouncementsByOtherAppRequest) | [GetAnnouncementsByOtherAppResponse](#notification-v1-GetAnnouncementsByOtherAppResponse) |  |
 | CreateNotification | [CreateNotificationRequest](#notification-v1-CreateNotificationRequest) | [CreateNotificationResponse](#notification-v1-CreateNotificationResponse) |  |
 | UpdateNotification | [UpdateNotificationRequest](#notification-v1-UpdateNotificationRequest) | [UpdateNotificationResponse](#notification-v1-UpdateNotificationResponse) |  |
 | GetNotificationsByAppUser | [GetNotificationsByAppUserRequest](#notification-v1-GetNotificationsByAppUserRequest) | [GetNotificationsByAppUserResponse](#notification-v1-GetNotificationsByAppUserResponse) |  |

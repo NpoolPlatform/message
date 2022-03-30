@@ -100,6 +100,40 @@ func local_request_Notification_CreateAnnouncement_0(ctx context.Context, marsha
 
 }
 
+func request_Notification_CreateAnnouncementForOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, client NotificationClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAnnouncementForOtherAppRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.CreateAnnouncementForOtherApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func local_request_Notification_CreateAnnouncementForOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, server NotificationServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAnnouncementForOtherAppRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := server.CreateAnnouncementForOtherApp(ctx, &protoReq)
+	return msg, metadata, err
+
+}
+
 func request_Notification_UpdateAnnouncement_0(ctx context.Context, marshaler runtime.Marshaler, client NotificationClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UpdateAnnouncementRequest
 	var metadata runtime.ServerMetadata
@@ -164,6 +198,40 @@ func local_request_Notification_GetAnnouncementsByApp_0(ctx context.Context, mar
 	}
 
 	msg, err := server.GetAnnouncementsByApp(ctx, &protoReq)
+	return msg, metadata, err
+
+}
+
+func request_Notification_GetAnnouncementsByOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, client NotificationClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAnnouncementsByOtherAppRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.GetAnnouncementsByOtherApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func local_request_Notification_GetAnnouncementsByOtherApp_0(ctx context.Context, marshaler runtime.Marshaler, server NotificationServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAnnouncementsByOtherAppRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := server.GetAnnouncementsByOtherApp(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -679,7 +747,7 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/CreateAnnouncement", runtime.WithHTTPPathPattern("/create/announcement"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/CreateAnnouncement", runtime.WithHTTPPathPattern("/v1/create/announcement"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -696,13 +764,36 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 
 	})
 
+	mux.Handle("POST", pattern_Notification_CreateAnnouncementForOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/CreateAnnouncementForOtherApp", runtime.WithHTTPPathPattern("/v1/create/announcement/for/other/app"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_Notification_CreateAnnouncementForOtherApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_Notification_CreateAnnouncementForOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
 	mux.Handle("POST", pattern_Notification_UpdateAnnouncement_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/UpdateAnnouncement", runtime.WithHTTPPathPattern("/update/announcement"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/UpdateAnnouncement", runtime.WithHTTPPathPattern("/v1/update/announcement"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -725,7 +816,7 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/GetAnnouncementsByApp", runtime.WithHTTPPathPattern("/get/announcements/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/GetAnnouncementsByApp", runtime.WithHTTPPathPattern("/v1/get/announcements/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -742,13 +833,36 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 
 	})
 
+	mux.Handle("POST", pattern_Notification_GetAnnouncementsByOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/GetAnnouncementsByOtherApp", runtime.WithHTTPPathPattern("/v1/get/announcements/by/other/app"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_Notification_GetAnnouncementsByOtherApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_Notification_GetAnnouncementsByOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
 	mux.Handle("POST", pattern_Notification_CreateNotification_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/CreateNotification", runtime.WithHTTPPathPattern("/create/notification"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/CreateNotification", runtime.WithHTTPPathPattern("/v1/create/notification"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -771,7 +885,7 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/UpdateNotification", runtime.WithHTTPPathPattern("/update/notification"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/UpdateNotification", runtime.WithHTTPPathPattern("/v1/update/notification"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -794,7 +908,7 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/GetNotificationsByAppUser", runtime.WithHTTPPathPattern("/get/notifications/by/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/GetNotificationsByAppUser", runtime.WithHTTPPathPattern("/v1/get/notifications/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -817,7 +931,7 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/CreateReadUser", runtime.WithHTTPPathPattern("/create/read/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/CreateReadUser", runtime.WithHTTPPathPattern("/v1/create/read/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -840,7 +954,7 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/CheckReadUser", runtime.WithHTTPPathPattern("/check/read/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/CheckReadUser", runtime.WithHTTPPathPattern("/v1/check/read/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -863,7 +977,7 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/CreateMail", runtime.WithHTTPPathPattern("/create/mail"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/CreateMail", runtime.WithHTTPPathPattern("/v1/create/mail"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -886,7 +1000,7 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/UpdateMail", runtime.WithHTTPPathPattern("/update/mail"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/UpdateMail", runtime.WithHTTPPathPattern("/v1/update/mail"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -909,7 +1023,7 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/CreateTemplate", runtime.WithHTTPPathPattern("/create/template"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/CreateTemplate", runtime.WithHTTPPathPattern("/v1/create/template"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -932,7 +1046,7 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/CreateTemplateForOtherApp", runtime.WithHTTPPathPattern("/create/template/for/other/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/CreateTemplateForOtherApp", runtime.WithHTTPPathPattern("/v1/create/template/for/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -955,7 +1069,7 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/GetTemplate", runtime.WithHTTPPathPattern("/get/template"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/GetTemplate", runtime.WithHTTPPathPattern("/v1/get/template"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -978,7 +1092,7 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/UpdateTemplate", runtime.WithHTTPPathPattern("/update/template"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/UpdateTemplate", runtime.WithHTTPPathPattern("/v1/update/template"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1001,7 +1115,7 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/GetTemplatesByApp", runtime.WithHTTPPathPattern("/get/templates/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/GetTemplatesByApp", runtime.WithHTTPPathPattern("/v1/get/templates/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1024,7 +1138,7 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/GetTemplatesByOtherApp", runtime.WithHTTPPathPattern("/get/templates/by/other/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/GetTemplatesByOtherApp", runtime.WithHTTPPathPattern("/v1/get/templates/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1047,7 +1161,7 @@ func RegisterNotificationHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/GetTemplateByAppLangUsedFor", runtime.WithHTTPPathPattern("/get/template/by/app/lang/usedfor"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notification.v1.Notification/GetTemplateByAppLangUsedFor", runtime.WithHTTPPathPattern("/v1/get/template/by/app/lang/usedfor"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1129,7 +1243,7 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/CreateAnnouncement", runtime.WithHTTPPathPattern("/create/announcement"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/CreateAnnouncement", runtime.WithHTTPPathPattern("/v1/create/announcement"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1145,11 +1259,31 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 
 	})
 
+	mux.Handle("POST", pattern_Notification_CreateAnnouncementForOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/CreateAnnouncementForOtherApp", runtime.WithHTTPPathPattern("/v1/create/announcement/for/other/app"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_Notification_CreateAnnouncementForOtherApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_Notification_CreateAnnouncementForOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
 	mux.Handle("POST", pattern_Notification_UpdateAnnouncement_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/UpdateAnnouncement", runtime.WithHTTPPathPattern("/update/announcement"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/UpdateAnnouncement", runtime.WithHTTPPathPattern("/v1/update/announcement"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1169,7 +1303,7 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/GetAnnouncementsByApp", runtime.WithHTTPPathPattern("/get/announcements/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/GetAnnouncementsByApp", runtime.WithHTTPPathPattern("/v1/get/announcements/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1185,11 +1319,31 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 
 	})
 
+	mux.Handle("POST", pattern_Notification_GetAnnouncementsByOtherApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/GetAnnouncementsByOtherApp", runtime.WithHTTPPathPattern("/v1/get/announcements/by/other/app"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_Notification_GetAnnouncementsByOtherApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_Notification_GetAnnouncementsByOtherApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
 	mux.Handle("POST", pattern_Notification_CreateNotification_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/CreateNotification", runtime.WithHTTPPathPattern("/create/notification"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/CreateNotification", runtime.WithHTTPPathPattern("/v1/create/notification"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1209,7 +1363,7 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/UpdateNotification", runtime.WithHTTPPathPattern("/update/notification"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/UpdateNotification", runtime.WithHTTPPathPattern("/v1/update/notification"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1229,7 +1383,7 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/GetNotificationsByAppUser", runtime.WithHTTPPathPattern("/get/notifications/by/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/GetNotificationsByAppUser", runtime.WithHTTPPathPattern("/v1/get/notifications/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1249,7 +1403,7 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/CreateReadUser", runtime.WithHTTPPathPattern("/create/read/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/CreateReadUser", runtime.WithHTTPPathPattern("/v1/create/read/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1269,7 +1423,7 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/CheckReadUser", runtime.WithHTTPPathPattern("/check/read/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/CheckReadUser", runtime.WithHTTPPathPattern("/v1/check/read/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1289,7 +1443,7 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/CreateMail", runtime.WithHTTPPathPattern("/create/mail"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/CreateMail", runtime.WithHTTPPathPattern("/v1/create/mail"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1309,7 +1463,7 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/UpdateMail", runtime.WithHTTPPathPattern("/update/mail"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/UpdateMail", runtime.WithHTTPPathPattern("/v1/update/mail"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1329,7 +1483,7 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/CreateTemplate", runtime.WithHTTPPathPattern("/create/template"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/CreateTemplate", runtime.WithHTTPPathPattern("/v1/create/template"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1349,7 +1503,7 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/CreateTemplateForOtherApp", runtime.WithHTTPPathPattern("/create/template/for/other/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/CreateTemplateForOtherApp", runtime.WithHTTPPathPattern("/v1/create/template/for/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1369,7 +1523,7 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/GetTemplate", runtime.WithHTTPPathPattern("/get/template"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/GetTemplate", runtime.WithHTTPPathPattern("/v1/get/template"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1389,7 +1543,7 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/UpdateTemplate", runtime.WithHTTPPathPattern("/update/template"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/UpdateTemplate", runtime.WithHTTPPathPattern("/v1/update/template"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1409,7 +1563,7 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/GetTemplatesByApp", runtime.WithHTTPPathPattern("/get/templates/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/GetTemplatesByApp", runtime.WithHTTPPathPattern("/v1/get/templates/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1429,7 +1583,7 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/GetTemplatesByOtherApp", runtime.WithHTTPPathPattern("/get/templates/by/other/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/GetTemplatesByOtherApp", runtime.WithHTTPPathPattern("/v1/get/templates/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1449,7 +1603,7 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/GetTemplateByAppLangUsedFor", runtime.WithHTTPPathPattern("/get/template/by/app/lang/usedfor"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notification.v1.Notification/GetTemplateByAppLangUsedFor", runtime.WithHTTPPathPattern("/v1/get/template/by/app/lang/usedfor"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1471,39 +1625,43 @@ func RegisterNotificationHandlerClient(ctx context.Context, mux *runtime.ServeMu
 var (
 	pattern_Notification_Version_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"version"}, ""))
 
-	pattern_Notification_CreateAnnouncement_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"create", "announcement"}, ""))
+	pattern_Notification_CreateAnnouncement_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "announcement"}, ""))
 
-	pattern_Notification_UpdateAnnouncement_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"update", "announcement"}, ""))
+	pattern_Notification_CreateAnnouncementForOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "create", "announcement", "for", "other", "app"}, ""))
 
-	pattern_Notification_GetAnnouncementsByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"get", "announcements", "by", "app"}, ""))
+	pattern_Notification_UpdateAnnouncement_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "announcement"}, ""))
 
-	pattern_Notification_CreateNotification_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"create", "notification"}, ""))
+	pattern_Notification_GetAnnouncementsByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "announcements", "by", "app"}, ""))
 
-	pattern_Notification_UpdateNotification_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"update", "notification"}, ""))
+	pattern_Notification_GetAnnouncementsByOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "announcements", "by", "other", "app"}, ""))
 
-	pattern_Notification_GetNotificationsByAppUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"get", "notifications", "by", "app", "user"}, ""))
+	pattern_Notification_CreateNotification_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "notification"}, ""))
 
-	pattern_Notification_CreateReadUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"create", "read", "user"}, ""))
+	pattern_Notification_UpdateNotification_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "notification"}, ""))
 
-	pattern_Notification_CheckReadUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"check", "read", "user"}, ""))
+	pattern_Notification_GetNotificationsByAppUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "notifications", "by", "app", "user"}, ""))
 
-	pattern_Notification_CreateMail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"create", "mail"}, ""))
+	pattern_Notification_CreateReadUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "read", "user"}, ""))
 
-	pattern_Notification_UpdateMail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"update", "mail"}, ""))
+	pattern_Notification_CheckReadUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "check", "read", "user"}, ""))
 
-	pattern_Notification_CreateTemplate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"create", "template"}, ""))
+	pattern_Notification_CreateMail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "mail"}, ""))
 
-	pattern_Notification_CreateTemplateForOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"create", "template", "for", "other", "app"}, ""))
+	pattern_Notification_UpdateMail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "mail"}, ""))
 
-	pattern_Notification_GetTemplate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"get", "template"}, ""))
+	pattern_Notification_CreateTemplate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "template"}, ""))
 
-	pattern_Notification_UpdateTemplate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"update", "template"}, ""))
+	pattern_Notification_CreateTemplateForOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "create", "template", "for", "other", "app"}, ""))
 
-	pattern_Notification_GetTemplatesByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"get", "templates", "by", "app"}, ""))
+	pattern_Notification_GetTemplate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "template"}, ""))
 
-	pattern_Notification_GetTemplatesByOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"get", "templates", "by", "other", "app"}, ""))
+	pattern_Notification_UpdateTemplate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "template"}, ""))
 
-	pattern_Notification_GetTemplateByAppLangUsedFor_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"get", "template", "by", "app", "lang", "usedfor"}, ""))
+	pattern_Notification_GetTemplatesByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "templates", "by", "app"}, ""))
+
+	pattern_Notification_GetTemplatesByOtherApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "templates", "by", "other", "app"}, ""))
+
+	pattern_Notification_GetTemplateByAppLangUsedFor_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6}, []string{"v1", "get", "template", "by", "app", "lang", "usedfor"}, ""))
 )
 
 var (
@@ -1511,9 +1669,13 @@ var (
 
 	forward_Notification_CreateAnnouncement_0 = runtime.ForwardResponseMessage
 
+	forward_Notification_CreateAnnouncementForOtherApp_0 = runtime.ForwardResponseMessage
+
 	forward_Notification_UpdateAnnouncement_0 = runtime.ForwardResponseMessage
 
 	forward_Notification_GetAnnouncementsByApp_0 = runtime.ForwardResponseMessage
+
+	forward_Notification_GetAnnouncementsByOtherApp_0 = runtime.ForwardResponseMessage
 
 	forward_Notification_CreateNotification_0 = runtime.ForwardResponseMessage
 

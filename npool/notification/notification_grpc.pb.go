@@ -27,8 +27,10 @@ type NotificationClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateAnnouncement(ctx context.Context, in *CreateAnnouncementRequest, opts ...grpc.CallOption) (*CreateAnnouncementResponse, error)
+	CreateAnnouncementForOtherApp(ctx context.Context, in *CreateAnnouncementForOtherAppRequest, opts ...grpc.CallOption) (*CreateAnnouncementForOtherAppResponse, error)
 	UpdateAnnouncement(ctx context.Context, in *UpdateAnnouncementRequest, opts ...grpc.CallOption) (*UpdateAnnouncementResponse, error)
 	GetAnnouncementsByApp(ctx context.Context, in *GetAnnouncementsByAppRequest, opts ...grpc.CallOption) (*GetAnnouncementsByAppResponse, error)
+	GetAnnouncementsByOtherApp(ctx context.Context, in *GetAnnouncementsByOtherAppRequest, opts ...grpc.CallOption) (*GetAnnouncementsByOtherAppResponse, error)
 	CreateNotification(ctx context.Context, in *CreateNotificationRequest, opts ...grpc.CallOption) (*CreateNotificationResponse, error)
 	UpdateNotification(ctx context.Context, in *UpdateNotificationRequest, opts ...grpc.CallOption) (*UpdateNotificationResponse, error)
 	GetNotificationsByAppUser(ctx context.Context, in *GetNotificationsByAppUserRequest, opts ...grpc.CallOption) (*GetNotificationsByAppUserResponse, error)
@@ -71,6 +73,15 @@ func (c *notificationClient) CreateAnnouncement(ctx context.Context, in *CreateA
 	return out, nil
 }
 
+func (c *notificationClient) CreateAnnouncementForOtherApp(ctx context.Context, in *CreateAnnouncementForOtherAppRequest, opts ...grpc.CallOption) (*CreateAnnouncementForOtherAppResponse, error) {
+	out := new(CreateAnnouncementForOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/notification.v1.Notification/CreateAnnouncementForOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *notificationClient) UpdateAnnouncement(ctx context.Context, in *UpdateAnnouncementRequest, opts ...grpc.CallOption) (*UpdateAnnouncementResponse, error) {
 	out := new(UpdateAnnouncementResponse)
 	err := c.cc.Invoke(ctx, "/notification.v1.Notification/UpdateAnnouncement", in, out, opts...)
@@ -83,6 +94,15 @@ func (c *notificationClient) UpdateAnnouncement(ctx context.Context, in *UpdateA
 func (c *notificationClient) GetAnnouncementsByApp(ctx context.Context, in *GetAnnouncementsByAppRequest, opts ...grpc.CallOption) (*GetAnnouncementsByAppResponse, error) {
 	out := new(GetAnnouncementsByAppResponse)
 	err := c.cc.Invoke(ctx, "/notification.v1.Notification/GetAnnouncementsByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *notificationClient) GetAnnouncementsByOtherApp(ctx context.Context, in *GetAnnouncementsByOtherAppRequest, opts ...grpc.CallOption) (*GetAnnouncementsByOtherAppResponse, error) {
+	out := new(GetAnnouncementsByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/notification.v1.Notification/GetAnnouncementsByOtherApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -222,8 +242,10 @@ type NotificationServer interface {
 	// Method Version
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateAnnouncement(context.Context, *CreateAnnouncementRequest) (*CreateAnnouncementResponse, error)
+	CreateAnnouncementForOtherApp(context.Context, *CreateAnnouncementForOtherAppRequest) (*CreateAnnouncementForOtherAppResponse, error)
 	UpdateAnnouncement(context.Context, *UpdateAnnouncementRequest) (*UpdateAnnouncementResponse, error)
 	GetAnnouncementsByApp(context.Context, *GetAnnouncementsByAppRequest) (*GetAnnouncementsByAppResponse, error)
+	GetAnnouncementsByOtherApp(context.Context, *GetAnnouncementsByOtherAppRequest) (*GetAnnouncementsByOtherAppResponse, error)
 	CreateNotification(context.Context, *CreateNotificationRequest) (*CreateNotificationResponse, error)
 	UpdateNotification(context.Context, *UpdateNotificationRequest) (*UpdateNotificationResponse, error)
 	GetNotificationsByAppUser(context.Context, *GetNotificationsByAppUserRequest) (*GetNotificationsByAppUserResponse, error)
@@ -251,11 +273,17 @@ func (UnimplementedNotificationServer) Version(context.Context, *emptypb.Empty) 
 func (UnimplementedNotificationServer) CreateAnnouncement(context.Context, *CreateAnnouncementRequest) (*CreateAnnouncementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAnnouncement not implemented")
 }
+func (UnimplementedNotificationServer) CreateAnnouncementForOtherApp(context.Context, *CreateAnnouncementForOtherAppRequest) (*CreateAnnouncementForOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAnnouncementForOtherApp not implemented")
+}
 func (UnimplementedNotificationServer) UpdateAnnouncement(context.Context, *UpdateAnnouncementRequest) (*UpdateAnnouncementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAnnouncement not implemented")
 }
 func (UnimplementedNotificationServer) GetAnnouncementsByApp(context.Context, *GetAnnouncementsByAppRequest) (*GetAnnouncementsByAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAnnouncementsByApp not implemented")
+}
+func (UnimplementedNotificationServer) GetAnnouncementsByOtherApp(context.Context, *GetAnnouncementsByOtherAppRequest) (*GetAnnouncementsByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAnnouncementsByOtherApp not implemented")
 }
 func (UnimplementedNotificationServer) CreateNotification(context.Context, *CreateNotificationRequest) (*CreateNotificationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateNotification not implemented")
@@ -348,6 +376,24 @@ func _Notification_CreateAnnouncement_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Notification_CreateAnnouncementForOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAnnouncementForOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NotificationServer).CreateAnnouncementForOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notification.v1.Notification/CreateAnnouncementForOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NotificationServer).CreateAnnouncementForOtherApp(ctx, req.(*CreateAnnouncementForOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Notification_UpdateAnnouncement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAnnouncementRequest)
 	if err := dec(in); err != nil {
@@ -380,6 +426,24 @@ func _Notification_GetAnnouncementsByApp_Handler(srv interface{}, ctx context.Co
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(NotificationServer).GetAnnouncementsByApp(ctx, req.(*GetAnnouncementsByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Notification_GetAnnouncementsByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAnnouncementsByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NotificationServer).GetAnnouncementsByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notification.v1.Notification/GetAnnouncementsByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NotificationServer).GetAnnouncementsByOtherApp(ctx, req.(*GetAnnouncementsByOtherAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -652,12 +716,20 @@ var Notification_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Notification_CreateAnnouncement_Handler,
 		},
 		{
+			MethodName: "CreateAnnouncementForOtherApp",
+			Handler:    _Notification_CreateAnnouncementForOtherApp_Handler,
+		},
+		{
 			MethodName: "UpdateAnnouncement",
 			Handler:    _Notification_UpdateAnnouncement_Handler,
 		},
 		{
 			MethodName: "GetAnnouncementsByApp",
 			Handler:    _Notification_GetAnnouncementsByApp_Handler,
+		},
+		{
+			MethodName: "GetAnnouncementsByOtherApp",
+			Handler:    _Notification_GetAnnouncementsByOtherApp_Handler,
 		},
 		{
 			MethodName: "CreateNotification",

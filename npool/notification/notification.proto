@@ -20,107 +20,119 @@ service Notification {
 
     rpc CreateAnnouncement(CreateAnnouncementRequest) returns (CreateAnnouncementResponse) {
         option (google.api.http) = {
-            post: "/create/announcement"
+            post: "/v1/create/announcement"
+            body: "*"
+        };
+    }
+    rpc CreateAnnouncementForOtherApp(CreateAnnouncementForOtherAppRequest) returns (CreateAnnouncementForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/announcement/for/other/app"
             body: "*"
         };
     }
     rpc UpdateAnnouncement(UpdateAnnouncementRequest) returns (UpdateAnnouncementResponse) {
         option (google.api.http) = {
-            post: "/update/announcement"
+            post: "/v1/update/announcement"
             body: "*"
         };
     }
     rpc GetAnnouncementsByApp(GetAnnouncementsByAppRequest) returns (GetAnnouncementsByAppResponse) {
         option (google.api.http) = {
-            post: "/get/announcements/by/app"
+            post: "/v1/get/announcements/by/app"
+            body: "*"
+        };
+    }
+    rpc GetAnnouncementsByOtherApp(GetAnnouncementsByOtherAppRequest) returns (GetAnnouncementsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/announcements/by/other/app"
             body: "*"
         };
     }
 
     rpc CreateNotification(CreateNotificationRequest) returns (CreateNotificationResponse) {
         option (google.api.http) = {
-            post: "/create/notification"
+            post: "/v1/create/notification"
             body: "*"
         };
     }
     rpc UpdateNotification(UpdateNotificationRequest) returns (UpdateNotificationResponse) {
         option (google.api.http) = {
-            post: "/update/notification"
+            post: "/v1/update/notification"
             body: "*"
         };
     }
     rpc GetNotificationsByAppUser(GetNotificationsByAppUserRequest) returns (GetNotificationsByAppUserResponse) {
         option (google.api.http) = {
-            post: "/get/notifications/by/app/user"
+            post: "/v1/get/notifications/by/app/user"
             body: "*"
         };
     }
 
     rpc CreateReadUser(CreateReadUserRequest) returns (CreateReadUserResponse) {
         option (google.api.http) = {
-            post: "/create/read/user"
+            post: "/v1/create/read/user"
             body: "*"
         };
     }
     rpc CheckReadUser(CheckReadUserRequest) returns (CheckReadUserResponse) {
         option (google.api.http) = {
-            post: "/check/read/user"
+            post: "/v1/check/read/user"
             body: "*"
         };
     }
 
     rpc CreateMail(CreateMailRequest) returns (CreateMailResponse) {
         option (google.api.http) = {
-            post: "/create/mail"
+            post: "/v1/create/mail"
             body: "*"
         };
     }
     rpc UpdateMail(UpdateMailRequest) returns (UpdateMailResponse) {
         option (google.api.http) = {
-            post: "/update/mail"
+            post: "/v1/update/mail"
             body: "*"
         };
     }
 
     rpc CreateTemplate (CreateTemplateRequest) returns (CreateTemplateResponse) {
         option (google.api.http) = {
-            post: "/create/template"
+            post: "/v1/create/template"
             body: "*"
         };
     }
     rpc CreateTemplateForOtherApp (CreateTemplateForOtherAppRequest) returns (CreateTemplateForOtherAppResponse) {
         option (google.api.http) = {
-            post: "/create/template/for/other/app"
+            post: "/v1/create/template/for/other/app"
             body: "*"
         };
     }
     rpc GetTemplate (GetTemplateRequest) returns (GetTemplateResponse) {
         option (google.api.http) = {
-            post: "/get/template"
+            post: "/v1/get/template"
             body: "*"
         };
     }
     rpc UpdateTemplate (UpdateTemplateRequest) returns (UpdateTemplateResponse) {
         option (google.api.http) = {
-            post: "/update/template"
+            post: "/v1/update/template"
             body: "*"
         };
     }
     rpc GetTemplatesByApp (GetTemplatesByAppRequest) returns (GetTemplatesByAppResponse) {
         option (google.api.http) = {
-            post: "/get/templates/by/app"
+            post: "/v1/get/templates/by/app"
             body: "*"
         };
     }
     rpc GetTemplatesByOtherApp (GetTemplatesByOtherAppRequest) returns (GetTemplatesByOtherAppResponse) {
         option (google.api.http) = {
-            post: "/get/templates/by/other/app"
+            post: "/v1/get/templates/by/other/app"
             body: "*"
         };
     }
     rpc GetTemplateByAppLangUsedFor (GetTemplateByAppLangUsedForRequest) returns (GetTemplateByAppLangUsedForResponse) {
         option (google.api.http) = {
-            post: "/get/template/by/app/lang/usedfor"
+            post: "/v1/get/template/by/app/lang/usedfor"
             body: "*"
         };
     }
@@ -143,6 +155,15 @@ message CreateAnnouncementResponse {
     Announcement Info = 10;
 }
 
+message CreateAnnouncementForOtherAppRequest {
+    string TargetAppID = 10;
+    Announcement Info = 20;
+}
+
+message CreateAnnouncementForOtherAppResponse {
+    Announcement Info = 10;
+}
+
 message UpdateAnnouncementRequest {
     Announcement Info = 10;
 }
@@ -156,6 +177,14 @@ message GetAnnouncementsByAppRequest {
 }
 
 message GetAnnouncementsByAppResponse {
+    repeated Announcement Infos = 10;
+}
+
+message GetAnnouncementsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetAnnouncementsByOtherAppResponse {
     repeated Announcement Infos = 10;
 }
 

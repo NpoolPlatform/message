@@ -11,7 +11,7 @@
     "application/json"
   ],
   "paths": {
-    "/check/read/user": {
+    "/v1/check/read/user": {
       "post": {
         "operationId": "Notification_CheckReadUser",
         "responses": {
@@ -43,7 +43,7 @@
         ]
       }
     },
-    "/create/announcement": {
+    "/v1/create/announcement": {
       "post": {
         "operationId": "Notification_CreateAnnouncement",
         "responses": {
@@ -75,7 +75,39 @@
         ]
       }
     },
-    "/create/mail": {
+    "/v1/create/announcement/for/other/app": {
+      "post": {
+        "operationId": "Notification_CreateAnnouncementForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAnnouncementForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAnnouncementForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Notification"
+        ]
+      }
+    },
+    "/v1/create/mail": {
       "post": {
         "operationId": "Notification_CreateMail",
         "responses": {
@@ -107,7 +139,7 @@
         ]
       }
     },
-    "/create/notification": {
+    "/v1/create/notification": {
       "post": {
         "operationId": "Notification_CreateNotification",
         "responses": {
@@ -139,7 +171,7 @@
         ]
       }
     },
-    "/create/read/user": {
+    "/v1/create/read/user": {
       "post": {
         "operationId": "Notification_CreateReadUser",
         "responses": {
@@ -171,7 +203,7 @@
         ]
       }
     },
-    "/create/template": {
+    "/v1/create/template": {
       "post": {
         "operationId": "Notification_CreateTemplate",
         "responses": {
@@ -203,7 +235,7 @@
         ]
       }
     },
-    "/create/template/for/other/app": {
+    "/v1/create/template/for/other/app": {
       "post": {
         "operationId": "Notification_CreateTemplateForOtherApp",
         "responses": {
@@ -235,7 +267,7 @@
         ]
       }
     },
-    "/get/announcements/by/app": {
+    "/v1/get/announcements/by/app": {
       "post": {
         "operationId": "Notification_GetAnnouncementsByApp",
         "responses": {
@@ -267,7 +299,39 @@
         ]
       }
     },
-    "/get/notifications/by/app/user": {
+    "/v1/get/announcements/by/other/app": {
+      "post": {
+        "operationId": "Notification_GetAnnouncementsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAnnouncementsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAnnouncementsByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Notification"
+        ]
+      }
+    },
+    "/v1/get/notifications/by/app/user": {
       "post": {
         "operationId": "Notification_GetNotificationsByAppUser",
         "responses": {
@@ -299,7 +363,7 @@
         ]
       }
     },
-    "/get/template": {
+    "/v1/get/template": {
       "post": {
         "operationId": "Notification_GetTemplate",
         "responses": {
@@ -331,7 +395,7 @@
         ]
       }
     },
-    "/get/template/by/app/lang/usedfor": {
+    "/v1/get/template/by/app/lang/usedfor": {
       "post": {
         "operationId": "Notification_GetTemplateByAppLangUsedFor",
         "responses": {
@@ -363,7 +427,7 @@
         ]
       }
     },
-    "/get/templates/by/app": {
+    "/v1/get/templates/by/app": {
       "post": {
         "operationId": "Notification_GetTemplatesByApp",
         "responses": {
@@ -395,7 +459,7 @@
         ]
       }
     },
-    "/get/templates/by/other/app": {
+    "/v1/get/templates/by/other/app": {
       "post": {
         "operationId": "Notification_GetTemplatesByOtherApp",
         "responses": {
@@ -427,7 +491,7 @@
         ]
       }
     },
-    "/update/announcement": {
+    "/v1/update/announcement": {
       "post": {
         "operationId": "Notification_UpdateAnnouncement",
         "responses": {
@@ -459,7 +523,7 @@
         ]
       }
     },
-    "/update/mail": {
+    "/v1/update/mail": {
       "post": {
         "operationId": "Notification_UpdateMail",
         "responses": {
@@ -491,7 +555,7 @@
         ]
       }
     },
-    "/update/notification": {
+    "/v1/update/notification": {
       "post": {
         "operationId": "Notification_UpdateNotification",
         "responses": {
@@ -523,7 +587,7 @@
         ]
       }
     },
-    "/update/template": {
+    "/v1/update/template": {
       "post": {
         "operationId": "Notification_UpdateTemplate",
         "responses": {
@@ -660,6 +724,25 @@
         }
       }
     },
+    "v1CreateAnnouncementForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1Announcement"
+        }
+      }
+    },
+    "v1CreateAnnouncementForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Announcement"
+        }
+      }
+    },
     "v1CreateAnnouncementRequest": {
       "type": "object",
       "properties": {
@@ -780,6 +863,25 @@
       }
     },
     "v1GetAnnouncementsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Announcement"
+          }
+        }
+      }
+    },
+    "v1GetAnnouncementsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAnnouncementsByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {
