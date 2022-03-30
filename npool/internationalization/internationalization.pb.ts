@@ -200,6 +200,14 @@ export type CreateCountryResponse = {
   info?: Country
 }
 
+export type UpdateCountryRequest = {
+  info?: Country
+}
+
+export type UpdateCountryResponse = {
+  info?: Country
+}
+
 export type GetCountriesRequest = {
 }
 
@@ -267,6 +275,9 @@ export class Internationalization {
   }
   static CreateCountry(req: CreateCountryRequest, initReq?: fm.InitReq): Promise<CreateCountryResponse> {
     return fm.fetchReq<CreateCountryRequest, CreateCountryResponse>(`/v1/create/country`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateCountry(req: UpdateCountryRequest, initReq?: fm.InitReq): Promise<UpdateCountryResponse> {
+    return fm.fetchReq<UpdateCountryRequest, UpdateCountryResponse>(`/v1/update/country`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetCountries(req: GetCountriesRequest, initReq?: fm.InitReq): Promise<GetCountriesResponse> {
     return fm.fetchReq<GetCountriesRequest, GetCountriesResponse>(`/v1/get/countries`, {...initReq, method: "POST", body: JSON.stringify(req)})
