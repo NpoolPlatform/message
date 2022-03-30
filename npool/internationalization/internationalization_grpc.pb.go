@@ -44,6 +44,8 @@ type InternationalizationClient interface {
 	GetMessagesByAppLang(ctx context.Context, in *GetMessagesByAppLangRequest, opts ...grpc.CallOption) (*GetMessagesByAppLangResponse, error)
 	GetMessagesByOtherAppLang(ctx context.Context, in *GetMessagesByOtherAppLangRequest, opts ...grpc.CallOption) (*GetMessagesByOtherAppLangResponse, error)
 	GetMessageByAppLangMessage(ctx context.Context, in *GetMessageByAppLangMessageRequest, opts ...grpc.CallOption) (*GetMessageByAppLangMessageResponse, error)
+	CreateCountry(ctx context.Context, in *CreateCountryRequest, opts ...grpc.CallOption) (*CreateCountryResponse, error)
+	GetCountries(ctx context.Context, in *GetCountriesRequest, opts ...grpc.CallOption) (*GetCountriesResponse, error)
 }
 
 type internationalizationClient struct {
@@ -225,6 +227,24 @@ func (c *internationalizationClient) GetMessageByAppLangMessage(ctx context.Cont
 	return out, nil
 }
 
+func (c *internationalizationClient) CreateCountry(ctx context.Context, in *CreateCountryRequest, opts ...grpc.CallOption) (*CreateCountryResponse, error) {
+	out := new(CreateCountryResponse)
+	err := c.cc.Invoke(ctx, "/internationalization.v1.Internationalization/CreateCountry", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *internationalizationClient) GetCountries(ctx context.Context, in *GetCountriesRequest, opts ...grpc.CallOption) (*GetCountriesResponse, error) {
+	out := new(GetCountriesResponse)
+	err := c.cc.Invoke(ctx, "/internationalization.v1.Internationalization/GetCountries", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // InternationalizationServer is the server API for Internationalization service.
 // All implementations must embed UnimplementedInternationalizationServer
 // for forward compatibility
@@ -249,6 +269,8 @@ type InternationalizationServer interface {
 	GetMessagesByAppLang(context.Context, *GetMessagesByAppLangRequest) (*GetMessagesByAppLangResponse, error)
 	GetMessagesByOtherAppLang(context.Context, *GetMessagesByOtherAppLangRequest) (*GetMessagesByOtherAppLangResponse, error)
 	GetMessageByAppLangMessage(context.Context, *GetMessageByAppLangMessageRequest) (*GetMessageByAppLangMessageResponse, error)
+	CreateCountry(context.Context, *CreateCountryRequest) (*CreateCountryResponse, error)
+	GetCountries(context.Context, *GetCountriesRequest) (*GetCountriesResponse, error)
 	mustEmbedUnimplementedInternationalizationServer()
 }
 
@@ -312,6 +334,12 @@ func (UnimplementedInternationalizationServer) GetMessagesByOtherAppLang(context
 }
 func (UnimplementedInternationalizationServer) GetMessageByAppLangMessage(context.Context, *GetMessageByAppLangMessageRequest) (*GetMessageByAppLangMessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMessageByAppLangMessage not implemented")
+}
+func (UnimplementedInternationalizationServer) CreateCountry(context.Context, *CreateCountryRequest) (*CreateCountryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCountry not implemented")
+}
+func (UnimplementedInternationalizationServer) GetCountries(context.Context, *GetCountriesRequest) (*GetCountriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCountries not implemented")
 }
 func (UnimplementedInternationalizationServer) mustEmbedUnimplementedInternationalizationServer() {}
 
@@ -668,6 +696,42 @@ func _Internationalization_GetMessageByAppLangMessage_Handler(srv interface{}, c
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Internationalization_CreateCountry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCountryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(InternationalizationServer).CreateCountry(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/internationalization.v1.Internationalization/CreateCountry",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(InternationalizationServer).CreateCountry(ctx, req.(*CreateCountryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Internationalization_GetCountries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCountriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(InternationalizationServer).GetCountries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/internationalization.v1.Internationalization/GetCountries",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(InternationalizationServer).GetCountries(ctx, req.(*GetCountriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Internationalization_ServiceDesc is the grpc.ServiceDesc for Internationalization service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -750,6 +814,14 @@ var Internationalization_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetMessageByAppLangMessage",
 			Handler:    _Internationalization_GetMessageByAppLangMessage_Handler,
+		},
+		{
+			MethodName: "CreateCountry",
+			Handler:    _Internationalization_CreateCountry_Handler,
+		},
+		{
+			MethodName: "GetCountries",
+			Handler:    _Internationalization_GetCountries_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -107,6 +107,38 @@
         ]
       }
     },
+    "/v1/create/country": {
+      "post": {
+        "operationId": "Internationalization_CreateCountry",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateCountryResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateCountryRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
     "/v1/create/message": {
       "post": {
         "operationId": "Internationalization_CreateMessage",
@@ -323,6 +355,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppLangsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
+    "/v1/get/countries": {
+      "post": {
+        "operationId": "Internationalization_GetCountries",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCountriesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCountriesRequest"
             }
           }
         ],
@@ -696,6 +760,26 @@
         }
       }
     },
+    "v1Country": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Country": {
+          "type": "string"
+        },
+        "Flag": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "Short": {
+          "type": "string"
+        }
+      }
+    },
     "v1CreateAppLangForOtherAppRequest": {
       "type": "object",
       "properties": {
@@ -728,6 +812,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppLang"
+        }
+      }
+    },
+    "v1CreateCountryRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Country"
+        }
+      }
+    },
+    "v1CreateCountryResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Country"
         }
       }
     },
@@ -857,6 +957,20 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1AppLang"
+          }
+        }
+      }
+    },
+    "v1GetCountriesRequest": {
+      "type": "object"
+    },
+    "v1GetCountriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Country"
           }
         }
       }

@@ -128,6 +128,19 @@ service Internationalization {
             body: "*"
         };
     }
+
+    rpc CreateCountry (CreateCountryRequest) returns (CreateCountryResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/country"
+            body: "*"
+        };
+    }
+    rpc GetCountries (GetCountriesRequest) returns (GetCountriesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/countries"
+            body: "*"
+        };
+    }
 }
 
 message Lang {
@@ -308,3 +321,26 @@ message GetAppLangInfosByOtherAppResponse {
     repeated AppLangInfo Infos = 10;
 }
 
+
+message Country {
+    string ID = 10;
+    string Country = 20;
+    string Flag = 30;
+    string Code = 40;
+    string Short = 50;
+}
+
+message CreateCountryRequest {
+    Country Info = 10;
+}
+
+message CreateCountryResponse {
+    Country Info = 10;
+}
+
+message GetCountriesRequest {
+}
+
+message GetCountriesResponse {
+    repeated Country Infos = 10;
+}

@@ -184,6 +184,29 @@ export type GetAppLangInfosByOtherAppResponse = {
   infos?: AppLangInfo[]
 }
 
+export type Country = {
+  id?: string
+  country?: string
+  flag?: string
+  code?: string
+  short?: string
+}
+
+export type CreateCountryRequest = {
+  info?: Country
+}
+
+export type CreateCountryResponse = {
+  info?: Country
+}
+
+export type GetCountriesRequest = {
+}
+
+export type GetCountriesResponse = {
+  infos?: Country[]
+}
+
 export class Internationalization {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -241,5 +264,11 @@ export class Internationalization {
   }
   static GetMessageByAppLangMessage(req: GetMessageByAppLangMessageRequest, initReq?: fm.InitReq): Promise<GetMessageByAppLangMessageResponse> {
     return fm.fetchReq<GetMessageByAppLangMessageRequest, GetMessageByAppLangMessageResponse>(`/v1/get/message/by/app/lang/message`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateCountry(req: CreateCountryRequest, initReq?: fm.InitReq): Promise<CreateCountryResponse> {
+    return fm.fetchReq<CreateCountryRequest, CreateCountryResponse>(`/v1/create/country`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCountries(req: GetCountriesRequest, initReq?: fm.InitReq): Promise<GetCountriesResponse> {
+    return fm.fetchReq<GetCountriesRequest, GetCountriesResponse>(`/v1/get/countries`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
