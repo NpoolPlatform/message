@@ -395,6 +395,38 @@
         ]
       }
     },
+    "/v1/get/country": {
+      "post": {
+        "operationId": "Internationalization_GetCountry",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCountryResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCountryRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
     "/v1/get/lang": {
       "post": {
         "operationId": "Internationalization_GetLang",
@@ -1004,6 +1036,22 @@
           "items": {
             "$ref": "#/definitions/v1Country"
           }
+        }
+      }
+    },
+    "v1GetCountryRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetCountryResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Country"
         }
       }
     },

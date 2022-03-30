@@ -31,6 +31,8 @@
     - [GetAppLangsByAppResponse](#internationalization-v1-GetAppLangsByAppResponse)
     - [GetCountriesRequest](#internationalization-v1-GetCountriesRequest)
     - [GetCountriesResponse](#internationalization-v1-GetCountriesResponse)
+    - [GetCountryRequest](#internationalization-v1-GetCountryRequest)
+    - [GetCountryResponse](#internationalization-v1-GetCountryResponse)
     - [GetLangRequest](#internationalization-v1-GetLangRequest)
     - [GetLangResponse](#internationalization-v1-GetLangResponse)
     - [GetLangsRequest](#internationalization-v1-GetLangsRequest)
@@ -82,6 +84,8 @@
     - [GetAppLangsByAppResponse](#internationalization-v1-GetAppLangsByAppResponse)
     - [GetCountriesRequest](#internationalization-v1-GetCountriesRequest)
     - [GetCountriesResponse](#internationalization-v1-GetCountriesResponse)
+    - [GetCountryRequest](#internationalization-v1-GetCountryRequest)
+    - [GetCountryResponse](#internationalization-v1-GetCountryResponse)
     - [GetLangRequest](#internationalization-v1-GetLangRequest)
     - [GetLangResponse](#internationalization-v1-GetLangResponse)
     - [GetLangsRequest](#internationalization-v1-GetLangsRequest)
@@ -525,6 +529,36 @@
 
 
 
+<a name="internationalization-v1-GetCountryRequest"></a>
+
+### GetCountryRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="internationalization-v1-GetCountryResponse"></a>
+
+### GetCountryResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Country](#internationalization-v1-Country) |  |  |
+
+
+
+
+
+
 <a name="internationalization-v1-GetLangRequest"></a>
 
 ### GetLangRequest
@@ -866,6 +900,7 @@ Service Name
 | GetMessagesByOtherAppLang | [GetMessagesByOtherAppLangRequest](#internationalization-v1-GetMessagesByOtherAppLangRequest) | [GetMessagesByOtherAppLangResponse](#internationalization-v1-GetMessagesByOtherAppLangResponse) |  |
 | GetMessageByAppLangMessage | [GetMessageByAppLangMessageRequest](#internationalization-v1-GetMessageByAppLangMessageRequest) | [GetMessageByAppLangMessageResponse](#internationalization-v1-GetMessageByAppLangMessageResponse) |  |
 | CreateCountry | [CreateCountryRequest](#internationalization-v1-CreateCountryRequest) | [CreateCountryResponse](#internationalization-v1-CreateCountryResponse) |  |
+| GetCountry | [GetCountryRequest](#internationalization-v1-GetCountryRequest) | [GetCountryResponse](#internationalization-v1-GetCountryResponse) |  |
 | UpdateCountry | [UpdateCountryRequest](#internationalization-v1-UpdateCountryRequest) | [UpdateCountryResponse](#internationalization-v1-UpdateCountryResponse) |  |
 | GetCountries | [GetCountriesRequest](#internationalization-v1-GetCountriesRequest) | [GetCountriesResponse](#internationalization-v1-GetCountriesResponse) |  |
 
@@ -1289,6 +1324,36 @@ Service Name
 
 
 
+<a name="internationalization-v1-GetCountryRequest"></a>
+
+### GetCountryRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="internationalization-v1-GetCountryResponse"></a>
+
+### GetCountryResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Country](#internationalization-v1-Country) |  |  |
+
+
+
+
+
+
 <a name="internationalization-v1-GetLangRequest"></a>
 
 ### GetLangRequest
@@ -1630,6 +1695,7 @@ Service Name
 | GetMessagesByOtherAppLang | [GetMessagesByOtherAppLangRequest](#internationalization-v1-GetMessagesByOtherAppLangRequest) | [GetMessagesByOtherAppLangResponse](#internationalization-v1-GetMessagesByOtherAppLangResponse) |  |
 | GetMessageByAppLangMessage | [GetMessageByAppLangMessageRequest](#internationalization-v1-GetMessageByAppLangMessageRequest) | [GetMessageByAppLangMessageResponse](#internationalization-v1-GetMessageByAppLangMessageResponse) |  |
 | CreateCountry | [CreateCountryRequest](#internationalization-v1-CreateCountryRequest) | [CreateCountryResponse](#internationalization-v1-CreateCountryResponse) |  |
+| GetCountry | [GetCountryRequest](#internationalization-v1-GetCountryRequest) | [GetCountryResponse](#internationalization-v1-GetCountryResponse) |  |
 | UpdateCountry | [UpdateCountryRequest](#internationalization-v1-UpdateCountryRequest) | [UpdateCountryResponse](#internationalization-v1-UpdateCountryResponse) |  |
 | GetCountries | [GetCountriesRequest](#internationalization-v1-GetCountriesRequest) | [GetCountriesResponse](#internationalization-v1-GetCountriesResponse) |  |
 

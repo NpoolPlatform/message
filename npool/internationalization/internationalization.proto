@@ -135,6 +135,12 @@ service Internationalization {
             body: "*"
         };
     }
+    rpc GetCountry (GetCountryRequest) returns (GetCountryResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/country"
+            body: "*"
+        };
+    }
     rpc UpdateCountry (UpdateCountryRequest) returns (UpdateCountryResponse) {
         option (google.api.http) = {
             post: "/v1/update/country"
@@ -341,6 +347,14 @@ message CreateCountryRequest {
 }
 
 message CreateCountryResponse {
+    Country Info = 10;
+}
+
+message GetCountryRequest {
+    string ID = 10;
+}
+
+message GetCountryResponse {
     Country Info = 10;
 }
 
