@@ -593,6 +593,9 @@
           "type": "string",
           "format": "int64"
         },
+        "ContractID": {
+          "type": "string"
+        },
         "GasFeeCap": {
           "type": "string",
           "format": "uint64",

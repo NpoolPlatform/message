@@ -136,6 +136,7 @@ fil
 | GasLimit | [int64](#int64) |  |  |
 | GasPrice | [int64](#int64) |  | eth/erc20 |
 | ChainID | [int64](#int64) |  |  |
+| ContractID | [string](#string) |  |  |
 | GasFeeCap | [uint64](#uint64) |  | fil |
 | GasPremium | [uint64](#uint64) |  |  |
 | Method | [uint64](#uint64) |  |  |
@@ -307,6 +308,7 @@ fil
 | GasLimit | [int64](#int64) |  |  |
 | GasPrice | [int64](#int64) |  | eth/erc20 |
 | ChainID | [int64](#int64) |  |  |
+| ContractID | [string](#string) |  |  |
 | GasFeeCap | [uint64](#uint64) |  | fil |
 | GasPremium | [uint64](#uint64) |  |  |
 | Method | [uint64](#uint64) |  |  |

@@ -27,6 +27,7 @@ export type UnsignedMessage = {
   gasLimit?: string
   gasPrice?: string
   chainID?: string
+  contractID?: string
   gasFeeCap?: string
   gasPremium?: string
   method?: string

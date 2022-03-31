@@ -35,6 +35,7 @@ message UnsignedMessage {
   // eth/erc20
   int64 GasPrice          = 151;
   int64 ChainID           = 152;
+  string ContractID       = 153;
 
   // fil
   uint64 GasFeeCap        = 160;

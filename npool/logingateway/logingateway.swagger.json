@@ -351,6 +351,9 @@
         },
         "LastName": {
           "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
         }
       }
     },
