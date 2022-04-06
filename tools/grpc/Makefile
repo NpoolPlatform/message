@@ -15,7 +15,7 @@ endif
 tool:
 	curl -sL -o /tmp/protoc.zip https://github.com/protocolbuffers/protobuf/releases/download/v3.18.1/protoc-3.18.1-linux-x86_64.zip && \
 	${UNZIP} -u /tmp/protoc.zip -d /tmp/protoc && \
-	sudo mv /tmp/protoc/bin/protoc ${GOBIN} && \
+	mv /tmp/protoc/bin/protoc ${GOBIN} && \
 	go mod tidy && \
 	go get -d google.golang.org/grpc && \
 	go get -d github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc && \
