@@ -186,11 +186,13 @@ fil
 | CoinTypeethereum | 3 |  |
 | CoinTypeusdterc20 | 4 |  |
 | CoinTypespacemesh | 5 |  |
+| CoinTypesolana | 6 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
 | CoinTypetusdterc20 | 103 |  |
 | CoinTypetspacemesh | 104 |  |
+| CoinTypetsolana | 105 |  |
 
 
  
@@ -358,11 +360,13 @@ fil
 | CoinTypeethereum | 3 |  |
 | CoinTypeusdterc20 | 4 |  |
 | CoinTypespacemesh | 5 |  |
+| CoinTypesolana | 6 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
 | CoinTypetusdterc20 | 103 |  |
 | CoinTypetspacemesh | 104 |  |
+| CoinTypetsolana | 105 |  |
 
 
  
