@@ -1068,6 +1068,9 @@ export class CloudHashingInspire {
   static CreateRegistrationInvitation(req: CreateRegistrationInvitationRequest, initReq?: fm.InitReq): Promise<CreateRegistrationInvitationResponse> {
     return fm.fetchReq<CreateRegistrationInvitationRequest, CreateRegistrationInvitationResponse>(`/v1/create/registration/invitation`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateRegistrationInvitationRevert(req: CreateRegistrationInvitationRequest, initReq?: fm.InitReq): Promise<CreateRegistrationInvitationResponse> {
+    return fm.fetchReq<CreateRegistrationInvitationRequest, CreateRegistrationInvitationResponse>(`/v1/create/registration/invitation/revert`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static UpdateRegistrationInvitation(req: UpdateRegistrationInvitationRequest, initReq?: fm.InitReq): Promise<UpdateRegistrationInvitationResponse> {
     return fm.fetchReq<UpdateRegistrationInvitationRequest, UpdateRegistrationInvitationResponse>(`/v1/update/registration/invitation`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }

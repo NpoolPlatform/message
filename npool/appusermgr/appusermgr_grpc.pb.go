@@ -96,6 +96,7 @@ type AppUserManagerClient interface {
 	GetAppUserInfosByApp(ctx context.Context, in *GetAppUserInfosByAppRequest, opts ...grpc.CallOption) (*GetAppUserInfosByAppResponse, error)
 	GetAppUserInfosByOtherApp(ctx context.Context, in *GetAppUserInfosByOtherAppRequest, opts ...grpc.CallOption) (*GetAppUserInfosByOtherAppResponse, error)
 	CreateAppUserWithSecret(ctx context.Context, in *CreateAppUserWithSecretRequest, opts ...grpc.CallOption) (*CreateAppUserWithSecretResponse, error)
+	CreateAppUserWithSecretRevert(ctx context.Context, in *CreateAppUserWithSecretRequest, opts ...grpc.CallOption) (*CreateAppUserWithSecretResponse, error)
 }
 
 type appUserManagerClient struct {
@@ -754,6 +755,15 @@ func (c *appUserManagerClient) CreateAppUserWithSecret(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *appUserManagerClient) CreateAppUserWithSecretRevert(ctx context.Context, in *CreateAppUserWithSecretRequest, opts ...grpc.CallOption) (*CreateAppUserWithSecretResponse, error) {
+	out := new(CreateAppUserWithSecretResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppUserWithSecretRevert", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AppUserManagerServer is the server API for AppUserManager service.
 // All implementations must embed UnimplementedAppUserManagerServer
 // for forward compatibility
@@ -830,6 +840,7 @@ type AppUserManagerServer interface {
 	GetAppUserInfosByApp(context.Context, *GetAppUserInfosByAppRequest) (*GetAppUserInfosByAppResponse, error)
 	GetAppUserInfosByOtherApp(context.Context, *GetAppUserInfosByOtherAppRequest) (*GetAppUserInfosByOtherAppResponse, error)
 	CreateAppUserWithSecret(context.Context, *CreateAppUserWithSecretRequest) (*CreateAppUserWithSecretResponse, error)
+	CreateAppUserWithSecretRevert(context.Context, *CreateAppUserWithSecretRequest) (*CreateAppUserWithSecretResponse, error)
 	mustEmbedUnimplementedAppUserManagerServer()
 }
 
@@ -1052,6 +1063,9 @@ func (UnimplementedAppUserManagerServer) GetAppUserInfosByOtherApp(context.Conte
 }
 func (UnimplementedAppUserManagerServer) CreateAppUserWithSecret(context.Context, *CreateAppUserWithSecretRequest) (*CreateAppUserWithSecretResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserWithSecret not implemented")
+}
+func (UnimplementedAppUserManagerServer) CreateAppUserWithSecretRevert(context.Context, *CreateAppUserWithSecretRequest) (*CreateAppUserWithSecretResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserWithSecretRevert not implemented")
 }
 func (UnimplementedAppUserManagerServer) mustEmbedUnimplementedAppUserManagerServer() {}
 
@@ -2362,6 +2376,24 @@ func _AppUserManager_CreateAppUserWithSecret_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AppUserManager_CreateAppUserWithSecretRevert_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppUserWithSecretRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).CreateAppUserWithSecretRevert(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppUserWithSecretRevert",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).CreateAppUserWithSecretRevert(ctx, req.(*CreateAppUserWithSecretRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AppUserManager_ServiceDesc is the grpc.ServiceDesc for AppUserManager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -2656,6 +2688,10 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAppUserWithSecret",
 			Handler:    _AppUserManager_CreateAppUserWithSecret_Handler,
+		},
+		{
+			MethodName: "CreateAppUserWithSecretRevert",
+			Handler:    _AppUserManager_CreateAppUserWithSecretRevert_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

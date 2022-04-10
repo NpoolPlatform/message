@@ -715,6 +715,38 @@
         ]
       }
     },
+    "/v1/create/registration/invitation/revert": {
+      "post": {
+        "operationId": "CloudHashingInspire_CreateRegistrationInvitationRevert",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateRegistrationInvitationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateRegistrationInvitationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/create/user/invitation/code": {
       "post": {
         "operationId": "CloudHashingInspire_CreateUserInvitationCode",

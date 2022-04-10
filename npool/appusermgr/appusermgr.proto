@@ -452,6 +452,13 @@ service AppUserManager {
             body: "*"
         };
     }
+
+    rpc CreateAppUserWithSecretRevert (CreateAppUserWithSecretRequest) returns (CreateAppUserWithSecretResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/with/secret/revert"
+            body: "*"
+        };
+    }
 }
 
 message App {

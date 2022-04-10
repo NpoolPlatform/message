@@ -52,6 +52,7 @@ type CloudHashingInspireClient interface {
 	GetAppPurchaseAmountSettingsByOtherApp(ctx context.Context, in *GetAppPurchaseAmountSettingsByOtherAppRequest, opts ...grpc.CallOption) (*GetAppPurchaseAmountSettingsByOtherAppResponse, error)
 	GetAppPurchaseAmountSettingsByOtherAppUser(ctx context.Context, in *GetAppPurchaseAmountSettingsByOtherAppUserRequest, opts ...grpc.CallOption) (*GetAppPurchaseAmountSettingsByOtherAppUserResponse, error)
 	CreateRegistrationInvitation(ctx context.Context, in *CreateRegistrationInvitationRequest, opts ...grpc.CallOption) (*CreateRegistrationInvitationResponse, error)
+	CreateRegistrationInvitationRevert(ctx context.Context, in *CreateRegistrationInvitationRequest, opts ...grpc.CallOption) (*CreateRegistrationInvitationResponse, error)
 	UpdateRegistrationInvitation(ctx context.Context, in *UpdateRegistrationInvitationRequest, opts ...grpc.CallOption) (*UpdateRegistrationInvitationResponse, error)
 	GetRegistrationInvitation(ctx context.Context, in *GetRegistrationInvitationRequest, opts ...grpc.CallOption) (*GetRegistrationInvitationResponse, error)
 	GetRegistrationInvitationsByApp(ctx context.Context, in *GetRegistrationInvitationsByAppRequest, opts ...grpc.CallOption) (*GetRegistrationInvitationsByAppResponse, error)
@@ -373,6 +374,15 @@ func (c *cloudHashingInspireClient) GetAppPurchaseAmountSettingsByOtherAppUser(c
 func (c *cloudHashingInspireClient) CreateRegistrationInvitation(ctx context.Context, in *CreateRegistrationInvitationRequest, opts ...grpc.CallOption) (*CreateRegistrationInvitationResponse, error) {
 	out := new(CreateRegistrationInvitationResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateRegistrationInvitation", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingInspireClient) CreateRegistrationInvitationRevert(ctx context.Context, in *CreateRegistrationInvitationRequest, opts ...grpc.CallOption) (*CreateRegistrationInvitationResponse, error) {
+	out := new(CreateRegistrationInvitationResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateRegistrationInvitationRevert", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1077,6 +1087,7 @@ type CloudHashingInspireServer interface {
 	GetAppPurchaseAmountSettingsByOtherApp(context.Context, *GetAppPurchaseAmountSettingsByOtherAppRequest) (*GetAppPurchaseAmountSettingsByOtherAppResponse, error)
 	GetAppPurchaseAmountSettingsByOtherAppUser(context.Context, *GetAppPurchaseAmountSettingsByOtherAppUserRequest) (*GetAppPurchaseAmountSettingsByOtherAppUserResponse, error)
 	CreateRegistrationInvitation(context.Context, *CreateRegistrationInvitationRequest) (*CreateRegistrationInvitationResponse, error)
+	CreateRegistrationInvitationRevert(context.Context, *CreateRegistrationInvitationRequest) (*CreateRegistrationInvitationResponse, error)
 	UpdateRegistrationInvitation(context.Context, *UpdateRegistrationInvitationRequest) (*UpdateRegistrationInvitationResponse, error)
 	GetRegistrationInvitation(context.Context, *GetRegistrationInvitationRequest) (*GetRegistrationInvitationResponse, error)
 	GetRegistrationInvitationsByApp(context.Context, *GetRegistrationInvitationsByAppRequest) (*GetRegistrationInvitationsByAppResponse, error)
@@ -1238,6 +1249,9 @@ func (UnimplementedCloudHashingInspireServer) GetAppPurchaseAmountSettingsByOthe
 }
 func (UnimplementedCloudHashingInspireServer) CreateRegistrationInvitation(context.Context, *CreateRegistrationInvitationRequest) (*CreateRegistrationInvitationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateRegistrationInvitation not implemented")
+}
+func (UnimplementedCloudHashingInspireServer) CreateRegistrationInvitationRevert(context.Context, *CreateRegistrationInvitationRequest) (*CreateRegistrationInvitationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateRegistrationInvitationRevert not implemented")
 }
 func (UnimplementedCloudHashingInspireServer) UpdateRegistrationInvitation(context.Context, *UpdateRegistrationInvitationRequest) (*UpdateRegistrationInvitationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateRegistrationInvitation not implemented")
@@ -1956,6 +1970,24 @@ func _CloudHashingInspire_CreateRegistrationInvitation_Handler(srv interface{}, 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingInspireServer).CreateRegistrationInvitation(ctx, req.(*CreateRegistrationInvitationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingInspire_CreateRegistrationInvitationRevert_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateRegistrationInvitationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).CreateRegistrationInvitationRevert(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/CreateRegistrationInvitationRevert",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).CreateRegistrationInvitationRevert(ctx, req.(*CreateRegistrationInvitationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3406,6 +3438,10 @@ var CloudHashingInspire_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateRegistrationInvitation",
 			Handler:    _CloudHashingInspire_CreateRegistrationInvitation_Handler,
+		},
+		{
+			MethodName: "CreateRegistrationInvitationRevert",
+			Handler:    _CloudHashingInspire_CreateRegistrationInvitationRevert_Handler,
 		},
 		{
 			MethodName: "UpdateRegistrationInvitation",
