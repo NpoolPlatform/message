@@ -179,6 +179,14 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+
+    rpc CreateRegistrationInvitationRevert (CreateRegistrationInvitationRequest) returns (CreateRegistrationInvitationResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/registration/invitation/revert"
+            body: "*"
+        };
+    }
+
     rpc UpdateRegistrationInvitation (UpdateRegistrationInvitationRequest) returns (UpdateRegistrationInvitationResponse) {
         option (google.api.http) = {
             post: "/v1/update/registration/invitation"

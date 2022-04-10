@@ -953,4 +953,7 @@ export class AppUserManager {
   static CreateAppUserWithSecret(req: CreateAppUserWithSecretRequest, initReq?: fm.InitReq): Promise<CreateAppUserWithSecretResponse> {
     return fm.fetchReq<CreateAppUserWithSecretRequest, CreateAppUserWithSecretResponse>(`/v1/create/app/user/with/secret`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateAppUserWithSecretRevert(req: CreateAppUserWithSecretRequest, initReq?: fm.InitReq): Promise<CreateAppUserWithSecretResponse> {
+    return fm.fetchReq<CreateAppUserWithSecretRequest, CreateAppUserWithSecretResponse>(`/v1/create/app/user/with/secret/revert`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
 }

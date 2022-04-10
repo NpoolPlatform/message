@@ -2835,6 +2835,7 @@
 | GetAppUserInfosByApp | [GetAppUserInfosByAppRequest](#app-user-manager-v1-GetAppUserInfosByAppRequest) | [GetAppUserInfosByAppResponse](#app-user-manager-v1-GetAppUserInfosByAppResponse) |  |
 | GetAppUserInfosByOtherApp | [GetAppUserInfosByOtherAppRequest](#app-user-manager-v1-GetAppUserInfosByOtherAppRequest) | [GetAppUserInfosByOtherAppResponse](#app-user-manager-v1-GetAppUserInfosByOtherAppResponse) |  |
 | CreateAppUserWithSecret | [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse) |  |
+| CreateAppUserWithSecretRevert | [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse) |  |
 
  
 
@@ -5350,6 +5351,7 @@
 | GetAppUserInfosByApp | [GetAppUserInfosByAppRequest](#app-user-manager-v1-GetAppUserInfosByAppRequest) | [GetAppUserInfosByAppResponse](#app-user-manager-v1-GetAppUserInfosByAppResponse) |  |
 | GetAppUserInfosByOtherApp | [GetAppUserInfosByOtherAppRequest](#app-user-manager-v1-GetAppUserInfosByOtherAppRequest) | [GetAppUserInfosByOtherAppResponse](#app-user-manager-v1-GetAppUserInfosByOtherAppResponse) |  |
 | CreateAppUserWithSecret | [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse) |  |
+| CreateAppUserWithSecretRevert | [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse) |  |
 
  
 
