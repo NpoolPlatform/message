@@ -35,6 +35,7 @@ export type UnsignedMessage = {
   method?: string
   params?: Uint8Array
   unspent?: Unspent[]
+  recentBhash?: string
 }
 
 export type Signature = {
