@@ -180,6 +180,8 @@
 | Logo | [string](#string) |  | url; can be empty |
 | ReservedAmount | [double](#double) |  |  |
 | ForPay | [bool](#bool) |  |  |
+| HomePage | [string](#string) |  |  |
+| Specs | [string](#string) |  |  |
 
 
 
@@ -384,6 +386,8 @@
 | Logo | [string](#string) |  | url; can be empty |
 | ReservedAmount | [double](#double) |  |  |
 | ForPay | [bool](#bool) |  |  |
+| HomePage | [string](#string) |  |  |
+| Specs | [string](#string) |  |  |
 
 
 

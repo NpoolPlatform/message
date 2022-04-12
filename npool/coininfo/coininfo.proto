@@ -98,6 +98,8 @@ message UpdateCoinInfoRequest {
     string  Logo            = 120; // url; can be empty
     double  ReservedAmount  = 130;
     bool ForPay = 140;
+    string HomePage = 150;
+    string Specs = 160;
 }
 
 message UpdateCoinInfoResponse {

@@ -64,6 +64,8 @@ export type UpdateCoinInfoRequest = {
   logo?: string
   reservedAmount?: number
   forPay?: boolean
+  homePage?: string
+  specs?: string
 }
 
 export type UpdateCoinInfoResponse = {
