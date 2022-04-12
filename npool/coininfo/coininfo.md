@@ -60,6 +60,8 @@
 | CreatedAt | [uint32](#uint32) |  |  |
 | UpdatedAt | [uint32](#uint32) |  |  |
 | ForPay | [bool](#bool) |  | 是否可用作支付货币 |
+| HomePage | [string](#string) |  |  |
+| Specs | [string](#string) |  |  |
 
 
 
@@ -262,6 +264,8 @@
 | CreatedAt | [uint32](#uint32) |  |  |
 | UpdatedAt | [uint32](#uint32) |  |  |
 | ForPay | [bool](#bool) |  | 是否可用作支付货币 |
+| HomePage | [string](#string) |  |  |
+| Specs | [string](#string) |  |  |
 
 
 

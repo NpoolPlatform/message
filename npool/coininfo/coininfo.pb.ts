@@ -21,6 +21,8 @@ export type CoinInfo = {
   createdAt?: number
   updatedAt?: number
   forPay?: boolean
+  homePage?: string
+  specs?: string
 }
 
 export type GetCoinInfoRequest = {

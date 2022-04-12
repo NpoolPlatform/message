@@ -55,6 +55,8 @@ message CoinInfo {
     uint32  CreatedAt         = 170;
     uint32  UpdatedAt         = 180;
     bool ForPay = 190; // 是否可用作支付货币
+    string HomePage = 200;
+    string Specs = 210;
 }
 
 message GetCoinInfoRequest {

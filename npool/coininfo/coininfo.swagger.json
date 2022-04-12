@@ -241,6 +241,12 @@
         },
         "ForPay": {
           "type": "boolean"
+        },
+        "HomePage": {
+          "type": "string"
+        },
+        "Specs": {
+          "type": "string"
         }
       }
     },
