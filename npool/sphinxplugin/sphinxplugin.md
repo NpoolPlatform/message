@@ -136,6 +136,7 @@ fil
 | GasLimit | [int64](#int64) |  |  |
 | GasPrice | [int64](#int64) |  | eth/erc20 |
 | ChainID | [int64](#int64) |  |  |
+| ContractID | [string](#string) |  |  |
 | GasFeeCap | [uint64](#uint64) |  | fil |
 | GasPremium | [uint64](#uint64) |  |  |
 | Method | [uint64](#uint64) |  |  |
@@ -185,11 +186,13 @@ fil
 | CoinTypeethereum | 3 |  |
 | CoinTypeusdterc20 | 4 |  |
 | CoinTypespacemesh | 5 |  |
+| CoinTypesolana | 6 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
 | CoinTypetusdterc20 | 103 |  |
 | CoinTypetspacemesh | 104 |  |
+| CoinTypetsolana | 105 |  |
 
 
  
@@ -307,6 +310,7 @@ fil
 | GasLimit | [int64](#int64) |  |  |
 | GasPrice | [int64](#int64) |  | eth/erc20 |
 | ChainID | [int64](#int64) |  |  |
+| ContractID | [string](#string) |  |  |
 | GasFeeCap | [uint64](#uint64) |  | fil |
 | GasPremium | [uint64](#uint64) |  |  |
 | Method | [uint64](#uint64) |  |  |
@@ -356,11 +360,13 @@ fil
 | CoinTypeethereum | 3 |  |
 | CoinTypeusdterc20 | 4 |  |
 | CoinTypespacemesh | 5 |  |
+| CoinTypesolana | 6 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
 | CoinTypetusdterc20 | 103 |  |
 | CoinTypetspacemesh | 104 |  |
+| CoinTypetsolana | 105 |  |
 
 
  

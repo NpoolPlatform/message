@@ -12,6 +12,7 @@ enum CoinType {
   CoinTypeethereum  = 3;
   CoinTypeusdterc20 = 4;
   CoinTypespacemesh = 5;
+  CoinTypesolana    = 6;
 
   // testnet
   CoinTypetfilecoin   = 100;
@@ -19,6 +20,7 @@ enum CoinType {
   CoinTypetethereum   = 102;
   CoinTypetusdterc20  = 103;
   CoinTypetspacemesh  = 104;
+  CoinTypetsolana     = 105;
 }
 
 // fil
@@ -35,6 +37,7 @@ message UnsignedMessage {
   // eth/erc20
   int64 GasPrice          = 151;
   int64 ChainID           = 152;
+  string ContractID       = 153;
 
   // fil
   uint64 GasFeeCap        = 160;

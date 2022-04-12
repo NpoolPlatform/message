@@ -253,11 +253,13 @@
         "CoinTypeethereum",
         "CoinTypeusdterc20",
         "CoinTypespacemesh",
+        "CoinTypesolana",
         "CoinTypetfilecoin",
         "CoinTypetbitcoin",
         "CoinTypetethereum",
         "CoinTypetusdterc20",
-        "CoinTypetspacemesh"
+        "CoinTypetspacemesh",
+        "CoinTypetsolana"
       ],
       "default": "CoinTypeUnKnow",
       "title": "- CoinTypefilecoin: mainnet\n - CoinTypetfilecoin: testnet"
@@ -592,6 +594,9 @@
         "ChainID": {
           "type": "string",
           "format": "int64"
+        },
+        "ContractID": {
+          "type": "string"
         },
         "GasFeeCap": {
           "type": "string",
