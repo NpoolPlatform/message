@@ -100,6 +100,7 @@ export type UpdateMessagesResponse = {
 export type GetMessagesByAppLangRequest = {
   appID?: string
   langID?: string
+  targetLangID?: string
 }
 
 export type GetMessagesByAppLangResponse = {
@@ -109,6 +110,7 @@ export type GetMessagesByAppLangResponse = {
 export type GetMessagesByOtherAppLangRequest = {
   targetAppID?: string
   langID?: string
+  targetLangID?: string
 }
 
 export type GetMessagesByOtherAppLangResponse = {

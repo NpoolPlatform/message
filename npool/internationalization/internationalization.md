@@ -691,6 +691,7 @@
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | LangID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 
 
 
@@ -722,6 +723,7 @@
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
 | LangID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 
 
 
@@ -1518,6 +1520,7 @@ Service Name
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | LangID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 
 
 
@@ -1549,6 +1552,7 @@ Service Name
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
 | LangID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 
 
 

@@ -1172,6 +1172,9 @@
         },
         "LangID": {
           "type": "string"
+        },
+        "TargetLangID": {
+          "type": "string"
         }
       }
     },
@@ -1193,6 +1196,9 @@
           "type": "string"
         },
         "LangID": {
+          "type": "string"
+        },
+        "TargetLangID": {
           "type": "string"
         }
       }
