@@ -971,6 +971,9 @@
     "v1CreateMessageRequest": {
       "type": "object",
       "properties": {
+        "TargetLangID": {
+          "type": "string"
+        },
         "Info": {
           "$ref": "#/definitions/v1Message"
         }

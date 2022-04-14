@@ -366,6 +366,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| TargetLangID | [string](#string) |  |  |
 | Info | [Message](#internationalization-v1-Message) |  |  |
 
 
@@ -1192,6 +1193,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| TargetLangID | [string](#string) |  |  |
 | Info | [Message](#internationalization-v1-Message) |  |  |
 
 

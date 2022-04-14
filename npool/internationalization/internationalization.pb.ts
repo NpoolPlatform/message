@@ -56,6 +56,7 @@ export type Message = {
 }
 
 export type CreateMessageRequest = {
+  targetLangID?: string
   info?: Message
 }
 

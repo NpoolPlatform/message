@@ -210,6 +210,7 @@ message Message {
 }
 
 message CreateMessageRequest {
+    string TargetLangID = 5;
     Message Info = 10;
 }
 
