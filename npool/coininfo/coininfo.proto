@@ -38,6 +38,24 @@ service SphinxCoinInfo {
             body: "*"
         };
     }
+    rpc CreateCoinDescription (CreateCoinDescriptionRequest) returns (CreateCoinDescriptionResponse){
+      option (google.api.http) = {
+          post: "/v1/create/coin/description"
+          body: "*"
+      };
+    }
+    rpc GetCoinDescription (GetCoinDescriptionRequest) returns (GetCoinDescriptionResponse) {
+      option (google.api.http) = {
+        post: "/v1/get/coin/description"
+        body: "*"
+      };
+    }
+    rpc UpdateCoinDescription (UpdateCoinDescriptionRequest) returns (UpdateCoinDescriptionResponse) {
+      option (google.api.http) = {
+        post: "/v1/update/coin/description"
+        body: "*"
+      };
+    }
 }
 
 message VersionResponse {
@@ -104,4 +122,44 @@ message UpdateCoinInfoRequest {
 
 message UpdateCoinInfoResponse {
     CoinInfo Info = 100;
+}
+
+message CoinDescriptionInfo {
+  string ID         = 100;
+  string CoinTypeID = 110;
+  string Title      = 120;
+  string Message    = 130;
+  string UsedFor    = 140;
+  uint32 CreatedAt  = 150;
+  uint32 UpdatedAt  = 160;
+}
+
+message CreateCoinDescriptionRequest  {
+  string CoinTypeID = 100;
+  string Title      = 110;
+  string Message    = 120;
+  string UsedFor    = 130;
+}
+
+message CreateCoinDescriptionResponse {
+  CoinDescriptionInfo Info = 100;
+}
+
+message GetCoinDescriptionRequest {
+  string Name = 100;
+}
+
+message GetCoinDescriptionResponse {
+  CoinDescriptionInfo Info = 100;
+}
+
+message UpdateCoinDescriptionRequest {
+  string CoinTypeID = 110;
+  string Title      = 120;
+  string Message    = 130;
+  string UsedFor    = 140;
+}
+
+message UpdateCoinDescriptionResponse {
+  CoinDescriptionInfo Info = 100;
 }

@@ -72,6 +72,46 @@ export type UpdateCoinInfoResponse = {
   info?: CoinInfo
 }
 
+export type CoinDescriptionInfo = {
+  id?: string
+  coinTypeID?: string
+  title?: string
+  message?: string
+  usedFor?: string
+  createdAt?: number
+  updatedAt?: number
+}
+
+export type CreateCoinDescriptionRequest = {
+  coinTypeID?: string
+  title?: string
+  message?: string
+  usedFor?: string
+}
+
+export type CreateCoinDescriptionResponse = {
+  info?: CoinDescriptionInfo
+}
+
+export type GetCoinDescriptionRequest = {
+  name?: string
+}
+
+export type GetCoinDescriptionResponse = {
+  info?: CoinDescriptionInfo
+}
+
+export type UpdateCoinDescriptionRequest = {
+  coinTypeID?: string
+  title?: string
+  message?: string
+  usedFor?: string
+}
+
+export type UpdateCoinDescriptionResponse = {
+  info?: CoinDescriptionInfo
+}
+
 export class SphinxCoinInfo {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -87,5 +127,14 @@ export class SphinxCoinInfo {
   }
   static UpdateCoinInfo(req: UpdateCoinInfoRequest, initReq?: fm.InitReq): Promise<UpdateCoinInfoResponse> {
     return fm.fetchReq<UpdateCoinInfoRequest, UpdateCoinInfoResponse>(`/v1/update/coininfo`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateCoinDescription(req: CreateCoinDescriptionRequest, initReq?: fm.InitReq): Promise<CreateCoinDescriptionResponse> {
+    return fm.fetchReq<CreateCoinDescriptionRequest, CreateCoinDescriptionResponse>(`/v1/create/coin/description`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCoinDescription(req: GetCoinDescriptionRequest, initReq?: fm.InitReq): Promise<GetCoinDescriptionResponse> {
+    return fm.fetchReq<GetCoinDescriptionRequest, GetCoinDescriptionResponse>(`/v1/get/coin/description`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateCoinDescription(req: UpdateCoinDescriptionRequest, initReq?: fm.InitReq): Promise<UpdateCoinDescriptionResponse> {
+    return fm.fetchReq<UpdateCoinDescriptionRequest, UpdateCoinDescriptionResponse>(`/v1/update/coin/description`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
