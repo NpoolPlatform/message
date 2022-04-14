@@ -74,7 +74,7 @@ export type CreateMessageForOtherAppResponse = {
 }
 
 export type CreateMessagesRequest = {
-  targetAppID?: string
+  targetLangID?: string
   infos?: Message[]
 }
 

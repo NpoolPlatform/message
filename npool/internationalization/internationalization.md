@@ -397,7 +397,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 | Infos | [Message](#internationalization-v1-Message) | repeated |  |
 
 
@@ -1227,7 +1227,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 | Infos | [Message](#internationalization-v1-Message) | repeated |  |
 
 

@@ -990,7 +990,7 @@
     "v1CreateMessagesRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
+        "TargetLangID": {
           "type": "string"
         },
         "Infos": {

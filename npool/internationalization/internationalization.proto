@@ -228,7 +228,7 @@ message CreateMessageForOtherAppResponse {
 }
 
 message CreateMessagesRequest {
-    string TargetAppID = 5;
+    string TargetLangID = 5;
     repeated Message Infos = 10;
 }
 
