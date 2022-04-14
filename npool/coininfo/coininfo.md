@@ -178,7 +178,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Name | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
 
 
 
@@ -504,7 +504,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Name | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
 
 
 

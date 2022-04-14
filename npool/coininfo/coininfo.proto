@@ -146,7 +146,7 @@ message CreateCoinDescriptionResponse {
 }
 
 message GetCoinDescriptionRequest {
-  string Name = 100;
+  string CoinTypeID = 100;
 }
 
 message GetCoinDescriptionResponse {

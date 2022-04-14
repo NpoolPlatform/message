@@ -94,7 +94,7 @@ export type CreateCoinDescriptionResponse = {
 }
 
 export type GetCoinDescriptionRequest = {
-  name?: string
+  coinTypeID?: string
 }
 
 export type GetCoinDescriptionResponse = {

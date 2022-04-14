@@ -430,7 +430,7 @@
     "v1GetCoinDescriptionRequest": {
       "type": "object",
       "properties": {
-        "Name": {
+        "CoinTypeID": {
           "type": "string"
         }
       }
