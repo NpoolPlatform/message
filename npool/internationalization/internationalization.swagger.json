@@ -990,6 +990,9 @@
     "v1CreateMessagesRequest": {
       "type": "object",
       "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
         "Infos": {
           "type": "array",
           "items": {
