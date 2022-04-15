@@ -889,7 +889,7 @@ message GetCommissionByAppUserResponse {
 
 message UpdateKycReviewRequest {
     review.service.v1.Review Info = 10;
-    string LangID = 20;
+    string TargetLangID = 20;
 }
 
 message UpdateKycReviewResponse {

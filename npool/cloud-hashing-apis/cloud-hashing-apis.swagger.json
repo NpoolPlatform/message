@@ -3750,7 +3750,7 @@
         "Info": {
           "$ref": "#/definitions/v1Review"
         },
-        "LangID": {
+        "TargetLangID": {
           "type": "string"
         }
       }
