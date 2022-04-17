@@ -510,13 +510,12 @@
         "Invalid",
         "WalletNew",
         "TransactionNew",
-        "Signature",
+        "Sign",
         "Balance",
         "PreSign",
         "Broadcast",
         "RegisterCoin",
-        "SyncMsgState",
-        "GasFee"
+        "SyncMsgState"
       ],
       "default": "Invalid"
     },

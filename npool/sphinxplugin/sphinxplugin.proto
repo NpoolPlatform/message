@@ -31,6 +31,18 @@ enum CoinType {
   CoinTypetbinanceusd  = 109;
 }
 
+enum TransactionType {
+  Invalid         = 0;
+  WalletNew       = 1; // proxy -> sign
+  TransactionNew  = 2;
+  Sign            = 3; // proxy -> sign
+  Balance         = 4; // proxy -> plugin
+  PreSign         = 5; // proxy -> pluign get nonce
+  Broadcast       = 6; // proxy -> plugin mpool push
+  RegisterCoin    = 7; // plugin -> proxy
+  SyncMsgState    = 8; // plugin -> proxy
+}
+
 // fil
 message UnsignedMessage {
   uint64 Version          = 100;

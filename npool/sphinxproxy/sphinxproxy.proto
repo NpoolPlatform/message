@@ -114,7 +114,7 @@ message GetTransactionResponse {
 // ############################# async
 message ProxyPluginResponse {
   sphinx.plugin.v1.CoinType CoinType        = 100;
-  TransactionType TransactionType           = 110;
+  sphinx.plugin.v1.TransactionType TransactionType           = 110;
   string ENV                                = 111; // main or test
   string Unit                               = 112;
   string TransactionID                      = 120;
@@ -133,7 +133,7 @@ message ProxyPluginResponse {
 // MpoolGetNonce WalletBalance MpoolPush ..
 message ProxyPluginRequest {
   sphinx.plugin.v1.CoinType CoinType          = 100;
-  TransactionType TransactionType             = 110;
+  sphinx.plugin.v1.TransactionType TransactionType             = 110;
   string TransactionID                        = 120;
   // query wallet account
   string Address                              = 130;
@@ -154,7 +154,7 @@ message ProxyPluginRequest {
 
 message ProxySignRequest {
   sphinx.plugin.v1.CoinType CoinType          = 100;
-  TransactionType TransactionType             = 110;
+  sphinx.plugin.v1.TransactionType TransactionType             = 110;
   string TransactionID                        = 120;
   sphinx.plugin.v1.UnsignedMessage Message    = 130;
 
@@ -163,7 +163,7 @@ message ProxySignRequest {
 
 message ProxySignResponse {
   sphinx.plugin.v1.CoinType CoinType  = 100;
-  TransactionType TransactionType     = 110;
+  sphinx.plugin.v1.TransactionType TransactionType     = 110;
   string TransactionID                = 120;
   // fil
   ProxySignResponseInfo Info          = 130;
@@ -181,19 +181,6 @@ message ProxySignResponseInfo {
   string Address                              = 100;// create new account address
   sphinx.plugin.v1.UnsignedMessage Message    = 110;
   sphinx.plugin.v1.Signature       Signature  = 120;
-}
-
-enum TransactionType {
-  Invalid         = 0;
-  WalletNew       = 1; // proxy -> sign
-  TransactionNew  = 2;
-  Signature       = 3; // proxy -> sign
-  Balance         = 4; // proxy -> plugin
-  PreSign         = 5; // proxy -> pluign get nonce
-  Broadcast       = 6; // proxy -> plugin mpool push
-  RegisterCoin    = 7; // plugin -> proxy
-  SyncMsgState    = 8; // plugin -> proxy
-  GasFee          = 9; // get: plugin -> proxy, set: proxy -> plugin
 }
 
 enum TransactionState {

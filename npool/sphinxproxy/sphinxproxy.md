@@ -23,7 +23,6 @@
     - [WalletInfo](#sphinx-proxy-v1-WalletInfo)
   
     - [TransactionState](#sphinx-proxy-v1-TransactionState)
-    - [TransactionType](#sphinx-proxy-v1-TransactionType)
   
     - [SphinxProxy](#sphinx-proxy-v1-SphinxProxy)
   
@@ -47,7 +46,6 @@
     - [WalletInfo](#sphinx-proxy-v1-WalletInfo)
   
     - [TransactionState](#sphinx-proxy-v1-TransactionState)
-    - [TransactionType](#sphinx-proxy-v1-TransactionType)
   
     - [SphinxProxy](#sphinx-proxy-v1-SphinxProxy)
   
@@ -207,7 +205,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [TransactionType](#sphinx-proxy-v1-TransactionType) |  |  |
+| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Address | [string](#string) |  | query wallet account |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
@@ -231,7 +229,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [TransactionType](#sphinx-proxy-v1-TransactionType) |  |  |
+| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | ENV | [string](#string) |  | main or test |
 | Unit | [string](#string) |  |  |
 | TransactionID | [string](#string) |  |  |
@@ -257,7 +255,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [TransactionType](#sphinx-proxy-v1-TransactionType) |  |  |
+| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
 | payload | [bytes](#bytes) |  |  |
@@ -276,7 +274,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [TransactionType](#sphinx-proxy-v1-TransactionType) |  |  |
+| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Info | [ProxySignResponseInfo](#sphinx-proxy-v1-ProxySignResponseInfo) |  | fil |
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx-plugin-v1-MsgTx) |  | btc |
@@ -375,25 +373,6 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | TransactionStateSync | 3 |  |
 | TransactionStateDone | 4 |  |
 | TransactionStateFail | 5 |  |
-
-
-
-<a name="sphinx-proxy-v1-TransactionType"></a>
-
-### TransactionType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| Invalid | 0 |  |
-| WalletNew | 1 | proxy -&gt; sign |
-| TransactionNew | 2 |  |
-| Signature | 3 | proxy -&gt; sign |
-| Balance | 4 | proxy -&gt; plugin |
-| PreSign | 5 | proxy -&gt; pluign get nonce |
-| Broadcast | 6 | proxy -&gt; plugin mpool push |
-| RegisterCoin | 7 | plugin -&gt; proxy |
-| SyncMsgState | 8 | plugin -&gt; proxy |
 
 
  
@@ -572,7 +551,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [TransactionType](#sphinx-proxy-v1-TransactionType) |  |  |
+| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Address | [string](#string) |  | query wallet account |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
@@ -596,7 +575,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [TransactionType](#sphinx-proxy-v1-TransactionType) |  |  |
+| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | ENV | [string](#string) |  | main or test |
 | Unit | [string](#string) |  |  |
 | TransactionID | [string](#string) |  |  |
@@ -622,7 +601,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [TransactionType](#sphinx-proxy-v1-TransactionType) |  |  |
+| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
 | payload | [bytes](#bytes) |  |  |
@@ -641,7 +620,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [TransactionType](#sphinx-proxy-v1-TransactionType) |  |  |
+| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Info | [ProxySignResponseInfo](#sphinx-proxy-v1-ProxySignResponseInfo) |  | fil |
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx-plugin-v1-MsgTx) |  | btc |
@@ -740,25 +719,6 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | TransactionStateSync | 3 |  |
 | TransactionStateDone | 4 |  |
 | TransactionStateFail | 5 |  |
-
-
-
-<a name="sphinx-proxy-v1-TransactionType"></a>
-
-### TransactionType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| Invalid | 0 |  |
-| WalletNew | 1 | proxy -&gt; sign |
-| TransactionNew | 2 |  |
-| Signature | 3 | proxy -&gt; sign |
-| Balance | 4 | proxy -&gt; plugin |
-| PreSign | 5 | proxy -&gt; pluign get nonce |
-| Broadcast | 6 | proxy -&gt; plugin mpool push |
-| RegisterCoin | 7 | plugin -&gt; proxy |
-| SyncMsgState | 8 | plugin -&gt; proxy |
 
 
  
