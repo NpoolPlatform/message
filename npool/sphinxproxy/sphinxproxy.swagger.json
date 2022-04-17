@@ -523,7 +523,7 @@
         "Invalid",
         "WalletNew",
         "TransactionNew",
-        "Signature",
+        "Sign",
         "Balance",
         "PreSign",
         "Broadcast",
