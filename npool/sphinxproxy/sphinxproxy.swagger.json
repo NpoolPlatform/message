@@ -411,6 +411,10 @@
         },
         "CID": {
           "type": "string"
+        },
+        "payload": {
+          "type": "string",
+          "format": "byte"
         }
       },
       "description": "MpoolGetNonce WalletBalance MpoolPush .."
@@ -429,6 +433,10 @@
         },
         "Message": {
           "$ref": "#/definitions/v1UnsignedMessage"
+        },
+        "payload": {
+          "type": "string",
+          "format": "byte"
         }
       }
     },

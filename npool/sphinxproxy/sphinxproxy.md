@@ -215,6 +215,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx-plugin-v1-MsgTx) |  | btc |
 | SignedRawTxHex | [string](#string) |  | eth/usdt |
 | CID | [string](#string) |  |  |
+| payload | [bytes](#bytes) |  |  |
 
 
 
@@ -240,6 +241,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
 | ExitCode | [int64](#int64) |  | -1 find cid state on chain internal server error |
 | RPCExitMessage | [string](#string) |  |  |
+| payload | [bytes](#bytes) |  |  |
 
 
 
@@ -258,6 +260,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | TransactionType | [TransactionType](#sphinx-proxy-v1-TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
+| payload | [bytes](#bytes) |  |  |
 
 
 
@@ -279,6 +282,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx-plugin-v1-MsgTx) |  | btc |
 | SignedRawTxHex | [string](#string) |  | eth/usdt |
 | RPCExitMessage | [string](#string) |  |  |
+| payload | [bytes](#bytes) |  |  |
 
 
 
@@ -576,6 +580,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx-plugin-v1-MsgTx) |  | btc |
 | SignedRawTxHex | [string](#string) |  | eth/usdt |
 | CID | [string](#string) |  |  |
+| payload | [bytes](#bytes) |  |  |
 
 
 
@@ -601,6 +606,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
 | ExitCode | [int64](#int64) |  | -1 find cid state on chain internal server error |
 | RPCExitMessage | [string](#string) |  |  |
+| payload | [bytes](#bytes) |  |  |
 
 
 
@@ -619,6 +625,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | TransactionType | [TransactionType](#sphinx-proxy-v1-TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
+| payload | [bytes](#bytes) |  |  |
 
 
 
@@ -640,6 +647,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx-plugin-v1-MsgTx) |  | btc |
 | SignedRawTxHex | [string](#string) |  | eth/usdt |
 | RPCExitMessage | [string](#string) |  |  |
+| payload | [bytes](#bytes) |  |  |
 
 
 

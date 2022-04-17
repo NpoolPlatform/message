@@ -103,6 +103,7 @@ export type ProxyPluginResponse = {
   message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
   exitCode?: string
   rPCExitMessage?: string
+  payload?: Uint8Array
 }
 
 export type ProxyPluginRequest = {
@@ -115,6 +116,7 @@ export type ProxyPluginRequest = {
   msgTx?: SphinxPluginV1Sphinxplugin.MsgTx
   signedRawTxHex?: string
   cID?: string
+  payload?: Uint8Array
 }
 
 export type ProxySignRequest = {
@@ -122,6 +124,7 @@ export type ProxySignRequest = {
   transactionType?: TransactionType
   transactionID?: string
   message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
+  payload?: Uint8Array
 }
 
 export type ProxySignResponse = {
@@ -132,6 +135,7 @@ export type ProxySignResponse = {
   msgTx?: SphinxPluginV1Sphinxplugin.MsgTx
   signedRawTxHex?: string
   rPCExitMessage?: string
+  payload?: Uint8Array
 }
 
 export type ProxySignResponseInfo = {
