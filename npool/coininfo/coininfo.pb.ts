@@ -98,7 +98,7 @@ export type GetCoinDescriptionRequest = {
 }
 
 export type GetCoinDescriptionResponse = {
-  info?: CoinDescriptionInfo
+  infos?: CoinDescriptionInfo[]
 }
 
 export type UpdateCoinDescriptionRequest = {

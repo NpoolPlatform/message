@@ -438,8 +438,11 @@
     "v1GetCoinDescriptionResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinDescriptionInfo"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinDescriptionInfo"
+          }
         }
       }
     },

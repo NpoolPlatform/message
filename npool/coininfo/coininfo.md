@@ -193,7 +193,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) |  |  |
+| Infos | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) | repeated |  |
 
 
 
@@ -519,7 +519,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) |  |  |
+| Infos | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) | repeated |  |
 
 
 

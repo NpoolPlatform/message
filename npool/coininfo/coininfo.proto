@@ -115,7 +115,7 @@ message UpdateCoinInfoRequest {
     bool    PreSale               = 110; // 是否为预售，false为在售商品
     string  Logo            = 120; // url; can be empty
     double  ReservedAmount  = 130;
-    bool ForPay = 140;
+    bool    ForPay = 140;
     string HomePage = 150;
     string Specs = 160;
 }
@@ -150,7 +150,7 @@ message GetCoinDescriptionRequest {
 }
 
 message GetCoinDescriptionResponse {
-  CoinDescriptionInfo Info = 100;
+  repeated CoinDescriptionInfo Infos = 100;
 }
 
 message UpdateCoinDescriptionRequest {
