@@ -147,10 +147,13 @@ message CreateCoinDescriptionResponse {
 
 message GetCoinDescriptionRequest {
   string CoinTypeID = 100;
+  int32 Limit       = 110;
+  int32 Offset      = 120;
 }
 
 message GetCoinDescriptionResponse {
-  repeated CoinDescriptionInfo Infos = 100;
+  int32 Total                        = 100;
+  repeated CoinDescriptionInfo Infos = 110;
 }
 
 message UpdateCoinDescriptionRequest {

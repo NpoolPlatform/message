@@ -432,12 +432,24 @@
       "properties": {
         "CoinTypeID": {
           "type": "string"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
     "v1GetCoinDescriptionResponse": {
       "type": "object",
       "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        },
         "Infos": {
           "type": "array",
           "items": {

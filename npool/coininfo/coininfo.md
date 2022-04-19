@@ -179,6 +179,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinTypeID | [string](#string) |  |  |
+| Limit | [int32](#int32) |  |  |
+| Offset | [int32](#int32) |  |  |
 
 
 
@@ -193,6 +195,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| Total | [int32](#int32) |  |  |
 | Infos | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) | repeated |  |
 
 
@@ -505,6 +508,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinTypeID | [string](#string) |  |  |
+| Limit | [int32](#int32) |  |  |
+| Offset | [int32](#int32) |  |  |
 
 
 
@@ -519,6 +524,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| Total | [int32](#int32) |  |  |
 | Infos | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) | repeated |  |
 
 
