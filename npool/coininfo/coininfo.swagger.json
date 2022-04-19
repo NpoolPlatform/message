@@ -514,6 +514,9 @@
     "v1UpdateCoinDescriptionRequest": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },

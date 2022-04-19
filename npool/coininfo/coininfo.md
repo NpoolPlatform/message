@@ -276,6 +276,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | Title | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
@@ -605,6 +606,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | Title | [string](#string) |  |  |
 | Message | [string](#string) |  |  |

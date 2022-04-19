@@ -157,6 +157,7 @@ message GetCoinDescriptionResponse {
 }
 
 message UpdateCoinDescriptionRequest {
+  string ID         = 100;
   string CoinTypeID = 110;
   string Title      = 120;
   string Message    = 130;
