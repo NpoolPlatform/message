@@ -162,6 +162,12 @@ service CloudHashingOrder {
             body: "*"
         };
     }
+    rpc GetPaymentsByOtherApp (GetPaymentsByOtherAppRequest) returns  (GetPaymentsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/payments/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetPaymentsByAppUser (GetPaymentsByAppUserRequest) returns  (GetPaymentsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/payments/by/app/user"
@@ -444,6 +450,14 @@ message GetPaymentsByAppRequest {
 }
 
 message GetPaymentsByAppResponse {
+    repeated Payment Infos = 10;
+}
+
+message GetPaymentsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetPaymentsByOtherAppResponse {
     repeated Payment Infos = 10;
 }
 
