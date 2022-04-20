@@ -32,8 +32,12 @@ type NotificationClient interface {
 	GetAnnouncementsByApp(ctx context.Context, in *GetAnnouncementsByAppRequest, opts ...grpc.CallOption) (*GetAnnouncementsByAppResponse, error)
 	GetAnnouncementsByOtherApp(ctx context.Context, in *GetAnnouncementsByOtherAppRequest, opts ...grpc.CallOption) (*GetAnnouncementsByOtherAppResponse, error)
 	CreateNotification(ctx context.Context, in *CreateNotificationRequest, opts ...grpc.CallOption) (*CreateNotificationResponse, error)
+	CreateNotificationForAppOtherUser(ctx context.Context, in *CreateNotificationForAppOtherUserRequest, opts ...grpc.CallOption) (*CreateNotificationForAppOtherUserResponse, error)
+	CreateNotificationForOtherAppUser(ctx context.Context, in *CreateNotificationForOtherAppUserRequest, opts ...grpc.CallOption) (*CreateNotificationForOtherAppUserResponse, error)
 	UpdateNotification(ctx context.Context, in *UpdateNotificationRequest, opts ...grpc.CallOption) (*UpdateNotificationResponse, error)
 	GetNotificationsByAppUser(ctx context.Context, in *GetNotificationsByAppUserRequest, opts ...grpc.CallOption) (*GetNotificationsByAppUserResponse, error)
+	GetNotificationsByApp(ctx context.Context, in *GetNotificationsByAppRequest, opts ...grpc.CallOption) (*GetNotificationsByAppResponse, error)
+	GetNotificationsByOtherApp(ctx context.Context, in *GetNotificationsByOtherAppRequest, opts ...grpc.CallOption) (*GetNotificationsByOtherAppResponse, error)
 	CreateReadUser(ctx context.Context, in *CreateReadUserRequest, opts ...grpc.CallOption) (*CreateReadUserResponse, error)
 	CheckReadUser(ctx context.Context, in *CheckReadUserRequest, opts ...grpc.CallOption) (*CheckReadUserResponse, error)
 	CreateMail(ctx context.Context, in *CreateMailRequest, opts ...grpc.CallOption) (*CreateMailResponse, error)
@@ -122,6 +126,24 @@ func (c *notificationClient) CreateNotification(ctx context.Context, in *CreateN
 	return out, nil
 }
 
+func (c *notificationClient) CreateNotificationForAppOtherUser(ctx context.Context, in *CreateNotificationForAppOtherUserRequest, opts ...grpc.CallOption) (*CreateNotificationForAppOtherUserResponse, error) {
+	out := new(CreateNotificationForAppOtherUserResponse)
+	err := c.cc.Invoke(ctx, "/notification.v1.Notification/CreateNotificationForAppOtherUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *notificationClient) CreateNotificationForOtherAppUser(ctx context.Context, in *CreateNotificationForOtherAppUserRequest, opts ...grpc.CallOption) (*CreateNotificationForOtherAppUserResponse, error) {
+	out := new(CreateNotificationForOtherAppUserResponse)
+	err := c.cc.Invoke(ctx, "/notification.v1.Notification/CreateNotificationForOtherAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *notificationClient) UpdateNotification(ctx context.Context, in *UpdateNotificationRequest, opts ...grpc.CallOption) (*UpdateNotificationResponse, error) {
 	out := new(UpdateNotificationResponse)
 	err := c.cc.Invoke(ctx, "/notification.v1.Notification/UpdateNotification", in, out, opts...)
@@ -134,6 +156,24 @@ func (c *notificationClient) UpdateNotification(ctx context.Context, in *UpdateN
 func (c *notificationClient) GetNotificationsByAppUser(ctx context.Context, in *GetNotificationsByAppUserRequest, opts ...grpc.CallOption) (*GetNotificationsByAppUserResponse, error) {
 	out := new(GetNotificationsByAppUserResponse)
 	err := c.cc.Invoke(ctx, "/notification.v1.Notification/GetNotificationsByAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *notificationClient) GetNotificationsByApp(ctx context.Context, in *GetNotificationsByAppRequest, opts ...grpc.CallOption) (*GetNotificationsByAppResponse, error) {
+	out := new(GetNotificationsByAppResponse)
+	err := c.cc.Invoke(ctx, "/notification.v1.Notification/GetNotificationsByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *notificationClient) GetNotificationsByOtherApp(ctx context.Context, in *GetNotificationsByOtherAppRequest, opts ...grpc.CallOption) (*GetNotificationsByOtherAppResponse, error) {
+	out := new(GetNotificationsByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/notification.v1.Notification/GetNotificationsByOtherApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -287,8 +327,12 @@ type NotificationServer interface {
 	GetAnnouncementsByApp(context.Context, *GetAnnouncementsByAppRequest) (*GetAnnouncementsByAppResponse, error)
 	GetAnnouncementsByOtherApp(context.Context, *GetAnnouncementsByOtherAppRequest) (*GetAnnouncementsByOtherAppResponse, error)
 	CreateNotification(context.Context, *CreateNotificationRequest) (*CreateNotificationResponse, error)
+	CreateNotificationForAppOtherUser(context.Context, *CreateNotificationForAppOtherUserRequest) (*CreateNotificationForAppOtherUserResponse, error)
+	CreateNotificationForOtherAppUser(context.Context, *CreateNotificationForOtherAppUserRequest) (*CreateNotificationForOtherAppUserResponse, error)
 	UpdateNotification(context.Context, *UpdateNotificationRequest) (*UpdateNotificationResponse, error)
 	GetNotificationsByAppUser(context.Context, *GetNotificationsByAppUserRequest) (*GetNotificationsByAppUserResponse, error)
+	GetNotificationsByApp(context.Context, *GetNotificationsByAppRequest) (*GetNotificationsByAppResponse, error)
+	GetNotificationsByOtherApp(context.Context, *GetNotificationsByOtherAppRequest) (*GetNotificationsByOtherAppResponse, error)
 	CreateReadUser(context.Context, *CreateReadUserRequest) (*CreateReadUserResponse, error)
 	CheckReadUser(context.Context, *CheckReadUserRequest) (*CheckReadUserResponse, error)
 	CreateMail(context.Context, *CreateMailRequest) (*CreateMailResponse, error)
@@ -332,11 +376,23 @@ func (UnimplementedNotificationServer) GetAnnouncementsByOtherApp(context.Contex
 func (UnimplementedNotificationServer) CreateNotification(context.Context, *CreateNotificationRequest) (*CreateNotificationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateNotification not implemented")
 }
+func (UnimplementedNotificationServer) CreateNotificationForAppOtherUser(context.Context, *CreateNotificationForAppOtherUserRequest) (*CreateNotificationForAppOtherUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateNotificationForAppOtherUser not implemented")
+}
+func (UnimplementedNotificationServer) CreateNotificationForOtherAppUser(context.Context, *CreateNotificationForOtherAppUserRequest) (*CreateNotificationForOtherAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateNotificationForOtherAppUser not implemented")
+}
 func (UnimplementedNotificationServer) UpdateNotification(context.Context, *UpdateNotificationRequest) (*UpdateNotificationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateNotification not implemented")
 }
 func (UnimplementedNotificationServer) GetNotificationsByAppUser(context.Context, *GetNotificationsByAppUserRequest) (*GetNotificationsByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNotificationsByAppUser not implemented")
+}
+func (UnimplementedNotificationServer) GetNotificationsByApp(context.Context, *GetNotificationsByAppRequest) (*GetNotificationsByAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNotificationsByApp not implemented")
+}
+func (UnimplementedNotificationServer) GetNotificationsByOtherApp(context.Context, *GetNotificationsByOtherAppRequest) (*GetNotificationsByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNotificationsByOtherApp not implemented")
 }
 func (UnimplementedNotificationServer) CreateReadUser(context.Context, *CreateReadUserRequest) (*CreateReadUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateReadUser not implemented")
@@ -522,6 +578,42 @@ func _Notification_CreateNotification_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Notification_CreateNotificationForAppOtherUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateNotificationForAppOtherUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NotificationServer).CreateNotificationForAppOtherUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notification.v1.Notification/CreateNotificationForAppOtherUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NotificationServer).CreateNotificationForAppOtherUser(ctx, req.(*CreateNotificationForAppOtherUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Notification_CreateNotificationForOtherAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateNotificationForOtherAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NotificationServer).CreateNotificationForOtherAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notification.v1.Notification/CreateNotificationForOtherAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NotificationServer).CreateNotificationForOtherAppUser(ctx, req.(*CreateNotificationForOtherAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Notification_UpdateNotification_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateNotificationRequest)
 	if err := dec(in); err != nil {
@@ -554,6 +646,42 @@ func _Notification_GetNotificationsByAppUser_Handler(srv interface{}, ctx contex
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(NotificationServer).GetNotificationsByAppUser(ctx, req.(*GetNotificationsByAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Notification_GetNotificationsByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNotificationsByAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NotificationServer).GetNotificationsByApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notification.v1.Notification/GetNotificationsByApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NotificationServer).GetNotificationsByApp(ctx, req.(*GetNotificationsByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Notification_GetNotificationsByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNotificationsByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NotificationServer).GetNotificationsByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notification.v1.Notification/GetNotificationsByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NotificationServer).GetNotificationsByOtherApp(ctx, req.(*GetNotificationsByOtherAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -864,12 +992,28 @@ var Notification_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Notification_CreateNotification_Handler,
 		},
 		{
+			MethodName: "CreateNotificationForAppOtherUser",
+			Handler:    _Notification_CreateNotificationForAppOtherUser_Handler,
+		},
+		{
+			MethodName: "CreateNotificationForOtherAppUser",
+			Handler:    _Notification_CreateNotificationForOtherAppUser_Handler,
+		},
+		{
 			MethodName: "UpdateNotification",
 			Handler:    _Notification_UpdateNotification_Handler,
 		},
 		{
 			MethodName: "GetNotificationsByAppUser",
 			Handler:    _Notification_GetNotificationsByAppUser_Handler,
+		},
+		{
+			MethodName: "GetNotificationsByApp",
+			Handler:    _Notification_GetNotificationsByApp_Handler,
+		},
+		{
+			MethodName: "GetNotificationsByOtherApp",
+			Handler:    _Notification_GetNotificationsByOtherApp_Handler,
 		},
 		{
 			MethodName: "CreateReadUser",

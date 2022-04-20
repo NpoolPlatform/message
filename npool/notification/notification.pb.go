@@ -809,6 +809,218 @@ func (x *CreateNotificationResponse) GetInfo() *UserNotification {
 	return nil
 }
 
+type CreateNotificationForAppOtherUserRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TargetUserID string            `protobuf:"bytes,10,opt,name=TargetUserID,proto3" json:"TargetUserID,omitempty"`
+	Info         *UserNotification `protobuf:"bytes,20,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *CreateNotificationForAppOtherUserRequest) Reset() {
+	*x = CreateNotificationForAppOtherUserRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notification_notification_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateNotificationForAppOtherUserRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateNotificationForAppOtherUserRequest) ProtoMessage() {}
+
+func (x *CreateNotificationForAppOtherUserRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notification_notification_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateNotificationForAppOtherUserRequest.ProtoReflect.Descriptor instead.
+func (*CreateNotificationForAppOtherUserRequest) Descriptor() ([]byte, []int) {
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *CreateNotificationForAppOtherUserRequest) GetTargetUserID() string {
+	if x != nil {
+		return x.TargetUserID
+	}
+	return ""
+}
+
+func (x *CreateNotificationForAppOtherUserRequest) GetInfo() *UserNotification {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type CreateNotificationForAppOtherUserResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *UserNotification `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *CreateNotificationForAppOtherUserResponse) Reset() {
+	*x = CreateNotificationForAppOtherUserResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notification_notification_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateNotificationForAppOtherUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateNotificationForAppOtherUserResponse) ProtoMessage() {}
+
+func (x *CreateNotificationForAppOtherUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notification_notification_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateNotificationForAppOtherUserResponse.ProtoReflect.Descriptor instead.
+func (*CreateNotificationForAppOtherUserResponse) Descriptor() ([]byte, []int) {
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *CreateNotificationForAppOtherUserResponse) GetInfo() *UserNotification {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type CreateNotificationForOtherAppUserRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TargetAppID  string            `protobuf:"bytes,10,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
+	TargetUserID string            `protobuf:"bytes,20,opt,name=TargetUserID,proto3" json:"TargetUserID,omitempty"`
+	Info         *UserNotification `protobuf:"bytes,30,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *CreateNotificationForOtherAppUserRequest) Reset() {
+	*x = CreateNotificationForOtherAppUserRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notification_notification_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateNotificationForOtherAppUserRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateNotificationForOtherAppUserRequest) ProtoMessage() {}
+
+func (x *CreateNotificationForOtherAppUserRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notification_notification_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateNotificationForOtherAppUserRequest.ProtoReflect.Descriptor instead.
+func (*CreateNotificationForOtherAppUserRequest) Descriptor() ([]byte, []int) {
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *CreateNotificationForOtherAppUserRequest) GetTargetAppID() string {
+	if x != nil {
+		return x.TargetAppID
+	}
+	return ""
+}
+
+func (x *CreateNotificationForOtherAppUserRequest) GetTargetUserID() string {
+	if x != nil {
+		return x.TargetUserID
+	}
+	return ""
+}
+
+func (x *CreateNotificationForOtherAppUserRequest) GetInfo() *UserNotification {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type CreateNotificationForOtherAppUserResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *UserNotification `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *CreateNotificationForOtherAppUserResponse) Reset() {
+	*x = CreateNotificationForOtherAppUserResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notification_notification_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateNotificationForOtherAppUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateNotificationForOtherAppUserResponse) ProtoMessage() {}
+
+func (x *CreateNotificationForOtherAppUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notification_notification_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateNotificationForOtherAppUserResponse.ProtoReflect.Descriptor instead.
+func (*CreateNotificationForOtherAppUserResponse) Descriptor() ([]byte, []int) {
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *CreateNotificationForOtherAppUserResponse) GetInfo() *UserNotification {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 type UpdateNotificationRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -820,7 +1032,7 @@ type UpdateNotificationRequest struct {
 func (x *UpdateNotificationRequest) Reset() {
 	*x = UpdateNotificationRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[14]
+		mi := &file_npool_notification_notification_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -833,7 +1045,7 @@ func (x *UpdateNotificationRequest) String() string {
 func (*UpdateNotificationRequest) ProtoMessage() {}
 
 func (x *UpdateNotificationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[14]
+	mi := &file_npool_notification_notification_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -846,7 +1058,7 @@ func (x *UpdateNotificationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateNotificationRequest.ProtoReflect.Descriptor instead.
 func (*UpdateNotificationRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{14}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *UpdateNotificationRequest) GetInfo() *UserNotification {
@@ -867,7 +1079,7 @@ type UpdateNotificationResponse struct {
 func (x *UpdateNotificationResponse) Reset() {
 	*x = UpdateNotificationResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[15]
+		mi := &file_npool_notification_notification_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -880,7 +1092,7 @@ func (x *UpdateNotificationResponse) String() string {
 func (*UpdateNotificationResponse) ProtoMessage() {}
 
 func (x *UpdateNotificationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[15]
+	mi := &file_npool_notification_notification_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -893,7 +1105,7 @@ func (x *UpdateNotificationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateNotificationResponse.ProtoReflect.Descriptor instead.
 func (*UpdateNotificationResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{15}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *UpdateNotificationResponse) GetInfo() *UserNotification {
@@ -915,7 +1127,7 @@ type GetNotificationsByAppUserRequest struct {
 func (x *GetNotificationsByAppUserRequest) Reset() {
 	*x = GetNotificationsByAppUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[16]
+		mi := &file_npool_notification_notification_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -928,7 +1140,7 @@ func (x *GetNotificationsByAppUserRequest) String() string {
 func (*GetNotificationsByAppUserRequest) ProtoMessage() {}
 
 func (x *GetNotificationsByAppUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[16]
+	mi := &file_npool_notification_notification_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -941,7 +1153,7 @@ func (x *GetNotificationsByAppUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetNotificationsByAppUserRequest.ProtoReflect.Descriptor instead.
 func (*GetNotificationsByAppUserRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{16}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *GetNotificationsByAppUserRequest) GetAppID() string {
@@ -969,7 +1181,7 @@ type GetNotificationsByAppUserResponse struct {
 func (x *GetNotificationsByAppUserResponse) Reset() {
 	*x = GetNotificationsByAppUserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[17]
+		mi := &file_npool_notification_notification_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -982,7 +1194,7 @@ func (x *GetNotificationsByAppUserResponse) String() string {
 func (*GetNotificationsByAppUserResponse) ProtoMessage() {}
 
 func (x *GetNotificationsByAppUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[17]
+	mi := &file_npool_notification_notification_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -995,10 +1207,198 @@ func (x *GetNotificationsByAppUserResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetNotificationsByAppUserResponse.ProtoReflect.Descriptor instead.
 func (*GetNotificationsByAppUserResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{17}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *GetNotificationsByAppUserResponse) GetInfos() []*UserNotification {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+type GetNotificationsByAppRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AppID string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
+}
+
+func (x *GetNotificationsByAppRequest) Reset() {
+	*x = GetNotificationsByAppRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notification_notification_proto_msgTypes[22]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetNotificationsByAppRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetNotificationsByAppRequest) ProtoMessage() {}
+
+func (x *GetNotificationsByAppRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notification_notification_proto_msgTypes[22]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetNotificationsByAppRequest.ProtoReflect.Descriptor instead.
+func (*GetNotificationsByAppRequest) Descriptor() ([]byte, []int) {
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *GetNotificationsByAppRequest) GetAppID() string {
+	if x != nil {
+		return x.AppID
+	}
+	return ""
+}
+
+type GetNotificationsByAppResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos []*UserNotification `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+}
+
+func (x *GetNotificationsByAppResponse) Reset() {
+	*x = GetNotificationsByAppResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notification_notification_proto_msgTypes[23]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetNotificationsByAppResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetNotificationsByAppResponse) ProtoMessage() {}
+
+func (x *GetNotificationsByAppResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notification_notification_proto_msgTypes[23]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetNotificationsByAppResponse.ProtoReflect.Descriptor instead.
+func (*GetNotificationsByAppResponse) Descriptor() ([]byte, []int) {
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *GetNotificationsByAppResponse) GetInfos() []*UserNotification {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+type GetNotificationsByOtherAppRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TargetAppID string `protobuf:"bytes,10,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
+}
+
+func (x *GetNotificationsByOtherAppRequest) Reset() {
+	*x = GetNotificationsByOtherAppRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notification_notification_proto_msgTypes[24]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetNotificationsByOtherAppRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetNotificationsByOtherAppRequest) ProtoMessage() {}
+
+func (x *GetNotificationsByOtherAppRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notification_notification_proto_msgTypes[24]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetNotificationsByOtherAppRequest.ProtoReflect.Descriptor instead.
+func (*GetNotificationsByOtherAppRequest) Descriptor() ([]byte, []int) {
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *GetNotificationsByOtherAppRequest) GetTargetAppID() string {
+	if x != nil {
+		return x.TargetAppID
+	}
+	return ""
+}
+
+type GetNotificationsByOtherAppResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos []*UserNotification `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+}
+
+func (x *GetNotificationsByOtherAppResponse) Reset() {
+	*x = GetNotificationsByOtherAppResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notification_notification_proto_msgTypes[25]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetNotificationsByOtherAppResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetNotificationsByOtherAppResponse) ProtoMessage() {}
+
+func (x *GetNotificationsByOtherAppResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notification_notification_proto_msgTypes[25]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetNotificationsByOtherAppResponse.ProtoReflect.Descriptor instead.
+func (*GetNotificationsByOtherAppResponse) Descriptor() ([]byte, []int) {
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *GetNotificationsByOtherAppResponse) GetInfos() []*UserNotification {
 	if x != nil {
 		return x.Infos
 	}
@@ -1020,7 +1420,7 @@ type ReadUser struct {
 func (x *ReadUser) Reset() {
 	*x = ReadUser{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[18]
+		mi := &file_npool_notification_notification_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1033,7 +1433,7 @@ func (x *ReadUser) String() string {
 func (*ReadUser) ProtoMessage() {}
 
 func (x *ReadUser) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[18]
+	mi := &file_npool_notification_notification_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1046,7 +1446,7 @@ func (x *ReadUser) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReadUser.ProtoReflect.Descriptor instead.
 func (*ReadUser) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{18}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *ReadUser) GetID() string {
@@ -1095,7 +1495,7 @@ type CreateReadUserRequest struct {
 func (x *CreateReadUserRequest) Reset() {
 	*x = CreateReadUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[19]
+		mi := &file_npool_notification_notification_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1108,7 +1508,7 @@ func (x *CreateReadUserRequest) String() string {
 func (*CreateReadUserRequest) ProtoMessage() {}
 
 func (x *CreateReadUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[19]
+	mi := &file_npool_notification_notification_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1121,7 +1521,7 @@ func (x *CreateReadUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateReadUserRequest.ProtoReflect.Descriptor instead.
 func (*CreateReadUserRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{19}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *CreateReadUserRequest) GetInfo() *ReadUser {
@@ -1142,7 +1542,7 @@ type CreateReadUserResponse struct {
 func (x *CreateReadUserResponse) Reset() {
 	*x = CreateReadUserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[20]
+		mi := &file_npool_notification_notification_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1155,7 +1555,7 @@ func (x *CreateReadUserResponse) String() string {
 func (*CreateReadUserResponse) ProtoMessage() {}
 
 func (x *CreateReadUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[20]
+	mi := &file_npool_notification_notification_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1168,7 +1568,7 @@ func (x *CreateReadUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateReadUserResponse.ProtoReflect.Descriptor instead.
 func (*CreateReadUserResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{20}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *CreateReadUserResponse) GetInfo() *ReadUser {
@@ -1189,7 +1589,7 @@ type CheckReadUserRequest struct {
 func (x *CheckReadUserRequest) Reset() {
 	*x = CheckReadUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[21]
+		mi := &file_npool_notification_notification_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1202,7 +1602,7 @@ func (x *CheckReadUserRequest) String() string {
 func (*CheckReadUserRequest) ProtoMessage() {}
 
 func (x *CheckReadUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[21]
+	mi := &file_npool_notification_notification_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1215,7 +1615,7 @@ func (x *CheckReadUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CheckReadUserRequest.ProtoReflect.Descriptor instead.
 func (*CheckReadUserRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{21}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *CheckReadUserRequest) GetInfo() *ReadUser {
@@ -1236,7 +1636,7 @@ type CheckReadUserResponse struct {
 func (x *CheckReadUserResponse) Reset() {
 	*x = CheckReadUserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[22]
+		mi := &file_npool_notification_notification_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1249,7 +1649,7 @@ func (x *CheckReadUserResponse) String() string {
 func (*CheckReadUserResponse) ProtoMessage() {}
 
 func (x *CheckReadUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[22]
+	mi := &file_npool_notification_notification_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1262,7 +1662,7 @@ func (x *CheckReadUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CheckReadUserResponse.ProtoReflect.Descriptor instead.
 func (*CheckReadUserResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{22}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *CheckReadUserResponse) GetInfo() *ReadUser {
@@ -1290,7 +1690,7 @@ type Mail struct {
 func (x *Mail) Reset() {
 	*x = Mail{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[23]
+		mi := &file_npool_notification_notification_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1303,7 +1703,7 @@ func (x *Mail) String() string {
 func (*Mail) ProtoMessage() {}
 
 func (x *Mail) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[23]
+	mi := &file_npool_notification_notification_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1316,7 +1716,7 @@ func (x *Mail) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Mail.ProtoReflect.Descriptor instead.
 func (*Mail) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{23}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *Mail) GetID() string {
@@ -1386,7 +1786,7 @@ type CreateMailRequest struct {
 func (x *CreateMailRequest) Reset() {
 	*x = CreateMailRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[24]
+		mi := &file_npool_notification_notification_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1399,7 +1799,7 @@ func (x *CreateMailRequest) String() string {
 func (*CreateMailRequest) ProtoMessage() {}
 
 func (x *CreateMailRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[24]
+	mi := &file_npool_notification_notification_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1412,7 +1812,7 @@ func (x *CreateMailRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateMailRequest.ProtoReflect.Descriptor instead.
 func (*CreateMailRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{24}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *CreateMailRequest) GetInfo() *Mail {
@@ -1433,7 +1833,7 @@ type CreateMailResponse struct {
 func (x *CreateMailResponse) Reset() {
 	*x = CreateMailResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[25]
+		mi := &file_npool_notification_notification_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1446,7 +1846,7 @@ func (x *CreateMailResponse) String() string {
 func (*CreateMailResponse) ProtoMessage() {}
 
 func (x *CreateMailResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[25]
+	mi := &file_npool_notification_notification_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1459,7 +1859,7 @@ func (x *CreateMailResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateMailResponse.ProtoReflect.Descriptor instead.
 func (*CreateMailResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{25}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *CreateMailResponse) GetInfo() *Mail {
@@ -1481,7 +1881,7 @@ type CreateMailForOtherAppRequest struct {
 func (x *CreateMailForOtherAppRequest) Reset() {
 	*x = CreateMailForOtherAppRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[26]
+		mi := &file_npool_notification_notification_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1494,7 +1894,7 @@ func (x *CreateMailForOtherAppRequest) String() string {
 func (*CreateMailForOtherAppRequest) ProtoMessage() {}
 
 func (x *CreateMailForOtherAppRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[26]
+	mi := &file_npool_notification_notification_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1507,7 +1907,7 @@ func (x *CreateMailForOtherAppRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateMailForOtherAppRequest.ProtoReflect.Descriptor instead.
 func (*CreateMailForOtherAppRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{26}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *CreateMailForOtherAppRequest) GetTargetAppID() string {
@@ -1535,7 +1935,7 @@ type CreateMailForOtherAppResponse struct {
 func (x *CreateMailForOtherAppResponse) Reset() {
 	*x = CreateMailForOtherAppResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[27]
+		mi := &file_npool_notification_notification_proto_msgTypes[35]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1548,7 +1948,7 @@ func (x *CreateMailForOtherAppResponse) String() string {
 func (*CreateMailForOtherAppResponse) ProtoMessage() {}
 
 func (x *CreateMailForOtherAppResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[27]
+	mi := &file_npool_notification_notification_proto_msgTypes[35]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1561,7 +1961,7 @@ func (x *CreateMailForOtherAppResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateMailForOtherAppResponse.ProtoReflect.Descriptor instead.
 func (*CreateMailForOtherAppResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{27}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *CreateMailForOtherAppResponse) GetInfo() *Mail {
@@ -1582,7 +1982,7 @@ type UpdateMailRequest struct {
 func (x *UpdateMailRequest) Reset() {
 	*x = UpdateMailRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[28]
+		mi := &file_npool_notification_notification_proto_msgTypes[36]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1595,7 +1995,7 @@ func (x *UpdateMailRequest) String() string {
 func (*UpdateMailRequest) ProtoMessage() {}
 
 func (x *UpdateMailRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[28]
+	mi := &file_npool_notification_notification_proto_msgTypes[36]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1608,7 +2008,7 @@ func (x *UpdateMailRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateMailRequest.ProtoReflect.Descriptor instead.
 func (*UpdateMailRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{28}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *UpdateMailRequest) GetInfo() *Mail {
@@ -1629,7 +2029,7 @@ type UpdateMailResponse struct {
 func (x *UpdateMailResponse) Reset() {
 	*x = UpdateMailResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[29]
+		mi := &file_npool_notification_notification_proto_msgTypes[37]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1642,7 +2042,7 @@ func (x *UpdateMailResponse) String() string {
 func (*UpdateMailResponse) ProtoMessage() {}
 
 func (x *UpdateMailResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[29]
+	mi := &file_npool_notification_notification_proto_msgTypes[37]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1655,7 +2055,7 @@ func (x *UpdateMailResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateMailResponse.ProtoReflect.Descriptor instead.
 func (*UpdateMailResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{29}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *UpdateMailResponse) GetInfo() *Mail {
@@ -1677,7 +2077,7 @@ type GetMailsRequest struct {
 func (x *GetMailsRequest) Reset() {
 	*x = GetMailsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[30]
+		mi := &file_npool_notification_notification_proto_msgTypes[38]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1690,7 +2090,7 @@ func (x *GetMailsRequest) String() string {
 func (*GetMailsRequest) ProtoMessage() {}
 
 func (x *GetMailsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[30]
+	mi := &file_npool_notification_notification_proto_msgTypes[38]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1703,7 +2103,7 @@ func (x *GetMailsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMailsRequest.ProtoReflect.Descriptor instead.
 func (*GetMailsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{30}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *GetMailsRequest) GetAppID() string {
@@ -1731,7 +2131,7 @@ type GetMailsResponse struct {
 func (x *GetMailsResponse) Reset() {
 	*x = GetMailsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[31]
+		mi := &file_npool_notification_notification_proto_msgTypes[39]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1744,7 +2144,7 @@ func (x *GetMailsResponse) String() string {
 func (*GetMailsResponse) ProtoMessage() {}
 
 func (x *GetMailsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[31]
+	mi := &file_npool_notification_notification_proto_msgTypes[39]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1757,7 +2157,7 @@ func (x *GetMailsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMailsResponse.ProtoReflect.Descriptor instead.
 func (*GetMailsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{31}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *GetMailsResponse) GetInfos() []*Mail {
@@ -1778,7 +2178,7 @@ type GetMailsByAppRequest struct {
 func (x *GetMailsByAppRequest) Reset() {
 	*x = GetMailsByAppRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[32]
+		mi := &file_npool_notification_notification_proto_msgTypes[40]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1791,7 +2191,7 @@ func (x *GetMailsByAppRequest) String() string {
 func (*GetMailsByAppRequest) ProtoMessage() {}
 
 func (x *GetMailsByAppRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[32]
+	mi := &file_npool_notification_notification_proto_msgTypes[40]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1804,7 +2204,7 @@ func (x *GetMailsByAppRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMailsByAppRequest.ProtoReflect.Descriptor instead.
 func (*GetMailsByAppRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{32}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *GetMailsByAppRequest) GetAppID() string {
@@ -1825,7 +2225,7 @@ type GetMailsByAppResponse struct {
 func (x *GetMailsByAppResponse) Reset() {
 	*x = GetMailsByAppResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[33]
+		mi := &file_npool_notification_notification_proto_msgTypes[41]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1838,7 +2238,7 @@ func (x *GetMailsByAppResponse) String() string {
 func (*GetMailsByAppResponse) ProtoMessage() {}
 
 func (x *GetMailsByAppResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[33]
+	mi := &file_npool_notification_notification_proto_msgTypes[41]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1851,7 +2251,7 @@ func (x *GetMailsByAppResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMailsByAppResponse.ProtoReflect.Descriptor instead.
 func (*GetMailsByAppResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{33}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *GetMailsByAppResponse) GetInfos() []*Mail {
@@ -1872,7 +2272,7 @@ type GetMailsByOtherAppRequest struct {
 func (x *GetMailsByOtherAppRequest) Reset() {
 	*x = GetMailsByOtherAppRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[34]
+		mi := &file_npool_notification_notification_proto_msgTypes[42]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1885,7 +2285,7 @@ func (x *GetMailsByOtherAppRequest) String() string {
 func (*GetMailsByOtherAppRequest) ProtoMessage() {}
 
 func (x *GetMailsByOtherAppRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[34]
+	mi := &file_npool_notification_notification_proto_msgTypes[42]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1898,7 +2298,7 @@ func (x *GetMailsByOtherAppRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMailsByOtherAppRequest.ProtoReflect.Descriptor instead.
 func (*GetMailsByOtherAppRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{34}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *GetMailsByOtherAppRequest) GetTargetAppID() string {
@@ -1919,7 +2319,7 @@ type GetMailsByOtherAppResponse struct {
 func (x *GetMailsByOtherAppResponse) Reset() {
 	*x = GetMailsByOtherAppResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[35]
+		mi := &file_npool_notification_notification_proto_msgTypes[43]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1932,7 +2332,7 @@ func (x *GetMailsByOtherAppResponse) String() string {
 func (*GetMailsByOtherAppResponse) ProtoMessage() {}
 
 func (x *GetMailsByOtherAppResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[35]
+	mi := &file_npool_notification_notification_proto_msgTypes[43]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1945,7 +2345,7 @@ func (x *GetMailsByOtherAppResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMailsByOtherAppResponse.ProtoReflect.Descriptor instead.
 func (*GetMailsByOtherAppResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{35}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *GetMailsByOtherAppResponse) GetInfos() []*Mail {
@@ -1972,7 +2372,7 @@ type Template struct {
 func (x *Template) Reset() {
 	*x = Template{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[36]
+		mi := &file_npool_notification_notification_proto_msgTypes[44]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1985,7 +2385,7 @@ func (x *Template) String() string {
 func (*Template) ProtoMessage() {}
 
 func (x *Template) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[36]
+	mi := &file_npool_notification_notification_proto_msgTypes[44]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1998,7 +2398,7 @@ func (x *Template) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Template.ProtoReflect.Descriptor instead.
 func (*Template) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{36}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *Template) GetID() string {
@@ -2061,7 +2461,7 @@ type CreateTemplateRequest struct {
 func (x *CreateTemplateRequest) Reset() {
 	*x = CreateTemplateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[37]
+		mi := &file_npool_notification_notification_proto_msgTypes[45]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2074,7 +2474,7 @@ func (x *CreateTemplateRequest) String() string {
 func (*CreateTemplateRequest) ProtoMessage() {}
 
 func (x *CreateTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[37]
+	mi := &file_npool_notification_notification_proto_msgTypes[45]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2087,7 +2487,7 @@ func (x *CreateTemplateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTemplateRequest.ProtoReflect.Descriptor instead.
 func (*CreateTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{37}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *CreateTemplateRequest) GetInfo() *Template {
@@ -2108,7 +2508,7 @@ type CreateTemplateResponse struct {
 func (x *CreateTemplateResponse) Reset() {
 	*x = CreateTemplateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[38]
+		mi := &file_npool_notification_notification_proto_msgTypes[46]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2121,7 +2521,7 @@ func (x *CreateTemplateResponse) String() string {
 func (*CreateTemplateResponse) ProtoMessage() {}
 
 func (x *CreateTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[38]
+	mi := &file_npool_notification_notification_proto_msgTypes[46]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2134,7 +2534,7 @@ func (x *CreateTemplateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTemplateResponse.ProtoReflect.Descriptor instead.
 func (*CreateTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{38}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *CreateTemplateResponse) GetInfo() *Template {
@@ -2156,7 +2556,7 @@ type CreateTemplateForOtherAppRequest struct {
 func (x *CreateTemplateForOtherAppRequest) Reset() {
 	*x = CreateTemplateForOtherAppRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[39]
+		mi := &file_npool_notification_notification_proto_msgTypes[47]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2169,7 +2569,7 @@ func (x *CreateTemplateForOtherAppRequest) String() string {
 func (*CreateTemplateForOtherAppRequest) ProtoMessage() {}
 
 func (x *CreateTemplateForOtherAppRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[39]
+	mi := &file_npool_notification_notification_proto_msgTypes[47]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2182,7 +2582,7 @@ func (x *CreateTemplateForOtherAppRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTemplateForOtherAppRequest.ProtoReflect.Descriptor instead.
 func (*CreateTemplateForOtherAppRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{39}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *CreateTemplateForOtherAppRequest) GetTargetAppID() string {
@@ -2210,7 +2610,7 @@ type CreateTemplateForOtherAppResponse struct {
 func (x *CreateTemplateForOtherAppResponse) Reset() {
 	*x = CreateTemplateForOtherAppResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[40]
+		mi := &file_npool_notification_notification_proto_msgTypes[48]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2223,7 +2623,7 @@ func (x *CreateTemplateForOtherAppResponse) String() string {
 func (*CreateTemplateForOtherAppResponse) ProtoMessage() {}
 
 func (x *CreateTemplateForOtherAppResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[40]
+	mi := &file_npool_notification_notification_proto_msgTypes[48]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2236,7 +2636,7 @@ func (x *CreateTemplateForOtherAppResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CreateTemplateForOtherAppResponse.ProtoReflect.Descriptor instead.
 func (*CreateTemplateForOtherAppResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{40}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *CreateTemplateForOtherAppResponse) GetInfo() *Template {
@@ -2257,7 +2657,7 @@ type GetTemplateRequest struct {
 func (x *GetTemplateRequest) Reset() {
 	*x = GetTemplateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[41]
+		mi := &file_npool_notification_notification_proto_msgTypes[49]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2270,7 +2670,7 @@ func (x *GetTemplateRequest) String() string {
 func (*GetTemplateRequest) ProtoMessage() {}
 
 func (x *GetTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[41]
+	mi := &file_npool_notification_notification_proto_msgTypes[49]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2283,7 +2683,7 @@ func (x *GetTemplateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTemplateRequest.ProtoReflect.Descriptor instead.
 func (*GetTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{41}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *GetTemplateRequest) GetID() string {
@@ -2304,7 +2704,7 @@ type GetTemplateResponse struct {
 func (x *GetTemplateResponse) Reset() {
 	*x = GetTemplateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[42]
+		mi := &file_npool_notification_notification_proto_msgTypes[50]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2317,7 +2717,7 @@ func (x *GetTemplateResponse) String() string {
 func (*GetTemplateResponse) ProtoMessage() {}
 
 func (x *GetTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[42]
+	mi := &file_npool_notification_notification_proto_msgTypes[50]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2330,7 +2730,7 @@ func (x *GetTemplateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTemplateResponse.ProtoReflect.Descriptor instead.
 func (*GetTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{42}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{50}
 }
 
 func (x *GetTemplateResponse) GetInfo() *Template {
@@ -2351,7 +2751,7 @@ type UpdateTemplateRequest struct {
 func (x *UpdateTemplateRequest) Reset() {
 	*x = UpdateTemplateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[43]
+		mi := &file_npool_notification_notification_proto_msgTypes[51]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2364,7 +2764,7 @@ func (x *UpdateTemplateRequest) String() string {
 func (*UpdateTemplateRequest) ProtoMessage() {}
 
 func (x *UpdateTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[43]
+	mi := &file_npool_notification_notification_proto_msgTypes[51]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2377,7 +2777,7 @@ func (x *UpdateTemplateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateTemplateRequest.ProtoReflect.Descriptor instead.
 func (*UpdateTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{43}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *UpdateTemplateRequest) GetInfo() *Template {
@@ -2398,7 +2798,7 @@ type UpdateTemplateResponse struct {
 func (x *UpdateTemplateResponse) Reset() {
 	*x = UpdateTemplateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[44]
+		mi := &file_npool_notification_notification_proto_msgTypes[52]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2411,7 +2811,7 @@ func (x *UpdateTemplateResponse) String() string {
 func (*UpdateTemplateResponse) ProtoMessage() {}
 
 func (x *UpdateTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[44]
+	mi := &file_npool_notification_notification_proto_msgTypes[52]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2424,7 +2824,7 @@ func (x *UpdateTemplateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateTemplateResponse.ProtoReflect.Descriptor instead.
 func (*UpdateTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{44}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{52}
 }
 
 func (x *UpdateTemplateResponse) GetInfo() *Template {
@@ -2447,7 +2847,7 @@ type GetTemplateByAppLangUsedForRequest struct {
 func (x *GetTemplateByAppLangUsedForRequest) Reset() {
 	*x = GetTemplateByAppLangUsedForRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[45]
+		mi := &file_npool_notification_notification_proto_msgTypes[53]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2460,7 +2860,7 @@ func (x *GetTemplateByAppLangUsedForRequest) String() string {
 func (*GetTemplateByAppLangUsedForRequest) ProtoMessage() {}
 
 func (x *GetTemplateByAppLangUsedForRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[45]
+	mi := &file_npool_notification_notification_proto_msgTypes[53]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2473,7 +2873,7 @@ func (x *GetTemplateByAppLangUsedForRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use GetTemplateByAppLangUsedForRequest.ProtoReflect.Descriptor instead.
 func (*GetTemplateByAppLangUsedForRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{45}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{53}
 }
 
 func (x *GetTemplateByAppLangUsedForRequest) GetAppID() string {
@@ -2508,7 +2908,7 @@ type GetTemplateByAppLangUsedForResponse struct {
 func (x *GetTemplateByAppLangUsedForResponse) Reset() {
 	*x = GetTemplateByAppLangUsedForResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[46]
+		mi := &file_npool_notification_notification_proto_msgTypes[54]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2521,7 +2921,7 @@ func (x *GetTemplateByAppLangUsedForResponse) String() string {
 func (*GetTemplateByAppLangUsedForResponse) ProtoMessage() {}
 
 func (x *GetTemplateByAppLangUsedForResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[46]
+	mi := &file_npool_notification_notification_proto_msgTypes[54]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2534,7 +2934,7 @@ func (x *GetTemplateByAppLangUsedForResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use GetTemplateByAppLangUsedForResponse.ProtoReflect.Descriptor instead.
 func (*GetTemplateByAppLangUsedForResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{46}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{54}
 }
 
 func (x *GetTemplateByAppLangUsedForResponse) GetInfo() *Template {
@@ -2555,7 +2955,7 @@ type GetTemplatesByAppRequest struct {
 func (x *GetTemplatesByAppRequest) Reset() {
 	*x = GetTemplatesByAppRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[47]
+		mi := &file_npool_notification_notification_proto_msgTypes[55]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2568,7 +2968,7 @@ func (x *GetTemplatesByAppRequest) String() string {
 func (*GetTemplatesByAppRequest) ProtoMessage() {}
 
 func (x *GetTemplatesByAppRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[47]
+	mi := &file_npool_notification_notification_proto_msgTypes[55]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2581,7 +2981,7 @@ func (x *GetTemplatesByAppRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTemplatesByAppRequest.ProtoReflect.Descriptor instead.
 func (*GetTemplatesByAppRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{47}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *GetTemplatesByAppRequest) GetAppID() string {
@@ -2602,7 +3002,7 @@ type GetTemplatesByAppResponse struct {
 func (x *GetTemplatesByAppResponse) Reset() {
 	*x = GetTemplatesByAppResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[48]
+		mi := &file_npool_notification_notification_proto_msgTypes[56]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2615,7 +3015,7 @@ func (x *GetTemplatesByAppResponse) String() string {
 func (*GetTemplatesByAppResponse) ProtoMessage() {}
 
 func (x *GetTemplatesByAppResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[48]
+	mi := &file_npool_notification_notification_proto_msgTypes[56]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2628,7 +3028,7 @@ func (x *GetTemplatesByAppResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTemplatesByAppResponse.ProtoReflect.Descriptor instead.
 func (*GetTemplatesByAppResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{48}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *GetTemplatesByAppResponse) GetInfos() []*Template {
@@ -2649,7 +3049,7 @@ type GetTemplatesByOtherAppRequest struct {
 func (x *GetTemplatesByOtherAppRequest) Reset() {
 	*x = GetTemplatesByOtherAppRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[49]
+		mi := &file_npool_notification_notification_proto_msgTypes[57]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2662,7 +3062,7 @@ func (x *GetTemplatesByOtherAppRequest) String() string {
 func (*GetTemplatesByOtherAppRequest) ProtoMessage() {}
 
 func (x *GetTemplatesByOtherAppRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[49]
+	mi := &file_npool_notification_notification_proto_msgTypes[57]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2675,7 +3075,7 @@ func (x *GetTemplatesByOtherAppRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTemplatesByOtherAppRequest.ProtoReflect.Descriptor instead.
 func (*GetTemplatesByOtherAppRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{49}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *GetTemplatesByOtherAppRequest) GetTargetAppID() string {
@@ -2696,7 +3096,7 @@ type GetTemplatesByOtherAppResponse struct {
 func (x *GetTemplatesByOtherAppResponse) Reset() {
 	*x = GetTemplatesByOtherAppResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notification_notification_proto_msgTypes[50]
+		mi := &file_npool_notification_notification_proto_msgTypes[58]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2709,7 +3109,7 @@ func (x *GetTemplatesByOtherAppResponse) String() string {
 func (*GetTemplatesByOtherAppResponse) ProtoMessage() {}
 
 func (x *GetTemplatesByOtherAppResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notification_notification_proto_msgTypes[50]
+	mi := &file_npool_notification_notification_proto_msgTypes[58]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2722,7 +3122,7 @@ func (x *GetTemplatesByOtherAppResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTemplatesByOtherAppResponse.ProtoReflect.Descriptor instead.
 func (*GetTemplatesByOtherAppResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notification_notification_proto_rawDescGZIP(), []int{50}
+	return file_npool_notification_notification_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *GetTemplatesByOtherAppResponse) GetInfos() []*Template {
@@ -2835,24 +3235,75 @@ var file_npool_notification_notification_proto_rawDesc = []byte{
 	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66,
 	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4e,
 	0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66,
-	0x6f, 0x22, 0x52, 0x0a, 0x19, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66,
-	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x35,
-	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6e,
-	0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55,
-	0x73, 0x65, 0x72, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52,
-	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x53, 0x0a, 0x1a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4e,
-	0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x12, 0x35, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x21, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61,
-	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x50, 0x0a, 0x20, 0x47, 0x65,
+	0x6f, 0x22, 0x85, 0x01, 0x0a, 0x28, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69,
+	0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x46, 0x6f, 0x72, 0x41, 0x70, 0x70, 0x4f, 0x74,
+	0x68, 0x65, 0x72, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x22,
+	0x0a, 0x0c, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x0a,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72,
+	0x49, 0x44, 0x12, 0x35, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x21, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e,
+	0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x62, 0x0a, 0x29, 0x43, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x46,
+	0x6f, 0x72, 0x41, 0x70, 0x70, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x35, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4e, 0x6f, 0x74, 0x69, 0x66,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0xa7, 0x01,
+	0x0a, 0x28, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x55,
+	0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x54, 0x61,
+	0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x22, 0x0a, 0x0c,
+	0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0c, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44,
+	0x12, 0x35, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21,
+	0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31,
+	0x2e, 0x55, 0x73, 0x65, 0x72, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x62, 0x0a, 0x29, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x46, 0x6f, 0x72,
+	0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x35, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x52, 0x0a, 0x19, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x35, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
+	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4e, 0x6f, 0x74,
+	0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22,
+	0x53, 0x0a, 0x1a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x35, 0x0a,
+	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6e, 0x6f,
+	0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73,
+	0x65, 0x72, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x04,
+	0x49, 0x6e, 0x66, 0x6f, 0x22, 0x50, 0x0a, 0x20, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
+	0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49,
+	0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16,
+	0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
+	0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x5c, 0x0a, 0x21, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74,
+	0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55,
+	0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x37, 0x0a, 0x05, 0x49,
+	0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6e, 0x6f, 0x74,
+	0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65,
+	0x72, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x05, 0x49,
+	0x6e, 0x66, 0x6f, 0x73, 0x22, 0x34, 0x0a, 0x1c, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x22, 0x58, 0x0a, 0x1d, 0x47, 0x65,
 	0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x79,
-	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14,
-	0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41,
-	0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x5c, 0x0a, 0x21,
-	0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73,
-	0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x37, 0x0a, 0x05, 0x49,
+	0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6e, 0x6f, 0x74,
+	0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65,
+	0x72, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x05, 0x49,
+	0x6e, 0x66, 0x6f, 0x73, 0x22, 0x45, 0x0a, 0x21, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41,
+	0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x54, 0x61, 0x72,
+	0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b,
+	0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x22, 0x5d, 0x0a, 0x22, 0x47,
+	0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42,
+	0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x12, 0x37, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b,
 	0x32, 0x21, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e,
 	0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
@@ -3027,7 +3478,7 @@ var file_npool_notification_notification_proto_rawDesc = []byte{
 	0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x19, 0x2e,
 	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e,
 	0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x32,
-	0xb8, 0x1b, 0x0a, 0x0c, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0xb9, 0x21, 0x0a, 0x0c, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x12, 0x51, 0x0a, 0x07, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x16, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d,
 	0x70, 0x74, 0x79, 0x1a, 0x19, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x56,
@@ -3094,163 +3545,211 @@ var file_npool_notification_notification_proto_rawDesc = []byte{
 	0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x22, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1c, 0x22,
 	0x17, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x6e, 0x6f, 0x74, 0x69,
-	0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x3a, 0x01, 0x2a, 0x12, 0x91, 0x01, 0x0a, 0x12,
-	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x12, 0x2a, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66,
-	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b,
-	0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31,
-	0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x22, 0x82, 0xd3, 0xe4,
-	0x93, 0x02, 0x1c, 0x22, 0x17, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f,
-	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x3a, 0x01, 0x2a, 0x12,
-	0xb0, 0x01, 0x0a, 0x19, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x31, 0x2e,
-	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e,
-	0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73,
-	0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x32, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e,
-	0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2c, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x26, 0x22, 0x21, 0x2f, 0x76,
-	0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a,
-	0x01, 0x2a, 0x12, 0x82, 0x01, 0x0a, 0x0e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x61,
-	0x64, 0x55, 0x73, 0x65, 0x72, 0x12, 0x26, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61,
-	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65,
-	0x61, 0x64, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27, 0x2e,
-	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e,
-	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x61, 0x64, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1f, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x19, 0x22, 0x14,
-	0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x72, 0x65, 0x61, 0x64, 0x2f,
-	0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x7e, 0x0a, 0x0d, 0x43, 0x68, 0x65, 0x63, 0x6b,
-	0x52, 0x65, 0x61, 0x64, 0x55, 0x73, 0x65, 0x72, 0x12, 0x25, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66,
-	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x68, 0x65, 0x63, 0x6b,
-	0x52, 0x65, 0x61, 0x64, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x26, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76,
-	0x31, 0x2e, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x52, 0x65, 0x61, 0x64, 0x55, 0x73, 0x65, 0x72, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x22,
-	0x13, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x68, 0x65, 0x63, 0x6b, 0x2f, 0x72, 0x65, 0x61, 0x64, 0x2f,
-	0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x71, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74,
-	0x65, 0x4d, 0x61, 0x69, 0x6c, 0x12, 0x22, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61,
-	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x61,
-	0x69, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x23, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
-	0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x4d, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1a,
-	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x14, 0x22, 0x0f, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x2f, 0x6d, 0x61, 0x69, 0x6c, 0x3a, 0x01, 0x2a, 0x12, 0xa0, 0x01, 0x0a, 0x15, 0x43,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x61, 0x69, 0x6c, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65,
-	0x72, 0x41, 0x70, 0x70, 0x12, 0x2d, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x61, 0x69,
-	0x6c, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75,
+	0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x3a, 0x01, 0x2a, 0x12, 0xd1, 0x01, 0x0a, 0x21,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x46, 0x6f, 0x72, 0x41, 0x70, 0x70, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x55, 0x73, 0x65,
+	0x72, 0x12, 0x39, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69,
+	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x46, 0x6f, 0x72, 0x41, 0x70, 0x70, 0x4f, 0x74, 0x68, 0x65,
+	0x72, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3a, 0x2e, 0x6e,
+	0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x46, 0x6f, 0x72, 0x41, 0x70, 0x70, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x55, 0x73, 0x65, 0x72,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x35, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x2f,
+	0x22, 0x2a, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x6e, 0x6f, 0x74,
+	0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2f, 0x66, 0x6f, 0x72, 0x2f, 0x61, 0x70,
+	0x70, 0x2f, 0x6f, 0x74, 0x68, 0x65, 0x72, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12,
+	0xd1, 0x01, 0x0a, 0x21, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69,
+	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70,
+	0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x39, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f,
+	0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68,
+	0x65, 0x72, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x3a, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e,
+	0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70,
+	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x35, 0x82, 0xd3,
+	0xe4, 0x93, 0x02, 0x2f, 0x22, 0x2a, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2f, 0x66, 0x6f,
+	0x72, 0x2f, 0x6f, 0x74, 0x68, 0x65, 0x72, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72,
+	0x3a, 0x01, 0x2a, 0x12, 0x91, 0x01, 0x0a, 0x12, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4e, 0x6f,
+	0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2a, 0x2e, 0x6e, 0x6f, 0x74,
+	0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4e,
+	0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x22, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1c, 0x22, 0x17, 0x2f, 0x76, 0x31,
+	0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x3a, 0x01, 0x2a, 0x12, 0xb0, 0x01, 0x0a, 0x19, 0x47, 0x65, 0x74, 0x4e,
+	0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x79, 0x41, 0x70,
+	0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x31, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
+	0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4e, 0x6f,
+	0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70,
+	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2c, 0x82, 0xd3,
+	0xe4, 0x93, 0x02, 0x26, 0x22, 0x21, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x6e, 0x6f,
+	0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x61,
+	0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x9f, 0x01, 0x0a, 0x15, 0x47,
+	0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42,
+	0x79, 0x41, 0x70, 0x70, 0x12, 0x2d, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69,
+	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75,
 	0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x61, 0x69, 0x6c,
-	0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x28, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x22, 0x22, 0x1d, 0x2f, 0x76, 0x31,
-	0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x6d, 0x61, 0x69, 0x6c, 0x2f, 0x66, 0x6f, 0x72,
-	0x2f, 0x6f, 0x74, 0x68, 0x65, 0x72, 0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x12, 0x71, 0x0a,
-	0x0a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x61, 0x69, 0x6c, 0x12, 0x22, 0x2e, 0x6e, 0x6f,
-	0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x4d, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x23, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76,
-	0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1a, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x14, 0x22, 0x0f, 0x2f, 0x76,
-	0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x6d, 0x61, 0x69, 0x6c, 0x3a, 0x01, 0x2a,
-	0x12, 0x69, 0x0a, 0x08, 0x47, 0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x20, 0x2e, 0x6e,
-	0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x21,
-	0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31,
-	0x2e, 0x47, 0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x18, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x12, 0x22, 0x0d, 0x2f, 0x76, 0x31, 0x2f, 0x67,
-	0x65, 0x74, 0x2f, 0x6d, 0x61, 0x69, 0x6c, 0x73, 0x3a, 0x01, 0x2a, 0x12, 0x7f, 0x0a, 0x0d, 0x47,
-	0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x12, 0x25, 0x2e, 0x6e,
-	0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x26, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x42, 0x79,
-	0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1f, 0x82, 0xd3, 0xe4,
-	0x93, 0x02, 0x19, 0x22, 0x14, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x6d, 0x61, 0x69,
-	0x6c, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x12, 0x94, 0x01, 0x0a,
-	0x12, 0x47, 0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72,
-	0x41, 0x70, 0x70, 0x12, 0x2a, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x42, 0x79,
-	0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x2b, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76,
-	0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65,
-	0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x25, 0x82, 0xd3,
-	0xe4, 0x93, 0x02, 0x1f, 0x22, 0x1a, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x6d, 0x61,
-	0x69, 0x6c, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x6f, 0x74, 0x68, 0x65, 0x72, 0x2f, 0x61, 0x70, 0x70,
-	0x3a, 0x01, 0x2a, 0x12, 0x81, 0x01, 0x0a, 0x0e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x65,
-	0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x12, 0x26, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54,
-	0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27,
-	0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31,
-	0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x22,
-	0x13, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x74, 0x65, 0x6d, 0x70,
-	0x6c, 0x61, 0x74, 0x65, 0x3a, 0x01, 0x2a, 0x12, 0xb0, 0x01, 0x0a, 0x19, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68,
-	0x65, 0x72, 0x41, 0x70, 0x70, 0x12, 0x31, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61,
-	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x65,
-	0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70,
-	0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66,
-	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74,
-	0x65, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65,
-	0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2c, 0x82, 0xd3,
-	0xe4, 0x93, 0x02, 0x26, 0x22, 0x21, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65,
-	0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x2f, 0x66, 0x6f, 0x72, 0x2f, 0x6f, 0x74,
-	0x68, 0x65, 0x72, 0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x12, 0x75, 0x0a, 0x0b, 0x47, 0x65,
-	0x74, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x12, 0x23, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
-	0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x54,
-	0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x24,
-	0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31,
-	0x2e, 0x47, 0x65, 0x74, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x15, 0x22, 0x10, 0x2f, 0x76,
-	0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x3a, 0x01,
-	0x2a, 0x12, 0x81, 0x01, 0x0a, 0x0e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x54, 0x65, 0x6d, 0x70,
-	0x6c, 0x61, 0x74, 0x65, 0x12, 0x26, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x54, 0x65, 0x6d,
-	0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27, 0x2e, 0x6e,
-	0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55,
-	0x70, 0x64, 0x61, 0x74, 0x65, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x22, 0x13, 0x2f,
-	0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61,
-	0x74, 0x65, 0x3a, 0x01, 0x2a, 0x12, 0x8f, 0x01, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x54, 0x65, 0x6d,
-	0x70, 0x6c, 0x61, 0x74, 0x65, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x12, 0x29, 0x2e, 0x6e, 0x6f,
+	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x27, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x21, 0x22, 0x1c, 0x2f, 0x76, 0x31,
+	0x2f, 0x67, 0x65, 0x74, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x12, 0xb4, 0x01, 0x0a,
+	0x1a, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x12, 0x32, 0x2e, 0x6e, 0x6f,
 	0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
-	0x74, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x54, 0x65, 0x6d, 0x70,
-	0x6c, 0x61, 0x74, 0x65, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x23, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1d, 0x22, 0x18, 0x2f, 0x76, 0x31, 0x2f,
-	0x67, 0x65, 0x74, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x73, 0x2f, 0x62, 0x79,
-	0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x12, 0xa4, 0x01, 0x0a, 0x16, 0x47, 0x65, 0x74, 0x54,
-	0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41,
-	0x70, 0x70, 0x12, 0x2e, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65,
-	0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65,
-	0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x29, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x23, 0x22, 0x1e, 0x2f, 0x76, 0x31,
-	0x2f, 0x67, 0x65, 0x74, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x73, 0x2f, 0x62,
-	0x79, 0x2f, 0x6f, 0x74, 0x68, 0x65, 0x72, 0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x12, 0xb9,
-	0x01, 0x0a, 0x1b, 0x47, 0x65, 0x74, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x42, 0x79,
-	0x41, 0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67, 0x55, 0x73, 0x65, 0x64, 0x46, 0x6f, 0x72, 0x12, 0x33,
+	0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x79,
+	0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x33, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76,
+	0x31, 0x2e, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x27, 0x22, 0x22, 0x2f, 0x76,
+	0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x6f, 0x74, 0x68, 0x65, 0x72, 0x2f, 0x61, 0x70, 0x70,
+	0x3a, 0x01, 0x2a, 0x12, 0x82, 0x01, 0x0a, 0x0e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65,
+	0x61, 0x64, 0x55, 0x73, 0x65, 0x72, 0x12, 0x26, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52,
+	0x65, 0x61, 0x64, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27,
 	0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31,
-	0x2e, 0x47, 0x65, 0x74, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x42, 0x79, 0x41, 0x70,
-	0x70, 0x4c, 0x61, 0x6e, 0x67, 0x55, 0x73, 0x65, 0x64, 0x46, 0x6f, 0x72, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69,
+	0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x61, 0x64, 0x55, 0x73, 0x65, 0x72, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1f, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x19, 0x22,
+	0x14, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x72, 0x65, 0x61, 0x64,
+	0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x7e, 0x0a, 0x0d, 0x43, 0x68, 0x65, 0x63,
+	0x6b, 0x52, 0x65, 0x61, 0x64, 0x55, 0x73, 0x65, 0x72, 0x12, 0x25, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
+	0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x68, 0x65, 0x63,
+	0x6b, 0x52, 0x65, 0x61, 0x64, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x26, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e,
+	0x76, 0x31, 0x2e, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x52, 0x65, 0x61, 0x64, 0x55, 0x73, 0x65, 0x72,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18,
+	0x22, 0x13, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x68, 0x65, 0x63, 0x6b, 0x2f, 0x72, 0x65, 0x61, 0x64,
+	0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x71, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x4d, 0x61, 0x69, 0x6c, 0x12, 0x22, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d,
+	0x61, 0x69, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x23, 0x2e, 0x6e, 0x6f, 0x74,
+	0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x4d, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x1a, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x14, 0x22, 0x0f, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x2f, 0x6d, 0x61, 0x69, 0x6c, 0x3a, 0x01, 0x2a, 0x12, 0xa0, 0x01, 0x0a, 0x15,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x61, 0x69, 0x6c, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68,
+	0x65, 0x72, 0x41, 0x70, 0x70, 0x12, 0x2d, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x61,
+	0x69, 0x6c, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x61, 0x69,
+	0x6c, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x28, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x22, 0x22, 0x1d, 0x2f, 0x76,
+	0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x6d, 0x61, 0x69, 0x6c, 0x2f, 0x66, 0x6f,
+	0x72, 0x2f, 0x6f, 0x74, 0x68, 0x65, 0x72, 0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x12, 0x71,
+	0x0a, 0x0a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x61, 0x69, 0x6c, 0x12, 0x22, 0x2e, 0x6e,
+	0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x23, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e,
+	0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1a, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x14, 0x22, 0x0f, 0x2f,
+	0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x6d, 0x61, 0x69, 0x6c, 0x3a, 0x01,
+	0x2a, 0x12, 0x69, 0x0a, 0x08, 0x47, 0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x20, 0x2e,
+	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e,
+	0x47, 0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x21, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76,
+	0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x18, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x12, 0x22, 0x0d, 0x2f, 0x76, 0x31, 0x2f,
+	0x67, 0x65, 0x74, 0x2f, 0x6d, 0x61, 0x69, 0x6c, 0x73, 0x3a, 0x01, 0x2a, 0x12, 0x7f, 0x0a, 0x0d,
+	0x47, 0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x12, 0x25, 0x2e,
+	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e,
+	0x47, 0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x26, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x42,
+	0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1f, 0x82, 0xd3,
+	0xe4, 0x93, 0x02, 0x19, 0x22, 0x14, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x6d, 0x61,
+	0x69, 0x6c, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x12, 0x94, 0x01,
+	0x0a, 0x12, 0x47, 0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65,
+	0x72, 0x41, 0x70, 0x70, 0x12, 0x2a, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x42,
+	0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x2b, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e,
+	0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x61, 0x69, 0x6c, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68,
+	0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x25, 0x82,
+	0xd3, 0xe4, 0x93, 0x02, 0x1f, 0x22, 0x1a, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x6d,
+	0x61, 0x69, 0x6c, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x6f, 0x74, 0x68, 0x65, 0x72, 0x2f, 0x61, 0x70,
+	0x70, 0x3a, 0x01, 0x2a, 0x12, 0x81, 0x01, 0x0a, 0x0e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54,
+	0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x12, 0x26, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69,
+	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x27, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76,
+	0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18,
+	0x22, 0x13, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x74, 0x65, 0x6d,
+	0x70, 0x6c, 0x61, 0x74, 0x65, 0x3a, 0x01, 0x2a, 0x12, 0xb0, 0x01, 0x0a, 0x19, 0x43, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x46, 0x6f, 0x72, 0x4f, 0x74,
+	0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x12, 0x31, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54,
+	0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41,
+	0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
+	0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x46, 0x6f, 0x72, 0x4f, 0x74, 0x68,
+	0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2c, 0x82,
+	0xd3, 0xe4, 0x93, 0x02, 0x26, 0x22, 0x21, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x2f, 0x66, 0x6f, 0x72, 0x2f, 0x6f,
+	0x74, 0x68, 0x65, 0x72, 0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x12, 0x75, 0x0a, 0x0b, 0x47,
+	0x65, 0x74, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x12, 0x23, 0x2e, 0x6e, 0x6f, 0x74,
+	0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
+	0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x24, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76,
+	0x31, 0x2e, 0x47, 0x65, 0x74, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x15, 0x22, 0x10, 0x2f,
+	0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x3a,
+	0x01, 0x2a, 0x12, 0x81, 0x01, 0x0a, 0x0e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x54, 0x65, 0x6d,
+	0x70, 0x6c, 0x61, 0x74, 0x65, 0x12, 0x26, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x54, 0x65,
+	0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27, 0x2e,
+	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x22, 0x13,
+	0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c,
+	0x61, 0x74, 0x65, 0x3a, 0x01, 0x2a, 0x12, 0x8f, 0x01, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x54, 0x65,
+	0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x12, 0x29, 0x2e, 0x6e,
+	0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47,
+	0x65, 0x74, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69,
+	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x54, 0x65, 0x6d,
+	0x70, 0x6c, 0x61, 0x74, 0x65, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x23, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1d, 0x22, 0x18, 0x2f, 0x76, 0x31,
+	0x2f, 0x67, 0x65, 0x74, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x73, 0x2f, 0x62,
+	0x79, 0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x12, 0xa4, 0x01, 0x0a, 0x16, 0x47, 0x65, 0x74,
+	0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72,
+	0x41, 0x70, 0x70, 0x12, 0x2e, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74,
-	0x65, 0x42, 0x79, 0x41, 0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67, 0x55, 0x73, 0x65, 0x64, 0x46, 0x6f,
-	0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2f, 0x82, 0xd3, 0xe4, 0x93, 0x02,
-	0x29, 0x22, 0x24, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c,
-	0x61, 0x74, 0x65, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x6c, 0x61, 0x6e, 0x67, 0x2f,
-	0x75, 0x73, 0x65, 0x64, 0x66, 0x6f, 0x72, 0x3a, 0x01, 0x2a, 0x42, 0x35, 0x5a, 0x33, 0x67, 0x69,
-	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c,
-	0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f,
-	0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74,
+	0x65, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x29, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x23, 0x22, 0x1e, 0x2f, 0x76,
+	0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x73, 0x2f,
+	0x62, 0x79, 0x2f, 0x6f, 0x74, 0x68, 0x65, 0x72, 0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x12,
+	0xb9, 0x01, 0x0a, 0x1b, 0x47, 0x65, 0x74, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x42,
+	0x79, 0x41, 0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67, 0x55, 0x73, 0x65, 0x64, 0x46, 0x6f, 0x72, 0x12,
+	0x33, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76,
+	0x31, 0x2e, 0x47, 0x65, 0x74, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x42, 0x79, 0x41,
+	0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67, 0x55, 0x73, 0x65, 0x64, 0x46, 0x6f, 0x72, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61,
+	0x74, 0x65, 0x42, 0x79, 0x41, 0x70, 0x70, 0x4c, 0x61, 0x6e, 0x67, 0x55, 0x73, 0x65, 0x64, 0x46,
+	0x6f, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2f, 0x82, 0xd3, 0xe4, 0x93,
+	0x02, 0x29, 0x22, 0x24, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x74, 0x65, 0x6d, 0x70,
+	0x6c, 0x61, 0x74, 0x65, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x6c, 0x61, 0x6e, 0x67,
+	0x2f, 0x75, 0x73, 0x65, 0x64, 0x66, 0x6f, 0x72, 0x3a, 0x01, 0x2a, 0x42, 0x35, 0x5a, 0x33, 0x67,
+	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50,
+	0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f,
+	0x6f, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -3265,61 +3764,69 @@ func file_npool_notification_notification_proto_rawDescGZIP() []byte {
 	return file_npool_notification_notification_proto_rawDescData
 }
 
-var file_npool_notification_notification_proto_msgTypes = make([]protoimpl.MessageInfo, 51)
+var file_npool_notification_notification_proto_msgTypes = make([]protoimpl.MessageInfo, 59)
 var file_npool_notification_notification_proto_goTypes = []interface{}{
-	(*Announcement)(nil),                          // 0: notification.v1.Announcement
-	(*CreateAnnouncementRequest)(nil),             // 1: notification.v1.CreateAnnouncementRequest
-	(*CreateAnnouncementResponse)(nil),            // 2: notification.v1.CreateAnnouncementResponse
-	(*CreateAnnouncementForOtherAppRequest)(nil),  // 3: notification.v1.CreateAnnouncementForOtherAppRequest
-	(*CreateAnnouncementForOtherAppResponse)(nil), // 4: notification.v1.CreateAnnouncementForOtherAppResponse
-	(*UpdateAnnouncementRequest)(nil),             // 5: notification.v1.UpdateAnnouncementRequest
-	(*UpdateAnnouncementResponse)(nil),            // 6: notification.v1.UpdateAnnouncementResponse
-	(*GetAnnouncementsByAppRequest)(nil),          // 7: notification.v1.GetAnnouncementsByAppRequest
-	(*GetAnnouncementsByAppResponse)(nil),         // 8: notification.v1.GetAnnouncementsByAppResponse
-	(*GetAnnouncementsByOtherAppRequest)(nil),     // 9: notification.v1.GetAnnouncementsByOtherAppRequest
-	(*GetAnnouncementsByOtherAppResponse)(nil),    // 10: notification.v1.GetAnnouncementsByOtherAppResponse
-	(*UserNotification)(nil),                      // 11: notification.v1.UserNotification
-	(*CreateNotificationRequest)(nil),             // 12: notification.v1.CreateNotificationRequest
-	(*CreateNotificationResponse)(nil),            // 13: notification.v1.CreateNotificationResponse
-	(*UpdateNotificationRequest)(nil),             // 14: notification.v1.UpdateNotificationRequest
-	(*UpdateNotificationResponse)(nil),            // 15: notification.v1.UpdateNotificationResponse
-	(*GetNotificationsByAppUserRequest)(nil),      // 16: notification.v1.GetNotificationsByAppUserRequest
-	(*GetNotificationsByAppUserResponse)(nil),     // 17: notification.v1.GetNotificationsByAppUserResponse
-	(*ReadUser)(nil),                              // 18: notification.v1.ReadUser
-	(*CreateReadUserRequest)(nil),                 // 19: notification.v1.CreateReadUserRequest
-	(*CreateReadUserResponse)(nil),                // 20: notification.v1.CreateReadUserResponse
-	(*CheckReadUserRequest)(nil),                  // 21: notification.v1.CheckReadUserRequest
-	(*CheckReadUserResponse)(nil),                 // 22: notification.v1.CheckReadUserResponse
-	(*Mail)(nil),                                  // 23: notification.v1.Mail
-	(*CreateMailRequest)(nil),                     // 24: notification.v1.CreateMailRequest
-	(*CreateMailResponse)(nil),                    // 25: notification.v1.CreateMailResponse
-	(*CreateMailForOtherAppRequest)(nil),          // 26: notification.v1.CreateMailForOtherAppRequest
-	(*CreateMailForOtherAppResponse)(nil),         // 27: notification.v1.CreateMailForOtherAppResponse
-	(*UpdateMailRequest)(nil),                     // 28: notification.v1.UpdateMailRequest
-	(*UpdateMailResponse)(nil),                    // 29: notification.v1.UpdateMailResponse
-	(*GetMailsRequest)(nil),                       // 30: notification.v1.GetMailsRequest
-	(*GetMailsResponse)(nil),                      // 31: notification.v1.GetMailsResponse
-	(*GetMailsByAppRequest)(nil),                  // 32: notification.v1.GetMailsByAppRequest
-	(*GetMailsByAppResponse)(nil),                 // 33: notification.v1.GetMailsByAppResponse
-	(*GetMailsByOtherAppRequest)(nil),             // 34: notification.v1.GetMailsByOtherAppRequest
-	(*GetMailsByOtherAppResponse)(nil),            // 35: notification.v1.GetMailsByOtherAppResponse
-	(*Template)(nil),                              // 36: notification.v1.Template
-	(*CreateTemplateRequest)(nil),                 // 37: notification.v1.CreateTemplateRequest
-	(*CreateTemplateResponse)(nil),                // 38: notification.v1.CreateTemplateResponse
-	(*CreateTemplateForOtherAppRequest)(nil),      // 39: notification.v1.CreateTemplateForOtherAppRequest
-	(*CreateTemplateForOtherAppResponse)(nil),     // 40: notification.v1.CreateTemplateForOtherAppResponse
-	(*GetTemplateRequest)(nil),                    // 41: notification.v1.GetTemplateRequest
-	(*GetTemplateResponse)(nil),                   // 42: notification.v1.GetTemplateResponse
-	(*UpdateTemplateRequest)(nil),                 // 43: notification.v1.UpdateTemplateRequest
-	(*UpdateTemplateResponse)(nil),                // 44: notification.v1.UpdateTemplateResponse
-	(*GetTemplateByAppLangUsedForRequest)(nil),    // 45: notification.v1.GetTemplateByAppLangUsedForRequest
-	(*GetTemplateByAppLangUsedForResponse)(nil),   // 46: notification.v1.GetTemplateByAppLangUsedForResponse
-	(*GetTemplatesByAppRequest)(nil),              // 47: notification.v1.GetTemplatesByAppRequest
-	(*GetTemplatesByAppResponse)(nil),             // 48: notification.v1.GetTemplatesByAppResponse
-	(*GetTemplatesByOtherAppRequest)(nil),         // 49: notification.v1.GetTemplatesByOtherAppRequest
-	(*GetTemplatesByOtherAppResponse)(nil),        // 50: notification.v1.GetTemplatesByOtherAppResponse
-	(*emptypb.Empty)(nil),                         // 51: google.protobuf.Empty
-	(*npool.VersionResponse)(nil),                 // 52: npool.v1.VersionResponse
+	(*Announcement)(nil),                              // 0: notification.v1.Announcement
+	(*CreateAnnouncementRequest)(nil),                 // 1: notification.v1.CreateAnnouncementRequest
+	(*CreateAnnouncementResponse)(nil),                // 2: notification.v1.CreateAnnouncementResponse
+	(*CreateAnnouncementForOtherAppRequest)(nil),      // 3: notification.v1.CreateAnnouncementForOtherAppRequest
+	(*CreateAnnouncementForOtherAppResponse)(nil),     // 4: notification.v1.CreateAnnouncementForOtherAppResponse
+	(*UpdateAnnouncementRequest)(nil),                 // 5: notification.v1.UpdateAnnouncementRequest
+	(*UpdateAnnouncementResponse)(nil),                // 6: notification.v1.UpdateAnnouncementResponse
+	(*GetAnnouncementsByAppRequest)(nil),              // 7: notification.v1.GetAnnouncementsByAppRequest
+	(*GetAnnouncementsByAppResponse)(nil),             // 8: notification.v1.GetAnnouncementsByAppResponse
+	(*GetAnnouncementsByOtherAppRequest)(nil),         // 9: notification.v1.GetAnnouncementsByOtherAppRequest
+	(*GetAnnouncementsByOtherAppResponse)(nil),        // 10: notification.v1.GetAnnouncementsByOtherAppResponse
+	(*UserNotification)(nil),                          // 11: notification.v1.UserNotification
+	(*CreateNotificationRequest)(nil),                 // 12: notification.v1.CreateNotificationRequest
+	(*CreateNotificationResponse)(nil),                // 13: notification.v1.CreateNotificationResponse
+	(*CreateNotificationForAppOtherUserRequest)(nil),  // 14: notification.v1.CreateNotificationForAppOtherUserRequest
+	(*CreateNotificationForAppOtherUserResponse)(nil), // 15: notification.v1.CreateNotificationForAppOtherUserResponse
+	(*CreateNotificationForOtherAppUserRequest)(nil),  // 16: notification.v1.CreateNotificationForOtherAppUserRequest
+	(*CreateNotificationForOtherAppUserResponse)(nil), // 17: notification.v1.CreateNotificationForOtherAppUserResponse
+	(*UpdateNotificationRequest)(nil),                 // 18: notification.v1.UpdateNotificationRequest
+	(*UpdateNotificationResponse)(nil),                // 19: notification.v1.UpdateNotificationResponse
+	(*GetNotificationsByAppUserRequest)(nil),          // 20: notification.v1.GetNotificationsByAppUserRequest
+	(*GetNotificationsByAppUserResponse)(nil),         // 21: notification.v1.GetNotificationsByAppUserResponse
+	(*GetNotificationsByAppRequest)(nil),              // 22: notification.v1.GetNotificationsByAppRequest
+	(*GetNotificationsByAppResponse)(nil),             // 23: notification.v1.GetNotificationsByAppResponse
+	(*GetNotificationsByOtherAppRequest)(nil),         // 24: notification.v1.GetNotificationsByOtherAppRequest
+	(*GetNotificationsByOtherAppResponse)(nil),        // 25: notification.v1.GetNotificationsByOtherAppResponse
+	(*ReadUser)(nil),                                  // 26: notification.v1.ReadUser
+	(*CreateReadUserRequest)(nil),                     // 27: notification.v1.CreateReadUserRequest
+	(*CreateReadUserResponse)(nil),                    // 28: notification.v1.CreateReadUserResponse
+	(*CheckReadUserRequest)(nil),                      // 29: notification.v1.CheckReadUserRequest
+	(*CheckReadUserResponse)(nil),                     // 30: notification.v1.CheckReadUserResponse
+	(*Mail)(nil),                                      // 31: notification.v1.Mail
+	(*CreateMailRequest)(nil),                         // 32: notification.v1.CreateMailRequest
+	(*CreateMailResponse)(nil),                        // 33: notification.v1.CreateMailResponse
+	(*CreateMailForOtherAppRequest)(nil),              // 34: notification.v1.CreateMailForOtherAppRequest
+	(*CreateMailForOtherAppResponse)(nil),             // 35: notification.v1.CreateMailForOtherAppResponse
+	(*UpdateMailRequest)(nil),                         // 36: notification.v1.UpdateMailRequest
+	(*UpdateMailResponse)(nil),                        // 37: notification.v1.UpdateMailResponse
+	(*GetMailsRequest)(nil),                           // 38: notification.v1.GetMailsRequest
+	(*GetMailsResponse)(nil),                          // 39: notification.v1.GetMailsResponse
+	(*GetMailsByAppRequest)(nil),                      // 40: notification.v1.GetMailsByAppRequest
+	(*GetMailsByAppResponse)(nil),                     // 41: notification.v1.GetMailsByAppResponse
+	(*GetMailsByOtherAppRequest)(nil),                 // 42: notification.v1.GetMailsByOtherAppRequest
+	(*GetMailsByOtherAppResponse)(nil),                // 43: notification.v1.GetMailsByOtherAppResponse
+	(*Template)(nil),                                  // 44: notification.v1.Template
+	(*CreateTemplateRequest)(nil),                     // 45: notification.v1.CreateTemplateRequest
+	(*CreateTemplateResponse)(nil),                    // 46: notification.v1.CreateTemplateResponse
+	(*CreateTemplateForOtherAppRequest)(nil),          // 47: notification.v1.CreateTemplateForOtherAppRequest
+	(*CreateTemplateForOtherAppResponse)(nil),         // 48: notification.v1.CreateTemplateForOtherAppResponse
+	(*GetTemplateRequest)(nil),                        // 49: notification.v1.GetTemplateRequest
+	(*GetTemplateResponse)(nil),                       // 50: notification.v1.GetTemplateResponse
+	(*UpdateTemplateRequest)(nil),                     // 51: notification.v1.UpdateTemplateRequest
+	(*UpdateTemplateResponse)(nil),                    // 52: notification.v1.UpdateTemplateResponse
+	(*GetTemplateByAppLangUsedForRequest)(nil),        // 53: notification.v1.GetTemplateByAppLangUsedForRequest
+	(*GetTemplateByAppLangUsedForResponse)(nil),       // 54: notification.v1.GetTemplateByAppLangUsedForResponse
+	(*GetTemplatesByAppRequest)(nil),                  // 55: notification.v1.GetTemplatesByAppRequest
+	(*GetTemplatesByAppResponse)(nil),                 // 56: notification.v1.GetTemplatesByAppResponse
+	(*GetTemplatesByOtherAppRequest)(nil),             // 57: notification.v1.GetTemplatesByOtherAppRequest
+	(*GetTemplatesByOtherAppResponse)(nil),            // 58: notification.v1.GetTemplatesByOtherAppResponse
+	(*emptypb.Empty)(nil),                             // 59: google.protobuf.Empty
+	(*npool.VersionResponse)(nil),                     // 60: npool.v1.VersionResponse
 }
 var file_npool_notification_notification_proto_depIdxs = []int32{
 	0,  // 0: notification.v1.CreateAnnouncementRequest.Info:type_name -> notification.v1.Announcement
@@ -3332,85 +3839,99 @@ var file_npool_notification_notification_proto_depIdxs = []int32{
 	0,  // 7: notification.v1.GetAnnouncementsByOtherAppResponse.Infos:type_name -> notification.v1.Announcement
 	11, // 8: notification.v1.CreateNotificationRequest.Info:type_name -> notification.v1.UserNotification
 	11, // 9: notification.v1.CreateNotificationResponse.Info:type_name -> notification.v1.UserNotification
-	11, // 10: notification.v1.UpdateNotificationRequest.Info:type_name -> notification.v1.UserNotification
-	11, // 11: notification.v1.UpdateNotificationResponse.Info:type_name -> notification.v1.UserNotification
-	11, // 12: notification.v1.GetNotificationsByAppUserResponse.Infos:type_name -> notification.v1.UserNotification
-	18, // 13: notification.v1.CreateReadUserRequest.Info:type_name -> notification.v1.ReadUser
-	18, // 14: notification.v1.CreateReadUserResponse.Info:type_name -> notification.v1.ReadUser
-	18, // 15: notification.v1.CheckReadUserRequest.Info:type_name -> notification.v1.ReadUser
-	18, // 16: notification.v1.CheckReadUserResponse.Info:type_name -> notification.v1.ReadUser
-	23, // 17: notification.v1.CreateMailRequest.Info:type_name -> notification.v1.Mail
-	23, // 18: notification.v1.CreateMailResponse.Info:type_name -> notification.v1.Mail
-	23, // 19: notification.v1.CreateMailForOtherAppRequest.Info:type_name -> notification.v1.Mail
-	23, // 20: notification.v1.CreateMailForOtherAppResponse.Info:type_name -> notification.v1.Mail
-	23, // 21: notification.v1.UpdateMailRequest.Info:type_name -> notification.v1.Mail
-	23, // 22: notification.v1.UpdateMailResponse.Info:type_name -> notification.v1.Mail
-	23, // 23: notification.v1.GetMailsResponse.Infos:type_name -> notification.v1.Mail
-	23, // 24: notification.v1.GetMailsByAppResponse.Infos:type_name -> notification.v1.Mail
-	23, // 25: notification.v1.GetMailsByOtherAppResponse.Infos:type_name -> notification.v1.Mail
-	36, // 26: notification.v1.CreateTemplateRequest.Info:type_name -> notification.v1.Template
-	36, // 27: notification.v1.CreateTemplateResponse.Info:type_name -> notification.v1.Template
-	36, // 28: notification.v1.CreateTemplateForOtherAppRequest.Info:type_name -> notification.v1.Template
-	36, // 29: notification.v1.CreateTemplateForOtherAppResponse.Info:type_name -> notification.v1.Template
-	36, // 30: notification.v1.GetTemplateResponse.Info:type_name -> notification.v1.Template
-	36, // 31: notification.v1.UpdateTemplateRequest.Info:type_name -> notification.v1.Template
-	36, // 32: notification.v1.UpdateTemplateResponse.Info:type_name -> notification.v1.Template
-	36, // 33: notification.v1.GetTemplateByAppLangUsedForResponse.Info:type_name -> notification.v1.Template
-	36, // 34: notification.v1.GetTemplatesByAppResponse.Infos:type_name -> notification.v1.Template
-	36, // 35: notification.v1.GetTemplatesByOtherAppResponse.Infos:type_name -> notification.v1.Template
-	51, // 36: notification.v1.Notification.Version:input_type -> google.protobuf.Empty
-	1,  // 37: notification.v1.Notification.CreateAnnouncement:input_type -> notification.v1.CreateAnnouncementRequest
-	3,  // 38: notification.v1.Notification.CreateAnnouncementForOtherApp:input_type -> notification.v1.CreateAnnouncementForOtherAppRequest
-	5,  // 39: notification.v1.Notification.UpdateAnnouncement:input_type -> notification.v1.UpdateAnnouncementRequest
-	7,  // 40: notification.v1.Notification.GetAnnouncementsByApp:input_type -> notification.v1.GetAnnouncementsByAppRequest
-	9,  // 41: notification.v1.Notification.GetAnnouncementsByOtherApp:input_type -> notification.v1.GetAnnouncementsByOtherAppRequest
-	12, // 42: notification.v1.Notification.CreateNotification:input_type -> notification.v1.CreateNotificationRequest
-	14, // 43: notification.v1.Notification.UpdateNotification:input_type -> notification.v1.UpdateNotificationRequest
-	16, // 44: notification.v1.Notification.GetNotificationsByAppUser:input_type -> notification.v1.GetNotificationsByAppUserRequest
-	19, // 45: notification.v1.Notification.CreateReadUser:input_type -> notification.v1.CreateReadUserRequest
-	21, // 46: notification.v1.Notification.CheckReadUser:input_type -> notification.v1.CheckReadUserRequest
-	24, // 47: notification.v1.Notification.CreateMail:input_type -> notification.v1.CreateMailRequest
-	26, // 48: notification.v1.Notification.CreateMailForOtherApp:input_type -> notification.v1.CreateMailForOtherAppRequest
-	28, // 49: notification.v1.Notification.UpdateMail:input_type -> notification.v1.UpdateMailRequest
-	30, // 50: notification.v1.Notification.GetMails:input_type -> notification.v1.GetMailsRequest
-	32, // 51: notification.v1.Notification.GetMailsByApp:input_type -> notification.v1.GetMailsByAppRequest
-	34, // 52: notification.v1.Notification.GetMailsByOtherApp:input_type -> notification.v1.GetMailsByOtherAppRequest
-	37, // 53: notification.v1.Notification.CreateTemplate:input_type -> notification.v1.CreateTemplateRequest
-	39, // 54: notification.v1.Notification.CreateTemplateForOtherApp:input_type -> notification.v1.CreateTemplateForOtherAppRequest
-	41, // 55: notification.v1.Notification.GetTemplate:input_type -> notification.v1.GetTemplateRequest
-	43, // 56: notification.v1.Notification.UpdateTemplate:input_type -> notification.v1.UpdateTemplateRequest
-	47, // 57: notification.v1.Notification.GetTemplatesByApp:input_type -> notification.v1.GetTemplatesByAppRequest
-	49, // 58: notification.v1.Notification.GetTemplatesByOtherApp:input_type -> notification.v1.GetTemplatesByOtherAppRequest
-	45, // 59: notification.v1.Notification.GetTemplateByAppLangUsedFor:input_type -> notification.v1.GetTemplateByAppLangUsedForRequest
-	52, // 60: notification.v1.Notification.Version:output_type -> npool.v1.VersionResponse
-	2,  // 61: notification.v1.Notification.CreateAnnouncement:output_type -> notification.v1.CreateAnnouncementResponse
-	4,  // 62: notification.v1.Notification.CreateAnnouncementForOtherApp:output_type -> notification.v1.CreateAnnouncementForOtherAppResponse
-	6,  // 63: notification.v1.Notification.UpdateAnnouncement:output_type -> notification.v1.UpdateAnnouncementResponse
-	8,  // 64: notification.v1.Notification.GetAnnouncementsByApp:output_type -> notification.v1.GetAnnouncementsByAppResponse
-	10, // 65: notification.v1.Notification.GetAnnouncementsByOtherApp:output_type -> notification.v1.GetAnnouncementsByOtherAppResponse
-	13, // 66: notification.v1.Notification.CreateNotification:output_type -> notification.v1.CreateNotificationResponse
-	15, // 67: notification.v1.Notification.UpdateNotification:output_type -> notification.v1.UpdateNotificationResponse
-	17, // 68: notification.v1.Notification.GetNotificationsByAppUser:output_type -> notification.v1.GetNotificationsByAppUserResponse
-	20, // 69: notification.v1.Notification.CreateReadUser:output_type -> notification.v1.CreateReadUserResponse
-	22, // 70: notification.v1.Notification.CheckReadUser:output_type -> notification.v1.CheckReadUserResponse
-	25, // 71: notification.v1.Notification.CreateMail:output_type -> notification.v1.CreateMailResponse
-	27, // 72: notification.v1.Notification.CreateMailForOtherApp:output_type -> notification.v1.CreateMailForOtherAppResponse
-	29, // 73: notification.v1.Notification.UpdateMail:output_type -> notification.v1.UpdateMailResponse
-	31, // 74: notification.v1.Notification.GetMails:output_type -> notification.v1.GetMailsResponse
-	33, // 75: notification.v1.Notification.GetMailsByApp:output_type -> notification.v1.GetMailsByAppResponse
-	35, // 76: notification.v1.Notification.GetMailsByOtherApp:output_type -> notification.v1.GetMailsByOtherAppResponse
-	38, // 77: notification.v1.Notification.CreateTemplate:output_type -> notification.v1.CreateTemplateResponse
-	40, // 78: notification.v1.Notification.CreateTemplateForOtherApp:output_type -> notification.v1.CreateTemplateForOtherAppResponse
-	42, // 79: notification.v1.Notification.GetTemplate:output_type -> notification.v1.GetTemplateResponse
-	44, // 80: notification.v1.Notification.UpdateTemplate:output_type -> notification.v1.UpdateTemplateResponse
-	48, // 81: notification.v1.Notification.GetTemplatesByApp:output_type -> notification.v1.GetTemplatesByAppResponse
-	50, // 82: notification.v1.Notification.GetTemplatesByOtherApp:output_type -> notification.v1.GetTemplatesByOtherAppResponse
-	46, // 83: notification.v1.Notification.GetTemplateByAppLangUsedFor:output_type -> notification.v1.GetTemplateByAppLangUsedForResponse
-	60, // [60:84] is the sub-list for method output_type
-	36, // [36:60] is the sub-list for method input_type
-	36, // [36:36] is the sub-list for extension type_name
-	36, // [36:36] is the sub-list for extension extendee
-	0,  // [0:36] is the sub-list for field type_name
+	11, // 10: notification.v1.CreateNotificationForAppOtherUserRequest.Info:type_name -> notification.v1.UserNotification
+	11, // 11: notification.v1.CreateNotificationForAppOtherUserResponse.Info:type_name -> notification.v1.UserNotification
+	11, // 12: notification.v1.CreateNotificationForOtherAppUserRequest.Info:type_name -> notification.v1.UserNotification
+	11, // 13: notification.v1.CreateNotificationForOtherAppUserResponse.Info:type_name -> notification.v1.UserNotification
+	11, // 14: notification.v1.UpdateNotificationRequest.Info:type_name -> notification.v1.UserNotification
+	11, // 15: notification.v1.UpdateNotificationResponse.Info:type_name -> notification.v1.UserNotification
+	11, // 16: notification.v1.GetNotificationsByAppUserResponse.Infos:type_name -> notification.v1.UserNotification
+	11, // 17: notification.v1.GetNotificationsByAppResponse.Infos:type_name -> notification.v1.UserNotification
+	11, // 18: notification.v1.GetNotificationsByOtherAppResponse.Infos:type_name -> notification.v1.UserNotification
+	26, // 19: notification.v1.CreateReadUserRequest.Info:type_name -> notification.v1.ReadUser
+	26, // 20: notification.v1.CreateReadUserResponse.Info:type_name -> notification.v1.ReadUser
+	26, // 21: notification.v1.CheckReadUserRequest.Info:type_name -> notification.v1.ReadUser
+	26, // 22: notification.v1.CheckReadUserResponse.Info:type_name -> notification.v1.ReadUser
+	31, // 23: notification.v1.CreateMailRequest.Info:type_name -> notification.v1.Mail
+	31, // 24: notification.v1.CreateMailResponse.Info:type_name -> notification.v1.Mail
+	31, // 25: notification.v1.CreateMailForOtherAppRequest.Info:type_name -> notification.v1.Mail
+	31, // 26: notification.v1.CreateMailForOtherAppResponse.Info:type_name -> notification.v1.Mail
+	31, // 27: notification.v1.UpdateMailRequest.Info:type_name -> notification.v1.Mail
+	31, // 28: notification.v1.UpdateMailResponse.Info:type_name -> notification.v1.Mail
+	31, // 29: notification.v1.GetMailsResponse.Infos:type_name -> notification.v1.Mail
+	31, // 30: notification.v1.GetMailsByAppResponse.Infos:type_name -> notification.v1.Mail
+	31, // 31: notification.v1.GetMailsByOtherAppResponse.Infos:type_name -> notification.v1.Mail
+	44, // 32: notification.v1.CreateTemplateRequest.Info:type_name -> notification.v1.Template
+	44, // 33: notification.v1.CreateTemplateResponse.Info:type_name -> notification.v1.Template
+	44, // 34: notification.v1.CreateTemplateForOtherAppRequest.Info:type_name -> notification.v1.Template
+	44, // 35: notification.v1.CreateTemplateForOtherAppResponse.Info:type_name -> notification.v1.Template
+	44, // 36: notification.v1.GetTemplateResponse.Info:type_name -> notification.v1.Template
+	44, // 37: notification.v1.UpdateTemplateRequest.Info:type_name -> notification.v1.Template
+	44, // 38: notification.v1.UpdateTemplateResponse.Info:type_name -> notification.v1.Template
+	44, // 39: notification.v1.GetTemplateByAppLangUsedForResponse.Info:type_name -> notification.v1.Template
+	44, // 40: notification.v1.GetTemplatesByAppResponse.Infos:type_name -> notification.v1.Template
+	44, // 41: notification.v1.GetTemplatesByOtherAppResponse.Infos:type_name -> notification.v1.Template
+	59, // 42: notification.v1.Notification.Version:input_type -> google.protobuf.Empty
+	1,  // 43: notification.v1.Notification.CreateAnnouncement:input_type -> notification.v1.CreateAnnouncementRequest
+	3,  // 44: notification.v1.Notification.CreateAnnouncementForOtherApp:input_type -> notification.v1.CreateAnnouncementForOtherAppRequest
+	5,  // 45: notification.v1.Notification.UpdateAnnouncement:input_type -> notification.v1.UpdateAnnouncementRequest
+	7,  // 46: notification.v1.Notification.GetAnnouncementsByApp:input_type -> notification.v1.GetAnnouncementsByAppRequest
+	9,  // 47: notification.v1.Notification.GetAnnouncementsByOtherApp:input_type -> notification.v1.GetAnnouncementsByOtherAppRequest
+	12, // 48: notification.v1.Notification.CreateNotification:input_type -> notification.v1.CreateNotificationRequest
+	14, // 49: notification.v1.Notification.CreateNotificationForAppOtherUser:input_type -> notification.v1.CreateNotificationForAppOtherUserRequest
+	16, // 50: notification.v1.Notification.CreateNotificationForOtherAppUser:input_type -> notification.v1.CreateNotificationForOtherAppUserRequest
+	18, // 51: notification.v1.Notification.UpdateNotification:input_type -> notification.v1.UpdateNotificationRequest
+	20, // 52: notification.v1.Notification.GetNotificationsByAppUser:input_type -> notification.v1.GetNotificationsByAppUserRequest
+	22, // 53: notification.v1.Notification.GetNotificationsByApp:input_type -> notification.v1.GetNotificationsByAppRequest
+	24, // 54: notification.v1.Notification.GetNotificationsByOtherApp:input_type -> notification.v1.GetNotificationsByOtherAppRequest
+	27, // 55: notification.v1.Notification.CreateReadUser:input_type -> notification.v1.CreateReadUserRequest
+	29, // 56: notification.v1.Notification.CheckReadUser:input_type -> notification.v1.CheckReadUserRequest
+	32, // 57: notification.v1.Notification.CreateMail:input_type -> notification.v1.CreateMailRequest
+	34, // 58: notification.v1.Notification.CreateMailForOtherApp:input_type -> notification.v1.CreateMailForOtherAppRequest
+	36, // 59: notification.v1.Notification.UpdateMail:input_type -> notification.v1.UpdateMailRequest
+	38, // 60: notification.v1.Notification.GetMails:input_type -> notification.v1.GetMailsRequest
+	40, // 61: notification.v1.Notification.GetMailsByApp:input_type -> notification.v1.GetMailsByAppRequest
+	42, // 62: notification.v1.Notification.GetMailsByOtherApp:input_type -> notification.v1.GetMailsByOtherAppRequest
+	45, // 63: notification.v1.Notification.CreateTemplate:input_type -> notification.v1.CreateTemplateRequest
+	47, // 64: notification.v1.Notification.CreateTemplateForOtherApp:input_type -> notification.v1.CreateTemplateForOtherAppRequest
+	49, // 65: notification.v1.Notification.GetTemplate:input_type -> notification.v1.GetTemplateRequest
+	51, // 66: notification.v1.Notification.UpdateTemplate:input_type -> notification.v1.UpdateTemplateRequest
+	55, // 67: notification.v1.Notification.GetTemplatesByApp:input_type -> notification.v1.GetTemplatesByAppRequest
+	57, // 68: notification.v1.Notification.GetTemplatesByOtherApp:input_type -> notification.v1.GetTemplatesByOtherAppRequest
+	53, // 69: notification.v1.Notification.GetTemplateByAppLangUsedFor:input_type -> notification.v1.GetTemplateByAppLangUsedForRequest
+	60, // 70: notification.v1.Notification.Version:output_type -> npool.v1.VersionResponse
+	2,  // 71: notification.v1.Notification.CreateAnnouncement:output_type -> notification.v1.CreateAnnouncementResponse
+	4,  // 72: notification.v1.Notification.CreateAnnouncementForOtherApp:output_type -> notification.v1.CreateAnnouncementForOtherAppResponse
+	6,  // 73: notification.v1.Notification.UpdateAnnouncement:output_type -> notification.v1.UpdateAnnouncementResponse
+	8,  // 74: notification.v1.Notification.GetAnnouncementsByApp:output_type -> notification.v1.GetAnnouncementsByAppResponse
+	10, // 75: notification.v1.Notification.GetAnnouncementsByOtherApp:output_type -> notification.v1.GetAnnouncementsByOtherAppResponse
+	13, // 76: notification.v1.Notification.CreateNotification:output_type -> notification.v1.CreateNotificationResponse
+	15, // 77: notification.v1.Notification.CreateNotificationForAppOtherUser:output_type -> notification.v1.CreateNotificationForAppOtherUserResponse
+	17, // 78: notification.v1.Notification.CreateNotificationForOtherAppUser:output_type -> notification.v1.CreateNotificationForOtherAppUserResponse
+	19, // 79: notification.v1.Notification.UpdateNotification:output_type -> notification.v1.UpdateNotificationResponse
+	21, // 80: notification.v1.Notification.GetNotificationsByAppUser:output_type -> notification.v1.GetNotificationsByAppUserResponse
+	23, // 81: notification.v1.Notification.GetNotificationsByApp:output_type -> notification.v1.GetNotificationsByAppResponse
+	25, // 82: notification.v1.Notification.GetNotificationsByOtherApp:output_type -> notification.v1.GetNotificationsByOtherAppResponse
+	28, // 83: notification.v1.Notification.CreateReadUser:output_type -> notification.v1.CreateReadUserResponse
+	30, // 84: notification.v1.Notification.CheckReadUser:output_type -> notification.v1.CheckReadUserResponse
+	33, // 85: notification.v1.Notification.CreateMail:output_type -> notification.v1.CreateMailResponse
+	35, // 86: notification.v1.Notification.CreateMailForOtherApp:output_type -> notification.v1.CreateMailForOtherAppResponse
+	37, // 87: notification.v1.Notification.UpdateMail:output_type -> notification.v1.UpdateMailResponse
+	39, // 88: notification.v1.Notification.GetMails:output_type -> notification.v1.GetMailsResponse
+	41, // 89: notification.v1.Notification.GetMailsByApp:output_type -> notification.v1.GetMailsByAppResponse
+	43, // 90: notification.v1.Notification.GetMailsByOtherApp:output_type -> notification.v1.GetMailsByOtherAppResponse
+	46, // 91: notification.v1.Notification.CreateTemplate:output_type -> notification.v1.CreateTemplateResponse
+	48, // 92: notification.v1.Notification.CreateTemplateForOtherApp:output_type -> notification.v1.CreateTemplateForOtherAppResponse
+	50, // 93: notification.v1.Notification.GetTemplate:output_type -> notification.v1.GetTemplateResponse
+	52, // 94: notification.v1.Notification.UpdateTemplate:output_type -> notification.v1.UpdateTemplateResponse
+	56, // 95: notification.v1.Notification.GetTemplatesByApp:output_type -> notification.v1.GetTemplatesByAppResponse
+	58, // 96: notification.v1.Notification.GetTemplatesByOtherApp:output_type -> notification.v1.GetTemplatesByOtherAppResponse
+	54, // 97: notification.v1.Notification.GetTemplateByAppLangUsedFor:output_type -> notification.v1.GetTemplateByAppLangUsedForResponse
+	70, // [70:98] is the sub-list for method output_type
+	42, // [42:70] is the sub-list for method input_type
+	42, // [42:42] is the sub-list for extension type_name
+	42, // [42:42] is the sub-list for extension extendee
+	0,  // [0:42] is the sub-list for field type_name
 }
 
 func init() { file_npool_notification_notification_proto_init() }
@@ -3588,7 +4109,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateNotificationRequest); i {
+			switch v := v.(*CreateNotificationForAppOtherUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3600,7 +4121,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateNotificationResponse); i {
+			switch v := v.(*CreateNotificationForAppOtherUserResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3612,7 +4133,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetNotificationsByAppUserRequest); i {
+			switch v := v.(*CreateNotificationForOtherAppUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3624,7 +4145,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetNotificationsByAppUserResponse); i {
+			switch v := v.(*CreateNotificationForOtherAppUserResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3636,7 +4157,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReadUser); i {
+			switch v := v.(*UpdateNotificationRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3648,7 +4169,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateReadUserRequest); i {
+			switch v := v.(*UpdateNotificationResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3660,7 +4181,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateReadUserResponse); i {
+			switch v := v.(*GetNotificationsByAppUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3672,7 +4193,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CheckReadUserRequest); i {
+			switch v := v.(*GetNotificationsByAppUserResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3684,7 +4205,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CheckReadUserResponse); i {
+			switch v := v.(*GetNotificationsByAppRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3696,7 +4217,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Mail); i {
+			switch v := v.(*GetNotificationsByAppResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3708,7 +4229,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateMailRequest); i {
+			switch v := v.(*GetNotificationsByOtherAppRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3720,7 +4241,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateMailResponse); i {
+			switch v := v.(*GetNotificationsByOtherAppResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3732,7 +4253,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateMailForOtherAppRequest); i {
+			switch v := v.(*ReadUser); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3744,7 +4265,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateMailForOtherAppResponse); i {
+			switch v := v.(*CreateReadUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3756,7 +4277,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateMailRequest); i {
+			switch v := v.(*CreateReadUserResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3768,7 +4289,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateMailResponse); i {
+			switch v := v.(*CheckReadUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3780,7 +4301,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetMailsRequest); i {
+			switch v := v.(*CheckReadUserResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3792,7 +4313,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetMailsResponse); i {
+			switch v := v.(*Mail); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3804,7 +4325,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetMailsByAppRequest); i {
+			switch v := v.(*CreateMailRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3816,7 +4337,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetMailsByAppResponse); i {
+			switch v := v.(*CreateMailResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3828,7 +4349,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetMailsByOtherAppRequest); i {
+			switch v := v.(*CreateMailForOtherAppRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3840,7 +4361,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetMailsByOtherAppResponse); i {
+			switch v := v.(*CreateMailForOtherAppResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3852,7 +4373,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Template); i {
+			switch v := v.(*UpdateMailRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3864,7 +4385,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateTemplateRequest); i {
+			switch v := v.(*UpdateMailResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3876,7 +4397,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateTemplateResponse); i {
+			switch v := v.(*GetMailsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3888,7 +4409,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateTemplateForOtherAppRequest); i {
+			switch v := v.(*GetMailsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3900,7 +4421,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateTemplateForOtherAppResponse); i {
+			switch v := v.(*GetMailsByAppRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3912,7 +4433,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetTemplateRequest); i {
+			switch v := v.(*GetMailsByAppResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3924,7 +4445,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetTemplateResponse); i {
+			switch v := v.(*GetMailsByOtherAppRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3936,7 +4457,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateTemplateRequest); i {
+			switch v := v.(*GetMailsByOtherAppResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3948,7 +4469,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateTemplateResponse); i {
+			switch v := v.(*Template); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3960,7 +4481,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetTemplateByAppLangUsedForRequest); i {
+			switch v := v.(*CreateTemplateRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3972,7 +4493,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetTemplateByAppLangUsedForResponse); i {
+			switch v := v.(*CreateTemplateResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3984,7 +4505,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetTemplatesByAppRequest); i {
+			switch v := v.(*CreateTemplateForOtherAppRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3996,7 +4517,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetTemplatesByAppResponse); i {
+			switch v := v.(*CreateTemplateForOtherAppResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -4008,7 +4529,7 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetTemplatesByOtherAppRequest); i {
+			switch v := v.(*GetTemplateRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -4020,6 +4541,102 @@ func file_npool_notification_notification_proto_init() {
 			}
 		}
 		file_npool_notification_notification_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetTemplateResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_notification_notification_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateTemplateRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_notification_notification_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateTemplateResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_notification_notification_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetTemplateByAppLangUsedForRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_notification_notification_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetTemplateByAppLangUsedForResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_notification_notification_proto_msgTypes[55].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetTemplatesByAppRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_notification_notification_proto_msgTypes[56].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetTemplatesByAppResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_notification_notification_proto_msgTypes[57].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetTemplatesByOtherAppRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_notification_notification_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTemplatesByOtherAppResponse); i {
 			case 0:
 				return &v.state
@@ -4038,7 +4655,7 @@ func file_npool_notification_notification_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_notification_notification_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   51,
+			NumMessages:   59,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

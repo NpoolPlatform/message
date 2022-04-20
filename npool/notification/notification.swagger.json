@@ -203,6 +203,70 @@
         ]
       }
     },
+    "/v1/create/notification/for/app/other/user": {
+      "post": {
+        "operationId": "Notification_CreateNotificationForAppOtherUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateNotificationForAppOtherUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateNotificationForAppOtherUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Notification"
+        ]
+      }
+    },
+    "/v1/create/notification/for/other/app/user": {
+      "post": {
+        "operationId": "Notification_CreateNotificationForOtherAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateNotificationForOtherAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateNotificationForOtherAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Notification"
+        ]
+      }
+    },
     "/v1/create/read/user": {
       "post": {
         "operationId": "Notification_CreateReadUser",
@@ -459,6 +523,38 @@
         ]
       }
     },
+    "/v1/get/notifications/by/app": {
+      "post": {
+        "operationId": "Notification_GetNotificationsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetNotificationsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetNotificationsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Notification"
+        ]
+      }
+    },
     "/v1/get/notifications/by/app/user": {
       "post": {
         "operationId": "Notification_GetNotificationsByAppUser",
@@ -483,6 +579,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetNotificationsByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Notification"
+        ]
+      }
+    },
+    "/v1/get/notifications/by/other/app": {
+      "post": {
+        "operationId": "Notification_GetNotificationsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetNotificationsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetNotificationsByOtherAppRequest"
             }
           }
         ],
@@ -922,6 +1050,47 @@
         }
       }
     },
+    "v1CreateNotificationForAppOtherUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1UserNotification"
+        }
+      }
+    },
+    "v1CreateNotificationForAppOtherUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserNotification"
+        }
+      }
+    },
+    "v1CreateNotificationForOtherAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1UserNotification"
+        }
+      }
+    },
+    "v1CreateNotificationForOtherAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserNotification"
+        }
+      }
+    },
     "v1CreateNotificationRequest": {
       "type": "object",
       "properties": {
@@ -1099,6 +1268,25 @@
         }
       }
     },
+    "v1GetNotificationsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetNotificationsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserNotification"
+          }
+        }
+      }
+    },
     "v1GetNotificationsByAppUserRequest": {
       "type": "object",
       "properties": {
@@ -1111,6 +1299,25 @@
       }
     },
     "v1GetNotificationsByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserNotification"
+          }
+        }
+      }
+    },
+    "v1GetNotificationsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetNotificationsByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {

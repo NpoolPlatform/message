@@ -79,6 +79,25 @@ export type CreateNotificationResponse = {
   info?: UserNotification
 }
 
+export type CreateNotificationForAppOtherUserRequest = {
+  targetUserID?: string
+  info?: UserNotification
+}
+
+export type CreateNotificationForAppOtherUserResponse = {
+  info?: UserNotification
+}
+
+export type CreateNotificationForOtherAppUserRequest = {
+  targetAppID?: string
+  targetUserID?: string
+  info?: UserNotification
+}
+
+export type CreateNotificationForOtherAppUserResponse = {
+  info?: UserNotification
+}
+
 export type UpdateNotificationRequest = {
   info?: UserNotification
 }
@@ -93,6 +112,22 @@ export type GetNotificationsByAppUserRequest = {
 }
 
 export type GetNotificationsByAppUserResponse = {
+  infos?: UserNotification[]
+}
+
+export type GetNotificationsByAppRequest = {
+  appID?: string
+}
+
+export type GetNotificationsByAppResponse = {
+  infos?: UserNotification[]
+}
+
+export type GetNotificationsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetNotificationsByOtherAppResponse = {
   infos?: UserNotification[]
 }
 
@@ -272,11 +307,23 @@ export class Notification {
   static CreateNotification(req: CreateNotificationRequest, initReq?: fm.InitReq): Promise<CreateNotificationResponse> {
     return fm.fetchReq<CreateNotificationRequest, CreateNotificationResponse>(`/v1/create/notification`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateNotificationForAppOtherUser(req: CreateNotificationForAppOtherUserRequest, initReq?: fm.InitReq): Promise<CreateNotificationForAppOtherUserResponse> {
+    return fm.fetchReq<CreateNotificationForAppOtherUserRequest, CreateNotificationForAppOtherUserResponse>(`/v1/create/notification/for/app/other/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateNotificationForOtherAppUser(req: CreateNotificationForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateNotificationForOtherAppUserResponse> {
+    return fm.fetchReq<CreateNotificationForOtherAppUserRequest, CreateNotificationForOtherAppUserResponse>(`/v1/create/notification/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static UpdateNotification(req: UpdateNotificationRequest, initReq?: fm.InitReq): Promise<UpdateNotificationResponse> {
     return fm.fetchReq<UpdateNotificationRequest, UpdateNotificationResponse>(`/v1/update/notification`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetNotificationsByAppUser(req: GetNotificationsByAppUserRequest, initReq?: fm.InitReq): Promise<GetNotificationsByAppUserResponse> {
     return fm.fetchReq<GetNotificationsByAppUserRequest, GetNotificationsByAppUserResponse>(`/v1/get/notifications/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetNotificationsByApp(req: GetNotificationsByAppRequest, initReq?: fm.InitReq): Promise<GetNotificationsByAppResponse> {
+    return fm.fetchReq<GetNotificationsByAppRequest, GetNotificationsByAppResponse>(`/v1/get/notifications/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetNotificationsByOtherApp(req: GetNotificationsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetNotificationsByOtherAppResponse> {
+    return fm.fetchReq<GetNotificationsByOtherAppRequest, GetNotificationsByOtherAppResponse>(`/v1/get/notifications/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateReadUser(req: CreateReadUserRequest, initReq?: fm.InitReq): Promise<CreateReadUserResponse> {
     return fm.fetchReq<CreateReadUserRequest, CreateReadUserResponse>(`/v1/create/read/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
