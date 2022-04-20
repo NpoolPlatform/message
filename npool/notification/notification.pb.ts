@@ -174,12 +174,22 @@ export type CreateMailResponse = {
   info?: Mail
 }
 
-export type CreateMailForOtherAppRequest = {
-  targetAppID?: string
+export type CreateMailForAppOtherUserRequest = {
+  targetUserID?: string
   info?: Mail
 }
 
-export type CreateMailForOtherAppResponse = {
+export type CreateMailForAppOtherUserResponse = {
+  info?: Mail
+}
+
+export type CreateMailForOtherAppUserRequest = {
+  targetAppID?: string
+  targetUserID?: string
+  info?: Mail
+}
+
+export type CreateMailForOtherAppUserResponse = {
   info?: Mail
 }
 
@@ -334,8 +344,11 @@ export class Notification {
   static CreateMail(req: CreateMailRequest, initReq?: fm.InitReq): Promise<CreateMailResponse> {
     return fm.fetchReq<CreateMailRequest, CreateMailResponse>(`/v1/create/mail`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static CreateMailForOtherApp(req: CreateMailForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateMailForOtherAppResponse> {
-    return fm.fetchReq<CreateMailForOtherAppRequest, CreateMailForOtherAppResponse>(`/v1/create/mail/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateMailForAppOtherUser(req: CreateMailForAppOtherUserRequest, initReq?: fm.InitReq): Promise<CreateMailForAppOtherUserResponse> {
+    return fm.fetchReq<CreateMailForAppOtherUserRequest, CreateMailForAppOtherUserResponse>(`/v1/create/mail/for/app/other/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateMailForOtherAppUser(req: CreateMailForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateMailForOtherAppUserResponse> {
+    return fm.fetchReq<CreateMailForOtherAppUserRequest, CreateMailForOtherAppUserResponse>(`/v1/create/mail/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateMail(req: UpdateMailRequest, initReq?: fm.InitReq): Promise<UpdateMailResponse> {
     return fm.fetchReq<UpdateMailRequest, UpdateMailResponse>(`/v1/update/mail`, {...initReq, method: "POST", body: JSON.stringify(req)})
