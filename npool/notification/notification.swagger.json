@@ -1091,6 +1091,9 @@
     "v1CreateMailRequest": {
       "type": "object",
       "properties": {
+        "UserID": {
+          "type": "string"
+        },
         "Info": {
           "$ref": "#/definitions/v1Mail"
         }

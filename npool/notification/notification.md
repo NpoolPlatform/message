@@ -325,6 +325,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| UserID | [string](#string) |  |  |
 | Info | [Mail](#notification-v1-Mail) |  |  |
 
 
@@ -1338,6 +1339,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| UserID | [string](#string) |  |  |
 | Info | [Mail](#notification-v1-Mail) |  |  |
 
 

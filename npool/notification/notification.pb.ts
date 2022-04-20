@@ -167,6 +167,7 @@ export type Mail = {
 }
 
 export type CreateMailRequest = {
+  userID?: string
   info?: Mail
 }
 

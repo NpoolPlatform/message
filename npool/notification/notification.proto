@@ -354,6 +354,7 @@ message Mail {
 }
 
 message CreateMailRequest {
+    string UserID = 50;
     Mail Info = 10;
 }
 
