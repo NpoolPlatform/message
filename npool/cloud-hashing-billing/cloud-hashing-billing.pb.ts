@@ -619,7 +619,7 @@ export type GetUserWithdrawsByAppResponse = {
 }
 
 export type GetUserWithdrawsByOtherAppRequest = {
-  appID?: string
+  targetAppID?: string
 }
 
 export type GetUserWithdrawsByOtherAppResponse = {

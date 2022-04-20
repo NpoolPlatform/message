@@ -4700,7 +4700,7 @@
     "v1GetUserWithdrawsByOtherAppRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         }
       }

@@ -1206,7 +1206,7 @@ message GetUserWithdrawsByAppResponse {
 }
 
 message GetUserWithdrawsByOtherAppRequest {
-    string AppID = 10;
+    string TargetAppID = 10;
 }
 
 message GetUserWithdrawsByOtherAppResponse {
