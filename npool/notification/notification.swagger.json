@@ -139,38 +139,6 @@
         ]
       }
     },
-    "/v1/create/mail/for/app/other/user": {
-      "post": {
-        "operationId": "Notification_CreateMailForAppOtherUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateMailForAppOtherUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateMailForAppOtherUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Notification"
-        ]
-      }
-    },
     "/v1/create/mail/for/other/app/user": {
       "post": {
         "operationId": "Notification_CreateMailForOtherAppUser",
@@ -1044,25 +1012,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Announcement"
-        }
-      }
-    },
-    "v1CreateMailForAppOtherUserRequest": {
-      "type": "object",
-      "properties": {
-        "TargetUserID": {
-          "type": "string"
-        },
-        "Info": {
-          "$ref": "#/definitions/v1Mail"
-        }
-      }
-    },
-    "v1CreateMailForAppOtherUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Mail"
         }
       }
     },

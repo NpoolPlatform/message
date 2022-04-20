@@ -41,7 +41,6 @@ type NotificationClient interface {
 	CreateReadUser(ctx context.Context, in *CreateReadUserRequest, opts ...grpc.CallOption) (*CreateReadUserResponse, error)
 	CheckReadUser(ctx context.Context, in *CheckReadUserRequest, opts ...grpc.CallOption) (*CheckReadUserResponse, error)
 	CreateMail(ctx context.Context, in *CreateMailRequest, opts ...grpc.CallOption) (*CreateMailResponse, error)
-	CreateMailForAppOtherUser(ctx context.Context, in *CreateMailForAppOtherUserRequest, opts ...grpc.CallOption) (*CreateMailForAppOtherUserResponse, error)
 	CreateMailForOtherAppUser(ctx context.Context, in *CreateMailForOtherAppUserRequest, opts ...grpc.CallOption) (*CreateMailForOtherAppUserResponse, error)
 	UpdateMail(ctx context.Context, in *UpdateMailRequest, opts ...grpc.CallOption) (*UpdateMailResponse, error)
 	GetMails(ctx context.Context, in *GetMailsRequest, opts ...grpc.CallOption) (*GetMailsResponse, error)
@@ -208,15 +207,6 @@ func (c *notificationClient) CreateMail(ctx context.Context, in *CreateMailReque
 	return out, nil
 }
 
-func (c *notificationClient) CreateMailForAppOtherUser(ctx context.Context, in *CreateMailForAppOtherUserRequest, opts ...grpc.CallOption) (*CreateMailForAppOtherUserResponse, error) {
-	out := new(CreateMailForAppOtherUserResponse)
-	err := c.cc.Invoke(ctx, "/notification.v1.Notification/CreateMailForAppOtherUser", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *notificationClient) CreateMailForOtherAppUser(ctx context.Context, in *CreateMailForOtherAppUserRequest, opts ...grpc.CallOption) (*CreateMailForOtherAppUserResponse, error) {
 	out := new(CreateMailForOtherAppUserResponse)
 	err := c.cc.Invoke(ctx, "/notification.v1.Notification/CreateMailForOtherAppUser", in, out, opts...)
@@ -346,7 +336,6 @@ type NotificationServer interface {
 	CreateReadUser(context.Context, *CreateReadUserRequest) (*CreateReadUserResponse, error)
 	CheckReadUser(context.Context, *CheckReadUserRequest) (*CheckReadUserResponse, error)
 	CreateMail(context.Context, *CreateMailRequest) (*CreateMailResponse, error)
-	CreateMailForAppOtherUser(context.Context, *CreateMailForAppOtherUserRequest) (*CreateMailForAppOtherUserResponse, error)
 	CreateMailForOtherAppUser(context.Context, *CreateMailForOtherAppUserRequest) (*CreateMailForOtherAppUserResponse, error)
 	UpdateMail(context.Context, *UpdateMailRequest) (*UpdateMailResponse, error)
 	GetMails(context.Context, *GetMailsRequest) (*GetMailsResponse, error)
@@ -413,9 +402,6 @@ func (UnimplementedNotificationServer) CheckReadUser(context.Context, *CheckRead
 }
 func (UnimplementedNotificationServer) CreateMail(context.Context, *CreateMailRequest) (*CreateMailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateMail not implemented")
-}
-func (UnimplementedNotificationServer) CreateMailForAppOtherUser(context.Context, *CreateMailForAppOtherUserRequest) (*CreateMailForAppOtherUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateMailForAppOtherUser not implemented")
 }
 func (UnimplementedNotificationServer) CreateMailForOtherAppUser(context.Context, *CreateMailForOtherAppUserRequest) (*CreateMailForOtherAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateMailForOtherAppUser not implemented")
@@ -754,24 +740,6 @@ func _Notification_CreateMail_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Notification_CreateMailForAppOtherUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateMailForAppOtherUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(NotificationServer).CreateMailForAppOtherUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/notification.v1.Notification/CreateMailForAppOtherUser",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NotificationServer).CreateMailForAppOtherUser(ctx, req.(*CreateMailForAppOtherUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Notification_CreateMailForOtherAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateMailForOtherAppUserRequest)
 	if err := dec(in); err != nil {
@@ -1058,10 +1026,6 @@ var Notification_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateMail",
 			Handler:    _Notification_CreateMail_Handler,
-		},
-		{
-			MethodName: "CreateMailForAppOtherUser",
-			Handler:    _Notification_CreateMailForAppOtherUser_Handler,
 		},
 		{
 			MethodName: "CreateMailForOtherAppUser",

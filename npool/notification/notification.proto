@@ -111,12 +111,6 @@ service Notification {
             body: "*"
         };
     }
-    rpc CreateMailForAppOtherUser(CreateMailForAppOtherUserRequest) returns (CreateMailForAppOtherUserResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/mail/for/app/other/user"
-            body: "*"
-        };
-    }
     rpc CreateMailForOtherAppUser(CreateMailForOtherAppUserRequest) returns (CreateMailForOtherAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/create/mail/for/other/app/user"
@@ -360,15 +354,6 @@ message CreateMailRequest {
 
 message CreateMailResponse {
     Mail Info = 20;
-}
-
-message CreateMailForAppOtherUserRequest {
-    string TargetUserID = 5;
-    Mail Info = 10;
-}
-
-message CreateMailForAppOtherUserResponse {
-    Mail Info = 10;
 }
 
 message CreateMailForOtherAppUserRequest {
