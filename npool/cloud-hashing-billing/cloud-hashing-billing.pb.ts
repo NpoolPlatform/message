@@ -409,6 +409,13 @@ export type GetCoinSettingByCoinResponse = {
   info?: CoinSetting
 }
 
+export type GetCoinSettingsRequest = {
+}
+
+export type GetCoinSettingsResponse = {
+  infos?: CoinSetting[]
+}
+
 export type GoodBenefit = {
   id?: string
   goodID?: string
@@ -1036,6 +1043,9 @@ export class CloudHashingBilling {
   }
   static GetCoinSettingByCoin(req: GetCoinSettingByCoinRequest, initReq?: fm.InitReq): Promise<GetCoinSettingByCoinResponse> {
     return fm.fetchReq<GetCoinSettingByCoinRequest, GetCoinSettingByCoinResponse>(`/v1/get/coin/setting/by/coin`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCoinSettings(req: GetCoinSettingsRequest, initReq?: fm.InitReq): Promise<GetCoinSettingsResponse> {
+    return fm.fetchReq<GetCoinSettingsRequest, GetCoinSettingsResponse>(`/v1/get/coin/settings`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateGoodBenefit(req: CreateGoodBenefitRequest, initReq?: fm.InitReq): Promise<CreateGoodBenefitResponse> {
     return fm.fetchReq<CreateGoodBenefitRequest, CreateGoodBenefitResponse>(`/v1/create/good/benefit`, {...initReq, method: "POST", body: JSON.stringify(req)})

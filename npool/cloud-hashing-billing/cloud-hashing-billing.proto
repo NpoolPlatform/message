@@ -246,6 +246,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetCoinSettings (GetCoinSettingsRequest) returns (GetCoinSettingsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coin/settings"
+            body: "*"
+        };
+    }
 
     rpc CreateGoodBenefit (CreateGoodBenefitRequest) returns (CreateGoodBenefitResponse) {
         option (google.api.http) = {
@@ -974,6 +980,13 @@ message GetCoinSettingByCoinRequest {
 
 message GetCoinSettingByCoinResponse {
     CoinSetting Info = 10;
+}
+
+message GetCoinSettingsRequest {
+}
+
+message GetCoinSettingsResponse {
+    repeated CoinSetting Infos = 10;
 }
 
 message GoodBenefit {

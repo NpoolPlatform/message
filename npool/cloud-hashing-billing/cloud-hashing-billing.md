@@ -83,6 +83,8 @@
     - [GetCoinSettingByCoinResponse](#cloud-hashing-billing-v1-GetCoinSettingByCoinResponse)
     - [GetCoinSettingRequest](#cloud-hashing-billing-v1-GetCoinSettingRequest)
     - [GetCoinSettingResponse](#cloud-hashing-billing-v1-GetCoinSettingResponse)
+    - [GetCoinSettingsRequest](#cloud-hashing-billing-v1-GetCoinSettingsRequest)
+    - [GetCoinSettingsResponse](#cloud-hashing-billing-v1-GetCoinSettingsResponse)
     - [GetGoodBenefitByGoodRequest](#cloud-hashing-billing-v1-GetGoodBenefitByGoodRequest)
     - [GetGoodBenefitByGoodResponse](#cloud-hashing-billing-v1-GetGoodBenefitByGoodResponse)
     - [GetGoodBenefitRequest](#cloud-hashing-billing-v1-GetGoodBenefitRequest)
@@ -285,6 +287,8 @@
     - [GetCoinSettingByCoinResponse](#cloud-hashing-billing-v1-GetCoinSettingByCoinResponse)
     - [GetCoinSettingRequest](#cloud-hashing-billing-v1-GetCoinSettingRequest)
     - [GetCoinSettingResponse](#cloud-hashing-billing-v1-GetCoinSettingResponse)
+    - [GetCoinSettingsRequest](#cloud-hashing-billing-v1-GetCoinSettingsRequest)
+    - [GetCoinSettingsResponse](#cloud-hashing-billing-v1-GetCoinSettingsResponse)
     - [GetGoodBenefitByGoodRequest](#cloud-hashing-billing-v1-GetGoodBenefitByGoodRequest)
     - [GetGoodBenefitByGoodResponse](#cloud-hashing-billing-v1-GetGoodBenefitByGoodResponse)
     - [GetGoodBenefitRequest](#cloud-hashing-billing-v1-GetGoodBenefitRequest)
@@ -1640,6 +1644,31 @@
 
 
 
+<a name="cloud-hashing-billing-v1-GetCoinSettingsRequest"></a>
+
+### GetCoinSettingsRequest
+
+
+
+
+
+
+
+<a name="cloud-hashing-billing-v1-GetCoinSettingsResponse"></a>
+
+### GetCoinSettingsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [CoinSetting](#cloud-hashing-billing-v1-CoinSetting) | repeated |  |
+
+
+
+
+
+
 <a name="cloud-hashing-billing-v1-GetGoodBenefitByGoodRequest"></a>
 
 ### GetGoodBenefitByGoodRequest
@@ -3538,6 +3567,7 @@ Cloud Hashing Billing
 | UpdateCoinSetting | [UpdateCoinSettingRequest](#cloud-hashing-billing-v1-UpdateCoinSettingRequest) | [UpdateCoinSettingResponse](#cloud-hashing-billing-v1-UpdateCoinSettingResponse) |  |
 | GetCoinSetting | [GetCoinSettingRequest](#cloud-hashing-billing-v1-GetCoinSettingRequest) | [GetCoinSettingResponse](#cloud-hashing-billing-v1-GetCoinSettingResponse) |  |
 | GetCoinSettingByCoin | [GetCoinSettingByCoinRequest](#cloud-hashing-billing-v1-GetCoinSettingByCoinRequest) | [GetCoinSettingByCoinResponse](#cloud-hashing-billing-v1-GetCoinSettingByCoinResponse) |  |
+| GetCoinSettings | [GetCoinSettingsRequest](#cloud-hashing-billing-v1-GetCoinSettingsRequest) | [GetCoinSettingsResponse](#cloud-hashing-billing-v1-GetCoinSettingsResponse) |  |
 | CreateGoodBenefit | [CreateGoodBenefitRequest](#cloud-hashing-billing-v1-CreateGoodBenefitRequest) | [CreateGoodBenefitResponse](#cloud-hashing-billing-v1-CreateGoodBenefitResponse) |  |
 | UpdateGoodBenefit | [UpdateGoodBenefitRequest](#cloud-hashing-billing-v1-UpdateGoodBenefitRequest) | [UpdateGoodBenefitResponse](#cloud-hashing-billing-v1-UpdateGoodBenefitResponse) |  |
 | GetGoodBenefit | [GetGoodBenefitRequest](#cloud-hashing-billing-v1-GetGoodBenefitRequest) | [GetGoodBenefitResponse](#cloud-hashing-billing-v1-GetGoodBenefitResponse) |  |
@@ -4825,6 +4855,31 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud-hashing-billing-v1-GetCoinSettingsRequest"></a>
+
+### GetCoinSettingsRequest
+
+
+
+
+
+
+
+<a name="cloud-hashing-billing-v1-GetCoinSettingsResponse"></a>
+
+### GetCoinSettingsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [CoinSetting](#cloud-hashing-billing-v1-CoinSetting) | repeated |  |
+
+
+
+
+
+
 <a name="cloud-hashing-billing-v1-GetGoodBenefitByGoodRequest"></a>
 
 ### GetGoodBenefitByGoodRequest
@@ -6723,6 +6778,7 @@ Cloud Hashing Billing
 | UpdateCoinSetting | [UpdateCoinSettingRequest](#cloud-hashing-billing-v1-UpdateCoinSettingRequest) | [UpdateCoinSettingResponse](#cloud-hashing-billing-v1-UpdateCoinSettingResponse) |  |
 | GetCoinSetting | [GetCoinSettingRequest](#cloud-hashing-billing-v1-GetCoinSettingRequest) | [GetCoinSettingResponse](#cloud-hashing-billing-v1-GetCoinSettingResponse) |  |
 | GetCoinSettingByCoin | [GetCoinSettingByCoinRequest](#cloud-hashing-billing-v1-GetCoinSettingByCoinRequest) | [GetCoinSettingByCoinResponse](#cloud-hashing-billing-v1-GetCoinSettingByCoinResponse) |  |
+| GetCoinSettings | [GetCoinSettingsRequest](#cloud-hashing-billing-v1-GetCoinSettingsRequest) | [GetCoinSettingsResponse](#cloud-hashing-billing-v1-GetCoinSettingsResponse) |  |
 | CreateGoodBenefit | [CreateGoodBenefitRequest](#cloud-hashing-billing-v1-CreateGoodBenefitRequest) | [CreateGoodBenefitResponse](#cloud-hashing-billing-v1-CreateGoodBenefitResponse) |  |
 | UpdateGoodBenefit | [UpdateGoodBenefitRequest](#cloud-hashing-billing-v1-UpdateGoodBenefitRequest) | [UpdateGoodBenefitResponse](#cloud-hashing-billing-v1-UpdateGoodBenefitResponse) |  |
 | GetGoodBenefit | [GetGoodBenefitRequest](#cloud-hashing-billing-v1-GetGoodBenefitRequest) | [GetGoodBenefitResponse](#cloud-hashing-billing-v1-GetGoodBenefitResponse) |  |

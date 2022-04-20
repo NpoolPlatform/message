@@ -63,6 +63,7 @@ type CloudHashingBillingClient interface {
 	UpdateCoinSetting(ctx context.Context, in *UpdateCoinSettingRequest, opts ...grpc.CallOption) (*UpdateCoinSettingResponse, error)
 	GetCoinSetting(ctx context.Context, in *GetCoinSettingRequest, opts ...grpc.CallOption) (*GetCoinSettingResponse, error)
 	GetCoinSettingByCoin(ctx context.Context, in *GetCoinSettingByCoinRequest, opts ...grpc.CallOption) (*GetCoinSettingByCoinResponse, error)
+	GetCoinSettings(ctx context.Context, in *GetCoinSettingsRequest, opts ...grpc.CallOption) (*GetCoinSettingsResponse, error)
 	CreateGoodBenefit(ctx context.Context, in *CreateGoodBenefitRequest, opts ...grpc.CallOption) (*CreateGoodBenefitResponse, error)
 	UpdateGoodBenefit(ctx context.Context, in *UpdateGoodBenefitRequest, opts ...grpc.CallOption) (*UpdateGoodBenefitResponse, error)
 	GetGoodBenefit(ctx context.Context, in *GetGoodBenefitRequest, opts ...grpc.CallOption) (*GetGoodBenefitResponse, error)
@@ -462,6 +463,15 @@ func (c *cloudHashingBillingClient) GetCoinSetting(ctx context.Context, in *GetC
 func (c *cloudHashingBillingClient) GetCoinSettingByCoin(ctx context.Context, in *GetCoinSettingByCoinRequest, opts ...grpc.CallOption) (*GetCoinSettingByCoinResponse, error) {
 	out := new(GetCoinSettingByCoinResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetCoinSettingByCoin", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingBillingClient) GetCoinSettings(ctx context.Context, in *GetCoinSettingsRequest, opts ...grpc.CallOption) (*GetCoinSettingsResponse, error) {
+	out := new(GetCoinSettingsResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.billing.v1.CloudHashingBilling/GetCoinSettings", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -988,6 +998,7 @@ type CloudHashingBillingServer interface {
 	UpdateCoinSetting(context.Context, *UpdateCoinSettingRequest) (*UpdateCoinSettingResponse, error)
 	GetCoinSetting(context.Context, *GetCoinSettingRequest) (*GetCoinSettingResponse, error)
 	GetCoinSettingByCoin(context.Context, *GetCoinSettingByCoinRequest) (*GetCoinSettingByCoinResponse, error)
+	GetCoinSettings(context.Context, *GetCoinSettingsRequest) (*GetCoinSettingsResponse, error)
 	CreateGoodBenefit(context.Context, *CreateGoodBenefitRequest) (*CreateGoodBenefitResponse, error)
 	UpdateGoodBenefit(context.Context, *UpdateGoodBenefitRequest) (*UpdateGoodBenefitResponse, error)
 	GetGoodBenefit(context.Context, *GetGoodBenefitRequest) (*GetGoodBenefitResponse, error)
@@ -1161,6 +1172,9 @@ func (UnimplementedCloudHashingBillingServer) GetCoinSetting(context.Context, *G
 }
 func (UnimplementedCloudHashingBillingServer) GetCoinSettingByCoin(context.Context, *GetCoinSettingByCoinRequest) (*GetCoinSettingByCoinResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinSettingByCoin not implemented")
+}
+func (UnimplementedCloudHashingBillingServer) GetCoinSettings(context.Context, *GetCoinSettingsRequest) (*GetCoinSettingsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCoinSettings not implemented")
 }
 func (UnimplementedCloudHashingBillingServer) CreateGoodBenefit(context.Context, *CreateGoodBenefitRequest) (*CreateGoodBenefitResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateGoodBenefit not implemented")
@@ -2014,6 +2028,24 @@ func _CloudHashingBilling_GetCoinSettingByCoin_Handler(srv interface{}, ctx cont
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingBillingServer).GetCoinSettingByCoin(ctx, req.(*GetCoinSettingByCoinRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingBilling_GetCoinSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoinSettingsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingBillingServer).GetCoinSettings(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.billing.v1.CloudHashingBilling/GetCoinSettings",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingBillingServer).GetCoinSettings(ctx, req.(*GetCoinSettingsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3130,6 +3162,10 @@ var CloudHashingBilling_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCoinSettingByCoin",
 			Handler:    _CloudHashingBilling_GetCoinSettingByCoin_Handler,
+		},
+		{
+			MethodName: "GetCoinSettings",
+			Handler:    _CloudHashingBilling_GetCoinSettings_Handler,
 		},
 		{
 			MethodName: "CreateGoodBenefit",

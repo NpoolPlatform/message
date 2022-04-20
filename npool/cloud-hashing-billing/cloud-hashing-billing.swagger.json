@@ -1195,6 +1195,38 @@
         ]
       }
     },
+    "/v1/get/coin/settings": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetCoinSettings",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinSettingsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinSettingsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/good/benefit": {
       "post": {
         "operationId": "CloudHashingBilling_GetGoodBenefit",
@@ -3760,6 +3792,20 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1CoinSetting"
+        }
+      }
+    },
+    "v1GetCoinSettingsRequest": {
+      "type": "object"
+    },
+    "v1GetCoinSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinSetting"
+          }
         }
       }
     },
