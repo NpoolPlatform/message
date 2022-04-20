@@ -1259,6 +1259,38 @@
         ]
       }
     },
+    "/v1/get/good/benefits": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetGoodBenefits",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodBenefitsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodBenefitsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/good/payment": {
       "post": {
         "operationId": "CloudHashingBilling_GetGoodPayment",
@@ -3760,6 +3792,20 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1GoodBenefit"
+        }
+      }
+    },
+    "v1GetGoodBenefitsRequest": {
+      "type": "object"
+    },
+    "v1GetGoodBenefitsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodBenefit"
+          }
         }
       }
     },

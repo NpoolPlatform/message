@@ -271,6 +271,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetGoodBenefits (GetGoodBenefitsRequest) returns (GetGoodBenefitsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/benefits"
+            body: "*"
+        };
+    }
 
     rpc CreateGoodPayment (CreateGoodPaymentRequest) returns (CreateGoodPaymentResponse) {
         option (google.api.http) = {
@@ -1008,6 +1014,14 @@ message GetGoodBenefitByGoodRequest {
 message GetGoodBenefitByGoodResponse {
     GoodBenefit Info = 10;
 }
+
+message GetGoodBenefitsRequest {
+}
+
+message GetGoodBenefitsResponse {
+    repeated GoodBenefit Infos = 10;
+}
+
 
 message GoodPayment {
     string ID = 10;

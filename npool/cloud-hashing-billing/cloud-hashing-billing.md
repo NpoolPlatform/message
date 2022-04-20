@@ -87,6 +87,8 @@
     - [GetGoodBenefitByGoodResponse](#cloud-hashing-billing-v1-GetGoodBenefitByGoodResponse)
     - [GetGoodBenefitRequest](#cloud-hashing-billing-v1-GetGoodBenefitRequest)
     - [GetGoodBenefitResponse](#cloud-hashing-billing-v1-GetGoodBenefitResponse)
+    - [GetGoodBenefitsRequest](#cloud-hashing-billing-v1-GetGoodBenefitsRequest)
+    - [GetGoodBenefitsResponse](#cloud-hashing-billing-v1-GetGoodBenefitsResponse)
     - [GetGoodPaymentByAccountRequest](#cloud-hashing-billing-v1-GetGoodPaymentByAccountRequest)
     - [GetGoodPaymentByAccountResponse](#cloud-hashing-billing-v1-GetGoodPaymentByAccountResponse)
     - [GetGoodPaymentRequest](#cloud-hashing-billing-v1-GetGoodPaymentRequest)
@@ -287,6 +289,8 @@
     - [GetGoodBenefitByGoodResponse](#cloud-hashing-billing-v1-GetGoodBenefitByGoodResponse)
     - [GetGoodBenefitRequest](#cloud-hashing-billing-v1-GetGoodBenefitRequest)
     - [GetGoodBenefitResponse](#cloud-hashing-billing-v1-GetGoodBenefitResponse)
+    - [GetGoodBenefitsRequest](#cloud-hashing-billing-v1-GetGoodBenefitsRequest)
+    - [GetGoodBenefitsResponse](#cloud-hashing-billing-v1-GetGoodBenefitsResponse)
     - [GetGoodPaymentByAccountRequest](#cloud-hashing-billing-v1-GetGoodPaymentByAccountRequest)
     - [GetGoodPaymentByAccountResponse](#cloud-hashing-billing-v1-GetGoodPaymentByAccountResponse)
     - [GetGoodPaymentRequest](#cloud-hashing-billing-v1-GetGoodPaymentRequest)
@@ -1696,6 +1700,31 @@
 
 
 
+<a name="cloud-hashing-billing-v1-GetGoodBenefitsRequest"></a>
+
+### GetGoodBenefitsRequest
+
+
+
+
+
+
+
+<a name="cloud-hashing-billing-v1-GetGoodBenefitsResponse"></a>
+
+### GetGoodBenefitsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit) | repeated |  |
+
+
+
+
+
+
 <a name="cloud-hashing-billing-v1-GetGoodPaymentByAccountRequest"></a>
 
 ### GetGoodPaymentByAccountRequest
@@ -3513,6 +3542,7 @@ Cloud Hashing Billing
 | UpdateGoodBenefit | [UpdateGoodBenefitRequest](#cloud-hashing-billing-v1-UpdateGoodBenefitRequest) | [UpdateGoodBenefitResponse](#cloud-hashing-billing-v1-UpdateGoodBenefitResponse) |  |
 | GetGoodBenefit | [GetGoodBenefitRequest](#cloud-hashing-billing-v1-GetGoodBenefitRequest) | [GetGoodBenefitResponse](#cloud-hashing-billing-v1-GetGoodBenefitResponse) |  |
 | GetGoodBenefitByGood | [GetGoodBenefitByGoodRequest](#cloud-hashing-billing-v1-GetGoodBenefitByGoodRequest) | [GetGoodBenefitByGoodResponse](#cloud-hashing-billing-v1-GetGoodBenefitByGoodResponse) |  |
+| GetGoodBenefits | [GetGoodBenefitsRequest](#cloud-hashing-billing-v1-GetGoodBenefitsRequest) | [GetGoodBenefitsResponse](#cloud-hashing-billing-v1-GetGoodBenefitsResponse) |  |
 | CreateGoodPayment | [CreateGoodPaymentRequest](#cloud-hashing-billing-v1-CreateGoodPaymentRequest) | [CreateGoodPaymentResponse](#cloud-hashing-billing-v1-CreateGoodPaymentResponse) |  |
 | UpdateGoodPayment | [UpdateGoodPaymentRequest](#cloud-hashing-billing-v1-UpdateGoodPaymentRequest) | [UpdateGoodPaymentResponse](#cloud-hashing-billing-v1-UpdateGoodPaymentResponse) |  |
 | GetGoodPayment | [GetGoodPaymentRequest](#cloud-hashing-billing-v1-GetGoodPaymentRequest) | [GetGoodPaymentResponse](#cloud-hashing-billing-v1-GetGoodPaymentResponse) |  |
@@ -4855,6 +4885,31 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud-hashing-billing-v1-GetGoodBenefitsRequest"></a>
+
+### GetGoodBenefitsRequest
+
+
+
+
+
+
+
+<a name="cloud-hashing-billing-v1-GetGoodBenefitsResponse"></a>
+
+### GetGoodBenefitsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [GoodBenefit](#cloud-hashing-billing-v1-GoodBenefit) | repeated |  |
+
+
+
+
+
+
 <a name="cloud-hashing-billing-v1-GetGoodPaymentByAccountRequest"></a>
 
 ### GetGoodPaymentByAccountRequest
@@ -6672,6 +6727,7 @@ Cloud Hashing Billing
 | UpdateGoodBenefit | [UpdateGoodBenefitRequest](#cloud-hashing-billing-v1-UpdateGoodBenefitRequest) | [UpdateGoodBenefitResponse](#cloud-hashing-billing-v1-UpdateGoodBenefitResponse) |  |
 | GetGoodBenefit | [GetGoodBenefitRequest](#cloud-hashing-billing-v1-GetGoodBenefitRequest) | [GetGoodBenefitResponse](#cloud-hashing-billing-v1-GetGoodBenefitResponse) |  |
 | GetGoodBenefitByGood | [GetGoodBenefitByGoodRequest](#cloud-hashing-billing-v1-GetGoodBenefitByGoodRequest) | [GetGoodBenefitByGoodResponse](#cloud-hashing-billing-v1-GetGoodBenefitByGoodResponse) |  |
+| GetGoodBenefits | [GetGoodBenefitsRequest](#cloud-hashing-billing-v1-GetGoodBenefitsRequest) | [GetGoodBenefitsResponse](#cloud-hashing-billing-v1-GetGoodBenefitsResponse) |  |
 | CreateGoodPayment | [CreateGoodPaymentRequest](#cloud-hashing-billing-v1-CreateGoodPaymentRequest) | [CreateGoodPaymentResponse](#cloud-hashing-billing-v1-CreateGoodPaymentResponse) |  |
 | UpdateGoodPayment | [UpdateGoodPaymentRequest](#cloud-hashing-billing-v1-UpdateGoodPaymentRequest) | [UpdateGoodPaymentResponse](#cloud-hashing-billing-v1-UpdateGoodPaymentResponse) |  |
 | GetGoodPayment | [GetGoodPaymentRequest](#cloud-hashing-billing-v1-GetGoodPaymentRequest) | [GetGoodPaymentResponse](#cloud-hashing-billing-v1-GetGoodPaymentResponse) |  |

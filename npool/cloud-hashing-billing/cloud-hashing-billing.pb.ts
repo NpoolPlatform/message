@@ -448,6 +448,13 @@ export type GetGoodBenefitByGoodResponse = {
   info?: GoodBenefit
 }
 
+export type GetGoodBenefitsRequest = {
+}
+
+export type GetGoodBenefitsResponse = {
+  infos?: GoodBenefit[]
+}
+
 export type GoodPayment = {
   id?: string
   goodID?: string
@@ -1041,6 +1048,9 @@ export class CloudHashingBilling {
   }
   static GetGoodBenefitByGood(req: GetGoodBenefitByGoodRequest, initReq?: fm.InitReq): Promise<GetGoodBenefitByGoodResponse> {
     return fm.fetchReq<GetGoodBenefitByGoodRequest, GetGoodBenefitByGoodResponse>(`/v1/get/good/benefit/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodBenefits(req: GetGoodBenefitsRequest, initReq?: fm.InitReq): Promise<GetGoodBenefitsResponse> {
+    return fm.fetchReq<GetGoodBenefitsRequest, GetGoodBenefitsResponse>(`/v1/get/good/benefits`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateGoodPayment(req: CreateGoodPaymentRequest, initReq?: fm.InitReq): Promise<CreateGoodPaymentResponse> {
     return fm.fetchReq<CreateGoodPaymentRequest, CreateGoodPaymentResponse>(`/v1/create/good/payment`, {...initReq, method: "POST", body: JSON.stringify(req)})
