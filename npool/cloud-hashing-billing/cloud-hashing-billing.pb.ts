@@ -610,6 +610,22 @@ export type GetUserWithdrawsByOtherAppUserResponse = {
   infos?: UserWithdraw[]
 }
 
+export type GetUserWithdrawsByAppRequest = {
+  appID?: string
+}
+
+export type GetUserWithdrawsByAppResponse = {
+  infos?: UserWithdraw[]
+}
+
+export type GetUserWithdrawsByOtherAppRequest = {
+  appID?: string
+}
+
+export type GetUserWithdrawsByOtherAppResponse = {
+  infos?: UserWithdraw[]
+}
+
 export type UserWithdrawAccount = {
   withdraw?: UserWithdraw
   account?: CoinAccountInfo
@@ -1106,6 +1122,12 @@ export class CloudHashingBilling {
   }
   static GetUserWithdrawsByOtherAppUser(req: GetUserWithdrawsByOtherAppUserRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawsByOtherAppUserResponse> {
     return fm.fetchReq<GetUserWithdrawsByOtherAppUserRequest, GetUserWithdrawsByOtherAppUserResponse>(`/v1/get/user/withdraws/by/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserWithdrawsByApp(req: GetUserWithdrawsByAppRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawsByAppResponse> {
+    return fm.fetchReq<GetUserWithdrawsByAppRequest, GetUserWithdrawsByAppResponse>(`/v1/get/user/withdraws/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserWithdrawsByOtherApp(req: GetUserWithdrawsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawsByOtherAppResponse> {
+    return fm.fetchReq<GetUserWithdrawsByOtherAppRequest, GetUserWithdrawsByOtherAppResponse>(`/v1/get/user/withdraws/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserWithdrawAccount(req: GetUserWithdrawAccountRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawAccountResponse> {
     return fm.fetchReq<GetUserWithdrawAccountRequest, GetUserWithdrawAccountResponse>(`/v1/get/user/withdraw/account`, {...initReq, method: "POST", body: JSON.stringify(req)})

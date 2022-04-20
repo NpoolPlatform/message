@@ -2507,6 +2507,38 @@
         ]
       }
     },
+    "/v1/get/user/withdraws/by/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserWithdrawsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/user/withdraws/by/app/user": {
       "post": {
         "operationId": "CloudHashingBilling_GetUserWithdrawsByAppUser",
@@ -2563,6 +2595,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetUserWithdrawsByAppUserCoinRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/user/withdraws/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserWithdrawsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawsByOtherAppRequest"
             }
           }
         ],
@@ -4567,6 +4631,25 @@
         }
       }
     },
+    "v1GetUserWithdrawsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserWithdrawsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserWithdraw"
+          }
+        }
+      }
+    },
     "v1GetUserWithdrawsByAppUserCoinRequest": {
       "type": "object",
       "properties": {
@@ -4604,6 +4687,25 @@
       }
     },
     "v1GetUserWithdrawsByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserWithdraw"
+          }
+        }
+      }
+    },
+    "v1GetUserWithdrawsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserWithdrawsByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {
