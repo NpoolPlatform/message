@@ -139,12 +139,46 @@ export type CreateMailResponse = {
   info?: Mail
 }
 
+export type CreateMailForOtherAppRequest = {
+  targetAppID?: string
+  info?: Mail
+}
+
+export type CreateMailForOtherAppResponse = {
+  info?: Mail
+}
+
 export type UpdateMailRequest = {
   info?: Mail
 }
 
 export type UpdateMailResponse = {
   info?: Mail
+}
+
+export type GetMailsRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetMailsResponse = {
+  infos?: Mail[]
+}
+
+export type GetMailsByAppRequest = {
+  appID?: string
+}
+
+export type GetMailsByAppResponse = {
+  infos?: Mail[]
+}
+
+export type GetMailsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetMailsByOtherAppResponse = {
+  infos?: Mail[]
 }
 
 export type Template = {
@@ -253,8 +287,20 @@ export class Notification {
   static CreateMail(req: CreateMailRequest, initReq?: fm.InitReq): Promise<CreateMailResponse> {
     return fm.fetchReq<CreateMailRequest, CreateMailResponse>(`/v1/create/mail`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateMailForOtherApp(req: CreateMailForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateMailForOtherAppResponse> {
+    return fm.fetchReq<CreateMailForOtherAppRequest, CreateMailForOtherAppResponse>(`/v1/create/mail/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static UpdateMail(req: UpdateMailRequest, initReq?: fm.InitReq): Promise<UpdateMailResponse> {
     return fm.fetchReq<UpdateMailRequest, UpdateMailResponse>(`/v1/update/mail`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetMails(req: GetMailsRequest, initReq?: fm.InitReq): Promise<GetMailsResponse> {
+    return fm.fetchReq<GetMailsRequest, GetMailsResponse>(`/v1/get/mails`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetMailsByApp(req: GetMailsByAppRequest, initReq?: fm.InitReq): Promise<GetMailsByAppResponse> {
+    return fm.fetchReq<GetMailsByAppRequest, GetMailsByAppResponse>(`/v1/get/mails/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetMailsByOtherApp(req: GetMailsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetMailsByOtherAppResponse> {
+    return fm.fetchReq<GetMailsByOtherAppRequest, GetMailsByOtherAppResponse>(`/v1/get/mails/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateTemplate(req: CreateTemplateRequest, initReq?: fm.InitReq): Promise<CreateTemplateResponse> {
     return fm.fetchReq<CreateTemplateRequest, CreateTemplateResponse>(`/v1/create/template`, {...initReq, method: "POST", body: JSON.stringify(req)})

@@ -87,9 +87,33 @@ service Notification {
             body: "*"
         };
     }
+    rpc CreateMailForOtherApp(CreateMailForOtherAppRequest) returns (CreateMailForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/mail/for/other/app"
+            body: "*"
+        };
+    }
     rpc UpdateMail(UpdateMailRequest) returns (UpdateMailResponse) {
         option (google.api.http) = {
             post: "/v1/update/mail"
+            body: "*"
+        };
+    }
+    rpc GetMails(GetMailsRequest) returns (GetMailsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/mails"
+            body: "*"
+        };
+    }
+    rpc GetMailsByApp(GetMailsByAppRequest) returns (GetMailsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/mails/by/app"
+            body: "*"
+        };
+    }
+    rpc GetMailsByOtherApp(GetMailsByOtherAppRequest) returns (GetMailsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/mails/by/other/app"
             body: "*"
         };
     }
@@ -271,12 +295,46 @@ message CreateMailResponse {
     Mail Info = 20;
 }
 
+message CreateMailForOtherAppRequest {
+    string TargetAppID = 5;
+    Mail Info = 10;
+}
+
+message CreateMailForOtherAppResponse {
+    Mail Info = 10;
+}
+
 message UpdateMailRequest {
     Mail Info = 10;
 }
 
 message UpdateMailResponse {
     Mail Info = 10;
+}
+
+message GetMailsRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetMailsResponse {
+    repeated Mail Infos = 10;
+}
+
+message GetMailsByAppRequest {
+    string AppID = 10;
+}
+
+message GetMailsByAppResponse {
+    repeated Mail Infos = 10;
+}
+
+message GetMailsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetMailsByOtherAppResponse {
+    repeated Mail Infos = 10;
 }
 
 message Template {

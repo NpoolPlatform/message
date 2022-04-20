@@ -139,6 +139,38 @@
         ]
       }
     },
+    "/v1/create/mail/for/other/app": {
+      "post": {
+        "operationId": "Notification_CreateMailForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateMailForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateMailForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Notification"
+        ]
+      }
+    },
     "/v1/create/notification": {
       "post": {
         "operationId": "Notification_CreateNotification",
@@ -323,6 +355,102 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAnnouncementsByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Notification"
+        ]
+      }
+    },
+    "/v1/get/mails": {
+      "post": {
+        "operationId": "Notification_GetMails",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetMailsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetMailsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Notification"
+        ]
+      }
+    },
+    "/v1/get/mails/by/app": {
+      "post": {
+        "operationId": "Notification_GetMailsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetMailsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetMailsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Notification"
+        ]
+      }
+    },
+    "/v1/get/mails/by/other/app": {
+      "post": {
+        "operationId": "Notification_GetMailsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetMailsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetMailsByOtherAppRequest"
             }
           }
         ],
@@ -759,6 +887,25 @@
         }
       }
     },
+    "v1CreateMailForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1Mail"
+        }
+      }
+    },
+    "v1CreateMailForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Mail"
+        }
+      }
+    },
     "v1CreateMailRequest": {
       "type": "object",
       "properties": {
@@ -888,6 +1035,66 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Announcement"
+          }
+        }
+      }
+    },
+    "v1GetMailsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetMailsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Mail"
+          }
+        }
+      }
+    },
+    "v1GetMailsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetMailsByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Mail"
+          }
+        }
+      }
+    },
+    "v1GetMailsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetMailsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Mail"
           }
         }
       }
