@@ -49,6 +49,7 @@ type CloudHashingOrderClient interface {
 	GetPaymentByOrder(ctx context.Context, in *GetPaymentByOrderRequest, opts ...grpc.CallOption) (*GetPaymentByOrderResponse, error)
 	GetPaymentsByState(ctx context.Context, in *GetPaymentsByStateRequest, opts ...grpc.CallOption) (*GetPaymentsByStateResponse, error)
 	GetPaymentsByApp(ctx context.Context, in *GetPaymentsByAppRequest, opts ...grpc.CallOption) (*GetPaymentsByAppResponse, error)
+	GetPaymentsByOtherApp(ctx context.Context, in *GetPaymentsByOtherAppRequest, opts ...grpc.CallOption) (*GetPaymentsByOtherAppResponse, error)
 	GetPaymentsByAppUser(ctx context.Context, in *GetPaymentsByAppUserRequest, opts ...grpc.CallOption) (*GetPaymentsByAppUserResponse, error)
 	GetPayments(ctx context.Context, in *GetPaymentsRequest, opts ...grpc.CallOption) (*GetPaymentsResponse, error)
 	GetOrdersDetailByAppUser(ctx context.Context, in *GetOrdersDetailByAppUserRequest, opts ...grpc.CallOption) (*GetOrdersDetailByAppUserResponse, error)
@@ -281,6 +282,15 @@ func (c *cloudHashingOrderClient) GetPaymentsByApp(ctx context.Context, in *GetP
 	return out, nil
 }
 
+func (c *cloudHashingOrderClient) GetPaymentsByOtherApp(ctx context.Context, in *GetPaymentsByOtherAppRequest, opts ...grpc.CallOption) (*GetPaymentsByOtherAppResponse, error) {
+	out := new(GetPaymentsByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/GetPaymentsByOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingOrderClient) GetPaymentsByAppUser(ctx context.Context, in *GetPaymentsByAppUserRequest, opts ...grpc.CallOption) (*GetPaymentsByAppUserResponse, error) {
 	out := new(GetPaymentsByAppUserResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/GetPaymentsByAppUser", in, out, opts...)
@@ -364,6 +374,7 @@ type CloudHashingOrderServer interface {
 	GetPaymentByOrder(context.Context, *GetPaymentByOrderRequest) (*GetPaymentByOrderResponse, error)
 	GetPaymentsByState(context.Context, *GetPaymentsByStateRequest) (*GetPaymentsByStateResponse, error)
 	GetPaymentsByApp(context.Context, *GetPaymentsByAppRequest) (*GetPaymentsByAppResponse, error)
+	GetPaymentsByOtherApp(context.Context, *GetPaymentsByOtherAppRequest) (*GetPaymentsByOtherAppResponse, error)
 	GetPaymentsByAppUser(context.Context, *GetPaymentsByAppUserRequest) (*GetPaymentsByAppUserResponse, error)
 	GetPayments(context.Context, *GetPaymentsRequest) (*GetPaymentsResponse, error)
 	GetOrdersDetailByAppUser(context.Context, *GetOrdersDetailByAppUserRequest) (*GetOrdersDetailByAppUserResponse, error)
@@ -448,6 +459,9 @@ func (UnimplementedCloudHashingOrderServer) GetPaymentsByState(context.Context, 
 }
 func (UnimplementedCloudHashingOrderServer) GetPaymentsByApp(context.Context, *GetPaymentsByAppRequest) (*GetPaymentsByAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPaymentsByApp not implemented")
+}
+func (UnimplementedCloudHashingOrderServer) GetPaymentsByOtherApp(context.Context, *GetPaymentsByOtherAppRequest) (*GetPaymentsByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPaymentsByOtherApp not implemented")
 }
 func (UnimplementedCloudHashingOrderServer) GetPaymentsByAppUser(context.Context, *GetPaymentsByAppUserRequest) (*GetPaymentsByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPaymentsByAppUser not implemented")
@@ -912,6 +926,24 @@ func _CloudHashingOrder_GetPaymentsByApp_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingOrder_GetPaymentsByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPaymentsByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingOrderServer).GetPaymentsByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.order.v1.CloudHashingOrder/GetPaymentsByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingOrderServer).GetPaymentsByOtherApp(ctx, req.(*GetPaymentsByOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingOrder_GetPaymentsByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetPaymentsByAppUserRequest)
 	if err := dec(in); err != nil {
@@ -1122,6 +1154,10 @@ var CloudHashingOrder_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetPaymentsByApp",
 			Handler:    _CloudHashingOrder_GetPaymentsByApp_Handler,
+		},
+		{
+			MethodName: "GetPaymentsByOtherApp",
+			Handler:    _CloudHashingOrder_GetPaymentsByOtherApp_Handler,
 		},
 		{
 			MethodName: "GetPaymentsByAppUser",

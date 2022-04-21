@@ -56,6 +56,7 @@ export type Message = {
 }
 
 export type CreateMessageRequest = {
+  targetLangID?: string
   info?: Message
 }
 
@@ -73,6 +74,7 @@ export type CreateMessageForOtherAppResponse = {
 }
 
 export type CreateMessagesRequest = {
+  targetLangID?: string
   infos?: Message[]
 }
 
@@ -99,6 +101,7 @@ export type UpdateMessagesResponse = {
 export type GetMessagesByAppLangRequest = {
   appID?: string
   langID?: string
+  targetLangID?: string
 }
 
 export type GetMessagesByAppLangResponse = {
@@ -108,6 +111,7 @@ export type GetMessagesByAppLangResponse = {
 export type GetMessagesByOtherAppLangRequest = {
   targetAppID?: string
   langID?: string
+  targetLangID?: string
 }
 
 export type GetMessagesByOtherAppLangResponse = {

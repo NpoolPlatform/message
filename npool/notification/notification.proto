@@ -55,6 +55,18 @@ service Notification {
             body: "*"
         };
     }
+    rpc CreateNotificationForAppOtherUser(CreateNotificationForAppOtherUserRequest) returns (CreateNotificationForAppOtherUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/notification/for/app/other/user"
+            body: "*"
+        };
+    }
+    rpc CreateNotificationForOtherAppUser(CreateNotificationForOtherAppUserRequest) returns (CreateNotificationForOtherAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/notification/for/other/app/user"
+            body: "*"
+        };
+    }
     rpc UpdateNotification(UpdateNotificationRequest) returns (UpdateNotificationResponse) {
         option (google.api.http) = {
             post: "/v1/update/notification"
@@ -64,6 +76,18 @@ service Notification {
     rpc GetNotificationsByAppUser(GetNotificationsByAppUserRequest) returns (GetNotificationsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/notifications/by/app/user"
+            body: "*"
+        };
+    }
+    rpc GetNotificationsByApp(GetNotificationsByAppRequest) returns (GetNotificationsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/notifications/by/app"
+            body: "*"
+        };
+    }
+    rpc GetNotificationsByOtherApp(GetNotificationsByOtherAppRequest) returns (GetNotificationsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/notifications/by/other/app"
             body: "*"
         };
     }
@@ -87,9 +111,33 @@ service Notification {
             body: "*"
         };
     }
+    rpc CreateMailForOtherAppUser(CreateMailForOtherAppUserRequest) returns (CreateMailForOtherAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/mail/for/other/app/user"
+            body: "*"
+        };
+    }
     rpc UpdateMail(UpdateMailRequest) returns (UpdateMailResponse) {
         option (google.api.http) = {
             post: "/v1/update/mail"
+            body: "*"
+        };
+    }
+    rpc GetMails(GetMailsRequest) returns (GetMailsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/mails"
+            body: "*"
+        };
+    }
+    rpc GetMailsByApp(GetMailsByAppRequest) returns (GetMailsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/mails/by/app"
+            body: "*"
+        };
+    }
+    rpc GetMailsByOtherApp(GetMailsByOtherAppRequest) returns (GetMailsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/mails/by/other/app"
             body: "*"
         };
     }
@@ -211,6 +259,25 @@ message CreateNotificationResponse {
     UserNotification Info = 10;
 }
 
+message CreateNotificationForAppOtherUserRequest {
+    string TargetUserID = 10;
+    UserNotification Info = 20;
+}
+
+message CreateNotificationForAppOtherUserResponse {
+    UserNotification Info = 10;
+}
+
+message CreateNotificationForOtherAppUserRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
+    UserNotification Info = 30;
+}
+
+message CreateNotificationForOtherAppUserResponse {
+    UserNotification Info = 10;
+}
+
 message UpdateNotificationRequest {
     UserNotification Info = 10;
 }
@@ -227,6 +294,23 @@ message GetNotificationsByAppUserRequest {
 message GetNotificationsByAppUserResponse {
     repeated UserNotification Infos = 10;
 }
+
+message GetNotificationsByAppRequest {
+    string AppID = 10;
+}
+
+message GetNotificationsByAppResponse {
+    repeated UserNotification Infos = 10;
+}
+
+message GetNotificationsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetNotificationsByOtherAppResponse {
+    repeated UserNotification Infos = 10;
+}
+
 
 message ReadUser {
     string ID = 10;
@@ -264,11 +348,22 @@ message Mail {
 }
 
 message CreateMailRequest {
+    string UserID = 50;
     Mail Info = 10;
 }
 
 message CreateMailResponse {
     Mail Info = 20;
+}
+
+message CreateMailForOtherAppUserRequest {
+    string TargetAppID = 5;
+    string TargetUserID = 6;
+    Mail Info = 10;
+}
+
+message CreateMailForOtherAppUserResponse {
+    Mail Info = 10;
 }
 
 message UpdateMailRequest {
@@ -277,6 +372,31 @@ message UpdateMailRequest {
 
 message UpdateMailResponse {
     Mail Info = 10;
+}
+
+message GetMailsRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetMailsResponse {
+    repeated Mail Infos = 10;
+}
+
+message GetMailsByAppRequest {
+    string AppID = 10;
+}
+
+message GetMailsByAppResponse {
+    repeated Mail Infos = 10;
+}
+
+message GetMailsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetMailsByOtherAppResponse {
+    repeated Mail Infos = 10;
 }
 
 message Template {

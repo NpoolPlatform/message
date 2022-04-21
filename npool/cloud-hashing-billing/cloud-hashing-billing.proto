@@ -246,6 +246,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetCoinSettings (GetCoinSettingsRequest) returns (GetCoinSettingsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coin/settings"
+            body: "*"
+        };
+    }
 
     rpc CreateGoodBenefit (CreateGoodBenefitRequest) returns (CreateGoodBenefitResponse) {
         option (google.api.http) = {
@@ -268,6 +274,12 @@ service CloudHashingBilling {
     rpc GetGoodBenefitByGood (GetGoodBenefitByGoodRequest) returns (GetGoodBenefitByGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/good/benefit/by/good"
+            body: "*"
+        };
+    }
+    rpc GetGoodBenefits (GetGoodBenefitsRequest) returns (GetGoodBenefitsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/benefits"
             body: "*"
         };
     }
@@ -360,6 +372,18 @@ service CloudHashingBilling {
     rpc GetUserWithdrawsByOtherAppUser (GetUserWithdrawsByOtherAppUserRequest) returns (GetUserWithdrawsByOtherAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/withdraws/by/other/app/user"
+            body: "*"
+        };
+    }
+    rpc GetUserWithdrawsByApp (GetUserWithdrawsByAppRequest) returns (GetUserWithdrawsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraws/by/app"
+            body: "*"
+        };
+    }
+    rpc GetUserWithdrawsByOtherApp (GetUserWithdrawsByOtherAppRequest) returns (GetUserWithdrawsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraws/by/other/app"
             body: "*"
         };
     }
@@ -970,6 +994,13 @@ message GetCoinSettingByCoinResponse {
     CoinSetting Info = 10;
 }
 
+message GetCoinSettingsRequest {
+}
+
+message GetCoinSettingsResponse {
+    repeated CoinSetting Infos = 10;
+}
+
 message GoodBenefit {
     string ID = 10;
     string GoodID = 20;
@@ -1008,6 +1039,14 @@ message GetGoodBenefitByGoodRequest {
 message GetGoodBenefitByGoodResponse {
     GoodBenefit Info = 10;
 }
+
+message GetGoodBenefitsRequest {
+}
+
+message GetGoodBenefitsResponse {
+    repeated GoodBenefit Infos = 10;
+}
+
 
 message GoodPayment {
     string ID = 10;
@@ -1155,6 +1194,22 @@ message GetUserWithdrawsByOtherAppUserRequest {
 }
 
 message GetUserWithdrawsByOtherAppUserResponse {
+    repeated UserWithdraw Infos = 10;
+}
+
+message GetUserWithdrawsByAppRequest {
+    string AppID = 10;
+}
+
+message GetUserWithdrawsByAppResponse {
+    repeated UserWithdraw Infos = 10;
+}
+
+message GetUserWithdrawsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetUserWithdrawsByOtherAppResponse {
     repeated UserWithdraw Infos = 10;
 }
 

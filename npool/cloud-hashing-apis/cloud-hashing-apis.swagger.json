@@ -11,6 +11,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/app/user/control": {
+      "post": {
+        "operationId": "CloudHashingApis_CreateAppUserControl",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1CreateAppUserControlResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1CreateAppUserControlRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/create/app/user/extra": {
       "post": {
         "operationId": "CloudHashingApis_CreateAppUserExtra",
@@ -1195,6 +1227,38 @@
         ]
       }
     },
+    "/v1/update/app/user/control": {
+      "post": {
+        "operationId": "CloudHashingApis_UpdateAppUserControl",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1UpdateAppUserControlResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1UpdateAppUserControlRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/update/app/user/extra": {
       "post": {
         "operationId": "CloudHashingApis_UpdateAppUserExtra",
@@ -1581,6 +1645,22 @@
     }
   },
   "definitions": {
+    "hashingapisv1CreateAppUserControlRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserControl"
+        }
+      }
+    },
+    "hashingapisv1CreateAppUserControlResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
+        }
+      }
+    },
     "hashingapisv1CreateAppUserExtraRequest": {
       "type": "object",
       "properties": {
@@ -1855,6 +1935,22 @@
         },
         "Recommend": {
           "$ref": "#/definitions/v1Recommend"
+        }
+      }
+    },
+    "hashingapisv1UpdateAppUserControlRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserControl"
+        }
+      }
+    },
+    "hashingapisv1UpdateAppUserControlResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
         }
       }
     },
@@ -2332,6 +2428,12 @@
         },
         "ForPay": {
           "type": "boolean"
+        },
+        "HomePage": {
+          "type": "string"
+        },
+        "Specs": {
+          "type": "string"
         }
       }
     },
@@ -3744,7 +3846,7 @@
         "Info": {
           "$ref": "#/definitions/v1Review"
         },
-        "LangID": {
+        "TargetLangID": {
           "type": "string"
         }
       }

@@ -263,6 +263,7 @@ message AppSMSTemplate {
 }
 
 message CreateAppSMSTemplateRequest {
+    string TargetLangID = 5;
     AppSMSTemplate Info = 10;
 }
 
@@ -272,6 +273,7 @@ message CreateAppSMSTemplateResponse {
 
 message CreateAppSMSTemplateForOtherAppRequest {
     string TargetAppID = 10;
+    string TargetLangID = 15;
     AppSMSTemplate Info = 20;
 }
 
@@ -335,6 +337,7 @@ message AppEmailTemplate {
 }
 
 message CreateAppEmailTemplateRequest {
+    string TargetLangID = 5;
     AppEmailTemplate Info = 10;
 }
 
@@ -344,6 +347,7 @@ message CreateAppEmailTemplateResponse {
 
 message CreateAppEmailTemplateForOtherAppRequest {
     string TargetAppID = 10;
+    string TargetLangID = 15;
     AppEmailTemplate Info = 20;
 }
 

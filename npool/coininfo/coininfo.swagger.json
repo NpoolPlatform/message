@@ -11,6 +11,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/coin/description": {
+      "post": {
+        "operationId": "SphinxCoinInfo_CreateCoinDescription",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateCoinDescriptionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateCoinDescriptionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SphinxCoinInfo"
+        ]
+      }
+    },
     "/v1/create/coininfo": {
       "post": {
         "operationId": "SphinxCoinInfo_CreateCoinInfo",
@@ -35,6 +67,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateCoinInfoRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SphinxCoinInfo"
+        ]
+      }
+    },
+    "/v1/get/coin/description": {
+      "post": {
+        "operationId": "SphinxCoinInfo_GetCoinDescription",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinDescriptionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinDescriptionRequest"
             }
           }
         ],
@@ -99,6 +163,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetCoinInfosRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SphinxCoinInfo"
+        ]
+      }
+    },
+    "/v1/update/coin/description": {
+      "post": {
+        "operationId": "SphinxCoinInfo_UpdateCoinDescription",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCoinDescriptionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCoinDescriptionRequest"
             }
           }
         ],
@@ -206,6 +302,34 @@
         }
       }
     },
+    "v1CoinDescriptionInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1CoinInfo": {
       "type": "object",
       "properties": {
@@ -241,6 +365,37 @@
         },
         "ForPay": {
           "type": "boolean"
+        },
+        "HomePage": {
+          "type": "string"
+        },
+        "Specs": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateCoinDescriptionRequest": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateCoinDescriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinDescriptionInfo"
         }
       }
     },
@@ -269,6 +424,37 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1CoinInfo"
+        }
+      }
+    },
+    "v1GetCoinDescriptionRequest": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetCoinDescriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinDescriptionInfo"
+          }
         }
       }
     },
@@ -325,6 +511,34 @@
         }
       }
     },
+    "v1UpdateCoinDescriptionRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateCoinDescriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinDescriptionInfo"
+        }
+      }
+    },
     "v1UpdateCoinInfoRequest": {
       "type": "object",
       "properties": {
@@ -343,6 +557,12 @@
         },
         "ForPay": {
           "type": "boolean"
+        },
+        "HomePage": {
+          "type": "string"
+        },
+        "Specs": {
+          "type": "string"
         }
       }
     },

@@ -971,6 +971,9 @@
     "v1CreateMessageRequest": {
       "type": "object",
       "properties": {
+        "TargetLangID": {
+          "type": "string"
+        },
         "Info": {
           "$ref": "#/definitions/v1Message"
         }
@@ -987,6 +990,9 @@
     "v1CreateMessagesRequest": {
       "type": "object",
       "properties": {
+        "TargetLangID": {
+          "type": "string"
+        },
         "Infos": {
           "type": "array",
           "items": {
@@ -1169,6 +1175,9 @@
         },
         "LangID": {
           "type": "string"
+        },
+        "TargetLangID": {
+          "type": "string"
         }
       }
     },
@@ -1190,6 +1199,9 @@
           "type": "string"
         },
         "LangID": {
+          "type": "string"
+        },
+        "TargetLangID": {
           "type": "string"
         }
       }

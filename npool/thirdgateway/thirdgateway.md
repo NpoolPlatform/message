@@ -315,6 +315,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 | Info | [AppEmailTemplate](#third-gateway-v1-AppEmailTemplate) |  |  |
 
 
@@ -345,6 +346,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| TargetLangID | [string](#string) |  |  |
 | Info | [AppEmailTemplate](#third-gateway-v1-AppEmailTemplate) |  |  |
 
 
@@ -376,6 +378,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 | Info | [AppSMSTemplate](#third-gateway-v1-AppSMSTemplate) |  |  |
 
 
@@ -406,6 +409,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| TargetLangID | [string](#string) |  |  |
 | Info | [AppSMSTemplate](#third-gateway-v1-AppSMSTemplate) |  |  |
 
 
@@ -1347,6 +1351,7 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 | Info | [AppEmailTemplate](#third-gateway-v1-AppEmailTemplate) |  |  |
 
 
@@ -1377,6 +1382,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| TargetLangID | [string](#string) |  |  |
 | Info | [AppEmailTemplate](#third-gateway-v1-AppEmailTemplate) |  |  |
 
 
@@ -1408,6 +1414,7 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 | Info | [AppSMSTemplate](#third-gateway-v1-AppSMSTemplate) |  |  |
 
 
@@ -1438,6 +1445,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| TargetLangID | [string](#string) |  |  |
 | Info | [AppSMSTemplate](#third-gateway-v1-AppSMSTemplate) |  |  |
 
 

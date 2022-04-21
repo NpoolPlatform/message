@@ -366,6 +366,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| TargetLangID | [string](#string) |  |  |
 | Info | [Message](#internationalization-v1-Message) |  |  |
 
 
@@ -396,6 +397,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| TargetLangID | [string](#string) |  |  |
 | Infos | [Message](#internationalization-v1-Message) | repeated |  |
 
 
@@ -690,6 +692,7 @@
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | LangID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 
 
 
@@ -721,6 +724,7 @@
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
 | LangID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 
 
 
@@ -1192,6 +1196,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| TargetLangID | [string](#string) |  |  |
 | Info | [Message](#internationalization-v1-Message) |  |  |
 
 
@@ -1222,6 +1227,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| TargetLangID | [string](#string) |  |  |
 | Infos | [Message](#internationalization-v1-Message) | repeated |  |
 
 
@@ -1516,6 +1522,7 @@ Service Name
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | LangID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 
 
 
@@ -1547,6 +1554,7 @@ Service Name
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
 | LangID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 
 
 

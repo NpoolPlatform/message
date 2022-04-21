@@ -4,13 +4,20 @@
 ## Table of Contents
 
 - [npool/coininfo/coininfo.proto](#npool_coininfo_coininfo-proto)
+    - [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo)
     - [CoinInfo](#sphinx-coininfo-v1-CoinInfo)
+    - [CreateCoinDescriptionRequest](#sphinx-coininfo-v1-CreateCoinDescriptionRequest)
+    - [CreateCoinDescriptionResponse](#sphinx-coininfo-v1-CreateCoinDescriptionResponse)
     - [CreateCoinInfoRequest](#sphinx-coininfo-v1-CreateCoinInfoRequest)
     - [CreateCoinInfoResponse](#sphinx-coininfo-v1-CreateCoinInfoResponse)
+    - [GetCoinDescriptionRequest](#sphinx-coininfo-v1-GetCoinDescriptionRequest)
+    - [GetCoinDescriptionResponse](#sphinx-coininfo-v1-GetCoinDescriptionResponse)
     - [GetCoinInfoRequest](#sphinx-coininfo-v1-GetCoinInfoRequest)
     - [GetCoinInfoResponse](#sphinx-coininfo-v1-GetCoinInfoResponse)
     - [GetCoinInfosRequest](#sphinx-coininfo-v1-GetCoinInfosRequest)
     - [GetCoinInfosResponse](#sphinx-coininfo-v1-GetCoinInfosResponse)
+    - [UpdateCoinDescriptionRequest](#sphinx-coininfo-v1-UpdateCoinDescriptionRequest)
+    - [UpdateCoinDescriptionResponse](#sphinx-coininfo-v1-UpdateCoinDescriptionResponse)
     - [UpdateCoinInfoRequest](#sphinx-coininfo-v1-UpdateCoinInfoRequest)
     - [UpdateCoinInfoResponse](#sphinx-coininfo-v1-UpdateCoinInfoResponse)
     - [VersionResponse](#sphinx-coininfo-v1-VersionResponse)
@@ -18,13 +25,20 @@
     - [SphinxCoinInfo](#sphinx-coininfo-v1-SphinxCoinInfo)
   
 - [npool/coininfo/coininfo.proto](#npool_coininfo_coininfo-proto)
+    - [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo)
     - [CoinInfo](#sphinx-coininfo-v1-CoinInfo)
+    - [CreateCoinDescriptionRequest](#sphinx-coininfo-v1-CreateCoinDescriptionRequest)
+    - [CreateCoinDescriptionResponse](#sphinx-coininfo-v1-CreateCoinDescriptionResponse)
     - [CreateCoinInfoRequest](#sphinx-coininfo-v1-CreateCoinInfoRequest)
     - [CreateCoinInfoResponse](#sphinx-coininfo-v1-CreateCoinInfoResponse)
+    - [GetCoinDescriptionRequest](#sphinx-coininfo-v1-GetCoinDescriptionRequest)
+    - [GetCoinDescriptionResponse](#sphinx-coininfo-v1-GetCoinDescriptionResponse)
     - [GetCoinInfoRequest](#sphinx-coininfo-v1-GetCoinInfoRequest)
     - [GetCoinInfoResponse](#sphinx-coininfo-v1-GetCoinInfoResponse)
     - [GetCoinInfosRequest](#sphinx-coininfo-v1-GetCoinInfosRequest)
     - [GetCoinInfosResponse](#sphinx-coininfo-v1-GetCoinInfosResponse)
+    - [UpdateCoinDescriptionRequest](#sphinx-coininfo-v1-UpdateCoinDescriptionRequest)
+    - [UpdateCoinDescriptionResponse](#sphinx-coininfo-v1-UpdateCoinDescriptionResponse)
     - [UpdateCoinInfoRequest](#sphinx-coininfo-v1-UpdateCoinInfoRequest)
     - [UpdateCoinInfoResponse](#sphinx-coininfo-v1-UpdateCoinInfoResponse)
     - [VersionResponse](#sphinx-coininfo-v1-VersionResponse)
@@ -42,6 +56,27 @@
 
 
 
+<a name="sphinx-coininfo-v1-CoinDescriptionInfo"></a>
+
+### CoinDescriptionInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| Title | [string](#string) |  |  |
+| Message | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+| CreatedAt | [uint32](#uint32) |  |  |
+| UpdatedAt | [uint32](#uint32) |  |  |
+
+
+
+
+
+
 <a name="sphinx-coininfo-v1-CoinInfo"></a>
 
 ### CoinInfo
@@ -60,6 +95,41 @@
 | CreatedAt | [uint32](#uint32) |  |  |
 | UpdatedAt | [uint32](#uint32) |  |  |
 | ForPay | [bool](#bool) |  | 是否可用作支付货币 |
+| HomePage | [string](#string) |  |  |
+| Specs | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="sphinx-coininfo-v1-CreateCoinDescriptionRequest"></a>
+
+### CreateCoinDescriptionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinTypeID | [string](#string) |  |  |
+| Title | [string](#string) |  |  |
+| Message | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="sphinx-coininfo-v1-CreateCoinDescriptionResponse"></a>
+
+### CreateCoinDescriptionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) |  |  |
 
 
 
@@ -94,6 +164,39 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [CoinInfo](#sphinx-coininfo-v1-CoinInfo) |  |  |
+
+
+
+
+
+
+<a name="sphinx-coininfo-v1-GetCoinDescriptionRequest"></a>
+
+### GetCoinDescriptionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinTypeID | [string](#string) |  |  |
+| Limit | [int32](#int32) |  |  |
+| Offset | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="sphinx-coininfo-v1-GetCoinDescriptionResponse"></a>
+
+### GetCoinDescriptionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Total | [int32](#int32) |  |  |
+| Infos | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) | repeated |  |
 
 
 
@@ -165,6 +268,40 @@
 
 
 
+<a name="sphinx-coininfo-v1-UpdateCoinDescriptionRequest"></a>
+
+### UpdateCoinDescriptionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| Title | [string](#string) |  |  |
+| Message | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="sphinx-coininfo-v1-UpdateCoinDescriptionResponse"></a>
+
+### UpdateCoinDescriptionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) |  |  |
+
+
+
+
+
+
 <a name="sphinx-coininfo-v1-UpdateCoinInfoRequest"></a>
 
 ### UpdateCoinInfoRequest
@@ -178,6 +315,8 @@
 | Logo | [string](#string) |  | url; can be empty |
 | ReservedAmount | [double](#double) |  |  |
 | ForPay | [bool](#bool) |  |  |
+| HomePage | [string](#string) |  |  |
+| Specs | [string](#string) |  |  |
 
 
 
@@ -232,6 +371,9 @@
 | GetCoinInfo | [GetCoinInfoRequest](#sphinx-coininfo-v1-GetCoinInfoRequest) | [GetCoinInfoResponse](#sphinx-coininfo-v1-GetCoinInfoResponse) |  |
 | GetCoinInfos | [GetCoinInfosRequest](#sphinx-coininfo-v1-GetCoinInfosRequest) | [GetCoinInfosResponse](#sphinx-coininfo-v1-GetCoinInfosResponse) |  |
 | UpdateCoinInfo | [UpdateCoinInfoRequest](#sphinx-coininfo-v1-UpdateCoinInfoRequest) | [UpdateCoinInfoResponse](#sphinx-coininfo-v1-UpdateCoinInfoResponse) |  |
+| CreateCoinDescription | [CreateCoinDescriptionRequest](#sphinx-coininfo-v1-CreateCoinDescriptionRequest) | [CreateCoinDescriptionResponse](#sphinx-coininfo-v1-CreateCoinDescriptionResponse) |  |
+| GetCoinDescription | [GetCoinDescriptionRequest](#sphinx-coininfo-v1-GetCoinDescriptionRequest) | [GetCoinDescriptionResponse](#sphinx-coininfo-v1-GetCoinDescriptionResponse) |  |
+| UpdateCoinDescription | [UpdateCoinDescriptionRequest](#sphinx-coininfo-v1-UpdateCoinDescriptionRequest) | [UpdateCoinDescriptionResponse](#sphinx-coininfo-v1-UpdateCoinDescriptionResponse) |  |
 
  
 
@@ -244,6 +386,27 @@
 
 
 
+<a name="sphinx-coininfo-v1-CoinDescriptionInfo"></a>
+
+### CoinDescriptionInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| Title | [string](#string) |  |  |
+| Message | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+| CreatedAt | [uint32](#uint32) |  |  |
+| UpdatedAt | [uint32](#uint32) |  |  |
+
+
+
+
+
+
 <a name="sphinx-coininfo-v1-CoinInfo"></a>
 
 ### CoinInfo
@@ -262,6 +425,41 @@
 | CreatedAt | [uint32](#uint32) |  |  |
 | UpdatedAt | [uint32](#uint32) |  |  |
 | ForPay | [bool](#bool) |  | 是否可用作支付货币 |
+| HomePage | [string](#string) |  |  |
+| Specs | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="sphinx-coininfo-v1-CreateCoinDescriptionRequest"></a>
+
+### CreateCoinDescriptionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinTypeID | [string](#string) |  |  |
+| Title | [string](#string) |  |  |
+| Message | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="sphinx-coininfo-v1-CreateCoinDescriptionResponse"></a>
+
+### CreateCoinDescriptionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) |  |  |
 
 
 
@@ -296,6 +494,39 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [CoinInfo](#sphinx-coininfo-v1-CoinInfo) |  |  |
+
+
+
+
+
+
+<a name="sphinx-coininfo-v1-GetCoinDescriptionRequest"></a>
+
+### GetCoinDescriptionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinTypeID | [string](#string) |  |  |
+| Limit | [int32](#int32) |  |  |
+| Offset | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="sphinx-coininfo-v1-GetCoinDescriptionResponse"></a>
+
+### GetCoinDescriptionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Total | [int32](#int32) |  |  |
+| Infos | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) | repeated |  |
 
 
 
@@ -367,6 +598,40 @@
 
 
 
+<a name="sphinx-coininfo-v1-UpdateCoinDescriptionRequest"></a>
+
+### UpdateCoinDescriptionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| Title | [string](#string) |  |  |
+| Message | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="sphinx-coininfo-v1-UpdateCoinDescriptionResponse"></a>
+
+### UpdateCoinDescriptionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) |  |  |
+
+
+
+
+
+
 <a name="sphinx-coininfo-v1-UpdateCoinInfoRequest"></a>
 
 ### UpdateCoinInfoRequest
@@ -380,6 +645,8 @@
 | Logo | [string](#string) |  | url; can be empty |
 | ReservedAmount | [double](#double) |  |  |
 | ForPay | [bool](#bool) |  |  |
+| HomePage | [string](#string) |  |  |
+| Specs | [string](#string) |  |  |
 
 
 
@@ -434,6 +701,9 @@
 | GetCoinInfo | [GetCoinInfoRequest](#sphinx-coininfo-v1-GetCoinInfoRequest) | [GetCoinInfoResponse](#sphinx-coininfo-v1-GetCoinInfoResponse) |  |
 | GetCoinInfos | [GetCoinInfosRequest](#sphinx-coininfo-v1-GetCoinInfosRequest) | [GetCoinInfosResponse](#sphinx-coininfo-v1-GetCoinInfosResponse) |  |
 | UpdateCoinInfo | [UpdateCoinInfoRequest](#sphinx-coininfo-v1-UpdateCoinInfoRequest) | [UpdateCoinInfoResponse](#sphinx-coininfo-v1-UpdateCoinInfoResponse) |  |
+| CreateCoinDescription | [CreateCoinDescriptionRequest](#sphinx-coininfo-v1-CreateCoinDescriptionRequest) | [CreateCoinDescriptionResponse](#sphinx-coininfo-v1-CreateCoinDescriptionResponse) |  |
+| GetCoinDescription | [GetCoinDescriptionRequest](#sphinx-coininfo-v1-GetCoinDescriptionRequest) | [GetCoinDescriptionResponse](#sphinx-coininfo-v1-GetCoinDescriptionResponse) |  |
+| UpdateCoinDescription | [UpdateCoinDescriptionRequest](#sphinx-coininfo-v1-UpdateCoinDescriptionRequest) | [UpdateCoinDescriptionResponse](#sphinx-coininfo-v1-UpdateCoinDescriptionResponse) |  |
 
  
 

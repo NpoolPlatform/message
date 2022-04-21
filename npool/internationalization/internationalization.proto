@@ -210,6 +210,7 @@ message Message {
 }
 
 message CreateMessageRequest {
+    string TargetLangID = 5;
     Message Info = 10;
 }
 
@@ -227,6 +228,7 @@ message CreateMessageForOtherAppResponse {
 }
 
 message CreateMessagesRequest {
+    string TargetLangID = 5;
     repeated Message Infos = 10;
 }
 
@@ -253,6 +255,7 @@ message UpdateMessagesResponse {
 message GetMessagesByAppLangRequest {
     string AppID = 10;
     string LangID = 20;
+    string TargetLangID = 30;
 }
 
 message GetMessagesByAppLangResponse {
@@ -262,6 +265,7 @@ message GetMessagesByAppLangResponse {
 message GetMessagesByOtherAppLangRequest {
     string TargetAppID = 10;
     string LangID = 20;
+    string TargetLangID = 30;
 }
 
 message GetMessagesByOtherAppLangResponse {

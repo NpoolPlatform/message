@@ -54,6 +54,8 @@
     - [GetPaymentsByAppResponse](#cloud-hashing-order-v1-GetPaymentsByAppResponse)
     - [GetPaymentsByAppUserRequest](#cloud-hashing-order-v1-GetPaymentsByAppUserRequest)
     - [GetPaymentsByAppUserResponse](#cloud-hashing-order-v1-GetPaymentsByAppUserResponse)
+    - [GetPaymentsByOtherAppRequest](#cloud-hashing-order-v1-GetPaymentsByOtherAppRequest)
+    - [GetPaymentsByOtherAppResponse](#cloud-hashing-order-v1-GetPaymentsByOtherAppResponse)
     - [GetPaymentsByStateRequest](#cloud-hashing-order-v1-GetPaymentsByStateRequest)
     - [GetPaymentsByStateResponse](#cloud-hashing-order-v1-GetPaymentsByStateResponse)
     - [GetPaymentsRequest](#cloud-hashing-order-v1-GetPaymentsRequest)
@@ -123,6 +125,8 @@
     - [GetPaymentsByAppResponse](#cloud-hashing-order-v1-GetPaymentsByAppResponse)
     - [GetPaymentsByAppUserRequest](#cloud-hashing-order-v1-GetPaymentsByAppUserRequest)
     - [GetPaymentsByAppUserResponse](#cloud-hashing-order-v1-GetPaymentsByAppUserResponse)
+    - [GetPaymentsByOtherAppRequest](#cloud-hashing-order-v1-GetPaymentsByOtherAppRequest)
+    - [GetPaymentsByOtherAppResponse](#cloud-hashing-order-v1-GetPaymentsByOtherAppResponse)
     - [GetPaymentsByStateRequest](#cloud-hashing-order-v1-GetPaymentsByStateRequest)
     - [GetPaymentsByStateResponse](#cloud-hashing-order-v1-GetPaymentsByStateResponse)
     - [GetPaymentsRequest](#cloud-hashing-order-v1-GetPaymentsRequest)
@@ -917,6 +921,36 @@
 
 
 
+<a name="cloud-hashing-order-v1-GetPaymentsByOtherAppRequest"></a>
+
+### GetPaymentsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-order-v1-GetPaymentsByOtherAppResponse"></a>
+
+### GetPaymentsByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Payment](#cloud-hashing-order-v1-Payment) | repeated |  |
+
+
+
+
+
+
 <a name="cloud-hashing-order-v1-GetPaymentsByStateRequest"></a>
 
 ### GetPaymentsByStateRequest
@@ -1212,6 +1246,7 @@ Service Name
 | GetPaymentByOrder | [GetPaymentByOrderRequest](#cloud-hashing-order-v1-GetPaymentByOrderRequest) | [GetPaymentByOrderResponse](#cloud-hashing-order-v1-GetPaymentByOrderResponse) |  |
 | GetPaymentsByState | [GetPaymentsByStateRequest](#cloud-hashing-order-v1-GetPaymentsByStateRequest) | [GetPaymentsByStateResponse](#cloud-hashing-order-v1-GetPaymentsByStateResponse) |  |
 | GetPaymentsByApp | [GetPaymentsByAppRequest](#cloud-hashing-order-v1-GetPaymentsByAppRequest) | [GetPaymentsByAppResponse](#cloud-hashing-order-v1-GetPaymentsByAppResponse) |  |
+| GetPaymentsByOtherApp | [GetPaymentsByOtherAppRequest](#cloud-hashing-order-v1-GetPaymentsByOtherAppRequest) | [GetPaymentsByOtherAppResponse](#cloud-hashing-order-v1-GetPaymentsByOtherAppResponse) |  |
 | GetPaymentsByAppUser | [GetPaymentsByAppUserRequest](#cloud-hashing-order-v1-GetPaymentsByAppUserRequest) | [GetPaymentsByAppUserResponse](#cloud-hashing-order-v1-GetPaymentsByAppUserResponse) |  |
 | GetPayments | [GetPaymentsRequest](#cloud-hashing-order-v1-GetPaymentsRequest) | [GetPaymentsResponse](#cloud-hashing-order-v1-GetPaymentsResponse) |  |
 | GetOrdersDetailByAppUser | [GetOrdersDetailByAppUserRequest](#cloud-hashing-order-v1-GetOrdersDetailByAppUserRequest) | [GetOrdersDetailByAppUserResponse](#cloud-hashing-order-v1-GetOrdersDetailByAppUserResponse) |  |
@@ -1995,6 +2030,36 @@ Service Name
 
 
 
+<a name="cloud-hashing-order-v1-GetPaymentsByOtherAppRequest"></a>
+
+### GetPaymentsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-order-v1-GetPaymentsByOtherAppResponse"></a>
+
+### GetPaymentsByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Payment](#cloud-hashing-order-v1-Payment) | repeated |  |
+
+
+
+
+
+
 <a name="cloud-hashing-order-v1-GetPaymentsByStateRequest"></a>
 
 ### GetPaymentsByStateRequest
@@ -2290,6 +2355,7 @@ Service Name
 | GetPaymentByOrder | [GetPaymentByOrderRequest](#cloud-hashing-order-v1-GetPaymentByOrderRequest) | [GetPaymentByOrderResponse](#cloud-hashing-order-v1-GetPaymentByOrderResponse) |  |
 | GetPaymentsByState | [GetPaymentsByStateRequest](#cloud-hashing-order-v1-GetPaymentsByStateRequest) | [GetPaymentsByStateResponse](#cloud-hashing-order-v1-GetPaymentsByStateResponse) |  |
 | GetPaymentsByApp | [GetPaymentsByAppRequest](#cloud-hashing-order-v1-GetPaymentsByAppRequest) | [GetPaymentsByAppResponse](#cloud-hashing-order-v1-GetPaymentsByAppResponse) |  |
+| GetPaymentsByOtherApp | [GetPaymentsByOtherAppRequest](#cloud-hashing-order-v1-GetPaymentsByOtherAppRequest) | [GetPaymentsByOtherAppResponse](#cloud-hashing-order-v1-GetPaymentsByOtherAppResponse) |  |
 | GetPaymentsByAppUser | [GetPaymentsByAppUserRequest](#cloud-hashing-order-v1-GetPaymentsByAppUserRequest) | [GetPaymentsByAppUserResponse](#cloud-hashing-order-v1-GetPaymentsByAppUserResponse) |  |
 | GetPayments | [GetPaymentsRequest](#cloud-hashing-order-v1-GetPaymentsRequest) | [GetPaymentsResponse](#cloud-hashing-order-v1-GetPaymentsResponse) |  |
 | GetOrdersDetailByAppUser | [GetOrdersDetailByAppUserRequest](#cloud-hashing-order-v1-GetOrdersDetailByAppUserRequest) | [GetOrdersDetailByAppUserResponse](#cloud-hashing-order-v1-GetOrdersDetailByAppUserResponse) |  |

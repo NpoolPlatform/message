@@ -409,6 +409,13 @@ export type GetCoinSettingByCoinResponse = {
   info?: CoinSetting
 }
 
+export type GetCoinSettingsRequest = {
+}
+
+export type GetCoinSettingsResponse = {
+  infos?: CoinSetting[]
+}
+
 export type GoodBenefit = {
   id?: string
   goodID?: string
@@ -446,6 +453,13 @@ export type GetGoodBenefitByGoodRequest = {
 
 export type GetGoodBenefitByGoodResponse = {
   info?: GoodBenefit
+}
+
+export type GetGoodBenefitsRequest = {
+}
+
+export type GetGoodBenefitsResponse = {
+  infos?: GoodBenefit[]
 }
 
 export type GoodPayment = {
@@ -593,6 +607,22 @@ export type GetUserWithdrawsByOtherAppUserRequest = {
 }
 
 export type GetUserWithdrawsByOtherAppUserResponse = {
+  infos?: UserWithdraw[]
+}
+
+export type GetUserWithdrawsByAppRequest = {
+  appID?: string
+}
+
+export type GetUserWithdrawsByAppResponse = {
+  infos?: UserWithdraw[]
+}
+
+export type GetUserWithdrawsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetUserWithdrawsByOtherAppResponse = {
   infos?: UserWithdraw[]
 }
 
@@ -1030,6 +1060,9 @@ export class CloudHashingBilling {
   static GetCoinSettingByCoin(req: GetCoinSettingByCoinRequest, initReq?: fm.InitReq): Promise<GetCoinSettingByCoinResponse> {
     return fm.fetchReq<GetCoinSettingByCoinRequest, GetCoinSettingByCoinResponse>(`/v1/get/coin/setting/by/coin`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetCoinSettings(req: GetCoinSettingsRequest, initReq?: fm.InitReq): Promise<GetCoinSettingsResponse> {
+    return fm.fetchReq<GetCoinSettingsRequest, GetCoinSettingsResponse>(`/v1/get/coin/settings`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static CreateGoodBenefit(req: CreateGoodBenefitRequest, initReq?: fm.InitReq): Promise<CreateGoodBenefitResponse> {
     return fm.fetchReq<CreateGoodBenefitRequest, CreateGoodBenefitResponse>(`/v1/create/good/benefit`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -1041,6 +1074,9 @@ export class CloudHashingBilling {
   }
   static GetGoodBenefitByGood(req: GetGoodBenefitByGoodRequest, initReq?: fm.InitReq): Promise<GetGoodBenefitByGoodResponse> {
     return fm.fetchReq<GetGoodBenefitByGoodRequest, GetGoodBenefitByGoodResponse>(`/v1/get/good/benefit/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodBenefits(req: GetGoodBenefitsRequest, initReq?: fm.InitReq): Promise<GetGoodBenefitsResponse> {
+    return fm.fetchReq<GetGoodBenefitsRequest, GetGoodBenefitsResponse>(`/v1/get/good/benefits`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateGoodPayment(req: CreateGoodPaymentRequest, initReq?: fm.InitReq): Promise<CreateGoodPaymentResponse> {
     return fm.fetchReq<CreateGoodPaymentRequest, CreateGoodPaymentResponse>(`/v1/create/good/payment`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -1086,6 +1122,12 @@ export class CloudHashingBilling {
   }
   static GetUserWithdrawsByOtherAppUser(req: GetUserWithdrawsByOtherAppUserRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawsByOtherAppUserResponse> {
     return fm.fetchReq<GetUserWithdrawsByOtherAppUserRequest, GetUserWithdrawsByOtherAppUserResponse>(`/v1/get/user/withdraws/by/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserWithdrawsByApp(req: GetUserWithdrawsByAppRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawsByAppResponse> {
+    return fm.fetchReq<GetUserWithdrawsByAppRequest, GetUserWithdrawsByAppResponse>(`/v1/get/user/withdraws/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserWithdrawsByOtherApp(req: GetUserWithdrawsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawsByOtherAppResponse> {
+    return fm.fetchReq<GetUserWithdrawsByOtherAppRequest, GetUserWithdrawsByOtherAppResponse>(`/v1/get/user/withdraws/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserWithdrawAccount(req: GetUserWithdrawAccountRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawAccountResponse> {
     return fm.fetchReq<GetUserWithdrawAccountRequest, GetUserWithdrawAccountResponse>(`/v1/get/user/withdraw/account`, {...initReq, method: "POST", body: JSON.stringify(req)})

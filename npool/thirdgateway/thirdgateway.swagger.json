@@ -1173,6 +1173,9 @@
         "TargetAppID": {
           "type": "string"
         },
+        "TargetLangID": {
+          "type": "string"
+        },
         "Info": {
           "$ref": "#/definitions/v1AppEmailTemplate"
         }
@@ -1189,6 +1192,9 @@
     "v1CreateAppEmailTemplateRequest": {
       "type": "object",
       "properties": {
+        "TargetLangID": {
+          "type": "string"
+        },
         "Info": {
           "$ref": "#/definitions/v1AppEmailTemplate"
         }
@@ -1208,6 +1214,9 @@
         "TargetAppID": {
           "type": "string"
         },
+        "TargetLangID": {
+          "type": "string"
+        },
         "Info": {
           "$ref": "#/definitions/v1AppSMSTemplate"
         }
@@ -1224,6 +1233,9 @@
     "v1CreateAppSMSTemplateRequest": {
       "type": "object",
       "properties": {
+        "TargetLangID": {
+          "type": "string"
+        },
         "Info": {
           "$ref": "#/definitions/v1AppSMSTemplate"
         }

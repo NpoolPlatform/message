@@ -249,6 +249,22 @@ export type CreateAppUserExtraResponse = {
   info?: AppUserManagerV1Appusermgr.AppUserInfo
 }
 
+export type CreateAppUserControlRequest = {
+  info?: AppUserManagerV1Appusermgr.AppUserControl
+}
+
+export type CreateAppUserControlResponse = {
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
+}
+
+export type UpdateAppUserControlRequest = {
+  info?: AppUserManagerV1Appusermgr.AppUserControl
+}
+
+export type UpdateAppUserControlResponse = {
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
+}
+
 export type CoinSummary = {
   coinTypeID?: string
   coinName?: string
@@ -567,7 +583,7 @@ export type GetCommissionByAppUserResponse = {
 
 export type UpdateKycReviewRequest = {
   info?: ReviewServiceV1Review-service.Review
-  langID?: string
+  targetLangID?: string
 }
 
 export type UpdateKycReviewResponse = {
@@ -652,6 +668,12 @@ export class CloudHashingApis {
   }
   static UpdateAppUserExtra(req: UpdateAppUserExtraRequest, initReq?: fm.InitReq): Promise<UpdateAppUserExtraResponse> {
     return fm.fetchReq<UpdateAppUserExtraRequest, UpdateAppUserExtraResponse>(`/v1/update/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppUserControl(req: CreateAppUserControlRequest, initReq?: fm.InitReq): Promise<CreateAppUserControlResponse> {
+    return fm.fetchReq<CreateAppUserControlRequest, CreateAppUserControlResponse>(`/v1/create/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateAppUserControl(req: UpdateAppUserControlRequest, initReq?: fm.InitReq): Promise<UpdateAppUserControlResponse> {
+    return fm.fetchReq<UpdateAppUserControlRequest, UpdateAppUserControlResponse>(`/v1/update/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetReferrals(req: GetReferralsRequest, initReq?: fm.InitReq): Promise<GetReferralsResponse> {
     return fm.fetchReq<GetReferralsRequest, GetReferralsResponse>(`/v1/get/referrals`, {...initReq, method: "POST", body: JSON.stringify(req)})

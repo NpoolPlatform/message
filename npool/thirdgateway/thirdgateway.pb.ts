@@ -70,6 +70,7 @@ export type AppSMSTemplate = {
 }
 
 export type CreateAppSMSTemplateRequest = {
+  targetLangID?: string
   info?: AppSMSTemplate
 }
 
@@ -79,6 +80,7 @@ export type CreateAppSMSTemplateResponse = {
 
 export type CreateAppSMSTemplateForOtherAppRequest = {
   targetAppID?: string
+  targetLangID?: string
   info?: AppSMSTemplate
 }
 
@@ -142,6 +144,7 @@ export type AppEmailTemplate = {
 }
 
 export type CreateAppEmailTemplateRequest = {
+  targetLangID?: string
   info?: AppEmailTemplate
 }
 
@@ -151,6 +154,7 @@ export type CreateAppEmailTemplateResponse = {
 
 export type CreateAppEmailTemplateForOtherAppRequest = {
   targetAppID?: string
+  targetLangID?: string
   info?: AppEmailTemplate
 }
 

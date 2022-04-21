@@ -44,6 +44,8 @@ type CloudHashingApisClient interface {
 	UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error)
 	CreateAppUserExtra(ctx context.Context, in *CreateAppUserExtraRequest, opts ...grpc.CallOption) (*CreateAppUserExtraResponse, error)
 	UpdateAppUserExtra(ctx context.Context, in *UpdateAppUserExtraRequest, opts ...grpc.CallOption) (*UpdateAppUserExtraResponse, error)
+	CreateAppUserControl(ctx context.Context, in *CreateAppUserControlRequest, opts ...grpc.CallOption) (*CreateAppUserControlResponse, error)
+	UpdateAppUserControl(ctx context.Context, in *UpdateAppUserControlRequest, opts ...grpc.CallOption) (*UpdateAppUserControlResponse, error)
 	GetReferrals(ctx context.Context, in *GetReferralsRequest, opts ...grpc.CallOption) (*GetReferralsResponse, error)
 	GetLayeredReferrals(ctx context.Context, in *GetLayeredReferralsRequest, opts ...grpc.CallOption) (*GetLayeredReferralsResponse, error)
 	GetKycReviews(ctx context.Context, in *GetKycReviewsRequest, opts ...grpc.CallOption) (*GetKycReviewsResponse, error)
@@ -257,6 +259,24 @@ func (c *cloudHashingApisClient) CreateAppUserExtra(ctx context.Context, in *Cre
 func (c *cloudHashingApisClient) UpdateAppUserExtra(ctx context.Context, in *UpdateAppUserExtraRequest, opts ...grpc.CallOption) (*UpdateAppUserExtraResponse, error) {
 	out := new(UpdateAppUserExtraResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/UpdateAppUserExtra", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) CreateAppUserControl(ctx context.Context, in *CreateAppUserControlRequest, opts ...grpc.CallOption) (*CreateAppUserControlResponse, error) {
+	out := new(CreateAppUserControlResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/CreateAppUserControl", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) UpdateAppUserControl(ctx context.Context, in *UpdateAppUserControlRequest, opts ...grpc.CallOption) (*UpdateAppUserControlResponse, error) {
+	out := new(UpdateAppUserControlResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/UpdateAppUserControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -548,6 +568,8 @@ type CloudHashingApisServer interface {
 	UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error)
 	CreateAppUserExtra(context.Context, *CreateAppUserExtraRequest) (*CreateAppUserExtraResponse, error)
 	UpdateAppUserExtra(context.Context, *UpdateAppUserExtraRequest) (*UpdateAppUserExtraResponse, error)
+	CreateAppUserControl(context.Context, *CreateAppUserControlRequest) (*CreateAppUserControlResponse, error)
+	UpdateAppUserControl(context.Context, *UpdateAppUserControlRequest) (*UpdateAppUserControlResponse, error)
 	GetReferrals(context.Context, *GetReferralsRequest) (*GetReferralsResponse, error)
 	GetLayeredReferrals(context.Context, *GetLayeredReferralsRequest) (*GetLayeredReferralsResponse, error)
 	GetKycReviews(context.Context, *GetKycReviewsRequest) (*GetKycReviewsResponse, error)
@@ -643,6 +665,12 @@ func (UnimplementedCloudHashingApisServer) CreateAppUserExtra(context.Context, *
 }
 func (UnimplementedCloudHashingApisServer) UpdateAppUserExtra(context.Context, *UpdateAppUserExtraRequest) (*UpdateAppUserExtraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUserExtra not implemented")
+}
+func (UnimplementedCloudHashingApisServer) CreateAppUserControl(context.Context, *CreateAppUserControlRequest) (*CreateAppUserControlResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserControl not implemented")
+}
+func (UnimplementedCloudHashingApisServer) UpdateAppUserControl(context.Context, *UpdateAppUserControlRequest) (*UpdateAppUserControlResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUserControl not implemented")
 }
 func (UnimplementedCloudHashingApisServer) GetReferrals(context.Context, *GetReferralsRequest) (*GetReferralsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetReferrals not implemented")
@@ -1100,6 +1128,42 @@ func _CloudHashingApis_UpdateAppUserExtra_Handler(srv interface{}, ctx context.C
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingApisServer).UpdateAppUserExtra(ctx, req.(*UpdateAppUserExtraRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_CreateAppUserControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppUserControlRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).CreateAppUserControl(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/CreateAppUserControl",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).CreateAppUserControl(ctx, req.(*CreateAppUserControlRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_UpdateAppUserControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppUserControlRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).UpdateAppUserControl(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/UpdateAppUserControl",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).UpdateAppUserControl(ctx, req.(*UpdateAppUserControlRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1712,6 +1776,14 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateAppUserExtra",
 			Handler:    _CloudHashingApis_UpdateAppUserExtra_Handler,
+		},
+		{
+			MethodName: "CreateAppUserControl",
+			Handler:    _CloudHashingApis_CreateAppUserControl_Handler,
+		},
+		{
+			MethodName: "UpdateAppUserControl",
+			Handler:    _CloudHashingApis_UpdateAppUserControl_Handler,
 		},
 		{
 			MethodName: "GetReferrals",
