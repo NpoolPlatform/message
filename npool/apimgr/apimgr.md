@@ -4,6 +4,8 @@
 ## Table of Contents
 
 - [npool/apimgr/apimgr.proto](#npool_apimgr_apimgr-proto)
+    - [GetApisByServiceNameMethodNameRequest](#api-manager-v1-GetApisByServiceNameMethodNameRequest)
+    - [GetApisByServiceNameMethodNameResponse](#api-manager-v1-GetApisByServiceNameMethodNameResponse)
     - [GetApisRequest](#api-manager-v1-GetApisRequest)
     - [GetApisResponse](#api-manager-v1-GetApisResponse)
     - [Path](#api-manager-v1-Path)
@@ -15,6 +17,8 @@
     - [ApiManager](#api-manager-v1-ApiManager)
   
 - [npool/apimgr/apimgr.proto](#npool_apimgr_apimgr-proto)
+    - [GetApisByServiceNameMethodNameRequest](#api-manager-v1-GetApisByServiceNameMethodNameRequest)
+    - [GetApisByServiceNameMethodNameResponse](#api-manager-v1-GetApisByServiceNameMethodNameResponse)
     - [GetApisRequest](#api-manager-v1-GetApisRequest)
     - [GetApisResponse](#api-manager-v1-GetApisResponse)
     - [Path](#api-manager-v1-Path)
@@ -36,6 +40,37 @@
 
 
 
+<a name="api-manager-v1-GetApisByServiceNameMethodNameRequest"></a>
+
+### GetApisByServiceNameMethodNameRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ServiceName | [string](#string) |  |  |
+| MethodName | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="api-manager-v1-GetApisByServiceNameMethodNameResponse"></a>
+
+### GetApisByServiceNameMethodNameResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [ServicePath](#api-manager-v1-ServicePath) | repeated |  |
+
+
+
+
+
+
 <a name="api-manager-v1-GetApisRequest"></a>
 
 ### GetApisRequest
@@ -72,6 +107,7 @@
 | Method | [string](#string) |  |  |
 | Path | [string](#string) |  |  |
 | Exported | [bool](#bool) |  |  |
+| MethodName | [string](#string) |  |  |
 
 
 
@@ -144,6 +180,7 @@
 | Exported | [bool](#bool) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
 | UpdateAt | [uint32](#uint32) |  |  |
+| MethodName | [string](#string) |  |  |
 
 
 
@@ -166,6 +203,7 @@
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | Register | [RegisterRequest](#api-manager-v1-RegisterRequest) | [RegisterResponse](#api-manager-v1-RegisterResponse) |  |
 | GetApis | [GetApisRequest](#api-manager-v1-GetApisRequest) | [GetApisResponse](#api-manager-v1-GetApisResponse) |  |
+| GetApisByServiceNameMethodName | [GetApisByServiceNameMethodNameRequest](#api-manager-v1-GetApisByServiceNameMethodNameRequest) | [GetApisByServiceNameMethodNameResponse](#api-manager-v1-GetApisByServiceNameMethodNameResponse) |  |
 
  
 
@@ -178,6 +216,37 @@
 
 
 
+<a name="api-manager-v1-GetApisByServiceNameMethodNameRequest"></a>
+
+### GetApisByServiceNameMethodNameRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ServiceName | [string](#string) |  |  |
+| MethodName | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="api-manager-v1-GetApisByServiceNameMethodNameResponse"></a>
+
+### GetApisByServiceNameMethodNameResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [ServicePath](#api-manager-v1-ServicePath) | repeated |  |
+
+
+
+
+
+
 <a name="api-manager-v1-GetApisRequest"></a>
 
 ### GetApisRequest
@@ -214,6 +283,7 @@
 | Method | [string](#string) |  |  |
 | Path | [string](#string) |  |  |
 | Exported | [bool](#bool) |  |  |
+| MethodName | [string](#string) |  |  |
 
 
 
@@ -286,6 +356,7 @@
 | Exported | [bool](#bool) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
 | UpdateAt | [uint32](#uint32) |  |  |
+| MethodName | [string](#string) |  |  |
 
 
 
@@ -308,6 +379,7 @@
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | Register | [RegisterRequest](#api-manager-v1-RegisterRequest) | [RegisterResponse](#api-manager-v1-RegisterResponse) |  |
 | GetApis | [GetApisRequest](#api-manager-v1-GetApisRequest) | [GetApisResponse](#api-manager-v1-GetApisResponse) |  |
+| GetApisByServiceNameMethodName | [GetApisByServiceNameMethodNameRequest](#api-manager-v1-GetApisByServiceNameMethodNameRequest) | [GetApisByServiceNameMethodNameResponse](#api-manager-v1-GetApisByServiceNameMethodNameResponse) |  |
 
  
 

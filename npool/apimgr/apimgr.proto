@@ -28,12 +28,20 @@ service ApiManager {
             body: "*"
         };
     }
+
+    rpc GetApisByServiceNameMethodName(GetApisByServiceNameMethodNameRequest) returns (GetApisByServiceNameMethodNameResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/api/by/servicename/methodname"
+            body: "*"
+        };
+    }
 }
 
 message Path {
     string Method = 10;
     string Path = 20;
     bool Exported = 30;
+    string MethodName = 40;
 }
 
 message ServiceApis {
@@ -62,11 +70,21 @@ message ServicePath {
     bool Exported = 80;
     uint32 CreateAt = 90;
     uint32 UpdateAt = 100;
+    string MethodName = 110;
 }
 
 message GetApisRequest {
 }
 
 message GetApisResponse {
+    repeated ServicePath Infos = 10;
+}
+
+message GetApisByServiceNameMethodNameRequest {
+    string ServiceName = 20;
+    repeated string MethodName = 40;
+}
+
+message GetApisByServiceNameMethodNameResponse  {
     repeated ServicePath Infos = 10;
 }
