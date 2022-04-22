@@ -11,9 +11,9 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/api/by/servicename/methodname": {
+    "/v1/get/api/by/service/method": {
       "post": {
-        "operationId": "ApiManager_GetApisByServiceNameMethodName",
+        "operationId": "ApiManager_GetApisByServiceMethod",
         "responses": {
           "200": {
             "description": "A successful response.",

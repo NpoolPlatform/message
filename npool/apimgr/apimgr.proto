@@ -29,9 +29,9 @@ service ApiManager {
         };
     }
 
-    rpc GetApisByServiceNameMethodName(GetApisByServiceNameMethodNameRequest) returns (GetApisByServiceNameMethodNameResponse) {
+    rpc GetApisByServiceMethod(GetApisByServiceNameMethodNameRequest) returns (GetApisByServiceNameMethodNameResponse) {
         option (google.api.http) = {
-            post: "/v1/get/api/by/servicename/methodname"
+            post: "/v1/get/api/by/service/method"
             body: "*"
         };
     }

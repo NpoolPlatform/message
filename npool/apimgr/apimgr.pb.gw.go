@@ -134,7 +134,7 @@ func local_request_ApiManager_GetApis_0(ctx context.Context, marshaler runtime.M
 
 }
 
-func request_ApiManager_GetApisByServiceNameMethodName_0(ctx context.Context, marshaler runtime.Marshaler, client ApiManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_ApiManager_GetApisByServiceMethod_0(ctx context.Context, marshaler runtime.Marshaler, client ApiManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetApisByServiceNameMethodNameRequest
 	var metadata runtime.ServerMetadata
 
@@ -146,12 +146,12 @@ func request_ApiManager_GetApisByServiceNameMethodName_0(ctx context.Context, ma
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetApisByServiceNameMethodName(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetApisByServiceMethod(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_ApiManager_GetApisByServiceNameMethodName_0(ctx context.Context, marshaler runtime.Marshaler, server ApiManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_ApiManager_GetApisByServiceMethod_0(ctx context.Context, marshaler runtime.Marshaler, server ApiManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetApisByServiceNameMethodNameRequest
 	var metadata runtime.ServerMetadata
 
@@ -163,7 +163,7 @@ func local_request_ApiManager_GetApisByServiceNameMethodName_0(ctx context.Conte
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetApisByServiceNameMethodName(ctx, &protoReq)
+	msg, err := server.GetApisByServiceMethod(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -243,18 +243,18 @@ func RegisterApiManagerHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 
 	})
 
-	mux.Handle("POST", pattern_ApiManager_GetApisByServiceNameMethodName_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ApiManager_GetApisByServiceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/api.manager.v1.ApiManager/GetApisByServiceNameMethodName", runtime.WithHTTPPathPattern("/v1/get/api/by/servicename/methodname"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/api.manager.v1.ApiManager/GetApisByServiceMethod", runtime.WithHTTPPathPattern("/v1/get/api/by/service/method"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ApiManager_GetApisByServiceNameMethodName_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ApiManager_GetApisByServiceMethod_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -262,7 +262,7 @@ func RegisterApiManagerHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 			return
 		}
 
-		forward_ApiManager_GetApisByServiceNameMethodName_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ApiManager_GetApisByServiceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -367,23 +367,23 @@ func RegisterApiManagerHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 
 	})
 
-	mux.Handle("POST", pattern_ApiManager_GetApisByServiceNameMethodName_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ApiManager_GetApisByServiceMethod_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/api.manager.v1.ApiManager/GetApisByServiceNameMethodName", runtime.WithHTTPPathPattern("/v1/get/api/by/servicename/methodname"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/api.manager.v1.ApiManager/GetApisByServiceMethod", runtime.WithHTTPPathPattern("/v1/get/api/by/service/method"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ApiManager_GetApisByServiceNameMethodName_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ApiManager_GetApisByServiceMethod_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ApiManager_GetApisByServiceNameMethodName_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ApiManager_GetApisByServiceMethod_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -397,7 +397,7 @@ var (
 
 	pattern_ApiManager_GetApis_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "apis"}, ""))
 
-	pattern_ApiManager_GetApisByServiceNameMethodName_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "api", "by", "servicename", "methodname"}, ""))
+	pattern_ApiManager_GetApisByServiceMethod_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "api", "by", "service", "method"}, ""))
 )
 
 var (
@@ -407,5 +407,5 @@ var (
 
 	forward_ApiManager_GetApis_0 = runtime.ForwardResponseMessage
 
-	forward_ApiManager_GetApisByServiceNameMethodName_0 = runtime.ForwardResponseMessage
+	forward_ApiManager_GetApisByServiceMethod_0 = runtime.ForwardResponseMessage
 )

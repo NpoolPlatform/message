@@ -203,7 +203,7 @@
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | Register | [RegisterRequest](#api-manager-v1-RegisterRequest) | [RegisterResponse](#api-manager-v1-RegisterResponse) |  |
 | GetApis | [GetApisRequest](#api-manager-v1-GetApisRequest) | [GetApisResponse](#api-manager-v1-GetApisResponse) |  |
-| GetApisByServiceNameMethodName | [GetApisByServiceNameMethodNameRequest](#api-manager-v1-GetApisByServiceNameMethodNameRequest) | [GetApisByServiceNameMethodNameResponse](#api-manager-v1-GetApisByServiceNameMethodNameResponse) |  |
+| GetApisByServiceMethod | [GetApisByServiceNameMethodNameRequest](#api-manager-v1-GetApisByServiceNameMethodNameRequest) | [GetApisByServiceNameMethodNameResponse](#api-manager-v1-GetApisByServiceNameMethodNameResponse) |  |
 
  
 
@@ -379,7 +379,7 @@
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | Register | [RegisterRequest](#api-manager-v1-RegisterRequest) | [RegisterResponse](#api-manager-v1-RegisterResponse) |  |
 | GetApis | [GetApisRequest](#api-manager-v1-GetApisRequest) | [GetApisResponse](#api-manager-v1-GetApisResponse) |  |
-| GetApisByServiceNameMethodName | [GetApisByServiceNameMethodNameRequest](#api-manager-v1-GetApisByServiceNameMethodNameRequest) | [GetApisByServiceNameMethodNameResponse](#api-manager-v1-GetApisByServiceNameMethodNameResponse) |  |
+| GetApisByServiceMethod | [GetApisByServiceNameMethodNameRequest](#api-manager-v1-GetApisByServiceNameMethodNameRequest) | [GetApisByServiceNameMethodNameResponse](#api-manager-v1-GetApisByServiceNameMethodNameResponse) |  |
 
  
 
