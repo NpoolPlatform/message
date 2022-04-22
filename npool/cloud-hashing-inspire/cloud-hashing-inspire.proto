@@ -279,6 +279,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc CreateCouponAllocatedForAppOtherUser (CreateCouponAllocatedForAppOtherUserRequest) returns (CreateCouponAllocatedForAppOtherUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/coupon/allocated/for/app/other/user"
+            body: "*"
+        };
+    }
     rpc CreateCouponAllocatedForOtherAppUser (CreateCouponAllocatedForOtherAppUserRequest) returns (CreateCouponAllocatedForOtherAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/create/coupon/allocated/for/other/app/user"
@@ -510,6 +516,12 @@ service CloudHashingInspire {
     rpc CreateUserSpecialReduction (CreateUserSpecialReductionRequest) returns (CreateUserSpecialReductionResponse) {
         option (google.api.http) = {
             post: "/v1/create/user/special/reduction"
+            body: "*"
+        };
+    }
+    rpc CreateUserSpecialReductionForAppOtherUser (CreateUserSpecialReductionForAppOtherUserRequest) returns (CreateUserSpecialReductionForAppOtherUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/special/reduction/for/app/other/user"
             body: "*"
         };
     }
@@ -1047,6 +1059,15 @@ message CreateCouponAllocatedResponse {
     CouponAllocated Info = 10;
 }
 
+message CreateCouponAllocatedForAppOtherUserRequest {
+    string TargetUserID = 20;
+    CouponAllocated Info = 30;
+}
+
+message CreateCouponAllocatedForAppOtherUserResponse {
+    CouponAllocated Info = 10;
+}
+
 message CreateCouponAllocatedForOtherAppUserRequest {
     string TargetAppID = 10;
     string TargetUserID = 20;
@@ -1424,6 +1445,15 @@ message CreateUserSpecialReductionRequest {
 }
 
 message CreateUserSpecialReductionResponse {
+    UserSpecialReduction Info = 10;
+}
+
+message CreateUserSpecialReductionForAppOtherUserRequest {
+    string TargetUserID = 10;
+    UserSpecialReduction Info = 20;
+}
+
+message CreateUserSpecialReductionForAppOtherUserResponse {
     UserSpecialReduction Info = 10;
 }
 
