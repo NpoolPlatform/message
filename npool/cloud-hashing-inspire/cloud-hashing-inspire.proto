@@ -511,6 +511,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc CreateUserSpecialReductionForAppOtherUser (CreateUserSpecialReductionForAppOtherUserRequest) returns (CreateUserSpecialReductionForAppOtherUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/special/reduction/for/app/other/user"
+            body: "*"
+        };
+    }
     rpc CreateUserSpecialReductionForOtherAppUser (CreateUserSpecialReductionForOtherAppUserRequest) returns (CreateUserSpecialReductionForOtherAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/create/user/special/reduction/for/other/app/user"
@@ -1431,6 +1437,15 @@ message CreateUserSpecialReductionRequest {
 }
 
 message CreateUserSpecialReductionResponse {
+    UserSpecialReduction Info = 10;
+}
+
+message CreateUserSpecialReductionForAppOtherUserRequest {
+    string TargetUserID = 10;
+    UserSpecialReduction Info = 20;
+}
+
+message CreateUserSpecialReductionForAppOtherUserResponse {
     UserSpecialReduction Info = 10;
 }
 

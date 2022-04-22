@@ -907,6 +907,38 @@
         ]
       }
     },
+    "/v1/create/user/special/reduction/for/app/other/user": {
+      "post": {
+        "operationId": "CloudHashingInspire_CreateUserSpecialReductionForAppOtherUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserSpecialReductionForAppOtherUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserSpecialReductionForAppOtherUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/create/user/special/reduction/for/other/app/user": {
       "post": {
         "operationId": "CloudHashingInspire_CreateUserSpecialReductionForOtherAppUser",
@@ -4014,6 +4046,25 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1UserKpiSetting"
+        }
+      }
+    },
+    "v1CreateUserSpecialReductionForAppOtherUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1UserSpecialReduction"
+        }
+      }
+    },
+    "v1CreateUserSpecialReductionForAppOtherUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserSpecialReduction"
         }
       }
     },
