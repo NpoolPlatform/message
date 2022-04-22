@@ -271,6 +271,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc CreateCouponAllocatedForAppOtherUser (CreateCouponAllocatedForAppOtherUserRequest) returns (CreateCouponAllocatedForAppOtherUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/coupon/allocated/for/app/other/user"
+            body: "*"
+        };
+    }
     rpc CreateCouponAllocatedForOtherAppUser (CreateCouponAllocatedForOtherAppUserRequest) returns (CreateCouponAllocatedForOtherAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/create/coupon/allocated/for/other/app/user"
@@ -1036,6 +1042,15 @@ message CreateCouponAllocatedRequest {
 }
 
 message CreateCouponAllocatedResponse {
+    CouponAllocated Info = 10;
+}
+
+message CreateCouponAllocatedForAppOtherUserRequest {
+    string TargetUserID = 20;
+    CouponAllocated Info = 30;
+}
+
+message CreateCouponAllocatedForAppOtherUserResponse {
     CouponAllocated Info = 10;
 }
 

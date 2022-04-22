@@ -37,6 +37,8 @@
     - [CreateAppPurchaseAmountSettingResponse](#cloud-hashing-inspire-v1-CreateAppPurchaseAmountSettingResponse)
     - [CreateCommissionCoinSettingRequest](#cloud-hashing-inspire-v1-CreateCommissionCoinSettingRequest)
     - [CreateCommissionCoinSettingResponse](#cloud-hashing-inspire-v1-CreateCommissionCoinSettingResponse)
+    - [CreateCouponAllocatedForAppOtherUserRequest](#cloud-hashing-inspire-v1-CreateCouponAllocatedForAppOtherUserRequest)
+    - [CreateCouponAllocatedForAppOtherUserResponse](#cloud-hashing-inspire-v1-CreateCouponAllocatedForAppOtherUserResponse)
     - [CreateCouponAllocatedForOtherAppUserRequest](#cloud-hashing-inspire-v1-CreateCouponAllocatedForOtherAppUserRequest)
     - [CreateCouponAllocatedForOtherAppUserResponse](#cloud-hashing-inspire-v1-CreateCouponAllocatedForOtherAppUserResponse)
     - [CreateCouponAllocatedRequest](#cloud-hashing-inspire-v1-CreateCouponAllocatedRequest)
@@ -257,6 +259,8 @@
     - [CreateAppPurchaseAmountSettingResponse](#cloud-hashing-inspire-v1-CreateAppPurchaseAmountSettingResponse)
     - [CreateCommissionCoinSettingRequest](#cloud-hashing-inspire-v1-CreateCommissionCoinSettingRequest)
     - [CreateCommissionCoinSettingResponse](#cloud-hashing-inspire-v1-CreateCommissionCoinSettingResponse)
+    - [CreateCouponAllocatedForAppOtherUserRequest](#cloud-hashing-inspire-v1-CreateCouponAllocatedForAppOtherUserRequest)
+    - [CreateCouponAllocatedForAppOtherUserResponse](#cloud-hashing-inspire-v1-CreateCouponAllocatedForAppOtherUserResponse)
     - [CreateCouponAllocatedForOtherAppUserRequest](#cloud-hashing-inspire-v1-CreateCouponAllocatedForOtherAppUserRequest)
     - [CreateCouponAllocatedForOtherAppUserResponse](#cloud-hashing-inspire-v1-CreateCouponAllocatedForOtherAppUserResponse)
     - [CreateCouponAllocatedRequest](#cloud-hashing-inspire-v1-CreateCouponAllocatedRequest)
@@ -1002,6 +1006,37 @@ request body and response
 
 
 
+<a name="cloud-hashing-inspire-v1-CreateCouponAllocatedForAppOtherUserRequest"></a>
+
+### CreateCouponAllocatedForAppOtherUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetUserID | [string](#string) |  |  |
+| Info | [CouponAllocated](#cloud-hashing-inspire-v1-CouponAllocated) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-inspire-v1-CreateCouponAllocatedForAppOtherUserResponse"></a>
+
+### CreateCouponAllocatedForAppOtherUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CouponAllocated](#cloud-hashing-inspire-v1-CouponAllocated) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-inspire-v1-CreateCouponAllocatedForOtherAppUserRequest"></a>
 
 ### CreateCouponAllocatedForOtherAppUserRequest
@@ -3856,6 +3891,7 @@ Service Name
 | GetUserInvitationCodesByOtherApp | [GetUserInvitationCodesByOtherAppRequest](#cloud-hashing-inspire-v1-GetUserInvitationCodesByOtherAppRequest) | [GetUserInvitationCodesByOtherAppResponse](#cloud-hashing-inspire-v1-GetUserInvitationCodesByOtherAppResponse) |  |
 | GetUserInvitationCodeByCode | [GetUserInvitationCodeByCodeRequest](#cloud-hashing-inspire-v1-GetUserInvitationCodeByCodeRequest) | [GetUserInvitationCodeByCodeResponse](#cloud-hashing-inspire-v1-GetUserInvitationCodeByCodeResponse) |  |
 | CreateCouponAllocated | [CreateCouponAllocatedRequest](#cloud-hashing-inspire-v1-CreateCouponAllocatedRequest) | [CreateCouponAllocatedResponse](#cloud-hashing-inspire-v1-CreateCouponAllocatedResponse) |  |
+| CreateCouponAllocatedForAppOtherUser | [CreateCouponAllocatedForAppOtherUserRequest](#cloud-hashing-inspire-v1-CreateCouponAllocatedForAppOtherUserRequest) | [CreateCouponAllocatedForAppOtherUserResponse](#cloud-hashing-inspire-v1-CreateCouponAllocatedForAppOtherUserResponse) |  |
 | CreateCouponAllocatedForOtherAppUser | [CreateCouponAllocatedForOtherAppUserRequest](#cloud-hashing-inspire-v1-CreateCouponAllocatedForOtherAppUserRequest) | [CreateCouponAllocatedForOtherAppUserResponse](#cloud-hashing-inspire-v1-CreateCouponAllocatedForOtherAppUserResponse) |  |
 | GetCouponAllocated | [GetCouponAllocatedRequest](#cloud-hashing-inspire-v1-GetCouponAllocatedRequest) | [GetCouponAllocatedResponse](#cloud-hashing-inspire-v1-GetCouponAllocatedResponse) |  |
 | GetCouponsAllocatedByApp | [GetCouponsAllocatedByAppRequest](#cloud-hashing-inspire-v1-GetCouponsAllocatedByAppRequest) | [GetCouponsAllocatedByAppResponse](#cloud-hashing-inspire-v1-GetCouponsAllocatedByAppResponse) |  |
@@ -4475,6 +4511,37 @@ request body and response
 
 
 
+<a name="cloud-hashing-inspire-v1-CreateCouponAllocatedForAppOtherUserRequest"></a>
+
+### CreateCouponAllocatedForAppOtherUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetUserID | [string](#string) |  |  |
+| Info | [CouponAllocated](#cloud-hashing-inspire-v1-CouponAllocated) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-inspire-v1-CreateCouponAllocatedForAppOtherUserResponse"></a>
+
+### CreateCouponAllocatedForAppOtherUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CouponAllocated](#cloud-hashing-inspire-v1-CouponAllocated) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-inspire-v1-CreateCouponAllocatedForOtherAppUserRequest"></a>
 
 ### CreateCouponAllocatedForOtherAppUserRequest
@@ -7329,6 +7396,7 @@ Service Name
 | GetUserInvitationCodesByOtherApp | [GetUserInvitationCodesByOtherAppRequest](#cloud-hashing-inspire-v1-GetUserInvitationCodesByOtherAppRequest) | [GetUserInvitationCodesByOtherAppResponse](#cloud-hashing-inspire-v1-GetUserInvitationCodesByOtherAppResponse) |  |
 | GetUserInvitationCodeByCode | [GetUserInvitationCodeByCodeRequest](#cloud-hashing-inspire-v1-GetUserInvitationCodeByCodeRequest) | [GetUserInvitationCodeByCodeResponse](#cloud-hashing-inspire-v1-GetUserInvitationCodeByCodeResponse) |  |
 | CreateCouponAllocated | [CreateCouponAllocatedRequest](#cloud-hashing-inspire-v1-CreateCouponAllocatedRequest) | [CreateCouponAllocatedResponse](#cloud-hashing-inspire-v1-CreateCouponAllocatedResponse) |  |
+| CreateCouponAllocatedForAppOtherUser | [CreateCouponAllocatedForAppOtherUserRequest](#cloud-hashing-inspire-v1-CreateCouponAllocatedForAppOtherUserRequest) | [CreateCouponAllocatedForAppOtherUserResponse](#cloud-hashing-inspire-v1-CreateCouponAllocatedForAppOtherUserResponse) |  |
 | CreateCouponAllocatedForOtherAppUser | [CreateCouponAllocatedForOtherAppUserRequest](#cloud-hashing-inspire-v1-CreateCouponAllocatedForOtherAppUserRequest) | [CreateCouponAllocatedForOtherAppUserResponse](#cloud-hashing-inspire-v1-CreateCouponAllocatedForOtherAppUserResponse) |  |
 | GetCouponAllocated | [GetCouponAllocatedRequest](#cloud-hashing-inspire-v1-GetCouponAllocatedRequest) | [GetCouponAllocatedResponse](#cloud-hashing-inspire-v1-GetCouponAllocatedResponse) |  |
 | GetCouponsAllocatedByApp | [GetCouponsAllocatedByAppRequest](#cloud-hashing-inspire-v1-GetCouponsAllocatedByAppRequest) | [GetCouponsAllocatedByAppResponse](#cloud-hashing-inspire-v1-GetCouponsAllocatedByAppResponse) |  |

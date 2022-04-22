@@ -409,6 +409,15 @@ export type CreateCouponAllocatedResponse = {
   info?: CouponAllocated
 }
 
+export type CreateCouponAllocatedForAppOtherUserRequest = {
+  targetUserID?: string
+  info?: CouponAllocated
+}
+
+export type CreateCouponAllocatedForAppOtherUserResponse = {
+  info?: CouponAllocated
+}
+
 export type CreateCouponAllocatedForOtherAppUserRequest = {
   targetAppID?: string
   targetUserID?: string
@@ -1112,6 +1121,9 @@ export class CloudHashingInspire {
   }
   static CreateCouponAllocated(req: CreateCouponAllocatedRequest, initReq?: fm.InitReq): Promise<CreateCouponAllocatedResponse> {
     return fm.fetchReq<CreateCouponAllocatedRequest, CreateCouponAllocatedResponse>(`/v1/create/coupon/allocated`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateCouponAllocatedForAppOtherUser(req: CreateCouponAllocatedForAppOtherUserRequest, initReq?: fm.InitReq): Promise<CreateCouponAllocatedForAppOtherUserResponse> {
+    return fm.fetchReq<CreateCouponAllocatedForAppOtherUserRequest, CreateCouponAllocatedForAppOtherUserResponse>(`/v1/create/coupon/allocated/for/app/other/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateCouponAllocatedForOtherAppUser(req: CreateCouponAllocatedForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateCouponAllocatedForOtherAppUserResponse> {
     return fm.fetchReq<CreateCouponAllocatedForOtherAppUserRequest, CreateCouponAllocatedForOtherAppUserResponse>(`/v1/create/coupon/allocated/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})

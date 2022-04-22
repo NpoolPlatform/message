@@ -427,6 +427,38 @@
         ]
       }
     },
+    "/v1/create/coupon/allocated/for/app/other/user": {
+      "post": {
+        "operationId": "CloudHashingInspire_CreateCouponAllocatedForAppOtherUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateCouponAllocatedForAppOtherUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateCouponAllocatedForAppOtherUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/create/coupon/allocated/for/other/app/user": {
       "post": {
         "operationId": "CloudHashingInspire_CreateCouponAllocatedForOtherAppUser",
@@ -3715,6 +3747,25 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1CommissionCoinSetting"
+        }
+      }
+    },
+    "v1CreateCouponAllocatedForAppOtherUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1CouponAllocated"
+        }
+      }
+    },
+    "v1CreateCouponAllocatedForAppOtherUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CouponAllocated"
         }
       }
     },
