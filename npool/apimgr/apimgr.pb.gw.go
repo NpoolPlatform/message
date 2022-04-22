@@ -135,7 +135,7 @@ func local_request_ApiManager_GetApis_0(ctx context.Context, marshaler runtime.M
 }
 
 func request_ApiManager_GetApisByServiceMethod_0(ctx context.Context, marshaler runtime.Marshaler, client ApiManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetApisByServiceNameMethodNameRequest
+	var protoReq GetApisByServiceMethodRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -152,7 +152,7 @@ func request_ApiManager_GetApisByServiceMethod_0(ctx context.Context, marshaler 
 }
 
 func local_request_ApiManager_GetApisByServiceMethod_0(ctx context.Context, marshaler runtime.Marshaler, server ApiManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetApisByServiceNameMethodNameRequest
+	var protoReq GetApisByServiceMethodRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)

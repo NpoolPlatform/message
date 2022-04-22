@@ -18,7 +18,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetApisByServiceNameMethodNameResponse"
+              "$ref": "#/definitions/v1GetApisByServiceMethodResponse"
             }
           },
           "default": {
@@ -34,7 +34,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetApisByServiceNameMethodNameRequest"
+              "$ref": "#/definitions/v1GetApisByServiceMethodRequest"
             }
           }
         ],
@@ -174,7 +174,7 @@
         }
       }
     },
-    "v1GetApisByServiceNameMethodNameRequest": {
+    "v1GetApisByServiceMethodRequest": {
       "type": "object",
       "properties": {
         "ServiceName": {
@@ -188,7 +188,7 @@
         }
       }
     },
-    "v1GetApisByServiceNameMethodNameResponse": {
+    "v1GetApisByServiceMethodResponse": {
       "type": "object",
       "properties": {
         "Infos": {

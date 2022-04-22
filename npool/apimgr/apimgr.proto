@@ -29,7 +29,7 @@ service ApiManager {
         };
     }
 
-    rpc GetApisByServiceMethod(GetApisByServiceNameMethodNameRequest) returns (GetApisByServiceNameMethodNameResponse) {
+    rpc GetApisByServiceMethod(GetApisByServiceMethodRequest) returns (GetApisByServiceMethodResponse) {
         option (google.api.http) = {
             post: "/v1/get/api/by/service/method"
             body: "*"
@@ -80,11 +80,11 @@ message GetApisResponse {
     repeated ServicePath Infos = 10;
 }
 
-message GetApisByServiceNameMethodNameRequest {
+message GetApisByServiceMethodRequest {
     string ServiceName = 20;
     repeated string MethodName = 40;
 }
 
-message GetApisByServiceNameMethodNameResponse  {
+message GetApisByServiceMethodResponse  {
     repeated ServicePath Infos = 10;
 }

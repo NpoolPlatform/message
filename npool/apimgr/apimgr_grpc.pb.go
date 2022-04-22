@@ -27,7 +27,7 @@ type ApiManagerClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterResponse, error)
 	GetApis(ctx context.Context, in *GetApisRequest, opts ...grpc.CallOption) (*GetApisResponse, error)
-	GetApisByServiceMethod(ctx context.Context, in *GetApisByServiceNameMethodNameRequest, opts ...grpc.CallOption) (*GetApisByServiceNameMethodNameResponse, error)
+	GetApisByServiceMethod(ctx context.Context, in *GetApisByServiceMethodRequest, opts ...grpc.CallOption) (*GetApisByServiceMethodResponse, error)
 }
 
 type apiManagerClient struct {
@@ -65,8 +65,8 @@ func (c *apiManagerClient) GetApis(ctx context.Context, in *GetApisRequest, opts
 	return out, nil
 }
 
-func (c *apiManagerClient) GetApisByServiceMethod(ctx context.Context, in *GetApisByServiceNameMethodNameRequest, opts ...grpc.CallOption) (*GetApisByServiceNameMethodNameResponse, error) {
-	out := new(GetApisByServiceNameMethodNameResponse)
+func (c *apiManagerClient) GetApisByServiceMethod(ctx context.Context, in *GetApisByServiceMethodRequest, opts ...grpc.CallOption) (*GetApisByServiceMethodResponse, error) {
+	out := new(GetApisByServiceMethodResponse)
 	err := c.cc.Invoke(ctx, "/api.manager.v1.ApiManager/GetApisByServiceMethod", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -81,7 +81,7 @@ type ApiManagerServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	Register(context.Context, *RegisterRequest) (*RegisterResponse, error)
 	GetApis(context.Context, *GetApisRequest) (*GetApisResponse, error)
-	GetApisByServiceMethod(context.Context, *GetApisByServiceNameMethodNameRequest) (*GetApisByServiceNameMethodNameResponse, error)
+	GetApisByServiceMethod(context.Context, *GetApisByServiceMethodRequest) (*GetApisByServiceMethodResponse, error)
 	mustEmbedUnimplementedApiManagerServer()
 }
 
@@ -98,7 +98,7 @@ func (UnimplementedApiManagerServer) Register(context.Context, *RegisterRequest)
 func (UnimplementedApiManagerServer) GetApis(context.Context, *GetApisRequest) (*GetApisResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApis not implemented")
 }
-func (UnimplementedApiManagerServer) GetApisByServiceMethod(context.Context, *GetApisByServiceNameMethodNameRequest) (*GetApisByServiceNameMethodNameResponse, error) {
+func (UnimplementedApiManagerServer) GetApisByServiceMethod(context.Context, *GetApisByServiceMethodRequest) (*GetApisByServiceMethodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApisByServiceMethod not implemented")
 }
 func (UnimplementedApiManagerServer) mustEmbedUnimplementedApiManagerServer() {}
@@ -169,7 +169,7 @@ func _ApiManager_GetApis_Handler(srv interface{}, ctx context.Context, dec func(
 }
 
 func _ApiManager_GetApisByServiceMethod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetApisByServiceNameMethodNameRequest)
+	in := new(GetApisByServiceMethodRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -181,7 +181,7 @@ func _ApiManager_GetApisByServiceMethod_Handler(srv interface{}, ctx context.Con
 		FullMethod: "/api.manager.v1.ApiManager/GetApisByServiceMethod",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ApiManagerServer).GetApisByServiceMethod(ctx, req.(*GetApisByServiceNameMethodNameRequest))
+		return srv.(ApiManagerServer).GetApisByServiceMethod(ctx, req.(*GetApisByServiceMethodRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
