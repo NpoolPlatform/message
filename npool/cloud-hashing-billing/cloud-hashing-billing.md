@@ -129,6 +129,8 @@
     - [GetUserBenefitsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinResponse)
     - [GetUserBenefitsByAppUserRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserRequest)
     - [GetUserBenefitsByAppUserResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserResponse)
+    - [GetUserBenefitsByOtherAppRequest](#cloud-hashing-billing-v1-GetUserBenefitsByOtherAppRequest)
+    - [GetUserBenefitsByOtherAppResponse](#cloud-hashing-billing-v1-GetUserBenefitsByOtherAppResponse)
     - [GetUserBenefitsRequest](#cloud-hashing-billing-v1-GetUserBenefitsRequest)
     - [GetUserBenefitsResponse](#cloud-hashing-billing-v1-GetUserBenefitsResponse)
     - [GetUserDirectBenefitByAccountRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitByAccountRequest)
@@ -345,6 +347,8 @@
     - [GetUserBenefitsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinResponse)
     - [GetUserBenefitsByAppUserRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserRequest)
     - [GetUserBenefitsByAppUserResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserResponse)
+    - [GetUserBenefitsByOtherAppRequest](#cloud-hashing-billing-v1-GetUserBenefitsByOtherAppRequest)
+    - [GetUserBenefitsByOtherAppResponse](#cloud-hashing-billing-v1-GetUserBenefitsByOtherAppResponse)
     - [GetUserBenefitsRequest](#cloud-hashing-billing-v1-GetUserBenefitsRequest)
     - [GetUserBenefitsResponse](#cloud-hashing-billing-v1-GetUserBenefitsResponse)
     - [GetUserDirectBenefitByAccountRequest](#cloud-hashing-billing-v1-GetUserDirectBenefitByAccountRequest)
@@ -2348,6 +2352,37 @@
 
 
 
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByOtherAppRequest"></a>
+
+### GetUserBenefitsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool-v1-PageInfo) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByOtherAppResponse"></a>
+
+### GetUserBenefitsByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) | repeated |  |
+
+
+
+
+
+
 <a name="cloud-hashing-billing-v1-GetUserBenefitsRequest"></a>
 
 ### GetUserBenefitsRequest
@@ -3767,6 +3802,7 @@ Cloud Hashing Billing
 | GetUserBenefitsByAppUser | [GetUserBenefitsByAppUserRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserRequest) | [GetUserBenefitsByAppUserResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserResponse) |  |
 | GetUserBenefitsByAppUserCoin | [GetUserBenefitsByAppUserCoinRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinRequest) | [GetUserBenefitsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinResponse) |  |
 | GetUserBenefitsByApp | [GetUserBenefitsByAppRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppRequest) | [GetUserBenefitsByAppResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppResponse) |  |
+| GetUserBenefitsByOtherApp | [GetUserBenefitsByOtherAppRequest](#cloud-hashing-billing-v1-GetUserBenefitsByOtherAppRequest) | [GetUserBenefitsByOtherAppResponse](#cloud-hashing-billing-v1-GetUserBenefitsByOtherAppResponse) |  |
 | GetUserBenefits | [GetUserBenefitsRequest](#cloud-hashing-billing-v1-GetUserBenefitsRequest) | [GetUserBenefitsResponse](#cloud-hashing-billing-v1-GetUserBenefitsResponse) |  |
 | GetLatestUserBenefitByGoodAppUser | [GetLatestUserBenefitByGoodAppUserRequest](#cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserRequest) | [GetLatestUserBenefitByGoodAppUserResponse](#cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserResponse) |  |
 | CreateCoinSetting | [CreateCoinSettingRequest](#cloud-hashing-billing-v1-CreateCoinSettingRequest) | [CreateCoinSettingResponse](#cloud-hashing-billing-v1-CreateCoinSettingResponse) |  |
@@ -5745,6 +5781,37 @@ Cloud Hashing Billing
 
 
 
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByOtherAppRequest"></a>
+
+### GetUserBenefitsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| PageInfo | [npool.v1.PageInfo](#npool-v1-PageInfo) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-billing-v1-GetUserBenefitsByOtherAppResponse"></a>
+
+### GetUserBenefitsByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserBenefit](#cloud-hashing-billing-v1-UserBenefit) | repeated |  |
+
+
+
+
+
+
 <a name="cloud-hashing-billing-v1-GetUserBenefitsRequest"></a>
 
 ### GetUserBenefitsRequest
@@ -7164,6 +7231,7 @@ Cloud Hashing Billing
 | GetUserBenefitsByAppUser | [GetUserBenefitsByAppUserRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserRequest) | [GetUserBenefitsByAppUserResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserResponse) |  |
 | GetUserBenefitsByAppUserCoin | [GetUserBenefitsByAppUserCoinRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinRequest) | [GetUserBenefitsByAppUserCoinResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppUserCoinResponse) |  |
 | GetUserBenefitsByApp | [GetUserBenefitsByAppRequest](#cloud-hashing-billing-v1-GetUserBenefitsByAppRequest) | [GetUserBenefitsByAppResponse](#cloud-hashing-billing-v1-GetUserBenefitsByAppResponse) |  |
+| GetUserBenefitsByOtherApp | [GetUserBenefitsByOtherAppRequest](#cloud-hashing-billing-v1-GetUserBenefitsByOtherAppRequest) | [GetUserBenefitsByOtherAppResponse](#cloud-hashing-billing-v1-GetUserBenefitsByOtherAppResponse) |  |
 | GetUserBenefits | [GetUserBenefitsRequest](#cloud-hashing-billing-v1-GetUserBenefitsRequest) | [GetUserBenefitsResponse](#cloud-hashing-billing-v1-GetUserBenefitsResponse) |  |
 | GetLatestUserBenefitByGoodAppUser | [GetLatestUserBenefitByGoodAppUserRequest](#cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserRequest) | [GetLatestUserBenefitByGoodAppUserResponse](#cloud-hashing-billing-v1-GetLatestUserBenefitByGoodAppUserResponse) |  |
 | CreateCoinSetting | [CreateCoinSettingRequest](#cloud-hashing-billing-v1-CreateCoinSettingRequest) | [CreateCoinSettingResponse](#cloud-hashing-billing-v1-CreateCoinSettingResponse) |  |

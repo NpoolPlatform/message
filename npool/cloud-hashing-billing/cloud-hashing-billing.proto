@@ -221,6 +221,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetUserBenefitsByOtherApp (GetUserBenefitsByOtherAppRequest) returns (GetUserBenefitsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/benefits/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetUserBenefits (GetUserBenefitsRequest) returns (GetUserBenefitsResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/benefits"
@@ -969,6 +975,15 @@ message GetUserBenefitsByAppRequest {
 }
 
 message GetUserBenefitsByAppResponse {
+    repeated UserBenefit Infos = 10;
+}
+
+message GetUserBenefitsByOtherAppRequest {
+    string TargetAppID = 10;
+    npool.v1.PageInfo PageInfo = 20;
+}
+
+message GetUserBenefitsByOtherAppResponse {
     repeated UserBenefit Infos = 10;
 }
 

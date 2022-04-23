@@ -1931,6 +1931,38 @@
         ]
       }
     },
+    "/v1/get/user/benefits/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserBenefitsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserBenefitsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserBenefitsByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/user/direct/benefit": {
       "post": {
         "operationId": "CloudHashingBilling_GetUserDirectBenefit",
@@ -4378,6 +4410,28 @@
       }
     },
     "v1GetUserBenefitsByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserBenefit"
+          }
+        }
+      }
+    },
+    "v1GetUserBenefitsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetUserBenefitsByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {

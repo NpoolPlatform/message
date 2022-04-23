@@ -364,6 +364,15 @@ export type GetUserBenefitsByAppResponse = {
   infos?: UserBenefit[]
 }
 
+export type GetUserBenefitsByOtherAppRequest = {
+  targetAppID?: string
+  pageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetUserBenefitsByOtherAppResponse = {
+  infos?: UserBenefit[]
+}
+
 export type GetUserBenefitsRequest = {
   pageInfo?: NpoolV1Npool.PageInfo
 }
@@ -1079,6 +1088,9 @@ export class CloudHashingBilling {
   }
   static GetUserBenefitsByApp(req: GetUserBenefitsByAppRequest, initReq?: fm.InitReq): Promise<GetUserBenefitsByAppResponse> {
     return fm.fetchReq<GetUserBenefitsByAppRequest, GetUserBenefitsByAppResponse>(`/v1/get/user/benefits/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserBenefitsByOtherApp(req: GetUserBenefitsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetUserBenefitsByOtherAppResponse> {
+    return fm.fetchReq<GetUserBenefitsByOtherAppRequest, GetUserBenefitsByOtherAppResponse>(`/v1/get/user/benefits/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserBenefits(req: GetUserBenefitsRequest, initReq?: fm.InitReq): Promise<GetUserBenefitsResponse> {
     return fm.fetchReq<GetUserBenefitsRequest, GetUserBenefitsResponse>(`/v1/get/user/benefits`, {...initReq, method: "POST", body: JSON.stringify(req)})
