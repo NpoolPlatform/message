@@ -226,6 +226,7 @@ message CreateMessageResponse {
 
 message CreateMessageForOtherAppRequest {
     string TargetAppID = 10;
+    string TargetLangID = 15;
     Message Info = 20;
 }
 

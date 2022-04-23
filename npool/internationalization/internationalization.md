@@ -340,6 +340,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 | Info | [Message](#internationalization-v1-Message) |  |  |
 
 
@@ -1203,6 +1204,7 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| TargetLangID | [string](#string) |  |  |
 | Info | [Message](#internationalization-v1-Message) |  |  |
 
 

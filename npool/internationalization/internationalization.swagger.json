@@ -987,6 +987,9 @@
         "TargetAppID": {
           "type": "string"
         },
+        "TargetLangID": {
+          "type": "string"
+        },
         "Info": {
           "$ref": "#/definitions/v1Message"
         }
