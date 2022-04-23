@@ -98,6 +98,12 @@ service Internationalization {
             body: "*"
         };
     }
+    rpc CreateMessagesForOtherApp(CreateMessagesForOtherAppRequest) returns (CreateMessagesForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/messages/for/other/app"
+            body: "*"
+        };
+    }
     rpc UpdateMessage(UpdateMessageRequest) returns (UpdateMessageResponse) {
         option (google.api.http) = {
             post: "/v1/update/message"
@@ -233,6 +239,16 @@ message CreateMessagesRequest {
 }
 
 message CreateMessagesResponse {
+    repeated Message Infos = 10;
+}
+
+message CreateMessagesForOtherAppRequest {
+    string TargetAppID = 4;
+    string TargetLangID = 5;
+    repeated Message Infos = 10;
+}
+
+message CreateMessagesForOtherAppResponse {
     repeated Message Infos = 10;
 }
 

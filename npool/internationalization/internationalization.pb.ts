@@ -82,6 +82,16 @@ export type CreateMessagesResponse = {
   infos?: Message[]
 }
 
+export type CreateMessagesForOtherAppRequest = {
+  targetAppID?: string
+  targetLangID?: string
+  infos?: Message[]
+}
+
+export type CreateMessagesForOtherAppResponse = {
+  infos?: Message[]
+}
+
 export type UpdateMessageRequest = {
   info?: Message
 }
@@ -277,6 +287,9 @@ export class Internationalization {
   }
   static CreateMessages(req: CreateMessagesRequest, initReq?: fm.InitReq): Promise<CreateMessagesResponse> {
     return fm.fetchReq<CreateMessagesRequest, CreateMessagesResponse>(`/v1/create/messages`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateMessagesForOtherApp(req: CreateMessagesForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateMessagesForOtherAppResponse> {
+    return fm.fetchReq<CreateMessagesForOtherAppRequest, CreateMessagesForOtherAppResponse>(`/v1/create/messages/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateMessage(req: UpdateMessageRequest, initReq?: fm.InitReq): Promise<UpdateMessageResponse> {
     return fm.fetchReq<UpdateMessageRequest, UpdateMessageResponse>(`/v1/update/message`, {...initReq, method: "POST", body: JSON.stringify(req)})

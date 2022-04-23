@@ -39,6 +39,7 @@ type InternationalizationClient interface {
 	CreateMessage(ctx context.Context, in *CreateMessageRequest, opts ...grpc.CallOption) (*CreateMessageResponse, error)
 	CreateMessageForOtherApp(ctx context.Context, in *CreateMessageForOtherAppRequest, opts ...grpc.CallOption) (*CreateMessageForOtherAppResponse, error)
 	CreateMessages(ctx context.Context, in *CreateMessagesRequest, opts ...grpc.CallOption) (*CreateMessagesResponse, error)
+	CreateMessagesForOtherApp(ctx context.Context, in *CreateMessagesForOtherAppRequest, opts ...grpc.CallOption) (*CreateMessagesForOtherAppResponse, error)
 	UpdateMessage(ctx context.Context, in *UpdateMessageRequest, opts ...grpc.CallOption) (*UpdateMessageResponse, error)
 	UpdateMessages(ctx context.Context, in *UpdateMessagesRequest, opts ...grpc.CallOption) (*UpdateMessagesResponse, error)
 	GetMessagesByAppLang(ctx context.Context, in *GetMessagesByAppLangRequest, opts ...grpc.CallOption) (*GetMessagesByAppLangResponse, error)
@@ -185,6 +186,15 @@ func (c *internationalizationClient) CreateMessages(ctx context.Context, in *Cre
 	return out, nil
 }
 
+func (c *internationalizationClient) CreateMessagesForOtherApp(ctx context.Context, in *CreateMessagesForOtherAppRequest, opts ...grpc.CallOption) (*CreateMessagesForOtherAppResponse, error) {
+	out := new(CreateMessagesForOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/internationalization.v1.Internationalization/CreateMessagesForOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *internationalizationClient) UpdateMessage(ctx context.Context, in *UpdateMessageRequest, opts ...grpc.CallOption) (*UpdateMessageResponse, error) {
 	out := new(UpdateMessageResponse)
 	err := c.cc.Invoke(ctx, "/internationalization.v1.Internationalization/UpdateMessage", in, out, opts...)
@@ -294,6 +304,7 @@ type InternationalizationServer interface {
 	CreateMessage(context.Context, *CreateMessageRequest) (*CreateMessageResponse, error)
 	CreateMessageForOtherApp(context.Context, *CreateMessageForOtherAppRequest) (*CreateMessageForOtherAppResponse, error)
 	CreateMessages(context.Context, *CreateMessagesRequest) (*CreateMessagesResponse, error)
+	CreateMessagesForOtherApp(context.Context, *CreateMessagesForOtherAppRequest) (*CreateMessagesForOtherAppResponse, error)
 	UpdateMessage(context.Context, *UpdateMessageRequest) (*UpdateMessageResponse, error)
 	UpdateMessages(context.Context, *UpdateMessagesRequest) (*UpdateMessagesResponse, error)
 	GetMessagesByAppLang(context.Context, *GetMessagesByAppLangRequest) (*GetMessagesByAppLangResponse, error)
@@ -352,6 +363,9 @@ func (UnimplementedInternationalizationServer) CreateMessageForOtherApp(context.
 }
 func (UnimplementedInternationalizationServer) CreateMessages(context.Context, *CreateMessagesRequest) (*CreateMessagesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateMessages not implemented")
+}
+func (UnimplementedInternationalizationServer) CreateMessagesForOtherApp(context.Context, *CreateMessagesForOtherAppRequest) (*CreateMessagesForOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateMessagesForOtherApp not implemented")
 }
 func (UnimplementedInternationalizationServer) UpdateMessage(context.Context, *UpdateMessageRequest) (*UpdateMessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateMessage not implemented")
@@ -648,6 +662,24 @@ func _Internationalization_CreateMessages_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Internationalization_CreateMessagesForOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateMessagesForOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(InternationalizationServer).CreateMessagesForOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/internationalization.v1.Internationalization/CreateMessagesForOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(InternationalizationServer).CreateMessagesForOtherApp(ctx, req.(*CreateMessagesForOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Internationalization_UpdateMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateMessageRequest)
 	if err := dec(in); err != nil {
@@ -890,6 +922,10 @@ var Internationalization_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateMessages",
 			Handler:    _Internationalization_CreateMessages_Handler,
+		},
+		{
+			MethodName: "CreateMessagesForOtherApp",
+			Handler:    _Internationalization_CreateMessagesForOtherApp_Handler,
 		},
 		{
 			MethodName: "UpdateMessage",
