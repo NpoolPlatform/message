@@ -875,6 +875,38 @@
         ]
       }
     },
+    "/v1/get/coin/account/transactions/by/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetCoinAccountTransactionsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinAccountTransactionsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinAccountTransactionsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/coin/account/transactions/by/app/user": {
       "post": {
         "operationId": "CloudHashingBilling_GetCoinAccountTransactionsByAppUser",
@@ -1027,6 +1059,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetCoinAccountTransactionsByGoodStateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/coin/account/transactions/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetCoinAccountTransactionsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinAccountTransactionsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinAccountTransactionsByOtherAppRequest"
             }
           }
         ],
@@ -3648,6 +3712,25 @@
         }
       }
     },
+    "v1GetCoinAccountTransactionsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetCoinAccountTransactionsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinAccountTransaction"
+          }
+        }
+      }
+    },
     "v1GetCoinAccountTransactionsByAppUserCoinRequest": {
       "type": "object",
       "properties": {
@@ -3748,6 +3831,25 @@
       }
     },
     "v1GetCoinAccountTransactionsByGoodStateResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinAccountTransaction"
+          }
+        }
+      }
+    },
+    "v1GetCoinAccountTransactionsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetCoinAccountTransactionsByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {

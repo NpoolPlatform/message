@@ -151,6 +151,22 @@ export type GetCoinAccountTransactionsResponse = {
   infos?: CoinAccountTransaction[]
 }
 
+export type GetCoinAccountTransactionsByAppRequest = {
+  appID?: string
+}
+
+export type GetCoinAccountTransactionsByAppResponse = {
+  infos?: CoinAccountTransaction[]
+}
+
+export type GetCoinAccountTransactionsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetCoinAccountTransactionsByOtherAppResponse = {
+  infos?: CoinAccountTransaction[]
+}
+
 export type GetCoinAccountTransactionsByAppUserRequest = {
   appID?: string
   userID?: string
@@ -984,6 +1000,12 @@ export class CloudHashingBilling {
   }
   static GetCoinAccountTransactions(req: GetCoinAccountTransactionsRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsResponse> {
     return fm.fetchReq<GetCoinAccountTransactionsRequest, GetCoinAccountTransactionsResponse>(`/v1/get/coin/account/transactions`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCoinAccountTransactionsByApp(req: GetCoinAccountTransactionsByAppRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsByAppResponse> {
+    return fm.fetchReq<GetCoinAccountTransactionsByAppRequest, GetCoinAccountTransactionsByAppResponse>(`/v1/get/coin/account/transactions/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCoinAccountTransactionsByOtherApp(req: GetCoinAccountTransactionsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsByOtherAppResponse> {
+    return fm.fetchReq<GetCoinAccountTransactionsByOtherAppRequest, GetCoinAccountTransactionsByOtherAppResponse>(`/v1/get/coin/account/transactions/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetCoinAccountTransactionsByAppUser(req: GetCoinAccountTransactionsByAppUserRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsByAppUserResponse> {
     return fm.fetchReq<GetCoinAccountTransactionsByAppUserRequest, GetCoinAccountTransactionsByAppUserResponse>(`/v1/get/coin/account/transactions/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})

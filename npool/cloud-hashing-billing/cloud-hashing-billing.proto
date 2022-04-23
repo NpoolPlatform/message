@@ -92,6 +92,18 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetCoinAccountTransactionsByApp (GetCoinAccountTransactionsByAppRequest) returns (GetCoinAccountTransactionsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coin/account/transactions/by/app"
+            body: "*"
+        };
+    }
+    rpc GetCoinAccountTransactionsByOtherApp (GetCoinAccountTransactionsByOtherAppRequest) returns (GetCoinAccountTransactionsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coin/account/transactions/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetCoinAccountTransactionsByAppUser (GetCoinAccountTransactionsByAppUserRequest) returns (GetCoinAccountTransactionsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/coin/account/transactions/by/app/user"
@@ -732,6 +744,22 @@ message GetCoinAccountTransactionsRequest {
 }
 
 message GetCoinAccountTransactionsResponse {
+    repeated CoinAccountTransaction Infos = 10;
+}
+
+message GetCoinAccountTransactionsByAppRequest {
+    string AppID = 10;
+}
+
+message GetCoinAccountTransactionsByAppResponse {
+    repeated CoinAccountTransaction Infos = 10;
+}
+
+message GetCoinAccountTransactionsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetCoinAccountTransactionsByOtherAppResponse {
     repeated CoinAccountTransaction Infos = 10;
 }
 
