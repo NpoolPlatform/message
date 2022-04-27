@@ -13,6 +13,7 @@ enum CoinType {
   CoinTypeusdterc20 = 4;
   CoinTypespacemesh = 5;
   CoinTypesolana    = 6;
+  CoinTypeusdttrc20    = 7;
 
   // testnet
   CoinTypetfilecoin   = 100;
@@ -21,6 +22,7 @@ enum CoinType {
   CoinTypetusdterc20  = 103;
   CoinTypetspacemesh  = 104;
   CoinTypetsolana     = 105;
+  CoinTypetusdttrc20     = 106;
 }
 
 // fil
@@ -47,6 +49,9 @@ message UnsignedMessage {
 
   // btc
   repeated Unspent Unspent = 200;
+
+  // 210
+  bytes TxData            =210;
 }
 
 message Signature {

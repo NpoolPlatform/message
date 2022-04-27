@@ -254,12 +254,14 @@
         "CoinTypeusdterc20",
         "CoinTypespacemesh",
         "CoinTypesolana",
+        "CoinTypeusdttrc20",
         "CoinTypetfilecoin",
         "CoinTypetbitcoin",
         "CoinTypetethereum",
         "CoinTypetusdterc20",
         "CoinTypetspacemesh",
-        "CoinTypetsolana"
+        "CoinTypetsolana",
+        "CoinTypetusdttrc20"
       ],
       "default": "CoinTypeUnKnow",
       "title": "- CoinTypefilecoin: mainnet\n - CoinTypetfilecoin: testnet"
@@ -621,6 +623,11 @@
             "$ref": "#/definitions/v1Unspent"
           },
           "title": "btc"
+        },
+        "TxData": {
+          "type": "string",
+          "format": "byte",
+          "title": "210"
         }
       },
       "title": "fil"

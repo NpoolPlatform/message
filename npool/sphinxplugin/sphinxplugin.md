@@ -142,6 +142,7 @@ fil
 | Method | [uint64](#uint64) |  |  |
 | Params | [bytes](#bytes) |  |  |
 | Unspent | [Unspent](#sphinx-plugin-v1-Unspent) | repeated | btc |
+| TxData | [bytes](#bytes) |  | 210 |
 
 
 
@@ -187,12 +188,14 @@ fil
 | CoinTypeusdterc20 | 4 |  |
 | CoinTypespacemesh | 5 |  |
 | CoinTypesolana | 6 |  |
+| CoinTypeusdttrc20 | 7 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
 | CoinTypetusdterc20 | 103 |  |
 | CoinTypetspacemesh | 104 |  |
 | CoinTypetsolana | 105 |  |
+| CoinTypetusdttrc20 | 106 |  |
 
 
  
@@ -316,6 +319,7 @@ fil
 | Method | [uint64](#uint64) |  |  |
 | Params | [bytes](#bytes) |  |  |
 | Unspent | [Unspent](#sphinx-plugin-v1-Unspent) | repeated | btc |
+| TxData | [bytes](#bytes) |  | 210 |
 
 
 
@@ -361,12 +365,14 @@ fil
 | CoinTypeusdterc20 | 4 |  |
 | CoinTypespacemesh | 5 |  |
 | CoinTypesolana | 6 |  |
+| CoinTypeusdttrc20 | 7 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
 | CoinTypetusdterc20 | 103 |  |
 | CoinTypetspacemesh | 104 |  |
 | CoinTypetsolana | 105 |  |
+| CoinTypetusdttrc20 | 106 |  |
 
 
  
