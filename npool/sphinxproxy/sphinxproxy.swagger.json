@@ -621,6 +621,10 @@
             "$ref": "#/definitions/v1Unspent"
           },
           "title": "btc"
+        },
+        "RecentBhash": {
+          "type": "string",
+          "title": "sol"
         }
       },
       "title": "fil"

@@ -47,6 +47,9 @@ message UnsignedMessage {
 
   // btc
   repeated Unspent Unspent = 200;
+
+  // sol
+  string RecentBhash        = 210;
 }
 
 message Signature {

@@ -142,6 +142,7 @@ fil
 | Method | [uint64](#uint64) |  |  |
 | Params | [bytes](#bytes) |  |  |
 | Unspent | [Unspent](#sphinx-plugin-v1-Unspent) | repeated | btc |
+| RecentBhash | [string](#string) |  | sol |
 
 
 
@@ -316,6 +317,7 @@ fil
 | Method | [uint64](#uint64) |  |  |
 | Params | [bytes](#bytes) |  |  |
 | Unspent | [Unspent](#sphinx-plugin-v1-Unspent) | repeated | btc |
+| RecentBhash | [string](#string) |  | sol |
 
 
 
