@@ -135,6 +135,10 @@
         "GoodID": {
           "type": "string"
         },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        },
         "InService": {
           "type": "integer",
           "format": "int64"

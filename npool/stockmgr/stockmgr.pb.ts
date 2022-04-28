@@ -10,6 +10,7 @@ import * as NpoolV1Npool from "../npool.pb"
 export type Stock = {
   id?: string
   goodID?: string
+  total?: number
   inService?: number
   sold?: number
 }

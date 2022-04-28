@@ -68,6 +68,7 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
+| Total | [uint32](#uint32) |  |  |
 | InService | [uint32](#uint32) |  |  |
 | Sold | [uint32](#uint32) |  |  |
 
@@ -143,6 +144,7 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
+| Total | [uint32](#uint32) |  |  |
 | InService | [uint32](#uint32) |  |  |
 | Sold | [uint32](#uint32) |  |  |
 

@@ -28,8 +28,9 @@ service StockManager {
 message Stock {
     string ID = 10;
     string GoodID = 20;
-    uint32 InService = 30;
-    uint32 Sold = 40;
+    uint32 Total = 30;
+    uint32 InService = 40;
+    uint32 Sold = 50;
 }
 
 message CreateStockRequest {
