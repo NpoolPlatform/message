@@ -26,6 +26,15 @@ const _ = grpc.SupportPackageIsVersion7
 type StockManagerClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateStock(ctx context.Context, in *CreateStockRequest, opts ...grpc.CallOption) (*CreateStockResponse, error)
+	CreateStocks(ctx context.Context, in *CreateStocksRequest, opts ...grpc.CallOption) (*CreateStocksResponse, error)
+	UpdateStock(ctx context.Context, in *UpdateStockRequest, opts ...grpc.CallOption) (*UpdateStockResponse, error)
+	UpdateStockFields(ctx context.Context, in *UpdateStockFieldsRequest, opts ...grpc.CallOption) (*UpdateStockFieldsResponse, error)
+	AtomicIncStock(ctx context.Context, in *AtomicIncStockRequest, opts ...grpc.CallOption) (*AtomicIncStockResponse, error)
+	AtomicSubStock(ctx context.Context, in *AtomicSubStockRequest, opts ...grpc.CallOption) (*AtomicSubStockResponse, error)
+	AtomicSetStock(ctx context.Context, in *AtomicSetStockRequest, opts ...grpc.CallOption) (*AtomicSetStockResponse, error)
+	ExistStock(ctx context.Context, in *ExistStockRequest, opts ...grpc.CallOption) (*ExistStockResponse, error)
+	CountStocks(ctx context.Context, in *CountStocksRequest, opts ...grpc.CallOption) (*CountStocksResponse, error)
+	DeleteStock(ctx context.Context, in *DeleteStockRequest, opts ...grpc.CallOption) (*DeleteStockResponse, error)
 }
 
 type stockManagerClient struct {
@@ -54,12 +63,102 @@ func (c *stockManagerClient) CreateStock(ctx context.Context, in *CreateStockReq
 	return out, nil
 }
 
+func (c *stockManagerClient) CreateStocks(ctx context.Context, in *CreateStocksRequest, opts ...grpc.CallOption) (*CreateStocksResponse, error) {
+	out := new(CreateStocksResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/CreateStocks", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *stockManagerClient) UpdateStock(ctx context.Context, in *UpdateStockRequest, opts ...grpc.CallOption) (*UpdateStockResponse, error) {
+	out := new(UpdateStockResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/UpdateStock", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *stockManagerClient) UpdateStockFields(ctx context.Context, in *UpdateStockFieldsRequest, opts ...grpc.CallOption) (*UpdateStockFieldsResponse, error) {
+	out := new(UpdateStockFieldsResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/UpdateStockFields", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *stockManagerClient) AtomicIncStock(ctx context.Context, in *AtomicIncStockRequest, opts ...grpc.CallOption) (*AtomicIncStockResponse, error) {
+	out := new(AtomicIncStockResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/AtomicIncStock", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *stockManagerClient) AtomicSubStock(ctx context.Context, in *AtomicSubStockRequest, opts ...grpc.CallOption) (*AtomicSubStockResponse, error) {
+	out := new(AtomicSubStockResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/AtomicSubStock", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *stockManagerClient) AtomicSetStock(ctx context.Context, in *AtomicSetStockRequest, opts ...grpc.CallOption) (*AtomicSetStockResponse, error) {
+	out := new(AtomicSetStockResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/AtomicSetStock", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *stockManagerClient) ExistStock(ctx context.Context, in *ExistStockRequest, opts ...grpc.CallOption) (*ExistStockResponse, error) {
+	out := new(ExistStockResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/ExistStock", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *stockManagerClient) CountStocks(ctx context.Context, in *CountStocksRequest, opts ...grpc.CallOption) (*CountStocksResponse, error) {
+	out := new(CountStocksResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/CountStocks", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *stockManagerClient) DeleteStock(ctx context.Context, in *DeleteStockRequest, opts ...grpc.CallOption) (*DeleteStockResponse, error) {
+	out := new(DeleteStockResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/DeleteStock", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // StockManagerServer is the server API for StockManager service.
 // All implementations must embed UnimplementedStockManagerServer
 // for forward compatibility
 type StockManagerServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateStock(context.Context, *CreateStockRequest) (*CreateStockResponse, error)
+	CreateStocks(context.Context, *CreateStocksRequest) (*CreateStocksResponse, error)
+	UpdateStock(context.Context, *UpdateStockRequest) (*UpdateStockResponse, error)
+	UpdateStockFields(context.Context, *UpdateStockFieldsRequest) (*UpdateStockFieldsResponse, error)
+	AtomicIncStock(context.Context, *AtomicIncStockRequest) (*AtomicIncStockResponse, error)
+	AtomicSubStock(context.Context, *AtomicSubStockRequest) (*AtomicSubStockResponse, error)
+	AtomicSetStock(context.Context, *AtomicSetStockRequest) (*AtomicSetStockResponse, error)
+	ExistStock(context.Context, *ExistStockRequest) (*ExistStockResponse, error)
+	CountStocks(context.Context, *CountStocksRequest) (*CountStocksResponse, error)
+	DeleteStock(context.Context, *DeleteStockRequest) (*DeleteStockResponse, error)
 	mustEmbedUnimplementedStockManagerServer()
 }
 
@@ -72,6 +171,33 @@ func (UnimplementedStockManagerServer) Version(context.Context, *emptypb.Empty) 
 }
 func (UnimplementedStockManagerServer) CreateStock(context.Context, *CreateStockRequest) (*CreateStockResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateStock not implemented")
+}
+func (UnimplementedStockManagerServer) CreateStocks(context.Context, *CreateStocksRequest) (*CreateStocksResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateStocks not implemented")
+}
+func (UnimplementedStockManagerServer) UpdateStock(context.Context, *UpdateStockRequest) (*UpdateStockResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateStock not implemented")
+}
+func (UnimplementedStockManagerServer) UpdateStockFields(context.Context, *UpdateStockFieldsRequest) (*UpdateStockFieldsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateStockFields not implemented")
+}
+func (UnimplementedStockManagerServer) AtomicIncStock(context.Context, *AtomicIncStockRequest) (*AtomicIncStockResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AtomicIncStock not implemented")
+}
+func (UnimplementedStockManagerServer) AtomicSubStock(context.Context, *AtomicSubStockRequest) (*AtomicSubStockResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AtomicSubStock not implemented")
+}
+func (UnimplementedStockManagerServer) AtomicSetStock(context.Context, *AtomicSetStockRequest) (*AtomicSetStockResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AtomicSetStock not implemented")
+}
+func (UnimplementedStockManagerServer) ExistStock(context.Context, *ExistStockRequest) (*ExistStockResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistStock not implemented")
+}
+func (UnimplementedStockManagerServer) CountStocks(context.Context, *CountStocksRequest) (*CountStocksResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountStocks not implemented")
+}
+func (UnimplementedStockManagerServer) DeleteStock(context.Context, *DeleteStockRequest) (*DeleteStockResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteStock not implemented")
 }
 func (UnimplementedStockManagerServer) mustEmbedUnimplementedStockManagerServer() {}
 
@@ -122,6 +248,168 @@ func _StockManager_CreateStock_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _StockManager_CreateStocks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateStocksRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StockManagerServer).CreateStocks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stock.manager.v1.StockManager/CreateStocks",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StockManagerServer).CreateStocks(ctx, req.(*CreateStocksRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StockManager_UpdateStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateStockRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StockManagerServer).UpdateStock(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stock.manager.v1.StockManager/UpdateStock",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StockManagerServer).UpdateStock(ctx, req.(*UpdateStockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StockManager_UpdateStockFields_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateStockFieldsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StockManagerServer).UpdateStockFields(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stock.manager.v1.StockManager/UpdateStockFields",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StockManagerServer).UpdateStockFields(ctx, req.(*UpdateStockFieldsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StockManager_AtomicIncStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AtomicIncStockRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StockManagerServer).AtomicIncStock(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stock.manager.v1.StockManager/AtomicIncStock",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StockManagerServer).AtomicIncStock(ctx, req.(*AtomicIncStockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StockManager_AtomicSubStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AtomicSubStockRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StockManagerServer).AtomicSubStock(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stock.manager.v1.StockManager/AtomicSubStock",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StockManagerServer).AtomicSubStock(ctx, req.(*AtomicSubStockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StockManager_AtomicSetStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AtomicSetStockRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StockManagerServer).AtomicSetStock(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stock.manager.v1.StockManager/AtomicSetStock",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StockManagerServer).AtomicSetStock(ctx, req.(*AtomicSetStockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StockManager_ExistStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistStockRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StockManagerServer).ExistStock(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stock.manager.v1.StockManager/ExistStock",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StockManagerServer).ExistStock(ctx, req.(*ExistStockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StockManager_CountStocks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountStocksRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StockManagerServer).CountStocks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stock.manager.v1.StockManager/CountStocks",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StockManagerServer).CountStocks(ctx, req.(*CountStocksRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StockManager_DeleteStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteStockRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StockManagerServer).DeleteStock(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stock.manager.v1.StockManager/DeleteStock",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StockManagerServer).DeleteStock(ctx, req.(*DeleteStockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // StockManager_ServiceDesc is the grpc.ServiceDesc for StockManager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -136,6 +424,42 @@ var StockManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateStock",
 			Handler:    _StockManager_CreateStock_Handler,
+		},
+		{
+			MethodName: "CreateStocks",
+			Handler:    _StockManager_CreateStocks_Handler,
+		},
+		{
+			MethodName: "UpdateStock",
+			Handler:    _StockManager_UpdateStock_Handler,
+		},
+		{
+			MethodName: "UpdateStockFields",
+			Handler:    _StockManager_UpdateStockFields_Handler,
+		},
+		{
+			MethodName: "AtomicIncStock",
+			Handler:    _StockManager_AtomicIncStock_Handler,
+		},
+		{
+			MethodName: "AtomicSubStock",
+			Handler:    _StockManager_AtomicSubStock_Handler,
+		},
+		{
+			MethodName: "AtomicSetStock",
+			Handler:    _StockManager_AtomicSetStock_Handler,
+		},
+		{
+			MethodName: "ExistStock",
+			Handler:    _StockManager_ExistStock_Handler,
+		},
+		{
+			MethodName: "CountStocks",
+			Handler:    _StockManager_CountStocks_Handler,
+		},
+		{
+			MethodName: "DeleteStock",
+			Handler:    _StockManager_DeleteStock_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

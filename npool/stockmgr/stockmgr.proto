@@ -4,10 +4,10 @@ package stock.manager.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/stockmgr";
 
+import "google/protobuf/any.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
-import "npool/appusermgr/appusermgr.proto";
 
 service StockManager {
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
@@ -20,6 +20,69 @@ service StockManager {
     rpc CreateStock (CreateStockRequest) returns (CreateStockResponse) {
         option (google.api.http) = {
             post: "/v1/create/stock"
+            body: "*"
+        };
+    }
+
+    rpc CreateStocks (CreateStocksRequest) returns (CreateStocksResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/stocks"
+            body: "*"
+        };
+    }
+
+    rpc UpdateStock (UpdateStockRequest) returns (UpdateStockResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/stock"
+            body: "*"
+        };
+    }
+
+    rpc UpdateStockFields (UpdateStockFieldsRequest) returns (UpdateStockFieldsResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/stock/fields"
+            body: "*"
+        };
+    }
+
+    rpc AtomicIncStock (AtomicIncStockRequest) returns (AtomicIncStockResponse) {
+        option (google.api.http) = {
+            post: "/v1/atomic/inc/stock/fields"
+            body: "*"
+        };
+    }
+
+    rpc AtomicSubStock (AtomicSubStockRequest) returns (AtomicSubStockResponse) {
+        option (google.api.http) = {
+            post: "/v1/atomic/sub/stock/fields"
+            body: "*"
+        };
+    }
+
+    rpc AtomicSetStock (AtomicSetStockRequest) returns (AtomicSetStockResponse) {
+        option (google.api.http) = {
+            post: "/v1/atomic/set/stock/fields"
+            body: "*"
+        };
+    }
+
+    rpc ExistStock (ExistStockRequest) returns (ExistStockResponse) {
+        option (google.api.http) = {
+            post: "/v1/exist/stock"
+            body: "*"
+        };
+    }
+
+    rpc CountStocks (CountStocksRequest) returns (CountStocksResponse) {
+        option (google.api.http) = {
+            post: "/v1/count/stocks"
+            body: "*"
+        };
+    }
+
+    rpc DeleteStock (DeleteStockRequest) returns (DeleteStockResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/stock"
             body: "*"
         };
     }
@@ -41,3 +104,78 @@ message CreateStockResponse {
     Stock Info = 10;
 }
 
+message CreateStocksRequest {
+    repeated Stock Infos = 10;
+}
+
+message CreateStocksResponse {
+    repeated Stock Infos = 10;
+}
+
+message UpdateStockRequest {
+    Stock Info = 10;
+}
+
+message UpdateStockResponse {
+    Stock Info = 10;
+}
+
+message UpdateStockFieldsRequest {
+    string ID = 10;
+    map<string, google.protobuf.Any> Fields = 20;
+}
+
+message UpdateStockFieldsResponse {
+    Stock Info = 10;
+}
+
+message AtomicIncStockRequest {
+    string ID = 10;
+    repeated string Fields = 20;
+}
+
+message AtomicIncStockResponse {
+    Stock Info = 10;
+}
+
+message AtomicSubStockRequest {
+    string ID = 10;
+    repeated string Fields = 20;
+}
+
+message AtomicSubStockResponse {
+    Stock Info = 10;
+}
+
+message AtomicSetStockRequest {
+    string ID = 10;
+    map<string, google.protobuf.Any> Fields = 20;
+}
+
+message AtomicSetStockResponse {
+    Stock Info = 10;
+}
+
+message ExistStockRequest {
+    map<string, google.protobuf.Any> Fields = 10;
+}
+
+message ExistStockResponse {
+    bool Result = 10;
+}
+
+message CountStocksRequest {
+    map<string, google.protobuf.Any> Fields = 10;
+}
+
+message CountStocksResponse {
+    uint32 Result = 10;
+}
+
+message DeleteStockRequest {
+    string ID = 10;
+}
+
+message DeleteStockResponse {
+    Stock Info = 10;
+}
