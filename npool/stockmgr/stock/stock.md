@@ -3,20 +3,76 @@
 
 ## Table of Contents
 
-- [npool/stockmgr/stockmgr.proto](#npool_stockmgr_stockmgr-proto)
-    - [StockManager](#stock-manager-v1-StockManager)
+- [npool/stockmgr/stock/stock.proto](#npool_stockmgr_stock_stock-proto)
+    - [CreateRequest](#stock-manager-stock-v1-CreateRequest)
+    - [CreateResponse](#stock-manager-stock-v1-CreateResponse)
+    - [Stock](#stock-manager-stock-v1-Stock)
   
-- [npool/stockmgr/stockmgr.proto](#npool_stockmgr_stockmgr-proto)
-    - [StockManager](#stock-manager-v1-StockManager)
+    - [StockManager](#stock-manager-stock-v1-StockManager)
+  
+- [npool/stockmgr/stock/stock.proto](#npool_stockmgr_stock_stock-proto)
+    - [CreateRequest](#stock-manager-stock-v1-CreateRequest)
+    - [CreateResponse](#stock-manager-stock-v1-CreateResponse)
+    - [Stock](#stock-manager-stock-v1-Stock)
+  
+    - [StockManager](#stock-manager-stock-v1-StockManager)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool_stockmgr_stockmgr-proto"></a>
+<a name="npool_stockmgr_stock_stock-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/stockmgr/stockmgr.proto
+## npool/stockmgr/stock/stock.proto
+
+
+
+<a name="stock-manager-stock-v1-CreateRequest"></a>
+
+### CreateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Stock](#stock-manager-stock-v1-Stock) |  |  |
+
+
+
+
+
+
+<a name="stock-manager-stock-v1-CreateResponse"></a>
+
+### CreateResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Stock](#stock-manager-stock-v1-Stock) |  |  |
+
+
+
+
+
+
+<a name="stock-manager-stock-v1-Stock"></a>
+
+### Stock
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
+| InService | [uint32](#uint32) |  |  |
+| Sold | [uint32](#uint32) |  |  |
+
+
+
 
 
  
@@ -26,7 +82,7 @@
  
 
 
-<a name="stock-manager-v1-StockManager"></a>
+<a name="stock-manager-stock-v1-StockManager"></a>
 
 ### StockManager
 
@@ -34,15 +90,64 @@
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
+| Create | [CreateRequest](#stock-manager-stock-v1-CreateRequest) | [CreateResponse](#stock-manager-stock-v1-CreateResponse) |  |
 
  
 
 
 
-<a name="npool_stockmgr_stockmgr-proto"></a>
+<a name="npool_stockmgr_stock_stock-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/stockmgr/stockmgr.proto
+## npool/stockmgr/stock/stock.proto
+
+
+
+<a name="stock-manager-stock-v1-CreateRequest"></a>
+
+### CreateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Stock](#stock-manager-stock-v1-Stock) |  |  |
+
+
+
+
+
+
+<a name="stock-manager-stock-v1-CreateResponse"></a>
+
+### CreateResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Stock](#stock-manager-stock-v1-Stock) |  |  |
+
+
+
+
+
+
+<a name="stock-manager-stock-v1-Stock"></a>
+
+### Stock
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
+| InService | [uint32](#uint32) |  |  |
+| Sold | [uint32](#uint32) |  |  |
+
+
+
 
 
  
@@ -52,7 +157,7 @@
  
 
 
-<a name="stock-manager-v1-StockManager"></a>
+<a name="stock-manager-stock-v1-StockManager"></a>
 
 ### StockManager
 
@@ -60,6 +165,7 @@
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
+| Create | [CreateRequest](#stock-manager-stock-v1-CreateRequest) | [CreateResponse](#stock-manager-stock-v1-CreateResponse) |  |
 
  
 

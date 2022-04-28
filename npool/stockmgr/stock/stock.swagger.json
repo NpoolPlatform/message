@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/stockmgr/stockmgr.proto",
+    "title": "npool/stockmgr/stock/stock.proto",
     "version": "version not set"
   },
   "consumes": [
@@ -11,6 +11,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/stock": {
+      "post": {
+        "operationId": "StockManager_Create",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "StockManager"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "operationId": "StockManager_Version",
@@ -75,6 +107,41 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1CreateRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Stock"
+        }
+      }
+    },
+    "v1CreateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Stock"
+        }
+      }
+    },
+    "v1Stock": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "InService": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Sold": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

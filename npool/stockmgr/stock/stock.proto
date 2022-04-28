@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package stock.manager.stock.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/stockmgr/stock";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/appusermgr/appusermgr.proto";
+
+service StockManager {
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+
+    rpc Create (CreateRequest) returns (CreateResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/stock"
+            body: "*"
+        };
+    }
+}
+
+message Stock {
+    string ID = 10;
+    string GoodID = 20;
+    uint32 InService = 30;
+    uint32 Sold = 40;
+}
+
+message CreateRequest {
+    Stock Info = 10;
+}
+
+message CreateResponse {
+    Stock Info = 10;
+}
+
