@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/stockmgr/stock/stock.proto",
+    "title": "npool/stockmgr/stockmgr.proto",
     "version": "version not set"
   },
   "consumes": [
@@ -13,12 +13,12 @@
   "paths": {
     "/v1/create/stock": {
       "post": {
-        "operationId": "StockManager_Create",
+        "operationId": "StockManager_CreateStock",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateResponse"
+              "$ref": "#/definitions/v1CreateStockResponse"
             }
           },
           "default": {
@@ -34,7 +34,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateRequest"
+              "$ref": "#/definitions/v1CreateStockRequest"
             }
           }
         ],
@@ -110,7 +110,7 @@
         }
       }
     },
-    "v1CreateRequest": {
+    "v1CreateStockRequest": {
       "type": "object",
       "properties": {
         "Info": {
@@ -118,7 +118,7 @@
         }
       }
     },
-    "v1CreateResponse": {
+    "v1CreateStockResponse": {
       "type": "object",
       "properties": {
         "Info": {

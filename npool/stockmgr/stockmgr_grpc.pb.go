@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/stockmgr/stock/stock.proto
+// source: npool/stockmgr/stockmgr.proto
 
-package stock
+package stockmgr
 
 import (
 	context "context"
@@ -25,7 +25,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type StockManagerClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
-	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateResponse, error)
+	CreateStock(ctx context.Context, in *CreateStockRequest, opts ...grpc.CallOption) (*CreateStockResponse, error)
 }
 
 type stockManagerClient struct {
@@ -38,16 +38,16 @@ func NewStockManagerClient(cc grpc.ClientConnInterface) StockManagerClient {
 
 func (c *stockManagerClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/stock.manager.stock.v1.StockManager/Version", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *stockManagerClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateResponse, error) {
-	out := new(CreateResponse)
-	err := c.cc.Invoke(ctx, "/stock.manager.stock.v1.StockManager/Create", in, out, opts...)
+func (c *stockManagerClient) CreateStock(ctx context.Context, in *CreateStockRequest, opts ...grpc.CallOption) (*CreateStockResponse, error) {
+	out := new(CreateStockResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/CreateStock", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -59,7 +59,7 @@ func (c *stockManagerClient) Create(ctx context.Context, in *CreateRequest, opts
 // for forward compatibility
 type StockManagerServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
-	Create(context.Context, *CreateRequest) (*CreateResponse, error)
+	CreateStock(context.Context, *CreateStockRequest) (*CreateStockResponse, error)
 	mustEmbedUnimplementedStockManagerServer()
 }
 
@@ -70,8 +70,8 @@ type UnimplementedStockManagerServer struct {
 func (UnimplementedStockManagerServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
-func (UnimplementedStockManagerServer) Create(context.Context, *CreateRequest) (*CreateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
+func (UnimplementedStockManagerServer) CreateStock(context.Context, *CreateStockRequest) (*CreateStockResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateStock not implemented")
 }
 func (UnimplementedStockManagerServer) mustEmbedUnimplementedStockManagerServer() {}
 
@@ -96,7 +96,7 @@ func _StockManager_Version_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/stock.manager.stock.v1.StockManager/Version",
+		FullMethod: "/stock.manager.v1.StockManager/Version",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StockManagerServer).Version(ctx, req.(*emptypb.Empty))
@@ -104,20 +104,20 @@ func _StockManager_Version_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _StockManager_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateRequest)
+func _StockManager_CreateStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateStockRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(StockManagerServer).Create(ctx, in)
+		return srv.(StockManagerServer).CreateStock(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/stock.manager.stock.v1.StockManager/Create",
+		FullMethod: "/stock.manager.v1.StockManager/CreateStock",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StockManagerServer).Create(ctx, req.(*CreateRequest))
+		return srv.(StockManagerServer).CreateStock(ctx, req.(*CreateStockRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -126,7 +126,7 @@ func _StockManager_Create_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var StockManager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "stock.manager.stock.v1.StockManager",
+	ServiceName: "stock.manager.v1.StockManager",
 	HandlerType: (*StockManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -134,10 +134,10 @@ var StockManager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _StockManager_Version_Handler,
 		},
 		{
-			MethodName: "Create",
-			Handler:    _StockManager_Create_Handler,
+			MethodName: "CreateStock",
+			Handler:    _StockManager_CreateStock_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/stockmgr/stock/stock.proto",
+	Metadata: "npool/stockmgr/stockmgr.proto",
 }

@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package stock.manager.stock.v1;
+package stock.manager.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/stockmgr/stock";
+option go_package = "github.com/NpoolPlatform/message/npool/stockmgr";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -17,7 +17,7 @@ service StockManager {
         };
     }
 
-    rpc Create (CreateRequest) returns (CreateResponse) {
+    rpc CreateStock (CreateStockRequest) returns (CreateStockResponse) {
         option (google.api.http) = {
             post: "/v1/create/stock"
             body: "*"
@@ -32,11 +32,11 @@ message Stock {
     uint32 Sold = 40;
 }
 
-message CreateRequest {
+message CreateStockRequest {
     Stock Info = 10;
 }
 
-message CreateResponse {
+message CreateStockResponse {
     Stock Info = 10;
 }
 
