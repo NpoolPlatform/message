@@ -203,6 +203,38 @@
         ]
       }
     },
+    "/v1/exist/stock/fields": {
+      "post": {
+        "operationId": "StockManager_ExistStockFields",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ExistStockFieldsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ExistStockFieldsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "StockManager"
+        ]
+      }
+    },
     "/v1/update/stock": {
       "post": {
         "operationId": "StockManager_UpdateStock",
@@ -370,7 +402,7 @@
         "Fields": {
           "type": "object",
           "additionalProperties": {
-            "type": "object"
+            "$ref": "#/definitions/v1FilterCond"
           }
         }
       }
@@ -438,14 +470,30 @@
         }
       }
     },
+    "v1ExistStockFieldsRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        }
+      }
+    },
+    "v1ExistStockFieldsResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1ExistStockRequest": {
       "type": "object",
       "properties": {
-        "Fields": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "object"
-          }
+        "ID": {
+          "type": "string"
         }
       }
     },
@@ -454,6 +502,17 @@
       "properties": {
         "Result": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1FilterCond": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Val": {
+          "type": "object"
         }
       }
     },

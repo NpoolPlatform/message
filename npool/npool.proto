@@ -4,6 +4,8 @@ package npool.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool";
 
+import "google/protobuf/struct.proto";
+
 message PageInfo {
     int32 Offset = 10;
     int32 Limit = 20;
@@ -11,4 +13,9 @@ message PageInfo {
 
 message VersionResponse {
     string Info = 10;
+}
+
+message FilterCond {
+    string Op = 10;
+    google.protobuf.Value Val = 20;
 }

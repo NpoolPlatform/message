@@ -16,8 +16,10 @@
     - [CreateStocksResponse](#stock-manager-v1-CreateStocksResponse)
     - [DeleteStockRequest](#stock-manager-v1-DeleteStockRequest)
     - [DeleteStockResponse](#stock-manager-v1-DeleteStockResponse)
+    - [ExistStockFieldsRequest](#stock-manager-v1-ExistStockFieldsRequest)
+    - [ExistStockFieldsRequest.CondsEntry](#stock-manager-v1-ExistStockFieldsRequest-CondsEntry)
+    - [ExistStockFieldsResponse](#stock-manager-v1-ExistStockFieldsResponse)
     - [ExistStockRequest](#stock-manager-v1-ExistStockRequest)
-    - [ExistStockRequest.FieldsEntry](#stock-manager-v1-ExistStockRequest-FieldsEntry)
     - [ExistStockResponse](#stock-manager-v1-ExistStockResponse)
     - [Stock](#stock-manager-v1-Stock)
     - [UpdateStockFieldsRequest](#stock-manager-v1-UpdateStockFieldsRequest)
@@ -41,8 +43,10 @@
     - [CreateStocksResponse](#stock-manager-v1-CreateStocksResponse)
     - [DeleteStockRequest](#stock-manager-v1-DeleteStockRequest)
     - [DeleteStockResponse](#stock-manager-v1-DeleteStockResponse)
+    - [ExistStockFieldsRequest](#stock-manager-v1-ExistStockFieldsRequest)
+    - [ExistStockFieldsRequest.CondsEntry](#stock-manager-v1-ExistStockFieldsRequest-CondsEntry)
+    - [ExistStockFieldsResponse](#stock-manager-v1-ExistStockFieldsResponse)
     - [ExistStockRequest](#stock-manager-v1-ExistStockRequest)
-    - [ExistStockRequest.FieldsEntry](#stock-manager-v1-ExistStockRequest-FieldsEntry)
     - [ExistStockResponse](#stock-manager-v1-ExistStockResponse)
     - [Stock](#stock-manager-v1-Stock)
     - [UpdateStockFieldsRequest](#stock-manager-v1-UpdateStockFieldsRequest)
@@ -135,7 +139,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | key | [string](#string) |  |  |
-| value | [google.protobuf.Value](#google-protobuf-Value) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
 
 
 
@@ -247,6 +251,52 @@
 
 
 
+<a name="stock-manager-v1-ExistStockFieldsRequest"></a>
+
+### ExistStockFieldsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [ExistStockFieldsRequest.CondsEntry](#stock-manager-v1-ExistStockFieldsRequest-CondsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="stock-manager-v1-ExistStockFieldsRequest-CondsEntry"></a>
+
+### ExistStockFieldsRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="stock-manager-v1-ExistStockFieldsResponse"></a>
+
+### ExistStockFieldsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Result | [bool](#bool) |  |  |
+
+
+
+
+
+
 <a name="stock-manager-v1-ExistStockRequest"></a>
 
 ### ExistStockRequest
@@ -255,23 +305,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Fields | [ExistStockRequest.FieldsEntry](#stock-manager-v1-ExistStockRequest-FieldsEntry) | repeated |  |
-
-
-
-
-
-
-<a name="stock-manager-v1-ExistStockRequest-FieldsEntry"></a>
-
-### ExistStockRequest.FieldsEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [google.protobuf.Value](#google-protobuf-Value) |  |  |
+| ID | [string](#string) |  |  |
 
 
 
@@ -409,6 +443,7 @@
 | UpdateStockFields | [UpdateStockFieldsRequest](#stock-manager-v1-UpdateStockFieldsRequest) | [UpdateStockFieldsResponse](#stock-manager-v1-UpdateStockFieldsResponse) |  |
 | AtomicUpdateStockFields | [AtomicUpdateStockFieldsRequest](#stock-manager-v1-AtomicUpdateStockFieldsRequest) | [AtomicUpdateStockFieldsResponse](#stock-manager-v1-AtomicUpdateStockFieldsResponse) |  |
 | ExistStock | [ExistStockRequest](#stock-manager-v1-ExistStockRequest) | [ExistStockResponse](#stock-manager-v1-ExistStockResponse) |  |
+| ExistStockFields | [ExistStockFieldsRequest](#stock-manager-v1-ExistStockFieldsRequest) | [ExistStockFieldsResponse](#stock-manager-v1-ExistStockFieldsResponse) |  |
 | CountStocks | [CountStocksRequest](#stock-manager-v1-CountStocksRequest) | [CountStocksResponse](#stock-manager-v1-CountStocksResponse) |  |
 | DeleteStock | [DeleteStockRequest](#stock-manager-v1-DeleteStockRequest) | [DeleteStockResponse](#stock-manager-v1-DeleteStockResponse) |  |
 
@@ -494,7 +529,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | key | [string](#string) |  |  |
-| value | [google.protobuf.Value](#google-protobuf-Value) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
 
 
 
@@ -606,6 +641,52 @@
 
 
 
+<a name="stock-manager-v1-ExistStockFieldsRequest"></a>
+
+### ExistStockFieldsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [ExistStockFieldsRequest.CondsEntry](#stock-manager-v1-ExistStockFieldsRequest-CondsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="stock-manager-v1-ExistStockFieldsRequest-CondsEntry"></a>
+
+### ExistStockFieldsRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="stock-manager-v1-ExistStockFieldsResponse"></a>
+
+### ExistStockFieldsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Result | [bool](#bool) |  |  |
+
+
+
+
+
+
 <a name="stock-manager-v1-ExistStockRequest"></a>
 
 ### ExistStockRequest
@@ -614,23 +695,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Fields | [ExistStockRequest.FieldsEntry](#stock-manager-v1-ExistStockRequest-FieldsEntry) | repeated |  |
-
-
-
-
-
-
-<a name="stock-manager-v1-ExistStockRequest-FieldsEntry"></a>
-
-### ExistStockRequest.FieldsEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [google.protobuf.Value](#google-protobuf-Value) |  |  |
+| ID | [string](#string) |  |  |
 
 
 
@@ -768,6 +833,7 @@
 | UpdateStockFields | [UpdateStockFieldsRequest](#stock-manager-v1-UpdateStockFieldsRequest) | [UpdateStockFieldsResponse](#stock-manager-v1-UpdateStockFieldsResponse) |  |
 | AtomicUpdateStockFields | [AtomicUpdateStockFieldsRequest](#stock-manager-v1-AtomicUpdateStockFieldsRequest) | [AtomicUpdateStockFieldsResponse](#stock-manager-v1-AtomicUpdateStockFieldsResponse) |  |
 | ExistStock | [ExistStockRequest](#stock-manager-v1-ExistStockRequest) | [ExistStockResponse](#stock-manager-v1-ExistStockResponse) |  |
+| ExistStockFields | [ExistStockFieldsRequest](#stock-manager-v1-ExistStockFieldsRequest) | [ExistStockFieldsResponse](#stock-manager-v1-ExistStockFieldsResponse) |  |
 | CountStocks | [CountStocksRequest](#stock-manager-v1-CountStocksRequest) | [CountStocksResponse](#stock-manager-v1-CountStocksResponse) |  |
 | DeleteStock | [DeleteStockRequest](#stock-manager-v1-DeleteStockRequest) | [DeleteStockResponse](#stock-manager-v1-DeleteStockResponse) |  |
 

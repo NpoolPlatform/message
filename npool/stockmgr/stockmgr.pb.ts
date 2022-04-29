@@ -59,15 +59,23 @@ export type AtomicUpdateStockFieldsResponse = {
 }
 
 export type ExistStockRequest = {
-  fields?: {[key: string]: GoogleProtobufStruct.Value}
+  id?: string
 }
 
 export type ExistStockResponse = {
   result?: boolean
 }
 
+export type ExistStockFieldsRequest = {
+  conds?: {[key: string]: NpoolV1Npool.FilterCond}
+}
+
+export type ExistStockFieldsResponse = {
+  result?: boolean
+}
+
 export type CountStocksRequest = {
-  fields?: {[key: string]: GoogleProtobufStruct.Value}
+  fields?: {[key: string]: NpoolV1Npool.FilterCond}
 }
 
 export type CountStocksResponse = {
@@ -103,6 +111,9 @@ export class StockManager {
   }
   static ExistStock(req: ExistStockRequest, initReq?: fm.InitReq): Promise<ExistStockResponse> {
     return fm.fetchReq<ExistStockRequest, ExistStockResponse>(`/v1/exist/stock`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static ExistStockFields(req: ExistStockFieldsRequest, initReq?: fm.InitReq): Promise<ExistStockFieldsResponse> {
+    return fm.fetchReq<ExistStockFieldsRequest, ExistStockFieldsResponse>(`/v1/exist/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CountStocks(req: CountStocksRequest, initReq?: fm.InitReq): Promise<CountStocksResponse> {
     return fm.fetchReq<CountStocksRequest, CountStocksResponse>(`/v1/count/stocks`, {...initReq, method: "POST", body: JSON.stringify(req)})

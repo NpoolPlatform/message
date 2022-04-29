@@ -4,10 +4,12 @@
 ## Table of Contents
 
 - [npool/npool.proto](#npool_npool-proto)
+    - [FilterCond](#npool-v1-FilterCond)
     - [PageInfo](#npool-v1-PageInfo)
     - [VersionResponse](#npool-v1-VersionResponse)
   
 - [npool/npool.proto](#npool_npool-proto)
+    - [FilterCond](#npool-v1-FilterCond)
     - [PageInfo](#npool-v1-PageInfo)
     - [VersionResponse](#npool-v1-VersionResponse)
   
@@ -19,6 +21,22 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/npool.proto
+
+
+
+<a name="npool-v1-FilterCond"></a>
+
+### FilterCond
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Op | [string](#string) |  |  |
+| Val | [google.protobuf.Value](#google-protobuf-Value) |  |  |
+
+
+
 
 
 
@@ -66,6 +84,22 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/npool.proto
+
+
+
+<a name="npool-v1-FilterCond"></a>
+
+### FilterCond
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Op | [string](#string) |  |  |
+| Val | [google.protobuf.Value](#google-protobuf-Value) |  |  |
+
+
+
 
 
 
