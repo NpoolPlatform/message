@@ -59,9 +59,9 @@ service StockManager {
         };
     }
 
-    rpc ExistStockFields (ExistStockFieldsRequest) returns (ExistStockFieldsResponse) {
+    rpc ExistStockConds (ExistStockCondsRequest) returns (ExistStockCondsResponse) {
         option (google.api.http) = {
-            post: "/v1/exist/stock/fields"
+            post: "/v1/exist/stock/conds"
             body: "*"
         };
     }
@@ -139,16 +139,16 @@ message ExistStockResponse {
     bool Result = 10;
 }
 
-message ExistStockFieldsRequest {
+message ExistStockCondsRequest {
     map<string, npool.v1.FilterCond> Conds = 10;
 }
 
-message ExistStockFieldsResponse {
+message ExistStockCondsResponse {
     bool Result = 10;
 }
 
 message CountStocksRequest {
-    map<string, npool.v1.FilterCond> Fields = 10;
+    map<string, npool.v1.FilterCond> Conds = 10;
 }
 
 message CountStocksResponse {

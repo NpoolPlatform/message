@@ -8,7 +8,7 @@
     - [AtomicUpdateStockFieldsRequest.FieldsEntry](#stock-manager-v1-AtomicUpdateStockFieldsRequest-FieldsEntry)
     - [AtomicUpdateStockFieldsResponse](#stock-manager-v1-AtomicUpdateStockFieldsResponse)
     - [CountStocksRequest](#stock-manager-v1-CountStocksRequest)
-    - [CountStocksRequest.FieldsEntry](#stock-manager-v1-CountStocksRequest-FieldsEntry)
+    - [CountStocksRequest.CondsEntry](#stock-manager-v1-CountStocksRequest-CondsEntry)
     - [CountStocksResponse](#stock-manager-v1-CountStocksResponse)
     - [CreateStockRequest](#stock-manager-v1-CreateStockRequest)
     - [CreateStockResponse](#stock-manager-v1-CreateStockResponse)
@@ -16,9 +16,9 @@
     - [CreateStocksResponse](#stock-manager-v1-CreateStocksResponse)
     - [DeleteStockRequest](#stock-manager-v1-DeleteStockRequest)
     - [DeleteStockResponse](#stock-manager-v1-DeleteStockResponse)
-    - [ExistStockFieldsRequest](#stock-manager-v1-ExistStockFieldsRequest)
-    - [ExistStockFieldsRequest.CondsEntry](#stock-manager-v1-ExistStockFieldsRequest-CondsEntry)
-    - [ExistStockFieldsResponse](#stock-manager-v1-ExistStockFieldsResponse)
+    - [ExistStockCondsRequest](#stock-manager-v1-ExistStockCondsRequest)
+    - [ExistStockCondsRequest.CondsEntry](#stock-manager-v1-ExistStockCondsRequest-CondsEntry)
+    - [ExistStockCondsResponse](#stock-manager-v1-ExistStockCondsResponse)
     - [ExistStockRequest](#stock-manager-v1-ExistStockRequest)
     - [ExistStockResponse](#stock-manager-v1-ExistStockResponse)
     - [Stock](#stock-manager-v1-Stock)
@@ -35,7 +35,7 @@
     - [AtomicUpdateStockFieldsRequest.FieldsEntry](#stock-manager-v1-AtomicUpdateStockFieldsRequest-FieldsEntry)
     - [AtomicUpdateStockFieldsResponse](#stock-manager-v1-AtomicUpdateStockFieldsResponse)
     - [CountStocksRequest](#stock-manager-v1-CountStocksRequest)
-    - [CountStocksRequest.FieldsEntry](#stock-manager-v1-CountStocksRequest-FieldsEntry)
+    - [CountStocksRequest.CondsEntry](#stock-manager-v1-CountStocksRequest-CondsEntry)
     - [CountStocksResponse](#stock-manager-v1-CountStocksResponse)
     - [CreateStockRequest](#stock-manager-v1-CreateStockRequest)
     - [CreateStockResponse](#stock-manager-v1-CreateStockResponse)
@@ -43,9 +43,9 @@
     - [CreateStocksResponse](#stock-manager-v1-CreateStocksResponse)
     - [DeleteStockRequest](#stock-manager-v1-DeleteStockRequest)
     - [DeleteStockResponse](#stock-manager-v1-DeleteStockResponse)
-    - [ExistStockFieldsRequest](#stock-manager-v1-ExistStockFieldsRequest)
-    - [ExistStockFieldsRequest.CondsEntry](#stock-manager-v1-ExistStockFieldsRequest-CondsEntry)
-    - [ExistStockFieldsResponse](#stock-manager-v1-ExistStockFieldsResponse)
+    - [ExistStockCondsRequest](#stock-manager-v1-ExistStockCondsRequest)
+    - [ExistStockCondsRequest.CondsEntry](#stock-manager-v1-ExistStockCondsRequest-CondsEntry)
+    - [ExistStockCondsResponse](#stock-manager-v1-ExistStockCondsResponse)
     - [ExistStockRequest](#stock-manager-v1-ExistStockRequest)
     - [ExistStockResponse](#stock-manager-v1-ExistStockResponse)
     - [Stock](#stock-manager-v1-Stock)
@@ -123,16 +123,16 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Fields | [CountStocksRequest.FieldsEntry](#stock-manager-v1-CountStocksRequest-FieldsEntry) | repeated |  |
+| Conds | [CountStocksRequest.CondsEntry](#stock-manager-v1-CountStocksRequest-CondsEntry) | repeated |  |
 
 
 
 
 
 
-<a name="stock-manager-v1-CountStocksRequest-FieldsEntry"></a>
+<a name="stock-manager-v1-CountStocksRequest-CondsEntry"></a>
 
-### CountStocksRequest.FieldsEntry
+### CountStocksRequest.CondsEntry
 
 
 
@@ -251,24 +251,24 @@
 
 
 
-<a name="stock-manager-v1-ExistStockFieldsRequest"></a>
+<a name="stock-manager-v1-ExistStockCondsRequest"></a>
 
-### ExistStockFieldsRequest
+### ExistStockCondsRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Conds | [ExistStockFieldsRequest.CondsEntry](#stock-manager-v1-ExistStockFieldsRequest-CondsEntry) | repeated |  |
+| Conds | [ExistStockCondsRequest.CondsEntry](#stock-manager-v1-ExistStockCondsRequest-CondsEntry) | repeated |  |
 
 
 
 
 
 
-<a name="stock-manager-v1-ExistStockFieldsRequest-CondsEntry"></a>
+<a name="stock-manager-v1-ExistStockCondsRequest-CondsEntry"></a>
 
-### ExistStockFieldsRequest.CondsEntry
+### ExistStockCondsRequest.CondsEntry
 
 
 
@@ -282,9 +282,9 @@
 
 
 
-<a name="stock-manager-v1-ExistStockFieldsResponse"></a>
+<a name="stock-manager-v1-ExistStockCondsResponse"></a>
 
-### ExistStockFieldsResponse
+### ExistStockCondsResponse
 
 
 
@@ -443,7 +443,7 @@
 | UpdateStockFields | [UpdateStockFieldsRequest](#stock-manager-v1-UpdateStockFieldsRequest) | [UpdateStockFieldsResponse](#stock-manager-v1-UpdateStockFieldsResponse) |  |
 | AtomicUpdateStockFields | [AtomicUpdateStockFieldsRequest](#stock-manager-v1-AtomicUpdateStockFieldsRequest) | [AtomicUpdateStockFieldsResponse](#stock-manager-v1-AtomicUpdateStockFieldsResponse) |  |
 | ExistStock | [ExistStockRequest](#stock-manager-v1-ExistStockRequest) | [ExistStockResponse](#stock-manager-v1-ExistStockResponse) |  |
-| ExistStockFields | [ExistStockFieldsRequest](#stock-manager-v1-ExistStockFieldsRequest) | [ExistStockFieldsResponse](#stock-manager-v1-ExistStockFieldsResponse) |  |
+| ExistStockConds | [ExistStockCondsRequest](#stock-manager-v1-ExistStockCondsRequest) | [ExistStockCondsResponse](#stock-manager-v1-ExistStockCondsResponse) |  |
 | CountStocks | [CountStocksRequest](#stock-manager-v1-CountStocksRequest) | [CountStocksResponse](#stock-manager-v1-CountStocksResponse) |  |
 | DeleteStock | [DeleteStockRequest](#stock-manager-v1-DeleteStockRequest) | [DeleteStockResponse](#stock-manager-v1-DeleteStockResponse) |  |
 
@@ -513,16 +513,16 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Fields | [CountStocksRequest.FieldsEntry](#stock-manager-v1-CountStocksRequest-FieldsEntry) | repeated |  |
+| Conds | [CountStocksRequest.CondsEntry](#stock-manager-v1-CountStocksRequest-CondsEntry) | repeated |  |
 
 
 
 
 
 
-<a name="stock-manager-v1-CountStocksRequest-FieldsEntry"></a>
+<a name="stock-manager-v1-CountStocksRequest-CondsEntry"></a>
 
-### CountStocksRequest.FieldsEntry
+### CountStocksRequest.CondsEntry
 
 
 
@@ -641,24 +641,24 @@
 
 
 
-<a name="stock-manager-v1-ExistStockFieldsRequest"></a>
+<a name="stock-manager-v1-ExistStockCondsRequest"></a>
 
-### ExistStockFieldsRequest
+### ExistStockCondsRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Conds | [ExistStockFieldsRequest.CondsEntry](#stock-manager-v1-ExistStockFieldsRequest-CondsEntry) | repeated |  |
+| Conds | [ExistStockCondsRequest.CondsEntry](#stock-manager-v1-ExistStockCondsRequest-CondsEntry) | repeated |  |
 
 
 
 
 
 
-<a name="stock-manager-v1-ExistStockFieldsRequest-CondsEntry"></a>
+<a name="stock-manager-v1-ExistStockCondsRequest-CondsEntry"></a>
 
-### ExistStockFieldsRequest.CondsEntry
+### ExistStockCondsRequest.CondsEntry
 
 
 
@@ -672,9 +672,9 @@
 
 
 
-<a name="stock-manager-v1-ExistStockFieldsResponse"></a>
+<a name="stock-manager-v1-ExistStockCondsResponse"></a>
 
-### ExistStockFieldsResponse
+### ExistStockCondsResponse
 
 
 
@@ -833,7 +833,7 @@
 | UpdateStockFields | [UpdateStockFieldsRequest](#stock-manager-v1-UpdateStockFieldsRequest) | [UpdateStockFieldsResponse](#stock-manager-v1-UpdateStockFieldsResponse) |  |
 | AtomicUpdateStockFields | [AtomicUpdateStockFieldsRequest](#stock-manager-v1-AtomicUpdateStockFieldsRequest) | [AtomicUpdateStockFieldsResponse](#stock-manager-v1-AtomicUpdateStockFieldsResponse) |  |
 | ExistStock | [ExistStockRequest](#stock-manager-v1-ExistStockRequest) | [ExistStockResponse](#stock-manager-v1-ExistStockResponse) |  |
-| ExistStockFields | [ExistStockFieldsRequest](#stock-manager-v1-ExistStockFieldsRequest) | [ExistStockFieldsResponse](#stock-manager-v1-ExistStockFieldsResponse) |  |
+| ExistStockConds | [ExistStockCondsRequest](#stock-manager-v1-ExistStockCondsRequest) | [ExistStockCondsResponse](#stock-manager-v1-ExistStockCondsResponse) |  |
 | CountStocks | [CountStocksRequest](#stock-manager-v1-CountStocksRequest) | [CountStocksResponse](#stock-manager-v1-CountStocksResponse) |  |
 | DeleteStock | [DeleteStockRequest](#stock-manager-v1-DeleteStockRequest) | [DeleteStockResponse](#stock-manager-v1-DeleteStockResponse) |  |
 

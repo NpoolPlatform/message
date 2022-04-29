@@ -203,14 +203,14 @@
         ]
       }
     },
-    "/v1/exist/stock/fields": {
+    "/v1/exist/stock/conds": {
       "post": {
-        "operationId": "StockManager_ExistStockFields",
+        "operationId": "StockManager_ExistStockConds",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1ExistStockFieldsResponse"
+              "$ref": "#/definitions/v1ExistStockCondsResponse"
             }
           },
           "default": {
@@ -226,7 +226,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1ExistStockFieldsRequest"
+              "$ref": "#/definitions/v1ExistStockCondsRequest"
             }
           }
         ],
@@ -399,7 +399,7 @@
     "v1CountStocksRequest": {
       "type": "object",
       "properties": {
-        "Fields": {
+        "Conds": {
           "type": "object",
           "additionalProperties": {
             "$ref": "#/definitions/v1FilterCond"
@@ -470,7 +470,7 @@
         }
       }
     },
-    "v1ExistStockFieldsRequest": {
+    "v1ExistStockCondsRequest": {
       "type": "object",
       "properties": {
         "Conds": {
@@ -481,7 +481,7 @@
         }
       }
     },
-    "v1ExistStockFieldsResponse": {
+    "v1ExistStockCondsResponse": {
       "type": "object",
       "properties": {
         "Result": {

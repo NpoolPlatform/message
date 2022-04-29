@@ -31,7 +31,7 @@ type StockManagerClient interface {
 	UpdateStockFields(ctx context.Context, in *UpdateStockFieldsRequest, opts ...grpc.CallOption) (*UpdateStockFieldsResponse, error)
 	AtomicUpdateStockFields(ctx context.Context, in *AtomicUpdateStockFieldsRequest, opts ...grpc.CallOption) (*AtomicUpdateStockFieldsResponse, error)
 	ExistStock(ctx context.Context, in *ExistStockRequest, opts ...grpc.CallOption) (*ExistStockResponse, error)
-	ExistStockFields(ctx context.Context, in *ExistStockFieldsRequest, opts ...grpc.CallOption) (*ExistStockFieldsResponse, error)
+	ExistStockConds(ctx context.Context, in *ExistStockCondsRequest, opts ...grpc.CallOption) (*ExistStockCondsResponse, error)
 	CountStocks(ctx context.Context, in *CountStocksRequest, opts ...grpc.CallOption) (*CountStocksResponse, error)
 	DeleteStock(ctx context.Context, in *DeleteStockRequest, opts ...grpc.CallOption) (*DeleteStockResponse, error)
 }
@@ -107,9 +107,9 @@ func (c *stockManagerClient) ExistStock(ctx context.Context, in *ExistStockReque
 	return out, nil
 }
 
-func (c *stockManagerClient) ExistStockFields(ctx context.Context, in *ExistStockFieldsRequest, opts ...grpc.CallOption) (*ExistStockFieldsResponse, error) {
-	out := new(ExistStockFieldsResponse)
-	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/ExistStockFields", in, out, opts...)
+func (c *stockManagerClient) ExistStockConds(ctx context.Context, in *ExistStockCondsRequest, opts ...grpc.CallOption) (*ExistStockCondsResponse, error) {
+	out := new(ExistStockCondsResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/ExistStockConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -145,7 +145,7 @@ type StockManagerServer interface {
 	UpdateStockFields(context.Context, *UpdateStockFieldsRequest) (*UpdateStockFieldsResponse, error)
 	AtomicUpdateStockFields(context.Context, *AtomicUpdateStockFieldsRequest) (*AtomicUpdateStockFieldsResponse, error)
 	ExistStock(context.Context, *ExistStockRequest) (*ExistStockResponse, error)
-	ExistStockFields(context.Context, *ExistStockFieldsRequest) (*ExistStockFieldsResponse, error)
+	ExistStockConds(context.Context, *ExistStockCondsRequest) (*ExistStockCondsResponse, error)
 	CountStocks(context.Context, *CountStocksRequest) (*CountStocksResponse, error)
 	DeleteStock(context.Context, *DeleteStockRequest) (*DeleteStockResponse, error)
 	mustEmbedUnimplementedStockManagerServer()
@@ -176,8 +176,8 @@ func (UnimplementedStockManagerServer) AtomicUpdateStockFields(context.Context, 
 func (UnimplementedStockManagerServer) ExistStock(context.Context, *ExistStockRequest) (*ExistStockResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistStock not implemented")
 }
-func (UnimplementedStockManagerServer) ExistStockFields(context.Context, *ExistStockFieldsRequest) (*ExistStockFieldsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistStockFields not implemented")
+func (UnimplementedStockManagerServer) ExistStockConds(context.Context, *ExistStockCondsRequest) (*ExistStockCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistStockConds not implemented")
 }
 func (UnimplementedStockManagerServer) CountStocks(context.Context, *CountStocksRequest) (*CountStocksResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountStocks not implemented")
@@ -324,20 +324,20 @@ func _StockManager_ExistStock_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _StockManager_ExistStockFields_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistStockFieldsRequest)
+func _StockManager_ExistStockConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistStockCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(StockManagerServer).ExistStockFields(ctx, in)
+		return srv.(StockManagerServer).ExistStockConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/stock.manager.v1.StockManager/ExistStockFields",
+		FullMethod: "/stock.manager.v1.StockManager/ExistStockConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StockManagerServer).ExistStockFields(ctx, req.(*ExistStockFieldsRequest))
+		return srv.(StockManagerServer).ExistStockConds(ctx, req.(*ExistStockCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -414,8 +414,8 @@ var StockManager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _StockManager_ExistStock_Handler,
 		},
 		{
-			MethodName: "ExistStockFields",
-			Handler:    _StockManager_ExistStockFields_Handler,
+			MethodName: "ExistStockConds",
+			Handler:    _StockManager_ExistStockConds_Handler,
 		},
 		{
 			MethodName: "CountStocks",

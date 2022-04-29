@@ -270,8 +270,8 @@ func local_request_StockManager_ExistStock_0(ctx context.Context, marshaler runt
 
 }
 
-func request_StockManager_ExistStockFields_0(ctx context.Context, marshaler runtime.Marshaler, client StockManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq ExistStockFieldsRequest
+func request_StockManager_ExistStockConds_0(ctx context.Context, marshaler runtime.Marshaler, client StockManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq ExistStockCondsRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -282,13 +282,13 @@ func request_StockManager_ExistStockFields_0(ctx context.Context, marshaler runt
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.ExistStockFields(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.ExistStockConds(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_StockManager_ExistStockFields_0(ctx context.Context, marshaler runtime.Marshaler, server StockManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq ExistStockFieldsRequest
+func local_request_StockManager_ExistStockConds_0(ctx context.Context, marshaler runtime.Marshaler, server StockManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq ExistStockCondsRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -299,7 +299,7 @@ func local_request_StockManager_ExistStockFields_0(ctx context.Context, marshale
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.ExistStockFields(ctx, &protoReq)
+	msg, err := server.ExistStockConds(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -539,18 +539,18 @@ func RegisterStockManagerHandlerServer(ctx context.Context, mux *runtime.ServeMu
 
 	})
 
-	mux.Handle("POST", pattern_StockManager_ExistStockFields_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_StockManager_ExistStockConds_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/stock.manager.v1.StockManager/ExistStockFields", runtime.WithHTTPPathPattern("/v1/exist/stock/fields"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/stock.manager.v1.StockManager/ExistStockConds", runtime.WithHTTPPathPattern("/v1/exist/stock/conds"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_StockManager_ExistStockFields_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_StockManager_ExistStockConds_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -558,7 +558,7 @@ func RegisterStockManagerHandlerServer(ctx context.Context, mux *runtime.ServeMu
 			return
 		}
 
-		forward_StockManager_ExistStockFields_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_StockManager_ExistStockConds_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -789,23 +789,23 @@ func RegisterStockManagerHandlerClient(ctx context.Context, mux *runtime.ServeMu
 
 	})
 
-	mux.Handle("POST", pattern_StockManager_ExistStockFields_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_StockManager_ExistStockConds_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/stock.manager.v1.StockManager/ExistStockFields", runtime.WithHTTPPathPattern("/v1/exist/stock/fields"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/stock.manager.v1.StockManager/ExistStockConds", runtime.WithHTTPPathPattern("/v1/exist/stock/conds"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_StockManager_ExistStockFields_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_StockManager_ExistStockConds_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_StockManager_ExistStockFields_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_StockManager_ExistStockConds_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -867,7 +867,7 @@ var (
 
 	pattern_StockManager_ExistStock_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "exist", "stock"}, ""))
 
-	pattern_StockManager_ExistStockFields_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "exist", "stock", "fields"}, ""))
+	pattern_StockManager_ExistStockConds_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "exist", "stock", "conds"}, ""))
 
 	pattern_StockManager_CountStocks_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "count", "stocks"}, ""))
 
@@ -889,7 +889,7 @@ var (
 
 	forward_StockManager_ExistStock_0 = runtime.ForwardResponseMessage
 
-	forward_StockManager_ExistStockFields_0 = runtime.ForwardResponseMessage
+	forward_StockManager_ExistStockConds_0 = runtime.ForwardResponseMessage
 
 	forward_StockManager_CountStocks_0 = runtime.ForwardResponseMessage
 
