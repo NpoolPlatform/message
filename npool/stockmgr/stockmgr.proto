@@ -4,7 +4,7 @@ package stock.manager.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/stockmgr";
 
-import "google/protobuf/any.proto";
+import "google/protobuf/struct.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -122,7 +122,7 @@ message UpdateStockResponse {
 
 message UpdateStockFieldsRequest {
     string ID = 10;
-    map<string, google.protobuf.Any> Fields = 20;
+    map<string, google.protobuf.Value> Fields = 20;
 }
 
 message UpdateStockFieldsResponse {
@@ -149,7 +149,7 @@ message AtomicSubStockResponse {
 
 message AtomicSetStockRequest {
     string ID = 10;
-    map<string, google.protobuf.Any> Fields = 20;
+    map<string, google.protobuf.Value> Fields = 20;
 }
 
 message AtomicSetStockResponse {
@@ -157,7 +157,7 @@ message AtomicSetStockResponse {
 }
 
 message ExistStockRequest {
-    map<string, google.protobuf.Any> Fields = 10;
+    map<string, google.protobuf.Value> Fields = 10;
 }
 
 message ExistStockResponse {
@@ -165,7 +165,7 @@ message ExistStockResponse {
 }
 
 message CountStocksRequest {
-    map<string, google.protobuf.Any> Fields = 10;
+    map<string, google.protobuf.Value> Fields = 10;
 }
 
 message CountStocksResponse {

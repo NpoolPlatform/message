@@ -5,8 +5,8 @@
 */
 
 import * as fm from "../../fetch.pb"
-import * as GoogleProtobufAny from "../../google/protobuf/any.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
+import * as GoogleProtobufStruct from "../../google/protobuf/struct.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type Stock = {
   id?: string
@@ -42,7 +42,7 @@ export type UpdateStockResponse = {
 
 export type UpdateStockFieldsRequest = {
   id?: string
-  fields?: {[key: string]: GoogleProtobufAny.Any}
+  fields?: {[key: string]: GoogleProtobufStruct.Value}
 }
 
 export type UpdateStockFieldsResponse = {
@@ -69,7 +69,7 @@ export type AtomicSubStockResponse = {
 
 export type AtomicSetStockRequest = {
   id?: string
-  fields?: {[key: string]: GoogleProtobufAny.Any}
+  fields?: {[key: string]: GoogleProtobufStruct.Value}
 }
 
 export type AtomicSetStockResponse = {
@@ -77,7 +77,7 @@ export type AtomicSetStockResponse = {
 }
 
 export type ExistStockRequest = {
-  fields?: {[key: string]: GoogleProtobufAny.Any}
+  fields?: {[key: string]: GoogleProtobufStruct.Value}
 }
 
 export type ExistStockResponse = {
@@ -85,7 +85,7 @@ export type ExistStockResponse = {
 }
 
 export type CountStocksRequest = {
-  fields?: {[key: string]: GoogleProtobufAny.Any}
+  fields?: {[key: string]: GoogleProtobufStruct.Value}
 }
 
 export type CountStocksResponse = {
