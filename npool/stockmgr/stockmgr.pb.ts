@@ -67,6 +67,25 @@ export type SubStockFieldsResponse = {
   info?: Stock
 }
 
+export type GetStockRequest = {
+  id?: string
+}
+
+export type GetStockResponse = {
+  info?: Stock
+}
+
+export type GetStocksRequest = {
+  conds?: {[key: string]: NpoolV1Npool.FilterCond}
+  offset?: number
+  limit?: number
+}
+
+export type GetStocksResponse = {
+  infos?: Stock[]
+  total?: number
+}
+
 export type ExistStockRequest = {
   id?: string
 }
@@ -120,6 +139,12 @@ export class StockManager {
   }
   static SubStockFields(req: SubStockFieldsRequest, initReq?: fm.InitReq): Promise<SubStockFieldsResponse> {
     return fm.fetchReq<SubStockFieldsRequest, SubStockFieldsResponse>(`/v1/sub/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetStock(req: GetStockRequest, initReq?: fm.InitReq): Promise<GetStockResponse> {
+    return fm.fetchReq<GetStockRequest, GetStockResponse>(`/v1/get/stock`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetStocks(req: GetStocksRequest, initReq?: fm.InitReq): Promise<GetStocksResponse> {
+    return fm.fetchReq<GetStocksRequest, GetStocksResponse>(`/v1/get/stocks`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static ExistStock(req: ExistStockRequest, initReq?: fm.InitReq): Promise<ExistStockResponse> {
     return fm.fetchReq<ExistStockRequest, ExistStockResponse>(`/v1/exist/stock`, {...initReq, method: "POST", body: JSON.stringify(req)})

@@ -235,6 +235,70 @@
         ]
       }
     },
+    "/v1/get/stock": {
+      "post": {
+        "operationId": "StockManager_GetStock",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetStockResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetStockRequest"
+            }
+          }
+        ],
+        "tags": [
+          "StockManager"
+        ]
+      }
+    },
+    "/v1/get/stocks": {
+      "post": {
+        "operationId": "StockManager_GetStocks",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetStocksResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetStocksRequest"
+            }
+          }
+        ],
+        "tags": [
+          "StockManager"
+        ]
+      }
+    },
     "/v1/sub/stock/fields": {
       "post": {
         "operationId": "StockManager_SubStockFields",
@@ -545,6 +609,56 @@
         },
         "Val": {
           "type": "object"
+        }
+      }
+    },
+    "v1GetStockRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetStockResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Stock"
+        }
+      }
+    },
+    "v1GetStocksRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetStocksResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Stock"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },

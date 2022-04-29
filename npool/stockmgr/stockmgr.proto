@@ -59,6 +59,20 @@ service StockManager {
         };
     }
 
+    rpc GetStock (GetStockRequest) returns (GetStockResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/stock"
+            body: "*"
+        };
+    }
+
+    rpc GetStocks (GetStocksRequest) returns (GetStocksResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/stocks"
+            body: "*"
+        };
+    }
+
     rpc ExistStock (ExistStockRequest) returns (ExistStockResponse) {
         option (google.api.http) = {
             post: "/v1/exist/stock"
@@ -145,6 +159,25 @@ message SubStockFieldsRequest {
 
 message SubStockFieldsResponse {
     Stock Info = 10;
+}
+
+message GetStockRequest {
+    string ID = 10;
+}
+
+message GetStockResponse {
+    Stock Info = 10;
+}
+
+message GetStocksRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetStocksResponse {
+    repeated Stock Infos = 10;
+    int32 Total = 20;
 }
 
 message ExistStockRequest {

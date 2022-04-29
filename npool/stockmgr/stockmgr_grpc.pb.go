@@ -31,6 +31,8 @@ type StockManagerClient interface {
 	UpdateStockFields(ctx context.Context, in *UpdateStockFieldsRequest, opts ...grpc.CallOption) (*UpdateStockFieldsResponse, error)
 	AddStockFields(ctx context.Context, in *AddStockFieldsRequest, opts ...grpc.CallOption) (*AddStockFieldsResponse, error)
 	SubStockFields(ctx context.Context, in *SubStockFieldsRequest, opts ...grpc.CallOption) (*SubStockFieldsResponse, error)
+	GetStock(ctx context.Context, in *GetStockRequest, opts ...grpc.CallOption) (*GetStockResponse, error)
+	GetStocks(ctx context.Context, in *GetStocksRequest, opts ...grpc.CallOption) (*GetStocksResponse, error)
 	ExistStock(ctx context.Context, in *ExistStockRequest, opts ...grpc.CallOption) (*ExistStockResponse, error)
 	ExistStockConds(ctx context.Context, in *ExistStockCondsRequest, opts ...grpc.CallOption) (*ExistStockCondsResponse, error)
 	CountStocks(ctx context.Context, in *CountStocksRequest, opts ...grpc.CallOption) (*CountStocksResponse, error)
@@ -108,6 +110,24 @@ func (c *stockManagerClient) SubStockFields(ctx context.Context, in *SubStockFie
 	return out, nil
 }
 
+func (c *stockManagerClient) GetStock(ctx context.Context, in *GetStockRequest, opts ...grpc.CallOption) (*GetStockResponse, error) {
+	out := new(GetStockResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/GetStock", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *stockManagerClient) GetStocks(ctx context.Context, in *GetStocksRequest, opts ...grpc.CallOption) (*GetStocksResponse, error) {
+	out := new(GetStocksResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/GetStocks", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *stockManagerClient) ExistStock(ctx context.Context, in *ExistStockRequest, opts ...grpc.CallOption) (*ExistStockResponse, error) {
 	out := new(ExistStockResponse)
 	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/ExistStock", in, out, opts...)
@@ -155,6 +175,8 @@ type StockManagerServer interface {
 	UpdateStockFields(context.Context, *UpdateStockFieldsRequest) (*UpdateStockFieldsResponse, error)
 	AddStockFields(context.Context, *AddStockFieldsRequest) (*AddStockFieldsResponse, error)
 	SubStockFields(context.Context, *SubStockFieldsRequest) (*SubStockFieldsResponse, error)
+	GetStock(context.Context, *GetStockRequest) (*GetStockResponse, error)
+	GetStocks(context.Context, *GetStocksRequest) (*GetStocksResponse, error)
 	ExistStock(context.Context, *ExistStockRequest) (*ExistStockResponse, error)
 	ExistStockConds(context.Context, *ExistStockCondsRequest) (*ExistStockCondsResponse, error)
 	CountStocks(context.Context, *CountStocksRequest) (*CountStocksResponse, error)
@@ -186,6 +208,12 @@ func (UnimplementedStockManagerServer) AddStockFields(context.Context, *AddStock
 }
 func (UnimplementedStockManagerServer) SubStockFields(context.Context, *SubStockFieldsRequest) (*SubStockFieldsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SubStockFields not implemented")
+}
+func (UnimplementedStockManagerServer) GetStock(context.Context, *GetStockRequest) (*GetStockResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetStock not implemented")
+}
+func (UnimplementedStockManagerServer) GetStocks(context.Context, *GetStocksRequest) (*GetStocksResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetStocks not implemented")
 }
 func (UnimplementedStockManagerServer) ExistStock(context.Context, *ExistStockRequest) (*ExistStockResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistStock not implemented")
@@ -338,6 +366,42 @@ func _StockManager_SubStockFields_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _StockManager_GetStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetStockRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StockManagerServer).GetStock(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stock.manager.v1.StockManager/GetStock",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StockManagerServer).GetStock(ctx, req.(*GetStockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StockManager_GetStocks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetStocksRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StockManagerServer).GetStocks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stock.manager.v1.StockManager/GetStocks",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StockManagerServer).GetStocks(ctx, req.(*GetStocksRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _StockManager_ExistStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistStockRequest)
 	if err := dec(in); err != nil {
@@ -444,6 +508,14 @@ var StockManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SubStockFields",
 			Handler:    _StockManager_SubStockFields_Handler,
+		},
+		{
+			MethodName: "GetStock",
+			Handler:    _StockManager_GetStock_Handler,
+		},
+		{
+			MethodName: "GetStocks",
+			Handler:    _StockManager_GetStocks_Handler,
 		},
 		{
 			MethodName: "ExistStock",
