@@ -29,7 +29,8 @@ type StockManagerClient interface {
 	CreateStocks(ctx context.Context, in *CreateStocksRequest, opts ...grpc.CallOption) (*CreateStocksResponse, error)
 	UpdateStock(ctx context.Context, in *UpdateStockRequest, opts ...grpc.CallOption) (*UpdateStockResponse, error)
 	UpdateStockFields(ctx context.Context, in *UpdateStockFieldsRequest, opts ...grpc.CallOption) (*UpdateStockFieldsResponse, error)
-	AtomicUpdateStockFields(ctx context.Context, in *AtomicUpdateStockFieldsRequest, opts ...grpc.CallOption) (*AtomicUpdateStockFieldsResponse, error)
+	AddStockFields(ctx context.Context, in *AddStockFieldsRequest, opts ...grpc.CallOption) (*AddStockFieldsResponse, error)
+	SubStockFields(ctx context.Context, in *SubStockFieldsRequest, opts ...grpc.CallOption) (*SubStockFieldsResponse, error)
 	ExistStock(ctx context.Context, in *ExistStockRequest, opts ...grpc.CallOption) (*ExistStockResponse, error)
 	ExistStockConds(ctx context.Context, in *ExistStockCondsRequest, opts ...grpc.CallOption) (*ExistStockCondsResponse, error)
 	CountStocks(ctx context.Context, in *CountStocksRequest, opts ...grpc.CallOption) (*CountStocksResponse, error)
@@ -89,9 +90,18 @@ func (c *stockManagerClient) UpdateStockFields(ctx context.Context, in *UpdateSt
 	return out, nil
 }
 
-func (c *stockManagerClient) AtomicUpdateStockFields(ctx context.Context, in *AtomicUpdateStockFieldsRequest, opts ...grpc.CallOption) (*AtomicUpdateStockFieldsResponse, error) {
-	out := new(AtomicUpdateStockFieldsResponse)
-	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/AtomicUpdateStockFields", in, out, opts...)
+func (c *stockManagerClient) AddStockFields(ctx context.Context, in *AddStockFieldsRequest, opts ...grpc.CallOption) (*AddStockFieldsResponse, error) {
+	out := new(AddStockFieldsResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/AddStockFields", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *stockManagerClient) SubStockFields(ctx context.Context, in *SubStockFieldsRequest, opts ...grpc.CallOption) (*SubStockFieldsResponse, error) {
+	out := new(SubStockFieldsResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/SubStockFields", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -143,7 +153,8 @@ type StockManagerServer interface {
 	CreateStocks(context.Context, *CreateStocksRequest) (*CreateStocksResponse, error)
 	UpdateStock(context.Context, *UpdateStockRequest) (*UpdateStockResponse, error)
 	UpdateStockFields(context.Context, *UpdateStockFieldsRequest) (*UpdateStockFieldsResponse, error)
-	AtomicUpdateStockFields(context.Context, *AtomicUpdateStockFieldsRequest) (*AtomicUpdateStockFieldsResponse, error)
+	AddStockFields(context.Context, *AddStockFieldsRequest) (*AddStockFieldsResponse, error)
+	SubStockFields(context.Context, *SubStockFieldsRequest) (*SubStockFieldsResponse, error)
 	ExistStock(context.Context, *ExistStockRequest) (*ExistStockResponse, error)
 	ExistStockConds(context.Context, *ExistStockCondsRequest) (*ExistStockCondsResponse, error)
 	CountStocks(context.Context, *CountStocksRequest) (*CountStocksResponse, error)
@@ -170,8 +181,11 @@ func (UnimplementedStockManagerServer) UpdateStock(context.Context, *UpdateStock
 func (UnimplementedStockManagerServer) UpdateStockFields(context.Context, *UpdateStockFieldsRequest) (*UpdateStockFieldsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateStockFields not implemented")
 }
-func (UnimplementedStockManagerServer) AtomicUpdateStockFields(context.Context, *AtomicUpdateStockFieldsRequest) (*AtomicUpdateStockFieldsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AtomicUpdateStockFields not implemented")
+func (UnimplementedStockManagerServer) AddStockFields(context.Context, *AddStockFieldsRequest) (*AddStockFieldsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddStockFields not implemented")
+}
+func (UnimplementedStockManagerServer) SubStockFields(context.Context, *SubStockFieldsRequest) (*SubStockFieldsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubStockFields not implemented")
 }
 func (UnimplementedStockManagerServer) ExistStock(context.Context, *ExistStockRequest) (*ExistStockResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistStock not implemented")
@@ -288,20 +302,38 @@ func _StockManager_UpdateStockFields_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
-func _StockManager_AtomicUpdateStockFields_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AtomicUpdateStockFieldsRequest)
+func _StockManager_AddStockFields_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddStockFieldsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(StockManagerServer).AtomicUpdateStockFields(ctx, in)
+		return srv.(StockManagerServer).AddStockFields(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/stock.manager.v1.StockManager/AtomicUpdateStockFields",
+		FullMethod: "/stock.manager.v1.StockManager/AddStockFields",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StockManagerServer).AtomicUpdateStockFields(ctx, req.(*AtomicUpdateStockFieldsRequest))
+		return srv.(StockManagerServer).AddStockFields(ctx, req.(*AddStockFieldsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StockManager_SubStockFields_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubStockFieldsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StockManagerServer).SubStockFields(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stock.manager.v1.StockManager/SubStockFields",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StockManagerServer).SubStockFields(ctx, req.(*SubStockFieldsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -406,8 +438,12 @@ var StockManager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _StockManager_UpdateStockFields_Handler,
 		},
 		{
-			MethodName: "AtomicUpdateStockFields",
-			Handler:    _StockManager_AtomicUpdateStockFields_Handler,
+			MethodName: "AddStockFields",
+			Handler:    _StockManager_AddStockFields_Handler,
+		},
+		{
+			MethodName: "SubStockFields",
+			Handler:    _StockManager_SubStockFields_Handler,
 		},
 		{
 			MethodName: "ExistStock",

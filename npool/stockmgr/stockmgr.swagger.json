@@ -11,14 +11,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/atomic/update/stock/fields": {
+    "/v1/add/stock/fields": {
       "post": {
-        "operationId": "StockManager_AtomicUpdateStockFields",
+        "operationId": "StockManager_AddStockFields",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AtomicUpdateStockFieldsResponse"
+              "$ref": "#/definitions/v1AddStockFieldsResponse"
             }
           },
           "default": {
@@ -34,7 +34,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AtomicUpdateStockFieldsRequest"
+              "$ref": "#/definitions/v1AddStockFieldsRequest"
             }
           }
         ],
@@ -235,6 +235,38 @@
         ]
       }
     },
+    "/v1/sub/stock/fields": {
+      "post": {
+        "operationId": "StockManager_SubStockFields",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SubStockFieldsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SubStockFieldsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "StockManager"
+        ]
+      }
+    },
     "/v1/update/stock": {
       "post": {
         "operationId": "StockManager_UpdateStock",
@@ -374,7 +406,7 @@
         }
       }
     },
-    "v1AtomicUpdateStockFieldsRequest": {
+    "v1AddStockFieldsRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -388,7 +420,7 @@
         }
       }
     },
-    "v1AtomicUpdateStockFieldsResponse": {
+    "v1AddStockFieldsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -536,6 +568,28 @@
         "Sold": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1SubStockFieldsRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Fields": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "v1SubStockFieldsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Stock"
         }
       }
     },

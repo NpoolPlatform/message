@@ -49,12 +49,21 @@ export type UpdateStockFieldsResponse = {
   info?: Stock
 }
 
-export type AtomicUpdateStockFieldsRequest = {
+export type AddStockFieldsRequest = {
   id?: string
   fields?: {[key: string]: GoogleProtobufStruct.Value}
 }
 
-export type AtomicUpdateStockFieldsResponse = {
+export type AddStockFieldsResponse = {
+  info?: Stock
+}
+
+export type SubStockFieldsRequest = {
+  id?: string
+  fields?: {[key: string]: GoogleProtobufStruct.Value}
+}
+
+export type SubStockFieldsResponse = {
   info?: Stock
 }
 
@@ -106,8 +115,11 @@ export class StockManager {
   static UpdateStockFields(req: UpdateStockFieldsRequest, initReq?: fm.InitReq): Promise<UpdateStockFieldsResponse> {
     return fm.fetchReq<UpdateStockFieldsRequest, UpdateStockFieldsResponse>(`/v1/update/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static AtomicUpdateStockFields(req: AtomicUpdateStockFieldsRequest, initReq?: fm.InitReq): Promise<AtomicUpdateStockFieldsResponse> {
-    return fm.fetchReq<AtomicUpdateStockFieldsRequest, AtomicUpdateStockFieldsResponse>(`/v1/atomic/update/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static AddStockFields(req: AddStockFieldsRequest, initReq?: fm.InitReq): Promise<AddStockFieldsResponse> {
+    return fm.fetchReq<AddStockFieldsRequest, AddStockFieldsResponse>(`/v1/add/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static SubStockFields(req: SubStockFieldsRequest, initReq?: fm.InitReq): Promise<SubStockFieldsResponse> {
+    return fm.fetchReq<SubStockFieldsRequest, SubStockFieldsResponse>(`/v1/sub/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static ExistStock(req: ExistStockRequest, initReq?: fm.InitReq): Promise<ExistStockResponse> {
     return fm.fetchReq<ExistStockRequest, ExistStockResponse>(`/v1/exist/stock`, {...initReq, method: "POST", body: JSON.stringify(req)})

@@ -45,9 +45,16 @@ service StockManager {
         };
     }
 
-    rpc AtomicUpdateStockFields (AtomicUpdateStockFieldsRequest) returns (AtomicUpdateStockFieldsResponse) {
+    rpc AddStockFields (AddStockFieldsRequest) returns (AddStockFieldsResponse) {
         option (google.api.http) = {
-            post: "/v1/atomic/update/stock/fields"
+            post: "/v1/add/stock/fields"
+            body: "*"
+        };
+    }
+
+    rpc SubStockFields (SubStockFieldsRequest) returns (SubStockFieldsResponse) {
+        option (google.api.http) = {
+            post: "/v1/sub/stock/fields"
             body: "*"
         };
     }
@@ -122,12 +129,21 @@ message UpdateStockFieldsResponse {
     Stock Info = 10;
 }
 
-message AtomicUpdateStockFieldsRequest {
+message AddStockFieldsRequest {
     string ID = 10;
     map<string, google.protobuf.Value> Fields = 20;
 }
 
-message AtomicUpdateStockFieldsResponse {
+message AddStockFieldsResponse {
+    Stock Info = 10;
+}
+
+message SubStockFieldsRequest {
+    string ID = 10;
+    map<string, google.protobuf.Value> Fields = 20;
+}
+
+message SubStockFieldsResponse {
     Stock Info = 10;
 }
 

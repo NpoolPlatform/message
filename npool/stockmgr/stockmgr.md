@@ -4,9 +4,9 @@
 ## Table of Contents
 
 - [npool/stockmgr/stockmgr.proto](#npool_stockmgr_stockmgr-proto)
-    - [AtomicUpdateStockFieldsRequest](#stock-manager-v1-AtomicUpdateStockFieldsRequest)
-    - [AtomicUpdateStockFieldsRequest.FieldsEntry](#stock-manager-v1-AtomicUpdateStockFieldsRequest-FieldsEntry)
-    - [AtomicUpdateStockFieldsResponse](#stock-manager-v1-AtomicUpdateStockFieldsResponse)
+    - [AddStockFieldsRequest](#stock-manager-v1-AddStockFieldsRequest)
+    - [AddStockFieldsRequest.FieldsEntry](#stock-manager-v1-AddStockFieldsRequest-FieldsEntry)
+    - [AddStockFieldsResponse](#stock-manager-v1-AddStockFieldsResponse)
     - [CountStocksRequest](#stock-manager-v1-CountStocksRequest)
     - [CountStocksRequest.CondsEntry](#stock-manager-v1-CountStocksRequest-CondsEntry)
     - [CountStocksResponse](#stock-manager-v1-CountStocksResponse)
@@ -22,6 +22,9 @@
     - [ExistStockRequest](#stock-manager-v1-ExistStockRequest)
     - [ExistStockResponse](#stock-manager-v1-ExistStockResponse)
     - [Stock](#stock-manager-v1-Stock)
+    - [SubStockFieldsRequest](#stock-manager-v1-SubStockFieldsRequest)
+    - [SubStockFieldsRequest.FieldsEntry](#stock-manager-v1-SubStockFieldsRequest-FieldsEntry)
+    - [SubStockFieldsResponse](#stock-manager-v1-SubStockFieldsResponse)
     - [UpdateStockFieldsRequest](#stock-manager-v1-UpdateStockFieldsRequest)
     - [UpdateStockFieldsRequest.FieldsEntry](#stock-manager-v1-UpdateStockFieldsRequest-FieldsEntry)
     - [UpdateStockFieldsResponse](#stock-manager-v1-UpdateStockFieldsResponse)
@@ -31,9 +34,9 @@
     - [StockManager](#stock-manager-v1-StockManager)
   
 - [npool/stockmgr/stockmgr.proto](#npool_stockmgr_stockmgr-proto)
-    - [AtomicUpdateStockFieldsRequest](#stock-manager-v1-AtomicUpdateStockFieldsRequest)
-    - [AtomicUpdateStockFieldsRequest.FieldsEntry](#stock-manager-v1-AtomicUpdateStockFieldsRequest-FieldsEntry)
-    - [AtomicUpdateStockFieldsResponse](#stock-manager-v1-AtomicUpdateStockFieldsResponse)
+    - [AddStockFieldsRequest](#stock-manager-v1-AddStockFieldsRequest)
+    - [AddStockFieldsRequest.FieldsEntry](#stock-manager-v1-AddStockFieldsRequest-FieldsEntry)
+    - [AddStockFieldsResponse](#stock-manager-v1-AddStockFieldsResponse)
     - [CountStocksRequest](#stock-manager-v1-CountStocksRequest)
     - [CountStocksRequest.CondsEntry](#stock-manager-v1-CountStocksRequest-CondsEntry)
     - [CountStocksResponse](#stock-manager-v1-CountStocksResponse)
@@ -49,6 +52,9 @@
     - [ExistStockRequest](#stock-manager-v1-ExistStockRequest)
     - [ExistStockResponse](#stock-manager-v1-ExistStockResponse)
     - [Stock](#stock-manager-v1-Stock)
+    - [SubStockFieldsRequest](#stock-manager-v1-SubStockFieldsRequest)
+    - [SubStockFieldsRequest.FieldsEntry](#stock-manager-v1-SubStockFieldsRequest-FieldsEntry)
+    - [SubStockFieldsResponse](#stock-manager-v1-SubStockFieldsResponse)
     - [UpdateStockFieldsRequest](#stock-manager-v1-UpdateStockFieldsRequest)
     - [UpdateStockFieldsRequest.FieldsEntry](#stock-manager-v1-UpdateStockFieldsRequest-FieldsEntry)
     - [UpdateStockFieldsResponse](#stock-manager-v1-UpdateStockFieldsResponse)
@@ -68,25 +74,25 @@
 
 
 
-<a name="stock-manager-v1-AtomicUpdateStockFieldsRequest"></a>
+<a name="stock-manager-v1-AddStockFieldsRequest"></a>
 
-### AtomicUpdateStockFieldsRequest
+### AddStockFieldsRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
-| Fields | [AtomicUpdateStockFieldsRequest.FieldsEntry](#stock-manager-v1-AtomicUpdateStockFieldsRequest-FieldsEntry) | repeated |  |
+| Fields | [AddStockFieldsRequest.FieldsEntry](#stock-manager-v1-AddStockFieldsRequest-FieldsEntry) | repeated |  |
 
 
 
 
 
 
-<a name="stock-manager-v1-AtomicUpdateStockFieldsRequest-FieldsEntry"></a>
+<a name="stock-manager-v1-AddStockFieldsRequest-FieldsEntry"></a>
 
-### AtomicUpdateStockFieldsRequest.FieldsEntry
+### AddStockFieldsRequest.FieldsEntry
 
 
 
@@ -100,9 +106,9 @@
 
 
 
-<a name="stock-manager-v1-AtomicUpdateStockFieldsResponse"></a>
+<a name="stock-manager-v1-AddStockFieldsResponse"></a>
 
-### AtomicUpdateStockFieldsResponse
+### AddStockFieldsResponse
 
 
 
@@ -346,6 +352,53 @@
 
 
 
+<a name="stock-manager-v1-SubStockFieldsRequest"></a>
+
+### SubStockFieldsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| Fields | [SubStockFieldsRequest.FieldsEntry](#stock-manager-v1-SubStockFieldsRequest-FieldsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="stock-manager-v1-SubStockFieldsRequest-FieldsEntry"></a>
+
+### SubStockFieldsRequest.FieldsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [google.protobuf.Value](#google-protobuf-Value) |  |  |
+
+
+
+
+
+
+<a name="stock-manager-v1-SubStockFieldsResponse"></a>
+
+### SubStockFieldsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Stock](#stock-manager-v1-Stock) |  |  |
+
+
+
+
+
+
 <a name="stock-manager-v1-UpdateStockFieldsRequest"></a>
 
 ### UpdateStockFieldsRequest
@@ -441,7 +494,8 @@
 | CreateStocks | [CreateStocksRequest](#stock-manager-v1-CreateStocksRequest) | [CreateStocksResponse](#stock-manager-v1-CreateStocksResponse) |  |
 | UpdateStock | [UpdateStockRequest](#stock-manager-v1-UpdateStockRequest) | [UpdateStockResponse](#stock-manager-v1-UpdateStockResponse) |  |
 | UpdateStockFields | [UpdateStockFieldsRequest](#stock-manager-v1-UpdateStockFieldsRequest) | [UpdateStockFieldsResponse](#stock-manager-v1-UpdateStockFieldsResponse) |  |
-| AtomicUpdateStockFields | [AtomicUpdateStockFieldsRequest](#stock-manager-v1-AtomicUpdateStockFieldsRequest) | [AtomicUpdateStockFieldsResponse](#stock-manager-v1-AtomicUpdateStockFieldsResponse) |  |
+| AddStockFields | [AddStockFieldsRequest](#stock-manager-v1-AddStockFieldsRequest) | [AddStockFieldsResponse](#stock-manager-v1-AddStockFieldsResponse) |  |
+| SubStockFields | [SubStockFieldsRequest](#stock-manager-v1-SubStockFieldsRequest) | [SubStockFieldsResponse](#stock-manager-v1-SubStockFieldsResponse) |  |
 | ExistStock | [ExistStockRequest](#stock-manager-v1-ExistStockRequest) | [ExistStockResponse](#stock-manager-v1-ExistStockResponse) |  |
 | ExistStockConds | [ExistStockCondsRequest](#stock-manager-v1-ExistStockCondsRequest) | [ExistStockCondsResponse](#stock-manager-v1-ExistStockCondsResponse) |  |
 | CountStocks | [CountStocksRequest](#stock-manager-v1-CountStocksRequest) | [CountStocksResponse](#stock-manager-v1-CountStocksResponse) |  |
@@ -458,25 +512,25 @@
 
 
 
-<a name="stock-manager-v1-AtomicUpdateStockFieldsRequest"></a>
+<a name="stock-manager-v1-AddStockFieldsRequest"></a>
 
-### AtomicUpdateStockFieldsRequest
+### AddStockFieldsRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
-| Fields | [AtomicUpdateStockFieldsRequest.FieldsEntry](#stock-manager-v1-AtomicUpdateStockFieldsRequest-FieldsEntry) | repeated |  |
+| Fields | [AddStockFieldsRequest.FieldsEntry](#stock-manager-v1-AddStockFieldsRequest-FieldsEntry) | repeated |  |
 
 
 
 
 
 
-<a name="stock-manager-v1-AtomicUpdateStockFieldsRequest-FieldsEntry"></a>
+<a name="stock-manager-v1-AddStockFieldsRequest-FieldsEntry"></a>
 
-### AtomicUpdateStockFieldsRequest.FieldsEntry
+### AddStockFieldsRequest.FieldsEntry
 
 
 
@@ -490,9 +544,9 @@
 
 
 
-<a name="stock-manager-v1-AtomicUpdateStockFieldsResponse"></a>
+<a name="stock-manager-v1-AddStockFieldsResponse"></a>
 
-### AtomicUpdateStockFieldsResponse
+### AddStockFieldsResponse
 
 
 
@@ -736,6 +790,53 @@
 
 
 
+<a name="stock-manager-v1-SubStockFieldsRequest"></a>
+
+### SubStockFieldsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| Fields | [SubStockFieldsRequest.FieldsEntry](#stock-manager-v1-SubStockFieldsRequest-FieldsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="stock-manager-v1-SubStockFieldsRequest-FieldsEntry"></a>
+
+### SubStockFieldsRequest.FieldsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [google.protobuf.Value](#google-protobuf-Value) |  |  |
+
+
+
+
+
+
+<a name="stock-manager-v1-SubStockFieldsResponse"></a>
+
+### SubStockFieldsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Stock](#stock-manager-v1-Stock) |  |  |
+
+
+
+
+
+
 <a name="stock-manager-v1-UpdateStockFieldsRequest"></a>
 
 ### UpdateStockFieldsRequest
@@ -831,7 +932,8 @@
 | CreateStocks | [CreateStocksRequest](#stock-manager-v1-CreateStocksRequest) | [CreateStocksResponse](#stock-manager-v1-CreateStocksResponse) |  |
 | UpdateStock | [UpdateStockRequest](#stock-manager-v1-UpdateStockRequest) | [UpdateStockResponse](#stock-manager-v1-UpdateStockResponse) |  |
 | UpdateStockFields | [UpdateStockFieldsRequest](#stock-manager-v1-UpdateStockFieldsRequest) | [UpdateStockFieldsResponse](#stock-manager-v1-UpdateStockFieldsResponse) |  |
-| AtomicUpdateStockFields | [AtomicUpdateStockFieldsRequest](#stock-manager-v1-AtomicUpdateStockFieldsRequest) | [AtomicUpdateStockFieldsResponse](#stock-manager-v1-AtomicUpdateStockFieldsResponse) |  |
+| AddStockFields | [AddStockFieldsRequest](#stock-manager-v1-AddStockFieldsRequest) | [AddStockFieldsResponse](#stock-manager-v1-AddStockFieldsResponse) |  |
+| SubStockFields | [SubStockFieldsRequest](#stock-manager-v1-SubStockFieldsRequest) | [SubStockFieldsResponse](#stock-manager-v1-SubStockFieldsResponse) |  |
 | ExistStock | [ExistStockRequest](#stock-manager-v1-ExistStockRequest) | [ExistStockResponse](#stock-manager-v1-ExistStockResponse) |  |
 | ExistStockConds | [ExistStockCondsRequest](#stock-manager-v1-ExistStockCondsRequest) | [ExistStockCondsResponse](#stock-manager-v1-ExistStockCondsResponse) |  |
 | CountStocks | [CountStocksRequest](#stock-manager-v1-CountStocksRequest) | [CountStocksResponse](#stock-manager-v1-CountStocksResponse) |  |
