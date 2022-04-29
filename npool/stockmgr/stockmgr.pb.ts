@@ -49,30 +49,12 @@ export type UpdateStockFieldsResponse = {
   info?: Stock
 }
 
-export type AtomicIncStockRequest = {
-  id?: string
-  fields?: string[]
-}
-
-export type AtomicIncStockResponse = {
-  info?: Stock
-}
-
-export type AtomicSubStockRequest = {
-  id?: string
-  fields?: string[]
-}
-
-export type AtomicSubStockResponse = {
-  info?: Stock
-}
-
-export type AtomicSetStockRequest = {
+export type AtomicUpdateStockFieldsRequest = {
   id?: string
   fields?: {[key: string]: GoogleProtobufStruct.Value}
 }
 
-export type AtomicSetStockResponse = {
+export type AtomicUpdateStockFieldsResponse = {
   info?: Stock
 }
 
@@ -116,14 +98,8 @@ export class StockManager {
   static UpdateStockFields(req: UpdateStockFieldsRequest, initReq?: fm.InitReq): Promise<UpdateStockFieldsResponse> {
     return fm.fetchReq<UpdateStockFieldsRequest, UpdateStockFieldsResponse>(`/v1/update/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static AtomicIncStock(req: AtomicIncStockRequest, initReq?: fm.InitReq): Promise<AtomicIncStockResponse> {
-    return fm.fetchReq<AtomicIncStockRequest, AtomicIncStockResponse>(`/v1/atomic/inc/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static AtomicSubStock(req: AtomicSubStockRequest, initReq?: fm.InitReq): Promise<AtomicSubStockResponse> {
-    return fm.fetchReq<AtomicSubStockRequest, AtomicSubStockResponse>(`/v1/atomic/sub/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static AtomicSetStock(req: AtomicSetStockRequest, initReq?: fm.InitReq): Promise<AtomicSetStockResponse> {
-    return fm.fetchReq<AtomicSetStockRequest, AtomicSetStockResponse>(`/v1/atomic/set/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static AtomicUpdateStockFields(req: AtomicUpdateStockFieldsRequest, initReq?: fm.InitReq): Promise<AtomicUpdateStockFieldsResponse> {
+    return fm.fetchReq<AtomicUpdateStockFieldsRequest, AtomicUpdateStockFieldsResponse>(`/v1/atomic/update/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static ExistStock(req: ExistStockRequest, initReq?: fm.InitReq): Promise<ExistStockResponse> {
     return fm.fetchReq<ExistStockRequest, ExistStockResponse>(`/v1/exist/stock`, {...initReq, method: "POST", body: JSON.stringify(req)})

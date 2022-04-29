@@ -29,9 +29,7 @@ type StockManagerClient interface {
 	CreateStocks(ctx context.Context, in *CreateStocksRequest, opts ...grpc.CallOption) (*CreateStocksResponse, error)
 	UpdateStock(ctx context.Context, in *UpdateStockRequest, opts ...grpc.CallOption) (*UpdateStockResponse, error)
 	UpdateStockFields(ctx context.Context, in *UpdateStockFieldsRequest, opts ...grpc.CallOption) (*UpdateStockFieldsResponse, error)
-	AtomicIncStock(ctx context.Context, in *AtomicIncStockRequest, opts ...grpc.CallOption) (*AtomicIncStockResponse, error)
-	AtomicSubStock(ctx context.Context, in *AtomicSubStockRequest, opts ...grpc.CallOption) (*AtomicSubStockResponse, error)
-	AtomicSetStock(ctx context.Context, in *AtomicSetStockRequest, opts ...grpc.CallOption) (*AtomicSetStockResponse, error)
+	AtomicUpdateStockFields(ctx context.Context, in *AtomicUpdateStockFieldsRequest, opts ...grpc.CallOption) (*AtomicUpdateStockFieldsResponse, error)
 	ExistStock(ctx context.Context, in *ExistStockRequest, opts ...grpc.CallOption) (*ExistStockResponse, error)
 	CountStocks(ctx context.Context, in *CountStocksRequest, opts ...grpc.CallOption) (*CountStocksResponse, error)
 	DeleteStock(ctx context.Context, in *DeleteStockRequest, opts ...grpc.CallOption) (*DeleteStockResponse, error)
@@ -90,27 +88,9 @@ func (c *stockManagerClient) UpdateStockFields(ctx context.Context, in *UpdateSt
 	return out, nil
 }
 
-func (c *stockManagerClient) AtomicIncStock(ctx context.Context, in *AtomicIncStockRequest, opts ...grpc.CallOption) (*AtomicIncStockResponse, error) {
-	out := new(AtomicIncStockResponse)
-	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/AtomicIncStock", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *stockManagerClient) AtomicSubStock(ctx context.Context, in *AtomicSubStockRequest, opts ...grpc.CallOption) (*AtomicSubStockResponse, error) {
-	out := new(AtomicSubStockResponse)
-	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/AtomicSubStock", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *stockManagerClient) AtomicSetStock(ctx context.Context, in *AtomicSetStockRequest, opts ...grpc.CallOption) (*AtomicSetStockResponse, error) {
-	out := new(AtomicSetStockResponse)
-	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/AtomicSetStock", in, out, opts...)
+func (c *stockManagerClient) AtomicUpdateStockFields(ctx context.Context, in *AtomicUpdateStockFieldsRequest, opts ...grpc.CallOption) (*AtomicUpdateStockFieldsResponse, error) {
+	out := new(AtomicUpdateStockFieldsResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/AtomicUpdateStockFields", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -153,9 +133,7 @@ type StockManagerServer interface {
 	CreateStocks(context.Context, *CreateStocksRequest) (*CreateStocksResponse, error)
 	UpdateStock(context.Context, *UpdateStockRequest) (*UpdateStockResponse, error)
 	UpdateStockFields(context.Context, *UpdateStockFieldsRequest) (*UpdateStockFieldsResponse, error)
-	AtomicIncStock(context.Context, *AtomicIncStockRequest) (*AtomicIncStockResponse, error)
-	AtomicSubStock(context.Context, *AtomicSubStockRequest) (*AtomicSubStockResponse, error)
-	AtomicSetStock(context.Context, *AtomicSetStockRequest) (*AtomicSetStockResponse, error)
+	AtomicUpdateStockFields(context.Context, *AtomicUpdateStockFieldsRequest) (*AtomicUpdateStockFieldsResponse, error)
 	ExistStock(context.Context, *ExistStockRequest) (*ExistStockResponse, error)
 	CountStocks(context.Context, *CountStocksRequest) (*CountStocksResponse, error)
 	DeleteStock(context.Context, *DeleteStockRequest) (*DeleteStockResponse, error)
@@ -181,14 +159,8 @@ func (UnimplementedStockManagerServer) UpdateStock(context.Context, *UpdateStock
 func (UnimplementedStockManagerServer) UpdateStockFields(context.Context, *UpdateStockFieldsRequest) (*UpdateStockFieldsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateStockFields not implemented")
 }
-func (UnimplementedStockManagerServer) AtomicIncStock(context.Context, *AtomicIncStockRequest) (*AtomicIncStockResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AtomicIncStock not implemented")
-}
-func (UnimplementedStockManagerServer) AtomicSubStock(context.Context, *AtomicSubStockRequest) (*AtomicSubStockResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AtomicSubStock not implemented")
-}
-func (UnimplementedStockManagerServer) AtomicSetStock(context.Context, *AtomicSetStockRequest) (*AtomicSetStockResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AtomicSetStock not implemented")
+func (UnimplementedStockManagerServer) AtomicUpdateStockFields(context.Context, *AtomicUpdateStockFieldsRequest) (*AtomicUpdateStockFieldsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AtomicUpdateStockFields not implemented")
 }
 func (UnimplementedStockManagerServer) ExistStock(context.Context, *ExistStockRequest) (*ExistStockResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistStock not implemented")
@@ -302,56 +274,20 @@ func _StockManager_UpdateStockFields_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
-func _StockManager_AtomicIncStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AtomicIncStockRequest)
+func _StockManager_AtomicUpdateStockFields_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AtomicUpdateStockFieldsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(StockManagerServer).AtomicIncStock(ctx, in)
+		return srv.(StockManagerServer).AtomicUpdateStockFields(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/stock.manager.v1.StockManager/AtomicIncStock",
+		FullMethod: "/stock.manager.v1.StockManager/AtomicUpdateStockFields",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StockManagerServer).AtomicIncStock(ctx, req.(*AtomicIncStockRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _StockManager_AtomicSubStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AtomicSubStockRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(StockManagerServer).AtomicSubStock(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/stock.manager.v1.StockManager/AtomicSubStock",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StockManagerServer).AtomicSubStock(ctx, req.(*AtomicSubStockRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _StockManager_AtomicSetStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AtomicSetStockRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(StockManagerServer).AtomicSetStock(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/stock.manager.v1.StockManager/AtomicSetStock",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StockManagerServer).AtomicSetStock(ctx, req.(*AtomicSetStockRequest))
+		return srv.(StockManagerServer).AtomicUpdateStockFields(ctx, req.(*AtomicUpdateStockFieldsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -438,16 +374,8 @@ var StockManager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _StockManager_UpdateStockFields_Handler,
 		},
 		{
-			MethodName: "AtomicIncStock",
-			Handler:    _StockManager_AtomicIncStock_Handler,
-		},
-		{
-			MethodName: "AtomicSubStock",
-			Handler:    _StockManager_AtomicSubStock_Handler,
-		},
-		{
-			MethodName: "AtomicSetStock",
-			Handler:    _StockManager_AtomicSetStock_Handler,
+			MethodName: "AtomicUpdateStockFields",
+			Handler:    _StockManager_AtomicUpdateStockFields_Handler,
 		},
 		{
 			MethodName: "ExistStock",

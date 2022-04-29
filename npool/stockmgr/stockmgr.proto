@@ -45,23 +45,9 @@ service StockManager {
         };
     }
 
-    rpc AtomicIncStock (AtomicIncStockRequest) returns (AtomicIncStockResponse) {
+    rpc AtomicUpdateStockFields (AtomicUpdateStockFieldsRequest) returns (AtomicUpdateStockFieldsResponse) {
         option (google.api.http) = {
-            post: "/v1/atomic/inc/stock/fields"
-            body: "*"
-        };
-    }
-
-    rpc AtomicSubStock (AtomicSubStockRequest) returns (AtomicSubStockResponse) {
-        option (google.api.http) = {
-            post: "/v1/atomic/sub/stock/fields"
-            body: "*"
-        };
-    }
-
-    rpc AtomicSetStock (AtomicSetStockRequest) returns (AtomicSetStockResponse) {
-        option (google.api.http) = {
-            post: "/v1/atomic/set/stock/fields"
+            post: "/v1/atomic/update/stock/fields"
             body: "*"
         };
     }
@@ -129,30 +115,12 @@ message UpdateStockFieldsResponse {
     Stock Info = 10;
 }
 
-message AtomicIncStockRequest {
-    string ID = 10;
-    repeated string Fields = 20;
-}
-
-message AtomicIncStockResponse {
-    Stock Info = 10;
-}
-
-message AtomicSubStockRequest {
-    string ID = 10;
-    repeated string Fields = 20;
-}
-
-message AtomicSubStockResponse {
-    Stock Info = 10;
-}
-
-message AtomicSetStockRequest {
+message AtomicUpdateStockFieldsRequest {
     string ID = 10;
     map<string, google.protobuf.Value> Fields = 20;
 }
 
-message AtomicSetStockResponse {
+message AtomicUpdateStockFieldsResponse {
     Stock Info = 10;
 }
 

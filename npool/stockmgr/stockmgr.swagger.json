@@ -11,14 +11,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/atomic/inc/stock/fields": {
+    "/v1/atomic/update/stock/fields": {
       "post": {
-        "operationId": "StockManager_AtomicIncStock",
+        "operationId": "StockManager_AtomicUpdateStockFields",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AtomicIncStockResponse"
+              "$ref": "#/definitions/v1AtomicUpdateStockFieldsResponse"
             }
           },
           "default": {
@@ -34,71 +34,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AtomicIncStockRequest"
-            }
-          }
-        ],
-        "tags": [
-          "StockManager"
-        ]
-      }
-    },
-    "/v1/atomic/set/stock/fields": {
-      "post": {
-        "operationId": "StockManager_AtomicSetStock",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1AtomicSetStockResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1AtomicSetStockRequest"
-            }
-          }
-        ],
-        "tags": [
-          "StockManager"
-        ]
-      }
-    },
-    "/v1/atomic/sub/stock/fields": {
-      "post": {
-        "operationId": "StockManager_AtomicSubStock",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1AtomicSubStockResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1AtomicSubStockRequest"
+              "$ref": "#/definitions/v1AtomicUpdateStockFieldsRequest"
             }
           }
         ],
@@ -406,29 +342,7 @@
         }
       }
     },
-    "v1AtomicIncStockRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Fields": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1AtomicIncStockResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Stock"
-        }
-      }
-    },
-    "v1AtomicSetStockRequest": {
+    "v1AtomicUpdateStockFieldsRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -442,29 +356,7 @@
         }
       }
     },
-    "v1AtomicSetStockResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Stock"
-        }
-      }
-    },
-    "v1AtomicSubStockRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Fields": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1AtomicSubStockResponse": {
+    "v1AtomicUpdateStockFieldsResponse": {
       "type": "object",
       "properties": {
         "Info": {
