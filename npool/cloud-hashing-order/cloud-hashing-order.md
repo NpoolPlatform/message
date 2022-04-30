@@ -60,8 +60,6 @@
     - [GetPaymentsByStateResponse](#cloud-hashing-order-v1-GetPaymentsByStateResponse)
     - [GetPaymentsRequest](#cloud-hashing-order-v1-GetPaymentsRequest)
     - [GetPaymentsResponse](#cloud-hashing-order-v1-GetPaymentsResponse)
-    - [GetSoldByGoodRequest](#cloud-hashing-order-v1-GetSoldByGoodRequest)
-    - [GetSoldByGoodResponse](#cloud-hashing-order-v1-GetSoldByGoodResponse)
     - [GoodPaying](#cloud-hashing-order-v1-GoodPaying)
     - [Order](#cloud-hashing-order-v1-Order)
     - [OrderDetail](#cloud-hashing-order-v1-OrderDetail)
@@ -131,8 +129,6 @@
     - [GetPaymentsByStateResponse](#cloud-hashing-order-v1-GetPaymentsByStateResponse)
     - [GetPaymentsRequest](#cloud-hashing-order-v1-GetPaymentsRequest)
     - [GetPaymentsResponse](#cloud-hashing-order-v1-GetPaymentsResponse)
-    - [GetSoldByGoodRequest](#cloud-hashing-order-v1-GetSoldByGoodRequest)
-    - [GetSoldByGoodResponse](#cloud-hashing-order-v1-GetSoldByGoodResponse)
     - [GoodPaying](#cloud-hashing-order-v1-GoodPaying)
     - [Order](#cloud-hashing-order-v1-Order)
     - [OrderDetail](#cloud-hashing-order-v1-OrderDetail)
@@ -1006,37 +1002,6 @@
 
 
 
-<a name="cloud-hashing-order-v1-GetSoldByGoodRequest"></a>
-
-### GetSoldByGoodRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| GoodID | [string](#string) |  |  |
-| DurationDays | [uint32](#uint32) |  |  |
-
-
-
-
-
-
-<a name="cloud-hashing-order-v1-GetSoldByGoodResponse"></a>
-
-### GetSoldByGoodResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Sold | [uint32](#uint32) |  |  |
-
-
-
-
-
-
 <a name="cloud-hashing-order-v1-GoodPaying"></a>
 
 ### GoodPaying
@@ -1234,7 +1199,6 @@ Service Name
 | GetOrderByAppUserCouponTypeID | [GetOrderByAppUserCouponTypeIDRequest](#cloud-hashing-order-v1-GetOrderByAppUserCouponTypeIDRequest) | [GetOrderByAppUserCouponTypeIDResponse](#cloud-hashing-order-v1-GetOrderByAppUserCouponTypeIDResponse) |  |
 | GetOrdersByApp | [GetOrdersByAppRequest](#cloud-hashing-order-v1-GetOrdersByAppRequest) | [GetOrdersByAppResponse](#cloud-hashing-order-v1-GetOrdersByAppResponse) |  |
 | GetOrdersByGood | [GetOrdersByGoodRequest](#cloud-hashing-order-v1-GetOrdersByGoodRequest) | [GetOrdersByGoodResponse](#cloud-hashing-order-v1-GetOrdersByGoodResponse) |  |
-| GetSoldByGood | [GetSoldByGoodRequest](#cloud-hashing-order-v1-GetSoldByGoodRequest) | [GetSoldByGoodResponse](#cloud-hashing-order-v1-GetSoldByGoodResponse) |  |
 | CreateCompensate | [CreateCompensateRequest](#cloud-hashing-order-v1-CreateCompensateRequest) | [CreateCompensateResponse](#cloud-hashing-order-v1-CreateCompensateResponse) |  |
 | GetCompensatesByOrder | [GetCompensatesByOrderRequest](#cloud-hashing-order-v1-GetCompensatesByOrderRequest) | [GetCompensatesByOrderResponse](#cloud-hashing-order-v1-GetCompensatesByOrderResponse) |  |
 | CreateOutOfGas | [CreateOutOfGasRequest](#cloud-hashing-order-v1-CreateOutOfGasRequest) | [CreateOutOfGasResponse](#cloud-hashing-order-v1-CreateOutOfGasResponse) |  |
@@ -2115,37 +2079,6 @@ Service Name
 
 
 
-<a name="cloud-hashing-order-v1-GetSoldByGoodRequest"></a>
-
-### GetSoldByGoodRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| GoodID | [string](#string) |  |  |
-| DurationDays | [uint32](#uint32) |  |  |
-
-
-
-
-
-
-<a name="cloud-hashing-order-v1-GetSoldByGoodResponse"></a>
-
-### GetSoldByGoodResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Sold | [uint32](#uint32) |  |  |
-
-
-
-
-
-
 <a name="cloud-hashing-order-v1-GoodPaying"></a>
 
 ### GoodPaying
@@ -2343,7 +2276,6 @@ Service Name
 | GetOrderByAppUserCouponTypeID | [GetOrderByAppUserCouponTypeIDRequest](#cloud-hashing-order-v1-GetOrderByAppUserCouponTypeIDRequest) | [GetOrderByAppUserCouponTypeIDResponse](#cloud-hashing-order-v1-GetOrderByAppUserCouponTypeIDResponse) |  |
 | GetOrdersByApp | [GetOrdersByAppRequest](#cloud-hashing-order-v1-GetOrdersByAppRequest) | [GetOrdersByAppResponse](#cloud-hashing-order-v1-GetOrdersByAppResponse) |  |
 | GetOrdersByGood | [GetOrdersByGoodRequest](#cloud-hashing-order-v1-GetOrdersByGoodRequest) | [GetOrdersByGoodResponse](#cloud-hashing-order-v1-GetOrdersByGoodResponse) |  |
-| GetSoldByGood | [GetSoldByGoodRequest](#cloud-hashing-order-v1-GetSoldByGoodRequest) | [GetSoldByGoodResponse](#cloud-hashing-order-v1-GetSoldByGoodResponse) |  |
 | CreateCompensate | [CreateCompensateRequest](#cloud-hashing-order-v1-CreateCompensateRequest) | [CreateCompensateResponse](#cloud-hashing-order-v1-CreateCompensateResponse) |  |
 | GetCompensatesByOrder | [GetCompensatesByOrderRequest](#cloud-hashing-order-v1-GetCompensatesByOrderRequest) | [GetCompensatesByOrderResponse](#cloud-hashing-order-v1-GetCompensatesByOrderResponse) |  |
 | CreateOutOfGas | [CreateOutOfGasRequest](#cloud-hashing-order-v1-CreateOutOfGasRequest) | [CreateOutOfGasResponse](#cloud-hashing-order-v1-CreateOutOfGasResponse) |  |

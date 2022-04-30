@@ -37,7 +37,6 @@ type CloudHashingOrderClient interface {
 	GetOrderByAppUserCouponTypeID(ctx context.Context, in *GetOrderByAppUserCouponTypeIDRequest, opts ...grpc.CallOption) (*GetOrderByAppUserCouponTypeIDResponse, error)
 	GetOrdersByApp(ctx context.Context, in *GetOrdersByAppRequest, opts ...grpc.CallOption) (*GetOrdersByAppResponse, error)
 	GetOrdersByGood(ctx context.Context, in *GetOrdersByGoodRequest, opts ...grpc.CallOption) (*GetOrdersByGoodResponse, error)
-	GetSoldByGood(ctx context.Context, in *GetSoldByGoodRequest, opts ...grpc.CallOption) (*GetSoldByGoodResponse, error)
 	CreateCompensate(ctx context.Context, in *CreateCompensateRequest, opts ...grpc.CallOption) (*CreateCompensateResponse, error)
 	GetCompensatesByOrder(ctx context.Context, in *GetCompensatesByOrderRequest, opts ...grpc.CallOption) (*GetCompensatesByOrderResponse, error)
 	CreateOutOfGas(ctx context.Context, in *CreateOutOfGasRequest, opts ...grpc.CallOption) (*CreateOutOfGasResponse, error)
@@ -168,15 +167,6 @@ func (c *cloudHashingOrderClient) GetOrdersByApp(ctx context.Context, in *GetOrd
 func (c *cloudHashingOrderClient) GetOrdersByGood(ctx context.Context, in *GetOrdersByGoodRequest, opts ...grpc.CallOption) (*GetOrdersByGoodResponse, error) {
 	out := new(GetOrdersByGoodResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/GetOrdersByGood", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cloudHashingOrderClient) GetSoldByGood(ctx context.Context, in *GetSoldByGoodRequest, opts ...grpc.CallOption) (*GetSoldByGoodResponse, error) {
-	out := new(GetSoldByGoodResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/GetSoldByGood", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -362,7 +352,6 @@ type CloudHashingOrderServer interface {
 	GetOrderByAppUserCouponTypeID(context.Context, *GetOrderByAppUserCouponTypeIDRequest) (*GetOrderByAppUserCouponTypeIDResponse, error)
 	GetOrdersByApp(context.Context, *GetOrdersByAppRequest) (*GetOrdersByAppResponse, error)
 	GetOrdersByGood(context.Context, *GetOrdersByGoodRequest) (*GetOrdersByGoodResponse, error)
-	GetSoldByGood(context.Context, *GetSoldByGoodRequest) (*GetSoldByGoodResponse, error)
 	CreateCompensate(context.Context, *CreateCompensateRequest) (*CreateCompensateResponse, error)
 	GetCompensatesByOrder(context.Context, *GetCompensatesByOrderRequest) (*GetCompensatesByOrderResponse, error)
 	CreateOutOfGas(context.Context, *CreateOutOfGasRequest) (*CreateOutOfGasResponse, error)
@@ -423,9 +412,6 @@ func (UnimplementedCloudHashingOrderServer) GetOrdersByApp(context.Context, *Get
 }
 func (UnimplementedCloudHashingOrderServer) GetOrdersByGood(context.Context, *GetOrdersByGoodRequest) (*GetOrdersByGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrdersByGood not implemented")
-}
-func (UnimplementedCloudHashingOrderServer) GetSoldByGood(context.Context, *GetSoldByGoodRequest) (*GetSoldByGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSoldByGood not implemented")
 }
 func (UnimplementedCloudHashingOrderServer) CreateCompensate(context.Context, *CreateCompensateRequest) (*CreateCompensateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCompensate not implemented")
@@ -706,24 +692,6 @@ func _CloudHashingOrder_GetOrdersByGood_Handler(srv interface{}, ctx context.Con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingOrderServer).GetOrdersByGood(ctx, req.(*GetOrdersByGoodRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CloudHashingOrder_GetSoldByGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSoldByGoodRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudHashingOrderServer).GetSoldByGood(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud.hashing.order.v1.CloudHashingOrder/GetSoldByGood",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingOrderServer).GetSoldByGood(ctx, req.(*GetSoldByGoodRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1106,10 +1074,6 @@ var CloudHashingOrder_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetOrdersByGood",
 			Handler:    _CloudHashingOrder_GetOrdersByGood_Handler,
-		},
-		{
-			MethodName: "GetSoldByGood",
-			Handler:    _CloudHashingOrder_GetSoldByGood_Handler,
 		},
 		{
 			MethodName: "CreateCompensate",

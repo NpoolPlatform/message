@@ -87,12 +87,6 @@ service CloudHashingOrder {
             body: "*"
         };
     }
-    rpc GetSoldByGood (GetSoldByGoodRequest) returns  (GetSoldByGoodResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/sold/by/good"
-            body: "*"
-        };
-    }
 
     rpc CreateCompensate (CreateCompensateRequest) returns  (CreateCompensateResponse) {
         option (google.api.http) = {
@@ -319,15 +313,6 @@ message GetOrdersByGoodRequest {
 
 message GetOrdersByGoodResponse {
     repeated Order Infos = 10;
-}
-
-message GetSoldByGoodRequest {
-    string GoodID = 10;
-    uint32 DurationDays = 20;
-}
-
-message GetSoldByGoodResponse {
-    uint32 Sold = 10;
 }
 
 message Compensate {
