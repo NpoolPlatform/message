@@ -176,7 +176,6 @@ export type GoodInfo = {
   benefitType?: string
   classic?: boolean
   supportCoinTypeIDs?: string[]
-  total?: number
   priceCurrency?: string
   title?: string
   unit?: string

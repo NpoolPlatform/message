@@ -726,7 +726,6 @@ message GoodInfo {
     string BenefitType = 120;
     bool Classic = 130;
     repeated string SupportCoinTypeIDs = 140;
-    int32 Total = 150;
     string PriceCurrency = 160;
     string Title = 170;
     string Unit = 180;
