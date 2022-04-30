@@ -435,6 +435,7 @@
 | Total | [uint32](#uint32) |  |  |
 | InService | [uint32](#uint32) |  |  |
 | Sold | [uint32](#uint32) |  |  |
+| Locked | [uint32](#uint32) |  |  |
 
 
 
@@ -954,6 +955,7 @@
 | Total | [uint32](#uint32) |  |  |
 | InService | [uint32](#uint32) |  |  |
 | Sold | [uint32](#uint32) |  |  |
+| Locked | [uint32](#uint32) |  |  |
 
 
 

@@ -14,6 +14,7 @@ export type Stock = {
   total?: number
   inService?: number
   sold?: number
+  locked?: number
 }
 
 export type CreateStockRequest = {

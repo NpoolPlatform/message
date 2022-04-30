@@ -682,6 +682,10 @@
         "Sold": {
           "type": "integer",
           "format": "int64"
+        },
+        "Locked": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
