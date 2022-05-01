@@ -32,6 +32,7 @@ type StockManagerClient interface {
 	AddStockFields(ctx context.Context, in *AddStockFieldsRequest, opts ...grpc.CallOption) (*AddStockFieldsResponse, error)
 	SubStockFields(ctx context.Context, in *SubStockFieldsRequest, opts ...grpc.CallOption) (*SubStockFieldsResponse, error)
 	GetStock(ctx context.Context, in *GetStockRequest, opts ...grpc.CallOption) (*GetStockResponse, error)
+	GetStockOnly(ctx context.Context, in *GetStockOnlyRequest, opts ...grpc.CallOption) (*GetStockOnlyResponse, error)
 	GetStocks(ctx context.Context, in *GetStocksRequest, opts ...grpc.CallOption) (*GetStocksResponse, error)
 	ExistStock(ctx context.Context, in *ExistStockRequest, opts ...grpc.CallOption) (*ExistStockResponse, error)
 	ExistStockConds(ctx context.Context, in *ExistStockCondsRequest, opts ...grpc.CallOption) (*ExistStockCondsResponse, error)
@@ -119,6 +120,15 @@ func (c *stockManagerClient) GetStock(ctx context.Context, in *GetStockRequest, 
 	return out, nil
 }
 
+func (c *stockManagerClient) GetStockOnly(ctx context.Context, in *GetStockOnlyRequest, opts ...grpc.CallOption) (*GetStockOnlyResponse, error) {
+	out := new(GetStockOnlyResponse)
+	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/GetStockOnly", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *stockManagerClient) GetStocks(ctx context.Context, in *GetStocksRequest, opts ...grpc.CallOption) (*GetStocksResponse, error) {
 	out := new(GetStocksResponse)
 	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/GetStocks", in, out, opts...)
@@ -176,6 +186,7 @@ type StockManagerServer interface {
 	AddStockFields(context.Context, *AddStockFieldsRequest) (*AddStockFieldsResponse, error)
 	SubStockFields(context.Context, *SubStockFieldsRequest) (*SubStockFieldsResponse, error)
 	GetStock(context.Context, *GetStockRequest) (*GetStockResponse, error)
+	GetStockOnly(context.Context, *GetStockOnlyRequest) (*GetStockOnlyResponse, error)
 	GetStocks(context.Context, *GetStocksRequest) (*GetStocksResponse, error)
 	ExistStock(context.Context, *ExistStockRequest) (*ExistStockResponse, error)
 	ExistStockConds(context.Context, *ExistStockCondsRequest) (*ExistStockCondsResponse, error)
@@ -211,6 +222,9 @@ func (UnimplementedStockManagerServer) SubStockFields(context.Context, *SubStock
 }
 func (UnimplementedStockManagerServer) GetStock(context.Context, *GetStockRequest) (*GetStockResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStock not implemented")
+}
+func (UnimplementedStockManagerServer) GetStockOnly(context.Context, *GetStockOnlyRequest) (*GetStockOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetStockOnly not implemented")
 }
 func (UnimplementedStockManagerServer) GetStocks(context.Context, *GetStocksRequest) (*GetStocksResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStocks not implemented")
@@ -384,6 +398,24 @@ func _StockManager_GetStock_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _StockManager_GetStockOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetStockOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StockManagerServer).GetStockOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stock.manager.v1.StockManager/GetStockOnly",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StockManagerServer).GetStockOnly(ctx, req.(*GetStockOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _StockManager_GetStocks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetStocksRequest)
 	if err := dec(in); err != nil {
@@ -512,6 +544,10 @@ var StockManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetStock",
 			Handler:    _StockManager_GetStock_Handler,
+		},
+		{
+			MethodName: "GetStockOnly",
+			Handler:    _StockManager_GetStockOnly_Handler,
 		},
 		{
 			MethodName: "GetStocks",

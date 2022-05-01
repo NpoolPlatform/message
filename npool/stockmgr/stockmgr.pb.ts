@@ -76,6 +76,14 @@ export type GetStockResponse = {
   info?: Stock
 }
 
+export type GetStockOnlyRequest = {
+  conds?: {[key: string]: NpoolV1Npool.FilterCond}
+}
+
+export type GetStockOnlyResponse = {
+  info?: Stock
+}
+
 export type GetStocksRequest = {
   conds?: {[key: string]: NpoolV1Npool.FilterCond}
   offset?: number
@@ -143,6 +151,9 @@ export class StockManager {
   }
   static GetStock(req: GetStockRequest, initReq?: fm.InitReq): Promise<GetStockResponse> {
     return fm.fetchReq<GetStockRequest, GetStockResponse>(`/v1/get/stock`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetStockOnly(req: GetStockOnlyRequest, initReq?: fm.InitReq): Promise<GetStockOnlyResponse> {
+    return fm.fetchReq<GetStockOnlyRequest, GetStockOnlyResponse>(`/v1/get/stock/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetStocks(req: GetStocksRequest, initReq?: fm.InitReq): Promise<GetStocksResponse> {
     return fm.fetchReq<GetStocksRequest, GetStocksResponse>(`/v1/get/stocks`, {...initReq, method: "POST", body: JSON.stringify(req)})

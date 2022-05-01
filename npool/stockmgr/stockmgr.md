@@ -21,6 +21,9 @@
     - [ExistStockCondsResponse](#stock-manager-v1-ExistStockCondsResponse)
     - [ExistStockRequest](#stock-manager-v1-ExistStockRequest)
     - [ExistStockResponse](#stock-manager-v1-ExistStockResponse)
+    - [GetStockOnlyRequest](#stock-manager-v1-GetStockOnlyRequest)
+    - [GetStockOnlyRequest.CondsEntry](#stock-manager-v1-GetStockOnlyRequest-CondsEntry)
+    - [GetStockOnlyResponse](#stock-manager-v1-GetStockOnlyResponse)
     - [GetStockRequest](#stock-manager-v1-GetStockRequest)
     - [GetStockResponse](#stock-manager-v1-GetStockResponse)
     - [GetStocksRequest](#stock-manager-v1-GetStocksRequest)
@@ -56,6 +59,9 @@
     - [ExistStockCondsResponse](#stock-manager-v1-ExistStockCondsResponse)
     - [ExistStockRequest](#stock-manager-v1-ExistStockRequest)
     - [ExistStockResponse](#stock-manager-v1-ExistStockResponse)
+    - [GetStockOnlyRequest](#stock-manager-v1-GetStockOnlyRequest)
+    - [GetStockOnlyRequest.CondsEntry](#stock-manager-v1-GetStockOnlyRequest-CondsEntry)
+    - [GetStockOnlyResponse](#stock-manager-v1-GetStockOnlyResponse)
     - [GetStockRequest](#stock-manager-v1-GetStockRequest)
     - [GetStockResponse](#stock-manager-v1-GetStockResponse)
     - [GetStocksRequest](#stock-manager-v1-GetStocksRequest)
@@ -343,6 +349,52 @@
 
 
 
+<a name="stock-manager-v1-GetStockOnlyRequest"></a>
+
+### GetStockOnlyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [GetStockOnlyRequest.CondsEntry](#stock-manager-v1-GetStockOnlyRequest-CondsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="stock-manager-v1-GetStockOnlyRequest-CondsEntry"></a>
+
+### GetStockOnlyRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="stock-manager-v1-GetStockOnlyResponse"></a>
+
+### GetStockOnlyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Stock](#stock-manager-v1-Stock) |  |  |
+
+
+
+
+
+
 <a name="stock-manager-v1-GetStockRequest"></a>
 
 ### GetStockRequest
@@ -587,6 +639,7 @@
 | AddStockFields | [AddStockFieldsRequest](#stock-manager-v1-AddStockFieldsRequest) | [AddStockFieldsResponse](#stock-manager-v1-AddStockFieldsResponse) |  |
 | SubStockFields | [SubStockFieldsRequest](#stock-manager-v1-SubStockFieldsRequest) | [SubStockFieldsResponse](#stock-manager-v1-SubStockFieldsResponse) |  |
 | GetStock | [GetStockRequest](#stock-manager-v1-GetStockRequest) | [GetStockResponse](#stock-manager-v1-GetStockResponse) |  |
+| GetStockOnly | [GetStockOnlyRequest](#stock-manager-v1-GetStockOnlyRequest) | [GetStockOnlyResponse](#stock-manager-v1-GetStockOnlyResponse) |  |
 | GetStocks | [GetStocksRequest](#stock-manager-v1-GetStocksRequest) | [GetStocksResponse](#stock-manager-v1-GetStocksResponse) |  |
 | ExistStock | [ExistStockRequest](#stock-manager-v1-ExistStockRequest) | [ExistStockResponse](#stock-manager-v1-ExistStockResponse) |  |
 | ExistStockConds | [ExistStockCondsRequest](#stock-manager-v1-ExistStockCondsRequest) | [ExistStockCondsResponse](#stock-manager-v1-ExistStockCondsResponse) |  |
@@ -863,6 +916,52 @@
 
 
 
+<a name="stock-manager-v1-GetStockOnlyRequest"></a>
+
+### GetStockOnlyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [GetStockOnlyRequest.CondsEntry](#stock-manager-v1-GetStockOnlyRequest-CondsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="stock-manager-v1-GetStockOnlyRequest-CondsEntry"></a>
+
+### GetStockOnlyRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="stock-manager-v1-GetStockOnlyResponse"></a>
+
+### GetStockOnlyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Stock](#stock-manager-v1-Stock) |  |  |
+
+
+
+
+
+
 <a name="stock-manager-v1-GetStockRequest"></a>
 
 ### GetStockRequest
@@ -1107,6 +1206,7 @@
 | AddStockFields | [AddStockFieldsRequest](#stock-manager-v1-AddStockFieldsRequest) | [AddStockFieldsResponse](#stock-manager-v1-AddStockFieldsResponse) |  |
 | SubStockFields | [SubStockFieldsRequest](#stock-manager-v1-SubStockFieldsRequest) | [SubStockFieldsResponse](#stock-manager-v1-SubStockFieldsResponse) |  |
 | GetStock | [GetStockRequest](#stock-manager-v1-GetStockRequest) | [GetStockResponse](#stock-manager-v1-GetStockResponse) |  |
+| GetStockOnly | [GetStockOnlyRequest](#stock-manager-v1-GetStockOnlyRequest) | [GetStockOnlyResponse](#stock-manager-v1-GetStockOnlyResponse) |  |
 | GetStocks | [GetStocksRequest](#stock-manager-v1-GetStocksRequest) | [GetStocksResponse](#stock-manager-v1-GetStocksResponse) |  |
 | ExistStock | [ExistStockRequest](#stock-manager-v1-ExistStockRequest) | [ExistStockResponse](#stock-manager-v1-ExistStockResponse) |  |
 | ExistStockConds | [ExistStockCondsRequest](#stock-manager-v1-ExistStockCondsRequest) | [ExistStockCondsResponse](#stock-manager-v1-ExistStockCondsResponse) |  |

@@ -66,6 +66,13 @@ service StockManager {
         };
     }
 
+    rpc GetStockOnly (GetStockOnlyRequest) returns (GetStockOnlyResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/stock/only"
+            body: "*"
+        };
+    }
+
     rpc GetStocks (GetStocksRequest) returns (GetStocksResponse) {
         option (google.api.http) = {
             post: "/v1/get/stocks"
@@ -167,6 +174,14 @@ message GetStockRequest {
 }
 
 message GetStockResponse {
+    Stock Info = 10;
+}
+
+message GetStockOnlyRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message GetStockOnlyResponse {
     Stock Info = 10;
 }
 
