@@ -75,12 +75,6 @@ service CloudHashingOrder {
             body: "*"
         };
     }
-    rpc GetOrderByPayment(GetOrderByPaymentRequest) returns  (GetOrderByPaymentResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/order/by/payment"
-            body: "*"
-        };
-    }
     rpc GetOrdersByApp (GetOrdersByAppRequest) returns  (GetOrdersByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders/by/app"
@@ -302,16 +296,6 @@ message GetOrderByAppUserCouponTypeIDRequest {
 }
 
 message GetOrderByAppUserCouponTypeIDResponse {
-    Order Info = 10;
-}
-
-message GetOrderByPaymentRequest {
-    string AppID = 10;
-    string UserID = 20;
-    string PaymentID = 30;
-}
-
-message GetOrderByPaymentResponse {
     Order Info = 10;
 }
 

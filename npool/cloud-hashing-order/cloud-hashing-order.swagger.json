@@ -363,38 +363,6 @@
         ]
       }
     },
-    "/v1/get/order/by/payment": {
-      "post": {
-        "operationId": "CloudHashingOrder_GetOrderByPayment",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetOrderByPaymentResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetOrderByPaymentRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingOrder"
-        ]
-      }
-    },
     "/v1/get/order/detail": {
       "post": {
         "operationId": "CloudHashingOrder_GetOrderDetail",
@@ -1250,28 +1218,6 @@
       }
     },
     "v1GetOrderByAppUserCouponTypeIDResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Order"
-        }
-      }
-    },
-    "v1GetOrderByPaymentRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "PaymentID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetOrderByPaymentResponse": {
       "type": "object",
       "properties": {
         "Info": {
