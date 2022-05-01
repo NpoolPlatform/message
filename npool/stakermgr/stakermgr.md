@@ -3,20 +3,20 @@
 
 ## Table of Contents
 
-- [npool/cloud-hashing-staker/cloud-hashing-staker.proto](#npool_cloud-hashing-staker_cloud-hashing-staker-proto)
-    - [CloudHashingStaker](#cloud-hashing-staker-v1-CloudHashingStaker)
+- [npool/stakermgr/stakermgr.proto](#npool_stakermgr_stakermgr-proto)
+    - [StakerManager](#staker-manager-v1-StakerManager)
   
-- [npool/cloud-hashing-staker/cloud-hashing-staker.proto](#npool_cloud-hashing-staker_cloud-hashing-staker-proto)
-    - [CloudHashingStaker](#cloud-hashing-staker-v1-CloudHashingStaker)
+- [npool/stakermgr/stakermgr.proto](#npool_stakermgr_stakermgr-proto)
+    - [StakerManager](#staker-manager-v1-StakerManager)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool_cloud-hashing-staker_cloud-hashing-staker-proto"></a>
+<a name="npool_stakermgr_stakermgr-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/cloud-hashing-staker/cloud-hashing-staker.proto
+## npool/stakermgr/stakermgr.proto
 
 
  
@@ -26,10 +26,10 @@
  
 
 
-<a name="cloud-hashing-staker-v1-CloudHashingStaker"></a>
+<a name="staker-manager-v1-StakerManager"></a>
 
-### CloudHashingStaker
-CloudHashingStaker
+### StakerManager
+StakerManager
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
@@ -39,10 +39,10 @@ CloudHashingStaker
 
 
 
-<a name="npool_cloud-hashing-staker_cloud-hashing-staker-proto"></a>
+<a name="npool_stakermgr_stakermgr-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/cloud-hashing-staker/cloud-hashing-staker.proto
+## npool/stakermgr/stakermgr.proto
 
 
  
@@ -52,10 +52,10 @@ CloudHashingStaker
  
 
 
-<a name="cloud-hashing-staker-v1-CloudHashingStaker"></a>
+<a name="staker-manager-v1-StakerManager"></a>
 
-### CloudHashingStaker
-CloudHashingStaker
+### StakerManager
+StakerManager
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|

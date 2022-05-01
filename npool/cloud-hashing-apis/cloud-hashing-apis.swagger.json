@@ -3243,10 +3243,6 @@
             "type": "string"
           }
         },
-        "Total": {
-          "type": "integer",
-          "format": "int32"
-        },
         "PriceCurrency": {
           "type": "string"
         },

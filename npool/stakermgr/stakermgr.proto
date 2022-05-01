@@ -1,16 +1,16 @@
 syntax = "proto3";
 
-package cloud.hashing.staker.v1;
+package staker.manager.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/cloud-hashing-staker";
+option go_package = "github.com/NpoolPlatform/message/npool/stakermgr";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 
 import "npool/npool.proto";
 
-// CloudHashingStaker
-service CloudHashingStaker {
+// StakerManager
+service StakerManager {
     // Method Version
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
         option (google.api.http) = {
