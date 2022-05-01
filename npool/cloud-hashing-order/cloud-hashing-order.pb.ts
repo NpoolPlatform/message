@@ -104,6 +104,16 @@ export type GetOrderByAppUserCouponTypeIDResponse = {
   info?: Order
 }
 
+export type GetOrderByPaymentRequest = {
+  appID?: string
+  userID?: string
+  paymentID?: string
+}
+
+export type GetOrderByPaymentResponse = {
+  info?: Order
+}
+
 export type GetOrdersByAppRequest = {
   appID?: string
 }
@@ -348,6 +358,9 @@ export class CloudHashingOrder {
   }
   static GetOrderByAppUserCouponTypeID(req: GetOrderByAppUserCouponTypeIDRequest, initReq?: fm.InitReq): Promise<GetOrderByAppUserCouponTypeIDResponse> {
     return fm.fetchReq<GetOrderByAppUserCouponTypeIDRequest, GetOrderByAppUserCouponTypeIDResponse>(`/v1/get/order/by/app/user/coupon/type/id`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetOrderByPayment(req: GetOrderByPaymentRequest, initReq?: fm.InitReq): Promise<GetOrderByPaymentResponse> {
+    return fm.fetchReq<GetOrderByPaymentRequest, GetOrderByPaymentResponse>(`/v1/get/order/by/payment`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetOrdersByApp(req: GetOrdersByAppRequest, initReq?: fm.InitReq): Promise<GetOrdersByAppResponse> {
     return fm.fetchReq<GetOrdersByAppRequest, GetOrdersByAppResponse>(`/v1/get/orders/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})

@@ -26,6 +26,8 @@
     - [GetGoodPayingByOrderResponse](#cloud-hashing-order-v1-GetGoodPayingByOrderResponse)
     - [GetOrderByAppUserCouponTypeIDRequest](#cloud-hashing-order-v1-GetOrderByAppUserCouponTypeIDRequest)
     - [GetOrderByAppUserCouponTypeIDResponse](#cloud-hashing-order-v1-GetOrderByAppUserCouponTypeIDResponse)
+    - [GetOrderByPaymentRequest](#cloud-hashing-order-v1-GetOrderByPaymentRequest)
+    - [GetOrderByPaymentResponse](#cloud-hashing-order-v1-GetOrderByPaymentResponse)
     - [GetOrderDetailRequest](#cloud-hashing-order-v1-GetOrderDetailRequest)
     - [GetOrderDetailResponse](#cloud-hashing-order-v1-GetOrderDetailResponse)
     - [GetOrderRequest](#cloud-hashing-order-v1-GetOrderRequest)
@@ -95,6 +97,8 @@
     - [GetGoodPayingByOrderResponse](#cloud-hashing-order-v1-GetGoodPayingByOrderResponse)
     - [GetOrderByAppUserCouponTypeIDRequest](#cloud-hashing-order-v1-GetOrderByAppUserCouponTypeIDRequest)
     - [GetOrderByAppUserCouponTypeIDResponse](#cloud-hashing-order-v1-GetOrderByAppUserCouponTypeIDResponse)
+    - [GetOrderByPaymentRequest](#cloud-hashing-order-v1-GetOrderByPaymentRequest)
+    - [GetOrderByPaymentResponse](#cloud-hashing-order-v1-GetOrderByPaymentResponse)
     - [GetOrderDetailRequest](#cloud-hashing-order-v1-GetOrderDetailRequest)
     - [GetOrderDetailResponse](#cloud-hashing-order-v1-GetOrderDetailResponse)
     - [GetOrderRequest](#cloud-hashing-order-v1-GetOrderRequest)
@@ -493,6 +497,38 @@
 
 
 
+<a name="cloud-hashing-order-v1-GetOrderByPaymentRequest"></a>
+
+### GetOrderByPaymentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| PaymentID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-order-v1-GetOrderByPaymentResponse"></a>
+
+### GetOrderByPaymentResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Order](#cloud-hashing-order-v1-Order) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-order-v1-GetOrderDetailRequest"></a>
 
 ### GetOrderDetailRequest
@@ -1197,6 +1233,7 @@ Service Name
 | GetOrderDetail | [GetOrderDetailRequest](#cloud-hashing-order-v1-GetOrderDetailRequest) | [GetOrderDetailResponse](#cloud-hashing-order-v1-GetOrderDetailResponse) |  |
 | GetOrdersByAppUser | [GetOrdersByAppUserRequest](#cloud-hashing-order-v1-GetOrdersByAppUserRequest) | [GetOrdersByAppUserResponse](#cloud-hashing-order-v1-GetOrdersByAppUserResponse) |  |
 | GetOrderByAppUserCouponTypeID | [GetOrderByAppUserCouponTypeIDRequest](#cloud-hashing-order-v1-GetOrderByAppUserCouponTypeIDRequest) | [GetOrderByAppUserCouponTypeIDResponse](#cloud-hashing-order-v1-GetOrderByAppUserCouponTypeIDResponse) |  |
+| GetOrderByPayment | [GetOrderByPaymentRequest](#cloud-hashing-order-v1-GetOrderByPaymentRequest) | [GetOrderByPaymentResponse](#cloud-hashing-order-v1-GetOrderByPaymentResponse) |  |
 | GetOrdersByApp | [GetOrdersByAppRequest](#cloud-hashing-order-v1-GetOrdersByAppRequest) | [GetOrdersByAppResponse](#cloud-hashing-order-v1-GetOrdersByAppResponse) |  |
 | GetOrdersByGood | [GetOrdersByGoodRequest](#cloud-hashing-order-v1-GetOrdersByGoodRequest) | [GetOrdersByGoodResponse](#cloud-hashing-order-v1-GetOrdersByGoodResponse) |  |
 | CreateCompensate | [CreateCompensateRequest](#cloud-hashing-order-v1-CreateCompensateRequest) | [CreateCompensateResponse](#cloud-hashing-order-v1-CreateCompensateResponse) |  |
@@ -1570,6 +1607,38 @@ Service Name
 
 
 
+<a name="cloud-hashing-order-v1-GetOrderByPaymentRequest"></a>
+
+### GetOrderByPaymentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| PaymentID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-order-v1-GetOrderByPaymentResponse"></a>
+
+### GetOrderByPaymentResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Order](#cloud-hashing-order-v1-Order) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-order-v1-GetOrderDetailRequest"></a>
 
 ### GetOrderDetailRequest
@@ -2274,6 +2343,7 @@ Service Name
 | GetOrderDetail | [GetOrderDetailRequest](#cloud-hashing-order-v1-GetOrderDetailRequest) | [GetOrderDetailResponse](#cloud-hashing-order-v1-GetOrderDetailResponse) |  |
 | GetOrdersByAppUser | [GetOrdersByAppUserRequest](#cloud-hashing-order-v1-GetOrdersByAppUserRequest) | [GetOrdersByAppUserResponse](#cloud-hashing-order-v1-GetOrdersByAppUserResponse) |  |
 | GetOrderByAppUserCouponTypeID | [GetOrderByAppUserCouponTypeIDRequest](#cloud-hashing-order-v1-GetOrderByAppUserCouponTypeIDRequest) | [GetOrderByAppUserCouponTypeIDResponse](#cloud-hashing-order-v1-GetOrderByAppUserCouponTypeIDResponse) |  |
+| GetOrderByPayment | [GetOrderByPaymentRequest](#cloud-hashing-order-v1-GetOrderByPaymentRequest) | [GetOrderByPaymentResponse](#cloud-hashing-order-v1-GetOrderByPaymentResponse) |  |
 | GetOrdersByApp | [GetOrdersByAppRequest](#cloud-hashing-order-v1-GetOrdersByAppRequest) | [GetOrdersByAppResponse](#cloud-hashing-order-v1-GetOrdersByAppResponse) |  |
 | GetOrdersByGood | [GetOrdersByGoodRequest](#cloud-hashing-order-v1-GetOrdersByGoodRequest) | [GetOrdersByGoodResponse](#cloud-hashing-order-v1-GetOrdersByGoodResponse) |  |
 | CreateCompensate | [CreateCompensateRequest](#cloud-hashing-order-v1-CreateCompensateRequest) | [CreateCompensateResponse](#cloud-hashing-order-v1-CreateCompensateResponse) |  |
