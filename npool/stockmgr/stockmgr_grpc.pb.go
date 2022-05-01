@@ -30,7 +30,6 @@ type StockManagerClient interface {
 	UpdateStock(ctx context.Context, in *UpdateStockRequest, opts ...grpc.CallOption) (*UpdateStockResponse, error)
 	UpdateStockFields(ctx context.Context, in *UpdateStockFieldsRequest, opts ...grpc.CallOption) (*UpdateStockFieldsResponse, error)
 	AddStockFields(ctx context.Context, in *AddStockFieldsRequest, opts ...grpc.CallOption) (*AddStockFieldsResponse, error)
-	SubStockFields(ctx context.Context, in *SubStockFieldsRequest, opts ...grpc.CallOption) (*SubStockFieldsResponse, error)
 	GetStock(ctx context.Context, in *GetStockRequest, opts ...grpc.CallOption) (*GetStockResponse, error)
 	GetStockOnly(ctx context.Context, in *GetStockOnlyRequest, opts ...grpc.CallOption) (*GetStockOnlyResponse, error)
 	GetStocks(ctx context.Context, in *GetStocksRequest, opts ...grpc.CallOption) (*GetStocksResponse, error)
@@ -96,15 +95,6 @@ func (c *stockManagerClient) UpdateStockFields(ctx context.Context, in *UpdateSt
 func (c *stockManagerClient) AddStockFields(ctx context.Context, in *AddStockFieldsRequest, opts ...grpc.CallOption) (*AddStockFieldsResponse, error) {
 	out := new(AddStockFieldsResponse)
 	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/AddStockFields", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *stockManagerClient) SubStockFields(ctx context.Context, in *SubStockFieldsRequest, opts ...grpc.CallOption) (*SubStockFieldsResponse, error) {
-	out := new(SubStockFieldsResponse)
-	err := c.cc.Invoke(ctx, "/stock.manager.v1.StockManager/SubStockFields", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -184,7 +174,6 @@ type StockManagerServer interface {
 	UpdateStock(context.Context, *UpdateStockRequest) (*UpdateStockResponse, error)
 	UpdateStockFields(context.Context, *UpdateStockFieldsRequest) (*UpdateStockFieldsResponse, error)
 	AddStockFields(context.Context, *AddStockFieldsRequest) (*AddStockFieldsResponse, error)
-	SubStockFields(context.Context, *SubStockFieldsRequest) (*SubStockFieldsResponse, error)
 	GetStock(context.Context, *GetStockRequest) (*GetStockResponse, error)
 	GetStockOnly(context.Context, *GetStockOnlyRequest) (*GetStockOnlyResponse, error)
 	GetStocks(context.Context, *GetStocksRequest) (*GetStocksResponse, error)
@@ -216,9 +205,6 @@ func (UnimplementedStockManagerServer) UpdateStockFields(context.Context, *Updat
 }
 func (UnimplementedStockManagerServer) AddStockFields(context.Context, *AddStockFieldsRequest) (*AddStockFieldsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddStockFields not implemented")
-}
-func (UnimplementedStockManagerServer) SubStockFields(context.Context, *SubStockFieldsRequest) (*SubStockFieldsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SubStockFields not implemented")
 }
 func (UnimplementedStockManagerServer) GetStock(context.Context, *GetStockRequest) (*GetStockResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStock not implemented")
@@ -358,24 +344,6 @@ func _StockManager_AddStockFields_Handler(srv interface{}, ctx context.Context, 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StockManagerServer).AddStockFields(ctx, req.(*AddStockFieldsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _StockManager_SubStockFields_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SubStockFieldsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(StockManagerServer).SubStockFields(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/stock.manager.v1.StockManager/SubStockFields",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StockManagerServer).SubStockFields(ctx, req.(*SubStockFieldsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -536,10 +504,6 @@ var StockManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AddStockFields",
 			Handler:    _StockManager_AddStockFields_Handler,
-		},
-		{
-			MethodName: "SubStockFields",
-			Handler:    _StockManager_SubStockFields_Handler,
 		},
 		{
 			MethodName: "GetStock",

@@ -30,9 +30,6 @@
     - [GetStocksRequest.CondsEntry](#stock-manager-v1-GetStocksRequest-CondsEntry)
     - [GetStocksResponse](#stock-manager-v1-GetStocksResponse)
     - [Stock](#stock-manager-v1-Stock)
-    - [SubStockFieldsRequest](#stock-manager-v1-SubStockFieldsRequest)
-    - [SubStockFieldsRequest.FieldsEntry](#stock-manager-v1-SubStockFieldsRequest-FieldsEntry)
-    - [SubStockFieldsResponse](#stock-manager-v1-SubStockFieldsResponse)
     - [UpdateStockFieldsRequest](#stock-manager-v1-UpdateStockFieldsRequest)
     - [UpdateStockFieldsRequest.FieldsEntry](#stock-manager-v1-UpdateStockFieldsRequest-FieldsEntry)
     - [UpdateStockFieldsResponse](#stock-manager-v1-UpdateStockFieldsResponse)
@@ -68,9 +65,6 @@
     - [GetStocksRequest.CondsEntry](#stock-manager-v1-GetStocksRequest-CondsEntry)
     - [GetStocksResponse](#stock-manager-v1-GetStocksResponse)
     - [Stock](#stock-manager-v1-Stock)
-    - [SubStockFieldsRequest](#stock-manager-v1-SubStockFieldsRequest)
-    - [SubStockFieldsRequest.FieldsEntry](#stock-manager-v1-SubStockFieldsRequest-FieldsEntry)
-    - [SubStockFieldsResponse](#stock-manager-v1-SubStockFieldsResponse)
     - [UpdateStockFieldsRequest](#stock-manager-v1-UpdateStockFieldsRequest)
     - [UpdateStockFieldsRequest.FieldsEntry](#stock-manager-v1-UpdateStockFieldsRequest-FieldsEntry)
     - [UpdateStockFieldsResponse](#stock-manager-v1-UpdateStockFieldsResponse)
@@ -494,53 +488,6 @@
 
 
 
-<a name="stock-manager-v1-SubStockFieldsRequest"></a>
-
-### SubStockFieldsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| Fields | [SubStockFieldsRequest.FieldsEntry](#stock-manager-v1-SubStockFieldsRequest-FieldsEntry) | repeated |  |
-
-
-
-
-
-
-<a name="stock-manager-v1-SubStockFieldsRequest-FieldsEntry"></a>
-
-### SubStockFieldsRequest.FieldsEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [google.protobuf.Value](#google-protobuf-Value) |  |  |
-
-
-
-
-
-
-<a name="stock-manager-v1-SubStockFieldsResponse"></a>
-
-### SubStockFieldsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [Stock](#stock-manager-v1-Stock) |  |  |
-
-
-
-
-
-
 <a name="stock-manager-v1-UpdateStockFieldsRequest"></a>
 
 ### UpdateStockFieldsRequest
@@ -637,7 +584,6 @@
 | UpdateStock | [UpdateStockRequest](#stock-manager-v1-UpdateStockRequest) | [UpdateStockResponse](#stock-manager-v1-UpdateStockResponse) |  |
 | UpdateStockFields | [UpdateStockFieldsRequest](#stock-manager-v1-UpdateStockFieldsRequest) | [UpdateStockFieldsResponse](#stock-manager-v1-UpdateStockFieldsResponse) |  |
 | AddStockFields | [AddStockFieldsRequest](#stock-manager-v1-AddStockFieldsRequest) | [AddStockFieldsResponse](#stock-manager-v1-AddStockFieldsResponse) |  |
-| SubStockFields | [SubStockFieldsRequest](#stock-manager-v1-SubStockFieldsRequest) | [SubStockFieldsResponse](#stock-manager-v1-SubStockFieldsResponse) |  |
 | GetStock | [GetStockRequest](#stock-manager-v1-GetStockRequest) | [GetStockResponse](#stock-manager-v1-GetStockResponse) |  |
 | GetStockOnly | [GetStockOnlyRequest](#stock-manager-v1-GetStockOnlyRequest) | [GetStockOnlyResponse](#stock-manager-v1-GetStockOnlyResponse) |  |
 | GetStocks | [GetStocksRequest](#stock-manager-v1-GetStocksRequest) | [GetStocksResponse](#stock-manager-v1-GetStocksResponse) |  |
@@ -1061,53 +1007,6 @@
 
 
 
-<a name="stock-manager-v1-SubStockFieldsRequest"></a>
-
-### SubStockFieldsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| Fields | [SubStockFieldsRequest.FieldsEntry](#stock-manager-v1-SubStockFieldsRequest-FieldsEntry) | repeated |  |
-
-
-
-
-
-
-<a name="stock-manager-v1-SubStockFieldsRequest-FieldsEntry"></a>
-
-### SubStockFieldsRequest.FieldsEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [google.protobuf.Value](#google-protobuf-Value) |  |  |
-
-
-
-
-
-
-<a name="stock-manager-v1-SubStockFieldsResponse"></a>
-
-### SubStockFieldsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [Stock](#stock-manager-v1-Stock) |  |  |
-
-
-
-
-
-
 <a name="stock-manager-v1-UpdateStockFieldsRequest"></a>
 
 ### UpdateStockFieldsRequest
@@ -1204,7 +1103,6 @@
 | UpdateStock | [UpdateStockRequest](#stock-manager-v1-UpdateStockRequest) | [UpdateStockResponse](#stock-manager-v1-UpdateStockResponse) |  |
 | UpdateStockFields | [UpdateStockFieldsRequest](#stock-manager-v1-UpdateStockFieldsRequest) | [UpdateStockFieldsResponse](#stock-manager-v1-UpdateStockFieldsResponse) |  |
 | AddStockFields | [AddStockFieldsRequest](#stock-manager-v1-AddStockFieldsRequest) | [AddStockFieldsResponse](#stock-manager-v1-AddStockFieldsResponse) |  |
-| SubStockFields | [SubStockFieldsRequest](#stock-manager-v1-SubStockFieldsRequest) | [SubStockFieldsResponse](#stock-manager-v1-SubStockFieldsResponse) |  |
 | GetStock | [GetStockRequest](#stock-manager-v1-GetStockRequest) | [GetStockResponse](#stock-manager-v1-GetStockResponse) |  |
 | GetStockOnly | [GetStockOnlyRequest](#stock-manager-v1-GetStockOnlyRequest) | [GetStockOnlyResponse](#stock-manager-v1-GetStockOnlyResponse) |  |
 | GetStocks | [GetStocksRequest](#stock-manager-v1-GetStocksRequest) | [GetStocksResponse](#stock-manager-v1-GetStocksResponse) |  |

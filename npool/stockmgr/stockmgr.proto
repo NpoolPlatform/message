@@ -52,13 +52,6 @@ service StockManager {
         };
     }
 
-    rpc SubStockFields (SubStockFieldsRequest) returns (SubStockFieldsResponse) {
-        option (google.api.http) = {
-            post: "/v1/sub/stock/fields"
-            body: "*"
-        };
-    }
-
     rpc GetStock (GetStockRequest) returns (GetStockResponse) {
         option (google.api.http) = {
             post: "/v1/get/stock"
@@ -157,15 +150,6 @@ message AddStockFieldsRequest {
 }
 
 message AddStockFieldsResponse {
-    Stock Info = 10;
-}
-
-message SubStockFieldsRequest {
-    string ID = 10;
-    map<string, google.protobuf.Value> Fields = 20;
-}
-
-message SubStockFieldsResponse {
     Stock Info = 10;
 }
 

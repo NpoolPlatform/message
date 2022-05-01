@@ -331,38 +331,6 @@
         ]
       }
     },
-    "/v1/sub/stock/fields": {
-      "post": {
-        "operationId": "StockManager_SubStockFields",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1SubStockFieldsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1SubStockFieldsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "StockManager"
-        ]
-      }
-    },
     "/v1/update/stock": {
       "post": {
         "operationId": "StockManager_UpdateStock",
@@ -737,28 +705,6 @@
         "Locked": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1SubStockFieldsRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Fields": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "object"
-          }
-        }
-      }
-    },
-    "v1SubStockFieldsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Stock"
         }
       }
     },

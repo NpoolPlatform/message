@@ -59,15 +59,6 @@ export type AddStockFieldsResponse = {
   info?: Stock
 }
 
-export type SubStockFieldsRequest = {
-  id?: string
-  fields?: {[key: string]: GoogleProtobufStruct.Value}
-}
-
-export type SubStockFieldsResponse = {
-  info?: Stock
-}
-
 export type GetStockRequest = {
   id?: string
 }
@@ -145,9 +136,6 @@ export class StockManager {
   }
   static AddStockFields(req: AddStockFieldsRequest, initReq?: fm.InitReq): Promise<AddStockFieldsResponse> {
     return fm.fetchReq<AddStockFieldsRequest, AddStockFieldsResponse>(`/v1/add/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static SubStockFields(req: SubStockFieldsRequest, initReq?: fm.InitReq): Promise<SubStockFieldsResponse> {
-    return fm.fetchReq<SubStockFieldsRequest, SubStockFieldsResponse>(`/v1/sub/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetStock(req: GetStockRequest, initReq?: fm.InitReq): Promise<GetStockResponse> {
     return fm.fetchReq<GetStockRequest, GetStockResponse>(`/v1/get/stock`, {...initReq, method: "POST", body: JSON.stringify(req)})
