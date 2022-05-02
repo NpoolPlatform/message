@@ -84,6 +84,15 @@ export type GetOrderResponse = {
   info?: Order
 }
 
+export type GetOrdersRequest = {
+  offset?: number
+  limit?: number
+}
+
+export type GetOrdersResponse = {
+  infos?: Order[]
+}
+
 export type GetOrdersByAppUserRequest = {
   appID?: string
   userID?: string
@@ -339,6 +348,9 @@ export class CloudHashingOrder {
   }
   static GetOrder(req: GetOrderRequest, initReq?: fm.InitReq): Promise<GetOrderResponse> {
     return fm.fetchReq<GetOrderRequest, GetOrderResponse>(`/v1/get/order`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetOrders(req: GetOrdersRequest, initReq?: fm.InitReq): Promise<GetOrdersResponse> {
+    return fm.fetchReq<GetOrdersRequest, GetOrdersResponse>(`/v1/get/orders`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetOrderDetail(req: GetOrderDetailRequest, initReq?: fm.InitReq): Promise<GetOrderDetailResponse> {
     return fm.fetchReq<GetOrderDetailRequest, GetOrderDetailResponse>(`/v1/get/order/detail`, {...initReq, method: "POST", body: JSON.stringify(req)})

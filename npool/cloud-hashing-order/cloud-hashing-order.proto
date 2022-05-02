@@ -57,6 +57,12 @@ service CloudHashingOrder {
             body: "*"
         };
     }
+    rpc GetOrders (GetOrdersRequest) returns  (GetOrdersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/orders"
+            body: "*"
+        };
+    }
     rpc GetOrderDetail (GetOrderDetailRequest) returns  (GetOrderDetailResponse) {
         option (google.api.http) = {
             post: "/v1/get/order/detail"
@@ -277,6 +283,15 @@ message GetOrderRequest {
 
 message GetOrderResponse {
     Order Info = 10;
+}
+
+message GetOrdersRequest {
+    int32 Offset = 10;
+    int32 Limit = 20;
+}
+
+message GetOrdersResponse {
+    repeated Order Infos = 10;
 }
 
 message GetOrdersByAppUserRequest {

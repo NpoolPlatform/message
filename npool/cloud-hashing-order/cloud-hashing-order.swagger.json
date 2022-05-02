@@ -395,6 +395,38 @@
         ]
       }
     },
+    "/v1/get/orders": {
+      "post": {
+        "operationId": "CloudHashingOrder_GetOrders",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetOrdersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetOrdersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingOrder"
+        ]
+      }
+    },
     "/v1/get/orders/by/app": {
       "post": {
         "operationId": "CloudHashingOrder_GetOrdersByApp",
@@ -1373,6 +1405,30 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1OrderDetail"
+          }
+        }
+      }
+    },
+    "v1GetOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Order"
           }
         }
       }
