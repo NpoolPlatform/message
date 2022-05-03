@@ -18,3 +18,15 @@ service ServiceTemplate {
         };
     }
 }
+
+message ServiceTemplateInfo {
+    string ID = 10;
+}
+
+message GetServiceTemplateInfoOnlyRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message GetServiceTemplateInfoOnlyResponse {
+    ServiceTemplateInfo Info = 10;
+}

@@ -4,9 +4,19 @@
 ## Table of Contents
 
 - [npool/servicetmpl/servicetmpl.proto](#npool_servicetmpl_servicetmpl-proto)
+    - [GetServiceTemplateInfoOnlyRequest](#service-template-v1-GetServiceTemplateInfoOnlyRequest)
+    - [GetServiceTemplateInfoOnlyRequest.CondsEntry](#service-template-v1-GetServiceTemplateInfoOnlyRequest-CondsEntry)
+    - [GetServiceTemplateInfoOnlyResponse](#service-template-v1-GetServiceTemplateInfoOnlyResponse)
+    - [ServiceTemplateInfo](#service-template-v1-ServiceTemplateInfo)
+  
     - [ServiceTemplate](#service-template-v1-ServiceTemplate)
   
 - [npool/servicetmpl/servicetmpl.proto](#npool_servicetmpl_servicetmpl-proto)
+    - [GetServiceTemplateInfoOnlyRequest](#service-template-v1-GetServiceTemplateInfoOnlyRequest)
+    - [GetServiceTemplateInfoOnlyRequest.CondsEntry](#service-template-v1-GetServiceTemplateInfoOnlyRequest-CondsEntry)
+    - [GetServiceTemplateInfoOnlyResponse](#service-template-v1-GetServiceTemplateInfoOnlyResponse)
+    - [ServiceTemplateInfo](#service-template-v1-ServiceTemplateInfo)
+  
     - [ServiceTemplate](#service-template-v1-ServiceTemplate)
   
 - [Scalar Value Types](#scalar-value-types)
@@ -17,6 +27,67 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/servicetmpl/servicetmpl.proto
+
+
+
+<a name="service-template-v1-GetServiceTemplateInfoOnlyRequest"></a>
+
+### GetServiceTemplateInfoOnlyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [GetServiceTemplateInfoOnlyRequest.CondsEntry](#service-template-v1-GetServiceTemplateInfoOnlyRequest-CondsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="service-template-v1-GetServiceTemplateInfoOnlyRequest-CondsEntry"></a>
+
+### GetServiceTemplateInfoOnlyRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="service-template-v1-GetServiceTemplateInfoOnlyResponse"></a>
+
+### GetServiceTemplateInfoOnlyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ServiceTemplateInfo](#service-template-v1-ServiceTemplateInfo) |  |  |
+
+
+
+
+
+
+<a name="service-template-v1-ServiceTemplateInfo"></a>
+
+### ServiceTemplateInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
 
 
  
@@ -43,6 +114,67 @@ Service Name
 <p align="right"><a href="#top">Top</a></p>
 
 ## npool/servicetmpl/servicetmpl.proto
+
+
+
+<a name="service-template-v1-GetServiceTemplateInfoOnlyRequest"></a>
+
+### GetServiceTemplateInfoOnlyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [GetServiceTemplateInfoOnlyRequest.CondsEntry](#service-template-v1-GetServiceTemplateInfoOnlyRequest-CondsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="service-template-v1-GetServiceTemplateInfoOnlyRequest-CondsEntry"></a>
+
+### GetServiceTemplateInfoOnlyRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="service-template-v1-GetServiceTemplateInfoOnlyResponse"></a>
+
+### GetServiceTemplateInfoOnlyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ServiceTemplateInfo](#service-template-v1-ServiceTemplateInfo) |  |  |
+
+
+
+
+
+
+<a name="service-template-v1-ServiceTemplateInfo"></a>
+
+### ServiceTemplateInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
 
 
  
