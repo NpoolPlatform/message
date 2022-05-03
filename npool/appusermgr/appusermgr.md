@@ -49,8 +49,6 @@
     - [CreateBanAppResponse](#app-user-manager-v1-CreateBanAppResponse)
     - [CreateBanAppUserRequest](#app-user-manager-v1-CreateBanAppUserRequest)
     - [CreateBanAppUserResponse](#app-user-manager-v1-CreateBanAppUserResponse)
-    - [CreateEmailSubscriberRequest](#app-user-manager-v1-CreateEmailSubscriberRequest)
-    - [CreateEmailSubscriberResponse](#app-user-manager-v1-CreateEmailSubscriberResponse)
     - [CreateGenesisRoleRequest](#app-user-manager-v1-CreateGenesisRoleRequest)
     - [CreateGenesisRoleResponse](#app-user-manager-v1-CreateGenesisRoleResponse)
     - [CreateGenesisRoleUserRequest](#app-user-manager-v1-CreateGenesisRoleUserRequest)
@@ -61,16 +59,12 @@
     - [DeleteBanAppResponse](#app-user-manager-v1-DeleteBanAppResponse)
     - [DeleteBanAppUserRequest](#app-user-manager-v1-DeleteBanAppUserRequest)
     - [DeleteBanAppUserResponse](#app-user-manager-v1-DeleteBanAppUserResponse)
-    - [EmailSubscriber](#app-user-manager-v1-EmailSubscriber)
     - [GetAdminAppsRequest](#app-user-manager-v1-GetAdminAppsRequest)
     - [GetAdminAppsResponse](#app-user-manager-v1-GetAdminAppsResponse)
     - [GetAppControlByAppRequest](#app-user-manager-v1-GetAppControlByAppRequest)
     - [GetAppControlByAppResponse](#app-user-manager-v1-GetAppControlByAppResponse)
     - [GetAppControlRequest](#app-user-manager-v1-GetAppControlRequest)
     - [GetAppControlResponse](#app-user-manager-v1-GetAppControlResponse)
-    - [GetAppEmailSubscribersRequest](#app-user-manager-v1-GetAppEmailSubscribersRequest)
-    - [GetAppEmailSubscribersRequest.CondsEntry](#app-user-manager-v1-GetAppEmailSubscribersRequest-CondsEntry)
-    - [GetAppEmailSubscribersResponse](#app-user-manager-v1-GetAppEmailSubscribersResponse)
     - [GetAppInfoRequest](#app-user-manager-v1-GetAppInfoRequest)
     - [GetAppInfoResponse](#app-user-manager-v1-GetAppInfoResponse)
     - [GetAppInfosByCreatorRequest](#app-user-manager-v1-GetAppInfosByCreatorRequest)
@@ -139,9 +133,6 @@
     - [GetBanAppUserByAppUserResponse](#app-user-manager-v1-GetBanAppUserByAppUserResponse)
     - [GetBanAppUserRequest](#app-user-manager-v1-GetBanAppUserRequest)
     - [GetBanAppUserResponse](#app-user-manager-v1-GetBanAppUserResponse)
-    - [GetEmailSubscribersRequest](#app-user-manager-v1-GetEmailSubscribersRequest)
-    - [GetEmailSubscribersRequest.CondsEntry](#app-user-manager-v1-GetEmailSubscribersRequest-CondsEntry)
-    - [GetEmailSubscribersResponse](#app-user-manager-v1-GetEmailSubscribersResponse)
     - [GetGenesisAppRoleUsersByOtherAppRequest](#app-user-manager-v1-GetGenesisAppRoleUsersByOtherAppRequest)
     - [GetGenesisAppRoleUsersByOtherAppResponse](#app-user-manager-v1-GetGenesisAppRoleUsersByOtherAppResponse)
     - [GetGenesisRoleRequest](#app-user-manager-v1-GetGenesisRoleRequest)
@@ -217,8 +208,6 @@
     - [CreateBanAppResponse](#app-user-manager-v1-CreateBanAppResponse)
     - [CreateBanAppUserRequest](#app-user-manager-v1-CreateBanAppUserRequest)
     - [CreateBanAppUserResponse](#app-user-manager-v1-CreateBanAppUserResponse)
-    - [CreateEmailSubscriberRequest](#app-user-manager-v1-CreateEmailSubscriberRequest)
-    - [CreateEmailSubscriberResponse](#app-user-manager-v1-CreateEmailSubscriberResponse)
     - [CreateGenesisRoleRequest](#app-user-manager-v1-CreateGenesisRoleRequest)
     - [CreateGenesisRoleResponse](#app-user-manager-v1-CreateGenesisRoleResponse)
     - [CreateGenesisRoleUserRequest](#app-user-manager-v1-CreateGenesisRoleUserRequest)
@@ -229,16 +218,12 @@
     - [DeleteBanAppResponse](#app-user-manager-v1-DeleteBanAppResponse)
     - [DeleteBanAppUserRequest](#app-user-manager-v1-DeleteBanAppUserRequest)
     - [DeleteBanAppUserResponse](#app-user-manager-v1-DeleteBanAppUserResponse)
-    - [EmailSubscriber](#app-user-manager-v1-EmailSubscriber)
     - [GetAdminAppsRequest](#app-user-manager-v1-GetAdminAppsRequest)
     - [GetAdminAppsResponse](#app-user-manager-v1-GetAdminAppsResponse)
     - [GetAppControlByAppRequest](#app-user-manager-v1-GetAppControlByAppRequest)
     - [GetAppControlByAppResponse](#app-user-manager-v1-GetAppControlByAppResponse)
     - [GetAppControlRequest](#app-user-manager-v1-GetAppControlRequest)
     - [GetAppControlResponse](#app-user-manager-v1-GetAppControlResponse)
-    - [GetAppEmailSubscribersRequest](#app-user-manager-v1-GetAppEmailSubscribersRequest)
-    - [GetAppEmailSubscribersRequest.CondsEntry](#app-user-manager-v1-GetAppEmailSubscribersRequest-CondsEntry)
-    - [GetAppEmailSubscribersResponse](#app-user-manager-v1-GetAppEmailSubscribersResponse)
     - [GetAppInfoRequest](#app-user-manager-v1-GetAppInfoRequest)
     - [GetAppInfoResponse](#app-user-manager-v1-GetAppInfoResponse)
     - [GetAppInfosByCreatorRequest](#app-user-manager-v1-GetAppInfosByCreatorRequest)
@@ -307,9 +292,6 @@
     - [GetBanAppUserByAppUserResponse](#app-user-manager-v1-GetBanAppUserByAppUserResponse)
     - [GetBanAppUserRequest](#app-user-manager-v1-GetBanAppUserRequest)
     - [GetBanAppUserResponse](#app-user-manager-v1-GetBanAppUserResponse)
-    - [GetEmailSubscribersRequest](#app-user-manager-v1-GetEmailSubscribersRequest)
-    - [GetEmailSubscribersRequest.CondsEntry](#app-user-manager-v1-GetEmailSubscribersRequest-CondsEntry)
-    - [GetEmailSubscribersResponse](#app-user-manager-v1-GetEmailSubscribersResponse)
     - [GetGenesisAppRoleUsersByOtherAppRequest](#app-user-manager-v1-GetGenesisAppRoleUsersByOtherAppRequest)
     - [GetGenesisAppRoleUsersByOtherAppResponse](#app-user-manager-v1-GetGenesisAppRoleUsersByOtherAppResponse)
     - [GetGenesisRoleRequest](#app-user-manager-v1-GetGenesisRoleRequest)
@@ -1087,36 +1069,6 @@
 
 
 
-<a name="app-user-manager-v1-CreateEmailSubscriberRequest"></a>
-
-### CreateEmailSubscriberRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [EmailSubscriber](#app-user-manager-v1-EmailSubscriber) |  |  |
-
-
-
-
-
-
-<a name="app-user-manager-v1-CreateEmailSubscriberResponse"></a>
-
-### CreateEmailSubscriberResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [EmailSubscriber](#app-user-manager-v1-EmailSubscriber) |  |  |
-
-
-
-
-
-
 <a name="app-user-manager-v1-CreateGenesisRoleRequest"></a>
 
 ### CreateGenesisRoleRequest
@@ -1264,23 +1216,6 @@
 
 
 
-<a name="app-user-manager-v1-EmailSubscriber"></a>
-
-### EmailSubscriber
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| EmailAddress | [string](#string) |  |  |
-
-
-
-
-
-
 <a name="app-user-manager-v1-GetAdminAppsRequest"></a>
 
 ### GetAdminAppsRequest
@@ -1360,53 +1295,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [AppControl](#app-user-manager-v1-AppControl) |  |  |
-
-
-
-
-
-
-<a name="app-user-manager-v1-GetAppEmailSubscribersRequest"></a>
-
-### GetAppEmailSubscribersRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
-| Conds | [GetAppEmailSubscribersRequest.CondsEntry](#app-user-manager-v1-GetAppEmailSubscribersRequest-CondsEntry) | repeated |  |
-
-
-
-
-
-
-<a name="app-user-manager-v1-GetAppEmailSubscribersRequest-CondsEntry"></a>
-
-### GetAppEmailSubscribersRequest.CondsEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
-
-
-
-
-
-
-<a name="app-user-manager-v1-GetAppEmailSubscribersResponse"></a>
-
-### GetAppEmailSubscribersResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Infos | [EmailSubscriber](#app-user-manager-v1-EmailSubscriber) | repeated |  |
 
 
 
@@ -2470,53 +2358,6 @@
 
 
 
-<a name="app-user-manager-v1-GetEmailSubscribersRequest"></a>
-
-### GetEmailSubscribersRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-| Conds | [GetEmailSubscribersRequest.CondsEntry](#app-user-manager-v1-GetEmailSubscribersRequest-CondsEntry) | repeated |  |
-
-
-
-
-
-
-<a name="app-user-manager-v1-GetEmailSubscribersRequest-CondsEntry"></a>
-
-### GetEmailSubscribersRequest.CondsEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
-
-
-
-
-
-
-<a name="app-user-manager-v1-GetEmailSubscribersResponse"></a>
-
-### GetEmailSubscribersResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Infos | [EmailSubscriber](#app-user-manager-v1-EmailSubscriber) | repeated |  |
-
-
-
-
-
-
 <a name="app-user-manager-v1-GetGenesisAppRoleUsersByOtherAppRequest"></a>
 
 ### GetGenesisAppRoleUsersByOtherAppRequest
@@ -2994,9 +2835,6 @@
 | GetAppUserInfosByApp | [GetAppUserInfosByAppRequest](#app-user-manager-v1-GetAppUserInfosByAppRequest) | [GetAppUserInfosByAppResponse](#app-user-manager-v1-GetAppUserInfosByAppResponse) |  |
 | GetAppUserInfosByOtherApp | [GetAppUserInfosByOtherAppRequest](#app-user-manager-v1-GetAppUserInfosByOtherAppRequest) | [GetAppUserInfosByOtherAppResponse](#app-user-manager-v1-GetAppUserInfosByOtherAppResponse) |  |
 | CreateAppUserWithSecret | [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse) |  |
-| CreateEmailSubscriber | [CreateEmailSubscriberRequest](#app-user-manager-v1-CreateEmailSubscriberRequest) | [CreateEmailSubscriberResponse](#app-user-manager-v1-CreateEmailSubscriberResponse) |  |
-| GetEmailSubscribers | [GetEmailSubscribersRequest](#app-user-manager-v1-GetEmailSubscribersRequest) | [GetEmailSubscribersResponse](#app-user-manager-v1-GetEmailSubscribersResponse) |  |
-| GetAppEmailSubscribers | [GetAppEmailSubscribersRequest](#app-user-manager-v1-GetAppEmailSubscribersRequest) | [GetAppEmailSubscribersResponse](#app-user-manager-v1-GetAppEmailSubscribersResponse) |  |
 
  
 
@@ -3746,36 +3584,6 @@
 
 
 
-<a name="app-user-manager-v1-CreateEmailSubscriberRequest"></a>
-
-### CreateEmailSubscriberRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [EmailSubscriber](#app-user-manager-v1-EmailSubscriber) |  |  |
-
-
-
-
-
-
-<a name="app-user-manager-v1-CreateEmailSubscriberResponse"></a>
-
-### CreateEmailSubscriberResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [EmailSubscriber](#app-user-manager-v1-EmailSubscriber) |  |  |
-
-
-
-
-
-
 <a name="app-user-manager-v1-CreateGenesisRoleRequest"></a>
 
 ### CreateGenesisRoleRequest
@@ -3923,23 +3731,6 @@
 
 
 
-<a name="app-user-manager-v1-EmailSubscriber"></a>
-
-### EmailSubscriber
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| EmailAddress | [string](#string) |  |  |
-
-
-
-
-
-
 <a name="app-user-manager-v1-GetAdminAppsRequest"></a>
 
 ### GetAdminAppsRequest
@@ -4019,53 +3810,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [AppControl](#app-user-manager-v1-AppControl) |  |  |
-
-
-
-
-
-
-<a name="app-user-manager-v1-GetAppEmailSubscribersRequest"></a>
-
-### GetAppEmailSubscribersRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
-| Conds | [GetAppEmailSubscribersRequest.CondsEntry](#app-user-manager-v1-GetAppEmailSubscribersRequest-CondsEntry) | repeated |  |
-
-
-
-
-
-
-<a name="app-user-manager-v1-GetAppEmailSubscribersRequest-CondsEntry"></a>
-
-### GetAppEmailSubscribersRequest.CondsEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
-
-
-
-
-
-
-<a name="app-user-manager-v1-GetAppEmailSubscribersResponse"></a>
-
-### GetAppEmailSubscribersResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Infos | [EmailSubscriber](#app-user-manager-v1-EmailSubscriber) | repeated |  |
 
 
 
@@ -5129,53 +4873,6 @@
 
 
 
-<a name="app-user-manager-v1-GetEmailSubscribersRequest"></a>
-
-### GetEmailSubscribersRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-| Conds | [GetEmailSubscribersRequest.CondsEntry](#app-user-manager-v1-GetEmailSubscribersRequest-CondsEntry) | repeated |  |
-
-
-
-
-
-
-<a name="app-user-manager-v1-GetEmailSubscribersRequest-CondsEntry"></a>
-
-### GetEmailSubscribersRequest.CondsEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
-
-
-
-
-
-
-<a name="app-user-manager-v1-GetEmailSubscribersResponse"></a>
-
-### GetEmailSubscribersResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Infos | [EmailSubscriber](#app-user-manager-v1-EmailSubscriber) | repeated |  |
-
-
-
-
-
-
 <a name="app-user-manager-v1-GetGenesisAppRoleUsersByOtherAppRequest"></a>
 
 ### GetGenesisAppRoleUsersByOtherAppRequest
@@ -5653,9 +5350,6 @@
 | GetAppUserInfosByApp | [GetAppUserInfosByAppRequest](#app-user-manager-v1-GetAppUserInfosByAppRequest) | [GetAppUserInfosByAppResponse](#app-user-manager-v1-GetAppUserInfosByAppResponse) |  |
 | GetAppUserInfosByOtherApp | [GetAppUserInfosByOtherAppRequest](#app-user-manager-v1-GetAppUserInfosByOtherAppRequest) | [GetAppUserInfosByOtherAppResponse](#app-user-manager-v1-GetAppUserInfosByOtherAppResponse) |  |
 | CreateAppUserWithSecret | [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse) |  |
-| CreateEmailSubscriber | [CreateEmailSubscriberRequest](#app-user-manager-v1-CreateEmailSubscriberRequest) | [CreateEmailSubscriberResponse](#app-user-manager-v1-CreateEmailSubscriberResponse) |  |
-| GetEmailSubscribers | [GetEmailSubscribersRequest](#app-user-manager-v1-GetEmailSubscribersRequest) | [GetEmailSubscribersResponse](#app-user-manager-v1-GetEmailSubscribersResponse) |  |
-| GetAppEmailSubscribers | [GetAppEmailSubscribersRequest](#app-user-manager-v1-GetAppEmailSubscribersRequest) | [GetAppEmailSubscribersResponse](#app-user-manager-v1-GetAppEmailSubscribersResponse) |  |
 
  
 
