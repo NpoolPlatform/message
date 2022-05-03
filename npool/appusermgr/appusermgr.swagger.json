@@ -523,6 +523,38 @@
         ]
       }
     },
+    "/v1/create/email/subscriber": {
+      "post": {
+        "operationId": "AppUserManager_CreateEmailSubscriber",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateEmailSubscriberResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateEmailSubscriberRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/create/genesis/role": {
       "post": {
         "operationId": "AppUserManager_CreateGenesisRole",
@@ -803,6 +835,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppControlByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/email/subscribers": {
+      "post": {
+        "operationId": "AppUserManager_GetAppEmailSubscribers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppEmailSubscribersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppEmailSubscribersRequest"
             }
           }
         ],
@@ -1867,6 +1931,38 @@
         ]
       }
     },
+    "/v1/get/email/subscribers": {
+      "post": {
+        "operationId": "AppUserManager_GetEmailSubscribers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetEmailSubscribersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetEmailSubscribersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/get/genesis/app/role/users/by/other/app": {
       "post": {
         "operationId": "AppUserManager_GetGenesisAppRoleUsersByOtherApp",
@@ -2328,6 +2424,14 @@
           "format": "byte"
         }
       }
+    },
+    "protobufNullValue": {
+      "type": "string",
+      "enum": [
+        "NULL_VALUE"
+      ],
+      "default": "NULL_VALUE",
+      "description": "`NullValue` is a singleton enumeration to represent the null value for the\n`Value` type union.\n\n The JSON representation for `NullValue` is JSON `null`.\n\n - NULL_VALUE: Null value."
     },
     "runtimeError": {
       "type": "object",
@@ -2926,6 +3030,22 @@
         }
       }
     },
+    "v1CreateEmailSubscriberRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EmailSubscriber"
+        }
+      }
+    },
+    "v1CreateEmailSubscriberResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EmailSubscriber"
+        }
+      }
+    },
     "v1CreateGenesisRoleRequest": {
       "type": "object"
     },
@@ -3007,6 +3127,31 @@
         }
       }
     },
+    "v1EmailSubscriber": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        }
+      }
+    },
+    "v1FilterCond": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Val": {
+          "type": "object"
+        }
+      }
+    },
     "v1GetAdminAppsRequest": {
       "type": "object"
     },
@@ -3050,6 +3195,31 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppControl"
+        }
+      }
+    },
+    "v1GetAppEmailSubscribersRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        }
+      }
+    },
+    "v1GetAppEmailSubscribersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EmailSubscriber"
+          }
         }
       }
     },
@@ -3760,6 +3930,31 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1BanAppUser"
+        }
+      }
+    },
+    "v1GetEmailSubscribersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        }
+      }
+    },
+    "v1GetEmailSubscribersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EmailSubscriber"
+          }
         }
       }
     },

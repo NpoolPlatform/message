@@ -96,6 +96,9 @@ type AppUserManagerClient interface {
 	GetAppUserInfosByApp(ctx context.Context, in *GetAppUserInfosByAppRequest, opts ...grpc.CallOption) (*GetAppUserInfosByAppResponse, error)
 	GetAppUserInfosByOtherApp(ctx context.Context, in *GetAppUserInfosByOtherAppRequest, opts ...grpc.CallOption) (*GetAppUserInfosByOtherAppResponse, error)
 	CreateAppUserWithSecret(ctx context.Context, in *CreateAppUserWithSecretRequest, opts ...grpc.CallOption) (*CreateAppUserWithSecretResponse, error)
+	CreateEmailSubscriber(ctx context.Context, in *CreateEmailSubscriberRequest, opts ...grpc.CallOption) (*CreateEmailSubscriberResponse, error)
+	GetEmailSubscribers(ctx context.Context, in *GetEmailSubscribersRequest, opts ...grpc.CallOption) (*GetEmailSubscribersResponse, error)
+	GetAppEmailSubscribers(ctx context.Context, in *GetAppEmailSubscribersRequest, opts ...grpc.CallOption) (*GetAppEmailSubscribersResponse, error)
 }
 
 type appUserManagerClient struct {
@@ -754,6 +757,33 @@ func (c *appUserManagerClient) CreateAppUserWithSecret(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *appUserManagerClient) CreateEmailSubscriber(ctx context.Context, in *CreateEmailSubscriberRequest, opts ...grpc.CallOption) (*CreateEmailSubscriberResponse, error) {
+	out := new(CreateEmailSubscriberResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateEmailSubscriber", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetEmailSubscribers(ctx context.Context, in *GetEmailSubscribersRequest, opts ...grpc.CallOption) (*GetEmailSubscribersResponse, error) {
+	out := new(GetEmailSubscribersResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetEmailSubscribers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserManagerClient) GetAppEmailSubscribers(ctx context.Context, in *GetAppEmailSubscribersRequest, opts ...grpc.CallOption) (*GetAppEmailSubscribersResponse, error) {
+	out := new(GetAppEmailSubscribersResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppEmailSubscribers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AppUserManagerServer is the server API for AppUserManager service.
 // All implementations must embed UnimplementedAppUserManagerServer
 // for forward compatibility
@@ -830,6 +860,9 @@ type AppUserManagerServer interface {
 	GetAppUserInfosByApp(context.Context, *GetAppUserInfosByAppRequest) (*GetAppUserInfosByAppResponse, error)
 	GetAppUserInfosByOtherApp(context.Context, *GetAppUserInfosByOtherAppRequest) (*GetAppUserInfosByOtherAppResponse, error)
 	CreateAppUserWithSecret(context.Context, *CreateAppUserWithSecretRequest) (*CreateAppUserWithSecretResponse, error)
+	CreateEmailSubscriber(context.Context, *CreateEmailSubscriberRequest) (*CreateEmailSubscriberResponse, error)
+	GetEmailSubscribers(context.Context, *GetEmailSubscribersRequest) (*GetEmailSubscribersResponse, error)
+	GetAppEmailSubscribers(context.Context, *GetAppEmailSubscribersRequest) (*GetAppEmailSubscribersResponse, error)
 	mustEmbedUnimplementedAppUserManagerServer()
 }
 
@@ -1052,6 +1085,15 @@ func (UnimplementedAppUserManagerServer) GetAppUserInfosByOtherApp(context.Conte
 }
 func (UnimplementedAppUserManagerServer) CreateAppUserWithSecret(context.Context, *CreateAppUserWithSecretRequest) (*CreateAppUserWithSecretResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserWithSecret not implemented")
+}
+func (UnimplementedAppUserManagerServer) CreateEmailSubscriber(context.Context, *CreateEmailSubscriberRequest) (*CreateEmailSubscriberResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateEmailSubscriber not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetEmailSubscribers(context.Context, *GetEmailSubscribersRequest) (*GetEmailSubscribersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetEmailSubscribers not implemented")
+}
+func (UnimplementedAppUserManagerServer) GetAppEmailSubscribers(context.Context, *GetAppEmailSubscribersRequest) (*GetAppEmailSubscribersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppEmailSubscribers not implemented")
 }
 func (UnimplementedAppUserManagerServer) mustEmbedUnimplementedAppUserManagerServer() {}
 
@@ -2362,6 +2404,60 @@ func _AppUserManager_CreateAppUserWithSecret_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AppUserManager_CreateEmailSubscriber_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateEmailSubscriberRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).CreateEmailSubscriber(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/CreateEmailSubscriber",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).CreateEmailSubscriber(ctx, req.(*CreateEmailSubscriberRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_GetEmailSubscribers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEmailSubscribersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetEmailSubscribers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetEmailSubscribers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetEmailSubscribers(ctx, req.(*GetEmailSubscribersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserManager_GetAppEmailSubscribers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppEmailSubscribersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserManagerServer).GetAppEmailSubscribers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppEmailSubscribers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserManagerServer).GetAppEmailSubscribers(ctx, req.(*GetAppEmailSubscribersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AppUserManager_ServiceDesc is the grpc.ServiceDesc for AppUserManager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -2656,6 +2752,18 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAppUserWithSecret",
 			Handler:    _AppUserManager_CreateAppUserWithSecret_Handler,
+		},
+		{
+			MethodName: "CreateEmailSubscriber",
+			Handler:    _AppUserManager_CreateEmailSubscriber_Handler,
+		},
+		{
+			MethodName: "GetEmailSubscribers",
+			Handler:    _AppUserManager_GetEmailSubscribers_Handler,
+		},
+		{
+			MethodName: "GetAppEmailSubscribers",
+			Handler:    _AppUserManager_GetAppEmailSubscribers_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
