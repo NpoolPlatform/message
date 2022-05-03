@@ -418,11 +418,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
-| GoodID | [string](#string) |  |  |
-| Total | [uint32](#uint32) |  |  |
-| InService | [uint32](#uint32) |  |  |
-| Sold | [uint32](#uint32) |  |  |
-| Locked | [uint32](#uint32) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| DailyReward | [double](#double) |  |  |
 
 
 
@@ -840,11 +837,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
-| GoodID | [string](#string) |  |  |
-| Total | [uint32](#uint32) |  |  |
-| InService | [uint32](#uint32) |  |  |
-| Sold | [uint32](#uint32) |  |  |
-| Locked | [uint32](#uint32) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| DailyReward | [double](#double) |  |  |
 
 
 

@@ -9,11 +9,8 @@ import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type Reward = {
   id?: string
-  goodID?: string
-  total?: number
-  inService?: number
-  sold?: number
-  locked?: number
+  coinTypeID?: string
+  dailyReward?: number
 }
 
 export type CreateRewardRequest = {

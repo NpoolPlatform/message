@@ -83,11 +83,8 @@ service OracleManager {
 
 message Reward {
     string ID = 10;
-    string GoodID = 20;
-    uint32 Total = 30;
-    uint32 InService = 40;
-    uint32 Sold = 50;
-    uint32 Locked = 60;
+    string CoinTypeID = 20;
+    double DailyReward = 30;
 }
 
 message CreateRewardRequest {

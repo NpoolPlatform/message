@@ -549,24 +549,12 @@
         "ID": {
           "type": "string"
         },
-        "GoodID": {
+        "CoinTypeID": {
           "type": "string"
         },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "InService": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Sold": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Locked": {
-          "type": "integer",
-          "format": "int64"
+        "DailyReward": {
+          "type": "number",
+          "format": "double"
         }
       }
     },
