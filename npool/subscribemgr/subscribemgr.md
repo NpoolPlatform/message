@@ -6,6 +6,8 @@
 - [npool/subscribemgr/subscribemgr.proto](#npool_subscribemgr_subscribemgr-proto)
     - [CreateEmailSubscriberRequest](#subscribe-manager-v1-CreateEmailSubscriberRequest)
     - [CreateEmailSubscriberResponse](#subscribe-manager-v1-CreateEmailSubscriberResponse)
+    - [CreateEmailSubscribersRequest](#subscribe-manager-v1-CreateEmailSubscribersRequest)
+    - [CreateEmailSubscribersResponse](#subscribe-manager-v1-CreateEmailSubscribersResponse)
     - [EmailSubscriber](#subscribe-manager-v1-EmailSubscriber)
     - [GetAppEmailSubscribersRequest](#subscribe-manager-v1-GetAppEmailSubscribersRequest)
     - [GetAppEmailSubscribersRequest.CondsEntry](#subscribe-manager-v1-GetAppEmailSubscribersRequest-CondsEntry)
@@ -19,6 +21,8 @@
 - [npool/subscribemgr/subscribemgr.proto](#npool_subscribemgr_subscribemgr-proto)
     - [CreateEmailSubscriberRequest](#subscribe-manager-v1-CreateEmailSubscriberRequest)
     - [CreateEmailSubscriberResponse](#subscribe-manager-v1-CreateEmailSubscriberResponse)
+    - [CreateEmailSubscribersRequest](#subscribe-manager-v1-CreateEmailSubscribersRequest)
+    - [CreateEmailSubscribersResponse](#subscribe-manager-v1-CreateEmailSubscribersResponse)
     - [EmailSubscriber](#subscribe-manager-v1-EmailSubscriber)
     - [GetAppEmailSubscribersRequest](#subscribe-manager-v1-GetAppEmailSubscribersRequest)
     - [GetAppEmailSubscribersRequest.CondsEntry](#subscribe-manager-v1-GetAppEmailSubscribersRequest-CondsEntry)
@@ -70,6 +74,36 @@
 
 
 
+<a name="subscribe-manager-v1-CreateEmailSubscribersRequest"></a>
+
+### CreateEmailSubscribersRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [EmailSubscriber](#subscribe-manager-v1-EmailSubscriber) | repeated |  |
+
+
+
+
+
+
+<a name="subscribe-manager-v1-CreateEmailSubscribersResponse"></a>
+
+### CreateEmailSubscribersResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [EmailSubscriber](#subscribe-manager-v1-EmailSubscriber) | repeated |  |
+
+
+
+
+
+
 <a name="subscribe-manager-v1-EmailSubscriber"></a>
 
 ### EmailSubscriber
@@ -196,6 +230,7 @@
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | CreateEmailSubscriber | [CreateEmailSubscriberRequest](#subscribe-manager-v1-CreateEmailSubscriberRequest) | [CreateEmailSubscriberResponse](#subscribe-manager-v1-CreateEmailSubscriberResponse) |  |
+| CreateEmailSubscribers | [CreateEmailSubscribersRequest](#subscribe-manager-v1-CreateEmailSubscribersRequest) | [CreateEmailSubscribersResponse](#subscribe-manager-v1-CreateEmailSubscribersResponse) |  |
 | GetEmailSubscribers | [GetEmailSubscribersRequest](#subscribe-manager-v1-GetEmailSubscribersRequest) | [GetEmailSubscribersResponse](#subscribe-manager-v1-GetEmailSubscribersResponse) |  |
 | GetAppEmailSubscribers | [GetAppEmailSubscribersRequest](#subscribe-manager-v1-GetAppEmailSubscribersRequest) | [GetAppEmailSubscribersResponse](#subscribe-manager-v1-GetAppEmailSubscribersResponse) |  |
 
@@ -240,6 +275,36 @@
 
 
 
+<a name="subscribe-manager-v1-CreateEmailSubscribersRequest"></a>
+
+### CreateEmailSubscribersRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [EmailSubscriber](#subscribe-manager-v1-EmailSubscriber) | repeated |  |
+
+
+
+
+
+
+<a name="subscribe-manager-v1-CreateEmailSubscribersResponse"></a>
+
+### CreateEmailSubscribersResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [EmailSubscriber](#subscribe-manager-v1-EmailSubscriber) | repeated |  |
+
+
+
+
+
+
 <a name="subscribe-manager-v1-EmailSubscriber"></a>
 
 ### EmailSubscriber
@@ -366,6 +431,7 @@
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | CreateEmailSubscriber | [CreateEmailSubscriberRequest](#subscribe-manager-v1-CreateEmailSubscriberRequest) | [CreateEmailSubscriberResponse](#subscribe-manager-v1-CreateEmailSubscriberResponse) |  |
+| CreateEmailSubscribers | [CreateEmailSubscribersRequest](#subscribe-manager-v1-CreateEmailSubscribersRequest) | [CreateEmailSubscribersResponse](#subscribe-manager-v1-CreateEmailSubscribersResponse) |  |
 | GetEmailSubscribers | [GetEmailSubscribersRequest](#subscribe-manager-v1-GetEmailSubscribersRequest) | [GetEmailSubscribersResponse](#subscribe-manager-v1-GetEmailSubscribersResponse) |  |
 | GetAppEmailSubscribers | [GetAppEmailSubscribersRequest](#subscribe-manager-v1-GetAppEmailSubscribersRequest) | [GetAppEmailSubscribersResponse](#subscribe-manager-v1-GetAppEmailSubscribersResponse) |  |
 

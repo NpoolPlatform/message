@@ -43,6 +43,38 @@
         ]
       }
     },
+    "/v1/create/email/subscribers": {
+      "post": {
+        "operationId": "SubscribeManager_CreateEmailSubscribers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateEmailSubscribersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateEmailSubscribersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SubscribeManager"
+        ]
+      }
+    },
     "/v1/get/app/email/subscribers": {
       "post": {
         "operationId": "SubscribeManager_GetAppEmailSubscribers",
@@ -195,6 +227,28 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1EmailSubscriber"
+        }
+      }
+    },
+    "v1CreateEmailSubscribersRequest": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EmailSubscriber"
+          }
+        }
+      }
+    },
+    "v1CreateEmailSubscribersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EmailSubscriber"
+          }
         }
       }
     },

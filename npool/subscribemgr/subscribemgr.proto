@@ -22,6 +22,12 @@ service SubscribeManager {
             body: "*"
         };
     }
+    rpc CreateEmailSubscribers (CreateEmailSubscribersRequest) returns (CreateEmailSubscribersResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/email/subscribers"
+            body: "*"
+        };
+    }
     rpc GetEmailSubscribers (GetEmailSubscribersRequest) returns (GetEmailSubscribersResponse) {
         option (google.api.http) = {
             post: "/v1/get/email/subscribers"
@@ -48,6 +54,14 @@ message CreateEmailSubscriberRequest {
 
 message CreateEmailSubscriberResponse {
     EmailSubscriber Info = 10;
+}
+
+message CreateEmailSubscribersRequest {
+    repeated EmailSubscriber Infos = 10;
+}
+
+message CreateEmailSubscribersResponse {
+    repeated EmailSubscriber Infos = 10;
 }
 
 message GetEmailSubscribersRequest {

@@ -26,6 +26,7 @@ const _ = grpc.SupportPackageIsVersion7
 type SubscribeManagerClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateEmailSubscriber(ctx context.Context, in *CreateEmailSubscriberRequest, opts ...grpc.CallOption) (*CreateEmailSubscriberResponse, error)
+	CreateEmailSubscribers(ctx context.Context, in *CreateEmailSubscribersRequest, opts ...grpc.CallOption) (*CreateEmailSubscribersResponse, error)
 	GetEmailSubscribers(ctx context.Context, in *GetEmailSubscribersRequest, opts ...grpc.CallOption) (*GetEmailSubscribersResponse, error)
 	GetAppEmailSubscribers(ctx context.Context, in *GetAppEmailSubscribersRequest, opts ...grpc.CallOption) (*GetAppEmailSubscribersResponse, error)
 }
@@ -56,6 +57,15 @@ func (c *subscribeManagerClient) CreateEmailSubscriber(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *subscribeManagerClient) CreateEmailSubscribers(ctx context.Context, in *CreateEmailSubscribersRequest, opts ...grpc.CallOption) (*CreateEmailSubscribersResponse, error) {
+	out := new(CreateEmailSubscribersResponse)
+	err := c.cc.Invoke(ctx, "/subscribe.manager.v1.SubscribeManager/CreateEmailSubscribers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *subscribeManagerClient) GetEmailSubscribers(ctx context.Context, in *GetEmailSubscribersRequest, opts ...grpc.CallOption) (*GetEmailSubscribersResponse, error) {
 	out := new(GetEmailSubscribersResponse)
 	err := c.cc.Invoke(ctx, "/subscribe.manager.v1.SubscribeManager/GetEmailSubscribers", in, out, opts...)
@@ -80,6 +90,7 @@ func (c *subscribeManagerClient) GetAppEmailSubscribers(ctx context.Context, in 
 type SubscribeManagerServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateEmailSubscriber(context.Context, *CreateEmailSubscriberRequest) (*CreateEmailSubscriberResponse, error)
+	CreateEmailSubscribers(context.Context, *CreateEmailSubscribersRequest) (*CreateEmailSubscribersResponse, error)
 	GetEmailSubscribers(context.Context, *GetEmailSubscribersRequest) (*GetEmailSubscribersResponse, error)
 	GetAppEmailSubscribers(context.Context, *GetAppEmailSubscribersRequest) (*GetAppEmailSubscribersResponse, error)
 	mustEmbedUnimplementedSubscribeManagerServer()
@@ -94,6 +105,9 @@ func (UnimplementedSubscribeManagerServer) Version(context.Context, *emptypb.Emp
 }
 func (UnimplementedSubscribeManagerServer) CreateEmailSubscriber(context.Context, *CreateEmailSubscriberRequest) (*CreateEmailSubscriberResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateEmailSubscriber not implemented")
+}
+func (UnimplementedSubscribeManagerServer) CreateEmailSubscribers(context.Context, *CreateEmailSubscribersRequest) (*CreateEmailSubscribersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateEmailSubscribers not implemented")
 }
 func (UnimplementedSubscribeManagerServer) GetEmailSubscribers(context.Context, *GetEmailSubscribersRequest) (*GetEmailSubscribersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEmailSubscribers not implemented")
@@ -150,6 +164,24 @@ func _SubscribeManager_CreateEmailSubscriber_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SubscribeManager_CreateEmailSubscribers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateEmailSubscribersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SubscribeManagerServer).CreateEmailSubscribers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/subscribe.manager.v1.SubscribeManager/CreateEmailSubscribers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SubscribeManagerServer).CreateEmailSubscribers(ctx, req.(*CreateEmailSubscribersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _SubscribeManager_GetEmailSubscribers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetEmailSubscribersRequest)
 	if err := dec(in); err != nil {
@@ -200,6 +232,10 @@ var SubscribeManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateEmailSubscriber",
 			Handler:    _SubscribeManager_CreateEmailSubscriber_Handler,
+		},
+		{
+			MethodName: "CreateEmailSubscribers",
+			Handler:    _SubscribeManager_CreateEmailSubscribers_Handler,
 		},
 		{
 			MethodName: "GetEmailSubscribers",

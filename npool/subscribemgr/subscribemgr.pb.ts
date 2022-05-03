@@ -21,6 +21,14 @@ export type CreateEmailSubscriberResponse = {
   info?: EmailSubscriber
 }
 
+export type CreateEmailSubscribersRequest = {
+  infos?: EmailSubscriber[]
+}
+
+export type CreateEmailSubscribersResponse = {
+  infos?: EmailSubscriber[]
+}
+
 export type GetEmailSubscribersRequest = {
   appID?: string
   conds?: {[key: string]: NpoolV1Npool.FilterCond}
@@ -45,6 +53,9 @@ export class SubscribeManager {
   }
   static CreateEmailSubscriber(req: CreateEmailSubscriberRequest, initReq?: fm.InitReq): Promise<CreateEmailSubscriberResponse> {
     return fm.fetchReq<CreateEmailSubscriberRequest, CreateEmailSubscriberResponse>(`/v1/create/email/subscriber`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateEmailSubscribers(req: CreateEmailSubscribersRequest, initReq?: fm.InitReq): Promise<CreateEmailSubscribersResponse> {
+    return fm.fetchReq<CreateEmailSubscribersRequest, CreateEmailSubscribersResponse>(`/v1/create/email/subscribers`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetEmailSubscribers(req: GetEmailSubscribersRequest, initReq?: fm.InitReq): Promise<GetEmailSubscribersResponse> {
     return fm.fetchReq<GetEmailSubscribersRequest, GetEmailSubscribersResponse>(`/v1/get/email/subscribers`, {...initReq, method: "POST", body: JSON.stringify(req)})
