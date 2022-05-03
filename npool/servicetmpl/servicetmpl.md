@@ -3,20 +3,20 @@
 
 ## Table of Contents
 
-- [npool/go-service-app-template/service-sample.proto](#npool_go-service-app-template_service-sample-proto)
-    - [ServiceExample](#service-sample-v1-ServiceExample)
+- [npool/servicetmpl/servicetmpl.proto](#npool_servicetmpl_servicetmpl-proto)
+    - [ServiceTemplate](#service-template-v1-ServiceTemplate)
   
-- [npool/go-service-app-template/service-sample.proto](#npool_go-service-app-template_service-sample-proto)
-    - [ServiceExample](#service-sample-v1-ServiceExample)
+- [npool/servicetmpl/servicetmpl.proto](#npool_servicetmpl_servicetmpl-proto)
+    - [ServiceTemplate](#service-template-v1-ServiceTemplate)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="npool_go-service-app-template_service-sample-proto"></a>
+<a name="npool_servicetmpl_servicetmpl-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/go-service-app-template/service-sample.proto
+## npool/servicetmpl/servicetmpl.proto
 
 
  
@@ -26,9 +26,9 @@
  
 
 
-<a name="service-sample-v1-ServiceExample"></a>
+<a name="service-template-v1-ServiceTemplate"></a>
 
-### ServiceExample
+### ServiceTemplate
 Service Name
 
 | Method Name | Request Type | Response Type | Description |
@@ -39,10 +39,10 @@ Service Name
 
 
 
-<a name="npool_go-service-app-template_service-sample-proto"></a>
+<a name="npool_servicetmpl_servicetmpl-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/go-service-app-template/service-sample.proto
+## npool/servicetmpl/servicetmpl.proto
 
 
  
@@ -52,9 +52,9 @@ Service Name
  
 
 
-<a name="service-sample-v1-ServiceExample"></a>
+<a name="service-template-v1-ServiceTemplate"></a>
 
-### ServiceExample
+### ServiceTemplate
 Service Name
 
 | Method Name | Request Type | Response Type | Description |
