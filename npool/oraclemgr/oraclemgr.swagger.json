@@ -1,0 +1,598 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/oraclemgr/oraclemgr.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/reward": {
+      "post": {
+        "operationId": "OracleManager_CreateReward",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateRewardResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateRewardRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
+    "/v1/create/rewards": {
+      "post": {
+        "operationId": "OracleManager_CreateRewards",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateRewardsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateRewardsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
+    "/v1/delete/reward": {
+      "post": {
+        "operationId": "OracleManager_DeleteReward",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteRewardResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteRewardRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
+    "/v1/exist/reward": {
+      "post": {
+        "operationId": "OracleManager_ExistReward",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ExistRewardResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ExistRewardRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
+    "/v1/exist/reward/conds": {
+      "post": {
+        "operationId": "OracleManager_ExistRewardConds",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ExistRewardCondsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ExistRewardCondsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
+    "/v1/get/reward": {
+      "post": {
+        "operationId": "OracleManager_GetReward",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRewardResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRewardRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
+    "/v1/get/reward/only": {
+      "post": {
+        "operationId": "OracleManager_GetRewardOnly",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRewardOnlyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRewardOnlyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
+    "/v1/get/rewards": {
+      "post": {
+        "operationId": "OracleManager_GetRewards",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRewardsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRewardsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
+    "/v1/update/reward": {
+      "post": {
+        "operationId": "OracleManager_UpdateReward",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateRewardResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateRewardRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
+    "/version": {
+      "post": {
+        "operationId": "OracleManager_Version",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "protobufNullValue": {
+      "type": "string",
+      "enum": [
+        "NULL_VALUE"
+      ],
+      "default": "NULL_VALUE",
+      "description": "`NullValue` is a singleton enumeration to represent the null value for the\n`Value` type union.\n\n The JSON representation for `NullValue` is JSON `null`.\n\n - NULL_VALUE: Null value."
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateRewardRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Reward"
+        }
+      }
+    },
+    "v1CreateRewardResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Reward"
+        }
+      }
+    },
+    "v1CreateRewardsRequest": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Reward"
+          }
+        }
+      }
+    },
+    "v1CreateRewardsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Reward"
+          }
+        }
+      }
+    },
+    "v1DeleteRewardRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteRewardResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Reward"
+        }
+      }
+    },
+    "v1ExistRewardCondsRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        }
+      }
+    },
+    "v1ExistRewardCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistRewardRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ExistRewardResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1FilterCond": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Val": {
+          "type": "object"
+        }
+      }
+    },
+    "v1GetRewardOnlyRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        }
+      }
+    },
+    "v1GetRewardOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Reward"
+        }
+      }
+    },
+    "v1GetRewardRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetRewardResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Reward"
+        }
+      }
+    },
+    "v1GetRewardsRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetRewardsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Reward"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1Reward": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "InService": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Sold": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Locked": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateRewardRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Reward"
+        }
+      }
+    },
+    "v1UpdateRewardResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Reward"
+        }
+      }
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

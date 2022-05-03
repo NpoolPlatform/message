@@ -1,0 +1,174 @@
+syntax = "proto3";
+
+package oracle.manager.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/oraclemgr";
+
+import "google/protobuf/struct.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+service OracleManager {
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+
+    rpc CreateReward (CreateRewardRequest) returns (CreateRewardResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/reward"
+            body: "*"
+        };
+    }
+
+    rpc CreateRewards (CreateRewardsRequest) returns (CreateRewardsResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/rewards"
+            body: "*"
+        };
+    }
+
+    rpc UpdateReward (UpdateRewardRequest) returns (UpdateRewardResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/reward"
+            body: "*"
+        };
+    }
+
+    rpc GetReward (GetRewardRequest) returns (GetRewardResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/reward"
+            body: "*"
+        };
+    }
+
+    rpc GetRewardOnly (GetRewardOnlyRequest) returns (GetRewardOnlyResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/reward/only"
+            body: "*"
+        };
+    }
+
+    rpc GetRewards (GetRewardsRequest) returns (GetRewardsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/rewards"
+            body: "*"
+        };
+    }
+
+    rpc ExistReward (ExistRewardRequest) returns (ExistRewardResponse) {
+        option (google.api.http) = {
+            post: "/v1/exist/reward"
+            body: "*"
+        };
+    }
+
+    rpc ExistRewardConds (ExistRewardCondsRequest) returns (ExistRewardCondsResponse) {
+        option (google.api.http) = {
+            post: "/v1/exist/reward/conds"
+            body: "*"
+        };
+    }
+
+    rpc DeleteReward (DeleteRewardRequest) returns (DeleteRewardResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/reward"
+            body: "*"
+        };
+    }
+}
+
+message Reward {
+    string ID = 10;
+    string GoodID = 20;
+    uint32 Total = 30;
+    uint32 InService = 40;
+    uint32 Sold = 50;
+    uint32 Locked = 60;
+}
+
+message CreateRewardRequest {
+    Reward Info = 10;
+}
+
+message CreateRewardResponse {
+    Reward Info = 10;
+}
+
+message CreateRewardsRequest {
+    repeated Reward Infos = 10;
+}
+
+message CreateRewardsResponse {
+    repeated Reward Infos = 10;
+}
+
+message UpdateRewardRequest {
+    Reward Info = 10;
+}
+
+message UpdateRewardResponse {
+    Reward Info = 10;
+}
+
+message GetRewardRequest {
+    string ID = 10;
+}
+
+message GetRewardResponse {
+    Reward Info = 10;
+}
+
+message GetRewardOnlyRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message GetRewardOnlyResponse {
+    Reward Info = 10;
+}
+
+message GetRewardsRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetRewardsResponse {
+    repeated Reward Infos = 10;
+    int32 Total = 20;
+}
+
+message ExistRewardRequest {
+    string ID = 10;
+}
+
+message ExistRewardResponse {
+    bool Result = 10;
+}
+
+message ExistRewardCondsRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message ExistRewardCondsResponse {
+    bool Result = 10;
+}
+
+message CountRewardsRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message CountRewardsResponse {
+    uint32 Result = 10;
+}
+
+message DeleteRewardRequest {
+    string ID = 10;
+}
+
+message DeleteRewardResponse {
+    Reward Info = 10;
+}
