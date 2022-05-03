@@ -38,6 +38,7 @@ export type GetEmailSubscribersRequest = {
 
 export type GetEmailSubscribersResponse = {
   infos?: EmailSubscriber[]
+  total?: number
 }
 
 export type GetAppEmailSubscribersRequest = {
@@ -49,6 +50,7 @@ export type GetAppEmailSubscribersRequest = {
 
 export type GetAppEmailSubscribersResponse = {
   infos?: EmailSubscriber[]
+  total?: number
 }
 
 export class SubscribeManager {

@@ -164,6 +164,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [EmailSubscriber](#subscribe-manager-v1-EmailSubscriber) | repeated |  |
+| Total | [int32](#int32) |  |  |
 
 
 
@@ -213,6 +214,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [EmailSubscriber](#subscribe-manager-v1-EmailSubscriber) | repeated |  |
+| Total | [int32](#int32) |  |  |
 
 
 
@@ -369,6 +371,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [EmailSubscriber](#subscribe-manager-v1-EmailSubscriber) | repeated |  |
+| Total | [int32](#int32) |  |  |
 
 
 
@@ -418,6 +421,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [EmailSubscriber](#subscribe-manager-v1-EmailSubscriber) | repeated |  |
+| Total | [int32](#int32) |  |  |
 
 
 

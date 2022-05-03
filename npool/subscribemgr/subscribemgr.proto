@@ -73,6 +73,7 @@ message GetEmailSubscribersRequest {
 
 message GetEmailSubscribersResponse {
     repeated EmailSubscriber Infos = 10;
+    int32 Total = 20;
 }
 
 message GetAppEmailSubscribersRequest {
@@ -84,4 +85,5 @@ message GetAppEmailSubscribersRequest {
 
 message GetAppEmailSubscribersResponse {
     repeated EmailSubscriber Infos = 10;
+    int32 Total = 20;
 }

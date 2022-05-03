@@ -307,6 +307,10 @@
           "items": {
             "$ref": "#/definitions/v1EmailSubscriber"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -340,6 +344,10 @@
           "items": {
             "$ref": "#/definitions/v1EmailSubscriber"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
