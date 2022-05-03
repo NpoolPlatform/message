@@ -32,6 +32,8 @@ export type CreateEmailSubscribersResponse = {
 export type GetEmailSubscribersRequest = {
   appID?: string
   conds?: {[key: string]: NpoolV1Npool.FilterCond}
+  offset?: number
+  limit?: number
 }
 
 export type GetEmailSubscribersResponse = {
@@ -41,6 +43,8 @@ export type GetEmailSubscribersResponse = {
 export type GetAppEmailSubscribersRequest = {
   targetAppID?: string
   conds?: {[key: string]: NpoolV1Npool.FilterCond}
+  offset?: number
+  limit?: number
 }
 
 export type GetAppEmailSubscribersResponse = {

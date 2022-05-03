@@ -288,6 +288,14 @@
           "additionalProperties": {
             "$ref": "#/definitions/v1FilterCond"
           }
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -313,6 +321,14 @@
           "additionalProperties": {
             "$ref": "#/definitions/v1FilterCond"
           }
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },

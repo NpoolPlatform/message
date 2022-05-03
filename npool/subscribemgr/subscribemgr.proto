@@ -67,6 +67,8 @@ message CreateEmailSubscribersResponse {
 message GetEmailSubscribersRequest {
     string AppID = 10;
     map<string, npool.v1.FilterCond> Conds = 20;
+    int32 Offset = 30;
+    int32 Limit = 40;
 }
 
 message GetEmailSubscribersResponse {
@@ -76,6 +78,8 @@ message GetEmailSubscribersResponse {
 message GetAppEmailSubscribersRequest {
     string TargetAppID = 10;
     map<string, npool.v1.FilterCond> Conds = 20;
+    int32 Offset = 30;
+    int32 Limit = 40;
 }
 
 message GetAppEmailSubscribersResponse {

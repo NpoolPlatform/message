@@ -131,6 +131,8 @@
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
 | Conds | [GetAppEmailSubscribersRequest.CondsEntry](#subscribe-manager-v1-GetAppEmailSubscribersRequest-CondsEntry) | repeated |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
 
 
 
@@ -178,6 +180,8 @@
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | Conds | [GetEmailSubscribersRequest.CondsEntry](#subscribe-manager-v1-GetEmailSubscribersRequest-CondsEntry) | repeated |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
 
 
 
@@ -332,6 +336,8 @@
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
 | Conds | [GetAppEmailSubscribersRequest.CondsEntry](#subscribe-manager-v1-GetAppEmailSubscribersRequest-CondsEntry) | repeated |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
 
 
 
@@ -379,6 +385,8 @@
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | Conds | [GetEmailSubscribersRequest.CondsEntry](#subscribe-manager-v1-GetEmailSubscribersRequest-CondsEntry) | repeated |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
 
 
 
