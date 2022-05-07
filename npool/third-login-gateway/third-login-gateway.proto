@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package third.gateway.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/third-login-gateway";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service ThirdLoginGateway {
+  // Method Version
+  rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+    option (google.api.http) = {
+      post: "/version"
+      body: "*"
+    };
+  }
+
+  rpc GetPlatformsByApp (GetPlatformsByAppRequest) returns (GetPlatformsByAppResponse){
+    option (google.api.http) = {
+      post: "/v1/get/platforms/by/app"
+      body: "*"
+    };
+  }
+
+  rpc ThirdRedirect (ThirdLoginRequest) returns (ThirdLoginResponse) {
+    option (google.api.http) = {
+      get: "/v1/third/redirect"
+    };
+  }
+}
+
+message Platform {
+  string ID = 10;
+  string AppID = 20;
+  string Platform = 30;
+  string PlatformAppKey = 40;
+  string PlatformAppSecret = 50;
+  string CreateAt = 60;
+  string UpdateAt = 70;
+  string LogoUrl = 80;
+  string RedirectUrl = 90;
+}
+
+message GetPlatformsByAppRequest {
+  string AppID = 10;
+}
+message GetPlatformsByAppResponse {
+  repeated Auth Infos = 10;
+}
+message Auth {
+  string AuthUrl = 10;
+  string LogoUrl = 20;
+  string Platform = 30;
+}
+
+message ThirdLoginRequest {
+  string code = 10;
+  string state = 20;
+}
+message ThirdLoginResponse {}
