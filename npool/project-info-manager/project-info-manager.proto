@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+package project.info.manager.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/project-info-manager";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+service ProjectInfoManager {
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+    rpc CreateCoinDescription (CreateCoinDescriptionRequest) returns (CreateCoinDescriptionResponse){
+      option (google.api.http) = {
+          post: "/v1/create/coin/description"
+          body: "*"
+      };
+    }
+    rpc GetCoinDescription (GetCoinDescriptionRequest) returns (GetCoinDescriptionResponse) {
+      option (google.api.http) = {
+        post: "/v1/get/coin/description"
+        body: "*"
+      };
+    }
+    rpc UpdateCoinDescription (UpdateCoinDescriptionRequest) returns (UpdateCoinDescriptionResponse) {
+      option (google.api.http) = {
+        post: "/v1/update/coin/description"
+        body: "*"
+      };
+    }
+}
+
+
+message CoinDescriptionInfo {
+  string ID         = 100;
+  string CoinTypeID = 110;
+  string Title      = 120;
+  string Message    = 130;
+  string UsedFor    = 140;
+  uint32 CreatedAt  = 150;
+  uint32 UpdatedAt  = 160;
+}
+
+message CreateCoinDescriptionRequest  {
+  string CoinTypeID = 100;
+  string Title      = 110;
+  string Message    = 120;
+  string UsedFor    = 130;
+}
+
+message CreateCoinDescriptionResponse {
+  CoinDescriptionInfo Info = 100;
+}
+
+message GetCoinDescriptionRequest {
+  string CoinTypeID = 100;
+  int32 Limit       = 110;
+  int32 Offset      = 120;
+}
+
+message GetCoinDescriptionResponse {
+  int32 Total                        = 100;
+  repeated CoinDescriptionInfo Infos = 110;
+}
+
+message UpdateCoinDescriptionRequest {
+  string ID         = 100;
+  string CoinTypeID = 110;
+  string Title      = 120;
+  string Message    = 130;
+  string UsedFor    = 140;
+}
+
+message UpdateCoinDescriptionResponse {
+  CoinDescriptionInfo Info = 100;
+}
