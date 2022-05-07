@@ -1,0 +1,298 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/project-info-manager/project-info-manager.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/coin/description": {
+      "post": {
+        "operationId": "ProjectInfoManager_CreateCoinDescription",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateCoinDescriptionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateCoinDescriptionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    },
+    "/v1/get/coin/description": {
+      "post": {
+        "operationId": "ProjectInfoManager_GetCoinDescription",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinDescriptionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinDescriptionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    },
+    "/v1/update/coin/description": {
+      "post": {
+        "operationId": "ProjectInfoManager_UpdateCoinDescription",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCoinDescriptionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCoinDescriptionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    },
+    "/version": {
+      "post": {
+        "operationId": "ProjectInfoManager_Version",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CoinDescriptionInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateCoinDescriptionRequest": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateCoinDescriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinDescriptionInfo"
+        }
+      }
+    },
+    "v1GetCoinDescriptionRequest": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetCoinDescriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinDescriptionInfo"
+          }
+        }
+      }
+    },
+    "v1UpdateCoinDescriptionRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateCoinDescriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinDescriptionInfo"
+        }
+      }
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
