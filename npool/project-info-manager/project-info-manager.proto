@@ -9,73 +9,198 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 service ProjectInfoManager {
-    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
-        option (google.api.http) = {
-            post: "/version"
-            body: "*"
-        };
-    }
-    rpc CreateCoinDescription (CreateCoinDescriptionRequest) returns (CreateCoinDescriptionResponse){
-      option (google.api.http) = {
-          post: "/v1/create/coin/description"
-          body: "*"
-      };
-    }
-    rpc GetCoinDescription (GetCoinDescriptionRequest) returns (GetCoinDescriptionResponse) {
-      option (google.api.http) = {
-        post: "/v1/get/coin/description"
+  rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+    option (google.api.http) = {
+        post: "/version"
         body: "*"
-      };
-    }
-    rpc UpdateCoinDescription (UpdateCoinDescriptionRequest) returns (UpdateCoinDescriptionResponse) {
-      option (google.api.http) = {
+    };
+}
+
+rpc CreateCoinDescription (CreateCoinDescriptionRequest) returns (CreateCoinDescriptionResponse) {
+    option (google.api.http) = {
+        post: "/v1/create/coin/description"
+        body: "*"
+    };
+}
+
+rpc CreateCoinDescriptions (CreateCoinDescriptionsRequest) returns (CreateCoinDescriptionsResponse) {
+    option (google.api.http) = {
+        post: "/v1/create/coin/descriptions"
+        body: "*"
+    };
+}
+
+rpc UpdateCoinDescription (UpdateCoinDescriptionRequest) returns (UpdateCoinDescriptionResponse) {
+    option (google.api.http) = {
         post: "/v1/update/coin/description"
         body: "*"
-      };
-    }
+    };
+}
+
+rpc UpdateAppCoinDescription (UpdateAppCoinDescriptionRequest) returns (UpdateAppCoinDescriptionResponse) {
+  option (google.api.http) = {
+      post: "/v1/update/app/coin/description"
+      body: "*"
+  };
+}
+
+rpc GetCoinDescription (GetCoinDescriptionRequest) returns (GetCoinDescriptionResponse) {
+    option (google.api.http) = {
+        post: "/v1/get/coin/description"
+        body: "*"
+    };
+}
+
+rpc GetAppCoinDescription (GetAppCoinDescriptionRequest) returns (GetAppCoinDescriptionResponse) {
+  option (google.api.http) = {
+      post: "/v1/get/app/coin/description"
+      body: "*"
+  };
+}
+
+rpc GetCoinDescriptions (GetCoinDescriptionsRequest) returns (GetCoinDescriptionsResponse) {
+    option (google.api.http) = {
+        post: "/v1/get/coin/descriptions"
+        body: "*"
+    };
+}
+
+rpc GetAppCoinDescriptions (GetAppCoinDescriptionsRequest) returns (GetAppCoinDescriptionsResponse) {
+  option (google.api.http) = {
+      post: "/v1/get/app/coin/descriptions"
+      body: "*"
+  };
+}
+
+rpc CountCoinDescriptions (CountCoinDescriptionsRequest) returns (CountCoinDescriptionsResponse) {
+    option (google.api.http) = {
+        post: "/v1/count/coin/descriptions"
+        body: "*"
+    };
+}
+
+rpc CountAppCoinDescriptions (CountAppCoinDescriptionsRequest) returns (CountAppCoinDescriptionsResponse) {
+  option (google.api.http) = {
+      post: "/v1/count/app/coin/descriptions"
+      body: "*"
+  };
+}
+
+rpc DeleteAppCoinDescription (DeleteAppCoinDescriptionRequest) returns (DeleteAppCoinDescriptionResponse) {
+    option (google.api.http) = {
+        post: "/v1/delete/app/coin/description"
+        body: "*"
+    };
+}
 }
 
 
-message CoinDescriptionInfo {
-  string ID         = 100;
-  string CoinTypeID = 110;
-  string Title      = 120;
-  string Message    = 130;
-  string UsedFor    = 140;
-  uint32 CreatedAt  = 150;
-  uint32 UpdatedAt  = 160;
+message CoinDescription {
+  string ID         = 10;
+  string AppID      = 20;
+  string CoinTypeID = 30;
+  string Title      = 40;
+  string Message    = 50;
+  string UsedFor    = 60;
 }
-
+// create
 message CreateCoinDescriptionRequest  {
-  string CoinTypeID = 100;
-  string Title      = 110;
-  string Message    = 120;
-  string UsedFor    = 130;
+  CoinDescription Info=10;
 }
 
 message CreateCoinDescriptionResponse {
-  CoinDescriptionInfo Info = 100;
+  CoinDescription Info = 10;
 }
 
-message GetCoinDescriptionRequest {
-  string CoinTypeID = 100;
-  int32 Limit       = 110;
-  int32 Offset      = 120;
+message CreateCoinDescriptionsRequest {
+  repeated CoinDescription Infos = 10;
 }
 
-message GetCoinDescriptionResponse {
-  int32 Total                        = 100;
-  repeated CoinDescriptionInfo Infos = 110;
+message CreateCoinDescriptionsResponse {
+  repeated CoinDescription Infos = 10;
 }
 
+// update for app and admin
 message UpdateCoinDescriptionRequest {
-  string ID         = 100;
-  string CoinTypeID = 110;
-  string Title      = 120;
-  string Message    = 130;
-  string UsedFor    = 140;
+  string AppID = 10;
+  CoinDescription Info = 20;
 }
 
 message UpdateCoinDescriptionResponse {
-  CoinDescriptionInfo Info = 100;
+  CoinDescription Info = 10;
+}
+
+message UpdateAppCoinDescriptionRequest {
+  string TargetAppID = 10;
+  CoinDescription Info = 20;
+}
+
+message UpdateAppCoinDescriptionResponse {
+  CoinDescription Info = 10;
+}
+// get for app and admin
+message GetCoinDescriptionRequest {
+  string AppID = 10;
+  string ID = 20;
+}
+
+message GetCoinDescriptionResponse {
+  CoinDescription Info = 10;
+}
+
+message GetAppCoinDescriptionRequest {
+  string TargetAppID = 10;
+  string ID = 20;
+}
+
+message GetAppCoinDescriptionResponse {
+  CoinDescription Info = 10;
+}
+
+message GetCoinDescriptionsRequest {
+  string AppID = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message GetCoinDescriptionsResponse {
+  repeated CoinDescription Infos = 10;
+  int32 Total = 20;
+}
+
+message GetAppCoinDescriptionsRequest {
+  string TargetAppID = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message GetAppCoinDescriptionsResponse {
+  repeated CoinDescription Infos = 10;
+  int32 Total = 20;
+}
+
+// count for app and admin
+message CountCoinDescriptionsRequest {
+  string AppID = 10;
+}
+
+message CountCoinDescriptionsResponse {
+  uint32 Result = 10;
+}
+
+message CountAppCoinDescriptionsRequest {
+  string TargetAppID = 10;
+}
+
+message CountAppCoinDescriptionsResponse {
+  uint32 Result = 10;
+}
+// delete for admin
+message DeleteAppCoinDescriptionRequest {
+  string TargetAppID = 10;
+  string ID = 20;
+}
+
+message DeleteAppCoinDescriptionResponse {
+  CoinDescription Info = 10;
 }

@@ -4,22 +4,54 @@
 ## Table of Contents
 
 - [npool/project-info-manager/project-info-manager.proto](#npool_project-info-manager_project-info-manager-proto)
-    - [CoinDescriptionInfo](#project-info-manager-v1-CoinDescriptionInfo)
+    - [CoinDescription](#project-info-manager-v1-CoinDescription)
+    - [CountAppCoinDescriptionsRequest](#project-info-manager-v1-CountAppCoinDescriptionsRequest)
+    - [CountAppCoinDescriptionsResponse](#project-info-manager-v1-CountAppCoinDescriptionsResponse)
+    - [CountCoinDescriptionsRequest](#project-info-manager-v1-CountCoinDescriptionsRequest)
+    - [CountCoinDescriptionsResponse](#project-info-manager-v1-CountCoinDescriptionsResponse)
     - [CreateCoinDescriptionRequest](#project-info-manager-v1-CreateCoinDescriptionRequest)
     - [CreateCoinDescriptionResponse](#project-info-manager-v1-CreateCoinDescriptionResponse)
+    - [CreateCoinDescriptionsRequest](#project-info-manager-v1-CreateCoinDescriptionsRequest)
+    - [CreateCoinDescriptionsResponse](#project-info-manager-v1-CreateCoinDescriptionsResponse)
+    - [DeleteAppCoinDescriptionRequest](#project-info-manager-v1-DeleteAppCoinDescriptionRequest)
+    - [DeleteAppCoinDescriptionResponse](#project-info-manager-v1-DeleteAppCoinDescriptionResponse)
+    - [GetAppCoinDescriptionRequest](#project-info-manager-v1-GetAppCoinDescriptionRequest)
+    - [GetAppCoinDescriptionResponse](#project-info-manager-v1-GetAppCoinDescriptionResponse)
+    - [GetAppCoinDescriptionsRequest](#project-info-manager-v1-GetAppCoinDescriptionsRequest)
+    - [GetAppCoinDescriptionsResponse](#project-info-manager-v1-GetAppCoinDescriptionsResponse)
     - [GetCoinDescriptionRequest](#project-info-manager-v1-GetCoinDescriptionRequest)
     - [GetCoinDescriptionResponse](#project-info-manager-v1-GetCoinDescriptionResponse)
+    - [GetCoinDescriptionsRequest](#project-info-manager-v1-GetCoinDescriptionsRequest)
+    - [GetCoinDescriptionsResponse](#project-info-manager-v1-GetCoinDescriptionsResponse)
+    - [UpdateAppCoinDescriptionRequest](#project-info-manager-v1-UpdateAppCoinDescriptionRequest)
+    - [UpdateAppCoinDescriptionResponse](#project-info-manager-v1-UpdateAppCoinDescriptionResponse)
     - [UpdateCoinDescriptionRequest](#project-info-manager-v1-UpdateCoinDescriptionRequest)
     - [UpdateCoinDescriptionResponse](#project-info-manager-v1-UpdateCoinDescriptionResponse)
   
     - [ProjectInfoManager](#project-info-manager-v1-ProjectInfoManager)
   
 - [npool/project-info-manager/project-info-manager.proto](#npool_project-info-manager_project-info-manager-proto)
-    - [CoinDescriptionInfo](#project-info-manager-v1-CoinDescriptionInfo)
+    - [CoinDescription](#project-info-manager-v1-CoinDescription)
+    - [CountAppCoinDescriptionsRequest](#project-info-manager-v1-CountAppCoinDescriptionsRequest)
+    - [CountAppCoinDescriptionsResponse](#project-info-manager-v1-CountAppCoinDescriptionsResponse)
+    - [CountCoinDescriptionsRequest](#project-info-manager-v1-CountCoinDescriptionsRequest)
+    - [CountCoinDescriptionsResponse](#project-info-manager-v1-CountCoinDescriptionsResponse)
     - [CreateCoinDescriptionRequest](#project-info-manager-v1-CreateCoinDescriptionRequest)
     - [CreateCoinDescriptionResponse](#project-info-manager-v1-CreateCoinDescriptionResponse)
+    - [CreateCoinDescriptionsRequest](#project-info-manager-v1-CreateCoinDescriptionsRequest)
+    - [CreateCoinDescriptionsResponse](#project-info-manager-v1-CreateCoinDescriptionsResponse)
+    - [DeleteAppCoinDescriptionRequest](#project-info-manager-v1-DeleteAppCoinDescriptionRequest)
+    - [DeleteAppCoinDescriptionResponse](#project-info-manager-v1-DeleteAppCoinDescriptionResponse)
+    - [GetAppCoinDescriptionRequest](#project-info-manager-v1-GetAppCoinDescriptionRequest)
+    - [GetAppCoinDescriptionResponse](#project-info-manager-v1-GetAppCoinDescriptionResponse)
+    - [GetAppCoinDescriptionsRequest](#project-info-manager-v1-GetAppCoinDescriptionsRequest)
+    - [GetAppCoinDescriptionsResponse](#project-info-manager-v1-GetAppCoinDescriptionsResponse)
     - [GetCoinDescriptionRequest](#project-info-manager-v1-GetCoinDescriptionRequest)
     - [GetCoinDescriptionResponse](#project-info-manager-v1-GetCoinDescriptionResponse)
+    - [GetCoinDescriptionsRequest](#project-info-manager-v1-GetCoinDescriptionsRequest)
+    - [GetCoinDescriptionsResponse](#project-info-manager-v1-GetCoinDescriptionsResponse)
+    - [UpdateAppCoinDescriptionRequest](#project-info-manager-v1-UpdateAppCoinDescriptionRequest)
+    - [UpdateAppCoinDescriptionResponse](#project-info-manager-v1-UpdateAppCoinDescriptionResponse)
     - [UpdateCoinDescriptionRequest](#project-info-manager-v1-UpdateCoinDescriptionRequest)
     - [UpdateCoinDescriptionResponse](#project-info-manager-v1-UpdateCoinDescriptionResponse)
   
@@ -36,21 +68,80 @@
 
 
 
-<a name="project-info-manager-v1-CoinDescriptionInfo"></a>
+<a name="project-info-manager-v1-CoinDescription"></a>
 
-### CoinDescriptionInfo
+### CoinDescription
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | Title | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
-| CreatedAt | [uint32](#uint32) |  |  |
-| UpdatedAt | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CountAppCoinDescriptionsRequest"></a>
+
+### CountAppCoinDescriptionsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CountAppCoinDescriptionsResponse"></a>
+
+### CountAppCoinDescriptionsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Result | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CountCoinDescriptionsRequest"></a>
+
+### CountCoinDescriptionsRequest
+count for app and admin
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CountCoinDescriptionsResponse"></a>
+
+### CountCoinDescriptionsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Result | [uint32](#uint32) |  |  |
 
 
 
@@ -60,15 +151,12 @@
 <a name="project-info-manager-v1-CreateCoinDescriptionRequest"></a>
 
 ### CreateCoinDescriptionRequest
-
+create
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinTypeID | [string](#string) |  |  |
-| Title | [string](#string) |  |  |
-| Message | [string](#string) |  |  |
-| UsedFor | [string](#string) |  |  |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
 
 
 
@@ -83,7 +171,132 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinDescriptionInfo](#project-info-manager-v1-CoinDescriptionInfo) |  |  |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CreateCoinDescriptionsRequest"></a>
+
+### CreateCoinDescriptionsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [CoinDescription](#project-info-manager-v1-CoinDescription) | repeated |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CreateCoinDescriptionsResponse"></a>
+
+### CreateCoinDescriptionsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [CoinDescription](#project-info-manager-v1-CoinDescription) | repeated |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-DeleteAppCoinDescriptionRequest"></a>
+
+### DeleteAppCoinDescriptionRequest
+delete for admin
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-DeleteAppCoinDescriptionResponse"></a>
+
+### DeleteAppCoinDescriptionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetAppCoinDescriptionRequest"></a>
+
+### GetAppCoinDescriptionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetAppCoinDescriptionResponse"></a>
+
+### GetAppCoinDescriptionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetAppCoinDescriptionsRequest"></a>
+
+### GetAppCoinDescriptionsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetAppCoinDescriptionsResponse"></a>
+
+### GetAppCoinDescriptionsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [CoinDescription](#project-info-manager-v1-CoinDescription) | repeated |  |
+| Total | [int32](#int32) |  |  |
 
 
 
@@ -93,14 +306,13 @@
 <a name="project-info-manager-v1-GetCoinDescriptionRequest"></a>
 
 ### GetCoinDescriptionRequest
-
+get for app and admin
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinTypeID | [string](#string) |  |  |
-| Limit | [int32](#int32) |  |  |
-| Offset | [int32](#int32) |  |  |
+| AppID | [string](#string) |  |  |
+| ID | [string](#string) |  |  |
 
 
 
@@ -115,8 +327,71 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetCoinDescriptionsRequest"></a>
+
+### GetCoinDescriptionsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetCoinDescriptionsResponse"></a>
+
+### GetCoinDescriptionsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [CoinDescription](#project-info-manager-v1-CoinDescription) | repeated |  |
 | Total | [int32](#int32) |  |  |
-| Infos | [CoinDescriptionInfo](#project-info-manager-v1-CoinDescriptionInfo) | repeated |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-UpdateAppCoinDescriptionRequest"></a>
+
+### UpdateAppCoinDescriptionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-UpdateAppCoinDescriptionResponse"></a>
+
+### UpdateAppCoinDescriptionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
 
 
 
@@ -126,16 +401,13 @@
 <a name="project-info-manager-v1-UpdateCoinDescriptionRequest"></a>
 
 ### UpdateCoinDescriptionRequest
-
+update for app and admin
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| CoinTypeID | [string](#string) |  |  |
-| Title | [string](#string) |  |  |
-| Message | [string](#string) |  |  |
-| UsedFor | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
 
 
 
@@ -150,7 +422,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinDescriptionInfo](#project-info-manager-v1-CoinDescriptionInfo) |  |  |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
 
 
 
@@ -172,8 +444,16 @@
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | CreateCoinDescription | [CreateCoinDescriptionRequest](#project-info-manager-v1-CreateCoinDescriptionRequest) | [CreateCoinDescriptionResponse](#project-info-manager-v1-CreateCoinDescriptionResponse) |  |
-| GetCoinDescription | [GetCoinDescriptionRequest](#project-info-manager-v1-GetCoinDescriptionRequest) | [GetCoinDescriptionResponse](#project-info-manager-v1-GetCoinDescriptionResponse) |  |
+| CreateCoinDescriptions | [CreateCoinDescriptionsRequest](#project-info-manager-v1-CreateCoinDescriptionsRequest) | [CreateCoinDescriptionsResponse](#project-info-manager-v1-CreateCoinDescriptionsResponse) |  |
 | UpdateCoinDescription | [UpdateCoinDescriptionRequest](#project-info-manager-v1-UpdateCoinDescriptionRequest) | [UpdateCoinDescriptionResponse](#project-info-manager-v1-UpdateCoinDescriptionResponse) |  |
+| UpdateAppCoinDescription | [UpdateAppCoinDescriptionRequest](#project-info-manager-v1-UpdateAppCoinDescriptionRequest) | [UpdateAppCoinDescriptionResponse](#project-info-manager-v1-UpdateAppCoinDescriptionResponse) |  |
+| GetCoinDescription | [GetCoinDescriptionRequest](#project-info-manager-v1-GetCoinDescriptionRequest) | [GetCoinDescriptionResponse](#project-info-manager-v1-GetCoinDescriptionResponse) |  |
+| GetAppCoinDescription | [GetAppCoinDescriptionRequest](#project-info-manager-v1-GetAppCoinDescriptionRequest) | [GetAppCoinDescriptionResponse](#project-info-manager-v1-GetAppCoinDescriptionResponse) |  |
+| GetCoinDescriptions | [GetCoinDescriptionsRequest](#project-info-manager-v1-GetCoinDescriptionsRequest) | [GetCoinDescriptionsResponse](#project-info-manager-v1-GetCoinDescriptionsResponse) |  |
+| GetAppCoinDescriptions | [GetAppCoinDescriptionsRequest](#project-info-manager-v1-GetAppCoinDescriptionsRequest) | [GetAppCoinDescriptionsResponse](#project-info-manager-v1-GetAppCoinDescriptionsResponse) |  |
+| CountCoinDescriptions | [CountCoinDescriptionsRequest](#project-info-manager-v1-CountCoinDescriptionsRequest) | [CountCoinDescriptionsResponse](#project-info-manager-v1-CountCoinDescriptionsResponse) |  |
+| CountAppCoinDescriptions | [CountAppCoinDescriptionsRequest](#project-info-manager-v1-CountAppCoinDescriptionsRequest) | [CountAppCoinDescriptionsResponse](#project-info-manager-v1-CountAppCoinDescriptionsResponse) |  |
+| DeleteAppCoinDescription | [DeleteAppCoinDescriptionRequest](#project-info-manager-v1-DeleteAppCoinDescriptionRequest) | [DeleteAppCoinDescriptionResponse](#project-info-manager-v1-DeleteAppCoinDescriptionResponse) |  |
 
  
 
@@ -186,21 +466,80 @@
 
 
 
-<a name="project-info-manager-v1-CoinDescriptionInfo"></a>
+<a name="project-info-manager-v1-CoinDescription"></a>
 
-### CoinDescriptionInfo
+### CoinDescription
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | Title | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
-| CreatedAt | [uint32](#uint32) |  |  |
-| UpdatedAt | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CountAppCoinDescriptionsRequest"></a>
+
+### CountAppCoinDescriptionsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CountAppCoinDescriptionsResponse"></a>
+
+### CountAppCoinDescriptionsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Result | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CountCoinDescriptionsRequest"></a>
+
+### CountCoinDescriptionsRequest
+count for app and admin
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CountCoinDescriptionsResponse"></a>
+
+### CountCoinDescriptionsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Result | [uint32](#uint32) |  |  |
 
 
 
@@ -210,15 +549,12 @@
 <a name="project-info-manager-v1-CreateCoinDescriptionRequest"></a>
 
 ### CreateCoinDescriptionRequest
-
+create
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinTypeID | [string](#string) |  |  |
-| Title | [string](#string) |  |  |
-| Message | [string](#string) |  |  |
-| UsedFor | [string](#string) |  |  |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
 
 
 
@@ -233,7 +569,132 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinDescriptionInfo](#project-info-manager-v1-CoinDescriptionInfo) |  |  |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CreateCoinDescriptionsRequest"></a>
+
+### CreateCoinDescriptionsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [CoinDescription](#project-info-manager-v1-CoinDescription) | repeated |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CreateCoinDescriptionsResponse"></a>
+
+### CreateCoinDescriptionsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [CoinDescription](#project-info-manager-v1-CoinDescription) | repeated |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-DeleteAppCoinDescriptionRequest"></a>
+
+### DeleteAppCoinDescriptionRequest
+delete for admin
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-DeleteAppCoinDescriptionResponse"></a>
+
+### DeleteAppCoinDescriptionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetAppCoinDescriptionRequest"></a>
+
+### GetAppCoinDescriptionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetAppCoinDescriptionResponse"></a>
+
+### GetAppCoinDescriptionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetAppCoinDescriptionsRequest"></a>
+
+### GetAppCoinDescriptionsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetAppCoinDescriptionsResponse"></a>
+
+### GetAppCoinDescriptionsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [CoinDescription](#project-info-manager-v1-CoinDescription) | repeated |  |
+| Total | [int32](#int32) |  |  |
 
 
 
@@ -243,14 +704,13 @@
 <a name="project-info-manager-v1-GetCoinDescriptionRequest"></a>
 
 ### GetCoinDescriptionRequest
-
+get for app and admin
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| CoinTypeID | [string](#string) |  |  |
-| Limit | [int32](#int32) |  |  |
-| Offset | [int32](#int32) |  |  |
+| AppID | [string](#string) |  |  |
+| ID | [string](#string) |  |  |
 
 
 
@@ -265,8 +725,71 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetCoinDescriptionsRequest"></a>
+
+### GetCoinDescriptionsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetCoinDescriptionsResponse"></a>
+
+### GetCoinDescriptionsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [CoinDescription](#project-info-manager-v1-CoinDescription) | repeated |  |
 | Total | [int32](#int32) |  |  |
-| Infos | [CoinDescriptionInfo](#project-info-manager-v1-CoinDescriptionInfo) | repeated |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-UpdateAppCoinDescriptionRequest"></a>
+
+### UpdateAppCoinDescriptionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-UpdateAppCoinDescriptionResponse"></a>
+
+### UpdateAppCoinDescriptionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
 
 
 
@@ -276,16 +799,13 @@
 <a name="project-info-manager-v1-UpdateCoinDescriptionRequest"></a>
 
 ### UpdateCoinDescriptionRequest
-
+update for app and admin
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [string](#string) |  |  |
-| CoinTypeID | [string](#string) |  |  |
-| Title | [string](#string) |  |  |
-| Message | [string](#string) |  |  |
-| UsedFor | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
 
 
 
@@ -300,7 +820,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinDescriptionInfo](#project-info-manager-v1-CoinDescriptionInfo) |  |  |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
 
 
 
@@ -322,8 +842,16 @@
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | CreateCoinDescription | [CreateCoinDescriptionRequest](#project-info-manager-v1-CreateCoinDescriptionRequest) | [CreateCoinDescriptionResponse](#project-info-manager-v1-CreateCoinDescriptionResponse) |  |
-| GetCoinDescription | [GetCoinDescriptionRequest](#project-info-manager-v1-GetCoinDescriptionRequest) | [GetCoinDescriptionResponse](#project-info-manager-v1-GetCoinDescriptionResponse) |  |
+| CreateCoinDescriptions | [CreateCoinDescriptionsRequest](#project-info-manager-v1-CreateCoinDescriptionsRequest) | [CreateCoinDescriptionsResponse](#project-info-manager-v1-CreateCoinDescriptionsResponse) |  |
 | UpdateCoinDescription | [UpdateCoinDescriptionRequest](#project-info-manager-v1-UpdateCoinDescriptionRequest) | [UpdateCoinDescriptionResponse](#project-info-manager-v1-UpdateCoinDescriptionResponse) |  |
+| UpdateAppCoinDescription | [UpdateAppCoinDescriptionRequest](#project-info-manager-v1-UpdateAppCoinDescriptionRequest) | [UpdateAppCoinDescriptionResponse](#project-info-manager-v1-UpdateAppCoinDescriptionResponse) |  |
+| GetCoinDescription | [GetCoinDescriptionRequest](#project-info-manager-v1-GetCoinDescriptionRequest) | [GetCoinDescriptionResponse](#project-info-manager-v1-GetCoinDescriptionResponse) |  |
+| GetAppCoinDescription | [GetAppCoinDescriptionRequest](#project-info-manager-v1-GetAppCoinDescriptionRequest) | [GetAppCoinDescriptionResponse](#project-info-manager-v1-GetAppCoinDescriptionResponse) |  |
+| GetCoinDescriptions | [GetCoinDescriptionsRequest](#project-info-manager-v1-GetCoinDescriptionsRequest) | [GetCoinDescriptionsResponse](#project-info-manager-v1-GetCoinDescriptionsResponse) |  |
+| GetAppCoinDescriptions | [GetAppCoinDescriptionsRequest](#project-info-manager-v1-GetAppCoinDescriptionsRequest) | [GetAppCoinDescriptionsResponse](#project-info-manager-v1-GetAppCoinDescriptionsResponse) |  |
+| CountCoinDescriptions | [CountCoinDescriptionsRequest](#project-info-manager-v1-CountCoinDescriptionsRequest) | [CountCoinDescriptionsResponse](#project-info-manager-v1-CountCoinDescriptionsResponse) |  |
+| CountAppCoinDescriptions | [CountAppCoinDescriptionsRequest](#project-info-manager-v1-CountAppCoinDescriptionsRequest) | [CountAppCoinDescriptionsResponse](#project-info-manager-v1-CountAppCoinDescriptionsResponse) |  |
+| DeleteAppCoinDescription | [DeleteAppCoinDescriptionRequest](#project-info-manager-v1-DeleteAppCoinDescriptionRequest) | [DeleteAppCoinDescriptionResponse](#project-info-manager-v1-DeleteAppCoinDescriptionResponse) |  |
 
  
 
