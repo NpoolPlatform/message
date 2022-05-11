@@ -15,6 +15,7 @@
     - [AppUserInfo](#app-user-manager-v1-AppUserInfo)
     - [AppUserSecret](#app-user-manager-v1-AppUserSecret)
     - [AppUserSecretMap](#app-user-manager-v1-AppUserSecretMap)
+    - [AppUserThird](#app-user-manager-v1-AppUserThird)
     - [BanApp](#app-user-manager-v1-BanApp)
     - [BanAppUser](#app-user-manager-v1-BanAppUser)
     - [CreateAdminAppsRequest](#app-user-manager-v1-CreateAdminAppsRequest)
@@ -43,8 +44,12 @@
     - [CreateAppUserResponse](#app-user-manager-v1-CreateAppUserResponse)
     - [CreateAppUserSecretRequest](#app-user-manager-v1-CreateAppUserSecretRequest)
     - [CreateAppUserSecretResponse](#app-user-manager-v1-CreateAppUserSecretResponse)
+    - [CreateAppUserThirdRequest](#app-user-manager-v1-CreateAppUserThirdRequest)
+    - [CreateAppUserThirdResponse](#app-user-manager-v1-CreateAppUserThirdResponse)
     - [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest)
     - [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse)
+    - [CreateAppUserWithThirdRequest](#app-user-manager-v1-CreateAppUserWithThirdRequest)
+    - [CreateAppUserWithThirdResponse](#app-user-manager-v1-CreateAppUserWithThirdResponse)
     - [CreateBanAppRequest](#app-user-manager-v1-CreateBanAppRequest)
     - [CreateBanAppResponse](#app-user-manager-v1-CreateBanAppResponse)
     - [CreateBanAppUserRequest](#app-user-manager-v1-CreateBanAppUserRequest)
@@ -119,6 +124,8 @@
     - [GetAppUserSecretByAppUserResponse](#app-user-manager-v1-GetAppUserSecretByAppUserResponse)
     - [GetAppUserSecretRequest](#app-user-manager-v1-GetAppUserSecretRequest)
     - [GetAppUserSecretResponse](#app-user-manager-v1-GetAppUserSecretResponse)
+    - [GetAppUserThirdByAppThirdRequest](#app-user-manager-v1-GetAppUserThirdByAppThirdRequest)
+    - [GetAppUserThirdByAppThirdResponse](#app-user-manager-v1-GetAppUserThirdByAppThirdResponse)
     - [GetAppUsersByAppRequest](#app-user-manager-v1-GetAppUsersByAppRequest)
     - [GetAppUsersByAppResponse](#app-user-manager-v1-GetAppUsersByAppResponse)
     - [GetAppsByCreatorRequest](#app-user-manager-v1-GetAppsByCreatorRequest)
@@ -174,6 +181,7 @@
     - [AppUserInfo](#app-user-manager-v1-AppUserInfo)
     - [AppUserSecret](#app-user-manager-v1-AppUserSecret)
     - [AppUserSecretMap](#app-user-manager-v1-AppUserSecretMap)
+    - [AppUserThird](#app-user-manager-v1-AppUserThird)
     - [BanApp](#app-user-manager-v1-BanApp)
     - [BanAppUser](#app-user-manager-v1-BanAppUser)
     - [CreateAdminAppsRequest](#app-user-manager-v1-CreateAdminAppsRequest)
@@ -202,8 +210,12 @@
     - [CreateAppUserResponse](#app-user-manager-v1-CreateAppUserResponse)
     - [CreateAppUserSecretRequest](#app-user-manager-v1-CreateAppUserSecretRequest)
     - [CreateAppUserSecretResponse](#app-user-manager-v1-CreateAppUserSecretResponse)
+    - [CreateAppUserThirdRequest](#app-user-manager-v1-CreateAppUserThirdRequest)
+    - [CreateAppUserThirdResponse](#app-user-manager-v1-CreateAppUserThirdResponse)
     - [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest)
     - [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse)
+    - [CreateAppUserWithThirdRequest](#app-user-manager-v1-CreateAppUserWithThirdRequest)
+    - [CreateAppUserWithThirdResponse](#app-user-manager-v1-CreateAppUserWithThirdResponse)
     - [CreateBanAppRequest](#app-user-manager-v1-CreateBanAppRequest)
     - [CreateBanAppResponse](#app-user-manager-v1-CreateBanAppResponse)
     - [CreateBanAppUserRequest](#app-user-manager-v1-CreateBanAppUserRequest)
@@ -278,6 +290,8 @@
     - [GetAppUserSecretByAppUserResponse](#app-user-manager-v1-GetAppUserSecretByAppUserResponse)
     - [GetAppUserSecretRequest](#app-user-manager-v1-GetAppUserSecretRequest)
     - [GetAppUserSecretResponse](#app-user-manager-v1-GetAppUserSecretResponse)
+    - [GetAppUserThirdByAppThirdRequest](#app-user-manager-v1-GetAppUserThirdByAppThirdRequest)
+    - [GetAppUserThirdByAppThirdResponse](#app-user-manager-v1-GetAppUserThirdByAppThirdResponse)
     - [GetAppUsersByAppRequest](#app-user-manager-v1-GetAppUsersByAppRequest)
     - [GetAppUsersByAppResponse](#app-user-manager-v1-GetAppUsersByAppResponse)
     - [GetAppsByCreatorRequest](#app-user-manager-v1-GetAppsByCreatorRequest)
@@ -551,6 +565,29 @@
 
 
 
+<a name="app-user-manager-v1-AppUserThird"></a>
+
+### AppUserThird
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| ThirdUserId | [string](#string) |  |  |
+| Third | [string](#string) |  |  |
+| ThirdUserName | [string](#string) |  |  |
+| ThirdUserPicture | [string](#string) |  |  |
+| ThirdExtra | [string](#string) |  |  |
+| ThirdId | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="app-user-manager-v1-BanApp"></a>
 
 ### BanApp
@@ -978,6 +1015,36 @@
 
 
 
+<a name="app-user-manager-v1-CreateAppUserThirdRequest"></a>
+
+### CreateAppUserThirdRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserThird](#app-user-manager-v1-AppUserThird) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-CreateAppUserThirdResponse"></a>
+
+### CreateAppUserThirdResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserThird](#app-user-manager-v1-AppUserThird) |  |  |
+
+
+
+
+
+
 <a name="app-user-manager-v1-CreateAppUserWithSecretRequest"></a>
 
 ### CreateAppUserWithSecretRequest
@@ -997,6 +1064,37 @@
 <a name="app-user-manager-v1-CreateAppUserWithSecretResponse"></a>
 
 ### CreateAppUserWithSecretResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUser](#app-user-manager-v1-AppUser) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-CreateAppUserWithThirdRequest"></a>
+
+### CreateAppUserWithThirdRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| User | [AppUser](#app-user-manager-v1-AppUser) |  |  |
+| Third | [AppUserThird](#app-user-manager-v1-AppUserThird) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-CreateAppUserWithThirdResponse"></a>
+
+### CreateAppUserWithThirdResponse
 
 
 
@@ -2142,6 +2240,38 @@
 
 
 
+<a name="app-user-manager-v1-GetAppUserThirdByAppThirdRequest"></a>
+
+### GetAppUserThirdByAppThirdRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| ThirdId | [string](#string) |  |  |
+| ThirdUserId | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-GetAppUserThirdByAppThirdResponse"></a>
+
+### GetAppUserThirdByAppThirdResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserThird](#app-user-manager-v1-AppUserThird) |  |  |
+
+
+
+
+
+
 <a name="app-user-manager-v1-GetAppUsersByAppRequest"></a>
 
 ### GetAppUsersByAppRequest
@@ -2835,6 +2965,9 @@
 | GetAppUserInfosByApp | [GetAppUserInfosByAppRequest](#app-user-manager-v1-GetAppUserInfosByAppRequest) | [GetAppUserInfosByAppResponse](#app-user-manager-v1-GetAppUserInfosByAppResponse) |  |
 | GetAppUserInfosByOtherApp | [GetAppUserInfosByOtherAppRequest](#app-user-manager-v1-GetAppUserInfosByOtherAppRequest) | [GetAppUserInfosByOtherAppResponse](#app-user-manager-v1-GetAppUserInfosByOtherAppResponse) |  |
 | CreateAppUserWithSecret | [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse) |  |
+| CreateAppUserWithThird | [CreateAppUserWithThirdRequest](#app-user-manager-v1-CreateAppUserWithThirdRequest) | [CreateAppUserWithThirdResponse](#app-user-manager-v1-CreateAppUserWithThirdResponse) |  |
+| CreateAppUserThird | [CreateAppUserThirdRequest](#app-user-manager-v1-CreateAppUserThirdRequest) | [CreateAppUserThirdResponse](#app-user-manager-v1-CreateAppUserThirdResponse) |  |
+| GetAppUserThirdByAppThird | [GetAppUserThirdByAppThirdRequest](#app-user-manager-v1-GetAppUserThirdByAppThirdRequest) | [GetAppUserThirdByAppThirdResponse](#app-user-manager-v1-GetAppUserThirdByAppThirdResponse) |  |
 
  
 
@@ -3066,6 +3199,29 @@
 
 
 
+<a name="app-user-manager-v1-AppUserThird"></a>
+
+### AppUserThird
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| ThirdUserId | [string](#string) |  |  |
+| Third | [string](#string) |  |  |
+| ThirdUserName | [string](#string) |  |  |
+| ThirdUserPicture | [string](#string) |  |  |
+| ThirdExtra | [string](#string) |  |  |
+| ThirdId | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="app-user-manager-v1-BanApp"></a>
 
 ### BanApp
@@ -3493,6 +3649,36 @@
 
 
 
+<a name="app-user-manager-v1-CreateAppUserThirdRequest"></a>
+
+### CreateAppUserThirdRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserThird](#app-user-manager-v1-AppUserThird) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-CreateAppUserThirdResponse"></a>
+
+### CreateAppUserThirdResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserThird](#app-user-manager-v1-AppUserThird) |  |  |
+
+
+
+
+
+
 <a name="app-user-manager-v1-CreateAppUserWithSecretRequest"></a>
 
 ### CreateAppUserWithSecretRequest
@@ -3512,6 +3698,37 @@
 <a name="app-user-manager-v1-CreateAppUserWithSecretResponse"></a>
 
 ### CreateAppUserWithSecretResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUser](#app-user-manager-v1-AppUser) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-CreateAppUserWithThirdRequest"></a>
+
+### CreateAppUserWithThirdRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| User | [AppUser](#app-user-manager-v1-AppUser) |  |  |
+| Third | [AppUserThird](#app-user-manager-v1-AppUserThird) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-CreateAppUserWithThirdResponse"></a>
+
+### CreateAppUserWithThirdResponse
 
 
 
@@ -4657,6 +4874,38 @@
 
 
 
+<a name="app-user-manager-v1-GetAppUserThirdByAppThirdRequest"></a>
+
+### GetAppUserThirdByAppThirdRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| ThirdId | [string](#string) |  |  |
+| ThirdUserId | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-GetAppUserThirdByAppThirdResponse"></a>
+
+### GetAppUserThirdByAppThirdResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserThird](#app-user-manager-v1-AppUserThird) |  |  |
+
+
+
+
+
+
 <a name="app-user-manager-v1-GetAppUsersByAppRequest"></a>
 
 ### GetAppUsersByAppRequest
@@ -5350,6 +5599,9 @@
 | GetAppUserInfosByApp | [GetAppUserInfosByAppRequest](#app-user-manager-v1-GetAppUserInfosByAppRequest) | [GetAppUserInfosByAppResponse](#app-user-manager-v1-GetAppUserInfosByAppResponse) |  |
 | GetAppUserInfosByOtherApp | [GetAppUserInfosByOtherAppRequest](#app-user-manager-v1-GetAppUserInfosByOtherAppRequest) | [GetAppUserInfosByOtherAppResponse](#app-user-manager-v1-GetAppUserInfosByOtherAppResponse) |  |
 | CreateAppUserWithSecret | [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse) |  |
+| CreateAppUserWithThird | [CreateAppUserWithThirdRequest](#app-user-manager-v1-CreateAppUserWithThirdRequest) | [CreateAppUserWithThirdResponse](#app-user-manager-v1-CreateAppUserWithThirdResponse) |  |
+| CreateAppUserThird | [CreateAppUserThirdRequest](#app-user-manager-v1-CreateAppUserThirdRequest) | [CreateAppUserThirdResponse](#app-user-manager-v1-CreateAppUserThirdResponse) |  |
+| GetAppUserThirdByAppThird | [GetAppUserThirdByAppThirdRequest](#app-user-manager-v1-GetAppUserThirdByAppThirdRequest) | [GetAppUserThirdByAppThirdResponse](#app-user-manager-v1-GetAppUserThirdByAppThirdResponse) |  |
 
  
 

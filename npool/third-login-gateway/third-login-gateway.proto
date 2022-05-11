@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/third-login-gateway"
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
-
+import "npool/appusermgr/appusermgr.proto";
 // Service Name
 service ThirdLoginGateway {
   // Method Version
@@ -25,9 +25,10 @@ service ThirdLoginGateway {
     };
   }
 
-  rpc ThirdRedirect (ThirdLoginRequest) returns (ThirdLoginResponse) {
+  rpc AuthLogin (AuthLoginRequest) returns (AuthLoginResponse) {
     option (google.api.http) = {
-      get: "/v1/third/redirect"
+      post: "/v1/auth/login"
+      body: "*"
     };
   }
 }
@@ -56,8 +57,12 @@ message Auth {
   string Platform = 30;
 }
 
-message ThirdLoginRequest {
-  string code = 10;
-  string state = 20;
+message AuthLoginRequest {
+  string Code = 10;
+  string AppID = 20;
+  string Platform = 30;
 }
-message ThirdLoginResponse {}
+message AuthLoginResponse {
+  app.user.manager.v1.AppUserInfo Info = 10;
+  string Token = 20;
+}

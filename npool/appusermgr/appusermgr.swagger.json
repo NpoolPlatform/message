@@ -427,6 +427,38 @@
         ]
       }
     },
+    "/v1/create/app/user/third": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppUserThird",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserThirdResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserThirdRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/create/app/user/with/secret": {
       "post": {
         "operationId": "AppUserManager_CreateAppUserWithSecret",
@@ -451,6 +483,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateAppUserWithSecretRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/create/app/user/with/third": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppUserWithThird",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserWithThirdResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserWithThirdRequest"
             }
           }
         ],
@@ -1411,6 +1475,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppUserSecretByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/user/third/by/app/user": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserThirdByAppThird",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserThirdByAppThirdResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserThirdByAppThirdRequest"
             }
           }
         ],
@@ -2617,6 +2713,38 @@
         }
       }
     },
+    "v1AppUserThird": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ThirdUserId": {
+          "type": "string"
+        },
+        "Third": {
+          "type": "string"
+        },
+        "ThirdUserName": {
+          "type": "string"
+        },
+        "ThirdUserPicture": {
+          "type": "string"
+        },
+        "ThirdExtra": {
+          "type": "string"
+        },
+        "ThirdId": {
+          "type": "string"
+        }
+      }
+    },
     "v1BanApp": {
       "type": "object",
       "properties": {
@@ -2875,6 +3003,22 @@
         }
       }
     },
+    "v1CreateAppUserThirdRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserThird"
+        }
+      }
+    },
+    "v1CreateAppUserThirdResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserThird"
+        }
+      }
+    },
     "v1CreateAppUserWithSecretRequest": {
       "type": "object",
       "properties": {
@@ -2887,6 +3031,25 @@
       }
     },
     "v1CreateAppUserWithSecretResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUser"
+        }
+      }
+    },
+    "v1CreateAppUserWithThirdRequest": {
+      "type": "object",
+      "properties": {
+        "User": {
+          "$ref": "#/definitions/v1AppUser"
+        },
+        "Third": {
+          "$ref": "#/definitions/v1AppUserThird"
+        }
+      }
+    },
+    "v1CreateAppUserWithThirdResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -3618,6 +3781,28 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserSecret"
+        }
+      }
+    },
+    "v1GetAppUserThirdByAppThirdRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "ThirdId": {
+          "type": "string"
+        },
+        "ThirdUserId": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserThirdByAppThirdResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserThird"
         }
       }
     },

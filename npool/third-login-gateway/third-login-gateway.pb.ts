@@ -6,6 +6,7 @@
 
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
+import * as AppUserManagerV1Appusermgr from "../appusermgr/appusermgr.pb"
 import * as NpoolV1Npool from "../npool.pb"
 export type Platform = {
   id?: string
@@ -33,12 +34,15 @@ export type Auth = {
   platform?: string
 }
 
-export type ThirdLoginRequest = {
+export type AuthLoginRequest = {
   code?: string
-  state?: string
+  appID?: string
+  platform?: string
 }
 
-export type ThirdLoginResponse = {
+export type AuthLoginResponse = {
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
+  token?: string
 }
 
 export class ThirdLoginGateway {
@@ -48,7 +52,7 @@ export class ThirdLoginGateway {
   static GetPlatformsByApp(req: GetPlatformsByAppRequest, initReq?: fm.InitReq): Promise<GetPlatformsByAppResponse> {
     return fm.fetchReq<GetPlatformsByAppRequest, GetPlatformsByAppResponse>(`/v1/get/platforms/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static ThirdRedirect(req: ThirdLoginRequest, initReq?: fm.InitReq): Promise<ThirdLoginResponse> {
-    return fm.fetchReq<ThirdLoginRequest, ThirdLoginResponse>(`/v1/third/redirect?${fm.renderURLSearchParams(req, [])}`, {...initReq, method: "GET"})
+  static AuthLogin(req: AuthLoginRequest, initReq?: fm.InitReq): Promise<AuthLoginResponse> {
+    return fm.fetchReq<AuthLoginRequest, AuthLoginResponse>(`/v1/auth/login`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

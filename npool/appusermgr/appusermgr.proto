@@ -452,6 +452,27 @@ service AppUserManager {
             body: "*"
         };
     }
+
+    rpc CreateAppUserWithThird (CreateAppUserWithThirdRequest) returns (CreateAppUserWithThirdResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/with/third"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppUserThird (CreateAppUserThirdRequest) returns (CreateAppUserThirdResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/third"
+            body: "*"
+        };
+    }
+
+    rpc GetAppUserThirdByAppThird (GetAppUserThirdByAppThirdRequest) returns (GetAppUserThirdByAppThirdResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/user/third/by/app/user"
+            body: "*"
+        };
+    }
 }
 
 message App {
@@ -1184,3 +1205,40 @@ message VerifyAppUserByAppAccountPasswordResponse {
     AppUserInfo Info = 10;
 }
 
+message AppUserThird {
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    string ThirdUserId = 40;
+    string Third = 50;
+    string ThirdUserName = 60;
+    string ThirdUserPicture = 70;
+    string ThirdExtra = 80;
+    string ThirdId = 90;
+}
+message CreateAppUserThirdRequest {
+    AppUserThird Info = 10;
+}
+
+message CreateAppUserThirdResponse {
+    AppUserThird Info = 10;
+}
+
+message GetAppUserThirdByAppThirdRequest {
+    string AppID = 10;
+    string ThirdId = 30;
+    string ThirdUserId = 40;
+}
+
+message GetAppUserThirdByAppThirdResponse {
+    AppUserThird Info = 10;
+}
+
+message CreateAppUserWithThirdRequest {
+    AppUser User = 10;
+    AppUserThird Third = 20;
+}
+
+message CreateAppUserWithThirdResponse {
+    AppUser Info = 10;
+}

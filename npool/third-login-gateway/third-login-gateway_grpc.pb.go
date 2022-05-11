@@ -27,7 +27,7 @@ type ThirdLoginGatewayClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	GetPlatformsByApp(ctx context.Context, in *GetPlatformsByAppRequest, opts ...grpc.CallOption) (*GetPlatformsByAppResponse, error)
-	ThirdRedirect(ctx context.Context, in *ThirdLoginRequest, opts ...grpc.CallOption) (*ThirdLoginResponse, error)
+	AuthLogin(ctx context.Context, in *AuthLoginRequest, opts ...grpc.CallOption) (*AuthLoginResponse, error)
 }
 
 type thirdLoginGatewayClient struct {
@@ -56,9 +56,9 @@ func (c *thirdLoginGatewayClient) GetPlatformsByApp(ctx context.Context, in *Get
 	return out, nil
 }
 
-func (c *thirdLoginGatewayClient) ThirdRedirect(ctx context.Context, in *ThirdLoginRequest, opts ...grpc.CallOption) (*ThirdLoginResponse, error) {
-	out := new(ThirdLoginResponse)
-	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdLoginGateway/ThirdRedirect", in, out, opts...)
+func (c *thirdLoginGatewayClient) AuthLogin(ctx context.Context, in *AuthLoginRequest, opts ...grpc.CallOption) (*AuthLoginResponse, error) {
+	out := new(AuthLoginResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdLoginGateway/AuthLogin", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,7 +72,7 @@ type ThirdLoginGatewayServer interface {
 	// Method Version
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	GetPlatformsByApp(context.Context, *GetPlatformsByAppRequest) (*GetPlatformsByAppResponse, error)
-	ThirdRedirect(context.Context, *ThirdLoginRequest) (*ThirdLoginResponse, error)
+	AuthLogin(context.Context, *AuthLoginRequest) (*AuthLoginResponse, error)
 	mustEmbedUnimplementedThirdLoginGatewayServer()
 }
 
@@ -86,8 +86,8 @@ func (UnimplementedThirdLoginGatewayServer) Version(context.Context, *emptypb.Em
 func (UnimplementedThirdLoginGatewayServer) GetPlatformsByApp(context.Context, *GetPlatformsByAppRequest) (*GetPlatformsByAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPlatformsByApp not implemented")
 }
-func (UnimplementedThirdLoginGatewayServer) ThirdRedirect(context.Context, *ThirdLoginRequest) (*ThirdLoginResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ThirdRedirect not implemented")
+func (UnimplementedThirdLoginGatewayServer) AuthLogin(context.Context, *AuthLoginRequest) (*AuthLoginResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AuthLogin not implemented")
 }
 func (UnimplementedThirdLoginGatewayServer) mustEmbedUnimplementedThirdLoginGatewayServer() {}
 
@@ -138,20 +138,20 @@ func _ThirdLoginGateway_GetPlatformsByApp_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ThirdLoginGateway_ThirdRedirect_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ThirdLoginRequest)
+func _ThirdLoginGateway_AuthLogin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AuthLoginRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ThirdLoginGatewayServer).ThirdRedirect(ctx, in)
+		return srv.(ThirdLoginGatewayServer).AuthLogin(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/third.gateway.v1.ThirdLoginGateway/ThirdRedirect",
+		FullMethod: "/third.gateway.v1.ThirdLoginGateway/AuthLogin",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ThirdLoginGatewayServer).ThirdRedirect(ctx, req.(*ThirdLoginRequest))
+		return srv.(ThirdLoginGatewayServer).AuthLogin(ctx, req.(*AuthLoginRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -172,8 +172,8 @@ var ThirdLoginGateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ThirdLoginGateway_GetPlatformsByApp_Handler,
 		},
 		{
-			MethodName: "ThirdRedirect",
-			Handler:    _ThirdLoginGateway_ThirdRedirect_Handler,
+			MethodName: "AuthLogin",
+			Handler:    _ThirdLoginGateway_AuthLogin_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

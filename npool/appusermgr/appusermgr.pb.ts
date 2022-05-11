@@ -736,6 +736,45 @@ export type VerifyAppUserByAppAccountPasswordResponse = {
   info?: AppUserInfo
 }
 
+export type AppUserThird = {
+  id?: string
+  appID?: string
+  userID?: string
+  thirdUserId?: string
+  third?: string
+  thirdUserName?: string
+  thirdUserPicture?: string
+  thirdExtra?: string
+  thirdId?: string
+}
+
+export type CreateAppUserThirdRequest = {
+  info?: AppUserThird
+}
+
+export type CreateAppUserThirdResponse = {
+  info?: AppUserThird
+}
+
+export type GetAppUserThirdByAppThirdRequest = {
+  appID?: string
+  thirdId?: string
+  thirdUserId?: string
+}
+
+export type GetAppUserThirdByAppThirdResponse = {
+  info?: AppUserThird
+}
+
+export type CreateAppUserWithThirdRequest = {
+  user?: AppUser
+  third?: AppUserThird
+}
+
+export type CreateAppUserWithThirdResponse = {
+  info?: AppUser
+}
+
 export class AppUserManager {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -952,5 +991,14 @@ export class AppUserManager {
   }
   static CreateAppUserWithSecret(req: CreateAppUserWithSecretRequest, initReq?: fm.InitReq): Promise<CreateAppUserWithSecretResponse> {
     return fm.fetchReq<CreateAppUserWithSecretRequest, CreateAppUserWithSecretResponse>(`/v1/create/app/user/with/secret`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppUserWithThird(req: CreateAppUserWithThirdRequest, initReq?: fm.InitReq): Promise<CreateAppUserWithThirdResponse> {
+    return fm.fetchReq<CreateAppUserWithThirdRequest, CreateAppUserWithThirdResponse>(`/v1/create/app/user/with/third`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppUserThird(req: CreateAppUserThirdRequest, initReq?: fm.InitReq): Promise<CreateAppUserThirdResponse> {
+    return fm.fetchReq<CreateAppUserThirdRequest, CreateAppUserThirdResponse>(`/v1/create/app/user/third`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUserThirdByAppThird(req: GetAppUserThirdByAppThirdRequest, initReq?: fm.InitReq): Promise<GetAppUserThirdByAppThirdResponse> {
+    return fm.fetchReq<GetAppUserThirdByAppThirdRequest, GetAppUserThirdByAppThirdResponse>(`/v1/get/app/user/third/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

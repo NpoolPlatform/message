@@ -11,6 +11,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/auth/login": {
+      "post": {
+        "operationId": "ThirdLoginGateway_AuthLogin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AuthLoginResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AuthLoginRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdLoginGateway"
+        ]
+      }
+    },
     "/v1/get/platforms/by/app": {
       "post": {
         "operationId": "ThirdLoginGateway_GetPlatformsByApp",
@@ -36,42 +68,6 @@
             "schema": {
               "$ref": "#/definitions/v1GetPlatformsByAppRequest"
             }
-          }
-        ],
-        "tags": [
-          "ThirdLoginGateway"
-        ]
-      }
-    },
-    "/v1/third/redirect": {
-      "get": {
-        "operationId": "ThirdLoginGateway_ThirdRedirect",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1ThirdLoginResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "code",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "state",
-            "in": "query",
-            "required": false,
-            "type": "string"
           }
         ],
         "tags": [
@@ -147,6 +143,159 @@
         }
       }
     },
+    "v1AppRole": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Default": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1AppUser": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "ImportFromApp": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AppUserControl": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "SigninVerifyByGoogleAuthentication": {
+          "type": "boolean"
+        },
+        "GoogleAuthenticationVerified": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1AppUserExtra": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Organization": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AppUserInfo": {
+      "type": "object",
+      "properties": {
+        "User": {
+          "$ref": "#/definitions/v1AppUser"
+        },
+        "Extra": {
+          "$ref": "#/definitions/v1AppUserExtra"
+        },
+        "Ctrl": {
+          "$ref": "#/definitions/v1AppUserControl"
+        },
+        "Ban": {
+          "$ref": "#/definitions/v1BanAppUser"
+        },
+        "Roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppRole"
+          }
+        },
+        "SecretMap": {
+          "$ref": "#/definitions/v1AppUserSecretMap"
+        }
+      }
+    },
+    "v1AppUserSecretMap": {
+      "type": "object",
+      "properties": {
+        "HasGoogleSecret": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1Auth": {
       "type": "object",
       "properties": {
@@ -157,6 +306,48 @@
           "type": "string"
         },
         "Platform": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AuthLoginRequest": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Platform": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AuthLoginResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
+        },
+        "Token": {
+          "type": "string"
+        }
+      }
+    },
+    "v1BanAppUser": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Message": {
           "type": "string"
         }
       }
@@ -179,9 +370,6 @@
           }
         }
       }
-    },
-    "v1ThirdLoginResponse": {
-      "type": "object"
     },
     "v1VersionResponse": {
       "type": "object",
