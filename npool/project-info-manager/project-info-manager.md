@@ -5,6 +5,7 @@
 
 - [npool/project-info-manager/project-info-manager.proto](#npool_project-info-manager_project-info-manager-proto)
     - [CoinDescription](#project-info-manager-v1-CoinDescription)
+    - [CoinDescriptionBase](#project-info-manager-v1-CoinDescriptionBase)
     - [CountAppCoinDescriptionsRequest](#project-info-manager-v1-CountAppCoinDescriptionsRequest)
     - [CountAppCoinDescriptionsResponse](#project-info-manager-v1-CountAppCoinDescriptionsResponse)
     - [CountCoinDescriptionsRequest](#project-info-manager-v1-CountCoinDescriptionsRequest)
@@ -32,6 +33,7 @@
   
 - [npool/project-info-manager/project-info-manager.proto](#npool_project-info-manager_project-info-manager-proto)
     - [CoinDescription](#project-info-manager-v1-CoinDescription)
+    - [CoinDescriptionBase](#project-info-manager-v1-CoinDescriptionBase)
     - [CountAppCoinDescriptionsRequest](#project-info-manager-v1-CountAppCoinDescriptionsRequest)
     - [CountAppCoinDescriptionsResponse](#project-info-manager-v1-CountAppCoinDescriptionsResponse)
     - [CountCoinDescriptionsRequest](#project-info-manager-v1-CountCoinDescriptionsRequest)
@@ -77,6 +79,27 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| Title | [string](#string) |  |  |
+| Message | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
+| UpdateAt | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CoinDescriptionBase"></a>
+
+### CoinDescriptionBase
+for create
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | Title | [string](#string) |  |  |
@@ -156,7 +179,7 @@ create
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
+| Info | [CoinDescriptionBase](#project-info-manager-v1-CoinDescriptionBase) |  |  |
 
 
 
@@ -186,7 +209,7 @@ create
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinDescription](#project-info-manager-v1-CoinDescription) | repeated |  |
+| Infos | [CoinDescriptionBase](#project-info-manager-v1-CoinDescriptionBase) | repeated |  |
 
 
 
@@ -480,6 +503,27 @@ update for app and admin
 | Title | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
+| UpdateAt | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CoinDescriptionBase"></a>
+
+### CoinDescriptionBase
+for create
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| Title | [string](#string) |  |  |
+| Message | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
 
 
 
@@ -554,7 +598,7 @@ create
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
+| Info | [CoinDescriptionBase](#project-info-manager-v1-CoinDescriptionBase) |  |  |
 
 
 
@@ -584,7 +628,7 @@ create
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinDescription](#project-info-manager-v1-CoinDescription) | repeated |  |
+| Infos | [CoinDescriptionBase](#project-info-manager-v1-CoinDescriptionBase) | repeated |  |
 
 
 

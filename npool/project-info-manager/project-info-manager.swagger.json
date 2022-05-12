@@ -450,8 +450,37 @@
         },
         "UsedFor": {
           "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
+    },
+    "v1CoinDescriptionBase": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        }
+      },
+      "title": "for create"
     },
     "v1CountAppCoinDescriptionsRequest": {
       "type": "object",
@@ -492,7 +521,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinDescription"
+          "$ref": "#/definitions/v1CoinDescriptionBase"
         }
       },
       "title": "create"
@@ -511,7 +540,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinDescription"
+            "$ref": "#/definitions/v1CoinDescriptionBase"
           }
         }
       }

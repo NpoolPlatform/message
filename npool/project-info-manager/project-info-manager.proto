@@ -94,6 +94,14 @@ rpc DeleteAppCoinDescription (DeleteAppCoinDescriptionRequest) returns (DeleteAp
 }
 }
 
+// for create
+message CoinDescriptionBase{
+  string AppID      = 20;
+  string CoinTypeID = 30;
+  string Title      = 40;
+  string Message    = 50;
+  string UsedFor    = 60;  
+}
 
 message CoinDescription {
   string ID         = 10;
@@ -102,10 +110,12 @@ message CoinDescription {
   string Title      = 40;
   string Message    = 50;
   string UsedFor    = 60;
+  uint32 CreateAt = 70;
+  uint32 UpdateAt = 80;
 }
 // create
 message CreateCoinDescriptionRequest  {
-  CoinDescription Info=10;
+  CoinDescriptionBase Info=10;
 }
 
 message CreateCoinDescriptionResponse {
@@ -113,7 +123,7 @@ message CreateCoinDescriptionResponse {
 }
 
 message CreateCoinDescriptionsRequest {
-  repeated CoinDescription Infos = 10;
+  repeated CoinDescriptionBase Infos = 10;
 }
 
 message CreateCoinDescriptionsResponse {
