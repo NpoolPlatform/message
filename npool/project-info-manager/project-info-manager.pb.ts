@@ -7,8 +7,7 @@
 import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as NpoolV1Npool from "../npool.pb"
-export type CoinDescription = {
-  id?: string
+export type CoinDescriptionBase = {
   appID?: string
   coinTypeID?: string
   title?: string
@@ -16,8 +15,19 @@ export type CoinDescription = {
   usedFor?: string
 }
 
+export type CoinDescription = {
+  id?: string
+  appID?: string
+  coinTypeID?: string
+  title?: string
+  message?: string
+  usedFor?: string
+  createAt?: number
+  updateAt?: number
+}
+
 export type CreateCoinDescriptionRequest = {
-  info?: CoinDescription
+  info?: CoinDescriptionBase
 }
 
 export type CreateCoinDescriptionResponse = {
@@ -25,7 +35,7 @@ export type CreateCoinDescriptionResponse = {
 }
 
 export type CreateCoinDescriptionsRequest = {
-  infos?: CoinDescription[]
+  infos?: CoinDescriptionBase[]
 }
 
 export type CreateCoinDescriptionsResponse = {
