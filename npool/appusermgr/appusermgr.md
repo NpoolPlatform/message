@@ -2249,8 +2249,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| ThirdId | [string](#string) |  |  |
-| ThirdUserId | [string](#string) |  |  |
+| ThirdID | [string](#string) |  |  |
+| ThirdUserID | [string](#string) |  |  |
 
 
 
@@ -4883,8 +4883,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| ThirdId | [string](#string) |  |  |
-| ThirdUserId | [string](#string) |  |  |
+| ThirdID | [string](#string) |  |  |
+| ThirdUserID | [string](#string) |  |  |
 
 
 

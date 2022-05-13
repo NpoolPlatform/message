@@ -7,9 +7,9 @@
     - [Auth](#third-gateway-v1-Auth)
     - [AuthLoginRequest](#third-gateway-v1-AuthLoginRequest)
     - [AuthLoginResponse](#third-gateway-v1-AuthLoginResponse)
-    - [GetPlatformsByAppRequest](#third-gateway-v1-GetPlatformsByAppRequest)
-    - [GetPlatformsByAppResponse](#third-gateway-v1-GetPlatformsByAppResponse)
-    - [Platform](#third-gateway-v1-Platform)
+    - [GetThirdAuthByAppRequest](#third-gateway-v1-GetThirdAuthByAppRequest)
+    - [GetThirdAuthByAppResponse](#third-gateway-v1-GetThirdAuthByAppResponse)
+    - [ThirdAuth](#third-gateway-v1-ThirdAuth)
   
     - [ThirdLoginGateway](#third-gateway-v1-ThirdLoginGateway)
   
@@ -17,9 +17,9 @@
     - [Auth](#third-gateway-v1-Auth)
     - [AuthLoginRequest](#third-gateway-v1-AuthLoginRequest)
     - [AuthLoginResponse](#third-gateway-v1-AuthLoginResponse)
-    - [GetPlatformsByAppRequest](#third-gateway-v1-GetPlatformsByAppRequest)
-    - [GetPlatformsByAppResponse](#third-gateway-v1-GetPlatformsByAppResponse)
-    - [Platform](#third-gateway-v1-Platform)
+    - [GetThirdAuthByAppRequest](#third-gateway-v1-GetThirdAuthByAppRequest)
+    - [GetThirdAuthByAppResponse](#third-gateway-v1-GetThirdAuthByAppResponse)
+    - [ThirdAuth](#third-gateway-v1-ThirdAuth)
   
     - [ThirdLoginGateway](#third-gateway-v1-ThirdLoginGateway)
   
@@ -44,7 +44,7 @@
 | ----- | ---- | ----- | ----------- |
 | AuthUrl | [string](#string) |  |  |
 | LogoUrl | [string](#string) |  |  |
-| Platform | [string](#string) |  |  |
+| Third | [string](#string) |  |  |
 
 
 
@@ -61,7 +61,7 @@
 | ----- | ---- | ----- | ----------- |
 | Code | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
-| Platform | [string](#string) |  |  |
+| Third | [string](#string) |  |  |
 
 
 
@@ -77,16 +77,15 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
-| Token | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="third-gateway-v1-GetPlatformsByAppRequest"></a>
+<a name="third-gateway-v1-GetThirdAuthByAppRequest"></a>
 
-### GetPlatformsByAppRequest
+### GetThirdAuthByAppRequest
 
 
 
@@ -99,9 +98,9 @@
 
 
 
-<a name="third-gateway-v1-GetPlatformsByAppResponse"></a>
+<a name="third-gateway-v1-GetThirdAuthByAppResponse"></a>
 
-### GetPlatformsByAppResponse
+### GetThirdAuthByAppResponse
 
 
 
@@ -114,9 +113,9 @@
 
 
 
-<a name="third-gateway-v1-Platform"></a>
+<a name="third-gateway-v1-ThirdAuth"></a>
 
-### Platform
+### ThirdAuth
 
 
 
@@ -124,9 +123,9 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
-| Platform | [string](#string) |  |  |
-| PlatformAppKey | [string](#string) |  |  |
-| PlatformAppSecret | [string](#string) |  |  |
+| Third | [string](#string) |  |  |
+| ThirdAppKey | [string](#string) |  |  |
+| ThirdAppSecret | [string](#string) |  |  |
 | CreateAt | [string](#string) |  |  |
 | UpdateAt | [string](#string) |  |  |
 | LogoUrl | [string](#string) |  |  |
@@ -151,7 +150,7 @@ Service Name
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) | Method Version |
-| GetPlatformsByApp | [GetPlatformsByAppRequest](#third-gateway-v1-GetPlatformsByAppRequest) | [GetPlatformsByAppResponse](#third-gateway-v1-GetPlatformsByAppResponse) |  |
+| GetThirdAuthByApp | [GetThirdAuthByAppRequest](#third-gateway-v1-GetThirdAuthByAppRequest) | [GetThirdAuthByAppResponse](#third-gateway-v1-GetThirdAuthByAppResponse) |  |
 | AuthLogin | [AuthLoginRequest](#third-gateway-v1-AuthLoginRequest) | [AuthLoginResponse](#third-gateway-v1-AuthLoginResponse) |  |
 
  
@@ -175,7 +174,7 @@ Service Name
 | ----- | ---- | ----- | ----------- |
 | AuthUrl | [string](#string) |  |  |
 | LogoUrl | [string](#string) |  |  |
-| Platform | [string](#string) |  |  |
+| Third | [string](#string) |  |  |
 
 
 
@@ -192,7 +191,7 @@ Service Name
 | ----- | ---- | ----- | ----------- |
 | Code | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
-| Platform | [string](#string) |  |  |
+| Third | [string](#string) |  |  |
 
 
 
@@ -208,16 +207,15 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [app.user.manager.v1.AppUserInfo](#app-user-manager-v1-AppUserInfo) |  |  |
-| Token | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="third-gateway-v1-GetPlatformsByAppRequest"></a>
+<a name="third-gateway-v1-GetThirdAuthByAppRequest"></a>
 
-### GetPlatformsByAppRequest
+### GetThirdAuthByAppRequest
 
 
 
@@ -230,9 +228,9 @@ Service Name
 
 
 
-<a name="third-gateway-v1-GetPlatformsByAppResponse"></a>
+<a name="third-gateway-v1-GetThirdAuthByAppResponse"></a>
 
-### GetPlatformsByAppResponse
+### GetThirdAuthByAppResponse
 
 
 
@@ -245,9 +243,9 @@ Service Name
 
 
 
-<a name="third-gateway-v1-Platform"></a>
+<a name="third-gateway-v1-ThirdAuth"></a>
 
-### Platform
+### ThirdAuth
 
 
 
@@ -255,9 +253,9 @@ Service Name
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
-| Platform | [string](#string) |  |  |
-| PlatformAppKey | [string](#string) |  |  |
-| PlatformAppSecret | [string](#string) |  |  |
+| Third | [string](#string) |  |  |
+| ThirdAppKey | [string](#string) |  |  |
+| ThirdAppSecret | [string](#string) |  |  |
 | CreateAt | [string](#string) |  |  |
 | UpdateAt | [string](#string) |  |  |
 | LogoUrl | [string](#string) |  |  |
@@ -282,7 +280,7 @@ Service Name
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) | Method Version |
-| GetPlatformsByApp | [GetPlatformsByAppRequest](#third-gateway-v1-GetPlatformsByAppRequest) | [GetPlatformsByAppResponse](#third-gateway-v1-GetPlatformsByAppResponse) |  |
+| GetThirdAuthByApp | [GetThirdAuthByAppRequest](#third-gateway-v1-GetThirdAuthByAppRequest) | [GetThirdAuthByAppResponse](#third-gateway-v1-GetThirdAuthByAppResponse) |  |
 | AuthLogin | [AuthLoginRequest](#third-gateway-v1-AuthLoginRequest) | [AuthLoginResponse](#third-gateway-v1-AuthLoginResponse) |  |
 
  

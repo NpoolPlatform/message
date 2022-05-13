@@ -3790,10 +3790,10 @@
         "AppID": {
           "type": "string"
         },
-        "ThirdId": {
+        "ThirdID": {
           "type": "string"
         },
-        "ThirdUserId": {
+        "ThirdUserID": {
           "type": "string"
         }
       }

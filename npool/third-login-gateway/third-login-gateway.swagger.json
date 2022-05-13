@@ -45,12 +45,12 @@
     },
     "/v1/get/platforms/by/app": {
       "post": {
-        "operationId": "ThirdLoginGateway_GetPlatformsByApp",
+        "operationId": "ThirdLoginGateway_GetThirdAuthByApp",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetPlatformsByAppResponse"
+              "$ref": "#/definitions/v1GetThirdAuthByAppResponse"
             }
           },
           "default": {
@@ -66,7 +66,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetPlatformsByAppRequest"
+              "$ref": "#/definitions/v1GetThirdAuthByAppRequest"
             }
           }
         ],
@@ -305,7 +305,7 @@
         "LogoUrl": {
           "type": "string"
         },
-        "Platform": {
+        "Third": {
           "type": "string"
         }
       }
@@ -319,7 +319,7 @@
         "AppID": {
           "type": "string"
         },
-        "Platform": {
+        "Third": {
           "type": "string"
         }
       }
@@ -329,9 +329,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserInfo"
-        },
-        "Token": {
-          "type": "string"
         }
       }
     },
@@ -352,7 +349,7 @@
         }
       }
     },
-    "v1GetPlatformsByAppRequest": {
+    "v1GetThirdAuthByAppRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -360,7 +357,7 @@
         }
       }
     },
-    "v1GetPlatformsByAppResponse": {
+    "v1GetThirdAuthByAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {

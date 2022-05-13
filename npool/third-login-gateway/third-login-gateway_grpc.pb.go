@@ -26,7 +26,7 @@ const _ = grpc.SupportPackageIsVersion7
 type ThirdLoginGatewayClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
-	GetPlatformsByApp(ctx context.Context, in *GetPlatformsByAppRequest, opts ...grpc.CallOption) (*GetPlatformsByAppResponse, error)
+	GetThirdAuthByApp(ctx context.Context, in *GetThirdAuthByAppRequest, opts ...grpc.CallOption) (*GetThirdAuthByAppResponse, error)
 	AuthLogin(ctx context.Context, in *AuthLoginRequest, opts ...grpc.CallOption) (*AuthLoginResponse, error)
 }
 
@@ -47,9 +47,9 @@ func (c *thirdLoginGatewayClient) Version(ctx context.Context, in *emptypb.Empty
 	return out, nil
 }
 
-func (c *thirdLoginGatewayClient) GetPlatformsByApp(ctx context.Context, in *GetPlatformsByAppRequest, opts ...grpc.CallOption) (*GetPlatformsByAppResponse, error) {
-	out := new(GetPlatformsByAppResponse)
-	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdLoginGateway/GetPlatformsByApp", in, out, opts...)
+func (c *thirdLoginGatewayClient) GetThirdAuthByApp(ctx context.Context, in *GetThirdAuthByAppRequest, opts ...grpc.CallOption) (*GetThirdAuthByAppResponse, error) {
+	out := new(GetThirdAuthByAppResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdLoginGateway/GetThirdAuthByApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *thirdLoginGatewayClient) AuthLogin(ctx context.Context, in *AuthLoginRe
 type ThirdLoginGatewayServer interface {
 	// Method Version
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
-	GetPlatformsByApp(context.Context, *GetPlatformsByAppRequest) (*GetPlatformsByAppResponse, error)
+	GetThirdAuthByApp(context.Context, *GetThirdAuthByAppRequest) (*GetThirdAuthByAppResponse, error)
 	AuthLogin(context.Context, *AuthLoginRequest) (*AuthLoginResponse, error)
 	mustEmbedUnimplementedThirdLoginGatewayServer()
 }
@@ -83,8 +83,8 @@ type UnimplementedThirdLoginGatewayServer struct {
 func (UnimplementedThirdLoginGatewayServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
-func (UnimplementedThirdLoginGatewayServer) GetPlatformsByApp(context.Context, *GetPlatformsByAppRequest) (*GetPlatformsByAppResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetPlatformsByApp not implemented")
+func (UnimplementedThirdLoginGatewayServer) GetThirdAuthByApp(context.Context, *GetThirdAuthByAppRequest) (*GetThirdAuthByAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetThirdAuthByApp not implemented")
 }
 func (UnimplementedThirdLoginGatewayServer) AuthLogin(context.Context, *AuthLoginRequest) (*AuthLoginResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AuthLogin not implemented")
@@ -120,20 +120,20 @@ func _ThirdLoginGateway_Version_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ThirdLoginGateway_GetPlatformsByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetPlatformsByAppRequest)
+func _ThirdLoginGateway_GetThirdAuthByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetThirdAuthByAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ThirdLoginGatewayServer).GetPlatformsByApp(ctx, in)
+		return srv.(ThirdLoginGatewayServer).GetThirdAuthByApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/third.gateway.v1.ThirdLoginGateway/GetPlatformsByApp",
+		FullMethod: "/third.gateway.v1.ThirdLoginGateway/GetThirdAuthByApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ThirdLoginGatewayServer).GetPlatformsByApp(ctx, req.(*GetPlatformsByAppRequest))
+		return srv.(ThirdLoginGatewayServer).GetThirdAuthByApp(ctx, req.(*GetThirdAuthByAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -168,8 +168,8 @@ var ThirdLoginGateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ThirdLoginGateway_Version_Handler,
 		},
 		{
-			MethodName: "GetPlatformsByApp",
-			Handler:    _ThirdLoginGateway_GetPlatformsByApp_Handler,
+			MethodName: "GetThirdAuthByApp",
+			Handler:    _ThirdLoginGateway_GetThirdAuthByApp_Handler,
 		},
 		{
 			MethodName: "AuthLogin",

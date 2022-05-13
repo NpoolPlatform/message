@@ -758,8 +758,8 @@ export type CreateAppUserThirdResponse = {
 
 export type GetAppUserThirdByAppThirdRequest = {
   appID?: string
-  thirdId?: string
-  thirdUserId?: string
+  thirdID?: string
+  thirdUserID?: string
 }
 
 export type GetAppUserThirdByAppThirdResponse = {

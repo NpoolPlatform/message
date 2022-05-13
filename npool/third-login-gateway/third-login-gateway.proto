@@ -18,7 +18,7 @@ service ThirdLoginGateway {
     };
   }
 
-  rpc GetPlatformsByApp (GetPlatformsByAppRequest) returns (GetPlatformsByAppResponse){
+  rpc GetThirdAuthByApp (GetThirdAuthByAppRequest) returns (GetThirdAuthByAppResponse){
     option (google.api.http) = {
       post: "/v1/get/platforms/by/app"
       body: "*"
@@ -33,36 +33,35 @@ service ThirdLoginGateway {
   }
 }
 
-message Platform {
+message ThirdAuth {
   string ID = 10;
   string AppID = 20;
-  string Platform = 30;
-  string PlatformAppKey = 40;
-  string PlatformAppSecret = 50;
+  string Third = 30;
+  string ThirdAppKey = 40;
+  string ThirdAppSecret = 50;
   string CreateAt = 60;
   string UpdateAt = 70;
   string LogoUrl = 80;
   string RedirectUrl = 90;
 }
 
-message GetPlatformsByAppRequest {
+message GetThirdAuthByAppRequest {
   string AppID = 10;
 }
-message GetPlatformsByAppResponse {
+message GetThirdAuthByAppResponse {
   repeated Auth Infos = 10;
 }
 message Auth {
   string AuthUrl = 10;
   string LogoUrl = 20;
-  string Platform = 30;
+  string Third = 30;
 }
 
 message AuthLoginRequest {
   string Code = 10;
   string AppID = 20;
-  string Platform = 30;
+  string Third = 30;
 }
 message AuthLoginResponse {
   app.user.manager.v1.AppUserInfo Info = 10;
-  string Token = 20;
 }

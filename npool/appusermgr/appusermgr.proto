@@ -1226,8 +1226,8 @@ message CreateAppUserThirdResponse {
 
 message GetAppUserThirdByAppThirdRequest {
     string AppID = 10;
-    string ThirdId = 30;
-    string ThirdUserId = 40;
+    string ThirdID = 30;
+    string ThirdUserID = 40;
 }
 
 message GetAppUserThirdByAppThirdResponse {
