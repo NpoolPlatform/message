@@ -6,23 +6,24 @@
 - [npool/project-info-manager/project-info-manager.proto](#npool_project-info-manager_project-info-manager-proto)
     - [CoinDescription](#project-info-manager-v1-CoinDescription)
     - [CoinDescriptionBase](#project-info-manager-v1-CoinDescriptionBase)
-    - [CountAppCoinDescriptionsRequest](#project-info-manager-v1-CountAppCoinDescriptionsRequest)
-    - [CountAppCoinDescriptionsResponse](#project-info-manager-v1-CountAppCoinDescriptionsResponse)
-    - [CountCoinDescriptionsRequest](#project-info-manager-v1-CountCoinDescriptionsRequest)
-    - [CountCoinDescriptionsResponse](#project-info-manager-v1-CountCoinDescriptionsResponse)
     - [CreateCoinDescriptionRequest](#project-info-manager-v1-CreateCoinDescriptionRequest)
     - [CreateCoinDescriptionResponse](#project-info-manager-v1-CreateCoinDescriptionResponse)
     - [CreateCoinDescriptionsRequest](#project-info-manager-v1-CreateCoinDescriptionsRequest)
     - [CreateCoinDescriptionsResponse](#project-info-manager-v1-CreateCoinDescriptionsResponse)
     - [DeleteAppCoinDescriptionRequest](#project-info-manager-v1-DeleteAppCoinDescriptionRequest)
     - [DeleteAppCoinDescriptionResponse](#project-info-manager-v1-DeleteAppCoinDescriptionResponse)
-    - [GetAppCoinDescriptionRequest](#project-info-manager-v1-GetAppCoinDescriptionRequest)
-    - [GetAppCoinDescriptionResponse](#project-info-manager-v1-GetAppCoinDescriptionResponse)
+    - [DeleteCoinDescriptionRequest](#project-info-manager-v1-DeleteCoinDescriptionRequest)
+    - [DeleteCoinDescriptionResponse](#project-info-manager-v1-DeleteCoinDescriptionResponse)
     - [GetAppCoinDescriptionsRequest](#project-info-manager-v1-GetAppCoinDescriptionsRequest)
+    - [GetAppCoinDescriptionsRequest.CondsEntry](#project-info-manager-v1-GetAppCoinDescriptionsRequest-CondsEntry)
     - [GetAppCoinDescriptionsResponse](#project-info-manager-v1-GetAppCoinDescriptionsResponse)
+    - [GetCoinDescriptionOnlyRequest](#project-info-manager-v1-GetCoinDescriptionOnlyRequest)
+    - [GetCoinDescriptionOnlyRequest.CondsEntry](#project-info-manager-v1-GetCoinDescriptionOnlyRequest-CondsEntry)
+    - [GetCoinDescriptionOnlyResponse](#project-info-manager-v1-GetCoinDescriptionOnlyResponse)
     - [GetCoinDescriptionRequest](#project-info-manager-v1-GetCoinDescriptionRequest)
     - [GetCoinDescriptionResponse](#project-info-manager-v1-GetCoinDescriptionResponse)
     - [GetCoinDescriptionsRequest](#project-info-manager-v1-GetCoinDescriptionsRequest)
+    - [GetCoinDescriptionsRequest.CondsEntry](#project-info-manager-v1-GetCoinDescriptionsRequest-CondsEntry)
     - [GetCoinDescriptionsResponse](#project-info-manager-v1-GetCoinDescriptionsResponse)
     - [UpdateAppCoinDescriptionRequest](#project-info-manager-v1-UpdateAppCoinDescriptionRequest)
     - [UpdateAppCoinDescriptionResponse](#project-info-manager-v1-UpdateAppCoinDescriptionResponse)
@@ -34,23 +35,24 @@
 - [npool/project-info-manager/project-info-manager.proto](#npool_project-info-manager_project-info-manager-proto)
     - [CoinDescription](#project-info-manager-v1-CoinDescription)
     - [CoinDescriptionBase](#project-info-manager-v1-CoinDescriptionBase)
-    - [CountAppCoinDescriptionsRequest](#project-info-manager-v1-CountAppCoinDescriptionsRequest)
-    - [CountAppCoinDescriptionsResponse](#project-info-manager-v1-CountAppCoinDescriptionsResponse)
-    - [CountCoinDescriptionsRequest](#project-info-manager-v1-CountCoinDescriptionsRequest)
-    - [CountCoinDescriptionsResponse](#project-info-manager-v1-CountCoinDescriptionsResponse)
     - [CreateCoinDescriptionRequest](#project-info-manager-v1-CreateCoinDescriptionRequest)
     - [CreateCoinDescriptionResponse](#project-info-manager-v1-CreateCoinDescriptionResponse)
     - [CreateCoinDescriptionsRequest](#project-info-manager-v1-CreateCoinDescriptionsRequest)
     - [CreateCoinDescriptionsResponse](#project-info-manager-v1-CreateCoinDescriptionsResponse)
     - [DeleteAppCoinDescriptionRequest](#project-info-manager-v1-DeleteAppCoinDescriptionRequest)
     - [DeleteAppCoinDescriptionResponse](#project-info-manager-v1-DeleteAppCoinDescriptionResponse)
-    - [GetAppCoinDescriptionRequest](#project-info-manager-v1-GetAppCoinDescriptionRequest)
-    - [GetAppCoinDescriptionResponse](#project-info-manager-v1-GetAppCoinDescriptionResponse)
+    - [DeleteCoinDescriptionRequest](#project-info-manager-v1-DeleteCoinDescriptionRequest)
+    - [DeleteCoinDescriptionResponse](#project-info-manager-v1-DeleteCoinDescriptionResponse)
     - [GetAppCoinDescriptionsRequest](#project-info-manager-v1-GetAppCoinDescriptionsRequest)
+    - [GetAppCoinDescriptionsRequest.CondsEntry](#project-info-manager-v1-GetAppCoinDescriptionsRequest-CondsEntry)
     - [GetAppCoinDescriptionsResponse](#project-info-manager-v1-GetAppCoinDescriptionsResponse)
+    - [GetCoinDescriptionOnlyRequest](#project-info-manager-v1-GetCoinDescriptionOnlyRequest)
+    - [GetCoinDescriptionOnlyRequest.CondsEntry](#project-info-manager-v1-GetCoinDescriptionOnlyRequest-CondsEntry)
+    - [GetCoinDescriptionOnlyResponse](#project-info-manager-v1-GetCoinDescriptionOnlyResponse)
     - [GetCoinDescriptionRequest](#project-info-manager-v1-GetCoinDescriptionRequest)
     - [GetCoinDescriptionResponse](#project-info-manager-v1-GetCoinDescriptionResponse)
     - [GetCoinDescriptionsRequest](#project-info-manager-v1-GetCoinDescriptionsRequest)
+    - [GetCoinDescriptionsRequest.CondsEntry](#project-info-manager-v1-GetCoinDescriptionsRequest-CondsEntry)
     - [GetCoinDescriptionsResponse](#project-info-manager-v1-GetCoinDescriptionsResponse)
     - [UpdateAppCoinDescriptionRequest](#project-info-manager-v1-UpdateAppCoinDescriptionRequest)
     - [UpdateAppCoinDescriptionResponse](#project-info-manager-v1-UpdateAppCoinDescriptionResponse)
@@ -111,66 +113,6 @@ for create
 
 
 
-<a name="project-info-manager-v1-CountAppCoinDescriptionsRequest"></a>
-
-### CountAppCoinDescriptionsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="project-info-manager-v1-CountAppCoinDescriptionsResponse"></a>
-
-### CountAppCoinDescriptionsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Result | [uint32](#uint32) |  |  |
-
-
-
-
-
-
-<a name="project-info-manager-v1-CountCoinDescriptionsRequest"></a>
-
-### CountCoinDescriptionsRequest
-count for app and admin
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="project-info-manager-v1-CountCoinDescriptionsResponse"></a>
-
-### CountCoinDescriptionsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Result | [uint32](#uint32) |  |  |
-
-
-
-
-
-
 <a name="project-info-manager-v1-CreateCoinDescriptionRequest"></a>
 
 ### CreateCoinDescriptionRequest
@@ -234,7 +176,7 @@ create
 <a name="project-info-manager-v1-DeleteAppCoinDescriptionRequest"></a>
 
 ### DeleteAppCoinDescriptionRequest
-delete for admin
+
 
 
 | Field | Type | Label | Description |
@@ -262,15 +204,15 @@ delete for admin
 
 
 
-<a name="project-info-manager-v1-GetAppCoinDescriptionRequest"></a>
+<a name="project-info-manager-v1-DeleteCoinDescriptionRequest"></a>
 
-### GetAppCoinDescriptionRequest
+### DeleteCoinDescriptionRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
 | ID | [string](#string) |  |  |
 
 
@@ -278,9 +220,9 @@ delete for admin
 
 
 
-<a name="project-info-manager-v1-GetAppCoinDescriptionResponse"></a>
+<a name="project-info-manager-v1-DeleteCoinDescriptionResponse"></a>
 
-### GetAppCoinDescriptionResponse
+### DeleteCoinDescriptionResponse
 
 
 
@@ -302,8 +244,25 @@ delete for admin
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| Conds | [GetAppCoinDescriptionsRequest.CondsEntry](#project-info-manager-v1-GetAppCoinDescriptionsRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetAppCoinDescriptionsRequest-CondsEntry"></a>
+
+### GetAppCoinDescriptionsRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
 
 
 
@@ -326,10 +285,59 @@ delete for admin
 
 
 
+<a name="project-info-manager-v1-GetCoinDescriptionOnlyRequest"></a>
+
+### GetCoinDescriptionOnlyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| Conds | [GetCoinDescriptionOnlyRequest.CondsEntry](#project-info-manager-v1-GetCoinDescriptionOnlyRequest-CondsEntry) | repeated |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetCoinDescriptionOnlyRequest-CondsEntry"></a>
+
+### GetCoinDescriptionOnlyRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetCoinDescriptionOnlyResponse"></a>
+
+### GetCoinDescriptionOnlyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
+
+
+
+
+
+
 <a name="project-info-manager-v1-GetCoinDescriptionRequest"></a>
 
 ### GetCoinDescriptionRequest
-get for app and admin
+
 
 
 | Field | Type | Label | Description |
@@ -366,8 +374,25 @@ get for app and admin
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| Conds | [GetCoinDescriptionsRequest.CondsEntry](#project-info-manager-v1-GetCoinDescriptionsRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetCoinDescriptionsRequest-CondsEntry"></a>
+
+### GetCoinDescriptionsRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
 
 
 
@@ -471,12 +496,11 @@ update for app and admin
 | UpdateCoinDescription | [UpdateCoinDescriptionRequest](#project-info-manager-v1-UpdateCoinDescriptionRequest) | [UpdateCoinDescriptionResponse](#project-info-manager-v1-UpdateCoinDescriptionResponse) |  |
 | UpdateAppCoinDescription | [UpdateAppCoinDescriptionRequest](#project-info-manager-v1-UpdateAppCoinDescriptionRequest) | [UpdateAppCoinDescriptionResponse](#project-info-manager-v1-UpdateAppCoinDescriptionResponse) |  |
 | GetCoinDescription | [GetCoinDescriptionRequest](#project-info-manager-v1-GetCoinDescriptionRequest) | [GetCoinDescriptionResponse](#project-info-manager-v1-GetCoinDescriptionResponse) |  |
-| GetAppCoinDescription | [GetAppCoinDescriptionRequest](#project-info-manager-v1-GetAppCoinDescriptionRequest) | [GetAppCoinDescriptionResponse](#project-info-manager-v1-GetAppCoinDescriptionResponse) |  |
 | GetCoinDescriptions | [GetCoinDescriptionsRequest](#project-info-manager-v1-GetCoinDescriptionsRequest) | [GetCoinDescriptionsResponse](#project-info-manager-v1-GetCoinDescriptionsResponse) |  |
+| GetCoinDescriptionOnly | [GetCoinDescriptionOnlyRequest](#project-info-manager-v1-GetCoinDescriptionOnlyRequest) | [GetCoinDescriptionOnlyResponse](#project-info-manager-v1-GetCoinDescriptionOnlyResponse) |  |
 | GetAppCoinDescriptions | [GetAppCoinDescriptionsRequest](#project-info-manager-v1-GetAppCoinDescriptionsRequest) | [GetAppCoinDescriptionsResponse](#project-info-manager-v1-GetAppCoinDescriptionsResponse) |  |
-| CountCoinDescriptions | [CountCoinDescriptionsRequest](#project-info-manager-v1-CountCoinDescriptionsRequest) | [CountCoinDescriptionsResponse](#project-info-manager-v1-CountCoinDescriptionsResponse) |  |
-| CountAppCoinDescriptions | [CountAppCoinDescriptionsRequest](#project-info-manager-v1-CountAppCoinDescriptionsRequest) | [CountAppCoinDescriptionsResponse](#project-info-manager-v1-CountAppCoinDescriptionsResponse) |  |
 | DeleteAppCoinDescription | [DeleteAppCoinDescriptionRequest](#project-info-manager-v1-DeleteAppCoinDescriptionRequest) | [DeleteAppCoinDescriptionResponse](#project-info-manager-v1-DeleteAppCoinDescriptionResponse) |  |
+| DeleteCoinDescription | [DeleteCoinDescriptionRequest](#project-info-manager-v1-DeleteCoinDescriptionRequest) | [DeleteCoinDescriptionResponse](#project-info-manager-v1-DeleteCoinDescriptionResponse) |  |
 
  
 
@@ -530,66 +554,6 @@ for create
 
 
 
-<a name="project-info-manager-v1-CountAppCoinDescriptionsRequest"></a>
-
-### CountAppCoinDescriptionsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="project-info-manager-v1-CountAppCoinDescriptionsResponse"></a>
-
-### CountAppCoinDescriptionsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Result | [uint32](#uint32) |  |  |
-
-
-
-
-
-
-<a name="project-info-manager-v1-CountCoinDescriptionsRequest"></a>
-
-### CountCoinDescriptionsRequest
-count for app and admin
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="project-info-manager-v1-CountCoinDescriptionsResponse"></a>
-
-### CountCoinDescriptionsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Result | [uint32](#uint32) |  |  |
-
-
-
-
-
-
 <a name="project-info-manager-v1-CreateCoinDescriptionRequest"></a>
 
 ### CreateCoinDescriptionRequest
@@ -653,7 +617,7 @@ create
 <a name="project-info-manager-v1-DeleteAppCoinDescriptionRequest"></a>
 
 ### DeleteAppCoinDescriptionRequest
-delete for admin
+
 
 
 | Field | Type | Label | Description |
@@ -681,15 +645,15 @@ delete for admin
 
 
 
-<a name="project-info-manager-v1-GetAppCoinDescriptionRequest"></a>
+<a name="project-info-manager-v1-DeleteCoinDescriptionRequest"></a>
 
-### GetAppCoinDescriptionRequest
+### DeleteCoinDescriptionRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
 | ID | [string](#string) |  |  |
 
 
@@ -697,9 +661,9 @@ delete for admin
 
 
 
-<a name="project-info-manager-v1-GetAppCoinDescriptionResponse"></a>
+<a name="project-info-manager-v1-DeleteCoinDescriptionResponse"></a>
 
-### GetAppCoinDescriptionResponse
+### DeleteCoinDescriptionResponse
 
 
 
@@ -721,8 +685,25 @@ delete for admin
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| Conds | [GetAppCoinDescriptionsRequest.CondsEntry](#project-info-manager-v1-GetAppCoinDescriptionsRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetAppCoinDescriptionsRequest-CondsEntry"></a>
+
+### GetAppCoinDescriptionsRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
 
 
 
@@ -745,10 +726,59 @@ delete for admin
 
 
 
+<a name="project-info-manager-v1-GetCoinDescriptionOnlyRequest"></a>
+
+### GetCoinDescriptionOnlyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| Conds | [GetCoinDescriptionOnlyRequest.CondsEntry](#project-info-manager-v1-GetCoinDescriptionOnlyRequest-CondsEntry) | repeated |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetCoinDescriptionOnlyRequest-CondsEntry"></a>
+
+### GetCoinDescriptionOnlyRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetCoinDescriptionOnlyResponse"></a>
+
+### GetCoinDescriptionOnlyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [CoinDescription](#project-info-manager-v1-CoinDescription) |  |  |
+
+
+
+
+
+
 <a name="project-info-manager-v1-GetCoinDescriptionRequest"></a>
 
 ### GetCoinDescriptionRequest
-get for app and admin
+
 
 
 | Field | Type | Label | Description |
@@ -785,8 +815,25 @@ get for app and admin
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| Conds | [GetCoinDescriptionsRequest.CondsEntry](#project-info-manager-v1-GetCoinDescriptionsRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-GetCoinDescriptionsRequest-CondsEntry"></a>
+
+### GetCoinDescriptionsRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
 
 
 
@@ -890,12 +937,11 @@ update for app and admin
 | UpdateCoinDescription | [UpdateCoinDescriptionRequest](#project-info-manager-v1-UpdateCoinDescriptionRequest) | [UpdateCoinDescriptionResponse](#project-info-manager-v1-UpdateCoinDescriptionResponse) |  |
 | UpdateAppCoinDescription | [UpdateAppCoinDescriptionRequest](#project-info-manager-v1-UpdateAppCoinDescriptionRequest) | [UpdateAppCoinDescriptionResponse](#project-info-manager-v1-UpdateAppCoinDescriptionResponse) |  |
 | GetCoinDescription | [GetCoinDescriptionRequest](#project-info-manager-v1-GetCoinDescriptionRequest) | [GetCoinDescriptionResponse](#project-info-manager-v1-GetCoinDescriptionResponse) |  |
-| GetAppCoinDescription | [GetAppCoinDescriptionRequest](#project-info-manager-v1-GetAppCoinDescriptionRequest) | [GetAppCoinDescriptionResponse](#project-info-manager-v1-GetAppCoinDescriptionResponse) |  |
 | GetCoinDescriptions | [GetCoinDescriptionsRequest](#project-info-manager-v1-GetCoinDescriptionsRequest) | [GetCoinDescriptionsResponse](#project-info-manager-v1-GetCoinDescriptionsResponse) |  |
+| GetCoinDescriptionOnly | [GetCoinDescriptionOnlyRequest](#project-info-manager-v1-GetCoinDescriptionOnlyRequest) | [GetCoinDescriptionOnlyResponse](#project-info-manager-v1-GetCoinDescriptionOnlyResponse) |  |
 | GetAppCoinDescriptions | [GetAppCoinDescriptionsRequest](#project-info-manager-v1-GetAppCoinDescriptionsRequest) | [GetAppCoinDescriptionsResponse](#project-info-manager-v1-GetAppCoinDescriptionsResponse) |  |
-| CountCoinDescriptions | [CountCoinDescriptionsRequest](#project-info-manager-v1-CountCoinDescriptionsRequest) | [CountCoinDescriptionsResponse](#project-info-manager-v1-CountCoinDescriptionsResponse) |  |
-| CountAppCoinDescriptions | [CountAppCoinDescriptionsRequest](#project-info-manager-v1-CountAppCoinDescriptionsRequest) | [CountAppCoinDescriptionsResponse](#project-info-manager-v1-CountAppCoinDescriptionsResponse) |  |
 | DeleteAppCoinDescription | [DeleteAppCoinDescriptionRequest](#project-info-manager-v1-DeleteAppCoinDescriptionRequest) | [DeleteAppCoinDescriptionResponse](#project-info-manager-v1-DeleteAppCoinDescriptionResponse) |  |
+| DeleteCoinDescription | [DeleteCoinDescriptionRequest](#project-info-manager-v1-DeleteCoinDescriptionRequest) | [DeleteCoinDescriptionResponse](#project-info-manager-v1-DeleteCoinDescriptionResponse) |  |
 
  
 

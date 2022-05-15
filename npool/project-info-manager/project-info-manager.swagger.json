@@ -11,70 +11,6 @@
     "application/json"
   ],
   "paths": {
-    "/v1/count/app/coin/descriptions": {
-      "post": {
-        "operationId": "ProjectInfoManager_CountAppCoinDescriptions",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CountAppCoinDescriptionsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CountAppCoinDescriptionsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "ProjectInfoManager"
-        ]
-      }
-    },
-    "/v1/count/coin/descriptions": {
-      "post": {
-        "operationId": "ProjectInfoManager_CountCoinDescriptions",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CountCoinDescriptionsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CountCoinDescriptionsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "ProjectInfoManager"
-        ]
-      }
-    },
     "/v1/create/coin/description": {
       "post": {
         "operationId": "ProjectInfoManager_CreateCoinDescription",
@@ -171,14 +107,14 @@
         ]
       }
     },
-    "/v1/get/app/coin/description": {
+    "/v1/delete/coin/description": {
       "post": {
-        "operationId": "ProjectInfoManager_GetAppCoinDescription",
+        "operationId": "ProjectInfoManager_DeleteCoinDescription",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppCoinDescriptionResponse"
+              "$ref": "#/definitions/v1DeleteCoinDescriptionResponse"
             }
           },
           "default": {
@@ -194,7 +130,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppCoinDescriptionRequest"
+              "$ref": "#/definitions/v1DeleteCoinDescriptionRequest"
             }
           }
         ],
@@ -259,6 +195,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetCoinDescriptionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    },
+    "/v1/get/coin/description/only": {
+      "post": {
+        "operationId": "ProjectInfoManager_GetCoinDescriptionOnly",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinDescriptionOnlyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinDescriptionOnlyRequest"
             }
           }
         ],
@@ -409,6 +377,14 @@
         }
       }
     },
+    "protobufNullValue": {
+      "type": "string",
+      "enum": [
+        "NULL_VALUE"
+      ],
+      "default": "NULL_VALUE",
+      "description": "`NullValue` is a singleton enumeration to represent the null value for the\n`Value` type union.\n\n The JSON representation for `NullValue` is JSON `null`.\n\n - NULL_VALUE: Null value."
+    },
     "runtimeError": {
       "type": "object",
       "properties": {
@@ -482,41 +458,6 @@
       },
       "title": "for create"
     },
-    "v1CountAppCoinDescriptionsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CountAppCoinDescriptionsResponse": {
-      "type": "object",
-      "properties": {
-        "Result": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CountCoinDescriptionsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      },
-      "title": "count for app and admin"
-    },
-    "v1CountCoinDescriptionsResponse": {
-      "type": "object",
-      "properties": {
-        "Result": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1CreateCoinDescriptionRequest": {
       "type": "object",
       "properties": {
@@ -565,8 +506,7 @@
         "ID": {
           "type": "string"
         }
-      },
-      "title": "delete for admin"
+      }
     },
     "v1DeleteAppCoinDescriptionResponse": {
       "type": "object",
@@ -576,10 +516,10 @@
         }
       }
     },
-    "v1GetAppCoinDescriptionRequest": {
+    "v1DeleteCoinDescriptionRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
+        "AppID": {
           "type": "string"
         },
         "ID": {
@@ -587,11 +527,22 @@
         }
       }
     },
-    "v1GetAppCoinDescriptionResponse": {
+    "v1DeleteCoinDescriptionResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1CoinDescription"
+        }
+      }
+    },
+    "v1FilterCond": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Val": {
+          "type": "object"
         }
       }
     },
@@ -600,6 +551,12 @@
       "properties": {
         "TargetAppID": {
           "type": "string"
+        },
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
         },
         "Offset": {
           "type": "integer",
@@ -626,6 +583,36 @@
         }
       }
     },
+    "v1GetCoinDescriptionOnlyRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetCoinDescriptionOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinDescription"
+        }
+      }
+    },
     "v1GetCoinDescriptionRequest": {
       "type": "object",
       "properties": {
@@ -635,8 +622,7 @@
         "ID": {
           "type": "string"
         }
-      },
-      "title": "get for app and admin"
+      }
     },
     "v1GetCoinDescriptionResponse": {
       "type": "object",
@@ -651,6 +637,12 @@
       "properties": {
         "AppID": {
           "type": "string"
+        },
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
         },
         "Offset": {
           "type": "integer",

@@ -14,84 +14,78 @@ service ProjectInfoManager {
         post: "/version"
         body: "*"
     };
-}
+  }
 
-rpc CreateCoinDescription (CreateCoinDescriptionRequest) returns (CreateCoinDescriptionResponse) {
+  rpc CreateCoinDescription (CreateCoinDescriptionRequest) returns (CreateCoinDescriptionResponse) {
     option (google.api.http) = {
         post: "/v1/create/coin/description"
         body: "*"
     };
-}
+  }
 
-rpc CreateCoinDescriptions (CreateCoinDescriptionsRequest) returns (CreateCoinDescriptionsResponse) {
+  rpc CreateCoinDescriptions (CreateCoinDescriptionsRequest) returns (CreateCoinDescriptionsResponse) {
     option (google.api.http) = {
         post: "/v1/create/coin/descriptions"
         body: "*"
     };
-}
+  }
 
-rpc UpdateCoinDescription (UpdateCoinDescriptionRequest) returns (UpdateCoinDescriptionResponse) {
+  rpc UpdateCoinDescription (UpdateCoinDescriptionRequest) returns (UpdateCoinDescriptionResponse) {
     option (google.api.http) = {
         post: "/v1/update/coin/description"
         body: "*"
     };
-}
+  }
 
-rpc UpdateAppCoinDescription (UpdateAppCoinDescriptionRequest) returns (UpdateAppCoinDescriptionResponse) {
-  option (google.api.http) = {
-      post: "/v1/update/app/coin/description"
-      body: "*"
-  };
-}
+  rpc UpdateAppCoinDescription (UpdateAppCoinDescriptionRequest) returns (UpdateAppCoinDescriptionResponse) {
+    option (google.api.http) = {
+        post: "/v1/update/app/coin/description"
+        body: "*"
+    };
+  }
 
-rpc GetCoinDescription (GetCoinDescriptionRequest) returns (GetCoinDescriptionResponse) {
+  rpc GetCoinDescription (GetCoinDescriptionRequest) returns (GetCoinDescriptionResponse) {
     option (google.api.http) = {
         post: "/v1/get/coin/description"
         body: "*"
     };
-}
+  }
 
-rpc GetAppCoinDescription (GetAppCoinDescriptionRequest) returns (GetAppCoinDescriptionResponse) {
-  option (google.api.http) = {
-      post: "/v1/get/app/coin/description"
-      body: "*"
-  };
-}
 
-rpc GetCoinDescriptions (GetCoinDescriptionsRequest) returns (GetCoinDescriptionsResponse) {
+  rpc GetCoinDescriptions (GetCoinDescriptionsRequest) returns (GetCoinDescriptionsResponse) {
     option (google.api.http) = {
         post: "/v1/get/coin/descriptions"
         body: "*"
     };
-}
+  }
 
-rpc GetAppCoinDescriptions (GetAppCoinDescriptionsRequest) returns (GetAppCoinDescriptionsResponse) {
-  option (google.api.http) = {
-      post: "/v1/get/app/coin/descriptions"
-      body: "*"
-  };
-}
-
-rpc CountCoinDescriptions (CountCoinDescriptionsRequest) returns (CountCoinDescriptionsResponse) {
+  rpc GetCoinDescriptionOnly (GetCoinDescriptionOnlyRequest) returns (GetCoinDescriptionOnlyResponse) {
     option (google.api.http) = {
-        post: "/v1/count/coin/descriptions"
+        post: "/v1/get/coin/description/only"
         body: "*"
     };
-}
+  }
 
-rpc CountAppCoinDescriptions (CountAppCoinDescriptionsRequest) returns (CountAppCoinDescriptionsResponse) {
-  option (google.api.http) = {
-      post: "/v1/count/app/coin/descriptions"
-      body: "*"
-  };
-}
+  rpc GetAppCoinDescriptions (GetAppCoinDescriptionsRequest) returns (GetAppCoinDescriptionsResponse) {
+    option (google.api.http) = {
+        post: "/v1/get/app/coin/descriptions"
+        body: "*"
+    };
+  }
 
-rpc DeleteAppCoinDescription (DeleteAppCoinDescriptionRequest) returns (DeleteAppCoinDescriptionResponse) {
+  rpc DeleteAppCoinDescription (DeleteAppCoinDescriptionRequest) returns (DeleteAppCoinDescriptionResponse) {
     option (google.api.http) = {
         post: "/v1/delete/app/coin/description"
         body: "*"
+    }; 
+  }
+
+  rpc DeleteCoinDescription (DeleteCoinDescriptionRequest) returns (DeleteCoinDescriptionResponse) {
+    option (google.api.http) = {
+        post: "/v1/delete/coin/description"
+        body: "*"
     };
-}
+  }
 }
 
 // for create
@@ -148,7 +142,7 @@ message UpdateAppCoinDescriptionRequest {
 message UpdateAppCoinDescriptionResponse {
   CoinDescription Info = 10;
 }
-// get for app and admin
+
 message GetCoinDescriptionRequest {
   string AppID = 10;
   string ID = 20;
@@ -158,19 +152,11 @@ message GetCoinDescriptionResponse {
   CoinDescription Info = 10;
 }
 
-message GetAppCoinDescriptionRequest {
-  string TargetAppID = 10;
-  string ID = 20;
-}
-
-message GetAppCoinDescriptionResponse {
-  CoinDescription Info = 10;
-}
-
 message GetCoinDescriptionsRequest {
   string AppID = 10;
-  int32 Offset = 20;
-  int32 Limit = 30;
+  map<string, npool.v1.FilterCond> Conds = 20;
+  int32 Offset = 30;
+  int32 Limit = 40;
 }
 
 message GetCoinDescriptionsResponse {
@@ -178,10 +164,22 @@ message GetCoinDescriptionsResponse {
   int32 Total = 20;
 }
 
+message GetCoinDescriptionOnlyRequest {
+  string AppID = 10;
+  map<string, npool.v1.FilterCond> Conds = 20;
+  int32 Offset = 30;
+  int32 Limit = 40;
+}
+
+message GetCoinDescriptionOnlyResponse {
+  CoinDescription Info = 10;
+}
+
 message GetAppCoinDescriptionsRequest {
   string TargetAppID = 10;
-  int32 Offset = 20;
-  int32 Limit = 30;
+  map<string, npool.v1.FilterCond> Conds = 20;
+  int32 Offset = 30;
+  int32 Limit = 40;
 }
 
 message GetAppCoinDescriptionsResponse {
@@ -189,28 +187,20 @@ message GetAppCoinDescriptionsResponse {
   int32 Total = 20;
 }
 
-// count for app and admin
-message CountCoinDescriptionsRequest {
-  string AppID = 10;
-}
-
-message CountCoinDescriptionsResponse {
-  uint32 Result = 10;
-}
-
-message CountAppCoinDescriptionsRequest {
-  string TargetAppID = 10;
-}
-
-message CountAppCoinDescriptionsResponse {
-  uint32 Result = 10;
-}
-// delete for admin
 message DeleteAppCoinDescriptionRequest {
   string TargetAppID = 10;
   string ID = 20;
 }
 
 message DeleteAppCoinDescriptionResponse {
+  CoinDescription Info = 10;
+}
+
+message DeleteCoinDescriptionRequest {
+  string AppID = 10;
+  string ID = 20;
+}
+
+message DeleteCoinDescriptionResponse {
   CoinDescription Info = 10;
 }
