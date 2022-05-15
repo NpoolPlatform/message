@@ -69,17 +69,9 @@ export type GetCoinDescriptionResponse = {
   info?: CoinDescription
 }
 
-export type GetAppCoinDescriptionRequest = {
-  targetAppID?: string
-  id?: string
-}
-
-export type GetAppCoinDescriptionResponse = {
-  info?: CoinDescription
-}
-
 export type GetCoinDescriptionsRequest = {
   appID?: string
+  conds?: {[key: string]: NpoolV1Npool.FilterCond}
   offset?: number
   limit?: number
 }
@@ -89,8 +81,20 @@ export type GetCoinDescriptionsResponse = {
   total?: number
 }
 
+export type GetCoinDescriptionOnlyRequest = {
+  appID?: string
+  conds?: {[key: string]: NpoolV1Npool.FilterCond}
+  offset?: number
+  limit?: number
+}
+
+export type GetCoinDescriptionOnlyResponse = {
+  info?: CoinDescription
+}
+
 export type GetAppCoinDescriptionsRequest = {
   targetAppID?: string
+  conds?: {[key: string]: NpoolV1Npool.FilterCond}
   offset?: number
   limit?: number
 }
@@ -100,28 +104,21 @@ export type GetAppCoinDescriptionsResponse = {
   total?: number
 }
 
-export type CountCoinDescriptionsRequest = {
-  appID?: string
-}
-
-export type CountCoinDescriptionsResponse = {
-  result?: number
-}
-
-export type CountAppCoinDescriptionsRequest = {
-  targetAppID?: string
-}
-
-export type CountAppCoinDescriptionsResponse = {
-  result?: number
-}
-
 export type DeleteAppCoinDescriptionRequest = {
   targetAppID?: string
   id?: string
 }
 
 export type DeleteAppCoinDescriptionResponse = {
+  info?: CoinDescription
+}
+
+export type DeleteCoinDescriptionRequest = {
+  appID?: string
+  id?: string
+}
+
+export type DeleteCoinDescriptionResponse = {
   info?: CoinDescription
 }
 
@@ -144,22 +141,19 @@ export class ProjectInfoManager {
   static GetCoinDescription(req: GetCoinDescriptionRequest, initReq?: fm.InitReq): Promise<GetCoinDescriptionResponse> {
     return fm.fetchReq<GetCoinDescriptionRequest, GetCoinDescriptionResponse>(`/v1/get/coin/description`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppCoinDescription(req: GetAppCoinDescriptionRequest, initReq?: fm.InitReq): Promise<GetAppCoinDescriptionResponse> {
-    return fm.fetchReq<GetAppCoinDescriptionRequest, GetAppCoinDescriptionResponse>(`/v1/get/app/coin/description`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
   static GetCoinDescriptions(req: GetCoinDescriptionsRequest, initReq?: fm.InitReq): Promise<GetCoinDescriptionsResponse> {
     return fm.fetchReq<GetCoinDescriptionsRequest, GetCoinDescriptionsResponse>(`/v1/get/coin/descriptions`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCoinDescriptionOnly(req: GetCoinDescriptionOnlyRequest, initReq?: fm.InitReq): Promise<GetCoinDescriptionOnlyResponse> {
+    return fm.fetchReq<GetCoinDescriptionOnlyRequest, GetCoinDescriptionOnlyResponse>(`/v1/get/coin/description/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppCoinDescriptions(req: GetAppCoinDescriptionsRequest, initReq?: fm.InitReq): Promise<GetAppCoinDescriptionsResponse> {
     return fm.fetchReq<GetAppCoinDescriptionsRequest, GetAppCoinDescriptionsResponse>(`/v1/get/app/coin/descriptions`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static CountCoinDescriptions(req: CountCoinDescriptionsRequest, initReq?: fm.InitReq): Promise<CountCoinDescriptionsResponse> {
-    return fm.fetchReq<CountCoinDescriptionsRequest, CountCoinDescriptionsResponse>(`/v1/count/coin/descriptions`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static CountAppCoinDescriptions(req: CountAppCoinDescriptionsRequest, initReq?: fm.InitReq): Promise<CountAppCoinDescriptionsResponse> {
-    return fm.fetchReq<CountAppCoinDescriptionsRequest, CountAppCoinDescriptionsResponse>(`/v1/count/app/coin/descriptions`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
   static DeleteAppCoinDescription(req: DeleteAppCoinDescriptionRequest, initReq?: fm.InitReq): Promise<DeleteAppCoinDescriptionResponse> {
     return fm.fetchReq<DeleteAppCoinDescriptionRequest, DeleteAppCoinDescriptionResponse>(`/v1/delete/app/coin/description`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static DeleteCoinDescription(req: DeleteCoinDescriptionRequest, initReq?: fm.InitReq): Promise<DeleteCoinDescriptionResponse> {
+    return fm.fetchReq<DeleteCoinDescriptionRequest, DeleteCoinDescriptionResponse>(`/v1/delete/coin/description`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
