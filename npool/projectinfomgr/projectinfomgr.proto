@@ -30,16 +30,23 @@ service ProjectInfoManager {
     };
   }
 
-  rpc UpdateCoinDescription (UpdateCoinDescriptionRequest) returns (UpdateCoinDescriptionResponse) {
+  rpc CreateAppCoinDescription (CreateAppCoinDescriptionRequest) returns (CreateAppCoinDescriptionResponse) {
     option (google.api.http) = {
-        post: "/v1/update/coin/description"
+        post: "/v1/create/app/coin/description"
         body: "*"
     };
   }
 
-  rpc UpdateAppCoinDescription (UpdateAppCoinDescriptionRequest) returns (UpdateAppCoinDescriptionResponse) {
+  rpc CreateAppCoinDescriptions (CreateAppCoinDescriptionsRequest) returns (CreateAppCoinDescriptionsResponse) {
     option (google.api.http) = {
-        post: "/v1/update/app/coin/description"
+        post: "/v1/create/app/coin/descriptions"
+        body: "*"
+    };
+  }
+
+  rpc UpdateCoinDescription (UpdateCoinDescriptionRequest) returns (UpdateCoinDescriptionResponse) {
+    option (google.api.http) = {
+        post: "/v1/update/coin/description"
         body: "*"
     };
   }
@@ -66,6 +73,14 @@ service ProjectInfoManager {
     };
   }
 
+  rpc GetAppCoinDescription (GetAppCoinDescriptionRequest) returns (GetAppCoinDescriptionResponse) {
+    option (google.api.http) = {
+        post: "/v1/get/app/coin/description"
+        body: "*"
+    };
+  }
+
+
   rpc GetAppCoinDescriptions (GetAppCoinDescriptionsRequest) returns (GetAppCoinDescriptionsResponse) {
     option (google.api.http) = {
         post: "/v1/get/app/coin/descriptions"
@@ -73,11 +88,11 @@ service ProjectInfoManager {
     };
   }
 
-  rpc DeleteAppCoinDescription (DeleteAppCoinDescriptionRequest) returns (DeleteAppCoinDescriptionResponse) {
+  rpc GetAppCoinDescriptionOnly (GetAppCoinDescriptionOnlyRequest) returns (GetAppCoinDescriptionOnlyResponse) {
     option (google.api.http) = {
-        post: "/v1/delete/app/coin/description"
+        post: "/v1/get/app/coin/description/only"
         body: "*"
-    }; 
+    };
   }
 
   rpc DeleteCoinDescription (DeleteCoinDescriptionRequest) returns (DeleteCoinDescriptionResponse) {
@@ -86,15 +101,6 @@ service ProjectInfoManager {
         body: "*"
     };
   }
-}
-
-// for create
-message CoinDescriptionBase{
-  string AppID      = 20;
-  string CoinTypeID = 30;
-  string Title      = 40;
-  string Message    = 50;
-  string UsedFor    = 60;  
 }
 
 message CoinDescription {
@@ -109,7 +115,7 @@ message CoinDescription {
 }
 // create
 message CreateCoinDescriptionRequest  {
-  CoinDescriptionBase Info=10;
+  CoinDescription Info=10;
 }
 
 message CreateCoinDescriptionResponse {
@@ -117,16 +123,33 @@ message CreateCoinDescriptionResponse {
 }
 
 message CreateCoinDescriptionsRequest {
-  repeated CoinDescriptionBase Infos = 10;
+  string AppID = 10;
+  repeated CoinDescription Infos = 20;
 }
 
 message CreateCoinDescriptionsResponse {
   repeated CoinDescription Infos = 10;
 }
 
-// update for app and admin
+message CreateAppCoinDescriptionRequest  {
+  CoinDescription Info=10;
+}
+
+message CreateAppCoinDescriptionResponse {
+  CoinDescription Info = 10;
+}
+
+message CreateAppCoinDescriptionsRequest {
+  string TargetAppID = 10;
+  repeated CoinDescription Infos = 20;
+}
+
+message CreateAppCoinDescriptionsResponse {
+  repeated CoinDescription Infos = 10;
+}
+
+// update
 message UpdateCoinDescriptionRequest {
-  string AppID = 10;
   CoinDescription Info = 20;
 }
 
@@ -134,17 +157,8 @@ message UpdateCoinDescriptionResponse {
   CoinDescription Info = 10;
 }
 
-message UpdateAppCoinDescriptionRequest {
-  string TargetAppID = 10;
-  CoinDescription Info = 20;
-}
-
-message UpdateAppCoinDescriptionResponse {
-  CoinDescription Info = 10;
-}
-
+// get
 message GetCoinDescriptionRequest {
-  string AppID = 10;
   string ID = 20;
 }
 
@@ -175,6 +189,14 @@ message GetCoinDescriptionOnlyResponse {
   CoinDescription Info = 10;
 }
 
+message GetAppCoinDescriptionRequest {
+  string ID = 20;
+}
+
+message GetAppCoinDescriptionResponse {
+  CoinDescription Info = 10;
+}
+
 message GetAppCoinDescriptionsRequest {
   string TargetAppID = 10;
   map<string, npool.v1.FilterCond> Conds = 20;
@@ -187,17 +209,19 @@ message GetAppCoinDescriptionsResponse {
   int32 Total = 20;
 }
 
-message DeleteAppCoinDescriptionRequest {
+message GetAppCoinDescriptionOnlyRequest {
   string TargetAppID = 10;
-  string ID = 20;
+  map<string, npool.v1.FilterCond> Conds = 20;
+  int32 Offset = 30;
+  int32 Limit = 40;
 }
 
-message DeleteAppCoinDescriptionResponse {
+message GetAppCoinDescriptionOnlyResponse {
   CoinDescription Info = 10;
 }
 
+// delete
 message DeleteCoinDescriptionRequest {
-  string AppID = 10;
   string ID = 20;
 }
 
