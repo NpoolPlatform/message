@@ -744,7 +744,6 @@ export type AppUserThird = {
   third?: string
   thirdUserName?: string
   thirdUserPicture?: string
-  thirdExtra?: string
   thirdId?: string
 }
 

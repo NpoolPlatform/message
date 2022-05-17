@@ -1213,7 +1213,6 @@ message AppUserThird {
     string Third = 50;
     string ThirdUserName = 60;
     string ThirdUserPicture = 70;
-    string ThirdExtra = 80;
     string ThirdId = 90;
 }
 message CreateAppUserThirdRequest {

@@ -2737,9 +2737,6 @@
         "ThirdUserPicture": {
           "type": "string"
         },
-        "ThirdExtra": {
-          "type": "string"
-        },
         "ThirdId": {
           "type": "string"
         }
