@@ -169,7 +169,7 @@ func RegisterThirdLoginGatewayHandlerServer(ctx context.Context, mux *runtime.Se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/third.gateway.v1.ThirdLoginGateway/GetThirdAuthByApp", runtime.WithHTTPPathPattern("/v1/get/platforms/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/third.gateway.v1.ThirdLoginGateway/GetThirdAuthByApp", runtime.WithHTTPPathPattern("/v1/get/third/auth/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -274,7 +274,7 @@ func RegisterThirdLoginGatewayHandlerClient(ctx context.Context, mux *runtime.Se
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/third.gateway.v1.ThirdLoginGateway/GetThirdAuthByApp", runtime.WithHTTPPathPattern("/v1/get/platforms/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/third.gateway.v1.ThirdLoginGateway/GetThirdAuthByApp", runtime.WithHTTPPathPattern("/v1/get/third/auth/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -316,7 +316,7 @@ func RegisterThirdLoginGatewayHandlerClient(ctx context.Context, mux *runtime.Se
 var (
 	pattern_ThirdLoginGateway_Version_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"version"}, ""))
 
-	pattern_ThirdLoginGateway_GetThirdAuthByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "platforms", "by", "app"}, ""))
+	pattern_ThirdLoginGateway_GetThirdAuthByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "third", "auth", "by", "app"}, ""))
 
 	pattern_ThirdLoginGateway_AuthLogin_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "auth", "login"}, ""))
 )

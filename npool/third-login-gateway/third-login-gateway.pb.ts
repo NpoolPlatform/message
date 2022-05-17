@@ -49,7 +49,7 @@ export class ThirdLoginGateway {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetThirdAuthByApp(req: GetThirdAuthByAppRequest, initReq?: fm.InitReq): Promise<GetThirdAuthByAppResponse> {
-    return fm.fetchReq<GetThirdAuthByAppRequest, GetThirdAuthByAppResponse>(`/v1/get/platforms/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetThirdAuthByAppRequest, GetThirdAuthByAppResponse>(`/v1/get/third/auth/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static AuthLogin(req: AuthLoginRequest, initReq?: fm.InitReq): Promise<AuthLoginResponse> {
     return fm.fetchReq<AuthLoginRequest, AuthLoginResponse>(`/v1/auth/login`, {...initReq, method: "POST", body: JSON.stringify(req)})

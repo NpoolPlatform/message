@@ -20,7 +20,7 @@ service ThirdLoginGateway {
 
   rpc GetThirdAuthByApp (GetThirdAuthByAppRequest) returns (GetThirdAuthByAppResponse){
     option (google.api.http) = {
-      post: "/v1/get/platforms/by/app"
+      post: "/v1/get/third/auth/by/app"
       body: "*"
     };
   }

@@ -43,7 +43,7 @@
         ]
       }
     },
-    "/v1/get/platforms/by/app": {
+    "/v1/get/third/auth/by/app": {
       "post": {
         "operationId": "ThirdLoginGateway_GetThirdAuthByApp",
         "responses": {
