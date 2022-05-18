@@ -126,7 +126,7 @@
 | Third | [string](#string) |  |  |
 | ThirdAppKey | [string](#string) |  |  |
 | ThirdAppSecret | [string](#string) |  |  |
-| CreateAt | [string](#string) |  |  |
+| CreatedAt | [string](#string) |  |  |
 | UpdateAt | [string](#string) |  |  |
 | LogoUrl | [string](#string) |  |  |
 | RedirectUrl | [string](#string) |  |  |
@@ -256,7 +256,7 @@ Service Name
 | Third | [string](#string) |  |  |
 | ThirdAppKey | [string](#string) |  |  |
 | ThirdAppSecret | [string](#string) |  |  |
-| CreateAt | [string](#string) |  |  |
+| CreatedAt | [string](#string) |  |  |
 | UpdateAt | [string](#string) |  |  |
 | LogoUrl | [string](#string) |  |  |
 | RedirectUrl | [string](#string) |  |  |

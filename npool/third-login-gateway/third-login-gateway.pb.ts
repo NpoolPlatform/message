@@ -14,7 +14,7 @@ export type ThirdAuth = {
   third?: string
   thirdAppKey?: string
   thirdAppSecret?: string
-  createAt?: string
+  createdAt?: string
   updateAt?: string
   logoUrl?: string
   redirectUrl?: string

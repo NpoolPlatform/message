@@ -39,7 +39,7 @@ message ThirdAuth {
   string Third = 30;
   string ThirdAppKey = 40;
   string ThirdAppSecret = 50;
-  string CreateAt = 60;
+  string CreatedAt = 60;
   string UpdateAt = 70;
   string LogoUrl = 80;
   string RedirectUrl = 90;
