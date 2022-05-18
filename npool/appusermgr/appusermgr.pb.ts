@@ -740,11 +740,11 @@ export type AppUserThird = {
   id?: string
   appID?: string
   userID?: string
-  thirdUserId?: string
+  thirdUserID?: string
   third?: string
   thirdUserName?: string
-  thirdUserPicture?: string
-  thirdId?: string
+  thirdUserAvatar?: string
+  thirdID?: string
 }
 
 export type CreateAppUserThirdRequest = {

@@ -576,11 +576,11 @@
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
-| ThirdUserId | [string](#string) |  |  |
+| ThirdUserID | [string](#string) |  |  |
 | Third | [string](#string) |  |  |
 | ThirdUserName | [string](#string) |  |  |
-| ThirdUserPicture | [string](#string) |  |  |
-| ThirdId | [string](#string) |  |  |
+| ThirdUserAvatar | [string](#string) |  |  |
+| ThirdID | [string](#string) |  |  |
 
 
 
@@ -3209,11 +3209,11 @@
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
-| ThirdUserId | [string](#string) |  |  |
+| ThirdUserID | [string](#string) |  |  |
 | Third | [string](#string) |  |  |
 | ThirdUserName | [string](#string) |  |  |
-| ThirdUserPicture | [string](#string) |  |  |
-| ThirdId | [string](#string) |  |  |
+| ThirdUserAvatar | [string](#string) |  |  |
+| ThirdID | [string](#string) |  |  |
 
 
 

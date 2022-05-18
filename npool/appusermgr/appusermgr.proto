@@ -1209,11 +1209,11 @@ message AppUserThird {
     string ID = 10;
     string AppID = 20;
     string UserID = 30;
-    string ThirdUserId = 40;
+    string ThirdUserID = 40;
     string Third = 50;
     string ThirdUserName = 60;
-    string ThirdUserPicture = 70;
-    string ThirdId = 90;
+    string ThirdUserAvatar = 70;
+    string ThirdID = 90;
 }
 message CreateAppUserThirdRequest {
     AppUserThird Info = 10;

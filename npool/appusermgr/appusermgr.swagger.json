@@ -2725,7 +2725,7 @@
         "UserID": {
           "type": "string"
         },
-        "ThirdUserId": {
+        "ThirdUserID": {
           "type": "string"
         },
         "Third": {
@@ -2734,10 +2734,10 @@
         "ThirdUserName": {
           "type": "string"
         },
-        "ThirdUserPicture": {
+        "ThirdUserAvatar": {
           "type": "string"
         },
-        "ThirdId": {
+        "ThirdID": {
           "type": "string"
         }
       }
