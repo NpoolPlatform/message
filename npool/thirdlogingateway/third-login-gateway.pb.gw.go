@@ -2,11 +2,11 @@
 // source: npool/thirdlogingateway/third-login-gateway.proto
 
 /*
-Package third_login_gateway is a reverse proxy.
+Package thirdlogingateway is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package third_login_gateway
+package thirdlogingateway
 
 import (
 	"context"

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package third.logon.gateway.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/third-login-gateway";
+option go_package = "github.com/NpoolPlatform/message/npool/thirdlogingateway";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";

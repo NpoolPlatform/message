@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/thirdlogingateway/third-login-gateway.proto
 
-package third_login_gateway
+package thirdlogingateway
 
 import (
 	context "context"
