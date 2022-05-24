@@ -1,0 +1,142 @@
+syntax = "proto3";
+
+package third.logon.gateway.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/third-login-gateway";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/appusermgr/appusermgr.proto";
+// Service Name
+service ThirdLoginGateway {
+    // Method Version
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+
+    rpc GetAuths (GetAuthsRequest) returns (GetAuthsResponse){
+        option (google.api.http) = {
+            post: "/v1/get/auths"
+            body: "*"
+        };
+    }
+
+    rpc GetAuthsByApp (GetAuthsByAppRequest) returns (GetAuthsByAppResponse){
+        option (google.api.http) = {
+            post: "/v1/get/auths/by/app"
+            body: "*"
+        };
+    }
+
+    rpc CreateAuth (CreateAuthRequest) returns (CreateAuthResponse){
+        option (google.api.http) = {
+            post: "/v1/create/auth"
+            body: "*"
+        };
+    }
+
+    rpc CreateAuths (CreateAuthsRequest) returns (CreateAuthsResponse){
+        option (google.api.http) = {
+            post: "/v1/create/auths"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppAuth (CreateAppAuthRequest) returns (CreateAppAuthResponse){
+        option (google.api.http) = {
+            post: "/v1/create/app/auth"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppAuths (CreateAppAuthsRequest) returns (CreateAppAuthsResponse){
+        option (google.api.http) = {
+            post: "/v1/create/app/auths"
+            body: "*"
+        };
+    }
+
+    rpc Login (LoginRequest) returns (LoginResponse) {
+        option (google.api.http) = {
+            post: "/v1/login"
+            body: "*"
+        };
+    }
+}
+
+message ThirdAuth {
+    string ID = 10;
+    string AppID = 20;
+    string Third = 30;
+    string ThirdAppKey = 40;
+    string ThirdAppSecret = 50;
+    string CreatedAt = 60;
+    string UpdateAt = 70;
+    string LogoUrl = 80;
+    string RedirectUrl = 90;
+}
+
+message GetAuthsRequest {
+    string AppID = 10;
+}
+message GetAuthsResponse {
+    repeated Auth Infos = 10;
+}
+
+message GetAuthsByAppRequest {
+    string TargetAppID = 10;
+}
+message GetAuthsByAppResponse {
+    repeated Auth Infos = 10;
+}
+
+message CreateAuthRequest {
+    string AppID = 10;
+    ThirdAuth info = 20;
+}
+message CreateAuthResponse {
+    Auth Info = 10;
+}
+
+message CreateAuthsRequest {
+    string AppID = 10;
+    repeated ThirdAuth infos = 20;
+}
+message CreateAuthsResponse {
+    repeated Auth Infos = 10;
+}
+
+message CreateAppAuthRequest {
+    string TargetAppID = 10;
+    ThirdAuth info = 20;
+}
+message CreateAppAuthResponse {
+    Auth Info = 10;
+}
+
+message CreateAppAuthsRequest {
+    string TargetAppID = 10;
+    repeated ThirdAuth infos = 20;
+}
+message CreateAppAuthsResponse {
+    repeated Auth Infos = 10;
+}
+
+message Auth {
+    string AuthUrl = 10;
+    string LogoUrl = 20;
+    string Third = 30;
+}
+
+message LoginRequest {
+    string Code = 10;
+    string AppID = 20;
+    string Third = 30;
+}
+message LoginResponse {
+    app.user.manager.v1.AppUserInfo Info = 10;
+}
