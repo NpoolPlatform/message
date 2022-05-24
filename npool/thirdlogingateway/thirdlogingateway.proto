@@ -109,7 +109,7 @@ message UpdateThirdPartyRequest {
 }
 
 message UpdateThirdPartyResponse {
-    ThirdParty Info = 20;
+    ThirdParty Info = 10;
 }
 
 message GetThirdPartiesRequest {
