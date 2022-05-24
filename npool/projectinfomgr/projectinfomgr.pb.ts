@@ -36,6 +36,7 @@ export type CreateCoinDescriptionsResponse = {
 }
 
 export type CreateAppCoinDescriptionRequest = {
+  targetAppID?: string
   info?: CoinDescription
 }
 
@@ -88,14 +89,6 @@ export type GetCoinDescriptionOnlyRequest = {
 }
 
 export type GetCoinDescriptionOnlyResponse = {
-  info?: CoinDescription
-}
-
-export type GetAppCoinDescriptionRequest = {
-  id?: string
-}
-
-export type GetAppCoinDescriptionResponse = {
   info?: CoinDescription
 }
 
@@ -157,9 +150,6 @@ export class ProjectInfoManager {
   }
   static GetCoinDescriptionOnly(req: GetCoinDescriptionOnlyRequest, initReq?: fm.InitReq): Promise<GetCoinDescriptionOnlyResponse> {
     return fm.fetchReq<GetCoinDescriptionOnlyRequest, GetCoinDescriptionOnlyResponse>(`/v1/get/coin/description/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetAppCoinDescription(req: GetAppCoinDescriptionRequest, initReq?: fm.InitReq): Promise<GetAppCoinDescriptionResponse> {
-    return fm.fetchReq<GetAppCoinDescriptionRequest, GetAppCoinDescriptionResponse>(`/v1/get/app/coin/description`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetAppCoinDescriptions(req: GetAppCoinDescriptionsRequest, initReq?: fm.InitReq): Promise<GetAppCoinDescriptionsResponse> {
     return fm.fetchReq<GetAppCoinDescriptionsRequest, GetAppCoinDescriptionsResponse>(`/v1/get/app/coin/descriptions`, {...initReq, method: "POST", body: JSON.stringify(req)})

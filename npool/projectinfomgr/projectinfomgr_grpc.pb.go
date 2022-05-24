@@ -33,7 +33,6 @@ type ProjectInfoManagerClient interface {
 	GetCoinDescription(ctx context.Context, in *GetCoinDescriptionRequest, opts ...grpc.CallOption) (*GetCoinDescriptionResponse, error)
 	GetCoinDescriptions(ctx context.Context, in *GetCoinDescriptionsRequest, opts ...grpc.CallOption) (*GetCoinDescriptionsResponse, error)
 	GetCoinDescriptionOnly(ctx context.Context, in *GetCoinDescriptionOnlyRequest, opts ...grpc.CallOption) (*GetCoinDescriptionOnlyResponse, error)
-	GetAppCoinDescription(ctx context.Context, in *GetAppCoinDescriptionRequest, opts ...grpc.CallOption) (*GetAppCoinDescriptionResponse, error)
 	GetAppCoinDescriptions(ctx context.Context, in *GetAppCoinDescriptionsRequest, opts ...grpc.CallOption) (*GetAppCoinDescriptionsResponse, error)
 	GetAppCoinDescriptionOnly(ctx context.Context, in *GetAppCoinDescriptionOnlyRequest, opts ...grpc.CallOption) (*GetAppCoinDescriptionOnlyResponse, error)
 	DeleteCoinDescription(ctx context.Context, in *DeleteCoinDescriptionRequest, opts ...grpc.CallOption) (*DeleteCoinDescriptionResponse, error)
@@ -128,15 +127,6 @@ func (c *projectInfoManagerClient) GetCoinDescriptionOnly(ctx context.Context, i
 	return out, nil
 }
 
-func (c *projectInfoManagerClient) GetAppCoinDescription(ctx context.Context, in *GetAppCoinDescriptionRequest, opts ...grpc.CallOption) (*GetAppCoinDescriptionResponse, error) {
-	out := new(GetAppCoinDescriptionResponse)
-	err := c.cc.Invoke(ctx, "/project.info.manager.v1.ProjectInfoManager/GetAppCoinDescription", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *projectInfoManagerClient) GetAppCoinDescriptions(ctx context.Context, in *GetAppCoinDescriptionsRequest, opts ...grpc.CallOption) (*GetAppCoinDescriptionsResponse, error) {
 	out := new(GetAppCoinDescriptionsResponse)
 	err := c.cc.Invoke(ctx, "/project.info.manager.v1.ProjectInfoManager/GetAppCoinDescriptions", in, out, opts...)
@@ -177,7 +167,6 @@ type ProjectInfoManagerServer interface {
 	GetCoinDescription(context.Context, *GetCoinDescriptionRequest) (*GetCoinDescriptionResponse, error)
 	GetCoinDescriptions(context.Context, *GetCoinDescriptionsRequest) (*GetCoinDescriptionsResponse, error)
 	GetCoinDescriptionOnly(context.Context, *GetCoinDescriptionOnlyRequest) (*GetCoinDescriptionOnlyResponse, error)
-	GetAppCoinDescription(context.Context, *GetAppCoinDescriptionRequest) (*GetAppCoinDescriptionResponse, error)
 	GetAppCoinDescriptions(context.Context, *GetAppCoinDescriptionsRequest) (*GetAppCoinDescriptionsResponse, error)
 	GetAppCoinDescriptionOnly(context.Context, *GetAppCoinDescriptionOnlyRequest) (*GetAppCoinDescriptionOnlyResponse, error)
 	DeleteCoinDescription(context.Context, *DeleteCoinDescriptionRequest) (*DeleteCoinDescriptionResponse, error)
@@ -214,9 +203,6 @@ func (UnimplementedProjectInfoManagerServer) GetCoinDescriptions(context.Context
 }
 func (UnimplementedProjectInfoManagerServer) GetCoinDescriptionOnly(context.Context, *GetCoinDescriptionOnlyRequest) (*GetCoinDescriptionOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinDescriptionOnly not implemented")
-}
-func (UnimplementedProjectInfoManagerServer) GetAppCoinDescription(context.Context, *GetAppCoinDescriptionRequest) (*GetAppCoinDescriptionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppCoinDescription not implemented")
 }
 func (UnimplementedProjectInfoManagerServer) GetAppCoinDescriptions(context.Context, *GetAppCoinDescriptionsRequest) (*GetAppCoinDescriptionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppCoinDescriptions not implemented")
@@ -402,24 +388,6 @@ func _ProjectInfoManager_GetCoinDescriptionOnly_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ProjectInfoManager_GetAppCoinDescription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppCoinDescriptionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ProjectInfoManagerServer).GetAppCoinDescription(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/project.info.manager.v1.ProjectInfoManager/GetAppCoinDescription",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProjectInfoManagerServer).GetAppCoinDescription(ctx, req.(*GetAppCoinDescriptionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _ProjectInfoManager_GetAppCoinDescriptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppCoinDescriptionsRequest)
 	if err := dec(in); err != nil {
@@ -516,10 +484,6 @@ var ProjectInfoManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCoinDescriptionOnly",
 			Handler:    _ProjectInfoManager_GetCoinDescriptionOnly_Handler,
-		},
-		{
-			MethodName: "GetAppCoinDescription",
-			Handler:    _ProjectInfoManager_GetAppCoinDescription_Handler,
 		},
 		{
 			MethodName: "GetAppCoinDescriptions",

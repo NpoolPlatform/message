@@ -73,14 +73,6 @@ service ProjectInfoManager {
     };
   }
 
-  rpc GetAppCoinDescription (GetAppCoinDescriptionRequest) returns (GetAppCoinDescriptionResponse) {
-    option (google.api.http) = {
-        post: "/v1/get/app/coin/description"
-        body: "*"
-    };
-  }
-
-
   rpc GetAppCoinDescriptions (GetAppCoinDescriptionsRequest) returns (GetAppCoinDescriptionsResponse) {
     option (google.api.http) = {
         post: "/v1/get/app/coin/descriptions"
@@ -115,7 +107,7 @@ message CoinDescription {
 }
 // create
 message CreateCoinDescriptionRequest  {
-  CoinDescription Info=10;
+  CoinDescription Info = 10;
 }
 
 message CreateCoinDescriptionResponse {
@@ -132,7 +124,8 @@ message CreateCoinDescriptionsResponse {
 }
 
 message CreateAppCoinDescriptionRequest  {
-  CoinDescription Info=10;
+  string TargetAppID = 10;
+  CoinDescription Info = 20;
 }
 
 message CreateAppCoinDescriptionResponse {
@@ -189,14 +182,6 @@ message GetCoinDescriptionOnlyResponse {
   CoinDescription Info = 10;
 }
 
-message GetAppCoinDescriptionRequest {
-  string ID = 20;
-}
-
-message GetAppCoinDescriptionResponse {
-  CoinDescription Info = 10;
-}
-
 message GetAppCoinDescriptionsRequest {
   string TargetAppID = 10;
   map<string, npool.v1.FilterCond> Conds = 20;
@@ -222,7 +207,7 @@ message GetAppCoinDescriptionOnlyResponse {
 
 // delete
 message DeleteCoinDescriptionRequest {
-  string ID = 20;
+  string ID = 10;
 }
 
 message DeleteCoinDescriptionResponse {
