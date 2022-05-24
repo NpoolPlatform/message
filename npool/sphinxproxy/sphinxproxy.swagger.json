@@ -254,12 +254,14 @@
         "CoinTypeusdterc20",
         "CoinTypespacemesh",
         "CoinTypesolana",
+        "CoinTypeusdttrc20",
         "CoinTypetfilecoin",
         "CoinTypetbitcoin",
         "CoinTypetethereum",
         "CoinTypetusdterc20",
         "CoinTypetspacemesh",
-        "CoinTypetsolana"
+        "CoinTypetsolana",
+        "CoinTypetusdttrc20"
       ],
       "default": "CoinTypeUnKnow",
       "title": "- CoinTypefilecoin: mainnet\n - CoinTypetfilecoin: testnet"
@@ -625,6 +627,11 @@
         "RecentBhash": {
           "type": "string",
           "title": "sol"
+        },
+        "TxData": {
+          "type": "string",
+          "format": "byte",
+          "title": "trc20"
         }
       },
       "title": "fil"
