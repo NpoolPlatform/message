@@ -12,6 +12,7 @@ export type ThirdParty = {
   id?: string
   brandName?: string
   logo?: string
+  authUrl?: string
 }
 
 export type CreateThirdPartyRequest = {

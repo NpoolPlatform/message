@@ -775,6 +775,9 @@
         },
         "Logo": {
           "type": "string"
+        },
+        "AuthUrl": {
+          "type": "string"
         }
       }
     },

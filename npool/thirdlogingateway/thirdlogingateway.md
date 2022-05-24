@@ -366,6 +366,7 @@
 | ID | [string](#string) |  |  |
 | BrandName | [string](#string) |  |  |
 | Logo | [string](#string) |  |  |
+| AuthUrl | [string](#string) |  |  |
 
 
 
@@ -738,6 +739,7 @@ Service Name
 | ID | [string](#string) |  |  |
 | BrandName | [string](#string) |  |  |
 | Logo | [string](#string) |  |  |
+| AuthUrl | [string](#string) |  |  |
 
 
 
