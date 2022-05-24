@@ -125,6 +125,7 @@ message Auth {
     string ThirdPartyID = 30;
     string AppKey = 40;
     string AppSecret = 50;
+    string RedirectUrl = 60;
 }
 
 message GetAuthsRequest {

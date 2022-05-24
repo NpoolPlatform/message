@@ -79,6 +79,7 @@
 | ThirdPartyID | [string](#string) |  |  |
 | AppKey | [string](#string) |  |  |
 | AppSecret | [string](#string) |  |  |
+| RedirectUrl | [string](#string) |  |  |
 
 
 
@@ -453,6 +454,7 @@ Service Name
 | ThirdPartyID | [string](#string) |  |  |
 | AppKey | [string](#string) |  |  |
 | AppSecret | [string](#string) |  |  |
+| RedirectUrl | [string](#string) |  |  |
 
 
 

@@ -569,6 +569,9 @@
         },
         "AppSecret": {
           "type": "string"
+        },
+        "RedirectUrl": {
+          "type": "string"
         }
       }
     },
