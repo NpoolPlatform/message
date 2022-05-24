@@ -502,7 +502,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Auth"
+          "$ref": "#/definitions/v1ThirdAuth"
         }
       }
     },
@@ -526,7 +526,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Auth"
+            "$ref": "#/definitions/v1ThirdAuth"
           }
         }
       }
@@ -546,7 +546,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Auth"
+          "$ref": "#/definitions/v1ThirdAuth"
         }
       }
     },
@@ -570,7 +570,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Auth"
+            "$ref": "#/definitions/v1ThirdAuth"
           }
         }
       }

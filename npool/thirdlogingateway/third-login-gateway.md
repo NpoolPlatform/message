@@ -95,7 +95,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#third-logon-gateway-v1-Auth) |  |  |
+| Info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
 
 
 
@@ -126,7 +126,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#third-logon-gateway-v1-Auth) | repeated |  |
+| Infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
 
 
 
@@ -157,7 +157,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#third-logon-gateway-v1-Auth) |  |  |
+| Info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
 
 
 
@@ -188,7 +188,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#third-logon-gateway-v1-Auth) | repeated |  |
+| Infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
 
 
 
@@ -384,7 +384,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#third-logon-gateway-v1-Auth) |  |  |
+| Info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
 
 
 
@@ -415,7 +415,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#third-logon-gateway-v1-Auth) | repeated |  |
+| Infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
 
 
 
@@ -446,7 +446,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [Auth](#third-logon-gateway-v1-Auth) |  |  |
+| Info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
 
 
 
@@ -477,7 +477,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [Auth](#third-logon-gateway-v1-Auth) | repeated |  |
+| Infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
 
 
 

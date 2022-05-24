@@ -42,7 +42,7 @@ export type CreateAuthRequest = {
 }
 
 export type CreateAuthResponse = {
-  info?: Auth
+  info?: ThirdAuth
 }
 
 export type CreateAuthsRequest = {
@@ -51,7 +51,7 @@ export type CreateAuthsRequest = {
 }
 
 export type CreateAuthsResponse = {
-  infos?: Auth[]
+  infos?: ThirdAuth[]
 }
 
 export type CreateAppAuthRequest = {
@@ -60,7 +60,7 @@ export type CreateAppAuthRequest = {
 }
 
 export type CreateAppAuthResponse = {
-  info?: Auth
+  info?: ThirdAuth
 }
 
 export type CreateAppAuthsRequest = {
@@ -69,7 +69,7 @@ export type CreateAppAuthsRequest = {
 }
 
 export type CreateAppAuthsResponse = {
-  infos?: Auth[]
+  infos?: ThirdAuth[]
 }
 
 export type Auth = {

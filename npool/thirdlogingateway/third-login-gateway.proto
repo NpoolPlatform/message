@@ -99,7 +99,7 @@ message CreateAuthRequest {
     ThirdAuth info = 20;
 }
 message CreateAuthResponse {
-    Auth Info = 10;
+    ThirdAuth Info = 10;
 }
 
 message CreateAuthsRequest {
@@ -107,7 +107,7 @@ message CreateAuthsRequest {
     repeated ThirdAuth infos = 20;
 }
 message CreateAuthsResponse {
-    repeated Auth Infos = 10;
+    repeated ThirdAuth Infos = 10;
 }
 
 message CreateAppAuthRequest {
@@ -115,7 +115,7 @@ message CreateAppAuthRequest {
     ThirdAuth info = 20;
 }
 message CreateAppAuthResponse {
-    Auth Info = 10;
+    ThirdAuth Info = 10;
 }
 
 message CreateAppAuthsRequest {
@@ -123,7 +123,7 @@ message CreateAppAuthsRequest {
     repeated ThirdAuth infos = 20;
 }
 message CreateAppAuthsResponse {
-    repeated Auth Infos = 10;
+    repeated ThirdAuth Infos = 10;
 }
 
 message Auth {
