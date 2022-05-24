@@ -100,8 +100,8 @@ func local_request_ThirdLoginGateway_GetAuths_0(ctx context.Context, marshaler r
 
 }
 
-func request_ThirdLoginGateway_GetAuthsByApp_0(ctx context.Context, marshaler runtime.Marshaler, client ThirdLoginGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAuthsByAppRequest
+func request_ThirdLoginGateway_GetAppAuths_0(ctx context.Context, marshaler runtime.Marshaler, client ThirdLoginGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppAuthsRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -112,13 +112,13 @@ func request_ThirdLoginGateway_GetAuthsByApp_0(ctx context.Context, marshaler ru
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetAuthsByApp(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppAuths(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_ThirdLoginGateway_GetAuthsByApp_0(ctx context.Context, marshaler runtime.Marshaler, server ThirdLoginGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAuthsByAppRequest
+func local_request_ThirdLoginGateway_GetAppAuths_0(ctx context.Context, marshaler runtime.Marshaler, server ThirdLoginGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppAuthsRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -129,7 +129,7 @@ func local_request_ThirdLoginGateway_GetAuthsByApp_0(ctx context.Context, marsha
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetAuthsByApp(ctx, &protoReq)
+	msg, err := server.GetAppAuths(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -270,6 +270,108 @@ func local_request_ThirdLoginGateway_CreateAppAuths_0(ctx context.Context, marsh
 
 }
 
+func request_ThirdLoginGateway_CreateThirdParty_0(ctx context.Context, marshaler runtime.Marshaler, client ThirdLoginGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateThirdPartyRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.CreateThirdParty(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func local_request_ThirdLoginGateway_CreateThirdParty_0(ctx context.Context, marshaler runtime.Marshaler, server ThirdLoginGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateThirdPartyRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := server.CreateThirdParty(ctx, &protoReq)
+	return msg, metadata, err
+
+}
+
+func request_ThirdLoginGateway_UpdateThirdParty_0(ctx context.Context, marshaler runtime.Marshaler, client ThirdLoginGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateThirdPartyRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.UpdateThirdParty(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func local_request_ThirdLoginGateway_UpdateThirdParty_0(ctx context.Context, marshaler runtime.Marshaler, server ThirdLoginGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateThirdPartyRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := server.UpdateThirdParty(ctx, &protoReq)
+	return msg, metadata, err
+
+}
+
+func request_ThirdLoginGateway_GetThirdParties_0(ctx context.Context, marshaler runtime.Marshaler, client ThirdLoginGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetThirdPartiesRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.GetThirdParties(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func local_request_ThirdLoginGateway_GetThirdParties_0(ctx context.Context, marshaler runtime.Marshaler, server ThirdLoginGatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetThirdPartiesRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := server.GetThirdParties(ctx, &protoReq)
+	return msg, metadata, err
+
+}
+
 func request_ThirdLoginGateway_Login_0(ctx context.Context, marshaler runtime.Marshaler, client ThirdLoginGatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq LoginRequest
 	var metadata runtime.ServerMetadata
@@ -356,18 +458,18 @@ func RegisterThirdLoginGatewayHandlerServer(ctx context.Context, mux *runtime.Se
 
 	})
 
-	mux.Handle("POST", pattern_ThirdLoginGateway_GetAuthsByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ThirdLoginGateway_GetAppAuths_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/third.logon.gateway.v1.ThirdLoginGateway/GetAuthsByApp", runtime.WithHTTPPathPattern("/v1/get/auths/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/third.logon.gateway.v1.ThirdLoginGateway/GetAppAuths", runtime.WithHTTPPathPattern("/v1/get/app/auths"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ThirdLoginGateway_GetAuthsByApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ThirdLoginGateway_GetAppAuths_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -375,7 +477,7 @@ func RegisterThirdLoginGatewayHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_ThirdLoginGateway_GetAuthsByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ThirdLoginGateway_GetAppAuths_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -468,6 +570,75 @@ func RegisterThirdLoginGatewayHandlerServer(ctx context.Context, mux *runtime.Se
 		}
 
 		forward_ThirdLoginGateway_CreateAppAuths_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
+	mux.Handle("POST", pattern_ThirdLoginGateway_CreateThirdParty_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/third.logon.gateway.v1.ThirdLoginGateway/CreateThirdParty", runtime.WithHTTPPathPattern("/v1/create/third/party"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_ThirdLoginGateway_CreateThirdParty_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_ThirdLoginGateway_CreateThirdParty_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
+	mux.Handle("POST", pattern_ThirdLoginGateway_UpdateThirdParty_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/third.logon.gateway.v1.ThirdLoginGateway/UpdateThirdParty", runtime.WithHTTPPathPattern("/v1/update/third/party"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_ThirdLoginGateway_UpdateThirdParty_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_ThirdLoginGateway_UpdateThirdParty_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
+	mux.Handle("POST", pattern_ThirdLoginGateway_GetThirdParties_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/third.logon.gateway.v1.ThirdLoginGateway/GetThirdParties", runtime.WithHTTPPathPattern("/v1/get/third/parties"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_ThirdLoginGateway_GetThirdParties_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_ThirdLoginGateway_GetThirdParties_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -575,23 +746,23 @@ func RegisterThirdLoginGatewayHandlerClient(ctx context.Context, mux *runtime.Se
 
 	})
 
-	mux.Handle("POST", pattern_ThirdLoginGateway_GetAuthsByApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ThirdLoginGateway_GetAppAuths_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/third.logon.gateway.v1.ThirdLoginGateway/GetAuthsByApp", runtime.WithHTTPPathPattern("/v1/get/auths/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/third.logon.gateway.v1.ThirdLoginGateway/GetAppAuths", runtime.WithHTTPPathPattern("/v1/get/app/auths"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ThirdLoginGateway_GetAuthsByApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ThirdLoginGateway_GetAppAuths_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ThirdLoginGateway_GetAuthsByApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ThirdLoginGateway_GetAppAuths_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -675,6 +846,66 @@ func RegisterThirdLoginGatewayHandlerClient(ctx context.Context, mux *runtime.Se
 
 	})
 
+	mux.Handle("POST", pattern_ThirdLoginGateway_CreateThirdParty_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/third.logon.gateway.v1.ThirdLoginGateway/CreateThirdParty", runtime.WithHTTPPathPattern("/v1/create/third/party"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_ThirdLoginGateway_CreateThirdParty_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_ThirdLoginGateway_CreateThirdParty_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
+	mux.Handle("POST", pattern_ThirdLoginGateway_UpdateThirdParty_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/third.logon.gateway.v1.ThirdLoginGateway/UpdateThirdParty", runtime.WithHTTPPathPattern("/v1/update/third/party"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_ThirdLoginGateway_UpdateThirdParty_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_ThirdLoginGateway_UpdateThirdParty_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
+	mux.Handle("POST", pattern_ThirdLoginGateway_GetThirdParties_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/third.logon.gateway.v1.ThirdLoginGateway/GetThirdParties", runtime.WithHTTPPathPattern("/v1/get/third/parties"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_ThirdLoginGateway_GetThirdParties_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_ThirdLoginGateway_GetThirdParties_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
 	mux.Handle("POST", pattern_ThirdLoginGateway_Login_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -703,7 +934,7 @@ var (
 
 	pattern_ThirdLoginGateway_GetAuths_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "auths"}, ""))
 
-	pattern_ThirdLoginGateway_GetAuthsByApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "auths", "by", "app"}, ""))
+	pattern_ThirdLoginGateway_GetAppAuths_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "app", "auths"}, ""))
 
 	pattern_ThirdLoginGateway_CreateAuth_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "auth"}, ""))
 
@@ -713,6 +944,12 @@ var (
 
 	pattern_ThirdLoginGateway_CreateAppAuths_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "app", "auths"}, ""))
 
+	pattern_ThirdLoginGateway_CreateThirdParty_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "third", "party"}, ""))
+
+	pattern_ThirdLoginGateway_UpdateThirdParty_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "update", "third", "party"}, ""))
+
+	pattern_ThirdLoginGateway_GetThirdParties_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "third", "parties"}, ""))
+
 	pattern_ThirdLoginGateway_Login_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "login"}, ""))
 )
 
@@ -721,7 +958,7 @@ var (
 
 	forward_ThirdLoginGateway_GetAuths_0 = runtime.ForwardResponseMessage
 
-	forward_ThirdLoginGateway_GetAuthsByApp_0 = runtime.ForwardResponseMessage
+	forward_ThirdLoginGateway_GetAppAuths_0 = runtime.ForwardResponseMessage
 
 	forward_ThirdLoginGateway_CreateAuth_0 = runtime.ForwardResponseMessage
 
@@ -730,6 +967,12 @@ var (
 	forward_ThirdLoginGateway_CreateAppAuth_0 = runtime.ForwardResponseMessage
 
 	forward_ThirdLoginGateway_CreateAppAuths_0 = runtime.ForwardResponseMessage
+
+	forward_ThirdLoginGateway_CreateThirdParty_0 = runtime.ForwardResponseMessage
+
+	forward_ThirdLoginGateway_UpdateThirdParty_0 = runtime.ForwardResponseMessage
+
+	forward_ThirdLoginGateway_GetThirdParties_0 = runtime.ForwardResponseMessage
 
 	forward_ThirdLoginGateway_Login_0 = runtime.ForwardResponseMessage
 )

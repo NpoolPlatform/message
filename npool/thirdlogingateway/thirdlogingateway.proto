@@ -8,6 +8,7 @@ import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 import "npool/appusermgr/appusermgr.proto";
+
 // Service Name
 service ThirdLoginGateway {
     // Method Version
@@ -25,9 +26,9 @@ service ThirdLoginGateway {
         };
     }
 
-    rpc GetAuthsByApp (GetAuthsByAppRequest) returns (GetAuthsByAppResponse){
+    rpc GetAppAuths (GetAppAuthsRequest) returns (GetAppAuthsResponse){
         option (google.api.http) = {
-            post: "/v1/get/auths/by/app"
+            post: "/v1/get/app/auths"
             body: "*"
         };
     }
@@ -60,6 +61,25 @@ service ThirdLoginGateway {
         };
     }
 
+    rpc CreateThirdParty (CreateThirdPartyRequest) returns (CreateThirdPartyResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/third/party"
+            body: "*"
+        };
+    }
+    rpc UpdateThirdParty (UpdateThirdPartyRequest) returns (UpdateThirdPartyResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/third/party"
+            body: "*"
+        };
+    }
+    rpc GetThirdParties (GetThirdPartiesRequest) returns (GetThirdPartiesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/third/parties"
+            body: "*"
+        };
+    }
+
     rpc Login (LoginRequest) returns (LoginResponse) {
         option (google.api.http) = {
             post: "/v1/login"
@@ -68,16 +88,41 @@ service ThirdLoginGateway {
     }
 }
 
-message ThirdAuth {
+message ThirdParty {
+    string ID = 10;
+    string BrandName = 20;
+    string Logo = 30;
+}
+
+message CreateThirdPartyRequest {
+    ThirdParty Info = 10;
+}
+
+message CreateThirdPartyResponse {
+    ThirdParty Info = 10;
+}
+
+message UpdateThirdPartyRequest {
+    ThirdParty Info = 10;
+}
+
+message UpdateThirdPartyResponse {
+    ThirdParty Info = 20;
+}
+
+message GetThirdPartiesRequest {
+}
+
+message GetThirdPartiesResponse {
+    repeated ThirdParty Infos = 10;
+}
+
+message Auth {
     string ID = 10;
     string AppID = 20;
-    string Third = 30;
-    string ThirdAppKey = 40;
-    string ThirdAppSecret = 50;
-    string CreatedAt = 60;
-    string UpdateAt = 70;
-    string LogoUrl = 80;
-    string RedirectUrl = 90;
+    string ThirdPartyID = 30;
+    string AppKey = 40;
+    string AppSecret = 50;
 }
 
 message GetAuthsRequest {
@@ -87,56 +132,50 @@ message GetAuthsResponse {
     repeated Auth Infos = 10;
 }
 
-message GetAuthsByAppRequest {
+message GetAppAuthsRequest {
     string TargetAppID = 10;
 }
-message GetAuthsByAppResponse {
+message GetAppAuthsResponse {
     repeated Auth Infos = 10;
 }
 
 message CreateAuthRequest {
-    string AppID = 10;
-    ThirdAuth info = 20;
+    Auth Info = 10;
 }
 message CreateAuthResponse {
-    ThirdAuth Info = 10;
+    Auth Info = 10;
 }
 
 message CreateAuthsRequest {
     string AppID = 10;
-    repeated ThirdAuth infos = 20;
+    repeated Auth Infos = 20;
 }
 message CreateAuthsResponse {
-    repeated ThirdAuth Infos = 10;
+    repeated Auth Infos = 10;
 }
 
 message CreateAppAuthRequest {
     string TargetAppID = 10;
-    ThirdAuth info = 20;
+    Auth Info = 20;
 }
 message CreateAppAuthResponse {
-    ThirdAuth Info = 10;
+    Auth Info = 10;
 }
 
 message CreateAppAuthsRequest {
     string TargetAppID = 10;
-    repeated ThirdAuth infos = 20;
+    repeated Auth Infos = 20;
 }
 message CreateAppAuthsResponse {
-    repeated ThirdAuth Infos = 10;
-}
-
-message Auth {
-    string AuthUrl = 10;
-    string LogoUrl = 20;
-    string Third = 30;
+    repeated Auth Infos = 10;
 }
 
 message LoginRequest {
     string Code = 10;
     string AppID = 20;
-    string Third = 30;
+    string ThirdPartyID = 30;
 }
+
 message LoginResponse {
     app.user.manager.v1.AppUserInfo Info = 10;
 }

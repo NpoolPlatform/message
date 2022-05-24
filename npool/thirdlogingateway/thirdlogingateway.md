@@ -13,13 +13,19 @@
     - [CreateAuthResponse](#third-logon-gateway-v1-CreateAuthResponse)
     - [CreateAuthsRequest](#third-logon-gateway-v1-CreateAuthsRequest)
     - [CreateAuthsResponse](#third-logon-gateway-v1-CreateAuthsResponse)
-    - [GetAuthsByAppRequest](#third-logon-gateway-v1-GetAuthsByAppRequest)
-    - [GetAuthsByAppResponse](#third-logon-gateway-v1-GetAuthsByAppResponse)
+    - [CreateThirdPartyRequest](#third-logon-gateway-v1-CreateThirdPartyRequest)
+    - [CreateThirdPartyResponse](#third-logon-gateway-v1-CreateThirdPartyResponse)
+    - [GetAppAuthsRequest](#third-logon-gateway-v1-GetAppAuthsRequest)
+    - [GetAppAuthsResponse](#third-logon-gateway-v1-GetAppAuthsResponse)
     - [GetAuthsRequest](#third-logon-gateway-v1-GetAuthsRequest)
     - [GetAuthsResponse](#third-logon-gateway-v1-GetAuthsResponse)
+    - [GetThirdPartiesRequest](#third-logon-gateway-v1-GetThirdPartiesRequest)
+    - [GetThirdPartiesResponse](#third-logon-gateway-v1-GetThirdPartiesResponse)
     - [LoginRequest](#third-logon-gateway-v1-LoginRequest)
     - [LoginResponse](#third-logon-gateway-v1-LoginResponse)
-    - [ThirdAuth](#third-logon-gateway-v1-ThirdAuth)
+    - [ThirdParty](#third-logon-gateway-v1-ThirdParty)
+    - [UpdateThirdPartyRequest](#third-logon-gateway-v1-UpdateThirdPartyRequest)
+    - [UpdateThirdPartyResponse](#third-logon-gateway-v1-UpdateThirdPartyResponse)
   
     - [ThirdLoginGateway](#third-logon-gateway-v1-ThirdLoginGateway)
   
@@ -33,13 +39,19 @@
     - [CreateAuthResponse](#third-logon-gateway-v1-CreateAuthResponse)
     - [CreateAuthsRequest](#third-logon-gateway-v1-CreateAuthsRequest)
     - [CreateAuthsResponse](#third-logon-gateway-v1-CreateAuthsResponse)
-    - [GetAuthsByAppRequest](#third-logon-gateway-v1-GetAuthsByAppRequest)
-    - [GetAuthsByAppResponse](#third-logon-gateway-v1-GetAuthsByAppResponse)
+    - [CreateThirdPartyRequest](#third-logon-gateway-v1-CreateThirdPartyRequest)
+    - [CreateThirdPartyResponse](#third-logon-gateway-v1-CreateThirdPartyResponse)
+    - [GetAppAuthsRequest](#third-logon-gateway-v1-GetAppAuthsRequest)
+    - [GetAppAuthsResponse](#third-logon-gateway-v1-GetAppAuthsResponse)
     - [GetAuthsRequest](#third-logon-gateway-v1-GetAuthsRequest)
     - [GetAuthsResponse](#third-logon-gateway-v1-GetAuthsResponse)
+    - [GetThirdPartiesRequest](#third-logon-gateway-v1-GetThirdPartiesRequest)
+    - [GetThirdPartiesResponse](#third-logon-gateway-v1-GetThirdPartiesResponse)
     - [LoginRequest](#third-logon-gateway-v1-LoginRequest)
     - [LoginResponse](#third-logon-gateway-v1-LoginResponse)
-    - [ThirdAuth](#third-logon-gateway-v1-ThirdAuth)
+    - [ThirdParty](#third-logon-gateway-v1-ThirdParty)
+    - [UpdateThirdPartyRequest](#third-logon-gateway-v1-UpdateThirdPartyRequest)
+    - [UpdateThirdPartyResponse](#third-logon-gateway-v1-UpdateThirdPartyResponse)
   
     - [ThirdLoginGateway](#third-logon-gateway-v1-ThirdLoginGateway)
   
@@ -62,9 +74,11 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| AuthUrl | [string](#string) |  |  |
-| LogoUrl | [string](#string) |  |  |
-| Third | [string](#string) |  |  |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| ThirdPartyID | [string](#string) |  |  |
+| AppKey | [string](#string) |  |  |
+| AppSecret | [string](#string) |  |  |
 
 
 
@@ -80,7 +94,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
+| Info | [Auth](#third-logon-gateway-v1-Auth) |  |  |
 
 
 
@@ -95,7 +109,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
+| Info | [Auth](#third-logon-gateway-v1-Auth) |  |  |
 
 
 
@@ -111,7 +125,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
+| Infos | [Auth](#third-logon-gateway-v1-Auth) | repeated |  |
 
 
 
@@ -126,7 +140,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
+| Infos | [Auth](#third-logon-gateway-v1-Auth) | repeated |  |
 
 
 
@@ -141,8 +155,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-| info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
+| Info | [Auth](#third-logon-gateway-v1-Auth) |  |  |
 
 
 
@@ -157,7 +170,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
+| Info | [Auth](#third-logon-gateway-v1-Auth) |  |  |
 
 
 
@@ -173,7 +186,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
+| Infos | [Auth](#third-logon-gateway-v1-Auth) | repeated |  |
 
 
 
@@ -188,16 +201,46 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
+| Infos | [Auth](#third-logon-gateway-v1-Auth) | repeated |  |
 
 
 
 
 
 
-<a name="third-logon-gateway-v1-GetAuthsByAppRequest"></a>
+<a name="third-logon-gateway-v1-CreateThirdPartyRequest"></a>
 
-### GetAuthsByAppRequest
+### CreateThirdPartyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ThirdParty](#third-logon-gateway-v1-ThirdParty) |  |  |
+
+
+
+
+
+
+<a name="third-logon-gateway-v1-CreateThirdPartyResponse"></a>
+
+### CreateThirdPartyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ThirdParty](#third-logon-gateway-v1-ThirdParty) |  |  |
+
+
+
+
+
+
+<a name="third-logon-gateway-v1-GetAppAuthsRequest"></a>
+
+### GetAppAuthsRequest
 
 
 
@@ -210,9 +253,9 @@
 
 
 
-<a name="third-logon-gateway-v1-GetAuthsByAppResponse"></a>
+<a name="third-logon-gateway-v1-GetAppAuthsResponse"></a>
 
-### GetAuthsByAppResponse
+### GetAppAuthsResponse
 
 
 
@@ -255,6 +298,31 @@
 
 
 
+<a name="third-logon-gateway-v1-GetThirdPartiesRequest"></a>
+
+### GetThirdPartiesRequest
+
+
+
+
+
+
+
+<a name="third-logon-gateway-v1-GetThirdPartiesResponse"></a>
+
+### GetThirdPartiesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [ThirdParty](#third-logon-gateway-v1-ThirdParty) | repeated |  |
+
+
+
+
+
+
 <a name="third-logon-gateway-v1-LoginRequest"></a>
 
 ### LoginRequest
@@ -265,7 +333,7 @@
 | ----- | ---- | ----- | ----------- |
 | Code | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
-| Third | [string](#string) |  |  |
+| ThirdPartyID | [string](#string) |  |  |
 
 
 
@@ -287,23 +355,47 @@
 
 
 
-<a name="third-logon-gateway-v1-ThirdAuth"></a>
+<a name="third-logon-gateway-v1-ThirdParty"></a>
 
-### ThirdAuth
+### ThirdParty
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| Third | [string](#string) |  |  |
-| ThirdAppKey | [string](#string) |  |  |
-| ThirdAppSecret | [string](#string) |  |  |
-| CreatedAt | [string](#string) |  |  |
-| UpdateAt | [string](#string) |  |  |
-| LogoUrl | [string](#string) |  |  |
-| RedirectUrl | [string](#string) |  |  |
+| BrandName | [string](#string) |  |  |
+| Logo | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third-logon-gateway-v1-UpdateThirdPartyRequest"></a>
+
+### UpdateThirdPartyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ThirdParty](#third-logon-gateway-v1-ThirdParty) |  |  |
+
+
+
+
+
+
+<a name="third-logon-gateway-v1-UpdateThirdPartyResponse"></a>
+
+### UpdateThirdPartyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ThirdParty](#third-logon-gateway-v1-ThirdParty) |  |  |
 
 
 
@@ -325,11 +417,14 @@ Service Name
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) | Method Version |
 | GetAuths | [GetAuthsRequest](#third-logon-gateway-v1-GetAuthsRequest) | [GetAuthsResponse](#third-logon-gateway-v1-GetAuthsResponse) |  |
-| GetAuthsByApp | [GetAuthsByAppRequest](#third-logon-gateway-v1-GetAuthsByAppRequest) | [GetAuthsByAppResponse](#third-logon-gateway-v1-GetAuthsByAppResponse) |  |
+| GetAppAuths | [GetAppAuthsRequest](#third-logon-gateway-v1-GetAppAuthsRequest) | [GetAppAuthsResponse](#third-logon-gateway-v1-GetAppAuthsResponse) |  |
 | CreateAuth | [CreateAuthRequest](#third-logon-gateway-v1-CreateAuthRequest) | [CreateAuthResponse](#third-logon-gateway-v1-CreateAuthResponse) |  |
 | CreateAuths | [CreateAuthsRequest](#third-logon-gateway-v1-CreateAuthsRequest) | [CreateAuthsResponse](#third-logon-gateway-v1-CreateAuthsResponse) |  |
 | CreateAppAuth | [CreateAppAuthRequest](#third-logon-gateway-v1-CreateAppAuthRequest) | [CreateAppAuthResponse](#third-logon-gateway-v1-CreateAppAuthResponse) |  |
 | CreateAppAuths | [CreateAppAuthsRequest](#third-logon-gateway-v1-CreateAppAuthsRequest) | [CreateAppAuthsResponse](#third-logon-gateway-v1-CreateAppAuthsResponse) |  |
+| CreateThirdParty | [CreateThirdPartyRequest](#third-logon-gateway-v1-CreateThirdPartyRequest) | [CreateThirdPartyResponse](#third-logon-gateway-v1-CreateThirdPartyResponse) |  |
+| UpdateThirdParty | [UpdateThirdPartyRequest](#third-logon-gateway-v1-UpdateThirdPartyRequest) | [UpdateThirdPartyResponse](#third-logon-gateway-v1-UpdateThirdPartyResponse) |  |
+| GetThirdParties | [GetThirdPartiesRequest](#third-logon-gateway-v1-GetThirdPartiesRequest) | [GetThirdPartiesResponse](#third-logon-gateway-v1-GetThirdPartiesResponse) |  |
 | Login | [LoginRequest](#third-logon-gateway-v1-LoginRequest) | [LoginResponse](#third-logon-gateway-v1-LoginResponse) |  |
 
  
@@ -351,9 +446,11 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| AuthUrl | [string](#string) |  |  |
-| LogoUrl | [string](#string) |  |  |
-| Third | [string](#string) |  |  |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| ThirdPartyID | [string](#string) |  |  |
+| AppKey | [string](#string) |  |  |
+| AppSecret | [string](#string) |  |  |
 
 
 
@@ -369,7 +466,7 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
+| Info | [Auth](#third-logon-gateway-v1-Auth) |  |  |
 
 
 
@@ -384,7 +481,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
+| Info | [Auth](#third-logon-gateway-v1-Auth) |  |  |
 
 
 
@@ -400,7 +497,7 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
+| Infos | [Auth](#third-logon-gateway-v1-Auth) | repeated |  |
 
 
 
@@ -415,7 +512,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
+| Infos | [Auth](#third-logon-gateway-v1-Auth) | repeated |  |
 
 
 
@@ -430,8 +527,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
-| info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
+| Info | [Auth](#third-logon-gateway-v1-Auth) |  |  |
 
 
 
@@ -446,7 +542,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
+| Info | [Auth](#third-logon-gateway-v1-Auth) |  |  |
 
 
 
@@ -462,7 +558,7 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
+| Infos | [Auth](#third-logon-gateway-v1-Auth) | repeated |  |
 
 
 
@@ -477,16 +573,46 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
+| Infos | [Auth](#third-logon-gateway-v1-Auth) | repeated |  |
 
 
 
 
 
 
-<a name="third-logon-gateway-v1-GetAuthsByAppRequest"></a>
+<a name="third-logon-gateway-v1-CreateThirdPartyRequest"></a>
 
-### GetAuthsByAppRequest
+### CreateThirdPartyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ThirdParty](#third-logon-gateway-v1-ThirdParty) |  |  |
+
+
+
+
+
+
+<a name="third-logon-gateway-v1-CreateThirdPartyResponse"></a>
+
+### CreateThirdPartyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ThirdParty](#third-logon-gateway-v1-ThirdParty) |  |  |
+
+
+
+
+
+
+<a name="third-logon-gateway-v1-GetAppAuthsRequest"></a>
+
+### GetAppAuthsRequest
 
 
 
@@ -499,9 +625,9 @@ Service Name
 
 
 
-<a name="third-logon-gateway-v1-GetAuthsByAppResponse"></a>
+<a name="third-logon-gateway-v1-GetAppAuthsResponse"></a>
 
-### GetAuthsByAppResponse
+### GetAppAuthsResponse
 
 
 
@@ -544,6 +670,31 @@ Service Name
 
 
 
+<a name="third-logon-gateway-v1-GetThirdPartiesRequest"></a>
+
+### GetThirdPartiesRequest
+
+
+
+
+
+
+
+<a name="third-logon-gateway-v1-GetThirdPartiesResponse"></a>
+
+### GetThirdPartiesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [ThirdParty](#third-logon-gateway-v1-ThirdParty) | repeated |  |
+
+
+
+
+
+
 <a name="third-logon-gateway-v1-LoginRequest"></a>
 
 ### LoginRequest
@@ -554,7 +705,7 @@ Service Name
 | ----- | ---- | ----- | ----------- |
 | Code | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
-| Third | [string](#string) |  |  |
+| ThirdPartyID | [string](#string) |  |  |
 
 
 
@@ -576,23 +727,47 @@ Service Name
 
 
 
-<a name="third-logon-gateway-v1-ThirdAuth"></a>
+<a name="third-logon-gateway-v1-ThirdParty"></a>
 
-### ThirdAuth
+### ThirdParty
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
-| AppID | [string](#string) |  |  |
-| Third | [string](#string) |  |  |
-| ThirdAppKey | [string](#string) |  |  |
-| ThirdAppSecret | [string](#string) |  |  |
-| CreatedAt | [string](#string) |  |  |
-| UpdateAt | [string](#string) |  |  |
-| LogoUrl | [string](#string) |  |  |
-| RedirectUrl | [string](#string) |  |  |
+| BrandName | [string](#string) |  |  |
+| Logo | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third-logon-gateway-v1-UpdateThirdPartyRequest"></a>
+
+### UpdateThirdPartyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ThirdParty](#third-logon-gateway-v1-ThirdParty) |  |  |
+
+
+
+
+
+
+<a name="third-logon-gateway-v1-UpdateThirdPartyResponse"></a>
+
+### UpdateThirdPartyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ThirdParty](#third-logon-gateway-v1-ThirdParty) |  |  |
 
 
 
@@ -614,11 +789,14 @@ Service Name
 | ----------- | ------------ | ------------- | ------------|
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) | Method Version |
 | GetAuths | [GetAuthsRequest](#third-logon-gateway-v1-GetAuthsRequest) | [GetAuthsResponse](#third-logon-gateway-v1-GetAuthsResponse) |  |
-| GetAuthsByApp | [GetAuthsByAppRequest](#third-logon-gateway-v1-GetAuthsByAppRequest) | [GetAuthsByAppResponse](#third-logon-gateway-v1-GetAuthsByAppResponse) |  |
+| GetAppAuths | [GetAppAuthsRequest](#third-logon-gateway-v1-GetAppAuthsRequest) | [GetAppAuthsResponse](#third-logon-gateway-v1-GetAppAuthsResponse) |  |
 | CreateAuth | [CreateAuthRequest](#third-logon-gateway-v1-CreateAuthRequest) | [CreateAuthResponse](#third-logon-gateway-v1-CreateAuthResponse) |  |
 | CreateAuths | [CreateAuthsRequest](#third-logon-gateway-v1-CreateAuthsRequest) | [CreateAuthsResponse](#third-logon-gateway-v1-CreateAuthsResponse) |  |
 | CreateAppAuth | [CreateAppAuthRequest](#third-logon-gateway-v1-CreateAppAuthRequest) | [CreateAppAuthResponse](#third-logon-gateway-v1-CreateAppAuthResponse) |  |
 | CreateAppAuths | [CreateAppAuthsRequest](#third-logon-gateway-v1-CreateAppAuthsRequest) | [CreateAppAuthsResponse](#third-logon-gateway-v1-CreateAppAuthsResponse) |  |
+| CreateThirdParty | [CreateThirdPartyRequest](#third-logon-gateway-v1-CreateThirdPartyRequest) | [CreateThirdPartyResponse](#third-logon-gateway-v1-CreateThirdPartyResponse) |  |
+| UpdateThirdParty | [UpdateThirdPartyRequest](#third-logon-gateway-v1-UpdateThirdPartyRequest) | [UpdateThirdPartyResponse](#third-logon-gateway-v1-UpdateThirdPartyResponse) |  |
+| GetThirdParties | [GetThirdPartiesRequest](#third-logon-gateway-v1-GetThirdPartiesRequest) | [GetThirdPartiesResponse](#third-logon-gateway-v1-GetThirdPartiesResponse) |  |
 | Login | [LoginRequest](#third-logon-gateway-v1-LoginRequest) | [LoginResponse](#third-logon-gateway-v1-LoginResponse) |  |
 
  

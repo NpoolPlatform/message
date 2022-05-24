@@ -139,6 +139,70 @@
         ]
       }
     },
+    "/v1/create/third/party": {
+      "post": {
+        "operationId": "ThirdLoginGateway_CreateThirdParty",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateThirdPartyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateThirdPartyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdLoginGateway"
+        ]
+      }
+    },
+    "/v1/get/app/auths": {
+      "post": {
+        "operationId": "ThirdLoginGateway_GetAppAuths",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppAuthsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppAuthsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdLoginGateway"
+        ]
+      }
+    },
     "/v1/get/auths": {
       "post": {
         "operationId": "ThirdLoginGateway_GetAuths",
@@ -171,14 +235,14 @@
         ]
       }
     },
-    "/v1/get/auths/by/app": {
+    "/v1/get/third/parties": {
       "post": {
-        "operationId": "ThirdLoginGateway_GetAuthsByApp",
+        "operationId": "ThirdLoginGateway_GetThirdParties",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAuthsByAppResponse"
+              "$ref": "#/definitions/v1GetThirdPartiesResponse"
             }
           },
           "default": {
@@ -194,7 +258,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAuthsByAppRequest"
+              "$ref": "#/definitions/v1GetThirdPartiesRequest"
             }
           }
         ],
@@ -227,6 +291,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1LoginRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdLoginGateway"
+        ]
+      }
+    },
+    "/v1/update/third/party": {
+      "post": {
+        "operationId": "ThirdLoginGateway_UpdateThirdParty",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateThirdPartyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateThirdPartyRequest"
             }
           }
         ],
@@ -459,13 +555,19 @@
     "v1Auth": {
       "type": "object",
       "properties": {
-        "AuthUrl": {
+        "ID": {
           "type": "string"
         },
-        "LogoUrl": {
+        "AppID": {
           "type": "string"
         },
-        "Third": {
+        "ThirdPartyID": {
+          "type": "string"
+        },
+        "AppKey": {
+          "type": "string"
+        },
+        "AppSecret": {
           "type": "string"
         }
       }
@@ -493,8 +595,8 @@
         "TargetAppID": {
           "type": "string"
         },
-        "info": {
-          "$ref": "#/definitions/v1ThirdAuth"
+        "Info": {
+          "$ref": "#/definitions/v1Auth"
         }
       }
     },
@@ -502,7 +604,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1ThirdAuth"
+          "$ref": "#/definitions/v1Auth"
         }
       }
     },
@@ -512,10 +614,10 @@
         "TargetAppID": {
           "type": "string"
         },
-        "infos": {
+        "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1ThirdAuth"
+            "$ref": "#/definitions/v1Auth"
           }
         }
       }
@@ -526,7 +628,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1ThirdAuth"
+            "$ref": "#/definitions/v1Auth"
           }
         }
       }
@@ -534,11 +636,8 @@
     "v1CreateAuthRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "info": {
-          "$ref": "#/definitions/v1ThirdAuth"
+        "Info": {
+          "$ref": "#/definitions/v1Auth"
         }
       }
     },
@@ -546,7 +645,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1ThirdAuth"
+          "$ref": "#/definitions/v1Auth"
         }
       }
     },
@@ -556,10 +655,10 @@
         "AppID": {
           "type": "string"
         },
-        "infos": {
+        "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1ThirdAuth"
+            "$ref": "#/definitions/v1Auth"
           }
         }
       }
@@ -570,12 +669,28 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1ThirdAuth"
+            "$ref": "#/definitions/v1Auth"
           }
         }
       }
     },
-    "v1GetAuthsByAppRequest": {
+    "v1CreateThirdPartyRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ThirdParty"
+        }
+      }
+    },
+    "v1CreateThirdPartyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ThirdParty"
+        }
+      }
+    },
+    "v1GetAppAuthsRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -583,7 +698,7 @@
         }
       }
     },
-    "v1GetAuthsByAppResponse": {
+    "v1GetAppAuthsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -613,6 +728,20 @@
         }
       }
     },
+    "v1GetThirdPartiesRequest": {
+      "type": "object"
+    },
+    "v1GetThirdPartiesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1ThirdParty"
+          }
+        }
+      }
+    },
     "v1LoginRequest": {
       "type": "object",
       "properties": {
@@ -622,7 +751,7 @@
         "AppID": {
           "type": "string"
         },
-        "Third": {
+        "ThirdPartyID": {
           "type": "string"
         }
       }
@@ -635,35 +764,33 @@
         }
       }
     },
-    "v1ThirdAuth": {
+    "v1ThirdParty": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "AppID": {
+        "BrandName": {
           "type": "string"
         },
-        "Third": {
+        "Logo": {
           "type": "string"
-        },
-        "ThirdAppKey": {
-          "type": "string"
-        },
-        "ThirdAppSecret": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "string"
-        },
-        "UpdateAt": {
-          "type": "string"
-        },
-        "LogoUrl": {
-          "type": "string"
-        },
-        "RedirectUrl": {
-          "type": "string"
+        }
+      }
+    },
+    "v1UpdateThirdPartyRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ThirdParty"
+        }
+      }
+    },
+    "v1UpdateThirdPartyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ThirdParty"
         }
       }
     },

@@ -27,11 +27,14 @@ type ThirdLoginGatewayClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	GetAuths(ctx context.Context, in *GetAuthsRequest, opts ...grpc.CallOption) (*GetAuthsResponse, error)
-	GetAuthsByApp(ctx context.Context, in *GetAuthsByAppRequest, opts ...grpc.CallOption) (*GetAuthsByAppResponse, error)
+	GetAppAuths(ctx context.Context, in *GetAppAuthsRequest, opts ...grpc.CallOption) (*GetAppAuthsResponse, error)
 	CreateAuth(ctx context.Context, in *CreateAuthRequest, opts ...grpc.CallOption) (*CreateAuthResponse, error)
 	CreateAuths(ctx context.Context, in *CreateAuthsRequest, opts ...grpc.CallOption) (*CreateAuthsResponse, error)
 	CreateAppAuth(ctx context.Context, in *CreateAppAuthRequest, opts ...grpc.CallOption) (*CreateAppAuthResponse, error)
 	CreateAppAuths(ctx context.Context, in *CreateAppAuthsRequest, opts ...grpc.CallOption) (*CreateAppAuthsResponse, error)
+	CreateThirdParty(ctx context.Context, in *CreateThirdPartyRequest, opts ...grpc.CallOption) (*CreateThirdPartyResponse, error)
+	UpdateThirdParty(ctx context.Context, in *UpdateThirdPartyRequest, opts ...grpc.CallOption) (*UpdateThirdPartyResponse, error)
+	GetThirdParties(ctx context.Context, in *GetThirdPartiesRequest, opts ...grpc.CallOption) (*GetThirdPartiesResponse, error)
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
 }
 
@@ -61,9 +64,9 @@ func (c *thirdLoginGatewayClient) GetAuths(ctx context.Context, in *GetAuthsRequ
 	return out, nil
 }
 
-func (c *thirdLoginGatewayClient) GetAuthsByApp(ctx context.Context, in *GetAuthsByAppRequest, opts ...grpc.CallOption) (*GetAuthsByAppResponse, error) {
-	out := new(GetAuthsByAppResponse)
-	err := c.cc.Invoke(ctx, "/third.logon.gateway.v1.ThirdLoginGateway/GetAuthsByApp", in, out, opts...)
+func (c *thirdLoginGatewayClient) GetAppAuths(ctx context.Context, in *GetAppAuthsRequest, opts ...grpc.CallOption) (*GetAppAuthsResponse, error) {
+	out := new(GetAppAuthsResponse)
+	err := c.cc.Invoke(ctx, "/third.logon.gateway.v1.ThirdLoginGateway/GetAppAuths", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,6 +109,33 @@ func (c *thirdLoginGatewayClient) CreateAppAuths(ctx context.Context, in *Create
 	return out, nil
 }
 
+func (c *thirdLoginGatewayClient) CreateThirdParty(ctx context.Context, in *CreateThirdPartyRequest, opts ...grpc.CallOption) (*CreateThirdPartyResponse, error) {
+	out := new(CreateThirdPartyResponse)
+	err := c.cc.Invoke(ctx, "/third.logon.gateway.v1.ThirdLoginGateway/CreateThirdParty", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *thirdLoginGatewayClient) UpdateThirdParty(ctx context.Context, in *UpdateThirdPartyRequest, opts ...grpc.CallOption) (*UpdateThirdPartyResponse, error) {
+	out := new(UpdateThirdPartyResponse)
+	err := c.cc.Invoke(ctx, "/third.logon.gateway.v1.ThirdLoginGateway/UpdateThirdParty", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *thirdLoginGatewayClient) GetThirdParties(ctx context.Context, in *GetThirdPartiesRequest, opts ...grpc.CallOption) (*GetThirdPartiesResponse, error) {
+	out := new(GetThirdPartiesResponse)
+	err := c.cc.Invoke(ctx, "/third.logon.gateway.v1.ThirdLoginGateway/GetThirdParties", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *thirdLoginGatewayClient) Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error) {
 	out := new(LoginResponse)
 	err := c.cc.Invoke(ctx, "/third.logon.gateway.v1.ThirdLoginGateway/Login", in, out, opts...)
@@ -122,11 +152,14 @@ type ThirdLoginGatewayServer interface {
 	// Method Version
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	GetAuths(context.Context, *GetAuthsRequest) (*GetAuthsResponse, error)
-	GetAuthsByApp(context.Context, *GetAuthsByAppRequest) (*GetAuthsByAppResponse, error)
+	GetAppAuths(context.Context, *GetAppAuthsRequest) (*GetAppAuthsResponse, error)
 	CreateAuth(context.Context, *CreateAuthRequest) (*CreateAuthResponse, error)
 	CreateAuths(context.Context, *CreateAuthsRequest) (*CreateAuthsResponse, error)
 	CreateAppAuth(context.Context, *CreateAppAuthRequest) (*CreateAppAuthResponse, error)
 	CreateAppAuths(context.Context, *CreateAppAuthsRequest) (*CreateAppAuthsResponse, error)
+	CreateThirdParty(context.Context, *CreateThirdPartyRequest) (*CreateThirdPartyResponse, error)
+	UpdateThirdParty(context.Context, *UpdateThirdPartyRequest) (*UpdateThirdPartyResponse, error)
+	GetThirdParties(context.Context, *GetThirdPartiesRequest) (*GetThirdPartiesResponse, error)
 	Login(context.Context, *LoginRequest) (*LoginResponse, error)
 	mustEmbedUnimplementedThirdLoginGatewayServer()
 }
@@ -141,8 +174,8 @@ func (UnimplementedThirdLoginGatewayServer) Version(context.Context, *emptypb.Em
 func (UnimplementedThirdLoginGatewayServer) GetAuths(context.Context, *GetAuthsRequest) (*GetAuthsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAuths not implemented")
 }
-func (UnimplementedThirdLoginGatewayServer) GetAuthsByApp(context.Context, *GetAuthsByAppRequest) (*GetAuthsByAppResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAuthsByApp not implemented")
+func (UnimplementedThirdLoginGatewayServer) GetAppAuths(context.Context, *GetAppAuthsRequest) (*GetAppAuthsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppAuths not implemented")
 }
 func (UnimplementedThirdLoginGatewayServer) CreateAuth(context.Context, *CreateAuthRequest) (*CreateAuthResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAuth not implemented")
@@ -155,6 +188,15 @@ func (UnimplementedThirdLoginGatewayServer) CreateAppAuth(context.Context, *Crea
 }
 func (UnimplementedThirdLoginGatewayServer) CreateAppAuths(context.Context, *CreateAppAuthsRequest) (*CreateAppAuthsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppAuths not implemented")
+}
+func (UnimplementedThirdLoginGatewayServer) CreateThirdParty(context.Context, *CreateThirdPartyRequest) (*CreateThirdPartyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateThirdParty not implemented")
+}
+func (UnimplementedThirdLoginGatewayServer) UpdateThirdParty(context.Context, *UpdateThirdPartyRequest) (*UpdateThirdPartyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateThirdParty not implemented")
+}
+func (UnimplementedThirdLoginGatewayServer) GetThirdParties(context.Context, *GetThirdPartiesRequest) (*GetThirdPartiesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetThirdParties not implemented")
 }
 func (UnimplementedThirdLoginGatewayServer) Login(context.Context, *LoginRequest) (*LoginResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
@@ -208,20 +250,20 @@ func _ThirdLoginGateway_GetAuths_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ThirdLoginGateway_GetAuthsByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAuthsByAppRequest)
+func _ThirdLoginGateway_GetAppAuths_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppAuthsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ThirdLoginGatewayServer).GetAuthsByApp(ctx, in)
+		return srv.(ThirdLoginGatewayServer).GetAppAuths(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/third.logon.gateway.v1.ThirdLoginGateway/GetAuthsByApp",
+		FullMethod: "/third.logon.gateway.v1.ThirdLoginGateway/GetAppAuths",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ThirdLoginGatewayServer).GetAuthsByApp(ctx, req.(*GetAuthsByAppRequest))
+		return srv.(ThirdLoginGatewayServer).GetAppAuths(ctx, req.(*GetAppAuthsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -298,6 +340,60 @@ func _ThirdLoginGateway_CreateAppAuths_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ThirdLoginGateway_CreateThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateThirdPartyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdLoginGatewayServer).CreateThirdParty(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.logon.gateway.v1.ThirdLoginGateway/CreateThirdParty",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdLoginGatewayServer).CreateThirdParty(ctx, req.(*CreateThirdPartyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ThirdLoginGateway_UpdateThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateThirdPartyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdLoginGatewayServer).UpdateThirdParty(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.logon.gateway.v1.ThirdLoginGateway/UpdateThirdParty",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdLoginGatewayServer).UpdateThirdParty(ctx, req.(*UpdateThirdPartyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ThirdLoginGateway_GetThirdParties_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetThirdPartiesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdLoginGatewayServer).GetThirdParties(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.logon.gateway.v1.ThirdLoginGateway/GetThirdParties",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdLoginGatewayServer).GetThirdParties(ctx, req.(*GetThirdPartiesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ThirdLoginGateway_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(LoginRequest)
 	if err := dec(in); err != nil {
@@ -332,8 +428,8 @@ var ThirdLoginGateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ThirdLoginGateway_GetAuths_Handler,
 		},
 		{
-			MethodName: "GetAuthsByApp",
-			Handler:    _ThirdLoginGateway_GetAuthsByApp_Handler,
+			MethodName: "GetAppAuths",
+			Handler:    _ThirdLoginGateway_GetAppAuths_Handler,
 		},
 		{
 			MethodName: "CreateAuth",
@@ -350,6 +446,18 @@ var ThirdLoginGateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAppAuths",
 			Handler:    _ThirdLoginGateway_CreateAppAuths_Handler,
+		},
+		{
+			MethodName: "CreateThirdParty",
+			Handler:    _ThirdLoginGateway_CreateThirdParty_Handler,
+		},
+		{
+			MethodName: "UpdateThirdParty",
+			Handler:    _ThirdLoginGateway_UpdateThirdParty_Handler,
+		},
+		{
+			MethodName: "GetThirdParties",
+			Handler:    _ThirdLoginGateway_GetThirdParties_Handler,
 		},
 		{
 			MethodName: "Login",
