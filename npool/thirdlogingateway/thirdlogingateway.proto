@@ -96,7 +96,7 @@ message GetAuthsByAppResponse {
 
 message CreateAuthRequest {
     string AppID = 10;
-    ThirdAuth info = 20;
+    ThirdAuth Info = 20;
 }
 message CreateAuthResponse {
     ThirdAuth Info = 10;
@@ -104,7 +104,7 @@ message CreateAuthResponse {
 
 message CreateAuthsRequest {
     string AppID = 10;
-    repeated ThirdAuth infos = 20;
+    repeated ThirdAuth Infos = 20;
 }
 message CreateAuthsResponse {
     repeated ThirdAuth Infos = 10;
@@ -112,7 +112,7 @@ message CreateAuthsResponse {
 
 message CreateAppAuthRequest {
     string TargetAppID = 10;
-    ThirdAuth info = 20;
+    ThirdAuth Info = 20;
 }
 message CreateAppAuthResponse {
     ThirdAuth Info = 10;
@@ -120,7 +120,7 @@ message CreateAppAuthResponse {
 
 message CreateAppAuthsRequest {
     string TargetAppID = 10;
-    repeated ThirdAuth infos = 20;
+    repeated ThirdAuth Infos = 20;
 }
 message CreateAppAuthsResponse {
     repeated ThirdAuth Infos = 10;

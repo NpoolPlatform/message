@@ -493,7 +493,7 @@
         "TargetAppID": {
           "type": "string"
         },
-        "info": {
+        "Info": {
           "$ref": "#/definitions/v1ThirdAuth"
         }
       }
@@ -512,7 +512,7 @@
         "TargetAppID": {
           "type": "string"
         },
-        "infos": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1ThirdAuth"
@@ -537,7 +537,7 @@
         "AppID": {
           "type": "string"
         },
-        "info": {
+        "Info": {
           "$ref": "#/definitions/v1ThirdAuth"
         }
       }
@@ -556,7 +556,7 @@
         "AppID": {
           "type": "string"
         },
-        "infos": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1ThirdAuth"

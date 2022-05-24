@@ -80,7 +80,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
+| Info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
 
 
 
@@ -111,7 +111,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
+| Infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
 
 
 
@@ -142,7 +142,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
+| Info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
 
 
 
@@ -173,7 +173,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
+| Infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
 
 
 
@@ -369,7 +369,7 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
+| Info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
 
 
 
@@ -400,7 +400,7 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
+| Infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
 
 
 
@@ -431,7 +431,7 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
+| Info | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) |  |  |
 
 
 
@@ -462,7 +462,7 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
+| Infos | [ThirdAuth](#third-logon-gateway-v1-ThirdAuth) | repeated |  |
 
 
 
