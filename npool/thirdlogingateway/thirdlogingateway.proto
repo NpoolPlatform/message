@@ -128,6 +128,7 @@ message Auth {
 message GetAuthsRequest {
     string AppID = 10;
 }
+
 message GetAuthsResponse {
     repeated Auth Infos = 10;
 }
@@ -135,6 +136,7 @@ message GetAuthsResponse {
 message GetAppAuthsRequest {
     string TargetAppID = 10;
 }
+
 message GetAppAuthsResponse {
     repeated Auth Infos = 10;
 }
@@ -142,6 +144,7 @@ message GetAppAuthsResponse {
 message CreateAuthRequest {
     Auth Info = 10;
 }
+
 message CreateAuthResponse {
     Auth Info = 10;
 }
@@ -150,6 +153,7 @@ message CreateAuthsRequest {
     string AppID = 10;
     repeated Auth Infos = 20;
 }
+
 message CreateAuthsResponse {
     repeated Auth Infos = 10;
 }
@@ -158,6 +162,7 @@ message CreateAppAuthRequest {
     string TargetAppID = 10;
     Auth Info = 20;
 }
+
 message CreateAppAuthResponse {
     Auth Info = 10;
 }
@@ -166,6 +171,7 @@ message CreateAppAuthsRequest {
     string TargetAppID = 10;
     repeated Auth Infos = 20;
 }
+
 message CreateAppAuthsResponse {
     repeated Auth Infos = 10;
 }
