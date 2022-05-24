@@ -12,6 +12,8 @@ export type ThirdParty = {
   id?: string
   brandName?: string
   logo?: string
+  authBase?: string
+  domain?: string
 }
 
 export type CreateThirdPartyRequest = {

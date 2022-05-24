@@ -775,6 +775,12 @@
         },
         "Logo": {
           "type": "string"
+        },
+        "AuthBase": {
+          "type": "string"
+        },
+        "Domain": {
+          "type": "string"
         }
       }
     },

@@ -366,6 +366,8 @@
 | ID | [string](#string) |  |  |
 | BrandName | [string](#string) |  |  |
 | Logo | [string](#string) |  |  |
+| AuthBase | [string](#string) |  |  |
+| Domain | [string](#string) |  |  |
 
 
 
@@ -738,6 +740,8 @@ Service Name
 | ID | [string](#string) |  |  |
 | BrandName | [string](#string) |  |  |
 | Logo | [string](#string) |  |  |
+| AuthBase | [string](#string) |  |  |
+| Domain | [string](#string) |  |  |
 
 
 

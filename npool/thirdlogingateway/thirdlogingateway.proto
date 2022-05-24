@@ -92,6 +92,8 @@ message ThirdParty {
     string ID = 10;
     string BrandName = 20;
     string Logo = 30;
+    string AuthBase = 40;
+    string Domain = 50;
 }
 
 message CreateThirdPartyRequest {
