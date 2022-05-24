@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/thirdlogingateway/third-login-gateway.proto
+// source: npool/thirdlogingateway/thirdlogingateway.proto
 
 package thirdlogingateway
 
@@ -357,5 +357,5 @@ var ThirdLoginGateway_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/thirdlogingateway/third-login-gateway.proto",
+	Metadata: "npool/thirdlogingateway/thirdlogingateway.proto",
 }

@@ -3,7 +3,7 @@
 
 ## Table of Contents
 
-- [npool/thirdlogingateway/third-login-gateway.proto](#npool_thirdlogingateway_third-login-gateway-proto)
+- [npool/thirdlogingateway/thirdlogingateway.proto](#npool_thirdlogingateway_thirdlogingateway-proto)
     - [Auth](#third-logon-gateway-v1-Auth)
     - [CreateAppAuthRequest](#third-logon-gateway-v1-CreateAppAuthRequest)
     - [CreateAppAuthResponse](#third-logon-gateway-v1-CreateAppAuthResponse)
@@ -23,7 +23,7 @@
   
     - [ThirdLoginGateway](#third-logon-gateway-v1-ThirdLoginGateway)
   
-- [npool/thirdlogingateway/third-login-gateway.proto](#npool_thirdlogingateway_third-login-gateway-proto)
+- [npool/thirdlogingateway/thirdlogingateway.proto](#npool_thirdlogingateway_thirdlogingateway-proto)
     - [Auth](#third-logon-gateway-v1-Auth)
     - [CreateAppAuthRequest](#third-logon-gateway-v1-CreateAppAuthRequest)
     - [CreateAppAuthResponse](#third-logon-gateway-v1-CreateAppAuthResponse)
@@ -47,10 +47,10 @@
 
 
 
-<a name="npool_thirdlogingateway_third-login-gateway-proto"></a>
+<a name="npool_thirdlogingateway_thirdlogingateway-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/thirdlogingateway/third-login-gateway.proto
+## npool/thirdlogingateway/thirdlogingateway.proto
 
 
 
@@ -336,10 +336,10 @@ Service Name
 
 
 
-<a name="npool_thirdlogingateway_third-login-gateway-proto"></a>
+<a name="npool_thirdlogingateway_thirdlogingateway-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## npool/thirdlogingateway/third-login-gateway.proto
+## npool/thirdlogingateway/thirdlogingateway.proto
 
 
 
