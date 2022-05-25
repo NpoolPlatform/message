@@ -45,8 +45,8 @@ export type Auth = {
   thirdPartyID?: string
   appKey?: string
   appSecret?: string
-  redirectUrl?: string
-  authUrl?: string
+  redirectURL?: string
+  authURL?: string
 }
 
 export type GetAuthsRequest = {

@@ -570,10 +570,10 @@
         "AppSecret": {
           "type": "string"
         },
-        "RedirectUrl": {
+        "RedirectURL": {
           "type": "string"
         },
-        "AuthUrl": {
+        "AuthURL": {
           "type": "string"
         }
       }
