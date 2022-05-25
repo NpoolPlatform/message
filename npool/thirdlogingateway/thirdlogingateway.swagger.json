@@ -784,9 +784,6 @@
         },
         "Domain": {
           "type": "string"
-        },
-        "AuthBase": {
-          "type": "string"
         }
       }
     },

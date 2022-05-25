@@ -2480,8 +2480,8 @@ func local_request_AppUserManager_CreateAppUserWithSecret_0(ctx context.Context,
 
 }
 
-func request_AppUserManager_CreateAppUserWithThird_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateAppUserWithThirdRequest
+func request_AppUserManager_CreateAppUserWithThirdParty_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppUserWithThirdPartyRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -2492,13 +2492,13 @@ func request_AppUserManager_CreateAppUserWithThird_0(ctx context.Context, marsha
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateAppUserWithThird(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateAppUserWithThirdParty(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_AppUserManager_CreateAppUserWithThird_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateAppUserWithThirdRequest
+func local_request_AppUserManager_CreateAppUserWithThirdParty_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppUserWithThirdPartyRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -2509,13 +2509,13 @@ func local_request_AppUserManager_CreateAppUserWithThird_0(ctx context.Context, 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateAppUserWithThird(ctx, &protoReq)
+	msg, err := server.CreateAppUserWithThirdParty(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_AppUserManager_CreateAppUserThird_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateAppUserThirdRequest
+func request_AppUserManager_CreateAppUserThirdParty_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppUserThirdPartyRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -2526,13 +2526,13 @@ func request_AppUserManager_CreateAppUserThird_0(ctx context.Context, marshaler 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateAppUserThird(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateAppUserThirdParty(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_AppUserManager_CreateAppUserThird_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateAppUserThirdRequest
+func local_request_AppUserManager_CreateAppUserThirdParty_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppUserThirdPartyRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -2543,13 +2543,13 @@ func local_request_AppUserManager_CreateAppUserThird_0(ctx context.Context, mars
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateAppUserThird(ctx, &protoReq)
+	msg, err := server.CreateAppUserThirdParty(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_AppUserManager_GetAppUserThirdByAppThird_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppUserThirdByAppThirdRequest
+func request_AppUserManager_GetAppUserThirdPartyByAppThirdPartyID_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppUserThirdPartyByAppThirdPartyIDRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -2560,13 +2560,13 @@ func request_AppUserManager_GetAppUserThirdByAppThird_0(ctx context.Context, mar
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetAppUserThirdByAppThird(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppUserThirdPartyByAppThirdPartyID(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_AppUserManager_GetAppUserThirdByAppThird_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppUserThirdByAppThirdRequest
+func local_request_AppUserManager_GetAppUserThirdPartyByAppThirdPartyID_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppUserThirdPartyByAppThirdPartyIDRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -2577,7 +2577,7 @@ func local_request_AppUserManager_GetAppUserThirdByAppThird_0(ctx context.Contex
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetAppUserThirdByAppThird(ctx, &protoReq)
+	msg, err := server.GetAppUserThirdPartyByAppThirdPartyID(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -4244,18 +4244,18 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 
 	})
 
-	mux.Handle("POST", pattern_AppUserManager_CreateAppUserWithThird_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserManager_CreateAppUserWithThirdParty_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserWithThird", runtime.WithHTTPPathPattern("/v1/create/app/user/with/third"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserWithThirdParty", runtime.WithHTTPPathPattern("/v1/create/app/user/with/third/party"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserManager_CreateAppUserWithThird_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppUserManager_CreateAppUserWithThirdParty_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -4263,22 +4263,22 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 			return
 		}
 
-		forward_AppUserManager_CreateAppUserWithThird_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserManager_CreateAppUserWithThirdParty_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserManager_CreateAppUserThird_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserManager_CreateAppUserThirdParty_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserThird", runtime.WithHTTPPathPattern("/v1/create/app/user/third"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserThirdParty", runtime.WithHTTPPathPattern("/v1/create/app/user/third/party"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserManager_CreateAppUserThird_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppUserManager_CreateAppUserThirdParty_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -4286,22 +4286,22 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 			return
 		}
 
-		forward_AppUserManager_CreateAppUserThird_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserManager_CreateAppUserThirdParty_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserManager_GetAppUserThirdByAppThird_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserManager_GetAppUserThirdPartyByAppThirdPartyID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserThirdByAppThird", runtime.WithHTTPPathPattern("/v1/get/app/user/third/by/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserThirdPartyByAppThirdPartyID", runtime.WithHTTPPathPattern("/v1/get/app/user/thirdparty/by/app/thirdpartyid"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserManager_GetAppUserThirdByAppThird_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppUserManager_GetAppUserThirdPartyByAppThirdPartyID_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -4309,7 +4309,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 			return
 		}
 
-		forward_AppUserManager_GetAppUserThirdByAppThird_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserManager_GetAppUserThirdPartyByAppThirdPartyID_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -5794,63 +5794,63 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 
 	})
 
-	mux.Handle("POST", pattern_AppUserManager_CreateAppUserWithThird_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserManager_CreateAppUserWithThirdParty_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserWithThird", runtime.WithHTTPPathPattern("/v1/create/app/user/with/third"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserWithThirdParty", runtime.WithHTTPPathPattern("/v1/create/app/user/with/third/party"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserManager_CreateAppUserWithThird_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppUserManager_CreateAppUserWithThirdParty_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserManager_CreateAppUserWithThird_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserManager_CreateAppUserWithThirdParty_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserManager_CreateAppUserThird_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserManager_CreateAppUserThirdParty_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserThird", runtime.WithHTTPPathPattern("/v1/create/app/user/third"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserThirdParty", runtime.WithHTTPPathPattern("/v1/create/app/user/third/party"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserManager_CreateAppUserThird_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppUserManager_CreateAppUserThirdParty_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserManager_CreateAppUserThird_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserManager_CreateAppUserThirdParty_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserManager_GetAppUserThirdByAppThird_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserManager_GetAppUserThirdPartyByAppThirdPartyID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserThirdByAppThird", runtime.WithHTTPPathPattern("/v1/get/app/user/third/by/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserThirdPartyByAppThirdPartyID", runtime.WithHTTPPathPattern("/v1/get/app/user/thirdparty/by/app/thirdpartyid"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserManager_GetAppUserThirdByAppThird_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppUserManager_GetAppUserThirdPartyByAppThirdPartyID_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserManager_GetAppUserThirdByAppThird_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserManager_GetAppUserThirdPartyByAppThirdPartyID_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -6002,11 +6002,11 @@ var (
 
 	pattern_AppUserManager_CreateAppUserWithSecret_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "create", "app", "user", "with", "secret"}, ""))
 
-	pattern_AppUserManager_CreateAppUserWithThird_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "create", "app", "user", "with", "third"}, ""))
+	pattern_AppUserManager_CreateAppUserWithThirdParty_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6}, []string{"v1", "create", "app", "user", "with", "third", "party"}, ""))
 
-	pattern_AppUserManager_CreateAppUserThird_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "create", "app", "user", "third"}, ""))
+	pattern_AppUserManager_CreateAppUserThirdParty_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "create", "app", "user", "third", "party"}, ""))
 
-	pattern_AppUserManager_GetAppUserThirdByAppThird_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2, 2, 3}, []string{"v1", "get", "app", "user", "third", "by"}, ""))
+	pattern_AppUserManager_GetAppUserThirdPartyByAppThirdPartyID_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 2, 2, 6}, []string{"v1", "get", "app", "user", "thirdparty", "by", "thirdpartyid"}, ""))
 )
 
 var (
@@ -6154,9 +6154,9 @@ var (
 
 	forward_AppUserManager_CreateAppUserWithSecret_0 = runtime.ForwardResponseMessage
 
-	forward_AppUserManager_CreateAppUserWithThird_0 = runtime.ForwardResponseMessage
+	forward_AppUserManager_CreateAppUserWithThirdParty_0 = runtime.ForwardResponseMessage
 
-	forward_AppUserManager_CreateAppUserThird_0 = runtime.ForwardResponseMessage
+	forward_AppUserManager_CreateAppUserThirdParty_0 = runtime.ForwardResponseMessage
 
-	forward_AppUserManager_GetAppUserThirdByAppThird_0 = runtime.ForwardResponseMessage
+	forward_AppUserManager_GetAppUserThirdPartyByAppThirdPartyID_0 = runtime.ForwardResponseMessage
 )

@@ -96,9 +96,9 @@ type AppUserManagerClient interface {
 	GetAppUserInfosByApp(ctx context.Context, in *GetAppUserInfosByAppRequest, opts ...grpc.CallOption) (*GetAppUserInfosByAppResponse, error)
 	GetAppUserInfosByOtherApp(ctx context.Context, in *GetAppUserInfosByOtherAppRequest, opts ...grpc.CallOption) (*GetAppUserInfosByOtherAppResponse, error)
 	CreateAppUserWithSecret(ctx context.Context, in *CreateAppUserWithSecretRequest, opts ...grpc.CallOption) (*CreateAppUserWithSecretResponse, error)
-	CreateAppUserWithThird(ctx context.Context, in *CreateAppUserWithThirdRequest, opts ...grpc.CallOption) (*CreateAppUserWithThirdResponse, error)
-	CreateAppUserThird(ctx context.Context, in *CreateAppUserThirdRequest, opts ...grpc.CallOption) (*CreateAppUserThirdResponse, error)
-	GetAppUserThirdByAppThird(ctx context.Context, in *GetAppUserThirdByAppThirdRequest, opts ...grpc.CallOption) (*GetAppUserThirdByAppThirdResponse, error)
+	CreateAppUserWithThirdParty(ctx context.Context, in *CreateAppUserWithThirdPartyRequest, opts ...grpc.CallOption) (*CreateAppUserWithThirdPartyResponse, error)
+	CreateAppUserThirdParty(ctx context.Context, in *CreateAppUserThirdPartyRequest, opts ...grpc.CallOption) (*CreateAppUserThirdPartyResponse, error)
+	GetAppUserThirdPartyByAppThirdPartyID(ctx context.Context, in *GetAppUserThirdPartyByAppThirdPartyIDRequest, opts ...grpc.CallOption) (*GetAppUserThirdPartyByAppThirdPartyIDResponse, error)
 }
 
 type appUserManagerClient struct {
@@ -757,27 +757,27 @@ func (c *appUserManagerClient) CreateAppUserWithSecret(ctx context.Context, in *
 	return out, nil
 }
 
-func (c *appUserManagerClient) CreateAppUserWithThird(ctx context.Context, in *CreateAppUserWithThirdRequest, opts ...grpc.CallOption) (*CreateAppUserWithThirdResponse, error) {
-	out := new(CreateAppUserWithThirdResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppUserWithThird", in, out, opts...)
+func (c *appUserManagerClient) CreateAppUserWithThirdParty(ctx context.Context, in *CreateAppUserWithThirdPartyRequest, opts ...grpc.CallOption) (*CreateAppUserWithThirdPartyResponse, error) {
+	out := new(CreateAppUserWithThirdPartyResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppUserWithThirdParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserManagerClient) CreateAppUserThird(ctx context.Context, in *CreateAppUserThirdRequest, opts ...grpc.CallOption) (*CreateAppUserThirdResponse, error) {
-	out := new(CreateAppUserThirdResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppUserThird", in, out, opts...)
+func (c *appUserManagerClient) CreateAppUserThirdParty(ctx context.Context, in *CreateAppUserThirdPartyRequest, opts ...grpc.CallOption) (*CreateAppUserThirdPartyResponse, error) {
+	out := new(CreateAppUserThirdPartyResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppUserThirdParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserManagerClient) GetAppUserThirdByAppThird(ctx context.Context, in *GetAppUserThirdByAppThirdRequest, opts ...grpc.CallOption) (*GetAppUserThirdByAppThirdResponse, error) {
-	out := new(GetAppUserThirdByAppThirdResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserThirdByAppThird", in, out, opts...)
+func (c *appUserManagerClient) GetAppUserThirdPartyByAppThirdPartyID(ctx context.Context, in *GetAppUserThirdPartyByAppThirdPartyIDRequest, opts ...grpc.CallOption) (*GetAppUserThirdPartyByAppThirdPartyIDResponse, error) {
+	out := new(GetAppUserThirdPartyByAppThirdPartyIDResponse)
+	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserThirdPartyByAppThirdPartyID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -860,9 +860,9 @@ type AppUserManagerServer interface {
 	GetAppUserInfosByApp(context.Context, *GetAppUserInfosByAppRequest) (*GetAppUserInfosByAppResponse, error)
 	GetAppUserInfosByOtherApp(context.Context, *GetAppUserInfosByOtherAppRequest) (*GetAppUserInfosByOtherAppResponse, error)
 	CreateAppUserWithSecret(context.Context, *CreateAppUserWithSecretRequest) (*CreateAppUserWithSecretResponse, error)
-	CreateAppUserWithThird(context.Context, *CreateAppUserWithThirdRequest) (*CreateAppUserWithThirdResponse, error)
-	CreateAppUserThird(context.Context, *CreateAppUserThirdRequest) (*CreateAppUserThirdResponse, error)
-	GetAppUserThirdByAppThird(context.Context, *GetAppUserThirdByAppThirdRequest) (*GetAppUserThirdByAppThirdResponse, error)
+	CreateAppUserWithThirdParty(context.Context, *CreateAppUserWithThirdPartyRequest) (*CreateAppUserWithThirdPartyResponse, error)
+	CreateAppUserThirdParty(context.Context, *CreateAppUserThirdPartyRequest) (*CreateAppUserThirdPartyResponse, error)
+	GetAppUserThirdPartyByAppThirdPartyID(context.Context, *GetAppUserThirdPartyByAppThirdPartyIDRequest) (*GetAppUserThirdPartyByAppThirdPartyIDResponse, error)
 	mustEmbedUnimplementedAppUserManagerServer()
 }
 
@@ -1086,14 +1086,14 @@ func (UnimplementedAppUserManagerServer) GetAppUserInfosByOtherApp(context.Conte
 func (UnimplementedAppUserManagerServer) CreateAppUserWithSecret(context.Context, *CreateAppUserWithSecretRequest) (*CreateAppUserWithSecretResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserWithSecret not implemented")
 }
-func (UnimplementedAppUserManagerServer) CreateAppUserWithThird(context.Context, *CreateAppUserWithThirdRequest) (*CreateAppUserWithThirdResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserWithThird not implemented")
+func (UnimplementedAppUserManagerServer) CreateAppUserWithThirdParty(context.Context, *CreateAppUserWithThirdPartyRequest) (*CreateAppUserWithThirdPartyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserWithThirdParty not implemented")
 }
-func (UnimplementedAppUserManagerServer) CreateAppUserThird(context.Context, *CreateAppUserThirdRequest) (*CreateAppUserThirdResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserThird not implemented")
+func (UnimplementedAppUserManagerServer) CreateAppUserThirdParty(context.Context, *CreateAppUserThirdPartyRequest) (*CreateAppUserThirdPartyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserThirdParty not implemented")
 }
-func (UnimplementedAppUserManagerServer) GetAppUserThirdByAppThird(context.Context, *GetAppUserThirdByAppThirdRequest) (*GetAppUserThirdByAppThirdResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserThirdByAppThird not implemented")
+func (UnimplementedAppUserManagerServer) GetAppUserThirdPartyByAppThirdPartyID(context.Context, *GetAppUserThirdPartyByAppThirdPartyIDRequest) (*GetAppUserThirdPartyByAppThirdPartyIDResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserThirdPartyByAppThirdPartyID not implemented")
 }
 func (UnimplementedAppUserManagerServer) mustEmbedUnimplementedAppUserManagerServer() {}
 
@@ -2404,56 +2404,56 @@ func _AppUserManager_CreateAppUserWithSecret_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserManager_CreateAppUserWithThird_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAppUserWithThirdRequest)
+func _AppUserManager_CreateAppUserWithThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppUserWithThirdPartyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerServer).CreateAppUserWithThird(ctx, in)
+		return srv.(AppUserManagerServer).CreateAppUserWithThirdParty(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppUserWithThird",
+		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppUserWithThirdParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerServer).CreateAppUserWithThird(ctx, req.(*CreateAppUserWithThirdRequest))
+		return srv.(AppUserManagerServer).CreateAppUserWithThirdParty(ctx, req.(*CreateAppUserWithThirdPartyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserManager_CreateAppUserThird_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAppUserThirdRequest)
+func _AppUserManager_CreateAppUserThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppUserThirdPartyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerServer).CreateAppUserThird(ctx, in)
+		return srv.(AppUserManagerServer).CreateAppUserThirdParty(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppUserThird",
+		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppUserThirdParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerServer).CreateAppUserThird(ctx, req.(*CreateAppUserThirdRequest))
+		return srv.(AppUserManagerServer).CreateAppUserThirdParty(ctx, req.(*CreateAppUserThirdPartyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserManager_GetAppUserThirdByAppThird_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppUserThirdByAppThirdRequest)
+func _AppUserManager_GetAppUserThirdPartyByAppThirdPartyID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppUserThirdPartyByAppThirdPartyIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerServer).GetAppUserThirdByAppThird(ctx, in)
+		return srv.(AppUserManagerServer).GetAppUserThirdPartyByAppThirdPartyID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserThirdByAppThird",
+		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserThirdPartyByAppThirdPartyID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerServer).GetAppUserThirdByAppThird(ctx, req.(*GetAppUserThirdByAppThirdRequest))
+		return srv.(AppUserManagerServer).GetAppUserThirdPartyByAppThirdPartyID(ctx, req.(*GetAppUserThirdPartyByAppThirdPartyIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2754,16 +2754,16 @@ var AppUserManager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AppUserManager_CreateAppUserWithSecret_Handler,
 		},
 		{
-			MethodName: "CreateAppUserWithThird",
-			Handler:    _AppUserManager_CreateAppUserWithThird_Handler,
+			MethodName: "CreateAppUserWithThirdParty",
+			Handler:    _AppUserManager_CreateAppUserWithThirdParty_Handler,
 		},
 		{
-			MethodName: "CreateAppUserThird",
-			Handler:    _AppUserManager_CreateAppUserThird_Handler,
+			MethodName: "CreateAppUserThirdParty",
+			Handler:    _AppUserManager_CreateAppUserThirdParty_Handler,
 		},
 		{
-			MethodName: "GetAppUserThirdByAppThird",
-			Handler:    _AppUserManager_GetAppUserThirdByAppThird_Handler,
+			MethodName: "GetAppUserThirdPartyByAppThirdPartyID",
+			Handler:    _AppUserManager_GetAppUserThirdPartyByAppThirdPartyID_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

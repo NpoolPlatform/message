@@ -453,23 +453,23 @@ service AppUserManager {
         };
     }
 
-    rpc CreateAppUserWithThird (CreateAppUserWithThirdRequest) returns (CreateAppUserWithThirdResponse) {
+    rpc CreateAppUserWithThirdParty (CreateAppUserWithThirdPartyRequest) returns (CreateAppUserWithThirdPartyResponse) {
         option (google.api.http) = {
-            post: "/v1/create/app/user/with/third"
+            post: "/v1/create/app/user/with/third/party"
             body: "*"
         };
     }
 
-    rpc CreateAppUserThird (CreateAppUserThirdRequest) returns (CreateAppUserThirdResponse) {
+    rpc CreateAppUserThirdParty (CreateAppUserThirdPartyRequest) returns (CreateAppUserThirdPartyResponse) {
         option (google.api.http) = {
-            post: "/v1/create/app/user/third"
+            post: "/v1/create/app/user/third/party"
             body: "*"
         };
     }
 
-    rpc GetAppUserThirdByAppThird (GetAppUserThirdByAppThirdRequest) returns (GetAppUserThirdByAppThirdResponse) {
+    rpc GetAppUserThirdPartyByAppThirdPartyID (GetAppUserThirdPartyByAppThirdPartyIDRequest) returns (GetAppUserThirdPartyByAppThirdPartyIDResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/user/third/by/app/user"
+            post: "/v1/get/app/user/thirdparty/by/app/thirdpartyid"
             body: "*"
         };
     }
@@ -1205,39 +1205,38 @@ message VerifyAppUserByAppAccountPasswordResponse {
     AppUserInfo Info = 10;
 }
 
-message AppUserThird {
+message AppUserThirdParty {
     string ID = 10;
     string AppID = 20;
     string UserID = 30;
-    string ThirdUserID = 40;
-    string Third = 50;
-    string ThirdUserName = 60;
-    string ThirdUserAvatar = 70;
-    string ThirdID = 90;
+    string ThirdPartyUserID = 40;
+    string ThirdPartyUserName = 60;
+    string ThirdPartyUserAvatar = 70;
+    string ThirdPartyID = 90;
 }
-message CreateAppUserThirdRequest {
-    AppUserThird Info = 10;
-}
-
-message CreateAppUserThirdResponse {
-    AppUserThird Info = 10;
+message CreateAppUserThirdPartyRequest {
+    AppUserThirdParty Info = 10;
 }
 
-message GetAppUserThirdByAppThirdRequest {
+message CreateAppUserThirdPartyResponse {
+    AppUserThirdParty Info = 10;
+}
+
+message GetAppUserThirdPartyByAppThirdPartyIDRequest {
     string AppID = 10;
-    string ThirdID = 30;
-    string ThirdUserID = 40;
+    string ThirdPartyID = 30;
+    string ThirdPartyUserID = 40;
 }
 
-message GetAppUserThirdByAppThirdResponse {
-    AppUserThird Info = 10;
+message GetAppUserThirdPartyByAppThirdPartyIDResponse {
+    AppUserThirdParty Info = 10;
 }
 
-message CreateAppUserWithThirdRequest {
+message CreateAppUserWithThirdPartyRequest {
     AppUser User = 10;
-    AppUserThird Third = 20;
+    AppUserThirdParty Third = 20;
 }
 
-message CreateAppUserWithThirdResponse {
+message CreateAppUserWithThirdPartyResponse {
     AppUser Info = 10;
 }

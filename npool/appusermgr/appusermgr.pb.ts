@@ -736,41 +736,40 @@ export type VerifyAppUserByAppAccountPasswordResponse = {
   info?: AppUserInfo
 }
 
-export type AppUserThird = {
+export type AppUserThirdParty = {
   id?: string
   appID?: string
   userID?: string
-  thirdUserID?: string
-  third?: string
-  thirdUserName?: string
-  thirdUserAvatar?: string
-  thirdID?: string
+  thirdPartyUserID?: string
+  thirdPartyUserName?: string
+  thirdPartyUserAvatar?: string
+  thirdPartyID?: string
 }
 
-export type CreateAppUserThirdRequest = {
-  info?: AppUserThird
+export type CreateAppUserThirdPartyRequest = {
+  info?: AppUserThirdParty
 }
 
-export type CreateAppUserThirdResponse = {
-  info?: AppUserThird
+export type CreateAppUserThirdPartyResponse = {
+  info?: AppUserThirdParty
 }
 
-export type GetAppUserThirdByAppThirdRequest = {
+export type GetAppUserThirdPartyByAppThirdPartyIDRequest = {
   appID?: string
-  thirdID?: string
-  thirdUserID?: string
+  thirdPartyID?: string
+  thirdPartyUserID?: string
 }
 
-export type GetAppUserThirdByAppThirdResponse = {
-  info?: AppUserThird
+export type GetAppUserThirdPartyByAppThirdPartyIDResponse = {
+  info?: AppUserThirdParty
 }
 
-export type CreateAppUserWithThirdRequest = {
+export type CreateAppUserWithThirdPartyRequest = {
   user?: AppUser
-  third?: AppUserThird
+  third?: AppUserThirdParty
 }
 
-export type CreateAppUserWithThirdResponse = {
+export type CreateAppUserWithThirdPartyResponse = {
   info?: AppUser
 }
 
@@ -991,13 +990,13 @@ export class AppUserManager {
   static CreateAppUserWithSecret(req: CreateAppUserWithSecretRequest, initReq?: fm.InitReq): Promise<CreateAppUserWithSecretResponse> {
     return fm.fetchReq<CreateAppUserWithSecretRequest, CreateAppUserWithSecretResponse>(`/v1/create/app/user/with/secret`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static CreateAppUserWithThird(req: CreateAppUserWithThirdRequest, initReq?: fm.InitReq): Promise<CreateAppUserWithThirdResponse> {
-    return fm.fetchReq<CreateAppUserWithThirdRequest, CreateAppUserWithThirdResponse>(`/v1/create/app/user/with/third`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateAppUserWithThirdParty(req: CreateAppUserWithThirdPartyRequest, initReq?: fm.InitReq): Promise<CreateAppUserWithThirdPartyResponse> {
+    return fm.fetchReq<CreateAppUserWithThirdPartyRequest, CreateAppUserWithThirdPartyResponse>(`/v1/create/app/user/with/third/party`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static CreateAppUserThird(req: CreateAppUserThirdRequest, initReq?: fm.InitReq): Promise<CreateAppUserThirdResponse> {
-    return fm.fetchReq<CreateAppUserThirdRequest, CreateAppUserThirdResponse>(`/v1/create/app/user/third`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateAppUserThirdParty(req: CreateAppUserThirdPartyRequest, initReq?: fm.InitReq): Promise<CreateAppUserThirdPartyResponse> {
+    return fm.fetchReq<CreateAppUserThirdPartyRequest, CreateAppUserThirdPartyResponse>(`/v1/create/app/user/third/party`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppUserThirdByAppThird(req: GetAppUserThirdByAppThirdRequest, initReq?: fm.InitReq): Promise<GetAppUserThirdByAppThirdResponse> {
-    return fm.fetchReq<GetAppUserThirdByAppThirdRequest, GetAppUserThirdByAppThirdResponse>(`/v1/get/app/user/third/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppUserThirdPartyByAppThirdPartyID(req: GetAppUserThirdPartyByAppThirdPartyIDRequest, initReq?: fm.InitReq): Promise<GetAppUserThirdPartyByAppThirdPartyIDResponse> {
+    return fm.fetchReq<GetAppUserThirdPartyByAppThirdPartyIDRequest, GetAppUserThirdPartyByAppThirdPartyIDResponse>(`/v1/get/app/user/thirdparty/by/app/thirdpartyid`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
