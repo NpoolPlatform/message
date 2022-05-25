@@ -80,6 +80,7 @@
 | AppKey | [string](#string) |  |  |
 | AppSecret | [string](#string) |  |  |
 | RedirectUrl | [string](#string) |  |  |
+| AuthUrl | [string](#string) |  |  |
 
 
 
@@ -367,7 +368,6 @@
 | ID | [string](#string) |  |  |
 | BrandName | [string](#string) |  |  |
 | Logo | [string](#string) |  |  |
-| AuthBase | [string](#string) |  |  |
 | Domain | [string](#string) |  |  |
 
 
@@ -455,6 +455,7 @@ Service Name
 | AppKey | [string](#string) |  |  |
 | AppSecret | [string](#string) |  |  |
 | RedirectUrl | [string](#string) |  |  |
+| AuthUrl | [string](#string) |  |  |
 
 
 
@@ -742,7 +743,6 @@ Service Name
 | ID | [string](#string) |  |  |
 | BrandName | [string](#string) |  |  |
 | Logo | [string](#string) |  |  |
-| AuthBase | [string](#string) |  |  |
 | Domain | [string](#string) |  |  |
 
 

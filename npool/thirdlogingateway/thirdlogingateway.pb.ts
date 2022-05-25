@@ -12,7 +12,6 @@ export type ThirdParty = {
   id?: string
   brandName?: string
   logo?: string
-  authBase?: string
   domain?: string
 }
 
@@ -46,6 +45,7 @@ export type Auth = {
   appKey?: string
   appSecret?: string
   redirectUrl?: string
+  authUrl?: string
 }
 
 export type GetAuthsRequest = {

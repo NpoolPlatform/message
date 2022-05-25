@@ -92,8 +92,7 @@ message ThirdParty {
     string ID = 10;
     string BrandName = 20;
     string Logo = 30;
-    string AuthBase = 40;
-    string Domain = 50;
+    string Domain = 40;
 }
 
 message CreateThirdPartyRequest {
@@ -126,6 +125,7 @@ message Auth {
     string AppKey = 40;
     string AppSecret = 50;
     string RedirectUrl = 60;
+    string AuthUrl = 70;
 }
 
 message GetAuthsRequest {
