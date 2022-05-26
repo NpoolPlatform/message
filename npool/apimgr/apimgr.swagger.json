@@ -75,6 +75,38 @@
         ]
       }
     },
+    "/v2/get/apis": {
+      "post": {
+        "operationId": "ApiManager_GetApisV2",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetApisV2Response"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetApisV2Request"
+            }
+          }
+        ],
+        "tags": [
+          "ApiManager"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "operationId": "ApiManager_Version",
@@ -121,6 +153,14 @@
         }
       }
     },
+    "protobufNullValue": {
+      "type": "string",
+      "enum": [
+        "NULL_VALUE"
+      ],
+      "default": "NULL_VALUE",
+      "description": "`NullValue` is a singleton enumeration to represent the null value for the\n`Value` type union.\n\n The JSON representation for `NullValue` is JSON `null`.\n\n - NULL_VALUE: Null value."
+    },
     "runtimeError": {
       "type": "object",
       "properties": {
@@ -142,6 +182,17 @@
         }
       }
     },
+    "v1FilterCond": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Val": {
+          "type": "object"
+        }
+      }
+    },
     "v1GetApisRequest": {
       "type": "object"
     },
@@ -153,6 +204,40 @@
           "items": {
             "$ref": "#/definitions/v1ServicePath"
           }
+        }
+      }
+    },
+    "v1GetApisV2Request": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetApisV2Response": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1ServicePath"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },

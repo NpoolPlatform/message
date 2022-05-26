@@ -48,6 +48,17 @@ export type GetApisResponse = {
   infos?: ServicePath[]
 }
 
+export type GetApisV2Request = {
+  conds?: {[key: string]: NpoolV1Npool.FilterCond}
+  offset?: number
+  limit?: number
+}
+
+export type GetApisV2Response = {
+  infos?: ServicePath[]
+  total?: number
+}
+
 export class ApiManager {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -57,5 +68,8 @@ export class ApiManager {
   }
   static GetApis(req: GetApisRequest, initReq?: fm.InitReq): Promise<GetApisResponse> {
     return fm.fetchReq<GetApisRequest, GetApisResponse>(`/v1/get/apis`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetApisV2(req: GetApisV2Request, initReq?: fm.InitReq): Promise<GetApisV2Response> {
+    return fm.fetchReq<GetApisV2Request, GetApisV2Response>(`/v2/get/apis`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

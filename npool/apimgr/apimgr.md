@@ -6,6 +6,9 @@
 - [npool/apimgr/apimgr.proto](#npool_apimgr_apimgr-proto)
     - [GetApisRequest](#api-manager-v1-GetApisRequest)
     - [GetApisResponse](#api-manager-v1-GetApisResponse)
+    - [GetApisV2Request](#api-manager-v1-GetApisV2Request)
+    - [GetApisV2Request.CondsEntry](#api-manager-v1-GetApisV2Request-CondsEntry)
+    - [GetApisV2Response](#api-manager-v1-GetApisV2Response)
     - [Path](#api-manager-v1-Path)
     - [RegisterRequest](#api-manager-v1-RegisterRequest)
     - [RegisterResponse](#api-manager-v1-RegisterResponse)
@@ -17,6 +20,9 @@
 - [npool/apimgr/apimgr.proto](#npool_apimgr_apimgr-proto)
     - [GetApisRequest](#api-manager-v1-GetApisRequest)
     - [GetApisResponse](#api-manager-v1-GetApisResponse)
+    - [GetApisV2Request](#api-manager-v1-GetApisV2Request)
+    - [GetApisV2Request.CondsEntry](#api-manager-v1-GetApisV2Request-CondsEntry)
+    - [GetApisV2Response](#api-manager-v1-GetApisV2Response)
     - [Path](#api-manager-v1-Path)
     - [RegisterRequest](#api-manager-v1-RegisterRequest)
     - [RegisterResponse](#api-manager-v1-RegisterResponse)
@@ -61,6 +67,55 @@
 
 
 
+<a name="api-manager-v1-GetApisV2Request"></a>
+
+### GetApisV2Request
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [GetApisV2Request.CondsEntry](#api-manager-v1-GetApisV2Request-CondsEntry) | repeated |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="api-manager-v1-GetApisV2Request-CondsEntry"></a>
+
+### GetApisV2Request.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="api-manager-v1-GetApisV2Response"></a>
+
+### GetApisV2Response
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [ServicePath](#api-manager-v1-ServicePath) | repeated |  |
+| Total | [int32](#int32) |  |  |
+
+
+
+
+
+
 <a name="api-manager-v1-Path"></a>
 
 ### Path
@@ -166,6 +221,7 @@
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | Register | [RegisterRequest](#api-manager-v1-RegisterRequest) | [RegisterResponse](#api-manager-v1-RegisterResponse) |  |
 | GetApis | [GetApisRequest](#api-manager-v1-GetApisRequest) | [GetApisResponse](#api-manager-v1-GetApisResponse) |  |
+| GetApisV2 | [GetApisV2Request](#api-manager-v1-GetApisV2Request) | [GetApisV2Response](#api-manager-v1-GetApisV2Response) |  |
 
  
 
@@ -203,6 +259,55 @@
 
 
 
+<a name="api-manager-v1-GetApisV2Request"></a>
+
+### GetApisV2Request
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [GetApisV2Request.CondsEntry](#api-manager-v1-GetApisV2Request-CondsEntry) | repeated |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="api-manager-v1-GetApisV2Request-CondsEntry"></a>
+
+### GetApisV2Request.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="api-manager-v1-GetApisV2Response"></a>
+
+### GetApisV2Response
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [ServicePath](#api-manager-v1-ServicePath) | repeated |  |
+| Total | [int32](#int32) |  |  |
+
+
+
+
+
+
 <a name="api-manager-v1-Path"></a>
 
 ### Path
@@ -308,6 +413,7 @@
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | Register | [RegisterRequest](#api-manager-v1-RegisterRequest) | [RegisterResponse](#api-manager-v1-RegisterResponse) |  |
 | GetApis | [GetApisRequest](#api-manager-v1-GetApisRequest) | [GetApisResponse](#api-manager-v1-GetApisResponse) |  |
+| GetApisV2 | [GetApisV2Request](#api-manager-v1-GetApisV2Request) | [GetApisV2Response](#api-manager-v1-GetApisV2Response) |  |
 
  
 

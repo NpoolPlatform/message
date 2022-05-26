@@ -27,6 +27,7 @@ type ApiManagerClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterResponse, error)
 	GetApis(ctx context.Context, in *GetApisRequest, opts ...grpc.CallOption) (*GetApisResponse, error)
+	GetApisV2(ctx context.Context, in *GetApisV2Request, opts ...grpc.CallOption) (*GetApisV2Response, error)
 }
 
 type apiManagerClient struct {
@@ -64,6 +65,15 @@ func (c *apiManagerClient) GetApis(ctx context.Context, in *GetApisRequest, opts
 	return out, nil
 }
 
+func (c *apiManagerClient) GetApisV2(ctx context.Context, in *GetApisV2Request, opts ...grpc.CallOption) (*GetApisV2Response, error) {
+	out := new(GetApisV2Response)
+	err := c.cc.Invoke(ctx, "/api.manager.v1.ApiManager/GetApisV2", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ApiManagerServer is the server API for ApiManager service.
 // All implementations must embed UnimplementedApiManagerServer
 // for forward compatibility
@@ -71,6 +81,7 @@ type ApiManagerServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	Register(context.Context, *RegisterRequest) (*RegisterResponse, error)
 	GetApis(context.Context, *GetApisRequest) (*GetApisResponse, error)
+	GetApisV2(context.Context, *GetApisV2Request) (*GetApisV2Response, error)
 	mustEmbedUnimplementedApiManagerServer()
 }
 
@@ -86,6 +97,9 @@ func (UnimplementedApiManagerServer) Register(context.Context, *RegisterRequest)
 }
 func (UnimplementedApiManagerServer) GetApis(context.Context, *GetApisRequest) (*GetApisResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApis not implemented")
+}
+func (UnimplementedApiManagerServer) GetApisV2(context.Context, *GetApisV2Request) (*GetApisV2Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetApisV2 not implemented")
 }
 func (UnimplementedApiManagerServer) mustEmbedUnimplementedApiManagerServer() {}
 
@@ -154,6 +168,24 @@ func _ApiManager_GetApis_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ApiManager_GetApisV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetApisV2Request)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApiManagerServer).GetApisV2(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.manager.v1.ApiManager/GetApisV2",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApiManagerServer).GetApisV2(ctx, req.(*GetApisV2Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ApiManager_ServiceDesc is the grpc.ServiceDesc for ApiManager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -172,6 +204,10 @@ var ApiManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetApis",
 			Handler:    _ApiManager_GetApis_Handler,
+		},
+		{
+			MethodName: "GetApisV2",
+			Handler:    _ApiManager_GetApisV2_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
