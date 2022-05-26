@@ -40,6 +40,7 @@ message Path {
     string Method = 10;
     string Path = 20;
     bool Exported = 30;
+    string MethodName = 40;
 }
 
 message ServiceApis {

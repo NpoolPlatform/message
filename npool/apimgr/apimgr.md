@@ -107,6 +107,7 @@
 | Method | [string](#string) |  |  |
 | Path | [string](#string) |  |  |
 | Exported | [bool](#bool) |  |  |
+| MethodName | [string](#string) |  |  |
 
 
 
@@ -281,6 +282,7 @@
 | Method | [string](#string) |  |  |
 | Path | [string](#string) |  |  |
 | Exported | [bool](#bool) |  |  |
+| MethodName | [string](#string) |  |  |
 
 
 

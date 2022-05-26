@@ -11,6 +11,7 @@ export type Path = {
   method?: string
   path?: string
   exported?: boolean
+  methodName?: string
 }
 
 export type ServiceApis = {

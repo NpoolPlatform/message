@@ -218,6 +218,9 @@
         },
         "Exported": {
           "type": "boolean"
+        },
+        "MethodName": {
+          "type": "string"
         }
       }
     },
