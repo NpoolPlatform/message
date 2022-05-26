@@ -766,7 +766,7 @@ export type GetAppUserThirdPartyByAppThirdPartyIDResponse = {
 
 export type CreateAppUserWithThirdPartyRequest = {
   user?: AppUser
-  info?: AppUserThirdParty
+  thirdParty?: AppUserThirdParty
 }
 
 export type CreateAppUserWithThirdPartyResponse = {

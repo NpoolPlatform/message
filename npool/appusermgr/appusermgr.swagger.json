@@ -3038,7 +3038,7 @@
         "User": {
           "$ref": "#/definitions/v1AppUser"
         },
-        "Info": {
+        "ThirdParty": {
           "$ref": "#/definitions/v1AppUserThirdParty"
         }
       }

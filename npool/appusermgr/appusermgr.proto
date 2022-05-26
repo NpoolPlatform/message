@@ -1234,7 +1234,7 @@ message GetAppUserThirdPartyByAppThirdPartyIDResponse {
 
 message CreateAppUserWithThirdPartyRequest {
     AppUser User = 10;
-    AppUserThirdParty Info = 20;
+    AppUserThirdParty ThirdParty = 20;
 }
 
 message CreateAppUserWithThirdPartyResponse {

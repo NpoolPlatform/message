@@ -1083,7 +1083,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | User | [AppUser](#app-user-manager-v1-AppUser) |  |  |
-| Info | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
+| ThirdParty | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
 
 
 
@@ -3715,7 +3715,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | User | [AppUser](#app-user-manager-v1-AppUser) |  |  |
-| Info | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
+| ThirdParty | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
 
 
 
