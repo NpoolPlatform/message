@@ -9544,7 +9544,7 @@ var file_npool_appusermgr_appusermgr_proto_rawDesc = []byte{
 	0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x30, 0x0a, 0x04, 0x49, 0x6e, 0x66,
 	0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73,
 	0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70,
-	0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x88, 0x5d, 0x0a, 0x0e,
+	0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xc8, 0x5e, 0x0a, 0x0e,
 	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x51,
 	0x0a, 0x07, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74,
@@ -10289,7 +10289,19 @@ var file_npool_appusermgr_appusermgr_proto_rawDesc = []byte{
 	0x02, 0x34, 0x22, 0x2f, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x61, 0x70, 0x70, 0x2f,
 	0x75, 0x73, 0x65, 0x72, 0x2f, 0x74, 0x68, 0x69, 0x72, 0x64, 0x70, 0x61, 0x72, 0x74, 0x79, 0x2f,
 	0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x74, 0x68, 0x69, 0x72, 0x64, 0x70, 0x61, 0x72, 0x74,
-	0x79, 0x69, 0x64, 0x3a, 0x01, 0x2a, 0x42, 0x33, 0x5a, 0x31, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x79, 0x69, 0x64, 0x3a, 0x01, 0x2a, 0x12, 0xbd, 0x01, 0x0a, 0x1d, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x53, 0x65, 0x63, 0x72,
+	0x65, 0x74, 0x52, 0x65, 0x76, 0x65, 0x72, 0x74, 0x12, 0x33, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75,
+	0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68,
+	0x53, 0x65, 0x63, 0x72, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e,
+	0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
+	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
+	0x72, 0x57, 0x69, 0x74, 0x68, 0x53, 0x65, 0x63, 0x72, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x31, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x2b, 0x22, 0x26, 0x2f, 0x76, 0x31,
+	0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72,
+	0x2f, 0x77, 0x69, 0x74, 0x68, 0x2f, 0x73, 0x65, 0x63, 0x72, 0x65, 0x74, 0x2f, 0x72, 0x65, 0x76,
+	0x65, 0x72, 0x74, 0x3a, 0x01, 0x2a, 0x42, 0x33, 0x5a, 0x31, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
 	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f,
 	0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c,
 	0x2f, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x67, 0x72, 0x62, 0x06, 0x70, 0x72, 0x6f,
@@ -10680,83 +10692,85 @@ var file_npool_appusermgr_appusermgr_proto_depIdxs = []int32{
 	160, // 200: app.user.manager.v1.AppUserManager.CreateAppUserWithThirdParty:input_type -> app.user.manager.v1.CreateAppUserWithThirdPartyRequest
 	156, // 201: app.user.manager.v1.AppUserManager.CreateAppUserThirdParty:input_type -> app.user.manager.v1.CreateAppUserThirdPartyRequest
 	158, // 202: app.user.manager.v1.AppUserManager.GetAppUserThirdPartyByAppThirdPartyID:input_type -> app.user.manager.v1.GetAppUserThirdPartyByAppThirdPartyIDRequest
-	164, // 203: app.user.manager.v1.AppUserManager.Version:output_type -> npool.v1.VersionResponse
-	2,   // 204: app.user.manager.v1.AppUserManager.CreateAdminApps:output_type -> app.user.manager.v1.CreateAdminAppsResponse
-	4,   // 205: app.user.manager.v1.AppUserManager.GetAdminApps:output_type -> app.user.manager.v1.GetAdminAppsResponse
-	6,   // 206: app.user.manager.v1.AppUserManager.CreateApp:output_type -> app.user.manager.v1.CreateAppResponse
-	8,   // 207: app.user.manager.v1.AppUserManager.GetApp:output_type -> app.user.manager.v1.GetAppResponse
-	10,  // 208: app.user.manager.v1.AppUserManager.GetApps:output_type -> app.user.manager.v1.GetAppsResponse
-	12,  // 209: app.user.manager.v1.AppUserManager.GetAppsByCreator:output_type -> app.user.manager.v1.GetAppsByCreatorResponse
-	14,  // 210: app.user.manager.v1.AppUserManager.UpdateApp:output_type -> app.user.manager.v1.UpdateAppResponse
-	17,  // 211: app.user.manager.v1.AppUserManager.CreateAppControl:output_type -> app.user.manager.v1.CreateAppControlResponse
-	19,  // 212: app.user.manager.v1.AppUserManager.CreateAppControlForOtherApp:output_type -> app.user.manager.v1.CreateAppControlForOtherAppResponse
-	21,  // 213: app.user.manager.v1.AppUserManager.GetAppControl:output_type -> app.user.manager.v1.GetAppControlResponse
-	23,  // 214: app.user.manager.v1.AppUserManager.GetAppControlByApp:output_type -> app.user.manager.v1.GetAppControlByAppResponse
-	25,  // 215: app.user.manager.v1.AppUserManager.UpdateAppControl:output_type -> app.user.manager.v1.UpdateAppControlResponse
-	28,  // 216: app.user.manager.v1.AppUserManager.CreateBanApp:output_type -> app.user.manager.v1.CreateBanAppResponse
-	30,  // 217: app.user.manager.v1.AppUserManager.GetBanApp:output_type -> app.user.manager.v1.GetBanAppResponse
-	32,  // 218: app.user.manager.v1.AppUserManager.GetBanAppByApp:output_type -> app.user.manager.v1.GetBanAppByAppResponse
-	34,  // 219: app.user.manager.v1.AppUserManager.UpdateBanApp:output_type -> app.user.manager.v1.UpdateBanAppResponse
-	36,  // 220: app.user.manager.v1.AppUserManager.DeleteBanApp:output_type -> app.user.manager.v1.DeleteBanAppResponse
-	39,  // 221: app.user.manager.v1.AppUserManager.GetAppInfo:output_type -> app.user.manager.v1.GetAppInfoResponse
-	41,  // 222: app.user.manager.v1.AppUserManager.GetAppInfos:output_type -> app.user.manager.v1.GetAppInfosResponse
-	43,  // 223: app.user.manager.v1.AppUserManager.GetAppInfosByCreator:output_type -> app.user.manager.v1.GetAppInfosByCreatorResponse
-	46,  // 224: app.user.manager.v1.AppUserManager.CreateAppUser:output_type -> app.user.manager.v1.CreateAppUserResponse
-	48,  // 225: app.user.manager.v1.AppUserManager.GetAppUser:output_type -> app.user.manager.v1.GetAppUserResponse
-	50,  // 226: app.user.manager.v1.AppUserManager.GetAppUserByAppUser:output_type -> app.user.manager.v1.GetAppUserByAppUserResponse
-	52,  // 227: app.user.manager.v1.AppUserManager.GetAppUserByAppAccount:output_type -> app.user.manager.v1.GetAppUserByAppAccountResponse
-	154, // 228: app.user.manager.v1.AppUserManager.VerifyAppUserByAppAccountPassword:output_type -> app.user.manager.v1.VerifyAppUserByAppAccountPasswordResponse
-	54,  // 229: app.user.manager.v1.AppUserManager.GetAppUsersByApp:output_type -> app.user.manager.v1.GetAppUsersByAppResponse
-	56,  // 230: app.user.manager.v1.AppUserManager.UpdateAppUser:output_type -> app.user.manager.v1.UpdateAppUserResponse
-	60,  // 231: app.user.manager.v1.AppUserManager.CreateAppUserSecret:output_type -> app.user.manager.v1.CreateAppUserSecretResponse
-	62,  // 232: app.user.manager.v1.AppUserManager.GetAppUserSecret:output_type -> app.user.manager.v1.GetAppUserSecretResponse
-	64,  // 233: app.user.manager.v1.AppUserManager.GetAppUserSecretByAppUser:output_type -> app.user.manager.v1.GetAppUserSecretByAppUserResponse
-	66,  // 234: app.user.manager.v1.AppUserManager.UpdateAppUserSecret:output_type -> app.user.manager.v1.UpdateAppUserSecretResponse
-	69,  // 235: app.user.manager.v1.AppUserManager.CreateAppUserExtra:output_type -> app.user.manager.v1.CreateAppUserExtraResponse
-	71,  // 236: app.user.manager.v1.AppUserManager.GetAppUserExtra:output_type -> app.user.manager.v1.GetAppUserExtraResponse
-	73,  // 237: app.user.manager.v1.AppUserManager.GetAppUserExtraByAppUser:output_type -> app.user.manager.v1.GetAppUserExtraByAppUserResponse
-	75,  // 238: app.user.manager.v1.AppUserManager.UpdateAppUserExtra:output_type -> app.user.manager.v1.UpdateAppUserExtraResponse
-	78,  // 239: app.user.manager.v1.AppUserManager.CreateBanAppUser:output_type -> app.user.manager.v1.CreateBanAppUserResponse
-	80,  // 240: app.user.manager.v1.AppUserManager.GetBanAppUser:output_type -> app.user.manager.v1.GetBanAppUserResponse
-	82,  // 241: app.user.manager.v1.AppUserManager.GetBanAppUserByAppUser:output_type -> app.user.manager.v1.GetBanAppUserByAppUserResponse
-	84,  // 242: app.user.manager.v1.AppUserManager.UpdateBanAppUser:output_type -> app.user.manager.v1.UpdateBanAppUserResponse
-	86,  // 243: app.user.manager.v1.AppUserManager.DeleteBanAppUser:output_type -> app.user.manager.v1.DeleteBanAppUserResponse
-	89,  // 244: app.user.manager.v1.AppUserManager.CreateAppUserControl:output_type -> app.user.manager.v1.CreateAppUserControlResponse
-	91,  // 245: app.user.manager.v1.AppUserManager.GetAppUserControl:output_type -> app.user.manager.v1.GetAppUserControlResponse
-	93,  // 246: app.user.manager.v1.AppUserManager.GetAppUserControlByAppUser:output_type -> app.user.manager.v1.GetAppUserControlByAppUserResponse
-	95,  // 247: app.user.manager.v1.AppUserManager.UpdateAppUserControl:output_type -> app.user.manager.v1.UpdateAppUserControlResponse
-	98,  // 248: app.user.manager.v1.AppUserManager.CreateGenesisRole:output_type -> app.user.manager.v1.CreateGenesisRoleResponse
-	100, // 249: app.user.manager.v1.AppUserManager.GetGenesisRole:output_type -> app.user.manager.v1.GetGenesisRoleResponse
-	102, // 250: app.user.manager.v1.AppUserManager.GetGenesisAppRoleUsersByOtherApp:output_type -> app.user.manager.v1.GetGenesisAppRoleUsersByOtherAppResponse
-	119, // 251: app.user.manager.v1.AppUserManager.CreateGenesisRoleUser:output_type -> app.user.manager.v1.CreateGenesisRoleUserResponse
-	104, // 252: app.user.manager.v1.AppUserManager.CreateAppRole:output_type -> app.user.manager.v1.CreateAppRoleResponse
-	106, // 253: app.user.manager.v1.AppUserManager.CreateAppRoleForOtherApp:output_type -> app.user.manager.v1.CreateAppRoleForOtherAppResponse
-	108, // 254: app.user.manager.v1.AppUserManager.GetAppRole:output_type -> app.user.manager.v1.GetAppRoleResponse
-	110, // 255: app.user.manager.v1.AppUserManager.GetAppRoleByAppRole:output_type -> app.user.manager.v1.GetAppRoleByAppRoleResponse
-	112, // 256: app.user.manager.v1.AppUserManager.GetAppRolesByApp:output_type -> app.user.manager.v1.GetAppRolesByAppResponse
-	114, // 257: app.user.manager.v1.AppUserManager.GetAppRolesByOtherApp:output_type -> app.user.manager.v1.GetAppRolesByOtherAppResponse
-	116, // 258: app.user.manager.v1.AppUserManager.UpdateAppRole:output_type -> app.user.manager.v1.UpdateAppRoleResponse
-	121, // 259: app.user.manager.v1.AppUserManager.CreateAppRoleUser:output_type -> app.user.manager.v1.CreateAppRoleUserResponse
-	123, // 260: app.user.manager.v1.AppUserManager.CreateAppRoleUserForOtherAppUser:output_type -> app.user.manager.v1.CreateAppRoleUserForOtherAppUserResponse
-	125, // 261: app.user.manager.v1.AppUserManager.CreateAppRoleUserForAppOtherUser:output_type -> app.user.manager.v1.CreateAppRoleUserForAppOtherUserResponse
-	127, // 262: app.user.manager.v1.AppUserManager.GetAppRoleUser:output_type -> app.user.manager.v1.GetAppRoleUserResponse
-	129, // 263: app.user.manager.v1.AppUserManager.GetAppRoleUserByAppUser:output_type -> app.user.manager.v1.GetAppRoleUserByAppUserResponse
-	131, // 264: app.user.manager.v1.AppUserManager.GetAppRoleUsersByAppRole:output_type -> app.user.manager.v1.GetAppRoleUsersByAppRoleResponse
-	133, // 265: app.user.manager.v1.AppUserManager.GetAppRoleUsersByOtherAppRole:output_type -> app.user.manager.v1.GetAppRoleUsersByOtherAppRoleResponse
-	135, // 266: app.user.manager.v1.AppUserManager.GetAppRoleUsersByApp:output_type -> app.user.manager.v1.GetAppRoleUsersByAppResponse
-	137, // 267: app.user.manager.v1.AppUserManager.GetAppRoleUsersByOtherApp:output_type -> app.user.manager.v1.GetAppRoleUsersByOtherAppResponse
-	139, // 268: app.user.manager.v1.AppUserManager.GetUserRolesByAppUser:output_type -> app.user.manager.v1.GetUserRolesByAppUserResponse
-	141, // 269: app.user.manager.v1.AppUserManager.DeleteAppRoleUser:output_type -> app.user.manager.v1.DeleteAppRoleUserResponse
-	144, // 270: app.user.manager.v1.AppUserManager.GetAppUserInfo:output_type -> app.user.manager.v1.GetAppUserInfoResponse
-	146, // 271: app.user.manager.v1.AppUserManager.GetAppUserInfoByAppUser:output_type -> app.user.manager.v1.GetAppUserInfoByAppUserResponse
-	148, // 272: app.user.manager.v1.AppUserManager.GetAppUserInfosByApp:output_type -> app.user.manager.v1.GetAppUserInfosByAppResponse
-	150, // 273: app.user.manager.v1.AppUserManager.GetAppUserInfosByOtherApp:output_type -> app.user.manager.v1.GetAppUserInfosByOtherAppResponse
-	152, // 274: app.user.manager.v1.AppUserManager.CreateAppUserWithSecret:output_type -> app.user.manager.v1.CreateAppUserWithSecretResponse
-	161, // 275: app.user.manager.v1.AppUserManager.CreateAppUserWithThirdParty:output_type -> app.user.manager.v1.CreateAppUserWithThirdPartyResponse
-	157, // 276: app.user.manager.v1.AppUserManager.CreateAppUserThirdParty:output_type -> app.user.manager.v1.CreateAppUserThirdPartyResponse
-	159, // 277: app.user.manager.v1.AppUserManager.GetAppUserThirdPartyByAppThirdPartyID:output_type -> app.user.manager.v1.GetAppUserThirdPartyByAppThirdPartyIDResponse
-	203, // [203:278] is the sub-list for method output_type
-	128, // [128:203] is the sub-list for method input_type
+	151, // 203: app.user.manager.v1.AppUserManager.CreateAppUserWithSecretRevert:input_type -> app.user.manager.v1.CreateAppUserWithSecretRequest
+	164, // 204: app.user.manager.v1.AppUserManager.Version:output_type -> npool.v1.VersionResponse
+	2,   // 205: app.user.manager.v1.AppUserManager.CreateAdminApps:output_type -> app.user.manager.v1.CreateAdminAppsResponse
+	4,   // 206: app.user.manager.v1.AppUserManager.GetAdminApps:output_type -> app.user.manager.v1.GetAdminAppsResponse
+	6,   // 207: app.user.manager.v1.AppUserManager.CreateApp:output_type -> app.user.manager.v1.CreateAppResponse
+	8,   // 208: app.user.manager.v1.AppUserManager.GetApp:output_type -> app.user.manager.v1.GetAppResponse
+	10,  // 209: app.user.manager.v1.AppUserManager.GetApps:output_type -> app.user.manager.v1.GetAppsResponse
+	12,  // 210: app.user.manager.v1.AppUserManager.GetAppsByCreator:output_type -> app.user.manager.v1.GetAppsByCreatorResponse
+	14,  // 211: app.user.manager.v1.AppUserManager.UpdateApp:output_type -> app.user.manager.v1.UpdateAppResponse
+	17,  // 212: app.user.manager.v1.AppUserManager.CreateAppControl:output_type -> app.user.manager.v1.CreateAppControlResponse
+	19,  // 213: app.user.manager.v1.AppUserManager.CreateAppControlForOtherApp:output_type -> app.user.manager.v1.CreateAppControlForOtherAppResponse
+	21,  // 214: app.user.manager.v1.AppUserManager.GetAppControl:output_type -> app.user.manager.v1.GetAppControlResponse
+	23,  // 215: app.user.manager.v1.AppUserManager.GetAppControlByApp:output_type -> app.user.manager.v1.GetAppControlByAppResponse
+	25,  // 216: app.user.manager.v1.AppUserManager.UpdateAppControl:output_type -> app.user.manager.v1.UpdateAppControlResponse
+	28,  // 217: app.user.manager.v1.AppUserManager.CreateBanApp:output_type -> app.user.manager.v1.CreateBanAppResponse
+	30,  // 218: app.user.manager.v1.AppUserManager.GetBanApp:output_type -> app.user.manager.v1.GetBanAppResponse
+	32,  // 219: app.user.manager.v1.AppUserManager.GetBanAppByApp:output_type -> app.user.manager.v1.GetBanAppByAppResponse
+	34,  // 220: app.user.manager.v1.AppUserManager.UpdateBanApp:output_type -> app.user.manager.v1.UpdateBanAppResponse
+	36,  // 221: app.user.manager.v1.AppUserManager.DeleteBanApp:output_type -> app.user.manager.v1.DeleteBanAppResponse
+	39,  // 222: app.user.manager.v1.AppUserManager.GetAppInfo:output_type -> app.user.manager.v1.GetAppInfoResponse
+	41,  // 223: app.user.manager.v1.AppUserManager.GetAppInfos:output_type -> app.user.manager.v1.GetAppInfosResponse
+	43,  // 224: app.user.manager.v1.AppUserManager.GetAppInfosByCreator:output_type -> app.user.manager.v1.GetAppInfosByCreatorResponse
+	46,  // 225: app.user.manager.v1.AppUserManager.CreateAppUser:output_type -> app.user.manager.v1.CreateAppUserResponse
+	48,  // 226: app.user.manager.v1.AppUserManager.GetAppUser:output_type -> app.user.manager.v1.GetAppUserResponse
+	50,  // 227: app.user.manager.v1.AppUserManager.GetAppUserByAppUser:output_type -> app.user.manager.v1.GetAppUserByAppUserResponse
+	52,  // 228: app.user.manager.v1.AppUserManager.GetAppUserByAppAccount:output_type -> app.user.manager.v1.GetAppUserByAppAccountResponse
+	154, // 229: app.user.manager.v1.AppUserManager.VerifyAppUserByAppAccountPassword:output_type -> app.user.manager.v1.VerifyAppUserByAppAccountPasswordResponse
+	54,  // 230: app.user.manager.v1.AppUserManager.GetAppUsersByApp:output_type -> app.user.manager.v1.GetAppUsersByAppResponse
+	56,  // 231: app.user.manager.v1.AppUserManager.UpdateAppUser:output_type -> app.user.manager.v1.UpdateAppUserResponse
+	60,  // 232: app.user.manager.v1.AppUserManager.CreateAppUserSecret:output_type -> app.user.manager.v1.CreateAppUserSecretResponse
+	62,  // 233: app.user.manager.v1.AppUserManager.GetAppUserSecret:output_type -> app.user.manager.v1.GetAppUserSecretResponse
+	64,  // 234: app.user.manager.v1.AppUserManager.GetAppUserSecretByAppUser:output_type -> app.user.manager.v1.GetAppUserSecretByAppUserResponse
+	66,  // 235: app.user.manager.v1.AppUserManager.UpdateAppUserSecret:output_type -> app.user.manager.v1.UpdateAppUserSecretResponse
+	69,  // 236: app.user.manager.v1.AppUserManager.CreateAppUserExtra:output_type -> app.user.manager.v1.CreateAppUserExtraResponse
+	71,  // 237: app.user.manager.v1.AppUserManager.GetAppUserExtra:output_type -> app.user.manager.v1.GetAppUserExtraResponse
+	73,  // 238: app.user.manager.v1.AppUserManager.GetAppUserExtraByAppUser:output_type -> app.user.manager.v1.GetAppUserExtraByAppUserResponse
+	75,  // 239: app.user.manager.v1.AppUserManager.UpdateAppUserExtra:output_type -> app.user.manager.v1.UpdateAppUserExtraResponse
+	78,  // 240: app.user.manager.v1.AppUserManager.CreateBanAppUser:output_type -> app.user.manager.v1.CreateBanAppUserResponse
+	80,  // 241: app.user.manager.v1.AppUserManager.GetBanAppUser:output_type -> app.user.manager.v1.GetBanAppUserResponse
+	82,  // 242: app.user.manager.v1.AppUserManager.GetBanAppUserByAppUser:output_type -> app.user.manager.v1.GetBanAppUserByAppUserResponse
+	84,  // 243: app.user.manager.v1.AppUserManager.UpdateBanAppUser:output_type -> app.user.manager.v1.UpdateBanAppUserResponse
+	86,  // 244: app.user.manager.v1.AppUserManager.DeleteBanAppUser:output_type -> app.user.manager.v1.DeleteBanAppUserResponse
+	89,  // 245: app.user.manager.v1.AppUserManager.CreateAppUserControl:output_type -> app.user.manager.v1.CreateAppUserControlResponse
+	91,  // 246: app.user.manager.v1.AppUserManager.GetAppUserControl:output_type -> app.user.manager.v1.GetAppUserControlResponse
+	93,  // 247: app.user.manager.v1.AppUserManager.GetAppUserControlByAppUser:output_type -> app.user.manager.v1.GetAppUserControlByAppUserResponse
+	95,  // 248: app.user.manager.v1.AppUserManager.UpdateAppUserControl:output_type -> app.user.manager.v1.UpdateAppUserControlResponse
+	98,  // 249: app.user.manager.v1.AppUserManager.CreateGenesisRole:output_type -> app.user.manager.v1.CreateGenesisRoleResponse
+	100, // 250: app.user.manager.v1.AppUserManager.GetGenesisRole:output_type -> app.user.manager.v1.GetGenesisRoleResponse
+	102, // 251: app.user.manager.v1.AppUserManager.GetGenesisAppRoleUsersByOtherApp:output_type -> app.user.manager.v1.GetGenesisAppRoleUsersByOtherAppResponse
+	119, // 252: app.user.manager.v1.AppUserManager.CreateGenesisRoleUser:output_type -> app.user.manager.v1.CreateGenesisRoleUserResponse
+	104, // 253: app.user.manager.v1.AppUserManager.CreateAppRole:output_type -> app.user.manager.v1.CreateAppRoleResponse
+	106, // 254: app.user.manager.v1.AppUserManager.CreateAppRoleForOtherApp:output_type -> app.user.manager.v1.CreateAppRoleForOtherAppResponse
+	108, // 255: app.user.manager.v1.AppUserManager.GetAppRole:output_type -> app.user.manager.v1.GetAppRoleResponse
+	110, // 256: app.user.manager.v1.AppUserManager.GetAppRoleByAppRole:output_type -> app.user.manager.v1.GetAppRoleByAppRoleResponse
+	112, // 257: app.user.manager.v1.AppUserManager.GetAppRolesByApp:output_type -> app.user.manager.v1.GetAppRolesByAppResponse
+	114, // 258: app.user.manager.v1.AppUserManager.GetAppRolesByOtherApp:output_type -> app.user.manager.v1.GetAppRolesByOtherAppResponse
+	116, // 259: app.user.manager.v1.AppUserManager.UpdateAppRole:output_type -> app.user.manager.v1.UpdateAppRoleResponse
+	121, // 260: app.user.manager.v1.AppUserManager.CreateAppRoleUser:output_type -> app.user.manager.v1.CreateAppRoleUserResponse
+	123, // 261: app.user.manager.v1.AppUserManager.CreateAppRoleUserForOtherAppUser:output_type -> app.user.manager.v1.CreateAppRoleUserForOtherAppUserResponse
+	125, // 262: app.user.manager.v1.AppUserManager.CreateAppRoleUserForAppOtherUser:output_type -> app.user.manager.v1.CreateAppRoleUserForAppOtherUserResponse
+	127, // 263: app.user.manager.v1.AppUserManager.GetAppRoleUser:output_type -> app.user.manager.v1.GetAppRoleUserResponse
+	129, // 264: app.user.manager.v1.AppUserManager.GetAppRoleUserByAppUser:output_type -> app.user.manager.v1.GetAppRoleUserByAppUserResponse
+	131, // 265: app.user.manager.v1.AppUserManager.GetAppRoleUsersByAppRole:output_type -> app.user.manager.v1.GetAppRoleUsersByAppRoleResponse
+	133, // 266: app.user.manager.v1.AppUserManager.GetAppRoleUsersByOtherAppRole:output_type -> app.user.manager.v1.GetAppRoleUsersByOtherAppRoleResponse
+	135, // 267: app.user.manager.v1.AppUserManager.GetAppRoleUsersByApp:output_type -> app.user.manager.v1.GetAppRoleUsersByAppResponse
+	137, // 268: app.user.manager.v1.AppUserManager.GetAppRoleUsersByOtherApp:output_type -> app.user.manager.v1.GetAppRoleUsersByOtherAppResponse
+	139, // 269: app.user.manager.v1.AppUserManager.GetUserRolesByAppUser:output_type -> app.user.manager.v1.GetUserRolesByAppUserResponse
+	141, // 270: app.user.manager.v1.AppUserManager.DeleteAppRoleUser:output_type -> app.user.manager.v1.DeleteAppRoleUserResponse
+	144, // 271: app.user.manager.v1.AppUserManager.GetAppUserInfo:output_type -> app.user.manager.v1.GetAppUserInfoResponse
+	146, // 272: app.user.manager.v1.AppUserManager.GetAppUserInfoByAppUser:output_type -> app.user.manager.v1.GetAppUserInfoByAppUserResponse
+	148, // 273: app.user.manager.v1.AppUserManager.GetAppUserInfosByApp:output_type -> app.user.manager.v1.GetAppUserInfosByAppResponse
+	150, // 274: app.user.manager.v1.AppUserManager.GetAppUserInfosByOtherApp:output_type -> app.user.manager.v1.GetAppUserInfosByOtherAppResponse
+	152, // 275: app.user.manager.v1.AppUserManager.CreateAppUserWithSecret:output_type -> app.user.manager.v1.CreateAppUserWithSecretResponse
+	161, // 276: app.user.manager.v1.AppUserManager.CreateAppUserWithThirdParty:output_type -> app.user.manager.v1.CreateAppUserWithThirdPartyResponse
+	157, // 277: app.user.manager.v1.AppUserManager.CreateAppUserThirdParty:output_type -> app.user.manager.v1.CreateAppUserThirdPartyResponse
+	159, // 278: app.user.manager.v1.AppUserManager.GetAppUserThirdPartyByAppThirdPartyID:output_type -> app.user.manager.v1.GetAppUserThirdPartyByAppThirdPartyIDResponse
+	152, // 279: app.user.manager.v1.AppUserManager.CreateAppUserWithSecretRevert:output_type -> app.user.manager.v1.CreateAppUserWithSecretResponse
+	204, // [204:280] is the sub-list for method output_type
+	128, // [128:204] is the sub-list for method input_type
 	128, // [128:128] is the sub-list for extension type_name
 	128, // [128:128] is the sub-list for extension extendee
 	0,   // [0:128] is the sub-list for field type_name

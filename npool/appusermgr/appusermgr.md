@@ -2966,6 +2966,7 @@
 | CreateAppUserWithThirdParty | [CreateAppUserWithThirdPartyRequest](#app-user-manager-v1-CreateAppUserWithThirdPartyRequest) | [CreateAppUserWithThirdPartyResponse](#app-user-manager-v1-CreateAppUserWithThirdPartyResponse) |  |
 | CreateAppUserThirdParty | [CreateAppUserThirdPartyRequest](#app-user-manager-v1-CreateAppUserThirdPartyRequest) | [CreateAppUserThirdPartyResponse](#app-user-manager-v1-CreateAppUserThirdPartyResponse) |  |
 | GetAppUserThirdPartyByAppThirdPartyID | [GetAppUserThirdPartyByAppThirdPartyIDRequest](#app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDRequest) | [GetAppUserThirdPartyByAppThirdPartyIDResponse](#app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDResponse) |  |
+| CreateAppUserWithSecretRevert | [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse) |  |
 
  
 
@@ -5598,6 +5599,7 @@
 | CreateAppUserWithThirdParty | [CreateAppUserWithThirdPartyRequest](#app-user-manager-v1-CreateAppUserWithThirdPartyRequest) | [CreateAppUserWithThirdPartyResponse](#app-user-manager-v1-CreateAppUserWithThirdPartyResponse) |  |
 | CreateAppUserThirdParty | [CreateAppUserThirdPartyRequest](#app-user-manager-v1-CreateAppUserThirdPartyRequest) | [CreateAppUserThirdPartyResponse](#app-user-manager-v1-CreateAppUserThirdPartyResponse) |  |
 | GetAppUserThirdPartyByAppThirdPartyID | [GetAppUserThirdPartyByAppThirdPartyIDRequest](#app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDRequest) | [GetAppUserThirdPartyByAppThirdPartyIDResponse](#app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDResponse) |  |
+| CreateAppUserWithSecretRevert | [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse) |  |
 
  
 

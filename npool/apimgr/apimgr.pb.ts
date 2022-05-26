@@ -11,6 +11,7 @@ export type Path = {
   method?: string
   path?: string
   exported?: boolean
+  methodName?: string
 }
 
 export type ServiceApis = {
@@ -39,6 +40,7 @@ export type ServicePath = {
   exported?: boolean
   createAt?: number
   updateAt?: number
+  methodName?: string
 }
 
 export type GetApisRequest = {
@@ -46,6 +48,15 @@ export type GetApisRequest = {
 
 export type GetApisResponse = {
   infos?: ServicePath[]
+}
+
+export type GetServiceMethodApiRequest = {
+  serviceName?: string
+  methodName?: string
+}
+
+export type GetServiceMethodApiResponse = {
+  info?: ServicePath
 }
 
 export class ApiManager {
@@ -57,5 +68,8 @@ export class ApiManager {
   }
   static GetApis(req: GetApisRequest, initReq?: fm.InitReq): Promise<GetApisResponse> {
     return fm.fetchReq<GetApisRequest, GetApisResponse>(`/v1/get/apis`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetServiceMethodApi(req: GetServiceMethodApiRequest, initReq?: fm.InitReq): Promise<GetServiceMethodApiResponse> {
+    return fm.fetchReq<GetServiceMethodApiRequest, GetServiceMethodApiResponse>(`/v1/get/service/method/api`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

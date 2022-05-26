@@ -43,6 +43,38 @@
         ]
       }
     },
+    "/v1/get/service/method/api": {
+      "post": {
+        "operationId": "ApiManager_GetServiceMethodApi",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetServiceMethodApiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetServiceMethodApiRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApiManager"
+        ]
+      }
+    },
     "/v1/register": {
       "post": {
         "operationId": "ApiManager_Register",
@@ -156,6 +188,25 @@
         }
       }
     },
+    "v1GetServiceMethodApiRequest": {
+      "type": "object",
+      "properties": {
+        "ServiceName": {
+          "type": "string"
+        },
+        "MethodName": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetServiceMethodApiResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ServicePath"
+        }
+      }
+    },
     "v1Path": {
       "type": "object",
       "properties": {
@@ -167,6 +218,9 @@
         },
         "Exported": {
           "type": "boolean"
+        },
+        "MethodName": {
+          "type": "string"
         }
       }
     },
@@ -243,6 +297,9 @@
         "UpdateAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "MethodName": {
+          "type": "string"
         }
       }
     },

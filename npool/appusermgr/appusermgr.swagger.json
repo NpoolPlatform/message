@@ -491,6 +491,38 @@
         ]
       }
     },
+    "/v1/create/app/user/with/secret/revert": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppUserWithSecretRevert",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserWithSecretResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserWithSecretRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/create/app/user/with/third/party": {
       "post": {
         "operationId": "AppUserManager_CreateAppUserWithThirdParty",

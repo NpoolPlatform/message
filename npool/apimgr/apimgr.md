@@ -6,6 +6,8 @@
 - [npool/apimgr/apimgr.proto](#npool_apimgr_apimgr-proto)
     - [GetApisRequest](#api-manager-v1-GetApisRequest)
     - [GetApisResponse](#api-manager-v1-GetApisResponse)
+    - [GetServiceMethodApiRequest](#api-manager-v1-GetServiceMethodApiRequest)
+    - [GetServiceMethodApiResponse](#api-manager-v1-GetServiceMethodApiResponse)
     - [Path](#api-manager-v1-Path)
     - [RegisterRequest](#api-manager-v1-RegisterRequest)
     - [RegisterResponse](#api-manager-v1-RegisterResponse)
@@ -17,6 +19,8 @@
 - [npool/apimgr/apimgr.proto](#npool_apimgr_apimgr-proto)
     - [GetApisRequest](#api-manager-v1-GetApisRequest)
     - [GetApisResponse](#api-manager-v1-GetApisResponse)
+    - [GetServiceMethodApiRequest](#api-manager-v1-GetServiceMethodApiRequest)
+    - [GetServiceMethodApiResponse](#api-manager-v1-GetServiceMethodApiResponse)
     - [Path](#api-manager-v1-Path)
     - [RegisterRequest](#api-manager-v1-RegisterRequest)
     - [RegisterResponse](#api-manager-v1-RegisterResponse)
@@ -61,6 +65,37 @@
 
 
 
+<a name="api-manager-v1-GetServiceMethodApiRequest"></a>
+
+### GetServiceMethodApiRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ServiceName | [string](#string) |  |  |
+| MethodName | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="api-manager-v1-GetServiceMethodApiResponse"></a>
+
+### GetServiceMethodApiResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ServicePath](#api-manager-v1-ServicePath) |  |  |
+
+
+
+
+
+
 <a name="api-manager-v1-Path"></a>
 
 ### Path
@@ -72,6 +107,7 @@
 | Method | [string](#string) |  |  |
 | Path | [string](#string) |  |  |
 | Exported | [bool](#bool) |  |  |
+| MethodName | [string](#string) |  |  |
 
 
 
@@ -144,6 +180,7 @@
 | Exported | [bool](#bool) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
 | UpdateAt | [uint32](#uint32) |  |  |
+| MethodName | [string](#string) |  |  |
 
 
 
@@ -166,6 +203,7 @@
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | Register | [RegisterRequest](#api-manager-v1-RegisterRequest) | [RegisterResponse](#api-manager-v1-RegisterResponse) |  |
 | GetApis | [GetApisRequest](#api-manager-v1-GetApisRequest) | [GetApisResponse](#api-manager-v1-GetApisResponse) |  |
+| GetServiceMethodApi | [GetServiceMethodApiRequest](#api-manager-v1-GetServiceMethodApiRequest) | [GetServiceMethodApiResponse](#api-manager-v1-GetServiceMethodApiResponse) |  |
 
  
 
@@ -203,6 +241,37 @@
 
 
 
+<a name="api-manager-v1-GetServiceMethodApiRequest"></a>
+
+### GetServiceMethodApiRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ServiceName | [string](#string) |  |  |
+| MethodName | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="api-manager-v1-GetServiceMethodApiResponse"></a>
+
+### GetServiceMethodApiResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ServicePath](#api-manager-v1-ServicePath) |  |  |
+
+
+
+
+
+
 <a name="api-manager-v1-Path"></a>
 
 ### Path
@@ -214,6 +283,7 @@
 | Method | [string](#string) |  |  |
 | Path | [string](#string) |  |  |
 | Exported | [bool](#bool) |  |  |
+| MethodName | [string](#string) |  |  |
 
 
 
@@ -286,6 +356,7 @@
 | Exported | [bool](#bool) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
 | UpdateAt | [uint32](#uint32) |  |  |
+| MethodName | [string](#string) |  |  |
 
 
 
@@ -308,6 +379,7 @@
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | Register | [RegisterRequest](#api-manager-v1-RegisterRequest) | [RegisterResponse](#api-manager-v1-RegisterResponse) |  |
 | GetApis | [GetApisRequest](#api-manager-v1-GetApisRequest) | [GetApisResponse](#api-manager-v1-GetApisResponse) |  |
+| GetServiceMethodApi | [GetServiceMethodApiRequest](#api-manager-v1-GetServiceMethodApiRequest) | [GetServiceMethodApiResponse](#api-manager-v1-GetServiceMethodApiResponse) |  |
 
  
 

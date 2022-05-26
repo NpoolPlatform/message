@@ -999,4 +999,7 @@ export class AppUserManager {
   static GetAppUserThirdPartyByAppThirdPartyID(req: GetAppUserThirdPartyByAppThirdPartyIDRequest, initReq?: fm.InitReq): Promise<GetAppUserThirdPartyByAppThirdPartyIDResponse> {
     return fm.fetchReq<GetAppUserThirdPartyByAppThirdPartyIDRequest, GetAppUserThirdPartyByAppThirdPartyIDResponse>(`/v1/get/app/user/thirdparty/by/app/thirdpartyid`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static CreateAppUserWithSecretRevert(req: CreateAppUserWithSecretRequest, initReq?: fm.InitReq): Promise<CreateAppUserWithSecretResponse> {
+    return fm.fetchReq<CreateAppUserWithSecretRequest, CreateAppUserWithSecretResponse>(`/v1/create/app/user/with/secret/revert`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
 }

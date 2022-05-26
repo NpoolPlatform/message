@@ -453,6 +453,7 @@ service AppUserManager {
         };
     }
 
+
     rpc CreateAppUserWithThirdParty (CreateAppUserWithThirdPartyRequest) returns (CreateAppUserWithThirdPartyResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/user/with/third/party"
@@ -470,6 +471,13 @@ service AppUserManager {
     rpc GetAppUserThirdPartyByAppThirdPartyID (GetAppUserThirdPartyByAppThirdPartyIDRequest) returns (GetAppUserThirdPartyByAppThirdPartyIDResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/user/thirdparty/by/app/thirdpartyid"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppUserWithSecretRevert (CreateAppUserWithSecretRequest) returns (CreateAppUserWithSecretResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/with/secret/revert"
             body: "*"
         };
     }
