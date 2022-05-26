@@ -43,6 +43,38 @@
         ]
       }
     },
+    "/v1/get/service/method/api": {
+      "post": {
+        "operationId": "ApiManager_GetServiceMethodApi",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetServiceMethodApiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetServiceMethodApiRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApiManager"
+        ]
+      }
+    },
     "/v1/register": {
       "post": {
         "operationId": "ApiManager_Register",
@@ -67,38 +99,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1RegisterRequest"
-            }
-          }
-        ],
-        "tags": [
-          "ApiManager"
-        ]
-      }
-    },
-    "/v2/get/apis": {
-      "post": {
-        "operationId": "ApiManager_GetApisV2",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetApisV2Response"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetApisV2Request"
             }
           }
         ],
@@ -153,14 +153,6 @@
         }
       }
     },
-    "protobufNullValue": {
-      "type": "string",
-      "enum": [
-        "NULL_VALUE"
-      ],
-      "default": "NULL_VALUE",
-      "description": "`NullValue` is a singleton enumeration to represent the null value for the\n`Value` type union.\n\n The JSON representation for `NullValue` is JSON `null`.\n\n - NULL_VALUE: Null value."
-    },
     "runtimeError": {
       "type": "object",
       "properties": {
@@ -182,17 +174,6 @@
         }
       }
     },
-    "v1FilterCond": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Val": {
-          "type": "object"
-        }
-      }
-    },
     "v1GetApisRequest": {
       "type": "object"
     },
@@ -207,37 +188,22 @@
         }
       }
     },
-    "v1GetApisV2Request": {
+    "v1GetServiceMethodApiRequest": {
       "type": "object",
       "properties": {
-        "Conds": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/v1FilterCond"
-          }
+        "ServiceName": {
+          "type": "string"
         },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
+        "MethodName": {
+          "type": "string"
         }
       }
     },
-    "v1GetApisV2Response": {
+    "v1GetServiceMethodApiResponse": {
       "type": "object",
       "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1ServicePath"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int32"
+        "Info": {
+          "$ref": "#/definitions/v1ServicePath"
         }
       }
     },

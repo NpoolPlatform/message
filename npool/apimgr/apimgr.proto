@@ -28,9 +28,9 @@ service ApiManager {
             body: "*"
         };
     }
-    rpc GetApisV2(GetApisV2Request) returns (GetApisV2Response) {
+    rpc GetServiceMethodApi(GetServiceMethodApiRequest) returns (GetServiceMethodApiResponse) {
         option (google.api.http) = {
-            post: "/v2/get/apis"
+            post: "/v1/get/service/method/api"
             body: "*"
         };
     }
@@ -77,13 +77,11 @@ message GetApisResponse {
     repeated ServicePath Infos = 10;
 }
 
-message GetApisV2Request {
-    map<string, npool.v1.FilterCond> Conds = 10;
-    int32 Offset = 20;
-    int32 Limit = 30;
+message GetServiceMethodApiRequest {
+    string ServiceName = 10;
+    string MethodName = 20;
 }
 
-message GetApisV2Response {
-    repeated ServicePath Infos = 10;
-    int32 Total = 20;
+message GetServiceMethodApiResponse {
+    ServicePath Info = 10;
 }

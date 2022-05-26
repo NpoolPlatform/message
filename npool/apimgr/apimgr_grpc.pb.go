@@ -27,7 +27,7 @@ type ApiManagerClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterResponse, error)
 	GetApis(ctx context.Context, in *GetApisRequest, opts ...grpc.CallOption) (*GetApisResponse, error)
-	GetApisV2(ctx context.Context, in *GetApisV2Request, opts ...grpc.CallOption) (*GetApisV2Response, error)
+	GetServiceMethodApi(ctx context.Context, in *GetServiceMethodApiRequest, opts ...grpc.CallOption) (*GetServiceMethodApiResponse, error)
 }
 
 type apiManagerClient struct {
@@ -65,9 +65,9 @@ func (c *apiManagerClient) GetApis(ctx context.Context, in *GetApisRequest, opts
 	return out, nil
 }
 
-func (c *apiManagerClient) GetApisV2(ctx context.Context, in *GetApisV2Request, opts ...grpc.CallOption) (*GetApisV2Response, error) {
-	out := new(GetApisV2Response)
-	err := c.cc.Invoke(ctx, "/api.manager.v1.ApiManager/GetApisV2", in, out, opts...)
+func (c *apiManagerClient) GetServiceMethodApi(ctx context.Context, in *GetServiceMethodApiRequest, opts ...grpc.CallOption) (*GetServiceMethodApiResponse, error) {
+	out := new(GetServiceMethodApiResponse)
+	err := c.cc.Invoke(ctx, "/api.manager.v1.ApiManager/GetServiceMethodApi", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ type ApiManagerServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	Register(context.Context, *RegisterRequest) (*RegisterResponse, error)
 	GetApis(context.Context, *GetApisRequest) (*GetApisResponse, error)
-	GetApisV2(context.Context, *GetApisV2Request) (*GetApisV2Response, error)
+	GetServiceMethodApi(context.Context, *GetServiceMethodApiRequest) (*GetServiceMethodApiResponse, error)
 	mustEmbedUnimplementedApiManagerServer()
 }
 
@@ -98,8 +98,8 @@ func (UnimplementedApiManagerServer) Register(context.Context, *RegisterRequest)
 func (UnimplementedApiManagerServer) GetApis(context.Context, *GetApisRequest) (*GetApisResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApis not implemented")
 }
-func (UnimplementedApiManagerServer) GetApisV2(context.Context, *GetApisV2Request) (*GetApisV2Response, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetApisV2 not implemented")
+func (UnimplementedApiManagerServer) GetServiceMethodApi(context.Context, *GetServiceMethodApiRequest) (*GetServiceMethodApiResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetServiceMethodApi not implemented")
 }
 func (UnimplementedApiManagerServer) mustEmbedUnimplementedApiManagerServer() {}
 
@@ -168,20 +168,20 @@ func _ApiManager_GetApis_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ApiManager_GetApisV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetApisV2Request)
+func _ApiManager_GetServiceMethodApi_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetServiceMethodApiRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ApiManagerServer).GetApisV2(ctx, in)
+		return srv.(ApiManagerServer).GetServiceMethodApi(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.manager.v1.ApiManager/GetApisV2",
+		FullMethod: "/api.manager.v1.ApiManager/GetServiceMethodApi",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ApiManagerServer).GetApisV2(ctx, req.(*GetApisV2Request))
+		return srv.(ApiManagerServer).GetServiceMethodApi(ctx, req.(*GetServiceMethodApiRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -206,8 +206,8 @@ var ApiManager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ApiManager_GetApis_Handler,
 		},
 		{
-			MethodName: "GetApisV2",
-			Handler:    _ApiManager_GetApisV2_Handler,
+			MethodName: "GetServiceMethodApi",
+			Handler:    _ApiManager_GetServiceMethodApi_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
