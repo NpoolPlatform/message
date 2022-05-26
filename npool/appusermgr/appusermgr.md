@@ -15,6 +15,7 @@
     - [AppUserInfo](#app-user-manager-v1-AppUserInfo)
     - [AppUserSecret](#app-user-manager-v1-AppUserSecret)
     - [AppUserSecretMap](#app-user-manager-v1-AppUserSecretMap)
+    - [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty)
     - [BanApp](#app-user-manager-v1-BanApp)
     - [BanAppUser](#app-user-manager-v1-BanAppUser)
     - [CreateAdminAppsRequest](#app-user-manager-v1-CreateAdminAppsRequest)
@@ -43,8 +44,12 @@
     - [CreateAppUserResponse](#app-user-manager-v1-CreateAppUserResponse)
     - [CreateAppUserSecretRequest](#app-user-manager-v1-CreateAppUserSecretRequest)
     - [CreateAppUserSecretResponse](#app-user-manager-v1-CreateAppUserSecretResponse)
+    - [CreateAppUserThirdPartyRequest](#app-user-manager-v1-CreateAppUserThirdPartyRequest)
+    - [CreateAppUserThirdPartyResponse](#app-user-manager-v1-CreateAppUserThirdPartyResponse)
     - [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest)
     - [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse)
+    - [CreateAppUserWithThirdPartyRequest](#app-user-manager-v1-CreateAppUserWithThirdPartyRequest)
+    - [CreateAppUserWithThirdPartyResponse](#app-user-manager-v1-CreateAppUserWithThirdPartyResponse)
     - [CreateBanAppRequest](#app-user-manager-v1-CreateBanAppRequest)
     - [CreateBanAppResponse](#app-user-manager-v1-CreateBanAppResponse)
     - [CreateBanAppUserRequest](#app-user-manager-v1-CreateBanAppUserRequest)
@@ -119,6 +124,8 @@
     - [GetAppUserSecretByAppUserResponse](#app-user-manager-v1-GetAppUserSecretByAppUserResponse)
     - [GetAppUserSecretRequest](#app-user-manager-v1-GetAppUserSecretRequest)
     - [GetAppUserSecretResponse](#app-user-manager-v1-GetAppUserSecretResponse)
+    - [GetAppUserThirdPartyByAppThirdPartyIDRequest](#app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDRequest)
+    - [GetAppUserThirdPartyByAppThirdPartyIDResponse](#app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDResponse)
     - [GetAppUsersByAppRequest](#app-user-manager-v1-GetAppUsersByAppRequest)
     - [GetAppUsersByAppResponse](#app-user-manager-v1-GetAppUsersByAppResponse)
     - [GetAppsByCreatorRequest](#app-user-manager-v1-GetAppsByCreatorRequest)
@@ -174,6 +181,7 @@
     - [AppUserInfo](#app-user-manager-v1-AppUserInfo)
     - [AppUserSecret](#app-user-manager-v1-AppUserSecret)
     - [AppUserSecretMap](#app-user-manager-v1-AppUserSecretMap)
+    - [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty)
     - [BanApp](#app-user-manager-v1-BanApp)
     - [BanAppUser](#app-user-manager-v1-BanAppUser)
     - [CreateAdminAppsRequest](#app-user-manager-v1-CreateAdminAppsRequest)
@@ -202,8 +210,12 @@
     - [CreateAppUserResponse](#app-user-manager-v1-CreateAppUserResponse)
     - [CreateAppUserSecretRequest](#app-user-manager-v1-CreateAppUserSecretRequest)
     - [CreateAppUserSecretResponse](#app-user-manager-v1-CreateAppUserSecretResponse)
+    - [CreateAppUserThirdPartyRequest](#app-user-manager-v1-CreateAppUserThirdPartyRequest)
+    - [CreateAppUserThirdPartyResponse](#app-user-manager-v1-CreateAppUserThirdPartyResponse)
     - [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest)
     - [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse)
+    - [CreateAppUserWithThirdPartyRequest](#app-user-manager-v1-CreateAppUserWithThirdPartyRequest)
+    - [CreateAppUserWithThirdPartyResponse](#app-user-manager-v1-CreateAppUserWithThirdPartyResponse)
     - [CreateBanAppRequest](#app-user-manager-v1-CreateBanAppRequest)
     - [CreateBanAppResponse](#app-user-manager-v1-CreateBanAppResponse)
     - [CreateBanAppUserRequest](#app-user-manager-v1-CreateBanAppUserRequest)
@@ -278,6 +290,8 @@
     - [GetAppUserSecretByAppUserResponse](#app-user-manager-v1-GetAppUserSecretByAppUserResponse)
     - [GetAppUserSecretRequest](#app-user-manager-v1-GetAppUserSecretRequest)
     - [GetAppUserSecretResponse](#app-user-manager-v1-GetAppUserSecretResponse)
+    - [GetAppUserThirdPartyByAppThirdPartyIDRequest](#app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDRequest)
+    - [GetAppUserThirdPartyByAppThirdPartyIDResponse](#app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDResponse)
     - [GetAppUsersByAppRequest](#app-user-manager-v1-GetAppUsersByAppRequest)
     - [GetAppUsersByAppResponse](#app-user-manager-v1-GetAppUsersByAppResponse)
     - [GetAppsByCreatorRequest](#app-user-manager-v1-GetAppsByCreatorRequest)
@@ -551,6 +565,27 @@
 
 
 
+<a name="app-user-manager-v1-AppUserThirdParty"></a>
+
+### AppUserThirdParty
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| ThirdPartyUserID | [string](#string) |  |  |
+| ThirdPartyUsername | [string](#string) |  |  |
+| ThirdPartyUserAvatar | [string](#string) |  |  |
+| ThirdPartyID | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="app-user-manager-v1-BanApp"></a>
 
 ### BanApp
@@ -978,6 +1013,36 @@
 
 
 
+<a name="app-user-manager-v1-CreateAppUserThirdPartyRequest"></a>
+
+### CreateAppUserThirdPartyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-CreateAppUserThirdPartyResponse"></a>
+
+### CreateAppUserThirdPartyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
+
+
+
+
+
+
 <a name="app-user-manager-v1-CreateAppUserWithSecretRequest"></a>
 
 ### CreateAppUserWithSecretRequest
@@ -997,6 +1062,37 @@
 <a name="app-user-manager-v1-CreateAppUserWithSecretResponse"></a>
 
 ### CreateAppUserWithSecretResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUser](#app-user-manager-v1-AppUser) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-CreateAppUserWithThirdPartyRequest"></a>
+
+### CreateAppUserWithThirdPartyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| User | [AppUser](#app-user-manager-v1-AppUser) |  |  |
+| ThirdParty | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-CreateAppUserWithThirdPartyResponse"></a>
+
+### CreateAppUserWithThirdPartyResponse
 
 
 
@@ -2142,6 +2238,38 @@
 
 
 
+<a name="app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDRequest"></a>
+
+### GetAppUserThirdPartyByAppThirdPartyIDRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| ThirdPartyID | [string](#string) |  |  |
+| ThirdPartyUserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDResponse"></a>
+
+### GetAppUserThirdPartyByAppThirdPartyIDResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
+
+
+
+
+
+
 <a name="app-user-manager-v1-GetAppUsersByAppRequest"></a>
 
 ### GetAppUsersByAppRequest
@@ -2835,6 +2963,9 @@
 | GetAppUserInfosByApp | [GetAppUserInfosByAppRequest](#app-user-manager-v1-GetAppUserInfosByAppRequest) | [GetAppUserInfosByAppResponse](#app-user-manager-v1-GetAppUserInfosByAppResponse) |  |
 | GetAppUserInfosByOtherApp | [GetAppUserInfosByOtherAppRequest](#app-user-manager-v1-GetAppUserInfosByOtherAppRequest) | [GetAppUserInfosByOtherAppResponse](#app-user-manager-v1-GetAppUserInfosByOtherAppResponse) |  |
 | CreateAppUserWithSecret | [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse) |  |
+| CreateAppUserWithThirdParty | [CreateAppUserWithThirdPartyRequest](#app-user-manager-v1-CreateAppUserWithThirdPartyRequest) | [CreateAppUserWithThirdPartyResponse](#app-user-manager-v1-CreateAppUserWithThirdPartyResponse) |  |
+| CreateAppUserThirdParty | [CreateAppUserThirdPartyRequest](#app-user-manager-v1-CreateAppUserThirdPartyRequest) | [CreateAppUserThirdPartyResponse](#app-user-manager-v1-CreateAppUserThirdPartyResponse) |  |
+| GetAppUserThirdPartyByAppThirdPartyID | [GetAppUserThirdPartyByAppThirdPartyIDRequest](#app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDRequest) | [GetAppUserThirdPartyByAppThirdPartyIDResponse](#app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDResponse) |  |
 | CreateAppUserWithSecretRevert | [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse) |  |
 
  
@@ -3067,6 +3198,27 @@
 
 
 
+<a name="app-user-manager-v1-AppUserThirdParty"></a>
+
+### AppUserThirdParty
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| ThirdPartyUserID | [string](#string) |  |  |
+| ThirdPartyUsername | [string](#string) |  |  |
+| ThirdPartyUserAvatar | [string](#string) |  |  |
+| ThirdPartyID | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="app-user-manager-v1-BanApp"></a>
 
 ### BanApp
@@ -3494,6 +3646,36 @@
 
 
 
+<a name="app-user-manager-v1-CreateAppUserThirdPartyRequest"></a>
+
+### CreateAppUserThirdPartyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-CreateAppUserThirdPartyResponse"></a>
+
+### CreateAppUserThirdPartyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
+
+
+
+
+
+
 <a name="app-user-manager-v1-CreateAppUserWithSecretRequest"></a>
 
 ### CreateAppUserWithSecretRequest
@@ -3513,6 +3695,37 @@
 <a name="app-user-manager-v1-CreateAppUserWithSecretResponse"></a>
 
 ### CreateAppUserWithSecretResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUser](#app-user-manager-v1-AppUser) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-CreateAppUserWithThirdPartyRequest"></a>
+
+### CreateAppUserWithThirdPartyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| User | [AppUser](#app-user-manager-v1-AppUser) |  |  |
+| ThirdParty | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-CreateAppUserWithThirdPartyResponse"></a>
+
+### CreateAppUserWithThirdPartyResponse
 
 
 
@@ -4658,6 +4871,38 @@
 
 
 
+<a name="app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDRequest"></a>
+
+### GetAppUserThirdPartyByAppThirdPartyIDRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| ThirdPartyID | [string](#string) |  |  |
+| ThirdPartyUserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDResponse"></a>
+
+### GetAppUserThirdPartyByAppThirdPartyIDResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
+
+
+
+
+
+
 <a name="app-user-manager-v1-GetAppUsersByAppRequest"></a>
 
 ### GetAppUsersByAppRequest
@@ -5351,6 +5596,9 @@
 | GetAppUserInfosByApp | [GetAppUserInfosByAppRequest](#app-user-manager-v1-GetAppUserInfosByAppRequest) | [GetAppUserInfosByAppResponse](#app-user-manager-v1-GetAppUserInfosByAppResponse) |  |
 | GetAppUserInfosByOtherApp | [GetAppUserInfosByOtherAppRequest](#app-user-manager-v1-GetAppUserInfosByOtherAppRequest) | [GetAppUserInfosByOtherAppResponse](#app-user-manager-v1-GetAppUserInfosByOtherAppResponse) |  |
 | CreateAppUserWithSecret | [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse) |  |
+| CreateAppUserWithThirdParty | [CreateAppUserWithThirdPartyRequest](#app-user-manager-v1-CreateAppUserWithThirdPartyRequest) | [CreateAppUserWithThirdPartyResponse](#app-user-manager-v1-CreateAppUserWithThirdPartyResponse) |  |
+| CreateAppUserThirdParty | [CreateAppUserThirdPartyRequest](#app-user-manager-v1-CreateAppUserThirdPartyRequest) | [CreateAppUserThirdPartyResponse](#app-user-manager-v1-CreateAppUserThirdPartyResponse) |  |
+| GetAppUserThirdPartyByAppThirdPartyID | [GetAppUserThirdPartyByAppThirdPartyIDRequest](#app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDRequest) | [GetAppUserThirdPartyByAppThirdPartyIDResponse](#app-user-manager-v1-GetAppUserThirdPartyByAppThirdPartyIDResponse) |  |
 | CreateAppUserWithSecretRevert | [CreateAppUserWithSecretRequest](#app-user-manager-v1-CreateAppUserWithSecretRequest) | [CreateAppUserWithSecretResponse](#app-user-manager-v1-CreateAppUserWithSecretResponse) |  |
 
  

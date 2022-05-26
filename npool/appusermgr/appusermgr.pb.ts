@@ -736,6 +736,43 @@ export type VerifyAppUserByAppAccountPasswordResponse = {
   info?: AppUserInfo
 }
 
+export type AppUserThirdParty = {
+  id?: string
+  appID?: string
+  userID?: string
+  thirdPartyUserID?: string
+  thirdPartyUsername?: string
+  thirdPartyUserAvatar?: string
+  thirdPartyID?: string
+}
+
+export type CreateAppUserThirdPartyRequest = {
+  info?: AppUserThirdParty
+}
+
+export type CreateAppUserThirdPartyResponse = {
+  info?: AppUserThirdParty
+}
+
+export type GetAppUserThirdPartyByAppThirdPartyIDRequest = {
+  appID?: string
+  thirdPartyID?: string
+  thirdPartyUserID?: string
+}
+
+export type GetAppUserThirdPartyByAppThirdPartyIDResponse = {
+  info?: AppUserThirdParty
+}
+
+export type CreateAppUserWithThirdPartyRequest = {
+  user?: AppUser
+  thirdParty?: AppUserThirdParty
+}
+
+export type CreateAppUserWithThirdPartyResponse = {
+  info?: AppUser
+}
+
 export class AppUserManager {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -952,6 +989,15 @@ export class AppUserManager {
   }
   static CreateAppUserWithSecret(req: CreateAppUserWithSecretRequest, initReq?: fm.InitReq): Promise<CreateAppUserWithSecretResponse> {
     return fm.fetchReq<CreateAppUserWithSecretRequest, CreateAppUserWithSecretResponse>(`/v1/create/app/user/with/secret`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppUserWithThirdParty(req: CreateAppUserWithThirdPartyRequest, initReq?: fm.InitReq): Promise<CreateAppUserWithThirdPartyResponse> {
+    return fm.fetchReq<CreateAppUserWithThirdPartyRequest, CreateAppUserWithThirdPartyResponse>(`/v1/create/app/user/with/third/party`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppUserThirdParty(req: CreateAppUserThirdPartyRequest, initReq?: fm.InitReq): Promise<CreateAppUserThirdPartyResponse> {
+    return fm.fetchReq<CreateAppUserThirdPartyRequest, CreateAppUserThirdPartyResponse>(`/v1/create/app/user/third/party`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppUserThirdPartyByAppThirdPartyID(req: GetAppUserThirdPartyByAppThirdPartyIDRequest, initReq?: fm.InitReq): Promise<GetAppUserThirdPartyByAppThirdPartyIDResponse> {
+    return fm.fetchReq<GetAppUserThirdPartyByAppThirdPartyIDRequest, GetAppUserThirdPartyByAppThirdPartyIDResponse>(`/v1/get/app/user/thirdparty/by/app/thirdpartyid`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateAppUserWithSecretRevert(req: CreateAppUserWithSecretRequest, initReq?: fm.InitReq): Promise<CreateAppUserWithSecretResponse> {
     return fm.fetchReq<CreateAppUserWithSecretRequest, CreateAppUserWithSecretResponse>(`/v1/create/app/user/with/secret/revert`, {...initReq, method: "POST", body: JSON.stringify(req)})

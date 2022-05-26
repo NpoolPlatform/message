@@ -427,6 +427,38 @@
         ]
       }
     },
+    "/v1/create/app/user/third/party": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppUserThirdParty",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserThirdPartyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserThirdPartyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/create/app/user/with/secret": {
       "post": {
         "operationId": "AppUserManager_CreateAppUserWithSecret",
@@ -483,6 +515,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateAppUserWithSecretRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/create/app/user/with/third/party": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppUserWithThirdParty",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserWithThirdPartyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserWithThirdPartyRequest"
             }
           }
         ],
@@ -1443,6 +1507,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppUserSecretByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/user/thirdparty/by/app/thirdpartyid": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserThirdPartyByAppThirdPartyID",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserThirdPartyByAppThirdPartyIDResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserThirdPartyByAppThirdPartyIDRequest"
             }
           }
         ],
@@ -2649,6 +2745,32 @@
         }
       }
     },
+    "v1AppUserThirdParty": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ThirdPartyUserID": {
+          "type": "string"
+        },
+        "ThirdPartyUsername": {
+          "type": "string"
+        },
+        "ThirdPartyUserAvatar": {
+          "type": "string"
+        },
+        "ThirdPartyID": {
+          "type": "string"
+        }
+      }
+    },
     "v1BanApp": {
       "type": "object",
       "properties": {
@@ -2907,6 +3029,22 @@
         }
       }
     },
+    "v1CreateAppUserThirdPartyRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserThirdParty"
+        }
+      }
+    },
+    "v1CreateAppUserThirdPartyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserThirdParty"
+        }
+      }
+    },
     "v1CreateAppUserWithSecretRequest": {
       "type": "object",
       "properties": {
@@ -2919,6 +3057,25 @@
       }
     },
     "v1CreateAppUserWithSecretResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUser"
+        }
+      }
+    },
+    "v1CreateAppUserWithThirdPartyRequest": {
+      "type": "object",
+      "properties": {
+        "User": {
+          "$ref": "#/definitions/v1AppUser"
+        },
+        "ThirdParty": {
+          "$ref": "#/definitions/v1AppUserThirdParty"
+        }
+      }
+    },
+    "v1CreateAppUserWithThirdPartyResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -3650,6 +3807,28 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserSecret"
+        }
+      }
+    },
+    "v1GetAppUserThirdPartyByAppThirdPartyIDRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "ThirdPartyID": {
+          "type": "string"
+        },
+        "ThirdPartyUserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserThirdPartyByAppThirdPartyIDResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserThirdParty"
         }
       }
     },
