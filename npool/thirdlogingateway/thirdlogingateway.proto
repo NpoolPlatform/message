@@ -67,15 +67,24 @@ service ThirdLoginGateway {
             body: "*"
         };
     }
+
     rpc UpdateThirdParty (UpdateThirdPartyRequest) returns (UpdateThirdPartyResponse) {
         option (google.api.http) = {
             post: "/v1/update/third/party"
             body: "*"
         };
     }
+
     rpc GetThirdParties (GetThirdPartiesRequest) returns (GetThirdPartiesResponse) {
         option (google.api.http) = {
             post: "/v1/get/third/parties"
+            body: "*"
+        };
+    }
+
+    rpc GetThirdPartyOnly (GetThirdPartyOnlyRequest) returns (GetThirdPartyOnlyResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/third/party/only"
             body: "*"
         };
     }
@@ -86,6 +95,7 @@ service ThirdLoginGateway {
             body: "*"
         };
     }
+
 }
 
 message ThirdParty {
@@ -187,4 +197,12 @@ message LoginRequest {
 
 message LoginResponse {
     app.user.manager.v1.AppUserInfo Info = 10;
+}
+
+message GetThirdPartyOnlyRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message GetThirdPartyOnlyResponse {
+    ThirdParty Info = 10;
 }

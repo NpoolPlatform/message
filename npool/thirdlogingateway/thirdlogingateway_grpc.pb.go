@@ -35,6 +35,7 @@ type ThirdLoginGatewayClient interface {
 	CreateThirdParty(ctx context.Context, in *CreateThirdPartyRequest, opts ...grpc.CallOption) (*CreateThirdPartyResponse, error)
 	UpdateThirdParty(ctx context.Context, in *UpdateThirdPartyRequest, opts ...grpc.CallOption) (*UpdateThirdPartyResponse, error)
 	GetThirdParties(ctx context.Context, in *GetThirdPartiesRequest, opts ...grpc.CallOption) (*GetThirdPartiesResponse, error)
+	GetThirdPartyOnly(ctx context.Context, in *GetThirdPartyOnlyRequest, opts ...grpc.CallOption) (*GetThirdPartyOnlyResponse, error)
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
 }
 
@@ -136,6 +137,15 @@ func (c *thirdLoginGatewayClient) GetThirdParties(ctx context.Context, in *GetTh
 	return out, nil
 }
 
+func (c *thirdLoginGatewayClient) GetThirdPartyOnly(ctx context.Context, in *GetThirdPartyOnlyRequest, opts ...grpc.CallOption) (*GetThirdPartyOnlyResponse, error) {
+	out := new(GetThirdPartyOnlyResponse)
+	err := c.cc.Invoke(ctx, "/third.logon.gateway.v1.ThirdLoginGateway/GetThirdPartyOnly", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *thirdLoginGatewayClient) Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error) {
 	out := new(LoginResponse)
 	err := c.cc.Invoke(ctx, "/third.logon.gateway.v1.ThirdLoginGateway/Login", in, out, opts...)
@@ -160,6 +170,7 @@ type ThirdLoginGatewayServer interface {
 	CreateThirdParty(context.Context, *CreateThirdPartyRequest) (*CreateThirdPartyResponse, error)
 	UpdateThirdParty(context.Context, *UpdateThirdPartyRequest) (*UpdateThirdPartyResponse, error)
 	GetThirdParties(context.Context, *GetThirdPartiesRequest) (*GetThirdPartiesResponse, error)
+	GetThirdPartyOnly(context.Context, *GetThirdPartyOnlyRequest) (*GetThirdPartyOnlyResponse, error)
 	Login(context.Context, *LoginRequest) (*LoginResponse, error)
 	mustEmbedUnimplementedThirdLoginGatewayServer()
 }
@@ -197,6 +208,9 @@ func (UnimplementedThirdLoginGatewayServer) UpdateThirdParty(context.Context, *U
 }
 func (UnimplementedThirdLoginGatewayServer) GetThirdParties(context.Context, *GetThirdPartiesRequest) (*GetThirdPartiesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetThirdParties not implemented")
+}
+func (UnimplementedThirdLoginGatewayServer) GetThirdPartyOnly(context.Context, *GetThirdPartyOnlyRequest) (*GetThirdPartyOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetThirdPartyOnly not implemented")
 }
 func (UnimplementedThirdLoginGatewayServer) Login(context.Context, *LoginRequest) (*LoginResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
@@ -394,6 +408,24 @@ func _ThirdLoginGateway_GetThirdParties_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ThirdLoginGateway_GetThirdPartyOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetThirdPartyOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdLoginGatewayServer).GetThirdPartyOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.logon.gateway.v1.ThirdLoginGateway/GetThirdPartyOnly",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdLoginGatewayServer).GetThirdPartyOnly(ctx, req.(*GetThirdPartyOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ThirdLoginGateway_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(LoginRequest)
 	if err := dec(in); err != nil {
@@ -458,6 +490,10 @@ var ThirdLoginGateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetThirdParties",
 			Handler:    _ThirdLoginGateway_GetThirdParties_Handler,
+		},
+		{
+			MethodName: "GetThirdPartyOnly",
+			Handler:    _ThirdLoginGateway_GetThirdPartyOnly_Handler,
 		},
 		{
 			MethodName: "Login",

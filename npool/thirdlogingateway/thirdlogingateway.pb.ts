@@ -109,6 +109,14 @@ export type LoginResponse = {
   info?: AppUserManagerV1Appusermgr.AppUserInfo
 }
 
+export type GetThirdPartyOnlyRequest = {
+  conds?: {[key: string]: NpoolV1Npool.FilterCond}
+}
+
+export type GetThirdPartyOnlyResponse = {
+  info?: ThirdParty
+}
+
 export class ThirdLoginGateway {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -139,6 +147,9 @@ export class ThirdLoginGateway {
   }
   static GetThirdParties(req: GetThirdPartiesRequest, initReq?: fm.InitReq): Promise<GetThirdPartiesResponse> {
     return fm.fetchReq<GetThirdPartiesRequest, GetThirdPartiesResponse>(`/v1/get/third/parties`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetThirdPartyOnly(req: GetThirdPartyOnlyRequest, initReq?: fm.InitReq): Promise<GetThirdPartyOnlyResponse> {
+    return fm.fetchReq<GetThirdPartyOnlyRequest, GetThirdPartyOnlyResponse>(`/v1/get/third/party/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static Login(req: LoginRequest, initReq?: fm.InitReq): Promise<LoginResponse> {
     return fm.fetchReq<LoginRequest, LoginResponse>(`/v1/login`, {...initReq, method: "POST", body: JSON.stringify(req)})

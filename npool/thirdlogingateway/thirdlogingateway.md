@@ -21,6 +21,9 @@
     - [GetAuthsResponse](#third-logon-gateway-v1-GetAuthsResponse)
     - [GetThirdPartiesRequest](#third-logon-gateway-v1-GetThirdPartiesRequest)
     - [GetThirdPartiesResponse](#third-logon-gateway-v1-GetThirdPartiesResponse)
+    - [GetThirdPartyOnlyRequest](#third-logon-gateway-v1-GetThirdPartyOnlyRequest)
+    - [GetThirdPartyOnlyRequest.CondsEntry](#third-logon-gateway-v1-GetThirdPartyOnlyRequest-CondsEntry)
+    - [GetThirdPartyOnlyResponse](#third-logon-gateway-v1-GetThirdPartyOnlyResponse)
     - [LoginRequest](#third-logon-gateway-v1-LoginRequest)
     - [LoginResponse](#third-logon-gateway-v1-LoginResponse)
     - [ThirdParty](#third-logon-gateway-v1-ThirdParty)
@@ -47,6 +50,9 @@
     - [GetAuthsResponse](#third-logon-gateway-v1-GetAuthsResponse)
     - [GetThirdPartiesRequest](#third-logon-gateway-v1-GetThirdPartiesRequest)
     - [GetThirdPartiesResponse](#third-logon-gateway-v1-GetThirdPartiesResponse)
+    - [GetThirdPartyOnlyRequest](#third-logon-gateway-v1-GetThirdPartyOnlyRequest)
+    - [GetThirdPartyOnlyRequest.CondsEntry](#third-logon-gateway-v1-GetThirdPartyOnlyRequest-CondsEntry)
+    - [GetThirdPartyOnlyResponse](#third-logon-gateway-v1-GetThirdPartyOnlyResponse)
     - [LoginRequest](#third-logon-gateway-v1-LoginRequest)
     - [LoginResponse](#third-logon-gateway-v1-LoginResponse)
     - [ThirdParty](#third-logon-gateway-v1-ThirdParty)
@@ -325,6 +331,52 @@
 
 
 
+<a name="third-logon-gateway-v1-GetThirdPartyOnlyRequest"></a>
+
+### GetThirdPartyOnlyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [GetThirdPartyOnlyRequest.CondsEntry](#third-logon-gateway-v1-GetThirdPartyOnlyRequest-CondsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="third-logon-gateway-v1-GetThirdPartyOnlyRequest-CondsEntry"></a>
+
+### GetThirdPartyOnlyRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="third-logon-gateway-v1-GetThirdPartyOnlyResponse"></a>
+
+### GetThirdPartyOnlyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ThirdParty](#third-logon-gateway-v1-ThirdParty) |  |  |
+
+
+
+
+
+
 <a name="third-logon-gateway-v1-LoginRequest"></a>
 
 ### LoginRequest
@@ -428,6 +480,7 @@ Service Name
 | CreateThirdParty | [CreateThirdPartyRequest](#third-logon-gateway-v1-CreateThirdPartyRequest) | [CreateThirdPartyResponse](#third-logon-gateway-v1-CreateThirdPartyResponse) |  |
 | UpdateThirdParty | [UpdateThirdPartyRequest](#third-logon-gateway-v1-UpdateThirdPartyRequest) | [UpdateThirdPartyResponse](#third-logon-gateway-v1-UpdateThirdPartyResponse) |  |
 | GetThirdParties | [GetThirdPartiesRequest](#third-logon-gateway-v1-GetThirdPartiesRequest) | [GetThirdPartiesResponse](#third-logon-gateway-v1-GetThirdPartiesResponse) |  |
+| GetThirdPartyOnly | [GetThirdPartyOnlyRequest](#third-logon-gateway-v1-GetThirdPartyOnlyRequest) | [GetThirdPartyOnlyResponse](#third-logon-gateway-v1-GetThirdPartyOnlyResponse) |  |
 | Login | [LoginRequest](#third-logon-gateway-v1-LoginRequest) | [LoginResponse](#third-logon-gateway-v1-LoginResponse) |  |
 
  
@@ -700,6 +753,52 @@ Service Name
 
 
 
+<a name="third-logon-gateway-v1-GetThirdPartyOnlyRequest"></a>
+
+### GetThirdPartyOnlyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [GetThirdPartyOnlyRequest.CondsEntry](#third-logon-gateway-v1-GetThirdPartyOnlyRequest-CondsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="third-logon-gateway-v1-GetThirdPartyOnlyRequest-CondsEntry"></a>
+
+### GetThirdPartyOnlyRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="third-logon-gateway-v1-GetThirdPartyOnlyResponse"></a>
+
+### GetThirdPartyOnlyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [ThirdParty](#third-logon-gateway-v1-ThirdParty) |  |  |
+
+
+
+
+
+
 <a name="third-logon-gateway-v1-LoginRequest"></a>
 
 ### LoginRequest
@@ -803,6 +902,7 @@ Service Name
 | CreateThirdParty | [CreateThirdPartyRequest](#third-logon-gateway-v1-CreateThirdPartyRequest) | [CreateThirdPartyResponse](#third-logon-gateway-v1-CreateThirdPartyResponse) |  |
 | UpdateThirdParty | [UpdateThirdPartyRequest](#third-logon-gateway-v1-UpdateThirdPartyRequest) | [UpdateThirdPartyResponse](#third-logon-gateway-v1-UpdateThirdPartyResponse) |  |
 | GetThirdParties | [GetThirdPartiesRequest](#third-logon-gateway-v1-GetThirdPartiesRequest) | [GetThirdPartiesResponse](#third-logon-gateway-v1-GetThirdPartiesResponse) |  |
+| GetThirdPartyOnly | [GetThirdPartyOnlyRequest](#third-logon-gateway-v1-GetThirdPartyOnlyRequest) | [GetThirdPartyOnlyResponse](#third-logon-gateway-v1-GetThirdPartyOnlyResponse) |  |
 | Login | [LoginRequest](#third-logon-gateway-v1-LoginRequest) | [LoginResponse](#third-logon-gateway-v1-LoginResponse) |  |
 
  
