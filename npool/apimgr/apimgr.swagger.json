@@ -297,6 +297,9 @@
         "UpdateAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "MethodName": {
+          "type": "string"
         }
       }
     },

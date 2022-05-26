@@ -69,6 +69,7 @@ message ServicePath {
     bool Exported = 80;
     uint32 CreateAt = 90;
     uint32 UpdateAt = 100;
+    string MethodName = 110;
 }
 
 message GetApisRequest {

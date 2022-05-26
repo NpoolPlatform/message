@@ -40,6 +40,7 @@ export type ServicePath = {
   exported?: boolean
   createAt?: number
   updateAt?: number
+  methodName?: string
 }
 
 export type GetApisRequest = {
