@@ -1210,7 +1210,7 @@ message AppUserThirdParty {
     string AppID = 20;
     string UserID = 30;
     string ThirdPartyUserID = 40;
-    string ThirdPartyUserName = 60;
+    string ThirdPartyUsername = 60;
     string ThirdPartyUserAvatar = 70;
     string ThirdPartyID = 90;
 }
@@ -1234,7 +1234,7 @@ message GetAppUserThirdPartyByAppThirdPartyIDResponse {
 
 message CreateAppUserWithThirdPartyRequest {
     AppUser User = 10;
-    AppUserThirdParty Third = 20;
+    AppUserThirdParty Info = 20;
 }
 
 message CreateAppUserWithThirdPartyResponse {

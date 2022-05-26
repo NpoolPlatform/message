@@ -2728,7 +2728,7 @@
         "ThirdPartyUserID": {
           "type": "string"
         },
-        "ThirdPartyUserName": {
+        "ThirdPartyUsername": {
           "type": "string"
         },
         "ThirdPartyUserAvatar": {
@@ -3038,7 +3038,7 @@
         "User": {
           "$ref": "#/definitions/v1AppUser"
         },
-        "Third": {
+        "Info": {
           "$ref": "#/definitions/v1AppUserThirdParty"
         }
       }

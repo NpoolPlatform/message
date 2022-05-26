@@ -741,7 +741,7 @@ export type AppUserThirdParty = {
   appID?: string
   userID?: string
   thirdPartyUserID?: string
-  thirdPartyUserName?: string
+  thirdPartyUsername?: string
   thirdPartyUserAvatar?: string
   thirdPartyID?: string
 }
@@ -766,7 +766,7 @@ export type GetAppUserThirdPartyByAppThirdPartyIDResponse = {
 
 export type CreateAppUserWithThirdPartyRequest = {
   user?: AppUser
-  third?: AppUserThirdParty
+  info?: AppUserThirdParty
 }
 
 export type CreateAppUserWithThirdPartyResponse = {

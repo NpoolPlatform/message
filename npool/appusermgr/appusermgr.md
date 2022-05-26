@@ -577,7 +577,7 @@
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | ThirdPartyUserID | [string](#string) |  |  |
-| ThirdPartyUserName | [string](#string) |  |  |
+| ThirdPartyUsername | [string](#string) |  |  |
 | ThirdPartyUserAvatar | [string](#string) |  |  |
 | ThirdPartyID | [string](#string) |  |  |
 
@@ -1083,7 +1083,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | User | [AppUser](#app-user-manager-v1-AppUser) |  |  |
-| Third | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
+| Info | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
 
 
 
@@ -3209,7 +3209,7 @@
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | ThirdPartyUserID | [string](#string) |  |  |
-| ThirdPartyUserName | [string](#string) |  |  |
+| ThirdPartyUsername | [string](#string) |  |  |
 | ThirdPartyUserAvatar | [string](#string) |  |  |
 | ThirdPartyID | [string](#string) |  |  |
 
@@ -3715,7 +3715,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | User | [AppUser](#app-user-manager-v1-AppUser) |  |  |
-| Third | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
+| Info | [AppUserThirdParty](#app-user-manager-v1-AppUserThirdParty) |  |  |
 
 
 
