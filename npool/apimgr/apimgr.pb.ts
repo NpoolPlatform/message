@@ -50,12 +50,12 @@ export type GetApisResponse = {
   infos?: ServicePath[]
 }
 
-export type GetServiceMethodApiRequest = {
+export type GetServiceMethodAPIRequest = {
   serviceName?: string
   methodName?: string
 }
 
-export type GetServiceMethodApiResponse = {
+export type GetServiceMethodAPIResponse = {
   info?: ServicePath
 }
 
@@ -69,7 +69,7 @@ export class ApiManager {
   static GetApis(req: GetApisRequest, initReq?: fm.InitReq): Promise<GetApisResponse> {
     return fm.fetchReq<GetApisRequest, GetApisResponse>(`/v1/get/apis`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetServiceMethodApi(req: GetServiceMethodApiRequest, initReq?: fm.InitReq): Promise<GetServiceMethodApiResponse> {
-    return fm.fetchReq<GetServiceMethodApiRequest, GetServiceMethodApiResponse>(`/v1/get/service/method/api`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetServiceMethodAPI(req: GetServiceMethodAPIRequest, initReq?: fm.InitReq): Promise<GetServiceMethodAPIResponse> {
+    return fm.fetchReq<GetServiceMethodAPIRequest, GetServiceMethodAPIResponse>(`/v1/get/service/method/api`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

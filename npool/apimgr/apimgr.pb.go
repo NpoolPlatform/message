@@ -471,7 +471,7 @@ func (x *GetApisResponse) GetInfos() []*ServicePath {
 	return nil
 }
 
-type GetServiceMethodApiRequest struct {
+type GetServiceMethodAPIRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -480,8 +480,8 @@ type GetServiceMethodApiRequest struct {
 	MethodName  string `protobuf:"bytes,20,opt,name=MethodName,proto3" json:"MethodName,omitempty"`
 }
 
-func (x *GetServiceMethodApiRequest) Reset() {
-	*x = GetServiceMethodApiRequest{}
+func (x *GetServiceMethodAPIRequest) Reset() {
+	*x = GetServiceMethodAPIRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_apimgr_apimgr_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -489,13 +489,13 @@ func (x *GetServiceMethodApiRequest) Reset() {
 	}
 }
 
-func (x *GetServiceMethodApiRequest) String() string {
+func (x *GetServiceMethodAPIRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetServiceMethodApiRequest) ProtoMessage() {}
+func (*GetServiceMethodAPIRequest) ProtoMessage() {}
 
-func (x *GetServiceMethodApiRequest) ProtoReflect() protoreflect.Message {
+func (x *GetServiceMethodAPIRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_apimgr_apimgr_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -507,26 +507,26 @@ func (x *GetServiceMethodApiRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetServiceMethodApiRequest.ProtoReflect.Descriptor instead.
-func (*GetServiceMethodApiRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetServiceMethodAPIRequest.ProtoReflect.Descriptor instead.
+func (*GetServiceMethodAPIRequest) Descriptor() ([]byte, []int) {
 	return file_npool_apimgr_apimgr_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *GetServiceMethodApiRequest) GetServiceName() string {
+func (x *GetServiceMethodAPIRequest) GetServiceName() string {
 	if x != nil {
 		return x.ServiceName
 	}
 	return ""
 }
 
-func (x *GetServiceMethodApiRequest) GetMethodName() string {
+func (x *GetServiceMethodAPIRequest) GetMethodName() string {
 	if x != nil {
 		return x.MethodName
 	}
 	return ""
 }
 
-type GetServiceMethodApiResponse struct {
+type GetServiceMethodAPIResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -534,8 +534,8 @@ type GetServiceMethodApiResponse struct {
 	Info *ServicePath `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
-func (x *GetServiceMethodApiResponse) Reset() {
-	*x = GetServiceMethodApiResponse{}
+func (x *GetServiceMethodAPIResponse) Reset() {
+	*x = GetServiceMethodAPIResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_apimgr_apimgr_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -543,13 +543,13 @@ func (x *GetServiceMethodApiResponse) Reset() {
 	}
 }
 
-func (x *GetServiceMethodApiResponse) String() string {
+func (x *GetServiceMethodAPIResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetServiceMethodApiResponse) ProtoMessage() {}
+func (*GetServiceMethodAPIResponse) ProtoMessage() {}
 
-func (x *GetServiceMethodApiResponse) ProtoReflect() protoreflect.Message {
+func (x *GetServiceMethodAPIResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_apimgr_apimgr_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -561,12 +561,12 @@ func (x *GetServiceMethodApiResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetServiceMethodApiResponse.ProtoReflect.Descriptor instead.
-func (*GetServiceMethodApiResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetServiceMethodAPIResponse.ProtoReflect.Descriptor instead.
+func (*GetServiceMethodAPIResponse) Descriptor() ([]byte, []int) {
 	return file_npool_apimgr_apimgr_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *GetServiceMethodApiResponse) GetInfo() *ServicePath {
+func (x *GetServiceMethodAPIResponse) GetInfo() *ServicePath {
 	if x != nil {
 		return x.Info
 	}
@@ -635,13 +635,13 @@ var file_npool_apimgr_apimgr_proto_rawDesc = []byte{
 	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x50, 0x61, 0x74, 0x68, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x5e, 0x0a, 0x1a,
 	0x47, 0x65, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64,
-	0x41, 0x70, 0x69, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x53, 0x65,
+	0x41, 0x50, 0x49, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x53, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52,
 	0x0b, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x1e, 0x0a, 0x0a,
 	0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09,
 	0x52, 0x0a, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x4e, 0x0a, 0x1b,
 	0x47, 0x65, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64,
-	0x41, 0x70, 0x69, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2f, 0x0a, 0x04, 0x49,
+	0x41, 0x50, 0x49, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2f, 0x0a, 0x04, 0x49,
 	0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1b, 0x2e, 0x61, 0x70, 0x69, 0x2e,
 	0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x50, 0x61, 0x74, 0x68, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xc4, 0x03, 0x0a,
@@ -665,12 +665,12 @@ var file_npool_apimgr_apimgr_proto_rawDesc = []byte{
 	0x73, 0x65, 0x22, 0x17, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x11, 0x22, 0x0c, 0x2f, 0x76, 0x31, 0x2f,
 	0x67, 0x65, 0x74, 0x2f, 0x61, 0x70, 0x69, 0x73, 0x3a, 0x01, 0x2a, 0x12, 0x95, 0x01, 0x0a, 0x13,
 	0x47, 0x65, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64,
-	0x41, 0x70, 0x69, 0x12, 0x2a, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
+	0x41, 0x50, 0x49, 0x12, 0x2a, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
 	0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x4d,
-	0x65, 0x74, 0x68, 0x6f, 0x64, 0x41, 0x70, 0x69, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x65, 0x74, 0x68, 0x6f, 0x64, 0x41, 0x50, 0x49, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
 	0x2b, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31,
 	0x2e, 0x47, 0x65, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x4d, 0x65, 0x74, 0x68, 0x6f,
-	0x64, 0x41, 0x70, 0x69, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x25, 0x82, 0xd3,
+	0x64, 0x41, 0x50, 0x49, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x25, 0x82, 0xd3,
 	0xe4, 0x93, 0x02, 0x1f, 0x22, 0x1a, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x6d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x2f, 0x61, 0x70, 0x69,
 	0x3a, 0x01, 0x2a, 0x42, 0x2f, 0x5a, 0x2d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
@@ -700,8 +700,8 @@ var file_npool_apimgr_apimgr_proto_goTypes = []interface{}{
 	(*ServicePath)(nil),                 // 4: api.manager.v1.ServicePath
 	(*GetApisRequest)(nil),              // 5: api.manager.v1.GetApisRequest
 	(*GetApisResponse)(nil),             // 6: api.manager.v1.GetApisResponse
-	(*GetServiceMethodApiRequest)(nil),  // 7: api.manager.v1.GetServiceMethodApiRequest
-	(*GetServiceMethodApiResponse)(nil), // 8: api.manager.v1.GetServiceMethodApiResponse
+	(*GetServiceMethodAPIRequest)(nil),  // 7: api.manager.v1.GetServiceMethodAPIRequest
+	(*GetServiceMethodAPIResponse)(nil), // 8: api.manager.v1.GetServiceMethodAPIResponse
 	(*emptypb.Empty)(nil),               // 9: google.protobuf.Empty
 	(*npool.VersionResponse)(nil),       // 10: npool.v1.VersionResponse
 }
@@ -710,15 +710,15 @@ var file_npool_apimgr_apimgr_proto_depIdxs = []int32{
 	1,  // 1: api.manager.v1.RegisterRequest.Info:type_name -> api.manager.v1.ServiceApis
 	1,  // 2: api.manager.v1.RegisterResponse.Info:type_name -> api.manager.v1.ServiceApis
 	4,  // 3: api.manager.v1.GetApisResponse.Infos:type_name -> api.manager.v1.ServicePath
-	4,  // 4: api.manager.v1.GetServiceMethodApiResponse.Info:type_name -> api.manager.v1.ServicePath
+	4,  // 4: api.manager.v1.GetServiceMethodAPIResponse.Info:type_name -> api.manager.v1.ServicePath
 	9,  // 5: api.manager.v1.ApiManager.Version:input_type -> google.protobuf.Empty
 	2,  // 6: api.manager.v1.ApiManager.Register:input_type -> api.manager.v1.RegisterRequest
 	5,  // 7: api.manager.v1.ApiManager.GetApis:input_type -> api.manager.v1.GetApisRequest
-	7,  // 8: api.manager.v1.ApiManager.GetServiceMethodApi:input_type -> api.manager.v1.GetServiceMethodApiRequest
+	7,  // 8: api.manager.v1.ApiManager.GetServiceMethodAPI:input_type -> api.manager.v1.GetServiceMethodAPIRequest
 	10, // 9: api.manager.v1.ApiManager.Version:output_type -> npool.v1.VersionResponse
 	3,  // 10: api.manager.v1.ApiManager.Register:output_type -> api.manager.v1.RegisterResponse
 	6,  // 11: api.manager.v1.ApiManager.GetApis:output_type -> api.manager.v1.GetApisResponse
-	8,  // 12: api.manager.v1.ApiManager.GetServiceMethodApi:output_type -> api.manager.v1.GetServiceMethodApiResponse
+	8,  // 12: api.manager.v1.ApiManager.GetServiceMethodAPI:output_type -> api.manager.v1.GetServiceMethodAPIResponse
 	9,  // [9:13] is the sub-list for method output_type
 	5,  // [5:9] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -817,7 +817,7 @@ func file_npool_apimgr_apimgr_proto_init() {
 			}
 		}
 		file_npool_apimgr_apimgr_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetServiceMethodApiRequest); i {
+			switch v := v.(*GetServiceMethodAPIRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -829,7 +829,7 @@ func file_npool_apimgr_apimgr_proto_init() {
 			}
 		}
 		file_npool_apimgr_apimgr_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetServiceMethodApiResponse); i {
+			switch v := v.(*GetServiceMethodAPIResponse); i {
 			case 0:
 				return &v.state
 			case 1:
