@@ -22,12 +22,14 @@ service ApiManager {
             body: "*"
         };
     }
+
     rpc GetApis(GetApisRequest) returns (GetApisResponse) {
         option (google.api.http) = {
             post: "/v1/get/apis"
             body: "*"
         };
     }
+
     rpc GetServiceMethodAPI(GetServiceMethodAPIRequest) returns (GetServiceMethodAPIResponse) {
         option (google.api.http) = {
             post: "/v1/get/service/method/api"
