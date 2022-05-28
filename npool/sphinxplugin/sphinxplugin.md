@@ -132,9 +132,9 @@ fil
 | To | [string](#string) |  |  |
 | From | [string](#string) |  |  |
 | Value | [double](#double) |  |  |
-| Nonce | [uint64](#uint64) |  | fil/eth/erc20 |
+| Nonce | [uint64](#uint64) |  | fil/eth/erc20/bsc |
 | GasLimit | [int64](#int64) |  |  |
-| GasPrice | [int64](#int64) |  | eth/erc20 |
+| GasPrice | [int64](#int64) |  | eth/erc20/bsc |
 | ChainID | [int64](#int64) |  |  |
 | ContractID | [string](#string) |  |  |
 | GasFeeCap | [uint64](#uint64) |  | fil |
@@ -190,6 +190,7 @@ fil
 | CoinTypespacemesh | 5 |  |
 | CoinTypesolana | 6 |  |
 | CoinTypeusdttrc20 | 7 |  |
+| CoinTypebsc | 8 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
@@ -197,6 +198,7 @@ fil
 | CoinTypetspacemesh | 104 |  |
 | CoinTypetsolana | 105 |  |
 | CoinTypetusdttrc20 | 106 |  |
+| CoinTypetbsc | 107 |  |
 
 
  
@@ -310,9 +312,9 @@ fil
 | To | [string](#string) |  |  |
 | From | [string](#string) |  |  |
 | Value | [double](#double) |  |  |
-| Nonce | [uint64](#uint64) |  | fil/eth/erc20 |
+| Nonce | [uint64](#uint64) |  | fil/eth/erc20/bsc |
 | GasLimit | [int64](#int64) |  |  |
-| GasPrice | [int64](#int64) |  | eth/erc20 |
+| GasPrice | [int64](#int64) |  | eth/erc20/bsc |
 | ChainID | [int64](#int64) |  |  |
 | ContractID | [string](#string) |  |  |
 | GasFeeCap | [uint64](#uint64) |  | fil |
@@ -368,6 +370,7 @@ fil
 | CoinTypespacemesh | 5 |  |
 | CoinTypesolana | 6 |  |
 | CoinTypeusdttrc20 | 7 |  |
+| CoinTypebsc | 8 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
@@ -375,6 +378,7 @@ fil
 | CoinTypetspacemesh | 104 |  |
 | CoinTypetsolana | 105 |  |
 | CoinTypetusdttrc20 | 106 |  |
+| CoinTypetbsc | 107 |  |
 
 
  
