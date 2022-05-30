@@ -6,8 +6,8 @@
 - [npool/apimgr/apimgr.proto](#npool_apimgr_apimgr-proto)
     - [GetApisRequest](#api-manager-v1-GetApisRequest)
     - [GetApisResponse](#api-manager-v1-GetApisResponse)
-    - [GetServiceMethodApiRequest](#api-manager-v1-GetServiceMethodApiRequest)
-    - [GetServiceMethodApiResponse](#api-manager-v1-GetServiceMethodApiResponse)
+    - [GetServiceMethodAPIRequest](#api-manager-v1-GetServiceMethodAPIRequest)
+    - [GetServiceMethodAPIResponse](#api-manager-v1-GetServiceMethodAPIResponse)
     - [Path](#api-manager-v1-Path)
     - [RegisterRequest](#api-manager-v1-RegisterRequest)
     - [RegisterResponse](#api-manager-v1-RegisterResponse)
@@ -19,8 +19,8 @@
 - [npool/apimgr/apimgr.proto](#npool_apimgr_apimgr-proto)
     - [GetApisRequest](#api-manager-v1-GetApisRequest)
     - [GetApisResponse](#api-manager-v1-GetApisResponse)
-    - [GetServiceMethodApiRequest](#api-manager-v1-GetServiceMethodApiRequest)
-    - [GetServiceMethodApiResponse](#api-manager-v1-GetServiceMethodApiResponse)
+    - [GetServiceMethodAPIRequest](#api-manager-v1-GetServiceMethodAPIRequest)
+    - [GetServiceMethodAPIResponse](#api-manager-v1-GetServiceMethodAPIResponse)
     - [Path](#api-manager-v1-Path)
     - [RegisterRequest](#api-manager-v1-RegisterRequest)
     - [RegisterResponse](#api-manager-v1-RegisterResponse)
@@ -65,9 +65,9 @@
 
 
 
-<a name="api-manager-v1-GetServiceMethodApiRequest"></a>
+<a name="api-manager-v1-GetServiceMethodAPIRequest"></a>
 
-### GetServiceMethodApiRequest
+### GetServiceMethodAPIRequest
 
 
 
@@ -81,9 +81,9 @@
 
 
 
-<a name="api-manager-v1-GetServiceMethodApiResponse"></a>
+<a name="api-manager-v1-GetServiceMethodAPIResponse"></a>
 
-### GetServiceMethodApiResponse
+### GetServiceMethodAPIResponse
 
 
 
@@ -203,7 +203,7 @@
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | Register | [RegisterRequest](#api-manager-v1-RegisterRequest) | [RegisterResponse](#api-manager-v1-RegisterResponse) |  |
 | GetApis | [GetApisRequest](#api-manager-v1-GetApisRequest) | [GetApisResponse](#api-manager-v1-GetApisResponse) |  |
-| GetServiceMethodApi | [GetServiceMethodApiRequest](#api-manager-v1-GetServiceMethodApiRequest) | [GetServiceMethodApiResponse](#api-manager-v1-GetServiceMethodApiResponse) |  |
+| GetServiceMethodAPI | [GetServiceMethodAPIRequest](#api-manager-v1-GetServiceMethodAPIRequest) | [GetServiceMethodAPIResponse](#api-manager-v1-GetServiceMethodAPIResponse) |  |
 
  
 
@@ -241,9 +241,9 @@
 
 
 
-<a name="api-manager-v1-GetServiceMethodApiRequest"></a>
+<a name="api-manager-v1-GetServiceMethodAPIRequest"></a>
 
-### GetServiceMethodApiRequest
+### GetServiceMethodAPIRequest
 
 
 
@@ -257,9 +257,9 @@
 
 
 
-<a name="api-manager-v1-GetServiceMethodApiResponse"></a>
+<a name="api-manager-v1-GetServiceMethodAPIResponse"></a>
 
-### GetServiceMethodApiResponse
+### GetServiceMethodAPIResponse
 
 
 
@@ -379,7 +379,7 @@
 | Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | Register | [RegisterRequest](#api-manager-v1-RegisterRequest) | [RegisterResponse](#api-manager-v1-RegisterResponse) |  |
 | GetApis | [GetApisRequest](#api-manager-v1-GetApisRequest) | [GetApisResponse](#api-manager-v1-GetApisResponse) |  |
-| GetServiceMethodApi | [GetServiceMethodApiRequest](#api-manager-v1-GetServiceMethodApiRequest) | [GetServiceMethodApiResponse](#api-manager-v1-GetServiceMethodApiResponse) |  |
+| GetServiceMethodAPI | [GetServiceMethodAPIRequest](#api-manager-v1-GetServiceMethodAPIRequest) | [GetServiceMethodAPIResponse](#api-manager-v1-GetServiceMethodAPIResponse) |  |
 
  
 

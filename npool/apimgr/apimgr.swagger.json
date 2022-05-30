@@ -45,12 +45,12 @@
     },
     "/v1/get/service/method/api": {
       "post": {
-        "operationId": "ApiManager_GetServiceMethodApi",
+        "operationId": "ApiManager_GetServiceMethodAPI",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetServiceMethodApiResponse"
+              "$ref": "#/definitions/v1GetServiceMethodAPIResponse"
             }
           },
           "default": {
@@ -66,7 +66,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetServiceMethodApiRequest"
+              "$ref": "#/definitions/v1GetServiceMethodAPIRequest"
             }
           }
         ],
@@ -188,7 +188,7 @@
         }
       }
     },
-    "v1GetServiceMethodApiRequest": {
+    "v1GetServiceMethodAPIRequest": {
       "type": "object",
       "properties": {
         "ServiceName": {
@@ -199,7 +199,7 @@
         }
       }
     },
-    "v1GetServiceMethodApiResponse": {
+    "v1GetServiceMethodAPIResponse": {
       "type": "object",
       "properties": {
         "Info": {
