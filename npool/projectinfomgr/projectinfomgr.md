@@ -5,39 +5,39 @@
 
 - [npool/projectinfomgr/projectinfomgr.proto](#npool_projectinfomgr_projectinfomgr-proto)
     - [CoinDescription](#project-info-manager-v1-CoinDescription)
-    - [CoinProduct](#project-info-manager-v1-CoinProduct)
+    - [CoinProductInfo](#project-info-manager-v1-CoinProductInfo)
     - [CreateAppCoinDescriptionRequest](#project-info-manager-v1-CreateAppCoinDescriptionRequest)
     - [CreateAppCoinDescriptionResponse](#project-info-manager-v1-CreateAppCoinDescriptionResponse)
     - [CreateAppCoinDescriptionsRequest](#project-info-manager-v1-CreateAppCoinDescriptionsRequest)
     - [CreateAppCoinDescriptionsResponse](#project-info-manager-v1-CreateAppCoinDescriptionsResponse)
-    - [CreateAppCoinProductRequest](#project-info-manager-v1-CreateAppCoinProductRequest)
-    - [CreateAppCoinProductResponse](#project-info-manager-v1-CreateAppCoinProductResponse)
-    - [CreateAppCoinProductsRequest](#project-info-manager-v1-CreateAppCoinProductsRequest)
-    - [CreateAppCoinProductsResponse](#project-info-manager-v1-CreateAppCoinProductsResponse)
+    - [CreateAppCoinProductInfoRequest](#project-info-manager-v1-CreateAppCoinProductInfoRequest)
+    - [CreateAppCoinProductInfoResponse](#project-info-manager-v1-CreateAppCoinProductInfoResponse)
+    - [CreateAppCoinProductInfosRequest](#project-info-manager-v1-CreateAppCoinProductInfosRequest)
+    - [CreateAppCoinProductInfosResponse](#project-info-manager-v1-CreateAppCoinProductInfosResponse)
     - [CreateCoinDescriptionRequest](#project-info-manager-v1-CreateCoinDescriptionRequest)
     - [CreateCoinDescriptionResponse](#project-info-manager-v1-CreateCoinDescriptionResponse)
     - [CreateCoinDescriptionsRequest](#project-info-manager-v1-CreateCoinDescriptionsRequest)
     - [CreateCoinDescriptionsResponse](#project-info-manager-v1-CreateCoinDescriptionsResponse)
-    - [CreateCoinProductRequest](#project-info-manager-v1-CreateCoinProductRequest)
-    - [CreateCoinProductResponse](#project-info-manager-v1-CreateCoinProductResponse)
-    - [CreateCoinProductsRequest](#project-info-manager-v1-CreateCoinProductsRequest)
-    - [CreateCoinProductsResponse](#project-info-manager-v1-CreateCoinProductsResponse)
+    - [CreateCoinProductInfoRequest](#project-info-manager-v1-CreateCoinProductInfoRequest)
+    - [CreateCoinProductInfoResponse](#project-info-manager-v1-CreateCoinProductInfoResponse)
+    - [CreateCoinProductInfosRequest](#project-info-manager-v1-CreateCoinProductInfosRequest)
+    - [CreateCoinProductInfosResponse](#project-info-manager-v1-CreateCoinProductInfosResponse)
     - [DeleteCoinDescriptionRequest](#project-info-manager-v1-DeleteCoinDescriptionRequest)
     - [DeleteCoinDescriptionResponse](#project-info-manager-v1-DeleteCoinDescriptionResponse)
-    - [DeleteCoinProductRequest](#project-info-manager-v1-DeleteCoinProductRequest)
-    - [DeleteCoinProductResponse](#project-info-manager-v1-DeleteCoinProductResponse)
+    - [DeleteCoinProductInfoRequest](#project-info-manager-v1-DeleteCoinProductInfoRequest)
+    - [DeleteCoinProductInfoResponse](#project-info-manager-v1-DeleteCoinProductInfoResponse)
     - [GetAppCoinDescriptionOnlyRequest](#project-info-manager-v1-GetAppCoinDescriptionOnlyRequest)
     - [GetAppCoinDescriptionOnlyRequest.CondsEntry](#project-info-manager-v1-GetAppCoinDescriptionOnlyRequest-CondsEntry)
     - [GetAppCoinDescriptionOnlyResponse](#project-info-manager-v1-GetAppCoinDescriptionOnlyResponse)
     - [GetAppCoinDescriptionsRequest](#project-info-manager-v1-GetAppCoinDescriptionsRequest)
     - [GetAppCoinDescriptionsRequest.CondsEntry](#project-info-manager-v1-GetAppCoinDescriptionsRequest-CondsEntry)
     - [GetAppCoinDescriptionsResponse](#project-info-manager-v1-GetAppCoinDescriptionsResponse)
-    - [GetAppCoinProductOnlyRequest](#project-info-manager-v1-GetAppCoinProductOnlyRequest)
-    - [GetAppCoinProductOnlyRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductOnlyRequest-CondsEntry)
-    - [GetAppCoinProductOnlyResponse](#project-info-manager-v1-GetAppCoinProductOnlyResponse)
-    - [GetAppCoinProductsRequest](#project-info-manager-v1-GetAppCoinProductsRequest)
-    - [GetAppCoinProductsRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductsRequest-CondsEntry)
-    - [GetAppCoinProductsResponse](#project-info-manager-v1-GetAppCoinProductsResponse)
+    - [GetAppCoinProductInfoOnlyRequest](#project-info-manager-v1-GetAppCoinProductInfoOnlyRequest)
+    - [GetAppCoinProductInfoOnlyRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductInfoOnlyRequest-CondsEntry)
+    - [GetAppCoinProductInfoOnlyResponse](#project-info-manager-v1-GetAppCoinProductInfoOnlyResponse)
+    - [GetAppCoinProductInfosRequest](#project-info-manager-v1-GetAppCoinProductInfosRequest)
+    - [GetAppCoinProductInfosRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductInfosRequest-CondsEntry)
+    - [GetAppCoinProductInfosResponse](#project-info-manager-v1-GetAppCoinProductInfosResponse)
     - [GetCoinDescriptionOnlyRequest](#project-info-manager-v1-GetCoinDescriptionOnlyRequest)
     - [GetCoinDescriptionOnlyRequest.CondsEntry](#project-info-manager-v1-GetCoinDescriptionOnlyRequest-CondsEntry)
     - [GetCoinDescriptionOnlyResponse](#project-info-manager-v1-GetCoinDescriptionOnlyResponse)
@@ -46,56 +46,56 @@
     - [GetCoinDescriptionsRequest](#project-info-manager-v1-GetCoinDescriptionsRequest)
     - [GetCoinDescriptionsRequest.CondsEntry](#project-info-manager-v1-GetCoinDescriptionsRequest-CondsEntry)
     - [GetCoinDescriptionsResponse](#project-info-manager-v1-GetCoinDescriptionsResponse)
-    - [GetCoinProductOnlyRequest](#project-info-manager-v1-GetCoinProductOnlyRequest)
-    - [GetCoinProductOnlyRequest.CondsEntry](#project-info-manager-v1-GetCoinProductOnlyRequest-CondsEntry)
-    - [GetCoinProductOnlyResponse](#project-info-manager-v1-GetCoinProductOnlyResponse)
-    - [GetCoinProductRequest](#project-info-manager-v1-GetCoinProductRequest)
-    - [GetCoinProductResponse](#project-info-manager-v1-GetCoinProductResponse)
-    - [GetCoinProductsRequest](#project-info-manager-v1-GetCoinProductsRequest)
-    - [GetCoinProductsRequest.CondsEntry](#project-info-manager-v1-GetCoinProductsRequest-CondsEntry)
-    - [GetCoinProductsResponse](#project-info-manager-v1-GetCoinProductsResponse)
+    - [GetCoinProductInfoOnlyRequest](#project-info-manager-v1-GetCoinProductInfoOnlyRequest)
+    - [GetCoinProductInfoOnlyRequest.CondsEntry](#project-info-manager-v1-GetCoinProductInfoOnlyRequest-CondsEntry)
+    - [GetCoinProductInfoOnlyResponse](#project-info-manager-v1-GetCoinProductInfoOnlyResponse)
+    - [GetCoinProductInfoRequest](#project-info-manager-v1-GetCoinProductInfoRequest)
+    - [GetCoinProductInfoResponse](#project-info-manager-v1-GetCoinProductInfoResponse)
+    - [GetCoinProductInfosRequest](#project-info-manager-v1-GetCoinProductInfosRequest)
+    - [GetCoinProductInfosRequest.CondsEntry](#project-info-manager-v1-GetCoinProductInfosRequest-CondsEntry)
+    - [GetCoinProductInfosResponse](#project-info-manager-v1-GetCoinProductInfosResponse)
     - [UpdateCoinDescriptionRequest](#project-info-manager-v1-UpdateCoinDescriptionRequest)
     - [UpdateCoinDescriptionResponse](#project-info-manager-v1-UpdateCoinDescriptionResponse)
-    - [UpdateCoinProductRequest](#project-info-manager-v1-UpdateCoinProductRequest)
-    - [UpdateCoinProductResponse](#project-info-manager-v1-UpdateCoinProductResponse)
+    - [UpdateCoinProductInfoRequest](#project-info-manager-v1-UpdateCoinProductInfoRequest)
+    - [UpdateCoinProductInfoResponse](#project-info-manager-v1-UpdateCoinProductInfoResponse)
   
     - [ProjectInfoManager](#project-info-manager-v1-ProjectInfoManager)
   
 - [npool/projectinfomgr/projectinfomgr.proto](#npool_projectinfomgr_projectinfomgr-proto)
     - [CoinDescription](#project-info-manager-v1-CoinDescription)
-    - [CoinProduct](#project-info-manager-v1-CoinProduct)
+    - [CoinProductInfo](#project-info-manager-v1-CoinProductInfo)
     - [CreateAppCoinDescriptionRequest](#project-info-manager-v1-CreateAppCoinDescriptionRequest)
     - [CreateAppCoinDescriptionResponse](#project-info-manager-v1-CreateAppCoinDescriptionResponse)
     - [CreateAppCoinDescriptionsRequest](#project-info-manager-v1-CreateAppCoinDescriptionsRequest)
     - [CreateAppCoinDescriptionsResponse](#project-info-manager-v1-CreateAppCoinDescriptionsResponse)
-    - [CreateAppCoinProductRequest](#project-info-manager-v1-CreateAppCoinProductRequest)
-    - [CreateAppCoinProductResponse](#project-info-manager-v1-CreateAppCoinProductResponse)
-    - [CreateAppCoinProductsRequest](#project-info-manager-v1-CreateAppCoinProductsRequest)
-    - [CreateAppCoinProductsResponse](#project-info-manager-v1-CreateAppCoinProductsResponse)
+    - [CreateAppCoinProductInfoRequest](#project-info-manager-v1-CreateAppCoinProductInfoRequest)
+    - [CreateAppCoinProductInfoResponse](#project-info-manager-v1-CreateAppCoinProductInfoResponse)
+    - [CreateAppCoinProductInfosRequest](#project-info-manager-v1-CreateAppCoinProductInfosRequest)
+    - [CreateAppCoinProductInfosResponse](#project-info-manager-v1-CreateAppCoinProductInfosResponse)
     - [CreateCoinDescriptionRequest](#project-info-manager-v1-CreateCoinDescriptionRequest)
     - [CreateCoinDescriptionResponse](#project-info-manager-v1-CreateCoinDescriptionResponse)
     - [CreateCoinDescriptionsRequest](#project-info-manager-v1-CreateCoinDescriptionsRequest)
     - [CreateCoinDescriptionsResponse](#project-info-manager-v1-CreateCoinDescriptionsResponse)
-    - [CreateCoinProductRequest](#project-info-manager-v1-CreateCoinProductRequest)
-    - [CreateCoinProductResponse](#project-info-manager-v1-CreateCoinProductResponse)
-    - [CreateCoinProductsRequest](#project-info-manager-v1-CreateCoinProductsRequest)
-    - [CreateCoinProductsResponse](#project-info-manager-v1-CreateCoinProductsResponse)
+    - [CreateCoinProductInfoRequest](#project-info-manager-v1-CreateCoinProductInfoRequest)
+    - [CreateCoinProductInfoResponse](#project-info-manager-v1-CreateCoinProductInfoResponse)
+    - [CreateCoinProductInfosRequest](#project-info-manager-v1-CreateCoinProductInfosRequest)
+    - [CreateCoinProductInfosResponse](#project-info-manager-v1-CreateCoinProductInfosResponse)
     - [DeleteCoinDescriptionRequest](#project-info-manager-v1-DeleteCoinDescriptionRequest)
     - [DeleteCoinDescriptionResponse](#project-info-manager-v1-DeleteCoinDescriptionResponse)
-    - [DeleteCoinProductRequest](#project-info-manager-v1-DeleteCoinProductRequest)
-    - [DeleteCoinProductResponse](#project-info-manager-v1-DeleteCoinProductResponse)
+    - [DeleteCoinProductInfoRequest](#project-info-manager-v1-DeleteCoinProductInfoRequest)
+    - [DeleteCoinProductInfoResponse](#project-info-manager-v1-DeleteCoinProductInfoResponse)
     - [GetAppCoinDescriptionOnlyRequest](#project-info-manager-v1-GetAppCoinDescriptionOnlyRequest)
     - [GetAppCoinDescriptionOnlyRequest.CondsEntry](#project-info-manager-v1-GetAppCoinDescriptionOnlyRequest-CondsEntry)
     - [GetAppCoinDescriptionOnlyResponse](#project-info-manager-v1-GetAppCoinDescriptionOnlyResponse)
     - [GetAppCoinDescriptionsRequest](#project-info-manager-v1-GetAppCoinDescriptionsRequest)
     - [GetAppCoinDescriptionsRequest.CondsEntry](#project-info-manager-v1-GetAppCoinDescriptionsRequest-CondsEntry)
     - [GetAppCoinDescriptionsResponse](#project-info-manager-v1-GetAppCoinDescriptionsResponse)
-    - [GetAppCoinProductOnlyRequest](#project-info-manager-v1-GetAppCoinProductOnlyRequest)
-    - [GetAppCoinProductOnlyRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductOnlyRequest-CondsEntry)
-    - [GetAppCoinProductOnlyResponse](#project-info-manager-v1-GetAppCoinProductOnlyResponse)
-    - [GetAppCoinProductsRequest](#project-info-manager-v1-GetAppCoinProductsRequest)
-    - [GetAppCoinProductsRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductsRequest-CondsEntry)
-    - [GetAppCoinProductsResponse](#project-info-manager-v1-GetAppCoinProductsResponse)
+    - [GetAppCoinProductInfoOnlyRequest](#project-info-manager-v1-GetAppCoinProductInfoOnlyRequest)
+    - [GetAppCoinProductInfoOnlyRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductInfoOnlyRequest-CondsEntry)
+    - [GetAppCoinProductInfoOnlyResponse](#project-info-manager-v1-GetAppCoinProductInfoOnlyResponse)
+    - [GetAppCoinProductInfosRequest](#project-info-manager-v1-GetAppCoinProductInfosRequest)
+    - [GetAppCoinProductInfosRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductInfosRequest-CondsEntry)
+    - [GetAppCoinProductInfosResponse](#project-info-manager-v1-GetAppCoinProductInfosResponse)
     - [GetCoinDescriptionOnlyRequest](#project-info-manager-v1-GetCoinDescriptionOnlyRequest)
     - [GetCoinDescriptionOnlyRequest.CondsEntry](#project-info-manager-v1-GetCoinDescriptionOnlyRequest-CondsEntry)
     - [GetCoinDescriptionOnlyResponse](#project-info-manager-v1-GetCoinDescriptionOnlyResponse)
@@ -104,18 +104,18 @@
     - [GetCoinDescriptionsRequest](#project-info-manager-v1-GetCoinDescriptionsRequest)
     - [GetCoinDescriptionsRequest.CondsEntry](#project-info-manager-v1-GetCoinDescriptionsRequest-CondsEntry)
     - [GetCoinDescriptionsResponse](#project-info-manager-v1-GetCoinDescriptionsResponse)
-    - [GetCoinProductOnlyRequest](#project-info-manager-v1-GetCoinProductOnlyRequest)
-    - [GetCoinProductOnlyRequest.CondsEntry](#project-info-manager-v1-GetCoinProductOnlyRequest-CondsEntry)
-    - [GetCoinProductOnlyResponse](#project-info-manager-v1-GetCoinProductOnlyResponse)
-    - [GetCoinProductRequest](#project-info-manager-v1-GetCoinProductRequest)
-    - [GetCoinProductResponse](#project-info-manager-v1-GetCoinProductResponse)
-    - [GetCoinProductsRequest](#project-info-manager-v1-GetCoinProductsRequest)
-    - [GetCoinProductsRequest.CondsEntry](#project-info-manager-v1-GetCoinProductsRequest-CondsEntry)
-    - [GetCoinProductsResponse](#project-info-manager-v1-GetCoinProductsResponse)
+    - [GetCoinProductInfoOnlyRequest](#project-info-manager-v1-GetCoinProductInfoOnlyRequest)
+    - [GetCoinProductInfoOnlyRequest.CondsEntry](#project-info-manager-v1-GetCoinProductInfoOnlyRequest-CondsEntry)
+    - [GetCoinProductInfoOnlyResponse](#project-info-manager-v1-GetCoinProductInfoOnlyResponse)
+    - [GetCoinProductInfoRequest](#project-info-manager-v1-GetCoinProductInfoRequest)
+    - [GetCoinProductInfoResponse](#project-info-manager-v1-GetCoinProductInfoResponse)
+    - [GetCoinProductInfosRequest](#project-info-manager-v1-GetCoinProductInfosRequest)
+    - [GetCoinProductInfosRequest.CondsEntry](#project-info-manager-v1-GetCoinProductInfosRequest-CondsEntry)
+    - [GetCoinProductInfosResponse](#project-info-manager-v1-GetCoinProductInfosResponse)
     - [UpdateCoinDescriptionRequest](#project-info-manager-v1-UpdateCoinDescriptionRequest)
     - [UpdateCoinDescriptionResponse](#project-info-manager-v1-UpdateCoinDescriptionResponse)
-    - [UpdateCoinProductRequest](#project-info-manager-v1-UpdateCoinProductRequest)
-    - [UpdateCoinProductResponse](#project-info-manager-v1-UpdateCoinProductResponse)
+    - [UpdateCoinProductInfoRequest](#project-info-manager-v1-UpdateCoinProductInfoRequest)
+    - [UpdateCoinProductInfoResponse](#project-info-manager-v1-UpdateCoinProductInfoResponse)
   
     - [ProjectInfoManager](#project-info-manager-v1-ProjectInfoManager)
   
@@ -152,9 +152,9 @@
 
 
 
-<a name="project-info-manager-v1-CoinProduct"></a>
+<a name="project-info-manager-v1-CoinProductInfo"></a>
 
-### CoinProduct
+### CoinProductInfo
 
 
 
@@ -232,62 +232,62 @@
 
 
 
-<a name="project-info-manager-v1-CreateAppCoinProductRequest"></a>
+<a name="project-info-manager-v1-CreateAppCoinProductInfoRequest"></a>
 
-### CreateAppCoinProductRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
-
-
-
-
-
-
-<a name="project-info-manager-v1-CreateAppCoinProductResponse"></a>
-
-### CreateAppCoinProductResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
-
-
-
-
-
-
-<a name="project-info-manager-v1-CreateAppCoinProductsRequest"></a>
-
-### CreateAppCoinProductsRequest
+### CreateAppCoinProductInfoRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| Infos | [CoinProduct](#project-info-manager-v1-CoinProduct) | repeated |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-CreateAppCoinProductsResponse"></a>
+<a name="project-info-manager-v1-CreateAppCoinProductInfoResponse"></a>
 
-### CreateAppCoinProductsResponse
+### CreateAppCoinProductInfoResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinProduct](#project-info-manager-v1-CoinProduct) | repeated |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CreateAppCoinProductInfosRequest"></a>
+
+### CreateAppCoinProductInfosRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Infos | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) | repeated |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CreateAppCoinProductInfosResponse"></a>
+
+### CreateAppCoinProductInfosResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) | repeated |  |
 
 
 
@@ -355,61 +355,61 @@ create
 
 
 
-<a name="project-info-manager-v1-CreateCoinProductRequest"></a>
+<a name="project-info-manager-v1-CreateCoinProductInfoRequest"></a>
 
-### CreateCoinProductRequest
+### CreateCoinProductInfoRequest
 create
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-CreateCoinProductResponse"></a>
+<a name="project-info-manager-v1-CreateCoinProductInfoResponse"></a>
 
-### CreateCoinProductResponse
+### CreateCoinProductInfoResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-CreateCoinProductsRequest"></a>
+<a name="project-info-manager-v1-CreateCoinProductInfosRequest"></a>
 
-### CreateCoinProductsRequest
+### CreateCoinProductInfosRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| Infos | [CoinProduct](#project-info-manager-v1-CoinProduct) | repeated |  |
+| Infos | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) | repeated |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-CreateCoinProductsResponse"></a>
+<a name="project-info-manager-v1-CreateCoinProductInfosResponse"></a>
 
-### CreateCoinProductsResponse
+### CreateCoinProductInfosResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinProduct](#project-info-manager-v1-CoinProduct) | repeated |  |
+| Infos | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) | repeated |  |
 
 
 
@@ -446,9 +446,9 @@ delete
 
 
 
-<a name="project-info-manager-v1-DeleteCoinProductRequest"></a>
+<a name="project-info-manager-v1-DeleteCoinProductInfoRequest"></a>
 
-### DeleteCoinProductRequest
+### DeleteCoinProductInfoRequest
 delete
 
 
@@ -461,15 +461,15 @@ delete
 
 
 
-<a name="project-info-manager-v1-DeleteCoinProductResponse"></a>
+<a name="project-info-manager-v1-DeleteCoinProductInfoResponse"></a>
 
-### DeleteCoinProductResponse
+### DeleteCoinProductInfoResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
@@ -575,16 +575,16 @@ delete
 
 
 
-<a name="project-info-manager-v1-GetAppCoinProductOnlyRequest"></a>
+<a name="project-info-manager-v1-GetAppCoinProductInfoOnlyRequest"></a>
 
-### GetAppCoinProductOnlyRequest
+### GetAppCoinProductInfoOnlyRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| Conds | [GetAppCoinProductOnlyRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductOnlyRequest-CondsEntry) | repeated |  |
+| Conds | [GetAppCoinProductInfoOnlyRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductInfoOnlyRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
 
@@ -593,9 +593,9 @@ delete
 
 
 
-<a name="project-info-manager-v1-GetAppCoinProductOnlyRequest-CondsEntry"></a>
+<a name="project-info-manager-v1-GetAppCoinProductInfoOnlyRequest-CondsEntry"></a>
 
-### GetAppCoinProductOnlyRequest.CondsEntry
+### GetAppCoinProductInfoOnlyRequest.CondsEntry
 
 
 
@@ -609,31 +609,31 @@ delete
 
 
 
-<a name="project-info-manager-v1-GetAppCoinProductOnlyResponse"></a>
+<a name="project-info-manager-v1-GetAppCoinProductInfoOnlyResponse"></a>
 
-### GetAppCoinProductOnlyResponse
+### GetAppCoinProductInfoOnlyResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-GetAppCoinProductsRequest"></a>
+<a name="project-info-manager-v1-GetAppCoinProductInfosRequest"></a>
 
-### GetAppCoinProductsRequest
+### GetAppCoinProductInfosRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| Conds | [GetAppCoinProductsRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductsRequest-CondsEntry) | repeated |  |
+| Conds | [GetAppCoinProductInfosRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductInfosRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
 
@@ -642,9 +642,9 @@ delete
 
 
 
-<a name="project-info-manager-v1-GetAppCoinProductsRequest-CondsEntry"></a>
+<a name="project-info-manager-v1-GetAppCoinProductInfosRequest-CondsEntry"></a>
 
-### GetAppCoinProductsRequest.CondsEntry
+### GetAppCoinProductInfosRequest.CondsEntry
 
 
 
@@ -658,15 +658,15 @@ delete
 
 
 
-<a name="project-info-manager-v1-GetAppCoinProductsResponse"></a>
+<a name="project-info-manager-v1-GetAppCoinProductInfosResponse"></a>
 
-### GetAppCoinProductsResponse
+### GetAppCoinProductInfosResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinProduct](#project-info-manager-v1-CoinProduct) | repeated |  |
+| Infos | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) | repeated |  |
 | Total | [int32](#int32) |  |  |
 
 
@@ -803,16 +803,16 @@ get
 
 
 
-<a name="project-info-manager-v1-GetCoinProductOnlyRequest"></a>
+<a name="project-info-manager-v1-GetCoinProductInfoOnlyRequest"></a>
 
-### GetCoinProductOnlyRequest
+### GetCoinProductInfoOnlyRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| Conds | [GetCoinProductOnlyRequest.CondsEntry](#project-info-manager-v1-GetCoinProductOnlyRequest-CondsEntry) | repeated |  |
+| Conds | [GetCoinProductInfoOnlyRequest.CondsEntry](#project-info-manager-v1-GetCoinProductInfoOnlyRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
 
@@ -821,9 +821,9 @@ get
 
 
 
-<a name="project-info-manager-v1-GetCoinProductOnlyRequest-CondsEntry"></a>
+<a name="project-info-manager-v1-GetCoinProductInfoOnlyRequest-CondsEntry"></a>
 
-### GetCoinProductOnlyRequest.CondsEntry
+### GetCoinProductInfoOnlyRequest.CondsEntry
 
 
 
@@ -837,24 +837,24 @@ get
 
 
 
-<a name="project-info-manager-v1-GetCoinProductOnlyResponse"></a>
+<a name="project-info-manager-v1-GetCoinProductInfoOnlyResponse"></a>
 
-### GetCoinProductOnlyResponse
+### GetCoinProductInfoOnlyResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-GetCoinProductRequest"></a>
+<a name="project-info-manager-v1-GetCoinProductInfoRequest"></a>
 
-### GetCoinProductRequest
+### GetCoinProductInfoRequest
 get
 
 
@@ -867,31 +867,31 @@ get
 
 
 
-<a name="project-info-manager-v1-GetCoinProductResponse"></a>
+<a name="project-info-manager-v1-GetCoinProductInfoResponse"></a>
 
-### GetCoinProductResponse
+### GetCoinProductInfoResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-GetCoinProductsRequest"></a>
+<a name="project-info-manager-v1-GetCoinProductInfosRequest"></a>
 
-### GetCoinProductsRequest
+### GetCoinProductInfosRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| Conds | [GetCoinProductsRequest.CondsEntry](#project-info-manager-v1-GetCoinProductsRequest-CondsEntry) | repeated |  |
+| Conds | [GetCoinProductInfosRequest.CondsEntry](#project-info-manager-v1-GetCoinProductInfosRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
 
@@ -900,9 +900,9 @@ get
 
 
 
-<a name="project-info-manager-v1-GetCoinProductsRequest-CondsEntry"></a>
+<a name="project-info-manager-v1-GetCoinProductInfosRequest-CondsEntry"></a>
 
-### GetCoinProductsRequest.CondsEntry
+### GetCoinProductInfosRequest.CondsEntry
 
 
 
@@ -916,15 +916,15 @@ get
 
 
 
-<a name="project-info-manager-v1-GetCoinProductsResponse"></a>
+<a name="project-info-manager-v1-GetCoinProductInfosResponse"></a>
 
-### GetCoinProductsResponse
+### GetCoinProductInfosResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinProduct](#project-info-manager-v1-CoinProduct) | repeated |  |
+| Infos | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) | repeated |  |
 | Total | [int32](#int32) |  |  |
 
 
@@ -962,30 +962,30 @@ update
 
 
 
-<a name="project-info-manager-v1-UpdateCoinProductRequest"></a>
+<a name="project-info-manager-v1-UpdateCoinProductInfoRequest"></a>
 
-### UpdateCoinProductRequest
+### UpdateCoinProductInfoRequest
 update
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-UpdateCoinProductResponse"></a>
+<a name="project-info-manager-v1-UpdateCoinProductInfoResponse"></a>
 
-### UpdateCoinProductResponse
+### UpdateCoinProductInfoResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
@@ -1017,17 +1017,17 @@ update
 | GetAppCoinDescriptions | [GetAppCoinDescriptionsRequest](#project-info-manager-v1-GetAppCoinDescriptionsRequest) | [GetAppCoinDescriptionsResponse](#project-info-manager-v1-GetAppCoinDescriptionsResponse) |  |
 | GetAppCoinDescriptionOnly | [GetAppCoinDescriptionOnlyRequest](#project-info-manager-v1-GetAppCoinDescriptionOnlyRequest) | [GetAppCoinDescriptionOnlyResponse](#project-info-manager-v1-GetAppCoinDescriptionOnlyResponse) |  |
 | DeleteCoinDescription | [DeleteCoinDescriptionRequest](#project-info-manager-v1-DeleteCoinDescriptionRequest) | [DeleteCoinDescriptionResponse](#project-info-manager-v1-DeleteCoinDescriptionResponse) |  |
-| CreateCoinProduct | [CreateCoinProductRequest](#project-info-manager-v1-CreateCoinProductRequest) | [CreateCoinProductResponse](#project-info-manager-v1-CreateCoinProductResponse) |  |
-| CreateCoinProducts | [CreateCoinProductsRequest](#project-info-manager-v1-CreateCoinProductsRequest) | [CreateCoinProductsResponse](#project-info-manager-v1-CreateCoinProductsResponse) |  |
-| CreateAppCoinProduct | [CreateAppCoinProductRequest](#project-info-manager-v1-CreateAppCoinProductRequest) | [CreateAppCoinProductResponse](#project-info-manager-v1-CreateAppCoinProductResponse) |  |
-| CreateAppCoinProducts | [CreateAppCoinProductsRequest](#project-info-manager-v1-CreateAppCoinProductsRequest) | [CreateAppCoinProductsResponse](#project-info-manager-v1-CreateAppCoinProductsResponse) |  |
-| UpdateCoinProduct | [UpdateCoinProductRequest](#project-info-manager-v1-UpdateCoinProductRequest) | [UpdateCoinProductResponse](#project-info-manager-v1-UpdateCoinProductResponse) |  |
-| GetCoinProduct | [GetCoinProductRequest](#project-info-manager-v1-GetCoinProductRequest) | [GetCoinProductResponse](#project-info-manager-v1-GetCoinProductResponse) |  |
-| GetCoinProducts | [GetCoinProductsRequest](#project-info-manager-v1-GetCoinProductsRequest) | [GetCoinProductsResponse](#project-info-manager-v1-GetCoinProductsResponse) |  |
-| GetCoinProductOnly | [GetCoinProductOnlyRequest](#project-info-manager-v1-GetCoinProductOnlyRequest) | [GetCoinProductOnlyResponse](#project-info-manager-v1-GetCoinProductOnlyResponse) |  |
-| GetAppCoinProducts | [GetAppCoinProductsRequest](#project-info-manager-v1-GetAppCoinProductsRequest) | [GetAppCoinProductsResponse](#project-info-manager-v1-GetAppCoinProductsResponse) |  |
-| GetAppCoinProductOnly | [GetAppCoinProductOnlyRequest](#project-info-manager-v1-GetAppCoinProductOnlyRequest) | [GetAppCoinProductOnlyResponse](#project-info-manager-v1-GetAppCoinProductOnlyResponse) |  |
-| DeleteCoinProduct | [DeleteCoinProductRequest](#project-info-manager-v1-DeleteCoinProductRequest) | [DeleteCoinProductResponse](#project-info-manager-v1-DeleteCoinProductResponse) |  |
+| CreateCoinProductInfo | [CreateCoinProductInfoRequest](#project-info-manager-v1-CreateCoinProductInfoRequest) | [CreateCoinProductInfoResponse](#project-info-manager-v1-CreateCoinProductInfoResponse) |  |
+| CreateCoinProductInfos | [CreateCoinProductInfosRequest](#project-info-manager-v1-CreateCoinProductInfosRequest) | [CreateCoinProductInfosResponse](#project-info-manager-v1-CreateCoinProductInfosResponse) |  |
+| CreateAppCoinProductInfo | [CreateAppCoinProductInfoRequest](#project-info-manager-v1-CreateAppCoinProductInfoRequest) | [CreateAppCoinProductInfoResponse](#project-info-manager-v1-CreateAppCoinProductInfoResponse) |  |
+| CreateAppCoinProductInfos | [CreateAppCoinProductInfosRequest](#project-info-manager-v1-CreateAppCoinProductInfosRequest) | [CreateAppCoinProductInfosResponse](#project-info-manager-v1-CreateAppCoinProductInfosResponse) |  |
+| UpdateCoinProductInfo | [UpdateCoinProductInfoRequest](#project-info-manager-v1-UpdateCoinProductInfoRequest) | [UpdateCoinProductInfoResponse](#project-info-manager-v1-UpdateCoinProductInfoResponse) |  |
+| GetCoinProductInfo | [GetCoinProductInfoRequest](#project-info-manager-v1-GetCoinProductInfoRequest) | [GetCoinProductInfoResponse](#project-info-manager-v1-GetCoinProductInfoResponse) |  |
+| GetCoinProductInfos | [GetCoinProductInfosRequest](#project-info-manager-v1-GetCoinProductInfosRequest) | [GetCoinProductInfosResponse](#project-info-manager-v1-GetCoinProductInfosResponse) |  |
+| GetCoinProductInfoOnly | [GetCoinProductInfoOnlyRequest](#project-info-manager-v1-GetCoinProductInfoOnlyRequest) | [GetCoinProductInfoOnlyResponse](#project-info-manager-v1-GetCoinProductInfoOnlyResponse) |  |
+| GetAppCoinProductInfos | [GetAppCoinProductInfosRequest](#project-info-manager-v1-GetAppCoinProductInfosRequest) | [GetAppCoinProductInfosResponse](#project-info-manager-v1-GetAppCoinProductInfosResponse) |  |
+| GetAppCoinProductInfoOnly | [GetAppCoinProductInfoOnlyRequest](#project-info-manager-v1-GetAppCoinProductInfoOnlyRequest) | [GetAppCoinProductInfoOnlyResponse](#project-info-manager-v1-GetAppCoinProductInfoOnlyResponse) |  |
+| DeleteCoinProductInfo | [DeleteCoinProductInfoRequest](#project-info-manager-v1-DeleteCoinProductInfoRequest) | [DeleteCoinProductInfoResponse](#project-info-manager-v1-DeleteCoinProductInfoResponse) |  |
 
  
 
@@ -1062,9 +1062,9 @@ update
 
 
 
-<a name="project-info-manager-v1-CoinProduct"></a>
+<a name="project-info-manager-v1-CoinProductInfo"></a>
 
-### CoinProduct
+### CoinProductInfo
 
 
 
@@ -1142,62 +1142,62 @@ update
 
 
 
-<a name="project-info-manager-v1-CreateAppCoinProductRequest"></a>
+<a name="project-info-manager-v1-CreateAppCoinProductInfoRequest"></a>
 
-### CreateAppCoinProductRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TargetAppID | [string](#string) |  |  |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
-
-
-
-
-
-
-<a name="project-info-manager-v1-CreateAppCoinProductResponse"></a>
-
-### CreateAppCoinProductResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
-
-
-
-
-
-
-<a name="project-info-manager-v1-CreateAppCoinProductsRequest"></a>
-
-### CreateAppCoinProductsRequest
+### CreateAppCoinProductInfoRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| Infos | [CoinProduct](#project-info-manager-v1-CoinProduct) | repeated |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-CreateAppCoinProductsResponse"></a>
+<a name="project-info-manager-v1-CreateAppCoinProductInfoResponse"></a>
 
-### CreateAppCoinProductsResponse
+### CreateAppCoinProductInfoResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinProduct](#project-info-manager-v1-CoinProduct) | repeated |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CreateAppCoinProductInfosRequest"></a>
+
+### CreateAppCoinProductInfosRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| Infos | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) | repeated |  |
+
+
+
+
+
+
+<a name="project-info-manager-v1-CreateAppCoinProductInfosResponse"></a>
+
+### CreateAppCoinProductInfosResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) | repeated |  |
 
 
 
@@ -1265,61 +1265,61 @@ create
 
 
 
-<a name="project-info-manager-v1-CreateCoinProductRequest"></a>
+<a name="project-info-manager-v1-CreateCoinProductInfoRequest"></a>
 
-### CreateCoinProductRequest
+### CreateCoinProductInfoRequest
 create
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-CreateCoinProductResponse"></a>
+<a name="project-info-manager-v1-CreateCoinProductInfoResponse"></a>
 
-### CreateCoinProductResponse
+### CreateCoinProductInfoResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-CreateCoinProductsRequest"></a>
+<a name="project-info-manager-v1-CreateCoinProductInfosRequest"></a>
 
-### CreateCoinProductsRequest
+### CreateCoinProductInfosRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| Infos | [CoinProduct](#project-info-manager-v1-CoinProduct) | repeated |  |
+| Infos | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) | repeated |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-CreateCoinProductsResponse"></a>
+<a name="project-info-manager-v1-CreateCoinProductInfosResponse"></a>
 
-### CreateCoinProductsResponse
+### CreateCoinProductInfosResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinProduct](#project-info-manager-v1-CoinProduct) | repeated |  |
+| Infos | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) | repeated |  |
 
 
 
@@ -1356,9 +1356,9 @@ delete
 
 
 
-<a name="project-info-manager-v1-DeleteCoinProductRequest"></a>
+<a name="project-info-manager-v1-DeleteCoinProductInfoRequest"></a>
 
-### DeleteCoinProductRequest
+### DeleteCoinProductInfoRequest
 delete
 
 
@@ -1371,15 +1371,15 @@ delete
 
 
 
-<a name="project-info-manager-v1-DeleteCoinProductResponse"></a>
+<a name="project-info-manager-v1-DeleteCoinProductInfoResponse"></a>
 
-### DeleteCoinProductResponse
+### DeleteCoinProductInfoResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
@@ -1485,16 +1485,16 @@ delete
 
 
 
-<a name="project-info-manager-v1-GetAppCoinProductOnlyRequest"></a>
+<a name="project-info-manager-v1-GetAppCoinProductInfoOnlyRequest"></a>
 
-### GetAppCoinProductOnlyRequest
+### GetAppCoinProductInfoOnlyRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| Conds | [GetAppCoinProductOnlyRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductOnlyRequest-CondsEntry) | repeated |  |
+| Conds | [GetAppCoinProductInfoOnlyRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductInfoOnlyRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
 
@@ -1503,9 +1503,9 @@ delete
 
 
 
-<a name="project-info-manager-v1-GetAppCoinProductOnlyRequest-CondsEntry"></a>
+<a name="project-info-manager-v1-GetAppCoinProductInfoOnlyRequest-CondsEntry"></a>
 
-### GetAppCoinProductOnlyRequest.CondsEntry
+### GetAppCoinProductInfoOnlyRequest.CondsEntry
 
 
 
@@ -1519,31 +1519,31 @@ delete
 
 
 
-<a name="project-info-manager-v1-GetAppCoinProductOnlyResponse"></a>
+<a name="project-info-manager-v1-GetAppCoinProductInfoOnlyResponse"></a>
 
-### GetAppCoinProductOnlyResponse
+### GetAppCoinProductInfoOnlyResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-GetAppCoinProductsRequest"></a>
+<a name="project-info-manager-v1-GetAppCoinProductInfosRequest"></a>
 
-### GetAppCoinProductsRequest
+### GetAppCoinProductInfosRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
-| Conds | [GetAppCoinProductsRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductsRequest-CondsEntry) | repeated |  |
+| Conds | [GetAppCoinProductInfosRequest.CondsEntry](#project-info-manager-v1-GetAppCoinProductInfosRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
 
@@ -1552,9 +1552,9 @@ delete
 
 
 
-<a name="project-info-manager-v1-GetAppCoinProductsRequest-CondsEntry"></a>
+<a name="project-info-manager-v1-GetAppCoinProductInfosRequest-CondsEntry"></a>
 
-### GetAppCoinProductsRequest.CondsEntry
+### GetAppCoinProductInfosRequest.CondsEntry
 
 
 
@@ -1568,15 +1568,15 @@ delete
 
 
 
-<a name="project-info-manager-v1-GetAppCoinProductsResponse"></a>
+<a name="project-info-manager-v1-GetAppCoinProductInfosResponse"></a>
 
-### GetAppCoinProductsResponse
+### GetAppCoinProductInfosResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinProduct](#project-info-manager-v1-CoinProduct) | repeated |  |
+| Infos | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) | repeated |  |
 | Total | [int32](#int32) |  |  |
 
 
@@ -1713,16 +1713,16 @@ get
 
 
 
-<a name="project-info-manager-v1-GetCoinProductOnlyRequest"></a>
+<a name="project-info-manager-v1-GetCoinProductInfoOnlyRequest"></a>
 
-### GetCoinProductOnlyRequest
+### GetCoinProductInfoOnlyRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| Conds | [GetCoinProductOnlyRequest.CondsEntry](#project-info-manager-v1-GetCoinProductOnlyRequest-CondsEntry) | repeated |  |
+| Conds | [GetCoinProductInfoOnlyRequest.CondsEntry](#project-info-manager-v1-GetCoinProductInfoOnlyRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
 
@@ -1731,9 +1731,9 @@ get
 
 
 
-<a name="project-info-manager-v1-GetCoinProductOnlyRequest-CondsEntry"></a>
+<a name="project-info-manager-v1-GetCoinProductInfoOnlyRequest-CondsEntry"></a>
 
-### GetCoinProductOnlyRequest.CondsEntry
+### GetCoinProductInfoOnlyRequest.CondsEntry
 
 
 
@@ -1747,24 +1747,24 @@ get
 
 
 
-<a name="project-info-manager-v1-GetCoinProductOnlyResponse"></a>
+<a name="project-info-manager-v1-GetCoinProductInfoOnlyResponse"></a>
 
-### GetCoinProductOnlyResponse
+### GetCoinProductInfoOnlyResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-GetCoinProductRequest"></a>
+<a name="project-info-manager-v1-GetCoinProductInfoRequest"></a>
 
-### GetCoinProductRequest
+### GetCoinProductInfoRequest
 get
 
 
@@ -1777,31 +1777,31 @@ get
 
 
 
-<a name="project-info-manager-v1-GetCoinProductResponse"></a>
+<a name="project-info-manager-v1-GetCoinProductInfoResponse"></a>
 
-### GetCoinProductResponse
+### GetCoinProductInfoResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-GetCoinProductsRequest"></a>
+<a name="project-info-manager-v1-GetCoinProductInfosRequest"></a>
 
-### GetCoinProductsRequest
+### GetCoinProductInfosRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
-| Conds | [GetCoinProductsRequest.CondsEntry](#project-info-manager-v1-GetCoinProductsRequest-CondsEntry) | repeated |  |
+| Conds | [GetCoinProductInfosRequest.CondsEntry](#project-info-manager-v1-GetCoinProductInfosRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
 
@@ -1810,9 +1810,9 @@ get
 
 
 
-<a name="project-info-manager-v1-GetCoinProductsRequest-CondsEntry"></a>
+<a name="project-info-manager-v1-GetCoinProductInfosRequest-CondsEntry"></a>
 
-### GetCoinProductsRequest.CondsEntry
+### GetCoinProductInfosRequest.CondsEntry
 
 
 
@@ -1826,15 +1826,15 @@ get
 
 
 
-<a name="project-info-manager-v1-GetCoinProductsResponse"></a>
+<a name="project-info-manager-v1-GetCoinProductInfosResponse"></a>
 
-### GetCoinProductsResponse
+### GetCoinProductInfosResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [CoinProduct](#project-info-manager-v1-CoinProduct) | repeated |  |
+| Infos | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) | repeated |  |
 | Total | [int32](#int32) |  |  |
 
 
@@ -1872,30 +1872,30 @@ update
 
 
 
-<a name="project-info-manager-v1-UpdateCoinProductRequest"></a>
+<a name="project-info-manager-v1-UpdateCoinProductInfoRequest"></a>
 
-### UpdateCoinProductRequest
+### UpdateCoinProductInfoRequest
 update
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
 
 
 
-<a name="project-info-manager-v1-UpdateCoinProductResponse"></a>
+<a name="project-info-manager-v1-UpdateCoinProductInfoResponse"></a>
 
-### UpdateCoinProductResponse
+### UpdateCoinProductInfoResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinProduct](#project-info-manager-v1-CoinProduct) |  |  |
+| Info | [CoinProductInfo](#project-info-manager-v1-CoinProductInfo) |  |  |
 
 
 
@@ -1927,17 +1927,17 @@ update
 | GetAppCoinDescriptions | [GetAppCoinDescriptionsRequest](#project-info-manager-v1-GetAppCoinDescriptionsRequest) | [GetAppCoinDescriptionsResponse](#project-info-manager-v1-GetAppCoinDescriptionsResponse) |  |
 | GetAppCoinDescriptionOnly | [GetAppCoinDescriptionOnlyRequest](#project-info-manager-v1-GetAppCoinDescriptionOnlyRequest) | [GetAppCoinDescriptionOnlyResponse](#project-info-manager-v1-GetAppCoinDescriptionOnlyResponse) |  |
 | DeleteCoinDescription | [DeleteCoinDescriptionRequest](#project-info-manager-v1-DeleteCoinDescriptionRequest) | [DeleteCoinDescriptionResponse](#project-info-manager-v1-DeleteCoinDescriptionResponse) |  |
-| CreateCoinProduct | [CreateCoinProductRequest](#project-info-manager-v1-CreateCoinProductRequest) | [CreateCoinProductResponse](#project-info-manager-v1-CreateCoinProductResponse) |  |
-| CreateCoinProducts | [CreateCoinProductsRequest](#project-info-manager-v1-CreateCoinProductsRequest) | [CreateCoinProductsResponse](#project-info-manager-v1-CreateCoinProductsResponse) |  |
-| CreateAppCoinProduct | [CreateAppCoinProductRequest](#project-info-manager-v1-CreateAppCoinProductRequest) | [CreateAppCoinProductResponse](#project-info-manager-v1-CreateAppCoinProductResponse) |  |
-| CreateAppCoinProducts | [CreateAppCoinProductsRequest](#project-info-manager-v1-CreateAppCoinProductsRequest) | [CreateAppCoinProductsResponse](#project-info-manager-v1-CreateAppCoinProductsResponse) |  |
-| UpdateCoinProduct | [UpdateCoinProductRequest](#project-info-manager-v1-UpdateCoinProductRequest) | [UpdateCoinProductResponse](#project-info-manager-v1-UpdateCoinProductResponse) |  |
-| GetCoinProduct | [GetCoinProductRequest](#project-info-manager-v1-GetCoinProductRequest) | [GetCoinProductResponse](#project-info-manager-v1-GetCoinProductResponse) |  |
-| GetCoinProducts | [GetCoinProductsRequest](#project-info-manager-v1-GetCoinProductsRequest) | [GetCoinProductsResponse](#project-info-manager-v1-GetCoinProductsResponse) |  |
-| GetCoinProductOnly | [GetCoinProductOnlyRequest](#project-info-manager-v1-GetCoinProductOnlyRequest) | [GetCoinProductOnlyResponse](#project-info-manager-v1-GetCoinProductOnlyResponse) |  |
-| GetAppCoinProducts | [GetAppCoinProductsRequest](#project-info-manager-v1-GetAppCoinProductsRequest) | [GetAppCoinProductsResponse](#project-info-manager-v1-GetAppCoinProductsResponse) |  |
-| GetAppCoinProductOnly | [GetAppCoinProductOnlyRequest](#project-info-manager-v1-GetAppCoinProductOnlyRequest) | [GetAppCoinProductOnlyResponse](#project-info-manager-v1-GetAppCoinProductOnlyResponse) |  |
-| DeleteCoinProduct | [DeleteCoinProductRequest](#project-info-manager-v1-DeleteCoinProductRequest) | [DeleteCoinProductResponse](#project-info-manager-v1-DeleteCoinProductResponse) |  |
+| CreateCoinProductInfo | [CreateCoinProductInfoRequest](#project-info-manager-v1-CreateCoinProductInfoRequest) | [CreateCoinProductInfoResponse](#project-info-manager-v1-CreateCoinProductInfoResponse) |  |
+| CreateCoinProductInfos | [CreateCoinProductInfosRequest](#project-info-manager-v1-CreateCoinProductInfosRequest) | [CreateCoinProductInfosResponse](#project-info-manager-v1-CreateCoinProductInfosResponse) |  |
+| CreateAppCoinProductInfo | [CreateAppCoinProductInfoRequest](#project-info-manager-v1-CreateAppCoinProductInfoRequest) | [CreateAppCoinProductInfoResponse](#project-info-manager-v1-CreateAppCoinProductInfoResponse) |  |
+| CreateAppCoinProductInfos | [CreateAppCoinProductInfosRequest](#project-info-manager-v1-CreateAppCoinProductInfosRequest) | [CreateAppCoinProductInfosResponse](#project-info-manager-v1-CreateAppCoinProductInfosResponse) |  |
+| UpdateCoinProductInfo | [UpdateCoinProductInfoRequest](#project-info-manager-v1-UpdateCoinProductInfoRequest) | [UpdateCoinProductInfoResponse](#project-info-manager-v1-UpdateCoinProductInfoResponse) |  |
+| GetCoinProductInfo | [GetCoinProductInfoRequest](#project-info-manager-v1-GetCoinProductInfoRequest) | [GetCoinProductInfoResponse](#project-info-manager-v1-GetCoinProductInfoResponse) |  |
+| GetCoinProductInfos | [GetCoinProductInfosRequest](#project-info-manager-v1-GetCoinProductInfosRequest) | [GetCoinProductInfosResponse](#project-info-manager-v1-GetCoinProductInfosResponse) |  |
+| GetCoinProductInfoOnly | [GetCoinProductInfoOnlyRequest](#project-info-manager-v1-GetCoinProductInfoOnlyRequest) | [GetCoinProductInfoOnlyResponse](#project-info-manager-v1-GetCoinProductInfoOnlyResponse) |  |
+| GetAppCoinProductInfos | [GetAppCoinProductInfosRequest](#project-info-manager-v1-GetAppCoinProductInfosRequest) | [GetAppCoinProductInfosResponse](#project-info-manager-v1-GetAppCoinProductInfosResponse) |  |
+| GetAppCoinProductInfoOnly | [GetAppCoinProductInfoOnlyRequest](#project-info-manager-v1-GetAppCoinProductInfoOnlyRequest) | [GetAppCoinProductInfoOnlyResponse](#project-info-manager-v1-GetAppCoinProductInfoOnlyResponse) |  |
+| DeleteCoinProductInfo | [DeleteCoinProductInfoRequest](#project-info-manager-v1-DeleteCoinProductInfoRequest) | [DeleteCoinProductInfoResponse](#project-info-manager-v1-DeleteCoinProductInfoResponse) |  |
 
  
 

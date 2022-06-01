@@ -75,14 +75,14 @@
         ]
       }
     },
-    "/v1/create/app/coin/product": {
+    "/v1/create/app/coin/productinfo": {
       "post": {
-        "operationId": "ProjectInfoManager_CreateAppCoinProduct",
+        "operationId": "ProjectInfoManager_CreateAppCoinProductInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAppCoinProductResponse"
+              "$ref": "#/definitions/v1CreateAppCoinProductInfoResponse"
             }
           },
           "default": {
@@ -98,7 +98,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAppCoinProductRequest"
+              "$ref": "#/definitions/v1CreateAppCoinProductInfoRequest"
             }
           }
         ],
@@ -107,14 +107,14 @@
         ]
       }
     },
-    "/v1/create/app/coin/products": {
+    "/v1/create/app/coin/productinfos": {
       "post": {
-        "operationId": "ProjectInfoManager_CreateAppCoinProducts",
+        "operationId": "ProjectInfoManager_CreateAppCoinProductInfos",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAppCoinProductsResponse"
+              "$ref": "#/definitions/v1CreateAppCoinProductInfosResponse"
             }
           },
           "default": {
@@ -130,7 +130,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAppCoinProductsRequest"
+              "$ref": "#/definitions/v1CreateAppCoinProductInfosRequest"
             }
           }
         ],
@@ -203,14 +203,14 @@
         ]
       }
     },
-    "/v1/create/coin/product": {
+    "/v1/create/coin/productinfo": {
       "post": {
-        "operationId": "ProjectInfoManager_CreateCoinProduct",
+        "operationId": "ProjectInfoManager_CreateCoinProductInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateCoinProductResponse"
+              "$ref": "#/definitions/v1CreateCoinProductInfoResponse"
             }
           },
           "default": {
@@ -226,7 +226,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateCoinProductRequest"
+              "$ref": "#/definitions/v1CreateCoinProductInfoRequest"
             }
           }
         ],
@@ -235,14 +235,14 @@
         ]
       }
     },
-    "/v1/create/coin/products": {
+    "/v1/create/coin/productinfos": {
       "post": {
-        "operationId": "ProjectInfoManager_CreateCoinProducts",
+        "operationId": "ProjectInfoManager_CreateCoinProductInfos",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateCoinProductsResponse"
+              "$ref": "#/definitions/v1CreateCoinProductInfosResponse"
             }
           },
           "default": {
@@ -258,7 +258,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateCoinProductsRequest"
+              "$ref": "#/definitions/v1CreateCoinProductInfosRequest"
             }
           }
         ],
@@ -299,14 +299,14 @@
         ]
       }
     },
-    "/v1/delete/coin/product": {
+    "/v1/delete/coin/productinfo": {
       "post": {
-        "operationId": "ProjectInfoManager_DeleteCoinProduct",
+        "operationId": "ProjectInfoManager_DeleteCoinProductInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteCoinProductResponse"
+              "$ref": "#/definitions/v1DeleteCoinProductInfoResponse"
             }
           },
           "default": {
@@ -322,7 +322,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteCoinProductRequest"
+              "$ref": "#/definitions/v1DeleteCoinProductInfoRequest"
             }
           }
         ],
@@ -395,14 +395,14 @@
         ]
       }
     },
-    "/v1/get/app/coin/product/only": {
+    "/v1/get/app/coin/productinfo/only": {
       "post": {
-        "operationId": "ProjectInfoManager_GetAppCoinProductOnly",
+        "operationId": "ProjectInfoManager_GetAppCoinProductInfoOnly",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppCoinProductOnlyResponse"
+              "$ref": "#/definitions/v1GetAppCoinProductInfoOnlyResponse"
             }
           },
           "default": {
@@ -418,7 +418,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppCoinProductOnlyRequest"
+              "$ref": "#/definitions/v1GetAppCoinProductInfoOnlyRequest"
             }
           }
         ],
@@ -427,14 +427,14 @@
         ]
       }
     },
-    "/v1/get/app/coin/products": {
+    "/v1/get/app/coin/productinfos": {
       "post": {
-        "operationId": "ProjectInfoManager_GetAppCoinProducts",
+        "operationId": "ProjectInfoManager_GetAppCoinProductInfos",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppCoinProductsResponse"
+              "$ref": "#/definitions/v1GetAppCoinProductInfosResponse"
             }
           },
           "default": {
@@ -450,7 +450,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppCoinProductsRequest"
+              "$ref": "#/definitions/v1GetAppCoinProductInfosRequest"
             }
           }
         ],
@@ -555,14 +555,14 @@
         ]
       }
     },
-    "/v1/get/coin/product": {
+    "/v1/get/coin/productinfo": {
       "post": {
-        "operationId": "ProjectInfoManager_GetCoinProduct",
+        "operationId": "ProjectInfoManager_GetCoinProductInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetCoinProductResponse"
+              "$ref": "#/definitions/v1GetCoinProductInfoResponse"
             }
           },
           "default": {
@@ -578,7 +578,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetCoinProductRequest"
+              "$ref": "#/definitions/v1GetCoinProductInfoRequest"
             }
           }
         ],
@@ -587,14 +587,14 @@
         ]
       }
     },
-    "/v1/get/coin/product/only": {
+    "/v1/get/coin/productinfo/only": {
       "post": {
-        "operationId": "ProjectInfoManager_GetCoinProductOnly",
+        "operationId": "ProjectInfoManager_GetCoinProductInfoOnly",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetCoinProductOnlyResponse"
+              "$ref": "#/definitions/v1GetCoinProductInfoOnlyResponse"
             }
           },
           "default": {
@@ -610,7 +610,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetCoinProductOnlyRequest"
+              "$ref": "#/definitions/v1GetCoinProductInfoOnlyRequest"
             }
           }
         ],
@@ -619,14 +619,14 @@
         ]
       }
     },
-    "/v1/get/coin/products": {
+    "/v1/get/coin/productinfos": {
       "post": {
-        "operationId": "ProjectInfoManager_GetCoinProducts",
+        "operationId": "ProjectInfoManager_GetCoinProductInfos",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetCoinProductsResponse"
+              "$ref": "#/definitions/v1GetCoinProductInfosResponse"
             }
           },
           "default": {
@@ -642,7 +642,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetCoinProductsRequest"
+              "$ref": "#/definitions/v1GetCoinProductInfosRequest"
             }
           }
         ],
@@ -683,14 +683,14 @@
         ]
       }
     },
-    "/v1/update/coin/product": {
+    "/v1/update/coin/productinfo": {
       "post": {
-        "operationId": "ProjectInfoManager_UpdateCoinProduct",
+        "operationId": "ProjectInfoManager_UpdateCoinProductInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateCoinProductResponse"
+              "$ref": "#/definitions/v1UpdateCoinProductInfoResponse"
             }
           },
           "default": {
@@ -706,7 +706,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateCoinProductRequest"
+              "$ref": "#/definitions/v1UpdateCoinProductInfoRequest"
             }
           }
         ],
@@ -821,7 +821,7 @@
         }
       }
     },
-    "v1CoinProduct": {
+    "v1CoinProductInfo": {
       "type": "object",
       "properties": {
         "ID": {
@@ -882,26 +882,26 @@
         }
       }
     },
-    "v1CreateAppCoinProductRequest": {
+    "v1CreateAppCoinProductInfoRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
           "type": "string"
         },
         "Info": {
-          "$ref": "#/definitions/v1CoinProduct"
+          "$ref": "#/definitions/v1CoinProductInfo"
         }
       }
     },
-    "v1CreateAppCoinProductResponse": {
+    "v1CreateAppCoinProductInfoResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinProduct"
+          "$ref": "#/definitions/v1CoinProductInfo"
         }
       }
     },
-    "v1CreateAppCoinProductsRequest": {
+    "v1CreateAppCoinProductInfosRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -910,18 +910,18 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinProduct"
+            "$ref": "#/definitions/v1CoinProductInfo"
           }
         }
       }
     },
-    "v1CreateAppCoinProductsResponse": {
+    "v1CreateAppCoinProductInfosResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinProduct"
+            "$ref": "#/definitions/v1CoinProductInfo"
           }
         }
       }
@@ -968,24 +968,24 @@
         }
       }
     },
-    "v1CreateCoinProductRequest": {
+    "v1CreateCoinProductInfoRequest": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinProduct"
+          "$ref": "#/definitions/v1CoinProductInfo"
         }
       },
       "title": "create"
     },
-    "v1CreateCoinProductResponse": {
+    "v1CreateCoinProductInfoResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinProduct"
+          "$ref": "#/definitions/v1CoinProductInfo"
         }
       }
     },
-    "v1CreateCoinProductsRequest": {
+    "v1CreateCoinProductInfosRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -994,18 +994,18 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinProduct"
+            "$ref": "#/definitions/v1CoinProductInfo"
           }
         }
       }
     },
-    "v1CreateCoinProductsResponse": {
+    "v1CreateCoinProductInfosResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinProduct"
+            "$ref": "#/definitions/v1CoinProductInfo"
           }
         }
       }
@@ -1027,7 +1027,7 @@
         }
       }
     },
-    "v1DeleteCoinProductRequest": {
+    "v1DeleteCoinProductInfoRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -1036,11 +1036,11 @@
       },
       "title": "delete"
     },
-    "v1DeleteCoinProductResponse": {
+    "v1DeleteCoinProductInfoResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinProduct"
+          "$ref": "#/definitions/v1CoinProductInfo"
         }
       }
     },
@@ -1122,7 +1122,7 @@
         }
       }
     },
-    "v1GetAppCoinProductOnlyRequest": {
+    "v1GetAppCoinProductInfoOnlyRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -1144,15 +1144,15 @@
         }
       }
     },
-    "v1GetAppCoinProductOnlyResponse": {
+    "v1GetAppCoinProductInfoOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinProduct"
+          "$ref": "#/definitions/v1CoinProductInfo"
         }
       }
     },
-    "v1GetAppCoinProductsRequest": {
+    "v1GetAppCoinProductInfosRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -1174,13 +1174,13 @@
         }
       }
     },
-    "v1GetAppCoinProductsResponse": {
+    "v1GetAppCoinProductInfosResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinProduct"
+            "$ref": "#/definitions/v1CoinProductInfo"
           }
         },
         "Total": {
@@ -1273,7 +1273,7 @@
         }
       }
     },
-    "v1GetCoinProductOnlyRequest": {
+    "v1GetCoinProductInfoOnlyRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -1295,15 +1295,15 @@
         }
       }
     },
-    "v1GetCoinProductOnlyResponse": {
+    "v1GetCoinProductInfoOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinProduct"
+          "$ref": "#/definitions/v1CoinProductInfo"
         }
       }
     },
-    "v1GetCoinProductRequest": {
+    "v1GetCoinProductInfoRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -1312,15 +1312,15 @@
       },
       "title": "get"
     },
-    "v1GetCoinProductResponse": {
+    "v1GetCoinProductInfoResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinProduct"
+          "$ref": "#/definitions/v1CoinProductInfo"
         }
       }
     },
-    "v1GetCoinProductsRequest": {
+    "v1GetCoinProductInfosRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -1342,13 +1342,13 @@
         }
       }
     },
-    "v1GetCoinProductsResponse": {
+    "v1GetCoinProductInfosResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinProduct"
+            "$ref": "#/definitions/v1CoinProductInfo"
           }
         },
         "Total": {
@@ -1374,20 +1374,20 @@
         }
       }
     },
-    "v1UpdateCoinProductRequest": {
+    "v1UpdateCoinProductInfoRequest": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinProduct"
+          "$ref": "#/definitions/v1CoinProductInfo"
         }
       },
       "title": "update"
     },
-    "v1UpdateCoinProductResponse": {
+    "v1UpdateCoinProductInfoResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinProduct"
+          "$ref": "#/definitions/v1CoinProductInfo"
         }
       }
     },

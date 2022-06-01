@@ -93,79 +93,79 @@ service ProjectInfoManager {
     };
   }
 
-  rpc CreateCoinProduct (CreateCoinProductRequest) returns (CreateCoinProductResponse) {
+  rpc CreateCoinProductInfo (CreateCoinProductInfoRequest) returns (CreateCoinProductInfoResponse) {
     option (google.api.http) = {
-        post: "/v1/create/coin/product"
+        post: "/v1/create/coin/productinfo"
         body: "*"
     };
   }
 
-  rpc CreateCoinProducts (CreateCoinProductsRequest) returns (CreateCoinProductsResponse) {
+  rpc CreateCoinProductInfos (CreateCoinProductInfosRequest) returns (CreateCoinProductInfosResponse) {
     option (google.api.http) = {
-        post: "/v1/create/coin/products"
+        post: "/v1/create/coin/productinfos"
         body: "*"
     };
   }
 
-  rpc CreateAppCoinProduct (CreateAppCoinProductRequest) returns (CreateAppCoinProductResponse) {
+  rpc CreateAppCoinProductInfo (CreateAppCoinProductInfoRequest) returns (CreateAppCoinProductInfoResponse) {
     option (google.api.http) = {
-        post: "/v1/create/app/coin/product"
+        post: "/v1/create/app/coin/productinfo"
         body: "*"
     };
   }
 
-  rpc CreateAppCoinProducts (CreateAppCoinProductsRequest) returns (CreateAppCoinProductsResponse) {
+  rpc CreateAppCoinProductInfos (CreateAppCoinProductInfosRequest) returns (CreateAppCoinProductInfosResponse) {
     option (google.api.http) = {
-        post: "/v1/create/app/coin/products"
+        post: "/v1/create/app/coin/productinfos"
         body: "*"
     };
   }
 
-  rpc UpdateCoinProduct (UpdateCoinProductRequest) returns (UpdateCoinProductResponse) {
+  rpc UpdateCoinProductInfo (UpdateCoinProductInfoRequest) returns (UpdateCoinProductInfoResponse) {
     option (google.api.http) = {
-        post: "/v1/update/coin/product"
+        post: "/v1/update/coin/productinfo"
         body: "*"
     };
   }
 
-  rpc GetCoinProduct (GetCoinProductRequest) returns (GetCoinProductResponse) {
+  rpc GetCoinProductInfo (GetCoinProductInfoRequest) returns (GetCoinProductInfoResponse) {
     option (google.api.http) = {
-        post: "/v1/get/coin/product"
+        post: "/v1/get/coin/productinfo"
         body: "*"
     };
   }
 
-  rpc GetCoinProducts (GetCoinProductsRequest) returns (GetCoinProductsResponse) {
+  rpc GetCoinProductInfos (GetCoinProductInfosRequest) returns (GetCoinProductInfosResponse) {
     option (google.api.http) = {
-        post: "/v1/get/coin/products"
+        post: "/v1/get/coin/productinfos"
         body: "*"
     };
   }
 
-  rpc GetCoinProductOnly (GetCoinProductOnlyRequest) returns (GetCoinProductOnlyResponse) {
+  rpc GetCoinProductInfoOnly (GetCoinProductInfoOnlyRequest) returns (GetCoinProductInfoOnlyResponse) {
     option (google.api.http) = {
-        post: "/v1/get/coin/product/only"
+        post: "/v1/get/coin/productinfo/only"
         body: "*"
     };
   }
 
-  rpc GetAppCoinProducts (GetAppCoinProductsRequest) returns (GetAppCoinProductsResponse) {
+  rpc GetAppCoinProductInfos (GetAppCoinProductInfosRequest) returns (GetAppCoinProductInfosResponse) {
     option (google.api.http) = {
-        post: "/v1/get/app/coin/products"
+        post: "/v1/get/app/coin/productinfos"
         body: "*"
     };
   }
 
-  rpc GetAppCoinProductOnly (GetAppCoinProductOnlyRequest) returns (GetAppCoinProductOnlyResponse) {
+  rpc GetAppCoinProductInfoOnly (GetAppCoinProductInfoOnlyRequest) returns (GetAppCoinProductInfoOnlyResponse) {
     option (google.api.http) = {
-        post: "/v1/get/app/coin/product/only"
+        post: "/v1/get/app/coin/productinfo/only"
         body: "*"
     };
   }
 
-  rpc DeleteCoinProduct (DeleteCoinProductRequest) returns (DeleteCoinProductResponse) {
+  rpc DeleteCoinProductInfo (DeleteCoinProductInfoRequest) returns (DeleteCoinProductInfoResponse) {
     option (google.api.http) = {
-        post: "/v1/delete/coin/product"
+        post: "/v1/delete/coin/productinfo"
         body: "*"
     };
   }
@@ -293,7 +293,7 @@ message DeleteCoinDescriptionResponse {
 
 
 
-message CoinProduct {
+message CoinProductInfo {
   string ID = 10;
   string AppID = 20;
   string CoinTypeID = 30;
@@ -301,110 +301,110 @@ message CoinProduct {
 }
 
 // create
-message CreateCoinProductRequest  {
-  CoinProduct Info = 10;
+message CreateCoinProductInfoRequest  {
+  CoinProductInfo Info = 10;
 }
 
-message CreateCoinProductResponse {
-  CoinProduct Info = 10;
+message CreateCoinProductInfoResponse {
+  CoinProductInfo Info = 10;
 }
 
-message CreateCoinProductsRequest {
+message CreateCoinProductInfosRequest {
   string AppID = 10;
-  repeated CoinProduct Infos = 20;
+  repeated CoinProductInfo Infos = 20;
 }
 
-message CreateCoinProductsResponse {
-  repeated CoinProduct Infos = 10;
+message CreateCoinProductInfosResponse {
+  repeated CoinProductInfo Infos = 10;
 }
 
-message CreateAppCoinProductRequest  {
+message CreateAppCoinProductInfoRequest  {
   string TargetAppID = 10;
-  CoinProduct Info = 20;
+  CoinProductInfo Info = 20;
 }
 
-message CreateAppCoinProductResponse {
-  CoinProduct Info = 10;
+message CreateAppCoinProductInfoResponse {
+  CoinProductInfo Info = 10;
 }
 
-message CreateAppCoinProductsRequest {
+message CreateAppCoinProductInfosRequest {
   string TargetAppID = 10;
-  repeated CoinProduct Infos = 20;
+  repeated CoinProductInfo Infos = 20;
 }
 
-message CreateAppCoinProductsResponse {
-  repeated CoinProduct Infos = 10;
+message CreateAppCoinProductInfosResponse {
+  repeated CoinProductInfo Infos = 10;
 }
 
 // update
-message UpdateCoinProductRequest {
-  CoinProduct Info = 20;
+message UpdateCoinProductInfoRequest {
+  CoinProductInfo Info = 20;
 }
 
-message UpdateCoinProductResponse {
-  CoinProduct Info = 10;
+message UpdateCoinProductInfoResponse {
+  CoinProductInfo Info = 10;
 }
 
 // get
-message GetCoinProductRequest {
+message GetCoinProductInfoRequest {
   string ID = 20;
 }
 
-message GetCoinProductResponse {
-  CoinProduct Info = 10;
+message GetCoinProductInfoResponse {
+  CoinProductInfo Info = 10;
 }
 
-message GetCoinProductsRequest {
+message GetCoinProductInfosRequest {
   string AppID = 10;
   map<string, npool.v1.FilterCond> Conds = 20;
   int32 Offset = 30;
   int32 Limit = 40;
 }
 
-message GetCoinProductsResponse {
-  repeated CoinProduct Infos = 10;
+message GetCoinProductInfosResponse {
+  repeated CoinProductInfo Infos = 10;
   int32 Total = 20;
 }
 
-message GetCoinProductOnlyRequest {
+message GetCoinProductInfoOnlyRequest {
   string AppID = 10;
   map<string, npool.v1.FilterCond> Conds = 20;
   int32 Offset = 30;
   int32 Limit = 40;
 }
 
-message GetCoinProductOnlyResponse {
-  CoinProduct Info = 10;
+message GetCoinProductInfoOnlyResponse {
+  CoinProductInfo Info = 10;
 }
 
-message GetAppCoinProductsRequest {
+message GetAppCoinProductInfosRequest {
   string TargetAppID = 10;
   map<string, npool.v1.FilterCond> Conds = 20;
   int32 Offset = 30;
   int32 Limit = 40;
 }
 
-message GetAppCoinProductsResponse {
-  repeated CoinProduct Infos = 10;
+message GetAppCoinProductInfosResponse {
+  repeated CoinProductInfo Infos = 10;
   int32 Total = 20;
 }
 
-message GetAppCoinProductOnlyRequest {
+message GetAppCoinProductInfoOnlyRequest {
   string TargetAppID = 10;
   map<string, npool.v1.FilterCond> Conds = 20;
   int32 Offset = 30;
   int32 Limit = 40;
 }
 
-message GetAppCoinProductOnlyResponse {
-  CoinProduct Info = 10;
+message GetAppCoinProductInfoOnlyResponse {
+  CoinProductInfo Info = 10;
 }
 
 // delete
-message DeleteCoinProductRequest {
+message DeleteCoinProductInfoRequest {
   string ID = 10;
 }
 
-message DeleteCoinProductResponse {
-  CoinProduct Info = 10;
+message DeleteCoinProductInfoResponse {
+  CoinProductInfo Info = 10;
 }

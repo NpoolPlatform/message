@@ -440,8 +440,8 @@ func local_request_ProjectInfoManager_DeleteCoinDescription_0(ctx context.Contex
 
 }
 
-func request_ProjectInfoManager_CreateCoinProduct_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateCoinProductRequest
+func request_ProjectInfoManager_CreateCoinProductInfo_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateCoinProductInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -452,13 +452,13 @@ func request_ProjectInfoManager_CreateCoinProduct_0(ctx context.Context, marshal
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateCoinProduct(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateCoinProductInfo(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_ProjectInfoManager_CreateCoinProduct_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateCoinProductRequest
+func local_request_ProjectInfoManager_CreateCoinProductInfo_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateCoinProductInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -469,13 +469,13 @@ func local_request_ProjectInfoManager_CreateCoinProduct_0(ctx context.Context, m
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateCoinProduct(ctx, &protoReq)
+	msg, err := server.CreateCoinProductInfo(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_ProjectInfoManager_CreateCoinProducts_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateCoinProductsRequest
+func request_ProjectInfoManager_CreateCoinProductInfos_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateCoinProductInfosRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -486,13 +486,13 @@ func request_ProjectInfoManager_CreateCoinProducts_0(ctx context.Context, marsha
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateCoinProducts(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateCoinProductInfos(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_ProjectInfoManager_CreateCoinProducts_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateCoinProductsRequest
+func local_request_ProjectInfoManager_CreateCoinProductInfos_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateCoinProductInfosRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -503,13 +503,13 @@ func local_request_ProjectInfoManager_CreateCoinProducts_0(ctx context.Context, 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateCoinProducts(ctx, &protoReq)
+	msg, err := server.CreateCoinProductInfos(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_ProjectInfoManager_CreateAppCoinProduct_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateAppCoinProductRequest
+func request_ProjectInfoManager_CreateAppCoinProductInfo_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppCoinProductInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -520,13 +520,13 @@ func request_ProjectInfoManager_CreateAppCoinProduct_0(ctx context.Context, mars
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateAppCoinProduct(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateAppCoinProductInfo(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_ProjectInfoManager_CreateAppCoinProduct_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateAppCoinProductRequest
+func local_request_ProjectInfoManager_CreateAppCoinProductInfo_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppCoinProductInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -537,13 +537,13 @@ func local_request_ProjectInfoManager_CreateAppCoinProduct_0(ctx context.Context
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateAppCoinProduct(ctx, &protoReq)
+	msg, err := server.CreateAppCoinProductInfo(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_ProjectInfoManager_CreateAppCoinProducts_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateAppCoinProductsRequest
+func request_ProjectInfoManager_CreateAppCoinProductInfos_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppCoinProductInfosRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -554,13 +554,13 @@ func request_ProjectInfoManager_CreateAppCoinProducts_0(ctx context.Context, mar
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateAppCoinProducts(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateAppCoinProductInfos(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_ProjectInfoManager_CreateAppCoinProducts_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateAppCoinProductsRequest
+func local_request_ProjectInfoManager_CreateAppCoinProductInfos_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppCoinProductInfosRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -571,13 +571,13 @@ func local_request_ProjectInfoManager_CreateAppCoinProducts_0(ctx context.Contex
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateAppCoinProducts(ctx, &protoReq)
+	msg, err := server.CreateAppCoinProductInfos(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_ProjectInfoManager_UpdateCoinProduct_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateCoinProductRequest
+func request_ProjectInfoManager_UpdateCoinProductInfo_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateCoinProductInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -588,13 +588,13 @@ func request_ProjectInfoManager_UpdateCoinProduct_0(ctx context.Context, marshal
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.UpdateCoinProduct(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.UpdateCoinProductInfo(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_ProjectInfoManager_UpdateCoinProduct_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateCoinProductRequest
+func local_request_ProjectInfoManager_UpdateCoinProductInfo_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateCoinProductInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -605,13 +605,13 @@ func local_request_ProjectInfoManager_UpdateCoinProduct_0(ctx context.Context, m
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.UpdateCoinProduct(ctx, &protoReq)
+	msg, err := server.UpdateCoinProductInfo(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_ProjectInfoManager_GetCoinProduct_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetCoinProductRequest
+func request_ProjectInfoManager_GetCoinProductInfo_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetCoinProductInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -622,13 +622,13 @@ func request_ProjectInfoManager_GetCoinProduct_0(ctx context.Context, marshaler 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetCoinProduct(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetCoinProductInfo(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_ProjectInfoManager_GetCoinProduct_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetCoinProductRequest
+func local_request_ProjectInfoManager_GetCoinProductInfo_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetCoinProductInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -639,13 +639,13 @@ func local_request_ProjectInfoManager_GetCoinProduct_0(ctx context.Context, mars
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetCoinProduct(ctx, &protoReq)
+	msg, err := server.GetCoinProductInfo(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_ProjectInfoManager_GetCoinProducts_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetCoinProductsRequest
+func request_ProjectInfoManager_GetCoinProductInfos_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetCoinProductInfosRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -656,13 +656,13 @@ func request_ProjectInfoManager_GetCoinProducts_0(ctx context.Context, marshaler
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetCoinProducts(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetCoinProductInfos(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_ProjectInfoManager_GetCoinProducts_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetCoinProductsRequest
+func local_request_ProjectInfoManager_GetCoinProductInfos_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetCoinProductInfosRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -673,13 +673,13 @@ func local_request_ProjectInfoManager_GetCoinProducts_0(ctx context.Context, mar
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetCoinProducts(ctx, &protoReq)
+	msg, err := server.GetCoinProductInfos(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_ProjectInfoManager_GetCoinProductOnly_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetCoinProductOnlyRequest
+func request_ProjectInfoManager_GetCoinProductInfoOnly_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetCoinProductInfoOnlyRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -690,13 +690,13 @@ func request_ProjectInfoManager_GetCoinProductOnly_0(ctx context.Context, marsha
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetCoinProductOnly(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetCoinProductInfoOnly(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_ProjectInfoManager_GetCoinProductOnly_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetCoinProductOnlyRequest
+func local_request_ProjectInfoManager_GetCoinProductInfoOnly_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetCoinProductInfoOnlyRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -707,13 +707,13 @@ func local_request_ProjectInfoManager_GetCoinProductOnly_0(ctx context.Context, 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetCoinProductOnly(ctx, &protoReq)
+	msg, err := server.GetCoinProductInfoOnly(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_ProjectInfoManager_GetAppCoinProducts_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppCoinProductsRequest
+func request_ProjectInfoManager_GetAppCoinProductInfos_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppCoinProductInfosRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -724,13 +724,13 @@ func request_ProjectInfoManager_GetAppCoinProducts_0(ctx context.Context, marsha
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetAppCoinProducts(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppCoinProductInfos(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_ProjectInfoManager_GetAppCoinProducts_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppCoinProductsRequest
+func local_request_ProjectInfoManager_GetAppCoinProductInfos_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppCoinProductInfosRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -741,13 +741,13 @@ func local_request_ProjectInfoManager_GetAppCoinProducts_0(ctx context.Context, 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetAppCoinProducts(ctx, &protoReq)
+	msg, err := server.GetAppCoinProductInfos(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_ProjectInfoManager_GetAppCoinProductOnly_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppCoinProductOnlyRequest
+func request_ProjectInfoManager_GetAppCoinProductInfoOnly_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppCoinProductInfoOnlyRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -758,13 +758,13 @@ func request_ProjectInfoManager_GetAppCoinProductOnly_0(ctx context.Context, mar
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetAppCoinProductOnly(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetAppCoinProductInfoOnly(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_ProjectInfoManager_GetAppCoinProductOnly_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppCoinProductOnlyRequest
+func local_request_ProjectInfoManager_GetAppCoinProductInfoOnly_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppCoinProductInfoOnlyRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -775,13 +775,13 @@ func local_request_ProjectInfoManager_GetAppCoinProductOnly_0(ctx context.Contex
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetAppCoinProductOnly(ctx, &protoReq)
+	msg, err := server.GetAppCoinProductInfoOnly(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_ProjectInfoManager_DeleteCoinProduct_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeleteCoinProductRequest
+func request_ProjectInfoManager_DeleteCoinProductInfo_0(ctx context.Context, marshaler runtime.Marshaler, client ProjectInfoManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeleteCoinProductInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -792,13 +792,13 @@ func request_ProjectInfoManager_DeleteCoinProduct_0(ctx context.Context, marshal
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.DeleteCoinProduct(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.DeleteCoinProductInfo(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_ProjectInfoManager_DeleteCoinProduct_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeleteCoinProductRequest
+func local_request_ProjectInfoManager_DeleteCoinProductInfo_0(ctx context.Context, marshaler runtime.Marshaler, server ProjectInfoManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeleteCoinProductInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -809,7 +809,7 @@ func local_request_ProjectInfoManager_DeleteCoinProduct_0(ctx context.Context, m
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.DeleteCoinProduct(ctx, &protoReq)
+	msg, err := server.DeleteCoinProductInfo(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -1096,18 +1096,18 @@ func RegisterProjectInfoManagerHandlerServer(ctx context.Context, mux *runtime.S
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_CreateCoinProduct_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_CreateCoinProductInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateCoinProduct", runtime.WithHTTPPathPattern("/v1/create/coin/product"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateCoinProductInfo", runtime.WithHTTPPathPattern("/v1/create/coin/productinfo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ProjectInfoManager_CreateCoinProduct_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ProjectInfoManager_CreateCoinProductInfo_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1115,22 +1115,22 @@ func RegisterProjectInfoManagerHandlerServer(ctx context.Context, mux *runtime.S
 			return
 		}
 
-		forward_ProjectInfoManager_CreateCoinProduct_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_CreateCoinProductInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_CreateCoinProducts_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_CreateCoinProductInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateCoinProducts", runtime.WithHTTPPathPattern("/v1/create/coin/products"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateCoinProductInfos", runtime.WithHTTPPathPattern("/v1/create/coin/productinfos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ProjectInfoManager_CreateCoinProducts_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ProjectInfoManager_CreateCoinProductInfos_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1138,22 +1138,22 @@ func RegisterProjectInfoManagerHandlerServer(ctx context.Context, mux *runtime.S
 			return
 		}
 
-		forward_ProjectInfoManager_CreateCoinProducts_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_CreateCoinProductInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_CreateAppCoinProduct_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_CreateAppCoinProductInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateAppCoinProduct", runtime.WithHTTPPathPattern("/v1/create/app/coin/product"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateAppCoinProductInfo", runtime.WithHTTPPathPattern("/v1/create/app/coin/productinfo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ProjectInfoManager_CreateAppCoinProduct_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ProjectInfoManager_CreateAppCoinProductInfo_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1161,22 +1161,22 @@ func RegisterProjectInfoManagerHandlerServer(ctx context.Context, mux *runtime.S
 			return
 		}
 
-		forward_ProjectInfoManager_CreateAppCoinProduct_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_CreateAppCoinProductInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_CreateAppCoinProducts_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_CreateAppCoinProductInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateAppCoinProducts", runtime.WithHTTPPathPattern("/v1/create/app/coin/products"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateAppCoinProductInfos", runtime.WithHTTPPathPattern("/v1/create/app/coin/productinfos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ProjectInfoManager_CreateAppCoinProducts_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ProjectInfoManager_CreateAppCoinProductInfos_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1184,22 +1184,22 @@ func RegisterProjectInfoManagerHandlerServer(ctx context.Context, mux *runtime.S
 			return
 		}
 
-		forward_ProjectInfoManager_CreateAppCoinProducts_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_CreateAppCoinProductInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_UpdateCoinProduct_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_UpdateCoinProductInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/UpdateCoinProduct", runtime.WithHTTPPathPattern("/v1/update/coin/product"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/UpdateCoinProductInfo", runtime.WithHTTPPathPattern("/v1/update/coin/productinfo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ProjectInfoManager_UpdateCoinProduct_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ProjectInfoManager_UpdateCoinProductInfo_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1207,22 +1207,22 @@ func RegisterProjectInfoManagerHandlerServer(ctx context.Context, mux *runtime.S
 			return
 		}
 
-		forward_ProjectInfoManager_UpdateCoinProduct_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_UpdateCoinProductInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_GetCoinProduct_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_GetCoinProductInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetCoinProduct", runtime.WithHTTPPathPattern("/v1/get/coin/product"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetCoinProductInfo", runtime.WithHTTPPathPattern("/v1/get/coin/productinfo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ProjectInfoManager_GetCoinProduct_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ProjectInfoManager_GetCoinProductInfo_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1230,22 +1230,22 @@ func RegisterProjectInfoManagerHandlerServer(ctx context.Context, mux *runtime.S
 			return
 		}
 
-		forward_ProjectInfoManager_GetCoinProduct_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_GetCoinProductInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_GetCoinProducts_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_GetCoinProductInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetCoinProducts", runtime.WithHTTPPathPattern("/v1/get/coin/products"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetCoinProductInfos", runtime.WithHTTPPathPattern("/v1/get/coin/productinfos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ProjectInfoManager_GetCoinProducts_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ProjectInfoManager_GetCoinProductInfos_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1253,22 +1253,22 @@ func RegisterProjectInfoManagerHandlerServer(ctx context.Context, mux *runtime.S
 			return
 		}
 
-		forward_ProjectInfoManager_GetCoinProducts_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_GetCoinProductInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_GetCoinProductOnly_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_GetCoinProductInfoOnly_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetCoinProductOnly", runtime.WithHTTPPathPattern("/v1/get/coin/product/only"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetCoinProductInfoOnly", runtime.WithHTTPPathPattern("/v1/get/coin/productinfo/only"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ProjectInfoManager_GetCoinProductOnly_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ProjectInfoManager_GetCoinProductInfoOnly_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1276,22 +1276,22 @@ func RegisterProjectInfoManagerHandlerServer(ctx context.Context, mux *runtime.S
 			return
 		}
 
-		forward_ProjectInfoManager_GetCoinProductOnly_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_GetCoinProductInfoOnly_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_GetAppCoinProducts_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_GetAppCoinProductInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetAppCoinProducts", runtime.WithHTTPPathPattern("/v1/get/app/coin/products"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetAppCoinProductInfos", runtime.WithHTTPPathPattern("/v1/get/app/coin/productinfos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ProjectInfoManager_GetAppCoinProducts_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ProjectInfoManager_GetAppCoinProductInfos_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1299,22 +1299,22 @@ func RegisterProjectInfoManagerHandlerServer(ctx context.Context, mux *runtime.S
 			return
 		}
 
-		forward_ProjectInfoManager_GetAppCoinProducts_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_GetAppCoinProductInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_GetAppCoinProductOnly_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_GetAppCoinProductInfoOnly_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetAppCoinProductOnly", runtime.WithHTTPPathPattern("/v1/get/app/coin/product/only"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetAppCoinProductInfoOnly", runtime.WithHTTPPathPattern("/v1/get/app/coin/productinfo/only"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ProjectInfoManager_GetAppCoinProductOnly_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ProjectInfoManager_GetAppCoinProductInfoOnly_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1322,22 +1322,22 @@ func RegisterProjectInfoManagerHandlerServer(ctx context.Context, mux *runtime.S
 			return
 		}
 
-		forward_ProjectInfoManager_GetAppCoinProductOnly_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_GetAppCoinProductInfoOnly_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_DeleteCoinProduct_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_DeleteCoinProductInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/DeleteCoinProduct", runtime.WithHTTPPathPattern("/v1/delete/coin/product"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/DeleteCoinProductInfo", runtime.WithHTTPPathPattern("/v1/delete/coin/productinfo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ProjectInfoManager_DeleteCoinProduct_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ProjectInfoManager_DeleteCoinProductInfo_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1345,7 +1345,7 @@ func RegisterProjectInfoManagerHandlerServer(ctx context.Context, mux *runtime.S
 			return
 		}
 
-		forward_ProjectInfoManager_DeleteCoinProduct_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_DeleteCoinProductInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1630,223 +1630,223 @@ func RegisterProjectInfoManagerHandlerClient(ctx context.Context, mux *runtime.S
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_CreateCoinProduct_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_CreateCoinProductInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateCoinProduct", runtime.WithHTTPPathPattern("/v1/create/coin/product"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateCoinProductInfo", runtime.WithHTTPPathPattern("/v1/create/coin/productinfo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ProjectInfoManager_CreateCoinProduct_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ProjectInfoManager_CreateCoinProductInfo_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ProjectInfoManager_CreateCoinProduct_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_CreateCoinProductInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_CreateCoinProducts_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_CreateCoinProductInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateCoinProducts", runtime.WithHTTPPathPattern("/v1/create/coin/products"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateCoinProductInfos", runtime.WithHTTPPathPattern("/v1/create/coin/productinfos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ProjectInfoManager_CreateCoinProducts_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ProjectInfoManager_CreateCoinProductInfos_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ProjectInfoManager_CreateCoinProducts_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_CreateCoinProductInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_CreateAppCoinProduct_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_CreateAppCoinProductInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateAppCoinProduct", runtime.WithHTTPPathPattern("/v1/create/app/coin/product"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateAppCoinProductInfo", runtime.WithHTTPPathPattern("/v1/create/app/coin/productinfo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ProjectInfoManager_CreateAppCoinProduct_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ProjectInfoManager_CreateAppCoinProductInfo_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ProjectInfoManager_CreateAppCoinProduct_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_CreateAppCoinProductInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_CreateAppCoinProducts_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_CreateAppCoinProductInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateAppCoinProducts", runtime.WithHTTPPathPattern("/v1/create/app/coin/products"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/CreateAppCoinProductInfos", runtime.WithHTTPPathPattern("/v1/create/app/coin/productinfos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ProjectInfoManager_CreateAppCoinProducts_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ProjectInfoManager_CreateAppCoinProductInfos_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ProjectInfoManager_CreateAppCoinProducts_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_CreateAppCoinProductInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_UpdateCoinProduct_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_UpdateCoinProductInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/UpdateCoinProduct", runtime.WithHTTPPathPattern("/v1/update/coin/product"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/UpdateCoinProductInfo", runtime.WithHTTPPathPattern("/v1/update/coin/productinfo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ProjectInfoManager_UpdateCoinProduct_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ProjectInfoManager_UpdateCoinProductInfo_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ProjectInfoManager_UpdateCoinProduct_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_UpdateCoinProductInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_GetCoinProduct_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_GetCoinProductInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetCoinProduct", runtime.WithHTTPPathPattern("/v1/get/coin/product"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetCoinProductInfo", runtime.WithHTTPPathPattern("/v1/get/coin/productinfo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ProjectInfoManager_GetCoinProduct_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ProjectInfoManager_GetCoinProductInfo_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ProjectInfoManager_GetCoinProduct_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_GetCoinProductInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_GetCoinProducts_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_GetCoinProductInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetCoinProducts", runtime.WithHTTPPathPattern("/v1/get/coin/products"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetCoinProductInfos", runtime.WithHTTPPathPattern("/v1/get/coin/productinfos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ProjectInfoManager_GetCoinProducts_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ProjectInfoManager_GetCoinProductInfos_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ProjectInfoManager_GetCoinProducts_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_GetCoinProductInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_GetCoinProductOnly_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_GetCoinProductInfoOnly_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetCoinProductOnly", runtime.WithHTTPPathPattern("/v1/get/coin/product/only"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetCoinProductInfoOnly", runtime.WithHTTPPathPattern("/v1/get/coin/productinfo/only"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ProjectInfoManager_GetCoinProductOnly_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ProjectInfoManager_GetCoinProductInfoOnly_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ProjectInfoManager_GetCoinProductOnly_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_GetCoinProductInfoOnly_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_GetAppCoinProducts_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_GetAppCoinProductInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetAppCoinProducts", runtime.WithHTTPPathPattern("/v1/get/app/coin/products"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetAppCoinProductInfos", runtime.WithHTTPPathPattern("/v1/get/app/coin/productinfos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ProjectInfoManager_GetAppCoinProducts_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ProjectInfoManager_GetAppCoinProductInfos_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ProjectInfoManager_GetAppCoinProducts_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_GetAppCoinProductInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_GetAppCoinProductOnly_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_GetAppCoinProductInfoOnly_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetAppCoinProductOnly", runtime.WithHTTPPathPattern("/v1/get/app/coin/product/only"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/GetAppCoinProductInfoOnly", runtime.WithHTTPPathPattern("/v1/get/app/coin/productinfo/only"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ProjectInfoManager_GetAppCoinProductOnly_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ProjectInfoManager_GetAppCoinProductInfoOnly_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ProjectInfoManager_GetAppCoinProductOnly_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_GetAppCoinProductInfoOnly_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_ProjectInfoManager_DeleteCoinProduct_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ProjectInfoManager_DeleteCoinProductInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/DeleteCoinProduct", runtime.WithHTTPPathPattern("/v1/delete/coin/product"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/project.info.manager.v1.ProjectInfoManager/DeleteCoinProductInfo", runtime.WithHTTPPathPattern("/v1/delete/coin/productinfo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ProjectInfoManager_DeleteCoinProduct_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ProjectInfoManager_DeleteCoinProductInfo_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ProjectInfoManager_DeleteCoinProduct_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ProjectInfoManager_DeleteCoinProductInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1878,27 +1878,27 @@ var (
 
 	pattern_ProjectInfoManager_DeleteCoinDescription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "delete", "coin", "description"}, ""))
 
-	pattern_ProjectInfoManager_CreateCoinProduct_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "coin", "product"}, ""))
+	pattern_ProjectInfoManager_CreateCoinProductInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "coin", "productinfo"}, ""))
 
-	pattern_ProjectInfoManager_CreateCoinProducts_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "coin", "products"}, ""))
+	pattern_ProjectInfoManager_CreateCoinProductInfos_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "coin", "productinfos"}, ""))
 
-	pattern_ProjectInfoManager_CreateAppCoinProduct_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "create", "app", "coin", "product"}, ""))
+	pattern_ProjectInfoManager_CreateAppCoinProductInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "create", "app", "coin", "productinfo"}, ""))
 
-	pattern_ProjectInfoManager_CreateAppCoinProducts_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "create", "app", "coin", "products"}, ""))
+	pattern_ProjectInfoManager_CreateAppCoinProductInfos_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "create", "app", "coin", "productinfos"}, ""))
 
-	pattern_ProjectInfoManager_UpdateCoinProduct_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "update", "coin", "product"}, ""))
+	pattern_ProjectInfoManager_UpdateCoinProductInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "update", "coin", "productinfo"}, ""))
 
-	pattern_ProjectInfoManager_GetCoinProduct_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "coin", "product"}, ""))
+	pattern_ProjectInfoManager_GetCoinProductInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "coin", "productinfo"}, ""))
 
-	pattern_ProjectInfoManager_GetCoinProducts_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "coin", "products"}, ""))
+	pattern_ProjectInfoManager_GetCoinProductInfos_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "coin", "productinfos"}, ""))
 
-	pattern_ProjectInfoManager_GetCoinProductOnly_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "coin", "product", "only"}, ""))
+	pattern_ProjectInfoManager_GetCoinProductInfoOnly_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "coin", "productinfo", "only"}, ""))
 
-	pattern_ProjectInfoManager_GetAppCoinProducts_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "app", "coin", "products"}, ""))
+	pattern_ProjectInfoManager_GetAppCoinProductInfos_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "app", "coin", "productinfos"}, ""))
 
-	pattern_ProjectInfoManager_GetAppCoinProductOnly_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "app", "coin", "product", "only"}, ""))
+	pattern_ProjectInfoManager_GetAppCoinProductInfoOnly_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "app", "coin", "productinfo", "only"}, ""))
 
-	pattern_ProjectInfoManager_DeleteCoinProduct_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "delete", "coin", "product"}, ""))
+	pattern_ProjectInfoManager_DeleteCoinProductInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "delete", "coin", "productinfo"}, ""))
 )
 
 var (
@@ -1926,25 +1926,25 @@ var (
 
 	forward_ProjectInfoManager_DeleteCoinDescription_0 = runtime.ForwardResponseMessage
 
-	forward_ProjectInfoManager_CreateCoinProduct_0 = runtime.ForwardResponseMessage
+	forward_ProjectInfoManager_CreateCoinProductInfo_0 = runtime.ForwardResponseMessage
 
-	forward_ProjectInfoManager_CreateCoinProducts_0 = runtime.ForwardResponseMessage
+	forward_ProjectInfoManager_CreateCoinProductInfos_0 = runtime.ForwardResponseMessage
 
-	forward_ProjectInfoManager_CreateAppCoinProduct_0 = runtime.ForwardResponseMessage
+	forward_ProjectInfoManager_CreateAppCoinProductInfo_0 = runtime.ForwardResponseMessage
 
-	forward_ProjectInfoManager_CreateAppCoinProducts_0 = runtime.ForwardResponseMessage
+	forward_ProjectInfoManager_CreateAppCoinProductInfos_0 = runtime.ForwardResponseMessage
 
-	forward_ProjectInfoManager_UpdateCoinProduct_0 = runtime.ForwardResponseMessage
+	forward_ProjectInfoManager_UpdateCoinProductInfo_0 = runtime.ForwardResponseMessage
 
-	forward_ProjectInfoManager_GetCoinProduct_0 = runtime.ForwardResponseMessage
+	forward_ProjectInfoManager_GetCoinProductInfo_0 = runtime.ForwardResponseMessage
 
-	forward_ProjectInfoManager_GetCoinProducts_0 = runtime.ForwardResponseMessage
+	forward_ProjectInfoManager_GetCoinProductInfos_0 = runtime.ForwardResponseMessage
 
-	forward_ProjectInfoManager_GetCoinProductOnly_0 = runtime.ForwardResponseMessage
+	forward_ProjectInfoManager_GetCoinProductInfoOnly_0 = runtime.ForwardResponseMessage
 
-	forward_ProjectInfoManager_GetAppCoinProducts_0 = runtime.ForwardResponseMessage
+	forward_ProjectInfoManager_GetAppCoinProductInfos_0 = runtime.ForwardResponseMessage
 
-	forward_ProjectInfoManager_GetAppCoinProductOnly_0 = runtime.ForwardResponseMessage
+	forward_ProjectInfoManager_GetAppCoinProductInfoOnly_0 = runtime.ForwardResponseMessage
 
-	forward_ProjectInfoManager_DeleteCoinProduct_0 = runtime.ForwardResponseMessage
+	forward_ProjectInfoManager_DeleteCoinProductInfo_0 = runtime.ForwardResponseMessage
 )

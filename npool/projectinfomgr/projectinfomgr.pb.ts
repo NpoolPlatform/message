@@ -123,116 +123,116 @@ export type DeleteCoinDescriptionResponse = {
   info?: CoinDescription
 }
 
-export type CoinProduct = {
+export type CoinProductInfo = {
   id?: string
   appID?: string
   coinTypeID?: string
   productPage?: string
 }
 
-export type CreateCoinProductRequest = {
-  info?: CoinProduct
+export type CreateCoinProductInfoRequest = {
+  info?: CoinProductInfo
 }
 
-export type CreateCoinProductResponse = {
-  info?: CoinProduct
+export type CreateCoinProductInfoResponse = {
+  info?: CoinProductInfo
 }
 
-export type CreateCoinProductsRequest = {
+export type CreateCoinProductInfosRequest = {
   appID?: string
-  infos?: CoinProduct[]
+  infos?: CoinProductInfo[]
 }
 
-export type CreateCoinProductsResponse = {
-  infos?: CoinProduct[]
+export type CreateCoinProductInfosResponse = {
+  infos?: CoinProductInfo[]
 }
 
-export type CreateAppCoinProductRequest = {
+export type CreateAppCoinProductInfoRequest = {
   targetAppID?: string
-  info?: CoinProduct
+  info?: CoinProductInfo
 }
 
-export type CreateAppCoinProductResponse = {
-  info?: CoinProduct
+export type CreateAppCoinProductInfoResponse = {
+  info?: CoinProductInfo
 }
 
-export type CreateAppCoinProductsRequest = {
+export type CreateAppCoinProductInfosRequest = {
   targetAppID?: string
-  infos?: CoinProduct[]
+  infos?: CoinProductInfo[]
 }
 
-export type CreateAppCoinProductsResponse = {
-  infos?: CoinProduct[]
+export type CreateAppCoinProductInfosResponse = {
+  infos?: CoinProductInfo[]
 }
 
-export type UpdateCoinProductRequest = {
-  info?: CoinProduct
+export type UpdateCoinProductInfoRequest = {
+  info?: CoinProductInfo
 }
 
-export type UpdateCoinProductResponse = {
-  info?: CoinProduct
+export type UpdateCoinProductInfoResponse = {
+  info?: CoinProductInfo
 }
 
-export type GetCoinProductRequest = {
+export type GetCoinProductInfoRequest = {
   id?: string
 }
 
-export type GetCoinProductResponse = {
-  info?: CoinProduct
+export type GetCoinProductInfoResponse = {
+  info?: CoinProductInfo
 }
 
-export type GetCoinProductsRequest = {
+export type GetCoinProductInfosRequest = {
   appID?: string
   conds?: {[key: string]: NpoolV1Npool.FilterCond}
   offset?: number
   limit?: number
 }
 
-export type GetCoinProductsResponse = {
-  infos?: CoinProduct[]
+export type GetCoinProductInfosResponse = {
+  infos?: CoinProductInfo[]
   total?: number
 }
 
-export type GetCoinProductOnlyRequest = {
+export type GetCoinProductInfoOnlyRequest = {
   appID?: string
   conds?: {[key: string]: NpoolV1Npool.FilterCond}
   offset?: number
   limit?: number
 }
 
-export type GetCoinProductOnlyResponse = {
-  info?: CoinProduct
+export type GetCoinProductInfoOnlyResponse = {
+  info?: CoinProductInfo
 }
 
-export type GetAppCoinProductsRequest = {
+export type GetAppCoinProductInfosRequest = {
   targetAppID?: string
   conds?: {[key: string]: NpoolV1Npool.FilterCond}
   offset?: number
   limit?: number
 }
 
-export type GetAppCoinProductsResponse = {
-  infos?: CoinProduct[]
+export type GetAppCoinProductInfosResponse = {
+  infos?: CoinProductInfo[]
   total?: number
 }
 
-export type GetAppCoinProductOnlyRequest = {
+export type GetAppCoinProductInfoOnlyRequest = {
   targetAppID?: string
   conds?: {[key: string]: NpoolV1Npool.FilterCond}
   offset?: number
   limit?: number
 }
 
-export type GetAppCoinProductOnlyResponse = {
-  info?: CoinProduct
+export type GetAppCoinProductInfoOnlyResponse = {
+  info?: CoinProductInfo
 }
 
-export type DeleteCoinProductRequest = {
+export type DeleteCoinProductInfoRequest = {
   id?: string
 }
 
-export type DeleteCoinProductResponse = {
-  info?: CoinProduct
+export type DeleteCoinProductInfoResponse = {
+  info?: CoinProductInfo
 }
 
 export class ProjectInfoManager {
@@ -272,37 +272,37 @@ export class ProjectInfoManager {
   static DeleteCoinDescription(req: DeleteCoinDescriptionRequest, initReq?: fm.InitReq): Promise<DeleteCoinDescriptionResponse> {
     return fm.fetchReq<DeleteCoinDescriptionRequest, DeleteCoinDescriptionResponse>(`/v1/delete/coin/description`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static CreateCoinProduct(req: CreateCoinProductRequest, initReq?: fm.InitReq): Promise<CreateCoinProductResponse> {
-    return fm.fetchReq<CreateCoinProductRequest, CreateCoinProductResponse>(`/v1/create/coin/product`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateCoinProductInfo(req: CreateCoinProductInfoRequest, initReq?: fm.InitReq): Promise<CreateCoinProductInfoResponse> {
+    return fm.fetchReq<CreateCoinProductInfoRequest, CreateCoinProductInfoResponse>(`/v1/create/coin/productinfo`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static CreateCoinProducts(req: CreateCoinProductsRequest, initReq?: fm.InitReq): Promise<CreateCoinProductsResponse> {
-    return fm.fetchReq<CreateCoinProductsRequest, CreateCoinProductsResponse>(`/v1/create/coin/products`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateCoinProductInfos(req: CreateCoinProductInfosRequest, initReq?: fm.InitReq): Promise<CreateCoinProductInfosResponse> {
+    return fm.fetchReq<CreateCoinProductInfosRequest, CreateCoinProductInfosResponse>(`/v1/create/coin/productinfos`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static CreateAppCoinProduct(req: CreateAppCoinProductRequest, initReq?: fm.InitReq): Promise<CreateAppCoinProductResponse> {
-    return fm.fetchReq<CreateAppCoinProductRequest, CreateAppCoinProductResponse>(`/v1/create/app/coin/product`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateAppCoinProductInfo(req: CreateAppCoinProductInfoRequest, initReq?: fm.InitReq): Promise<CreateAppCoinProductInfoResponse> {
+    return fm.fetchReq<CreateAppCoinProductInfoRequest, CreateAppCoinProductInfoResponse>(`/v1/create/app/coin/productinfo`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static CreateAppCoinProducts(req: CreateAppCoinProductsRequest, initReq?: fm.InitReq): Promise<CreateAppCoinProductsResponse> {
-    return fm.fetchReq<CreateAppCoinProductsRequest, CreateAppCoinProductsResponse>(`/v1/create/app/coin/products`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static CreateAppCoinProductInfos(req: CreateAppCoinProductInfosRequest, initReq?: fm.InitReq): Promise<CreateAppCoinProductInfosResponse> {
+    return fm.fetchReq<CreateAppCoinProductInfosRequest, CreateAppCoinProductInfosResponse>(`/v1/create/app/coin/productinfos`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static UpdateCoinProduct(req: UpdateCoinProductRequest, initReq?: fm.InitReq): Promise<UpdateCoinProductResponse> {
-    return fm.fetchReq<UpdateCoinProductRequest, UpdateCoinProductResponse>(`/v1/update/coin/product`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static UpdateCoinProductInfo(req: UpdateCoinProductInfoRequest, initReq?: fm.InitReq): Promise<UpdateCoinProductInfoResponse> {
+    return fm.fetchReq<UpdateCoinProductInfoRequest, UpdateCoinProductInfoResponse>(`/v1/update/coin/productinfo`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetCoinProduct(req: GetCoinProductRequest, initReq?: fm.InitReq): Promise<GetCoinProductResponse> {
-    return fm.fetchReq<GetCoinProductRequest, GetCoinProductResponse>(`/v1/get/coin/product`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetCoinProductInfo(req: GetCoinProductInfoRequest, initReq?: fm.InitReq): Promise<GetCoinProductInfoResponse> {
+    return fm.fetchReq<GetCoinProductInfoRequest, GetCoinProductInfoResponse>(`/v1/get/coin/productinfo`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetCoinProducts(req: GetCoinProductsRequest, initReq?: fm.InitReq): Promise<GetCoinProductsResponse> {
-    return fm.fetchReq<GetCoinProductsRequest, GetCoinProductsResponse>(`/v1/get/coin/products`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetCoinProductInfos(req: GetCoinProductInfosRequest, initReq?: fm.InitReq): Promise<GetCoinProductInfosResponse> {
+    return fm.fetchReq<GetCoinProductInfosRequest, GetCoinProductInfosResponse>(`/v1/get/coin/productinfos`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetCoinProductOnly(req: GetCoinProductOnlyRequest, initReq?: fm.InitReq): Promise<GetCoinProductOnlyResponse> {
-    return fm.fetchReq<GetCoinProductOnlyRequest, GetCoinProductOnlyResponse>(`/v1/get/coin/product/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetCoinProductInfoOnly(req: GetCoinProductInfoOnlyRequest, initReq?: fm.InitReq): Promise<GetCoinProductInfoOnlyResponse> {
+    return fm.fetchReq<GetCoinProductInfoOnlyRequest, GetCoinProductInfoOnlyResponse>(`/v1/get/coin/productinfo/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppCoinProducts(req: GetAppCoinProductsRequest, initReq?: fm.InitReq): Promise<GetAppCoinProductsResponse> {
-    return fm.fetchReq<GetAppCoinProductsRequest, GetAppCoinProductsResponse>(`/v1/get/app/coin/products`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppCoinProductInfos(req: GetAppCoinProductInfosRequest, initReq?: fm.InitReq): Promise<GetAppCoinProductInfosResponse> {
+    return fm.fetchReq<GetAppCoinProductInfosRequest, GetAppCoinProductInfosResponse>(`/v1/get/app/coin/productinfos`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static GetAppCoinProductOnly(req: GetAppCoinProductOnlyRequest, initReq?: fm.InitReq): Promise<GetAppCoinProductOnlyResponse> {
-    return fm.fetchReq<GetAppCoinProductOnlyRequest, GetAppCoinProductOnlyResponse>(`/v1/get/app/coin/product/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static GetAppCoinProductInfoOnly(req: GetAppCoinProductInfoOnlyRequest, initReq?: fm.InitReq): Promise<GetAppCoinProductInfoOnlyResponse> {
+    return fm.fetchReq<GetAppCoinProductInfoOnlyRequest, GetAppCoinProductInfoOnlyResponse>(`/v1/get/app/coin/productinfo/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
-  static DeleteCoinProduct(req: DeleteCoinProductRequest, initReq?: fm.InitReq): Promise<DeleteCoinProductResponse> {
-    return fm.fetchReq<DeleteCoinProductRequest, DeleteCoinProductResponse>(`/v1/delete/coin/product`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  static DeleteCoinProductInfo(req: DeleteCoinProductInfoRequest, initReq?: fm.InitReq): Promise<DeleteCoinProductInfoResponse> {
+    return fm.fetchReq<DeleteCoinProductInfoRequest, DeleteCoinProductInfoResponse>(`/v1/delete/coin/productinfo`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
