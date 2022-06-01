@@ -255,13 +255,15 @@
         "CoinTypespacemesh",
         "CoinTypesolana",
         "CoinTypeusdttrc20",
+        "CoinTypebsc",
         "CoinTypetfilecoin",
         "CoinTypetbitcoin",
         "CoinTypetethereum",
         "CoinTypetusdterc20",
         "CoinTypetspacemesh",
         "CoinTypetsolana",
-        "CoinTypetusdttrc20"
+        "CoinTypetusdttrc20",
+        "CoinTypetbsc"
       ],
       "default": "CoinTypeUnKnow",
       "title": "- CoinTypefilecoin: mainnet\n - CoinTypetfilecoin: testnet"
@@ -582,7 +584,7 @@
         "Nonce": {
           "type": "string",
           "format": "uint64",
-          "title": "fil/eth/erc20"
+          "title": "fil/eth/erc20/bsc"
         },
         "GasLimit": {
           "type": "string",
@@ -591,7 +593,7 @@
         "GasPrice": {
           "type": "string",
           "format": "int64",
-          "title": "eth/erc20"
+          "title": "eth/erc20/bsc"
         },
         "ChainID": {
           "type": "string",
