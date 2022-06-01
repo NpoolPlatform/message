@@ -123,6 +123,118 @@ export type DeleteCoinDescriptionResponse = {
   info?: CoinDescription
 }
 
+export type CoinProduct = {
+  id?: string
+  appID?: string
+  coinTypeID?: string
+  productPage?: string
+}
+
+export type CreateCoinProductRequest = {
+  info?: CoinProduct
+}
+
+export type CreateCoinProductResponse = {
+  info?: CoinProduct
+}
+
+export type CreateCoinProductsRequest = {
+  appID?: string
+  infos?: CoinProduct[]
+}
+
+export type CreateCoinProductsResponse = {
+  infos?: CoinProduct[]
+}
+
+export type CreateAppCoinProductRequest = {
+  targetAppID?: string
+  info?: CoinProduct
+}
+
+export type CreateAppCoinProductResponse = {
+  info?: CoinProduct
+}
+
+export type CreateAppCoinProductsRequest = {
+  targetAppID?: string
+  infos?: CoinProduct[]
+}
+
+export type CreateAppCoinProductsResponse = {
+  infos?: CoinProduct[]
+}
+
+export type UpdateCoinProductRequest = {
+  info?: CoinProduct
+}
+
+export type UpdateCoinProductResponse = {
+  info?: CoinProduct
+}
+
+export type GetCoinProductRequest = {
+  id?: string
+}
+
+export type GetCoinProductResponse = {
+  info?: CoinProduct
+}
+
+export type GetCoinProductsRequest = {
+  appID?: string
+  conds?: {[key: string]: NpoolV1Npool.FilterCond}
+  offset?: number
+  limit?: number
+}
+
+export type GetCoinProductsResponse = {
+  infos?: CoinProduct[]
+  total?: number
+}
+
+export type GetCoinProductOnlyRequest = {
+  appID?: string
+  conds?: {[key: string]: NpoolV1Npool.FilterCond}
+  offset?: number
+  limit?: number
+}
+
+export type GetCoinProductOnlyResponse = {
+  info?: CoinProduct
+}
+
+export type GetAppCoinProductsRequest = {
+  targetAppID?: string
+  conds?: {[key: string]: NpoolV1Npool.FilterCond}
+  offset?: number
+  limit?: number
+}
+
+export type GetAppCoinProductsResponse = {
+  infos?: CoinProduct[]
+  total?: number
+}
+
+export type GetAppCoinProductOnlyRequest = {
+  targetAppID?: string
+  conds?: {[key: string]: NpoolV1Npool.FilterCond}
+  offset?: number
+  limit?: number
+}
+
+export type GetAppCoinProductOnlyResponse = {
+  info?: CoinProduct
+}
+
+export type DeleteCoinProductRequest = {
+  id?: string
+}
+
+export type DeleteCoinProductResponse = {
+  info?: CoinProduct
+}
+
 export class ProjectInfoManager {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -159,5 +271,38 @@ export class ProjectInfoManager {
   }
   static DeleteCoinDescription(req: DeleteCoinDescriptionRequest, initReq?: fm.InitReq): Promise<DeleteCoinDescriptionResponse> {
     return fm.fetchReq<DeleteCoinDescriptionRequest, DeleteCoinDescriptionResponse>(`/v1/delete/coin/description`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateCoinProduct(req: CreateCoinProductRequest, initReq?: fm.InitReq): Promise<CreateCoinProductResponse> {
+    return fm.fetchReq<CreateCoinProductRequest, CreateCoinProductResponse>(`/v1/create/coin/product`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateCoinProducts(req: CreateCoinProductsRequest, initReq?: fm.InitReq): Promise<CreateCoinProductsResponse> {
+    return fm.fetchReq<CreateCoinProductsRequest, CreateCoinProductsResponse>(`/v1/create/coin/products`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppCoinProduct(req: CreateAppCoinProductRequest, initReq?: fm.InitReq): Promise<CreateAppCoinProductResponse> {
+    return fm.fetchReq<CreateAppCoinProductRequest, CreateAppCoinProductResponse>(`/v1/create/app/coin/product`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppCoinProducts(req: CreateAppCoinProductsRequest, initReq?: fm.InitReq): Promise<CreateAppCoinProductsResponse> {
+    return fm.fetchReq<CreateAppCoinProductsRequest, CreateAppCoinProductsResponse>(`/v1/create/app/coin/products`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateCoinProduct(req: UpdateCoinProductRequest, initReq?: fm.InitReq): Promise<UpdateCoinProductResponse> {
+    return fm.fetchReq<UpdateCoinProductRequest, UpdateCoinProductResponse>(`/v1/update/coin/product`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCoinProduct(req: GetCoinProductRequest, initReq?: fm.InitReq): Promise<GetCoinProductResponse> {
+    return fm.fetchReq<GetCoinProductRequest, GetCoinProductResponse>(`/v1/get/coin/product`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCoinProducts(req: GetCoinProductsRequest, initReq?: fm.InitReq): Promise<GetCoinProductsResponse> {
+    return fm.fetchReq<GetCoinProductsRequest, GetCoinProductsResponse>(`/v1/get/coin/products`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCoinProductOnly(req: GetCoinProductOnlyRequest, initReq?: fm.InitReq): Promise<GetCoinProductOnlyResponse> {
+    return fm.fetchReq<GetCoinProductOnlyRequest, GetCoinProductOnlyResponse>(`/v1/get/coin/product/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppCoinProducts(req: GetAppCoinProductsRequest, initReq?: fm.InitReq): Promise<GetAppCoinProductsResponse> {
+    return fm.fetchReq<GetAppCoinProductsRequest, GetAppCoinProductsResponse>(`/v1/get/app/coin/products`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAppCoinProductOnly(req: GetAppCoinProductOnlyRequest, initReq?: fm.InitReq): Promise<GetAppCoinProductOnlyResponse> {
+    return fm.fetchReq<GetAppCoinProductOnlyRequest, GetAppCoinProductOnlyResponse>(`/v1/get/app/coin/product/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static DeleteCoinProduct(req: DeleteCoinProductRequest, initReq?: fm.InitReq): Promise<DeleteCoinProductResponse> {
+    return fm.fetchReq<DeleteCoinProductRequest, DeleteCoinProductResponse>(`/v1/delete/coin/product`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

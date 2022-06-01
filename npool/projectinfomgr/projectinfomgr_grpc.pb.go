@@ -36,6 +36,17 @@ type ProjectInfoManagerClient interface {
 	GetAppCoinDescriptions(ctx context.Context, in *GetAppCoinDescriptionsRequest, opts ...grpc.CallOption) (*GetAppCoinDescriptionsResponse, error)
 	GetAppCoinDescriptionOnly(ctx context.Context, in *GetAppCoinDescriptionOnlyRequest, opts ...grpc.CallOption) (*GetAppCoinDescriptionOnlyResponse, error)
 	DeleteCoinDescription(ctx context.Context, in *DeleteCoinDescriptionRequest, opts ...grpc.CallOption) (*DeleteCoinDescriptionResponse, error)
+	CreateCoinProduct(ctx context.Context, in *CreateCoinProductRequest, opts ...grpc.CallOption) (*CreateCoinProductResponse, error)
+	CreateCoinProducts(ctx context.Context, in *CreateCoinProductsRequest, opts ...grpc.CallOption) (*CreateCoinProductsResponse, error)
+	CreateAppCoinProduct(ctx context.Context, in *CreateAppCoinProductRequest, opts ...grpc.CallOption) (*CreateAppCoinProductResponse, error)
+	CreateAppCoinProducts(ctx context.Context, in *CreateAppCoinProductsRequest, opts ...grpc.CallOption) (*CreateAppCoinProductsResponse, error)
+	UpdateCoinProduct(ctx context.Context, in *UpdateCoinProductRequest, opts ...grpc.CallOption) (*UpdateCoinProductResponse, error)
+	GetCoinProduct(ctx context.Context, in *GetCoinProductRequest, opts ...grpc.CallOption) (*GetCoinProductResponse, error)
+	GetCoinProducts(ctx context.Context, in *GetCoinProductsRequest, opts ...grpc.CallOption) (*GetCoinProductsResponse, error)
+	GetCoinProductOnly(ctx context.Context, in *GetCoinProductOnlyRequest, opts ...grpc.CallOption) (*GetCoinProductOnlyResponse, error)
+	GetAppCoinProducts(ctx context.Context, in *GetAppCoinProductsRequest, opts ...grpc.CallOption) (*GetAppCoinProductsResponse, error)
+	GetAppCoinProductOnly(ctx context.Context, in *GetAppCoinProductOnlyRequest, opts ...grpc.CallOption) (*GetAppCoinProductOnlyResponse, error)
+	DeleteCoinProduct(ctx context.Context, in *DeleteCoinProductRequest, opts ...grpc.CallOption) (*DeleteCoinProductResponse, error)
 }
 
 type projectInfoManagerClient struct {
@@ -154,6 +165,105 @@ func (c *projectInfoManagerClient) DeleteCoinDescription(ctx context.Context, in
 	return out, nil
 }
 
+func (c *projectInfoManagerClient) CreateCoinProduct(ctx context.Context, in *CreateCoinProductRequest, opts ...grpc.CallOption) (*CreateCoinProductResponse, error) {
+	out := new(CreateCoinProductResponse)
+	err := c.cc.Invoke(ctx, "/project.info.manager.v1.ProjectInfoManager/CreateCoinProduct", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *projectInfoManagerClient) CreateCoinProducts(ctx context.Context, in *CreateCoinProductsRequest, opts ...grpc.CallOption) (*CreateCoinProductsResponse, error) {
+	out := new(CreateCoinProductsResponse)
+	err := c.cc.Invoke(ctx, "/project.info.manager.v1.ProjectInfoManager/CreateCoinProducts", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *projectInfoManagerClient) CreateAppCoinProduct(ctx context.Context, in *CreateAppCoinProductRequest, opts ...grpc.CallOption) (*CreateAppCoinProductResponse, error) {
+	out := new(CreateAppCoinProductResponse)
+	err := c.cc.Invoke(ctx, "/project.info.manager.v1.ProjectInfoManager/CreateAppCoinProduct", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *projectInfoManagerClient) CreateAppCoinProducts(ctx context.Context, in *CreateAppCoinProductsRequest, opts ...grpc.CallOption) (*CreateAppCoinProductsResponse, error) {
+	out := new(CreateAppCoinProductsResponse)
+	err := c.cc.Invoke(ctx, "/project.info.manager.v1.ProjectInfoManager/CreateAppCoinProducts", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *projectInfoManagerClient) UpdateCoinProduct(ctx context.Context, in *UpdateCoinProductRequest, opts ...grpc.CallOption) (*UpdateCoinProductResponse, error) {
+	out := new(UpdateCoinProductResponse)
+	err := c.cc.Invoke(ctx, "/project.info.manager.v1.ProjectInfoManager/UpdateCoinProduct", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *projectInfoManagerClient) GetCoinProduct(ctx context.Context, in *GetCoinProductRequest, opts ...grpc.CallOption) (*GetCoinProductResponse, error) {
+	out := new(GetCoinProductResponse)
+	err := c.cc.Invoke(ctx, "/project.info.manager.v1.ProjectInfoManager/GetCoinProduct", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *projectInfoManagerClient) GetCoinProducts(ctx context.Context, in *GetCoinProductsRequest, opts ...grpc.CallOption) (*GetCoinProductsResponse, error) {
+	out := new(GetCoinProductsResponse)
+	err := c.cc.Invoke(ctx, "/project.info.manager.v1.ProjectInfoManager/GetCoinProducts", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *projectInfoManagerClient) GetCoinProductOnly(ctx context.Context, in *GetCoinProductOnlyRequest, opts ...grpc.CallOption) (*GetCoinProductOnlyResponse, error) {
+	out := new(GetCoinProductOnlyResponse)
+	err := c.cc.Invoke(ctx, "/project.info.manager.v1.ProjectInfoManager/GetCoinProductOnly", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *projectInfoManagerClient) GetAppCoinProducts(ctx context.Context, in *GetAppCoinProductsRequest, opts ...grpc.CallOption) (*GetAppCoinProductsResponse, error) {
+	out := new(GetAppCoinProductsResponse)
+	err := c.cc.Invoke(ctx, "/project.info.manager.v1.ProjectInfoManager/GetAppCoinProducts", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *projectInfoManagerClient) GetAppCoinProductOnly(ctx context.Context, in *GetAppCoinProductOnlyRequest, opts ...grpc.CallOption) (*GetAppCoinProductOnlyResponse, error) {
+	out := new(GetAppCoinProductOnlyResponse)
+	err := c.cc.Invoke(ctx, "/project.info.manager.v1.ProjectInfoManager/GetAppCoinProductOnly", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *projectInfoManagerClient) DeleteCoinProduct(ctx context.Context, in *DeleteCoinProductRequest, opts ...grpc.CallOption) (*DeleteCoinProductResponse, error) {
+	out := new(DeleteCoinProductResponse)
+	err := c.cc.Invoke(ctx, "/project.info.manager.v1.ProjectInfoManager/DeleteCoinProduct", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProjectInfoManagerServer is the server API for ProjectInfoManager service.
 // All implementations must embed UnimplementedProjectInfoManagerServer
 // for forward compatibility
@@ -170,6 +280,17 @@ type ProjectInfoManagerServer interface {
 	GetAppCoinDescriptions(context.Context, *GetAppCoinDescriptionsRequest) (*GetAppCoinDescriptionsResponse, error)
 	GetAppCoinDescriptionOnly(context.Context, *GetAppCoinDescriptionOnlyRequest) (*GetAppCoinDescriptionOnlyResponse, error)
 	DeleteCoinDescription(context.Context, *DeleteCoinDescriptionRequest) (*DeleteCoinDescriptionResponse, error)
+	CreateCoinProduct(context.Context, *CreateCoinProductRequest) (*CreateCoinProductResponse, error)
+	CreateCoinProducts(context.Context, *CreateCoinProductsRequest) (*CreateCoinProductsResponse, error)
+	CreateAppCoinProduct(context.Context, *CreateAppCoinProductRequest) (*CreateAppCoinProductResponse, error)
+	CreateAppCoinProducts(context.Context, *CreateAppCoinProductsRequest) (*CreateAppCoinProductsResponse, error)
+	UpdateCoinProduct(context.Context, *UpdateCoinProductRequest) (*UpdateCoinProductResponse, error)
+	GetCoinProduct(context.Context, *GetCoinProductRequest) (*GetCoinProductResponse, error)
+	GetCoinProducts(context.Context, *GetCoinProductsRequest) (*GetCoinProductsResponse, error)
+	GetCoinProductOnly(context.Context, *GetCoinProductOnlyRequest) (*GetCoinProductOnlyResponse, error)
+	GetAppCoinProducts(context.Context, *GetAppCoinProductsRequest) (*GetAppCoinProductsResponse, error)
+	GetAppCoinProductOnly(context.Context, *GetAppCoinProductOnlyRequest) (*GetAppCoinProductOnlyResponse, error)
+	DeleteCoinProduct(context.Context, *DeleteCoinProductRequest) (*DeleteCoinProductResponse, error)
 	mustEmbedUnimplementedProjectInfoManagerServer()
 }
 
@@ -212,6 +333,39 @@ func (UnimplementedProjectInfoManagerServer) GetAppCoinDescriptionOnly(context.C
 }
 func (UnimplementedProjectInfoManagerServer) DeleteCoinDescription(context.Context, *DeleteCoinDescriptionRequest) (*DeleteCoinDescriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCoinDescription not implemented")
+}
+func (UnimplementedProjectInfoManagerServer) CreateCoinProduct(context.Context, *CreateCoinProductRequest) (*CreateCoinProductResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCoinProduct not implemented")
+}
+func (UnimplementedProjectInfoManagerServer) CreateCoinProducts(context.Context, *CreateCoinProductsRequest) (*CreateCoinProductsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCoinProducts not implemented")
+}
+func (UnimplementedProjectInfoManagerServer) CreateAppCoinProduct(context.Context, *CreateAppCoinProductRequest) (*CreateAppCoinProductResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppCoinProduct not implemented")
+}
+func (UnimplementedProjectInfoManagerServer) CreateAppCoinProducts(context.Context, *CreateAppCoinProductsRequest) (*CreateAppCoinProductsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppCoinProducts not implemented")
+}
+func (UnimplementedProjectInfoManagerServer) UpdateCoinProduct(context.Context, *UpdateCoinProductRequest) (*UpdateCoinProductResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCoinProduct not implemented")
+}
+func (UnimplementedProjectInfoManagerServer) GetCoinProduct(context.Context, *GetCoinProductRequest) (*GetCoinProductResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCoinProduct not implemented")
+}
+func (UnimplementedProjectInfoManagerServer) GetCoinProducts(context.Context, *GetCoinProductsRequest) (*GetCoinProductsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCoinProducts not implemented")
+}
+func (UnimplementedProjectInfoManagerServer) GetCoinProductOnly(context.Context, *GetCoinProductOnlyRequest) (*GetCoinProductOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCoinProductOnly not implemented")
+}
+func (UnimplementedProjectInfoManagerServer) GetAppCoinProducts(context.Context, *GetAppCoinProductsRequest) (*GetAppCoinProductsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppCoinProducts not implemented")
+}
+func (UnimplementedProjectInfoManagerServer) GetAppCoinProductOnly(context.Context, *GetAppCoinProductOnlyRequest) (*GetAppCoinProductOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppCoinProductOnly not implemented")
+}
+func (UnimplementedProjectInfoManagerServer) DeleteCoinProduct(context.Context, *DeleteCoinProductRequest) (*DeleteCoinProductResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteCoinProduct not implemented")
 }
 func (UnimplementedProjectInfoManagerServer) mustEmbedUnimplementedProjectInfoManagerServer() {}
 
@@ -442,6 +596,204 @@ func _ProjectInfoManager_DeleteCoinDescription_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProjectInfoManager_CreateCoinProduct_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCoinProductRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProjectInfoManagerServer).CreateCoinProduct(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/project.info.manager.v1.ProjectInfoManager/CreateCoinProduct",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProjectInfoManagerServer).CreateCoinProduct(ctx, req.(*CreateCoinProductRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProjectInfoManager_CreateCoinProducts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCoinProductsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProjectInfoManagerServer).CreateCoinProducts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/project.info.manager.v1.ProjectInfoManager/CreateCoinProducts",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProjectInfoManagerServer).CreateCoinProducts(ctx, req.(*CreateCoinProductsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProjectInfoManager_CreateAppCoinProduct_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppCoinProductRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProjectInfoManagerServer).CreateAppCoinProduct(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/project.info.manager.v1.ProjectInfoManager/CreateAppCoinProduct",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProjectInfoManagerServer).CreateAppCoinProduct(ctx, req.(*CreateAppCoinProductRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProjectInfoManager_CreateAppCoinProducts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppCoinProductsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProjectInfoManagerServer).CreateAppCoinProducts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/project.info.manager.v1.ProjectInfoManager/CreateAppCoinProducts",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProjectInfoManagerServer).CreateAppCoinProducts(ctx, req.(*CreateAppCoinProductsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProjectInfoManager_UpdateCoinProduct_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCoinProductRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProjectInfoManagerServer).UpdateCoinProduct(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/project.info.manager.v1.ProjectInfoManager/UpdateCoinProduct",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProjectInfoManagerServer).UpdateCoinProduct(ctx, req.(*UpdateCoinProductRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProjectInfoManager_GetCoinProduct_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoinProductRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProjectInfoManagerServer).GetCoinProduct(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/project.info.manager.v1.ProjectInfoManager/GetCoinProduct",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProjectInfoManagerServer).GetCoinProduct(ctx, req.(*GetCoinProductRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProjectInfoManager_GetCoinProducts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoinProductsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProjectInfoManagerServer).GetCoinProducts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/project.info.manager.v1.ProjectInfoManager/GetCoinProducts",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProjectInfoManagerServer).GetCoinProducts(ctx, req.(*GetCoinProductsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProjectInfoManager_GetCoinProductOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoinProductOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProjectInfoManagerServer).GetCoinProductOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/project.info.manager.v1.ProjectInfoManager/GetCoinProductOnly",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProjectInfoManagerServer).GetCoinProductOnly(ctx, req.(*GetCoinProductOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProjectInfoManager_GetAppCoinProducts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppCoinProductsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProjectInfoManagerServer).GetAppCoinProducts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/project.info.manager.v1.ProjectInfoManager/GetAppCoinProducts",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProjectInfoManagerServer).GetAppCoinProducts(ctx, req.(*GetAppCoinProductsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProjectInfoManager_GetAppCoinProductOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppCoinProductOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProjectInfoManagerServer).GetAppCoinProductOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/project.info.manager.v1.ProjectInfoManager/GetAppCoinProductOnly",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProjectInfoManagerServer).GetAppCoinProductOnly(ctx, req.(*GetAppCoinProductOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProjectInfoManager_DeleteCoinProduct_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteCoinProductRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProjectInfoManagerServer).DeleteCoinProduct(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/project.info.manager.v1.ProjectInfoManager/DeleteCoinProduct",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProjectInfoManagerServer).DeleteCoinProduct(ctx, req.(*DeleteCoinProductRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ProjectInfoManager_ServiceDesc is the grpc.ServiceDesc for ProjectInfoManager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -496,6 +848,50 @@ var ProjectInfoManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteCoinDescription",
 			Handler:    _ProjectInfoManager_DeleteCoinDescription_Handler,
+		},
+		{
+			MethodName: "CreateCoinProduct",
+			Handler:    _ProjectInfoManager_CreateCoinProduct_Handler,
+		},
+		{
+			MethodName: "CreateCoinProducts",
+			Handler:    _ProjectInfoManager_CreateCoinProducts_Handler,
+		},
+		{
+			MethodName: "CreateAppCoinProduct",
+			Handler:    _ProjectInfoManager_CreateAppCoinProduct_Handler,
+		},
+		{
+			MethodName: "CreateAppCoinProducts",
+			Handler:    _ProjectInfoManager_CreateAppCoinProducts_Handler,
+		},
+		{
+			MethodName: "UpdateCoinProduct",
+			Handler:    _ProjectInfoManager_UpdateCoinProduct_Handler,
+		},
+		{
+			MethodName: "GetCoinProduct",
+			Handler:    _ProjectInfoManager_GetCoinProduct_Handler,
+		},
+		{
+			MethodName: "GetCoinProducts",
+			Handler:    _ProjectInfoManager_GetCoinProducts_Handler,
+		},
+		{
+			MethodName: "GetCoinProductOnly",
+			Handler:    _ProjectInfoManager_GetCoinProductOnly_Handler,
+		},
+		{
+			MethodName: "GetAppCoinProducts",
+			Handler:    _ProjectInfoManager_GetAppCoinProducts_Handler,
+		},
+		{
+			MethodName: "GetAppCoinProductOnly",
+			Handler:    _ProjectInfoManager_GetAppCoinProductOnly_Handler,
+		},
+		{
+			MethodName: "DeleteCoinProduct",
+			Handler:    _ProjectInfoManager_DeleteCoinProduct_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

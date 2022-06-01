@@ -75,6 +75,70 @@
         ]
       }
     },
+    "/v1/create/app/coin/product": {
+      "post": {
+        "operationId": "ProjectInfoManager_CreateAppCoinProduct",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppCoinProductResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppCoinProductRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    },
+    "/v1/create/app/coin/products": {
+      "post": {
+        "operationId": "ProjectInfoManager_CreateAppCoinProducts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppCoinProductsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppCoinProductsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    },
     "/v1/create/coin/description": {
       "post": {
         "operationId": "ProjectInfoManager_CreateCoinDescription",
@@ -139,6 +203,70 @@
         ]
       }
     },
+    "/v1/create/coin/product": {
+      "post": {
+        "operationId": "ProjectInfoManager_CreateCoinProduct",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateCoinProductResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateCoinProductRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    },
+    "/v1/create/coin/products": {
+      "post": {
+        "operationId": "ProjectInfoManager_CreateCoinProducts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateCoinProductsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateCoinProductsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    },
     "/v1/delete/coin/description": {
       "post": {
         "operationId": "ProjectInfoManager_DeleteCoinDescription",
@@ -163,6 +291,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1DeleteCoinDescriptionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    },
+    "/v1/delete/coin/product": {
+      "post": {
+        "operationId": "ProjectInfoManager_DeleteCoinProduct",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteCoinProductResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteCoinProductRequest"
             }
           }
         ],
@@ -227,6 +387,70 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppCoinDescriptionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    },
+    "/v1/get/app/coin/product/only": {
+      "post": {
+        "operationId": "ProjectInfoManager_GetAppCoinProductOnly",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppCoinProductOnlyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppCoinProductOnlyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    },
+    "/v1/get/app/coin/products": {
+      "post": {
+        "operationId": "ProjectInfoManager_GetAppCoinProducts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppCoinProductsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppCoinProductsRequest"
             }
           }
         ],
@@ -331,6 +555,102 @@
         ]
       }
     },
+    "/v1/get/coin/product": {
+      "post": {
+        "operationId": "ProjectInfoManager_GetCoinProduct",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinProductResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinProductRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    },
+    "/v1/get/coin/product/only": {
+      "post": {
+        "operationId": "ProjectInfoManager_GetCoinProductOnly",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinProductOnlyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinProductOnlyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    },
+    "/v1/get/coin/products": {
+      "post": {
+        "operationId": "ProjectInfoManager_GetCoinProducts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinProductsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinProductsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    },
     "/v1/update/coin/description": {
       "post": {
         "operationId": "ProjectInfoManager_UpdateCoinDescription",
@@ -355,6 +675,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1UpdateCoinDescriptionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProjectInfoManager"
+        ]
+      }
+    },
+    "/v1/update/coin/product": {
+      "post": {
+        "operationId": "ProjectInfoManager_UpdateCoinProduct",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCoinProductResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCoinProductRequest"
             }
           }
         ],
@@ -469,6 +821,23 @@
         }
       }
     },
+    "v1CoinProduct": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "ProductPage": {
+          "type": "string"
+        }
+      }
+    },
     "v1CreateAppCoinDescriptionRequest": {
       "type": "object",
       "properties": {
@@ -509,6 +878,50 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1CoinDescription"
+          }
+        }
+      }
+    },
+    "v1CreateAppCoinProductRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1CoinProduct"
+        }
+      }
+    },
+    "v1CreateAppCoinProductResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinProduct"
+        }
+      }
+    },
+    "v1CreateAppCoinProductsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinProduct"
+          }
+        }
+      }
+    },
+    "v1CreateAppCoinProductsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinProduct"
           }
         }
       }
@@ -555,6 +968,48 @@
         }
       }
     },
+    "v1CreateCoinProductRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinProduct"
+        }
+      },
+      "title": "create"
+    },
+    "v1CreateCoinProductResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinProduct"
+        }
+      }
+    },
+    "v1CreateCoinProductsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinProduct"
+          }
+        }
+      }
+    },
+    "v1CreateCoinProductsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinProduct"
+          }
+        }
+      }
+    },
     "v1DeleteCoinDescriptionRequest": {
       "type": "object",
       "properties": {
@@ -569,6 +1024,23 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1CoinDescription"
+        }
+      }
+    },
+    "v1DeleteCoinProductRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      },
+      "title": "delete"
+    },
+    "v1DeleteCoinProductResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinProduct"
         }
       }
     },
@@ -642,6 +1114,73 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1CoinDescription"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppCoinProductOnlyRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppCoinProductOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinProduct"
+        }
+      }
+    },
+    "v1GetAppCoinProductsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppCoinProductsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinProduct"
           }
         },
         "Total": {
@@ -734,6 +1273,90 @@
         }
       }
     },
+    "v1GetCoinProductOnlyRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetCoinProductOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinProduct"
+        }
+      }
+    },
+    "v1GetCoinProductRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      },
+      "title": "get"
+    },
+    "v1GetCoinProductResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinProduct"
+        }
+      }
+    },
+    "v1GetCoinProductsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetCoinProductsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinProduct"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
     "v1UpdateCoinDescriptionRequest": {
       "type": "object",
       "properties": {
@@ -748,6 +1371,23 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1CoinDescription"
+        }
+      }
+    },
+    "v1UpdateCoinProductRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinProduct"
+        }
+      },
+      "title": "update"
+    },
+    "v1UpdateCoinProductResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinProduct"
         }
       }
     },

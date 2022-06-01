@@ -58,7 +58,6 @@ service ProjectInfoManager {
     };
   }
 
-
   rpc GetCoinDescriptions (GetCoinDescriptionsRequest) returns (GetCoinDescriptionsResponse) {
     option (google.api.http) = {
         post: "/v1/get/coin/descriptions"
@@ -93,6 +92,83 @@ service ProjectInfoManager {
         body: "*"
     };
   }
+
+  rpc CreateCoinProduct (CreateCoinProductRequest) returns (CreateCoinProductResponse) {
+    option (google.api.http) = {
+        post: "/v1/create/coin/product"
+        body: "*"
+    };
+  }
+
+  rpc CreateCoinProducts (CreateCoinProductsRequest) returns (CreateCoinProductsResponse) {
+    option (google.api.http) = {
+        post: "/v1/create/coin/products"
+        body: "*"
+    };
+  }
+
+  rpc CreateAppCoinProduct (CreateAppCoinProductRequest) returns (CreateAppCoinProductResponse) {
+    option (google.api.http) = {
+        post: "/v1/create/app/coin/product"
+        body: "*"
+    };
+  }
+
+  rpc CreateAppCoinProducts (CreateAppCoinProductsRequest) returns (CreateAppCoinProductsResponse) {
+    option (google.api.http) = {
+        post: "/v1/create/app/coin/products"
+        body: "*"
+    };
+  }
+
+  rpc UpdateCoinProduct (UpdateCoinProductRequest) returns (UpdateCoinProductResponse) {
+    option (google.api.http) = {
+        post: "/v1/update/coin/product"
+        body: "*"
+    };
+  }
+
+  rpc GetCoinProduct (GetCoinProductRequest) returns (GetCoinProductResponse) {
+    option (google.api.http) = {
+        post: "/v1/get/coin/product"
+        body: "*"
+    };
+  }
+
+  rpc GetCoinProducts (GetCoinProductsRequest) returns (GetCoinProductsResponse) {
+    option (google.api.http) = {
+        post: "/v1/get/coin/products"
+        body: "*"
+    };
+  }
+
+  rpc GetCoinProductOnly (GetCoinProductOnlyRequest) returns (GetCoinProductOnlyResponse) {
+    option (google.api.http) = {
+        post: "/v1/get/coin/product/only"
+        body: "*"
+    };
+  }
+
+  rpc GetAppCoinProducts (GetAppCoinProductsRequest) returns (GetAppCoinProductsResponse) {
+    option (google.api.http) = {
+        post: "/v1/get/app/coin/products"
+        body: "*"
+    };
+  }
+
+  rpc GetAppCoinProductOnly (GetAppCoinProductOnlyRequest) returns (GetAppCoinProductOnlyResponse) {
+    option (google.api.http) = {
+        post: "/v1/get/app/coin/product/only"
+        body: "*"
+    };
+  }
+
+  rpc DeleteCoinProduct (DeleteCoinProductRequest) returns (DeleteCoinProductResponse) {
+    option (google.api.http) = {
+        post: "/v1/delete/coin/product"
+        body: "*"
+    };
+  }
 }
 
 message CoinDescription {
@@ -105,6 +181,7 @@ message CoinDescription {
   uint32 CreateAt = 70;
   uint32 UpdateAt = 80;
 }
+
 // create
 message CreateCoinDescriptionRequest  {
   CoinDescription Info = 10;
@@ -212,4 +289,122 @@ message DeleteCoinDescriptionRequest {
 
 message DeleteCoinDescriptionResponse {
   CoinDescription Info = 10;
+}
+
+
+
+message CoinProduct {
+  string ID = 10;
+  string AppID = 20;
+  string CoinTypeID = 30;
+  string ProductPage = 40;
+}
+
+// create
+message CreateCoinProductRequest  {
+  CoinProduct Info = 10;
+}
+
+message CreateCoinProductResponse {
+  CoinProduct Info = 10;
+}
+
+message CreateCoinProductsRequest {
+  string AppID = 10;
+  repeated CoinProduct Infos = 20;
+}
+
+message CreateCoinProductsResponse {
+  repeated CoinProduct Infos = 10;
+}
+
+message CreateAppCoinProductRequest  {
+  string TargetAppID = 10;
+  CoinProduct Info = 20;
+}
+
+message CreateAppCoinProductResponse {
+  CoinProduct Info = 10;
+}
+
+message CreateAppCoinProductsRequest {
+  string TargetAppID = 10;
+  repeated CoinProduct Infos = 20;
+}
+
+message CreateAppCoinProductsResponse {
+  repeated CoinProduct Infos = 10;
+}
+
+// update
+message UpdateCoinProductRequest {
+  CoinProduct Info = 20;
+}
+
+message UpdateCoinProductResponse {
+  CoinProduct Info = 10;
+}
+
+// get
+message GetCoinProductRequest {
+  string ID = 20;
+}
+
+message GetCoinProductResponse {
+  CoinProduct Info = 10;
+}
+
+message GetCoinProductsRequest {
+  string AppID = 10;
+  map<string, npool.v1.FilterCond> Conds = 20;
+  int32 Offset = 30;
+  int32 Limit = 40;
+}
+
+message GetCoinProductsResponse {
+  repeated CoinProduct Infos = 10;
+  int32 Total = 20;
+}
+
+message GetCoinProductOnlyRequest {
+  string AppID = 10;
+  map<string, npool.v1.FilterCond> Conds = 20;
+  int32 Offset = 30;
+  int32 Limit = 40;
+}
+
+message GetCoinProductOnlyResponse {
+  CoinProduct Info = 10;
+}
+
+message GetAppCoinProductsRequest {
+  string TargetAppID = 10;
+  map<string, npool.v1.FilterCond> Conds = 20;
+  int32 Offset = 30;
+  int32 Limit = 40;
+}
+
+message GetAppCoinProductsResponse {
+  repeated CoinProduct Infos = 10;
+  int32 Total = 20;
+}
+
+message GetAppCoinProductOnlyRequest {
+  string TargetAppID = 10;
+  map<string, npool.v1.FilterCond> Conds = 20;
+  int32 Offset = 30;
+  int32 Limit = 40;
+}
+
+message GetAppCoinProductOnlyResponse {
+  CoinProduct Info = 10;
+}
+
+// delete
+message DeleteCoinProductRequest {
+  string ID = 10;
+}
+
+message DeleteCoinProductResponse {
+  CoinProduct Info = 10;
 }
