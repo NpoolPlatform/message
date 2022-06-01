@@ -421,6 +421,7 @@
 | Online | [bool](#bool) |  |  |
 | InitAreaStrategy | [string](#string) |  |  |
 | DisplayIndex | [uint32](#uint32) |  |  |
+| Visible | [bool](#bool) |  |  |
 
 
 
@@ -3522,6 +3523,7 @@ Cloud Hashing Goods
 | Online | [bool](#bool) |  |  |
 | InitAreaStrategy | [string](#string) |  |  |
 | DisplayIndex | [uint32](#uint32) |  |  |
+| Visible | [bool](#bool) |  |  |
 
 
 

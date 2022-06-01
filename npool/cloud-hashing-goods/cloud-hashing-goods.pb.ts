@@ -417,6 +417,7 @@ export type AppGoodInfo = {
   online?: boolean
   initAreaStrategy?: string
   displayIndex?: number
+  visible?: boolean
 }
 
 export type SetAppGoodPriceRequest = {

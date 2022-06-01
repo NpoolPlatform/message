@@ -2859,6 +2859,9 @@
         "DisplayIndex": {
           "type": "integer",
           "format": "int64"
+        },
+        "Visible": {
+          "type": "boolean"
         }
       }
     },
