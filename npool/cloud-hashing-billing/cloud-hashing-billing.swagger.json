@@ -3279,6 +3279,10 @@
           "type": "number",
           "format": "double"
         },
+        "TransactionFee": {
+          "type": "number",
+          "format": "double"
+        },
         "Message": {
           "type": "string"
         },

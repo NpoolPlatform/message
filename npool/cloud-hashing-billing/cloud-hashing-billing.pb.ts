@@ -72,6 +72,7 @@ export type CoinAccountTransaction = {
   toAddressID?: string
   coinTypeID?: string
   amount?: number
+  transactionFee?: number
   message?: string
   createAt?: number
   state?: string

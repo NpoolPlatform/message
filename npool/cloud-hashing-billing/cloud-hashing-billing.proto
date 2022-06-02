@@ -686,6 +686,7 @@ message CoinAccountTransaction {
     string ToAddressID = 50;
     string CoinTypeID = 60;
     double Amount = 70;
+    double TransactionFee = 71;
     string Message = 80;
     uint32 CreateAt = 90;
     string State = 100;

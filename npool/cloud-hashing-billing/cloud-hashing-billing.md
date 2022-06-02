@@ -502,6 +502,7 @@
 | ToAddressID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | Amount | [double](#double) |  |  |
+| TransactionFee | [double](#double) |  |  |
 | Message | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
 | State | [string](#string) |  |  |
@@ -3931,6 +3932,7 @@ Cloud Hashing Billing
 | ToAddressID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | Amount | [double](#double) |  |  |
+| TransactionFee | [double](#double) |  |  |
 | Message | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
 | State | [string](#string) |  |  |
