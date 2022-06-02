@@ -75,6 +75,7 @@ type CloudHashingApisClient interface {
 	UpdateKycReview(ctx context.Context, in *UpdateKycReviewRequest, opts ...grpc.CallOption) (*UpdateKycReviewResponse, error)
 	UpdateWithdrawReview(ctx context.Context, in *UpdateWithdrawReviewRequest, opts ...grpc.CallOption) (*UpdateWithdrawReviewResponse, error)
 	UpdateWithdrawAddressReview(ctx context.Context, in *UpdateWithdrawAddressReviewRequest, opts ...grpc.CallOption) (*UpdateWithdrawAddressReviewResponse, error)
+	GetCurrentFee(ctx context.Context, in *GetCurrentFeeRequest, opts ...grpc.CallOption) (*GetCurrentFeeResponse, error)
 }
 
 type cloudHashingApisClient struct {
@@ -544,6 +545,15 @@ func (c *cloudHashingApisClient) UpdateWithdrawAddressReview(ctx context.Context
 	return out, nil
 }
 
+func (c *cloudHashingApisClient) GetCurrentFee(ctx context.Context, in *GetCurrentFeeRequest, opts ...grpc.CallOption) (*GetCurrentFeeResponse, error) {
+	out := new(GetCurrentFeeResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetCurrentFee", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CloudHashingApisServer is the server API for CloudHashingApis service.
 // All implementations must embed UnimplementedCloudHashingApisServer
 // for forward compatibility
@@ -599,6 +609,7 @@ type CloudHashingApisServer interface {
 	UpdateKycReview(context.Context, *UpdateKycReviewRequest) (*UpdateKycReviewResponse, error)
 	UpdateWithdrawReview(context.Context, *UpdateWithdrawReviewRequest) (*UpdateWithdrawReviewResponse, error)
 	UpdateWithdrawAddressReview(context.Context, *UpdateWithdrawAddressReviewRequest) (*UpdateWithdrawAddressReviewResponse, error)
+	GetCurrentFee(context.Context, *GetCurrentFeeRequest) (*GetCurrentFeeResponse, error)
 	mustEmbedUnimplementedCloudHashingApisServer()
 }
 
@@ -758,6 +769,9 @@ func (UnimplementedCloudHashingApisServer) UpdateWithdrawReview(context.Context,
 }
 func (UnimplementedCloudHashingApisServer) UpdateWithdrawAddressReview(context.Context, *UpdateWithdrawAddressReviewRequest) (*UpdateWithdrawAddressReviewResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateWithdrawAddressReview not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetCurrentFee(context.Context, *GetCurrentFeeRequest) (*GetCurrentFeeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCurrentFee not implemented")
 }
 func (UnimplementedCloudHashingApisServer) mustEmbedUnimplementedCloudHashingApisServer() {}
 
@@ -1690,6 +1704,24 @@ func _CloudHashingApis_UpdateWithdrawAddressReview_Handler(srv interface{}, ctx 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingApis_GetCurrentFee_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCurrentFeeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetCurrentFee(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetCurrentFee",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetCurrentFee(ctx, req.(*GetCurrentFeeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CloudHashingApis_ServiceDesc is the grpc.ServiceDesc for CloudHashingApis service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1900,6 +1932,10 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateWithdrawAddressReview",
 			Handler:    _CloudHashingApis_UpdateWithdrawAddressReview_Handler,
+		},
+		{
+			MethodName: "GetCurrentFee",
+			Handler:    _CloudHashingApis_GetCurrentFee_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

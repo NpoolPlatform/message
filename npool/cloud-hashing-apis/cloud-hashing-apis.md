@@ -28,6 +28,8 @@
     - [GetCommissionByAppUserResponse](#cloud-hashing-apis-v1-GetCommissionByAppUserResponse)
     - [GetCouponsByAppUserRequest](#cloud-hashing-apis-v1-GetCouponsByAppUserRequest)
     - [GetCouponsByAppUserResponse](#cloud-hashing-apis-v1-GetCouponsByAppUserResponse)
+    - [GetCurrentFeeRequest](#cloud-hashing-apis-v1-GetCurrentFeeRequest)
+    - [GetCurrentFeeResponse](#cloud-hashing-apis-v1-GetCurrentFeeResponse)
     - [GetGoodRequest](#cloud-hashing-apis-v1-GetGoodRequest)
     - [GetGoodResponse](#cloud-hashing-apis-v1-GetGoodResponse)
     - [GetGoodReviewsRequest](#cloud-hashing-apis-v1-GetGoodReviewsRequest)
@@ -150,6 +152,8 @@
     - [GetCommissionByAppUserResponse](#cloud-hashing-apis-v1-GetCommissionByAppUserResponse)
     - [GetCouponsByAppUserRequest](#cloud-hashing-apis-v1-GetCouponsByAppUserRequest)
     - [GetCouponsByAppUserResponse](#cloud-hashing-apis-v1-GetCouponsByAppUserResponse)
+    - [GetCurrentFeeRequest](#cloud-hashing-apis-v1-GetCurrentFeeRequest)
+    - [GetCurrentFeeResponse](#cloud-hashing-apis-v1-GetCurrentFeeResponse)
     - [GetGoodRequest](#cloud-hashing-apis-v1-GetGoodRequest)
     - [GetGoodResponse](#cloud-hashing-apis-v1-GetGoodResponse)
     - [GetGoodReviewsRequest](#cloud-hashing-apis-v1-GetGoodReviewsRequest)
@@ -630,6 +634,36 @@
 
 
 
+<a name="cloud-hashing-apis-v1-GetCurrentFeeRequest"></a>
+
+### GetCurrentFeeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinTypeID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-GetCurrentFeeResponse"></a>
+
+### GetCurrentFeeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| FeeAmount | [double](#double) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-GetGoodRequest"></a>
 
 ### GetGoodRequest
@@ -2209,6 +2243,7 @@ Cloud Hashing Goods
 | UpdateKycReview | [UpdateKycReviewRequest](#cloud-hashing-apis-v1-UpdateKycReviewRequest) | [UpdateKycReviewResponse](#cloud-hashing-apis-v1-UpdateKycReviewResponse) |  |
 | UpdateWithdrawReview | [UpdateWithdrawReviewRequest](#cloud-hashing-apis-v1-UpdateWithdrawReviewRequest) | [UpdateWithdrawReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawReviewResponse) |  |
 | UpdateWithdrawAddressReview | [UpdateWithdrawAddressReviewRequest](#cloud-hashing-apis-v1-UpdateWithdrawAddressReviewRequest) | [UpdateWithdrawAddressReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawAddressReviewResponse) |  |
+| GetCurrentFee | [GetCurrentFeeRequest](#cloud-hashing-apis-v1-GetCurrentFeeRequest) | [GetCurrentFeeResponse](#cloud-hashing-apis-v1-GetCurrentFeeResponse) |  |
 
  
 
@@ -2593,6 +2628,36 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud-hashing-apis-v1-GetCurrentFeeRequest"></a>
+
+### GetCurrentFeeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinTypeID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-GetCurrentFeeResponse"></a>
+
+### GetCurrentFeeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| FeeAmount | [double](#double) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-GetGoodRequest"></a>
 
 ### GetGoodRequest
@@ -4172,6 +4237,7 @@ Cloud Hashing Goods
 | UpdateKycReview | [UpdateKycReviewRequest](#cloud-hashing-apis-v1-UpdateKycReviewRequest) | [UpdateKycReviewResponse](#cloud-hashing-apis-v1-UpdateKycReviewResponse) |  |
 | UpdateWithdrawReview | [UpdateWithdrawReviewRequest](#cloud-hashing-apis-v1-UpdateWithdrawReviewRequest) | [UpdateWithdrawReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawReviewResponse) |  |
 | UpdateWithdrawAddressReview | [UpdateWithdrawAddressReviewRequest](#cloud-hashing-apis-v1-UpdateWithdrawAddressReviewRequest) | [UpdateWithdrawAddressReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawAddressReviewResponse) |  |
+| GetCurrentFee | [GetCurrentFeeRequest](#cloud-hashing-apis-v1-GetCurrentFeeRequest) | [GetCurrentFeeResponse](#cloud-hashing-apis-v1-GetCurrentFeeResponse) |  |
 
  
 

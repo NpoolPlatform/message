@@ -608,6 +608,14 @@ export type UpdateWithdrawAddressReviewResponse = {
   info?: WithdrawAddressReview
 }
 
+export type GetCurrentFeeRequest = {
+  coinTypeID?: string
+}
+
+export type GetCurrentFeeResponse = {
+  feeAmount?: number
+}
+
 export class CloudHashingApis {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -761,5 +769,8 @@ export class CloudHashingApis {
   }
   static UpdateWithdrawAddressReview(req: UpdateWithdrawAddressReviewRequest, initReq?: fm.InitReq): Promise<UpdateWithdrawAddressReviewResponse> {
     return fm.fetchReq<UpdateWithdrawAddressReviewRequest, UpdateWithdrawAddressReviewResponse>(`/v1/update/withdraw/address/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCurrentFee(req: GetCurrentFeeRequest, initReq?: fm.InitReq): Promise<GetCurrentFeeResponse> {
+    return fm.fetchReq<GetCurrentFeeRequest, GetCurrentFeeResponse>(`/v1/get/current/fee`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

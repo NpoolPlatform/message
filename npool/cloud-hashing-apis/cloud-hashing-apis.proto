@@ -341,6 +341,13 @@ service CloudHashingApis {
             body: "*"
         };
     }
+
+    rpc GetCurrentFee (GetCurrentFeeRequest) returns (GetCurrentFeeResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/current/fee"
+            body: "*"
+        };
+    }
 }
 
 // Request body and response
@@ -942,3 +949,10 @@ message UpdateWithdrawAddressReviewResponse {
     WithdrawAddressReview Info = 10;
 }
 
+message GetCurrentFeeRequest {
+    string CoinTypeID = 10;
+}
+
+message GetCurrentFeeResponse {
+    double FeeAmount = 10;
+}
