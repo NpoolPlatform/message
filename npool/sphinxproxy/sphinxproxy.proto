@@ -144,6 +144,9 @@ message ProxyPluginRequest {
   // eth/usdt
   string  SignedRawTxHex                      = 152;
   string CID                                  = 160;
+
+  // gas fee
+  double Fee                                  = 170;
 }
 
 message ProxySignRequest {
@@ -183,6 +186,7 @@ enum TransactionType {
   Broadcast       = 6; // proxy -> plugin mpool push
   RegisterCoin    = 7; // plugin -> proxy
   SyncMsgState    = 8; // plugin -> proxy
+  GasFee          = 9; // get: plugin -> proxy, set: proxy -> plugin
 }
 
 enum TransactionState {

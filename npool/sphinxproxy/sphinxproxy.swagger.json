@@ -415,6 +415,11 @@
         },
         "CID": {
           "type": "string"
+        },
+        "Fee": {
+          "type": "number",
+          "format": "double",
+          "title": "gas fee"
         }
       },
       "description": "MpoolGetNonce WalletBalance MpoolPush .."
@@ -524,7 +529,8 @@
         "PreSign",
         "Broadcast",
         "RegisterCoin",
-        "SyncMsgState"
+        "SyncMsgState",
+        "GasFee"
       ],
       "default": "Invalid"
     },

@@ -215,6 +215,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx-plugin-v1-MsgTx) |  | btc |
 | SignedRawTxHex | [string](#string) |  | eth/usdt |
 | CID | [string](#string) |  |  |
+| Fee | [double](#double) |  | gas fee |
 
 
 
@@ -390,6 +391,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Broadcast | 6 | proxy -&gt; plugin mpool push |
 | RegisterCoin | 7 | plugin -&gt; proxy |
 | SyncMsgState | 8 | plugin -&gt; proxy |
+| GasFee | 9 | get: plugin -&gt; proxy, set: proxy -&gt; plugin |
 
 
  
@@ -576,6 +578,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx-plugin-v1-MsgTx) |  | btc |
 | SignedRawTxHex | [string](#string) |  | eth/usdt |
 | CID | [string](#string) |  |  |
+| Fee | [double](#double) |  | gas fee |
 
 
 
@@ -751,6 +754,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Broadcast | 6 | proxy -&gt; plugin mpool push |
 | RegisterCoin | 7 | plugin -&gt; proxy |
 | SyncMsgState | 8 | plugin -&gt; proxy |
+| GasFee | 9 | get: plugin -&gt; proxy, set: proxy -&gt; plugin |
 
 
  

@@ -18,6 +18,7 @@ export enum TransactionType {
   Broadcast = "Broadcast",
   RegisterCoin = "RegisterCoin",
   SyncMsgState = "SyncMsgState",
+  GasFee = "GasFee",
 }
 
 export enum TransactionState {
@@ -115,6 +116,7 @@ export type ProxyPluginRequest = {
   msgTx?: SphinxPluginV1Sphinxplugin.MsgTx
   signedRawTxHex?: string
   cID?: string
+  fee?: number
 }
 
 export type ProxySignRequest = {
