@@ -56,6 +56,8 @@
     - [GetOrdersByAppUserResponse](#cloud-hashing-apis-v1-GetOrdersByAppUserResponse)
     - [GetOrdersByGoodRequest](#cloud-hashing-apis-v1-GetOrdersByGoodRequest)
     - [GetOrdersByGoodResponse](#cloud-hashing-apis-v1-GetOrdersByGoodResponse)
+    - [GetOrdersByOtherAppRequest](#cloud-hashing-apis-v1-GetOrdersByOtherAppRequest)
+    - [GetOrdersByOtherAppResponse](#cloud-hashing-apis-v1-GetOrdersByOtherAppResponse)
     - [GetRecommendGoodsByAppRequest](#cloud-hashing-apis-v1-GetRecommendGoodsByAppRequest)
     - [GetRecommendGoodsByAppResponse](#cloud-hashing-apis-v1-GetRecommendGoodsByAppResponse)
     - [GetReferralsRequest](#cloud-hashing-apis-v1-GetReferralsRequest)
@@ -180,6 +182,8 @@
     - [GetOrdersByAppUserResponse](#cloud-hashing-apis-v1-GetOrdersByAppUserResponse)
     - [GetOrdersByGoodRequest](#cloud-hashing-apis-v1-GetOrdersByGoodRequest)
     - [GetOrdersByGoodResponse](#cloud-hashing-apis-v1-GetOrdersByGoodResponse)
+    - [GetOrdersByOtherAppRequest](#cloud-hashing-apis-v1-GetOrdersByOtherAppRequest)
+    - [GetOrdersByOtherAppResponse](#cloud-hashing-apis-v1-GetOrdersByOtherAppResponse)
     - [GetRecommendGoodsByAppRequest](#cloud-hashing-apis-v1-GetRecommendGoodsByAppRequest)
     - [GetRecommendGoodsByAppResponse](#cloud-hashing-apis-v1-GetRecommendGoodsByAppResponse)
     - [GetReferralsRequest](#cloud-hashing-apis-v1-GetReferralsRequest)
@@ -1055,6 +1059,36 @@
 
 
 
+<a name="cloud-hashing-apis-v1-GetOrdersByOtherAppRequest"></a>
+
+### GetOrdersByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-GetOrdersByOtherAppResponse"></a>
+
+### GetOrdersByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Order](#cloud-hashing-apis-v1-Order) | repeated |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-GetRecommendGoodsByAppRequest"></a>
 
 ### GetRecommendGoodsByAppRequest
@@ -2203,6 +2237,7 @@ Cloud Hashing Goods
 | GetOrder | [GetOrderRequest](#cloud-hashing-apis-v1-GetOrderRequest) | [GetOrderResponse](#cloud-hashing-apis-v1-GetOrderResponse) |  |
 | GetOrdersByAppUser | [GetOrdersByAppUserRequest](#cloud-hashing-apis-v1-GetOrdersByAppUserRequest) | [GetOrdersByAppUserResponse](#cloud-hashing-apis-v1-GetOrdersByAppUserResponse) |  |
 | GetOrdersByApp | [GetOrdersByAppRequest](#cloud-hashing-apis-v1-GetOrdersByAppRequest) | [GetOrdersByAppResponse](#cloud-hashing-apis-v1-GetOrdersByAppResponse) |  |
+| GetOrdersByOtherApp | [GetOrdersByOtherAppRequest](#cloud-hashing-apis-v1-GetOrdersByOtherAppRequest) | [GetOrdersByOtherAppResponse](#cloud-hashing-apis-v1-GetOrdersByOtherAppResponse) |  |
 | GetOrdersByGood | [GetOrdersByGoodRequest](#cloud-hashing-apis-v1-GetOrdersByGoodRequest) | [GetOrdersByGoodResponse](#cloud-hashing-apis-v1-GetOrdersByGoodResponse) |  |
 | Signup | [SignupRequest](#cloud-hashing-apis-v1-SignupRequest) | [SignupResponse](#cloud-hashing-apis-v1-SignupResponse) |  |
 | UpdatePassword | [UpdatePasswordRequest](#cloud-hashing-apis-v1-UpdatePasswordRequest) | [UpdatePasswordResponse](#cloud-hashing-apis-v1-UpdatePasswordResponse) |  |
@@ -3049,6 +3084,36 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud-hashing-apis-v1-GetOrdersByOtherAppRequest"></a>
+
+### GetOrdersByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-GetOrdersByOtherAppResponse"></a>
+
+### GetOrdersByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Order](#cloud-hashing-apis-v1-Order) | repeated |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-GetRecommendGoodsByAppRequest"></a>
 
 ### GetRecommendGoodsByAppRequest
@@ -4197,6 +4262,7 @@ Cloud Hashing Goods
 | GetOrder | [GetOrderRequest](#cloud-hashing-apis-v1-GetOrderRequest) | [GetOrderResponse](#cloud-hashing-apis-v1-GetOrderResponse) |  |
 | GetOrdersByAppUser | [GetOrdersByAppUserRequest](#cloud-hashing-apis-v1-GetOrdersByAppUserRequest) | [GetOrdersByAppUserResponse](#cloud-hashing-apis-v1-GetOrdersByAppUserResponse) |  |
 | GetOrdersByApp | [GetOrdersByAppRequest](#cloud-hashing-apis-v1-GetOrdersByAppRequest) | [GetOrdersByAppResponse](#cloud-hashing-apis-v1-GetOrdersByAppResponse) |  |
+| GetOrdersByOtherApp | [GetOrdersByOtherAppRequest](#cloud-hashing-apis-v1-GetOrdersByOtherAppRequest) | [GetOrdersByOtherAppResponse](#cloud-hashing-apis-v1-GetOrdersByOtherAppResponse) |  |
 | GetOrdersByGood | [GetOrdersByGoodRequest](#cloud-hashing-apis-v1-GetOrdersByGoodRequest) | [GetOrdersByGoodResponse](#cloud-hashing-apis-v1-GetOrdersByGoodResponse) |  |
 | Signup | [SignupRequest](#cloud-hashing-apis-v1-SignupRequest) | [SignupResponse](#cloud-hashing-apis-v1-SignupResponse) |  |
 | UpdatePassword | [UpdatePasswordRequest](#cloud-hashing-apis-v1-UpdatePasswordRequest) | [UpdatePasswordResponse](#cloud-hashing-apis-v1-UpdatePasswordResponse) |  |

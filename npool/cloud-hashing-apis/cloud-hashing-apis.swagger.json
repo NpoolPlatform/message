@@ -779,6 +779,38 @@
         ]
       }
     },
+    "/v1/get/orders/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingApis_GetOrdersByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetOrdersByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetOrdersByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/recommend/goods/by/app": {
       "post": {
         "operationId": "CloudHashingApis_GetRecommendGoodsByApp",
@@ -2987,6 +3019,25 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Referral"
+          }
+        }
+      }
+    },
+    "v1GetOrdersByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetOrdersByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/hashingapisv1Order"
           }
         }
       }
