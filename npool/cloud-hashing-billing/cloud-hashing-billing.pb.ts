@@ -401,6 +401,7 @@ export type CoinSetting = {
   userOfflineAccountID?: string
   userOnlineAccountID?: string
   goodIncomingAccountID?: string
+  gasProviderAccountID?: string
 }
 
 export type CreateCoinSettingRequest = {

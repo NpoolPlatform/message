@@ -1016,6 +1016,7 @@ message CoinSetting {
     string UserOfflineAccountID = 60;
     string UserOnlineAccountID = 70;
     string GoodIncomingAccountID = 80;
+    string GasProviderAccountID = 90;
 }
 
 message CreateCoinSettingRequest {

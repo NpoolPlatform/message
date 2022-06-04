@@ -556,6 +556,7 @@
 | UserOfflineAccountID | [string](#string) |  |  |
 | UserOnlineAccountID | [string](#string) |  |  |
 | GoodIncomingAccountID | [string](#string) |  |  |
+| GasProviderAccountID | [string](#string) |  |  |
 
 
 
@@ -3986,6 +3987,7 @@ Cloud Hashing Billing
 | UserOfflineAccountID | [string](#string) |  |  |
 | UserOnlineAccountID | [string](#string) |  |  |
 | GoodIncomingAccountID | [string](#string) |  |  |
+| GasProviderAccountID | [string](#string) |  |  |
 
 
 
