@@ -269,6 +269,16 @@ export type GetPaymentsByAppUserResponse = {
   infos?: Payment[]
 }
 
+export type GetPaymentsByAppUserStateRequest = {
+  appID?: string
+  userID?: string
+  state?: string
+}
+
+export type GetPaymentsByAppUserStateResponse = {
+  infos?: Payment[]
+}
+
 export type GetPaymentsRequest = {
 }
 
@@ -405,6 +415,9 @@ export class CloudHashingOrder {
   }
   static GetPaymentsByAppUser(req: GetPaymentsByAppUserRequest, initReq?: fm.InitReq): Promise<GetPaymentsByAppUserResponse> {
     return fm.fetchReq<GetPaymentsByAppUserRequest, GetPaymentsByAppUserResponse>(`/v1/get/payments/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetPaymentsByAppUserState(req: GetPaymentsByAppUserStateRequest, initReq?: fm.InitReq): Promise<GetPaymentsByAppUserStateResponse> {
+    return fm.fetchReq<GetPaymentsByAppUserStateRequest, GetPaymentsByAppUserStateResponse>(`/v1/get/payments/by/app/user/state`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetPayments(req: GetPaymentsRequest, initReq?: fm.InitReq): Promise<GetPaymentsResponse> {
     return fm.fetchReq<GetPaymentsRequest, GetPaymentsResponse>(`/v1/get/payments`, {...initReq, method: "POST", body: JSON.stringify(req)})

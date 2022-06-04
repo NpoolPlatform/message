@@ -843,6 +843,38 @@
         ]
       }
     },
+    "/v1/get/payments/by/app/user/state": {
+      "post": {
+        "operationId": "CloudHashingOrder_GetPaymentsByAppUserState",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetPaymentsByAppUserStateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetPaymentsByAppUserStateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingOrder"
+        ]
+      }
+    },
     "/v1/get/payments/by/other/app": {
       "post": {
         "operationId": "CloudHashingOrder_GetPaymentsByOtherApp",
@@ -1537,6 +1569,31 @@
       }
     },
     "v1GetPaymentsByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Payment"
+          }
+        }
+      }
+    },
+    "v1GetPaymentsByAppUserStateRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetPaymentsByAppUserStateResponse": {
       "type": "object",
       "properties": {
         "Infos": {
