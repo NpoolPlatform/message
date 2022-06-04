@@ -194,6 +194,7 @@ export type Payment = {
   finishAmount?: number
   userSetPaid?: boolean
   userPaymentTXID?: string
+  userSetCanceled?: boolean
 }
 
 export type CreatePaymentRequest = {

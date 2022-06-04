@@ -1179,6 +1179,7 @@ request body and response
 | FinishAmount | [double](#double) |  |  |
 | UserSetPaid | [bool](#bool) |  |  |
 | UserPaymentTXID | [string](#string) |  |  |
+| UserSetCanceled | [bool](#bool) |  |  |
 
 
 
@@ -2321,6 +2322,7 @@ request body and response
 | FinishAmount | [double](#double) |  |  |
 | UserSetPaid | [bool](#bool) |  |  |
 | UserPaymentTXID | [string](#string) |  |  |
+| UserSetCanceled | [bool](#bool) |  |  |
 
 
 
