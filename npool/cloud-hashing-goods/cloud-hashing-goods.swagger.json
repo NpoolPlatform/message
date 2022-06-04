@@ -2862,6 +2862,10 @@
         },
         "Visible": {
           "type": "boolean"
+        },
+        "PurchaseLimit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },

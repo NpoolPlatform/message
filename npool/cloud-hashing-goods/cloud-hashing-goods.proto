@@ -969,6 +969,7 @@ message AppGoodInfo {
     string InitAreaStrategy = 60;
     uint32 DisplayIndex = 70;
     bool Visible = 80;
+    int32 PurchaseLimit = 90;
 }
 
 message SetAppGoodPriceRequest {

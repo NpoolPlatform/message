@@ -422,6 +422,7 @@
 | InitAreaStrategy | [string](#string) |  |  |
 | DisplayIndex | [uint32](#uint32) |  |  |
 | Visible | [bool](#bool) |  |  |
+| PurchaseLimit | [int32](#int32) |  |  |
 
 
 
@@ -3524,6 +3525,7 @@ Cloud Hashing Goods
 | InitAreaStrategy | [string](#string) |  |  |
 | DisplayIndex | [uint32](#uint32) |  |  |
 | Visible | [bool](#bool) |  |  |
+| PurchaseLimit | [int32](#int32) |  |  |
 
 
 
