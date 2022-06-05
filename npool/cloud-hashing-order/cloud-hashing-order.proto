@@ -87,6 +87,12 @@ service CloudHashingOrder {
             body: "*"
         };
     }
+    rpc GetOrdersByOtherApp (GetOrdersByOtherAppRequest) returns  (GetOrdersByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/orders/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetOrdersByGood (GetOrdersByGoodRequest) returns  (GetOrdersByGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders/by/good"
@@ -325,6 +331,14 @@ message GetOrdersByAppRequest {
 }
 
 message GetOrdersByAppResponse {
+    repeated Order Infos = 10;
+}
+
+message GetOrdersByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetOrdersByOtherAppResponse {
     repeated Order Infos = 10;
 }
 

@@ -121,6 +121,14 @@ export type GetOrdersByAppResponse = {
   infos?: Order[]
 }
 
+export type GetOrdersByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetOrdersByOtherAppResponse = {
+  infos?: Order[]
+}
+
 export type GetOrdersByGoodRequest = {
   goodID?: string
 }
@@ -374,6 +382,9 @@ export class CloudHashingOrder {
   }
   static GetOrdersByApp(req: GetOrdersByAppRequest, initReq?: fm.InitReq): Promise<GetOrdersByAppResponse> {
     return fm.fetchReq<GetOrdersByAppRequest, GetOrdersByAppResponse>(`/v1/get/orders/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetOrdersByOtherApp(req: GetOrdersByOtherAppRequest, initReq?: fm.InitReq): Promise<GetOrdersByOtherAppResponse> {
+    return fm.fetchReq<GetOrdersByOtherAppRequest, GetOrdersByOtherAppResponse>(`/v1/get/orders/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetOrdersByGood(req: GetOrdersByGoodRequest, initReq?: fm.InitReq): Promise<GetOrdersByGoodResponse> {
     return fm.fetchReq<GetOrdersByGoodRequest, GetOrdersByGoodResponse>(`/v1/get/orders/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
