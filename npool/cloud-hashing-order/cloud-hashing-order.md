@@ -1214,6 +1214,8 @@ request body and response
 | UserSetPaid | [bool](#bool) |  |  |
 | UserPaymentTXID | [string](#string) |  |  |
 | UserSetCanceled | [bool](#bool) |  |  |
+| LocalCoinUSDCurrency | [double](#double) |  |  |
+| LiveCoinUSDCurrency | [double](#double) |  |  |
 
 
 
@@ -2388,6 +2390,8 @@ request body and response
 | UserSetPaid | [bool](#bool) |  |  |
 | UserPaymentTXID | [string](#string) |  |  |
 | UserSetCanceled | [bool](#bool) |  |  |
+| LocalCoinUSDCurrency | [double](#double) |  |  |
+| LiveCoinUSDCurrency | [double](#double) |  |  |
 
 
 

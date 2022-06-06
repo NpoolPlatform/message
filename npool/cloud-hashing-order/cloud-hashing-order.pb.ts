@@ -203,6 +203,8 @@ export type Payment = {
   userSetPaid?: boolean
   userPaymentTXID?: string
   userSetCanceled?: boolean
+  localCoinUSDCurrency?: number
+  liveCoinUSDCurrency?: number
 }
 
 export type CreatePaymentRequest = {

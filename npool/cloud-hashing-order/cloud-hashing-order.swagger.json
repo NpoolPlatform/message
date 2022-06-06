@@ -1879,6 +1879,14 @@
         },
         "UserSetCanceled": {
           "type": "boolean"
+        },
+        "LocalCoinUSDCurrency": {
+          "type": "number",
+          "format": "double"
+        },
+        "LiveCoinUSDCurrency": {
+          "type": "number",
+          "format": "double"
         }
       }
     },

@@ -416,6 +416,8 @@ message Payment {
     bool UserSetPaid = 130;
     string UserPaymentTXID = 140;
     bool UserSetCanceled = 150;
+    double LocalCoinUSDCurrency = 160;
+    double LiveCoinUSDCurrency = 170;
 }
 
 message CreatePaymentRequest {
