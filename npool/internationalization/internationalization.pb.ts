@@ -143,6 +143,7 @@ export type AppLang = {
   id?: string
   appID?: string
   langID?: string
+  mainLang?: boolean
 }
 
 export type CreateAppLangRequest = {

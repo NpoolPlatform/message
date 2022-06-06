@@ -303,6 +303,7 @@ message AppLang {
     string ID = 10;
     string AppID = 20;
     string LangID = 30;
+    bool MainLang = 40;
 }
 
 message CreateAppLangRequest {

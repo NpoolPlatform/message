@@ -169,6 +169,7 @@
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | LangID | [string](#string) |  |  |
+| MainLang | [bool](#bool) |  |  |
 
 
 
@@ -1033,6 +1034,7 @@ Service Name
 | ID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | LangID | [string](#string) |  |  |
+| MainLang | [bool](#bool) |  |  |
 
 
 

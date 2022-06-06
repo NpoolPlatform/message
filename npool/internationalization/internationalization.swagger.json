@@ -874,6 +874,9 @@
         },
         "LangID": {
           "type": "string"
+        },
+        "MainLang": {
+          "type": "boolean"
         }
       }
     },
