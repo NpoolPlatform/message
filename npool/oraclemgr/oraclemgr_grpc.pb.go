@@ -34,6 +34,14 @@ type OracleManagerClient interface {
 	ExistReward(ctx context.Context, in *ExistRewardRequest, opts ...grpc.CallOption) (*ExistRewardResponse, error)
 	ExistRewardConds(ctx context.Context, in *ExistRewardCondsRequest, opts ...grpc.CallOption) (*ExistRewardCondsResponse, error)
 	DeleteReward(ctx context.Context, in *DeleteRewardRequest, opts ...grpc.CallOption) (*DeleteRewardResponse, error)
+	CreateCurrency(ctx context.Context, in *CreateCurrencyRequest, opts ...grpc.CallOption) (*CreateCurrencyResponse, error)
+	CreateAppCurrency(ctx context.Context, in *CreateAppCurrencyRequest, opts ...grpc.CallOption) (*CreateAppCurrencyResponse, error)
+	UpdateCurrency(ctx context.Context, in *UpdateCurrencyRequest, opts ...grpc.CallOption) (*UpdateCurrencyResponse, error)
+	GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error)
+	GetCurrencyOnly(ctx context.Context, in *GetCurrencyOnlyRequest, opts ...grpc.CallOption) (*GetCurrencyOnlyResponse, error)
+	GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error)
+	GetAppCurrencies(ctx context.Context, in *GetAppCurrenciesRequest, opts ...grpc.CallOption) (*GetAppCurrenciesResponse, error)
+	DeleteCurrency(ctx context.Context, in *DeleteCurrencyRequest, opts ...grpc.CallOption) (*DeleteCurrencyResponse, error)
 }
 
 type oracleManagerClient struct {
@@ -134,6 +142,78 @@ func (c *oracleManagerClient) DeleteReward(ctx context.Context, in *DeleteReward
 	return out, nil
 }
 
+func (c *oracleManagerClient) CreateCurrency(ctx context.Context, in *CreateCurrencyRequest, opts ...grpc.CallOption) (*CreateCurrencyResponse, error) {
+	out := new(CreateCurrencyResponse)
+	err := c.cc.Invoke(ctx, "/oracle.manager.v1.OracleManager/CreateCurrency", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleManagerClient) CreateAppCurrency(ctx context.Context, in *CreateAppCurrencyRequest, opts ...grpc.CallOption) (*CreateAppCurrencyResponse, error) {
+	out := new(CreateAppCurrencyResponse)
+	err := c.cc.Invoke(ctx, "/oracle.manager.v1.OracleManager/CreateAppCurrency", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleManagerClient) UpdateCurrency(ctx context.Context, in *UpdateCurrencyRequest, opts ...grpc.CallOption) (*UpdateCurrencyResponse, error) {
+	out := new(UpdateCurrencyResponse)
+	err := c.cc.Invoke(ctx, "/oracle.manager.v1.OracleManager/UpdateCurrency", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleManagerClient) GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error) {
+	out := new(GetCurrencyResponse)
+	err := c.cc.Invoke(ctx, "/oracle.manager.v1.OracleManager/GetCurrency", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleManagerClient) GetCurrencyOnly(ctx context.Context, in *GetCurrencyOnlyRequest, opts ...grpc.CallOption) (*GetCurrencyOnlyResponse, error) {
+	out := new(GetCurrencyOnlyResponse)
+	err := c.cc.Invoke(ctx, "/oracle.manager.v1.OracleManager/GetCurrencyOnly", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleManagerClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error) {
+	out := new(GetCurrenciesResponse)
+	err := c.cc.Invoke(ctx, "/oracle.manager.v1.OracleManager/GetCurrencies", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleManagerClient) GetAppCurrencies(ctx context.Context, in *GetAppCurrenciesRequest, opts ...grpc.CallOption) (*GetAppCurrenciesResponse, error) {
+	out := new(GetAppCurrenciesResponse)
+	err := c.cc.Invoke(ctx, "/oracle.manager.v1.OracleManager/GetAppCurrencies", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleManagerClient) DeleteCurrency(ctx context.Context, in *DeleteCurrencyRequest, opts ...grpc.CallOption) (*DeleteCurrencyResponse, error) {
+	out := new(DeleteCurrencyResponse)
+	err := c.cc.Invoke(ctx, "/oracle.manager.v1.OracleManager/DeleteCurrency", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OracleManagerServer is the server API for OracleManager service.
 // All implementations must embed UnimplementedOracleManagerServer
 // for forward compatibility
@@ -148,6 +228,14 @@ type OracleManagerServer interface {
 	ExistReward(context.Context, *ExistRewardRequest) (*ExistRewardResponse, error)
 	ExistRewardConds(context.Context, *ExistRewardCondsRequest) (*ExistRewardCondsResponse, error)
 	DeleteReward(context.Context, *DeleteRewardRequest) (*DeleteRewardResponse, error)
+	CreateCurrency(context.Context, *CreateCurrencyRequest) (*CreateCurrencyResponse, error)
+	CreateAppCurrency(context.Context, *CreateAppCurrencyRequest) (*CreateAppCurrencyResponse, error)
+	UpdateCurrency(context.Context, *UpdateCurrencyRequest) (*UpdateCurrencyResponse, error)
+	GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error)
+	GetCurrencyOnly(context.Context, *GetCurrencyOnlyRequest) (*GetCurrencyOnlyResponse, error)
+	GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error)
+	GetAppCurrencies(context.Context, *GetAppCurrenciesRequest) (*GetAppCurrenciesResponse, error)
+	DeleteCurrency(context.Context, *DeleteCurrencyRequest) (*DeleteCurrencyResponse, error)
 	mustEmbedUnimplementedOracleManagerServer()
 }
 
@@ -184,6 +272,30 @@ func (UnimplementedOracleManagerServer) ExistRewardConds(context.Context, *Exist
 }
 func (UnimplementedOracleManagerServer) DeleteReward(context.Context, *DeleteRewardRequest) (*DeleteRewardResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteReward not implemented")
+}
+func (UnimplementedOracleManagerServer) CreateCurrency(context.Context, *CreateCurrencyRequest) (*CreateCurrencyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCurrency not implemented")
+}
+func (UnimplementedOracleManagerServer) CreateAppCurrency(context.Context, *CreateAppCurrencyRequest) (*CreateAppCurrencyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppCurrency not implemented")
+}
+func (UnimplementedOracleManagerServer) UpdateCurrency(context.Context, *UpdateCurrencyRequest) (*UpdateCurrencyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCurrency not implemented")
+}
+func (UnimplementedOracleManagerServer) GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCurrency not implemented")
+}
+func (UnimplementedOracleManagerServer) GetCurrencyOnly(context.Context, *GetCurrencyOnlyRequest) (*GetCurrencyOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCurrencyOnly not implemented")
+}
+func (UnimplementedOracleManagerServer) GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCurrencies not implemented")
+}
+func (UnimplementedOracleManagerServer) GetAppCurrencies(context.Context, *GetAppCurrenciesRequest) (*GetAppCurrenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppCurrencies not implemented")
+}
+func (UnimplementedOracleManagerServer) DeleteCurrency(context.Context, *DeleteCurrencyRequest) (*DeleteCurrencyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteCurrency not implemented")
 }
 func (UnimplementedOracleManagerServer) mustEmbedUnimplementedOracleManagerServer() {}
 
@@ -378,6 +490,150 @@ func _OracleManager_DeleteReward_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OracleManager_CreateCurrency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCurrencyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleManagerServer).CreateCurrency(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/oracle.manager.v1.OracleManager/CreateCurrency",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleManagerServer).CreateCurrency(ctx, req.(*CreateCurrencyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleManager_CreateAppCurrency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppCurrencyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleManagerServer).CreateAppCurrency(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/oracle.manager.v1.OracleManager/CreateAppCurrency",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleManagerServer).CreateAppCurrency(ctx, req.(*CreateAppCurrencyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleManager_UpdateCurrency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCurrencyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleManagerServer).UpdateCurrency(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/oracle.manager.v1.OracleManager/UpdateCurrency",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleManagerServer).UpdateCurrency(ctx, req.(*UpdateCurrencyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleManager_GetCurrency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCurrencyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleManagerServer).GetCurrency(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/oracle.manager.v1.OracleManager/GetCurrency",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleManagerServer).GetCurrency(ctx, req.(*GetCurrencyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleManager_GetCurrencyOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCurrencyOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleManagerServer).GetCurrencyOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/oracle.manager.v1.OracleManager/GetCurrencyOnly",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleManagerServer).GetCurrencyOnly(ctx, req.(*GetCurrencyOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleManager_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCurrenciesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleManagerServer).GetCurrencies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/oracle.manager.v1.OracleManager/GetCurrencies",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleManagerServer).GetCurrencies(ctx, req.(*GetCurrenciesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleManager_GetAppCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppCurrenciesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleManagerServer).GetAppCurrencies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/oracle.manager.v1.OracleManager/GetAppCurrencies",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleManagerServer).GetAppCurrencies(ctx, req.(*GetAppCurrenciesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleManager_DeleteCurrency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteCurrencyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleManagerServer).DeleteCurrency(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/oracle.manager.v1.OracleManager/DeleteCurrency",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleManagerServer).DeleteCurrency(ctx, req.(*DeleteCurrencyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OracleManager_ServiceDesc is the grpc.ServiceDesc for OracleManager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -424,6 +680,38 @@ var OracleManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteReward",
 			Handler:    _OracleManager_DeleteReward_Handler,
+		},
+		{
+			MethodName: "CreateCurrency",
+			Handler:    _OracleManager_CreateCurrency_Handler,
+		},
+		{
+			MethodName: "CreateAppCurrency",
+			Handler:    _OracleManager_CreateAppCurrency_Handler,
+		},
+		{
+			MethodName: "UpdateCurrency",
+			Handler:    _OracleManager_UpdateCurrency_Handler,
+		},
+		{
+			MethodName: "GetCurrency",
+			Handler:    _OracleManager_GetCurrency_Handler,
+		},
+		{
+			MethodName: "GetCurrencyOnly",
+			Handler:    _OracleManager_GetCurrencyOnly_Handler,
+		},
+		{
+			MethodName: "GetCurrencies",
+			Handler:    _OracleManager_GetCurrencies_Handler,
+		},
+		{
+			MethodName: "GetAppCurrencies",
+			Handler:    _OracleManager_GetAppCurrencies_Handler,
+		},
+		{
+			MethodName: "DeleteCurrency",
+			Handler:    _OracleManager_DeleteCurrency_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

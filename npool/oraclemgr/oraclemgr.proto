@@ -4,7 +4,6 @@ package oracle.manager.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/oraclemgr";
 
-import "google/protobuf/struct.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -76,6 +75,62 @@ service OracleManager {
     rpc DeleteReward (DeleteRewardRequest) returns (DeleteRewardResponse) {
         option (google.api.http) = {
             post: "/v1/delete/reward"
+            body: "*"
+        };
+    }
+
+    rpc CreateCurrency (CreateCurrencyRequest) returns (CreateCurrencyResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/currency"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppCurrency (CreateAppCurrencyRequest) returns (CreateAppCurrencyResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/currency"
+            body: "*"
+        };
+    }
+
+    rpc UpdateCurrency (UpdateCurrencyRequest) returns (UpdateCurrencyResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/currency"
+            body: "*"
+        };
+    }
+
+    rpc GetCurrency (GetCurrencyRequest) returns (GetCurrencyResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/currency"
+            body: "*"
+        };
+    }
+
+    rpc GetCurrencyOnly (GetCurrencyOnlyRequest) returns (GetCurrencyOnlyResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/currency/only"
+            body: "*"
+        };
+    }
+
+    rpc GetCurrencies (GetCurrenciesRequest) returns (GetCurrenciesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/currencies"
+            body: "*"
+        };
+    }
+
+    rpc GetAppCurrencies (GetAppCurrenciesRequest) returns (GetAppCurrenciesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/currencies"
+            body: "*"
+        };
+    }
+
+    rpc DeleteCurrency (DeleteCurrencyRequest) returns (DeleteCurrencyResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/currency"
             body: "*"
         };
     }
@@ -168,4 +223,77 @@ message DeleteRewardRequest {
 
 message DeleteRewardResponse {
     Reward Info = 10;
+}
+
+message Currency {
+    string ID = 10;
+    string AppID = 20;
+    string CoinTypeID = 30;
+    double PriceVSUSDT = 40;
+    double AppPriceVSUSDT = 50;
+}
+
+message CreateCurrencyRequest {
+    Currency Info = 10;
+}
+
+message CreateCurrencyResponse {
+    Currency Info = 10;
+}
+
+message CreateAppCurrencyRequest {
+    string TargetAppID = 10;
+    Currency Info = 20;
+}
+
+message CreateAppCurrencyResponse {
+    Currency Info = 10;
+}
+
+message UpdateCurrencyRequest {
+    Currency Info = 10;
+}
+
+message UpdateCurrencyResponse {
+    Currency Info = 10;
+}
+
+message GetCurrencyRequest {
+    string ID = 10;
+}
+
+message GetCurrencyResponse {
+    Currency Info = 10;
+}
+
+message GetCurrencyOnlyRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message GetCurrencyOnlyResponse {
+    Currency Info = 10;
+}
+
+message GetCurrenciesRequest {
+    string AppID = 10;
+}
+
+message GetCurrenciesResponse {
+    repeated Currency Infos = 10;
+}
+
+message GetAppCurrenciesRequest {
+    string TargetAppID = 10;
+}
+
+message GetAppCurrenciesResponse {
+    repeated Currency Infos = 10;
+}
+
+message DeleteCurrencyRequest {
+    string ID = 10;
+}
+
+message DeleteCurrencyResponse {
+    Currency Info = 10;
 }

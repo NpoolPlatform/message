@@ -11,6 +11,70 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/app/currency": {
+      "post": {
+        "operationId": "OracleManager_CreateAppCurrency",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppCurrencyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppCurrencyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
+    "/v1/create/currency": {
+      "post": {
+        "operationId": "OracleManager_CreateCurrency",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateCurrencyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateCurrencyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
     "/v1/create/reward": {
       "post": {
         "operationId": "OracleManager_CreateReward",
@@ -67,6 +131,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateRewardsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
+    "/v1/delete/currency": {
+      "post": {
+        "operationId": "OracleManager_DeleteCurrency",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteCurrencyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteCurrencyRequest"
             }
           }
         ],
@@ -171,6 +267,134 @@
         ]
       }
     },
+    "/v1/get/app/currencies": {
+      "post": {
+        "operationId": "OracleManager_GetAppCurrencies",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppCurrenciesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppCurrenciesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
+    "/v1/get/currencies": {
+      "post": {
+        "operationId": "OracleManager_GetCurrencies",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCurrenciesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCurrenciesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
+    "/v1/get/currency": {
+      "post": {
+        "operationId": "OracleManager_GetCurrency",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCurrencyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCurrencyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
+    "/v1/get/currency/only": {
+      "post": {
+        "operationId": "OracleManager_GetCurrencyOnly",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCurrencyOnlyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCurrencyOnlyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
     "/v1/get/reward": {
       "post": {
         "operationId": "OracleManager_GetReward",
@@ -259,6 +483,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetRewardsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OracleManager"
+        ]
+      }
+    },
+    "/v1/update/currency": {
+      "post": {
+        "operationId": "OracleManager_UpdateCurrency",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCurrencyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCurrencyRequest"
             }
           }
         ],
@@ -374,6 +630,41 @@
         }
       }
     },
+    "v1CreateAppCurrencyRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1Currency"
+        }
+      }
+    },
+    "v1CreateAppCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Currency"
+        }
+      }
+    },
+    "v1CreateCurrencyRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Currency"
+        }
+      }
+    },
+    "v1CreateCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Currency"
+        }
+      }
+    },
     "v1CreateRewardRequest": {
       "type": "object",
       "properties": {
@@ -409,6 +700,44 @@
           "items": {
             "$ref": "#/definitions/v1Reward"
           }
+        }
+      }
+    },
+    "v1Currency": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "PriceVSUSDT": {
+          "type": "number",
+          "format": "double"
+        },
+        "AppPriceVSUSDT": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1DeleteCurrencyRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Currency"
         }
       }
     },
@@ -471,6 +800,79 @@
         },
         "Val": {
           "type": "object"
+        }
+      }
+    },
+    "v1GetAppCurrenciesRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppCurrenciesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Currency"
+          }
+        }
+      }
+    },
+    "v1GetCurrenciesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetCurrenciesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Currency"
+          }
+        }
+      }
+    },
+    "v1GetCurrencyOnlyRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        }
+      }
+    },
+    "v1GetCurrencyOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Currency"
+        }
+      }
+    },
+    "v1GetCurrencyRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Currency"
         }
       }
     },
@@ -555,6 +957,22 @@
         "DailyReward": {
           "type": "number",
           "format": "double"
+        }
+      }
+    },
+    "v1UpdateCurrencyRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Currency"
+        }
+      }
+    },
+    "v1UpdateCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Currency"
         }
       }
     },
