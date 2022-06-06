@@ -15,9 +15,10 @@
     - [CreateRewardResponse](#oracle-manager-v1-CreateRewardResponse)
     - [CreateRewardsRequest](#oracle-manager-v1-CreateRewardsRequest)
     - [CreateRewardsResponse](#oracle-manager-v1-CreateRewardsResponse)
+    - [CurrenciesRequest](#oracle-manager-v1-CurrenciesRequest)
+    - [CurrenciesResponse](#oracle-manager-v1-CurrenciesResponse)
     - [Currency](#oracle-manager-v1-Currency)
-    - [CurrencyRequest](#oracle-manager-v1-CurrencyRequest)
-    - [CurrencyResponse](#oracle-manager-v1-CurrencyResponse)
+    - [CurrencyAmount](#oracle-manager-v1-CurrencyAmount)
     - [DeleteCurrencyRequest](#oracle-manager-v1-DeleteCurrencyRequest)
     - [DeleteCurrencyResponse](#oracle-manager-v1-DeleteCurrencyResponse)
     - [DeleteRewardRequest](#oracle-manager-v1-DeleteRewardRequest)
@@ -66,9 +67,10 @@
     - [CreateRewardResponse](#oracle-manager-v1-CreateRewardResponse)
     - [CreateRewardsRequest](#oracle-manager-v1-CreateRewardsRequest)
     - [CreateRewardsResponse](#oracle-manager-v1-CreateRewardsResponse)
+    - [CurrenciesRequest](#oracle-manager-v1-CurrenciesRequest)
+    - [CurrenciesResponse](#oracle-manager-v1-CurrenciesResponse)
     - [Currency](#oracle-manager-v1-Currency)
-    - [CurrencyRequest](#oracle-manager-v1-CurrencyRequest)
-    - [CurrencyResponse](#oracle-manager-v1-CurrencyResponse)
+    - [CurrencyAmount](#oracle-manager-v1-CurrencyAmount)
     - [DeleteCurrencyRequest](#oracle-manager-v1-DeleteCurrencyRequest)
     - [DeleteCurrencyResponse](#oracle-manager-v1-DeleteCurrencyResponse)
     - [DeleteRewardRequest](#oracle-manager-v1-DeleteRewardRequest)
@@ -283,6 +285,37 @@
 
 
 
+<a name="oracle-manager-v1-CurrenciesRequest"></a>
+
+### CurrenciesRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| CoinTypeIDs | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="oracle-manager-v1-CurrenciesResponse"></a>
+
+### CurrenciesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [CurrencyAmount](#oracle-manager-v1-CurrencyAmount) | repeated |  |
+
+
+
+
+
+
 <a name="oracle-manager-v1-Currency"></a>
 
 ### Currency
@@ -302,30 +335,15 @@
 
 
 
-<a name="oracle-manager-v1-CurrencyRequest"></a>
+<a name="oracle-manager-v1-CurrencyAmount"></a>
 
-### CurrencyRequest
+### CurrencyAmount
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="oracle-manager-v1-CurrencyResponse"></a>
-
-### CurrencyResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
 | Amount | [double](#double) |  |  |
 
 
@@ -878,7 +896,7 @@
 | GetCurrencies | [GetCurrenciesRequest](#oracle-manager-v1-GetCurrenciesRequest) | [GetCurrenciesResponse](#oracle-manager-v1-GetCurrenciesResponse) |  |
 | GetAppCurrencies | [GetAppCurrenciesRequest](#oracle-manager-v1-GetAppCurrenciesRequest) | [GetAppCurrenciesResponse](#oracle-manager-v1-GetAppCurrenciesResponse) |  |
 | DeleteCurrency | [DeleteCurrencyRequest](#oracle-manager-v1-DeleteCurrencyRequest) | [DeleteCurrencyResponse](#oracle-manager-v1-DeleteCurrencyResponse) |  |
-| Currency | [CurrencyRequest](#oracle-manager-v1-CurrencyRequest) | [CurrencyResponse](#oracle-manager-v1-CurrencyResponse) |  |
+| Currencies | [CurrenciesRequest](#oracle-manager-v1-CurrenciesRequest) | [CurrenciesResponse](#oracle-manager-v1-CurrenciesResponse) |  |
 
  
 
@@ -1058,6 +1076,37 @@
 
 
 
+<a name="oracle-manager-v1-CurrenciesRequest"></a>
+
+### CurrenciesRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| CoinTypeIDs | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="oracle-manager-v1-CurrenciesResponse"></a>
+
+### CurrenciesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [CurrencyAmount](#oracle-manager-v1-CurrencyAmount) | repeated |  |
+
+
+
+
+
+
 <a name="oracle-manager-v1-Currency"></a>
 
 ### Currency
@@ -1077,30 +1126,15 @@
 
 
 
-<a name="oracle-manager-v1-CurrencyRequest"></a>
+<a name="oracle-manager-v1-CurrencyAmount"></a>
 
-### CurrencyRequest
+### CurrencyAmount
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| AppID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="oracle-manager-v1-CurrencyResponse"></a>
-
-### CurrencyResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
 | Amount | [double](#double) |  |  |
 
 
@@ -1653,7 +1687,7 @@
 | GetCurrencies | [GetCurrenciesRequest](#oracle-manager-v1-GetCurrenciesRequest) | [GetCurrenciesResponse](#oracle-manager-v1-GetCurrenciesResponse) |  |
 | GetAppCurrencies | [GetAppCurrenciesRequest](#oracle-manager-v1-GetAppCurrenciesRequest) | [GetAppCurrenciesResponse](#oracle-manager-v1-GetAppCurrenciesResponse) |  |
 | DeleteCurrency | [DeleteCurrencyRequest](#oracle-manager-v1-DeleteCurrencyRequest) | [DeleteCurrencyResponse](#oracle-manager-v1-DeleteCurrencyResponse) |  |
-| Currency | [CurrencyRequest](#oracle-manager-v1-CurrencyRequest) | [CurrencyResponse](#oracle-manager-v1-CurrencyResponse) |  |
+| Currencies | [CurrenciesRequest](#oracle-manager-v1-CurrenciesRequest) | [CurrenciesResponse](#oracle-manager-v1-CurrenciesResponse) |  |
 
  
 

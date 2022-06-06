@@ -42,7 +42,7 @@ type OracleManagerClient interface {
 	GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error)
 	GetAppCurrencies(ctx context.Context, in *GetAppCurrenciesRequest, opts ...grpc.CallOption) (*GetAppCurrenciesResponse, error)
 	DeleteCurrency(ctx context.Context, in *DeleteCurrencyRequest, opts ...grpc.CallOption) (*DeleteCurrencyResponse, error)
-	Currency(ctx context.Context, in *CurrencyRequest, opts ...grpc.CallOption) (*CurrencyResponse, error)
+	Currencies(ctx context.Context, in *CurrenciesRequest, opts ...grpc.CallOption) (*CurrenciesResponse, error)
 }
 
 type oracleManagerClient struct {
@@ -215,9 +215,9 @@ func (c *oracleManagerClient) DeleteCurrency(ctx context.Context, in *DeleteCurr
 	return out, nil
 }
 
-func (c *oracleManagerClient) Currency(ctx context.Context, in *CurrencyRequest, opts ...grpc.CallOption) (*CurrencyResponse, error) {
-	out := new(CurrencyResponse)
-	err := c.cc.Invoke(ctx, "/oracle.manager.v1.OracleManager/Currency", in, out, opts...)
+func (c *oracleManagerClient) Currencies(ctx context.Context, in *CurrenciesRequest, opts ...grpc.CallOption) (*CurrenciesResponse, error) {
+	out := new(CurrenciesResponse)
+	err := c.cc.Invoke(ctx, "/oracle.manager.v1.OracleManager/Currencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -246,7 +246,7 @@ type OracleManagerServer interface {
 	GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error)
 	GetAppCurrencies(context.Context, *GetAppCurrenciesRequest) (*GetAppCurrenciesResponse, error)
 	DeleteCurrency(context.Context, *DeleteCurrencyRequest) (*DeleteCurrencyResponse, error)
-	Currency(context.Context, *CurrencyRequest) (*CurrencyResponse, error)
+	Currencies(context.Context, *CurrenciesRequest) (*CurrenciesResponse, error)
 	mustEmbedUnimplementedOracleManagerServer()
 }
 
@@ -308,8 +308,8 @@ func (UnimplementedOracleManagerServer) GetAppCurrencies(context.Context, *GetAp
 func (UnimplementedOracleManagerServer) DeleteCurrency(context.Context, *DeleteCurrencyRequest) (*DeleteCurrencyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCurrency not implemented")
 }
-func (UnimplementedOracleManagerServer) Currency(context.Context, *CurrencyRequest) (*CurrencyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Currency not implemented")
+func (UnimplementedOracleManagerServer) Currencies(context.Context, *CurrenciesRequest) (*CurrenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Currencies not implemented")
 }
 func (UnimplementedOracleManagerServer) mustEmbedUnimplementedOracleManagerServer() {}
 
@@ -648,20 +648,20 @@ func _OracleManager_DeleteCurrency_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OracleManager_Currency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CurrencyRequest)
+func _OracleManager_Currencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CurrenciesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OracleManagerServer).Currency(ctx, in)
+		return srv.(OracleManagerServer).Currencies(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/oracle.manager.v1.OracleManager/Currency",
+		FullMethod: "/oracle.manager.v1.OracleManager/Currencies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OracleManagerServer).Currency(ctx, req.(*CurrencyRequest))
+		return srv.(OracleManagerServer).Currencies(ctx, req.(*CurrenciesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -746,8 +746,8 @@ var OracleManager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _OracleManager_DeleteCurrency_Handler,
 		},
 		{
-			MethodName: "Currency",
-			Handler:    _OracleManager_Currency_Handler,
+			MethodName: "Currencies",
+			Handler:    _OracleManager_Currencies_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

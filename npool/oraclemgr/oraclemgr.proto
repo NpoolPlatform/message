@@ -135,7 +135,7 @@ service OracleManager {
         };
     }
 
-    rpc Currency (CurrencyRequest) returns (CurrencyResponse) {
+    rpc Currencies (CurrenciesRequest) returns (CurrenciesResponse) {
         option (google.api.http) = {
             post: "/v1/currency"
             body: "*"
@@ -313,11 +313,16 @@ message DeleteCurrencyResponse {
     Currency Info = 10;
 }
 
-message CurrencyRequest {
-    string AppID = 10;
-    string CoinTypeID = 20;
+message CurrencyAmount {
+    string CoinTypeID = 10;
+    double Amount = 20;
 }
 
-message CurrencyResponse {
-    double Amount = 10;
+message CurrenciesRequest {
+    string AppID = 10;
+    repeated string CoinTypeIDs = 20;
+}
+
+message CurrenciesResponse {
+    repeated CurrencyAmount Infos = 10;
 }
