@@ -177,6 +177,15 @@ export type DeleteCurrencyResponse = {
   info?: Currency
 }
 
+export type CurrencyRequest = {
+  appID?: string
+  coinTypeID?: string
+}
+
+export type CurrencyResponse = {
+  amount?: number
+}
+
 export class OracleManager {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -231,5 +240,8 @@ export class OracleManager {
   }
   static DeleteCurrency(req: DeleteCurrencyRequest, initReq?: fm.InitReq): Promise<DeleteCurrencyResponse> {
     return fm.fetchReq<DeleteCurrencyRequest, DeleteCurrencyResponse>(`/v1/delete/currency`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static Currency(req: CurrencyRequest, initReq?: fm.InitReq): Promise<CurrencyResponse> {
+    return fm.fetchReq<CurrencyRequest, CurrencyResponse>(`/v1/currency`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
