@@ -55,6 +55,12 @@ service Internationalization {
             body: "*"
         };
     }
+    rpc UpdateAppLang (UpdateAppLangRequest) returns (UpdateAppLangResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/lang"
+            body: "*"
+        };
+    }
     rpc GetAppLang (GetAppLangRequest) returns (GetAppLangResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/lang"
@@ -323,6 +329,13 @@ message CreateAppLangForOtherAppResponse {
     AppLang Info = 10;
 }
 
+message UpdateAppLangRequest {
+    AppLang Info = 10;
+}
+
+message UpdateAppLangResponse {
+    AppLang Info = 10;
+}
 
 message GetAppLangRequest {
     string ID = 10;

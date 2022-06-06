@@ -49,6 +49,8 @@
     - [GetMessagesByOtherAppLangResponse](#internationalization-v1-GetMessagesByOtherAppLangResponse)
     - [Lang](#internationalization-v1-Lang)
     - [Message](#internationalization-v1-Message)
+    - [UpdateAppLangRequest](#internationalization-v1-UpdateAppLangRequest)
+    - [UpdateAppLangResponse](#internationalization-v1-UpdateAppLangResponse)
     - [UpdateCountryRequest](#internationalization-v1-UpdateCountryRequest)
     - [UpdateCountryResponse](#internationalization-v1-UpdateCountryResponse)
     - [UpdateLangRequest](#internationalization-v1-UpdateLangRequest)
@@ -106,6 +108,8 @@
     - [GetMessagesByOtherAppLangResponse](#internationalization-v1-GetMessagesByOtherAppLangResponse)
     - [Lang](#internationalization-v1-Lang)
     - [Message](#internationalization-v1-Message)
+    - [UpdateAppLangRequest](#internationalization-v1-UpdateAppLangRequest)
+    - [UpdateAppLangResponse](#internationalization-v1-UpdateAppLangResponse)
     - [UpdateCountryRequest](#internationalization-v1-UpdateCountryRequest)
     - [UpdateCountryResponse](#internationalization-v1-UpdateCountryResponse)
     - [UpdateLangRequest](#internationalization-v1-UpdateLangRequest)
@@ -823,6 +827,36 @@
 
 
 
+<a name="internationalization-v1-UpdateAppLangRequest"></a>
+
+### UpdateAppLangRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppLang](#internationalization-v1-AppLang) |  |  |
+
+
+
+
+
+
+<a name="internationalization-v1-UpdateAppLangResponse"></a>
+
+### UpdateAppLangResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppLang](#internationalization-v1-AppLang) |  |  |
+
+
+
+
+
+
 <a name="internationalization-v1-UpdateCountryRequest"></a>
 
 ### UpdateCountryRequest
@@ -963,6 +997,7 @@ Service Name
 | GetLangs | [GetLangsRequest](#internationalization-v1-GetLangsRequest) | [GetLangsResponse](#internationalization-v1-GetLangsResponse) |  |
 | CreateAppLang | [CreateAppLangRequest](#internationalization-v1-CreateAppLangRequest) | [CreateAppLangResponse](#internationalization-v1-CreateAppLangResponse) |  |
 | CreateAppLangForOtherApp | [CreateAppLangForOtherAppRequest](#internationalization-v1-CreateAppLangForOtherAppRequest) | [CreateAppLangForOtherAppResponse](#internationalization-v1-CreateAppLangForOtherAppResponse) |  |
+| UpdateAppLang | [UpdateAppLangRequest](#internationalization-v1-UpdateAppLangRequest) | [UpdateAppLangResponse](#internationalization-v1-UpdateAppLangResponse) |  |
 | GetAppLang | [GetAppLangRequest](#internationalization-v1-GetAppLangRequest) | [GetAppLangResponse](#internationalization-v1-GetAppLangResponse) |  |
 | GetAppLangsByApp | [GetAppLangsByAppRequest](#internationalization-v1-GetAppLangsByAppRequest) | [GetAppLangsByAppResponse](#internationalization-v1-GetAppLangsByAppResponse) |  |
 | GetAppLangInfosByApp | [GetAppLangInfosByAppRequest](#internationalization-v1-GetAppLangInfosByAppRequest) | [GetAppLangInfosByAppResponse](#internationalization-v1-GetAppLangInfosByAppResponse) |  |
@@ -1688,6 +1723,36 @@ Service Name
 
 
 
+<a name="internationalization-v1-UpdateAppLangRequest"></a>
+
+### UpdateAppLangRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppLang](#internationalization-v1-AppLang) |  |  |
+
+
+
+
+
+
+<a name="internationalization-v1-UpdateAppLangResponse"></a>
+
+### UpdateAppLangResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [AppLang](#internationalization-v1-AppLang) |  |  |
+
+
+
+
+
+
 <a name="internationalization-v1-UpdateCountryRequest"></a>
 
 ### UpdateCountryRequest
@@ -1828,6 +1893,7 @@ Service Name
 | GetLangs | [GetLangsRequest](#internationalization-v1-GetLangsRequest) | [GetLangsResponse](#internationalization-v1-GetLangsResponse) |  |
 | CreateAppLang | [CreateAppLangRequest](#internationalization-v1-CreateAppLangRequest) | [CreateAppLangResponse](#internationalization-v1-CreateAppLangResponse) |  |
 | CreateAppLangForOtherApp | [CreateAppLangForOtherAppRequest](#internationalization-v1-CreateAppLangForOtherAppRequest) | [CreateAppLangForOtherAppResponse](#internationalization-v1-CreateAppLangForOtherAppResponse) |  |
+| UpdateAppLang | [UpdateAppLangRequest](#internationalization-v1-UpdateAppLangRequest) | [UpdateAppLangResponse](#internationalization-v1-UpdateAppLangResponse) |  |
 | GetAppLang | [GetAppLangRequest](#internationalization-v1-GetAppLangRequest) | [GetAppLangResponse](#internationalization-v1-GetAppLangResponse) |  |
 | GetAppLangsByApp | [GetAppLangsByAppRequest](#internationalization-v1-GetAppLangsByAppRequest) | [GetAppLangsByAppResponse](#internationalization-v1-GetAppLangsByAppResponse) |  |
 | GetAppLangInfosByApp | [GetAppLangInfosByAppRequest](#internationalization-v1-GetAppLangInfosByAppRequest) | [GetAppLangInfosByAppResponse](#internationalization-v1-GetAppLangInfosByAppResponse) |  |
