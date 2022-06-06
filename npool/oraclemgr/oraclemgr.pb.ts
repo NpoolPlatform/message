@@ -191,6 +191,15 @@ export type CurrenciesResponse = {
   infos?: CurrencyAmount[]
 }
 
+export type CurrencyRequest = {
+  appID?: string
+  coinTypeID?: string
+}
+
+export type CurrencyResponse = {
+  info?: CurrencyAmount
+}
+
 export class OracleManager {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -247,6 +256,9 @@ export class OracleManager {
     return fm.fetchReq<DeleteCurrencyRequest, DeleteCurrencyResponse>(`/v1/delete/currency`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static Currencies(req: CurrenciesRequest, initReq?: fm.InitReq): Promise<CurrenciesResponse> {
-    return fm.fetchReq<CurrenciesRequest, CurrenciesResponse>(`/v1/currency`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CurrenciesRequest, CurrenciesResponse>(`/v1/currencies`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static Currency(req: CurrencyRequest, initReq?: fm.InitReq): Promise<CurrencyResponse> {
+    return fm.fetchReq<CurrencyRequest, CurrencyResponse>(`/v1/currency`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
