@@ -276,18 +276,24 @@ message GetCurrencyOnlyResponse {
 
 message GetCurrenciesRequest {
     string AppID = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
 }
 
 message GetCurrenciesResponse {
     repeated Currency Infos = 10;
+    int32 Total = 20;
 }
 
 message GetAppCurrenciesRequest {
     string TargetAppID = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
 }
 
 message GetAppCurrenciesResponse {
     repeated Currency Infos = 10;
+    int32 Total = 20;
 }
 
 message DeleteCurrencyRequest {

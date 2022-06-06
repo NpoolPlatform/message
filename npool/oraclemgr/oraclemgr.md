@@ -439,6 +439,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
 
 
 
@@ -454,6 +456,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [Currency](#oracle-manager-v1-Currency) | repeated |  |
+| Total | [int32](#int32) |  |  |
 
 
 
@@ -469,6 +472,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
 
 
 
@@ -484,6 +489,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [Currency](#oracle-manager-v1-Currency) | repeated |  |
+| Total | [int32](#int32) |  |  |
 
 
 
@@ -1142,6 +1148,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
 
 
 
@@ -1157,6 +1165,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [Currency](#oracle-manager-v1-Currency) | repeated |  |
+| Total | [int32](#int32) |  |  |
 
 
 
@@ -1172,6 +1181,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
 
 
 
@@ -1187,6 +1198,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Infos | [Currency](#oracle-manager-v1-Currency) | repeated |  |
+| Total | [int32](#int32) |  |  |
 
 
 

@@ -808,6 +808,14 @@
       "properties": {
         "TargetAppID": {
           "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -819,6 +827,10 @@
           "items": {
             "$ref": "#/definitions/v1Currency"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -827,6 +839,14 @@
       "properties": {
         "AppID": {
           "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -838,6 +858,10 @@
           "items": {
             "$ref": "#/definitions/v1Currency"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },

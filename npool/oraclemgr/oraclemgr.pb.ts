@@ -147,18 +147,24 @@ export type GetCurrencyOnlyResponse = {
 
 export type GetCurrenciesRequest = {
   appID?: string
+  offset?: number
+  limit?: number
 }
 
 export type GetCurrenciesResponse = {
   infos?: Currency[]
+  total?: number
 }
 
 export type GetAppCurrenciesRequest = {
   targetAppID?: string
+  offset?: number
+  limit?: number
 }
 
 export type GetAppCurrenciesResponse = {
   infos?: Currency[]
+  total?: number
 }
 
 export type DeleteCurrencyRequest = {
