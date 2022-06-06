@@ -43,6 +43,38 @@
         ]
       }
     },
+    "/v1/create/deposit": {
+      "post": {
+        "operationId": "GasFeeder_CreateDeposit",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateDepositResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateDepositRequest"
+            }
+          }
+        ],
+        "tags": [
+          "GasFeeder"
+        ]
+      }
+    },
     "/v1/delete/coingas": {
       "post": {
         "operationId": "GasFeeder_DeleteCoinGas",
@@ -67,6 +99,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1DeleteCoinGasRequest"
+            }
+          }
+        ],
+        "tags": [
+          "GasFeeder"
+        ]
+      }
+    },
+    "/v1/delete/deposit": {
+      "post": {
+        "operationId": "GasFeeder_DeleteDeposit",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteDepositResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteDepositRequest"
             }
           }
         ],
@@ -131,6 +195,70 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1ExistCoinGasCondsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "GasFeeder"
+        ]
+      }
+    },
+    "/v1/exist/deposit": {
+      "post": {
+        "operationId": "GasFeeder_ExistDeposit",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ExistDepositResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ExistDepositRequest"
+            }
+          }
+        ],
+        "tags": [
+          "GasFeeder"
+        ]
+      }
+    },
+    "/v1/exist/deposit/conds": {
+      "post": {
+        "operationId": "GasFeeder_ExistDepositConds",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ExistDepositCondsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ExistDepositCondsRequest"
             }
           }
         ],
@@ -235,6 +363,102 @@
         ]
       }
     },
+    "/v1/get/deposit": {
+      "post": {
+        "operationId": "GasFeeder_GetDeposit",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetDepositResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetDepositRequest"
+            }
+          }
+        ],
+        "tags": [
+          "GasFeeder"
+        ]
+      }
+    },
+    "/v1/get/deposit/only": {
+      "post": {
+        "operationId": "GasFeeder_GetDepositOnly",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetDepositOnlyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetDepositOnlyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "GasFeeder"
+        ]
+      }
+    },
+    "/v1/get/deposits": {
+      "post": {
+        "operationId": "GasFeeder_GetDeposites",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetDepositesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetDepositesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "GasFeeder"
+        ]
+      }
+    },
     "/v1/update/coingas": {
       "post": {
         "operationId": "GasFeeder_UpdateCoinGas",
@@ -259,6 +483,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1UpdateCoinGasRequest"
+            }
+          }
+        ],
+        "tags": [
+          "GasFeeder"
+        ]
+      }
+    },
+    "/v1/update/deposit": {
+      "post": {
+        "operationId": "GasFeeder_UpdateDeposit",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateDepositResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateDepositRequest"
             }
           }
         ],
@@ -351,9 +607,11 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "DailyCoinGas": {
-          "type": "number",
-          "format": "double"
+        "GasCoinTypeID": {
+          "type": "string"
+        },
+        "DepositThreshold": {
+          "type": "string"
         }
       }
     },
@@ -373,6 +631,22 @@
         }
       }
     },
+    "v1CreateDepositRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Deposit"
+        }
+      }
+    },
+    "v1CreateDepositResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Deposit"
+        }
+      }
+    },
     "v1DeleteCoinGasRequest": {
       "type": "object",
       "properties": {
@@ -386,6 +660,37 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1CoinGas"
+        }
+      }
+    },
+    "v1DeleteDepositRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteDepositResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Deposit"
+        }
+      }
+    },
+    "v1Deposit": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "DepositAmount": {
+          "type": "number",
+          "format": "double"
         }
       }
     },
@@ -417,6 +722,41 @@
       }
     },
     "v1ExistCoinGasResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistDepositCondsRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        }
+      }
+    },
+    "v1ExistDepositCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistDepositRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ExistDepositResponse": {
       "type": "object",
       "properties": {
         "Result": {
@@ -504,6 +844,75 @@
         }
       }
     },
+    "v1GetDepositOnlyRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        }
+      }
+    },
+    "v1GetDepositOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Deposit"
+        }
+      }
+    },
+    "v1GetDepositRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetDepositResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Deposit"
+        }
+      }
+    },
+    "v1GetDepositesRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetDepositesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Deposit"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
     "v1UpdateCoinGasRequest": {
       "type": "object",
       "properties": {
@@ -517,6 +926,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1CoinGas"
+        }
+      }
+    },
+    "v1UpdateDepositRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Deposit"
+        }
+      }
+    },
+    "v1UpdateDepositResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Deposit"
         }
       }
     },

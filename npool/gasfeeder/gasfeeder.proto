@@ -71,12 +71,69 @@ service GasFeeder {
             body: "*"
         };
     }
+
+    rpc CreateDeposit (CreateDepositRequest) returns (CreateDepositResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/deposit"
+            body: "*"
+        };
+    }
+
+    rpc UpdateDeposit (UpdateDepositRequest) returns (UpdateDepositResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/deposit"
+            body: "*"
+        };
+    }
+
+    rpc GetDeposit (GetDepositRequest) returns (GetDepositResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/deposit"
+            body: "*"
+        };
+    }
+
+    rpc GetDepositOnly (GetDepositOnlyRequest) returns (GetDepositOnlyResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/deposit/only"
+            body: "*"
+        };
+    }
+
+    rpc GetDeposites (GetDepositesRequest) returns (GetDepositesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/deposits"
+            body: "*"
+        };
+    }
+
+    rpc ExistDeposit (ExistDepositRequest) returns (ExistDepositResponse) {
+        option (google.api.http) = {
+            post: "/v1/exist/deposit"
+            body: "*"
+        };
+    }
+
+    rpc ExistDepositConds (ExistDepositCondsRequest) returns (ExistDepositCondsResponse) {
+        option (google.api.http) = {
+            post: "/v1/exist/deposit/conds"
+            body: "*"
+        };
+    }
+
+    rpc DeleteDeposit (DeleteDepositRequest) returns (DeleteDepositResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/deposit"
+            body: "*"
+        };
+    }
 }
 
 message CoinGas {
     string ID = 10;
     string CoinTypeID = 20;
-    double DailyCoinGas = 30;
+    string GasCoinTypeID = 30;
+    string DepositThreshold = 40;
 }
 
 message CreateCoinGasRequest {
@@ -152,4 +209,85 @@ message DeleteCoinGasRequest {
 
 message DeleteCoinGasResponse {
     CoinGas Info = 10;
+}
+
+message Deposit {
+    string ID = 10;
+    string AccountID = 20;
+    double DepositAmount = 30;
+}
+
+message CreateDepositRequest {
+    Deposit Info = 10;
+}
+
+message CreateDepositResponse {
+    Deposit Info = 10;
+}
+
+message UpdateDepositRequest {
+    Deposit Info = 10;
+}
+
+message UpdateDepositResponse {
+    Deposit Info = 10;
+}
+
+message GetDepositRequest {
+    string ID = 10;
+}
+
+message GetDepositResponse {
+    Deposit Info = 10;
+}
+
+message GetDepositOnlyRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message GetDepositOnlyResponse {
+    Deposit Info = 10;
+}
+
+message GetDepositesRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetDepositesResponse {
+    repeated Deposit Infos = 10;
+    int32 Total = 20;
+}
+
+message ExistDepositRequest {
+    string ID = 10;
+}
+
+message ExistDepositResponse {
+    bool Result = 10;
+}
+
+message ExistDepositCondsRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message ExistDepositCondsResponse {
+    bool Result = 10;
+}
+
+message CountDepositesRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message CountDepositesResponse {
+    uint32 Result = 10;
+}
+
+message DeleteDepositRequest {
+    string ID = 10;
+}
+
+message DeleteDepositResponse {
+    Deposit Info = 10;
 }

@@ -33,6 +33,14 @@ type GasFeederClient interface {
 	ExistCoinGas(ctx context.Context, in *ExistCoinGasRequest, opts ...grpc.CallOption) (*ExistCoinGasResponse, error)
 	ExistCoinGasConds(ctx context.Context, in *ExistCoinGasCondsRequest, opts ...grpc.CallOption) (*ExistCoinGasCondsResponse, error)
 	DeleteCoinGas(ctx context.Context, in *DeleteCoinGasRequest, opts ...grpc.CallOption) (*DeleteCoinGasResponse, error)
+	CreateDeposit(ctx context.Context, in *CreateDepositRequest, opts ...grpc.CallOption) (*CreateDepositResponse, error)
+	UpdateDeposit(ctx context.Context, in *UpdateDepositRequest, opts ...grpc.CallOption) (*UpdateDepositResponse, error)
+	GetDeposit(ctx context.Context, in *GetDepositRequest, opts ...grpc.CallOption) (*GetDepositResponse, error)
+	GetDepositOnly(ctx context.Context, in *GetDepositOnlyRequest, opts ...grpc.CallOption) (*GetDepositOnlyResponse, error)
+	GetDeposites(ctx context.Context, in *GetDepositesRequest, opts ...grpc.CallOption) (*GetDepositesResponse, error)
+	ExistDeposit(ctx context.Context, in *ExistDepositRequest, opts ...grpc.CallOption) (*ExistDepositResponse, error)
+	ExistDepositConds(ctx context.Context, in *ExistDepositCondsRequest, opts ...grpc.CallOption) (*ExistDepositCondsResponse, error)
+	DeleteDeposit(ctx context.Context, in *DeleteDepositRequest, opts ...grpc.CallOption) (*DeleteDepositResponse, error)
 }
 
 type gasFeederClient struct {
@@ -124,6 +132,78 @@ func (c *gasFeederClient) DeleteCoinGas(ctx context.Context, in *DeleteCoinGasRe
 	return out, nil
 }
 
+func (c *gasFeederClient) CreateDeposit(ctx context.Context, in *CreateDepositRequest, opts ...grpc.CallOption) (*CreateDepositResponse, error) {
+	out := new(CreateDepositResponse)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/CreateDeposit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gasFeederClient) UpdateDeposit(ctx context.Context, in *UpdateDepositRequest, opts ...grpc.CallOption) (*UpdateDepositResponse, error) {
+	out := new(UpdateDepositResponse)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/UpdateDeposit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gasFeederClient) GetDeposit(ctx context.Context, in *GetDepositRequest, opts ...grpc.CallOption) (*GetDepositResponse, error) {
+	out := new(GetDepositResponse)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/GetDeposit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gasFeederClient) GetDepositOnly(ctx context.Context, in *GetDepositOnlyRequest, opts ...grpc.CallOption) (*GetDepositOnlyResponse, error) {
+	out := new(GetDepositOnlyResponse)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/GetDepositOnly", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gasFeederClient) GetDeposites(ctx context.Context, in *GetDepositesRequest, opts ...grpc.CallOption) (*GetDepositesResponse, error) {
+	out := new(GetDepositesResponse)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/GetDeposites", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gasFeederClient) ExistDeposit(ctx context.Context, in *ExistDepositRequest, opts ...grpc.CallOption) (*ExistDepositResponse, error) {
+	out := new(ExistDepositResponse)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/ExistDeposit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gasFeederClient) ExistDepositConds(ctx context.Context, in *ExistDepositCondsRequest, opts ...grpc.CallOption) (*ExistDepositCondsResponse, error) {
+	out := new(ExistDepositCondsResponse)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/ExistDepositConds", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gasFeederClient) DeleteDeposit(ctx context.Context, in *DeleteDepositRequest, opts ...grpc.CallOption) (*DeleteDepositResponse, error) {
+	out := new(DeleteDepositResponse)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/DeleteDeposit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GasFeederServer is the server API for GasFeeder service.
 // All implementations must embed UnimplementedGasFeederServer
 // for forward compatibility
@@ -137,6 +217,14 @@ type GasFeederServer interface {
 	ExistCoinGas(context.Context, *ExistCoinGasRequest) (*ExistCoinGasResponse, error)
 	ExistCoinGasConds(context.Context, *ExistCoinGasCondsRequest) (*ExistCoinGasCondsResponse, error)
 	DeleteCoinGas(context.Context, *DeleteCoinGasRequest) (*DeleteCoinGasResponse, error)
+	CreateDeposit(context.Context, *CreateDepositRequest) (*CreateDepositResponse, error)
+	UpdateDeposit(context.Context, *UpdateDepositRequest) (*UpdateDepositResponse, error)
+	GetDeposit(context.Context, *GetDepositRequest) (*GetDepositResponse, error)
+	GetDepositOnly(context.Context, *GetDepositOnlyRequest) (*GetDepositOnlyResponse, error)
+	GetDeposites(context.Context, *GetDepositesRequest) (*GetDepositesResponse, error)
+	ExistDeposit(context.Context, *ExistDepositRequest) (*ExistDepositResponse, error)
+	ExistDepositConds(context.Context, *ExistDepositCondsRequest) (*ExistDepositCondsResponse, error)
+	DeleteDeposit(context.Context, *DeleteDepositRequest) (*DeleteDepositResponse, error)
 	mustEmbedUnimplementedGasFeederServer()
 }
 
@@ -170,6 +258,30 @@ func (UnimplementedGasFeederServer) ExistCoinGasConds(context.Context, *ExistCoi
 }
 func (UnimplementedGasFeederServer) DeleteCoinGas(context.Context, *DeleteCoinGasRequest) (*DeleteCoinGasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCoinGas not implemented")
+}
+func (UnimplementedGasFeederServer) CreateDeposit(context.Context, *CreateDepositRequest) (*CreateDepositResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateDeposit not implemented")
+}
+func (UnimplementedGasFeederServer) UpdateDeposit(context.Context, *UpdateDepositRequest) (*UpdateDepositResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateDeposit not implemented")
+}
+func (UnimplementedGasFeederServer) GetDeposit(context.Context, *GetDepositRequest) (*GetDepositResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetDeposit not implemented")
+}
+func (UnimplementedGasFeederServer) GetDepositOnly(context.Context, *GetDepositOnlyRequest) (*GetDepositOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetDepositOnly not implemented")
+}
+func (UnimplementedGasFeederServer) GetDeposites(context.Context, *GetDepositesRequest) (*GetDepositesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetDeposites not implemented")
+}
+func (UnimplementedGasFeederServer) ExistDeposit(context.Context, *ExistDepositRequest) (*ExistDepositResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistDeposit not implemented")
+}
+func (UnimplementedGasFeederServer) ExistDepositConds(context.Context, *ExistDepositCondsRequest) (*ExistDepositCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistDepositConds not implemented")
+}
+func (UnimplementedGasFeederServer) DeleteDeposit(context.Context, *DeleteDepositRequest) (*DeleteDepositResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteDeposit not implemented")
 }
 func (UnimplementedGasFeederServer) mustEmbedUnimplementedGasFeederServer() {}
 
@@ -346,6 +458,150 @@ func _GasFeeder_DeleteCoinGas_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _GasFeeder_CreateDeposit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateDepositRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GasFeederServer).CreateDeposit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/gas.feeder.v1.GasFeeder/CreateDeposit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GasFeederServer).CreateDeposit(ctx, req.(*CreateDepositRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GasFeeder_UpdateDeposit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateDepositRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GasFeederServer).UpdateDeposit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/gas.feeder.v1.GasFeeder/UpdateDeposit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GasFeederServer).UpdateDeposit(ctx, req.(*UpdateDepositRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GasFeeder_GetDeposit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDepositRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GasFeederServer).GetDeposit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/gas.feeder.v1.GasFeeder/GetDeposit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GasFeederServer).GetDeposit(ctx, req.(*GetDepositRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GasFeeder_GetDepositOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDepositOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GasFeederServer).GetDepositOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/gas.feeder.v1.GasFeeder/GetDepositOnly",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GasFeederServer).GetDepositOnly(ctx, req.(*GetDepositOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GasFeeder_GetDeposites_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDepositesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GasFeederServer).GetDeposites(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/gas.feeder.v1.GasFeeder/GetDeposites",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GasFeederServer).GetDeposites(ctx, req.(*GetDepositesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GasFeeder_ExistDeposit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistDepositRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GasFeederServer).ExistDeposit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/gas.feeder.v1.GasFeeder/ExistDeposit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GasFeederServer).ExistDeposit(ctx, req.(*ExistDepositRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GasFeeder_ExistDepositConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistDepositCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GasFeederServer).ExistDepositConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/gas.feeder.v1.GasFeeder/ExistDepositConds",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GasFeederServer).ExistDepositConds(ctx, req.(*ExistDepositCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GasFeeder_DeleteDeposit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteDepositRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GasFeederServer).DeleteDeposit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/gas.feeder.v1.GasFeeder/DeleteDeposit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GasFeederServer).DeleteDeposit(ctx, req.(*DeleteDepositRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // GasFeeder_ServiceDesc is the grpc.ServiceDesc for GasFeeder service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -388,6 +644,38 @@ var GasFeeder_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteCoinGas",
 			Handler:    _GasFeeder_DeleteCoinGas_Handler,
+		},
+		{
+			MethodName: "CreateDeposit",
+			Handler:    _GasFeeder_CreateDeposit_Handler,
+		},
+		{
+			MethodName: "UpdateDeposit",
+			Handler:    _GasFeeder_UpdateDeposit_Handler,
+		},
+		{
+			MethodName: "GetDeposit",
+			Handler:    _GasFeeder_GetDeposit_Handler,
+		},
+		{
+			MethodName: "GetDepositOnly",
+			Handler:    _GasFeeder_GetDepositOnly_Handler,
+		},
+		{
+			MethodName: "GetDeposites",
+			Handler:    _GasFeeder_GetDeposites_Handler,
+		},
+		{
+			MethodName: "ExistDeposit",
+			Handler:    _GasFeeder_ExistDeposit_Handler,
+		},
+		{
+			MethodName: "ExistDepositConds",
+			Handler:    _GasFeeder_ExistDepositConds_Handler,
+		},
+		{
+			MethodName: "DeleteDeposit",
+			Handler:    _GasFeeder_DeleteDeposit_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -8,15 +8,28 @@
     - [CountCoinGasesRequest](#gas-feeder-v1-CountCoinGasesRequest)
     - [CountCoinGasesRequest.CondsEntry](#gas-feeder-v1-CountCoinGasesRequest-CondsEntry)
     - [CountCoinGasesResponse](#gas-feeder-v1-CountCoinGasesResponse)
+    - [CountDepositesRequest](#gas-feeder-v1-CountDepositesRequest)
+    - [CountDepositesRequest.CondsEntry](#gas-feeder-v1-CountDepositesRequest-CondsEntry)
+    - [CountDepositesResponse](#gas-feeder-v1-CountDepositesResponse)
     - [CreateCoinGasRequest](#gas-feeder-v1-CreateCoinGasRequest)
     - [CreateCoinGasResponse](#gas-feeder-v1-CreateCoinGasResponse)
+    - [CreateDepositRequest](#gas-feeder-v1-CreateDepositRequest)
+    - [CreateDepositResponse](#gas-feeder-v1-CreateDepositResponse)
     - [DeleteCoinGasRequest](#gas-feeder-v1-DeleteCoinGasRequest)
     - [DeleteCoinGasResponse](#gas-feeder-v1-DeleteCoinGasResponse)
+    - [DeleteDepositRequest](#gas-feeder-v1-DeleteDepositRequest)
+    - [DeleteDepositResponse](#gas-feeder-v1-DeleteDepositResponse)
+    - [Deposit](#gas-feeder-v1-Deposit)
     - [ExistCoinGasCondsRequest](#gas-feeder-v1-ExistCoinGasCondsRequest)
     - [ExistCoinGasCondsRequest.CondsEntry](#gas-feeder-v1-ExistCoinGasCondsRequest-CondsEntry)
     - [ExistCoinGasCondsResponse](#gas-feeder-v1-ExistCoinGasCondsResponse)
     - [ExistCoinGasRequest](#gas-feeder-v1-ExistCoinGasRequest)
     - [ExistCoinGasResponse](#gas-feeder-v1-ExistCoinGasResponse)
+    - [ExistDepositCondsRequest](#gas-feeder-v1-ExistDepositCondsRequest)
+    - [ExistDepositCondsRequest.CondsEntry](#gas-feeder-v1-ExistDepositCondsRequest-CondsEntry)
+    - [ExistDepositCondsResponse](#gas-feeder-v1-ExistDepositCondsResponse)
+    - [ExistDepositRequest](#gas-feeder-v1-ExistDepositRequest)
+    - [ExistDepositResponse](#gas-feeder-v1-ExistDepositResponse)
     - [GetCoinGasOnlyRequest](#gas-feeder-v1-GetCoinGasOnlyRequest)
     - [GetCoinGasOnlyRequest.CondsEntry](#gas-feeder-v1-GetCoinGasOnlyRequest-CondsEntry)
     - [GetCoinGasOnlyResponse](#gas-feeder-v1-GetCoinGasOnlyResponse)
@@ -25,8 +38,18 @@
     - [GetCoinGasesRequest](#gas-feeder-v1-GetCoinGasesRequest)
     - [GetCoinGasesRequest.CondsEntry](#gas-feeder-v1-GetCoinGasesRequest-CondsEntry)
     - [GetCoinGasesResponse](#gas-feeder-v1-GetCoinGasesResponse)
+    - [GetDepositOnlyRequest](#gas-feeder-v1-GetDepositOnlyRequest)
+    - [GetDepositOnlyRequest.CondsEntry](#gas-feeder-v1-GetDepositOnlyRequest-CondsEntry)
+    - [GetDepositOnlyResponse](#gas-feeder-v1-GetDepositOnlyResponse)
+    - [GetDepositRequest](#gas-feeder-v1-GetDepositRequest)
+    - [GetDepositResponse](#gas-feeder-v1-GetDepositResponse)
+    - [GetDepositesRequest](#gas-feeder-v1-GetDepositesRequest)
+    - [GetDepositesRequest.CondsEntry](#gas-feeder-v1-GetDepositesRequest-CondsEntry)
+    - [GetDepositesResponse](#gas-feeder-v1-GetDepositesResponse)
     - [UpdateCoinGasRequest](#gas-feeder-v1-UpdateCoinGasRequest)
     - [UpdateCoinGasResponse](#gas-feeder-v1-UpdateCoinGasResponse)
+    - [UpdateDepositRequest](#gas-feeder-v1-UpdateDepositRequest)
+    - [UpdateDepositResponse](#gas-feeder-v1-UpdateDepositResponse)
   
     - [GasFeeder](#gas-feeder-v1-GasFeeder)
   
@@ -35,15 +58,28 @@
     - [CountCoinGasesRequest](#gas-feeder-v1-CountCoinGasesRequest)
     - [CountCoinGasesRequest.CondsEntry](#gas-feeder-v1-CountCoinGasesRequest-CondsEntry)
     - [CountCoinGasesResponse](#gas-feeder-v1-CountCoinGasesResponse)
+    - [CountDepositesRequest](#gas-feeder-v1-CountDepositesRequest)
+    - [CountDepositesRequest.CondsEntry](#gas-feeder-v1-CountDepositesRequest-CondsEntry)
+    - [CountDepositesResponse](#gas-feeder-v1-CountDepositesResponse)
     - [CreateCoinGasRequest](#gas-feeder-v1-CreateCoinGasRequest)
     - [CreateCoinGasResponse](#gas-feeder-v1-CreateCoinGasResponse)
+    - [CreateDepositRequest](#gas-feeder-v1-CreateDepositRequest)
+    - [CreateDepositResponse](#gas-feeder-v1-CreateDepositResponse)
     - [DeleteCoinGasRequest](#gas-feeder-v1-DeleteCoinGasRequest)
     - [DeleteCoinGasResponse](#gas-feeder-v1-DeleteCoinGasResponse)
+    - [DeleteDepositRequest](#gas-feeder-v1-DeleteDepositRequest)
+    - [DeleteDepositResponse](#gas-feeder-v1-DeleteDepositResponse)
+    - [Deposit](#gas-feeder-v1-Deposit)
     - [ExistCoinGasCondsRequest](#gas-feeder-v1-ExistCoinGasCondsRequest)
     - [ExistCoinGasCondsRequest.CondsEntry](#gas-feeder-v1-ExistCoinGasCondsRequest-CondsEntry)
     - [ExistCoinGasCondsResponse](#gas-feeder-v1-ExistCoinGasCondsResponse)
     - [ExistCoinGasRequest](#gas-feeder-v1-ExistCoinGasRequest)
     - [ExistCoinGasResponse](#gas-feeder-v1-ExistCoinGasResponse)
+    - [ExistDepositCondsRequest](#gas-feeder-v1-ExistDepositCondsRequest)
+    - [ExistDepositCondsRequest.CondsEntry](#gas-feeder-v1-ExistDepositCondsRequest-CondsEntry)
+    - [ExistDepositCondsResponse](#gas-feeder-v1-ExistDepositCondsResponse)
+    - [ExistDepositRequest](#gas-feeder-v1-ExistDepositRequest)
+    - [ExistDepositResponse](#gas-feeder-v1-ExistDepositResponse)
     - [GetCoinGasOnlyRequest](#gas-feeder-v1-GetCoinGasOnlyRequest)
     - [GetCoinGasOnlyRequest.CondsEntry](#gas-feeder-v1-GetCoinGasOnlyRequest-CondsEntry)
     - [GetCoinGasOnlyResponse](#gas-feeder-v1-GetCoinGasOnlyResponse)
@@ -52,8 +88,18 @@
     - [GetCoinGasesRequest](#gas-feeder-v1-GetCoinGasesRequest)
     - [GetCoinGasesRequest.CondsEntry](#gas-feeder-v1-GetCoinGasesRequest-CondsEntry)
     - [GetCoinGasesResponse](#gas-feeder-v1-GetCoinGasesResponse)
+    - [GetDepositOnlyRequest](#gas-feeder-v1-GetDepositOnlyRequest)
+    - [GetDepositOnlyRequest.CondsEntry](#gas-feeder-v1-GetDepositOnlyRequest-CondsEntry)
+    - [GetDepositOnlyResponse](#gas-feeder-v1-GetDepositOnlyResponse)
+    - [GetDepositRequest](#gas-feeder-v1-GetDepositRequest)
+    - [GetDepositResponse](#gas-feeder-v1-GetDepositResponse)
+    - [GetDepositesRequest](#gas-feeder-v1-GetDepositesRequest)
+    - [GetDepositesRequest.CondsEntry](#gas-feeder-v1-GetDepositesRequest-CondsEntry)
+    - [GetDepositesResponse](#gas-feeder-v1-GetDepositesResponse)
     - [UpdateCoinGasRequest](#gas-feeder-v1-UpdateCoinGasRequest)
     - [UpdateCoinGasResponse](#gas-feeder-v1-UpdateCoinGasResponse)
+    - [UpdateDepositRequest](#gas-feeder-v1-UpdateDepositRequest)
+    - [UpdateDepositResponse](#gas-feeder-v1-UpdateDepositResponse)
   
     - [GasFeeder](#gas-feeder-v1-GasFeeder)
   
@@ -78,7 +124,8 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
-| DailyCoinGas | [double](#double) |  |  |
+| GasCoinTypeID | [string](#string) |  |  |
+| DepositThreshold | [string](#string) |  |  |
 
 
 
@@ -131,6 +178,52 @@
 
 
 
+<a name="gas-feeder-v1-CountDepositesRequest"></a>
+
+### CountDepositesRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [CountDepositesRequest.CondsEntry](#gas-feeder-v1-CountDepositesRequest-CondsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-CountDepositesRequest-CondsEntry"></a>
+
+### CountDepositesRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-CountDepositesResponse"></a>
+
+### CountDepositesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Result | [uint32](#uint32) |  |  |
+
+
+
+
+
+
 <a name="gas-feeder-v1-CreateCoinGasRequest"></a>
 
 ### CreateCoinGasRequest
@@ -161,6 +254,36 @@
 
 
 
+<a name="gas-feeder-v1-CreateDepositRequest"></a>
+
+### CreateDepositRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Deposit](#gas-feeder-v1-Deposit) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-CreateDepositResponse"></a>
+
+### CreateDepositResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Deposit](#gas-feeder-v1-Deposit) |  |  |
+
+
+
+
+
+
 <a name="gas-feeder-v1-DeleteCoinGasRequest"></a>
 
 ### DeleteCoinGasRequest
@@ -185,6 +308,53 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [CoinGas](#gas-feeder-v1-CoinGas) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-DeleteDepositRequest"></a>
+
+### DeleteDepositRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-DeleteDepositResponse"></a>
+
+### DeleteDepositResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Deposit](#gas-feeder-v1-Deposit) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-Deposit"></a>
+
+### Deposit
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AccountID | [string](#string) |  |  |
+| DepositAmount | [double](#double) |  |  |
 
 
 
@@ -255,6 +425,82 @@
 <a name="gas-feeder-v1-ExistCoinGasResponse"></a>
 
 ### ExistCoinGasResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Result | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-ExistDepositCondsRequest"></a>
+
+### ExistDepositCondsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [ExistDepositCondsRequest.CondsEntry](#gas-feeder-v1-ExistDepositCondsRequest-CondsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-ExistDepositCondsRequest-CondsEntry"></a>
+
+### ExistDepositCondsRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-ExistDepositCondsResponse"></a>
+
+### ExistDepositCondsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Result | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-ExistDepositRequest"></a>
+
+### ExistDepositRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-ExistDepositResponse"></a>
+
+### ExistDepositResponse
 
 
 
@@ -392,6 +638,131 @@
 
 
 
+<a name="gas-feeder-v1-GetDepositOnlyRequest"></a>
+
+### GetDepositOnlyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [GetDepositOnlyRequest.CondsEntry](#gas-feeder-v1-GetDepositOnlyRequest-CondsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-GetDepositOnlyRequest-CondsEntry"></a>
+
+### GetDepositOnlyRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-GetDepositOnlyResponse"></a>
+
+### GetDepositOnlyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Deposit](#gas-feeder-v1-Deposit) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-GetDepositRequest"></a>
+
+### GetDepositRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-GetDepositResponse"></a>
+
+### GetDepositResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Deposit](#gas-feeder-v1-Deposit) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-GetDepositesRequest"></a>
+
+### GetDepositesRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [GetDepositesRequest.CondsEntry](#gas-feeder-v1-GetDepositesRequest-CondsEntry) | repeated |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-GetDepositesRequest-CondsEntry"></a>
+
+### GetDepositesRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-GetDepositesResponse"></a>
+
+### GetDepositesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Deposit](#gas-feeder-v1-Deposit) | repeated |  |
+| Total | [int32](#int32) |  |  |
+
+
+
+
+
+
 <a name="gas-feeder-v1-UpdateCoinGasRequest"></a>
 
 ### UpdateCoinGasRequest
@@ -421,6 +792,36 @@
 
 
 
+
+<a name="gas-feeder-v1-UpdateDepositRequest"></a>
+
+### UpdateDepositRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Deposit](#gas-feeder-v1-Deposit) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-UpdateDepositResponse"></a>
+
+### UpdateDepositResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Deposit](#gas-feeder-v1-Deposit) |  |  |
+
+
+
+
+
  
 
  
@@ -444,6 +845,14 @@
 | ExistCoinGas | [ExistCoinGasRequest](#gas-feeder-v1-ExistCoinGasRequest) | [ExistCoinGasResponse](#gas-feeder-v1-ExistCoinGasResponse) |  |
 | ExistCoinGasConds | [ExistCoinGasCondsRequest](#gas-feeder-v1-ExistCoinGasCondsRequest) | [ExistCoinGasCondsResponse](#gas-feeder-v1-ExistCoinGasCondsResponse) |  |
 | DeleteCoinGas | [DeleteCoinGasRequest](#gas-feeder-v1-DeleteCoinGasRequest) | [DeleteCoinGasResponse](#gas-feeder-v1-DeleteCoinGasResponse) |  |
+| CreateDeposit | [CreateDepositRequest](#gas-feeder-v1-CreateDepositRequest) | [CreateDepositResponse](#gas-feeder-v1-CreateDepositResponse) |  |
+| UpdateDeposit | [UpdateDepositRequest](#gas-feeder-v1-UpdateDepositRequest) | [UpdateDepositResponse](#gas-feeder-v1-UpdateDepositResponse) |  |
+| GetDeposit | [GetDepositRequest](#gas-feeder-v1-GetDepositRequest) | [GetDepositResponse](#gas-feeder-v1-GetDepositResponse) |  |
+| GetDepositOnly | [GetDepositOnlyRequest](#gas-feeder-v1-GetDepositOnlyRequest) | [GetDepositOnlyResponse](#gas-feeder-v1-GetDepositOnlyResponse) |  |
+| GetDeposites | [GetDepositesRequest](#gas-feeder-v1-GetDepositesRequest) | [GetDepositesResponse](#gas-feeder-v1-GetDepositesResponse) |  |
+| ExistDeposit | [ExistDepositRequest](#gas-feeder-v1-ExistDepositRequest) | [ExistDepositResponse](#gas-feeder-v1-ExistDepositResponse) |  |
+| ExistDepositConds | [ExistDepositCondsRequest](#gas-feeder-v1-ExistDepositCondsRequest) | [ExistDepositCondsResponse](#gas-feeder-v1-ExistDepositCondsResponse) |  |
+| DeleteDeposit | [DeleteDepositRequest](#gas-feeder-v1-DeleteDepositRequest) | [DeleteDepositResponse](#gas-feeder-v1-DeleteDepositResponse) |  |
 
  
 
@@ -466,7 +875,8 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
-| DailyCoinGas | [double](#double) |  |  |
+| GasCoinTypeID | [string](#string) |  |  |
+| DepositThreshold | [string](#string) |  |  |
 
 
 
@@ -519,6 +929,52 @@
 
 
 
+<a name="gas-feeder-v1-CountDepositesRequest"></a>
+
+### CountDepositesRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [CountDepositesRequest.CondsEntry](#gas-feeder-v1-CountDepositesRequest-CondsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-CountDepositesRequest-CondsEntry"></a>
+
+### CountDepositesRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-CountDepositesResponse"></a>
+
+### CountDepositesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Result | [uint32](#uint32) |  |  |
+
+
+
+
+
+
 <a name="gas-feeder-v1-CreateCoinGasRequest"></a>
 
 ### CreateCoinGasRequest
@@ -549,6 +1005,36 @@
 
 
 
+<a name="gas-feeder-v1-CreateDepositRequest"></a>
+
+### CreateDepositRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Deposit](#gas-feeder-v1-Deposit) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-CreateDepositResponse"></a>
+
+### CreateDepositResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Deposit](#gas-feeder-v1-Deposit) |  |  |
+
+
+
+
+
+
 <a name="gas-feeder-v1-DeleteCoinGasRequest"></a>
 
 ### DeleteCoinGasRequest
@@ -573,6 +1059,53 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [CoinGas](#gas-feeder-v1-CoinGas) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-DeleteDepositRequest"></a>
+
+### DeleteDepositRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-DeleteDepositResponse"></a>
+
+### DeleteDepositResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Deposit](#gas-feeder-v1-Deposit) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-Deposit"></a>
+
+### Deposit
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+| AccountID | [string](#string) |  |  |
+| DepositAmount | [double](#double) |  |  |
 
 
 
@@ -643,6 +1176,82 @@
 <a name="gas-feeder-v1-ExistCoinGasResponse"></a>
 
 ### ExistCoinGasResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Result | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-ExistDepositCondsRequest"></a>
+
+### ExistDepositCondsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [ExistDepositCondsRequest.CondsEntry](#gas-feeder-v1-ExistDepositCondsRequest-CondsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-ExistDepositCondsRequest-CondsEntry"></a>
+
+### ExistDepositCondsRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-ExistDepositCondsResponse"></a>
+
+### ExistDepositCondsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Result | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-ExistDepositRequest"></a>
+
+### ExistDepositRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-ExistDepositResponse"></a>
+
+### ExistDepositResponse
 
 
 
@@ -780,6 +1389,131 @@
 
 
 
+<a name="gas-feeder-v1-GetDepositOnlyRequest"></a>
+
+### GetDepositOnlyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [GetDepositOnlyRequest.CondsEntry](#gas-feeder-v1-GetDepositOnlyRequest-CondsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-GetDepositOnlyRequest-CondsEntry"></a>
+
+### GetDepositOnlyRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-GetDepositOnlyResponse"></a>
+
+### GetDepositOnlyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Deposit](#gas-feeder-v1-Deposit) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-GetDepositRequest"></a>
+
+### GetDepositRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-GetDepositResponse"></a>
+
+### GetDepositResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Deposit](#gas-feeder-v1-Deposit) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-GetDepositesRequest"></a>
+
+### GetDepositesRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Conds | [GetDepositesRequest.CondsEntry](#gas-feeder-v1-GetDepositesRequest-CondsEntry) | repeated |  |
+| Offset | [int32](#int32) |  |  |
+| Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-GetDepositesRequest-CondsEntry"></a>
+
+### GetDepositesRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-GetDepositesResponse"></a>
+
+### GetDepositesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Deposit](#gas-feeder-v1-Deposit) | repeated |  |
+| Total | [int32](#int32) |  |  |
+
+
+
+
+
+
 <a name="gas-feeder-v1-UpdateCoinGasRequest"></a>
 
 ### UpdateCoinGasRequest
@@ -809,6 +1543,36 @@
 
 
 
+
+<a name="gas-feeder-v1-UpdateDepositRequest"></a>
+
+### UpdateDepositRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Deposit](#gas-feeder-v1-Deposit) |  |  |
+
+
+
+
+
+
+<a name="gas-feeder-v1-UpdateDepositResponse"></a>
+
+### UpdateDepositResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Deposit](#gas-feeder-v1-Deposit) |  |  |
+
+
+
+
+
  
 
  
@@ -832,6 +1596,14 @@
 | ExistCoinGas | [ExistCoinGasRequest](#gas-feeder-v1-ExistCoinGasRequest) | [ExistCoinGasResponse](#gas-feeder-v1-ExistCoinGasResponse) |  |
 | ExistCoinGasConds | [ExistCoinGasCondsRequest](#gas-feeder-v1-ExistCoinGasCondsRequest) | [ExistCoinGasCondsResponse](#gas-feeder-v1-ExistCoinGasCondsResponse) |  |
 | DeleteCoinGas | [DeleteCoinGasRequest](#gas-feeder-v1-DeleteCoinGasRequest) | [DeleteCoinGasResponse](#gas-feeder-v1-DeleteCoinGasResponse) |  |
+| CreateDeposit | [CreateDepositRequest](#gas-feeder-v1-CreateDepositRequest) | [CreateDepositResponse](#gas-feeder-v1-CreateDepositResponse) |  |
+| UpdateDeposit | [UpdateDepositRequest](#gas-feeder-v1-UpdateDepositRequest) | [UpdateDepositResponse](#gas-feeder-v1-UpdateDepositResponse) |  |
+| GetDeposit | [GetDepositRequest](#gas-feeder-v1-GetDepositRequest) | [GetDepositResponse](#gas-feeder-v1-GetDepositResponse) |  |
+| GetDepositOnly | [GetDepositOnlyRequest](#gas-feeder-v1-GetDepositOnlyRequest) | [GetDepositOnlyResponse](#gas-feeder-v1-GetDepositOnlyResponse) |  |
+| GetDeposites | [GetDepositesRequest](#gas-feeder-v1-GetDepositesRequest) | [GetDepositesResponse](#gas-feeder-v1-GetDepositesResponse) |  |
+| ExistDeposit | [ExistDepositRequest](#gas-feeder-v1-ExistDepositRequest) | [ExistDepositResponse](#gas-feeder-v1-ExistDepositResponse) |  |
+| ExistDepositConds | [ExistDepositCondsRequest](#gas-feeder-v1-ExistDepositCondsRequest) | [ExistDepositCondsResponse](#gas-feeder-v1-ExistDepositCondsResponse) |  |
+| DeleteDeposit | [DeleteDepositRequest](#gas-feeder-v1-DeleteDepositRequest) | [DeleteDepositResponse](#gas-feeder-v1-DeleteDepositResponse) |  |
 
  
 
