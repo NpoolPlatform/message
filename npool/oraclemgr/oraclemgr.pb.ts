@@ -147,6 +147,7 @@ export type GetCurrencyOnlyResponse = {
 
 export type GetCurrenciesRequest = {
   appID?: string
+  conds?: {[key: string]: NpoolV1Npool.FilterCond}
   offset?: number
   limit?: number
 }
@@ -158,6 +159,7 @@ export type GetCurrenciesResponse = {
 
 export type GetAppCurrenciesRequest = {
   targetAppID?: string
+  conds?: {[key: string]: NpoolV1Npool.FilterCond}
   offset?: number
   limit?: number
 }

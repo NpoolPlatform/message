@@ -276,8 +276,9 @@ message GetCurrencyOnlyResponse {
 
 message GetCurrenciesRequest {
     string AppID = 10;
-    int32 Offset = 20;
-    int32 Limit = 30;
+    map<string, npool.v1.FilterCond> Conds = 20;
+    int32 Offset = 30;
+    int32 Limit = 40;
 }
 
 message GetCurrenciesResponse {
@@ -287,8 +288,9 @@ message GetCurrenciesResponse {
 
 message GetAppCurrenciesRequest {
     string TargetAppID = 10;
-    int32 Offset = 20;
-    int32 Limit = 30;
+    map<string, npool.v1.FilterCond> Conds = 20;
+    int32 Offset = 30;
+    int32 Limit = 40;
 }
 
 message GetAppCurrenciesResponse {

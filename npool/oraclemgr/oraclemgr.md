@@ -26,8 +26,10 @@
     - [ExistRewardRequest](#oracle-manager-v1-ExistRewardRequest)
     - [ExistRewardResponse](#oracle-manager-v1-ExistRewardResponse)
     - [GetAppCurrenciesRequest](#oracle-manager-v1-GetAppCurrenciesRequest)
+    - [GetAppCurrenciesRequest.CondsEntry](#oracle-manager-v1-GetAppCurrenciesRequest-CondsEntry)
     - [GetAppCurrenciesResponse](#oracle-manager-v1-GetAppCurrenciesResponse)
     - [GetCurrenciesRequest](#oracle-manager-v1-GetCurrenciesRequest)
+    - [GetCurrenciesRequest.CondsEntry](#oracle-manager-v1-GetCurrenciesRequest-CondsEntry)
     - [GetCurrenciesResponse](#oracle-manager-v1-GetCurrenciesResponse)
     - [GetCurrencyOnlyRequest](#oracle-manager-v1-GetCurrencyOnlyRequest)
     - [GetCurrencyOnlyRequest.CondsEntry](#oracle-manager-v1-GetCurrencyOnlyRequest-CondsEntry)
@@ -73,8 +75,10 @@
     - [ExistRewardRequest](#oracle-manager-v1-ExistRewardRequest)
     - [ExistRewardResponse](#oracle-manager-v1-ExistRewardResponse)
     - [GetAppCurrenciesRequest](#oracle-manager-v1-GetAppCurrenciesRequest)
+    - [GetAppCurrenciesRequest.CondsEntry](#oracle-manager-v1-GetAppCurrenciesRequest-CondsEntry)
     - [GetAppCurrenciesResponse](#oracle-manager-v1-GetAppCurrenciesResponse)
     - [GetCurrenciesRequest](#oracle-manager-v1-GetCurrenciesRequest)
+    - [GetCurrenciesRequest.CondsEntry](#oracle-manager-v1-GetCurrenciesRequest-CondsEntry)
     - [GetCurrenciesResponse](#oracle-manager-v1-GetCurrenciesResponse)
     - [GetCurrencyOnlyRequest](#oracle-manager-v1-GetCurrencyOnlyRequest)
     - [GetCurrencyOnlyRequest.CondsEntry](#oracle-manager-v1-GetCurrencyOnlyRequest-CondsEntry)
@@ -439,8 +443,25 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| Conds | [GetAppCurrenciesRequest.CondsEntry](#oracle-manager-v1-GetAppCurrenciesRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="oracle-manager-v1-GetAppCurrenciesRequest-CondsEntry"></a>
+
+### GetAppCurrenciesRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
 
 
 
@@ -472,8 +493,25 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| Conds | [GetCurrenciesRequest.CondsEntry](#oracle-manager-v1-GetCurrenciesRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="oracle-manager-v1-GetCurrenciesRequest-CondsEntry"></a>
+
+### GetCurrenciesRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
 
 
 
@@ -1148,8 +1186,25 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TargetAppID | [string](#string) |  |  |
+| Conds | [GetAppCurrenciesRequest.CondsEntry](#oracle-manager-v1-GetAppCurrenciesRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="oracle-manager-v1-GetAppCurrenciesRequest-CondsEntry"></a>
+
+### GetAppCurrenciesRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
 
 
 
@@ -1181,8 +1236,25 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | AppID | [string](#string) |  |  |
+| Conds | [GetCurrenciesRequest.CondsEntry](#oracle-manager-v1-GetCurrenciesRequest-CondsEntry) | repeated |  |
 | Offset | [int32](#int32) |  |  |
 | Limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="oracle-manager-v1-GetCurrenciesRequest-CondsEntry"></a>
+
+### GetCurrenciesRequest.CondsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [npool.v1.FilterCond](#npool-v1-FilterCond) |  |  |
 
 
 

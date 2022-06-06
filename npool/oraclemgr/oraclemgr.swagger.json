@@ -809,6 +809,12 @@
         "TargetAppID": {
           "type": "string"
         },
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
+        },
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -839,6 +845,12 @@
       "properties": {
         "AppID": {
           "type": "string"
+        },
+        "Conds": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1FilterCond"
+          }
         },
         "Offset": {
           "type": "integer",
