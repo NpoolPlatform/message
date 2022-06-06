@@ -611,7 +611,8 @@
           "type": "string"
         },
         "DepositThreshold": {
-          "type": "string"
+          "type": "string",
+          "format": "uint64"
         }
       }
     },
@@ -689,8 +690,8 @@
           "type": "string"
         },
         "DepositAmount": {
-          "type": "number",
-          "format": "double"
+          "type": "string",
+          "format": "uint64"
         }
       }
     },

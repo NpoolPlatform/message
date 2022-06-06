@@ -92,7 +92,7 @@ export type DeleteCoinGasResponse = {
 export type Deposit = {
   id?: string
   accountID?: string
-  depositAmount?: number
+  depositAmount?: string
 }
 
 export type CreateDepositRequest = {

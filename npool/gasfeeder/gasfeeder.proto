@@ -133,7 +133,7 @@ message CoinGas {
     string ID = 10;
     string CoinTypeID = 20;
     string GasCoinTypeID = 30;
-    string DepositThreshold = 40;
+    uint64 DepositThreshold = 40;
 }
 
 message CreateCoinGasRequest {
@@ -214,7 +214,7 @@ message DeleteCoinGasResponse {
 message Deposit {
     string ID = 10;
     string AccountID = 20;
-    double DepositAmount = 30;
+    uint64 DepositAmount = 30;
 }
 
 message CreateDepositRequest {

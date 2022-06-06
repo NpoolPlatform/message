@@ -125,7 +125,7 @@
 | ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | GasCoinTypeID | [string](#string) |  |  |
-| DepositThreshold | [string](#string) |  |  |
+| DepositThreshold | [uint64](#uint64) |  |  |
 
 
 
@@ -354,7 +354,7 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | AccountID | [string](#string) |  |  |
-| DepositAmount | [double](#double) |  |  |
+| DepositAmount | [uint64](#uint64) |  |  |
 
 
 
@@ -876,7 +876,7 @@
 | ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | GasCoinTypeID | [string](#string) |  |  |
-| DepositThreshold | [string](#string) |  |  |
+| DepositThreshold | [uint64](#uint64) |  |  |
 
 
 
@@ -1105,7 +1105,7 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | AccountID | [string](#string) |  |  |
-| DepositAmount | [double](#double) |  |  |
+| DepositAmount | [uint64](#uint64) |  |  |
 
 
 
