@@ -139,38 +139,6 @@
         ]
       }
     },
-    "/v1/currencies": {
-      "post": {
-        "operationId": "OracleManager_Currencies",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CurrenciesResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CurrenciesRequest"
-            }
-          }
-        ],
-        "tags": [
-          "OracleManager"
-        ]
-      }
-    },
     "/v1/currency": {
       "post": {
         "operationId": "OracleManager_Currency",
@@ -763,31 +731,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Reward"
-          }
-        }
-      }
-    },
-    "v1CurrenciesRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "CoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1CurrenciesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1CurrencyAmount"
           }
         }
       }
