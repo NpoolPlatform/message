@@ -245,6 +245,8 @@ message Currency {
     string CoinTypeID = 30;
     double PriceVSUSDT = 40;
     double AppPriceVSUSDT = 50;
+    int32 OverPercent = 60;
+    string CurrencyMethod = 70;
 }
 
 message CreateCurrencyRequest {

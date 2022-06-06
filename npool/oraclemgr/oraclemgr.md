@@ -333,6 +333,8 @@
 | CoinTypeID | [string](#string) |  |  |
 | PriceVSUSDT | [double](#double) |  |  |
 | AppPriceVSUSDT | [double](#double) |  |  |
+| OverPercent | [int32](#int32) |  |  |
+| CurrencyMethod | [string](#string) |  |  |
 
 
 
@@ -1156,6 +1158,8 @@
 | CoinTypeID | [string](#string) |  |  |
 | PriceVSUSDT | [double](#double) |  |  |
 | AppPriceVSUSDT | [double](#double) |  |  |
+| OverPercent | [int32](#int32) |  |  |
+| CurrencyMethod | [string](#string) |  |  |
 
 
 

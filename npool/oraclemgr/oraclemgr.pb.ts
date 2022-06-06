@@ -102,6 +102,8 @@ export type Currency = {
   coinTypeID?: string
   priceVSUSDT?: number
   appPriceVSUSDT?: number
+  overPercent?: number
+  currencyMethod?: string
 }
 
 export type CreateCurrencyRequest = {

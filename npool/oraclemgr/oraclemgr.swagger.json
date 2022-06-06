@@ -811,6 +811,13 @@
         "AppPriceVSUSDT": {
           "type": "number",
           "format": "double"
+        },
+        "OverPercent": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CurrencyMethod": {
+          "type": "string"
         }
       }
     },
