@@ -88,7 +88,7 @@ export type DeleteCoinGasResponse = {
   info?: CoinGas
 }
 
-export class OracleManager {
+export class GasFeeder {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }

@@ -8,7 +8,7 @@ import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
-service OracleManager {
+service GasFeeder {
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
         option (google.api.http) = {
             post: "/version"

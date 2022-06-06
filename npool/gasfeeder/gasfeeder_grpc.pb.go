@@ -20,10 +20,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// OracleManagerClient is the client API for OracleManager service.
+// GasFeederClient is the client API for GasFeeder service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type OracleManagerClient interface {
+type GasFeederClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateCoinGas(ctx context.Context, in *CreateCoinGasRequest, opts ...grpc.CallOption) (*CreateCoinGasResponse, error)
 	UpdateCoinGas(ctx context.Context, in *UpdateCoinGasRequest, opts ...grpc.CallOption) (*UpdateCoinGasResponse, error)
@@ -35,99 +35,99 @@ type OracleManagerClient interface {
 	DeleteCoinGas(ctx context.Context, in *DeleteCoinGasRequest, opts ...grpc.CallOption) (*DeleteCoinGasResponse, error)
 }
 
-type oracleManagerClient struct {
+type gasFeederClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewOracleManagerClient(cc grpc.ClientConnInterface) OracleManagerClient {
-	return &oracleManagerClient{cc}
+func NewGasFeederClient(cc grpc.ClientConnInterface) GasFeederClient {
+	return &gasFeederClient{cc}
 }
 
-func (c *oracleManagerClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+func (c *gasFeederClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/gas.feeder.v1.OracleManager/Version", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *oracleManagerClient) CreateCoinGas(ctx context.Context, in *CreateCoinGasRequest, opts ...grpc.CallOption) (*CreateCoinGasResponse, error) {
+func (c *gasFeederClient) CreateCoinGas(ctx context.Context, in *CreateCoinGasRequest, opts ...grpc.CallOption) (*CreateCoinGasResponse, error) {
 	out := new(CreateCoinGasResponse)
-	err := c.cc.Invoke(ctx, "/gas.feeder.v1.OracleManager/CreateCoinGas", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/CreateCoinGas", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *oracleManagerClient) UpdateCoinGas(ctx context.Context, in *UpdateCoinGasRequest, opts ...grpc.CallOption) (*UpdateCoinGasResponse, error) {
+func (c *gasFeederClient) UpdateCoinGas(ctx context.Context, in *UpdateCoinGasRequest, opts ...grpc.CallOption) (*UpdateCoinGasResponse, error) {
 	out := new(UpdateCoinGasResponse)
-	err := c.cc.Invoke(ctx, "/gas.feeder.v1.OracleManager/UpdateCoinGas", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/UpdateCoinGas", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *oracleManagerClient) GetCoinGas(ctx context.Context, in *GetCoinGasRequest, opts ...grpc.CallOption) (*GetCoinGasResponse, error) {
+func (c *gasFeederClient) GetCoinGas(ctx context.Context, in *GetCoinGasRequest, opts ...grpc.CallOption) (*GetCoinGasResponse, error) {
 	out := new(GetCoinGasResponse)
-	err := c.cc.Invoke(ctx, "/gas.feeder.v1.OracleManager/GetCoinGas", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/GetCoinGas", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *oracleManagerClient) GetCoinGasOnly(ctx context.Context, in *GetCoinGasOnlyRequest, opts ...grpc.CallOption) (*GetCoinGasOnlyResponse, error) {
+func (c *gasFeederClient) GetCoinGasOnly(ctx context.Context, in *GetCoinGasOnlyRequest, opts ...grpc.CallOption) (*GetCoinGasOnlyResponse, error) {
 	out := new(GetCoinGasOnlyResponse)
-	err := c.cc.Invoke(ctx, "/gas.feeder.v1.OracleManager/GetCoinGasOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/GetCoinGasOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *oracleManagerClient) GetCoinGases(ctx context.Context, in *GetCoinGasesRequest, opts ...grpc.CallOption) (*GetCoinGasesResponse, error) {
+func (c *gasFeederClient) GetCoinGases(ctx context.Context, in *GetCoinGasesRequest, opts ...grpc.CallOption) (*GetCoinGasesResponse, error) {
 	out := new(GetCoinGasesResponse)
-	err := c.cc.Invoke(ctx, "/gas.feeder.v1.OracleManager/GetCoinGases", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/GetCoinGases", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *oracleManagerClient) ExistCoinGas(ctx context.Context, in *ExistCoinGasRequest, opts ...grpc.CallOption) (*ExistCoinGasResponse, error) {
+func (c *gasFeederClient) ExistCoinGas(ctx context.Context, in *ExistCoinGasRequest, opts ...grpc.CallOption) (*ExistCoinGasResponse, error) {
 	out := new(ExistCoinGasResponse)
-	err := c.cc.Invoke(ctx, "/gas.feeder.v1.OracleManager/ExistCoinGas", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/ExistCoinGas", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *oracleManagerClient) ExistCoinGasConds(ctx context.Context, in *ExistCoinGasCondsRequest, opts ...grpc.CallOption) (*ExistCoinGasCondsResponse, error) {
+func (c *gasFeederClient) ExistCoinGasConds(ctx context.Context, in *ExistCoinGasCondsRequest, opts ...grpc.CallOption) (*ExistCoinGasCondsResponse, error) {
 	out := new(ExistCoinGasCondsResponse)
-	err := c.cc.Invoke(ctx, "/gas.feeder.v1.OracleManager/ExistCoinGasConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/ExistCoinGasConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *oracleManagerClient) DeleteCoinGas(ctx context.Context, in *DeleteCoinGasRequest, opts ...grpc.CallOption) (*DeleteCoinGasResponse, error) {
+func (c *gasFeederClient) DeleteCoinGas(ctx context.Context, in *DeleteCoinGasRequest, opts ...grpc.CallOption) (*DeleteCoinGasResponse, error) {
 	out := new(DeleteCoinGasResponse)
-	err := c.cc.Invoke(ctx, "/gas.feeder.v1.OracleManager/DeleteCoinGas", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/gas.feeder.v1.GasFeeder/DeleteCoinGas", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// OracleManagerServer is the server API for OracleManager service.
-// All implementations must embed UnimplementedOracleManagerServer
+// GasFeederServer is the server API for GasFeeder service.
+// All implementations must embed UnimplementedGasFeederServer
 // for forward compatibility
-type OracleManagerServer interface {
+type GasFeederServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateCoinGas(context.Context, *CreateCoinGasRequest) (*CreateCoinGasResponse, error)
 	UpdateCoinGas(context.Context, *UpdateCoinGasRequest) (*UpdateCoinGasResponse, error)
@@ -137,257 +137,257 @@ type OracleManagerServer interface {
 	ExistCoinGas(context.Context, *ExistCoinGasRequest) (*ExistCoinGasResponse, error)
 	ExistCoinGasConds(context.Context, *ExistCoinGasCondsRequest) (*ExistCoinGasCondsResponse, error)
 	DeleteCoinGas(context.Context, *DeleteCoinGasRequest) (*DeleteCoinGasResponse, error)
-	mustEmbedUnimplementedOracleManagerServer()
+	mustEmbedUnimplementedGasFeederServer()
 }
 
-// UnimplementedOracleManagerServer must be embedded to have forward compatible implementations.
-type UnimplementedOracleManagerServer struct {
+// UnimplementedGasFeederServer must be embedded to have forward compatible implementations.
+type UnimplementedGasFeederServer struct {
 }
 
-func (UnimplementedOracleManagerServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
+func (UnimplementedGasFeederServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
-func (UnimplementedOracleManagerServer) CreateCoinGas(context.Context, *CreateCoinGasRequest) (*CreateCoinGasResponse, error) {
+func (UnimplementedGasFeederServer) CreateCoinGas(context.Context, *CreateCoinGasRequest) (*CreateCoinGasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCoinGas not implemented")
 }
-func (UnimplementedOracleManagerServer) UpdateCoinGas(context.Context, *UpdateCoinGasRequest) (*UpdateCoinGasResponse, error) {
+func (UnimplementedGasFeederServer) UpdateCoinGas(context.Context, *UpdateCoinGasRequest) (*UpdateCoinGasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCoinGas not implemented")
 }
-func (UnimplementedOracleManagerServer) GetCoinGas(context.Context, *GetCoinGasRequest) (*GetCoinGasResponse, error) {
+func (UnimplementedGasFeederServer) GetCoinGas(context.Context, *GetCoinGasRequest) (*GetCoinGasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinGas not implemented")
 }
-func (UnimplementedOracleManagerServer) GetCoinGasOnly(context.Context, *GetCoinGasOnlyRequest) (*GetCoinGasOnlyResponse, error) {
+func (UnimplementedGasFeederServer) GetCoinGasOnly(context.Context, *GetCoinGasOnlyRequest) (*GetCoinGasOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinGasOnly not implemented")
 }
-func (UnimplementedOracleManagerServer) GetCoinGases(context.Context, *GetCoinGasesRequest) (*GetCoinGasesResponse, error) {
+func (UnimplementedGasFeederServer) GetCoinGases(context.Context, *GetCoinGasesRequest) (*GetCoinGasesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinGases not implemented")
 }
-func (UnimplementedOracleManagerServer) ExistCoinGas(context.Context, *ExistCoinGasRequest) (*ExistCoinGasResponse, error) {
+func (UnimplementedGasFeederServer) ExistCoinGas(context.Context, *ExistCoinGasRequest) (*ExistCoinGasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistCoinGas not implemented")
 }
-func (UnimplementedOracleManagerServer) ExistCoinGasConds(context.Context, *ExistCoinGasCondsRequest) (*ExistCoinGasCondsResponse, error) {
+func (UnimplementedGasFeederServer) ExistCoinGasConds(context.Context, *ExistCoinGasCondsRequest) (*ExistCoinGasCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistCoinGasConds not implemented")
 }
-func (UnimplementedOracleManagerServer) DeleteCoinGas(context.Context, *DeleteCoinGasRequest) (*DeleteCoinGasResponse, error) {
+func (UnimplementedGasFeederServer) DeleteCoinGas(context.Context, *DeleteCoinGasRequest) (*DeleteCoinGasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCoinGas not implemented")
 }
-func (UnimplementedOracleManagerServer) mustEmbedUnimplementedOracleManagerServer() {}
+func (UnimplementedGasFeederServer) mustEmbedUnimplementedGasFeederServer() {}
 
-// UnsafeOracleManagerServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to OracleManagerServer will
+// UnsafeGasFeederServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to GasFeederServer will
 // result in compilation errors.
-type UnsafeOracleManagerServer interface {
-	mustEmbedUnimplementedOracleManagerServer()
+type UnsafeGasFeederServer interface {
+	mustEmbedUnimplementedGasFeederServer()
 }
 
-func RegisterOracleManagerServer(s grpc.ServiceRegistrar, srv OracleManagerServer) {
-	s.RegisterService(&OracleManager_ServiceDesc, srv)
+func RegisterGasFeederServer(s grpc.ServiceRegistrar, srv GasFeederServer) {
+	s.RegisterService(&GasFeeder_ServiceDesc, srv)
 }
 
-func _OracleManager_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GasFeeder_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OracleManagerServer).Version(ctx, in)
+		return srv.(GasFeederServer).Version(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/gas.feeder.v1.OracleManager/Version",
+		FullMethod: "/gas.feeder.v1.GasFeeder/Version",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OracleManagerServer).Version(ctx, req.(*emptypb.Empty))
+		return srv.(GasFeederServer).Version(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OracleManager_CreateCoinGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GasFeeder_CreateCoinGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateCoinGasRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OracleManagerServer).CreateCoinGas(ctx, in)
+		return srv.(GasFeederServer).CreateCoinGas(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/gas.feeder.v1.OracleManager/CreateCoinGas",
+		FullMethod: "/gas.feeder.v1.GasFeeder/CreateCoinGas",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OracleManagerServer).CreateCoinGas(ctx, req.(*CreateCoinGasRequest))
+		return srv.(GasFeederServer).CreateCoinGas(ctx, req.(*CreateCoinGasRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OracleManager_UpdateCoinGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GasFeeder_UpdateCoinGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateCoinGasRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OracleManagerServer).UpdateCoinGas(ctx, in)
+		return srv.(GasFeederServer).UpdateCoinGas(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/gas.feeder.v1.OracleManager/UpdateCoinGas",
+		FullMethod: "/gas.feeder.v1.GasFeeder/UpdateCoinGas",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OracleManagerServer).UpdateCoinGas(ctx, req.(*UpdateCoinGasRequest))
+		return srv.(GasFeederServer).UpdateCoinGas(ctx, req.(*UpdateCoinGasRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OracleManager_GetCoinGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GasFeeder_GetCoinGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCoinGasRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OracleManagerServer).GetCoinGas(ctx, in)
+		return srv.(GasFeederServer).GetCoinGas(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/gas.feeder.v1.OracleManager/GetCoinGas",
+		FullMethod: "/gas.feeder.v1.GasFeeder/GetCoinGas",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OracleManagerServer).GetCoinGas(ctx, req.(*GetCoinGasRequest))
+		return srv.(GasFeederServer).GetCoinGas(ctx, req.(*GetCoinGasRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OracleManager_GetCoinGasOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GasFeeder_GetCoinGasOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCoinGasOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OracleManagerServer).GetCoinGasOnly(ctx, in)
+		return srv.(GasFeederServer).GetCoinGasOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/gas.feeder.v1.OracleManager/GetCoinGasOnly",
+		FullMethod: "/gas.feeder.v1.GasFeeder/GetCoinGasOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OracleManagerServer).GetCoinGasOnly(ctx, req.(*GetCoinGasOnlyRequest))
+		return srv.(GasFeederServer).GetCoinGasOnly(ctx, req.(*GetCoinGasOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OracleManager_GetCoinGases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GasFeeder_GetCoinGases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCoinGasesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OracleManagerServer).GetCoinGases(ctx, in)
+		return srv.(GasFeederServer).GetCoinGases(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/gas.feeder.v1.OracleManager/GetCoinGases",
+		FullMethod: "/gas.feeder.v1.GasFeeder/GetCoinGases",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OracleManagerServer).GetCoinGases(ctx, req.(*GetCoinGasesRequest))
+		return srv.(GasFeederServer).GetCoinGases(ctx, req.(*GetCoinGasesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OracleManager_ExistCoinGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GasFeeder_ExistCoinGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistCoinGasRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OracleManagerServer).ExistCoinGas(ctx, in)
+		return srv.(GasFeederServer).ExistCoinGas(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/gas.feeder.v1.OracleManager/ExistCoinGas",
+		FullMethod: "/gas.feeder.v1.GasFeeder/ExistCoinGas",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OracleManagerServer).ExistCoinGas(ctx, req.(*ExistCoinGasRequest))
+		return srv.(GasFeederServer).ExistCoinGas(ctx, req.(*ExistCoinGasRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OracleManager_ExistCoinGasConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GasFeeder_ExistCoinGasConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistCoinGasCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OracleManagerServer).ExistCoinGasConds(ctx, in)
+		return srv.(GasFeederServer).ExistCoinGasConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/gas.feeder.v1.OracleManager/ExistCoinGasConds",
+		FullMethod: "/gas.feeder.v1.GasFeeder/ExistCoinGasConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OracleManagerServer).ExistCoinGasConds(ctx, req.(*ExistCoinGasCondsRequest))
+		return srv.(GasFeederServer).ExistCoinGasConds(ctx, req.(*ExistCoinGasCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OracleManager_DeleteCoinGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GasFeeder_DeleteCoinGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteCoinGasRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OracleManagerServer).DeleteCoinGas(ctx, in)
+		return srv.(GasFeederServer).DeleteCoinGas(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/gas.feeder.v1.OracleManager/DeleteCoinGas",
+		FullMethod: "/gas.feeder.v1.GasFeeder/DeleteCoinGas",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OracleManagerServer).DeleteCoinGas(ctx, req.(*DeleteCoinGasRequest))
+		return srv.(GasFeederServer).DeleteCoinGas(ctx, req.(*DeleteCoinGasRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// OracleManager_ServiceDesc is the grpc.ServiceDesc for OracleManager service.
+// GasFeeder_ServiceDesc is the grpc.ServiceDesc for GasFeeder service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var OracleManager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "gas.feeder.v1.OracleManager",
-	HandlerType: (*OracleManagerServer)(nil),
+var GasFeeder_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "gas.feeder.v1.GasFeeder",
+	HandlerType: (*GasFeederServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Version",
-			Handler:    _OracleManager_Version_Handler,
+			Handler:    _GasFeeder_Version_Handler,
 		},
 		{
 			MethodName: "CreateCoinGas",
-			Handler:    _OracleManager_CreateCoinGas_Handler,
+			Handler:    _GasFeeder_CreateCoinGas_Handler,
 		},
 		{
 			MethodName: "UpdateCoinGas",
-			Handler:    _OracleManager_UpdateCoinGas_Handler,
+			Handler:    _GasFeeder_UpdateCoinGas_Handler,
 		},
 		{
 			MethodName: "GetCoinGas",
-			Handler:    _OracleManager_GetCoinGas_Handler,
+			Handler:    _GasFeeder_GetCoinGas_Handler,
 		},
 		{
 			MethodName: "GetCoinGasOnly",
-			Handler:    _OracleManager_GetCoinGasOnly_Handler,
+			Handler:    _GasFeeder_GetCoinGasOnly_Handler,
 		},
 		{
 			MethodName: "GetCoinGases",
-			Handler:    _OracleManager_GetCoinGases_Handler,
+			Handler:    _GasFeeder_GetCoinGases_Handler,
 		},
 		{
 			MethodName: "ExistCoinGas",
-			Handler:    _OracleManager_ExistCoinGas_Handler,
+			Handler:    _GasFeeder_ExistCoinGas_Handler,
 		},
 		{
 			MethodName: "ExistCoinGasConds",
-			Handler:    _OracleManager_ExistCoinGasConds_Handler,
+			Handler:    _GasFeeder_ExistCoinGasConds_Handler,
 		},
 		{
 			MethodName: "DeleteCoinGas",
-			Handler:    _OracleManager_DeleteCoinGas_Handler,
+			Handler:    _GasFeeder_DeleteCoinGas_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

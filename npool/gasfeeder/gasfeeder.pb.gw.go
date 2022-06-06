@@ -32,7 +32,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_OracleManager_Version_0(ctx context.Context, marshaler runtime.Marshaler, client OracleManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GasFeeder_Version_0(ctx context.Context, marshaler runtime.Marshaler, client GasFeederClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
@@ -49,7 +49,7 @@ func request_OracleManager_Version_0(ctx context.Context, marshaler runtime.Mars
 
 }
 
-func local_request_OracleManager_Version_0(ctx context.Context, marshaler runtime.Marshaler, server OracleManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GasFeeder_Version_0(ctx context.Context, marshaler runtime.Marshaler, server GasFeederServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
@@ -66,7 +66,7 @@ func local_request_OracleManager_Version_0(ctx context.Context, marshaler runtim
 
 }
 
-func request_OracleManager_CreateCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, client OracleManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GasFeeder_CreateCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, client GasFeederClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateCoinGasRequest
 	var metadata runtime.ServerMetadata
 
@@ -83,7 +83,7 @@ func request_OracleManager_CreateCoinGas_0(ctx context.Context, marshaler runtim
 
 }
 
-func local_request_OracleManager_CreateCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, server OracleManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GasFeeder_CreateCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, server GasFeederServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateCoinGasRequest
 	var metadata runtime.ServerMetadata
 
@@ -100,7 +100,7 @@ func local_request_OracleManager_CreateCoinGas_0(ctx context.Context, marshaler 
 
 }
 
-func request_OracleManager_UpdateCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, client OracleManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GasFeeder_UpdateCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, client GasFeederClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UpdateCoinGasRequest
 	var metadata runtime.ServerMetadata
 
@@ -117,7 +117,7 @@ func request_OracleManager_UpdateCoinGas_0(ctx context.Context, marshaler runtim
 
 }
 
-func local_request_OracleManager_UpdateCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, server OracleManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GasFeeder_UpdateCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, server GasFeederServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UpdateCoinGasRequest
 	var metadata runtime.ServerMetadata
 
@@ -134,7 +134,7 @@ func local_request_OracleManager_UpdateCoinGas_0(ctx context.Context, marshaler 
 
 }
 
-func request_OracleManager_GetCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, client OracleManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GasFeeder_GetCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, client GasFeederClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetCoinGasRequest
 	var metadata runtime.ServerMetadata
 
@@ -151,7 +151,7 @@ func request_OracleManager_GetCoinGas_0(ctx context.Context, marshaler runtime.M
 
 }
 
-func local_request_OracleManager_GetCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, server OracleManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GasFeeder_GetCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, server GasFeederServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetCoinGasRequest
 	var metadata runtime.ServerMetadata
 
@@ -168,7 +168,7 @@ func local_request_OracleManager_GetCoinGas_0(ctx context.Context, marshaler run
 
 }
 
-func request_OracleManager_GetCoinGasOnly_0(ctx context.Context, marshaler runtime.Marshaler, client OracleManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GasFeeder_GetCoinGasOnly_0(ctx context.Context, marshaler runtime.Marshaler, client GasFeederClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetCoinGasOnlyRequest
 	var metadata runtime.ServerMetadata
 
@@ -185,7 +185,7 @@ func request_OracleManager_GetCoinGasOnly_0(ctx context.Context, marshaler runti
 
 }
 
-func local_request_OracleManager_GetCoinGasOnly_0(ctx context.Context, marshaler runtime.Marshaler, server OracleManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GasFeeder_GetCoinGasOnly_0(ctx context.Context, marshaler runtime.Marshaler, server GasFeederServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetCoinGasOnlyRequest
 	var metadata runtime.ServerMetadata
 
@@ -202,7 +202,7 @@ func local_request_OracleManager_GetCoinGasOnly_0(ctx context.Context, marshaler
 
 }
 
-func request_OracleManager_GetCoinGases_0(ctx context.Context, marshaler runtime.Marshaler, client OracleManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GasFeeder_GetCoinGases_0(ctx context.Context, marshaler runtime.Marshaler, client GasFeederClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetCoinGasesRequest
 	var metadata runtime.ServerMetadata
 
@@ -219,7 +219,7 @@ func request_OracleManager_GetCoinGases_0(ctx context.Context, marshaler runtime
 
 }
 
-func local_request_OracleManager_GetCoinGases_0(ctx context.Context, marshaler runtime.Marshaler, server OracleManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GasFeeder_GetCoinGases_0(ctx context.Context, marshaler runtime.Marshaler, server GasFeederServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetCoinGasesRequest
 	var metadata runtime.ServerMetadata
 
@@ -236,7 +236,7 @@ func local_request_OracleManager_GetCoinGases_0(ctx context.Context, marshaler r
 
 }
 
-func request_OracleManager_ExistCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, client OracleManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GasFeeder_ExistCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, client GasFeederClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ExistCoinGasRequest
 	var metadata runtime.ServerMetadata
 
@@ -253,7 +253,7 @@ func request_OracleManager_ExistCoinGas_0(ctx context.Context, marshaler runtime
 
 }
 
-func local_request_OracleManager_ExistCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, server OracleManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GasFeeder_ExistCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, server GasFeederServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ExistCoinGasRequest
 	var metadata runtime.ServerMetadata
 
@@ -270,7 +270,7 @@ func local_request_OracleManager_ExistCoinGas_0(ctx context.Context, marshaler r
 
 }
 
-func request_OracleManager_ExistCoinGasConds_0(ctx context.Context, marshaler runtime.Marshaler, client OracleManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GasFeeder_ExistCoinGasConds_0(ctx context.Context, marshaler runtime.Marshaler, client GasFeederClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ExistCoinGasCondsRequest
 	var metadata runtime.ServerMetadata
 
@@ -287,7 +287,7 @@ func request_OracleManager_ExistCoinGasConds_0(ctx context.Context, marshaler ru
 
 }
 
-func local_request_OracleManager_ExistCoinGasConds_0(ctx context.Context, marshaler runtime.Marshaler, server OracleManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GasFeeder_ExistCoinGasConds_0(ctx context.Context, marshaler runtime.Marshaler, server GasFeederServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ExistCoinGasCondsRequest
 	var metadata runtime.ServerMetadata
 
@@ -304,7 +304,7 @@ func local_request_OracleManager_ExistCoinGasConds_0(ctx context.Context, marsha
 
 }
 
-func request_OracleManager_DeleteCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, client OracleManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GasFeeder_DeleteCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, client GasFeederClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DeleteCoinGasRequest
 	var metadata runtime.ServerMetadata
 
@@ -321,7 +321,7 @@ func request_OracleManager_DeleteCoinGas_0(ctx context.Context, marshaler runtim
 
 }
 
-func local_request_OracleManager_DeleteCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, server OracleManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GasFeeder_DeleteCoinGas_0(ctx context.Context, marshaler runtime.Marshaler, server GasFeederServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DeleteCoinGasRequest
 	var metadata runtime.ServerMetadata
 
@@ -338,24 +338,24 @@ func local_request_OracleManager_DeleteCoinGas_0(ctx context.Context, marshaler 
 
 }
 
-// RegisterOracleManagerHandlerServer registers the http handlers for service OracleManager to "mux".
-// UnaryRPC     :call OracleManagerServer directly.
+// RegisterGasFeederHandlerServer registers the http handlers for service GasFeeder to "mux".
+// UnaryRPC     :call GasFeederServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterOracleManagerHandlerFromEndpoint instead.
-func RegisterOracleManagerHandlerServer(ctx context.Context, mux *runtime.ServeMux, server OracleManagerServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterGasFeederHandlerFromEndpoint instead.
+func RegisterGasFeederHandlerServer(ctx context.Context, mux *runtime.ServeMux, server GasFeederServer) error {
 
-	mux.Handle("POST", pattern_OracleManager_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/Version", runtime.WithHTTPPathPattern("/version"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/Version", runtime.WithHTTPPathPattern("/version"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_OracleManager_Version_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GasFeeder_Version_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -363,22 +363,22 @@ func RegisterOracleManagerHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_OracleManager_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_CreateCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_CreateCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/CreateCoinGas", runtime.WithHTTPPathPattern("/v1/create/coingas"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/CreateCoinGas", runtime.WithHTTPPathPattern("/v1/create/coingas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_OracleManager_CreateCoinGas_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GasFeeder_CreateCoinGas_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -386,22 +386,22 @@ func RegisterOracleManagerHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_OracleManager_CreateCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_CreateCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_UpdateCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_UpdateCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/UpdateCoinGas", runtime.WithHTTPPathPattern("/v1/update/coingas"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/UpdateCoinGas", runtime.WithHTTPPathPattern("/v1/update/coingas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_OracleManager_UpdateCoinGas_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GasFeeder_UpdateCoinGas_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -409,22 +409,22 @@ func RegisterOracleManagerHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_OracleManager_UpdateCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_UpdateCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_GetCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_GetCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/GetCoinGas", runtime.WithHTTPPathPattern("/v1/get/coingas"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/GetCoinGas", runtime.WithHTTPPathPattern("/v1/get/coingas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_OracleManager_GetCoinGas_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GasFeeder_GetCoinGas_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -432,22 +432,22 @@ func RegisterOracleManagerHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_OracleManager_GetCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_GetCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_GetCoinGasOnly_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_GetCoinGasOnly_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/GetCoinGasOnly", runtime.WithHTTPPathPattern("/v1/get/coingas/only"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/GetCoinGasOnly", runtime.WithHTTPPathPattern("/v1/get/coingas/only"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_OracleManager_GetCoinGasOnly_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GasFeeder_GetCoinGasOnly_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -455,22 +455,22 @@ func RegisterOracleManagerHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_OracleManager_GetCoinGasOnly_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_GetCoinGasOnly_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_GetCoinGases_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_GetCoinGases_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/GetCoinGases", runtime.WithHTTPPathPattern("/v1/get/coingass"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/GetCoinGases", runtime.WithHTTPPathPattern("/v1/get/coingass"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_OracleManager_GetCoinGases_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GasFeeder_GetCoinGases_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -478,22 +478,22 @@ func RegisterOracleManagerHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_OracleManager_GetCoinGases_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_GetCoinGases_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_ExistCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_ExistCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/ExistCoinGas", runtime.WithHTTPPathPattern("/v1/exist/coingas"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/ExistCoinGas", runtime.WithHTTPPathPattern("/v1/exist/coingas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_OracleManager_ExistCoinGas_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GasFeeder_ExistCoinGas_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -501,22 +501,22 @@ func RegisterOracleManagerHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_OracleManager_ExistCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_ExistCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_ExistCoinGasConds_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_ExistCoinGasConds_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/ExistCoinGasConds", runtime.WithHTTPPathPattern("/v1/exist/coingas/conds"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/ExistCoinGasConds", runtime.WithHTTPPathPattern("/v1/exist/coingas/conds"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_OracleManager_ExistCoinGasConds_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GasFeeder_ExistCoinGasConds_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -524,22 +524,22 @@ func RegisterOracleManagerHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_OracleManager_ExistCoinGasConds_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_ExistCoinGasConds_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_DeleteCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_DeleteCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/DeleteCoinGas", runtime.WithHTTPPathPattern("/v1/delete/coingas"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/DeleteCoinGas", runtime.WithHTTPPathPattern("/v1/delete/coingas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_OracleManager_DeleteCoinGas_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GasFeeder_DeleteCoinGas_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -547,16 +547,16 @@ func RegisterOracleManagerHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_OracleManager_DeleteCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_DeleteCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterOracleManagerHandlerFromEndpoint is same as RegisterOracleManagerHandler but
+// RegisterGasFeederHandlerFromEndpoint is same as RegisterGasFeederHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterOracleManagerHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterGasFeederHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -576,199 +576,199 @@ func RegisterOracleManagerHandlerFromEndpoint(ctx context.Context, mux *runtime.
 		}()
 	}()
 
-	return RegisterOracleManagerHandler(ctx, mux, conn)
+	return RegisterGasFeederHandler(ctx, mux, conn)
 }
 
-// RegisterOracleManagerHandler registers the http handlers for service OracleManager to "mux".
+// RegisterGasFeederHandler registers the http handlers for service GasFeeder to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterOracleManagerHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterOracleManagerHandlerClient(ctx, mux, NewOracleManagerClient(conn))
+func RegisterGasFeederHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterGasFeederHandlerClient(ctx, mux, NewGasFeederClient(conn))
 }
 
-// RegisterOracleManagerHandlerClient registers the http handlers for service OracleManager
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "OracleManagerClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "OracleManagerClient"
+// RegisterGasFeederHandlerClient registers the http handlers for service GasFeeder
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "GasFeederClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "GasFeederClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "OracleManagerClient" to call the correct interceptors.
-func RegisterOracleManagerHandlerClient(ctx context.Context, mux *runtime.ServeMux, client OracleManagerClient) error {
+// "GasFeederClient" to call the correct interceptors.
+func RegisterGasFeederHandlerClient(ctx context.Context, mux *runtime.ServeMux, client GasFeederClient) error {
 
-	mux.Handle("POST", pattern_OracleManager_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/Version", runtime.WithHTTPPathPattern("/version"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/Version", runtime.WithHTTPPathPattern("/version"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_OracleManager_Version_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GasFeeder_Version_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OracleManager_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_CreateCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_CreateCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/CreateCoinGas", runtime.WithHTTPPathPattern("/v1/create/coingas"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/CreateCoinGas", runtime.WithHTTPPathPattern("/v1/create/coingas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_OracleManager_CreateCoinGas_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GasFeeder_CreateCoinGas_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OracleManager_CreateCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_CreateCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_UpdateCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_UpdateCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/UpdateCoinGas", runtime.WithHTTPPathPattern("/v1/update/coingas"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/UpdateCoinGas", runtime.WithHTTPPathPattern("/v1/update/coingas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_OracleManager_UpdateCoinGas_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GasFeeder_UpdateCoinGas_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OracleManager_UpdateCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_UpdateCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_GetCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_GetCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/GetCoinGas", runtime.WithHTTPPathPattern("/v1/get/coingas"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/GetCoinGas", runtime.WithHTTPPathPattern("/v1/get/coingas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_OracleManager_GetCoinGas_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GasFeeder_GetCoinGas_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OracleManager_GetCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_GetCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_GetCoinGasOnly_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_GetCoinGasOnly_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/GetCoinGasOnly", runtime.WithHTTPPathPattern("/v1/get/coingas/only"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/GetCoinGasOnly", runtime.WithHTTPPathPattern("/v1/get/coingas/only"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_OracleManager_GetCoinGasOnly_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GasFeeder_GetCoinGasOnly_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OracleManager_GetCoinGasOnly_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_GetCoinGasOnly_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_GetCoinGases_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_GetCoinGases_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/GetCoinGases", runtime.WithHTTPPathPattern("/v1/get/coingass"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/GetCoinGases", runtime.WithHTTPPathPattern("/v1/get/coingass"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_OracleManager_GetCoinGases_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GasFeeder_GetCoinGases_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OracleManager_GetCoinGases_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_GetCoinGases_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_ExistCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_ExistCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/ExistCoinGas", runtime.WithHTTPPathPattern("/v1/exist/coingas"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/ExistCoinGas", runtime.WithHTTPPathPattern("/v1/exist/coingas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_OracleManager_ExistCoinGas_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GasFeeder_ExistCoinGas_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OracleManager_ExistCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_ExistCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_ExistCoinGasConds_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_ExistCoinGasConds_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/ExistCoinGasConds", runtime.WithHTTPPathPattern("/v1/exist/coingas/conds"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/ExistCoinGasConds", runtime.WithHTTPPathPattern("/v1/exist/coingas/conds"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_OracleManager_ExistCoinGasConds_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GasFeeder_ExistCoinGasConds_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OracleManager_ExistCoinGasConds_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_ExistCoinGasConds_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_OracleManager_DeleteCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GasFeeder_DeleteCoinGas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.OracleManager/DeleteCoinGas", runtime.WithHTTPPathPattern("/v1/delete/coingas"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/DeleteCoinGas", runtime.WithHTTPPathPattern("/v1/delete/coingas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_OracleManager_DeleteCoinGas_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GasFeeder_DeleteCoinGas_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OracleManager_DeleteCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GasFeeder_DeleteCoinGas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -776,41 +776,41 @@ func RegisterOracleManagerHandlerClient(ctx context.Context, mux *runtime.ServeM
 }
 
 var (
-	pattern_OracleManager_Version_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"version"}, ""))
+	pattern_GasFeeder_Version_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"version"}, ""))
 
-	pattern_OracleManager_CreateCoinGas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "coingas"}, ""))
+	pattern_GasFeeder_CreateCoinGas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "coingas"}, ""))
 
-	pattern_OracleManager_UpdateCoinGas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "coingas"}, ""))
+	pattern_GasFeeder_UpdateCoinGas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "coingas"}, ""))
 
-	pattern_OracleManager_GetCoinGas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "coingas"}, ""))
+	pattern_GasFeeder_GetCoinGas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "coingas"}, ""))
 
-	pattern_OracleManager_GetCoinGasOnly_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "coingas", "only"}, ""))
+	pattern_GasFeeder_GetCoinGasOnly_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "coingas", "only"}, ""))
 
-	pattern_OracleManager_GetCoinGases_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "coingass"}, ""))
+	pattern_GasFeeder_GetCoinGases_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "coingass"}, ""))
 
-	pattern_OracleManager_ExistCoinGas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "exist", "coingas"}, ""))
+	pattern_GasFeeder_ExistCoinGas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "exist", "coingas"}, ""))
 
-	pattern_OracleManager_ExistCoinGasConds_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "exist", "coingas", "conds"}, ""))
+	pattern_GasFeeder_ExistCoinGasConds_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "exist", "coingas", "conds"}, ""))
 
-	pattern_OracleManager_DeleteCoinGas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "delete", "coingas"}, ""))
+	pattern_GasFeeder_DeleteCoinGas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "delete", "coingas"}, ""))
 )
 
 var (
-	forward_OracleManager_Version_0 = runtime.ForwardResponseMessage
+	forward_GasFeeder_Version_0 = runtime.ForwardResponseMessage
 
-	forward_OracleManager_CreateCoinGas_0 = runtime.ForwardResponseMessage
+	forward_GasFeeder_CreateCoinGas_0 = runtime.ForwardResponseMessage
 
-	forward_OracleManager_UpdateCoinGas_0 = runtime.ForwardResponseMessage
+	forward_GasFeeder_UpdateCoinGas_0 = runtime.ForwardResponseMessage
 
-	forward_OracleManager_GetCoinGas_0 = runtime.ForwardResponseMessage
+	forward_GasFeeder_GetCoinGas_0 = runtime.ForwardResponseMessage
 
-	forward_OracleManager_GetCoinGasOnly_0 = runtime.ForwardResponseMessage
+	forward_GasFeeder_GetCoinGasOnly_0 = runtime.ForwardResponseMessage
 
-	forward_OracleManager_GetCoinGases_0 = runtime.ForwardResponseMessage
+	forward_GasFeeder_GetCoinGases_0 = runtime.ForwardResponseMessage
 
-	forward_OracleManager_ExistCoinGas_0 = runtime.ForwardResponseMessage
+	forward_GasFeeder_ExistCoinGas_0 = runtime.ForwardResponseMessage
 
-	forward_OracleManager_ExistCoinGasConds_0 = runtime.ForwardResponseMessage
+	forward_GasFeeder_ExistCoinGasConds_0 = runtime.ForwardResponseMessage
 
-	forward_OracleManager_DeleteCoinGas_0 = runtime.ForwardResponseMessage
+	forward_GasFeeder_DeleteCoinGas_0 = runtime.ForwardResponseMessage
 )

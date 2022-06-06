@@ -13,7 +13,7 @@
   "paths": {
     "/v1/create/coingas": {
       "post": {
-        "operationId": "OracleManager_CreateCoinGas",
+        "operationId": "GasFeeder_CreateCoinGas",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -39,13 +39,13 @@
           }
         ],
         "tags": [
-          "OracleManager"
+          "GasFeeder"
         ]
       }
     },
     "/v1/delete/coingas": {
       "post": {
-        "operationId": "OracleManager_DeleteCoinGas",
+        "operationId": "GasFeeder_DeleteCoinGas",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -71,13 +71,13 @@
           }
         ],
         "tags": [
-          "OracleManager"
+          "GasFeeder"
         ]
       }
     },
     "/v1/exist/coingas": {
       "post": {
-        "operationId": "OracleManager_ExistCoinGas",
+        "operationId": "GasFeeder_ExistCoinGas",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -103,13 +103,13 @@
           }
         ],
         "tags": [
-          "OracleManager"
+          "GasFeeder"
         ]
       }
     },
     "/v1/exist/coingas/conds": {
       "post": {
-        "operationId": "OracleManager_ExistCoinGasConds",
+        "operationId": "GasFeeder_ExistCoinGasConds",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -135,13 +135,13 @@
           }
         ],
         "tags": [
-          "OracleManager"
+          "GasFeeder"
         ]
       }
     },
     "/v1/get/coingas": {
       "post": {
-        "operationId": "OracleManager_GetCoinGas",
+        "operationId": "GasFeeder_GetCoinGas",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -167,13 +167,13 @@
           }
         ],
         "tags": [
-          "OracleManager"
+          "GasFeeder"
         ]
       }
     },
     "/v1/get/coingas/only": {
       "post": {
-        "operationId": "OracleManager_GetCoinGasOnly",
+        "operationId": "GasFeeder_GetCoinGasOnly",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -199,13 +199,13 @@
           }
         ],
         "tags": [
-          "OracleManager"
+          "GasFeeder"
         ]
       }
     },
     "/v1/get/coingass": {
       "post": {
-        "operationId": "OracleManager_GetCoinGases",
+        "operationId": "GasFeeder_GetCoinGases",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -231,13 +231,13 @@
           }
         ],
         "tags": [
-          "OracleManager"
+          "GasFeeder"
         ]
       }
     },
     "/v1/update/coingas": {
       "post": {
-        "operationId": "OracleManager_UpdateCoinGas",
+        "operationId": "GasFeeder_UpdateCoinGas",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -263,13 +263,13 @@
           }
         ],
         "tags": [
-          "OracleManager"
+          "GasFeeder"
         ]
       }
     },
     "/version": {
       "post": {
-        "operationId": "OracleManager_Version",
+        "operationId": "GasFeeder_Version",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -295,7 +295,7 @@
           }
         ],
         "tags": [
-          "OracleManager"
+          "GasFeeder"
         ]
       }
     }

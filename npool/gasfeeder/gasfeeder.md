@@ -28,7 +28,7 @@
     - [UpdateCoinGasRequest](#gas-feeder-v1-UpdateCoinGasRequest)
     - [UpdateCoinGasResponse](#gas-feeder-v1-UpdateCoinGasResponse)
   
-    - [OracleManager](#gas-feeder-v1-OracleManager)
+    - [GasFeeder](#gas-feeder-v1-GasFeeder)
   
 - [npool/gasfeeder/gasfeeder.proto](#npool_gasfeeder_gasfeeder-proto)
     - [CoinGas](#gas-feeder-v1-CoinGas)
@@ -55,7 +55,7 @@
     - [UpdateCoinGasRequest](#gas-feeder-v1-UpdateCoinGasRequest)
     - [UpdateCoinGasResponse](#gas-feeder-v1-UpdateCoinGasResponse)
   
-    - [OracleManager](#gas-feeder-v1-OracleManager)
+    - [GasFeeder](#gas-feeder-v1-GasFeeder)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -428,9 +428,9 @@
  
 
 
-<a name="gas-feeder-v1-OracleManager"></a>
+<a name="gas-feeder-v1-GasFeeder"></a>
 
-### OracleManager
+### GasFeeder
 
 
 | Method Name | Request Type | Response Type | Description |
@@ -816,9 +816,9 @@
  
 
 
-<a name="gas-feeder-v1-OracleManager"></a>
+<a name="gas-feeder-v1-GasFeeder"></a>
 
-### OracleManager
+### GasFeeder
 
 
 | Method Name | Request Type | Response Type | Description |
