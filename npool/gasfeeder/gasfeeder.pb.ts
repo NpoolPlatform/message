@@ -11,7 +11,8 @@ export type CoinGas = {
   id?: string
   coinTypeID?: string
   gasCoinTypeID?: string
-  depositThreshold?: string
+  depositThresholdLow?: number
+  depositAmount?: number
 }
 
 export type CreateCoinGasRequest = {

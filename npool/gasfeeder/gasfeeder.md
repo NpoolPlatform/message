@@ -125,7 +125,8 @@
 | ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | GasCoinTypeID | [string](#string) |  |  |
-| DepositThreshold | [string](#string) |  |  |
+| DepositThresholdLow | [double](#double) |  |  |
+| DepositAmount | [double](#double) |  |  |
 
 
 
@@ -877,7 +878,8 @@
 | ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | GasCoinTypeID | [string](#string) |  |  |
-| DepositThreshold | [string](#string) |  |  |
+| DepositThresholdLow | [double](#double) |  |  |
+| DepositAmount | [double](#double) |  |  |
 
 
 

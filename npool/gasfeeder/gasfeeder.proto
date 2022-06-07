@@ -133,7 +133,8 @@ message CoinGas {
     string ID = 10;
     string CoinTypeID = 20;
     string GasCoinTypeID = 30;
-    string DepositThreshold = 40;
+    double DepositThresholdLow = 40;
+    double DepositAmount = 50;
 }
 
 message CreateCoinGasRequest {

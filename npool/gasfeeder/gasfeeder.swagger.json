@@ -610,8 +610,13 @@
         "GasCoinTypeID": {
           "type": "string"
         },
-        "DepositThreshold": {
-          "type": "string"
+        "DepositThresholdLow": {
+          "type": "number",
+          "format": "double"
+        },
+        "DepositAmount": {
+          "type": "number",
+          "format": "double"
         }
       }
     },
