@@ -331,7 +331,7 @@
         ]
       }
     },
-    "/v1/get/coingass": {
+    "/v1/get/coingases": {
       "post": {
         "operationId": "GasFeeder_GetCoinGases",
         "responses": {

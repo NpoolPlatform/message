@@ -189,7 +189,7 @@ export class GasFeeder {
     return fm.fetchReq<GetCoinGasOnlyRequest, GetCoinGasOnlyResponse>(`/v1/get/coingas/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetCoinGases(req: GetCoinGasesRequest, initReq?: fm.InitReq): Promise<GetCoinGasesResponse> {
-    return fm.fetchReq<GetCoinGasesRequest, GetCoinGasesResponse>(`/v1/get/coingass`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCoinGasesRequest, GetCoinGasesResponse>(`/v1/get/coingases`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static ExistCoinGas(req: ExistCoinGasRequest, initReq?: fm.InitReq): Promise<ExistCoinGasResponse> {
     return fm.fetchReq<ExistCoinGasRequest, ExistCoinGasResponse>(`/v1/exist/coingas`, {...initReq, method: "POST", body: JSON.stringify(req)})
