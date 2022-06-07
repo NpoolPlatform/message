@@ -215,6 +215,7 @@ message Deposit {
     string ID = 10;
     string AccountID = 20;
     double DepositAmount = 30;
+    uint32 CreatedAt = 40;
 }
 
 message CreateDepositRequest {

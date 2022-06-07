@@ -93,6 +93,7 @@ export type Deposit = {
   id?: string
   accountID?: string
   depositAmount?: number
+  createdAt?: number
 }
 
 export type CreateDepositRequest = {
