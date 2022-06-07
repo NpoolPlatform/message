@@ -46,7 +46,7 @@ service GasFeeder {
 
     rpc GetCoinGases (GetCoinGasesRequest) returns (GetCoinGasesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/coingass"
+            post: "/v1/get/coingases"
             body: "*"
         };
     }

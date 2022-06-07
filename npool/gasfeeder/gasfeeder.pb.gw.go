@@ -737,7 +737,7 @@ func RegisterGasFeederHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/GetCoinGases", runtime.WithHTTPPathPattern("/v1/get/coingass"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/GetCoinGases", runtime.WithHTTPPathPattern("/v1/get/coingases"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1152,7 +1152,7 @@ func RegisterGasFeederHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/GetCoinGases", runtime.WithHTTPPathPattern("/v1/get/coingass"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/gas.feeder.v1.GasFeeder/GetCoinGases", runtime.WithHTTPPathPattern("/v1/get/coingases"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1402,7 +1402,7 @@ var (
 
 	pattern_GasFeeder_GetCoinGasOnly_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "coingas", "only"}, ""))
 
-	pattern_GasFeeder_GetCoinGases_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "coingass"}, ""))
+	pattern_GasFeeder_GetCoinGases_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "coingases"}, ""))
 
 	pattern_GasFeeder_ExistCoinGas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "exist", "coingas"}, ""))
 
