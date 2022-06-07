@@ -693,6 +693,9 @@
         "AccountID": {
           "type": "string"
         },
+        "TransactionID": {
+          "type": "string"
+        },
         "DepositAmount": {
           "type": "number",
           "format": "double"

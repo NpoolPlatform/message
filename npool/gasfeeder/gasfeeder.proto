@@ -215,8 +215,9 @@ message DeleteCoinGasResponse {
 message Deposit {
     string ID = 10;
     string AccountID = 20;
-    double DepositAmount = 30;
-    uint32 CreatedAt = 40;
+    string TransactionID = 30;
+    double DepositAmount = 40;
+    uint32 CreatedAt = 50;
 }
 
 message CreateDepositRequest {

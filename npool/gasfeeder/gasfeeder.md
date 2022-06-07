@@ -355,6 +355,7 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | AccountID | [string](#string) |  |  |
+| TransactionID | [string](#string) |  |  |
 | DepositAmount | [double](#double) |  |  |
 | CreatedAt | [uint32](#uint32) |  |  |
 
@@ -1108,6 +1109,7 @@
 | ----- | ---- | ----- | ----------- |
 | ID | [string](#string) |  |  |
 | AccountID | [string](#string) |  |  |
+| TransactionID | [string](#string) |  |  |
 | DepositAmount | [double](#double) |  |  |
 | CreatedAt | [uint32](#uint32) |  |  |
 
