@@ -191,7 +191,7 @@ fil
 | CoinTypesolana | 6 |  |
 | CoinTypeusdttrc20 | 7 |  |
 | CoinTypebsc | 8 |  |
-| CoinTypetrx | 9 |  |
+| CoinTypetron | 9 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
@@ -200,7 +200,7 @@ fil
 | CoinTypetsolana | 105 |  |
 | CoinTypetusdttrc20 | 106 |  |
 | CoinTypetbsc | 107 |  |
-| CoinTypettrx | 108 |  |
+| CoinTypettron | 108 |  |
 
 
  
@@ -373,7 +373,7 @@ fil
 | CoinTypesolana | 6 |  |
 | CoinTypeusdttrc20 | 7 |  |
 | CoinTypebsc | 8 |  |
-| CoinTypetrx | 9 |  |
+| CoinTypetron | 9 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
@@ -382,7 +382,7 @@ fil
 | CoinTypetsolana | 105 |  |
 | CoinTypetusdttrc20 | 106 |  |
 | CoinTypetbsc | 107 |  |
-| CoinTypettrx | 108 |  |
+| CoinTypettron | 108 |  |
 
 
  
