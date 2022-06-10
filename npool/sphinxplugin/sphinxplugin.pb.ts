@@ -14,6 +14,7 @@ export enum CoinType {
   CoinTypesolana = "CoinTypesolana",
   CoinTypeusdttrc20 = "CoinTypeusdttrc20",
   CoinTypebsc = "CoinTypebsc",
+  CoinTypetrx = "CoinTypetrx",
   CoinTypetfilecoin = "CoinTypetfilecoin",
   CoinTypetbitcoin = "CoinTypetbitcoin",
   CoinTypetethereum = "CoinTypetethereum",
@@ -22,6 +23,7 @@ export enum CoinType {
   CoinTypetsolana = "CoinTypetsolana",
   CoinTypetusdttrc20 = "CoinTypetusdttrc20",
   CoinTypetbsc = "CoinTypetbsc",
+  CoinTypettrx = "CoinTypettrx",
 }
 
 export type UnsignedMessage = {
