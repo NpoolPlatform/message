@@ -205,6 +205,7 @@ export type Payment = {
   userSetCanceled?: boolean
   localCoinUSDCurrency?: number
   liveCoinUSDCurrency?: number
+  updateAt?: number
 }
 
 export type CreatePaymentRequest = {

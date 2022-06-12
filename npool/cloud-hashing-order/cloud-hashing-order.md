@@ -1216,6 +1216,7 @@ request body and response
 | UserSetCanceled | [bool](#bool) |  |  |
 | LocalCoinUSDCurrency | [double](#double) |  |  |
 | LiveCoinUSDCurrency | [double](#double) |  |  |
+| UpdateAt | [uint32](#uint32) |  |  |
 
 
 
@@ -2392,6 +2393,7 @@ request body and response
 | UserSetCanceled | [bool](#bool) |  |  |
 | LocalCoinUSDCurrency | [double](#double) |  |  |
 | LiveCoinUSDCurrency | [double](#double) |  |  |
+| UpdateAt | [uint32](#uint32) |  |  |
 
 
 
