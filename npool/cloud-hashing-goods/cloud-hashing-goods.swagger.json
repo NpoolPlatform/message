@@ -2859,6 +2859,13 @@
         "DisplayIndex": {
           "type": "integer",
           "format": "int64"
+        },
+        "Visible": {
+          "type": "boolean"
+        },
+        "PurchaseLimit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -4310,10 +4317,6 @@
           "items": {
             "type": "string"
           }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int32"
         },
         "PriceCurrency": {
           "type": "string"

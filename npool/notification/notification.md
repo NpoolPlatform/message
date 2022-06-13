@@ -11,8 +11,14 @@
     - [CreateAnnouncementForOtherAppResponse](#notification-v1-CreateAnnouncementForOtherAppResponse)
     - [CreateAnnouncementRequest](#notification-v1-CreateAnnouncementRequest)
     - [CreateAnnouncementResponse](#notification-v1-CreateAnnouncementResponse)
+    - [CreateMailForOtherAppUserRequest](#notification-v1-CreateMailForOtherAppUserRequest)
+    - [CreateMailForOtherAppUserResponse](#notification-v1-CreateMailForOtherAppUserResponse)
     - [CreateMailRequest](#notification-v1-CreateMailRequest)
     - [CreateMailResponse](#notification-v1-CreateMailResponse)
+    - [CreateNotificationForAppOtherUserRequest](#notification-v1-CreateNotificationForAppOtherUserRequest)
+    - [CreateNotificationForAppOtherUserResponse](#notification-v1-CreateNotificationForAppOtherUserResponse)
+    - [CreateNotificationForOtherAppUserRequest](#notification-v1-CreateNotificationForOtherAppUserRequest)
+    - [CreateNotificationForOtherAppUserResponse](#notification-v1-CreateNotificationForOtherAppUserResponse)
     - [CreateNotificationRequest](#notification-v1-CreateNotificationRequest)
     - [CreateNotificationResponse](#notification-v1-CreateNotificationResponse)
     - [CreateReadUserRequest](#notification-v1-CreateReadUserRequest)
@@ -25,8 +31,18 @@
     - [GetAnnouncementsByAppResponse](#notification-v1-GetAnnouncementsByAppResponse)
     - [GetAnnouncementsByOtherAppRequest](#notification-v1-GetAnnouncementsByOtherAppRequest)
     - [GetAnnouncementsByOtherAppResponse](#notification-v1-GetAnnouncementsByOtherAppResponse)
+    - [GetMailsByAppRequest](#notification-v1-GetMailsByAppRequest)
+    - [GetMailsByAppResponse](#notification-v1-GetMailsByAppResponse)
+    - [GetMailsByOtherAppRequest](#notification-v1-GetMailsByOtherAppRequest)
+    - [GetMailsByOtherAppResponse](#notification-v1-GetMailsByOtherAppResponse)
+    - [GetMailsRequest](#notification-v1-GetMailsRequest)
+    - [GetMailsResponse](#notification-v1-GetMailsResponse)
+    - [GetNotificationsByAppRequest](#notification-v1-GetNotificationsByAppRequest)
+    - [GetNotificationsByAppResponse](#notification-v1-GetNotificationsByAppResponse)
     - [GetNotificationsByAppUserRequest](#notification-v1-GetNotificationsByAppUserRequest)
     - [GetNotificationsByAppUserResponse](#notification-v1-GetNotificationsByAppUserResponse)
+    - [GetNotificationsByOtherAppRequest](#notification-v1-GetNotificationsByOtherAppRequest)
+    - [GetNotificationsByOtherAppResponse](#notification-v1-GetNotificationsByOtherAppResponse)
     - [GetTemplateByAppLangUsedForRequest](#notification-v1-GetTemplateByAppLangUsedForRequest)
     - [GetTemplateByAppLangUsedForResponse](#notification-v1-GetTemplateByAppLangUsedForResponse)
     - [GetTemplateRequest](#notification-v1-GetTemplateRequest)
@@ -58,8 +74,14 @@
     - [CreateAnnouncementForOtherAppResponse](#notification-v1-CreateAnnouncementForOtherAppResponse)
     - [CreateAnnouncementRequest](#notification-v1-CreateAnnouncementRequest)
     - [CreateAnnouncementResponse](#notification-v1-CreateAnnouncementResponse)
+    - [CreateMailForOtherAppUserRequest](#notification-v1-CreateMailForOtherAppUserRequest)
+    - [CreateMailForOtherAppUserResponse](#notification-v1-CreateMailForOtherAppUserResponse)
     - [CreateMailRequest](#notification-v1-CreateMailRequest)
     - [CreateMailResponse](#notification-v1-CreateMailResponse)
+    - [CreateNotificationForAppOtherUserRequest](#notification-v1-CreateNotificationForAppOtherUserRequest)
+    - [CreateNotificationForAppOtherUserResponse](#notification-v1-CreateNotificationForAppOtherUserResponse)
+    - [CreateNotificationForOtherAppUserRequest](#notification-v1-CreateNotificationForOtherAppUserRequest)
+    - [CreateNotificationForOtherAppUserResponse](#notification-v1-CreateNotificationForOtherAppUserResponse)
     - [CreateNotificationRequest](#notification-v1-CreateNotificationRequest)
     - [CreateNotificationResponse](#notification-v1-CreateNotificationResponse)
     - [CreateReadUserRequest](#notification-v1-CreateReadUserRequest)
@@ -72,8 +94,18 @@
     - [GetAnnouncementsByAppResponse](#notification-v1-GetAnnouncementsByAppResponse)
     - [GetAnnouncementsByOtherAppRequest](#notification-v1-GetAnnouncementsByOtherAppRequest)
     - [GetAnnouncementsByOtherAppResponse](#notification-v1-GetAnnouncementsByOtherAppResponse)
+    - [GetMailsByAppRequest](#notification-v1-GetMailsByAppRequest)
+    - [GetMailsByAppResponse](#notification-v1-GetMailsByAppResponse)
+    - [GetMailsByOtherAppRequest](#notification-v1-GetMailsByOtherAppRequest)
+    - [GetMailsByOtherAppResponse](#notification-v1-GetMailsByOtherAppResponse)
+    - [GetMailsRequest](#notification-v1-GetMailsRequest)
+    - [GetMailsResponse](#notification-v1-GetMailsResponse)
+    - [GetNotificationsByAppRequest](#notification-v1-GetNotificationsByAppRequest)
+    - [GetNotificationsByAppResponse](#notification-v1-GetNotificationsByAppResponse)
     - [GetNotificationsByAppUserRequest](#notification-v1-GetNotificationsByAppUserRequest)
     - [GetNotificationsByAppUserResponse](#notification-v1-GetNotificationsByAppUserResponse)
+    - [GetNotificationsByOtherAppRequest](#notification-v1-GetNotificationsByOtherAppRequest)
+    - [GetNotificationsByOtherAppResponse](#notification-v1-GetNotificationsByOtherAppResponse)
     - [GetTemplateByAppLangUsedForRequest](#notification-v1-GetTemplateByAppLangUsedForRequest)
     - [GetTemplateByAppLangUsedForResponse](#notification-v1-GetTemplateByAppLangUsedForResponse)
     - [GetTemplateRequest](#notification-v1-GetTemplateRequest)
@@ -218,6 +250,38 @@
 
 
 
+<a name="notification-v1-CreateMailForOtherAppUserRequest"></a>
+
+### CreateMailForOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Info | [Mail](#notification-v1-Mail) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateMailForOtherAppUserResponse"></a>
+
+### CreateMailForOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Mail](#notification-v1-Mail) |  |  |
+
+
+
+
+
+
 <a name="notification-v1-CreateMailRequest"></a>
 
 ### CreateMailRequest
@@ -226,6 +290,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| UserID | [string](#string) |  |  |
 | Info | [Mail](#notification-v1-Mail) |  |  |
 
 
@@ -242,6 +307,69 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [Mail](#notification-v1-Mail) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateNotificationForAppOtherUserRequest"></a>
+
+### CreateNotificationForAppOtherUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetUserID | [string](#string) |  |  |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateNotificationForAppOtherUserResponse"></a>
+
+### CreateNotificationForAppOtherUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateNotificationForOtherAppUserRequest"></a>
+
+### CreateNotificationForOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateNotificationForOtherAppUserResponse"></a>
+
+### CreateNotificationForOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
 
 
 
@@ -433,6 +561,127 @@
 
 
 
+<a name="notification-v1-GetMailsByAppRequest"></a>
+
+### GetMailsByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetMailsByAppResponse"></a>
+
+### GetMailsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Mail](#notification-v1-Mail) | repeated |  |
+
+
+
+
+
+
+<a name="notification-v1-GetMailsByOtherAppRequest"></a>
+
+### GetMailsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetMailsByOtherAppResponse"></a>
+
+### GetMailsByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Mail](#notification-v1-Mail) | repeated |  |
+
+
+
+
+
+
+<a name="notification-v1-GetMailsRequest"></a>
+
+### GetMailsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetMailsResponse"></a>
+
+### GetMailsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Mail](#notification-v1-Mail) | repeated |  |
+
+
+
+
+
+
+<a name="notification-v1-GetNotificationsByAppRequest"></a>
+
+### GetNotificationsByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetNotificationsByAppResponse"></a>
+
+### GetNotificationsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserNotification](#notification-v1-UserNotification) | repeated |  |
+
+
+
+
+
+
 <a name="notification-v1-GetNotificationsByAppUserRequest"></a>
 
 ### GetNotificationsByAppUserRequest
@@ -452,6 +701,36 @@
 <a name="notification-v1-GetNotificationsByAppUserResponse"></a>
 
 ### GetNotificationsByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserNotification](#notification-v1-UserNotification) | repeated |  |
+
+
+
+
+
+
+<a name="notification-v1-GetNotificationsByOtherAppRequest"></a>
+
+### GetNotificationsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetNotificationsByOtherAppResponse"></a>
+
+### GetNotificationsByOtherAppResponse
 
 
 
@@ -810,12 +1089,20 @@ Service Name
 | GetAnnouncementsByApp | [GetAnnouncementsByAppRequest](#notification-v1-GetAnnouncementsByAppRequest) | [GetAnnouncementsByAppResponse](#notification-v1-GetAnnouncementsByAppResponse) |  |
 | GetAnnouncementsByOtherApp | [GetAnnouncementsByOtherAppRequest](#notification-v1-GetAnnouncementsByOtherAppRequest) | [GetAnnouncementsByOtherAppResponse](#notification-v1-GetAnnouncementsByOtherAppResponse) |  |
 | CreateNotification | [CreateNotificationRequest](#notification-v1-CreateNotificationRequest) | [CreateNotificationResponse](#notification-v1-CreateNotificationResponse) |  |
+| CreateNotificationForAppOtherUser | [CreateNotificationForAppOtherUserRequest](#notification-v1-CreateNotificationForAppOtherUserRequest) | [CreateNotificationForAppOtherUserResponse](#notification-v1-CreateNotificationForAppOtherUserResponse) |  |
+| CreateNotificationForOtherAppUser | [CreateNotificationForOtherAppUserRequest](#notification-v1-CreateNotificationForOtherAppUserRequest) | [CreateNotificationForOtherAppUserResponse](#notification-v1-CreateNotificationForOtherAppUserResponse) |  |
 | UpdateNotification | [UpdateNotificationRequest](#notification-v1-UpdateNotificationRequest) | [UpdateNotificationResponse](#notification-v1-UpdateNotificationResponse) |  |
 | GetNotificationsByAppUser | [GetNotificationsByAppUserRequest](#notification-v1-GetNotificationsByAppUserRequest) | [GetNotificationsByAppUserResponse](#notification-v1-GetNotificationsByAppUserResponse) |  |
+| GetNotificationsByApp | [GetNotificationsByAppRequest](#notification-v1-GetNotificationsByAppRequest) | [GetNotificationsByAppResponse](#notification-v1-GetNotificationsByAppResponse) |  |
+| GetNotificationsByOtherApp | [GetNotificationsByOtherAppRequest](#notification-v1-GetNotificationsByOtherAppRequest) | [GetNotificationsByOtherAppResponse](#notification-v1-GetNotificationsByOtherAppResponse) |  |
 | CreateReadUser | [CreateReadUserRequest](#notification-v1-CreateReadUserRequest) | [CreateReadUserResponse](#notification-v1-CreateReadUserResponse) |  |
 | CheckReadUser | [CheckReadUserRequest](#notification-v1-CheckReadUserRequest) | [CheckReadUserResponse](#notification-v1-CheckReadUserResponse) |  |
 | CreateMail | [CreateMailRequest](#notification-v1-CreateMailRequest) | [CreateMailResponse](#notification-v1-CreateMailResponse) |  |
+| CreateMailForOtherAppUser | [CreateMailForOtherAppUserRequest](#notification-v1-CreateMailForOtherAppUserRequest) | [CreateMailForOtherAppUserResponse](#notification-v1-CreateMailForOtherAppUserResponse) |  |
 | UpdateMail | [UpdateMailRequest](#notification-v1-UpdateMailRequest) | [UpdateMailResponse](#notification-v1-UpdateMailResponse) |  |
+| GetMails | [GetMailsRequest](#notification-v1-GetMailsRequest) | [GetMailsResponse](#notification-v1-GetMailsResponse) |  |
+| GetMailsByApp | [GetMailsByAppRequest](#notification-v1-GetMailsByAppRequest) | [GetMailsByAppResponse](#notification-v1-GetMailsByAppResponse) |  |
+| GetMailsByOtherApp | [GetMailsByOtherAppRequest](#notification-v1-GetMailsByOtherAppRequest) | [GetMailsByOtherAppResponse](#notification-v1-GetMailsByOtherAppResponse) |  |
 | CreateTemplate | [CreateTemplateRequest](#notification-v1-CreateTemplateRequest) | [CreateTemplateResponse](#notification-v1-CreateTemplateResponse) |  |
 | CreateTemplateForOtherApp | [CreateTemplateForOtherAppRequest](#notification-v1-CreateTemplateForOtherAppRequest) | [CreateTemplateForOtherAppResponse](#notification-v1-CreateTemplateForOtherAppResponse) |  |
 | GetTemplate | [GetTemplateRequest](#notification-v1-GetTemplateRequest) | [GetTemplateResponse](#notification-v1-GetTemplateResponse) |  |
@@ -945,6 +1232,38 @@ Service Name
 
 
 
+<a name="notification-v1-CreateMailForOtherAppUserRequest"></a>
+
+### CreateMailForOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Info | [Mail](#notification-v1-Mail) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateMailForOtherAppUserResponse"></a>
+
+### CreateMailForOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [Mail](#notification-v1-Mail) |  |  |
+
+
+
+
+
+
 <a name="notification-v1-CreateMailRequest"></a>
 
 ### CreateMailRequest
@@ -953,6 +1272,7 @@ Service Name
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| UserID | [string](#string) |  |  |
 | Info | [Mail](#notification-v1-Mail) |  |  |
 
 
@@ -969,6 +1289,69 @@ Service Name
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [Mail](#notification-v1-Mail) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateNotificationForAppOtherUserRequest"></a>
+
+### CreateNotificationForAppOtherUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetUserID | [string](#string) |  |  |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateNotificationForAppOtherUserResponse"></a>
+
+### CreateNotificationForAppOtherUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateNotificationForOtherAppUserRequest"></a>
+
+### CreateNotificationForOtherAppUserRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-CreateNotificationForOtherAppUserResponse"></a>
+
+### CreateNotificationForOtherAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [UserNotification](#notification-v1-UserNotification) |  |  |
 
 
 
@@ -1160,6 +1543,127 @@ Service Name
 
 
 
+<a name="notification-v1-GetMailsByAppRequest"></a>
+
+### GetMailsByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetMailsByAppResponse"></a>
+
+### GetMailsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Mail](#notification-v1-Mail) | repeated |  |
+
+
+
+
+
+
+<a name="notification-v1-GetMailsByOtherAppRequest"></a>
+
+### GetMailsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetMailsByOtherAppResponse"></a>
+
+### GetMailsByOtherAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Mail](#notification-v1-Mail) | repeated |  |
+
+
+
+
+
+
+<a name="notification-v1-GetMailsRequest"></a>
+
+### GetMailsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetMailsResponse"></a>
+
+### GetMailsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [Mail](#notification-v1-Mail) | repeated |  |
+
+
+
+
+
+
+<a name="notification-v1-GetNotificationsByAppRequest"></a>
+
+### GetNotificationsByAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetNotificationsByAppResponse"></a>
+
+### GetNotificationsByAppResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserNotification](#notification-v1-UserNotification) | repeated |  |
+
+
+
+
+
+
 <a name="notification-v1-GetNotificationsByAppUserRequest"></a>
 
 ### GetNotificationsByAppUserRequest
@@ -1179,6 +1683,36 @@ Service Name
 <a name="notification-v1-GetNotificationsByAppUserResponse"></a>
 
 ### GetNotificationsByAppUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [UserNotification](#notification-v1-UserNotification) | repeated |  |
+
+
+
+
+
+
+<a name="notification-v1-GetNotificationsByOtherAppRequest"></a>
+
+### GetNotificationsByOtherAppRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TargetAppID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="notification-v1-GetNotificationsByOtherAppResponse"></a>
+
+### GetNotificationsByOtherAppResponse
 
 
 
@@ -1537,12 +2071,20 @@ Service Name
 | GetAnnouncementsByApp | [GetAnnouncementsByAppRequest](#notification-v1-GetAnnouncementsByAppRequest) | [GetAnnouncementsByAppResponse](#notification-v1-GetAnnouncementsByAppResponse) |  |
 | GetAnnouncementsByOtherApp | [GetAnnouncementsByOtherAppRequest](#notification-v1-GetAnnouncementsByOtherAppRequest) | [GetAnnouncementsByOtherAppResponse](#notification-v1-GetAnnouncementsByOtherAppResponse) |  |
 | CreateNotification | [CreateNotificationRequest](#notification-v1-CreateNotificationRequest) | [CreateNotificationResponse](#notification-v1-CreateNotificationResponse) |  |
+| CreateNotificationForAppOtherUser | [CreateNotificationForAppOtherUserRequest](#notification-v1-CreateNotificationForAppOtherUserRequest) | [CreateNotificationForAppOtherUserResponse](#notification-v1-CreateNotificationForAppOtherUserResponse) |  |
+| CreateNotificationForOtherAppUser | [CreateNotificationForOtherAppUserRequest](#notification-v1-CreateNotificationForOtherAppUserRequest) | [CreateNotificationForOtherAppUserResponse](#notification-v1-CreateNotificationForOtherAppUserResponse) |  |
 | UpdateNotification | [UpdateNotificationRequest](#notification-v1-UpdateNotificationRequest) | [UpdateNotificationResponse](#notification-v1-UpdateNotificationResponse) |  |
 | GetNotificationsByAppUser | [GetNotificationsByAppUserRequest](#notification-v1-GetNotificationsByAppUserRequest) | [GetNotificationsByAppUserResponse](#notification-v1-GetNotificationsByAppUserResponse) |  |
+| GetNotificationsByApp | [GetNotificationsByAppRequest](#notification-v1-GetNotificationsByAppRequest) | [GetNotificationsByAppResponse](#notification-v1-GetNotificationsByAppResponse) |  |
+| GetNotificationsByOtherApp | [GetNotificationsByOtherAppRequest](#notification-v1-GetNotificationsByOtherAppRequest) | [GetNotificationsByOtherAppResponse](#notification-v1-GetNotificationsByOtherAppResponse) |  |
 | CreateReadUser | [CreateReadUserRequest](#notification-v1-CreateReadUserRequest) | [CreateReadUserResponse](#notification-v1-CreateReadUserResponse) |  |
 | CheckReadUser | [CheckReadUserRequest](#notification-v1-CheckReadUserRequest) | [CheckReadUserResponse](#notification-v1-CheckReadUserResponse) |  |
 | CreateMail | [CreateMailRequest](#notification-v1-CreateMailRequest) | [CreateMailResponse](#notification-v1-CreateMailResponse) |  |
+| CreateMailForOtherAppUser | [CreateMailForOtherAppUserRequest](#notification-v1-CreateMailForOtherAppUserRequest) | [CreateMailForOtherAppUserResponse](#notification-v1-CreateMailForOtherAppUserResponse) |  |
 | UpdateMail | [UpdateMailRequest](#notification-v1-UpdateMailRequest) | [UpdateMailResponse](#notification-v1-UpdateMailResponse) |  |
+| GetMails | [GetMailsRequest](#notification-v1-GetMailsRequest) | [GetMailsResponse](#notification-v1-GetMailsResponse) |  |
+| GetMailsByApp | [GetMailsByAppRequest](#notification-v1-GetMailsByAppRequest) | [GetMailsByAppResponse](#notification-v1-GetMailsByAppResponse) |  |
+| GetMailsByOtherApp | [GetMailsByOtherAppRequest](#notification-v1-GetMailsByOtherAppRequest) | [GetMailsByOtherAppResponse](#notification-v1-GetMailsByOtherAppResponse) |  |
 | CreateTemplate | [CreateTemplateRequest](#notification-v1-CreateTemplateRequest) | [CreateTemplateResponse](#notification-v1-CreateTemplateResponse) |  |
 | CreateTemplateForOtherApp | [CreateTemplateForOtherAppRequest](#notification-v1-CreateTemplateForOtherAppRequest) | [CreateTemplateForOtherAppResponse](#notification-v1-CreateTemplateForOtherAppResponse) |  |
 | GetTemplate | [GetTemplateRequest](#notification-v1-GetTemplateRequest) | [GetTemplateResponse](#notification-v1-GetTemplateResponse) |  |

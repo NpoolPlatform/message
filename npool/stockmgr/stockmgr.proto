@@ -1,0 +1,213 @@
+syntax = "proto3";
+
+package stock.manager.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/stockmgr";
+
+import "google/protobuf/struct.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+service StockManager {
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+
+    rpc CreateStock (CreateStockRequest) returns (CreateStockResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/stock"
+            body: "*"
+        };
+    }
+
+    rpc CreateStocks (CreateStocksRequest) returns (CreateStocksResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/stocks"
+            body: "*"
+        };
+    }
+
+    rpc UpdateStock (UpdateStockRequest) returns (UpdateStockResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/stock"
+            body: "*"
+        };
+    }
+
+    rpc UpdateStockFields (UpdateStockFieldsRequest) returns (UpdateStockFieldsResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/stock/fields"
+            body: "*"
+        };
+    }
+
+    rpc AddStockFields (AddStockFieldsRequest) returns (AddStockFieldsResponse) {
+        option (google.api.http) = {
+            post: "/v1/add/stock/fields"
+            body: "*"
+        };
+    }
+
+    rpc GetStock (GetStockRequest) returns (GetStockResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/stock"
+            body: "*"
+        };
+    }
+
+    rpc GetStockOnly (GetStockOnlyRequest) returns (GetStockOnlyResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/stock/only"
+            body: "*"
+        };
+    }
+
+    rpc GetStocks (GetStocksRequest) returns (GetStocksResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/stocks"
+            body: "*"
+        };
+    }
+
+    rpc ExistStock (ExistStockRequest) returns (ExistStockResponse) {
+        option (google.api.http) = {
+            post: "/v1/exist/stock"
+            body: "*"
+        };
+    }
+
+    rpc ExistStockConds (ExistStockCondsRequest) returns (ExistStockCondsResponse) {
+        option (google.api.http) = {
+            post: "/v1/exist/stock/conds"
+            body: "*"
+        };
+    }
+
+    rpc CountStocks (CountStocksRequest) returns (CountStocksResponse) {
+        option (google.api.http) = {
+            post: "/v1/count/stocks"
+            body: "*"
+        };
+    }
+
+    rpc DeleteStock (DeleteStockRequest) returns (DeleteStockResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/stock"
+            body: "*"
+        };
+    }
+}
+
+message Stock {
+    string ID = 10;
+    string GoodID = 20;
+    uint32 Total = 30;
+    uint32 InService = 40;
+    uint32 Sold = 50;
+    uint32 Locked = 60;
+}
+
+message CreateStockRequest {
+    Stock Info = 10;
+}
+
+message CreateStockResponse {
+    Stock Info = 10;
+}
+
+message CreateStocksRequest {
+    repeated Stock Infos = 10;
+}
+
+message CreateStocksResponse {
+    repeated Stock Infos = 10;
+}
+
+message UpdateStockRequest {
+    Stock Info = 10;
+}
+
+message UpdateStockResponse {
+    Stock Info = 10;
+}
+
+message UpdateStockFieldsRequest {
+    string ID = 10;
+    map<string, google.protobuf.Value> Fields = 20;
+}
+
+message UpdateStockFieldsResponse {
+    Stock Info = 10;
+}
+
+message AddStockFieldsRequest {
+    string ID = 10;
+    map<string, google.protobuf.Value> Fields = 20;
+}
+
+message AddStockFieldsResponse {
+    Stock Info = 10;
+}
+
+message GetStockRequest {
+    string ID = 10;
+}
+
+message GetStockResponse {
+    Stock Info = 10;
+}
+
+message GetStockOnlyRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message GetStockOnlyResponse {
+    Stock Info = 10;
+}
+
+message GetStocksRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetStocksResponse {
+    repeated Stock Infos = 10;
+    int32 Total = 20;
+}
+
+message ExistStockRequest {
+    string ID = 10;
+}
+
+message ExistStockResponse {
+    bool Result = 10;
+}
+
+message ExistStockCondsRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message ExistStockCondsResponse {
+    bool Result = 10;
+}
+
+message CountStocksRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message CountStocksResponse {
+    uint32 Result = 10;
+}
+
+message DeleteStockRequest {
+    string ID = 10;
+}
+
+message DeleteStockResponse {
+    Stock Info = 10;
+}

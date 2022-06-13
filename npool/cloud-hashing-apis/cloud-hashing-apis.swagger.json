@@ -11,6 +11,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/app/user/control": {
+      "post": {
+        "operationId": "CloudHashingApis_CreateAppUserControl",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1CreateAppUserControlResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1CreateAppUserControlRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/create/app/user/extra": {
       "post": {
         "operationId": "CloudHashingApis_CreateAppUserExtra",
@@ -291,6 +323,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetCouponsByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/get/current/fee": {
+      "post": {
+        "operationId": "CloudHashingApis_GetCurrentFee",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCurrentFeeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCurrentFeeRequest"
             }
           }
         ],
@@ -707,6 +771,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/hashingapisv1GetOrdersByGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/get/orders/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingApis_GetOrdersByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1GetOrdersByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1GetOrdersByOtherAppRequest"
             }
           }
         ],
@@ -1195,6 +1291,38 @@
         ]
       }
     },
+    "/v1/update/app/user/control": {
+      "post": {
+        "operationId": "CloudHashingApis_UpdateAppUserControl",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1UpdateAppUserControlResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/hashingapisv1UpdateAppUserControlRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/update/app/user/extra": {
       "post": {
         "operationId": "CloudHashingApis_UpdateAppUserExtra",
@@ -1581,6 +1709,22 @@
     }
   },
   "definitions": {
+    "hashingapisv1CreateAppUserControlRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserControl"
+        }
+      }
+    },
+    "hashingapisv1CreateAppUserControlResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
+        }
+      }
+    },
     "hashingapisv1CreateAppUserExtraRequest": {
       "type": "object",
       "properties": {
@@ -1770,6 +1914,25 @@
         }
       }
     },
+    "hashingapisv1GetOrdersByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "hashingapisv1GetOrdersByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/hashingapisv1Order"
+          }
+        }
+      }
+    },
     "hashingapisv1GetRecommendGoodsByAppRequest": {
       "type": "object",
       "properties": {
@@ -1855,6 +2018,22 @@
         },
         "Recommend": {
           "$ref": "#/definitions/v1Recommend"
+        }
+      }
+    },
+    "hashingapisv1UpdateAppUserControlRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserControl"
+        }
+      }
+    },
+    "hashingapisv1UpdateAppUserControlResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
         }
       }
     },
@@ -2051,6 +2230,13 @@
         "DisplayIndex": {
           "type": "integer",
           "format": "int64"
+        },
+        "Visible": {
+          "type": "boolean"
+        },
+        "PurchaseLimit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -2731,6 +2917,23 @@
         }
       }
     },
+    "v1GetCurrentFeeRequest": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetCurrentFeeResponse": {
+      "type": "object",
+      "properties": {
+        "FeeAmount": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
     "v1GetGoodReviewsRequest": {
       "type": "object"
     },
@@ -3147,10 +3350,6 @@
             "type": "string"
           }
         },
-        "Total": {
-          "type": "integer",
-          "format": "int32"
-        },
         "PriceCurrency": {
           "type": "string"
         },
@@ -3401,6 +3600,21 @@
         },
         "UserPaymentTXID": {
           "type": "string"
+        },
+        "UserSetCanceled": {
+          "type": "boolean"
+        },
+        "LocalCoinUSDCurrency": {
+          "type": "number",
+          "format": "double"
+        },
+        "LiveCoinUSDCurrency": {
+          "type": "number",
+          "format": "double"
+        },
+        "UpdateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

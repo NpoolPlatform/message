@@ -179,6 +179,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinTypeID | [string](#string) |  |  |
+| Limit | [int32](#int32) |  |  |
+| Offset | [int32](#int32) |  |  |
 
 
 
@@ -193,7 +195,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) |  |  |
+| Total | [int32](#int32) |  |  |
+| Infos | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) | repeated |  |
 
 
 
@@ -273,6 +276,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | Title | [string](#string) |  |  |
 | Message | [string](#string) |  |  |
@@ -505,6 +509,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinTypeID | [string](#string) |  |  |
+| Limit | [int32](#int32) |  |  |
+| Offset | [int32](#int32) |  |  |
 
 
 
@@ -519,7 +525,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) |  |  |
+| Total | [int32](#int32) |  |  |
+| Infos | [CoinDescriptionInfo](#sphinx-coininfo-v1-CoinDescriptionInfo) | repeated |  |
 
 
 
@@ -599,6 +606,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| ID | [string](#string) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | Title | [string](#string) |  |  |
 | Message | [string](#string) |  |  |

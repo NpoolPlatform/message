@@ -147,7 +147,10 @@ message ProxyPluginRequest {
   string  SignedRawTxHex                      = 152;
   string CID                                  = 160;
 
-  bytes payload = 170;
+  bytes payload                               = 170;
+
+  // gas fee
+  double Fee                                  = 180;
 }
 
 message ProxySignRequest {

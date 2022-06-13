@@ -105,6 +105,7 @@ export type ProxyPluginRequest = {
   signedRawTxHex?: string
   cID?: string
   payload?: Uint8Array
+  fee?: number
 }
 
 export type ProxySignRequest = {

@@ -267,6 +267,38 @@
         ]
       }
     },
+    "/v1/create/messages/for/other/app": {
+      "post": {
+        "operationId": "Internationalization_CreateMessagesForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateMessagesForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateMessagesForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
     "/v1/get/app/lang": {
       "post": {
         "operationId": "Internationalization_GetAppLang",
@@ -619,6 +651,38 @@
         ]
       }
     },
+    "/v1/update/app/lang": {
+      "post": {
+        "operationId": "Internationalization_UpdateAppLang",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppLangResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppLangRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Internationalization"
+        ]
+      }
+    },
     "/v1/update/country": {
       "post": {
         "operationId": "Internationalization_UpdateCountry",
@@ -842,6 +906,9 @@
         },
         "LangID": {
           "type": "string"
+        },
+        "MainLang": {
+          "type": "boolean"
         }
       }
     },
@@ -955,6 +1022,9 @@
         "TargetAppID": {
           "type": "string"
         },
+        "TargetLangID": {
+          "type": "string"
+        },
         "Info": {
           "$ref": "#/definitions/v1Message"
         }
@@ -984,6 +1054,34 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Message"
+        }
+      }
+    },
+    "v1CreateMessagesForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetLangID": {
+          "type": "string"
+        },
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Message"
+          }
+        }
+      }
+    },
+    "v1CreateMessagesForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Message"
+          }
         }
       }
     },
@@ -1257,6 +1355,22 @@
         },
         "BatchGet": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateAppLangRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppLang"
+        }
+      }
+    },
+    "v1UpdateAppLangResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppLang"
         }
       }
     },

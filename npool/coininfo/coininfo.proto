@@ -115,7 +115,7 @@ message UpdateCoinInfoRequest {
     bool    PreSale               = 110; // 是否为预售，false为在售商品
     string  Logo            = 120; // url; can be empty
     double  ReservedAmount  = 130;
-    bool ForPay = 140;
+    bool    ForPay = 140;
     string HomePage = 150;
     string Specs = 160;
 }
@@ -147,13 +147,17 @@ message CreateCoinDescriptionResponse {
 
 message GetCoinDescriptionRequest {
   string CoinTypeID = 100;
+  int32 Limit       = 110;
+  int32 Offset      = 120;
 }
 
 message GetCoinDescriptionResponse {
-  CoinDescriptionInfo Info = 100;
+  int32 Total                        = 100;
+  repeated CoinDescriptionInfo Infos = 110;
 }
 
 message UpdateCoinDescriptionRequest {
+  string ID         = 100;
   string CoinTypeID = 110;
   string Title      = 120;
   string Message    = 130;

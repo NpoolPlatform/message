@@ -55,6 +55,12 @@ service Internationalization {
             body: "*"
         };
     }
+    rpc UpdateAppLang (UpdateAppLangRequest) returns (UpdateAppLangResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/lang"
+            body: "*"
+        };
+    }
     rpc GetAppLang (GetAppLangRequest) returns (GetAppLangResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/lang"
@@ -95,6 +101,12 @@ service Internationalization {
     rpc CreateMessages(CreateMessagesRequest) returns (CreateMessagesResponse) {
         option (google.api.http) = {
             post: "/v1/create/messages"
+            body: "*"
+        };
+    }
+    rpc CreateMessagesForOtherApp(CreateMessagesForOtherAppRequest) returns (CreateMessagesForOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/messages/for/other/app"
             body: "*"
         };
     }
@@ -220,6 +232,7 @@ message CreateMessageResponse {
 
 message CreateMessageForOtherAppRequest {
     string TargetAppID = 10;
+    string TargetLangID = 15;
     Message Info = 20;
 }
 
@@ -233,6 +246,16 @@ message CreateMessagesRequest {
 }
 
 message CreateMessagesResponse {
+    repeated Message Infos = 10;
+}
+
+message CreateMessagesForOtherAppRequest {
+    string TargetAppID = 4;
+    string TargetLangID = 5;
+    repeated Message Infos = 10;
+}
+
+message CreateMessagesForOtherAppResponse {
     repeated Message Infos = 10;
 }
 
@@ -286,6 +309,7 @@ message AppLang {
     string ID = 10;
     string AppID = 20;
     string LangID = 30;
+    bool MainLang = 40;
 }
 
 message CreateAppLangRequest {
@@ -305,6 +329,13 @@ message CreateAppLangForOtherAppResponse {
     AppLang Info = 10;
 }
 
+message UpdateAppLangRequest {
+    AppLang Info = 10;
+}
+
+message UpdateAppLangResponse {
+    AppLang Info = 10;
+}
 
 message GetAppLangRequest {
     string ID = 10;

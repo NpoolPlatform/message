@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package subscribe.manager.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/subscribemgr";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+service SubscribeManager {
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+
+    rpc CreateEmailSubscriber (CreateEmailSubscriberRequest) returns (CreateEmailSubscriberResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/email/subscriber"
+            body: "*"
+        };
+    }
+    rpc CreateEmailSubscribers (CreateEmailSubscribersRequest) returns (CreateEmailSubscribersResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/email/subscribers"
+            body: "*"
+        };
+    }
+    rpc GetEmailSubscribers (GetEmailSubscribersRequest) returns (GetEmailSubscribersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/email/subscribers"
+            body: "*"
+        };
+    }
+    rpc GetAppEmailSubscribers (GetAppEmailSubscribersRequest) returns (GetAppEmailSubscribersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/email/subscribers"
+            body: "*"
+        };
+    }
+}
+
+message EmailSubscriber {
+    string ID = 10;
+    string AppID = 20;
+    string EmailAddress = 30;
+}
+
+message CreateEmailSubscriberRequest {
+    EmailSubscriber Info = 10;
+}
+
+message CreateEmailSubscriberResponse {
+    EmailSubscriber Info = 10;
+}
+
+message CreateEmailSubscribersRequest {
+    repeated EmailSubscriber Infos = 10;
+}
+
+message CreateEmailSubscribersResponse {
+    repeated EmailSubscriber Infos = 10;
+}
+
+message GetEmailSubscribersRequest {
+    string AppID = 10;
+    map<string, npool.v1.FilterCond> Conds = 20;
+    int32 Offset = 30;
+    int32 Limit = 40;
+}
+
+message GetEmailSubscribersResponse {
+    repeated EmailSubscriber Infos = 10;
+    int32 Total = 20;
+}
+
+message GetAppEmailSubscribersRequest {
+    string TargetAppID = 10;
+    map<string, npool.v1.FilterCond> Conds = 20;
+    int32 Offset = 30;
+    int32 Limit = 40;
+}
+
+message GetAppEmailSubscribersResponse {
+    repeated EmailSubscriber Infos = 10;
+    int32 Total = 20;
+}

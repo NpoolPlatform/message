@@ -254,12 +254,18 @@
         "CoinTypeusdterc20",
         "CoinTypespacemesh",
         "CoinTypesolana",
+        "CoinTypeusdttrc20",
+        "CoinTypebsc",
+        "CoinTypetron",
         "CoinTypetfilecoin",
         "CoinTypetbitcoin",
         "CoinTypetethereum",
         "CoinTypetusdterc20",
         "CoinTypetspacemesh",
-        "CoinTypetsolana"
+        "CoinTypetsolana",
+        "CoinTypetusdttrc20",
+        "CoinTypetbsc",
+        "CoinTypettron"
       ],
       "default": "CoinTypeUnKnow",
       "title": "- CoinTypefilecoin: mainnet\n - CoinTypetfilecoin: testnet"
@@ -415,6 +421,11 @@
         "payload": {
           "type": "string",
           "format": "byte"
+        },
+        "Fee": {
+          "type": "number",
+          "format": "double",
+          "title": "gas fee"
         }
       },
       "description": "MpoolGetNonce WalletBalance MpoolPush .."
@@ -588,7 +599,7 @@
         "Nonce": {
           "type": "string",
           "format": "uint64",
-          "title": "fil/eth/erc20"
+          "title": "fil/eth/erc20/bsc"
         },
         "GasLimit": {
           "type": "string",
@@ -597,7 +608,7 @@
         "GasPrice": {
           "type": "string",
           "format": "int64",
-          "title": "eth/erc20"
+          "title": "eth/erc20/bsc"
         },
         "ChainID": {
           "type": "string",
@@ -629,6 +640,15 @@
             "$ref": "#/definitions/v1Unspent"
           },
           "title": "btc"
+        },
+        "RecentBhash": {
+          "type": "string",
+          "title": "sol"
+        },
+        "TxData": {
+          "type": "string",
+          "format": "byte",
+          "title": "trc20"
         }
       },
       "title": "fil"

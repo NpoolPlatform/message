@@ -432,14 +432,29 @@
       "properties": {
         "CoinTypeID": {
           "type": "string"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
     "v1GetCoinDescriptionResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinDescriptionInfo"
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinDescriptionInfo"
+          }
         }
       }
     },
@@ -499,6 +514,9 @@
     "v1UpdateCoinDescriptionRequest": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },

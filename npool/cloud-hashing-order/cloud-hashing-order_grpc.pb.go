@@ -32,12 +32,13 @@ type CloudHashingOrderClient interface {
 	GetGasPayingsByOrder(ctx context.Context, in *GetGasPayingsByOrderRequest, opts ...grpc.CallOption) (*GetGasPayingsByOrderResponse, error)
 	CreateOrder(ctx context.Context, in *CreateOrderRequest, opts ...grpc.CallOption) (*CreateOrderResponse, error)
 	GetOrder(ctx context.Context, in *GetOrderRequest, opts ...grpc.CallOption) (*GetOrderResponse, error)
+	GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error)
 	GetOrderDetail(ctx context.Context, in *GetOrderDetailRequest, opts ...grpc.CallOption) (*GetOrderDetailResponse, error)
 	GetOrdersByAppUser(ctx context.Context, in *GetOrdersByAppUserRequest, opts ...grpc.CallOption) (*GetOrdersByAppUserResponse, error)
 	GetOrderByAppUserCouponTypeID(ctx context.Context, in *GetOrderByAppUserCouponTypeIDRequest, opts ...grpc.CallOption) (*GetOrderByAppUserCouponTypeIDResponse, error)
 	GetOrdersByApp(ctx context.Context, in *GetOrdersByAppRequest, opts ...grpc.CallOption) (*GetOrdersByAppResponse, error)
+	GetOrdersByOtherApp(ctx context.Context, in *GetOrdersByOtherAppRequest, opts ...grpc.CallOption) (*GetOrdersByOtherAppResponse, error)
 	GetOrdersByGood(ctx context.Context, in *GetOrdersByGoodRequest, opts ...grpc.CallOption) (*GetOrdersByGoodResponse, error)
-	GetSoldByGood(ctx context.Context, in *GetSoldByGoodRequest, opts ...grpc.CallOption) (*GetSoldByGoodResponse, error)
 	CreateCompensate(ctx context.Context, in *CreateCompensateRequest, opts ...grpc.CallOption) (*CreateCompensateResponse, error)
 	GetCompensatesByOrder(ctx context.Context, in *GetCompensatesByOrderRequest, opts ...grpc.CallOption) (*GetCompensatesByOrderResponse, error)
 	CreateOutOfGas(ctx context.Context, in *CreateOutOfGasRequest, opts ...grpc.CallOption) (*CreateOutOfGasResponse, error)
@@ -49,7 +50,9 @@ type CloudHashingOrderClient interface {
 	GetPaymentByOrder(ctx context.Context, in *GetPaymentByOrderRequest, opts ...grpc.CallOption) (*GetPaymentByOrderResponse, error)
 	GetPaymentsByState(ctx context.Context, in *GetPaymentsByStateRequest, opts ...grpc.CallOption) (*GetPaymentsByStateResponse, error)
 	GetPaymentsByApp(ctx context.Context, in *GetPaymentsByAppRequest, opts ...grpc.CallOption) (*GetPaymentsByAppResponse, error)
+	GetPaymentsByOtherApp(ctx context.Context, in *GetPaymentsByOtherAppRequest, opts ...grpc.CallOption) (*GetPaymentsByOtherAppResponse, error)
 	GetPaymentsByAppUser(ctx context.Context, in *GetPaymentsByAppUserRequest, opts ...grpc.CallOption) (*GetPaymentsByAppUserResponse, error)
+	GetPaymentsByAppUserState(ctx context.Context, in *GetPaymentsByAppUserStateRequest, opts ...grpc.CallOption) (*GetPaymentsByAppUserStateResponse, error)
 	GetPayments(ctx context.Context, in *GetPaymentsRequest, opts ...grpc.CallOption) (*GetPaymentsResponse, error)
 	GetOrdersDetailByAppUser(ctx context.Context, in *GetOrdersDetailByAppUserRequest, opts ...grpc.CallOption) (*GetOrdersDetailByAppUserResponse, error)
 	GetOrdersShortDetailByAppUser(ctx context.Context, in *GetOrdersShortDetailByAppUserRequest, opts ...grpc.CallOption) (*GetOrdersShortDetailByAppUserResponse, error)
@@ -128,6 +131,15 @@ func (c *cloudHashingOrderClient) GetOrder(ctx context.Context, in *GetOrderRequ
 	return out, nil
 }
 
+func (c *cloudHashingOrderClient) GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error) {
+	out := new(GetOrdersResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/GetOrders", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingOrderClient) GetOrderDetail(ctx context.Context, in *GetOrderDetailRequest, opts ...grpc.CallOption) (*GetOrderDetailResponse, error) {
 	out := new(GetOrderDetailResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/GetOrderDetail", in, out, opts...)
@@ -164,18 +176,18 @@ func (c *cloudHashingOrderClient) GetOrdersByApp(ctx context.Context, in *GetOrd
 	return out, nil
 }
 
-func (c *cloudHashingOrderClient) GetOrdersByGood(ctx context.Context, in *GetOrdersByGoodRequest, opts ...grpc.CallOption) (*GetOrdersByGoodResponse, error) {
-	out := new(GetOrdersByGoodResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/GetOrdersByGood", in, out, opts...)
+func (c *cloudHashingOrderClient) GetOrdersByOtherApp(ctx context.Context, in *GetOrdersByOtherAppRequest, opts ...grpc.CallOption) (*GetOrdersByOtherAppResponse, error) {
+	out := new(GetOrdersByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/GetOrdersByOtherApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudHashingOrderClient) GetSoldByGood(ctx context.Context, in *GetSoldByGoodRequest, opts ...grpc.CallOption) (*GetSoldByGoodResponse, error) {
-	out := new(GetSoldByGoodResponse)
-	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/GetSoldByGood", in, out, opts...)
+func (c *cloudHashingOrderClient) GetOrdersByGood(ctx context.Context, in *GetOrdersByGoodRequest, opts ...grpc.CallOption) (*GetOrdersByGoodResponse, error) {
+	out := new(GetOrdersByGoodResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/GetOrdersByGood", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -281,9 +293,27 @@ func (c *cloudHashingOrderClient) GetPaymentsByApp(ctx context.Context, in *GetP
 	return out, nil
 }
 
+func (c *cloudHashingOrderClient) GetPaymentsByOtherApp(ctx context.Context, in *GetPaymentsByOtherAppRequest, opts ...grpc.CallOption) (*GetPaymentsByOtherAppResponse, error) {
+	out := new(GetPaymentsByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/GetPaymentsByOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingOrderClient) GetPaymentsByAppUser(ctx context.Context, in *GetPaymentsByAppUserRequest, opts ...grpc.CallOption) (*GetPaymentsByAppUserResponse, error) {
 	out := new(GetPaymentsByAppUserResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/GetPaymentsByAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingOrderClient) GetPaymentsByAppUserState(ctx context.Context, in *GetPaymentsByAppUserStateRequest, opts ...grpc.CallOption) (*GetPaymentsByAppUserStateResponse, error) {
+	out := new(GetPaymentsByAppUserStateResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.order.v1.CloudHashingOrder/GetPaymentsByAppUserState", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -347,12 +377,13 @@ type CloudHashingOrderServer interface {
 	GetGasPayingsByOrder(context.Context, *GetGasPayingsByOrderRequest) (*GetGasPayingsByOrderResponse, error)
 	CreateOrder(context.Context, *CreateOrderRequest) (*CreateOrderResponse, error)
 	GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error)
+	GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error)
 	GetOrderDetail(context.Context, *GetOrderDetailRequest) (*GetOrderDetailResponse, error)
 	GetOrdersByAppUser(context.Context, *GetOrdersByAppUserRequest) (*GetOrdersByAppUserResponse, error)
 	GetOrderByAppUserCouponTypeID(context.Context, *GetOrderByAppUserCouponTypeIDRequest) (*GetOrderByAppUserCouponTypeIDResponse, error)
 	GetOrdersByApp(context.Context, *GetOrdersByAppRequest) (*GetOrdersByAppResponse, error)
+	GetOrdersByOtherApp(context.Context, *GetOrdersByOtherAppRequest) (*GetOrdersByOtherAppResponse, error)
 	GetOrdersByGood(context.Context, *GetOrdersByGoodRequest) (*GetOrdersByGoodResponse, error)
-	GetSoldByGood(context.Context, *GetSoldByGoodRequest) (*GetSoldByGoodResponse, error)
 	CreateCompensate(context.Context, *CreateCompensateRequest) (*CreateCompensateResponse, error)
 	GetCompensatesByOrder(context.Context, *GetCompensatesByOrderRequest) (*GetCompensatesByOrderResponse, error)
 	CreateOutOfGas(context.Context, *CreateOutOfGasRequest) (*CreateOutOfGasResponse, error)
@@ -364,7 +395,9 @@ type CloudHashingOrderServer interface {
 	GetPaymentByOrder(context.Context, *GetPaymentByOrderRequest) (*GetPaymentByOrderResponse, error)
 	GetPaymentsByState(context.Context, *GetPaymentsByStateRequest) (*GetPaymentsByStateResponse, error)
 	GetPaymentsByApp(context.Context, *GetPaymentsByAppRequest) (*GetPaymentsByAppResponse, error)
+	GetPaymentsByOtherApp(context.Context, *GetPaymentsByOtherAppRequest) (*GetPaymentsByOtherAppResponse, error)
 	GetPaymentsByAppUser(context.Context, *GetPaymentsByAppUserRequest) (*GetPaymentsByAppUserResponse, error)
+	GetPaymentsByAppUserState(context.Context, *GetPaymentsByAppUserStateRequest) (*GetPaymentsByAppUserStateResponse, error)
 	GetPayments(context.Context, *GetPaymentsRequest) (*GetPaymentsResponse, error)
 	GetOrdersDetailByAppUser(context.Context, *GetOrdersDetailByAppUserRequest) (*GetOrdersDetailByAppUserResponse, error)
 	GetOrdersShortDetailByAppUser(context.Context, *GetOrdersShortDetailByAppUserRequest) (*GetOrdersShortDetailByAppUserResponse, error)
@@ -398,6 +431,9 @@ func (UnimplementedCloudHashingOrderServer) CreateOrder(context.Context, *Create
 func (UnimplementedCloudHashingOrderServer) GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrder not implemented")
 }
+func (UnimplementedCloudHashingOrderServer) GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrders not implemented")
+}
 func (UnimplementedCloudHashingOrderServer) GetOrderDetail(context.Context, *GetOrderDetailRequest) (*GetOrderDetailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrderDetail not implemented")
 }
@@ -410,11 +446,11 @@ func (UnimplementedCloudHashingOrderServer) GetOrderByAppUserCouponTypeID(contex
 func (UnimplementedCloudHashingOrderServer) GetOrdersByApp(context.Context, *GetOrdersByAppRequest) (*GetOrdersByAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrdersByApp not implemented")
 }
+func (UnimplementedCloudHashingOrderServer) GetOrdersByOtherApp(context.Context, *GetOrdersByOtherAppRequest) (*GetOrdersByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrdersByOtherApp not implemented")
+}
 func (UnimplementedCloudHashingOrderServer) GetOrdersByGood(context.Context, *GetOrdersByGoodRequest) (*GetOrdersByGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrdersByGood not implemented")
-}
-func (UnimplementedCloudHashingOrderServer) GetSoldByGood(context.Context, *GetSoldByGoodRequest) (*GetSoldByGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSoldByGood not implemented")
 }
 func (UnimplementedCloudHashingOrderServer) CreateCompensate(context.Context, *CreateCompensateRequest) (*CreateCompensateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCompensate not implemented")
@@ -449,8 +485,14 @@ func (UnimplementedCloudHashingOrderServer) GetPaymentsByState(context.Context, 
 func (UnimplementedCloudHashingOrderServer) GetPaymentsByApp(context.Context, *GetPaymentsByAppRequest) (*GetPaymentsByAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPaymentsByApp not implemented")
 }
+func (UnimplementedCloudHashingOrderServer) GetPaymentsByOtherApp(context.Context, *GetPaymentsByOtherAppRequest) (*GetPaymentsByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPaymentsByOtherApp not implemented")
+}
 func (UnimplementedCloudHashingOrderServer) GetPaymentsByAppUser(context.Context, *GetPaymentsByAppUserRequest) (*GetPaymentsByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPaymentsByAppUser not implemented")
+}
+func (UnimplementedCloudHashingOrderServer) GetPaymentsByAppUserState(context.Context, *GetPaymentsByAppUserStateRequest) (*GetPaymentsByAppUserStateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPaymentsByAppUserState not implemented")
 }
 func (UnimplementedCloudHashingOrderServer) GetPayments(context.Context, *GetPaymentsRequest) (*GetPaymentsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPayments not implemented")
@@ -606,6 +648,24 @@ func _CloudHashingOrder_GetOrder_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingOrder_GetOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrdersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingOrderServer).GetOrders(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.order.v1.CloudHashingOrder/GetOrders",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingOrderServer).GetOrders(ctx, req.(*GetOrdersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingOrder_GetOrderDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetOrderDetailRequest)
 	if err := dec(in); err != nil {
@@ -678,6 +738,24 @@ func _CloudHashingOrder_GetOrdersByApp_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingOrder_GetOrdersByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrdersByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingOrderServer).GetOrdersByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.order.v1.CloudHashingOrder/GetOrdersByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingOrderServer).GetOrdersByOtherApp(ctx, req.(*GetOrdersByOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingOrder_GetOrdersByGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetOrdersByGoodRequest)
 	if err := dec(in); err != nil {
@@ -692,24 +770,6 @@ func _CloudHashingOrder_GetOrdersByGood_Handler(srv interface{}, ctx context.Con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingOrderServer).GetOrdersByGood(ctx, req.(*GetOrdersByGoodRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CloudHashingOrder_GetSoldByGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSoldByGoodRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudHashingOrderServer).GetSoldByGood(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud.hashing.order.v1.CloudHashingOrder/GetSoldByGood",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudHashingOrderServer).GetSoldByGood(ctx, req.(*GetSoldByGoodRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -912,6 +972,24 @@ func _CloudHashingOrder_GetPaymentsByApp_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingOrder_GetPaymentsByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPaymentsByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingOrderServer).GetPaymentsByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.order.v1.CloudHashingOrder/GetPaymentsByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingOrderServer).GetPaymentsByOtherApp(ctx, req.(*GetPaymentsByOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingOrder_GetPaymentsByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetPaymentsByAppUserRequest)
 	if err := dec(in); err != nil {
@@ -926,6 +1004,24 @@ func _CloudHashingOrder_GetPaymentsByAppUser_Handler(srv interface{}, ctx contex
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingOrderServer).GetPaymentsByAppUser(ctx, req.(*GetPaymentsByAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingOrder_GetPaymentsByAppUserState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPaymentsByAppUserStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingOrderServer).GetPaymentsByAppUserState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.order.v1.CloudHashingOrder/GetPaymentsByAppUserState",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingOrderServer).GetPaymentsByAppUserState(ctx, req.(*GetPaymentsByAppUserStateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1056,6 +1152,10 @@ var CloudHashingOrder_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingOrder_GetOrder_Handler,
 		},
 		{
+			MethodName: "GetOrders",
+			Handler:    _CloudHashingOrder_GetOrders_Handler,
+		},
+		{
 			MethodName: "GetOrderDetail",
 			Handler:    _CloudHashingOrder_GetOrderDetail_Handler,
 		},
@@ -1072,12 +1172,12 @@ var CloudHashingOrder_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingOrder_GetOrdersByApp_Handler,
 		},
 		{
-			MethodName: "GetOrdersByGood",
-			Handler:    _CloudHashingOrder_GetOrdersByGood_Handler,
+			MethodName: "GetOrdersByOtherApp",
+			Handler:    _CloudHashingOrder_GetOrdersByOtherApp_Handler,
 		},
 		{
-			MethodName: "GetSoldByGood",
-			Handler:    _CloudHashingOrder_GetSoldByGood_Handler,
+			MethodName: "GetOrdersByGood",
+			Handler:    _CloudHashingOrder_GetOrdersByGood_Handler,
 		},
 		{
 			MethodName: "CreateCompensate",
@@ -1124,8 +1224,16 @@ var CloudHashingOrder_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingOrder_GetPaymentsByApp_Handler,
 		},
 		{
+			MethodName: "GetPaymentsByOtherApp",
+			Handler:    _CloudHashingOrder_GetPaymentsByOtherApp_Handler,
+		},
+		{
 			MethodName: "GetPaymentsByAppUser",
 			Handler:    _CloudHashingOrder_GetPaymentsByAppUser_Handler,
+		},
+		{
+			MethodName: "GetPaymentsByAppUserState",
+			Handler:    _CloudHashingOrder_GetPaymentsByAppUserState_Handler,
 		},
 		{
 			MethodName: "GetPayments",

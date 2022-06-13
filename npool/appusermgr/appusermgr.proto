@@ -452,6 +452,35 @@ service AppUserManager {
             body: "*"
         };
     }
+
+
+    rpc CreateAppUserWithThirdParty (CreateAppUserWithThirdPartyRequest) returns (CreateAppUserWithThirdPartyResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/with/third/party"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppUserThirdParty (CreateAppUserThirdPartyRequest) returns (CreateAppUserThirdPartyResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/third/party"
+            body: "*"
+        };
+    }
+
+    rpc GetAppUserThirdPartyByAppThirdPartyID (GetAppUserThirdPartyByAppThirdPartyIDRequest) returns (GetAppUserThirdPartyByAppThirdPartyIDResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/user/thirdparty/by/app/thirdpartyid"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppUserWithSecretRevert (CreateAppUserWithSecretRequest) returns (CreateAppUserWithSecretResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/with/secret/revert"
+            body: "*"
+        };
+    }
 }
 
 message App {
@@ -1184,3 +1213,38 @@ message VerifyAppUserByAppAccountPasswordResponse {
     AppUserInfo Info = 10;
 }
 
+message AppUserThirdParty {
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
+    string ThirdPartyUserID = 40;
+    string ThirdPartyUsername = 60;
+    string ThirdPartyUserAvatar = 70;
+    string ThirdPartyID = 90;
+}
+message CreateAppUserThirdPartyRequest {
+    AppUserThirdParty Info = 10;
+}
+
+message CreateAppUserThirdPartyResponse {
+    AppUserThirdParty Info = 10;
+}
+
+message GetAppUserThirdPartyByAppThirdPartyIDRequest {
+    string AppID = 10;
+    string ThirdPartyID = 30;
+    string ThirdPartyUserID = 40;
+}
+
+message GetAppUserThirdPartyByAppThirdPartyIDResponse {
+    AppUserThirdParty Info = 10;
+}
+
+message CreateAppUserWithThirdPartyRequest {
+    AppUser User = 10;
+    AppUserThirdParty ThirdParty = 20;
+}
+
+message CreateAppUserWithThirdPartyResponse {
+    AppUser Info = 10;
+}

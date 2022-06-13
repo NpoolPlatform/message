@@ -12,12 +12,18 @@ export enum CoinType {
   CoinTypeusdterc20 = "CoinTypeusdterc20",
   CoinTypespacemesh = "CoinTypespacemesh",
   CoinTypesolana = "CoinTypesolana",
+  CoinTypeusdttrc20 = "CoinTypeusdttrc20",
+  CoinTypebsc = "CoinTypebsc",
+  CoinTypetron = "CoinTypetron",
   CoinTypetfilecoin = "CoinTypetfilecoin",
   CoinTypetbitcoin = "CoinTypetbitcoin",
   CoinTypetethereum = "CoinTypetethereum",
   CoinTypetusdterc20 = "CoinTypetusdterc20",
   CoinTypetspacemesh = "CoinTypetspacemesh",
   CoinTypetsolana = "CoinTypetsolana",
+  CoinTypetusdttrc20 = "CoinTypetusdttrc20",
+  CoinTypetbsc = "CoinTypetbsc",
+  CoinTypettron = "CoinTypettron",
 }
 
 export enum TransactionType {
@@ -47,6 +53,8 @@ export type UnsignedMessage = {
   method?: string
   params?: Uint8Array
   unspent?: Unspent[]
+  recentBhash?: string
+  txData?: Uint8Array
 }
 
 export type Signature = {

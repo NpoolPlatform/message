@@ -134,9 +134,9 @@ fil
 | To | [string](#string) |  |  |
 | From | [string](#string) |  |  |
 | Value | [double](#double) |  |  |
-| Nonce | [uint64](#uint64) |  | fil/eth/erc20 |
+| Nonce | [uint64](#uint64) |  | fil/eth/erc20/bsc |
 | GasLimit | [int64](#int64) |  |  |
-| GasPrice | [int64](#int64) |  | eth/erc20 |
+| GasPrice | [int64](#int64) |  | eth/erc20/bsc |
 | ChainID | [int64](#int64) |  |  |
 | ContractID | [string](#string) |  |  |
 | GasFeeCap | [uint64](#uint64) |  | fil |
@@ -144,6 +144,8 @@ fil
 | Method | [uint64](#uint64) |  |  |
 | Params | [bytes](#bytes) |  |  |
 | Unspent | [Unspent](#sphinx-plugin-v1-Unspent) | repeated | btc |
+| RecentBhash | [string](#string) |  | sol |
+| TxData | [bytes](#bytes) |  | trc20 |
 
 
 
@@ -189,12 +191,18 @@ fil
 | CoinTypeusdterc20 | 4 |  |
 | CoinTypespacemesh | 5 |  |
 | CoinTypesolana | 6 |  |
+| CoinTypeusdttrc20 | 7 |  |
+| CoinTypebsc | 8 |  |
+| CoinTypetron | 9 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
 | CoinTypetusdterc20 | 103 |  |
 | CoinTypetspacemesh | 104 |  |
 | CoinTypetsolana | 105 |  |
+| CoinTypetusdttrc20 | 106 |  |
+| CoinTypetbsc | 107 |  |
+| CoinTypettron | 108 |  |
 
 
 
@@ -327,9 +335,9 @@ fil
 | To | [string](#string) |  |  |
 | From | [string](#string) |  |  |
 | Value | [double](#double) |  |  |
-| Nonce | [uint64](#uint64) |  | fil/eth/erc20 |
+| Nonce | [uint64](#uint64) |  | fil/eth/erc20/bsc |
 | GasLimit | [int64](#int64) |  |  |
-| GasPrice | [int64](#int64) |  | eth/erc20 |
+| GasPrice | [int64](#int64) |  | eth/erc20/bsc |
 | ChainID | [int64](#int64) |  |  |
 | ContractID | [string](#string) |  |  |
 | GasFeeCap | [uint64](#uint64) |  | fil |
@@ -337,6 +345,8 @@ fil
 | Method | [uint64](#uint64) |  |  |
 | Params | [bytes](#bytes) |  |  |
 | Unspent | [Unspent](#sphinx-plugin-v1-Unspent) | repeated | btc |
+| RecentBhash | [string](#string) |  | sol |
+| TxData | [bytes](#bytes) |  | trc20 |
 
 
 
@@ -382,12 +392,18 @@ fil
 | CoinTypeusdterc20 | 4 |  |
 | CoinTypespacemesh | 5 |  |
 | CoinTypesolana | 6 |  |
+| CoinTypeusdttrc20 | 7 |  |
+| CoinTypebsc | 8 |  |
+| CoinTypetron | 9 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
 | CoinTypetusdterc20 | 103 |  |
 | CoinTypetspacemesh | 104 |  |
 | CoinTypetsolana | 105 |  |
+| CoinTypetusdttrc20 | 106 |  |
+| CoinTypetbsc | 107 |  |
+| CoinTypettron | 108 |  |
 
 
 

@@ -22,9 +22,17 @@ service ApiManager {
             body: "*"
         };
     }
+
     rpc GetApis(GetApisRequest) returns (GetApisResponse) {
         option (google.api.http) = {
             post: "/v1/get/apis"
+            body: "*"
+        };
+    }
+
+    rpc GetServiceMethodAPI(GetServiceMethodAPIRequest) returns (GetServiceMethodAPIResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/service/method/api"
             body: "*"
         };
     }
@@ -34,6 +42,7 @@ message Path {
     string Method = 10;
     string Path = 20;
     bool Exported = 30;
+    string MethodName = 40;
 }
 
 message ServiceApis {
@@ -62,6 +71,7 @@ message ServicePath {
     bool Exported = 80;
     uint32 CreateAt = 90;
     uint32 UpdateAt = 100;
+    string MethodName = 110;
 }
 
 message GetApisRequest {
@@ -70,3 +80,13 @@ message GetApisRequest {
 message GetApisResponse {
     repeated ServicePath Infos = 10;
 }
+
+message GetServiceMethodAPIRequest {
+    string ServiceName = 10;
+    string MethodName = 20;
+}
+
+message GetServiceMethodAPIResponse {
+    ServicePath Info = 10;
+}
+

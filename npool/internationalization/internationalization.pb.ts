@@ -66,6 +66,7 @@ export type CreateMessageResponse = {
 
 export type CreateMessageForOtherAppRequest = {
   targetAppID?: string
+  targetLangID?: string
   info?: Message
 }
 
@@ -79,6 +80,16 @@ export type CreateMessagesRequest = {
 }
 
 export type CreateMessagesResponse = {
+  infos?: Message[]
+}
+
+export type CreateMessagesForOtherAppRequest = {
+  targetAppID?: string
+  targetLangID?: string
+  infos?: Message[]
+}
+
+export type CreateMessagesForOtherAppResponse = {
   infos?: Message[]
 }
 
@@ -132,6 +143,7 @@ export type AppLang = {
   id?: string
   appID?: string
   langID?: string
+  mainLang?: boolean
 }
 
 export type CreateAppLangRequest = {
@@ -148,6 +160,14 @@ export type CreateAppLangForOtherAppRequest = {
 }
 
 export type CreateAppLangForOtherAppResponse = {
+  info?: AppLang
+}
+
+export type UpdateAppLangRequest = {
+  info?: AppLang
+}
+
+export type UpdateAppLangResponse = {
   info?: AppLang
 }
 
@@ -257,6 +277,9 @@ export class Internationalization {
   static CreateAppLangForOtherApp(req: CreateAppLangForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppLangForOtherAppResponse> {
     return fm.fetchReq<CreateAppLangForOtherAppRequest, CreateAppLangForOtherAppResponse>(`/v1/create/app/lang/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static UpdateAppLang(req: UpdateAppLangRequest, initReq?: fm.InitReq): Promise<UpdateAppLangResponse> {
+    return fm.fetchReq<UpdateAppLangRequest, UpdateAppLangResponse>(`/v1/update/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetAppLang(req: GetAppLangRequest, initReq?: fm.InitReq): Promise<GetAppLangResponse> {
     return fm.fetchReq<GetAppLangRequest, GetAppLangResponse>(`/v1/get/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -277,6 +300,9 @@ export class Internationalization {
   }
   static CreateMessages(req: CreateMessagesRequest, initReq?: fm.InitReq): Promise<CreateMessagesResponse> {
     return fm.fetchReq<CreateMessagesRequest, CreateMessagesResponse>(`/v1/create/messages`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateMessagesForOtherApp(req: CreateMessagesForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateMessagesForOtherAppResponse> {
+    return fm.fetchReq<CreateMessagesForOtherAppRequest, CreateMessagesForOtherAppResponse>(`/v1/create/messages/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateMessage(req: UpdateMessageRequest, initReq?: fm.InitReq): Promise<UpdateMessageResponse> {
     return fm.fetchReq<UpdateMessageRequest, UpdateMessageResponse>(`/v1/update/message`, {...initReq, method: "POST", body: JSON.stringify(req)})

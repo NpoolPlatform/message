@@ -57,6 +57,12 @@ service CloudHashingOrder {
             body: "*"
         };
     }
+    rpc GetOrders (GetOrdersRequest) returns  (GetOrdersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/orders"
+            body: "*"
+        };
+    }
     rpc GetOrderDetail (GetOrderDetailRequest) returns  (GetOrderDetailResponse) {
         option (google.api.http) = {
             post: "/v1/get/order/detail"
@@ -81,15 +87,15 @@ service CloudHashingOrder {
             body: "*"
         };
     }
-    rpc GetOrdersByGood (GetOrdersByGoodRequest) returns  (GetOrdersByGoodResponse) {
+    rpc GetOrdersByOtherApp (GetOrdersByOtherAppRequest) returns  (GetOrdersByOtherAppResponse) {
         option (google.api.http) = {
-            post: "/v1/get/orders/by/good"
+            post: "/v1/get/orders/by/other/app"
             body: "*"
         };
     }
-    rpc GetSoldByGood (GetSoldByGoodRequest) returns  (GetSoldByGoodResponse) {
+    rpc GetOrdersByGood (GetOrdersByGoodRequest) returns  (GetOrdersByGoodResponse) {
         option (google.api.http) = {
-            post: "/v1/get/sold/by/good"
+            post: "/v1/get/orders/by/good"
             body: "*"
         };
     }
@@ -162,9 +168,21 @@ service CloudHashingOrder {
             body: "*"
         };
     }
+    rpc GetPaymentsByOtherApp (GetPaymentsByOtherAppRequest) returns  (GetPaymentsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/payments/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetPaymentsByAppUser (GetPaymentsByAppUserRequest) returns  (GetPaymentsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/payments/by/app/user"
+            body: "*"
+        };
+    }
+    rpc GetPaymentsByAppUserState (GetPaymentsByAppUserStateRequest) returns  (GetPaymentsByAppUserStateResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/payments/by/app/user/state"
             body: "*"
         };
     }
@@ -279,6 +297,15 @@ message GetOrderResponse {
     Order Info = 10;
 }
 
+message GetOrdersRequest {
+    int32 Offset = 10;
+    int32 Limit = 20;
+}
+
+message GetOrdersResponse {
+    repeated Order Infos = 10;
+}
+
 message GetOrdersByAppUserRequest {
     string AppID = 10;
     string UserID = 20;
@@ -307,21 +334,20 @@ message GetOrdersByAppResponse {
     repeated Order Infos = 10;
 }
 
+message GetOrdersByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetOrdersByOtherAppResponse {
+    repeated Order Infos = 10;
+}
+
 message GetOrdersByGoodRequest {
     string GoodID = 10;
 }
 
 message GetOrdersByGoodResponse {
     repeated Order Infos = 10;
-}
-
-message GetSoldByGoodRequest {
-    string GoodID = 10;
-    uint32 DurationDays = 20;
-}
-
-message GetSoldByGoodResponse {
-    uint32 Sold = 10;
 }
 
 message Compensate {
@@ -389,6 +415,10 @@ message Payment {
     double FinishAmount = 120;
     bool UserSetPaid = 130;
     string UserPaymentTXID = 140;
+    bool UserSetCanceled = 150;
+    double LocalCoinUSDCurrency = 160;
+    double LiveCoinUSDCurrency = 170;
+    uint32 UpdateAt = 180;
 }
 
 message CreatePaymentRequest {
@@ -447,12 +477,30 @@ message GetPaymentsByAppResponse {
     repeated Payment Infos = 10;
 }
 
+message GetPaymentsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetPaymentsByOtherAppResponse {
+    repeated Payment Infos = 10;
+}
+
 message GetPaymentsByAppUserRequest {
     string AppID = 10;
     string UserID = 20;
 }
 
 message GetPaymentsByAppUserResponse {
+    repeated Payment Infos = 10;
+}
+
+message GetPaymentsByAppUserStateRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string State = 30;
+}
+
+message GetPaymentsByAppUserStateResponse {
     repeated Payment Infos = 10;
 }
 

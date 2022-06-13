@@ -84,6 +84,15 @@ export type GetOrderResponse = {
   info?: Order
 }
 
+export type GetOrdersRequest = {
+  offset?: number
+  limit?: number
+}
+
+export type GetOrdersResponse = {
+  infos?: Order[]
+}
+
 export type GetOrdersByAppUserRequest = {
   appID?: string
   userID?: string
@@ -112,21 +121,20 @@ export type GetOrdersByAppResponse = {
   infos?: Order[]
 }
 
+export type GetOrdersByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetOrdersByOtherAppResponse = {
+  infos?: Order[]
+}
+
 export type GetOrdersByGoodRequest = {
   goodID?: string
 }
 
 export type GetOrdersByGoodResponse = {
   infos?: Order[]
-}
-
-export type GetSoldByGoodRequest = {
-  goodID?: string
-  durationDays?: number
-}
-
-export type GetSoldByGoodResponse = {
-  sold?: number
 }
 
 export type Compensate = {
@@ -194,6 +202,10 @@ export type Payment = {
   finishAmount?: number
   userSetPaid?: boolean
   userPaymentTXID?: string
+  userSetCanceled?: boolean
+  localCoinUSDCurrency?: number
+  liveCoinUSDCurrency?: number
+  updateAt?: number
 }
 
 export type CreatePaymentRequest = {
@@ -252,12 +264,30 @@ export type GetPaymentsByAppResponse = {
   infos?: Payment[]
 }
 
+export type GetPaymentsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetPaymentsByOtherAppResponse = {
+  infos?: Payment[]
+}
+
 export type GetPaymentsByAppUserRequest = {
   appID?: string
   userID?: string
 }
 
 export type GetPaymentsByAppUserResponse = {
+  infos?: Payment[]
+}
+
+export type GetPaymentsByAppUserStateRequest = {
+  appID?: string
+  userID?: string
+  state?: string
+}
+
+export type GetPaymentsByAppUserStateResponse = {
   infos?: Payment[]
 }
 
@@ -341,6 +371,9 @@ export class CloudHashingOrder {
   static GetOrder(req: GetOrderRequest, initReq?: fm.InitReq): Promise<GetOrderResponse> {
     return fm.fetchReq<GetOrderRequest, GetOrderResponse>(`/v1/get/order`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetOrders(req: GetOrdersRequest, initReq?: fm.InitReq): Promise<GetOrdersResponse> {
+    return fm.fetchReq<GetOrdersRequest, GetOrdersResponse>(`/v1/get/orders`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetOrderDetail(req: GetOrderDetailRequest, initReq?: fm.InitReq): Promise<GetOrderDetailResponse> {
     return fm.fetchReq<GetOrderDetailRequest, GetOrderDetailResponse>(`/v1/get/order/detail`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -353,11 +386,11 @@ export class CloudHashingOrder {
   static GetOrdersByApp(req: GetOrdersByAppRequest, initReq?: fm.InitReq): Promise<GetOrdersByAppResponse> {
     return fm.fetchReq<GetOrdersByAppRequest, GetOrdersByAppResponse>(`/v1/get/orders/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetOrdersByOtherApp(req: GetOrdersByOtherAppRequest, initReq?: fm.InitReq): Promise<GetOrdersByOtherAppResponse> {
+    return fm.fetchReq<GetOrdersByOtherAppRequest, GetOrdersByOtherAppResponse>(`/v1/get/orders/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetOrdersByGood(req: GetOrdersByGoodRequest, initReq?: fm.InitReq): Promise<GetOrdersByGoodResponse> {
     return fm.fetchReq<GetOrdersByGoodRequest, GetOrdersByGoodResponse>(`/v1/get/orders/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
-  }
-  static GetSoldByGood(req: GetSoldByGoodRequest, initReq?: fm.InitReq): Promise<GetSoldByGoodResponse> {
-    return fm.fetchReq<GetSoldByGoodRequest, GetSoldByGoodResponse>(`/v1/get/sold/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateCompensate(req: CreateCompensateRequest, initReq?: fm.InitReq): Promise<CreateCompensateResponse> {
     return fm.fetchReq<CreateCompensateRequest, CreateCompensateResponse>(`/v1/create/compensate`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -392,8 +425,14 @@ export class CloudHashingOrder {
   static GetPaymentsByApp(req: GetPaymentsByAppRequest, initReq?: fm.InitReq): Promise<GetPaymentsByAppResponse> {
     return fm.fetchReq<GetPaymentsByAppRequest, GetPaymentsByAppResponse>(`/v1/get/payments/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetPaymentsByOtherApp(req: GetPaymentsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetPaymentsByOtherAppResponse> {
+    return fm.fetchReq<GetPaymentsByOtherAppRequest, GetPaymentsByOtherAppResponse>(`/v1/get/payments/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetPaymentsByAppUser(req: GetPaymentsByAppUserRequest, initReq?: fm.InitReq): Promise<GetPaymentsByAppUserResponse> {
     return fm.fetchReq<GetPaymentsByAppUserRequest, GetPaymentsByAppUserResponse>(`/v1/get/payments/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetPaymentsByAppUserState(req: GetPaymentsByAppUserStateRequest, initReq?: fm.InitReq): Promise<GetPaymentsByAppUserStateResponse> {
+    return fm.fetchReq<GetPaymentsByAppUserStateRequest, GetPaymentsByAppUserStateResponse>(`/v1/get/payments/by/app/user/state`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetPayments(req: GetPaymentsRequest, initReq?: fm.InitReq): Promise<GetPaymentsResponse> {
     return fm.fetchReq<GetPaymentsRequest, GetPaymentsResponse>(`/v1/get/payments`, {...initReq, method: "POST", body: JSON.stringify(req)})

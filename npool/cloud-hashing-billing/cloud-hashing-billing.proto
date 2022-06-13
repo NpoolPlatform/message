@@ -92,6 +92,18 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetCoinAccountTransactionsByApp (GetCoinAccountTransactionsByAppRequest) returns (GetCoinAccountTransactionsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coin/account/transactions/by/app"
+            body: "*"
+        };
+    }
+    rpc GetCoinAccountTransactionsByOtherApp (GetCoinAccountTransactionsByOtherAppRequest) returns (GetCoinAccountTransactionsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coin/account/transactions/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetCoinAccountTransactionsByAppUser (GetCoinAccountTransactionsByAppUserRequest) returns (GetCoinAccountTransactionsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/coin/account/transactions/by/app/user"
@@ -209,6 +221,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetUserBenefitsByOtherApp (GetUserBenefitsByOtherAppRequest) returns (GetUserBenefitsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/benefits/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetUserBenefits (GetUserBenefitsRequest) returns (GetUserBenefitsResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/benefits"
@@ -246,6 +264,12 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetCoinSettings (GetCoinSettingsRequest) returns (GetCoinSettingsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coin/settings"
+            body: "*"
+        };
+    }
 
     rpc CreateGoodBenefit (CreateGoodBenefitRequest) returns (CreateGoodBenefitResponse) {
         option (google.api.http) = {
@@ -268,6 +292,12 @@ service CloudHashingBilling {
     rpc GetGoodBenefitByGood (GetGoodBenefitByGoodRequest) returns (GetGoodBenefitByGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/good/benefit/by/good"
+            body: "*"
+        };
+    }
+    rpc GetGoodBenefits (GetGoodBenefitsRequest) returns (GetGoodBenefitsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/benefits"
             body: "*"
         };
     }
@@ -363,6 +393,18 @@ service CloudHashingBilling {
             body: "*"
         };
     }
+    rpc GetUserWithdrawsByApp (GetUserWithdrawsByAppRequest) returns (GetUserWithdrawsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraws/by/app"
+            body: "*"
+        };
+    }
+    rpc GetUserWithdrawsByOtherApp (GetUserWithdrawsByOtherAppRequest) returns (GetUserWithdrawsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraws/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetUserWithdrawAccount (GetUserWithdrawAccountRequest) returns (GetUserWithdrawAccountResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/withdraw/account"
@@ -446,6 +488,18 @@ service CloudHashingBilling {
     rpc GetUserWithdrawItemsByAccount (GetUserWithdrawItemsByAccountRequest) returns (GetUserWithdrawItemsByAccountResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/withdraw/items/by/account"
+            body: "*"
+        };
+    }
+    rpc GetUserWithdrawItemsByApp (GetUserWithdrawItemsByAppRequest) returns (GetUserWithdrawItemsByAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraw/items/by/app"
+            body: "*"
+        };
+    }
+    rpc GetUserWithdrawItemsByOtherApp (GetUserWithdrawItemsByOtherAppRequest) returns (GetUserWithdrawItemsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/withdraw/items/by/other/app"
             body: "*"
         };
     }
@@ -632,12 +686,14 @@ message CoinAccountTransaction {
     string ToAddressID = 50;
     string CoinTypeID = 60;
     double Amount = 70;
+    double TransactionFee = 71;
     string Message = 80;
     uint32 CreateAt = 90;
     string State = 100;
     string ChainTransactionID = 110;
     string GoodID = 120;
     bool FailHold = 130;
+    string CreatedFor = 140;
 }
 
 message CreateCoinAccountTransactionRequest {
@@ -708,6 +764,22 @@ message GetCoinAccountTransactionsRequest {
 }
 
 message GetCoinAccountTransactionsResponse {
+    repeated CoinAccountTransaction Infos = 10;
+}
+
+message GetCoinAccountTransactionsByAppRequest {
+    string AppID = 10;
+}
+
+message GetCoinAccountTransactionsByAppResponse {
+    repeated CoinAccountTransaction Infos = 10;
+}
+
+message GetCoinAccountTransactionsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetCoinAccountTransactionsByOtherAppResponse {
     repeated CoinAccountTransaction Infos = 10;
 }
 
@@ -908,6 +980,15 @@ message GetUserBenefitsByAppResponse {
     repeated UserBenefit Infos = 10;
 }
 
+message GetUserBenefitsByOtherAppRequest {
+    string TargetAppID = 10;
+    npool.v1.PageInfo PageInfo = 20;
+}
+
+message GetUserBenefitsByOtherAppResponse {
+    repeated UserBenefit Infos = 10;
+}
+
 message GetUserBenefitsRequest {
     npool.v1.PageInfo PageInfo = 10;
 }
@@ -936,6 +1017,7 @@ message CoinSetting {
     string UserOfflineAccountID = 60;
     string UserOnlineAccountID = 70;
     string GoodIncomingAccountID = 80;
+    string GasProviderAccountID = 90;
 }
 
 message CreateCoinSettingRequest {
@@ -968,6 +1050,13 @@ message GetCoinSettingByCoinRequest {
 
 message GetCoinSettingByCoinResponse {
     CoinSetting Info = 10;
+}
+
+message GetCoinSettingsRequest {
+}
+
+message GetCoinSettingsResponse {
+    repeated CoinSetting Infos = 10;
 }
 
 message GoodBenefit {
@@ -1008,6 +1097,14 @@ message GetGoodBenefitByGoodRequest {
 message GetGoodBenefitByGoodResponse {
     GoodBenefit Info = 10;
 }
+
+message GetGoodBenefitsRequest {
+}
+
+message GetGoodBenefitsResponse {
+    repeated GoodBenefit Infos = 10;
+}
+
 
 message GoodPayment {
     string ID = 10;
@@ -1158,6 +1255,22 @@ message GetUserWithdrawsByOtherAppUserResponse {
     repeated UserWithdraw Infos = 10;
 }
 
+message GetUserWithdrawsByAppRequest {
+    string AppID = 10;
+}
+
+message GetUserWithdrawsByAppResponse {
+    repeated UserWithdraw Infos = 10;
+}
+
+message GetUserWithdrawsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetUserWithdrawsByOtherAppResponse {
+    repeated UserWithdraw Infos = 10;
+}
+
 message UserWithdrawAccount {
     UserWithdraw Withdraw = 10;
     CoinAccountInfo Account = 20;
@@ -1295,6 +1408,22 @@ message GetUserWithdrawItemsByAccountRequest {
 }
 
 message GetUserWithdrawItemsByAccountResponse {
+    repeated UserWithdrawItem Infos = 10;
+}
+
+message GetUserWithdrawItemsByAppRequest {
+    string AppID = 10;
+}
+
+message GetUserWithdrawItemsByAppResponse {
+    repeated UserWithdrawItem Infos = 10;
+}
+
+message GetUserWithdrawItemsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetUserWithdrawItemsByOtherAppResponse {
     repeated UserWithdrawItem Infos = 10;
 }
 

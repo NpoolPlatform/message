@@ -421,6 +421,8 @@
 | Online | [bool](#bool) |  |  |
 | InitAreaStrategy | [string](#string) |  |  |
 | DisplayIndex | [uint32](#uint32) |  |  |
+| Visible | [bool](#bool) |  |  |
+| PurchaseLimit | [int32](#int32) |  |  |
 
 
 
@@ -2640,7 +2642,6 @@
 | BenefitType | [string](#string) |  |  |
 | Classic | [bool](#bool) |  |  |
 | SupportCoinTypeIDs | [string](#string) | repeated |  |
-| Total | [int32](#int32) |  |  |
 | PriceCurrency | [string](#string) |  |  |
 | Title | [string](#string) |  |  |
 | Unit | [string](#string) |  |  |
@@ -3523,6 +3524,8 @@ Cloud Hashing Goods
 | Online | [bool](#bool) |  |  |
 | InitAreaStrategy | [string](#string) |  |  |
 | DisplayIndex | [uint32](#uint32) |  |  |
+| Visible | [bool](#bool) |  |  |
+| PurchaseLimit | [int32](#int32) |  |  |
 
 
 
@@ -5742,7 +5745,6 @@ Cloud Hashing Goods
 | BenefitType | [string](#string) |  |  |
 | Classic | [bool](#bool) |  |  |
 | SupportCoinTypeIDs | [string](#string) | repeated |  |
-| Total | [int32](#int32) |  |  |
 | PriceCurrency | [string](#string) |  |  |
 | Title | [string](#string) |  |  |
 | Unit | [string](#string) |  |  |

@@ -875,6 +875,38 @@
         ]
       }
     },
+    "/v1/get/coin/account/transactions/by/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetCoinAccountTransactionsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinAccountTransactionsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinAccountTransactionsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/coin/account/transactions/by/app/user": {
       "post": {
         "operationId": "CloudHashingBilling_GetCoinAccountTransactionsByAppUser",
@@ -1027,6 +1059,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetCoinAccountTransactionsByGoodStateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/coin/account/transactions/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetCoinAccountTransactionsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinAccountTransactionsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinAccountTransactionsByOtherAppRequest"
             }
           }
         ],
@@ -1195,6 +1259,38 @@
         ]
       }
     },
+    "/v1/get/coin/settings": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetCoinSettings",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinSettingsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinSettingsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/good/benefit": {
       "post": {
         "operationId": "CloudHashingBilling_GetGoodBenefit",
@@ -1251,6 +1347,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetGoodBenefitByGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/good/benefits": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetGoodBenefits",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodBenefitsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodBenefitsRequest"
             }
           }
         ],
@@ -1803,6 +1931,38 @@
         ]
       }
     },
+    "/v1/get/user/benefits/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserBenefitsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserBenefitsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserBenefitsByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/user/direct/benefit": {
       "post": {
         "operationId": "CloudHashingBilling_GetUserDirectBenefit",
@@ -2315,6 +2475,38 @@
         ]
       }
     },
+    "/v1/get/user/withdraw/items/by/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserWithdrawItemsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawItemsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawItemsByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/user/withdraw/items/by/app/user": {
       "post": {
         "operationId": "CloudHashingBilling_GetUserWithdrawItemsByAppUser",
@@ -2411,6 +2603,38 @@
         ]
       }
     },
+    "/v1/get/user/withdraw/items/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserWithdrawItemsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawItemsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawItemsByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
     "/v1/get/user/withdraw/items/by/other/app/user": {
       "post": {
         "operationId": "CloudHashingBilling_GetUserWithdrawItemsByOtherAppUser",
@@ -2435,6 +2659,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetUserWithdrawItemsByOtherAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/user/withdraws/by/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserWithdrawsByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawsByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawsByAppRequest"
             }
           }
         ],
@@ -2499,6 +2755,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetUserWithdrawsByAppUserCoinRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingBilling"
+        ]
+      }
+    },
+    "/v1/get/user/withdraws/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingBilling_GetUserWithdrawsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserWithdrawsByOtherAppRequest"
             }
           }
         ],
@@ -2991,6 +3279,10 @@
           "type": "number",
           "format": "double"
         },
+        "TransactionFee": {
+          "type": "number",
+          "format": "double"
+        },
         "Message": {
           "type": "string"
         },
@@ -3009,6 +3301,9 @@
         },
         "FailHold": {
           "type": "boolean"
+        },
+        "CreatedFor": {
+          "type": "string"
         }
       }
     },
@@ -3079,6 +3374,9 @@
           "type": "string"
         },
         "GoodIncomingAccountID": {
+          "type": "string"
+        },
+        "GasProviderAccountID": {
           "type": "string"
         }
       }
@@ -3520,6 +3818,25 @@
         }
       }
     },
+    "v1GetCoinAccountTransactionsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetCoinAccountTransactionsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinAccountTransaction"
+          }
+        }
+      }
+    },
     "v1GetCoinAccountTransactionsByAppUserCoinRequest": {
       "type": "object",
       "properties": {
@@ -3620,6 +3937,25 @@
       }
     },
     "v1GetCoinAccountTransactionsByGoodStateResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinAccountTransaction"
+          }
+        }
+      }
+    },
+    "v1GetCoinAccountTransactionsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetCoinAccountTransactionsByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -3731,6 +4067,20 @@
         }
       }
     },
+    "v1GetCoinSettingsRequest": {
+      "type": "object"
+    },
+    "v1GetCoinSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinSetting"
+          }
+        }
+      }
+    },
     "v1GetGoodBenefitByGoodRequest": {
       "type": "object",
       "properties": {
@@ -3760,6 +4110,20 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1GoodBenefit"
+        }
+      }
+    },
+    "v1GetGoodBenefitsRequest": {
+      "type": "object"
+    },
+    "v1GetGoodBenefitsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodBenefit"
+          }
         }
       }
     },
@@ -4066,6 +4430,28 @@
         }
       }
     },
+    "v1GetUserBenefitsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetUserBenefitsByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserBenefit"
+          }
+        }
+      }
+    },
     "v1GetUserBenefitsRequest": {
       "type": "object",
       "properties": {
@@ -4348,6 +4734,25 @@
         }
       }
     },
+    "v1GetUserWithdrawItemsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserWithdrawItemsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserWithdrawItem"
+          }
+        }
+      }
+    },
     "v1GetUserWithdrawItemsByAppUserCoinWithdrawTypeRequest": {
       "type": "object",
       "properties": {
@@ -4423,6 +4828,25 @@
         }
       }
     },
+    "v1GetUserWithdrawItemsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserWithdrawItemsByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserWithdrawItem"
+          }
+        }
+      }
+    },
     "v1GetUserWithdrawItemsByOtherAppUserRequest": {
       "type": "object",
       "properties": {
@@ -4475,6 +4899,25 @@
         }
       }
     },
+    "v1GetUserWithdrawsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserWithdrawsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserWithdraw"
+          }
+        }
+      }
+    },
     "v1GetUserWithdrawsByAppUserCoinRequest": {
       "type": "object",
       "properties": {
@@ -4512,6 +4955,25 @@
       }
     },
     "v1GetUserWithdrawsByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserWithdraw"
+          }
+        }
+      }
+    },
+    "v1GetUserWithdrawsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserWithdrawsByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {

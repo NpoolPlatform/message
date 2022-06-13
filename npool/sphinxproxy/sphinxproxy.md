@@ -214,6 +214,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | SignedRawTxHex | [string](#string) |  | eth/usdt |
 | CID | [string](#string) |  |  |
 | payload | [bytes](#bytes) |  |  |
+| Fee | [double](#double) |  | gas fee |
 
 
 
@@ -560,6 +561,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | SignedRawTxHex | [string](#string) |  | eth/usdt |
 | CID | [string](#string) |  |  |
 | payload | [bytes](#bytes) |  |  |
+| Fee | [double](#double) |  | gas fee |
 
 
 

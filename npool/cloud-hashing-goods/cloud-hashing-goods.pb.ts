@@ -176,7 +176,6 @@ export type GoodInfo = {
   benefitType?: string
   classic?: boolean
   supportCoinTypeIDs?: string[]
-  total?: number
   priceCurrency?: string
   title?: string
   unit?: string
@@ -418,6 +417,8 @@ export type AppGoodInfo = {
   online?: boolean
   initAreaStrategy?: string
   displayIndex?: number
+  visible?: boolean
+  purchaseLimit?: number
 }
 
 export type SetAppGoodPriceRequest = {

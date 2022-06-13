@@ -109,6 +109,14 @@ export type GetOrdersByAppResponse = {
   infos?: Order[]
 }
 
+export type GetOrdersByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetOrdersByOtherAppResponse = {
+  infos?: Order[]
+}
+
 export type GetOrdersByGoodRequest = {
   goodID?: string
 }
@@ -246,6 +254,22 @@ export type CreateAppUserExtraRequest = {
 }
 
 export type CreateAppUserExtraResponse = {
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
+}
+
+export type CreateAppUserControlRequest = {
+  info?: AppUserManagerV1Appusermgr.AppUserControl
+}
+
+export type CreateAppUserControlResponse = {
+  info?: AppUserManagerV1Appusermgr.AppUserInfo
+}
+
+export type UpdateAppUserControlRequest = {
+  info?: AppUserManagerV1Appusermgr.AppUserControl
+}
+
+export type UpdateAppUserControlResponse = {
   info?: AppUserManagerV1Appusermgr.AppUserInfo
 }
 
@@ -592,6 +616,14 @@ export type UpdateWithdrawAddressReviewResponse = {
   info?: WithdrawAddressReview
 }
 
+export type GetCurrentFeeRequest = {
+  coinTypeID?: string
+}
+
+export type GetCurrentFeeResponse = {
+  feeAmount?: number
+}
+
 export class CloudHashingApis {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -626,6 +658,9 @@ export class CloudHashingApis {
   static GetOrdersByApp(req: GetOrdersByAppRequest, initReq?: fm.InitReq): Promise<GetOrdersByAppResponse> {
     return fm.fetchReq<GetOrdersByAppRequest, GetOrdersByAppResponse>(`/v1/get/orders/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetOrdersByOtherApp(req: GetOrdersByOtherAppRequest, initReq?: fm.InitReq): Promise<GetOrdersByOtherAppResponse> {
+    return fm.fetchReq<GetOrdersByOtherAppRequest, GetOrdersByOtherAppResponse>(`/v1/get/orders/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetOrdersByGood(req: GetOrdersByGoodRequest, initReq?: fm.InitReq): Promise<GetOrdersByGoodResponse> {
     return fm.fetchReq<GetOrdersByGoodRequest, GetOrdersByGoodResponse>(`/v1/get/orders/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -652,6 +687,12 @@ export class CloudHashingApis {
   }
   static UpdateAppUserExtra(req: UpdateAppUserExtraRequest, initReq?: fm.InitReq): Promise<UpdateAppUserExtraResponse> {
     return fm.fetchReq<UpdateAppUserExtraRequest, UpdateAppUserExtraResponse>(`/v1/update/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAppUserControl(req: CreateAppUserControlRequest, initReq?: fm.InitReq): Promise<CreateAppUserControlResponse> {
+    return fm.fetchReq<CreateAppUserControlRequest, CreateAppUserControlResponse>(`/v1/create/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static UpdateAppUserControl(req: UpdateAppUserControlRequest, initReq?: fm.InitReq): Promise<UpdateAppUserControlResponse> {
+    return fm.fetchReq<UpdateAppUserControlRequest, UpdateAppUserControlResponse>(`/v1/update/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetReferrals(req: GetReferralsRequest, initReq?: fm.InitReq): Promise<GetReferralsResponse> {
     return fm.fetchReq<GetReferralsRequest, GetReferralsResponse>(`/v1/get/referrals`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -739,5 +780,8 @@ export class CloudHashingApis {
   }
   static UpdateWithdrawAddressReview(req: UpdateWithdrawAddressReviewRequest, initReq?: fm.InitReq): Promise<UpdateWithdrawAddressReviewResponse> {
     return fm.fetchReq<UpdateWithdrawAddressReviewRequest, UpdateWithdrawAddressReviewResponse>(`/v1/update/withdraw/address/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCurrentFee(req: GetCurrentFeeRequest, initReq?: fm.InitReq): Promise<GetCurrentFeeResponse> {
+    return fm.fetchReq<GetCurrentFeeRequest, GetCurrentFeeResponse>(`/v1/get/current/fee`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }

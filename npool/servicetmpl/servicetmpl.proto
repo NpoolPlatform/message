@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package service.template.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/servicetmpl";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service ServiceTemplate {
+    // Method Version
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+}
+
+message ServiceTemplateInfo {
+    string ID = 10;
+}
+
+message GetServiceTemplateInfoOnlyRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message GetServiceTemplateInfoOnlyResponse {
+    ServiceTemplateInfo Info = 10;
+}

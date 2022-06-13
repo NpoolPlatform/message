@@ -95,13 +95,17 @@ export type CreateCoinDescriptionResponse = {
 
 export type GetCoinDescriptionRequest = {
   coinTypeID?: string
+  limit?: number
+  offset?: number
 }
 
 export type GetCoinDescriptionResponse = {
-  info?: CoinDescriptionInfo
+  total?: number
+  infos?: CoinDescriptionInfo[]
 }
 
 export type UpdateCoinDescriptionRequest = {
+  id?: string
   coinTypeID?: string
   title?: string
   message?: string

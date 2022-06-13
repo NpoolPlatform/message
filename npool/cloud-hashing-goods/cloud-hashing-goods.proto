@@ -726,7 +726,6 @@ message GoodInfo {
     string BenefitType = 120;
     bool Classic = 130;
     repeated string SupportCoinTypeIDs = 140;
-    int32 Total = 150;
     string PriceCurrency = 160;
     string Title = 170;
     string Unit = 180;
@@ -969,6 +968,8 @@ message AppGoodInfo {
     bool Online = 50;
     string InitAreaStrategy = 60;
     uint32 DisplayIndex = 70;
+    bool Visible = 80;
+    int32 PurchaseLimit = 90;
 }
 
 message SetAppGoodPriceRequest {

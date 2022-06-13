@@ -89,6 +89,12 @@ service CloudHashingApis {
             body: "*"
         };
     }
+    rpc GetOrdersByOtherApp (GetOrdersByOtherAppRequest) returns (GetOrdersByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/orders/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetOrdersByGood (GetOrdersByGoodRequest) returns (GetOrdersByGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders/by/good"
@@ -141,6 +147,18 @@ service CloudHashingApis {
     rpc UpdateAppUserExtra (UpdateAppUserExtraRequest) returns (UpdateAppUserExtraResponse) {
         option (google.api.http) = {
             post: "/v1/update/app/user/extra"
+            body: "*"
+        };
+    }
+    rpc CreateAppUserControl (CreateAppUserControlRequest) returns (CreateAppUserControlResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/control"
+            body: "*"
+        };
+    }
+    rpc UpdateAppUserControl (UpdateAppUserControlRequest) returns (UpdateAppUserControlResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/user/control"
             body: "*"
         };
     }
@@ -329,6 +347,13 @@ service CloudHashingApis {
             body: "*"
         };
     }
+
+    rpc GetCurrentFee (GetCurrentFeeRequest) returns (GetCurrentFeeResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/current/fee"
+            body: "*"
+        };
+    }
 }
 
 // Request body and response
@@ -425,6 +450,15 @@ message GetOrdersByAppRequest {
 message GetOrdersByAppResponse {
     repeated Order Infos = 10;
 }
+
+message GetOrdersByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetOrdersByOtherAppResponse {
+    repeated Order Infos = 10;
+}
+
 
 message GetOrdersByGoodRequest {
     string GoodID = 10;
@@ -563,6 +597,22 @@ message CreateAppUserExtraRequest {
 }
 
 message CreateAppUserExtraResponse {
+    app.user.manager.v1.AppUserInfo Info = 10;
+}
+
+message CreateAppUserControlRequest {
+    app.user.manager.v1.AppUserControl Info = 10;
+}
+
+message CreateAppUserControlResponse {
+    app.user.manager.v1.AppUserInfo Info = 10;
+}
+
+message UpdateAppUserControlRequest {
+    app.user.manager.v1.AppUserControl Info = 10;
+}
+
+message UpdateAppUserControlResponse {
     app.user.manager.v1.AppUserInfo Info = 10;
 }
 
@@ -914,3 +964,10 @@ message UpdateWithdrawAddressReviewResponse {
     WithdrawAddressReview Info = 10;
 }
 
+message GetCurrentFeeRequest {
+    string CoinTypeID = 10;
+}
+
+message GetCurrentFeeResponse {
+    double FeeAmount = 10;
+}

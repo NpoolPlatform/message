@@ -72,12 +72,14 @@ export type CoinAccountTransaction = {
   toAddressID?: string
   coinTypeID?: string
   amount?: number
+  transactionFee?: number
   message?: string
   createAt?: number
   state?: string
   chainTransactionID?: string
   goodID?: string
   failHold?: boolean
+  createdFor?: string
 }
 
 export type CreateCoinAccountTransactionRequest = {
@@ -148,6 +150,22 @@ export type GetCoinAccountTransactionsRequest = {
 }
 
 export type GetCoinAccountTransactionsResponse = {
+  infos?: CoinAccountTransaction[]
+}
+
+export type GetCoinAccountTransactionsByAppRequest = {
+  appID?: string
+}
+
+export type GetCoinAccountTransactionsByAppResponse = {
+  infos?: CoinAccountTransaction[]
+}
+
+export type GetCoinAccountTransactionsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetCoinAccountTransactionsByOtherAppResponse = {
   infos?: CoinAccountTransaction[]
 }
 
@@ -348,6 +366,15 @@ export type GetUserBenefitsByAppResponse = {
   infos?: UserBenefit[]
 }
 
+export type GetUserBenefitsByOtherAppRequest = {
+  targetAppID?: string
+  pageInfo?: NpoolV1Npool.PageInfo
+}
+
+export type GetUserBenefitsByOtherAppResponse = {
+  infos?: UserBenefit[]
+}
+
 export type GetUserBenefitsRequest = {
   pageInfo?: NpoolV1Npool.PageInfo
 }
@@ -375,6 +402,7 @@ export type CoinSetting = {
   userOfflineAccountID?: string
   userOnlineAccountID?: string
   goodIncomingAccountID?: string
+  gasProviderAccountID?: string
 }
 
 export type CreateCoinSettingRequest = {
@@ -407,6 +435,13 @@ export type GetCoinSettingByCoinRequest = {
 
 export type GetCoinSettingByCoinResponse = {
   info?: CoinSetting
+}
+
+export type GetCoinSettingsRequest = {
+}
+
+export type GetCoinSettingsResponse = {
+  infos?: CoinSetting[]
 }
 
 export type GoodBenefit = {
@@ -446,6 +481,13 @@ export type GetGoodBenefitByGoodRequest = {
 
 export type GetGoodBenefitByGoodResponse = {
   info?: GoodBenefit
+}
+
+export type GetGoodBenefitsRequest = {
+}
+
+export type GetGoodBenefitsResponse = {
+  infos?: GoodBenefit[]
 }
 
 export type GoodPayment = {
@@ -596,6 +638,22 @@ export type GetUserWithdrawsByOtherAppUserResponse = {
   infos?: UserWithdraw[]
 }
 
+export type GetUserWithdrawsByAppRequest = {
+  appID?: string
+}
+
+export type GetUserWithdrawsByAppResponse = {
+  infos?: UserWithdraw[]
+}
+
+export type GetUserWithdrawsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetUserWithdrawsByOtherAppResponse = {
+  infos?: UserWithdraw[]
+}
+
 export type UserWithdrawAccount = {
   withdraw?: UserWithdraw
   account?: CoinAccountInfo
@@ -733,6 +791,22 @@ export type GetUserWithdrawItemsByAccountRequest = {
 }
 
 export type GetUserWithdrawItemsByAccountResponse = {
+  infos?: UserWithdrawItem[]
+}
+
+export type GetUserWithdrawItemsByAppRequest = {
+  appID?: string
+}
+
+export type GetUserWithdrawItemsByAppResponse = {
+  infos?: UserWithdrawItem[]
+}
+
+export type GetUserWithdrawItemsByOtherAppRequest = {
+  targetAppID?: string
+}
+
+export type GetUserWithdrawItemsByOtherAppResponse = {
   infos?: UserWithdrawItem[]
 }
 
@@ -955,6 +1029,12 @@ export class CloudHashingBilling {
   static GetCoinAccountTransactions(req: GetCoinAccountTransactionsRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsResponse> {
     return fm.fetchReq<GetCoinAccountTransactionsRequest, GetCoinAccountTransactionsResponse>(`/v1/get/coin/account/transactions`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetCoinAccountTransactionsByApp(req: GetCoinAccountTransactionsByAppRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsByAppResponse> {
+    return fm.fetchReq<GetCoinAccountTransactionsByAppRequest, GetCoinAccountTransactionsByAppResponse>(`/v1/get/coin/account/transactions/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetCoinAccountTransactionsByOtherApp(req: GetCoinAccountTransactionsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsByOtherAppResponse> {
+    return fm.fetchReq<GetCoinAccountTransactionsByOtherAppRequest, GetCoinAccountTransactionsByOtherAppResponse>(`/v1/get/coin/account/transactions/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetCoinAccountTransactionsByAppUser(req: GetCoinAccountTransactionsByAppUserRequest, initReq?: fm.InitReq): Promise<GetCoinAccountTransactionsByAppUserResponse> {
     return fm.fetchReq<GetCoinAccountTransactionsByAppUserRequest, GetCoinAccountTransactionsByAppUserResponse>(`/v1/get/coin/account/transactions/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -1012,6 +1092,9 @@ export class CloudHashingBilling {
   static GetUserBenefitsByApp(req: GetUserBenefitsByAppRequest, initReq?: fm.InitReq): Promise<GetUserBenefitsByAppResponse> {
     return fm.fetchReq<GetUserBenefitsByAppRequest, GetUserBenefitsByAppResponse>(`/v1/get/user/benefits/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetUserBenefitsByOtherApp(req: GetUserBenefitsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetUserBenefitsByOtherAppResponse> {
+    return fm.fetchReq<GetUserBenefitsByOtherAppRequest, GetUserBenefitsByOtherAppResponse>(`/v1/get/user/benefits/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetUserBenefits(req: GetUserBenefitsRequest, initReq?: fm.InitReq): Promise<GetUserBenefitsResponse> {
     return fm.fetchReq<GetUserBenefitsRequest, GetUserBenefitsResponse>(`/v1/get/user/benefits`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -1030,6 +1113,9 @@ export class CloudHashingBilling {
   static GetCoinSettingByCoin(req: GetCoinSettingByCoinRequest, initReq?: fm.InitReq): Promise<GetCoinSettingByCoinResponse> {
     return fm.fetchReq<GetCoinSettingByCoinRequest, GetCoinSettingByCoinResponse>(`/v1/get/coin/setting/by/coin`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetCoinSettings(req: GetCoinSettingsRequest, initReq?: fm.InitReq): Promise<GetCoinSettingsResponse> {
+    return fm.fetchReq<GetCoinSettingsRequest, GetCoinSettingsResponse>(`/v1/get/coin/settings`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static CreateGoodBenefit(req: CreateGoodBenefitRequest, initReq?: fm.InitReq): Promise<CreateGoodBenefitResponse> {
     return fm.fetchReq<CreateGoodBenefitRequest, CreateGoodBenefitResponse>(`/v1/create/good/benefit`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -1041,6 +1127,9 @@ export class CloudHashingBilling {
   }
   static GetGoodBenefitByGood(req: GetGoodBenefitByGoodRequest, initReq?: fm.InitReq): Promise<GetGoodBenefitByGoodResponse> {
     return fm.fetchReq<GetGoodBenefitByGoodRequest, GetGoodBenefitByGoodResponse>(`/v1/get/good/benefit/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodBenefits(req: GetGoodBenefitsRequest, initReq?: fm.InitReq): Promise<GetGoodBenefitsResponse> {
+    return fm.fetchReq<GetGoodBenefitsRequest, GetGoodBenefitsResponse>(`/v1/get/good/benefits`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static CreateGoodPayment(req: CreateGoodPaymentRequest, initReq?: fm.InitReq): Promise<CreateGoodPaymentResponse> {
     return fm.fetchReq<CreateGoodPaymentRequest, CreateGoodPaymentResponse>(`/v1/create/good/payment`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -1087,6 +1176,12 @@ export class CloudHashingBilling {
   static GetUserWithdrawsByOtherAppUser(req: GetUserWithdrawsByOtherAppUserRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawsByOtherAppUserResponse> {
     return fm.fetchReq<GetUserWithdrawsByOtherAppUserRequest, GetUserWithdrawsByOtherAppUserResponse>(`/v1/get/user/withdraws/by/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetUserWithdrawsByApp(req: GetUserWithdrawsByAppRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawsByAppResponse> {
+    return fm.fetchReq<GetUserWithdrawsByAppRequest, GetUserWithdrawsByAppResponse>(`/v1/get/user/withdraws/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserWithdrawsByOtherApp(req: GetUserWithdrawsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawsByOtherAppResponse> {
+    return fm.fetchReq<GetUserWithdrawsByOtherAppRequest, GetUserWithdrawsByOtherAppResponse>(`/v1/get/user/withdraws/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetUserWithdrawAccount(req: GetUserWithdrawAccountRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawAccountResponse> {
     return fm.fetchReq<GetUserWithdrawAccountRequest, GetUserWithdrawAccountResponse>(`/v1/get/user/withdraw/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -1128,6 +1223,12 @@ export class CloudHashingBilling {
   }
   static GetUserWithdrawItemsByAccount(req: GetUserWithdrawItemsByAccountRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawItemsByAccountResponse> {
     return fm.fetchReq<GetUserWithdrawItemsByAccountRequest, GetUserWithdrawItemsByAccountResponse>(`/v1/get/user/withdraw/items/by/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserWithdrawItemsByApp(req: GetUserWithdrawItemsByAppRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawItemsByAppResponse> {
+    return fm.fetchReq<GetUserWithdrawItemsByAppRequest, GetUserWithdrawItemsByAppResponse>(`/v1/get/user/withdraw/items/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserWithdrawItemsByOtherApp(req: GetUserWithdrawItemsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawItemsByOtherAppResponse> {
+    return fm.fetchReq<GetUserWithdrawItemsByOtherAppRequest, GetUserWithdrawItemsByOtherAppResponse>(`/v1/get/user/withdraw/items/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserWithdrawItemsByAppUser(req: GetUserWithdrawItemsByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawItemsByAppUserResponse> {
     return fm.fetchReq<GetUserWithdrawItemsByAppUserRequest, GetUserWithdrawItemsByAppUserResponse>(`/v1/get/user/withdraw/items/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})

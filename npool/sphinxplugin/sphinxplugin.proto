@@ -13,6 +13,9 @@ enum CoinType {
   CoinTypeusdterc20 = 4;
   CoinTypespacemesh = 5;
   CoinTypesolana    = 6;
+  CoinTypeusdttrc20 = 7;
+  CoinTypebsc       = 8;
+  CoinTypetron      = 9;
 
   // testnet
   CoinTypetfilecoin   = 100;
@@ -21,6 +24,9 @@ enum CoinType {
   CoinTypetusdterc20  = 103;
   CoinTypetspacemesh  = 104;
   CoinTypetsolana     = 105;
+  CoinTypetusdttrc20  = 106;
+  CoinTypetbsc        = 107;
+  CoinTypettron       = 108;
 }
 
 enum TransactionType {
@@ -42,11 +48,11 @@ message UnsignedMessage {
   string From             = 120;
   double Value            = 130;
 
-  // fil/eth/erc20
+  // fil/eth/erc20/bsc
   uint64 Nonce            = 140;
   int64 GasLimit          = 150;
 
-  // eth/erc20
+  // eth/erc20/bsc
   int64 GasPrice          = 151;
   int64 ChainID           = 152;
   string ContractID       = 153;
@@ -59,6 +65,11 @@ message UnsignedMessage {
 
   // btc
   repeated Unspent Unspent = 200;
+
+  // sol
+  string RecentBhash        = 210;
+  // trc20
+  bytes TxData            =220;
 }
 
 message Signature {
