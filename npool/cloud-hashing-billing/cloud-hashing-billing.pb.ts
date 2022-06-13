@@ -79,6 +79,7 @@ export type CoinAccountTransaction = {
   chainTransactionID?: string
   goodID?: string
   failHold?: boolean
+  createdFor?: string
 }
 
 export type CreateCoinAccountTransactionRequest = {

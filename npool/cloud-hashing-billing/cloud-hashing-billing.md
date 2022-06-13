@@ -509,6 +509,7 @@
 | ChainTransactionID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
 | FailHold | [bool](#bool) |  |  |
+| CreatedFor | [string](#string) |  |  |
 
 
 
@@ -3940,6 +3941,7 @@ Cloud Hashing Billing
 | ChainTransactionID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
 | FailHold | [bool](#bool) |  |  |
+| CreatedFor | [string](#string) |  |  |
 
 
 

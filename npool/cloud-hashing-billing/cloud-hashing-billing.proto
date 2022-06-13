@@ -693,6 +693,7 @@ message CoinAccountTransaction {
     string ChainTransactionID = 110;
     string GoodID = 120;
     bool FailHold = 130;
+    string CreatedFor = 140;
 }
 
 message CreateCoinAccountTransactionRequest {
