@@ -205,6 +205,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc GetRegistrationInvitationsByOtherApp (GetRegistrationInvitationsByOtherAppRequest) returns (GetRegistrationInvitationsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/registration/invitations/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetRegistrationInvitationsByAppInviter (GetRegistrationInvitationsByAppInviterRequest) returns (GetRegistrationInvitationsByAppInviterResponse) {
         option (google.api.http) = {
             post: "/v1/get/registration/invitations/by/app/inviter"
@@ -940,6 +946,14 @@ message GetRegistrationInvitationsByAppRequest {
 }
 
 message GetRegistrationInvitationsByAppResponse {
+    repeated RegistrationInvitation Infos = 10;
+}
+
+message GetRegistrationInvitationsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetRegistrationInvitationsByOtherAppResponse {
     repeated RegistrationInvitation Infos = 10;
 }
 

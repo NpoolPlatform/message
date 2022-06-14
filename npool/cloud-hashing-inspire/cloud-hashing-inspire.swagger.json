@@ -2443,6 +2443,38 @@
         ]
       }
     },
+    "/v1/get/registration/invitations/by/other/app": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetRegistrationInvitationsByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRegistrationInvitationsByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRegistrationInvitationsByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/get/user/invitation/code": {
       "post": {
         "operationId": "CloudHashingInspire_GetUserInvitationCode",
@@ -5047,6 +5079,25 @@
       }
     },
     "v1GetRegistrationInvitationsByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RegistrationInvitation"
+          }
+        }
+      }
+    },
+    "v1GetRegistrationInvitationsByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetRegistrationInvitationsByOtherAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {
