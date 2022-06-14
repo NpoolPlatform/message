@@ -3611,6 +3611,10 @@
         "LiveCoinUSDCurrency": {
           "type": "number",
           "format": "double"
+        },
+        "UpdateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

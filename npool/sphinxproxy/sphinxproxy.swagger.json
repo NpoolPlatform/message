@@ -257,6 +257,7 @@
         "CoinTypeusdttrc20",
         "CoinTypebsc",
         "CoinTypetron",
+        "CoinTypebusdbep20",
         "CoinTypetfilecoin",
         "CoinTypetbitcoin",
         "CoinTypetethereum",
@@ -265,7 +266,8 @@
         "CoinTypetsolana",
         "CoinTypetusdttrc20",
         "CoinTypetbsc",
-        "CoinTypettron"
+        "CoinTypettron",
+        "CoinTypetbusdbep20"
       ],
       "default": "CoinTypeUnKnow",
       "title": "- CoinTypefilecoin: mainnet\n - CoinTypetfilecoin: testnet"
