@@ -192,7 +192,7 @@ fil
 | CoinTypeusdttrc20 | 7 |  |
 | CoinTypebinancecoin | 8 |  |
 | CoinTypetron | 9 |  |
-| CoinTypebusdusd | 10 |  |
+| CoinTypebinanceusd | 10 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
@@ -202,7 +202,7 @@ fil
 | CoinTypetusdttrc20 | 106 |  |
 | CoinTypetbinancecoin | 107 |  |
 | CoinTypettron | 108 |  |
-| CoinTypetbusdusd | 109 |  |
+| CoinTypetbinanceusd | 109 |  |
 
 
  
@@ -376,7 +376,7 @@ fil
 | CoinTypeusdttrc20 | 7 |  |
 | CoinTypebinancecoin | 8 |  |
 | CoinTypetron | 9 |  |
-| CoinTypebusdusd | 10 |  |
+| CoinTypebinanceusd | 10 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
@@ -386,7 +386,7 @@ fil
 | CoinTypetusdttrc20 | 106 |  |
 | CoinTypetbinancecoin | 107 |  |
 | CoinTypettron | 108 |  |
-| CoinTypetbusdusd | 109 |  |
+| CoinTypetbinanceusd | 109 |  |
 
 
  
