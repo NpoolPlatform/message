@@ -255,9 +255,9 @@
         "CoinTypespacemesh",
         "CoinTypesolana",
         "CoinTypeusdttrc20",
-        "CoinTypebsc",
+        "CoinTypebinancecoin",
         "CoinTypetron",
-        "CoinTypebusdbep20",
+        "CoinTypebusdusd",
         "CoinTypetfilecoin",
         "CoinTypetbitcoin",
         "CoinTypetethereum",
@@ -265,9 +265,9 @@
         "CoinTypetspacemesh",
         "CoinTypetsolana",
         "CoinTypetusdttrc20",
-        "CoinTypetbsc",
+        "CoinTypetbinancecoin",
         "CoinTypettron",
-        "CoinTypetbusdbep20"
+        "CoinTypetbusdusd"
       ],
       "default": "CoinTypeUnKnow",
       "title": "- CoinTypefilecoin: mainnet\n - CoinTypetfilecoin: testnet"

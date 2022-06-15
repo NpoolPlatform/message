@@ -190,9 +190,9 @@ fil
 | CoinTypespacemesh | 5 |  |
 | CoinTypesolana | 6 |  |
 | CoinTypeusdttrc20 | 7 |  |
-| CoinTypebsc | 8 |  |
+| CoinTypebinancecoin | 8 |  |
 | CoinTypetron | 9 |  |
-| CoinTypebusdbep20 | 10 |  |
+| CoinTypebusdusd | 10 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
@@ -200,9 +200,9 @@ fil
 | CoinTypetspacemesh | 104 |  |
 | CoinTypetsolana | 105 |  |
 | CoinTypetusdttrc20 | 106 |  |
-| CoinTypetbsc | 107 |  |
+| CoinTypetbinancecoin | 107 |  |
 | CoinTypettron | 108 |  |
-| CoinTypetbusdbep20 | 109 |  |
+| CoinTypetbusdusd | 109 |  |
 
 
  
@@ -374,9 +374,9 @@ fil
 | CoinTypespacemesh | 5 |  |
 | CoinTypesolana | 6 |  |
 | CoinTypeusdttrc20 | 7 |  |
-| CoinTypebsc | 8 |  |
+| CoinTypebinancecoin | 8 |  |
 | CoinTypetron | 9 |  |
-| CoinTypebusdbep20 | 10 |  |
+| CoinTypebusdusd | 10 |  |
 | CoinTypetfilecoin | 100 | testnet |
 | CoinTypetbitcoin | 101 |  |
 | CoinTypetethereum | 102 |  |
@@ -384,9 +384,9 @@ fil
 | CoinTypetspacemesh | 104 |  |
 | CoinTypetsolana | 105 |  |
 | CoinTypetusdttrc20 | 106 |  |
-| CoinTypetbsc | 107 |  |
+| CoinTypetbinancecoin | 107 |  |
 | CoinTypettron | 108 |  |
-| CoinTypetbusdbep20 | 109 |  |
+| CoinTypetbusdusd | 109 |  |
 
 
  
