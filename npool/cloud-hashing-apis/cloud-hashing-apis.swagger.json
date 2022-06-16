@@ -11,6 +11,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/amount/setting": {
+      "post": {
+        "operationId": "CloudHashingApis_CreateAmountSetting",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAmountSettingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAmountSettingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/create/app/user/control": {
       "post": {
         "operationId": "CloudHashingApis_CreateAppUserControl",
@@ -259,6 +291,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1DeleteWithdrawAddressRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/get/amount/settings": {
+      "post": {
+        "operationId": "CloudHashingApis_GetAmountSettings",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAmountSettingsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAmountSettingsRequest"
             }
           }
         ],
@@ -2333,6 +2397,48 @@
         }
       }
     },
+    "v1AppPurchaseAmountSetting": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "Percent": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "BadgeLarge": {
+          "type": "string"
+        },
+        "BadgeSmall": {
+          "type": "string"
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "End": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        }
+      }
+    },
     "v1AppRole": {
       "type": "object",
       "properties": {
@@ -2746,6 +2852,31 @@
         }
       }
     },
+    "v1CreateAmountSettingRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+        }
+      }
+    },
+    "v1CreateAmountSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+        }
+      }
+    },
     "v1CreateOrderPaymentRequest": {
       "type": "object",
       "properties": {
@@ -2940,6 +3071,28 @@
         },
         "FeeTypeID": {
           "type": "string"
+        }
+      }
+    },
+    "v1GetAmountSettingsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAmountSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+          }
         }
       }
     },

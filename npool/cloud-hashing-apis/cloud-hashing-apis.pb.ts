@@ -321,6 +321,26 @@ export type GetLayeredReferralsResponse = {
   infos?: Referral[]
 }
 
+export type GetAmountSettingsRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetAmountSettingsResponse = {
+  info?: CloudHashingInspireV1Cloud-hashing-inspire.AppPurchaseAmountSetting[]
+}
+
+export type CreateAmountSettingRequest = {
+  appID?: string
+  userID?: string
+  targetUserID?: string
+  info?: CloudHashingInspireV1Cloud-hashing-inspire.AppPurchaseAmountSetting
+}
+
+export type CreateAmountSettingResponse = {
+  info?: CloudHashingInspireV1Cloud-hashing-inspire.AppPurchaseAmountSetting
+}
+
 export type KycReview = {
   review?: ReviewServiceV1Review-service.Review
   user?: AppUserManagerV1Appusermgr.AppUserInfo
@@ -735,6 +755,12 @@ export class CloudHashingApis {
   }
   static GetLayeredReferrals(req: GetLayeredReferralsRequest, initReq?: fm.InitReq): Promise<GetLayeredReferralsResponse> {
     return fm.fetchReq<GetLayeredReferralsRequest, GetLayeredReferralsResponse>(`/v1/get/layered/referrals`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetAmountSettings(req: GetAmountSettingsRequest, initReq?: fm.InitReq): Promise<GetAmountSettingsResponse> {
+    return fm.fetchReq<GetAmountSettingsRequest, GetAmountSettingsResponse>(`/v1/get/amount/settings`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAmountSetting(req: CreateAmountSettingRequest, initReq?: fm.InitReq): Promise<CreateAmountSettingResponse> {
+    return fm.fetchReq<CreateAmountSettingRequest, CreateAmountSettingResponse>(`/v1/create/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetKycReviews(req: GetKycReviewsRequest, initReq?: fm.InitReq): Promise<GetKycReviewsResponse> {
     return fm.fetchReq<GetKycReviewsRequest, GetKycReviewsResponse>(`/v1/get/kyc/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})

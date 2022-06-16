@@ -49,6 +49,8 @@ type CloudHashingApisClient interface {
 	UpdateAppUserControl(ctx context.Context, in *UpdateAppUserControlRequest, opts ...grpc.CallOption) (*UpdateAppUserControlResponse, error)
 	GetReferrals(ctx context.Context, in *GetReferralsRequest, opts ...grpc.CallOption) (*GetReferralsResponse, error)
 	GetLayeredReferrals(ctx context.Context, in *GetLayeredReferralsRequest, opts ...grpc.CallOption) (*GetLayeredReferralsResponse, error)
+	GetAmountSettings(ctx context.Context, in *GetAmountSettingsRequest, opts ...grpc.CallOption) (*GetAmountSettingsResponse, error)
+	CreateAmountSetting(ctx context.Context, in *CreateAmountSettingRequest, opts ...grpc.CallOption) (*CreateAmountSettingResponse, error)
 	GetKycReviews(ctx context.Context, in *GetKycReviewsRequest, opts ...grpc.CallOption) (*GetKycReviewsResponse, error)
 	GetKycReviewsByApp(ctx context.Context, in *GetKycReviewsByAppRequest, opts ...grpc.CallOption) (*GetKycReviewsByAppResponse, error)
 	GetKycReviewsByOtherApp(ctx context.Context, in *GetKycReviewsByOtherAppRequest, opts ...grpc.CallOption) (*GetKycReviewsByOtherAppResponse, error)
@@ -308,6 +310,24 @@ func (c *cloudHashingApisClient) GetReferrals(ctx context.Context, in *GetReferr
 func (c *cloudHashingApisClient) GetLayeredReferrals(ctx context.Context, in *GetLayeredReferralsRequest, opts ...grpc.CallOption) (*GetLayeredReferralsResponse, error) {
 	out := new(GetLayeredReferralsResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetLayeredReferrals", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetAmountSettings(ctx context.Context, in *GetAmountSettingsRequest, opts ...grpc.CallOption) (*GetAmountSettingsResponse, error) {
+	out := new(GetAmountSettingsResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetAmountSettings", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) CreateAmountSetting(ctx context.Context, in *CreateAmountSettingRequest, opts ...grpc.CallOption) (*CreateAmountSettingResponse, error) {
+	out := new(CreateAmountSettingResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/CreateAmountSetting", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -613,6 +633,8 @@ type CloudHashingApisServer interface {
 	UpdateAppUserControl(context.Context, *UpdateAppUserControlRequest) (*UpdateAppUserControlResponse, error)
 	GetReferrals(context.Context, *GetReferralsRequest) (*GetReferralsResponse, error)
 	GetLayeredReferrals(context.Context, *GetLayeredReferralsRequest) (*GetLayeredReferralsResponse, error)
+	GetAmountSettings(context.Context, *GetAmountSettingsRequest) (*GetAmountSettingsResponse, error)
+	CreateAmountSetting(context.Context, *CreateAmountSettingRequest) (*CreateAmountSettingResponse, error)
 	GetKycReviews(context.Context, *GetKycReviewsRequest) (*GetKycReviewsResponse, error)
 	GetKycReviewsByApp(context.Context, *GetKycReviewsByAppRequest) (*GetKycReviewsByAppResponse, error)
 	GetKycReviewsByOtherApp(context.Context, *GetKycReviewsByOtherAppRequest) (*GetKycReviewsByOtherAppResponse, error)
@@ -724,6 +746,12 @@ func (UnimplementedCloudHashingApisServer) GetReferrals(context.Context, *GetRef
 }
 func (UnimplementedCloudHashingApisServer) GetLayeredReferrals(context.Context, *GetLayeredReferralsRequest) (*GetLayeredReferralsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLayeredReferrals not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetAmountSettings(context.Context, *GetAmountSettingsRequest) (*GetAmountSettingsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAmountSettings not implemented")
+}
+func (UnimplementedCloudHashingApisServer) CreateAmountSetting(context.Context, *CreateAmountSettingRequest) (*CreateAmountSettingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAmountSetting not implemented")
 }
 func (UnimplementedCloudHashingApisServer) GetKycReviews(context.Context, *GetKycReviewsRequest) (*GetKycReviewsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetKycReviews not implemented")
@@ -1274,6 +1302,42 @@ func _CloudHashingApis_GetLayeredReferrals_Handler(srv interface{}, ctx context.
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingApisServer).GetLayeredReferrals(ctx, req.(*GetLayeredReferralsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetAmountSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAmountSettingsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetAmountSettings(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetAmountSettings",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetAmountSettings(ctx, req.(*GetAmountSettingsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_CreateAmountSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAmountSettingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).CreateAmountSetting(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/CreateAmountSetting",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).CreateAmountSetting(ctx, req.(*CreateAmountSettingRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1924,6 +1988,14 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetLayeredReferrals",
 			Handler:    _CloudHashingApis_GetLayeredReferrals_Handler,
+		},
+		{
+			MethodName: "GetAmountSettings",
+			Handler:    _CloudHashingApis_GetAmountSettings_Handler,
+		},
+		{
+			MethodName: "CreateAmountSetting",
+			Handler:    _CloudHashingApis_CreateAmountSetting_Handler,
 		},
 		{
 			MethodName: "GetKycReviews",

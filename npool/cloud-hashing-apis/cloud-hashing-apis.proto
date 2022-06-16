@@ -176,6 +176,19 @@ service CloudHashingApis {
         };
     }
 
+    rpc GetAmountSettings (GetAmountSettingsRequest) returns (GetAmountSettingsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/amount/settings"
+            body: "*"
+        };
+    }
+    rpc CreateAmountSetting (CreateAmountSettingRequest) returns (CreateAmountSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/amount/setting"
+            body: "*"
+        };
+    }
+
     rpc GetKycReviews (GetKycReviewsRequest) returns (GetKycReviewsResponse) {
         option (google.api.http) = {
             post: "/v1/get/kyc/reviews"
@@ -676,6 +689,26 @@ message GetLayeredReferralsRequest {
 
 message GetLayeredReferralsResponse {
     repeated Referral Infos = 10;
+}
+
+message GetAmountSettingsRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetAmountSettingsResponse {
+    repeated cloud.hashing.inspire.v1.AppPurchaseAmountSetting Info = 10;
+}
+
+message CreateAmountSettingRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string TargetUserID = 30;
+    cloud.hashing.inspire.v1.AppPurchaseAmountSetting Info = 40;
+}
+
+message CreateAmountSettingResponse {
+    cloud.hashing.inspire.v1.AppPurchaseAmountSetting Info = 10;
 }
 
 message KycReview {

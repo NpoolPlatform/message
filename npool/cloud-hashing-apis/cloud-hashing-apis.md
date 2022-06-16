@@ -8,6 +8,8 @@
     - [Commission](#cloud-hashing-apis-v1-Commission)
     - [Coupon](#cloud-hashing-apis-v1-Coupon)
     - [Coupons](#cloud-hashing-apis-v1-Coupons)
+    - [CreateAmountSettingRequest](#cloud-hashing-apis-v1-CreateAmountSettingRequest)
+    - [CreateAmountSettingResponse](#cloud-hashing-apis-v1-CreateAmountSettingResponse)
     - [CreateAppUserControlRequest](#cloud-hashing-apis-v1-CreateAppUserControlRequest)
     - [CreateAppUserControlResponse](#cloud-hashing-apis-v1-CreateAppUserControlResponse)
     - [CreateAppUserExtraRequest](#cloud-hashing-apis-v1-CreateAppUserExtraRequest)
@@ -24,6 +26,8 @@
     - [CreateUserCoinAccountResponse](#cloud-hashing-apis-v1-CreateUserCoinAccountResponse)
     - [DeleteWithdrawAddressRequest](#cloud-hashing-apis-v1-DeleteWithdrawAddressRequest)
     - [DeleteWithdrawAddressResponse](#cloud-hashing-apis-v1-DeleteWithdrawAddressResponse)
+    - [GetAmountSettingsRequest](#cloud-hashing-apis-v1-GetAmountSettingsRequest)
+    - [GetAmountSettingsResponse](#cloud-hashing-apis-v1-GetAmountSettingsResponse)
     - [GetCommissionByAppUserRequest](#cloud-hashing-apis-v1-GetCommissionByAppUserRequest)
     - [GetCommissionByAppUserResponse](#cloud-hashing-apis-v1-GetCommissionByAppUserResponse)
     - [GetCouponsByAppUserRequest](#cloud-hashing-apis-v1-GetCouponsByAppUserRequest)
@@ -140,6 +144,8 @@
     - [Commission](#cloud-hashing-apis-v1-Commission)
     - [Coupon](#cloud-hashing-apis-v1-Coupon)
     - [Coupons](#cloud-hashing-apis-v1-Coupons)
+    - [CreateAmountSettingRequest](#cloud-hashing-apis-v1-CreateAmountSettingRequest)
+    - [CreateAmountSettingResponse](#cloud-hashing-apis-v1-CreateAmountSettingResponse)
     - [CreateAppUserControlRequest](#cloud-hashing-apis-v1-CreateAppUserControlRequest)
     - [CreateAppUserControlResponse](#cloud-hashing-apis-v1-CreateAppUserControlResponse)
     - [CreateAppUserExtraRequest](#cloud-hashing-apis-v1-CreateAppUserExtraRequest)
@@ -156,6 +162,8 @@
     - [CreateUserCoinAccountResponse](#cloud-hashing-apis-v1-CreateUserCoinAccountResponse)
     - [DeleteWithdrawAddressRequest](#cloud-hashing-apis-v1-DeleteWithdrawAddressRequest)
     - [DeleteWithdrawAddressResponse](#cloud-hashing-apis-v1-DeleteWithdrawAddressResponse)
+    - [GetAmountSettingsRequest](#cloud-hashing-apis-v1-GetAmountSettingsRequest)
+    - [GetAmountSettingsResponse](#cloud-hashing-apis-v1-GetAmountSettingsResponse)
     - [GetCommissionByAppUserRequest](#cloud-hashing-apis-v1-GetCommissionByAppUserRequest)
     - [GetCommissionByAppUserResponse](#cloud-hashing-apis-v1-GetCommissionByAppUserResponse)
     - [GetCouponsByAppUserRequest](#cloud-hashing-apis-v1-GetCouponsByAppUserRequest)
@@ -345,6 +353,39 @@
 
 
 
+<a name="cloud-hashing-apis-v1-CreateAmountSettingRequest"></a>
+
+### CreateAmountSettingRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Info | [cloud.hashing.inspire.v1.AppPurchaseAmountSetting](#cloud-hashing-inspire-v1-AppPurchaseAmountSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-CreateAmountSettingResponse"></a>
+
+### CreateAmountSettingResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.inspire.v1.AppPurchaseAmountSetting](#cloud-hashing-inspire-v1-AppPurchaseAmountSetting) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-CreateAppUserControlRequest"></a>
 
 ### CreateAppUserControlRequest
@@ -582,6 +623,37 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [cloud.hashing.billing.v1.UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-GetAmountSettingsRequest"></a>
+
+### GetAmountSettingsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-GetAmountSettingsResponse"></a>
+
+### GetAmountSettingsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.inspire.v1.AppPurchaseAmountSetting](#cloud-hashing-inspire-v1-AppPurchaseAmountSetting) | repeated |  |
 
 
 
@@ -2365,6 +2437,8 @@ Cloud Hashing Goods
 | UpdateAppUserControl | [UpdateAppUserControlRequest](#cloud-hashing-apis-v1-UpdateAppUserControlRequest) | [UpdateAppUserControlResponse](#cloud-hashing-apis-v1-UpdateAppUserControlResponse) |  |
 | GetReferrals | [GetReferralsRequest](#cloud-hashing-apis-v1-GetReferralsRequest) | [GetReferralsResponse](#cloud-hashing-apis-v1-GetReferralsResponse) |  |
 | GetLayeredReferrals | [GetLayeredReferralsRequest](#cloud-hashing-apis-v1-GetLayeredReferralsRequest) | [GetLayeredReferralsResponse](#cloud-hashing-apis-v1-GetLayeredReferralsResponse) |  |
+| GetAmountSettings | [GetAmountSettingsRequest](#cloud-hashing-apis-v1-GetAmountSettingsRequest) | [GetAmountSettingsResponse](#cloud-hashing-apis-v1-GetAmountSettingsResponse) |  |
+| CreateAmountSetting | [CreateAmountSettingRequest](#cloud-hashing-apis-v1-CreateAmountSettingRequest) | [CreateAmountSettingResponse](#cloud-hashing-apis-v1-CreateAmountSettingResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud-hashing-apis-v1-GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud-hashing-apis-v1-GetKycReviewsResponse) |  |
 | GetKycReviewsByApp | [GetKycReviewsByAppRequest](#cloud-hashing-apis-v1-GetKycReviewsByAppRequest) | [GetKycReviewsByAppResponse](#cloud-hashing-apis-v1-GetKycReviewsByAppResponse) |  |
 | GetKycReviewsByOtherApp | [GetKycReviewsByOtherAppRequest](#cloud-hashing-apis-v1-GetKycReviewsByOtherAppRequest) | [GetKycReviewsByOtherAppResponse](#cloud-hashing-apis-v1-GetKycReviewsByOtherAppResponse) |  |
@@ -2474,6 +2548,39 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud-hashing-apis-v1-CreateAmountSettingRequest"></a>
+
+### CreateAmountSettingRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Info | [cloud.hashing.inspire.v1.AppPurchaseAmountSetting](#cloud-hashing-inspire-v1-AppPurchaseAmountSetting) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-CreateAmountSettingResponse"></a>
+
+### CreateAmountSettingResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.inspire.v1.AppPurchaseAmountSetting](#cloud-hashing-inspire-v1-AppPurchaseAmountSetting) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-CreateAppUserControlRequest"></a>
 
 ### CreateAppUserControlRequest
@@ -2711,6 +2818,37 @@ Cloud Hashing Goods
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [cloud.hashing.billing.v1.UserWithdraw](#cloud-hashing-billing-v1-UserWithdraw) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-GetAmountSettingsRequest"></a>
+
+### GetAmountSettingsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-GetAmountSettingsResponse"></a>
+
+### GetAmountSettingsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Info | [cloud.hashing.inspire.v1.AppPurchaseAmountSetting](#cloud-hashing-inspire-v1-AppPurchaseAmountSetting) | repeated |  |
 
 
 
@@ -4494,6 +4632,8 @@ Cloud Hashing Goods
 | UpdateAppUserControl | [UpdateAppUserControlRequest](#cloud-hashing-apis-v1-UpdateAppUserControlRequest) | [UpdateAppUserControlResponse](#cloud-hashing-apis-v1-UpdateAppUserControlResponse) |  |
 | GetReferrals | [GetReferralsRequest](#cloud-hashing-apis-v1-GetReferralsRequest) | [GetReferralsResponse](#cloud-hashing-apis-v1-GetReferralsResponse) |  |
 | GetLayeredReferrals | [GetLayeredReferralsRequest](#cloud-hashing-apis-v1-GetLayeredReferralsRequest) | [GetLayeredReferralsResponse](#cloud-hashing-apis-v1-GetLayeredReferralsResponse) |  |
+| GetAmountSettings | [GetAmountSettingsRequest](#cloud-hashing-apis-v1-GetAmountSettingsRequest) | [GetAmountSettingsResponse](#cloud-hashing-apis-v1-GetAmountSettingsResponse) |  |
+| CreateAmountSetting | [CreateAmountSettingRequest](#cloud-hashing-apis-v1-CreateAmountSettingRequest) | [CreateAmountSettingResponse](#cloud-hashing-apis-v1-CreateAmountSettingResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud-hashing-apis-v1-GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud-hashing-apis-v1-GetKycReviewsResponse) |  |
 | GetKycReviewsByApp | [GetKycReviewsByAppRequest](#cloud-hashing-apis-v1-GetKycReviewsByAppRequest) | [GetKycReviewsByAppResponse](#cloud-hashing-apis-v1-GetKycReviewsByAppResponse) |  |
 | GetKycReviewsByOtherApp | [GetKycReviewsByOtherAppRequest](#cloud-hashing-apis-v1-GetKycReviewsByOtherAppRequest) | [GetKycReviewsByOtherAppResponse](#cloud-hashing-apis-v1-GetKycReviewsByOtherAppResponse) |  |
