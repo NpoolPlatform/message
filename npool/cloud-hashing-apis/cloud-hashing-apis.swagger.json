@@ -875,6 +875,38 @@
         ]
       }
     },
+    "/v1/get/user/good/commissions": {
+      "post": {
+        "operationId": "CloudHashingApis_GetUserGoodCommissions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserGoodCommissionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserGoodCommissionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/user/withdraws/by/app/user": {
       "post": {
         "operationId": "CloudHashingApis_GetUserWithdrawsByAppUser",
@@ -3068,6 +3100,25 @@
         }
       }
     },
+    "v1GetUserGoodCommissionsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetUserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserGoodCommissionsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodCommission"
+          }
+        }
+      }
+    },
     "v1GetWithdrawAddressReviewsByAppRequest": {
       "type": "object",
       "properties": {
@@ -3231,6 +3282,18 @@
         }
       },
       "title": "Request body and response"
+    },
+    "v1GoodCommission": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        },
+        "Total": {
+          "type": "number",
+          "format": "double"
+        }
+      }
     },
     "v1GoodDetail": {
       "type": "object",

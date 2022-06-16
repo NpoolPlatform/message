@@ -600,6 +600,19 @@ export type GetCommissionByAppUserResponse = {
   info?: Commission
 }
 
+export type GoodCommission = {
+  goodID?: string
+  total?: number
+}
+
+export type GetUserGoodCommissionsRequest = {
+  targetUserID?: string
+}
+
+export type GetUserGoodCommissionsResponse = {
+  infos?: GoodCommission[]
+}
+
 export type UpdateKycReviewRequest = {
   info?: ReviewServiceV1Review-service.Review
   targetLangID?: string
@@ -782,6 +795,9 @@ export class CloudHashingApis {
   }
   static GetCommissionByAppUser(req: GetCommissionByAppUserRequest, initReq?: fm.InitReq): Promise<GetCommissionByAppUserResponse> {
     return fm.fetchReq<GetCommissionByAppUserRequest, GetCommissionByAppUserResponse>(`/v1/get/commission/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserGoodCommissions(req: GetUserGoodCommissionsRequest, initReq?: fm.InitReq): Promise<GetUserGoodCommissionsResponse> {
+    return fm.fetchReq<GetUserGoodCommissionsRequest, GetUserGoodCommissionsResponse>(`/v1/get/user/good/commissions`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateKycReview(req: UpdateKycReviewRequest, initReq?: fm.InitReq): Promise<UpdateKycReviewResponse> {
     return fm.fetchReq<UpdateKycReviewRequest, UpdateKycReviewResponse>(`/v1/update/kyc/review`, {...initReq, method: "POST", body: JSON.stringify(req)})

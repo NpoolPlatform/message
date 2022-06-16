@@ -327,6 +327,13 @@ service CloudHashingApis {
         };
     }
 
+    rpc GetUserGoodCommissions (GetUserGoodCommissionsRequest) returns (GetUserGoodCommissionsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/good/commissions"
+            body: "*"
+        };
+    }
+
     rpc UpdateKycReview (UpdateKycReviewRequest) returns (UpdateKycReviewResponse) {
         option (google.api.http) = {
             post: "/v1/update/kyc/review"
@@ -946,6 +953,19 @@ message GetCommissionByAppUserRequest {
 
 message GetCommissionByAppUserResponse {
     Commission Info = 10;
+}
+
+message GoodCommission {
+    string GoodID = 10;
+    double Total = 20;
+}
+
+message GetUserGoodCommissionsRequest {
+    string TargetUserID = 10;
+}
+
+message GetUserGoodCommissionsResponse {
+    repeated GoodCommission Infos = 10;
 }
 
 message UpdateKycReviewRequest {
