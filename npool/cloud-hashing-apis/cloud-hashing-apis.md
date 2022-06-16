@@ -16,6 +16,8 @@
     - [CreateAppUserExtraResponse](#cloud-hashing-apis-v1-CreateAppUserExtraResponse)
     - [CreateGoodRequest](#cloud-hashing-apis-v1-CreateGoodRequest)
     - [CreateGoodResponse](#cloud-hashing-apis-v1-CreateGoodResponse)
+    - [CreateInvitationCodeRequest](#cloud-hashing-apis-v1-CreateInvitationCodeRequest)
+    - [CreateInvitationCodeResponse](#cloud-hashing-apis-v1-CreateInvitationCodeResponse)
     - [CreateKycRequest](#cloud-hashing-apis-v1-CreateKycRequest)
     - [CreateKycResponse](#cloud-hashing-apis-v1-CreateKycResponse)
     - [CreateOrderPaymentRequest](#cloud-hashing-apis-v1-CreateOrderPaymentRequest)
@@ -152,6 +154,8 @@
     - [CreateAppUserExtraResponse](#cloud-hashing-apis-v1-CreateAppUserExtraResponse)
     - [CreateGoodRequest](#cloud-hashing-apis-v1-CreateGoodRequest)
     - [CreateGoodResponse](#cloud-hashing-apis-v1-CreateGoodResponse)
+    - [CreateInvitationCodeRequest](#cloud-hashing-apis-v1-CreateInvitationCodeRequest)
+    - [CreateInvitationCodeResponse](#cloud-hashing-apis-v1-CreateInvitationCodeResponse)
     - [CreateKycRequest](#cloud-hashing-apis-v1-CreateKycRequest)
     - [CreateKycResponse](#cloud-hashing-apis-v1-CreateKycResponse)
     - [CreateOrderPaymentRequest](#cloud-hashing-apis-v1-CreateOrderPaymentRequest)
@@ -476,6 +480,39 @@
 
 
 
+<a name="cloud-hashing-apis-v1-CreateInvitationCodeRequest"></a>
+
+### CreateInvitationCodeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Info | [cloud.hashing.inspire.v1.UserInvitationCode](#cloud-hashing-inspire-v1-UserInvitationCode) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-CreateInvitationCodeResponse"></a>
+
+### CreateInvitationCodeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [cloud.hashing.inspire.v1.UserInvitationCode](#cloud-hashing-inspire-v1-UserInvitationCode) | repeated |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-CreateKycRequest"></a>
 
 ### CreateKycRequest
@@ -2439,6 +2476,7 @@ Cloud Hashing Goods
 | GetLayeredReferrals | [GetLayeredReferralsRequest](#cloud-hashing-apis-v1-GetLayeredReferralsRequest) | [GetLayeredReferralsResponse](#cloud-hashing-apis-v1-GetLayeredReferralsResponse) |  |
 | GetAmountSettings | [GetAmountSettingsRequest](#cloud-hashing-apis-v1-GetAmountSettingsRequest) | [GetAmountSettingsResponse](#cloud-hashing-apis-v1-GetAmountSettingsResponse) |  |
 | CreateAmountSetting | [CreateAmountSettingRequest](#cloud-hashing-apis-v1-CreateAmountSettingRequest) | [CreateAmountSettingResponse](#cloud-hashing-apis-v1-CreateAmountSettingResponse) |  |
+| CreateInvitationCode | [CreateInvitationCodeRequest](#cloud-hashing-apis-v1-CreateInvitationCodeRequest) | [CreateInvitationCodeResponse](#cloud-hashing-apis-v1-CreateInvitationCodeResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud-hashing-apis-v1-GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud-hashing-apis-v1-GetKycReviewsResponse) |  |
 | GetKycReviewsByApp | [GetKycReviewsByAppRequest](#cloud-hashing-apis-v1-GetKycReviewsByAppRequest) | [GetKycReviewsByAppResponse](#cloud-hashing-apis-v1-GetKycReviewsByAppResponse) |  |
 | GetKycReviewsByOtherApp | [GetKycReviewsByOtherAppRequest](#cloud-hashing-apis-v1-GetKycReviewsByOtherAppRequest) | [GetKycReviewsByOtherAppResponse](#cloud-hashing-apis-v1-GetKycReviewsByOtherAppResponse) |  |
@@ -2671,6 +2709,39 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud-hashing-apis-v1-CreateInvitationCodeRequest"></a>
+
+### CreateInvitationCodeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| TargetUserID | [string](#string) |  |  |
+| Info | [cloud.hashing.inspire.v1.UserInvitationCode](#cloud-hashing-inspire-v1-UserInvitationCode) |  |  |
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-CreateInvitationCodeResponse"></a>
+
+### CreateInvitationCodeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [cloud.hashing.inspire.v1.UserInvitationCode](#cloud-hashing-inspire-v1-UserInvitationCode) | repeated |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-CreateKycRequest"></a>
 
 ### CreateKycRequest
@@ -4634,6 +4705,7 @@ Cloud Hashing Goods
 | GetLayeredReferrals | [GetLayeredReferralsRequest](#cloud-hashing-apis-v1-GetLayeredReferralsRequest) | [GetLayeredReferralsResponse](#cloud-hashing-apis-v1-GetLayeredReferralsResponse) |  |
 | GetAmountSettings | [GetAmountSettingsRequest](#cloud-hashing-apis-v1-GetAmountSettingsRequest) | [GetAmountSettingsResponse](#cloud-hashing-apis-v1-GetAmountSettingsResponse) |  |
 | CreateAmountSetting | [CreateAmountSettingRequest](#cloud-hashing-apis-v1-CreateAmountSettingRequest) | [CreateAmountSettingResponse](#cloud-hashing-apis-v1-CreateAmountSettingResponse) |  |
+| CreateInvitationCode | [CreateInvitationCodeRequest](#cloud-hashing-apis-v1-CreateInvitationCodeRequest) | [CreateInvitationCodeResponse](#cloud-hashing-apis-v1-CreateInvitationCodeResponse) |  |
 | GetKycReviews | [GetKycReviewsRequest](#cloud-hashing-apis-v1-GetKycReviewsRequest) | [GetKycReviewsResponse](#cloud-hashing-apis-v1-GetKycReviewsResponse) |  |
 | GetKycReviewsByApp | [GetKycReviewsByAppRequest](#cloud-hashing-apis-v1-GetKycReviewsByAppRequest) | [GetKycReviewsByAppResponse](#cloud-hashing-apis-v1-GetKycReviewsByAppResponse) |  |
 | GetKycReviewsByOtherApp | [GetKycReviewsByOtherAppRequest](#cloud-hashing-apis-v1-GetKycReviewsByOtherAppRequest) | [GetKycReviewsByOtherAppResponse](#cloud-hashing-apis-v1-GetKycReviewsByOtherAppResponse) |  |

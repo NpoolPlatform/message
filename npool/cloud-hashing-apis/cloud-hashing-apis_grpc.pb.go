@@ -51,6 +51,7 @@ type CloudHashingApisClient interface {
 	GetLayeredReferrals(ctx context.Context, in *GetLayeredReferralsRequest, opts ...grpc.CallOption) (*GetLayeredReferralsResponse, error)
 	GetAmountSettings(ctx context.Context, in *GetAmountSettingsRequest, opts ...grpc.CallOption) (*GetAmountSettingsResponse, error)
 	CreateAmountSetting(ctx context.Context, in *CreateAmountSettingRequest, opts ...grpc.CallOption) (*CreateAmountSettingResponse, error)
+	CreateInvitationCode(ctx context.Context, in *CreateInvitationCodeRequest, opts ...grpc.CallOption) (*CreateInvitationCodeResponse, error)
 	GetKycReviews(ctx context.Context, in *GetKycReviewsRequest, opts ...grpc.CallOption) (*GetKycReviewsResponse, error)
 	GetKycReviewsByApp(ctx context.Context, in *GetKycReviewsByAppRequest, opts ...grpc.CallOption) (*GetKycReviewsByAppResponse, error)
 	GetKycReviewsByOtherApp(ctx context.Context, in *GetKycReviewsByOtherAppRequest, opts ...grpc.CallOption) (*GetKycReviewsByOtherAppResponse, error)
@@ -328,6 +329,15 @@ func (c *cloudHashingApisClient) GetAmountSettings(ctx context.Context, in *GetA
 func (c *cloudHashingApisClient) CreateAmountSetting(ctx context.Context, in *CreateAmountSettingRequest, opts ...grpc.CallOption) (*CreateAmountSettingResponse, error) {
 	out := new(CreateAmountSettingResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/CreateAmountSetting", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) CreateInvitationCode(ctx context.Context, in *CreateInvitationCodeRequest, opts ...grpc.CallOption) (*CreateInvitationCodeResponse, error) {
+	out := new(CreateInvitationCodeResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/CreateInvitationCode", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -635,6 +645,7 @@ type CloudHashingApisServer interface {
 	GetLayeredReferrals(context.Context, *GetLayeredReferralsRequest) (*GetLayeredReferralsResponse, error)
 	GetAmountSettings(context.Context, *GetAmountSettingsRequest) (*GetAmountSettingsResponse, error)
 	CreateAmountSetting(context.Context, *CreateAmountSettingRequest) (*CreateAmountSettingResponse, error)
+	CreateInvitationCode(context.Context, *CreateInvitationCodeRequest) (*CreateInvitationCodeResponse, error)
 	GetKycReviews(context.Context, *GetKycReviewsRequest) (*GetKycReviewsResponse, error)
 	GetKycReviewsByApp(context.Context, *GetKycReviewsByAppRequest) (*GetKycReviewsByAppResponse, error)
 	GetKycReviewsByOtherApp(context.Context, *GetKycReviewsByOtherAppRequest) (*GetKycReviewsByOtherAppResponse, error)
@@ -752,6 +763,9 @@ func (UnimplementedCloudHashingApisServer) GetAmountSettings(context.Context, *G
 }
 func (UnimplementedCloudHashingApisServer) CreateAmountSetting(context.Context, *CreateAmountSettingRequest) (*CreateAmountSettingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAmountSetting not implemented")
+}
+func (UnimplementedCloudHashingApisServer) CreateInvitationCode(context.Context, *CreateInvitationCodeRequest) (*CreateInvitationCodeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateInvitationCode not implemented")
 }
 func (UnimplementedCloudHashingApisServer) GetKycReviews(context.Context, *GetKycReviewsRequest) (*GetKycReviewsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetKycReviews not implemented")
@@ -1338,6 +1352,24 @@ func _CloudHashingApis_CreateAmountSetting_Handler(srv interface{}, ctx context.
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingApisServer).CreateAmountSetting(ctx, req.(*CreateAmountSettingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_CreateInvitationCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateInvitationCodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).CreateInvitationCode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/CreateInvitationCode",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).CreateInvitationCode(ctx, req.(*CreateInvitationCodeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1996,6 +2028,10 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAmountSetting",
 			Handler:    _CloudHashingApis_CreateAmountSetting_Handler,
+		},
+		{
+			MethodName: "CreateInvitationCode",
+			Handler:    _CloudHashingApis_CreateInvitationCode_Handler,
 		},
 		{
 			MethodName: "GetKycReviews",

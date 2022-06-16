@@ -341,6 +341,17 @@ export type CreateAmountSettingResponse = {
   infos?: CloudHashingInspireV1Cloud-hashing-inspire.AppPurchaseAmountSetting[]
 }
 
+export type CreateInvitationCodeRequest = {
+  appID?: string
+  userID?: string
+  targetUserID?: string
+  info?: CloudHashingInspireV1Cloud-hashing-inspire.UserInvitationCode
+}
+
+export type CreateInvitationCodeResponse = {
+  infos?: CloudHashingInspireV1Cloud-hashing-inspire.UserInvitationCode[]
+}
+
 export type KycReview = {
   review?: ReviewServiceV1Review-service.Review
   user?: AppUserManagerV1Appusermgr.AppUserInfo
@@ -761,6 +772,9 @@ export class CloudHashingApis {
   }
   static CreateAmountSetting(req: CreateAmountSettingRequest, initReq?: fm.InitReq): Promise<CreateAmountSettingResponse> {
     return fm.fetchReq<CreateAmountSettingRequest, CreateAmountSettingResponse>(`/v1/create/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateInvitationCode(req: CreateInvitationCodeRequest, initReq?: fm.InitReq): Promise<CreateInvitationCodeResponse> {
+    return fm.fetchReq<CreateInvitationCodeRequest, CreateInvitationCodeResponse>(`/v1/create/invitation/code`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetKycReviews(req: GetKycReviewsRequest, initReq?: fm.InitReq): Promise<GetKycReviewsResponse> {
     return fm.fetchReq<GetKycReviewsRequest, GetKycReviewsResponse>(`/v1/get/kyc/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})
