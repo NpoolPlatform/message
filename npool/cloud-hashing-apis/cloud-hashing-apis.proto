@@ -697,7 +697,7 @@ message GetAmountSettingsRequest {
 }
 
 message GetAmountSettingsResponse {
-    repeated cloud.hashing.inspire.v1.AppPurchaseAmountSetting Info = 10;
+    repeated cloud.hashing.inspire.v1.AppPurchaseAmountSetting Infos = 10;
 }
 
 message CreateAmountSettingRequest {

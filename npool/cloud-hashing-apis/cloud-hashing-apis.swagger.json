@@ -3091,7 +3091,7 @@
     "v1GetAmountSettingsResponse": {
       "type": "object",
       "properties": {
-        "Info": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1AppPurchaseAmountSetting"
