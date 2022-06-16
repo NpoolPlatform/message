@@ -624,6 +624,15 @@ message CoinSummary {
     string Unit = 50;
 }
 
+message GoodSummary {
+    string GoodID = 10;
+    string CoinTypeID = 20;
+    string CoinName = 30;
+    uint32 Units = 40;
+    double Amount = 50;
+    string Unit = 60;
+}
+
 message Referral {
     app.user.manager.v1.AppUser User = 10;
     app.user.manager.v1.AppUserExtra Extra = 20;
@@ -633,6 +642,7 @@ message Referral {
     bool Kol = 60;
     uint32 InvitedCount = 70;
     repeated CoinSummary Summaries = 80;
+    repeated GoodSummary GoodSummaries = 90;
 }
 
 message GetReferralsRequest {

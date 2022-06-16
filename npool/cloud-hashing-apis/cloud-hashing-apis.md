@@ -80,6 +80,7 @@
     - [GetWithdrawReviewsResponse](#cloud-hashing-apis-v1-GetWithdrawReviewsResponse)
     - [Good](#cloud-hashing-apis-v1-Good)
     - [GoodReview](#cloud-hashing-apis-v1-GoodReview)
+    - [GoodSummary](#cloud-hashing-apis-v1-GoodSummary)
     - [Kyc](#cloud-hashing-apis-v1-Kyc)
     - [KycReview](#cloud-hashing-apis-v1-KycReview)
     - [Order](#cloud-hashing-apis-v1-Order)
@@ -206,6 +207,7 @@
     - [GetWithdrawReviewsResponse](#cloud-hashing-apis-v1-GetWithdrawReviewsResponse)
     - [Good](#cloud-hashing-apis-v1-Good)
     - [GoodReview](#cloud-hashing-apis-v1-GoodReview)
+    - [GoodSummary](#cloud-hashing-apis-v1-GoodSummary)
     - [Kyc](#cloud-hashing-apis-v1-Kyc)
     - [KycReview](#cloud-hashing-apis-v1-KycReview)
     - [Order](#cloud-hashing-apis-v1-Order)
@@ -1428,6 +1430,26 @@ Request body and response
 
 
 
+<a name="cloud-hashing-apis-v1-GoodSummary"></a>
+
+### GoodSummary
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| GoodID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| CoinName | [string](#string) |  |  |
+| Units | [uint32](#uint32) |  |  |
+| Amount | [double](#double) |  |  |
+| Unit | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-Kyc"></a>
 
 ### Kyc
@@ -1534,6 +1556,7 @@ Request body and response
 | Kol | [bool](#bool) |  |  |
 | InvitedCount | [uint32](#uint32) |  |  |
 | Summaries | [CoinSummary](#cloud-hashing-apis-v1-CoinSummary) | repeated |  |
+| GoodSummaries | [GoodSummary](#cloud-hashing-apis-v1-GoodSummary) | repeated |  |
 
 
 
@@ -3453,6 +3476,26 @@ Request body and response
 
 
 
+<a name="cloud-hashing-apis-v1-GoodSummary"></a>
+
+### GoodSummary
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| GoodID | [string](#string) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| CoinName | [string](#string) |  |  |
+| Units | [uint32](#uint32) |  |  |
+| Amount | [double](#double) |  |  |
+| Unit | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-Kyc"></a>
 
 ### Kyc
@@ -3559,6 +3602,7 @@ Request body and response
 | Kol | [bool](#bool) |  |  |
 | InvitedCount | [uint32](#uint32) |  |  |
 | Summaries | [CoinSummary](#cloud-hashing-apis-v1-CoinSummary) | repeated |  |
+| GoodSummaries | [GoodSummary](#cloud-hashing-apis-v1-GoodSummary) | repeated |  |
 
 
 

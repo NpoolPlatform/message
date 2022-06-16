@@ -3400,6 +3400,31 @@
         }
       }
     },
+    "v1GoodSummary": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "Unit": {
+          "type": "string"
+        }
+      }
+    },
     "v1Kyc": {
       "type": "object",
       "properties": {
@@ -3611,6 +3636,10 @@
         "LiveCoinUSDCurrency": {
           "type": "number",
           "format": "double"
+        },
+        "UpdateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -3682,6 +3711,12 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1CoinSummary"
+          }
+        },
+        "GoodSummaries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodSummary"
           }
         }
       }

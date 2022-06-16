@@ -281,6 +281,15 @@ export type CoinSummary = {
   unit?: string
 }
 
+export type GoodSummary = {
+  goodID?: string
+  coinTypeID?: string
+  coinName?: string
+  units?: number
+  amount?: number
+  unit?: string
+}
+
 export type Referral = {
   user?: AppUserManagerV1Appusermgr.AppUser
   extra?: AppUserManagerV1Appusermgr.AppUserExtra
@@ -290,6 +299,7 @@ export type Referral = {
   kol?: boolean
   invitedCount?: number
   summaries?: CoinSummary[]
+  goodSummaries?: GoodSummary[]
 }
 
 export type GetReferralsRequest = {
