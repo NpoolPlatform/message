@@ -522,6 +522,7 @@ message NotifyEmailRequest {
     string UserID = 20;
     string UsedFor = 30;
     string ReceiverID = 40;
+    string LangID = 50;
 }
 
 message NotifyEmailResponse {

@@ -814,6 +814,7 @@
 | UserID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 | ReceiverID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
 
 
 
@@ -1885,6 +1886,7 @@ Service Name
 | UserID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
 | ReceiverID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
 
 
 

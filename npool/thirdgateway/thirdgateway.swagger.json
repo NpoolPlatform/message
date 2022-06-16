@@ -1523,6 +1523,9 @@
         },
         "ReceiverID": {
           "type": "string"
+        },
+        "LangID": {
+          "type": "string"
         }
       }
     },
