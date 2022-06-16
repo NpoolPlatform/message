@@ -1521,7 +1521,7 @@
         "UsedFor": {
           "type": "string"
         },
-        "Receiver": {
+        "ReceiverID": {
           "type": "string"
         }
       }

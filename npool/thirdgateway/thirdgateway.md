@@ -813,7 +813,7 @@
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
-| Receiver | [string](#string) |  |  |
+| ReceiverID | [string](#string) |  |  |
 
 
 
@@ -1884,7 +1884,7 @@ Service Name
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | UsedFor | [string](#string) |  |  |
-| Receiver | [string](#string) |  |  |
+| ReceiverID | [string](#string) |  |  |
 
 
 

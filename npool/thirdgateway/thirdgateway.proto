@@ -521,7 +521,7 @@ message NotifyEmailRequest {
     string AppID = 10;
     string UserID = 20;
     string UsedFor = 30;
-    string Receiver = 40;
+    string ReceiverID = 40;
 }
 
 message NotifyEmailResponse {
