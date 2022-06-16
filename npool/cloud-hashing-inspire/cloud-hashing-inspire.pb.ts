@@ -165,6 +165,7 @@ export type AppPurchaseAmountSetting = {
   start?: number
   end?: number
   userID?: string
+  goodID?: string
 }
 
 export type CreateAppPurchaseAmountSettingRequest = {

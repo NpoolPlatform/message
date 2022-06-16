@@ -5,28 +5,30 @@ package sphinx.plugin.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/sphinxplugin";
 
 enum CoinType {
-  CoinTypeUnKnow    = 0;
+  CoinTypeUnKnow      = 0;
   // mainnet
-  CoinTypefilecoin  = 1;
-  CoinTypebitcoin   = 2;
-  CoinTypeethereum  = 3;
-  CoinTypeusdterc20 = 4;
-  CoinTypespacemesh = 5;
-  CoinTypesolana    = 6;
-  CoinTypeusdttrc20 = 7;
-  CoinTypebsc       = 8;
-  CoinTypetron      = 9;
+  CoinTypefilecoin    = 1;
+  CoinTypebitcoin     = 2;
+  CoinTypeethereum    = 3;
+  CoinTypeusdterc20   = 4;
+  CoinTypespacemesh   = 5;
+  CoinTypesolana      = 6;
+  CoinTypeusdttrc20   = 7;
+  CoinTypebinancecoin = 8;
+  CoinTypetron        = 9;
+  CoinTypebinanceusd  = 10;
 
   // testnet
-  CoinTypetfilecoin   = 100;
-  CoinTypetbitcoin    = 101;
-  CoinTypetethereum   = 102;
-  CoinTypetusdterc20  = 103;
-  CoinTypetspacemesh  = 104;
-  CoinTypetsolana     = 105;
-  CoinTypetusdttrc20  = 106;
-  CoinTypetbsc        = 107;
-  CoinTypettron       = 108;
+  CoinTypetfilecoin    = 100;
+  CoinTypetbitcoin     = 101;
+  CoinTypetethereum    = 102;
+  CoinTypetusdterc20   = 103;
+  CoinTypetspacemesh   = 104;
+  CoinTypetsolana      = 105;
+  CoinTypetusdttrc20   = 106;
+  CoinTypetbinancecoin = 107;
+  CoinTypettron        = 108;
+  CoinTypetbinanceusd  = 109;
 }
 
 // fil

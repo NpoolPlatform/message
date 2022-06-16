@@ -820,6 +820,7 @@ message AppPurchaseAmountSetting {
     uint32 Start = 80;
     uint32 End = 90;
     string UserID = 100;
+    string GoodID = 110;
 }
 
 message CreateAppPurchaseAmountSettingRequest {

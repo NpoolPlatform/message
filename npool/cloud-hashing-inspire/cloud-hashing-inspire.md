@@ -565,6 +565,7 @@
 | Start | [uint32](#uint32) |  |  |
 | End | [uint32](#uint32) |  |  |
 | UserID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
 
 
 
@@ -4134,6 +4135,7 @@ Service Name
 | Start | [uint32](#uint32) |  |  |
 | End | [uint32](#uint32) |  |  |
 | UserID | [string](#string) |  |  |
+| GoodID | [string](#string) |  |  |
 
 
 
