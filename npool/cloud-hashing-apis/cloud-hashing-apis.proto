@@ -721,7 +721,10 @@ message CreateInvitationCodeRequest {
     string AppID = 10;
     string UserID = 20;
     string TargetUserID = 30;
-    cloud.hashing.inspire.v1.UserInvitationCode Info = 40;
+    string LangID = 40;
+    string InviterName = 50;
+    string InviteeName = 60;
+    cloud.hashing.inspire.v1.UserInvitationCode Info = 70;
 }
 
 message CreateInvitationCodeResponse {

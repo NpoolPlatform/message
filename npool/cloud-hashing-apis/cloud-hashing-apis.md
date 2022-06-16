@@ -491,6 +491,9 @@
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | TargetUserID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
+| InviterName | [string](#string) |  |  |
+| InviteeName | [string](#string) |  |  |
 | Info | [cloud.hashing.inspire.v1.UserInvitationCode](#cloud-hashing-inspire-v1-UserInvitationCode) |  |  |
 
 
@@ -2720,6 +2723,9 @@ Cloud Hashing Goods
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | TargetUserID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
+| InviterName | [string](#string) |  |  |
+| InviteeName | [string](#string) |  |  |
 | Info | [cloud.hashing.inspire.v1.UserInvitationCode](#cloud-hashing-inspire-v1-UserInvitationCode) |  |  |
 
 

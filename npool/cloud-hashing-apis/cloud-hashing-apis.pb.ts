@@ -345,6 +345,9 @@ export type CreateInvitationCodeRequest = {
   appID?: string
   userID?: string
   targetUserID?: string
+  langID?: string
+  inviterName?: string
+  inviteeName?: string
   info?: CloudHashingInspireV1Cloud-hashing-inspire.UserInvitationCode
 }
 
