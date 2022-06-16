@@ -1444,6 +1444,7 @@ Request body and response
 | Units | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
 | Unit | [string](#string) |  |  |
+| Percent | [uint32](#uint32) |  |  |
 
 
 
@@ -3490,6 +3491,7 @@ Request body and response
 | Units | [uint32](#uint32) |  |  |
 | Amount | [double](#double) |  |  |
 | Unit | [string](#string) |  |  |
+| Percent | [uint32](#uint32) |  |  |
 
 
 

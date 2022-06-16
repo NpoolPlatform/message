@@ -3422,6 +3422,10 @@
         },
         "Unit": {
           "type": "string"
+        },
+        "Percent": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

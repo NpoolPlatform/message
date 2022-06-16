@@ -288,6 +288,7 @@ export type GoodSummary = {
   units?: number
   amount?: number
   unit?: string
+  percent?: number
 }
 
 export type Referral = {

@@ -631,6 +631,7 @@ message GoodSummary {
     uint32 Units = 40;
     double Amount = 50;
     string Unit = 60;
+    uint32 Percent = 70;
 }
 
 message Referral {
