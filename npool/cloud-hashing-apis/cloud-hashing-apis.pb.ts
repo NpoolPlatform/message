@@ -606,6 +606,8 @@ export type GoodCommission = {
 }
 
 export type GetGoodCommissionsRequest = {
+  appID?: string
+  userID?: string
 }
 
 export type GetGoodCommissionsResponse = {
@@ -613,6 +615,7 @@ export type GetGoodCommissionsResponse = {
 }
 
 export type GetUserGoodCommissionsRequest = {
+  appID?: string
   targetUserID?: string
 }
 

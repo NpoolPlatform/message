@@ -968,6 +968,8 @@ message GoodCommission {
 }
 
 message GetGoodCommissionsRequest {
+    string AppID = 10;
+    string UserID = 20;
 }
 
 message GetGoodCommissionsResponse {
@@ -975,7 +977,8 @@ message GetGoodCommissionsResponse {
 }
 
 message GetUserGoodCommissionsRequest {
-    string TargetUserID = 10;
+    string AppID = 10;
+    string TargetUserID = 20;
 }
 
 message GetUserGoodCommissionsResponse {

@@ -686,6 +686,12 @@
 
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
 
 
 
@@ -1195,6 +1201,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | TargetUserID | [string](#string) |  |  |
 
 
@@ -2806,6 +2813,12 @@ Cloud Hashing Goods
 
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+
+
 
 
 
@@ -3315,6 +3328,7 @@ Cloud Hashing Goods
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
 | TargetUserID | [string](#string) |  |  |
 
 

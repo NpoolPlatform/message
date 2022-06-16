@@ -2999,7 +2999,15 @@
       }
     },
     "v1GetGoodCommissionsRequest": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
     },
     "v1GetGoodCommissionsResponse": {
       "type": "object",
@@ -3149,6 +3157,9 @@
     "v1GetUserGoodCommissionsRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "TargetUserID": {
           "type": "string"
         }
