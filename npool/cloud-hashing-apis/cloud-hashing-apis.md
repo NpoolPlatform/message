@@ -1494,7 +1494,7 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | GoodID | [string](#string) |  |  |
-| Total | [double](#double) |  |  |
+| Amount | [double](#double) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | CoinName | [string](#string) |  |  |
 
@@ -3623,7 +3623,7 @@ Request body and response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | GoodID | [string](#string) |  |  |
-| Total | [double](#double) |  |  |
+| Amount | [double](#double) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | CoinName | [string](#string) |  |  |
 

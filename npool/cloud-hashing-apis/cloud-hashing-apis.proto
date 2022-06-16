@@ -964,7 +964,7 @@ message GetCommissionByAppUserResponse {
 
 message GoodCommission {
     string GoodID = 10;
-    double Total = 20;
+    double Amount = 20;
     string CoinTypeID = 30;
     string CoinName = 40;
 }

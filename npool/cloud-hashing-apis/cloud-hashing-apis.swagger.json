@@ -3346,7 +3346,7 @@
         "GoodID": {
           "type": "string"
         },
-        "Total": {
+        "Amount": {
           "type": "number",
           "format": "double"
         },
