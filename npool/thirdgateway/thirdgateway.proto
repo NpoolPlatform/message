@@ -523,6 +523,8 @@ message NotifyEmailRequest {
     string UsedFor = 30;
     string ReceiverID = 40;
     string LangID = 50;
+    string SenderName = 60;
+    string ReceiverName = 70;
 }
 
 message NotifyEmailResponse {

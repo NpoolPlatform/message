@@ -323,6 +323,8 @@ export type NotifyEmailRequest = {
   usedFor?: string
   receiverID?: string
   langID?: string
+  senderName?: string
+  receiverName?: string
 }
 
 export type NotifyEmailResponse = {
