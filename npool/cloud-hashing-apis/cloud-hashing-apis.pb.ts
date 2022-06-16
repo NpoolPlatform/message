@@ -352,7 +352,7 @@ export type CreateInvitationCodeRequest = {
 }
 
 export type CreateInvitationCodeResponse = {
-  infos?: CloudHashingInspireV1Cloud-hashing-inspire.UserInvitationCode[]
+  info?: CloudHashingInspireV1Cloud-hashing-inspire.UserInvitationCode
 }
 
 export type KycReview = {

@@ -509,7 +509,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [cloud.hashing.inspire.v1.UserInvitationCode](#cloud-hashing-inspire-v1-UserInvitationCode) | repeated |  |
+| Info | [cloud.hashing.inspire.v1.UserInvitationCode](#cloud-hashing-inspire-v1-UserInvitationCode) |  |  |
 
 
 
@@ -2741,7 +2741,7 @@ Cloud Hashing Goods
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [cloud.hashing.inspire.v1.UserInvitationCode](#cloud-hashing-inspire-v1-UserInvitationCode) | repeated |  |
+| Info | [cloud.hashing.inspire.v1.UserInvitationCode](#cloud-hashing-inspire-v1-UserInvitationCode) |  |  |
 
 
 

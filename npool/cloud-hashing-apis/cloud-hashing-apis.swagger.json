@@ -2941,11 +2941,8 @@
     "v1CreateInvitationCodeResponse": {
       "type": "object",
       "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1UserInvitationCode"
-          }
+        "Info": {
+          "$ref": "#/definitions/v1UserInvitationCode"
         }
       }
     },

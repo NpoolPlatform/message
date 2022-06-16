@@ -728,7 +728,7 @@ message CreateInvitationCodeRequest {
 }
 
 message CreateInvitationCodeResponse {
-    repeated cloud.hashing.inspire.v1.UserInvitationCode Infos = 10;
+    cloud.hashing.inspire.v1.UserInvitationCode Info = 10;
 }
 
 message KycReview {
