@@ -338,7 +338,7 @@ export type CreateAmountSettingRequest = {
 }
 
 export type CreateAmountSettingResponse = {
-  info?: CloudHashingInspireV1Cloud-hashing-inspire.AppPurchaseAmountSetting
+  infos?: CloudHashingInspireV1Cloud-hashing-inspire.AppPurchaseAmountSetting[]
 }
 
 export type KycReview = {

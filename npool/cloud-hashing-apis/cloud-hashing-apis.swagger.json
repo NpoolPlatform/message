@@ -2872,8 +2872,11 @@
     "v1CreateAmountSettingResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+          }
         }
       }
     },

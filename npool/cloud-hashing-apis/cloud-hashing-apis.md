@@ -379,7 +379,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [cloud.hashing.inspire.v1.AppPurchaseAmountSetting](#cloud-hashing-inspire-v1-AppPurchaseAmountSetting) |  |  |
+| Infos | [cloud.hashing.inspire.v1.AppPurchaseAmountSetting](#cloud-hashing-inspire-v1-AppPurchaseAmountSetting) | repeated |  |
 
 
 
@@ -2574,7 +2574,7 @@ Cloud Hashing Goods
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Info | [cloud.hashing.inspire.v1.AppPurchaseAmountSetting](#cloud-hashing-inspire-v1-AppPurchaseAmountSetting) |  |  |
+| Infos | [cloud.hashing.inspire.v1.AppPurchaseAmountSetting](#cloud-hashing-inspire-v1-AppPurchaseAmountSetting) | repeated |  |
 
 
 
