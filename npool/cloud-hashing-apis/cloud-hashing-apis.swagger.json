@@ -2896,6 +2896,15 @@
         "TargetUserID": {
           "type": "string"
         },
+        "LangID": {
+          "type": "string"
+        },
+        "InviterName": {
+          "type": "string"
+        },
+        "InviteeName": {
+          "type": "string"
+        },
         "Info": {
           "$ref": "#/definitions/v1AppPurchaseAmountSetting"
         }

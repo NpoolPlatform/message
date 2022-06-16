@@ -368,6 +368,9 @@
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | TargetUserID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
+| InviterName | [string](#string) |  |  |
+| InviteeName | [string](#string) |  |  |
 | Info | [cloud.hashing.inspire.v1.AppPurchaseAmountSetting](#cloud-hashing-inspire-v1-AppPurchaseAmountSetting) |  |  |
 
 
@@ -2600,6 +2603,9 @@ Cloud Hashing Goods
 | AppID | [string](#string) |  |  |
 | UserID | [string](#string) |  |  |
 | TargetUserID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
+| InviterName | [string](#string) |  |  |
+| InviteeName | [string](#string) |  |  |
 | Info | [cloud.hashing.inspire.v1.AppPurchaseAmountSetting](#cloud-hashing-inspire-v1-AppPurchaseAmountSetting) |  |  |
 
 
