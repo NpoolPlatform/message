@@ -3349,6 +3349,12 @@
         "Total": {
           "type": "number",
           "format": "double"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
         }
       }
     },

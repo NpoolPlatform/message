@@ -1495,6 +1495,8 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | GoodID | [string](#string) |  |  |
 | Total | [double](#double) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| CoinName | [string](#string) |  |  |
 
 
 
@@ -3622,6 +3624,8 @@ Request body and response
 | ----- | ---- | ----- | ----------- |
 | GoodID | [string](#string) |  |  |
 | Total | [double](#double) |  |  |
+| CoinTypeID | [string](#string) |  |  |
+| CoinName | [string](#string) |  |  |
 
 
 
