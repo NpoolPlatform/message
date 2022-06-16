@@ -327,6 +327,13 @@ service CloudHashingApis {
         };
     }
 
+    rpc GetGoodCommissions (GetGoodCommissionsRequest) returns (GetGoodCommissionsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/commissions"
+            body: "*"
+        };
+    }
+
     rpc GetUserGoodCommissions (GetUserGoodCommissionsRequest) returns (GetUserGoodCommissionsResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/good/commissions"
@@ -958,6 +965,13 @@ message GetCommissionByAppUserResponse {
 message GoodCommission {
     string GoodID = 10;
     double Total = 20;
+}
+
+message GetGoodCommissionsRequest {
+}
+
+message GetGoodCommissionsResponse {
+    repeated GoodCommission Infos = 10;
 }
 
 message GetUserGoodCommissionsRequest {

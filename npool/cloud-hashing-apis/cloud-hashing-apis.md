@@ -30,6 +30,8 @@
     - [GetCouponsByAppUserResponse](#cloud-hashing-apis-v1-GetCouponsByAppUserResponse)
     - [GetCurrentFeeRequest](#cloud-hashing-apis-v1-GetCurrentFeeRequest)
     - [GetCurrentFeeResponse](#cloud-hashing-apis-v1-GetCurrentFeeResponse)
+    - [GetGoodCommissionsRequest](#cloud-hashing-apis-v1-GetGoodCommissionsRequest)
+    - [GetGoodCommissionsResponse](#cloud-hashing-apis-v1-GetGoodCommissionsResponse)
     - [GetGoodRequest](#cloud-hashing-apis-v1-GetGoodRequest)
     - [GetGoodResponse](#cloud-hashing-apis-v1-GetGoodResponse)
     - [GetGoodReviewsRequest](#cloud-hashing-apis-v1-GetGoodReviewsRequest)
@@ -160,6 +162,8 @@
     - [GetCouponsByAppUserResponse](#cloud-hashing-apis-v1-GetCouponsByAppUserResponse)
     - [GetCurrentFeeRequest](#cloud-hashing-apis-v1-GetCurrentFeeRequest)
     - [GetCurrentFeeResponse](#cloud-hashing-apis-v1-GetCurrentFeeResponse)
+    - [GetGoodCommissionsRequest](#cloud-hashing-apis-v1-GetGoodCommissionsRequest)
+    - [GetGoodCommissionsResponse](#cloud-hashing-apis-v1-GetGoodCommissionsResponse)
     - [GetGoodRequest](#cloud-hashing-apis-v1-GetGoodRequest)
     - [GetGoodResponse](#cloud-hashing-apis-v1-GetGoodResponse)
     - [GetGoodReviewsRequest](#cloud-hashing-apis-v1-GetGoodReviewsRequest)
@@ -676,6 +680,31 @@
 
 
 
+<a name="cloud-hashing-apis-v1-GetGoodCommissionsRequest"></a>
+
+### GetGoodCommissionsRequest
+
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-GetGoodCommissionsResponse"></a>
+
+### GetGoodCommissionsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [GoodCommission](#cloud-hashing-apis-v1-GoodCommission) | repeated |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-GetGoodRequest"></a>
 
 ### GetGoodRequest
@@ -2351,6 +2380,7 @@ Cloud Hashing Goods
 | GetWithdrawAddressesByAppUser | [GetWithdrawAddressesByAppUserRequest](#cloud-hashing-apis-v1-GetWithdrawAddressesByAppUserRequest) | [GetWithdrawAddressesByAppUserResponse](#cloud-hashing-apis-v1-GetWithdrawAddressesByAppUserResponse) |  |
 | GetCouponsByAppUser | [GetCouponsByAppUserRequest](#cloud-hashing-apis-v1-GetCouponsByAppUserRequest) | [GetCouponsByAppUserResponse](#cloud-hashing-apis-v1-GetCouponsByAppUserResponse) |  |
 | GetCommissionByAppUser | [GetCommissionByAppUserRequest](#cloud-hashing-apis-v1-GetCommissionByAppUserRequest) | [GetCommissionByAppUserResponse](#cloud-hashing-apis-v1-GetCommissionByAppUserResponse) |  |
+| GetGoodCommissions | [GetGoodCommissionsRequest](#cloud-hashing-apis-v1-GetGoodCommissionsRequest) | [GetGoodCommissionsResponse](#cloud-hashing-apis-v1-GetGoodCommissionsResponse) |  |
 | GetUserGoodCommissions | [GetUserGoodCommissionsRequest](#cloud-hashing-apis-v1-GetUserGoodCommissionsRequest) | [GetUserGoodCommissionsResponse](#cloud-hashing-apis-v1-GetUserGoodCommissionsResponse) |  |
 | UpdateKycReview | [UpdateKycReviewRequest](#cloud-hashing-apis-v1-UpdateKycReviewRequest) | [UpdateKycReviewResponse](#cloud-hashing-apis-v1-UpdateKycReviewResponse) |  |
 | UpdateWithdrawReview | [UpdateWithdrawReviewRequest](#cloud-hashing-apis-v1-UpdateWithdrawReviewRequest) | [UpdateWithdrawReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawReviewResponse) |  |
@@ -2770,6 +2800,31 @@ Cloud Hashing Goods
 
 
 
+<a name="cloud-hashing-apis-v1-GetGoodCommissionsRequest"></a>
+
+### GetGoodCommissionsRequest
+
+
+
+
+
+
+
+<a name="cloud-hashing-apis-v1-GetGoodCommissionsResponse"></a>
+
+### GetGoodCommissionsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [GoodCommission](#cloud-hashing-apis-v1-GoodCommission) | repeated |  |
+
+
+
+
+
+
 <a name="cloud-hashing-apis-v1-GetGoodRequest"></a>
 
 ### GetGoodRequest
@@ -4445,6 +4500,7 @@ Cloud Hashing Goods
 | GetWithdrawAddressesByAppUser | [GetWithdrawAddressesByAppUserRequest](#cloud-hashing-apis-v1-GetWithdrawAddressesByAppUserRequest) | [GetWithdrawAddressesByAppUserResponse](#cloud-hashing-apis-v1-GetWithdrawAddressesByAppUserResponse) |  |
 | GetCouponsByAppUser | [GetCouponsByAppUserRequest](#cloud-hashing-apis-v1-GetCouponsByAppUserRequest) | [GetCouponsByAppUserResponse](#cloud-hashing-apis-v1-GetCouponsByAppUserResponse) |  |
 | GetCommissionByAppUser | [GetCommissionByAppUserRequest](#cloud-hashing-apis-v1-GetCommissionByAppUserRequest) | [GetCommissionByAppUserResponse](#cloud-hashing-apis-v1-GetCommissionByAppUserResponse) |  |
+| GetGoodCommissions | [GetGoodCommissionsRequest](#cloud-hashing-apis-v1-GetGoodCommissionsRequest) | [GetGoodCommissionsResponse](#cloud-hashing-apis-v1-GetGoodCommissionsResponse) |  |
 | GetUserGoodCommissions | [GetUserGoodCommissionsRequest](#cloud-hashing-apis-v1-GetUserGoodCommissionsRequest) | [GetUserGoodCommissionsResponse](#cloud-hashing-apis-v1-GetUserGoodCommissionsResponse) |  |
 | UpdateKycReview | [UpdateKycReviewRequest](#cloud-hashing-apis-v1-UpdateKycReviewRequest) | [UpdateKycReviewResponse](#cloud-hashing-apis-v1-UpdateKycReviewResponse) |  |
 | UpdateWithdrawReview | [UpdateWithdrawReviewRequest](#cloud-hashing-apis-v1-UpdateWithdrawReviewRequest) | [UpdateWithdrawReviewResponse](#cloud-hashing-apis-v1-UpdateWithdrawReviewResponse) |  |

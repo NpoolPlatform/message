@@ -395,6 +395,38 @@
         ]
       }
     },
+    "/v1/get/good/commissions": {
+      "post": {
+        "operationId": "CloudHashingApis_GetGoodCommissions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodCommissionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodCommissionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/good/reviews": {
       "post": {
         "operationId": "CloudHashingApis_GetGoodReviews",
@@ -2963,6 +2995,20 @@
         "FeeAmount": {
           "type": "number",
           "format": "double"
+        }
+      }
+    },
+    "v1GetGoodCommissionsRequest": {
+      "type": "object"
+    },
+    "v1GetGoodCommissionsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodCommission"
+          }
         }
       }
     },

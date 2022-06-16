@@ -73,6 +73,7 @@ type CloudHashingApisClient interface {
 	GetWithdrawAddressesByAppUser(ctx context.Context, in *GetWithdrawAddressesByAppUserRequest, opts ...grpc.CallOption) (*GetWithdrawAddressesByAppUserResponse, error)
 	GetCouponsByAppUser(ctx context.Context, in *GetCouponsByAppUserRequest, opts ...grpc.CallOption) (*GetCouponsByAppUserResponse, error)
 	GetCommissionByAppUser(ctx context.Context, in *GetCommissionByAppUserRequest, opts ...grpc.CallOption) (*GetCommissionByAppUserResponse, error)
+	GetGoodCommissions(ctx context.Context, in *GetGoodCommissionsRequest, opts ...grpc.CallOption) (*GetGoodCommissionsResponse, error)
 	GetUserGoodCommissions(ctx context.Context, in *GetUserGoodCommissionsRequest, opts ...grpc.CallOption) (*GetUserGoodCommissionsResponse, error)
 	UpdateKycReview(ctx context.Context, in *UpdateKycReviewRequest, opts ...grpc.CallOption) (*UpdateKycReviewResponse, error)
 	UpdateWithdrawReview(ctx context.Context, in *UpdateWithdrawReviewRequest, opts ...grpc.CallOption) (*UpdateWithdrawReviewResponse, error)
@@ -529,6 +530,15 @@ func (c *cloudHashingApisClient) GetCommissionByAppUser(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *cloudHashingApisClient) GetGoodCommissions(ctx context.Context, in *GetGoodCommissionsRequest, opts ...grpc.CallOption) (*GetGoodCommissionsResponse, error) {
+	out := new(GetGoodCommissionsResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetGoodCommissions", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingApisClient) GetUserGoodCommissions(ctx context.Context, in *GetUserGoodCommissionsRequest, opts ...grpc.CallOption) (*GetUserGoodCommissionsResponse, error) {
 	out := new(GetUserGoodCommissionsResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetUserGoodCommissions", in, out, opts...)
@@ -627,6 +637,7 @@ type CloudHashingApisServer interface {
 	GetWithdrawAddressesByAppUser(context.Context, *GetWithdrawAddressesByAppUserRequest) (*GetWithdrawAddressesByAppUserResponse, error)
 	GetCouponsByAppUser(context.Context, *GetCouponsByAppUserRequest) (*GetCouponsByAppUserResponse, error)
 	GetCommissionByAppUser(context.Context, *GetCommissionByAppUserRequest) (*GetCommissionByAppUserResponse, error)
+	GetGoodCommissions(context.Context, *GetGoodCommissionsRequest) (*GetGoodCommissionsResponse, error)
 	GetUserGoodCommissions(context.Context, *GetUserGoodCommissionsRequest) (*GetUserGoodCommissionsResponse, error)
 	UpdateKycReview(context.Context, *UpdateKycReviewRequest) (*UpdateKycReviewResponse, error)
 	UpdateWithdrawReview(context.Context, *UpdateWithdrawReviewRequest) (*UpdateWithdrawReviewResponse, error)
@@ -785,6 +796,9 @@ func (UnimplementedCloudHashingApisServer) GetCouponsByAppUser(context.Context, 
 }
 func (UnimplementedCloudHashingApisServer) GetCommissionByAppUser(context.Context, *GetCommissionByAppUserRequest) (*GetCommissionByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCommissionByAppUser not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetGoodCommissions(context.Context, *GetGoodCommissionsRequest) (*GetGoodCommissionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodCommissions not implemented")
 }
 func (UnimplementedCloudHashingApisServer) GetUserGoodCommissions(context.Context, *GetUserGoodCommissionsRequest) (*GetUserGoodCommissionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserGoodCommissions not implemented")
@@ -1696,6 +1710,24 @@ func _CloudHashingApis_GetCommissionByAppUser_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingApis_GetGoodCommissions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodCommissionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetGoodCommissions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetGoodCommissions",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetGoodCommissions(ctx, req.(*GetGoodCommissionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingApis_GetUserGoodCommissions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserGoodCommissionsRequest)
 	if err := dec(in); err != nil {
@@ -1988,6 +2020,10 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCommissionByAppUser",
 			Handler:    _CloudHashingApis_GetCommissionByAppUser_Handler,
+		},
+		{
+			MethodName: "GetGoodCommissions",
+			Handler:    _CloudHashingApis_GetGoodCommissions_Handler,
 		},
 		{
 			MethodName: "GetUserGoodCommissions",

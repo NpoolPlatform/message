@@ -605,6 +605,13 @@ export type GoodCommission = {
   total?: number
 }
 
+export type GetGoodCommissionsRequest = {
+}
+
+export type GetGoodCommissionsResponse = {
+  infos?: GoodCommission[]
+}
+
 export type GetUserGoodCommissionsRequest = {
   targetUserID?: string
 }
@@ -795,6 +802,9 @@ export class CloudHashingApis {
   }
   static GetCommissionByAppUser(req: GetCommissionByAppUserRequest, initReq?: fm.InitReq): Promise<GetCommissionByAppUserResponse> {
     return fm.fetchReq<GetCommissionByAppUserRequest, GetCommissionByAppUserResponse>(`/v1/get/commission/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodCommissions(req: GetGoodCommissionsRequest, initReq?: fm.InitReq): Promise<GetGoodCommissionsResponse> {
+    return fm.fetchReq<GetGoodCommissionsRequest, GetGoodCommissionsResponse>(`/v1/get/good/commissions`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static GetUserGoodCommissions(req: GetUserGoodCommissionsRequest, initReq?: fm.InitReq): Promise<GetUserGoodCommissionsResponse> {
     return fm.fetchReq<GetUserGoodCommissionsRequest, GetUserGoodCommissionsResponse>(`/v1/get/user/good/commissions`, {...initReq, method: "POST", body: JSON.stringify(req)})
