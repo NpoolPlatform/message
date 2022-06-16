@@ -55,6 +55,7 @@ type ThirdGatewayClient interface {
 	VerifyGoogleAuthentication(ctx context.Context, in *VerifyGoogleAuthenticationRequest, opts ...grpc.CallOption) (*VerifyGoogleAuthenticationResponse, error)
 	VerifyGoogleRecaptchaV3(ctx context.Context, in *VerifyGoogleRecaptchaV3Request, opts ...grpc.CallOption) (*VerifyGoogleRecaptchaV3Response, error)
 	ContactByEmail(ctx context.Context, in *ContactByEmailRequest, opts ...grpc.CallOption) (*ContactByEmailResponse, error)
+	NotifyEmail(ctx context.Context, in *NotifyEmailRequest, opts ...grpc.CallOption) (*NotifyEmailResponse, error)
 }
 
 type thirdGatewayClient struct {
@@ -335,6 +336,15 @@ func (c *thirdGatewayClient) ContactByEmail(ctx context.Context, in *ContactByEm
 	return out, nil
 }
 
+func (c *thirdGatewayClient) NotifyEmail(ctx context.Context, in *NotifyEmailRequest, opts ...grpc.CallOption) (*NotifyEmailResponse, error) {
+	out := new(NotifyEmailResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.v1.ThirdGateway/NotifyEmail", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ThirdGatewayServer is the server API for ThirdGateway service.
 // All implementations must embed UnimplementedThirdGatewayServer
 // for forward compatibility
@@ -370,6 +380,7 @@ type ThirdGatewayServer interface {
 	VerifyGoogleAuthentication(context.Context, *VerifyGoogleAuthenticationRequest) (*VerifyGoogleAuthenticationResponse, error)
 	VerifyGoogleRecaptchaV3(context.Context, *VerifyGoogleRecaptchaV3Request) (*VerifyGoogleRecaptchaV3Response, error)
 	ContactByEmail(context.Context, *ContactByEmailRequest) (*ContactByEmailResponse, error)
+	NotifyEmail(context.Context, *NotifyEmailRequest) (*NotifyEmailResponse, error)
 	mustEmbedUnimplementedThirdGatewayServer()
 }
 
@@ -466,6 +477,9 @@ func (UnimplementedThirdGatewayServer) VerifyGoogleRecaptchaV3(context.Context, 
 }
 func (UnimplementedThirdGatewayServer) ContactByEmail(context.Context, *ContactByEmailRequest) (*ContactByEmailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ContactByEmail not implemented")
+}
+func (UnimplementedThirdGatewayServer) NotifyEmail(context.Context, *NotifyEmailRequest) (*NotifyEmailResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method NotifyEmail not implemented")
 }
 func (UnimplementedThirdGatewayServer) mustEmbedUnimplementedThirdGatewayServer() {}
 
@@ -1020,6 +1034,24 @@ func _ThirdGateway_ContactByEmail_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ThirdGateway_NotifyEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(NotifyEmailRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdGatewayServer).NotifyEmail(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.v1.ThirdGateway/NotifyEmail",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdGatewayServer).NotifyEmail(ctx, req.(*NotifyEmailRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ThirdGateway_ServiceDesc is the grpc.ServiceDesc for ThirdGateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1146,6 +1178,10 @@ var ThirdGateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ContactByEmail",
 			Handler:    _ThirdGateway_ContactByEmail_Handler,
+		},
+		{
+			MethodName: "NotifyEmail",
+			Handler:    _ThirdGateway_NotifyEmail_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

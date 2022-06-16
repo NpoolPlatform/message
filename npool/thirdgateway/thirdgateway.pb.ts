@@ -317,6 +317,18 @@ export type ContactByEmailResponse = {
   message?: string
 }
 
+export type NotifyEmailRequest = {
+  appID?: string
+  userID?: string
+  usedFor?: string
+  receiver?: string
+}
+
+export type NotifyEmailResponse = {
+  code?: number
+  message?: string
+}
+
 export class ThirdGateway {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
     return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
@@ -407,5 +419,8 @@ export class ThirdGateway {
   }
   static ContactByEmail(req: ContactByEmailRequest, initReq?: fm.InitReq): Promise<ContactByEmailResponse> {
     return fm.fetchReq<ContactByEmailRequest, ContactByEmailResponse>(`/v1/contact/by/email`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static NotifyEmail(req: NotifyEmailRequest, initReq?: fm.InitReq): Promise<NotifyEmailResponse> {
+    return fm.fetchReq<NotifyEmailRequest, NotifyEmailResponse>(`/v1/notify/email`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
