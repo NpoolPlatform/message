@@ -981,6 +981,7 @@ message UserInvitationCode {
     string UserID = 20;
     string AppID = 30;
     string InvitationCode = 40;
+    uint32 CreateAt = 50;
 }
 
 message CreateUserInvitationCodeRequest {

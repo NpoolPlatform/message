@@ -325,6 +325,7 @@ export type UserInvitationCode = {
   userID?: string
   appID?: string
   invitationCode?: string
+  createAt?: number
 }
 
 export type CreateUserInvitationCodeRequest = {

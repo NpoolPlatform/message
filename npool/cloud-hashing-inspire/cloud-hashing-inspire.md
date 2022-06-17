@@ -3858,6 +3858,7 @@ request body and response
 | UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | InvitationCode | [string](#string) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
 
 
 
@@ -7428,6 +7429,7 @@ request body and response
 | UserID | [string](#string) |  |  |
 | AppID | [string](#string) |  |  |
 | InvitationCode | [string](#string) |  |  |
+| CreateAt | [uint32](#uint32) |  |  |
 
 
 
