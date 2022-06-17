@@ -1608,6 +1608,8 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
 | Amount | [double](#double) |  |  |
 | CoinTypeID | [string](#string) |  |  |
@@ -3843,6 +3845,8 @@ Request body and response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
 | GoodID | [string](#string) |  |  |
 | Amount | [double](#double) |  |  |
 | CoinTypeID | [string](#string) |  |  |

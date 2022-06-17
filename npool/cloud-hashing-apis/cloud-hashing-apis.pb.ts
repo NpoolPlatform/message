@@ -638,6 +638,8 @@ export type GetCommissionByAppUserResponse = {
 }
 
 export type GoodCommission = {
+  appID?: string
+  userID?: string
   goodID?: string
   amount?: number
   coinTypeID?: string

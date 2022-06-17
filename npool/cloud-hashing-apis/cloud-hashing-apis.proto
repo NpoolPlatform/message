@@ -1019,10 +1019,12 @@ message GetCommissionByAppUserResponse {
 }
 
 message GoodCommission {
-    string GoodID = 10;
-    double Amount = 20;
-    string CoinTypeID = 30;
-    string CoinName = 40;
+    string AppID = 10;
+    string UserID = 20;
+    string GoodID = 30;
+    double Amount = 40;
+    string CoinTypeID = 50;
+    string CoinName = 60;
 }
 
 message GetGoodCommissionsRequest {

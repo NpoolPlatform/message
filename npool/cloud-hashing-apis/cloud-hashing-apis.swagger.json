@@ -3574,6 +3574,12 @@
     "v1GoodCommission": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "GoodID": {
           "type": "string"
         },
