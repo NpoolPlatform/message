@@ -3275,6 +3275,38 @@
         ]
       }
     },
+    "/v1/update/user/invitation/code": {
+      "post": {
+        "operationId": "CloudHashingInspire_UpdateUserInvitationCode",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserInvitationCodeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserInvitationCodeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/update/user/kpi/setting": {
       "post": {
         "operationId": "CloudHashingInspire_UpdateUserKpiSetting",
@@ -5557,6 +5589,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1RegistrationInvitation"
+        }
+      }
+    },
+    "v1UpdateUserInvitationCodeRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserInvitationCode"
+        }
+      }
+    },
+    "v1UpdateUserInvitationCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserInvitationCode"
         }
       }
     },

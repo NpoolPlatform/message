@@ -230,6 +230,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc UpdateUserInvitationCode (UpdateUserInvitationCodeRequest) returns (UpdateUserInvitationCodeResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user/invitation/code"
+            body: "*"
+        };
+    }
     rpc CreateUserInvitationCodeForOtherAppUser (CreateUserInvitationCodeForOtherAppUserRequest) returns (CreateUserInvitationCodeForOtherAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/create/user/invitation/code/for/other/app/user"
@@ -990,6 +996,14 @@ message CreateUserInvitationCodeRequest {
 }
 
 message CreateUserInvitationCodeResponse {
+    UserInvitationCode Info = 10;
+}
+
+message UpdateUserInvitationCodeRequest {
+    UserInvitationCode Info = 10;
+}
+
+message UpdateUserInvitationCodeResponse {
     UserInvitationCode Info = 10;
 }
 
