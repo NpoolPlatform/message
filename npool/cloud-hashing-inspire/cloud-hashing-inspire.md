@@ -3859,6 +3859,7 @@ request body and response
 | AppID | [string](#string) |  |  |
 | InvitationCode | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
+| Confirmed | [bool](#bool) |  |  |
 
 
 
@@ -7430,6 +7431,7 @@ request body and response
 | AppID | [string](#string) |  |  |
 | InvitationCode | [string](#string) |  |  |
 | CreateAt | [uint32](#uint32) |  |  |
+| Confirmed | [bool](#bool) |  |  |
 
 
 

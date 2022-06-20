@@ -5610,6 +5610,9 @@
         "CreateAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Confirmed": {
+          "type": "boolean"
         }
       }
     },
