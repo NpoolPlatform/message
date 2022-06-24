@@ -1113,6 +1113,7 @@ message GoodPayment {
     string AccountID = 40;
     bool Idle = 50;
     string OccupiedBy = 60;
+    uint32 AvailableAt = 70;
 }
 
 message CreateGoodPaymentRequest {

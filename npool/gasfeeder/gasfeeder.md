@@ -127,6 +127,7 @@
 | GasCoinTypeID | [string](#string) |  |  |
 | DepositThresholdLow | [double](#double) |  |  |
 | DepositAmount | [double](#double) |  |  |
+| OnlineScale | [int32](#int32) |  |  |
 
 
 
@@ -881,6 +882,7 @@
 | GasCoinTypeID | [string](#string) |  |  |
 | DepositThresholdLow | [double](#double) |  |  |
 | DepositAmount | [double](#double) |  |  |
+| OnlineScale | [int32](#int32) |  |  |
 
 
 

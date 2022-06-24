@@ -45,6 +45,8 @@
     - [GetAppSMSTemplatesByAppResponse](#third-gateway-v1-GetAppSMSTemplatesByAppResponse)
     - [GetAppSMSTemplatesByOtherAppRequest](#third-gateway-v1-GetAppSMSTemplatesByOtherAppRequest)
     - [GetAppSMSTemplatesByOtherAppResponse](#third-gateway-v1-GetAppSMSTemplatesByOtherAppResponse)
+    - [NotifyEmailRequest](#third-gateway-v1-NotifyEmailRequest)
+    - [NotifyEmailResponse](#third-gateway-v1-NotifyEmailResponse)
     - [SendEmailCodeRequest](#third-gateway-v1-SendEmailCodeRequest)
     - [SendEmailCodeResponse](#third-gateway-v1-SendEmailCodeResponse)
     - [SendSMSCodeRequest](#third-gateway-v1-SendSMSCodeRequest)
@@ -110,6 +112,8 @@
     - [GetAppSMSTemplatesByAppResponse](#third-gateway-v1-GetAppSMSTemplatesByAppResponse)
     - [GetAppSMSTemplatesByOtherAppRequest](#third-gateway-v1-GetAppSMSTemplatesByOtherAppRequest)
     - [GetAppSMSTemplatesByOtherAppResponse](#third-gateway-v1-GetAppSMSTemplatesByOtherAppResponse)
+    - [NotifyEmailRequest](#third-gateway-v1-NotifyEmailRequest)
+    - [NotifyEmailResponse](#third-gateway-v1-NotifyEmailResponse)
     - [SendEmailCodeRequest](#third-gateway-v1-SendEmailCodeRequest)
     - [SendEmailCodeResponse](#third-gateway-v1-SendEmailCodeResponse)
     - [SendSMSCodeRequest](#third-gateway-v1-SendSMSCodeRequest)
@@ -798,6 +802,43 @@
 
 
 
+<a name="third-gateway-v1-NotifyEmailRequest"></a>
+
+### NotifyEmailRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+| ReceiverID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
+| SenderName | [string](#string) |  |  |
+| ReceiverName | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third-gateway-v1-NotifyEmailResponse"></a>
+
+### NotifyEmailResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="third-gateway-v1-SendEmailCodeRequest"></a>
 
 ### SendEmailCodeRequest
@@ -1168,6 +1209,7 @@ Service Name
 | VerifyGoogleAuthentication | [VerifyGoogleAuthenticationRequest](#third-gateway-v1-VerifyGoogleAuthenticationRequest) | [VerifyGoogleAuthenticationResponse](#third-gateway-v1-VerifyGoogleAuthenticationResponse) |  |
 | VerifyGoogleRecaptchaV3 | [VerifyGoogleRecaptchaV3Request](#third-gateway-v1-VerifyGoogleRecaptchaV3Request) | [VerifyGoogleRecaptchaV3Response](#third-gateway-v1-VerifyGoogleRecaptchaV3Response) |  |
 | ContactByEmail | [ContactByEmailRequest](#third-gateway-v1-ContactByEmailRequest) | [ContactByEmailResponse](#third-gateway-v1-ContactByEmailResponse) |  |
+| NotifyEmail | [NotifyEmailRequest](#third-gateway-v1-NotifyEmailRequest) | [NotifyEmailResponse](#third-gateway-v1-NotifyEmailResponse) |  |
 
  
 
@@ -1834,6 +1876,43 @@ Service Name
 
 
 
+<a name="third-gateway-v1-NotifyEmailRequest"></a>
+
+### NotifyEmailRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AppID | [string](#string) |  |  |
+| UserID | [string](#string) |  |  |
+| UsedFor | [string](#string) |  |  |
+| ReceiverID | [string](#string) |  |  |
+| LangID | [string](#string) |  |  |
+| SenderName | [string](#string) |  |  |
+| ReceiverName | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="third-gateway-v1-NotifyEmailResponse"></a>
+
+### NotifyEmailResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Code | [int32](#int32) |  |  |
+| Message | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="third-gateway-v1-SendEmailCodeRequest"></a>
 
 ### SendEmailCodeRequest
@@ -2204,6 +2283,7 @@ Service Name
 | VerifyGoogleAuthentication | [VerifyGoogleAuthenticationRequest](#third-gateway-v1-VerifyGoogleAuthenticationRequest) | [VerifyGoogleAuthenticationResponse](#third-gateway-v1-VerifyGoogleAuthenticationResponse) |  |
 | VerifyGoogleRecaptchaV3 | [VerifyGoogleRecaptchaV3Request](#third-gateway-v1-VerifyGoogleRecaptchaV3Request) | [VerifyGoogleRecaptchaV3Response](#third-gateway-v1-VerifyGoogleRecaptchaV3Response) |  |
 | ContactByEmail | [ContactByEmailRequest](#third-gateway-v1-ContactByEmailRequest) | [ContactByEmailResponse](#third-gateway-v1-ContactByEmailResponse) |  |
+| NotifyEmail | [NotifyEmailRequest](#third-gateway-v1-NotifyEmailRequest) | [NotifyEmailResponse](#third-gateway-v1-NotifyEmailResponse) |  |
 
  
 

@@ -281,6 +281,16 @@ export type CoinSummary = {
   unit?: string
 }
 
+export type GoodSummary = {
+  goodID?: string
+  coinTypeID?: string
+  coinName?: string
+  units?: number
+  amount?: number
+  unit?: string
+  percent?: number
+}
+
 export type Referral = {
   user?: AppUserManagerV1Appusermgr.AppUser
   extra?: AppUserManagerV1Appusermgr.AppUserExtra
@@ -290,6 +300,7 @@ export type Referral = {
   kol?: boolean
   invitedCount?: number
   summaries?: CoinSummary[]
+  goodSummaries?: GoodSummary[]
 }
 
 export type GetReferralsRequest = {
@@ -308,6 +319,43 @@ export type GetLayeredReferralsRequest = {
 
 export type GetLayeredReferralsResponse = {
   infos?: Referral[]
+}
+
+export type GetAmountSettingsRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetAmountSettingsResponse = {
+  infos?: CloudHashingInspireV1Cloud-hashing-inspire.AppPurchaseAmountSetting[]
+}
+
+export type CreateAmountSettingRequest = {
+  appID?: string
+  userID?: string
+  targetUserID?: string
+  langID?: string
+  inviterName?: string
+  inviteeName?: string
+  info?: CloudHashingInspireV1Cloud-hashing-inspire.AppPurchaseAmountSetting
+}
+
+export type CreateAmountSettingResponse = {
+  infos?: CloudHashingInspireV1Cloud-hashing-inspire.AppPurchaseAmountSetting[]
+}
+
+export type CreateInvitationCodeRequest = {
+  appID?: string
+  userID?: string
+  targetUserID?: string
+  langID?: string
+  inviterName?: string
+  inviteeName?: string
+  info?: CloudHashingInspireV1Cloud-hashing-inspire.UserInvitationCode
+}
+
+export type CreateInvitationCodeResponse = {
+  info?: CloudHashingInspireV1Cloud-hashing-inspire.UserInvitationCode
 }
 
 export type KycReview = {
@@ -589,6 +637,33 @@ export type GetCommissionByAppUserResponse = {
   info?: Commission
 }
 
+export type GoodCommission = {
+  appID?: string
+  userID?: string
+  goodID?: string
+  amount?: number
+  coinTypeID?: string
+  coinName?: string
+}
+
+export type GetGoodCommissionsRequest = {
+  appID?: string
+  userID?: string
+}
+
+export type GetGoodCommissionsResponse = {
+  infos?: GoodCommission[]
+}
+
+export type GetUserGoodCommissionsRequest = {
+  appID?: string
+  targetUserID?: string
+}
+
+export type GetUserGoodCommissionsResponse = {
+  infos?: GoodCommission[]
+}
+
 export type UpdateKycReviewRequest = {
   info?: ReviewServiceV1Review-service.Review
   targetLangID?: string
@@ -700,6 +775,15 @@ export class CloudHashingApis {
   static GetLayeredReferrals(req: GetLayeredReferralsRequest, initReq?: fm.InitReq): Promise<GetLayeredReferralsResponse> {
     return fm.fetchReq<GetLayeredReferralsRequest, GetLayeredReferralsResponse>(`/v1/get/layered/referrals`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
+  static GetAmountSettings(req: GetAmountSettingsRequest, initReq?: fm.InitReq): Promise<GetAmountSettingsResponse> {
+    return fm.fetchReq<GetAmountSettingsRequest, GetAmountSettingsResponse>(`/v1/get/amount/settings`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateAmountSetting(req: CreateAmountSettingRequest, initReq?: fm.InitReq): Promise<CreateAmountSettingResponse> {
+    return fm.fetchReq<CreateAmountSettingRequest, CreateAmountSettingResponse>(`/v1/create/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static CreateInvitationCode(req: CreateInvitationCodeRequest, initReq?: fm.InitReq): Promise<CreateInvitationCodeResponse> {
+    return fm.fetchReq<CreateInvitationCodeRequest, CreateInvitationCodeResponse>(`/v1/create/invitation/code`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
   static GetKycReviews(req: GetKycReviewsRequest, initReq?: fm.InitReq): Promise<GetKycReviewsResponse> {
     return fm.fetchReq<GetKycReviewsRequest, GetKycReviewsResponse>(`/v1/get/kyc/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
@@ -771,6 +855,12 @@ export class CloudHashingApis {
   }
   static GetCommissionByAppUser(req: GetCommissionByAppUserRequest, initReq?: fm.InitReq): Promise<GetCommissionByAppUserResponse> {
     return fm.fetchReq<GetCommissionByAppUserRequest, GetCommissionByAppUserResponse>(`/v1/get/commission/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetGoodCommissions(req: GetGoodCommissionsRequest, initReq?: fm.InitReq): Promise<GetGoodCommissionsResponse> {
+    return fm.fetchReq<GetGoodCommissionsRequest, GetGoodCommissionsResponse>(`/v1/get/good/commissions`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetUserGoodCommissions(req: GetUserGoodCommissionsRequest, initReq?: fm.InitReq): Promise<GetUserGoodCommissionsResponse> {
+    return fm.fetchReq<GetUserGoodCommissionsRequest, GetUserGoodCommissionsResponse>(`/v1/get/user/good/commissions`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
   static UpdateKycReview(req: UpdateKycReviewRequest, initReq?: fm.InitReq): Promise<UpdateKycReviewResponse> {
     return fm.fetchReq<UpdateKycReviewRequest, UpdateKycReviewResponse>(`/v1/update/kyc/review`, {...initReq, method: "POST", body: JSON.stringify(req)})

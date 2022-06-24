@@ -11,6 +11,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/amount/setting": {
+      "post": {
+        "operationId": "CloudHashingApis_CreateAmountSetting",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAmountSettingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAmountSettingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/create/app/user/control": {
       "post": {
         "operationId": "CloudHashingApis_CreateAppUserControl",
@@ -99,6 +131,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/hashingapisv1CreateGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/create/invitation/code": {
+      "post": {
+        "operationId": "CloudHashingApis_CreateInvitationCode",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateInvitationCodeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateInvitationCodeRequest"
             }
           }
         ],
@@ -267,6 +331,38 @@
         ]
       }
     },
+    "/v1/get/amount/settings": {
+      "post": {
+        "operationId": "CloudHashingApis_GetAmountSettings",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAmountSettingsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAmountSettingsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/commission/by/app/user": {
       "post": {
         "operationId": "CloudHashingApis_GetCommissionByAppUser",
@@ -387,6 +483,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/hashingapisv1GetGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/get/good/commissions": {
+      "post": {
+        "operationId": "CloudHashingApis_GetGoodCommissions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodCommissionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodCommissionsRequest"
             }
           }
         ],
@@ -867,6 +995,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetReferralsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/get/user/good/commissions": {
+      "post": {
+        "operationId": "CloudHashingApis_GetUserGoodCommissions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserGoodCommissionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserGoodCommissionsRequest"
             }
           }
         ],
@@ -2269,6 +2429,48 @@
         }
       }
     },
+    "v1AppPurchaseAmountSetting": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "Percent": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "BadgeLarge": {
+          "type": "string"
+        },
+        "BadgeSmall": {
+          "type": "string"
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "End": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        }
+      }
+    },
     "v1AppRole": {
       "type": "object",
       "properties": {
@@ -2682,6 +2884,77 @@
         }
       }
     },
+    "v1CreateAmountSettingRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "InviterName": {
+          "type": "string"
+        },
+        "InviteeName": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+        }
+      }
+    },
+    "v1CreateAmountSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+          }
+        }
+      }
+    },
+    "v1CreateInvitationCodeRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "InviterName": {
+          "type": "string"
+        },
+        "InviteeName": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1UserInvitationCode"
+        }
+      }
+    },
+    "v1CreateInvitationCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserInvitationCode"
+        }
+      }
+    },
     "v1CreateOrderPaymentRequest": {
       "type": "object",
       "properties": {
@@ -2879,6 +3152,28 @@
         }
       }
     },
+    "v1GetAmountSettingsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAmountSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+          }
+        }
+      }
+    },
     "v1GetCommissionByAppUserRequest": {
       "type": "object",
       "properties": {
@@ -2931,6 +3226,28 @@
         "FeeAmount": {
           "type": "number",
           "format": "double"
+        }
+      }
+    },
+    "v1GetGoodCommissionsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetGoodCommissionsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodCommission"
+          }
         }
       }
     },
@@ -3064,6 +3381,28 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Referral"
+          }
+        }
+      }
+    },
+    "v1GetUserGoodCommissionsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserGoodCommissionsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodCommission"
           }
         }
       }
@@ -3232,6 +3571,30 @@
       },
       "title": "Request body and response"
     },
+    "v1GoodCommission": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        }
+      }
+    },
     "v1GoodDetail": {
       "type": "object",
       "properties": {
@@ -3397,6 +3760,35 @@
         },
         "Good": {
           "$ref": "#/definitions/v1GoodDetail"
+        }
+      }
+    },
+    "v1GoodSummary": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "Percent": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -3686,6 +4078,12 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1CoinSummary"
+          }
+        },
+        "GoodSummaries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodSummary"
           }
         }
       }
@@ -4158,6 +4556,30 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1WithdrawReview"
+        }
+      }
+    },
+    "v1UserInvitationCode": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "InvitationCode": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Confirmed": {
+          "type": "boolean"
         }
       }
     },

@@ -3269,6 +3269,7 @@
 | AccountID | [string](#string) |  |  |
 | Idle | [bool](#bool) |  |  |
 | OccupiedBy | [string](#string) |  |  |
+| AvailableAt | [uint32](#uint32) |  |  |
 
 
 
@@ -6701,6 +6702,7 @@ Cloud Hashing Billing
 | AccountID | [string](#string) |  |  |
 | Idle | [bool](#bool) |  |  |
 | OccupiedBy | [string](#string) |  |  |
+| AvailableAt | [uint32](#uint32) |  |  |
 
 
 

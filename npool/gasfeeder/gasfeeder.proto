@@ -135,6 +135,7 @@ message CoinGas {
     string GasCoinTypeID = 30;
     double DepositThresholdLow = 40;
     double DepositAmount = 50;
+    int32 OnlineScale = 60;
 }
 
 message CreateCoinGasRequest {

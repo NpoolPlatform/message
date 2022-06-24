@@ -176,6 +176,25 @@ service CloudHashingApis {
         };
     }
 
+    rpc GetAmountSettings (GetAmountSettingsRequest) returns (GetAmountSettingsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/amount/settings"
+            body: "*"
+        };
+    }
+    rpc CreateAmountSetting (CreateAmountSettingRequest) returns (CreateAmountSettingResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/amount/setting"
+            body: "*"
+        };
+    }
+    rpc CreateInvitationCode (CreateInvitationCodeRequest) returns (CreateInvitationCodeResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/invitation/code"
+            body: "*"
+        };
+    }
+
     rpc GetKycReviews (GetKycReviewsRequest) returns (GetKycReviewsResponse) {
         option (google.api.http) = {
             post: "/v1/get/kyc/reviews"
@@ -323,6 +342,20 @@ service CloudHashingApis {
     rpc GetCommissionByAppUser (GetCommissionByAppUserRequest) returns (GetCommissionByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/commission/by/app/user"
+            body: "*"
+        };
+    }
+
+    rpc GetGoodCommissions (GetGoodCommissionsRequest) returns (GetGoodCommissionsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good/commissions"
+            body: "*"
+        };
+    }
+
+    rpc GetUserGoodCommissions (GetUserGoodCommissionsRequest) returns (GetUserGoodCommissionsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/good/commissions"
             body: "*"
         };
     }
@@ -624,6 +657,16 @@ message CoinSummary {
     string Unit = 50;
 }
 
+message GoodSummary {
+    string GoodID = 10;
+    string CoinTypeID = 20;
+    string CoinName = 30;
+    uint32 Units = 40;
+    double Amount = 50;
+    string Unit = 60;
+    uint32 Percent = 70;
+}
+
 message Referral {
     app.user.manager.v1.AppUser User = 10;
     app.user.manager.v1.AppUserExtra Extra = 20;
@@ -633,6 +676,7 @@ message Referral {
     bool Kol = 60;
     uint32 InvitedCount = 70;
     repeated CoinSummary Summaries = 80;
+    repeated GoodSummary GoodSummaries = 90;
 }
 
 message GetReferralsRequest {
@@ -651,6 +695,43 @@ message GetLayeredReferralsRequest {
 
 message GetLayeredReferralsResponse {
     repeated Referral Infos = 10;
+}
+
+message GetAmountSettingsRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetAmountSettingsResponse {
+    repeated cloud.hashing.inspire.v1.AppPurchaseAmountSetting Infos = 10;
+}
+
+message CreateAmountSettingRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string TargetUserID = 30;
+    string LangID = 40;
+    string InviterName = 50;
+    string InviteeName = 60;
+    cloud.hashing.inspire.v1.AppPurchaseAmountSetting Info = 70;
+}
+
+message CreateAmountSettingResponse {
+    repeated cloud.hashing.inspire.v1.AppPurchaseAmountSetting Infos = 10;
+}
+
+message CreateInvitationCodeRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string TargetUserID = 30;
+    string LangID = 40;
+    string InviterName = 50;
+    string InviteeName = 60;
+    cloud.hashing.inspire.v1.UserInvitationCode Info = 70;
+}
+
+message CreateInvitationCodeResponse {
+    cloud.hashing.inspire.v1.UserInvitationCode Info = 10;
 }
 
 message KycReview {
@@ -935,6 +1016,33 @@ message GetCommissionByAppUserRequest {
 
 message GetCommissionByAppUserResponse {
     Commission Info = 10;
+}
+
+message GoodCommission {
+    string AppID = 10;
+    string UserID = 20;
+    string GoodID = 30;
+    double Amount = 40;
+    string CoinTypeID = 50;
+    string CoinName = 60;
+}
+
+message GetGoodCommissionsRequest {
+    string AppID = 10;
+    string UserID = 20;
+}
+
+message GetGoodCommissionsResponse {
+    repeated GoodCommission Infos = 10;
+}
+
+message GetUserGoodCommissionsRequest {
+    string AppID = 10;
+    string TargetUserID = 20;
+}
+
+message GetUserGoodCommissionsResponse {
+    repeated GoodCommission Infos = 10;
 }
 
 message UpdateKycReviewRequest {

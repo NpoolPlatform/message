@@ -3418,6 +3418,156 @@ func (x *ContactByEmailResponse) GetMessage() string {
 	return ""
 }
 
+type NotifyEmailRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AppID        string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	UserID       string `protobuf:"bytes,20,opt,name=UserID,proto3" json:"UserID,omitempty"`
+	UsedFor      string `protobuf:"bytes,30,opt,name=UsedFor,proto3" json:"UsedFor,omitempty"`
+	ReceiverID   string `protobuf:"bytes,40,opt,name=ReceiverID,proto3" json:"ReceiverID,omitempty"`
+	LangID       string `protobuf:"bytes,50,opt,name=LangID,proto3" json:"LangID,omitempty"`
+	SenderName   string `protobuf:"bytes,60,opt,name=SenderName,proto3" json:"SenderName,omitempty"`
+	ReceiverName string `protobuf:"bytes,70,opt,name=ReceiverName,proto3" json:"ReceiverName,omitempty"`
+}
+
+func (x *NotifyEmailRequest) Reset() {
+	*x = NotifyEmailRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[61]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *NotifyEmailRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*NotifyEmailRequest) ProtoMessage() {}
+
+func (x *NotifyEmailRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[61]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use NotifyEmailRequest.ProtoReflect.Descriptor instead.
+func (*NotifyEmailRequest) Descriptor() ([]byte, []int) {
+	return file_npool_thirdgateway_thirdgateway_proto_rawDescGZIP(), []int{61}
+}
+
+func (x *NotifyEmailRequest) GetAppID() string {
+	if x != nil {
+		return x.AppID
+	}
+	return ""
+}
+
+func (x *NotifyEmailRequest) GetUserID() string {
+	if x != nil {
+		return x.UserID
+	}
+	return ""
+}
+
+func (x *NotifyEmailRequest) GetUsedFor() string {
+	if x != nil {
+		return x.UsedFor
+	}
+	return ""
+}
+
+func (x *NotifyEmailRequest) GetReceiverID() string {
+	if x != nil {
+		return x.ReceiverID
+	}
+	return ""
+}
+
+func (x *NotifyEmailRequest) GetLangID() string {
+	if x != nil {
+		return x.LangID
+	}
+	return ""
+}
+
+func (x *NotifyEmailRequest) GetSenderName() string {
+	if x != nil {
+		return x.SenderName
+	}
+	return ""
+}
+
+func (x *NotifyEmailRequest) GetReceiverName() string {
+	if x != nil {
+		return x.ReceiverName
+	}
+	return ""
+}
+
+type NotifyEmailResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Code    int32  `protobuf:"varint,10,opt,name=Code,proto3" json:"Code,omitempty"`
+	Message string `protobuf:"bytes,20,opt,name=Message,proto3" json:"Message,omitempty"`
+}
+
+func (x *NotifyEmailResponse) Reset() {
+	*x = NotifyEmailResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[62]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *NotifyEmailResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*NotifyEmailResponse) ProtoMessage() {}
+
+func (x *NotifyEmailResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_thirdgateway_thirdgateway_proto_msgTypes[62]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use NotifyEmailResponse.ProtoReflect.Descriptor instead.
+func (*NotifyEmailResponse) Descriptor() ([]byte, []int) {
+	return file_npool_thirdgateway_thirdgateway_proto_rawDescGZIP(), []int{62}
+}
+
+func (x *NotifyEmailResponse) GetCode() int32 {
+	if x != nil {
+		return x.Code
+	}
+	return 0
+}
+
+func (x *NotifyEmailResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
 var File_npool_thirdgateway_thirdgateway_proto protoreflect.FileDescriptor
 
 var file_npool_thirdgateway_thirdgateway_proto_rawDesc = []byte{
@@ -3810,7 +3960,25 @@ var file_npool_thirdgateway_thirdgateway_proto_rawDesc = []byte{
 	0x6d, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04,
 	0x43, 0x6f, 0x64, 0x65, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x43, 0x6f, 0x64, 0x65,
 	0x12, 0x18, 0x0a, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x14, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x32, 0xaa, 0x27, 0x0a, 0x0c, 0x54,
+	0x09, 0x52, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0xd8, 0x01, 0x0a, 0x12, 0x4e,
+	0x6f, 0x74, 0x69, 0x66, 0x79, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49,
+	0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12,
+	0x18, 0x0a, 0x07, 0x55, 0x73, 0x65, 0x64, 0x46, 0x6f, 0x72, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x07, 0x55, 0x73, 0x65, 0x64, 0x46, 0x6f, 0x72, 0x12, 0x1e, 0x0a, 0x0a, 0x52, 0x65, 0x63,
+	0x65, 0x69, 0x76, 0x65, 0x72, 0x49, 0x44, 0x18, 0x28, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x52,
+	0x65, 0x63, 0x65, 0x69, 0x76, 0x65, 0x72, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x4c, 0x61, 0x6e,
+	0x67, 0x49, 0x44, 0x18, 0x32, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x4c, 0x61, 0x6e, 0x67, 0x49,
+	0x44, 0x12, 0x1e, 0x0a, 0x0a, 0x53, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x18,
+	0x3c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x53, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x4e, 0x61, 0x6d,
+	0x65, 0x12, 0x22, 0x0a, 0x0c, 0x52, 0x65, 0x63, 0x65, 0x69, 0x76, 0x65, 0x72, 0x4e, 0x61, 0x6d,
+	0x65, 0x18, 0x46, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x52, 0x65, 0x63, 0x65, 0x69, 0x76, 0x65,
+	0x72, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x43, 0x0a, 0x13, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x45,
+	0x6d, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04,
+	0x43, 0x6f, 0x64, 0x65, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x43, 0x6f, 0x64, 0x65,
+	0x12, 0x18, 0x0a, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x14, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x32, 0xa3, 0x28, 0x0a, 0x0c, 0x54,
 	0x68, 0x69, 0x72, 0x64, 0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12, 0x51, 0x0a, 0x07, 0x56,
 	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x19,
@@ -4125,11 +4293,18 @@ var file_npool_thirdgateway_thirdgateway_proto_rawDesc = []byte{
 	0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x42, 0x79, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x52, 0x65,
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1f, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x19, 0x22, 0x14,
 	0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2f, 0x62, 0x79, 0x2f, 0x65,
-	0x6d, 0x61, 0x69, 0x6c, 0x3a, 0x01, 0x2a, 0x42, 0x35, 0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75,
-	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66,
-	0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f,
-	0x6c, 0x2f, 0x74, 0x68, 0x69, 0x72, 0x64, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x62, 0x06,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6d, 0x61, 0x69, 0x6c, 0x3a, 0x01, 0x2a, 0x12, 0x77, 0x0a, 0x0b, 0x4e, 0x6f, 0x74, 0x69, 0x66,
+	0x79, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x12, 0x24, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x2e, 0x67,
+	0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79,
+	0x45, 0x6d, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x25, 0x2e, 0x74,
+	0x68, 0x69, 0x72, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e,
+	0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x1b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x15, 0x22, 0x10, 0x2f, 0x76, 0x31,
+	0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x2f, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x3a, 0x01, 0x2a,
+	0x42, 0x35, 0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e,
+	0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x74, 0x68, 0x69, 0x72, 0x64,
+	0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -4144,7 +4319,7 @@ func file_npool_thirdgateway_thirdgateway_proto_rawDescGZIP() []byte {
 	return file_npool_thirdgateway_thirdgateway_proto_rawDescData
 }
 
-var file_npool_thirdgateway_thirdgateway_proto_msgTypes = make([]protoimpl.MessageInfo, 61)
+var file_npool_thirdgateway_thirdgateway_proto_msgTypes = make([]protoimpl.MessageInfo, 63)
 var file_npool_thirdgateway_thirdgateway_proto_goTypes = []interface{}{
 	(*SendSMSCodeRequest)(nil),                           // 0: third.gateway.v1.SendSMSCodeRequest
 	(*SendSMSCodeResponse)(nil),                          // 1: third.gateway.v1.SendSMSCodeResponse
@@ -4207,8 +4382,10 @@ var file_npool_thirdgateway_thirdgateway_proto_goTypes = []interface{}{
 	(*VerifyGoogleRecaptchaV3Response)(nil),              // 58: third.gateway.v1.VerifyGoogleRecaptchaV3Response
 	(*ContactByEmailRequest)(nil),                        // 59: third.gateway.v1.ContactByEmailRequest
 	(*ContactByEmailResponse)(nil),                       // 60: third.gateway.v1.ContactByEmailResponse
-	(*emptypb.Empty)(nil),                                // 61: google.protobuf.Empty
-	(*npool.VersionResponse)(nil),                        // 62: npool.v1.VersionResponse
+	(*NotifyEmailRequest)(nil),                           // 61: third.gateway.v1.NotifyEmailRequest
+	(*NotifyEmailResponse)(nil),                          // 62: third.gateway.v1.NotifyEmailResponse
+	(*emptypb.Empty)(nil),                                // 63: google.protobuf.Empty
+	(*npool.VersionResponse)(nil),                        // 64: npool.v1.VersionResponse
 }
 var file_npool_thirdgateway_thirdgateway_proto_depIdxs = []int32{
 	8,  // 0: third.gateway.v1.CreateAppSMSTemplateRequest.Info:type_name -> third.gateway.v1.AppSMSTemplate
@@ -4241,7 +4418,7 @@ var file_npool_thirdgateway_thirdgateway_proto_depIdxs = []int32{
 	38, // 27: third.gateway.v1.GetAppContactByAppUsedForAccountTypeResponse.Info:type_name -> third.gateway.v1.AppContact
 	38, // 28: third.gateway.v1.GetAppContactsByAppResponse.Infos:type_name -> third.gateway.v1.AppContact
 	38, // 29: third.gateway.v1.GetAppContactsByOtherAppResponse.Infos:type_name -> third.gateway.v1.AppContact
-	61, // 30: third.gateway.v1.ThirdGateway.Version:input_type -> google.protobuf.Empty
+	63, // 30: third.gateway.v1.ThirdGateway.Version:input_type -> google.protobuf.Empty
 	9,  // 31: third.gateway.v1.ThirdGateway.CreateAppSMSTemplate:input_type -> third.gateway.v1.CreateAppSMSTemplateRequest
 	11, // 32: third.gateway.v1.ThirdGateway.CreateAppSMSTemplateForOtherApp:input_type -> third.gateway.v1.CreateAppSMSTemplateForOtherAppRequest
 	13, // 33: third.gateway.v1.ThirdGateway.GetAppSMSTemplate:input_type -> third.gateway.v1.GetAppSMSTemplateRequest
@@ -4271,38 +4448,40 @@ var file_npool_thirdgateway_thirdgateway_proto_depIdxs = []int32{
 	55, // 57: third.gateway.v1.ThirdGateway.VerifyGoogleAuthentication:input_type -> third.gateway.v1.VerifyGoogleAuthenticationRequest
 	57, // 58: third.gateway.v1.ThirdGateway.VerifyGoogleRecaptchaV3:input_type -> third.gateway.v1.VerifyGoogleRecaptchaV3Request
 	59, // 59: third.gateway.v1.ThirdGateway.ContactByEmail:input_type -> third.gateway.v1.ContactByEmailRequest
-	62, // 60: third.gateway.v1.ThirdGateway.Version:output_type -> npool.v1.VersionResponse
-	10, // 61: third.gateway.v1.ThirdGateway.CreateAppSMSTemplate:output_type -> third.gateway.v1.CreateAppSMSTemplateResponse
-	12, // 62: third.gateway.v1.ThirdGateway.CreateAppSMSTemplateForOtherApp:output_type -> third.gateway.v1.CreateAppSMSTemplateForOtherAppResponse
-	14, // 63: third.gateway.v1.ThirdGateway.GetAppSMSTemplate:output_type -> third.gateway.v1.GetAppSMSTemplateResponse
-	16, // 64: third.gateway.v1.ThirdGateway.UpdateAppSMSTemplate:output_type -> third.gateway.v1.UpdateAppSMSTemplateResponse
-	20, // 65: third.gateway.v1.ThirdGateway.GetAppSMSTemplatesByApp:output_type -> third.gateway.v1.GetAppSMSTemplatesByAppResponse
-	22, // 66: third.gateway.v1.ThirdGateway.GetAppSMSTemplatesByOtherApp:output_type -> third.gateway.v1.GetAppSMSTemplatesByOtherAppResponse
-	18, // 67: third.gateway.v1.ThirdGateway.GetAppSMSTemplateByAppLangUsedFor:output_type -> third.gateway.v1.GetAppSMSTemplateByAppLangUsedForResponse
-	25, // 68: third.gateway.v1.ThirdGateway.CreateAppEmailTemplate:output_type -> third.gateway.v1.CreateAppEmailTemplateResponse
-	27, // 69: third.gateway.v1.ThirdGateway.CreateAppEmailTemplateForOtherApp:output_type -> third.gateway.v1.CreateAppEmailTemplateForOtherAppResponse
-	29, // 70: third.gateway.v1.ThirdGateway.GetAppEmailTemplate:output_type -> third.gateway.v1.GetAppEmailTemplateResponse
-	31, // 71: third.gateway.v1.ThirdGateway.UpdateAppEmailTemplate:output_type -> third.gateway.v1.UpdateAppEmailTemplateResponse
-	35, // 72: third.gateway.v1.ThirdGateway.GetAppEmailTemplatesByApp:output_type -> third.gateway.v1.GetAppEmailTemplatesByAppResponse
-	37, // 73: third.gateway.v1.ThirdGateway.GetAppEmailTemplatesByOtherApp:output_type -> third.gateway.v1.GetAppEmailTemplatesByOtherAppResponse
-	33, // 74: third.gateway.v1.ThirdGateway.GetAppEmailTemplateByAppLangUsedFor:output_type -> third.gateway.v1.GetAppEmailTemplateByAppLangUsedForResponse
-	40, // 75: third.gateway.v1.ThirdGateway.CreateAppContact:output_type -> third.gateway.v1.CreateAppContactResponse
-	42, // 76: third.gateway.v1.ThirdGateway.CreateAppContactForOtherApp:output_type -> third.gateway.v1.CreateAppContactForOtherAppResponse
-	44, // 77: third.gateway.v1.ThirdGateway.GetAppContact:output_type -> third.gateway.v1.GetAppContactResponse
-	46, // 78: third.gateway.v1.ThirdGateway.UpdateAppContact:output_type -> third.gateway.v1.UpdateAppContactResponse
-	50, // 79: third.gateway.v1.ThirdGateway.GetAppContactsByApp:output_type -> third.gateway.v1.GetAppContactsByAppResponse
-	52, // 80: third.gateway.v1.ThirdGateway.GetAppContactsByOtherApp:output_type -> third.gateway.v1.GetAppContactsByOtherAppResponse
-	48, // 81: third.gateway.v1.ThirdGateway.GetAppContactByAppUsedForAccountType:output_type -> third.gateway.v1.GetAppContactByAppUsedForAccountTypeResponse
-	1,  // 82: third.gateway.v1.ThirdGateway.SendSMSCode:output_type -> third.gateway.v1.SendSMSCodeResponse
-	3,  // 83: third.gateway.v1.ThirdGateway.VerifySMSCode:output_type -> third.gateway.v1.VerifySMSCodeResponse
-	5,  // 84: third.gateway.v1.ThirdGateway.SendEmailCode:output_type -> third.gateway.v1.SendEmailCodeResponse
-	7,  // 85: third.gateway.v1.ThirdGateway.VerifyEmailCode:output_type -> third.gateway.v1.VerifyEmailCodeResponse
-	54, // 86: third.gateway.v1.ThirdGateway.SetupGoogleAuthentication:output_type -> third.gateway.v1.SetupGoogleAuthenticationResponse
-	56, // 87: third.gateway.v1.ThirdGateway.VerifyGoogleAuthentication:output_type -> third.gateway.v1.VerifyGoogleAuthenticationResponse
-	58, // 88: third.gateway.v1.ThirdGateway.VerifyGoogleRecaptchaV3:output_type -> third.gateway.v1.VerifyGoogleRecaptchaV3Response
-	60, // 89: third.gateway.v1.ThirdGateway.ContactByEmail:output_type -> third.gateway.v1.ContactByEmailResponse
-	60, // [60:90] is the sub-list for method output_type
-	30, // [30:60] is the sub-list for method input_type
+	61, // 60: third.gateway.v1.ThirdGateway.NotifyEmail:input_type -> third.gateway.v1.NotifyEmailRequest
+	64, // 61: third.gateway.v1.ThirdGateway.Version:output_type -> npool.v1.VersionResponse
+	10, // 62: third.gateway.v1.ThirdGateway.CreateAppSMSTemplate:output_type -> third.gateway.v1.CreateAppSMSTemplateResponse
+	12, // 63: third.gateway.v1.ThirdGateway.CreateAppSMSTemplateForOtherApp:output_type -> third.gateway.v1.CreateAppSMSTemplateForOtherAppResponse
+	14, // 64: third.gateway.v1.ThirdGateway.GetAppSMSTemplate:output_type -> third.gateway.v1.GetAppSMSTemplateResponse
+	16, // 65: third.gateway.v1.ThirdGateway.UpdateAppSMSTemplate:output_type -> third.gateway.v1.UpdateAppSMSTemplateResponse
+	20, // 66: third.gateway.v1.ThirdGateway.GetAppSMSTemplatesByApp:output_type -> third.gateway.v1.GetAppSMSTemplatesByAppResponse
+	22, // 67: third.gateway.v1.ThirdGateway.GetAppSMSTemplatesByOtherApp:output_type -> third.gateway.v1.GetAppSMSTemplatesByOtherAppResponse
+	18, // 68: third.gateway.v1.ThirdGateway.GetAppSMSTemplateByAppLangUsedFor:output_type -> third.gateway.v1.GetAppSMSTemplateByAppLangUsedForResponse
+	25, // 69: third.gateway.v1.ThirdGateway.CreateAppEmailTemplate:output_type -> third.gateway.v1.CreateAppEmailTemplateResponse
+	27, // 70: third.gateway.v1.ThirdGateway.CreateAppEmailTemplateForOtherApp:output_type -> third.gateway.v1.CreateAppEmailTemplateForOtherAppResponse
+	29, // 71: third.gateway.v1.ThirdGateway.GetAppEmailTemplate:output_type -> third.gateway.v1.GetAppEmailTemplateResponse
+	31, // 72: third.gateway.v1.ThirdGateway.UpdateAppEmailTemplate:output_type -> third.gateway.v1.UpdateAppEmailTemplateResponse
+	35, // 73: third.gateway.v1.ThirdGateway.GetAppEmailTemplatesByApp:output_type -> third.gateway.v1.GetAppEmailTemplatesByAppResponse
+	37, // 74: third.gateway.v1.ThirdGateway.GetAppEmailTemplatesByOtherApp:output_type -> third.gateway.v1.GetAppEmailTemplatesByOtherAppResponse
+	33, // 75: third.gateway.v1.ThirdGateway.GetAppEmailTemplateByAppLangUsedFor:output_type -> third.gateway.v1.GetAppEmailTemplateByAppLangUsedForResponse
+	40, // 76: third.gateway.v1.ThirdGateway.CreateAppContact:output_type -> third.gateway.v1.CreateAppContactResponse
+	42, // 77: third.gateway.v1.ThirdGateway.CreateAppContactForOtherApp:output_type -> third.gateway.v1.CreateAppContactForOtherAppResponse
+	44, // 78: third.gateway.v1.ThirdGateway.GetAppContact:output_type -> third.gateway.v1.GetAppContactResponse
+	46, // 79: third.gateway.v1.ThirdGateway.UpdateAppContact:output_type -> third.gateway.v1.UpdateAppContactResponse
+	50, // 80: third.gateway.v1.ThirdGateway.GetAppContactsByApp:output_type -> third.gateway.v1.GetAppContactsByAppResponse
+	52, // 81: third.gateway.v1.ThirdGateway.GetAppContactsByOtherApp:output_type -> third.gateway.v1.GetAppContactsByOtherAppResponse
+	48, // 82: third.gateway.v1.ThirdGateway.GetAppContactByAppUsedForAccountType:output_type -> third.gateway.v1.GetAppContactByAppUsedForAccountTypeResponse
+	1,  // 83: third.gateway.v1.ThirdGateway.SendSMSCode:output_type -> third.gateway.v1.SendSMSCodeResponse
+	3,  // 84: third.gateway.v1.ThirdGateway.VerifySMSCode:output_type -> third.gateway.v1.VerifySMSCodeResponse
+	5,  // 85: third.gateway.v1.ThirdGateway.SendEmailCode:output_type -> third.gateway.v1.SendEmailCodeResponse
+	7,  // 86: third.gateway.v1.ThirdGateway.VerifyEmailCode:output_type -> third.gateway.v1.VerifyEmailCodeResponse
+	54, // 87: third.gateway.v1.ThirdGateway.SetupGoogleAuthentication:output_type -> third.gateway.v1.SetupGoogleAuthenticationResponse
+	56, // 88: third.gateway.v1.ThirdGateway.VerifyGoogleAuthentication:output_type -> third.gateway.v1.VerifyGoogleAuthenticationResponse
+	58, // 89: third.gateway.v1.ThirdGateway.VerifyGoogleRecaptchaV3:output_type -> third.gateway.v1.VerifyGoogleRecaptchaV3Response
+	60, // 90: third.gateway.v1.ThirdGateway.ContactByEmail:output_type -> third.gateway.v1.ContactByEmailResponse
+	62, // 91: third.gateway.v1.ThirdGateway.NotifyEmail:output_type -> third.gateway.v1.NotifyEmailResponse
+	61, // [61:92] is the sub-list for method output_type
+	30, // [30:61] is the sub-list for method input_type
 	30, // [30:30] is the sub-list for extension type_name
 	30, // [30:30] is the sub-list for extension extendee
 	0,  // [0:30] is the sub-list for field type_name
@@ -5046,6 +5225,30 @@ func file_npool_thirdgateway_thirdgateway_proto_init() {
 				return nil
 			}
 		}
+		file_npool_thirdgateway_thirdgateway_proto_msgTypes[61].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*NotifyEmailRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_thirdgateway_thirdgateway_proto_msgTypes[62].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*NotifyEmailResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -5053,7 +5256,7 @@ func file_npool_thirdgateway_thirdgateway_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_thirdgateway_thirdgateway_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   61,
+			NumMessages:   63,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

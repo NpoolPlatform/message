@@ -619,6 +619,38 @@
         ]
       }
     },
+    "/v1/notify/email": {
+      "post": {
+        "operationId": "ThirdGateway_NotifyEmail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1NotifyEmailResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1NotifyEmailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ThirdGateway"
+        ]
+      }
+    },
     "/v1/send/email/code": {
       "post": {
         "operationId": "ThirdGateway_SendEmailCode",
@@ -1474,6 +1506,44 @@
           "items": {
             "$ref": "#/definitions/v1AppSMSTemplate"
           }
+        }
+      }
+    },
+    "v1NotifyEmailRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        },
+        "ReceiverID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "SenderName": {
+          "type": "string"
+        },
+        "ReceiverName": {
+          "type": "string"
+        }
+      }
+    },
+    "v1NotifyEmailResponse": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Message": {
+          "type": "string"
         }
       }
     },

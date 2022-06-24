@@ -205,6 +205,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc GetRegistrationInvitationsByOtherApp (GetRegistrationInvitationsByOtherAppRequest) returns (GetRegistrationInvitationsByOtherAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/registration/invitations/by/other/app"
+            body: "*"
+        };
+    }
     rpc GetRegistrationInvitationsByAppInviter (GetRegistrationInvitationsByAppInviterRequest) returns (GetRegistrationInvitationsByAppInviterResponse) {
         option (google.api.http) = {
             post: "/v1/get/registration/invitations/by/app/inviter"
@@ -221,6 +227,12 @@ service CloudHashingInspire {
     rpc CreateUserInvitationCode (CreateUserInvitationCodeRequest) returns (CreateUserInvitationCodeResponse) {
         option (google.api.http) = {
             post: "/v1/create/user/invitation/code"
+            body: "*"
+        };
+    }
+    rpc UpdateUserInvitationCode (UpdateUserInvitationCodeRequest) returns (UpdateUserInvitationCodeResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user/invitation/code"
             body: "*"
         };
     }
@@ -814,6 +826,7 @@ message AppPurchaseAmountSetting {
     uint32 Start = 80;
     uint32 End = 90;
     string UserID = 100;
+    string GoodID = 110;
 }
 
 message CreateAppPurchaseAmountSettingRequest {
@@ -943,6 +956,14 @@ message GetRegistrationInvitationsByAppResponse {
     repeated RegistrationInvitation Infos = 10;
 }
 
+message GetRegistrationInvitationsByOtherAppRequest {
+    string TargetAppID = 10;
+}
+
+message GetRegistrationInvitationsByOtherAppResponse {
+    repeated RegistrationInvitation Infos = 10;
+}
+
 message GetRegistrationInvitationsByAppInviterRequest {
     string AppID = 10;
     string InviterID = 20;
@@ -966,6 +987,8 @@ message UserInvitationCode {
     string UserID = 20;
     string AppID = 30;
     string InvitationCode = 40;
+    uint32 CreateAt = 50;
+    bool Confirmed = 60;
 }
 
 message CreateUserInvitationCodeRequest {
@@ -973,6 +996,14 @@ message CreateUserInvitationCodeRequest {
 }
 
 message CreateUserInvitationCodeResponse {
+    UserInvitationCode Info = 10;
+}
+
+message UpdateUserInvitationCodeRequest {
+    UserInvitationCode Info = 10;
+}
+
+message UpdateUserInvitationCodeResponse {
     UserInvitationCode Info = 10;
 }
 

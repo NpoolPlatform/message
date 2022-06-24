@@ -198,6 +198,13 @@ service ThirdGateway {
             body: "*"
         };
     }
+
+    rpc NotifyEmail (NotifyEmailRequest) returns (NotifyEmailResponse) {
+        option (google.api.http) = {
+            post: "/v1/notify/email"
+            body: "*"
+        };
+    }
 }
 
 message SendSMSCodeRequest {
@@ -506,6 +513,21 @@ message ContactByEmailRequest {
 }
 
 message ContactByEmailResponse {
+    int32 Code = 10;
+    string Message = 20;
+}
+
+message NotifyEmailRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string UsedFor = 30;
+    string ReceiverID = 40;
+    string LangID = 50;
+    string SenderName = 60;
+    string ReceiverName = 70;
+}
+
+message NotifyEmailResponse {
     int32 Code = 10;
     string Message = 20;
 }

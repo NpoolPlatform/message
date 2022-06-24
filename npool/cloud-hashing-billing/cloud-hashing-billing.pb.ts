@@ -497,6 +497,7 @@ export type GoodPayment = {
   accountID?: string
   idle?: boolean
   occupiedBy?: string
+  availableAt?: number
 }
 
 export type CreateGoodPaymentRequest = {

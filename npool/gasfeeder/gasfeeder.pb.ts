@@ -13,6 +13,7 @@ export type CoinGas = {
   gasCoinTypeID?: string
   depositThresholdLow?: number
   depositAmount?: number
+  onlineScale?: number
 }
 
 export type CreateCoinGasRequest = {
