@@ -61,15 +61,15 @@ export type GetServiceMethodAPIResponse = {
 
 export class ApiManager {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static Register(req: RegisterRequest, initReq?: fm.InitReq): Promise<RegisterResponse> {
-    return fm.fetchReq<RegisterRequest, RegisterResponse>(`/v1/register`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<RegisterRequest, RegisterResponse>(`/v1/register`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetApis(req: GetApisRequest, initReq?: fm.InitReq): Promise<GetApisResponse> {
-    return fm.fetchReq<GetApisRequest, GetApisResponse>(`/v1/get/apis`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetApisRequest, GetApisResponse>(`/v1/get/apis`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetServiceMethodAPI(req: GetServiceMethodAPIRequest, initReq?: fm.InitReq): Promise<GetServiceMethodAPIResponse> {
-    return fm.fetchReq<GetServiceMethodAPIRequest, GetServiceMethodAPIResponse>(`/v1/get/service/method/api`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetServiceMethodAPIRequest, GetServiceMethodAPIResponse>(`/v1/get/service/method/api`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
 }

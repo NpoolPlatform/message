@@ -423,6 +423,7 @@
 | DisplayIndex | [uint32](#uint32) |  |  |
 | Visible | [bool](#bool) |  |  |
 | PurchaseLimit | [int32](#int32) |  |  |
+| CommissionPercent | [uint32](#uint32) |  |  |
 
 
 
@@ -3526,6 +3527,7 @@ Cloud Hashing Goods
 | DisplayIndex | [uint32](#uint32) |  |  |
 | Visible | [bool](#bool) |  |  |
 | PurchaseLimit | [int32](#int32) |  |  |
+| CommissionPercent | [uint32](#uint32) |  |  |
 
 
 

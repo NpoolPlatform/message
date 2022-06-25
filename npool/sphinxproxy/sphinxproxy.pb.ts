@@ -144,18 +144,18 @@ export type ProxySignResponseInfo = {
 
 export class SphinxProxy {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetBalance(req: GetBalanceRequest, initReq?: fm.InitReq): Promise<GetBalanceResponse> {
-    return fm.fetchReq<GetBalanceRequest, GetBalanceResponse>(`/v1/get/balance`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetBalanceRequest, GetBalanceResponse>(`/v1/get/balance`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateWallet(req: CreateWalletRequest, initReq?: fm.InitReq): Promise<CreateWalletResponse> {
-    return fm.fetchReq<CreateWalletRequest, CreateWalletResponse>(`/v1/create/wallet`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateWalletRequest, CreateWalletResponse>(`/v1/create/wallet`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateTransaction(req: CreateTransactionRequest, initReq?: fm.InitReq): Promise<CreateTransactionResponse> {
-    return fm.fetchReq<CreateTransactionRequest, CreateTransactionResponse>(`/v1/create/transaction`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateTransactionRequest, CreateTransactionResponse>(`/v1/create/transaction`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetTransaction(req: GetTransactionRequest, initReq?: fm.InitReq): Promise<GetTransactionResponse> {
-    return fm.fetchReq<GetTransactionRequest, GetTransactionResponse>(`/v1/get/transaction`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetTransactionRequest, GetTransactionResponse>(`/v1/get/transaction`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
 }

@@ -119,39 +119,39 @@ export type GetThirdPartyOnlyResponse = {
 
 export class ThirdLoginGateway {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAuths(req: GetAuthsRequest, initReq?: fm.InitReq): Promise<GetAuthsResponse> {
-    return fm.fetchReq<GetAuthsRequest, GetAuthsResponse>(`/v1/get/auths`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAuthsRequest, GetAuthsResponse>(`/v1/get/auths`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppAuths(req: GetAppAuthsRequest, initReq?: fm.InitReq): Promise<GetAppAuthsResponse> {
-    return fm.fetchReq<GetAppAuthsRequest, GetAppAuthsResponse>(`/v1/get/app/auths`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppAuthsRequest, GetAppAuthsResponse>(`/v1/get/app/auths`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAuth(req: CreateAuthRequest, initReq?: fm.InitReq): Promise<CreateAuthResponse> {
-    return fm.fetchReq<CreateAuthRequest, CreateAuthResponse>(`/v1/create/auth`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAuthRequest, CreateAuthResponse>(`/v1/create/auth`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAuths(req: CreateAuthsRequest, initReq?: fm.InitReq): Promise<CreateAuthsResponse> {
-    return fm.fetchReq<CreateAuthsRequest, CreateAuthsResponse>(`/v1/create/auths`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAuthsRequest, CreateAuthsResponse>(`/v1/create/auths`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppAuth(req: CreateAppAuthRequest, initReq?: fm.InitReq): Promise<CreateAppAuthResponse> {
-    return fm.fetchReq<CreateAppAuthRequest, CreateAppAuthResponse>(`/v1/create/app/auth`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppAuthRequest, CreateAppAuthResponse>(`/v1/create/app/auth`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppAuths(req: CreateAppAuthsRequest, initReq?: fm.InitReq): Promise<CreateAppAuthsResponse> {
-    return fm.fetchReq<CreateAppAuthsRequest, CreateAppAuthsResponse>(`/v1/create/app/auths`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppAuthsRequest, CreateAppAuthsResponse>(`/v1/create/app/auths`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateThirdParty(req: CreateThirdPartyRequest, initReq?: fm.InitReq): Promise<CreateThirdPartyResponse> {
-    return fm.fetchReq<CreateThirdPartyRequest, CreateThirdPartyResponse>(`/v1/create/third/party`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateThirdPartyRequest, CreateThirdPartyResponse>(`/v1/create/third/party`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateThirdParty(req: UpdateThirdPartyRequest, initReq?: fm.InitReq): Promise<UpdateThirdPartyResponse> {
-    return fm.fetchReq<UpdateThirdPartyRequest, UpdateThirdPartyResponse>(`/v1/update/third/party`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateThirdPartyRequest, UpdateThirdPartyResponse>(`/v1/update/third/party`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetThirdParties(req: GetThirdPartiesRequest, initReq?: fm.InitReq): Promise<GetThirdPartiesResponse> {
-    return fm.fetchReq<GetThirdPartiesRequest, GetThirdPartiesResponse>(`/v1/get/third/parties`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetThirdPartiesRequest, GetThirdPartiesResponse>(`/v1/get/third/parties`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetThirdPartyOnly(req: GetThirdPartyOnlyRequest, initReq?: fm.InitReq): Promise<GetThirdPartyOnlyResponse> {
-    return fm.fetchReq<GetThirdPartyOnlyRequest, GetThirdPartyOnlyResponse>(`/v1/get/third/party/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetThirdPartyOnlyRequest, GetThirdPartyOnlyResponse>(`/v1/get/third/party/only`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static Login(req: LoginRequest, initReq?: fm.InitReq): Promise<LoginResponse> {
-    return fm.fetchReq<LoginRequest, LoginResponse>(`/v1/login`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<LoginRequest, LoginResponse>(`/v1/login`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
 }

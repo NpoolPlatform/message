@@ -176,54 +176,54 @@ export type DeleteDepositResponse = {
 
 export class GasFeeder {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateCoinGas(req: CreateCoinGasRequest, initReq?: fm.InitReq): Promise<CreateCoinGasResponse> {
-    return fm.fetchReq<CreateCoinGasRequest, CreateCoinGasResponse>(`/v1/create/coingas`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateCoinGasRequest, CreateCoinGasResponse>(`/v1/create/coingas`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateCoinGas(req: UpdateCoinGasRequest, initReq?: fm.InitReq): Promise<UpdateCoinGasResponse> {
-    return fm.fetchReq<UpdateCoinGasRequest, UpdateCoinGasResponse>(`/v1/update/coingas`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateCoinGasRequest, UpdateCoinGasResponse>(`/v1/update/coingas`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCoinGas(req: GetCoinGasRequest, initReq?: fm.InitReq): Promise<GetCoinGasResponse> {
-    return fm.fetchReq<GetCoinGasRequest, GetCoinGasResponse>(`/v1/get/coingas`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCoinGasRequest, GetCoinGasResponse>(`/v1/get/coingas`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCoinGasOnly(req: GetCoinGasOnlyRequest, initReq?: fm.InitReq): Promise<GetCoinGasOnlyResponse> {
-    return fm.fetchReq<GetCoinGasOnlyRequest, GetCoinGasOnlyResponse>(`/v1/get/coingas/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCoinGasOnlyRequest, GetCoinGasOnlyResponse>(`/v1/get/coingas/only`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCoinGases(req: GetCoinGasesRequest, initReq?: fm.InitReq): Promise<GetCoinGasesResponse> {
-    return fm.fetchReq<GetCoinGasesRequest, GetCoinGasesResponse>(`/v1/get/coingases`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCoinGasesRequest, GetCoinGasesResponse>(`/v1/get/coingases`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static ExistCoinGas(req: ExistCoinGasRequest, initReq?: fm.InitReq): Promise<ExistCoinGasResponse> {
-    return fm.fetchReq<ExistCoinGasRequest, ExistCoinGasResponse>(`/v1/exist/coingas`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<ExistCoinGasRequest, ExistCoinGasResponse>(`/v1/exist/coingas`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static ExistCoinGasConds(req: ExistCoinGasCondsRequest, initReq?: fm.InitReq): Promise<ExistCoinGasCondsResponse> {
-    return fm.fetchReq<ExistCoinGasCondsRequest, ExistCoinGasCondsResponse>(`/v1/exist/coingas/conds`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<ExistCoinGasCondsRequest, ExistCoinGasCondsResponse>(`/v1/exist/coingas/conds`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static DeleteCoinGas(req: DeleteCoinGasRequest, initReq?: fm.InitReq): Promise<DeleteCoinGasResponse> {
-    return fm.fetchReq<DeleteCoinGasRequest, DeleteCoinGasResponse>(`/v1/delete/coingas`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<DeleteCoinGasRequest, DeleteCoinGasResponse>(`/v1/delete/coingas`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateDeposit(req: CreateDepositRequest, initReq?: fm.InitReq): Promise<CreateDepositResponse> {
-    return fm.fetchReq<CreateDepositRequest, CreateDepositResponse>(`/v1/create/deposit`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateDepositRequest, CreateDepositResponse>(`/v1/create/deposit`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateDeposit(req: UpdateDepositRequest, initReq?: fm.InitReq): Promise<UpdateDepositResponse> {
-    return fm.fetchReq<UpdateDepositRequest, UpdateDepositResponse>(`/v1/update/deposit`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateDepositRequest, UpdateDepositResponse>(`/v1/update/deposit`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetDeposit(req: GetDepositRequest, initReq?: fm.InitReq): Promise<GetDepositResponse> {
-    return fm.fetchReq<GetDepositRequest, GetDepositResponse>(`/v1/get/deposit`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetDepositRequest, GetDepositResponse>(`/v1/get/deposit`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetDepositOnly(req: GetDepositOnlyRequest, initReq?: fm.InitReq): Promise<GetDepositOnlyResponse> {
-    return fm.fetchReq<GetDepositOnlyRequest, GetDepositOnlyResponse>(`/v1/get/deposit/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetDepositOnlyRequest, GetDepositOnlyResponse>(`/v1/get/deposit/only`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetDeposites(req: GetDepositesRequest, initReq?: fm.InitReq): Promise<GetDepositesResponse> {
-    return fm.fetchReq<GetDepositesRequest, GetDepositesResponse>(`/v1/get/deposits`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetDepositesRequest, GetDepositesResponse>(`/v1/get/deposits`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static ExistDeposit(req: ExistDepositRequest, initReq?: fm.InitReq): Promise<ExistDepositResponse> {
-    return fm.fetchReq<ExistDepositRequest, ExistDepositResponse>(`/v1/exist/deposit`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<ExistDepositRequest, ExistDepositResponse>(`/v1/exist/deposit`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static ExistDepositConds(req: ExistDepositCondsRequest, initReq?: fm.InitReq): Promise<ExistDepositCondsResponse> {
-    return fm.fetchReq<ExistDepositCondsRequest, ExistDepositCondsResponse>(`/v1/exist/deposit/conds`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<ExistDepositCondsRequest, ExistDepositCondsResponse>(`/v1/exist/deposit/conds`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static DeleteDeposit(req: DeleteDepositRequest, initReq?: fm.InitReq): Promise<DeleteDepositResponse> {
-    return fm.fetchReq<DeleteDepositRequest, DeleteDepositResponse>(`/v1/delete/deposit`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<DeleteDepositRequest, DeleteDepositResponse>(`/v1/delete/deposit`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
 }

@@ -1025,321 +1025,321 @@ export type GetEventCouponsByOtherAppResponse = {
 
 export class CloudHashingInspire {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateCommissionCoinSetting(req: CreateCommissionCoinSettingRequest, initReq?: fm.InitReq): Promise<CreateCommissionCoinSettingResponse> {
-    return fm.fetchReq<CreateCommissionCoinSettingRequest, CreateCommissionCoinSettingResponse>(`/v1/create/commission/coin/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateCommissionCoinSettingRequest, CreateCommissionCoinSettingResponse>(`/v1/create/commission/coin/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateCommissionCoinSetting(req: UpdateCommissionCoinSettingRequest, initReq?: fm.InitReq): Promise<UpdateCommissionCoinSettingResponse> {
-    return fm.fetchReq<UpdateCommissionCoinSettingRequest, UpdateCommissionCoinSettingResponse>(`/v1/update/commission/coin/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateCommissionCoinSettingRequest, UpdateCommissionCoinSettingResponse>(`/v1/update/commission/coin/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCommissionCoinSettings(req: GetCommissionCoinSettingsRequest, initReq?: fm.InitReq): Promise<GetCommissionCoinSettingsResponse> {
-    return fm.fetchReq<GetCommissionCoinSettingsRequest, GetCommissionCoinSettingsResponse>(`/v1/get/commission/coin/settings`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCommissionCoinSettingsRequest, GetCommissionCoinSettingsResponse>(`/v1/get/commission/coin/settings`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppCommissionSetting(req: CreateAppCommissionSettingRequest, initReq?: fm.InitReq): Promise<CreateAppCommissionSettingResponse> {
-    return fm.fetchReq<CreateAppCommissionSettingRequest, CreateAppCommissionSettingResponse>(`/v1/create/app/commission/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppCommissionSettingRequest, CreateAppCommissionSettingResponse>(`/v1/create/app/commission/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppCommissionSettingForOtherApp(req: CreateAppCommissionSettingForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppCommissionSettingForOtherAppResponse> {
-    return fm.fetchReq<CreateAppCommissionSettingForOtherAppRequest, CreateAppCommissionSettingForOtherAppResponse>(`/v1/create/app/commission/setting/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppCommissionSettingForOtherAppRequest, CreateAppCommissionSettingForOtherAppResponse>(`/v1/create/app/commission/setting/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppCommissionSetting(req: UpdateAppCommissionSettingRequest, initReq?: fm.InitReq): Promise<UpdateAppCommissionSettingResponse> {
-    return fm.fetchReq<UpdateAppCommissionSettingRequest, UpdateAppCommissionSettingResponse>(`/v1/update/app/commission/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppCommissionSettingRequest, UpdateAppCommissionSettingResponse>(`/v1/update/app/commission/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppCommissionSetting(req: GetAppCommissionSettingRequest, initReq?: fm.InitReq): Promise<GetAppCommissionSettingResponse> {
-    return fm.fetchReq<GetAppCommissionSettingRequest, GetAppCommissionSettingResponse>(`/v1/get/app/commission/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppCommissionSettingRequest, GetAppCommissionSettingResponse>(`/v1/get/app/commission/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppCommissionSettingByApp(req: GetAppCommissionSettingByAppRequest, initReq?: fm.InitReq): Promise<GetAppCommissionSettingByAppResponse> {
-    return fm.fetchReq<GetAppCommissionSettingByAppRequest, GetAppCommissionSettingByAppResponse>(`/v1/get/app/commission/setting/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppCommissionSettingByAppRequest, GetAppCommissionSettingByAppResponse>(`/v1/get/app/commission/setting/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppCommissionSettingByOtherApp(req: GetAppCommissionSettingByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppCommissionSettingByOtherAppResponse> {
-    return fm.fetchReq<GetAppCommissionSettingByOtherAppRequest, GetAppCommissionSettingByOtherAppResponse>(`/v1/get/app/commission/setting/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppCommissionSettingByOtherAppRequest, GetAppCommissionSettingByOtherAppResponse>(`/v1/get/app/commission/setting/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppInvitationSetting(req: CreateAppInvitationSettingRequest, initReq?: fm.InitReq): Promise<CreateAppInvitationSettingResponse> {
-    return fm.fetchReq<CreateAppInvitationSettingRequest, CreateAppInvitationSettingResponse>(`/v1/create/app/invitation/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppInvitationSettingRequest, CreateAppInvitationSettingResponse>(`/v1/create/app/invitation/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppInvitationSettingForOtherApp(req: CreateAppInvitationSettingForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppInvitationSettingForOtherAppResponse> {
-    return fm.fetchReq<CreateAppInvitationSettingForOtherAppRequest, CreateAppInvitationSettingForOtherAppResponse>(`/v1/create/app/invitation/setting/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppInvitationSettingForOtherAppRequest, CreateAppInvitationSettingForOtherAppResponse>(`/v1/create/app/invitation/setting/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppInvitationSetting(req: GetAppInvitationSettingRequest, initReq?: fm.InitReq): Promise<GetAppInvitationSettingResponse> {
-    return fm.fetchReq<GetAppInvitationSettingRequest, GetAppInvitationSettingResponse>(`/v1/get/app/invitation/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppInvitationSettingRequest, GetAppInvitationSettingResponse>(`/v1/get/app/invitation/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppInvitationSettingsByApp(req: GetAppInvitationSettingsByAppRequest, initReq?: fm.InitReq): Promise<GetAppInvitationSettingsByAppResponse> {
-    return fm.fetchReq<GetAppInvitationSettingsByAppRequest, GetAppInvitationSettingsByAppResponse>(`/v1/get/app/invitation/settings/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppInvitationSettingsByAppRequest, GetAppInvitationSettingsByAppResponse>(`/v1/get/app/invitation/settings/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppInvitationSettingsByOtherApp(req: GetAppInvitationSettingsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppInvitationSettingsByOtherAppResponse> {
-    return fm.fetchReq<GetAppInvitationSettingsByOtherAppRequest, GetAppInvitationSettingsByOtherAppResponse>(`/v1/get/app/invitation/settings/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppInvitationSettingsByOtherAppRequest, GetAppInvitationSettingsByOtherAppResponse>(`/v1/get/app/invitation/settings/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppInvitationSetting(req: UpdateAppInvitationSettingRequest, initReq?: fm.InitReq): Promise<UpdateAppInvitationSettingResponse> {
-    return fm.fetchReq<UpdateAppInvitationSettingRequest, UpdateAppInvitationSettingResponse>(`/v1/update/app/invitation/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppInvitationSettingRequest, UpdateAppInvitationSettingResponse>(`/v1/update/app/invitation/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppPurchaseAmountSetting(req: CreateAppPurchaseAmountSettingRequest, initReq?: fm.InitReq): Promise<CreateAppPurchaseAmountSettingResponse> {
-    return fm.fetchReq<CreateAppPurchaseAmountSettingRequest, CreateAppPurchaseAmountSettingResponse>(`/v1/create/app/purchase/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppPurchaseAmountSettingRequest, CreateAppPurchaseAmountSettingResponse>(`/v1/create/app/purchase/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppPurchaseAmountSettingForOtherApp(req: CreateAppPurchaseAmountSettingForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppPurchaseAmountSettingForOtherAppResponse> {
-    return fm.fetchReq<CreateAppPurchaseAmountSettingForOtherAppRequest, CreateAppPurchaseAmountSettingForOtherAppResponse>(`/v1/create/app/purchase/amount/setting/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppPurchaseAmountSettingForOtherAppRequest, CreateAppPurchaseAmountSettingForOtherAppResponse>(`/v1/create/app/purchase/amount/setting/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppPurchaseAmountSettingForOtherAppUser(req: CreateAppPurchaseAmountSettingForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateAppPurchaseAmountSettingForOtherAppUserResponse> {
-    return fm.fetchReq<CreateAppPurchaseAmountSettingForOtherAppUserRequest, CreateAppPurchaseAmountSettingForOtherAppUserResponse>(`/v1/create/app/purchase/amount/setting/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppPurchaseAmountSettingForOtherAppUserRequest, CreateAppPurchaseAmountSettingForOtherAppUserResponse>(`/v1/create/app/purchase/amount/setting/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppPurchaseAmountSettingForAppOtherUser(req: CreateAppPurchaseAmountSettingForAppOtherUserRequest, initReq?: fm.InitReq): Promise<CreateAppPurchaseAmountSettingForAppOtherUserResponse> {
-    return fm.fetchReq<CreateAppPurchaseAmountSettingForAppOtherUserRequest, CreateAppPurchaseAmountSettingForAppOtherUserResponse>(`/v1/create/app/purchase/amount/setting/for/app/other/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppPurchaseAmountSettingForAppOtherUserRequest, CreateAppPurchaseAmountSettingForAppOtherUserResponse>(`/v1/create/app/purchase/amount/setting/for/app/other/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppPurchaseAmountSetting(req: UpdateAppPurchaseAmountSettingRequest, initReq?: fm.InitReq): Promise<UpdateAppPurchaseAmountSettingResponse> {
-    return fm.fetchReq<UpdateAppPurchaseAmountSettingRequest, UpdateAppPurchaseAmountSettingResponse>(`/v1/update/app/purchase/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppPurchaseAmountSettingRequest, UpdateAppPurchaseAmountSettingResponse>(`/v1/update/app/purchase/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppPurchaseAmountSetting(req: GetAppPurchaseAmountSettingRequest, initReq?: fm.InitReq): Promise<GetAppPurchaseAmountSettingResponse> {
-    return fm.fetchReq<GetAppPurchaseAmountSettingRequest, GetAppPurchaseAmountSettingResponse>(`/v1/get/app/purchase/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppPurchaseAmountSettingRequest, GetAppPurchaseAmountSettingResponse>(`/v1/get/app/purchase/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppPurchaseAmountSettingsByApp(req: GetAppPurchaseAmountSettingsByAppRequest, initReq?: fm.InitReq): Promise<GetAppPurchaseAmountSettingsByAppResponse> {
-    return fm.fetchReq<GetAppPurchaseAmountSettingsByAppRequest, GetAppPurchaseAmountSettingsByAppResponse>(`/v1/get/app/purchase/amount/settings/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppPurchaseAmountSettingsByAppRequest, GetAppPurchaseAmountSettingsByAppResponse>(`/v1/get/app/purchase/amount/settings/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppPurchaseAmountSettingsByAppUser(req: GetAppPurchaseAmountSettingsByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppPurchaseAmountSettingsByAppUserResponse> {
-    return fm.fetchReq<GetAppPurchaseAmountSettingsByAppUserRequest, GetAppPurchaseAmountSettingsByAppUserResponse>(`/v1/get/app/purchase/amount/settings/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppPurchaseAmountSettingsByAppUserRequest, GetAppPurchaseAmountSettingsByAppUserResponse>(`/v1/get/app/purchase/amount/settings/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppPurchaseAmountSettingsByOtherApp(req: GetAppPurchaseAmountSettingsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppPurchaseAmountSettingsByOtherAppResponse> {
-    return fm.fetchReq<GetAppPurchaseAmountSettingsByOtherAppRequest, GetAppPurchaseAmountSettingsByOtherAppResponse>(`/v1/get/app/purchase/amount/settings/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppPurchaseAmountSettingsByOtherAppRequest, GetAppPurchaseAmountSettingsByOtherAppResponse>(`/v1/get/app/purchase/amount/settings/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppPurchaseAmountSettingsByOtherAppUser(req: GetAppPurchaseAmountSettingsByOtherAppUserRequest, initReq?: fm.InitReq): Promise<GetAppPurchaseAmountSettingsByOtherAppUserResponse> {
-    return fm.fetchReq<GetAppPurchaseAmountSettingsByOtherAppUserRequest, GetAppPurchaseAmountSettingsByOtherAppUserResponse>(`/v1/get/app/purchase/amount/settings/by/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppPurchaseAmountSettingsByOtherAppUserRequest, GetAppPurchaseAmountSettingsByOtherAppUserResponse>(`/v1/get/app/purchase/amount/settings/by/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateRegistrationInvitation(req: CreateRegistrationInvitationRequest, initReq?: fm.InitReq): Promise<CreateRegistrationInvitationResponse> {
-    return fm.fetchReq<CreateRegistrationInvitationRequest, CreateRegistrationInvitationResponse>(`/v1/create/registration/invitation`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateRegistrationInvitationRequest, CreateRegistrationInvitationResponse>(`/v1/create/registration/invitation`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateRegistrationInvitationRevert(req: CreateRegistrationInvitationRequest, initReq?: fm.InitReq): Promise<CreateRegistrationInvitationResponse> {
-    return fm.fetchReq<CreateRegistrationInvitationRequest, CreateRegistrationInvitationResponse>(`/v1/create/registration/invitation/revert`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateRegistrationInvitationRequest, CreateRegistrationInvitationResponse>(`/v1/create/registration/invitation/revert`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateRegistrationInvitation(req: UpdateRegistrationInvitationRequest, initReq?: fm.InitReq): Promise<UpdateRegistrationInvitationResponse> {
-    return fm.fetchReq<UpdateRegistrationInvitationRequest, UpdateRegistrationInvitationResponse>(`/v1/update/registration/invitation`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateRegistrationInvitationRequest, UpdateRegistrationInvitationResponse>(`/v1/update/registration/invitation`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetRegistrationInvitation(req: GetRegistrationInvitationRequest, initReq?: fm.InitReq): Promise<GetRegistrationInvitationResponse> {
-    return fm.fetchReq<GetRegistrationInvitationRequest, GetRegistrationInvitationResponse>(`/v1/get/registration/invitation`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetRegistrationInvitationRequest, GetRegistrationInvitationResponse>(`/v1/get/registration/invitation`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetRegistrationInvitationsByApp(req: GetRegistrationInvitationsByAppRequest, initReq?: fm.InitReq): Promise<GetRegistrationInvitationsByAppResponse> {
-    return fm.fetchReq<GetRegistrationInvitationsByAppRequest, GetRegistrationInvitationsByAppResponse>(`/v1/get/registration/invitations/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetRegistrationInvitationsByAppRequest, GetRegistrationInvitationsByAppResponse>(`/v1/get/registration/invitations/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetRegistrationInvitationsByOtherApp(req: GetRegistrationInvitationsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetRegistrationInvitationsByOtherAppResponse> {
-    return fm.fetchReq<GetRegistrationInvitationsByOtherAppRequest, GetRegistrationInvitationsByOtherAppResponse>(`/v1/get/registration/invitations/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetRegistrationInvitationsByOtherAppRequest, GetRegistrationInvitationsByOtherAppResponse>(`/v1/get/registration/invitations/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetRegistrationInvitationsByAppInviter(req: GetRegistrationInvitationsByAppInviterRequest, initReq?: fm.InitReq): Promise<GetRegistrationInvitationsByAppInviterResponse> {
-    return fm.fetchReq<GetRegistrationInvitationsByAppInviterRequest, GetRegistrationInvitationsByAppInviterResponse>(`/v1/get/registration/invitations/by/app/inviter`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetRegistrationInvitationsByAppInviterRequest, GetRegistrationInvitationsByAppInviterResponse>(`/v1/get/registration/invitations/by/app/inviter`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetRegistrationInvitationByAppInvitee(req: GetRegistrationInvitationByAppInviteeRequest, initReq?: fm.InitReq): Promise<GetRegistrationInvitationByAppInviteeResponse> {
-    return fm.fetchReq<GetRegistrationInvitationByAppInviteeRequest, GetRegistrationInvitationByAppInviteeResponse>(`/v1/get/registration/invitations/by/app/invitee`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetRegistrationInvitationByAppInviteeRequest, GetRegistrationInvitationByAppInviteeResponse>(`/v1/get/registration/invitations/by/app/invitee`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateUserInvitationCode(req: CreateUserInvitationCodeRequest, initReq?: fm.InitReq): Promise<CreateUserInvitationCodeResponse> {
-    return fm.fetchReq<CreateUserInvitationCodeRequest, CreateUserInvitationCodeResponse>(`/v1/create/user/invitation/code`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateUserInvitationCodeRequest, CreateUserInvitationCodeResponse>(`/v1/create/user/invitation/code`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateUserInvitationCode(req: UpdateUserInvitationCodeRequest, initReq?: fm.InitReq): Promise<UpdateUserInvitationCodeResponse> {
-    return fm.fetchReq<UpdateUserInvitationCodeRequest, UpdateUserInvitationCodeResponse>(`/v1/update/user/invitation/code`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateUserInvitationCodeRequest, UpdateUserInvitationCodeResponse>(`/v1/update/user/invitation/code`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateUserInvitationCodeForOtherAppUser(req: CreateUserInvitationCodeForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateUserInvitationCodeForOtherAppUserResponse> {
-    return fm.fetchReq<CreateUserInvitationCodeForOtherAppUserRequest, CreateUserInvitationCodeForOtherAppUserResponse>(`/v1/create/user/invitation/code/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateUserInvitationCodeForOtherAppUserRequest, CreateUserInvitationCodeForOtherAppUserResponse>(`/v1/create/user/invitation/code/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateUserInvitationCodeForAppOtherUser(req: CreateUserInvitationCodeForAppOtherUserRequest, initReq?: fm.InitReq): Promise<CreateUserInvitationCodeForAppOtherUserResponse> {
-    return fm.fetchReq<CreateUserInvitationCodeForAppOtherUserRequest, CreateUserInvitationCodeForAppOtherUserResponse>(`/v1/create/user/invitation/code/for/app/other/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateUserInvitationCodeForAppOtherUserRequest, CreateUserInvitationCodeForAppOtherUserResponse>(`/v1/create/user/invitation/code/for/app/other/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserInvitationCode(req: GetUserInvitationCodeRequest, initReq?: fm.InitReq): Promise<GetUserInvitationCodeResponse> {
-    return fm.fetchReq<GetUserInvitationCodeRequest, GetUserInvitationCodeResponse>(`/v1/get/user/invitation/code`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserInvitationCodeRequest, GetUserInvitationCodeResponse>(`/v1/get/user/invitation/code`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserInvitationCodeByAppUser(req: GetUserInvitationCodeByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserInvitationCodeByAppUserResponse> {
-    return fm.fetchReq<GetUserInvitationCodeByAppUserRequest, GetUserInvitationCodeByAppUserResponse>(`/v1/get/user/invitation/code/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserInvitationCodeByAppUserRequest, GetUserInvitationCodeByAppUserResponse>(`/v1/get/user/invitation/code/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserInvitationCodes(req: GetUserInvitationCodesRequest, initReq?: fm.InitReq): Promise<GetUserInvitationCodesResponse> {
-    return fm.fetchReq<GetUserInvitationCodesRequest, GetUserInvitationCodesResponse>(`/v1/get/user/invitation/codes`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserInvitationCodesRequest, GetUserInvitationCodesResponse>(`/v1/get/user/invitation/codes`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserInvitationCodesByApp(req: GetUserInvitationCodesByAppRequest, initReq?: fm.InitReq): Promise<GetUserInvitationCodesByAppResponse> {
-    return fm.fetchReq<GetUserInvitationCodesByAppRequest, GetUserInvitationCodesByAppResponse>(`/v1/get/user/invitation/codes/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserInvitationCodesByAppRequest, GetUserInvitationCodesByAppResponse>(`/v1/get/user/invitation/codes/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserInvitationCodesByOtherApp(req: GetUserInvitationCodesByOtherAppRequest, initReq?: fm.InitReq): Promise<GetUserInvitationCodesByOtherAppResponse> {
-    return fm.fetchReq<GetUserInvitationCodesByOtherAppRequest, GetUserInvitationCodesByOtherAppResponse>(`/v1/get/user/invitation/codes/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserInvitationCodesByOtherAppRequest, GetUserInvitationCodesByOtherAppResponse>(`/v1/get/user/invitation/codes/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserInvitationCodeByCode(req: GetUserInvitationCodeByCodeRequest, initReq?: fm.InitReq): Promise<GetUserInvitationCodeByCodeResponse> {
-    return fm.fetchReq<GetUserInvitationCodeByCodeRequest, GetUserInvitationCodeByCodeResponse>(`/v1/get/user/invitation/code/by/code`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserInvitationCodeByCodeRequest, GetUserInvitationCodeByCodeResponse>(`/v1/get/user/invitation/code/by/code`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateCouponAllocated(req: CreateCouponAllocatedRequest, initReq?: fm.InitReq): Promise<CreateCouponAllocatedResponse> {
-    return fm.fetchReq<CreateCouponAllocatedRequest, CreateCouponAllocatedResponse>(`/v1/create/coupon/allocated`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateCouponAllocatedRequest, CreateCouponAllocatedResponse>(`/v1/create/coupon/allocated`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateCouponAllocatedForAppOtherUser(req: CreateCouponAllocatedForAppOtherUserRequest, initReq?: fm.InitReq): Promise<CreateCouponAllocatedForAppOtherUserResponse> {
-    return fm.fetchReq<CreateCouponAllocatedForAppOtherUserRequest, CreateCouponAllocatedForAppOtherUserResponse>(`/v1/create/coupon/allocated/for/app/other/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateCouponAllocatedForAppOtherUserRequest, CreateCouponAllocatedForAppOtherUserResponse>(`/v1/create/coupon/allocated/for/app/other/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateCouponAllocatedForOtherAppUser(req: CreateCouponAllocatedForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateCouponAllocatedForOtherAppUserResponse> {
-    return fm.fetchReq<CreateCouponAllocatedForOtherAppUserRequest, CreateCouponAllocatedForOtherAppUserResponse>(`/v1/create/coupon/allocated/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateCouponAllocatedForOtherAppUserRequest, CreateCouponAllocatedForOtherAppUserResponse>(`/v1/create/coupon/allocated/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCouponAllocated(req: GetCouponAllocatedRequest, initReq?: fm.InitReq): Promise<GetCouponAllocatedResponse> {
-    return fm.fetchReq<GetCouponAllocatedRequest, GetCouponAllocatedResponse>(`/v1/get/coupon/allocated`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCouponAllocatedRequest, GetCouponAllocatedResponse>(`/v1/get/coupon/allocated`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCouponsAllocatedByApp(req: GetCouponsAllocatedByAppRequest, initReq?: fm.InitReq): Promise<GetCouponsAllocatedByAppResponse> {
-    return fm.fetchReq<GetCouponsAllocatedByAppRequest, GetCouponsAllocatedByAppResponse>(`/v1/get/coupons/allocated/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCouponsAllocatedByAppRequest, GetCouponsAllocatedByAppResponse>(`/v1/get/coupons/allocated/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCouponsAllocatedByOtherApp(req: GetCouponsAllocatedByOtherAppRequest, initReq?: fm.InitReq): Promise<GetCouponsAllocatedByOtherAppResponse> {
-    return fm.fetchReq<GetCouponsAllocatedByOtherAppRequest, GetCouponsAllocatedByOtherAppResponse>(`/v1/get/coupons/allocated/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCouponsAllocatedByOtherAppRequest, GetCouponsAllocatedByOtherAppResponse>(`/v1/get/coupons/allocated/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCouponsAllocatedByAppUser(req: GetCouponsAllocatedByAppUserRequest, initReq?: fm.InitReq): Promise<GetCouponsAllocatedByAppUserResponse> {
-    return fm.fetchReq<GetCouponsAllocatedByAppUserRequest, GetCouponsAllocatedByAppUserResponse>(`/v1/get/coupons/allocated/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCouponsAllocatedByAppUserRequest, GetCouponsAllocatedByAppUserResponse>(`/v1/get/coupons/allocated/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateCouponAllocated(req: UpdateCouponAllocatedRequest, initReq?: fm.InitReq): Promise<UpdateCouponAllocatedResponse> {
-    return fm.fetchReq<UpdateCouponAllocatedRequest, UpdateCouponAllocatedResponse>(`/v1/update/coupon/allocated`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateCouponAllocatedRequest, UpdateCouponAllocatedResponse>(`/v1/update/coupon/allocated`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCouponAllocatedDetail(req: GetCouponAllocatedDetailRequest, initReq?: fm.InitReq): Promise<GetCouponAllocatedDetailResponse> {
-    return fm.fetchReq<GetCouponAllocatedDetailRequest, GetCouponAllocatedDetailResponse>(`/v1/get/coupon/allocated/detail`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCouponAllocatedDetailRequest, GetCouponAllocatedDetailResponse>(`/v1/get/coupon/allocated/detail`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCouponsAllocatedDetailByApp(req: GetCouponsAllocatedDetailByAppRequest, initReq?: fm.InitReq): Promise<GetCouponsAllocatedDetailByAppResponse> {
-    return fm.fetchReq<GetCouponsAllocatedDetailByAppRequest, GetCouponsAllocatedDetailByAppResponse>(`/v1/get/coupons/allocated/detail/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCouponsAllocatedDetailByAppRequest, GetCouponsAllocatedDetailByAppResponse>(`/v1/get/coupons/allocated/detail/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCouponsAllocatedDetailByAppUser(req: GetCouponsAllocatedDetailByAppUserRequest, initReq?: fm.InitReq): Promise<GetCouponsAllocatedDetailByAppUserResponse> {
-    return fm.fetchReq<GetCouponsAllocatedDetailByAppUserRequest, GetCouponsAllocatedDetailByAppUserResponse>(`/v1/get/coupons/allocated/detail/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCouponsAllocatedDetailByAppUserRequest, GetCouponsAllocatedDetailByAppUserResponse>(`/v1/get/coupons/allocated/detail/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateCouponPool(req: CreateCouponPoolRequest, initReq?: fm.InitReq): Promise<CreateCouponPoolResponse> {
-    return fm.fetchReq<CreateCouponPoolRequest, CreateCouponPoolResponse>(`/v1/create/coupon/pool`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateCouponPoolRequest, CreateCouponPoolResponse>(`/v1/create/coupon/pool`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateCouponPoolForOtherApp(req: CreateCouponPoolForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateCouponPoolForOtherAppResponse> {
-    return fm.fetchReq<CreateCouponPoolForOtherAppRequest, CreateCouponPoolForOtherAppResponse>(`/v1/create/coupon/pool/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateCouponPoolForOtherAppRequest, CreateCouponPoolForOtherAppResponse>(`/v1/create/coupon/pool/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateCouponPool(req: UpdateCouponPoolRequest, initReq?: fm.InitReq): Promise<UpdateCouponPoolResponse> {
-    return fm.fetchReq<UpdateCouponPoolRequest, UpdateCouponPoolResponse>(`/v1/update/coupon/pool`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateCouponPoolRequest, UpdateCouponPoolResponse>(`/v1/update/coupon/pool`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCouponPool(req: GetCouponPoolRequest, initReq?: fm.InitReq): Promise<GetCouponPoolResponse> {
-    return fm.fetchReq<GetCouponPoolRequest, GetCouponPoolResponse>(`/v1/get/coupon/pool`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCouponPoolRequest, GetCouponPoolResponse>(`/v1/get/coupon/pool`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCouponPoolsByApp(req: GetCouponPoolsByAppRequest, initReq?: fm.InitReq): Promise<GetCouponPoolsByAppResponse> {
-    return fm.fetchReq<GetCouponPoolsByAppRequest, GetCouponPoolsByAppResponse>(`/v1/get/coupon/pools/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCouponPoolsByAppRequest, GetCouponPoolsByAppResponse>(`/v1/get/coupon/pools/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCouponPoolsByOtherApp(req: GetCouponPoolsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetCouponPoolsByOtherAppResponse> {
-    return fm.fetchReq<GetCouponPoolsByOtherAppRequest, GetCouponPoolsByOtherAppResponse>(`/v1/get/coupon/pools/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCouponPoolsByOtherAppRequest, GetCouponPoolsByOtherAppResponse>(`/v1/get/coupon/pools/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCouponPoolsByAppReleaser(req: GetCouponPoolsByAppReleaserRequest, initReq?: fm.InitReq): Promise<GetCouponPoolsByAppReleaserResponse> {
-    return fm.fetchReq<GetCouponPoolsByAppReleaserRequest, GetCouponPoolsByAppReleaserResponse>(`/v1/get/coupon/pools/by/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCouponPoolsByAppReleaserRequest, GetCouponPoolsByAppReleaserResponse>(`/v1/get/coupon/pools/by/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCouponPoolsByOtherAppReleaser(req: GetCouponPoolsByOtherAppReleaserRequest, initReq?: fm.InitReq): Promise<GetCouponPoolsByOtherAppReleaserResponse> {
-    return fm.fetchReq<GetCouponPoolsByOtherAppReleaserRequest, GetCouponPoolsByOtherAppReleaserResponse>(`/v1/get/coupon/pools/by/other/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCouponPoolsByOtherAppReleaserRequest, GetCouponPoolsByOtherAppReleaserResponse>(`/v1/get/coupon/pools/by/other/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateDiscountPool(req: CreateDiscountPoolRequest, initReq?: fm.InitReq): Promise<CreateDiscountPoolResponse> {
-    return fm.fetchReq<CreateDiscountPoolRequest, CreateDiscountPoolResponse>(`/v1/create/discount/pool`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateDiscountPoolRequest, CreateDiscountPoolResponse>(`/v1/create/discount/pool`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateDiscountPoolForOtherApp(req: CreateDiscountPoolForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateDiscountPoolForOtherAppResponse> {
-    return fm.fetchReq<CreateDiscountPoolForOtherAppRequest, CreateDiscountPoolForOtherAppResponse>(`/v1/create/discount/pool/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateDiscountPoolForOtherAppRequest, CreateDiscountPoolForOtherAppResponse>(`/v1/create/discount/pool/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateDiscountPool(req: UpdateDiscountPoolRequest, initReq?: fm.InitReq): Promise<UpdateDiscountPoolResponse> {
-    return fm.fetchReq<UpdateDiscountPoolRequest, UpdateDiscountPoolResponse>(`/v1/update/discount/pool`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateDiscountPoolRequest, UpdateDiscountPoolResponse>(`/v1/update/discount/pool`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetDiscountPool(req: GetDiscountPoolRequest, initReq?: fm.InitReq): Promise<GetDiscountPoolResponse> {
-    return fm.fetchReq<GetDiscountPoolRequest, GetDiscountPoolResponse>(`/v1/get/discount/pool`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetDiscountPoolRequest, GetDiscountPoolResponse>(`/v1/get/discount/pool`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetDiscountPoolsByApp(req: GetDiscountPoolsByAppRequest, initReq?: fm.InitReq): Promise<GetDiscountPoolsByAppResponse> {
-    return fm.fetchReq<GetDiscountPoolsByAppRequest, GetDiscountPoolsByAppResponse>(`/v1/get/discount/pools/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetDiscountPoolsByAppRequest, GetDiscountPoolsByAppResponse>(`/v1/get/discount/pools/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetDiscountPoolsByOtherApp(req: GetDiscountPoolsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetDiscountPoolsByOtherAppResponse> {
-    return fm.fetchReq<GetDiscountPoolsByOtherAppRequest, GetDiscountPoolsByOtherAppResponse>(`/v1/get/discount/pools/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetDiscountPoolsByOtherAppRequest, GetDiscountPoolsByOtherAppResponse>(`/v1/get/discount/pools/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetDiscountPoolsByAppReleaser(req: GetDiscountPoolsByAppReleaserRequest, initReq?: fm.InitReq): Promise<GetDiscountPoolsByAppReleaserResponse> {
-    return fm.fetchReq<GetDiscountPoolsByAppReleaserRequest, GetDiscountPoolsByAppReleaserResponse>(`/v1/get/discount/pools/by/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetDiscountPoolsByAppReleaserRequest, GetDiscountPoolsByAppReleaserResponse>(`/v1/get/discount/pools/by/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetDiscountPoolsByOtherAppReleaser(req: GetDiscountPoolsByOtherAppReleaserRequest, initReq?: fm.InitReq): Promise<GetDiscountPoolsByOtherAppReleaserResponse> {
-    return fm.fetchReq<GetDiscountPoolsByOtherAppReleaserRequest, GetDiscountPoolsByOtherAppReleaserResponse>(`/v1/get/discount/pools/by/other/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetDiscountPoolsByOtherAppReleaserRequest, GetDiscountPoolsByOtherAppReleaserResponse>(`/v1/get/discount/pools/by/other/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppCouponSetting(req: CreateAppCouponSettingRequest, initReq?: fm.InitReq): Promise<CreateAppCouponSettingResponse> {
-    return fm.fetchReq<CreateAppCouponSettingRequest, CreateAppCouponSettingResponse>(`/v1/create/app/coupon/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppCouponSettingRequest, CreateAppCouponSettingResponse>(`/v1/create/app/coupon/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppCouponSetting(req: GetAppCouponSettingRequest, initReq?: fm.InitReq): Promise<GetAppCouponSettingResponse> {
-    return fm.fetchReq<GetAppCouponSettingRequest, GetAppCouponSettingResponse>(`/v1/get/app/coupon/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppCouponSettingRequest, GetAppCouponSettingResponse>(`/v1/get/app/coupon/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppCouponSettingByApp(req: GetAppCouponSettingByAppRequest, initReq?: fm.InitReq): Promise<GetAppCouponSettingByAppResponse> {
-    return fm.fetchReq<GetAppCouponSettingByAppRequest, GetAppCouponSettingByAppResponse>(`/v1/get/app/coupon/setting/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppCouponSettingByAppRequest, GetAppCouponSettingByAppResponse>(`/v1/get/app/coupon/setting/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppCouponSetting(req: UpdateAppCouponSettingRequest, initReq?: fm.InitReq): Promise<UpdateAppCouponSettingResponse> {
-    return fm.fetchReq<UpdateAppCouponSettingRequest, UpdateAppCouponSettingResponse>(`/v1/update/app/coupon/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppCouponSettingRequest, UpdateAppCouponSettingResponse>(`/v1/update/app/coupon/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateDefaultKpiSetting(req: CreateDefaultKpiSettingRequest, initReq?: fm.InitReq): Promise<CreateDefaultKpiSettingResponse> {
-    return fm.fetchReq<CreateDefaultKpiSettingRequest, CreateDefaultKpiSettingResponse>(`/v1/create/default/kpi/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateDefaultKpiSettingRequest, CreateDefaultKpiSettingResponse>(`/v1/create/default/kpi/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetDefaultKpiSetting(req: GetDefaultKpiSettingRequest, initReq?: fm.InitReq): Promise<GetDefaultKpiSettingResponse> {
-    return fm.fetchReq<GetDefaultKpiSettingRequest, GetDefaultKpiSettingResponse>(`/v1/get/default/kpi/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetDefaultKpiSettingRequest, GetDefaultKpiSettingResponse>(`/v1/get/default/kpi/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetDefaultKpiSettingByAppGood(req: GetDefaultKpiSettingByAppGoodRequest, initReq?: fm.InitReq): Promise<GetDefaultKpiSettingByAppGoodResponse> {
-    return fm.fetchReq<GetDefaultKpiSettingByAppGoodRequest, GetDefaultKpiSettingByAppGoodResponse>(`/v1/get/default/kpi/setting/by/app/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetDefaultKpiSettingByAppGoodRequest, GetDefaultKpiSettingByAppGoodResponse>(`/v1/get/default/kpi/setting/by/app/good`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateDefaultKpiSetting(req: UpdateDefaultKpiSettingRequest, initReq?: fm.InitReq): Promise<UpdateDefaultKpiSettingResponse> {
-    return fm.fetchReq<UpdateDefaultKpiSettingRequest, UpdateDefaultKpiSettingResponse>(`/v1/update/default/kpi/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateDefaultKpiSettingRequest, UpdateDefaultKpiSettingResponse>(`/v1/update/default/kpi/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateUserKpiSetting(req: CreateUserKpiSettingRequest, initReq?: fm.InitReq): Promise<CreateUserKpiSettingResponse> {
-    return fm.fetchReq<CreateUserKpiSettingRequest, CreateUserKpiSettingResponse>(`/v1/create/user/kpi/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateUserKpiSettingRequest, CreateUserKpiSettingResponse>(`/v1/create/user/kpi/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserKpiSetting(req: GetUserKpiSettingRequest, initReq?: fm.InitReq): Promise<GetUserKpiSettingResponse> {
-    return fm.fetchReq<GetUserKpiSettingRequest, GetUserKpiSettingResponse>(`/v1/get/user/kpi/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserKpiSettingRequest, GetUserKpiSettingResponse>(`/v1/get/user/kpi/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserKpiSettingByAppGood(req: GetUserKpiSettingByAppGoodRequest, initReq?: fm.InitReq): Promise<GetUserKpiSettingByAppGoodResponse> {
-    return fm.fetchReq<GetUserKpiSettingByAppGoodRequest, GetUserKpiSettingByAppGoodResponse>(`/v1/get/user/kpi/setting/by/app/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserKpiSettingByAppGoodRequest, GetUserKpiSettingByAppGoodResponse>(`/v1/get/user/kpi/setting/by/app/good`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateUserKpiSetting(req: UpdateUserKpiSettingRequest, initReq?: fm.InitReq): Promise<UpdateUserKpiSettingResponse> {
-    return fm.fetchReq<UpdateUserKpiSettingRequest, UpdateUserKpiSettingResponse>(`/v1/update/user/kpi/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateUserKpiSettingRequest, UpdateUserKpiSettingResponse>(`/v1/update/user/kpi/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateUserSpecialReduction(req: CreateUserSpecialReductionRequest, initReq?: fm.InitReq): Promise<CreateUserSpecialReductionResponse> {
-    return fm.fetchReq<CreateUserSpecialReductionRequest, CreateUserSpecialReductionResponse>(`/v1/create/user/special/reduction`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateUserSpecialReductionRequest, CreateUserSpecialReductionResponse>(`/v1/create/user/special/reduction`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateUserSpecialReductionForAppOtherUser(req: CreateUserSpecialReductionForAppOtherUserRequest, initReq?: fm.InitReq): Promise<CreateUserSpecialReductionForAppOtherUserResponse> {
-    return fm.fetchReq<CreateUserSpecialReductionForAppOtherUserRequest, CreateUserSpecialReductionForAppOtherUserResponse>(`/v1/create/user/special/reduction/for/app/other/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateUserSpecialReductionForAppOtherUserRequest, CreateUserSpecialReductionForAppOtherUserResponse>(`/v1/create/user/special/reduction/for/app/other/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateUserSpecialReductionForOtherAppUser(req: CreateUserSpecialReductionForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateUserSpecialReductionForOtherAppUserResponse> {
-    return fm.fetchReq<CreateUserSpecialReductionForOtherAppUserRequest, CreateUserSpecialReductionForOtherAppUserResponse>(`/v1/create/user/special/reduction/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateUserSpecialReductionForOtherAppUserRequest, CreateUserSpecialReductionForOtherAppUserResponse>(`/v1/create/user/special/reduction/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserSpecialReduction(req: GetUserSpecialReductionRequest, initReq?: fm.InitReq): Promise<GetUserSpecialReductionResponse> {
-    return fm.fetchReq<GetUserSpecialReductionRequest, GetUserSpecialReductionResponse>(`/v1/get/user/special/reduction`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserSpecialReductionRequest, GetUserSpecialReductionResponse>(`/v1/get/user/special/reduction`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserSpecialReductionsByApp(req: GetUserSpecialReductionsByAppRequest, initReq?: fm.InitReq): Promise<GetUserSpecialReductionsByAppResponse> {
-    return fm.fetchReq<GetUserSpecialReductionsByAppRequest, GetUserSpecialReductionsByAppResponse>(`/v1/get/user/special/reductions/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserSpecialReductionsByAppRequest, GetUserSpecialReductionsByAppResponse>(`/v1/get/user/special/reductions/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserSpecialReductionsByOtherApp(req: GetUserSpecialReductionsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetUserSpecialReductionsByOtherAppResponse> {
-    return fm.fetchReq<GetUserSpecialReductionsByOtherAppRequest, GetUserSpecialReductionsByOtherAppResponse>(`/v1/get/user/special/reductions/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserSpecialReductionsByOtherAppRequest, GetUserSpecialReductionsByOtherAppResponse>(`/v1/get/user/special/reductions/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserSpecialReductionsByAppReleaser(req: GetUserSpecialReductionsByAppReleaserRequest, initReq?: fm.InitReq): Promise<GetUserSpecialReductionsByAppReleaserResponse> {
-    return fm.fetchReq<GetUserSpecialReductionsByAppReleaserRequest, GetUserSpecialReductionsByAppReleaserResponse>(`/v1/get/user/special/reductions/by/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserSpecialReductionsByAppReleaserRequest, GetUserSpecialReductionsByAppReleaserResponse>(`/v1/get/user/special/reductions/by/app/releaser`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserSpecialReductionsByAppUser(req: GetUserSpecialReductionsByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserSpecialReductionsByAppUserResponse> {
-    return fm.fetchReq<GetUserSpecialReductionsByAppUserRequest, GetUserSpecialReductionsByAppUserResponse>(`/v1/get/user/special/reductions/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserSpecialReductionsByAppUserRequest, GetUserSpecialReductionsByAppUserResponse>(`/v1/get/user/special/reductions/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateUserSpecialReduction(req: UpdateUserSpecialReductionRequest, initReq?: fm.InitReq): Promise<UpdateUserSpecialReductionResponse> {
-    return fm.fetchReq<UpdateUserSpecialReductionRequest, UpdateUserSpecialReductionResponse>(`/v1/update/user/special/reduction`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateUserSpecialReductionRequest, UpdateUserSpecialReductionResponse>(`/v1/update/user/special/reduction`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateActivity(req: CreateActivityRequest, initReq?: fm.InitReq): Promise<CreateActivityResponse> {
-    return fm.fetchReq<CreateActivityRequest, CreateActivityResponse>(`/v1/create/activity`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateActivityRequest, CreateActivityResponse>(`/v1/create/activity`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateActivityForOtherApp(req: CreateActivityForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateActivityForOtherAppResponse> {
-    return fm.fetchReq<CreateActivityForOtherAppRequest, CreateActivityForOtherAppResponse>(`/v1/create/activity/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateActivityForOtherAppRequest, CreateActivityForOtherAppResponse>(`/v1/create/activity/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateActivity(req: UpdateActivityRequest, initReq?: fm.InitReq): Promise<UpdateActivityResponse> {
-    return fm.fetchReq<UpdateActivityRequest, UpdateActivityResponse>(`/v1/update/activity`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateActivityRequest, UpdateActivityResponse>(`/v1/update/activity`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetActivity(req: GetActivityRequest, initReq?: fm.InitReq): Promise<GetActivityResponse> {
-    return fm.fetchReq<GetActivityRequest, GetActivityResponse>(`/v1/get/activity`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetActivityRequest, GetActivityResponse>(`/v1/get/activity`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetActivityByAppName(req: GetActivityByAppNameRequest, initReq?: fm.InitReq): Promise<GetActivityByAppNameResponse> {
-    return fm.fetchReq<GetActivityByAppNameRequest, GetActivityByAppNameResponse>(`/v1/get/activity/by/app/name`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetActivityByAppNameRequest, GetActivityByAppNameResponse>(`/v1/get/activity/by/app/name`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetActivitiesByApp(req: GetActivitiesByAppRequest, initReq?: fm.InitReq): Promise<GetActivitiesByAppResponse> {
-    return fm.fetchReq<GetActivitiesByAppRequest, GetActivitiesByAppResponse>(`/v1/get/activities/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetActivitiesByAppRequest, GetActivitiesByAppResponse>(`/v1/get/activities/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetActivitiesByOtherApp(req: GetActivitiesByOtherAppRequest, initReq?: fm.InitReq): Promise<GetActivitiesByOtherAppResponse> {
-    return fm.fetchReq<GetActivitiesByOtherAppRequest, GetActivitiesByOtherAppResponse>(`/v1/get/activities/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetActivitiesByOtherAppRequest, GetActivitiesByOtherAppResponse>(`/v1/get/activities/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateEventCoupon(req: CreateEventCouponRequest, initReq?: fm.InitReq): Promise<CreateEventCouponResponse> {
-    return fm.fetchReq<CreateEventCouponRequest, CreateEventCouponResponse>(`/v1/create/event/coupon`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateEventCouponRequest, CreateEventCouponResponse>(`/v1/create/event/coupon`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateEventCouponForOtherApp(req: CreateEventCouponForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateEventCouponForOtherAppResponse> {
-    return fm.fetchReq<CreateEventCouponForOtherAppRequest, CreateEventCouponForOtherAppResponse>(`/v1/create/event/coupon/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateEventCouponForOtherAppRequest, CreateEventCouponForOtherAppResponse>(`/v1/create/event/coupon/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateEventCoupon(req: UpdateEventCouponRequest, initReq?: fm.InitReq): Promise<UpdateEventCouponResponse> {
-    return fm.fetchReq<UpdateEventCouponRequest, UpdateEventCouponResponse>(`/v1/update/event/coupon`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateEventCouponRequest, UpdateEventCouponResponse>(`/v1/update/event/coupon`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetEventCoupon(req: GetEventCouponRequest, initReq?: fm.InitReq): Promise<GetEventCouponResponse> {
-    return fm.fetchReq<GetEventCouponRequest, GetEventCouponResponse>(`/v1/get/event/coupon`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetEventCouponRequest, GetEventCouponResponse>(`/v1/get/event/coupon`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetEventCouponsByAppActivityEvent(req: GetEventCouponsByAppActivityEventRequest, initReq?: fm.InitReq): Promise<GetEventCouponsByAppActivityEventResponse> {
-    return fm.fetchReq<GetEventCouponsByAppActivityEventRequest, GetEventCouponsByAppActivityEventResponse>(`/v1/get/event/coupons/by/app/activity/event`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetEventCouponsByAppActivityEventRequest, GetEventCouponsByAppActivityEventResponse>(`/v1/get/event/coupons/by/app/activity/event`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetEventCouponsByApp(req: GetEventCouponsByAppRequest, initReq?: fm.InitReq): Promise<GetEventCouponsByAppResponse> {
-    return fm.fetchReq<GetEventCouponsByAppRequest, GetEventCouponsByAppResponse>(`/v1/get/event/coupons/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetEventCouponsByAppRequest, GetEventCouponsByAppResponse>(`/v1/get/event/coupons/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetEventCouponsByOtherApp(req: GetEventCouponsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetEventCouponsByOtherAppResponse> {
-    return fm.fetchReq<GetEventCouponsByOtherAppRequest, GetEventCouponsByOtherAppResponse>(`/v1/get/event/coupons/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetEventCouponsByOtherAppRequest, GetEventCouponsByOtherAppResponse>(`/v1/get/event/coupons/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
 }

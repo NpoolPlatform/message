@@ -257,81 +257,81 @@ export type GetCountriesResponse = {
 
 export class Internationalization {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static AddLang(req: AddLangRequest, initReq?: fm.InitReq): Promise<AddLangResponse> {
-    return fm.fetchReq<AddLangRequest, AddLangResponse>(`/v1/add/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<AddLangRequest, AddLangResponse>(`/v1/add/lang`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetLang(req: GetLangRequest, initReq?: fm.InitReq): Promise<GetLangResponse> {
-    return fm.fetchReq<GetLangRequest, GetLangResponse>(`/v1/get/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetLangRequest, GetLangResponse>(`/v1/get/lang`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateLang(req: UpdateLangRequest, initReq?: fm.InitReq): Promise<UpdateLangResponse> {
-    return fm.fetchReq<UpdateLangRequest, UpdateLangResponse>(`/v1/update/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateLangRequest, UpdateLangResponse>(`/v1/update/lang`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetLangs(req: GetLangsRequest, initReq?: fm.InitReq): Promise<GetLangsResponse> {
-    return fm.fetchReq<GetLangsRequest, GetLangsResponse>(`/v1/get/langs`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetLangsRequest, GetLangsResponse>(`/v1/get/langs`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppLang(req: CreateAppLangRequest, initReq?: fm.InitReq): Promise<CreateAppLangResponse> {
-    return fm.fetchReq<CreateAppLangRequest, CreateAppLangResponse>(`/v1/create/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppLangRequest, CreateAppLangResponse>(`/v1/create/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppLangForOtherApp(req: CreateAppLangForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppLangForOtherAppResponse> {
-    return fm.fetchReq<CreateAppLangForOtherAppRequest, CreateAppLangForOtherAppResponse>(`/v1/create/app/lang/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppLangForOtherAppRequest, CreateAppLangForOtherAppResponse>(`/v1/create/app/lang/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppLang(req: UpdateAppLangRequest, initReq?: fm.InitReq): Promise<UpdateAppLangResponse> {
-    return fm.fetchReq<UpdateAppLangRequest, UpdateAppLangResponse>(`/v1/update/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppLangRequest, UpdateAppLangResponse>(`/v1/update/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppLang(req: GetAppLangRequest, initReq?: fm.InitReq): Promise<GetAppLangResponse> {
-    return fm.fetchReq<GetAppLangRequest, GetAppLangResponse>(`/v1/get/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppLangRequest, GetAppLangResponse>(`/v1/get/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppLangsByApp(req: GetAppLangsByAppRequest, initReq?: fm.InitReq): Promise<GetAppLangsByAppResponse> {
-    return fm.fetchReq<GetAppLangsByAppRequest, GetAppLangsByAppResponse>(`/v1/get/app/langs/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppLangsByAppRequest, GetAppLangsByAppResponse>(`/v1/get/app/langs/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppLangInfosByApp(req: GetAppLangInfosByAppRequest, initReq?: fm.InitReq): Promise<GetAppLangInfosByAppResponse> {
-    return fm.fetchReq<GetAppLangInfosByAppRequest, GetAppLangInfosByAppResponse>(`/v1/get/app/lang/infos/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppLangInfosByAppRequest, GetAppLangInfosByAppResponse>(`/v1/get/app/lang/infos/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppLangInfosByOtherApp(req: GetAppLangInfosByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppLangInfosByOtherAppResponse> {
-    return fm.fetchReq<GetAppLangInfosByOtherAppRequest, GetAppLangInfosByOtherAppResponse>(`/v1/get/app/lang/infos/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppLangInfosByOtherAppRequest, GetAppLangInfosByOtherAppResponse>(`/v1/get/app/lang/infos/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateMessage(req: CreateMessageRequest, initReq?: fm.InitReq): Promise<CreateMessageResponse> {
-    return fm.fetchReq<CreateMessageRequest, CreateMessageResponse>(`/v1/create/message`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateMessageRequest, CreateMessageResponse>(`/v1/create/message`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateMessageForOtherApp(req: CreateMessageForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateMessageForOtherAppResponse> {
-    return fm.fetchReq<CreateMessageForOtherAppRequest, CreateMessageForOtherAppResponse>(`/v1/create/message/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateMessageForOtherAppRequest, CreateMessageForOtherAppResponse>(`/v1/create/message/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateMessages(req: CreateMessagesRequest, initReq?: fm.InitReq): Promise<CreateMessagesResponse> {
-    return fm.fetchReq<CreateMessagesRequest, CreateMessagesResponse>(`/v1/create/messages`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateMessagesRequest, CreateMessagesResponse>(`/v1/create/messages`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateMessagesForOtherApp(req: CreateMessagesForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateMessagesForOtherAppResponse> {
-    return fm.fetchReq<CreateMessagesForOtherAppRequest, CreateMessagesForOtherAppResponse>(`/v1/create/messages/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateMessagesForOtherAppRequest, CreateMessagesForOtherAppResponse>(`/v1/create/messages/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateMessage(req: UpdateMessageRequest, initReq?: fm.InitReq): Promise<UpdateMessageResponse> {
-    return fm.fetchReq<UpdateMessageRequest, UpdateMessageResponse>(`/v1/update/message`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateMessageRequest, UpdateMessageResponse>(`/v1/update/message`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateMessages(req: UpdateMessagesRequest, initReq?: fm.InitReq): Promise<UpdateMessagesResponse> {
-    return fm.fetchReq<UpdateMessagesRequest, UpdateMessagesResponse>(`/v1/update/messages`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateMessagesRequest, UpdateMessagesResponse>(`/v1/update/messages`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetMessagesByAppLang(req: GetMessagesByAppLangRequest, initReq?: fm.InitReq): Promise<GetMessagesByAppLangResponse> {
-    return fm.fetchReq<GetMessagesByAppLangRequest, GetMessagesByAppLangResponse>(`/v1/get/messages/by/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetMessagesByAppLangRequest, GetMessagesByAppLangResponse>(`/v1/get/messages/by/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetMessagesByOtherAppLang(req: GetMessagesByOtherAppLangRequest, initReq?: fm.InitReq): Promise<GetMessagesByOtherAppLangResponse> {
-    return fm.fetchReq<GetMessagesByOtherAppLangRequest, GetMessagesByOtherAppLangResponse>(`/v1/get/messages/by/other/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetMessagesByOtherAppLangRequest, GetMessagesByOtherAppLangResponse>(`/v1/get/messages/by/other/app/lang`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetMessageByAppLangMessage(req: GetMessageByAppLangMessageRequest, initReq?: fm.InitReq): Promise<GetMessageByAppLangMessageResponse> {
-    return fm.fetchReq<GetMessageByAppLangMessageRequest, GetMessageByAppLangMessageResponse>(`/v1/get/message/by/app/lang/message`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetMessageByAppLangMessageRequest, GetMessageByAppLangMessageResponse>(`/v1/get/message/by/app/lang/message`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateCountry(req: CreateCountryRequest, initReq?: fm.InitReq): Promise<CreateCountryResponse> {
-    return fm.fetchReq<CreateCountryRequest, CreateCountryResponse>(`/v1/create/country`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateCountryRequest, CreateCountryResponse>(`/v1/create/country`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateCountries(req: CreateCountriesRequest, initReq?: fm.InitReq): Promise<CreateCountriesResponse> {
-    return fm.fetchReq<CreateCountriesRequest, CreateCountriesResponse>(`/v1/create/countries`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateCountriesRequest, CreateCountriesResponse>(`/v1/create/countries`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCountry(req: GetCountryRequest, initReq?: fm.InitReq): Promise<GetCountryResponse> {
-    return fm.fetchReq<GetCountryRequest, GetCountryResponse>(`/v1/get/country`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCountryRequest, GetCountryResponse>(`/v1/get/country`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateCountry(req: UpdateCountryRequest, initReq?: fm.InitReq): Promise<UpdateCountryResponse> {
-    return fm.fetchReq<UpdateCountryRequest, UpdateCountryResponse>(`/v1/update/country`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateCountryRequest, UpdateCountryResponse>(`/v1/update/country`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCountries(req: GetCountriesRequest, initReq?: fm.InitReq): Promise<GetCountriesResponse> {
-    return fm.fetchReq<GetCountriesRequest, GetCountriesResponse>(`/v1/get/countries`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCountriesRequest, GetCountriesResponse>(`/v1/get/countries`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
 }

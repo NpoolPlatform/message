@@ -2866,6 +2866,10 @@
         "PurchaseLimit": {
           "type": "integer",
           "format": "int32"
+        },
+        "CommissionPercent": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

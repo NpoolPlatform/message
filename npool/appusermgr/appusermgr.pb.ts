@@ -775,231 +775,231 @@ export type CreateAppUserWithThirdPartyResponse = {
 
 export class AppUserManager {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAdminApps(req: CreateAdminAppsRequest, initReq?: fm.InitReq): Promise<CreateAdminAppsResponse> {
-    return fm.fetchReq<CreateAdminAppsRequest, CreateAdminAppsResponse>(`/v1/create/admin/apps`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAdminAppsRequest, CreateAdminAppsResponse>(`/v1/create/admin/apps`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAdminApps(req: GetAdminAppsRequest, initReq?: fm.InitReq): Promise<GetAdminAppsResponse> {
-    return fm.fetchReq<GetAdminAppsRequest, GetAdminAppsResponse>(`/v1/get/admin/apps`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAdminAppsRequest, GetAdminAppsResponse>(`/v1/get/admin/apps`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateApp(req: CreateAppRequest, initReq?: fm.InitReq): Promise<CreateAppResponse> {
-    return fm.fetchReq<CreateAppRequest, CreateAppResponse>(`/v1/create/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppRequest, CreateAppResponse>(`/v1/create/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetApp(req: GetAppRequest, initReq?: fm.InitReq): Promise<GetAppResponse> {
-    return fm.fetchReq<GetAppRequest, GetAppResponse>(`/v1/get/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppRequest, GetAppResponse>(`/v1/get/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetApps(req: GetAppsRequest, initReq?: fm.InitReq): Promise<GetAppsResponse> {
-    return fm.fetchReq<GetAppsRequest, GetAppsResponse>(`/v1/get/apps`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppsRequest, GetAppsResponse>(`/v1/get/apps`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppsByCreator(req: GetAppsByCreatorRequest, initReq?: fm.InitReq): Promise<GetAppsByCreatorResponse> {
-    return fm.fetchReq<GetAppsByCreatorRequest, GetAppsByCreatorResponse>(`/v1/get/apps/by/creator`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppsByCreatorRequest, GetAppsByCreatorResponse>(`/v1/get/apps/by/creator`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateApp(req: UpdateAppRequest, initReq?: fm.InitReq): Promise<UpdateAppResponse> {
-    return fm.fetchReq<UpdateAppRequest, UpdateAppResponse>(`/v1/update/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppRequest, UpdateAppResponse>(`/v1/update/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppControl(req: CreateAppControlRequest, initReq?: fm.InitReq): Promise<CreateAppControlResponse> {
-    return fm.fetchReq<CreateAppControlRequest, CreateAppControlResponse>(`/v1/create/app/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppControlRequest, CreateAppControlResponse>(`/v1/create/app/control`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppControlForOtherApp(req: CreateAppControlForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppControlForOtherAppResponse> {
-    return fm.fetchReq<CreateAppControlForOtherAppRequest, CreateAppControlForOtherAppResponse>(`/v1/create/app/control/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppControlForOtherAppRequest, CreateAppControlForOtherAppResponse>(`/v1/create/app/control/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppControl(req: GetAppControlRequest, initReq?: fm.InitReq): Promise<GetAppControlResponse> {
-    return fm.fetchReq<GetAppControlRequest, GetAppControlResponse>(`/v1/get/app/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppControlRequest, GetAppControlResponse>(`/v1/get/app/control`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppControlByApp(req: GetAppControlByAppRequest, initReq?: fm.InitReq): Promise<GetAppControlByAppResponse> {
-    return fm.fetchReq<GetAppControlByAppRequest, GetAppControlByAppResponse>(`/v1/get/app/control/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppControlByAppRequest, GetAppControlByAppResponse>(`/v1/get/app/control/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppControl(req: UpdateAppControlRequest, initReq?: fm.InitReq): Promise<UpdateAppControlResponse> {
-    return fm.fetchReq<UpdateAppControlRequest, UpdateAppControlResponse>(`/v1/update/app/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppControlRequest, UpdateAppControlResponse>(`/v1/update/app/control`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateBanApp(req: CreateBanAppRequest, initReq?: fm.InitReq): Promise<CreateBanAppResponse> {
-    return fm.fetchReq<CreateBanAppRequest, CreateBanAppResponse>(`/v1/create/ban/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateBanAppRequest, CreateBanAppResponse>(`/v1/create/ban/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetBanApp(req: GetBanAppRequest, initReq?: fm.InitReq): Promise<GetBanAppResponse> {
-    return fm.fetchReq<GetBanAppRequest, GetBanAppResponse>(`/v1/get/ban/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetBanAppRequest, GetBanAppResponse>(`/v1/get/ban/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetBanAppByApp(req: GetBanAppByAppRequest, initReq?: fm.InitReq): Promise<GetBanAppByAppResponse> {
-    return fm.fetchReq<GetBanAppByAppRequest, GetBanAppByAppResponse>(`/v1/get/ban/app/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetBanAppByAppRequest, GetBanAppByAppResponse>(`/v1/get/ban/app/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateBanApp(req: UpdateBanAppRequest, initReq?: fm.InitReq): Promise<UpdateBanAppResponse> {
-    return fm.fetchReq<UpdateBanAppRequest, UpdateBanAppResponse>(`/v1/update/ban/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateBanAppRequest, UpdateBanAppResponse>(`/v1/update/ban/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static DeleteBanApp(req: DeleteBanAppRequest, initReq?: fm.InitReq): Promise<DeleteBanAppResponse> {
-    return fm.fetchReq<DeleteBanAppRequest, DeleteBanAppResponse>(`/v1/delete/ban/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<DeleteBanAppRequest, DeleteBanAppResponse>(`/v1/delete/ban/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppInfo(req: GetAppInfoRequest, initReq?: fm.InitReq): Promise<GetAppInfoResponse> {
-    return fm.fetchReq<GetAppInfoRequest, GetAppInfoResponse>(`/v1/get/appinfo`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppInfoRequest, GetAppInfoResponse>(`/v1/get/appinfo`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppInfos(req: GetAppInfosRequest, initReq?: fm.InitReq): Promise<GetAppInfosResponse> {
-    return fm.fetchReq<GetAppInfosRequest, GetAppInfosResponse>(`/v1/get/appinfos`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppInfosRequest, GetAppInfosResponse>(`/v1/get/appinfos`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppInfosByCreator(req: GetAppInfosByCreatorRequest, initReq?: fm.InitReq): Promise<GetAppInfosByCreatorResponse> {
-    return fm.fetchReq<GetAppInfosByCreatorRequest, GetAppInfosByCreatorResponse>(`/v1/get/appinfos/by/creator`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppInfosByCreatorRequest, GetAppInfosByCreatorResponse>(`/v1/get/appinfos/by/creator`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppUser(req: CreateAppUserRequest, initReq?: fm.InitReq): Promise<CreateAppUserResponse> {
-    return fm.fetchReq<CreateAppUserRequest, CreateAppUserResponse>(`/v1/create/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppUserRequest, CreateAppUserResponse>(`/v1/create/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppUser(req: GetAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserResponse> {
-    return fm.fetchReq<GetAppUserRequest, GetAppUserResponse>(`/v1/get/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppUserRequest, GetAppUserResponse>(`/v1/get/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppUserByAppUser(req: GetAppUserByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserByAppUserResponse> {
-    return fm.fetchReq<GetAppUserByAppUserRequest, GetAppUserByAppUserResponse>(`/v1/get/app/user/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppUserByAppUserRequest, GetAppUserByAppUserResponse>(`/v1/get/app/user/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppUserByAppAccount(req: GetAppUserByAppAccountRequest, initReq?: fm.InitReq): Promise<GetAppUserByAppAccountResponse> {
-    return fm.fetchReq<GetAppUserByAppAccountRequest, GetAppUserByAppAccountResponse>(`/v1/get/app/user/by/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppUserByAppAccountRequest, GetAppUserByAppAccountResponse>(`/v1/get/app/user/by/account`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static VerifyAppUserByAppAccountPassword(req: VerifyAppUserByAppAccountPasswordRequest, initReq?: fm.InitReq): Promise<VerifyAppUserByAppAccountPasswordResponse> {
-    return fm.fetchReq<VerifyAppUserByAppAccountPasswordRequest, VerifyAppUserByAppAccountPasswordResponse>(`/v1/verify/app/user/by/account/password`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<VerifyAppUserByAppAccountPasswordRequest, VerifyAppUserByAppAccountPasswordResponse>(`/v1/verify/app/user/by/account/password`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppUsersByApp(req: GetAppUsersByAppRequest, initReq?: fm.InitReq): Promise<GetAppUsersByAppResponse> {
-    return fm.fetchReq<GetAppUsersByAppRequest, GetAppUsersByAppResponse>(`/v1/get/app/users/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppUsersByAppRequest, GetAppUsersByAppResponse>(`/v1/get/app/users/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppUser(req: UpdateAppUserRequest, initReq?: fm.InitReq): Promise<UpdateAppUserResponse> {
-    return fm.fetchReq<UpdateAppUserRequest, UpdateAppUserResponse>(`/v1/update/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppUserRequest, UpdateAppUserResponse>(`/v1/update/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppUserSecret(req: CreateAppUserSecretRequest, initReq?: fm.InitReq): Promise<CreateAppUserSecretResponse> {
-    return fm.fetchReq<CreateAppUserSecretRequest, CreateAppUserSecretResponse>(`/v1/create/app/user/secret`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppUserSecretRequest, CreateAppUserSecretResponse>(`/v1/create/app/user/secret`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppUserSecret(req: GetAppUserSecretRequest, initReq?: fm.InitReq): Promise<GetAppUserSecretResponse> {
-    return fm.fetchReq<GetAppUserSecretRequest, GetAppUserSecretResponse>(`/v1/get/app/user/secret`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppUserSecretRequest, GetAppUserSecretResponse>(`/v1/get/app/user/secret`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppUserSecretByAppUser(req: GetAppUserSecretByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserSecretByAppUserResponse> {
-    return fm.fetchReq<GetAppUserSecretByAppUserRequest, GetAppUserSecretByAppUserResponse>(`/v1/get/app/user/secret/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppUserSecretByAppUserRequest, GetAppUserSecretByAppUserResponse>(`/v1/get/app/user/secret/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppUserSecret(req: UpdateAppUserSecretRequest, initReq?: fm.InitReq): Promise<UpdateAppUserSecretResponse> {
-    return fm.fetchReq<UpdateAppUserSecretRequest, UpdateAppUserSecretResponse>(`/v1/update/app/user/secret`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppUserSecretRequest, UpdateAppUserSecretResponse>(`/v1/update/app/user/secret`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppUserExtra(req: CreateAppUserExtraRequest, initReq?: fm.InitReq): Promise<CreateAppUserExtraResponse> {
-    return fm.fetchReq<CreateAppUserExtraRequest, CreateAppUserExtraResponse>(`/v1/create/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppUserExtraRequest, CreateAppUserExtraResponse>(`/v1/create/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppUserExtra(req: GetAppUserExtraRequest, initReq?: fm.InitReq): Promise<GetAppUserExtraResponse> {
-    return fm.fetchReq<GetAppUserExtraRequest, GetAppUserExtraResponse>(`/v1/get/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppUserExtraRequest, GetAppUserExtraResponse>(`/v1/get/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppUserExtraByAppUser(req: GetAppUserExtraByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserExtraByAppUserResponse> {
-    return fm.fetchReq<GetAppUserExtraByAppUserRequest, GetAppUserExtraByAppUserResponse>(`/v1/get/app/user/extra/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppUserExtraByAppUserRequest, GetAppUserExtraByAppUserResponse>(`/v1/get/app/user/extra/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppUserExtra(req: UpdateAppUserExtraRequest, initReq?: fm.InitReq): Promise<UpdateAppUserExtraResponse> {
-    return fm.fetchReq<UpdateAppUserExtraRequest, UpdateAppUserExtraResponse>(`/v1/update/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppUserExtraRequest, UpdateAppUserExtraResponse>(`/v1/update/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateBanAppUser(req: CreateBanAppUserRequest, initReq?: fm.InitReq): Promise<CreateBanAppUserResponse> {
-    return fm.fetchReq<CreateBanAppUserRequest, CreateBanAppUserResponse>(`/v1/create/ban/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateBanAppUserRequest, CreateBanAppUserResponse>(`/v1/create/ban/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetBanAppUser(req: GetBanAppUserRequest, initReq?: fm.InitReq): Promise<GetBanAppUserResponse> {
-    return fm.fetchReq<GetBanAppUserRequest, GetBanAppUserResponse>(`/v1/get/ban/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetBanAppUserRequest, GetBanAppUserResponse>(`/v1/get/ban/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetBanAppUserByAppUser(req: GetBanAppUserByAppUserRequest, initReq?: fm.InitReq): Promise<GetBanAppUserByAppUserResponse> {
-    return fm.fetchReq<GetBanAppUserByAppUserRequest, GetBanAppUserByAppUserResponse>(`/v1/get/ban/app/user/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetBanAppUserByAppUserRequest, GetBanAppUserByAppUserResponse>(`/v1/get/ban/app/user/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateBanAppUser(req: UpdateBanAppUserRequest, initReq?: fm.InitReq): Promise<UpdateBanAppUserResponse> {
-    return fm.fetchReq<UpdateBanAppUserRequest, UpdateBanAppUserResponse>(`/v1/update/ban/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateBanAppUserRequest, UpdateBanAppUserResponse>(`/v1/update/ban/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static DeleteBanAppUser(req: DeleteBanAppUserRequest, initReq?: fm.InitReq): Promise<DeleteBanAppUserResponse> {
-    return fm.fetchReq<DeleteBanAppUserRequest, DeleteBanAppUserResponse>(`/v1/delete/ban/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<DeleteBanAppUserRequest, DeleteBanAppUserResponse>(`/v1/delete/ban/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppUserControl(req: CreateAppUserControlRequest, initReq?: fm.InitReq): Promise<CreateAppUserControlResponse> {
-    return fm.fetchReq<CreateAppUserControlRequest, CreateAppUserControlResponse>(`/v1/create/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppUserControlRequest, CreateAppUserControlResponse>(`/v1/create/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppUserControl(req: GetAppUserControlRequest, initReq?: fm.InitReq): Promise<GetAppUserControlResponse> {
-    return fm.fetchReq<GetAppUserControlRequest, GetAppUserControlResponse>(`/v1/get/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppUserControlRequest, GetAppUserControlResponse>(`/v1/get/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppUserControlByAppUser(req: GetAppUserControlByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserControlByAppUserResponse> {
-    return fm.fetchReq<GetAppUserControlByAppUserRequest, GetAppUserControlByAppUserResponse>(`/v1/get/app/user/control/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppUserControlByAppUserRequest, GetAppUserControlByAppUserResponse>(`/v1/get/app/user/control/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppUserControl(req: UpdateAppUserControlRequest, initReq?: fm.InitReq): Promise<UpdateAppUserControlResponse> {
-    return fm.fetchReq<UpdateAppUserControlRequest, UpdateAppUserControlResponse>(`/v1/update/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppUserControlRequest, UpdateAppUserControlResponse>(`/v1/update/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateGenesisRole(req: CreateGenesisRoleRequest, initReq?: fm.InitReq): Promise<CreateGenesisRoleResponse> {
-    return fm.fetchReq<CreateGenesisRoleRequest, CreateGenesisRoleResponse>(`/v1/create/genesis/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateGenesisRoleRequest, CreateGenesisRoleResponse>(`/v1/create/genesis/role`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetGenesisRole(req: GetGenesisRoleRequest, initReq?: fm.InitReq): Promise<GetGenesisRoleResponse> {
-    return fm.fetchReq<GetGenesisRoleRequest, GetGenesisRoleResponse>(`/v1/get/genesis/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetGenesisRoleRequest, GetGenesisRoleResponse>(`/v1/get/genesis/role`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetGenesisAppRoleUsersByOtherApp(req: GetGenesisAppRoleUsersByOtherAppRequest, initReq?: fm.InitReq): Promise<GetGenesisAppRoleUsersByOtherAppResponse> {
-    return fm.fetchReq<GetGenesisAppRoleUsersByOtherAppRequest, GetGenesisAppRoleUsersByOtherAppResponse>(`/v1/get/genesis/app/role/users/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetGenesisAppRoleUsersByOtherAppRequest, GetGenesisAppRoleUsersByOtherAppResponse>(`/v1/get/genesis/app/role/users/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateGenesisRoleUser(req: CreateGenesisRoleUserRequest, initReq?: fm.InitReq): Promise<CreateGenesisRoleUserResponse> {
-    return fm.fetchReq<CreateGenesisRoleUserRequest, CreateGenesisRoleUserResponse>(`/v1/create/genesis/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateGenesisRoleUserRequest, CreateGenesisRoleUserResponse>(`/v1/create/genesis/role/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppRole(req: CreateAppRoleRequest, initReq?: fm.InitReq): Promise<CreateAppRoleResponse> {
-    return fm.fetchReq<CreateAppRoleRequest, CreateAppRoleResponse>(`/v1/create/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppRoleRequest, CreateAppRoleResponse>(`/v1/create/app/role`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppRoleForOtherApp(req: CreateAppRoleForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppRoleForOtherAppResponse> {
-    return fm.fetchReq<CreateAppRoleForOtherAppRequest, CreateAppRoleForOtherAppResponse>(`/v1/create/app/role/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppRoleForOtherAppRequest, CreateAppRoleForOtherAppResponse>(`/v1/create/app/role/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppRole(req: GetAppRoleRequest, initReq?: fm.InitReq): Promise<GetAppRoleResponse> {
-    return fm.fetchReq<GetAppRoleRequest, GetAppRoleResponse>(`/v1/get/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppRoleRequest, GetAppRoleResponse>(`/v1/get/app/role`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppRoleByAppRole(req: GetAppRoleByAppRoleRequest, initReq?: fm.InitReq): Promise<GetAppRoleByAppRoleResponse> {
-    return fm.fetchReq<GetAppRoleByAppRoleRequest, GetAppRoleByAppRoleResponse>(`/v1/get/app/role/by/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppRoleByAppRoleRequest, GetAppRoleByAppRoleResponse>(`/v1/get/app/role/by/app/role`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppRolesByApp(req: GetAppRolesByAppRequest, initReq?: fm.InitReq): Promise<GetAppRolesByAppResponse> {
-    return fm.fetchReq<GetAppRolesByAppRequest, GetAppRolesByAppResponse>(`/v1/get/app/roles/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppRolesByAppRequest, GetAppRolesByAppResponse>(`/v1/get/app/roles/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppRolesByOtherApp(req: GetAppRolesByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppRolesByOtherAppResponse> {
-    return fm.fetchReq<GetAppRolesByOtherAppRequest, GetAppRolesByOtherAppResponse>(`/v1/get/app/roles/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppRolesByOtherAppRequest, GetAppRolesByOtherAppResponse>(`/v1/get/app/roles/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppRole(req: UpdateAppRoleRequest, initReq?: fm.InitReq): Promise<UpdateAppRoleResponse> {
-    return fm.fetchReq<UpdateAppRoleRequest, UpdateAppRoleResponse>(`/v1/update/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppRoleRequest, UpdateAppRoleResponse>(`/v1/update/app/role`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppRoleUser(req: CreateAppRoleUserRequest, initReq?: fm.InitReq): Promise<CreateAppRoleUserResponse> {
-    return fm.fetchReq<CreateAppRoleUserRequest, CreateAppRoleUserResponse>(`/v1/create/app/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppRoleUserRequest, CreateAppRoleUserResponse>(`/v1/create/app/role/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppRoleUserForOtherAppUser(req: CreateAppRoleUserForOtherAppUserRequest, initReq?: fm.InitReq): Promise<CreateAppRoleUserForOtherAppUserResponse> {
-    return fm.fetchReq<CreateAppRoleUserForOtherAppUserRequest, CreateAppRoleUserForOtherAppUserResponse>(`/v1/create/app/role/user/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppRoleUserForOtherAppUserRequest, CreateAppRoleUserForOtherAppUserResponse>(`/v1/create/app/role/user/for/other/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppRoleUserForAppOtherUser(req: CreateAppRoleUserForAppOtherUserRequest, initReq?: fm.InitReq): Promise<CreateAppRoleUserForAppOtherUserResponse> {
-    return fm.fetchReq<CreateAppRoleUserForAppOtherUserRequest, CreateAppRoleUserForAppOtherUserResponse>(`/v1/create/app/role/user/for/app/other/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppRoleUserForAppOtherUserRequest, CreateAppRoleUserForAppOtherUserResponse>(`/v1/create/app/role/user/for/app/other/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppRoleUser(req: GetAppRoleUserRequest, initReq?: fm.InitReq): Promise<GetAppRoleUserResponse> {
-    return fm.fetchReq<GetAppRoleUserRequest, GetAppRoleUserResponse>(`/v1/get/app/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppRoleUserRequest, GetAppRoleUserResponse>(`/v1/get/app/role/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppRoleUserByAppUser(req: GetAppRoleUserByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppRoleUserByAppUserResponse> {
-    return fm.fetchReq<GetAppRoleUserByAppUserRequest, GetAppRoleUserByAppUserResponse>(`/v1/get/app/role/user/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppRoleUserByAppUserRequest, GetAppRoleUserByAppUserResponse>(`/v1/get/app/role/user/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppRoleUsersByAppRole(req: GetAppRoleUsersByAppRoleRequest, initReq?: fm.InitReq): Promise<GetAppRoleUsersByAppRoleResponse> {
-    return fm.fetchReq<GetAppRoleUsersByAppRoleRequest, GetAppRoleUsersByAppRoleResponse>(`/v1/get/app/role/users/by/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppRoleUsersByAppRoleRequest, GetAppRoleUsersByAppRoleResponse>(`/v1/get/app/role/users/by/app/role`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppRoleUsersByOtherAppRole(req: GetAppRoleUsersByOtherAppRoleRequest, initReq?: fm.InitReq): Promise<GetAppRoleUsersByOtherAppRoleResponse> {
-    return fm.fetchReq<GetAppRoleUsersByOtherAppRoleRequest, GetAppRoleUsersByOtherAppRoleResponse>(`/v1/get/app/role/users/by/other/app/role`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppRoleUsersByOtherAppRoleRequest, GetAppRoleUsersByOtherAppRoleResponse>(`/v1/get/app/role/users/by/other/app/role`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppRoleUsersByApp(req: GetAppRoleUsersByAppRequest, initReq?: fm.InitReq): Promise<GetAppRoleUsersByAppResponse> {
-    return fm.fetchReq<GetAppRoleUsersByAppRequest, GetAppRoleUsersByAppResponse>(`/v1/get/app/role/users/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppRoleUsersByAppRequest, GetAppRoleUsersByAppResponse>(`/v1/get/app/role/users/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppRoleUsersByOtherApp(req: GetAppRoleUsersByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppRoleUsersByOtherAppResponse> {
-    return fm.fetchReq<GetAppRoleUsersByOtherAppRequest, GetAppRoleUsersByOtherAppResponse>(`/v1/get/app/role/users/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppRoleUsersByOtherAppRequest, GetAppRoleUsersByOtherAppResponse>(`/v1/get/app/role/users/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserRolesByAppUser(req: GetUserRolesByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserRolesByAppUserResponse> {
-    return fm.fetchReq<GetUserRolesByAppUserRequest, GetUserRolesByAppUserResponse>(`/v1/get/user/roles/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserRolesByAppUserRequest, GetUserRolesByAppUserResponse>(`/v1/get/user/roles/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static DeleteAppRoleUser(req: DeleteAppRoleUserRequest, initReq?: fm.InitReq): Promise<DeleteAppRoleUserResponse> {
-    return fm.fetchReq<DeleteAppRoleUserRequest, DeleteAppRoleUserResponse>(`/v1/delete/app/role/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<DeleteAppRoleUserRequest, DeleteAppRoleUserResponse>(`/v1/delete/app/role/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppUserInfo(req: GetAppUserInfoRequest, initReq?: fm.InitReq): Promise<GetAppUserInfoResponse> {
-    return fm.fetchReq<GetAppUserInfoRequest, GetAppUserInfoResponse>(`/v1/get/app/userinfo`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppUserInfoRequest, GetAppUserInfoResponse>(`/v1/get/app/userinfo`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppUserInfoByAppUser(req: GetAppUserInfoByAppUserRequest, initReq?: fm.InitReq): Promise<GetAppUserInfoByAppUserResponse> {
-    return fm.fetchReq<GetAppUserInfoByAppUserRequest, GetAppUserInfoByAppUserResponse>(`/v1/get/app/userinfo/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppUserInfoByAppUserRequest, GetAppUserInfoByAppUserResponse>(`/v1/get/app/userinfo/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppUserInfosByApp(req: GetAppUserInfosByAppRequest, initReq?: fm.InitReq): Promise<GetAppUserInfosByAppResponse> {
-    return fm.fetchReq<GetAppUserInfosByAppRequest, GetAppUserInfosByAppResponse>(`/v1/get/app/userinfos/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppUserInfosByAppRequest, GetAppUserInfosByAppResponse>(`/v1/get/app/userinfos/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppUserInfosByOtherApp(req: GetAppUserInfosByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppUserInfosByOtherAppResponse> {
-    return fm.fetchReq<GetAppUserInfosByOtherAppRequest, GetAppUserInfosByOtherAppResponse>(`/v1/get/app/userinfos/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppUserInfosByOtherAppRequest, GetAppUserInfosByOtherAppResponse>(`/v1/get/app/userinfos/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppUserWithSecret(req: CreateAppUserWithSecretRequest, initReq?: fm.InitReq): Promise<CreateAppUserWithSecretResponse> {
-    return fm.fetchReq<CreateAppUserWithSecretRequest, CreateAppUserWithSecretResponse>(`/v1/create/app/user/with/secret`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppUserWithSecretRequest, CreateAppUserWithSecretResponse>(`/v1/create/app/user/with/secret`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppUserWithThirdParty(req: CreateAppUserWithThirdPartyRequest, initReq?: fm.InitReq): Promise<CreateAppUserWithThirdPartyResponse> {
-    return fm.fetchReq<CreateAppUserWithThirdPartyRequest, CreateAppUserWithThirdPartyResponse>(`/v1/create/app/user/with/third/party`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppUserWithThirdPartyRequest, CreateAppUserWithThirdPartyResponse>(`/v1/create/app/user/with/third/party`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppUserThirdParty(req: CreateAppUserThirdPartyRequest, initReq?: fm.InitReq): Promise<CreateAppUserThirdPartyResponse> {
-    return fm.fetchReq<CreateAppUserThirdPartyRequest, CreateAppUserThirdPartyResponse>(`/v1/create/app/user/third/party`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppUserThirdPartyRequest, CreateAppUserThirdPartyResponse>(`/v1/create/app/user/third/party`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppUserThirdPartyByAppThirdPartyID(req: GetAppUserThirdPartyByAppThirdPartyIDRequest, initReq?: fm.InitReq): Promise<GetAppUserThirdPartyByAppThirdPartyIDResponse> {
-    return fm.fetchReq<GetAppUserThirdPartyByAppThirdPartyIDRequest, GetAppUserThirdPartyByAppThirdPartyIDResponse>(`/v1/get/app/user/thirdparty/by/app/thirdpartyid`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppUserThirdPartyByAppThirdPartyIDRequest, GetAppUserThirdPartyByAppThirdPartyIDResponse>(`/v1/get/app/user/thirdparty/by/app/thirdpartyid`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppUserWithSecretRevert(req: CreateAppUserWithSecretRequest, initReq?: fm.InitReq): Promise<CreateAppUserWithSecretResponse> {
-    return fm.fetchReq<CreateAppUserWithSecretRequest, CreateAppUserWithSecretResponse>(`/v1/create/app/user/with/secret/revert`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppUserWithSecretRequest, CreateAppUserWithSecretResponse>(`/v1/create/app/user/with/secret/revert`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
 }

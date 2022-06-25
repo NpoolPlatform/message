@@ -195,60 +195,60 @@ export type CurrencyResponse = {
 
 export class OracleManager {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateReward(req: CreateRewardRequest, initReq?: fm.InitReq): Promise<CreateRewardResponse> {
-    return fm.fetchReq<CreateRewardRequest, CreateRewardResponse>(`/v1/create/reward`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateRewardRequest, CreateRewardResponse>(`/v1/create/reward`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateRewards(req: CreateRewardsRequest, initReq?: fm.InitReq): Promise<CreateRewardsResponse> {
-    return fm.fetchReq<CreateRewardsRequest, CreateRewardsResponse>(`/v1/create/rewards`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateRewardsRequest, CreateRewardsResponse>(`/v1/create/rewards`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateReward(req: UpdateRewardRequest, initReq?: fm.InitReq): Promise<UpdateRewardResponse> {
-    return fm.fetchReq<UpdateRewardRequest, UpdateRewardResponse>(`/v1/update/reward`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateRewardRequest, UpdateRewardResponse>(`/v1/update/reward`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetReward(req: GetRewardRequest, initReq?: fm.InitReq): Promise<GetRewardResponse> {
-    return fm.fetchReq<GetRewardRequest, GetRewardResponse>(`/v1/get/reward`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetRewardRequest, GetRewardResponse>(`/v1/get/reward`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetRewardOnly(req: GetRewardOnlyRequest, initReq?: fm.InitReq): Promise<GetRewardOnlyResponse> {
-    return fm.fetchReq<GetRewardOnlyRequest, GetRewardOnlyResponse>(`/v1/get/reward/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetRewardOnlyRequest, GetRewardOnlyResponse>(`/v1/get/reward/only`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetRewards(req: GetRewardsRequest, initReq?: fm.InitReq): Promise<GetRewardsResponse> {
-    return fm.fetchReq<GetRewardsRequest, GetRewardsResponse>(`/v1/get/rewards`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetRewardsRequest, GetRewardsResponse>(`/v1/get/rewards`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static ExistReward(req: ExistRewardRequest, initReq?: fm.InitReq): Promise<ExistRewardResponse> {
-    return fm.fetchReq<ExistRewardRequest, ExistRewardResponse>(`/v1/exist/reward`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<ExistRewardRequest, ExistRewardResponse>(`/v1/exist/reward`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static ExistRewardConds(req: ExistRewardCondsRequest, initReq?: fm.InitReq): Promise<ExistRewardCondsResponse> {
-    return fm.fetchReq<ExistRewardCondsRequest, ExistRewardCondsResponse>(`/v1/exist/reward/conds`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<ExistRewardCondsRequest, ExistRewardCondsResponse>(`/v1/exist/reward/conds`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static DeleteReward(req: DeleteRewardRequest, initReq?: fm.InitReq): Promise<DeleteRewardResponse> {
-    return fm.fetchReq<DeleteRewardRequest, DeleteRewardResponse>(`/v1/delete/reward`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<DeleteRewardRequest, DeleteRewardResponse>(`/v1/delete/reward`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateCurrency(req: CreateCurrencyRequest, initReq?: fm.InitReq): Promise<CreateCurrencyResponse> {
-    return fm.fetchReq<CreateCurrencyRequest, CreateCurrencyResponse>(`/v1/create/currency`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateCurrencyRequest, CreateCurrencyResponse>(`/v1/create/currency`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppCurrency(req: CreateAppCurrencyRequest, initReq?: fm.InitReq): Promise<CreateAppCurrencyResponse> {
-    return fm.fetchReq<CreateAppCurrencyRequest, CreateAppCurrencyResponse>(`/v1/create/app/currency`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppCurrencyRequest, CreateAppCurrencyResponse>(`/v1/create/app/currency`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateCurrency(req: UpdateCurrencyRequest, initReq?: fm.InitReq): Promise<UpdateCurrencyResponse> {
-    return fm.fetchReq<UpdateCurrencyRequest, UpdateCurrencyResponse>(`/v1/update/currency`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateCurrencyRequest, UpdateCurrencyResponse>(`/v1/update/currency`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCurrency(req: GetCurrencyRequest, initReq?: fm.InitReq): Promise<GetCurrencyResponse> {
-    return fm.fetchReq<GetCurrencyRequest, GetCurrencyResponse>(`/v1/get/currency`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCurrencyRequest, GetCurrencyResponse>(`/v1/get/currency`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCurrencyOnly(req: GetCurrencyOnlyRequest, initReq?: fm.InitReq): Promise<GetCurrencyOnlyResponse> {
-    return fm.fetchReq<GetCurrencyOnlyRequest, GetCurrencyOnlyResponse>(`/v1/get/currency/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCurrencyOnlyRequest, GetCurrencyOnlyResponse>(`/v1/get/currency/only`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCurrencies(req: GetCurrenciesRequest, initReq?: fm.InitReq): Promise<GetCurrenciesResponse> {
-    return fm.fetchReq<GetCurrenciesRequest, GetCurrenciesResponse>(`/v1/get/currencies`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCurrenciesRequest, GetCurrenciesResponse>(`/v1/get/currencies`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppCurrencies(req: GetAppCurrenciesRequest, initReq?: fm.InitReq): Promise<GetAppCurrenciesResponse> {
-    return fm.fetchReq<GetAppCurrenciesRequest, GetAppCurrenciesResponse>(`/v1/get/app/currencies`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppCurrenciesRequest, GetAppCurrenciesResponse>(`/v1/get/app/currencies`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static DeleteCurrency(req: DeleteCurrencyRequest, initReq?: fm.InitReq): Promise<DeleteCurrencyResponse> {
-    return fm.fetchReq<DeleteCurrencyRequest, DeleteCurrencyResponse>(`/v1/delete/currency`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<DeleteCurrencyRequest, DeleteCurrencyResponse>(`/v1/delete/currency`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static Currency(req: CurrencyRequest, initReq?: fm.InitReq): Promise<CurrencyResponse> {
-    return fm.fetchReq<CurrencyRequest, CurrencyResponse>(`/v1/currency`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CurrencyRequest, CurrencyResponse>(`/v1/currency`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
 }

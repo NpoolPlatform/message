@@ -334,96 +334,96 @@ export type NotifyEmailResponse = {
 
 export class ThirdGateway {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppSMSTemplate(req: CreateAppSMSTemplateRequest, initReq?: fm.InitReq): Promise<CreateAppSMSTemplateResponse> {
-    return fm.fetchReq<CreateAppSMSTemplateRequest, CreateAppSMSTemplateResponse>(`/v1/create/app/sms/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppSMSTemplateRequest, CreateAppSMSTemplateResponse>(`/v1/create/app/sms/template`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppSMSTemplateForOtherApp(req: CreateAppSMSTemplateForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppSMSTemplateForOtherAppResponse> {
-    return fm.fetchReq<CreateAppSMSTemplateForOtherAppRequest, CreateAppSMSTemplateForOtherAppResponse>(`/v1/create/app/sms/template/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppSMSTemplateForOtherAppRequest, CreateAppSMSTemplateForOtherAppResponse>(`/v1/create/app/sms/template/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppSMSTemplate(req: GetAppSMSTemplateRequest, initReq?: fm.InitReq): Promise<GetAppSMSTemplateResponse> {
-    return fm.fetchReq<GetAppSMSTemplateRequest, GetAppSMSTemplateResponse>(`/v1/get/app/sms/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppSMSTemplateRequest, GetAppSMSTemplateResponse>(`/v1/get/app/sms/template`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppSMSTemplate(req: UpdateAppSMSTemplateRequest, initReq?: fm.InitReq): Promise<UpdateAppSMSTemplateResponse> {
-    return fm.fetchReq<UpdateAppSMSTemplateRequest, UpdateAppSMSTemplateResponse>(`/v1/update/app/sms/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppSMSTemplateRequest, UpdateAppSMSTemplateResponse>(`/v1/update/app/sms/template`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppSMSTemplatesByApp(req: GetAppSMSTemplatesByAppRequest, initReq?: fm.InitReq): Promise<GetAppSMSTemplatesByAppResponse> {
-    return fm.fetchReq<GetAppSMSTemplatesByAppRequest, GetAppSMSTemplatesByAppResponse>(`/v1/get/app/sms/templates/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppSMSTemplatesByAppRequest, GetAppSMSTemplatesByAppResponse>(`/v1/get/app/sms/templates/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppSMSTemplatesByOtherApp(req: GetAppSMSTemplatesByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppSMSTemplatesByOtherAppResponse> {
-    return fm.fetchReq<GetAppSMSTemplatesByOtherAppRequest, GetAppSMSTemplatesByOtherAppResponse>(`/v1/get/app/sms/templates/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppSMSTemplatesByOtherAppRequest, GetAppSMSTemplatesByOtherAppResponse>(`/v1/get/app/sms/templates/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppSMSTemplateByAppLangUsedFor(req: GetAppSMSTemplateByAppLangUsedForRequest, initReq?: fm.InitReq): Promise<GetAppSMSTemplateByAppLangUsedForResponse> {
-    return fm.fetchReq<GetAppSMSTemplateByAppLangUsedForRequest, GetAppSMSTemplateByAppLangUsedForResponse>(`/v1/get/app/sms/template/by/app/lang/usedfor`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppSMSTemplateByAppLangUsedForRequest, GetAppSMSTemplateByAppLangUsedForResponse>(`/v1/get/app/sms/template/by/app/lang/usedfor`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppEmailTemplate(req: CreateAppEmailTemplateRequest, initReq?: fm.InitReq): Promise<CreateAppEmailTemplateResponse> {
-    return fm.fetchReq<CreateAppEmailTemplateRequest, CreateAppEmailTemplateResponse>(`/v1/create/app/email/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppEmailTemplateRequest, CreateAppEmailTemplateResponse>(`/v1/create/app/email/template`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppEmailTemplateForOtherApp(req: CreateAppEmailTemplateForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppEmailTemplateForOtherAppResponse> {
-    return fm.fetchReq<CreateAppEmailTemplateForOtherAppRequest, CreateAppEmailTemplateForOtherAppResponse>(`/v1/create/app/email/template/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppEmailTemplateForOtherAppRequest, CreateAppEmailTemplateForOtherAppResponse>(`/v1/create/app/email/template/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppEmailTemplate(req: GetAppEmailTemplateRequest, initReq?: fm.InitReq): Promise<GetAppEmailTemplateResponse> {
-    return fm.fetchReq<GetAppEmailTemplateRequest, GetAppEmailTemplateResponse>(`/v1/get/app/email/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppEmailTemplateRequest, GetAppEmailTemplateResponse>(`/v1/get/app/email/template`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppEmailTemplate(req: UpdateAppEmailTemplateRequest, initReq?: fm.InitReq): Promise<UpdateAppEmailTemplateResponse> {
-    return fm.fetchReq<UpdateAppEmailTemplateRequest, UpdateAppEmailTemplateResponse>(`/v1/update/app/email/template`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppEmailTemplateRequest, UpdateAppEmailTemplateResponse>(`/v1/update/app/email/template`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppEmailTemplatesByApp(req: GetAppEmailTemplatesByAppRequest, initReq?: fm.InitReq): Promise<GetAppEmailTemplatesByAppResponse> {
-    return fm.fetchReq<GetAppEmailTemplatesByAppRequest, GetAppEmailTemplatesByAppResponse>(`/v1/get/app/email/templates/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppEmailTemplatesByAppRequest, GetAppEmailTemplatesByAppResponse>(`/v1/get/app/email/templates/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppEmailTemplatesByOtherApp(req: GetAppEmailTemplatesByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppEmailTemplatesByOtherAppResponse> {
-    return fm.fetchReq<GetAppEmailTemplatesByOtherAppRequest, GetAppEmailTemplatesByOtherAppResponse>(`/v1/get/app/email/templates/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppEmailTemplatesByOtherAppRequest, GetAppEmailTemplatesByOtherAppResponse>(`/v1/get/app/email/templates/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppEmailTemplateByAppLangUsedFor(req: GetAppEmailTemplateByAppLangUsedForRequest, initReq?: fm.InitReq): Promise<GetAppEmailTemplateByAppLangUsedForResponse> {
-    return fm.fetchReq<GetAppEmailTemplateByAppLangUsedForRequest, GetAppEmailTemplateByAppLangUsedForResponse>(`/v1/get/app/email/template/by/app/lang/usedfor`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppEmailTemplateByAppLangUsedForRequest, GetAppEmailTemplateByAppLangUsedForResponse>(`/v1/get/app/email/template/by/app/lang/usedfor`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppContact(req: CreateAppContactRequest, initReq?: fm.InitReq): Promise<CreateAppContactResponse> {
-    return fm.fetchReq<CreateAppContactRequest, CreateAppContactResponse>(`/v1/create/app/contact`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppContactRequest, CreateAppContactResponse>(`/v1/create/app/contact`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppContactForOtherApp(req: CreateAppContactForOtherAppRequest, initReq?: fm.InitReq): Promise<CreateAppContactForOtherAppResponse> {
-    return fm.fetchReq<CreateAppContactForOtherAppRequest, CreateAppContactForOtherAppResponse>(`/v1/create/app/contact/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppContactForOtherAppRequest, CreateAppContactForOtherAppResponse>(`/v1/create/app/contact/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppContact(req: GetAppContactRequest, initReq?: fm.InitReq): Promise<GetAppContactResponse> {
-    return fm.fetchReq<GetAppContactRequest, GetAppContactResponse>(`/v1/get/app/contact`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppContactRequest, GetAppContactResponse>(`/v1/get/app/contact`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppContact(req: UpdateAppContactRequest, initReq?: fm.InitReq): Promise<UpdateAppContactResponse> {
-    return fm.fetchReq<UpdateAppContactRequest, UpdateAppContactResponse>(`/v1/update/app/contact`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppContactRequest, UpdateAppContactResponse>(`/v1/update/app/contact`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppContactsByApp(req: GetAppContactsByAppRequest, initReq?: fm.InitReq): Promise<GetAppContactsByAppResponse> {
-    return fm.fetchReq<GetAppContactsByAppRequest, GetAppContactsByAppResponse>(`/v1/get/app/contacts/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppContactsByAppRequest, GetAppContactsByAppResponse>(`/v1/get/app/contacts/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppContactsByOtherApp(req: GetAppContactsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetAppContactsByOtherAppResponse> {
-    return fm.fetchReq<GetAppContactsByOtherAppRequest, GetAppContactsByOtherAppResponse>(`/v1/get/app/contacts/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppContactsByOtherAppRequest, GetAppContactsByOtherAppResponse>(`/v1/get/app/contacts/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppContactByAppUsedForAccountType(req: GetAppContactByAppUsedForAccountTypeRequest, initReq?: fm.InitReq): Promise<GetAppContactByAppUsedForAccountTypeResponse> {
-    return fm.fetchReq<GetAppContactByAppUsedForAccountTypeRequest, GetAppContactByAppUsedForAccountTypeResponse>(`/v1/get/app/contact/by/app/usedfor/accounttype`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppContactByAppUsedForAccountTypeRequest, GetAppContactByAppUsedForAccountTypeResponse>(`/v1/get/app/contact/by/app/usedfor/accounttype`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static SendSMSCode(req: SendSMSCodeRequest, initReq?: fm.InitReq): Promise<SendSMSCodeResponse> {
-    return fm.fetchReq<SendSMSCodeRequest, SendSMSCodeResponse>(`/v1/send/sms/code`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<SendSMSCodeRequest, SendSMSCodeResponse>(`/v1/send/sms/code`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static VerifySMSCode(req: VerifySMSCodeRequest, initReq?: fm.InitReq): Promise<VerifySMSCodeResponse> {
-    return fm.fetchReq<VerifySMSCodeRequest, VerifySMSCodeResponse>(`/v1/verify/sms/code`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<VerifySMSCodeRequest, VerifySMSCodeResponse>(`/v1/verify/sms/code`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static SendEmailCode(req: SendEmailCodeRequest, initReq?: fm.InitReq): Promise<SendEmailCodeResponse> {
-    return fm.fetchReq<SendEmailCodeRequest, SendEmailCodeResponse>(`/v1/send/email/code`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<SendEmailCodeRequest, SendEmailCodeResponse>(`/v1/send/email/code`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static VerifyEmailCode(req: VerifyEmailCodeRequest, initReq?: fm.InitReq): Promise<VerifyEmailCodeResponse> {
-    return fm.fetchReq<VerifyEmailCodeRequest, VerifyEmailCodeResponse>(`/v1/verify/email/code`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<VerifyEmailCodeRequest, VerifyEmailCodeResponse>(`/v1/verify/email/code`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static SetupGoogleAuthentication(req: SetupGoogleAuthenticationRequest, initReq?: fm.InitReq): Promise<SetupGoogleAuthenticationResponse> {
-    return fm.fetchReq<SetupGoogleAuthenticationRequest, SetupGoogleAuthenticationResponse>(`/v1/setup/google/authentication`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<SetupGoogleAuthenticationRequest, SetupGoogleAuthenticationResponse>(`/v1/setup/google/authentication`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static VerifyGoogleAuthentication(req: VerifyGoogleAuthenticationRequest, initReq?: fm.InitReq): Promise<VerifyGoogleAuthenticationResponse> {
-    return fm.fetchReq<VerifyGoogleAuthenticationRequest, VerifyGoogleAuthenticationResponse>(`/v1/verify/google/authentication`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<VerifyGoogleAuthenticationRequest, VerifyGoogleAuthenticationResponse>(`/v1/verify/google/authentication`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static VerifyGoogleRecaptchaV3(req: VerifyGoogleRecaptchaV3Request, initReq?: fm.InitReq): Promise<VerifyGoogleRecaptchaV3Response> {
-    return fm.fetchReq<VerifyGoogleRecaptchaV3Request, VerifyGoogleRecaptchaV3Response>(`/v1/verify/google/recaptcha/v3`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<VerifyGoogleRecaptchaV3Request, VerifyGoogleRecaptchaV3Response>(`/v1/verify/google/recaptcha/v3`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static ContactByEmail(req: ContactByEmailRequest, initReq?: fm.InitReq): Promise<ContactByEmailResponse> {
-    return fm.fetchReq<ContactByEmailRequest, ContactByEmailResponse>(`/v1/contact/by/email`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<ContactByEmailRequest, ContactByEmailResponse>(`/v1/contact/by/email`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static NotifyEmail(req: NotifyEmailRequest, initReq?: fm.InitReq): Promise<NotifyEmailResponse> {
-    return fm.fetchReq<NotifyEmailRequest, NotifyEmailResponse>(`/v1/notify/email`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<NotifyEmailRequest, NotifyEmailResponse>(`/v1/notify/email`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
 }

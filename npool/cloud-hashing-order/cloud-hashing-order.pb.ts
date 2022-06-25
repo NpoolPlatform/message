@@ -351,102 +351,102 @@ export type GetOrdersDetailByGoodResponse = {
 
 export class CloudHashingOrder {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateGoodPaying(req: CreateGoodPayingRequest, initReq?: fm.InitReq): Promise<CreateGoodPayingResponse> {
-    return fm.fetchReq<CreateGoodPayingRequest, CreateGoodPayingResponse>(`/v1/create/good/paying`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateGoodPayingRequest, CreateGoodPayingResponse>(`/v1/create/good/paying`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetGoodPayingByOrder(req: GetGoodPayingByOrderRequest, initReq?: fm.InitReq): Promise<GetGoodPayingByOrderResponse> {
-    return fm.fetchReq<GetGoodPayingByOrderRequest, GetGoodPayingByOrderResponse>(`/v1/get/good/paying/by/order`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetGoodPayingByOrderRequest, GetGoodPayingByOrderResponse>(`/v1/get/good/paying/by/order`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateGasPaying(req: CreateGasPayingRequest, initReq?: fm.InitReq): Promise<CreateGasPayingResponse> {
-    return fm.fetchReq<CreateGasPayingRequest, CreateGasPayingResponse>(`/v1/create/gas/paying`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateGasPayingRequest, CreateGasPayingResponse>(`/v1/create/gas/paying`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetGasPayingsByOrder(req: GetGasPayingsByOrderRequest, initReq?: fm.InitReq): Promise<GetGasPayingsByOrderResponse> {
-    return fm.fetchReq<GetGasPayingsByOrderRequest, GetGasPayingsByOrderResponse>(`/v1/get/gas/payings/by/order`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetGasPayingsByOrderRequest, GetGasPayingsByOrderResponse>(`/v1/get/gas/payings/by/order`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateOrder(req: CreateOrderRequest, initReq?: fm.InitReq): Promise<CreateOrderResponse> {
-    return fm.fetchReq<CreateOrderRequest, CreateOrderResponse>(`/v1/create/order`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateOrderRequest, CreateOrderResponse>(`/v1/create/order`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrder(req: GetOrderRequest, initReq?: fm.InitReq): Promise<GetOrderResponse> {
-    return fm.fetchReq<GetOrderRequest, GetOrderResponse>(`/v1/get/order`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrderRequest, GetOrderResponse>(`/v1/get/order`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrders(req: GetOrdersRequest, initReq?: fm.InitReq): Promise<GetOrdersResponse> {
-    return fm.fetchReq<GetOrdersRequest, GetOrdersResponse>(`/v1/get/orders`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrdersRequest, GetOrdersResponse>(`/v1/get/orders`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrderDetail(req: GetOrderDetailRequest, initReq?: fm.InitReq): Promise<GetOrderDetailResponse> {
-    return fm.fetchReq<GetOrderDetailRequest, GetOrderDetailResponse>(`/v1/get/order/detail`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrderDetailRequest, GetOrderDetailResponse>(`/v1/get/order/detail`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrdersByAppUser(req: GetOrdersByAppUserRequest, initReq?: fm.InitReq): Promise<GetOrdersByAppUserResponse> {
-    return fm.fetchReq<GetOrdersByAppUserRequest, GetOrdersByAppUserResponse>(`/v1/get/orders/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrdersByAppUserRequest, GetOrdersByAppUserResponse>(`/v1/get/orders/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrderByAppUserCouponTypeID(req: GetOrderByAppUserCouponTypeIDRequest, initReq?: fm.InitReq): Promise<GetOrderByAppUserCouponTypeIDResponse> {
-    return fm.fetchReq<GetOrderByAppUserCouponTypeIDRequest, GetOrderByAppUserCouponTypeIDResponse>(`/v1/get/order/by/app/user/coupon/type/id`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrderByAppUserCouponTypeIDRequest, GetOrderByAppUserCouponTypeIDResponse>(`/v1/get/order/by/app/user/coupon/type/id`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrdersByApp(req: GetOrdersByAppRequest, initReq?: fm.InitReq): Promise<GetOrdersByAppResponse> {
-    return fm.fetchReq<GetOrdersByAppRequest, GetOrdersByAppResponse>(`/v1/get/orders/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrdersByAppRequest, GetOrdersByAppResponse>(`/v1/get/orders/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrdersByOtherApp(req: GetOrdersByOtherAppRequest, initReq?: fm.InitReq): Promise<GetOrdersByOtherAppResponse> {
-    return fm.fetchReq<GetOrdersByOtherAppRequest, GetOrdersByOtherAppResponse>(`/v1/get/orders/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrdersByOtherAppRequest, GetOrdersByOtherAppResponse>(`/v1/get/orders/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrdersByGood(req: GetOrdersByGoodRequest, initReq?: fm.InitReq): Promise<GetOrdersByGoodResponse> {
-    return fm.fetchReq<GetOrdersByGoodRequest, GetOrdersByGoodResponse>(`/v1/get/orders/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrdersByGoodRequest, GetOrdersByGoodResponse>(`/v1/get/orders/by/good`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateCompensate(req: CreateCompensateRequest, initReq?: fm.InitReq): Promise<CreateCompensateResponse> {
-    return fm.fetchReq<CreateCompensateRequest, CreateCompensateResponse>(`/v1/create/compensate`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateCompensateRequest, CreateCompensateResponse>(`/v1/create/compensate`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCompensatesByOrder(req: GetCompensatesByOrderRequest, initReq?: fm.InitReq): Promise<GetCompensatesByOrderResponse> {
-    return fm.fetchReq<GetCompensatesByOrderRequest, GetCompensatesByOrderResponse>(`/v1/get/compensates/by/order`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCompensatesByOrderRequest, GetCompensatesByOrderResponse>(`/v1/get/compensates/by/order`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateOutOfGas(req: CreateOutOfGasRequest, initReq?: fm.InitReq): Promise<CreateOutOfGasResponse> {
-    return fm.fetchReq<CreateOutOfGasRequest, CreateOutOfGasResponse>(`/v1/create/out-of-gas`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateOutOfGasRequest, CreateOutOfGasResponse>(`/v1/create/out-of-gas`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOutOfGasesByOrder(req: GetOutOfGasesByOrderRequest, initReq?: fm.InitReq): Promise<GetOutOfGasesByOrderResponse> {
-    return fm.fetchReq<GetOutOfGasesByOrderRequest, GetOutOfGasesByOrderResponse>(`/v1/get/out-of-gases/by/order`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOutOfGasesByOrderRequest, GetOutOfGasesByOrderResponse>(`/v1/get/out-of-gases/by/order`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreatePayment(req: CreatePaymentRequest, initReq?: fm.InitReq): Promise<CreatePaymentResponse> {
-    return fm.fetchReq<CreatePaymentRequest, CreatePaymentResponse>(`/v1/create/payment`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreatePaymentRequest, CreatePaymentResponse>(`/v1/create/payment`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetPayment(req: GetPaymentRequest, initReq?: fm.InitReq): Promise<GetPaymentResponse> {
-    return fm.fetchReq<GetPaymentRequest, GetPaymentResponse>(`/v1/get/payment`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetPaymentRequest, GetPaymentResponse>(`/v1/get/payment`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdatePayment(req: UpdatePaymentRequest, initReq?: fm.InitReq): Promise<UpdatePaymentResponse> {
-    return fm.fetchReq<UpdatePaymentRequest, UpdatePaymentResponse>(`/v1/update/payment`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdatePaymentRequest, UpdatePaymentResponse>(`/v1/update/payment`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdatePaymentByUser(req: UpdatePaymentByUserRequest, initReq?: fm.InitReq): Promise<UpdatePaymentByUserResponse> {
-    return fm.fetchReq<UpdatePaymentByUserRequest, UpdatePaymentByUserResponse>(`/v1/update/payment/by/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdatePaymentByUserRequest, UpdatePaymentByUserResponse>(`/v1/update/payment/by/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetPaymentByOrder(req: GetPaymentByOrderRequest, initReq?: fm.InitReq): Promise<GetPaymentByOrderResponse> {
-    return fm.fetchReq<GetPaymentByOrderRequest, GetPaymentByOrderResponse>(`/v1/get/payment/by/order`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetPaymentByOrderRequest, GetPaymentByOrderResponse>(`/v1/get/payment/by/order`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetPaymentsByState(req: GetPaymentsByStateRequest, initReq?: fm.InitReq): Promise<GetPaymentsByStateResponse> {
-    return fm.fetchReq<GetPaymentsByStateRequest, GetPaymentsByStateResponse>(`/v1/get/payments/by/state`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetPaymentsByStateRequest, GetPaymentsByStateResponse>(`/v1/get/payments/by/state`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetPaymentsByApp(req: GetPaymentsByAppRequest, initReq?: fm.InitReq): Promise<GetPaymentsByAppResponse> {
-    return fm.fetchReq<GetPaymentsByAppRequest, GetPaymentsByAppResponse>(`/v1/get/payments/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetPaymentsByAppRequest, GetPaymentsByAppResponse>(`/v1/get/payments/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetPaymentsByOtherApp(req: GetPaymentsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetPaymentsByOtherAppResponse> {
-    return fm.fetchReq<GetPaymentsByOtherAppRequest, GetPaymentsByOtherAppResponse>(`/v1/get/payments/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetPaymentsByOtherAppRequest, GetPaymentsByOtherAppResponse>(`/v1/get/payments/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetPaymentsByAppUser(req: GetPaymentsByAppUserRequest, initReq?: fm.InitReq): Promise<GetPaymentsByAppUserResponse> {
-    return fm.fetchReq<GetPaymentsByAppUserRequest, GetPaymentsByAppUserResponse>(`/v1/get/payments/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetPaymentsByAppUserRequest, GetPaymentsByAppUserResponse>(`/v1/get/payments/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetPaymentsByAppUserState(req: GetPaymentsByAppUserStateRequest, initReq?: fm.InitReq): Promise<GetPaymentsByAppUserStateResponse> {
-    return fm.fetchReq<GetPaymentsByAppUserStateRequest, GetPaymentsByAppUserStateResponse>(`/v1/get/payments/by/app/user/state`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetPaymentsByAppUserStateRequest, GetPaymentsByAppUserStateResponse>(`/v1/get/payments/by/app/user/state`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetPayments(req: GetPaymentsRequest, initReq?: fm.InitReq): Promise<GetPaymentsResponse> {
-    return fm.fetchReq<GetPaymentsRequest, GetPaymentsResponse>(`/v1/get/payments`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetPaymentsRequest, GetPaymentsResponse>(`/v1/get/payments`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrdersDetailByAppUser(req: GetOrdersDetailByAppUserRequest, initReq?: fm.InitReq): Promise<GetOrdersDetailByAppUserResponse> {
-    return fm.fetchReq<GetOrdersDetailByAppUserRequest, GetOrdersDetailByAppUserResponse>(`/v1/get/orders/detail/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrdersDetailByAppUserRequest, GetOrdersDetailByAppUserResponse>(`/v1/get/orders/detail/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrdersShortDetailByAppUser(req: GetOrdersShortDetailByAppUserRequest, initReq?: fm.InitReq): Promise<GetOrdersShortDetailByAppUserResponse> {
-    return fm.fetchReq<GetOrdersShortDetailByAppUserRequest, GetOrdersShortDetailByAppUserResponse>(`/v1/get/orders/short/detail/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrdersShortDetailByAppUserRequest, GetOrdersShortDetailByAppUserResponse>(`/v1/get/orders/short/detail/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrdersDetailByApp(req: GetOrdersDetailByAppRequest, initReq?: fm.InitReq): Promise<GetOrdersDetailByAppResponse> {
-    return fm.fetchReq<GetOrdersDetailByAppRequest, GetOrdersDetailByAppResponse>(`/v1/get/orders/detail/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrdersDetailByAppRequest, GetOrdersDetailByAppResponse>(`/v1/get/orders/detail/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrdersDetailByGood(req: GetOrdersDetailByGoodRequest, initReq?: fm.InitReq): Promise<GetOrdersDetailByGoodResponse> {
-    return fm.fetchReq<GetOrdersDetailByGoodRequest, GetOrdersDetailByGoodResponse>(`/v1/get/orders/detail/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrdersDetailByGoodRequest, GetOrdersDetailByGoodResponse>(`/v1/get/orders/detail/by/good`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
 }

@@ -55,18 +55,18 @@ export type GetAppEmailSubscribersResponse = {
 
 export class SubscribeManager {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateEmailSubscriber(req: CreateEmailSubscriberRequest, initReq?: fm.InitReq): Promise<CreateEmailSubscriberResponse> {
-    return fm.fetchReq<CreateEmailSubscriberRequest, CreateEmailSubscriberResponse>(`/v1/create/email/subscriber`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateEmailSubscriberRequest, CreateEmailSubscriberResponse>(`/v1/create/email/subscriber`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateEmailSubscribers(req: CreateEmailSubscribersRequest, initReq?: fm.InitReq): Promise<CreateEmailSubscribersResponse> {
-    return fm.fetchReq<CreateEmailSubscribersRequest, CreateEmailSubscribersResponse>(`/v1/create/email/subscribers`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateEmailSubscribersRequest, CreateEmailSubscribersResponse>(`/v1/create/email/subscribers`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetEmailSubscribers(req: GetEmailSubscribersRequest, initReq?: fm.InitReq): Promise<GetEmailSubscribersResponse> {
-    return fm.fetchReq<GetEmailSubscribersRequest, GetEmailSubscribersResponse>(`/v1/get/email/subscribers`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetEmailSubscribersRequest, GetEmailSubscribersResponse>(`/v1/get/email/subscribers`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAppEmailSubscribers(req: GetAppEmailSubscribersRequest, initReq?: fm.InitReq): Promise<GetAppEmailSubscribersResponse> {
-    return fm.fetchReq<GetAppEmailSubscribersRequest, GetAppEmailSubscribersResponse>(`/v1/get/app/email/subscribers`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAppEmailSubscribersRequest, GetAppEmailSubscribersResponse>(`/v1/get/app/email/subscribers`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
 }

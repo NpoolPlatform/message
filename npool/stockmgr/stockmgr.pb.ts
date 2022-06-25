@@ -120,42 +120,42 @@ export type DeleteStockResponse = {
 
 export class StockManager {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateStock(req: CreateStockRequest, initReq?: fm.InitReq): Promise<CreateStockResponse> {
-    return fm.fetchReq<CreateStockRequest, CreateStockResponse>(`/v1/create/stock`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateStockRequest, CreateStockResponse>(`/v1/create/stock`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateStocks(req: CreateStocksRequest, initReq?: fm.InitReq): Promise<CreateStocksResponse> {
-    return fm.fetchReq<CreateStocksRequest, CreateStocksResponse>(`/v1/create/stocks`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateStocksRequest, CreateStocksResponse>(`/v1/create/stocks`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateStock(req: UpdateStockRequest, initReq?: fm.InitReq): Promise<UpdateStockResponse> {
-    return fm.fetchReq<UpdateStockRequest, UpdateStockResponse>(`/v1/update/stock`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateStockRequest, UpdateStockResponse>(`/v1/update/stock`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateStockFields(req: UpdateStockFieldsRequest, initReq?: fm.InitReq): Promise<UpdateStockFieldsResponse> {
-    return fm.fetchReq<UpdateStockFieldsRequest, UpdateStockFieldsResponse>(`/v1/update/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateStockFieldsRequest, UpdateStockFieldsResponse>(`/v1/update/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static AddStockFields(req: AddStockFieldsRequest, initReq?: fm.InitReq): Promise<AddStockFieldsResponse> {
-    return fm.fetchReq<AddStockFieldsRequest, AddStockFieldsResponse>(`/v1/add/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<AddStockFieldsRequest, AddStockFieldsResponse>(`/v1/add/stock/fields`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetStock(req: GetStockRequest, initReq?: fm.InitReq): Promise<GetStockResponse> {
-    return fm.fetchReq<GetStockRequest, GetStockResponse>(`/v1/get/stock`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetStockRequest, GetStockResponse>(`/v1/get/stock`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetStockOnly(req: GetStockOnlyRequest, initReq?: fm.InitReq): Promise<GetStockOnlyResponse> {
-    return fm.fetchReq<GetStockOnlyRequest, GetStockOnlyResponse>(`/v1/get/stock/only`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetStockOnlyRequest, GetStockOnlyResponse>(`/v1/get/stock/only`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetStocks(req: GetStocksRequest, initReq?: fm.InitReq): Promise<GetStocksResponse> {
-    return fm.fetchReq<GetStocksRequest, GetStocksResponse>(`/v1/get/stocks`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetStocksRequest, GetStocksResponse>(`/v1/get/stocks`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static ExistStock(req: ExistStockRequest, initReq?: fm.InitReq): Promise<ExistStockResponse> {
-    return fm.fetchReq<ExistStockRequest, ExistStockResponse>(`/v1/exist/stock`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<ExistStockRequest, ExistStockResponse>(`/v1/exist/stock`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static ExistStockConds(req: ExistStockCondsRequest, initReq?: fm.InitReq): Promise<ExistStockCondsResponse> {
-    return fm.fetchReq<ExistStockCondsRequest, ExistStockCondsResponse>(`/v1/exist/stock/conds`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<ExistStockCondsRequest, ExistStockCondsResponse>(`/v1/exist/stock/conds`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CountStocks(req: CountStocksRequest, initReq?: fm.InitReq): Promise<CountStocksResponse> {
-    return fm.fetchReq<CountStocksRequest, CountStocksResponse>(`/v1/count/stocks`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CountStocksRequest, CountStocksResponse>(`/v1/count/stocks`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static DeleteStock(req: DeleteStockRequest, initReq?: fm.InitReq): Promise<DeleteStockResponse> {
-    return fm.fetchReq<DeleteStockRequest, DeleteStockResponse>(`/v1/delete/stock`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<DeleteStockRequest, DeleteStockResponse>(`/v1/delete/stock`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
 }

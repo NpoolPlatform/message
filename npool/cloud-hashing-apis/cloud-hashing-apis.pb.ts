@@ -701,177 +701,177 @@ export type GetCurrentFeeResponse = {
 
 export class CloudHashingApis {
   static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetGoods(req: GetGoodsRequest, initReq?: fm.InitReq): Promise<GetGoodsResponse> {
-    return fm.fetchReq<GetGoodsRequest, GetGoodsResponse>(`/v1/get/goods`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetGoodsRequest, GetGoodsResponse>(`/v1/get/goods`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetGoodsByApp(req: GetGoodsByAppRequest, initReq?: fm.InitReq): Promise<GetGoodsByAppResponse> {
-    return fm.fetchReq<GetGoodsByAppRequest, GetGoodsByAppResponse>(`/v1/get/goods/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetGoodsByAppRequest, GetGoodsByAppResponse>(`/v1/get/goods/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateGood(req: CreateGoodRequest, initReq?: fm.InitReq): Promise<CreateGoodResponse> {
-    return fm.fetchReq<CreateGoodRequest, CreateGoodResponse>(`/v1/create/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateGoodRequest, CreateGoodResponse>(`/v1/create/good`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetGood(req: GetGoodRequest, initReq?: fm.InitReq): Promise<GetGoodResponse> {
-    return fm.fetchReq<GetGoodRequest, GetGoodResponse>(`/v1/get/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetGoodRequest, GetGoodResponse>(`/v1/get/good`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetRecommendGoodsByApp(req: GetRecommendGoodsByAppRequest, initReq?: fm.InitReq): Promise<GetRecommendGoodsByAppResponse> {
-    return fm.fetchReq<GetRecommendGoodsByAppRequest, GetRecommendGoodsByAppResponse>(`/v1/get/recommend/goods/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetRecommendGoodsByAppRequest, GetRecommendGoodsByAppResponse>(`/v1/get/recommend/goods/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static SubmitOrder(req: SubmitOrderRequest, initReq?: fm.InitReq): Promise<SubmitOrderResponse> {
-    return fm.fetchReq<SubmitOrderRequest, SubmitOrderResponse>(`/v1/submit/order`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<SubmitOrderRequest, SubmitOrderResponse>(`/v1/submit/order`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateOrderPayment(req: CreateOrderPaymentRequest, initReq?: fm.InitReq): Promise<CreateOrderPaymentResponse> {
-    return fm.fetchReq<CreateOrderPaymentRequest, CreateOrderPaymentResponse>(`/v1/create/order/payment`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateOrderPaymentRequest, CreateOrderPaymentResponse>(`/v1/create/order/payment`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrder(req: GetOrderRequest, initReq?: fm.InitReq): Promise<GetOrderResponse> {
-    return fm.fetchReq<GetOrderRequest, GetOrderResponse>(`/v1/get/order`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrderRequest, GetOrderResponse>(`/v1/get/order`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrdersByAppUser(req: GetOrdersByAppUserRequest, initReq?: fm.InitReq): Promise<GetOrdersByAppUserResponse> {
-    return fm.fetchReq<GetOrdersByAppUserRequest, GetOrdersByAppUserResponse>(`/v1/get/orders/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrdersByAppUserRequest, GetOrdersByAppUserResponse>(`/v1/get/orders/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrdersByApp(req: GetOrdersByAppRequest, initReq?: fm.InitReq): Promise<GetOrdersByAppResponse> {
-    return fm.fetchReq<GetOrdersByAppRequest, GetOrdersByAppResponse>(`/v1/get/orders/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrdersByAppRequest, GetOrdersByAppResponse>(`/v1/get/orders/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrdersByOtherApp(req: GetOrdersByOtherAppRequest, initReq?: fm.InitReq): Promise<GetOrdersByOtherAppResponse> {
-    return fm.fetchReq<GetOrdersByOtherAppRequest, GetOrdersByOtherAppResponse>(`/v1/get/orders/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrdersByOtherAppRequest, GetOrdersByOtherAppResponse>(`/v1/get/orders/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetOrdersByGood(req: GetOrdersByGoodRequest, initReq?: fm.InitReq): Promise<GetOrdersByGoodResponse> {
-    return fm.fetchReq<GetOrdersByGoodRequest, GetOrdersByGoodResponse>(`/v1/get/orders/by/good`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetOrdersByGoodRequest, GetOrdersByGoodResponse>(`/v1/get/orders/by/good`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static Signup(req: SignupRequest, initReq?: fm.InitReq): Promise<SignupResponse> {
-    return fm.fetchReq<SignupRequest, SignupResponse>(`/v1/signup`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<SignupRequest, SignupResponse>(`/v1/signup`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdatePassword(req: UpdatePasswordRequest, initReq?: fm.InitReq): Promise<UpdatePasswordResponse> {
-    return fm.fetchReq<UpdatePasswordRequest, UpdatePasswordResponse>(`/v1/update/password`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdatePasswordRequest, UpdatePasswordResponse>(`/v1/update/password`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdatePasswordByAppUser(req: UpdatePasswordByAppUserRequest, initReq?: fm.InitReq): Promise<UpdatePasswordByAppUserResponse> {
-    return fm.fetchReq<UpdatePasswordByAppUserRequest, UpdatePasswordByAppUserResponse>(`/v1/update/password/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdatePasswordByAppUserRequest, UpdatePasswordByAppUserResponse>(`/v1/update/password/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateEmailAddress(req: UpdateEmailAddressRequest, initReq?: fm.InitReq): Promise<UpdateEmailAddressResponse> {
-    return fm.fetchReq<UpdateEmailAddressRequest, UpdateEmailAddressResponse>(`/v1/update/emailaddress`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateEmailAddressRequest, UpdateEmailAddressResponse>(`/v1/update/emailaddress`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdatePhoneNO(req: UpdatePhoneNORequest, initReq?: fm.InitReq): Promise<UpdatePhoneNOResponse> {
-    return fm.fetchReq<UpdatePhoneNORequest, UpdatePhoneNOResponse>(`/v1/update/phoneno`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdatePhoneNORequest, UpdatePhoneNOResponse>(`/v1/update/phoneno`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAccount(req: UpdateAccountRequest, initReq?: fm.InitReq): Promise<UpdateAccountResponse> {
-    return fm.fetchReq<UpdateAccountRequest, UpdateAccountResponse>(`/v1/update/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAccountRequest, UpdateAccountResponse>(`/v1/update/account`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppUserExtra(req: CreateAppUserExtraRequest, initReq?: fm.InitReq): Promise<CreateAppUserExtraResponse> {
-    return fm.fetchReq<CreateAppUserExtraRequest, CreateAppUserExtraResponse>(`/v1/create/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppUserExtraRequest, CreateAppUserExtraResponse>(`/v1/create/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppUserExtra(req: UpdateAppUserExtraRequest, initReq?: fm.InitReq): Promise<UpdateAppUserExtraResponse> {
-    return fm.fetchReq<UpdateAppUserExtraRequest, UpdateAppUserExtraResponse>(`/v1/update/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppUserExtraRequest, UpdateAppUserExtraResponse>(`/v1/update/app/user/extra`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAppUserControl(req: CreateAppUserControlRequest, initReq?: fm.InitReq): Promise<CreateAppUserControlResponse> {
-    return fm.fetchReq<CreateAppUserControlRequest, CreateAppUserControlResponse>(`/v1/create/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAppUserControlRequest, CreateAppUserControlResponse>(`/v1/create/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateAppUserControl(req: UpdateAppUserControlRequest, initReq?: fm.InitReq): Promise<UpdateAppUserControlResponse> {
-    return fm.fetchReq<UpdateAppUserControlRequest, UpdateAppUserControlResponse>(`/v1/update/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateAppUserControlRequest, UpdateAppUserControlResponse>(`/v1/update/app/user/control`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetReferrals(req: GetReferralsRequest, initReq?: fm.InitReq): Promise<GetReferralsResponse> {
-    return fm.fetchReq<GetReferralsRequest, GetReferralsResponse>(`/v1/get/referrals`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetReferralsRequest, GetReferralsResponse>(`/v1/get/referrals`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetLayeredReferrals(req: GetLayeredReferralsRequest, initReq?: fm.InitReq): Promise<GetLayeredReferralsResponse> {
-    return fm.fetchReq<GetLayeredReferralsRequest, GetLayeredReferralsResponse>(`/v1/get/layered/referrals`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetLayeredReferralsRequest, GetLayeredReferralsResponse>(`/v1/get/layered/referrals`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetAmountSettings(req: GetAmountSettingsRequest, initReq?: fm.InitReq): Promise<GetAmountSettingsResponse> {
-    return fm.fetchReq<GetAmountSettingsRequest, GetAmountSettingsResponse>(`/v1/get/amount/settings`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetAmountSettingsRequest, GetAmountSettingsResponse>(`/v1/get/amount/settings`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateAmountSetting(req: CreateAmountSettingRequest, initReq?: fm.InitReq): Promise<CreateAmountSettingResponse> {
-    return fm.fetchReq<CreateAmountSettingRequest, CreateAmountSettingResponse>(`/v1/create/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateAmountSettingRequest, CreateAmountSettingResponse>(`/v1/create/amount/setting`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateInvitationCode(req: CreateInvitationCodeRequest, initReq?: fm.InitReq): Promise<CreateInvitationCodeResponse> {
-    return fm.fetchReq<CreateInvitationCodeRequest, CreateInvitationCodeResponse>(`/v1/create/invitation/code`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateInvitationCodeRequest, CreateInvitationCodeResponse>(`/v1/create/invitation/code`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetKycReviews(req: GetKycReviewsRequest, initReq?: fm.InitReq): Promise<GetKycReviewsResponse> {
-    return fm.fetchReq<GetKycReviewsRequest, GetKycReviewsResponse>(`/v1/get/kyc/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetKycReviewsRequest, GetKycReviewsResponse>(`/v1/get/kyc/reviews`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetKycReviewsByApp(req: GetKycReviewsByAppRequest, initReq?: fm.InitReq): Promise<GetKycReviewsByAppResponse> {
-    return fm.fetchReq<GetKycReviewsByAppRequest, GetKycReviewsByAppResponse>(`/v1/get/kyc/reviews/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetKycReviewsByAppRequest, GetKycReviewsByAppResponse>(`/v1/get/kyc/reviews/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetKycReviewsByOtherApp(req: GetKycReviewsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetKycReviewsByOtherAppResponse> {
-    return fm.fetchReq<GetKycReviewsByOtherAppRequest, GetKycReviewsByOtherAppResponse>(`/v1/get/kyc/reviews/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetKycReviewsByOtherAppRequest, GetKycReviewsByOtherAppResponse>(`/v1/get/kyc/reviews/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetGoodReviews(req: GetGoodReviewsRequest, initReq?: fm.InitReq): Promise<GetGoodReviewsResponse> {
-    return fm.fetchReq<GetGoodReviewsRequest, GetGoodReviewsResponse>(`/v1/get/good/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetGoodReviewsRequest, GetGoodReviewsResponse>(`/v1/get/good/reviews`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetWithdrawReviews(req: GetWithdrawReviewsRequest, initReq?: fm.InitReq): Promise<GetWithdrawReviewsResponse> {
-    return fm.fetchReq<GetWithdrawReviewsRequest, GetWithdrawReviewsResponse>(`/v1/get/withdraw/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetWithdrawReviewsRequest, GetWithdrawReviewsResponse>(`/v1/get/withdraw/reviews`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetWithdrawReviewsByApp(req: GetWithdrawReviewsByAppRequest, initReq?: fm.InitReq): Promise<GetWithdrawReviewsByAppResponse> {
-    return fm.fetchReq<GetWithdrawReviewsByAppRequest, GetWithdrawReviewsByAppResponse>(`/v1/get/withdraw/reviews/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetWithdrawReviewsByAppRequest, GetWithdrawReviewsByAppResponse>(`/v1/get/withdraw/reviews/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetWithdrawReviewsByOtherApp(req: GetWithdrawReviewsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetWithdrawReviewsByOtherAppResponse> {
-    return fm.fetchReq<GetWithdrawReviewsByOtherAppRequest, GetWithdrawReviewsByOtherAppResponse>(`/v1/get/withdraw/reviews/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetWithdrawReviewsByOtherAppRequest, GetWithdrawReviewsByOtherAppResponse>(`/v1/get/withdraw/reviews/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetWithdrawAddressReviews(req: GetWithdrawAddressReviewsRequest, initReq?: fm.InitReq): Promise<GetWithdrawAddressReviewsResponse> {
-    return fm.fetchReq<GetWithdrawAddressReviewsRequest, GetWithdrawAddressReviewsResponse>(`/v1/get/withdraw/address/reviews`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetWithdrawAddressReviewsRequest, GetWithdrawAddressReviewsResponse>(`/v1/get/withdraw/address/reviews`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetWithdrawAddressReviewsByApp(req: GetWithdrawAddressReviewsByAppRequest, initReq?: fm.InitReq): Promise<GetWithdrawAddressReviewsByAppResponse> {
-    return fm.fetchReq<GetWithdrawAddressReviewsByAppRequest, GetWithdrawAddressReviewsByAppResponse>(`/v1/get/withdraw/address/reviews/by/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetWithdrawAddressReviewsByAppRequest, GetWithdrawAddressReviewsByAppResponse>(`/v1/get/withdraw/address/reviews/by/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetWithdrawAddressReviewsByOtherApp(req: GetWithdrawAddressReviewsByOtherAppRequest, initReq?: fm.InitReq): Promise<GetWithdrawAddressReviewsByOtherAppResponse> {
-    return fm.fetchReq<GetWithdrawAddressReviewsByOtherAppRequest, GetWithdrawAddressReviewsByOtherAppResponse>(`/v1/get/withdraw/address/reviews/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetWithdrawAddressReviewsByOtherAppRequest, GetWithdrawAddressReviewsByOtherAppResponse>(`/v1/get/withdraw/address/reviews/by/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateKyc(req: CreateKycRequest, initReq?: fm.InitReq): Promise<CreateKycResponse> {
-    return fm.fetchReq<CreateKycRequest, CreateKycResponse>(`/v1/create/kyc`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateKycRequest, CreateKycResponse>(`/v1/create/kyc`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateKyc(req: UpdateKycRequest, initReq?: fm.InitReq): Promise<UpdateKycResponse> {
-    return fm.fetchReq<UpdateKycRequest, UpdateKycResponse>(`/v1/update/kyc`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateKycRequest, UpdateKycResponse>(`/v1/update/kyc`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetKycByAppUser(req: GetKycByAppUserRequest, initReq?: fm.InitReq): Promise<GetKycByAppUserResponse> {
-    return fm.fetchReq<GetKycByAppUserRequest, GetKycByAppUserResponse>(`/v1/get/kyc/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetKycByAppUserRequest, GetKycByAppUserResponse>(`/v1/get/kyc/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreatePlatformCoinAccount(req: CreatePlatformCoinAccountRequest, initReq?: fm.InitReq): Promise<CreatePlatformCoinAccountResponse> {
-    return fm.fetchReq<CreatePlatformCoinAccountRequest, CreatePlatformCoinAccountResponse>(`/v1/create/platform/coin/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreatePlatformCoinAccountRequest, CreatePlatformCoinAccountResponse>(`/v1/create/platform/coin/account`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static CreateUserCoinAccount(req: CreateUserCoinAccountRequest, initReq?: fm.InitReq): Promise<CreateUserCoinAccountResponse> {
-    return fm.fetchReq<CreateUserCoinAccountRequest, CreateUserCoinAccountResponse>(`/v1/create/user/coin/account`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<CreateUserCoinAccountRequest, CreateUserCoinAccountResponse>(`/v1/create/user/coin/account`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static SubmitUserWithdraw(req: SubmitUserWithdrawRequest, initReq?: fm.InitReq): Promise<SubmitUserWithdrawResponse> {
-    return fm.fetchReq<SubmitUserWithdrawRequest, SubmitUserWithdrawResponse>(`/v1/submit/user/withdraw`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<SubmitUserWithdrawRequest, SubmitUserWithdrawResponse>(`/v1/submit/user/withdraw`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateUserWithdrawReview(req: UpdateUserWithdrawReviewRequest, initReq?: fm.InitReq): Promise<UpdateUserWithdrawReviewResponse> {
-    return fm.fetchReq<UpdateUserWithdrawReviewRequest, UpdateUserWithdrawReviewResponse>(`/v1/update/user/withdraw/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateUserWithdrawReviewRequest, UpdateUserWithdrawReviewResponse>(`/v1/update/user/withdraw/review`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateUserWithdrawReviewForOtherAppUser(req: UpdateUserWithdrawReviewForOtherAppUserRequest, initReq?: fm.InitReq): Promise<UpdateUserWithdrawReviewForOtherAppUserResponse> {
-    return fm.fetchReq<UpdateUserWithdrawReviewForOtherAppUserRequest, UpdateUserWithdrawReviewForOtherAppUserResponse>(`/v1/update/user/withdraw/review/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateUserWithdrawReviewForOtherAppUserRequest, UpdateUserWithdrawReviewForOtherAppUserResponse>(`/v1/update/user/withdraw/review/for/other/app`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserWithdrawsByAppUser(req: GetUserWithdrawsByAppUserRequest, initReq?: fm.InitReq): Promise<GetUserWithdrawsByAppUserResponse> {
-    return fm.fetchReq<GetUserWithdrawsByAppUserRequest, GetUserWithdrawsByAppUserResponse>(`/v1/get/user/withdraws/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserWithdrawsByAppUserRequest, GetUserWithdrawsByAppUserResponse>(`/v1/get/user/withdraws/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static SetWithdrawAddress(req: SetWithdrawAddressRequest, initReq?: fm.InitReq): Promise<SetWithdrawAddressResponse> {
-    return fm.fetchReq<SetWithdrawAddressRequest, SetWithdrawAddressResponse>(`/v1/set/withdraw/address`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<SetWithdrawAddressRequest, SetWithdrawAddressResponse>(`/v1/set/withdraw/address`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static DeleteWithdrawAddress(req: DeleteWithdrawAddressRequest, initReq?: fm.InitReq): Promise<DeleteWithdrawAddressResponse> {
-    return fm.fetchReq<DeleteWithdrawAddressRequest, DeleteWithdrawAddressResponse>(`/v1/delete/withdraw/address`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<DeleteWithdrawAddressRequest, DeleteWithdrawAddressResponse>(`/v1/delete/withdraw/address`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetWithdrawAddressesByAppUser(req: GetWithdrawAddressesByAppUserRequest, initReq?: fm.InitReq): Promise<GetWithdrawAddressesByAppUserResponse> {
-    return fm.fetchReq<GetWithdrawAddressesByAppUserRequest, GetWithdrawAddressesByAppUserResponse>(`/v1/get/withdraw/addresses/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetWithdrawAddressesByAppUserRequest, GetWithdrawAddressesByAppUserResponse>(`/v1/get/withdraw/addresses/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCouponsByAppUser(req: GetCouponsByAppUserRequest, initReq?: fm.InitReq): Promise<GetCouponsByAppUserResponse> {
-    return fm.fetchReq<GetCouponsByAppUserRequest, GetCouponsByAppUserResponse>(`/v1/get/coupons/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCouponsByAppUserRequest, GetCouponsByAppUserResponse>(`/v1/get/coupons/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCommissionByAppUser(req: GetCommissionByAppUserRequest, initReq?: fm.InitReq): Promise<GetCommissionByAppUserResponse> {
-    return fm.fetchReq<GetCommissionByAppUserRequest, GetCommissionByAppUserResponse>(`/v1/get/commission/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCommissionByAppUserRequest, GetCommissionByAppUserResponse>(`/v1/get/commission/by/app/user`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetGoodCommissions(req: GetGoodCommissionsRequest, initReq?: fm.InitReq): Promise<GetGoodCommissionsResponse> {
-    return fm.fetchReq<GetGoodCommissionsRequest, GetGoodCommissionsResponse>(`/v1/get/good/commissions`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetGoodCommissionsRequest, GetGoodCommissionsResponse>(`/v1/get/good/commissions`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetUserGoodCommissions(req: GetUserGoodCommissionsRequest, initReq?: fm.InitReq): Promise<GetUserGoodCommissionsResponse> {
-    return fm.fetchReq<GetUserGoodCommissionsRequest, GetUserGoodCommissionsResponse>(`/v1/get/user/good/commissions`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetUserGoodCommissionsRequest, GetUserGoodCommissionsResponse>(`/v1/get/user/good/commissions`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateKycReview(req: UpdateKycReviewRequest, initReq?: fm.InitReq): Promise<UpdateKycReviewResponse> {
-    return fm.fetchReq<UpdateKycReviewRequest, UpdateKycReviewResponse>(`/v1/update/kyc/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateKycReviewRequest, UpdateKycReviewResponse>(`/v1/update/kyc/review`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateWithdrawReview(req: UpdateWithdrawReviewRequest, initReq?: fm.InitReq): Promise<UpdateWithdrawReviewResponse> {
-    return fm.fetchReq<UpdateWithdrawReviewRequest, UpdateWithdrawReviewResponse>(`/v1/update/withdraw/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateWithdrawReviewRequest, UpdateWithdrawReviewResponse>(`/v1/update/withdraw/review`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static UpdateWithdrawAddressReview(req: UpdateWithdrawAddressReviewRequest, initReq?: fm.InitReq): Promise<UpdateWithdrawAddressReviewResponse> {
-    return fm.fetchReq<UpdateWithdrawAddressReviewRequest, UpdateWithdrawAddressReviewResponse>(`/v1/update/withdraw/address/review`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<UpdateWithdrawAddressReviewRequest, UpdateWithdrawAddressReviewResponse>(`/v1/update/withdraw/address/review`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
   static GetCurrentFee(req: GetCurrentFeeRequest, initReq?: fm.InitReq): Promise<GetCurrentFeeResponse> {
-    return fm.fetchReq<GetCurrentFeeRequest, GetCurrentFeeResponse>(`/v1/get/current/fee`, {...initReq, method: "POST", body: JSON.stringify(req)})
+    return fm.fetchReq<GetCurrentFeeRequest, GetCurrentFeeResponse>(`/v1/get/current/fee`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }
 }
