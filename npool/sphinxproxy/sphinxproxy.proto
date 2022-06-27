@@ -127,7 +127,7 @@ message ProxyPluginResponse {
 
   string RPCExitMessage                     = 1000;
 
-  bytes payload = 1100;
+  bytes Payload = 1100;
 }
 
 // MpoolGetNonce WalletBalance MpoolPush ..
@@ -149,7 +149,7 @@ message ProxyPluginRequest {
 
   // gas fee
   double Fee                                  = 170;
-  bytes payload                               = 180;
+  bytes Payload                               = 180;
 }
 
 message ProxySignRequest {
@@ -158,7 +158,7 @@ message ProxySignRequest {
   string TransactionID                        = 120;
   sphinx.plugin.v1.UnsignedMessage Message    = 130;
 
-  bytes payload = 140;
+  bytes Payload = 140;
 }
 
 message ProxySignResponse {
@@ -174,7 +174,7 @@ message ProxySignResponse {
 
   string RPCExitMessage               = 1000;
 
-  bytes payload = 1100;
+  bytes Payload = 1100;
 }
 
 message ProxySignResponseInfo {

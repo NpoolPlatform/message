@@ -399,7 +399,7 @@
           "format": "double",
           "title": "gas fee"
         },
-        "payload": {
+        "Payload": {
           "type": "string",
           "format": "byte"
         }
@@ -421,7 +421,7 @@
         "Message": {
           "$ref": "#/definitions/v1UnsignedMessage"
         },
-        "payload": {
+        "Payload": {
           "type": "string",
           "format": "byte"
         }
