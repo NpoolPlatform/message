@@ -1,0 +1,199 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appusermgrv2/app/app.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "protobufNullValue": {
+      "type": "string",
+      "enum": [
+        "NULL_VALUE"
+      ],
+      "default": "NULL_VALUE",
+      "description": "`NullValue` is a singleton enumeration to represent the null value for the\n`Value` type union.\n\n The JSON representation for `NullValue` is JSON `null`.\n\n - NULL_VALUE: Null value."
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1FilterCond": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Val": {
+          "type": "object"
+        }
+      }
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v2App": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2CountAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2CreateAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2App"
+        }
+      }
+    },
+    "v2CreateAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2App"
+          }
+        }
+      }
+    },
+    "v2DeleteAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2App"
+        }
+      }
+    },
+    "v2ExistAppCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v2ExistAppResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v2GetAppOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2App"
+        }
+      }
+    },
+    "v2GetAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2App"
+        }
+      }
+    },
+    "v2GetAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2App"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2UpdateAppFieldsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2App"
+        }
+      }
+    },
+    "v2UpdateAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2App"
+        }
+      }
+    }
+  }
+}

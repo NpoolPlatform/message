@@ -1,0 +1,198 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appusermgrv2/approle/approle.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "protobufNullValue": {
+      "type": "string",
+      "enum": [
+        "NULL_VALUE"
+      ],
+      "default": "NULL_VALUE",
+      "description": "`NullValue` is a singleton enumeration to represent the null value for the\n`Value` type union.\n\n The JSON representation for `NullValue` is JSON `null`.\n\n - NULL_VALUE: Null value."
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1FilterCond": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Val": {
+          "type": "object"
+        }
+      }
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v2AppRole": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Default": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v2CountAppRolesResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2CreateAppRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRole"
+        }
+      }
+    },
+    "v2CreateAppRolesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppRole"
+          }
+        }
+      }
+    },
+    "v2DeleteAppRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRole"
+        }
+      }
+    },
+    "v2ExistAppRoleCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v2ExistAppRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v2GetAppRoleOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRole"
+        }
+      }
+    },
+    "v2GetAppRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRole"
+        }
+      }
+    },
+    "v2GetAppRolesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppRole"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2UpdateAppRoleFieldsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRole"
+        }
+      }
+    },
+    "v2UpdateAppRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRole"
+        }
+      }
+    }
+  }
+}
