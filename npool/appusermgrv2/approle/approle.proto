@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package app.user.manager.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appusermgr/approle";
+
+import "google/protobuf/struct.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+service AppUserManagerAppRole {
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){}
+
+    rpc CreateAppRoleV2 (CreateAppRoleRequest) returns (CreateAppRoleResponse) {}
+
+    rpc CreateAppRolesV2 (CreateAppRolesRequest) returns (CreateAppRolesResponse) {}
+
+    rpc UpdateAppRoleV2 (UpdateAppRoleRequest) returns (UpdateAppRoleResponse) {}
+
+    rpc UpdateAppRoleFieldsV2 (UpdateAppRoleFieldsRequest) returns (UpdateAppRoleFieldsResponse) {}
+
+    rpc GetAppRoleV2 (GetAppRoleRequest) returns (GetAppRoleResponse) {}
+
+    rpc GetAppRoleOnlyV2 (GetAppRoleOnlyRequest) returns (GetAppRoleOnlyResponse) {}
+
+    rpc GetAppRolesV2 (GetAppRolesRequest) returns (GetAppRolesResponse) {}
+
+    rpc ExistAppRoleV2 (ExistAppRoleRequest) returns (ExistAppRoleResponse) {}
+
+    rpc ExistAppRoleCondsV2 (ExistAppRoleCondsRequest) returns (ExistAppRoleCondsResponse) {}
+
+    rpc CountAppRolesV2 (CountAppRolesRequest) returns (CountAppRolesResponse) {}
+
+    rpc DeleteAppRoleV2 (DeleteAppRoleRequest) returns (DeleteAppRoleResponse) {}
+}
+
+message AppRole {
+    string ID = 10;
+    string AppID = 20;
+    string CreatedBy = 30;
+    string Role = 40;
+    string Description = 50;
+    bool Default = 60;
+}
+
+message CreateAppRoleRequest {
+    AppRole Info = 10;
+}
+
+message CreateAppRoleResponse {
+    AppRole Info = 10;
+}
+
+message CreateAppRolesRequest {
+    repeated AppRole Infos = 10;
+}
+
+message CreateAppRolesResponse {
+    repeated AppRole Infos = 10;
+}
+
+message GetAppRoleRequest {
+    string ID = 10;
+}
+
+message GetAppRoleResponse {
+    AppRole Info = 10;
+}
+
+message GetAppRolesRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetAppRoleOnlyRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message GetAppRoleOnlyResponse {
+    AppRole Info = 10;
+}
+
+message GetAppRolesResponse {
+    repeated AppRole Infos = 10;
+    uint32 Total = 20;
+}
+
+message UpdateAppRoleRequest {
+    AppRole Info = 10;
+}
+
+message UpdateAppRoleResponse {
+    AppRole Info = 10;
+}
+
+message UpdateAppRoleFieldsRequest {
+    string ID = 10;
+    map<string, google.protobuf.Value> Fields = 20;
+}
+
+message UpdateAppRoleFieldsResponse {
+    AppRole Info = 10;
+}
+
+message ExistAppRoleRequest {
+    string ID = 10;
+}
+
+message ExistAppRoleResponse {
+    bool Result = 10;
+}
+
+message ExistAppRoleCondsRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message ExistAppRoleCondsResponse {
+    bool Result = 10;
+}
+
+message CountAppRolesRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message CountAppRolesResponse {
+    uint32 Result = 10;
+}
+
+message DeleteAppRoleRequest {
+    string ID = 10;
+}
+
+message DeleteAppRoleResponse {
+    AppRole Info = 10;
+}
