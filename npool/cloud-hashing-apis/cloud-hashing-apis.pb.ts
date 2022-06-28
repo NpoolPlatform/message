@@ -644,6 +644,7 @@ export type GoodCommission = {
   amount?: number
   coinTypeID?: string
   coinName?: string
+  contribution?: number
 }
 
 export type GetGoodCommissionsRequest = {

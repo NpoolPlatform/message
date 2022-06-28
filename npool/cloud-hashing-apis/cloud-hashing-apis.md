@@ -1614,6 +1614,7 @@ Request body and response
 | Amount | [double](#double) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | CoinName | [string](#string) |  |  |
+| Contribution | [double](#double) |  |  |
 
 
 
@@ -3851,6 +3852,7 @@ Request body and response
 | Amount | [double](#double) |  |  |
 | CoinTypeID | [string](#string) |  |  |
 | CoinName | [string](#string) |  |  |
+| Contribution | [double](#double) |  |  |
 
 
 

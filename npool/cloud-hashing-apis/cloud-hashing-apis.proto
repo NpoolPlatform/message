@@ -1025,6 +1025,7 @@ message GoodCommission {
     double Amount = 40;
     string CoinTypeID = 50;
     string CoinName = 60;
+    double Contribution = 70;
 }
 
 message GetGoodCommissionsRequest {

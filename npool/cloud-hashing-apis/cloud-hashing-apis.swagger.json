@@ -2397,6 +2397,10 @@
         "PurchaseLimit": {
           "type": "integer",
           "format": "int32"
+        },
+        "CommissionPercent": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -3592,6 +3596,10 @@
         },
         "CoinName": {
           "type": "string"
+        },
+        "Contribution": {
+          "type": "number",
+          "format": "double"
         }
       }
     },
@@ -4573,6 +4581,13 @@
         },
         "InvitationCode": {
           "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Confirmed": {
+          "type": "boolean"
         }
       }
     },
