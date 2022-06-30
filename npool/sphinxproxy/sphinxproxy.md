@@ -232,7 +232,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [TransactionInfo](#sphinx-proxy-v1-TransactionInfo) |  |  |
+| Infos | [TransactionInfo](#sphinx-proxy-v1-TransactionInfo) | repeated |  |
 | Total | [uint32](#uint32) |  |  |
 
 
@@ -648,7 +648,7 @@ SphinxProxy http service only for inner
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Infos | [TransactionInfo](#sphinx-proxy-v1-TransactionInfo) |  |  |
+| Infos | [TransactionInfo](#sphinx-proxy-v1-TransactionInfo) | repeated |  |
 | Total | [uint32](#uint32) |  |  |
 
 

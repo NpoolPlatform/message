@@ -414,7 +414,10 @@
       "type": "object",
       "properties": {
         "Infos": {
-          "$ref": "#/definitions/v1TransactionInfo"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1TransactionInfo"
+          }
         },
         "Total": {
           "type": "integer",
