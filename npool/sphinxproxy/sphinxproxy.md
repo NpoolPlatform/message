@@ -13,6 +13,8 @@
     - [GetBalanceResponse](#sphinx-proxy-v1-GetBalanceResponse)
     - [GetTransactionRequest](#sphinx-proxy-v1-GetTransactionRequest)
     - [GetTransactionResponse](#sphinx-proxy-v1-GetTransactionResponse)
+    - [GetTransactionsRequest](#sphinx-proxy-v1-GetTransactionsRequest)
+    - [GetTransactionsResponse](#sphinx-proxy-v1-GetTransactionsResponse)
     - [ProxyPluginRequest](#sphinx-proxy-v1-ProxyPluginRequest)
     - [ProxyPluginResponse](#sphinx-proxy-v1-ProxyPluginResponse)
     - [ProxySignRequest](#sphinx-proxy-v1-ProxySignRequest)
@@ -38,6 +40,8 @@
     - [GetBalanceResponse](#sphinx-proxy-v1-GetBalanceResponse)
     - [GetTransactionRequest](#sphinx-proxy-v1-GetTransactionRequest)
     - [GetTransactionResponse](#sphinx-proxy-v1-GetTransactionResponse)
+    - [GetTransactionsRequest](#sphinx-proxy-v1-GetTransactionsRequest)
+    - [GetTransactionsResponse](#sphinx-proxy-v1-GetTransactionsResponse)
     - [ProxyPluginRequest](#sphinx-proxy-v1-ProxyPluginRequest)
     - [ProxyPluginResponse](#sphinx-proxy-v1-ProxyPluginResponse)
     - [ProxySignRequest](#sphinx-proxy-v1-ProxySignRequest)
@@ -179,10 +183,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TransactionID | [string](#string) |  |  |
-| CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
-| TransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
-| ENV | [string](#string) |  | main or test |
 
 
 
@@ -198,6 +198,42 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [TransactionInfo](#sphinx-proxy-v1-TransactionInfo) |  |  |
+
+
+
+
+
+
+<a name="sphinx-proxy-v1-GetTransactionsRequest"></a>
+
+### GetTransactionsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
+| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
+| TransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
+| ENV | [string](#string) |  | main or test |
+| Offset | [uint32](#uint32) |  |  |
+| Limit | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="sphinx-proxy-v1-GetTransactionsResponse"></a>
+
+### GetTransactionsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [TransactionInfo](#sphinx-proxy-v1-TransactionInfo) |  |  |
+| Total | [uint32](#uint32) |  |  |
 
 
 
@@ -433,6 +469,7 @@ SphinxProxy http service only for inner
 | CreateTransaction | [CreateTransactionRequest](#sphinx-proxy-v1-CreateTransactionRequest) | [CreateTransactionResponse](#sphinx-proxy-v1-CreateTransactionResponse) |  |
 | UpdateTransaction | [UpdateTransactionRequest](#sphinx-proxy-v1-UpdateTransactionRequest) | [UpdateTransactionResponse](#sphinx-proxy-v1-UpdateTransactionResponse) |  |
 | GetTransaction | [GetTransactionRequest](#sphinx-proxy-v1-GetTransactionRequest) | [GetTransactionResponse](#sphinx-proxy-v1-GetTransactionResponse) |  |
+| GetTransactions | [GetTransactionsRequest](#sphinx-proxy-v1-GetTransactionsRequest) | [GetTransactionsResponse](#sphinx-proxy-v1-GetTransactionsResponse) |  |
 | ProxyPlugin | [ProxyPluginResponse](#sphinx-proxy-v1-ProxyPluginResponse) stream | [ProxyPluginRequest](#sphinx-proxy-v1-ProxyPluginRequest) stream | async stream |
 | ProxySign | [ProxySignResponse](#sphinx-proxy-v1-ProxySignResponse) stream | [ProxySignRequest](#sphinx-proxy-v1-ProxySignRequest) stream |  |
 
@@ -562,10 +599,6 @@ SphinxProxy http service only for inner
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TransactionID | [string](#string) |  |  |
-| CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
-| TransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
-| ENV | [string](#string) |  | main or test |
 
 
 
@@ -581,6 +614,42 @@ SphinxProxy http service only for inner
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Info | [TransactionInfo](#sphinx-proxy-v1-TransactionInfo) |  |  |
+
+
+
+
+
+
+<a name="sphinx-proxy-v1-GetTransactionsRequest"></a>
+
+### GetTransactionsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
+| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
+| TransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
+| ENV | [string](#string) |  | main or test |
+| Offset | [uint32](#uint32) |  |  |
+| Limit | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="sphinx-proxy-v1-GetTransactionsResponse"></a>
+
+### GetTransactionsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Infos | [TransactionInfo](#sphinx-proxy-v1-TransactionInfo) |  |  |
+| Total | [uint32](#uint32) |  |  |
 
 
 
@@ -816,6 +885,7 @@ SphinxProxy http service only for inner
 | CreateTransaction | [CreateTransactionRequest](#sphinx-proxy-v1-CreateTransactionRequest) | [CreateTransactionResponse](#sphinx-proxy-v1-CreateTransactionResponse) |  |
 | UpdateTransaction | [UpdateTransactionRequest](#sphinx-proxy-v1-UpdateTransactionRequest) | [UpdateTransactionResponse](#sphinx-proxy-v1-UpdateTransactionResponse) |  |
 | GetTransaction | [GetTransactionRequest](#sphinx-proxy-v1-GetTransactionRequest) | [GetTransactionResponse](#sphinx-proxy-v1-GetTransactionResponse) |  |
+| GetTransactions | [GetTransactionsRequest](#sphinx-proxy-v1-GetTransactionsRequest) | [GetTransactionsResponse](#sphinx-proxy-v1-GetTransactionsResponse) |  |
 | ProxyPlugin | [ProxyPluginResponse](#sphinx-proxy-v1-ProxyPluginResponse) stream | [ProxyPluginRequest](#sphinx-proxy-v1-ProxyPluginRequest) stream | async stream |
 | ProxySign | [ProxySignResponse](#sphinx-proxy-v1-ProxySignResponse) stream | [ProxySignRequest](#sphinx-proxy-v1-ProxySignRequest) stream |  |
 
