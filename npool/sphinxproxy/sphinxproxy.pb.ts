@@ -8,6 +8,14 @@ import * as fm from "../../fetch.pb"
 import * as GoogleProtobufEmpty from "../../google/protobuf/empty.pb"
 import * as SphinxPluginV1Sphinxplugin from "../sphinxplugin/sphinxplugin.pb"
 
+export enum TransactionType {
+  Invalid = "Invalid",
+  WalletNew = "WalletNew",
+  Balance = "Balance",
+  RegisterCoin = "RegisterCoin",
+  GasFee = "GasFee",
+}
+
 export enum TransactionState {
   TransactionStateUnKnow = "TransactionStateUnKnow",
   TransactionStateWait = "TransactionStateWait",
@@ -104,6 +112,7 @@ export type GetTransactionsResponse = {
 
 export type ProxyPluginResponse = {
   coinType?: SphinxPluginV1Sphinxplugin.CoinType
+  transactionType?: TransactionType
   eNV?: string
   unit?: string
   transactionID?: string
@@ -118,6 +127,7 @@ export type ProxyPluginResponse = {
 
 export type ProxyPluginRequest = {
   coinType?: SphinxPluginV1Sphinxplugin.CoinType
+  transactionType?: TransactionType
   transactionID?: string
   address?: string
   message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
@@ -131,6 +141,7 @@ export type ProxyPluginRequest = {
 
 export type ProxySignRequest = {
   coinType?: SphinxPluginV1Sphinxplugin.CoinType
+  transactionType?: TransactionType
   transactionID?: string
   message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
   payload?: Uint8Array
@@ -138,6 +149,7 @@ export type ProxySignRequest = {
 
 export type ProxySignResponse = {
   coinType?: SphinxPluginV1Sphinxplugin.CoinType
+  transactionType?: TransactionType
   transactionID?: string
   info?: ProxySignResponseInfo
   msgTx?: SphinxPluginV1Sphinxplugin.MsgTx
