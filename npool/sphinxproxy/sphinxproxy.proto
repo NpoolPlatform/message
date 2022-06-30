@@ -103,16 +103,16 @@ message CreateTransactionResponse {
 }
 
 message UpdateTransactionRequest {
-  string                            TransactionID   = 110;
-  sphinx.plugin.v1.TransactionType  TransactionType = 120;
-  bytes                             Payload         = 130;
+  string           TransactionID    = 100;
+  TransactionState TransactionState = 110;
+  bytes            Payload          = 120;
 }
 
 message UpdateTransactionResponse {
 }
 
 message GetTransactionRequest {
-  string TransactionID                              = 100;
+  string TransactionID  = 100;
 }
 
 message TransactionInfo {
@@ -134,11 +134,10 @@ message GetTransactionResponse {
 
 message GetTransactionsRequest {
   sphinx.plugin.v1.CoinType CoinType                = 100;
-  sphinx.plugin.v1.TransactionType TransactionType  = 110;
-  TransactionState TransactionState                 = 120;
-  string ENV                                        = 130; // main or test
-  uint32 Offset                                     = 140;
-  uint32 Limit                                      = 150;
+  TransactionState TransactionState                 = 110;
+  string ENV                                        = 120; // main or test
+  uint32 Offset                                     = 130;
+  uint32 Limit                                      = 140;
 }
 
 message GetTransactionsResponse {
@@ -149,7 +148,6 @@ message GetTransactionsResponse {
 // ############################# async
 message ProxyPluginResponse {
   sphinx.plugin.v1.CoinType CoinType        = 100;
-  sphinx.plugin.v1.TransactionType TransactionType  = 110;
   string ENV                                = 111; // main or test
   string Unit                               = 112;
   string TransactionID                      = 120;
@@ -168,7 +166,6 @@ message ProxyPluginResponse {
 // MpoolGetNonce WalletBalance MpoolPush ..
 message ProxyPluginRequest {
   sphinx.plugin.v1.CoinType CoinType          = 100;
-  sphinx.plugin.v1.TransactionType TransactionType             = 110;
   string TransactionID                        = 120;
   // query wallet account
   string Address                              = 130;
@@ -190,7 +187,6 @@ message ProxyPluginRequest {
 
 message ProxySignRequest {
   sphinx.plugin.v1.CoinType CoinType          = 100;
-  sphinx.plugin.v1.TransactionType TransactionType             = 110;
   string TransactionID                        = 120;
   sphinx.plugin.v1.UnsignedMessage Message    = 130;
 
@@ -199,7 +195,6 @@ message ProxySignRequest {
 
 message ProxySignResponse {
   sphinx.plugin.v1.CoinType CoinType  = 100;
-  sphinx.plugin.v1.TransactionType TransactionType     = 110;
   string TransactionID                = 120;
   // fil
   ProxySignResponseInfo Info          = 130;
@@ -223,7 +218,8 @@ enum TransactionState {
 	TransactionStateUnKnow  			= 0;
 	TransactionStateWait  				= 1;
 	TransactionStateSign  				= 2;
-	TransactionStateSync  				= 3;
+  TransactionStateBroadcast     = 20; // TODO: caution
+  TransactionStateSync  				= 3;
 	TransactionStateDone     			= 4;
 	TransactionStateFail     			= 5;
 }

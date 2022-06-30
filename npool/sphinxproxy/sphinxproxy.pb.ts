@@ -12,6 +12,7 @@ export enum TransactionState {
   TransactionStateUnKnow = "TransactionStateUnKnow",
   TransactionStateWait = "TransactionStateWait",
   TransactionStateSign = "TransactionStateSign",
+  TransactionStateBroadcast = "TransactionStateBroadcast",
   TransactionStateSync = "TransactionStateSync",
   TransactionStateDone = "TransactionStateDone",
   TransactionStateFail = "TransactionStateFail",
@@ -60,7 +61,7 @@ export type CreateTransactionResponse = {
 
 export type UpdateTransactionRequest = {
   transactionID?: string
-  transactionType?: SphinxPluginV1Sphinxplugin.TransactionType
+  transactionState?: TransactionState
   payload?: Uint8Array
 }
 
@@ -90,7 +91,6 @@ export type GetTransactionResponse = {
 
 export type GetTransactionsRequest = {
   coinType?: SphinxPluginV1Sphinxplugin.CoinType
-  transactionType?: SphinxPluginV1Sphinxplugin.TransactionType
   transactionState?: TransactionState
   eNV?: string
   offset?: number
@@ -104,7 +104,6 @@ export type GetTransactionsResponse = {
 
 export type ProxyPluginResponse = {
   coinType?: SphinxPluginV1Sphinxplugin.CoinType
-  transactionType?: SphinxPluginV1Sphinxplugin.TransactionType
   eNV?: string
   unit?: string
   transactionID?: string
@@ -119,7 +118,6 @@ export type ProxyPluginResponse = {
 
 export type ProxyPluginRequest = {
   coinType?: SphinxPluginV1Sphinxplugin.CoinType
-  transactionType?: SphinxPluginV1Sphinxplugin.TransactionType
   transactionID?: string
   address?: string
   message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
@@ -133,7 +131,6 @@ export type ProxyPluginRequest = {
 
 export type ProxySignRequest = {
   coinType?: SphinxPluginV1Sphinxplugin.CoinType
-  transactionType?: SphinxPluginV1Sphinxplugin.TransactionType
   transactionID?: string
   message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
   payload?: Uint8Array
@@ -141,7 +138,6 @@ export type ProxySignRequest = {
 
 export type ProxySignResponse = {
   coinType?: SphinxPluginV1Sphinxplugin.CoinType
-  transactionType?: SphinxPluginV1Sphinxplugin.TransactionType
   transactionID?: string
   info?: ProxySignResponseInfo
   msgTx?: SphinxPluginV1Sphinxplugin.MsgTx
