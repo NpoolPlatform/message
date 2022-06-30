@@ -142,8 +142,8 @@ message GetTransactionsRequest {
 }
 
 message GetTransactionsResponse {
-  TransactionInfo Infos = 100;
-  uint32 Total  = 110;
+  repeated TransactionInfo Infos  = 100;
+  uint32 Total                    = 110;
 }
 
 // ############################# async

@@ -98,7 +98,7 @@ export type GetTransactionsRequest = {
 }
 
 export type GetTransactionsResponse = {
-  infos?: TransactionInfo
+  infos?: TransactionInfo[]
   total?: number
 }
 
