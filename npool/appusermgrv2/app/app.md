@@ -525,7 +525,6 @@
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | CreateAppV2 | [CreateAppRequest](#app-user-manager-v2-CreateAppRequest) | [CreateAppResponse](#app-user-manager-v2-CreateAppResponse) |  |
 | CreateAppsV2 | [CreateAppsRequest](#app-user-manager-v2-CreateAppsRequest) | [CreateAppsResponse](#app-user-manager-v2-CreateAppsResponse) |  |
 | UpdateAppV2 | [UpdateAppRequest](#app-user-manager-v2-UpdateAppRequest) | [UpdateAppResponse](#app-user-manager-v2-UpdateAppResponse) |  |
@@ -996,7 +995,6 @@
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Version | [.google.protobuf.Empty](#google-protobuf-Empty) | [.npool.v1.VersionResponse](#npool-v1-VersionResponse) |  |
 | CreateAppV2 | [CreateAppRequest](#app-user-manager-v2-CreateAppRequest) | [CreateAppResponse](#app-user-manager-v2-CreateAppResponse) |  |
 | CreateAppsV2 | [CreateAppsRequest](#app-user-manager-v2-CreateAppsRequest) | [CreateAppsResponse](#app-user-manager-v2-CreateAppsResponse) |  |
 | UpdateAppV2 | [UpdateAppRequest](#app-user-manager-v2-UpdateAppRequest) | [UpdateAppResponse](#app-user-manager-v2-UpdateAppResponse) |  |
