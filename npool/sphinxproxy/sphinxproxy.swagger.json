@@ -144,6 +144,38 @@
         ]
       }
     },
+    "/v1/update/transaction": {
+      "post": {
+        "operationId": "SphinxProxy_UpdateTransaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateTransactionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SphinxProxy"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "summary": "sync",
@@ -309,6 +341,18 @@
       "type": "object",
       "properties": {
         "TransactionID": {
+          "type": "string"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "TransactionType": {
+          "$ref": "#/definitions/v1TransactionType"
+        },
+        "TransactionState": {
+          "$ref": "#/definitions/v1TransactionState"
+        },
+        "ENV": {
           "type": "string"
         }
       }
@@ -664,6 +708,24 @@
         }
       },
       "title": "============================= btc"
+    },
+    "v1UpdateTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "TransactionID": {
+          "type": "string"
+        },
+        "TransactionType": {
+          "$ref": "#/definitions/v1TransactionType"
+        },
+        "Payload": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1UpdateTransactionResponse": {
+      "type": "object"
     },
     "v1VersionResponse": {
       "type": "object",
