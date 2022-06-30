@@ -13,7 +13,6 @@
     - [Unspent](#sphinx-plugin-v1-Unspent)
   
     - [CoinType](#sphinx-plugin-v1-CoinType)
-    - [TransactionType](#sphinx-plugin-v1-TransactionType)
   
 - [npool/sphinxplugin/sphinxplugin.proto](#npool_sphinxplugin_sphinxplugin-proto)
     - [MsgTx](#sphinx-plugin-v1-MsgTx)
@@ -25,7 +24,6 @@
     - [Unspent](#sphinx-plugin-v1-Unspent)
   
     - [CoinType](#sphinx-plugin-v1-CoinType)
-    - [TransactionType](#sphinx-plugin-v1-TransactionType)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -197,25 +195,6 @@ fil
 | CoinTypetsolana | 105 |  |
 
 
-
-<a name="sphinx-plugin-v1-TransactionType"></a>
-
-### TransactionType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| Invalid | 0 |  |
-| WalletNew | 1 | proxy -&gt; sign |
-| TransactionNew | 2 |  |
-| Sign | 3 | proxy -&gt; sign |
-| Balance | 4 | proxy -&gt; plugin |
-| PreSign | 5 | proxy -&gt; pluign get nonce |
-| Broadcast | 6 | proxy -&gt; plugin mpool push |
-| RegisterCoin | 7 | plugin -&gt; proxy |
-| SyncMsgState | 8 | plugin -&gt; proxy |
-
-
  
 
  
@@ -388,25 +367,6 @@ fil
 | CoinTypetusdterc20 | 103 |  |
 | CoinTypetspacemesh | 104 |  |
 | CoinTypetsolana | 105 |  |
-
-
-
-<a name="sphinx-plugin-v1-TransactionType"></a>
-
-### TransactionType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| Invalid | 0 |  |
-| WalletNew | 1 | proxy -&gt; sign |
-| TransactionNew | 2 |  |
-| Sign | 3 | proxy -&gt; sign |
-| Balance | 4 | proxy -&gt; plugin |
-| PreSign | 5 | proxy -&gt; pluign get nonce |
-| Broadcast | 6 | proxy -&gt; plugin mpool push |
-| RegisterCoin | 7 | plugin -&gt; proxy |
-| SyncMsgState | 8 | plugin -&gt; proxy |
 
 
  

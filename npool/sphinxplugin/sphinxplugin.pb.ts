@@ -20,18 +20,6 @@ export enum CoinType {
   CoinTypetsolana = "CoinTypetsolana",
 }
 
-export enum TransactionType {
-  Invalid = "Invalid",
-  WalletNew = "WalletNew",
-  TransactionNew = "TransactionNew",
-  Sign = "Sign",
-  Balance = "Balance",
-  PreSign = "PreSign",
-  Broadcast = "Broadcast",
-  RegisterCoin = "RegisterCoin",
-  SyncMsgState = "SyncMsgState",
-}
-
 export type UnsignedMessage = {
   version?: string
   to?: string

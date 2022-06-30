@@ -391,9 +391,6 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
-        "TransactionType": {
-          "$ref": "#/definitions/v1TransactionType"
-        },
         "TransactionState": {
           "$ref": "#/definitions/v1TransactionState"
         },
@@ -470,9 +467,6 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
-        "TransactionType": {
-          "$ref": "#/definitions/v1TransactionType"
-        },
         "TransactionID": {
           "type": "string"
         },
@@ -515,9 +509,6 @@
       "properties": {
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
-        },
-        "TransactionType": {
-          "$ref": "#/definitions/v1TransactionType"
         },
         "TransactionID": {
           "type": "string"
@@ -602,26 +593,12 @@
         "TransactionStateUnKnow",
         "TransactionStateWait",
         "TransactionStateSign",
+        "TransactionStateBroadcast",
         "TransactionStateSync",
         "TransactionStateDone",
         "TransactionStateFail"
       ],
       "default": "TransactionStateUnKnow"
-    },
-    "v1TransactionType": {
-      "type": "string",
-      "enum": [
-        "Invalid",
-        "WalletNew",
-        "TransactionNew",
-        "Sign",
-        "Balance",
-        "PreSign",
-        "Broadcast",
-        "RegisterCoin",
-        "SyncMsgState"
-      ],
-      "default": "Invalid"
     },
     "v1TxIn": {
       "type": "object",
@@ -775,8 +752,8 @@
         "TransactionID": {
           "type": "string"
         },
-        "TransactionType": {
-          "$ref": "#/definitions/v1TransactionType"
+        "TransactionState": {
+          "$ref": "#/definitions/v1TransactionState"
         },
         "Payload": {
           "type": "string",

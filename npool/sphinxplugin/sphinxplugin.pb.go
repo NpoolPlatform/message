@@ -125,73 +125,6 @@ func (CoinType) EnumDescriptor() ([]byte, []int) {
 	return file_npool_sphinxplugin_sphinxplugin_proto_rawDescGZIP(), []int{0}
 }
 
-type TransactionType int32
-
-const (
-	TransactionType_Invalid        TransactionType = 0
-	TransactionType_WalletNew      TransactionType = 1 // proxy -> sign
-	TransactionType_TransactionNew TransactionType = 2
-	TransactionType_Sign           TransactionType = 3 // proxy -> sign
-	TransactionType_Balance        TransactionType = 4 // proxy -> plugin
-	TransactionType_PreSign        TransactionType = 5 // proxy -> pluign get nonce
-	TransactionType_Broadcast      TransactionType = 6 // proxy -> plugin mpool push
-	TransactionType_RegisterCoin   TransactionType = 7 // plugin -> proxy
-	TransactionType_SyncMsgState   TransactionType = 8 // plugin -> proxy
-)
-
-// Enum value maps for TransactionType.
-var (
-	TransactionType_name = map[int32]string{
-		0: "Invalid",
-		1: "WalletNew",
-		2: "TransactionNew",
-		3: "Sign",
-		4: "Balance",
-		5: "PreSign",
-		6: "Broadcast",
-		7: "RegisterCoin",
-		8: "SyncMsgState",
-	}
-	TransactionType_value = map[string]int32{
-		"Invalid":        0,
-		"WalletNew":      1,
-		"TransactionNew": 2,
-		"Sign":           3,
-		"Balance":        4,
-		"PreSign":        5,
-		"Broadcast":      6,
-		"RegisterCoin":   7,
-		"SyncMsgState":   8,
-	}
-)
-
-func (x TransactionType) Enum() *TransactionType {
-	p := new(TransactionType)
-	*p = x
-	return p
-}
-
-func (x TransactionType) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (TransactionType) Descriptor() protoreflect.EnumDescriptor {
-	return file_npool_sphinxplugin_sphinxplugin_proto_enumTypes[1].Descriptor()
-}
-
-func (TransactionType) Type() protoreflect.EnumType {
-	return &file_npool_sphinxplugin_sphinxplugin_proto_enumTypes[1]
-}
-
-func (x TransactionType) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use TransactionType.Descriptor instead.
-func (TransactionType) EnumDescriptor() ([]byte, []int) {
-	return file_npool_sphinxplugin_sphinxplugin_proto_rawDescGZIP(), []int{1}
-}
-
 // fil
 type UnsignedMessage struct {
 	state         protoimpl.MessageState
@@ -907,6 +840,7 @@ var file_npool_sphinxplugin_sphinxplugin_proto_rawDesc = []byte{
 	0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c,
 	0x2f, 0x73, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x70, 0x6c, 0x75, 0x67, 0x69, 0x6e, 0x62, 0x06, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 =======
 	0x55, 0x6e, 0x73, 0x70, 0x65, 0x6e, 0x74, 0x22, 0x3b, 0x0a, 0x09, 0x53, 0x69, 0x67, 0x6e, 0x61,
 	0x74, 0x75, 0x72, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x53, 0x69, 0x67, 0x6e, 0x54, 0x79, 0x70, 0x65,
@@ -991,6 +925,8 @@ var file_npool_sphinxplugin_sphinxplugin_proto_rawDesc = []byte{
 	0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x73, 0x70, 0x68, 0x69, 0x6e, 0x78, 0x70, 0x6c,
 	0x75, 0x67, 0x69, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 >>>>>>> remove transaction type from proxy to plugin
+=======
+>>>>>>> drop transaction type
 }
 
 var (
@@ -1005,24 +941,23 @@ func file_npool_sphinxplugin_sphinxplugin_proto_rawDescGZIP() []byte {
 	return file_npool_sphinxplugin_sphinxplugin_proto_rawDescData
 }
 
-var file_npool_sphinxplugin_sphinxplugin_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_npool_sphinxplugin_sphinxplugin_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_npool_sphinxplugin_sphinxplugin_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_npool_sphinxplugin_sphinxplugin_proto_goTypes = []interface{}{
 	(CoinType)(0),           // 0: sphinx.plugin.v1.CoinType
-	(TransactionType)(0),    // 1: sphinx.plugin.v1.TransactionType
-	(*UnsignedMessage)(nil), // 2: sphinx.plugin.v1.UnsignedMessage
-	(*Signature)(nil),       // 3: sphinx.plugin.v1.Signature
-	(*Unspent)(nil),         // 4: sphinx.plugin.v1.Unspent
-	(*MsgTx)(nil),           // 5: sphinx.plugin.v1.MsgTx
-	(*TxIn)(nil),            // 6: sphinx.plugin.v1.TxIn
-	(*OutPoint)(nil),        // 7: sphinx.plugin.v1.OutPoint
-	(*TxOut)(nil),           // 8: sphinx.plugin.v1.TxOut
+	(*UnsignedMessage)(nil), // 1: sphinx.plugin.v1.UnsignedMessage
+	(*Signature)(nil),       // 2: sphinx.plugin.v1.Signature
+	(*Unspent)(nil),         // 3: sphinx.plugin.v1.Unspent
+	(*MsgTx)(nil),           // 4: sphinx.plugin.v1.MsgTx
+	(*TxIn)(nil),            // 5: sphinx.plugin.v1.TxIn
+	(*OutPoint)(nil),        // 6: sphinx.plugin.v1.OutPoint
+	(*TxOut)(nil),           // 7: sphinx.plugin.v1.TxOut
 }
 var file_npool_sphinxplugin_sphinxplugin_proto_depIdxs = []int32{
-	4, // 0: sphinx.plugin.v1.UnsignedMessage.Unspent:type_name -> sphinx.plugin.v1.Unspent
-	6, // 1: sphinx.plugin.v1.MsgTx.TxIn:type_name -> sphinx.plugin.v1.TxIn
-	8, // 2: sphinx.plugin.v1.MsgTx.TxOut:type_name -> sphinx.plugin.v1.TxOut
-	7, // 3: sphinx.plugin.v1.TxIn.PreviousOutPoint:type_name -> sphinx.plugin.v1.OutPoint
+	3, // 0: sphinx.plugin.v1.UnsignedMessage.Unspent:type_name -> sphinx.plugin.v1.Unspent
+	5, // 1: sphinx.plugin.v1.MsgTx.TxIn:type_name -> sphinx.plugin.v1.TxIn
+	7, // 2: sphinx.plugin.v1.MsgTx.TxOut:type_name -> sphinx.plugin.v1.TxOut
+	6, // 3: sphinx.plugin.v1.TxIn.PreviousOutPoint:type_name -> sphinx.plugin.v1.OutPoint
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
@@ -1126,7 +1061,7 @@ func file_npool_sphinxplugin_sphinxplugin_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_sphinxplugin_sphinxplugin_proto_rawDesc,
-			NumEnums:      2,
+			NumEnums:      1,
 			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   0,

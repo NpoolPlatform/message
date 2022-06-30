@@ -213,7 +213,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | TransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
 | ENV | [string](#string) |  | main or test |
 | Offset | [uint32](#uint32) |  |  |
@@ -249,7 +248,6 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Address | [string](#string) |  | query wallet account |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
@@ -278,7 +276,6 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | ENV | [string](#string) |  | main or test |
 | Unit | [string](#string) |  |  |
 | TransactionID | [string](#string) |  |  |
@@ -304,7 +301,6 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
 | Payload | [bytes](#bytes) |  |  |
@@ -323,7 +319,6 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Info | [ProxySignResponseInfo](#sphinx-proxy-v1-ProxySignResponseInfo) |  | fil |
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx-plugin-v1-MsgTx) |  | btc |
@@ -386,7 +381,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TransactionID | [string](#string) |  |  |
-| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
+| TransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
 | Payload | [bytes](#bytes) |  |  |
 
 
@@ -446,6 +441,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | TransactionStateUnKnow | 0 |  |
 | TransactionStateWait | 1 |  |
 | TransactionStateSign | 2 |  |
+| TransactionStateBroadcast | 20 | TODO: caution |
 | TransactionStateSync | 3 |  |
 | TransactionStateDone | 4 |  |
 | TransactionStateFail | 5 |  |
@@ -629,7 +625,6 @@ SphinxProxy http service only for inner
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | TransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
 | ENV | [string](#string) |  | main or test |
 | Offset | [uint32](#uint32) |  |  |
@@ -665,7 +660,6 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Address | [string](#string) |  | query wallet account |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
@@ -694,7 +688,6 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | ENV | [string](#string) |  | main or test |
 | Unit | [string](#string) |  |  |
 | TransactionID | [string](#string) |  |  |
@@ -720,7 +713,6 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
 | Payload | [bytes](#bytes) |  |  |
@@ -739,7 +731,6 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | CoinType | [sphinx.plugin.v1.CoinType](#sphinx-plugin-v1-CoinType) |  |  |
-| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
 | TransactionID | [string](#string) |  |  |
 | Info | [ProxySignResponseInfo](#sphinx-proxy-v1-ProxySignResponseInfo) |  | fil |
 | MsgTx | [sphinx.plugin.v1.MsgTx](#sphinx-plugin-v1-MsgTx) |  | btc |
@@ -802,7 +793,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TransactionID | [string](#string) |  |  |
-| TransactionType | [sphinx.plugin.v1.TransactionType](#sphinx-plugin-v1-TransactionType) |  |  |
+| TransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
 | Payload | [bytes](#bytes) |  |  |
 
 
@@ -862,6 +853,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | TransactionStateUnKnow | 0 |  |
 | TransactionStateWait | 1 |  |
 | TransactionStateSign | 2 |  |
+| TransactionStateBroadcast | 20 | TODO: caution |
 | TransactionStateSync | 3 |  |
 | TransactionStateDone | 4 |  |
 | TransactionStateFail | 5 |  |
