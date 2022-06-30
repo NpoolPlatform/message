@@ -467,6 +467,9 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
+        "TransactionType": {
+          "$ref": "#/definitions/v1TransactionType"
+        },
         "TransactionID": {
           "type": "string"
         },
@@ -509,6 +512,9 @@
       "properties": {
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
+        },
+        "TransactionType": {
+          "$ref": "#/definitions/v1TransactionType"
         },
         "TransactionID": {
           "type": "string"
@@ -599,6 +605,17 @@
         "TransactionStateFail"
       ],
       "default": "TransactionStateUnKnow"
+    },
+    "v1TransactionType": {
+      "type": "string",
+      "enum": [
+        "Invalid",
+        "WalletNew",
+        "Balance",
+        "RegisterCoin",
+        "GasFee"
+      ],
+      "default": "Invalid"
     },
     "v1TxIn": {
       "type": "object",
