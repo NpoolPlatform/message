@@ -36,6 +36,12 @@ service SphinxProxy {
       body: "*"
     };
   }
+  rpc UpdateTransaction (UpdateTransactionRequest) returns (UpdateTransactionResponse) {
+    option (google.api.http) = {
+      post: "/v1/update/transaction"
+      body: "*"
+    };
+  }
   rpc GetTransaction (GetTransactionRequest) returns (GetTransactionResponse) {
     option (google.api.http) = {
       post: "/v1/get/transaction"
@@ -90,8 +96,21 @@ message CreateTransactionRequest {
 message CreateTransactionResponse {
 }
 
+message UpdateTransactionRequest {
+  string                            TransactionID   = 110;
+  sphinx.plugin.v1.TransactionType  TransactionType = 120;
+  bytes                             Payload         = 130;
+}
+
+message UpdateTransactionResponse {
+}
+
 message GetTransactionRequest {
-  string TransactionID    = 100;
+  string TransactionID                              = 100;
+  sphinx.plugin.v1.CoinType CoinType                = 110;
+  sphinx.plugin.v1.TransactionType TransactionType  = 120;
+  TransactionState TransactionState                 = 130;
+  string ENV                                        = 140; // main or test
 }
 
 message TransactionInfo {
@@ -114,7 +133,7 @@ message GetTransactionResponse {
 // ############################# async
 message ProxyPluginResponse {
   sphinx.plugin.v1.CoinType CoinType        = 100;
-  sphinx.plugin.v1.TransactionType TransactionType           = 110;
+  sphinx.plugin.v1.TransactionType TransactionType  = 110;
   string ENV                                = 111; // main or test
   string Unit                               = 112;
   string TransactionID                      = 120;
