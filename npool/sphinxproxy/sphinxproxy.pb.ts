@@ -69,10 +69,6 @@ export type UpdateTransactionResponse = {
 
 export type GetTransactionRequest = {
   transactionID?: string
-  coinType?: SphinxPluginV1Sphinxplugin.CoinType
-  transactionType?: SphinxPluginV1Sphinxplugin.TransactionType
-  transactionState?: TransactionState
-  eNV?: string
 }
 
 export type TransactionInfo = {
@@ -90,6 +86,20 @@ export type TransactionInfo = {
 
 export type GetTransactionResponse = {
   info?: TransactionInfo
+}
+
+export type GetTransactionsRequest = {
+  coinType?: SphinxPluginV1Sphinxplugin.CoinType
+  transactionType?: SphinxPluginV1Sphinxplugin.TransactionType
+  transactionState?: TransactionState
+  eNV?: string
+  offset?: number
+  limit?: number
+}
+
+export type GetTransactionsResponse = {
+  infos?: TransactionInfo
+  total?: number
 }
 
 export type ProxyPluginResponse = {
@@ -164,5 +174,8 @@ export class SphinxProxy {
   }
   static GetTransaction(req: GetTransactionRequest, initReq?: fm.InitReq): Promise<GetTransactionResponse> {
     return fm.fetchReq<GetTransactionRequest, GetTransactionResponse>(`/v1/get/transaction`, {...initReq, method: "POST", body: JSON.stringify(req)})
+  }
+  static GetTransactions(req: GetTransactionsRequest, initReq?: fm.InitReq): Promise<GetTransactionsResponse> {
+    return fm.fetchReq<GetTransactionsRequest, GetTransactionsResponse>(`/v1/get/transactions`, {...initReq, method: "POST", body: JSON.stringify(req)})
   }
 }
