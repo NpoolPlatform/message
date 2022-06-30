@@ -5,7 +5,6 @@
 */
 
 import * as fm from "../../../fetch.pb"
-import * as GoogleProtobufEmpty from "../../../google/protobuf/empty.pb"
 import * as GoogleProtobufStruct from "../../../google/protobuf/struct.pb"
 import * as NpoolV1Npool from "../../npool.pb"
 export type App = {
@@ -110,9 +109,6 @@ export type DeleteAppResponse = {
 }
 
 export class AppUserManagerApp {
-  static Version(req: GoogleProtobufEmpty.Empty, initReq?: fm.InitReq): Promise<NpoolV1Npool.VersionResponse> {
-    return fm.fetchReq<GoogleProtobufEmpty.Empty, NpoolV1Npool.VersionResponse>(`/app.user.manager.v2.AppUserManagerApp/Version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
-  }
   static CreateAppV2(req: CreateAppRequest, initReq?: fm.InitReq): Promise<CreateAppResponse> {
     return fm.fetchReq<CreateAppRequest, CreateAppResponse>(`/app.user.manager.v2.AppUserManagerApp/CreateAppV2`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)})
   }

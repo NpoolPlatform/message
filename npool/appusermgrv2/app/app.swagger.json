@@ -64,14 +64,6 @@
         }
       }
     },
-    "v1VersionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "string"
-        }
-      }
-    },
     "v2App": {
       "type": "object",
       "properties": {

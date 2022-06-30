@@ -11,7 +11,7 @@ import (
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
+	_ "google.golang.org/protobuf/types/known/emptypb"
 	structpb "google.golang.org/protobuf/types/known/structpb"
 	reflect "reflect"
 	sync "sync"
@@ -1322,12 +1322,8 @@ var file_npool_appusermgrv2_app_app_proto_rawDesc = []byte{
 	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2c, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
 	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65,
 	0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x32, 0x2e, 0x41, 0x70, 0x70,
-	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x85, 0x09, 0x0a, 0x11, 0x41, 0x70, 0x70, 0x55, 0x73,
-	0x65, 0x72, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x41, 0x70, 0x70, 0x12, 0x3e, 0x0a, 0x07,
-	0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a,
-	0x19, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x65, 0x72, 0x73, 0x69,
-	0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x5e, 0x0a, 0x0b,
+	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xc5, 0x08, 0x0a, 0x11, 0x41, 0x70, 0x70, 0x55, 0x73,
+	0x65, 0x72, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x41, 0x70, 0x70, 0x12, 0x5e, 0x0a, 0x0b,
 	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x56, 0x32, 0x12, 0x25, 0x2e, 0x61, 0x70,
 	0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76,
 	0x32, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65,
@@ -1394,11 +1390,12 @@ var file_npool_appusermgrv2_app_app_proto_rawDesc = []byte{
 	0x2e, 0x76, 0x32, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71,
 	0x75, 0x65, 0x73, 0x74, 0x1a, 0x26, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e,
 	0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x32, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x37,
-	0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f,
+	0x65, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x39,
+	0x5a, 0x37, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f,
 	0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61,
 	0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72,
-	0x6d, 0x67, 0x72, 0x2f, 0x61, 0x70, 0x70, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6d, 0x67, 0x72, 0x76, 0x32, 0x2f, 0x61, 0x70, 0x70, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x33,
 }
 
 var (
@@ -1445,8 +1442,6 @@ var file_npool_appusermgrv2_app_app_proto_goTypes = []interface{}{
 	nil,                             // 27: app.user.manager.v2.CountAppsRequest.CondsEntry
 	(*npool.FilterCond)(nil),        // 28: npool.v1.FilterCond
 	(*structpb.Value)(nil),          // 29: google.protobuf.Value
-	(*emptypb.Empty)(nil),           // 30: google.protobuf.Empty
-	(*npool.VersionResponse)(nil),   // 31: npool.v1.VersionResponse
 }
 var file_npool_appusermgrv2_app_app_proto_depIdxs = []int32{
 	0,  // 0: app.user.manager.v2.CreateAppRequest.Info:type_name -> app.user.manager.v2.App
@@ -1470,32 +1465,30 @@ var file_npool_appusermgrv2_app_app_proto_depIdxs = []int32{
 	29, // 18: app.user.manager.v2.UpdateAppFieldsRequest.FieldsEntry.value:type_name -> google.protobuf.Value
 	28, // 19: app.user.manager.v2.ExistAppCondsRequest.CondsEntry.value:type_name -> npool.v1.FilterCond
 	28, // 20: app.user.manager.v2.CountAppsRequest.CondsEntry.value:type_name -> npool.v1.FilterCond
-	30, // 21: app.user.manager.v2.AppUserManagerApp.Version:input_type -> google.protobuf.Empty
-	1,  // 22: app.user.manager.v2.AppUserManagerApp.CreateAppV2:input_type -> app.user.manager.v2.CreateAppRequest
-	3,  // 23: app.user.manager.v2.AppUserManagerApp.CreateAppsV2:input_type -> app.user.manager.v2.CreateAppsRequest
-	11, // 24: app.user.manager.v2.AppUserManagerApp.UpdateAppV2:input_type -> app.user.manager.v2.UpdateAppRequest
-	13, // 25: app.user.manager.v2.AppUserManagerApp.UpdateAppFieldsV2:input_type -> app.user.manager.v2.UpdateAppFieldsRequest
-	5,  // 26: app.user.manager.v2.AppUserManagerApp.GetAppV2:input_type -> app.user.manager.v2.GetAppRequest
-	8,  // 27: app.user.manager.v2.AppUserManagerApp.GetAppOnlyV2:input_type -> app.user.manager.v2.GetAppOnlyRequest
-	7,  // 28: app.user.manager.v2.AppUserManagerApp.GetAppsV2:input_type -> app.user.manager.v2.GetAppsRequest
-	15, // 29: app.user.manager.v2.AppUserManagerApp.ExistAppV2:input_type -> app.user.manager.v2.ExistAppRequest
-	17, // 30: app.user.manager.v2.AppUserManagerApp.ExistAppCondsV2:input_type -> app.user.manager.v2.ExistAppCondsRequest
-	19, // 31: app.user.manager.v2.AppUserManagerApp.CountAppsV2:input_type -> app.user.manager.v2.CountAppsRequest
-	21, // 32: app.user.manager.v2.AppUserManagerApp.DeleteAppV2:input_type -> app.user.manager.v2.DeleteAppRequest
-	31, // 33: app.user.manager.v2.AppUserManagerApp.Version:output_type -> npool.v1.VersionResponse
-	2,  // 34: app.user.manager.v2.AppUserManagerApp.CreateAppV2:output_type -> app.user.manager.v2.CreateAppResponse
-	4,  // 35: app.user.manager.v2.AppUserManagerApp.CreateAppsV2:output_type -> app.user.manager.v2.CreateAppsResponse
-	12, // 36: app.user.manager.v2.AppUserManagerApp.UpdateAppV2:output_type -> app.user.manager.v2.UpdateAppResponse
-	14, // 37: app.user.manager.v2.AppUserManagerApp.UpdateAppFieldsV2:output_type -> app.user.manager.v2.UpdateAppFieldsResponse
-	6,  // 38: app.user.manager.v2.AppUserManagerApp.GetAppV2:output_type -> app.user.manager.v2.GetAppResponse
-	9,  // 39: app.user.manager.v2.AppUserManagerApp.GetAppOnlyV2:output_type -> app.user.manager.v2.GetAppOnlyResponse
-	10, // 40: app.user.manager.v2.AppUserManagerApp.GetAppsV2:output_type -> app.user.manager.v2.GetAppsResponse
-	16, // 41: app.user.manager.v2.AppUserManagerApp.ExistAppV2:output_type -> app.user.manager.v2.ExistAppResponse
-	18, // 42: app.user.manager.v2.AppUserManagerApp.ExistAppCondsV2:output_type -> app.user.manager.v2.ExistAppCondsResponse
-	20, // 43: app.user.manager.v2.AppUserManagerApp.CountAppsV2:output_type -> app.user.manager.v2.CountAppsResponse
-	22, // 44: app.user.manager.v2.AppUserManagerApp.DeleteAppV2:output_type -> app.user.manager.v2.DeleteAppResponse
-	33, // [33:45] is the sub-list for method output_type
-	21, // [21:33] is the sub-list for method input_type
+	1,  // 21: app.user.manager.v2.AppUserManagerApp.CreateAppV2:input_type -> app.user.manager.v2.CreateAppRequest
+	3,  // 22: app.user.manager.v2.AppUserManagerApp.CreateAppsV2:input_type -> app.user.manager.v2.CreateAppsRequest
+	11, // 23: app.user.manager.v2.AppUserManagerApp.UpdateAppV2:input_type -> app.user.manager.v2.UpdateAppRequest
+	13, // 24: app.user.manager.v2.AppUserManagerApp.UpdateAppFieldsV2:input_type -> app.user.manager.v2.UpdateAppFieldsRequest
+	5,  // 25: app.user.manager.v2.AppUserManagerApp.GetAppV2:input_type -> app.user.manager.v2.GetAppRequest
+	8,  // 26: app.user.manager.v2.AppUserManagerApp.GetAppOnlyV2:input_type -> app.user.manager.v2.GetAppOnlyRequest
+	7,  // 27: app.user.manager.v2.AppUserManagerApp.GetAppsV2:input_type -> app.user.manager.v2.GetAppsRequest
+	15, // 28: app.user.manager.v2.AppUserManagerApp.ExistAppV2:input_type -> app.user.manager.v2.ExistAppRequest
+	17, // 29: app.user.manager.v2.AppUserManagerApp.ExistAppCondsV2:input_type -> app.user.manager.v2.ExistAppCondsRequest
+	19, // 30: app.user.manager.v2.AppUserManagerApp.CountAppsV2:input_type -> app.user.manager.v2.CountAppsRequest
+	21, // 31: app.user.manager.v2.AppUserManagerApp.DeleteAppV2:input_type -> app.user.manager.v2.DeleteAppRequest
+	2,  // 32: app.user.manager.v2.AppUserManagerApp.CreateAppV2:output_type -> app.user.manager.v2.CreateAppResponse
+	4,  // 33: app.user.manager.v2.AppUserManagerApp.CreateAppsV2:output_type -> app.user.manager.v2.CreateAppsResponse
+	12, // 34: app.user.manager.v2.AppUserManagerApp.UpdateAppV2:output_type -> app.user.manager.v2.UpdateAppResponse
+	14, // 35: app.user.manager.v2.AppUserManagerApp.UpdateAppFieldsV2:output_type -> app.user.manager.v2.UpdateAppFieldsResponse
+	6,  // 36: app.user.manager.v2.AppUserManagerApp.GetAppV2:output_type -> app.user.manager.v2.GetAppResponse
+	9,  // 37: app.user.manager.v2.AppUserManagerApp.GetAppOnlyV2:output_type -> app.user.manager.v2.GetAppOnlyResponse
+	10, // 38: app.user.manager.v2.AppUserManagerApp.GetAppsV2:output_type -> app.user.manager.v2.GetAppsResponse
+	16, // 39: app.user.manager.v2.AppUserManagerApp.ExistAppV2:output_type -> app.user.manager.v2.ExistAppResponse
+	18, // 40: app.user.manager.v2.AppUserManagerApp.ExistAppCondsV2:output_type -> app.user.manager.v2.ExistAppCondsResponse
+	20, // 41: app.user.manager.v2.AppUserManagerApp.CountAppsV2:output_type -> app.user.manager.v2.CountAppsResponse
+	22, // 42: app.user.manager.v2.AppUserManagerApp.DeleteAppV2:output_type -> app.user.manager.v2.DeleteAppResponse
+	32, // [32:43] is the sub-list for method output_type
+	21, // [21:32] is the sub-list for method input_type
 	21, // [21:21] is the sub-list for extension type_name
 	21, // [21:21] is the sub-list for extension extendee
 	0,  // [0:21] is the sub-list for field type_name

@@ -8,11 +8,9 @@ package app
 
 import (
 	context "context"
-	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -24,7 +22,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AppUserManagerAppClient interface {
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateAppV2(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error)
 	CreateAppsV2(ctx context.Context, in *CreateAppsRequest, opts ...grpc.CallOption) (*CreateAppsResponse, error)
 	UpdateAppV2(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
@@ -44,15 +41,6 @@ type appUserManagerAppClient struct {
 
 func NewAppUserManagerAppClient(cc grpc.ClientConnInterface) AppUserManagerAppClient {
 	return &appUserManagerAppClient{cc}
-}
-
-func (c *appUserManagerAppClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
-	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerApp/Version", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *appUserManagerAppClient) CreateAppV2(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error) {
@@ -158,7 +146,6 @@ func (c *appUserManagerAppClient) DeleteAppV2(ctx context.Context, in *DeleteApp
 // All implementations must embed UnimplementedAppUserManagerAppServer
 // for forward compatibility
 type AppUserManagerAppServer interface {
-	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateAppV2(context.Context, *CreateAppRequest) (*CreateAppResponse, error)
 	CreateAppsV2(context.Context, *CreateAppsRequest) (*CreateAppsResponse, error)
 	UpdateAppV2(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
@@ -177,9 +164,6 @@ type AppUserManagerAppServer interface {
 type UnimplementedAppUserManagerAppServer struct {
 }
 
-func (UnimplementedAppUserManagerAppServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
-}
 func (UnimplementedAppUserManagerAppServer) CreateAppV2(context.Context, *CreateAppRequest) (*CreateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppV2 not implemented")
 }
@@ -224,24 +208,6 @@ type UnsafeAppUserManagerAppServer interface {
 
 func RegisterAppUserManagerAppServer(s grpc.ServiceRegistrar, srv AppUserManagerAppServer) {
 	s.RegisterService(&AppUserManagerApp_ServiceDesc, srv)
-}
-
-func _AppUserManagerApp_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(emptypb.Empty)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppUserManagerAppServer).Version(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerApp/Version",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerAppServer).Version(ctx, req.(*emptypb.Empty))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _AppUserManagerApp_CreateAppV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -449,10 +415,6 @@ var AppUserManagerApp_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "app.user.manager.v2.AppUserManagerApp",
 	HandlerType: (*AppUserManagerAppServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "Version",
-			Handler:    _AppUserManagerApp_Version_Handler,
-		},
 		{
 			MethodName: "CreateAppV2",
 			Handler:    _AppUserManagerApp_CreateAppV2_Handler,
