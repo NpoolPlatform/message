@@ -103,9 +103,10 @@ message CreateTransactionResponse {
 }
 
 message UpdateTransactionRequest {
-  string           TransactionID    = 100;
-  TransactionState TransactionState = 110;
-  bytes            Payload          = 120;
+  string           TransactionID        = 100;
+  TransactionState TransactionState     = 110;
+  TransactionState NextTransactionState = 111;
+  bytes            Payload              = 120;
 }
 
 message UpdateTransactionResponse {
@@ -122,6 +123,7 @@ message TransactionInfo {
 	string From 			                  = 130;
 	string To 				                  = 140;
 	TransactionState TransactionState   = 150;
+  bytes Payload                       = 151;
 	string CID				                  = 160;
   int64 ExitCode                      = 170;
 	uint32 CreatedAt 		                = 180;

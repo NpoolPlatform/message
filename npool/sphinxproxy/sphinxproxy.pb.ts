@@ -70,6 +70,7 @@ export type CreateTransactionResponse = {
 export type UpdateTransactionRequest = {
   transactionID?: string
   transactionState?: TransactionState
+  nextTransactionState?: TransactionState
   payload?: Uint8Array
 }
 
@@ -87,6 +88,7 @@ export type TransactionInfo = {
   from?: string
   to?: string
   transactionState?: TransactionState
+  payload?: Uint8Array
   cID?: string
   exitCode?: string
   createdAt?: number

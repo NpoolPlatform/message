@@ -576,6 +576,10 @@
         "TransactionState": {
           "$ref": "#/definitions/v1TransactionState"
         },
+        "Payload": {
+          "type": "string",
+          "format": "byte"
+        },
         "CID": {
           "type": "string"
         },
@@ -770,6 +774,9 @@
           "type": "string"
         },
         "TransactionState": {
+          "$ref": "#/definitions/v1TransactionState"
+        },
+        "NextTransactionState": {
           "$ref": "#/definitions/v1TransactionState"
         },
         "Payload": {
