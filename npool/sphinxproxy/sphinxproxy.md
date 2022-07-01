@@ -387,6 +387,8 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | TransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
 | NextTransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
 | Payload | [bytes](#bytes) |  |  |
+| CID | [string](#string) |  |  |
+| ExitCode | [int64](#int64) |  |  |
 
 
 
@@ -816,6 +818,8 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | TransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
 | NextTransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
 | Payload | [bytes](#bytes) |  |  |
+| CID | [string](#string) |  |  |
+| ExitCode | [int64](#int64) |  |  |
 
 
 
