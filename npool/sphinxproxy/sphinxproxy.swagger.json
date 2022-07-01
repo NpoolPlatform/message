@@ -782,6 +782,13 @@
         "Payload": {
           "type": "string",
           "format": "byte"
+        },
+        "CID": {
+          "type": "string"
+        },
+        "ExitCode": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },

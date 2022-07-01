@@ -72,6 +72,8 @@ export type UpdateTransactionRequest = {
   transactionState?: TransactionState
   nextTransactionState?: TransactionState
   payload?: Uint8Array
+  cID?: string
+  exitCode?: string
 }
 
 export type UpdateTransactionResponse = {
