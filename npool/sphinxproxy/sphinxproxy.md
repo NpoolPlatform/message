@@ -364,6 +364,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | From | [string](#string) |  |  |
 | To | [string](#string) |  |  |
 | TransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
+| Payload | [bytes](#bytes) |  |  |
 | CID | [string](#string) |  |  |
 | ExitCode | [int64](#int64) |  |  |
 | CreatedAt | [uint32](#uint32) |  |  |
@@ -384,6 +385,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | ----- | ---- | ----- | ----------- |
 | TransactionID | [string](#string) |  |  |
 | TransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
+| NextTransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
 | Payload | [bytes](#bytes) |  |  |
 
 
@@ -791,6 +793,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | From | [string](#string) |  |  |
 | To | [string](#string) |  |  |
 | TransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
+| Payload | [bytes](#bytes) |  |  |
 | CID | [string](#string) |  |  |
 | ExitCode | [int64](#int64) |  |  |
 | CreatedAt | [uint32](#uint32) |  |  |
@@ -811,6 +814,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | ----- | ---- | ----- | ----------- |
 | TransactionID | [string](#string) |  |  |
 | TransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
+| NextTransactionState | [TransactionState](#sphinx-proxy-v1-TransactionState) |  |  |
 | Payload | [bytes](#bytes) |  |  |
 
 
