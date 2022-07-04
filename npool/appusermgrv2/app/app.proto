@@ -5,8 +5,6 @@ package app.user.manager.v2;
 option go_package = "github.com/NpoolPlatform/message/npool/appusermgrv2/app";
 
 import "google/protobuf/struct.proto";
-import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 service AppUserManagerApp {
@@ -38,7 +36,7 @@ message App {
     optional string Name = 30;
     optional string Logo = 40;
     optional string Description = 50;
-    optional uint32 CreateAt = 60;
+    optional uint32 CreatedAt = 60;
 }
 
 message AppRes {
@@ -147,7 +145,7 @@ message ExistAppRequest {
 }
 
 message ExistAppResponse {
-    bool Result = 10;
+    bool Info = 10;
 }
 
 message ExistAppCondsRequest {
@@ -155,7 +153,7 @@ message ExistAppCondsRequest {
 }
 
 message ExistAppCondsResponse {
-    bool Result = 10;
+    bool Info = 10;
 }
 
 message CountAppsRequest {
@@ -163,7 +161,7 @@ message CountAppsRequest {
 }
 
 message CountAppsResponse {
-    uint32 Result = 10;
+    uint32 Info = 10;
 }
 
 message DeleteAppRequest {
