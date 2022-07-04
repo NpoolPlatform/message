@@ -62,7 +62,7 @@
         "Description": {
           "type": "string"
         },
-        "CreateAt": {
+        "CreatedAt": {
           "type": "integer",
           "format": "int64"
         }
@@ -115,7 +115,7 @@
     "v2CountAppsResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "Info": {
           "type": "integer",
           "format": "int64"
         }
@@ -173,7 +173,7 @@
     "v2ExistAppCondsResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "Info": {
           "type": "boolean"
         }
       }
@@ -181,7 +181,7 @@
     "v2ExistAppResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "Info": {
           "type": "boolean"
         }
       }
