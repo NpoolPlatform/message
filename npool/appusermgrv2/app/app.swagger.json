@@ -4,6 +4,11 @@
     "title": "npool/appusermgrv2/app/app.proto",
     "version": "version not set"
   },
+  "tags": [
+    {
+      "name": "AppUserManagerApp"
+    }
+  ],
   "consumes": [
     "application/json"
   ],
@@ -15,29 +20,15 @@
     "protobufAny": {
       "type": "object",
       "properties": {
-        "type_url": {
+        "@type": {
           "type": "string"
-        },
-        "value": {
-          "type": "string",
-          "format": "byte"
         }
-      }
+      },
+      "additionalProperties": {}
     },
-    "protobufNullValue": {
-      "type": "string",
-      "enum": [
-        "NULL_VALUE"
-      ],
-      "default": "NULL_VALUE",
-      "description": "`NullValue` is a singleton enumeration to represent the null value for the\n`Value` type union.\n\n The JSON representation for `NullValue` is JSON `null`.\n\n - NULL_VALUE: Null value."
-    },
-    "runtimeError": {
+    "rpcStatus": {
       "type": "object",
       "properties": {
-        "error": {
-          "type": "string"
-        },
         "code": {
           "type": "integer",
           "format": "int32"
@@ -50,17 +41,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1FilterCond": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Val": {
-          "type": "object"
         }
       }
     },
@@ -88,6 +68,50 @@
         }
       }
     },
+    "v2AppRes": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v2IDVal"
+        },
+        "CreatedBy": {
+          "$ref": "#/definitions/v2CreatedByVal"
+        },
+        "Name": {
+          "$ref": "#/definitions/v2NameVal"
+        },
+        "Logo": {
+          "$ref": "#/definitions/v2LogoVal"
+        },
+        "Description": {
+          "$ref": "#/definitions/v2DescriptionVal"
+        }
+      }
+    },
     "v2CountAppsResponse": {
       "type": "object",
       "properties": {
@@ -101,7 +125,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2App"
+          "$ref": "#/definitions/v2AppRes"
         }
       }
     },
@@ -111,8 +135,19 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2App"
+            "$ref": "#/definitions/v2AppRes"
           }
+        }
+      }
+    },
+    "v2CreatedByVal": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Op": {
+          "type": "string"
         }
       }
     },
@@ -120,7 +155,18 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2App"
+          "$ref": "#/definitions/v2AppRes"
+        }
+      }
+    },
+    "v2DescriptionVal": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Op": {
+          "type": "string"
         }
       }
     },
@@ -144,7 +190,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2App"
+          "$ref": "#/definitions/v2AppRes"
         }
       }
     },
@@ -152,7 +198,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2App"
+          "$ref": "#/definitions/v2AppRes"
         }
       }
     },
@@ -162,7 +208,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2App"
+            "$ref": "#/definitions/v2AppRes"
           }
         },
         "Total": {
@@ -171,11 +217,36 @@
         }
       }
     },
-    "v2UpdateAppFieldsResponse": {
+    "v2IDVal": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2App"
+        "Value": {
+          "type": "string"
+        },
+        "Op": {
+          "type": "string"
+        }
+      }
+    },
+    "v2LogoVal": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Op": {
+          "type": "string"
+        }
+      }
+    },
+    "v2NameVal": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Op": {
+          "type": "string"
         }
       }
     },
@@ -183,7 +254,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2App"
+          "$ref": "#/definitions/v2AppRes"
         }
       }
     }

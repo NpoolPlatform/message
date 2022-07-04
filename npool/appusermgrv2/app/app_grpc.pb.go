@@ -25,7 +25,6 @@ type AppUserManagerAppClient interface {
 	CreateAppV2(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error)
 	CreateAppsV2(ctx context.Context, in *CreateAppsRequest, opts ...grpc.CallOption) (*CreateAppsResponse, error)
 	UpdateAppV2(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
-	UpdateAppFieldsV2(ctx context.Context, in *UpdateAppFieldsRequest, opts ...grpc.CallOption) (*UpdateAppFieldsResponse, error)
 	GetAppV2(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
 	GetAppOnlyV2(ctx context.Context, in *GetAppOnlyRequest, opts ...grpc.CallOption) (*GetAppOnlyResponse, error)
 	GetAppsV2(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
@@ -64,15 +63,6 @@ func (c *appUserManagerAppClient) CreateAppsV2(ctx context.Context, in *CreateAp
 func (c *appUserManagerAppClient) UpdateAppV2(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error) {
 	out := new(UpdateAppResponse)
 	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerApp/UpdateAppV2", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appUserManagerAppClient) UpdateAppFieldsV2(ctx context.Context, in *UpdateAppFieldsRequest, opts ...grpc.CallOption) (*UpdateAppFieldsResponse, error) {
-	out := new(UpdateAppFieldsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerApp/UpdateAppFieldsV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -149,7 +139,6 @@ type AppUserManagerAppServer interface {
 	CreateAppV2(context.Context, *CreateAppRequest) (*CreateAppResponse, error)
 	CreateAppsV2(context.Context, *CreateAppsRequest) (*CreateAppsResponse, error)
 	UpdateAppV2(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
-	UpdateAppFieldsV2(context.Context, *UpdateAppFieldsRequest) (*UpdateAppFieldsResponse, error)
 	GetAppV2(context.Context, *GetAppRequest) (*GetAppResponse, error)
 	GetAppOnlyV2(context.Context, *GetAppOnlyRequest) (*GetAppOnlyResponse, error)
 	GetAppsV2(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
@@ -172,9 +161,6 @@ func (UnimplementedAppUserManagerAppServer) CreateAppsV2(context.Context, *Creat
 }
 func (UnimplementedAppUserManagerAppServer) UpdateAppV2(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppV2 not implemented")
-}
-func (UnimplementedAppUserManagerAppServer) UpdateAppFieldsV2(context.Context, *UpdateAppFieldsRequest) (*UpdateAppFieldsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppFieldsV2 not implemented")
 }
 func (UnimplementedAppUserManagerAppServer) GetAppV2(context.Context, *GetAppRequest) (*GetAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppV2 not implemented")
@@ -260,24 +246,6 @@ func _AppUserManagerApp_UpdateAppV2_Handler(srv interface{}, ctx context.Context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppServer).UpdateAppV2(ctx, req.(*UpdateAppRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppUserManagerApp_UpdateAppFieldsV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateAppFieldsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppUserManagerAppServer).UpdateAppFieldsV2(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerApp/UpdateAppFieldsV2",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerAppServer).UpdateAppFieldsV2(ctx, req.(*UpdateAppFieldsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -426,10 +394,6 @@ var AppUserManagerApp_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateAppV2",
 			Handler:    _AppUserManagerApp_UpdateAppV2_Handler,
-		},
-		{
-			MethodName: "UpdateAppFieldsV2",
-			Handler:    _AppUserManagerApp_UpdateAppFieldsV2_Handler,
 		},
 		{
 			MethodName: "GetAppV2",
