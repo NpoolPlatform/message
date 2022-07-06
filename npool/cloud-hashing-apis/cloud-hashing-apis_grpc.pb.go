@@ -31,6 +31,8 @@ type CloudHashingApisClient interface {
 	GetGood(ctx context.Context, in *GetGoodRequest, opts ...grpc.CallOption) (*GetGoodResponse, error)
 	GetRecommendGoodsByApp(ctx context.Context, in *GetRecommendGoodsByAppRequest, opts ...grpc.CallOption) (*GetRecommendGoodsByAppResponse, error)
 	SubmitOrder(ctx context.Context, in *SubmitOrderRequest, opts ...grpc.CallOption) (*SubmitOrderResponse, error)
+	SubmitUserOrder(ctx context.Context, in *SubmitUserOrderRequest, opts ...grpc.CallOption) (*SubmitUserOrderResponse, error)
+	SubmitAppUserOrder(ctx context.Context, in *SubmitAppUserOrderRequest, opts ...grpc.CallOption) (*SubmitAppUserOrderResponse, error)
 	CreateOrderPayment(ctx context.Context, in *CreateOrderPaymentRequest, opts ...grpc.CallOption) (*CreateOrderPaymentResponse, error)
 	GetOrder(ctx context.Context, in *GetOrderRequest, opts ...grpc.CallOption) (*GetOrderResponse, error)
 	GetOrdersByAppUser(ctx context.Context, in *GetOrdersByAppUserRequest, opts ...grpc.CallOption) (*GetOrdersByAppUserResponse, error)
@@ -149,6 +151,24 @@ func (c *cloudHashingApisClient) GetRecommendGoodsByApp(ctx context.Context, in 
 func (c *cloudHashingApisClient) SubmitOrder(ctx context.Context, in *SubmitOrderRequest, opts ...grpc.CallOption) (*SubmitOrderResponse, error) {
 	out := new(SubmitOrderResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/SubmitOrder", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) SubmitUserOrder(ctx context.Context, in *SubmitUserOrderRequest, opts ...grpc.CallOption) (*SubmitUserOrderResponse, error) {
+	out := new(SubmitUserOrderResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/SubmitUserOrder", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) SubmitAppUserOrder(ctx context.Context, in *SubmitAppUserOrderRequest, opts ...grpc.CallOption) (*SubmitAppUserOrderResponse, error) {
+	out := new(SubmitAppUserOrderResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/SubmitAppUserOrder", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -625,6 +645,8 @@ type CloudHashingApisServer interface {
 	GetGood(context.Context, *GetGoodRequest) (*GetGoodResponse, error)
 	GetRecommendGoodsByApp(context.Context, *GetRecommendGoodsByAppRequest) (*GetRecommendGoodsByAppResponse, error)
 	SubmitOrder(context.Context, *SubmitOrderRequest) (*SubmitOrderResponse, error)
+	SubmitUserOrder(context.Context, *SubmitUserOrderRequest) (*SubmitUserOrderResponse, error)
+	SubmitAppUserOrder(context.Context, *SubmitAppUserOrderRequest) (*SubmitAppUserOrderResponse, error)
 	CreateOrderPayment(context.Context, *CreateOrderPaymentRequest) (*CreateOrderPaymentResponse, error)
 	GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error)
 	GetOrdersByAppUser(context.Context, *GetOrdersByAppUserRequest) (*GetOrdersByAppUserResponse, error)
@@ -703,6 +725,12 @@ func (UnimplementedCloudHashingApisServer) GetRecommendGoodsByApp(context.Contex
 }
 func (UnimplementedCloudHashingApisServer) SubmitOrder(context.Context, *SubmitOrderRequest) (*SubmitOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SubmitOrder not implemented")
+}
+func (UnimplementedCloudHashingApisServer) SubmitUserOrder(context.Context, *SubmitUserOrderRequest) (*SubmitUserOrderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitUserOrder not implemented")
+}
+func (UnimplementedCloudHashingApisServer) SubmitAppUserOrder(context.Context, *SubmitAppUserOrderRequest) (*SubmitAppUserOrderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitAppUserOrder not implemented")
 }
 func (UnimplementedCloudHashingApisServer) CreateOrderPayment(context.Context, *CreateOrderPaymentRequest) (*CreateOrderPaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOrderPayment not implemented")
@@ -992,6 +1020,42 @@ func _CloudHashingApis_SubmitOrder_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingApisServer).SubmitOrder(ctx, req.(*SubmitOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_SubmitUserOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitUserOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).SubmitUserOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/SubmitUserOrder",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).SubmitUserOrder(ctx, req.(*SubmitUserOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_SubmitAppUserOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitAppUserOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).SubmitAppUserOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/SubmitAppUserOrder",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).SubmitAppUserOrder(ctx, req.(*SubmitAppUserOrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1948,6 +2012,14 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SubmitOrder",
 			Handler:    _CloudHashingApis_SubmitOrder_Handler,
+		},
+		{
+			MethodName: "SubmitUserOrder",
+			Handler:    _CloudHashingApis_SubmitUserOrder_Handler,
+		},
+		{
+			MethodName: "SubmitAppUserOrder",
+			Handler:    _CloudHashingApis_SubmitAppUserOrder_Handler,
 		},
 		{
 			MethodName: "CreateOrderPayment",

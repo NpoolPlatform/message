@@ -1360,6 +1360,38 @@
         ]
       }
     },
+    "/v1/submit/app/user/order": {
+      "post": {
+        "operationId": "CloudHashingApis_SubmitAppUserOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SubmitAppUserOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SubmitAppUserOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/submit/order": {
       "post": {
         "operationId": "CloudHashingApis_SubmitOrder",
@@ -1384,6 +1416,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1SubmitOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/submit/user/order": {
+      "post": {
+        "operationId": "CloudHashingApis_SubmitUserOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SubmitUserOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SubmitUserOrderRequest"
             }
           }
         ],
@@ -4238,6 +4302,41 @@
         }
       }
     },
+    "v1SubmitAppUserOrderRequest": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "CouponID": {
+          "type": "string"
+        },
+        "DiscountCouponID": {
+          "type": "string"
+        },
+        "UserSpecialReductionID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SubmitAppUserOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/hashingapisv1Order"
+        }
+      }
+    },
     "v1SubmitOrderRequest": {
       "type": "object",
       "properties": {
@@ -4266,6 +4365,41 @@
       }
     },
     "v1SubmitOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/hashingapisv1Order"
+        }
+      }
+    },
+    "v1SubmitUserOrderRequest": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CouponID": {
+          "type": "string"
+        },
+        "DiscountCouponID": {
+          "type": "string"
+        },
+        "UserSpecialReductionID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SubmitUserOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
