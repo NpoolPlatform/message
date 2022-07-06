@@ -420,6 +420,7 @@ message Payment {
     double LocalCoinUSDCurrency = 160;
     double LiveCoinUSDCurrency = 170;
     uint32 UpdateAt = 180;
+    bool FakePayment = 190;
 }
 
 message CreatePaymentRequest {

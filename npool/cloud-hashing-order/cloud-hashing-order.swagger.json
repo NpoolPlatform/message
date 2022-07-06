@@ -1893,6 +1893,9 @@
         "UpdateAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "FakePayment": {
+          "type": "boolean"
         }
       }
     },
