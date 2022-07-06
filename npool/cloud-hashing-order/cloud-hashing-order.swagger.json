@@ -1763,6 +1763,9 @@
         },
         "PromotionID": {
           "type": "string"
+        },
+        "OrderType": {
+          "type": "string"
         }
       }
     },

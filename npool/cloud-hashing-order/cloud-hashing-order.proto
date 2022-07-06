@@ -279,6 +279,7 @@ message Order {
     string CouponID = 100;
     uint32 CreateAt = 110;
     string PromotionID = 120;
+    string OrderType = 130;
 }
 
 message CreateOrderRequest {
