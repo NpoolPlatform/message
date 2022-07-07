@@ -8,11 +8,9 @@ package approle
 
 import (
 	context "context"
-	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -24,11 +22,9 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AppUserManagerAppRoleClient interface {
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateAppRoleV2(ctx context.Context, in *CreateAppRoleRequest, opts ...grpc.CallOption) (*CreateAppRoleResponse, error)
 	CreateAppRolesV2(ctx context.Context, in *CreateAppRolesRequest, opts ...grpc.CallOption) (*CreateAppRolesResponse, error)
 	UpdateAppRoleV2(ctx context.Context, in *UpdateAppRoleRequest, opts ...grpc.CallOption) (*UpdateAppRoleResponse, error)
-	UpdateAppRoleFieldsV2(ctx context.Context, in *UpdateAppRoleFieldsRequest, opts ...grpc.CallOption) (*UpdateAppRoleFieldsResponse, error)
 	GetAppRoleV2(ctx context.Context, in *GetAppRoleRequest, opts ...grpc.CallOption) (*GetAppRoleResponse, error)
 	GetAppRoleOnlyV2(ctx context.Context, in *GetAppRoleOnlyRequest, opts ...grpc.CallOption) (*GetAppRoleOnlyResponse, error)
 	GetAppRolesV2(ctx context.Context, in *GetAppRolesRequest, opts ...grpc.CallOption) (*GetAppRolesResponse, error)
@@ -46,18 +42,9 @@ func NewAppUserManagerAppRoleClient(cc grpc.ClientConnInterface) AppUserManagerA
 	return &appUserManagerAppRoleClient{cc}
 }
 
-func (c *appUserManagerAppRoleClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
-	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerAppRole/Version", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *appUserManagerAppRoleClient) CreateAppRoleV2(ctx context.Context, in *CreateAppRoleRequest, opts ...grpc.CallOption) (*CreateAppRoleResponse, error) {
 	out := new(CreateAppRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerAppRole/CreateAppRoleV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.approle.v2.AppUserManagerAppRole/CreateAppRoleV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -66,7 +53,7 @@ func (c *appUserManagerAppRoleClient) CreateAppRoleV2(ctx context.Context, in *C
 
 func (c *appUserManagerAppRoleClient) CreateAppRolesV2(ctx context.Context, in *CreateAppRolesRequest, opts ...grpc.CallOption) (*CreateAppRolesResponse, error) {
 	out := new(CreateAppRolesResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerAppRole/CreateAppRolesV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.approle.v2.AppUserManagerAppRole/CreateAppRolesV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -75,16 +62,7 @@ func (c *appUserManagerAppRoleClient) CreateAppRolesV2(ctx context.Context, in *
 
 func (c *appUserManagerAppRoleClient) UpdateAppRoleV2(ctx context.Context, in *UpdateAppRoleRequest, opts ...grpc.CallOption) (*UpdateAppRoleResponse, error) {
 	out := new(UpdateAppRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerAppRole/UpdateAppRoleV2", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appUserManagerAppRoleClient) UpdateAppRoleFieldsV2(ctx context.Context, in *UpdateAppRoleFieldsRequest, opts ...grpc.CallOption) (*UpdateAppRoleFieldsResponse, error) {
-	out := new(UpdateAppRoleFieldsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerAppRole/UpdateAppRoleFieldsV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.approle.v2.AppUserManagerAppRole/UpdateAppRoleV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -93,7 +71,7 @@ func (c *appUserManagerAppRoleClient) UpdateAppRoleFieldsV2(ctx context.Context,
 
 func (c *appUserManagerAppRoleClient) GetAppRoleV2(ctx context.Context, in *GetAppRoleRequest, opts ...grpc.CallOption) (*GetAppRoleResponse, error) {
 	out := new(GetAppRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerAppRole/GetAppRoleV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.approle.v2.AppUserManagerAppRole/GetAppRoleV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -102,7 +80,7 @@ func (c *appUserManagerAppRoleClient) GetAppRoleV2(ctx context.Context, in *GetA
 
 func (c *appUserManagerAppRoleClient) GetAppRoleOnlyV2(ctx context.Context, in *GetAppRoleOnlyRequest, opts ...grpc.CallOption) (*GetAppRoleOnlyResponse, error) {
 	out := new(GetAppRoleOnlyResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerAppRole/GetAppRoleOnlyV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.approle.v2.AppUserManagerAppRole/GetAppRoleOnlyV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -111,7 +89,7 @@ func (c *appUserManagerAppRoleClient) GetAppRoleOnlyV2(ctx context.Context, in *
 
 func (c *appUserManagerAppRoleClient) GetAppRolesV2(ctx context.Context, in *GetAppRolesRequest, opts ...grpc.CallOption) (*GetAppRolesResponse, error) {
 	out := new(GetAppRolesResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerAppRole/GetAppRolesV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.approle.v2.AppUserManagerAppRole/GetAppRolesV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -120,7 +98,7 @@ func (c *appUserManagerAppRoleClient) GetAppRolesV2(ctx context.Context, in *Get
 
 func (c *appUserManagerAppRoleClient) ExistAppRoleV2(ctx context.Context, in *ExistAppRoleRequest, opts ...grpc.CallOption) (*ExistAppRoleResponse, error) {
 	out := new(ExistAppRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerAppRole/ExistAppRoleV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.approle.v2.AppUserManagerAppRole/ExistAppRoleV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -129,7 +107,7 @@ func (c *appUserManagerAppRoleClient) ExistAppRoleV2(ctx context.Context, in *Ex
 
 func (c *appUserManagerAppRoleClient) ExistAppRoleCondsV2(ctx context.Context, in *ExistAppRoleCondsRequest, opts ...grpc.CallOption) (*ExistAppRoleCondsResponse, error) {
 	out := new(ExistAppRoleCondsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerAppRole/ExistAppRoleCondsV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.approle.v2.AppUserManagerAppRole/ExistAppRoleCondsV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -138,7 +116,7 @@ func (c *appUserManagerAppRoleClient) ExistAppRoleCondsV2(ctx context.Context, i
 
 func (c *appUserManagerAppRoleClient) CountAppRolesV2(ctx context.Context, in *CountAppRolesRequest, opts ...grpc.CallOption) (*CountAppRolesResponse, error) {
 	out := new(CountAppRolesResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerAppRole/CountAppRolesV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.approle.v2.AppUserManagerAppRole/CountAppRolesV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -147,7 +125,7 @@ func (c *appUserManagerAppRoleClient) CountAppRolesV2(ctx context.Context, in *C
 
 func (c *appUserManagerAppRoleClient) DeleteAppRoleV2(ctx context.Context, in *DeleteAppRoleRequest, opts ...grpc.CallOption) (*DeleteAppRoleResponse, error) {
 	out := new(DeleteAppRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerAppRole/DeleteAppRoleV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.approle.v2.AppUserManagerAppRole/DeleteAppRoleV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -158,11 +136,9 @@ func (c *appUserManagerAppRoleClient) DeleteAppRoleV2(ctx context.Context, in *D
 // All implementations must embed UnimplementedAppUserManagerAppRoleServer
 // for forward compatibility
 type AppUserManagerAppRoleServer interface {
-	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateAppRoleV2(context.Context, *CreateAppRoleRequest) (*CreateAppRoleResponse, error)
 	CreateAppRolesV2(context.Context, *CreateAppRolesRequest) (*CreateAppRolesResponse, error)
 	UpdateAppRoleV2(context.Context, *UpdateAppRoleRequest) (*UpdateAppRoleResponse, error)
-	UpdateAppRoleFieldsV2(context.Context, *UpdateAppRoleFieldsRequest) (*UpdateAppRoleFieldsResponse, error)
 	GetAppRoleV2(context.Context, *GetAppRoleRequest) (*GetAppRoleResponse, error)
 	GetAppRoleOnlyV2(context.Context, *GetAppRoleOnlyRequest) (*GetAppRoleOnlyResponse, error)
 	GetAppRolesV2(context.Context, *GetAppRolesRequest) (*GetAppRolesResponse, error)
@@ -177,9 +153,6 @@ type AppUserManagerAppRoleServer interface {
 type UnimplementedAppUserManagerAppRoleServer struct {
 }
 
-func (UnimplementedAppUserManagerAppRoleServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
-}
 func (UnimplementedAppUserManagerAppRoleServer) CreateAppRoleV2(context.Context, *CreateAppRoleRequest) (*CreateAppRoleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppRoleV2 not implemented")
 }
@@ -188,9 +161,6 @@ func (UnimplementedAppUserManagerAppRoleServer) CreateAppRolesV2(context.Context
 }
 func (UnimplementedAppUserManagerAppRoleServer) UpdateAppRoleV2(context.Context, *UpdateAppRoleRequest) (*UpdateAppRoleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppRoleV2 not implemented")
-}
-func (UnimplementedAppUserManagerAppRoleServer) UpdateAppRoleFieldsV2(context.Context, *UpdateAppRoleFieldsRequest) (*UpdateAppRoleFieldsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppRoleFieldsV2 not implemented")
 }
 func (UnimplementedAppUserManagerAppRoleServer) GetAppRoleV2(context.Context, *GetAppRoleRequest) (*GetAppRoleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppRoleV2 not implemented")
@@ -226,24 +196,6 @@ func RegisterAppUserManagerAppRoleServer(s grpc.ServiceRegistrar, srv AppUserMan
 	s.RegisterService(&AppUserManagerAppRole_ServiceDesc, srv)
 }
 
-func _AppUserManagerAppRole_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(emptypb.Empty)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppUserManagerAppRoleServer).Version(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerAppRole/Version",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerAppRoleServer).Version(ctx, req.(*emptypb.Empty))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _AppUserManagerAppRole_CreateAppRoleV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppRoleRequest)
 	if err := dec(in); err != nil {
@@ -254,7 +206,7 @@ func _AppUserManagerAppRole_CreateAppRoleV2_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerAppRole/CreateAppRoleV2",
+		FullMethod: "/app.user.manager.approle.v2.AppUserManagerAppRole/CreateAppRoleV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppRoleServer).CreateAppRoleV2(ctx, req.(*CreateAppRoleRequest))
@@ -272,7 +224,7 @@ func _AppUserManagerAppRole_CreateAppRolesV2_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerAppRole/CreateAppRolesV2",
+		FullMethod: "/app.user.manager.approle.v2.AppUserManagerAppRole/CreateAppRolesV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppRoleServer).CreateAppRolesV2(ctx, req.(*CreateAppRolesRequest))
@@ -290,28 +242,10 @@ func _AppUserManagerAppRole_UpdateAppRoleV2_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerAppRole/UpdateAppRoleV2",
+		FullMethod: "/app.user.manager.approle.v2.AppUserManagerAppRole/UpdateAppRoleV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppRoleServer).UpdateAppRoleV2(ctx, req.(*UpdateAppRoleRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppUserManagerAppRole_UpdateAppRoleFieldsV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateAppRoleFieldsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppUserManagerAppRoleServer).UpdateAppRoleFieldsV2(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerAppRole/UpdateAppRoleFieldsV2",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerAppRoleServer).UpdateAppRoleFieldsV2(ctx, req.(*UpdateAppRoleFieldsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -326,7 +260,7 @@ func _AppUserManagerAppRole_GetAppRoleV2_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerAppRole/GetAppRoleV2",
+		FullMethod: "/app.user.manager.approle.v2.AppUserManagerAppRole/GetAppRoleV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppRoleServer).GetAppRoleV2(ctx, req.(*GetAppRoleRequest))
@@ -344,7 +278,7 @@ func _AppUserManagerAppRole_GetAppRoleOnlyV2_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerAppRole/GetAppRoleOnlyV2",
+		FullMethod: "/app.user.manager.approle.v2.AppUserManagerAppRole/GetAppRoleOnlyV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppRoleServer).GetAppRoleOnlyV2(ctx, req.(*GetAppRoleOnlyRequest))
@@ -362,7 +296,7 @@ func _AppUserManagerAppRole_GetAppRolesV2_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerAppRole/GetAppRolesV2",
+		FullMethod: "/app.user.manager.approle.v2.AppUserManagerAppRole/GetAppRolesV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppRoleServer).GetAppRolesV2(ctx, req.(*GetAppRolesRequest))
@@ -380,7 +314,7 @@ func _AppUserManagerAppRole_ExistAppRoleV2_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerAppRole/ExistAppRoleV2",
+		FullMethod: "/app.user.manager.approle.v2.AppUserManagerAppRole/ExistAppRoleV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppRoleServer).ExistAppRoleV2(ctx, req.(*ExistAppRoleRequest))
@@ -398,7 +332,7 @@ func _AppUserManagerAppRole_ExistAppRoleCondsV2_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerAppRole/ExistAppRoleCondsV2",
+		FullMethod: "/app.user.manager.approle.v2.AppUserManagerAppRole/ExistAppRoleCondsV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppRoleServer).ExistAppRoleCondsV2(ctx, req.(*ExistAppRoleCondsRequest))
@@ -416,7 +350,7 @@ func _AppUserManagerAppRole_CountAppRolesV2_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerAppRole/CountAppRolesV2",
+		FullMethod: "/app.user.manager.approle.v2.AppUserManagerAppRole/CountAppRolesV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppRoleServer).CountAppRolesV2(ctx, req.(*CountAppRolesRequest))
@@ -434,7 +368,7 @@ func _AppUserManagerAppRole_DeleteAppRoleV2_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerAppRole/DeleteAppRoleV2",
+		FullMethod: "/app.user.manager.approle.v2.AppUserManagerAppRole/DeleteAppRoleV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppRoleServer).DeleteAppRoleV2(ctx, req.(*DeleteAppRoleRequest))
@@ -446,13 +380,9 @@ func _AppUserManagerAppRole_DeleteAppRoleV2_Handler(srv interface{}, ctx context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AppUserManagerAppRole_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.user.manager.v2.AppUserManagerAppRole",
+	ServiceName: "app.user.manager.approle.v2.AppUserManagerAppRole",
 	HandlerType: (*AppUserManagerAppRoleServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "Version",
-			Handler:    _AppUserManagerAppRole_Version_Handler,
-		},
 		{
 			MethodName: "CreateAppRoleV2",
 			Handler:    _AppUserManagerAppRole_CreateAppRoleV2_Handler,
@@ -464,10 +394,6 @@ var AppUserManagerAppRole_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateAppRoleV2",
 			Handler:    _AppUserManagerAppRole_UpdateAppRoleV2_Handler,
-		},
-		{
-			MethodName: "UpdateAppRoleFieldsV2",
-			Handler:    _AppUserManagerAppRole_UpdateAppRoleFieldsV2_Handler,
 		},
 		{
 			MethodName: "GetAppRoleV2",

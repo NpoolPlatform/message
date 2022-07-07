@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appusermgrv2/app/app.proto",
+    "title": "npool/appusermgrv2/banapp/banapp.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "AppUserManagerApp"
+      "name": "AppUserManagerBanApp"
     }
   ],
   "consumes": [
@@ -44,75 +44,60 @@
         }
       }
     },
-    "v2App": {
+    "v2AppIDVal": {
       "type": "object",
       "properties": {
-        "Description": {
+        "Value": {
           "type": "string"
         },
-        "ID": {
+        "Op": {
           "type": "string"
-        },
-        "CreatedBy": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
-    "v2AppRes": {
+    "v2BanApp": {
       "type": "object",
       "properties": {
-        "Description": {
-          "type": "string"
-        },
         "ID": {
           "type": "string"
         },
-        "CreatedBy": {
+        "AppID": {
           "type": "string"
         },
-        "Name": {
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v2BanAppRes": {
+      "type": "object",
+      "properties": {
+        "ID": {
           "type": "string"
         },
-        "Logo": {
+        "AppID": {
           "type": "string"
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
+        "Message": {
+          "type": "string"
         }
       }
     },
     "v2Conds": {
       "type": "object",
       "properties": {
-        "Description": {
-          "$ref": "#/definitions/v2DescriptionVal"
-        },
         "ID": {
           "$ref": "#/definitions/v2IDVal"
         },
-        "CreatedBy": {
-          "$ref": "#/definitions/v2CreatedByVal"
+        "AppID": {
+          "$ref": "#/definitions/v2AppIDVal"
         },
-        "Name": {
-          "$ref": "#/definitions/v2NameVal"
-        },
-        "Logo": {
-          "$ref": "#/definitions/v2LogoVal"
+        "Message": {
+          "$ref": "#/definitions/v2MessageVal"
         }
       }
     },
-    "v2CountAppsResponse": {
+    "v2CountBanAppsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -121,56 +106,34 @@
         }
       }
     },
-    "v2CreateAppResponse": {
+    "v2CreateBanAppResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2BanAppRes"
         }
       }
     },
-    "v2CreateAppsResponse": {
+    "v2CreateBanAppsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRes"
+            "$ref": "#/definitions/v2BanAppRes"
           }
         }
       }
     },
-    "v2CreatedByVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2DeleteAppResponse": {
+    "v2DeleteBanAppResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2BanAppRes"
         }
       }
     },
-    "v2DescriptionVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2ExistAppCondsResponse": {
+    "v2ExistBanAppCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -178,7 +141,7 @@
         }
       }
     },
-    "v2ExistAppResponse": {
+    "v2ExistBanAppResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -186,29 +149,29 @@
         }
       }
     },
-    "v2GetAppOnlyResponse": {
+    "v2GetBanAppOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2BanAppRes"
         }
       }
     },
-    "v2GetAppResponse": {
+    "v2GetBanAppResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2BanAppRes"
         }
       }
     },
-    "v2GetAppsResponse": {
+    "v2GetBanAppsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRes"
+            "$ref": "#/definitions/v2BanAppRes"
           }
         },
         "Total": {
@@ -228,7 +191,7 @@
         }
       }
     },
-    "v2LogoVal": {
+    "v2MessageVal": {
       "type": "object",
       "properties": {
         "Value": {
@@ -239,22 +202,11 @@
         }
       }
     },
-    "v2NameVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2UpdateAppResponse": {
+    "v2UpdateBanAppResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2BanAppRes"
         }
       }
     }

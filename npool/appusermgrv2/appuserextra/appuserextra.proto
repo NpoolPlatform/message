@@ -1,0 +1,215 @@
+syntax = "proto3";
+
+package app.user.manager.appuserextra.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appusermgrv2/appuserextra";
+
+import "google/protobuf/struct.proto";
+import "npool/npool.proto";
+
+service AppUserManagerAppUserExtra {
+
+    rpc CreateAppUserExtraV2 (CreateAppUserExtraRequest) returns (CreateAppUserExtraResponse) {}
+
+    rpc CreateAppUserExtrasV2 (CreateAppUserExtrasRequest) returns (CreateAppUserExtrasResponse) {}
+
+    rpc UpdateAppUserExtraV2 (UpdateAppUserExtraRequest) returns (UpdateAppUserExtraResponse) {}
+
+    rpc GetAppUserExtraV2 (GetAppUserExtraRequest) returns (GetAppUserExtraResponse) {}
+
+    rpc GetAppUserExtraOnlyV2 (GetAppUserExtraOnlyRequest) returns (GetAppUserExtraOnlyResponse) {}
+
+    rpc GetAppUserExtrasV2 (GetAppUserExtrasRequest) returns (GetAppUserExtrasResponse) {}
+
+    rpc ExistAppUserExtraV2 (ExistAppUserExtraRequest) returns (ExistAppUserExtraResponse) {}
+
+    rpc ExistAppUserExtraCondsV2 (ExistAppUserExtraCondsRequest) returns (ExistAppUserExtraCondsResponse) {}
+
+    rpc CountAppUserExtrasV2 (CountAppUserExtrasRequest) returns (CountAppUserExtrasResponse) {}
+
+    rpc DeleteAppUserExtraV2 (DeleteAppUserExtraRequest) returns (DeleteAppUserExtraResponse) {}
+}
+
+message AppUserExtra {
+    optional string FirstName = 10;
+    optional uint32 Birthday = 20;
+    optional string ID = 30;
+    optional string LastName = 40;
+    optional string Gender = 50;
+    optional string Avatar = 60;
+    optional string UserID = 70;
+    optional string AppID = 80;
+    optional string Username = 90;
+    optional string PostalCode = 100;
+    optional uint32 Age = 110;
+    optional string Organization = 120;
+    optional string IDNumber = 130;
+    repeated string AddressFields = 140;
+}
+
+message AppUserExtraRes {
+    string FirstName = 10;
+    uint32 Birthday = 20;
+    string ID = 30;
+    string LastName = 40;
+    string Gender = 50;
+    string Avatar = 60;
+    string UserID = 70;
+    string AppID = 80;
+    string Username = 90;
+    string PostalCode = 100;
+    uint32 Age = 110;
+    string Organization = 120;
+    string IDNumber = 130;
+    repeated string AddressFields = 140;
+}
+
+message CreateAppUserExtraRequest {
+    AppUserExtra Info = 10;
+}
+
+message CreateAppUserExtraResponse {
+    AppUserExtraRes Info = 10;
+}
+
+message CreateAppUserExtrasRequest {
+    repeated AppUserExtra Infos = 10;
+}
+
+message CreateAppUserExtrasResponse {
+    repeated AppUserExtraRes Infos = 10;
+}
+
+message GetAppUserExtraRequest {
+    string ID = 10;
+}
+
+message GetAppUserExtraResponse {
+    AppUserExtraRes Info = 10;
+}
+message FirstNameVal {
+    string Value = 10;
+    string Op = 20;
+}
+message BirthdayVal {
+    uint32 Value = 10;
+    string Op = 20;
+}
+message IDVal {
+    string Value = 10;
+    string Op = 20;
+}
+message LastNameVal {
+    string Value = 10;
+    string Op = 20;
+}
+message GenderVal {
+    string Value = 10;
+    string Op = 20;
+}
+message AvatarVal {
+    string Value = 10;
+    string Op = 20;
+}
+message UserIDVal {
+    string Value = 10;
+    string Op = 20;
+}
+message AppIDVal {
+    string Value = 10;
+    string Op = 20;
+}
+message UsernameVal {
+    string Value = 10;
+    string Op = 20;
+}
+message PostalCodeVal {
+    string Value = 10;
+    string Op = 20;
+}
+message AgeVal {
+    uint32 Value = 10;
+    string Op = 20;
+}
+message OrganizationVal {
+    string Value = 10;
+    string Op = 20;
+}
+message IDNumberVal {
+    string Value = 10;
+    string Op = 20;
+}
+
+message Conds {
+    FirstNameVal FirstName = 10;
+    BirthdayVal Birthday = 20;
+    IDVal ID = 30;
+    LastNameVal LastName = 40;
+    GenderVal Gender = 50;
+    AvatarVal Avatar = 60;
+    UserIDVal UserID = 70;
+    AppIDVal AppID = 80;
+    UsernameVal Username = 90;
+    PostalCodeVal PostalCode = 100;
+    AgeVal Age = 110;
+    OrganizationVal Organization = 120;
+    IDNumberVal IDNumber = 130;
+}
+message GetAppUserExtrasRequest {
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetAppUserExtrasResponse {
+    repeated AppUserExtraRes Infos = 10;
+    uint32 Total = 20;
+}
+
+message GetAppUserExtraOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetAppUserExtraOnlyResponse {
+    AppUserExtraRes Info = 10;
+}
+
+message UpdateAppUserExtraRequest {
+    AppUserExtra Info = 10;
+}
+
+message UpdateAppUserExtraResponse {
+    AppUserExtraRes Info = 10;
+}
+
+message ExistAppUserExtraRequest {
+    string ID = 10;
+}
+
+message ExistAppUserExtraResponse {
+    bool Info = 10;
+}
+
+message ExistAppUserExtraCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAppUserExtraCondsResponse {
+    bool Info = 10;
+}
+
+message CountAppUserExtrasRequest {
+    Conds Conds = 10;
+}
+
+message CountAppUserExtrasResponse {
+    uint32 Info = 10;
+}
+
+message DeleteAppUserExtraRequest {
+    string ID = 10;
+}
+
+message DeleteAppUserExtraResponse {
+    AppUserExtraRes Info = 10;
+}

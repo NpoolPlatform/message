@@ -44,7 +44,7 @@ func NewAppUserManagerAppClient(cc grpc.ClientConnInterface) AppUserManagerAppCl
 
 func (c *appUserManagerAppClient) CreateAppV2(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error) {
 	out := new(CreateAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerApp/CreateAppV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.app.v2.AppUserManagerApp/CreateAppV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func (c *appUserManagerAppClient) CreateAppV2(ctx context.Context, in *CreateApp
 
 func (c *appUserManagerAppClient) CreateAppsV2(ctx context.Context, in *CreateAppsRequest, opts ...grpc.CallOption) (*CreateAppsResponse, error) {
 	out := new(CreateAppsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerApp/CreateAppsV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.app.v2.AppUserManagerApp/CreateAppsV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *appUserManagerAppClient) CreateAppsV2(ctx context.Context, in *CreateAp
 
 func (c *appUserManagerAppClient) UpdateAppV2(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error) {
 	out := new(UpdateAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerApp/UpdateAppV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.app.v2.AppUserManagerApp/UpdateAppV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *appUserManagerAppClient) UpdateAppV2(ctx context.Context, in *UpdateApp
 
 func (c *appUserManagerAppClient) GetAppV2(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error) {
 	out := new(GetAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerApp/GetAppV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.app.v2.AppUserManagerApp/GetAppV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func (c *appUserManagerAppClient) GetAppV2(ctx context.Context, in *GetAppReques
 
 func (c *appUserManagerAppClient) GetAppOnlyV2(ctx context.Context, in *GetAppOnlyRequest, opts ...grpc.CallOption) (*GetAppOnlyResponse, error) {
 	out := new(GetAppOnlyResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerApp/GetAppOnlyV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.app.v2.AppUserManagerApp/GetAppOnlyV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *appUserManagerAppClient) GetAppOnlyV2(ctx context.Context, in *GetAppOn
 
 func (c *appUserManagerAppClient) GetAppsV2(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error) {
 	out := new(GetAppsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerApp/GetAppsV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.app.v2.AppUserManagerApp/GetAppsV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func (c *appUserManagerAppClient) GetAppsV2(ctx context.Context, in *GetAppsRequ
 
 func (c *appUserManagerAppClient) ExistAppV2(ctx context.Context, in *ExistAppRequest, opts ...grpc.CallOption) (*ExistAppResponse, error) {
 	out := new(ExistAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerApp/ExistAppV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.app.v2.AppUserManagerApp/ExistAppV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func (c *appUserManagerAppClient) ExistAppV2(ctx context.Context, in *ExistAppRe
 
 func (c *appUserManagerAppClient) ExistAppCondsV2(ctx context.Context, in *ExistAppCondsRequest, opts ...grpc.CallOption) (*ExistAppCondsResponse, error) {
 	out := new(ExistAppCondsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerApp/ExistAppCondsV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.app.v2.AppUserManagerApp/ExistAppCondsV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func (c *appUserManagerAppClient) ExistAppCondsV2(ctx context.Context, in *Exist
 
 func (c *appUserManagerAppClient) CountAppsV2(ctx context.Context, in *CountAppsRequest, opts ...grpc.CallOption) (*CountAppsResponse, error) {
 	out := new(CountAppsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerApp/CountAppsV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.app.v2.AppUserManagerApp/CountAppsV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func (c *appUserManagerAppClient) CountAppsV2(ctx context.Context, in *CountApps
 
 func (c *appUserManagerAppClient) DeleteAppV2(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error) {
 	out := new(DeleteAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v2.AppUserManagerApp/DeleteAppV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.app.v2.AppUserManagerApp/DeleteAppV2", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -206,7 +206,7 @@ func _AppUserManagerApp_CreateAppV2_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerApp/CreateAppV2",
+		FullMethod: "/app.user.manager.app.v2.AppUserManagerApp/CreateAppV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppServer).CreateAppV2(ctx, req.(*CreateAppRequest))
@@ -224,7 +224,7 @@ func _AppUserManagerApp_CreateAppsV2_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerApp/CreateAppsV2",
+		FullMethod: "/app.user.manager.app.v2.AppUserManagerApp/CreateAppsV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppServer).CreateAppsV2(ctx, req.(*CreateAppsRequest))
@@ -242,7 +242,7 @@ func _AppUserManagerApp_UpdateAppV2_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerApp/UpdateAppV2",
+		FullMethod: "/app.user.manager.app.v2.AppUserManagerApp/UpdateAppV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppServer).UpdateAppV2(ctx, req.(*UpdateAppRequest))
@@ -260,7 +260,7 @@ func _AppUserManagerApp_GetAppV2_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerApp/GetAppV2",
+		FullMethod: "/app.user.manager.app.v2.AppUserManagerApp/GetAppV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppServer).GetAppV2(ctx, req.(*GetAppRequest))
@@ -278,7 +278,7 @@ func _AppUserManagerApp_GetAppOnlyV2_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerApp/GetAppOnlyV2",
+		FullMethod: "/app.user.manager.app.v2.AppUserManagerApp/GetAppOnlyV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppServer).GetAppOnlyV2(ctx, req.(*GetAppOnlyRequest))
@@ -296,7 +296,7 @@ func _AppUserManagerApp_GetAppsV2_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerApp/GetAppsV2",
+		FullMethod: "/app.user.manager.app.v2.AppUserManagerApp/GetAppsV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppServer).GetAppsV2(ctx, req.(*GetAppsRequest))
@@ -314,7 +314,7 @@ func _AppUserManagerApp_ExistAppV2_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerApp/ExistAppV2",
+		FullMethod: "/app.user.manager.app.v2.AppUserManagerApp/ExistAppV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppServer).ExistAppV2(ctx, req.(*ExistAppRequest))
@@ -332,7 +332,7 @@ func _AppUserManagerApp_ExistAppCondsV2_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerApp/ExistAppCondsV2",
+		FullMethod: "/app.user.manager.app.v2.AppUserManagerApp/ExistAppCondsV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppServer).ExistAppCondsV2(ctx, req.(*ExistAppCondsRequest))
@@ -350,7 +350,7 @@ func _AppUserManagerApp_CountAppsV2_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerApp/CountAppsV2",
+		FullMethod: "/app.user.manager.app.v2.AppUserManagerApp/CountAppsV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppServer).CountAppsV2(ctx, req.(*CountAppsRequest))
@@ -368,7 +368,7 @@ func _AppUserManagerApp_DeleteAppV2_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v2.AppUserManagerApp/DeleteAppV2",
+		FullMethod: "/app.user.manager.app.v2.AppUserManagerApp/DeleteAppV2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerAppServer).DeleteAppV2(ctx, req.(*DeleteAppRequest))
@@ -380,7 +380,7 @@ func _AppUserManagerApp_DeleteAppV2_Handler(srv interface{}, ctx context.Context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AppUserManagerApp_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.user.manager.v2.AppUserManagerApp",
+	ServiceName: "app.user.manager.app.v2.AppUserManagerApp",
 	HandlerType: (*AppUserManagerAppServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

@@ -26,14 +26,6 @@
       },
       "additionalProperties": {}
     },
-    "protobufNullValue": {
-      "type": "string",
-      "enum": [
-        "NULL_VALUE"
-      ],
-      "default": "NULL_VALUE",
-      "description": "`NullValue` is a singleton enumeration to represent the null value for the\n`Value` type union.\n\n The JSON representation for `NullValue` is JSON `null`.\n\n - NULL_VALUE: Null value."
-    },
     "rpcStatus": {
       "type": "object",
       "properties": {
@@ -52,21 +44,13 @@
         }
       }
     },
-    "v1FilterCond": {
+    "v2AppIDVal": {
       "type": "object",
       "properties": {
-        "Op": {
+        "Value": {
           "type": "string"
         },
-        "Val": {
-          "type": "object"
-        }
-      }
-    },
-    "v1VersionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
+        "Op": {
           "type": "string"
         }
       }
@@ -94,10 +78,53 @@
         }
       }
     },
+    "v2AppRoleRes": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Default": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v2Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v2IDVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v2AppIDVal"
+        },
+        "CreatedBy": {
+          "$ref": "#/definitions/v2CreatedByVal"
+        },
+        "Role": {
+          "$ref": "#/definitions/v2RoleVal"
+        },
+        "Default": {
+          "$ref": "#/definitions/v2DefaultVal"
+        }
+      }
+    },
     "v2CountAppRolesResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "Info": {
           "type": "integer",
           "format": "int64"
         }
@@ -107,7 +134,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRole"
+          "$ref": "#/definitions/v2AppRoleRes"
         }
       }
     },
@@ -117,8 +144,30 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRole"
+            "$ref": "#/definitions/v2AppRoleRes"
           }
+        }
+      }
+    },
+    "v2CreatedByVal": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Op": {
+          "type": "string"
+        }
+      }
+    },
+    "v2DefaultVal": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "boolean"
+        },
+        "Op": {
+          "type": "string"
         }
       }
     },
@@ -126,14 +175,14 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRole"
+          "$ref": "#/definitions/v2AppRoleRes"
         }
       }
     },
     "v2ExistAppRoleCondsResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "Info": {
           "type": "boolean"
         }
       }
@@ -141,7 +190,7 @@
     "v2ExistAppRoleResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "Info": {
           "type": "boolean"
         }
       }
@@ -150,7 +199,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRole"
+          "$ref": "#/definitions/v2AppRoleRes"
         }
       }
     },
@@ -158,7 +207,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRole"
+          "$ref": "#/definitions/v2AppRoleRes"
         }
       }
     },
@@ -168,7 +217,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRole"
+            "$ref": "#/definitions/v2AppRoleRes"
           }
         },
         "Total": {
@@ -177,11 +226,25 @@
         }
       }
     },
-    "v2UpdateAppRoleFieldsResponse": {
+    "v2IDVal": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppRole"
+        "Value": {
+          "type": "string"
+        },
+        "Op": {
+          "type": "string"
+        }
+      }
+    },
+    "v2RoleVal": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Op": {
+          "type": "string"
         }
       }
     },
@@ -189,7 +252,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRole"
+          "$ref": "#/definitions/v2AppRoleRes"
         }
       }
     }
