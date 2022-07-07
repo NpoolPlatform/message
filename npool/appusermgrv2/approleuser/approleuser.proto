@@ -1,0 +1,150 @@
+syntax = "proto3";
+
+package app.user.manager.approleuser.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appusermgrv2/approleuser";
+
+import "google/protobuf/struct.proto";
+import "npool/npool.proto";
+
+service AppUserManagerAppRoleUser {
+
+    rpc CreateAppRoleUserV2 (CreateAppRoleUserRequest) returns (CreateAppRoleUserResponse) {}
+
+    rpc CreateAppRoleUsersV2 (CreateAppRoleUsersRequest) returns (CreateAppRoleUsersResponse) {}
+
+    rpc UpdateAppRoleUserV2 (UpdateAppRoleUserRequest) returns (UpdateAppRoleUserResponse) {}
+
+    rpc GetAppRoleUserV2 (GetAppRoleUserRequest) returns (GetAppRoleUserResponse) {}
+
+    rpc GetAppRoleUserOnlyV2 (GetAppRoleUserOnlyRequest) returns (GetAppRoleUserOnlyResponse) {}
+
+    rpc GetAppRoleUsersV2 (GetAppRoleUsersRequest) returns (GetAppRoleUsersResponse) {}
+
+    rpc ExistAppRoleUserV2 (ExistAppRoleUserRequest) returns (ExistAppRoleUserResponse) {}
+
+    rpc ExistAppRoleUserCondsV2 (ExistAppRoleUserCondsRequest) returns (ExistAppRoleUserCondsResponse) {}
+
+    rpc CountAppRoleUsersV2 (CountAppRoleUsersRequest) returns (CountAppRoleUsersResponse) {}
+
+    rpc DeleteAppRoleUserV2 (DeleteAppRoleUserRequest) returns (DeleteAppRoleUserResponse) {}
+}
+
+message AppRoleUser {
+    optional string UserID = 10;
+    optional string ID = 20;
+    optional string AppID = 30;
+    optional string RoleID = 40;
+}
+
+message AppRoleUserRes {
+    string UserID = 10;
+    string ID = 20;
+    string AppID = 30;
+    string RoleID = 40;
+}
+
+message CreateAppRoleUserRequest {
+    AppRoleUser Info = 10;
+}
+
+message CreateAppRoleUserResponse {
+    AppRoleUserRes Info = 10;
+}
+
+message CreateAppRoleUsersRequest {
+    repeated AppRoleUser Infos = 10;
+}
+
+message CreateAppRoleUsersResponse {
+    repeated AppRoleUserRes Infos = 10;
+}
+
+message GetAppRoleUserRequest {
+    string ID = 10;
+}
+
+message GetAppRoleUserResponse {
+    AppRoleUserRes Info = 10;
+}
+message UserIDVal {
+    string Value = 10;
+    string Op = 20;
+}
+message IDVal {
+    string Value = 10;
+    string Op = 20;
+}
+message AppIDVal {
+    string Value = 10;
+    string Op = 20;
+}
+message RoleIDVal {
+    string Value = 10;
+    string Op = 20;
+}
+
+message Conds {
+    UserIDVal UserID = 10;
+    IDVal ID = 20;
+    AppIDVal AppID = 30;
+    RoleIDVal RoleID = 40;
+}
+message GetAppRoleUsersRequest {
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetAppRoleUsersResponse {
+    repeated AppRoleUserRes Infos = 10;
+    uint32 Total = 20;
+}
+
+message GetAppRoleUserOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetAppRoleUserOnlyResponse {
+    AppRoleUserRes Info = 10;
+}
+
+message UpdateAppRoleUserRequest {
+    AppRoleUser Info = 10;
+}
+
+message UpdateAppRoleUserResponse {
+    AppRoleUserRes Info = 10;
+}
+
+message ExistAppRoleUserRequest {
+    string ID = 10;
+}
+
+message ExistAppRoleUserResponse {
+    bool Info = 10;
+}
+
+message ExistAppRoleUserCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAppRoleUserCondsResponse {
+    bool Info = 10;
+}
+
+message CountAppRoleUsersRequest {
+    Conds Conds = 10;
+}
+
+message CountAppRoleUsersResponse {
+    uint32 Info = 10;
+}
+
+message DeleteAppRoleUserRequest {
+    string ID = 10;
+}
+
+message DeleteAppRoleUserResponse {
+    AppRoleUserRes Info = 10;
+}

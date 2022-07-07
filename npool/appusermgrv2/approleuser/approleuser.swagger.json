@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appusermgrv2/app/app.proto",
+    "title": "npool/appusermgrv2/approleuser/approleuser.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "AppUserManagerApp"
+      "name": "AppUserManagerAppRoleUser"
     }
   ],
   "consumes": [
@@ -44,75 +44,69 @@
         }
       }
     },
-    "v2App": {
+    "v2AppIDVal": {
       "type": "object",
       "properties": {
-        "Description": {
+        "Value": {
           "type": "string"
         },
-        "ID": {
+        "Op": {
           "type": "string"
-        },
-        "CreatedBy": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
-    "v2AppRes": {
+    "v2AppRoleUser": {
       "type": "object",
       "properties": {
-        "Description": {
+        "UserID": {
           "type": "string"
         },
         "ID": {
           "type": "string"
         },
-        "CreatedBy": {
+        "AppID": {
           "type": "string"
         },
-        "Name": {
+        "RoleID": {
+          "type": "string"
+        }
+      }
+    },
+    "v2AppRoleUserRes": {
+      "type": "object",
+      "properties": {
+        "UserID": {
           "type": "string"
         },
-        "Logo": {
+        "ID": {
           "type": "string"
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
         }
       }
     },
     "v2Conds": {
       "type": "object",
       "properties": {
-        "Description": {
-          "$ref": "#/definitions/v2DescriptionVal"
+        "UserID": {
+          "$ref": "#/definitions/v2UserIDVal"
         },
         "ID": {
           "$ref": "#/definitions/v2IDVal"
         },
-        "CreatedBy": {
-          "$ref": "#/definitions/v2CreatedByVal"
+        "AppID": {
+          "$ref": "#/definitions/v2AppIDVal"
         },
-        "Name": {
-          "$ref": "#/definitions/v2NameVal"
-        },
-        "Logo": {
-          "$ref": "#/definitions/v2LogoVal"
+        "RoleID": {
+          "$ref": "#/definitions/v2RoleIDVal"
         }
       }
     },
-    "v2CountAppsResponse": {
+    "v2CountAppRoleUsersResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -121,56 +115,34 @@
         }
       }
     },
-    "v2CreateAppResponse": {
+    "v2CreateAppRoleUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2AppRoleUserRes"
         }
       }
     },
-    "v2CreateAppsResponse": {
+    "v2CreateAppRoleUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRes"
+            "$ref": "#/definitions/v2AppRoleUserRes"
           }
         }
       }
     },
-    "v2CreatedByVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2DeleteAppResponse": {
+    "v2DeleteAppRoleUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2AppRoleUserRes"
         }
       }
     },
-    "v2DescriptionVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2ExistAppCondsResponse": {
+    "v2ExistAppRoleUserCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -178,7 +150,7 @@
         }
       }
     },
-    "v2ExistAppResponse": {
+    "v2ExistAppRoleUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -186,29 +158,29 @@
         }
       }
     },
-    "v2GetAppOnlyResponse": {
+    "v2GetAppRoleUserOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2AppRoleUserRes"
         }
       }
     },
-    "v2GetAppResponse": {
+    "v2GetAppRoleUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2AppRoleUserRes"
         }
       }
     },
-    "v2GetAppsResponse": {
+    "v2GetAppRoleUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRes"
+            "$ref": "#/definitions/v2AppRoleUserRes"
           }
         },
         "Total": {
@@ -228,7 +200,7 @@
         }
       }
     },
-    "v2LogoVal": {
+    "v2RoleIDVal": {
       "type": "object",
       "properties": {
         "Value": {
@@ -239,22 +211,22 @@
         }
       }
     },
-    "v2NameVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2UpdateAppResponse": {
+    "v2UpdateAppRoleUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2AppRoleUserRes"
+        }
+      }
+    },
+    "v2UserIDVal": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Op": {
+          "type": "string"
         }
       }
     }

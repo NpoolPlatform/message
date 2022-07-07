@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appusermgrv2/app/app.proto",
+    "title": "npool/appusermgrv2/appuserthirdparty/appuserthirdparty.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "AppUserManagerApp"
+      "name": "AppUserManagerAppUserThirdParty"
     }
   ],
   "consumes": [
@@ -44,75 +44,96 @@
         }
       }
     },
-    "v2App": {
+    "v2AppIDVal": {
       "type": "object",
       "properties": {
-        "Description": {
+        "Value": {
           "type": "string"
         },
-        "ID": {
+        "Op": {
           "type": "string"
-        },
-        "CreatedBy": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
-    "v2AppRes": {
+    "v2AppUserThirdParty": {
       "type": "object",
       "properties": {
-        "Description": {
+        "UserID": {
+          "type": "string"
+        },
+        "ThirdPartyUserID": {
+          "type": "string"
+        },
+        "ThirdPartyID": {
+          "type": "string"
+        },
+        "ThirdPartyUsername": {
+          "type": "string"
+        },
+        "ThirdPartyUserAvatar": {
           "type": "string"
         },
         "ID": {
           "type": "string"
         },
-        "CreatedBy": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v2AppUserThirdPartyRes": {
+      "type": "object",
+      "properties": {
+        "UserID": {
           "type": "string"
         },
-        "Name": {
+        "ThirdPartyUserID": {
           "type": "string"
         },
-        "Logo": {
+        "ThirdPartyID": {
           "type": "string"
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
+        "ThirdPartyUsername": {
+          "type": "string"
+        },
+        "ThirdPartyUserAvatar": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
         }
       }
     },
     "v2Conds": {
       "type": "object",
       "properties": {
-        "Description": {
-          "$ref": "#/definitions/v2DescriptionVal"
+        "UserID": {
+          "$ref": "#/definitions/v2UserIDVal"
+        },
+        "ThirdPartyUserID": {
+          "$ref": "#/definitions/v2ThirdPartyUserIDVal"
+        },
+        "ThirdPartyID": {
+          "$ref": "#/definitions/v2ThirdPartyIDVal"
+        },
+        "ThirdPartyUsername": {
+          "$ref": "#/definitions/v2ThirdPartyUsernameVal"
+        },
+        "ThirdPartyUserAvatar": {
+          "$ref": "#/definitions/v2ThirdPartyUserAvatarVal"
         },
         "ID": {
           "$ref": "#/definitions/v2IDVal"
         },
-        "CreatedBy": {
-          "$ref": "#/definitions/v2CreatedByVal"
-        },
-        "Name": {
-          "$ref": "#/definitions/v2NameVal"
-        },
-        "Logo": {
-          "$ref": "#/definitions/v2LogoVal"
+        "AppID": {
+          "$ref": "#/definitions/v2AppIDVal"
         }
       }
     },
-    "v2CountAppsResponse": {
+    "v2CountAppUserThirdPartysResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -121,56 +142,34 @@
         }
       }
     },
-    "v2CreateAppResponse": {
+    "v2CreateAppUserThirdPartyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2AppUserThirdPartyRes"
         }
       }
     },
-    "v2CreateAppsResponse": {
+    "v2CreateAppUserThirdPartysResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRes"
+            "$ref": "#/definitions/v2AppUserThirdPartyRes"
           }
         }
       }
     },
-    "v2CreatedByVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2DeleteAppResponse": {
+    "v2DeleteAppUserThirdPartyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2AppUserThirdPartyRes"
         }
       }
     },
-    "v2DescriptionVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2ExistAppCondsResponse": {
+    "v2ExistAppUserThirdPartyCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -178,7 +177,7 @@
         }
       }
     },
-    "v2ExistAppResponse": {
+    "v2ExistAppUserThirdPartyResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -186,29 +185,29 @@
         }
       }
     },
-    "v2GetAppOnlyResponse": {
+    "v2GetAppUserThirdPartyOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2AppUserThirdPartyRes"
         }
       }
     },
-    "v2GetAppResponse": {
+    "v2GetAppUserThirdPartyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2AppUserThirdPartyRes"
         }
       }
     },
-    "v2GetAppsResponse": {
+    "v2GetAppUserThirdPartysResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRes"
+            "$ref": "#/definitions/v2AppUserThirdPartyRes"
           }
         },
         "Total": {
@@ -228,7 +227,7 @@
         }
       }
     },
-    "v2LogoVal": {
+    "v2ThirdPartyIDVal": {
       "type": "object",
       "properties": {
         "Value": {
@@ -239,7 +238,7 @@
         }
       }
     },
-    "v2NameVal": {
+    "v2ThirdPartyUserAvatarVal": {
       "type": "object",
       "properties": {
         "Value": {
@@ -250,11 +249,44 @@
         }
       }
     },
-    "v2UpdateAppResponse": {
+    "v2ThirdPartyUserIDVal": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Op": {
+          "type": "string"
+        }
+      }
+    },
+    "v2ThirdPartyUsernameVal": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Op": {
+          "type": "string"
+        }
+      }
+    },
+    "v2UpdateAppUserThirdPartyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2AppUserThirdPartyRes"
+        }
+      }
+    },
+    "v2UserIDVal": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Op": {
+          "type": "string"
         }
       }
     }

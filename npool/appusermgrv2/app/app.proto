@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package app.user.manager.v2;
+package app.user.manager.app.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appusermgrv2/app";
 
@@ -31,21 +31,21 @@ service AppUserManagerApp {
 }
 
 message App {
-    optional string ID = 10;
-    optional string CreatedBy = 20;
-    optional string Name = 30;
-    optional string Logo = 40;
-    optional string Description = 50;
+    optional string Description = 10;
+    optional string ID = 20;
+    optional string CreatedBy = 30;
+    optional string Name = 40;
+    optional string Logo = 50;
     optional uint32 CreatedAt = 60;
 }
 
 message AppRes {
-    string ID = 10;
-    string CreatedBy = 20;
-    string Name = 30;
-    string Logo = 40;
-    string Description = 50;
-    uint32 CreateAt = 60;
+    string Description = 10;
+    string ID = 20;
+    string CreatedBy = 30;
+    string Name = 40;
+    string Logo = 50;
+    uint32 CreatedAt = 60;
 }
 
 message CreateAppRequest {
@@ -71,47 +71,33 @@ message GetAppRequest {
 message GetAppResponse {
     AppRes Info = 10;
 }
-
-message GetAppCond {
-    optional string ID = 10;
-    optional string CreatedBy = 20;
-    optional string Name = 30;
-    optional string Logo = 40;
-    optional string Description = 50;
-    optional uint32 CreateAt = 60;
+message DescriptionVal {
+    string Value = 10;
+    string Op = 20;
 }
-
 message IDVal {
     string Value = 10;
     string Op = 20;
 }
-
 message CreatedByVal {
     string Value = 10;
     string Op = 20;
 }
-
 message NameVal {
     string Value = 10;
     string Op = 20;
 }
-
 message LogoVal {
     string Value = 10;
     string Op = 20;
 }
 
-message DescriptionVal {
-    string Value = 10;
-    string Op = 20;
-}
-
 message Conds {
-    IDVal ID = 10;
-    CreatedByVal CreatedBy = 20;
-    NameVal Name = 30;
-    LogoVal Logo = 40;
-    DescriptionVal Description = 50;
+    DescriptionVal Description = 10;
+    IDVal ID = 20;
+    CreatedByVal CreatedBy = 30;
+    NameVal Name = 40;
+    LogoVal Logo = 50;
 }
 message GetAppsRequest {
     Conds Conds = 10;

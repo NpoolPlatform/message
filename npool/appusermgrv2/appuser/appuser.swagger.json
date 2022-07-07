@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appusermgrv2/app/app.proto",
+    "title": "npool/appusermgrv2/appuser/appuser.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "AppUserManagerApp"
+      "name": "AppUserManagerAppUser"
     }
   ],
   "consumes": [
@@ -44,75 +44,78 @@
         }
       }
     },
-    "v2App": {
+    "v2AppIDVal": {
       "type": "object",
       "properties": {
-        "Description": {
+        "Value": {
           "type": "string"
         },
-        "ID": {
+        "Op": {
           "type": "string"
-        },
-        "CreatedBy": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
-    "v2AppRes": {
+    "v2AppUser": {
       "type": "object",
       "properties": {
-        "Description": {
+        "PhoneNo": {
+          "type": "string"
+        },
+        "ImportFromApp": {
           "type": "string"
         },
         "ID": {
           "type": "string"
         },
-        "CreatedBy": {
+        "AppID": {
           "type": "string"
         },
-        "Name": {
+        "EmailAddress": {
+          "type": "string"
+        }
+      }
+    },
+    "v2AppUserRes": {
+      "type": "object",
+      "properties": {
+        "PhoneNo": {
           "type": "string"
         },
-        "Logo": {
+        "ImportFromApp": {
           "type": "string"
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
         }
       }
     },
     "v2Conds": {
       "type": "object",
       "properties": {
-        "Description": {
-          "$ref": "#/definitions/v2DescriptionVal"
+        "PhoneNo": {
+          "$ref": "#/definitions/v2PhoneNoVal"
+        },
+        "ImportFromApp": {
+          "$ref": "#/definitions/v2ImportFromAppVal"
         },
         "ID": {
           "$ref": "#/definitions/v2IDVal"
         },
-        "CreatedBy": {
-          "$ref": "#/definitions/v2CreatedByVal"
+        "AppID": {
+          "$ref": "#/definitions/v2AppIDVal"
         },
-        "Name": {
-          "$ref": "#/definitions/v2NameVal"
-        },
-        "Logo": {
-          "$ref": "#/definitions/v2LogoVal"
+        "EmailAddress": {
+          "$ref": "#/definitions/v2EmailAddressVal"
         }
       }
     },
-    "v2CountAppsResponse": {
+    "v2CountAppUsersResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -121,26 +124,34 @@
         }
       }
     },
-    "v2CreateAppResponse": {
+    "v2CreateAppUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2AppUserRes"
         }
       }
     },
-    "v2CreateAppsResponse": {
+    "v2CreateAppUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRes"
+            "$ref": "#/definitions/v2AppUserRes"
           }
         }
       }
     },
-    "v2CreatedByVal": {
+    "v2DeleteAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserRes"
+        }
+      }
+    },
+    "v2EmailAddressVal": {
       "type": "object",
       "properties": {
         "Value": {
@@ -151,26 +162,7 @@
         }
       }
     },
-    "v2DeleteAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppRes"
-        }
-      }
-    },
-    "v2DescriptionVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2ExistAppCondsResponse": {
+    "v2ExistAppUserCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -178,7 +170,7 @@
         }
       }
     },
-    "v2ExistAppResponse": {
+    "v2ExistAppUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -186,29 +178,29 @@
         }
       }
     },
-    "v2GetAppOnlyResponse": {
+    "v2GetAppUserOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2AppUserRes"
         }
       }
     },
-    "v2GetAppResponse": {
+    "v2GetAppUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2AppUserRes"
         }
       }
     },
-    "v2GetAppsResponse": {
+    "v2GetAppUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRes"
+            "$ref": "#/definitions/v2AppUserRes"
           }
         },
         "Total": {
@@ -228,7 +220,7 @@
         }
       }
     },
-    "v2LogoVal": {
+    "v2ImportFromAppVal": {
       "type": "object",
       "properties": {
         "Value": {
@@ -239,7 +231,7 @@
         }
       }
     },
-    "v2NameVal": {
+    "v2PhoneNoVal": {
       "type": "object",
       "properties": {
         "Value": {
@@ -250,11 +242,11 @@
         }
       }
     },
-    "v2UpdateAppResponse": {
+    "v2UpdateAppUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2AppUserRes"
         }
       }
     }
