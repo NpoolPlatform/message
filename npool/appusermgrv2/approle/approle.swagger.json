@@ -44,7 +44,18 @@
         }
       }
     },
-    "v2AppIDVal": {
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "boolean"
+        },
+        "Op": {
+          "type": "string"
+        }
+      }
+    },
+    "v1StringVal": {
       "type": "object",
       "properties": {
         "Value": {
@@ -78,7 +89,7 @@
         }
       }
     },
-    "v2AppRoleRes": {
+    "v2AppRoleReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -105,19 +116,19 @@
       "type": "object",
       "properties": {
         "ID": {
-          "$ref": "#/definitions/v2IDVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
-          "$ref": "#/definitions/v2AppIDVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "CreatedBy": {
-          "$ref": "#/definitions/v2CreatedByVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "Role": {
-          "$ref": "#/definitions/v2RoleVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "Default": {
-          "$ref": "#/definitions/v2DefaultVal"
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
@@ -134,7 +145,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRoleRes"
+          "$ref": "#/definitions/v2AppRole"
         }
       }
     },
@@ -144,30 +155,8 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRoleRes"
+            "$ref": "#/definitions/v2AppRole"
           }
-        }
-      }
-    },
-    "v2CreatedByVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2DefaultVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "boolean"
-        },
-        "Op": {
-          "type": "string"
         }
       }
     },
@@ -175,7 +164,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRoleRes"
+          "$ref": "#/definitions/v2AppRole"
         }
       }
     },
@@ -199,7 +188,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRoleRes"
+          "$ref": "#/definitions/v2AppRole"
         }
       }
     },
@@ -207,7 +196,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRoleRes"
+          "$ref": "#/definitions/v2AppRole"
         }
       }
     },
@@ -217,7 +206,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRoleRes"
+            "$ref": "#/definitions/v2AppRole"
           }
         },
         "Total": {
@@ -226,33 +215,11 @@
         }
       }
     },
-    "v2IDVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2RoleVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
     "v2UpdateAppRoleResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRoleRes"
+          "$ref": "#/definitions/v2AppRole"
         }
       }
     }

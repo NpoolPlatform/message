@@ -44,7 +44,7 @@
         }
       }
     },
-    "v2AppIDVal": {
+    "v1StringVal": {
       "type": "object",
       "properties": {
         "Value": {
@@ -75,7 +75,7 @@
         }
       }
     },
-    "v2AppUserRes": {
+    "v2AppUserReq": {
       "type": "object",
       "properties": {
         "PhoneNo": {
@@ -99,19 +99,19 @@
       "type": "object",
       "properties": {
         "PhoneNo": {
-          "$ref": "#/definitions/v2PhoneNoVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "ImportFromApp": {
-          "$ref": "#/definitions/v2ImportFromAppVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "ID": {
-          "$ref": "#/definitions/v2IDVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
-          "$ref": "#/definitions/v2AppIDVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "EmailAddress": {
-          "$ref": "#/definitions/v2EmailAddressVal"
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -128,7 +128,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppUserRes"
+          "$ref": "#/definitions/v2AppUser"
         }
       }
     },
@@ -138,7 +138,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppUserRes"
+            "$ref": "#/definitions/v2AppUser"
           }
         }
       }
@@ -147,18 +147,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppUserRes"
-        }
-      }
-    },
-    "v2EmailAddressVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
+          "$ref": "#/definitions/v2AppUser"
         }
       }
     },
@@ -182,7 +171,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppUserRes"
+          "$ref": "#/definitions/v2AppUser"
         }
       }
     },
@@ -190,7 +179,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppUserRes"
+          "$ref": "#/definitions/v2AppUser"
         }
       }
     },
@@ -200,7 +189,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppUserRes"
+            "$ref": "#/definitions/v2AppUser"
           }
         },
         "Total": {
@@ -209,44 +198,11 @@
         }
       }
     },
-    "v2IDVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2ImportFromAppVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2PhoneNoVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
     "v2UpdateAppUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppUserRes"
+          "$ref": "#/definitions/v2AppUser"
         }
       }
     }

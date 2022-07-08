@@ -30,7 +30,7 @@ service AppUserManagerAppRole {
     rpc DeleteAppRoleV2 (DeleteAppRoleRequest) returns (DeleteAppRoleResponse) {}
 }
 
-message AppRole {
+message AppRoleReq {
     optional string ID = 10;
     optional string AppID = 20;
     optional string CreatedBy = 30;
@@ -39,7 +39,7 @@ message AppRole {
     optional bool Default = 60;
 }
 
-message AppRoleRes {
+message AppRole {
     string ID = 10;
     string AppID = 20;
     string CreatedBy = 30;
@@ -49,19 +49,19 @@ message AppRoleRes {
 }
 
 message CreateAppRoleRequest {
-    AppRole Info = 10;
+    AppRoleReq Info = 10;
 }
 
 message CreateAppRoleResponse {
-    AppRoleRes Info = 10;
+    AppRole Info = 10;
 }
 
 message CreateAppRolesRequest {
-    repeated AppRole Infos = 10;
+    repeated AppRoleReq Infos = 10;
 }
 
 message CreateAppRolesResponse {
-    repeated AppRoleRes Infos = 10;
+    repeated AppRole Infos = 10;
 }
 
 message GetAppRoleRequest {
@@ -69,40 +69,15 @@ message GetAppRoleRequest {
 }
 
 message GetAppRoleResponse {
-    AppRoleRes Info = 10;
-}
-
-message IDVal {
-    string Value = 10;
-    string Op = 20;
-}
-
-message AppIDVal {
-    string Value = 10;
-    string Op = 20;
-}
-
-message CreatedByVal {
-    string Value = 10;
-    string Op = 20;
-}
-
-message RoleVal {
-    string Value = 10;
-    string Op = 20;
-}
-
-message DefaultVal {
-    bool Value = 10;
-    string Op = 20;
+    AppRole Info = 10;
 }
 
 message Conds {
-    IDVal ID = 10;
-    AppIDVal AppID = 20;
-    CreatedByVal CreatedBy = 30;
-    RoleVal Role = 40;
-    DefaultVal Default = 50;
+    npool.v1.StringVal ID = 10;
+    npool.v1.StringVal AppID = 20;
+    npool.v1.StringVal CreatedBy = 30;
+    npool.v1.StringVal Role = 40;
+    npool.v1.BoolVal Default = 50;
 }
 message GetAppRolesRequest {
     Conds Conds = 10;
@@ -111,7 +86,7 @@ message GetAppRolesRequest {
 }
 
 message GetAppRolesResponse {
-    repeated AppRoleRes Infos = 10;
+    repeated AppRole Infos = 10;
     uint32 Total = 20;
 }
 
@@ -120,15 +95,15 @@ message GetAppRoleOnlyRequest {
 }
 
 message GetAppRoleOnlyResponse {
-    AppRoleRes Info = 10;
-}
-
-message UpdateAppRoleRequest {
     AppRole Info = 10;
 }
 
+message UpdateAppRoleRequest {
+    AppRoleReq Info = 10;
+}
+
 message UpdateAppRoleResponse {
-    AppRoleRes Info = 10;
+    AppRole Info = 10;
 }
 
 message ExistAppRoleRequest {
@@ -160,5 +135,5 @@ message DeleteAppRoleRequest {
 }
 
 message DeleteAppRoleResponse {
-    AppRoleRes Info = 10;
+    AppRole Info = 10;
 }

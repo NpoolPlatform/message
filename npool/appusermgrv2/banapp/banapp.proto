@@ -30,32 +30,32 @@ service AppUserManagerBanApp {
     rpc DeleteBanAppV2 (DeleteBanAppRequest) returns (DeleteBanAppResponse) {}
 }
 
-message BanApp {
+message BanAppReq {
     optional string ID = 10;
     optional string AppID = 20;
     optional string Message = 30;
 }
 
-message BanAppRes {
+message BanApp {
     string ID = 10;
     string AppID = 20;
     string Message = 30;
 }
 
 message CreateBanAppRequest {
-    BanApp Info = 10;
+    BanAppReq Info = 10;
 }
 
 message CreateBanAppResponse {
-    BanAppRes Info = 10;
+    BanApp Info = 10;
 }
 
 message CreateBanAppsRequest {
-    repeated BanApp Infos = 10;
+    repeated BanAppReq Infos = 10;
 }
 
 message CreateBanAppsResponse {
-    repeated BanAppRes Infos = 10;
+    repeated BanApp Infos = 10;
 }
 
 message GetBanAppRequest {
@@ -63,25 +63,12 @@ message GetBanAppRequest {
 }
 
 message GetBanAppResponse {
-    BanAppRes Info = 10;
+    BanApp Info = 10;
 }
-message IDVal {
-    string Value = 10;
-    string Op = 20;
-}
-message AppIDVal {
-    string Value = 10;
-    string Op = 20;
-}
-message MessageVal {
-    string Value = 10;
-    string Op = 20;
-}
-
 message Conds {
-    IDVal ID = 10;
-    AppIDVal AppID = 20;
-    MessageVal Message = 30;
+    npool.v1.StringVal ID = 10;
+    npool.v1.StringVal AppID = 20;
+    npool.v1.StringVal Message = 30;
 }
 message GetBanAppsRequest {
     Conds Conds = 10;
@@ -90,7 +77,7 @@ message GetBanAppsRequest {
 }
 
 message GetBanAppsResponse {
-    repeated BanAppRes Infos = 10;
+    repeated BanApp  Infos = 10;
     uint32 Total = 20;
 }
 
@@ -99,15 +86,15 @@ message GetBanAppOnlyRequest {
 }
 
 message GetBanAppOnlyResponse {
-    BanAppRes Info = 10;
-}
-
-message UpdateBanAppRequest {
     BanApp Info = 10;
 }
 
+message UpdateBanAppRequest {
+    BanAppReq Info = 10;
+}
+
 message UpdateBanAppResponse {
-    BanAppRes Info = 10;
+    BanApp  Info = 10;
 }
 
 message ExistBanAppRequest {
@@ -139,5 +126,5 @@ message DeleteBanAppRequest {
 }
 
 message DeleteBanAppResponse {
-    BanAppRes Info = 10;
+    BanApp Info = 10;
 }

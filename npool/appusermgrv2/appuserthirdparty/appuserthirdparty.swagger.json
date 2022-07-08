@@ -44,7 +44,7 @@
         }
       }
     },
-    "v2AppIDVal": {
+    "v1StringVal": {
       "type": "object",
       "properties": {
         "Value": {
@@ -81,7 +81,7 @@
         }
       }
     },
-    "v2AppUserThirdPartyRes": {
+    "v2AppUserThirdPartyReq": {
       "type": "object",
       "properties": {
         "UserID": {
@@ -111,25 +111,25 @@
       "type": "object",
       "properties": {
         "UserID": {
-          "$ref": "#/definitions/v2UserIDVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "ThirdPartyUserID": {
-          "$ref": "#/definitions/v2ThirdPartyUserIDVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "ThirdPartyID": {
-          "$ref": "#/definitions/v2ThirdPartyIDVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "ThirdPartyUsername": {
-          "$ref": "#/definitions/v2ThirdPartyUsernameVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "ThirdPartyUserAvatar": {
-          "$ref": "#/definitions/v2ThirdPartyUserAvatarVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "ID": {
-          "$ref": "#/definitions/v2IDVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
-          "$ref": "#/definitions/v2AppIDVal"
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -146,7 +146,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppUserThirdPartyRes"
+          "$ref": "#/definitions/v2AppUserThirdParty"
         }
       }
     },
@@ -156,7 +156,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppUserThirdPartyRes"
+            "$ref": "#/definitions/v2AppUserThirdParty"
           }
         }
       }
@@ -165,7 +165,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppUserThirdPartyRes"
+          "$ref": "#/definitions/v2AppUserThirdParty"
         }
       }
     },
@@ -189,7 +189,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppUserThirdPartyRes"
+          "$ref": "#/definitions/v2AppUserThirdParty"
         }
       }
     },
@@ -197,7 +197,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppUserThirdPartyRes"
+          "$ref": "#/definitions/v2AppUserThirdParty"
         }
       }
     },
@@ -207,7 +207,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppUserThirdPartyRes"
+            "$ref": "#/definitions/v2AppUserThirdParty"
           }
         },
         "Total": {
@@ -216,77 +216,11 @@
         }
       }
     },
-    "v2IDVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2ThirdPartyIDVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2ThirdPartyUserAvatarVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2ThirdPartyUserIDVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2ThirdPartyUsernameVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
     "v2UpdateAppUserThirdPartyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppUserThirdPartyRes"
-        }
-      }
-    },
-    "v2UserIDVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
+          "$ref": "#/definitions/v2AppUserThirdParty"
         }
       }
     }

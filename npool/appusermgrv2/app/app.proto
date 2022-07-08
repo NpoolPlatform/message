@@ -30,7 +30,7 @@ service AppUserManagerApp {
     rpc DeleteAppV2 (DeleteAppRequest) returns (DeleteAppResponse) {}
 }
 
-message App {
+message AppReq {
     optional string Description = 10;
     optional string ID = 20;
     optional string CreatedBy = 30;
@@ -39,7 +39,7 @@ message App {
     optional uint32 CreatedAt = 60;
 }
 
-message AppRes {
+message App {
     string Description = 10;
     string ID = 20;
     string CreatedBy = 30;
@@ -49,19 +49,19 @@ message AppRes {
 }
 
 message CreateAppRequest {
-    App Info = 10;
+    AppReq Info = 10;
 }
 
 message CreateAppResponse {
-    AppRes Info = 10;
+    App Info = 10;
 }
 
 message CreateAppsRequest {
-    repeated App Infos = 10;
+    repeated AppReq Infos = 10;
 }
 
 message CreateAppsResponse {
-    repeated AppRes Infos = 10;
+    repeated App Infos = 10;
 }
 
 message GetAppRequest {
@@ -69,36 +69,17 @@ message GetAppRequest {
 }
 
 message GetAppResponse {
-    AppRes Info = 10;
-}
-message DescriptionVal {
-    string Value = 10;
-    string Op = 20;
-}
-message IDVal {
-    string Value = 10;
-    string Op = 20;
-}
-message CreatedByVal {
-    string Value = 10;
-    string Op = 20;
-}
-message NameVal {
-    string Value = 10;
-    string Op = 20;
-}
-message LogoVal {
-    string Value = 10;
-    string Op = 20;
+    App Info = 10;
 }
 
 message Conds {
-    DescriptionVal Description = 10;
-    IDVal ID = 20;
-    CreatedByVal CreatedBy = 30;
-    NameVal Name = 40;
-    LogoVal Logo = 50;
+    npool.v1.StringVal Description = 10;
+    npool.v1.StringVal ID = 20;
+    npool.v1.StringVal CreatedBy = 30;
+    npool.v1.StringVal Name = 40;
+    npool.v1.StringVal Logo = 50;
 }
+
 message GetAppsRequest {
     Conds Conds = 10;
     int32 Offset = 20;
@@ -106,7 +87,7 @@ message GetAppsRequest {
 }
 
 message GetAppsResponse {
-    repeated AppRes Infos = 10;
+    repeated App Infos = 10;
     uint32 Total = 20;
 }
 
@@ -115,15 +96,15 @@ message GetAppOnlyRequest {
 }
 
 message GetAppOnlyResponse {
-    AppRes Info = 10;
-}
-
-message UpdateAppRequest {
     App Info = 10;
 }
 
+message UpdateAppRequest {
+    AppReq Info = 10;
+}
+
 message UpdateAppResponse {
-    AppRes Info = 10;
+    App Info = 10;
 }
 
 message ExistAppRequest {
@@ -155,5 +136,5 @@ message DeleteAppRequest {
 }
 
 message DeleteAppResponse {
-    AppRes Info = 10;
+    App Info = 10;
 }
