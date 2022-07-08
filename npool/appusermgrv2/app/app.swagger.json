@@ -44,6 +44,17 @@
         }
       }
     },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Op": {
+          "type": "string"
+        }
+      }
+    },
     "v2App": {
       "type": "object",
       "properties": {
@@ -68,7 +79,7 @@
         }
       }
     },
-    "v2AppRes": {
+    "v2AppReq": {
       "type": "object",
       "properties": {
         "Description": {
@@ -96,19 +107,19 @@
       "type": "object",
       "properties": {
         "Description": {
-          "$ref": "#/definitions/v2DescriptionVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "ID": {
-          "$ref": "#/definitions/v2IDVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "CreatedBy": {
-          "$ref": "#/definitions/v2CreatedByVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "Name": {
-          "$ref": "#/definitions/v2NameVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "Logo": {
-          "$ref": "#/definitions/v2LogoVal"
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -125,7 +136,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2App"
         }
       }
     },
@@ -135,19 +146,8 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRes"
+            "$ref": "#/definitions/v2App"
           }
-        }
-      }
-    },
-    "v2CreatedByVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
         }
       }
     },
@@ -155,18 +155,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
-        }
-      }
-    },
-    "v2DescriptionVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
+          "$ref": "#/definitions/v2App"
         }
       }
     },
@@ -190,7 +179,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2App"
         }
       }
     },
@@ -198,7 +187,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2App"
         }
       }
     },
@@ -208,7 +197,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRes"
+            "$ref": "#/definitions/v2App"
           }
         },
         "Total": {
@@ -217,44 +206,11 @@
         }
       }
     },
-    "v2IDVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2LogoVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v2NameVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "string"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
     "v2UpdateAppResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRes"
+          "$ref": "#/definitions/v2App"
         }
       }
     }

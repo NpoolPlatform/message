@@ -30,7 +30,7 @@ service AppUserManagerAppUserThirdParty {
     rpc DeleteAppUserThirdPartyV2 (DeleteAppUserThirdPartyRequest) returns (DeleteAppUserThirdPartyResponse) {}
 }
 
-message AppUserThirdParty {
+message AppUserThirdPartyReq {
     optional string UserID = 10;
     optional string ThirdPartyUserID = 20;
     optional string ThirdPartyID = 30;
@@ -40,7 +40,7 @@ message AppUserThirdParty {
     optional string AppID = 70;
 }
 
-message AppUserThirdPartyRes {
+message AppUserThirdParty {
     string UserID = 10;
     string ThirdPartyUserID = 20;
     string ThirdPartyID = 30;
@@ -51,19 +51,19 @@ message AppUserThirdPartyRes {
 }
 
 message CreateAppUserThirdPartyRequest {
-    AppUserThirdParty Info = 10;
+    AppUserThirdPartyReq Info = 10;
 }
 
 message CreateAppUserThirdPartyResponse {
-    AppUserThirdPartyRes Info = 10;
+    AppUserThirdParty Info = 10;
 }
 
 message CreateAppUserThirdPartysRequest {
-    repeated AppUserThirdParty Infos = 10;
+    repeated AppUserThirdPartyReq Infos = 10;
 }
 
 message CreateAppUserThirdPartysResponse {
-    repeated AppUserThirdPartyRes Infos = 10;
+    repeated AppUserThirdParty Infos = 10;
 }
 
 message GetAppUserThirdPartyRequest {
@@ -71,45 +71,17 @@ message GetAppUserThirdPartyRequest {
 }
 
 message GetAppUserThirdPartyResponse {
-    AppUserThirdPartyRes Info = 10;
-}
-message UserIDVal {
-    string Value = 10;
-    string Op = 20;
-}
-message ThirdPartyUserIDVal {
-    string Value = 10;
-    string Op = 20;
-}
-message ThirdPartyIDVal {
-    string Value = 10;
-    string Op = 20;
-}
-message ThirdPartyUsernameVal {
-    string Value = 10;
-    string Op = 20;
-}
-message ThirdPartyUserAvatarVal {
-    string Value = 10;
-    string Op = 20;
-}
-message IDVal {
-    string Value = 10;
-    string Op = 20;
-}
-message AppIDVal {
-    string Value = 10;
-    string Op = 20;
+    AppUserThirdParty Info = 10;
 }
 
 message Conds {
-    UserIDVal UserID = 10;
-    ThirdPartyUserIDVal ThirdPartyUserID = 20;
-    ThirdPartyIDVal ThirdPartyID = 30;
-    ThirdPartyUsernameVal ThirdPartyUsername = 40;
-    ThirdPartyUserAvatarVal ThirdPartyUserAvatar = 50;
-    IDVal ID = 60;
-    AppIDVal AppID = 70;
+    npool.v1.StringVal UserID = 10;
+    npool.v1.StringVal ThirdPartyUserID = 20;
+    npool.v1.StringVal ThirdPartyID = 30;
+    npool.v1.StringVal ThirdPartyUsername = 40;
+    npool.v1.StringVal ThirdPartyUserAvatar = 50;
+    npool.v1.StringVal ID = 60;
+    npool.v1.StringVal AppID = 70;
 }
 message GetAppUserThirdPartysRequest {
     Conds Conds = 10;
@@ -118,7 +90,7 @@ message GetAppUserThirdPartysRequest {
 }
 
 message GetAppUserThirdPartysResponse {
-    repeated AppUserThirdPartyRes Infos = 10;
+    repeated AppUserThirdParty Infos = 10;
     uint32 Total = 20;
 }
 
@@ -127,15 +99,15 @@ message GetAppUserThirdPartyOnlyRequest {
 }
 
 message GetAppUserThirdPartyOnlyResponse {
-    AppUserThirdPartyRes Info = 10;
-}
-
-message UpdateAppUserThirdPartyRequest {
     AppUserThirdParty Info = 10;
 }
 
+message UpdateAppUserThirdPartyRequest {
+    AppUserThirdPartyReq Info = 10;
+}
+
 message UpdateAppUserThirdPartyResponse {
-    AppUserThirdPartyRes Info = 10;
+    AppUserThirdParty Info = 10;
 }
 
 message ExistAppUserThirdPartyRequest {
@@ -167,5 +139,5 @@ message DeleteAppUserThirdPartyRequest {
 }
 
 message DeleteAppUserThirdPartyResponse {
-    AppUserThirdPartyRes Info = 10;
+    AppUserThirdParty Info = 10;
 }

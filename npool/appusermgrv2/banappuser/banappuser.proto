@@ -30,14 +30,14 @@ service AppUserManagerBanAppUser {
     rpc DeleteBanAppUserV2 (DeleteBanAppUserRequest) returns (DeleteBanAppUserResponse) {}
 }
 
-message BanAppUser {
+message BanAppUserReq {
     optional string UserID = 10;
     optional string Message = 20;
     optional string ID = 30;
     optional string AppID = 40;
 }
 
-message BanAppUserRes {
+message BanAppUser {
     string UserID = 10;
     string Message = 20;
     string ID = 30;
@@ -45,19 +45,19 @@ message BanAppUserRes {
 }
 
 message CreateBanAppUserRequest {
-    BanAppUser Info = 10;
+    BanAppUserReq Info = 10;
 }
 
 message CreateBanAppUserResponse {
-    BanAppUserRes Info = 10;
+    BanAppUser Info = 10;
 }
 
 message CreateBanAppUsersRequest {
-    repeated BanAppUser Infos = 10;
+    repeated BanAppUserReq Infos = 10;
 }
 
 message CreateBanAppUsersResponse {
-    repeated BanAppUserRes Infos = 10;
+    repeated BanAppUser Infos = 10;
 }
 
 message GetBanAppUserRequest {
@@ -65,30 +65,14 @@ message GetBanAppUserRequest {
 }
 
 message GetBanAppUserResponse {
-    BanAppUserRes Info = 10;
-}
-message UserIDVal {
-    string Value = 10;
-    string Op = 20;
-}
-message MessageVal {
-    string Value = 10;
-    string Op = 20;
-}
-message IDVal {
-    string Value = 10;
-    string Op = 20;
-}
-message AppIDVal {
-    string Value = 10;
-    string Op = 20;
+    BanAppUser Info = 10;
 }
 
 message Conds {
-    UserIDVal UserID = 10;
-    MessageVal Message = 20;
-    IDVal ID = 30;
-    AppIDVal AppID = 40;
+    npool.v1.StringVal UserID = 10;
+    npool.v1.StringVal Message = 20;
+    npool.v1.StringVal ID = 30;
+    npool.v1.StringVal AppID = 40;
 }
 message GetBanAppUsersRequest {
     Conds Conds = 10;
@@ -97,7 +81,7 @@ message GetBanAppUsersRequest {
 }
 
 message GetBanAppUsersResponse {
-    repeated BanAppUserRes Infos = 10;
+    repeated BanAppUser Infos = 10;
     uint32 Total = 20;
 }
 
@@ -106,15 +90,15 @@ message GetBanAppUserOnlyRequest {
 }
 
 message GetBanAppUserOnlyResponse {
-    BanAppUserRes Info = 10;
-}
-
-message UpdateBanAppUserRequest {
     BanAppUser Info = 10;
 }
 
+message UpdateBanAppUserRequest {
+    BanAppUserReq Info = 10;
+}
+
 message UpdateBanAppUserResponse {
-    BanAppUserRes Info = 10;
+    BanAppUser Info = 10;
 }
 
 message ExistBanAppUserRequest {
@@ -146,5 +130,5 @@ message DeleteBanAppUserRequest {
 }
 
 message DeleteBanAppUserResponse {
-    BanAppUserRes Info = 10;
+    BanAppUser Info = 10;
 }
