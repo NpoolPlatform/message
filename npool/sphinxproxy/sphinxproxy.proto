@@ -175,7 +175,6 @@ message ProxyPluginRequest {
   string TransactionID                        = 120;
   // query wallet account
   string Address                              = 130;
-
   sphinx.plugin.v1.UnsignedMessage Message    = 140;
   // fil
   sphinx.plugin.v1.Signature       Signature  = 150;
