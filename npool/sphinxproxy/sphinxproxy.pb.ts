@@ -141,6 +141,7 @@ export type ProxyPluginRequest = {
   cID?: string
   payload?: Uint8Array
   fee?: number
+  pluginSerialName?: string
 }
 
 export type ProxySignRequest = {
