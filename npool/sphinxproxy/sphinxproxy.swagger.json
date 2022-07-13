@@ -530,7 +530,7 @@
           "format": "double",
           "title": "gas fee"
         },
-        "PluginSerialName": {
+        "PluginSerialNumber": {
           "type": "string"
         }
       },

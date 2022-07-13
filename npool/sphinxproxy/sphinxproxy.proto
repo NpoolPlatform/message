@@ -188,7 +188,7 @@ message ProxyPluginRequest {
 
   // gas fee
   double Fee                                  = 180;
-  string PluginSerialName                     = 190;
+  string PluginSerialNumber                   = 190;
 }
 
 message ProxySignRequest {

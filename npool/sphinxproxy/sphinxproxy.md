@@ -260,7 +260,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | CID | [string](#string) |  |  |
 | Payload | [bytes](#bytes) |  |  |
 | Fee | [double](#double) |  | gas fee |
-| PluginSerialName | [string](#string) |  |  |
+| PluginSerialNumber | [string](#string) |  |  |
 
 
 
@@ -692,7 +692,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | CID | [string](#string) |  |  |
 | Payload | [bytes](#bytes) |  |  |
 | Fee | [double](#double) |  | gas fee |
-| PluginSerialName | [string](#string) |  |  |
+| PluginSerialNumber | [string](#string) |  |  |
 
 
 
