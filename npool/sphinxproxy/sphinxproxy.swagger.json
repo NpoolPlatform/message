@@ -529,9 +529,6 @@
           "type": "number",
           "format": "double",
           "title": "gas fee"
-        },
-        "PluginSerialNumber": {
-          "type": "string"
         }
       },
       "description": "MpoolGetNonce WalletBalance MpoolPush .."

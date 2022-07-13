@@ -260,7 +260,6 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | CID | [string](#string) |  |  |
 | Payload | [bytes](#bytes) |  |  |
 | Fee | [double](#double) |  | gas fee |
-| PluginSerialNumber | [string](#string) |  |  |
 
 
 
@@ -285,6 +284,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | BalanceStr | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
 | ExitCode | [int64](#int64) |  | -1 find cid state on chain internal server error |
+| PluginSerialNumber | [string](#string) |  |  |
 | RPCExitMessage | [string](#string) |  |  |
 | Payload | [bytes](#bytes) |  |  |
 
@@ -692,7 +692,6 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | CID | [string](#string) |  |  |
 | Payload | [bytes](#bytes) |  |  |
 | Fee | [double](#double) |  | gas fee |
-| PluginSerialNumber | [string](#string) |  |  |
 
 
 
@@ -717,6 +716,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | BalanceStr | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
 | ExitCode | [int64](#int64) |  | -1 find cid state on chain internal server error |
+| PluginSerialNumber | [string](#string) |  |  |
 | RPCExitMessage | [string](#string) |  |  |
 | Payload | [bytes](#bytes) |  |  |
 
