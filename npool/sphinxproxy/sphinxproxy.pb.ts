@@ -143,7 +143,11 @@ export type ProxyPluginRequest = {
 <<<<<<< HEAD
 =======
   fee?: number
+<<<<<<< HEAD
   pluginSerialName?: string
+>>>>>>> add feild 'PluginSerialNumber'
+=======
+  pluginSerialNumber?: string
 >>>>>>> add feild 'PluginSerialNumber'
 }
 

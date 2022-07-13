@@ -264,9 +264,13 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Payload | [bytes](#bytes) |  |  |
 | Fee | [double](#double) |  | gas fee |
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> current payload var-name
 =======
 | PluginSerialName | [string](#string) |  |  |
+>>>>>>> add feild 'PluginSerialNumber'
+=======
+| PluginSerialNumber | [string](#string) |  |  |
 >>>>>>> add feild 'PluginSerialNumber'
 
 
@@ -703,9 +707,13 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Payload | [bytes](#bytes) |  |  |
 | Fee | [double](#double) |  | gas fee |
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> current payload var-name
 =======
 | PluginSerialName | [string](#string) |  |  |
+>>>>>>> add feild 'PluginSerialNumber'
+=======
+| PluginSerialNumber | [string](#string) |  |  |
 >>>>>>> add feild 'PluginSerialNumber'
 
 
