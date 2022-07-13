@@ -265,12 +265,15 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Fee | [double](#double) |  | gas fee |
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> current payload var-name
 =======
 | PluginSerialName | [string](#string) |  |  |
 >>>>>>> add feild 'PluginSerialNumber'
 =======
 | PluginSerialNumber | [string](#string) |  |  |
+>>>>>>> add feild 'PluginSerialNumber'
+=======
 >>>>>>> add feild 'PluginSerialNumber'
 
 
@@ -296,6 +299,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | BalanceStr | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
 | ExitCode | [int64](#int64) |  | -1 find cid state on chain internal server error |
+| PluginSerialNumber | [string](#string) |  |  |
 | RPCExitMessage | [string](#string) |  |  |
 | Payload | [bytes](#bytes) |  |  |
 
@@ -708,12 +712,15 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | Fee | [double](#double) |  | gas fee |
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> current payload var-name
 =======
 | PluginSerialName | [string](#string) |  |  |
 >>>>>>> add feild 'PluginSerialNumber'
 =======
 | PluginSerialNumber | [string](#string) |  |  |
+>>>>>>> add feild 'PluginSerialNumber'
+=======
 >>>>>>> add feild 'PluginSerialNumber'
 
 
@@ -739,6 +746,7 @@ MpoolGetNonce WalletBalance MpoolPush ..
 | BalanceStr | [string](#string) |  |  |
 | Message | [sphinx.plugin.v1.UnsignedMessage](#sphinx-plugin-v1-UnsignedMessage) |  |  |
 | ExitCode | [int64](#int64) |  | -1 find cid state on chain internal server error |
+| PluginSerialNumber | [string](#string) |  |  |
 | RPCExitMessage | [string](#string) |  |  |
 | Payload | [bytes](#bytes) |  |  |
 

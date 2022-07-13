@@ -125,6 +125,7 @@ export type ProxyPluginResponse = {
   balanceStr?: string
   message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
   exitCode?: string
+  pluginSerialNumber?: string
   rPCExitMessage?: string
   payload?: Uint8Array
 }
@@ -144,10 +145,13 @@ export type ProxyPluginRequest = {
 =======
   fee?: number
 <<<<<<< HEAD
+<<<<<<< HEAD
   pluginSerialName?: string
 >>>>>>> add feild 'PluginSerialNumber'
 =======
   pluginSerialNumber?: string
+>>>>>>> add feild 'PluginSerialNumber'
+=======
 >>>>>>> add feild 'PluginSerialNumber'
 }
 
