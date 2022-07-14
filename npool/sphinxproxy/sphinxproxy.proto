@@ -162,7 +162,8 @@ message ProxyPluginResponse {
   string BalanceStr                         = 160;
   sphinx.plugin.v1.UnsignedMessage  Message = 170;
   int64  ExitCode                           = 180; // -1 find cid state on chain internal server error
-  string PluginSerialNumber                 = 190;
+  string PluginWanIP                        = 190;
+  string PluginPosition                     = 200;
   string RPCExitMessage                     = 1000;
 
   bytes Payload = 1100;
