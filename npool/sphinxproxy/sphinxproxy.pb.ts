@@ -143,7 +143,10 @@ export type ProxyPluginRequest = {
   cID?: string
   payload?: Uint8Array
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 2f1e941833fafa1b7865cb1dbd73aea5ea30335a
   fee?: number
 <<<<<<< HEAD
 <<<<<<< HEAD
