@@ -125,7 +125,8 @@ export type ProxyPluginResponse = {
   balanceStr?: string
   message?: SphinxPluginV1Sphinxplugin.UnsignedMessage
   exitCode?: string
-  pluginSerialNumber?: string
+  pluginWanIP?: string
+  pluginPosition?: string
   rPCExitMessage?: string
   payload?: Uint8Array
 }
