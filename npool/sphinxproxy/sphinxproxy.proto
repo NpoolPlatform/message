@@ -166,7 +166,7 @@ message ProxyPluginResponse {
   string PluginPosition                     = 200;
   string RPCExitMessage                     = 1000;
 
-  bytes Payload = 1100;
+  bytes Payload                             = 1100;
 }
 
 // MpoolGetNonce WalletBalance MpoolPush ..
