@@ -144,6 +144,70 @@
         ]
       }
     },
+    "/v1/get/transactions": {
+      "post": {
+        "operationId": "SphinxProxy_GetTransactions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetTransactionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetTransactionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SphinxProxy"
+        ]
+      }
+    },
+    "/v1/update/transaction": {
+      "post": {
+        "operationId": "SphinxProxy_UpdateTransaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateTransactionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SphinxProxy"
+        ]
+      }
+    },
     "/version": {
       "post": {
         "summary": "sync",
@@ -321,6 +385,43 @@
         }
       }
     },
+    "v1GetTransactionsRequest": {
+      "type": "object",
+      "properties": {
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "TransactionState": {
+          "$ref": "#/definitions/v1TransactionState"
+        },
+        "ENV": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetTransactionsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1TransactionInfo"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1MsgTx": {
       "type": "object",
       "properties": {
@@ -398,6 +499,10 @@
           "type": "number",
           "format": "double",
           "title": "gas fee"
+        },
+        "Payload": {
+          "type": "string",
+          "format": "byte"
         }
       },
       "description": "MpoolGetNonce WalletBalance MpoolPush .."
@@ -416,6 +521,10 @@
         },
         "Message": {
           "$ref": "#/definitions/v1UnsignedMessage"
+        },
+        "Payload": {
+          "type": "string",
+          "format": "byte"
         }
       }
     },
@@ -467,6 +576,10 @@
         "TransactionState": {
           "$ref": "#/definitions/v1TransactionState"
         },
+        "Payload": {
+          "type": "string",
+          "format": "byte"
+        },
         "CID": {
           "type": "string"
         },
@@ -490,6 +603,7 @@
         "TransactionStateUnKnow",
         "TransactionStateWait",
         "TransactionStateSign",
+        "TransactionStateBroadcast",
         "TransactionStateSync",
         "TransactionStateDone",
         "TransactionStateFail"
@@ -501,13 +615,8 @@
       "enum": [
         "Invalid",
         "WalletNew",
-        "TransactionNew",
-        "Signature",
         "Balance",
-        "PreSign",
-        "Broadcast",
         "RegisterCoin",
-        "SyncMsgState",
         "GasFee"
       ],
       "default": "Invalid"
@@ -657,6 +766,34 @@
         }
       },
       "title": "============================= btc"
+    },
+    "v1UpdateTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "TransactionID": {
+          "type": "string"
+        },
+        "TransactionState": {
+          "$ref": "#/definitions/v1TransactionState"
+        },
+        "NextTransactionState": {
+          "$ref": "#/definitions/v1TransactionState"
+        },
+        "Payload": {
+          "type": "string",
+          "format": "byte"
+        },
+        "CID": {
+          "type": "string"
+        },
+        "ExitCode": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateTransactionResponse": {
+      "type": "object"
     },
     "v1VersionResponse": {
       "type": "object",
