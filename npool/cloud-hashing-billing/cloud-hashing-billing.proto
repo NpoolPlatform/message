@@ -1378,6 +1378,7 @@ message UserWithdrawItem {
     double Amount = 60;
     string PlatformTransactionID = 70;
     string WithdrawType = 80;
+    bool ExemptFee = 90;
 }
 
 message CreateUserWithdrawItemRequest {

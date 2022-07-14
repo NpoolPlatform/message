@@ -5460,6 +5460,9 @@
         },
         "WithdrawType": {
           "type": "string"
+        },
+        "ExemptFee": {
+          "type": "boolean"
         }
       }
     },
