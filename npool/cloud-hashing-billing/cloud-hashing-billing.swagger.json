@@ -5376,6 +5376,13 @@
         },
         "UsedByPaymentID": {
           "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinUSDCurrency": {
+          "type": "number",
+          "format": "double"
         }
       }
     },
