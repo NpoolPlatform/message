@@ -1549,6 +1549,7 @@ message UserPaymentBalance {
     string UsedByPaymentID = 60;
     string CoinTypeID = 70;
     double CoinUSDCurrency = 80;
+    string BalanceType = 90;
 }
 
 message CreateUserPaymentBalanceRequest {

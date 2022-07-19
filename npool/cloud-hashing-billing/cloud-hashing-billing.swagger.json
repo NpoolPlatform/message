@@ -5383,6 +5383,9 @@
         "CoinUSDCurrency": {
           "type": "number",
           "format": "double"
+        },
+        "BalanceType": {
+          "type": "string"
         }
       }
     },
