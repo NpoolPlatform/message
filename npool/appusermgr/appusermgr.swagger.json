@@ -48,9 +48,40 @@
         ]
       }
     },
+    "/v1/create/app": {
+      "post": {
+        "operationId": "AppUserManager_CreateApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/create/app/control": {
       "post": {
-        "summary": "rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {\n       option (google.api.http) = {\n           post: \"/v1/create/app\"\n           body: \"*\"\n       };\n   }\n   rpc GetApp (GetAppRequest) returns (GetAppResponse) {\n       option (google.api.http) = {\n           post: \"/v1/get/app\"\n           body: \"*\"\n       };\n   }\n   rpc GetApps (GetAppsRequest) returns (GetAppsResponse) {\n       option (google.api.http) = {\n           post: \"/v1/get/apps\"\n           body: \"*\"\n       };\n   }\n   rpc GetAppsByCreator (GetAppsByCreatorRequest) returns (GetAppsByCreatorResponse) {\n       option (google.api.http) = {\n           post: \"/v1/get/apps/by/creator\"\n           body: \"*\"\n       };\n   }\n   rpc UpdateApp (UpdateAppRequest) returns (UpdateAppResponse) {\n       option (google.api.http) = {\n           post: \"/v1/update/app\"\n           body: \"*\"\n       };\n   }",
         "operationId": "AppUserManager_CreateAppControl",
         "responses": {
           "200": {
@@ -777,6 +808,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAdminAppsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app": {
+      "post": {
+        "operationId": "AppUserManager_GetApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRequest"
             }
           }
         ],
@@ -1745,6 +1808,70 @@
         ]
       }
     },
+    "/v1/get/apps": {
+      "post": {
+        "operationId": "AppUserManager_GetApps",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/apps/by/creator": {
+      "post": {
+        "operationId": "AppUserManager_GetAppsByCreator",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppsByCreatorResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppsByCreatorRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/get/ban/app": {
       "post": {
         "operationId": "AppUserManager_GetBanApp",
@@ -1961,6 +2088,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetUserRolesByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/update/app": {
+      "post": {
+        "operationId": "AppUserManager_UpdateApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppRequest"
             }
           }
         ],
@@ -2694,6 +2853,22 @@
         }
       }
     },
+    "v1CreateAppRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+    "v1CreateAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
     "v1CreateAppRoleForOtherAppRequest": {
       "type": "object",
       "properties": {
@@ -3131,6 +3306,22 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1GetAppRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
         }
       }
     },
@@ -3669,6 +3860,55 @@
         }
       }
     },
+    "v1GetAppsByCreatorRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppsByCreatorResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1App"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppsRequest": {
+      "type": "object",
+      "properties": {
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1App"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetBanAppByAppRequest": {
       "type": "object",
       "properties": {
@@ -3828,6 +4068,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppControl"
+        }
+      }
+    },
+    "v1UpdateAppRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+    "v1UpdateAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
         }
       }
     },
