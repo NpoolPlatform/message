@@ -1,0 +1,154 @@
+syntax = "proto3";
+
+package service.template.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/servicetmpl/template";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service ServiceTemplateTemplate {
+    // Method Version
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/version"
+            body: "*"
+        };
+    }
+
+    rpc CreateTemplate (CreateTemplateRequest) returns (CreateTemplateResponse) {}
+
+    rpc CreateTemplates (CreateTemplatesRequest) returns (CreateTemplatesResponse) {}
+
+    rpc UpdateTemplate (UpdateTemplateRequest) returns (UpdateTemplateResponse) {}
+
+    rpc GetTemplate (GetTemplateRequest) returns (GetTemplateResponse) {}
+
+    rpc GetTemplateOnlyV2 (GetTemplateOnlyRequest) returns (GetTemplateOnlyResponse) {}
+
+    rpc GetTemplates (GetTemplatesRequest) returns (GetTemplatesResponse) {}
+
+    rpc ExistTemplate (ExistTemplateRequest) returns (ExistTemplateResponse) {}
+
+    rpc ExistTemplateCondsV2 (ExistTemplateCondsRequest) returns (ExistTemplateCondsResponse) {}
+
+    rpc CountTemplates (CountTemplatesRequest) returns (CountTemplatesResponse) {}
+
+    rpc DeleteTemplate (DeleteTemplateRequest) returns (DeleteTemplateResponse) {}
+}
+
+message ServiceTemplateInfo {
+    string ID = 10;
+}
+
+message GetServiceTemplateInfoOnlyRequest {
+    map<string, npool.v1.FilterCond> Conds = 10;
+}
+
+message GetServiceTemplateInfoOnlyResponse {
+    ServiceTemplateInfo Info = 10;
+}
+
+message TemplateReq {
+    optional string ID = 10;
+    optional string Name = 20;
+    optional uint32 Age = 30;
+}
+
+message Template {
+    string ID = 10;
+    string Name = 20;
+    uint32 Age = 30;
+}
+
+message CreateTemplateRequest {
+    TemplateReq Info = 10;
+}
+
+message CreateTemplateResponse {
+    Template Info = 10;
+}
+
+message CreateTemplatesRequest {
+    repeated TemplateReq Infos = 10;
+}
+
+message CreateTemplatesResponse {
+    repeated Template Infos = 10;
+}
+
+message GetTemplateRequest {
+    string ID = 10;
+}
+
+message GetTemplateResponse {
+    Template Info = 10;
+}
+
+message Conds {
+    npool.v1.StringVal ID = 20;
+    npool.v1.StringVal Name = 40;
+    npool.v1.Uint32Val Age = 50;
+}
+
+message GetTemplatesRequest {
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetTemplatesResponse {
+    repeated Template Infos = 10;
+    uint32 Total = 20;
+}
+
+message GetTemplateOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetTemplateOnlyResponse {
+    Template Info = 10;
+}
+
+message UpdateTemplateRequest {
+    TemplateReq Info = 10;
+}
+
+message UpdateTemplateResponse {
+    Template Info = 10;
+}
+
+message ExistTemplateRequest {
+    string ID = 10;
+}
+
+message ExistTemplateResponse {
+    bool Info = 10;
+}
+
+message ExistTemplateCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistTemplateCondsResponse {
+    bool Info = 10;
+}
+
+message CountTemplatesRequest {
+    Conds Conds = 10;
+}
+
+message CountTemplatesResponse {
+    uint32 Info = 10;
+}
+
+message DeleteTemplateRequest {
+    string ID = 10;
+}
+
+message DeleteTemplateResponse {
+    Template Info = 10;
+}
+
