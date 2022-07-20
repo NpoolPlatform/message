@@ -18,22 +18,20 @@ service AppUserMiddlewareApp {
 }
 
 message AppInfo {
-
-  string id = 20; // @gotags: sql:"id"
-  string createdBy = 30; // @gotags: sql:"created_by"
-  string Name = 40; // @gotags: sql:"name"
-  string Logo = 50; // @gotags: sql:"logo"
-  uint32 CreatedAt = 60; // @gotags: sql:"created_at"
-  string Description = 10; // @gotags: sql:"description"
-  string BanAppAppID = 70; // @gotags: sql:"ban_app_app_id"
-  string IsBanApp = 80; // @gotags: sql:"is_ban_app"
-  string BanAppMessage = 90; // @gotags: sql:"ban_app_message"
-  repeated string SignupMethods = 100; // @gotags: sql:"signup_methods"
-  string ExternSigninMethods = 110; // @gotags: sql:"extern_signin_methods"
-  string RecaptchaMethod = 120; // @gotags: sql:"recaptcha_method"
-  string KycEnable = 130; // @gotags: sql:"kyc_enable"
-  string SigninVerifyEnable = 140; // @gotags: sql:"signin_verify_enable"
-  string InvitationCodeMust = 150; // @gotags: sql:"invitation_code_must"
+  string id = 20;
+  string createdBy = 30;
+  string Name = 40;
+  string Logo = 50;
+  uint32 CreatedAt = 60;
+  string Description = 10;
+  bool IsBanApp = 80;
+  string BanAppMessage = 90;
+  repeated string SignupMethods = 100;
+  repeated string ExternSigninMethods = 110;
+  string RecaptchaMethod = 120;
+  bool KycEnable = 130;
+  bool SigninVerifyEnable = 140;
+  bool InvitationCodeMust = 150;
 }
 
 message GetAppInfoRequest {

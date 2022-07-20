@@ -27,21 +27,21 @@ type AppInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id                  string   `protobuf:"bytes,20,opt,name=id,proto3" json:"id,omitempty" sql:"id"`                                                       // @gotags: sql:"id"
-	CreatedBy           string   `protobuf:"bytes,30,opt,name=createdBy,proto3" json:"createdBy,omitempty" sql:"created_by"`                                 // @gotags: sql:"created_by"
-	Name                string   `protobuf:"bytes,40,opt,name=Name,proto3" json:"Name,omitempty" sql:"name"`                                                 // @gotags: sql:"name"
-	Logo                string   `protobuf:"bytes,50,opt,name=Logo,proto3" json:"Logo,omitempty" sql:"logo"`                                                 // @gotags: sql:"logo"
-	CreatedAt           uint32   `protobuf:"varint,60,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`                                // @gotags: sql:"created_at"
-	Description         string   `protobuf:"bytes,10,opt,name=Description,proto3" json:"Description,omitempty" sql:"description"`                            // @gotags: sql:"description"
-	BanAppAppID         string   `protobuf:"bytes,70,opt,name=BanAppAppID,proto3" json:"BanAppAppID,omitempty" sql:"ban_app_app_id"`                         // @gotags: sql:"ban_app_app_id"
-	IsBanApp            string   `protobuf:"bytes,80,opt,name=IsBanApp,proto3" json:"IsBanApp,omitempty" sql:"is_ban_app"`                                   // @gotags: sql:"is_ban_app"
-	BanAppMessage       string   `protobuf:"bytes,90,opt,name=BanAppMessage,proto3" json:"BanAppMessage,omitempty" sql:"ban_app_message"`                    // @gotags: sql:"ban_app_message"
-	SignupMethods       []string `protobuf:"bytes,100,rep,name=SignupMethods,proto3" json:"SignupMethods,omitempty" sql:"signup_methods"`                    // @gotags: sql:"signup_methods"
-	ExternSigninMethods string   `protobuf:"bytes,110,opt,name=ExternSigninMethods,proto3" json:"ExternSigninMethods,omitempty" sql:"extern_signin_methods"` // @gotags: sql:"extern_signin_methods"
-	RecaptchaMethod     string   `protobuf:"bytes,120,opt,name=RecaptchaMethod,proto3" json:"RecaptchaMethod,omitempty" sql:"recaptcha_method"`              // @gotags: sql:"recaptcha_method"
-	KycEnable           string   `protobuf:"bytes,130,opt,name=KycEnable,proto3" json:"KycEnable,omitempty" sql:"kyc_enable"`                                // @gotags: sql:"kyc_enable"
-	SigninVerifyEnable  string   `protobuf:"bytes,140,opt,name=SigninVerifyEnable,proto3" json:"SigninVerifyEnable,omitempty" sql:"signin_verify_enable"`    // @gotags: sql:"signin_verify_enable"
-	InvitationCodeMust  string   `protobuf:"bytes,150,opt,name=InvitationCodeMust,proto3" json:"InvitationCodeMust,omitempty" sql:"invitation_code_must"`    // @gotags: sql:"invitation_code_must"
+	Id                  string   `protobuf:"bytes,20,opt,name=id,proto3" json:"id,omitempty"`                                    // @gotags: sql:"id"
+	CreatedBy           string   `protobuf:"bytes,30,opt,name=createdBy,proto3" json:"createdBy,omitempty"`                      // @gotags: sql:"created_by"
+	Name                string   `protobuf:"bytes,40,opt,name=Name,proto3" json:"Name,omitempty"`                                // @gotags: sql:"name"
+	Logo                string   `protobuf:"bytes,50,opt,name=Logo,proto3" json:"Logo,omitempty"`                                // @gotags: sql:"logo"
+	CreatedAt           uint32   `protobuf:"varint,60,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`                     // @gotags: sql:"created_at"
+	Description         string   `protobuf:"bytes,10,opt,name=Description,proto3" json:"Description,omitempty"`                  // @gotags: sql:"description"
+	BanAppAppID         string   `protobuf:"bytes,70,opt,name=BanAppAppID,proto3" json:"BanAppAppID,omitempty"`                  // @gotags: sql:"ban_app_app_id"
+	IsBanApp            bool     `protobuf:"varint,80,opt,name=IsBanApp,proto3" json:"IsBanApp,omitempty"`                       // @gotags: sql:"is_ban_app"
+	BanAppMessage       string   `protobuf:"bytes,90,opt,name=BanAppMessage,proto3" json:"BanAppMessage,omitempty"`              // @gotags: sql:"ban_app_message"
+	SignupMethods       []string `protobuf:"bytes,100,rep,name=SignupMethods,proto3" json:"SignupMethods,omitempty"`             // @gotags: sql:"signup_methods"
+	ExternSigninMethods []string `protobuf:"bytes,110,rep,name=ExternSigninMethods,proto3" json:"ExternSigninMethods,omitempty"` // @gotags: sql:"extern_signin_methods"
+	RecaptchaMethod     string   `protobuf:"bytes,120,opt,name=RecaptchaMethod,proto3" json:"RecaptchaMethod,omitempty"`         // @gotags: sql:"recaptcha_method"
+	KycEnable           bool     `protobuf:"varint,130,opt,name=KycEnable,proto3" json:"KycEnable,omitempty"`                    // @gotags: sql:"kyc_enable"
+	SigninVerifyEnable  bool     `protobuf:"varint,140,opt,name=SigninVerifyEnable,proto3" json:"SigninVerifyEnable,omitempty"`  // @gotags: sql:"signin_verify_enable"
+	InvitationCodeMust  bool     `protobuf:"varint,150,opt,name=InvitationCodeMust,proto3" json:"InvitationCodeMust,omitempty"`  // @gotags: sql:"invitation_code_must"
 }
 
 func (x *AppInfo) Reset() {
@@ -125,11 +125,11 @@ func (x *AppInfo) GetBanAppAppID() string {
 	return ""
 }
 
-func (x *AppInfo) GetIsBanApp() string {
+func (x *AppInfo) GetIsBanApp() bool {
 	if x != nil {
 		return x.IsBanApp
 	}
-	return ""
+	return false
 }
 
 func (x *AppInfo) GetBanAppMessage() string {
@@ -146,11 +146,11 @@ func (x *AppInfo) GetSignupMethods() []string {
 	return nil
 }
 
-func (x *AppInfo) GetExternSigninMethods() string {
+func (x *AppInfo) GetExternSigninMethods() []string {
 	if x != nil {
 		return x.ExternSigninMethods
 	}
-	return ""
+	return nil
 }
 
 func (x *AppInfo) GetRecaptchaMethod() string {
@@ -160,25 +160,25 @@ func (x *AppInfo) GetRecaptchaMethod() string {
 	return ""
 }
 
-func (x *AppInfo) GetKycEnable() string {
+func (x *AppInfo) GetKycEnable() bool {
 	if x != nil {
 		return x.KycEnable
 	}
-	return ""
+	return false
 }
 
-func (x *AppInfo) GetSigninVerifyEnable() string {
+func (x *AppInfo) GetSigninVerifyEnable() bool {
 	if x != nil {
 		return x.SigninVerifyEnable
 	}
-	return ""
+	return false
 }
 
-func (x *AppInfo) GetInvitationCodeMust() string {
+func (x *AppInfo) GetInvitationCodeMust() bool {
 	if x != nil {
 		return x.InvitationCodeMust
 	}
-	return ""
+	return false
 }
 
 type GetAppInfoRequest struct {
@@ -298,25 +298,25 @@ var file_npool_appusermiddleware_app_app_proto_rawDesc = []byte{
 	0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x20, 0x0a, 0x0b, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x41,
 	0x70, 0x70, 0x49, 0x44, 0x18, 0x46, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x42, 0x61, 0x6e, 0x41,
 	0x70, 0x70, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x1a, 0x0a, 0x08, 0x49, 0x73, 0x42, 0x61, 0x6e,
-	0x41, 0x70, 0x70, 0x18, 0x50, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x49, 0x73, 0x42, 0x61, 0x6e,
+	0x41, 0x70, 0x70, 0x18, 0x50, 0x20, 0x01, 0x28, 0x08, 0x52, 0x08, 0x49, 0x73, 0x42, 0x61, 0x6e,
 	0x41, 0x70, 0x70, 0x12, 0x24, 0x0a, 0x0d, 0x42, 0x61, 0x6e, 0x41, 0x70, 0x70, 0x4d, 0x65, 0x73,
 	0x73, 0x61, 0x67, 0x65, 0x18, 0x5a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x42, 0x61, 0x6e, 0x41,
 	0x70, 0x70, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x24, 0x0a, 0x0d, 0x53, 0x69, 0x67,
 	0x6e, 0x75, 0x70, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x73, 0x18, 0x64, 0x20, 0x03, 0x28, 0x09,
 	0x52, 0x0d, 0x53, 0x69, 0x67, 0x6e, 0x75, 0x70, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x73, 0x12,
 	0x30, 0x0a, 0x13, 0x45, 0x78, 0x74, 0x65, 0x72, 0x6e, 0x53, 0x69, 0x67, 0x6e, 0x69, 0x6e, 0x4d,
-	0x65, 0x74, 0x68, 0x6f, 0x64, 0x73, 0x18, 0x6e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x13, 0x45, 0x78,
+	0x65, 0x74, 0x68, 0x6f, 0x64, 0x73, 0x18, 0x6e, 0x20, 0x03, 0x28, 0x09, 0x52, 0x13, 0x45, 0x78,
 	0x74, 0x65, 0x72, 0x6e, 0x53, 0x69, 0x67, 0x6e, 0x69, 0x6e, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64,
 	0x73, 0x12, 0x28, 0x0a, 0x0f, 0x52, 0x65, 0x63, 0x61, 0x70, 0x74, 0x63, 0x68, 0x61, 0x4d, 0x65,
 	0x74, 0x68, 0x6f, 0x64, 0x18, 0x78, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0f, 0x52, 0x65, 0x63, 0x61,
 	0x70, 0x74, 0x63, 0x68, 0x61, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x12, 0x1d, 0x0a, 0x09, 0x4b,
-	0x79, 0x63, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x18, 0x82, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x79, 0x63, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x18, 0x82, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52,
 	0x09, 0x4b, 0x79, 0x63, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x2f, 0x0a, 0x12, 0x53, 0x69,
 	0x67, 0x6e, 0x69, 0x6e, 0x56, 0x65, 0x72, 0x69, 0x66, 0x79, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65,
-	0x18, 0x8c, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x12, 0x53, 0x69, 0x67, 0x6e, 0x69, 0x6e, 0x56,
+	0x18, 0x8c, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x12, 0x53, 0x69, 0x67, 0x6e, 0x69, 0x6e, 0x56,
 	0x65, 0x72, 0x69, 0x66, 0x79, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x2f, 0x0a, 0x12, 0x49,
 	0x6e, 0x76, 0x69, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x64, 0x65, 0x4d, 0x75, 0x73,
-	0x74, 0x18, 0x96, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x12, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x61,
+	0x74, 0x18, 0x96, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x12, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x64, 0x65, 0x4d, 0x75, 0x73, 0x74, 0x22, 0x23, 0x0a, 0x11,
 	0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49,
