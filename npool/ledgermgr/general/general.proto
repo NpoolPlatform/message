@@ -62,14 +62,14 @@ message General {
 }
 
 message Conds {
-    npool.v1.StringVal ID = 10;
-    npool.v1.StringVal AppID = 20;
-    npool.v1.StringVal UserID = 30;
-    npool.v1.StringVal CoinTypeID = 40;
-    npool.v1.DoubleVal Incoming = 50;
-    npool.v1.DoubleVal Locked = 60;
-    npool.v1.DoubleVal Outcoming = 70;
-    npool.v1.DoubleVal Spendable = 80;
+    optional npool.v1.StringVal ID = 10;
+    optional npool.v1.StringVal AppID = 20;
+    optional npool.v1.StringVal UserID = 30;
+    optional npool.v1.StringVal CoinTypeID = 40;
+    optional npool.v1.DoubleVal Incoming = 50;
+    optional npool.v1.DoubleVal Locked = 60;
+    optional npool.v1.DoubleVal Outcoming = 70;
+    optional npool.v1.DoubleVal Spendable = 80;
 }
 
 
