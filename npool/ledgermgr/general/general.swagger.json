@@ -15,41 +15,7 @@
   "produces": [
     "application/json"
   ],
-  "paths": {
-    "/version": {
-      "post": {
-        "summary": "Method Version",
-        "operationId": "LedgerGeneral_Version",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1VersionResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "properties": {}
-            }
-          }
-        ],
-        "tags": [
-          "LedgerGeneral"
-        ]
-      }
-    }
-  },
+  "paths": {},
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -283,14 +249,6 @@
           "type": "string"
         },
         "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v1VersionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
           "type": "string"
         }
       }
