@@ -29,36 +29,36 @@ service AppUserManager {
         };
     }
 
-    rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/app"
-            body: "*"
-        };
-    }
-    rpc GetApp (GetAppRequest) returns (GetAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app"
-            body: "*"
-        };
-    }
-    rpc GetApps (GetAppsRequest) returns (GetAppsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/apps"
-            body: "*"
-        };
-    }
-    rpc GetAppsByCreator (GetAppsByCreatorRequest) returns (GetAppsByCreatorResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/apps/by/creator"
-            body: "*"
-        };
-    }
-    rpc UpdateApp (UpdateAppRequest) returns (UpdateAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/app"
-            body: "*"
-        };
-    }
+//    rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {
+//        option (google.api.http) = {
+//            post: "/v1/create/app"
+//            body: "*"
+//        };
+//    }
+//    rpc GetApp (GetAppRequest) returns (GetAppResponse) {
+//        option (google.api.http) = {
+//            post: "/v1/get/app"
+//            body: "*"
+//        };
+//    }
+//    rpc GetApps (GetAppsRequest) returns (GetAppsResponse) {
+//        option (google.api.http) = {
+//            post: "/v1/get/apps"
+//            body: "*"
+//        };
+//    }
+//    rpc GetAppsByCreator (GetAppsByCreatorRequest) returns (GetAppsByCreatorResponse) {
+//        option (google.api.http) = {
+//            post: "/v1/get/apps/by/creator"
+//            body: "*"
+//        };
+//    }
+//    rpc UpdateApp (UpdateAppRequest) returns (UpdateAppResponse) {
+//        option (google.api.http) = {
+//            post: "/v1/update/app"
+//            body: "*"
+//        };
+//    }
     rpc CreateAppControl (CreateAppControlRequest) returns (CreateAppControlResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/control"

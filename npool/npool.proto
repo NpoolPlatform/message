@@ -40,8 +40,8 @@ message Uint64Val {
     string Op = 20;
 }
 
-message FloatVal {
-    float Value = 10;
+message DoubleVal {
+    double Value = 10;
     string Op = 20;
 }
 

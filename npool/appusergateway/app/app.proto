@@ -8,6 +8,7 @@ import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 import "npool/appusermgrv2/app/app.proto";
+import "npool/appusermiddleware/app/app.proto";
 
 service AppUserGatewayApp {
   rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
@@ -52,12 +53,12 @@ service AppUserGatewayApp {
     };
   }
 
-//  rpc GetAppInfo (GetAppInfoRequest) returns (GetAppInfoResponse) {
-//    option (google.api.http) = {
-//      post: "/v2/update/app"
-//      body: "*"
-//    };
-//  }
+  rpc GetAppInfo (GetAppInfoRequest) returns (GetAppInfoResponse) {
+    option (google.api.http) = {
+      post: "/v2/get/app/info"
+      body: "*"
+    };
+  }
 
 
 }
@@ -105,4 +106,12 @@ message UpdateAppRequest {
 
 message UpdateAppResponse {
   .app.user.manager.app.v2.App Info = 10;
+}
+
+message GetAppInfoRequest {
+  string ID = 10;
+}
+
+message GetAppInfoResponse {
+  .app.user.middleware.app.v2.AppInfo Info = 10;
 }
