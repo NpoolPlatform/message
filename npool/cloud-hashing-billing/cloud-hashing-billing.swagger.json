@@ -5376,6 +5376,16 @@
         },
         "UsedByPaymentID": {
           "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinUSDCurrency": {
+          "type": "number",
+          "format": "double"
+        },
+        "BalanceType": {
+          "type": "string"
         }
       }
     },
@@ -5453,6 +5463,9 @@
         },
         "WithdrawType": {
           "type": "string"
+        },
+        "ExemptFee": {
+          "type": "boolean"
         }
       }
     },

@@ -11,15 +11,14 @@ PROTO_INCLUDE += -I.
 PROTO_INCLUDE += -I./google
 PROTO_INCLUDE += -I./npool
 
-PB_FILE = $(shell find npool -name "*.pb.go")
-
 proto: $(PROTO_GO_FILE) $(PROTO_TS_FILE) $(PROTO_GO_GW_FILE) $(PROTO_OPENAPIV2_FILE)
 %.pb.go: %.proto
 	$(PROTOC) $(PROTO_INCLUDE) \
 		--go_out=. \
 		--go_opt paths=source_relative \
 		--go-grpc_out=. \
-		--go-grpc_opt=paths=source_relative $<
+		--go-grpc_opt=paths=source_relative $< && \
+		protoc-go-inject-tag -input=$@
 
 %.pb.gw.go: %.proto
 	$(PROTOC) $(PROTO_INCLUDE) $< --plugin=protoc-gen-grpc-gateway=$(PROTOC-GEN-GRPC-GATEWAY) \

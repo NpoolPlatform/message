@@ -1763,6 +1763,9 @@
         },
         "PromotionID": {
           "type": "string"
+        },
+        "OrderType": {
+          "type": "string"
         }
       }
     },
@@ -1890,6 +1893,9 @@
         "UpdateAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "FakePayment": {
+          "type": "boolean"
         }
       }
     },

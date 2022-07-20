@@ -1378,6 +1378,7 @@ message UserWithdrawItem {
     double Amount = 60;
     string PlatformTransactionID = 70;
     string WithdrawType = 80;
+    bool ExemptFee = 90;
 }
 
 message CreateUserWithdrawItemRequest {
@@ -1546,6 +1547,9 @@ message UserPaymentBalance {
     string PaymentID = 40;
     double Amount = 50;
     string UsedByPaymentID = 60;
+    string CoinTypeID = 70;
+    double CoinUSDCurrency = 80;
+    string BalanceType = 90;
 }
 
 message CreateUserPaymentBalanceRequest {

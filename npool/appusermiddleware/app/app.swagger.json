@@ -74,9 +74,6 @@
         "Description": {
           "type": "string"
         },
-        "BanAppAppID": {
-          "type": "string"
-        },
         "IsBanApp": {
           "type": "boolean"
         },
