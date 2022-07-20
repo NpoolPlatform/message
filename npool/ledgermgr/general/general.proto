@@ -4,6 +4,7 @@ package ledger.manager.general.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/ledgermgr/general";
 
+import "google/protobuf/struct.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -22,7 +23,7 @@ service LedgerGeneral {
 
     rpc CreateGenerals (CreateGeneralsRequest) returns (CreateGeneralsResponse) {}
 
-    rpc UpdateGeneral (UpdateGeneralRequest) returns (UpdateGeneralResponse) {}
+    rpc AddGeneralFields (AddGeneralFieldsRequest) returns (AddGeneralFieldsResponse) {}
 
     rpc GetGeneral (GetGeneralRequest) returns (GetGeneralResponse) {}
 
@@ -89,6 +90,15 @@ message CreateGeneralsResponse {
     repeated General Infos = 10;
 }
 
+message AddGeneralFieldsRequest {
+    string ID = 10;
+    map<string, google.protobuf.Value> Fields = 20;
+}
+
+message AddGeneralFieldsResponse {
+    General Info = 10;
+}
+
 message GetGeneralRequest {
     string ID = 10;
 }
@@ -113,14 +123,6 @@ message GetGeneralOnlyRequest {
 }
 
 message GetGeneralOnlyResponse {
-    General Info = 10;
-}
-
-message UpdateGeneralRequest {
-    GeneralReq Info = 10;
-}
-
-message UpdateGeneralResponse {
     General Info = 10;
 }
 

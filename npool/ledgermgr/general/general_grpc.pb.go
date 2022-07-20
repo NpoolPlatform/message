@@ -28,7 +28,7 @@ type LedgerGeneralClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateGeneral(ctx context.Context, in *CreateGeneralRequest, opts ...grpc.CallOption) (*CreateGeneralResponse, error)
 	CreateGenerals(ctx context.Context, in *CreateGeneralsRequest, opts ...grpc.CallOption) (*CreateGeneralsResponse, error)
-	UpdateGeneral(ctx context.Context, in *UpdateGeneralRequest, opts ...grpc.CallOption) (*UpdateGeneralResponse, error)
+	AddGeneralFields(ctx context.Context, in *AddGeneralFieldsRequest, opts ...grpc.CallOption) (*AddGeneralFieldsResponse, error)
 	GetGeneral(ctx context.Context, in *GetGeneralRequest, opts ...grpc.CallOption) (*GetGeneralResponse, error)
 	GetGeneralOnly(ctx context.Context, in *GetGeneralOnlyRequest, opts ...grpc.CallOption) (*GetGeneralOnlyResponse, error)
 	GetGenerals(ctx context.Context, in *GetGeneralsRequest, opts ...grpc.CallOption) (*GetGeneralsResponse, error)
@@ -73,9 +73,9 @@ func (c *ledgerGeneralClient) CreateGenerals(ctx context.Context, in *CreateGene
 	return out, nil
 }
 
-func (c *ledgerGeneralClient) UpdateGeneral(ctx context.Context, in *UpdateGeneralRequest, opts ...grpc.CallOption) (*UpdateGeneralResponse, error) {
-	out := new(UpdateGeneralResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.general.v1.LedgerGeneral/UpdateGeneral", in, out, opts...)
+func (c *ledgerGeneralClient) AddGeneralFields(ctx context.Context, in *AddGeneralFieldsRequest, opts ...grpc.CallOption) (*AddGeneralFieldsResponse, error) {
+	out := new(AddGeneralFieldsResponse)
+	err := c.cc.Invoke(ctx, "/ledger.manager.general.v1.LedgerGeneral/AddGeneralFields", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -153,7 +153,7 @@ type LedgerGeneralServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateGeneral(context.Context, *CreateGeneralRequest) (*CreateGeneralResponse, error)
 	CreateGenerals(context.Context, *CreateGeneralsRequest) (*CreateGeneralsResponse, error)
-	UpdateGeneral(context.Context, *UpdateGeneralRequest) (*UpdateGeneralResponse, error)
+	AddGeneralFields(context.Context, *AddGeneralFieldsRequest) (*AddGeneralFieldsResponse, error)
 	GetGeneral(context.Context, *GetGeneralRequest) (*GetGeneralResponse, error)
 	GetGeneralOnly(context.Context, *GetGeneralOnlyRequest) (*GetGeneralOnlyResponse, error)
 	GetGenerals(context.Context, *GetGeneralsRequest) (*GetGeneralsResponse, error)
@@ -177,8 +177,8 @@ func (UnimplementedLedgerGeneralServer) CreateGeneral(context.Context, *CreateGe
 func (UnimplementedLedgerGeneralServer) CreateGenerals(context.Context, *CreateGeneralsRequest) (*CreateGeneralsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateGenerals not implemented")
 }
-func (UnimplementedLedgerGeneralServer) UpdateGeneral(context.Context, *UpdateGeneralRequest) (*UpdateGeneralResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateGeneral not implemented")
+func (UnimplementedLedgerGeneralServer) AddGeneralFields(context.Context, *AddGeneralFieldsRequest) (*AddGeneralFieldsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddGeneralFields not implemented")
 }
 func (UnimplementedLedgerGeneralServer) GetGeneral(context.Context, *GetGeneralRequest) (*GetGeneralResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGeneral not implemented")
@@ -268,20 +268,20 @@ func _LedgerGeneral_CreateGenerals_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LedgerGeneral_UpdateGeneral_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateGeneralRequest)
+func _LedgerGeneral_AddGeneralFields_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddGeneralFieldsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LedgerGeneralServer).UpdateGeneral(ctx, in)
+		return srv.(LedgerGeneralServer).AddGeneralFields(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.general.v1.LedgerGeneral/UpdateGeneral",
+		FullMethod: "/ledger.manager.general.v1.LedgerGeneral/AddGeneralFields",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LedgerGeneralServer).UpdateGeneral(ctx, req.(*UpdateGeneralRequest))
+		return srv.(LedgerGeneralServer).AddGeneralFields(ctx, req.(*AddGeneralFieldsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -432,8 +432,8 @@ var LedgerGeneral_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LedgerGeneral_CreateGenerals_Handler,
 		},
 		{
-			MethodName: "UpdateGeneral",
-			Handler:    _LedgerGeneral_UpdateGeneral_Handler,
+			MethodName: "AddGeneralFields",
+			Handler:    _LedgerGeneral_AddGeneralFields_Handler,
 		},
 		{
 			MethodName: "GetGeneral",
