@@ -28,8 +28,10 @@ type App struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID          string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	CreatedBy   string `protobuf:"bytes,20,opt,name=CreatedBy,proto3" json:"CreatedBy,omitempty"`
+	// @gotags: json:"id"
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"id"`
+	// @gotags: json:"created_by"
+	CreatedBy   string `protobuf:"bytes,20,opt,name=CreatedBy,proto3" json:"created_by"`
 	Name        string `protobuf:"bytes,30,opt,name=Name,proto3" json:"Name,omitempty"`
 	Logo        string `protobuf:"bytes,40,opt,name=Logo,proto3" json:"Logo,omitempty"`
 	Description string `protobuf:"bytes,50,opt,name=Description,proto3" json:"Description,omitempty"`
@@ -883,7 +885,8 @@ type CreateAppControlRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *AppControl `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	// @gotags: json:"info"
+	Info *AppControl `protobuf:"bytes,10,opt,name=Info,proto3" json:"info"`
 }
 
 func (x *CreateAppControlRequest) Reset() {

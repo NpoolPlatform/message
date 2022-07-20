@@ -2481,10 +2481,12 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@gotags: json:\"id\""
         },
         "CreatedBy": {
-          "type": "string"
+          "type": "string",
+          "title": "@gotags: json:\"created_by\""
         },
         "Name": {
           "type": "string"
@@ -2838,7 +2840,8 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppControl"
+          "$ref": "#/definitions/v1AppControl",
+          "title": "@gotags: json:\"info\""
         }
       }
     },
