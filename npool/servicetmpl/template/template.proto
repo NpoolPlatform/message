@@ -26,13 +26,13 @@ service ServiceTemplateTemplate {
 
     rpc GetTemplate (GetTemplateRequest) returns (GetTemplateResponse) {}
 
-    rpc GetTemplateOnlyV2 (GetTemplateOnlyRequest) returns (GetTemplateOnlyResponse) {}
+    rpc GetTemplateOnly (GetTemplateOnlyRequest) returns (GetTemplateOnlyResponse) {}
 
     rpc GetTemplates (GetTemplatesRequest) returns (GetTemplatesResponse) {}
 
     rpc ExistTemplate (ExistTemplateRequest) returns (ExistTemplateResponse) {}
 
-    rpc ExistTemplateCondsV2 (ExistTemplateCondsRequest) returns (ExistTemplateCondsResponse) {}
+    rpc ExistTemplateConds (ExistTemplateCondsRequest) returns (ExistTemplateCondsResponse) {}
 
     rpc CountTemplates (CountTemplatesRequest) returns (CountTemplatesResponse) {}
 

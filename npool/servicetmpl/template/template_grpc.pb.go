@@ -30,10 +30,10 @@ type ServiceTemplateTemplateClient interface {
 	CreateTemplates(ctx context.Context, in *CreateTemplatesRequest, opts ...grpc.CallOption) (*CreateTemplatesResponse, error)
 	UpdateTemplate(ctx context.Context, in *UpdateTemplateRequest, opts ...grpc.CallOption) (*UpdateTemplateResponse, error)
 	GetTemplate(ctx context.Context, in *GetTemplateRequest, opts ...grpc.CallOption) (*GetTemplateResponse, error)
-	GetTemplateOnlyV2(ctx context.Context, in *GetTemplateOnlyRequest, opts ...grpc.CallOption) (*GetTemplateOnlyResponse, error)
+	GetTemplateOnly(ctx context.Context, in *GetTemplateOnlyRequest, opts ...grpc.CallOption) (*GetTemplateOnlyResponse, error)
 	GetTemplates(ctx context.Context, in *GetTemplatesRequest, opts ...grpc.CallOption) (*GetTemplatesResponse, error)
 	ExistTemplate(ctx context.Context, in *ExistTemplateRequest, opts ...grpc.CallOption) (*ExistTemplateResponse, error)
-	ExistTemplateCondsV2(ctx context.Context, in *ExistTemplateCondsRequest, opts ...grpc.CallOption) (*ExistTemplateCondsResponse, error)
+	ExistTemplateConds(ctx context.Context, in *ExistTemplateCondsRequest, opts ...grpc.CallOption) (*ExistTemplateCondsResponse, error)
 	CountTemplates(ctx context.Context, in *CountTemplatesRequest, opts ...grpc.CallOption) (*CountTemplatesResponse, error)
 	DeleteTemplate(ctx context.Context, in *DeleteTemplateRequest, opts ...grpc.CallOption) (*DeleteTemplateResponse, error)
 }
@@ -91,9 +91,9 @@ func (c *serviceTemplateTemplateClient) GetTemplate(ctx context.Context, in *Get
 	return out, nil
 }
 
-func (c *serviceTemplateTemplateClient) GetTemplateOnlyV2(ctx context.Context, in *GetTemplateOnlyRequest, opts ...grpc.CallOption) (*GetTemplateOnlyResponse, error) {
+func (c *serviceTemplateTemplateClient) GetTemplateOnly(ctx context.Context, in *GetTemplateOnlyRequest, opts ...grpc.CallOption) (*GetTemplateOnlyResponse, error) {
 	out := new(GetTemplateOnlyResponse)
-	err := c.cc.Invoke(ctx, "/service.template.v1.ServiceTemplateTemplate/GetTemplateOnlyV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/service.template.v1.ServiceTemplateTemplate/GetTemplateOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -118,9 +118,9 @@ func (c *serviceTemplateTemplateClient) ExistTemplate(ctx context.Context, in *E
 	return out, nil
 }
 
-func (c *serviceTemplateTemplateClient) ExistTemplateCondsV2(ctx context.Context, in *ExistTemplateCondsRequest, opts ...grpc.CallOption) (*ExistTemplateCondsResponse, error) {
+func (c *serviceTemplateTemplateClient) ExistTemplateConds(ctx context.Context, in *ExistTemplateCondsRequest, opts ...grpc.CallOption) (*ExistTemplateCondsResponse, error) {
 	out := new(ExistTemplateCondsResponse)
-	err := c.cc.Invoke(ctx, "/service.template.v1.ServiceTemplateTemplate/ExistTemplateCondsV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/service.template.v1.ServiceTemplateTemplate/ExistTemplateConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -155,10 +155,10 @@ type ServiceTemplateTemplateServer interface {
 	CreateTemplates(context.Context, *CreateTemplatesRequest) (*CreateTemplatesResponse, error)
 	UpdateTemplate(context.Context, *UpdateTemplateRequest) (*UpdateTemplateResponse, error)
 	GetTemplate(context.Context, *GetTemplateRequest) (*GetTemplateResponse, error)
-	GetTemplateOnlyV2(context.Context, *GetTemplateOnlyRequest) (*GetTemplateOnlyResponse, error)
+	GetTemplateOnly(context.Context, *GetTemplateOnlyRequest) (*GetTemplateOnlyResponse, error)
 	GetTemplates(context.Context, *GetTemplatesRequest) (*GetTemplatesResponse, error)
 	ExistTemplate(context.Context, *ExistTemplateRequest) (*ExistTemplateResponse, error)
-	ExistTemplateCondsV2(context.Context, *ExistTemplateCondsRequest) (*ExistTemplateCondsResponse, error)
+	ExistTemplateConds(context.Context, *ExistTemplateCondsRequest) (*ExistTemplateCondsResponse, error)
 	CountTemplates(context.Context, *CountTemplatesRequest) (*CountTemplatesResponse, error)
 	DeleteTemplate(context.Context, *DeleteTemplateRequest) (*DeleteTemplateResponse, error)
 	mustEmbedUnimplementedServiceTemplateTemplateServer()
@@ -183,8 +183,8 @@ func (UnimplementedServiceTemplateTemplateServer) UpdateTemplate(context.Context
 func (UnimplementedServiceTemplateTemplateServer) GetTemplate(context.Context, *GetTemplateRequest) (*GetTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTemplate not implemented")
 }
-func (UnimplementedServiceTemplateTemplateServer) GetTemplateOnlyV2(context.Context, *GetTemplateOnlyRequest) (*GetTemplateOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetTemplateOnlyV2 not implemented")
+func (UnimplementedServiceTemplateTemplateServer) GetTemplateOnly(context.Context, *GetTemplateOnlyRequest) (*GetTemplateOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTemplateOnly not implemented")
 }
 func (UnimplementedServiceTemplateTemplateServer) GetTemplates(context.Context, *GetTemplatesRequest) (*GetTemplatesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTemplates not implemented")
@@ -192,8 +192,8 @@ func (UnimplementedServiceTemplateTemplateServer) GetTemplates(context.Context, 
 func (UnimplementedServiceTemplateTemplateServer) ExistTemplate(context.Context, *ExistTemplateRequest) (*ExistTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistTemplate not implemented")
 }
-func (UnimplementedServiceTemplateTemplateServer) ExistTemplateCondsV2(context.Context, *ExistTemplateCondsRequest) (*ExistTemplateCondsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistTemplateCondsV2 not implemented")
+func (UnimplementedServiceTemplateTemplateServer) ExistTemplateConds(context.Context, *ExistTemplateCondsRequest) (*ExistTemplateCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistTemplateConds not implemented")
 }
 func (UnimplementedServiceTemplateTemplateServer) CountTemplates(context.Context, *CountTemplatesRequest) (*CountTemplatesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountTemplates not implemented")
@@ -305,20 +305,20 @@ func _ServiceTemplateTemplate_GetTemplate_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ServiceTemplateTemplate_GetTemplateOnlyV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ServiceTemplateTemplate_GetTemplateOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetTemplateOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ServiceTemplateTemplateServer).GetTemplateOnlyV2(ctx, in)
+		return srv.(ServiceTemplateTemplateServer).GetTemplateOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/service.template.v1.ServiceTemplateTemplate/GetTemplateOnlyV2",
+		FullMethod: "/service.template.v1.ServiceTemplateTemplate/GetTemplateOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ServiceTemplateTemplateServer).GetTemplateOnlyV2(ctx, req.(*GetTemplateOnlyRequest))
+		return srv.(ServiceTemplateTemplateServer).GetTemplateOnly(ctx, req.(*GetTemplateOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -359,20 +359,20 @@ func _ServiceTemplateTemplate_ExistTemplate_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ServiceTemplateTemplate_ExistTemplateCondsV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ServiceTemplateTemplate_ExistTemplateConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistTemplateCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ServiceTemplateTemplateServer).ExistTemplateCondsV2(ctx, in)
+		return srv.(ServiceTemplateTemplateServer).ExistTemplateConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/service.template.v1.ServiceTemplateTemplate/ExistTemplateCondsV2",
+		FullMethod: "/service.template.v1.ServiceTemplateTemplate/ExistTemplateConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ServiceTemplateTemplateServer).ExistTemplateCondsV2(ctx, req.(*ExistTemplateCondsRequest))
+		return srv.(ServiceTemplateTemplateServer).ExistTemplateConds(ctx, req.(*ExistTemplateCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -441,8 +441,8 @@ var ServiceTemplateTemplate_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ServiceTemplateTemplate_GetTemplate_Handler,
 		},
 		{
-			MethodName: "GetTemplateOnlyV2",
-			Handler:    _ServiceTemplateTemplate_GetTemplateOnlyV2_Handler,
+			MethodName: "GetTemplateOnly",
+			Handler:    _ServiceTemplateTemplate_GetTemplateOnly_Handler,
 		},
 		{
 			MethodName: "GetTemplates",
@@ -453,8 +453,8 @@ var ServiceTemplateTemplate_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ServiceTemplateTemplate_ExistTemplate_Handler,
 		},
 		{
-			MethodName: "ExistTemplateCondsV2",
-			Handler:    _ServiceTemplateTemplate_ExistTemplateCondsV2_Handler,
+			MethodName: "ExistTemplateConds",
+			Handler:    _ServiceTemplateTemplate_ExistTemplateConds_Handler,
 		},
 		{
 			MethodName: "CountTemplates",
