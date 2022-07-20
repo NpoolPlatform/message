@@ -19,3 +19,38 @@ message FilterCond {
     string Op = 10;
     google.protobuf.Value Val = 20;
 }
+
+message Int32Val {
+    int32 Value = 10;
+    string Op = 20;
+}
+
+message Int64Val {
+    int64 Value = 10;
+    string Op = 20;
+}
+
+message Uint32Val {
+    uint32 Value = 10;
+    string Op = 20;
+}
+
+message Uint64Val {
+    uint64 Value = 10;
+    string Op = 20;
+}
+
+message FloatVal {
+    float Value = 10;
+    string Op = 20;
+}
+
+message StringVal {
+    string Value = 10;
+    string Op = 20;
+}
+
+message BoolVal {
+    bool Value = 10;
+    string Op = 20;
+}
