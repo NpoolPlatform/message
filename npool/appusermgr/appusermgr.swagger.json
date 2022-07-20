@@ -2482,11 +2482,11 @@
       "properties": {
         "ID": {
           "type": "string",
-          "title": "@gotags: json:\"id\""
+          "title": "@gotags: json:\"id,omitempty\""
         },
         "CreatedBy": {
           "type": "string",
-          "title": "@gotags: json:\"created_by\""
+          "title": "@gotags: json:\"created_by,omitempty\""
         },
         "Name": {
           "type": "string"
@@ -2841,7 +2841,7 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppControl",
-          "title": "@gotags: json:\"info\""
+          "title": "@gotags: json:\"info,omitempty\""
         }
       }
     },
