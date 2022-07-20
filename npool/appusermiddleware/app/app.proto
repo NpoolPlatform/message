@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package app.user.middleware.app.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appusermiddleware/app";
+
+//import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+//import "npool/appusermgrv2/app/app.proto";
+//import "npool/appusermgrv2/banapp/banapp.proto";
+
+service AppUserMiddlewareApp {
+  rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){}
+
+  rpc GetAppInfo (GetAppInfoRequest) returns (GetAppInfoResponse) {}
+
+}
+
+message AppInfo {
+
+  string id = 20; // @gotags: sql:"id"
+  string createdBy = 30; // @gotags: sql:"created_by"
+  string Name = 40; // @gotags: sql:"name"
+  string Logo = 50; // @gotags: sql:"logo"
+  uint32 CreatedAt = 60; // @gotags: sql:"created_at"
+  string Description = 10; // @gotags: sql:"description"
+  string BanAppAppID = 70; // @gotags: sql:"ban_app_app_id"
+  string IsBanApp = 80; // @gotags: sql:"is_ban_app"
+  string BanAppMessage = 90; // @gotags: sql:"ban_app_message"
+  repeated string SignupMethods = 100; // @gotags: sql:"signup_methods"
+  string ExternSigninMethods = 110; // @gotags: sql:"extern_signin_methods"
+  string RecaptchaMethod = 120; // @gotags: sql:"recaptcha_method"
+  string KycEnable = 130; // @gotags: sql:"kyc_enable"
+  string SigninVerifyEnable = 140; // @gotags: sql:"signin_verify_enable"
+  string InvitationCodeMust = 150; // @gotags: sql:"invitation_code_must"
+}
+
+message GetAppInfoRequest {
+  string ID = 10;
+}
+
+message GetAppInfoResponse {
+  AppInfo Info = 10;
+}
