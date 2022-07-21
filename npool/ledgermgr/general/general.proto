@@ -4,10 +4,13 @@ package ledger.manager.general.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/ledgermgr/general";
 
+import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
 service LedgerGeneral {
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {}
+
     rpc CreateGeneral (CreateGeneralRequest) returns (CreateGeneralResponse) {}
 
     rpc CreateGenerals (CreateGeneralsRequest) returns (CreateGeneralsResponse) {}

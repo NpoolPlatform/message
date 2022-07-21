@@ -8,9 +8,11 @@ package general
 
 import (
 	context "context"
+	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -22,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type LedgerGeneralClient interface {
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateGeneral(ctx context.Context, in *CreateGeneralRequest, opts ...grpc.CallOption) (*CreateGeneralResponse, error)
 	CreateGenerals(ctx context.Context, in *CreateGeneralsRequest, opts ...grpc.CallOption) (*CreateGeneralsResponse, error)
 	AddGeneral(ctx context.Context, in *AddGeneralRequest, opts ...grpc.CallOption) (*AddGeneralResponse, error)
@@ -40,6 +43,15 @@ type ledgerGeneralClient struct {
 
 func NewLedgerGeneralClient(cc grpc.ClientConnInterface) LedgerGeneralClient {
 	return &ledgerGeneralClient{cc}
+}
+
+func (c *ledgerGeneralClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+	out := new(npool.VersionResponse)
+	err := c.cc.Invoke(ctx, "/ledger.manager.general.v1.LedgerGeneral/Version", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *ledgerGeneralClient) CreateGeneral(ctx context.Context, in *CreateGeneralRequest, opts ...grpc.CallOption) (*CreateGeneralResponse, error) {
@@ -136,6 +148,7 @@ func (c *ledgerGeneralClient) DeleteGeneral(ctx context.Context, in *DeleteGener
 // All implementations must embed UnimplementedLedgerGeneralServer
 // for forward compatibility
 type LedgerGeneralServer interface {
+	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateGeneral(context.Context, *CreateGeneralRequest) (*CreateGeneralResponse, error)
 	CreateGenerals(context.Context, *CreateGeneralsRequest) (*CreateGeneralsResponse, error)
 	AddGeneral(context.Context, *AddGeneralRequest) (*AddGeneralResponse, error)
@@ -153,6 +166,9 @@ type LedgerGeneralServer interface {
 type UnimplementedLedgerGeneralServer struct {
 }
 
+func (UnimplementedLedgerGeneralServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
+}
 func (UnimplementedLedgerGeneralServer) CreateGeneral(context.Context, *CreateGeneralRequest) (*CreateGeneralResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateGeneral not implemented")
 }
@@ -194,6 +210,24 @@ type UnsafeLedgerGeneralServer interface {
 
 func RegisterLedgerGeneralServer(s grpc.ServiceRegistrar, srv LedgerGeneralServer) {
 	s.RegisterService(&LedgerGeneral_ServiceDesc, srv)
+}
+
+func _LedgerGeneral_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(emptypb.Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LedgerGeneralServer).Version(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.manager.general.v1.LedgerGeneral/Version",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LedgerGeneralServer).Version(ctx, req.(*emptypb.Empty))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _LedgerGeneral_CreateGeneral_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -383,6 +417,10 @@ var LedgerGeneral_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "ledger.manager.general.v1.LedgerGeneral",
 	HandlerType: (*LedgerGeneralServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Version",
+			Handler:    _LedgerGeneral_Version_Handler,
+		},
 		{
 			MethodName: "CreateGeneral",
 			Handler:    _LedgerGeneral_CreateGeneral_Handler,

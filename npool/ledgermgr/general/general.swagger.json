@@ -252,6 +252,14 @@
           "type": "string"
         }
       }
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
     }
   }
 }
