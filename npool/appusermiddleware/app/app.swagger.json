@@ -113,6 +113,21 @@
           "$ref": "#/definitions/v2AppInfo"
         }
       }
+    },
+    "v2GetAppInfosResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppInfo"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     }
   }
 }

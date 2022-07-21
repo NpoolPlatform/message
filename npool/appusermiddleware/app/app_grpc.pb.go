@@ -26,6 +26,7 @@ const _ = grpc.SupportPackageIsVersion7
 type AppUserMiddlewareAppClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	GetAppInfo(ctx context.Context, in *GetAppInfoRequest, opts ...grpc.CallOption) (*GetAppInfoResponse, error)
+	GetAppInfos(ctx context.Context, in *GetAppInfosRequest, opts ...grpc.CallOption) (*GetAppInfosResponse, error)
 }
 
 type appUserMiddlewareAppClient struct {
@@ -54,12 +55,22 @@ func (c *appUserMiddlewareAppClient) GetAppInfo(ctx context.Context, in *GetAppI
 	return out, nil
 }
 
+func (c *appUserMiddlewareAppClient) GetAppInfos(ctx context.Context, in *GetAppInfosRequest, opts ...grpc.CallOption) (*GetAppInfosResponse, error) {
+	out := new(GetAppInfosResponse)
+	err := c.cc.Invoke(ctx, "/app.user.middleware.app.v2.AppUserMiddlewareApp/GetAppInfos", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AppUserMiddlewareAppServer is the server API for AppUserMiddlewareApp service.
 // All implementations must embed UnimplementedAppUserMiddlewareAppServer
 // for forward compatibility
 type AppUserMiddlewareAppServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	GetAppInfo(context.Context, *GetAppInfoRequest) (*GetAppInfoResponse, error)
+	GetAppInfos(context.Context, *GetAppInfosRequest) (*GetAppInfosResponse, error)
 	mustEmbedUnimplementedAppUserMiddlewareAppServer()
 }
 
@@ -72,6 +83,9 @@ func (UnimplementedAppUserMiddlewareAppServer) Version(context.Context, *emptypb
 }
 func (UnimplementedAppUserMiddlewareAppServer) GetAppInfo(context.Context, *GetAppInfoRequest) (*GetAppInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppInfo not implemented")
+}
+func (UnimplementedAppUserMiddlewareAppServer) GetAppInfos(context.Context, *GetAppInfosRequest) (*GetAppInfosResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppInfos not implemented")
 }
 func (UnimplementedAppUserMiddlewareAppServer) mustEmbedUnimplementedAppUserMiddlewareAppServer() {}
 
@@ -122,6 +136,24 @@ func _AppUserMiddlewareApp_GetAppInfo_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AppUserMiddlewareApp_GetAppInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppInfosRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserMiddlewareAppServer).GetAppInfos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.middleware.app.v2.AppUserMiddlewareApp/GetAppInfos",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserMiddlewareAppServer).GetAppInfos(ctx, req.(*GetAppInfosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AppUserMiddlewareApp_ServiceDesc is the grpc.ServiceDesc for AppUserMiddlewareApp service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -136,6 +168,10 @@ var AppUserMiddlewareApp_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppInfo",
 			Handler:    _AppUserMiddlewareApp_GetAppInfo_Handler,
+		},
+		{
+			MethodName: "GetAppInfos",
+			Handler:    _AppUserMiddlewareApp_GetAppInfos_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

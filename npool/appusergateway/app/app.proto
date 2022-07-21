@@ -60,7 +60,12 @@ service AppUserGatewayApp {
     };
   }
 
-
+  rpc GetAppInfos (GetAppInfosRequest) returns (GetAppInfosResponse) {
+    option (google.api.http) = {
+      post: "/v2/get/app/infos"
+      body: "*"
+    };
+  }
 }
 
 message CreateAppRequest {
@@ -114,4 +119,14 @@ message GetAppInfoRequest {
 
 message GetAppInfoResponse {
   .app.user.middleware.app.v2.AppInfo Info = 10;
+}
+
+
+message GetAppInfosRequest {
+  int32 Offset = 10;
+  int32 Limit = 20;
+}
+
+message GetAppInfosResponse {
+  repeated .app.user.middleware.app.v2.AppInfo Infos = 10;
 }

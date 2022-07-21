@@ -112,6 +112,38 @@
         ]
       }
     },
+    "/v2/get/app/infos": {
+      "post": {
+        "operationId": "AppUserGatewayApp_GetAppInfos",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/usergatewayappv2GetAppInfosResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/usergatewayappv2GetAppInfosRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayApp"
+        ]
+      }
+    },
     "/v2/get/apps": {
       "post": {
         "operationId": "AppUserGatewayApp_GetApps",
@@ -298,6 +330,30 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v2AppInfo"
+        }
+      }
+    },
+    "usergatewayappv2GetAppInfosRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "usergatewayappv2GetAppInfosResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppInfo"
+          }
         }
       }
     },

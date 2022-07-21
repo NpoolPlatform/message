@@ -31,6 +31,7 @@ type AppUserGatewayAppClient interface {
 	GetAppsByCreator(ctx context.Context, in *GetAppsByCreatorRequest, opts ...grpc.CallOption) (*GetAppsByCreatorResponse, error)
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	GetAppInfo(ctx context.Context, in *GetAppInfoRequest, opts ...grpc.CallOption) (*GetAppInfoResponse, error)
+	GetAppInfos(ctx context.Context, in *GetAppInfosRequest, opts ...grpc.CallOption) (*GetAppInfosResponse, error)
 }
 
 type appUserGatewayAppClient struct {
@@ -104,6 +105,15 @@ func (c *appUserGatewayAppClient) GetAppInfo(ctx context.Context, in *GetAppInfo
 	return out, nil
 }
 
+func (c *appUserGatewayAppClient) GetAppInfos(ctx context.Context, in *GetAppInfosRequest, opts ...grpc.CallOption) (*GetAppInfosResponse, error) {
+	out := new(GetAppInfosResponse)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v2.AppUserGatewayApp/GetAppInfos", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AppUserGatewayAppServer is the server API for AppUserGatewayApp service.
 // All implementations must embed UnimplementedAppUserGatewayAppServer
 // for forward compatibility
@@ -115,6 +125,7 @@ type AppUserGatewayAppServer interface {
 	GetAppsByCreator(context.Context, *GetAppsByCreatorRequest) (*GetAppsByCreatorResponse, error)
 	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
 	GetAppInfo(context.Context, *GetAppInfoRequest) (*GetAppInfoResponse, error)
+	GetAppInfos(context.Context, *GetAppInfosRequest) (*GetAppInfosResponse, error)
 	mustEmbedUnimplementedAppUserGatewayAppServer()
 }
 
@@ -142,6 +153,9 @@ func (UnimplementedAppUserGatewayAppServer) UpdateApp(context.Context, *UpdateAp
 }
 func (UnimplementedAppUserGatewayAppServer) GetAppInfo(context.Context, *GetAppInfoRequest) (*GetAppInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppInfo not implemented")
+}
+func (UnimplementedAppUserGatewayAppServer) GetAppInfos(context.Context, *GetAppInfosRequest) (*GetAppInfosResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppInfos not implemented")
 }
 func (UnimplementedAppUserGatewayAppServer) mustEmbedUnimplementedAppUserGatewayAppServer() {}
 
@@ -282,6 +296,24 @@ func _AppUserGatewayApp_GetAppInfo_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AppUserGatewayApp_GetAppInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppInfosRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserGatewayAppServer).GetAppInfos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.gateway.app.v2.AppUserGatewayApp/GetAppInfos",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserGatewayAppServer).GetAppInfos(ctx, req.(*GetAppInfosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AppUserGatewayApp_ServiceDesc is the grpc.ServiceDesc for AppUserGatewayApp service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -316,6 +348,10 @@ var AppUserGatewayApp_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppInfo",
 			Handler:    _AppUserGatewayApp_GetAppInfo_Handler,
+		},
+		{
+			MethodName: "GetAppInfos",
+			Handler:    _AppUserGatewayApp_GetAppInfos_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
