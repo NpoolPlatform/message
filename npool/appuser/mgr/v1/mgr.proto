@@ -29,36 +29,36 @@ service AppUserManager {
         };
     }
 
-    rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/app"
-            body: "*"
-        };
-    }
-    rpc GetApp (GetAppRequest) returns (GetAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app"
-            body: "*"
-        };
-    }
-    rpc GetApps (GetAppsRequest) returns (GetAppsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/apps"
-            body: "*"
-        };
-    }
-    rpc GetAppsByCreator (GetAppsByCreatorRequest) returns (GetAppsByCreatorResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/apps/by/creator"
-            body: "*"
-        };
-    }
-    rpc UpdateApp (UpdateAppRequest) returns (UpdateAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/app"
-            body: "*"
-        };
-    }
+//    rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {
+//        option (google.api.http) = {
+//            post: "/v1/create/app"
+//            body: "*"
+//        };
+//    }
+//    rpc GetApp (GetAppRequest) returns (GetAppResponse) {
+//        option (google.api.http) = {
+//            post: "/v1/get/app"
+//            body: "*"
+//        };
+//    }
+//    rpc GetApps (GetAppsRequest) returns (GetAppsResponse) {
+//        option (google.api.http) = {
+//            post: "/v1/get/apps"
+//            body: "*"
+//        };
+//    }
+//    rpc GetAppsByCreator (GetAppsByCreatorRequest) returns (GetAppsByCreatorResponse) {
+//        option (google.api.http) = {
+//            post: "/v1/get/apps/by/creator"
+//            body: "*"
+//        };
+//    }
+//    rpc UpdateApp (UpdateAppRequest) returns (UpdateAppResponse) {
+//        option (google.api.http) = {
+//            post: "/v1/update/app"
+//            body: "*"
+//        };
+//    }
     rpc CreateAppControl (CreateAppControlRequest) returns (CreateAppControlResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/control"
@@ -89,6 +89,8 @@ service AppUserManager {
             body: "*"
         };
     }
+
+
     rpc CreateBanApp (CreateBanAppRequest) returns (CreateBanAppResponse) {
         option (google.api.http) = {
             post: "/v1/create/ban/app"
@@ -120,18 +122,20 @@ service AppUserManager {
         };
     }
 
-    rpc GetAppInfo (GetAppInfoRequest) returns (GetAppInfoResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/appinfo"
-            body: "*"
-        };
-    }
+//    rpc GetAppInfo (GetAppInfoRequest) returns (GetAppInfoResponse) {
+//        option (google.api.http) = {
+//            post: "/v1/get/appinfo"
+//            body: "*"
+//        };
+//    }
+
     rpc GetAppInfos (GetAppInfosRequest) returns (GetAppInfosResponse) {
         option (google.api.http) = {
             post: "/v1/get/appinfos"
             body: "*"
         };
     }
+
     rpc GetAppInfosByCreator (GetAppInfosByCreatorRequest) returns (GetAppInfosByCreatorResponse) {
         option (google.api.http) = {
             post: "/v1/get/appinfos/by/creator"
