@@ -54,18 +54,19 @@ enum IOSubType {
 }
 
 message DetailReq {
-    optional string ID               = 10;
-    optional string AppID            = 20;
-    optional string UserID           = 30;
-    optional string CoinTypeID       = 40;
-    optional IOType IOType           = 50;
-    optional IOSubType IOSubType     = 60;
-    optional double Amount           = 70;
+    optional string     ID               = 10;
+    optional string     AppID            = 20;
+    optional string     UserID           = 30;
+    optional string     CoinTypeID       = 40;
+    optional IOType     IOType           = 50;
+    optional IOSubType  IOSubType        = 60;
+    optional double     Amount           = 70;
     // E.g. when pay with non-USDT coin
-    optional string FromCoinTypeID   = 80;
-    optional double CoinUSDCurrency  = 90;
-    optional string IOExtra          = 100;
-    optional string FromOldID        = 110;
+    optional string     FromCoinTypeID   = 80;
+    optional double     CoinUSDCurrency  = 90;
+    optional string     IOExtra          = 100;
+    optional string     FromOldID        = 110;
+    optional uint32     CreatedAt        = 120;
 }
 
 message Detail {
@@ -80,6 +81,7 @@ message Detail {
     double      CoinUSDCurrency   = 90;
     string      IOExtra           = 100;
     string      FromOldID         = 110;
+    uint32      CreatedAt         = 120;
 }
 
 message Conds {
