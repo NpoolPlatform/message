@@ -174,7 +174,12 @@ service CloudHashingApis {
             body: "*"
         };
     }
-
+    rpc GetUserReferrals (GetUserReferralsRequest) returns (GetUserReferralsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/referrals/by/other/app/user",
+            body: "*"
+        };
+    }
     rpc GetReferrals (GetReferralsRequest) returns (GetReferralsResponse) {
         option (google.api.http) = {
             post: "/v1/get/referrals",
@@ -730,6 +735,15 @@ message GetReferralsRequest {
 }
 
 message GetReferralsResponse {
+    repeated Referral Infos = 10;
+}
+
+message GetUserReferralsRequest {
+    string AppID = 10;
+    string TargetUserID = 20;
+}
+
+message GetUserReferralsResponse {
     repeated Referral Infos = 10;
 }
 
