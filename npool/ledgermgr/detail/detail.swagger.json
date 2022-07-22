@@ -76,6 +76,9 @@
         },
         "IOExtra": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "FromOldID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -141,6 +144,9 @@
         },
         "IOExtra": {
           "type": "string"
+        },
+        "FromOldID": {
+          "type": "string"
         }
       }
     },
@@ -178,6 +184,9 @@
           "format": "double"
         },
         "IOExtra": {
+          "type": "string"
+        },
+        "FromOldID": {
           "type": "string"
         }
       }
