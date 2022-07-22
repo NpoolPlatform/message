@@ -68,16 +68,16 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "Incoming": {
-          "$ref": "#/definitions/v1DoubleVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "Locked": {
-          "$ref": "#/definitions/v1DoubleVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "Outcoming": {
-          "$ref": "#/definitions/v1DoubleVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "Spendable": {
-          "$ref": "#/definitions/v1DoubleVal"
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -117,18 +117,6 @@
         }
       }
     },
-    "v1DoubleVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "number",
-          "format": "double"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
     "v1ExistGeneralCondsResponse": {
       "type": "object",
       "properties": {
@@ -161,20 +149,16 @@
           "type": "string"
         },
         "Incoming": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         },
         "Locked": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         },
         "Outcoming": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         },
         "Spendable": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         }
       }
     },
@@ -194,20 +178,16 @@
           "type": "string"
         },
         "Incoming": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         },
         "Locked": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         },
         "Outcoming": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         },
         "Spendable": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         }
       }
     },

@@ -66,13 +66,13 @@
           "$ref": "#/definitions/v1Int32Val"
         },
         "Amount": {
-          "$ref": "#/definitions/v1DoubleVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "FromCoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "CoinUSDCurrency": {
-          "$ref": "#/definitions/v1DoubleVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "IOExtra": {
           "$ref": "#/definitions/v1StringVal"
@@ -132,15 +132,13 @@
           "$ref": "#/definitions/v1IOSubType"
         },
         "Amount": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         },
         "FromCoinTypeID": {
           "type": "string"
         },
         "CoinUSDCurrency": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         },
         "IOExtra": {
           "type": "string"
@@ -176,16 +174,14 @@
           "$ref": "#/definitions/v1IOSubType"
         },
         "Amount": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         },
         "FromCoinTypeID": {
           "type": "string",
           "title": "E.g. when pay with non-USDT coin"
         },
         "CoinUSDCurrency": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         },
         "IOExtra": {
           "type": "string"
@@ -196,18 +192,6 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1DoubleVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "number",
-          "format": "double"
-        },
-        "Op": {
-          "type": "string"
         }
       }
     },
