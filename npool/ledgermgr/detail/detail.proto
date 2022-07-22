@@ -39,16 +39,18 @@ enum IOSubType {
     // I/O
     // I: record tids in extra
     // O: record order id in extra
-    Payment                   = 10;
+    Payment                   = 100;
     // I: record good id in extra
-    MiningBenefit             = 11;
+    MiningBenefit             = 101;
     // I: record user id, order id in extra
-    Commission                = 12;
+    Commission                = 102;
     // I: record good id in extra
-    TechniqueFeeCommission    = 13;
+    TechniqueFeeCommission    = 103;
+    // I: record address in extra
+    Deposit                   = 104;
 
     // O
-    Withdrawal                = 14;
+    Withdrawal                = 200;
 }
 
 message DetailReq {
