@@ -49,6 +49,7 @@ type CloudHashingApisClient interface {
 	UpdateAppUserExtra(ctx context.Context, in *UpdateAppUserExtraRequest, opts ...grpc.CallOption) (*UpdateAppUserExtraResponse, error)
 	CreateAppUserControl(ctx context.Context, in *CreateAppUserControlRequest, opts ...grpc.CallOption) (*CreateAppUserControlResponse, error)
 	UpdateAppUserControl(ctx context.Context, in *UpdateAppUserControlRequest, opts ...grpc.CallOption) (*UpdateAppUserControlResponse, error)
+	GetUserReferrals(ctx context.Context, in *GetUserReferralsRequest, opts ...grpc.CallOption) (*GetUserReferralsResponse, error)
 	GetReferrals(ctx context.Context, in *GetReferralsRequest, opts ...grpc.CallOption) (*GetReferralsResponse, error)
 	GetLayeredReferrals(ctx context.Context, in *GetLayeredReferralsRequest, opts ...grpc.CallOption) (*GetLayeredReferralsResponse, error)
 	GetAmountSettings(ctx context.Context, in *GetAmountSettingsRequest, opts ...grpc.CallOption) (*GetAmountSettingsResponse, error)
@@ -313,6 +314,15 @@ func (c *cloudHashingApisClient) CreateAppUserControl(ctx context.Context, in *C
 func (c *cloudHashingApisClient) UpdateAppUserControl(ctx context.Context, in *UpdateAppUserControlRequest, opts ...grpc.CallOption) (*UpdateAppUserControlResponse, error) {
 	out := new(UpdateAppUserControlResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/UpdateAppUserControl", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetUserReferrals(ctx context.Context, in *GetUserReferralsRequest, opts ...grpc.CallOption) (*GetUserReferralsResponse, error) {
+	out := new(GetUserReferralsResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetUserReferrals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -663,6 +673,7 @@ type CloudHashingApisServer interface {
 	UpdateAppUserExtra(context.Context, *UpdateAppUserExtraRequest) (*UpdateAppUserExtraResponse, error)
 	CreateAppUserControl(context.Context, *CreateAppUserControlRequest) (*CreateAppUserControlResponse, error)
 	UpdateAppUserControl(context.Context, *UpdateAppUserControlRequest) (*UpdateAppUserControlResponse, error)
+	GetUserReferrals(context.Context, *GetUserReferralsRequest) (*GetUserReferralsResponse, error)
 	GetReferrals(context.Context, *GetReferralsRequest) (*GetReferralsResponse, error)
 	GetLayeredReferrals(context.Context, *GetLayeredReferralsRequest) (*GetLayeredReferralsResponse, error)
 	GetAmountSettings(context.Context, *GetAmountSettingsRequest) (*GetAmountSettingsResponse, error)
@@ -779,6 +790,9 @@ func (UnimplementedCloudHashingApisServer) CreateAppUserControl(context.Context,
 }
 func (UnimplementedCloudHashingApisServer) UpdateAppUserControl(context.Context, *UpdateAppUserControlRequest) (*UpdateAppUserControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUserControl not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetUserReferrals(context.Context, *GetUserReferralsRequest) (*GetUserReferralsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserReferrals not implemented")
 }
 func (UnimplementedCloudHashingApisServer) GetReferrals(context.Context, *GetReferralsRequest) (*GetReferralsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetReferrals not implemented")
@@ -1344,6 +1358,24 @@ func _CloudHashingApis_UpdateAppUserControl_Handler(srv interface{}, ctx context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingApisServer).UpdateAppUserControl(ctx, req.(*UpdateAppUserControlRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetUserReferrals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserReferralsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetUserReferrals(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetUserReferrals",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetUserReferrals(ctx, req.(*GetUserReferralsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2084,6 +2116,10 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateAppUserControl",
 			Handler:    _CloudHashingApis_UpdateAppUserControl_Handler,
+		},
+		{
+			MethodName: "GetUserReferrals",
+			Handler:    _CloudHashingApis_GetUserReferrals_Handler,
 		},
 		{
 			MethodName: "GetReferrals",
