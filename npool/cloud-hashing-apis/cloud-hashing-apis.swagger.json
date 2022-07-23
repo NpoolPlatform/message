@@ -1008,38 +1008,6 @@
         ]
       }
     },
-    "/v1/get/referrals/by/other/app/user": {
-      "post": {
-        "operationId": "CloudHashingApis_GetUserReferrals",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetUserReferralsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetUserReferralsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
     "/v1/get/user/good/commissions": {
       "post": {
         "operationId": "CloudHashingApis_GetUserGoodCommissions",
@@ -1064,6 +1032,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetUserGoodCommissionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
+    "/v1/get/user/referrals": {
+      "post": {
+        "operationId": "CloudHashingApis_GetUserReferrals",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserReferralsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserReferralsRequest"
             }
           }
         ],

@@ -2693,7 +2693,7 @@ func RegisterCloudHashingApisHandlerServer(ctx context.Context, mux *runtime.Ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.apis.v1.CloudHashingApis/GetUserReferrals", runtime.WithHTTPPathPattern("/v1/get/referrals/by/other/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud.hashing.apis.v1.CloudHashingApis/GetUserReferrals", runtime.WithHTTPPathPattern("/v1/get/user/referrals"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4060,7 +4060,7 @@ func RegisterCloudHashingApisHandlerClient(ctx context.Context, mux *runtime.Ser
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.apis.v1.CloudHashingApis/GetUserReferrals", runtime.WithHTTPPathPattern("/v1/get/referrals/by/other/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/cloud.hashing.apis.v1.CloudHashingApis/GetUserReferrals", runtime.WithHTTPPathPattern("/v1/get/user/referrals"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4830,7 +4830,7 @@ var (
 
 	pattern_CloudHashingApis_UpdateAppUserControl_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "update", "app", "user", "control"}, ""))
 
-	pattern_CloudHashingApis_GetUserReferrals_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6}, []string{"v1", "get", "referrals", "by", "other", "app", "user"}, ""))
+	pattern_CloudHashingApis_GetUserReferrals_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "user", "referrals"}, ""))
 
 	pattern_CloudHashingApis_GetReferrals_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "referrals"}, ""))
 
