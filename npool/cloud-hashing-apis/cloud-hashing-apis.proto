@@ -176,7 +176,7 @@ service CloudHashingApis {
     }
     rpc GetUserReferrals (GetUserReferralsRequest) returns (GetUserReferralsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/referrals/by/other/app/user",
+            post: "/v1/get/user/referrals",
             body: "*"
         };
     }
