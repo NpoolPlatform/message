@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/commissionmgr/commissionmgr.proto",
+    "title": "npool/archivementmgr/commission/commission.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "CommissionManager"
+      "name": "Commission"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/create/app/user/good/commissions": {
       "post": {
-        "operationId": "CommissionManager_CreateAppUserGoodCommissions",
+        "operationId": "Commission_CreateAppUserGoodCommissions",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,40 +44,7 @@
           }
         ],
         "tags": [
-          "CommissionManager"
-        ]
-      }
-    },
-    "/v1/version": {
-      "post": {
-        "summary": "Method Version",
-        "operationId": "CommissionManager_Version",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1VersionResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "properties": {}
-            }
-          }
-        ],
-        "tags": [
-          "CommissionManager"
+          "Commission"
         ]
       }
     }

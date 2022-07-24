@@ -1,22 +1,17 @@
 syntax = "proto3";
 
-package commission.manager.v1;
+package archivement.manager.commission.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/commissionmgr";
+option go_package = "github.com/NpoolPlatform/message/npool/archivementmgr/commission";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
-service CommissionManager {
+service Commission {
     // Method Version
-    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
-        option (google.api.http) = {
-            post: "/v1/version"
-            body: "*"
-        };
-    }
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {}
 
     rpc CaculateOrderCommission (CaculateOrderCommissionRequest) returns (CaculateOrderCommissionResponse) {}
 
