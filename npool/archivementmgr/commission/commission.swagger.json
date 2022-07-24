@@ -78,13 +78,7 @@
       }
     },
     "v1CalculateOrderCommissionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "string",
-          "title": "Commission amount in string"
-        }
-      }
+      "type": "object"
     },
     "v1CreateAppUserGoodCommissionsRequest": {
       "type": "object",

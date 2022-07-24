@@ -28,8 +28,7 @@ message CalculateOrderCommissionRequest {
 }
 
 message CalculateOrderCommissionResponse {
-    // Commission amount in string
-    string Info = 10;
+    // Just store all layer commission directly
 }
 
 message CreateAppUserGoodCommissionsRequest {
