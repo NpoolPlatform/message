@@ -1114,6 +1114,8 @@ message GoodPayment {
     bool Idle = 50;
     string OccupiedBy = 60;
     uint32 AvailableAt = 70;
+    string CollectingTID = 80;
+    string UsedFor = 90;
 }
 
 message CreateGoodPaymentRequest {
