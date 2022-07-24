@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package commission.manager.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/commissionmgr";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service CommissionManager {
+    // Method Version
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/v1/version"
+            body: "*"
+        };
+    }
+
+    rpc CaculateOrderCommission (CaculateOrderCommissionRequest) returns (CaculateOrderCommissionResponse) {}
+
+    rpc CreateAppUserGoodCommissions (CreateAppUserGoodCommissionsRequest) returns (CreateAppUserGoodCommissionsResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/good/commissions"
+            body: "*"
+        };
+    }
+}
+
+message CaculateOrderCommissionRequest {
+    string OrderID = 10;
+}
+
+message CaculateOrderCommissionResponse {
+    // Commission amount in string
+    string Info = 10;
+}
+
+message CreateAppUserGoodCommissionsRequest {
+    string AppID = 10;
+    string UserID = 20;
+    string GoodID = 30;
+}
+
+message CreateAppUserGoodCommissionsResponse {
+}
