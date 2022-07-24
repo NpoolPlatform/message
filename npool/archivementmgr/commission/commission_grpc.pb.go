@@ -26,7 +26,7 @@ const _ = grpc.SupportPackageIsVersion7
 type CommissionClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
-	CaculateOrderCommission(ctx context.Context, in *CaculateOrderCommissionRequest, opts ...grpc.CallOption) (*CaculateOrderCommissionResponse, error)
+	CalculateOrderCommission(ctx context.Context, in *CalculateOrderCommissionRequest, opts ...grpc.CallOption) (*CalculateOrderCommissionResponse, error)
 	CreateAppUserGoodCommissions(ctx context.Context, in *CreateAppUserGoodCommissionsRequest, opts ...grpc.CallOption) (*CreateAppUserGoodCommissionsResponse, error)
 }
 
@@ -47,9 +47,9 @@ func (c *commissionClient) Version(ctx context.Context, in *emptypb.Empty, opts 
 	return out, nil
 }
 
-func (c *commissionClient) CaculateOrderCommission(ctx context.Context, in *CaculateOrderCommissionRequest, opts ...grpc.CallOption) (*CaculateOrderCommissionResponse, error) {
-	out := new(CaculateOrderCommissionResponse)
-	err := c.cc.Invoke(ctx, "/archivement.manager.commission.v1.Commission/CaculateOrderCommission", in, out, opts...)
+func (c *commissionClient) CalculateOrderCommission(ctx context.Context, in *CalculateOrderCommissionRequest, opts ...grpc.CallOption) (*CalculateOrderCommissionResponse, error) {
+	out := new(CalculateOrderCommissionResponse)
+	err := c.cc.Invoke(ctx, "/archivement.manager.commission.v1.Commission/CalculateOrderCommission", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *commissionClient) CreateAppUserGoodCommissions(ctx context.Context, in 
 type CommissionServer interface {
 	// Method Version
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
-	CaculateOrderCommission(context.Context, *CaculateOrderCommissionRequest) (*CaculateOrderCommissionResponse, error)
+	CalculateOrderCommission(context.Context, *CalculateOrderCommissionRequest) (*CalculateOrderCommissionResponse, error)
 	CreateAppUserGoodCommissions(context.Context, *CreateAppUserGoodCommissionsRequest) (*CreateAppUserGoodCommissionsResponse, error)
 	mustEmbedUnimplementedCommissionServer()
 }
@@ -83,8 +83,8 @@ type UnimplementedCommissionServer struct {
 func (UnimplementedCommissionServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
-func (UnimplementedCommissionServer) CaculateOrderCommission(context.Context, *CaculateOrderCommissionRequest) (*CaculateOrderCommissionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CaculateOrderCommission not implemented")
+func (UnimplementedCommissionServer) CalculateOrderCommission(context.Context, *CalculateOrderCommissionRequest) (*CalculateOrderCommissionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CalculateOrderCommission not implemented")
 }
 func (UnimplementedCommissionServer) CreateAppUserGoodCommissions(context.Context, *CreateAppUserGoodCommissionsRequest) (*CreateAppUserGoodCommissionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserGoodCommissions not implemented")
@@ -120,20 +120,20 @@ func _Commission_Version_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Commission_CaculateOrderCommission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CaculateOrderCommissionRequest)
+func _Commission_CalculateOrderCommission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CalculateOrderCommissionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CommissionServer).CaculateOrderCommission(ctx, in)
+		return srv.(CommissionServer).CalculateOrderCommission(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/archivement.manager.commission.v1.Commission/CaculateOrderCommission",
+		FullMethod: "/archivement.manager.commission.v1.Commission/CalculateOrderCommission",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CommissionServer).CaculateOrderCommission(ctx, req.(*CaculateOrderCommissionRequest))
+		return srv.(CommissionServer).CalculateOrderCommission(ctx, req.(*CalculateOrderCommissionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -168,8 +168,8 @@ var Commission_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Commission_Version_Handler,
 		},
 		{
-			MethodName: "CaculateOrderCommission",
-			Handler:    _Commission_CaculateOrderCommission_Handler,
+			MethodName: "CalculateOrderCommission",
+			Handler:    _Commission_CalculateOrderCommission_Handler,
 		},
 		{
 			MethodName: "CreateAppUserGoodCommissions",

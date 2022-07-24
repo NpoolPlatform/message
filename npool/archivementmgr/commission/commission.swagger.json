@@ -77,7 +77,7 @@
         }
       }
     },
-    "v1CaculateOrderCommissionResponse": {
+    "v1CalculateOrderCommissionResponse": {
       "type": "object",
       "properties": {
         "Info": {

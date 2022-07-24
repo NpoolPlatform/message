@@ -13,7 +13,7 @@ service Commission {
     // Method Version
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {}
 
-    rpc CaculateOrderCommission (CaculateOrderCommissionRequest) returns (CaculateOrderCommissionResponse) {}
+    rpc CalculateOrderCommission (CalculateOrderCommissionRequest) returns (CalculateOrderCommissionResponse) {}
 
     rpc CreateAppUserGoodCommissions (CreateAppUserGoodCommissionsRequest) returns (CreateAppUserGoodCommissionsResponse) {
         option (google.api.http) = {
@@ -23,11 +23,11 @@ service Commission {
     }
 }
 
-message CaculateOrderCommissionRequest {
+message CalculateOrderCommissionRequest {
     string OrderID = 10;
 }
 
-message CaculateOrderCommissionResponse {
+message CalculateOrderCommissionResponse {
     // Commission amount in string
     string Info = 10;
 }
