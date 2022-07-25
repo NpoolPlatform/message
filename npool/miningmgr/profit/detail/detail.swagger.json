@@ -59,7 +59,7 @@
         "Amount": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "BenefitAt": {
+        "BenefitDate": {
           "$ref": "#/definitions/v1Uint32Val"
         }
       }
@@ -107,7 +107,7 @@
         "Amount": {
           "type": "string"
         },
-        "BenefitAt": {
+        "BenefitDate": {
           "type": "integer",
           "format": "int64"
         },
@@ -132,7 +132,7 @@
         "Amount": {
           "type": "string"
         },
-        "BenefitAt": {
+        "BenefitDate": {
           "type": "integer",
           "format": "int64",
           "title": "E.g. when pay with non-USDT coin"

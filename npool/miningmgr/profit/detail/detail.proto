@@ -34,7 +34,7 @@ message DetailReq {
     optional string     CoinTypeID       = 30;
     optional string     Amount           = 40;
     // E.g. when pay with non-USDT coin
-    optional uint32     BenefitAt        = 50;
+    optional uint32     BenefitDate      = 50;
     optional uint32     CreatedAt        = 60;
 }
 
@@ -43,7 +43,7 @@ message Detail {
     string      GoodID            = 20;
     string      CoinTypeID        = 30;
     string      Amount            = 40;
-    uint32      BenefitAt         = 50;
+    uint32      BenefitDate       = 50;
     uint32      CreatedAt         = 60;
 }
 
@@ -52,7 +52,7 @@ message Conds {
     optional npool.v1.StringVal GoodID           = 20;
     optional npool.v1.StringVal CoinTypeID       = 30;
     optional npool.v1.StringVal Amount           = 40;
-    optional npool.v1.Uint32Val BenefitAt        = 50;
+    optional npool.v1.Uint32Val BenefitDate      = 50;
 }
 
 
