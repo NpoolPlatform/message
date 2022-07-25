@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/servicetmpl/servicetmpl.proto",
+    "title": "npool/archivementmgr/commission/commission.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "ServiceTemplate"
+      "name": "Commission"
     }
   ],
   "consumes": [
@@ -16,15 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/version": {
+    "/v1/create/app/user/good/commissions": {
       "post": {
-        "summary": "Method Version",
-        "operationId": "ServiceTemplate_Version",
+        "operationId": "Commission_CreateAppUserGoodCommissions",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1VersionResponse"
+              "$ref": "#/definitions/v1CreateAppUserGoodCommissionsResponse"
             }
           },
           "default": {
@@ -40,12 +39,12 @@
             "in": "body",
             "required": true,
             "schema": {
-              "properties": {}
+              "$ref": "#/definitions/v1CreateAppUserGoodCommissionsRequest"
             }
           }
         ],
         "tags": [
-          "ServiceTemplate"
+          "Commission"
         ]
       }
     }
@@ -77,6 +76,26 @@
           }
         }
       }
+    },
+    "v1CalculateOrderCommissionResponse": {
+      "type": "object"
+    },
+    "v1CreateAppUserGoodCommissionsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateAppUserGoodCommissionsResponse": {
+      "type": "object"
     },
     "v1VersionResponse": {
       "type": "object",

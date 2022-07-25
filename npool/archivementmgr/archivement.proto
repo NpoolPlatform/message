@@ -1,15 +1,15 @@
 syntax = "proto3";
 
-package service.template.v1;
+package archivement.manager.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/servicetmpl";
+option go_package = "github.com/NpoolPlatform/message/npool/archivementmgr";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
-service ServiceTemplate {
+service ArchivementManager {
     // Method Version
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
         option (google.api.http) = {

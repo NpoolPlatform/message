@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/servicetmpl/servicetmpl.proto",
+    "title": "npool/ledgermgr/ledgermgr.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "ServiceTemplate"
+      "name": "LedgerManager"
     }
   ],
   "consumes": [
@@ -19,7 +19,7 @@
     "/v1/version": {
       "post": {
         "summary": "Method Version",
-        "operationId": "ServiceTemplate_Version",
+        "operationId": "LedgerManager_Version",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -45,7 +45,7 @@
           }
         ],
         "tags": [
-          "ServiceTemplate"
+          "LedgerManager"
         ]
       }
     }

@@ -1114,6 +1114,8 @@ message GoodPayment {
     bool Idle = 50;
     string OccupiedBy = 60;
     uint32 AvailableAt = 70;
+    string CollectingTID = 80;
+    string UsedFor = 90;
 }
 
 message CreateGoodPaymentRequest {
@@ -1549,6 +1551,7 @@ message UserPaymentBalance {
     string UsedByPaymentID = 60;
     string CoinTypeID = 70;
     double CoinUSDCurrency = 80;
+    string BalanceType = 90;
 }
 
 message CreateUserPaymentBalanceRequest {
