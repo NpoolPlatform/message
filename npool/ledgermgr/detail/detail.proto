@@ -65,8 +65,7 @@ message DetailReq {
     optional string     FromCoinTypeID   = 80;
     optional string     CoinUSDCurrency  = 90;
     optional string     IOExtra          = 100;
-    optional string     FromOldID        = 110;
-    optional uint32     CreatedAt        = 120;
+    optional uint32     CreatedAt        = 110;
 }
 
 message Detail {
@@ -80,8 +79,7 @@ message Detail {
     string      FromCoinTypeID    = 80;
     string      CoinUSDCurrency   = 90;
     string      IOExtra           = 100;
-    string      FromOldID         = 110;
-    uint32      CreatedAt         = 120;
+    uint32      CreatedAt         = 110;
 }
 
 message Conds {
@@ -95,7 +93,6 @@ message Conds {
     optional npool.v1.StringVal FromCoinTypeID   = 80;
     optional npool.v1.StringVal CoinUSDCurrency  = 90;
     optional npool.v1.StringVal IOExtra          = 100;
-    optional npool.v1.StringVal FromOldID        = 110;
 }
 
 
