@@ -36,9 +36,21 @@ service SphinxProxy {
       body: "*"
     };
   }
+  rpc UpdateTransaction (UpdateTransactionRequest) returns (UpdateTransactionResponse) {
+    option (google.api.http) = {
+      post: "/v1/update/transaction"
+      body: "*"
+    };
+  }
   rpc GetTransaction (GetTransactionRequest) returns (GetTransactionResponse) {
     option (google.api.http) = {
       post: "/v1/get/transaction"
+      body: "*"
+    };
+  }
+  rpc GetTransactions (GetTransactionsRequest) returns (GetTransactionsResponse) {
+    option (google.api.http) = {
+      post: "/v1/get/transactions"
       body: "*"
     };
   }
@@ -90,8 +102,20 @@ message CreateTransactionRequest {
 message CreateTransactionResponse {
 }
 
+message UpdateTransactionRequest {
+  string            TransactionID         = 100;
+  TransactionState  TransactionState      = 110;
+  TransactionState  NextTransactionState  = 111;
+  bytes             Payload               = 120;
+  string            CID				            = 130;
+  int64             ExitCode              = 140;
+}
+
+message UpdateTransactionResponse {
+}
+
 message GetTransactionRequest {
-  string TransactionID    = 100;
+  string TransactionID  = 100;
 }
 
 message TransactionInfo {
@@ -101,6 +125,7 @@ message TransactionInfo {
 	string From 			                  = 130;
 	string To 				                  = 140;
 	TransactionState TransactionState   = 150;
+  bytes Payload                       = 151;
 	string CID				                  = 160;
   int64 ExitCode                      = 170;
 	uint32 CreatedAt 		                = 180;
@@ -109,6 +134,19 @@ message TransactionInfo {
 
 message GetTransactionResponse {
   TransactionInfo Info = 100;
+}
+
+message GetTransactionsRequest {
+  sphinx.plugin.v1.CoinType CoinType                = 100;
+  TransactionState TransactionState                 = 110;
+  string ENV                                        = 120; // main or test
+  uint32 Offset                                     = 130;
+  uint32 Limit                                      = 140;
+}
+
+message GetTransactionsResponse {
+  repeated TransactionInfo Infos  = 100;
+  uint32 Total                    = 110;
 }
 
 // ############################# async
@@ -124,8 +162,11 @@ message ProxyPluginResponse {
   string BalanceStr                         = 160;
   sphinx.plugin.v1.UnsignedMessage  Message = 170;
   int64  ExitCode                           = 180; // -1 find cid state on chain internal server error
-
+  string PluginWanIP                        = 190;
+  string PluginPosition                     = 200;
   string RPCExitMessage                     = 1000;
+
+  bytes Payload                             = 1100;
 }
 
 // MpoolGetNonce WalletBalance MpoolPush ..
@@ -135,7 +176,6 @@ message ProxyPluginRequest {
   string TransactionID                        = 120;
   // query wallet account
   string Address                              = 130;
-
   sphinx.plugin.v1.UnsignedMessage Message    = 140;
   // fil
   sphinx.plugin.v1.Signature       Signature  = 150;
@@ -147,6 +187,7 @@ message ProxyPluginRequest {
 
   // gas fee
   double Fee                                  = 170;
+  bytes Payload                               = 180;
 }
 
 message ProxySignRequest {
@@ -154,6 +195,8 @@ message ProxySignRequest {
   TransactionType TransactionType             = 110;
   string TransactionID                        = 120;
   sphinx.plugin.v1.UnsignedMessage Message    = 130;
+
+  bytes Payload = 140;
 }
 
 message ProxySignResponse {
@@ -168,6 +211,8 @@ message ProxySignResponse {
   string  SignedRawTxHex              = 150;
 
   string RPCExitMessage               = 1000;
+
+  bytes Payload = 1100;
 }
 
 message ProxySignResponseInfo {
@@ -178,22 +223,18 @@ message ProxySignResponseInfo {
 
 enum TransactionType {
   Invalid         = 0;
-  WalletNew       = 1; // proxy -> sign
-  TransactionNew  = 2;
-  Signature       = 3; // proxy -> sign
-  Balance         = 4; // proxy -> plugin
-  PreSign         = 5; // proxy -> pluign get nonce
-  Broadcast       = 6; // proxy -> plugin mpool push
-  RegisterCoin    = 7; // plugin -> proxy
-  SyncMsgState    = 8; // plugin -> proxy
-  GasFee          = 9; // get: plugin -> proxy, set: proxy -> plugin
+  WalletNew       = 1;
+  Balance         = 2;
+  RegisterCoin    = 3;
+  GasFee          = 4;
 }
 
 enum TransactionState {
 	TransactionStateUnKnow  			= 0;
 	TransactionStateWait  				= 1;
 	TransactionStateSign  				= 2;
-	TransactionStateSync  				= 3;
+  TransactionStateBroadcast     = 20; // TODO: caution
+  TransactionStateSync  				= 3;
 	TransactionStateDone     			= 4;
 	TransactionStateFail     			= 5;
 }
