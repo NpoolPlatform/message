@@ -22,7 +22,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type DetailReq struct {
+type UnsoldReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -35,8 +35,8 @@ type DetailReq struct {
 	CreatedAt   *uint32 `protobuf:"varint,60,opt,name=CreatedAt,proto3,oneof" json:"CreatedAt,omitempty"`
 }
 
-func (x *DetailReq) Reset() {
-	*x = DetailReq{}
+func (x *UnsoldReq) Reset() {
+	*x = UnsoldReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -44,13 +44,13 @@ func (x *DetailReq) Reset() {
 	}
 }
 
-func (x *DetailReq) String() string {
+func (x *UnsoldReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DetailReq) ProtoMessage() {}
+func (*UnsoldReq) ProtoMessage() {}
 
-func (x *DetailReq) ProtoReflect() protoreflect.Message {
+func (x *UnsoldReq) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -62,54 +62,54 @@ func (x *DetailReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DetailReq.ProtoReflect.Descriptor instead.
-func (*DetailReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use UnsoldReq.ProtoReflect.Descriptor instead.
+func (*UnsoldReq) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *DetailReq) GetID() string {
+func (x *UnsoldReq) GetID() string {
 	if x != nil && x.ID != nil {
 		return *x.ID
 	}
 	return ""
 }
 
-func (x *DetailReq) GetGoodID() string {
+func (x *UnsoldReq) GetGoodID() string {
 	if x != nil && x.GoodID != nil {
 		return *x.GoodID
 	}
 	return ""
 }
 
-func (x *DetailReq) GetCoinTypeID() string {
+func (x *UnsoldReq) GetCoinTypeID() string {
 	if x != nil && x.CoinTypeID != nil {
 		return *x.CoinTypeID
 	}
 	return ""
 }
 
-func (x *DetailReq) GetAmount() string {
+func (x *UnsoldReq) GetAmount() string {
 	if x != nil && x.Amount != nil {
 		return *x.Amount
 	}
 	return ""
 }
 
-func (x *DetailReq) GetBenefitDate() uint32 {
+func (x *UnsoldReq) GetBenefitDate() uint32 {
 	if x != nil && x.BenefitDate != nil {
 		return *x.BenefitDate
 	}
 	return 0
 }
 
-func (x *DetailReq) GetCreatedAt() uint32 {
+func (x *UnsoldReq) GetCreatedAt() uint32 {
 	if x != nil && x.CreatedAt != nil {
 		return *x.CreatedAt
 	}
 	return 0
 }
 
-type Detail struct {
+type Unsold struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -122,8 +122,8 @@ type Detail struct {
 	CreatedAt   uint32 `protobuf:"varint,60,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
 }
 
-func (x *Detail) Reset() {
-	*x = Detail{}
+func (x *Unsold) Reset() {
+	*x = Unsold{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -131,13 +131,13 @@ func (x *Detail) Reset() {
 	}
 }
 
-func (x *Detail) String() string {
+func (x *Unsold) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Detail) ProtoMessage() {}
+func (*Unsold) ProtoMessage() {}
 
-func (x *Detail) ProtoReflect() protoreflect.Message {
+func (x *Unsold) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -149,47 +149,47 @@ func (x *Detail) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Detail.ProtoReflect.Descriptor instead.
-func (*Detail) Descriptor() ([]byte, []int) {
+// Deprecated: Use Unsold.ProtoReflect.Descriptor instead.
+func (*Unsold) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *Detail) GetID() string {
+func (x *Unsold) GetID() string {
 	if x != nil {
 		return x.ID
 	}
 	return ""
 }
 
-func (x *Detail) GetGoodID() string {
+func (x *Unsold) GetGoodID() string {
 	if x != nil {
 		return x.GoodID
 	}
 	return ""
 }
 
-func (x *Detail) GetCoinTypeID() string {
+func (x *Unsold) GetCoinTypeID() string {
 	if x != nil {
 		return x.CoinTypeID
 	}
 	return ""
 }
 
-func (x *Detail) GetAmount() string {
+func (x *Unsold) GetAmount() string {
 	if x != nil {
 		return x.Amount
 	}
 	return ""
 }
 
-func (x *Detail) GetBenefitDate() uint32 {
+func (x *Unsold) GetBenefitDate() uint32 {
 	if x != nil {
 		return x.BenefitDate
 	}
 	return 0
 }
 
-func (x *Detail) GetCreatedAt() uint32 {
+func (x *Unsold) GetCreatedAt() uint32 {
 	if x != nil {
 		return x.CreatedAt
 	}
@@ -275,16 +275,16 @@ func (x *Conds) GetBenefitDate() *npool.Uint32Val {
 	return nil
 }
 
-type CreateDetailRequest struct {
+type CreateUnsoldRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *DetailReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *UnsoldReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
-func (x *CreateDetailRequest) Reset() {
-	*x = CreateDetailRequest{}
+func (x *CreateUnsoldRequest) Reset() {
+	*x = CreateUnsoldRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -292,13 +292,13 @@ func (x *CreateDetailRequest) Reset() {
 	}
 }
 
-func (x *CreateDetailRequest) String() string {
+func (x *CreateUnsoldRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateDetailRequest) ProtoMessage() {}
+func (*CreateUnsoldRequest) ProtoMessage() {}
 
-func (x *CreateDetailRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateUnsoldRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -310,28 +310,28 @@ func (x *CreateDetailRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateDetailRequest.ProtoReflect.Descriptor instead.
-func (*CreateDetailRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateUnsoldRequest.ProtoReflect.Descriptor instead.
+func (*CreateUnsoldRequest) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *CreateDetailRequest) GetInfo() *DetailReq {
+func (x *CreateUnsoldRequest) GetInfo() *UnsoldReq {
 	if x != nil {
 		return x.Info
 	}
 	return nil
 }
 
-type CreateDetailResponse struct {
+type CreateUnsoldResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *Detail `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *Unsold `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
-func (x *CreateDetailResponse) Reset() {
-	*x = CreateDetailResponse{}
+func (x *CreateUnsoldResponse) Reset() {
+	*x = CreateUnsoldResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -339,13 +339,13 @@ func (x *CreateDetailResponse) Reset() {
 	}
 }
 
-func (x *CreateDetailResponse) String() string {
+func (x *CreateUnsoldResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateDetailResponse) ProtoMessage() {}
+func (*CreateUnsoldResponse) ProtoMessage() {}
 
-func (x *CreateDetailResponse) ProtoReflect() protoreflect.Message {
+func (x *CreateUnsoldResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -357,28 +357,28 @@ func (x *CreateDetailResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateDetailResponse.ProtoReflect.Descriptor instead.
-func (*CreateDetailResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateUnsoldResponse.ProtoReflect.Descriptor instead.
+func (*CreateUnsoldResponse) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *CreateDetailResponse) GetInfo() *Detail {
+func (x *CreateUnsoldResponse) GetInfo() *Unsold {
 	if x != nil {
 		return x.Info
 	}
 	return nil
 }
 
-type CreateDetailsRequest struct {
+type CreateUnsoldsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Infos []*DetailReq `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Infos []*UnsoldReq `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 }
 
-func (x *CreateDetailsRequest) Reset() {
-	*x = CreateDetailsRequest{}
+func (x *CreateUnsoldsRequest) Reset() {
+	*x = CreateUnsoldsRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -386,13 +386,13 @@ func (x *CreateDetailsRequest) Reset() {
 	}
 }
 
-func (x *CreateDetailsRequest) String() string {
+func (x *CreateUnsoldsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateDetailsRequest) ProtoMessage() {}
+func (*CreateUnsoldsRequest) ProtoMessage() {}
 
-func (x *CreateDetailsRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateUnsoldsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -404,28 +404,28 @@ func (x *CreateDetailsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateDetailsRequest.ProtoReflect.Descriptor instead.
-func (*CreateDetailsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateUnsoldsRequest.ProtoReflect.Descriptor instead.
+func (*CreateUnsoldsRequest) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *CreateDetailsRequest) GetInfos() []*DetailReq {
+func (x *CreateUnsoldsRequest) GetInfos() []*UnsoldReq {
 	if x != nil {
 		return x.Infos
 	}
 	return nil
 }
 
-type CreateDetailsResponse struct {
+type CreateUnsoldsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Infos []*Detail `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Infos []*Unsold `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 }
 
-func (x *CreateDetailsResponse) Reset() {
-	*x = CreateDetailsResponse{}
+func (x *CreateUnsoldsResponse) Reset() {
+	*x = CreateUnsoldsResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -433,13 +433,13 @@ func (x *CreateDetailsResponse) Reset() {
 	}
 }
 
-func (x *CreateDetailsResponse) String() string {
+func (x *CreateUnsoldsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateDetailsResponse) ProtoMessage() {}
+func (*CreateUnsoldsResponse) ProtoMessage() {}
 
-func (x *CreateDetailsResponse) ProtoReflect() protoreflect.Message {
+func (x *CreateUnsoldsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -451,19 +451,19 @@ func (x *CreateDetailsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateDetailsResponse.ProtoReflect.Descriptor instead.
-func (*CreateDetailsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateUnsoldsResponse.ProtoReflect.Descriptor instead.
+func (*CreateUnsoldsResponse) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *CreateDetailsResponse) GetInfos() []*Detail {
+func (x *CreateUnsoldsResponse) GetInfos() []*Unsold {
 	if x != nil {
 		return x.Infos
 	}
 	return nil
 }
 
-type GetDetailRequest struct {
+type GetUnsoldRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -471,8 +471,8 @@ type GetDetailRequest struct {
 	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
 }
 
-func (x *GetDetailRequest) Reset() {
-	*x = GetDetailRequest{}
+func (x *GetUnsoldRequest) Reset() {
+	*x = GetUnsoldRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -480,13 +480,13 @@ func (x *GetDetailRequest) Reset() {
 	}
 }
 
-func (x *GetDetailRequest) String() string {
+func (x *GetUnsoldRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDetailRequest) ProtoMessage() {}
+func (*GetUnsoldRequest) ProtoMessage() {}
 
-func (x *GetDetailRequest) ProtoReflect() protoreflect.Message {
+func (x *GetUnsoldRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -498,28 +498,28 @@ func (x *GetDetailRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDetailRequest.ProtoReflect.Descriptor instead.
-func (*GetDetailRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetUnsoldRequest.ProtoReflect.Descriptor instead.
+func (*GetUnsoldRequest) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *GetDetailRequest) GetID() string {
+func (x *GetUnsoldRequest) GetID() string {
 	if x != nil {
 		return x.ID
 	}
 	return ""
 }
 
-type GetDetailResponse struct {
+type GetUnsoldResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *Detail `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *Unsold `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
-func (x *GetDetailResponse) Reset() {
-	*x = GetDetailResponse{}
+func (x *GetUnsoldResponse) Reset() {
+	*x = GetUnsoldResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -527,13 +527,13 @@ func (x *GetDetailResponse) Reset() {
 	}
 }
 
-func (x *GetDetailResponse) String() string {
+func (x *GetUnsoldResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDetailResponse) ProtoMessage() {}
+func (*GetUnsoldResponse) ProtoMessage() {}
 
-func (x *GetDetailResponse) ProtoReflect() protoreflect.Message {
+func (x *GetUnsoldResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -545,19 +545,19 @@ func (x *GetDetailResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDetailResponse.ProtoReflect.Descriptor instead.
-func (*GetDetailResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetUnsoldResponse.ProtoReflect.Descriptor instead.
+func (*GetUnsoldResponse) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *GetDetailResponse) GetInfo() *Detail {
+func (x *GetUnsoldResponse) GetInfo() *Unsold {
 	if x != nil {
 		return x.Info
 	}
 	return nil
 }
 
-type GetDetailsRequest struct {
+type GetUnsoldsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -567,8 +567,8 @@ type GetDetailsRequest struct {
 	Limit  int32  `protobuf:"varint,30,opt,name=Limit,proto3" json:"Limit,omitempty"`
 }
 
-func (x *GetDetailsRequest) Reset() {
-	*x = GetDetailsRequest{}
+func (x *GetUnsoldsRequest) Reset() {
+	*x = GetUnsoldsRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -576,13 +576,13 @@ func (x *GetDetailsRequest) Reset() {
 	}
 }
 
-func (x *GetDetailsRequest) String() string {
+func (x *GetUnsoldsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDetailsRequest) ProtoMessage() {}
+func (*GetUnsoldsRequest) ProtoMessage() {}
 
-func (x *GetDetailsRequest) ProtoReflect() protoreflect.Message {
+func (x *GetUnsoldsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -594,43 +594,43 @@ func (x *GetDetailsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDetailsRequest.ProtoReflect.Descriptor instead.
-func (*GetDetailsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetUnsoldsRequest.ProtoReflect.Descriptor instead.
+func (*GetUnsoldsRequest) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *GetDetailsRequest) GetConds() *Conds {
+func (x *GetUnsoldsRequest) GetConds() *Conds {
 	if x != nil {
 		return x.Conds
 	}
 	return nil
 }
 
-func (x *GetDetailsRequest) GetOffset() int32 {
+func (x *GetUnsoldsRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *GetDetailsRequest) GetLimit() int32 {
+func (x *GetUnsoldsRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-type GetDetailsResponse struct {
+type GetUnsoldsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Infos []*Detail `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Infos []*Unsold `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 	Total uint32    `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
 }
 
-func (x *GetDetailsResponse) Reset() {
-	*x = GetDetailsResponse{}
+func (x *GetUnsoldsResponse) Reset() {
+	*x = GetUnsoldsResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -638,13 +638,13 @@ func (x *GetDetailsResponse) Reset() {
 	}
 }
 
-func (x *GetDetailsResponse) String() string {
+func (x *GetUnsoldsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDetailsResponse) ProtoMessage() {}
+func (*GetUnsoldsResponse) ProtoMessage() {}
 
-func (x *GetDetailsResponse) ProtoReflect() protoreflect.Message {
+func (x *GetUnsoldsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -656,26 +656,26 @@ func (x *GetDetailsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDetailsResponse.ProtoReflect.Descriptor instead.
-func (*GetDetailsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetUnsoldsResponse.ProtoReflect.Descriptor instead.
+func (*GetUnsoldsResponse) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *GetDetailsResponse) GetInfos() []*Detail {
+func (x *GetUnsoldsResponse) GetInfos() []*Unsold {
 	if x != nil {
 		return x.Infos
 	}
 	return nil
 }
 
-func (x *GetDetailsResponse) GetTotal() uint32 {
+func (x *GetUnsoldsResponse) GetTotal() uint32 {
 	if x != nil {
 		return x.Total
 	}
 	return 0
 }
 
-type GetDetailOnlyRequest struct {
+type GetUnsoldOnlyRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -683,8 +683,8 @@ type GetDetailOnlyRequest struct {
 	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
 }
 
-func (x *GetDetailOnlyRequest) Reset() {
-	*x = GetDetailOnlyRequest{}
+func (x *GetUnsoldOnlyRequest) Reset() {
+	*x = GetUnsoldOnlyRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -692,13 +692,13 @@ func (x *GetDetailOnlyRequest) Reset() {
 	}
 }
 
-func (x *GetDetailOnlyRequest) String() string {
+func (x *GetUnsoldOnlyRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDetailOnlyRequest) ProtoMessage() {}
+func (*GetUnsoldOnlyRequest) ProtoMessage() {}
 
-func (x *GetDetailOnlyRequest) ProtoReflect() protoreflect.Message {
+func (x *GetUnsoldOnlyRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -710,28 +710,28 @@ func (x *GetDetailOnlyRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDetailOnlyRequest.ProtoReflect.Descriptor instead.
-func (*GetDetailOnlyRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetUnsoldOnlyRequest.ProtoReflect.Descriptor instead.
+func (*GetUnsoldOnlyRequest) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *GetDetailOnlyRequest) GetConds() *Conds {
+func (x *GetUnsoldOnlyRequest) GetConds() *Conds {
 	if x != nil {
 		return x.Conds
 	}
 	return nil
 }
 
-type GetDetailOnlyResponse struct {
+type GetUnsoldOnlyResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *Detail `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *Unsold `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
-func (x *GetDetailOnlyResponse) Reset() {
-	*x = GetDetailOnlyResponse{}
+func (x *GetUnsoldOnlyResponse) Reset() {
+	*x = GetUnsoldOnlyResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -739,13 +739,13 @@ func (x *GetDetailOnlyResponse) Reset() {
 	}
 }
 
-func (x *GetDetailOnlyResponse) String() string {
+func (x *GetUnsoldOnlyResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDetailOnlyResponse) ProtoMessage() {}
+func (*GetUnsoldOnlyResponse) ProtoMessage() {}
 
-func (x *GetDetailOnlyResponse) ProtoReflect() protoreflect.Message {
+func (x *GetUnsoldOnlyResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -757,19 +757,19 @@ func (x *GetDetailOnlyResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDetailOnlyResponse.ProtoReflect.Descriptor instead.
-func (*GetDetailOnlyResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetUnsoldOnlyResponse.ProtoReflect.Descriptor instead.
+func (*GetUnsoldOnlyResponse) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *GetDetailOnlyResponse) GetInfo() *Detail {
+func (x *GetUnsoldOnlyResponse) GetInfo() *Unsold {
 	if x != nil {
 		return x.Info
 	}
 	return nil
 }
 
-type ExistDetailRequest struct {
+type ExistUnsoldRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -777,8 +777,8 @@ type ExistDetailRequest struct {
 	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
 }
 
-func (x *ExistDetailRequest) Reset() {
-	*x = ExistDetailRequest{}
+func (x *ExistUnsoldRequest) Reset() {
+	*x = ExistUnsoldRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -786,13 +786,13 @@ func (x *ExistDetailRequest) Reset() {
 	}
 }
 
-func (x *ExistDetailRequest) String() string {
+func (x *ExistUnsoldRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ExistDetailRequest) ProtoMessage() {}
+func (*ExistUnsoldRequest) ProtoMessage() {}
 
-func (x *ExistDetailRequest) ProtoReflect() protoreflect.Message {
+func (x *ExistUnsoldRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -804,19 +804,19 @@ func (x *ExistDetailRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ExistDetailRequest.ProtoReflect.Descriptor instead.
-func (*ExistDetailRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ExistUnsoldRequest.ProtoReflect.Descriptor instead.
+func (*ExistUnsoldRequest) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{13}
 }
 
-func (x *ExistDetailRequest) GetID() string {
+func (x *ExistUnsoldRequest) GetID() string {
 	if x != nil {
 		return x.ID
 	}
 	return ""
 }
 
-type ExistDetailResponse struct {
+type ExistUnsoldResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -824,8 +824,8 @@ type ExistDetailResponse struct {
 	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
-func (x *ExistDetailResponse) Reset() {
-	*x = ExistDetailResponse{}
+func (x *ExistUnsoldResponse) Reset() {
+	*x = ExistUnsoldResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -833,13 +833,13 @@ func (x *ExistDetailResponse) Reset() {
 	}
 }
 
-func (x *ExistDetailResponse) String() string {
+func (x *ExistUnsoldResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ExistDetailResponse) ProtoMessage() {}
+func (*ExistUnsoldResponse) ProtoMessage() {}
 
-func (x *ExistDetailResponse) ProtoReflect() protoreflect.Message {
+func (x *ExistUnsoldResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -851,19 +851,19 @@ func (x *ExistDetailResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ExistDetailResponse.ProtoReflect.Descriptor instead.
-func (*ExistDetailResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ExistUnsoldResponse.ProtoReflect.Descriptor instead.
+func (*ExistUnsoldResponse) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{14}
 }
 
-func (x *ExistDetailResponse) GetInfo() bool {
+func (x *ExistUnsoldResponse) GetInfo() bool {
 	if x != nil {
 		return x.Info
 	}
 	return false
 }
 
-type ExistDetailCondsRequest struct {
+type ExistUnsoldCondsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -871,8 +871,8 @@ type ExistDetailCondsRequest struct {
 	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
 }
 
-func (x *ExistDetailCondsRequest) Reset() {
-	*x = ExistDetailCondsRequest{}
+func (x *ExistUnsoldCondsRequest) Reset() {
+	*x = ExistUnsoldCondsRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -880,13 +880,13 @@ func (x *ExistDetailCondsRequest) Reset() {
 	}
 }
 
-func (x *ExistDetailCondsRequest) String() string {
+func (x *ExistUnsoldCondsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ExistDetailCondsRequest) ProtoMessage() {}
+func (*ExistUnsoldCondsRequest) ProtoMessage() {}
 
-func (x *ExistDetailCondsRequest) ProtoReflect() protoreflect.Message {
+func (x *ExistUnsoldCondsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -898,19 +898,19 @@ func (x *ExistDetailCondsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ExistDetailCondsRequest.ProtoReflect.Descriptor instead.
-func (*ExistDetailCondsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ExistUnsoldCondsRequest.ProtoReflect.Descriptor instead.
+func (*ExistUnsoldCondsRequest) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{15}
 }
 
-func (x *ExistDetailCondsRequest) GetConds() *Conds {
+func (x *ExistUnsoldCondsRequest) GetConds() *Conds {
 	if x != nil {
 		return x.Conds
 	}
 	return nil
 }
 
-type ExistDetailCondsResponse struct {
+type ExistUnsoldCondsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -918,8 +918,8 @@ type ExistDetailCondsResponse struct {
 	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
-func (x *ExistDetailCondsResponse) Reset() {
-	*x = ExistDetailCondsResponse{}
+func (x *ExistUnsoldCondsResponse) Reset() {
+	*x = ExistUnsoldCondsResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -927,13 +927,13 @@ func (x *ExistDetailCondsResponse) Reset() {
 	}
 }
 
-func (x *ExistDetailCondsResponse) String() string {
+func (x *ExistUnsoldCondsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ExistDetailCondsResponse) ProtoMessage() {}
+func (*ExistUnsoldCondsResponse) ProtoMessage() {}
 
-func (x *ExistDetailCondsResponse) ProtoReflect() protoreflect.Message {
+func (x *ExistUnsoldCondsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -945,19 +945,19 @@ func (x *ExistDetailCondsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ExistDetailCondsResponse.ProtoReflect.Descriptor instead.
-func (*ExistDetailCondsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ExistUnsoldCondsResponse.ProtoReflect.Descriptor instead.
+func (*ExistUnsoldCondsResponse) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{16}
 }
 
-func (x *ExistDetailCondsResponse) GetInfo() bool {
+func (x *ExistUnsoldCondsResponse) GetInfo() bool {
 	if x != nil {
 		return x.Info
 	}
 	return false
 }
 
-type CountDetailsRequest struct {
+type CountUnsoldsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -965,8 +965,8 @@ type CountDetailsRequest struct {
 	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
 }
 
-func (x *CountDetailsRequest) Reset() {
-	*x = CountDetailsRequest{}
+func (x *CountUnsoldsRequest) Reset() {
+	*x = CountUnsoldsRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -974,13 +974,13 @@ func (x *CountDetailsRequest) Reset() {
 	}
 }
 
-func (x *CountDetailsRequest) String() string {
+func (x *CountUnsoldsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CountDetailsRequest) ProtoMessage() {}
+func (*CountUnsoldsRequest) ProtoMessage() {}
 
-func (x *CountDetailsRequest) ProtoReflect() protoreflect.Message {
+func (x *CountUnsoldsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -992,19 +992,19 @@ func (x *CountDetailsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CountDetailsRequest.ProtoReflect.Descriptor instead.
-func (*CountDetailsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CountUnsoldsRequest.ProtoReflect.Descriptor instead.
+func (*CountUnsoldsRequest) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{17}
 }
 
-func (x *CountDetailsRequest) GetConds() *Conds {
+func (x *CountUnsoldsRequest) GetConds() *Conds {
 	if x != nil {
 		return x.Conds
 	}
 	return nil
 }
 
-type CountDetailsResponse struct {
+type CountUnsoldsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1012,8 +1012,8 @@ type CountDetailsResponse struct {
 	Info uint32 `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
-func (x *CountDetailsResponse) Reset() {
-	*x = CountDetailsResponse{}
+func (x *CountUnsoldsResponse) Reset() {
+	*x = CountUnsoldsResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1021,13 +1021,13 @@ func (x *CountDetailsResponse) Reset() {
 	}
 }
 
-func (x *CountDetailsResponse) String() string {
+func (x *CountUnsoldsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CountDetailsResponse) ProtoMessage() {}
+func (*CountUnsoldsResponse) ProtoMessage() {}
 
-func (x *CountDetailsResponse) ProtoReflect() protoreflect.Message {
+func (x *CountUnsoldsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1039,12 +1039,12 @@ func (x *CountDetailsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CountDetailsResponse.ProtoReflect.Descriptor instead.
-func (*CountDetailsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use CountUnsoldsResponse.ProtoReflect.Descriptor instead.
+func (*CountUnsoldsResponse) Descriptor() ([]byte, []int) {
 	return file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP(), []int{18}
 }
 
-func (x *CountDetailsResponse) GetInfo() uint32 {
+func (x *CountUnsoldsResponse) GetInfo() uint32 {
 	if x != nil {
 		return x.Info
 	}
@@ -1062,7 +1062,7 @@ var file_npool_miningmgr_profit_unsold_unsold_proto_rawDesc = []byte{
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x65,
 	0x6d, 0x70, 0x74, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x11, 0x6e, 0x70, 0x6f, 0x6f,
 	0x6c, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x93, 0x02,
-	0x0a, 0x09, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x71, 0x12, 0x13, 0x0a, 0x02, 0x49,
+	0x0a, 0x09, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52, 0x65, 0x71, 0x12, 0x13, 0x0a, 0x02, 0x49,
 	0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x02, 0x49, 0x44, 0x88, 0x01, 0x01,
 	0x12, 0x1b, 0x0a, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09,
 	0x48, 0x01, 0x52, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x88, 0x01, 0x01, 0x12, 0x23, 0x0a,
@@ -1079,7 +1079,7 @@ var file_npool_miningmgr_profit_unsold_unsold_proto_rawDesc = []byte{
 	0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x49, 0x44, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x41,
 	0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x42, 0x0e, 0x0a, 0x0c, 0x5f, 0x42, 0x65, 0x6e, 0x65, 0x66, 0x69,
 	0x74, 0x44, 0x61, 0x74, 0x65, 0x42, 0x0c, 0x0a, 0x0a, 0x5f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
-	0x64, 0x41, 0x74, 0x22, 0xa8, 0x01, 0x0a, 0x06, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x12, 0x0e,
+	0x64, 0x41, 0x74, 0x22, 0xa8, 0x01, 0x0a, 0x06, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x12, 0x0e,
 	0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x12, 0x16,
 	0x0a, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
 	0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x12, 0x1e, 0x0a, 0x0a, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79,
@@ -1111,36 +1111,36 @@ var file_npool_miningmgr_profit_unsold_unsold_proto_rawDesc = []byte{
 	0x0a, 0x0b, 0x5f, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x49, 0x44, 0x42, 0x09, 0x0a,
 	0x07, 0x5f, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x42, 0x0e, 0x0a, 0x0c, 0x5f, 0x42, 0x65, 0x6e,
 	0x65, 0x66, 0x69, 0x74, 0x44, 0x61, 0x74, 0x65, 0x22, 0x55, 0x0a, 0x13, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x74, 0x65, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
 	0x3e, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2a, 0x2e,
 	0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x70,
 	0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e,
-	0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22,
-	0x53, 0x0a, 0x14, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52,
+	0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22,
+	0x53, 0x0a, 0x14, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3b, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18,
 	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d,
 	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e,
-	0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x04,
-	0x49, 0x6e, 0x66, 0x6f, 0x22, 0x58, 0x0a, 0x14, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x65,
-	0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x40, 0x0a, 0x05,
+	0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52, 0x04,
+	0x49, 0x6e, 0x66, 0x6f, 0x22, 0x58, 0x0a, 0x14, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x6e,
+	0x73, 0x6f, 0x6c, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x40, 0x0a, 0x05,
 	0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2a, 0x2e, 0x6d, 0x69,
 	0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f,
-	0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65,
-	0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x71, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x56,
-	0x0a, 0x15, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52,
+	0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x6e,
+	0x73, 0x6f, 0x6c, 0x64, 0x52, 0x65, 0x71, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x56,
+	0x0a, 0x15, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x73, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3d, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73,
 	0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e,
 	0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75,
-	0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52,
-	0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x22, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x44, 0x65, 0x74,
-	0x61, 0x69, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44,
+	0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52,
+	0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x22, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x55, 0x6e, 0x73,
+	0x6f, 0x6c, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44,
 	0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x50, 0x0a, 0x11, 0x47, 0x65,
-	0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
 	0x3b, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x27, 0x2e,
 	0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x70,
 	0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e,
-	0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x7f, 0x0a, 0x11,
-	0x47, 0x65, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x7f, 0x0a, 0x11,
+	0x47, 0x65, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x12, 0x3c, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x26, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
 	0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e,
@@ -1148,113 +1148,113 @@ var file_npool_miningmgr_profit_unsold_unsold_proto_rawDesc = []byte{
 	0x16, 0x0a, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x14, 0x20, 0x01, 0x28, 0x05, 0x52,
 	0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74,
 	0x18, 0x1e, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0x69, 0x0a,
-	0x12, 0x47, 0x65, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x12, 0x47, 0x65, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x12, 0x3d, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03,
 	0x28, 0x0b, 0x32, 0x27, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61,
 	0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c,
-	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x05, 0x49, 0x6e, 0x66,
+	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52, 0x05, 0x49, 0x6e, 0x66,
 	0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28,
-	0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x54, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x44,
-	0x65, 0x74, 0x61, 0x69, 0x6c, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x54, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x55,
+	0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x12, 0x3c, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x26, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
 	0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76,
 	0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x54,
-	0x0a, 0x15, 0x47, 0x65, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x4f, 0x6e, 0x6c, 0x79, 0x52,
+	0x0a, 0x15, 0x47, 0x65, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3b, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18,
 	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d,
 	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e,
-	0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x04,
-	0x49, 0x6e, 0x66, 0x6f, 0x22, 0x24, 0x0a, 0x12, 0x45, 0x78, 0x69, 0x73, 0x74, 0x44, 0x65, 0x74,
-	0x61, 0x69, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44,
+	0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52, 0x04,
+	0x49, 0x6e, 0x66, 0x6f, 0x22, 0x24, 0x0a, 0x12, 0x45, 0x78, 0x69, 0x73, 0x74, 0x55, 0x6e, 0x73,
+	0x6f, 0x6c, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44,
 	0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x29, 0x0a, 0x13, 0x45, 0x78,
-	0x69, 0x73, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x69, 0x73, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x08, 0x52,
-	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x57, 0x0a, 0x17, 0x45, 0x78, 0x69, 0x73, 0x74, 0x44, 0x65,
-	0x74, 0x61, 0x69, 0x6c, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x57, 0x0a, 0x17, 0x45, 0x78, 0x69, 0x73, 0x74, 0x55, 0x6e,
+	0x73, 0x6f, 0x6c, 0x64, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x12, 0x3c, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x26, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
 	0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76,
 	0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x2e,
-	0x0a, 0x18, 0x45, 0x78, 0x69, 0x73, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x43, 0x6f, 0x6e,
+	0x0a, 0x18, 0x45, 0x78, 0x69, 0x73, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x43, 0x6f, 0x6e,
 	0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e,
 	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x53,
-	0x0a, 0x13, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65,
+	0x0a, 0x13, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x73, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3c, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61,
 	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73,
 	0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f,
-	0x6e, 0x64, 0x73, 0x22, 0x2a, 0x0a, 0x14, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x44, 0x65, 0x74, 0x61,
-	0x69, 0x6c, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49,
+	0x6e, 0x64, 0x73, 0x22, 0x2a, 0x0a, 0x14, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x55, 0x6e, 0x73, 0x6f,
+	0x6c, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49,
 	0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32,
 	0xc9, 0x08, 0x0a, 0x0c, 0x50, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64,
 	0x12, 0x3e, 0x0a, 0x07, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x16, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d,
 	0x70, 0x74, 0x79, 0x1a, 0x19, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x56,
 	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
-	0x12, 0x7d, 0x0a, 0x0c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c,
+	0x12, 0x7d, 0x0a, 0x0c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64,
 	0x12, 0x34, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
 	0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e,
-	0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52,
+	0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x35, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e,
 	0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75,
-	0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44,
-	0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
-	0x80, 0x01, 0x0a, 0x0d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c,
+	0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55,
+	0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
+	0x80, 0x01, 0x0a, 0x0d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64,
 	0x73, 0x12, 0x35, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
 	0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64,
-	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c,
+	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64,
 	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x36, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e,
 	0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74,
 	0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74,
-	0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x12, 0x74, 0x0a, 0x09, 0x47, 0x65, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x12,
+	0x65, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x00, 0x12, 0x74, 0x0a, 0x09, 0x47, 0x65, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x12,
 	0x31, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
 	0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76,
-	0x31, 0x2e, 0x47, 0x65, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x1a, 0x32, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61,
 	0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c,
-	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65,
+	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52, 0x65,
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x80, 0x01, 0x0a, 0x0d, 0x47, 0x65, 0x74,
-	0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x4f, 0x6e, 0x6c, 0x79, 0x12, 0x35, 0x2e, 0x6d, 0x69, 0x6e,
+	0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x12, 0x35, 0x2e, 0x6d, 0x69, 0x6e,
 	0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66,
 	0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
-	0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x1a, 0x36, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
 	0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64,
-	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x4f, 0x6e, 0x6c,
+	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x4f, 0x6e, 0x6c,
 	0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x77, 0x0a, 0x0a, 0x47,
-	0x65, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x32, 0x2e, 0x6d, 0x69, 0x6e, 0x69,
+	0x65, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x73, 0x12, 0x32, 0x2e, 0x6d, 0x69, 0x6e, 0x69,
 	0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69,
-	0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x44,
-	0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x33, 0x2e,
+	0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55,
+	0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x33, 0x2e,
 	0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x70,
 	0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e,
-	0x47, 0x65, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x12, 0x7a, 0x0a, 0x0b, 0x45, 0x78, 0x69, 0x73, 0x74, 0x44, 0x65, 0x74,
-	0x61, 0x69, 0x6c, 0x12, 0x33, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e,
+	0x47, 0x65, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0x7a, 0x0a, 0x0b, 0x45, 0x78, 0x69, 0x73, 0x74, 0x55, 0x6e, 0x73,
+	0x6f, 0x6c, 0x64, 0x12, 0x33, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e,
 	0x61, 0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f,
-	0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69,
-	0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e,
+	0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c,
+	0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e,
 	0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74,
 	0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74,
-	0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
-	0x12, 0x89, 0x01, 0x0a, 0x10, 0x45, 0x78, 0x69, 0x73, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c,
+	0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x12, 0x89, 0x01, 0x0a, 0x10, 0x45, 0x78, 0x69, 0x73, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64,
 	0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x38, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d,
 	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e,
-	0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x44, 0x65, 0x74,
-	0x61, 0x69, 0x6c, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x55, 0x6e, 0x73,
+	0x6f, 0x6c, 0x64, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
 	0x39, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
 	0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76,
-	0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x43, 0x6f, 0x6e,
+	0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x43, 0x6f, 0x6e,
 	0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7d, 0x0a, 0x0c,
-	0x43, 0x6f, 0x75, 0x6e, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x34, 0x2e, 0x6d,
+	0x43, 0x6f, 0x75, 0x6e, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x73, 0x12, 0x34, 0x2e, 0x6d,
 	0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x70, 0x72,
 	0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43,
-	0x6f, 0x75, 0x6e, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x6f, 0x75, 0x6e, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x1a, 0x35, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x61, 0x6e, 0x61,
 	0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x75, 0x6e, 0x73, 0x6f, 0x6c,
-	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c,
+	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x55, 0x6e, 0x73, 0x6f, 0x6c, 0x64,
 	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x40, 0x5a, 0x3e, 0x67,
 	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50,
 	0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f,
@@ -1277,25 +1277,25 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_rawDescGZIP() []byte {
 
 var file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
 var file_npool_miningmgr_profit_unsold_unsold_proto_goTypes = []interface{}{
-	(*DetailReq)(nil),                // 0: mining.manager.profit.unsold.v1.DetailReq
-	(*Detail)(nil),                   // 1: mining.manager.profit.unsold.v1.Detail
+	(*UnsoldReq)(nil),                // 0: mining.manager.profit.unsold.v1.UnsoldReq
+	(*Unsold)(nil),                   // 1: mining.manager.profit.unsold.v1.Unsold
 	(*Conds)(nil),                    // 2: mining.manager.profit.unsold.v1.Conds
-	(*CreateDetailRequest)(nil),      // 3: mining.manager.profit.unsold.v1.CreateDetailRequest
-	(*CreateDetailResponse)(nil),     // 4: mining.manager.profit.unsold.v1.CreateDetailResponse
-	(*CreateDetailsRequest)(nil),     // 5: mining.manager.profit.unsold.v1.CreateDetailsRequest
-	(*CreateDetailsResponse)(nil),    // 6: mining.manager.profit.unsold.v1.CreateDetailsResponse
-	(*GetDetailRequest)(nil),         // 7: mining.manager.profit.unsold.v1.GetDetailRequest
-	(*GetDetailResponse)(nil),        // 8: mining.manager.profit.unsold.v1.GetDetailResponse
-	(*GetDetailsRequest)(nil),        // 9: mining.manager.profit.unsold.v1.GetDetailsRequest
-	(*GetDetailsResponse)(nil),       // 10: mining.manager.profit.unsold.v1.GetDetailsResponse
-	(*GetDetailOnlyRequest)(nil),     // 11: mining.manager.profit.unsold.v1.GetDetailOnlyRequest
-	(*GetDetailOnlyResponse)(nil),    // 12: mining.manager.profit.unsold.v1.GetDetailOnlyResponse
-	(*ExistDetailRequest)(nil),       // 13: mining.manager.profit.unsold.v1.ExistDetailRequest
-	(*ExistDetailResponse)(nil),      // 14: mining.manager.profit.unsold.v1.ExistDetailResponse
-	(*ExistDetailCondsRequest)(nil),  // 15: mining.manager.profit.unsold.v1.ExistDetailCondsRequest
-	(*ExistDetailCondsResponse)(nil), // 16: mining.manager.profit.unsold.v1.ExistDetailCondsResponse
-	(*CountDetailsRequest)(nil),      // 17: mining.manager.profit.unsold.v1.CountDetailsRequest
-	(*CountDetailsResponse)(nil),     // 18: mining.manager.profit.unsold.v1.CountDetailsResponse
+	(*CreateUnsoldRequest)(nil),      // 3: mining.manager.profit.unsold.v1.CreateUnsoldRequest
+	(*CreateUnsoldResponse)(nil),     // 4: mining.manager.profit.unsold.v1.CreateUnsoldResponse
+	(*CreateUnsoldsRequest)(nil),     // 5: mining.manager.profit.unsold.v1.CreateUnsoldsRequest
+	(*CreateUnsoldsResponse)(nil),    // 6: mining.manager.profit.unsold.v1.CreateUnsoldsResponse
+	(*GetUnsoldRequest)(nil),         // 7: mining.manager.profit.unsold.v1.GetUnsoldRequest
+	(*GetUnsoldResponse)(nil),        // 8: mining.manager.profit.unsold.v1.GetUnsoldResponse
+	(*GetUnsoldsRequest)(nil),        // 9: mining.manager.profit.unsold.v1.GetUnsoldsRequest
+	(*GetUnsoldsResponse)(nil),       // 10: mining.manager.profit.unsold.v1.GetUnsoldsResponse
+	(*GetUnsoldOnlyRequest)(nil),     // 11: mining.manager.profit.unsold.v1.GetUnsoldOnlyRequest
+	(*GetUnsoldOnlyResponse)(nil),    // 12: mining.manager.profit.unsold.v1.GetUnsoldOnlyResponse
+	(*ExistUnsoldRequest)(nil),       // 13: mining.manager.profit.unsold.v1.ExistUnsoldRequest
+	(*ExistUnsoldResponse)(nil),      // 14: mining.manager.profit.unsold.v1.ExistUnsoldResponse
+	(*ExistUnsoldCondsRequest)(nil),  // 15: mining.manager.profit.unsold.v1.ExistUnsoldCondsRequest
+	(*ExistUnsoldCondsResponse)(nil), // 16: mining.manager.profit.unsold.v1.ExistUnsoldCondsResponse
+	(*CountUnsoldsRequest)(nil),      // 17: mining.manager.profit.unsold.v1.CountUnsoldsRequest
+	(*CountUnsoldsResponse)(nil),     // 18: mining.manager.profit.unsold.v1.CountUnsoldsResponse
 	(*npool.StringVal)(nil),          // 19: npool.v1.StringVal
 	(*npool.Uint32Val)(nil),          // 20: npool.v1.Uint32Val
 	(*emptypb.Empty)(nil),            // 21: google.protobuf.Empty
@@ -1307,35 +1307,35 @@ var file_npool_miningmgr_profit_unsold_unsold_proto_depIdxs = []int32{
 	19, // 2: mining.manager.profit.unsold.v1.Conds.CoinTypeID:type_name -> npool.v1.StringVal
 	19, // 3: mining.manager.profit.unsold.v1.Conds.Amount:type_name -> npool.v1.StringVal
 	20, // 4: mining.manager.profit.unsold.v1.Conds.BenefitDate:type_name -> npool.v1.Uint32Val
-	0,  // 5: mining.manager.profit.unsold.v1.CreateDetailRequest.Info:type_name -> mining.manager.profit.unsold.v1.DetailReq
-	1,  // 6: mining.manager.profit.unsold.v1.CreateDetailResponse.Info:type_name -> mining.manager.profit.unsold.v1.Detail
-	0,  // 7: mining.manager.profit.unsold.v1.CreateDetailsRequest.Infos:type_name -> mining.manager.profit.unsold.v1.DetailReq
-	1,  // 8: mining.manager.profit.unsold.v1.CreateDetailsResponse.Infos:type_name -> mining.manager.profit.unsold.v1.Detail
-	1,  // 9: mining.manager.profit.unsold.v1.GetDetailResponse.Info:type_name -> mining.manager.profit.unsold.v1.Detail
-	2,  // 10: mining.manager.profit.unsold.v1.GetDetailsRequest.Conds:type_name -> mining.manager.profit.unsold.v1.Conds
-	1,  // 11: mining.manager.profit.unsold.v1.GetDetailsResponse.Infos:type_name -> mining.manager.profit.unsold.v1.Detail
-	2,  // 12: mining.manager.profit.unsold.v1.GetDetailOnlyRequest.Conds:type_name -> mining.manager.profit.unsold.v1.Conds
-	1,  // 13: mining.manager.profit.unsold.v1.GetDetailOnlyResponse.Info:type_name -> mining.manager.profit.unsold.v1.Detail
-	2,  // 14: mining.manager.profit.unsold.v1.ExistDetailCondsRequest.Conds:type_name -> mining.manager.profit.unsold.v1.Conds
-	2,  // 15: mining.manager.profit.unsold.v1.CountDetailsRequest.Conds:type_name -> mining.manager.profit.unsold.v1.Conds
+	0,  // 5: mining.manager.profit.unsold.v1.CreateUnsoldRequest.Info:type_name -> mining.manager.profit.unsold.v1.UnsoldReq
+	1,  // 6: mining.manager.profit.unsold.v1.CreateUnsoldResponse.Info:type_name -> mining.manager.profit.unsold.v1.Unsold
+	0,  // 7: mining.manager.profit.unsold.v1.CreateUnsoldsRequest.Infos:type_name -> mining.manager.profit.unsold.v1.UnsoldReq
+	1,  // 8: mining.manager.profit.unsold.v1.CreateUnsoldsResponse.Infos:type_name -> mining.manager.profit.unsold.v1.Unsold
+	1,  // 9: mining.manager.profit.unsold.v1.GetUnsoldResponse.Info:type_name -> mining.manager.profit.unsold.v1.Unsold
+	2,  // 10: mining.manager.profit.unsold.v1.GetUnsoldsRequest.Conds:type_name -> mining.manager.profit.unsold.v1.Conds
+	1,  // 11: mining.manager.profit.unsold.v1.GetUnsoldsResponse.Infos:type_name -> mining.manager.profit.unsold.v1.Unsold
+	2,  // 12: mining.manager.profit.unsold.v1.GetUnsoldOnlyRequest.Conds:type_name -> mining.manager.profit.unsold.v1.Conds
+	1,  // 13: mining.manager.profit.unsold.v1.GetUnsoldOnlyResponse.Info:type_name -> mining.manager.profit.unsold.v1.Unsold
+	2,  // 14: mining.manager.profit.unsold.v1.ExistUnsoldCondsRequest.Conds:type_name -> mining.manager.profit.unsold.v1.Conds
+	2,  // 15: mining.manager.profit.unsold.v1.CountUnsoldsRequest.Conds:type_name -> mining.manager.profit.unsold.v1.Conds
 	21, // 16: mining.manager.profit.unsold.v1.ProfitUnsold.Version:input_type -> google.protobuf.Empty
-	3,  // 17: mining.manager.profit.unsold.v1.ProfitUnsold.CreateDetail:input_type -> mining.manager.profit.unsold.v1.CreateDetailRequest
-	5,  // 18: mining.manager.profit.unsold.v1.ProfitUnsold.CreateDetails:input_type -> mining.manager.profit.unsold.v1.CreateDetailsRequest
-	7,  // 19: mining.manager.profit.unsold.v1.ProfitUnsold.GetDetail:input_type -> mining.manager.profit.unsold.v1.GetDetailRequest
-	11, // 20: mining.manager.profit.unsold.v1.ProfitUnsold.GetDetailOnly:input_type -> mining.manager.profit.unsold.v1.GetDetailOnlyRequest
-	9,  // 21: mining.manager.profit.unsold.v1.ProfitUnsold.GetDetails:input_type -> mining.manager.profit.unsold.v1.GetDetailsRequest
-	13, // 22: mining.manager.profit.unsold.v1.ProfitUnsold.ExistDetail:input_type -> mining.manager.profit.unsold.v1.ExistDetailRequest
-	15, // 23: mining.manager.profit.unsold.v1.ProfitUnsold.ExistDetailConds:input_type -> mining.manager.profit.unsold.v1.ExistDetailCondsRequest
-	17, // 24: mining.manager.profit.unsold.v1.ProfitUnsold.CountDetails:input_type -> mining.manager.profit.unsold.v1.CountDetailsRequest
+	3,  // 17: mining.manager.profit.unsold.v1.ProfitUnsold.CreateUnsold:input_type -> mining.manager.profit.unsold.v1.CreateUnsoldRequest
+	5,  // 18: mining.manager.profit.unsold.v1.ProfitUnsold.CreateUnsolds:input_type -> mining.manager.profit.unsold.v1.CreateUnsoldsRequest
+	7,  // 19: mining.manager.profit.unsold.v1.ProfitUnsold.GetUnsold:input_type -> mining.manager.profit.unsold.v1.GetUnsoldRequest
+	11, // 20: mining.manager.profit.unsold.v1.ProfitUnsold.GetUnsoldOnly:input_type -> mining.manager.profit.unsold.v1.GetUnsoldOnlyRequest
+	9,  // 21: mining.manager.profit.unsold.v1.ProfitUnsold.GetUnsolds:input_type -> mining.manager.profit.unsold.v1.GetUnsoldsRequest
+	13, // 22: mining.manager.profit.unsold.v1.ProfitUnsold.ExistUnsold:input_type -> mining.manager.profit.unsold.v1.ExistUnsoldRequest
+	15, // 23: mining.manager.profit.unsold.v1.ProfitUnsold.ExistUnsoldConds:input_type -> mining.manager.profit.unsold.v1.ExistUnsoldCondsRequest
+	17, // 24: mining.manager.profit.unsold.v1.ProfitUnsold.CountUnsolds:input_type -> mining.manager.profit.unsold.v1.CountUnsoldsRequest
 	22, // 25: mining.manager.profit.unsold.v1.ProfitUnsold.Version:output_type -> npool.v1.VersionResponse
-	4,  // 26: mining.manager.profit.unsold.v1.ProfitUnsold.CreateDetail:output_type -> mining.manager.profit.unsold.v1.CreateDetailResponse
-	6,  // 27: mining.manager.profit.unsold.v1.ProfitUnsold.CreateDetails:output_type -> mining.manager.profit.unsold.v1.CreateDetailsResponse
-	8,  // 28: mining.manager.profit.unsold.v1.ProfitUnsold.GetDetail:output_type -> mining.manager.profit.unsold.v1.GetDetailResponse
-	12, // 29: mining.manager.profit.unsold.v1.ProfitUnsold.GetDetailOnly:output_type -> mining.manager.profit.unsold.v1.GetDetailOnlyResponse
-	10, // 30: mining.manager.profit.unsold.v1.ProfitUnsold.GetDetails:output_type -> mining.manager.profit.unsold.v1.GetDetailsResponse
-	14, // 31: mining.manager.profit.unsold.v1.ProfitUnsold.ExistDetail:output_type -> mining.manager.profit.unsold.v1.ExistDetailResponse
-	16, // 32: mining.manager.profit.unsold.v1.ProfitUnsold.ExistDetailConds:output_type -> mining.manager.profit.unsold.v1.ExistDetailCondsResponse
-	18, // 33: mining.manager.profit.unsold.v1.ProfitUnsold.CountDetails:output_type -> mining.manager.profit.unsold.v1.CountDetailsResponse
+	4,  // 26: mining.manager.profit.unsold.v1.ProfitUnsold.CreateUnsold:output_type -> mining.manager.profit.unsold.v1.CreateUnsoldResponse
+	6,  // 27: mining.manager.profit.unsold.v1.ProfitUnsold.CreateUnsolds:output_type -> mining.manager.profit.unsold.v1.CreateUnsoldsResponse
+	8,  // 28: mining.manager.profit.unsold.v1.ProfitUnsold.GetUnsold:output_type -> mining.manager.profit.unsold.v1.GetUnsoldResponse
+	12, // 29: mining.manager.profit.unsold.v1.ProfitUnsold.GetUnsoldOnly:output_type -> mining.manager.profit.unsold.v1.GetUnsoldOnlyResponse
+	10, // 30: mining.manager.profit.unsold.v1.ProfitUnsold.GetUnsolds:output_type -> mining.manager.profit.unsold.v1.GetUnsoldsResponse
+	14, // 31: mining.manager.profit.unsold.v1.ProfitUnsold.ExistUnsold:output_type -> mining.manager.profit.unsold.v1.ExistUnsoldResponse
+	16, // 32: mining.manager.profit.unsold.v1.ProfitUnsold.ExistUnsoldConds:output_type -> mining.manager.profit.unsold.v1.ExistUnsoldCondsResponse
+	18, // 33: mining.manager.profit.unsold.v1.ProfitUnsold.CountUnsolds:output_type -> mining.manager.profit.unsold.v1.CountUnsoldsResponse
 	25, // [25:34] is the sub-list for method output_type
 	16, // [16:25] is the sub-list for method input_type
 	16, // [16:16] is the sub-list for extension type_name
@@ -1350,7 +1350,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DetailReq); i {
+			switch v := v.(*UnsoldReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1362,7 +1362,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Detail); i {
+			switch v := v.(*Unsold); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1386,7 +1386,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateDetailRequest); i {
+			switch v := v.(*CreateUnsoldRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1398,7 +1398,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateDetailResponse); i {
+			switch v := v.(*CreateUnsoldResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1410,7 +1410,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateDetailsRequest); i {
+			switch v := v.(*CreateUnsoldsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1422,7 +1422,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateDetailsResponse); i {
+			switch v := v.(*CreateUnsoldsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1434,7 +1434,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetDetailRequest); i {
+			switch v := v.(*GetUnsoldRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1446,7 +1446,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetDetailResponse); i {
+			switch v := v.(*GetUnsoldResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1458,7 +1458,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetDetailsRequest); i {
+			switch v := v.(*GetUnsoldsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1470,7 +1470,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetDetailsResponse); i {
+			switch v := v.(*GetUnsoldsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1482,7 +1482,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetDetailOnlyRequest); i {
+			switch v := v.(*GetUnsoldOnlyRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1494,7 +1494,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetDetailOnlyResponse); i {
+			switch v := v.(*GetUnsoldOnlyResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1506,7 +1506,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistDetailRequest); i {
+			switch v := v.(*ExistUnsoldRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1518,7 +1518,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistDetailResponse); i {
+			switch v := v.(*ExistUnsoldResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1530,7 +1530,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistDetailCondsRequest); i {
+			switch v := v.(*ExistUnsoldCondsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1542,7 +1542,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistDetailCondsResponse); i {
+			switch v := v.(*ExistUnsoldCondsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1554,7 +1554,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CountDetailsRequest); i {
+			switch v := v.(*CountUnsoldsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1566,7 +1566,7 @@ func file_npool_miningmgr_profit_unsold_unsold_proto_init() {
 			}
 		}
 		file_npool_miningmgr_profit_unsold_unsold_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CountDetailsResponse); i {
+			switch v := v.(*CountUnsoldsResponse); i {
 			case 0:
 				return &v.state
 			case 1:

@@ -25,14 +25,14 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ProfitUnsoldClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
-	CreateDetail(ctx context.Context, in *CreateDetailRequest, opts ...grpc.CallOption) (*CreateDetailResponse, error)
-	CreateDetails(ctx context.Context, in *CreateDetailsRequest, opts ...grpc.CallOption) (*CreateDetailsResponse, error)
-	GetDetail(ctx context.Context, in *GetDetailRequest, opts ...grpc.CallOption) (*GetDetailResponse, error)
-	GetDetailOnly(ctx context.Context, in *GetDetailOnlyRequest, opts ...grpc.CallOption) (*GetDetailOnlyResponse, error)
-	GetDetails(ctx context.Context, in *GetDetailsRequest, opts ...grpc.CallOption) (*GetDetailsResponse, error)
-	ExistDetail(ctx context.Context, in *ExistDetailRequest, opts ...grpc.CallOption) (*ExistDetailResponse, error)
-	ExistDetailConds(ctx context.Context, in *ExistDetailCondsRequest, opts ...grpc.CallOption) (*ExistDetailCondsResponse, error)
-	CountDetails(ctx context.Context, in *CountDetailsRequest, opts ...grpc.CallOption) (*CountDetailsResponse, error)
+	CreateUnsold(ctx context.Context, in *CreateUnsoldRequest, opts ...grpc.CallOption) (*CreateUnsoldResponse, error)
+	CreateUnsolds(ctx context.Context, in *CreateUnsoldsRequest, opts ...grpc.CallOption) (*CreateUnsoldsResponse, error)
+	GetUnsold(ctx context.Context, in *GetUnsoldRequest, opts ...grpc.CallOption) (*GetUnsoldResponse, error)
+	GetUnsoldOnly(ctx context.Context, in *GetUnsoldOnlyRequest, opts ...grpc.CallOption) (*GetUnsoldOnlyResponse, error)
+	GetUnsolds(ctx context.Context, in *GetUnsoldsRequest, opts ...grpc.CallOption) (*GetUnsoldsResponse, error)
+	ExistUnsold(ctx context.Context, in *ExistUnsoldRequest, opts ...grpc.CallOption) (*ExistUnsoldResponse, error)
+	ExistUnsoldConds(ctx context.Context, in *ExistUnsoldCondsRequest, opts ...grpc.CallOption) (*ExistUnsoldCondsResponse, error)
+	CountUnsolds(ctx context.Context, in *CountUnsoldsRequest, opts ...grpc.CallOption) (*CountUnsoldsResponse, error)
 }
 
 type profitUnsoldClient struct {
@@ -52,72 +52,72 @@ func (c *profitUnsoldClient) Version(ctx context.Context, in *emptypb.Empty, opt
 	return out, nil
 }
 
-func (c *profitUnsoldClient) CreateDetail(ctx context.Context, in *CreateDetailRequest, opts ...grpc.CallOption) (*CreateDetailResponse, error) {
-	out := new(CreateDetailResponse)
-	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/CreateDetail", in, out, opts...)
+func (c *profitUnsoldClient) CreateUnsold(ctx context.Context, in *CreateUnsoldRequest, opts ...grpc.CallOption) (*CreateUnsoldResponse, error) {
+	out := new(CreateUnsoldResponse)
+	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/CreateUnsold", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *profitUnsoldClient) CreateDetails(ctx context.Context, in *CreateDetailsRequest, opts ...grpc.CallOption) (*CreateDetailsResponse, error) {
-	out := new(CreateDetailsResponse)
-	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/CreateDetails", in, out, opts...)
+func (c *profitUnsoldClient) CreateUnsolds(ctx context.Context, in *CreateUnsoldsRequest, opts ...grpc.CallOption) (*CreateUnsoldsResponse, error) {
+	out := new(CreateUnsoldsResponse)
+	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/CreateUnsolds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *profitUnsoldClient) GetDetail(ctx context.Context, in *GetDetailRequest, opts ...grpc.CallOption) (*GetDetailResponse, error) {
-	out := new(GetDetailResponse)
-	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/GetDetail", in, out, opts...)
+func (c *profitUnsoldClient) GetUnsold(ctx context.Context, in *GetUnsoldRequest, opts ...grpc.CallOption) (*GetUnsoldResponse, error) {
+	out := new(GetUnsoldResponse)
+	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/GetUnsold", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *profitUnsoldClient) GetDetailOnly(ctx context.Context, in *GetDetailOnlyRequest, opts ...grpc.CallOption) (*GetDetailOnlyResponse, error) {
-	out := new(GetDetailOnlyResponse)
-	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/GetDetailOnly", in, out, opts...)
+func (c *profitUnsoldClient) GetUnsoldOnly(ctx context.Context, in *GetUnsoldOnlyRequest, opts ...grpc.CallOption) (*GetUnsoldOnlyResponse, error) {
+	out := new(GetUnsoldOnlyResponse)
+	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/GetUnsoldOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *profitUnsoldClient) GetDetails(ctx context.Context, in *GetDetailsRequest, opts ...grpc.CallOption) (*GetDetailsResponse, error) {
-	out := new(GetDetailsResponse)
-	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/GetDetails", in, out, opts...)
+func (c *profitUnsoldClient) GetUnsolds(ctx context.Context, in *GetUnsoldsRequest, opts ...grpc.CallOption) (*GetUnsoldsResponse, error) {
+	out := new(GetUnsoldsResponse)
+	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/GetUnsolds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *profitUnsoldClient) ExistDetail(ctx context.Context, in *ExistDetailRequest, opts ...grpc.CallOption) (*ExistDetailResponse, error) {
-	out := new(ExistDetailResponse)
-	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/ExistDetail", in, out, opts...)
+func (c *profitUnsoldClient) ExistUnsold(ctx context.Context, in *ExistUnsoldRequest, opts ...grpc.CallOption) (*ExistUnsoldResponse, error) {
+	out := new(ExistUnsoldResponse)
+	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/ExistUnsold", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *profitUnsoldClient) ExistDetailConds(ctx context.Context, in *ExistDetailCondsRequest, opts ...grpc.CallOption) (*ExistDetailCondsResponse, error) {
-	out := new(ExistDetailCondsResponse)
-	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/ExistDetailConds", in, out, opts...)
+func (c *profitUnsoldClient) ExistUnsoldConds(ctx context.Context, in *ExistUnsoldCondsRequest, opts ...grpc.CallOption) (*ExistUnsoldCondsResponse, error) {
+	out := new(ExistUnsoldCondsResponse)
+	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/ExistUnsoldConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *profitUnsoldClient) CountDetails(ctx context.Context, in *CountDetailsRequest, opts ...grpc.CallOption) (*CountDetailsResponse, error) {
-	out := new(CountDetailsResponse)
-	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/CountDetails", in, out, opts...)
+func (c *profitUnsoldClient) CountUnsolds(ctx context.Context, in *CountUnsoldsRequest, opts ...grpc.CallOption) (*CountUnsoldsResponse, error) {
+	out := new(CountUnsoldsResponse)
+	err := c.cc.Invoke(ctx, "/mining.manager.profit.unsold.v1.ProfitUnsold/CountUnsolds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -129,14 +129,14 @@ func (c *profitUnsoldClient) CountDetails(ctx context.Context, in *CountDetailsR
 // for forward compatibility
 type ProfitUnsoldServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
-	CreateDetail(context.Context, *CreateDetailRequest) (*CreateDetailResponse, error)
-	CreateDetails(context.Context, *CreateDetailsRequest) (*CreateDetailsResponse, error)
-	GetDetail(context.Context, *GetDetailRequest) (*GetDetailResponse, error)
-	GetDetailOnly(context.Context, *GetDetailOnlyRequest) (*GetDetailOnlyResponse, error)
-	GetDetails(context.Context, *GetDetailsRequest) (*GetDetailsResponse, error)
-	ExistDetail(context.Context, *ExistDetailRequest) (*ExistDetailResponse, error)
-	ExistDetailConds(context.Context, *ExistDetailCondsRequest) (*ExistDetailCondsResponse, error)
-	CountDetails(context.Context, *CountDetailsRequest) (*CountDetailsResponse, error)
+	CreateUnsold(context.Context, *CreateUnsoldRequest) (*CreateUnsoldResponse, error)
+	CreateUnsolds(context.Context, *CreateUnsoldsRequest) (*CreateUnsoldsResponse, error)
+	GetUnsold(context.Context, *GetUnsoldRequest) (*GetUnsoldResponse, error)
+	GetUnsoldOnly(context.Context, *GetUnsoldOnlyRequest) (*GetUnsoldOnlyResponse, error)
+	GetUnsolds(context.Context, *GetUnsoldsRequest) (*GetUnsoldsResponse, error)
+	ExistUnsold(context.Context, *ExistUnsoldRequest) (*ExistUnsoldResponse, error)
+	ExistUnsoldConds(context.Context, *ExistUnsoldCondsRequest) (*ExistUnsoldCondsResponse, error)
+	CountUnsolds(context.Context, *CountUnsoldsRequest) (*CountUnsoldsResponse, error)
 	mustEmbedUnimplementedProfitUnsoldServer()
 }
 
@@ -147,29 +147,29 @@ type UnimplementedProfitUnsoldServer struct {
 func (UnimplementedProfitUnsoldServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
-func (UnimplementedProfitUnsoldServer) CreateDetail(context.Context, *CreateDetailRequest) (*CreateDetailResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateDetail not implemented")
+func (UnimplementedProfitUnsoldServer) CreateUnsold(context.Context, *CreateUnsoldRequest) (*CreateUnsoldResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUnsold not implemented")
 }
-func (UnimplementedProfitUnsoldServer) CreateDetails(context.Context, *CreateDetailsRequest) (*CreateDetailsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateDetails not implemented")
+func (UnimplementedProfitUnsoldServer) CreateUnsolds(context.Context, *CreateUnsoldsRequest) (*CreateUnsoldsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUnsolds not implemented")
 }
-func (UnimplementedProfitUnsoldServer) GetDetail(context.Context, *GetDetailRequest) (*GetDetailResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetDetail not implemented")
+func (UnimplementedProfitUnsoldServer) GetUnsold(context.Context, *GetUnsoldRequest) (*GetUnsoldResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUnsold not implemented")
 }
-func (UnimplementedProfitUnsoldServer) GetDetailOnly(context.Context, *GetDetailOnlyRequest) (*GetDetailOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetDetailOnly not implemented")
+func (UnimplementedProfitUnsoldServer) GetUnsoldOnly(context.Context, *GetUnsoldOnlyRequest) (*GetUnsoldOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUnsoldOnly not implemented")
 }
-func (UnimplementedProfitUnsoldServer) GetDetails(context.Context, *GetDetailsRequest) (*GetDetailsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetDetails not implemented")
+func (UnimplementedProfitUnsoldServer) GetUnsolds(context.Context, *GetUnsoldsRequest) (*GetUnsoldsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUnsolds not implemented")
 }
-func (UnimplementedProfitUnsoldServer) ExistDetail(context.Context, *ExistDetailRequest) (*ExistDetailResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistDetail not implemented")
+func (UnimplementedProfitUnsoldServer) ExistUnsold(context.Context, *ExistUnsoldRequest) (*ExistUnsoldResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistUnsold not implemented")
 }
-func (UnimplementedProfitUnsoldServer) ExistDetailConds(context.Context, *ExistDetailCondsRequest) (*ExistDetailCondsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistDetailConds not implemented")
+func (UnimplementedProfitUnsoldServer) ExistUnsoldConds(context.Context, *ExistUnsoldCondsRequest) (*ExistUnsoldCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistUnsoldConds not implemented")
 }
-func (UnimplementedProfitUnsoldServer) CountDetails(context.Context, *CountDetailsRequest) (*CountDetailsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountDetails not implemented")
+func (UnimplementedProfitUnsoldServer) CountUnsolds(context.Context, *CountUnsoldsRequest) (*CountUnsoldsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountUnsolds not implemented")
 }
 func (UnimplementedProfitUnsoldServer) mustEmbedUnimplementedProfitUnsoldServer() {}
 
@@ -202,146 +202,146 @@ func _ProfitUnsold_Version_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ProfitUnsold_CreateDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateDetailRequest)
+func _ProfitUnsold_CreateUnsold_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateUnsoldRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProfitUnsoldServer).CreateDetail(ctx, in)
+		return srv.(ProfitUnsoldServer).CreateUnsold(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/CreateDetail",
+		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/CreateUnsold",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProfitUnsoldServer).CreateDetail(ctx, req.(*CreateDetailRequest))
+		return srv.(ProfitUnsoldServer).CreateUnsold(ctx, req.(*CreateUnsoldRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ProfitUnsold_CreateDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateDetailsRequest)
+func _ProfitUnsold_CreateUnsolds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateUnsoldsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProfitUnsoldServer).CreateDetails(ctx, in)
+		return srv.(ProfitUnsoldServer).CreateUnsolds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/CreateDetails",
+		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/CreateUnsolds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProfitUnsoldServer).CreateDetails(ctx, req.(*CreateDetailsRequest))
+		return srv.(ProfitUnsoldServer).CreateUnsolds(ctx, req.(*CreateUnsoldsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ProfitUnsold_GetDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDetailRequest)
+func _ProfitUnsold_GetUnsold_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUnsoldRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProfitUnsoldServer).GetDetail(ctx, in)
+		return srv.(ProfitUnsoldServer).GetUnsold(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/GetDetail",
+		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/GetUnsold",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProfitUnsoldServer).GetDetail(ctx, req.(*GetDetailRequest))
+		return srv.(ProfitUnsoldServer).GetUnsold(ctx, req.(*GetUnsoldRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ProfitUnsold_GetDetailOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDetailOnlyRequest)
+func _ProfitUnsold_GetUnsoldOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUnsoldOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProfitUnsoldServer).GetDetailOnly(ctx, in)
+		return srv.(ProfitUnsoldServer).GetUnsoldOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/GetDetailOnly",
+		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/GetUnsoldOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProfitUnsoldServer).GetDetailOnly(ctx, req.(*GetDetailOnlyRequest))
+		return srv.(ProfitUnsoldServer).GetUnsoldOnly(ctx, req.(*GetUnsoldOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ProfitUnsold_GetDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDetailsRequest)
+func _ProfitUnsold_GetUnsolds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUnsoldsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProfitUnsoldServer).GetDetails(ctx, in)
+		return srv.(ProfitUnsoldServer).GetUnsolds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/GetDetails",
+		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/GetUnsolds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProfitUnsoldServer).GetDetails(ctx, req.(*GetDetailsRequest))
+		return srv.(ProfitUnsoldServer).GetUnsolds(ctx, req.(*GetUnsoldsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ProfitUnsold_ExistDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistDetailRequest)
+func _ProfitUnsold_ExistUnsold_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistUnsoldRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProfitUnsoldServer).ExistDetail(ctx, in)
+		return srv.(ProfitUnsoldServer).ExistUnsold(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/ExistDetail",
+		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/ExistUnsold",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProfitUnsoldServer).ExistDetail(ctx, req.(*ExistDetailRequest))
+		return srv.(ProfitUnsoldServer).ExistUnsold(ctx, req.(*ExistUnsoldRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ProfitUnsold_ExistDetailConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistDetailCondsRequest)
+func _ProfitUnsold_ExistUnsoldConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistUnsoldCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProfitUnsoldServer).ExistDetailConds(ctx, in)
+		return srv.(ProfitUnsoldServer).ExistUnsoldConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/ExistDetailConds",
+		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/ExistUnsoldConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProfitUnsoldServer).ExistDetailConds(ctx, req.(*ExistDetailCondsRequest))
+		return srv.(ProfitUnsoldServer).ExistUnsoldConds(ctx, req.(*ExistUnsoldCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ProfitUnsold_CountDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountDetailsRequest)
+func _ProfitUnsold_CountUnsolds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountUnsoldsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProfitUnsoldServer).CountDetails(ctx, in)
+		return srv.(ProfitUnsoldServer).CountUnsolds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/CountDetails",
+		FullMethod: "/mining.manager.profit.unsold.v1.ProfitUnsold/CountUnsolds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProfitUnsoldServer).CountDetails(ctx, req.(*CountDetailsRequest))
+		return srv.(ProfitUnsoldServer).CountUnsolds(ctx, req.(*CountUnsoldsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -358,36 +358,36 @@ var ProfitUnsold_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ProfitUnsold_Version_Handler,
 		},
 		{
-			MethodName: "CreateDetail",
-			Handler:    _ProfitUnsold_CreateDetail_Handler,
+			MethodName: "CreateUnsold",
+			Handler:    _ProfitUnsold_CreateUnsold_Handler,
 		},
 		{
-			MethodName: "CreateDetails",
-			Handler:    _ProfitUnsold_CreateDetails_Handler,
+			MethodName: "CreateUnsolds",
+			Handler:    _ProfitUnsold_CreateUnsolds_Handler,
 		},
 		{
-			MethodName: "GetDetail",
-			Handler:    _ProfitUnsold_GetDetail_Handler,
+			MethodName: "GetUnsold",
+			Handler:    _ProfitUnsold_GetUnsold_Handler,
 		},
 		{
-			MethodName: "GetDetailOnly",
-			Handler:    _ProfitUnsold_GetDetailOnly_Handler,
+			MethodName: "GetUnsoldOnly",
+			Handler:    _ProfitUnsold_GetUnsoldOnly_Handler,
 		},
 		{
-			MethodName: "GetDetails",
-			Handler:    _ProfitUnsold_GetDetails_Handler,
+			MethodName: "GetUnsolds",
+			Handler:    _ProfitUnsold_GetUnsolds_Handler,
 		},
 		{
-			MethodName: "ExistDetail",
-			Handler:    _ProfitUnsold_ExistDetail_Handler,
+			MethodName: "ExistUnsold",
+			Handler:    _ProfitUnsold_ExistUnsold_Handler,
 		},
 		{
-			MethodName: "ExistDetailConds",
-			Handler:    _ProfitUnsold_ExistDetailConds_Handler,
+			MethodName: "ExistUnsoldConds",
+			Handler:    _ProfitUnsold_ExistUnsoldConds_Handler,
 		},
 		{
-			MethodName: "CountDetails",
-			Handler:    _ProfitUnsold_CountDetails_Handler,
+			MethodName: "CountUnsolds",
+			Handler:    _ProfitUnsold_CountUnsolds_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

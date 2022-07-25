@@ -11,24 +11,24 @@ import "npool/npool.proto";
 service ProfitUnsold {
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {}
 
-    rpc CreateDetail (CreateDetailRequest) returns (CreateDetailResponse) {}
+    rpc CreateUnsold (CreateUnsoldRequest) returns (CreateUnsoldResponse) {}
 
-    rpc CreateDetails (CreateDetailsRequest) returns (CreateDetailsResponse) {}
+    rpc CreateUnsolds (CreateUnsoldsRequest) returns (CreateUnsoldsResponse) {}
 
-    rpc GetDetail (GetDetailRequest) returns (GetDetailResponse) {}
+    rpc GetUnsold (GetUnsoldRequest) returns (GetUnsoldResponse) {}
 
-    rpc GetDetailOnly (GetDetailOnlyRequest) returns (GetDetailOnlyResponse) {}
+    rpc GetUnsoldOnly (GetUnsoldOnlyRequest) returns (GetUnsoldOnlyResponse) {}
 
-    rpc GetDetails (GetDetailsRequest) returns (GetDetailsResponse) {}
+    rpc GetUnsolds (GetUnsoldsRequest) returns (GetUnsoldsResponse) {}
 
-    rpc ExistDetail (ExistDetailRequest) returns (ExistDetailResponse) {}
+    rpc ExistUnsold (ExistUnsoldRequest) returns (ExistUnsoldResponse) {}
 
-    rpc ExistDetailConds (ExistDetailCondsRequest) returns (ExistDetailCondsResponse) {}
+    rpc ExistUnsoldConds (ExistUnsoldCondsRequest) returns (ExistUnsoldCondsResponse) {}
 
-    rpc CountDetails (CountDetailsRequest) returns (CountDetailsResponse) {}
+    rpc CountUnsolds (CountUnsoldsRequest) returns (CountUnsoldsResponse) {}
 }
 
-message DetailReq {
+message UnsoldReq {
     optional string ID          = 10;
     optional string GoodID      = 20;
     optional string CoinTypeID  = 30;
@@ -37,7 +37,7 @@ message DetailReq {
     optional uint32 CreatedAt   = 60;
 }
 
-message Detail {
+message Unsold {
     string ID          = 10;
     string GoodID      = 20;
     string CoinTypeID  = 30;
@@ -55,70 +55,70 @@ message Conds {
 }
 
 
-message CreateDetailRequest {
-    DetailReq Info = 10;
+message CreateUnsoldRequest {
+    UnsoldReq Info = 10;
 }
 
-message CreateDetailResponse {
-    Detail Info = 10;
+message CreateUnsoldResponse {
+    Unsold Info = 10;
 }
 
-message CreateDetailsRequest {
-    repeated DetailReq Infos = 10;
+message CreateUnsoldsRequest {
+    repeated UnsoldReq Infos = 10;
 }
 
-message CreateDetailsResponse {
-    repeated Detail Infos = 10;
+message CreateUnsoldsResponse {
+    repeated Unsold Infos = 10;
 }
 
-message GetDetailRequest {
+message GetUnsoldRequest {
     string ID = 10;
 }
 
-message GetDetailResponse {
-    Detail Info = 10;
+message GetUnsoldResponse {
+    Unsold Info = 10;
 }
 
-message GetDetailsRequest {
+message GetUnsoldsRequest {
     Conds Conds   = 10;
     int32 Offset  = 20;
     int32 Limit   = 30;
 }
 
-message GetDetailsResponse {
-    repeated Detail Infos = 10;
+message GetUnsoldsResponse {
+    repeated Unsold Infos = 10;
     uint32 Total          = 20;
 }
 
-message GetDetailOnlyRequest {
+message GetUnsoldOnlyRequest {
     Conds Conds = 10;
 }
 
-message GetDetailOnlyResponse {
-    Detail Info = 10;
+message GetUnsoldOnlyResponse {
+    Unsold Info = 10;
 }
 
-message ExistDetailRequest {
+message ExistUnsoldRequest {
     string ID = 10;
 }
 
-message ExistDetailResponse {
+message ExistUnsoldResponse {
     bool Info = 10;
 }
 
-message ExistDetailCondsRequest {
+message ExistUnsoldCondsRequest {
     Conds Conds = 10;
 }
 
-message ExistDetailCondsResponse {
+message ExistUnsoldCondsResponse {
     bool Info = 10;
 }
 
-message CountDetailsRequest {
+message CountUnsoldsRequest {
     Conds Conds = 10;
 }
 
-message CountDetailsResponse {
+message CountUnsoldsResponse {
     uint32 Info = 10;
 }
 

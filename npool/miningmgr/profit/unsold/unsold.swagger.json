@@ -64,7 +64,7 @@
         }
       }
     },
-    "v1CountDetailsResponse": {
+    "v1CountUnsoldsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -73,76 +73,26 @@
         }
       }
     },
-    "v1CreateDetailResponse": {
+    "v1CreateUnsoldResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Detail"
+          "$ref": "#/definitions/v1Unsold"
         }
       }
     },
-    "v1CreateDetailsResponse": {
+    "v1CreateUnsoldsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Detail"
+            "$ref": "#/definitions/v1Unsold"
           }
         }
       }
     },
-    "v1Detail": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "BenefitDate": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1DetailReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "BenefitDate": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1ExistDetailCondsResponse": {
+    "v1ExistUnsoldCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -150,7 +100,7 @@
         }
       }
     },
-    "v1ExistDetailResponse": {
+    "v1ExistUnsoldResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -158,29 +108,29 @@
         }
       }
     },
-    "v1GetDetailOnlyResponse": {
+    "v1GetUnsoldOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Detail"
+          "$ref": "#/definitions/v1Unsold"
         }
       }
     },
-    "v1GetDetailResponse": {
+    "v1GetUnsoldResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Detail"
+          "$ref": "#/definitions/v1Unsold"
         }
       }
     },
-    "v1GetDetailsResponse": {
+    "v1GetUnsoldsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Detail"
+            "$ref": "#/definitions/v1Unsold"
           }
         },
         "Total": {
@@ -209,6 +159,56 @@
         },
         "Op": {
           "type": "string"
+        }
+      }
+    },
+    "v1Unsold": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "BenefitDate": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UnsoldReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "BenefitDate": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
