@@ -39,7 +39,7 @@ pipeline {
         sh (returnStdout: false, script: '''
           swaggeruipod=`kubectl get pods -A | grep swagger | awk '{print $2}'`
           for md in `find -name "*.swagger.json"`; do
-            targetmd=`echo $md | sed 's#\./##g' | sed 's#/#-#g'`
+            targetmd=`echo $md | sed 's#\\./##g' | sed 's#/#-#g'`
             kubectl cp $md kube-system/$swaggeruipod:/usr/share/nginx/html/data/$targetmd || true
           done
         '''.stripIndent())
