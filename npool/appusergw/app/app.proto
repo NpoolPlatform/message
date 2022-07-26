@@ -1,22 +1,16 @@
 syntax = "proto3";
 
-package app.user.gateway.app.v2;
+package app.user.gateway.app.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/appusergateway/app";
+option go_package = "github.com/NpoolPlatform/message/npool/appusergw/app";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 import "npool/appusermgrv2/app/app.proto";
-import "npool/appusermiddleware/app/app.proto";
+import "npool/appusermw/app/app.proto";
 
 service AppUserGatewayApp {
-  rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
-    option (google.api.http) = {
-      post: "/version"
-      body: "*"
-    };
-  }
 
   rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {
     option (google.api.http) = {
@@ -66,6 +60,14 @@ service AppUserGatewayApp {
       body: "*"
     };
   }
+
+  rpc GetAppInfosByCreator (GetAppInfosByCreatorRequest) returns (GetAppInfosByCreatorResponse) {
+    option (google.api.http) = {
+      post: "/v1/get/appinfos/by/creator"
+      body: "*"
+    };
+  }
+
 }
 
 message CreateAppRequest {
@@ -85,8 +87,8 @@ message GetAppResponse {
 }
 
 message GetAppsRequest {
-  int32 Offset = 20;
-  int32 Limit = 30;
+  int32 Offset = 10;
+  int32 Limit = 20;
 }
 
 message GetAppsResponse {
@@ -129,4 +131,15 @@ message GetAppInfosRequest {
 
 message GetAppInfosResponse {
   repeated .app.user.middleware.app.v2.AppInfo Infos = 10;
+}
+
+message GetAppInfosByCreatorRequest {
+  string UserID = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message GetAppInfosByCreatorResponse {
+  repeated .app.user.middleware.app.v2.AppInfo Infos = 10;
+  uint32 Total = 20;
 }

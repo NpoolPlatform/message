@@ -2,17 +2,15 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/appusergateway/app/app.proto
+// source: npool/appusergw/app/app.proto
 
 package app
 
 import (
 	context "context"
-	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -24,7 +22,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AppUserGatewayAppClient interface {
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error)
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
 	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
@@ -32,6 +29,7 @@ type AppUserGatewayAppClient interface {
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	GetAppInfo(ctx context.Context, in *GetAppInfoRequest, opts ...grpc.CallOption) (*GetAppInfoResponse, error)
 	GetAppInfos(ctx context.Context, in *GetAppInfosRequest, opts ...grpc.CallOption) (*GetAppInfosResponse, error)
+	GetAppInfosByCreator(ctx context.Context, in *GetAppInfosByCreatorRequest, opts ...grpc.CallOption) (*GetAppInfosByCreatorResponse, error)
 }
 
 type appUserGatewayAppClient struct {
@@ -42,18 +40,9 @@ func NewAppUserGatewayAppClient(cc grpc.ClientConnInterface) AppUserGatewayAppCl
 	return &appUserGatewayAppClient{cc}
 }
 
-func (c *appUserGatewayAppClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
-	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v2.AppUserGatewayApp/Version", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *appUserGatewayAppClient) CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error) {
 	out := new(CreateAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v2.AppUserGatewayApp/CreateApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v1.AppUserGatewayApp/CreateApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +51,7 @@ func (c *appUserGatewayAppClient) CreateApp(ctx context.Context, in *CreateAppRe
 
 func (c *appUserGatewayAppClient) GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error) {
 	out := new(GetAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v2.AppUserGatewayApp/GetApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v1.AppUserGatewayApp/GetApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +60,7 @@ func (c *appUserGatewayAppClient) GetApp(ctx context.Context, in *GetAppRequest,
 
 func (c *appUserGatewayAppClient) GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error) {
 	out := new(GetAppsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v2.AppUserGatewayApp/GetApps", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v1.AppUserGatewayApp/GetApps", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +69,7 @@ func (c *appUserGatewayAppClient) GetApps(ctx context.Context, in *GetAppsReques
 
 func (c *appUserGatewayAppClient) GetAppsByCreator(ctx context.Context, in *GetAppsByCreatorRequest, opts ...grpc.CallOption) (*GetAppsByCreatorResponse, error) {
 	out := new(GetAppsByCreatorResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v2.AppUserGatewayApp/GetAppsByCreator", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v1.AppUserGatewayApp/GetAppsByCreator", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +78,7 @@ func (c *appUserGatewayAppClient) GetAppsByCreator(ctx context.Context, in *GetA
 
 func (c *appUserGatewayAppClient) UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error) {
 	out := new(UpdateAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v2.AppUserGatewayApp/UpdateApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v1.AppUserGatewayApp/UpdateApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +87,7 @@ func (c *appUserGatewayAppClient) UpdateApp(ctx context.Context, in *UpdateAppRe
 
 func (c *appUserGatewayAppClient) GetAppInfo(ctx context.Context, in *GetAppInfoRequest, opts ...grpc.CallOption) (*GetAppInfoResponse, error) {
 	out := new(GetAppInfoResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v2.AppUserGatewayApp/GetAppInfo", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v1.AppUserGatewayApp/GetAppInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +96,16 @@ func (c *appUserGatewayAppClient) GetAppInfo(ctx context.Context, in *GetAppInfo
 
 func (c *appUserGatewayAppClient) GetAppInfos(ctx context.Context, in *GetAppInfosRequest, opts ...grpc.CallOption) (*GetAppInfosResponse, error) {
 	out := new(GetAppInfosResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v2.AppUserGatewayApp/GetAppInfos", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v1.AppUserGatewayApp/GetAppInfos", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appUserGatewayAppClient) GetAppInfosByCreator(ctx context.Context, in *GetAppInfosByCreatorRequest, opts ...grpc.CallOption) (*GetAppInfosByCreatorResponse, error) {
+	out := new(GetAppInfosByCreatorResponse)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.app.v1.AppUserGatewayApp/GetAppInfosByCreator", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -118,7 +116,6 @@ func (c *appUserGatewayAppClient) GetAppInfos(ctx context.Context, in *GetAppInf
 // All implementations must embed UnimplementedAppUserGatewayAppServer
 // for forward compatibility
 type AppUserGatewayAppServer interface {
-	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error)
 	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
@@ -126,6 +123,7 @@ type AppUserGatewayAppServer interface {
 	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
 	GetAppInfo(context.Context, *GetAppInfoRequest) (*GetAppInfoResponse, error)
 	GetAppInfos(context.Context, *GetAppInfosRequest) (*GetAppInfosResponse, error)
+	GetAppInfosByCreator(context.Context, *GetAppInfosByCreatorRequest) (*GetAppInfosByCreatorResponse, error)
 	mustEmbedUnimplementedAppUserGatewayAppServer()
 }
 
@@ -133,9 +131,6 @@ type AppUserGatewayAppServer interface {
 type UnimplementedAppUserGatewayAppServer struct {
 }
 
-func (UnimplementedAppUserGatewayAppServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
-}
 func (UnimplementedAppUserGatewayAppServer) CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateApp not implemented")
 }
@@ -157,6 +152,9 @@ func (UnimplementedAppUserGatewayAppServer) GetAppInfo(context.Context, *GetAppI
 func (UnimplementedAppUserGatewayAppServer) GetAppInfos(context.Context, *GetAppInfosRequest) (*GetAppInfosResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppInfos not implemented")
 }
+func (UnimplementedAppUserGatewayAppServer) GetAppInfosByCreator(context.Context, *GetAppInfosByCreatorRequest) (*GetAppInfosByCreatorResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppInfosByCreator not implemented")
+}
 func (UnimplementedAppUserGatewayAppServer) mustEmbedUnimplementedAppUserGatewayAppServer() {}
 
 // UnsafeAppUserGatewayAppServer may be embedded to opt out of forward compatibility for this service.
@@ -170,24 +168,6 @@ func RegisterAppUserGatewayAppServer(s grpc.ServiceRegistrar, srv AppUserGateway
 	s.RegisterService(&AppUserGatewayApp_ServiceDesc, srv)
 }
 
-func _AppUserGatewayApp_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(emptypb.Empty)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppUserGatewayAppServer).Version(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/app.user.gateway.app.v2.AppUserGatewayApp/Version",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserGatewayAppServer).Version(ctx, req.(*emptypb.Empty))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _AppUserGatewayApp_CreateApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppRequest)
 	if err := dec(in); err != nil {
@@ -198,7 +178,7 @@ func _AppUserGatewayApp_CreateApp_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.app.v2.AppUserGatewayApp/CreateApp",
+		FullMethod: "/app.user.gateway.app.v1.AppUserGatewayApp/CreateApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserGatewayAppServer).CreateApp(ctx, req.(*CreateAppRequest))
@@ -216,7 +196,7 @@ func _AppUserGatewayApp_GetApp_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.app.v2.AppUserGatewayApp/GetApp",
+		FullMethod: "/app.user.gateway.app.v1.AppUserGatewayApp/GetApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserGatewayAppServer).GetApp(ctx, req.(*GetAppRequest))
@@ -234,7 +214,7 @@ func _AppUserGatewayApp_GetApps_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.app.v2.AppUserGatewayApp/GetApps",
+		FullMethod: "/app.user.gateway.app.v1.AppUserGatewayApp/GetApps",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserGatewayAppServer).GetApps(ctx, req.(*GetAppsRequest))
@@ -252,7 +232,7 @@ func _AppUserGatewayApp_GetAppsByCreator_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.app.v2.AppUserGatewayApp/GetAppsByCreator",
+		FullMethod: "/app.user.gateway.app.v1.AppUserGatewayApp/GetAppsByCreator",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserGatewayAppServer).GetAppsByCreator(ctx, req.(*GetAppsByCreatorRequest))
@@ -270,7 +250,7 @@ func _AppUserGatewayApp_UpdateApp_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.app.v2.AppUserGatewayApp/UpdateApp",
+		FullMethod: "/app.user.gateway.app.v1.AppUserGatewayApp/UpdateApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserGatewayAppServer).UpdateApp(ctx, req.(*UpdateAppRequest))
@@ -288,7 +268,7 @@ func _AppUserGatewayApp_GetAppInfo_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.app.v2.AppUserGatewayApp/GetAppInfo",
+		FullMethod: "/app.user.gateway.app.v1.AppUserGatewayApp/GetAppInfo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserGatewayAppServer).GetAppInfo(ctx, req.(*GetAppInfoRequest))
@@ -306,10 +286,28 @@ func _AppUserGatewayApp_GetAppInfos_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.app.v2.AppUserGatewayApp/GetAppInfos",
+		FullMethod: "/app.user.gateway.app.v1.AppUserGatewayApp/GetAppInfos",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserGatewayAppServer).GetAppInfos(ctx, req.(*GetAppInfosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppUserGatewayApp_GetAppInfosByCreator_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppInfosByCreatorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserGatewayAppServer).GetAppInfosByCreator(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.gateway.app.v1.AppUserGatewayApp/GetAppInfosByCreator",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserGatewayAppServer).GetAppInfosByCreator(ctx, req.(*GetAppInfosByCreatorRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -318,13 +316,9 @@ func _AppUserGatewayApp_GetAppInfos_Handler(srv interface{}, ctx context.Context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AppUserGatewayApp_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.user.gateway.app.v2.AppUserGatewayApp",
+	ServiceName: "app.user.gateway.app.v1.AppUserGatewayApp",
 	HandlerType: (*AppUserGatewayAppServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "Version",
-			Handler:    _AppUserGatewayApp_Version_Handler,
-		},
 		{
 			MethodName: "CreateApp",
 			Handler:    _AppUserGatewayApp_CreateApp_Handler,
@@ -353,7 +347,11 @@ var AppUserGatewayApp_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "GetAppInfos",
 			Handler:    _AppUserGatewayApp_GetAppInfos_Handler,
 		},
+		{
+			MethodName: "GetAppInfosByCreator",
+			Handler:    _AppUserGatewayApp_GetAppInfosByCreator_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/appusergateway/app/app.proto",
+	Metadata: "npool/appusergw/app/app.proto",
 }

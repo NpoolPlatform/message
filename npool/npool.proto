@@ -54,3 +54,8 @@ message BoolVal {
     bool Value = 10;
     string Op = 20;
 }
+
+message StringSlicesVal {
+    repeated string Value = 10;
+    string Op = 20;
+}

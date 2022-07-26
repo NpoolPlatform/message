@@ -1,0 +1,798 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appusergw/appuser/appuser.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AppUserGatewayAppUser"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/user/with/secret": {
+      "post": {
+        "operationId": "AppUserGatewayAppUser_CreateUserWithSecret",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appuserv1CreateUserWithSecretResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appuserv1CreateUserWithSecretRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppUser"
+        ]
+      }
+    },
+    "/v1/get/app/userinfo": {
+      "post": {
+        "operationId": "AppUserGatewayAppUser_GetAppUserInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfoRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppUser"
+        ]
+      }
+    },
+    "/v1/get/app/userinfos": {
+      "post": {
+        "operationId": "AppUserGatewayAppUser_GetAppUserInfos",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfosResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfosRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppUser"
+        ]
+      }
+    },
+    "/v1/get/user/roles/by/user": {
+      "post": {
+        "operationId": "AppUserGatewayAppUser_GetUserRolesByUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserRolesByUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserRolesByUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppUser"
+        ]
+      }
+    },
+    "/v1/get/userinfo": {
+      "post": {
+        "operationId": "AppUserGatewayAppUser_GetUserInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appuserv1GetUserInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appuserv1GetUserInfoRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppUser"
+        ]
+      }
+    },
+    "/v1/get/userinfos": {
+      "post": {
+        "operationId": "AppUserGatewayAppUser_GetUserInfos",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appuserv1GetUserInfosResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appuserv1GetUserInfosRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppUser"
+        ]
+      }
+    },
+    "/v2/create/user": {
+      "post": {
+        "operationId": "AppUserGatewayAppUser_CreateUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppUser"
+        ]
+      }
+    },
+    "/v2/get/app/account/user": {
+      "post": {
+        "operationId": "AppUserGatewayAppUser_GetUserByAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserByAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserByAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppUser"
+        ]
+      }
+    },
+    "/v2/get/app/user": {
+      "post": {
+        "operationId": "AppUserGatewayAppUser_GetAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appuserv1GetAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appuserv1GetAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppUser"
+        ]
+      }
+    },
+    "/v2/get/user": {
+      "post": {
+        "operationId": "AppUserGatewayAppUser_GetUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppUser"
+        ]
+      }
+    },
+    "/v2/update/user": {
+      "post": {
+        "operationId": "AppUserGatewayAppUser_UpdateUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppUser"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "appuserv1CreateUserWithSecretRequest": {
+      "type": "object",
+      "properties": {
+        "User": {
+          "$ref": "#/definitions/v2AppUser"
+        },
+        "Secret": {
+          "$ref": "#/definitions/v2AppUserSecret"
+        }
+      }
+    },
+    "appuserv1CreateUserWithSecretResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUser"
+        }
+      }
+    },
+    "appuserv1GetAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "appuserv1GetAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUser"
+        }
+      }
+    },
+    "appuserv1GetUserInfoRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "appuserv1GetUserInfoResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserInfo"
+        }
+      }
+    },
+    "appuserv1GetUserInfosRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "appuserv1GetUserInfosResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppUserInfo"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateUserRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserReq"
+        }
+      }
+    },
+    "v1CreateUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUser"
+        }
+      }
+    },
+    "v1GetAppUserInfoRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserInfoResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserInfo"
+        }
+      }
+    },
+    "v1GetAppUserInfosRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppUserInfosResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppUserInfo"
+          }
+        }
+      }
+    },
+    "v1GetUserByAccountRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserByAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUser"
+        }
+      }
+    },
+    "v1GetUserRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUser"
+        }
+      }
+    },
+    "v1GetUserRolesByUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetUserRolesByUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppRole"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateUserRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserReq"
+        }
+      }
+    },
+    "v1UpdateUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUser"
+        }
+      }
+    },
+    "v2AppRole": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Default": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v2AppUser": {
+      "type": "object",
+      "properties": {
+        "PhoneNo": {
+          "type": "string"
+        },
+        "ImportFromApp": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        }
+      }
+    },
+    "v2AppUserInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "ImportFromApp": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Organization": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "SigninVerifyByGoogleAuthentication": {
+          "type": "boolean"
+        },
+        "GoogleAuthenticationVerified": {
+          "type": "boolean"
+        },
+        "IsBanApp": {
+          "type": "boolean"
+        },
+        "Roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppRole"
+          }
+        },
+        "HasGoogleSecret": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v2AppUserReq": {
+      "type": "object",
+      "properties": {
+        "PhoneNo": {
+          "type": "string"
+        },
+        "ImportFromApp": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        }
+      }
+    },
+    "v2AppUserSecret": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        },
+        "Salt": {
+          "type": "string"
+        },
+        "GoogleSecret": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
