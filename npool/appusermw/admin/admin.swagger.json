@@ -1,0 +1,119 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appusermw/admin/admin.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AppUserMiddlewareAdmin"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateGenesisRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "User": {
+          "$ref": "#/definitions/v2AppUser"
+        },
+        "RoleUser": {
+          "$ref": "#/definitions/v2AppRoleUser"
+        }
+      }
+    },
+    "v2AppRoleUser": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        }
+      }
+    },
+    "v2AppUser": {
+      "type": "object",
+      "properties": {
+        "PhoneNo": {
+          "type": "string"
+        },
+        "ImportFromApp": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        }
+      }
+    },
+    "v2AppUserSecret": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        },
+        "Salt": {
+          "type": "string"
+        },
+        "GoogleSecret": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

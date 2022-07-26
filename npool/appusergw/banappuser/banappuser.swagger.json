@@ -1,0 +1,326 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appusergw/banappuser/banappuser.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AppUserGatewayBanAppUser"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v2/create/ban/app/user": {
+      "post": {
+        "operationId": "AppUserGatewayBanAppUser_CreateBanAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/banappuserv1CreateBanAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/banappuserv1CreateBanAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayBanAppUser"
+        ]
+      }
+    },
+    "/v2/delete/ban/app/user": {
+      "post": {
+        "operationId": "AppUserGatewayBanAppUser_DeleteBanAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/banappuserv1DeleteBanAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/banappuserv1DeleteBanAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayBanAppUser"
+        ]
+      }
+    },
+    "/v2/get/app/user/ban/app/user": {
+      "post": {
+        "operationId": "AppUserGatewayBanAppUser_GetAppUserBanAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserBanAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserBanAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayBanAppUser"
+        ]
+      }
+    },
+    "/v2/get/ban/app/user": {
+      "post": {
+        "operationId": "AppUserGatewayBanAppUser_GetBanAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/banappuserv1GetBanAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/banappuserv1GetBanAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayBanAppUser"
+        ]
+      }
+    },
+    "/v2/update/ban/app/user": {
+      "post": {
+        "operationId": "AppUserGatewayBanAppUser_UpdateBanAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/banappuserv1UpdateBanAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/banappuserv1UpdateBanAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayBanAppUser"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "banappuserv1CreateBanAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2BanAppUserReq"
+        }
+      }
+    },
+    "banappuserv1CreateBanAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2BanAppUser"
+        }
+      }
+    },
+    "banappuserv1DeleteBanAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "banappuserv1DeleteBanAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2BanAppUser"
+        }
+      }
+    },
+    "banappuserv1GetBanAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "banappuserv1GetBanAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2BanAppUser"
+        }
+      }
+    },
+    "banappuserv1UpdateBanAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2BanAppUserReq"
+        }
+      }
+    },
+    "banappuserv1UpdateBanAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2BanAppUser"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1GetAppUserBanAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserBanAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2BanAppUser"
+        }
+      }
+    },
+    "v2BanAppUser": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v2BanAppUserReq": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

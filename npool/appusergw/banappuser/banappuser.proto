@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package app.user.gateway.banappuser.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appusergw/banappuser";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/appusermgrv2/banappuser/banappuser.proto";
+
+service AppUserGatewayBanAppUser {
+
+  rpc CreateBanAppUser (CreateBanAppUserRequest) returns (CreateBanAppUserResponse) {
+    option (google.api.http) = {
+      post: "/v2/create/ban/app/user"
+      body: "*"
+    };
+  }
+
+  rpc GetBanAppUser (GetBanAppUserRequest) returns (GetBanAppUserResponse) {
+    option (google.api.http) = {
+      post: "/v2/get/ban/app/user"
+      body: "*"
+    };
+  }
+
+  rpc GetAppUserBanAppUser (GetAppUserBanAppUserRequest) returns (GetAppUserBanAppUserResponse) {
+    option (google.api.http) = {
+      post: "/v2/get/app/user/ban/app/user"
+      body: "*"
+    };
+  }
+
+  rpc UpdateBanAppUser (UpdateBanAppUserRequest) returns (UpdateBanAppUserResponse) {
+    option (google.api.http) = {
+      post: "/v2/update/ban/app/user"
+      body: "*"
+    };
+  }
+
+  rpc DeleteBanAppUser (DeleteBanAppUserRequest) returns (DeleteBanAppUserResponse) {
+    option (google.api.http) = {
+      post: "/v2/delete/ban/app/user"
+      body: "*"
+    };
+  }
+
+}
+
+message CreateBanAppUserRequest {
+  .app.user.manager.banappuser.v2.BanAppUserReq Info = 10;
+}
+
+message CreateBanAppUserResponse {
+  .app.user.manager.banappuser.v2.BanAppUser Info = 10;
+}
+
+message GetBanAppUserRequest {
+  string ID = 10;
+}
+
+message GetBanAppUserResponse {
+  .app.user.manager.banappuser.v2.BanAppUser Info = 10;
+}
+
+message GetAppUserBanAppUserRequest {
+  string TargetAppID = 10;
+  string UserID = 20;
+}
+
+message GetAppUserBanAppUserResponse {
+  .app.user.manager.banappuser.v2.BanAppUser Info = 10;
+}
+
+message UpdateBanAppUserRequest {
+  .app.user.manager.banappuser.v2.BanAppUserReq Info = 10;
+}
+
+message UpdateBanAppUserResponse {
+  .app.user.manager.banappuser.v2.BanAppUser Info = 10;
+}
+
+message DeleteBanAppUserRequest {
+  string ID = 10;
+}
+
+message DeleteBanAppUserResponse {
+  .app.user.manager.banappuser.v2.BanAppUser Info = 10;
+}

@@ -78,6 +78,7 @@ message Conds {
     npool.v1.StringVal CreatedBy = 30;
     npool.v1.StringVal Role = 40;
     npool.v1.BoolVal Default = 50;
+    npool.v1.StringSlicesVal IDIn = 60;
 }
 message GetAppRolesRequest {
     Conds Conds = 10;
