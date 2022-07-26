@@ -9,6 +9,8 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 import "npool/appusermgrv2/app/app.proto";
 import "npool/appusermgrv2/approle/approle.proto";
+import "npool/appusermgrv2/appuser/appuser.proto";
+import "npool/appusermgrv2/appusersecret/appusersecret.proto";
 import "npool/appusermgrv2/approleuser/approleuser.proto";
 
 service AppUserGatewayAdmin {
@@ -48,12 +50,12 @@ service AppUserGatewayAdmin {
     };
   }
 
-//  rpc CreateGenesisRoleUser (CreateGenesisRoleUserRequest) returns (CreateGenesisRoleUserResponse) {
-//    option (google.api.http) = {
-//      post: "/v1/create/genesis/role/user"
-//      body: "*"
-//    };
-//  }
+  rpc CreateGenesisRoleUser (CreateGenesisRoleUserRequest) returns (CreateGenesisRoleUserResponse) {
+    option (google.api.http) = {
+      post: "/v1/create/genesis/role/user"
+      body: "*"
+    };
+  }
 
 }
 
@@ -88,7 +90,6 @@ message GetGenesisRoleResponse {
 
 message GetAppGenesisAppRoleUsersRequest {
   string TargetAppID = 10;
-  string UserID = 20;
 }
 
 message GetAppGenesisAppRoleUsersResponse {
@@ -96,12 +97,13 @@ message GetAppGenesisAppRoleUsersResponse {
   uint32 Total = 20;
 }
 
-//message CreateGenesisRoleUserRequest {
-//  AppUser User = 10;
-//  AppUserSecret Secret = 20;
-//}
-//
-//message CreateGenesisRoleUserResponse {
-//  AppUser User = 10;
-//  AppRoleUser RoleUser = 20;
-//}
+message CreateGenesisRoleUserRequest {
+  .app.user.manager.appuser.v2.AppUser User = 10;
+  .app.user.manager.appusersecret.v2.AppUserSecret Secret = 20;
+
+}
+
+message CreateGenesisRoleUserResponse {
+  .app.user.manager.appuser.v2.AppUser User = 10;
+  .app.user.manager.approleuser.v2.AppRoleUser RoleUser = 20;
+}

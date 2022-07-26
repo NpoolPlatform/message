@@ -16,9 +16,72 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/admin/apps": {
+      "post": {
+        "operationId": "AppUserManager_CreateAdminApps",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAdminAppsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAdminAppsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/create/app": {
+      "post": {
+        "operationId": "AppUserManager_CreateApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/create/app/control": {
       "post": {
-        "summary": "rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {\n       option (google.api.http) = {\n           post: \"/v1/create/app\"\n           body: \"*\"\n       };\n   }\n   rpc GetApp (GetAppRequest) returns (GetAppResponse) {\n       option (google.api.http) = {\n           post: \"/v1/get/app\"\n           body: \"*\"\n       };\n   }\n   rpc GetApps (GetAppsRequest) returns (GetAppsResponse) {\n       option (google.api.http) = {\n           post: \"/v1/get/apps\"\n           body: \"*\"\n       };\n   }\n   rpc GetAppsByCreator (GetAppsByCreatorRequest) returns (GetAppsByCreatorResponse) {\n       option (google.api.http) = {\n           post: \"/v1/get/apps/by/creator\"\n           body: \"*\"\n       };\n   }\n   rpc UpdateApp (UpdateAppRequest) returns (UpdateAppResponse) {\n       option (google.api.http) = {\n           post: \"/v1/update/app\"\n           body: \"*\"\n       };\n   }",
         "operationId": "AppUserManager_CreateAppControl",
         "responses": {
           "200": {
@@ -81,6 +144,198 @@
         ]
       }
     },
+    "/v1/create/app/role": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/create/app/role/for/other/app": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppRoleForOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRoleForOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRoleForOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/create/app/role/user": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppRoleUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRoleUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRoleUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/create/app/role/user/for/app/other/user": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppRoleUserForAppOtherUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRoleUserForAppOtherUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRoleUserForAppOtherUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/create/app/role/user/for/other/app/user": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppRoleUserForOtherAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRoleUserForOtherAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRoleUserForOtherAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/create/app/user": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/create/app/user/control": {
       "post": {
         "operationId": "AppUserManager_CreateAppUserControl",
@@ -113,6 +368,70 @@
         ]
       }
     },
+    "/v1/create/app/user/extra": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppUserExtra",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserExtraResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserExtraRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/create/app/user/secret": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppUserSecret",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserSecretResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserSecretRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/create/app/user/third/party": {
       "post": {
         "operationId": "AppUserManager_CreateAppUserThirdParty",
@@ -137,6 +456,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateAppUserThirdPartyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/create/app/user/with/secret": {
+      "post": {
+        "operationId": "AppUserManager_CreateAppUserWithSecret",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserWithSecretResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserWithSecretRequest"
             }
           }
         ],
@@ -209,6 +560,102 @@
         ]
       }
     },
+    "/v1/create/ban/app": {
+      "post": {
+        "operationId": "AppUserManager_CreateBanApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateBanAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateBanAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/create/ban/app/user": {
+      "post": {
+        "operationId": "AppUserManager_CreateBanAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateBanAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateBanAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/create/genesis/role": {
+      "post": {
+        "operationId": "AppUserManager_CreateGenesisRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateGenesisRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateGenesisRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/create/genesis/role/user": {
       "post": {
         "operationId": "AppUserManager_CreateGenesisRoleUser",
@@ -233,6 +680,166 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateGenesisRoleUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/delete/app/role/user": {
+      "post": {
+        "operationId": "AppUserManager_DeleteAppRoleUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppRoleUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppRoleUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/delete/ban/app": {
+      "post": {
+        "operationId": "AppUserManager_DeleteBanApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteBanAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteBanAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/delete/ban/app/user": {
+      "post": {
+        "operationId": "AppUserManager_DeleteBanAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteBanAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteBanAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/admin/apps": {
+      "post": {
+        "operationId": "AppUserManager_GetAdminApps",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAdminAppsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAdminAppsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app": {
+      "post": {
+        "operationId": "AppUserManager_GetApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRequest"
             }
           }
         ],
@@ -305,6 +912,422 @@
         ]
       }
     },
+    "/v1/get/app/role": {
+      "post": {
+        "operationId": "AppUserManager_GetAppRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/role/by/app/role": {
+      "post": {
+        "operationId": "AppUserManager_GetAppRoleByAppRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleByAppRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleByAppRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/role/user": {
+      "post": {
+        "operationId": "AppUserManager_GetAppRoleUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/role/user/by/app/user": {
+      "post": {
+        "operationId": "AppUserManager_GetAppRoleUserByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUserByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUserByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/role/users/by/app": {
+      "post": {
+        "operationId": "AppUserManager_GetAppRoleUsersByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUsersByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUsersByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/role/users/by/app/role": {
+      "post": {
+        "operationId": "AppUserManager_GetAppRoleUsersByAppRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUsersByAppRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUsersByAppRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/role/users/by/other/app": {
+      "post": {
+        "operationId": "AppUserManager_GetAppRoleUsersByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUsersByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUsersByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/role/users/by/other/app/role": {
+      "post": {
+        "operationId": "AppUserManager_GetAppRoleUsersByOtherAppRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUsersByOtherAppRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUsersByOtherAppRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/roles/by/app": {
+      "post": {
+        "operationId": "AppUserManager_GetAppRolesByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRolesByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRolesByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/roles/by/other/app": {
+      "post": {
+        "operationId": "AppUserManager_GetAppRolesByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRolesByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRolesByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/user": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/user/by/account": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserByAppAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserByAppAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserByAppAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/user/by/app/user": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/get/app/user/control": {
       "post": {
         "operationId": "AppUserManager_GetAppUserControl",
@@ -369,6 +1392,134 @@
         ]
       }
     },
+    "/v1/get/app/user/extra": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserExtra",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserExtraResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserExtraRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/user/extra/by/app/user": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserExtraByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserExtraByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserExtraByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/user/secret": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserSecret",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserSecretResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserSecretRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/user/secret/by/app/user": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserSecretByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserSecretByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserSecretByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/get/app/user/thirdparty/by/app/thirdpartyid": {
       "post": {
         "operationId": "AppUserManager_GetAppUserThirdPartyByAppThirdPartyID",
@@ -393,6 +1544,582 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppUserThirdPartyByAppThirdPartyIDRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/userinfo": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfoRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/userinfo/by/app/user": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserInfoByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfoByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfoByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/userinfos/by/app": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserInfosByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfosByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfosByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/userinfos/by/other/app": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUserInfosByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfosByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserInfosByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/app/users/by/app": {
+      "post": {
+        "operationId": "AppUserManager_GetAppUsersByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUsersByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUsersByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/appinfo": {
+      "post": {
+        "operationId": "AppUserManager_GetAppInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppInfoRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/appinfos": {
+      "post": {
+        "operationId": "AppUserManager_GetAppInfos",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppInfosResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppInfosRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/appinfos/by/creator": {
+      "post": {
+        "operationId": "AppUserManager_GetAppInfosByCreator",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppInfosByCreatorResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppInfosByCreatorRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/apps": {
+      "post": {
+        "operationId": "AppUserManager_GetApps",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/apps/by/creator": {
+      "post": {
+        "operationId": "AppUserManager_GetAppsByCreator",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppsByCreatorResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppsByCreatorRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/ban/app": {
+      "post": {
+        "operationId": "AppUserManager_GetBanApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetBanAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetBanAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/ban/app/by/app": {
+      "post": {
+        "operationId": "AppUserManager_GetBanAppByApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetBanAppByAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetBanAppByAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/ban/app/user": {
+      "post": {
+        "operationId": "AppUserManager_GetBanAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetBanAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetBanAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/ban/app/user/by/app/user": {
+      "post": {
+        "operationId": "AppUserManager_GetBanAppUserByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetBanAppUserByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetBanAppUserByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/genesis/app/role/users/by/other/app": {
+      "post": {
+        "operationId": "AppUserManager_GetGenesisAppRoleUsersByOtherApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGenesisAppRoleUsersByOtherAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGenesisAppRoleUsersByOtherAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/genesis/role": {
+      "post": {
+        "operationId": "AppUserManager_GetGenesisRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGenesisRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGenesisRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/get/user/roles/by/app/user": {
+      "post": {
+        "operationId": "AppUserManager_GetUserRolesByAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserRolesByAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserRolesByAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/update/app": {
+      "post": {
+        "operationId": "AppUserManager_UpdateApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppRequest"
             }
           }
         ],
@@ -433,6 +2160,70 @@
         ]
       }
     },
+    "/v1/update/app/role": {
+      "post": {
+        "operationId": "AppUserManager_UpdateAppRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/update/app/user": {
+      "post": {
+        "operationId": "AppUserManager_UpdateAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
     "/v1/update/app/user/control": {
       "post": {
         "operationId": "AppUserManager_UpdateAppUserControl",
@@ -457,6 +2248,166 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1UpdateAppUserControlRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/update/app/user/extra": {
+      "post": {
+        "operationId": "AppUserManager_UpdateAppUserExtra",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppUserExtraResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppUserExtraRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/update/app/user/secret": {
+      "post": {
+        "operationId": "AppUserManager_UpdateAppUserSecret",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppUserSecretResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppUserSecretRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/update/ban/app": {
+      "post": {
+        "operationId": "AppUserManager_UpdateBanApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateBanAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateBanAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/update/ban/app/user": {
+      "post": {
+        "operationId": "AppUserManager_UpdateBanAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateBanAppUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateBanAppUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserManager"
+        ]
+      }
+    },
+    "/v1/verify/app/user/by/account/password": {
+      "post": {
+        "operationId": "AppUserManager_VerifyAppUserByAppAccountPassword",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VerifyAppUserByAppAccountPasswordResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1VerifyAppUserByAppAccountPasswordRequest"
             }
           }
         ],
@@ -526,6 +2477,30 @@
         }
       }
     },
+    "v1App": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1AppControl": {
       "type": "object",
       "properties": {
@@ -558,6 +2533,43 @@
           "type": "boolean"
         },
         "InvitationCodeMust": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1AppInfo": {
+      "type": "object",
+      "properties": {
+        "App": {
+          "$ref": "#/definitions/v1App"
+        },
+        "Ctrl": {
+          "$ref": "#/definitions/v1AppControl"
+        },
+        "Ban": {
+          "$ref": "#/definitions/v1BanApp"
+        }
+      }
+    },
+    "v1AppRole": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Default": {
           "type": "boolean"
         }
       }
@@ -623,6 +2635,84 @@
         }
       }
     },
+    "v1AppUserExtra": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Organization": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AppUserInfo": {
+      "type": "object",
+      "properties": {
+        "User": {
+          "$ref": "#/definitions/v1AppUser"
+        },
+        "Extra": {
+          "$ref": "#/definitions/v1AppUserExtra"
+        },
+        "Ctrl": {
+          "$ref": "#/definitions/v1AppUserControl"
+        },
+        "Ban": {
+          "$ref": "#/definitions/v1BanAppUser"
+        },
+        "Roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppRole"
+          }
+        },
+        "SecretMap": {
+          "$ref": "#/definitions/v1AppUserSecretMap"
+        }
+      }
+    },
     "v1AppUserSecret": {
       "type": "object",
       "properties": {
@@ -643,6 +2733,14 @@
         },
         "GoogleSecret": {
           "type": "string"
+        }
+      }
+    },
+    "v1AppUserSecretMap": {
+      "type": "object",
+      "properties": {
+        "HasGoogleSecret": {
+          "type": "boolean"
         }
       }
     },
@@ -672,6 +2770,51 @@
         }
       }
     },
+    "v1BanApp": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1BanAppUser": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateAdminAppsRequest": {
+      "type": "object"
+    },
+    "v1CreateAdminAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1App"
+          }
+        }
+      }
+    },
     "v1CreateAppControlForOtherAppRequest": {
       "type": "object",
       "properties": {
@@ -695,8 +2838,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppControl",
-          "title": "@gotags: json:\"info,omitempty\""
+          "$ref": "#/definitions/v1AppControl"
         }
       }
     },
@@ -705,6 +2847,120 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppControl"
+        }
+      }
+    },
+    "v1CreateAppRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+    "v1CreateAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+    "v1CreateAppRoleForOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppRole"
+        }
+      }
+    },
+    "v1CreateAppRoleForOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRole"
+        }
+      }
+    },
+    "v1CreateAppRoleRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppRole"
+        }
+      }
+    },
+    "v1CreateAppRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRole"
+        }
+      }
+    },
+    "v1CreateAppRoleUserForAppOtherUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppRoleUser"
+        }
+      }
+    },
+    "v1CreateAppRoleUserForAppOtherUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRoleUser"
+        }
+      }
+    },
+    "v1CreateAppRoleUserForOtherAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v1AppRoleUser"
+        }
+      }
+    },
+    "v1CreateAppRoleUserForOtherAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRoleUser"
+        }
+      }
+    },
+    "v1CreateAppRoleUserRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRoleUser"
+        }
+      }
+    },
+    "v1CreateAppRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRoleUser"
         }
       }
     },
@@ -721,6 +2977,54 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserControl"
+        }
+      }
+    },
+    "v1CreateAppUserExtraRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserExtra"
+        }
+      }
+    },
+    "v1CreateAppUserExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserExtra"
+        }
+      }
+    },
+    "v1CreateAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUser"
+        }
+      }
+    },
+    "v1CreateAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUser"
+        }
+      }
+    },
+    "v1CreateAppUserSecretRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserSecret"
+        }
+      }
+    },
+    "v1CreateAppUserSecretResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserSecret"
         }
       }
     },
@@ -778,6 +3082,49 @@
         }
       }
     },
+    "v1CreateBanAppRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanApp"
+        }
+      }
+    },
+    "v1CreateBanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanApp"
+        }
+      }
+    },
+    "v1CreateBanAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanAppUser"
+        }
+      }
+    },
+    "v1CreateBanAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanAppUser"
+        }
+      }
+    },
+    "v1CreateGenesisRoleRequest": {
+      "type": "object"
+    },
+    "v1CreateGenesisRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRole"
+        }
+      }
+    },
     "v1CreateGenesisRoleUserRequest": {
       "type": "object",
       "properties": {
@@ -797,6 +3144,68 @@
         },
         "RoleUser": {
           "$ref": "#/definitions/v1AppRoleUser"
+        }
+      }
+    },
+    "v1DeleteAppRoleUserRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteAppRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRoleUser"
+        }
+      }
+    },
+    "v1DeleteBanAppRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteBanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanApp"
+        }
+      }
+    },
+    "v1DeleteBanAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteBanAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanAppUser"
+        }
+      }
+    },
+    "v1GetAdminAppsRequest": {
+      "type": "object"
+    },
+    "v1GetAdminAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1App"
+          }
         }
       }
     },
@@ -829,6 +3238,366 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppControl"
+        }
+      }
+    },
+    "v1GetAppInfoRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppInfoResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppInfo"
+        }
+      }
+    },
+    "v1GetAppInfosByCreatorRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppInfosByCreatorResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppInfo"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppInfosRequest": {
+      "type": "object",
+      "properties": {
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppInfosResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppInfo"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+    "v1GetAppRoleByAppRoleRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppRoleByAppRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRole"
+        }
+      }
+    },
+    "v1GetAppRoleRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRole"
+        }
+      }
+    },
+    "v1GetAppRoleUserByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppRoleUserByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppRoleUser"
+          }
+        }
+      }
+    },
+    "v1GetAppRoleUserRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRoleUser"
+        }
+      }
+    },
+    "v1GetAppRoleUsersByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppRoleUsersByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppRoleUser"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppRoleUsersByAppRoleRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppRoleUsersByAppRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppRoleUser"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppRoleUsersByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppRoleUsersByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppRoleUser"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppRoleUsersByOtherAppRoleRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppRoleUsersByOtherAppRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppRoleUser"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppRolesByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppRolesByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppRole"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppRolesByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppRolesByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppRole"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppUserByAppAccountRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserByAppAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUser"
+        }
+      }
+    },
+    "v1GetAppUserByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUser"
         }
       }
     },
@@ -867,6 +3636,179 @@
         }
       }
     },
+    "v1GetAppUserExtraByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserExtraByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserExtra"
+        }
+      }
+    },
+    "v1GetAppUserExtraRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserExtra"
+        }
+      }
+    },
+    "v1GetAppUserInfoByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserInfoByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
+        }
+      }
+    },
+    "v1GetAppUserInfoRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserInfoResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
+        }
+      }
+    },
+    "v1GetAppUserInfosByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppUserInfosByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppUserInfo"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppUserInfosByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppUserInfosByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppUserInfo"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUser"
+        }
+      }
+    },
+    "v1GetAppUserSecretByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserSecretByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserSecret"
+        }
+      }
+    },
+    "v1GetAppUserSecretRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppUserSecretResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserSecret"
+        }
+      }
+    },
     "v1GetAppUserThirdPartyByAppThirdPartyIDRequest": {
       "type": "object",
       "properties": {
@@ -889,6 +3831,227 @@
         }
       }
     },
+    "v1GetAppUsersByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppUsersByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppUser"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppsByCreatorRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppsByCreatorResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1App"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppsRequest": {
+      "type": "object",
+      "properties": {
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1App"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetBanAppByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetBanAppByAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanApp"
+        }
+      }
+    },
+    "v1GetBanAppRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetBanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanApp"
+        }
+      }
+    },
+    "v1GetBanAppUserByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetBanAppUserByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanAppUser"
+        }
+      }
+    },
+    "v1GetBanAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetBanAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanAppUser"
+        }
+      }
+    },
+    "v1GetGenesisAppRoleUsersByOtherAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetGenesisAppRoleUsersByOtherAppResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppRoleUser"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetGenesisRoleRequest": {
+      "type": "object"
+    },
+    "v1GetGenesisRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRole"
+        }
+      }
+    },
+    "v1GetUserRolesByAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/v1PageInfo"
+        }
+      }
+    },
+    "v1GetUserRolesByAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppRole"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1PageInfo": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
     "v1UpdateAppControlRequest": {
       "type": "object",
       "properties": {
@@ -905,6 +4068,38 @@
         }
       }
     },
+    "v1UpdateAppRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+    "v1UpdateAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+    "v1UpdateAppRoleRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRole"
+        }
+      }
+    },
+    "v1UpdateAppRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppRole"
+        }
+      }
+    },
     "v1UpdateAppUserControlRequest": {
       "type": "object",
       "properties": {
@@ -918,6 +4113,108 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUserControl"
+        }
+      }
+    },
+    "v1UpdateAppUserExtraRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserExtra"
+        }
+      }
+    },
+    "v1UpdateAppUserExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserExtra"
+        }
+      }
+    },
+    "v1UpdateAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUser"
+        }
+      }
+    },
+    "v1UpdateAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUser"
+        }
+      }
+    },
+    "v1UpdateAppUserSecretRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserSecret"
+        }
+      }
+    },
+    "v1UpdateAppUserSecretResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserSecret"
+        }
+      }
+    },
+    "v1UpdateBanAppRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanApp"
+        }
+      }
+    },
+    "v1UpdateBanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanApp"
+        }
+      }
+    },
+    "v1UpdateBanAppUserRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanAppUser"
+        }
+      }
+    },
+    "v1UpdateBanAppUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BanAppUser"
+        }
+      }
+    },
+    "v1VerifyAppUserByAppAccountPasswordRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        }
+      }
+    },
+    "v1VerifyAppUserByAppAccountPasswordResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppUserInfo"
         }
       }
     },

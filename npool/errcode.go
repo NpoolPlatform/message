@@ -5,6 +5,7 @@ const (
 	ErrParams
 	ErrAlreadyExists
 	ErrPermissionDenied
+	ErrNotFound
 )
 
 const (
