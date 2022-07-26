@@ -147,6 +147,12 @@
         },
         "ToUser": {
           "type": "string"
+        },
+        "TransferredToPlatform": {
+          "type": "string"
+        },
+        "TransferredToUser": {
+          "type": "string"
         }
       }
     },
@@ -172,6 +178,12 @@
         "ToUser": {
           "type": "string",
           "title": "Benefit belong to user"
+        },
+        "TransferredToPlatform": {
+          "type": "string"
+        },
+        "TransferredToUser": {
+          "type": "string"
         }
       }
     },

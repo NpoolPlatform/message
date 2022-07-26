@@ -41,6 +41,8 @@ message GeneralReq {
     optional string ToPlatform = 50;
     // Benefit belong to user
     optional string ToUser     = 60;
+    optional string TransferredToPlatform = 70;
+    optional string TransferredToUser     = 80;
 }
 
 message General {
@@ -50,6 +52,8 @@ message General {
     string Amount     = 40;
     string ToPlatform = 50;
     string ToUser     = 60;
+    string TransferredToPlatform = 70;
+    string TransferredToUser     = 80;
 }
 
 message Conds {
