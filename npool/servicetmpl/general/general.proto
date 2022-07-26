@@ -1,14 +1,14 @@
 syntax = "proto3";
 
-package ledger.manager.general.v1;
+package service.template.general.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/ledgermgr/general";
+option go_package = "github.com/NpoolPlatform/message/npool/servicetmpl/general";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
-service LedgerGeneral {
+service TemplateGeneral {
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {}
 
     rpc CreateGeneral (CreateGeneralRequest) returns (CreateGeneralResponse) {}
@@ -33,36 +33,36 @@ service LedgerGeneral {
 }
 
 message GeneralReq {
-    optional string ID         = 10;
-    optional string AppID      = 20;
-    optional string UserID     = 30;
+    optional string ID = 10;
+    optional string AppID = 20;
+    optional string UserID = 30;
     optional string CoinTypeID = 40;
-    optional string Incoming   = 50;
-    optional string Locked     = 60;
-    optional string Outcoming  = 70;
-    optional string Spendable  = 80;
+    optional string Incoming = 50;
+    optional string Locked = 60;
+    optional string Outcoming = 70;
+    optional string Spendable = 80;
 }
 
 message General {
-    string ID         = 10;
-    string AppID      = 20;
-    string UserID     = 30;
+    string ID = 10;
+    string AppID = 20;
+    string UserID = 30;
     string CoinTypeID = 40;
-    string Incoming   = 50;
-    string Locked     = 60;
-    string Outcoming  = 70;
-    string Spendable  = 80;
+    string Incoming = 50;
+    string Locked = 60;
+    string Outcoming = 70;
+    string Spendable = 80;
 }
 
 message Conds {
-    optional npool.v1.StringVal ID         = 10;
-    optional npool.v1.StringVal AppID      = 20;
-    optional npool.v1.StringVal UserID     = 30;
+    optional npool.v1.StringVal ID = 10;
+    optional npool.v1.StringVal AppID = 20;
+    optional npool.v1.StringVal UserID = 30;
     optional npool.v1.StringVal CoinTypeID = 40;
-    optional npool.v1.StringVal Incoming   = 50;
-    optional npool.v1.StringVal Locked     = 60;
-    optional npool.v1.StringVal Outcoming  = 70;
-    optional npool.v1.StringVal Spendable  = 80;
+    optional npool.v1.StringVal Incoming = 50;
+    optional npool.v1.StringVal Locked = 60;
+    optional npool.v1.StringVal Outcoming = 70;
+    optional npool.v1.StringVal Spendable = 80;
 }
 
 

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package mining.manager.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/miningmgr";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service MiningManager {
+    // Method Version
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/v1/version"
+            body: "*"
+        };
+    }
+}
+

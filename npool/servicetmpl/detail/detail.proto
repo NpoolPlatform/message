@@ -1,14 +1,14 @@
 syntax = "proto3";
 
-package ledger.manager.detail.v1;
+package service.template.detail.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/ledgermgr/detail";
+option go_package = "github.com/NpoolPlatform/message/npool/servicetmpl/detail";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
-service LedgerDetail {
+service TemplateDetail {
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {}
 
     rpc CreateDetail (CreateDetailRequest) returns (CreateDetailResponse) {}
@@ -65,7 +65,8 @@ message DetailReq {
     optional string     FromCoinTypeID   = 80;
     optional string     CoinUSDCurrency  = 90;
     optional string     IOExtra          = 100;
-    optional uint32     CreatedAt        = 110;
+    optional string     FromOldID        = 110;
+    optional uint32     CreatedAt        = 120;
 }
 
 message Detail {
@@ -79,7 +80,8 @@ message Detail {
     string      FromCoinTypeID    = 80;
     string      CoinUSDCurrency   = 90;
     string      IOExtra           = 100;
-    uint32      CreatedAt         = 110;
+    string      FromOldID         = 110;
+    uint32      CreatedAt         = 120;
 }
 
 message Conds {
@@ -93,6 +95,7 @@ message Conds {
     optional npool.v1.StringVal FromCoinTypeID   = 80;
     optional npool.v1.StringVal CoinUSDCurrency  = 90;
     optional npool.v1.StringVal IOExtra          = 100;
+    optional npool.v1.StringVal FromOldID        = 110;
 }
 
 

@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledgermgr/detail/detail.proto",
+    "title": "npool/servicetmpl/detail/detail.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "LedgerDetail"
+      "name": "TemplateDetail"
     }
   ],
   "consumes": [
@@ -76,6 +76,9 @@
         },
         "IOExtra": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "FromOldID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -140,6 +143,9 @@
         "IOExtra": {
           "type": "string"
         },
+        "FromOldID": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -178,6 +184,9 @@
           "type": "string"
         },
         "IOExtra": {
+          "type": "string"
+        },
+        "FromOldID": {
           "type": "string"
         },
         "CreatedAt": {

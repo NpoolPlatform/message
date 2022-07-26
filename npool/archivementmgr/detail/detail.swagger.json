@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledgermgr/detail/detail.proto",
+    "title": "npool/archivementmgr/detail/detail.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "LedgerDetail"
+      "name": "ArchivementDetail"
     }
   ],
   "consumes": [
@@ -56,26 +56,35 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "OrderID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "PaymentID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "IOType": {
-          "$ref": "#/definitions/v1Int32Val"
+        "PaymentCoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
         },
-        "IOSubType": {
-          "$ref": "#/definitions/v1Int32Val"
+        "PaymentCoinUSDCurrency": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Units": {
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "Amount": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "FromCoinTypeID": {
+        "USDAmount": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "CoinUSDCurrency": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "IOExtra": {
-          "$ref": "#/definitions/v1StringVal"
+        "CreatedAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -119,25 +128,32 @@
         "UserID": {
           "type": "string"
         },
+        "GoodID": {
+          "type": "string"
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "PaymentID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },
-        "IOType": {
-          "$ref": "#/definitions/v1IOType"
+        "PaymentCoinTypeID": {
+          "type": "string"
         },
-        "IOSubType": {
-          "$ref": "#/definitions/v1IOSubType"
+        "PaymentCoinUSDCurrency": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "integer",
+          "format": "int64"
         },
         "Amount": {
           "type": "string"
         },
-        "FromCoinTypeID": {
-          "type": "string"
-        },
-        "CoinUSDCurrency": {
-          "type": "string"
-        },
-        "IOExtra": {
+        "USDAmount": {
           "type": "string"
         },
         "CreatedAt": {
@@ -158,26 +174,32 @@
         "UserID": {
           "type": "string"
         },
+        "GoodID": {
+          "type": "string"
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "PaymentID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },
-        "IOType": {
-          "$ref": "#/definitions/v1IOType"
+        "PaymentCoinTypeID": {
+          "type": "string"
         },
-        "IOSubType": {
-          "$ref": "#/definitions/v1IOSubType"
+        "PaymentCoinUSDCurrency": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "integer",
+          "format": "int64"
         },
         "Amount": {
           "type": "string"
         },
-        "FromCoinTypeID": {
-          "type": "string",
-          "title": "E.g. when pay with non-USDT coin"
-        },
-        "CoinUSDCurrency": {
-          "type": "string"
-        },
-        "IOExtra": {
+        "USDAmount": {
           "type": "string"
         },
         "CreatedAt": {
@@ -233,46 +255,23 @@
         }
       }
     },
-    "v1IOSubType": {
-      "type": "string",
-      "enum": [
-        "DefaultSubType",
-        "Payment",
-        "MiningBenefit",
-        "Commission",
-        "TechniqueFeeCommission",
-        "Deposit",
-        "Withdrawal"
-      ],
-      "default": "DefaultSubType",
-      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Withdrawal: O"
-    },
-    "v1IOType": {
-      "type": "string",
-      "enum": [
-        "DefaultType",
-        "Incoming",
-        "Outcoming"
-      ],
-      "default": "DefaultType"
-    },
-    "v1Int32Val": {
+    "v1StringVal": {
       "type": "object",
       "properties": {
         "Value": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "Op": {
           "type": "string"
         }
       }
     },
-    "v1StringVal": {
+    "v1Uint32Val": {
       "type": "object",
       "properties": {
         "Value": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "Op": {
           "type": "string"
