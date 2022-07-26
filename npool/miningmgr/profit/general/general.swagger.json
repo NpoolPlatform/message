@@ -72,6 +72,12 @@
         },
         "ToUser": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "TransferredToPlatform": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "TransferredToUser": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },

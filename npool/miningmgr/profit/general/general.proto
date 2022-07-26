@@ -63,6 +63,8 @@ message Conds {
     optional npool.v1.StringVal Amount     = 40;
     optional npool.v1.StringVal ToPlatform = 50;
     optional npool.v1.StringVal ToUser     = 60;
+    optional npool.v1.StringVal TransferredToPlatform = 70;
+    optional npool.v1.StringVal TransferredToUser     = 80;
 }
 
 
