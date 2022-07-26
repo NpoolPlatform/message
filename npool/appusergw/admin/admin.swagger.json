@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/genesis/role/user": {
+      "post": {
+        "operationId": "AppUserGatewayAdmin_CreateGenesisRoleUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateGenesisRoleUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateGenesisRoleUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAdmin"
+        ]
+      }
+    },
     "/v1/get/app/genesis/app/role/users": {
       "post": {
         "operationId": "AppUserGatewayAdmin_GetAppGenesisAppRoleUsers",
@@ -230,6 +262,28 @@
         }
       }
     },
+    "v1CreateGenesisRoleUserRequest": {
+      "type": "object",
+      "properties": {
+        "User": {
+          "$ref": "#/definitions/v2AppUser"
+        },
+        "Secret": {
+          "$ref": "#/definitions/v2AppUserSecret"
+        }
+      }
+    },
+    "v1CreateGenesisRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "User": {
+          "$ref": "#/definitions/v2AppUser"
+        },
+        "RoleUser": {
+          "$ref": "#/definitions/v2AppRoleUser"
+        }
+      }
+    },
     "v1GetAdminAppsRequest": {
       "type": "object"
     },
@@ -248,9 +302,6 @@
       "type": "object",
       "properties": {
         "TargetAppID": {
-          "type": "string"
-        },
-        "UserID": {
           "type": "string"
         }
       }
@@ -341,6 +392,49 @@
           "type": "string"
         },
         "RoleID": {
+          "type": "string"
+        }
+      }
+    },
+    "v2AppUser": {
+      "type": "object",
+      "properties": {
+        "PhoneNo": {
+          "type": "string"
+        },
+        "ImportFromApp": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        }
+      }
+    },
+    "v2AppUserSecret": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        },
+        "Salt": {
+          "type": "string"
+        },
+        "GoogleSecret": {
           "type": "string"
         }
       }

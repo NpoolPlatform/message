@@ -27,6 +27,7 @@ type AppUserGatewayAdminClient interface {
 	CreateGenesisRole(ctx context.Context, in *CreateGenesisRoleRequest, opts ...grpc.CallOption) (*CreateGenesisRoleResponse, error)
 	GetGenesisRole(ctx context.Context, in *GetGenesisRoleRequest, opts ...grpc.CallOption) (*GetGenesisRoleResponse, error)
 	GetAppGenesisAppRoleUsers(ctx context.Context, in *GetAppGenesisAppRoleUsersRequest, opts ...grpc.CallOption) (*GetAppGenesisAppRoleUsersResponse, error)
+	CreateGenesisRoleUser(ctx context.Context, in *CreateGenesisRoleUserRequest, opts ...grpc.CallOption) (*CreateGenesisRoleUserResponse, error)
 }
 
 type appUserGatewayAdminClient struct {
@@ -82,6 +83,15 @@ func (c *appUserGatewayAdminClient) GetAppGenesisAppRoleUsers(ctx context.Contex
 	return out, nil
 }
 
+func (c *appUserGatewayAdminClient) CreateGenesisRoleUser(ctx context.Context, in *CreateGenesisRoleUserRequest, opts ...grpc.CallOption) (*CreateGenesisRoleUserResponse, error) {
+	out := new(CreateGenesisRoleUserResponse)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.admin.v1.AppUserGatewayAdmin/CreateGenesisRoleUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AppUserGatewayAdminServer is the server API for AppUserGatewayAdmin service.
 // All implementations must embed UnimplementedAppUserGatewayAdminServer
 // for forward compatibility
@@ -91,6 +101,7 @@ type AppUserGatewayAdminServer interface {
 	CreateGenesisRole(context.Context, *CreateGenesisRoleRequest) (*CreateGenesisRoleResponse, error)
 	GetGenesisRole(context.Context, *GetGenesisRoleRequest) (*GetGenesisRoleResponse, error)
 	GetAppGenesisAppRoleUsers(context.Context, *GetAppGenesisAppRoleUsersRequest) (*GetAppGenesisAppRoleUsersResponse, error)
+	CreateGenesisRoleUser(context.Context, *CreateGenesisRoleUserRequest) (*CreateGenesisRoleUserResponse, error)
 	mustEmbedUnimplementedAppUserGatewayAdminServer()
 }
 
@@ -112,6 +123,9 @@ func (UnimplementedAppUserGatewayAdminServer) GetGenesisRole(context.Context, *G
 }
 func (UnimplementedAppUserGatewayAdminServer) GetAppGenesisAppRoleUsers(context.Context, *GetAppGenesisAppRoleUsersRequest) (*GetAppGenesisAppRoleUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppGenesisAppRoleUsers not implemented")
+}
+func (UnimplementedAppUserGatewayAdminServer) CreateGenesisRoleUser(context.Context, *CreateGenesisRoleUserRequest) (*CreateGenesisRoleUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateGenesisRoleUser not implemented")
 }
 func (UnimplementedAppUserGatewayAdminServer) mustEmbedUnimplementedAppUserGatewayAdminServer() {}
 
@@ -216,6 +230,24 @@ func _AppUserGatewayAdmin_GetAppGenesisAppRoleUsers_Handler(srv interface{}, ctx
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AppUserGatewayAdmin_CreateGenesisRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateGenesisRoleUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppUserGatewayAdminServer).CreateGenesisRoleUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/app.user.gateway.admin.v1.AppUserGatewayAdmin/CreateGenesisRoleUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppUserGatewayAdminServer).CreateGenesisRoleUser(ctx, req.(*CreateGenesisRoleUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AppUserGatewayAdmin_ServiceDesc is the grpc.ServiceDesc for AppUserGatewayAdmin service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -242,6 +274,10 @@ var AppUserGatewayAdmin_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppGenesisAppRoleUsers",
 			Handler:    _AppUserGatewayAdmin_GetAppGenesisAppRoleUsers_Handler,
+		},
+		{
+			MethodName: "CreateGenesisRoleUser",
+			Handler:    _AppUserGatewayAdmin_CreateGenesisRoleUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
