@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/user/with/secret": {
+    "/v1/get/app/users": {
       "post": {
-        "operationId": "AppUserGw_CreateUserWithSecret",
+        "operationId": "AppUserGw_GetAppUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/userv1CreateUserWithSecretResponse"
+              "$ref": "#/definitions/gatewayappuser1v1GetAppUsersResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/userv1CreateUserWithSecretRequest"
+              "$ref": "#/definitions/gatewayappuser1v1GetAppUsersRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/get/app/userinfo": {
+    "/v1/get/users": {
       "post": {
-        "operationId": "AppUserGw_GetAppUserInfo",
+        "operationId": "AppUserGw_GetUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppUserInfoResponse"
+              "$ref": "#/definitions/gatewayappuser1v1GetUsersResponse"
             }
           },
           "default": {
@@ -71,135 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppUserInfoRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppUserGw"
-        ]
-      }
-    },
-    "/v1/get/app/userinfos": {
-      "post": {
-        "operationId": "AppUserGw_GetAppUserInfos",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppUserInfosResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppUserInfosRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppUserGw"
-        ]
-      }
-    },
-    "/v1/get/user/roles/by/user": {
-      "post": {
-        "operationId": "AppUserGw_GetUserRolesByUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetUserRolesByUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetUserRolesByUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppUserGw"
-        ]
-      }
-    },
-    "/v1/get/userinfo": {
-      "post": {
-        "operationId": "AppUserGw_GetUserInfo",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/userv1GetUserInfoResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/userv1GetUserInfoRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppUserGw"
-        ]
-      }
-    },
-    "/v1/get/userinfos": {
-      "post": {
-        "operationId": "AppUserGw_GetUserInfos",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/userv1GetUserInfosResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/userv1GetUserInfosRequest"
+              "$ref": "#/definitions/gatewayappuser1v1GetUsersRequest"
             }
           }
         ],
@@ -215,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateUserResponse"
+              "$ref": "#/definitions/gatewayappuser1v1CreateUserResponse"
             }
           },
           "default": {
@@ -231,103 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppUserGw"
-        ]
-      }
-    },
-    "/v2/get/app/account/user": {
-      "post": {
-        "operationId": "AppUserGw_GetUserByAccount",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetUserByAccountResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetUserByAccountRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppUserGw"
-        ]
-      }
-    },
-    "/v2/get/app/user": {
-      "post": {
-        "operationId": "AppUserGw_GetAppUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/userv1GetAppUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/userv1GetAppUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppUserGw"
-        ]
-      }
-    },
-    "/v2/get/user": {
-      "post": {
-        "operationId": "AppUserGw_GetUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetUserRequest"
+              "$ref": "#/definitions/gatewayappuser1v1CreateUserRequest"
             }
           }
         ],
@@ -343,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateUserResponse"
+              "$ref": "#/definitions/gatewayappuser1v1UpdateUserResponse"
             }
           },
           "default": {
@@ -359,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateUserRequest"
+              "$ref": "#/definitions/gatewayappuser1v1UpdateUserRequest"
             }
           }
         ],
@@ -370,6 +146,92 @@
     }
   },
   "definitions": {
+    "gatewayappuser1v1CreateUserRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserReq"
+        }
+      }
+    },
+    "gatewayappuser1v1CreateUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUser"
+        }
+      }
+    },
+    "gatewayappuser1v1GetAppUsersRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "gatewayappuser1v1GetAppUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1User"
+          }
+        }
+      }
+    },
+    "gatewayappuser1v1GetUsersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "gatewayappuser1v1GetUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1User"
+          }
+        }
+      }
+    },
+    "gatewayappuser1v1UpdateUserRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserReq"
+        }
+      }
+    },
+    "gatewayappuser1v1UpdateUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUser"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -397,285 +259,12 @@
         }
       }
     },
-    "userv1CreateUserWithSecretRequest": {
-      "type": "object",
-      "properties": {
-        "User": {
-          "$ref": "#/definitions/v2AppUser"
-        },
-        "Secret": {
-          "$ref": "#/definitions/v2AppUserSecret"
-        }
-      }
-    },
-    "userv1CreateUserWithSecretResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppUser"
-        }
-      }
-    },
-    "userv1GetAppUserRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "userv1GetAppUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppUser"
-        }
-      }
-    },
-    "userv1GetUserInfoRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "userv1GetUserInfoResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppUserInfo"
-        }
-      }
-    },
-    "userv1GetUserInfosRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "userv1GetUserInfosResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2AppUserInfo"
-          }
-        }
-      }
-    },
-    "v1CreateUserRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppUserReq"
-        }
-      }
-    },
-    "v1CreateUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppUser"
-        }
-      }
-    },
-    "v1GetAppUserInfoRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppUserInfoResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppUserInfo"
-        }
-      }
-    },
-    "v1GetAppUserInfosRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppUserInfosResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2AppUserInfo"
-          }
-        }
-      }
-    },
-    "v1GetUserByAccountRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Account": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetUserByAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppUser"
-        }
-      }
-    },
-    "v1GetUserRequest": {
-      "type": "object",
-      "properties": {
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppUser"
-        }
-      }
-    },
-    "v1GetUserRolesByUserRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetUserRolesByUserResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2AppRole"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UpdateUserRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppUserReq"
-        }
-      }
-    },
-    "v1UpdateUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppUser"
-        }
-      }
-    },
-    "v2AppRole": {
+    "v1User": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "CreatedBy": {
-          "type": "string"
-        },
-        "Role": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "Default": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v2AppUser": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "PhoneNo": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "ImportFromApp": {
-          "type": "string"
-        }
-      }
-    },
-    "v2AppUserInfo": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "Base"
         },
         "AppID": {
           "type": "string"
@@ -686,15 +275,22 @@
         "PhoneNO": {
           "type": "string"
         },
-        "ImportFromApp": {
+        "ImportedFromAppID": {
+          "type": "string",
+          "title": "Imported"
+        },
+        "ImportedFromAppName": {
           "type": "string"
         },
-        "CreateAt": {
-          "type": "integer",
-          "format": "int64"
+        "ImportedFromAppLogo": {
+          "type": "string"
+        },
+        "ImportedFromAppHome": {
+          "type": "string"
         },
         "Username": {
-          "type": "string"
+          "type": "string",
+          "title": "Extra"
         },
         "AddressFields": {
           "type": "array",
@@ -732,7 +328,8 @@
           "type": "string"
         },
         "SigninVerifyByGoogleAuthentication": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "Control flat"
         },
         "GoogleAuthenticationVerified": {
           "type": "boolean"
@@ -740,18 +337,24 @@
         "IsBanApp": {
           "type": "boolean"
         },
+        "HasGoogleSecret": {
+          "type": "boolean",
+          "title": "Secret map"
+        },
         "Roles": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRole"
-          }
+            "type": "string"
+          },
+          "title": "Role"
         },
-        "HasGoogleSecret": {
-          "type": "boolean"
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
-    "v2AppUserReq": {
+    "v2AppUser": {
       "type": "object",
       "properties": {
         "ID": {
@@ -771,7 +374,7 @@
         }
       }
     },
-    "v2AppUserSecret": {
+    "v2AppUserReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -780,16 +383,13 @@
         "AppID": {
           "type": "string"
         },
-        "UserID": {
+        "PhoneNo": {
           "type": "string"
         },
-        "PasswordHash": {
+        "EmailAddress": {
           "type": "string"
         },
-        "Salt": {
-          "type": "string"
-        },
-        "GoogleSecret": {
+        "ImportFromApp": {
           "type": "string"
         }
       }

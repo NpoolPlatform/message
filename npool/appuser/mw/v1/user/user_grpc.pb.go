@@ -18,230 +18,230 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// AppUserMiddlewareUserClient is the client API for AppUserMiddlewareUser service.
+// UserMwClient is the client API for UserMw service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type AppUserMiddlewareUserClient interface {
-	GetUserInfo(ctx context.Context, in *GetUserInfoRequest, opts ...grpc.CallOption) (*GetUserInfoResponse, error)
-	GetAppUserInfo(ctx context.Context, in *GetUserInfoRequest, opts ...grpc.CallOption) (*GetUserInfoResponse, error)
-	GetUserInfos(ctx context.Context, in *GetUserInfosRequest, opts ...grpc.CallOption) (*GetUserInfosResponse, error)
-	CreateUserWithSecret(ctx context.Context, in *CreateUserWithSecretRequest, opts ...grpc.CallOption) (*CreateUserWithSecretResponse, error)
-	CreateUserWithThirdParty(ctx context.Context, in *CreateUserWithThirdPartyRequest, opts ...grpc.CallOption) (*CreateUserWithThirdPartyResponse, error)
+type UserMwClient interface {
+	GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error)
+	GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error)
+	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
+	CreateAppUser(ctx context.Context, in *CreateAppUserRequest, opts ...grpc.CallOption) (*CreateAppUserResponse, error)
+	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error)
 }
 
-type appUserMiddlewareUserClient struct {
+type userMwClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAppUserMiddlewareUserClient(cc grpc.ClientConnInterface) AppUserMiddlewareUserClient {
-	return &appUserMiddlewareUserClient{cc}
+func NewUserMwClient(cc grpc.ClientConnInterface) UserMwClient {
+	return &userMwClient{cc}
 }
 
-func (c *appUserMiddlewareUserClient) GetUserInfo(ctx context.Context, in *GetUserInfoRequest, opts ...grpc.CallOption) (*GetUserInfoResponse, error) {
-	out := new(GetUserInfoResponse)
-	err := c.cc.Invoke(ctx, "/appusermw.user.v2.AppUserMiddlewareUser/GetUserInfo", in, out, opts...)
+func (c *userMwClient) GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error) {
+	out := new(GetUsersResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.user.v1.UserMw/GetUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserMiddlewareUserClient) GetAppUserInfo(ctx context.Context, in *GetUserInfoRequest, opts ...grpc.CallOption) (*GetUserInfoResponse, error) {
-	out := new(GetUserInfoResponse)
-	err := c.cc.Invoke(ctx, "/appusermw.user.v2.AppUserMiddlewareUser/GetAppUserInfo", in, out, opts...)
+func (c *userMwClient) GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error) {
+	out := new(GetAppUsersResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.user.v1.UserMw/GetAppUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserMiddlewareUserClient) GetUserInfos(ctx context.Context, in *GetUserInfosRequest, opts ...grpc.CallOption) (*GetUserInfosResponse, error) {
-	out := new(GetUserInfosResponse)
-	err := c.cc.Invoke(ctx, "/appusermw.user.v2.AppUserMiddlewareUser/GetUserInfos", in, out, opts...)
+func (c *userMwClient) CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error) {
+	out := new(CreateUserResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.user.v1.UserMw/CreateUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserMiddlewareUserClient) CreateUserWithSecret(ctx context.Context, in *CreateUserWithSecretRequest, opts ...grpc.CallOption) (*CreateUserWithSecretResponse, error) {
-	out := new(CreateUserWithSecretResponse)
-	err := c.cc.Invoke(ctx, "/appusermw.user.v2.AppUserMiddlewareUser/CreateUserWithSecret", in, out, opts...)
+func (c *userMwClient) CreateAppUser(ctx context.Context, in *CreateAppUserRequest, opts ...grpc.CallOption) (*CreateAppUserResponse, error) {
+	out := new(CreateAppUserResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.user.v1.UserMw/CreateAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserMiddlewareUserClient) CreateUserWithThirdParty(ctx context.Context, in *CreateUserWithThirdPartyRequest, opts ...grpc.CallOption) (*CreateUserWithThirdPartyResponse, error) {
-	out := new(CreateUserWithThirdPartyResponse)
-	err := c.cc.Invoke(ctx, "/appusermw.user.v2.AppUserMiddlewareUser/CreateUserWithThirdParty", in, out, opts...)
+func (c *userMwClient) UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error) {
+	out := new(UpdateUserResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.user.v1.UserMw/UpdateUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AppUserMiddlewareUserServer is the server API for AppUserMiddlewareUser service.
-// All implementations must embed UnimplementedAppUserMiddlewareUserServer
+// UserMwServer is the server API for UserMw service.
+// All implementations must embed UnimplementedUserMwServer
 // for forward compatibility
-type AppUserMiddlewareUserServer interface {
-	GetUserInfo(context.Context, *GetUserInfoRequest) (*GetUserInfoResponse, error)
-	GetAppUserInfo(context.Context, *GetUserInfoRequest) (*GetUserInfoResponse, error)
-	GetUserInfos(context.Context, *GetUserInfosRequest) (*GetUserInfosResponse, error)
-	CreateUserWithSecret(context.Context, *CreateUserWithSecretRequest) (*CreateUserWithSecretResponse, error)
-	CreateUserWithThirdParty(context.Context, *CreateUserWithThirdPartyRequest) (*CreateUserWithThirdPartyResponse, error)
-	mustEmbedUnimplementedAppUserMiddlewareUserServer()
+type UserMwServer interface {
+	GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error)
+	GetAppUsers(context.Context, *GetAppUsersRequest) (*GetAppUsersResponse, error)
+	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
+	CreateAppUser(context.Context, *CreateAppUserRequest) (*CreateAppUserResponse, error)
+	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error)
+	mustEmbedUnimplementedUserMwServer()
 }
 
-// UnimplementedAppUserMiddlewareUserServer must be embedded to have forward compatible implementations.
-type UnimplementedAppUserMiddlewareUserServer struct {
+// UnimplementedUserMwServer must be embedded to have forward compatible implementations.
+type UnimplementedUserMwServer struct {
 }
 
-func (UnimplementedAppUserMiddlewareUserServer) GetUserInfo(context.Context, *GetUserInfoRequest) (*GetUserInfoResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfo not implemented")
+func (UnimplementedUserMwServer) GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUsers not implemented")
 }
-func (UnimplementedAppUserMiddlewareUserServer) GetAppUserInfo(context.Context, *GetUserInfoRequest) (*GetUserInfoResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserInfo not implemented")
+func (UnimplementedUserMwServer) GetAppUsers(context.Context, *GetAppUsersRequest) (*GetAppUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppUsers not implemented")
 }
-func (UnimplementedAppUserMiddlewareUserServer) GetUserInfos(context.Context, *GetUserInfosRequest) (*GetUserInfosResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfos not implemented")
+func (UnimplementedUserMwServer) CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
 }
-func (UnimplementedAppUserMiddlewareUserServer) CreateUserWithSecret(context.Context, *CreateUserWithSecretRequest) (*CreateUserWithSecretResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateUserWithSecret not implemented")
+func (UnimplementedUserMwServer) CreateAppUser(context.Context, *CreateAppUserRequest) (*CreateAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUser not implemented")
 }
-func (UnimplementedAppUserMiddlewareUserServer) CreateUserWithThirdParty(context.Context, *CreateUserWithThirdPartyRequest) (*CreateUserWithThirdPartyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateUserWithThirdParty not implemented")
+func (UnimplementedUserMwServer) UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUser not implemented")
 }
-func (UnimplementedAppUserMiddlewareUserServer) mustEmbedUnimplementedAppUserMiddlewareUserServer() {}
+func (UnimplementedUserMwServer) mustEmbedUnimplementedUserMwServer() {}
 
-// UnsafeAppUserMiddlewareUserServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to AppUserMiddlewareUserServer will
+// UnsafeUserMwServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to UserMwServer will
 // result in compilation errors.
-type UnsafeAppUserMiddlewareUserServer interface {
-	mustEmbedUnimplementedAppUserMiddlewareUserServer()
+type UnsafeUserMwServer interface {
+	mustEmbedUnimplementedUserMwServer()
 }
 
-func RegisterAppUserMiddlewareUserServer(s grpc.ServiceRegistrar, srv AppUserMiddlewareUserServer) {
-	s.RegisterService(&AppUserMiddlewareUser_ServiceDesc, srv)
+func RegisterUserMwServer(s grpc.ServiceRegistrar, srv UserMwServer) {
+	s.RegisterService(&UserMw_ServiceDesc, srv)
 }
 
-func _AppUserMiddlewareUser_GetUserInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserInfoRequest)
+func _UserMw_GetUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserMiddlewareUserServer).GetUserInfo(ctx, in)
+		return srv.(UserMwServer).GetUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appusermw.user.v2.AppUserMiddlewareUser/GetUserInfo",
+		FullMethod: "/appuser.middleware.user.v1.UserMw/GetUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserMiddlewareUserServer).GetUserInfo(ctx, req.(*GetUserInfoRequest))
+		return srv.(UserMwServer).GetUsers(ctx, req.(*GetUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserMiddlewareUser_GetAppUserInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserInfoRequest)
+func _UserMw_GetAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserMiddlewareUserServer).GetAppUserInfo(ctx, in)
+		return srv.(UserMwServer).GetAppUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appusermw.user.v2.AppUserMiddlewareUser/GetAppUserInfo",
+		FullMethod: "/appuser.middleware.user.v1.UserMw/GetAppUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserMiddlewareUserServer).GetAppUserInfo(ctx, req.(*GetUserInfoRequest))
+		return srv.(UserMwServer).GetAppUsers(ctx, req.(*GetAppUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserMiddlewareUser_GetUserInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserInfosRequest)
+func _UserMw_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserMiddlewareUserServer).GetUserInfos(ctx, in)
+		return srv.(UserMwServer).CreateUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appusermw.user.v2.AppUserMiddlewareUser/GetUserInfos",
+		FullMethod: "/appuser.middleware.user.v1.UserMw/CreateUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserMiddlewareUserServer).GetUserInfos(ctx, req.(*GetUserInfosRequest))
+		return srv.(UserMwServer).CreateUser(ctx, req.(*CreateUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserMiddlewareUser_CreateUserWithSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateUserWithSecretRequest)
+func _UserMw_CreateAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserMiddlewareUserServer).CreateUserWithSecret(ctx, in)
+		return srv.(UserMwServer).CreateAppUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appusermw.user.v2.AppUserMiddlewareUser/CreateUserWithSecret",
+		FullMethod: "/appuser.middleware.user.v1.UserMw/CreateAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserMiddlewareUserServer).CreateUserWithSecret(ctx, req.(*CreateUserWithSecretRequest))
+		return srv.(UserMwServer).CreateAppUser(ctx, req.(*CreateAppUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserMiddlewareUser_CreateUserWithThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateUserWithThirdPartyRequest)
+func _UserMw_UpdateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserMiddlewareUserServer).CreateUserWithThirdParty(ctx, in)
+		return srv.(UserMwServer).UpdateUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appusermw.user.v2.AppUserMiddlewareUser/CreateUserWithThirdParty",
+		FullMethod: "/appuser.middleware.user.v1.UserMw/UpdateUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserMiddlewareUserServer).CreateUserWithThirdParty(ctx, req.(*CreateUserWithThirdPartyRequest))
+		return srv.(UserMwServer).UpdateUser(ctx, req.(*UpdateUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// AppUserMiddlewareUser_ServiceDesc is the grpc.ServiceDesc for AppUserMiddlewareUser service.
+// UserMw_ServiceDesc is the grpc.ServiceDesc for UserMw service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var AppUserMiddlewareUser_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appusermw.user.v2.AppUserMiddlewareUser",
-	HandlerType: (*AppUserMiddlewareUserServer)(nil),
+var UserMw_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "appuser.middleware.user.v1.UserMw",
+	HandlerType: (*UserMwServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetUserInfo",
-			Handler:    _AppUserMiddlewareUser_GetUserInfo_Handler,
+			MethodName: "GetUsers",
+			Handler:    _UserMw_GetUsers_Handler,
 		},
 		{
-			MethodName: "GetAppUserInfo",
-			Handler:    _AppUserMiddlewareUser_GetAppUserInfo_Handler,
+			MethodName: "GetAppUsers",
+			Handler:    _UserMw_GetAppUsers_Handler,
 		},
 		{
-			MethodName: "GetUserInfos",
-			Handler:    _AppUserMiddlewareUser_GetUserInfos_Handler,
+			MethodName: "CreateUser",
+			Handler:    _UserMw_CreateUser_Handler,
 		},
 		{
-			MethodName: "CreateUserWithSecret",
-			Handler:    _AppUserMiddlewareUser_CreateUserWithSecret_Handler,
+			MethodName: "CreateAppUser",
+			Handler:    _UserMw_CreateAppUser_Handler,
 		},
 		{
-			MethodName: "CreateUserWithThirdParty",
-			Handler:    _AppUserMiddlewareUser_CreateUserWithThirdParty_Handler,
+			MethodName: "UpdateUser",
+			Handler:    _UserMw_UpdateUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

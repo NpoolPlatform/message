@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package app.user.gateway.app.user.v1;
+package appuser.gateway.appuser1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/appuser";
 
@@ -13,41 +13,12 @@ import "npool/appuser/mgr/v2/approle/approle.proto";
 import "npool/appuser/mw/v1/user/user.proto";
 
 service AppUserGw {
-
     rpc CreateUser (CreateUserRequest) returns (CreateUserResponse) {
         option (google.api.http) = {
             post: "/v2/create/user"
             body: "*"
         };
     }
-
-    rpc GetUser (GetUserRequest) returns (GetUserResponse) {
-        option (google.api.http) = {
-            post: "/v2/get/user"
-            body: "*"
-        };
-    }
-
-    rpc GetAppUser (GetAppUserRequest) returns (GetAppUserResponse) {
-        option (google.api.http) = {
-            post: "/v2/get/app/user"
-            body: "*"
-        };
-    }
-
-    rpc GetUserByAccount (GetUserByAccountRequest) returns (GetUserByAccountResponse) {
-        option (google.api.http) = {
-            post: "/v2/get/app/account/user"
-            body: "*"
-        };
-    }
-
-    //  rpc VerifyAppUserByAppAccountPassword (VerifyAppUserByAppAccountPasswordRequest) returns (VerifyAppUserByAppAccountPasswordResponse) {
-    //    option (google.api.http) = {
-    //      post: "/v2/verify/app/user/by/account/password"
-    //      body: "*"
-    //    };
-    //  }
 
     rpc UpdateUser (UpdateUserRequest) returns (UpdateUserResponse) {
         option (google.api.http) = {
@@ -56,94 +27,27 @@ service AppUserGw {
         };
     }
 
-
-    rpc GetUserRolesByUser (GetUserRolesByUserRequest) returns (GetUserRolesByUserResponse) {
+    rpc GetUsers (GetUsersRequest) returns (GetUsersResponse) {
         option (google.api.http) = {
-            post: "/v1/get/user/roles/by/user"
+            post: "/v1/get/users"
             body: "*"
         };
     }
 
-    rpc GetUserInfo (GetUserInfoRequest) returns (GetUserInfoResponse) {
+    rpc GetAppUsers (GetAppUsersRequest) returns (GetAppUsersResponse) {
         option (google.api.http) = {
-            post: "/v1/get/userinfo"
+            post: "/v1/get/app/users"
             body: "*"
         };
     }
-
-    rpc GetAppUserInfo (GetAppUserInfoRequest) returns (GetAppUserInfoResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/userinfo"
-            body: "*"
-        };
-    }
-
-    rpc GetUserInfos (GetUserInfosRequest) returns (GetUserInfosResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/userinfos"
-            body: "*"
-        };
-    }
-
-    rpc GetAppUserInfos (GetAppUserInfosRequest) returns (GetAppUserInfosResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/userinfos"
-            body: "*"
-        };
-    }
-
-    rpc CreateUserWithSecret (CreateUserWithSecretRequest) returns (CreateUserWithSecretResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/user/with/secret"
-            body: "*"
-        };
-    }
-
 }
 
 message CreateUserRequest {
-    appuser.manager.appuser.v2.AppUserReq  Info = 10;
+    appuser.manager.appuser.v2.AppUserReq Info = 10;
 }
 
 message CreateUserResponse {
     appuser.manager.appuser.v2.AppUser Info = 10;
-}
-
-message GetUserRequest {
-    string UserID = 10;
-}
-
-message GetUserResponse {
-    appuser.manager.appuser.v2.AppUser Info = 10;
-}
-
-message GetAppUserRequest {
-    string TargetAppID = 10;
-    string UserID = 20;
-}
-
-message GetAppUserResponse {
-    appuser.manager.appuser.v2.AppUser Info = 10;
-}
-
-message GetUserByAccountRequest {
-    string AppID = 10;
-    string Account = 20;
-}
-
-message GetUserByAccountResponse {
-    appuser.manager.appuser.v2.AppUser Info = 10;
-}
-
-message GetUsersByAppRequest {
-    string AppID = 10;
-    int32 Limit = 30;
-    int32 Offset = 20;
-}
-
-message GetUsersByAppResponse {
-    repeated appuser.manager.appuser.v2.AppUser Infos = 10;
-    uint32 Total = 20;
 }
 
 message UpdateUserRequest {
@@ -154,71 +58,22 @@ message UpdateUserResponse {
     appuser.manager.appuser.v2.AppUser Info = 10;
 }
 
-//message VerifyAppUserByAppAccountPasswordRequest {
-//  string AppID = 10;
-//  string Account = 20;
-//  string PasswordHash = 30;
-//}
-//
-//message VerifyAppUserByAppAccountPasswordResponse {
-//  AppUserInfo Info = 10;
-//}
-
-message GetUserRolesByUserRequest {
-    string AppID = 10;
-    string UserID = 20;
-    int32 Limit = 30;
-    int32 Offset = 40;
+message GetUsersRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
 }
 
-message GetUserRolesByUserResponse {
-    repeated appuser.manager.approle.v2.AppRole Infos = 10;
-    uint32 Total = 20;
+message GetUsersResponse {
+    repeated appuser.middleware.user.v1.User Infos = 10;
 }
 
-message GetUserInfoRequest {
-    string AppID = 10;
-    string UserID = 20;
-}
-
-message GetUserInfoResponse {
-    appusermw.user.v2.AppUserInfo Info = 10;
-}
-
-message GetAppUserInfoRequest {
+message GetAppUsersRequest {
     string TargetAppID = 10;
-    string UserID = 20;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
 }
 
-message GetAppUserInfoResponse {
-    appusermw.user.v2.AppUserInfo Info = 10;
-}
-
-message GetUserInfosRequest {
-    string AppID = 10;
-    int32 Offset = 20;
-    int32 Limit = 30;
-}
-
-message GetUserInfosResponse {
-    repeated appusermw.user.v2.AppUserInfo Infos = 10;
-}
-
-message GetAppUserInfosRequest {
-    string TargetAppID = 10;
-    int32 Offset = 20;
-    int32 Limit = 30;
-}
-
-message GetAppUserInfosResponse {
-    repeated appusermw.user.v2.AppUserInfo Infos = 10;
-}
-
-message CreateUserWithSecretRequest {
-    appuser.manager.appuser.v2.AppUser User = 10;
-    appuser.manager.appusersecret.v2.AppUserSecret Secret = 20;
-}
-
-message CreateUserWithSecretResponse {
-    appuser.manager.appuser.v2.AppUser Info = 10;
+message GetAppUsersResponse {
+    repeated appuser.middleware.user.v1.User Infos = 10;
 }
