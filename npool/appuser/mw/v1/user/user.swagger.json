@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "AppUserMiddlewareUser"
+      "name": "UserMw"
     }
   ],
   "consumes": [
@@ -44,54 +44,58 @@
         }
       }
     },
-    "v2AppRole": {
+    "userv1CreateAppUserResponse": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "CreatedBy": {
-          "type": "string"
-        },
-        "Role": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "Default": {
-          "type": "boolean"
+        "Info": {
+          "$ref": "#/definitions/v1User"
         }
       }
     },
-    "v2AppUser": {
+    "userv1GetAppUsersResponse": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "PhoneNo": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "ImportFromApp": {
-          "type": "string"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1User"
+          }
         }
       }
     },
-    "v2AppUserInfo": {
+    "v1CreateUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1GetUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1User"
+          }
+        }
+      }
+    },
+    "v1UpdateUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1User": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "Base"
         },
         "AppID": {
           "type": "string"
@@ -102,15 +106,22 @@
         "PhoneNO": {
           "type": "string"
         },
-        "ImportFromApp": {
+        "ImportedFromAppID": {
+          "type": "string",
+          "title": "Imported"
+        },
+        "ImportedFromAppName": {
           "type": "string"
         },
-        "CreateAt": {
-          "type": "integer",
-          "format": "int64"
+        "ImportedFromAppLogo": {
+          "type": "string"
+        },
+        "ImportedFromAppHome": {
+          "type": "string"
         },
         "Username": {
-          "type": "string"
+          "type": "string",
+          "title": "Extra"
         },
         "AddressFields": {
           "type": "array",
@@ -148,7 +159,8 @@
           "type": "string"
         },
         "SigninVerifyByGoogleAuthentication": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "Control flat"
         },
         "GoogleAuthenticationVerified": {
           "type": "boolean"
@@ -156,118 +168,20 @@
         "IsBanApp": {
           "type": "boolean"
         },
+        "HasGoogleSecret": {
+          "type": "boolean",
+          "title": "Secret map"
+        },
         "Roles": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRole"
-          }
+            "type": "string"
+          },
+          "title": "Role"
         },
-        "HasGoogleSecret": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v2AppUserReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "PhoneNo": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "ImportFromApp": {
-          "type": "string"
-        }
-      }
-    },
-    "v2AppUserSecretReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "PasswordHash": {
-          "type": "string"
-        },
-        "Salt": {
-          "type": "string"
-        },
-        "GoogleSecret": {
-          "type": "string"
-        }
-      }
-    },
-    "v2AppUserThirdParty": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "ThirdPartyID": {
-          "type": "string"
-        },
-        "ThirdPartyUserID": {
-          "type": "string"
-        },
-        "ThirdPartyUsername": {
-          "type": "string"
-        },
-        "ThirdPartyUserAvatar": {
-          "type": "string"
-        }
-      }
-    },
-    "v2CreateUserWithSecretResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppUser"
-        }
-      }
-    },
-    "v2CreateUserWithThirdPartyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppUser"
-        }
-      }
-    },
-    "v2GetUserInfoResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppUserInfo"
-        }
-      }
-    },
-    "v2GetUserInfosResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2AppUserInfo"
-          }
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }

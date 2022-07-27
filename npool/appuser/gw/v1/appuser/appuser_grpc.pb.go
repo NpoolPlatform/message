@@ -23,16 +23,9 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AppUserGwClient interface {
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
-	GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error)
-	GetAppUser(ctx context.Context, in *GetAppUserRequest, opts ...grpc.CallOption) (*GetAppUserResponse, error)
-	GetUserByAccount(ctx context.Context, in *GetUserByAccountRequest, opts ...grpc.CallOption) (*GetUserByAccountResponse, error)
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error)
-	GetUserRolesByUser(ctx context.Context, in *GetUserRolesByUserRequest, opts ...grpc.CallOption) (*GetUserRolesByUserResponse, error)
-	GetUserInfo(ctx context.Context, in *GetUserInfoRequest, opts ...grpc.CallOption) (*GetUserInfoResponse, error)
-	GetAppUserInfo(ctx context.Context, in *GetAppUserInfoRequest, opts ...grpc.CallOption) (*GetAppUserInfoResponse, error)
-	GetUserInfos(ctx context.Context, in *GetUserInfosRequest, opts ...grpc.CallOption) (*GetUserInfosResponse, error)
-	GetAppUserInfos(ctx context.Context, in *GetAppUserInfosRequest, opts ...grpc.CallOption) (*GetAppUserInfosResponse, error)
-	CreateUserWithSecret(ctx context.Context, in *CreateUserWithSecretRequest, opts ...grpc.CallOption) (*CreateUserWithSecretResponse, error)
+	GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error)
+	GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error)
 }
 
 type appUserGwClient struct {
@@ -45,34 +38,7 @@ func NewAppUserGwClient(cc grpc.ClientConnInterface) AppUserGwClient {
 
 func (c *appUserGwClient) CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error) {
 	out := new(CreateUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.user.v1.AppUserGw/CreateUser", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appUserGwClient) GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error) {
-	out := new(GetUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.user.v1.AppUserGw/GetUser", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appUserGwClient) GetAppUser(ctx context.Context, in *GetAppUserRequest, opts ...grpc.CallOption) (*GetAppUserResponse, error) {
-	out := new(GetAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.user.v1.AppUserGw/GetAppUser", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appUserGwClient) GetUserByAccount(ctx context.Context, in *GetUserByAccountRequest, opts ...grpc.CallOption) (*GetUserByAccountResponse, error) {
-	out := new(GetUserByAccountResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.user.v1.AppUserGw/GetUserByAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.appuser1.v1.AppUserGw/CreateUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,61 +47,25 @@ func (c *appUserGwClient) GetUserByAccount(ctx context.Context, in *GetUserByAcc
 
 func (c *appUserGwClient) UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error) {
 	out := new(UpdateUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.user.v1.AppUserGw/UpdateUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.appuser1.v1.AppUserGw/UpdateUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserGwClient) GetUserRolesByUser(ctx context.Context, in *GetUserRolesByUserRequest, opts ...grpc.CallOption) (*GetUserRolesByUserResponse, error) {
-	out := new(GetUserRolesByUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.user.v1.AppUserGw/GetUserRolesByUser", in, out, opts...)
+func (c *appUserGwClient) GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error) {
+	out := new(GetUsersResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.appuser1.v1.AppUserGw/GetUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserGwClient) GetUserInfo(ctx context.Context, in *GetUserInfoRequest, opts ...grpc.CallOption) (*GetUserInfoResponse, error) {
-	out := new(GetUserInfoResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.user.v1.AppUserGw/GetUserInfo", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appUserGwClient) GetAppUserInfo(ctx context.Context, in *GetAppUserInfoRequest, opts ...grpc.CallOption) (*GetAppUserInfoResponse, error) {
-	out := new(GetAppUserInfoResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.user.v1.AppUserGw/GetAppUserInfo", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appUserGwClient) GetUserInfos(ctx context.Context, in *GetUserInfosRequest, opts ...grpc.CallOption) (*GetUserInfosResponse, error) {
-	out := new(GetUserInfosResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.user.v1.AppUserGw/GetUserInfos", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appUserGwClient) GetAppUserInfos(ctx context.Context, in *GetAppUserInfosRequest, opts ...grpc.CallOption) (*GetAppUserInfosResponse, error) {
-	out := new(GetAppUserInfosResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.user.v1.AppUserGw/GetAppUserInfos", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appUserGwClient) CreateUserWithSecret(ctx context.Context, in *CreateUserWithSecretRequest, opts ...grpc.CallOption) (*CreateUserWithSecretResponse, error) {
-	out := new(CreateUserWithSecretResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.app.user.v1.AppUserGw/CreateUserWithSecret", in, out, opts...)
+func (c *appUserGwClient) GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error) {
+	out := new(GetAppUsersResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.appuser1.v1.AppUserGw/GetAppUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -147,16 +77,9 @@ func (c *appUserGwClient) CreateUserWithSecret(ctx context.Context, in *CreateUs
 // for forward compatibility
 type AppUserGwServer interface {
 	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
-	GetUser(context.Context, *GetUserRequest) (*GetUserResponse, error)
-	GetAppUser(context.Context, *GetAppUserRequest) (*GetAppUserResponse, error)
-	GetUserByAccount(context.Context, *GetUserByAccountRequest) (*GetUserByAccountResponse, error)
 	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error)
-	GetUserRolesByUser(context.Context, *GetUserRolesByUserRequest) (*GetUserRolesByUserResponse, error)
-	GetUserInfo(context.Context, *GetUserInfoRequest) (*GetUserInfoResponse, error)
-	GetAppUserInfo(context.Context, *GetAppUserInfoRequest) (*GetAppUserInfoResponse, error)
-	GetUserInfos(context.Context, *GetUserInfosRequest) (*GetUserInfosResponse, error)
-	GetAppUserInfos(context.Context, *GetAppUserInfosRequest) (*GetAppUserInfosResponse, error)
-	CreateUserWithSecret(context.Context, *CreateUserWithSecretRequest) (*CreateUserWithSecretResponse, error)
+	GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error)
+	GetAppUsers(context.Context, *GetAppUsersRequest) (*GetAppUsersResponse, error)
 	mustEmbedUnimplementedAppUserGwServer()
 }
 
@@ -167,35 +90,14 @@ type UnimplementedAppUserGwServer struct {
 func (UnimplementedAppUserGwServer) CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
 }
-func (UnimplementedAppUserGwServer) GetUser(context.Context, *GetUserRequest) (*GetUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUser not implemented")
-}
-func (UnimplementedAppUserGwServer) GetAppUser(context.Context, *GetAppUserRequest) (*GetAppUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppUser not implemented")
-}
-func (UnimplementedAppUserGwServer) GetUserByAccount(context.Context, *GetUserByAccountRequest) (*GetUserByAccountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserByAccount not implemented")
-}
 func (UnimplementedAppUserGwServer) UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUser not implemented")
 }
-func (UnimplementedAppUserGwServer) GetUserRolesByUser(context.Context, *GetUserRolesByUserRequest) (*GetUserRolesByUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserRolesByUser not implemented")
+func (UnimplementedAppUserGwServer) GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUsers not implemented")
 }
-func (UnimplementedAppUserGwServer) GetUserInfo(context.Context, *GetUserInfoRequest) (*GetUserInfoResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfo not implemented")
-}
-func (UnimplementedAppUserGwServer) GetAppUserInfo(context.Context, *GetAppUserInfoRequest) (*GetAppUserInfoResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserInfo not implemented")
-}
-func (UnimplementedAppUserGwServer) GetUserInfos(context.Context, *GetUserInfosRequest) (*GetUserInfosResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfos not implemented")
-}
-func (UnimplementedAppUserGwServer) GetAppUserInfos(context.Context, *GetAppUserInfosRequest) (*GetAppUserInfosResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserInfos not implemented")
-}
-func (UnimplementedAppUserGwServer) CreateUserWithSecret(context.Context, *CreateUserWithSecretRequest) (*CreateUserWithSecretResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateUserWithSecret not implemented")
+func (UnimplementedAppUserGwServer) GetAppUsers(context.Context, *GetAppUsersRequest) (*GetAppUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppUsers not implemented")
 }
 func (UnimplementedAppUserGwServer) mustEmbedUnimplementedAppUserGwServer() {}
 
@@ -220,64 +122,10 @@ func _AppUserGw_CreateUser_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.app.user.v1.AppUserGw/CreateUser",
+		FullMethod: "/appuser.gateway.appuser1.v1.AppUserGw/CreateUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserGwServer).CreateUser(ctx, req.(*CreateUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppUserGw_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppUserGwServer).GetUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/app.user.gateway.app.user.v1.AppUserGw/GetUser",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserGwServer).GetUser(ctx, req.(*GetUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppUserGw_GetAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppUserGwServer).GetAppUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/app.user.gateway.app.user.v1.AppUserGw/GetAppUser",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserGwServer).GetAppUser(ctx, req.(*GetAppUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppUserGw_GetUserByAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserByAccountRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppUserGwServer).GetUserByAccount(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/app.user.gateway.app.user.v1.AppUserGw/GetUserByAccount",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserGwServer).GetUserByAccount(ctx, req.(*GetUserByAccountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -292,7 +140,7 @@ func _AppUserGw_UpdateUser_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.app.user.v1.AppUserGw/UpdateUser",
+		FullMethod: "/appuser.gateway.appuser1.v1.AppUserGw/UpdateUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserGwServer).UpdateUser(ctx, req.(*UpdateUserRequest))
@@ -300,110 +148,38 @@ func _AppUserGw_UpdateUser_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserGw_GetUserRolesByUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserRolesByUserRequest)
+func _AppUserGw_GetUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserGwServer).GetUserRolesByUser(ctx, in)
+		return srv.(AppUserGwServer).GetUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.app.user.v1.AppUserGw/GetUserRolesByUser",
+		FullMethod: "/appuser.gateway.appuser1.v1.AppUserGw/GetUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserGwServer).GetUserRolesByUser(ctx, req.(*GetUserRolesByUserRequest))
+		return srv.(AppUserGwServer).GetUsers(ctx, req.(*GetUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserGw_GetUserInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserInfoRequest)
+func _AppUserGw_GetAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserGwServer).GetUserInfo(ctx, in)
+		return srv.(AppUserGwServer).GetAppUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.app.user.v1.AppUserGw/GetUserInfo",
+		FullMethod: "/appuser.gateway.appuser1.v1.AppUserGw/GetAppUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserGwServer).GetUserInfo(ctx, req.(*GetUserInfoRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppUserGw_GetAppUserInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppUserInfoRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppUserGwServer).GetAppUserInfo(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/app.user.gateway.app.user.v1.AppUserGw/GetAppUserInfo",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserGwServer).GetAppUserInfo(ctx, req.(*GetAppUserInfoRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppUserGw_GetUserInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserInfosRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppUserGwServer).GetUserInfos(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/app.user.gateway.app.user.v1.AppUserGw/GetUserInfos",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserGwServer).GetUserInfos(ctx, req.(*GetUserInfosRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppUserGw_GetAppUserInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppUserInfosRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppUserGwServer).GetAppUserInfos(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/app.user.gateway.app.user.v1.AppUserGw/GetAppUserInfos",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserGwServer).GetAppUserInfos(ctx, req.(*GetAppUserInfosRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppUserGw_CreateUserWithSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateUserWithSecretRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppUserGwServer).CreateUserWithSecret(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/app.user.gateway.app.user.v1.AppUserGw/CreateUserWithSecret",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserGwServer).CreateUserWithSecret(ctx, req.(*CreateUserWithSecretRequest))
+		return srv.(AppUserGwServer).GetAppUsers(ctx, req.(*GetAppUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -412,7 +188,7 @@ func _AppUserGw_CreateUserWithSecret_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AppUserGw_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.user.gateway.app.user.v1.AppUserGw",
+	ServiceName: "appuser.gateway.appuser1.v1.AppUserGw",
 	HandlerType: (*AppUserGwServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -420,44 +196,16 @@ var AppUserGw_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AppUserGw_CreateUser_Handler,
 		},
 		{
-			MethodName: "GetUser",
-			Handler:    _AppUserGw_GetUser_Handler,
-		},
-		{
-			MethodName: "GetAppUser",
-			Handler:    _AppUserGw_GetAppUser_Handler,
-		},
-		{
-			MethodName: "GetUserByAccount",
-			Handler:    _AppUserGw_GetUserByAccount_Handler,
-		},
-		{
 			MethodName: "UpdateUser",
 			Handler:    _AppUserGw_UpdateUser_Handler,
 		},
 		{
-			MethodName: "GetUserRolesByUser",
-			Handler:    _AppUserGw_GetUserRolesByUser_Handler,
+			MethodName: "GetUsers",
+			Handler:    _AppUserGw_GetUsers_Handler,
 		},
 		{
-			MethodName: "GetUserInfo",
-			Handler:    _AppUserGw_GetUserInfo_Handler,
-		},
-		{
-			MethodName: "GetAppUserInfo",
-			Handler:    _AppUserGw_GetAppUserInfo_Handler,
-		},
-		{
-			MethodName: "GetUserInfos",
-			Handler:    _AppUserGw_GetUserInfos_Handler,
-		},
-		{
-			MethodName: "GetAppUserInfos",
-			Handler:    _AppUserGw_GetAppUserInfos_Handler,
-		},
-		{
-			MethodName: "CreateUserWithSecret",
-			Handler:    _AppUserGw_CreateUserWithSecret_Handler,
+			MethodName: "GetAppUsers",
+			Handler:    _AppUserGw_GetAppUsers_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

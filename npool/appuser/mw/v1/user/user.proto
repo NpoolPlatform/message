@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package appusermw.user.v2;
+package appuser.middleware.user.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/appusermw/user";
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/user";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -11,79 +11,95 @@ import "npool/appuser/mgr/v2/appuser/appuser.proto";
 import "npool/appuser/mgr/v2/appusersecret/appusersecret.proto";
 import "npool/appuser/mgr/v2/appuserthirdparty/appuserthirdparty.proto";
 
-service AppUserMiddlewareUser {
-  rpc GetUserInfo (GetUserInfoRequest) returns (GetUserInfoResponse) {}
-
-  rpc GetAppUserInfo (GetUserInfoRequest) returns (GetUserInfoResponse) {}
-
-  rpc GetUserInfos (GetUserInfosRequest) returns (GetUserInfosResponse) {}
-
-  rpc CreateUserWithSecret (CreateUserWithSecretRequest) returns (CreateUserWithSecretResponse) {}
-
-  rpc CreateUserWithThirdParty (CreateUserWithThirdPartyRequest) returns (CreateUserWithThirdPartyResponse) {}
-
+service UserMw {
+    rpc GetUsers      (GetUsersRequest)       returns (GetUsersResponse)      {}
+    rpc GetAppUsers   (GetAppUsersRequest)    returns (GetAppUsersResponse)   {}
+    rpc CreateUser    (CreateUserRequest)     returns (CreateUserResponse)    {}
+    rpc CreateAppUser (CreateAppUserRequest)  returns (CreateAppUserResponse) {}
+    rpc UpdateUser    (UpdateUserRequest)     returns (UpdateUserResponse)    {}
 }
 
-message AppUserInfo {
-  string ID = 10;
-  string AppID = 20;
-  string EmailAddress = 30;
-  string PhoneNO = 40;
-  string ImportFromApp = 50;
-  uint32 CreateAt = 60;
-  string Username = 70;
-  repeated string AddressFields = 80;
-  string Gender = 90;
-  string PostalCode = 100;
-  uint32 Age = 110;
-  uint32 Birthday = 120;
-  string Avatar = 130;
-  string Organization = 140;
-  string FirstName = 150;
-  string LastName = 160;
-  string IDNumber = 170;
-  bool SigninVerifyByGoogleAuthentication = 180;
-  bool GoogleAuthenticationVerified = 190;
-  bool IsBanApp = 200;
-  repeated appuser.manager.approle.v2.AppRole Roles = 210;
-  bool HasGoogleSecret = 220;
+message User {
+    // Base
+    string ID                                = 10;
+    string AppID                             = 20;
+    string EmailAddress                      = 30;
+    string PhoneNO                           = 40;
+
+    // Imported
+    string ImportedFromAppID                 = 50;
+    string ImportedFromAppName               = 60;
+    string ImportedFromAppLogo               = 70;
+    string ImportedFromAppHome               = 80;
+
+    // Extra
+    string Username                          = 90;
+    repeated string AddressFields            = 100;
+    string Gender                            = 110;
+    string PostalCode                        = 120;
+    uint32 Age                               = 130;
+    uint32 Birthday                          = 140;
+    string Avatar                            = 150;
+    string Organization                      = 160;
+    string FirstName                         = 170;
+    string LastName                          = 180;
+    string IDNumber                          = 190;
+
+    // Control flat
+    bool  SigninVerifyByGoogleAuthentication = 200;
+    bool  GoogleAuthenticationVerified       = 210;
+    bool  IsBanApp                           = 220;
+
+    // Secret map
+    bool HasGoogleSecret                     = 230;
+
+    // Role
+    repeated string Roles                    = 240;
+
+    uint32 CreateAt                          = 250;
 }
 
-message GetUserInfoRequest {
-  string UserID = 10;
-  string AppID = 20;
+message GetUsersRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
 }
 
-message GetUserInfoResponse {
-  AppUserInfo Info = 10;
+message GetUsersResponse {
+    repeated User Infos = 10;
 }
 
-message GetUserInfosRequest {
-  string AppID = 10;
-  int32 Offset = 20;
-  int32 Limit = 30;
+message GetAppUsersRequest {
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
 }
 
-message GetUserInfosResponse {
-  repeated AppUserInfo Infos = 10;
+message GetAppUsersResponse {
+    repeated User Infos = 10;
 }
 
-
-message CreateUserWithSecretRequest {
-  appuser.manager.appuser.v2.AppUserReq User = 10;
-  appuser.manager.appusersecret.v2.AppUserSecretReq Secret = 20;
+message CreateUserRequest {
+    User Info = 10;
 }
 
-message CreateUserWithSecretResponse {
-  appuser.manager.appuser.v2.AppUser Info = 10;
+message CreateUserResponse {
+    User Info = 10;
 }
 
-
-message CreateUserWithThirdPartyRequest {
-  appuser.manager.appuser.v2.AppUserReq User = 10;
-  appuser.manager.appuserthirdparty.v2.AppUserThirdParty ThirdParty = 20;
+message CreateAppUserRequest {
+    string TargetAppID = 10;
+    User Info          = 20;
 }
 
-message CreateUserWithThirdPartyResponse {
-  appuser.manager.appuser.v2.AppUser Info = 10;
+message CreateAppUserResponse {
+    User Info = 10;
+}
+
+message UpdateUserRequest {
+    User Info = 10;
+}
+
+message UpdateUserResponse {
+    User Info = 10;
 }
