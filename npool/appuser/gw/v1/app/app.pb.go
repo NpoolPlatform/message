@@ -9,7 +9,7 @@ package app
 import (
 	npool "github.com/NpoolPlatform/message/npool"
 	app "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/app"
-	_ "github.com/NpoolPlatform/message/npool/appusermw/app"
+	_ "github.com/NpoolPlatform/message/npool/appuser/mw/v1/app"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"

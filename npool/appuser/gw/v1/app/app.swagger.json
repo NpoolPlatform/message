@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appusergw/app/app.proto",
+    "title": "npool/appuser/gw/v1/app/app.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "AppUserGatewayApp"
+      "name": "AppMgr"
     }
   ],
   "consumes": [
@@ -16,41 +16,9 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/appinfos/by/creator": {
+    "/v1/create/app": {
       "post": {
-        "operationId": "AppUserGatewayApp_GetAppInfosByCreator",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/appv1GetAppInfosByCreatorResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/appv1GetAppInfosByCreatorRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppUserGatewayApp"
-        ]
-      }
-    },
-    "/v2/create/app": {
-      "post": {
-        "operationId": "AppUserGatewayApp_CreateApp",
+        "operationId": "AppMgr_CreateApp",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,18 +44,18 @@
           }
         ],
         "tags": [
-          "AppUserGatewayApp"
+          "AppMgr"
         ]
       }
     },
-    "/v2/get/app": {
+    "/v1/get/app": {
       "post": {
-        "operationId": "AppUserGatewayApp_GetApp",
+        "operationId": "AppMgr_GetApp",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appv1GetAppResponse"
+              "$ref": "#/definitions/appusergatewayappv1GetAppResponse"
             }
           },
           "default": {
@@ -103,23 +71,23 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appv1GetAppRequest"
+              "$ref": "#/definitions/appusergatewayappv1GetAppRequest"
             }
           }
         ],
         "tags": [
-          "AppUserGatewayApp"
+          "AppMgr"
         ]
       }
     },
-    "/v2/get/app/info": {
+    "/v1/get/apps": {
       "post": {
-        "operationId": "AppUserGatewayApp_GetAppInfo",
+        "operationId": "AppMgr_GetApps",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appv1GetAppInfoResponse"
+              "$ref": "#/definitions/appusergatewayappv1GetAppsResponse"
             }
           },
           "default": {
@@ -135,23 +103,23 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appv1GetAppInfoRequest"
+              "$ref": "#/definitions/appusergatewayappv1GetAppsRequest"
             }
           }
         ],
         "tags": [
-          "AppUserGatewayApp"
+          "AppMgr"
         ]
       }
     },
-    "/v2/get/app/infos": {
+    "/v1/get/user/apps": {
       "post": {
-        "operationId": "AppUserGatewayApp_GetAppInfos",
+        "operationId": "AppMgr_GetUserApps",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appv1GetAppInfosResponse"
+              "$ref": "#/definitions/appusergatewayappv1GetUserAppsResponse"
             }
           },
           "default": {
@@ -167,82 +135,18 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appv1GetAppInfosRequest"
+              "$ref": "#/definitions/appusergatewayappv1GetUserAppsRequest"
             }
           }
         ],
         "tags": [
-          "AppUserGatewayApp"
+          "AppMgr"
         ]
       }
     },
-    "/v2/get/apps": {
+    "/v1/update/app": {
       "post": {
-        "operationId": "AppUserGatewayApp_GetApps",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/appv1GetAppsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/appv1GetAppsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppUserGatewayApp"
-        ]
-      }
-    },
-    "/v2/get/apps/by/creator": {
-      "post": {
-        "operationId": "AppUserGatewayApp_GetAppsByCreator",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppsByCreatorResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppsByCreatorRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppUserGatewayApp"
-        ]
-      }
-    },
-    "/v2/update/app": {
-      "post": {
-        "operationId": "AppUserGatewayApp_UpdateApp",
+        "operationId": "AppMgr_UpdateApp",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -268,12 +172,87 @@
           }
         ],
         "tags": [
-          "AppUserGatewayApp"
+          "AppMgr"
         ]
       }
     }
   },
   "definitions": {
+    "appusergatewayappv1GetAppRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "appusergatewayappv1GetAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv2App"
+        }
+      }
+    },
+    "appusergatewayappv1GetAppsRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "appusergatewayappv1GetAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/appv2App"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "appusergatewayappv1GetUserAppsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "appusergatewayappv1GetUserAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/appv2App"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "appv1CreateAppRequest": {
       "type": "object",
       "properties": {
@@ -286,122 +265,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2App"
-        }
-      }
-    },
-    "appv1GetAppInfoRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "appv1GetAppInfoResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppInfo"
-        }
-      }
-    },
-    "appv1GetAppInfosByCreatorRequest": {
-      "type": "object",
-      "properties": {
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "appv1GetAppInfosByCreatorResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2AppInfo"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "appv1GetAppInfosRequest": {
-      "type": "object",
-      "properties": {
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "appv1GetAppInfosResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2AppInfo"
-          }
-        }
-      }
-    },
-    "appv1GetAppRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "appv1GetAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2App"
-        }
-      }
-    },
-    "appv1GetAppsRequest": {
-      "type": "object",
-      "properties": {
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "appv1GetAppsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2App"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
+          "$ref": "#/definitions/appv2App"
         }
       }
     },
@@ -417,7 +281,31 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2App"
+          "$ref": "#/definitions/appv2App"
+        }
+      }
+    },
+    "appv2App": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -448,122 +336,21 @@
         }
       }
     },
-    "v1GetAppsByCreatorRequest": {
+    "v1VersionResponse": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "Info": {
           "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppsByCreatorResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2App"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v2App": {
-      "type": "object",
-      "properties": {
-        "Description": {
-          "type": "string"
-        },
-        "ID": {
-          "type": "string"
-        },
-        "CreatedBy": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v2AppInfo": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "createdBy": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "IsBanApp": {
-          "type": "boolean"
-        },
-        "BanAppMessage": {
-          "type": "string"
-        },
-        "SignupMethods": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "ExternSigninMethods": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "RecaptchaMethod": {
-          "type": "string"
-        },
-        "KycEnable": {
-          "type": "boolean"
-        },
-        "SigninVerifyEnable": {
-          "type": "boolean"
-        },
-        "InvitationCodeMust": {
-          "type": "boolean"
         }
       }
     },
     "v2AppReq": {
       "type": "object",
       "properties": {
-        "Description": {
+        "ID": {
           "type": "string"
         },
-        "ID": {
+        "Description": {
           "type": "string"
         },
         "CreatedBy": {

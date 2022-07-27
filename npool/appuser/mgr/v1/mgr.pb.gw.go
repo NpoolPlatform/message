@@ -2628,7 +2628,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/Version", runtime.WithHTTPPathPattern("/version"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/Version", runtime.WithHTTPPathPattern("/version"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2651,7 +2651,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAdminApps", runtime.WithHTTPPathPattern("/v1/create/admin/apps"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAdminApps", runtime.WithHTTPPathPattern("/v1/create/admin/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2674,7 +2674,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAdminApps", runtime.WithHTTPPathPattern("/v1/get/admin/apps"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAdminApps", runtime.WithHTTPPathPattern("/v1/get/admin/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2697,7 +2697,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateApp", runtime.WithHTTPPathPattern("/v1/create/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateApp", runtime.WithHTTPPathPattern("/v1/create/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2720,7 +2720,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetApp", runtime.WithHTTPPathPattern("/v1/get/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetApp", runtime.WithHTTPPathPattern("/v1/get/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2743,7 +2743,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetApps", runtime.WithHTTPPathPattern("/v1/get/apps"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetApps", runtime.WithHTTPPathPattern("/v1/get/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2766,7 +2766,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppsByCreator", runtime.WithHTTPPathPattern("/v1/get/apps/by/creator"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppsByCreator", runtime.WithHTTPPathPattern("/v1/get/apps/by/creator"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2789,7 +2789,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateApp", runtime.WithHTTPPathPattern("/v1/update/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateApp", runtime.WithHTTPPathPattern("/v1/update/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2812,7 +2812,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppControl", runtime.WithHTTPPathPattern("/v1/create/app/control"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppControl", runtime.WithHTTPPathPattern("/v1/create/app/control"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2835,7 +2835,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppControlForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/control/for/other/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppControlForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/control/for/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2858,7 +2858,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppControl", runtime.WithHTTPPathPattern("/v1/get/app/control"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppControl", runtime.WithHTTPPathPattern("/v1/get/app/control"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2881,7 +2881,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppControlByApp", runtime.WithHTTPPathPattern("/v1/get/app/control/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppControlByApp", runtime.WithHTTPPathPattern("/v1/get/app/control/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2904,7 +2904,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateAppControl", runtime.WithHTTPPathPattern("/v1/update/app/control"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateAppControl", runtime.WithHTTPPathPattern("/v1/update/app/control"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2927,7 +2927,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateBanApp", runtime.WithHTTPPathPattern("/v1/create/ban/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateBanApp", runtime.WithHTTPPathPattern("/v1/create/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2950,7 +2950,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetBanApp", runtime.WithHTTPPathPattern("/v1/get/ban/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetBanApp", runtime.WithHTTPPathPattern("/v1/get/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2973,7 +2973,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetBanAppByApp", runtime.WithHTTPPathPattern("/v1/get/ban/app/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetBanAppByApp", runtime.WithHTTPPathPattern("/v1/get/ban/app/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2996,7 +2996,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateBanApp", runtime.WithHTTPPathPattern("/v1/update/ban/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateBanApp", runtime.WithHTTPPathPattern("/v1/update/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3019,7 +3019,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/DeleteBanApp", runtime.WithHTTPPathPattern("/v1/delete/ban/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/DeleteBanApp", runtime.WithHTTPPathPattern("/v1/delete/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3042,7 +3042,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppInfo", runtime.WithHTTPPathPattern("/v1/get/appinfo"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppInfo", runtime.WithHTTPPathPattern("/v1/get/appinfo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3065,7 +3065,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppInfos", runtime.WithHTTPPathPattern("/v1/get/appinfos"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppInfos", runtime.WithHTTPPathPattern("/v1/get/appinfos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3088,7 +3088,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppInfosByCreator", runtime.WithHTTPPathPattern("/v1/get/appinfos/by/creator"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppInfosByCreator", runtime.WithHTTPPathPattern("/v1/get/appinfos/by/creator"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3111,7 +3111,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUser", runtime.WithHTTPPathPattern("/v1/create/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUser", runtime.WithHTTPPathPattern("/v1/create/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3134,7 +3134,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3157,7 +3157,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/by/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3180,7 +3180,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserByAppAccount", runtime.WithHTTPPathPattern("/v1/get/app/user/by/account"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserByAppAccount", runtime.WithHTTPPathPattern("/v1/get/app/user/by/account"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3203,7 +3203,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/VerifyAppUserByAppAccountPassword", runtime.WithHTTPPathPattern("/v1/verify/app/user/by/account/password"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/VerifyAppUserByAppAccountPassword", runtime.WithHTTPPathPattern("/v1/verify/app/user/by/account/password"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3226,7 +3226,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUsersByApp", runtime.WithHTTPPathPattern("/v1/get/app/users/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUsersByApp", runtime.WithHTTPPathPattern("/v1/get/app/users/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3249,7 +3249,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateAppUser", runtime.WithHTTPPathPattern("/v1/update/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateAppUser", runtime.WithHTTPPathPattern("/v1/update/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3272,7 +3272,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserSecret", runtime.WithHTTPPathPattern("/v1/create/app/user/secret"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUserSecret", runtime.WithHTTPPathPattern("/v1/create/app/user/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3295,7 +3295,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserSecret", runtime.WithHTTPPathPattern("/v1/get/app/user/secret"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserSecret", runtime.WithHTTPPathPattern("/v1/get/app/user/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3318,7 +3318,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserSecretByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/secret/by/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserSecretByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/secret/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3341,7 +3341,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateAppUserSecret", runtime.WithHTTPPathPattern("/v1/update/app/user/secret"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateAppUserSecret", runtime.WithHTTPPathPattern("/v1/update/app/user/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3364,7 +3364,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserExtra", runtime.WithHTTPPathPattern("/v1/create/app/user/extra"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUserExtra", runtime.WithHTTPPathPattern("/v1/create/app/user/extra"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3387,7 +3387,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserExtra", runtime.WithHTTPPathPattern("/v1/get/app/user/extra"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserExtra", runtime.WithHTTPPathPattern("/v1/get/app/user/extra"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3410,7 +3410,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserExtraByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/extra/by/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserExtraByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/extra/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3433,7 +3433,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateAppUserExtra", runtime.WithHTTPPathPattern("/v1/update/app/user/extra"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateAppUserExtra", runtime.WithHTTPPathPattern("/v1/update/app/user/extra"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3456,7 +3456,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateBanAppUser", runtime.WithHTTPPathPattern("/v1/create/ban/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateBanAppUser", runtime.WithHTTPPathPattern("/v1/create/ban/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3479,7 +3479,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetBanAppUser", runtime.WithHTTPPathPattern("/v1/get/ban/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetBanAppUser", runtime.WithHTTPPathPattern("/v1/get/ban/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3502,7 +3502,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetBanAppUserByAppUser", runtime.WithHTTPPathPattern("/v1/get/ban/app/user/by/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetBanAppUserByAppUser", runtime.WithHTTPPathPattern("/v1/get/ban/app/user/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3525,7 +3525,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateBanAppUser", runtime.WithHTTPPathPattern("/v1/update/ban/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateBanAppUser", runtime.WithHTTPPathPattern("/v1/update/ban/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3548,7 +3548,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/DeleteBanAppUser", runtime.WithHTTPPathPattern("/v1/delete/ban/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/DeleteBanAppUser", runtime.WithHTTPPathPattern("/v1/delete/ban/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3571,7 +3571,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserControl", runtime.WithHTTPPathPattern("/v1/create/app/user/control"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUserControl", runtime.WithHTTPPathPattern("/v1/create/app/user/control"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3594,7 +3594,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserControl", runtime.WithHTTPPathPattern("/v1/get/app/user/control"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserControl", runtime.WithHTTPPathPattern("/v1/get/app/user/control"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3617,7 +3617,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserControlByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/control/by/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserControlByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/control/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3640,7 +3640,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateAppUserControl", runtime.WithHTTPPathPattern("/v1/update/app/user/control"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateAppUserControl", runtime.WithHTTPPathPattern("/v1/update/app/user/control"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3663,7 +3663,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateGenesisRole", runtime.WithHTTPPathPattern("/v1/create/genesis/role"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateGenesisRole", runtime.WithHTTPPathPattern("/v1/create/genesis/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3686,7 +3686,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetGenesisRole", runtime.WithHTTPPathPattern("/v1/get/genesis/role"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetGenesisRole", runtime.WithHTTPPathPattern("/v1/get/genesis/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3709,7 +3709,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetGenesisAppRoleUsersByOtherApp", runtime.WithHTTPPathPattern("/v1/get/genesis/app/role/users/by/other/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetGenesisAppRoleUsersByOtherApp", runtime.WithHTTPPathPattern("/v1/get/genesis/app/role/users/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3732,7 +3732,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateGenesisRoleUser", runtime.WithHTTPPathPattern("/v1/create/genesis/role/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateGenesisRoleUser", runtime.WithHTTPPathPattern("/v1/create/genesis/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3755,7 +3755,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppRole", runtime.WithHTTPPathPattern("/v1/create/app/role"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppRole", runtime.WithHTTPPathPattern("/v1/create/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3778,7 +3778,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppRoleForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/role/for/other/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppRoleForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/role/for/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3801,7 +3801,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3824,7 +3824,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRoleByAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role/by/app/role"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRoleByAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role/by/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3847,7 +3847,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRolesByApp", runtime.WithHTTPPathPattern("/v1/get/app/roles/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRolesByApp", runtime.WithHTTPPathPattern("/v1/get/app/roles/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3870,7 +3870,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRolesByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/roles/by/other/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRolesByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/roles/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3893,7 +3893,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateAppRole", runtime.WithHTTPPathPattern("/v1/update/app/role"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateAppRole", runtime.WithHTTPPathPattern("/v1/update/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3916,7 +3916,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppRoleUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppRoleUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3939,7 +3939,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppRoleUserForOtherAppUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user/for/other/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppRoleUserForOtherAppUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user/for/other/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3962,7 +3962,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppRoleUserForAppOtherUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user/for/app/other/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppRoleUserForAppOtherUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user/for/app/other/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3985,7 +3985,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRoleUser", runtime.WithHTTPPathPattern("/v1/get/app/role/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRoleUser", runtime.WithHTTPPathPattern("/v1/get/app/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4008,7 +4008,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRoleUserByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/role/user/by/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRoleUserByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/role/user/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4031,7 +4031,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/app/role"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4054,7 +4054,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByOtherAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/other/app/role"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByOtherAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/other/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4077,7 +4077,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByApp", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByApp", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4100,7 +4100,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/other/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4123,7 +4123,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetUserRolesByAppUser", runtime.WithHTTPPathPattern("/v1/get/user/roles/by/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetUserRolesByAppUser", runtime.WithHTTPPathPattern("/v1/get/user/roles/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4146,7 +4146,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/DeleteAppRoleUser", runtime.WithHTTPPathPattern("/v1/delete/app/role/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/DeleteAppRoleUser", runtime.WithHTTPPathPattern("/v1/delete/app/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4169,7 +4169,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserInfo", runtime.WithHTTPPathPattern("/v1/get/app/userinfo"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserInfo", runtime.WithHTTPPathPattern("/v1/get/app/userinfo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4192,7 +4192,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserInfoByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/userinfo/by/app/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserInfoByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/userinfo/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4215,7 +4215,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserInfosByApp", runtime.WithHTTPPathPattern("/v1/get/app/userinfos/by/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserInfosByApp", runtime.WithHTTPPathPattern("/v1/get/app/userinfos/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4238,7 +4238,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserInfosByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/userinfos/by/other/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserInfosByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/userinfos/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4261,7 +4261,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserWithSecret", runtime.WithHTTPPathPattern("/v1/create/app/user/with/secret"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUserWithSecret", runtime.WithHTTPPathPattern("/v1/create/app/user/with/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4284,7 +4284,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserWithThirdParty", runtime.WithHTTPPathPattern("/v1/create/app/user/with/third/party"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUserWithThirdParty", runtime.WithHTTPPathPattern("/v1/create/app/user/with/third/party"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4307,7 +4307,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserThirdParty", runtime.WithHTTPPathPattern("/v1/create/app/user/third/party"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUserThirdParty", runtime.WithHTTPPathPattern("/v1/create/app/user/third/party"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4330,7 +4330,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserThirdPartyByAppThirdPartyID", runtime.WithHTTPPathPattern("/v1/get/app/user/thirdparty/by/app/thirdpartyid"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserThirdPartyByAppThirdPartyID", runtime.WithHTTPPathPattern("/v1/get/app/user/thirdparty/by/app/thirdpartyid"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4353,7 +4353,7 @@ func RegisterAppUserManagerHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserWithSecretRevert", runtime.WithHTTPPathPattern("/v1/create/app/user/with/secret/revert"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUserWithSecretRevert", runtime.WithHTTPPathPattern("/v1/create/app/user/with/secret/revert"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4415,7 +4415,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/Version", runtime.WithHTTPPathPattern("/version"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/Version", runtime.WithHTTPPathPattern("/version"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4435,7 +4435,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAdminApps", runtime.WithHTTPPathPattern("/v1/create/admin/apps"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAdminApps", runtime.WithHTTPPathPattern("/v1/create/admin/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4455,7 +4455,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAdminApps", runtime.WithHTTPPathPattern("/v1/get/admin/apps"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAdminApps", runtime.WithHTTPPathPattern("/v1/get/admin/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4475,7 +4475,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateApp", runtime.WithHTTPPathPattern("/v1/create/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateApp", runtime.WithHTTPPathPattern("/v1/create/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4495,7 +4495,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetApp", runtime.WithHTTPPathPattern("/v1/get/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetApp", runtime.WithHTTPPathPattern("/v1/get/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4515,7 +4515,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetApps", runtime.WithHTTPPathPattern("/v1/get/apps"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetApps", runtime.WithHTTPPathPattern("/v1/get/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4535,7 +4535,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppsByCreator", runtime.WithHTTPPathPattern("/v1/get/apps/by/creator"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppsByCreator", runtime.WithHTTPPathPattern("/v1/get/apps/by/creator"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4555,7 +4555,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateApp", runtime.WithHTTPPathPattern("/v1/update/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateApp", runtime.WithHTTPPathPattern("/v1/update/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4575,7 +4575,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppControl", runtime.WithHTTPPathPattern("/v1/create/app/control"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppControl", runtime.WithHTTPPathPattern("/v1/create/app/control"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4595,7 +4595,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppControlForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/control/for/other/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppControlForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/control/for/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4615,7 +4615,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppControl", runtime.WithHTTPPathPattern("/v1/get/app/control"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppControl", runtime.WithHTTPPathPattern("/v1/get/app/control"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4635,7 +4635,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppControlByApp", runtime.WithHTTPPathPattern("/v1/get/app/control/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppControlByApp", runtime.WithHTTPPathPattern("/v1/get/app/control/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4655,7 +4655,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateAppControl", runtime.WithHTTPPathPattern("/v1/update/app/control"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateAppControl", runtime.WithHTTPPathPattern("/v1/update/app/control"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4675,7 +4675,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateBanApp", runtime.WithHTTPPathPattern("/v1/create/ban/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateBanApp", runtime.WithHTTPPathPattern("/v1/create/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4695,7 +4695,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetBanApp", runtime.WithHTTPPathPattern("/v1/get/ban/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetBanApp", runtime.WithHTTPPathPattern("/v1/get/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4715,7 +4715,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetBanAppByApp", runtime.WithHTTPPathPattern("/v1/get/ban/app/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetBanAppByApp", runtime.WithHTTPPathPattern("/v1/get/ban/app/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4735,7 +4735,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateBanApp", runtime.WithHTTPPathPattern("/v1/update/ban/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateBanApp", runtime.WithHTTPPathPattern("/v1/update/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4755,7 +4755,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/DeleteBanApp", runtime.WithHTTPPathPattern("/v1/delete/ban/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/DeleteBanApp", runtime.WithHTTPPathPattern("/v1/delete/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4775,7 +4775,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppInfo", runtime.WithHTTPPathPattern("/v1/get/appinfo"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppInfo", runtime.WithHTTPPathPattern("/v1/get/appinfo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4795,7 +4795,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppInfos", runtime.WithHTTPPathPattern("/v1/get/appinfos"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppInfos", runtime.WithHTTPPathPattern("/v1/get/appinfos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4815,7 +4815,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppInfosByCreator", runtime.WithHTTPPathPattern("/v1/get/appinfos/by/creator"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppInfosByCreator", runtime.WithHTTPPathPattern("/v1/get/appinfos/by/creator"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4835,7 +4835,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUser", runtime.WithHTTPPathPattern("/v1/create/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUser", runtime.WithHTTPPathPattern("/v1/create/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4855,7 +4855,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4875,7 +4875,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/by/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4895,7 +4895,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserByAppAccount", runtime.WithHTTPPathPattern("/v1/get/app/user/by/account"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserByAppAccount", runtime.WithHTTPPathPattern("/v1/get/app/user/by/account"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4915,7 +4915,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/VerifyAppUserByAppAccountPassword", runtime.WithHTTPPathPattern("/v1/verify/app/user/by/account/password"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/VerifyAppUserByAppAccountPassword", runtime.WithHTTPPathPattern("/v1/verify/app/user/by/account/password"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4935,7 +4935,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUsersByApp", runtime.WithHTTPPathPattern("/v1/get/app/users/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUsersByApp", runtime.WithHTTPPathPattern("/v1/get/app/users/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4955,7 +4955,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateAppUser", runtime.WithHTTPPathPattern("/v1/update/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateAppUser", runtime.WithHTTPPathPattern("/v1/update/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4975,7 +4975,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserSecret", runtime.WithHTTPPathPattern("/v1/create/app/user/secret"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUserSecret", runtime.WithHTTPPathPattern("/v1/create/app/user/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -4995,7 +4995,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserSecret", runtime.WithHTTPPathPattern("/v1/get/app/user/secret"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserSecret", runtime.WithHTTPPathPattern("/v1/get/app/user/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5015,7 +5015,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserSecretByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/secret/by/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserSecretByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/secret/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5035,7 +5035,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateAppUserSecret", runtime.WithHTTPPathPattern("/v1/update/app/user/secret"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateAppUserSecret", runtime.WithHTTPPathPattern("/v1/update/app/user/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5055,7 +5055,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserExtra", runtime.WithHTTPPathPattern("/v1/create/app/user/extra"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUserExtra", runtime.WithHTTPPathPattern("/v1/create/app/user/extra"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5075,7 +5075,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserExtra", runtime.WithHTTPPathPattern("/v1/get/app/user/extra"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserExtra", runtime.WithHTTPPathPattern("/v1/get/app/user/extra"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5095,7 +5095,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserExtraByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/extra/by/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserExtraByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/extra/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5115,7 +5115,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateAppUserExtra", runtime.WithHTTPPathPattern("/v1/update/app/user/extra"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateAppUserExtra", runtime.WithHTTPPathPattern("/v1/update/app/user/extra"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5135,7 +5135,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateBanAppUser", runtime.WithHTTPPathPattern("/v1/create/ban/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateBanAppUser", runtime.WithHTTPPathPattern("/v1/create/ban/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5155,7 +5155,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetBanAppUser", runtime.WithHTTPPathPattern("/v1/get/ban/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetBanAppUser", runtime.WithHTTPPathPattern("/v1/get/ban/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5175,7 +5175,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetBanAppUserByAppUser", runtime.WithHTTPPathPattern("/v1/get/ban/app/user/by/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetBanAppUserByAppUser", runtime.WithHTTPPathPattern("/v1/get/ban/app/user/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5195,7 +5195,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateBanAppUser", runtime.WithHTTPPathPattern("/v1/update/ban/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateBanAppUser", runtime.WithHTTPPathPattern("/v1/update/ban/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5215,7 +5215,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/DeleteBanAppUser", runtime.WithHTTPPathPattern("/v1/delete/ban/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/DeleteBanAppUser", runtime.WithHTTPPathPattern("/v1/delete/ban/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5235,7 +5235,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserControl", runtime.WithHTTPPathPattern("/v1/create/app/user/control"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUserControl", runtime.WithHTTPPathPattern("/v1/create/app/user/control"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5255,7 +5255,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserControl", runtime.WithHTTPPathPattern("/v1/get/app/user/control"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserControl", runtime.WithHTTPPathPattern("/v1/get/app/user/control"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5275,7 +5275,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserControlByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/control/by/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserControlByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/user/control/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5295,7 +5295,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateAppUserControl", runtime.WithHTTPPathPattern("/v1/update/app/user/control"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateAppUserControl", runtime.WithHTTPPathPattern("/v1/update/app/user/control"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5315,7 +5315,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateGenesisRole", runtime.WithHTTPPathPattern("/v1/create/genesis/role"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateGenesisRole", runtime.WithHTTPPathPattern("/v1/create/genesis/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5335,7 +5335,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetGenesisRole", runtime.WithHTTPPathPattern("/v1/get/genesis/role"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetGenesisRole", runtime.WithHTTPPathPattern("/v1/get/genesis/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5355,7 +5355,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetGenesisAppRoleUsersByOtherApp", runtime.WithHTTPPathPattern("/v1/get/genesis/app/role/users/by/other/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetGenesisAppRoleUsersByOtherApp", runtime.WithHTTPPathPattern("/v1/get/genesis/app/role/users/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5375,7 +5375,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateGenesisRoleUser", runtime.WithHTTPPathPattern("/v1/create/genesis/role/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateGenesisRoleUser", runtime.WithHTTPPathPattern("/v1/create/genesis/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5395,7 +5395,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppRole", runtime.WithHTTPPathPattern("/v1/create/app/role"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppRole", runtime.WithHTTPPathPattern("/v1/create/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5415,7 +5415,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppRoleForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/role/for/other/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppRoleForOtherApp", runtime.WithHTTPPathPattern("/v1/create/app/role/for/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5435,7 +5435,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5455,7 +5455,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRoleByAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role/by/app/role"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRoleByAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role/by/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5475,7 +5475,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRolesByApp", runtime.WithHTTPPathPattern("/v1/get/app/roles/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRolesByApp", runtime.WithHTTPPathPattern("/v1/get/app/roles/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5495,7 +5495,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRolesByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/roles/by/other/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRolesByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/roles/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5515,7 +5515,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/UpdateAppRole", runtime.WithHTTPPathPattern("/v1/update/app/role"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/UpdateAppRole", runtime.WithHTTPPathPattern("/v1/update/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5535,7 +5535,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppRoleUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppRoleUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5555,7 +5555,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppRoleUserForOtherAppUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user/for/other/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppRoleUserForOtherAppUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user/for/other/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5575,7 +5575,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppRoleUserForAppOtherUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user/for/app/other/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppRoleUserForAppOtherUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user/for/app/other/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5595,7 +5595,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRoleUser", runtime.WithHTTPPathPattern("/v1/get/app/role/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRoleUser", runtime.WithHTTPPathPattern("/v1/get/app/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5615,7 +5615,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRoleUserByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/role/user/by/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRoleUserByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/role/user/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5635,7 +5635,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/app/role"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5655,7 +5655,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByOtherAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/other/app/role"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByOtherAppRole", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/other/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5675,7 +5675,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByApp", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByApp", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5695,7 +5695,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/other/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/role/users/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5715,7 +5715,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetUserRolesByAppUser", runtime.WithHTTPPathPattern("/v1/get/user/roles/by/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetUserRolesByAppUser", runtime.WithHTTPPathPattern("/v1/get/user/roles/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5735,7 +5735,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/DeleteAppRoleUser", runtime.WithHTTPPathPattern("/v1/delete/app/role/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/DeleteAppRoleUser", runtime.WithHTTPPathPattern("/v1/delete/app/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5755,7 +5755,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserInfo", runtime.WithHTTPPathPattern("/v1/get/app/userinfo"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserInfo", runtime.WithHTTPPathPattern("/v1/get/app/userinfo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5775,7 +5775,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserInfoByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/userinfo/by/app/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserInfoByAppUser", runtime.WithHTTPPathPattern("/v1/get/app/userinfo/by/app/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5795,7 +5795,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserInfosByApp", runtime.WithHTTPPathPattern("/v1/get/app/userinfos/by/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserInfosByApp", runtime.WithHTTPPathPattern("/v1/get/app/userinfos/by/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5815,7 +5815,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserInfosByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/userinfos/by/other/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserInfosByOtherApp", runtime.WithHTTPPathPattern("/v1/get/app/userinfos/by/other/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5835,7 +5835,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserWithSecret", runtime.WithHTTPPathPattern("/v1/create/app/user/with/secret"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUserWithSecret", runtime.WithHTTPPathPattern("/v1/create/app/user/with/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5855,7 +5855,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserWithThirdParty", runtime.WithHTTPPathPattern("/v1/create/app/user/with/third/party"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUserWithThirdParty", runtime.WithHTTPPathPattern("/v1/create/app/user/with/third/party"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5875,7 +5875,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserThirdParty", runtime.WithHTTPPathPattern("/v1/create/app/user/third/party"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUserThirdParty", runtime.WithHTTPPathPattern("/v1/create/app/user/third/party"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5895,7 +5895,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/GetAppUserThirdPartyByAppThirdPartyID", runtime.WithHTTPPathPattern("/v1/get/app/user/thirdparty/by/app/thirdpartyid"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/GetAppUserThirdPartyByAppThirdPartyID", runtime.WithHTTPPathPattern("/v1/get/app/user/thirdparty/by/app/thirdpartyid"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5915,7 +5915,7 @@ func RegisterAppUserManagerHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.manager.v1.AppUserManager/CreateAppUserWithSecretRevert", runtime.WithHTTPPathPattern("/v1/create/app/user/with/secret/revert"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v1.AppUserManager/CreateAppUserWithSecretRevert", runtime.WithHTTPPathPattern("/v1/create/app/user/with/secret/revert"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appusermgrv2/appuserthirdparty/appuserthirdparty.proto",
+    "title": "npool/appuser/mgr/v2/appuserthirdparty/appuserthirdparty.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "AppUserManagerAppUserThirdParty"
+      "name": "AppUserThirdPartyMgr"
     }
   ],
   "consumes": [
@@ -58,25 +58,25 @@
     "v2AppUserThirdParty": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
         "UserID": {
           "type": "string"
         },
-        "ThirdPartyUserID": {
+        "ThirdPartyID": {
           "type": "string"
         },
-        "ThirdPartyID": {
+        "ThirdPartyUserID": {
           "type": "string"
         },
         "ThirdPartyUsername": {
           "type": "string"
         },
         "ThirdPartyUserAvatar": {
-          "type": "string"
-        },
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         }
       }
@@ -84,25 +84,25 @@
     "v2AppUserThirdPartyReq": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
         "UserID": {
           "type": "string"
         },
-        "ThirdPartyUserID": {
+        "ThirdPartyID": {
           "type": "string"
         },
-        "ThirdPartyID": {
+        "ThirdPartyUserID": {
           "type": "string"
         },
         "ThirdPartyUsername": {
           "type": "string"
         },
         "ThirdPartyUserAvatar": {
-          "type": "string"
-        },
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         }
       }
@@ -110,13 +110,19 @@
     "v2Conds": {
       "type": "object",
       "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "ThirdPartyUserID": {
+        "ThirdPartyID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "ThirdPartyID": {
+        "ThirdPartyUserID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "ThirdPartyUsername": {
@@ -124,16 +130,10 @@
         },
         "ThirdPartyUserAvatar": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
-    "v2CountAppUserThirdPartysResponse": {
+    "v2CountAppUserThirdPartiesResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -142,15 +142,7 @@
         }
       }
     },
-    "v2CreateAppUserThirdPartyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppUserThirdParty"
-        }
-      }
-    },
-    "v2CreateAppUserThirdPartysResponse": {
+    "v2CreateAppUserThirdPartiesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -158,6 +150,14 @@
           "items": {
             "$ref": "#/definitions/v2AppUserThirdParty"
           }
+        }
+      }
+    },
+    "v2CreateAppUserThirdPartyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserThirdParty"
         }
       }
     },
@@ -185,6 +185,21 @@
         }
       }
     },
+    "v2GetAppUserThirdPartiesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppUserThirdParty"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v2GetAppUserThirdPartyOnlyResponse": {
       "type": "object",
       "properties": {
@@ -198,21 +213,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v2AppUserThirdParty"
-        }
-      }
-    },
-    "v2GetAppUserThirdPartysResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2AppUserThirdParty"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

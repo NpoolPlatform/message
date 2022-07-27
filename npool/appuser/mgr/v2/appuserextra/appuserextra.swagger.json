@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appusermgrv2/appuserextra/appuserextra.proto",
+    "title": "npool/appuser/mgr/v2/appuserextra/appuserextra.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "AppUserManagerAppUserExtra"
+      "name": "AppUserExtraMgr"
     }
   ],
   "consumes": [
@@ -70,15 +70,21 @@
     "v2AppUserExtra": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "FirstName": {
           "type": "string"
         },
         "Birthday": {
           "type": "integer",
           "format": "int64"
-        },
-        "ID": {
-          "type": "string"
         },
         "LastName": {
           "type": "string"
@@ -87,12 +93,6 @@
           "type": "string"
         },
         "Avatar": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         },
         "Username": {
@@ -122,15 +122,21 @@
     "v2AppUserExtraReq": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "FirstName": {
           "type": "string"
         },
         "Birthday": {
           "type": "integer",
           "format": "int64"
-        },
-        "ID": {
-          "type": "string"
         },
         "LastName": {
           "type": "string"
@@ -139,12 +145,6 @@
           "type": "string"
         },
         "Avatar": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         },
         "Username": {
@@ -174,14 +174,20 @@
     "v2Conds": {
       "type": "object",
       "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "FirstName": {
           "$ref": "#/definitions/v1StringVal"
         },
         "Birthday": {
           "$ref": "#/definitions/v1Uint32Val"
-        },
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
         },
         "LastName": {
           "$ref": "#/definitions/v1StringVal"
@@ -190,12 +196,6 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "Avatar": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "Username": {

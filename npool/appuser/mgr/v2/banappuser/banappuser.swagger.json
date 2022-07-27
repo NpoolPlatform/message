@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appusermgrv2/banappuser/banappuser.proto",
+    "title": "npool/appuser/mgr/v2/banappuser/banappuser.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "AppUserManagerBanAppUser"
+      "name": "BanAppUserMgr"
     }
   ],
   "consumes": [
@@ -58,16 +58,16 @@
     "v2BanAppUser": {
       "type": "object",
       "properties": {
-        "UserID": {
-          "type": "string"
-        },
-        "Message": {
-          "type": "string"
-        },
         "ID": {
           "type": "string"
         },
         "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Message": {
           "type": "string"
         }
       }
@@ -75,16 +75,16 @@
     "v2BanAppUserReq": {
       "type": "object",
       "properties": {
-        "UserID": {
-          "type": "string"
-        },
-        "Message": {
-          "type": "string"
-        },
         "ID": {
           "type": "string"
         },
         "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Message": {
           "type": "string"
         }
       }
@@ -92,16 +92,16 @@
     "v2Conds": {
       "type": "object",
       "properties": {
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Message": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Message": {
           "$ref": "#/definitions/v1StringVal"
         }
       }

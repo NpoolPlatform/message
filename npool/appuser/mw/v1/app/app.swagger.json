@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appusermw/app/app.proto",
+    "title": "npool/appuser/mw/v1/app/app.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "AppUserMiddlewareApp"
+      "name": "AppMw"
     }
   ],
   "consumes": [
@@ -44,21 +44,14 @@
         }
       }
     },
-    "v1VersionResponse": {
+    "v1App": {
       "type": "object",
       "properties": {
-        "Info": {
-          "type": "string"
-        }
-      }
-    },
-    "v2AppInfo": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
+        "ID": {
+          "type": "string",
+          "title": "Base info"
         },
-        "createdBy": {
+        "CreatedBy": {
           "type": "string"
         },
         "Name": {
@@ -67,33 +60,32 @@
         "Logo": {
           "type": "string"
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
         "Description": {
           "type": "string"
         },
-        "IsBanApp": {
-          "type": "boolean"
+        "Banned": {
+          "type": "boolean",
+          "title": "Banned"
         },
-        "BanAppMessage": {
+        "BanMessage": {
           "type": "string"
         },
         "SignupMethods": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "title": "Sign methods"
         },
-        "ExternSigninMethods": {
+        "ExtSigninMethods": {
           "type": "array",
           "items": {
             "type": "string"
           }
         },
         "RecaptchaMethod": {
-          "type": "string"
+          "type": "string",
+          "title": "Control flag"
         },
         "KycEnable": {
           "type": "boolean"
@@ -103,24 +95,27 @@
         },
         "InvitationCodeMust": {
           "type": "boolean"
+        },
+        "CreateAt": {
+          "type": "string"
         }
       }
     },
-    "v2GetAppInfoResponse": {
+    "v1GetAppResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppInfo"
+          "$ref": "#/definitions/v1App"
         }
       }
     },
-    "v2GetAppInfosByCreatorResponse": {
+    "v1GetAppsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppInfo"
+            "$ref": "#/definitions/v1App"
           }
         },
         "Total": {
@@ -129,13 +124,13 @@
         }
       }
     },
-    "v2GetAppInfosResponse": {
+    "v1GetUserAppsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppInfo"
+            "$ref": "#/definitions/v1App"
           }
         },
         "Total": {
