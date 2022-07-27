@@ -2,11 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-<<<<<<< HEAD:npool/appuser/mw/v1/app/app_grpc.pb.go
 // source: npool/appuser/mw/v1/app/app.proto
-=======
-// source: npool/appusermw/app/app.proto
->>>>>>> 1a083f4eb348e6df5bb3c1ae9ab03571d55b29f0:npool/appusermw/app/app_grpc.pb.go
 
 package app
 
@@ -215,9 +211,5 @@ var AppUserMiddlewareApp_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-<<<<<<< HEAD:npool/appuser/mw/v1/app/app_grpc.pb.go
 	Metadata: "npool/appuser/mw/v1/app/app.proto",
-=======
-	Metadata: "npool/appusermw/app/app.proto",
->>>>>>> 1a083f4eb348e6df5bb3c1ae9ab03571d55b29f0:npool/appusermw/app/app_grpc.pb.go
 }

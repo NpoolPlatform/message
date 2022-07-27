@@ -2,52 +2,52 @@ syntax = "proto3";
 
 package app.user.manager.appuserthirdparty.v2;
 
-option go_package = "github.com/NpoolPlatform/message/npool/appusermgrv2/appuserthirdparty";
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/appuserthirdparty";
 
 import "google/protobuf/struct.proto";
 import "npool/npool.proto";
 
-service AppUserManagerAppUserThirdParty {
-
-    rpc CreateAppUserThirdPartyV2 (CreateAppUserThirdPartyRequest) returns (CreateAppUserThirdPartyResponse) {}
-
-    rpc CreateAppUserThirdPartysV2 (CreateAppUserThirdPartysRequest) returns (CreateAppUserThirdPartysResponse) {}
-
-    rpc UpdateAppUserThirdPartyV2 (UpdateAppUserThirdPartyRequest) returns (UpdateAppUserThirdPartyResponse) {}
-
-    rpc GetAppUserThirdPartyV2 (GetAppUserThirdPartyRequest) returns (GetAppUserThirdPartyResponse) {}
-
-    rpc GetAppUserThirdPartyOnlyV2 (GetAppUserThirdPartyOnlyRequest) returns (GetAppUserThirdPartyOnlyResponse) {}
-
-    rpc GetAppUserThirdPartysV2 (GetAppUserThirdPartysRequest) returns (GetAppUserThirdPartysResponse) {}
-
-    rpc ExistAppUserThirdPartyV2 (ExistAppUserThirdPartyRequest) returns (ExistAppUserThirdPartyResponse) {}
-
-    rpc ExistAppUserThirdPartyCondsV2 (ExistAppUserThirdPartyCondsRequest) returns (ExistAppUserThirdPartyCondsResponse) {}
-
-    rpc CountAppUserThirdPartysV2 (CountAppUserThirdPartysRequest) returns (CountAppUserThirdPartysResponse) {}
-
-    rpc DeleteAppUserThirdPartyV2 (DeleteAppUserThirdPartyRequest) returns (DeleteAppUserThirdPartyResponse) {}
+service AppUserThirdPartyMgr {
+    rpc CreateAppUserThirdParty     (CreateAppUserThirdPartyRequest)     returns (CreateAppUserThirdPartyResponse)     {}
+    rpc CreateAppUserThirdParties   (CreateAppUserThirdPartiesRequest)   returns (CreateAppUserThirdPartiesResponse)   {}
+    rpc UpdateAppUserThirdParty     (UpdateAppUserThirdPartyRequest)     returns (UpdateAppUserThirdPartyResponse)     {}
+    rpc GetAppUserThirdParty        (GetAppUserThirdPartyRequest)        returns (GetAppUserThirdPartyResponse)        {}
+    rpc GetAppUserThirdPartyOnly    (GetAppUserThirdPartyOnlyRequest)    returns (GetAppUserThirdPartyOnlyResponse)    {}
+    rpc GetAppUserThirdParties      (GetAppUserThirdPartiesRequest)      returns (GetAppUserThirdPartiesResponse)      {}
+    rpc ExistAppUserThirdParty      (ExistAppUserThirdPartyRequest)      returns (ExistAppUserThirdPartyResponse)      {}
+    rpc ExistAppUserThirdPartyConds (ExistAppUserThirdPartyCondsRequest) returns (ExistAppUserThirdPartyCondsResponse) {}
+    rpc CountAppUserThirdParties    (CountAppUserThirdPartiesRequest)    returns (CountAppUserThirdPartiesResponse)    {}
+    rpc DeleteAppUserThirdParty     (DeleteAppUserThirdPartyRequest)     returns (DeleteAppUserThirdPartyResponse)     {}
 }
 
 message AppUserThirdPartyReq {
-    optional string UserID = 10;
-    optional string ThirdPartyUserID = 20;
-    optional string ThirdPartyID = 30;
-    optional string ThirdPartyUsername = 40;
-    optional string ThirdPartyUserAvatar = 50;
-    optional string ID = 60;
-    optional string AppID = 70;
+    optional string ID                   = 10;
+    optional string AppID                = 20;
+    optional string UserID               = 30;
+    optional string ThirdPartyID         = 40;
+    optional string ThirdPartyUserID     = 50;
+    optional string ThirdPartyUsername   = 60;
+    optional string ThirdPartyUserAvatar = 70;
 }
 
 message AppUserThirdParty {
-    string UserID = 10;
-    string ThirdPartyUserID = 20;
-    string ThirdPartyID = 30;
-    string ThirdPartyUsername = 40;
-    string ThirdPartyUserAvatar = 50;
-    string ID = 60;
-    string AppID = 70;
+    string ID                   = 10;
+    string AppID                = 20;
+    string UserID               = 30;
+    string ThirdPartyID         = 40;
+    string ThirdPartyUserID     = 50;
+    string ThirdPartyUsername   = 60;
+    string ThirdPartyUserAvatar = 70;
+}
+
+message Conds {
+    npool.v1.StringVal ID                   = 60;
+    npool.v1.StringVal AppID                = 70;
+    npool.v1.StringVal UserID               = 10;
+    npool.v1.StringVal ThirdPartyID         = 30;
+    npool.v1.StringVal ThirdPartyUserID     = 20;
+    npool.v1.StringVal ThirdPartyUsername   = 40;
+    npool.v1.StringVal ThirdPartyUserAvatar = 50;
 }
 
 message CreateAppUserThirdPartyRequest {
@@ -58,11 +58,11 @@ message CreateAppUserThirdPartyResponse {
     AppUserThirdParty Info = 10;
 }
 
-message CreateAppUserThirdPartysRequest {
+message CreateAppUserThirdPartiesRequest {
     repeated AppUserThirdPartyReq Infos = 10;
 }
 
-message CreateAppUserThirdPartysResponse {
+message CreateAppUserThirdPartiesResponse {
     repeated AppUserThirdParty Infos = 10;
 }
 
@@ -74,24 +74,15 @@ message GetAppUserThirdPartyResponse {
     AppUserThirdParty Info = 10;
 }
 
-message Conds {
-    npool.v1.StringVal UserID = 10;
-    npool.v1.StringVal ThirdPartyUserID = 20;
-    npool.v1.StringVal ThirdPartyID = 30;
-    npool.v1.StringVal ThirdPartyUsername = 40;
-    npool.v1.StringVal ThirdPartyUserAvatar = 50;
-    npool.v1.StringVal ID = 60;
-    npool.v1.StringVal AppID = 70;
-}
-message GetAppUserThirdPartysRequest {
-    Conds Conds = 10;
+message GetAppUserThirdPartiesRequest {
+    Conds Conds  = 10;
     int32 Offset = 20;
-    int32 Limit = 30;
+    int32 Limit  = 30;
 }
 
-message GetAppUserThirdPartysResponse {
+message GetAppUserThirdPartiesResponse {
     repeated AppUserThirdParty Infos = 10;
-    uint32 Total = 20;
+    uint32                     Total = 20;
 }
 
 message GetAppUserThirdPartyOnlyRequest {
@@ -126,11 +117,11 @@ message ExistAppUserThirdPartyCondsResponse {
     bool Info = 10;
 }
 
-message CountAppUserThirdPartysRequest {
+message CountAppUserThirdPartiesRequest {
     Conds Conds = 10;
 }
 
-message CountAppUserThirdPartysResponse {
+message CountAppUserThirdPartiesResponse {
     uint32 Info = 10;
 }
 

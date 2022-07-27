@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/appusermgrv2/appuserextra/appuserextra.proto
+// source: npool/appuser/mgr/v2/appuserextra/appuserextra.proto
 
 package appuserextra
 
@@ -18,413 +18,412 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// AppUserManagerAppUserExtraClient is the client API for AppUserManagerAppUserExtra service.
+// AppUserExtraMgrClient is the client API for AppUserExtraMgr service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type AppUserManagerAppUserExtraClient interface {
-	CreateAppUserExtraV2(ctx context.Context, in *CreateAppUserExtraRequest, opts ...grpc.CallOption) (*CreateAppUserExtraResponse, error)
-	CreateAppUserExtrasV2(ctx context.Context, in *CreateAppUserExtrasRequest, opts ...grpc.CallOption) (*CreateAppUserExtrasResponse, error)
-	UpdateAppUserExtraV2(ctx context.Context, in *UpdateAppUserExtraRequest, opts ...grpc.CallOption) (*UpdateAppUserExtraResponse, error)
-	GetAppUserExtraV2(ctx context.Context, in *GetAppUserExtraRequest, opts ...grpc.CallOption) (*GetAppUserExtraResponse, error)
-	GetAppUserExtraOnlyV2(ctx context.Context, in *GetAppUserExtraOnlyRequest, opts ...grpc.CallOption) (*GetAppUserExtraOnlyResponse, error)
-	GetAppUserExtrasV2(ctx context.Context, in *GetAppUserExtrasRequest, opts ...grpc.CallOption) (*GetAppUserExtrasResponse, error)
-	ExistAppUserExtraV2(ctx context.Context, in *ExistAppUserExtraRequest, opts ...grpc.CallOption) (*ExistAppUserExtraResponse, error)
-	ExistAppUserExtraCondsV2(ctx context.Context, in *ExistAppUserExtraCondsRequest, opts ...grpc.CallOption) (*ExistAppUserExtraCondsResponse, error)
-	CountAppUserExtrasV2(ctx context.Context, in *CountAppUserExtrasRequest, opts ...grpc.CallOption) (*CountAppUserExtrasResponse, error)
-	DeleteAppUserExtraV2(ctx context.Context, in *DeleteAppUserExtraRequest, opts ...grpc.CallOption) (*DeleteAppUserExtraResponse, error)
+type AppUserExtraMgrClient interface {
+	CreateAppUserExtra(ctx context.Context, in *CreateAppUserExtraRequest, opts ...grpc.CallOption) (*CreateAppUserExtraResponse, error)
+	CreateAppUserExtras(ctx context.Context, in *CreateAppUserExtrasRequest, opts ...grpc.CallOption) (*CreateAppUserExtrasResponse, error)
+	UpdateAppUserExtra(ctx context.Context, in *UpdateAppUserExtraRequest, opts ...grpc.CallOption) (*UpdateAppUserExtraResponse, error)
+	GetAppUserExtra(ctx context.Context, in *GetAppUserExtraRequest, opts ...grpc.CallOption) (*GetAppUserExtraResponse, error)
+	GetAppUserExtraOnly(ctx context.Context, in *GetAppUserExtraOnlyRequest, opts ...grpc.CallOption) (*GetAppUserExtraOnlyResponse, error)
+	GetAppUserExtras(ctx context.Context, in *GetAppUserExtrasRequest, opts ...grpc.CallOption) (*GetAppUserExtrasResponse, error)
+	ExistAppUserExtra(ctx context.Context, in *ExistAppUserExtraRequest, opts ...grpc.CallOption) (*ExistAppUserExtraResponse, error)
+	ExistAppUserExtraConds(ctx context.Context, in *ExistAppUserExtraCondsRequest, opts ...grpc.CallOption) (*ExistAppUserExtraCondsResponse, error)
+	CountAppUserExtras(ctx context.Context, in *CountAppUserExtrasRequest, opts ...grpc.CallOption) (*CountAppUserExtrasResponse, error)
+	DeleteAppUserExtra(ctx context.Context, in *DeleteAppUserExtraRequest, opts ...grpc.CallOption) (*DeleteAppUserExtraResponse, error)
 }
 
-type appUserManagerAppUserExtraClient struct {
+type appUserExtraMgrClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAppUserManagerAppUserExtraClient(cc grpc.ClientConnInterface) AppUserManagerAppUserExtraClient {
-	return &appUserManagerAppUserExtraClient{cc}
+func NewAppUserExtraMgrClient(cc grpc.ClientConnInterface) AppUserExtraMgrClient {
+	return &appUserExtraMgrClient{cc}
 }
 
-func (c *appUserManagerAppUserExtraClient) CreateAppUserExtraV2(ctx context.Context, in *CreateAppUserExtraRequest, opts ...grpc.CallOption) (*CreateAppUserExtraResponse, error) {
+func (c *appUserExtraMgrClient) CreateAppUserExtra(ctx context.Context, in *CreateAppUserExtraRequest, opts ...grpc.CallOption) (*CreateAppUserExtraResponse, error) {
 	out := new(CreateAppUserExtraResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/CreateAppUserExtraV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserExtraMgr/CreateAppUserExtra", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserManagerAppUserExtraClient) CreateAppUserExtrasV2(ctx context.Context, in *CreateAppUserExtrasRequest, opts ...grpc.CallOption) (*CreateAppUserExtrasResponse, error) {
+func (c *appUserExtraMgrClient) CreateAppUserExtras(ctx context.Context, in *CreateAppUserExtrasRequest, opts ...grpc.CallOption) (*CreateAppUserExtrasResponse, error) {
 	out := new(CreateAppUserExtrasResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/CreateAppUserExtrasV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserExtraMgr/CreateAppUserExtras", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserManagerAppUserExtraClient) UpdateAppUserExtraV2(ctx context.Context, in *UpdateAppUserExtraRequest, opts ...grpc.CallOption) (*UpdateAppUserExtraResponse, error) {
+func (c *appUserExtraMgrClient) UpdateAppUserExtra(ctx context.Context, in *UpdateAppUserExtraRequest, opts ...grpc.CallOption) (*UpdateAppUserExtraResponse, error) {
 	out := new(UpdateAppUserExtraResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/UpdateAppUserExtraV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserExtraMgr/UpdateAppUserExtra", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserManagerAppUserExtraClient) GetAppUserExtraV2(ctx context.Context, in *GetAppUserExtraRequest, opts ...grpc.CallOption) (*GetAppUserExtraResponse, error) {
+func (c *appUserExtraMgrClient) GetAppUserExtra(ctx context.Context, in *GetAppUserExtraRequest, opts ...grpc.CallOption) (*GetAppUserExtraResponse, error) {
 	out := new(GetAppUserExtraResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/GetAppUserExtraV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserExtraMgr/GetAppUserExtra", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserManagerAppUserExtraClient) GetAppUserExtraOnlyV2(ctx context.Context, in *GetAppUserExtraOnlyRequest, opts ...grpc.CallOption) (*GetAppUserExtraOnlyResponse, error) {
+func (c *appUserExtraMgrClient) GetAppUserExtraOnly(ctx context.Context, in *GetAppUserExtraOnlyRequest, opts ...grpc.CallOption) (*GetAppUserExtraOnlyResponse, error) {
 	out := new(GetAppUserExtraOnlyResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/GetAppUserExtraOnlyV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserExtraMgr/GetAppUserExtraOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserManagerAppUserExtraClient) GetAppUserExtrasV2(ctx context.Context, in *GetAppUserExtrasRequest, opts ...grpc.CallOption) (*GetAppUserExtrasResponse, error) {
+func (c *appUserExtraMgrClient) GetAppUserExtras(ctx context.Context, in *GetAppUserExtrasRequest, opts ...grpc.CallOption) (*GetAppUserExtrasResponse, error) {
 	out := new(GetAppUserExtrasResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/GetAppUserExtrasV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserExtraMgr/GetAppUserExtras", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserManagerAppUserExtraClient) ExistAppUserExtraV2(ctx context.Context, in *ExistAppUserExtraRequest, opts ...grpc.CallOption) (*ExistAppUserExtraResponse, error) {
+func (c *appUserExtraMgrClient) ExistAppUserExtra(ctx context.Context, in *ExistAppUserExtraRequest, opts ...grpc.CallOption) (*ExistAppUserExtraResponse, error) {
 	out := new(ExistAppUserExtraResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/ExistAppUserExtraV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserExtraMgr/ExistAppUserExtra", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserManagerAppUserExtraClient) ExistAppUserExtraCondsV2(ctx context.Context, in *ExistAppUserExtraCondsRequest, opts ...grpc.CallOption) (*ExistAppUserExtraCondsResponse, error) {
+func (c *appUserExtraMgrClient) ExistAppUserExtraConds(ctx context.Context, in *ExistAppUserExtraCondsRequest, opts ...grpc.CallOption) (*ExistAppUserExtraCondsResponse, error) {
 	out := new(ExistAppUserExtraCondsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/ExistAppUserExtraCondsV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserExtraMgr/ExistAppUserExtraConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserManagerAppUserExtraClient) CountAppUserExtrasV2(ctx context.Context, in *CountAppUserExtrasRequest, opts ...grpc.CallOption) (*CountAppUserExtrasResponse, error) {
+func (c *appUserExtraMgrClient) CountAppUserExtras(ctx context.Context, in *CountAppUserExtrasRequest, opts ...grpc.CallOption) (*CountAppUserExtrasResponse, error) {
 	out := new(CountAppUserExtrasResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/CountAppUserExtrasV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserExtraMgr/CountAppUserExtras", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserManagerAppUserExtraClient) DeleteAppUserExtraV2(ctx context.Context, in *DeleteAppUserExtraRequest, opts ...grpc.CallOption) (*DeleteAppUserExtraResponse, error) {
+func (c *appUserExtraMgrClient) DeleteAppUserExtra(ctx context.Context, in *DeleteAppUserExtraRequest, opts ...grpc.CallOption) (*DeleteAppUserExtraResponse, error) {
 	out := new(DeleteAppUserExtraResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/DeleteAppUserExtraV2", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.manager.appuserextra.v2.AppUserExtraMgr/DeleteAppUserExtra", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AppUserManagerAppUserExtraServer is the server API for AppUserManagerAppUserExtra service.
-// All implementations must embed UnimplementedAppUserManagerAppUserExtraServer
+// AppUserExtraMgrServer is the server API for AppUserExtraMgr service.
+// All implementations must embed UnimplementedAppUserExtraMgrServer
 // for forward compatibility
-type AppUserManagerAppUserExtraServer interface {
-	CreateAppUserExtraV2(context.Context, *CreateAppUserExtraRequest) (*CreateAppUserExtraResponse, error)
-	CreateAppUserExtrasV2(context.Context, *CreateAppUserExtrasRequest) (*CreateAppUserExtrasResponse, error)
-	UpdateAppUserExtraV2(context.Context, *UpdateAppUserExtraRequest) (*UpdateAppUserExtraResponse, error)
-	GetAppUserExtraV2(context.Context, *GetAppUserExtraRequest) (*GetAppUserExtraResponse, error)
-	GetAppUserExtraOnlyV2(context.Context, *GetAppUserExtraOnlyRequest) (*GetAppUserExtraOnlyResponse, error)
-	GetAppUserExtrasV2(context.Context, *GetAppUserExtrasRequest) (*GetAppUserExtrasResponse, error)
-	ExistAppUserExtraV2(context.Context, *ExistAppUserExtraRequest) (*ExistAppUserExtraResponse, error)
-	ExistAppUserExtraCondsV2(context.Context, *ExistAppUserExtraCondsRequest) (*ExistAppUserExtraCondsResponse, error)
-	CountAppUserExtrasV2(context.Context, *CountAppUserExtrasRequest) (*CountAppUserExtrasResponse, error)
-	DeleteAppUserExtraV2(context.Context, *DeleteAppUserExtraRequest) (*DeleteAppUserExtraResponse, error)
-	mustEmbedUnimplementedAppUserManagerAppUserExtraServer()
+type AppUserExtraMgrServer interface {
+	CreateAppUserExtra(context.Context, *CreateAppUserExtraRequest) (*CreateAppUserExtraResponse, error)
+	CreateAppUserExtras(context.Context, *CreateAppUserExtrasRequest) (*CreateAppUserExtrasResponse, error)
+	UpdateAppUserExtra(context.Context, *UpdateAppUserExtraRequest) (*UpdateAppUserExtraResponse, error)
+	GetAppUserExtra(context.Context, *GetAppUserExtraRequest) (*GetAppUserExtraResponse, error)
+	GetAppUserExtraOnly(context.Context, *GetAppUserExtraOnlyRequest) (*GetAppUserExtraOnlyResponse, error)
+	GetAppUserExtras(context.Context, *GetAppUserExtrasRequest) (*GetAppUserExtrasResponse, error)
+	ExistAppUserExtra(context.Context, *ExistAppUserExtraRequest) (*ExistAppUserExtraResponse, error)
+	ExistAppUserExtraConds(context.Context, *ExistAppUserExtraCondsRequest) (*ExistAppUserExtraCondsResponse, error)
+	CountAppUserExtras(context.Context, *CountAppUserExtrasRequest) (*CountAppUserExtrasResponse, error)
+	DeleteAppUserExtra(context.Context, *DeleteAppUserExtraRequest) (*DeleteAppUserExtraResponse, error)
+	mustEmbedUnimplementedAppUserExtraMgrServer()
 }
 
-// UnimplementedAppUserManagerAppUserExtraServer must be embedded to have forward compatible implementations.
-type UnimplementedAppUserManagerAppUserExtraServer struct {
+// UnimplementedAppUserExtraMgrServer must be embedded to have forward compatible implementations.
+type UnimplementedAppUserExtraMgrServer struct {
 }
 
-func (UnimplementedAppUserManagerAppUserExtraServer) CreateAppUserExtraV2(context.Context, *CreateAppUserExtraRequest) (*CreateAppUserExtraResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserExtraV2 not implemented")
+func (UnimplementedAppUserExtraMgrServer) CreateAppUserExtra(context.Context, *CreateAppUserExtraRequest) (*CreateAppUserExtraResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserExtra not implemented")
 }
-func (UnimplementedAppUserManagerAppUserExtraServer) CreateAppUserExtrasV2(context.Context, *CreateAppUserExtrasRequest) (*CreateAppUserExtrasResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserExtrasV2 not implemented")
+func (UnimplementedAppUserExtraMgrServer) CreateAppUserExtras(context.Context, *CreateAppUserExtrasRequest) (*CreateAppUserExtrasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserExtras not implemented")
 }
-func (UnimplementedAppUserManagerAppUserExtraServer) UpdateAppUserExtraV2(context.Context, *UpdateAppUserExtraRequest) (*UpdateAppUserExtraResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUserExtraV2 not implemented")
+func (UnimplementedAppUserExtraMgrServer) UpdateAppUserExtra(context.Context, *UpdateAppUserExtraRequest) (*UpdateAppUserExtraResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUserExtra not implemented")
 }
-func (UnimplementedAppUserManagerAppUserExtraServer) GetAppUserExtraV2(context.Context, *GetAppUserExtraRequest) (*GetAppUserExtraResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserExtraV2 not implemented")
+func (UnimplementedAppUserExtraMgrServer) GetAppUserExtra(context.Context, *GetAppUserExtraRequest) (*GetAppUserExtraResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserExtra not implemented")
 }
-func (UnimplementedAppUserManagerAppUserExtraServer) GetAppUserExtraOnlyV2(context.Context, *GetAppUserExtraOnlyRequest) (*GetAppUserExtraOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserExtraOnlyV2 not implemented")
+func (UnimplementedAppUserExtraMgrServer) GetAppUserExtraOnly(context.Context, *GetAppUserExtraOnlyRequest) (*GetAppUserExtraOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserExtraOnly not implemented")
 }
-func (UnimplementedAppUserManagerAppUserExtraServer) GetAppUserExtrasV2(context.Context, *GetAppUserExtrasRequest) (*GetAppUserExtrasResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserExtrasV2 not implemented")
+func (UnimplementedAppUserExtraMgrServer) GetAppUserExtras(context.Context, *GetAppUserExtrasRequest) (*GetAppUserExtrasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserExtras not implemented")
 }
-func (UnimplementedAppUserManagerAppUserExtraServer) ExistAppUserExtraV2(context.Context, *ExistAppUserExtraRequest) (*ExistAppUserExtraResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistAppUserExtraV2 not implemented")
+func (UnimplementedAppUserExtraMgrServer) ExistAppUserExtra(context.Context, *ExistAppUserExtraRequest) (*ExistAppUserExtraResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistAppUserExtra not implemented")
 }
-func (UnimplementedAppUserManagerAppUserExtraServer) ExistAppUserExtraCondsV2(context.Context, *ExistAppUserExtraCondsRequest) (*ExistAppUserExtraCondsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistAppUserExtraCondsV2 not implemented")
+func (UnimplementedAppUserExtraMgrServer) ExistAppUserExtraConds(context.Context, *ExistAppUserExtraCondsRequest) (*ExistAppUserExtraCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistAppUserExtraConds not implemented")
 }
-func (UnimplementedAppUserManagerAppUserExtraServer) CountAppUserExtrasV2(context.Context, *CountAppUserExtrasRequest) (*CountAppUserExtrasResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountAppUserExtrasV2 not implemented")
+func (UnimplementedAppUserExtraMgrServer) CountAppUserExtras(context.Context, *CountAppUserExtrasRequest) (*CountAppUserExtrasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountAppUserExtras not implemented")
 }
-func (UnimplementedAppUserManagerAppUserExtraServer) DeleteAppUserExtraV2(context.Context, *DeleteAppUserExtraRequest) (*DeleteAppUserExtraResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppUserExtraV2 not implemented")
+func (UnimplementedAppUserExtraMgrServer) DeleteAppUserExtra(context.Context, *DeleteAppUserExtraRequest) (*DeleteAppUserExtraResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppUserExtra not implemented")
 }
-func (UnimplementedAppUserManagerAppUserExtraServer) mustEmbedUnimplementedAppUserManagerAppUserExtraServer() {
-}
+func (UnimplementedAppUserExtraMgrServer) mustEmbedUnimplementedAppUserExtraMgrServer() {}
 
-// UnsafeAppUserManagerAppUserExtraServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to AppUserManagerAppUserExtraServer will
+// UnsafeAppUserExtraMgrServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to AppUserExtraMgrServer will
 // result in compilation errors.
-type UnsafeAppUserManagerAppUserExtraServer interface {
-	mustEmbedUnimplementedAppUserManagerAppUserExtraServer()
+type UnsafeAppUserExtraMgrServer interface {
+	mustEmbedUnimplementedAppUserExtraMgrServer()
 }
 
-func RegisterAppUserManagerAppUserExtraServer(s grpc.ServiceRegistrar, srv AppUserManagerAppUserExtraServer) {
-	s.RegisterService(&AppUserManagerAppUserExtra_ServiceDesc, srv)
+func RegisterAppUserExtraMgrServer(s grpc.ServiceRegistrar, srv AppUserExtraMgrServer) {
+	s.RegisterService(&AppUserExtraMgr_ServiceDesc, srv)
 }
 
-func _AppUserManagerAppUserExtra_CreateAppUserExtraV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppUserExtraMgr_CreateAppUserExtra_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppUserExtraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerAppUserExtraServer).CreateAppUserExtraV2(ctx, in)
+		return srv.(AppUserExtraMgrServer).CreateAppUserExtra(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/CreateAppUserExtraV2",
+		FullMethod: "/app.user.manager.appuserextra.v2.AppUserExtraMgr/CreateAppUserExtra",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerAppUserExtraServer).CreateAppUserExtraV2(ctx, req.(*CreateAppUserExtraRequest))
+		return srv.(AppUserExtraMgrServer).CreateAppUserExtra(ctx, req.(*CreateAppUserExtraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserManagerAppUserExtra_CreateAppUserExtrasV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppUserExtraMgr_CreateAppUserExtras_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppUserExtrasRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerAppUserExtraServer).CreateAppUserExtrasV2(ctx, in)
+		return srv.(AppUserExtraMgrServer).CreateAppUserExtras(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/CreateAppUserExtrasV2",
+		FullMethod: "/app.user.manager.appuserextra.v2.AppUserExtraMgr/CreateAppUserExtras",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerAppUserExtraServer).CreateAppUserExtrasV2(ctx, req.(*CreateAppUserExtrasRequest))
+		return srv.(AppUserExtraMgrServer).CreateAppUserExtras(ctx, req.(*CreateAppUserExtrasRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserManagerAppUserExtra_UpdateAppUserExtraV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppUserExtraMgr_UpdateAppUserExtra_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppUserExtraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerAppUserExtraServer).UpdateAppUserExtraV2(ctx, in)
+		return srv.(AppUserExtraMgrServer).UpdateAppUserExtra(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/UpdateAppUserExtraV2",
+		FullMethod: "/app.user.manager.appuserextra.v2.AppUserExtraMgr/UpdateAppUserExtra",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerAppUserExtraServer).UpdateAppUserExtraV2(ctx, req.(*UpdateAppUserExtraRequest))
+		return srv.(AppUserExtraMgrServer).UpdateAppUserExtra(ctx, req.(*UpdateAppUserExtraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserManagerAppUserExtra_GetAppUserExtraV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppUserExtraMgr_GetAppUserExtra_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppUserExtraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerAppUserExtraServer).GetAppUserExtraV2(ctx, in)
+		return srv.(AppUserExtraMgrServer).GetAppUserExtra(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/GetAppUserExtraV2",
+		FullMethod: "/app.user.manager.appuserextra.v2.AppUserExtraMgr/GetAppUserExtra",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerAppUserExtraServer).GetAppUserExtraV2(ctx, req.(*GetAppUserExtraRequest))
+		return srv.(AppUserExtraMgrServer).GetAppUserExtra(ctx, req.(*GetAppUserExtraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserManagerAppUserExtra_GetAppUserExtraOnlyV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppUserExtraMgr_GetAppUserExtraOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppUserExtraOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerAppUserExtraServer).GetAppUserExtraOnlyV2(ctx, in)
+		return srv.(AppUserExtraMgrServer).GetAppUserExtraOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/GetAppUserExtraOnlyV2",
+		FullMethod: "/app.user.manager.appuserextra.v2.AppUserExtraMgr/GetAppUserExtraOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerAppUserExtraServer).GetAppUserExtraOnlyV2(ctx, req.(*GetAppUserExtraOnlyRequest))
+		return srv.(AppUserExtraMgrServer).GetAppUserExtraOnly(ctx, req.(*GetAppUserExtraOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserManagerAppUserExtra_GetAppUserExtrasV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppUserExtraMgr_GetAppUserExtras_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppUserExtrasRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerAppUserExtraServer).GetAppUserExtrasV2(ctx, in)
+		return srv.(AppUserExtraMgrServer).GetAppUserExtras(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/GetAppUserExtrasV2",
+		FullMethod: "/app.user.manager.appuserextra.v2.AppUserExtraMgr/GetAppUserExtras",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerAppUserExtraServer).GetAppUserExtrasV2(ctx, req.(*GetAppUserExtrasRequest))
+		return srv.(AppUserExtraMgrServer).GetAppUserExtras(ctx, req.(*GetAppUserExtrasRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserManagerAppUserExtra_ExistAppUserExtraV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppUserExtraMgr_ExistAppUserExtra_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAppUserExtraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerAppUserExtraServer).ExistAppUserExtraV2(ctx, in)
+		return srv.(AppUserExtraMgrServer).ExistAppUserExtra(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/ExistAppUserExtraV2",
+		FullMethod: "/app.user.manager.appuserextra.v2.AppUserExtraMgr/ExistAppUserExtra",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerAppUserExtraServer).ExistAppUserExtraV2(ctx, req.(*ExistAppUserExtraRequest))
+		return srv.(AppUserExtraMgrServer).ExistAppUserExtra(ctx, req.(*ExistAppUserExtraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserManagerAppUserExtra_ExistAppUserExtraCondsV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppUserExtraMgr_ExistAppUserExtraConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAppUserExtraCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerAppUserExtraServer).ExistAppUserExtraCondsV2(ctx, in)
+		return srv.(AppUserExtraMgrServer).ExistAppUserExtraConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/ExistAppUserExtraCondsV2",
+		FullMethod: "/app.user.manager.appuserextra.v2.AppUserExtraMgr/ExistAppUserExtraConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerAppUserExtraServer).ExistAppUserExtraCondsV2(ctx, req.(*ExistAppUserExtraCondsRequest))
+		return srv.(AppUserExtraMgrServer).ExistAppUserExtraConds(ctx, req.(*ExistAppUserExtraCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserManagerAppUserExtra_CountAppUserExtrasV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppUserExtraMgr_CountAppUserExtras_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CountAppUserExtrasRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerAppUserExtraServer).CountAppUserExtrasV2(ctx, in)
+		return srv.(AppUserExtraMgrServer).CountAppUserExtras(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/CountAppUserExtrasV2",
+		FullMethod: "/app.user.manager.appuserextra.v2.AppUserExtraMgr/CountAppUserExtras",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerAppUserExtraServer).CountAppUserExtrasV2(ctx, req.(*CountAppUserExtrasRequest))
+		return srv.(AppUserExtraMgrServer).CountAppUserExtras(ctx, req.(*CountAppUserExtrasRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserManagerAppUserExtra_DeleteAppUserExtraV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppUserExtraMgr_DeleteAppUserExtra_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppUserExtraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserManagerAppUserExtraServer).DeleteAppUserExtraV2(ctx, in)
+		return srv.(AppUserExtraMgrServer).DeleteAppUserExtra(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra/DeleteAppUserExtraV2",
+		FullMethod: "/app.user.manager.appuserextra.v2.AppUserExtraMgr/DeleteAppUserExtra",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserManagerAppUserExtraServer).DeleteAppUserExtraV2(ctx, req.(*DeleteAppUserExtraRequest))
+		return srv.(AppUserExtraMgrServer).DeleteAppUserExtra(ctx, req.(*DeleteAppUserExtraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// AppUserManagerAppUserExtra_ServiceDesc is the grpc.ServiceDesc for AppUserManagerAppUserExtra service.
+// AppUserExtraMgr_ServiceDesc is the grpc.ServiceDesc for AppUserExtraMgr service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var AppUserManagerAppUserExtra_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.user.manager.appuserextra.v2.AppUserManagerAppUserExtra",
-	HandlerType: (*AppUserManagerAppUserExtraServer)(nil),
+var AppUserExtraMgr_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "app.user.manager.appuserextra.v2.AppUserExtraMgr",
+	HandlerType: (*AppUserExtraMgrServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateAppUserExtraV2",
-			Handler:    _AppUserManagerAppUserExtra_CreateAppUserExtraV2_Handler,
+			MethodName: "CreateAppUserExtra",
+			Handler:    _AppUserExtraMgr_CreateAppUserExtra_Handler,
 		},
 		{
-			MethodName: "CreateAppUserExtrasV2",
-			Handler:    _AppUserManagerAppUserExtra_CreateAppUserExtrasV2_Handler,
+			MethodName: "CreateAppUserExtras",
+			Handler:    _AppUserExtraMgr_CreateAppUserExtras_Handler,
 		},
 		{
-			MethodName: "UpdateAppUserExtraV2",
-			Handler:    _AppUserManagerAppUserExtra_UpdateAppUserExtraV2_Handler,
+			MethodName: "UpdateAppUserExtra",
+			Handler:    _AppUserExtraMgr_UpdateAppUserExtra_Handler,
 		},
 		{
-			MethodName: "GetAppUserExtraV2",
-			Handler:    _AppUserManagerAppUserExtra_GetAppUserExtraV2_Handler,
+			MethodName: "GetAppUserExtra",
+			Handler:    _AppUserExtraMgr_GetAppUserExtra_Handler,
 		},
 		{
-			MethodName: "GetAppUserExtraOnlyV2",
-			Handler:    _AppUserManagerAppUserExtra_GetAppUserExtraOnlyV2_Handler,
+			MethodName: "GetAppUserExtraOnly",
+			Handler:    _AppUserExtraMgr_GetAppUserExtraOnly_Handler,
 		},
 		{
-			MethodName: "GetAppUserExtrasV2",
-			Handler:    _AppUserManagerAppUserExtra_GetAppUserExtrasV2_Handler,
+			MethodName: "GetAppUserExtras",
+			Handler:    _AppUserExtraMgr_GetAppUserExtras_Handler,
 		},
 		{
-			MethodName: "ExistAppUserExtraV2",
-			Handler:    _AppUserManagerAppUserExtra_ExistAppUserExtraV2_Handler,
+			MethodName: "ExistAppUserExtra",
+			Handler:    _AppUserExtraMgr_ExistAppUserExtra_Handler,
 		},
 		{
-			MethodName: "ExistAppUserExtraCondsV2",
-			Handler:    _AppUserManagerAppUserExtra_ExistAppUserExtraCondsV2_Handler,
+			MethodName: "ExistAppUserExtraConds",
+			Handler:    _AppUserExtraMgr_ExistAppUserExtraConds_Handler,
 		},
 		{
-			MethodName: "CountAppUserExtrasV2",
-			Handler:    _AppUserManagerAppUserExtra_CountAppUserExtrasV2_Handler,
+			MethodName: "CountAppUserExtras",
+			Handler:    _AppUserExtraMgr_CountAppUserExtras_Handler,
 		},
 		{
-			MethodName: "DeleteAppUserExtraV2",
-			Handler:    _AppUserManagerAppUserExtra_DeleteAppUserExtraV2_Handler,
+			MethodName: "DeleteAppUserExtra",
+			Handler:    _AppUserExtraMgr_DeleteAppUserExtra_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/appusermgrv2/appuserextra/appuserextra.proto",
+	Metadata: "npool/appuser/mgr/v2/appuserextra/appuserextra.proto",
 }

@@ -4,8 +4,8 @@ package npool.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/errno;errno";
 
-enum {
+enum ERR {
     OK = 0;
 
-    ERR_START = 10000;
+    START = 10000;
 }
