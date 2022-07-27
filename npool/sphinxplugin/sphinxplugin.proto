@@ -17,6 +17,7 @@ enum CoinType {
   CoinTypebinancecoin = 8;
   CoinTypetron        = 9;
   CoinTypebinanceusd  = 10;
+  CoinTypeusdcerc20  = 11;
 
   // testnet
   CoinTypetfilecoin    = 100;
@@ -29,6 +30,7 @@ enum CoinType {
   CoinTypetbinancecoin = 107;
   CoinTypettron        = 108;
   CoinTypetbinanceusd  = 109;
+  CoinTypetusdcerc20   = 110;
 }
 
 // fil
