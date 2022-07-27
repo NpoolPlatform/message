@@ -1,51 +1,50 @@
 syntax = "proto3";
 
-package app.user.manager.approle.v2;
+package appuser.manager.approle.v2;
 
-option go_package = "github.com/NpoolPlatform/message/npool/appusermgrv2/approle";
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/approle";
 
 import "google/protobuf/struct.proto";
 import "npool/npool.proto";
 
-service AppUserManagerAppRole {
-
-    rpc CreateAppRoleV2 (CreateAppRoleRequest) returns (CreateAppRoleResponse) {}
-
-    rpc CreateAppRolesV2 (CreateAppRolesRequest) returns (CreateAppRolesResponse) {}
-
-    rpc UpdateAppRoleV2 (UpdateAppRoleRequest) returns (UpdateAppRoleResponse) {}
-
-    rpc GetAppRoleV2 (GetAppRoleRequest) returns (GetAppRoleResponse) {}
-
-    rpc GetAppRoleOnlyV2 (GetAppRoleOnlyRequest) returns (GetAppRoleOnlyResponse) {}
-
-    rpc GetAppRolesV2 (GetAppRolesRequest) returns (GetAppRolesResponse) {}
-
-    rpc ExistAppRoleV2 (ExistAppRoleRequest) returns (ExistAppRoleResponse) {}
-
-    rpc ExistAppRoleCondsV2 (ExistAppRoleCondsRequest) returns (ExistAppRoleCondsResponse) {}
-
-    rpc CountAppRolesV2 (CountAppRolesRequest) returns (CountAppRolesResponse) {}
-
-    rpc DeleteAppRoleV2 (DeleteAppRoleRequest) returns (DeleteAppRoleResponse) {}
+service AppRoleMgr {
+    rpc CreateAppRole     (CreateAppRoleRequest)     returns (CreateAppRoleResponse)     {}
+    rpc CreateAppRoles    (CreateAppRolesRequest)    returns (CreateAppRolesResponse)    {}
+    rpc UpdateAppRole     (UpdateAppRoleRequest)     returns (UpdateAppRoleResponse)     {}
+    rpc GetAppRole        (GetAppRoleRequest)        returns (GetAppRoleResponse)        {}
+    rpc GetAppRoleOnly    (GetAppRoleOnlyRequest)    returns (GetAppRoleOnlyResponse)    {}
+    rpc GetAppRoles       (GetAppRolesRequest)       returns (GetAppRolesResponse)       {}
+    rpc ExistAppRole      (ExistAppRoleRequest)      returns (ExistAppRoleResponse)      {}
+    rpc ExistAppRoleConds (ExistAppRoleCondsRequest) returns (ExistAppRoleCondsResponse) {}
+    rpc CountAppRoles     (CountAppRolesRequest)     returns (CountAppRolesResponse)     {}
+    rpc DeleteAppRole     (DeleteAppRoleRequest)     returns (DeleteAppRoleResponse)     {}
 }
 
 message AppRoleReq {
-    optional string ID = 10;
-    optional string AppID = 20;
-    optional string CreatedBy = 30;
-    optional string Role = 40;
+    optional string ID          = 10;
+    optional string AppID       = 20;
+    optional string CreatedBy   = 30;
+    optional string Role        = 40;
     optional string Description = 50;
-    optional bool Default = 60;
+    optional bool   Default     = 60;
 }
 
 message AppRole {
-    string ID = 10;
-    string AppID = 20;
-    string CreatedBy = 30;
-    string Role = 40;
+    string ID          = 10;
+    string AppID       = 20;
+    string CreatedBy   = 30;
+    string Role        = 40;
     string Description = 50;
-    bool Default = 60;
+    bool   Default     = 60;
+}
+
+message Conds {
+    npool.v1.StringVal       ID        = 10;
+    npool.v1.StringVal       AppID     = 20;
+    npool.v1.StringVal       CreatedBy = 30;
+    npool.v1.StringVal       Role      = 40;
+    npool.v1.BoolVal         Default   = 50;
+    npool.v1.StringSlicesVal IDIn      = 60;
 }
 
 message CreateAppRoleRequest {
@@ -72,23 +71,15 @@ message GetAppRoleResponse {
     AppRole Info = 10;
 }
 
-message Conds {
-    npool.v1.StringVal ID = 10;
-    npool.v1.StringVal AppID = 20;
-    npool.v1.StringVal CreatedBy = 30;
-    npool.v1.StringVal Role = 40;
-    npool.v1.BoolVal Default = 50;
-    npool.v1.StringSlicesVal IDIn = 60;
-}
 message GetAppRolesRequest {
-    Conds Conds = 10;
+    Conds Conds  = 10;
     int32 Offset = 20;
-    int32 Limit = 30;
+    int32 Limit  = 30;
 }
 
 message GetAppRolesResponse {
     repeated AppRole Infos = 10;
-    uint32 Total = 20;
+    uint32   Total         = 20;
 }
 
 message GetAppRoleOnlyRequest {
