@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package app.user.manager.v1;
+package appuser.manager.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appusermgr/v1";
 
