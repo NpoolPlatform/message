@@ -35,21 +35,6 @@ enum OrderType {
     Airdrop          = 30;
 }
 
-enum OrderState {
-    DefaultOrderState = 0;
-    // Common state
-    WaitPayment       = 10;
-    Paid              = 20;
-    PaymentTimeout    = 30;
-    Canceled          = 40;
-
-    // Cyclation order state
-    InService         = 50;
-    Expired           = 60;
-
-    // Delivery order state
-}
-
 message OrderReq {
     optional string     ID             = 10;
     optional string     AppID          = 20;
