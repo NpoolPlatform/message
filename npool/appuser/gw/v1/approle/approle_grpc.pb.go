@@ -24,8 +24,6 @@ const _ = grpc.SupportPackageIsVersion7
 type AppRoleGwClient interface {
 	CreateRole(ctx context.Context, in *CreateRoleRequest, opts ...grpc.CallOption) (*CreateRoleResponse, error)
 	CreateAppRole(ctx context.Context, in *CreateAppRoleRequest, opts ...grpc.CallOption) (*CreateAppRoleResponse, error)
-	GetRole(ctx context.Context, in *GetRoleRequest, opts ...grpc.CallOption) (*GetRoleResponse, error)
-	GetAppRoleByRole(ctx context.Context, in *GetAppRoleByRoleRequest, opts ...grpc.CallOption) (*GetAppRoleByRoleResponse, error)
 	GetRoles(ctx context.Context, in *GetRolesRequest, opts ...grpc.CallOption) (*GetRolesResponse, error)
 	GetAppRoles(ctx context.Context, in *GetAppRolesRequest, opts ...grpc.CallOption) (*GetAppRolesResponse, error)
 	UpdateRole(ctx context.Context, in *UpdateRoleRequest, opts ...grpc.CallOption) (*UpdateRoleResponse, error)
@@ -51,24 +49,6 @@ func (c *appRoleGwClient) CreateRole(ctx context.Context, in *CreateRoleRequest,
 func (c *appRoleGwClient) CreateAppRole(ctx context.Context, in *CreateAppRoleRequest, opts ...grpc.CallOption) (*CreateAppRoleResponse, error) {
 	out := new(CreateAppRoleResponse)
 	err := c.cc.Invoke(ctx, "/app.user.gateway.approle.v1.AppRoleGw/CreateAppRole", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appRoleGwClient) GetRole(ctx context.Context, in *GetRoleRequest, opts ...grpc.CallOption) (*GetRoleResponse, error) {
-	out := new(GetRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.approle.v1.AppRoleGw/GetRole", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appRoleGwClient) GetAppRoleByRole(ctx context.Context, in *GetAppRoleByRoleRequest, opts ...grpc.CallOption) (*GetAppRoleByRoleResponse, error) {
-	out := new(GetAppRoleByRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.approle.v1.AppRoleGw/GetAppRoleByRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -108,8 +88,6 @@ func (c *appRoleGwClient) UpdateRole(ctx context.Context, in *UpdateRoleRequest,
 type AppRoleGwServer interface {
 	CreateRole(context.Context, *CreateRoleRequest) (*CreateRoleResponse, error)
 	CreateAppRole(context.Context, *CreateAppRoleRequest) (*CreateAppRoleResponse, error)
-	GetRole(context.Context, *GetRoleRequest) (*GetRoleResponse, error)
-	GetAppRoleByRole(context.Context, *GetAppRoleByRoleRequest) (*GetAppRoleByRoleResponse, error)
 	GetRoles(context.Context, *GetRolesRequest) (*GetRolesResponse, error)
 	GetAppRoles(context.Context, *GetAppRolesRequest) (*GetAppRolesResponse, error)
 	UpdateRole(context.Context, *UpdateRoleRequest) (*UpdateRoleResponse, error)
@@ -125,12 +103,6 @@ func (UnimplementedAppRoleGwServer) CreateRole(context.Context, *CreateRoleReque
 }
 func (UnimplementedAppRoleGwServer) CreateAppRole(context.Context, *CreateAppRoleRequest) (*CreateAppRoleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppRole not implemented")
-}
-func (UnimplementedAppRoleGwServer) GetRole(context.Context, *GetRoleRequest) (*GetRoleResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetRole not implemented")
-}
-func (UnimplementedAppRoleGwServer) GetAppRoleByRole(context.Context, *GetAppRoleByRoleRequest) (*GetAppRoleByRoleResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppRoleByRole not implemented")
 }
 func (UnimplementedAppRoleGwServer) GetRoles(context.Context, *GetRolesRequest) (*GetRolesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRoles not implemented")
@@ -186,42 +158,6 @@ func _AppRoleGw_CreateAppRole_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleGwServer).CreateAppRole(ctx, req.(*CreateAppRoleRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppRoleGw_GetRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetRoleRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppRoleGwServer).GetRole(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/app.user.gateway.approle.v1.AppRoleGw/GetRole",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppRoleGwServer).GetRole(ctx, req.(*GetRoleRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppRoleGw_GetAppRoleByRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppRoleByRoleRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppRoleGwServer).GetAppRoleByRole(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/app.user.gateway.approle.v1.AppRoleGw/GetAppRoleByRole",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppRoleGwServer).GetAppRoleByRole(ctx, req.(*GetAppRoleByRoleRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -294,14 +230,6 @@ var AppRoleGw_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAppRole",
 			Handler:    _AppRoleGw_CreateAppRole_Handler,
-		},
-		{
-			MethodName: "GetRole",
-			Handler:    _AppRoleGw_GetRole_Handler,
-		},
-		{
-			MethodName: "GetAppRoleByRole",
-			Handler:    _AppRoleGw_GetAppRoleByRole_Handler,
 		},
 		{
 			MethodName: "GetRoles",

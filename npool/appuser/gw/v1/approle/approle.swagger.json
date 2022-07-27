@@ -80,38 +80,6 @@
         ]
       }
     },
-    "/v2/get/app/role/by/role": {
-      "post": {
-        "operationId": "AppRoleGw_GetAppRoleByRole",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppRoleByRoleResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppRoleByRoleRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppRoleGw"
-        ]
-      }
-    },
     "/v2/get/app/roles": {
       "post": {
         "operationId": "AppRoleGw_GetAppRoles",
@@ -136,38 +104,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/approlev1GetAppRolesRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppRoleGw"
-        ]
-      }
-    },
-    "/v2/get/role": {
-      "post": {
-        "operationId": "AppRoleGw_GetRole",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetRoleResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetRoleRequest"
             }
           }
         ],
@@ -334,41 +270,6 @@
       }
     },
     "v1CreateRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppRole"
-        }
-      }
-    },
-    "v1GetAppRoleByRoleRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Role": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppRoleByRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppRole"
-        }
-      }
-    },
-    "v1GetRoleRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetRoleResponse": {
       "type": "object",
       "properties": {
         "Info": {
