@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package appusermw.user.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appusermw/user";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/appuser/mgr/v2/approle/approle.proto";
+import "npool/appuser/mgr/v2/appuser/appuser.proto";
+import "npool/appuser/mgr/v2/appusersecret/appusersecret.proto";
+import "npool/appuser/mgr/v2/appuserthirdparty/appuserthirdparty.proto";
+
+service AppUserMiddlewareUser {
+  rpc GetUserInfo (GetUserInfoRequest) returns (GetUserInfoResponse) {}
+
+  rpc GetAppUserInfo (GetUserInfoRequest) returns (GetUserInfoResponse) {}
+
+  rpc GetUserInfos (GetUserInfosRequest) returns (GetUserInfosResponse) {}
+
+  rpc CreateUserWithSecret (CreateUserWithSecretRequest) returns (CreateUserWithSecretResponse) {}
+
+  rpc CreateUserWithThirdParty (CreateUserWithThirdPartyRequest) returns (CreateUserWithThirdPartyResponse) {}
+
+}
+
+message AppUserInfo {
+  string ID = 10;
+  string AppID = 20;
+  string EmailAddress = 30;
+  string PhoneNO = 40;
+  string ImportFromApp = 50;
+  uint32 CreateAt = 60;
+  string Username = 70;
+  repeated string AddressFields = 80;
+  string Gender = 90;
+  string PostalCode = 100;
+  uint32 Age = 110;
+  uint32 Birthday = 120;
+  string Avatar = 130;
+  string Organization = 140;
+  string FirstName = 150;
+  string LastName = 160;
+  string IDNumber = 170;
+  bool SigninVerifyByGoogleAuthentication = 180;
+  bool GoogleAuthenticationVerified = 190;
+  bool IsBanApp = 200;
+  repeated appuser.manager.approle.v2.AppRole Roles = 210;
+  bool HasGoogleSecret = 220;
+}
+
+message GetUserInfoRequest {
+  string UserID = 10;
+  string AppID = 20;
+}
+
+message GetUserInfoResponse {
+  AppUserInfo Info = 10;
+}
+
+message GetUserInfosRequest {
+  string AppID = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message GetUserInfosResponse {
+  repeated AppUserInfo Infos = 10;
+}
+
+
+message CreateUserWithSecretRequest {
+  appuser.manager.appuser.v2.AppUserReq User = 10;
+  appuser.manager.appusersecret.v2.AppUserSecretReq Secret = 20;
+}
+
+message CreateUserWithSecretResponse {
+  appuser.manager.appuser.v2.AppUser Info = 10;
+}
+
+
+message CreateUserWithThirdPartyRequest {
+  appuser.manager.appuser.v2.AppUserReq User = 10;
+  appuser.manager.appuserthirdparty.v2.AppUserThirdParty ThirdParty = 20;
+}
+
+message CreateUserWithThirdPartyResponse {
+  appuser.manager.appuser.v2.AppUser Info = 10;
+}
