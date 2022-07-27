@@ -1,0 +1,218 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/ordermgr/state/state.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "OrderState"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "OrderID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "State": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CountStatesResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateStateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1State"
+        }
+      }
+    },
+    "v1CreateStatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1State"
+          }
+        }
+      }
+    },
+    "v1EState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "WaitPayment",
+        "Paid",
+        "PaymentTimeout",
+        "Canceled",
+        "InService",
+        "Expired"
+      ],
+      "default": "DefaultState",
+      "title": "- WaitPayment: Common state\n - InService: Cyclation order state"
+    },
+    "v1ExistStateCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistStateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetStateOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1State"
+        }
+      }
+    },
+    "v1GetStateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1State"
+        }
+      }
+    },
+    "v1GetStatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1State"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1State": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1EState"
+        }
+      }
+    },
+    "v1StateReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1EState"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Op": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Op": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateStateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1State"
+        }
+      }
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

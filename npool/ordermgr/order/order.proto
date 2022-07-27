@@ -1,0 +1,157 @@
+syntax = "proto3";
+
+package order.manager.order.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/ordermgr/order";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service OrderMgr {
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {}
+
+    rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse) {}
+
+    rpc CreateOrders (CreateOrdersRequest) returns (CreateOrdersResponse) {}
+
+    rpc GetOrder (GetOrderRequest) returns (GetOrderResponse) {}
+
+    rpc GetOrderOnly (GetOrderOnlyRequest) returns (GetOrderOnlyResponse) {}
+
+    rpc GetOrders (GetOrdersRequest) returns (GetOrdersResponse) {}
+
+    rpc ExistOrder (ExistOrderRequest) returns (ExistOrderResponse) {}
+
+    rpc ExistOrderConds (ExistOrderCondsRequest) returns (ExistOrderCondsResponse) {}
+
+    rpc CountOrders (CountOrdersRequest) returns (CountOrdersResponse) {}
+}
+
+enum OrderType {
+    DefaultOrderType = 0;
+    Normal           = 10;
+    Offline          = 20;
+    Airdrop          = 30;
+}
+
+enum OrderState {
+    DefaultOrderState = 0;
+    // Common state
+    WaitPayment       = 10;
+    Paid              = 20;
+    PaymentTimeout    = 30;
+    Canceled          = 40;
+
+    // Cyclation order state
+    InService         = 50;
+    Expired           = 60;
+
+    // Delivery order state
+}
+
+message OrderReq {
+    optional string     ID             = 10;
+    optional string     AppID          = 20;
+    optional string     UserID         = 30;
+    optional string     GoodID         = 40;
+    optional uint32     Units          = 50;
+    optional OrderType  Type           = 60;
+    optional string     ParentOrderID  = 70;
+    optional bool       PayWithParent  = 80;
+    optional uint32     StartAt        = 90;
+    optional uint32     CreatedAt      = 100;
+}
+
+message Order {
+    string    ID            = 10;
+    string    AppID         = 20;
+    string    UserID        = 30;
+    string    GoodID        = 40;
+    uint32    Units         = 50;
+    OrderType Type          = 60;
+    string    ParentOrderID = 70;
+    bool      PayWithParent = 80;
+    uint32    StartAt       = 90;
+    uint32    CreatedAt     = 100;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID               = 10;
+    optional npool.v1.StringVal AppID            = 20;
+    optional npool.v1.StringVal UserID           = 30;
+    optional npool.v1.StringVal GoodID           = 40;
+    optional npool.v1.Uint32Val Units            = 50;
+    optional npool.v1.Uint32Val Type             = 60;
+    optional npool.v1.StringVal ParentOrderID    = 70;
+    optional npool.v1.Uint32Val StartAt          = 80;
+}
+
+
+message CreateOrderRequest {
+    OrderReq Info = 10;
+}
+
+message CreateOrderResponse {
+    Order Info = 10;
+}
+
+message CreateOrdersRequest {
+    repeated OrderReq Infos = 10;
+}
+
+message CreateOrdersResponse {
+    repeated Order Infos = 10;
+}
+
+message GetOrderRequest {
+    string ID = 10;
+}
+
+message GetOrderResponse {
+    Order Info = 10;
+}
+
+message GetOrdersRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetOrdersResponse {
+    repeated Order Infos = 10;
+    uint32 Total          = 20;
+}
+
+message GetOrderOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetOrderOnlyResponse {
+    Order Info = 10;
+}
+
+message ExistOrderRequest {
+    string ID = 10;
+}
+
+message ExistOrderResponse {
+    bool Info = 10;
+}
+
+message ExistOrderCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistOrderCondsResponse {
+    bool Info = 10;
+}
+
+message CountOrdersRequest {
+    Conds Conds = 10;
+}
+
+message CountOrdersResponse {
+    uint32 Info = 10;
+}
+
