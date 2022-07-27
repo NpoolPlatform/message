@@ -2,44 +2,40 @@ syntax = "proto3";
 
 package app.user.manager.banapp.v2;
 
-option go_package = "github.com/NpoolPlatform/message/npool/appusermgrv2/banapp";
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/banapp";
 
 import "google/protobuf/struct.proto";
 import "npool/npool.proto";
 
-service AppUserManagerBanApp {
-
-    rpc CreateBanAppV2 (CreateBanAppRequest) returns (CreateBanAppResponse) {}
-
-    rpc CreateBanAppsV2 (CreateBanAppsRequest) returns (CreateBanAppsResponse) {}
-
-    rpc UpdateBanAppV2 (UpdateBanAppRequest) returns (UpdateBanAppResponse) {}
-
-    rpc GetBanAppV2 (GetBanAppRequest) returns (GetBanAppResponse) {}
-
-    rpc GetBanAppOnlyV2 (GetBanAppOnlyRequest) returns (GetBanAppOnlyResponse) {}
-
-    rpc GetBanAppsV2 (GetBanAppsRequest) returns (GetBanAppsResponse) {}
-
-    rpc ExistBanAppV2 (ExistBanAppRequest) returns (ExistBanAppResponse) {}
-
-    rpc ExistBanAppCondsV2 (ExistBanAppCondsRequest) returns (ExistBanAppCondsResponse) {}
-
-    rpc CountBanAppsV2 (CountBanAppsRequest) returns (CountBanAppsResponse) {}
-
-    rpc DeleteBanAppV2 (DeleteBanAppRequest) returns (DeleteBanAppResponse) {}
+service BanAppMgr {
+    rpc CreateBanApp     (CreateBanAppRequest)     returns (CreateBanAppResponse)     {}
+    rpc CreateBanApps    (CreateBanAppsRequest)    returns (CreateBanAppsResponse)    {}
+    rpc UpdateBanApp     (UpdateBanAppRequest)     returns (UpdateBanAppResponse)     {}
+    rpc GetBanApp        (GetBanAppRequest)        returns (GetBanAppResponse)        {}
+    rpc GetBanAppOnly    (GetBanAppOnlyRequest)    returns (GetBanAppOnlyResponse)    {}
+    rpc GetBanApps       (GetBanAppsRequest)       returns (GetBanAppsResponse)       {}
+    rpc ExistBanApp      (ExistBanAppRequest)      returns (ExistBanAppResponse)      {}
+    rpc ExistBanAppConds (ExistBanAppCondsRequest) returns (ExistBanAppCondsResponse) {}
+    rpc CountBanApps     (CountBanAppsRequest)     returns (CountBanAppsResponse)     {}
+    rpc DeleteBanApp     (DeleteBanAppRequest)     returns (DeleteBanAppResponse)     {}
 }
 
 message BanAppReq {
-    optional string ID = 10;
-    optional string AppID = 20;
+    optional string ID      = 10;
+    optional string AppID   = 20;
     optional string Message = 30;
 }
 
 message BanApp {
-    string ID = 10;
-    string AppID = 20;
+    string ID      = 10;
+    string AppID   = 20;
     string Message = 30;
+}
+
+message Conds {
+    npool.v1.StringVal ID      = 10;
+    npool.v1.StringVal AppID   = 20;
+    npool.v1.StringVal Message = 30;
 }
 
 message CreateBanAppRequest {
@@ -65,20 +61,16 @@ message GetBanAppRequest {
 message GetBanAppResponse {
     BanApp Info = 10;
 }
-message Conds {
-    npool.v1.StringVal ID = 10;
-    npool.v1.StringVal AppID = 20;
-    npool.v1.StringVal Message = 30;
-}
+
 message GetBanAppsRequest {
-    Conds Conds = 10;
+    Conds Conds  = 10;
     int32 Offset = 20;
-    int32 Limit = 30;
+    int32 Limit  = 30;
 }
 
 message GetBanAppsResponse {
     repeated BanApp  Infos = 10;
-    uint32 Total = 20;
+    uint32           Total = 20;
 }
 
 message GetBanAppOnlyRequest {
