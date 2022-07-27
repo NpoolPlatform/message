@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package order.manager.state.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/ordermgr/order";
+option go_package = "github.com/NpoolPlatform/message/npool/ordermgr/state";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";

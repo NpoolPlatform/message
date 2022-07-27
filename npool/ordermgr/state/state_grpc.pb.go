@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/ordermgr/state/state.proto
 
-package order
+package state
 
 import (
 	context "context"
