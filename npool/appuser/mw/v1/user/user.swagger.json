@@ -165,8 +165,11 @@
         "GoogleAuthenticationVerified": {
           "type": "boolean"
         },
-        "IsBanApp": {
+        "Banned": {
           "type": "boolean"
+        },
+        "BanMessage": {
+          "type": "string"
         },
         "HasGoogleSecret": {
           "type": "boolean",

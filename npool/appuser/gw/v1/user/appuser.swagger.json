@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appuser/gw/v1/appuser/appuser.proto",
+    "title": "npool/appuser/gw/v1/user/appuser.proto",
     "version": "version not set"
   },
   "tags": [
@@ -334,8 +334,11 @@
         "GoogleAuthenticationVerified": {
           "type": "boolean"
         },
-        "IsBanApp": {
+        "Banned": {
           "type": "boolean"
+        },
+        "BanMessage": {
+          "type": "string"
         },
         "HasGoogleSecret": {
           "type": "boolean",

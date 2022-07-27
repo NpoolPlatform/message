@@ -46,17 +46,18 @@ message User {
     string IDNumber                          = 190;
 
     // Control flat
-    bool  SigninVerifyByGoogleAuthentication = 200;
-    bool  GoogleAuthenticationVerified       = 210;
-    bool  IsBanApp                           = 220;
+    bool   SigninVerifyByGoogleAuthentication = 200;
+    bool   GoogleAuthenticationVerified       = 210;
+    bool   Banned                             = 220;
+    string BanMessage                         = 230;
 
     // Secret map
-    bool HasGoogleSecret                     = 230;
+    bool HasGoogleSecret                     = 240;
 
     // Role
-    repeated string Roles                    = 240;
+    repeated string Roles                    = 250;
 
-    uint32 CreateAt                          = 250;
+    uint32 CreateAt                          = 260;
 }
 
 message GetUsersRequest {
