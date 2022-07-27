@@ -44,7 +44,7 @@ func NewAppUserMgrClient(cc grpc.ClientConnInterface) AppUserMgrClient {
 
 func (c *appUserMgrClient) CreateAppUser(ctx context.Context, in *CreateAppUserRequest, opts ...grpc.CallOption) (*CreateAppUserResponse, error) {
 	out := new(CreateAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuser.v2.AppUserMgr/CreateAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/CreateAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func (c *appUserMgrClient) CreateAppUser(ctx context.Context, in *CreateAppUserR
 
 func (c *appUserMgrClient) CreateAppUsers(ctx context.Context, in *CreateAppUsersRequest, opts ...grpc.CallOption) (*CreateAppUsersResponse, error) {
 	out := new(CreateAppUsersResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuser.v2.AppUserMgr/CreateAppUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/CreateAppUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *appUserMgrClient) CreateAppUsers(ctx context.Context, in *CreateAppUser
 
 func (c *appUserMgrClient) UpdateAppUser(ctx context.Context, in *UpdateAppUserRequest, opts ...grpc.CallOption) (*UpdateAppUserResponse, error) {
 	out := new(UpdateAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuser.v2.AppUserMgr/UpdateAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/UpdateAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *appUserMgrClient) UpdateAppUser(ctx context.Context, in *UpdateAppUserR
 
 func (c *appUserMgrClient) GetAppUser(ctx context.Context, in *GetAppUserRequest, opts ...grpc.CallOption) (*GetAppUserResponse, error) {
 	out := new(GetAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuser.v2.AppUserMgr/GetAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/GetAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func (c *appUserMgrClient) GetAppUser(ctx context.Context, in *GetAppUserRequest
 
 func (c *appUserMgrClient) GetAppUserOnly(ctx context.Context, in *GetAppUserOnlyRequest, opts ...grpc.CallOption) (*GetAppUserOnlyResponse, error) {
 	out := new(GetAppUserOnlyResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuser.v2.AppUserMgr/GetAppUserOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/GetAppUserOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *appUserMgrClient) GetAppUserOnly(ctx context.Context, in *GetAppUserOnl
 
 func (c *appUserMgrClient) GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error) {
 	out := new(GetAppUsersResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuser.v2.AppUserMgr/GetAppUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/GetAppUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func (c *appUserMgrClient) GetAppUsers(ctx context.Context, in *GetAppUsersReque
 
 func (c *appUserMgrClient) ExistAppUser(ctx context.Context, in *ExistAppUserRequest, opts ...grpc.CallOption) (*ExistAppUserResponse, error) {
 	out := new(ExistAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuser.v2.AppUserMgr/ExistAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/ExistAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func (c *appUserMgrClient) ExistAppUser(ctx context.Context, in *ExistAppUserReq
 
 func (c *appUserMgrClient) ExistAppUserConds(ctx context.Context, in *ExistAppUserCondsRequest, opts ...grpc.CallOption) (*ExistAppUserCondsResponse, error) {
 	out := new(ExistAppUserCondsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuser.v2.AppUserMgr/ExistAppUserConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/ExistAppUserConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func (c *appUserMgrClient) ExistAppUserConds(ctx context.Context, in *ExistAppUs
 
 func (c *appUserMgrClient) CountAppUsers(ctx context.Context, in *CountAppUsersRequest, opts ...grpc.CallOption) (*CountAppUsersResponse, error) {
 	out := new(CountAppUsersResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuser.v2.AppUserMgr/CountAppUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/CountAppUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func (c *appUserMgrClient) CountAppUsers(ctx context.Context, in *CountAppUsersR
 
 func (c *appUserMgrClient) DeleteAppUser(ctx context.Context, in *DeleteAppUserRequest, opts ...grpc.CallOption) (*DeleteAppUserResponse, error) {
 	out := new(DeleteAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuser.v2.AppUserMgr/DeleteAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/DeleteAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -206,7 +206,7 @@ func _AppUserMgr_CreateAppUser_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuser.v2.AppUserMgr/CreateAppUser",
+		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/CreateAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserMgrServer).CreateAppUser(ctx, req.(*CreateAppUserRequest))
@@ -224,7 +224,7 @@ func _AppUserMgr_CreateAppUsers_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuser.v2.AppUserMgr/CreateAppUsers",
+		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/CreateAppUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserMgrServer).CreateAppUsers(ctx, req.(*CreateAppUsersRequest))
@@ -242,7 +242,7 @@ func _AppUserMgr_UpdateAppUser_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuser.v2.AppUserMgr/UpdateAppUser",
+		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/UpdateAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserMgrServer).UpdateAppUser(ctx, req.(*UpdateAppUserRequest))
@@ -260,7 +260,7 @@ func _AppUserMgr_GetAppUser_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuser.v2.AppUserMgr/GetAppUser",
+		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/GetAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserMgrServer).GetAppUser(ctx, req.(*GetAppUserRequest))
@@ -278,7 +278,7 @@ func _AppUserMgr_GetAppUserOnly_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuser.v2.AppUserMgr/GetAppUserOnly",
+		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/GetAppUserOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserMgrServer).GetAppUserOnly(ctx, req.(*GetAppUserOnlyRequest))
@@ -296,7 +296,7 @@ func _AppUserMgr_GetAppUsers_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuser.v2.AppUserMgr/GetAppUsers",
+		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/GetAppUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserMgrServer).GetAppUsers(ctx, req.(*GetAppUsersRequest))
@@ -314,7 +314,7 @@ func _AppUserMgr_ExistAppUser_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuser.v2.AppUserMgr/ExistAppUser",
+		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/ExistAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserMgrServer).ExistAppUser(ctx, req.(*ExistAppUserRequest))
@@ -332,7 +332,7 @@ func _AppUserMgr_ExistAppUserConds_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuser.v2.AppUserMgr/ExistAppUserConds",
+		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/ExistAppUserConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserMgrServer).ExistAppUserConds(ctx, req.(*ExistAppUserCondsRequest))
@@ -350,7 +350,7 @@ func _AppUserMgr_CountAppUsers_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuser.v2.AppUserMgr/CountAppUsers",
+		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/CountAppUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserMgrServer).CountAppUsers(ctx, req.(*CountAppUsersRequest))
@@ -368,7 +368,7 @@ func _AppUserMgr_DeleteAppUser_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuser.v2.AppUserMgr/DeleteAppUser",
+		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/DeleteAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserMgrServer).DeleteAppUser(ctx, req.(*DeleteAppUserRequest))
@@ -380,7 +380,7 @@ func _AppUserMgr_DeleteAppUser_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AppUserMgr_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.user.manager.appuser.v2.AppUserMgr",
+	ServiceName: "appuser.manager.appuser.v2.AppUserMgr",
 	HandlerType: (*AppUserMgrServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

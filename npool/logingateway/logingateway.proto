@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/logingateway";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
-import "npool/appusermgr/appusermgr.proto";
+import "npool/appuser/mgr/v1/appusermgr.proto";
 
 service LoginGateway {
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
@@ -60,7 +60,7 @@ message LoginRequest {
 }
 
 message LoginResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
     string Token = 20;
 }
 
@@ -71,15 +71,15 @@ message LoginedRequest {
 }
 
 message LoginedResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message UpdateCacheRequest {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message UpdateCacheResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message LogoutRequest {
@@ -88,7 +88,7 @@ message LogoutRequest {
 }
 
 message LogoutResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message LoginHistory {

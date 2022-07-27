@@ -44,7 +44,7 @@ func NewAppRoleUserMgrClient(cc grpc.ClientConnInterface) AppRoleUserMgrClient {
 
 func (c *appRoleUserMgrClient) CreateAppRoleUser(ctx context.Context, in *CreateAppRoleUserRequest, opts ...grpc.CallOption) (*CreateAppRoleUserResponse, error) {
 	out := new(CreateAppRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.approleuser.v2.AppRoleUserMgr/CreateAppRoleUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.approleuser.v2.AppRoleUserMgr/CreateAppRoleUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func (c *appRoleUserMgrClient) CreateAppRoleUser(ctx context.Context, in *Create
 
 func (c *appRoleUserMgrClient) CreateAppRoleUsers(ctx context.Context, in *CreateAppRoleUsersRequest, opts ...grpc.CallOption) (*CreateAppRoleUsersResponse, error) {
 	out := new(CreateAppRoleUsersResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.approleuser.v2.AppRoleUserMgr/CreateAppRoleUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.approleuser.v2.AppRoleUserMgr/CreateAppRoleUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *appRoleUserMgrClient) CreateAppRoleUsers(ctx context.Context, in *Creat
 
 func (c *appRoleUserMgrClient) UpdateAppRoleUser(ctx context.Context, in *UpdateAppRoleUserRequest, opts ...grpc.CallOption) (*UpdateAppRoleUserResponse, error) {
 	out := new(UpdateAppRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.approleuser.v2.AppRoleUserMgr/UpdateAppRoleUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.approleuser.v2.AppRoleUserMgr/UpdateAppRoleUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *appRoleUserMgrClient) UpdateAppRoleUser(ctx context.Context, in *Update
 
 func (c *appRoleUserMgrClient) GetAppRoleUser(ctx context.Context, in *GetAppRoleUserRequest, opts ...grpc.CallOption) (*GetAppRoleUserResponse, error) {
 	out := new(GetAppRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.approleuser.v2.AppRoleUserMgr/GetAppRoleUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.approleuser.v2.AppRoleUserMgr/GetAppRoleUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func (c *appRoleUserMgrClient) GetAppRoleUser(ctx context.Context, in *GetAppRol
 
 func (c *appRoleUserMgrClient) GetAppRoleUserOnly(ctx context.Context, in *GetAppRoleUserOnlyRequest, opts ...grpc.CallOption) (*GetAppRoleUserOnlyResponse, error) {
 	out := new(GetAppRoleUserOnlyResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.approleuser.v2.AppRoleUserMgr/GetAppRoleUserOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.approleuser.v2.AppRoleUserMgr/GetAppRoleUserOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *appRoleUserMgrClient) GetAppRoleUserOnly(ctx context.Context, in *GetAp
 
 func (c *appRoleUserMgrClient) GetAppRoleUsers(ctx context.Context, in *GetAppRoleUsersRequest, opts ...grpc.CallOption) (*GetAppRoleUsersResponse, error) {
 	out := new(GetAppRoleUsersResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.approleuser.v2.AppRoleUserMgr/GetAppRoleUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.approleuser.v2.AppRoleUserMgr/GetAppRoleUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func (c *appRoleUserMgrClient) GetAppRoleUsers(ctx context.Context, in *GetAppRo
 
 func (c *appRoleUserMgrClient) ExistAppRoleUser(ctx context.Context, in *ExistAppRoleUserRequest, opts ...grpc.CallOption) (*ExistAppRoleUserResponse, error) {
 	out := new(ExistAppRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.approleuser.v2.AppRoleUserMgr/ExistAppRoleUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.approleuser.v2.AppRoleUserMgr/ExistAppRoleUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func (c *appRoleUserMgrClient) ExistAppRoleUser(ctx context.Context, in *ExistAp
 
 func (c *appRoleUserMgrClient) ExistAppRoleUserConds(ctx context.Context, in *ExistAppRoleUserCondsRequest, opts ...grpc.CallOption) (*ExistAppRoleUserCondsResponse, error) {
 	out := new(ExistAppRoleUserCondsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.approleuser.v2.AppRoleUserMgr/ExistAppRoleUserConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.approleuser.v2.AppRoleUserMgr/ExistAppRoleUserConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func (c *appRoleUserMgrClient) ExistAppRoleUserConds(ctx context.Context, in *Ex
 
 func (c *appRoleUserMgrClient) CountAppRoleUsers(ctx context.Context, in *CountAppRoleUsersRequest, opts ...grpc.CallOption) (*CountAppRoleUsersResponse, error) {
 	out := new(CountAppRoleUsersResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.approleuser.v2.AppRoleUserMgr/CountAppRoleUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.approleuser.v2.AppRoleUserMgr/CountAppRoleUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func (c *appRoleUserMgrClient) CountAppRoleUsers(ctx context.Context, in *CountA
 
 func (c *appRoleUserMgrClient) DeleteAppRoleUser(ctx context.Context, in *DeleteAppRoleUserRequest, opts ...grpc.CallOption) (*DeleteAppRoleUserResponse, error) {
 	out := new(DeleteAppRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.approleuser.v2.AppRoleUserMgr/DeleteAppRoleUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.approleuser.v2.AppRoleUserMgr/DeleteAppRoleUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -206,7 +206,7 @@ func _AppRoleUserMgr_CreateAppRoleUser_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.approleuser.v2.AppRoleUserMgr/CreateAppRoleUser",
+		FullMethod: "/appuser.manager.approleuser.v2.AppRoleUserMgr/CreateAppRoleUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleUserMgrServer).CreateAppRoleUser(ctx, req.(*CreateAppRoleUserRequest))
@@ -224,7 +224,7 @@ func _AppRoleUserMgr_CreateAppRoleUsers_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.approleuser.v2.AppRoleUserMgr/CreateAppRoleUsers",
+		FullMethod: "/appuser.manager.approleuser.v2.AppRoleUserMgr/CreateAppRoleUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleUserMgrServer).CreateAppRoleUsers(ctx, req.(*CreateAppRoleUsersRequest))
@@ -242,7 +242,7 @@ func _AppRoleUserMgr_UpdateAppRoleUser_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.approleuser.v2.AppRoleUserMgr/UpdateAppRoleUser",
+		FullMethod: "/appuser.manager.approleuser.v2.AppRoleUserMgr/UpdateAppRoleUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleUserMgrServer).UpdateAppRoleUser(ctx, req.(*UpdateAppRoleUserRequest))
@@ -260,7 +260,7 @@ func _AppRoleUserMgr_GetAppRoleUser_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.approleuser.v2.AppRoleUserMgr/GetAppRoleUser",
+		FullMethod: "/appuser.manager.approleuser.v2.AppRoleUserMgr/GetAppRoleUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleUserMgrServer).GetAppRoleUser(ctx, req.(*GetAppRoleUserRequest))
@@ -278,7 +278,7 @@ func _AppRoleUserMgr_GetAppRoleUserOnly_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.approleuser.v2.AppRoleUserMgr/GetAppRoleUserOnly",
+		FullMethod: "/appuser.manager.approleuser.v2.AppRoleUserMgr/GetAppRoleUserOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleUserMgrServer).GetAppRoleUserOnly(ctx, req.(*GetAppRoleUserOnlyRequest))
@@ -296,7 +296,7 @@ func _AppRoleUserMgr_GetAppRoleUsers_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.approleuser.v2.AppRoleUserMgr/GetAppRoleUsers",
+		FullMethod: "/appuser.manager.approleuser.v2.AppRoleUserMgr/GetAppRoleUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleUserMgrServer).GetAppRoleUsers(ctx, req.(*GetAppRoleUsersRequest))
@@ -314,7 +314,7 @@ func _AppRoleUserMgr_ExistAppRoleUser_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.approleuser.v2.AppRoleUserMgr/ExistAppRoleUser",
+		FullMethod: "/appuser.manager.approleuser.v2.AppRoleUserMgr/ExistAppRoleUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleUserMgrServer).ExistAppRoleUser(ctx, req.(*ExistAppRoleUserRequest))
@@ -332,7 +332,7 @@ func _AppRoleUserMgr_ExistAppRoleUserConds_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.approleuser.v2.AppRoleUserMgr/ExistAppRoleUserConds",
+		FullMethod: "/appuser.manager.approleuser.v2.AppRoleUserMgr/ExistAppRoleUserConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleUserMgrServer).ExistAppRoleUserConds(ctx, req.(*ExistAppRoleUserCondsRequest))
@@ -350,7 +350,7 @@ func _AppRoleUserMgr_CountAppRoleUsers_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.approleuser.v2.AppRoleUserMgr/CountAppRoleUsers",
+		FullMethod: "/appuser.manager.approleuser.v2.AppRoleUserMgr/CountAppRoleUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleUserMgrServer).CountAppRoleUsers(ctx, req.(*CountAppRoleUsersRequest))
@@ -368,7 +368,7 @@ func _AppRoleUserMgr_DeleteAppRoleUser_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.approleuser.v2.AppRoleUserMgr/DeleteAppRoleUser",
+		FullMethod: "/appuser.manager.approleuser.v2.AppRoleUserMgr/DeleteAppRoleUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleUserMgrServer).DeleteAppRoleUser(ctx, req.(*DeleteAppRoleUserRequest))
@@ -380,7 +380,7 @@ func _AppRoleUserMgr_DeleteAppRoleUser_Handler(srv interface{}, ctx context.Cont
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AppRoleUserMgr_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.user.manager.approleuser.v2.AppRoleUserMgr",
+	ServiceName: "appuser.manager.approleuser.v2.AppRoleUserMgr",
 	HandlerType: (*AppRoleUserMgrServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

@@ -112,7 +112,7 @@ func NewAppUserManagerClient(cc grpc.ClientConnInterface) AppUserManagerClient {
 
 func (c *appUserManagerClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/Version", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -121,7 +121,7 @@ func (c *appUserManagerClient) Version(ctx context.Context, in *emptypb.Empty, o
 
 func (c *appUserManagerClient) CreateAdminApps(ctx context.Context, in *CreateAdminAppsRequest, opts ...grpc.CallOption) (*CreateAdminAppsResponse, error) {
 	out := new(CreateAdminAppsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAdminApps", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAdminApps", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -130,7 +130,7 @@ func (c *appUserManagerClient) CreateAdminApps(ctx context.Context, in *CreateAd
 
 func (c *appUserManagerClient) GetAdminApps(ctx context.Context, in *GetAdminAppsRequest, opts ...grpc.CallOption) (*GetAdminAppsResponse, error) {
 	out := new(GetAdminAppsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAdminApps", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAdminApps", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -139,7 +139,7 @@ func (c *appUserManagerClient) GetAdminApps(ctx context.Context, in *GetAdminApp
 
 func (c *appUserManagerClient) CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error) {
 	out := new(CreateAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -148,7 +148,7 @@ func (c *appUserManagerClient) CreateApp(ctx context.Context, in *CreateAppReque
 
 func (c *appUserManagerClient) GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error) {
 	out := new(GetAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -157,7 +157,7 @@ func (c *appUserManagerClient) GetApp(ctx context.Context, in *GetAppRequest, op
 
 func (c *appUserManagerClient) GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error) {
 	out := new(GetAppsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetApps", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetApps", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -166,7 +166,7 @@ func (c *appUserManagerClient) GetApps(ctx context.Context, in *GetAppsRequest, 
 
 func (c *appUserManagerClient) GetAppsByCreator(ctx context.Context, in *GetAppsByCreatorRequest, opts ...grpc.CallOption) (*GetAppsByCreatorResponse, error) {
 	out := new(GetAppsByCreatorResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppsByCreator", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppsByCreator", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -175,7 +175,7 @@ func (c *appUserManagerClient) GetAppsByCreator(ctx context.Context, in *GetApps
 
 func (c *appUserManagerClient) UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error) {
 	out := new(UpdateAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/UpdateApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/UpdateApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -184,7 +184,7 @@ func (c *appUserManagerClient) UpdateApp(ctx context.Context, in *UpdateAppReque
 
 func (c *appUserManagerClient) CreateAppControl(ctx context.Context, in *CreateAppControlRequest, opts ...grpc.CallOption) (*CreateAppControlResponse, error) {
 	out := new(CreateAppControlResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAppControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -193,7 +193,7 @@ func (c *appUserManagerClient) CreateAppControl(ctx context.Context, in *CreateA
 
 func (c *appUserManagerClient) CreateAppControlForOtherApp(ctx context.Context, in *CreateAppControlForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppControlForOtherAppResponse, error) {
 	out := new(CreateAppControlForOtherAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppControlForOtherApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAppControlForOtherApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -202,7 +202,7 @@ func (c *appUserManagerClient) CreateAppControlForOtherApp(ctx context.Context, 
 
 func (c *appUserManagerClient) GetAppControl(ctx context.Context, in *GetAppControlRequest, opts ...grpc.CallOption) (*GetAppControlResponse, error) {
 	out := new(GetAppControlResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -211,7 +211,7 @@ func (c *appUserManagerClient) GetAppControl(ctx context.Context, in *GetAppCont
 
 func (c *appUserManagerClient) GetAppControlByApp(ctx context.Context, in *GetAppControlByAppRequest, opts ...grpc.CallOption) (*GetAppControlByAppResponse, error) {
 	out := new(GetAppControlByAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppControlByApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppControlByApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -220,7 +220,7 @@ func (c *appUserManagerClient) GetAppControlByApp(ctx context.Context, in *GetAp
 
 func (c *appUserManagerClient) UpdateAppControl(ctx context.Context, in *UpdateAppControlRequest, opts ...grpc.CallOption) (*UpdateAppControlResponse, error) {
 	out := new(UpdateAppControlResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/UpdateAppControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/UpdateAppControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -229,7 +229,7 @@ func (c *appUserManagerClient) UpdateAppControl(ctx context.Context, in *UpdateA
 
 func (c *appUserManagerClient) CreateBanApp(ctx context.Context, in *CreateBanAppRequest, opts ...grpc.CallOption) (*CreateBanAppResponse, error) {
 	out := new(CreateBanAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateBanApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateBanApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -238,7 +238,7 @@ func (c *appUserManagerClient) CreateBanApp(ctx context.Context, in *CreateBanAp
 
 func (c *appUserManagerClient) GetBanApp(ctx context.Context, in *GetBanAppRequest, opts ...grpc.CallOption) (*GetBanAppResponse, error) {
 	out := new(GetBanAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetBanApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetBanApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -247,7 +247,7 @@ func (c *appUserManagerClient) GetBanApp(ctx context.Context, in *GetBanAppReque
 
 func (c *appUserManagerClient) GetBanAppByApp(ctx context.Context, in *GetBanAppByAppRequest, opts ...grpc.CallOption) (*GetBanAppByAppResponse, error) {
 	out := new(GetBanAppByAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetBanAppByApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetBanAppByApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -256,7 +256,7 @@ func (c *appUserManagerClient) GetBanAppByApp(ctx context.Context, in *GetBanApp
 
 func (c *appUserManagerClient) UpdateBanApp(ctx context.Context, in *UpdateBanAppRequest, opts ...grpc.CallOption) (*UpdateBanAppResponse, error) {
 	out := new(UpdateBanAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/UpdateBanApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/UpdateBanApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -265,7 +265,7 @@ func (c *appUserManagerClient) UpdateBanApp(ctx context.Context, in *UpdateBanAp
 
 func (c *appUserManagerClient) DeleteBanApp(ctx context.Context, in *DeleteBanAppRequest, opts ...grpc.CallOption) (*DeleteBanAppResponse, error) {
 	out := new(DeleteBanAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/DeleteBanApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/DeleteBanApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -274,7 +274,7 @@ func (c *appUserManagerClient) DeleteBanApp(ctx context.Context, in *DeleteBanAp
 
 func (c *appUserManagerClient) GetAppInfo(ctx context.Context, in *GetAppInfoRequest, opts ...grpc.CallOption) (*GetAppInfoResponse, error) {
 	out := new(GetAppInfoResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppInfo", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -283,7 +283,7 @@ func (c *appUserManagerClient) GetAppInfo(ctx context.Context, in *GetAppInfoReq
 
 func (c *appUserManagerClient) GetAppInfos(ctx context.Context, in *GetAppInfosRequest, opts ...grpc.CallOption) (*GetAppInfosResponse, error) {
 	out := new(GetAppInfosResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppInfos", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppInfos", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -292,7 +292,7 @@ func (c *appUserManagerClient) GetAppInfos(ctx context.Context, in *GetAppInfosR
 
 func (c *appUserManagerClient) GetAppInfosByCreator(ctx context.Context, in *GetAppInfosByCreatorRequest, opts ...grpc.CallOption) (*GetAppInfosByCreatorResponse, error) {
 	out := new(GetAppInfosByCreatorResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppInfosByCreator", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppInfosByCreator", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -301,7 +301,7 @@ func (c *appUserManagerClient) GetAppInfosByCreator(ctx context.Context, in *Get
 
 func (c *appUserManagerClient) CreateAppUser(ctx context.Context, in *CreateAppUserRequest, opts ...grpc.CallOption) (*CreateAppUserResponse, error) {
 	out := new(CreateAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -310,7 +310,7 @@ func (c *appUserManagerClient) CreateAppUser(ctx context.Context, in *CreateAppU
 
 func (c *appUserManagerClient) GetAppUser(ctx context.Context, in *GetAppUserRequest, opts ...grpc.CallOption) (*GetAppUserResponse, error) {
 	out := new(GetAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -319,7 +319,7 @@ func (c *appUserManagerClient) GetAppUser(ctx context.Context, in *GetAppUserReq
 
 func (c *appUserManagerClient) GetAppUserByAppUser(ctx context.Context, in *GetAppUserByAppUserRequest, opts ...grpc.CallOption) (*GetAppUserByAppUserResponse, error) {
 	out := new(GetAppUserByAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserByAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppUserByAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -328,7 +328,7 @@ func (c *appUserManagerClient) GetAppUserByAppUser(ctx context.Context, in *GetA
 
 func (c *appUserManagerClient) GetAppUserByAppAccount(ctx context.Context, in *GetAppUserByAppAccountRequest, opts ...grpc.CallOption) (*GetAppUserByAppAccountResponse, error) {
 	out := new(GetAppUserByAppAccountResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserByAppAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppUserByAppAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -337,7 +337,7 @@ func (c *appUserManagerClient) GetAppUserByAppAccount(ctx context.Context, in *G
 
 func (c *appUserManagerClient) VerifyAppUserByAppAccountPassword(ctx context.Context, in *VerifyAppUserByAppAccountPasswordRequest, opts ...grpc.CallOption) (*VerifyAppUserByAppAccountPasswordResponse, error) {
 	out := new(VerifyAppUserByAppAccountPasswordResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/VerifyAppUserByAppAccountPassword", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/VerifyAppUserByAppAccountPassword", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -346,7 +346,7 @@ func (c *appUserManagerClient) VerifyAppUserByAppAccountPassword(ctx context.Con
 
 func (c *appUserManagerClient) GetAppUsersByApp(ctx context.Context, in *GetAppUsersByAppRequest, opts ...grpc.CallOption) (*GetAppUsersByAppResponse, error) {
 	out := new(GetAppUsersByAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUsersByApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppUsersByApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -355,7 +355,7 @@ func (c *appUserManagerClient) GetAppUsersByApp(ctx context.Context, in *GetAppU
 
 func (c *appUserManagerClient) UpdateAppUser(ctx context.Context, in *UpdateAppUserRequest, opts ...grpc.CallOption) (*UpdateAppUserResponse, error) {
 	out := new(UpdateAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/UpdateAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/UpdateAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -364,7 +364,7 @@ func (c *appUserManagerClient) UpdateAppUser(ctx context.Context, in *UpdateAppU
 
 func (c *appUserManagerClient) CreateAppUserSecret(ctx context.Context, in *CreateAppUserSecretRequest, opts ...grpc.CallOption) (*CreateAppUserSecretResponse, error) {
 	out := new(CreateAppUserSecretResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppUserSecret", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAppUserSecret", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -373,7 +373,7 @@ func (c *appUserManagerClient) CreateAppUserSecret(ctx context.Context, in *Crea
 
 func (c *appUserManagerClient) GetAppUserSecret(ctx context.Context, in *GetAppUserSecretRequest, opts ...grpc.CallOption) (*GetAppUserSecretResponse, error) {
 	out := new(GetAppUserSecretResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserSecret", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppUserSecret", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -382,7 +382,7 @@ func (c *appUserManagerClient) GetAppUserSecret(ctx context.Context, in *GetAppU
 
 func (c *appUserManagerClient) GetAppUserSecretByAppUser(ctx context.Context, in *GetAppUserSecretByAppUserRequest, opts ...grpc.CallOption) (*GetAppUserSecretByAppUserResponse, error) {
 	out := new(GetAppUserSecretByAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserSecretByAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppUserSecretByAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -391,7 +391,7 @@ func (c *appUserManagerClient) GetAppUserSecretByAppUser(ctx context.Context, in
 
 func (c *appUserManagerClient) UpdateAppUserSecret(ctx context.Context, in *UpdateAppUserSecretRequest, opts ...grpc.CallOption) (*UpdateAppUserSecretResponse, error) {
 	out := new(UpdateAppUserSecretResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/UpdateAppUserSecret", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/UpdateAppUserSecret", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -400,7 +400,7 @@ func (c *appUserManagerClient) UpdateAppUserSecret(ctx context.Context, in *Upda
 
 func (c *appUserManagerClient) CreateAppUserExtra(ctx context.Context, in *CreateAppUserExtraRequest, opts ...grpc.CallOption) (*CreateAppUserExtraResponse, error) {
 	out := new(CreateAppUserExtraResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppUserExtra", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAppUserExtra", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -409,7 +409,7 @@ func (c *appUserManagerClient) CreateAppUserExtra(ctx context.Context, in *Creat
 
 func (c *appUserManagerClient) GetAppUserExtra(ctx context.Context, in *GetAppUserExtraRequest, opts ...grpc.CallOption) (*GetAppUserExtraResponse, error) {
 	out := new(GetAppUserExtraResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserExtra", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppUserExtra", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -418,7 +418,7 @@ func (c *appUserManagerClient) GetAppUserExtra(ctx context.Context, in *GetAppUs
 
 func (c *appUserManagerClient) GetAppUserExtraByAppUser(ctx context.Context, in *GetAppUserExtraByAppUserRequest, opts ...grpc.CallOption) (*GetAppUserExtraByAppUserResponse, error) {
 	out := new(GetAppUserExtraByAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserExtraByAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppUserExtraByAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -427,7 +427,7 @@ func (c *appUserManagerClient) GetAppUserExtraByAppUser(ctx context.Context, in 
 
 func (c *appUserManagerClient) UpdateAppUserExtra(ctx context.Context, in *UpdateAppUserExtraRequest, opts ...grpc.CallOption) (*UpdateAppUserExtraResponse, error) {
 	out := new(UpdateAppUserExtraResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/UpdateAppUserExtra", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/UpdateAppUserExtra", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -436,7 +436,7 @@ func (c *appUserManagerClient) UpdateAppUserExtra(ctx context.Context, in *Updat
 
 func (c *appUserManagerClient) CreateBanAppUser(ctx context.Context, in *CreateBanAppUserRequest, opts ...grpc.CallOption) (*CreateBanAppUserResponse, error) {
 	out := new(CreateBanAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateBanAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateBanAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -445,7 +445,7 @@ func (c *appUserManagerClient) CreateBanAppUser(ctx context.Context, in *CreateB
 
 func (c *appUserManagerClient) GetBanAppUser(ctx context.Context, in *GetBanAppUserRequest, opts ...grpc.CallOption) (*GetBanAppUserResponse, error) {
 	out := new(GetBanAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetBanAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetBanAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -454,7 +454,7 @@ func (c *appUserManagerClient) GetBanAppUser(ctx context.Context, in *GetBanAppU
 
 func (c *appUserManagerClient) GetBanAppUserByAppUser(ctx context.Context, in *GetBanAppUserByAppUserRequest, opts ...grpc.CallOption) (*GetBanAppUserByAppUserResponse, error) {
 	out := new(GetBanAppUserByAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetBanAppUserByAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetBanAppUserByAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -463,7 +463,7 @@ func (c *appUserManagerClient) GetBanAppUserByAppUser(ctx context.Context, in *G
 
 func (c *appUserManagerClient) UpdateBanAppUser(ctx context.Context, in *UpdateBanAppUserRequest, opts ...grpc.CallOption) (*UpdateBanAppUserResponse, error) {
 	out := new(UpdateBanAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/UpdateBanAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/UpdateBanAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -472,7 +472,7 @@ func (c *appUserManagerClient) UpdateBanAppUser(ctx context.Context, in *UpdateB
 
 func (c *appUserManagerClient) DeleteBanAppUser(ctx context.Context, in *DeleteBanAppUserRequest, opts ...grpc.CallOption) (*DeleteBanAppUserResponse, error) {
 	out := new(DeleteBanAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/DeleteBanAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/DeleteBanAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -481,7 +481,7 @@ func (c *appUserManagerClient) DeleteBanAppUser(ctx context.Context, in *DeleteB
 
 func (c *appUserManagerClient) CreateAppUserControl(ctx context.Context, in *CreateAppUserControlRequest, opts ...grpc.CallOption) (*CreateAppUserControlResponse, error) {
 	out := new(CreateAppUserControlResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppUserControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAppUserControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -490,7 +490,7 @@ func (c *appUserManagerClient) CreateAppUserControl(ctx context.Context, in *Cre
 
 func (c *appUserManagerClient) GetAppUserControl(ctx context.Context, in *GetAppUserControlRequest, opts ...grpc.CallOption) (*GetAppUserControlResponse, error) {
 	out := new(GetAppUserControlResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppUserControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -499,7 +499,7 @@ func (c *appUserManagerClient) GetAppUserControl(ctx context.Context, in *GetApp
 
 func (c *appUserManagerClient) GetAppUserControlByAppUser(ctx context.Context, in *GetAppUserControlByAppUserRequest, opts ...grpc.CallOption) (*GetAppUserControlByAppUserResponse, error) {
 	out := new(GetAppUserControlByAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserControlByAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppUserControlByAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -508,7 +508,7 @@ func (c *appUserManagerClient) GetAppUserControlByAppUser(ctx context.Context, i
 
 func (c *appUserManagerClient) UpdateAppUserControl(ctx context.Context, in *UpdateAppUserControlRequest, opts ...grpc.CallOption) (*UpdateAppUserControlResponse, error) {
 	out := new(UpdateAppUserControlResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/UpdateAppUserControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/UpdateAppUserControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -517,7 +517,7 @@ func (c *appUserManagerClient) UpdateAppUserControl(ctx context.Context, in *Upd
 
 func (c *appUserManagerClient) CreateGenesisRole(ctx context.Context, in *CreateGenesisRoleRequest, opts ...grpc.CallOption) (*CreateGenesisRoleResponse, error) {
 	out := new(CreateGenesisRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateGenesisRole", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateGenesisRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -526,7 +526,7 @@ func (c *appUserManagerClient) CreateGenesisRole(ctx context.Context, in *Create
 
 func (c *appUserManagerClient) GetGenesisRole(ctx context.Context, in *GetGenesisRoleRequest, opts ...grpc.CallOption) (*GetGenesisRoleResponse, error) {
 	out := new(GetGenesisRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetGenesisRole", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetGenesisRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -535,7 +535,7 @@ func (c *appUserManagerClient) GetGenesisRole(ctx context.Context, in *GetGenesi
 
 func (c *appUserManagerClient) GetGenesisAppRoleUsersByOtherApp(ctx context.Context, in *GetGenesisAppRoleUsersByOtherAppRequest, opts ...grpc.CallOption) (*GetGenesisAppRoleUsersByOtherAppResponse, error) {
 	out := new(GetGenesisAppRoleUsersByOtherAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetGenesisAppRoleUsersByOtherApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetGenesisAppRoleUsersByOtherApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -544,7 +544,7 @@ func (c *appUserManagerClient) GetGenesisAppRoleUsersByOtherApp(ctx context.Cont
 
 func (c *appUserManagerClient) CreateGenesisRoleUser(ctx context.Context, in *CreateGenesisRoleUserRequest, opts ...grpc.CallOption) (*CreateGenesisRoleUserResponse, error) {
 	out := new(CreateGenesisRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateGenesisRoleUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateGenesisRoleUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -553,7 +553,7 @@ func (c *appUserManagerClient) CreateGenesisRoleUser(ctx context.Context, in *Cr
 
 func (c *appUserManagerClient) CreateAppRole(ctx context.Context, in *CreateAppRoleRequest, opts ...grpc.CallOption) (*CreateAppRoleResponse, error) {
 	out := new(CreateAppRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppRole", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAppRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -562,7 +562,7 @@ func (c *appUserManagerClient) CreateAppRole(ctx context.Context, in *CreateAppR
 
 func (c *appUserManagerClient) CreateAppRoleForOtherApp(ctx context.Context, in *CreateAppRoleForOtherAppRequest, opts ...grpc.CallOption) (*CreateAppRoleForOtherAppResponse, error) {
 	out := new(CreateAppRoleForOtherAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppRoleForOtherApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAppRoleForOtherApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -571,7 +571,7 @@ func (c *appUserManagerClient) CreateAppRoleForOtherApp(ctx context.Context, in 
 
 func (c *appUserManagerClient) GetAppRole(ctx context.Context, in *GetAppRoleRequest, opts ...grpc.CallOption) (*GetAppRoleResponse, error) {
 	out := new(GetAppRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppRole", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -580,7 +580,7 @@ func (c *appUserManagerClient) GetAppRole(ctx context.Context, in *GetAppRoleReq
 
 func (c *appUserManagerClient) GetAppRoleByAppRole(ctx context.Context, in *GetAppRoleByAppRoleRequest, opts ...grpc.CallOption) (*GetAppRoleByAppRoleResponse, error) {
 	out := new(GetAppRoleByAppRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppRoleByAppRole", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppRoleByAppRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -589,7 +589,7 @@ func (c *appUserManagerClient) GetAppRoleByAppRole(ctx context.Context, in *GetA
 
 func (c *appUserManagerClient) GetAppRolesByApp(ctx context.Context, in *GetAppRolesByAppRequest, opts ...grpc.CallOption) (*GetAppRolesByAppResponse, error) {
 	out := new(GetAppRolesByAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppRolesByApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppRolesByApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -598,7 +598,7 @@ func (c *appUserManagerClient) GetAppRolesByApp(ctx context.Context, in *GetAppR
 
 func (c *appUserManagerClient) GetAppRolesByOtherApp(ctx context.Context, in *GetAppRolesByOtherAppRequest, opts ...grpc.CallOption) (*GetAppRolesByOtherAppResponse, error) {
 	out := new(GetAppRolesByOtherAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppRolesByOtherApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppRolesByOtherApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -607,7 +607,7 @@ func (c *appUserManagerClient) GetAppRolesByOtherApp(ctx context.Context, in *Ge
 
 func (c *appUserManagerClient) UpdateAppRole(ctx context.Context, in *UpdateAppRoleRequest, opts ...grpc.CallOption) (*UpdateAppRoleResponse, error) {
 	out := new(UpdateAppRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/UpdateAppRole", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/UpdateAppRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -616,7 +616,7 @@ func (c *appUserManagerClient) UpdateAppRole(ctx context.Context, in *UpdateAppR
 
 func (c *appUserManagerClient) CreateAppRoleUser(ctx context.Context, in *CreateAppRoleUserRequest, opts ...grpc.CallOption) (*CreateAppRoleUserResponse, error) {
 	out := new(CreateAppRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppRoleUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAppRoleUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -625,7 +625,7 @@ func (c *appUserManagerClient) CreateAppRoleUser(ctx context.Context, in *Create
 
 func (c *appUserManagerClient) CreateAppRoleUserForOtherAppUser(ctx context.Context, in *CreateAppRoleUserForOtherAppUserRequest, opts ...grpc.CallOption) (*CreateAppRoleUserForOtherAppUserResponse, error) {
 	out := new(CreateAppRoleUserForOtherAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppRoleUserForOtherAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAppRoleUserForOtherAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -634,7 +634,7 @@ func (c *appUserManagerClient) CreateAppRoleUserForOtherAppUser(ctx context.Cont
 
 func (c *appUserManagerClient) CreateAppRoleUserForAppOtherUser(ctx context.Context, in *CreateAppRoleUserForAppOtherUserRequest, opts ...grpc.CallOption) (*CreateAppRoleUserForAppOtherUserResponse, error) {
 	out := new(CreateAppRoleUserForAppOtherUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppRoleUserForAppOtherUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAppRoleUserForAppOtherUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -643,7 +643,7 @@ func (c *appUserManagerClient) CreateAppRoleUserForAppOtherUser(ctx context.Cont
 
 func (c *appUserManagerClient) GetAppRoleUser(ctx context.Context, in *GetAppRoleUserRequest, opts ...grpc.CallOption) (*GetAppRoleUserResponse, error) {
 	out := new(GetAppRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppRoleUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppRoleUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -652,7 +652,7 @@ func (c *appUserManagerClient) GetAppRoleUser(ctx context.Context, in *GetAppRol
 
 func (c *appUserManagerClient) GetAppRoleUserByAppUser(ctx context.Context, in *GetAppRoleUserByAppUserRequest, opts ...grpc.CallOption) (*GetAppRoleUserByAppUserResponse, error) {
 	out := new(GetAppRoleUserByAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppRoleUserByAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppRoleUserByAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -661,7 +661,7 @@ func (c *appUserManagerClient) GetAppRoleUserByAppUser(ctx context.Context, in *
 
 func (c *appUserManagerClient) GetAppRoleUsersByAppRole(ctx context.Context, in *GetAppRoleUsersByAppRoleRequest, opts ...grpc.CallOption) (*GetAppRoleUsersByAppRoleResponse, error) {
 	out := new(GetAppRoleUsersByAppRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByAppRole", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByAppRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -670,7 +670,7 @@ func (c *appUserManagerClient) GetAppRoleUsersByAppRole(ctx context.Context, in 
 
 func (c *appUserManagerClient) GetAppRoleUsersByOtherAppRole(ctx context.Context, in *GetAppRoleUsersByOtherAppRoleRequest, opts ...grpc.CallOption) (*GetAppRoleUsersByOtherAppRoleResponse, error) {
 	out := new(GetAppRoleUsersByOtherAppRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByOtherAppRole", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByOtherAppRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -679,7 +679,7 @@ func (c *appUserManagerClient) GetAppRoleUsersByOtherAppRole(ctx context.Context
 
 func (c *appUserManagerClient) GetAppRoleUsersByApp(ctx context.Context, in *GetAppRoleUsersByAppRequest, opts ...grpc.CallOption) (*GetAppRoleUsersByAppResponse, error) {
 	out := new(GetAppRoleUsersByAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -688,7 +688,7 @@ func (c *appUserManagerClient) GetAppRoleUsersByApp(ctx context.Context, in *Get
 
 func (c *appUserManagerClient) GetAppRoleUsersByOtherApp(ctx context.Context, in *GetAppRoleUsersByOtherAppRequest, opts ...grpc.CallOption) (*GetAppRoleUsersByOtherAppResponse, error) {
 	out := new(GetAppRoleUsersByOtherAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByOtherApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByOtherApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -697,7 +697,7 @@ func (c *appUserManagerClient) GetAppRoleUsersByOtherApp(ctx context.Context, in
 
 func (c *appUserManagerClient) GetUserRolesByAppUser(ctx context.Context, in *GetUserRolesByAppUserRequest, opts ...grpc.CallOption) (*GetUserRolesByAppUserResponse, error) {
 	out := new(GetUserRolesByAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetUserRolesByAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetUserRolesByAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -706,7 +706,7 @@ func (c *appUserManagerClient) GetUserRolesByAppUser(ctx context.Context, in *Ge
 
 func (c *appUserManagerClient) DeleteAppRoleUser(ctx context.Context, in *DeleteAppRoleUserRequest, opts ...grpc.CallOption) (*DeleteAppRoleUserResponse, error) {
 	out := new(DeleteAppRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/DeleteAppRoleUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/DeleteAppRoleUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -715,7 +715,7 @@ func (c *appUserManagerClient) DeleteAppRoleUser(ctx context.Context, in *Delete
 
 func (c *appUserManagerClient) GetAppUserInfo(ctx context.Context, in *GetAppUserInfoRequest, opts ...grpc.CallOption) (*GetAppUserInfoResponse, error) {
 	out := new(GetAppUserInfoResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserInfo", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppUserInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -724,7 +724,7 @@ func (c *appUserManagerClient) GetAppUserInfo(ctx context.Context, in *GetAppUse
 
 func (c *appUserManagerClient) GetAppUserInfoByAppUser(ctx context.Context, in *GetAppUserInfoByAppUserRequest, opts ...grpc.CallOption) (*GetAppUserInfoByAppUserResponse, error) {
 	out := new(GetAppUserInfoByAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserInfoByAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppUserInfoByAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -733,7 +733,7 @@ func (c *appUserManagerClient) GetAppUserInfoByAppUser(ctx context.Context, in *
 
 func (c *appUserManagerClient) GetAppUserInfosByApp(ctx context.Context, in *GetAppUserInfosByAppRequest, opts ...grpc.CallOption) (*GetAppUserInfosByAppResponse, error) {
 	out := new(GetAppUserInfosByAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserInfosByApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppUserInfosByApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -742,7 +742,7 @@ func (c *appUserManagerClient) GetAppUserInfosByApp(ctx context.Context, in *Get
 
 func (c *appUserManagerClient) GetAppUserInfosByOtherApp(ctx context.Context, in *GetAppUserInfosByOtherAppRequest, opts ...grpc.CallOption) (*GetAppUserInfosByOtherAppResponse, error) {
 	out := new(GetAppUserInfosByOtherAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserInfosByOtherApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppUserInfosByOtherApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -751,7 +751,7 @@ func (c *appUserManagerClient) GetAppUserInfosByOtherApp(ctx context.Context, in
 
 func (c *appUserManagerClient) CreateAppUserWithSecret(ctx context.Context, in *CreateAppUserWithSecretRequest, opts ...grpc.CallOption) (*CreateAppUserWithSecretResponse, error) {
 	out := new(CreateAppUserWithSecretResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppUserWithSecret", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAppUserWithSecret", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -760,7 +760,7 @@ func (c *appUserManagerClient) CreateAppUserWithSecret(ctx context.Context, in *
 
 func (c *appUserManagerClient) CreateAppUserWithThirdParty(ctx context.Context, in *CreateAppUserWithThirdPartyRequest, opts ...grpc.CallOption) (*CreateAppUserWithThirdPartyResponse, error) {
 	out := new(CreateAppUserWithThirdPartyResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppUserWithThirdParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAppUserWithThirdParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -769,7 +769,7 @@ func (c *appUserManagerClient) CreateAppUserWithThirdParty(ctx context.Context, 
 
 func (c *appUserManagerClient) CreateAppUserThirdParty(ctx context.Context, in *CreateAppUserThirdPartyRequest, opts ...grpc.CallOption) (*CreateAppUserThirdPartyResponse, error) {
 	out := new(CreateAppUserThirdPartyResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppUserThirdParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAppUserThirdParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -778,7 +778,7 @@ func (c *appUserManagerClient) CreateAppUserThirdParty(ctx context.Context, in *
 
 func (c *appUserManagerClient) GetAppUserThirdPartyByAppThirdPartyID(ctx context.Context, in *GetAppUserThirdPartyByAppThirdPartyIDRequest, opts ...grpc.CallOption) (*GetAppUserThirdPartyByAppThirdPartyIDResponse, error) {
 	out := new(GetAppUserThirdPartyByAppThirdPartyIDResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/GetAppUserThirdPartyByAppThirdPartyID", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/GetAppUserThirdPartyByAppThirdPartyID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -787,7 +787,7 @@ func (c *appUserManagerClient) GetAppUserThirdPartyByAppThirdPartyID(ctx context
 
 func (c *appUserManagerClient) CreateAppUserWithSecretRevert(ctx context.Context, in *CreateAppUserWithSecretRequest, opts ...grpc.CallOption) (*CreateAppUserWithSecretResponse, error) {
 	out := new(CreateAppUserWithSecretResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.v1.AppUserManager/CreateAppUserWithSecretRevert", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.v1.AppUserManager/CreateAppUserWithSecretRevert", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1132,7 +1132,7 @@ func _AppUserManager_Version_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/Version",
+		FullMethod: "/appuser.manager.v1.AppUserManager/Version",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).Version(ctx, req.(*emptypb.Empty))
@@ -1150,7 +1150,7 @@ func _AppUserManager_CreateAdminApps_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAdminApps",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAdminApps",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAdminApps(ctx, req.(*CreateAdminAppsRequest))
@@ -1168,7 +1168,7 @@ func _AppUserManager_GetAdminApps_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAdminApps",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAdminApps",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAdminApps(ctx, req.(*GetAdminAppsRequest))
@@ -1186,7 +1186,7 @@ func _AppUserManager_CreateApp_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateApp(ctx, req.(*CreateAppRequest))
@@ -1204,7 +1204,7 @@ func _AppUserManager_GetApp_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetApp(ctx, req.(*GetAppRequest))
@@ -1222,7 +1222,7 @@ func _AppUserManager_GetApps_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetApps",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetApps",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetApps(ctx, req.(*GetAppsRequest))
@@ -1240,7 +1240,7 @@ func _AppUserManager_GetAppsByCreator_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppsByCreator",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppsByCreator",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppsByCreator(ctx, req.(*GetAppsByCreatorRequest))
@@ -1258,7 +1258,7 @@ func _AppUserManager_UpdateApp_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/UpdateApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/UpdateApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).UpdateApp(ctx, req.(*UpdateAppRequest))
@@ -1276,7 +1276,7 @@ func _AppUserManager_CreateAppControl_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppControl",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAppControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppControl(ctx, req.(*CreateAppControlRequest))
@@ -1294,7 +1294,7 @@ func _AppUserManager_CreateAppControlForOtherApp_Handler(srv interface{}, ctx co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppControlForOtherApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAppControlForOtherApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppControlForOtherApp(ctx, req.(*CreateAppControlForOtherAppRequest))
@@ -1312,7 +1312,7 @@ func _AppUserManager_GetAppControl_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppControl",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppControl(ctx, req.(*GetAppControlRequest))
@@ -1330,7 +1330,7 @@ func _AppUserManager_GetAppControlByApp_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppControlByApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppControlByApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppControlByApp(ctx, req.(*GetAppControlByAppRequest))
@@ -1348,7 +1348,7 @@ func _AppUserManager_UpdateAppControl_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/UpdateAppControl",
+		FullMethod: "/appuser.manager.v1.AppUserManager/UpdateAppControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).UpdateAppControl(ctx, req.(*UpdateAppControlRequest))
@@ -1366,7 +1366,7 @@ func _AppUserManager_CreateBanApp_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateBanApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateBanApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateBanApp(ctx, req.(*CreateBanAppRequest))
@@ -1384,7 +1384,7 @@ func _AppUserManager_GetBanApp_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetBanApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetBanApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetBanApp(ctx, req.(*GetBanAppRequest))
@@ -1402,7 +1402,7 @@ func _AppUserManager_GetBanAppByApp_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetBanAppByApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetBanAppByApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetBanAppByApp(ctx, req.(*GetBanAppByAppRequest))
@@ -1420,7 +1420,7 @@ func _AppUserManager_UpdateBanApp_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/UpdateBanApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/UpdateBanApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).UpdateBanApp(ctx, req.(*UpdateBanAppRequest))
@@ -1438,7 +1438,7 @@ func _AppUserManager_DeleteBanApp_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/DeleteBanApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/DeleteBanApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).DeleteBanApp(ctx, req.(*DeleteBanAppRequest))
@@ -1456,7 +1456,7 @@ func _AppUserManager_GetAppInfo_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppInfo",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppInfo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppInfo(ctx, req.(*GetAppInfoRequest))
@@ -1474,7 +1474,7 @@ func _AppUserManager_GetAppInfos_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppInfos",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppInfos",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppInfos(ctx, req.(*GetAppInfosRequest))
@@ -1492,7 +1492,7 @@ func _AppUserManager_GetAppInfosByCreator_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppInfosByCreator",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppInfosByCreator",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppInfosByCreator(ctx, req.(*GetAppInfosByCreatorRequest))
@@ -1510,7 +1510,7 @@ func _AppUserManager_CreateAppUser_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppUser(ctx, req.(*CreateAppUserRequest))
@@ -1528,7 +1528,7 @@ func _AppUserManager_GetAppUser_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppUser(ctx, req.(*GetAppUserRequest))
@@ -1546,7 +1546,7 @@ func _AppUserManager_GetAppUserByAppUser_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserByAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppUserByAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppUserByAppUser(ctx, req.(*GetAppUserByAppUserRequest))
@@ -1564,7 +1564,7 @@ func _AppUserManager_GetAppUserByAppAccount_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserByAppAccount",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppUserByAppAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppUserByAppAccount(ctx, req.(*GetAppUserByAppAccountRequest))
@@ -1582,7 +1582,7 @@ func _AppUserManager_VerifyAppUserByAppAccountPassword_Handler(srv interface{}, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/VerifyAppUserByAppAccountPassword",
+		FullMethod: "/appuser.manager.v1.AppUserManager/VerifyAppUserByAppAccountPassword",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).VerifyAppUserByAppAccountPassword(ctx, req.(*VerifyAppUserByAppAccountPasswordRequest))
@@ -1600,7 +1600,7 @@ func _AppUserManager_GetAppUsersByApp_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUsersByApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppUsersByApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppUsersByApp(ctx, req.(*GetAppUsersByAppRequest))
@@ -1618,7 +1618,7 @@ func _AppUserManager_UpdateAppUser_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/UpdateAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/UpdateAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).UpdateAppUser(ctx, req.(*UpdateAppUserRequest))
@@ -1636,7 +1636,7 @@ func _AppUserManager_CreateAppUserSecret_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppUserSecret",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAppUserSecret",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppUserSecret(ctx, req.(*CreateAppUserSecretRequest))
@@ -1654,7 +1654,7 @@ func _AppUserManager_GetAppUserSecret_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserSecret",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppUserSecret",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppUserSecret(ctx, req.(*GetAppUserSecretRequest))
@@ -1672,7 +1672,7 @@ func _AppUserManager_GetAppUserSecretByAppUser_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserSecretByAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppUserSecretByAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppUserSecretByAppUser(ctx, req.(*GetAppUserSecretByAppUserRequest))
@@ -1690,7 +1690,7 @@ func _AppUserManager_UpdateAppUserSecret_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/UpdateAppUserSecret",
+		FullMethod: "/appuser.manager.v1.AppUserManager/UpdateAppUserSecret",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).UpdateAppUserSecret(ctx, req.(*UpdateAppUserSecretRequest))
@@ -1708,7 +1708,7 @@ func _AppUserManager_CreateAppUserExtra_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppUserExtra",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAppUserExtra",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppUserExtra(ctx, req.(*CreateAppUserExtraRequest))
@@ -1726,7 +1726,7 @@ func _AppUserManager_GetAppUserExtra_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserExtra",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppUserExtra",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppUserExtra(ctx, req.(*GetAppUserExtraRequest))
@@ -1744,7 +1744,7 @@ func _AppUserManager_GetAppUserExtraByAppUser_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserExtraByAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppUserExtraByAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppUserExtraByAppUser(ctx, req.(*GetAppUserExtraByAppUserRequest))
@@ -1762,7 +1762,7 @@ func _AppUserManager_UpdateAppUserExtra_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/UpdateAppUserExtra",
+		FullMethod: "/appuser.manager.v1.AppUserManager/UpdateAppUserExtra",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).UpdateAppUserExtra(ctx, req.(*UpdateAppUserExtraRequest))
@@ -1780,7 +1780,7 @@ func _AppUserManager_CreateBanAppUser_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateBanAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateBanAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateBanAppUser(ctx, req.(*CreateBanAppUserRequest))
@@ -1798,7 +1798,7 @@ func _AppUserManager_GetBanAppUser_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetBanAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetBanAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetBanAppUser(ctx, req.(*GetBanAppUserRequest))
@@ -1816,7 +1816,7 @@ func _AppUserManager_GetBanAppUserByAppUser_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetBanAppUserByAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetBanAppUserByAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetBanAppUserByAppUser(ctx, req.(*GetBanAppUserByAppUserRequest))
@@ -1834,7 +1834,7 @@ func _AppUserManager_UpdateBanAppUser_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/UpdateBanAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/UpdateBanAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).UpdateBanAppUser(ctx, req.(*UpdateBanAppUserRequest))
@@ -1852,7 +1852,7 @@ func _AppUserManager_DeleteBanAppUser_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/DeleteBanAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/DeleteBanAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).DeleteBanAppUser(ctx, req.(*DeleteBanAppUserRequest))
@@ -1870,7 +1870,7 @@ func _AppUserManager_CreateAppUserControl_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppUserControl",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAppUserControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppUserControl(ctx, req.(*CreateAppUserControlRequest))
@@ -1888,7 +1888,7 @@ func _AppUserManager_GetAppUserControl_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserControl",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppUserControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppUserControl(ctx, req.(*GetAppUserControlRequest))
@@ -1906,7 +1906,7 @@ func _AppUserManager_GetAppUserControlByAppUser_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserControlByAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppUserControlByAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppUserControlByAppUser(ctx, req.(*GetAppUserControlByAppUserRequest))
@@ -1924,7 +1924,7 @@ func _AppUserManager_UpdateAppUserControl_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/UpdateAppUserControl",
+		FullMethod: "/appuser.manager.v1.AppUserManager/UpdateAppUserControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).UpdateAppUserControl(ctx, req.(*UpdateAppUserControlRequest))
@@ -1942,7 +1942,7 @@ func _AppUserManager_CreateGenesisRole_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateGenesisRole",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateGenesisRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateGenesisRole(ctx, req.(*CreateGenesisRoleRequest))
@@ -1960,7 +1960,7 @@ func _AppUserManager_GetGenesisRole_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetGenesisRole",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetGenesisRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetGenesisRole(ctx, req.(*GetGenesisRoleRequest))
@@ -1978,7 +1978,7 @@ func _AppUserManager_GetGenesisAppRoleUsersByOtherApp_Handler(srv interface{}, c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetGenesisAppRoleUsersByOtherApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetGenesisAppRoleUsersByOtherApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetGenesisAppRoleUsersByOtherApp(ctx, req.(*GetGenesisAppRoleUsersByOtherAppRequest))
@@ -1996,7 +1996,7 @@ func _AppUserManager_CreateGenesisRoleUser_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateGenesisRoleUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateGenesisRoleUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateGenesisRoleUser(ctx, req.(*CreateGenesisRoleUserRequest))
@@ -2014,7 +2014,7 @@ func _AppUserManager_CreateAppRole_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppRole",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAppRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppRole(ctx, req.(*CreateAppRoleRequest))
@@ -2032,7 +2032,7 @@ func _AppUserManager_CreateAppRoleForOtherApp_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppRoleForOtherApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAppRoleForOtherApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppRoleForOtherApp(ctx, req.(*CreateAppRoleForOtherAppRequest))
@@ -2050,7 +2050,7 @@ func _AppUserManager_GetAppRole_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppRole",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppRole(ctx, req.(*GetAppRoleRequest))
@@ -2068,7 +2068,7 @@ func _AppUserManager_GetAppRoleByAppRole_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppRoleByAppRole",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppRoleByAppRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppRoleByAppRole(ctx, req.(*GetAppRoleByAppRoleRequest))
@@ -2086,7 +2086,7 @@ func _AppUserManager_GetAppRolesByApp_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppRolesByApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppRolesByApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppRolesByApp(ctx, req.(*GetAppRolesByAppRequest))
@@ -2104,7 +2104,7 @@ func _AppUserManager_GetAppRolesByOtherApp_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppRolesByOtherApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppRolesByOtherApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppRolesByOtherApp(ctx, req.(*GetAppRolesByOtherAppRequest))
@@ -2122,7 +2122,7 @@ func _AppUserManager_UpdateAppRole_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/UpdateAppRole",
+		FullMethod: "/appuser.manager.v1.AppUserManager/UpdateAppRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).UpdateAppRole(ctx, req.(*UpdateAppRoleRequest))
@@ -2140,7 +2140,7 @@ func _AppUserManager_CreateAppRoleUser_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppRoleUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAppRoleUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppRoleUser(ctx, req.(*CreateAppRoleUserRequest))
@@ -2158,7 +2158,7 @@ func _AppUserManager_CreateAppRoleUserForOtherAppUser_Handler(srv interface{}, c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppRoleUserForOtherAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAppRoleUserForOtherAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppRoleUserForOtherAppUser(ctx, req.(*CreateAppRoleUserForOtherAppUserRequest))
@@ -2176,7 +2176,7 @@ func _AppUserManager_CreateAppRoleUserForAppOtherUser_Handler(srv interface{}, c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppRoleUserForAppOtherUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAppRoleUserForAppOtherUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppRoleUserForAppOtherUser(ctx, req.(*CreateAppRoleUserForAppOtherUserRequest))
@@ -2194,7 +2194,7 @@ func _AppUserManager_GetAppRoleUser_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppRoleUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppRoleUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppRoleUser(ctx, req.(*GetAppRoleUserRequest))
@@ -2212,7 +2212,7 @@ func _AppUserManager_GetAppRoleUserByAppUser_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppRoleUserByAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppRoleUserByAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppRoleUserByAppUser(ctx, req.(*GetAppRoleUserByAppUserRequest))
@@ -2230,7 +2230,7 @@ func _AppUserManager_GetAppRoleUsersByAppRole_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByAppRole",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByAppRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppRoleUsersByAppRole(ctx, req.(*GetAppRoleUsersByAppRoleRequest))
@@ -2248,7 +2248,7 @@ func _AppUserManager_GetAppRoleUsersByOtherAppRole_Handler(srv interface{}, ctx 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByOtherAppRole",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByOtherAppRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppRoleUsersByOtherAppRole(ctx, req.(*GetAppRoleUsersByOtherAppRoleRequest))
@@ -2266,7 +2266,7 @@ func _AppUserManager_GetAppRoleUsersByApp_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppRoleUsersByApp(ctx, req.(*GetAppRoleUsersByAppRequest))
@@ -2284,7 +2284,7 @@ func _AppUserManager_GetAppRoleUsersByOtherApp_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppRoleUsersByOtherApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppRoleUsersByOtherApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppRoleUsersByOtherApp(ctx, req.(*GetAppRoleUsersByOtherAppRequest))
@@ -2302,7 +2302,7 @@ func _AppUserManager_GetUserRolesByAppUser_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetUserRolesByAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetUserRolesByAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetUserRolesByAppUser(ctx, req.(*GetUserRolesByAppUserRequest))
@@ -2320,7 +2320,7 @@ func _AppUserManager_DeleteAppRoleUser_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/DeleteAppRoleUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/DeleteAppRoleUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).DeleteAppRoleUser(ctx, req.(*DeleteAppRoleUserRequest))
@@ -2338,7 +2338,7 @@ func _AppUserManager_GetAppUserInfo_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserInfo",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppUserInfo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppUserInfo(ctx, req.(*GetAppUserInfoRequest))
@@ -2356,7 +2356,7 @@ func _AppUserManager_GetAppUserInfoByAppUser_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserInfoByAppUser",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppUserInfoByAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppUserInfoByAppUser(ctx, req.(*GetAppUserInfoByAppUserRequest))
@@ -2374,7 +2374,7 @@ func _AppUserManager_GetAppUserInfosByApp_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserInfosByApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppUserInfosByApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppUserInfosByApp(ctx, req.(*GetAppUserInfosByAppRequest))
@@ -2392,7 +2392,7 @@ func _AppUserManager_GetAppUserInfosByOtherApp_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserInfosByOtherApp",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppUserInfosByOtherApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppUserInfosByOtherApp(ctx, req.(*GetAppUserInfosByOtherAppRequest))
@@ -2410,7 +2410,7 @@ func _AppUserManager_CreateAppUserWithSecret_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppUserWithSecret",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAppUserWithSecret",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppUserWithSecret(ctx, req.(*CreateAppUserWithSecretRequest))
@@ -2428,7 +2428,7 @@ func _AppUserManager_CreateAppUserWithThirdParty_Handler(srv interface{}, ctx co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppUserWithThirdParty",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAppUserWithThirdParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppUserWithThirdParty(ctx, req.(*CreateAppUserWithThirdPartyRequest))
@@ -2446,7 +2446,7 @@ func _AppUserManager_CreateAppUserThirdParty_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppUserThirdParty",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAppUserThirdParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppUserThirdParty(ctx, req.(*CreateAppUserThirdPartyRequest))
@@ -2464,7 +2464,7 @@ func _AppUserManager_GetAppUserThirdPartyByAppThirdPartyID_Handler(srv interface
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/GetAppUserThirdPartyByAppThirdPartyID",
+		FullMethod: "/appuser.manager.v1.AppUserManager/GetAppUserThirdPartyByAppThirdPartyID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).GetAppUserThirdPartyByAppThirdPartyID(ctx, req.(*GetAppUserThirdPartyByAppThirdPartyIDRequest))
@@ -2482,7 +2482,7 @@ func _AppUserManager_CreateAppUserWithSecretRevert_Handler(srv interface{}, ctx 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.v1.AppUserManager/CreateAppUserWithSecretRevert",
+		FullMethod: "/appuser.manager.v1.AppUserManager/CreateAppUserWithSecretRevert",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserManagerServer).CreateAppUserWithSecretRevert(ctx, req.(*CreateAppUserWithSecretRequest))
@@ -2494,7 +2494,7 @@ func _AppUserManager_CreateAppUserWithSecretRevert_Handler(srv interface{}, ctx 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AppUserManager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.user.manager.v1.AppUserManager",
+	ServiceName: "appuser.manager.v1.AppUserManager",
 	HandlerType: (*AppUserManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

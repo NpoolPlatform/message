@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appusermgrv2/app/app.proto",
+    "title": "npool/appuser/mgr/v2/app/app.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "AppUserManagerApp"
+      "name": "AppMgr"
     }
   ],
   "consumes": [
@@ -72,10 +72,10 @@
     "v2App": {
       "type": "object",
       "properties": {
-        "Description": {
+        "ID": {
           "type": "string"
         },
-        "ID": {
+        "Description": {
           "type": "string"
         },
         "CreatedBy": {
@@ -96,10 +96,10 @@
     "v2AppReq": {
       "type": "object",
       "properties": {
-        "Description": {
+        "ID": {
           "type": "string"
         },
-        "ID": {
+        "Description": {
           "type": "string"
         },
         "CreatedBy": {
@@ -120,10 +120,10 @@
     "v2Conds": {
       "type": "object",
       "properties": {
-        "Description": {
+        "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "ID": {
+        "Description": {
           "$ref": "#/definitions/v1StringVal"
         },
         "CreatedBy": {

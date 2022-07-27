@@ -44,7 +44,7 @@ func NewAppUserSecretMgrClient(cc grpc.ClientConnInterface) AppUserSecretMgrClie
 
 func (c *appUserSecretMgrClient) CreateAppUserSecret(ctx context.Context, in *CreateAppUserSecretRequest, opts ...grpc.CallOption) (*CreateAppUserSecretResponse, error) {
 	out := new(CreateAppUserSecretResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appusersecret.v2.AppUserSecretMgr/CreateAppUserSecret", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusersecret.v2.AppUserSecretMgr/CreateAppUserSecret", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func (c *appUserSecretMgrClient) CreateAppUserSecret(ctx context.Context, in *Cr
 
 func (c *appUserSecretMgrClient) CreateAppUserSecrets(ctx context.Context, in *CreateAppUserSecretsRequest, opts ...grpc.CallOption) (*CreateAppUserSecretsResponse, error) {
 	out := new(CreateAppUserSecretsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appusersecret.v2.AppUserSecretMgr/CreateAppUserSecrets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusersecret.v2.AppUserSecretMgr/CreateAppUserSecrets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *appUserSecretMgrClient) CreateAppUserSecrets(ctx context.Context, in *C
 
 func (c *appUserSecretMgrClient) UpdateAppUserSecret(ctx context.Context, in *UpdateAppUserSecretRequest, opts ...grpc.CallOption) (*UpdateAppUserSecretResponse, error) {
 	out := new(UpdateAppUserSecretResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appusersecret.v2.AppUserSecretMgr/UpdateAppUserSecret", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusersecret.v2.AppUserSecretMgr/UpdateAppUserSecret", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *appUserSecretMgrClient) UpdateAppUserSecret(ctx context.Context, in *Up
 
 func (c *appUserSecretMgrClient) GetAppUserSecret(ctx context.Context, in *GetAppUserSecretRequest, opts ...grpc.CallOption) (*GetAppUserSecretResponse, error) {
 	out := new(GetAppUserSecretResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appusersecret.v2.AppUserSecretMgr/GetAppUserSecret", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusersecret.v2.AppUserSecretMgr/GetAppUserSecret", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func (c *appUserSecretMgrClient) GetAppUserSecret(ctx context.Context, in *GetAp
 
 func (c *appUserSecretMgrClient) GetAppUserSecretOnly(ctx context.Context, in *GetAppUserSecretOnlyRequest, opts ...grpc.CallOption) (*GetAppUserSecretOnlyResponse, error) {
 	out := new(GetAppUserSecretOnlyResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appusersecret.v2.AppUserSecretMgr/GetAppUserSecretOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusersecret.v2.AppUserSecretMgr/GetAppUserSecretOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *appUserSecretMgrClient) GetAppUserSecretOnly(ctx context.Context, in *G
 
 func (c *appUserSecretMgrClient) GetAppUserSecrets(ctx context.Context, in *GetAppUserSecretsRequest, opts ...grpc.CallOption) (*GetAppUserSecretsResponse, error) {
 	out := new(GetAppUserSecretsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appusersecret.v2.AppUserSecretMgr/GetAppUserSecrets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusersecret.v2.AppUserSecretMgr/GetAppUserSecrets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func (c *appUserSecretMgrClient) GetAppUserSecrets(ctx context.Context, in *GetA
 
 func (c *appUserSecretMgrClient) ExistAppUserSecret(ctx context.Context, in *ExistAppUserSecretRequest, opts ...grpc.CallOption) (*ExistAppUserSecretResponse, error) {
 	out := new(ExistAppUserSecretResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appusersecret.v2.AppUserSecretMgr/ExistAppUserSecret", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusersecret.v2.AppUserSecretMgr/ExistAppUserSecret", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func (c *appUserSecretMgrClient) ExistAppUserSecret(ctx context.Context, in *Exi
 
 func (c *appUserSecretMgrClient) ExistAppUserSecretConds(ctx context.Context, in *ExistAppUserSecretCondsRequest, opts ...grpc.CallOption) (*ExistAppUserSecretCondsResponse, error) {
 	out := new(ExistAppUserSecretCondsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appusersecret.v2.AppUserSecretMgr/ExistAppUserSecretConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusersecret.v2.AppUserSecretMgr/ExistAppUserSecretConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func (c *appUserSecretMgrClient) ExistAppUserSecretConds(ctx context.Context, in
 
 func (c *appUserSecretMgrClient) CountAppUserSecrets(ctx context.Context, in *CountAppUserSecretsRequest, opts ...grpc.CallOption) (*CountAppUserSecretsResponse, error) {
 	out := new(CountAppUserSecretsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appusersecret.v2.AppUserSecretMgr/CountAppUserSecrets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusersecret.v2.AppUserSecretMgr/CountAppUserSecrets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func (c *appUserSecretMgrClient) CountAppUserSecrets(ctx context.Context, in *Co
 
 func (c *appUserSecretMgrClient) DeleteAppUserSecret(ctx context.Context, in *DeleteAppUserSecretRequest, opts ...grpc.CallOption) (*DeleteAppUserSecretResponse, error) {
 	out := new(DeleteAppUserSecretResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appusersecret.v2.AppUserSecretMgr/DeleteAppUserSecret", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusersecret.v2.AppUserSecretMgr/DeleteAppUserSecret", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -206,7 +206,7 @@ func _AppUserSecretMgr_CreateAppUserSecret_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appusersecret.v2.AppUserSecretMgr/CreateAppUserSecret",
+		FullMethod: "/appuser.manager.appusersecret.v2.AppUserSecretMgr/CreateAppUserSecret",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserSecretMgrServer).CreateAppUserSecret(ctx, req.(*CreateAppUserSecretRequest))
@@ -224,7 +224,7 @@ func _AppUserSecretMgr_CreateAppUserSecrets_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appusersecret.v2.AppUserSecretMgr/CreateAppUserSecrets",
+		FullMethod: "/appuser.manager.appusersecret.v2.AppUserSecretMgr/CreateAppUserSecrets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserSecretMgrServer).CreateAppUserSecrets(ctx, req.(*CreateAppUserSecretsRequest))
@@ -242,7 +242,7 @@ func _AppUserSecretMgr_UpdateAppUserSecret_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appusersecret.v2.AppUserSecretMgr/UpdateAppUserSecret",
+		FullMethod: "/appuser.manager.appusersecret.v2.AppUserSecretMgr/UpdateAppUserSecret",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserSecretMgrServer).UpdateAppUserSecret(ctx, req.(*UpdateAppUserSecretRequest))
@@ -260,7 +260,7 @@ func _AppUserSecretMgr_GetAppUserSecret_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appusersecret.v2.AppUserSecretMgr/GetAppUserSecret",
+		FullMethod: "/appuser.manager.appusersecret.v2.AppUserSecretMgr/GetAppUserSecret",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserSecretMgrServer).GetAppUserSecret(ctx, req.(*GetAppUserSecretRequest))
@@ -278,7 +278,7 @@ func _AppUserSecretMgr_GetAppUserSecretOnly_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appusersecret.v2.AppUserSecretMgr/GetAppUserSecretOnly",
+		FullMethod: "/appuser.manager.appusersecret.v2.AppUserSecretMgr/GetAppUserSecretOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserSecretMgrServer).GetAppUserSecretOnly(ctx, req.(*GetAppUserSecretOnlyRequest))
@@ -296,7 +296,7 @@ func _AppUserSecretMgr_GetAppUserSecrets_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appusersecret.v2.AppUserSecretMgr/GetAppUserSecrets",
+		FullMethod: "/appuser.manager.appusersecret.v2.AppUserSecretMgr/GetAppUserSecrets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserSecretMgrServer).GetAppUserSecrets(ctx, req.(*GetAppUserSecretsRequest))
@@ -314,7 +314,7 @@ func _AppUserSecretMgr_ExistAppUserSecret_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appusersecret.v2.AppUserSecretMgr/ExistAppUserSecret",
+		FullMethod: "/appuser.manager.appusersecret.v2.AppUserSecretMgr/ExistAppUserSecret",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserSecretMgrServer).ExistAppUserSecret(ctx, req.(*ExistAppUserSecretRequest))
@@ -332,7 +332,7 @@ func _AppUserSecretMgr_ExistAppUserSecretConds_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appusersecret.v2.AppUserSecretMgr/ExistAppUserSecretConds",
+		FullMethod: "/appuser.manager.appusersecret.v2.AppUserSecretMgr/ExistAppUserSecretConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserSecretMgrServer).ExistAppUserSecretConds(ctx, req.(*ExistAppUserSecretCondsRequest))
@@ -350,7 +350,7 @@ func _AppUserSecretMgr_CountAppUserSecrets_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appusersecret.v2.AppUserSecretMgr/CountAppUserSecrets",
+		FullMethod: "/appuser.manager.appusersecret.v2.AppUserSecretMgr/CountAppUserSecrets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserSecretMgrServer).CountAppUserSecrets(ctx, req.(*CountAppUserSecretsRequest))
@@ -368,7 +368,7 @@ func _AppUserSecretMgr_DeleteAppUserSecret_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appusersecret.v2.AppUserSecretMgr/DeleteAppUserSecret",
+		FullMethod: "/appuser.manager.appusersecret.v2.AppUserSecretMgr/DeleteAppUserSecret",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserSecretMgrServer).DeleteAppUserSecret(ctx, req.(*DeleteAppUserSecretRequest))
@@ -380,7 +380,7 @@ func _AppUserSecretMgr_DeleteAppUserSecret_Handler(srv interface{}, ctx context.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AppUserSecretMgr_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.user.manager.appusersecret.v2.AppUserSecretMgr",
+	ServiceName: "appuser.manager.appusersecret.v2.AppUserSecretMgr",
 	HandlerType: (*AppUserSecretMgrServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

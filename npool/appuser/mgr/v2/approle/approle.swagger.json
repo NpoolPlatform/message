@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appusermgrv2/approle/approle.proto",
+    "title": "npool/appuser/mgr/v2/approle/approle.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "AppUserManagerAppRole"
+      "name": "AppRoleMgr"
     }
   ],
   "consumes": [

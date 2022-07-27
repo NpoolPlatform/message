@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appusermgrv2/approleuser/approleuser.proto",
+    "title": "npool/appuser/mgr/v2/approleuser/approleuser.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "AppUserManagerAppRoleUser"
+      "name": "AppRoleUserMgr"
     }
   ],
   "consumes": [
@@ -58,9 +58,6 @@
     "v2AppRoleUser": {
       "type": "object",
       "properties": {
-        "UserID": {
-          "type": "string"
-        },
         "ID": {
           "type": "string"
         },
@@ -68,6 +65,9 @@
           "type": "string"
         },
         "RoleID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         }
       }
@@ -75,9 +75,6 @@
     "v2AppRoleUserReq": {
       "type": "object",
       "properties": {
-        "UserID": {
-          "type": "string"
-        },
         "ID": {
           "type": "string"
         },
@@ -85,6 +82,9 @@
           "type": "string"
         },
         "RoleID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         }
       }
@@ -92,9 +92,6 @@
     "v2Conds": {
       "type": "object",
       "properties": {
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -102,6 +99,9 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "RoleID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
           "$ref": "#/definitions/v1StringVal"
         }
       }

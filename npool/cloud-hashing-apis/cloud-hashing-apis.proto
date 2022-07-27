@@ -14,7 +14,7 @@ import "npool/cloud-hashing-billing/cloud-hashing-billing.proto";
 import "npool/cloud-hashing-inspire/cloud-hashing-inspire.proto";
 import "npool/kyc/kyc-management.proto";
 import "npool/review-service/review-service.proto";
-import "npool/appusermgr/appusermgr.proto";
+import "npool/appuser/mgr/v1/appusermgr.proto";
 import "npool/coininfo/coininfo.proto";
 
 // Cloud Hashing Goods
@@ -581,7 +581,7 @@ message SignupRequest {
 }
 
 message SignupResponse {
-    app.user.manager.v1.AppUser Info = 10;
+    appuser.manager.v1.AppUser Info = 10;
 }
 
 message UpdatePasswordRequest {
@@ -593,7 +593,7 @@ message UpdatePasswordRequest {
 }
 
 message UpdatePasswordResponse {
-    app.user.manager.v1.AppUserSecret Info = 10;
+    appuser.manager.v1.AppUserSecret Info = 10;
 }
 
 message UpdatePasswordByAppUserRequest {
@@ -607,7 +607,7 @@ message UpdatePasswordByAppUserRequest {
 }
 
 message UpdatePasswordByAppUserResponse {
-    app.user.manager.v1.AppUserSecret Info = 10;
+    appuser.manager.v1.AppUserSecret Info = 10;
 }
 
 message UpdateEmailAddressRequest {
@@ -621,7 +621,7 @@ message UpdateEmailAddressRequest {
 }
 
 message UpdateEmailAddressResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message UpdatePhoneNORequest {
@@ -635,7 +635,7 @@ message UpdatePhoneNORequest {
 }
 
 message UpdatePhoneNOResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message VerificationCode {
@@ -654,39 +654,39 @@ message UpdateAccountRequest {
 }
 
 message UpdateAccountResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message UpdateAppUserExtraRequest {
-    app.user.manager.v1.AppUserExtra Info = 10;
+    appuser.manager.v1.AppUserExtra Info = 10;
 }
 
 message UpdateAppUserExtraResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message CreateAppUserExtraRequest {
-    app.user.manager.v1.AppUserExtra Info = 10;
+    appuser.manager.v1.AppUserExtra Info = 10;
 }
 
 message CreateAppUserExtraResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message CreateAppUserControlRequest {
-    app.user.manager.v1.AppUserControl Info = 10;
+    appuser.manager.v1.AppUserControl Info = 10;
 }
 
 message CreateAppUserControlResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message UpdateAppUserControlRequest {
-    app.user.manager.v1.AppUserControl Info = 10;
+    appuser.manager.v1.AppUserControl Info = 10;
 }
 
 message UpdateAppUserControlResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message CoinSummary {
@@ -708,8 +708,8 @@ message GoodSummary {
 }
 
 message Referral {
-    app.user.manager.v1.AppUser User = 10;
-    app.user.manager.v1.AppUserExtra Extra = 20;
+    appuser.manager.v1.AppUser User = 10;
+    appuser.manager.v1.AppUserExtra Extra = 20;
     cloud.hashing.inspire.v1.RegistrationInvitation Invitation = 30;
     double USDAmount = 40;
     double SubUSDAmount = 50;
@@ -776,7 +776,7 @@ message CreateInvitationCodeResponse {
 
 message KycReview {
     review.service.v1.Review Review = 10;
-    app.user.manager.v1.AppUserInfo User = 20;
+    appuser.manager.v1.AppUserInfo User = 20;
     kyc.management.v1.KycInfo Kyc = 30;
 }
 
@@ -806,7 +806,7 @@ message GetKycReviewsByOtherAppResponse {
 
 message GoodReview {
     review.service.v1.Review Review = 10;
-    app.user.manager.v1.AppUserInfo CreatedBy = 20;
+    appuser.manager.v1.AppUserInfo CreatedBy = 20;
     cloud.hashing.goods.v1.GoodDetail Good = 30;
 }
 
@@ -880,7 +880,7 @@ message UserWithdraw {
 
 message WithdrawReview {
     review.service.v1.Review Review = 10;
-    app.user.manager.v1.AppUserInfo User = 20;
+    appuser.manager.v1.AppUserInfo User = 20;
     cloud.hashing.billing.v1.UserWithdrawItem Withdraw = 30;
 }
 
@@ -990,7 +990,7 @@ message GetWithdrawAddressesByAppUserResponse {
 
 message WithdrawAddressReview {
     review.service.v1.Review Review = 10;
-    app.user.manager.v1.AppUserInfo User = 20;
+    appuser.manager.v1.AppUserInfo User = 20;
     cloud.hashing.billing.v1.UserWithdraw Address = 30;
     cloud.hashing.billing.v1.CoinAccountInfo Account = 40;
 }

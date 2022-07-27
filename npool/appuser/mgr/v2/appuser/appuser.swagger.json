@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appusermgrv2/appuser/appuser.proto",
+    "title": "npool/appuser/mgr/v2/appuser/appuser.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "AppUserManagerAppUser"
+      "name": "AppUserMgr"
     }
   ],
   "consumes": [
@@ -58,19 +58,19 @@
     "v2AppUser": {
       "type": "object",
       "properties": {
-        "PhoneNo": {
-          "type": "string"
-        },
-        "ImportFromApp": {
-          "type": "string"
-        },
         "ID": {
           "type": "string"
         },
         "AppID": {
           "type": "string"
         },
+        "PhoneNo": {
+          "type": "string"
+        },
         "EmailAddress": {
+          "type": "string"
+        },
+        "ImportFromApp": {
           "type": "string"
         }
       }
@@ -78,19 +78,19 @@
     "v2AppUserReq": {
       "type": "object",
       "properties": {
-        "PhoneNo": {
-          "type": "string"
-        },
-        "ImportFromApp": {
-          "type": "string"
-        },
         "ID": {
           "type": "string"
         },
         "AppID": {
           "type": "string"
         },
+        "PhoneNo": {
+          "type": "string"
+        },
         "EmailAddress": {
+          "type": "string"
+        },
+        "ImportFromApp": {
           "type": "string"
         }
       }
@@ -98,19 +98,19 @@
     "v2Conds": {
       "type": "object",
       "properties": {
-        "PhoneNo": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ImportFromApp": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "PhoneNo": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "EmailAddress": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ImportFromApp": {
           "$ref": "#/definitions/v1StringVal"
         }
       }

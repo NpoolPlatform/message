@@ -44,7 +44,7 @@ func NewAppUserThirdPartyMgrClient(cc grpc.ClientConnInterface) AppUserThirdPart
 
 func (c *appUserThirdPartyMgrClient) CreateAppUserThirdParty(ctx context.Context, in *CreateAppUserThirdPartyRequest, opts ...grpc.CallOption) (*CreateAppUserThirdPartyResponse, error) {
 	out := new(CreateAppUserThirdPartyResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CreateAppUserThirdParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CreateAppUserThirdParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func (c *appUserThirdPartyMgrClient) CreateAppUserThirdParty(ctx context.Context
 
 func (c *appUserThirdPartyMgrClient) CreateAppUserThirdParties(ctx context.Context, in *CreateAppUserThirdPartiesRequest, opts ...grpc.CallOption) (*CreateAppUserThirdPartiesResponse, error) {
 	out := new(CreateAppUserThirdPartiesResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CreateAppUserThirdParties", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CreateAppUserThirdParties", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *appUserThirdPartyMgrClient) CreateAppUserThirdParties(ctx context.Conte
 
 func (c *appUserThirdPartyMgrClient) UpdateAppUserThirdParty(ctx context.Context, in *UpdateAppUserThirdPartyRequest, opts ...grpc.CallOption) (*UpdateAppUserThirdPartyResponse, error) {
 	out := new(UpdateAppUserThirdPartyResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/UpdateAppUserThirdParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/UpdateAppUserThirdParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *appUserThirdPartyMgrClient) UpdateAppUserThirdParty(ctx context.Context
 
 func (c *appUserThirdPartyMgrClient) GetAppUserThirdParty(ctx context.Context, in *GetAppUserThirdPartyRequest, opts ...grpc.CallOption) (*GetAppUserThirdPartyResponse, error) {
 	out := new(GetAppUserThirdPartyResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func (c *appUserThirdPartyMgrClient) GetAppUserThirdParty(ctx context.Context, i
 
 func (c *appUserThirdPartyMgrClient) GetAppUserThirdPartyOnly(ctx context.Context, in *GetAppUserThirdPartyOnlyRequest, opts ...grpc.CallOption) (*GetAppUserThirdPartyOnlyResponse, error) {
 	out := new(GetAppUserThirdPartyOnlyResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdPartyOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdPartyOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *appUserThirdPartyMgrClient) GetAppUserThirdPartyOnly(ctx context.Contex
 
 func (c *appUserThirdPartyMgrClient) GetAppUserThirdParties(ctx context.Context, in *GetAppUserThirdPartiesRequest, opts ...grpc.CallOption) (*GetAppUserThirdPartiesResponse, error) {
 	out := new(GetAppUserThirdPartiesResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdParties", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdParties", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func (c *appUserThirdPartyMgrClient) GetAppUserThirdParties(ctx context.Context,
 
 func (c *appUserThirdPartyMgrClient) ExistAppUserThirdParty(ctx context.Context, in *ExistAppUserThirdPartyRequest, opts ...grpc.CallOption) (*ExistAppUserThirdPartyResponse, error) {
 	out := new(ExistAppUserThirdPartyResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/ExistAppUserThirdParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/ExistAppUserThirdParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func (c *appUserThirdPartyMgrClient) ExistAppUserThirdParty(ctx context.Context,
 
 func (c *appUserThirdPartyMgrClient) ExistAppUserThirdPartyConds(ctx context.Context, in *ExistAppUserThirdPartyCondsRequest, opts ...grpc.CallOption) (*ExistAppUserThirdPartyCondsResponse, error) {
 	out := new(ExistAppUserThirdPartyCondsResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/ExistAppUserThirdPartyConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/ExistAppUserThirdPartyConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func (c *appUserThirdPartyMgrClient) ExistAppUserThirdPartyConds(ctx context.Con
 
 func (c *appUserThirdPartyMgrClient) CountAppUserThirdParties(ctx context.Context, in *CountAppUserThirdPartiesRequest, opts ...grpc.CallOption) (*CountAppUserThirdPartiesResponse, error) {
 	out := new(CountAppUserThirdPartiesResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CountAppUserThirdParties", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CountAppUserThirdParties", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func (c *appUserThirdPartyMgrClient) CountAppUserThirdParties(ctx context.Contex
 
 func (c *appUserThirdPartyMgrClient) DeleteAppUserThirdParty(ctx context.Context, in *DeleteAppUserThirdPartyRequest, opts ...grpc.CallOption) (*DeleteAppUserThirdPartyResponse, error) {
 	out := new(DeleteAppUserThirdPartyResponse)
-	err := c.cc.Invoke(ctx, "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/DeleteAppUserThirdParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/DeleteAppUserThirdParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -206,7 +206,7 @@ func _AppUserThirdPartyMgr_CreateAppUserThirdParty_Handler(srv interface{}, ctx 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CreateAppUserThirdParty",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CreateAppUserThirdParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserThirdPartyMgrServer).CreateAppUserThirdParty(ctx, req.(*CreateAppUserThirdPartyRequest))
@@ -224,7 +224,7 @@ func _AppUserThirdPartyMgr_CreateAppUserThirdParties_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CreateAppUserThirdParties",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CreateAppUserThirdParties",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserThirdPartyMgrServer).CreateAppUserThirdParties(ctx, req.(*CreateAppUserThirdPartiesRequest))
@@ -242,7 +242,7 @@ func _AppUserThirdPartyMgr_UpdateAppUserThirdParty_Handler(srv interface{}, ctx 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/UpdateAppUserThirdParty",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/UpdateAppUserThirdParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserThirdPartyMgrServer).UpdateAppUserThirdParty(ctx, req.(*UpdateAppUserThirdPartyRequest))
@@ -260,7 +260,7 @@ func _AppUserThirdPartyMgr_GetAppUserThirdParty_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdParty",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserThirdPartyMgrServer).GetAppUserThirdParty(ctx, req.(*GetAppUserThirdPartyRequest))
@@ -278,7 +278,7 @@ func _AppUserThirdPartyMgr_GetAppUserThirdPartyOnly_Handler(srv interface{}, ctx
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdPartyOnly",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdPartyOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserThirdPartyMgrServer).GetAppUserThirdPartyOnly(ctx, req.(*GetAppUserThirdPartyOnlyRequest))
@@ -296,7 +296,7 @@ func _AppUserThirdPartyMgr_GetAppUserThirdParties_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdParties",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdParties",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserThirdPartyMgrServer).GetAppUserThirdParties(ctx, req.(*GetAppUserThirdPartiesRequest))
@@ -314,7 +314,7 @@ func _AppUserThirdPartyMgr_ExistAppUserThirdParty_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/ExistAppUserThirdParty",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/ExistAppUserThirdParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserThirdPartyMgrServer).ExistAppUserThirdParty(ctx, req.(*ExistAppUserThirdPartyRequest))
@@ -332,7 +332,7 @@ func _AppUserThirdPartyMgr_ExistAppUserThirdPartyConds_Handler(srv interface{}, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/ExistAppUserThirdPartyConds",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/ExistAppUserThirdPartyConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserThirdPartyMgrServer).ExistAppUserThirdPartyConds(ctx, req.(*ExistAppUserThirdPartyCondsRequest))
@@ -350,7 +350,7 @@ func _AppUserThirdPartyMgr_CountAppUserThirdParties_Handler(srv interface{}, ctx
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CountAppUserThirdParties",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CountAppUserThirdParties",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserThirdPartyMgrServer).CountAppUserThirdParties(ctx, req.(*CountAppUserThirdPartiesRequest))
@@ -368,7 +368,7 @@ func _AppUserThirdPartyMgr_DeleteAppUserThirdParty_Handler(srv interface{}, ctx 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/DeleteAppUserThirdParty",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/DeleteAppUserThirdParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppUserThirdPartyMgrServer).DeleteAppUserThirdParty(ctx, req.(*DeleteAppUserThirdPartyRequest))
@@ -380,7 +380,7 @@ func _AppUserThirdPartyMgr_DeleteAppUserThirdParty_Handler(srv interface{}, ctx 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AppUserThirdPartyMgr_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.user.manager.appuserthirdparty.v2.AppUserThirdPartyMgr",
+	ServiceName: "appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr",
 	HandlerType: (*AppUserThirdPartyMgrServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

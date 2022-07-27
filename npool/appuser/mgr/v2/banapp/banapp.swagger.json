@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appusermgrv2/banapp/banapp.proto",
+    "title": "npool/appuser/mgr/v2/banapp/banapp.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "AppUserManagerBanApp"
+      "name": "BanAppMgr"
     }
   ],
   "consumes": [
