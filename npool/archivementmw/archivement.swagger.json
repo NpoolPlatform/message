@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/archivementmgr/commission/commission.proto",
+    "title": "npool/archivementmw/archivement.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Commission"
+      "name": "ArchivementManager"
     }
   ],
   "consumes": [
@@ -16,14 +16,15 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/app/user/good/commissions": {
+    "/v1/version": {
       "post": {
-        "operationId": "Commission_CreateAppUserGoodCommissions",
+        "summary": "Method Version",
+        "operationId": "ArchivementManager_Version",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAppUserGoodCommissionsResponse"
+              "$ref": "#/definitions/v1VersionResponse"
             }
           },
           "default": {
@@ -39,12 +40,12 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAppUserGoodCommissionsRequest"
+              "properties": {}
             }
           }
         ],
         "tags": [
-          "Commission"
+          "ArchivementManager"
         ]
       }
     }
@@ -76,26 +77,6 @@
           }
         }
       }
-    },
-    "v1CalculateOrderCommissionResponse": {
-      "type": "object"
-    },
-    "v1CreateAppUserGoodCommissionsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CreateAppUserGoodCommissionsResponse": {
-      "type": "object"
     },
     "v1VersionResponse": {
       "type": "object",

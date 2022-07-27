@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package archivement.manager.archivement.v1;
+package archivement.middleware.archivement.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/archivementmgr/archivement";
+option go_package = "github.com/NpoolPlatform/message/npool/archivementmw/archivement";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";

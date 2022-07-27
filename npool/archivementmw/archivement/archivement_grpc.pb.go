@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/archivementmgr/archivement/archivement.proto
+// source: npool/archivementmw/archivement/archivement.proto
 
 package archivement
 
@@ -39,7 +39,7 @@ func NewArchivementClient(cc grpc.ClientConnInterface) ArchivementClient {
 
 func (c *archivementClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/archivement.manager.archivement.v1.Archivement/Version", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/archivement.middleware.archivement.v1.Archivement/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -48,7 +48,7 @@ func (c *archivementClient) Version(ctx context.Context, in *emptypb.Empty, opts
 
 func (c *archivementClient) CalculateOrderArchivement(ctx context.Context, in *CalculateOrderArchivementRequest, opts ...grpc.CallOption) (*CalculateOrderArchivementResponse, error) {
 	out := new(CalculateOrderArchivementResponse)
-	err := c.cc.Invoke(ctx, "/archivement.manager.archivement.v1.Archivement/CalculateOrderArchivement", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/archivement.middleware.archivement.v1.Archivement/CalculateOrderArchivement", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func _Archivement_Version_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/archivement.manager.archivement.v1.Archivement/Version",
+		FullMethod: "/archivement.middleware.archivement.v1.Archivement/Version",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ArchivementServer).Version(ctx, req.(*emptypb.Empty))
@@ -116,7 +116,7 @@ func _Archivement_CalculateOrderArchivement_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/archivement.manager.archivement.v1.Archivement/CalculateOrderArchivement",
+		FullMethod: "/archivement.middleware.archivement.v1.Archivement/CalculateOrderArchivement",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ArchivementServer).CalculateOrderArchivement(ctx, req.(*CalculateOrderArchivementRequest))
@@ -128,7 +128,7 @@ func _Archivement_CalculateOrderArchivement_Handler(srv interface{}, ctx context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Archivement_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "archivement.manager.archivement.v1.Archivement",
+	ServiceName: "archivement.middleware.archivement.v1.Archivement",
 	HandlerType: (*ArchivementServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -141,5 +141,5 @@ var Archivement_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/archivementmgr/archivement/archivement.proto",
+	Metadata: "npool/archivementmw/archivement/archivement.proto",
 }

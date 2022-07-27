@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/archivementmgr/archivement/archivement.proto",
+    "title": "npool/archivementmw/archivement/archivement.proto",
     "version": "version not set"
   },
   "tags": [

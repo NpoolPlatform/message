@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package archivement.manager.commission.v1;
+package archivement.middleware.commission.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/archivementmgr/commission";
+option go_package = "github.com/NpoolPlatform/message/npool/archivementmw/commission";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -15,6 +15,12 @@ service Commission {
 
     rpc CalculateOrderCommission (CalculateOrderCommissionRequest) returns (CalculateOrderCommissionResponse) {}
 
+    rpc CreateUserGoodCommissions (CreateUserGoodCommissionsRequest) returns (CreateUserGoodCommissionsResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/good/commissions"
+            body: "*"
+        };
+    }
     rpc CreateAppUserGoodCommissions (CreateAppUserGoodCommissionsRequest) returns (CreateAppUserGoodCommissionsResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/user/good/commissions"
@@ -31,9 +37,18 @@ message CalculateOrderCommissionResponse {
     // Just store all layer commission directly
 }
 
-message CreateAppUserGoodCommissionsRequest {
+message CreateUserGoodCommissionsRequest {
     string AppID = 10;
-    string UserID = 20;
+    string TargetUserID = 20;
+    string GoodID = 30;
+}
+
+message CreateUserGoodCommissionsResponse {
+}
+
+message CreateAppUserGoodCommissionsRequest {
+    string TargetAppID = 10;
+    string TargetUserID = 20;
     string GoodID = 30;
 }
 
