@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package app.user.manager.banapp.v2;
+package appuser.manager.banapp.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/banapp";
 

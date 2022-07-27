@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package app.user.middleware.v1;
+package appuser.middleware.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1";
 
