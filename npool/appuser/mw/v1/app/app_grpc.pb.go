@@ -2,11 +2,13 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-<<<<<<< HEAD:npool/appuser/mw/v1/app/app_grpc.pb.go
 // source: npool/appuser/mw/v1/app/app.proto
+<<<<<<< HEAD
 =======
 // source: npool/appusermw/app/app.proto
 >>>>>>> basically completed new apis:npool/appusermw/app/app_grpc.pb.go
+=======
+>>>>>>> Add enum ERR
 
 package app
 
@@ -215,9 +217,11 @@ var AppUserMiddlewareApp_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-<<<<<<< HEAD:npool/appuser/mw/v1/app/app_grpc.pb.go
 	Metadata: "npool/appuser/mw/v1/app/app.proto",
+<<<<<<< HEAD
 =======
 	Metadata: "npool/appusermw/app/app.proto",
 >>>>>>> basically completed new apis:npool/appusermw/app/app_grpc.pb.go
+=======
+>>>>>>> Add enum ERR
 }
