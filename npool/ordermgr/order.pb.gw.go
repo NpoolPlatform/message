@@ -32,7 +32,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_Order_Version_0(ctx context.Context, marshaler runtime.Marshaler, client OrderClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_OrderManager_Version_0(ctx context.Context, marshaler runtime.Marshaler, client OrderManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
@@ -49,7 +49,7 @@ func request_Order_Version_0(ctx context.Context, marshaler runtime.Marshaler, c
 
 }
 
-func local_request_Order_Version_0(ctx context.Context, marshaler runtime.Marshaler, server OrderServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_OrderManager_Version_0(ctx context.Context, marshaler runtime.Marshaler, server OrderManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
@@ -66,24 +66,24 @@ func local_request_Order_Version_0(ctx context.Context, marshaler runtime.Marsha
 
 }
 
-// RegisterOrderHandlerServer registers the http handlers for service Order to "mux".
-// UnaryRPC     :call OrderServer directly.
+// RegisterOrderManagerHandlerServer registers the http handlers for service OrderManager to "mux".
+// UnaryRPC     :call OrderManagerServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterOrderHandlerFromEndpoint instead.
-func RegisterOrderHandlerServer(ctx context.Context, mux *runtime.ServeMux, server OrderServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterOrderManagerHandlerFromEndpoint instead.
+func RegisterOrderManagerHandlerServer(ctx context.Context, mux *runtime.ServeMux, server OrderManagerServer) error {
 
-	mux.Handle("POST", pattern_Order_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_OrderManager_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/order.manager.v1.Order/Version", runtime.WithHTTPPathPattern("/v1/version"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/order.manager.v1.OrderManager/Version", runtime.WithHTTPPathPattern("/v1/version"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Order_Version_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_OrderManager_Version_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -91,16 +91,16 @@ func RegisterOrderHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_Order_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_OrderManager_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterOrderHandlerFromEndpoint is same as RegisterOrderHandler but
+// RegisterOrderManagerHandlerFromEndpoint is same as RegisterOrderManagerHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterOrderHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterOrderManagerHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -120,39 +120,39 @@ func RegisterOrderHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux
 		}()
 	}()
 
-	return RegisterOrderHandler(ctx, mux, conn)
+	return RegisterOrderManagerHandler(ctx, mux, conn)
 }
 
-// RegisterOrderHandler registers the http handlers for service Order to "mux".
+// RegisterOrderManagerHandler registers the http handlers for service OrderManager to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterOrderHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterOrderHandlerClient(ctx, mux, NewOrderClient(conn))
+func RegisterOrderManagerHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterOrderManagerHandlerClient(ctx, mux, NewOrderManagerClient(conn))
 }
 
-// RegisterOrderHandlerClient registers the http handlers for service Order
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "OrderClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "OrderClient"
+// RegisterOrderManagerHandlerClient registers the http handlers for service OrderManager
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "OrderManagerClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "OrderManagerClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "OrderClient" to call the correct interceptors.
-func RegisterOrderHandlerClient(ctx context.Context, mux *runtime.ServeMux, client OrderClient) error {
+// "OrderManagerClient" to call the correct interceptors.
+func RegisterOrderManagerHandlerClient(ctx context.Context, mux *runtime.ServeMux, client OrderManagerClient) error {
 
-	mux.Handle("POST", pattern_Order_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_OrderManager_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/order.manager.v1.Order/Version", runtime.WithHTTPPathPattern("/v1/version"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/order.manager.v1.OrderManager/Version", runtime.WithHTTPPathPattern("/v1/version"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Order_Version_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_OrderManager_Version_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Order_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_OrderManager_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -160,9 +160,9 @@ func RegisterOrderHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 }
 
 var (
-	pattern_Order_Version_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "version"}, ""))
+	pattern_OrderManager_Version_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "version"}, ""))
 )
 
 var (
-	forward_Order_Version_0 = runtime.ForwardResponseMessage
+	forward_OrderManager_Version_0 = runtime.ForwardResponseMessage
 )

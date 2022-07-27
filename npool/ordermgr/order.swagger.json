@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "Order"
+      "name": "OrderManager"
     }
   ],
   "consumes": [
@@ -19,7 +19,7 @@
     "/v1/version": {
       "post": {
         "summary": "Method Version",
-        "operationId": "Order_Version",
+        "operationId": "OrderManager_Version",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -45,7 +45,7 @@
           }
         ],
         "tags": [
-          "Order"
+          "OrderManager"
         ]
       }
     }

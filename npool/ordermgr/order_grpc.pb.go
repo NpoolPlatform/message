@@ -20,88 +20,88 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// OrderClient is the client API for Order service.
+// OrderManagerClient is the client API for OrderManager service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type OrderClient interface {
+type OrderManagerClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 }
 
-type orderClient struct {
+type orderManagerClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewOrderClient(cc grpc.ClientConnInterface) OrderClient {
-	return &orderClient{cc}
+func NewOrderManagerClient(cc grpc.ClientConnInterface) OrderManagerClient {
+	return &orderManagerClient{cc}
 }
 
-func (c *orderClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+func (c *orderManagerClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/order.manager.v1.Order/Version", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/order.manager.v1.OrderManager/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// OrderServer is the server API for Order service.
-// All implementations must embed UnimplementedOrderServer
+// OrderManagerServer is the server API for OrderManager service.
+// All implementations must embed UnimplementedOrderManagerServer
 // for forward compatibility
-type OrderServer interface {
+type OrderManagerServer interface {
 	// Method Version
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
-	mustEmbedUnimplementedOrderServer()
+	mustEmbedUnimplementedOrderManagerServer()
 }
 
-// UnimplementedOrderServer must be embedded to have forward compatible implementations.
-type UnimplementedOrderServer struct {
+// UnimplementedOrderManagerServer must be embedded to have forward compatible implementations.
+type UnimplementedOrderManagerServer struct {
 }
 
-func (UnimplementedOrderServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
+func (UnimplementedOrderManagerServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
-func (UnimplementedOrderServer) mustEmbedUnimplementedOrderServer() {}
+func (UnimplementedOrderManagerServer) mustEmbedUnimplementedOrderManagerServer() {}
 
-// UnsafeOrderServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to OrderServer will
+// UnsafeOrderManagerServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to OrderManagerServer will
 // result in compilation errors.
-type UnsafeOrderServer interface {
-	mustEmbedUnimplementedOrderServer()
+type UnsafeOrderManagerServer interface {
+	mustEmbedUnimplementedOrderManagerServer()
 }
 
-func RegisterOrderServer(s grpc.ServiceRegistrar, srv OrderServer) {
-	s.RegisterService(&Order_ServiceDesc, srv)
+func RegisterOrderManagerServer(s grpc.ServiceRegistrar, srv OrderManagerServer) {
+	s.RegisterService(&OrderManager_ServiceDesc, srv)
 }
 
-func _Order_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _OrderManager_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OrderServer).Version(ctx, in)
+		return srv.(OrderManagerServer).Version(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/order.manager.v1.Order/Version",
+		FullMethod: "/order.manager.v1.OrderManager/Version",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OrderServer).Version(ctx, req.(*emptypb.Empty))
+		return srv.(OrderManagerServer).Version(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Order_ServiceDesc is the grpc.ServiceDesc for Order service.
+// OrderManager_ServiceDesc is the grpc.ServiceDesc for OrderManager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Order_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "order.manager.v1.Order",
-	HandlerType: (*OrderServer)(nil),
+var OrderManager_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "order.manager.v1.OrderManager",
+	HandlerType: (*OrderManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Version",
-			Handler:    _Order_Version_Handler,
+			Handler:    _OrderManager_Version_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
