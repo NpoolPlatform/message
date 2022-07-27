@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package npool.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/errno;errno";
+
+enum {
+    OK = 0;
+
+    ERR_START = 10000;
+}
