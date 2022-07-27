@@ -80,7 +80,7 @@ message GetAppsRequest {
 
 message GetAppsResponse {
     repeated appuser.manager.app.v2.App Infos = 10;
-    uint32   Total                            = 20;
+    uint32                              Total = 20;
 }
 
 message GetUserAppsRequest {
@@ -91,6 +91,6 @@ message GetUserAppsRequest {
 
 message GetUserAppsResponse {
     repeated appuser.manager.app.v2.App Infos = 10;
-    uint32   Total                            = 20;
+    uint32                              Total = 20;
 }
 
