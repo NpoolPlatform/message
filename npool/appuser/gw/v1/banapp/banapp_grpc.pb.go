@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// AppUserGatewayBanAppClient is the client API for AppUserGatewayBanApp service.
+// BanAppGwClient is the client API for BanAppGw service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type AppUserGatewayBanAppClient interface {
+type BanAppGwClient interface {
 	CreateBanApp(ctx context.Context, in *CreateBanAppRequest, opts ...grpc.CallOption) (*CreateBanAppResponse, error)
 	GetBanApp(ctx context.Context, in *GetBanAppRequest, opts ...grpc.CallOption) (*GetBanAppResponse, error)
 	GetAppBanApp(ctx context.Context, in *GetAppBanAppRequest, opts ...grpc.CallOption) (*GetAppBanAppResponse, error)
@@ -29,219 +29,219 @@ type AppUserGatewayBanAppClient interface {
 	DeleteBanApp(ctx context.Context, in *DeleteBanAppRequest, opts ...grpc.CallOption) (*DeleteBanAppResponse, error)
 }
 
-type appUserGatewayBanAppClient struct {
+type banAppGwClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAppUserGatewayBanAppClient(cc grpc.ClientConnInterface) AppUserGatewayBanAppClient {
-	return &appUserGatewayBanAppClient{cc}
+func NewBanAppGwClient(cc grpc.ClientConnInterface) BanAppGwClient {
+	return &banAppGwClient{cc}
 }
 
-func (c *appUserGatewayBanAppClient) CreateBanApp(ctx context.Context, in *CreateBanAppRequest, opts ...grpc.CallOption) (*CreateBanAppResponse, error) {
+func (c *banAppGwClient) CreateBanApp(ctx context.Context, in *CreateBanAppRequest, opts ...grpc.CallOption) (*CreateBanAppResponse, error) {
 	out := new(CreateBanAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/CreateBanApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.banapp.v1.BanAppGw/CreateBanApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserGatewayBanAppClient) GetBanApp(ctx context.Context, in *GetBanAppRequest, opts ...grpc.CallOption) (*GetBanAppResponse, error) {
+func (c *banAppGwClient) GetBanApp(ctx context.Context, in *GetBanAppRequest, opts ...grpc.CallOption) (*GetBanAppResponse, error) {
 	out := new(GetBanAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/GetBanApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.banapp.v1.BanAppGw/GetBanApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserGatewayBanAppClient) GetAppBanApp(ctx context.Context, in *GetAppBanAppRequest, opts ...grpc.CallOption) (*GetAppBanAppResponse, error) {
+func (c *banAppGwClient) GetAppBanApp(ctx context.Context, in *GetAppBanAppRequest, opts ...grpc.CallOption) (*GetAppBanAppResponse, error) {
 	out := new(GetAppBanAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/GetAppBanApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.banapp.v1.BanAppGw/GetAppBanApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserGatewayBanAppClient) UpdateBanApp(ctx context.Context, in *UpdateBanAppRequest, opts ...grpc.CallOption) (*UpdateBanAppResponse, error) {
+func (c *banAppGwClient) UpdateBanApp(ctx context.Context, in *UpdateBanAppRequest, opts ...grpc.CallOption) (*UpdateBanAppResponse, error) {
 	out := new(UpdateBanAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/UpdateBanApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.banapp.v1.BanAppGw/UpdateBanApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserGatewayBanAppClient) DeleteBanApp(ctx context.Context, in *DeleteBanAppRequest, opts ...grpc.CallOption) (*DeleteBanAppResponse, error) {
+func (c *banAppGwClient) DeleteBanApp(ctx context.Context, in *DeleteBanAppRequest, opts ...grpc.CallOption) (*DeleteBanAppResponse, error) {
 	out := new(DeleteBanAppResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/DeleteBanApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.banapp.v1.BanAppGw/DeleteBanApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AppUserGatewayBanAppServer is the server API for AppUserGatewayBanApp service.
-// All implementations must embed UnimplementedAppUserGatewayBanAppServer
+// BanAppGwServer is the server API for BanAppGw service.
+// All implementations must embed UnimplementedBanAppGwServer
 // for forward compatibility
-type AppUserGatewayBanAppServer interface {
+type BanAppGwServer interface {
 	CreateBanApp(context.Context, *CreateBanAppRequest) (*CreateBanAppResponse, error)
 	GetBanApp(context.Context, *GetBanAppRequest) (*GetBanAppResponse, error)
 	GetAppBanApp(context.Context, *GetAppBanAppRequest) (*GetAppBanAppResponse, error)
 	UpdateBanApp(context.Context, *UpdateBanAppRequest) (*UpdateBanAppResponse, error)
 	DeleteBanApp(context.Context, *DeleteBanAppRequest) (*DeleteBanAppResponse, error)
-	mustEmbedUnimplementedAppUserGatewayBanAppServer()
+	mustEmbedUnimplementedBanAppGwServer()
 }
 
-// UnimplementedAppUserGatewayBanAppServer must be embedded to have forward compatible implementations.
-type UnimplementedAppUserGatewayBanAppServer struct {
+// UnimplementedBanAppGwServer must be embedded to have forward compatible implementations.
+type UnimplementedBanAppGwServer struct {
 }
 
-func (UnimplementedAppUserGatewayBanAppServer) CreateBanApp(context.Context, *CreateBanAppRequest) (*CreateBanAppResponse, error) {
+func (UnimplementedBanAppGwServer) CreateBanApp(context.Context, *CreateBanAppRequest) (*CreateBanAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateBanApp not implemented")
 }
-func (UnimplementedAppUserGatewayBanAppServer) GetBanApp(context.Context, *GetBanAppRequest) (*GetBanAppResponse, error) {
+func (UnimplementedBanAppGwServer) GetBanApp(context.Context, *GetBanAppRequest) (*GetBanAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBanApp not implemented")
 }
-func (UnimplementedAppUserGatewayBanAppServer) GetAppBanApp(context.Context, *GetAppBanAppRequest) (*GetAppBanAppResponse, error) {
+func (UnimplementedBanAppGwServer) GetAppBanApp(context.Context, *GetAppBanAppRequest) (*GetAppBanAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppBanApp not implemented")
 }
-func (UnimplementedAppUserGatewayBanAppServer) UpdateBanApp(context.Context, *UpdateBanAppRequest) (*UpdateBanAppResponse, error) {
+func (UnimplementedBanAppGwServer) UpdateBanApp(context.Context, *UpdateBanAppRequest) (*UpdateBanAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateBanApp not implemented")
 }
-func (UnimplementedAppUserGatewayBanAppServer) DeleteBanApp(context.Context, *DeleteBanAppRequest) (*DeleteBanAppResponse, error) {
+func (UnimplementedBanAppGwServer) DeleteBanApp(context.Context, *DeleteBanAppRequest) (*DeleteBanAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteBanApp not implemented")
 }
-func (UnimplementedAppUserGatewayBanAppServer) mustEmbedUnimplementedAppUserGatewayBanAppServer() {}
+func (UnimplementedBanAppGwServer) mustEmbedUnimplementedBanAppGwServer() {}
 
-// UnsafeAppUserGatewayBanAppServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to AppUserGatewayBanAppServer will
+// UnsafeBanAppGwServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to BanAppGwServer will
 // result in compilation errors.
-type UnsafeAppUserGatewayBanAppServer interface {
-	mustEmbedUnimplementedAppUserGatewayBanAppServer()
+type UnsafeBanAppGwServer interface {
+	mustEmbedUnimplementedBanAppGwServer()
 }
 
-func RegisterAppUserGatewayBanAppServer(s grpc.ServiceRegistrar, srv AppUserGatewayBanAppServer) {
-	s.RegisterService(&AppUserGatewayBanApp_ServiceDesc, srv)
+func RegisterBanAppGwServer(s grpc.ServiceRegistrar, srv BanAppGwServer) {
+	s.RegisterService(&BanAppGw_ServiceDesc, srv)
 }
 
-func _AppUserGatewayBanApp_CreateBanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _BanAppGw_CreateBanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateBanAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserGatewayBanAppServer).CreateBanApp(ctx, in)
+		return srv.(BanAppGwServer).CreateBanApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/CreateBanApp",
+		FullMethod: "/app.user.gateway.banapp.v1.BanAppGw/CreateBanApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserGatewayBanAppServer).CreateBanApp(ctx, req.(*CreateBanAppRequest))
+		return srv.(BanAppGwServer).CreateBanApp(ctx, req.(*CreateBanAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserGatewayBanApp_GetBanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _BanAppGw_GetBanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetBanAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserGatewayBanAppServer).GetBanApp(ctx, in)
+		return srv.(BanAppGwServer).GetBanApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/GetBanApp",
+		FullMethod: "/app.user.gateway.banapp.v1.BanAppGw/GetBanApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserGatewayBanAppServer).GetBanApp(ctx, req.(*GetBanAppRequest))
+		return srv.(BanAppGwServer).GetBanApp(ctx, req.(*GetBanAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserGatewayBanApp_GetAppBanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _BanAppGw_GetAppBanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppBanAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserGatewayBanAppServer).GetAppBanApp(ctx, in)
+		return srv.(BanAppGwServer).GetAppBanApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/GetAppBanApp",
+		FullMethod: "/app.user.gateway.banapp.v1.BanAppGw/GetAppBanApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserGatewayBanAppServer).GetAppBanApp(ctx, req.(*GetAppBanAppRequest))
+		return srv.(BanAppGwServer).GetAppBanApp(ctx, req.(*GetAppBanAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserGatewayBanApp_UpdateBanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _BanAppGw_UpdateBanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateBanAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserGatewayBanAppServer).UpdateBanApp(ctx, in)
+		return srv.(BanAppGwServer).UpdateBanApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/UpdateBanApp",
+		FullMethod: "/app.user.gateway.banapp.v1.BanAppGw/UpdateBanApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserGatewayBanAppServer).UpdateBanApp(ctx, req.(*UpdateBanAppRequest))
+		return srv.(BanAppGwServer).UpdateBanApp(ctx, req.(*UpdateBanAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserGatewayBanApp_DeleteBanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _BanAppGw_DeleteBanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteBanAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserGatewayBanAppServer).DeleteBanApp(ctx, in)
+		return srv.(BanAppGwServer).DeleteBanApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/DeleteBanApp",
+		FullMethod: "/app.user.gateway.banapp.v1.BanAppGw/DeleteBanApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserGatewayBanAppServer).DeleteBanApp(ctx, req.(*DeleteBanAppRequest))
+		return srv.(BanAppGwServer).DeleteBanApp(ctx, req.(*DeleteBanAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// AppUserGatewayBanApp_ServiceDesc is the grpc.ServiceDesc for AppUserGatewayBanApp service.
+// BanAppGw_ServiceDesc is the grpc.ServiceDesc for BanAppGw service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var AppUserGatewayBanApp_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.user.gateway.banapp.v1.AppUserGatewayBanApp",
-	HandlerType: (*AppUserGatewayBanAppServer)(nil),
+var BanAppGw_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "app.user.gateway.banapp.v1.BanAppGw",
+	HandlerType: (*BanAppGwServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateBanApp",
-			Handler:    _AppUserGatewayBanApp_CreateBanApp_Handler,
+			Handler:    _BanAppGw_CreateBanApp_Handler,
 		},
 		{
 			MethodName: "GetBanApp",
-			Handler:    _AppUserGatewayBanApp_GetBanApp_Handler,
+			Handler:    _BanAppGw_GetBanApp_Handler,
 		},
 		{
 			MethodName: "GetAppBanApp",
-			Handler:    _AppUserGatewayBanApp_GetAppBanApp_Handler,
+			Handler:    _BanAppGw_GetAppBanApp_Handler,
 		},
 		{
 			MethodName: "UpdateBanApp",
-			Handler:    _AppUserGatewayBanApp_UpdateBanApp_Handler,
+			Handler:    _BanAppGw_UpdateBanApp_Handler,
 		},
 		{
 			MethodName: "DeleteBanApp",
-			Handler:    _AppUserGatewayBanApp_DeleteBanApp_Handler,
+			Handler:    _BanAppGw_DeleteBanApp_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

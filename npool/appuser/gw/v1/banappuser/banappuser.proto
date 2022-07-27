@@ -2,89 +2,89 @@ syntax = "proto3";
 
 package app.user.gateway.banappuser.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/appusergw/banappuser";
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/banappuser";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 import "npool/appuser/mgr/v2/banappuser/banappuser.proto";
 
-service AppUserGatewayBanAppUser {
+service BanAppUserGw {
 
-  rpc CreateBanAppUser (CreateBanAppUserRequest) returns (CreateBanAppUserResponse) {
-    option (google.api.http) = {
-      post: "/v2/create/ban/app/user"
-      body: "*"
-    };
-  }
+    rpc CreateBanAppUser (CreateBanAppUserRequest) returns (CreateBanAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v2/create/ban/app/user"
+            body: "*"
+        };
+    }
 
-  rpc GetBanAppUser (GetBanAppUserRequest) returns (GetBanAppUserResponse) {
-    option (google.api.http) = {
-      post: "/v2/get/ban/app/user"
-      body: "*"
-    };
-  }
+    rpc GetBanAppUser (GetBanAppUserRequest) returns (GetBanAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v2/get/ban/app/user"
+            body: "*"
+        };
+    }
 
-  rpc GetAppUserBanAppUser (GetAppUserBanAppUserRequest) returns (GetAppUserBanAppUserResponse) {
-    option (google.api.http) = {
-      post: "/v2/get/app/user/ban/app/user"
-      body: "*"
-    };
-  }
+    rpc GetAppUserBanAppUser (GetAppUserBanAppUserRequest) returns (GetAppUserBanAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v2/get/app/user/ban/app/user"
+            body: "*"
+        };
+    }
 
-  rpc UpdateBanAppUser (UpdateBanAppUserRequest) returns (UpdateBanAppUserResponse) {
-    option (google.api.http) = {
-      post: "/v2/update/ban/app/user"
-      body: "*"
-    };
-  }
+    rpc UpdateBanAppUser (UpdateBanAppUserRequest) returns (UpdateBanAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v2/update/ban/app/user"
+            body: "*"
+        };
+    }
 
-  rpc DeleteBanAppUser (DeleteBanAppUserRequest) returns (DeleteBanAppUserResponse) {
-    option (google.api.http) = {
-      post: "/v2/delete/ban/app/user"
-      body: "*"
-    };
-  }
+    rpc DeleteBanAppUser (DeleteBanAppUserRequest) returns (DeleteBanAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v2/delete/ban/app/user"
+            body: "*"
+        };
+    }
 
 }
 
 message CreateBanAppUserRequest {
-  appuser.manager.banappuser.v2.BanAppUserReq Info = 10;
+    appuser.manager.banappuser.v2.BanAppUserReq Info = 10;
 }
 
 message CreateBanAppUserResponse {
-  appuser.manager.banappuser.v2.BanAppUser Info = 10;
+    appuser.manager.banappuser.v2.BanAppUser Info = 10;
 }
 
 message GetBanAppUserRequest {
-  string ID = 10;
+    string ID = 10;
 }
 
 message GetBanAppUserResponse {
-  appuser.manager.banappuser.v2.BanAppUser Info = 10;
+    appuser.manager.banappuser.v2.BanAppUser Info = 10;
 }
 
 message GetAppUserBanAppUserRequest {
-  string TargetAppID = 10;
-  string UserID = 20;
+    string TargetAppID = 10;
+    string UserID = 20;
 }
 
 message GetAppUserBanAppUserResponse {
-  appuser.manager.banappuser.v2.BanAppUser Info = 10;
+    appuser.manager.banappuser.v2.BanAppUser Info = 10;
 }
 
 message UpdateBanAppUserRequest {
-  appuser.manager.banappuser.v2.BanAppUserReq Info = 10;
+    appuser.manager.banappuser.v2.BanAppUserReq Info = 10;
 }
 
 message UpdateBanAppUserResponse {
-  appuser.manager.banappuser.v2.BanAppUser Info = 10;
+    appuser.manager.banappuser.v2.BanAppUser Info = 10;
 }
 
 message DeleteBanAppUserRequest {
-  string ID = 10;
+    string ID = 10;
 }
 
 message DeleteBanAppUserResponse {
-  appuser.manager.banappuser.v2.BanAppUser Info = 10;
+    appuser.manager.banappuser.v2.BanAppUser Info = 10;
 }

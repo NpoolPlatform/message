@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "AppUserGatewayBanAppUser"
+      "name": "BanAppUserGw"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v2/create/ban/app/user": {
       "post": {
-        "operationId": "AppUserGatewayBanAppUser_CreateBanAppUser",
+        "operationId": "BanAppUserGw_CreateBanAppUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "AppUserGatewayBanAppUser"
+          "BanAppUserGw"
         ]
       }
     },
     "/v2/delete/ban/app/user": {
       "post": {
-        "operationId": "AppUserGatewayBanAppUser_DeleteBanAppUser",
+        "operationId": "BanAppUserGw_DeleteBanAppUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "AppUserGatewayBanAppUser"
+          "BanAppUserGw"
         ]
       }
     },
     "/v2/get/app/user/ban/app/user": {
       "post": {
-        "operationId": "AppUserGatewayBanAppUser_GetAppUserBanAppUser",
+        "operationId": "BanAppUserGw_GetAppUserBanAppUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -108,13 +108,13 @@
           }
         ],
         "tags": [
-          "AppUserGatewayBanAppUser"
+          "BanAppUserGw"
         ]
       }
     },
     "/v2/get/ban/app/user": {
       "post": {
-        "operationId": "AppUserGatewayBanAppUser_GetBanAppUser",
+        "operationId": "BanAppUserGw_GetBanAppUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -140,13 +140,13 @@
           }
         ],
         "tags": [
-          "AppUserGatewayBanAppUser"
+          "BanAppUserGw"
         ]
       }
     },
     "/v2/update/ban/app/user": {
       "post": {
-        "operationId": "AppUserGatewayBanAppUser_UpdateBanAppUser",
+        "operationId": "BanAppUserGw_UpdateBanAppUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -172,7 +172,7 @@
           }
         ],
         "tags": [
-          "AppUserGatewayBanAppUser"
+          "BanAppUserGw"
         ]
       }
     }

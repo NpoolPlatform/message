@@ -31,7 +31,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_AppUserExtra_CreateExtra_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserExtraClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppUserExtraGw_CreateExtra_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserExtraGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateExtraRequest
 	var metadata runtime.ServerMetadata
 
@@ -48,7 +48,7 @@ func request_AppUserExtra_CreateExtra_0(ctx context.Context, marshaler runtime.M
 
 }
 
-func local_request_AppUserExtra_CreateExtra_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserExtraServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppUserExtraGw_CreateExtra_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserExtraGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateExtraRequest
 	var metadata runtime.ServerMetadata
 
@@ -65,7 +65,7 @@ func local_request_AppUserExtra_CreateExtra_0(ctx context.Context, marshaler run
 
 }
 
-func request_AppUserExtra_GetExtra_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserExtraClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppUserExtraGw_GetExtra_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserExtraGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetExtraRequest
 	var metadata runtime.ServerMetadata
 
@@ -82,7 +82,7 @@ func request_AppUserExtra_GetExtra_0(ctx context.Context, marshaler runtime.Mars
 
 }
 
-func local_request_AppUserExtra_GetExtra_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserExtraServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppUserExtraGw_GetExtra_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserExtraGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetExtraRequest
 	var metadata runtime.ServerMetadata
 
@@ -99,7 +99,7 @@ func local_request_AppUserExtra_GetExtra_0(ctx context.Context, marshaler runtim
 
 }
 
-func request_AppUserExtra_GetAppUserExtraAppUser_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserExtraClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppUserExtraGw_GetAppUserExtraAppUser_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserExtraGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppUserExtraRequest
 	var metadata runtime.ServerMetadata
 
@@ -116,7 +116,7 @@ func request_AppUserExtra_GetAppUserExtraAppUser_0(ctx context.Context, marshale
 
 }
 
-func local_request_AppUserExtra_GetAppUserExtraAppUser_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserExtraServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppUserExtraGw_GetAppUserExtraAppUser_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserExtraGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppUserExtraRequest
 	var metadata runtime.ServerMetadata
 
@@ -133,7 +133,7 @@ func local_request_AppUserExtra_GetAppUserExtraAppUser_0(ctx context.Context, ma
 
 }
 
-func request_AppUserExtra_UpdateExtra_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserExtraClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppUserExtraGw_UpdateExtra_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserExtraGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UpdateExtraRequest
 	var metadata runtime.ServerMetadata
 
@@ -150,7 +150,7 @@ func request_AppUserExtra_UpdateExtra_0(ctx context.Context, marshaler runtime.M
 
 }
 
-func local_request_AppUserExtra_UpdateExtra_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserExtraServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppUserExtraGw_UpdateExtra_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserExtraGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UpdateExtraRequest
 	var metadata runtime.ServerMetadata
 
@@ -167,24 +167,24 @@ func local_request_AppUserExtra_UpdateExtra_0(ctx context.Context, marshaler run
 
 }
 
-// RegisterAppUserExtraHandlerServer registers the http handlers for service AppUserExtra to "mux".
-// UnaryRPC     :call AppUserExtraServer directly.
+// RegisterAppUserExtraGwHandlerServer registers the http handlers for service AppUserExtraGw to "mux".
+// UnaryRPC     :call AppUserExtraGwServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterAppUserExtraHandlerFromEndpoint instead.
-func RegisterAppUserExtraHandlerServer(ctx context.Context, mux *runtime.ServeMux, server AppUserExtraServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterAppUserExtraGwHandlerFromEndpoint instead.
+func RegisterAppUserExtraGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, server AppUserExtraGwServer) error {
 
-	mux.Handle("POST", pattern_AppUserExtra_CreateExtra_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserExtraGw_CreateExtra_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtra/CreateExtra", runtime.WithHTTPPathPattern("/v2/create/extra"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtraGw/CreateExtra", runtime.WithHTTPPathPattern("/v2/create/extra"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserExtra_CreateExtra_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppUserExtraGw_CreateExtra_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -192,22 +192,22 @@ func RegisterAppUserExtraHandlerServer(ctx context.Context, mux *runtime.ServeMu
 			return
 		}
 
-		forward_AppUserExtra_CreateExtra_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserExtraGw_CreateExtra_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserExtra_GetExtra_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserExtraGw_GetExtra_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtra/GetExtra", runtime.WithHTTPPathPattern("/v2/get/extra"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtraGw/GetExtra", runtime.WithHTTPPathPattern("/v2/get/extra"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserExtra_GetExtra_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppUserExtraGw_GetExtra_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -215,22 +215,22 @@ func RegisterAppUserExtraHandlerServer(ctx context.Context, mux *runtime.ServeMu
 			return
 		}
 
-		forward_AppUserExtra_GetExtra_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserExtraGw_GetExtra_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserExtra_GetAppUserExtraAppUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserExtraGw_GetAppUserExtraAppUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtra/GetAppUserExtraAppUser", runtime.WithHTTPPathPattern("/v2/get/app/user/extra"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtraGw/GetAppUserExtraAppUser", runtime.WithHTTPPathPattern("/v2/get/app/user/extra"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserExtra_GetAppUserExtraAppUser_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppUserExtraGw_GetAppUserExtraAppUser_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -238,22 +238,22 @@ func RegisterAppUserExtraHandlerServer(ctx context.Context, mux *runtime.ServeMu
 			return
 		}
 
-		forward_AppUserExtra_GetAppUserExtraAppUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserExtraGw_GetAppUserExtraAppUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserExtra_UpdateExtra_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserExtraGw_UpdateExtra_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtra/UpdateExtra", runtime.WithHTTPPathPattern("/v2/update/extra"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtraGw/UpdateExtra", runtime.WithHTTPPathPattern("/v2/update/extra"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserExtra_UpdateExtra_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppUserExtraGw_UpdateExtra_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -261,16 +261,16 @@ func RegisterAppUserExtraHandlerServer(ctx context.Context, mux *runtime.ServeMu
 			return
 		}
 
-		forward_AppUserExtra_UpdateExtra_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserExtraGw_UpdateExtra_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterAppUserExtraHandlerFromEndpoint is same as RegisterAppUserExtraHandler but
+// RegisterAppUserExtraGwHandlerFromEndpoint is same as RegisterAppUserExtraGwHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterAppUserExtraHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterAppUserExtraGwHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -290,99 +290,99 @@ func RegisterAppUserExtraHandlerFromEndpoint(ctx context.Context, mux *runtime.S
 		}()
 	}()
 
-	return RegisterAppUserExtraHandler(ctx, mux, conn)
+	return RegisterAppUserExtraGwHandler(ctx, mux, conn)
 }
 
-// RegisterAppUserExtraHandler registers the http handlers for service AppUserExtra to "mux".
+// RegisterAppUserExtraGwHandler registers the http handlers for service AppUserExtraGw to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterAppUserExtraHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterAppUserExtraHandlerClient(ctx, mux, NewAppUserExtraClient(conn))
+func RegisterAppUserExtraGwHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterAppUserExtraGwHandlerClient(ctx, mux, NewAppUserExtraGwClient(conn))
 }
 
-// RegisterAppUserExtraHandlerClient registers the http handlers for service AppUserExtra
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "AppUserExtraClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "AppUserExtraClient"
+// RegisterAppUserExtraGwHandlerClient registers the http handlers for service AppUserExtraGw
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "AppUserExtraGwClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "AppUserExtraGwClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "AppUserExtraClient" to call the correct interceptors.
-func RegisterAppUserExtraHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AppUserExtraClient) error {
+// "AppUserExtraGwClient" to call the correct interceptors.
+func RegisterAppUserExtraGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AppUserExtraGwClient) error {
 
-	mux.Handle("POST", pattern_AppUserExtra_CreateExtra_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserExtraGw_CreateExtra_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtra/CreateExtra", runtime.WithHTTPPathPattern("/v2/create/extra"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtraGw/CreateExtra", runtime.WithHTTPPathPattern("/v2/create/extra"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserExtra_CreateExtra_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppUserExtraGw_CreateExtra_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserExtra_CreateExtra_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserExtraGw_CreateExtra_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserExtra_GetExtra_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserExtraGw_GetExtra_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtra/GetExtra", runtime.WithHTTPPathPattern("/v2/get/extra"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtraGw/GetExtra", runtime.WithHTTPPathPattern("/v2/get/extra"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserExtra_GetExtra_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppUserExtraGw_GetExtra_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserExtra_GetExtra_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserExtraGw_GetExtra_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserExtra_GetAppUserExtraAppUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserExtraGw_GetAppUserExtraAppUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtra/GetAppUserExtraAppUser", runtime.WithHTTPPathPattern("/v2/get/app/user/extra"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtraGw/GetAppUserExtraAppUser", runtime.WithHTTPPathPattern("/v2/get/app/user/extra"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserExtra_GetAppUserExtraAppUser_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppUserExtraGw_GetAppUserExtraAppUser_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserExtra_GetAppUserExtraAppUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserExtraGw_GetAppUserExtraAppUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserExtra_UpdateExtra_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserExtraGw_UpdateExtra_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtra/UpdateExtra", runtime.WithHTTPPathPattern("/v2/update/extra"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appuserextra.v1.AppUserExtraGw/UpdateExtra", runtime.WithHTTPPathPattern("/v2/update/extra"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserExtra_UpdateExtra_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppUserExtraGw_UpdateExtra_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserExtra_UpdateExtra_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserExtraGw_UpdateExtra_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -390,21 +390,21 @@ func RegisterAppUserExtraHandlerClient(ctx context.Context, mux *runtime.ServeMu
 }
 
 var (
-	pattern_AppUserExtra_CreateExtra_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v2", "create", "extra"}, ""))
+	pattern_AppUserExtraGw_CreateExtra_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v2", "create", "extra"}, ""))
 
-	pattern_AppUserExtra_GetExtra_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v2", "get", "extra"}, ""))
+	pattern_AppUserExtraGw_GetExtra_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v2", "get", "extra"}, ""))
 
-	pattern_AppUserExtra_GetAppUserExtraAppUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v2", "get", "app", "user", "extra"}, ""))
+	pattern_AppUserExtraGw_GetAppUserExtraAppUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v2", "get", "app", "user", "extra"}, ""))
 
-	pattern_AppUserExtra_UpdateExtra_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v2", "update", "extra"}, ""))
+	pattern_AppUserExtraGw_UpdateExtra_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v2", "update", "extra"}, ""))
 )
 
 var (
-	forward_AppUserExtra_CreateExtra_0 = runtime.ForwardResponseMessage
+	forward_AppUserExtraGw_CreateExtra_0 = runtime.ForwardResponseMessage
 
-	forward_AppUserExtra_GetExtra_0 = runtime.ForwardResponseMessage
+	forward_AppUserExtraGw_GetExtra_0 = runtime.ForwardResponseMessage
 
-	forward_AppUserExtra_GetAppUserExtraAppUser_0 = runtime.ForwardResponseMessage
+	forward_AppUserExtraGw_GetAppUserExtraAppUser_0 = runtime.ForwardResponseMessage
 
-	forward_AppUserExtra_UpdateExtra_0 = runtime.ForwardResponseMessage
+	forward_AppUserExtraGw_UpdateExtra_0 = runtime.ForwardResponseMessage
 )

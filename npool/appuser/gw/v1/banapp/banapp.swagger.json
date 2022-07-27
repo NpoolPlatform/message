@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "AppUserGatewayBanApp"
+      "name": "BanAppGw"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v2/create/ban/app": {
       "post": {
-        "operationId": "AppUserGatewayBanApp_CreateBanApp",
+        "operationId": "BanAppGw_CreateBanApp",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "AppUserGatewayBanApp"
+          "BanAppGw"
         ]
       }
     },
     "/v2/delete/ban/app": {
       "post": {
-        "operationId": "AppUserGatewayBanApp_DeleteBanApp",
+        "operationId": "BanAppGw_DeleteBanApp",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "AppUserGatewayBanApp"
+          "BanAppGw"
         ]
       }
     },
     "/v2/get/app/ban/app": {
       "post": {
-        "operationId": "AppUserGatewayBanApp_GetAppBanApp",
+        "operationId": "BanAppGw_GetAppBanApp",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -108,13 +108,13 @@
           }
         ],
         "tags": [
-          "AppUserGatewayBanApp"
+          "BanAppGw"
         ]
       }
     },
     "/v2/get/ban/app": {
       "post": {
-        "operationId": "AppUserGatewayBanApp_GetBanApp",
+        "operationId": "BanAppGw_GetBanApp",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -140,13 +140,13 @@
           }
         ],
         "tags": [
-          "AppUserGatewayBanApp"
+          "BanAppGw"
         ]
       }
     },
     "/v2/update/ban/app": {
       "post": {
-        "operationId": "AppUserGatewayBanApp_UpdateBanApp",
+        "operationId": "BanAppGw_UpdateBanApp",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -172,7 +172,7 @@
           }
         ],
         "tags": [
-          "AppUserGatewayBanApp"
+          "BanAppGw"
         ]
       }
     }

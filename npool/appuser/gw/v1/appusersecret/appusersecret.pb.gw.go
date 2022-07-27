@@ -31,7 +31,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_AppUserSecret_CreateSecret_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserSecretClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppUserSecretGw_CreateSecret_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserSecretGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateSecretRequest
 	var metadata runtime.ServerMetadata
 
@@ -48,7 +48,7 @@ func request_AppUserSecret_CreateSecret_0(ctx context.Context, marshaler runtime
 
 }
 
-func local_request_AppUserSecret_CreateSecret_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserSecretServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppUserSecretGw_CreateSecret_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserSecretGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateSecretRequest
 	var metadata runtime.ServerMetadata
 
@@ -65,7 +65,7 @@ func local_request_AppUserSecret_CreateSecret_0(ctx context.Context, marshaler r
 
 }
 
-func request_AppUserSecret_GetSecret_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserSecretClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppUserSecretGw_GetSecret_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserSecretGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetSecretRequest
 	var metadata runtime.ServerMetadata
 
@@ -82,7 +82,7 @@ func request_AppUserSecret_GetSecret_0(ctx context.Context, marshaler runtime.Ma
 
 }
 
-func local_request_AppUserSecret_GetSecret_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserSecretServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppUserSecretGw_GetSecret_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserSecretGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetSecretRequest
 	var metadata runtime.ServerMetadata
 
@@ -99,7 +99,7 @@ func local_request_AppUserSecret_GetSecret_0(ctx context.Context, marshaler runt
 
 }
 
-func request_AppUserSecret_GetAppUserSecret_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserSecretClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppUserSecretGw_GetAppUserSecret_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserSecretGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppUserSecretRequest
 	var metadata runtime.ServerMetadata
 
@@ -116,7 +116,7 @@ func request_AppUserSecret_GetAppUserSecret_0(ctx context.Context, marshaler run
 
 }
 
-func local_request_AppUserSecret_GetAppUserSecret_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserSecretServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppUserSecretGw_GetAppUserSecret_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserSecretGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppUserSecretRequest
 	var metadata runtime.ServerMetadata
 
@@ -133,7 +133,7 @@ func local_request_AppUserSecret_GetAppUserSecret_0(ctx context.Context, marshal
 
 }
 
-func request_AppUserSecret_UpdateSecret_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserSecretClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppUserSecretGw_UpdateSecret_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserSecretGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UpdateSecretRequest
 	var metadata runtime.ServerMetadata
 
@@ -150,7 +150,7 @@ func request_AppUserSecret_UpdateSecret_0(ctx context.Context, marshaler runtime
 
 }
 
-func local_request_AppUserSecret_UpdateSecret_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserSecretServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppUserSecretGw_UpdateSecret_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserSecretGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UpdateSecretRequest
 	var metadata runtime.ServerMetadata
 
@@ -167,24 +167,24 @@ func local_request_AppUserSecret_UpdateSecret_0(ctx context.Context, marshaler r
 
 }
 
-// RegisterAppUserSecretHandlerServer registers the http handlers for service AppUserSecret to "mux".
-// UnaryRPC     :call AppUserSecretServer directly.
+// RegisterAppUserSecretGwHandlerServer registers the http handlers for service AppUserSecretGw to "mux".
+// UnaryRPC     :call AppUserSecretGwServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterAppUserSecretHandlerFromEndpoint instead.
-func RegisterAppUserSecretHandlerServer(ctx context.Context, mux *runtime.ServeMux, server AppUserSecretServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterAppUserSecretGwHandlerFromEndpoint instead.
+func RegisterAppUserSecretGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, server AppUserSecretGwServer) error {
 
-	mux.Handle("POST", pattern_AppUserSecret_CreateSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserSecretGw_CreateSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecret/CreateSecret", runtime.WithHTTPPathPattern("/v2/create/secret"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecretGw/CreateSecret", runtime.WithHTTPPathPattern("/v2/create/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserSecret_CreateSecret_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppUserSecretGw_CreateSecret_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -192,22 +192,22 @@ func RegisterAppUserSecretHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_AppUserSecret_CreateSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserSecretGw_CreateSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserSecret_GetSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserSecretGw_GetSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecret/GetSecret", runtime.WithHTTPPathPattern("/v2/get/secret"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecretGw/GetSecret", runtime.WithHTTPPathPattern("/v2/get/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserSecret_GetSecret_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppUserSecretGw_GetSecret_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -215,22 +215,22 @@ func RegisterAppUserSecretHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_AppUserSecret_GetSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserSecretGw_GetSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserSecret_GetAppUserSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserSecretGw_GetAppUserSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecret/GetAppUserSecret", runtime.WithHTTPPathPattern("/v2/get/app/user/secret"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecretGw/GetAppUserSecret", runtime.WithHTTPPathPattern("/v2/get/app/user/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserSecret_GetAppUserSecret_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppUserSecretGw_GetAppUserSecret_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -238,22 +238,22 @@ func RegisterAppUserSecretHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_AppUserSecret_GetAppUserSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserSecretGw_GetAppUserSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserSecret_UpdateSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserSecretGw_UpdateSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecret/UpdateSecret", runtime.WithHTTPPathPattern("/v1/update/secret"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecretGw/UpdateSecret", runtime.WithHTTPPathPattern("/v1/update/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserSecret_UpdateSecret_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppUserSecretGw_UpdateSecret_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -261,16 +261,16 @@ func RegisterAppUserSecretHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_AppUserSecret_UpdateSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserSecretGw_UpdateSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterAppUserSecretHandlerFromEndpoint is same as RegisterAppUserSecretHandler but
+// RegisterAppUserSecretGwHandlerFromEndpoint is same as RegisterAppUserSecretGwHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterAppUserSecretHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterAppUserSecretGwHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -290,99 +290,99 @@ func RegisterAppUserSecretHandlerFromEndpoint(ctx context.Context, mux *runtime.
 		}()
 	}()
 
-	return RegisterAppUserSecretHandler(ctx, mux, conn)
+	return RegisterAppUserSecretGwHandler(ctx, mux, conn)
 }
 
-// RegisterAppUserSecretHandler registers the http handlers for service AppUserSecret to "mux".
+// RegisterAppUserSecretGwHandler registers the http handlers for service AppUserSecretGw to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterAppUserSecretHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterAppUserSecretHandlerClient(ctx, mux, NewAppUserSecretClient(conn))
+func RegisterAppUserSecretGwHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterAppUserSecretGwHandlerClient(ctx, mux, NewAppUserSecretGwClient(conn))
 }
 
-// RegisterAppUserSecretHandlerClient registers the http handlers for service AppUserSecret
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "AppUserSecretClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "AppUserSecretClient"
+// RegisterAppUserSecretGwHandlerClient registers the http handlers for service AppUserSecretGw
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "AppUserSecretGwClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "AppUserSecretGwClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "AppUserSecretClient" to call the correct interceptors.
-func RegisterAppUserSecretHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AppUserSecretClient) error {
+// "AppUserSecretGwClient" to call the correct interceptors.
+func RegisterAppUserSecretGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AppUserSecretGwClient) error {
 
-	mux.Handle("POST", pattern_AppUserSecret_CreateSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserSecretGw_CreateSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecret/CreateSecret", runtime.WithHTTPPathPattern("/v2/create/secret"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecretGw/CreateSecret", runtime.WithHTTPPathPattern("/v2/create/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserSecret_CreateSecret_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppUserSecretGw_CreateSecret_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserSecret_CreateSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserSecretGw_CreateSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserSecret_GetSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserSecretGw_GetSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecret/GetSecret", runtime.WithHTTPPathPattern("/v2/get/secret"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecretGw/GetSecret", runtime.WithHTTPPathPattern("/v2/get/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserSecret_GetSecret_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppUserSecretGw_GetSecret_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserSecret_GetSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserSecretGw_GetSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserSecret_GetAppUserSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserSecretGw_GetAppUserSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecret/GetAppUserSecret", runtime.WithHTTPPathPattern("/v2/get/app/user/secret"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecretGw/GetAppUserSecret", runtime.WithHTTPPathPattern("/v2/get/app/user/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserSecret_GetAppUserSecret_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppUserSecretGw_GetAppUserSecret_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserSecret_GetAppUserSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserSecretGw_GetAppUserSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserSecret_UpdateSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppUserSecretGw_UpdateSecret_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecret/UpdateSecret", runtime.WithHTTPPathPattern("/v1/update/secret"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.appusersecret.v1.AppUserSecretGw/UpdateSecret", runtime.WithHTTPPathPattern("/v1/update/secret"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserSecret_UpdateSecret_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppUserSecretGw_UpdateSecret_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserSecret_UpdateSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppUserSecretGw_UpdateSecret_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -390,21 +390,21 @@ func RegisterAppUserSecretHandlerClient(ctx context.Context, mux *runtime.ServeM
 }
 
 var (
-	pattern_AppUserSecret_CreateSecret_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v2", "create", "secret"}, ""))
+	pattern_AppUserSecretGw_CreateSecret_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v2", "create", "secret"}, ""))
 
-	pattern_AppUserSecret_GetSecret_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v2", "get", "secret"}, ""))
+	pattern_AppUserSecretGw_GetSecret_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v2", "get", "secret"}, ""))
 
-	pattern_AppUserSecret_GetAppUserSecret_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v2", "get", "app", "user", "secret"}, ""))
+	pattern_AppUserSecretGw_GetAppUserSecret_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v2", "get", "app", "user", "secret"}, ""))
 
-	pattern_AppUserSecret_UpdateSecret_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "secret"}, ""))
+	pattern_AppUserSecretGw_UpdateSecret_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "secret"}, ""))
 )
 
 var (
-	forward_AppUserSecret_CreateSecret_0 = runtime.ForwardResponseMessage
+	forward_AppUserSecretGw_CreateSecret_0 = runtime.ForwardResponseMessage
 
-	forward_AppUserSecret_GetSecret_0 = runtime.ForwardResponseMessage
+	forward_AppUserSecretGw_GetSecret_0 = runtime.ForwardResponseMessage
 
-	forward_AppUserSecret_GetAppUserSecret_0 = runtime.ForwardResponseMessage
+	forward_AppUserSecretGw_GetAppUserSecret_0 = runtime.ForwardResponseMessage
 
-	forward_AppUserSecret_UpdateSecret_0 = runtime.ForwardResponseMessage
+	forward_AppUserSecretGw_UpdateSecret_0 = runtime.ForwardResponseMessage
 )

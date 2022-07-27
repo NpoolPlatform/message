@@ -31,7 +31,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_AppUserGatewayBanApp_CreateBanApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserGatewayBanAppClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_BanAppGw_CreateBanApp_0(ctx context.Context, marshaler runtime.Marshaler, client BanAppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateBanAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -48,7 +48,7 @@ func request_AppUserGatewayBanApp_CreateBanApp_0(ctx context.Context, marshaler 
 
 }
 
-func local_request_AppUserGatewayBanApp_CreateBanApp_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserGatewayBanAppServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_BanAppGw_CreateBanApp_0(ctx context.Context, marshaler runtime.Marshaler, server BanAppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateBanAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -65,7 +65,7 @@ func local_request_AppUserGatewayBanApp_CreateBanApp_0(ctx context.Context, mars
 
 }
 
-func request_AppUserGatewayBanApp_GetBanApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserGatewayBanAppClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_BanAppGw_GetBanApp_0(ctx context.Context, marshaler runtime.Marshaler, client BanAppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetBanAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -82,7 +82,7 @@ func request_AppUserGatewayBanApp_GetBanApp_0(ctx context.Context, marshaler run
 
 }
 
-func local_request_AppUserGatewayBanApp_GetBanApp_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserGatewayBanAppServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_BanAppGw_GetBanApp_0(ctx context.Context, marshaler runtime.Marshaler, server BanAppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetBanAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -99,7 +99,7 @@ func local_request_AppUserGatewayBanApp_GetBanApp_0(ctx context.Context, marshal
 
 }
 
-func request_AppUserGatewayBanApp_GetAppBanApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserGatewayBanAppClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_BanAppGw_GetAppBanApp_0(ctx context.Context, marshaler runtime.Marshaler, client BanAppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppBanAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -116,7 +116,7 @@ func request_AppUserGatewayBanApp_GetAppBanApp_0(ctx context.Context, marshaler 
 
 }
 
-func local_request_AppUserGatewayBanApp_GetAppBanApp_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserGatewayBanAppServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_BanAppGw_GetAppBanApp_0(ctx context.Context, marshaler runtime.Marshaler, server BanAppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppBanAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -133,7 +133,7 @@ func local_request_AppUserGatewayBanApp_GetAppBanApp_0(ctx context.Context, mars
 
 }
 
-func request_AppUserGatewayBanApp_UpdateBanApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserGatewayBanAppClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_BanAppGw_UpdateBanApp_0(ctx context.Context, marshaler runtime.Marshaler, client BanAppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UpdateBanAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -150,7 +150,7 @@ func request_AppUserGatewayBanApp_UpdateBanApp_0(ctx context.Context, marshaler 
 
 }
 
-func local_request_AppUserGatewayBanApp_UpdateBanApp_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserGatewayBanAppServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_BanAppGw_UpdateBanApp_0(ctx context.Context, marshaler runtime.Marshaler, server BanAppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UpdateBanAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -167,7 +167,7 @@ func local_request_AppUserGatewayBanApp_UpdateBanApp_0(ctx context.Context, mars
 
 }
 
-func request_AppUserGatewayBanApp_DeleteBanApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppUserGatewayBanAppClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_BanAppGw_DeleteBanApp_0(ctx context.Context, marshaler runtime.Marshaler, client BanAppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DeleteBanAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -184,7 +184,7 @@ func request_AppUserGatewayBanApp_DeleteBanApp_0(ctx context.Context, marshaler 
 
 }
 
-func local_request_AppUserGatewayBanApp_DeleteBanApp_0(ctx context.Context, marshaler runtime.Marshaler, server AppUserGatewayBanAppServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_BanAppGw_DeleteBanApp_0(ctx context.Context, marshaler runtime.Marshaler, server BanAppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DeleteBanAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -201,24 +201,24 @@ func local_request_AppUserGatewayBanApp_DeleteBanApp_0(ctx context.Context, mars
 
 }
 
-// RegisterAppUserGatewayBanAppHandlerServer registers the http handlers for service AppUserGatewayBanApp to "mux".
-// UnaryRPC     :call AppUserGatewayBanAppServer directly.
+// RegisterBanAppGwHandlerServer registers the http handlers for service BanAppGw to "mux".
+// UnaryRPC     :call BanAppGwServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterAppUserGatewayBanAppHandlerFromEndpoint instead.
-func RegisterAppUserGatewayBanAppHandlerServer(ctx context.Context, mux *runtime.ServeMux, server AppUserGatewayBanAppServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterBanAppGwHandlerFromEndpoint instead.
+func RegisterBanAppGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, server BanAppGwServer) error {
 
-	mux.Handle("POST", pattern_AppUserGatewayBanApp_CreateBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BanAppGw_CreateBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/CreateBanApp", runtime.WithHTTPPathPattern("/v2/create/ban/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.banapp.v1.BanAppGw/CreateBanApp", runtime.WithHTTPPathPattern("/v2/create/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserGatewayBanApp_CreateBanApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_BanAppGw_CreateBanApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -226,22 +226,22 @@ func RegisterAppUserGatewayBanAppHandlerServer(ctx context.Context, mux *runtime
 			return
 		}
 
-		forward_AppUserGatewayBanApp_CreateBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BanAppGw_CreateBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserGatewayBanApp_GetBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BanAppGw_GetBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/GetBanApp", runtime.WithHTTPPathPattern("/v2/get/ban/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.banapp.v1.BanAppGw/GetBanApp", runtime.WithHTTPPathPattern("/v2/get/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserGatewayBanApp_GetBanApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_BanAppGw_GetBanApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -249,22 +249,22 @@ func RegisterAppUserGatewayBanAppHandlerServer(ctx context.Context, mux *runtime
 			return
 		}
 
-		forward_AppUserGatewayBanApp_GetBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BanAppGw_GetBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserGatewayBanApp_GetAppBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BanAppGw_GetAppBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/GetAppBanApp", runtime.WithHTTPPathPattern("/v2/get/app/ban/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.banapp.v1.BanAppGw/GetAppBanApp", runtime.WithHTTPPathPattern("/v2/get/app/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserGatewayBanApp_GetAppBanApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_BanAppGw_GetAppBanApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -272,22 +272,22 @@ func RegisterAppUserGatewayBanAppHandlerServer(ctx context.Context, mux *runtime
 			return
 		}
 
-		forward_AppUserGatewayBanApp_GetAppBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BanAppGw_GetAppBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserGatewayBanApp_UpdateBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BanAppGw_UpdateBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/UpdateBanApp", runtime.WithHTTPPathPattern("/v2/update/ban/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.banapp.v1.BanAppGw/UpdateBanApp", runtime.WithHTTPPathPattern("/v2/update/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserGatewayBanApp_UpdateBanApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_BanAppGw_UpdateBanApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -295,22 +295,22 @@ func RegisterAppUserGatewayBanAppHandlerServer(ctx context.Context, mux *runtime
 			return
 		}
 
-		forward_AppUserGatewayBanApp_UpdateBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BanAppGw_UpdateBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserGatewayBanApp_DeleteBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BanAppGw_DeleteBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/DeleteBanApp", runtime.WithHTTPPathPattern("/v2/delete/ban/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.banapp.v1.BanAppGw/DeleteBanApp", runtime.WithHTTPPathPattern("/v2/delete/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppUserGatewayBanApp_DeleteBanApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_BanAppGw_DeleteBanApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -318,16 +318,16 @@ func RegisterAppUserGatewayBanAppHandlerServer(ctx context.Context, mux *runtime
 			return
 		}
 
-		forward_AppUserGatewayBanApp_DeleteBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BanAppGw_DeleteBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterAppUserGatewayBanAppHandlerFromEndpoint is same as RegisterAppUserGatewayBanAppHandler but
+// RegisterBanAppGwHandlerFromEndpoint is same as RegisterBanAppGwHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterAppUserGatewayBanAppHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterBanAppGwHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -347,119 +347,119 @@ func RegisterAppUserGatewayBanAppHandlerFromEndpoint(ctx context.Context, mux *r
 		}()
 	}()
 
-	return RegisterAppUserGatewayBanAppHandler(ctx, mux, conn)
+	return RegisterBanAppGwHandler(ctx, mux, conn)
 }
 
-// RegisterAppUserGatewayBanAppHandler registers the http handlers for service AppUserGatewayBanApp to "mux".
+// RegisterBanAppGwHandler registers the http handlers for service BanAppGw to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterAppUserGatewayBanAppHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterAppUserGatewayBanAppHandlerClient(ctx, mux, NewAppUserGatewayBanAppClient(conn))
+func RegisterBanAppGwHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterBanAppGwHandlerClient(ctx, mux, NewBanAppGwClient(conn))
 }
 
-// RegisterAppUserGatewayBanAppHandlerClient registers the http handlers for service AppUserGatewayBanApp
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "AppUserGatewayBanAppClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "AppUserGatewayBanAppClient"
+// RegisterBanAppGwHandlerClient registers the http handlers for service BanAppGw
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "BanAppGwClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "BanAppGwClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "AppUserGatewayBanAppClient" to call the correct interceptors.
-func RegisterAppUserGatewayBanAppHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AppUserGatewayBanAppClient) error {
+// "BanAppGwClient" to call the correct interceptors.
+func RegisterBanAppGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, client BanAppGwClient) error {
 
-	mux.Handle("POST", pattern_AppUserGatewayBanApp_CreateBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BanAppGw_CreateBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/CreateBanApp", runtime.WithHTTPPathPattern("/v2/create/ban/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.banapp.v1.BanAppGw/CreateBanApp", runtime.WithHTTPPathPattern("/v2/create/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserGatewayBanApp_CreateBanApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_BanAppGw_CreateBanApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserGatewayBanApp_CreateBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BanAppGw_CreateBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserGatewayBanApp_GetBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BanAppGw_GetBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/GetBanApp", runtime.WithHTTPPathPattern("/v2/get/ban/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.banapp.v1.BanAppGw/GetBanApp", runtime.WithHTTPPathPattern("/v2/get/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserGatewayBanApp_GetBanApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_BanAppGw_GetBanApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserGatewayBanApp_GetBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BanAppGw_GetBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserGatewayBanApp_GetAppBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BanAppGw_GetAppBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/GetAppBanApp", runtime.WithHTTPPathPattern("/v2/get/app/ban/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.banapp.v1.BanAppGw/GetAppBanApp", runtime.WithHTTPPathPattern("/v2/get/app/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserGatewayBanApp_GetAppBanApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_BanAppGw_GetAppBanApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserGatewayBanApp_GetAppBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BanAppGw_GetAppBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserGatewayBanApp_UpdateBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BanAppGw_UpdateBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/UpdateBanApp", runtime.WithHTTPPathPattern("/v2/update/ban/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.banapp.v1.BanAppGw/UpdateBanApp", runtime.WithHTTPPathPattern("/v2/update/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserGatewayBanApp_UpdateBanApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_BanAppGw_UpdateBanApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserGatewayBanApp_UpdateBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BanAppGw_UpdateBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppUserGatewayBanApp_DeleteBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BanAppGw_DeleteBanApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.banapp.v1.AppUserGatewayBanApp/DeleteBanApp", runtime.WithHTTPPathPattern("/v2/delete/ban/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.banapp.v1.BanAppGw/DeleteBanApp", runtime.WithHTTPPathPattern("/v2/delete/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppUserGatewayBanApp_DeleteBanApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_BanAppGw_DeleteBanApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppUserGatewayBanApp_DeleteBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BanAppGw_DeleteBanApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -467,25 +467,25 @@ func RegisterAppUserGatewayBanAppHandlerClient(ctx context.Context, mux *runtime
 }
 
 var (
-	pattern_AppUserGatewayBanApp_CreateBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "create", "ban", "app"}, ""))
+	pattern_BanAppGw_CreateBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "create", "ban", "app"}, ""))
 
-	pattern_AppUserGatewayBanApp_GetBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "get", "ban", "app"}, ""))
+	pattern_BanAppGw_GetBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "get", "ban", "app"}, ""))
 
-	pattern_AppUserGatewayBanApp_GetAppBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 2}, []string{"v2", "get", "app", "ban"}, ""))
+	pattern_BanAppGw_GetAppBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 2}, []string{"v2", "get", "app", "ban"}, ""))
 
-	pattern_AppUserGatewayBanApp_UpdateBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "update", "ban", "app"}, ""))
+	pattern_BanAppGw_UpdateBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "update", "ban", "app"}, ""))
 
-	pattern_AppUserGatewayBanApp_DeleteBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "delete", "ban", "app"}, ""))
+	pattern_BanAppGw_DeleteBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "delete", "ban", "app"}, ""))
 )
 
 var (
-	forward_AppUserGatewayBanApp_CreateBanApp_0 = runtime.ForwardResponseMessage
+	forward_BanAppGw_CreateBanApp_0 = runtime.ForwardResponseMessage
 
-	forward_AppUserGatewayBanApp_GetBanApp_0 = runtime.ForwardResponseMessage
+	forward_BanAppGw_GetBanApp_0 = runtime.ForwardResponseMessage
 
-	forward_AppUserGatewayBanApp_GetAppBanApp_0 = runtime.ForwardResponseMessage
+	forward_BanAppGw_GetAppBanApp_0 = runtime.ForwardResponseMessage
 
-	forward_AppUserGatewayBanApp_UpdateBanApp_0 = runtime.ForwardResponseMessage
+	forward_BanAppGw_UpdateBanApp_0 = runtime.ForwardResponseMessage
 
-	forward_AppUserGatewayBanApp_DeleteBanApp_0 = runtime.ForwardResponseMessage
+	forward_BanAppGw_DeleteBanApp_0 = runtime.ForwardResponseMessage
 )

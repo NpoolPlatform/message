@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "AppUser"
+      "name": "AppUserGw"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/create/user/with/secret": {
       "post": {
-        "operationId": "AppUser_CreateUserWithSecret",
+        "operationId": "AppUserGw_CreateUserWithSecret",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "AppUser"
+          "AppUserGw"
         ]
       }
     },
     "/v1/get/app/userinfo": {
       "post": {
-        "operationId": "AppUser_GetAppUserInfo",
+        "operationId": "AppUserGw_GetAppUserInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "AppUser"
+          "AppUserGw"
         ]
       }
     },
     "/v1/get/app/userinfos": {
       "post": {
-        "operationId": "AppUser_GetAppUserInfos",
+        "operationId": "AppUserGw_GetAppUserInfos",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -108,13 +108,13 @@
           }
         ],
         "tags": [
-          "AppUser"
+          "AppUserGw"
         ]
       }
     },
     "/v1/get/user/roles/by/user": {
       "post": {
-        "operationId": "AppUser_GetUserRolesByUser",
+        "operationId": "AppUserGw_GetUserRolesByUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -140,13 +140,13 @@
           }
         ],
         "tags": [
-          "AppUser"
+          "AppUserGw"
         ]
       }
     },
     "/v1/get/userinfo": {
       "post": {
-        "operationId": "AppUser_GetUserInfo",
+        "operationId": "AppUserGw_GetUserInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -172,13 +172,13 @@
           }
         ],
         "tags": [
-          "AppUser"
+          "AppUserGw"
         ]
       }
     },
     "/v1/get/userinfos": {
       "post": {
-        "operationId": "AppUser_GetUserInfos",
+        "operationId": "AppUserGw_GetUserInfos",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -204,13 +204,13 @@
           }
         ],
         "tags": [
-          "AppUser"
+          "AppUserGw"
         ]
       }
     },
     "/v2/create/user": {
       "post": {
-        "operationId": "AppUser_CreateUser",
+        "operationId": "AppUserGw_CreateUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -236,13 +236,13 @@
           }
         ],
         "tags": [
-          "AppUser"
+          "AppUserGw"
         ]
       }
     },
     "/v2/get/app/account/user": {
       "post": {
-        "operationId": "AppUser_GetUserByAccount",
+        "operationId": "AppUserGw_GetUserByAccount",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -268,13 +268,13 @@
           }
         ],
         "tags": [
-          "AppUser"
+          "AppUserGw"
         ]
       }
     },
     "/v2/get/app/user": {
       "post": {
-        "operationId": "AppUser_GetAppUser",
+        "operationId": "AppUserGw_GetAppUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -300,13 +300,13 @@
           }
         ],
         "tags": [
-          "AppUser"
+          "AppUserGw"
         ]
       }
     },
     "/v2/get/user": {
       "post": {
-        "operationId": "AppUser_GetUser",
+        "operationId": "AppUserGw_GetUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -332,13 +332,13 @@
           }
         ],
         "tags": [
-          "AppUser"
+          "AppUserGw"
         ]
       }
     },
     "/v2/update/user": {
       "post": {
-        "operationId": "AppUser_UpdateUser",
+        "operationId": "AppUserGw_UpdateUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -364,7 +364,7 @@
           }
         ],
         "tags": [
-          "AppUser"
+          "AppUserGw"
         ]
       }
     }

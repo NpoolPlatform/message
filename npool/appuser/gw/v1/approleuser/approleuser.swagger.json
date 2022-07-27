@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "AppRoleUser"
+      "name": "AppRoleUserGw"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/delete/role/user": {
       "post": {
-        "operationId": "AppRoleUser_DeleteRoleUser",
+        "operationId": "AppRoleUserGw_DeleteRoleUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "AppRoleUser"
+          "AppRoleUserGw"
         ]
       }
     },
     "/v2/create/app/user/role/user": {
       "post": {
-        "operationId": "AppRoleUser_CreateAppUserRoleUser",
+        "operationId": "AppRoleUserGw_CreateAppUserRoleUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "AppRoleUser"
+          "AppRoleUserGw"
         ]
       }
     },
     "/v2/create/role/user": {
       "post": {
-        "operationId": "AppRoleUser_CreateRoleUser",
+        "operationId": "AppRoleUserGw_CreateRoleUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -108,13 +108,13 @@
           }
         ],
         "tags": [
-          "AppRoleUser"
+          "AppRoleUserGw"
         ]
       }
     },
     "/v2/create/user/role/user": {
       "post": {
-        "operationId": "AppRoleUser_CreateUserRoleUser",
+        "operationId": "AppRoleUserGw_CreateUserRoleUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -140,13 +140,13 @@
           }
         ],
         "tags": [
-          "AppRoleUser"
+          "AppRoleUserGw"
         ]
       }
     },
     "/v2/get/app/role/users": {
       "post": {
-        "operationId": "AppRoleUser_GetAppRoleUsers",
+        "operationId": "AppRoleUserGw_GetAppRoleUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -172,13 +172,13 @@
           }
         ],
         "tags": [
-          "AppRoleUser"
+          "AppRoleUserGw"
         ]
       }
     },
     "/v2/get/app/role/users/by/role": {
       "post": {
-        "operationId": "AppRoleUser_GetAppRoleUsersByRole",
+        "operationId": "AppRoleUserGw_GetAppRoleUsersByRole",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -204,13 +204,13 @@
           }
         ],
         "tags": [
-          "AppRoleUser"
+          "AppRoleUserGw"
         ]
       }
     },
     "/v2/get/role/user": {
       "post": {
-        "operationId": "AppRoleUser_GetRoleUser",
+        "operationId": "AppRoleUserGw_GetRoleUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -236,13 +236,13 @@
           }
         ],
         "tags": [
-          "AppRoleUser"
+          "AppRoleUserGw"
         ]
       }
     },
     "/v2/get/role/users": {
       "post": {
-        "operationId": "AppRoleUser_GetRoleUsers",
+        "operationId": "AppRoleUserGw_GetRoleUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -268,13 +268,13 @@
           }
         ],
         "tags": [
-          "AppRoleUser"
+          "AppRoleUserGw"
         ]
       }
     },
     "/v2/get/role/users/by/role": {
       "post": {
-        "operationId": "AppRoleUser_GetRoleUsersByRole",
+        "operationId": "AppRoleUserGw_GetRoleUsersByRole",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -300,13 +300,13 @@
           }
         ],
         "tags": [
-          "AppRoleUser"
+          "AppRoleUserGw"
         ]
       }
     },
     "/v2/get/role/users/by/user": {
       "post": {
-        "operationId": "AppRoleUser_GetRoleUserByUsers",
+        "operationId": "AppRoleUserGw_GetRoleUserByUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -332,7 +332,7 @@
           }
         ],
         "tags": [
-          "AppRoleUser"
+          "AppRoleUserGw"
         ]
       }
     }

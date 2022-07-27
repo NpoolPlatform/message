@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "AppUserThirdParty"
+      "name": "AppUserThirdPartyGw"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v2/create/third/party": {
       "post": {
-        "operationId": "AppUserThirdParty_CreateThirdParty",
+        "operationId": "AppUserThirdPartyGw_CreateThirdParty",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,7 +44,7 @@
           }
         ],
         "tags": [
-          "AppUserThirdParty"
+          "AppUserThirdPartyGw"
         ]
       }
     }
