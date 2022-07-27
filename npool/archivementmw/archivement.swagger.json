@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "ArchivementManager"
+      "name": "ArchivementMiddleware"
     }
   ],
   "consumes": [
@@ -19,7 +19,7 @@
     "/v1/version": {
       "post": {
         "summary": "Method Version",
-        "operationId": "ArchivementManager_Version",
+        "operationId": "ArchivementMiddleware_Version",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -45,7 +45,7 @@
           }
         ],
         "tags": [
-          "ArchivementManager"
+          "ArchivementMiddleware"
         ]
       }
     }

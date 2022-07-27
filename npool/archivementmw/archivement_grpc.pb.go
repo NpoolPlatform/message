@@ -20,88 +20,88 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// ArchivementManagerClient is the client API for ArchivementManager service.
+// ArchivementMiddlewareClient is the client API for ArchivementMiddleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type ArchivementManagerClient interface {
+type ArchivementMiddlewareClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 }
 
-type archivementManagerClient struct {
+type archivementMiddlewareClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewArchivementManagerClient(cc grpc.ClientConnInterface) ArchivementManagerClient {
-	return &archivementManagerClient{cc}
+func NewArchivementMiddlewareClient(cc grpc.ClientConnInterface) ArchivementMiddlewareClient {
+	return &archivementMiddlewareClient{cc}
 }
 
-func (c *archivementManagerClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+func (c *archivementMiddlewareClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/archivement.middleware.v1.ArchivementManager/Version", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/archivement.middleware.v1.ArchivementMiddleware/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ArchivementManagerServer is the server API for ArchivementManager service.
-// All implementations must embed UnimplementedArchivementManagerServer
+// ArchivementMiddlewareServer is the server API for ArchivementMiddleware service.
+// All implementations must embed UnimplementedArchivementMiddlewareServer
 // for forward compatibility
-type ArchivementManagerServer interface {
+type ArchivementMiddlewareServer interface {
 	// Method Version
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
-	mustEmbedUnimplementedArchivementManagerServer()
+	mustEmbedUnimplementedArchivementMiddlewareServer()
 }
 
-// UnimplementedArchivementManagerServer must be embedded to have forward compatible implementations.
-type UnimplementedArchivementManagerServer struct {
+// UnimplementedArchivementMiddlewareServer must be embedded to have forward compatible implementations.
+type UnimplementedArchivementMiddlewareServer struct {
 }
 
-func (UnimplementedArchivementManagerServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
+func (UnimplementedArchivementMiddlewareServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
-func (UnimplementedArchivementManagerServer) mustEmbedUnimplementedArchivementManagerServer() {}
+func (UnimplementedArchivementMiddlewareServer) mustEmbedUnimplementedArchivementMiddlewareServer() {}
 
-// UnsafeArchivementManagerServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ArchivementManagerServer will
+// UnsafeArchivementMiddlewareServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ArchivementMiddlewareServer will
 // result in compilation errors.
-type UnsafeArchivementManagerServer interface {
-	mustEmbedUnimplementedArchivementManagerServer()
+type UnsafeArchivementMiddlewareServer interface {
+	mustEmbedUnimplementedArchivementMiddlewareServer()
 }
 
-func RegisterArchivementManagerServer(s grpc.ServiceRegistrar, srv ArchivementManagerServer) {
-	s.RegisterService(&ArchivementManager_ServiceDesc, srv)
+func RegisterArchivementMiddlewareServer(s grpc.ServiceRegistrar, srv ArchivementMiddlewareServer) {
+	s.RegisterService(&ArchivementMiddleware_ServiceDesc, srv)
 }
 
-func _ArchivementManager_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ArchivementMiddleware_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivementManagerServer).Version(ctx, in)
+		return srv.(ArchivementMiddlewareServer).Version(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/archivement.middleware.v1.ArchivementManager/Version",
+		FullMethod: "/archivement.middleware.v1.ArchivementMiddleware/Version",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivementManagerServer).Version(ctx, req.(*emptypb.Empty))
+		return srv.(ArchivementMiddlewareServer).Version(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// ArchivementManager_ServiceDesc is the grpc.ServiceDesc for ArchivementManager service.
+// ArchivementMiddleware_ServiceDesc is the grpc.ServiceDesc for ArchivementMiddleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var ArchivementManager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "archivement.middleware.v1.ArchivementManager",
-	HandlerType: (*ArchivementManagerServer)(nil),
+var ArchivementMiddleware_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "archivement.middleware.v1.ArchivementMiddleware",
+	HandlerType: (*ArchivementMiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Version",
-			Handler:    _ArchivementManager_Version_Handler,
+			Handler:    _ArchivementMiddleware_Version_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

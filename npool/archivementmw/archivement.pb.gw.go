@@ -32,7 +32,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_ArchivementManager_Version_0(ctx context.Context, marshaler runtime.Marshaler, client ArchivementManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_ArchivementMiddleware_Version_0(ctx context.Context, marshaler runtime.Marshaler, client ArchivementMiddlewareClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
@@ -49,7 +49,7 @@ func request_ArchivementManager_Version_0(ctx context.Context, marshaler runtime
 
 }
 
-func local_request_ArchivementManager_Version_0(ctx context.Context, marshaler runtime.Marshaler, server ArchivementManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_ArchivementMiddleware_Version_0(ctx context.Context, marshaler runtime.Marshaler, server ArchivementMiddlewareServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
@@ -66,24 +66,24 @@ func local_request_ArchivementManager_Version_0(ctx context.Context, marshaler r
 
 }
 
-// RegisterArchivementManagerHandlerServer registers the http handlers for service ArchivementManager to "mux".
-// UnaryRPC     :call ArchivementManagerServer directly.
+// RegisterArchivementMiddlewareHandlerServer registers the http handlers for service ArchivementMiddleware to "mux".
+// UnaryRPC     :call ArchivementMiddlewareServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterArchivementManagerHandlerFromEndpoint instead.
-func RegisterArchivementManagerHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ArchivementManagerServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterArchivementMiddlewareHandlerFromEndpoint instead.
+func RegisterArchivementMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ArchivementMiddlewareServer) error {
 
-	mux.Handle("POST", pattern_ArchivementManager_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ArchivementMiddleware_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/archivement.middleware.v1.ArchivementManager/Version", runtime.WithHTTPPathPattern("/v1/version"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/archivement.middleware.v1.ArchivementMiddleware/Version", runtime.WithHTTPPathPattern("/v1/version"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ArchivementManager_Version_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ArchivementMiddleware_Version_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -91,16 +91,16 @@ func RegisterArchivementManagerHandlerServer(ctx context.Context, mux *runtime.S
 			return
 		}
 
-		forward_ArchivementManager_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ArchivementMiddleware_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterArchivementManagerHandlerFromEndpoint is same as RegisterArchivementManagerHandler but
+// RegisterArchivementMiddlewareHandlerFromEndpoint is same as RegisterArchivementMiddlewareHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterArchivementManagerHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterArchivementMiddlewareHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -120,39 +120,39 @@ func RegisterArchivementManagerHandlerFromEndpoint(ctx context.Context, mux *run
 		}()
 	}()
 
-	return RegisterArchivementManagerHandler(ctx, mux, conn)
+	return RegisterArchivementMiddlewareHandler(ctx, mux, conn)
 }
 
-// RegisterArchivementManagerHandler registers the http handlers for service ArchivementManager to "mux".
+// RegisterArchivementMiddlewareHandler registers the http handlers for service ArchivementMiddleware to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterArchivementManagerHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterArchivementManagerHandlerClient(ctx, mux, NewArchivementManagerClient(conn))
+func RegisterArchivementMiddlewareHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterArchivementMiddlewareHandlerClient(ctx, mux, NewArchivementMiddlewareClient(conn))
 }
 
-// RegisterArchivementManagerHandlerClient registers the http handlers for service ArchivementManager
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "ArchivementManagerClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "ArchivementManagerClient"
+// RegisterArchivementMiddlewareHandlerClient registers the http handlers for service ArchivementMiddleware
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "ArchivementMiddlewareClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "ArchivementMiddlewareClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "ArchivementManagerClient" to call the correct interceptors.
-func RegisterArchivementManagerHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ArchivementManagerClient) error {
+// "ArchivementMiddlewareClient" to call the correct interceptors.
+func RegisterArchivementMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ArchivementMiddlewareClient) error {
 
-	mux.Handle("POST", pattern_ArchivementManager_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ArchivementMiddleware_Version_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/archivement.middleware.v1.ArchivementManager/Version", runtime.WithHTTPPathPattern("/v1/version"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/archivement.middleware.v1.ArchivementMiddleware/Version", runtime.WithHTTPPathPattern("/v1/version"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ArchivementManager_Version_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ArchivementMiddleware_Version_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ArchivementManager_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ArchivementMiddleware_Version_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -160,9 +160,9 @@ func RegisterArchivementManagerHandlerClient(ctx context.Context, mux *runtime.S
 }
 
 var (
-	pattern_ArchivementManager_Version_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "version"}, ""))
+	pattern_ArchivementMiddleware_Version_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "version"}, ""))
 )
 
 var (
-	forward_ArchivementManager_Version_0 = runtime.ForwardResponseMessage
+	forward_ArchivementMiddleware_Version_0 = runtime.ForwardResponseMessage
 )
