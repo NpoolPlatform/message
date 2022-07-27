@@ -1,0 +1,183 @@
+syntax = "proto3";
+
+package app.user.gateway.approleuser.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appusergw/approleuser";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/appuser/mgr/v2/approleuser/approleuser.proto";
+
+service AppRoleUser {
+
+  rpc CreateRoleUser (CreateRoleUserRequest) returns (CreateRoleUserResponse) {
+    option (google.api.http) = {
+      post: "/v2/create/role/user"
+      body: "*"
+    };
+  }
+
+  rpc CreateAppUserRoleUser(CreateAppUserRoleUserRequest) returns (CreateAppUserRoleUserResponse) {
+    option (google.api.http) = {
+      post: "/v2/create/app/user/role/user"
+      body: "*"
+    };
+  }
+
+  rpc CreateUserRoleUser (CreateUserRoleUserRequest) returns (CreateUserRoleUserResponse) {
+    option (google.api.http) = {
+      post: "/v2/create/user/role/user"
+      body: "*"
+    };
+  }
+
+  rpc GetRoleUser (GetRoleUserRequest) returns (GetRoleUserResponse) {
+    option (google.api.http) = {
+      post: "/v2/get/role/user"
+      body: "*"
+    };
+  }
+
+  rpc GetRoleUserByUsers (GetRoleUserByUsersRequest) returns (GetRoleUserByUsersResponse) {
+    option (google.api.http) = {
+      post: "/v2/get/role/users/by/user"
+      body: "*"
+    };
+  }
+
+  rpc GetRoleUsersByRole (GetRoleUsersByRoleRequest) returns (GetRoleUsersByRoleResponse) {
+    option (google.api.http) = {
+      post: "/v2/get/role/users/by/role"
+      body: "*"
+    };
+  }
+
+  rpc GetAppRoleUsersByRole (GetAppRoleUsersByRoleRequest) returns (GetAppRoleUsersByRoleResponse) {
+    option (google.api.http) = {
+      post: "/v2/get/app/role/users/by/role"
+      body: "*"
+    };
+  }
+
+
+  rpc GetRoleUsers (GetRoleUsersRequest) returns (GetRoleUsersResponse) {
+    option (google.api.http) = {
+      post: "/v2/get/role/users"
+      body: "*"
+    };
+  }
+
+  rpc GetAppRoleUsers (GetAppRoleUsersRequest) returns (GetAppRoleUsersResponse) {
+    option (google.api.http) = {
+      post: "/v2/get/app/role/users"
+      body: "*"
+    };
+  }
+
+  rpc DeleteRoleUser (DeleteRoleUserRequest) returns (DeleteRoleUserResponse) {
+    option (google.api.http) = {
+      post: "/v1/delete/role/user"
+      body: "*"
+    };
+  }
+
+}
+
+message CreateRoleUserRequest {
+  appuser.manager.approleuser.v2.AppRoleUserReq Info = 10;
+}
+
+message CreateRoleUserResponse {
+  appuser.manager.approleuser.v2.AppRoleUser Info = 10;
+}
+
+message CreateAppUserRoleUserRequest {
+  string TargetAppID = 10;
+  string TargetUserID = 20;
+  appuser.manager.approleuser.v2.AppRoleUserReq Info = 30;
+}
+
+message CreateAppUserRoleUserResponse {
+  appuser.manager.approleuser.v2.AppRoleUser Info = 10;
+}
+
+message CreateUserRoleUserRequest {
+  string TargetUserID = 10;
+  appuser.manager.approleuser.v2.AppRoleUserReq Info = 20;
+}
+
+message CreateUserRoleUserResponse {
+  appuser.manager.approleuser.v2.AppRoleUser Info = 10;
+}
+
+message GetRoleUserRequest {
+  string ID = 10;
+}
+
+message GetRoleUserResponse {
+  appuser.manager.approleuser.v2.AppRoleUser Info = 10;
+}
+
+message GetRoleUserByUsersRequest {
+  string AppID = 10;
+  string UserID = 20;
+}
+
+message GetRoleUserByUsersResponse {
+  repeated appuser.manager.approleuser.v2.AppRoleUser Infos = 10;
+}
+
+message GetRoleUsersByRoleRequest {
+  string AppID = 10;
+  string RoleID = 20;
+  int32 Limit = 30;
+  int32 Offset = 40;
+}
+
+message GetRoleUsersByRoleResponse {
+  repeated appuser.manager.approleuser.v2.AppRoleUser Infos = 10;
+  uint32 Total = 20;
+}
+
+message GetAppRoleUsersByRoleRequest {
+  string RoleID = 10;
+  string TargetAppID = 20;
+  int32 Limit = 30;
+  int32 Offset = 40;
+}
+
+message GetAppRoleUsersByRoleResponse {
+  repeated appuser.manager.approleuser.v2.AppRoleUser Infos = 10;
+  uint32 Total = 20;
+}
+
+message GetRoleUsersRequest {
+  string AppID = 10;
+  int32 Limit = 20;
+  int32 Offset = 30;
+}
+
+message GetRoleUsersResponse {
+  repeated appuser.manager.approleuser.v2.AppRoleUser Infos = 10;
+  uint32 Total = 20;
+}
+
+message GetAppRoleUsersRequest {
+  string TargetAppID = 10;
+  int32 Limit = 20;
+  int32 Offset = 30;
+}
+
+message GetAppRoleUsersResponse {
+  repeated appuser.manager.approleuser.v2.AppRoleUser Infos = 10;
+  uint32 Total = 20;
+}
+
+message DeleteRoleUserRequest {
+  string ID = 10;
+}
+
+message DeleteRoleUserResponse {
+  appuser.manager.approleuser.v2.AppRoleUser Info = 10;
+}

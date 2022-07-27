@@ -1,0 +1,31 @@
+
+
+syntax = "proto3";
+
+package app.user.gateway.thirdparty.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appusergw/thirdparty";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/appuser/mgr/v2/appuserthirdparty/appuserthirdparty.proto";
+
+service AppUserThirdParty {
+
+  rpc CreateThirdParty (CreateThirdPartyRequest) returns (CreateThirdPartyResponse) {
+    option (google.api.http) = {
+      post: "/v2/create/third/party"
+      body: "*"
+    };
+  }
+
+}
+
+message CreateThirdPartyRequest {
+  appuser.manager.appuserthirdparty.v2.AppUserThirdPartyReq Info = 10;
+}
+
+message CreateThirdPartyResponse {
+  appuser.manager.appuserthirdparty.v2.AppUserThirdParty Info = 10;
+}

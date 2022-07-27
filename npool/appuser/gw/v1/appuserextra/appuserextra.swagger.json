@@ -1,0 +1,348 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appuser/gw/v1/appuserextra/appuserextra.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AppUserExtra"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v2/create/extra": {
+      "post": {
+        "operationId": "AppUserExtra_CreateExtra",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateExtraResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateExtraRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserExtra"
+        ]
+      }
+    },
+    "/v2/get/app/user/extra": {
+      "post": {
+        "operationId": "AppUserExtra_GetAppUserExtraAppUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appuserextrav1GetAppUserExtraResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appuserextrav1GetAppUserExtraRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserExtra"
+        ]
+      }
+    },
+    "/v2/get/extra": {
+      "post": {
+        "operationId": "AppUserExtra_GetExtra",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetExtraResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetExtraRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserExtra"
+        ]
+      }
+    },
+    "/v2/update/extra": {
+      "post": {
+        "operationId": "AppUserExtra_UpdateExtra",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateExtraResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateExtraRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserExtra"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "appuserextrav1GetAppUserExtraRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "appuserextrav1GetAppUserExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserExtra"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateExtraRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserExtraReq"
+        }
+      }
+    },
+    "v1CreateExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserExtra"
+        }
+      }
+    },
+    "v1GetExtraRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserExtra"
+        }
+      }
+    },
+    "v1UpdateExtraRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserExtraReq"
+        }
+      }
+    },
+    "v1UpdateExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserExtra"
+        }
+      }
+    },
+    "v2AppUserExtra": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Organization": {
+          "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v2AppUserExtraReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Organization": {
+          "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
