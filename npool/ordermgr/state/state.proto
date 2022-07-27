@@ -61,7 +61,7 @@ message State {
 message Conds {
     optional npool.v1.StringVal ID      = 10;
     optional npool.v1.StringVal OrderID = 20;
-    optional npool.v1.Uint32Val State   = 30;
+    optional npool.v1.Int32Val  State   = 30;
 }
 
 
