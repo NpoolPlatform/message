@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package app.user.gateway.banapp.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appusergw/banapp";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/appuser/mgr/v2/banapp/banapp.proto";
+
+service AppUserGatewayBanApp {
+
+  rpc CreateBanApp (CreateBanAppRequest) returns (CreateBanAppResponse) {
+    option (google.api.http) = {
+      post: "/v2/create/ban/app"
+      body: "*"
+    };
+  }
+
+  rpc GetBanApp (GetBanAppRequest) returns (GetBanAppResponse) {
+    option (google.api.http) = {
+      post: "/v2/get/ban/app"
+      body: "*"
+    };
+  }
+
+  rpc GetAppBanApp (GetAppBanAppRequest) returns (GetAppBanAppResponse) {
+    option (google.api.http) = {
+      post: "/v2/get/app/ban/app"
+      body: "*"
+    };
+  }
+
+  rpc UpdateBanApp (UpdateBanAppRequest) returns (UpdateBanAppResponse) {
+    option (google.api.http) = {
+      post: "/v2/update/ban/app"
+      body: "*"
+    };
+  }
+
+  rpc DeleteBanApp (DeleteBanAppRequest) returns (DeleteBanAppResponse) {
+    option (google.api.http) = {
+      post: "/v2/delete/ban/app"
+      body: "*"
+    };
+  }
+
+}
+
+message CreateBanAppRequest {
+  appuser.manager.banapp.v2.BanAppReq Info = 10;
+}
+
+message CreateBanAppResponse {
+  appuser.manager.banapp.v2.BanApp Info = 10;
+}
+
+message GetBanAppRequest {
+  string ID = 10;
+}
+
+message GetBanAppResponse {
+  appuser.manager.banapp.v2.BanApp Info = 10;
+}
+
+
+message GetAppBanAppRequest {
+  string AppID = 10;
+}
+
+message GetAppBanAppResponse {
+  appuser.manager.banapp.v2.BanApp Info = 10;
+}
+
+message UpdateBanAppRequest {
+  appuser.manager.banapp.v2.BanAppReq Info = 10;
+}
+
+message UpdateBanAppResponse {
+  appuser.manager.banapp.v2.BanApp Info = 10;
+}
+
+message DeleteBanAppRequest {
+  string ID = 10;
+}
+
+message DeleteBanAppResponse {
+  appuser.manager.banapp.v2.BanApp Info = 10;
+}

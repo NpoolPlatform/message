@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package app.user.gateway.appuserextra.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appusergw/appuserextra";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/appuser/mgr/v2/appuserextra/appuserextra.proto";
+
+service AppUserExtra {
+
+  rpc CreateExtra (CreateExtraRequest) returns (CreateExtraResponse) {
+    option (google.api.http) = {
+      post: "/v2/create/extra"
+      body: "*"
+    };
+  }
+  rpc GetExtra (GetExtraRequest) returns (GetExtraResponse) {
+    option (google.api.http) = {
+      post: "/v2/get/extra"
+      body: "*"
+    };
+  }
+  rpc GetAppUserExtraAppUser (GetAppUserExtraRequest) returns (GetAppUserExtraResponse) {
+    option (google.api.http) = {
+      post: "/v2/get/app/user/extra"
+      body: "*"
+    };
+  }
+  rpc UpdateExtra (UpdateExtraRequest) returns (UpdateExtraResponse) {
+    option (google.api.http) = {
+      post: "/v2/update/extra"
+      body: "*"
+    };
+  }
+
+}
+
+message CreateExtraRequest {
+  appuser.manager.appuserextra.v2.AppUserExtraReq Info = 10;
+}
+
+message CreateExtraResponse {
+  appuser.manager.appuserextra.v2.AppUserExtra Info = 10;
+}
+
+message GetExtraRequest {
+  string ID = 10;
+}
+
+message GetExtraResponse {
+  appuser.manager.appuserextra.v2.AppUserExtra Info = 10;
+}
+
+message GetAppUserExtraRequest {
+  string TargetAppID = 10;
+  string UserID = 20;
+}
+
+message GetAppUserExtraResponse {
+  appuser.manager.appuserextra.v2.AppUserExtra Info = 10;
+}
+
+message UpdateExtraRequest {
+  appuser.manager.appuserextra.v2.AppUserExtraReq Info = 10;
+}
+
+message UpdateExtraResponse {
+  appuser.manager.appuserextra.v2.AppUserExtra Info = 10;
+}
