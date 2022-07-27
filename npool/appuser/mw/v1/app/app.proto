@@ -1,66 +1,70 @@
 syntax = "proto3";
 
-package app.user.middleware.app.v2;
+package appuser.middleware.app.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/appusermw/app";
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/app";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
-service AppUserMiddlewareApp {
-  rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){}
-
-  rpc GetAppInfo (GetAppInfoRequest) returns (GetAppInfoResponse) {}
-
-  rpc GetAppInfos (GetAppInfosRequest) returns (GetAppInfosResponse) {}
-
-  rpc GetAppInfosByCreator (GetAppInfosByCreatorRequest) returns (GetAppInfosByCreatorResponse) {}
+service AppMw {
+    rpc GetApp      (GetAppRequest)      returns (GetAppResponse)      {}
+    rpc GetApps     (GetAppsRequest)     returns (GetAppsResponse)     {}
+    rpc GetUserApps (GetUserAppsRequest) returns (GetUserAppsResponse) {}
 
 }
 
-message AppInfo {
-  string id = 20;
-  string createdBy = 30;
-  string Name = 40;
-  string Logo = 50;
-  uint32 CreatedAt = 60;
-  string Description = 10;
-  bool IsBanApp = 80;
-  string BanAppMessage = 90;
-  repeated string SignupMethods = 100;
-  repeated string ExternSigninMethods = 110;
-  string RecaptchaMethod = 120;
-  bool KycEnable = 130;
-  bool SigninVerifyEnable = 140;
-  bool InvitationCodeMust = 150;
+message App {
+    // Base info
+    string          ID                 = 10;
+    string          CreatedBy          = 20;
+    string          Name               = 30;
+    string          Logo               = 40;
+    string          Description        = 50;
+
+    // Banned
+    bool            Banned             = 60;
+    string          BanMessage         = 70;
+
+    // Sign methods
+    repeated string SignupMethods      = 80;
+    repeated string ExtSigninMethods   = 90;
+
+    // Control flag
+    string          RecaptchaMethod    = 100;
+    bool            KycEnable          = 110;
+    bool            SigninVerifyEnable = 120;
+    bool            InvitationCodeMust = 130;
+
+    string          CreateAt           = 140;
 }
 
-message GetAppInfoRequest {
-  string ID = 10;
+message GetAppRequest {
+    string ID = 10;
 }
 
-message GetAppInfoResponse {
-  AppInfo Info = 10;
+message GetAppResponse {
+    App Info = 10;
 }
 
 
-message GetAppInfosRequest {
-  int32 Offset = 10;
-  int32 Limit = 20;
+message GetAppsRequest {
+    int32 Offset = 10;
+    int32 Limit  = 20;
 }
 
-message GetAppInfosResponse {
-  repeated AppInfo Infos = 10;
-  uint32 Total = 20;
+message GetAppsResponse {
+    repeated App Infos = 10;
+    uint32       Total = 20;
 }
 
-message GetAppInfosByCreatorRequest {
-  string UserID = 10;
-  int32 Offset = 20;
-  int32 Limit = 30;
+message GetUserAppsRequest {
+    string UserID = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
 }
 
-message GetAppInfosByCreatorResponse {
-  repeated AppInfo Infos = 10;
-  uint32 Total = 20;
+message GetUserAppsResponse {
+    repeated App Infos = 10;
+    uint32       Total = 20;
 }
