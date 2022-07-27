@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package app.user.middleware.admin.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appusermw/admin";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/appusermgrv2/approleuser/approleuser.proto";
+import "npool/appusermgrv2/appuser/appuser.proto";
+import "npool/appusermgrv2/appusersecret/appusersecret.proto";
+
+service AppUserMiddlewareAdmin {
+    rpc CreateGenesisRoleUser (CreateGenesisRoleUserRequest) returns (CreateGenesisRoleUserResponse) {}
+}
+
+message CreateGenesisRoleUserRequest {
+  .app.user.manager.appuser.v2.AppUser User = 10;
+  .app.user.manager.appusersecret.v2.AppUserSecret Secret = 20;
+
+}
+
+message CreateGenesisRoleUserResponse {
+  .app.user.manager.appuser.v2.AppUser User = 10;
+  .app.user.manager.approleuser.v2.AppRoleUser RoleUser = 20;
+}

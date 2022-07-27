@@ -55,6 +55,20 @@
         }
       }
     },
+    "v1StringSlicesVal": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Op": {
+          "type": "string"
+        }
+      }
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -129,6 +143,9 @@
         },
         "Default": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "IDIn": {
+          "$ref": "#/definitions/v1StringSlicesVal"
         }
       }
     },

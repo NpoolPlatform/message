@@ -89,6 +89,8 @@ service AppUserManager {
             body: "*"
         };
     }
+
+
     rpc CreateBanApp (CreateBanAppRequest) returns (CreateBanAppResponse) {
         option (google.api.http) = {
             post: "/v1/create/ban/app"
@@ -101,6 +103,7 @@ service AppUserManager {
             body: "*"
         };
     }
+
     rpc GetBanAppByApp (GetBanAppByAppRequest) returns (GetBanAppByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/ban/app/by/app"
@@ -126,12 +129,14 @@ service AppUserManager {
             body: "*"
         };
     }
+
     rpc GetAppInfos (GetAppInfosRequest) returns (GetAppInfosResponse) {
         option (google.api.http) = {
             post: "/v1/get/appinfos"
             body: "*"
         };
     }
+
     rpc GetAppInfosByCreator (GetAppInfosByCreatorRequest) returns (GetAppInfosByCreatorResponse) {
         option (google.api.http) = {
             post: "/v1/get/appinfos/by/creator"
@@ -181,6 +186,9 @@ service AppUserManager {
             body: "*"
         };
     }
+
+
+
     rpc CreateAppUserSecret (CreateAppUserSecretRequest) returns (CreateAppUserSecretResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/user/secret"
@@ -205,6 +213,7 @@ service AppUserManager {
             body: "*"
         };
     }
+
     rpc CreateAppUserExtra (CreateAppUserExtraRequest) returns (CreateAppUserExtraResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/user/extra"
@@ -235,6 +244,8 @@ service AppUserManager {
             body: "*"
         };
     }
+
+
     rpc GetBanAppUser (GetBanAppUserRequest) returns (GetBanAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/ban/app/user"
@@ -284,6 +295,7 @@ service AppUserManager {
             body: "*"
         };
     }
+
 
     rpc CreateGenesisRole (CreateGenesisRoleRequest) returns (CreateGenesisRoleResponse) {
         option (google.api.http) = {
@@ -360,6 +372,8 @@ service AppUserManager {
             body: "*"
         };
     }
+
+
     rpc CreateAppRoleUserForOtherAppUser (CreateAppRoleUserForOtherAppUserRequest) returns (CreateAppRoleUserForOtherAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/role/user/for/other/app/user"
@@ -396,6 +410,7 @@ service AppUserManager {
             body: "*"
         };
     }
+
     rpc GetAppRoleUsersByApp (GetAppRoleUsersByAppRequest) returns (GetAppRoleUsersByAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/role/users/by/app"
@@ -408,6 +423,7 @@ service AppUserManager {
             body: "*"
         };
     }
+
     rpc GetUserRolesByAppUser (GetUserRolesByAppUserRequest) returns (GetUserRolesByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/roles/by/app/user"
@@ -484,14 +500,12 @@ service AppUserManager {
 }
 
 message App {
-  // @gotags: json:"id,omitempty"
-  string ID = 10;
-  // @gotags: json:"created_by,omitempty"
-  string CreatedBy = 20;
-  string Name = 30;
-  string Logo = 40;
-  string Description = 50;
-  uint32 CreateAt = 60;
+    string ID = 10;
+    string CreatedBy = 20;
+    string Name = 30;
+    string Logo = 40;
+    string Description = 50;
+    uint32 CreateAt = 60;
 }
 
 message CreateAdminAppsRequest {
@@ -564,8 +578,7 @@ message AppControl {
 }
 
 message CreateAppControlRequest {
-  // @gotags: json:"info,omitempty"
-  AppControl Info = 10;
+    AppControl Info = 10;
 }
 
 message CreateAppControlResponse {

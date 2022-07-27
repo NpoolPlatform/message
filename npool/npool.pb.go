@@ -563,6 +563,61 @@ func (x *BoolVal) GetOp() string {
 	return ""
 }
 
+type StringSlicesVal struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Value []string `protobuf:"bytes,10,rep,name=Value,proto3" json:"Value,omitempty"`
+	Op    string   `protobuf:"bytes,20,opt,name=Op,proto3" json:"Op,omitempty"`
+}
+
+func (x *StringSlicesVal) Reset() {
+	*x = StringSlicesVal{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_npool_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *StringSlicesVal) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StringSlicesVal) ProtoMessage() {}
+
+func (x *StringSlicesVal) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_npool_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StringSlicesVal.ProtoReflect.Descriptor instead.
+func (*StringSlicesVal) Descriptor() ([]byte, []int) {
+	return file_npool_npool_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *StringSlicesVal) GetValue() []string {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+func (x *StringSlicesVal) GetOp() string {
+	if x != nil {
+		return x.Op
+	}
+	return ""
+}
+
 var File_npool_npool_proto protoreflect.FileDescriptor
 
 var file_npool_npool_proto_rawDesc = []byte{
@@ -602,10 +657,20 @@ var file_npool_npool_proto_rawDesc = []byte{
 	0x52, 0x02, 0x4f, 0x70, 0x22, 0x2f, 0x0a, 0x07, 0x42, 0x6f, 0x6f, 0x6c, 0x56, 0x61, 0x6c, 0x12,
 	0x14, 0x0a, 0x05, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x05,
 	0x56, 0x61, 0x6c, 0x75, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x4f, 0x70, 0x18, 0x14, 0x20, 0x01, 0x28,
+<<<<<<< HEAD
 	0x09, 0x52, 0x02, 0x4f, 0x70, 0x42, 0x28, 0x5a, 0x26, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
 	0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72,
 	0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x62,
 	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+=======
+	0x09, 0x52, 0x02, 0x4f, 0x70, 0x22, 0x37, 0x0a, 0x0f, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x53,
+	0x6c, 0x69, 0x63, 0x65, 0x73, 0x56, 0x61, 0x6c, 0x12, 0x14, 0x0a, 0x05, 0x56, 0x61, 0x6c, 0x75,
+	0x65, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x09, 0x52, 0x05, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x12, 0x0e,
+	0x0a, 0x02, 0x4f, 0x70, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x4f, 0x70, 0x42, 0x28,
+	0x5a, 0x26, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f,
+	0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61,
+	0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+>>>>>>> 1a083f4eb348e6df5bb3c1ae9ab03571d55b29f0
 }
 
 var (
@@ -620,7 +685,7 @@ func file_npool_npool_proto_rawDescGZIP() []byte {
 	return file_npool_npool_proto_rawDescData
 }
 
-var file_npool_npool_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_npool_npool_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_npool_npool_proto_goTypes = []interface{}{
 	(*PageInfo)(nil),        // 0: npool.v1.PageInfo
 	(*VersionResponse)(nil), // 1: npool.v1.VersionResponse
@@ -632,10 +697,11 @@ var file_npool_npool_proto_goTypes = []interface{}{
 	(*DoubleVal)(nil),       // 7: npool.v1.DoubleVal
 	(*StringVal)(nil),       // 8: npool.v1.StringVal
 	(*BoolVal)(nil),         // 9: npool.v1.BoolVal
-	(*structpb.Value)(nil),  // 10: google.protobuf.Value
+	(*StringSlicesVal)(nil), // 10: npool.v1.StringSlicesVal
+	(*structpb.Value)(nil),  // 11: google.protobuf.Value
 }
 var file_npool_npool_proto_depIdxs = []int32{
-	10, // 0: npool.v1.FilterCond.Val:type_name -> google.protobuf.Value
+	11, // 0: npool.v1.FilterCond.Val:type_name -> google.protobuf.Value
 	1,  // [1:1] is the sub-list for method output_type
 	1,  // [1:1] is the sub-list for method input_type
 	1,  // [1:1] is the sub-list for extension type_name
@@ -769,6 +835,18 @@ func file_npool_npool_proto_init() {
 				return nil
 			}
 		}
+		file_npool_npool_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*StringSlicesVal); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -776,7 +854,7 @@ func file_npool_npool_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_npool_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   10,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

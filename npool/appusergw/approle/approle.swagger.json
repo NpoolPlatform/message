@@ -1,0 +1,473 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appusergw/approle/approle.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AppUserGatewayAppRole"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v2/create/app/role": {
+      "post": {
+        "operationId": "AppUserGatewayAppRole_CreateAppRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/approlev1CreateAppRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/approlev1CreateAppRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppRole"
+        ]
+      }
+    },
+    "/v2/create/role": {
+      "post": {
+        "operationId": "AppUserGatewayAppRole_CreateRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppRole"
+        ]
+      }
+    },
+    "/v2/get/app/role/by/role": {
+      "post": {
+        "operationId": "AppUserGatewayAppRole_GetAppRoleByRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleByRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleByRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppRole"
+        ]
+      }
+    },
+    "/v2/get/app/roles": {
+      "post": {
+        "operationId": "AppUserGatewayAppRole_GetAppRoles",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/approlev1GetAppRolesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/approlev1GetAppRolesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppRole"
+        ]
+      }
+    },
+    "/v2/get/role": {
+      "post": {
+        "operationId": "AppUserGatewayAppRole_GetRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppRole"
+        ]
+      }
+    },
+    "/v2/get/roles": {
+      "post": {
+        "operationId": "AppUserGatewayAppRole_GetRoles",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRolesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRolesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppRole"
+        ]
+      }
+    },
+    "/v2/update/app/role": {
+      "post": {
+        "operationId": "AppUserGatewayAppRole_UpdateRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppUserGatewayAppRole"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "approlev1CreateAppRoleRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v2AppRoleReq"
+        }
+      }
+    },
+    "approlev1CreateAppRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRole"
+        }
+      }
+    },
+    "approlev1GetAppRolesRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "approlev1GetAppRolesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppRole"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateRoleRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v2AppRoleReq"
+        }
+      }
+    },
+    "v1CreateRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRole"
+        }
+      }
+    },
+    "v1GetAppRoleByRoleRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppRoleByRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRole"
+        }
+      }
+    },
+    "v1GetRoleRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRole"
+        }
+      }
+    },
+    "v1GetRolesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetRolesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppRole"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateRoleRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRoleReq"
+        }
+      }
+    },
+    "v1UpdateRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRole"
+        }
+      }
+    },
+    "v2AppRole": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Default": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v2AppRoleReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Default": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
