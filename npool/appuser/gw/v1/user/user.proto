@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package appuser.gateway.appuser1.v1;
+package appuser.gateway.user.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/appuser";
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/user";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -12,7 +12,14 @@ import "npool/appuser/mgr/v2/appusersecret/appusersecret.proto";
 import "npool/appuser/mgr/v2/approle/approle.proto";
 import "npool/appuser/mw/v1/user/user.proto";
 
-service AppUserGw {
+service UserGw {
+    rpc Signup (SignupRequest) returns (SignupResponse) {
+        option (google.api.http) = {
+            post: "/v2/signup"
+            body: "*"
+        };
+    }
+
     rpc CreateUser (CreateUserRequest) returns (CreateUserResponse) {
         option (google.api.http) = {
             post: "/v2/create/user"
@@ -34,7 +41,7 @@ service AppUserGw {
         };
     }
 
-    rpc GetAppUsers (GetAppUsersRequest) returns (GetAppUsersResponse) {
+    rpc GetUsers (GetUsersRequest) returns (GetUsersResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/users"
             body: "*"
@@ -42,20 +49,28 @@ service AppUserGw {
     }
 }
 
+message SignupRequest {
+    appuser.manager.appuser.v2.UserReq Info = 10;
+}
+
+message SignupResponse {
+    appuser.manager.appuser.v2.UserReq Info = 10;
+}
+
 message CreateUserRequest {
-    appuser.manager.appuser.v2.AppUserReq Info = 10;
+    appuser.manager.appuser.v2.UserReq Info = 10;
 }
 
 message CreateUserResponse {
-    appuser.manager.appuser.v2.AppUser Info = 10;
+    appuser.manager.appuser.v2.User Info = 10;
 }
 
 message UpdateUserRequest {
-    appuser.manager.appuser.v2.AppUserReq Info = 10;
+    appuser.manager.appuser.v2.UserReq Info = 10;
 }
 
 message UpdateUserResponse {
-    appuser.manager.appuser.v2.AppUser Info = 10;
+    appuser.manager.appuser.v2.User Info = 10;
 }
 
 message GetUsersRequest {
@@ -68,12 +83,12 @@ message GetUsersResponse {
     repeated appuser.middleware.user.v1.User Infos = 10;
 }
 
-message GetAppUsersRequest {
+message GetUsersRequest {
     string TargetAppID = 10;
     int32  Offset      = 20;
     int32  Limit       = 30;
 }
 
-message GetAppUsersResponse {
+message GetUsersResponse {
     repeated appuser.middleware.user.v1.User Infos = 10;
 }
