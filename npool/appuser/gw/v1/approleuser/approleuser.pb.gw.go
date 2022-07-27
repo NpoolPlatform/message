@@ -31,7 +31,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_AppRoleUser_CreateRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppRoleUserGw_CreateRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateRoleUserRequest
 	var metadata runtime.ServerMetadata
 
@@ -48,7 +48,7 @@ func request_AppRoleUser_CreateRoleUser_0(ctx context.Context, marshaler runtime
 
 }
 
-func local_request_AppRoleUser_CreateRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppRoleUserGw_CreateRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateRoleUserRequest
 	var metadata runtime.ServerMetadata
 
@@ -65,7 +65,7 @@ func local_request_AppRoleUser_CreateRoleUser_0(ctx context.Context, marshaler r
 
 }
 
-func request_AppRoleUser_CreateAppUserRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppRoleUserGw_CreateAppUserRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateAppUserRoleUserRequest
 	var metadata runtime.ServerMetadata
 
@@ -82,7 +82,7 @@ func request_AppRoleUser_CreateAppUserRoleUser_0(ctx context.Context, marshaler 
 
 }
 
-func local_request_AppRoleUser_CreateAppUserRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppRoleUserGw_CreateAppUserRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateAppUserRoleUserRequest
 	var metadata runtime.ServerMetadata
 
@@ -99,7 +99,7 @@ func local_request_AppRoleUser_CreateAppUserRoleUser_0(ctx context.Context, mars
 
 }
 
-func request_AppRoleUser_CreateUserRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppRoleUserGw_CreateUserRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateUserRoleUserRequest
 	var metadata runtime.ServerMetadata
 
@@ -116,7 +116,7 @@ func request_AppRoleUser_CreateUserRoleUser_0(ctx context.Context, marshaler run
 
 }
 
-func local_request_AppRoleUser_CreateUserRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppRoleUserGw_CreateUserRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateUserRoleUserRequest
 	var metadata runtime.ServerMetadata
 
@@ -133,7 +133,7 @@ func local_request_AppRoleUser_CreateUserRoleUser_0(ctx context.Context, marshal
 
 }
 
-func request_AppRoleUser_GetRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppRoleUserGw_GetRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetRoleUserRequest
 	var metadata runtime.ServerMetadata
 
@@ -150,7 +150,7 @@ func request_AppRoleUser_GetRoleUser_0(ctx context.Context, marshaler runtime.Ma
 
 }
 
-func local_request_AppRoleUser_GetRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppRoleUserGw_GetRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetRoleUserRequest
 	var metadata runtime.ServerMetadata
 
@@ -167,7 +167,7 @@ func local_request_AppRoleUser_GetRoleUser_0(ctx context.Context, marshaler runt
 
 }
 
-func request_AppRoleUser_GetRoleUserByUsers_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppRoleUserGw_GetRoleUserByUsers_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetRoleUserByUsersRequest
 	var metadata runtime.ServerMetadata
 
@@ -184,7 +184,7 @@ func request_AppRoleUser_GetRoleUserByUsers_0(ctx context.Context, marshaler run
 
 }
 
-func local_request_AppRoleUser_GetRoleUserByUsers_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppRoleUserGw_GetRoleUserByUsers_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetRoleUserByUsersRequest
 	var metadata runtime.ServerMetadata
 
@@ -201,7 +201,7 @@ func local_request_AppRoleUser_GetRoleUserByUsers_0(ctx context.Context, marshal
 
 }
 
-func request_AppRoleUser_GetRoleUsersByRole_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppRoleUserGw_GetRoleUsersByRole_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetRoleUsersByRoleRequest
 	var metadata runtime.ServerMetadata
 
@@ -218,7 +218,7 @@ func request_AppRoleUser_GetRoleUsersByRole_0(ctx context.Context, marshaler run
 
 }
 
-func local_request_AppRoleUser_GetRoleUsersByRole_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppRoleUserGw_GetRoleUsersByRole_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetRoleUsersByRoleRequest
 	var metadata runtime.ServerMetadata
 
@@ -235,7 +235,7 @@ func local_request_AppRoleUser_GetRoleUsersByRole_0(ctx context.Context, marshal
 
 }
 
-func request_AppRoleUser_GetAppRoleUsersByRole_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppRoleUserGw_GetAppRoleUsersByRole_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppRoleUsersByRoleRequest
 	var metadata runtime.ServerMetadata
 
@@ -252,7 +252,7 @@ func request_AppRoleUser_GetAppRoleUsersByRole_0(ctx context.Context, marshaler 
 
 }
 
-func local_request_AppRoleUser_GetAppRoleUsersByRole_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppRoleUserGw_GetAppRoleUsersByRole_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppRoleUsersByRoleRequest
 	var metadata runtime.ServerMetadata
 
@@ -269,7 +269,7 @@ func local_request_AppRoleUser_GetAppRoleUsersByRole_0(ctx context.Context, mars
 
 }
 
-func request_AppRoleUser_GetRoleUsers_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppRoleUserGw_GetRoleUsers_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetRoleUsersRequest
 	var metadata runtime.ServerMetadata
 
@@ -286,7 +286,7 @@ func request_AppRoleUser_GetRoleUsers_0(ctx context.Context, marshaler runtime.M
 
 }
 
-func local_request_AppRoleUser_GetRoleUsers_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppRoleUserGw_GetRoleUsers_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetRoleUsersRequest
 	var metadata runtime.ServerMetadata
 
@@ -303,7 +303,7 @@ func local_request_AppRoleUser_GetRoleUsers_0(ctx context.Context, marshaler run
 
 }
 
-func request_AppRoleUser_GetAppRoleUsers_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppRoleUserGw_GetAppRoleUsers_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppRoleUsersRequest
 	var metadata runtime.ServerMetadata
 
@@ -320,7 +320,7 @@ func request_AppRoleUser_GetAppRoleUsers_0(ctx context.Context, marshaler runtim
 
 }
 
-func local_request_AppRoleUser_GetAppRoleUsers_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppRoleUserGw_GetAppRoleUsers_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppRoleUsersRequest
 	var metadata runtime.ServerMetadata
 
@@ -337,7 +337,7 @@ func local_request_AppRoleUser_GetAppRoleUsers_0(ctx context.Context, marshaler 
 
 }
 
-func request_AppRoleUser_DeleteRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppRoleUserGw_DeleteRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, client AppRoleUserGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DeleteRoleUserRequest
 	var metadata runtime.ServerMetadata
 
@@ -354,7 +354,7 @@ func request_AppRoleUser_DeleteRoleUser_0(ctx context.Context, marshaler runtime
 
 }
 
-func local_request_AppRoleUser_DeleteRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppRoleUserGw_DeleteRoleUser_0(ctx context.Context, marshaler runtime.Marshaler, server AppRoleUserGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DeleteRoleUserRequest
 	var metadata runtime.ServerMetadata
 
@@ -371,24 +371,24 @@ func local_request_AppRoleUser_DeleteRoleUser_0(ctx context.Context, marshaler r
 
 }
 
-// RegisterAppRoleUserHandlerServer registers the http handlers for service AppRoleUser to "mux".
-// UnaryRPC     :call AppRoleUserServer directly.
+// RegisterAppRoleUserGwHandlerServer registers the http handlers for service AppRoleUserGw to "mux".
+// UnaryRPC     :call AppRoleUserGwServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterAppRoleUserHandlerFromEndpoint instead.
-func RegisterAppRoleUserHandlerServer(ctx context.Context, mux *runtime.ServeMux, server AppRoleUserServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterAppRoleUserGwHandlerFromEndpoint instead.
+func RegisterAppRoleUserGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, server AppRoleUserGwServer) error {
 
-	mux.Handle("POST", pattern_AppRoleUser_CreateRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_CreateRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/CreateRoleUser", runtime.WithHTTPPathPattern("/v2/create/role/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/CreateRoleUser", runtime.WithHTTPPathPattern("/v2/create/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppRoleUser_CreateRoleUser_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppRoleUserGw_CreateRoleUser_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -396,22 +396,22 @@ func RegisterAppRoleUserHandlerServer(ctx context.Context, mux *runtime.ServeMux
 			return
 		}
 
-		forward_AppRoleUser_CreateRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_CreateRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_CreateAppUserRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_CreateAppUserRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/CreateAppUserRoleUser", runtime.WithHTTPPathPattern("/v2/create/app/user/role/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/CreateAppUserRoleUser", runtime.WithHTTPPathPattern("/v2/create/app/user/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppRoleUser_CreateAppUserRoleUser_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppRoleUserGw_CreateAppUserRoleUser_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -419,22 +419,22 @@ func RegisterAppRoleUserHandlerServer(ctx context.Context, mux *runtime.ServeMux
 			return
 		}
 
-		forward_AppRoleUser_CreateAppUserRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_CreateAppUserRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_CreateUserRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_CreateUserRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/CreateUserRoleUser", runtime.WithHTTPPathPattern("/v2/create/user/role/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/CreateUserRoleUser", runtime.WithHTTPPathPattern("/v2/create/user/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppRoleUser_CreateUserRoleUser_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppRoleUserGw_CreateUserRoleUser_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -442,22 +442,22 @@ func RegisterAppRoleUserHandlerServer(ctx context.Context, mux *runtime.ServeMux
 			return
 		}
 
-		forward_AppRoleUser_CreateUserRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_CreateUserRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_GetRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_GetRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/GetRoleUser", runtime.WithHTTPPathPattern("/v2/get/role/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/GetRoleUser", runtime.WithHTTPPathPattern("/v2/get/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppRoleUser_GetRoleUser_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppRoleUserGw_GetRoleUser_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -465,22 +465,22 @@ func RegisterAppRoleUserHandlerServer(ctx context.Context, mux *runtime.ServeMux
 			return
 		}
 
-		forward_AppRoleUser_GetRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_GetRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_GetRoleUserByUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_GetRoleUserByUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/GetRoleUserByUsers", runtime.WithHTTPPathPattern("/v2/get/role/users/by/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/GetRoleUserByUsers", runtime.WithHTTPPathPattern("/v2/get/role/users/by/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppRoleUser_GetRoleUserByUsers_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppRoleUserGw_GetRoleUserByUsers_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -488,22 +488,22 @@ func RegisterAppRoleUserHandlerServer(ctx context.Context, mux *runtime.ServeMux
 			return
 		}
 
-		forward_AppRoleUser_GetRoleUserByUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_GetRoleUserByUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_GetRoleUsersByRole_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_GetRoleUsersByRole_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/GetRoleUsersByRole", runtime.WithHTTPPathPattern("/v2/get/role/users/by/role"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/GetRoleUsersByRole", runtime.WithHTTPPathPattern("/v2/get/role/users/by/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppRoleUser_GetRoleUsersByRole_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppRoleUserGw_GetRoleUsersByRole_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -511,22 +511,22 @@ func RegisterAppRoleUserHandlerServer(ctx context.Context, mux *runtime.ServeMux
 			return
 		}
 
-		forward_AppRoleUser_GetRoleUsersByRole_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_GetRoleUsersByRole_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_GetAppRoleUsersByRole_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_GetAppRoleUsersByRole_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/GetAppRoleUsersByRole", runtime.WithHTTPPathPattern("/v2/get/app/role/users/by/role"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/GetAppRoleUsersByRole", runtime.WithHTTPPathPattern("/v2/get/app/role/users/by/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppRoleUser_GetAppRoleUsersByRole_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppRoleUserGw_GetAppRoleUsersByRole_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -534,22 +534,22 @@ func RegisterAppRoleUserHandlerServer(ctx context.Context, mux *runtime.ServeMux
 			return
 		}
 
-		forward_AppRoleUser_GetAppRoleUsersByRole_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_GetAppRoleUsersByRole_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_GetRoleUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_GetRoleUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/GetRoleUsers", runtime.WithHTTPPathPattern("/v2/get/role/users"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/GetRoleUsers", runtime.WithHTTPPathPattern("/v2/get/role/users"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppRoleUser_GetRoleUsers_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppRoleUserGw_GetRoleUsers_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -557,22 +557,22 @@ func RegisterAppRoleUserHandlerServer(ctx context.Context, mux *runtime.ServeMux
 			return
 		}
 
-		forward_AppRoleUser_GetRoleUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_GetRoleUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_GetAppRoleUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_GetAppRoleUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/GetAppRoleUsers", runtime.WithHTTPPathPattern("/v2/get/app/role/users"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/GetAppRoleUsers", runtime.WithHTTPPathPattern("/v2/get/app/role/users"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppRoleUser_GetAppRoleUsers_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppRoleUserGw_GetAppRoleUsers_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -580,22 +580,22 @@ func RegisterAppRoleUserHandlerServer(ctx context.Context, mux *runtime.ServeMux
 			return
 		}
 
-		forward_AppRoleUser_GetAppRoleUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_GetAppRoleUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_DeleteRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_DeleteRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/DeleteRoleUser", runtime.WithHTTPPathPattern("/v1/delete/role/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/DeleteRoleUser", runtime.WithHTTPPathPattern("/v1/delete/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppRoleUser_DeleteRoleUser_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppRoleUserGw_DeleteRoleUser_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -603,16 +603,16 @@ func RegisterAppRoleUserHandlerServer(ctx context.Context, mux *runtime.ServeMux
 			return
 		}
 
-		forward_AppRoleUser_DeleteRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_DeleteRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterAppRoleUserHandlerFromEndpoint is same as RegisterAppRoleUserHandler but
+// RegisterAppRoleUserGwHandlerFromEndpoint is same as RegisterAppRoleUserGwHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterAppRoleUserHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterAppRoleUserGwHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -632,219 +632,219 @@ func RegisterAppRoleUserHandlerFromEndpoint(ctx context.Context, mux *runtime.Se
 		}()
 	}()
 
-	return RegisterAppRoleUserHandler(ctx, mux, conn)
+	return RegisterAppRoleUserGwHandler(ctx, mux, conn)
 }
 
-// RegisterAppRoleUserHandler registers the http handlers for service AppRoleUser to "mux".
+// RegisterAppRoleUserGwHandler registers the http handlers for service AppRoleUserGw to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterAppRoleUserHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterAppRoleUserHandlerClient(ctx, mux, NewAppRoleUserClient(conn))
+func RegisterAppRoleUserGwHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterAppRoleUserGwHandlerClient(ctx, mux, NewAppRoleUserGwClient(conn))
 }
 
-// RegisterAppRoleUserHandlerClient registers the http handlers for service AppRoleUser
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "AppRoleUserClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "AppRoleUserClient"
+// RegisterAppRoleUserGwHandlerClient registers the http handlers for service AppRoleUserGw
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "AppRoleUserGwClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "AppRoleUserGwClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "AppRoleUserClient" to call the correct interceptors.
-func RegisterAppRoleUserHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AppRoleUserClient) error {
+// "AppRoleUserGwClient" to call the correct interceptors.
+func RegisterAppRoleUserGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AppRoleUserGwClient) error {
 
-	mux.Handle("POST", pattern_AppRoleUser_CreateRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_CreateRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/CreateRoleUser", runtime.WithHTTPPathPattern("/v2/create/role/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/CreateRoleUser", runtime.WithHTTPPathPattern("/v2/create/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppRoleUser_CreateRoleUser_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppRoleUserGw_CreateRoleUser_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppRoleUser_CreateRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_CreateRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_CreateAppUserRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_CreateAppUserRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/CreateAppUserRoleUser", runtime.WithHTTPPathPattern("/v2/create/app/user/role/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/CreateAppUserRoleUser", runtime.WithHTTPPathPattern("/v2/create/app/user/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppRoleUser_CreateAppUserRoleUser_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppRoleUserGw_CreateAppUserRoleUser_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppRoleUser_CreateAppUserRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_CreateAppUserRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_CreateUserRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_CreateUserRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/CreateUserRoleUser", runtime.WithHTTPPathPattern("/v2/create/user/role/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/CreateUserRoleUser", runtime.WithHTTPPathPattern("/v2/create/user/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppRoleUser_CreateUserRoleUser_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppRoleUserGw_CreateUserRoleUser_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppRoleUser_CreateUserRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_CreateUserRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_GetRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_GetRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/GetRoleUser", runtime.WithHTTPPathPattern("/v2/get/role/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/GetRoleUser", runtime.WithHTTPPathPattern("/v2/get/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppRoleUser_GetRoleUser_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppRoleUserGw_GetRoleUser_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppRoleUser_GetRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_GetRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_GetRoleUserByUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_GetRoleUserByUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/GetRoleUserByUsers", runtime.WithHTTPPathPattern("/v2/get/role/users/by/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/GetRoleUserByUsers", runtime.WithHTTPPathPattern("/v2/get/role/users/by/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppRoleUser_GetRoleUserByUsers_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppRoleUserGw_GetRoleUserByUsers_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppRoleUser_GetRoleUserByUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_GetRoleUserByUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_GetRoleUsersByRole_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_GetRoleUsersByRole_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/GetRoleUsersByRole", runtime.WithHTTPPathPattern("/v2/get/role/users/by/role"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/GetRoleUsersByRole", runtime.WithHTTPPathPattern("/v2/get/role/users/by/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppRoleUser_GetRoleUsersByRole_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppRoleUserGw_GetRoleUsersByRole_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppRoleUser_GetRoleUsersByRole_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_GetRoleUsersByRole_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_GetAppRoleUsersByRole_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_GetAppRoleUsersByRole_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/GetAppRoleUsersByRole", runtime.WithHTTPPathPattern("/v2/get/app/role/users/by/role"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/GetAppRoleUsersByRole", runtime.WithHTTPPathPattern("/v2/get/app/role/users/by/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppRoleUser_GetAppRoleUsersByRole_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppRoleUserGw_GetAppRoleUsersByRole_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppRoleUser_GetAppRoleUsersByRole_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_GetAppRoleUsersByRole_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_GetRoleUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_GetRoleUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/GetRoleUsers", runtime.WithHTTPPathPattern("/v2/get/role/users"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/GetRoleUsers", runtime.WithHTTPPathPattern("/v2/get/role/users"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppRoleUser_GetRoleUsers_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppRoleUserGw_GetRoleUsers_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppRoleUser_GetRoleUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_GetRoleUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_GetAppRoleUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_GetAppRoleUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/GetAppRoleUsers", runtime.WithHTTPPathPattern("/v2/get/app/role/users"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/GetAppRoleUsers", runtime.WithHTTPPathPattern("/v2/get/app/role/users"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppRoleUser_GetAppRoleUsers_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppRoleUserGw_GetAppRoleUsers_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppRoleUser_GetAppRoleUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_GetAppRoleUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppRoleUser_DeleteRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppRoleUserGw_DeleteRoleUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUser/DeleteRoleUser", runtime.WithHTTPPathPattern("/v1/delete/role/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approleuser.v1.AppRoleUserGw/DeleteRoleUser", runtime.WithHTTPPathPattern("/v1/delete/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppRoleUser_DeleteRoleUser_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppRoleUserGw_DeleteRoleUser_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppRoleUser_DeleteRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppRoleUserGw_DeleteRoleUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -852,45 +852,45 @@ func RegisterAppRoleUserHandlerClient(ctx context.Context, mux *runtime.ServeMux
 }
 
 var (
-	pattern_AppRoleUser_CreateRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "create", "role", "user"}, ""))
+	pattern_AppRoleUserGw_CreateRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "create", "role", "user"}, ""))
 
-	pattern_AppRoleUser_CreateAppUserRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 3}, []string{"v2", "create", "app", "user", "role"}, ""))
+	pattern_AppRoleUserGw_CreateAppUserRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 3}, []string{"v2", "create", "app", "user", "role"}, ""))
 
-	pattern_AppRoleUser_CreateUserRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 2}, []string{"v2", "create", "user", "role"}, ""))
+	pattern_AppRoleUserGw_CreateUserRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 2}, []string{"v2", "create", "user", "role"}, ""))
 
-	pattern_AppRoleUser_GetRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "get", "role", "user"}, ""))
+	pattern_AppRoleUserGw_GetRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "get", "role", "user"}, ""))
 
-	pattern_AppRoleUser_GetRoleUserByUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v2", "get", "role", "users", "by", "user"}, ""))
+	pattern_AppRoleUserGw_GetRoleUserByUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v2", "get", "role", "users", "by", "user"}, ""))
 
-	pattern_AppRoleUser_GetRoleUsersByRole_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 2}, []string{"v2", "get", "role", "users", "by"}, ""))
+	pattern_AppRoleUserGw_GetRoleUsersByRole_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 2}, []string{"v2", "get", "role", "users", "by"}, ""))
 
-	pattern_AppRoleUser_GetAppRoleUsersByRole_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 3}, []string{"v2", "get", "app", "role", "users", "by"}, ""))
+	pattern_AppRoleUserGw_GetAppRoleUsersByRole_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 3}, []string{"v2", "get", "app", "role", "users", "by"}, ""))
 
-	pattern_AppRoleUser_GetRoleUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "get", "role", "users"}, ""))
+	pattern_AppRoleUserGw_GetRoleUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "get", "role", "users"}, ""))
 
-	pattern_AppRoleUser_GetAppRoleUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v2", "get", "app", "role", "users"}, ""))
+	pattern_AppRoleUserGw_GetAppRoleUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v2", "get", "app", "role", "users"}, ""))
 
-	pattern_AppRoleUser_DeleteRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "delete", "role", "user"}, ""))
+	pattern_AppRoleUserGw_DeleteRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "delete", "role", "user"}, ""))
 )
 
 var (
-	forward_AppRoleUser_CreateRoleUser_0 = runtime.ForwardResponseMessage
+	forward_AppRoleUserGw_CreateRoleUser_0 = runtime.ForwardResponseMessage
 
-	forward_AppRoleUser_CreateAppUserRoleUser_0 = runtime.ForwardResponseMessage
+	forward_AppRoleUserGw_CreateAppUserRoleUser_0 = runtime.ForwardResponseMessage
 
-	forward_AppRoleUser_CreateUserRoleUser_0 = runtime.ForwardResponseMessage
+	forward_AppRoleUserGw_CreateUserRoleUser_0 = runtime.ForwardResponseMessage
 
-	forward_AppRoleUser_GetRoleUser_0 = runtime.ForwardResponseMessage
+	forward_AppRoleUserGw_GetRoleUser_0 = runtime.ForwardResponseMessage
 
-	forward_AppRoleUser_GetRoleUserByUsers_0 = runtime.ForwardResponseMessage
+	forward_AppRoleUserGw_GetRoleUserByUsers_0 = runtime.ForwardResponseMessage
 
-	forward_AppRoleUser_GetRoleUsersByRole_0 = runtime.ForwardResponseMessage
+	forward_AppRoleUserGw_GetRoleUsersByRole_0 = runtime.ForwardResponseMessage
 
-	forward_AppRoleUser_GetAppRoleUsersByRole_0 = runtime.ForwardResponseMessage
+	forward_AppRoleUserGw_GetAppRoleUsersByRole_0 = runtime.ForwardResponseMessage
 
-	forward_AppRoleUser_GetRoleUsers_0 = runtime.ForwardResponseMessage
+	forward_AppRoleUserGw_GetRoleUsers_0 = runtime.ForwardResponseMessage
 
-	forward_AppRoleUser_GetAppRoleUsers_0 = runtime.ForwardResponseMessage
+	forward_AppRoleUserGw_GetAppRoleUsers_0 = runtime.ForwardResponseMessage
 
-	forward_AppRoleUser_DeleteRoleUser_0 = runtime.ForwardResponseMessage
+	forward_AppRoleUserGw_DeleteRoleUser_0 = runtime.ForwardResponseMessage
 )

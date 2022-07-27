@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "AppUserExtra"
+      "name": "AppUserExtraGw"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v2/create/extra": {
       "post": {
-        "operationId": "AppUserExtra_CreateExtra",
+        "operationId": "AppUserExtraGw_CreateExtra",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "AppUserExtra"
+          "AppUserExtraGw"
         ]
       }
     },
     "/v2/get/app/user/extra": {
       "post": {
-        "operationId": "AppUserExtra_GetAppUserExtraAppUser",
+        "operationId": "AppUserExtraGw_GetAppUserExtraAppUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "AppUserExtra"
+          "AppUserExtraGw"
         ]
       }
     },
     "/v2/get/extra": {
       "post": {
-        "operationId": "AppUserExtra_GetExtra",
+        "operationId": "AppUserExtraGw_GetExtra",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -108,13 +108,13 @@
           }
         ],
         "tags": [
-          "AppUserExtra"
+          "AppUserExtraGw"
         ]
       }
     },
     "/v2/update/extra": {
       "post": {
-        "operationId": "AppUserExtra_UpdateExtra",
+        "operationId": "AppUserExtraGw_UpdateExtra",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -140,7 +140,7 @@
           }
         ],
         "tags": [
-          "AppUserExtra"
+          "AppUserExtraGw"
         ]
       }
     }

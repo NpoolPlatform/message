@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/appuser/gw/v1/appuserthirdparty/appuserthirdparty.proto
 
-package thirdparty
+package appuserthirdparty
 
 import (
 	context "context"
@@ -18,86 +18,86 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// AppUserThirdPartyClient is the client API for AppUserThirdParty service.
+// AppUserThirdPartyGwClient is the client API for AppUserThirdPartyGw service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type AppUserThirdPartyClient interface {
+type AppUserThirdPartyGwClient interface {
 	CreateThirdParty(ctx context.Context, in *CreateThirdPartyRequest, opts ...grpc.CallOption) (*CreateThirdPartyResponse, error)
 }
 
-type appUserThirdPartyClient struct {
+type appUserThirdPartyGwClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAppUserThirdPartyClient(cc grpc.ClientConnInterface) AppUserThirdPartyClient {
-	return &appUserThirdPartyClient{cc}
+func NewAppUserThirdPartyGwClient(cc grpc.ClientConnInterface) AppUserThirdPartyGwClient {
+	return &appUserThirdPartyGwClient{cc}
 }
 
-func (c *appUserThirdPartyClient) CreateThirdParty(ctx context.Context, in *CreateThirdPartyRequest, opts ...grpc.CallOption) (*CreateThirdPartyResponse, error) {
+func (c *appUserThirdPartyGwClient) CreateThirdParty(ctx context.Context, in *CreateThirdPartyRequest, opts ...grpc.CallOption) (*CreateThirdPartyResponse, error) {
 	out := new(CreateThirdPartyResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.thirdparty.v1.AppUserThirdParty/CreateThirdParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.thirdparty.v1.AppUserThirdPartyGw/CreateThirdParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AppUserThirdPartyServer is the server API for AppUserThirdParty service.
-// All implementations must embed UnimplementedAppUserThirdPartyServer
+// AppUserThirdPartyGwServer is the server API for AppUserThirdPartyGw service.
+// All implementations must embed UnimplementedAppUserThirdPartyGwServer
 // for forward compatibility
-type AppUserThirdPartyServer interface {
+type AppUserThirdPartyGwServer interface {
 	CreateThirdParty(context.Context, *CreateThirdPartyRequest) (*CreateThirdPartyResponse, error)
-	mustEmbedUnimplementedAppUserThirdPartyServer()
+	mustEmbedUnimplementedAppUserThirdPartyGwServer()
 }
 
-// UnimplementedAppUserThirdPartyServer must be embedded to have forward compatible implementations.
-type UnimplementedAppUserThirdPartyServer struct {
+// UnimplementedAppUserThirdPartyGwServer must be embedded to have forward compatible implementations.
+type UnimplementedAppUserThirdPartyGwServer struct {
 }
 
-func (UnimplementedAppUserThirdPartyServer) CreateThirdParty(context.Context, *CreateThirdPartyRequest) (*CreateThirdPartyResponse, error) {
+func (UnimplementedAppUserThirdPartyGwServer) CreateThirdParty(context.Context, *CreateThirdPartyRequest) (*CreateThirdPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateThirdParty not implemented")
 }
-func (UnimplementedAppUserThirdPartyServer) mustEmbedUnimplementedAppUserThirdPartyServer() {}
+func (UnimplementedAppUserThirdPartyGwServer) mustEmbedUnimplementedAppUserThirdPartyGwServer() {}
 
-// UnsafeAppUserThirdPartyServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to AppUserThirdPartyServer will
+// UnsafeAppUserThirdPartyGwServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to AppUserThirdPartyGwServer will
 // result in compilation errors.
-type UnsafeAppUserThirdPartyServer interface {
-	mustEmbedUnimplementedAppUserThirdPartyServer()
+type UnsafeAppUserThirdPartyGwServer interface {
+	mustEmbedUnimplementedAppUserThirdPartyGwServer()
 }
 
-func RegisterAppUserThirdPartyServer(s grpc.ServiceRegistrar, srv AppUserThirdPartyServer) {
-	s.RegisterService(&AppUserThirdParty_ServiceDesc, srv)
+func RegisterAppUserThirdPartyGwServer(s grpc.ServiceRegistrar, srv AppUserThirdPartyGwServer) {
+	s.RegisterService(&AppUserThirdPartyGw_ServiceDesc, srv)
 }
 
-func _AppUserThirdParty_CreateThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppUserThirdPartyGw_CreateThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateThirdPartyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserThirdPartyServer).CreateThirdParty(ctx, in)
+		return srv.(AppUserThirdPartyGwServer).CreateThirdParty(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.thirdparty.v1.AppUserThirdParty/CreateThirdParty",
+		FullMethod: "/app.user.gateway.thirdparty.v1.AppUserThirdPartyGw/CreateThirdParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserThirdPartyServer).CreateThirdParty(ctx, req.(*CreateThirdPartyRequest))
+		return srv.(AppUserThirdPartyGwServer).CreateThirdParty(ctx, req.(*CreateThirdPartyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// AppUserThirdParty_ServiceDesc is the grpc.ServiceDesc for AppUserThirdParty service.
+// AppUserThirdPartyGw_ServiceDesc is the grpc.ServiceDesc for AppUserThirdPartyGw service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var AppUserThirdParty_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.user.gateway.thirdparty.v1.AppUserThirdParty",
-	HandlerType: (*AppUserThirdPartyServer)(nil),
+var AppUserThirdPartyGw_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "app.user.gateway.thirdparty.v1.AppUserThirdPartyGw",
+	HandlerType: (*AppUserThirdPartyGwServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateThirdParty",
-			Handler:    _AppUserThirdParty_CreateThirdParty_Handler,
+			Handler:    _AppUserThirdPartyGw_CreateThirdParty_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

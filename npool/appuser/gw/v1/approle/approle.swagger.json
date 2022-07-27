@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "AppRole"
+      "name": "AppRoleGw"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v2/create/app/role": {
       "post": {
-        "operationId": "AppRole_CreateAppRole",
+        "operationId": "AppRoleGw_CreateAppRole",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "AppRole"
+          "AppRoleGw"
         ]
       }
     },
     "/v2/create/role": {
       "post": {
-        "operationId": "AppRole_CreateRole",
+        "operationId": "AppRoleGw_CreateRole",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "AppRole"
+          "AppRoleGw"
         ]
       }
     },
     "/v2/get/app/role/by/role": {
       "post": {
-        "operationId": "AppRole_GetAppRoleByRole",
+        "operationId": "AppRoleGw_GetAppRoleByRole",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -108,13 +108,13 @@
           }
         ],
         "tags": [
-          "AppRole"
+          "AppRoleGw"
         ]
       }
     },
     "/v2/get/app/roles": {
       "post": {
-        "operationId": "AppRole_GetAppRoles",
+        "operationId": "AppRoleGw_GetAppRoles",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -140,13 +140,13 @@
           }
         ],
         "tags": [
-          "AppRole"
+          "AppRoleGw"
         ]
       }
     },
     "/v2/get/role": {
       "post": {
-        "operationId": "AppRole_GetRole",
+        "operationId": "AppRoleGw_GetRole",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -172,13 +172,13 @@
           }
         ],
         "tags": [
-          "AppRole"
+          "AppRoleGw"
         ]
       }
     },
     "/v2/get/roles": {
       "post": {
-        "operationId": "AppRole_GetRoles",
+        "operationId": "AppRoleGw_GetRoles",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -204,13 +204,13 @@
           }
         ],
         "tags": [
-          "AppRole"
+          "AppRoleGw"
         ]
       }
     },
     "/v2/update/app/role": {
       "post": {
-        "operationId": "AppRole_UpdateRole",
+        "operationId": "AppRoleGw_UpdateRole",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -236,7 +236,7 @@
           }
         ],
         "tags": [
-          "AppRole"
+          "AppRoleGw"
         ]
       }
     }

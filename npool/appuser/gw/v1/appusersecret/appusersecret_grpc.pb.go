@@ -18,194 +18,194 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// AppUserSecretClient is the client API for AppUserSecret service.
+// AppUserSecretGwClient is the client API for AppUserSecretGw service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type AppUserSecretClient interface {
+type AppUserSecretGwClient interface {
 	CreateSecret(ctx context.Context, in *CreateSecretRequest, opts ...grpc.CallOption) (*CreateSecretResponse, error)
 	GetSecret(ctx context.Context, in *GetSecretRequest, opts ...grpc.CallOption) (*GetSecretResponse, error)
 	GetAppUserSecret(ctx context.Context, in *GetAppUserSecretRequest, opts ...grpc.CallOption) (*GetAppUserSecretResponse, error)
 	UpdateSecret(ctx context.Context, in *UpdateSecretRequest, opts ...grpc.CallOption) (*UpdateSecretResponse, error)
 }
 
-type appUserSecretClient struct {
+type appUserSecretGwClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAppUserSecretClient(cc grpc.ClientConnInterface) AppUserSecretClient {
-	return &appUserSecretClient{cc}
+func NewAppUserSecretGwClient(cc grpc.ClientConnInterface) AppUserSecretGwClient {
+	return &appUserSecretGwClient{cc}
 }
 
-func (c *appUserSecretClient) CreateSecret(ctx context.Context, in *CreateSecretRequest, opts ...grpc.CallOption) (*CreateSecretResponse, error) {
+func (c *appUserSecretGwClient) CreateSecret(ctx context.Context, in *CreateSecretRequest, opts ...grpc.CallOption) (*CreateSecretResponse, error) {
 	out := new(CreateSecretResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.appusersecret.v1.AppUserSecret/CreateSecret", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.appusersecret.v1.AppUserSecretGw/CreateSecret", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserSecretClient) GetSecret(ctx context.Context, in *GetSecretRequest, opts ...grpc.CallOption) (*GetSecretResponse, error) {
+func (c *appUserSecretGwClient) GetSecret(ctx context.Context, in *GetSecretRequest, opts ...grpc.CallOption) (*GetSecretResponse, error) {
 	out := new(GetSecretResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.appusersecret.v1.AppUserSecret/GetSecret", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.appusersecret.v1.AppUserSecretGw/GetSecret", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserSecretClient) GetAppUserSecret(ctx context.Context, in *GetAppUserSecretRequest, opts ...grpc.CallOption) (*GetAppUserSecretResponse, error) {
+func (c *appUserSecretGwClient) GetAppUserSecret(ctx context.Context, in *GetAppUserSecretRequest, opts ...grpc.CallOption) (*GetAppUserSecretResponse, error) {
 	out := new(GetAppUserSecretResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.appusersecret.v1.AppUserSecret/GetAppUserSecret", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.appusersecret.v1.AppUserSecretGw/GetAppUserSecret", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserSecretClient) UpdateSecret(ctx context.Context, in *UpdateSecretRequest, opts ...grpc.CallOption) (*UpdateSecretResponse, error) {
+func (c *appUserSecretGwClient) UpdateSecret(ctx context.Context, in *UpdateSecretRequest, opts ...grpc.CallOption) (*UpdateSecretResponse, error) {
 	out := new(UpdateSecretResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.appusersecret.v1.AppUserSecret/UpdateSecret", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.user.gateway.appusersecret.v1.AppUserSecretGw/UpdateSecret", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AppUserSecretServer is the server API for AppUserSecret service.
-// All implementations must embed UnimplementedAppUserSecretServer
+// AppUserSecretGwServer is the server API for AppUserSecretGw service.
+// All implementations must embed UnimplementedAppUserSecretGwServer
 // for forward compatibility
-type AppUserSecretServer interface {
+type AppUserSecretGwServer interface {
 	CreateSecret(context.Context, *CreateSecretRequest) (*CreateSecretResponse, error)
 	GetSecret(context.Context, *GetSecretRequest) (*GetSecretResponse, error)
 	GetAppUserSecret(context.Context, *GetAppUserSecretRequest) (*GetAppUserSecretResponse, error)
 	UpdateSecret(context.Context, *UpdateSecretRequest) (*UpdateSecretResponse, error)
-	mustEmbedUnimplementedAppUserSecretServer()
+	mustEmbedUnimplementedAppUserSecretGwServer()
 }
 
-// UnimplementedAppUserSecretServer must be embedded to have forward compatible implementations.
-type UnimplementedAppUserSecretServer struct {
+// UnimplementedAppUserSecretGwServer must be embedded to have forward compatible implementations.
+type UnimplementedAppUserSecretGwServer struct {
 }
 
-func (UnimplementedAppUserSecretServer) CreateSecret(context.Context, *CreateSecretRequest) (*CreateSecretResponse, error) {
+func (UnimplementedAppUserSecretGwServer) CreateSecret(context.Context, *CreateSecretRequest) (*CreateSecretResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateSecret not implemented")
 }
-func (UnimplementedAppUserSecretServer) GetSecret(context.Context, *GetSecretRequest) (*GetSecretResponse, error) {
+func (UnimplementedAppUserSecretGwServer) GetSecret(context.Context, *GetSecretRequest) (*GetSecretResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSecret not implemented")
 }
-func (UnimplementedAppUserSecretServer) GetAppUserSecret(context.Context, *GetAppUserSecretRequest) (*GetAppUserSecretResponse, error) {
+func (UnimplementedAppUserSecretGwServer) GetAppUserSecret(context.Context, *GetAppUserSecretRequest) (*GetAppUserSecretResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserSecret not implemented")
 }
-func (UnimplementedAppUserSecretServer) UpdateSecret(context.Context, *UpdateSecretRequest) (*UpdateSecretResponse, error) {
+func (UnimplementedAppUserSecretGwServer) UpdateSecret(context.Context, *UpdateSecretRequest) (*UpdateSecretResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateSecret not implemented")
 }
-func (UnimplementedAppUserSecretServer) mustEmbedUnimplementedAppUserSecretServer() {}
+func (UnimplementedAppUserSecretGwServer) mustEmbedUnimplementedAppUserSecretGwServer() {}
 
-// UnsafeAppUserSecretServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to AppUserSecretServer will
+// UnsafeAppUserSecretGwServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to AppUserSecretGwServer will
 // result in compilation errors.
-type UnsafeAppUserSecretServer interface {
-	mustEmbedUnimplementedAppUserSecretServer()
+type UnsafeAppUserSecretGwServer interface {
+	mustEmbedUnimplementedAppUserSecretGwServer()
 }
 
-func RegisterAppUserSecretServer(s grpc.ServiceRegistrar, srv AppUserSecretServer) {
-	s.RegisterService(&AppUserSecret_ServiceDesc, srv)
+func RegisterAppUserSecretGwServer(s grpc.ServiceRegistrar, srv AppUserSecretGwServer) {
+	s.RegisterService(&AppUserSecretGw_ServiceDesc, srv)
 }
 
-func _AppUserSecret_CreateSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppUserSecretGw_CreateSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateSecretRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserSecretServer).CreateSecret(ctx, in)
+		return srv.(AppUserSecretGwServer).CreateSecret(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.appusersecret.v1.AppUserSecret/CreateSecret",
+		FullMethod: "/app.user.gateway.appusersecret.v1.AppUserSecretGw/CreateSecret",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserSecretServer).CreateSecret(ctx, req.(*CreateSecretRequest))
+		return srv.(AppUserSecretGwServer).CreateSecret(ctx, req.(*CreateSecretRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserSecret_GetSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppUserSecretGw_GetSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetSecretRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserSecretServer).GetSecret(ctx, in)
+		return srv.(AppUserSecretGwServer).GetSecret(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.appusersecret.v1.AppUserSecret/GetSecret",
+		FullMethod: "/app.user.gateway.appusersecret.v1.AppUserSecretGw/GetSecret",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserSecretServer).GetSecret(ctx, req.(*GetSecretRequest))
+		return srv.(AppUserSecretGwServer).GetSecret(ctx, req.(*GetSecretRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserSecret_GetAppUserSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppUserSecretGw_GetAppUserSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppUserSecretRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserSecretServer).GetAppUserSecret(ctx, in)
+		return srv.(AppUserSecretGwServer).GetAppUserSecret(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.appusersecret.v1.AppUserSecret/GetAppUserSecret",
+		FullMethod: "/app.user.gateway.appusersecret.v1.AppUserSecretGw/GetAppUserSecret",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserSecretServer).GetAppUserSecret(ctx, req.(*GetAppUserSecretRequest))
+		return srv.(AppUserSecretGwServer).GetAppUserSecret(ctx, req.(*GetAppUserSecretRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserSecret_UpdateSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppUserSecretGw_UpdateSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateSecretRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserSecretServer).UpdateSecret(ctx, in)
+		return srv.(AppUserSecretGwServer).UpdateSecret(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.appusersecret.v1.AppUserSecret/UpdateSecret",
+		FullMethod: "/app.user.gateway.appusersecret.v1.AppUserSecretGw/UpdateSecret",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserSecretServer).UpdateSecret(ctx, req.(*UpdateSecretRequest))
+		return srv.(AppUserSecretGwServer).UpdateSecret(ctx, req.(*UpdateSecretRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// AppUserSecret_ServiceDesc is the grpc.ServiceDesc for AppUserSecret service.
+// AppUserSecretGw_ServiceDesc is the grpc.ServiceDesc for AppUserSecretGw service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var AppUserSecret_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.user.gateway.appusersecret.v1.AppUserSecret",
-	HandlerType: (*AppUserSecretServer)(nil),
+var AppUserSecretGw_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "app.user.gateway.appusersecret.v1.AppUserSecretGw",
+	HandlerType: (*AppUserSecretGwServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateSecret",
-			Handler:    _AppUserSecret_CreateSecret_Handler,
+			Handler:    _AppUserSecretGw_CreateSecret_Handler,
 		},
 		{
 			MethodName: "GetSecret",
-			Handler:    _AppUserSecret_GetSecret_Handler,
+			Handler:    _AppUserSecretGw_GetSecret_Handler,
 		},
 		{
 			MethodName: "GetAppUserSecret",
-			Handler:    _AppUserSecret_GetAppUserSecret_Handler,
+			Handler:    _AppUserSecretGw_GetAppUserSecret_Handler,
 		},
 		{
 			MethodName: "UpdateSecret",
-			Handler:    _AppUserSecret_UpdateSecret_Handler,
+			Handler:    _AppUserSecretGw_UpdateSecret_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
