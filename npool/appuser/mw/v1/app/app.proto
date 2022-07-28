@@ -4,9 +4,6 @@ package appuser.middleware.app.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/app";
 
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
-
 service AppMw {
     rpc GetApp      (GetAppRequest)      returns (GetAppResponse)      {}
     rpc GetApps     (GetAppsRequest)     returns (GetAppsResponse)     {}
