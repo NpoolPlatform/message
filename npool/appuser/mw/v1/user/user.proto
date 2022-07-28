@@ -19,6 +19,47 @@ service UserMw {
     rpc UpdateUser    (UpdateUserRequest)     returns (UpdateUserResponse)    {}
 }
 
+message UserReq {
+    // Base
+    optional string ID                                = 10;
+    optional string AppID                             = 20;
+    optional string EmailAddress                      = 30;
+    optional string PhoneNO                           = 40;
+
+    // Imported
+    optional string ImportedFromAppID                 = 50;
+    optional string ImportedFromAppName               = 60;
+    optional string ImportedFromAppLogo               = 70;
+    optional string ImportedFromAppHome               = 80;
+
+    // Extra
+    optional string Username                          = 90;
+    repeated string AddressFields                     = 100;
+    optional string Gender                            = 110;
+    optional string PostalCode                        = 120;
+    optional uint32 Age                               = 130;
+    optional uint32 Birthday                          = 140;
+    optional string Avatar                            = 150;
+    optional string Organization                      = 160;
+    optional string FirstName                         = 170;
+    optional string LastName                          = 180;
+    optional string IDNumber                          = 190;
+
+    // Control flat
+    optional bool   SigninVerifyByGoogleAuthentication = 200;
+    optional bool   GoogleAuthenticationVerified       = 210;
+    optional bool   Banned                             = 220;
+    optional string BanMessage                         = 230;
+
+    // Secret map
+    optional bool HasGoogleSecret                     = 240;
+
+    // Role
+    repeated string Roles                             = 250;
+
+    optional uint32 CreateAt                          = 260;
+}
+
 message User {
     // Base
     string ID                                = 10;
@@ -58,6 +99,14 @@ message User {
     repeated string Roles                    = 250;
 
     uint32 CreateAt                          = 260;
+}
+
+message Conds {
+    npool.v1.StringVal ID            = 10;
+    npool.v1.StringVal AppID         = 20;
+    npool.v1.StringVal PhoneNo       = 30;
+    npool.v1.StringVal EmailAddress  = 40;
+    npool.v1.StringVal ImportFromApp = 50;
 }
 
 message GetUsersRequest {
