@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/version": {
+    "/v1/version": {
       "post": {
         "operationId": "Middleware_Version",
         "responses": {
