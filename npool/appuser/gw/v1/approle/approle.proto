@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package app.user.gateway.approle.v1;
+package appuser.gateway.approle.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/approle";
 
