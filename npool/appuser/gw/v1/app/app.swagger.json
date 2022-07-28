@@ -337,15 +337,9 @@
     "appv1UpdateAppRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
-          "type": "string",
-          "title": "Permissioned by user"
-        },
-        "UserID": {
-          "type": "string"
-        },
         "Info": {
-          "$ref": "#/definitions/v2AppReq"
+          "$ref": "#/definitions/v2AppReq",
+          "title": "Permissioned by path (may by user in future if we support user create app)"
         }
       }
     },

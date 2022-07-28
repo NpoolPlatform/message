@@ -60,10 +60,8 @@ message CreateAppResponse {
 }
 
 message UpdateAppRequest {
-    // Permissioned by user
-    string AppID                       = 10;
-    string UserID                      = 20;
-    appuser.manager.app.v2.AppReq Info = 30;
+    // Permissioned by path (may by user in future if we support user create app)
+    appuser.manager.app.v2.AppReq Info = 10;
 }
 
 message UpdateAppResponse {

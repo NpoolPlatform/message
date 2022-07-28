@@ -68,7 +68,6 @@ message GetRoleUsersResponse {
     uint32                                              Total = 20;
 }
 
-
 message DeleteRoleUserRequest {
     // Permissioned by path
     string ID = 10;
