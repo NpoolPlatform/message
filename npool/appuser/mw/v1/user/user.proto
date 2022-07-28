@@ -9,7 +9,10 @@ import "npool/npool.proto";
 service UserMw {
     rpc CreateUser    (CreateUserRequest)     returns (CreateUserResponse)    {}
     rpc UpdateUser    (UpdateUserRequest)     returns (UpdateUserResponse)    {}
+
     rpc GetUsers      (GetUsersRequest)       returns (GetUsersResponse)      {}
+    rpc GetUser       (GetUserRequest)        returns (GetUserResponse)       {}
+    rpc GetManyUsers  (GetManyUsersRequest)   returns (GetManyUsersResponse)  {}
 }
 
 message UserReq {
@@ -38,20 +41,9 @@ message UserReq {
     optional string LastName                          = 180;
     optional string IDNumber                          = 190;
 
-    // Control flat
+    // Control flag
     optional bool   SigninVerifyByGoogleAuthentication = 200;
-    optional bool   GoogleAuthenticationVerified       = 210;
-    optional bool   Banned                             = 220;
-    optional string BanUserID                          = 230;
-    optional string BanMessage                         = 240;
 
-    // Secret map
-    optional bool HasGoogleSecret                     = 250;
-
-    // Role
-    repeated string Roles                             = 260;
-
-    optional uint32 CreateAt                          = 270;
 }
 
 message User {
@@ -93,26 +85,15 @@ message User {
     // Role
     repeated string Roles                    = 260;
 
-    uint32 CreateAt                          = 270;
-}
+    // Login info
+    bool   Logined                           = 270;
+    string LoginAccount                      = 280;
+    string LoginAccountType                  = 290;
+    string LoginToken                        = 300;
+    string LoginClientIP                     = 310;
+    string LoginClientUserAgent              = 320;
 
-message Conds {
-    npool.v1.StringVal ID            = 10;
-    npool.v1.StringSlicesVal IDIn    = 20;
-    npool.v1.StringVal AppID         = 30;
-    npool.v1.StringVal PhoneNo       = 40;
-    npool.v1.StringVal EmailAddress  = 50;
-    npool.v1.StringVal ImportFromApp = 60;
-}
-
-message GetUsersRequest {
-    string AppID  = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
-}
-
-message GetUsersResponse {
-    repeated User Infos = 10;
+    uint32 CreateAt                          = 330;
 }
 
 message CreateUserRequest {
@@ -129,4 +110,31 @@ message UpdateUserRequest {
 
 message UpdateUserResponse {
     User Info = 10;
+}
+
+message GetUsersRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetUsersResponse {
+    repeated User Infos = 10;
+}
+
+message GetUserRequest {
+    string AppID  = 10;
+    string UserID = 20;
+}
+
+message GetUserResponse {
+    User Info = 10;
+}
+
+message GetManyUsersRequest {
+    npool.v1.StringSliceVal IDs = 10;
+}
+
+message GetManyUsersResponse {
+    repeated User Infos = 10;
 }

@@ -49,6 +49,11 @@ service LoginGateway {
     }
 }
 
+message PageInfo {
+    int32 Offset = 10;
+    int32 Limit = 20;
+}
+
 message LoginRequest {
     string AppID = 10;
     string Account = 20;
@@ -104,7 +109,7 @@ message LoginHistory {
 message GetLoginHistoriesRequest {
     string AppID = 10;
     string UserID = 20;
-    npool.v1.PageInfo PageInfo = 30;
+    PageInfo PageInfo = 30;
 }
 
 message GetLoginHistoriesResponse {

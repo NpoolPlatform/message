@@ -556,6 +556,11 @@ service CloudHashingGoods {
     }
 }
 
+message PageInfo {
+    int32 Offset = 10;
+    int32 Limit = 20;
+}
+
 // Request body and response
 message VendorLocationInfo {
     string ID = 10;
@@ -598,7 +603,7 @@ message DeleteVendorLocationResponse {
 }
 
 message GetVendorLocationsRequest {
-    npool.v1.PageInfo PageInfo = 10;
+    PageInfo PageInfo = 10;
 }
 
 message GetVendorLocationsResponse {
@@ -654,7 +659,7 @@ message DeleteTargetAreaByContinentCountryResponse {
 }
 
 message GetTargetAreasRequest {
-    npool.v1.PageInfo PageInfo = 10;
+    PageInfo PageInfo = 10;
 }
 
 message GetTargetAreasResponse {
@@ -703,7 +708,7 @@ message DeleteDeviceInfoResponse {
 }
 
 message GetDeviceInfosRequest {
-    npool.v1.PageInfo PageInfo = 10;
+    PageInfo PageInfo = 10;
 }
 
 message GetDeviceInfosResponse {
@@ -789,7 +794,7 @@ message GetPriceCurrencyResponse {
 }
 
 message GetPriceCurrencysRequest {
-    npool.v1.PageInfo PageInfo = 10;
+    PageInfo PageInfo = 10;
 }
 
 message GetPriceCurrencysResponse {
@@ -820,7 +825,7 @@ message GetGoodDetailResponse {
 }
 
 message GetGoodsDetailRequest {
-    npool.v1.PageInfo PageInfo = 10;
+    PageInfo PageInfo = 10;
 }
 
 message GetGoodsDetailResponse {
@@ -830,7 +835,7 @@ message GetGoodsDetailResponse {
 
 message GetGoodsDetailByAppRequest {
     string AppID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetGoodsDetailByAppResponse {
@@ -848,7 +853,7 @@ message DeleteGoodResponse {
 }
 
 message GetGoodsRequest {
-    npool.v1.PageInfo PageInfo = 10;
+    PageInfo PageInfo = 10;
 }
 
 message GetGoodsResponse {
@@ -858,7 +863,7 @@ message GetGoodsResponse {
 
 message GetGoodsByAppRequest {
     string AppID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetGoodsByAppResponse {
@@ -1181,7 +1186,7 @@ message UpdateGoodCommentResponse {
 }
 
 message GetGoodCommentsRequest {
-    npool.v1.PageInfo PageInfo = 10;
+    PageInfo PageInfo = 10;
     string GoodID = 20;
 }
 
@@ -1290,7 +1295,7 @@ message GetFeeTypeResponse {
 }
 
 message GetFeeTypesRequest {
-    npool.v1.PageInfo PageInfo = 10;
+    PageInfo PageInfo = 10;
 }
 
 message GetFeeTypesResponse {
@@ -1321,7 +1326,7 @@ message GetFeeResponse {
 }
 
 message GetFeesRequest {
-    npool.v1.PageInfo PageInfo = 10;
+    PageInfo PageInfo = 10;
 }
 
 message GetFeesResponse {

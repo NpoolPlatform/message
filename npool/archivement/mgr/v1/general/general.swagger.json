@@ -206,8 +206,16 @@
     "v1GetGeneralResponse": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD:npool/archivement/mgr/v1/general/general.swagger.json
         "Info": {
           "$ref": "#/definitions/v1General"
+=======
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+>>>>>>> Refactor page info and slice:npool/servicetmpl/template/template.swagger.json
         }
       }
     },
@@ -240,12 +248,12 @@
     "v1Uint32Val": {
       "type": "object",
       "properties": {
+        "Op": {
+          "type": "string"
+        },
         "Value": {
           "type": "integer",
           "format": "int64"
-        },
-        "Op": {
-          "type": "string"
         }
       }
     },
