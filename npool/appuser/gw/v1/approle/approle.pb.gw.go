@@ -213,7 +213,7 @@ func RegisterAppRoleGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approle.v1.AppRoleGw/CreateRole", runtime.WithHTTPPathPattern("/v2/create/role"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.approle.v1.AppRoleGw/CreateRole", runtime.WithHTTPPathPattern("/v2/create/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -236,7 +236,7 @@ func RegisterAppRoleGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approle.v1.AppRoleGw/CreateAppRole", runtime.WithHTTPPathPattern("/v2/create/app/role"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.approle.v1.AppRoleGw/CreateAppRole", runtime.WithHTTPPathPattern("/v2/create/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -259,7 +259,7 @@ func RegisterAppRoleGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approle.v1.AppRoleGw/GetRoles", runtime.WithHTTPPathPattern("/v2/get/roles"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.approle.v1.AppRoleGw/GetRoles", runtime.WithHTTPPathPattern("/v2/get/roles"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -282,7 +282,7 @@ func RegisterAppRoleGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approle.v1.AppRoleGw/GetAppRoles", runtime.WithHTTPPathPattern("/v2/get/app/roles"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.approle.v1.AppRoleGw/GetAppRoles", runtime.WithHTTPPathPattern("/v2/get/app/roles"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -305,7 +305,7 @@ func RegisterAppRoleGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/app.user.gateway.approle.v1.AppRoleGw/UpdateRole", runtime.WithHTTPPathPattern("/v2/update/app/role"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.approle.v1.AppRoleGw/UpdateRole", runtime.WithHTTPPathPattern("/v2/update/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -367,7 +367,7 @@ func RegisterAppRoleGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approle.v1.AppRoleGw/CreateRole", runtime.WithHTTPPathPattern("/v2/create/role"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.approle.v1.AppRoleGw/CreateRole", runtime.WithHTTPPathPattern("/v2/create/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -387,7 +387,7 @@ func RegisterAppRoleGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approle.v1.AppRoleGw/CreateAppRole", runtime.WithHTTPPathPattern("/v2/create/app/role"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.approle.v1.AppRoleGw/CreateAppRole", runtime.WithHTTPPathPattern("/v2/create/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -407,7 +407,7 @@ func RegisterAppRoleGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approle.v1.AppRoleGw/GetRoles", runtime.WithHTTPPathPattern("/v2/get/roles"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.approle.v1.AppRoleGw/GetRoles", runtime.WithHTTPPathPattern("/v2/get/roles"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -427,7 +427,7 @@ func RegisterAppRoleGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approle.v1.AppRoleGw/GetAppRoles", runtime.WithHTTPPathPattern("/v2/get/app/roles"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.approle.v1.AppRoleGw/GetAppRoles", runtime.WithHTTPPathPattern("/v2/get/app/roles"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -447,7 +447,7 @@ func RegisterAppRoleGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/app.user.gateway.approle.v1.AppRoleGw/UpdateRole", runtime.WithHTTPPathPattern("/v2/update/app/role"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.approle.v1.AppRoleGw/UpdateRole", runtime.WithHTTPPathPattern("/v2/update/app/role"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

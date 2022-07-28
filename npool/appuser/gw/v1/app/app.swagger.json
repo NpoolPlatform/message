@@ -190,7 +190,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/appv2App"
+          "$ref": "#/definitions/appv1App"
         }
       }
     },
@@ -213,7 +213,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/appv2App"
+            "$ref": "#/definitions/appv1App"
           }
         },
         "Total": {
@@ -244,12 +244,69 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/appv2App"
+            "$ref": "#/definitions/appv1App"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "appv1App": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "Base info"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Banned": {
+          "type": "boolean",
+          "title": "Banned"
+        },
+        "BanMessage": {
+          "type": "string"
+        },
+        "SignupMethods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Sign methods"
+        },
+        "ExtSigninMethods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "RecaptchaMethod": {
+          "type": "string",
+          "title": "Control flag"
+        },
+        "KycEnable": {
+          "type": "boolean"
+        },
+        "SigninVerifyEnable": {
+          "type": "boolean"
+        },
+        "InvitationCodeMust": {
+          "type": "boolean"
+        },
+        "CreateAt": {
+          "type": "string"
         }
       }
     },

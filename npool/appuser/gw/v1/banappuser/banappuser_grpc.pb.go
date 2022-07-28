@@ -39,7 +39,7 @@ func NewBanAppUserGwClient(cc grpc.ClientConnInterface) BanAppUserGwClient {
 
 func (c *banAppUserGwClient) CreateBanAppUser(ctx context.Context, in *CreateBanAppUserRequest, opts ...grpc.CallOption) (*CreateBanAppUserResponse, error) {
 	out := new(CreateBanAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.banappuser.v1.BanAppUserGw/CreateBanAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.banappuser.v1.BanAppUserGw/CreateBanAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -48,7 +48,7 @@ func (c *banAppUserGwClient) CreateBanAppUser(ctx context.Context, in *CreateBan
 
 func (c *banAppUserGwClient) GetBanAppUser(ctx context.Context, in *GetBanAppUserRequest, opts ...grpc.CallOption) (*GetBanAppUserResponse, error) {
 	out := new(GetBanAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.banappuser.v1.BanAppUserGw/GetBanAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.banappuser.v1.BanAppUserGw/GetBanAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -57,7 +57,7 @@ func (c *banAppUserGwClient) GetBanAppUser(ctx context.Context, in *GetBanAppUse
 
 func (c *banAppUserGwClient) GetAppUserBanAppUser(ctx context.Context, in *GetAppUserBanAppUserRequest, opts ...grpc.CallOption) (*GetAppUserBanAppUserResponse, error) {
 	out := new(GetAppUserBanAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.banappuser.v1.BanAppUserGw/GetAppUserBanAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.banappuser.v1.BanAppUserGw/GetAppUserBanAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -66,7 +66,7 @@ func (c *banAppUserGwClient) GetAppUserBanAppUser(ctx context.Context, in *GetAp
 
 func (c *banAppUserGwClient) UpdateBanAppUser(ctx context.Context, in *UpdateBanAppUserRequest, opts ...grpc.CallOption) (*UpdateBanAppUserResponse, error) {
 	out := new(UpdateBanAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.banappuser.v1.BanAppUserGw/UpdateBanAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.banappuser.v1.BanAppUserGw/UpdateBanAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -75,7 +75,7 @@ func (c *banAppUserGwClient) UpdateBanAppUser(ctx context.Context, in *UpdateBan
 
 func (c *banAppUserGwClient) DeleteBanAppUser(ctx context.Context, in *DeleteBanAppUserRequest, opts ...grpc.CallOption) (*DeleteBanAppUserResponse, error) {
 	out := new(DeleteBanAppUserResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.banappuser.v1.BanAppUserGw/DeleteBanAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.banappuser.v1.BanAppUserGw/DeleteBanAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -136,7 +136,7 @@ func _BanAppUserGw_CreateBanAppUser_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.banappuser.v1.BanAppUserGw/CreateBanAppUser",
+		FullMethod: "/appuser.gateway.banappuser.v1.BanAppUserGw/CreateBanAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(BanAppUserGwServer).CreateBanAppUser(ctx, req.(*CreateBanAppUserRequest))
@@ -154,7 +154,7 @@ func _BanAppUserGw_GetBanAppUser_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.banappuser.v1.BanAppUserGw/GetBanAppUser",
+		FullMethod: "/appuser.gateway.banappuser.v1.BanAppUserGw/GetBanAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(BanAppUserGwServer).GetBanAppUser(ctx, req.(*GetBanAppUserRequest))
@@ -172,7 +172,7 @@ func _BanAppUserGw_GetAppUserBanAppUser_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.banappuser.v1.BanAppUserGw/GetAppUserBanAppUser",
+		FullMethod: "/appuser.gateway.banappuser.v1.BanAppUserGw/GetAppUserBanAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(BanAppUserGwServer).GetAppUserBanAppUser(ctx, req.(*GetAppUserBanAppUserRequest))
@@ -190,7 +190,7 @@ func _BanAppUserGw_UpdateBanAppUser_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.banappuser.v1.BanAppUserGw/UpdateBanAppUser",
+		FullMethod: "/appuser.gateway.banappuser.v1.BanAppUserGw/UpdateBanAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(BanAppUserGwServer).UpdateBanAppUser(ctx, req.(*UpdateBanAppUserRequest))
@@ -208,7 +208,7 @@ func _BanAppUserGw_DeleteBanAppUser_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.banappuser.v1.BanAppUserGw/DeleteBanAppUser",
+		FullMethod: "/appuser.gateway.banappuser.v1.BanAppUserGw/DeleteBanAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(BanAppUserGwServer).DeleteBanAppUser(ctx, req.(*DeleteBanAppUserRequest))
@@ -220,7 +220,7 @@ func _BanAppUserGw_DeleteBanAppUser_Handler(srv interface{}, ctx context.Context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var BanAppUserGw_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.user.gateway.banappuser.v1.BanAppUserGw",
+	ServiceName: "appuser.gateway.banappuser.v1.BanAppUserGw",
 	HandlerType: (*BanAppUserGwServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

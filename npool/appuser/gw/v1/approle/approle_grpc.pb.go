@@ -39,7 +39,7 @@ func NewAppRoleGwClient(cc grpc.ClientConnInterface) AppRoleGwClient {
 
 func (c *appRoleGwClient) CreateRole(ctx context.Context, in *CreateRoleRequest, opts ...grpc.CallOption) (*CreateRoleResponse, error) {
 	out := new(CreateRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.approle.v1.AppRoleGw/CreateRole", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.approle.v1.AppRoleGw/CreateRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -48,7 +48,7 @@ func (c *appRoleGwClient) CreateRole(ctx context.Context, in *CreateRoleRequest,
 
 func (c *appRoleGwClient) CreateAppRole(ctx context.Context, in *CreateAppRoleRequest, opts ...grpc.CallOption) (*CreateAppRoleResponse, error) {
 	out := new(CreateAppRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.approle.v1.AppRoleGw/CreateAppRole", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.approle.v1.AppRoleGw/CreateAppRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -57,7 +57,7 @@ func (c *appRoleGwClient) CreateAppRole(ctx context.Context, in *CreateAppRoleRe
 
 func (c *appRoleGwClient) GetRoles(ctx context.Context, in *GetRolesRequest, opts ...grpc.CallOption) (*GetRolesResponse, error) {
 	out := new(GetRolesResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.approle.v1.AppRoleGw/GetRoles", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.approle.v1.AppRoleGw/GetRoles", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -66,7 +66,7 @@ func (c *appRoleGwClient) GetRoles(ctx context.Context, in *GetRolesRequest, opt
 
 func (c *appRoleGwClient) GetAppRoles(ctx context.Context, in *GetAppRolesRequest, opts ...grpc.CallOption) (*GetAppRolesResponse, error) {
 	out := new(GetAppRolesResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.approle.v1.AppRoleGw/GetAppRoles", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.approle.v1.AppRoleGw/GetAppRoles", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -75,7 +75,7 @@ func (c *appRoleGwClient) GetAppRoles(ctx context.Context, in *GetAppRolesReques
 
 func (c *appRoleGwClient) UpdateRole(ctx context.Context, in *UpdateRoleRequest, opts ...grpc.CallOption) (*UpdateRoleResponse, error) {
 	out := new(UpdateRoleResponse)
-	err := c.cc.Invoke(ctx, "/app.user.gateway.approle.v1.AppRoleGw/UpdateRole", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.approle.v1.AppRoleGw/UpdateRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -136,7 +136,7 @@ func _AppRoleGw_CreateRole_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.approle.v1.AppRoleGw/CreateRole",
+		FullMethod: "/appuser.gateway.approle.v1.AppRoleGw/CreateRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleGwServer).CreateRole(ctx, req.(*CreateRoleRequest))
@@ -154,7 +154,7 @@ func _AppRoleGw_CreateAppRole_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.approle.v1.AppRoleGw/CreateAppRole",
+		FullMethod: "/appuser.gateway.approle.v1.AppRoleGw/CreateAppRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleGwServer).CreateAppRole(ctx, req.(*CreateAppRoleRequest))
@@ -172,7 +172,7 @@ func _AppRoleGw_GetRoles_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.approle.v1.AppRoleGw/GetRoles",
+		FullMethod: "/appuser.gateway.approle.v1.AppRoleGw/GetRoles",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleGwServer).GetRoles(ctx, req.(*GetRolesRequest))
@@ -190,7 +190,7 @@ func _AppRoleGw_GetAppRoles_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.approle.v1.AppRoleGw/GetAppRoles",
+		FullMethod: "/appuser.gateway.approle.v1.AppRoleGw/GetAppRoles",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleGwServer).GetAppRoles(ctx, req.(*GetAppRolesRequest))
@@ -208,7 +208,7 @@ func _AppRoleGw_UpdateRole_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.user.gateway.approle.v1.AppRoleGw/UpdateRole",
+		FullMethod: "/appuser.gateway.approle.v1.AppRoleGw/UpdateRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppRoleGwServer).UpdateRole(ctx, req.(*UpdateRoleRequest))
@@ -220,7 +220,7 @@ func _AppRoleGw_UpdateRole_Handler(srv interface{}, ctx context.Context, dec fun
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AppRoleGw_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.user.gateway.approle.v1.AppRoleGw",
+	ServiceName: "appuser.gateway.approle.v1.AppRoleGw",
 	HandlerType: (*AppRoleGwServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
