@@ -20,10 +20,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// AppMgrClient is the client API for AppMgr service.
+// AppGwClient is the client API for AppGw service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type AppMgrClient interface {
+type AppGwClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error)
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
@@ -33,72 +33,72 @@ type AppMgrClient interface {
 	GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error)
 }
 
-type appMgrClient struct {
+type appGwClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAppMgrClient(cc grpc.ClientConnInterface) AppMgrClient {
-	return &appMgrClient{cc}
+func NewAppGwClient(cc grpc.ClientConnInterface) AppGwClient {
+	return &appGwClient{cc}
 }
 
-func (c *appMgrClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+func (c *appGwClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppMgr/Version", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppGw/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appMgrClient) CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error) {
+func (c *appGwClient) CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error) {
 	out := new(CreateAppResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppMgr/CreateApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppGw/CreateApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appMgrClient) UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error) {
+func (c *appGwClient) UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error) {
 	out := new(UpdateAppResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppMgr/UpdateApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppGw/UpdateApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appMgrClient) GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error) {
+func (c *appGwClient) GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error) {
 	out := new(GetAppResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppMgr/GetApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppGw/GetApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appMgrClient) GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error) {
+func (c *appGwClient) GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error) {
 	out := new(GetAppsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppMgr/GetApps", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppGw/GetApps", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appMgrClient) GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error) {
+func (c *appGwClient) GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error) {
 	out := new(GetUserAppsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppMgr/GetUserApps", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppGw/GetUserApps", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AppMgrServer is the server API for AppMgr service.
-// All implementations must embed UnimplementedAppMgrServer
+// AppGwServer is the server API for AppGw service.
+// All implementations must embed UnimplementedAppGwServer
 // for forward compatibility
-type AppMgrServer interface {
+type AppGwServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error)
 	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
@@ -106,182 +106,182 @@ type AppMgrServer interface {
 	// Super admin api
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
 	GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error)
-	mustEmbedUnimplementedAppMgrServer()
+	mustEmbedUnimplementedAppGwServer()
 }
 
-// UnimplementedAppMgrServer must be embedded to have forward compatible implementations.
-type UnimplementedAppMgrServer struct {
+// UnimplementedAppGwServer must be embedded to have forward compatible implementations.
+type UnimplementedAppGwServer struct {
 }
 
-func (UnimplementedAppMgrServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
+func (UnimplementedAppGwServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
-func (UnimplementedAppMgrServer) CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error) {
+func (UnimplementedAppGwServer) CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateApp not implemented")
 }
-func (UnimplementedAppMgrServer) UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error) {
+func (UnimplementedAppGwServer) UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateApp not implemented")
 }
-func (UnimplementedAppMgrServer) GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error) {
+func (UnimplementedAppGwServer) GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApp not implemented")
 }
-func (UnimplementedAppMgrServer) GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error) {
+func (UnimplementedAppGwServer) GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApps not implemented")
 }
-func (UnimplementedAppMgrServer) GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error) {
+func (UnimplementedAppGwServer) GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserApps not implemented")
 }
-func (UnimplementedAppMgrServer) mustEmbedUnimplementedAppMgrServer() {}
+func (UnimplementedAppGwServer) mustEmbedUnimplementedAppGwServer() {}
 
-// UnsafeAppMgrServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to AppMgrServer will
+// UnsafeAppGwServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to AppGwServer will
 // result in compilation errors.
-type UnsafeAppMgrServer interface {
-	mustEmbedUnimplementedAppMgrServer()
+type UnsafeAppGwServer interface {
+	mustEmbedUnimplementedAppGwServer()
 }
 
-func RegisterAppMgrServer(s grpc.ServiceRegistrar, srv AppMgrServer) {
-	s.RegisterService(&AppMgr_ServiceDesc, srv)
+func RegisterAppGwServer(s grpc.ServiceRegistrar, srv AppGwServer) {
+	s.RegisterService(&AppGw_ServiceDesc, srv)
 }
 
-func _AppMgr_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppGw_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppMgrServer).Version(ctx, in)
+		return srv.(AppGwServer).Version(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.app.v1.AppMgr/Version",
+		FullMethod: "/appuser.gateway.app.v1.AppGw/Version",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMgrServer).Version(ctx, req.(*emptypb.Empty))
+		return srv.(AppGwServer).Version(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppMgr_CreateApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppGw_CreateApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppMgrServer).CreateApp(ctx, in)
+		return srv.(AppGwServer).CreateApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.app.v1.AppMgr/CreateApp",
+		FullMethod: "/appuser.gateway.app.v1.AppGw/CreateApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMgrServer).CreateApp(ctx, req.(*CreateAppRequest))
+		return srv.(AppGwServer).CreateApp(ctx, req.(*CreateAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppMgr_UpdateApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppGw_UpdateApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppMgrServer).UpdateApp(ctx, in)
+		return srv.(AppGwServer).UpdateApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.app.v1.AppMgr/UpdateApp",
+		FullMethod: "/appuser.gateway.app.v1.AppGw/UpdateApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMgrServer).UpdateApp(ctx, req.(*UpdateAppRequest))
+		return srv.(AppGwServer).UpdateApp(ctx, req.(*UpdateAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppMgr_GetApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppGw_GetApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppMgrServer).GetApp(ctx, in)
+		return srv.(AppGwServer).GetApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.app.v1.AppMgr/GetApp",
+		FullMethod: "/appuser.gateway.app.v1.AppGw/GetApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMgrServer).GetApp(ctx, req.(*GetAppRequest))
+		return srv.(AppGwServer).GetApp(ctx, req.(*GetAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppMgr_GetApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppGw_GetApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppMgrServer).GetApps(ctx, in)
+		return srv.(AppGwServer).GetApps(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.app.v1.AppMgr/GetApps",
+		FullMethod: "/appuser.gateway.app.v1.AppGw/GetApps",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMgrServer).GetApps(ctx, req.(*GetAppsRequest))
+		return srv.(AppGwServer).GetApps(ctx, req.(*GetAppsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppMgr_GetUserApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AppGw_GetUserApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserAppsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppMgrServer).GetUserApps(ctx, in)
+		return srv.(AppGwServer).GetUserApps(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.app.v1.AppMgr/GetUserApps",
+		FullMethod: "/appuser.gateway.app.v1.AppGw/GetUserApps",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMgrServer).GetUserApps(ctx, req.(*GetUserAppsRequest))
+		return srv.(AppGwServer).GetUserApps(ctx, req.(*GetUserAppsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// AppMgr_ServiceDesc is the grpc.ServiceDesc for AppMgr service.
+// AppGw_ServiceDesc is the grpc.ServiceDesc for AppGw service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var AppMgr_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.gateway.app.v1.AppMgr",
-	HandlerType: (*AppMgrServer)(nil),
+var AppGw_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "appuser.gateway.app.v1.AppGw",
+	HandlerType: (*AppGwServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Version",
-			Handler:    _AppMgr_Version_Handler,
+			Handler:    _AppGw_Version_Handler,
 		},
 		{
 			MethodName: "CreateApp",
-			Handler:    _AppMgr_CreateApp_Handler,
+			Handler:    _AppGw_CreateApp_Handler,
 		},
 		{
 			MethodName: "UpdateApp",
-			Handler:    _AppMgr_UpdateApp_Handler,
+			Handler:    _AppGw_UpdateApp_Handler,
 		},
 		{
 			MethodName: "GetApp",
-			Handler:    _AppMgr_GetApp_Handler,
+			Handler:    _AppGw_GetApp_Handler,
 		},
 		{
 			MethodName: "GetApps",
-			Handler:    _AppMgr_GetApps_Handler,
+			Handler:    _AppGw_GetApps_Handler,
 		},
 		{
 			MethodName: "GetUserApps",
-			Handler:    _AppMgr_GetUserApps_Handler,
+			Handler:    _AppGw_GetUserApps_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

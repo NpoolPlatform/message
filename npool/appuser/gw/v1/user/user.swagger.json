@@ -182,7 +182,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppUserReq"
+          "$ref": "#/definitions/v1UserReq"
         }
       }
     },
@@ -190,7 +190,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppUser"
+          "$ref": "#/definitions/v1User"
         }
       }
     },
@@ -225,7 +225,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppUserReq"
+          "$ref": "#/definitions/v1UserReq"
         }
       }
     },
@@ -233,7 +233,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppUser"
+          "$ref": "#/definitions/v1User"
         }
       }
     },
@@ -294,8 +294,27 @@
     "v1SignupRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppUserReq"
+        "AppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "AccountType": {
+          "type": "string"
+        },
+        "VerificationCode": {
+          "type": "string"
+        },
+        "InvitationCode": {
+          "type": "string"
         }
       }
     },
@@ -303,7 +322,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppUser"
+          "$ref": "#/definitions/v1User"
         }
       }
     },
@@ -427,43 +446,77 @@
         }
       }
     },
-    "v2AppUser": {
+    "v1UserReq": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "Base"
         },
         "AppID": {
-          "type": "string"
-        },
-        "PhoneNo": {
           "type": "string"
         },
         "EmailAddress": {
           "type": "string"
         },
-        "ImportFromApp": {
-          "type": "string"
-        }
-      }
-    },
-    "v2AppUserReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
+        "PhoneNO": {
           "type": "string"
         },
-        "AppID": {
+        "ImportedFromAppID": {
+          "type": "string",
+          "title": "Imported"
+        },
+        "ImportedFromAppName": {
           "type": "string"
         },
-        "PhoneNo": {
+        "ImportedFromAppLogo": {
           "type": "string"
         },
-        "EmailAddress": {
+        "ImportedFromAppHome": {
           "type": "string"
         },
-        "ImportFromApp": {
+        "Username": {
+          "type": "string",
+          "title": "Extra"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Gender": {
           "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Organization": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "SigninVerifyByGoogleAuthentication": {
+          "type": "boolean",
+          "title": "Control flag"
         }
       }
     }
