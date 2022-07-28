@@ -4,12 +4,7 @@ package appuser.middleware.user.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/user";
 
-import "google/protobuf/empty.proto";
 import "npool/npool.proto";
-import "npool/appuser/mgr/v2/approle/approle.proto";
-import "npool/appuser/mgr/v2/appuser/appuser.proto";
-import "npool/appuser/mgr/v2/appusersecret/appusersecret.proto";
-import "npool/appuser/mgr/v2/appuserthirdparty/appuserthirdparty.proto";
 
 service UserMw {
     rpc GetUsers      (GetUsersRequest)       returns (GetUsersResponse)      {}
@@ -103,10 +98,11 @@ message User {
 
 message Conds {
     npool.v1.StringVal ID            = 10;
-    npool.v1.StringVal AppID         = 20;
-    npool.v1.StringVal PhoneNo       = 30;
-    npool.v1.StringVal EmailAddress  = 40;
-    npool.v1.StringVal ImportFromApp = 50;
+    npool.v1.StringSlicesVal IDIn    = 20;
+    npool.v1.StringVal AppID         = 30;
+    npool.v1.StringVal PhoneNo       = 40;
+    npool.v1.StringVal EmailAddress  = 50;
+    npool.v1.StringVal ImportFromApp = 60;
 }
 
 message GetUsersRequest {
