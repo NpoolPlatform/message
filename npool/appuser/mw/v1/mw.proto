@@ -11,7 +11,7 @@ import "npool/npool.proto";
 service Middleware {
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
         option (google.api.http) = {
-            post: "/version"
+            post: "/v1/version"
             body: "*"
         };
     }
