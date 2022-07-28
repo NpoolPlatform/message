@@ -44,22 +44,11 @@
         }
       }
     },
-    "userv1CreateAppUserResponse": {
+    "v1CreateAppUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-    "userv1GetAppUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1User"
-          }
         }
       }
     },
@@ -68,6 +57,17 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1GetAppUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1User"
+          }
         }
       }
     },
