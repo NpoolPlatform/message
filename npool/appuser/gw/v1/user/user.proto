@@ -41,7 +41,7 @@ service UserGw {
         };
     }
 
-    rpc GetUsers (GetUsersRequest) returns (GetUsersResponse) {
+    rpc GetAppUsers (GetAppUsersRequest) returns (GetAppUsersResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/users"
             body: "*"
@@ -50,27 +50,27 @@ service UserGw {
 }
 
 message SignupRequest {
-    appuser.manager.appuser.v2.UserReq Info = 10;
+    appuser.manager.appuser.v2.AppUserReq Info = 10;
 }
 
 message SignupResponse {
-    appuser.manager.appuser.v2.UserReq Info = 10;
+    appuser.manager.appuser.v2.AppUser Info = 10;
 }
 
 message CreateUserRequest {
-    appuser.manager.appuser.v2.UserReq Info = 10;
+    appuser.manager.appuser.v2.AppUserReq Info = 10;
 }
 
 message CreateUserResponse {
-    appuser.manager.appuser.v2.User Info = 10;
+    appuser.manager.appuser.v2.AppUser Info = 10;
 }
 
 message UpdateUserRequest {
-    appuser.manager.appuser.v2.UserReq Info = 10;
+    appuser.manager.appuser.v2.AppUserReq Info = 10;
 }
 
 message UpdateUserResponse {
-    appuser.manager.appuser.v2.User Info = 10;
+    appuser.manager.appuser.v2.AppUser Info = 10;
 }
 
 message GetUsersRequest {
@@ -83,12 +83,12 @@ message GetUsersResponse {
     repeated appuser.middleware.user.v1.User Infos = 10;
 }
 
-message GetUsersRequest {
+message GetAppUsersRequest {
     string TargetAppID = 10;
     int32  Offset      = 20;
     int32  Limit       = 30;
 }
 
-message GetUsersResponse {
+message GetAppUsersResponse {
     repeated appuser.middleware.user.v1.User Infos = 10;
 }
