@@ -38,11 +38,12 @@ message App {
 }
 
 message Conds {
-    npool.v1.StringVal ID          = 20;
-    npool.v1.StringVal Description = 10;
-    npool.v1.StringVal CreatedBy   = 30;
-    npool.v1.StringVal Name        = 40;
-    npool.v1.StringVal Logo        = 50;
+    npool.v1.StringVal ID          = 10;
+    npool.v1.StringSliceVal IDs    = 20;
+    npool.v1.StringVal Description = 30;
+    npool.v1.StringVal CreatedBy   = 40;
+    npool.v1.StringVal Name        = 50;
+    npool.v1.StringVal Logo        = 60;
 }
 
 
