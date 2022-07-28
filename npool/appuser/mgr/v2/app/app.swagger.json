@@ -44,6 +44,20 @@
         }
       }
     },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -108,6 +122,9 @@
       "properties": {
         "ID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         },
         "Description": {
           "$ref": "#/definitions/v1StringVal"
