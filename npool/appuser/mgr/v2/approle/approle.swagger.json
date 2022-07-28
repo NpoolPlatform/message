@@ -47,35 +47,21 @@
     "v1BoolVal": {
       "type": "object",
       "properties": {
+        "Op": {
+          "type": "string"
+        },
         "Value": {
           "type": "boolean"
-        },
-        "Op": {
-          "type": "string"
-        }
-      }
-    },
-    "v1StringSlicesVal": {
-      "type": "object",
-      "properties": {
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Op": {
-          "type": "string"
         }
       }
     },
     "v1StringVal": {
       "type": "object",
       "properties": {
-        "Value": {
+        "Op": {
           "type": "string"
         },
-        "Op": {
+        "Value": {
           "type": "string"
         }
       }
@@ -143,9 +129,6 @@
         },
         "Default": {
           "$ref": "#/definitions/v1BoolVal"
-        },
-        "IDIn": {
-          "$ref": "#/definitions/v1StringSlicesVal"
         }
       }
     },

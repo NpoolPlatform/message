@@ -120,12 +120,12 @@
     "v1DoubleVal": {
       "type": "object",
       "properties": {
+        "Op": {
+          "type": "string"
+        },
         "Value": {
           "type": "number",
           "format": "double"
-        },
-        "Op": {
-          "type": "string"
         }
       }
     },
@@ -245,10 +245,10 @@
     "v1StringVal": {
       "type": "object",
       "properties": {
-        "Value": {
+        "Op": {
           "type": "string"
         },
-        "Op": {
+        "Value": {
           "type": "string"
         }
       }

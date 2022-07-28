@@ -621,6 +621,12 @@ service CloudHashingBilling {
     }
 }
 
+message PageInfo {
+    int32 Offset = 10;
+    int32 Limit = 20;
+}
+
+
 message CoinAccountInfo {
     string ID = 10;
     string CoinTypeID = 20;
@@ -973,7 +979,7 @@ message GetUserBenefitsByAppUserCoinResponse {
 
 message GetUserBenefitsByAppRequest {
     string AppID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetUserBenefitsByAppResponse {
@@ -982,7 +988,7 @@ message GetUserBenefitsByAppResponse {
 
 message GetUserBenefitsByOtherAppRequest {
     string TargetAppID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetUserBenefitsByOtherAppResponse {
@@ -990,7 +996,7 @@ message GetUserBenefitsByOtherAppResponse {
 }
 
 message GetUserBenefitsRequest {
-    npool.v1.PageInfo PageInfo = 10;
+    PageInfo PageInfo = 10;
 }
 
 message GetUserBenefitsResponse {
@@ -1150,7 +1156,7 @@ message GetGoodPaymentsResponse {
 
 message GetGoodPaymentsByGoodRequest {
     string GoodID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetGoodPaymentsByGoodResponse {
@@ -1159,7 +1165,7 @@ message GetGoodPaymentsByGoodResponse {
 
 message GetIdleGoodPaymentsByGoodRequest {
     string GoodID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetIdleGoodPaymentsByGoodResponse {
@@ -1169,7 +1175,7 @@ message GetIdleGoodPaymentsByGoodResponse {
 message GetIdleGoodPaymentsByGoodPaymentCoinRequest {
     string GoodID = 10;
     string PaymentCoinTypeID = 20;
-    npool.v1.PageInfo PageInfo = 30;
+    PageInfo PageInfo = 30;
 }
 
 message GetIdleGoodPaymentsByGoodPaymentCoinResponse {

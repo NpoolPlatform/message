@@ -2025,7 +2025,7 @@
           "type": "string"
         },
         "PageInfo": {
-          "$ref": "#/definitions/v1PageInfo"
+          "$ref": "#/definitions/hashingapisv1PageInfo"
         }
       }
     },
@@ -2048,7 +2048,7 @@
       "type": "object",
       "properties": {
         "PageInfo": {
-          "$ref": "#/definitions/v1PageInfo"
+          "$ref": "#/definitions/hashingapisv1PageInfo"
         }
       }
     },
@@ -2236,6 +2236,19 @@
         },
         "Promotion": {
           "$ref": "#/definitions/v1AppGoodPromotion"
+        }
+      }
+    },
+    "hashingapisv1PageInfo": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -3992,19 +4005,6 @@
         "End": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1PageInfo": {
-      "type": "object",
-      "properties": {
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
         }
       }
     },

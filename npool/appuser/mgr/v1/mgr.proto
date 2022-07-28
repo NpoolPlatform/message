@@ -499,6 +499,11 @@ service AppUserManager {
     }
 }
 
+message PageInfo {
+    int32 Offset = 10;
+    int32 Limit = 20;
+}
+
 message App {
     string ID = 10;
     string CreatedBy = 20;
@@ -539,7 +544,7 @@ message GetAppResponse {
 }
 
 message GetAppsRequest {
-    npool.v1.PageInfo PageInfo = 10;
+    PageInfo PageInfo = 10;
 }
 
 message GetAppsResponse {
@@ -549,7 +554,7 @@ message GetAppsResponse {
 
 message GetAppsByCreatorRequest {
     string UserID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetAppsByCreatorResponse {
@@ -679,7 +684,7 @@ message GetAppInfoResponse {
 }
 
 message GetAppInfosRequest {
-    npool.v1.PageInfo PageInfo = 10;
+    PageInfo PageInfo = 10;
 }
 
 message GetAppInfosResponse {
@@ -689,7 +694,7 @@ message GetAppInfosResponse {
 
 message GetAppInfosByCreatorRequest {
     string UserID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetAppInfosByCreatorResponse {
@@ -742,7 +747,7 @@ message GetAppUserByAppAccountResponse {
 
 message GetAppUsersByAppRequest {
     string AppID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetAppUsersByAppResponse {
@@ -1014,7 +1019,7 @@ message GetAppRoleByAppRoleResponse {
 
 message GetAppRolesByAppRequest {
     string AppID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetAppRolesByAppResponse {
@@ -1024,7 +1029,7 @@ message GetAppRolesByAppResponse {
 
 message GetAppRolesByOtherAppRequest {
     string TargetAppID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetAppRolesByOtherAppResponse {
@@ -1104,7 +1109,7 @@ message GetAppRoleUserByAppUserResponse {
 message GetAppRoleUsersByAppRoleRequest {
     string AppID = 10;
     string RoleID = 20;
-    npool.v1.PageInfo PageInfo = 30;
+    PageInfo PageInfo = 30;
 }
 
 message GetAppRoleUsersByAppRoleResponse {
@@ -1117,7 +1122,7 @@ message GetAppRoleUsersByOtherAppRoleRequest {
     string UserID = 20;
     string RoleID = 30;
     string TargetAppID = 40;
-    npool.v1.PageInfo PageInfo = 50;
+    PageInfo PageInfo = 50;
 }
 
 message GetAppRoleUsersByOtherAppRoleResponse {
@@ -1127,7 +1132,7 @@ message GetAppRoleUsersByOtherAppRoleResponse {
 
 message GetAppRoleUsersByAppRequest {
     string AppID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetAppRoleUsersByAppResponse {
@@ -1137,7 +1142,7 @@ message GetAppRoleUsersByAppResponse {
 
 message GetAppRoleUsersByOtherAppRequest {
     string TargetAppID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetAppRoleUsersByOtherAppResponse {
@@ -1148,7 +1153,7 @@ message GetAppRoleUsersByOtherAppResponse {
 message GetUserRolesByAppUserRequest {
     string AppID = 10;
     string UserID = 20;
-    npool.v1.PageInfo PageInfo = 30;
+    PageInfo PageInfo = 30;
 }
 
 message GetUserRolesByAppUserResponse {
@@ -1192,7 +1197,7 @@ message GetAppUserInfoByAppUserResponse {
 
 message GetAppUserInfosByAppRequest {
     string AppID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetAppUserInfosByAppResponse {
@@ -1202,7 +1207,7 @@ message GetAppUserInfosByAppResponse {
 
 message GetAppUserInfosByOtherAppRequest {
     string TargetAppID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetAppUserInfosByOtherAppResponse {
