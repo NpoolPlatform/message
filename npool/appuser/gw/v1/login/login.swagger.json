@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "UserGw"
+      "name": "LoginGw"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v2/login": {
       "post": {
-        "operationId": "UserGw_Login",
+        "operationId": "LoginGw_Login",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "UserGw"
+          "LoginGw"
         ]
       }
     },
     "/v2/logined": {
       "post": {
-        "operationId": "UserGw_Logined",
+        "operationId": "LoginGw_Logined",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "UserGw"
+          "LoginGw"
         ]
       }
     },
     "/v2/logout": {
       "post": {
-        "operationId": "UserGw_Logout",
+        "operationId": "LoginGw_Logout",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -108,7 +108,7 @@
           }
         ],
         "tags": [
-          "UserGw"
+          "LoginGw"
         ]
       }
     }
@@ -161,9 +161,6 @@
         },
         "AccountType": {
           "type": "string"
-        },
-        "Token": {
-          "type": "string"
         }
       }
     },
@@ -172,9 +169,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1User"
-        },
-        "Token": {
-          "type": "string"
         }
       }
     },
@@ -207,6 +201,9 @@
           "type": "string"
         },
         "UserID": {
+          "type": "string"
+        },
+        "Token": {
           "type": "string"
         }
       }

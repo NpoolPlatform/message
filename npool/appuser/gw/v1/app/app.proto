@@ -10,7 +10,7 @@ import "npool/npool.proto";
 import "npool/appuser/mgr/v2/app/app.proto";
 import "npool/appuser/mw/v1/app/app.proto";
 
-service AppMgr {
+service AppGw {
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {}
 
     rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {

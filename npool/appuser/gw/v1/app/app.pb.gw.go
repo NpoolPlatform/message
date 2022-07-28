@@ -31,7 +31,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_AppMgr_CreateApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppMgrClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppGw_CreateApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -48,7 +48,7 @@ func request_AppMgr_CreateApp_0(ctx context.Context, marshaler runtime.Marshaler
 
 }
 
-func local_request_AppMgr_CreateApp_0(ctx context.Context, marshaler runtime.Marshaler, server AppMgrServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppGw_CreateApp_0(ctx context.Context, marshaler runtime.Marshaler, server AppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -65,7 +65,7 @@ func local_request_AppMgr_CreateApp_0(ctx context.Context, marshaler runtime.Mar
 
 }
 
-func request_AppMgr_UpdateApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppMgrClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppGw_UpdateApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UpdateAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -82,7 +82,7 @@ func request_AppMgr_UpdateApp_0(ctx context.Context, marshaler runtime.Marshaler
 
 }
 
-func local_request_AppMgr_UpdateApp_0(ctx context.Context, marshaler runtime.Marshaler, server AppMgrServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppGw_UpdateApp_0(ctx context.Context, marshaler runtime.Marshaler, server AppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UpdateAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -99,7 +99,7 @@ func local_request_AppMgr_UpdateApp_0(ctx context.Context, marshaler runtime.Mar
 
 }
 
-func request_AppMgr_GetApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppMgrClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppGw_GetApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -116,7 +116,7 @@ func request_AppMgr_GetApp_0(ctx context.Context, marshaler runtime.Marshaler, c
 
 }
 
-func local_request_AppMgr_GetApp_0(ctx context.Context, marshaler runtime.Marshaler, server AppMgrServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppGw_GetApp_0(ctx context.Context, marshaler runtime.Marshaler, server AppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -133,7 +133,7 @@ func local_request_AppMgr_GetApp_0(ctx context.Context, marshaler runtime.Marsha
 
 }
 
-func request_AppMgr_GetApps_0(ctx context.Context, marshaler runtime.Marshaler, client AppMgrClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppGw_GetApps_0(ctx context.Context, marshaler runtime.Marshaler, client AppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppsRequest
 	var metadata runtime.ServerMetadata
 
@@ -150,7 +150,7 @@ func request_AppMgr_GetApps_0(ctx context.Context, marshaler runtime.Marshaler, 
 
 }
 
-func local_request_AppMgr_GetApps_0(ctx context.Context, marshaler runtime.Marshaler, server AppMgrServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppGw_GetApps_0(ctx context.Context, marshaler runtime.Marshaler, server AppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppsRequest
 	var metadata runtime.ServerMetadata
 
@@ -167,7 +167,7 @@ func local_request_AppMgr_GetApps_0(ctx context.Context, marshaler runtime.Marsh
 
 }
 
-func request_AppMgr_GetUserApps_0(ctx context.Context, marshaler runtime.Marshaler, client AppMgrClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_AppGw_GetUserApps_0(ctx context.Context, marshaler runtime.Marshaler, client AppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetUserAppsRequest
 	var metadata runtime.ServerMetadata
 
@@ -184,7 +184,7 @@ func request_AppMgr_GetUserApps_0(ctx context.Context, marshaler runtime.Marshal
 
 }
 
-func local_request_AppMgr_GetUserApps_0(ctx context.Context, marshaler runtime.Marshaler, server AppMgrServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_AppGw_GetUserApps_0(ctx context.Context, marshaler runtime.Marshaler, server AppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetUserAppsRequest
 	var metadata runtime.ServerMetadata
 
@@ -201,24 +201,24 @@ func local_request_AppMgr_GetUserApps_0(ctx context.Context, marshaler runtime.M
 
 }
 
-// RegisterAppMgrHandlerServer registers the http handlers for service AppMgr to "mux".
-// UnaryRPC     :call AppMgrServer directly.
+// RegisterAppGwHandlerServer registers the http handlers for service AppGw to "mux".
+// UnaryRPC     :call AppGwServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterAppMgrHandlerFromEndpoint instead.
-func RegisterAppMgrHandlerServer(ctx context.Context, mux *runtime.ServeMux, server AppMgrServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterAppGwHandlerFromEndpoint instead.
+func RegisterAppGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, server AppGwServer) error {
 
-	mux.Handle("POST", pattern_AppMgr_CreateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppGw_CreateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppMgr/CreateApp", runtime.WithHTTPPathPattern("/v1/create/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/CreateApp", runtime.WithHTTPPathPattern("/v1/create/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppMgr_CreateApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppGw_CreateApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -226,22 +226,22 @@ func RegisterAppMgrHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 			return
 		}
 
-		forward_AppMgr_CreateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppGw_CreateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppMgr_UpdateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppGw_UpdateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppMgr/UpdateApp", runtime.WithHTTPPathPattern("/v1/update/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/UpdateApp", runtime.WithHTTPPathPattern("/v1/update/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppMgr_UpdateApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppGw_UpdateApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -249,22 +249,22 @@ func RegisterAppMgrHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 			return
 		}
 
-		forward_AppMgr_UpdateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppGw_UpdateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppMgr_GetApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppGw_GetApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppMgr/GetApp", runtime.WithHTTPPathPattern("/v1/get/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetApp", runtime.WithHTTPPathPattern("/v1/get/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppMgr_GetApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppGw_GetApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -272,22 +272,22 @@ func RegisterAppMgrHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 			return
 		}
 
-		forward_AppMgr_GetApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppGw_GetApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppMgr_GetApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppGw_GetApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppMgr/GetApps", runtime.WithHTTPPathPattern("/v1/get/apps"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetApps", runtime.WithHTTPPathPattern("/v1/get/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppMgr_GetApps_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppGw_GetApps_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -295,22 +295,22 @@ func RegisterAppMgrHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 			return
 		}
 
-		forward_AppMgr_GetApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppGw_GetApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppMgr_GetUserApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppGw_GetUserApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppMgr/GetUserApps", runtime.WithHTTPPathPattern("/v1/get/user/apps"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetUserApps", runtime.WithHTTPPathPattern("/v1/get/user/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppMgr_GetUserApps_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppGw_GetUserApps_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -318,16 +318,16 @@ func RegisterAppMgrHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 			return
 		}
 
-		forward_AppMgr_GetUserApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppGw_GetUserApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterAppMgrHandlerFromEndpoint is same as RegisterAppMgrHandler but
+// RegisterAppGwHandlerFromEndpoint is same as RegisterAppGwHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterAppMgrHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterAppGwHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -347,119 +347,119 @@ func RegisterAppMgrHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMu
 		}()
 	}()
 
-	return RegisterAppMgrHandler(ctx, mux, conn)
+	return RegisterAppGwHandler(ctx, mux, conn)
 }
 
-// RegisterAppMgrHandler registers the http handlers for service AppMgr to "mux".
+// RegisterAppGwHandler registers the http handlers for service AppGw to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterAppMgrHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterAppMgrHandlerClient(ctx, mux, NewAppMgrClient(conn))
+func RegisterAppGwHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterAppGwHandlerClient(ctx, mux, NewAppGwClient(conn))
 }
 
-// RegisterAppMgrHandlerClient registers the http handlers for service AppMgr
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "AppMgrClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "AppMgrClient"
+// RegisterAppGwHandlerClient registers the http handlers for service AppGw
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "AppGwClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "AppGwClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "AppMgrClient" to call the correct interceptors.
-func RegisterAppMgrHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AppMgrClient) error {
+// "AppGwClient" to call the correct interceptors.
+func RegisterAppGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AppGwClient) error {
 
-	mux.Handle("POST", pattern_AppMgr_CreateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppGw_CreateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppMgr/CreateApp", runtime.WithHTTPPathPattern("/v1/create/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/CreateApp", runtime.WithHTTPPathPattern("/v1/create/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppMgr_CreateApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppGw_CreateApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppMgr_CreateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppGw_CreateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppMgr_UpdateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppGw_UpdateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppMgr/UpdateApp", runtime.WithHTTPPathPattern("/v1/update/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/UpdateApp", runtime.WithHTTPPathPattern("/v1/update/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppMgr_UpdateApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppGw_UpdateApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppMgr_UpdateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppGw_UpdateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppMgr_GetApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppGw_GetApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppMgr/GetApp", runtime.WithHTTPPathPattern("/v1/get/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetApp", runtime.WithHTTPPathPattern("/v1/get/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppMgr_GetApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppGw_GetApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppMgr_GetApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppGw_GetApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppMgr_GetApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppGw_GetApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppMgr/GetApps", runtime.WithHTTPPathPattern("/v1/get/apps"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetApps", runtime.WithHTTPPathPattern("/v1/get/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppMgr_GetApps_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppGw_GetApps_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppMgr_GetApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppGw_GetApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppMgr_GetUserApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AppGw_GetUserApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppMgr/GetUserApps", runtime.WithHTTPPathPattern("/v1/get/user/apps"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetUserApps", runtime.WithHTTPPathPattern("/v1/get/user/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppMgr_GetUserApps_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppGw_GetUserApps_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppMgr_GetUserApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AppGw_GetUserApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -467,25 +467,25 @@ func RegisterAppMgrHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 }
 
 var (
-	pattern_AppMgr_CreateApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "app"}, ""))
+	pattern_AppGw_CreateApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "app"}, ""))
 
-	pattern_AppMgr_UpdateApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "app"}, ""))
+	pattern_AppGw_UpdateApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "app"}, ""))
 
-	pattern_AppMgr_GetApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "app"}, ""))
+	pattern_AppGw_GetApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "app"}, ""))
 
-	pattern_AppMgr_GetApps_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "apps"}, ""))
+	pattern_AppGw_GetApps_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "apps"}, ""))
 
-	pattern_AppMgr_GetUserApps_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "user", "apps"}, ""))
+	pattern_AppGw_GetUserApps_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "user", "apps"}, ""))
 )
 
 var (
-	forward_AppMgr_CreateApp_0 = runtime.ForwardResponseMessage
+	forward_AppGw_CreateApp_0 = runtime.ForwardResponseMessage
 
-	forward_AppMgr_UpdateApp_0 = runtime.ForwardResponseMessage
+	forward_AppGw_UpdateApp_0 = runtime.ForwardResponseMessage
 
-	forward_AppMgr_GetApp_0 = runtime.ForwardResponseMessage
+	forward_AppGw_GetApp_0 = runtime.ForwardResponseMessage
 
-	forward_AppMgr_GetApps_0 = runtime.ForwardResponseMessage
+	forward_AppGw_GetApps_0 = runtime.ForwardResponseMessage
 
-	forward_AppMgr_GetUserApps_0 = runtime.ForwardResponseMessage
+	forward_AppGw_GetUserApps_0 = runtime.ForwardResponseMessage
 )

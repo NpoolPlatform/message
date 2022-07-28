@@ -7,8 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/login"
 import "google/api/annotations.proto";
 import "npool/appuser/mw/v1/user/user.proto";
 
-service UserGw {
-
+service LoginGw {
     rpc Login (LoginRequest) returns (LoginResponse) {
         option (google.api.http) = {
             post: "/v2/login"
@@ -33,25 +32,23 @@ service UserGw {
 }
 
 message LoginRequest {
-    string AppID = 10;
-    string Account = 20;
-    string PasswordHash = 30;
-    string ManMachineSpec = 40;
+    string AppID           = 10;
+    string Account         = 20;
+    string PasswordHash    = 30;
+    string ManMachineSpec  = 40;
     string EnvironmentSpec = 50;
-    string AccountType = 60;
-    string Token = 70;
+    string AccountType     = 60;
 }
 
 message LoginResponse {
     appuser.middleware.user.v1.User Info = 10;
-    string Token = 20;
 }
 
 
 message LoginedRequest {
-    string AppID = 10;
+    string AppID  = 10;
     string UserID = 20;
-    string Token = 70;
+    string Token  = 30;
 }
 
 message LoginedResponse {
@@ -59,12 +56,12 @@ message LoginedResponse {
 }
 
 message LogoutRequest {
-      string AppID = 10;
-      string UserID = 20;
+    string AppID  = 10;
+    string UserID = 20;
+    string Token  = 30;
 }
 
 message LogoutResponse {
   appuser.middleware.user.v1.User Info = 10;
 }
-
 

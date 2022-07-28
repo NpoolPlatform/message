@@ -18,158 +18,158 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// UserGwClient is the client API for UserGw service.
+// LoginGwClient is the client API for LoginGw service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type UserGwClient interface {
+type LoginGwClient interface {
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
 	Logined(ctx context.Context, in *LoginedRequest, opts ...grpc.CallOption) (*LoginedResponse, error)
 	Logout(ctx context.Context, in *LogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error)
 }
 
-type userGwClient struct {
+type loginGwClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewUserGwClient(cc grpc.ClientConnInterface) UserGwClient {
-	return &userGwClient{cc}
+func NewLoginGwClient(cc grpc.ClientConnInterface) LoginGwClient {
+	return &loginGwClient{cc}
 }
 
-func (c *userGwClient) Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error) {
+func (c *loginGwClient) Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error) {
 	out := new(LoginResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.login.v1.UserGw/Login", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.login.v1.LoginGw/Login", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userGwClient) Logined(ctx context.Context, in *LoginedRequest, opts ...grpc.CallOption) (*LoginedResponse, error) {
+func (c *loginGwClient) Logined(ctx context.Context, in *LoginedRequest, opts ...grpc.CallOption) (*LoginedResponse, error) {
 	out := new(LoginedResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.login.v1.UserGw/Logined", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.login.v1.LoginGw/Logined", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userGwClient) Logout(ctx context.Context, in *LogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error) {
+func (c *loginGwClient) Logout(ctx context.Context, in *LogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error) {
 	out := new(LogoutResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.login.v1.UserGw/Logout", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.login.v1.LoginGw/Logout", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// UserGwServer is the server API for UserGw service.
-// All implementations must embed UnimplementedUserGwServer
+// LoginGwServer is the server API for LoginGw service.
+// All implementations must embed UnimplementedLoginGwServer
 // for forward compatibility
-type UserGwServer interface {
+type LoginGwServer interface {
 	Login(context.Context, *LoginRequest) (*LoginResponse, error)
 	Logined(context.Context, *LoginedRequest) (*LoginedResponse, error)
 	Logout(context.Context, *LogoutRequest) (*LogoutResponse, error)
-	mustEmbedUnimplementedUserGwServer()
+	mustEmbedUnimplementedLoginGwServer()
 }
 
-// UnimplementedUserGwServer must be embedded to have forward compatible implementations.
-type UnimplementedUserGwServer struct {
+// UnimplementedLoginGwServer must be embedded to have forward compatible implementations.
+type UnimplementedLoginGwServer struct {
 }
 
-func (UnimplementedUserGwServer) Login(context.Context, *LoginRequest) (*LoginResponse, error) {
+func (UnimplementedLoginGwServer) Login(context.Context, *LoginRequest) (*LoginResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
 }
-func (UnimplementedUserGwServer) Logined(context.Context, *LoginedRequest) (*LoginedResponse, error) {
+func (UnimplementedLoginGwServer) Logined(context.Context, *LoginedRequest) (*LoginedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Logined not implemented")
 }
-func (UnimplementedUserGwServer) Logout(context.Context, *LogoutRequest) (*LogoutResponse, error) {
+func (UnimplementedLoginGwServer) Logout(context.Context, *LogoutRequest) (*LogoutResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Logout not implemented")
 }
-func (UnimplementedUserGwServer) mustEmbedUnimplementedUserGwServer() {}
+func (UnimplementedLoginGwServer) mustEmbedUnimplementedLoginGwServer() {}
 
-// UnsafeUserGwServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to UserGwServer will
+// UnsafeLoginGwServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to LoginGwServer will
 // result in compilation errors.
-type UnsafeUserGwServer interface {
-	mustEmbedUnimplementedUserGwServer()
+type UnsafeLoginGwServer interface {
+	mustEmbedUnimplementedLoginGwServer()
 }
 
-func RegisterUserGwServer(s grpc.ServiceRegistrar, srv UserGwServer) {
-	s.RegisterService(&UserGw_ServiceDesc, srv)
+func RegisterLoginGwServer(s grpc.ServiceRegistrar, srv LoginGwServer) {
+	s.RegisterService(&LoginGw_ServiceDesc, srv)
 }
 
-func _UserGw_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _LoginGw_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(LoginRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserGwServer).Login(ctx, in)
+		return srv.(LoginGwServer).Login(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.login.v1.UserGw/Login",
+		FullMethod: "/appuser.gateway.login.v1.LoginGw/Login",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserGwServer).Login(ctx, req.(*LoginRequest))
+		return srv.(LoginGwServer).Login(ctx, req.(*LoginRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserGw_Logined_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _LoginGw_Logined_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(LoginedRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserGwServer).Logined(ctx, in)
+		return srv.(LoginGwServer).Logined(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.login.v1.UserGw/Logined",
+		FullMethod: "/appuser.gateway.login.v1.LoginGw/Logined",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserGwServer).Logined(ctx, req.(*LoginedRequest))
+		return srv.(LoginGwServer).Logined(ctx, req.(*LoginedRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserGw_Logout_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _LoginGw_Logout_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(LogoutRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserGwServer).Logout(ctx, in)
+		return srv.(LoginGwServer).Logout(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.login.v1.UserGw/Logout",
+		FullMethod: "/appuser.gateway.login.v1.LoginGw/Logout",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserGwServer).Logout(ctx, req.(*LogoutRequest))
+		return srv.(LoginGwServer).Logout(ctx, req.(*LogoutRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// UserGw_ServiceDesc is the grpc.ServiceDesc for UserGw service.
+// LoginGw_ServiceDesc is the grpc.ServiceDesc for LoginGw service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var UserGw_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.gateway.login.v1.UserGw",
-	HandlerType: (*UserGwServer)(nil),
+var LoginGw_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "appuser.gateway.login.v1.LoginGw",
+	HandlerType: (*LoginGwServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Login",
-			Handler:    _UserGw_Login_Handler,
+			Handler:    _LoginGw_Login_Handler,
 		},
 		{
 			MethodName: "Logined",
-			Handler:    _UserGw_Logined_Handler,
+			Handler:    _LoginGw_Logined_Handler,
 		},
 		{
 			MethodName: "Logout",
-			Handler:    _UserGw_Logout_Handler,
+			Handler:    _LoginGw_Logout_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
