@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/logingateway";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
-import "npool/appuser/mgr/v1/appusermgr.proto";
+import "npool/appuser/mgr/v1/mgr.proto";
 
 service LoginGateway {
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
