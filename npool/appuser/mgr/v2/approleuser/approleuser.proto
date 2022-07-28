@@ -4,7 +4,6 @@ package appuser.manager.approleuser.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/approleuser";
 
-import "google/protobuf/struct.proto";
 import "npool/npool.proto";
 
 service AppRoleUserMgr {
