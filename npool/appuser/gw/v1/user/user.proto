@@ -13,6 +13,7 @@ import "npool/appuser/mgr/v2/approle/approle.proto";
 import "npool/appuser/mw/v1/user/user.proto";
 
 service UserGw {
+
     rpc Signup (SignupRequest) returns (SignupResponse) {
         option (google.api.http) = {
             post: "/v2/signup"
