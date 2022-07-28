@@ -297,6 +297,9 @@
         "Banned": {
           "type": "boolean"
         },
+        "BanUserID": {
+          "type": "string"
+        },
         "BanMessage": {
           "type": "string"
         },

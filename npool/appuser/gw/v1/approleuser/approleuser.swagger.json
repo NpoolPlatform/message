@@ -182,7 +182,8 @@
       "type": "object",
       "properties": {
         "TargetAppID": {
-          "type": "string"
+          "type": "string",
+          "title": "Permissioned by path"
         },
         "TargetUserID": {
           "type": "string"
@@ -204,7 +205,8 @@
       "type": "object",
       "properties": {
         "TargetAppID": {
-          "type": "string"
+          "type": "string",
+          "title": "Permissioned by path"
         },
         "RoleID": {
           "type": "string"
@@ -264,6 +266,10 @@
     "v1CreateRoleUserRequest": {
       "type": "object",
       "properties": {
+        "TargetUserID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
         "Info": {
           "$ref": "#/definitions/v2AppRoleUserReq"
         }
@@ -281,7 +287,8 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "Permissioned by path"
         }
       }
     },
@@ -297,7 +304,8 @@
       "type": "object",
       "properties": {
         "AppID": {
-          "type": "string"
+          "type": "string",
+          "title": "Permissioned by path"
         },
         "RoleID": {
           "type": "string"

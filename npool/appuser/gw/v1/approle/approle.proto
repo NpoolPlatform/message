@@ -15,23 +15,9 @@ service AppRoleGw {
         };
     }
 
-    rpc CreateAppRole (CreateAppRoleRequest) returns (CreateAppRoleResponse) {
-        option (google.api.http) = {
-            post: "/v2/create/app/role"
-            body: "*"
-        };
-    }
-
     rpc GetRoles (GetRolesRequest) returns (GetRolesResponse) {
         option (google.api.http) = {
             post: "/v2/get/roles"
-            body: "*"
-        };
-    }
-
-    rpc GetAppRoles (GetAppRolesRequest) returns (GetAppRolesResponse) {
-        option (google.api.http) = {
-            post: "/v2/get/app/roles"
             body: "*"
         };
     }
@@ -42,9 +28,25 @@ service AppRoleGw {
             body: "*"
         };
     }
+
+    // Admin apis
+    rpc CreateAppRole (CreateAppRoleRequest) returns (CreateAppRoleResponse) {
+        option (google.api.http) = {
+            post: "/v2/create/app/role"
+            body: "*"
+        };
+    }
+
+    rpc GetAppRoles (GetAppRolesRequest) returns (GetAppRolesResponse) {
+        option (google.api.http) = {
+            post: "/v2/get/app/roles"
+            body: "*"
+        };
+    }
 }
 
 message CreateRoleRequest {
+    // Permissioned by path (UserID is for CreatedBy)
     string                                UserID = 10;
     appuser.manager.approle.v2.AppRoleReq Info   = 20;
 }
@@ -53,17 +55,8 @@ message CreateRoleResponse {
     appuser.manager.approle.v2.AppRole Info = 10;
 }
 
-message CreateAppRoleRequest {
-    string                                TargetAppID = 10;
-    string                                UserID      = 20;
-    appuser.manager.approle.v2.AppRoleReq Info        = 30;
-}
-
-message CreateAppRoleResponse {
-    appuser.manager.approle.v2.AppRole Info = 10;
-}
-
 message GetRolesRequest {
+    // Permissioned by path
     string AppID  = 10;
     int32  Limit  = 20;
     int32  Offset = 30;
@@ -74,7 +67,29 @@ message GetRolesResponse {
     uint32                                      Total = 20;
 }
 
+message UpdateRoleRequest {
+    // Permissioned by path
+    appuser.manager.approle.v2.AppRoleReq Info = 10;
+}
+
+message UpdateRoleResponse {
+    appuser.manager.approle.v2.AppRole Info = 10;
+}
+
+message CreateAppRoleRequest {
+    // Permissioned by path
+    string                                TargetAppID = 10;
+    string                                UserID      = 20;
+    appuser.manager.approle.v2.AppRoleReq Info        = 30;
+}
+
+message CreateAppRoleResponse {
+    appuser.manager.approle.v2.AppRole Info = 10;
+}
+
+
 message GetAppRolesRequest {
+    // Permissioned by path
     string TargetAppID = 10;
     int32  Limit       = 20;
     int32  Offset      = 30;
@@ -85,10 +100,3 @@ message GetAppRolesResponse {
     uint32                                      Total = 20;
 }
 
-message UpdateRoleRequest {
-    appuser.manager.approle.v2.AppRoleReq Info = 10;
-}
-
-message UpdateRoleResponse {
-    appuser.manager.approle.v2.AppRole Info = 10;
-}

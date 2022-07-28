@@ -8,81 +8,71 @@ import "google/api/annotations.proto";
 import "npool/appuser/mgr/v2/banappuser/banappuser.proto";
 
 service BanAppUserGw {
-
-    rpc CreateBanAppUser (CreateBanAppUserRequest) returns (CreateBanAppUserResponse) {
+    rpc CreateBanUser (CreateBanUserRequest) returns (CreateBanUserResponse) {
         option (google.api.http) = {
-            post: "/v2/create/ban/app/user"
+            post: "/v2/create/ban/user"
             body: "*"
         };
     }
 
-    rpc GetBanAppUser (GetBanAppUserRequest) returns (GetBanAppUserResponse) {
+    rpc CreateAppBanUser (CreateAppBanUserRequest) returns (CreateAppBanUserResponse) {
         option (google.api.http) = {
-            post: "/v2/get/ban/app/user"
+            post: "/v2/create/app/ban/user"
             body: "*"
         };
     }
 
-    rpc GetAppUserBanAppUser (GetAppUserBanAppUserRequest) returns (GetAppUserBanAppUserResponse) {
+    rpc UpdateBanUser (UpdateBanUserRequest) returns (UpdateBanUserResponse) {
         option (google.api.http) = {
-            post: "/v2/get/app/user/ban/app/user"
+            post: "/v2/update/ban/user"
             body: "*"
         };
     }
 
-    rpc UpdateBanAppUser (UpdateBanAppUserRequest) returns (UpdateBanAppUserResponse) {
+    rpc DeleteBanUser (DeleteBanUserRequest) returns (DeleteBanUserResponse) {
         option (google.api.http) = {
-            post: "/v2/update/ban/app/user"
-            body: "*"
-        };
-    }
-
-    rpc DeleteBanAppUser (DeleteBanAppUserRequest) returns (DeleteBanAppUserResponse) {
-        option (google.api.http) = {
-            post: "/v2/delete/ban/app/user"
+            post: "/v2/delete/ban/user"
             body: "*"
         };
     }
 
 }
 
-message CreateBanAppUserRequest {
+message CreateBanUserRequest {
+    // Permissioned by path
+    string                                      TargetUserID = 10;
+    appuser.manager.banappuser.v2.BanAppUserReq Info         = 20;
+}
+
+message CreateBanUserResponse {
+    appuser.manager.banappuser.v2.BanAppUser Info = 10;
+}
+
+message CreateAppBanUserRequest {
+    // Permissioned by path
+    string                                      TargetAppID  = 10;
+    string                                      TargetUserID = 20;
+    appuser.manager.banappuser.v2.BanAppUserReq Info         = 30;
+}
+
+message CreateAppBanUserResponse {
+    appuser.manager.banappuser.v2.BanAppUser Info = 10;
+}
+
+message UpdateBanUserRequest {
+    // Permissioned by path
     appuser.manager.banappuser.v2.BanAppUserReq Info = 10;
 }
 
-message CreateBanAppUserResponse {
+message UpdateBanUserResponse {
     appuser.manager.banappuser.v2.BanAppUser Info = 10;
 }
 
-message GetBanAppUserRequest {
+message DeleteBanUserRequest {
+    // Permissioned by path
     string ID = 10;
 }
 
-message GetBanAppUserResponse {
-    appuser.manager.banappuser.v2.BanAppUser Info = 10;
-}
-
-message GetAppUserBanAppUserRequest {
-    string TargetAppID = 10;
-    string UserID = 20;
-}
-
-message GetAppUserBanAppUserResponse {
-    appuser.manager.banappuser.v2.BanAppUser Info = 10;
-}
-
-message UpdateBanAppUserRequest {
-    appuser.manager.banappuser.v2.BanAppUserReq Info = 10;
-}
-
-message UpdateBanAppUserResponse {
-    appuser.manager.banappuser.v2.BanAppUser Info = 10;
-}
-
-message DeleteBanAppUserRequest {
-    string ID = 10;
-}
-
-message DeleteBanAppUserResponse {
+message DeleteBanUserResponse {
     appuser.manager.banappuser.v2.BanAppUser Info = 10;
 }
