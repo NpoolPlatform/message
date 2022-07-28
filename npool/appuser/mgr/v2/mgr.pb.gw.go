@@ -78,7 +78,7 @@ func RegisterManagerHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v2.Manager/Version", runtime.WithHTTPPathPattern("/v1/version"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.manager.v2.Manager/Version", runtime.WithHTTPPathPattern("/v2/version"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -140,7 +140,7 @@ func RegisterManagerHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v2.Manager/Version", runtime.WithHTTPPathPattern("/v1/version"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.manager.v2.Manager/Version", runtime.WithHTTPPathPattern("/v2/version"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -160,7 +160,7 @@ func RegisterManagerHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Manager_Version_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "version"}, ""))
+	pattern_Manager_Version_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v2", "version"}, ""))
 )
 
 var (
