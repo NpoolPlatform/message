@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/appuser/gw/v1/user/appuser.proto
+// source: npool/appuser/gw/v1/appuser/appuser.proto
 
 package appuser
 
@@ -209,5 +209,5 @@ var AppUserGw_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/appuser/gw/v1/user/appuser.proto",
+	Metadata: "npool/appuser/gw/v1/appuser/appuser.proto",
 }
