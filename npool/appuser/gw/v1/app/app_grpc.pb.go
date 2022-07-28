@@ -8,11 +8,9 @@ package app
 
 import (
 	context "context"
-	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -24,7 +22,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AppGwClient interface {
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error)
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
@@ -39,15 +36,6 @@ type appGwClient struct {
 
 func NewAppGwClient(cc grpc.ClientConnInterface) AppGwClient {
 	return &appGwClient{cc}
-}
-
-func (c *appGwClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
-	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppGw/Version", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *appGwClient) CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error) {
@@ -99,7 +87,6 @@ func (c *appGwClient) GetUserApps(ctx context.Context, in *GetUserAppsRequest, o
 // All implementations must embed UnimplementedAppGwServer
 // for forward compatibility
 type AppGwServer interface {
-	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error)
 	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
 	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
@@ -113,9 +100,6 @@ type AppGwServer interface {
 type UnimplementedAppGwServer struct {
 }
 
-func (UnimplementedAppGwServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
-}
 func (UnimplementedAppGwServer) CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateApp not implemented")
 }
@@ -142,24 +126,6 @@ type UnsafeAppGwServer interface {
 
 func RegisterAppGwServer(s grpc.ServiceRegistrar, srv AppGwServer) {
 	s.RegisterService(&AppGw_ServiceDesc, srv)
-}
-
-func _AppGw_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(emptypb.Empty)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppGwServer).Version(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.gateway.app.v1.AppGw/Version",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppGwServer).Version(ctx, req.(*emptypb.Empty))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _AppGw_CreateApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -259,10 +225,6 @@ var AppGw_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "appuser.gateway.app.v1.AppGw",
 	HandlerType: (*AppGwServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "Version",
-			Handler:    _AppGw_Version_Handler,
-		},
 		{
 			MethodName: "CreateApp",
 			Handler:    _AppGw_CreateApp_Handler,

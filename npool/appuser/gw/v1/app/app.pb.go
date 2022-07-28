@@ -7,13 +7,13 @@
 package app
 
 import (
-	npool "github.com/NpoolPlatform/message/npool"
+	_ "github.com/NpoolPlatform/message/npool"
 	app "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/app"
 	app1 "github.com/NpoolPlatform/message/npool/appuser/mw/v1/app"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
+	_ "google.golang.org/protobuf/types/known/emptypb"
 	reflect "reflect"
 	sync "sync"
 )
@@ -603,11 +603,7 @@ var file_npool_appuser_gw_v1_app_app_proto_rawDesc = []byte{
 	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x2e,
 	0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a,
 	0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f,
-	0x74, 0x61, 0x6c, 0x32, 0xae, 0x05, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x47, 0x77, 0x12, 0x3e, 0x0a,
-	0x07, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79,
-	0x1a, 0x19, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x65, 0x72, 0x73,
-	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7b, 0x0a,
+	0x74, 0x61, 0x6c, 0x32, 0xee, 0x04, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x47, 0x77, 0x12, 0x7b, 0x0a,
 	0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x12, 0x28, 0x2e, 0x61, 0x70, 0x70,
 	0x75, 0x73, 0x65, 0x72, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61, 0x70, 0x70,
 	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71,
@@ -667,21 +663,19 @@ func file_npool_appuser_gw_v1_app_app_proto_rawDescGZIP() []byte {
 
 var file_npool_appuser_gw_v1_app_app_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_npool_appuser_gw_v1_app_app_proto_goTypes = []interface{}{
-	(*CreateAppRequest)(nil),      // 0: appuser.gateway.app.v1.CreateAppRequest
-	(*CreateAppResponse)(nil),     // 1: appuser.gateway.app.v1.CreateAppResponse
-	(*UpdateAppRequest)(nil),      // 2: appuser.gateway.app.v1.UpdateAppRequest
-	(*UpdateAppResponse)(nil),     // 3: appuser.gateway.app.v1.UpdateAppResponse
-	(*GetAppRequest)(nil),         // 4: appuser.gateway.app.v1.GetAppRequest
-	(*GetAppResponse)(nil),        // 5: appuser.gateway.app.v1.GetAppResponse
-	(*GetAppsRequest)(nil),        // 6: appuser.gateway.app.v1.GetAppsRequest
-	(*GetAppsResponse)(nil),       // 7: appuser.gateway.app.v1.GetAppsResponse
-	(*GetUserAppsRequest)(nil),    // 8: appuser.gateway.app.v1.GetUserAppsRequest
-	(*GetUserAppsResponse)(nil),   // 9: appuser.gateway.app.v1.GetUserAppsResponse
-	(*app.AppReq)(nil),            // 10: appuser.manager.app.v2.AppReq
-	(*app.App)(nil),               // 11: appuser.manager.app.v2.App
-	(*app1.App)(nil),              // 12: appuser.middleware.app.v1.App
-	(*emptypb.Empty)(nil),         // 13: google.protobuf.Empty
-	(*npool.VersionResponse)(nil), // 14: npool.v1.VersionResponse
+	(*CreateAppRequest)(nil),    // 0: appuser.gateway.app.v1.CreateAppRequest
+	(*CreateAppResponse)(nil),   // 1: appuser.gateway.app.v1.CreateAppResponse
+	(*UpdateAppRequest)(nil),    // 2: appuser.gateway.app.v1.UpdateAppRequest
+	(*UpdateAppResponse)(nil),   // 3: appuser.gateway.app.v1.UpdateAppResponse
+	(*GetAppRequest)(nil),       // 4: appuser.gateway.app.v1.GetAppRequest
+	(*GetAppResponse)(nil),      // 5: appuser.gateway.app.v1.GetAppResponse
+	(*GetAppsRequest)(nil),      // 6: appuser.gateway.app.v1.GetAppsRequest
+	(*GetAppsResponse)(nil),     // 7: appuser.gateway.app.v1.GetAppsResponse
+	(*GetUserAppsRequest)(nil),  // 8: appuser.gateway.app.v1.GetUserAppsRequest
+	(*GetUserAppsResponse)(nil), // 9: appuser.gateway.app.v1.GetUserAppsResponse
+	(*app.AppReq)(nil),          // 10: appuser.manager.app.v2.AppReq
+	(*app.App)(nil),             // 11: appuser.manager.app.v2.App
+	(*app1.App)(nil),            // 12: appuser.middleware.app.v1.App
 }
 var file_npool_appuser_gw_v1_app_app_proto_depIdxs = []int32{
 	10, // 0: appuser.gateway.app.v1.CreateAppRequest.Info:type_name -> appuser.manager.app.v2.AppReq
@@ -691,20 +685,18 @@ var file_npool_appuser_gw_v1_app_app_proto_depIdxs = []int32{
 	12, // 4: appuser.gateway.app.v1.GetAppResponse.Info:type_name -> appuser.middleware.app.v1.App
 	12, // 5: appuser.gateway.app.v1.GetAppsResponse.Infos:type_name -> appuser.middleware.app.v1.App
 	12, // 6: appuser.gateway.app.v1.GetUserAppsResponse.Infos:type_name -> appuser.middleware.app.v1.App
-	13, // 7: appuser.gateway.app.v1.AppGw.Version:input_type -> google.protobuf.Empty
-	0,  // 8: appuser.gateway.app.v1.AppGw.CreateApp:input_type -> appuser.gateway.app.v1.CreateAppRequest
-	2,  // 9: appuser.gateway.app.v1.AppGw.UpdateApp:input_type -> appuser.gateway.app.v1.UpdateAppRequest
-	4,  // 10: appuser.gateway.app.v1.AppGw.GetApp:input_type -> appuser.gateway.app.v1.GetAppRequest
-	6,  // 11: appuser.gateway.app.v1.AppGw.GetApps:input_type -> appuser.gateway.app.v1.GetAppsRequest
-	8,  // 12: appuser.gateway.app.v1.AppGw.GetUserApps:input_type -> appuser.gateway.app.v1.GetUserAppsRequest
-	14, // 13: appuser.gateway.app.v1.AppGw.Version:output_type -> npool.v1.VersionResponse
-	1,  // 14: appuser.gateway.app.v1.AppGw.CreateApp:output_type -> appuser.gateway.app.v1.CreateAppResponse
-	3,  // 15: appuser.gateway.app.v1.AppGw.UpdateApp:output_type -> appuser.gateway.app.v1.UpdateAppResponse
-	5,  // 16: appuser.gateway.app.v1.AppGw.GetApp:output_type -> appuser.gateway.app.v1.GetAppResponse
-	7,  // 17: appuser.gateway.app.v1.AppGw.GetApps:output_type -> appuser.gateway.app.v1.GetAppsResponse
-	9,  // 18: appuser.gateway.app.v1.AppGw.GetUserApps:output_type -> appuser.gateway.app.v1.GetUserAppsResponse
-	13, // [13:19] is the sub-list for method output_type
-	7,  // [7:13] is the sub-list for method input_type
+	0,  // 7: appuser.gateway.app.v1.AppGw.CreateApp:input_type -> appuser.gateway.app.v1.CreateAppRequest
+	2,  // 8: appuser.gateway.app.v1.AppGw.UpdateApp:input_type -> appuser.gateway.app.v1.UpdateAppRequest
+	4,  // 9: appuser.gateway.app.v1.AppGw.GetApp:input_type -> appuser.gateway.app.v1.GetAppRequest
+	6,  // 10: appuser.gateway.app.v1.AppGw.GetApps:input_type -> appuser.gateway.app.v1.GetAppsRequest
+	8,  // 11: appuser.gateway.app.v1.AppGw.GetUserApps:input_type -> appuser.gateway.app.v1.GetUserAppsRequest
+	1,  // 12: appuser.gateway.app.v1.AppGw.CreateApp:output_type -> appuser.gateway.app.v1.CreateAppResponse
+	3,  // 13: appuser.gateway.app.v1.AppGw.UpdateApp:output_type -> appuser.gateway.app.v1.UpdateAppResponse
+	5,  // 14: appuser.gateway.app.v1.AppGw.GetApp:output_type -> appuser.gateway.app.v1.GetAppResponse
+	7,  // 15: appuser.gateway.app.v1.AppGw.GetApps:output_type -> appuser.gateway.app.v1.GetAppsResponse
+	9,  // 16: appuser.gateway.app.v1.AppGw.GetUserApps:output_type -> appuser.gateway.app.v1.GetUserAppsResponse
+	12, // [12:17] is the sub-list for method output_type
+	7,  // [7:12] is the sub-list for method input_type
 	7,  // [7:7] is the sub-list for extension type_name
 	7,  // [7:7] is the sub-list for extension extendee
 	0,  // [0:7] is the sub-list for field type_name

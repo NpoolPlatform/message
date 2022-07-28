@@ -402,14 +402,6 @@
         }
       }
     },
-    "v1VersionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "string"
-        }
-      }
-    },
     "v2AppReq": {
       "type": "object",
       "properties": {
