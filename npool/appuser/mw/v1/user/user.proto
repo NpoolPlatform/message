@@ -97,7 +97,7 @@ message User {
 }
 
 message CreateUserRequest {
-    User Info = 10;
+    UserReq Info = 10;
 }
 
 message CreateUserResponse {
@@ -105,7 +105,7 @@ message CreateUserResponse {
 }
 
 message UpdateUserRequest {
-    User Info = 10;
+    UserReq Info = 10;
 }
 
 message UpdateUserResponse {
