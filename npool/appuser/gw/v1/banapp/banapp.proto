@@ -8,24 +8,10 @@ import "google/api/annotations.proto";
 import "npool/appuser/mgr/v2/banapp/banapp.proto";
 
 service BanAppGw {
-
+    // Admin apis
     rpc CreateBanApp (CreateBanAppRequest) returns (CreateBanAppResponse) {
         option (google.api.http) = {
             post: "/v2/create/ban/app"
-            body: "*"
-        };
-    }
-
-    rpc GetBanApp (GetBanAppRequest) returns (GetBanAppResponse) {
-        option (google.api.http) = {
-            post: "/v2/get/ban/app"
-            body: "*"
-        };
-    }
-
-    rpc GetAppBanApp (GetAppBanAppRequest) returns (GetAppBanAppResponse) {
-        option (google.api.http) = {
-            post: "/v2/get/app/ban/app"
             body: "*"
         };
     }
@@ -47,6 +33,7 @@ service BanAppGw {
 }
 
 message CreateBanAppRequest {
+    // Permissioned by path
     appuser.manager.banapp.v2.BanAppReq Info = 10;
 }
 
@@ -54,24 +41,8 @@ message CreateBanAppResponse {
     appuser.manager.banapp.v2.BanApp Info = 10;
 }
 
-message GetBanAppRequest {
-    string ID = 10;
-}
-
-message GetBanAppResponse {
-    appuser.manager.banapp.v2.BanApp Info = 10;
-}
-
-
-message GetAppBanAppRequest {
-    string AppID = 10;
-}
-
-message GetAppBanAppResponse {
-    appuser.manager.banapp.v2.BanApp Info = 10;
-}
-
 message UpdateBanAppRequest {
+    // Permissioned by path
     appuser.manager.banapp.v2.BanAppReq Info = 10;
 }
 
@@ -80,6 +51,7 @@ message UpdateBanAppResponse {
 }
 
 message DeleteBanAppRequest {
+    // Permissioned by path
     string ID = 10;
 }
 

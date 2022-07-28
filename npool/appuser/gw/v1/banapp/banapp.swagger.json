@@ -18,6 +18,7 @@
   "paths": {
     "/v2/create/ban/app": {
       "post": {
+        "summary": "Admin apis",
         "operationId": "BanAppGw_CreateBanApp",
         "responses": {
           "200": {
@@ -80,70 +81,6 @@
         ]
       }
     },
-    "/v2/get/app/ban/app": {
-      "post": {
-        "operationId": "BanAppGw_GetAppBanApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppBanAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppBanAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "BanAppGw"
-        ]
-      }
-    },
-    "/v2/get/ban/app": {
-      "post": {
-        "operationId": "BanAppGw_GetBanApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/banappv1GetBanAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/banappv1GetBanAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "BanAppGw"
-        ]
-      }
-    },
     "/v2/update/ban/app": {
       "post": {
         "operationId": "BanAppGw_UpdateBanApp",
@@ -182,7 +119,8 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2BanAppReq"
+          "$ref": "#/definitions/v2BanAppReq",
+          "title": "Permissioned by path"
         }
       }
     },
@@ -198,7 +136,8 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "Permissioned by path"
         }
       }
     },
@@ -210,27 +149,12 @@
         }
       }
     },
-    "banappv1GetBanAppRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "banappv1GetBanAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2BanApp"
-        }
-      }
-    },
     "banappv1UpdateBanAppRequest": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2BanAppReq"
+          "$ref": "#/definitions/v2BanAppReq",
+          "title": "Permissioned by path"
         }
       }
     },
@@ -266,22 +190,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1GetAppBanAppRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppBanAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2BanApp"
         }
       }
     },

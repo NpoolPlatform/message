@@ -44,30 +44,11 @@
         }
       }
     },
-    "v1CreateAppUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1User"
-        }
-      }
-    },
     "v1CreateUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-    "v1GetAppUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1User"
-          }
         }
       }
     },
@@ -167,6 +148,9 @@
         },
         "Banned": {
           "type": "boolean"
+        },
+        "BanUserID": {
+          "type": "string"
         },
         "BanMessage": {
           "type": "string"

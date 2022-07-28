@@ -7,11 +7,9 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/user";
 import "npool/npool.proto";
 
 service UserMw {
-    rpc GetUsers      (GetUsersRequest)       returns (GetUsersResponse)      {}
-    rpc GetAppUsers   (GetAppUsersRequest)    returns (GetAppUsersResponse)   {}
     rpc CreateUser    (CreateUserRequest)     returns (CreateUserResponse)    {}
-    rpc CreateAppUser (CreateAppUserRequest)  returns (CreateAppUserResponse) {}
     rpc UpdateUser    (UpdateUserRequest)     returns (UpdateUserResponse)    {}
+    rpc GetUsers      (GetUsersRequest)       returns (GetUsersResponse)      {}
 }
 
 message UserReq {
@@ -44,15 +42,16 @@ message UserReq {
     optional bool   SigninVerifyByGoogleAuthentication = 200;
     optional bool   GoogleAuthenticationVerified       = 210;
     optional bool   Banned                             = 220;
-    optional string BanMessage                         = 230;
+    optional string BanUserID                          = 230;
+    optional string BanMessage                         = 240;
 
     // Secret map
-    optional bool HasGoogleSecret                     = 240;
+    optional bool HasGoogleSecret                     = 250;
 
     // Role
-    repeated string Roles                             = 250;
+    repeated string Roles                             = 260;
 
-    optional uint32 CreateAt                          = 260;
+    optional uint32 CreateAt                          = 270;
 }
 
 message User {
@@ -85,15 +84,16 @@ message User {
     bool   SigninVerifyByGoogleAuthentication = 200;
     bool   GoogleAuthenticationVerified       = 210;
     bool   Banned                             = 220;
-    string BanMessage                         = 230;
+    string BanUserID                          = 230;
+    string BanMessage                         = 240;
 
     // Secret map
-    bool HasGoogleSecret                     = 240;
+    bool HasGoogleSecret                     = 250;
 
     // Role
-    repeated string Roles                    = 250;
+    repeated string Roles                    = 260;
 
-    uint32 CreateAt                          = 260;
+    uint32 CreateAt                          = 270;
 }
 
 message Conds {
@@ -115,30 +115,11 @@ message GetUsersResponse {
     repeated User Infos = 10;
 }
 
-message GetAppUsersRequest {
-    string TargetAppID = 10;
-    int32  Offset      = 20;
-    int32  Limit       = 30;
-}
-
-message GetAppUsersResponse {
-    repeated User Infos = 10;
-}
-
 message CreateUserRequest {
     User Info = 10;
 }
 
 message CreateUserResponse {
-    User Info = 10;
-}
-
-message CreateAppUserRequest {
-    string TargetAppID = 10;
-    User Info          = 20;
-}
-
-message CreateAppUserResponse {
     User Info = 10;
 }
 

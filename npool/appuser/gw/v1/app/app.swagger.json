@@ -82,6 +82,7 @@
     },
     "/v1/get/apps": {
       "post": {
+        "summary": "Super admin api",
         "operationId": "AppMgr_GetApps",
         "responses": {
           "200": {
@@ -181,8 +182,9 @@
     "appusergatewayappv1GetAppRequest": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
+        "AppID": {
+          "type": "string",
+          "title": "Permissioned by app"
         }
       }
     },
@@ -199,7 +201,8 @@
       "properties": {
         "Offset": {
           "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "title": "Permissioned by path"
         },
         "Limit": {
           "type": "integer",
@@ -226,7 +229,8 @@
       "type": "object",
       "properties": {
         "TargetUserID": {
-          "type": "string"
+          "type": "string",
+          "title": "Permissioned by path"
         },
         "Offset": {
           "type": "integer",
@@ -276,6 +280,9 @@
           "type": "boolean",
           "title": "Banned"
         },
+        "BanAppID": {
+          "type": "string"
+        },
         "BanMessage": {
           "type": "string"
         },
@@ -314,7 +321,8 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppReq"
+          "$ref": "#/definitions/v2AppReq",
+          "title": "Permissioned by path"
         }
       }
     },
@@ -329,6 +337,13 @@
     "appv1UpdateAppRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string",
+          "title": "Permissioned by user"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "Info": {
           "$ref": "#/definitions/v2AppReq"
         }

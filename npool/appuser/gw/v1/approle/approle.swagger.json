@@ -18,6 +18,7 @@
   "paths": {
     "/v2/create/app/role": {
       "post": {
+        "summary": "Admin apis",
         "operationId": "AppRoleGw_CreateAppRole",
         "responses": {
           "200": {
@@ -182,7 +183,8 @@
       "type": "object",
       "properties": {
         "TargetAppID": {
-          "type": "string"
+          "type": "string",
+          "title": "Permissioned by path"
         },
         "UserID": {
           "type": "string"
@@ -204,7 +206,8 @@
       "type": "object",
       "properties": {
         "TargetAppID": {
-          "type": "string"
+          "type": "string",
+          "title": "Permissioned by path"
         },
         "Limit": {
           "type": "integer",
@@ -262,7 +265,8 @@
       "type": "object",
       "properties": {
         "UserID": {
-          "type": "string"
+          "type": "string",
+          "title": "Permissioned by path (UserID is for CreatedBy)"
         },
         "Info": {
           "$ref": "#/definitions/v2AppRoleReq"
@@ -281,7 +285,8 @@
       "type": "object",
       "properties": {
         "AppID": {
-          "type": "string"
+          "type": "string",
+          "title": "Permissioned by path"
         },
         "Limit": {
           "type": "integer",
@@ -312,7 +317,8 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRoleReq"
+          "$ref": "#/definitions/v2AppRoleReq",
+          "title": "Permissioned by path"
         }
       }
     },

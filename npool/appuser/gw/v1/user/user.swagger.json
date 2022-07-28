@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewayuserv1GetAppUsersResponse"
+              "$ref": "#/definitions/userv1GetAppUsersResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewayuserv1GetAppUsersRequest"
+              "$ref": "#/definitions/userv1GetAppUsersRequest"
             }
           }
         ],
@@ -194,33 +194,6 @@
         }
       }
     },
-    "appusergatewayuserv1GetAppUsersRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "appusergatewayuserv1GetAppUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1User"
-          }
-        }
-      }
-    },
     "appusergatewayuserv1GetUsersRequest": {
       "type": "object",
       "properties": {
@@ -287,6 +260,33 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "userv1GetAppUsersRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "userv1GetAppUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1User"
           }
         }
       }
@@ -384,6 +384,9 @@
         },
         "Banned": {
           "type": "boolean"
+        },
+        "BanUserID": {
+          "type": "string"
         },
         "BanMessage": {
           "type": "string"

@@ -8,7 +8,6 @@ service AppMw {
     rpc GetApp      (GetAppRequest)      returns (GetAppResponse)      {}
     rpc GetApps     (GetAppsRequest)     returns (GetAppsResponse)     {}
     rpc GetUserApps (GetUserAppsRequest) returns (GetUserAppsResponse) {}
-
 }
 
 message App {
@@ -21,19 +20,20 @@ message App {
 
     // Banned
     bool            Banned             = 60;
-    string          BanMessage         = 70;
+    string          BanAppID           = 70;
+    string          BanMessage         = 80;
 
     // Sign methods
-    repeated string SignupMethods      = 80;
-    repeated string ExtSigninMethods   = 90;
+    repeated string SignupMethods      = 90;
+    repeated string ExtSigninMethods   = 100;
 
     // Control flag
-    string          RecaptchaMethod    = 100;
-    bool            KycEnable          = 110;
-    bool            SigninVerifyEnable = 120;
-    bool            InvitationCodeMust = 130;
+    string          RecaptchaMethod    = 110;
+    bool            KycEnable          = 120;
+    bool            SigninVerifyEnable = 130;
+    bool            InvitationCodeMust = 140;
 
-    string          CreateAt           = 140;
+    string          CreateAt           = 150;
 }
 
 message GetAppRequest {
