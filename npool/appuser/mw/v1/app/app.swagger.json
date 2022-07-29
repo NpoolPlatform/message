@@ -17,39 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "GetRecaptchasResponseRecaptcha": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Recaptcha": {
-          "type": "string"
-        },
-        "Dashboard": {
-          "type": "string"
-        }
-      },
-      "title": "In future this may be put to database then admin can change it"
-    },
-    "GetSignMethodsResponseSignMethod": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Method": {
-          "type": "string"
-        },
-        "Icon": {
-          "type": "string"
-        },
-        "External": {
-          "type": "boolean"
-        }
-      },
-      "title": "In future this may be put to database then admin can change it"
-    },
     "appv1App": {
       "type": "object",
       "properties": {
@@ -141,6 +108,14 @@
         }
       }
     },
+    "appv1UpdateAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -182,8 +157,9 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GetRecaptchasResponseRecaptcha"
-          }
+            "$ref": "#/definitions/v2Recaptcha"
+          },
+          "title": "In future this may be put to database then admin can change it"
         }
       }
     },
@@ -193,8 +169,9 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GetSignMethodsResponseSignMethod"
-          }
+            "$ref": "#/definitions/v2SignMethod"
+          },
+          "title": "In future this may be put to database then admin can change it"
         }
       }
     },
@@ -274,6 +251,37 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v2Recaptcha": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Recaptcha": {
+          "type": "string"
+        },
+        "Dashboard": {
+          "type": "string"
+        }
+      }
+    },
+    "v2SignMethod": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string"
+        },
+        "Icon": {
+          "type": "string"
+        },
+        "External": {
+          "type": "boolean"
         }
       }
     }

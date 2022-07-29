@@ -98,8 +98,11 @@
         "UserID": {
           "type": "string"
         },
-        "Message": {
-          "type": "string"
+        "SigninVerifyByGoogleAuthentication": {
+          "type": "boolean"
+        },
+        "GoogleAuthenticationVerified": {
+          "type": "boolean"
         }
       }
     },
