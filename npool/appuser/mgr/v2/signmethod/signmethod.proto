@@ -13,6 +13,7 @@ enum SignMethodType {
     Facebook              = 50;
     Linkedin              = 60;
     Wechat                = 70;
+    Google                = 80;
 }
 
 message SignMethod {
