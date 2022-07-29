@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package appuser.manager.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/appusermgr/v1";
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v1";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";

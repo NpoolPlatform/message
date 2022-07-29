@@ -8,7 +8,7 @@ package thirdlogingateway
 
 import (
 	npool "github.com/NpoolPlatform/message/npool"
-	v1 "github.com/NpoolPlatform/message/npool/appusermgr/v1"
+	v1 "github.com/NpoolPlatform/message/npool/appuser/mgr/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"

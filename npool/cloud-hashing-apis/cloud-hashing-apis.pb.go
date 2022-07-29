@@ -8,7 +8,7 @@ package cloud_hashing_apis
 
 import (
 	npool "github.com/NpoolPlatform/message/npool"
-	v1 "github.com/NpoolPlatform/message/npool/appusermgr/v1"
+	v1 "github.com/NpoolPlatform/message/npool/appuser/mgr/v1"
 	cloud_hashing_billing "github.com/NpoolPlatform/message/npool/cloud-hashing-billing"
 	cloud_hashing_goods "github.com/NpoolPlatform/message/npool/cloud-hashing-goods"
 	cloud_hashing_inspire "github.com/NpoolPlatform/message/npool/cloud-hashing-inspire"
