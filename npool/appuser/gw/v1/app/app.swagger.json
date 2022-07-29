@@ -749,7 +749,7 @@
         "InvitationCodeMust": {
           "type": "boolean"
         },
-        "CreateAt": {
+        "CreatedAt": {
           "type": "string"
         }
       }
