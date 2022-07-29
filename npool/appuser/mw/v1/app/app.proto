@@ -5,9 +5,12 @@ package appuser.middleware.app.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/app";
 
 import "npool/appuser/mgr/v2/app/app.proto";
+import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
+import "npool/appuser/mgr/v2/recaptcha/recaptcha.proto";
 
 service AppMw {
     rpc CreateApp              (CreateAppRequest)             returns (CreateAppResponse)             {}
+    rpc UpdateApp              (UpdateAppRequest)             returns (UpdateAppResponse)             {}
     rpc GetApp                 (GetAppRequest)                returns (GetAppResponse)                {}
     rpc GetApps                (GetAppsRequest)               returns (GetAppsResponse)               {}
     rpc GetUserApps            (GetUserAppsRequest)           returns (GetUserAppsResponse)           {}
@@ -58,6 +61,14 @@ message CreateAppResponse {
     App Info = 10;
 }
 
+message UpdateAppRequest {
+    appuser.manager.app.v2.AppReq Info = 10;
+}
+
+message UpdateAppResponse {
+    App Info = 10;
+}
+
 message GetAppRequest {
     string ID = 10;
 }
@@ -101,13 +112,7 @@ message GetSignMethodsRequest {
 
 message GetSignMethodsResponse {
     // In future this may be put to database then admin can change it
-    message SignMethod {
-        string ID       = 10;
-        string Method   = 20;
-        string Icon     = 30;
-        bool   External = 40;
-    }
-    repeated SignMethod Infos = 10;
+    repeated appuser.manager.signmethod.v2.SignMethod Infos = 10;
 }
 
 message SetSignMethodsRequest {
@@ -124,12 +129,7 @@ message GetRecaptchasRequest {
 
 message GetRecaptchasResponse {
     // In future this may be put to database then admin can change it
-    message Recaptcha {
-        string ID        = 10;
-        string Recaptcha = 20;
-        string Dashboard = 30;
-    }
-    repeated Recaptcha Infos = 10;
+    repeated appuser.manager.recaptcha.v2.Recaptcha Infos = 10;
 }
 
 message SetRecaptchaRequest {
