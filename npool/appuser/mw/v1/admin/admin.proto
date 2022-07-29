@@ -12,7 +12,7 @@ import "npool/appuser/mgr/v2/approle/approle.proto";
 import "npool/appuser/mw/v1/app/app.proto";
 import "npool/appuser/mw/v1/user/user.proto";
 
-service AdminGw {
+service AdminMw {
     rpc CreateAdminApps    (CreateAdminAppsRequest)    returns (CreateAdminAppsResponse)    {}
     rpc CreateGenesisRoles (CreateGenesisRolesRequest) returns (CreateGenesisRolesResponse) {}
     rpc CreateGenesisUser  (CreateGenesisUserRequest)  returns (CreateGenesisUserResponse)  {}
