@@ -526,7 +526,7 @@ var file_npool_appuser_mw_v1_admin_admin_proto_rawDesc = []byte{
 	0x72, 0x69, 0x7a, 0x65, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x22, 0x1a, 0x0a, 0x18, 0x41, 0x75, 0x74, 0x68, 0x6f, 0x72, 0x69, 0x7a, 0x65, 0x47,
 	0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0x95,
-	0x05, 0x0a, 0x07, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x47, 0x77, 0x12, 0x7e, 0x0a, 0x0f, 0x43, 0x72,
+	0x05, 0x0a, 0x07, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x4d, 0x77, 0x12, 0x7e, 0x0a, 0x0f, 0x43, 0x72,
 	0x65, 0x61, 0x74, 0x65, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x70, 0x70, 0x73, 0x12, 0x33, 0x2e,
 	0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
 	0x72, 0x65, 0x2e, 0x61, 0x64, 0x6d, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61,
@@ -607,16 +607,16 @@ var file_npool_appuser_mw_v1_admin_admin_proto_depIdxs = []int32{
 	11, // 1: appuser.middleware.admin.v1.CreateGenesisRolesResponse.Infos:type_name -> appuser.manager.approle.v2.AppRole
 	12, // 2: appuser.middleware.admin.v1.CreateGenesisUserResponse.Info:type_name -> appuser.middleware.user.v1.User
 	10, // 3: appuser.middleware.admin.v1.GetAdminAppsResponse.Infos:type_name -> appuser.manager.app.v2.App
-	0,  // 4: appuser.middleware.admin.v1.AdminGw.CreateAdminApps:input_type -> appuser.middleware.admin.v1.CreateAdminAppsRequest
-	2,  // 5: appuser.middleware.admin.v1.AdminGw.CreateGenesisRoles:input_type -> appuser.middleware.admin.v1.CreateGenesisRolesRequest
-	4,  // 6: appuser.middleware.admin.v1.AdminGw.CreateGenesisUser:input_type -> appuser.middleware.admin.v1.CreateGenesisUserRequest
-	6,  // 7: appuser.middleware.admin.v1.AdminGw.GetAdminApps:input_type -> appuser.middleware.admin.v1.GetAdminAppsRequest
-	8,  // 8: appuser.middleware.admin.v1.AdminGw.AuthorizeGenesis:input_type -> appuser.middleware.admin.v1.AuthorizeGenesisRequest
-	1,  // 9: appuser.middleware.admin.v1.AdminGw.CreateAdminApps:output_type -> appuser.middleware.admin.v1.CreateAdminAppsResponse
-	3,  // 10: appuser.middleware.admin.v1.AdminGw.CreateGenesisRoles:output_type -> appuser.middleware.admin.v1.CreateGenesisRolesResponse
-	5,  // 11: appuser.middleware.admin.v1.AdminGw.CreateGenesisUser:output_type -> appuser.middleware.admin.v1.CreateGenesisUserResponse
-	7,  // 12: appuser.middleware.admin.v1.AdminGw.GetAdminApps:output_type -> appuser.middleware.admin.v1.GetAdminAppsResponse
-	9,  // 13: appuser.middleware.admin.v1.AdminGw.AuthorizeGenesis:output_type -> appuser.middleware.admin.v1.AuthorizeGenesisResponse
+	0,  // 4: appuser.middleware.admin.v1.AdminMw.CreateAdminApps:input_type -> appuser.middleware.admin.v1.CreateAdminAppsRequest
+	2,  // 5: appuser.middleware.admin.v1.AdminMw.CreateGenesisRoles:input_type -> appuser.middleware.admin.v1.CreateGenesisRolesRequest
+	4,  // 6: appuser.middleware.admin.v1.AdminMw.CreateGenesisUser:input_type -> appuser.middleware.admin.v1.CreateGenesisUserRequest
+	6,  // 7: appuser.middleware.admin.v1.AdminMw.GetAdminApps:input_type -> appuser.middleware.admin.v1.GetAdminAppsRequest
+	8,  // 8: appuser.middleware.admin.v1.AdminMw.AuthorizeGenesis:input_type -> appuser.middleware.admin.v1.AuthorizeGenesisRequest
+	1,  // 9: appuser.middleware.admin.v1.AdminMw.CreateAdminApps:output_type -> appuser.middleware.admin.v1.CreateAdminAppsResponse
+	3,  // 10: appuser.middleware.admin.v1.AdminMw.CreateGenesisRoles:output_type -> appuser.middleware.admin.v1.CreateGenesisRolesResponse
+	5,  // 11: appuser.middleware.admin.v1.AdminMw.CreateGenesisUser:output_type -> appuser.middleware.admin.v1.CreateGenesisUserResponse
+	7,  // 12: appuser.middleware.admin.v1.AdminMw.GetAdminApps:output_type -> appuser.middleware.admin.v1.GetAdminAppsResponse
+	9,  // 13: appuser.middleware.admin.v1.AdminMw.AuthorizeGenesis:output_type -> appuser.middleware.admin.v1.AuthorizeGenesisResponse
 	9,  // [9:14] is the sub-list for method output_type
 	4,  // [4:9] is the sub-list for method input_type
 	4,  // [4:4] is the sub-list for extension type_name

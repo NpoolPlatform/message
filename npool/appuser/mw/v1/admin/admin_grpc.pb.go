@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// AdminGwClient is the client API for AdminGw service.
+// AdminMwClient is the client API for AdminMw service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type AdminGwClient interface {
+type AdminMwClient interface {
 	CreateAdminApps(ctx context.Context, in *CreateAdminAppsRequest, opts ...grpc.CallOption) (*CreateAdminAppsResponse, error)
 	CreateGenesisRoles(ctx context.Context, in *CreateGenesisRolesRequest, opts ...grpc.CallOption) (*CreateGenesisRolesResponse, error)
 	CreateGenesisUser(ctx context.Context, in *CreateGenesisUserRequest, opts ...grpc.CallOption) (*CreateGenesisUserResponse, error)
@@ -29,219 +29,219 @@ type AdminGwClient interface {
 	AuthorizeGenesis(ctx context.Context, in *AuthorizeGenesisRequest, opts ...grpc.CallOption) (*AuthorizeGenesisResponse, error)
 }
 
-type adminGwClient struct {
+type adminMwClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAdminGwClient(cc grpc.ClientConnInterface) AdminGwClient {
-	return &adminGwClient{cc}
+func NewAdminMwClient(cc grpc.ClientConnInterface) AdminMwClient {
+	return &adminMwClient{cc}
 }
 
-func (c *adminGwClient) CreateAdminApps(ctx context.Context, in *CreateAdminAppsRequest, opts ...grpc.CallOption) (*CreateAdminAppsResponse, error) {
+func (c *adminMwClient) CreateAdminApps(ctx context.Context, in *CreateAdminAppsRequest, opts ...grpc.CallOption) (*CreateAdminAppsResponse, error) {
 	out := new(CreateAdminAppsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.admin.v1.AdminGw/CreateAdminApps", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.admin.v1.AdminMw/CreateAdminApps", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *adminGwClient) CreateGenesisRoles(ctx context.Context, in *CreateGenesisRolesRequest, opts ...grpc.CallOption) (*CreateGenesisRolesResponse, error) {
+func (c *adminMwClient) CreateGenesisRoles(ctx context.Context, in *CreateGenesisRolesRequest, opts ...grpc.CallOption) (*CreateGenesisRolesResponse, error) {
 	out := new(CreateGenesisRolesResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.admin.v1.AdminGw/CreateGenesisRoles", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.admin.v1.AdminMw/CreateGenesisRoles", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *adminGwClient) CreateGenesisUser(ctx context.Context, in *CreateGenesisUserRequest, opts ...grpc.CallOption) (*CreateGenesisUserResponse, error) {
+func (c *adminMwClient) CreateGenesisUser(ctx context.Context, in *CreateGenesisUserRequest, opts ...grpc.CallOption) (*CreateGenesisUserResponse, error) {
 	out := new(CreateGenesisUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.admin.v1.AdminGw/CreateGenesisUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.admin.v1.AdminMw/CreateGenesisUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *adminGwClient) GetAdminApps(ctx context.Context, in *GetAdminAppsRequest, opts ...grpc.CallOption) (*GetAdminAppsResponse, error) {
+func (c *adminMwClient) GetAdminApps(ctx context.Context, in *GetAdminAppsRequest, opts ...grpc.CallOption) (*GetAdminAppsResponse, error) {
 	out := new(GetAdminAppsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.admin.v1.AdminGw/GetAdminApps", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.admin.v1.AdminMw/GetAdminApps", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *adminGwClient) AuthorizeGenesis(ctx context.Context, in *AuthorizeGenesisRequest, opts ...grpc.CallOption) (*AuthorizeGenesisResponse, error) {
+func (c *adminMwClient) AuthorizeGenesis(ctx context.Context, in *AuthorizeGenesisRequest, opts ...grpc.CallOption) (*AuthorizeGenesisResponse, error) {
 	out := new(AuthorizeGenesisResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.admin.v1.AdminGw/AuthorizeGenesis", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.admin.v1.AdminMw/AuthorizeGenesis", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AdminGwServer is the server API for AdminGw service.
-// All implementations must embed UnimplementedAdminGwServer
+// AdminMwServer is the server API for AdminMw service.
+// All implementations must embed UnimplementedAdminMwServer
 // for forward compatibility
-type AdminGwServer interface {
+type AdminMwServer interface {
 	CreateAdminApps(context.Context, *CreateAdminAppsRequest) (*CreateAdminAppsResponse, error)
 	CreateGenesisRoles(context.Context, *CreateGenesisRolesRequest) (*CreateGenesisRolesResponse, error)
 	CreateGenesisUser(context.Context, *CreateGenesisUserRequest) (*CreateGenesisUserResponse, error)
 	GetAdminApps(context.Context, *GetAdminAppsRequest) (*GetAdminAppsResponse, error)
 	AuthorizeGenesis(context.Context, *AuthorizeGenesisRequest) (*AuthorizeGenesisResponse, error)
-	mustEmbedUnimplementedAdminGwServer()
+	mustEmbedUnimplementedAdminMwServer()
 }
 
-// UnimplementedAdminGwServer must be embedded to have forward compatible implementations.
-type UnimplementedAdminGwServer struct {
+// UnimplementedAdminMwServer must be embedded to have forward compatible implementations.
+type UnimplementedAdminMwServer struct {
 }
 
-func (UnimplementedAdminGwServer) CreateAdminApps(context.Context, *CreateAdminAppsRequest) (*CreateAdminAppsResponse, error) {
+func (UnimplementedAdminMwServer) CreateAdminApps(context.Context, *CreateAdminAppsRequest) (*CreateAdminAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAdminApps not implemented")
 }
-func (UnimplementedAdminGwServer) CreateGenesisRoles(context.Context, *CreateGenesisRolesRequest) (*CreateGenesisRolesResponse, error) {
+func (UnimplementedAdminMwServer) CreateGenesisRoles(context.Context, *CreateGenesisRolesRequest) (*CreateGenesisRolesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateGenesisRoles not implemented")
 }
-func (UnimplementedAdminGwServer) CreateGenesisUser(context.Context, *CreateGenesisUserRequest) (*CreateGenesisUserResponse, error) {
+func (UnimplementedAdminMwServer) CreateGenesisUser(context.Context, *CreateGenesisUserRequest) (*CreateGenesisUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateGenesisUser not implemented")
 }
-func (UnimplementedAdminGwServer) GetAdminApps(context.Context, *GetAdminAppsRequest) (*GetAdminAppsResponse, error) {
+func (UnimplementedAdminMwServer) GetAdminApps(context.Context, *GetAdminAppsRequest) (*GetAdminAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAdminApps not implemented")
 }
-func (UnimplementedAdminGwServer) AuthorizeGenesis(context.Context, *AuthorizeGenesisRequest) (*AuthorizeGenesisResponse, error) {
+func (UnimplementedAdminMwServer) AuthorizeGenesis(context.Context, *AuthorizeGenesisRequest) (*AuthorizeGenesisResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AuthorizeGenesis not implemented")
 }
-func (UnimplementedAdminGwServer) mustEmbedUnimplementedAdminGwServer() {}
+func (UnimplementedAdminMwServer) mustEmbedUnimplementedAdminMwServer() {}
 
-// UnsafeAdminGwServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to AdminGwServer will
+// UnsafeAdminMwServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to AdminMwServer will
 // result in compilation errors.
-type UnsafeAdminGwServer interface {
-	mustEmbedUnimplementedAdminGwServer()
+type UnsafeAdminMwServer interface {
+	mustEmbedUnimplementedAdminMwServer()
 }
 
-func RegisterAdminGwServer(s grpc.ServiceRegistrar, srv AdminGwServer) {
-	s.RegisterService(&AdminGw_ServiceDesc, srv)
+func RegisterAdminMwServer(s grpc.ServiceRegistrar, srv AdminMwServer) {
+	s.RegisterService(&AdminMw_ServiceDesc, srv)
 }
 
-func _AdminGw_CreateAdminApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AdminMw_CreateAdminApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAdminAppsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AdminGwServer).CreateAdminApps(ctx, in)
+		return srv.(AdminMwServer).CreateAdminApps(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.admin.v1.AdminGw/CreateAdminApps",
+		FullMethod: "/appuser.middleware.admin.v1.AdminMw/CreateAdminApps",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AdminGwServer).CreateAdminApps(ctx, req.(*CreateAdminAppsRequest))
+		return srv.(AdminMwServer).CreateAdminApps(ctx, req.(*CreateAdminAppsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AdminGw_CreateGenesisRoles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AdminMw_CreateGenesisRoles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateGenesisRolesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AdminGwServer).CreateGenesisRoles(ctx, in)
+		return srv.(AdminMwServer).CreateGenesisRoles(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.admin.v1.AdminGw/CreateGenesisRoles",
+		FullMethod: "/appuser.middleware.admin.v1.AdminMw/CreateGenesisRoles",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AdminGwServer).CreateGenesisRoles(ctx, req.(*CreateGenesisRolesRequest))
+		return srv.(AdminMwServer).CreateGenesisRoles(ctx, req.(*CreateGenesisRolesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AdminGw_CreateGenesisUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AdminMw_CreateGenesisUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateGenesisUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AdminGwServer).CreateGenesisUser(ctx, in)
+		return srv.(AdminMwServer).CreateGenesisUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.admin.v1.AdminGw/CreateGenesisUser",
+		FullMethod: "/appuser.middleware.admin.v1.AdminMw/CreateGenesisUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AdminGwServer).CreateGenesisUser(ctx, req.(*CreateGenesisUserRequest))
+		return srv.(AdminMwServer).CreateGenesisUser(ctx, req.(*CreateGenesisUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AdminGw_GetAdminApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AdminMw_GetAdminApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAdminAppsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AdminGwServer).GetAdminApps(ctx, in)
+		return srv.(AdminMwServer).GetAdminApps(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.admin.v1.AdminGw/GetAdminApps",
+		FullMethod: "/appuser.middleware.admin.v1.AdminMw/GetAdminApps",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AdminGwServer).GetAdminApps(ctx, req.(*GetAdminAppsRequest))
+		return srv.(AdminMwServer).GetAdminApps(ctx, req.(*GetAdminAppsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AdminGw_AuthorizeGenesis_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AdminMw_AuthorizeGenesis_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AuthorizeGenesisRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AdminGwServer).AuthorizeGenesis(ctx, in)
+		return srv.(AdminMwServer).AuthorizeGenesis(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.admin.v1.AdminGw/AuthorizeGenesis",
+		FullMethod: "/appuser.middleware.admin.v1.AdminMw/AuthorizeGenesis",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AdminGwServer).AuthorizeGenesis(ctx, req.(*AuthorizeGenesisRequest))
+		return srv.(AdminMwServer).AuthorizeGenesis(ctx, req.(*AuthorizeGenesisRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// AdminGw_ServiceDesc is the grpc.ServiceDesc for AdminGw service.
+// AdminMw_ServiceDesc is the grpc.ServiceDesc for AdminMw service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var AdminGw_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.middleware.admin.v1.AdminGw",
-	HandlerType: (*AdminGwServer)(nil),
+var AdminMw_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "appuser.middleware.admin.v1.AdminMw",
+	HandlerType: (*AdminMwServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateAdminApps",
-			Handler:    _AdminGw_CreateAdminApps_Handler,
+			Handler:    _AdminMw_CreateAdminApps_Handler,
 		},
 		{
 			MethodName: "CreateGenesisRoles",
-			Handler:    _AdminGw_CreateGenesisRoles_Handler,
+			Handler:    _AdminMw_CreateGenesisRoles_Handler,
 		},
 		{
 			MethodName: "CreateGenesisUser",
-			Handler:    _AdminGw_CreateGenesisUser_Handler,
+			Handler:    _AdminMw_CreateGenesisUser_Handler,
 		},
 		{
 			MethodName: "GetAdminApps",
-			Handler:    _AdminGw_GetAdminApps_Handler,
+			Handler:    _AdminMw_GetAdminApps_Handler,
 		},
 		{
 			MethodName: "AuthorizeGenesis",
-			Handler:    _AdminGw_AuthorizeGenesis_Handler,
+			Handler:    _AdminMw_AuthorizeGenesis_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
