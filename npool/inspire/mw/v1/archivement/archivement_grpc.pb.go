@@ -18,86 +18,86 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// ArchivementMwClient is the client API for ArchivementMw service.
+// MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type ArchivementMwClient interface {
+type MiddlewareClient interface {
 	CalculateOrderArchivement(ctx context.Context, in *CalculateOrderArchivementRequest, opts ...grpc.CallOption) (*CalculateOrderArchivementResponse, error)
 }
 
-type archivementMwClient struct {
+type middlewareClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewArchivementMwClient(cc grpc.ClientConnInterface) ArchivementMwClient {
-	return &archivementMwClient{cc}
+func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
+	return &middlewareClient{cc}
 }
 
-func (c *archivementMwClient) CalculateOrderArchivement(ctx context.Context, in *CalculateOrderArchivementRequest, opts ...grpc.CallOption) (*CalculateOrderArchivementResponse, error) {
+func (c *middlewareClient) CalculateOrderArchivement(ctx context.Context, in *CalculateOrderArchivementRequest, opts ...grpc.CallOption) (*CalculateOrderArchivementResponse, error) {
 	out := new(CalculateOrderArchivementResponse)
-	err := c.cc.Invoke(ctx, "/inspire.middleware.archivement.v1.ArchivementMw/CalculateOrderArchivement", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.archivement.v1.Middleware/CalculateOrderArchivement", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ArchivementMwServer is the server API for ArchivementMw service.
-// All implementations must embed UnimplementedArchivementMwServer
+// MiddlewareServer is the server API for Middleware service.
+// All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
-type ArchivementMwServer interface {
+type MiddlewareServer interface {
 	CalculateOrderArchivement(context.Context, *CalculateOrderArchivementRequest) (*CalculateOrderArchivementResponse, error)
-	mustEmbedUnimplementedArchivementMwServer()
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-// UnimplementedArchivementMwServer must be embedded to have forward compatible implementations.
-type UnimplementedArchivementMwServer struct {
+// UnimplementedMiddlewareServer must be embedded to have forward compatible implementations.
+type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedArchivementMwServer) CalculateOrderArchivement(context.Context, *CalculateOrderArchivementRequest) (*CalculateOrderArchivementResponse, error) {
+func (UnimplementedMiddlewareServer) CalculateOrderArchivement(context.Context, *CalculateOrderArchivementRequest) (*CalculateOrderArchivementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalculateOrderArchivement not implemented")
 }
-func (UnimplementedArchivementMwServer) mustEmbedUnimplementedArchivementMwServer() {}
+func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
-// UnsafeArchivementMwServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ArchivementMwServer will
+// UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MiddlewareServer will
 // result in compilation errors.
-type UnsafeArchivementMwServer interface {
-	mustEmbedUnimplementedArchivementMwServer()
+type UnsafeMiddlewareServer interface {
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-func RegisterArchivementMwServer(s grpc.ServiceRegistrar, srv ArchivementMwServer) {
-	s.RegisterService(&ArchivementMw_ServiceDesc, srv)
+func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
+	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _ArchivementMw_CalculateOrderArchivement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_CalculateOrderArchivement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CalculateOrderArchivementRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivementMwServer).CalculateOrderArchivement(ctx, in)
+		return srv.(MiddlewareServer).CalculateOrderArchivement(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.middleware.archivement.v1.ArchivementMw/CalculateOrderArchivement",
+		FullMethod: "/inspire.middleware.archivement.v1.Middleware/CalculateOrderArchivement",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivementMwServer).CalculateOrderArchivement(ctx, req.(*CalculateOrderArchivementRequest))
+		return srv.(MiddlewareServer).CalculateOrderArchivement(ctx, req.(*CalculateOrderArchivementRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// ArchivementMw_ServiceDesc is the grpc.ServiceDesc for ArchivementMw service.
+// Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var ArchivementMw_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.middleware.archivement.v1.ArchivementMw",
-	HandlerType: (*ArchivementMwServer)(nil),
+var Middleware_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "inspire.middleware.archivement.v1.Middleware",
+	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CalculateOrderArchivement",
-			Handler:    _ArchivementMw_CalculateOrderArchivement_Handler,
+			Handler:    _Middleware_CalculateOrderArchivement_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

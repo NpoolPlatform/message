@@ -18,122 +18,122 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// CommissionMwClient is the client API for CommissionMw service.
+// MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type CommissionMwClient interface {
+type MiddlewareClient interface {
 	CalculateOrderCommission(ctx context.Context, in *CalculateOrderCommissionRequest, opts ...grpc.CallOption) (*CalculateOrderCommissionResponse, error)
 	CreateUserGoodCommissions(ctx context.Context, in *CreateUserGoodCommissionsRequest, opts ...grpc.CallOption) (*CreateUserGoodCommissionsResponse, error)
 }
 
-type commissionMwClient struct {
+type middlewareClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewCommissionMwClient(cc grpc.ClientConnInterface) CommissionMwClient {
-	return &commissionMwClient{cc}
+func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
+	return &middlewareClient{cc}
 }
 
-func (c *commissionMwClient) CalculateOrderCommission(ctx context.Context, in *CalculateOrderCommissionRequest, opts ...grpc.CallOption) (*CalculateOrderCommissionResponse, error) {
+func (c *middlewareClient) CalculateOrderCommission(ctx context.Context, in *CalculateOrderCommissionRequest, opts ...grpc.CallOption) (*CalculateOrderCommissionResponse, error) {
 	out := new(CalculateOrderCommissionResponse)
-	err := c.cc.Invoke(ctx, "/inspire.middleware.commission.v1.CommissionMw/CalculateOrderCommission", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.commission.v1.Middleware/CalculateOrderCommission", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *commissionMwClient) CreateUserGoodCommissions(ctx context.Context, in *CreateUserGoodCommissionsRequest, opts ...grpc.CallOption) (*CreateUserGoodCommissionsResponse, error) {
+func (c *middlewareClient) CreateUserGoodCommissions(ctx context.Context, in *CreateUserGoodCommissionsRequest, opts ...grpc.CallOption) (*CreateUserGoodCommissionsResponse, error) {
 	out := new(CreateUserGoodCommissionsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.middleware.commission.v1.CommissionMw/CreateUserGoodCommissions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.commission.v1.Middleware/CreateUserGoodCommissions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// CommissionMwServer is the server API for CommissionMw service.
-// All implementations must embed UnimplementedCommissionMwServer
+// MiddlewareServer is the server API for Middleware service.
+// All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
-type CommissionMwServer interface {
+type MiddlewareServer interface {
 	CalculateOrderCommission(context.Context, *CalculateOrderCommissionRequest) (*CalculateOrderCommissionResponse, error)
 	CreateUserGoodCommissions(context.Context, *CreateUserGoodCommissionsRequest) (*CreateUserGoodCommissionsResponse, error)
-	mustEmbedUnimplementedCommissionMwServer()
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-// UnimplementedCommissionMwServer must be embedded to have forward compatible implementations.
-type UnimplementedCommissionMwServer struct {
+// UnimplementedMiddlewareServer must be embedded to have forward compatible implementations.
+type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedCommissionMwServer) CalculateOrderCommission(context.Context, *CalculateOrderCommissionRequest) (*CalculateOrderCommissionResponse, error) {
+func (UnimplementedMiddlewareServer) CalculateOrderCommission(context.Context, *CalculateOrderCommissionRequest) (*CalculateOrderCommissionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalculateOrderCommission not implemented")
 }
-func (UnimplementedCommissionMwServer) CreateUserGoodCommissions(context.Context, *CreateUserGoodCommissionsRequest) (*CreateUserGoodCommissionsResponse, error) {
+func (UnimplementedMiddlewareServer) CreateUserGoodCommissions(context.Context, *CreateUserGoodCommissionsRequest) (*CreateUserGoodCommissionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUserGoodCommissions not implemented")
 }
-func (UnimplementedCommissionMwServer) mustEmbedUnimplementedCommissionMwServer() {}
+func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
-// UnsafeCommissionMwServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to CommissionMwServer will
+// UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MiddlewareServer will
 // result in compilation errors.
-type UnsafeCommissionMwServer interface {
-	mustEmbedUnimplementedCommissionMwServer()
+type UnsafeMiddlewareServer interface {
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-func RegisterCommissionMwServer(s grpc.ServiceRegistrar, srv CommissionMwServer) {
-	s.RegisterService(&CommissionMw_ServiceDesc, srv)
+func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
+	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _CommissionMw_CalculateOrderCommission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_CalculateOrderCommission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CalculateOrderCommissionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CommissionMwServer).CalculateOrderCommission(ctx, in)
+		return srv.(MiddlewareServer).CalculateOrderCommission(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.middleware.commission.v1.CommissionMw/CalculateOrderCommission",
+		FullMethod: "/inspire.middleware.commission.v1.Middleware/CalculateOrderCommission",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CommissionMwServer).CalculateOrderCommission(ctx, req.(*CalculateOrderCommissionRequest))
+		return srv.(MiddlewareServer).CalculateOrderCommission(ctx, req.(*CalculateOrderCommissionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CommissionMw_CreateUserGoodCommissions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_CreateUserGoodCommissions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateUserGoodCommissionsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CommissionMwServer).CreateUserGoodCommissions(ctx, in)
+		return srv.(MiddlewareServer).CreateUserGoodCommissions(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.middleware.commission.v1.CommissionMw/CreateUserGoodCommissions",
+		FullMethod: "/inspire.middleware.commission.v1.Middleware/CreateUserGoodCommissions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CommissionMwServer).CreateUserGoodCommissions(ctx, req.(*CreateUserGoodCommissionsRequest))
+		return srv.(MiddlewareServer).CreateUserGoodCommissions(ctx, req.(*CreateUserGoodCommissionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// CommissionMw_ServiceDesc is the grpc.ServiceDesc for CommissionMw service.
+// Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var CommissionMw_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.middleware.commission.v1.CommissionMw",
-	HandlerType: (*CommissionMwServer)(nil),
+var Middleware_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "inspire.middleware.commission.v1.Middleware",
+	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CalculateOrderCommission",
-			Handler:    _CommissionMw_CalculateOrderCommission_Handler,
+			Handler:    _Middleware_CalculateOrderCommission_Handler,
 		},
 		{
 			MethodName: "CreateUserGoodCommissions",
-			Handler:    _CommissionMw_CreateUserGoodCommissions_Handler,
+			Handler:    _Middleware_CreateUserGoodCommissions_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

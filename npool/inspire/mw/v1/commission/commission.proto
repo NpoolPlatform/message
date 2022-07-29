@@ -9,7 +9,7 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
-service CommissionMw {
+service Middleware {
     rpc CalculateOrderCommission   (CalculateOrderCommissionRequest)  returns (CalculateOrderCommissionResponse)   {}
     rpc CreateUserGoodCommissions  (CreateUserGoodCommissionsRequest) returns (CreateUserGoodCommissionsResponse)  {}
 }

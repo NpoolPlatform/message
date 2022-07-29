@@ -8,7 +8,7 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
-service ArchivementDetailMgr {
+service DetailMgr {
     rpc CreateDetail     (CreateDetailRequest)     returns (CreateDetailResponse)     {}
     rpc CreateDetails    (CreateDetailsRequest)    returns (CreateDetailsResponse)    {}
     rpc GetDetail        (GetDetailRequest)        returns (GetDetailResponse)        {}
