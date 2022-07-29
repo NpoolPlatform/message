@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/inspire/mw/v1/commission/commission.proto
+// source: npool/inspire/mw/v1/archivement/commission/commission.proto
 
 package commission
 
@@ -137,5 +137,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/inspire/mw/v1/commission/commission.proto",
+	Metadata: "npool/inspire/mw/v1/archivement/commission/commission.proto",
 }

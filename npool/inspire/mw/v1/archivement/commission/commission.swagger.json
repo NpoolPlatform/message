@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mw/v1/commission/commission.proto",
+    "title": "npool/inspire/mw/v1/archivement/commission/commission.proto",
     "version": "version not set"
   },
   "tags": [

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package inspire.middleware.archivement.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/archivement";
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/archivement";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -10,14 +10,12 @@ import "npool/npool.proto";
 
 // Service Name
 service Middleware {
-    rpc CalculateOrderArchivement (CalculateOrderArchivementRequest) returns (CalculateOrderArchivementResponse) {}
-}
-
-message CalculateOrderArchivementRequest {
-    string OrderID = 10;
-}
-
-message CalculateOrderArchivementResponse {
-    // Just store all layer commission directly
+    // Method Version
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/v1/version"
+            body: "*"
+        };
+    }
 }
 

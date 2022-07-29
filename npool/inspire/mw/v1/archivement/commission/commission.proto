@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package inspire.middleware.commission.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/commission";
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/archivement/commission";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
