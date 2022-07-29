@@ -41,6 +41,7 @@ message Conds {
     npool.v1.StringVal PhoneNo       = 30;
     npool.v1.StringVal EmailAddress  = 40;
     npool.v1.StringVal ImportFromApp = 50;
+    npool.v1.StringSliceVal IDs      = 60;
 }
 
 message CreateAppUserRequest {
