@@ -27,25 +27,39 @@ message UserReq {
 
     // Imported
     optional string ImportedFromAppID                 = 50;
-    optional string ImportedFromAppName               = 60;
-    optional string ImportedFromAppLogo               = 70;
-    optional string ImportedFromAppHome               = 80;
 
     // Extra
-    optional string Username                          = 90;
-    repeated string AddressFields                     = 100;
-    optional string Gender                            = 110;
-    optional string PostalCode                        = 120;
-    optional uint32 Age                               = 130;
-    optional uint32 Birthday                          = 140;
-    optional string Avatar                            = 150;
-    optional string Organization                      = 160;
-    optional string FirstName                         = 170;
-    optional string LastName                          = 180;
-    optional string IDNumber                          = 190;
+    optional string Username                          = 60;
+    repeated string AddressFields                     = 70;
+    optional string Gender                            = 80;
+    optional string PostalCode                        = 90;
+    optional uint32 Age                               = 100;
+    optional uint32 Birthday                          = 110;
+    optional string Avatar                            = 120;
+    optional string Organization                      = 130;
+    optional string FirstName                         = 140;
+    optional string LastName                          = 150;
+    optional string IDNumber                          = 160;
 
-    // Control flag
-    optional bool   SigninVerifyByGoogleAuthentication = 200;
+    // Control
+    optional bool SigninVerifyByGoogleAuthentication  = 170;
+    optional bool GoogleAuthenticationVerified        = 180;
+
+    // Secret
+    string PasswordHash                               = 190;
+    string Salt                                       = 200;
+    string GoogleSecret                               = 210;
+
+    // ThirdParty
+    optional string ThirdPartyID                      = 220;
+    optional string ThirdPartyUserID                  = 230;
+    optional string ThirdPartyUsername                = 240;
+    optional string ThirdPartyUserAvatar              = 250;
+
+    // Banned
+    optional bool            Banned                   = 260;
+    optional string          BanMessage               = 270;
+
 }
 
 message User {

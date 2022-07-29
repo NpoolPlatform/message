@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1BanAppResponse"
+              "$ref": "#/definitions/v1BanAppResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1BanAppRequest"
+              "$ref": "#/definitions/v1BanAppRequest"
             }
           }
         ],
@@ -248,7 +248,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1SetInvitationCodeMustResponse"
+              "$ref": "#/definitions/v1SetInvitationCodeMustResponse"
             }
           },
           "default": {
@@ -264,7 +264,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1SetInvitationCodeMustRequest"
+              "$ref": "#/definitions/v1SetInvitationCodeMustRequest"
             }
           }
         ],
@@ -280,7 +280,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1SetKycResponse"
+              "$ref": "#/definitions/v1SetKycResponse"
             }
           },
           "default": {
@@ -296,7 +296,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1SetKycRequest"
+              "$ref": "#/definitions/v1SetKycRequest"
             }
           }
         ],
@@ -312,7 +312,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1SetRecaptchaResponse"
+              "$ref": "#/definitions/v1SetRecaptchaResponse"
             }
           },
           "default": {
@@ -328,7 +328,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1SetRecaptchaRequest"
+              "$ref": "#/definitions/v1SetRecaptchaRequest"
             }
           }
         ],
@@ -344,7 +344,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1SetSigninVerifyResponse"
+              "$ref": "#/definitions/v1SetSigninVerifyResponse"
             }
           },
           "default": {
@@ -360,7 +360,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1SetSigninVerifyRequest"
+              "$ref": "#/definitions/v1SetSigninVerifyRequest"
             }
           }
         ],
@@ -376,7 +376,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1SetSignMethodsResponse"
+              "$ref": "#/definitions/v1SetSignMethodsResponse"
             }
           },
           "default": {
@@ -392,7 +392,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1SetSignMethodsRequest"
+              "$ref": "#/definitions/v1SetSignMethodsRequest"
             }
           }
         ],
@@ -435,25 +435,6 @@
     }
   },
   "definitions": {
-    "appusergatewayappv1BanAppRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "BanMessage": {
-          "type": "string"
-        }
-      }
-    },
-    "appusergatewayappv1BanAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
     "appusergatewayappv1CreateAppRequest": {
       "type": "object",
       "properties": {
@@ -576,104 +557,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "appusergatewayappv1SetInvitationCodeMustRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Enable": {
-          "type": "boolean"
-        }
-      }
-    },
-    "appusergatewayappv1SetInvitationCodeMustResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "appusergatewayappv1SetKycRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Enable": {
-          "type": "boolean"
-        }
-      }
-    },
-    "appusergatewayappv1SetKycResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "appusergatewayappv1SetRecaptchaRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "RecaptchaID": {
-          "type": "string"
-        }
-      }
-    },
-    "appusergatewayappv1SetRecaptchaResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "appusergatewayappv1SetSignMethodsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "SignMethodIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "appusergatewayappv1SetSignMethodsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "appusergatewayappv1SetSigninVerifyRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Enable": {
-          "type": "boolean"
-        }
-      }
-    },
-    "appusergatewayappv1SetSigninVerifyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
         }
       }
     },
@@ -827,6 +710,123 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1BanAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "BanMessage": {
+          "type": "string"
+        }
+      }
+    },
+    "v1BanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v1SetInvitationCodeMustRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Enable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1SetInvitationCodeMustResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v1SetKycRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Enable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1SetKycResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v1SetRecaptchaRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "RecaptchaID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SetRecaptchaResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v1SetSignMethodsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "SignMethodIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1SetSignMethodsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v1SetSigninVerifyRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Enable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1SetSigninVerifyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
         }
       }
     },

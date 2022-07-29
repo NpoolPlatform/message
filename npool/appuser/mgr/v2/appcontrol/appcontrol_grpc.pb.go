@@ -44,7 +44,7 @@ func NewAppControlMgrClient(cc grpc.ClientConnInterface) AppControlMgrClient {
 
 func (c *appControlMgrClient) CreateAppControl(ctx context.Context, in *CreateAppControlRequest, opts ...grpc.CallOption) (*CreateAppControlResponse, error) {
 	out := new(CreateAppControlResponse)
-	err := c.cc.Invoke(ctx, "/app.manager.appcontrol.v2.AppControlMgr/CreateAppControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/CreateAppControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func (c *appControlMgrClient) CreateAppControl(ctx context.Context, in *CreateAp
 
 func (c *appControlMgrClient) CreateAppControls(ctx context.Context, in *CreateAppControlsRequest, opts ...grpc.CallOption) (*CreateAppControlsResponse, error) {
 	out := new(CreateAppControlsResponse)
-	err := c.cc.Invoke(ctx, "/app.manager.appcontrol.v2.AppControlMgr/CreateAppControls", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/CreateAppControls", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *appControlMgrClient) CreateAppControls(ctx context.Context, in *CreateA
 
 func (c *appControlMgrClient) UpdateAppControl(ctx context.Context, in *UpdateAppControlRequest, opts ...grpc.CallOption) (*UpdateAppControlResponse, error) {
 	out := new(UpdateAppControlResponse)
-	err := c.cc.Invoke(ctx, "/app.manager.appcontrol.v2.AppControlMgr/UpdateAppControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/UpdateAppControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *appControlMgrClient) UpdateAppControl(ctx context.Context, in *UpdateAp
 
 func (c *appControlMgrClient) GetAppControl(ctx context.Context, in *GetAppControlRequest, opts ...grpc.CallOption) (*GetAppControlResponse, error) {
 	out := new(GetAppControlResponse)
-	err := c.cc.Invoke(ctx, "/app.manager.appcontrol.v2.AppControlMgr/GetAppControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/GetAppControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func (c *appControlMgrClient) GetAppControl(ctx context.Context, in *GetAppContr
 
 func (c *appControlMgrClient) GetAppControlOnly(ctx context.Context, in *GetAppControlOnlyRequest, opts ...grpc.CallOption) (*GetAppControlOnlyResponse, error) {
 	out := new(GetAppControlOnlyResponse)
-	err := c.cc.Invoke(ctx, "/app.manager.appcontrol.v2.AppControlMgr/GetAppControlOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/GetAppControlOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *appControlMgrClient) GetAppControlOnly(ctx context.Context, in *GetAppC
 
 func (c *appControlMgrClient) GetAppControls(ctx context.Context, in *GetAppControlsRequest, opts ...grpc.CallOption) (*GetAppControlsResponse, error) {
 	out := new(GetAppControlsResponse)
-	err := c.cc.Invoke(ctx, "/app.manager.appcontrol.v2.AppControlMgr/GetAppControls", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/GetAppControls", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func (c *appControlMgrClient) GetAppControls(ctx context.Context, in *GetAppCont
 
 func (c *appControlMgrClient) ExistAppControl(ctx context.Context, in *ExistAppControlRequest, opts ...grpc.CallOption) (*ExistAppControlResponse, error) {
 	out := new(ExistAppControlResponse)
-	err := c.cc.Invoke(ctx, "/app.manager.appcontrol.v2.AppControlMgr/ExistAppControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/ExistAppControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func (c *appControlMgrClient) ExistAppControl(ctx context.Context, in *ExistAppC
 
 func (c *appControlMgrClient) ExistAppControlConds(ctx context.Context, in *ExistAppControlCondsRequest, opts ...grpc.CallOption) (*ExistAppControlCondsResponse, error) {
 	out := new(ExistAppControlCondsResponse)
-	err := c.cc.Invoke(ctx, "/app.manager.appcontrol.v2.AppControlMgr/ExistAppControlConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/ExistAppControlConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func (c *appControlMgrClient) ExistAppControlConds(ctx context.Context, in *Exis
 
 func (c *appControlMgrClient) CountAppControls(ctx context.Context, in *CountAppControlsRequest, opts ...grpc.CallOption) (*CountAppControlsResponse, error) {
 	out := new(CountAppControlsResponse)
-	err := c.cc.Invoke(ctx, "/app.manager.appcontrol.v2.AppControlMgr/CountAppControls", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/CountAppControls", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func (c *appControlMgrClient) CountAppControls(ctx context.Context, in *CountApp
 
 func (c *appControlMgrClient) DeleteAppControl(ctx context.Context, in *DeleteAppControlRequest, opts ...grpc.CallOption) (*DeleteAppControlResponse, error) {
 	out := new(DeleteAppControlResponse)
-	err := c.cc.Invoke(ctx, "/app.manager.appcontrol.v2.AppControlMgr/DeleteAppControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/DeleteAppControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -206,7 +206,7 @@ func _AppControlMgr_CreateAppControl_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.manager.appcontrol.v2.AppControlMgr/CreateAppControl",
+		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/CreateAppControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppControlMgrServer).CreateAppControl(ctx, req.(*CreateAppControlRequest))
@@ -224,7 +224,7 @@ func _AppControlMgr_CreateAppControls_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.manager.appcontrol.v2.AppControlMgr/CreateAppControls",
+		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/CreateAppControls",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppControlMgrServer).CreateAppControls(ctx, req.(*CreateAppControlsRequest))
@@ -242,7 +242,7 @@ func _AppControlMgr_UpdateAppControl_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.manager.appcontrol.v2.AppControlMgr/UpdateAppControl",
+		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/UpdateAppControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppControlMgrServer).UpdateAppControl(ctx, req.(*UpdateAppControlRequest))
@@ -260,7 +260,7 @@ func _AppControlMgr_GetAppControl_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.manager.appcontrol.v2.AppControlMgr/GetAppControl",
+		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/GetAppControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppControlMgrServer).GetAppControl(ctx, req.(*GetAppControlRequest))
@@ -278,7 +278,7 @@ func _AppControlMgr_GetAppControlOnly_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.manager.appcontrol.v2.AppControlMgr/GetAppControlOnly",
+		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/GetAppControlOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppControlMgrServer).GetAppControlOnly(ctx, req.(*GetAppControlOnlyRequest))
@@ -296,7 +296,7 @@ func _AppControlMgr_GetAppControls_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.manager.appcontrol.v2.AppControlMgr/GetAppControls",
+		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/GetAppControls",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppControlMgrServer).GetAppControls(ctx, req.(*GetAppControlsRequest))
@@ -314,7 +314,7 @@ func _AppControlMgr_ExistAppControl_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.manager.appcontrol.v2.AppControlMgr/ExistAppControl",
+		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/ExistAppControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppControlMgrServer).ExistAppControl(ctx, req.(*ExistAppControlRequest))
@@ -332,7 +332,7 @@ func _AppControlMgr_ExistAppControlConds_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.manager.appcontrol.v2.AppControlMgr/ExistAppControlConds",
+		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/ExistAppControlConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppControlMgrServer).ExistAppControlConds(ctx, req.(*ExistAppControlCondsRequest))
@@ -350,7 +350,7 @@ func _AppControlMgr_CountAppControls_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.manager.appcontrol.v2.AppControlMgr/CountAppControls",
+		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/CountAppControls",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppControlMgrServer).CountAppControls(ctx, req.(*CountAppControlsRequest))
@@ -368,7 +368,7 @@ func _AppControlMgr_DeleteAppControl_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.manager.appcontrol.v2.AppControlMgr/DeleteAppControl",
+		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/DeleteAppControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppControlMgrServer).DeleteAppControl(ctx, req.(*DeleteAppControlRequest))
@@ -380,7 +380,7 @@ func _AppControlMgr_DeleteAppControl_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AppControlMgr_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "app.manager.appcontrol.v2.AppControlMgr",
+	ServiceName: "appuser.manager.appcontrol.v2.AppControlMgr",
 	HandlerType: (*AppControlMgrServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

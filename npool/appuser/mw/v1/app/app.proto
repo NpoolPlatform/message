@@ -29,18 +29,17 @@ message AppReq {
 
     // Banned
     optional bool            Banned             = 60;
-    optional string          BanAppID           = 70;
-    optional string          BanMessage         = 80;
+    optional string          BanMessage         = 70;
 
     // Sign methods
-    repeated string SignupMethods               = 90;
-    repeated string ExtSigninMethods            = 100;
+    repeated string SignupMethods               = 80;
+    repeated string ExtSigninMethods            = 90;
 
     // Control flag
-    optional string          RecaptchaMethod    = 110;
-    optional bool            KycEnable          = 120;
-    optional bool            SigninVerifyEnable = 130;
-    optional bool            InvitationCodeMust = 140;
+    optional string          RecaptchaMethod    = 100;
+    optional bool            KycEnable          = 110;
+    optional bool            SigninVerifyEnable = 120;
+    optional bool            InvitationCodeMust = 130;
 }
 
 message App {
@@ -119,16 +118,6 @@ message GetUserAppsResponse {
     uint32       Total = 20;
 }
 
-message BanAppRequest {
-    // Permissioned by path
-    string AppID      = 10;
-    string BanMessage = 20;
-}
-
-message BanAppResponse {
-    App Info = 10;
-}
-
 message GetSignMethodsRequest {
     // Permissioned by path
 }
@@ -138,16 +127,6 @@ message GetSignMethodsResponse {
     repeated appuser.manager.signmethod.v2.SignMethod Infos = 10;
 }
 
-message SetSignMethodsRequest {
-    // Permissioned by path
-    string          AppID         = 10;
-    repeated string SignMethodIDs = 20;
-}
-
-message SetSignMethodsResponse {
-    App Info = 10;
-}
-
 message GetRecaptchasRequest {
     // Permissioned by path
 }
@@ -155,44 +134,4 @@ message GetRecaptchasRequest {
 message GetRecaptchasResponse {
     // In future this may be put to database then admin can change it
     repeated appuser.manager.recaptcha.v2.Recaptcha Infos = 10;
-}
-
-message SetRecaptchaRequest {
-    // Permissioned by path
-    string AppID       = 10;
-    string RecaptchaID = 20;
-}
-
-message SetRecaptchaResponse {
-    App Info = 10;
-}
-
-message SetKycRequest {
-    // Permissioned by path
-    string AppID  = 10;
-    bool   Enable = 20;
-}
-
-message SetKycResponse {
-    App Info = 10;
-}
-
-message SetSigninVerifyRequest {
-    // Permissioned by path
-    string AppID  = 10;
-    bool   Enable = 20;
-}
-
-message SetSigninVerifyResponse {
-    App Info = 10;
-}
-
-message SetInvitationCodeMustRequest {
-    // Permissioned by path
-    string AppID  = 10;
-    bool   Enable = 20;
-}
-
-message SetInvitationCodeMustResponse {
-    App Info = 10;
 }

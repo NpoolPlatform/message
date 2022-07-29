@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package app.manager.appcontrol.v2;
+package appuser.manager.appcontrol.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/app/mgr/v2/appcontrol";
 

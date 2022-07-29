@@ -101,9 +101,6 @@
           "type": "boolean",
           "title": "Banned"
         },
-        "BanAppID": {
-          "type": "string"
-        },
         "BanMessage": {
           "type": "string"
         },
@@ -201,14 +198,6 @@
         }
       }
     },
-    "v1BanAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
     "v1GetRecaptchasResponse": {
       "type": "object",
       "properties": {
@@ -245,46 +234,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1SetInvitationCodeMustResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "v1SetKycResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "v1SetRecaptchaResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "v1SetSignMethodsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "v1SetSigninVerifyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
         }
       }
     },

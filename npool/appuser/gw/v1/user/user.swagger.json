@@ -466,15 +466,6 @@
           "type": "string",
           "title": "Imported"
         },
-        "ImportedFromAppName": {
-          "type": "string"
-        },
-        "ImportedFromAppLogo": {
-          "type": "string"
-        },
-        "ImportedFromAppHome": {
-          "type": "string"
-        },
         "Username": {
           "type": "string",
           "title": "Extra"
@@ -516,7 +507,40 @@
         },
         "SigninVerifyByGoogleAuthentication": {
           "type": "boolean",
-          "title": "Control flag"
+          "title": "Control"
+        },
+        "GoogleAuthenticationVerified": {
+          "type": "boolean"
+        },
+        "PasswordHash": {
+          "type": "string",
+          "title": "Secret"
+        },
+        "Salt": {
+          "type": "string"
+        },
+        "GoogleSecret": {
+          "type": "string"
+        },
+        "ThirdPartyID": {
+          "type": "string",
+          "title": "ThirdParty"
+        },
+        "ThirdPartyUserID": {
+          "type": "string"
+        },
+        "ThirdPartyUsername": {
+          "type": "string"
+        },
+        "ThirdPartyUserAvatar": {
+          "type": "string"
+        },
+        "Banned": {
+          "type": "boolean",
+          "title": "Banned"
+        },
+        "BanMessage": {
+          "type": "string"
         }
       }
     }

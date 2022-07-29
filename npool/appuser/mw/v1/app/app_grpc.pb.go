@@ -27,14 +27,8 @@ type AppMwClient interface {
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
 	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
 	GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error)
-	BanApp(ctx context.Context, in *BanAppRequest, opts ...grpc.CallOption) (*BanAppResponse, error)
 	GetSignMethods(ctx context.Context, in *GetSignMethodsRequest, opts ...grpc.CallOption) (*GetSignMethodsResponse, error)
-	SetSignMethods(ctx context.Context, in *SetSignMethodsRequest, opts ...grpc.CallOption) (*SetSignMethodsResponse, error)
 	GetRecaptchas(ctx context.Context, in *GetRecaptchasRequest, opts ...grpc.CallOption) (*GetRecaptchasResponse, error)
-	SetRecaptcha(ctx context.Context, in *SetRecaptchaRequest, opts ...grpc.CallOption) (*SetRecaptchaResponse, error)
-	SetKyc(ctx context.Context, in *SetKycRequest, opts ...grpc.CallOption) (*SetKycResponse, error)
-	SetSigninVerify(ctx context.Context, in *SetSigninVerifyRequest, opts ...grpc.CallOption) (*SetSigninVerifyResponse, error)
-	SetInvitationCodeMust(ctx context.Context, in *SetInvitationCodeMustRequest, opts ...grpc.CallOption) (*SetInvitationCodeMustResponse, error)
 }
 
 type appMwClient struct {
@@ -90,27 +84,9 @@ func (c *appMwClient) GetUserApps(ctx context.Context, in *GetUserAppsRequest, o
 	return out, nil
 }
 
-func (c *appMwClient) BanApp(ctx context.Context, in *BanAppRequest, opts ...grpc.CallOption) (*BanAppResponse, error) {
-	out := new(BanAppResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.AppMw/BanApp", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *appMwClient) GetSignMethods(ctx context.Context, in *GetSignMethodsRequest, opts ...grpc.CallOption) (*GetSignMethodsResponse, error) {
 	out := new(GetSignMethodsResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.AppMw/GetSignMethods", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appMwClient) SetSignMethods(ctx context.Context, in *SetSignMethodsRequest, opts ...grpc.CallOption) (*SetSignMethodsResponse, error) {
-	out := new(SetSignMethodsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.AppMw/SetSignMethods", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -126,42 +102,6 @@ func (c *appMwClient) GetRecaptchas(ctx context.Context, in *GetRecaptchasReques
 	return out, nil
 }
 
-func (c *appMwClient) SetRecaptcha(ctx context.Context, in *SetRecaptchaRequest, opts ...grpc.CallOption) (*SetRecaptchaResponse, error) {
-	out := new(SetRecaptchaResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.AppMw/SetRecaptcha", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appMwClient) SetKyc(ctx context.Context, in *SetKycRequest, opts ...grpc.CallOption) (*SetKycResponse, error) {
-	out := new(SetKycResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.AppMw/SetKyc", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appMwClient) SetSigninVerify(ctx context.Context, in *SetSigninVerifyRequest, opts ...grpc.CallOption) (*SetSigninVerifyResponse, error) {
-	out := new(SetSigninVerifyResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.AppMw/SetSigninVerify", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appMwClient) SetInvitationCodeMust(ctx context.Context, in *SetInvitationCodeMustRequest, opts ...grpc.CallOption) (*SetInvitationCodeMustResponse, error) {
-	out := new(SetInvitationCodeMustResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.AppMw/SetInvitationCodeMust", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // AppMwServer is the server API for AppMw service.
 // All implementations must embed UnimplementedAppMwServer
 // for forward compatibility
@@ -171,14 +111,8 @@ type AppMwServer interface {
 	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
 	GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error)
-	BanApp(context.Context, *BanAppRequest) (*BanAppResponse, error)
 	GetSignMethods(context.Context, *GetSignMethodsRequest) (*GetSignMethodsResponse, error)
-	SetSignMethods(context.Context, *SetSignMethodsRequest) (*SetSignMethodsResponse, error)
 	GetRecaptchas(context.Context, *GetRecaptchasRequest) (*GetRecaptchasResponse, error)
-	SetRecaptcha(context.Context, *SetRecaptchaRequest) (*SetRecaptchaResponse, error)
-	SetKyc(context.Context, *SetKycRequest) (*SetKycResponse, error)
-	SetSigninVerify(context.Context, *SetSigninVerifyRequest) (*SetSigninVerifyResponse, error)
-	SetInvitationCodeMust(context.Context, *SetInvitationCodeMustRequest) (*SetInvitationCodeMustResponse, error)
 	mustEmbedUnimplementedAppMwServer()
 }
 
@@ -201,29 +135,11 @@ func (UnimplementedAppMwServer) GetApps(context.Context, *GetAppsRequest) (*GetA
 func (UnimplementedAppMwServer) GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserApps not implemented")
 }
-func (UnimplementedAppMwServer) BanApp(context.Context, *BanAppRequest) (*BanAppResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method BanApp not implemented")
-}
 func (UnimplementedAppMwServer) GetSignMethods(context.Context, *GetSignMethodsRequest) (*GetSignMethodsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSignMethods not implemented")
 }
-func (UnimplementedAppMwServer) SetSignMethods(context.Context, *SetSignMethodsRequest) (*SetSignMethodsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SetSignMethods not implemented")
-}
 func (UnimplementedAppMwServer) GetRecaptchas(context.Context, *GetRecaptchasRequest) (*GetRecaptchasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRecaptchas not implemented")
-}
-func (UnimplementedAppMwServer) SetRecaptcha(context.Context, *SetRecaptchaRequest) (*SetRecaptchaResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SetRecaptcha not implemented")
-}
-func (UnimplementedAppMwServer) SetKyc(context.Context, *SetKycRequest) (*SetKycResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SetKyc not implemented")
-}
-func (UnimplementedAppMwServer) SetSigninVerify(context.Context, *SetSigninVerifyRequest) (*SetSigninVerifyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SetSigninVerify not implemented")
-}
-func (UnimplementedAppMwServer) SetInvitationCodeMust(context.Context, *SetInvitationCodeMustRequest) (*SetInvitationCodeMustResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SetInvitationCodeMust not implemented")
 }
 func (UnimplementedAppMwServer) mustEmbedUnimplementedAppMwServer() {}
 
@@ -328,24 +244,6 @@ func _AppMw_GetUserApps_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppMw_BanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(BanAppRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppMwServer).BanApp(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.AppMw/BanApp",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMwServer).BanApp(ctx, req.(*BanAppRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _AppMw_GetSignMethods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetSignMethodsRequest)
 	if err := dec(in); err != nil {
@@ -364,24 +262,6 @@ func _AppMw_GetSignMethods_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppMw_SetSignMethods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SetSignMethodsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppMwServer).SetSignMethods(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.AppMw/SetSignMethods",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMwServer).SetSignMethods(ctx, req.(*SetSignMethodsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _AppMw_GetRecaptchas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetRecaptchasRequest)
 	if err := dec(in); err != nil {
@@ -396,78 +276,6 @@ func _AppMw_GetRecaptchas_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AppMwServer).GetRecaptchas(ctx, req.(*GetRecaptchasRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppMw_SetRecaptcha_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SetRecaptchaRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppMwServer).SetRecaptcha(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.AppMw/SetRecaptcha",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMwServer).SetRecaptcha(ctx, req.(*SetRecaptchaRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppMw_SetKyc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SetKycRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppMwServer).SetKyc(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.AppMw/SetKyc",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMwServer).SetKyc(ctx, req.(*SetKycRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppMw_SetSigninVerify_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SetSigninVerifyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppMwServer).SetSigninVerify(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.AppMw/SetSigninVerify",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMwServer).SetSigninVerify(ctx, req.(*SetSigninVerifyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppMw_SetInvitationCodeMust_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SetInvitationCodeMustRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppMwServer).SetInvitationCodeMust(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.AppMw/SetInvitationCodeMust",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMwServer).SetInvitationCodeMust(ctx, req.(*SetInvitationCodeMustRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -500,36 +308,12 @@ var AppMw_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AppMw_GetUserApps_Handler,
 		},
 		{
-			MethodName: "BanApp",
-			Handler:    _AppMw_BanApp_Handler,
-		},
-		{
 			MethodName: "GetSignMethods",
 			Handler:    _AppMw_GetSignMethods_Handler,
 		},
 		{
-			MethodName: "SetSignMethods",
-			Handler:    _AppMw_SetSignMethods_Handler,
-		},
-		{
 			MethodName: "GetRecaptchas",
 			Handler:    _AppMw_GetRecaptchas_Handler,
-		},
-		{
-			MethodName: "SetRecaptcha",
-			Handler:    _AppMw_SetRecaptcha_Handler,
-		},
-		{
-			MethodName: "SetKyc",
-			Handler:    _AppMw_SetKyc_Handler,
-		},
-		{
-			MethodName: "SetSigninVerify",
-			Handler:    _AppMw_SetSigninVerify_Handler,
-		},
-		{
-			MethodName: "SetInvitationCodeMust",
-			Handler:    _AppMw_SetInvitationCodeMust_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
