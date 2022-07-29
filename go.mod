@@ -5,8 +5,6 @@ go 1.17
 require (
 	github.com/favadi/protoc-go-inject-tag v1.3.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.8.0
-	google.golang.org/genproto v0.0.0-20220302033224-9aa15565e42a
-	google.golang.org/grpc v1.48.0
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.2.0
 	google.golang.org/protobuf v1.27.1
 )
@@ -16,8 +14,7 @@ require (
 	github.com/Masterminds/sprig v2.15.0+incompatible // indirect
 	github.com/aokoli/goutils v1.0.1 // indirect
 	github.com/envoyproxy/protoc-gen-validate v0.3.0-java // indirect
-	github.com/favadi/protoc-go-inject-tag v1.3.0 // indirect
-	github.com/gogo/protobuf v1.3.2 // indirect
+	github.com/gogo/protobuf v1.1.1 // indirect
 	github.com/golang/glog v1.0.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/uuid v1.1.2 // indirect

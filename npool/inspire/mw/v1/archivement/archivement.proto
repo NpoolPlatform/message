@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package inspire.middleware.archivement.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/archivement";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service ArchivementMw {
+    rpc CalculateOrderArchivement (CalculateOrderArchivementRequest) returns (CalculateOrderArchivementResponse) {}
+}
+
+message CalculateOrderArchivementRequest {
+    string OrderID = 10;
+}
+
+message CalculateOrderArchivementResponse {
+    // Just store all layer commission directly
+}
+

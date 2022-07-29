@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package inspire.manager.archivement.detail.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mgr/v1/archivement/detail";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service ArchivementDetailMgr {
+    rpc CreateDetail     (CreateDetailRequest)     returns (CreateDetailResponse)     {}
+    rpc CreateDetails    (CreateDetailsRequest)    returns (CreateDetailsResponse)    {}
+    rpc GetDetail        (GetDetailRequest)        returns (GetDetailResponse)        {}
+    rpc GetDetailOnly    (GetDetailOnlyRequest)    returns (GetDetailOnlyResponse)    {}
+    rpc GetDetails       (GetDetailsRequest)       returns (GetDetailsResponse)       {}
+    rpc ExistDetail      (ExistDetailRequest)      returns (ExistDetailResponse)      {}
+    rpc ExistDetailConds (ExistDetailCondsRequest) returns (ExistDetailCondsResponse) {}
+    rpc CountDetails     (CountDetailsRequest)     returns (CountDetailsResponse)     {}
+}
+
+message DetailReq {
+    optional string     ID                      = 10;
+    optional string     AppID                   = 20;
+    optional string     UserID                  = 30;
+    optional string     GoodID                  = 40;
+    optional string     OrderID                 = 50;
+    optional string     PaymentID               = 60;
+    optional string     CoinTypeID              = 70;
+    optional string     PaymentCoinTypeID       = 80;
+    optional string     PaymentCoinUSDCurrency  = 90;
+    optional uint32     Units                   = 100;
+    optional string     Amount                  = 110;
+    optional string     USDAmount               = 120;
+    optional uint32     CreatedAt               = 130;
+}
+
+message Detail {
+    string      ID                       = 10;
+    string      AppID                    = 20;
+    string      UserID                   = 30;
+    string      GoodID                   = 40;
+    string      OrderID                  = 50;
+    string      PaymentID                = 60;
+    string      CoinTypeID               = 70;
+    string      PaymentCoinTypeID        = 80;
+    string      PaymentCoinUSDCurrency   = 90;
+    uint32      Units                    = 100;
+    string      Amount                   = 110;
+    string      USDAmount                = 120;
+    uint32      CreatedAt                = 130;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID                      = 10;
+    optional npool.v1.StringVal AppID                   = 20;
+    optional npool.v1.StringVal UserID                  = 30;
+    optional npool.v1.StringVal GoodID                  = 40;
+    optional npool.v1.StringVal OrderID                 = 50;
+    optional npool.v1.StringVal PaymentID               = 60;
+    optional npool.v1.StringVal CoinTypeID              = 70;
+    optional npool.v1.StringVal PaymentCoinTypeID       = 80;
+    optional npool.v1.StringVal PaymentCoinUSDCurrency  = 90;
+    optional npool.v1.Uint32Val Units                   = 100;
+    optional npool.v1.StringVal Amount                  = 110;
+    optional npool.v1.StringVal USDAmount               = 120;
+    optional npool.v1.Uint32Val CreatedAt               = 130;
+}
+
+
+message CreateDetailRequest {
+    DetailReq Info = 10;
+}
+
+message CreateDetailResponse {
+    Detail Info = 10;
+}
+
+message CreateDetailsRequest {
+    repeated DetailReq Infos = 10;
+}
+
+message CreateDetailsResponse {
+    repeated Detail Infos = 10;
+}
+
+message GetDetailRequest {
+    string ID = 10;
+}
+
+message GetDetailResponse {
+    Detail Info = 10;
+}
+
+message GetDetailsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetDetailsResponse {
+    repeated Detail Infos = 10;
+    uint32          Total = 20;
+}
+
+message GetDetailOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetDetailOnlyResponse {
+    Detail Info = 10;
+}
+
+message ExistDetailRequest {
+    string ID = 10;
+}
+
+message ExistDetailResponse {
+    bool Info = 10;
+}
+
+message ExistDetailCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistDetailCondsResponse {
+    bool Info = 10;
+}
+
+message CountDetailsRequest {
+    Conds Conds = 10;
+}
+
+message CountDetailsResponse {
+    uint32 Info = 10;
+}
+
