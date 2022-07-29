@@ -47,17 +47,17 @@ message UserReq {
 
     // Secret
     optional string PasswordHash               = 190;
-    optional string GoogleSecret               = 210;
+    optional string GoogleSecret               = 200;
 
     // ThirdParty
-    optional string ThirdPartyID               = 220;
-    optional string ThirdPartyUserID           = 230;
-    optional string ThirdPartyUsername         = 240;
-    optional string ThirdPartyUserAvatar       = 250;
+    optional string ThirdPartyID               = 210;
+    optional string ThirdPartyUserID           = 220;
+    optional string ThirdPartyUsername         = 230;
+    optional string ThirdPartyUserAvatar       = 240;
 
     // Banned
-    optional bool   Banned                     = 260;
-    optional string BanMessage                 = 270;
+    optional bool   Banned                     = 250;
+    optional string BanMessage                 = 260;
 
 }
 
