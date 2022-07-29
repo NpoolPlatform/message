@@ -73,7 +73,8 @@
           "type": "boolean"
         },
         "CreatedAt": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
