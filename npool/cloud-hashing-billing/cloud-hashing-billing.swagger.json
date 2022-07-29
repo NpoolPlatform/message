@@ -5047,6 +5047,12 @@
         "AvailableAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "CollectingTID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
         }
       }
     },

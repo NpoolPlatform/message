@@ -72,8 +72,9 @@
         "InvitationCodeMust": {
           "type": "boolean"
         },
-        "CreateAt": {
-          "type": "string"
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

@@ -1,0 +1,300 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/servicetmpl/detail/detail.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "TemplateDetail"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IOType": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "Amount": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "FromCoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinUSDCurrency": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IOExtra": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "FromOldID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "v1CountDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateDetailResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Detail"
+        }
+      }
+    },
+    "v1CreateDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Detail"
+          }
+        }
+      }
+    },
+    "v1Detail": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "IOType": {
+          "$ref": "#/definitions/v1IOType"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "FromCoinTypeID": {
+          "type": "string"
+        },
+        "CoinUSDCurrency": {
+          "type": "string"
+        },
+        "IOExtra": {
+          "type": "string"
+        },
+        "FromOldID": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1DetailReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "IOType": {
+          "$ref": "#/definitions/v1IOType"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "FromCoinTypeID": {
+          "type": "string",
+          "title": "E.g. when pay with non-USDT coin"
+        },
+        "CoinUSDCurrency": {
+          "type": "string"
+        },
+        "IOExtra": {
+          "type": "string"
+        },
+        "FromOldID": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1ExistDetailCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistDetailResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetDetailOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Detail"
+        }
+      }
+    },
+    "v1GetDetailResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Detail"
+        }
+      }
+    },
+    "v1GetDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Detail"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1IOSubType": {
+      "type": "string",
+      "enum": [
+        "DefaultSubType",
+        "Payment",
+        "MiningBenefit",
+        "Commission",
+        "TechniqueFeeCommission",
+        "Deposit",
+        "Withdrawal"
+      ],
+      "default": "DefaultSubType",
+      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Withdrawal: O"
+    },
+    "v1IOType": {
+      "type": "string",
+      "enum": [
+        "DefaultType",
+        "Incoming",
+        "Outcoming"
+      ],
+      "default": "DefaultType"
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
