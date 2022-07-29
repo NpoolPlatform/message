@@ -8,6 +8,7 @@ import "google/api/annotations.proto";
 import "npool/appuser/mgr/v2/approle/approle.proto";
 
 service AppRoleGw {
+    // Create role should ignore genesis roles
     rpc CreateRole (CreateRoleRequest) returns (CreateRoleResponse) {
         option (google.api.http) = {
             post: "/v2/create/role"
@@ -22,6 +23,7 @@ service AppRoleGw {
         };
     }
 
+    // Update role should ignore genesis roles
     rpc UpdateRole (UpdateRoleRequest) returns (UpdateRoleResponse) {
         option (google.api.http) = {
             post: "/v2/update/app/role"
