@@ -5,6 +5,8 @@ go 1.17
 require (
 	github.com/favadi/protoc-go-inject-tag v1.3.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.8.0
+	google.golang.org/genproto v0.0.0-20220302033224-9aa15565e42a
+	google.golang.org/grpc v1.48.0
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.2.0
 	google.golang.org/protobuf v1.27.1
 )
