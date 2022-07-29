@@ -15,14 +15,32 @@ service AppMw {
     rpc GetApps                (GetAppsRequest)               returns (GetAppsResponse)               {}
     rpc GetUserApps            (GetUserAppsRequest)           returns (GetUserAppsResponse)           {}
 
-    rpc BanApp                 (BanAppRequest)                returns (BanAppResponse)                {}
     rpc GetSignMethods         (GetSignMethodsRequest)        returns (GetSignMethodsResponse)        {}
-    rpc SetSignMethods         (SetSignMethodsRequest)        returns (SetSignMethodsResponse)        {}
     rpc GetRecaptchas          (GetRecaptchasRequest)         returns (GetRecaptchasResponse)         {}
-    rpc SetRecaptcha           (SetRecaptchaRequest)          returns (SetRecaptchaResponse)          {}
-    rpc SetKyc                 (SetKycRequest)                returns (SetKycResponse)                {}
-    rpc SetSigninVerify        (SetSigninVerifyRequest)       returns (SetSigninVerifyResponse)       {}
-    rpc SetInvitationCodeMust  (SetInvitationCodeMustRequest) returns (SetInvitationCodeMustResponse) {}
+}
+
+message AppReq {
+    // Base info
+    optional string          ID                 = 10;
+    optional string          CreatedBy          = 20;
+    optional string          Name               = 30;
+    optional string          Logo               = 40;
+    optional string          Description        = 50;
+
+    // Banned
+    optional bool            Banned             = 60;
+    optional string          BanAppID           = 70;
+    optional string          BanMessage         = 80;
+
+    // Sign methods
+    repeated string SignupMethods               = 90;
+    repeated string ExtSigninMethods            = 100;
+
+    // Control flag
+    optional string          RecaptchaMethod    = 110;
+    optional bool            KycEnable          = 120;
+    optional bool            SigninVerifyEnable = 130;
+    optional bool            InvitationCodeMust = 140;
 }
 
 message App {
@@ -53,7 +71,7 @@ message App {
 
 message CreateAppRequest {
     // Permissioned by path
-    appuser.manager.app.v2.AppReq Info = 10;
+    AppReq Info = 10;
 }
 
 message CreateAppResponse {
@@ -62,7 +80,7 @@ message CreateAppResponse {
 
 message UpdateAppRequest {
     // Permissioned by path
-    appuser.manager.app.v2.AppReq Info = 10;
+    AppReq Info = 10;
 }
 
 message UpdateAppResponse {

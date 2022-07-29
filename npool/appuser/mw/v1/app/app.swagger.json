@@ -77,6 +77,63 @@
         }
       }
     },
+    "appv1AppReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "Base info"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Banned": {
+          "type": "boolean",
+          "title": "Banned"
+        },
+        "BanAppID": {
+          "type": "string"
+        },
+        "BanMessage": {
+          "type": "string"
+        },
+        "SignupMethods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Sign methods"
+        },
+        "ExtSigninMethods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "RecaptchaMethod": {
+          "type": "string",
+          "title": "Control flag"
+        },
+        "KycEnable": {
+          "type": "boolean"
+        },
+        "SigninVerifyEnable": {
+          "type": "boolean"
+        },
+        "InvitationCodeMust": {
+          "type": "boolean"
+        }
+      }
+    },
     "appv1CreateAppResponse": {
       "type": "object",
       "properties": {
@@ -227,30 +284,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "v2AppReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "CreatedBy": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
