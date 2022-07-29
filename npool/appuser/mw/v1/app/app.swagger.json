@@ -17,34 +17,7 @@
   ],
   "paths": {},
   "definitions": {
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1App": {
+    "appv1App": {
       "type": "object",
       "properties": {
         "ID": {
@@ -104,26 +77,101 @@
         }
       }
     },
-    "v1GetAppResponse": {
+    "appv1CreateAppResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1App"
+          "$ref": "#/definitions/appv1App"
         }
       }
     },
-    "v1GetAppsResponse": {
+    "appv1GetAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "appv1GetAppsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1App"
+            "$ref": "#/definitions/appv1App"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "appv1UpdateAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v1GetRecaptchasResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Recaptcha"
+          },
+          "title": "In future this may be put to database then admin can change it"
+        }
+      }
+    },
+    "v1GetSignMethodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2SignMethod"
+          },
+          "title": "In future this may be put to database then admin can change it"
         }
       }
     },
@@ -133,12 +181,107 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1App"
+            "$ref": "#/definitions/appv1App"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1SetInvitationCodeMustResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v1SetKycResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v1SetRecaptchaResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v1SetSignMethodsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v1SetSigninVerifyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v2AppReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2Recaptcha": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Recaptcha": {
+          "type": "string"
+        },
+        "Dashboard": {
+          "type": "string"
+        }
+      }
+    },
+    "v2SignMethod": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string"
+        },
+        "Icon": {
+          "type": "string"
+        },
+        "External": {
+          "type": "boolean"
         }
       }
     }

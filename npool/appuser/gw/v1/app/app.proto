@@ -9,9 +9,10 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 import "npool/appuser/mgr/v2/app/app.proto";
 import "npool/appuser/mw/v1/app/app.proto";
+import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
+import "npool/appuser/mgr/v2/recaptcha/recaptcha.proto";
 
 service AppGw {
-
     rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {
         option (google.api.http) = {
             post: "/v1/create/app"
@@ -47,6 +48,62 @@ service AppGw {
             body: "*"
         };
     }
+
+    rpc BanApp (BanAppRequest) returns (BanAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/ban/app"
+            body: "*"
+        };
+    }
+
+    rpc GetSignMethods (GetSignMethodsRequest) returns (GetSignMethodsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/signmethods"
+            body: "*"
+        };
+    }
+
+    rpc SetSignMethods (SetSignMethodsRequest) returns (SetSignMethodsResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/signmethods"
+            body: "*"
+        };
+    }
+
+    rpc GetRecaptchas (GetRecaptchasRequest) returns (GetRecaptchasResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/recaptchas"
+            body: "*"
+        };
+    }
+
+    rpc SetRecaptcha (SetRecaptchaRequest) returns (SetRecaptchaResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/recaptcha"
+            body: "*"
+        };
+    }
+
+    rpc SetKyc (SetKycRequest) returns (SetKycResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/kyc"
+            body: "*"
+        };
+    }
+
+    rpc SetSigninVerify (SetSigninVerifyRequest) returns (SetSigninVerifyResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/signinverify"
+            body: "*"
+        };
+    }
+
+    rpc SetInvitationCodeMust (SetInvitationCodeMustRequest) returns (SetInvitationCodeMustResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/invitationcodemust"
+            body: "*"
+        };
+    }
 }
 
 message CreateAppRequest {
@@ -59,7 +116,7 @@ message CreateAppResponse {
 }
 
 message UpdateAppRequest {
-    // Permissioned by path (may by user in future if we support user create app)
+    // Permissioned by path
     appuser.manager.app.v2.AppReq Info = 10;
 }
 
@@ -99,3 +156,73 @@ message GetUserAppsResponse {
     uint32                                 Total = 20;
 }
 
+
+message BanAppRequest {
+    string AppID      = 10;
+    string BanMessage = 20;
+}
+
+message BanAppResponse {
+    appuser.middleware.app.v1.App Info = 10;
+}
+
+message GetSignMethodsRequest {
+}
+
+message GetSignMethodsResponse {
+    // In future this may be put to database then admin can change it
+    repeated appuser.manager.signmethod.v2.SignMethod Infos = 10;
+}
+
+message SetSignMethodsRequest {
+    string          AppID         = 10;
+    repeated string SignMethodIDs = 20;
+}
+
+message SetSignMethodsResponse {
+    appuser.middleware.app.v1.App Info = 10;
+}
+
+message GetRecaptchasRequest {
+}
+
+message GetRecaptchasResponse {
+    // In future this may be put to database then admin can change it
+    repeated appuser.manager.recaptcha.v2.Recaptcha Infos = 10;
+}
+
+message SetRecaptchaRequest {
+    string AppID       = 10;
+    string RecaptchaID = 20;
+}
+
+message SetRecaptchaResponse {
+    appuser.middleware.app.v1.App Info = 10;
+}
+
+message SetKycRequest {
+    string AppID  = 10;
+    bool   Enable = 20;
+}
+
+message SetKycResponse {
+    appuser.middleware.app.v1.App Info = 10;
+}
+
+message SetSigninVerifyRequest {
+    string AppID  = 10;
+    bool   Enable = 20;
+}
+
+message SetSigninVerifyResponse {
+    appuser.middleware.app.v1.App Info = 10;
+}
+
+message SetInvitationCodeMustRequest {
+    string AppID  = 10;
+    bool   Enable = 20;
+}
+
+message SetInvitationCodeMustResponse {
+    appuser.middleware.app.v1.App Info = 10;
+}

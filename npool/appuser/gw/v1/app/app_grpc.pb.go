@@ -28,6 +28,14 @@ type AppGwClient interface {
 	// Super admin api
 	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
 	GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error)
+	BanApp(ctx context.Context, in *BanAppRequest, opts ...grpc.CallOption) (*BanAppResponse, error)
+	GetSignMethods(ctx context.Context, in *GetSignMethodsRequest, opts ...grpc.CallOption) (*GetSignMethodsResponse, error)
+	SetSignMethods(ctx context.Context, in *SetSignMethodsRequest, opts ...grpc.CallOption) (*SetSignMethodsResponse, error)
+	GetRecaptchas(ctx context.Context, in *GetRecaptchasRequest, opts ...grpc.CallOption) (*GetRecaptchasResponse, error)
+	SetRecaptcha(ctx context.Context, in *SetRecaptchaRequest, opts ...grpc.CallOption) (*SetRecaptchaResponse, error)
+	SetKyc(ctx context.Context, in *SetKycRequest, opts ...grpc.CallOption) (*SetKycResponse, error)
+	SetSigninVerify(ctx context.Context, in *SetSigninVerifyRequest, opts ...grpc.CallOption) (*SetSigninVerifyResponse, error)
+	SetInvitationCodeMust(ctx context.Context, in *SetInvitationCodeMustRequest, opts ...grpc.CallOption) (*SetInvitationCodeMustResponse, error)
 }
 
 type appGwClient struct {
@@ -83,6 +91,78 @@ func (c *appGwClient) GetUserApps(ctx context.Context, in *GetUserAppsRequest, o
 	return out, nil
 }
 
+func (c *appGwClient) BanApp(ctx context.Context, in *BanAppRequest, opts ...grpc.CallOption) (*BanAppResponse, error) {
+	out := new(BanAppResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppGw/BanApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appGwClient) GetSignMethods(ctx context.Context, in *GetSignMethodsRequest, opts ...grpc.CallOption) (*GetSignMethodsResponse, error) {
+	out := new(GetSignMethodsResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppGw/GetSignMethods", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appGwClient) SetSignMethods(ctx context.Context, in *SetSignMethodsRequest, opts ...grpc.CallOption) (*SetSignMethodsResponse, error) {
+	out := new(SetSignMethodsResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppGw/SetSignMethods", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appGwClient) GetRecaptchas(ctx context.Context, in *GetRecaptchasRequest, opts ...grpc.CallOption) (*GetRecaptchasResponse, error) {
+	out := new(GetRecaptchasResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppGw/GetRecaptchas", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appGwClient) SetRecaptcha(ctx context.Context, in *SetRecaptchaRequest, opts ...grpc.CallOption) (*SetRecaptchaResponse, error) {
+	out := new(SetRecaptchaResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppGw/SetRecaptcha", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appGwClient) SetKyc(ctx context.Context, in *SetKycRequest, opts ...grpc.CallOption) (*SetKycResponse, error) {
+	out := new(SetKycResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppGw/SetKyc", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appGwClient) SetSigninVerify(ctx context.Context, in *SetSigninVerifyRequest, opts ...grpc.CallOption) (*SetSigninVerifyResponse, error) {
+	out := new(SetSigninVerifyResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppGw/SetSigninVerify", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *appGwClient) SetInvitationCodeMust(ctx context.Context, in *SetInvitationCodeMustRequest, opts ...grpc.CallOption) (*SetInvitationCodeMustResponse, error) {
+	out := new(SetInvitationCodeMustResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.AppGw/SetInvitationCodeMust", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AppGwServer is the server API for AppGw service.
 // All implementations must embed UnimplementedAppGwServer
 // for forward compatibility
@@ -93,6 +173,14 @@ type AppGwServer interface {
 	// Super admin api
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
 	GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error)
+	BanApp(context.Context, *BanAppRequest) (*BanAppResponse, error)
+	GetSignMethods(context.Context, *GetSignMethodsRequest) (*GetSignMethodsResponse, error)
+	SetSignMethods(context.Context, *SetSignMethodsRequest) (*SetSignMethodsResponse, error)
+	GetRecaptchas(context.Context, *GetRecaptchasRequest) (*GetRecaptchasResponse, error)
+	SetRecaptcha(context.Context, *SetRecaptchaRequest) (*SetRecaptchaResponse, error)
+	SetKyc(context.Context, *SetKycRequest) (*SetKycResponse, error)
+	SetSigninVerify(context.Context, *SetSigninVerifyRequest) (*SetSigninVerifyResponse, error)
+	SetInvitationCodeMust(context.Context, *SetInvitationCodeMustRequest) (*SetInvitationCodeMustResponse, error)
 	mustEmbedUnimplementedAppGwServer()
 }
 
@@ -114,6 +202,30 @@ func (UnimplementedAppGwServer) GetApps(context.Context, *GetAppsRequest) (*GetA
 }
 func (UnimplementedAppGwServer) GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserApps not implemented")
+}
+func (UnimplementedAppGwServer) BanApp(context.Context, *BanAppRequest) (*BanAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BanApp not implemented")
+}
+func (UnimplementedAppGwServer) GetSignMethods(context.Context, *GetSignMethodsRequest) (*GetSignMethodsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSignMethods not implemented")
+}
+func (UnimplementedAppGwServer) SetSignMethods(context.Context, *SetSignMethodsRequest) (*SetSignMethodsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetSignMethods not implemented")
+}
+func (UnimplementedAppGwServer) GetRecaptchas(context.Context, *GetRecaptchasRequest) (*GetRecaptchasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRecaptchas not implemented")
+}
+func (UnimplementedAppGwServer) SetRecaptcha(context.Context, *SetRecaptchaRequest) (*SetRecaptchaResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetRecaptcha not implemented")
+}
+func (UnimplementedAppGwServer) SetKyc(context.Context, *SetKycRequest) (*SetKycResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetKyc not implemented")
+}
+func (UnimplementedAppGwServer) SetSigninVerify(context.Context, *SetSigninVerifyRequest) (*SetSigninVerifyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetSigninVerify not implemented")
+}
+func (UnimplementedAppGwServer) SetInvitationCodeMust(context.Context, *SetInvitationCodeMustRequest) (*SetInvitationCodeMustResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetInvitationCodeMust not implemented")
 }
 func (UnimplementedAppGwServer) mustEmbedUnimplementedAppGwServer() {}
 
@@ -218,6 +330,150 @@ func _AppGw_GetUserApps_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AppGw_BanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BanAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppGwServer).BanApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.app.v1.AppGw/BanApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppGwServer).BanApp(ctx, req.(*BanAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppGw_GetSignMethods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSignMethodsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppGwServer).GetSignMethods(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.app.v1.AppGw/GetSignMethods",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppGwServer).GetSignMethods(ctx, req.(*GetSignMethodsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppGw_SetSignMethods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetSignMethodsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppGwServer).SetSignMethods(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.app.v1.AppGw/SetSignMethods",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppGwServer).SetSignMethods(ctx, req.(*SetSignMethodsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppGw_GetRecaptchas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRecaptchasRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppGwServer).GetRecaptchas(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.app.v1.AppGw/GetRecaptchas",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppGwServer).GetRecaptchas(ctx, req.(*GetRecaptchasRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppGw_SetRecaptcha_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetRecaptchaRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppGwServer).SetRecaptcha(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.app.v1.AppGw/SetRecaptcha",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppGwServer).SetRecaptcha(ctx, req.(*SetRecaptchaRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppGw_SetKyc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetKycRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppGwServer).SetKyc(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.app.v1.AppGw/SetKyc",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppGwServer).SetKyc(ctx, req.(*SetKycRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppGw_SetSigninVerify_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetSigninVerifyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppGwServer).SetSigninVerify(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.app.v1.AppGw/SetSigninVerify",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppGwServer).SetSigninVerify(ctx, req.(*SetSigninVerifyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AppGw_SetInvitationCodeMust_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetInvitationCodeMustRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AppGwServer).SetInvitationCodeMust(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.app.v1.AppGw/SetInvitationCodeMust",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AppGwServer).SetInvitationCodeMust(ctx, req.(*SetInvitationCodeMustRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AppGw_ServiceDesc is the grpc.ServiceDesc for AppGw service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -244,6 +500,38 @@ var AppGw_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetUserApps",
 			Handler:    _AppGw_GetUserApps_Handler,
+		},
+		{
+			MethodName: "BanApp",
+			Handler:    _AppGw_BanApp_Handler,
+		},
+		{
+			MethodName: "GetSignMethods",
+			Handler:    _AppGw_GetSignMethods_Handler,
+		},
+		{
+			MethodName: "SetSignMethods",
+			Handler:    _AppGw_SetSignMethods_Handler,
+		},
+		{
+			MethodName: "GetRecaptchas",
+			Handler:    _AppGw_GetRecaptchas_Handler,
+		},
+		{
+			MethodName: "SetRecaptcha",
+			Handler:    _AppGw_SetRecaptcha_Handler,
+		},
+		{
+			MethodName: "SetKyc",
+			Handler:    _AppGw_SetKyc_Handler,
+		},
+		{
+			MethodName: "SetSigninVerify",
+			Handler:    _AppGw_SetSigninVerify_Handler,
+		},
+		{
+			MethodName: "SetInvitationCodeMust",
+			Handler:    _AppGw_SetInvitationCodeMust_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
