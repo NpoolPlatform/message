@@ -1,0 +1,134 @@
+syntax = "proto3";
+
+package app.manager.appcontrol.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/app/mgr/v2/appcontrol";
+
+import "npool/npool.proto";
+
+service AppControlMgr {
+    rpc CreateAppControl     (CreateAppControlRequest)     returns (CreateAppControlResponse)     {}
+    rpc CreateAppControls    (CreateAppControlsRequest)    returns (CreateAppControlsResponse)    {}
+    rpc UpdateAppControl     (UpdateAppControlRequest)     returns (UpdateAppControlResponse)     {}
+    rpc GetAppControl        (GetAppControlRequest)        returns (GetAppControlResponse)        {}
+    rpc GetAppControlOnly    (GetAppControlOnlyRequest)    returns (GetAppControlOnlyResponse)    {}
+    rpc GetAppControls       (GetAppControlsRequest)       returns (GetAppControlsResponse)       {}
+    rpc ExistAppControl      (ExistAppControlRequest)      returns (ExistAppControlResponse)      {}
+    rpc ExistAppControlConds (ExistAppControlCondsRequest) returns (ExistAppControlCondsResponse) {}
+    rpc CountAppControls     (CountAppControlsRequest)     returns (CountAppControlsResponse)     {}
+    rpc DeleteAppControl     (DeleteAppControlRequest)     returns (DeleteAppControlResponse)     {}
+}
+
+message AppControlReq {
+    optional string ID                  = 10;
+    optional string AppID               = 20;
+    repeated string SignupMethods       = 30;
+    repeated string ExternSigninMethods = 40;
+    optional string RecaptchaMethod     = 50;
+    optional bool KycEnable             = 60;
+    optional bool SigninVerifyEnable    = 70;
+    optional bool InvitationCodeMust    = 80;
+}
+
+message AppControl {
+    string ID                           = 10;
+    string AppID                        = 20;
+    repeated string SignupMethods       = 30;
+    repeated string ExternSigninMethods = 40;
+    string RecaptchaMethod              = 50;
+    bool KycEnable                      = 60;
+    bool SigninVerifyEnable             = 70;
+    bool InvitationCodeMust             = 80;
+}
+
+message Conds {
+    npool.v1.StringVal ID               = 10;
+    npool.v1.StringVal AppID            = 20;
+    npool.v1.StringVal RecaptchaMethod  = 50;
+    npool.v1.BoolVal KycEnable          = 60;
+    npool.v1.BoolVal SigninVerifyEnable = 70;
+    npool.v1.BoolVal InvitationCodeMust = 80;
+}
+
+message CreateAppControlRequest {
+    AppControlReq Info = 10;
+}
+
+message CreateAppControlResponse {
+    AppControl Info = 10;
+}
+
+message CreateAppControlsRequest {
+    repeated AppControlReq Infos = 10;
+}
+
+message CreateAppControlsResponse {
+    repeated AppControl Infos = 10;
+}
+
+message GetAppControlRequest {
+    string ID = 10;
+}
+
+message GetAppControlResponse {
+    AppControl Info = 10;
+}
+
+message GetAppControlsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetAppControlsResponse {
+    repeated AppControl Infos = 10;
+    uint32              Total = 20;
+}
+
+message GetAppControlOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetAppControlOnlyResponse {
+    AppControl Info = 10;
+}
+
+message UpdateAppControlRequest {
+    AppControlReq Info = 10;
+}
+
+message UpdateAppControlResponse {
+    AppControl Info = 10;
+}
+
+message ExistAppControlRequest {
+    string ID = 10;
+}
+
+message ExistAppControlResponse {
+    bool Info = 10;
+}
+
+message ExistAppControlCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAppControlCondsResponse {
+    bool Info = 10;
+}
+
+message CountAppControlsRequest {
+    Conds Conds = 10;
+}
+
+message CountAppControlsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteAppControlRequest {
+    string ID = 10;
+}
+
+message DeleteAppControlResponse {
+    AppControl Info = 10;
+}
