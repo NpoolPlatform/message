@@ -7,12 +7,15 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/user";
 import "npool/npool.proto";
 
 service UserMw {
-    rpc CreateUser    (CreateUserRequest)     returns (CreateUserResponse)    {}
-    rpc UpdateUser    (UpdateUserRequest)     returns (UpdateUserResponse)    {}
+    rpc CreateUser        (CreateUserRequest)       returns (CreateUserResponse)       {}
+    rpc UpdateUser        (UpdateUserRequest)       returns (UpdateUserResponse)       {}
 
-    rpc GetUsers      (GetUsersRequest)       returns (GetUsersResponse)      {}
-    rpc GetUser       (GetUserRequest)        returns (GetUserResponse)       {}
-    rpc GetManyUsers  (GetManyUsersRequest)   returns (GetManyUsersResponse)  {}
+    rpc GetUsers          (GetUsersRequest)         returns (GetUsersResponse)         {}
+    rpc GetUser           (GetUserRequest)          returns (GetUserResponse)          {}
+    rpc GetManyUsers      (GetManyUsersRequest)     returns (GetManyUsersResponse)     {}
+
+    // Admin apis
+    rpc BanUser           (BanUserRequest)          returns (BanUserResponse)          {}
 }
 
 message UserReq {
@@ -43,7 +46,6 @@ message UserReq {
 
     // Control flag
     optional bool   SigninVerifyByGoogleAuthentication = 200;
-
 }
 
 message User {
@@ -137,4 +139,14 @@ message GetManyUsersRequest {
 
 message GetManyUsersResponse {
     repeated User Infos = 10;
+}
+
+message BanUserRequest {
+    string AppID      = 10;
+    string UserID     = 20;
+    string BanMessage = 30;
+}
+
+message BanUserResponse {
+    User Info = 10;
 }
