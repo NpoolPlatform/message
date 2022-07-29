@@ -11,17 +11,9 @@ import "npool/appuser/mgr/v2/app/app.proto";
 import "npool/appuser/mw/v1/app/app.proto";
 
 service AppGw {
-
     rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {
         option (google.api.http) = {
             post: "/v1/create/app"
-            body: "*"
-        };
-    }
-
-    rpc UpdateApp (UpdateAppRequest) returns (UpdateAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/app"
             body: "*"
         };
     }
@@ -47,6 +39,62 @@ service AppGw {
             body: "*"
         };
     }
+
+    rpc BanApp (appuser.middleware.app.v1.BanAppRequest) returns (appuser.middleware.app.v1.BanAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/ban/app"
+            body: "*"
+        };
+    }
+
+    rpc GetSignMethods (appuser.middleware.app.v1.GetSignMethodsRequest) returns (appuser.middleware.app.v1.GetSignMethodsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/signmethods"
+            body: "*"
+        };
+    }
+
+    rpc SetSignMethods (appuser.middleware.app.v1.SetSignMethodsRequest) returns (appuser.middleware.app.v1.SetSignMethodsResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/signmethods"
+            body: "*"
+        };
+    }
+
+    rpc GetRecaptchas (appuser.middleware.app.v1.GetRecaptchasRequest) returns (appuser.middleware.app.v1.GetRecaptchasResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/recaptchas"
+            body: "*"
+        };
+    }
+
+    rpc SetRecaptcha (appuser.middleware.app.v1.SetRecaptchaRequest) returns (appuser.middleware.app.v1.SetRecaptchaResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/recaptcha"
+            body: "*"
+        };
+    }
+
+    rpc SetKyc (appuser.middleware.app.v1.SetKycRequest) returns (appuser.middleware.app.v1.SetKycResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/kyc"
+            body: "*"
+        };
+    }
+
+    rpc SetSigninVerify (appuser.middleware.app.v1.SetSigninVerifyRequest) returns (appuser.middleware.app.v1.SetSigninVerifyResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/signinverify"
+            body: "*"
+        };
+    }
+
+    rpc SetInvitationCodeMust (appuser.middleware.app.v1.SetInvitationCodeMustRequest) returns (appuser.middleware.app.v1.SetInvitationCodeMustResponse) {
+        option (google.api.http) = {
+            post: "/v1/set/invitationcodemust"
+            body: "*"
+        };
+    }
 }
 
 message CreateAppRequest {
@@ -55,15 +103,6 @@ message CreateAppRequest {
 }
 
 message CreateAppResponse {
-    appuser.manager.app.v2.App Info = 10;
-}
-
-message UpdateAppRequest {
-    // Permissioned by path (may by user in future if we support user create app)
-    appuser.manager.app.v2.AppReq Info = 10;
-}
-
-message UpdateAppResponse {
     appuser.manager.app.v2.App Info = 10;
 }
 
