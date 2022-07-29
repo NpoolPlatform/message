@@ -1,0 +1,93 @@
+syntax = "proto3";
+
+package appuser.gateway.admin.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/admin";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/appuser/mgr/v2/app/app.proto";
+import "npool/appuser/mgr/v2/approle/approle.proto";
+import "npool/appuser/mw/v1/app/app.proto";
+import "npool/appuser/mw/v1/user/user.proto";
+
+service AdminGw {
+    // VPN only apis
+    // Create genesis / admin apps
+    rpc CreateAdminApps (CreateAdminAppsRequest) returns (CreateAdminAppsResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/admin/apps"
+            body: "*"
+        };
+    }
+
+    // Create genesis / admin role
+    rpc CreateGenesisRoles (CreateGenesisRolesRequest) returns (CreateGenesisRolesResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/genesis/roles"
+            body: "*"
+        };
+    }
+
+    // Create genesis / admin user
+    rpc CreateGenesisUser (CreateGenesisUserRequest) returns (CreateGenesisUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/genesis/user"
+            body: "*"
+        };
+    }
+
+    rpc GetAdminApps (GetAdminAppsRequest) returns (GetAdminAppsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/admin/apps"
+            body: "*"
+        };
+    }
+
+    rpc AuthorizeGenesis (AuthorizeGenesisRequest) returns (AuthorizeGenesisResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/authorize/genesis"
+            body: "*"
+        };
+    }
+}
+
+message CreateAdminAppsRequest {
+    // Permissioned by path (now we don't have any app / user available)
+}
+
+message CreateAdminAppsResponse {
+    repeated appuser.manager.app.v2.App Infos = 10;
+}
+
+message CreateGenesisRolesRequest {
+    // Permissioned by path (now we only have admin app without any user)
+}
+
+message CreateGenesisRolesResponse {
+    repeated appuser.manager.approle.v2.AppRole Infos = 10;
+}
+
+message CreateGenesisUserRequest {
+    string AppID        = 10;
+    string EmailAddress = 20;
+    string PasswordHash = 30;
+}
+
+message CreateGenesisUserResponse {
+    appuser.middleware.user.v1.User Info = 10;
+}
+
+message GetAdminAppsRequest {
+}
+
+message GetAdminAppsResponse {
+    repeated appuser.manager.app.v2.App Infos = 10;
+}
+
+message AuthorizeGenesisRequest {
+}
+
+message AuthorizeGenesisResponse {
+}

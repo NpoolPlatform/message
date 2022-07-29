@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package appuser.middleware.admin.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/admin";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/appuser/mgr/v2/app/app.proto";
+import "npool/appuser/mgr/v2/approle/approle.proto";
+import "npool/appuser/mw/v1/app/app.proto";
+import "npool/appuser/mw/v1/user/user.proto";
+
+service AdminMw {
+    rpc CreateAdminApps    (CreateAdminAppsRequest)    returns (CreateAdminAppsResponse)    {}
+    rpc CreateGenesisRoles (CreateGenesisRolesRequest) returns (CreateGenesisRolesResponse) {}
+    rpc CreateGenesisUser  (CreateGenesisUserRequest)  returns (CreateGenesisUserResponse)  {}
+    rpc GetAdminApps       (GetAdminAppsRequest)       returns (GetAdminAppsResponse)       {}
+    rpc AuthorizeGenesis   (AuthorizeGenesisRequest)   returns (AuthorizeGenesisResponse)   {}
+}
+
+message CreateAdminAppsRequest {
+    // Permissioned by path (now we don't have any app / user available)
+}
+
+message CreateAdminAppsResponse {
+    repeated appuser.manager.app.v2.App Infos = 10;
+}
+
+message CreateGenesisRolesRequest {
+    // Permissioned by path (now we only have admin app without any user)
+}
+
+message CreateGenesisRolesResponse {
+    repeated appuser.manager.approle.v2.AppRole Infos = 10;
+}
+
+message CreateGenesisUserRequest {
+    string AppID        = 10;
+    string EmailAddress = 20;
+    string PasswordHash = 30;
+}
+
+message CreateGenesisUserResponse {
+    appuser.middleware.user.v1.User Info = 10;
+}
+
+message GetAdminAppsRequest {
+}
+
+message GetAdminAppsResponse {
+    repeated appuser.manager.app.v2.App Infos = 10;
+}
+
+message AuthorizeGenesisRequest {
+}
+
+message AuthorizeGenesisResponse {
+}

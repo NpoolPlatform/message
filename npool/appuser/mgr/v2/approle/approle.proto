@@ -1,0 +1,129 @@
+syntax = "proto3";
+
+package appuser.manager.approle.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/approle";
+
+import "npool/npool.proto";
+
+service AppRoleMgr {
+    rpc CreateAppRole     (CreateAppRoleRequest)     returns (CreateAppRoleResponse)     {}
+    rpc CreateAppRoles    (CreateAppRolesRequest)    returns (CreateAppRolesResponse)    {}
+    rpc UpdateAppRole     (UpdateAppRoleRequest)     returns (UpdateAppRoleResponse)     {}
+    rpc GetAppRole        (GetAppRoleRequest)        returns (GetAppRoleResponse)        {}
+    rpc GetAppRoleOnly    (GetAppRoleOnlyRequest)    returns (GetAppRoleOnlyResponse)    {}
+    rpc GetAppRoles       (GetAppRolesRequest)       returns (GetAppRolesResponse)       {}
+    rpc ExistAppRole      (ExistAppRoleRequest)      returns (ExistAppRoleResponse)      {}
+    rpc ExistAppRoleConds (ExistAppRoleCondsRequest) returns (ExistAppRoleCondsResponse) {}
+    rpc CountAppRoles     (CountAppRolesRequest)     returns (CountAppRolesResponse)     {}
+    rpc DeleteAppRole     (DeleteAppRoleRequest)     returns (DeleteAppRoleResponse)     {}
+}
+
+message AppRoleReq {
+    optional string ID          = 10;
+    optional string AppID       = 20;
+    optional string CreatedBy   = 30;
+    optional string Role        = 40;
+    optional string Description = 50;
+    optional bool   Default     = 60;
+}
+
+message AppRole {
+    string ID          = 10;
+    string AppID       = 20;
+    string CreatedBy   = 30;
+    string Role        = 40;
+    string Description = 50;
+    bool   Default     = 60;
+}
+
+message Conds {
+    npool.v1.StringVal       ID        = 10;
+    npool.v1.StringVal       AppID     = 20;
+    npool.v1.StringVal       CreatedBy = 30;
+    npool.v1.StringVal       Role      = 40;
+    npool.v1.BoolVal         Default   = 50;
+}
+
+message CreateAppRoleRequest {
+    AppRoleReq Info = 10;
+}
+
+message CreateAppRoleResponse {
+    AppRole Info = 10;
+}
+
+message CreateAppRolesRequest {
+    repeated AppRoleReq Infos = 10;
+}
+
+message CreateAppRolesResponse {
+    repeated AppRole Infos = 10;
+}
+
+message GetAppRoleRequest {
+    string ID = 10;
+}
+
+message GetAppRoleResponse {
+    AppRole Info = 10;
+}
+
+message GetAppRolesRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetAppRolesResponse {
+    repeated AppRole Infos = 10;
+    uint32   Total         = 20;
+}
+
+message GetAppRoleOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetAppRoleOnlyResponse {
+    AppRole Info = 10;
+}
+
+message UpdateAppRoleRequest {
+    AppRoleReq Info = 10;
+}
+
+message UpdateAppRoleResponse {
+    AppRole Info = 10;
+}
+
+message ExistAppRoleRequest {
+    string ID = 10;
+}
+
+message ExistAppRoleResponse {
+    bool Info = 10;
+}
+
+message ExistAppRoleCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAppRoleCondsResponse {
+    bool Info = 10;
+}
+
+message CountAppRolesRequest {
+    Conds Conds = 10;
+}
+
+message CountAppRolesResponse {
+    uint32 Info = 10;
+}
+
+message DeleteAppRoleRequest {
+    string ID = 10;
+}
+
+message DeleteAppRoleResponse {
+    AppRole Info = 10;
+}

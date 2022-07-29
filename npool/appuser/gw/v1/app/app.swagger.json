@@ -1,0 +1,865 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appuser/gw/v1/app/app.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AppGw"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/ban/app": {
+      "post": {
+        "operationId": "AppGw_BanApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BanAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1BanAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppGw"
+        ]
+      }
+    },
+    "/v1/create/app": {
+      "post": {
+        "operationId": "AppGw_CreateApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1CreateAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1CreateAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppGw"
+        ]
+      }
+    },
+    "/v1/get/app": {
+      "post": {
+        "operationId": "AppGw_GetApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1GetAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1GetAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppGw"
+        ]
+      }
+    },
+    "/v1/get/apps": {
+      "post": {
+        "summary": "Super admin api",
+        "operationId": "AppGw_GetApps",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1GetAppsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1GetAppsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppGw"
+        ]
+      }
+    },
+    "/v1/get/recaptchas": {
+      "post": {
+        "operationId": "AppGw_GetRecaptchas",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1GetRecaptchasResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1GetRecaptchasRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppGw"
+        ]
+      }
+    },
+    "/v1/get/signmethods": {
+      "post": {
+        "operationId": "AppGw_GetSignMethods",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1GetSignMethodsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1GetSignMethodsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppGw"
+        ]
+      }
+    },
+    "/v1/get/user/apps": {
+      "post": {
+        "operationId": "AppGw_GetUserApps",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1GetUserAppsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1GetUserAppsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppGw"
+        ]
+      }
+    },
+    "/v1/set/invitationcodemust": {
+      "post": {
+        "operationId": "AppGw_SetInvitationCodeMust",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SetInvitationCodeMustResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetInvitationCodeMustRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppGw"
+        ]
+      }
+    },
+    "/v1/set/kyc": {
+      "post": {
+        "operationId": "AppGw_SetKyc",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SetKycResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetKycRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppGw"
+        ]
+      }
+    },
+    "/v1/set/recaptcha": {
+      "post": {
+        "operationId": "AppGw_SetRecaptcha",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SetRecaptchaResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetRecaptchaRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppGw"
+        ]
+      }
+    },
+    "/v1/set/signinverify": {
+      "post": {
+        "operationId": "AppGw_SetSigninVerify",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SetSigninVerifyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetSigninVerifyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppGw"
+        ]
+      }
+    },
+    "/v1/set/signmethods": {
+      "post": {
+        "operationId": "AppGw_SetSignMethods",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SetSignMethodsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetSignMethodsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppGw"
+        ]
+      }
+    },
+    "/v1/update/app": {
+      "post": {
+        "operationId": "AppGw_UpdateApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1UpdateAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1UpdateAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppGw"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "appusergatewayappv1CreateAppRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv2AppReq",
+          "title": "Permissioned by path"
+        }
+      }
+    },
+    "appusergatewayappv1CreateAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv2App"
+        }
+      }
+    },
+    "appusergatewayappv1GetAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string",
+          "title": "Permissioned by app"
+        }
+      }
+    },
+    "appusergatewayappv1GetAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "appusergatewayappv1GetAppsRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32",
+          "title": "Permissioned by path"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "appusergatewayappv1GetAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/appv1App"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "appusergatewayappv1GetRecaptchasRequest": {
+      "type": "object"
+    },
+    "appusergatewayappv1GetRecaptchasResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Recaptcha"
+          },
+          "title": "In future this may be put to database then admin can change it"
+        }
+      }
+    },
+    "appusergatewayappv1GetSignMethodsRequest": {
+      "type": "object"
+    },
+    "appusergatewayappv1GetSignMethodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2SignMethod"
+          },
+          "title": "In future this may be put to database then admin can change it"
+        }
+      }
+    },
+    "appusergatewayappv1GetUserAppsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetUserID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "appusergatewayappv1GetUserAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/appv1App"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "appusergatewayappv1UpdateAppRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv2AppReq",
+          "title": "Permissioned by path"
+        }
+      }
+    },
+    "appusergatewayappv1UpdateAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv2App"
+        }
+      }
+    },
+    "appv1App": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "Base info"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Banned": {
+          "type": "boolean",
+          "title": "Banned"
+        },
+        "BanAppID": {
+          "type": "string"
+        },
+        "BanMessage": {
+          "type": "string"
+        },
+        "SignupMethods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Sign methods"
+        },
+        "ExtSigninMethods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "RecaptchaMethod": {
+          "type": "string",
+          "title": "Control flag"
+        },
+        "KycEnable": {
+          "type": "boolean"
+        },
+        "SigninVerifyEnable": {
+          "type": "boolean"
+        },
+        "InvitationCodeMust": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "appv2App": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "appv2AppReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BanAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "BanMessage": {
+          "type": "string"
+        }
+      }
+    },
+    "v1BanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v1SetInvitationCodeMustRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Enable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1SetInvitationCodeMustResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v1SetKycRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Enable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1SetKycResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v1SetRecaptchaRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "RecaptchaID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SetRecaptchaResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v1SetSignMethodsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "SignMethodIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1SetSignMethodsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v1SetSigninVerifyRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Enable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1SetSigninVerifyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "v2Recaptcha": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Recaptcha": {
+          "type": "string"
+        },
+        "Dashboard": {
+          "type": "string"
+        }
+      }
+    },
+    "v2SignMethod": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string"
+        },
+        "Icon": {
+          "type": "string"
+        },
+        "External": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

@@ -259,22 +259,22 @@
     "v1Int32Val": {
       "type": "object",
       "properties": {
+        "Op": {
+          "type": "string"
+        },
         "Value": {
           "type": "integer",
           "format": "int32"
-        },
-        "Op": {
-          "type": "string"
         }
       }
     },
     "v1StringVal": {
       "type": "object",
       "properties": {
-        "Value": {
+        "Op": {
           "type": "string"
         },
-        "Op": {
+        "Value": {
           "type": "string"
         }
       }

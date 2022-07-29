@@ -1,0 +1,373 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appuser/gw/v1/approleuser/approleuser.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AppRoleUserGw"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/delete/role/user": {
+      "post": {
+        "operationId": "AppRoleUserGw_DeleteRoleUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteRoleUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteRoleUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppRoleUserGw"
+        ]
+      }
+    },
+    "/v2/create/app/role/user": {
+      "post": {
+        "operationId": "AppRoleUserGw_CreateAppRoleUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/approleuserv1CreateAppRoleUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/approleuserv1CreateAppRoleUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppRoleUserGw"
+        ]
+      }
+    },
+    "/v2/create/role/user": {
+      "post": {
+        "operationId": "AppRoleUserGw_CreateRoleUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateRoleUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateRoleUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppRoleUserGw"
+        ]
+      }
+    },
+    "/v2/get/app/role/users": {
+      "post": {
+        "operationId": "AppRoleUserGw_GetAppRoleUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/approleuserv1GetAppRoleUsersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/approleuserv1GetAppRoleUsersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppRoleUserGw"
+        ]
+      }
+    },
+    "/v2/get/role/users": {
+      "post": {
+        "operationId": "AppRoleUserGw_GetRoleUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRoleUsersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetRoleUsersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppRoleUserGw"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "approleuserv1CreateAppRoleUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/v2AppRoleUserReq"
+        }
+      }
+    },
+    "approleuserv1CreateAppRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRoleUser"
+        }
+      }
+    },
+    "approleuserv1GetAppRoleUsersRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "approleuserv1GetAppRoleUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppRoleUser"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateRoleUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetUserID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "Info": {
+          "$ref": "#/definitions/v2AppRoleUserReq"
+        }
+      }
+    },
+    "v1CreateRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRoleUser"
+        }
+      }
+    },
+    "v1DeleteRoleUserRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        }
+      }
+    },
+    "v1DeleteRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRoleUser"
+        }
+      }
+    },
+    "v1GetRoleUsersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetRoleUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppRoleUser"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2AppRoleUser": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v2AppRoleUserReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

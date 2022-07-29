@@ -1,0 +1,310 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appuser/mgr/v2/appuserextra/appuserextra.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AppUserExtraMgr"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2AppUserExtra": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Organization": {
+          "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v2AppUserExtraReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Organization": {
+          "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v2Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "FirstName": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Birthday": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "LastName": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Gender": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Avatar": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Username": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "PostalCode": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Age": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Organization": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IDNumber": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "v2CountAppUserExtrasResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2CreateAppUserExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserExtra"
+        }
+      }
+    },
+    "v2CreateAppUserExtrasResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppUserExtra"
+          }
+        }
+      }
+    },
+    "v2DeleteAppUserExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserExtra"
+        }
+      }
+    },
+    "v2ExistAppUserExtraCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v2ExistAppUserExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v2GetAppUserExtraOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserExtra"
+        }
+      }
+    },
+    "v2GetAppUserExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserExtra"
+        }
+      }
+    },
+    "v2GetAppUserExtrasResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppUserExtra"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2UpdateAppUserExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppUserExtra"
+        }
+      }
+    }
+  }
+}

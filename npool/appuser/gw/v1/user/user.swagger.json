@@ -1,0 +1,545 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appuser/gw/v1/user/user.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "UserGw"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/get/app/users": {
+      "post": {
+        "operationId": "UserGw_GetAppUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/userv1GetAppUsersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/userv1GetAppUsersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserGw"
+        ]
+      }
+    },
+    "/v1/get/users": {
+      "post": {
+        "operationId": "UserGw_GetUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayuserv1GetUsersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayuserv1GetUsersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserGw"
+        ]
+      }
+    },
+    "/v2/create/user": {
+      "post": {
+        "operationId": "UserGw_CreateUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayuserv1CreateUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayuserv1CreateUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserGw"
+        ]
+      }
+    },
+    "/v2/signup": {
+      "post": {
+        "operationId": "UserGw_Signup",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SignupResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SignupRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserGw"
+        ]
+      }
+    },
+    "/v2/update/user": {
+      "post": {
+        "operationId": "UserGw_UpdateUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayuserv1UpdateUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayuserv1UpdateUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserGw"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "appusergatewayuserv1CreateUserRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserReq"
+        }
+      }
+    },
+    "appusergatewayuserv1CreateUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "appusergatewayuserv1GetUsersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "appusergatewayuserv1GetUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1User"
+          }
+        }
+      }
+    },
+    "appusergatewayuserv1UpdateUserRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserReq"
+        }
+      }
+    },
+    "appusergatewayuserv1UpdateUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "userv1GetAppUsersRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "userv1GetAppUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1User"
+          }
+        }
+      }
+    },
+    "v1SignupRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "AccountType": {
+          "type": "string"
+        },
+        "VerificationCode": {
+          "type": "string"
+        },
+        "InvitationCode": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SignupResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1User": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "Base"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "ImportedFromAppID": {
+          "type": "string",
+          "title": "Imported"
+        },
+        "ImportedFromAppName": {
+          "type": "string"
+        },
+        "ImportedFromAppLogo": {
+          "type": "string"
+        },
+        "ImportedFromAppHome": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string",
+          "title": "Extra"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Organization": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "SigninVerifyByGoogleAuthentication": {
+          "type": "boolean",
+          "title": "Control flat"
+        },
+        "GoogleAuthenticationVerified": {
+          "type": "boolean"
+        },
+        "Banned": {
+          "type": "boolean"
+        },
+        "BanUserID": {
+          "type": "string"
+        },
+        "BanMessage": {
+          "type": "string"
+        },
+        "HasGoogleSecret": {
+          "type": "boolean",
+          "title": "Secret map"
+        },
+        "Roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Role"
+        },
+        "Logined": {
+          "type": "boolean",
+          "title": "Login info"
+        },
+        "LoginAccount": {
+          "type": "string"
+        },
+        "LoginAccountType": {
+          "type": "string"
+        },
+        "LoginToken": {
+          "type": "string"
+        },
+        "LoginClientIP": {
+          "type": "string"
+        },
+        "LoginClientUserAgent": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UserReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "Base"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "ImportedFromAppID": {
+          "type": "string",
+          "title": "Imported"
+        },
+        "Username": {
+          "type": "string",
+          "title": "Extra"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Organization": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "SigninVerifyByGoogleAuth": {
+          "type": "boolean",
+          "title": "Control"
+        },
+        "GoogleAuthenticationVerified": {
+          "type": "boolean"
+        },
+        "PasswordHash": {
+          "type": "string",
+          "title": "Secret"
+        },
+        "GoogleSecret": {
+          "type": "string"
+        },
+        "ThirdPartyID": {
+          "type": "string",
+          "title": "ThirdParty"
+        },
+        "ThirdPartyUserID": {
+          "type": "string"
+        },
+        "ThirdPartyUsername": {
+          "type": "string"
+        },
+        "ThirdPartyUserAvatar": {
+          "type": "string"
+        },
+        "Banned": {
+          "type": "boolean",
+          "title": "Banned"
+        },
+        "BanMessage": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

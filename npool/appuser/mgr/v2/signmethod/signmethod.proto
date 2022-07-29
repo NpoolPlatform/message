@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package appuser.manager.signmethod.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/signmethod";
+
+enum SignMethodType {
+    DefaultSignMethodType = 0;
+    Mobile                = 10;
+    Email                 = 20;
+    Twitter               = 30;
+    Github                = 40;
+    Facebook              = 50;
+    Linkedin              = 60;
+    Wechat                = 70;
+    Google                = 80;
+}
+
+message SignMethod {
+    string ID       = 10;
+    string Method   = 20;
+    string Icon     = 30;
+    bool   External = 40;
+}

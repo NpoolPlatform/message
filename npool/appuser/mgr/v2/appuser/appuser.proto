@@ -1,0 +1,128 @@
+syntax = "proto3";
+
+package appuser.manager.appuser.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/appuser";
+
+import "npool/npool.proto";
+
+service AppUserMgr {
+    rpc CreateAppUser     (CreateAppUserRequest)     returns (CreateAppUserResponse)     {}
+    rpc CreateAppUsers    (CreateAppUsersRequest)    returns (CreateAppUsersResponse)    {}
+    rpc UpdateAppUser     (UpdateAppUserRequest)     returns (UpdateAppUserResponse)     {}
+    rpc GetAppUser        (GetAppUserRequest)        returns (GetAppUserResponse)        {}
+    rpc GetAppUserOnly    (GetAppUserOnlyRequest)    returns (GetAppUserOnlyResponse)    {}
+    rpc GetAppUsers       (GetAppUsersRequest)       returns (GetAppUsersResponse)       {}
+    rpc ExistAppUser      (ExistAppUserRequest)      returns (ExistAppUserResponse)      {}
+    rpc ExistAppUserConds (ExistAppUserCondsRequest) returns (ExistAppUserCondsResponse) {}
+    rpc CountAppUsers     (CountAppUsersRequest)     returns (CountAppUsersResponse)     {}
+    rpc DeleteAppUser     (DeleteAppUserRequest)     returns (DeleteAppUserResponse)     {}
+}
+
+message AppUserReq {
+    optional string ID            = 10;
+    optional string AppID         = 20;
+    optional string PhoneNo       = 30;
+    optional string EmailAddress  = 40;
+    optional string ImportFromApp = 50;
+}
+
+message AppUser {
+    string ID            = 10;
+    string AppID         = 20;
+    string PhoneNo       = 30;
+    string EmailAddress  = 40;
+    string ImportFromApp = 50;
+}
+
+message Conds {
+    npool.v1.StringVal ID            = 10;
+    npool.v1.StringVal AppID         = 20;
+    npool.v1.StringVal PhoneNo       = 30;
+    npool.v1.StringVal EmailAddress  = 40;
+    npool.v1.StringVal ImportFromApp = 50;
+    npool.v1.StringSliceVal IDs      = 60;
+}
+
+message CreateAppUserRequest {
+    AppUserReq Info = 10;
+}
+
+message CreateAppUserResponse {
+    AppUser Info = 10;
+}
+
+message CreateAppUsersRequest {
+    repeated AppUserReq Infos = 10;
+}
+
+message CreateAppUsersResponse {
+    repeated AppUser Infos = 10;
+}
+
+message GetAppUserRequest {
+    string ID = 10;
+}
+
+message GetAppUserResponse {
+    AppUser Info = 10;
+}
+
+message GetAppUsersRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetAppUsersResponse {
+    repeated AppUser Infos = 10;
+    uint32           Total = 20;
+}
+
+message GetAppUserOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetAppUserOnlyResponse {
+    AppUser Info = 10;
+}
+
+message UpdateAppUserRequest {
+    AppUserReq Info = 10;
+}
+
+message UpdateAppUserResponse {
+    AppUser Info = 10;
+}
+
+message ExistAppUserRequest {
+    string ID = 10;
+}
+
+message ExistAppUserResponse {
+    bool Info = 10;
+}
+
+message ExistAppUserCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAppUserCondsResponse {
+    bool Info = 10;
+}
+
+message CountAppUsersRequest {
+    Conds Conds = 10;
+}
+
+message CountAppUsersResponse {
+    uint32 Info = 10;
+}
+
+message DeleteAppUserRequest {
+    string ID = 10;
+}
+
+message DeleteAppUserResponse {
+    AppUser Info = 10;
+}

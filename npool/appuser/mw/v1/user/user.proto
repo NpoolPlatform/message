@@ -1,0 +1,165 @@
+syntax = "proto3";
+
+package appuser.middleware.user.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/user";
+
+import "npool/npool.proto";
+
+service UserMw {
+    rpc CreateUser        (CreateUserRequest)       returns (CreateUserResponse)       {}
+    rpc UpdateUser        (UpdateUserRequest)       returns (UpdateUserResponse)       {}
+
+    rpc GetUsers          (GetUsersRequest)         returns (GetUsersResponse)         {}
+    rpc GetUser           (GetUserRequest)          returns (GetUserResponse)          {}
+    rpc GetManyUsers      (GetManyUsersRequest)     returns (GetManyUsersResponse)     {}
+
+    // Admin apis
+    rpc BanUser           (BanUserRequest)          returns (BanUserResponse)          {}
+}
+
+message UserReq {
+    // Base
+    optional string ID                         = 10;
+    optional string AppID                      = 20;
+    optional string EmailAddress               = 30;
+    optional string PhoneNO                    = 40;
+
+    // Imported
+    optional string ImportedFromAppID          = 50;
+
+    // Extra
+    optional string Username                   = 60;
+    repeated string AddressFields              = 70;
+    optional string Gender                     = 80;
+    optional string PostalCode                 = 90;
+    optional uint32 Age                        = 100;
+    optional uint32 Birthday                   = 110;
+    optional string Avatar                     = 120;
+    optional string Organization               = 130;
+    optional string FirstName                  = 140;
+    optional string LastName                   = 150;
+    optional string IDNumber                   = 160;
+
+    // Control
+    optional bool SigninVerifyByGoogleAuth     = 170;
+    optional bool GoogleAuthenticationVerified = 180;
+
+    // Secret
+    optional string PasswordHash               = 190;
+    optional string GoogleSecret               = 200;
+
+    // ThirdParty
+    optional string ThirdPartyID               = 210;
+    optional string ThirdPartyUserID           = 220;
+    optional string ThirdPartyUsername         = 230;
+    optional string ThirdPartyUserAvatar       = 240;
+
+    // Banned
+    optional bool   Banned                     = 250;
+    optional string BanMessage                 = 260;
+
+}
+
+message User {
+    // Base
+    string ID                                = 10;
+    string AppID                             = 20;
+    string EmailAddress                      = 30;
+    string PhoneNO                           = 40;
+
+    // Imported
+    string ImportedFromAppID                 = 50;
+    string ImportedFromAppName               = 60;
+    string ImportedFromAppLogo               = 70;
+    string ImportedFromAppHome               = 80;
+
+    // Extra
+    string Username                          = 90;
+    repeated string AddressFields            = 100;
+    string Gender                            = 110;
+    string PostalCode                        = 120;
+    uint32 Age                               = 130;
+    uint32 Birthday                          = 140;
+    string Avatar                            = 150;
+    string Organization                      = 160;
+    string FirstName                         = 170;
+    string LastName                          = 180;
+    string IDNumber                          = 190;
+
+    // Control flat
+    bool   SigninVerifyByGoogleAuthentication = 200;
+    bool   GoogleAuthenticationVerified       = 210;
+    bool   Banned                             = 220;
+    string BanUserID                          = 230;
+    string BanMessage                         = 240;
+
+    // Secret map
+    bool HasGoogleSecret                     = 250;
+
+    // Role
+    repeated string Roles                    = 260;
+
+    // Login info
+    bool   Logined                           = 270;
+    string LoginAccount                      = 280;
+    string LoginAccountType                  = 290;
+    string LoginToken                        = 300;
+    string LoginClientIP                     = 310;
+    string LoginClientUserAgent              = 320;
+
+    uint32 CreateAt                          = 330;
+}
+
+message CreateUserRequest {
+    UserReq Info = 10;
+}
+
+message CreateUserResponse {
+    User Info = 10;
+}
+
+message UpdateUserRequest {
+    UserReq Info = 10;
+}
+
+message UpdateUserResponse {
+    User Info = 10;
+}
+
+message GetUsersRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetUsersResponse {
+    repeated User Infos = 10;
+}
+
+message GetUserRequest {
+    string AppID  = 10;
+    string UserID = 20;
+}
+
+message GetUserResponse {
+    User Info = 10;
+}
+
+message GetManyUsersRequest {
+    npool.v1.StringSliceVal IDs = 10;
+}
+
+message GetManyUsersResponse {
+    repeated User Infos = 10;
+}
+
+message BanUserRequest {
+    string AppID      = 10;
+    string UserID     = 20;
+    string BanMessage = 30;
+}
+
+message BanUserResponse {
+    User Info = 10;
+}

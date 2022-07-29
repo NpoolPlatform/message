@@ -1,0 +1,340 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appuser/gw/v1/login/login.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "LoginGw"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v2/login": {
+      "post": {
+        "operationId": "LoginGw_Login",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1LoginResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1LoginRequest"
+            }
+          }
+        ],
+        "tags": [
+          "LoginGw"
+        ]
+      }
+    },
+    "/v2/logined": {
+      "post": {
+        "operationId": "LoginGw_Logined",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1LoginedResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1LoginedRequest"
+            }
+          }
+        ],
+        "tags": [
+          "LoginGw"
+        ]
+      }
+    },
+    "/v2/logout": {
+      "post": {
+        "operationId": "LoginGw_Logout",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1LogoutResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1LogoutRequest"
+            }
+          }
+        ],
+        "tags": [
+          "LoginGw"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1LoginRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        },
+        "ManMachineSpec": {
+          "type": "string"
+        },
+        "EnvironmentSpec": {
+          "type": "string"
+        },
+        "AccountType": {
+          "type": "string"
+        }
+      }
+    },
+    "v1LoginResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1LoginedRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Token": {
+          "type": "string"
+        }
+      }
+    },
+    "v1LoginedResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1LogoutRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Token": {
+          "type": "string"
+        }
+      }
+    },
+    "v1LogoutResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1User": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "Base"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "ImportedFromAppID": {
+          "type": "string",
+          "title": "Imported"
+        },
+        "ImportedFromAppName": {
+          "type": "string"
+        },
+        "ImportedFromAppLogo": {
+          "type": "string"
+        },
+        "ImportedFromAppHome": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string",
+          "title": "Extra"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Organization": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "SigninVerifyByGoogleAuthentication": {
+          "type": "boolean",
+          "title": "Control flat"
+        },
+        "GoogleAuthenticationVerified": {
+          "type": "boolean"
+        },
+        "Banned": {
+          "type": "boolean"
+        },
+        "BanUserID": {
+          "type": "string"
+        },
+        "BanMessage": {
+          "type": "string"
+        },
+        "HasGoogleSecret": {
+          "type": "boolean",
+          "title": "Secret map"
+        },
+        "Roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Role"
+        },
+        "Logined": {
+          "type": "boolean",
+          "title": "Login info"
+        },
+        "LoginAccount": {
+          "type": "string"
+        },
+        "LoginAccountType": {
+          "type": "string"
+        },
+        "LoginToken": {
+          "type": "string"
+        },
+        "LoginClientIP": {
+          "type": "string"
+        },
+        "LoginClientUserAgent": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}

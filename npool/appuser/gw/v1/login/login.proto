@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package appuser.gateway.login.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/login";
+
+import "google/api/annotations.proto";
+import "npool/appuser/mw/v1/user/user.proto";
+
+service LoginGw {
+    rpc Login (LoginRequest) returns (LoginResponse) {
+        option (google.api.http) = {
+            post: "/v2/login"
+            body: "*"
+        };
+    }
+
+    rpc Logined (LoginedRequest) returns (LoginedResponse) {
+        option (google.api.http) = {
+            post: "/v2/logined"
+            body: "*"
+        };
+    }
+
+    rpc Logout (LogoutRequest) returns (LogoutResponse) {
+        option (google.api.http) = {
+            post: "/v2/logout"
+            body: "*"
+        };
+    }
+
+}
+
+message LoginRequest {
+    string AppID           = 10;
+    string Account         = 20;
+    string PasswordHash    = 30;
+    string ManMachineSpec  = 40;
+    string EnvironmentSpec = 50;
+    string AccountType     = 60;
+}
+
+message LoginResponse {
+    appuser.middleware.user.v1.User Info = 10;
+}
+
+
+message LoginedRequest {
+    string AppID  = 10;
+    string UserID = 20;
+    string Token  = 30;
+}
+
+message LoginedResponse {
+    appuser.middleware.user.v1.User Info = 10;
+}
+
+message LogoutRequest {
+    string AppID  = 10;
+    string UserID = 20;
+    string Token  = 30;
+}
+
+message LogoutResponse {
+  appuser.middleware.user.v1.User Info = 10;
+}
+

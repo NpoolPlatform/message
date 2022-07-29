@@ -1,0 +1,449 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appuser/gw/v1/admin/admin.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AdminGw"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/admin/apps": {
+      "post": {
+        "summary": "VPN only apis\nCreate genesis / admin apps",
+        "operationId": "AdminGw_CreateAdminApps",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAdminAppsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAdminAppsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminGw"
+        ]
+      }
+    },
+    "/v1/create/genesis/roles": {
+      "post": {
+        "summary": "Create genesis / admin role",
+        "operationId": "AdminGw_CreateGenesisRoles",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateGenesisRolesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateGenesisRolesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminGw"
+        ]
+      }
+    },
+    "/v1/create/genesis/user": {
+      "post": {
+        "summary": "Create genesis / admin user",
+        "operationId": "AdminGw_CreateGenesisUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateGenesisUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateGenesisUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminGw"
+        ]
+      }
+    },
+    "/v1/get/admin/apps": {
+      "post": {
+        "operationId": "AdminGw_GetAdminApps",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAdminAppsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAdminAppsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminGw"
+        ]
+      }
+    },
+    "/v1/get/authorize/genesis": {
+      "post": {
+        "operationId": "AdminGw_AuthorizeGenesis",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AuthorizeGenesisResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AuthorizeGenesisRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminGw"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "appv2App": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AuthorizeGenesisRequest": {
+      "type": "object"
+    },
+    "v1AuthorizeGenesisResponse": {
+      "type": "object"
+    },
+    "v1CreateAdminAppsRequest": {
+      "type": "object"
+    },
+    "v1CreateAdminAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/appv2App"
+          }
+        }
+      }
+    },
+    "v1CreateGenesisRolesRequest": {
+      "type": "object"
+    },
+    "v1CreateGenesisRolesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppRole"
+          }
+        }
+      }
+    },
+    "v1CreateGenesisUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateGenesisUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1GetAdminAppsRequest": {
+      "type": "object"
+    },
+    "v1GetAdminAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/appv2App"
+          }
+        }
+      }
+    },
+    "v1User": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "Base"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "ImportedFromAppID": {
+          "type": "string",
+          "title": "Imported"
+        },
+        "ImportedFromAppName": {
+          "type": "string"
+        },
+        "ImportedFromAppLogo": {
+          "type": "string"
+        },
+        "ImportedFromAppHome": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string",
+          "title": "Extra"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Organization": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "SigninVerifyByGoogleAuthentication": {
+          "type": "boolean",
+          "title": "Control flat"
+        },
+        "GoogleAuthenticationVerified": {
+          "type": "boolean"
+        },
+        "Banned": {
+          "type": "boolean"
+        },
+        "BanUserID": {
+          "type": "string"
+        },
+        "BanMessage": {
+          "type": "string"
+        },
+        "HasGoogleSecret": {
+          "type": "boolean",
+          "title": "Secret map"
+        },
+        "Roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Role"
+        },
+        "Logined": {
+          "type": "boolean",
+          "title": "Login info"
+        },
+        "LoginAccount": {
+          "type": "string"
+        },
+        "LoginAccountType": {
+          "type": "string"
+        },
+        "LoginToken": {
+          "type": "string"
+        },
+        "LoginClientIP": {
+          "type": "string"
+        },
+        "LoginClientUserAgent": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2AppRole": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Default": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

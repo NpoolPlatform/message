@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package appuser.middleware.app.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/app";
+
+import "npool/appuser/mgr/v2/app/app.proto";
+import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
+import "npool/appuser/mgr/v2/recaptcha/recaptcha.proto";
+
+service AppMw {
+    rpc CreateApp              (CreateAppRequest)             returns (CreateAppResponse)             {}
+    rpc UpdateApp              (UpdateAppRequest)             returns (UpdateAppResponse)             {}
+    rpc GetApp                 (GetAppRequest)                returns (GetAppResponse)                {}
+    rpc GetApps                (GetAppsRequest)               returns (GetAppsResponse)               {}
+    rpc GetUserApps            (GetUserAppsRequest)           returns (GetUserAppsResponse)           {}
+
+    rpc GetSignMethods         (GetSignMethodsRequest)        returns (GetSignMethodsResponse)        {}
+    rpc GetRecaptchas          (GetRecaptchasRequest)         returns (GetRecaptchasResponse)         {}
+}
+
+message AppReq {
+    // Base info
+    optional string          ID                 = 10;
+    optional string          CreatedBy          = 20;
+    optional string          Name               = 30;
+    optional string          Logo               = 40;
+    optional string          Description        = 50;
+
+    // Banned
+    optional bool            Banned             = 60;
+    optional string          BanMessage         = 70;
+
+    // Sign methods
+    repeated string SignupMethods               = 80;
+    repeated string ExtSigninMethods            = 90;
+
+    // Control flag
+    optional string          RecaptchaMethod    = 100;
+    optional bool            KycEnable          = 110;
+    optional bool            SigninVerifyEnable = 120;
+    optional bool            InvitationCodeMust = 130;
+}
+
+message App {
+    // Base info
+    string          ID                 = 10;
+    string          CreatedBy          = 20;
+    string          Name               = 30;
+    string          Logo               = 40;
+    string          Description        = 50;
+
+    // Banned
+    bool            Banned             = 60;
+    string          BanAppID           = 70;
+    string          BanMessage         = 80;
+
+    // Sign methods
+    repeated string SignupMethods      = 90;
+    repeated string ExtSigninMethods   = 100;
+
+    // Control flag
+    string          RecaptchaMethod    = 110;
+    bool            KycEnable          = 120;
+    bool            SigninVerifyEnable = 130;
+    bool            InvitationCodeMust = 140;
+
+    uint32          CreatedAt          = 150;
+}
+
+message CreateAppRequest {
+    // Permissioned by path
+    AppReq Info = 10;
+}
+
+message CreateAppResponse {
+    App Info = 10;
+}
+
+message UpdateAppRequest {
+    // Permissioned by path
+    AppReq Info = 10;
+}
+
+message UpdateAppResponse {
+    App Info = 10;
+}
+
+message GetAppRequest {
+    // Permissioned by path
+    string AppID = 10;
+}
+
+message GetAppResponse {
+    App Info = 10;
+}
+
+message GetAppsRequest {
+    // Permissioned by path
+    int32 Offset = 10;
+    int32 Limit  = 20;
+}
+
+message GetAppsResponse {
+    repeated App Infos = 10;
+    uint32       Total = 20;
+}
+
+message GetUserAppsRequest {
+    // Permissioned by path
+    string UserID = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetUserAppsResponse {
+    repeated App Infos = 10;
+    uint32       Total = 20;
+}
+
+message GetSignMethodsRequest {
+    // Permissioned by path
+}
+
+message GetSignMethodsResponse {
+    // In future this may be put to database then admin can change it
+    repeated appuser.manager.signmethod.v2.SignMethod Infos = 10;
+}
+
+message GetRecaptchasRequest {
+    // Permissioned by path
+}
+
+message GetRecaptchasResponse {
+    // In future this may be put to database then admin can change it
+    repeated appuser.manager.recaptcha.v2.Recaptcha Infos = 10;
+}

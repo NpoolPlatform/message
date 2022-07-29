@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/logingateway";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
-import "npool/appusermgr/appusermgr.proto";
+import "npool/appuser/mgr/v1/mgr.proto";
 
 service LoginGateway {
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
@@ -49,6 +49,11 @@ service LoginGateway {
     }
 }
 
+message PageInfo {
+    int32 Offset = 10;
+    int32 Limit = 20;
+}
+
 message LoginRequest {
     string AppID = 10;
     string Account = 20;
@@ -60,7 +65,7 @@ message LoginRequest {
 }
 
 message LoginResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
     string Token = 20;
 }
 
@@ -71,15 +76,15 @@ message LoginedRequest {
 }
 
 message LoginedResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message UpdateCacheRequest {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message UpdateCacheResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message LogoutRequest {
@@ -88,7 +93,7 @@ message LogoutRequest {
 }
 
 message LogoutResponse {
-    app.user.manager.v1.AppUserInfo Info = 10;
+    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message LoginHistory {
@@ -104,7 +109,7 @@ message LoginHistory {
 message GetLoginHistoriesRequest {
     string AppID = 10;
     string UserID = 20;
-    npool.v1.PageInfo PageInfo = 30;
+    PageInfo PageInfo = 30;
 }
 
 message GetLoginHistoriesResponse {

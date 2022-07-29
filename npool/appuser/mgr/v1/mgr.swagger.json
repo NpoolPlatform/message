@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appusermgr/appusermgr.proto",
+    "title": "npool/appuser/mgr/v1/mgr.proto",
     "version": "version not set"
   },
   "tags": [
@@ -2481,12 +2481,10 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
-          "title": "@gotags: json:\"id,omitempty\""
+          "type": "string"
         },
         "CreatedBy": {
-          "type": "string",
-          "title": "@gotags: json:\"created_by,omitempty\""
+          "type": "string"
         },
         "Name": {
           "type": "string"
@@ -2840,8 +2838,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppControl",
-          "title": "@gotags: json:\"info,omitempty\""
+          "$ref": "#/definitions/v1AppControl"
         }
       }
     },

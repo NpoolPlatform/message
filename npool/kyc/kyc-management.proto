@@ -67,6 +67,11 @@ service KycManagement {
     };
 }
 
+message PageInfo {
+    int32 Offset = 10;
+    int32 Limit = 20;
+}
+
 // request body and response
 message KycInfo {
     string ID = 10;
@@ -100,7 +105,7 @@ message GetKycByUserIDResponse {
 
 message GetKycByAppIDRequest {
     string TargetAppID = 10;
-    npool.v1.PageInfo PageInfo = 20;
+    PageInfo PageInfo = 20;
 }
 
 message GetKycByAppIDResponse {
@@ -109,7 +114,7 @@ message GetKycByAppIDResponse {
 }
 
 message GetAllKycRequest {
-    npool.v1.PageInfo PageInfo = 10;
+    PageInfo PageInfo = 10;
 }
 
 message GetAllKycResponse {

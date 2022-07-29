@@ -1,0 +1,97 @@
+syntax = "proto3";
+
+package appuser.gateway.user.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/user";
+
+import "google/api/annotations.proto";
+import "npool/appuser/mgr/v2/appuser/appuser.proto";
+import "npool/appuser/mw/v1/user/user.proto";
+
+service UserGw {
+    rpc Signup (SignupRequest) returns (SignupResponse) {
+        option (google.api.http) = {
+            post: "/v2/signup"
+            body: "*"
+        };
+    }
+
+    rpc CreateUser (CreateUserRequest) returns (CreateUserResponse) {
+        option (google.api.http) = {
+            post: "/v2/create/user"
+            body: "*"
+        };
+    }
+
+    rpc UpdateUser (UpdateUserRequest) returns (UpdateUserResponse) {
+        option (google.api.http) = {
+            post: "/v2/update/user"
+            body: "*"
+        };
+    }
+
+    rpc GetUsers (GetUsersRequest) returns (GetUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/users"
+            body: "*"
+        };
+    }
+
+    rpc GetAppUsers (GetAppUsersRequest) returns (GetAppUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/users"
+            body: "*"
+        };
+    }
+}
+
+message SignupRequest {
+    // Permissioned by path
+    string AppID            = 10;
+    string Username         = 20;
+    string PasswordHash     = 30;
+    string Account          = 40;
+    string AccountType      = 50;
+    string VerificationCode = 60;
+    string InvitationCode   = 70;
+}
+
+message SignupResponse {
+    appuser.middleware.user.v1.User Info = 10;
+}
+
+message CreateUserRequest {
+    appuser.middleware.user.v1.UserReq Info = 10;
+}
+
+message CreateUserResponse {
+    appuser.middleware.user.v1.User Info = 10;
+}
+
+message UpdateUserRequest {
+    appuser.middleware.user.v1.UserReq Info = 10;
+}
+
+message UpdateUserResponse {
+    appuser.middleware.user.v1.User Info = 10;
+}
+
+message GetUsersRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetUsersResponse {
+    repeated appuser.middleware.user.v1.User Infos = 10;
+}
+
+message GetAppUsersRequest {
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetAppUsersResponse {
+    repeated appuser.middleware.user.v1.User Infos = 10;
+}

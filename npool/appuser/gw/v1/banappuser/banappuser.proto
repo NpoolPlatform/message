@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package appuser.gateway.banappuser.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/banappuser";
+
+import "google/api/annotations.proto";
+import "npool/appuser/mgr/v2/banappuser/banappuser.proto";
+
+service BanAppUserGw {
+    rpc CreateBanUser (CreateBanUserRequest) returns (CreateBanUserResponse) {
+        option (google.api.http) = {
+            post: "/v2/create/ban/user"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppBanUser (CreateAppBanUserRequest) returns (CreateAppBanUserResponse) {
+        option (google.api.http) = {
+            post: "/v2/create/app/ban/user"
+            body: "*"
+        };
+    }
+
+    rpc UpdateBanUser (UpdateBanUserRequest) returns (UpdateBanUserResponse) {
+        option (google.api.http) = {
+            post: "/v2/update/ban/user"
+            body: "*"
+        };
+    }
+
+    rpc DeleteBanUser (DeleteBanUserRequest) returns (DeleteBanUserResponse) {
+        option (google.api.http) = {
+            post: "/v2/delete/ban/user"
+            body: "*"
+        };
+    }
+
+}
+
+message CreateBanUserRequest {
+    // Permissioned by path
+    string                                      TargetUserID = 10;
+    appuser.manager.banappuser.v2.BanAppUserReq Info         = 20;
+}
+
+message CreateBanUserResponse {
+    appuser.manager.banappuser.v2.BanAppUser Info = 10;
+}
+
+message CreateAppBanUserRequest {
+    // Permissioned by path
+    string                                      TargetAppID  = 10;
+    string                                      TargetUserID = 20;
+    appuser.manager.banappuser.v2.BanAppUserReq Info         = 30;
+}
+
+message CreateAppBanUserResponse {
+    appuser.manager.banappuser.v2.BanAppUser Info = 10;
+}
+
+message UpdateBanUserRequest {
+    // Permissioned by path
+    appuser.manager.banappuser.v2.BanAppUserReq Info = 10;
+}
+
+message UpdateBanUserResponse {
+    appuser.manager.banappuser.v2.BanAppUser Info = 10;
+}
+
+message DeleteBanUserRequest {
+    // Permissioned by path
+    string ID = 10;
+}
+
+message DeleteBanUserResponse {
+    appuser.manager.banappuser.v2.BanAppUser Info = 10;
+}

@@ -1,0 +1,124 @@
+syntax = "proto3";
+
+package appuser.manager.banappuser.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/banappuser";
+
+import "npool/npool.proto";
+
+service BanAppUserMgr {
+    rpc CreateBanAppUser     (CreateBanAppUserRequest)     returns (CreateBanAppUserResponse)     {}
+    rpc CreateBanAppUsers    (CreateBanAppUsersRequest)    returns (CreateBanAppUsersResponse)    {}
+    rpc UpdateBanAppUser     (UpdateBanAppUserRequest)     returns (UpdateBanAppUserResponse)     {}
+    rpc GetBanAppUser        (GetBanAppUserRequest)        returns (GetBanAppUserResponse)        {}
+    rpc GetBanAppUserOnly    (GetBanAppUserOnlyRequest)    returns (GetBanAppUserOnlyResponse)    {}
+    rpc GetBanAppUsers       (GetBanAppUsersRequest)       returns (GetBanAppUsersResponse)       {}
+    rpc ExistBanAppUser      (ExistBanAppUserRequest)      returns (ExistBanAppUserResponse)      {}
+    rpc ExistBanAppUserConds (ExistBanAppUserCondsRequest) returns (ExistBanAppUserCondsResponse) {}
+    rpc CountBanAppUsers     (CountBanAppUsersRequest)     returns (CountBanAppUsersResponse)     {}
+    rpc DeleteBanAppUser     (DeleteBanAppUserRequest)     returns (DeleteBanAppUserResponse)     {}
+}
+
+message BanAppUserReq {
+    optional string ID      = 10;
+    optional string AppID   = 20;
+    optional string UserID  = 30;
+    optional string Message = 40;
+}
+
+message BanAppUser {
+    string ID      = 10;
+    string AppID   = 20;
+    string UserID  = 30;
+    string Message = 40;
+}
+
+message Conds {
+    npool.v1.StringVal ID      = 10;
+    npool.v1.StringVal AppID   = 20;
+    npool.v1.StringVal UserID  = 30;
+    npool.v1.StringVal Message = 40;
+}
+
+message CreateBanAppUserRequest {
+    BanAppUserReq Info = 10;
+}
+
+message CreateBanAppUserResponse {
+    BanAppUser Info = 10;
+}
+
+message CreateBanAppUsersRequest {
+    repeated BanAppUserReq Infos = 10;
+}
+
+message CreateBanAppUsersResponse {
+    repeated BanAppUser Infos = 10;
+}
+
+message GetBanAppUserRequest {
+    string ID = 10;
+}
+
+message GetBanAppUserResponse {
+    BanAppUser Info = 10;
+}
+
+message GetBanAppUsersRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetBanAppUsersResponse {
+    repeated BanAppUser Infos = 10;
+    uint32              Total = 20;
+}
+
+message GetBanAppUserOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetBanAppUserOnlyResponse {
+    BanAppUser Info = 10;
+}
+
+message UpdateBanAppUserRequest {
+    BanAppUserReq Info = 10;
+}
+
+message UpdateBanAppUserResponse {
+    BanAppUser Info = 10;
+}
+
+message ExistBanAppUserRequest {
+    string ID = 10;
+}
+
+message ExistBanAppUserResponse {
+    bool Info = 10;
+}
+
+message ExistBanAppUserCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistBanAppUserCondsResponse {
+    bool Info = 10;
+}
+
+message CountBanAppUsersRequest {
+    Conds Conds = 10;
+}
+
+message CountBanAppUsersResponse {
+    uint32 Info = 10;
+}
+
+message DeleteBanAppUserRequest {
+    string ID = 10;
+}
+
+message DeleteBanAppUserResponse {
+    BanAppUser Info = 10;
+}
