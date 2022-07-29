@@ -147,7 +147,7 @@ message GetUserResponse {
 }
 
 message GetManyUsersRequest {
-    npool.v1.StringSliceVal IDs = 10;
+    repeated string IDs = 10;
 }
 
 message GetManyUsersResponse {
