@@ -505,7 +505,7 @@
         "IDNumber": {
           "type": "string"
         },
-        "SigninVerifyByGoogleAuthentication": {
+        "SigninVerifyByGoogleAuth": {
           "type": "boolean",
           "title": "Control"
         },
@@ -515,9 +515,6 @@
         "PasswordHash": {
           "type": "string",
           "title": "Secret"
-        },
-        "Salt": {
-          "type": "string"
         },
         "GoogleSecret": {
           "type": "string"

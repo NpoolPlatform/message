@@ -20,45 +20,44 @@ service UserMw {
 
 message UserReq {
     // Base
-    optional string ID                                = 10;
-    optional string AppID                             = 20;
-    optional string EmailAddress                      = 30;
-    optional string PhoneNO                           = 40;
+    optional string ID                         = 10;
+    optional string AppID                      = 20;
+    optional string EmailAddress               = 30;
+    optional string PhoneNO                    = 40;
 
     // Imported
-    optional string ImportedFromAppID                 = 50;
+    optional string ImportedFromAppID          = 50;
 
     // Extra
-    optional string Username                          = 60;
-    repeated string AddressFields                     = 70;
-    optional string Gender                            = 80;
-    optional string PostalCode                        = 90;
-    optional uint32 Age                               = 100;
-    optional uint32 Birthday                          = 110;
-    optional string Avatar                            = 120;
-    optional string Organization                      = 130;
-    optional string FirstName                         = 140;
-    optional string LastName                          = 150;
-    optional string IDNumber                          = 160;
+    optional string Username                   = 60;
+    repeated string AddressFields              = 70;
+    optional string Gender                     = 80;
+    optional string PostalCode                 = 90;
+    optional uint32 Age                        = 100;
+    optional uint32 Birthday                   = 110;
+    optional string Avatar                     = 120;
+    optional string Organization               = 130;
+    optional string FirstName                  = 140;
+    optional string LastName                   = 150;
+    optional string IDNumber                   = 160;
 
     // Control
-    optional bool SigninVerifyByGoogleAuthentication  = 170;
-    optional bool GoogleAuthenticationVerified        = 180;
+    optional bool SigninVerifyByGoogleAuth     = 170;
+    optional bool GoogleAuthenticationVerified = 180;
 
     // Secret
-    string PasswordHash                               = 190;
-    string Salt                                       = 200;
-    string GoogleSecret                               = 210;
+    optional string PasswordHash               = 190;
+    optional string GoogleSecret               = 210;
 
     // ThirdParty
-    optional string ThirdPartyID                      = 220;
-    optional string ThirdPartyUserID                  = 230;
-    optional string ThirdPartyUsername                = 240;
-    optional string ThirdPartyUserAvatar              = 250;
+    optional string ThirdPartyID               = 220;
+    optional string ThirdPartyUserID           = 230;
+    optional string ThirdPartyUsername         = 240;
+    optional string ThirdPartyUserAvatar       = 250;
 
     // Banned
-    optional bool            Banned                   = 260;
-    optional string          BanMessage               = 270;
+    optional bool   Banned                     = 260;
+    optional string BanMessage                 = 270;
 
 }
 
