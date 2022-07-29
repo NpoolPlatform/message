@@ -29,6 +29,7 @@ type App struct {
 	unknownFields protoimpl.UnknownFields
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Id                  string   `protobuf:"bytes,20,opt,name=id,proto3" json:"id,omitempty"`                                    // @gotags: sql:"id"
 	CreatedBy           string   `protobuf:"bytes,30,opt,name=createdBy,proto3" json:"createdBy,omitempty"`                      // @gotags: sql:"created_by"
 	Name                string   `protobuf:"bytes,40,opt,name=Name,proto3" json:"Name,omitempty"`                                // @gotags: sql:"name"
@@ -49,6 +50,8 @@ type App struct {
 func (x *AppInfo) Reset() {
 	*x = AppInfo{}
 =======
+=======
+>>>>>>> e88957ae27002b487b67d1e48d81519801cf6097
 	// Base info
 	ID          string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
 	CreatedBy   string `protobuf:"bytes,20,opt,name=CreatedBy,proto3" json:"CreatedBy,omitempty"`
@@ -72,7 +75,10 @@ func (x *AppInfo) Reset() {
 
 func (x *App) Reset() {
 	*x = App{}
+<<<<<<< HEAD
 >>>>>>> Refactor appuser
+=======
+>>>>>>> e88957ae27002b487b67d1e48d81519801cf6097
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_appuser_mw_v1_app_app_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -139,6 +145,7 @@ func (x *App) GetDescription() string {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 func (x *AppInfo) GetBanAppAppID() string {
 	if x != nil {
 		return x.BanAppAppID
@@ -150,6 +157,9 @@ func (x *AppInfo) GetIsBanApp() bool {
 =======
 func (x *App) GetBanned() bool {
 >>>>>>> Refactor appuser
+=======
+func (x *App) GetBanned() bool {
+>>>>>>> e88957ae27002b487b67d1e48d81519801cf6097
 	if x != nil {
 		return x.Banned
 	}
@@ -506,6 +516,7 @@ func (x *GetAppResponse) GetInfo() *App {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/appusermiddleware/app/app.pb.go
 var File_npool_appusermiddleware_app_app_proto protoreflect.FileDescriptor
 
@@ -580,6 +591,9 @@ type GetAppInfosRequest struct {
 =======
 type GetAppsRequest struct {
 >>>>>>> Refactor appuser
+=======
+type GetAppsRequest struct {
+>>>>>>> e88957ae27002b487b67d1e48d81519801cf6097
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -809,6 +823,7 @@ func (x *GetUserAppsResponse) GetTotal() uint32 {
 	return 0
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> Add enum ERR
 var File_npool_appuser_mw_v1_app_app_proto protoreflect.FileDescriptor
@@ -1040,6 +1055,8 @@ var file_npool_appuser_mw_v1_app_app_proto_rawDesc = []byte{
 	0x74, 0x6f, 0x33,
 >>>>>>> Add permission tag, and remove unneeded api
 =======
+=======
+>>>>>>> e88957ae27002b487b67d1e48d81519801cf6097
 type BanAppRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1048,7 +1065,10 @@ type BanAppRequest struct {
 	// Permissioned by path
 	AppID      string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
 	BanMessage string `protobuf:"bytes,20,opt,name=BanMessage,proto3" json:"BanMessage,omitempty"`
+<<<<<<< HEAD
 >>>>>>> Add app apis
+=======
+>>>>>>> e88957ae27002b487b67d1e48d81519801cf6097
 }
 
 func (x *BanAppRequest) Reset() {

@@ -117,21 +117,6 @@
         }
       }
     },
-<<<<<<< HEAD:npool/ledger/mgr/v1/general/general.swagger.json
-=======
-    "v1DoubleVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "number",
-          "format": "double"
-        }
-      }
-    },
->>>>>>> Refactor page info and slice:npool/ledgermgr/general/general.swagger.json
     "v1ExistGeneralCondsResponse": {
       "type": "object",
       "properties": {

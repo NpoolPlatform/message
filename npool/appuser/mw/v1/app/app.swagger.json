@@ -36,17 +36,9 @@
         "Description": {
           "type": "string"
         },
-<<<<<<< HEAD
-        "BanAppAppID": {
-          "type": "string"
-        },
-        "IsBanApp": {
-          "type": "boolean"
-=======
         "Banned": {
           "type": "boolean",
           "title": "Banned"
->>>>>>> Refactor appuser
         },
         "BanAppID": {
           "type": "string"

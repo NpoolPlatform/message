@@ -4,11 +4,14 @@
 // - protoc             v3.18.1
 // source: npool/appuser/mw/v1/app/app.proto
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 // source: npool/appusermw/app/app.proto
 >>>>>>> basically completed new apis:npool/appusermw/app/app_grpc.pb.go
 =======
 >>>>>>> Add enum ERR
+=======
+>>>>>>> e88957ae27002b487b67d1e48d81519801cf6097
 
 package app
 
@@ -541,9 +544,12 @@ var AppMw_ServiceDesc = grpc.ServiceDesc{
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "npool/appuser/mw/v1/app/app.proto",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	Metadata: "npool/appusermw/app/app.proto",
 >>>>>>> basically completed new apis:npool/appusermw/app/app_grpc.pb.go
 =======
 >>>>>>> Add enum ERR
+=======
+>>>>>>> e88957ae27002b487b67d1e48d81519801cf6097
 }
