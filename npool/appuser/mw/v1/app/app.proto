@@ -48,7 +48,7 @@ message App {
     bool            SigninVerifyEnable = 130;
     bool            InvitationCodeMust = 140;
 
-    string          CreatedAt          = 150;
+    uint32          CreatedAt          = 150;
 }
 
 message CreateAppRequest {
