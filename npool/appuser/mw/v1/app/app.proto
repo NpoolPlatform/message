@@ -51,9 +51,8 @@ message App {
     string          CreateAt           = 150;
 }
 
-// Here when we refer ID in request, it always app.ID
-
 message CreateAppRequest {
+    // Permissioned by path
     appuser.manager.app.v2.AppReq Info = 10;
 }
 
@@ -62,6 +61,7 @@ message CreateAppResponse {
 }
 
 message UpdateAppRequest {
+    // Permissioned by path
     appuser.manager.app.v2.AppReq Info = 10;
 }
 
@@ -70,7 +70,8 @@ message UpdateAppResponse {
 }
 
 message GetAppRequest {
-    string ID = 10;
+    // Permissioned by path
+    string AppID = 10;
 }
 
 message GetAppResponse {
@@ -78,6 +79,7 @@ message GetAppResponse {
 }
 
 message GetAppsRequest {
+    // Permissioned by path
     int32 Offset = 10;
     int32 Limit  = 20;
 }
@@ -88,6 +90,7 @@ message GetAppsResponse {
 }
 
 message GetUserAppsRequest {
+    // Permissioned by path
     string UserID = 10;
     int32  Offset = 20;
     int32  Limit  = 30;
@@ -99,7 +102,8 @@ message GetUserAppsResponse {
 }
 
 message BanAppRequest {
-    string ID         = 10;
+    // Permissioned by path
+    string AppID      = 10;
     string BanMessage = 20;
 }
 
@@ -108,6 +112,7 @@ message BanAppResponse {
 }
 
 message GetSignMethodsRequest {
+    // Permissioned by path
 }
 
 message GetSignMethodsResponse {
@@ -116,7 +121,8 @@ message GetSignMethodsResponse {
 }
 
 message SetSignMethodsRequest {
-    string          ID            = 10;
+    // Permissioned by path
+    string          AppID         = 10;
     repeated string SignMethodIDs = 20;
 }
 
@@ -125,6 +131,7 @@ message SetSignMethodsResponse {
 }
 
 message GetRecaptchasRequest {
+    // Permissioned by path
 }
 
 message GetRecaptchasResponse {
@@ -133,7 +140,8 @@ message GetRecaptchasResponse {
 }
 
 message SetRecaptchaRequest {
-    string ID          = 10;
+    // Permissioned by path
+    string AppID       = 10;
     string RecaptchaID = 20;
 }
 
@@ -142,7 +150,8 @@ message SetRecaptchaResponse {
 }
 
 message SetKycRequest {
-    string ID     = 10;
+    // Permissioned by path
+    string AppID  = 10;
     bool   Enable = 20;
 }
 
@@ -151,7 +160,8 @@ message SetKycResponse {
 }
 
 message SetSigninVerifyRequest {
-    string ID     = 10;
+    // Permissioned by path
+    string AppID  = 10;
     bool   Enable = 20;
 }
 
@@ -160,7 +170,8 @@ message SetSigninVerifyResponse {
 }
 
 message SetInvitationCodeMustRequest {
-    string ID     = 10;
+    // Permissioned by path
+    string AppID  = 10;
     bool   Enable = 20;
 }
 
