@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/thirdlogingateway";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
-import "npool/appuser/mgr/v1/appusermgr.proto";
+import "npool/appuser/mgr/v1/mgr.proto";
 
 // Service Name
 service ThirdLoginGateway {

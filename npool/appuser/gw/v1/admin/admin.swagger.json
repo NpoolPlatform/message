@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appuser/gw/v1/approle/approle.proto",
+    "title": "npool/appuser/gw/v1/admin/admin.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "AppRoleGw"
+      "name": "AdminGw"
     }
   ],
   "consumes": [
@@ -16,15 +16,15 @@
     "application/json"
   ],
   "paths": {
-    "/v2/create/app/role": {
+    "/v1/create/admin/apps": {
       "post": {
-        "summary": "Admin apis",
-        "operationId": "AppRoleGw_CreateAppRole",
+        "summary": "VPN only apis\nCreate genesis / admin apps",
+        "operationId": "AdminGw_CreateAdminApps",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/approlev1CreateAppRoleResponse"
+              "$ref": "#/definitions/v1CreateAdminAppsResponse"
             }
           },
           "default": {
@@ -40,24 +40,24 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/approlev1CreateAppRoleRequest"
+              "$ref": "#/definitions/v1CreateAdminAppsRequest"
             }
           }
         ],
         "tags": [
-          "AppRoleGw"
+          "AdminGw"
         ]
       }
     },
-    "/v2/create/role": {
+    "/v1/create/genesis/roles": {
       "post": {
-        "summary": "Create role should ignore genesis roles",
-        "operationId": "AppRoleGw_CreateRole",
+        "summary": "Create genesis / admin role",
+        "operationId": "AdminGw_CreateGenesisRoles",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateRoleResponse"
+              "$ref": "#/definitions/v1CreateGenesisRolesResponse"
             }
           },
           "default": {
@@ -73,23 +73,24 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateRoleRequest"
+              "$ref": "#/definitions/v1CreateGenesisRolesRequest"
             }
           }
         ],
         "tags": [
-          "AppRoleGw"
+          "AdminGw"
         ]
       }
     },
-    "/v2/get/app/roles": {
+    "/v1/create/genesis/user": {
       "post": {
-        "operationId": "AppRoleGw_GetAppRoles",
+        "summary": "Create genesis / admin user",
+        "operationId": "AdminGw_CreateGenesisUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/approlev1GetAppRolesResponse"
+              "$ref": "#/definitions/v1CreateGenesisUserResponse"
             }
           },
           "default": {
@@ -105,23 +106,23 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/approlev1GetAppRolesRequest"
+              "$ref": "#/definitions/v1CreateGenesisUserRequest"
             }
           }
         ],
         "tags": [
-          "AppRoleGw"
+          "AdminGw"
         ]
       }
     },
-    "/v2/get/roles": {
+    "/v1/get/admin/apps": {
       "post": {
-        "operationId": "AppRoleGw_GetRoles",
+        "operationId": "AdminGw_GetAdminApps",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetRolesResponse"
+              "$ref": "#/definitions/v1GetAdminAppsResponse"
             }
           },
           "default": {
@@ -137,24 +138,23 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetRolesRequest"
+              "$ref": "#/definitions/v1GetAdminAppsRequest"
             }
           }
         ],
         "tags": [
-          "AppRoleGw"
+          "AdminGw"
         ]
       }
     },
-    "/v2/update/app/role": {
+    "/v1/get/authorize/genesis": {
       "post": {
-        "summary": "Update role should ignore genesis roles",
-        "operationId": "AppRoleGw_UpdateRole",
+        "operationId": "AdminGw_AuthorizeGenesis",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateRoleResponse"
+              "$ref": "#/definitions/v1AuthorizeGenesisResponse"
             }
           },
           "default": {
@@ -170,67 +170,36 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateRoleRequest"
+              "$ref": "#/definitions/v1AuthorizeGenesisRequest"
             }
           }
         ],
         "tags": [
-          "AppRoleGw"
+          "AdminGw"
         ]
       }
     }
   },
   "definitions": {
-    "approlev1CreateAppRoleRequest": {
+    "appv2App": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "UserID": {
+        "ID": {
           "type": "string"
         },
-        "Info": {
-          "$ref": "#/definitions/v2AppRoleReq"
-        }
-      }
-    },
-    "approlev1CreateAppRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppRole"
-        }
-      }
-    },
-    "approlev1GetAppRolesRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string",
-          "title": "Permissioned by path"
+        "Description": {
+          "type": "string"
         },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
+        "CreatedBy": {
+          "type": "string"
         },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "approlev1GetAppRolesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2AppRole"
-          }
+        "Name": {
+          "type": "string"
         },
-        "Total": {
+        "Logo": {
+          "type": "string"
+        },
+        "CreatedAt": {
           "type": "integer",
           "format": "int64"
         }
@@ -263,44 +232,30 @@
         }
       }
     },
-    "v1CreateRoleRequest": {
+    "v1AuthorizeGenesisRequest": {
+      "type": "object"
+    },
+    "v1AuthorizeGenesisResponse": {
+      "type": "object"
+    },
+    "v1CreateAdminAppsRequest": {
+      "type": "object"
+    },
+    "v1CreateAdminAppsResponse": {
       "type": "object",
       "properties": {
-        "UserID": {
-          "type": "string",
-          "title": "Permissioned by path (UserID is for CreatedBy)"
-        },
-        "Info": {
-          "$ref": "#/definitions/v2AppRoleReq"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/appv2App"
+          }
         }
       }
     },
-    "v1CreateRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppRole"
-        }
-      }
+    "v1CreateGenesisRolesRequest": {
+      "type": "object"
     },
-    "v1GetRolesRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetRolesResponse": {
+    "v1CreateGenesisRolesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -308,54 +263,166 @@
           "items": {
             "$ref": "#/definitions/v2AppRole"
           }
+        }
+      }
+    },
+    "v1CreateGenesisUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
         },
-        "Total": {
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateGenesisUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1GetAdminAppsRequest": {
+      "type": "object"
+    },
+    "v1GetAdminAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/appv2App"
+          }
+        }
+      }
+    },
+    "v1User": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "Base"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "ImportedFromAppID": {
+          "type": "string",
+          "title": "Imported"
+        },
+        "ImportedFromAppName": {
+          "type": "string"
+        },
+        "ImportedFromAppLogo": {
+          "type": "string"
+        },
+        "ImportedFromAppHome": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string",
+          "title": "Extra"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Organization": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "SigninVerifyByGoogleAuthentication": {
+          "type": "boolean",
+          "title": "Control flat"
+        },
+        "GoogleAuthenticationVerified": {
+          "type": "boolean"
+        },
+        "Banned": {
+          "type": "boolean"
+        },
+        "BanUserID": {
+          "type": "string"
+        },
+        "BanMessage": {
+          "type": "string"
+        },
+        "HasGoogleSecret": {
+          "type": "boolean",
+          "title": "Secret map"
+        },
+        "Roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Role"
+        },
+        "Logined": {
+          "type": "boolean",
+          "title": "Login info"
+        },
+        "LoginAccount": {
+          "type": "string"
+        },
+        "LoginAccountType": {
+          "type": "string"
+        },
+        "LoginToken": {
+          "type": "string"
+        },
+        "LoginClientIP": {
+          "type": "string"
+        },
+        "LoginClientUserAgent": {
+          "type": "string"
+        },
+        "CreateAt": {
           "type": "integer",
           "format": "int64"
         }
       }
     },
-    "v1UpdateRoleRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppRoleReq",
-          "title": "Permissioned by path"
-        }
-      }
-    },
-    "v1UpdateRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppRole"
-        }
-      }
-    },
     "v2AppRole": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "CreatedBy": {
-          "type": "string"
-        },
-        "Role": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "Default": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v2AppRoleReq": {
       "type": "object",
       "properties": {
         "ID": {

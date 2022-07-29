@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/version": {
+    "/v2/version": {
       "post": {
         "operationId": "Manager_Version",
         "responses": {
