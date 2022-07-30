@@ -12,7 +12,7 @@ import "npool/npool.proto";
 service Gateway {
     rpc GetPercents (GetPercentsRequest) returns (GetPercentsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/percents"
+            post: "/v1/get/commissionpercents"
             body: "*"
         };
     }

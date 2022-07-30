@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/percents": {
+    "/v1/get/commissionpercents": {
       "post": {
         "operationId": "Gateway_GetPercents",
         "responses": {
