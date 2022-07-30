@@ -267,6 +267,27 @@
     "v1Percent": {
       "type": "object",
       "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Kol": {
+          "type": "boolean"
+        },
         "GoodID": {
           "type": "string"
         },
@@ -283,6 +304,14 @@
           "type": "string"
         },
         "Percent": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
           "type": "integer",
           "format": "int64"
         },
