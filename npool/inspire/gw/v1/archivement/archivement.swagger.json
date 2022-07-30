@@ -148,7 +148,7 @@
         "UserID": {
           "type": "string"
         },
-        "InviterIDs": {
+        "UserIDs": {
           "type": "array",
           "items": {
             "type": "string"
