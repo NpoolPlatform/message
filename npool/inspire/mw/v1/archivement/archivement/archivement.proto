@@ -4,13 +4,16 @@ package inspire.middleware.archivement.archivement.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/archivement/archivement";
 
+import "npool/inspire/mgr/v1/archivement/general/general.proto";
+
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
 service Middleware {
-    rpc CalculateOrderArchivement (CalculateOrderArchivementRequest) returns (CalculateOrderArchivementResponse) {}
+    rpc CalculateOrderArchivement (CalculateOrderArchivementRequest)  returns (CalculateOrderArchivementResponse) {}
+    rpc GetArchivementGenerals    (GetArchivementGeneralsRequest)     returns (GetArchivementGeneralsResponse)    {}
 }
 
 message CalculateOrderArchivementRequest {
@@ -21,3 +24,11 @@ message CalculateOrderArchivementResponse {
     // Just store all layer commission directly
 }
 
+message GetArchivementGeneralsRequest {
+    string          AppID   = 10;
+    repeated string UserIDs = 20;
+}
+
+message GetArchivementGeneralsResponse {
+    repeated inspire.manager.archivement.general.v1.General Infos = 10;
+}

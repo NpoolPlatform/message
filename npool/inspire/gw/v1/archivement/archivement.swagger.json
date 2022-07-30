@@ -157,10 +157,6 @@
         "StartUserIndex": {
           "type": "integer",
           "format": "int64"
-        },
-        "StartUserArchivementIndex": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -180,10 +176,6 @@
           }
         },
         "NextUserIndex": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "NextUserArchivementIndex": {
           "type": "integer",
           "format": "int64"
         }

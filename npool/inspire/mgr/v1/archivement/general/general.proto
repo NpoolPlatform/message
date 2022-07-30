@@ -43,14 +43,15 @@ message General {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID         = 10;
-    optional npool.v1.StringVal AppID      = 20;
-    optional npool.v1.StringVal UserID     = 30;
-    optional npool.v1.StringVal GoodID     = 40;
-    optional npool.v1.StringVal CoinTypeID = 50;
-    optional npool.v1.StringVal Amount     = 60;
-    optional npool.v1.Uint32Val TotalUnits = 70;
-    optional npool.v1.Uint32Val SelfUnits  = 80;
+    optional npool.v1.StringVal ID           = 10;
+    optional npool.v1.StringVal AppID        = 20;
+    optional npool.v1.StringVal UserID       = 30;
+    optional npool.v1.StringVal GoodID       = 40;
+    optional npool.v1.StringVal CoinTypeID   = 50;
+    optional npool.v1.StringVal Amount       = 60;
+    optional npool.v1.Uint32Val TotalUnits   = 70;
+    optional npool.v1.Uint32Val SelfUnits    = 80;
+    optional npool.v1.StringSliceVal UserIDs = 90;
 }
 
 
