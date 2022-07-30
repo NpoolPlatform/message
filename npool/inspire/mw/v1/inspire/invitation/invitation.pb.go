@@ -28,12 +28,12 @@ type Invitation struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// @inject_tag: sql "inviter_id"
-	InviterID string `protobuf:"bytes,10,opt,name=InviterID,proto3" json:"InviterID,omitempty"`
-	// @inject_tag: sql "invitee_id"
-	InviteeID string `protobuf:"bytes,20,opt,name=InviteeID,proto3" json:"InviteeID,omitempty"`
-	// @inject_tag: sql "create_at"
-	CreatedAt uint32 `protobuf:"varint,30,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
+	// @inject_tag: sql:"inviter_id"
+	InviterID string `protobuf:"bytes,10,opt,name=InviterID,proto3" json:"InviterID,omitempty" sql:"inviter_id"`
+	// @inject_tag: sql:"invitee_id"
+	InviteeID string `protobuf:"bytes,20,opt,name=InviteeID,proto3" json:"InviteeID,omitempty" sql:"invitee_id"`
+	// @inject_tag: sql:"create_at"
+	CreatedAt uint32 `protobuf:"varint,30,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"create_at"`
 }
 
 func (x *Invitation) Reset() {
