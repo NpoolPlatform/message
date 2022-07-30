@@ -148,20 +148,19 @@
         "UserID": {
           "type": "string"
         },
-        "WithSub": {
-          "type": "boolean"
+        "InviterIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
-        "StartAt": {
+        "UserStartIndex": {
           "type": "integer",
           "format": "int64"
         },
-        "EndAt": {
+        "UserArchivementStart": {
           "type": "integer",
           "format": "int64"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
         },
         "Limit": {
           "type": "integer",

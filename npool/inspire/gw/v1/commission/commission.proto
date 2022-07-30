@@ -42,15 +42,12 @@ message Percent {
 }
 
 message GetPercentsRequest {
-    string AppID   = 10;
-    string UserID  = 20;
-    bool   WithSub = 30;
-
-    uint32 StartAt = 40;
-    uint32 EndAt   = 50;
-
-    int32  Offset  = 60;
-    int32  Limit   = 70;
+    string          AppID                = 10;
+    string          UserID               = 20;
+    repeated string InviterIDs           = 30;
+    uint32          UserStartIndex       = 40;
+    uint32          UserArchivementStart = 50;
+    int32           Limit                = 60;
 }
 
 message GetPercentsResponse {
