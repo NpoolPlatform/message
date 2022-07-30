@@ -1,0 +1,99 @@
+syntax = "proto3";
+
+package inspire.gateway.archivement.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/archivement";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Gateway {
+    rpc GetCoinArchivements (GetCoinArchivementsRequest) returns (GetCoinArchivementsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coinarchivements"
+            body: "*"
+        };
+    }
+
+    rpc GetPercents (GetPercentsRequest) returns (GetPercentsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/percents"
+            body: "*"
+        };
+    }
+}
+
+message CoinArchivement {
+    string UserID        = 10;
+    string Username      = 20;
+    string EmailAddress  = 30;
+    string PhoneNO       = 40;
+    string FirstName     = 50;
+    string LastName      = 60;
+    bool   Kol           = 70;
+
+    string CoinTypeID    = 80;
+    string CoinName      = 90;
+    string CoinLogo      = 100;
+    string CoinUnit      = 110;
+
+    string Total         = 120;
+    string Balance       = 130;
+
+    uint32 TotalUnits    = 140;
+    uint32 SelfUnits     = 150;
+    string TotalAmount   = 160;
+
+    uint32 CurPercent    = 170;
+}
+
+message Percent {
+    string GoodID        = 10;
+    string GoodName      = 20;
+
+    string CoinTypeID    = 30;
+    string CoinName      = 40;
+    string CoinLogo      = 50;
+
+    uint32 Percent       = 60;
+    uint32 CreatedAt     = 70;
+}
+
+message GetCoinArchivementsRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    bool   WithSub = 30;
+
+    uint32 StartAt = 40;
+    uint32 EndAt   = 50;
+
+    int32  Offset  = 60;
+    int32  Limit   = 70;
+}
+
+message GetCoinArchivementsResponse {
+    string                   TotalAmount     = 10; // USD
+    string                   SelfAmount      = 20;
+    repeated CoinArchivement Archivements    = 30; // Coin
+    uint32                   Total           = 40;
+}
+
+
+message GetPercentsRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    bool   WithSub = 30;
+
+    uint32 StartAt = 40;
+    uint32 EndAt   = 50;
+
+    int32  Offset  = 60;
+    int32  Limit   = 70;
+}
+
+message GetPercentsResponse {
+    repeated Percent Infos = 10;
+    uint32           Total = 20;
+}
