@@ -42,12 +42,12 @@ message Percent {
 }
 
 message GetPercentsRequest {
-    string          AppID                = 10;
-    string          UserID               = 20;
-    repeated string InviterIDs           = 30;
-    uint32          UserStartIndex       = 40;
-    uint32          UserArchivementStart = 50;
-    int32           Limit                = 60;
+    string          AppID                     = 10;
+    string          UserID                    = 20;
+    repeated string InviterIDs                = 30;
+    uint32          StartUserIndex            = 40;
+    uint32          StartUserArchivementIndex = 50;
+    int32           Limit                     = 60;
 }
 
 message GetPercentsResponse {

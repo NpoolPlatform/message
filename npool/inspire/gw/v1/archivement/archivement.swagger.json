@@ -154,11 +154,11 @@
             "type": "string"
           }
         },
-        "UserStartIndex": {
+        "StartUserIndex": {
           "type": "integer",
           "format": "int64"
         },
-        "UserArchivementStart": {
+        "StartUserArchivementIndex": {
           "type": "integer",
           "format": "int64"
         },
