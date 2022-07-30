@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/inspire/gw/v1/archivement/archivement.proto
+// source: npool/inspire/gw/v1/commission/commission.proto
 
-package archivement
+package commission
 
 import (
 	context "context"
@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	GetCoinArchivements(ctx context.Context, in *GetCoinArchivementsRequest, opts ...grpc.CallOption) (*GetCoinArchivementsResponse, error)
+	GetPercents(ctx context.Context, in *GetPercentsRequest, opts ...grpc.CallOption) (*GetPercentsResponse, error)
 }
 
 type gatewayClient struct {
@@ -33,9 +33,9 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) GetCoinArchivements(ctx context.Context, in *GetCoinArchivementsRequest, opts ...grpc.CallOption) (*GetCoinArchivementsResponse, error) {
-	out := new(GetCoinArchivementsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.gateway.archivement.v1.Gateway/GetCoinArchivements", in, out, opts...)
+func (c *gatewayClient) GetPercents(ctx context.Context, in *GetPercentsRequest, opts ...grpc.CallOption) (*GetPercentsResponse, error) {
+	out := new(GetPercentsResponse)
+	err := c.cc.Invoke(ctx, "/inspire.gateway.commission.v1.Gateway/GetPercents", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *gatewayClient) GetCoinArchivements(ctx context.Context, in *GetCoinArch
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	GetCoinArchivements(context.Context, *GetCoinArchivementsRequest) (*GetCoinArchivementsResponse, error)
+	GetPercents(context.Context, *GetPercentsRequest) (*GetPercentsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -54,8 +54,8 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GetCoinArchivements(context.Context, *GetCoinArchivementsRequest) (*GetCoinArchivementsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCoinArchivements not implemented")
+func (UnimplementedGatewayServer) GetPercents(context.Context, *GetPercentsRequest) (*GetPercentsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPercents not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -70,20 +70,20 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_GetCoinArchivements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCoinArchivementsRequest)
+func _Gateway_GetPercents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPercentsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetCoinArchivements(ctx, in)
+		return srv.(GatewayServer).GetPercents(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.gateway.archivement.v1.Gateway/GetCoinArchivements",
+		FullMethod: "/inspire.gateway.commission.v1.Gateway/GetPercents",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetCoinArchivements(ctx, req.(*GetCoinArchivementsRequest))
+		return srv.(GatewayServer).GetPercents(ctx, req.(*GetPercentsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -92,14 +92,14 @@ func _Gateway_GetCoinArchivements_Handler(srv interface{}, ctx context.Context, 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.gateway.archivement.v1.Gateway",
+	ServiceName: "inspire.gateway.commission.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetCoinArchivements",
-			Handler:    _Gateway_GetCoinArchivements_Handler,
+			MethodName: "GetPercents",
+			Handler:    _Gateway_GetPercents_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/inspire/gw/v1/archivement/archivement.proto",
+	Metadata: "npool/inspire/gw/v1/commission/commission.proto",
 }

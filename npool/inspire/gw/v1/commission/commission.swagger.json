@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/gw/v1/archivement/archivement.proto",
+    "title": "npool/inspire/gw/v1/commission/commission.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/coinarchivements": {
+    "/v1/get/percents": {
       "post": {
-        "operationId": "Gateway_GetCoinArchivements",
+        "operationId": "Gateway_GetPercents",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetCoinArchivementsResponse"
+              "$ref": "#/definitions/v1GetPercentsResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetCoinArchivementsRequest"
+              "$ref": "#/definitions/v1GetPercentsRequest"
             }
           }
         ],
@@ -77,69 +77,7 @@
         }
       }
     },
-    "v1CoinArchivement": {
-      "type": "object",
-      "properties": {
-        "UserID": {
-          "type": "string"
-        },
-        "Username": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "FirstName": {
-          "type": "string"
-        },
-        "LastName": {
-          "type": "string"
-        },
-        "Kol": {
-          "type": "boolean"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "Total": {
-          "type": "string"
-        },
-        "Balance": {
-          "type": "string"
-        },
-        "TotalUnits": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SelfUnits": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "TotalAmount": {
-          "type": "string"
-        },
-        "TotalCommission": {
-          "type": "string"
-        },
-        "CurPercent": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetCoinArchivementsRequest": {
+    "v1GetPercentsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -169,22 +107,73 @@
         }
       }
     },
-    "v1GetCoinArchivementsResponse": {
+    "v1GetPercentsResponse": {
       "type": "object",
       "properties": {
-        "TotalAmount": {
-          "type": "string"
-        },
-        "SelfAmount": {
-          "type": "string"
-        },
-        "Archivements": {
+        "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinArchivement"
+            "$ref": "#/definitions/v1Percent"
           }
         },
         "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1Percent": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Kol": {
+          "type": "boolean"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "GoodName": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "Percent": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
           "type": "integer",
           "format": "int64"
         }
