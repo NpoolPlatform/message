@@ -23,7 +23,6 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CalculateOrderArchivement(ctx context.Context, in *CalculateOrderArchivementRequest, opts ...grpc.CallOption) (*CalculateOrderArchivementResponse, error)
-	GetArchivementGenerals(ctx context.Context, in *GetArchivementGeneralsRequest, opts ...grpc.CallOption) (*GetArchivementGeneralsResponse, error)
 }
 
 type middlewareClient struct {
@@ -43,21 +42,11 @@ func (c *middlewareClient) CalculateOrderArchivement(ctx context.Context, in *Ca
 	return out, nil
 }
 
-func (c *middlewareClient) GetArchivementGenerals(ctx context.Context, in *GetArchivementGeneralsRequest, opts ...grpc.CallOption) (*GetArchivementGeneralsResponse, error) {
-	out := new(GetArchivementGeneralsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.middleware.archivement.archivement.v1.Middleware/GetArchivementGenerals", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
 	CalculateOrderArchivement(context.Context, *CalculateOrderArchivementRequest) (*CalculateOrderArchivementResponse, error)
-	GetArchivementGenerals(context.Context, *GetArchivementGeneralsRequest) (*GetArchivementGeneralsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -67,9 +56,6 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CalculateOrderArchivement(context.Context, *CalculateOrderArchivementRequest) (*CalculateOrderArchivementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalculateOrderArchivement not implemented")
-}
-func (UnimplementedMiddlewareServer) GetArchivementGenerals(context.Context, *GetArchivementGeneralsRequest) (*GetArchivementGeneralsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetArchivementGenerals not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -102,24 +88,6 @@ func _Middleware_CalculateOrderArchivement_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetArchivementGenerals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetArchivementGeneralsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetArchivementGenerals(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/inspire.middleware.archivement.archivement.v1.Middleware/GetArchivementGenerals",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetArchivementGenerals(ctx, req.(*GetArchivementGeneralsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -130,10 +98,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CalculateOrderArchivement",
 			Handler:    _Middleware_CalculateOrderArchivement_Handler,
-		},
-		{
-			MethodName: "GetArchivementGenerals",
-			Handler:    _Middleware_GetArchivementGenerals_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

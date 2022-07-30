@@ -46,48 +46,6 @@
     },
     "v1CalculateOrderArchivementResponse": {
       "type": "object"
-    },
-    "v1General": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "TotalUnits": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SelfUnits": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetArchivementGeneralsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1General"
-          }
-        }
-      }
     }
   }
 }

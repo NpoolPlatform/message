@@ -13,7 +13,6 @@ import "npool/npool.proto";
 // Service Name
 service Middleware {
     rpc CalculateOrderArchivement (CalculateOrderArchivementRequest)  returns (CalculateOrderArchivementResponse) {}
-    rpc GetArchivementGenerals    (GetArchivementGeneralsRequest)     returns (GetArchivementGeneralsResponse)    {}
 }
 
 message CalculateOrderArchivementRequest {
@@ -24,11 +23,3 @@ message CalculateOrderArchivementResponse {
     // Just store all layer commission directly
 }
 
-message GetArchivementGeneralsRequest {
-    string          AppID   = 10;
-    repeated string UserIDs = 20;
-}
-
-message GetArchivementGeneralsResponse {
-    repeated inspire.manager.archivement.general.v1.General Infos = 10;
-}
