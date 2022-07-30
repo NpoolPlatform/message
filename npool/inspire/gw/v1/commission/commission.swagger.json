@@ -99,10 +99,6 @@
         "StartUserArchivementIndex": {
           "type": "integer",
           "format": "int64"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
         }
       }
     },
