@@ -30,6 +30,7 @@ message GetInviteesRequest {
 
 message GetInviteesResponse {
     repeated Invitation Infos = 10;
+    uint32              Total = 20;
 }
 
 message GetInvitersRequest {
@@ -41,4 +42,5 @@ message GetInvitersRequest {
 
 message GetInvitersResponse {
     repeated Invitation Infos = 10;
+    uint32              Total = 20;
 }

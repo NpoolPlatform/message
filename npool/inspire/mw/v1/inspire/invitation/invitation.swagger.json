@@ -52,6 +52,10 @@
           "items": {
             "$ref": "#/definitions/v1Invitation"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -63,6 +67,10 @@
           "items": {
             "$ref": "#/definitions/v1Invitation"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
