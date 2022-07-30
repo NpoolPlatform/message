@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package inspire.middleware.inspire.invitation.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/inspire/invitation";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Middleware {
+    // Method Version
+    rpc GetInvitees (GetInviteesRequest) returns (GetInviteesResponse) {}
+    rpc GetInviters (GetInvitersRequest) returns (GetInvitersResponse) {}
+}
+
+message Invitation {
+    string InviterID = 10;
+    string InviteeID = 20;
+    uint32 CreatedAt = 30;
+}
+
+message GetInviteesRequest {
+    string AppID  = 10;
+    string UserID = 20;
+}
+
+message GetInviteesResponse {
+    repeated Invitation Infos = 10;
+}
+
+message GetInvitersRequest {
+    string AppID  = 10;
+    string UserID = 20;
+}
+
+message GetInvitersResponse {
+    repeated Invitation Infos = 10;
+}
