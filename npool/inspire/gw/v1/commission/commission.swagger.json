@@ -95,10 +95,6 @@
         "StartUserIndex": {
           "type": "integer",
           "format": "int64"
-        },
-        "StartUserArchivementIndex": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -112,6 +108,10 @@
           }
         },
         "Total": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "NextUserIndex": {
           "type": "integer",
           "format": "int64"
         }

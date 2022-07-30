@@ -179,7 +179,11 @@
             "$ref": "#/definitions/v1CoinArchivement"
           }
         },
-        "Total": {
+        "NextUserIndex": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "NextUserArchivementIndex": {
           "type": "integer",
           "format": "int64"
         }
