@@ -25,10 +25,10 @@ message Invitation {
 }
 
 message GetInviteesRequest {
-    string AppID  = 10;
-    string UserID = 20;
-    int32  Offset = 30;
-    int32  Limit  = 40;
+    string          AppID   = 10;
+    repeated string UserIDs = 20;
+    int32           Offset  = 30;
+    int32           Limit   = 40;
 }
 
 message GetInviteesResponse {
