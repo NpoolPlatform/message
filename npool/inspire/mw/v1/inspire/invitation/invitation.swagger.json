@@ -78,14 +78,17 @@
       "type": "object",
       "properties": {
         "InviterID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql \"inviter_id\""
         },
         "InviteeID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql \"invitee_id\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql \"create_at\""
         }
       }
     }

@@ -16,8 +16,11 @@ service Middleware {
 }
 
 message Invitation {
+    // @inject_tag: sql "inviter_id"
     string InviterID = 10;
+    // @inject_tag: sql "invitee_id"
     string InviteeID = 20;
+    // @inject_tag: sql "create_at"
     uint32 CreatedAt = 30;
 }
 
