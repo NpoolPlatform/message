@@ -162,6 +162,9 @@
         "TotalAmount": {
           "type": "string"
         },
+        "TotalCommission": {
+          "type": "string"
+        },
         "CurPercent": {
           "type": "integer",
           "format": "int64"
