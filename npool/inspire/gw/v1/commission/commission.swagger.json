@@ -86,15 +86,13 @@
         "UserID": {
           "type": "string"
         },
-        "UserIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "StartUserIndex": {
+        "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -108,10 +106,6 @@
           }
         },
         "Total": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "NextUserIndex": {
           "type": "integer",
           "format": "int64"
         }

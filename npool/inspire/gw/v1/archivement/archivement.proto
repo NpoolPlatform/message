@@ -44,17 +44,17 @@ message CoinArchivement {
 }
 
 message GetCoinArchivementsRequest {
-    string          AppID          = 10;
-    string          UserID         = 20;
-    repeated string UserIDs        = 30;
-    uint32          StartUserIndex = 40;
+    string AppID    = 10;
+    string UserID   = 20;
+    int32  Offset   = 30;
+    int32  Limit    = 40;
 }
 
 message GetCoinArchivementsResponse {
     string                   TotalAmount   = 10; // USD
     string                   SelfAmount    = 20;
     repeated CoinArchivement Archivements  = 30; // Coin
-    uint32                   NextUserIndex = 40;
+    uint32                   Total         = 40;
 }
 
 
