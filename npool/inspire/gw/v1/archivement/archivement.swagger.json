@@ -113,12 +113,6 @@
         "CoinUnit": {
           "type": "string"
         },
-        "Total": {
-          "type": "string"
-        },
-        "Balance": {
-          "type": "string"
-        },
         "TotalUnits": {
           "type": "integer",
           "format": "int64"

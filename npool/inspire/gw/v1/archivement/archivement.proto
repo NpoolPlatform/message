@@ -32,17 +32,14 @@ message CoinArchivement {
     string CoinLogo        = 100;
     string CoinUnit        = 110;
 
-    string Total           = 120;
-    string Balance         = 130;
+    uint32 TotalUnits      = 120;
+    uint32 SelfUnits       = 130;
+    string TotalAmount     = 140;
+    string SelfAmount      = 150;
+    string TotalCommission = 160;
+    string SelfCommission  = 170;
 
-    uint32 TotalUnits      = 140;
-    uint32 SelfUnits       = 150;
-    string TotalAmount     = 160;
-    string SelfAmount      = 170;
-    string TotalCommission = 180;
-    string SelfCommission  = 190;
-
-    uint32 CurPercent      = 200;
+    uint32 CurPercent      = 180;
 }
 
 message GetCoinArchivementsRequest {
