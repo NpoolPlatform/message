@@ -51,10 +51,15 @@ message GetInvitersResponse {
 }
 
 message Percent {
+    // @inject_tag: sql:"user_id"
     string UserID     = 10;
+    // @inject_tag: sql:"coin_type_id"
     string CoinTypeID = 20;
+    // @inject_tag: sql:"good_id"
     string GoodID     = 30;
+    // @inject_tag: sql:"percent"
     uint32 Percent    = 40;
+    // @inject_tag: sql:"start"
     uint32 StartAt    = 50;
 }
 

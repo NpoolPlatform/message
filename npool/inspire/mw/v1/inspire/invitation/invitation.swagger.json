@@ -110,21 +110,26 @@
       "type": "object",
       "properties": {
         "UserID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
         },
         "CoinTypeID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
         },
         "GoodID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
         },
         "Percent": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"percent\""
         },
         "StartAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start\""
         }
       }
     }

@@ -354,11 +354,16 @@ type Percent struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserID     string `protobuf:"bytes,10,opt,name=UserID,proto3" json:"UserID,omitempty"`
-	CoinTypeID string `protobuf:"bytes,20,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty"`
-	GoodID     string `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
-	Percent    uint32 `protobuf:"varint,40,opt,name=Percent,proto3" json:"Percent,omitempty"`
-	StartAt    uint32 `protobuf:"varint,50,opt,name=StartAt,proto3" json:"StartAt,omitempty"`
+	// @inject_tag: sql:"user_id"
+	UserID string `protobuf:"bytes,10,opt,name=UserID,proto3" json:"UserID,omitempty" sql:"user_id"`
+	// @inject_tag: sql:"coin_type_id"
+	CoinTypeID string `protobuf:"bytes,20,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty" sql:"coin_type_id"`
+	// @inject_tag: sql:"good_id"
+	GoodID string `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty" sql:"good_id"`
+	// @inject_tag: sql:"percent"
+	Percent uint32 `protobuf:"varint,40,opt,name=Percent,proto3" json:"Percent,omitempty" sql:"percent"`
+	// @inject_tag: sql:"start"
+	StartAt uint32 `protobuf:"varint,50,opt,name=StartAt,proto3" json:"StartAt,omitempty" sql:"start"`
 }
 
 func (x *Percent) Reset() {
