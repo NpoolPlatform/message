@@ -61,6 +61,8 @@ message Percent {
     uint32 Percent    = 40;
     // @inject_tag: sql:"start"
     uint32 StartAt    = 50;
+    // @inject_tag: sql:"end"
+    uint32 EndAt    = 60;
 }
 
 message GetActivePercentsRequest {

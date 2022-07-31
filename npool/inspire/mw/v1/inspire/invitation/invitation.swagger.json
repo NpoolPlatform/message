@@ -134,6 +134,11 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"start\""
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"end\""
         }
       }
     }
