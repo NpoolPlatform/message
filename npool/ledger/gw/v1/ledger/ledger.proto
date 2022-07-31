@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package ledger.gateway.ledger.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/gw/v1/ledger";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Gateway {
+    rpc GetGenerals (GetGeneralsRequest) returns (GetGeneralsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/generals"
+            body: "*"
+        };
+    }
+    rpc GetInterval (GetIntervalRequest) returns (GetIntervalResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/interval"
+            body: "*"
+        };
+    }
+}
+
+message General {
+    string CoinTypeID = 10;
+    string CoinName   = 20;
+    string CoinLogo   = 30;
+    string Incoming   = 40;
+    string Locked     = 50;
+    string Outcoming  = 60;
+    string Spendable  = 70;
+}
+
+message GetGeneralsRequest {
+    string AppID  = 10;
+    string UserID = 20;
+}
+
+message GetGeneralsResponse {
+    repeated General Infos = 10;
+}
+
+message Interval {
+    string CoinTypeID = 10;
+    string CoinName   = 20;
+    string CoinLogo   = 30;
+    string Incoming   = 40;
+    string Outcoming  = 50;
+}
+
+message GetIntervalRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    uint32 StartAt = 30;
+    uint32 EndAt   = 40;
+}
+
+message GetIntervalResponse {
+    repeated Interval Infos = 10;
+}
