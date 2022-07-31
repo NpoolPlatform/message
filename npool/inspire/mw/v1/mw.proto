@@ -1,15 +1,15 @@
 syntax = "proto3";
 
-package order.manager.order.v1;
+package inspire.middleware.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/order/mgr/v1/order";
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
-service Manager {
+service Middleware {
     // Method Version
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
         option (google.api.http) = {

@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/order/mgr/v1/order/order.proto
+// source: npool/inspire/mgr/v1/mgr.proto
 
-package order
+package v1
 
 import (
 	context "context"
@@ -38,7 +38,7 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 
 func (c *managerClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/order.manager.order.v1.Manager/Version", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.v1.Manager/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -84,7 +84,7 @@ func _Manager_Version_Handler(srv interface{}, ctx context.Context, dec func(int
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/order.manager.order.v1.Manager/Version",
+		FullMethod: "/inspire.manager.v1.Manager/Version",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).Version(ctx, req.(*emptypb.Empty))
@@ -96,7 +96,7 @@ func _Manager_Version_Handler(srv interface{}, ctx context.Context, dec func(int
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "order.manager.order.v1.Manager",
+	ServiceName: "inspire.manager.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -105,5 +105,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/order/mgr/v1/order/order.proto",
+	Metadata: "npool/inspire/mgr/v1/mgr.proto",
 }

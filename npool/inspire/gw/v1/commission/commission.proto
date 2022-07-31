@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package inspire.gateway.commission.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/commission";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Gateway {
+    rpc GetPercents (GetPercentsRequest) returns (GetPercentsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/commissionpercents"
+            body: "*"
+        };
+    }
+}
+
+message Percent {
+    string UserID        = 10;
+    string Username      = 20;
+    string EmailAddress  = 30;
+    string PhoneNO       = 40;
+    string FirstName     = 50;
+    string LastName      = 60;
+    bool   Kol           = 70;
+
+    string GoodID        = 80;
+    string GoodName      = 90;
+
+    string CoinTypeID    = 100;
+    string CoinName      = 110;
+    string CoinLogo      = 120;
+
+    uint32 Percent       = 130;
+
+    uint32 StartAt       = 140;
+    uint32 EndAt         = 150;
+    uint32 CreatedAt     = 160;
+}
+
+message GetPercentsRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    int32  Offset  = 30;
+    int32  Limit   = 40;
+}
+
+message GetPercentsResponse {
+    repeated Percent Infos         = 10;
+    uint32           Total         = 20;
+}

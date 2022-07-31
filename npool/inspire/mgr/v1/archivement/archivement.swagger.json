@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/order/mgr/v1/order/order.proto",
+    "title": "npool/inspire/mgr/v1/archivement/archivement.proto",
     "version": "version not set"
   },
   "tags": [
