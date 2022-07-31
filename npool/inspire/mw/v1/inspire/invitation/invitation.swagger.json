@@ -52,6 +52,10 @@
           "items": {
             "$ref": "#/definitions/v1Percent"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
