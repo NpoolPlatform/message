@@ -11,8 +11,9 @@ import "npool/npool.proto";
 // Service Name
 service Middleware {
     // Method Version
-    rpc GetInvitees (GetInviteesRequest) returns (GetInviteesResponse) {}
-    rpc GetInviters (GetInvitersRequest) returns (GetInvitersResponse) {}
+    rpc GetInvitees       (GetInviteesRequest)       returns (GetInviteesResponse)       {}
+    rpc GetInviters       (GetInvitersRequest)       returns (GetInvitersResponse)       {}
+    rpc GetActivePercents (GetActivePercentsRequest) returns (GetActivePercentsResponse) {}
 }
 
 message Invitation {
@@ -47,4 +48,23 @@ message GetInvitersRequest {
 message GetInvitersResponse {
     repeated Invitation Infos = 10;
     uint32              Total = 20;
+}
+
+message Percent {
+    string UserID     = 10;
+    string CoinTypeID = 20;
+    string GoodID     = 30;
+    uint32 Percent    = 40;
+    uint32 StartAt    = 50;
+}
+
+message GetActivePercentsRequest {
+    string          AppID   = 10;
+    repeated string UserIDs = 20;
+    int32           Offset  = 30;
+    int32           Limit   = 40;
+}
+
+message GetActivePercentsResponse {
+    repeated Percent Infos = 10;
 }

@@ -44,6 +44,17 @@
         }
       }
     },
+    "v1GetActivePercentsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Percent"
+          }
+        }
+      }
+    },
     "v1GetInviteesResponse": {
       "type": "object",
       "properties": {
@@ -92,6 +103,28 @@
         },
         "Kol": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1Percent": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Percent": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }
