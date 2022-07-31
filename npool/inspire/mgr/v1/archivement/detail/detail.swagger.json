@@ -83,6 +83,9 @@
         "USDAmount": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "Commission": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "CreatedAt": {
           "$ref": "#/definitions/v1Uint32Val"
         }
@@ -156,6 +159,9 @@
         "USDAmount": {
           "type": "string"
         },
+        "Commission": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -200,6 +206,9 @@
           "type": "string"
         },
         "USDAmount": {
+          "type": "string"
+        },
+        "Commission": {
           "type": "string"
         },
         "CreatedAt": {

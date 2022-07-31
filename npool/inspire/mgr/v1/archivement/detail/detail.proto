@@ -32,7 +32,8 @@ message DetailReq {
     optional uint32     Units                   = 100;
     optional string     Amount                  = 110;
     optional string     USDAmount               = 120;
-    optional uint32     CreatedAt               = 130;
+    optional string     Commission              = 130;
+    optional uint32     CreatedAt               = 140;
 }
 
 message Detail {
@@ -48,7 +49,8 @@ message Detail {
     uint32      Units                    = 100;
     string      Amount                   = 110;
     string      USDAmount                = 120;
-    uint32      CreatedAt                = 130;
+    string      Commission               = 130;
+    uint32      CreatedAt                = 140;
 }
 
 message Conds {
@@ -64,7 +66,8 @@ message Conds {
     optional npool.v1.Uint32Val Units                   = 100;
     optional npool.v1.StringVal Amount                  = 110;
     optional npool.v1.StringVal USDAmount               = 120;
-    optional npool.v1.Uint32Val CreatedAt               = 130;
+    optional npool.v1.StringVal Commission              = 130;
+    optional npool.v1.Uint32Val CreatedAt               = 140;
 }
 
 

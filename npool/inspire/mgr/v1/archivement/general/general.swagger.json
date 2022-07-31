@@ -70,7 +70,10 @@
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Amount": {
+        "TotalAmount": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "SelfAmount": {
           "$ref": "#/definitions/v1StringVal"
         },
         "TotalUnits": {
@@ -78,6 +81,12 @@
         },
         "SelfUnits": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "TotalCommission": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "SelfCommission": {
+          "$ref": "#/definitions/v1StringVal"
         },
         "UserIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
@@ -154,7 +163,10 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "Amount": {
+        "TotalAmount": {
+          "type": "string"
+        },
+        "SelfAmount": {
           "type": "string"
         },
         "TotalUnits": {
@@ -164,6 +176,12 @@
         "SelfUnits": {
           "type": "integer",
           "format": "int64"
+        },
+        "TotalCommission": {
+          "type": "string"
+        },
+        "SelfCommission": {
+          "type": "string"
         }
       }
     },
@@ -185,7 +203,10 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "Amount": {
+        "TotalAmount": {
+          "type": "string"
+        },
+        "SelfAmount": {
           "type": "string"
         },
         "TotalUnits": {
@@ -195,6 +216,12 @@
         "SelfUnits": {
           "type": "integer",
           "format": "int64"
+        },
+        "TotalCommission": {
+          "type": "string"
+        },
+        "SelfCommission": {
+          "type": "string"
         }
       }
     },
