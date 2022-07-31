@@ -53,10 +53,8 @@ message GetCoinArchivementsRequest {
 }
 
 message GetCoinArchivementsResponse {
-    string                   TotalAmount   = 10; // USD
-    string                   SelfAmount    = 20;
-    repeated CoinArchivement Archivements  = 30; // Coin
-    uint32                   Total         = 40;
+    repeated CoinArchivement Archivements  = 10; // Coin
+    uint32                   Total         = 20;
 }
 
 

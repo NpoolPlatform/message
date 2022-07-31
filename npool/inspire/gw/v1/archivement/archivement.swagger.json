@@ -167,12 +167,6 @@
     "v1GetCoinArchivementsResponse": {
       "type": "object",
       "properties": {
-        "TotalAmount": {
-          "type": "string"
-        },
-        "SelfAmount": {
-          "type": "string"
-        },
         "Archivements": {
           "type": "array",
           "items": {
