@@ -130,7 +130,13 @@
         "TotalAmount": {
           "type": "string"
         },
+        "SelfAmount": {
+          "type": "string"
+        },
         "TotalCommission": {
+          "type": "string"
+        },
+        "SelfCommission": {
           "type": "string"
         },
         "CurPercent": {

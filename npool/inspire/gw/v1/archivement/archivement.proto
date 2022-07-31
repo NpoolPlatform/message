@@ -38,9 +38,11 @@ message CoinArchivement {
     uint32 TotalUnits      = 140;
     uint32 SelfUnits       = 150;
     string TotalAmount     = 160;
-    string TotalCommission = 170;
+    string SelfAmount      = 170;
+    string TotalCommission = 180;
+    string SelfCommission  = 190;
 
-    uint32 CurPercent      = 180;
+    uint32 CurPercent      = 200;
 }
 
 message GetCoinArchivementsRequest {
