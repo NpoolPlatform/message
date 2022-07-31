@@ -22,6 +22,7 @@ message Invitation {
     string InviteeID = 20;
     // @inject_tag: sql:"create_at"
     uint32 CreatedAt = 30;
+    bool   Kol       = 40;
 }
 
 message GetInviteesRequest {
