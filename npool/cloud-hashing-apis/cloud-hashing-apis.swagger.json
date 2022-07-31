@@ -2551,6 +2551,9 @@
         },
         "GoodID": {
           "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
         }
       }
     },

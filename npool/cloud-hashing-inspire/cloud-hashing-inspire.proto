@@ -827,6 +827,7 @@ message AppPurchaseAmountSetting {
     uint32 End = 90;
     string UserID = 100;
     string GoodID = 110;
+    string CoinTypeID = 120;
 }
 
 message CreateAppPurchaseAmountSettingRequest {
