@@ -1040,6 +1040,38 @@
         ]
       }
     },
+    "/v1/get/user/referrals": {
+      "post": {
+        "operationId": "CloudHashingApis_GetUserReferrals",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserReferralsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserReferralsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingApis"
+        ]
+      }
+    },
     "/v1/get/user/withdraws/by/app/user": {
       "post": {
         "operationId": "CloudHashingApis_GetUserWithdrawsByAppUser",
@@ -3489,6 +3521,28 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1GoodCommission"
+          }
+        }
+      }
+    },
+    "v1GetUserReferralsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserReferralsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Referral"
           }
         }
       }
