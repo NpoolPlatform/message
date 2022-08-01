@@ -153,6 +153,9 @@
         "CoinLogo": {
           "type": "string"
         },
+        "CoinUnit": {
+          "type": "string"
+        },
         "IOType": {
           "type": "string"
         },
@@ -177,6 +180,9 @@
           "type": "string"
         },
         "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
           "type": "string"
         },
         "Incoming": {

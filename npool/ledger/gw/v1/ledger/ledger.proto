@@ -36,10 +36,11 @@ message General {
     string CoinTypeID = 10;
     string CoinName   = 20;
     string CoinLogo   = 30;
-    string Incoming   = 40;
-    string Locked     = 50;
-    string Outcoming  = 60;
-    string Spendable  = 70;
+    string CoinUnit   = 40;
+    string Incoming   = 50;
+    string Locked     = 60;
+    string Outcoming  = 70;
+    string Spendable  = 80;
 }
 
 message GetGeneralsRequest {
@@ -72,10 +73,11 @@ message Detail {
     string CoinTypeID = 10;
     string CoinName   = 20;
     string CoinLogo   = 30;
-    string IOType     = 40;
-    string IOSubType  = 50;
-    string Amount     = 60;
-    string IOExtra    = 70;
+    string CoinUnit   = 40;
+    string IOType     = 50;
+    string IOSubType  = 60;
+    string Amount     = 70;
+    string IOExtra    = 80;
 }
 
 message GetDetailsRequest {
