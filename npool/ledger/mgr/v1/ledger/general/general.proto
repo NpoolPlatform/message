@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package ledger.manager.ledger.general.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/ledger/mgr/v1/ledger.general";
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mgr/v1/ledger/general";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";

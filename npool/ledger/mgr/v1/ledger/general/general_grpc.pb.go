@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/ledger/mgr/v1/ledger/general/general.proto
 
-package ledger_general
+package general
 
 import (
 	context "context"
