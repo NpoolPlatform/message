@@ -52,7 +52,6 @@ message App {
 
     // Banned
     bool            Banned             = 60;
-    string          BanAppID           = 70;
     string          BanMessage         = 80;
 
     // Sign methods

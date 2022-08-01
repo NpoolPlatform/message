@@ -17,30 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "appv2App": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "CreatedBy": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -71,44 +47,11 @@
     "v1AuthorizeGenesisResponse": {
       "type": "object"
     },
-    "v1CreateAdminAppsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/appv2App"
-          }
-        }
-      }
-    },
-    "v1CreateGenesisRolesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2AppRole"
-          }
-        }
-      }
-    },
     "v1CreateGenesisUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-    "v1GetAdminAppsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/appv2App"
-          }
         }
       }
     },
@@ -190,9 +133,6 @@
         "Banned": {
           "type": "boolean"
         },
-        "BanUserID": {
-          "type": "string"
-        },
         "BanMessage": {
           "type": "string"
         },
@@ -229,29 +169,6 @@
         "CreateAt": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v2AppRole": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "CreatedBy": {
-          "type": "string"
-        },
-        "Role": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "Default": {
-          "type": "boolean"
         }
       }
     }

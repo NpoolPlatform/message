@@ -13,10 +13,7 @@ import "npool/appuser/mw/v1/app/app.proto";
 import "npool/appuser/mw/v1/user/user.proto";
 
 service AdminMw {
-    rpc CreateAdminApps    (CreateAdminAppsRequest)    returns (CreateAdminAppsResponse)    {}
-    rpc CreateGenesisRoles (CreateGenesisRolesRequest) returns (CreateGenesisRolesResponse) {}
     rpc CreateGenesisUser  (CreateGenesisUserRequest)  returns (CreateGenesisUserResponse)  {}
-    rpc GetAdminApps       (GetAdminAppsRequest)       returns (GetAdminAppsResponse)       {}
     rpc AuthorizeGenesis   (AuthorizeGenesisRequest)   returns (AuthorizeGenesisResponse)   {}
 }
 
@@ -37,9 +34,10 @@ message CreateGenesisRolesResponse {
 }
 
 message CreateGenesisUserRequest {
-    string AppID        = 10;
-    string EmailAddress = 20;
-    string PasswordHash = 30;
+    string UserID       = 10;
+    string AppID        = 20;
+    string EmailAddress = 30;
+    string PasswordHash = 40;
 }
 
 message CreateGenesisUserResponse {
