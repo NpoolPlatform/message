@@ -3672,10 +3672,14 @@ func (x *GetLayeredReferralsRequest) Reset() {
 	*x = GetLayeredReferralsRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[59]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[60]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[60]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3689,10 +3693,14 @@ func (*GetLayeredReferralsRequest) ProtoMessage() {}
 
 func (x *GetLayeredReferralsRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[59]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[60]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[60]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3706,10 +3714,14 @@ func (x *GetLayeredReferralsRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetLayeredReferralsRequest.ProtoReflect.Descriptor instead.
 func (*GetLayeredReferralsRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{59}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{60}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{60}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetLayeredReferralsRequest) GetAppID() string {
@@ -3738,10 +3750,14 @@ func (x *GetLayeredReferralsResponse) Reset() {
 	*x = GetLayeredReferralsResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[60]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[61]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[61]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3755,10 +3771,14 @@ func (*GetLayeredReferralsResponse) ProtoMessage() {}
 
 func (x *GetLayeredReferralsResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[60]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[61]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[61]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3772,10 +3792,14 @@ func (x *GetLayeredReferralsResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetLayeredReferralsResponse.ProtoReflect.Descriptor instead.
 func (*GetLayeredReferralsResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{60}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{61}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{61}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetLayeredReferralsResponse) GetInfos() []*Referral {
@@ -3798,10 +3822,14 @@ func (x *GetAmountSettingsRequest) Reset() {
 	*x = GetAmountSettingsRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[61]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[62]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[62]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3815,10 +3843,14 @@ func (*GetAmountSettingsRequest) ProtoMessage() {}
 
 func (x *GetAmountSettingsRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[61]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[62]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[62]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3832,10 +3864,14 @@ func (x *GetAmountSettingsRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetAmountSettingsRequest.ProtoReflect.Descriptor instead.
 func (*GetAmountSettingsRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{61}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{62}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{62}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetAmountSettingsRequest) GetAppID() string {
@@ -3864,10 +3900,14 @@ func (x *GetAmountSettingsResponse) Reset() {
 	*x = GetAmountSettingsResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[62]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[63]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[63]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3881,10 +3921,14 @@ func (*GetAmountSettingsResponse) ProtoMessage() {}
 
 func (x *GetAmountSettingsResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[62]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[63]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[63]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3898,10 +3942,14 @@ func (x *GetAmountSettingsResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetAmountSettingsResponse.ProtoReflect.Descriptor instead.
 func (*GetAmountSettingsResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{62}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{63}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{63}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetAmountSettingsResponse) GetInfos() []*cloud_hashing_inspire.AppPurchaseAmountSetting {
@@ -3929,10 +3977,14 @@ func (x *CreateAmountSettingRequest) Reset() {
 	*x = CreateAmountSettingRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[63]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[64]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[64]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3946,10 +3998,14 @@ func (*CreateAmountSettingRequest) ProtoMessage() {}
 
 func (x *CreateAmountSettingRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[63]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[64]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[64]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3963,10 +4019,14 @@ func (x *CreateAmountSettingRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use CreateAmountSettingRequest.ProtoReflect.Descriptor instead.
 func (*CreateAmountSettingRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{63}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{64}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{64}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *CreateAmountSettingRequest) GetAppID() string {
@@ -4030,10 +4090,14 @@ func (x *CreateAmountSettingResponse) Reset() {
 	*x = CreateAmountSettingResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[64]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[65]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[65]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4047,10 +4111,14 @@ func (*CreateAmountSettingResponse) ProtoMessage() {}
 
 func (x *CreateAmountSettingResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[64]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[65]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[65]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4064,10 +4132,14 @@ func (x *CreateAmountSettingResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use CreateAmountSettingResponse.ProtoReflect.Descriptor instead.
 func (*CreateAmountSettingResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{64}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{65}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{65}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *CreateAmountSettingResponse) GetInfos() []*cloud_hashing_inspire.AppPurchaseAmountSetting {
@@ -4095,10 +4167,14 @@ func (x *CreateInvitationCodeRequest) Reset() {
 	*x = CreateInvitationCodeRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[65]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[66]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[66]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4112,10 +4188,14 @@ func (*CreateInvitationCodeRequest) ProtoMessage() {}
 
 func (x *CreateInvitationCodeRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[65]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[66]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[66]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4129,10 +4209,14 @@ func (x *CreateInvitationCodeRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use CreateInvitationCodeRequest.ProtoReflect.Descriptor instead.
 func (*CreateInvitationCodeRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{65}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{66}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{66}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *CreateInvitationCodeRequest) GetAppID() string {
@@ -4196,10 +4280,14 @@ func (x *CreateInvitationCodeResponse) Reset() {
 	*x = CreateInvitationCodeResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[66]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[67]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[67]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4213,10 +4301,14 @@ func (*CreateInvitationCodeResponse) ProtoMessage() {}
 
 func (x *CreateInvitationCodeResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[66]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[67]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[67]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4230,10 +4322,14 @@ func (x *CreateInvitationCodeResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use CreateInvitationCodeResponse.ProtoReflect.Descriptor instead.
 func (*CreateInvitationCodeResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{66}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{67}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{67}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *CreateInvitationCodeResponse) GetInfo() *cloud_hashing_inspire.UserInvitationCode {
@@ -4257,10 +4353,14 @@ func (x *KycReview) Reset() {
 	*x = KycReview{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[67]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[68]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[68]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4274,10 +4374,14 @@ func (*KycReview) ProtoMessage() {}
 
 func (x *KycReview) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[67]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[68]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[68]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4291,10 +4395,14 @@ func (x *KycReview) ProtoReflect() protoreflect.Message {
 // Deprecated: Use KycReview.ProtoReflect.Descriptor instead.
 func (*KycReview) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{67}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{68}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{68}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *KycReview) GetReview() *review_service.Review {
@@ -4330,10 +4438,14 @@ func (x *GetKycReviewsRequest) Reset() {
 	*x = GetKycReviewsRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[68]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[69]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[69]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4347,10 +4459,14 @@ func (*GetKycReviewsRequest) ProtoMessage() {}
 
 func (x *GetKycReviewsRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[68]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[69]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[69]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4364,10 +4480,14 @@ func (x *GetKycReviewsRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetKycReviewsRequest.ProtoReflect.Descriptor instead.
 func (*GetKycReviewsRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{68}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{69}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{69}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetKycReviewsRequest) GetAppID() string {
@@ -4389,10 +4509,14 @@ func (x *GetKycReviewsResponse) Reset() {
 	*x = GetKycReviewsResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[69]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[70]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[70]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4406,10 +4530,14 @@ func (*GetKycReviewsResponse) ProtoMessage() {}
 
 func (x *GetKycReviewsResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[69]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[70]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[70]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4423,10 +4551,14 @@ func (x *GetKycReviewsResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetKycReviewsResponse.ProtoReflect.Descriptor instead.
 func (*GetKycReviewsResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{69}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{70}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{70}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetKycReviewsResponse) GetInfos() []*KycReview {
@@ -4448,10 +4580,14 @@ func (x *GetKycReviewsByAppRequest) Reset() {
 	*x = GetKycReviewsByAppRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[70]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[71]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[71]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4465,10 +4601,14 @@ func (*GetKycReviewsByAppRequest) ProtoMessage() {}
 
 func (x *GetKycReviewsByAppRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[70]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[71]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[71]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4482,10 +4622,14 @@ func (x *GetKycReviewsByAppRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetKycReviewsByAppRequest.ProtoReflect.Descriptor instead.
 func (*GetKycReviewsByAppRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{70}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{71}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{71}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetKycReviewsByAppRequest) GetAppID() string {
@@ -4507,10 +4651,14 @@ func (x *GetKycReviewsByAppResponse) Reset() {
 	*x = GetKycReviewsByAppResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[71]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[72]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[72]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4524,10 +4672,14 @@ func (*GetKycReviewsByAppResponse) ProtoMessage() {}
 
 func (x *GetKycReviewsByAppResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[71]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[72]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[72]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4541,10 +4693,14 @@ func (x *GetKycReviewsByAppResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetKycReviewsByAppResponse.ProtoReflect.Descriptor instead.
 func (*GetKycReviewsByAppResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{71}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{72}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{72}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetKycReviewsByAppResponse) GetInfos() []*KycReview {
@@ -4566,10 +4722,14 @@ func (x *GetKycReviewsByOtherAppRequest) Reset() {
 	*x = GetKycReviewsByOtherAppRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[72]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[73]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[73]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4583,10 +4743,14 @@ func (*GetKycReviewsByOtherAppRequest) ProtoMessage() {}
 
 func (x *GetKycReviewsByOtherAppRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[72]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[73]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[73]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4600,10 +4764,14 @@ func (x *GetKycReviewsByOtherAppRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetKycReviewsByOtherAppRequest.ProtoReflect.Descriptor instead.
 func (*GetKycReviewsByOtherAppRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{72}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{73}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{73}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetKycReviewsByOtherAppRequest) GetTargetAppID() string {
@@ -4625,10 +4793,14 @@ func (x *GetKycReviewsByOtherAppResponse) Reset() {
 	*x = GetKycReviewsByOtherAppResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[73]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[74]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[74]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4642,10 +4814,14 @@ func (*GetKycReviewsByOtherAppResponse) ProtoMessage() {}
 
 func (x *GetKycReviewsByOtherAppResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[73]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[74]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[74]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4659,10 +4835,14 @@ func (x *GetKycReviewsByOtherAppResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetKycReviewsByOtherAppResponse.ProtoReflect.Descriptor instead.
 func (*GetKycReviewsByOtherAppResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{73}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{74}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{74}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetKycReviewsByOtherAppResponse) GetInfos() []*KycReview {
@@ -4686,10 +4866,14 @@ func (x *GoodReview) Reset() {
 	*x = GoodReview{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[74]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[75]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[75]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4703,10 +4887,14 @@ func (*GoodReview) ProtoMessage() {}
 
 func (x *GoodReview) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[74]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[75]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[75]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4720,10 +4908,14 @@ func (x *GoodReview) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GoodReview.ProtoReflect.Descriptor instead.
 func (*GoodReview) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{74}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{75}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{75}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GoodReview) GetReview() *review_service.Review {
@@ -4757,10 +4949,14 @@ func (x *GetGoodReviewsRequest) Reset() {
 	*x = GetGoodReviewsRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[75]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[76]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[76]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4774,10 +4970,14 @@ func (*GetGoodReviewsRequest) ProtoMessage() {}
 
 func (x *GetGoodReviewsRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[75]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[76]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[76]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4791,10 +4991,14 @@ func (x *GetGoodReviewsRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetGoodReviewsRequest.ProtoReflect.Descriptor instead.
 func (*GetGoodReviewsRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{75}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{76}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{76}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 type GetGoodReviewsResponse struct {
@@ -4809,10 +5013,14 @@ func (x *GetGoodReviewsResponse) Reset() {
 	*x = GetGoodReviewsResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[76]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[77]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[77]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4826,10 +5034,14 @@ func (*GetGoodReviewsResponse) ProtoMessage() {}
 
 func (x *GetGoodReviewsResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[76]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[77]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[77]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4843,10 +5055,14 @@ func (x *GetGoodReviewsResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetGoodReviewsResponse.ProtoReflect.Descriptor instead.
 func (*GetGoodReviewsResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{76}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{77}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{77}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetGoodReviewsResponse) GetInfos() []*GoodReview {
@@ -4870,10 +5086,14 @@ func (x *Kyc) Reset() {
 	*x = Kyc{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[77]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[78]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[78]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4887,10 +5107,14 @@ func (*Kyc) ProtoMessage() {}
 
 func (x *Kyc) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[77]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[78]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[78]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4904,10 +5128,14 @@ func (x *Kyc) ProtoReflect() protoreflect.Message {
 // Deprecated: Use Kyc.ProtoReflect.Descriptor instead.
 func (*Kyc) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{77}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{78}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{78}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *Kyc) GetKyc() *kyc.KycInfo {
@@ -4944,10 +5172,14 @@ func (x *GetKycByAppUserRequest) Reset() {
 	*x = GetKycByAppUserRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[78]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[79]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[79]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4961,10 +5193,14 @@ func (*GetKycByAppUserRequest) ProtoMessage() {}
 
 func (x *GetKycByAppUserRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[78]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[79]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[79]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4978,10 +5214,14 @@ func (x *GetKycByAppUserRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetKycByAppUserRequest.ProtoReflect.Descriptor instead.
 func (*GetKycByAppUserRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{78}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{79}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{79}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetKycByAppUserRequest) GetAppID() string {
@@ -5010,10 +5250,14 @@ func (x *GetKycByAppUserResponse) Reset() {
 	*x = GetKycByAppUserResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[79]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[80]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[80]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5027,10 +5271,14 @@ func (*GetKycByAppUserResponse) ProtoMessage() {}
 
 func (x *GetKycByAppUserResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[79]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[80]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[80]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5044,10 +5292,14 @@ func (x *GetKycByAppUserResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetKycByAppUserResponse.ProtoReflect.Descriptor instead.
 func (*GetKycByAppUserResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{79}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{80}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{80}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetKycByAppUserResponse) GetInfo() *Kyc {
@@ -5069,10 +5321,14 @@ func (x *CreateKycRequest) Reset() {
 	*x = CreateKycRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[80]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[81]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[81]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5086,10 +5342,14 @@ func (*CreateKycRequest) ProtoMessage() {}
 
 func (x *CreateKycRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[80]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[81]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[81]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5103,10 +5363,14 @@ func (x *CreateKycRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use CreateKycRequest.ProtoReflect.Descriptor instead.
 func (*CreateKycRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{80}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{81}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{81}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *CreateKycRequest) GetInfo() *kyc.KycInfo {
@@ -5128,10 +5392,14 @@ func (x *CreateKycResponse) Reset() {
 	*x = CreateKycResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[81]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[82]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[82]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5145,10 +5413,14 @@ func (*CreateKycResponse) ProtoMessage() {}
 
 func (x *CreateKycResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[81]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[82]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[82]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5162,10 +5434,14 @@ func (x *CreateKycResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use CreateKycResponse.ProtoReflect.Descriptor instead.
 func (*CreateKycResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{81}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{82}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{82}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *CreateKycResponse) GetInfo() *Kyc {
@@ -5187,10 +5463,14 @@ func (x *UpdateKycRequest) Reset() {
 	*x = UpdateKycRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[82]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[83]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[83]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5204,10 +5484,14 @@ func (*UpdateKycRequest) ProtoMessage() {}
 
 func (x *UpdateKycRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[82]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[83]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[83]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5221,10 +5505,14 @@ func (x *UpdateKycRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use UpdateKycRequest.ProtoReflect.Descriptor instead.
 func (*UpdateKycRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{82}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{83}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{83}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *UpdateKycRequest) GetInfo() *kyc.KycInfo {
@@ -5246,10 +5534,14 @@ func (x *UpdateKycResponse) Reset() {
 	*x = UpdateKycResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[83]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[84]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[84]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5263,10 +5555,14 @@ func (*UpdateKycResponse) ProtoMessage() {}
 
 func (x *UpdateKycResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[83]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[84]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[84]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5280,10 +5576,14 @@ func (x *UpdateKycResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use UpdateKycResponse.ProtoReflect.Descriptor instead.
 func (*UpdateKycResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{83}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{84}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{84}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *UpdateKycResponse) GetInfo() *Kyc {
@@ -5305,10 +5605,14 @@ func (x *CreatePlatformCoinAccountRequest) Reset() {
 	*x = CreatePlatformCoinAccountRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[84]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[85]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[85]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5322,10 +5626,14 @@ func (*CreatePlatformCoinAccountRequest) ProtoMessage() {}
 
 func (x *CreatePlatformCoinAccountRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[84]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[85]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[85]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5339,10 +5647,14 @@ func (x *CreatePlatformCoinAccountRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use CreatePlatformCoinAccountRequest.ProtoReflect.Descriptor instead.
 func (*CreatePlatformCoinAccountRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{84}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{85}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{85}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *CreatePlatformCoinAccountRequest) GetCoinTypeID() string {
@@ -5364,10 +5676,14 @@ func (x *CreatePlatformCoinAccountResponse) Reset() {
 	*x = CreatePlatformCoinAccountResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[85]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[86]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[86]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5381,10 +5697,14 @@ func (*CreatePlatformCoinAccountResponse) ProtoMessage() {}
 
 func (x *CreatePlatformCoinAccountResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[85]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[86]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[86]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5398,10 +5718,14 @@ func (x *CreatePlatformCoinAccountResponse) ProtoReflect() protoreflect.Message 
 // Deprecated: Use CreatePlatformCoinAccountResponse.ProtoReflect.Descriptor instead.
 func (*CreatePlatformCoinAccountResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{85}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{86}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{86}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *CreatePlatformCoinAccountResponse) GetInfo() *cloud_hashing_billing.CoinAccountInfo {
@@ -5423,10 +5747,14 @@ func (x *CreateUserCoinAccountRequest) Reset() {
 	*x = CreateUserCoinAccountRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[86]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[87]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[87]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5440,10 +5768,14 @@ func (*CreateUserCoinAccountRequest) ProtoMessage() {}
 
 func (x *CreateUserCoinAccountRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[86]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[87]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[87]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5457,10 +5789,14 @@ func (x *CreateUserCoinAccountRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use CreateUserCoinAccountRequest.ProtoReflect.Descriptor instead.
 func (*CreateUserCoinAccountRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{86}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{87}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{87}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *CreateUserCoinAccountRequest) GetInfo() *cloud_hashing_billing.CoinAccountInfo {
@@ -5482,10 +5818,14 @@ func (x *CreateUserCoinAccountResponse) Reset() {
 	*x = CreateUserCoinAccountResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[87]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[88]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[88]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5499,10 +5839,14 @@ func (*CreateUserCoinAccountResponse) ProtoMessage() {}
 
 func (x *CreateUserCoinAccountResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[87]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[88]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[88]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5516,10 +5860,14 @@ func (x *CreateUserCoinAccountResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use CreateUserCoinAccountResponse.ProtoReflect.Descriptor instead.
 func (*CreateUserCoinAccountResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{87}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{88}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{88}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *CreateUserCoinAccountResponse) GetInfo() *cloud_hashing_billing.CoinAccountInfo {
@@ -5545,10 +5893,14 @@ func (x *SubmitUserWithdrawRequest) Reset() {
 	*x = SubmitUserWithdrawRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[88]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[89]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[89]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5562,10 +5914,14 @@ func (*SubmitUserWithdrawRequest) ProtoMessage() {}
 
 func (x *SubmitUserWithdrawRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[88]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[89]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[89]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5579,10 +5935,14 @@ func (x *SubmitUserWithdrawRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use SubmitUserWithdrawRequest.ProtoReflect.Descriptor instead.
 func (*SubmitUserWithdrawRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{88}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{89}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{89}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *SubmitUserWithdrawRequest) GetInfo() *cloud_hashing_billing.UserWithdrawItem {
@@ -5634,10 +5994,14 @@ func (x *UserWithdraw) Reset() {
 	*x = UserWithdraw{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[89]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[90]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[90]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5651,10 +6015,14 @@ func (*UserWithdraw) ProtoMessage() {}
 
 func (x *UserWithdraw) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[89]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[90]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[90]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5668,10 +6036,14 @@ func (x *UserWithdraw) ProtoReflect() protoreflect.Message {
 // Deprecated: Use UserWithdraw.ProtoReflect.Descriptor instead.
 func (*UserWithdraw) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{89}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{90}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{90}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *UserWithdraw) GetWithdraw() *cloud_hashing_billing.UserWithdrawItem {
@@ -5709,10 +6081,14 @@ func (x *WithdrawReview) Reset() {
 	*x = WithdrawReview{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[90]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[91]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[91]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5726,10 +6102,14 @@ func (*WithdrawReview) ProtoMessage() {}
 
 func (x *WithdrawReview) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[90]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[91]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[91]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5743,10 +6123,14 @@ func (x *WithdrawReview) ProtoReflect() protoreflect.Message {
 // Deprecated: Use WithdrawReview.ProtoReflect.Descriptor instead.
 func (*WithdrawReview) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{90}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{91}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{91}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *WithdrawReview) GetReview() *review_service.Review {
@@ -5782,10 +6166,14 @@ func (x *SubmitUserWithdrawResponse) Reset() {
 	*x = SubmitUserWithdrawResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[91]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[92]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[92]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5799,10 +6187,14 @@ func (*SubmitUserWithdrawResponse) ProtoMessage() {}
 
 func (x *SubmitUserWithdrawResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[91]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[92]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[92]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5816,10 +6208,14 @@ func (x *SubmitUserWithdrawResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use SubmitUserWithdrawResponse.ProtoReflect.Descriptor instead.
 func (*SubmitUserWithdrawResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{91}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{92}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{92}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *SubmitUserWithdrawResponse) GetInfo() *UserWithdraw {
@@ -5844,10 +6240,14 @@ func (x *UpdateUserWithdrawReviewRequest) Reset() {
 	*x = UpdateUserWithdrawReviewRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[92]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[93]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[93]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5861,10 +6261,14 @@ func (*UpdateUserWithdrawReviewRequest) ProtoMessage() {}
 
 func (x *UpdateUserWithdrawReviewRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[92]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[93]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[93]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5878,10 +6282,14 @@ func (x *UpdateUserWithdrawReviewRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use UpdateUserWithdrawReviewRequest.ProtoReflect.Descriptor instead.
 func (*UpdateUserWithdrawReviewRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{92}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{93}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{93}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *UpdateUserWithdrawReviewRequest) GetAppID() string {
@@ -5917,10 +6325,14 @@ func (x *UpdateUserWithdrawReviewResponse) Reset() {
 	*x = UpdateUserWithdrawReviewResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[93]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[94]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[94]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5934,10 +6346,14 @@ func (*UpdateUserWithdrawReviewResponse) ProtoMessage() {}
 
 func (x *UpdateUserWithdrawReviewResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[93]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[94]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[94]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5951,10 +6367,14 @@ func (x *UpdateUserWithdrawReviewResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use UpdateUserWithdrawReviewResponse.ProtoReflect.Descriptor instead.
 func (*UpdateUserWithdrawReviewResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{93}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{94}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{94}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *UpdateUserWithdrawReviewResponse) GetInfo() *WithdrawReview {
@@ -5981,10 +6401,14 @@ func (x *UpdateUserWithdrawReviewForOtherAppUserRequest) Reset() {
 	*x = UpdateUserWithdrawReviewForOtherAppUserRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[94]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[95]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[95]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5998,10 +6422,14 @@ func (*UpdateUserWithdrawReviewForOtherAppUserRequest) ProtoMessage() {}
 
 func (x *UpdateUserWithdrawReviewForOtherAppUserRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[94]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[95]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[95]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6015,10 +6443,14 @@ func (x *UpdateUserWithdrawReviewForOtherAppUserRequest) ProtoReflect() protoref
 // Deprecated: Use UpdateUserWithdrawReviewForOtherAppUserRequest.ProtoReflect.Descriptor instead.
 func (*UpdateUserWithdrawReviewForOtherAppUserRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{94}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{95}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{95}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *UpdateUserWithdrawReviewForOtherAppUserRequest) GetAppID() string {
@@ -6061,10 +6493,14 @@ func (x *UpdateUserWithdrawReviewForOtherAppUserResponse) Reset() {
 	*x = UpdateUserWithdrawReviewForOtherAppUserResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[95]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[96]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[96]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6078,10 +6514,14 @@ func (*UpdateUserWithdrawReviewForOtherAppUserResponse) ProtoMessage() {}
 
 func (x *UpdateUserWithdrawReviewForOtherAppUserResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[95]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[96]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[96]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6095,10 +6535,14 @@ func (x *UpdateUserWithdrawReviewForOtherAppUserResponse) ProtoReflect() protore
 // Deprecated: Use UpdateUserWithdrawReviewForOtherAppUserResponse.ProtoReflect.Descriptor instead.
 func (*UpdateUserWithdrawReviewForOtherAppUserResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{95}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{96}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{96}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *UpdateUserWithdrawReviewForOtherAppUserResponse) GetInfo() *WithdrawReview {
@@ -6121,10 +6565,14 @@ func (x *GetUserWithdrawsByAppUserRequest) Reset() {
 	*x = GetUserWithdrawsByAppUserRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[96]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[97]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[97]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6138,10 +6586,14 @@ func (*GetUserWithdrawsByAppUserRequest) ProtoMessage() {}
 
 func (x *GetUserWithdrawsByAppUserRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[96]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[97]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[97]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6155,10 +6607,14 @@ func (x *GetUserWithdrawsByAppUserRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetUserWithdrawsByAppUserRequest.ProtoReflect.Descriptor instead.
 func (*GetUserWithdrawsByAppUserRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{96}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{97}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{97}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetUserWithdrawsByAppUserRequest) GetAppID() string {
@@ -6187,10 +6643,14 @@ func (x *GetUserWithdrawsByAppUserResponse) Reset() {
 	*x = GetUserWithdrawsByAppUserResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[97]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[98]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[98]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6204,10 +6664,14 @@ func (*GetUserWithdrawsByAppUserResponse) ProtoMessage() {}
 
 func (x *GetUserWithdrawsByAppUserResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[97]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[98]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[98]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6221,10 +6685,14 @@ func (x *GetUserWithdrawsByAppUserResponse) ProtoReflect() protoreflect.Message 
 // Deprecated: Use GetUserWithdrawsByAppUserResponse.ProtoReflect.Descriptor instead.
 func (*GetUserWithdrawsByAppUserResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{97}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{98}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{98}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetUserWithdrawsByAppUserResponse) GetInfos() []*UserWithdraw {
@@ -6246,10 +6714,14 @@ func (x *GetWithdrawReviewsRequest) Reset() {
 	*x = GetWithdrawReviewsRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[98]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[99]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[99]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6263,10 +6735,14 @@ func (*GetWithdrawReviewsRequest) ProtoMessage() {}
 
 func (x *GetWithdrawReviewsRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[98]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[99]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[99]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6280,10 +6756,14 @@ func (x *GetWithdrawReviewsRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetWithdrawReviewsRequest.ProtoReflect.Descriptor instead.
 func (*GetWithdrawReviewsRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{98}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{99}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{99}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetWithdrawReviewsRequest) GetAppID() string {
@@ -6305,10 +6785,14 @@ func (x *GetWithdrawReviewsResponse) Reset() {
 	*x = GetWithdrawReviewsResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[99]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[100]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[100]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6322,10 +6806,14 @@ func (*GetWithdrawReviewsResponse) ProtoMessage() {}
 
 func (x *GetWithdrawReviewsResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[99]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[100]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[100]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6339,10 +6827,14 @@ func (x *GetWithdrawReviewsResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetWithdrawReviewsResponse.ProtoReflect.Descriptor instead.
 func (*GetWithdrawReviewsResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{99}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{100}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{100}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetWithdrawReviewsResponse) GetInfos() []*WithdrawReview {
@@ -6364,10 +6856,14 @@ func (x *GetWithdrawReviewsByAppRequest) Reset() {
 	*x = GetWithdrawReviewsByAppRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[100]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[101]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[101]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6381,10 +6877,14 @@ func (*GetWithdrawReviewsByAppRequest) ProtoMessage() {}
 
 func (x *GetWithdrawReviewsByAppRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[100]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[101]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[101]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6398,10 +6898,14 @@ func (x *GetWithdrawReviewsByAppRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetWithdrawReviewsByAppRequest.ProtoReflect.Descriptor instead.
 func (*GetWithdrawReviewsByAppRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{100}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{101}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{101}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetWithdrawReviewsByAppRequest) GetAppID() string {
@@ -6423,10 +6927,14 @@ func (x *GetWithdrawReviewsByAppResponse) Reset() {
 	*x = GetWithdrawReviewsByAppResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[101]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[102]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[102]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6440,10 +6948,14 @@ func (*GetWithdrawReviewsByAppResponse) ProtoMessage() {}
 
 func (x *GetWithdrawReviewsByAppResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[101]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[102]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[102]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6457,10 +6969,14 @@ func (x *GetWithdrawReviewsByAppResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetWithdrawReviewsByAppResponse.ProtoReflect.Descriptor instead.
 func (*GetWithdrawReviewsByAppResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{101}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{102}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{102}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetWithdrawReviewsByAppResponse) GetInfos() []*WithdrawReview {
@@ -6482,10 +6998,14 @@ func (x *GetWithdrawReviewsByOtherAppRequest) Reset() {
 	*x = GetWithdrawReviewsByOtherAppRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[102]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[103]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[103]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6499,10 +7019,14 @@ func (*GetWithdrawReviewsByOtherAppRequest) ProtoMessage() {}
 
 func (x *GetWithdrawReviewsByOtherAppRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[102]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[103]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[103]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6516,10 +7040,14 @@ func (x *GetWithdrawReviewsByOtherAppRequest) ProtoReflect() protoreflect.Messag
 // Deprecated: Use GetWithdrawReviewsByOtherAppRequest.ProtoReflect.Descriptor instead.
 func (*GetWithdrawReviewsByOtherAppRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{102}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{103}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{103}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetWithdrawReviewsByOtherAppRequest) GetTargetAppID() string {
@@ -6541,10 +7069,14 @@ func (x *GetWithdrawReviewsByOtherAppResponse) Reset() {
 	*x = GetWithdrawReviewsByOtherAppResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[103]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[104]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[104]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6558,10 +7090,14 @@ func (*GetWithdrawReviewsByOtherAppResponse) ProtoMessage() {}
 
 func (x *GetWithdrawReviewsByOtherAppResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[103]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[104]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[104]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6575,10 +7111,14 @@ func (x *GetWithdrawReviewsByOtherAppResponse) ProtoReflect() protoreflect.Messa
 // Deprecated: Use GetWithdrawReviewsByOtherAppResponse.ProtoReflect.Descriptor instead.
 func (*GetWithdrawReviewsByOtherAppResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{103}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{104}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{104}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetWithdrawReviewsByOtherAppResponse) GetInfos() []*WithdrawReview {
@@ -6603,10 +7143,14 @@ func (x *WithdrawAddress) Reset() {
 	*x = WithdrawAddress{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[104]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[105]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[105]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6620,10 +7164,14 @@ func (*WithdrawAddress) ProtoMessage() {}
 
 func (x *WithdrawAddress) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[104]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[105]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[105]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6637,10 +7185,14 @@ func (x *WithdrawAddress) ProtoReflect() protoreflect.Message {
 // Deprecated: Use WithdrawAddress.ProtoReflect.Descriptor instead.
 func (*WithdrawAddress) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{104}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{105}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{105}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *WithdrawAddress) GetAddress() *cloud_hashing_billing.UserWithdraw {
@@ -6692,10 +7244,14 @@ func (x *SetWithdrawAddressRequest) Reset() {
 	*x = SetWithdrawAddressRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[105]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[106]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[106]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6709,10 +7265,14 @@ func (*SetWithdrawAddressRequest) ProtoMessage() {}
 
 func (x *SetWithdrawAddressRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[105]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[106]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[106]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6726,10 +7286,14 @@ func (x *SetWithdrawAddressRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use SetWithdrawAddressRequest.ProtoReflect.Descriptor instead.
 func (*SetWithdrawAddressRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{105}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{106}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{106}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *SetWithdrawAddressRequest) GetAppID() string {
@@ -6814,10 +7378,14 @@ func (x *SetWithdrawAddressResponse) Reset() {
 	*x = SetWithdrawAddressResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[106]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[107]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[107]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6831,10 +7399,14 @@ func (*SetWithdrawAddressResponse) ProtoMessage() {}
 
 func (x *SetWithdrawAddressResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[106]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[107]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[107]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6848,10 +7420,14 @@ func (x *SetWithdrawAddressResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use SetWithdrawAddressResponse.ProtoReflect.Descriptor instead.
 func (*SetWithdrawAddressResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{106}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{107}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{107}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *SetWithdrawAddressResponse) GetInfo() *WithdrawAddress {
@@ -6874,10 +7450,14 @@ func (x *DeleteWithdrawAddressRequest) Reset() {
 	*x = DeleteWithdrawAddressRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[107]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[108]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[108]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6891,10 +7471,14 @@ func (*DeleteWithdrawAddressRequest) ProtoMessage() {}
 
 func (x *DeleteWithdrawAddressRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[107]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[108]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[108]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6908,10 +7492,14 @@ func (x *DeleteWithdrawAddressRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use DeleteWithdrawAddressRequest.ProtoReflect.Descriptor instead.
 func (*DeleteWithdrawAddressRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{107}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{108}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{108}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *DeleteWithdrawAddressRequest) GetID() string {
@@ -6940,10 +7528,14 @@ func (x *DeleteWithdrawAddressResponse) Reset() {
 	*x = DeleteWithdrawAddressResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[108]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[109]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[109]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6957,10 +7549,14 @@ func (*DeleteWithdrawAddressResponse) ProtoMessage() {}
 
 func (x *DeleteWithdrawAddressResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[108]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[109]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[109]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6974,10 +7570,14 @@ func (x *DeleteWithdrawAddressResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use DeleteWithdrawAddressResponse.ProtoReflect.Descriptor instead.
 func (*DeleteWithdrawAddressResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{108}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{109}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{109}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *DeleteWithdrawAddressResponse) GetInfo() *cloud_hashing_billing.UserWithdraw {
@@ -7000,10 +7600,14 @@ func (x *GetWithdrawAddressesByAppUserRequest) Reset() {
 	*x = GetWithdrawAddressesByAppUserRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[109]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[110]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[110]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7017,10 +7621,14 @@ func (*GetWithdrawAddressesByAppUserRequest) ProtoMessage() {}
 
 func (x *GetWithdrawAddressesByAppUserRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[109]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[110]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[110]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7034,10 +7642,14 @@ func (x *GetWithdrawAddressesByAppUserRequest) ProtoReflect() protoreflect.Messa
 // Deprecated: Use GetWithdrawAddressesByAppUserRequest.ProtoReflect.Descriptor instead.
 func (*GetWithdrawAddressesByAppUserRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{109}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{110}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{110}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetWithdrawAddressesByAppUserRequest) GetAppID() string {
@@ -7066,10 +7678,14 @@ func (x *GetWithdrawAddressesByAppUserResponse) Reset() {
 	*x = GetWithdrawAddressesByAppUserResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[110]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[111]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[111]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7083,10 +7699,14 @@ func (*GetWithdrawAddressesByAppUserResponse) ProtoMessage() {}
 
 func (x *GetWithdrawAddressesByAppUserResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[110]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[111]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[111]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7100,10 +7720,14 @@ func (x *GetWithdrawAddressesByAppUserResponse) ProtoReflect() protoreflect.Mess
 // Deprecated: Use GetWithdrawAddressesByAppUserResponse.ProtoReflect.Descriptor instead.
 func (*GetWithdrawAddressesByAppUserResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{110}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{111}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{111}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetWithdrawAddressesByAppUserResponse) GetInfos() []*WithdrawAddress {
@@ -7128,10 +7752,14 @@ func (x *WithdrawAddressReview) Reset() {
 	*x = WithdrawAddressReview{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[111]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[112]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[112]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7145,10 +7773,14 @@ func (*WithdrawAddressReview) ProtoMessage() {}
 
 func (x *WithdrawAddressReview) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[111]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[112]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[112]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7162,10 +7794,14 @@ func (x *WithdrawAddressReview) ProtoReflect() protoreflect.Message {
 // Deprecated: Use WithdrawAddressReview.ProtoReflect.Descriptor instead.
 func (*WithdrawAddressReview) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{111}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{112}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{112}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *WithdrawAddressReview) GetReview() *review_service.Review {
@@ -7208,10 +7844,14 @@ func (x *GetWithdrawAddressReviewsRequest) Reset() {
 	*x = GetWithdrawAddressReviewsRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[112]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[113]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[113]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7225,10 +7865,14 @@ func (*GetWithdrawAddressReviewsRequest) ProtoMessage() {}
 
 func (x *GetWithdrawAddressReviewsRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[112]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[113]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[113]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7242,10 +7886,14 @@ func (x *GetWithdrawAddressReviewsRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetWithdrawAddressReviewsRequest.ProtoReflect.Descriptor instead.
 func (*GetWithdrawAddressReviewsRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{112}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{113}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{113}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetWithdrawAddressReviewsRequest) GetAppID() string {
@@ -7267,10 +7915,14 @@ func (x *GetWithdrawAddressReviewsResponse) Reset() {
 	*x = GetWithdrawAddressReviewsResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[113]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[114]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[114]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7284,10 +7936,14 @@ func (*GetWithdrawAddressReviewsResponse) ProtoMessage() {}
 
 func (x *GetWithdrawAddressReviewsResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[113]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[114]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[114]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7301,10 +7957,14 @@ func (x *GetWithdrawAddressReviewsResponse) ProtoReflect() protoreflect.Message 
 // Deprecated: Use GetWithdrawAddressReviewsResponse.ProtoReflect.Descriptor instead.
 func (*GetWithdrawAddressReviewsResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{113}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{114}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{114}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetWithdrawAddressReviewsResponse) GetInfos() []*WithdrawAddressReview {
@@ -7326,10 +7986,14 @@ func (x *GetWithdrawAddressReviewsByAppRequest) Reset() {
 	*x = GetWithdrawAddressReviewsByAppRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[114]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[115]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[115]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7343,10 +8007,14 @@ func (*GetWithdrawAddressReviewsByAppRequest) ProtoMessage() {}
 
 func (x *GetWithdrawAddressReviewsByAppRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[114]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[115]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[115]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7360,10 +8028,14 @@ func (x *GetWithdrawAddressReviewsByAppRequest) ProtoReflect() protoreflect.Mess
 // Deprecated: Use GetWithdrawAddressReviewsByAppRequest.ProtoReflect.Descriptor instead.
 func (*GetWithdrawAddressReviewsByAppRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{114}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{115}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{115}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetWithdrawAddressReviewsByAppRequest) GetAppID() string {
@@ -7385,10 +8057,14 @@ func (x *GetWithdrawAddressReviewsByAppResponse) Reset() {
 	*x = GetWithdrawAddressReviewsByAppResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[115]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[116]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[116]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7402,10 +8078,14 @@ func (*GetWithdrawAddressReviewsByAppResponse) ProtoMessage() {}
 
 func (x *GetWithdrawAddressReviewsByAppResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[115]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[116]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[116]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7419,10 +8099,14 @@ func (x *GetWithdrawAddressReviewsByAppResponse) ProtoReflect() protoreflect.Mes
 // Deprecated: Use GetWithdrawAddressReviewsByAppResponse.ProtoReflect.Descriptor instead.
 func (*GetWithdrawAddressReviewsByAppResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{115}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{116}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{116}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetWithdrawAddressReviewsByAppResponse) GetInfos() []*WithdrawAddressReview {
@@ -7444,10 +8128,14 @@ func (x *GetWithdrawAddressReviewsByOtherAppRequest) Reset() {
 	*x = GetWithdrawAddressReviewsByOtherAppRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[116]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[117]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[117]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7461,10 +8149,14 @@ func (*GetWithdrawAddressReviewsByOtherAppRequest) ProtoMessage() {}
 
 func (x *GetWithdrawAddressReviewsByOtherAppRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[116]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[117]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[117]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7478,10 +8170,14 @@ func (x *GetWithdrawAddressReviewsByOtherAppRequest) ProtoReflect() protoreflect
 // Deprecated: Use GetWithdrawAddressReviewsByOtherAppRequest.ProtoReflect.Descriptor instead.
 func (*GetWithdrawAddressReviewsByOtherAppRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{116}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{117}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{117}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetWithdrawAddressReviewsByOtherAppRequest) GetTargetAppID() string {
@@ -7503,10 +8199,14 @@ func (x *GetWithdrawAddressReviewsByOtherAppResponse) Reset() {
 	*x = GetWithdrawAddressReviewsByOtherAppResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[117]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[118]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[118]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7520,10 +8220,14 @@ func (*GetWithdrawAddressReviewsByOtherAppResponse) ProtoMessage() {}
 
 func (x *GetWithdrawAddressReviewsByOtherAppResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[117]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[118]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[118]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7537,10 +8241,14 @@ func (x *GetWithdrawAddressReviewsByOtherAppResponse) ProtoReflect() protoreflec
 // Deprecated: Use GetWithdrawAddressReviewsByOtherAppResponse.ProtoReflect.Descriptor instead.
 func (*GetWithdrawAddressReviewsByOtherAppResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{117}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{118}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{118}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetWithdrawAddressReviewsByOtherAppResponse) GetInfos() []*WithdrawAddressReview {
@@ -7563,10 +8271,14 @@ func (x *Coupon) Reset() {
 	*x = Coupon{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[118]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[119]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[119]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7580,10 +8292,14 @@ func (*Coupon) ProtoMessage() {}
 
 func (x *Coupon) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[118]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[119]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[119]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7597,10 +8313,14 @@ func (x *Coupon) ProtoReflect() protoreflect.Message {
 // Deprecated: Use Coupon.ProtoReflect.Descriptor instead.
 func (*Coupon) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{118}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{119}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{119}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *Coupon) GetCoupon() *cloud_hashing_inspire.CouponAllocatedDetail {
@@ -7630,10 +8350,14 @@ func (x *UserSpecial) Reset() {
 	*x = UserSpecial{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[119]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[120]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[120]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7647,10 +8371,14 @@ func (*UserSpecial) ProtoMessage() {}
 
 func (x *UserSpecial) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[119]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[120]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[120]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7664,10 +8392,14 @@ func (x *UserSpecial) ProtoReflect() protoreflect.Message {
 // Deprecated: Use UserSpecial.ProtoReflect.Descriptor instead.
 func (*UserSpecial) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{119}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{120}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{120}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *UserSpecial) GetCoupon() *cloud_hashing_inspire.UserSpecialReduction {
@@ -7697,10 +8429,14 @@ func (x *Coupons) Reset() {
 	*x = Coupons{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[120]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[121]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[121]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7714,10 +8450,14 @@ func (*Coupons) ProtoMessage() {}
 
 func (x *Coupons) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[120]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[121]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[121]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7731,10 +8471,14 @@ func (x *Coupons) ProtoReflect() protoreflect.Message {
 // Deprecated: Use Coupons.ProtoReflect.Descriptor instead.
 func (*Coupons) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{120}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{121}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{121}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *Coupons) GetCoupons() []*Coupon {
@@ -7764,10 +8508,14 @@ func (x *GetCouponsByAppUserRequest) Reset() {
 	*x = GetCouponsByAppUserRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[121]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[122]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[122]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7781,10 +8529,14 @@ func (*GetCouponsByAppUserRequest) ProtoMessage() {}
 
 func (x *GetCouponsByAppUserRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[121]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[122]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[122]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7798,10 +8550,14 @@ func (x *GetCouponsByAppUserRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetCouponsByAppUserRequest.ProtoReflect.Descriptor instead.
 func (*GetCouponsByAppUserRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{121}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{122}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{122}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetCouponsByAppUserRequest) GetAppID() string {
@@ -7830,10 +8586,14 @@ func (x *GetCouponsByAppUserResponse) Reset() {
 	*x = GetCouponsByAppUserResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[122]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[123]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[123]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7847,10 +8607,14 @@ func (*GetCouponsByAppUserResponse) ProtoMessage() {}
 
 func (x *GetCouponsByAppUserResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[122]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[123]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[123]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7864,10 +8628,14 @@ func (x *GetCouponsByAppUserResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetCouponsByAppUserResponse.ProtoReflect.Descriptor instead.
 func (*GetCouponsByAppUserResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{122}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{123}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{123}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetCouponsByAppUserResponse) GetInfo() *Coupons {
@@ -7890,10 +8658,14 @@ func (x *Commission) Reset() {
 	*x = Commission{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[123]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[124]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[124]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7907,10 +8679,14 @@ func (*Commission) ProtoMessage() {}
 
 func (x *Commission) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[123]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[124]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[124]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7924,10 +8700,14 @@ func (x *Commission) ProtoReflect() protoreflect.Message {
 // Deprecated: Use Commission.ProtoReflect.Descriptor instead.
 func (*Commission) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{123}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{124}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{124}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *Commission) GetTotal() float64 {
@@ -7957,10 +8737,14 @@ func (x *GetCommissionByAppUserRequest) Reset() {
 	*x = GetCommissionByAppUserRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[124]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[125]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[125]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7974,10 +8758,14 @@ func (*GetCommissionByAppUserRequest) ProtoMessage() {}
 
 func (x *GetCommissionByAppUserRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[124]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[125]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[125]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7991,10 +8779,14 @@ func (x *GetCommissionByAppUserRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetCommissionByAppUserRequest.ProtoReflect.Descriptor instead.
 func (*GetCommissionByAppUserRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{124}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{125}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{125}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetCommissionByAppUserRequest) GetAppID() string {
@@ -8023,10 +8815,14 @@ func (x *GetCommissionByAppUserResponse) Reset() {
 	*x = GetCommissionByAppUserResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[125]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[126]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[126]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8040,10 +8836,14 @@ func (*GetCommissionByAppUserResponse) ProtoMessage() {}
 
 func (x *GetCommissionByAppUserResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[125]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[126]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[126]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8057,10 +8857,14 @@ func (x *GetCommissionByAppUserResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetCommissionByAppUserResponse.ProtoReflect.Descriptor instead.
 func (*GetCommissionByAppUserResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{125}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{126}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{126}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetCommissionByAppUserResponse) GetInfo() *Commission {
@@ -8088,10 +8892,14 @@ func (x *GoodCommission) Reset() {
 	*x = GoodCommission{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[126]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[127]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[127]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8105,10 +8913,14 @@ func (*GoodCommission) ProtoMessage() {}
 
 func (x *GoodCommission) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[126]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[127]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[127]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8122,10 +8934,14 @@ func (x *GoodCommission) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GoodCommission.ProtoReflect.Descriptor instead.
 func (*GoodCommission) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{126}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{127}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{127}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GoodCommission) GetAppID() string {
@@ -8190,10 +9006,14 @@ func (x *GetGoodCommissionsRequest) Reset() {
 	*x = GetGoodCommissionsRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[127]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[128]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[128]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8207,10 +9027,14 @@ func (*GetGoodCommissionsRequest) ProtoMessage() {}
 
 func (x *GetGoodCommissionsRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[127]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[128]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[128]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8224,10 +9048,14 @@ func (x *GetGoodCommissionsRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetGoodCommissionsRequest.ProtoReflect.Descriptor instead.
 func (*GetGoodCommissionsRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{127}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{128}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{128}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetGoodCommissionsRequest) GetAppID() string {
@@ -8256,10 +9084,14 @@ func (x *GetGoodCommissionsResponse) Reset() {
 	*x = GetGoodCommissionsResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[128]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[129]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[129]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8273,10 +9105,14 @@ func (*GetGoodCommissionsResponse) ProtoMessage() {}
 
 func (x *GetGoodCommissionsResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[128]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[129]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[129]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8290,10 +9126,14 @@ func (x *GetGoodCommissionsResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetGoodCommissionsResponse.ProtoReflect.Descriptor instead.
 func (*GetGoodCommissionsResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{128}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{129}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{129}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetGoodCommissionsResponse) GetInfos() []*GoodCommission {
@@ -8316,10 +9156,14 @@ func (x *GetUserGoodCommissionsRequest) Reset() {
 	*x = GetUserGoodCommissionsRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[129]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[130]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[130]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8333,10 +9177,14 @@ func (*GetUserGoodCommissionsRequest) ProtoMessage() {}
 
 func (x *GetUserGoodCommissionsRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[129]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[130]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[130]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8350,10 +9198,14 @@ func (x *GetUserGoodCommissionsRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetUserGoodCommissionsRequest.ProtoReflect.Descriptor instead.
 func (*GetUserGoodCommissionsRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{129}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{130}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{130}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetUserGoodCommissionsRequest) GetAppID() string {
@@ -8382,10 +9234,14 @@ func (x *GetUserGoodCommissionsResponse) Reset() {
 	*x = GetUserGoodCommissionsResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[130]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[131]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[131]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8399,10 +9255,14 @@ func (*GetUserGoodCommissionsResponse) ProtoMessage() {}
 
 func (x *GetUserGoodCommissionsResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[130]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[131]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[131]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8416,10 +9276,14 @@ func (x *GetUserGoodCommissionsResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetUserGoodCommissionsResponse.ProtoReflect.Descriptor instead.
 func (*GetUserGoodCommissionsResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{130}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{131}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{131}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetUserGoodCommissionsResponse) GetInfos() []*GoodCommission {
@@ -8442,10 +9306,14 @@ func (x *UpdateKycReviewRequest) Reset() {
 	*x = UpdateKycReviewRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[131]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[132]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[132]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8459,10 +9327,14 @@ func (*UpdateKycReviewRequest) ProtoMessage() {}
 
 func (x *UpdateKycReviewRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[131]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[132]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[132]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8476,10 +9348,14 @@ func (x *UpdateKycReviewRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use UpdateKycReviewRequest.ProtoReflect.Descriptor instead.
 func (*UpdateKycReviewRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{131}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{132}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{132}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *UpdateKycReviewRequest) GetInfo() *review_service.Review {
@@ -8508,10 +9384,14 @@ func (x *UpdateKycReviewResponse) Reset() {
 	*x = UpdateKycReviewResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[132]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[133]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[133]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8525,10 +9405,14 @@ func (*UpdateKycReviewResponse) ProtoMessage() {}
 
 func (x *UpdateKycReviewResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[132]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[133]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[133]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8542,10 +9426,14 @@ func (x *UpdateKycReviewResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use UpdateKycReviewResponse.ProtoReflect.Descriptor instead.
 func (*UpdateKycReviewResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{132}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{133}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{133}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *UpdateKycReviewResponse) GetInfo() *KycReview {
@@ -8568,10 +9456,14 @@ func (x *UpdateWithdrawReviewRequest) Reset() {
 	*x = UpdateWithdrawReviewRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[133]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[134]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[134]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8585,10 +9477,14 @@ func (*UpdateWithdrawReviewRequest) ProtoMessage() {}
 
 func (x *UpdateWithdrawReviewRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[133]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[134]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[134]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8602,10 +9498,14 @@ func (x *UpdateWithdrawReviewRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use UpdateWithdrawReviewRequest.ProtoReflect.Descriptor instead.
 func (*UpdateWithdrawReviewRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{133}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{134}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{134}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *UpdateWithdrawReviewRequest) GetInfo() *review_service.Review {
@@ -8634,10 +9534,14 @@ func (x *UpdateWithdrawReviewResponse) Reset() {
 	*x = UpdateWithdrawReviewResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[134]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[135]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[135]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8651,10 +9555,14 @@ func (*UpdateWithdrawReviewResponse) ProtoMessage() {}
 
 func (x *UpdateWithdrawReviewResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[134]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[135]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[135]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8668,10 +9576,14 @@ func (x *UpdateWithdrawReviewResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use UpdateWithdrawReviewResponse.ProtoReflect.Descriptor instead.
 func (*UpdateWithdrawReviewResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{134}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{135}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{135}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *UpdateWithdrawReviewResponse) GetInfo() *WithdrawReview {
@@ -8694,10 +9606,14 @@ func (x *UpdateWithdrawAddressReviewRequest) Reset() {
 	*x = UpdateWithdrawAddressReviewRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[135]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[136]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[136]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8711,10 +9627,14 @@ func (*UpdateWithdrawAddressReviewRequest) ProtoMessage() {}
 
 func (x *UpdateWithdrawAddressReviewRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[135]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[136]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[136]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8728,10 +9648,14 @@ func (x *UpdateWithdrawAddressReviewRequest) ProtoReflect() protoreflect.Message
 // Deprecated: Use UpdateWithdrawAddressReviewRequest.ProtoReflect.Descriptor instead.
 func (*UpdateWithdrawAddressReviewRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{135}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{136}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{136}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *UpdateWithdrawAddressReviewRequest) GetInfo() *review_service.Review {
@@ -8760,10 +9684,14 @@ func (x *UpdateWithdrawAddressReviewResponse) Reset() {
 	*x = UpdateWithdrawAddressReviewResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[136]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[137]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[137]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8777,10 +9705,14 @@ func (*UpdateWithdrawAddressReviewResponse) ProtoMessage() {}
 
 func (x *UpdateWithdrawAddressReviewResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[136]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[137]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[137]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8794,10 +9726,14 @@ func (x *UpdateWithdrawAddressReviewResponse) ProtoReflect() protoreflect.Messag
 // Deprecated: Use UpdateWithdrawAddressReviewResponse.ProtoReflect.Descriptor instead.
 func (*UpdateWithdrawAddressReviewResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{136}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{137}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{137}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *UpdateWithdrawAddressReviewResponse) GetInfo() *WithdrawAddressReview {
@@ -8819,10 +9755,14 @@ func (x *GetCurrentFeeRequest) Reset() {
 	*x = GetCurrentFeeRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[137]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[138]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[138]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8836,10 +9776,14 @@ func (*GetCurrentFeeRequest) ProtoMessage() {}
 
 func (x *GetCurrentFeeRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[137]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[138]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[138]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8853,10 +9797,14 @@ func (x *GetCurrentFeeRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetCurrentFeeRequest.ProtoReflect.Descriptor instead.
 func (*GetCurrentFeeRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{137}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{138}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{138}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetCurrentFeeRequest) GetCoinTypeID() string {
@@ -8878,10 +9826,14 @@ func (x *GetCurrentFeeResponse) Reset() {
 	*x = GetCurrentFeeResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[138]
 =======
 		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[139]
 >>>>>>> admin get referral by userid
+=======
+		mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[139]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8895,10 +9847,14 @@ func (*GetCurrentFeeResponse) ProtoMessage() {}
 
 func (x *GetCurrentFeeResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[138]
 =======
 	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[139]
 >>>>>>> admin get referral by userid
+=======
+	mi := &file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[139]
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8912,10 +9868,14 @@ func (x *GetCurrentFeeResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetCurrentFeeResponse.ProtoReflect.Descriptor instead.
 func (*GetCurrentFeeResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{138}
 =======
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{139}
 >>>>>>> admin get referral by userid
+=======
+	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP(), []int{139}
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func (x *GetCurrentFeeResponse) GetFeeAmount() float64 {
@@ -9465,6 +10425,7 @@ var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDesc = []byte{
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18,
 	0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06,
 	0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73,
+<<<<<<< HEAD
 <<<<<<< HEAD
 	0x65, 0x72, 0x49, 0x44, 0x12, 0x22, 0x0a, 0x0c, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x55, 0x73,
 	0x65, 0x72, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x54, 0x61, 0x72, 0x67,
@@ -11333,12 +12294,765 @@ var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDesc = []byte{
 	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x45, 0x78, 0x74,
 	0x72, 0x61, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
 	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76,
+=======
+	0x65, 0x72, 0x49, 0x44, 0x22, 0x4d, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x52, 0x65, 0x66, 0x65, 0x72,
+	0x72, 0x61, 0x6c, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x35, 0x0a, 0x05,
+	0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x63, 0x6c,
+	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73,
+	0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x66, 0x65, 0x72, 0x72, 0x61, 0x6c, 0x52, 0x05, 0x49, 0x6e,
+	0x66, 0x6f, 0x73, 0x22, 0x53, 0x0a, 0x17, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65,
+	0x66, 0x65, 0x72, 0x72, 0x61, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14,
+	0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41,
+	0x70, 0x70, 0x49, 0x44, 0x12, 0x22, 0x0a, 0x0c, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x55, 0x73,
+	0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x54, 0x61, 0x72, 0x67,
+	0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x51, 0x0a, 0x18, 0x47, 0x65, 0x74, 0x55,
+	0x73, 0x65, 0x72, 0x52, 0x65, 0x66, 0x65, 0x72, 0x72, 0x61, 0x6c, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x35, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20,
+	0x03, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
+	0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x66, 0x65,
+	0x72, 0x72, 0x61, 0x6c, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x4a, 0x0a, 0x1a, 0x47,
+	0x65, 0x74, 0x4c, 0x61, 0x79, 0x65, 0x72, 0x65, 0x64, 0x52, 0x65, 0x66, 0x65, 0x72, 0x72, 0x61,
+	0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70,
+	0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12,
+	0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x54, 0x0a, 0x1b, 0x47, 0x65, 0x74, 0x4c, 0x61,
+	0x79, 0x65, 0x72, 0x65, 0x64, 0x52, 0x65, 0x66, 0x65, 0x72, 0x72, 0x61, 0x6c, 0x73, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x35, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18,
+	0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61,
+	0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65,
+	0x66, 0x65, 0x72, 0x72, 0x61, 0x6c, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x48, 0x0a,
+	0x18, 0x47, 0x65, 0x74, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e,
+	0x67, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70,
+	0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12,
+	0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x65, 0x0a, 0x19, 0x47, 0x65, 0x74, 0x41, 0x6d,
+	0x6f, 0x75, 0x6e, 0x74, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x48, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20,
+	0x03, 0x28, 0x0b, 0x32, 0x32, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
+	0x69, 0x6e, 0x67, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41,
+	0x70, 0x70, 0x50, 0x75, 0x72, 0x63, 0x68, 0x61, 0x73, 0x65, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74,
+	0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x92,
+	0x02, 0x0a, 0x1a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x53,
+	0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a,
+	0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70,
+	0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x22, 0x0a, 0x0c, 0x54,
+	0x61, 0x72, 0x67, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x0c, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12,
+	0x16, 0x0a, 0x06, 0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44, 0x18, 0x28, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x06, 0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44, 0x12, 0x20, 0x0a, 0x0b, 0x49, 0x6e, 0x76, 0x69, 0x74,
+	0x65, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x32, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x49, 0x6e,
+	0x76, 0x69, 0x74, 0x65, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x49, 0x6e, 0x76,
+	0x69, 0x74, 0x65, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b,
+	0x49, 0x6e, 0x76, 0x69, 0x74, 0x65, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x46, 0x0a, 0x04, 0x49,
+	0x6e, 0x66, 0x6f, 0x18, 0x46, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x32, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
+	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x50, 0x75, 0x72, 0x63, 0x68, 0x61, 0x73, 0x65,
+	0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x04, 0x49,
+	0x6e, 0x66, 0x6f, 0x22, 0x67, 0x0a, 0x1b, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x6d, 0x6f,
+	0x75, 0x6e, 0x74, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x12, 0x48, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x32, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e,
+	0x67, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70,
+	0x50, 0x75, 0x72, 0x63, 0x68, 0x61, 0x73, 0x65, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x53, 0x65,
+	0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x8d, 0x02, 0x0a,
+	0x1b, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x43, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05,
+	0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70,
+	0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x22, 0x0a, 0x0c, 0x54, 0x61,
+	0x72, 0x67, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0c, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x16,
+	0x0a, 0x06, 0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44, 0x18, 0x28, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
+	0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44, 0x12, 0x20, 0x0a, 0x0b, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x65,
+	0x72, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x32, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x49, 0x6e, 0x76,
+	0x69, 0x74, 0x65, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x49, 0x6e, 0x76, 0x69,
+	0x74, 0x65, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x49,
+	0x6e, 0x76, 0x69, 0x74, 0x65, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x40, 0x0a, 0x04, 0x49, 0x6e,
+	0x66, 0x6f, 0x18, 0x46, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64,
+	0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65,
+	0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x43, 0x6f, 0x64, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x60, 0x0a, 0x1c,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x43, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x40, 0x0a, 0x04,
+	0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x63, 0x6c, 0x6f,
+	0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69,
+	0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x64, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0xa2,
+	0x01, 0x0a, 0x09, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x12, 0x31, 0x0a, 0x06,
+	0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x72,
+	0x65, 0x76, 0x69, 0x65, 0x77, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x76, 0x31,
+	0x2e, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x06, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x12,
+	0x34, 0x0a, 0x04, 0x55, 0x73, 0x65, 0x72, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e,
+	0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
+	0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52,
+	0x04, 0x55, 0x73, 0x65, 0x72, 0x12, 0x2c, 0x0a, 0x03, 0x4b, 0x79, 0x63, 0x18, 0x1e, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x6b, 0x79, 0x63, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x6d,
+	0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x4b, 0x79, 0x63, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x03,
+	0x4b, 0x79, 0x63, 0x22, 0x2c, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x76,
+	0x69, 0x65, 0x77, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41,
+	0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49,
+	0x44, 0x22, 0x4f, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x76, 0x69, 0x65,
+	0x77, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x36, 0x0a, 0x05, 0x49, 0x6e,
+	0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
+	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76,
+	0x31, 0x2e, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x05, 0x49, 0x6e, 0x66,
+	0x6f, 0x73, 0x22, 0x31, 0x0a, 0x19, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x76, 0x69,
+	0x65, 0x77, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
+	0x41, 0x70, 0x70, 0x49, 0x44, 0x22, 0x54, 0x0a, 0x1a, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x52,
+	0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x36, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03,
+	0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69,
+	0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x4b, 0x79, 0x63, 0x52, 0x65,
+	0x76, 0x69, 0x65, 0x77, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x42, 0x0a, 0x1e, 0x47,
+	0x65, 0x74, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x42, 0x79, 0x4f, 0x74,
+	0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a,
+	0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x22,
+	0x59, 0x0a, 0x1f, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x73,
+	0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x12, 0x36, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e,
+	0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x76,
+	0x69, 0x65, 0x77, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0xb7, 0x01, 0x0a, 0x0a, 0x47,
+	0x6f, 0x6f, 0x64, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x12, 0x31, 0x0a, 0x06, 0x52, 0x65, 0x76,
+	0x69, 0x65, 0x77, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x72, 0x65, 0x76, 0x69,
+	0x65, 0x77, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65,
+	0x76, 0x69, 0x65, 0x77, 0x52, 0x06, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x12, 0x3e, 0x0a, 0x09,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x42, 0x79, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x20, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
+	0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66,
+	0x6f, 0x52, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x42, 0x79, 0x12, 0x36, 0x0a, 0x04,
+	0x47, 0x6f, 0x6f, 0x64, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x63, 0x6c, 0x6f,
+	0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x73,
+	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x6f, 0x6f, 0x64, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x04,
+	0x47, 0x6f, 0x6f, 0x64, 0x22, 0x17, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52,
+	0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x51, 0x0a,
+	0x16, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x37, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73,
+	0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68,
+	0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47,
+	0x6f, 0x6f, 0x64, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73,
+	0x22, 0x63, 0x0a, 0x03, 0x4b, 0x79, 0x63, 0x12, 0x2c, 0x0a, 0x03, 0x4b, 0x79, 0x63, 0x18, 0x0a,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x6b, 0x79, 0x63, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
+	0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x4b, 0x79, 0x63, 0x49, 0x6e, 0x66, 0x6f,
+	0x52, 0x03, 0x4b, 0x79, 0x63, 0x12, 0x14, 0x0a, 0x05, 0x53, 0x74, 0x61, 0x74, 0x65, 0x18, 0x14,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x53, 0x74, 0x61, 0x74, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x4d,
+	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x4d, 0x65,
+	0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x46, 0x0a, 0x16, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x42,
+	0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
+	0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18,
+	0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x49, 0x0a,
+	0x17, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2e, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
+	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68,
+	0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x4b,
+	0x79, 0x63, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x42, 0x0a, 0x10, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2e, 0x0a, 0x04,
+	0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x6b, 0x79, 0x63,
+	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x4b,
+	0x79, 0x63, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x43, 0x0a, 0x11,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x2e, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x1a, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e,
+	0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x4b, 0x79, 0x63, 0x52, 0x04, 0x49, 0x6e, 0x66,
+	0x6f, 0x22, 0x42, 0x0a, 0x10, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4b, 0x79, 0x63, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2e, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x1e, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x6b, 0x79, 0x63, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
+	0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x4b, 0x79, 0x63, 0x49, 0x6e, 0x66, 0x6f, 0x52,
+	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x43, 0x0a, 0x11, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4b,
+	0x79, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2e, 0x0a, 0x04, 0x49, 0x6e,
+	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64,
+	0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31,
+	0x2e, 0x4b, 0x79, 0x63, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x42, 0x0a, 0x20, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x43, 0x6f, 0x69, 0x6e,
+	0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1e,
+	0x0a, 0x0a, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0a, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x49, 0x44, 0x22, 0x62,
+	0x0a, 0x21, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d,
+	0x43, 0x6f, 0x69, 0x6e, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x3d, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x29, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e,
+	0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x69,
+	0x6e, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x04, 0x49, 0x6e,
+	0x66, 0x6f, 0x22, 0x5d, 0x0a, 0x1c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72,
+	0x43, 0x6f, 0x69, 0x6e, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x3d, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x29, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67,
+	0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x69, 0x6e,
+	0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x04, 0x49, 0x6e, 0x66,
+	0x6f, 0x22, 0x5e, 0x0a, 0x1d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x43,
+	0x6f, 0x69, 0x6e, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x12, 0x3d, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x29, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67,
+	0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x69, 0x6e,
+	0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x04, 0x49, 0x6e, 0x66,
+	0x6f, 0x22, 0xe7, 0x01, 0x0a, 0x19, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72,
+	0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x3e, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2a, 0x2e,
+	0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69,
+	0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74,
+	0x68, 0x64, 0x72, 0x61, 0x77, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x12,
+	0x18, 0x0a, 0x07, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x07, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x41, 0x63, 0x63,
+	0x6f, 0x75, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b,
+	0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x12, 0x2a, 0x0a, 0x10, 0x56,
+	0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x64, 0x65, 0x18,
+	0x28, 0x20, 0x01, 0x28, 0x09, 0x52, 0x10, 0x56, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x22, 0x0a, 0x0c, 0x57, 0x69, 0x74, 0x68, 0x64,
+	0x72, 0x61, 0x77, 0x54, 0x79, 0x70, 0x65, 0x18, 0x32, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x57,
+	0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x54, 0x79, 0x70, 0x65, 0x22, 0x86, 0x01, 0x0a, 0x0c,
+	0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x12, 0x46, 0x0a, 0x08,
+	0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2a,
+	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62,
+	0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69,
+	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x08, 0x57, 0x69, 0x74, 0x68,
+	0x64, 0x72, 0x61, 0x77, 0x12, 0x14, 0x0a, 0x05, 0x53, 0x74, 0x61, 0x74, 0x65, 0x18, 0x14, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x53, 0x74, 0x61, 0x74, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x4d, 0x65,
+	0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x4d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x22, 0xc1, 0x01, 0x0a, 0x0e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61,
+	0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x12, 0x31, 0x0a, 0x06, 0x52, 0x65, 0x76, 0x69, 0x65,
+	0x77, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77,
+	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x76, 0x69,
+	0x65, 0x77, 0x52, 0x06, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x12, 0x34, 0x0a, 0x04, 0x55, 0x73,
+	0x65, 0x72, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75,
+	0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x41,
+	0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x04, 0x55, 0x73, 0x65, 0x72,
+	0x12, 0x46, 0x0a, 0x08, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x18, 0x1e, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x2a, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69,
+	0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73,
+	0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x08,
+	0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x22, 0x55, 0x0a, 0x1a, 0x53, 0x75, 0x62, 0x6d,
+	0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73,
+	0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65,
+	0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22,
+	0x7e, 0x0a, 0x1f, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74,
+	0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72,
+	0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44,
+	0x12, 0x2d, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19,
+	0x2e, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e,
+	0x76, 0x31, 0x2e, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22,
+	0x5d, 0x0a, 0x20, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74,
+	0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x39, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e,
+	0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72,
+	0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0xaf,
+	0x01, 0x0a, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74,
+	0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x46, 0x6f, 0x72, 0x4f, 0x74,
+	0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49,
+	0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12,
+	0x20, 0x0a, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x1e,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49,
+	0x44, 0x12, 0x2d, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x28, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x19, 0x2e, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
+	0x22, 0x6c, 0x0a, 0x2f, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69,
+	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x46, 0x6f, 0x72, 0x4f,
+	0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x39, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e,
+	0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72,
+	0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x50,
+	0x0a, 0x20, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61,
+	0x77, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72,
+	0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44,
+	0x22, 0x5e, 0x0a, 0x21, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64,
+	0x72, 0x61, 0x77, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x39, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73,
+	0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65,
+	0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73,
+	0x22, 0x31, 0x0a, 0x19, 0x47, 0x65, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52,
+	0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a,
+	0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70,
+	0x70, 0x49, 0x44, 0x22, 0x59, 0x0a, 0x1a, 0x47, 0x65, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72,
+	0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x3b, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b,
+	0x32, 0x25, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67,
+	0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61,
+	0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x36,
+	0x0a, 0x1e, 0x47, 0x65, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x76,
+	0x69, 0x65, 0x77, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x22, 0x5e, 0x0a, 0x1f, 0x47, 0x65, 0x74, 0x57, 0x69, 0x74,
+	0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x42, 0x79, 0x41, 0x70,
+	0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3b, 0x0a, 0x05, 0x49, 0x6e, 0x66,
+	0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64,
+	0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31,
+	0x2e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52,
+	0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x47, 0x0a, 0x23, 0x47, 0x65, 0x74, 0x57, 0x69, 0x74,
+	0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x42, 0x79, 0x4f, 0x74,
+	0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a,
+	0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x22,
+	0x63, 0x0a, 0x24, 0x47, 0x65, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65,
+	0x76, 0x69, 0x65, 0x77, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3b, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73,
+	0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68,
+	0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x57,
+	0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x05, 0x49,
+	0x6e, 0x66, 0x6f, 0x73, 0x22, 0xc8, 0x01, 0x0a, 0x0f, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61,
+	0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x12, 0x40, 0x0a, 0x07, 0x41, 0x64, 0x64, 0x72,
+	0x65, 0x73, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
+	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e,
+	0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61,
+	0x77, 0x52, 0x07, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x53, 0x74,
+	0x61, 0x74, 0x65, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x53, 0x74, 0x61, 0x74, 0x65,
+	0x12, 0x18, 0x0a, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x1e, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x43, 0x0a, 0x07, 0x41, 0x63,
+	0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x28, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x29, 0x2e, 0x63, 0x6c,
+	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c,
+	0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x69, 0x6e, 0x41, 0x63, 0x63, 0x6f, 0x75,
+	0x6e, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x07, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x22,
+	0xb1, 0x02, 0x0a, 0x19, 0x53, 0x65, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x41,
+	0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a,
+	0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70,
+	0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x1e, 0x0a, 0x0a, 0x43,
+	0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0a, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x41,
+	0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x18, 0x28, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x41, 0x64,
+	0x64, 0x72, 0x65, 0x73, 0x73, 0x12, 0x12, 0x0a, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x32, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x4d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x4d, 0x65, 0x73, 0x73,
+	0x61, 0x67, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x46,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x20, 0x0a,
+	0x0b, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x18, 0x50, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0b, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x12,
+	0x2a, 0x0a, 0x10, 0x56, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43,
+	0x6f, 0x64, 0x65, 0x18, 0x5a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x10, 0x56, 0x65, 0x72, 0x69, 0x66,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x4c,
+	0x61, 0x62, 0x65, 0x6c, 0x73, 0x18, 0x64, 0x20, 0x03, 0x28, 0x09, 0x52, 0x06, 0x4c, 0x61, 0x62,
+	0x65, 0x6c, 0x73, 0x22, 0x58, 0x0a, 0x1a, 0x53, 0x65, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72,
+	0x61, 0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x3a, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x26, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e,
+	0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77,
+	0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x44, 0x0a,
+	0x1c, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x41,
+	0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a,
+	0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x12, 0x14, 0x0a,
+	0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70,
+	0x70, 0x49, 0x44, 0x22, 0x5b, 0x0a, 0x1d, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x57, 0x69, 0x74,
+	0x68, 0x64, 0x72, 0x61, 0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3a, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x26, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69,
+	0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73,
+	0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
+	0x22, 0x54, 0x0a, 0x24, 0x47, 0x65, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x41,
+	0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x65, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
+	0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49,
+	0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16,
+	0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
+	0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x65, 0x0a, 0x25, 0x47, 0x65, 0x74, 0x57, 0x69, 0x74,
+	0x68, 0x64, 0x72, 0x61, 0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x65, 0x73, 0x42, 0x79,
+	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x3c, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x26,
+	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61,
+	0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x41,
+	0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x87, 0x02,
+	0x0a, 0x15, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73,
+	0x73, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x12, 0x31, 0x0a, 0x06, 0x52, 0x65, 0x76, 0x69, 0x65,
+	0x77, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77,
+	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x76, 0x69,
+	0x65, 0x77, 0x52, 0x06, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x12, 0x34, 0x0a, 0x04, 0x55, 0x73,
+	0x65, 0x72, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x75,
+	0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x41,
+	0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x04, 0x55, 0x73, 0x65, 0x72,
+	0x12, 0x40, 0x0a, 0x07, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x18, 0x1e, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x26, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e,
+	0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65,
+	0x72, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x07, 0x41, 0x64, 0x64, 0x72, 0x65,
+	0x73, 0x73, 0x12, 0x43, 0x0a, 0x07, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x28, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x29, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
+	0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43,
+	0x6f, 0x69, 0x6e, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x07,
+	0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x22, 0x38, 0x0a, 0x20, 0x47, 0x65, 0x74, 0x57, 0x69,
+	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x76,
+	0x69, 0x65, 0x77, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41,
+	0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49,
+	0x44, 0x22, 0x67, 0x0a, 0x21, 0x47, 0x65, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77,
+	0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x42, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18,
+	0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61,
+	0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x57, 0x69,
+	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x76,
+	0x69, 0x65, 0x77, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x3d, 0x0a, 0x25, 0x47, 0x65,
+	0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73,
+	0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x22, 0x6c, 0x0a, 0x26, 0x47, 0x65, 0x74,
+	0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52,
+	0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x42, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03,
+	0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69,
+	0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x57, 0x69, 0x74, 0x68, 0x64,
+	0x72, 0x61, 0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77,
+	0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x4e, 0x0a, 0x2a, 0x47, 0x65, 0x74, 0x57, 0x69,
+	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x76,
+	0x69, 0x65, 0x77, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41,
+	0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x54, 0x61, 0x72, 0x67,
+	0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x22, 0x71, 0x0a, 0x2b, 0x47, 0x65, 0x74, 0x57, 0x69,
+	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x76,
+	0x69, 0x65, 0x77, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x42, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18,
+	0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61,
+	0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x57, 0x69,
+	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x76,
+	0x69, 0x65, 0x77, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x86, 0x01, 0x0a, 0x06, 0x43,
+	0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x12, 0x47, 0x0a, 0x06, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x18,
+	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61,
+	0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x76, 0x31,
+	0x2e, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x41, 0x6c, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x65, 0x64,
+	0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x06, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x12, 0x33,
+	0x0a, 0x05, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e,
+	0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x6f, 0x72,
+	0x64, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x05, 0x4f, 0x72,
+	0x64, 0x65, 0x72, 0x22, 0x8a, 0x01, 0x0a, 0x0b, 0x55, 0x73, 0x65, 0x72, 0x53, 0x70, 0x65, 0x63,
+	0x69, 0x61, 0x6c, 0x12, 0x46, 0x0a, 0x06, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x18, 0x0a, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x2e, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
+	0x69, 0x6e, 0x67, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x55,
+	0x73, 0x65, 0x72, 0x53, 0x70, 0x65, 0x63, 0x69, 0x61, 0x6c, 0x52, 0x65, 0x64, 0x75, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x06, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x12, 0x33, 0x0a, 0x05, 0x4f,
+	0x72, 0x64, 0x65, 0x72, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x63, 0x6c, 0x6f,
+	0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72,
+	0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x05, 0x4f, 0x72, 0x64, 0x65, 0x72,
+	0x22, 0x7e, 0x0a, 0x07, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x73, 0x12, 0x37, 0x0a, 0x07, 0x43,
+	0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x63,
+	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69,
+	0x73, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x52, 0x07, 0x43, 0x6f, 0x75,
+	0x70, 0x6f, 0x6e, 0x73, 0x12, 0x3a, 0x0a, 0x06, 0x4f, 0x66, 0x66, 0x65, 0x72, 0x73, 0x18, 0x14,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73,
+	0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65,
+	0x72, 0x53, 0x70, 0x65, 0x63, 0x69, 0x61, 0x6c, 0x52, 0x06, 0x4f, 0x66, 0x66, 0x65, 0x72, 0x73,
+	0x22, 0x4a, 0x0a, 0x1a, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x73, 0x42, 0x79,
+	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14,
+	0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41,
+	0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x51, 0x0a, 0x1b,
+	0x47, 0x65, 0x74, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55,
+	0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x32, 0x0a, 0x04, 0x49,
+	0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
+	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76,
+	0x31, 0x2e, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x73, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22,
+	0x3c, 0x0a, 0x0a, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x14, 0x0a,
+	0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x01, 0x52, 0x05, 0x54, 0x6f,
+	0x74, 0x61, 0x6c, 0x12, 0x18, 0x0a, 0x07, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x18, 0x14,
+	0x20, 0x01, 0x28, 0x01, 0x52, 0x07, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x22, 0x4d, 0x0a,
+	0x1d, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x42, 0x79,
+	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14,
+	0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41,
+	0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x57, 0x0a, 0x1e,
+	0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x42, 0x79, 0x41,
+	0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x35,
+	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x63,
+	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69,
+	0x73, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52,
+	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0xce, 0x01, 0x0a, 0x0e, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f,
+	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49,
+	0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16,
+	0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
+	0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44,
+	0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x12, 0x16,
+	0x0a, 0x06, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x28, 0x20, 0x01, 0x28, 0x01, 0x52, 0x06,
+	0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x1e, 0x0a, 0x0a, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79,
+	0x70, 0x65, 0x49, 0x44, 0x18, 0x32, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x43, 0x6f, 0x69, 0x6e,
+	0x54, 0x79, 0x70, 0x65, 0x49, 0x44, 0x12, 0x1a, 0x0a, 0x08, 0x43, 0x6f, 0x69, 0x6e, 0x4e, 0x61,
+	0x6d, 0x65, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x43, 0x6f, 0x69, 0x6e, 0x4e, 0x61,
+	0x6d, 0x65, 0x12, 0x22, 0x0a, 0x0c, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x69,
+	0x6f, 0x6e, 0x18, 0x46, 0x20, 0x01, 0x28, 0x01, 0x52, 0x0c, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x69,
+	0x62, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x49, 0x0a, 0x19, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f,
+	0x64, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65,
+	0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49,
+	0x44, 0x22, 0x59, 0x0a, 0x1a, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6d, 0x6d,
+	0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x3b, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x25,
+	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61,
+	0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6d, 0x6d, 0x69,
+	0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x59, 0x0a, 0x1d,
+	0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6d, 0x6d, 0x69,
+	0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a,
+	0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70,
+	0x70, 0x49, 0x44, 0x12, 0x22, 0x0a, 0x0c, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x55, 0x73, 0x65,
+	0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x54, 0x61, 0x72, 0x67, 0x65,
+	0x74, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x5d, 0x0a, 0x1e, 0x47, 0x65, 0x74, 0x55, 0x73,
+	0x65, 0x72, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e,
+	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3b, 0x0a, 0x05, 0x49, 0x6e, 0x66,
+	0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64,
+	0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31,
+	0x2e, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52,
+	0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x6b, 0x0a, 0x16, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x4b, 0x79, 0x63, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x12, 0x2d, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19,
+	0x2e, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e,
+	0x76, 0x31, 0x2e, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x12,
+	0x22, 0x0a, 0x0c, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44, 0x18,
+	0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x4c, 0x61, 0x6e,
+	0x67, 0x49, 0x44, 0x22, 0x4f, 0x0a, 0x17, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4b, 0x79, 0x63,
+	0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x34,
+	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63,
+	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69,
+	0x73, 0x2e, 0x76, 0x31, 0x2e, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x04,
+	0x49, 0x6e, 0x66, 0x6f, 0x22, 0x64, 0x0a, 0x1b, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x57, 0x69,
+	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x2d, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x19, 0x2e, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x04, 0x49, 0x6e,
+	0x66, 0x6f, 0x12, 0x16, 0x0a, 0x06, 0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x06, 0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44, 0x22, 0x59, 0x0a, 0x1c, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x76, 0x69,
+	0x65, 0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x39, 0x0a, 0x04, 0x49, 0x6e,
+	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64,
+	0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31,
+	0x2e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52,
+	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x6b, 0x0a, 0x22, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x57,
+	0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65,
+	0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2d, 0x0a, 0x04, 0x49,
+	0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x72, 0x65, 0x76, 0x69,
+	0x65, 0x77, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65,
+	0x76, 0x69, 0x65, 0x77, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x16, 0x0a, 0x06, 0x4c, 0x61,
+	0x6e, 0x67, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x4c, 0x61, 0x6e, 0x67,
+	0x49, 0x44, 0x22, 0x67, 0x0a, 0x23, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x57, 0x69, 0x74, 0x68,
+	0x64, 0x72, 0x61, 0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x76, 0x69, 0x65,
+	0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x40, 0x0a, 0x04, 0x49, 0x6e, 0x66,
+	0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e,
+	0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e,
+	0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52,
+	0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x36, 0x0a, 0x14, 0x47,
+	0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x74, 0x46, 0x65, 0x65, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x1e, 0x0a, 0x0a, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x49,
+	0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70,
+	0x65, 0x49, 0x44, 0x22, 0x35, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e,
+	0x74, 0x46, 0x65, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1c, 0x0a, 0x09,
+	0x46, 0x65, 0x65, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x01, 0x52,
+	0x09, 0x46, 0x65, 0x65, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x32, 0x87, 0x4d, 0x0a, 0x10, 0x43,
+	0x6c, 0x6f, 0x75, 0x64, 0x48, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x41, 0x70, 0x69, 0x73, 0x12,
+	0x51, 0x0a, 0x07, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x16, 0x2e, 0x67, 0x6f, 0x6f,
+	0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70,
+	0x74, 0x79, 0x1a, 0x19, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x65,
+	0x72, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x13, 0x82,
+	0xd3, 0xe4, 0x93, 0x02, 0x0d, 0x22, 0x08, 0x2f, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x3a,
+	0x01, 0x2a, 0x12, 0x75, 0x0a, 0x08, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x12, 0x26,
+	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61,
+	0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68,
+	0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47,
+	0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x18, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x12, 0x22, 0x0d, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74,
+	0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x73, 0x3a, 0x01, 0x2a, 0x12, 0x8b, 0x01, 0x0a, 0x0d, 0x47, 0x65,
+	0x74, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x12, 0x2b, 0x2e, 0x63, 0x6c,
+	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73,
+	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x42, 0x79, 0x41, 0x70,
+	0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64,
+	0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31,
+	0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1f, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x19, 0x22, 0x14,
+	0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x73, 0x2f, 0x62, 0x79,
+	0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x12, 0x7d, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x47, 0x6f, 0x6f, 0x64, 0x12, 0x28, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61,
+	0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x29, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e,
+	0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x47, 0x6f,
+	0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1a, 0x82, 0xd3, 0xe4, 0x93,
+	0x02, 0x14, 0x22, 0x0f, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x67,
+	0x6f, 0x6f, 0x64, 0x3a, 0x01, 0x2a, 0x12, 0x71, 0x0a, 0x07, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f,
+	0x64, 0x12, 0x25, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e,
+	0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f,
+	0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x26, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64,
+	0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31,
+	0x2e, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x17, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x11, 0x22, 0x0c, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65,
+	0x74, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x3a, 0x01, 0x2a, 0x12, 0xb0, 0x01, 0x0a, 0x16, 0x47, 0x65,
+	0x74, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x42,
+	0x79, 0x41, 0x70, 0x70, 0x12, 0x34, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73,
+	0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
+	0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x42, 0x79,
+	0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x35, 0x2e, 0x63, 0x6c, 0x6f,
+	0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e,
+	0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x47,
+	0x6f, 0x6f, 0x64, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x29, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x23, 0x22, 0x1e, 0x2f, 0x76, 0x31, 0x2f, 0x67,
+	0x65, 0x74, 0x2f, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x2f, 0x67, 0x6f, 0x6f,
+	0x64, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x12, 0x81, 0x01, 0x0a,
+	0x0b, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x29, 0x2e, 0x63,
+	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69,
+	0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e,
+	0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e,
+	0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x1b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x15, 0x22, 0x10, 0x2f, 0x76, 0x31,
+	0x2f, 0x73, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x2f, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x3a, 0x01, 0x2a,
+	0x12, 0x92, 0x01, 0x0a, 0x0f, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x4f,
+	0x72, 0x64, 0x65, 0x72, 0x12, 0x2d, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73,
+	0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x75, 0x62,
+	0x6d, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
+	0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x75, 0x62, 0x6d,
+	0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x20, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1a, 0x22, 0x15, 0x2f, 0x76, 0x31,
+	0x2f, 0x73, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x6f, 0x72, 0x64,
+	0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x9f, 0x01, 0x0a, 0x12, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74,
+	0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x30, 0x2e, 0x63,
+	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69,
+	0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x41, 0x70, 0x70, 0x55, 0x73,
+	0x65, 0x72, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31,
+	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61,
+	0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x41, 0x70, 0x70,
+	0x55, 0x73, 0x65, 0x72, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x24, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1e, 0x22, 0x19, 0x2f, 0x76, 0x31, 0x2f, 0x73,
+	0x75, 0x62, 0x6d, 0x69, 0x74, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x6f,
+	0x72, 0x64, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x9e, 0x01, 0x0a, 0x12, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x30,
+	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61,
+	0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4f, 0x72, 0x64,
+	0x65, 0x72, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x31, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67,
+	0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4f,
+	0x72, 0x64, 0x65, 0x72, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x23, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1d, 0x22, 0x18, 0x2f, 0x76, 0x31,
+	0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x2f, 0x70, 0x61,
+	0x79, 0x6d, 0x65, 0x6e, 0x74, 0x3a, 0x01, 0x2a, 0x12, 0x75, 0x0a, 0x08, 0x47, 0x65, 0x74, 0x4f,
+	0x72, 0x64, 0x65, 0x72, 0x12, 0x26, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73,
+	0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
+	0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27, 0x2e, 0x63,
+	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69,
+	0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x18, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x12, 0x22, 0x0d, 0x2f,
+	0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12,
+	0xa0, 0x01, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x73, 0x42, 0x79, 0x41,
+	0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x30, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68,
+	0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47,
+	0x65, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
+	0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64,
+	0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31,
+	0x2e, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55,
+	0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x25, 0x82, 0xd3, 0xe4,
+	0x93, 0x02, 0x1f, 0x22, 0x1a, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x6f, 0x72, 0x64,
+	0x65, 0x72, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a,
+	0x01, 0x2a, 0x12, 0x8f, 0x01, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x73,
+	0x42, 0x79, 0x41, 0x70, 0x70, 0x12, 0x2c, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61,
+	0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
+	0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x2d, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
+	0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4f,
+	0x72, 0x64, 0x65, 0x72, 0x73, 0x42, 0x79, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x20, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1a, 0x22, 0x15, 0x2f, 0x76, 0x31, 0x2f,
+	0x67, 0x65, 0x74, 0x2f, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70,
+	0x70, 0x3a, 0x01, 0x2a, 0x12, 0xa4, 0x01, 0x0a, 0x13, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x64, 0x65,
+	0x72, 0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x12, 0x31, 0x2e, 0x63,
+	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69,
+	0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x73, 0x42, 0x79,
+	0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x32, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e,
+	0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72,
+	0x73, 0x42, 0x79, 0x4f, 0x74, 0x68, 0x65, 0x72, 0x41, 0x70, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x20, 0x22, 0x1b, 0x2f, 0x76, 0x31,
+	0x2f, 0x67, 0x65, 0x74, 0x2f, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x6f,
+	0x74, 0x68, 0x65, 0x72, 0x2f, 0x61, 0x70, 0x70, 0x3a, 0x01, 0x2a, 0x12, 0x93, 0x01, 0x0a, 0x0f,
+	0x47, 0x65, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x73, 0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x12,
+	0x2d, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e,
+	0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72,
+	0x73, 0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e,
+	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61,
+	0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x73,
+	0x42, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x21,
+	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1b, 0x22, 0x16, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f,
+	0x6f, 0x72, 0x64, 0x65, 0x72, 0x73, 0x2f, 0x62, 0x79, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x3a, 0x01,
+	0x2a, 0x12, 0x6c, 0x0a, 0x06, 0x53, 0x69, 0x67, 0x6e, 0x75, 0x70, 0x12, 0x24, 0x2e, 0x63, 0x6c,
+	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73,
+	0x2e, 0x76, 0x31, 0x2e, 0x53, 0x69, 0x67, 0x6e, 0x75, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x25, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e,
+	0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x69, 0x67, 0x6e, 0x75, 0x70,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x15, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0f,
+	0x22, 0x0a, 0x2f, 0x76, 0x31, 0x2f, 0x73, 0x69, 0x67, 0x6e, 0x75, 0x70, 0x3a, 0x01, 0x2a, 0x12,
+	0x8d, 0x01, 0x0a, 0x0e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f,
+	0x72, 0x64, 0x12, 0x2c, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69,
+	0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x2d, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67,
+	0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50,
+	0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x22, 0x13, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x2f, 0x70, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x3a, 0x01, 0x2a, 0x12,
+	0xb4, 0x01, 0x0a, 0x17, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f,
+	0x72, 0x64, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x12, 0x35, 0x2e, 0x63, 0x6c,
+	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73,
+	0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f,
+	0x72, 0x64, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x36, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69,
+	0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x42, 0x79, 0x41, 0x70, 0x70, 0x55, 0x73,
+	0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2a, 0x82, 0xd3, 0xe4, 0x93,
+	0x02, 0x24, 0x22, 0x1f, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x70,
+	0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x2f, 0x62, 0x79, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75,
+	0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x9d, 0x01, 0x0a, 0x12, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x12, 0x30, 0x2e,
+	0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70,
+	0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x45, 0x6d, 0x61, 0x69,
+	0x6c, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x31, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e,
+	0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x45, 0x6d,
+	0x61, 0x69, 0x6c, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x22, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1c, 0x22, 0x17, 0x2f, 0x76, 0x31, 0x2f,
+	0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x61, 0x64, 0x64, 0x72,
+	0x65, 0x73, 0x73, 0x3a, 0x01, 0x2a, 0x12, 0x89, 0x01, 0x0a, 0x0d, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x50, 0x68, 0x6f, 0x6e, 0x65, 0x4e, 0x4f, 0x12, 0x2b, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64,
+	0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31,
+	0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x68, 0x6f, 0x6e, 0x65, 0x4e, 0x4f, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61,
+	0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x50, 0x68, 0x6f, 0x6e, 0x65, 0x4e, 0x4f, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x1d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x17, 0x22, 0x12, 0x2f, 0x76, 0x31,
+	0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x70, 0x68, 0x6f, 0x6e, 0x65, 0x6e, 0x6f, 0x3a,
+	0x01, 0x2a, 0x12, 0x89, 0x01, 0x0a, 0x0d, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x63, 0x63,
+	0x6f, 0x75, 0x6e, 0x74, 0x12, 0x2b, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73,
+	0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x2c, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e,
+	0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x1d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x17, 0x22, 0x12, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x2f, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x3a, 0x01, 0x2a, 0x12, 0x9f,
+	0x01, 0x0a, 0x12, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72,
+	0x45, 0x78, 0x74, 0x72, 0x61, 0x12, 0x30, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61,
+	0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x45, 0x78, 0x74, 0x72, 0x61,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e,
+	0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x45, 0x78, 0x74,
+	0x72, 0x61, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x24, 0x82, 0xd3, 0xe4, 0x93,
+	0x02, 0x1e, 0x22, 0x19, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x61,
+	0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x65, 0x78, 0x74, 0x72, 0x61, 0x3a, 0x01, 0x2a,
+	0x12, 0x9f, 0x01, 0x0a, 0x12, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73,
+	0x65, 0x72, 0x45, 0x78, 0x74, 0x72, 0x61, 0x12, 0x30, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e,
+	0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x45, 0x78, 0x74,
+	0x72, 0x61, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
+	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76,
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x45,
 	0x78, 0x74, 0x72, 0x61, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x24, 0x82, 0xd3,
 	0xe4, 0x93, 0x02, 0x1e, 0x22, 0x19, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65,
 	0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x65, 0x78, 0x74, 0x72, 0x61, 0x3a,
 	0x01, 0x2a, 0x12, 0xa7, 0x01, 0x0a, 0x14, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70,
 	0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x12, 0x32, 0x2e, 0x63, 0x6c,
+<<<<<<< HEAD
 	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73,
 	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
 	0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
@@ -11361,6 +13075,30 @@ var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDesc = []byte{
 	0x72, 0x6f, 0x6c, 0x3a, 0x01, 0x2a, 0x12, 0x96, 0x01, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x55, 0x73,
 	0x65, 0x72, 0x52, 0x65, 0x66, 0x65, 0x72, 0x72, 0x61, 0x6c, 0x73, 0x12, 0x2e, 0x2e, 0x63, 0x6c,
 	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73,
+=======
+	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73,
+	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65,
+	0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x33, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e,
+	0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70,
+	0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x20, 0x22, 0x1b, 0x2f, 0x76,
+	0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65,
+	0x72, 0x2f, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x3a, 0x01, 0x2a, 0x12, 0xa7, 0x01, 0x0a,
+	0x14, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x12, 0x32, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61,
+	0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x74, 0x72,
+	0x6f, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x33, 0x2e, 0x63, 0x6c, 0x6f, 0x75,
+	0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76,
+	0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x55, 0x73, 0x65, 0x72, 0x43,
+	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x26,
+	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x20, 0x22, 0x1b, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x63, 0x6f, 0x6e, 0x74,
+	0x72, 0x6f, 0x6c, 0x3a, 0x01, 0x2a, 0x12, 0x96, 0x01, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x55, 0x73,
+	0x65, 0x72, 0x52, 0x65, 0x66, 0x65, 0x72, 0x72, 0x61, 0x6c, 0x73, 0x12, 0x2e, 0x2e, 0x63, 0x6c,
+	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73,
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x66, 0x65, 0x72,
 	0x72, 0x61, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x63, 0x6c,
 	0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73,
@@ -11743,6 +13481,7 @@ var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDesc = []byte{
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68,
 	0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47,
 <<<<<<< HEAD
+<<<<<<< HEAD
 	0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x74, 0x46, 0x65, 0x65, 0x52, 0x65, 0x71, 0x75,
 	0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x68, 0x61, 0x73, 0x68,
 	0x69, 0x6e, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43,
@@ -11756,6 +13495,8 @@ var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDesc = []byte{
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 >>>>>>> admin get referral by userid
 =======
+=======
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 	0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x74, 0x46, 0x65, 0x65, 0x52, 0x65, 0x73, 0x70,
 	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x22, 0x13, 0x2f, 0x76,
 	0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x74, 0x2f, 0x66, 0x65,
@@ -11764,7 +13505,10 @@ var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDesc = []byte{
 	0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x63,
 	0x6c, 0x6f, 0x75, 0x64, 0x2d, 0x68, 0x61, 0x73, 0x68, 0x69, 0x6e, 0x67, 0x2d, 0x61, 0x70, 0x69,
 	0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 >>>>>>> edit referral path
+=======
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 var (
@@ -11779,6 +13523,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescGZIP() []byte
 	return file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDescData
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes = make([]protoimpl.MessageInfo, 139)
 var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_goTypes = []interface{}{
@@ -12195,6 +13940,8 @@ var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_depIdxs = []int32{
 	121, // [121:121] is the sub-list for extension extendee
 	0,   // [0:121] is the sub-list for field type_name
 =======
+=======
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes = make([]protoimpl.MessageInfo, 140)
 var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_goTypes = []interface{}{
 	(*Good)(nil),                                            // 0: cloud.hashing.apis.v1.Good
@@ -12614,7 +14361,10 @@ var file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_depIdxs = []int32{
 	122, // [122:122] is the sub-list for extension type_name
 	122, // [122:122] is the sub-list for extension extendee
 	0,   // [0:122] is the sub-list for field type_name
+<<<<<<< HEAD
 >>>>>>> admin get referral by userid
+=======
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 }
 
 func init() { file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() }
@@ -13320,7 +15070,11 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*GetReferralsResponse); i {
+=======
+			switch v := v.(*GetUserReferralsRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13333,11 +15087,15 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		}
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[59].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*GetLayeredReferralsRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserReferralsRequest); i {
 >>>>>>> admin get referral by userid
+=======
+			switch v := v.(*GetUserReferralsResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13350,11 +15108,15 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		}
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[60].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*GetLayeredReferralsResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[59].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserReferralsResponse); i {
 >>>>>>> admin get referral by userid
+=======
+			switch v := v.(*GetLayeredReferralsRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13367,11 +15129,15 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		}
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[61].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*GetAmountSettingsRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[60].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLayeredReferralsRequest); i {
 >>>>>>> admin get referral by userid
+=======
+			switch v := v.(*GetLayeredReferralsResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13384,11 +15150,15 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		}
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[62].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*GetAmountSettingsResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[61].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLayeredReferralsResponse); i {
 >>>>>>> admin get referral by userid
+=======
+			switch v := v.(*GetAmountSettingsRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13401,11 +15171,15 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		}
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[63].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*CreateAmountSettingRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[62].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAmountSettingsRequest); i {
 >>>>>>> admin get referral by userid
+=======
+			switch v := v.(*GetAmountSettingsResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13418,11 +15192,15 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		}
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[64].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*CreateAmountSettingResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[63].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAmountSettingsResponse); i {
 >>>>>>> admin get referral by userid
+=======
+			switch v := v.(*CreateAmountSettingRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13435,11 +15213,15 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		}
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[65].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*CreateInvitationCodeRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[64].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateAmountSettingRequest); i {
 >>>>>>> admin get referral by userid
+=======
+			switch v := v.(*CreateAmountSettingResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13452,11 +15234,15 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		}
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[66].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*CreateInvitationCodeResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[65].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateAmountSettingResponse); i {
 >>>>>>> admin get referral by userid
+=======
+			switch v := v.(*CreateInvitationCodeRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13469,11 +15255,15 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		}
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[67].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*KycReview); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[66].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateInvitationCodeRequest); i {
 >>>>>>> admin get referral by userid
+=======
+			switch v := v.(*CreateInvitationCodeResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13486,11 +15276,15 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		}
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[68].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*GetKycReviewsRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[67].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateInvitationCodeResponse); i {
 >>>>>>> admin get referral by userid
+=======
+			switch v := v.(*KycReview); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13503,11 +15297,15 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		}
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[69].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*GetKycReviewsResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[68].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*KycReview); i {
 >>>>>>> admin get referral by userid
+=======
+			switch v := v.(*GetKycReviewsRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13520,6 +15318,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		}
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[70].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*GetKycReviewsByAppRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[69].Exporter = func(v interface{}, i int) interface{} {
@@ -13542,6 +15341,9 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[70].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetKycReviewsResponse); i {
 >>>>>>> admin get referral by userid
+=======
+			switch v := v.(*GetKycReviewsResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13558,6 +15360,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[71].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetKycReviewsByAppRequest); i {
+<<<<<<< HEAD
 >>>>>>> admin get referral by userid
 			case 0:
 				return &v.state
@@ -13593,6 +15396,8 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[73].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetKycReviewsByOtherAppRequest); i {
 >>>>>>> admin get referral by userid
+=======
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13604,12 +15409,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[75].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetGoodReviewsRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[74].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetKycReviewsByOtherAppResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[72].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetKycReviewsByAppResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13620,6 +15430,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[76].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetGoodReviewsResponse); i {
@@ -13627,6 +15438,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[75].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GoodReview); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[73].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetKycReviewsByOtherAppRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13638,12 +15453,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[77].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Kyc); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[76].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetGoodReviewsRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[74].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetKycReviewsByOtherAppResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13654,6 +15474,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[78].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetKycByAppUserRequest); i {
@@ -13661,6 +15482,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[77].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetGoodReviewsResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[75].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GoodReview); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13672,12 +15497,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[79].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetKycByAppUserResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[78].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Kyc); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[76].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetGoodReviewsRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13688,6 +15518,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[80].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateKycRequest); i {
@@ -13695,6 +15526,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[79].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetKycByAppUserRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[77].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetGoodReviewsResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13706,12 +15541,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[81].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateKycResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[80].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetKycByAppUserResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[78].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Kyc); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13722,6 +15562,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[82].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateKycRequest); i {
@@ -13729,6 +15570,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[81].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateKycRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[79].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetKycByAppUserRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13740,12 +15585,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[83].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateKycResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[82].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateKycResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[80].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetKycByAppUserResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13756,6 +15606,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[84].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreatePlatformCoinAccountRequest); i {
@@ -13763,6 +15614,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[83].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateKycRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[81].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateKycRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13774,12 +15629,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[85].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreatePlatformCoinAccountResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[84].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateKycResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[82].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateKycResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13790,6 +15650,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[86].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUserCoinAccountRequest); i {
@@ -13797,6 +15658,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[85].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreatePlatformCoinAccountRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[83].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateKycRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13808,12 +15673,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[87].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUserCoinAccountResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[86].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreatePlatformCoinAccountResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[84].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateKycResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13824,6 +15694,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[88].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SubmitUserWithdrawRequest); i {
@@ -13831,6 +15702,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[87].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUserCoinAccountRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[85].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreatePlatformCoinAccountRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13842,12 +15717,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[89].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserWithdraw); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[88].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUserCoinAccountResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[86].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreatePlatformCoinAccountResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13858,6 +15738,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[90].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*WithdrawReview); i {
@@ -13865,6 +15746,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[89].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SubmitUserWithdrawRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[87].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateUserCoinAccountRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13876,12 +15761,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[91].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SubmitUserWithdrawResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[90].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserWithdraw); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[88].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateUserCoinAccountResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13892,6 +15782,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[92].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateUserWithdrawReviewRequest); i {
@@ -13899,6 +15790,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[91].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*WithdrawReview); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[89].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SubmitUserWithdrawRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13910,12 +15805,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[93].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateUserWithdrawReviewResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[92].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SubmitUserWithdrawResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[90].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UserWithdraw); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13926,6 +15826,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[94].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateUserWithdrawReviewForOtherAppUserRequest); i {
@@ -13933,6 +15834,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[93].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateUserWithdrawReviewRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[91].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*WithdrawReview); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13944,12 +15849,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[95].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateUserWithdrawReviewForOtherAppUserResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[94].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateUserWithdrawReviewResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[92].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SubmitUserWithdrawResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13960,6 +15870,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[96].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserWithdrawsByAppUserRequest); i {
@@ -13967,6 +15878,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[95].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateUserWithdrawReviewForOtherAppUserRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[93].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateUserWithdrawReviewRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13978,12 +15893,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[97].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserWithdrawsByAppUserResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[96].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateUserWithdrawReviewForOtherAppUserResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[94].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateUserWithdrawReviewResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -13994,6 +15914,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[98].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawReviewsRequest); i {
@@ -14001,6 +15922,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[97].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserWithdrawsByAppUserRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[95].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateUserWithdrawReviewForOtherAppUserRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14012,12 +15937,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[99].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawReviewsResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[98].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserWithdrawsByAppUserResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[96].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateUserWithdrawReviewForOtherAppUserResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14028,6 +15958,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[100].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawReviewsByAppRequest); i {
@@ -14035,6 +15966,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[99].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawReviewsRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[97].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetUserWithdrawsByAppUserRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14046,12 +15981,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[101].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawReviewsByAppResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[100].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawReviewsResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[98].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetUserWithdrawsByAppUserResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14062,6 +16002,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[102].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawReviewsByOtherAppRequest); i {
@@ -14069,6 +16010,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[101].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawReviewsByAppRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[99].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetWithdrawReviewsRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14080,12 +16025,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[103].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawReviewsByOtherAppResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[102].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawReviewsByAppResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[100].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetWithdrawReviewsResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14096,6 +16046,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[104].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*WithdrawAddress); i {
@@ -14103,6 +16054,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[103].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawReviewsByOtherAppRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[101].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetWithdrawReviewsByAppRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14114,12 +16069,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[105].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SetWithdrawAddressRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[104].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawReviewsByOtherAppResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[102].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetWithdrawReviewsByAppResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14130,6 +16090,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[106].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SetWithdrawAddressResponse); i {
@@ -14137,6 +16098,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[105].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*WithdrawAddress); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[103].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetWithdrawReviewsByOtherAppRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14148,12 +16113,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[107].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteWithdrawAddressRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[106].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SetWithdrawAddressRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[104].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetWithdrawReviewsByOtherAppResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14164,6 +16134,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[108].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteWithdrawAddressResponse); i {
@@ -14171,6 +16142,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[107].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SetWithdrawAddressResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[105].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*WithdrawAddress); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14182,12 +16157,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[109].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressesByAppUserRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[108].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteWithdrawAddressRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[106].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SetWithdrawAddressRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14198,6 +16178,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[110].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressesByAppUserResponse); i {
@@ -14205,6 +16186,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[109].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteWithdrawAddressResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[107].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SetWithdrawAddressResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14216,12 +16201,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[111].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*WithdrawAddressReview); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[110].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressesByAppUserRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[108].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteWithdrawAddressRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14232,6 +16222,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[112].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressReviewsRequest); i {
@@ -14239,6 +16230,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[111].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressesByAppUserResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[109].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteWithdrawAddressResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14250,12 +16245,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[113].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressReviewsResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[112].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*WithdrawAddressReview); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[110].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetWithdrawAddressesByAppUserRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14266,6 +16266,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[114].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressReviewsByAppRequest); i {
@@ -14273,6 +16274,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[113].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressReviewsRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[111].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetWithdrawAddressesByAppUserResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14284,12 +16289,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[115].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressReviewsByAppResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[114].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressReviewsResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[112].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*WithdrawAddressReview); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14300,6 +16310,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[116].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressReviewsByOtherAppRequest); i {
@@ -14307,6 +16318,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[115].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressReviewsByAppRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[113].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetWithdrawAddressReviewsRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14318,12 +16333,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[117].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressReviewsByOtherAppResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[116].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressReviewsByAppResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[114].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetWithdrawAddressReviewsResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14334,6 +16354,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[118].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Coupon); i {
@@ -14341,6 +16362,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[117].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressReviewsByOtherAppRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[115].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetWithdrawAddressReviewsByAppRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14352,12 +16377,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[119].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserSpecial); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[118].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWithdrawAddressReviewsByOtherAppResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[116].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetWithdrawAddressReviewsByAppResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14368,6 +16398,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[120].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Coupons); i {
@@ -14375,6 +16406,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[119].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Coupon); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[117].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetWithdrawAddressReviewsByOtherAppRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14386,12 +16421,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[121].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCouponsByAppUserRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[120].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserSpecial); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[118].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetWithdrawAddressReviewsByOtherAppResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14402,6 +16442,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[122].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCouponsByAppUserResponse); i {
@@ -14409,6 +16450,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[121].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Coupons); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[119].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Coupon); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14420,12 +16465,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[123].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Commission); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[122].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCouponsByAppUserRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[120].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UserSpecial); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14436,6 +16486,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[124].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommissionByAppUserRequest); i {
@@ -14443,6 +16494,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[123].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCouponsByAppUserResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[121].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Coupons); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14454,12 +16509,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[125].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommissionByAppUserResponse); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[124].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Commission); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[122].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetCouponsByAppUserRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14470,6 +16530,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[126].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GoodCommission); i {
@@ -14477,6 +16538,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[125].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommissionByAppUserRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[123].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetCouponsByAppUserResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14488,12 +16553,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[127].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetGoodCommissionsRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[126].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommissionByAppUserResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[124].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Commission); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14504,6 +16574,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[128].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetGoodCommissionsResponse); i {
@@ -14511,6 +16582,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[127].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GoodCommission); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[125].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetCommissionByAppUserRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14522,12 +16597,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[129].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserGoodCommissionsRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[128].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetGoodCommissionsRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[126].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetCommissionByAppUserResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14538,6 +16618,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[130].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserGoodCommissionsResponse); i {
@@ -14545,6 +16626,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[129].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetGoodCommissionsResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[127].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GoodCommission); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14556,12 +16641,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[131].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateKycReviewRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[130].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserGoodCommissionsRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[128].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetGoodCommissionsRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14572,6 +16662,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[132].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateKycReviewResponse); i {
@@ -14579,6 +16670,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[131].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserGoodCommissionsResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[129].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetGoodCommissionsResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14590,12 +16685,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[133].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateWithdrawReviewRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[132].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateKycReviewRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[130].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetUserGoodCommissionsRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14606,6 +16706,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[134].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateWithdrawReviewResponse); i {
@@ -14613,6 +16714,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[133].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateKycReviewResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[131].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetUserGoodCommissionsResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14624,12 +16729,17 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[135].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateWithdrawAddressReviewRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[134].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateWithdrawReviewRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[132].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateKycReviewRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14640,6 +16750,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[136].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateWithdrawAddressReviewResponse); i {
@@ -14647,6 +16758,10 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[135].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateWithdrawReviewResponse); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[133].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateKycReviewResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14658,12 +16773,37 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[137].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCurrentFeeRequest); i {
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[136].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateWithdrawAddressReviewRequest); i {
 >>>>>>> admin get referral by userid
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[134].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateWithdrawReviewRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+<<<<<<< HEAD
+<<<<<<< HEAD
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[138].Exporter = func(v interface{}, i int) interface{} {
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[137].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateWithdrawAddressReviewResponse); i {
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[135].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateWithdrawReviewResponse); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			case 0:
 				return &v.state
 			case 1:
@@ -14676,6 +16816,24 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 		}
 <<<<<<< HEAD
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[138].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetCurrentFeeRequest); i {
+=======
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[136].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateWithdrawAddressReviewRequest); i {
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+<<<<<<< HEAD
+		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[139].Exporter = func(v interface{}, i int) interface{} {
+>>>>>>> admin get referral by userid
 =======
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[137].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateWithdrawAddressReviewResponse); i {
@@ -14702,7 +16860,7 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			}
 		}
 		file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_msgTypes[139].Exporter = func(v interface{}, i int) interface{} {
->>>>>>> admin get referral by userid
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			switch v := v.(*GetCurrentFeeResponse); i {
 			case 0:
 				return &v.state
@@ -14722,10 +16880,14 @@ func file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_init() {
 			RawDescriptor: file_npool_cloud_hashing_apis_cloud_hashing_apis_proto_rawDesc,
 			NumEnums:      0,
 <<<<<<< HEAD
+<<<<<<< HEAD
 			NumMessages:   139,
 =======
 			NumMessages:   140,
 >>>>>>> admin get referral by userid
+=======
+			NumMessages:   140,
+>>>>>>> 0b884ac8001b20c3e953d853b93bbba0e97eb5c6
 			NumExtensions: 0,
 			NumServices:   1,
 		},
