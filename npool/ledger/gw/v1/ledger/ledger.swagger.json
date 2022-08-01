@@ -450,6 +450,10 @@
           "items": {
             "$ref": "#/definitions/v1Profit"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
