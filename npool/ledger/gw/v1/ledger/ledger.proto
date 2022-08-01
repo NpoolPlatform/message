@@ -125,6 +125,7 @@ message GetProfitsRequest {
 
 message GetProfitsResponse {
     repeated Profit Infos = 10;
+    uint32          Total = 20;
 }
 
 message GetIntervalProfitsRequest {
