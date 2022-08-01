@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package ledger.middleware.ledger1.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v1/ledger";
+
+import "npool/ledger/mgr/v1/ledger/general/general.proto";
+import "npool/ledger/mgr/v1/ledger/detail/detail.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Middleware {
+    rpc GetIntervalGenerals (GetIntervalGeneralsRequest) returns (GetIntervalGeneralsResponse)   {}
+    rpc GetIntervalDetails  (GetIntervalDetailsRequest)  returns (GetIntervalDetailsResponse)    {}
+    rpc GetIntervalProfits  (GetIntervalProfitsRequest)  returns (GetIntervalProfitsResponse)    {}
+}
+
+message GetIntervalGeneralsRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    uint32 Start   = 30;
+    uint32 End     = 40;
+    int32  Offset  = 50;
+    int32  Limit   = 60;
+}
+
+message GetIntervalGeneralsResponse {
+    repeated ledger.manager.ledger.general.v1.General Infos = 10;
+    uint32                                            Total = 20;
+}
+
+message GetIntervalDetailsRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    uint32 Start   = 30;
+    uint32 End     = 40;
+    int32  Offset  = 50;
+    int32  Limit   = 60;
+}
+
+message GetIntervalDetailsResponse {
+    repeated ledger.manager.ledger.detail.v1.Detail Infos = 10;
+    uint32                                          Total = 20;
+}
+
+message GetIntervalProfitsRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    uint32 Start   = 30;
+    uint32 End     = 40;
+    int32  Offset  = 50;
+    int32  Limit   = 60;
+}
+
+message GetIntervalProfitsResponse {
+    repeated ledger.manager.ledger.detail.v1.Detail Infos = 10;
+    uint32                                          Total = 20;
+}
