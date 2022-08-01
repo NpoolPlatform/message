@@ -142,28 +142,13 @@
         }
       }
     },
-    "v1GetIntervalProfitDetailsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Detail"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1GetIntervalProfitsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1General"
+            "$ref": "#/definitions/v1Detail"
           }
         },
         "Total": {
