@@ -23,8 +23,10 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	GetGenerals(ctx context.Context, in *GetGeneralsRequest, opts ...grpc.CallOption) (*GetGeneralsResponse, error)
-	GetInterval(ctx context.Context, in *GetIntervalRequest, opts ...grpc.CallOption) (*GetIntervalResponse, error)
+	GetIntervalGenerals(ctx context.Context, in *GetIntervalGeneralsRequest, opts ...grpc.CallOption) (*GetIntervalGeneralsResponse, error)
 	GetDetails(ctx context.Context, in *GetDetailsRequest, opts ...grpc.CallOption) (*GetDetailsResponse, error)
+	GetProfits(ctx context.Context, in *GetProfitsRequest, opts ...grpc.CallOption) (*GetProfitsResponse, error)
+	GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error)
 }
 
 type gatewayClient struct {
@@ -44,9 +46,9 @@ func (c *gatewayClient) GetGenerals(ctx context.Context, in *GetGeneralsRequest,
 	return out, nil
 }
 
-func (c *gatewayClient) GetInterval(ctx context.Context, in *GetIntervalRequest, opts ...grpc.CallOption) (*GetIntervalResponse, error) {
-	out := new(GetIntervalResponse)
-	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger.v1.Gateway/GetInterval", in, out, opts...)
+func (c *gatewayClient) GetIntervalGenerals(ctx context.Context, in *GetIntervalGeneralsRequest, opts ...grpc.CallOption) (*GetIntervalGeneralsResponse, error) {
+	out := new(GetIntervalGeneralsResponse)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger.v1.Gateway/GetIntervalGenerals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,13 +64,33 @@ func (c *gatewayClient) GetDetails(ctx context.Context, in *GetDetailsRequest, o
 	return out, nil
 }
 
+func (c *gatewayClient) GetProfits(ctx context.Context, in *GetProfitsRequest, opts ...grpc.CallOption) (*GetProfitsResponse, error) {
+	out := new(GetProfitsResponse)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger.v1.Gateway/GetProfits", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error) {
+	out := new(GetIntervalProfitsResponse)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger.v1.Gateway/GetIntervalProfits", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
 	GetGenerals(context.Context, *GetGeneralsRequest) (*GetGeneralsResponse, error)
-	GetInterval(context.Context, *GetIntervalRequest) (*GetIntervalResponse, error)
+	GetIntervalGenerals(context.Context, *GetIntervalGeneralsRequest) (*GetIntervalGeneralsResponse, error)
 	GetDetails(context.Context, *GetDetailsRequest) (*GetDetailsResponse, error)
+	GetProfits(context.Context, *GetProfitsRequest) (*GetProfitsResponse, error)
+	GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -79,11 +101,17 @@ type UnimplementedGatewayServer struct {
 func (UnimplementedGatewayServer) GetGenerals(context.Context, *GetGeneralsRequest) (*GetGeneralsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGenerals not implemented")
 }
-func (UnimplementedGatewayServer) GetInterval(context.Context, *GetIntervalRequest) (*GetIntervalResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetInterval not implemented")
+func (UnimplementedGatewayServer) GetIntervalGenerals(context.Context, *GetIntervalGeneralsRequest) (*GetIntervalGeneralsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalGenerals not implemented")
 }
 func (UnimplementedGatewayServer) GetDetails(context.Context, *GetDetailsRequest) (*GetDetailsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDetails not implemented")
+}
+func (UnimplementedGatewayServer) GetProfits(context.Context, *GetProfitsRequest) (*GetProfitsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetProfits not implemented")
+}
+func (UnimplementedGatewayServer) GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalProfits not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -116,20 +144,20 @@ func _Gateway_GetGenerals_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetInterval_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetIntervalRequest)
+func _Gateway_GetIntervalGenerals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIntervalGeneralsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetInterval(ctx, in)
+		return srv.(GatewayServer).GetIntervalGenerals(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.gateway.ledger.v1.Gateway/GetInterval",
+		FullMethod: "/ledger.gateway.ledger.v1.Gateway/GetIntervalGenerals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetInterval(ctx, req.(*GetIntervalRequest))
+		return srv.(GatewayServer).GetIntervalGenerals(ctx, req.(*GetIntervalGeneralsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -152,6 +180,42 @@ func _Gateway_GetDetails_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetProfits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetProfitsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetProfits(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.gateway.ledger.v1.Gateway/GetProfits",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetProfits(ctx, req.(*GetProfitsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetIntervalProfits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIntervalProfitsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetIntervalProfits(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.gateway.ledger.v1.Gateway/GetIntervalProfits",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetIntervalProfits(ctx, req.(*GetIntervalProfitsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -164,12 +228,20 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetGenerals_Handler,
 		},
 		{
-			MethodName: "GetInterval",
-			Handler:    _Gateway_GetInterval_Handler,
+			MethodName: "GetIntervalGenerals",
+			Handler:    _Gateway_GetIntervalGenerals_Handler,
 		},
 		{
 			MethodName: "GetDetails",
 			Handler:    _Gateway_GetDetails_Handler,
+		},
+		{
+			MethodName: "GetProfits",
+			Handler:    _Gateway_GetProfits_Handler,
+		},
+		{
+			MethodName: "GetIntervalProfits",
+			Handler:    _Gateway_GetIntervalProfits_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

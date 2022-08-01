@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/interval": {
+    "/v1/get/intervalgenerals": {
       "post": {
-        "operationId": "Gateway_GetInterval",
+        "operationId": "Gateway_GetIntervalGenerals",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetIntervalResponse"
+              "$ref": "#/definitions/v1GetIntervalGeneralsResponse"
             }
           },
           "default": {
@@ -103,7 +103,71 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetIntervalRequest"
+              "$ref": "#/definitions/v1GetIntervalGeneralsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/intervalprofits": {
+      "post": {
+        "operationId": "Gateway_GetIntervalProfits",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetIntervalProfitsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetIntervalProfitsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/profits": {
+      "post": {
+        "operationId": "Gateway_GetProfits",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetProfitsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetProfitsRequest"
             }
           }
         ],
@@ -275,7 +339,7 @@
         }
       }
     },
-    "v1GetIntervalRequest": {
+    "v1GetIntervalGeneralsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -302,7 +366,7 @@
         }
       }
     },
-    "v1GetIntervalResponse": {
+    "v1GetIntervalGeneralsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -314,6 +378,98 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1GetIntervalProfitsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetIntervalProfitsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Profit"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetProfitsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetProfitsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Profit"
+          }
+        }
+      }
+    },
+    "v1Profit": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "Incoming": {
+          "type": "string"
         }
       }
     }
