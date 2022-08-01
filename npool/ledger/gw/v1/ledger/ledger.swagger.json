@@ -228,6 +228,10 @@
           "items": {
             "$ref": "#/definitions/v1Detail"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -258,6 +262,10 @@
           "items": {
             "$ref": "#/definitions/v1General"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -296,6 +304,10 @@
           "items": {
             "$ref": "#/definitions/v1General"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }

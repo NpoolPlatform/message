@@ -51,6 +51,7 @@ message GetGeneralsRequest {
 
 message GetGeneralsResponse {
     repeated General Infos = 10;
+    uint32           Total = 20;
 }
 
 message GetIntervalRequest {
@@ -64,6 +65,7 @@ message GetIntervalRequest {
 
 message GetIntervalResponse {
     repeated General Infos = 10;
+    uint32           Total = 20;
 }
 
 message Detail {
@@ -87,4 +89,5 @@ message GetDetailsRequest {
 
 message GetDetailsResponse {
     repeated Detail Infos = 10;
+    uint32          Total = 20;
 }
