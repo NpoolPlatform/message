@@ -161,10 +161,12 @@
           "type": "string"
         },
         "CoinTypeID": {
-          "type": "string"
+          "type": "string",
+          "title": "CoinTypeID of the good"
         },
         "TotalAmount": {
-          "type": "string"
+          "type": "string",
+          "title": "Payment amount in USD"
         },
         "SelfAmount": {
           "type": "string"
@@ -178,7 +180,8 @@
           "format": "int64"
         },
         "TotalCommission": {
-          "type": "string"
+          "type": "string",
+          "title": "Commission amount in USD"
         },
         "SelfCommission": {
           "type": "string"

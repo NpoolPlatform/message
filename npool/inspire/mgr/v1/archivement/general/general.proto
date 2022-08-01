@@ -39,11 +39,14 @@ message General {
     string AppID           = 20;
     string UserID          = 30;
     string GoodID          = 40;
+    // CoinTypeID of the good
     string CoinTypeID      = 50;
+    // Payment amount in USD
     string TotalAmount     = 60;
     string SelfAmount      = 70;
     uint32 TotalUnits      = 80;
     uint32 SelfUnits       = 90;
+    // Commission amount in USD
     string TotalCommission = 100;
     string SelfCommission  = 110;
 }

@@ -154,15 +154,18 @@ type General struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID              string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	AppID           string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	UserID          string `protobuf:"bytes,30,opt,name=UserID,proto3" json:"UserID,omitempty"`
-	GoodID          string `protobuf:"bytes,40,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
-	CoinTypeID      string `protobuf:"bytes,50,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty"`
-	TotalAmount     string `protobuf:"bytes,60,opt,name=TotalAmount,proto3" json:"TotalAmount,omitempty"`
-	SelfAmount      string `protobuf:"bytes,70,opt,name=SelfAmount,proto3" json:"SelfAmount,omitempty"`
-	TotalUnits      uint32 `protobuf:"varint,80,opt,name=TotalUnits,proto3" json:"TotalUnits,omitempty"`
-	SelfUnits       uint32 `protobuf:"varint,90,opt,name=SelfUnits,proto3" json:"SelfUnits,omitempty"`
+	ID     string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+	AppID  string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	UserID string `protobuf:"bytes,30,opt,name=UserID,proto3" json:"UserID,omitempty"`
+	GoodID string `protobuf:"bytes,40,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
+	// CoinTypeID of the good
+	CoinTypeID string `protobuf:"bytes,50,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty"`
+	// Payment amount in USD
+	TotalAmount string `protobuf:"bytes,60,opt,name=TotalAmount,proto3" json:"TotalAmount,omitempty"`
+	SelfAmount  string `protobuf:"bytes,70,opt,name=SelfAmount,proto3" json:"SelfAmount,omitempty"`
+	TotalUnits  uint32 `protobuf:"varint,80,opt,name=TotalUnits,proto3" json:"TotalUnits,omitempty"`
+	SelfUnits   uint32 `protobuf:"varint,90,opt,name=SelfUnits,proto3" json:"SelfUnits,omitempty"`
+	// Commission amount in USD
 	TotalCommission string `protobuf:"bytes,100,opt,name=TotalCommission,proto3" json:"TotalCommission,omitempty"`
 	SelfCommission  string `protobuf:"bytes,110,opt,name=SelfCommission,proto3" json:"SelfCommission,omitempty"`
 }
