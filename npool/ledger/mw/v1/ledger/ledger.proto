@@ -12,9 +12,10 @@ import "npool/npool.proto";
 
 // Service Name
 service Middleware {
-    rpc GetIntervalGenerals (GetIntervalGeneralsRequest) returns (GetIntervalGeneralsResponse)   {}
-    rpc GetIntervalDetails  (GetIntervalDetailsRequest)  returns (GetIntervalDetailsResponse)    {}
-    rpc GetIntervalProfits  (GetIntervalProfitsRequest)  returns (GetIntervalProfitsResponse)    {}
+    rpc GetIntervalGenerals       (GetIntervalGeneralsRequest)       returns (GetIntervalGeneralsResponse)         {}
+    rpc GetIntervalDetails        (GetIntervalDetailsRequest)        returns (GetIntervalDetailsResponse)          {}
+    rpc GetIntervalProfits        (GetIntervalProfitsRequest)        returns (GetIntervalProfitsResponse)          {}
+    rpc GetIntervalProfitDetails  (GetIntervalProfitDetailsRequest)  returns (GetIntervalProfitDetailsResponse)    {}
 }
 
 message GetIntervalGeneralsRequest {
@@ -55,6 +56,20 @@ message GetIntervalProfitsRequest {
 }
 
 message GetIntervalProfitsResponse {
+    repeated ledger.manager.ledger.general.v1.General Infos = 10;
+    uint32                                            Total = 20;
+}
+
+message GetIntervalProfitDetailsRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    uint32 Start   = 30;
+    uint32 End     = 40;
+    int32  Offset  = 50;
+    int32  Limit   = 60;
+}
+
+message GetIntervalProfitDetailsResponse {
     repeated ledger.manager.ledger.detail.v1.Detail Infos = 10;
     uint32                                          Total = 20;
 }
