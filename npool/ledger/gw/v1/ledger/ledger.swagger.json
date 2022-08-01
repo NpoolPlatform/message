@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/get/details": {
+      "post": {
+        "operationId": "Gateway_GetDetails",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetDetailsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetDetailsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/generals": {
       "post": {
         "operationId": "Gateway_GetGenerals",
@@ -40,38 +72,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetGeneralsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/interval": {
-      "post": {
-        "operationId": "Gateway_GetInterval",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetIntervalResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetIntervalRequest"
             }
           }
         ],
@@ -109,6 +109,32 @@
         }
       }
     },
+    "v1Detail": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "IOType": {
+          "type": "string"
+        },
+        "IOSubType": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "IOExtra": {
+          "type": "string"
+        }
+      }
+    },
     "v1General": {
       "type": "object",
       "properties": {
@@ -135,37 +161,7 @@
         }
       }
     },
-    "v1GetGeneralsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetGeneralsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1General"
-          }
-        }
-      }
-    },
-    "v1GetIntervalRequest": {
+    "v1GetDetailsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -192,34 +188,52 @@
         }
       }
     },
-    "v1GetIntervalResponse": {
+    "v1GetDetailsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Interval"
+            "$ref": "#/definitions/v1Detail"
           }
         }
       }
     },
-    "v1Interval": {
+    "v1GetGeneralsRequest": {
       "type": "object",
       "properties": {
-        "CoinTypeID": {
+        "AppID": {
           "type": "string"
         },
-        "CoinName": {
+        "UserID": {
           "type": "string"
         },
-        "CoinLogo": {
-          "type": "string"
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
         },
-        "Incoming": {
-          "type": "string"
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
         },
-        "Outcoming": {
-          "type": "string"
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetGeneralsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1General"
+          }
         }
       }
     }
