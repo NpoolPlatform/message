@@ -79,6 +79,38 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/get/interval": {
+      "post": {
+        "operationId": "Gateway_GetInterval",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetIntervalResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetIntervalRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -208,6 +240,36 @@
         "UserID": {
           "type": "string"
         },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetGeneralsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1General"
+          }
+        }
+      }
+    },
+    "v1GetIntervalRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "StartAt": {
           "type": "integer",
           "format": "int64"
@@ -226,7 +288,7 @@
         }
       }
     },
-    "v1GetGeneralsResponse": {
+    "v1GetIntervalResponse": {
       "type": "object",
       "properties": {
         "Infos": {

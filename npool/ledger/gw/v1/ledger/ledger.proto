@@ -17,6 +17,13 @@ service Gateway {
         };
     }
 
+    rpc GetInterval (GetIntervalRequest) returns (GetIntervalResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/interval"
+            body: "*"
+        };
+    }
+
     rpc GetDetails (GetDetailsRequest) returns (GetDetailsResponse) {
         option (google.api.http) = {
             post: "/v1/get/details"
@@ -38,13 +45,24 @@ message General {
 message GetGeneralsRequest {
     string AppID   = 10;
     string UserID  = 20;
+    int32  Offset  = 30;
+    int32  Limit   = 40;
+}
+
+message GetGeneralsResponse {
+    repeated General Infos = 10;
+}
+
+message GetIntervalRequest {
+    string AppID   = 10;
+    string UserID  = 20;
     uint32 StartAt = 30;
     uint32 EndAt   = 40;
     int32  Offset  = 50;
     int32  Limit   = 60;
 }
 
-message GetGeneralsResponse {
+message GetIntervalResponse {
     repeated General Infos = 10;
 }
 
