@@ -44,6 +44,17 @@
         }
       }
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -61,6 +72,9 @@
         },
         "OrderID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "SelfOrder": {
+          "$ref": "#/definitions/v1BoolVal"
         },
         "PaymentID": {
           "$ref": "#/definitions/v1StringVal"
@@ -137,6 +151,9 @@
         "OrderID": {
           "type": "string"
         },
+        "SelfOrder": {
+          "type": "boolean"
+        },
         "PaymentID": {
           "type": "string"
         },
@@ -185,6 +202,9 @@
         },
         "OrderID": {
           "type": "string"
+        },
+        "SelfOrder": {
+          "type": "boolean"
         },
         "PaymentID": {
           "type": "string"
