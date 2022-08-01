@@ -27,19 +27,21 @@ message CoinArchivement {
     string LastName        = 60;
     bool   Kol             = 70;
 
-    string CoinTypeID      = 80;
-    string CoinName        = 90;
-    string CoinLogo        = 100;
-    string CoinUnit        = 110;
+    uint32 TotalInvitees   = 80;
 
-    uint32 TotalUnits      = 120;
-    uint32 SelfUnits       = 130;
-    string TotalAmount     = 140;
-    string SelfAmount      = 150;
-    string TotalCommission = 160;
-    string SelfCommission  = 170;
+    string CoinTypeID      = 90;
+    string CoinName        = 100;
+    string CoinLogo        = 110;
+    string CoinUnit        = 120;
 
-    uint32 CurPercent      = 180;
+    uint32 TotalUnits      = 130;
+    uint32 SelfUnits       = 140;
+    string TotalAmount     = 150;
+    string SelfAmount      = 160;
+    string TotalCommission = 170;
+    string SelfCommission  = 180;
+
+    uint32 CurPercent      = 190;
 }
 
 message GetCoinArchivementsRequest {

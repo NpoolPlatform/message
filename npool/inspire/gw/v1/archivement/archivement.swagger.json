@@ -101,6 +101,10 @@
         "Kol": {
           "type": "boolean"
         },
+        "TotalInvitees": {
+          "type": "integer",
+          "format": "int64"
+        },
         "CoinTypeID": {
           "type": "string"
         },
