@@ -18,19 +18,6 @@ service Gateway {
     }
 }
 
-message User {
-    string UserID          = 10;
-    string Username        = 20;
-    string EmailAddress    = 30;
-    string PhoneNO         = 40;
-    string FirstName       = 50;
-    string LastName        = 60;
-    bool   Kol             = 70;
-
-    uint32 TotalInvitees   = 80;
-
-}
-
 message CoinArchivement {
     string CoinTypeID      = 10;
     string CoinName        = 20;
@@ -56,8 +43,16 @@ message GetCoinArchivementsRequest {
 
 message GetCoinArchivementsResponse {
     message Archivement {
-        User                     User         = 10;
-        repeated CoinArchivement Archivements = 20;
+        string UserID          = 10;
+        string Username        = 20;
+        string EmailAddress    = 30;
+        string PhoneNO         = 40;
+        string FirstName       = 50;
+        string LastName        = 60;
+        bool   Kol             = 70;
+        uint32 TotalInvitees   = 80;
+
+        repeated CoinArchivement Archivements = 90;
     }
 
     repeated Archivement Archivements  = 10; // Coin

@@ -53,8 +53,30 @@
     "GetCoinArchivementsResponseArchivement": {
       "type": "object",
       "properties": {
-        "User": {
-          "$ref": "#/definitions/v1User"
+        "UserID": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Kol": {
+          "type": "boolean"
+        },
+        "TotalInvitees": {
+          "type": "integer",
+          "format": "int64"
         },
         "Archivements": {
           "type": "array",
@@ -161,36 +183,6 @@
           }
         },
         "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1User": {
-      "type": "object",
-      "properties": {
-        "UserID": {
-          "type": "string"
-        },
-        "Username": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "FirstName": {
-          "type": "string"
-        },
-        "LastName": {
-          "type": "string"
-        },
-        "Kol": {
-          "type": "boolean"
-        },
-        "TotalInvitees": {
           "type": "integer",
           "format": "int64"
         }
