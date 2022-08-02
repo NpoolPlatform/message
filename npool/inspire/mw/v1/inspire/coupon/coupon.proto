@@ -22,14 +22,21 @@ enum CouponType {
 }
 
 message Coupon {
+    // @inject_tag: sql:"id"
     string     ID              = 10;
     CouponType Type            = 20;
+    // @inject_tag: sql:"value"
     string     Value           = 30;
     string     ThresholdAmount = 40;
+    // @inject_tag: sql:"start"
     uint32     Start           = 50;
-    uint32     End             = 60;
-    string     Name            = 70;
-    string     Message         = 80;
+    // @inject_tag: sql:"duration_days"
+    uint32     DurationDays    = 60;
+    uint32     End             = 70;
+    // @inject_tag: sql:"name"
+    string     Name            = 80;
+    // @inject_tag: sql:"message"
+    string     Message         = 90;
 }
 
 message GetCouponRequest {

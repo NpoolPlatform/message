@@ -48,30 +48,40 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "Type": {
           "$ref": "#/definitions/v1CouponType"
         },
         "Value": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"value\""
         },
         "ThresholdAmount": {
           "type": "string"
         },
         "Start": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start\""
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"duration_days\""
         },
         "End": {
           "type": "integer",
           "format": "int64"
         },
         "Name": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
         },
         "Message": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"message\""
         }
       }
     },
