@@ -82,6 +82,12 @@
         "Message": {
           "type": "string",
           "title": "@inject_tag: sql:\"message\""
+        },
+        "Expired": {
+          "type": "boolean"
+        },
+        "Valid": {
+          "type": "boolean"
         }
       }
     },

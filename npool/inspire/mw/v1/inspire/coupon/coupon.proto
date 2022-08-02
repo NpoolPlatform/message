@@ -37,6 +37,8 @@ message Coupon {
     string     Name            = 80;
     // @inject_tag: sql:"message"
     string     Message         = 90;
+    bool       Expired         = 100;
+    bool       Valid           = 110;
 }
 
 message GetCouponRequest {
