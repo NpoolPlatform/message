@@ -151,6 +151,12 @@
         "CurPercent": {
           "type": "integer",
           "format": "int64"
+        },
+        "CurGoodID": {
+          "type": "string"
+        },
+        "CurGoodName": {
+          "type": "string"
         }
       }
     },

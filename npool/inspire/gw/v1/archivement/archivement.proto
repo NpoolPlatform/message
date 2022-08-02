@@ -32,6 +32,8 @@ message CoinArchivement {
     string SelfCommission  = 100;
 
     uint32 CurPercent      = 110;
+    string CurGoodID       = 120;
+    string CurGoodName     = 130;
 }
 
 message GetCoinArchivementsRequest {
