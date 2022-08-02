@@ -50,6 +50,20 @@
     }
   },
   "definitions": {
+    "GetCoinArchivementsResponseArchivement": {
+      "type": "object",
+      "properties": {
+        "User": {
+          "$ref": "#/definitions/v1User"
+        },
+        "Archivements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinArchivement"
+          }
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -80,31 +94,6 @@
     "v1CoinArchivement": {
       "type": "object",
       "properties": {
-        "UserID": {
-          "type": "string"
-        },
-        "Username": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "FirstName": {
-          "type": "string"
-        },
-        "LastName": {
-          "type": "string"
-        },
-        "Kol": {
-          "type": "boolean"
-        },
-        "TotalInvitees": {
-          "type": "integer",
-          "format": "int64"
-        },
         "CoinTypeID": {
           "type": "string"
         },
@@ -168,10 +157,40 @@
         "Archivements": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinArchivement"
+            "$ref": "#/definitions/GetCoinArchivementsResponseArchivement"
           }
         },
         "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1User": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Kol": {
+          "type": "boolean"
+        },
+        "TotalInvitees": {
           "type": "integer",
           "format": "int64"
         }

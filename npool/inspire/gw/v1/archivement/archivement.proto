@@ -18,7 +18,7 @@ service Gateway {
     }
 }
 
-message CoinArchivement {
+message User {
     string UserID          = 10;
     string Username        = 20;
     string EmailAddress    = 30;
@@ -29,19 +29,22 @@ message CoinArchivement {
 
     uint32 TotalInvitees   = 80;
 
-    string CoinTypeID      = 90;
-    string CoinName        = 100;
-    string CoinLogo        = 110;
-    string CoinUnit        = 120;
+}
 
-    uint32 TotalUnits      = 130;
-    uint32 SelfUnits       = 140;
-    string TotalAmount     = 150;
-    string SelfAmount      = 160;
-    string TotalCommission = 170;
-    string SelfCommission  = 180;
+message CoinArchivement {
+    string CoinTypeID      = 10;
+    string CoinName        = 20;
+    string CoinLogo        = 30;
+    string CoinUnit        = 40;
 
-    uint32 CurPercent      = 190;
+    uint32 TotalUnits      = 50;
+    uint32 SelfUnits       = 60;
+    string TotalAmount     = 70;
+    string SelfAmount      = 80;
+    string TotalCommission = 90;
+    string SelfCommission  = 100;
+
+    uint32 CurPercent      = 110;
 }
 
 message GetCoinArchivementsRequest {
@@ -52,8 +55,13 @@ message GetCoinArchivementsRequest {
 }
 
 message GetCoinArchivementsResponse {
-    repeated CoinArchivement Archivements  = 10; // Coin
-    uint32                   Total         = 20;
+    message Archivement {
+        User                     User         = 10;
+        repeated CoinArchivement Archivements = 20;
+    }
+
+    repeated Archivement Archivements  = 10; // Coin
+    uint32               Total         = 20;
 }
 
 
