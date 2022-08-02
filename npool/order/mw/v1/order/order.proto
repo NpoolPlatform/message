@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package order.middleware.order.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/order";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse) {}
+}
+
+message Order {
+    string          ID                     = 10;
+    string          ParentOrderID          = 20;
+    string          UserID                 = 30;
+    string          CoinTypeID             = 40;
+    string          GoodID                 = 50;
+    uint32          Units                  = 60;
+
+    string          PaymentCoinTypeID      = 70;
+    string          PaymentCoinUSDCurrency = 80;
+    string          PaymentID              = 90;
+    string          PaymentAddress         = 100;
+    string          PaymentAmount          = 110;
+    optional string PayWithBalanceAmount   = 120;
+    bool            PayWithParent          = 130;
+
+    optional string FixAmountID            = 140;
+    optional string DiscountID             = 150;
+    optional string SpecialOfferID         = 160;
+}
+
+message CreateOrderRequest {
+    string          AppID                = 10;
+    string          UserID               = 20;
+    string          GoodID               = 30;
+    uint32          Units                = 40;
+    string          PaymentCoinID        = 50;
+    optional string PayWithBalanceAmount = 60;
+    optional string FixAmountID          = 70;
+    optional string DiscountID           = 80;
+    optional string SpecialOfferID       = 90;
+}
+
+message CreateOrderResponse {
+    Order Info = 10;
+}

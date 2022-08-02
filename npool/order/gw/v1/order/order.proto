@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package order.gateway.order.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/order/gw/v1/order";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/order"
+            body: "*"
+        };
+    }
+
+    rpc GetOrders (GetOrdersRequest) returns (GetOrdersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/orders"
+            body: "*"
+        };
+    }
+
+    // Admin apis
+
+    rpc GetUserOrders (GetUserOrdersRequest) returns (GetUserOrdersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/orders"
+            body: "*"
+        };
+    }
+
+    rpc GetAppUserOrders (GetAppUserOrdersRequest) returns (GetAppUserOrdersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/user/orders"
+            body: "*"
+        };
+    }
+}
+
+message Order {
+    string          ID                     = 10;
+
+    string          ParentOrderID          = 20;
+    string          ParentOrderGoodID      = 30;
+    string          ParentOrderGoodName    = 40;
+
+    string          UserID                 = 50;
+    string          EmailAddress           = 60;
+    string          PhoneNO                = 70;
+
+    string          CoinTypeID             = 80;
+    string          CoinName               = 90;
+    string          CoinLogo               = 100;
+    string          CoinUnit               = 110;
+
+    string          GoodID                 = 120;
+    string          GoodName               = 130;
+    uint32          Units                  = 140;
+
+    string          PaymentID              = 150;
+    string          PaymentCoinTypeID      = 160;
+    string          PaymentCoinName        = 170;
+    string          PaymentCoinLogo        = 180;
+    string          PaymentCoinUSDCurrency = 190;
+    string          PaymentAddress         = 200;
+    string          PaymentAmount          = 210;
+    optional string PayWithBalanceAmount   = 220;
+    bool            PayWithParent          = 230;
+
+    optional string FixAmountID            = 240;
+    optional string FixAmountName          = 250;
+    optional string FixAmountAmount        = 260;
+
+    optional string DiscountID             = 270;
+    optional string DisableName            = 280;
+    optional uint32 DiscountPercent        = 290;
+
+    optional string SpecialOfferID         = 300;
+    optional string SpecialOfferAmount     = 310;
+
+    uint32          CreateAt               = 320;
+    uint32          PayAt                  = 330;
+}
+
+message CreateOrderRequest {
+    string          AppID                = 10;
+    string          UserID               = 20;
+    string          GoodID               = 30;
+    uint32          Units                = 40;
+    string          PaymentCoinID        = 50;
+    optional string ParentOrderID        = 60;
+    optional string PayWithBalanceAmount = 70;
+    optional string FixAmountID          = 80;
+    optional string DiscountID           = 90;
+    optional string SpecialOfferID       = 100;
+}
+
+message CreateOrderResponse {
+    Order Info = 10;
+}
+
+message GetOrdersRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    int32  Offset  = 30;
+    int32  Limit   = 40;
+}
+
+message GetOrdersResponse {
+    repeated Order Infos = 10;
+}
+
+message GetUserOrdersRequest {
+    string AppID   = 10;
+    string TargetUserID  = 20;
+    int32  Offset  = 30;
+    int32  Limit   = 40;
+}
+
+message GetUserOrdersResponse {
+    repeated Order Infos = 10;
+}
+
+message GetAppUserOrdersRequest {
+    string TargetAppID   = 10;
+    string TargetUserID  = 20;
+    int32  Offset  = 30;
+    int32  Limit   = 40;
+}
+
+message GetAppUserOrdersResponse {
+    repeated Order Infos = 10;
+}
