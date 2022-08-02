@@ -35,7 +35,7 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 
 func (c *middlewareClient) CreateOrder(ctx context.Context, in *CreateOrderRequest, opts ...grpc.CallOption) (*CreateOrderResponse, error) {
 	out := new(CreateOrderResponse)
-	err := c.cc.Invoke(ctx, "/order.middleware.order.v1.Middleware/CreateOrder", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/order.middleware.order1.v1.Middleware/CreateOrder", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func _Middleware_CreateOrder_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/order.middleware.order.v1.Middleware/CreateOrder",
+		FullMethod: "/order.middleware.order1.v1.Middleware/CreateOrder",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateOrder(ctx, req.(*CreateOrderRequest))
@@ -92,7 +92,7 @@ func _Middleware_CreateOrder_Handler(srv interface{}, ctx context.Context, dec f
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "order.middleware.order.v1.Middleware",
+	ServiceName: "order.middleware.order1.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

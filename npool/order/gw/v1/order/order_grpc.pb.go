@@ -38,7 +38,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) CreateOrder(ctx context.Context, in *CreateOrderRequest, opts ...grpc.CallOption) (*CreateOrderResponse, error) {
 	out := new(CreateOrderResponse)
-	err := c.cc.Invoke(ctx, "/order.gateway.order.v1.Gateway/CreateOrder", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/order.gateway.order1.v1.Gateway/CreateOrder", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -47,7 +47,7 @@ func (c *gatewayClient) CreateOrder(ctx context.Context, in *CreateOrderRequest,
 
 func (c *gatewayClient) GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error) {
 	out := new(GetOrdersResponse)
-	err := c.cc.Invoke(ctx, "/order.gateway.order.v1.Gateway/GetOrders", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/order.gateway.order1.v1.Gateway/GetOrders", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -56,7 +56,7 @@ func (c *gatewayClient) GetOrders(ctx context.Context, in *GetOrdersRequest, opt
 
 func (c *gatewayClient) GetUserOrders(ctx context.Context, in *GetUserOrdersRequest, opts ...grpc.CallOption) (*GetUserOrdersResponse, error) {
 	out := new(GetUserOrdersResponse)
-	err := c.cc.Invoke(ctx, "/order.gateway.order.v1.Gateway/GetUserOrders", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/order.gateway.order1.v1.Gateway/GetUserOrders", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -65,7 +65,7 @@ func (c *gatewayClient) GetUserOrders(ctx context.Context, in *GetUserOrdersRequ
 
 func (c *gatewayClient) GetAppUserOrders(ctx context.Context, in *GetAppUserOrdersRequest, opts ...grpc.CallOption) (*GetAppUserOrdersResponse, error) {
 	out := new(GetAppUserOrdersResponse)
-	err := c.cc.Invoke(ctx, "/order.gateway.order.v1.Gateway/GetAppUserOrders", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/order.gateway.order1.v1.Gateway/GetAppUserOrders", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -122,7 +122,7 @@ func _Gateway_CreateOrder_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/order.gateway.order.v1.Gateway/CreateOrder",
+		FullMethod: "/order.gateway.order1.v1.Gateway/CreateOrder",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateOrder(ctx, req.(*CreateOrderRequest))
@@ -140,7 +140,7 @@ func _Gateway_GetOrders_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/order.gateway.order.v1.Gateway/GetOrders",
+		FullMethod: "/order.gateway.order1.v1.Gateway/GetOrders",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetOrders(ctx, req.(*GetOrdersRequest))
@@ -158,7 +158,7 @@ func _Gateway_GetUserOrders_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/order.gateway.order.v1.Gateway/GetUserOrders",
+		FullMethod: "/order.gateway.order1.v1.Gateway/GetUserOrders",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetUserOrders(ctx, req.(*GetUserOrdersRequest))
@@ -176,7 +176,7 @@ func _Gateway_GetAppUserOrders_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/order.gateway.order.v1.Gateway/GetAppUserOrders",
+		FullMethod: "/order.gateway.order1.v1.Gateway/GetAppUserOrders",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetAppUserOrders(ctx, req.(*GetAppUserOrdersRequest))
@@ -188,7 +188,7 @@ func _Gateway_GetAppUserOrders_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "order.gateway.order.v1.Gateway",
+	ServiceName: "order.gateway.order1.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

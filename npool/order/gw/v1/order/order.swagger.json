@@ -217,6 +217,20 @@
         }
       }
     },
+    "v1EState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "WaitPayment",
+        "Paid",
+        "PaymentTimeout",
+        "Canceled",
+        "InService",
+        "Expired"
+      ],
+      "default": "DefaultState",
+      "title": "- WaitPayment: Common state\n - InService: Cyclation order state"
+    },
     "v1GetAppUserOrdersRequest": {
       "type": "object",
       "properties": {
@@ -412,6 +426,9 @@
         "PayAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "State": {
+          "$ref": "#/definitions/v1EState"
         }
       }
     }

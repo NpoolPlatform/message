@@ -1,9 +1,10 @@
 syntax = "proto3";
 
-package order.middleware.order.v1;
+package order.middleware.order1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/order";
 
+import "npool/order/mgr/v1/order/state/state.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -32,6 +33,8 @@ message Order {
     optional string FixAmountID            = 140;
     optional string DiscountID             = 150;
     optional string SpecialOfferID         = 160;
+
+    order.manager.order.state.v1.EState State = 340;
 }
 
 message CreateOrderRequest {

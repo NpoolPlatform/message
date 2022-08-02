@@ -179,7 +179,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/order.gateway.order.v1.Gateway/CreateOrder", runtime.WithHTTPPathPattern("/v1/create/order"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/order.gateway.order1.v1.Gateway/CreateOrder", runtime.WithHTTPPathPattern("/v1/create/order"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -202,7 +202,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/order.gateway.order.v1.Gateway/GetOrders", runtime.WithHTTPPathPattern("/v1/get/orders"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/order.gateway.order1.v1.Gateway/GetOrders", runtime.WithHTTPPathPattern("/v1/get/orders"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -225,7 +225,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/order.gateway.order.v1.Gateway/GetUserOrders", runtime.WithHTTPPathPattern("/v1/get/user/orders"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/order.gateway.order1.v1.Gateway/GetUserOrders", runtime.WithHTTPPathPattern("/v1/get/user/orders"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -248,7 +248,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/order.gateway.order.v1.Gateway/GetAppUserOrders", runtime.WithHTTPPathPattern("/v1/get/app/user/orders"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/order.gateway.order1.v1.Gateway/GetAppUserOrders", runtime.WithHTTPPathPattern("/v1/get/app/user/orders"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -310,7 +310,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/order.gateway.order.v1.Gateway/CreateOrder", runtime.WithHTTPPathPattern("/v1/create/order"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/order.gateway.order1.v1.Gateway/CreateOrder", runtime.WithHTTPPathPattern("/v1/create/order"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -330,7 +330,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/order.gateway.order.v1.Gateway/GetOrders", runtime.WithHTTPPathPattern("/v1/get/orders"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/order.gateway.order1.v1.Gateway/GetOrders", runtime.WithHTTPPathPattern("/v1/get/orders"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -350,7 +350,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/order.gateway.order.v1.Gateway/GetUserOrders", runtime.WithHTTPPathPattern("/v1/get/user/orders"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/order.gateway.order1.v1.Gateway/GetUserOrders", runtime.WithHTTPPathPattern("/v1/get/user/orders"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -370,7 +370,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/order.gateway.order.v1.Gateway/GetAppUserOrders", runtime.WithHTTPPathPattern("/v1/get/app/user/orders"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/order.gateway.order1.v1.Gateway/GetAppUserOrders", runtime.WithHTTPPathPattern("/v1/get/app/user/orders"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

@@ -52,6 +52,20 @@
         }
       }
     },
+    "v1EState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "WaitPayment",
+        "Paid",
+        "PaymentTimeout",
+        "Canceled",
+        "InService",
+        "Expired"
+      ],
+      "default": "DefaultState",
+      "title": "- WaitPayment: Common state\n - InService: Cyclation order state"
+    },
     "v1Order": {
       "type": "object",
       "properties": {
@@ -103,6 +117,9 @@
         },
         "SpecialOfferID": {
           "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1EState"
         }
       }
     }

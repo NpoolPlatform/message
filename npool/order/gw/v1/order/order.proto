@@ -1,9 +1,10 @@
 syntax = "proto3";
 
-package order.gateway.order.v1;
+package order.gateway.order1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/order/gw/v1/order";
 
+import "npool/order/mgr/v1/order/state/state.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -84,6 +85,8 @@ message Order {
 
     uint32          CreateAt               = 320;
     uint32          PayAt                  = 330;
+
+    order.manager.order.state.v1.EState State = 340;
 }
 
 message CreateOrderRequest {
