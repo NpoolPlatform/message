@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package inspire.middleware.inspire.coupon.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/inspire/coupon";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Middleware {
+    rpc GetCoupon (GetCouponRequest) returns (GetCouponResponse) {}
+}
+
+enum CouponType {
+    DefaultCouponType  = 0;
+    FixAmount          = 10;
+    Discount           = 20;
+    SpecialOffer       = 30;
+    ThresholdReduction = 40;
+}
+
+message Coupon {
+    string     ID              = 10;
+    CouponType Type            = 20;
+    string     Value           = 30;
+    string     ThresholdAmount = 40;
+    uint32     Start           = 50;
+    uint32     End             = 60;
+    string     Name            = 70;
+    string     Message         = 80;
+}
+
+message GetCouponRequest {
+    string     ID   = 10;
+    CouponType Type = 20;
+}
+
+message GetCouponResponse {
+    Coupon Info = 10;
+}
