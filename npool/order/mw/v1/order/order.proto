@@ -38,15 +38,27 @@ message Order {
 }
 
 message CreateOrderRequest {
-    string          AppID                = 10;
-    string          UserID               = 20;
-    string          GoodID               = 30;
-    uint32          Units                = 40;
-    string          PaymentCoinID        = 50;
-    optional string PayWithBalanceAmount = 60;
-    optional string FixAmountID          = 70;
-    optional string DiscountID           = 80;
-    optional string SpecialOfferID       = 90;
+    string          AppID                     = 10;
+    string          UserID                    = 20;
+    string          GoodID                    = 30;
+    uint32          Units                     = 40;
+    string          OrderType                 = 50;
+
+    optional string ParentOrderID             = 60;
+    bool            PayWithParent             = 70;
+
+    string          PaymentCoinID             = 80;
+    optional string PayWithBalanceAmount      = 90;
+    string          PaymentAccountID          = 100;
+    string          PaymentAmount             = 110;
+    string          PaymentAccountStartAmount = 120;
+    string          PaymentCoinUSDCurrency    = 130;
+    string          PaymentLiveUSDCurrency    = 140;
+    string          PaymentLocalUSDCurrency   = 150;
+
+    optional string FixAmountID               = 160;
+    optional string DiscountID                = 170;
+    optional string SpecialOfferID            = 180;
 }
 
 message CreateOrderResponse {
