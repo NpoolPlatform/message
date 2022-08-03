@@ -93,8 +93,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"pay_with_balance_amount\""
         },
-        "PayWithParent": {
-          "type": "boolean",
+        "PayWithParentInt": {
+          "type": "integer",
+          "format": "int32",
           "title": "@inject_tag: sql:\"pay_with_parent\""
         },
         "FixAmountID": {
@@ -119,6 +120,9 @@
         },
         "Type": {
           "$ref": "#/definitions/v1OrderType"
+        },
+        "PayWithParent": {
+          "type": "boolean"
         }
       }
     },

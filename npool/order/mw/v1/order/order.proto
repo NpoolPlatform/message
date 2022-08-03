@@ -76,7 +76,7 @@ message Order {
     // @inject_tag: sql:"pay_with_balance_amount"
     string PayWithBalanceAmount   = 140;
     // @inject_tag: sql:"pay_with_parent"
-    bool   PayWithParent          = 150;
+    int32  PayWithParentInt       = 150;
 
     // @inject_tag: sql:"coupon_id"
     string FixAmountID            = 160;
@@ -88,8 +88,9 @@ message Order {
     // @inject_tag: sql:"create_at"
     uint32 CreatedAt              = 190;
 
-    order.manager.order.state.v1.EState    State = 200;
-    order.manager.order.order.v1.OrderType Type = 210;
+    order.manager.order.state.v1.EState    State         = 200;
+    order.manager.order.order.v1.OrderType Type          = 210;
+    bool                                   PayWithParent = 220;
 }
 
 message Conds {
