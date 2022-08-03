@@ -37,7 +37,7 @@ enum EState {
     WaitPayment       = 10;
     Paid              = 20;
     PaymentTimeout    = 30;
-    Cancelled         = 40;
+    Canceled          = 40;
 
     // Cyclation order state
     InService         = 50;
