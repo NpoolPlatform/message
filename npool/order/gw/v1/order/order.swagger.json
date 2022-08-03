@@ -422,11 +422,11 @@
         "SpecialOfferAmount": {
           "type": "string"
         },
-        "CreateAt": {
+        "CreatedAt": {
           "type": "integer",
           "format": "int64"
         },
-        "PayAt": {
+        "PaidAt": {
           "type": "integer",
           "format": "int64"
         },

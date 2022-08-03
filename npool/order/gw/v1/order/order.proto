@@ -83,8 +83,8 @@ message Order {
     optional string SpecialOfferID         = 300;
     optional string SpecialOfferAmount     = 310;
 
-    uint32          CreateAt               = 320;
-    uint32          PayAt                  = 330;
+    uint32          CreatedAt              = 320;
+    uint32          PaidAt                 = 330;
 
     order.manager.order.state.v1.EState State = 340;
 }
