@@ -273,8 +273,8 @@ type Order struct {
 	PaymentState string `protobuf:"bytes,170,opt,name=PaymentState,proto3" json:"PaymentState,omitempty" sql:"payment_state"`
 	// @inject_tag: sql:"pay_with_balance_amount"
 	PayWithBalanceAmount string `protobuf:"bytes,180,opt,name=PayWithBalanceAmount,proto3" json:"PayWithBalanceAmount,omitempty" sql:"pay_with_balance_amount"`
-	// @inject_tag: sql:"payment_created_at"
-	PaidAt uint32 `protobuf:"varint,190,opt,name=PaidAt,proto3" json:"PaidAt,omitempty" sql:"payment_created_at"`
+	// @inject_tag: sql:"paid_at"
+	PaidAt uint32 `protobuf:"varint,190,opt,name=PaidAt,proto3" json:"PaidAt,omitempty" sql:"paid_at"`
 	// @inject_tag: sql:"coupon_id"
 	FixAmountID string `protobuf:"bytes,200,opt,name=FixAmountID,proto3" json:"FixAmountID,omitempty" sql:"coupon_id"`
 	// @inject_tag: sql:"discount_coupon_id"

@@ -119,7 +119,7 @@
         "PaidAt": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"payment_created_at\""
+          "title": "@inject_tag: sql:\"paid_at\""
         },
         "FixAmountID": {
           "type": "string",

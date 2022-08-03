@@ -83,7 +83,7 @@ message Order {
     string PaymentState           = 170;
     // @inject_tag: sql:"pay_with_balance_amount"
     string PayWithBalanceAmount   = 180;
-    // @inject_tag: sql:"payment_created_at"
+    // @inject_tag: sql:"paid_at"
     uint32 PaidAt                 = 190;
 
     // @inject_tag: sql:"coupon_id"
