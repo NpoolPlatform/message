@@ -39,26 +39,44 @@ message OrderReq {
 }
 
 message Order {
-    string          ID                     = 10;
-    string          ParentOrderID          = 20;
-    string          UserID                 = 30;
-    string          CoinTypeID             = 40;
-    string          GoodID                 = 50;
-    uint32          Units                  = 60;
+    // @inject_tag: sql:"id"
+    string ID                     = 10;
+    // @inject_tag: sql:"parent_order_id"
+    string ParentOrderID          = 20;
+    // @inject_tag: sql:"user_id"
+    string UserID                 = 30;
+    // @inject_tag: sql:"coin_type_id"
+    string CoinTypeID             = 40;
+    // @inject_tag: sql:"good_id"
+    string GoodID                 = 50;
+    // @inject_tag: sql:"uints"
+    uint32 Units                  = 60;
 
-    string          PaymentCoinTypeID      = 70;
-    string          PaymentCoinUSDCurrency = 80;
-    string          PaymentID              = 90;
-    string          PaymentAddress         = 100;
-    string          PaymentAmount          = 110;
-    optional string PayWithBalanceAmount   = 120;
-    bool            PayWithParent          = 130;
+    // @inject_tag: sql:"payment_coin_type_id"
+    string PaymentCoinTypeID      = 70;
+    // @inject_tag: sql:"payment_coin_usd_currency"
+    string PaymentCoinUSDCurrency = 80;
+    // @inject_tag: sql:"payment_id"
+    string PaymentID              = 90;
+    // @inject_tag: sql:"payment_account_id"
+    string PaymentAccountID       = 100;
+    // @inject_tag: sql:"payment_amount"
+    string PaymentAmount          = 110;
+    // @inject_tag: sql:"payment_state"
+    string PaymentState           = 120;
+    // @inject_tag: sql:"pay_with_balance_amount"
+    string PayWithBalanceAmount   = 130;
+    // @inject_tag: sql:"pay_with_parent"
+    bool   PayWithParent          = 140;
 
-    optional string FixAmountID            = 140;
-    optional string DiscountID             = 150;
-    optional string SpecialOfferID         = 160;
+    // @inject_tag: sql:"coupon_id"
+    string FixAmountID            = 150;
+    // @inject_tag: sql:"discount_id"
+    string DiscountID             = 160;
+    // @inject_tag: sql:"special_offer_id"
+    string SpecialOfferID         = 170;
 
-    order.manager.order.state.v1.EState State = 340;
+    order.manager.order.state.v1.EState State = 180;
 }
 
 message CreateOrderRequest {
