@@ -206,6 +206,9 @@
         },
         "SpecialOfferID": {
           "type": "string"
+        },
+        "OrderType": {
+          "type": "string"
         }
       }
     },
