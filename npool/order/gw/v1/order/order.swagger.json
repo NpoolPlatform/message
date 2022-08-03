@@ -220,20 +220,6 @@
         }
       }
     },
-    "v1EState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "WaitPayment",
-        "Paid",
-        "PaymentTimeout",
-        "Canceled",
-        "InService",
-        "Expired"
-      ],
-      "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - InService: Cyclation order state"
-    },
     "v1GetAppUserOrdersRequest": {
       "type": "object",
       "properties": {
@@ -385,6 +371,12 @@
         "PaymentCoinUSDCurrency": {
           "type": "string"
         },
+        "PaymentLiveUSDCurrency": {
+          "type": "string"
+        },
+        "PaymentLocalUSDCurrency": {
+          "type": "string"
+        },
         "PaymentAddress": {
           "type": "string"
         },
@@ -431,7 +423,18 @@
           "format": "int64"
         },
         "State": {
-          "$ref": "#/definitions/v1EState"
+          "type": "string"
+        },
+        "OrderType": {
+          "type": "string"
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "End": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }
