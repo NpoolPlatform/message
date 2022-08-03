@@ -37,6 +37,9 @@ message OrderReq {
     optional string FixAmountID               = 160;
     optional string DiscountID                = 170;
     optional string SpecialOfferID            = 180;
+
+    optional uint32 Start                     = 190;
+    optional uint32 End                       = 200;
 }
 
 message Order {
@@ -79,8 +82,11 @@ message Order {
     // @inject_tag: sql:"special_offer_id"
     string SpecialOfferID         = 180;
 
-    order.manager.order.state.v1.EState    State = 190;
-    order.manager.order.order.v1.OrderType Type = 200;
+    // @inject_tag: sql:"create_at"
+    uint32 CreatedAt              = 190;
+
+    order.manager.order.state.v1.EState    State = 200;
+    order.manager.order.order.v1.OrderType Type = 210;
 }
 
 message Conds {
@@ -93,6 +99,7 @@ message Conds {
     optional npool.v1.Uint32Val      PaymentState       = 70;
     optional npool.v1.StringVal      PaymentAmount      = 80;
     optional npool.v1.Uint32Val      OrderType          = 90;
+    optional npool.v1.Uint32Val      CreatedAt          = 100;
 }
 
 message CreateOrderRequest {

@@ -101,6 +101,11 @@
           "type": "string",
           "title": "@inject_tag: sql:\"special_offer_id\""
         },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"create_at\""
+        },
         "State": {
           "$ref": "#/definitions/v1EState"
         },
@@ -166,6 +171,14 @@
         },
         "SpecialOfferID": {
           "type": "string"
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "End": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
