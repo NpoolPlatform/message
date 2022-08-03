@@ -73,10 +73,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
         },
-        "ParentOrderID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"parent_order_id\""
-        },
         "UserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
@@ -93,6 +89,10 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"uints\""
+        },
+        "ParentOrderID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"parent_order_id\""
         },
         "PaymentCoinTypeID": {
           "type": "string",

@@ -41,16 +41,16 @@ message OrderReq {
 message Order {
     // @inject_tag: sql:"id"
     string ID                     = 10;
-    // @inject_tag: sql:"parent_order_id"
-    string ParentOrderID          = 20;
     // @inject_tag: sql:"user_id"
-    string UserID                 = 30;
+    string UserID                 = 20;
     // @inject_tag: sql:"coin_type_id"
-    string CoinTypeID             = 40;
+    string CoinTypeID             = 30;
     // @inject_tag: sql:"good_id"
-    string GoodID                 = 50;
+    string GoodID                 = 40;
     // @inject_tag: sql:"uints"
-    uint32 Units                  = 60;
+    uint32 Units                  = 50;
+    // @inject_tag: sql:"parent_order_id"
+    string ParentOrderID          = 60;
 
     // @inject_tag: sql:"payment_coin_type_id"
     string PaymentCoinTypeID      = 70;
@@ -77,6 +77,17 @@ message Order {
     string SpecialOfferID         = 170;
 
     order.manager.order.state.v1.EState State = 180;
+}
+
+message Conds {
+    optional npool.v1.StringVal      ID                 = 10;
+    optional npool.v1.StringSliceVal IDs                = 20;
+    optional npool.v1.StringVal      AppID              = 30;
+    optional npool.v1.StringVal      UserID             = 40;
+    optional npool.v1.StringVal      CoinTypeID         = 50;
+    optional npool.v1.StringVal      ParentOrderID      = 60;
+    optional npool.v1.Uint32Val      PaymentState       = 70;
+    optional npool.v1.StringVal      PaymentAmount      = 80;
 }
 
 message CreateOrderRequest {
