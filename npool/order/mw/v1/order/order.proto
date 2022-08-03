@@ -86,9 +86,9 @@ message Order {
 
     // @inject_tag: sql:"coupon_id"
     string FixAmountID            = 190;
-    // @inject_tag: sql:"discount_id"
+    // @inject_tag: sql:"discount_coupon_id"
     string DiscountID             = 200;
-    // @inject_tag: sql:"special_offer_id"
+    // @inject_tag: sql:"user_special_reduction_id"
     string SpecialOfferID         = 210;
 
     // @inject_tag: sql:"create_at"

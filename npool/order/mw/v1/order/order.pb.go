@@ -275,10 +275,10 @@ type Order struct {
 	PayWithBalanceAmount string `protobuf:"bytes,180,opt,name=PayWithBalanceAmount,proto3" json:"PayWithBalanceAmount,omitempty" sql:"pay_with_balance_amount"`
 	// @inject_tag: sql:"coupon_id"
 	FixAmountID string `protobuf:"bytes,190,opt,name=FixAmountID,proto3" json:"FixAmountID,omitempty" sql:"coupon_id"`
-	// @inject_tag: sql:"discount_id"
-	DiscountID string `protobuf:"bytes,200,opt,name=DiscountID,proto3" json:"DiscountID,omitempty" sql:"discount_id"`
-	// @inject_tag: sql:"special_offer_id"
-	SpecialOfferID string `protobuf:"bytes,210,opt,name=SpecialOfferID,proto3" json:"SpecialOfferID,omitempty" sql:"special_offer_id"`
+	// @inject_tag: sql:"discount_coupon_id"
+	DiscountID string `protobuf:"bytes,200,opt,name=DiscountID,proto3" json:"DiscountID,omitempty" sql:"discount_coupon_id"`
+	// @inject_tag: sql:"user_special_reduction_id"
+	SpecialOfferID string `protobuf:"bytes,210,opt,name=SpecialOfferID,proto3" json:"SpecialOfferID,omitempty" sql:"user_special_reduction_id"`
 	// @inject_tag: sql:"create_at"
 	CreatedAt                   uint32          `protobuf:"varint,220,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"create_at"`
 	State                       state.EState    `protobuf:"varint,230,opt,name=State,proto3,enum=order.manager.order.state.v1.EState" json:"State,omitempty"`

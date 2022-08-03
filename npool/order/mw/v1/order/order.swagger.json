@@ -122,11 +122,11 @@
         },
         "DiscountID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"discount_id\""
+          "title": "@inject_tag: sql:\"discount_coupon_id\""
         },
         "SpecialOfferID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"special_offer_id\""
+          "title": "@inject_tag: sql:\"user_special_reduction_id\""
         },
         "CreatedAt": {
           "type": "integer",
