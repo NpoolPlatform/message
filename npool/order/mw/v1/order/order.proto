@@ -5,6 +5,7 @@ package order.middleware.order1.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/order";
 
 import "npool/order/mgr/v1/order/state/state.proto";
+import "npool/order/mgr/v1/order/order/order.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -19,7 +20,7 @@ message OrderReq {
     optional string UserID                    = 20;
     optional string GoodID                    = 30;
     optional uint32 Units                     = 40;
-    optional string OrderType                 = 50;
+    optional order.manager.order.order.v1.OrderType OrderType = 50;
 
     optional string ParentOrderID             = 60;
     optional bool   PayWithParent             = 70;
@@ -49,34 +50,37 @@ message Order {
     string GoodID                 = 40;
     // @inject_tag: sql:"uints"
     uint32 Units                  = 50;
+    // @inject_tag: sql:"order_type"
+    string OrderType              = 60;
     // @inject_tag: sql:"parent_order_id"
-    string ParentOrderID          = 60;
+    string ParentOrderID          = 70;
 
     // @inject_tag: sql:"payment_coin_type_id"
-    string PaymentCoinTypeID      = 70;
+    string PaymentCoinTypeID      = 80;
     // @inject_tag: sql:"payment_coin_usd_currency"
-    string PaymentCoinUSDCurrency = 80;
+    string PaymentCoinUSDCurrency = 90;
     // @inject_tag: sql:"payment_id"
-    string PaymentID              = 90;
+    string PaymentID              = 100;
     // @inject_tag: sql:"payment_account_id"
-    string PaymentAccountID       = 100;
+    string PaymentAccountID       = 110;
     // @inject_tag: sql:"payment_amount"
-    string PaymentAmount          = 110;
+    string PaymentAmount          = 120;
     // @inject_tag: sql:"payment_state"
-    string PaymentState           = 120;
+    string PaymentState           = 130;
     // @inject_tag: sql:"pay_with_balance_amount"
-    string PayWithBalanceAmount   = 130;
+    string PayWithBalanceAmount   = 140;
     // @inject_tag: sql:"pay_with_parent"
-    bool   PayWithParent          = 140;
+    bool   PayWithParent          = 150;
 
     // @inject_tag: sql:"coupon_id"
-    string FixAmountID            = 150;
+    string FixAmountID            = 160;
     // @inject_tag: sql:"discount_id"
-    string DiscountID             = 160;
+    string DiscountID             = 170;
     // @inject_tag: sql:"special_offer_id"
-    string SpecialOfferID         = 170;
+    string SpecialOfferID         = 180;
 
-    order.manager.order.state.v1.EState State = 180;
+    order.manager.order.state.v1.EState    State = 190;
+    order.manager.order.order.v1.OrderType Type = 200;
 }
 
 message Conds {
@@ -88,6 +92,7 @@ message Conds {
     optional npool.v1.StringVal      ParentOrderID      = 60;
     optional npool.v1.Uint32Val      PaymentState       = 70;
     optional npool.v1.StringVal      PaymentAmount      = 80;
+    optional npool.v1.Uint32Val      OrderType          = 90;
 }
 
 message CreateOrderRequest {

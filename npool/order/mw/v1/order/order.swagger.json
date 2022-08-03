@@ -17,56 +17,15 @@
   ],
   "paths": {},
   "definitions": {
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1CreateOrderResponse": {
+    "middlewareorder1v1CreateOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/middlewareorder1v1Order"
         }
       }
     },
-    "v1EState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "WaitPayment",
-        "Paid",
-        "PaymentTimeout",
-        "Canceled",
-        "InService",
-        "Expired"
-      ],
-      "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - InService: Cyclation order state"
-    },
-    "v1Order": {
+    "middlewareorder1v1Order": {
       "type": "object",
       "properties": {
         "ID": {
@@ -89,6 +48,10 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"uints\""
+        },
+        "OrderType": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"order_type\""
         },
         "ParentOrderID": {
           "type": "string",
@@ -140,10 +103,13 @@
         },
         "State": {
           "$ref": "#/definitions/v1EState"
+        },
+        "Type": {
+          "$ref": "#/definitions/v1OrderType"
         }
       }
     },
-    "v1OrderReq": {
+    "middlewareorder1v1OrderReq": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -160,7 +126,7 @@
           "format": "int64"
         },
         "OrderType": {
-          "type": "string"
+          "$ref": "#/definitions/v1OrderType"
         },
         "ParentOrderID": {
           "type": "string"
@@ -202,6 +168,57 @@
           "type": "string"
         }
       }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1EState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "WaitPayment",
+        "Paid",
+        "PaymentTimeout",
+        "Canceled",
+        "InService",
+        "Expired"
+      ],
+      "default": "DefaultState",
+      "title": "- WaitPayment: Common state\n - InService: Cyclation order state"
+    },
+    "v1OrderType": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderType",
+        "Normal",
+        "Offline",
+        "Airdrop"
+      ],
+      "default": "DefaultOrderType"
     }
   }
 }
