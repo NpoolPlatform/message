@@ -62,27 +62,27 @@ message Order {
     uint32 Start                  = 70;
     // @inject_tag: sql:"end"
     uint32 End                    = 80;
+    // @inject_tag: sql:"pay_with_parent"
+    int32  PayWithParentInt       = 90;
 
     // @inject_tag: sql:"payment_coin_type_id"
-    string PaymentCoinTypeID           = 90;
+    string PaymentCoinTypeID           = 100;
     // @inject_tag: sql:"payment_coin_usd_currency"
-    uint64 PaymentCoinUSDCurrencyUint  = 100;
+    uint64 PaymentCoinUSDCurrencyUint  = 110;
     // @inject_tag: sql:"payment_local_coin_usd_currency"
-    uint64 PaymentLocalUSDCurrencyUint = 110;
+    uint64 PaymentLocalUSDCurrencyUint = 120;
     // @inject_tag: sql:"payment_live_coin_usd_currency"
-    uint64 PaymentLiveUSDCurrencyUint  = 120;
+    uint64 PaymentLiveUSDCurrencyUint  = 130;
     // @inject_tag: sql:"payment_id"
-    string PaymentID              = 130;
+    string PaymentID              = 140;
     // @inject_tag: sql:"payment_account_id"
-    string PaymentAccountID       = 140;
+    string PaymentAccountID       = 150;
     // @inject_tag: sql:"payment_amount"
-    uint64 PaymentAmountUint      = 150;
+    uint64 PaymentAmountUint      = 160;
     // @inject_tag: sql:"payment_state"
-    string PaymentState           = 160;
+    string PaymentState           = 170;
     // @inject_tag: sql:"pay_with_balance_amount"
-    uint64 PayWithBalanceAmountUint   = 170;
-    // @inject_tag: sql:"pay_with_parent"
-    int32  PayWithParentInt       = 180;
+    uint64 PayWithBalanceAmountUint   = 180;
 
     // @inject_tag: sql:"coupon_id"
     string FixAmountID            = 190;
