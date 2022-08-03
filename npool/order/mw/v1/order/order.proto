@@ -40,6 +40,8 @@ message OrderReq {
 
     optional uint32 Start                     = 190;
     optional uint32 End                       = 200;
+
+    optional uint32 PromotionID               = 210;
 }
 
 message Order {
