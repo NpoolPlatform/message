@@ -14,6 +14,30 @@ service Middleware {
     rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse) {}
 }
 
+message OrderReq {
+    optional string AppID                     = 10;
+    optional string UserID                    = 20;
+    optional string GoodID                    = 30;
+    optional uint32 Units                     = 40;
+    optional string OrderType                 = 50;
+
+    optional string ParentOrderID             = 60;
+    optional bool   PayWithParent             = 70;
+
+    optional string PaymentCoinID             = 80;
+    optional string PayWithBalanceAmount      = 90;
+    optional string PaymentAccountID          = 100;
+    optional string PaymentAmount             = 110;
+    optional string PaymentAccountStartAmount = 120;
+    optional string PaymentCoinUSDCurrency    = 130;
+    optional string PaymentLiveUSDCurrency    = 140;
+    optional string PaymentLocalUSDCurrency   = 150;
+
+    optional string FixAmountID               = 160;
+    optional string DiscountID                = 170;
+    optional string SpecialOfferID            = 180;
+}
+
 message Order {
     string          ID                     = 10;
     string          ParentOrderID          = 20;
@@ -38,27 +62,7 @@ message Order {
 }
 
 message CreateOrderRequest {
-    string          AppID                     = 10;
-    string          UserID                    = 20;
-    string          GoodID                    = 30;
-    uint32          Units                     = 40;
-    string          OrderType                 = 50;
-
-    optional string ParentOrderID             = 60;
-    bool            PayWithParent             = 70;
-
-    string          PaymentCoinID             = 80;
-    optional string PayWithBalanceAmount      = 90;
-    string          PaymentAccountID          = 100;
-    string          PaymentAmount             = 110;
-    string          PaymentAccountStartAmount = 120;
-    string          PaymentCoinUSDCurrency    = 130;
-    string          PaymentLiveUSDCurrency    = 140;
-    string          PaymentLocalUSDCurrency   = 150;
-
-    optional string FixAmountID               = 160;
-    optional string DiscountID                = 170;
-    optional string SpecialOfferID            = 180;
+    OrderReq Info = 10;
 }
 
 message CreateOrderResponse {

@@ -122,6 +122,66 @@
           "$ref": "#/definitions/v1EState"
         }
       }
+    },
+    "v1OrderReq": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "OrderType": {
+          "type": "string"
+        },
+        "ParentOrderID": {
+          "type": "string"
+        },
+        "PayWithParent": {
+          "type": "boolean"
+        },
+        "PaymentCoinID": {
+          "type": "string"
+        },
+        "PayWithBalanceAmount": {
+          "type": "string"
+        },
+        "PaymentAccountID": {
+          "type": "string"
+        },
+        "PaymentAmount": {
+          "type": "string"
+        },
+        "PaymentAccountStartAmount": {
+          "type": "string"
+        },
+        "PaymentCoinUSDCurrency": {
+          "type": "string"
+        },
+        "PaymentLiveUSDCurrency": {
+          "type": "string"
+        },
+        "PaymentLocalUSDCurrency": {
+          "type": "string"
+        },
+        "FixAmountID": {
+          "type": "string"
+        },
+        "DiscountID": {
+          "type": "string"
+        },
+        "SpecialOfferID": {
+          "type": "string"
+        }
+      }
     }
   }
 }
