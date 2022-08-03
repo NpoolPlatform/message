@@ -63,7 +63,7 @@
         },
         "ParentOrderGoodID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"parent_good_id\""
+          "title": "@inject_tag: sql:\"parent_order_good_id\""
         },
         "Start": {
           "type": "integer",

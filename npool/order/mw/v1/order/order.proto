@@ -58,7 +58,7 @@ message Order {
     string OrderType              = 50;
     // @inject_tag: sql:"parent_order_id"
     string ParentOrderID          = 60;
-    // @inject_tag: sql:"parent_good_id"
+    // @inject_tag: sql:"parent_order_good_id"
     string ParentOrderGoodID      = 70;
     // @inject_tag: sql:"start"
     uint32 Start                  = 80;

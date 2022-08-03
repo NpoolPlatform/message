@@ -249,8 +249,8 @@ type Order struct {
 	OrderType string `protobuf:"bytes,50,opt,name=OrderType,proto3" json:"OrderType,omitempty" sql:"order_type"`
 	// @inject_tag: sql:"parent_order_id"
 	ParentOrderID string `protobuf:"bytes,60,opt,name=ParentOrderID,proto3" json:"ParentOrderID,omitempty" sql:"parent_order_id"`
-	// @inject_tag: sql:"parent_good_id"
-	ParentOrderGoodID string `protobuf:"bytes,70,opt,name=ParentOrderGoodID,proto3" json:"ParentOrderGoodID,omitempty" sql:"parent_good_id"`
+	// @inject_tag: sql:"parent_order_good_id"
+	ParentOrderGoodID string `protobuf:"bytes,70,opt,name=ParentOrderGoodID,proto3" json:"ParentOrderGoodID,omitempty" sql:"parent_order_good_id"`
 	// @inject_tag: sql:"start"
 	Start uint32 `protobuf:"varint,80,opt,name=Start,proto3" json:"Start,omitempty" sql:"start"`
 	// @inject_tag: sql:"end"
