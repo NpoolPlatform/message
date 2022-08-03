@@ -75,9 +75,20 @@
           "type": "string",
           "title": "@inject_tag: sql:\"payment_coin_type_id\""
         },
-        "PaymentCoinUSDCurrency": {
+        "PaymentCoinUSDCurrencyUint": {
           "type": "string",
+          "format": "uint64",
           "title": "@inject_tag: sql:\"payment_coin_usd_currency\""
+        },
+        "PaymentLocalUSDCurrencyUint": {
+          "type": "string",
+          "format": "uint64",
+          "title": "@inject_tag: sql:\"payment_local_coin_usd_currency\""
+        },
+        "PaymentLiveUSDCurrencyUint": {
+          "type": "string",
+          "format": "uint64",
+          "title": "@inject_tag: sql:\"payment_live_coin_usd_currency\""
         },
         "PaymentID": {
           "type": "string",
@@ -87,16 +98,18 @@
           "type": "string",
           "title": "@inject_tag: sql:\"payment_account_id\""
         },
-        "PaymentAmount": {
+        "PaymentAmountUint": {
           "type": "string",
+          "format": "uint64",
           "title": "@inject_tag: sql:\"payment_amount\""
         },
         "PaymentState": {
           "type": "string",
           "title": "@inject_tag: sql:\"payment_state\""
         },
-        "PayWithBalanceAmount": {
+        "PayWithBalanceAmountUint": {
           "type": "string",
+          "format": "uint64",
           "title": "@inject_tag: sql:\"pay_with_balance_amount\""
         },
         "PayWithParentInt": {
@@ -129,6 +142,21 @@
         },
         "PayWithParent": {
           "type": "boolean"
+        },
+        "PaymentAmount": {
+          "type": "string"
+        },
+        "PayWithBalanceAmount": {
+          "type": "string"
+        },
+        "PaymentCoinUSDCurrency": {
+          "type": "string"
+        },
+        "PaymentLiveCoinUSDCurrency": {
+          "type": "string"
+        },
+        "PaymentLocalCoinUSDCurrency": {
+          "type": "string"
         }
       }
     },
