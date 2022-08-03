@@ -61,6 +61,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"parent_order_id\""
         },
+        "ParentOrderGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"parent_good_id\""
+        },
         "Start": {
           "type": "integer",
           "format": "int64",
