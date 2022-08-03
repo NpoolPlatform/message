@@ -67,33 +67,34 @@ message Order {
     string PaymentCoinTypeID      = 160;
     string PaymentCoinName        = 170;
     string PaymentCoinLogo        = 180;
-    string PaymentCoinUSDCurrency = 190;
-    string PaymentLiveUSDCurrency = 200;
-    string PaymentLocalUSDCurrency = 210;
-    string PaymentAddress         = 220;
-    string PaymentAmount          = 230;
-    string PayWithBalanceAmount   = 240;
-    bool   PayWithParent          = 250;
+    string PaymentCoinUnit        = 190;
+    string PaymentCoinUSDCurrency = 200;
+    string PaymentLiveUSDCurrency = 210;
+    string PaymentLocalUSDCurrency = 220;
+    string PaymentAddress         = 230;
+    string PaymentAmount          = 240;
+    string PayWithBalanceAmount   = 250;
+    bool   PayWithParent          = 260;
 
-    string FixAmountID            = 260;
-    string FixAmountName          = 270;
-    string FixAmountAmount        = 280;
+    string FixAmountID            = 270;
+    string FixAmountName          = 280;
+    string FixAmountAmount        = 290;
 
-    string DiscountID             = 290;
-    string DiscountName           = 300;
-    uint32 DiscountPercent        = 310;
+    string DiscountID             = 300;
+    string DiscountName           = 310;
+    uint32 DiscountPercent        = 320;
 
-    string SpecialOfferID         = 320;
-    string SpecialOfferAmount     = 330;
+    string SpecialOfferID         = 330;
+    string SpecialOfferAmount     = 340;
 
-    uint32 CreatedAt              = 340;
-    uint32 PaidAt                 = 350;
+    uint32 CreatedAt              = 350;
+    uint32 PaidAt                 = 360;
 
-    order.manager.order.state.v1.EState    State     = 360;
-    order.manager.order.order.v1.OrderType OrderType = 370;
+    order.manager.order.state.v1.EState    State     = 370;
+    order.manager.order.order.v1.OrderType OrderType = 380;
 
-    uint32 Start                  = 380;
-    uint32 End                    = 390;
+    uint32 Start                  = 390;
+    uint32 End                    = 400;
 }
 
 message CreateOrderRequest {

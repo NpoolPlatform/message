@@ -281,6 +281,9 @@
         "PaymentCoinLogo": {
           "type": "string"
         },
+        "PaymentCoinUnit": {
+          "type": "string"
+        },
         "PaymentCoinUSDCurrency": {
           "type": "string"
         },
