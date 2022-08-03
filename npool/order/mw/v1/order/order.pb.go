@@ -243,8 +243,8 @@ type Order struct {
 	UserID string `protobuf:"bytes,20,opt,name=UserID,proto3" json:"UserID,omitempty" sql:"user_id"`
 	// @inject_tag: sql:"good_id"
 	GoodID string `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty" sql:"good_id"`
-	// @inject_tag: sql:"uints"
-	Units uint32 `protobuf:"varint,40,opt,name=Units,proto3" json:"Units,omitempty" sql:"uints"`
+	// @inject_tag: sql:"units"
+	Units uint32 `protobuf:"varint,40,opt,name=Units,proto3" json:"Units,omitempty" sql:"units"`
 	// @inject_tag: sql:"order_type"
 	OrderType string `protobuf:"bytes,50,opt,name=OrderType,proto3" json:"OrderType,omitempty" sql:"order_type"`
 	// @inject_tag: sql:"parent_order_id"

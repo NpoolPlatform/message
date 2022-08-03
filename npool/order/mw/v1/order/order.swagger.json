@@ -51,7 +51,7 @@
         "Units": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"uints\""
+          "title": "@inject_tag: sql:\"units\""
         },
         "OrderType": {
           "type": "string",

@@ -52,7 +52,7 @@ message Order {
     string UserID                 = 20;
     // @inject_tag: sql:"good_id"
     string GoodID                 = 30;
-    // @inject_tag: sql:"uints"
+    // @inject_tag: sql:"units"
     uint32 Units                  = 40;
     // @inject_tag: sql:"order_type"
     string OrderType              = 50;
