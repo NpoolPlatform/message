@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateOrderResponse"
+              "$ref": "#/definitions/gatewayorder1v1CreateOrderResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateOrderRequest"
+              "$ref": "#/definitions/gatewayorder1v1CreateOrderRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetOrdersResponse"
+              "$ref": "#/definitions/gatewayorder1v1GetOrdersResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetOrdersRequest"
+              "$ref": "#/definitions/gatewayorder1v1GetOrdersRequest"
             }
           }
         ],
@@ -146,34 +146,7 @@
     }
   },
   "definitions": {
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1CreateOrderRequest": {
+    "gatewayorder1v1CreateOrderRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -208,49 +181,19 @@
           "type": "string"
         },
         "OrderType": {
-          "type": "string"
+          "$ref": "#/definitions/v1OrderType"
         }
       }
     },
-    "v1CreateOrderResponse": {
+    "gatewayorder1v1CreateOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/gatewayorder1v1Order"
         }
       }
     },
-    "v1GetAppUserOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppUserOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Order"
-          }
-        }
-      }
-    },
-    "v1GetOrdersRequest": {
+    "gatewayorder1v1GetOrdersRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -269,48 +212,18 @@
         }
       }
     },
-    "v1GetOrdersResponse": {
+    "gatewayorder1v1GetOrdersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Order"
+            "$ref": "#/definitions/gatewayorder1v1Order"
           }
         }
       }
     },
-    "v1GetUserOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetUserOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Order"
-          }
-        }
-      }
-    },
-    "v1Order": {
+    "gatewayorder1v1Order": {
       "type": "object",
       "properties": {
         "ID": {
@@ -423,10 +336,10 @@
           "format": "int64"
         },
         "State": {
-          "type": "string"
+          "$ref": "#/definitions/v1EState"
         },
         "OrderType": {
-          "type": "string"
+          "$ref": "#/definitions/v1OrderType"
         },
         "Start": {
           "type": "integer",
@@ -437,6 +350,117 @@
           "format": "int64"
         }
       }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1EState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "WaitPayment",
+        "Paid",
+        "PaymentTimeout",
+        "Canceled",
+        "InService",
+        "Expired"
+      ],
+      "default": "DefaultState",
+      "title": "- WaitPayment: Common state\n - InService: Cyclation order state"
+    },
+    "v1GetAppUserOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppUserOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/gatewayorder1v1Order"
+          }
+        }
+      }
+    },
+    "v1GetUserOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetUserOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/gatewayorder1v1Order"
+          }
+        }
+      }
+    },
+    "v1OrderType": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderType",
+        "Normal",
+        "Offline",
+        "Airdrop"
+      ],
+      "default": "DefaultOrderType"
     }
   }
 }
