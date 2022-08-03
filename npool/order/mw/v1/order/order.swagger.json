@@ -181,8 +181,7 @@
           "format": "int64"
         },
         "PromotionID": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         }
       }
     },
