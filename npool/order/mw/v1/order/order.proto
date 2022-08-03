@@ -13,6 +13,7 @@ import "npool/npool.proto";
 // Service Name
 service Middleware {
     rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse) {}
+    rpc GetOrder    (GetOrderRequest)    returns (GetOrderResponse)    {}
 }
 
 message OrderReq {
@@ -109,5 +110,13 @@ message CreateOrderRequest {
 }
 
 message CreateOrderResponse {
+    Order Info = 10;
+}
+
+message GetOrderRequest {
+    string ID  = 10;
+}
+
+message GetOrderResponse {
     Order Info = 10;
 }

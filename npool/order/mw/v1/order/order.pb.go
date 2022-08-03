@@ -671,6 +671,100 @@ func (x *CreateOrderResponse) GetInfo() *Order {
 	return nil
 }
 
+type GetOrderRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+}
+
+func (x *GetOrderRequest) Reset() {
+	*x = GetOrderRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_order_mw_v1_order_order_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetOrderRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetOrderRequest) ProtoMessage() {}
+
+func (x *GetOrderRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_order_mw_v1_order_order_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetOrderRequest.ProtoReflect.Descriptor instead.
+func (*GetOrderRequest) Descriptor() ([]byte, []int) {
+	return file_npool_order_mw_v1_order_order_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *GetOrderRequest) GetID() string {
+	if x != nil {
+		return x.ID
+	}
+	return ""
+}
+
+type GetOrderResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *Order `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *GetOrderResponse) Reset() {
+	*x = GetOrderResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_order_mw_v1_order_order_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetOrderResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetOrderResponse) ProtoMessage() {}
+
+func (x *GetOrderResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_order_mw_v1_order_order_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetOrderResponse.ProtoReflect.Descriptor instead.
+func (*GetOrderResponse) Descriptor() ([]byte, []int) {
+	return file_npool_order_mw_v1_order_order_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *GetOrderResponse) GetInfo() *Order {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 var File_npool_order_mw_v1_order_order_proto protoreflect.FileDescriptor
 
 var file_npool_order_mw_v1_order_order_proto_rawDesc = []byte{
@@ -874,19 +968,32 @@ var file_npool_order_mw_v1_order_order_proto_rawDesc = []byte{
 	0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6f, 0x72, 0x64, 0x65,
 	0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6f, 0x72, 0x64,
 	0x65, 0x72, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e,
-	0x66, 0x6f, 0x32, 0x7e, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
-	0x12, 0x70, 0x0a, 0x0b, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12,
-	0x2e, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
-	0x72, 0x65, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65,
-	0x61, 0x74, 0x65, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x2f, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
-	0x72, 0x65, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65,
-	0x61, 0x74, 0x65, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x42, 0x3a, 0x5a, 0x38, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d,
-	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6f, 0x72, 0x64,
-	0x65, 0x72, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x62, 0x06,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x66, 0x6f, 0x22, 0x21, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x49, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x64, 0x65,
+	0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x35, 0x0a, 0x04, 0x49, 0x6e, 0x66,
+	0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x2e,
+	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72,
+	0x31, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
+	0x32, 0xe7, 0x01, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12,
+	0x70, 0x0a, 0x0b, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x2e,
+	0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
+	0x65, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f,
+	0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
+	0x65, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x67, 0x0a, 0x08, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x2b, 0x2e,
+	0x6f, 0x72, 0x64, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
+	0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4f, 0x72,
+	0x64, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x6f, 0x72, 0x64,
+	0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6f, 0x72,
+	0x64, 0x65, 0x72, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3a, 0x5a, 0x38, 0x67, 0x69,
+	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c,
+	0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e,
+	0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31,
+	0x2f, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -901,42 +1008,47 @@ func file_npool_order_mw_v1_order_order_proto_rawDescGZIP() []byte {
 	return file_npool_order_mw_v1_order_order_proto_rawDescData
 }
 
-var file_npool_order_mw_v1_order_order_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_npool_order_mw_v1_order_order_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_npool_order_mw_v1_order_order_proto_goTypes = []interface{}{
 	(*OrderReq)(nil),             // 0: order.middleware.order1.v1.OrderReq
 	(*Order)(nil),                // 1: order.middleware.order1.v1.Order
 	(*Conds)(nil),                // 2: order.middleware.order1.v1.Conds
 	(*CreateOrderRequest)(nil),   // 3: order.middleware.order1.v1.CreateOrderRequest
 	(*CreateOrderResponse)(nil),  // 4: order.middleware.order1.v1.CreateOrderResponse
-	(order.OrderType)(0),         // 5: order.manager.order.order.v1.OrderType
-	(state.EState)(0),            // 6: order.manager.order.state.v1.EState
-	(*npool.StringVal)(nil),      // 7: npool.v1.StringVal
-	(*npool.StringSliceVal)(nil), // 8: npool.v1.StringSliceVal
-	(*npool.Uint32Val)(nil),      // 9: npool.v1.Uint32Val
+	(*GetOrderRequest)(nil),      // 5: order.middleware.order1.v1.GetOrderRequest
+	(*GetOrderResponse)(nil),     // 6: order.middleware.order1.v1.GetOrderResponse
+	(order.OrderType)(0),         // 7: order.manager.order.order.v1.OrderType
+	(state.EState)(0),            // 8: order.manager.order.state.v1.EState
+	(*npool.StringVal)(nil),      // 9: npool.v1.StringVal
+	(*npool.StringSliceVal)(nil), // 10: npool.v1.StringSliceVal
+	(*npool.Uint32Val)(nil),      // 11: npool.v1.Uint32Val
 }
 var file_npool_order_mw_v1_order_order_proto_depIdxs = []int32{
-	5,  // 0: order.middleware.order1.v1.OrderReq.OrderType:type_name -> order.manager.order.order.v1.OrderType
-	6,  // 1: order.middleware.order1.v1.Order.State:type_name -> order.manager.order.state.v1.EState
-	5,  // 2: order.middleware.order1.v1.Order.Type:type_name -> order.manager.order.order.v1.OrderType
-	7,  // 3: order.middleware.order1.v1.Conds.ID:type_name -> npool.v1.StringVal
-	8,  // 4: order.middleware.order1.v1.Conds.IDs:type_name -> npool.v1.StringSliceVal
-	7,  // 5: order.middleware.order1.v1.Conds.AppID:type_name -> npool.v1.StringVal
-	7,  // 6: order.middleware.order1.v1.Conds.UserID:type_name -> npool.v1.StringVal
-	7,  // 7: order.middleware.order1.v1.Conds.CoinTypeID:type_name -> npool.v1.StringVal
-	7,  // 8: order.middleware.order1.v1.Conds.ParentOrderID:type_name -> npool.v1.StringVal
-	9,  // 9: order.middleware.order1.v1.Conds.PaymentState:type_name -> npool.v1.Uint32Val
-	7,  // 10: order.middleware.order1.v1.Conds.PaymentAmount:type_name -> npool.v1.StringVal
-	9,  // 11: order.middleware.order1.v1.Conds.OrderType:type_name -> npool.v1.Uint32Val
-	9,  // 12: order.middleware.order1.v1.Conds.CreatedAt:type_name -> npool.v1.Uint32Val
+	7,  // 0: order.middleware.order1.v1.OrderReq.OrderType:type_name -> order.manager.order.order.v1.OrderType
+	8,  // 1: order.middleware.order1.v1.Order.State:type_name -> order.manager.order.state.v1.EState
+	7,  // 2: order.middleware.order1.v1.Order.Type:type_name -> order.manager.order.order.v1.OrderType
+	9,  // 3: order.middleware.order1.v1.Conds.ID:type_name -> npool.v1.StringVal
+	10, // 4: order.middleware.order1.v1.Conds.IDs:type_name -> npool.v1.StringSliceVal
+	9,  // 5: order.middleware.order1.v1.Conds.AppID:type_name -> npool.v1.StringVal
+	9,  // 6: order.middleware.order1.v1.Conds.UserID:type_name -> npool.v1.StringVal
+	9,  // 7: order.middleware.order1.v1.Conds.CoinTypeID:type_name -> npool.v1.StringVal
+	9,  // 8: order.middleware.order1.v1.Conds.ParentOrderID:type_name -> npool.v1.StringVal
+	11, // 9: order.middleware.order1.v1.Conds.PaymentState:type_name -> npool.v1.Uint32Val
+	9,  // 10: order.middleware.order1.v1.Conds.PaymentAmount:type_name -> npool.v1.StringVal
+	11, // 11: order.middleware.order1.v1.Conds.OrderType:type_name -> npool.v1.Uint32Val
+	11, // 12: order.middleware.order1.v1.Conds.CreatedAt:type_name -> npool.v1.Uint32Val
 	0,  // 13: order.middleware.order1.v1.CreateOrderRequest.Info:type_name -> order.middleware.order1.v1.OrderReq
 	1,  // 14: order.middleware.order1.v1.CreateOrderResponse.Info:type_name -> order.middleware.order1.v1.Order
-	3,  // 15: order.middleware.order1.v1.Middleware.CreateOrder:input_type -> order.middleware.order1.v1.CreateOrderRequest
-	4,  // 16: order.middleware.order1.v1.Middleware.CreateOrder:output_type -> order.middleware.order1.v1.CreateOrderResponse
-	16, // [16:17] is the sub-list for method output_type
-	15, // [15:16] is the sub-list for method input_type
-	15, // [15:15] is the sub-list for extension type_name
-	15, // [15:15] is the sub-list for extension extendee
-	0,  // [0:15] is the sub-list for field type_name
+	1,  // 15: order.middleware.order1.v1.GetOrderResponse.Info:type_name -> order.middleware.order1.v1.Order
+	3,  // 16: order.middleware.order1.v1.Middleware.CreateOrder:input_type -> order.middleware.order1.v1.CreateOrderRequest
+	5,  // 17: order.middleware.order1.v1.Middleware.GetOrder:input_type -> order.middleware.order1.v1.GetOrderRequest
+	4,  // 18: order.middleware.order1.v1.Middleware.CreateOrder:output_type -> order.middleware.order1.v1.CreateOrderResponse
+	6,  // 19: order.middleware.order1.v1.Middleware.GetOrder:output_type -> order.middleware.order1.v1.GetOrderResponse
+	18, // [18:20] is the sub-list for method output_type
+	16, // [16:18] is the sub-list for method input_type
+	16, // [16:16] is the sub-list for extension type_name
+	16, // [16:16] is the sub-list for extension extendee
+	0,  // [0:16] is the sub-list for field type_name
 }
 
 func init() { file_npool_order_mw_v1_order_order_proto_init() }
@@ -1005,6 +1117,30 @@ func file_npool_order_mw_v1_order_order_proto_init() {
 				return nil
 			}
 		}
+		file_npool_order_mw_v1_order_order_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetOrderRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_order_mw_v1_order_order_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetOrderResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	file_npool_order_mw_v1_order_order_proto_msgTypes[0].OneofWrappers = []interface{}{}
 	file_npool_order_mw_v1_order_order_proto_msgTypes[2].OneofWrappers = []interface{}{}
@@ -1014,7 +1150,7 @@ func file_npool_order_mw_v1_order_order_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_order_mw_v1_order_order_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
