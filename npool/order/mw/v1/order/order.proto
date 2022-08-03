@@ -82,7 +82,7 @@ message Order {
     // @inject_tag: sql:"payment_state"
     string PaymentState           = 170;
     // @inject_tag: sql:"pay_with_balance_amount"
-    uint64 PayWithBalanceAmountUint   = 180;
+    string PayWithBalanceAmount   = 180;
 
     // @inject_tag: sql:"coupon_id"
     string FixAmountID            = 190;
@@ -98,10 +98,9 @@ message Order {
     order.manager.order.order.v1.OrderType Type                         = 240;
     bool                                   PayWithParent                = 250;
     string                                 PaymentAmount                = 260;
-    string                                 PayWithBalanceAmount         = 270;
-    string                                 PaymentCoinUSDCurrency       = 280;
-    string                                 PaymentLiveCoinUSDCurrency   = 290;
-    string                                 PaymentLocalCoinUSDCurrency  = 300;
+    string                                 PaymentCoinUSDCurrency       = 270;
+    string                                 PaymentLiveCoinUSDCurrency   = 280;
+    string                                 PaymentLocalCoinUSDCurrency  = 290;
 }
 
 message Conds {
