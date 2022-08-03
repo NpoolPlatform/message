@@ -83,24 +83,26 @@ message Order {
     string PaymentState           = 170;
     // @inject_tag: sql:"pay_with_balance_amount"
     string PayWithBalanceAmount   = 180;
+    // @inject_tag: sql:"payment_created_at"
+    uint32 PaidAt                 = 190;
 
     // @inject_tag: sql:"coupon_id"
-    string FixAmountID            = 190;
+    string FixAmountID            = 200;
     // @inject_tag: sql:"discount_coupon_id"
-    string DiscountID             = 200;
+    string DiscountID             = 210;
     // @inject_tag: sql:"user_special_reduction_id"
-    string SpecialOfferID         = 210;
+    string SpecialOfferID         = 220;
 
     // @inject_tag: sql:"create_at"
-    uint32 CreatedAt              = 220;
+    uint32 CreatedAt              = 230;
 
-    order.manager.order.state.v1.EState    State                        = 230;
-    order.manager.order.order.v1.OrderType Type                         = 240;
-    bool                                   PayWithParent                = 250;
-    string                                 PaymentAmount                = 260;
-    string                                 PaymentCoinUSDCurrency       = 270;
-    string                                 PaymentLiveCoinUSDCurrency   = 280;
-    string                                 PaymentLocalCoinUSDCurrency  = 290;
+    order.manager.order.state.v1.EState    State                        = 240;
+    order.manager.order.order.v1.OrderType Type                         = 250;
+    bool                                   PayWithParent                = 260;
+    string                                 PaymentAmount                = 270;
+    string                                 PaymentCoinUSDCurrency       = 280;
+    string                                 PaymentLiveCoinUSDCurrency   = 290;
+    string                                 PaymentLocalCoinUSDCurrency  = 300;
 }
 
 message Conds {

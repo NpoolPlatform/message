@@ -116,6 +116,11 @@
           "type": "string",
           "title": "@inject_tag: sql:\"pay_with_balance_amount\""
         },
+        "PaidAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"payment_created_at\""
+        },
         "FixAmountID": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_id\""
