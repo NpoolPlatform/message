@@ -79,7 +79,7 @@ message Order {
     string FixAmountAmount        = 280;
 
     string DiscountID             = 290;
-    string DisableName            = 300;
+    string DiscountName           = 300;
     uint32 DiscountPercent        = 310;
 
     string SpecialOfferID         = 320;

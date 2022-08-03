@@ -401,7 +401,7 @@
         "DiscountID": {
           "type": "string"
         },
-        "DisableName": {
+        "DiscountName": {
           "type": "string"
         },
         "DiscountPercent": {
