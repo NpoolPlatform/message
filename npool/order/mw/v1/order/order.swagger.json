@@ -44,10 +44,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
         },
-        "CoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
-        },
         "GoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
@@ -64,6 +60,16 @@
         "ParentOrderID": {
           "type": "string",
           "title": "@inject_tag: sql:\"parent_order_id\""
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start\""
+        },
+        "End": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"end\""
         },
         "PaymentCoinTypeID": {
           "type": "string",

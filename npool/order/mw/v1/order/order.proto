@@ -50,47 +50,49 @@ message Order {
     string ID                     = 10;
     // @inject_tag: sql:"user_id"
     string UserID                 = 20;
-    // @inject_tag: sql:"coin_type_id"
-    string CoinTypeID             = 30;
     // @inject_tag: sql:"good_id"
-    string GoodID                 = 40;
+    string GoodID                 = 30;
     // @inject_tag: sql:"uints"
-    uint32 Units                  = 50;
+    uint32 Units                  = 40;
     // @inject_tag: sql:"order_type"
-    string OrderType              = 60;
+    string OrderType              = 50;
     // @inject_tag: sql:"parent_order_id"
-    string ParentOrderID          = 70;
+    string ParentOrderID          = 60;
+    // @inject_tag: sql:"start"
+    uint32 Start                  = 70;
+    // @inject_tag: sql:"end"
+    uint32 End                    = 80;
 
     // @inject_tag: sql:"payment_coin_type_id"
-    string PaymentCoinTypeID      = 80;
+    string PaymentCoinTypeID      = 90;
     // @inject_tag: sql:"payment_coin_usd_currency"
-    string PaymentCoinUSDCurrency = 90;
+    string PaymentCoinUSDCurrency = 100;
     // @inject_tag: sql:"payment_id"
-    string PaymentID              = 100;
+    string PaymentID              = 110;
     // @inject_tag: sql:"payment_account_id"
-    string PaymentAccountID       = 110;
+    string PaymentAccountID       = 120;
     // @inject_tag: sql:"payment_amount"
-    string PaymentAmount          = 120;
+    string PaymentAmount          = 130;
     // @inject_tag: sql:"payment_state"
-    string PaymentState           = 130;
+    string PaymentState           = 140;
     // @inject_tag: sql:"pay_with_balance_amount"
-    string PayWithBalanceAmount   = 140;
+    string PayWithBalanceAmount   = 150;
     // @inject_tag: sql:"pay_with_parent"
-    int32  PayWithParentInt       = 150;
+    int32  PayWithParentInt       = 160;
 
     // @inject_tag: sql:"coupon_id"
-    string FixAmountID            = 160;
+    string FixAmountID            = 170;
     // @inject_tag: sql:"discount_id"
-    string DiscountID             = 170;
+    string DiscountID             = 180;
     // @inject_tag: sql:"special_offer_id"
-    string SpecialOfferID         = 180;
+    string SpecialOfferID         = 190;
 
     // @inject_tag: sql:"create_at"
-    uint32 CreatedAt              = 190;
+    uint32 CreatedAt              = 200;
 
-    order.manager.order.state.v1.EState    State         = 200;
-    order.manager.order.order.v1.OrderType Type          = 210;
-    bool                                   PayWithParent = 220;
+    order.manager.order.state.v1.EState    State         = 210;
+    order.manager.order.order.v1.OrderType Type          = 220;
+    bool                                   PayWithParent = 230;
 }
 
 message Conds {
