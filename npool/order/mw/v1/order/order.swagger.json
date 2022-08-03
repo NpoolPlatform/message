@@ -219,7 +219,7 @@
         "WaitPayment",
         "Paid",
         "PaymentTimeout",
-        "Canceled",
+        "Cancelled",
         "InService",
         "Expired"
       ],
