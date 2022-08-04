@@ -138,6 +138,7 @@ message GetOrdersRequest {
 
 message GetOrdersResponse {
     repeated Order Infos = 10;
+    uint32         Total = 20;
 }
 
 message GetUserOrdersRequest {
@@ -185,6 +186,7 @@ message CreateAppUserOrderResponse {
 
 message GetUserOrdersResponse {
     repeated Order Infos = 10;
+    uint32         Total = 20;
 }
 
 message GetAppUserOrdersRequest {
@@ -196,4 +198,5 @@ message GetAppUserOrdersRequest {
 
 message GetAppUserOrdersResponse {
     repeated Order Infos = 10;
+    uint32         Total = 20;
 }

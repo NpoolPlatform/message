@@ -284,6 +284,10 @@
           "items": {
             "$ref": "#/definitions/gatewayorder1v1Order"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -580,6 +584,10 @@
           "items": {
             "$ref": "#/definitions/gatewayorder1v1Order"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -610,6 +618,10 @@
           "items": {
             "$ref": "#/definitions/gatewayorder1v1Order"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
