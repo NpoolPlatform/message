@@ -122,6 +122,7 @@ message CreateOrderRequest {
     optional string FixAmountID          = 80;
     optional string DiscountID           = 90;
     optional string SpecialOfferID       = 100;
+    order.manager.order.order.v1.OrderType OrderType = 110;
 }
 
 message CreateOrderResponse {

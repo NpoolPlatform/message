@@ -243,6 +243,9 @@
         },
         "SpecialOfferID": {
           "type": "string"
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
         }
       }
     },
