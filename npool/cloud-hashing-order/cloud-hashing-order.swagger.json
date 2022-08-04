@@ -1904,6 +1904,9 @@
         },
         "FakePayment": {
           "type": "boolean"
+        },
+        "PayWithBalance": {
+          "type": "string"
         }
       }
     },
