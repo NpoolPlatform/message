@@ -10,7 +10,8 @@ import "npool/npool.proto";
 
 // Service Name
 service Middleware {
-    rpc GetCoupon (GetCouponRequest) returns (GetCouponResponse) {}
+    rpc GetCoupon      (GetCouponRequest)      returns (GetCouponResponse)      {}
+    rpc GetManyCoupons (GetManyCouponsRequest) returns (GetManyCouponsResponse) {}
 }
 
 enum CouponType {
@@ -48,4 +49,13 @@ message GetCouponRequest {
 
 message GetCouponResponse {
     Coupon Info = 10;
+}
+
+message GetManyCouponsRequest {
+    repeated string IDs  = 10;
+    CouponType      Type = 20;
+}
+
+message GetManyCouponsResponse {
+    repeated Coupon Infos = 10;
 }

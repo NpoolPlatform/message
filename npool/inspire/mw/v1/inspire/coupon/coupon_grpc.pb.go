@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	GetCoupon(ctx context.Context, in *GetCouponRequest, opts ...grpc.CallOption) (*GetCouponResponse, error)
+	GetManyCoupons(ctx context.Context, in *GetManyCouponsRequest, opts ...grpc.CallOption) (*GetManyCouponsResponse, error)
 }
 
 type middlewareClient struct {
@@ -42,11 +43,21 @@ func (c *middlewareClient) GetCoupon(ctx context.Context, in *GetCouponRequest, 
 	return out, nil
 }
 
+func (c *middlewareClient) GetManyCoupons(ctx context.Context, in *GetManyCouponsRequest, opts ...grpc.CallOption) (*GetManyCouponsResponse, error) {
+	out := new(GetManyCouponsResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.inspire.coupon.v1.Middleware/GetManyCoupons", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
 	GetCoupon(context.Context, *GetCouponRequest) (*GetCouponResponse, error)
+	GetManyCoupons(context.Context, *GetManyCouponsRequest) (*GetManyCouponsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -56,6 +67,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) GetCoupon(context.Context, *GetCouponRequest) (*GetCouponResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoupon not implemented")
+}
+func (UnimplementedMiddlewareServer) GetManyCoupons(context.Context, *GetManyCouponsRequest) (*GetManyCouponsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetManyCoupons not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -88,6 +102,24 @@ func _Middleware_GetCoupon_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetManyCoupons_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetManyCouponsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetManyCoupons(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.inspire.coupon.v1.Middleware/GetManyCoupons",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetManyCoupons(ctx, req.(*GetManyCouponsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -98,6 +130,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCoupon",
 			Handler:    _Middleware_GetCoupon_Handler,
+		},
+		{
+			MethodName: "GetManyCoupons",
+			Handler:    _Middleware_GetManyCoupons_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

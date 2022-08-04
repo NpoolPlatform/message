@@ -109,6 +109,17 @@
           "$ref": "#/definitions/v1Coupon"
         }
       }
+    },
+    "v1GetManyCouponsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Coupon"
+          }
+        }
+      }
     }
   }
 }
