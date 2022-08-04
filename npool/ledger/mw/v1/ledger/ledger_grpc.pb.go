@@ -25,6 +25,7 @@ type MiddlewareClient interface {
 	GetIntervalGenerals(ctx context.Context, in *GetIntervalGeneralsRequest, opts ...grpc.CallOption) (*GetIntervalGeneralsResponse, error)
 	GetIntervalDetails(ctx context.Context, in *GetIntervalDetailsRequest, opts ...grpc.CallOption) (*GetIntervalDetailsResponse, error)
 	GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error)
+	BookKeeping(ctx context.Context, in *BookKeepingRequest, opts ...grpc.CallOption) (*BookKeepingResponse, error)
 }
 
 type middlewareClient struct {
@@ -62,6 +63,15 @@ func (c *middlewareClient) GetIntervalProfits(ctx context.Context, in *GetInterv
 	return out, nil
 }
 
+func (c *middlewareClient) BookKeeping(ctx context.Context, in *BookKeepingRequest, opts ...grpc.CallOption) (*BookKeepingResponse, error) {
+	out := new(BookKeepingResponse)
+	err := c.cc.Invoke(ctx, "/ledger.middleware.ledger1.v1.Middleware/BookKeeping", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -69,6 +79,7 @@ type MiddlewareServer interface {
 	GetIntervalGenerals(context.Context, *GetIntervalGeneralsRequest) (*GetIntervalGeneralsResponse, error)
 	GetIntervalDetails(context.Context, *GetIntervalDetailsRequest) (*GetIntervalDetailsResponse, error)
 	GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error)
+	BookKeeping(context.Context, *BookKeepingRequest) (*BookKeepingResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -84,6 +95,9 @@ func (UnimplementedMiddlewareServer) GetIntervalDetails(context.Context, *GetInt
 }
 func (UnimplementedMiddlewareServer) GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalProfits not implemented")
+}
+func (UnimplementedMiddlewareServer) BookKeeping(context.Context, *BookKeepingRequest) (*BookKeepingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BookKeeping not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -152,6 +166,24 @@ func _Middleware_GetIntervalProfits_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_BookKeeping_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BookKeepingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).BookKeeping(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.middleware.ledger1.v1.Middleware/BookKeeping",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).BookKeeping(ctx, req.(*BookKeepingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -170,6 +202,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetIntervalProfits",
 			Handler:    _Middleware_GetIntervalProfits_Handler,
+		},
+		{
+			MethodName: "BookKeeping",
+			Handler:    _Middleware_BookKeeping_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

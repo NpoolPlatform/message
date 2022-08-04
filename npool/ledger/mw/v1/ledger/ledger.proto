@@ -15,6 +15,7 @@ service Middleware {
     rpc GetIntervalGenerals       (GetIntervalGeneralsRequest)       returns (GetIntervalGeneralsResponse)         {}
     rpc GetIntervalDetails        (GetIntervalDetailsRequest)        returns (GetIntervalDetailsResponse)          {}
     rpc GetIntervalProfits        (GetIntervalProfitsRequest)        returns (GetIntervalProfitsResponse)          {}
+    rpc BookKeeping               (BookKeepingRequest)               returns (BookKeepingResponse)                 {}
 }
 
 message GetIntervalGeneralsRequest {
@@ -59,3 +60,9 @@ message GetIntervalProfitsResponse {
     uint32                                          Total = 20;
 }
 
+message BookKeepingRequest {
+    ledger.manager.ledger.detail.v1.DetailReq Info = 10;
+}
+
+message BookKeepingResponse {
+}

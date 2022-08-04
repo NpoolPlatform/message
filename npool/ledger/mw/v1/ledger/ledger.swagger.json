@@ -44,6 +44,9 @@
         }
       }
     },
+    "v1BookKeepingResponse": {
+      "type": "object"
+    },
     "v1Detail": {
       "type": "object",
       "properties": {
@@ -70,6 +73,46 @@
         },
         "FromCoinTypeID": {
           "type": "string"
+        },
+        "CoinUSDCurrency": {
+          "type": "string"
+        },
+        "IOExtra": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1DetailReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "IOType": {
+          "$ref": "#/definitions/v1IOType"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "FromCoinTypeID": {
+          "type": "string",
+          "title": "E.g. when pay with non-USDT coin"
         },
         "CoinUSDCurrency": {
           "type": "string"
