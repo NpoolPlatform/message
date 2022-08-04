@@ -28,6 +28,20 @@ service Gateway {
 
     // Admin apis
 
+    rpc CreateUserOrder (CreateUserOrderRequest) returns (CreateUserOrderResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/order"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppUserOrder (CreateAppUserOrderRequest) returns (CreateAppUserOrderResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/order"
+            body: "*"
+        };
+    }
+
     rpc GetUserOrders (GetUserOrdersRequest) returns (GetUserOrdersResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/orders"
@@ -108,7 +122,6 @@ message CreateOrderRequest {
     optional string FixAmountID          = 80;
     optional string DiscountID           = 90;
     optional string SpecialOfferID       = 100;
-    order.manager.order.order.v1.OrderType OrderType = 110;
 }
 
 message CreateOrderResponse {
@@ -131,6 +144,42 @@ message GetUserOrdersRequest {
     string TargetUserID  = 20;
     int32  Offset  = 30;
     int32  Limit   = 40;
+}
+
+message CreateUserOrderRequest {
+    string          AppID                = 10;
+    string          TargetUserID         = 20;
+    string          GoodID               = 30;
+    uint32          Units                = 40;
+    string          PaymentCoinID        = 50;
+    optional string ParentOrderID        = 60;
+    optional string PayWithBalanceAmount = 70;
+    optional string FixAmountID          = 80;
+    optional string DiscountID           = 90;
+    optional string SpecialOfferID       = 100;
+    order.manager.order.order.v1.OrderType OrderType = 110;
+}
+
+message CreateUserOrderResponse {
+    Order Info = 10;
+}
+
+message CreateAppUserOrderRequest {
+    string          TargetAppID          = 10;
+    string          TargetUserID         = 20;
+    string          GoodID               = 30;
+    uint32          Units                = 40;
+    string          PaymentCoinID        = 50;
+    optional string ParentOrderID        = 60;
+    optional string PayWithBalanceAmount = 70;
+    optional string FixAmountID          = 80;
+    optional string DiscountID           = 90;
+    optional string SpecialOfferID       = 100;
+    order.manager.order.order.v1.OrderType OrderType = 110;
+}
+
+message CreateAppUserOrderResponse {
+    Order Info = 10;
 }
 
 message GetUserOrdersResponse {
