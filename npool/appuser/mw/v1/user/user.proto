@@ -14,8 +14,6 @@ service UserMw {
     rpc GetUser           (GetUserRequest)          returns (GetUserResponse)          {}
     rpc GetManyUsers      (GetManyUsersRequest)     returns (GetManyUsersResponse)     {}
 
-    // Admin apis
-    rpc BanUser           (BanUserRequest)          returns (BanUserResponse)          {}
 }
 
 message UserReq {
@@ -91,7 +89,6 @@ message User {
     bool   SigninVerifyByGoogleAuthentication = 200;
     bool   GoogleAuthenticationVerified       = 210;
     bool   Banned                             = 220;
-    string BanUserID                          = 230;
     string BanMessage                         = 240;
 
     // Secret map
@@ -152,14 +149,4 @@ message GetManyUsersRequest {
 
 message GetManyUsersResponse {
     repeated User Infos = 10;
-}
-
-message BanUserRequest {
-    string AppID      = 10;
-    string UserID     = 20;
-    string BanMessage = 30;
-}
-
-message BanUserResponse {
-    User Info = 10;
 }

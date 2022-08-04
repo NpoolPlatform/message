@@ -600,9 +600,6 @@
           "type": "boolean",
           "title": "Banned"
         },
-        "BanAppID": {
-          "type": "string"
-        },
         "BanMessage": {
           "type": "string"
         },
