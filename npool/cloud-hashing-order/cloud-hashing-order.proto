@@ -423,7 +423,7 @@ message Payment {
     double LiveCoinUSDCurrency = 170;
     uint32 UpdateAt = 180;
     bool FakePayment = 190;
-    string PayWithBalance = 200;
+    string PayWithBalanceAmount = 200;
 }
 
 message CreatePaymentRequest {

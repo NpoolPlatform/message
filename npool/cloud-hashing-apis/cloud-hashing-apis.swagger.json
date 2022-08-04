@@ -4142,7 +4142,7 @@
         "FakePayment": {
           "type": "boolean"
         },
-        "PayWithBalance": {
+        "PayWithBalanceAmount": {
           "type": "string"
         }
       }
