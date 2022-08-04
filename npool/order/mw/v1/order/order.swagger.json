@@ -33,6 +33,21 @@
         }
       }
     },
+    "middlewareorder1v1GetOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewareorder1v1Order"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "middlewareorder1v1Order": {
       "type": "object",
       "properties": {
