@@ -44,14 +44,6 @@
         }
       }
     },
-    "v1BanUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1User"
-        }
-      }
-    },
     "v1CreateUserResponse": {
       "type": "object",
       "properties": {
@@ -175,9 +167,6 @@
         },
         "Banned": {
           "type": "boolean"
-        },
-        "BanUserID": {
-          "type": "string"
         },
         "BanMessage": {
           "type": "string"
