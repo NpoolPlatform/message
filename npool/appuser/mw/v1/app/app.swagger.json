@@ -195,30 +195,6 @@
         }
       }
     },
-    "v1GetRecaptchasResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2Recaptcha"
-          },
-          "title": "In future this may be put to database then admin can change it"
-        }
-      }
-    },
-    "v1GetSignMethodsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2SignMethod"
-          },
-          "title": "In future this may be put to database then admin can change it"
-        }
-      }
-    },
     "v1GetUserAppsResponse": {
       "type": "object",
       "properties": {
@@ -231,37 +207,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v2Recaptcha": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Recaptcha": {
-          "type": "string"
-        },
-        "Dashboard": {
-          "type": "string"
-        }
-      }
-    },
-    "v2SignMethod": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Method": {
-          "type": "string"
-        },
-        "Icon": {
-          "type": "string"
-        },
-        "External": {
-          "type": "boolean"
         }
       }
     }

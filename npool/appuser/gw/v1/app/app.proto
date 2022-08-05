@@ -49,23 +49,9 @@ service AppGw {
         };
     }
 
-    rpc BanApp (BanAppRequest) returns (BanAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/ban/app"
-            body: "*"
-        };
-    }
-
     rpc GetSignMethods (GetSignMethodsRequest) returns (GetSignMethodsResponse) {
         option (google.api.http) = {
             post: "/v1/get/signmethods"
-            body: "*"
-        };
-    }
-
-    rpc SetSignMethods (SetSignMethodsRequest) returns (SetSignMethodsResponse) {
-        option (google.api.http) = {
-            post: "/v1/set/signmethods"
             body: "*"
         };
     }
@@ -76,52 +62,24 @@ service AppGw {
             body: "*"
         };
     }
-
-    rpc SetRecaptcha (SetRecaptchaRequest) returns (SetRecaptchaResponse) {
-        option (google.api.http) = {
-            post: "/v1/set/recaptcha"
-            body: "*"
-        };
-    }
-
-    rpc SetKyc (SetKycRequest) returns (SetKycResponse) {
-        option (google.api.http) = {
-            post: "/v1/set/kyc"
-            body: "*"
-        };
-    }
-
-    rpc SetSigninVerify (SetSigninVerifyRequest) returns (SetSigninVerifyResponse) {
-        option (google.api.http) = {
-            post: "/v1/set/signinverify"
-            body: "*"
-        };
-    }
-
-    rpc SetInvitationCodeMust (SetInvitationCodeMustRequest) returns (SetInvitationCodeMustResponse) {
-        option (google.api.http) = {
-            post: "/v1/set/invitationcodemust"
-            body: "*"
-        };
-    }
 }
 
 message CreateAppRequest {
     // Permissioned by path
-    appuser.manager.app.v2.AppReq Info = 10;
+    appuser.middleware.app.v1.AppReq Info = 10;
 }
 
 message CreateAppResponse {
-    appuser.manager.app.v2.App Info = 10;
+    appuser.middleware.app.v1.App Info = 10;
 }
 
 message UpdateAppRequest {
     // Permissioned by path
-    appuser.manager.app.v2.AppReq Info = 10;
+    appuser.middleware.app.v1.AppReq Info = 10;
 }
 
 message UpdateAppResponse {
-    appuser.manager.app.v2.App Info = 10;
+    appuser.middleware.app.v1.App Info = 10;
 }
 
 message GetAppRequest {

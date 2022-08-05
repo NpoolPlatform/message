@@ -178,6 +178,102 @@
           "AdminGw"
         ]
       }
+    },
+    "/v1/get/genesis/auths": {
+      "post": {
+        "operationId": "AdminGw_GetGenesisAuths",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGenesisAuthsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGenesisAuthsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminGw"
+        ]
+      }
+    },
+    "/v1/get/genesis/role": {
+      "post": {
+        "operationId": "AdminGw_GetGenesisRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGenesisRoleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGenesisRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminGw"
+        ]
+      }
+    },
+    "/v1/get/genesis/role/user": {
+      "post": {
+        "operationId": "AdminGw_GetGenesisRoleUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGenesisRoleUsersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGenesisRoleUsersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminGw"
+        ]
+      }
     }
   },
   "definitions": {
@@ -269,7 +365,7 @@
     "v1CreateGenesisUserRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
         "EmailAddress": {
@@ -299,6 +395,41 @@
           "items": {
             "$ref": "#/definitions/appv2App"
           }
+        }
+      }
+    },
+    "v1GetGenesisAuthsRequest": {
+      "type": "object"
+    },
+    "v1GetGenesisAuthsResponse": {
+      "type": "object"
+    },
+    "v1GetGenesisRoleRequest": {
+      "type": "object"
+    },
+    "v1GetGenesisRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRole"
+        }
+      }
+    },
+    "v1GetGenesisRoleUsersRequest": {
+      "type": "object"
+    },
+    "v1GetGenesisRoleUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppRoleUser"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -439,6 +570,23 @@
         },
         "Default": {
           "type": "boolean"
+        }
+      }
+    },
+    "v2AppRoleUser": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
         }
       }
     }

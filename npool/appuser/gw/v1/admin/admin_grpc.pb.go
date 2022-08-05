@@ -30,6 +30,9 @@ type AdminGwClient interface {
 	// Create genesis / admin user
 	CreateGenesisUser(ctx context.Context, in *CreateGenesisUserRequest, opts ...grpc.CallOption) (*CreateGenesisUserResponse, error)
 	GetAdminApps(ctx context.Context, in *GetAdminAppsRequest, opts ...grpc.CallOption) (*GetAdminAppsResponse, error)
+	GetGenesisRole(ctx context.Context, in *GetGenesisRoleRequest, opts ...grpc.CallOption) (*GetGenesisRoleResponse, error)
+	GetGenesisRoleUsers(ctx context.Context, in *GetGenesisRoleUsersRequest, opts ...grpc.CallOption) (*GetGenesisRoleUsersResponse, error)
+	GetGenesisAuths(ctx context.Context, in *GetGenesisAuthsRequest, opts ...grpc.CallOption) (*GetGenesisAuthsResponse, error)
 	AuthorizeGenesis(ctx context.Context, in *AuthorizeGenesisRequest, opts ...grpc.CallOption) (*AuthorizeGenesisResponse, error)
 }
 
@@ -77,6 +80,33 @@ func (c *adminGwClient) GetAdminApps(ctx context.Context, in *GetAdminAppsReques
 	return out, nil
 }
 
+func (c *adminGwClient) GetGenesisRole(ctx context.Context, in *GetGenesisRoleRequest, opts ...grpc.CallOption) (*GetGenesisRoleResponse, error) {
+	out := new(GetGenesisRoleResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.admin.v1.AdminGw/GetGenesisRole", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminGwClient) GetGenesisRoleUsers(ctx context.Context, in *GetGenesisRoleUsersRequest, opts ...grpc.CallOption) (*GetGenesisRoleUsersResponse, error) {
+	out := new(GetGenesisRoleUsersResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.admin.v1.AdminGw/GetGenesisRoleUsers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminGwClient) GetGenesisAuths(ctx context.Context, in *GetGenesisAuthsRequest, opts ...grpc.CallOption) (*GetGenesisAuthsResponse, error) {
+	out := new(GetGenesisAuthsResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.admin.v1.AdminGw/GetGenesisAuths", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *adminGwClient) AuthorizeGenesis(ctx context.Context, in *AuthorizeGenesisRequest, opts ...grpc.CallOption) (*AuthorizeGenesisResponse, error) {
 	out := new(AuthorizeGenesisResponse)
 	err := c.cc.Invoke(ctx, "/appuser.gateway.admin.v1.AdminGw/AuthorizeGenesis", in, out, opts...)
@@ -98,6 +128,9 @@ type AdminGwServer interface {
 	// Create genesis / admin user
 	CreateGenesisUser(context.Context, *CreateGenesisUserRequest) (*CreateGenesisUserResponse, error)
 	GetAdminApps(context.Context, *GetAdminAppsRequest) (*GetAdminAppsResponse, error)
+	GetGenesisRole(context.Context, *GetGenesisRoleRequest) (*GetGenesisRoleResponse, error)
+	GetGenesisRoleUsers(context.Context, *GetGenesisRoleUsersRequest) (*GetGenesisRoleUsersResponse, error)
+	GetGenesisAuths(context.Context, *GetGenesisAuthsRequest) (*GetGenesisAuthsResponse, error)
 	AuthorizeGenesis(context.Context, *AuthorizeGenesisRequest) (*AuthorizeGenesisResponse, error)
 	mustEmbedUnimplementedAdminGwServer()
 }
@@ -117,6 +150,15 @@ func (UnimplementedAdminGwServer) CreateGenesisUser(context.Context, *CreateGene
 }
 func (UnimplementedAdminGwServer) GetAdminApps(context.Context, *GetAdminAppsRequest) (*GetAdminAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAdminApps not implemented")
+}
+func (UnimplementedAdminGwServer) GetGenesisRole(context.Context, *GetGenesisRoleRequest) (*GetGenesisRoleResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGenesisRole not implemented")
+}
+func (UnimplementedAdminGwServer) GetGenesisRoleUsers(context.Context, *GetGenesisRoleUsersRequest) (*GetGenesisRoleUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGenesisRoleUsers not implemented")
+}
+func (UnimplementedAdminGwServer) GetGenesisAuths(context.Context, *GetGenesisAuthsRequest) (*GetGenesisAuthsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGenesisAuths not implemented")
 }
 func (UnimplementedAdminGwServer) AuthorizeGenesis(context.Context, *AuthorizeGenesisRequest) (*AuthorizeGenesisResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AuthorizeGenesis not implemented")
@@ -206,6 +248,60 @@ func _AdminGw_GetAdminApps_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AdminGw_GetGenesisRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGenesisRoleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminGwServer).GetGenesisRole(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.admin.v1.AdminGw/GetGenesisRole",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminGwServer).GetGenesisRole(ctx, req.(*GetGenesisRoleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminGw_GetGenesisRoleUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGenesisRoleUsersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminGwServer).GetGenesisRoleUsers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.admin.v1.AdminGw/GetGenesisRoleUsers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminGwServer).GetGenesisRoleUsers(ctx, req.(*GetGenesisRoleUsersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminGw_GetGenesisAuths_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGenesisAuthsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminGwServer).GetGenesisAuths(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.admin.v1.AdminGw/GetGenesisAuths",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminGwServer).GetGenesisAuths(ctx, req.(*GetGenesisAuthsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AdminGw_AuthorizeGenesis_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AuthorizeGenesisRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +342,18 @@ var AdminGw_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAdminApps",
 			Handler:    _AdminGw_GetAdminApps_Handler,
+		},
+		{
+			MethodName: "GetGenesisRole",
+			Handler:    _AdminGw_GetGenesisRole_Handler,
+		},
+		{
+			MethodName: "GetGenesisRoleUsers",
+			Handler:    _AdminGw_GetGenesisRoleUsers_Handler,
+		},
+		{
+			MethodName: "GetGenesisAuths",
+			Handler:    _AdminGw_GetGenesisAuths_Handler,
 		},
 		{
 			MethodName: "AuthorizeGenesis",
