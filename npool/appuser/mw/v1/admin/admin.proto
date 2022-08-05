@@ -36,8 +36,9 @@ message CreateGenesisRolesResponse {
 message CreateGenesisUserRequest {
     optional string AppID        = 10;
     optional string UserID       = 20;
-    optional string EmailAddress = 30;
-    optional string PasswordHash = 40;
+    optional string Role         = 30;
+    optional string EmailAddress = 40;
+    optional string PasswordHash = 50;
 }
 
 message CreateGenesisUserResponse {

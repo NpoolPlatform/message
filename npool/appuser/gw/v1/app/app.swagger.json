@@ -16,38 +16,6 @@
     "application/json"
   ],
   "paths": {
-    "/v1/ban/app": {
-      "post": {
-        "operationId": "AppGw_BanApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1BanAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1BanAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppGw"
-        ]
-      }
-    },
     "/v1/create/app": {
       "post": {
         "operationId": "AppGw_CreateApp",
@@ -152,7 +120,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1GetRecaptchasResponse"
+              "$ref": "#/definitions/v1GetRecaptchasResponse"
             }
           },
           "default": {
@@ -168,7 +136,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1GetRecaptchasRequest"
+              "$ref": "#/definitions/v1GetRecaptchasRequest"
             }
           }
         ],
@@ -184,7 +152,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1GetSignMethodsResponse"
+              "$ref": "#/definitions/v1GetSignMethodsResponse"
             }
           },
           "default": {
@@ -200,7 +168,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1GetSignMethodsRequest"
+              "$ref": "#/definitions/v1GetSignMethodsRequest"
             }
           }
         ],
@@ -233,166 +201,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/appusergatewayappv1GetUserAppsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppGw"
-        ]
-      }
-    },
-    "/v1/set/invitationcodemust": {
-      "post": {
-        "operationId": "AppGw_SetInvitationCodeMust",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1SetInvitationCodeMustResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1SetInvitationCodeMustRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppGw"
-        ]
-      }
-    },
-    "/v1/set/kyc": {
-      "post": {
-        "operationId": "AppGw_SetKyc",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1SetKycResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1SetKycRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppGw"
-        ]
-      }
-    },
-    "/v1/set/recaptcha": {
-      "post": {
-        "operationId": "AppGw_SetRecaptcha",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1SetRecaptchaResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1SetRecaptchaRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppGw"
-        ]
-      }
-    },
-    "/v1/set/signinverify": {
-      "post": {
-        "operationId": "AppGw_SetSigninVerify",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1SetSigninVerifyResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1SetSigninVerifyRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppGw"
-        ]
-      }
-    },
-    "/v1/set/signmethods": {
-      "post": {
-        "operationId": "AppGw_SetSignMethods",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1SetSignMethodsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1SetSignMethodsRequest"
             }
           }
         ],
@@ -439,7 +247,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/appv2AppReq",
+          "$ref": "#/definitions/appv1AppReq",
           "title": "Permissioned by path"
         }
       }
@@ -448,7 +256,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/appv2App"
+          "$ref": "#/definitions/appv1App"
         }
       }
     },
@@ -498,36 +306,6 @@
         }
       }
     },
-    "appusergatewayappv1GetRecaptchasRequest": {
-      "type": "object"
-    },
-    "appusergatewayappv1GetRecaptchasResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2Recaptcha"
-          },
-          "title": "In future this may be put to database then admin can change it"
-        }
-      }
-    },
-    "appusergatewayappv1GetSignMethodsRequest": {
-      "type": "object"
-    },
-    "appusergatewayappv1GetSignMethodsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2SignMethod"
-          },
-          "title": "In future this may be put to database then admin can change it"
-        }
-      }
-    },
     "appusergatewayappv1GetUserAppsRequest": {
       "type": "object",
       "properties": {
@@ -564,7 +342,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/appv2AppReq",
+          "$ref": "#/definitions/appv1AppReq",
           "title": "Permissioned by path"
         }
       }
@@ -573,7 +351,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/appv2App"
+          "$ref": "#/definitions/appv1App"
         }
       }
     },
@@ -635,14 +413,12 @@
         }
       }
     },
-    "appv2App": {
+    "appv1AppReq": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
+          "type": "string",
+          "title": "Base info"
         },
         "CreatedBy": {
           "type": "string"
@@ -653,33 +429,41 @@
         "Logo": {
           "type": "string"
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "appv2AppReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
         "Description": {
           "type": "string"
         },
-        "CreatedBy": {
+        "Banned": {
+          "type": "boolean",
+          "title": "Banned"
+        },
+        "BanMessage": {
           "type": "string"
         },
-        "Name": {
-          "type": "string"
+        "SignupMethods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Sign methods"
         },
-        "Logo": {
-          "type": "string"
+        "ExtSigninMethods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
+        "RecaptchaMethod": {
+          "type": "string",
+          "title": "Control flag"
+        },
+        "KycEnable": {
+          "type": "boolean"
+        },
+        "SigninVerifyEnable": {
+          "type": "boolean"
+        },
+        "InvitationCodeMust": {
+          "type": "boolean"
         }
       }
     },
@@ -710,120 +494,33 @@
         }
       }
     },
-    "v1BanAppRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "BanMessage": {
-          "type": "string"
-        }
-      }
+    "v1GetRecaptchasRequest": {
+      "type": "object"
     },
-    "v1BanAppResponse": {
+    "v1GetRecaptchasResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "v1SetInvitationCodeMustRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Enable": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1SetInvitationCodeMustResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "v1SetKycRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Enable": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1SetKycResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "v1SetRecaptchaRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "RecaptchaID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1SetRecaptchaResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "v1SetSignMethodsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "SignMethodIDs": {
+        "Infos": {
           "type": "array",
           "items": {
-            "type": "string"
-          }
+            "$ref": "#/definitions/v2Recaptcha"
+          },
+          "title": "In future this may be put to database then admin can change it"
         }
       }
     },
-    "v1SetSignMethodsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
+    "v1GetSignMethodsRequest": {
+      "type": "object"
     },
-    "v1SetSigninVerifyRequest": {
+    "v1GetSignMethodsResponse": {
       "type": "object",
       "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Enable": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1SetSigninVerifyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2SignMethod"
+          },
+          "title": "In future this may be put to database then admin can change it"
         }
       }
     },

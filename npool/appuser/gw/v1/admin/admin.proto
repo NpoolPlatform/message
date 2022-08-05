@@ -9,6 +9,7 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 import "npool/appuser/mgr/v2/app/app.proto";
 import "npool/appuser/mgr/v2/approle/approle.proto";
+import "npool/appuser/mgr/v2/approleuser/approleuser.proto";
 import "npool/appuser/mw/v1/app/app.proto";
 import "npool/appuser/mw/v1/user/user.proto";
 
@@ -45,6 +46,27 @@ service AdminGw {
         };
     }
 
+    rpc GetGenesisRoles (GetGenesisRolesRequest) returns (GetGenesisRolesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/genesis/roles"
+            body: "*"
+        };
+    }
+
+    rpc GetGenesisRoleUsers (GetGenesisRoleUsersRequest) returns (GetGenesisRoleUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/genesis/role/user"
+            body: "*"
+        };
+    }
+
+    rpc GetGenesisAuths (GetGenesisAuthsRequest) returns (GetGenesisAuthsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/genesis/auths"
+            body: "*"
+        };
+    }
+
     rpc AuthorizeGenesis (AuthorizeGenesisRequest) returns (AuthorizeGenesisResponse) {
         option (google.api.http) = {
             post: "/v1/get/authorize/genesis"
@@ -70,7 +92,7 @@ message CreateGenesisRolesResponse {
 }
 
 message CreateGenesisUserRequest {
-    string AppID        = 10;
+    string TargetAppID  = 10;
     string EmailAddress = 20;
     string PasswordHash = 30;
 }
@@ -90,4 +112,25 @@ message AuthorizeGenesisRequest {
 }
 
 message AuthorizeGenesisResponse {
+}
+
+message GetGenesisRolesRequest {
+}
+
+message GetGenesisRolesResponse {
+    appuser.manager.approle.v2.AppRole Info = 10;
+}
+
+message GetGenesisRoleUsersRequest {
+}
+
+message GetGenesisRoleUsersResponse {
+    repeated appuser.manager.approleuser.v2.AppRoleUser Infos = 10;
+    uint32 Total                                              = 20;
+}
+
+message GetGenesisAuthsRequest {
+}
+
+message GetGenesisAuthsResponse {
 }
