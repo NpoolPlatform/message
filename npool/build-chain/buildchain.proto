@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package build.chain.v1;
+
+option go_package = "github.com/NpoolPlatform/pkg/proto";
+
+import "google/api/annotations.proto";
+
+service BuildChain {
+  rpc Version(Empty) returns (VersionResponse) {
+    option (google.api.http) = {
+      post : "/version"
+      body : "*"
+    };
+  }
+  rpc GetDeployedCoins(GetDeployedCoinsRequest)
+      returns (GetDeployedCoinsResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/deployed/coins"
+      body : "*"
+    };
+  }
+  rpc Faucet(FaucetRequst) returns (FaucetResponse) {
+    option (google.api.http) = {
+      post : "/v1/faucet"
+      body : "*"
+    };
+  }
+}
+message Empty {}
+message VersionResponse { string Info = 100; }
+
+message DeployedCoin {
+  string ID = 10;
+  string Name = 20;
+  string Type = 30;
+  string Contract = 40;
+}
+
+message GetDeployedCoinsRequest {
+  int32 Offset = 10;
+  int32 Limit = 20;
+}
+
+message GetDeployedCoinsResponse {
+  repeated DeployedCoin Infos = 10;
+  uint32 Total = 20;
+}
+
+message FaucetRequst {
+  string ID = 10;
+  double Amount = 20;
+}
+
+message FaucetResponse {
+  bool Success = 10;
+  string Msg = 20;
+}
