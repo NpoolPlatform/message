@@ -69,14 +69,14 @@ message BookKeepingResponse {
 }
 
 message UnlockBalanceRequest {
-    string AppID                                  = 10;
-    string UserID                                 = 20;
-    string CoinTypeID                             = 30;
-    string Unlocked                               = 40;
-    string Outcoming                              = 50;
+    string AppID                                        = 10;
+    string UserID                                       = 20;
+    string CoinTypeID                                   = 30;
+    string Unlocked                                     = 40;
+    string Outcoming                                    = 50;
     // Only Payment or Withdrawal
-    ledger.manager.ledger.detail.v1.IOType IOType = 60;
-    string IOExtra                                = 70;
+    ledger.manager.ledger.detail.v1.IOSubType IOSubType = 60;
+    string IOExtra                                      = 70;
 }
 
 message UnlockBalanceResponse {
