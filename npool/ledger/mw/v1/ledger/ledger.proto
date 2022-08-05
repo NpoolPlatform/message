@@ -12,10 +12,11 @@ import "npool/npool.proto";
 
 // Service Name
 service Middleware {
-    rpc GetIntervalGenerals       (GetIntervalGeneralsRequest)       returns (GetIntervalGeneralsResponse)         {}
-    rpc GetIntervalDetails        (GetIntervalDetailsRequest)        returns (GetIntervalDetailsResponse)          {}
-    rpc GetIntervalProfits        (GetIntervalProfitsRequest)        returns (GetIntervalProfitsResponse)          {}
-    rpc BookKeeping               (BookKeepingRequest)               returns (BookKeepingResponse)                 {}
+    rpc GetIntervalGenerals       (GetIntervalGeneralsRequest)       returns (GetIntervalGeneralsResponse)  {}
+    rpc GetIntervalDetails        (GetIntervalDetailsRequest)        returns (GetIntervalDetailsResponse)   {}
+    rpc GetIntervalProfits        (GetIntervalProfitsRequest)        returns (GetIntervalProfitsResponse)   {}
+    rpc BookKeeping               (BookKeepingRequest)               returns (BookKeepingResponse)          {}
+    rpc UnlockBalance             (UnlockBalanceRequest)             returns (UnlockBalanceResponse)        {}
 }
 
 message GetIntervalGeneralsRequest {
@@ -65,4 +66,18 @@ message BookKeepingRequest {
 }
 
 message BookKeepingResponse {
+}
+
+message UnlockBalanceRequest {
+    string AppID                                  = 10;
+    string UserID                                 = 20;
+    string CoinTypeID                             = 30;
+    string Unlocked                               = 40;
+    string Outcoming                              = 50;
+    // Only Payment or Withdrawal
+    ledger.manager.ledger.detail.v1.IOType IOType = 60;
+    string IOExtra                                = 70;
+}
+
+message UnlockBalanceResponse {
 }
