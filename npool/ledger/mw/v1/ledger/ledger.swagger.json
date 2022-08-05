@@ -223,6 +223,23 @@
       ],
       "default": "DefaultType"
     },
+    "v1LockBalanceRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        }
+      }
+    },
     "v1UnlockBalanceResponse": {
       "type": "object"
     }

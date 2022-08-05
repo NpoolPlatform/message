@@ -26,6 +26,7 @@ type MiddlewareClient interface {
 	GetIntervalDetails(ctx context.Context, in *GetIntervalDetailsRequest, opts ...grpc.CallOption) (*GetIntervalDetailsResponse, error)
 	GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error)
 	BookKeeping(ctx context.Context, in *BookKeepingRequest, opts ...grpc.CallOption) (*BookKeepingResponse, error)
+	LockBalance(ctx context.Context, in *LockBalanceRequest, opts ...grpc.CallOption) (*LockBalanceRequest, error)
 	UnlockBalance(ctx context.Context, in *UnlockBalanceRequest, opts ...grpc.CallOption) (*UnlockBalanceResponse, error)
 }
 
@@ -73,6 +74,15 @@ func (c *middlewareClient) BookKeeping(ctx context.Context, in *BookKeepingReque
 	return out, nil
 }
 
+func (c *middlewareClient) LockBalance(ctx context.Context, in *LockBalanceRequest, opts ...grpc.CallOption) (*LockBalanceRequest, error) {
+	out := new(LockBalanceRequest)
+	err := c.cc.Invoke(ctx, "/ledger.middleware.ledger1.v1.Middleware/LockBalance", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) UnlockBalance(ctx context.Context, in *UnlockBalanceRequest, opts ...grpc.CallOption) (*UnlockBalanceResponse, error) {
 	out := new(UnlockBalanceResponse)
 	err := c.cc.Invoke(ctx, "/ledger.middleware.ledger1.v1.Middleware/UnlockBalance", in, out, opts...)
@@ -90,6 +100,7 @@ type MiddlewareServer interface {
 	GetIntervalDetails(context.Context, *GetIntervalDetailsRequest) (*GetIntervalDetailsResponse, error)
 	GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error)
 	BookKeeping(context.Context, *BookKeepingRequest) (*BookKeepingResponse, error)
+	LockBalance(context.Context, *LockBalanceRequest) (*LockBalanceRequest, error)
 	UnlockBalance(context.Context, *UnlockBalanceRequest) (*UnlockBalanceResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -109,6 +120,9 @@ func (UnimplementedMiddlewareServer) GetIntervalProfits(context.Context, *GetInt
 }
 func (UnimplementedMiddlewareServer) BookKeeping(context.Context, *BookKeepingRequest) (*BookKeepingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BookKeeping not implemented")
+}
+func (UnimplementedMiddlewareServer) LockBalance(context.Context, *LockBalanceRequest) (*LockBalanceRequest, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LockBalance not implemented")
 }
 func (UnimplementedMiddlewareServer) UnlockBalance(context.Context, *UnlockBalanceRequest) (*UnlockBalanceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UnlockBalance not implemented")
@@ -198,6 +212,24 @@ func _Middleware_BookKeeping_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_LockBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LockBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).LockBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.middleware.ledger1.v1.Middleware/LockBalance",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).LockBalance(ctx, req.(*LockBalanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_UnlockBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UnlockBalanceRequest)
 	if err := dec(in); err != nil {
@@ -238,6 +270,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "BookKeeping",
 			Handler:    _Middleware_BookKeeping_Handler,
+		},
+		{
+			MethodName: "LockBalance",
+			Handler:    _Middleware_LockBalance_Handler,
 		},
 		{
 			MethodName: "UnlockBalance",
