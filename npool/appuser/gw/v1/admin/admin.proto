@@ -46,9 +46,9 @@ service AdminGw {
         };
     }
 
-    rpc GetGenesisRole (GetGenesisRoleRequest) returns (GetGenesisRoleResponse) {
+    rpc GetGenesisRoles (GetGenesisRolesRequest) returns (GetGenesisRolesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/genesis/role"
+            post: "/v1/get/genesis/roles"
             body: "*"
         };
     }
@@ -114,10 +114,10 @@ message AuthorizeGenesisRequest {
 message AuthorizeGenesisResponse {
 }
 
-message GetGenesisRoleRequest {
+message GetGenesisRolesRequest {
 }
 
-message GetGenesisRoleResponse {
+message GetGenesisRolesResponse {
     appuser.manager.approle.v2.AppRole Info = 10;
 }
 

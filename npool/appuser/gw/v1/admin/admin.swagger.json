@@ -211,38 +211,6 @@
         ]
       }
     },
-    "/v1/get/genesis/role": {
-      "post": {
-        "operationId": "AdminGw_GetGenesisRole",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetGenesisRoleResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetGenesisRoleRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AdminGw"
-        ]
-      }
-    },
     "/v1/get/genesis/role/user": {
       "post": {
         "operationId": "AdminGw_GetGenesisRoleUsers",
@@ -267,6 +235,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetGenesisRoleUsersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminGw"
+        ]
+      }
+    },
+    "/v1/get/genesis/roles": {
+      "post": {
+        "operationId": "AdminGw_GetGenesisRoles",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGenesisRolesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGenesisRolesRequest"
             }
           }
         ],
@@ -404,17 +404,6 @@
     "v1GetGenesisAuthsResponse": {
       "type": "object"
     },
-    "v1GetGenesisRoleRequest": {
-      "type": "object"
-    },
-    "v1GetGenesisRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppRole"
-        }
-      }
-    },
     "v1GetGenesisRoleUsersRequest": {
       "type": "object"
     },
@@ -430,6 +419,17 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1GetGenesisRolesRequest": {
+      "type": "object"
+    },
+    "v1GetGenesisRolesResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRole"
         }
       }
     },
