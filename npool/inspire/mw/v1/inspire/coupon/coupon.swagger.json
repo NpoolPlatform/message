@@ -88,6 +88,11 @@
         },
         "Valid": {
           "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"create_at\""
         }
       }
     },

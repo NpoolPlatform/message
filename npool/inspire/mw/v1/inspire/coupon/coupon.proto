@@ -40,6 +40,8 @@ message Coupon {
     string     Message         = 90;
     bool       Expired         = 100;
     bool       Valid           = 110;
+    // @inject_tag: sql:"create_at"
+    uint32     CreatedAt       = 120;
 }
 
 message GetCouponRequest {
