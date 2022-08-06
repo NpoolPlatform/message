@@ -31,7 +31,8 @@ enum ReviewTriggerType {
     DefaultTriggerType    = 0;
 
     // Withdrawal triggers
-    LargeAmount           = 10;
-    Insufficuent          = 20;
-    OutOfGas              = 30;
+    AutoReviewed          = 10;
+    LargeAmount           = 20;
+    Insufficuent          = 30;
+    OutOfGas              = 40;
 }
