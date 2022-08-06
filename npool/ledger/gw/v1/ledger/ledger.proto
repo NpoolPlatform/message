@@ -180,7 +180,11 @@ message Withdraw {
 }
 
 message CreateWithdrawRequest {
-    ledger.manager.ledger.withdraw.v1.WithdrawReq Info = 10;
+    string AppID       = 10;
+    string UserID      = 20;
+    string CoinTypeID  = 30;
+    string AccountID   = 40;
+    string Amount      = 50;
 }
 
 message CreateWithdrawResponse {

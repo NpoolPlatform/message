@@ -277,8 +277,20 @@
     "gatewayledger1v1CreateWithdrawRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1WithdrawReq"
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
         }
       }
     },
@@ -698,38 +710,6 @@
         },
         "Incoming": {
           "type": "string"
-        }
-      }
-    },
-    "v1WithdrawReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "AccountID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "PlatformTransactionID": {
-          "type": "string"
-        },
-        "ChainTransactionID": {
-          "type": "string"
-        },
-        "State": {
-          "$ref": "#/definitions/v1WithdrawState"
         }
       }
     },
