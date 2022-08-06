@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateOrder(ctx context.Context, in *CreateOrderRequest, opts ...grpc.CallOption) (*CreateOrderResponse, error)
+	UpdateOrder(ctx context.Context, in *UpdateOrderRequest, opts ...grpc.CallOption) (*UpdateOrderResponse, error)
 	GetOrder(ctx context.Context, in *GetOrderRequest, opts ...grpc.CallOption) (*GetOrderResponse, error)
 	GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error)
 }
@@ -38,6 +39,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateOrder(ctx context.Context, in *CreateOrderRequest, opts ...grpc.CallOption) (*CreateOrderResponse, error) {
 	out := new(CreateOrderResponse)
 	err := c.cc.Invoke(ctx, "/order.middleware.order1.v1.Middleware/CreateOrder", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateOrder(ctx context.Context, in *UpdateOrderRequest, opts ...grpc.CallOption) (*UpdateOrderResponse, error) {
+	out := new(UpdateOrderResponse)
+	err := c.cc.Invoke(ctx, "/order.middleware.order1.v1.Middleware/UpdateOrder", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -67,6 +77,7 @@ func (c *middlewareClient) GetOrders(ctx context.Context, in *GetOrdersRequest, 
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateOrder(context.Context, *CreateOrderRequest) (*CreateOrderResponse, error)
+	UpdateOrder(context.Context, *UpdateOrderRequest) (*UpdateOrderResponse, error)
 	GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error)
 	GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -78,6 +89,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateOrder(context.Context, *CreateOrderRequest) (*CreateOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOrder not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateOrder(context.Context, *UpdateOrderRequest) (*UpdateOrderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrder not implemented")
 }
 func (UnimplementedMiddlewareServer) GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrder not implemented")
@@ -112,6 +126,24 @@ func _Middleware_CreateOrder_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateOrder(ctx, req.(*CreateOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/order.middleware.order1.v1.Middleware/UpdateOrder",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateOrder(ctx, req.(*UpdateOrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -162,6 +194,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateOrder",
 			Handler:    _Middleware_CreateOrder_Handler,
+		},
+		{
+			MethodName: "UpdateOrder",
+			Handler:    _Middleware_UpdateOrder_Handler,
 		},
 		{
 			MethodName: "GetOrder",

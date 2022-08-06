@@ -13,6 +13,7 @@ import "npool/npool.proto";
 // Service Name
 service Middleware {
     rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse) {}
+    rpc UpdateOrder (UpdateOrderRequest) returns (UpdateOrderResponse) {}
     rpc GetOrder    (GetOrderRequest)    returns (GetOrderResponse)    {}
     rpc GetOrders   (GetOrdersRequest)   returns (GetOrdersResponse)   {}
 }
@@ -44,6 +45,7 @@ message OrderReq {
     optional uint32 End                       = 200;
 
     optional string PromotionID               = 210;
+    optional bool   Canceled                  = 220;
 }
 
 message Order {
@@ -128,6 +130,14 @@ message CreateOrderRequest {
 }
 
 message CreateOrderResponse {
+    Order Info = 10;
+}
+
+message UpdateOrderRequest {
+    OrderReq Info = 10;
+}
+
+message UpdateOrderResponse {
     Order Info = 10;
 }
 
