@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type GatewayClient interface {
 	UpdateReview(ctx context.Context, in *UpdateReviewRequest, opts ...grpc.CallOption) (*UpdateReviewResponse, error)
 	UpdateAppReview(ctx context.Context, in *UpdateAppReviewRequest, opts ...grpc.CallOption) (*UpdateAppReviewResponse, error)
+	GetObjectTypes(ctx context.Context, in *GetObjectTypesRequest, opts ...grpc.CallOption) (*GetObjectTypesResponse, error)
 }
 
 type gatewayClient struct {
@@ -52,12 +53,22 @@ func (c *gatewayClient) UpdateAppReview(ctx context.Context, in *UpdateAppReview
 	return out, nil
 }
 
+func (c *gatewayClient) GetObjectTypes(ctx context.Context, in *GetObjectTypesRequest, opts ...grpc.CallOption) (*GetObjectTypesResponse, error) {
+	out := new(GetObjectTypesResponse)
+	err := c.cc.Invoke(ctx, "/review.gateway.v2.Gateway/GetObjectTypes", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
 	UpdateReview(context.Context, *UpdateReviewRequest) (*UpdateReviewResponse, error)
 	UpdateAppReview(context.Context, *UpdateAppReviewRequest) (*UpdateAppReviewResponse, error)
+	GetObjectTypes(context.Context, *GetObjectTypesRequest) (*GetObjectTypesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -70,6 +81,9 @@ func (UnimplementedGatewayServer) UpdateReview(context.Context, *UpdateReviewReq
 }
 func (UnimplementedGatewayServer) UpdateAppReview(context.Context, *UpdateAppReviewRequest) (*UpdateAppReviewResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppReview not implemented")
+}
+func (UnimplementedGatewayServer) GetObjectTypes(context.Context, *GetObjectTypesRequest) (*GetObjectTypesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetObjectTypes not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -120,6 +134,24 @@ func _Gateway_UpdateAppReview_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetObjectTypes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetObjectTypesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetObjectTypes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/review.gateway.v2.Gateway/GetObjectTypes",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetObjectTypes(ctx, req.(*GetObjectTypesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -134,6 +166,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateAppReview",
 			Handler:    _Gateway_UpdateAppReview_Handler,
+		},
+		{
+			MethodName: "GetObjectTypes",
+			Handler:    _Gateway_GetObjectTypes_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

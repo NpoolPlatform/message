@@ -20,8 +20,14 @@ service Gateway {
 
     rpc UpdateAppReview (UpdateAppReviewRequest) returns (UpdateAppReviewResponse) {
         option (google.api.http) = {
-            post: "/v2/update/app/review"
+            post: "/v2/update/appreview"
             body: "*"
+        };
+    }
+
+    rpc GetObjectTypes (GetObjectTypesRequest) returns (GetObjectTypesResponse) {
+        option (google.api.http) = {
+            post: "/v2/get/objecttypes"
         };
     }
 }
@@ -60,4 +66,11 @@ message UpdateAppReviewRequest {
 
 message UpdateAppReviewResponse {
     Review Info = 10;
+}
+
+message GetObjectTypesRequest {
+}
+
+message GetObjectTypesResponse {
+    repeated string Infos = 10;
 }
