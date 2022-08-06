@@ -174,15 +174,18 @@ enum WithdrawState {
 }
 
 message Withdraw {
-    string CoinTypeID   = 10;
-    string CoinName     = 20;
-    string CoinLogo     = 30;
-    string CoinUnit     = 40;
-    string Address      = 50;
-    string Amount       = 60;
-    uint32 CreatedAt    = 70;
-    WithdrawState State = 80;
-    string Message      = 90;
+    string        CoinTypeID    = 10;
+    string        CoinName      = 20;
+    string        CoinLogo      = 30;
+    string        CoinUnit      = 40;
+    string        Amount        = 50;
+    uint32        CreatedAt     = 60;
+
+    string        Address       = 70;
+    string        AddressLabels = 80;
+
+    WithdrawState State         = 90;
+    string        Message       = 100;
 }
 
 message CreateWithdrawRequest {

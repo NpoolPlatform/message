@@ -327,15 +327,18 @@
         "CoinUnit": {
           "type": "string"
         },
-        "Address": {
-          "type": "string"
-        },
         "Amount": {
           "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "AddressLabels": {
+          "type": "string"
         },
         "State": {
           "$ref": "#/definitions/v1WithdrawState"
