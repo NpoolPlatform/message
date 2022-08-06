@@ -26,3 +26,12 @@ enum ReviewState {
     Wait                  = 20;
     Rejected              = 30;
 }
+
+enum ReviewTriggerType {
+    DefaultTriggerType    = 0;
+
+    // Withdrawal triggers
+    LargeAmount           = 10;
+    Insufficuent          = 20;
+    OutOfGas              = 30;
+}
