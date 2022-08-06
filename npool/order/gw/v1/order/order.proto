@@ -138,8 +138,9 @@ message CreateOrderResponse {
 }
 
 message UpdateOrderRequest {
-    string          ID       = 10;
-    optional bool   Canceled = 20;
+    string          ID        = 10;
+    string          PaymentID = 20;
+    optional bool   Canceled  = 30;
 }
 
 message UpdateOrderResponse {

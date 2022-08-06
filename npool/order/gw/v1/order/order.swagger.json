@@ -676,6 +676,9 @@
         "ID": {
           "type": "string"
         },
+        "PaymentID": {
+          "type": "string"
+        },
         "Canceled": {
           "type": "boolean"
         }
