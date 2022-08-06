@@ -213,6 +213,9 @@
         "ID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
         "TargetAppID": {
           "type": "string"
         },

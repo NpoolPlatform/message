@@ -61,10 +61,11 @@ message UpdateReviewResponse {
 
 message UpdateAppReviewRequest {
     string ID          = 10;
-    string TargetAppID = 20;
-    string UserID      = 30; // Reviewer
-    review.manager.v2.ReviewState State = 40;
-    optional string Message   = 50;
+    string AppID       = 20;
+    string TargetAppID = 30;
+    string UserID      = 40; // Reviewer
+    review.manager.v2.ReviewState State = 50;
+    optional string Message   = 60;
 }
 
 message UpdateAppReviewResponse {
