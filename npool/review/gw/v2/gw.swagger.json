@@ -179,6 +179,9 @@
         },
         "Trigger": {
           "$ref": "#/definitions/v2ReviewTriggerType"
+        },
+        "ObjectInfo": {
+          "type": "string"
         }
       }
     },

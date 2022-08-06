@@ -44,6 +44,7 @@ message Review {
     string Message                              = 90;
     review.manager.v2.ReviewState State         = 100;
     review.manager.v2.ReviewTriggerType Trigger = 110;
+    string ObjectInfo                           = 120;
 }
 
 message UpdateReviewRequest {
