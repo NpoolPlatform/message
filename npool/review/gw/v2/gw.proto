@@ -83,5 +83,5 @@ message GetObjectTypesRequest {
 }
 
 message GetObjectTypesResponse {
-    repeated string Infos = 10;
+    repeated review.manager.v2.ReviewObjectType Infos = 10;
 }

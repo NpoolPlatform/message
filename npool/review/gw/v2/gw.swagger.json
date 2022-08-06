@@ -177,7 +177,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2ReviewObjectType"
           }
         }
       }
@@ -224,6 +224,15 @@
           "type": "string"
         }
       }
+    },
+    "v2ReviewObjectType": {
+      "type": "string",
+      "enum": [
+        "DefaultObjectType",
+        "ObjectKyc",
+        "ObjectWithdrawal"
+      ],
+      "default": "DefaultObjectType"
     },
     "v2ReviewState": {
       "type": "string",
