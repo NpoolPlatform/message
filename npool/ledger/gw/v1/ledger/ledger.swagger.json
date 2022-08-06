@@ -721,6 +721,15 @@
         },
         "Amount": {
           "type": "string"
+        },
+        "PlatformTransactionID": {
+          "type": "string"
+        },
+        "ChainTransactionID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
         }
       }
     },
@@ -729,7 +738,7 @@
       "enum": [
         "DefaultWithdrawState",
         "Reviewing",
-        "Transferfing",
+        "Transferring",
         "Rejected",
         "TransactionFail",
         "Successful"

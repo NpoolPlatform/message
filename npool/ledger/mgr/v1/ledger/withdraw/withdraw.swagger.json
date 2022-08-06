@@ -75,6 +75,9 @@
         },
         "CreatedAt": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "State": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -208,6 +211,15 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "PlatformTransactionID": {
+          "type": "string"
+        },
+        "ChainTransactionID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
         }
       }
     },
@@ -231,8 +243,29 @@
         },
         "Amount": {
           "type": "string"
+        },
+        "PlatformTransactionID": {
+          "type": "string"
+        },
+        "ChainTransactionID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
         }
       }
+    },
+    "v1WithdrawState": {
+      "type": "string",
+      "enum": [
+        "DefaultWithdrawState",
+        "Reviewing",
+        "Transferring",
+        "Rejected",
+        "TransactionFail",
+        "Successful"
+      ],
+      "default": "DefaultWithdrawState"
     }
   }
 }

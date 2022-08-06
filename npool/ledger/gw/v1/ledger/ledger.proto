@@ -164,15 +164,6 @@ message GetIntervalProfitsResponse {
     uint32          Total = 20;
 }
 
-enum WithdrawState {
-    DefaultWithdrawState  = 0;
-    Reviewing             = 10;
-    Transferfing          = 20;
-    Rejected              = 30;
-    TransactionFail       = 40;
-    Successful            = 50;
-}
-
 message Withdraw {
     string        CoinTypeID    = 10;
     string        CoinName      = 20;
@@ -184,7 +175,7 @@ message Withdraw {
     string        Address       = 70;
     string        AddressLabels = 80;
 
-    WithdrawState State         = 90;
+    ledger.manager.ledger.withdraw.v1.WithdrawState State = 90;
     string        Message       = 100;
 }
 
