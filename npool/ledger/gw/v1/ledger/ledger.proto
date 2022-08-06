@@ -164,14 +164,25 @@ message GetIntervalProfitsResponse {
     uint32          Total = 20;
 }
 
+enum WithdrawState {
+    DefaultWithdrawState  = 0;
+    Reviewing             = 10;
+    Transfering           = 20;
+    Rejected              = 30;
+    TransactionFail       = 40;
+    Successful            = 50;
+}
+
 message Withdraw {
-    string CoinTypeID = 10;
-    string CoinName   = 20;
-    string CoinLogo   = 30;
-    string CoinUnit   = 40;
-    string Address    = 50;
-    string Amount     = 60;
-    uint32 CreatedAt  = 70;
+    string CoinTypeID   = 10;
+    string CoinName     = 20;
+    string CoinLogo     = 30;
+    string CoinUnit     = 40;
+    string Address      = 50;
+    string Amount       = 60;
+    uint32 CreatedAt    = 70;
+    WithdrawState State = 80;
+    string Message      = 90;
 }
 
 message CreateWithdrawRequest {

@@ -336,6 +336,12 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
+        },
+        "Message": {
+          "type": "string"
         }
       }
     },
@@ -698,6 +704,18 @@
           "type": "string"
         }
       }
+    },
+    "v1WithdrawState": {
+      "type": "string",
+      "enum": [
+        "DefaultWithdrawState",
+        "Reviewing",
+        "Transfering",
+        "Rejected",
+        "TransactionFail",
+        "Successful"
+      ],
+      "default": "DefaultWithdrawState"
     }
   }
 }
