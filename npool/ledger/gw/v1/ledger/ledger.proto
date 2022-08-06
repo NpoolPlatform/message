@@ -167,7 +167,7 @@ message GetIntervalProfitsResponse {
 enum WithdrawState {
     DefaultWithdrawState  = 0;
     Reviewing             = 10;
-    Transfering           = 20;
+    Transferfing          = 20;
     Rejected              = 30;
     TransactionFail       = 40;
     Successful            = 50;
