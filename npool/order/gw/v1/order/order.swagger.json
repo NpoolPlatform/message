@@ -673,6 +673,12 @@
     "v1UpdateOrderRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "ID": {
           "type": "string"
         },
