@@ -309,6 +309,10 @@
           "items": {
             "$ref": "#/definitions/gatewayledger1v1Withdraw"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -628,6 +632,10 @@
           "items": {
             "$ref": "#/definitions/gatewayledger1v1Withdraw"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

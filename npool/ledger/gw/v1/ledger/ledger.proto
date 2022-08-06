@@ -205,6 +205,7 @@ message GetWithdrawsRequest {
 
 message GetWithdrawsResponse {
     repeated Withdraw Infos = 10;
+    uint32            Total = 20;
 }
 
 message GetIntervalWithdrawsRequest {
@@ -218,4 +219,5 @@ message GetIntervalWithdrawsRequest {
 
 message GetIntervalWithdrawsResponse {
     repeated Withdraw Infos = 10;
+    uint32            Total = 20;
 }
