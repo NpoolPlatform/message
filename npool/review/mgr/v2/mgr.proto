@@ -19,3 +19,10 @@ enum ReviewObjectType {
     ObjectWithdrawal      = 20;
 }
 
+enum ReviewState {
+    DefaultReviewState    = 0;
+
+    Approved              = 10;
+    Wait                  = 20;
+    Rejected              = 30;
+}
