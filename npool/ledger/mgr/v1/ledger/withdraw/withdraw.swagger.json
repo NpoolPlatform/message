@@ -73,7 +73,7 @@
         "Amount": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "CreateAt": {
+        "CreatedAt": {
           "$ref": "#/definitions/v1Uint32Val"
         }
       }

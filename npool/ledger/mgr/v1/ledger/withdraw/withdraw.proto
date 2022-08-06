@@ -47,7 +47,7 @@ message Conds {
     optional npool.v1.StringVal CoinTypeID = 40;
     optional npool.v1.StringVal AccountID  = 50;
     optional npool.v1.StringVal Amount     = 60;
-    optional npool.v1.Uint32Val CreateAt   = 70;
+    optional npool.v1.Uint32Val CreatedAt  = 70;
 }
 
 
