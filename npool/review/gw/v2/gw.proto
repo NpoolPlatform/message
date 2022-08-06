@@ -51,6 +51,7 @@ message UpdateReviewRequest {
     string AppID       = 20;
     string UserID      = 30; // Reviewer
     review.manager.v2.ReviewState State = 40;
+    optional string Message   = 50;
 }
 
 message UpdateReviewResponse {
@@ -62,6 +63,7 @@ message UpdateAppReviewRequest {
     string TargetAppID = 20;
     string UserID      = 30; // Reviewer
     review.manager.v2.ReviewState State = 40;
+    optional string Message   = 50;
 }
 
 message UpdateAppReviewResponse {
