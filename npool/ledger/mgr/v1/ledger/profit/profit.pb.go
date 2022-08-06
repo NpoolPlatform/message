@@ -10,7 +10,7 @@ import (
 	npool "github.com/NpoolPlatform/message/npool"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
+	_ "google.golang.org/protobuf/types/known/emptypb"
 	reflect "reflect"
 	sync "sync"
 )
@@ -1370,12 +1370,8 @@ var file_npool_ledger_mgr_v1_ledger_profit_profit_proto_rawDesc = []byte{
 	0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72,
 	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e,
 	0x70, 0x72, 0x6f, 0x66, 0x69, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x66, 0x69, 0x74,
-	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xb9, 0x0a, 0x0a, 0x07, 0x4d, 0x61, 0x6e, 0x61, 0x67,
-	0x65, 0x72, 0x12, 0x3e, 0x0a, 0x07, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x16, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e,
-	0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x19, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31,
-	0x2e, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x12, 0x7d, 0x0a, 0x0c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x72, 0x6f, 0x66,
+	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xf9, 0x09, 0x0a, 0x07, 0x4d, 0x61, 0x6e, 0x61, 0x67,
+	0x65, 0x72, 0x12, 0x7d, 0x0a, 0x0c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x72, 0x6f, 0x66,
 	0x69, 0x74, 0x12, 0x34, 0x2e, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61,
 	0x67, 0x65, 0x72, 0x2e, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x69,
 	0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x72, 0x6f, 0x66, 0x69,
@@ -1499,8 +1495,6 @@ var file_npool_ledger_mgr_v1_ledger_profit_profit_proto_goTypes = []interface{}{
 	(*DeleteProfitRequest)(nil),      // 21: ledger.manager.ledger.profit.v1.DeleteProfitRequest
 	(*DeleteProfitResponse)(nil),     // 22: ledger.manager.ledger.profit.v1.DeleteProfitResponse
 	(*npool.StringVal)(nil),          // 23: npool.v1.StringVal
-	(*emptypb.Empty)(nil),            // 24: google.protobuf.Empty
-	(*npool.VersionResponse)(nil),    // 25: npool.v1.VersionResponse
 }
 var file_npool_ledger_mgr_v1_ledger_profit_profit_proto_depIdxs = []int32{
 	23, // 0: ledger.manager.ledger.profit.v1.Conds.ID:type_name -> npool.v1.StringVal
@@ -1522,30 +1516,28 @@ var file_npool_ledger_mgr_v1_ledger_profit_profit_proto_depIdxs = []int32{
 	2,  // 16: ledger.manager.ledger.profit.v1.ExistProfitCondsRequest.Conds:type_name -> ledger.manager.ledger.profit.v1.Conds
 	2,  // 17: ledger.manager.ledger.profit.v1.CountProfitsRequest.Conds:type_name -> ledger.manager.ledger.profit.v1.Conds
 	1,  // 18: ledger.manager.ledger.profit.v1.DeleteProfitResponse.Info:type_name -> ledger.manager.ledger.profit.v1.Profit
-	24, // 19: ledger.manager.ledger.profit.v1.Manager.Version:input_type -> google.protobuf.Empty
-	3,  // 20: ledger.manager.ledger.profit.v1.Manager.CreateProfit:input_type -> ledger.manager.ledger.profit.v1.CreateProfitRequest
-	5,  // 21: ledger.manager.ledger.profit.v1.Manager.CreateProfits:input_type -> ledger.manager.ledger.profit.v1.CreateProfitsRequest
-	7,  // 22: ledger.manager.ledger.profit.v1.Manager.AddProfit:input_type -> ledger.manager.ledger.profit.v1.AddProfitRequest
-	9,  // 23: ledger.manager.ledger.profit.v1.Manager.GetProfit:input_type -> ledger.manager.ledger.profit.v1.GetProfitRequest
-	13, // 24: ledger.manager.ledger.profit.v1.Manager.GetProfitOnly:input_type -> ledger.manager.ledger.profit.v1.GetProfitOnlyRequest
-	11, // 25: ledger.manager.ledger.profit.v1.Manager.GetProfits:input_type -> ledger.manager.ledger.profit.v1.GetProfitsRequest
-	15, // 26: ledger.manager.ledger.profit.v1.Manager.ExistProfit:input_type -> ledger.manager.ledger.profit.v1.ExistProfitRequest
-	17, // 27: ledger.manager.ledger.profit.v1.Manager.ExistProfitConds:input_type -> ledger.manager.ledger.profit.v1.ExistProfitCondsRequest
-	19, // 28: ledger.manager.ledger.profit.v1.Manager.CountProfits:input_type -> ledger.manager.ledger.profit.v1.CountProfitsRequest
-	21, // 29: ledger.manager.ledger.profit.v1.Manager.DeleteProfit:input_type -> ledger.manager.ledger.profit.v1.DeleteProfitRequest
-	25, // 30: ledger.manager.ledger.profit.v1.Manager.Version:output_type -> npool.v1.VersionResponse
-	4,  // 31: ledger.manager.ledger.profit.v1.Manager.CreateProfit:output_type -> ledger.manager.ledger.profit.v1.CreateProfitResponse
-	6,  // 32: ledger.manager.ledger.profit.v1.Manager.CreateProfits:output_type -> ledger.manager.ledger.profit.v1.CreateProfitsResponse
-	8,  // 33: ledger.manager.ledger.profit.v1.Manager.AddProfit:output_type -> ledger.manager.ledger.profit.v1.AddProfitResponse
-	10, // 34: ledger.manager.ledger.profit.v1.Manager.GetProfit:output_type -> ledger.manager.ledger.profit.v1.GetProfitResponse
-	14, // 35: ledger.manager.ledger.profit.v1.Manager.GetProfitOnly:output_type -> ledger.manager.ledger.profit.v1.GetProfitOnlyResponse
-	12, // 36: ledger.manager.ledger.profit.v1.Manager.GetProfits:output_type -> ledger.manager.ledger.profit.v1.GetProfitsResponse
-	16, // 37: ledger.manager.ledger.profit.v1.Manager.ExistProfit:output_type -> ledger.manager.ledger.profit.v1.ExistProfitResponse
-	18, // 38: ledger.manager.ledger.profit.v1.Manager.ExistProfitConds:output_type -> ledger.manager.ledger.profit.v1.ExistProfitCondsResponse
-	20, // 39: ledger.manager.ledger.profit.v1.Manager.CountProfits:output_type -> ledger.manager.ledger.profit.v1.CountProfitsResponse
-	22, // 40: ledger.manager.ledger.profit.v1.Manager.DeleteProfit:output_type -> ledger.manager.ledger.profit.v1.DeleteProfitResponse
-	30, // [30:41] is the sub-list for method output_type
-	19, // [19:30] is the sub-list for method input_type
+	3,  // 19: ledger.manager.ledger.profit.v1.Manager.CreateProfit:input_type -> ledger.manager.ledger.profit.v1.CreateProfitRequest
+	5,  // 20: ledger.manager.ledger.profit.v1.Manager.CreateProfits:input_type -> ledger.manager.ledger.profit.v1.CreateProfitsRequest
+	7,  // 21: ledger.manager.ledger.profit.v1.Manager.AddProfit:input_type -> ledger.manager.ledger.profit.v1.AddProfitRequest
+	9,  // 22: ledger.manager.ledger.profit.v1.Manager.GetProfit:input_type -> ledger.manager.ledger.profit.v1.GetProfitRequest
+	13, // 23: ledger.manager.ledger.profit.v1.Manager.GetProfitOnly:input_type -> ledger.manager.ledger.profit.v1.GetProfitOnlyRequest
+	11, // 24: ledger.manager.ledger.profit.v1.Manager.GetProfits:input_type -> ledger.manager.ledger.profit.v1.GetProfitsRequest
+	15, // 25: ledger.manager.ledger.profit.v1.Manager.ExistProfit:input_type -> ledger.manager.ledger.profit.v1.ExistProfitRequest
+	17, // 26: ledger.manager.ledger.profit.v1.Manager.ExistProfitConds:input_type -> ledger.manager.ledger.profit.v1.ExistProfitCondsRequest
+	19, // 27: ledger.manager.ledger.profit.v1.Manager.CountProfits:input_type -> ledger.manager.ledger.profit.v1.CountProfitsRequest
+	21, // 28: ledger.manager.ledger.profit.v1.Manager.DeleteProfit:input_type -> ledger.manager.ledger.profit.v1.DeleteProfitRequest
+	4,  // 29: ledger.manager.ledger.profit.v1.Manager.CreateProfit:output_type -> ledger.manager.ledger.profit.v1.CreateProfitResponse
+	6,  // 30: ledger.manager.ledger.profit.v1.Manager.CreateProfits:output_type -> ledger.manager.ledger.profit.v1.CreateProfitsResponse
+	8,  // 31: ledger.manager.ledger.profit.v1.Manager.AddProfit:output_type -> ledger.manager.ledger.profit.v1.AddProfitResponse
+	10, // 32: ledger.manager.ledger.profit.v1.Manager.GetProfit:output_type -> ledger.manager.ledger.profit.v1.GetProfitResponse
+	14, // 33: ledger.manager.ledger.profit.v1.Manager.GetProfitOnly:output_type -> ledger.manager.ledger.profit.v1.GetProfitOnlyResponse
+	12, // 34: ledger.manager.ledger.profit.v1.Manager.GetProfits:output_type -> ledger.manager.ledger.profit.v1.GetProfitsResponse
+	16, // 35: ledger.manager.ledger.profit.v1.Manager.ExistProfit:output_type -> ledger.manager.ledger.profit.v1.ExistProfitResponse
+	18, // 36: ledger.manager.ledger.profit.v1.Manager.ExistProfitConds:output_type -> ledger.manager.ledger.profit.v1.ExistProfitCondsResponse
+	20, // 37: ledger.manager.ledger.profit.v1.Manager.CountProfits:output_type -> ledger.manager.ledger.profit.v1.CountProfitsResponse
+	22, // 38: ledger.manager.ledger.profit.v1.Manager.DeleteProfit:output_type -> ledger.manager.ledger.profit.v1.DeleteProfitResponse
+	29, // [29:39] is the sub-list for method output_type
+	19, // [19:29] is the sub-list for method input_type
 	19, // [19:19] is the sub-list for extension type_name
 	19, // [19:19] is the sub-list for extension extendee
 	0,  // [0:19] is the sub-list for field type_name

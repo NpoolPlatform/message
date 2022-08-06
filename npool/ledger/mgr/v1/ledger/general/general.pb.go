@@ -10,7 +10,7 @@ import (
 	npool "github.com/NpoolPlatform/message/npool"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
+	_ "google.golang.org/protobuf/types/known/emptypb"
 	reflect "reflect"
 	sync "sync"
 )
@@ -1472,11 +1472,7 @@ var file_npool_ledger_mgr_v1_ledger_general_general_proto_rawDesc = []byte{
 	0x2e, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
 	0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x6c, 0x2e, 0x76,
 	0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x6c, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32,
-	0xee, 0x0a, 0x0a, 0x07, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x3e, 0x0a, 0x07, 0x56,
-	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x19,
-	0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f,
-	0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x82, 0x01, 0x0a, 0x0d,
+	0xae, 0x0a, 0x0a, 0x07, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x82, 0x01, 0x0a, 0x0d,
 	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x36, 0x2e,
 	0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x6c,
 	0x65, 0x64, 0x67, 0x65, 0x72, 0x2e, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x6c, 0x2e, 0x76, 0x31,
@@ -1604,8 +1600,6 @@ var file_npool_ledger_mgr_v1_ledger_general_general_proto_goTypes = []interface{
 	(*DeleteGeneralRequest)(nil),      // 21: ledger.manager.ledger.general.v1.DeleteGeneralRequest
 	(*DeleteGeneralResponse)(nil),     // 22: ledger.manager.ledger.general.v1.DeleteGeneralResponse
 	(*npool.StringVal)(nil),           // 23: npool.v1.StringVal
-	(*emptypb.Empty)(nil),             // 24: google.protobuf.Empty
-	(*npool.VersionResponse)(nil),     // 25: npool.v1.VersionResponse
 }
 var file_npool_ledger_mgr_v1_ledger_general_general_proto_depIdxs = []int32{
 	23, // 0: ledger.manager.ledger.general.v1.Conds.ID:type_name -> npool.v1.StringVal
@@ -1630,30 +1624,28 @@ var file_npool_ledger_mgr_v1_ledger_general_general_proto_depIdxs = []int32{
 	2,  // 19: ledger.manager.ledger.general.v1.ExistGeneralCondsRequest.Conds:type_name -> ledger.manager.ledger.general.v1.Conds
 	2,  // 20: ledger.manager.ledger.general.v1.CountGeneralsRequest.Conds:type_name -> ledger.manager.ledger.general.v1.Conds
 	1,  // 21: ledger.manager.ledger.general.v1.DeleteGeneralResponse.Info:type_name -> ledger.manager.ledger.general.v1.General
-	24, // 22: ledger.manager.ledger.general.v1.Manager.Version:input_type -> google.protobuf.Empty
-	3,  // 23: ledger.manager.ledger.general.v1.Manager.CreateGeneral:input_type -> ledger.manager.ledger.general.v1.CreateGeneralRequest
-	5,  // 24: ledger.manager.ledger.general.v1.Manager.CreateGenerals:input_type -> ledger.manager.ledger.general.v1.CreateGeneralsRequest
-	7,  // 25: ledger.manager.ledger.general.v1.Manager.AddGeneral:input_type -> ledger.manager.ledger.general.v1.AddGeneralRequest
-	9,  // 26: ledger.manager.ledger.general.v1.Manager.GetGeneral:input_type -> ledger.manager.ledger.general.v1.GetGeneralRequest
-	13, // 27: ledger.manager.ledger.general.v1.Manager.GetGeneralOnly:input_type -> ledger.manager.ledger.general.v1.GetGeneralOnlyRequest
-	11, // 28: ledger.manager.ledger.general.v1.Manager.GetGenerals:input_type -> ledger.manager.ledger.general.v1.GetGeneralsRequest
-	15, // 29: ledger.manager.ledger.general.v1.Manager.ExistGeneral:input_type -> ledger.manager.ledger.general.v1.ExistGeneralRequest
-	17, // 30: ledger.manager.ledger.general.v1.Manager.ExistGeneralConds:input_type -> ledger.manager.ledger.general.v1.ExistGeneralCondsRequest
-	19, // 31: ledger.manager.ledger.general.v1.Manager.CountGenerals:input_type -> ledger.manager.ledger.general.v1.CountGeneralsRequest
-	21, // 32: ledger.manager.ledger.general.v1.Manager.DeleteGeneral:input_type -> ledger.manager.ledger.general.v1.DeleteGeneralRequest
-	25, // 33: ledger.manager.ledger.general.v1.Manager.Version:output_type -> npool.v1.VersionResponse
-	4,  // 34: ledger.manager.ledger.general.v1.Manager.CreateGeneral:output_type -> ledger.manager.ledger.general.v1.CreateGeneralResponse
-	6,  // 35: ledger.manager.ledger.general.v1.Manager.CreateGenerals:output_type -> ledger.manager.ledger.general.v1.CreateGeneralsResponse
-	8,  // 36: ledger.manager.ledger.general.v1.Manager.AddGeneral:output_type -> ledger.manager.ledger.general.v1.AddGeneralResponse
-	10, // 37: ledger.manager.ledger.general.v1.Manager.GetGeneral:output_type -> ledger.manager.ledger.general.v1.GetGeneralResponse
-	14, // 38: ledger.manager.ledger.general.v1.Manager.GetGeneralOnly:output_type -> ledger.manager.ledger.general.v1.GetGeneralOnlyResponse
-	12, // 39: ledger.manager.ledger.general.v1.Manager.GetGenerals:output_type -> ledger.manager.ledger.general.v1.GetGeneralsResponse
-	16, // 40: ledger.manager.ledger.general.v1.Manager.ExistGeneral:output_type -> ledger.manager.ledger.general.v1.ExistGeneralResponse
-	18, // 41: ledger.manager.ledger.general.v1.Manager.ExistGeneralConds:output_type -> ledger.manager.ledger.general.v1.ExistGeneralCondsResponse
-	20, // 42: ledger.manager.ledger.general.v1.Manager.CountGenerals:output_type -> ledger.manager.ledger.general.v1.CountGeneralsResponse
-	22, // 43: ledger.manager.ledger.general.v1.Manager.DeleteGeneral:output_type -> ledger.manager.ledger.general.v1.DeleteGeneralResponse
-	33, // [33:44] is the sub-list for method output_type
-	22, // [22:33] is the sub-list for method input_type
+	3,  // 22: ledger.manager.ledger.general.v1.Manager.CreateGeneral:input_type -> ledger.manager.ledger.general.v1.CreateGeneralRequest
+	5,  // 23: ledger.manager.ledger.general.v1.Manager.CreateGenerals:input_type -> ledger.manager.ledger.general.v1.CreateGeneralsRequest
+	7,  // 24: ledger.manager.ledger.general.v1.Manager.AddGeneral:input_type -> ledger.manager.ledger.general.v1.AddGeneralRequest
+	9,  // 25: ledger.manager.ledger.general.v1.Manager.GetGeneral:input_type -> ledger.manager.ledger.general.v1.GetGeneralRequest
+	13, // 26: ledger.manager.ledger.general.v1.Manager.GetGeneralOnly:input_type -> ledger.manager.ledger.general.v1.GetGeneralOnlyRequest
+	11, // 27: ledger.manager.ledger.general.v1.Manager.GetGenerals:input_type -> ledger.manager.ledger.general.v1.GetGeneralsRequest
+	15, // 28: ledger.manager.ledger.general.v1.Manager.ExistGeneral:input_type -> ledger.manager.ledger.general.v1.ExistGeneralRequest
+	17, // 29: ledger.manager.ledger.general.v1.Manager.ExistGeneralConds:input_type -> ledger.manager.ledger.general.v1.ExistGeneralCondsRequest
+	19, // 30: ledger.manager.ledger.general.v1.Manager.CountGenerals:input_type -> ledger.manager.ledger.general.v1.CountGeneralsRequest
+	21, // 31: ledger.manager.ledger.general.v1.Manager.DeleteGeneral:input_type -> ledger.manager.ledger.general.v1.DeleteGeneralRequest
+	4,  // 32: ledger.manager.ledger.general.v1.Manager.CreateGeneral:output_type -> ledger.manager.ledger.general.v1.CreateGeneralResponse
+	6,  // 33: ledger.manager.ledger.general.v1.Manager.CreateGenerals:output_type -> ledger.manager.ledger.general.v1.CreateGeneralsResponse
+	8,  // 34: ledger.manager.ledger.general.v1.Manager.AddGeneral:output_type -> ledger.manager.ledger.general.v1.AddGeneralResponse
+	10, // 35: ledger.manager.ledger.general.v1.Manager.GetGeneral:output_type -> ledger.manager.ledger.general.v1.GetGeneralResponse
+	14, // 36: ledger.manager.ledger.general.v1.Manager.GetGeneralOnly:output_type -> ledger.manager.ledger.general.v1.GetGeneralOnlyResponse
+	12, // 37: ledger.manager.ledger.general.v1.Manager.GetGenerals:output_type -> ledger.manager.ledger.general.v1.GetGeneralsResponse
+	16, // 38: ledger.manager.ledger.general.v1.Manager.ExistGeneral:output_type -> ledger.manager.ledger.general.v1.ExistGeneralResponse
+	18, // 39: ledger.manager.ledger.general.v1.Manager.ExistGeneralConds:output_type -> ledger.manager.ledger.general.v1.ExistGeneralCondsResponse
+	20, // 40: ledger.manager.ledger.general.v1.Manager.CountGenerals:output_type -> ledger.manager.ledger.general.v1.CountGeneralsResponse
+	22, // 41: ledger.manager.ledger.general.v1.Manager.DeleteGeneral:output_type -> ledger.manager.ledger.general.v1.DeleteGeneralResponse
+	32, // [32:42] is the sub-list for method output_type
+	22, // [22:32] is the sub-list for method input_type
 	22, // [22:22] is the sub-list for extension type_name
 	22, // [22:22] is the sub-list for extension extendee
 	0,  // [0:22] is the sub-list for field type_name
