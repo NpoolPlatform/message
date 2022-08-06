@@ -37,6 +37,7 @@ message Withdraw {
     string CoinTypeID = 40;
     string AccountID  = 50;
     string Amount     = 60;
+    uint32 CreatedAt  = 70;
 }
 
 message Conds {
@@ -46,6 +47,7 @@ message Conds {
     optional npool.v1.StringVal CoinTypeID = 40;
     optional npool.v1.StringVal AccountID  = 50;
     optional npool.v1.StringVal Amount     = 60;
+    optional npool.v1.Uint32Val CreateAt   = 70;
 }
 
 

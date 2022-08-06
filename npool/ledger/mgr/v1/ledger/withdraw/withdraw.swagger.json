@@ -72,6 +72,9 @@
         },
         "Amount": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "CreateAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -169,6 +172,18 @@
         }
       }
     },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1Withdraw": {
       "type": "object",
       "properties": {
@@ -189,6 +204,10 @@
         },
         "Amount": {
           "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
