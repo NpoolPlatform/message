@@ -11,7 +11,7 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateWithdraw     (CreateWithdrawRequest)     returns (CreateWithdrawResponse)     {}
     rpc CreateWithdraws    (CreateWithdrawsRequest)    returns (CreateWithdrawsResponse)    {}
-    rpc AddWithdraw        (AddWithdrawRequest)        returns (AddWithdrawResponse)        {}
+    rpc UpdateWithdraw     (UpdateWithdrawRequest)     returns (UpdateWithdrawResponse)     {}
     rpc GetWithdraw        (GetWithdrawRequest)        returns (GetWithdrawResponse)        {}
     rpc GetWithdrawOnly    (GetWithdrawOnlyRequest)    returns (GetWithdrawOnlyResponse)    {}
     rpc GetWithdraws       (GetWithdrawsRequest)       returns (GetWithdrawsResponse)       {}
@@ -84,11 +84,11 @@ message CreateWithdrawsResponse {
     repeated Withdraw Infos = 10;
 }
 
-message AddWithdrawRequest {
+message UpdateWithdrawRequest {
     WithdrawReq Info = 10;
 }
 
-message AddWithdrawResponse {
+message UpdateWithdrawResponse {
     Withdraw Info = 10;
 }
 

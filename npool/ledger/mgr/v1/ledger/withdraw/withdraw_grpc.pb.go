@@ -24,7 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateWithdraw(ctx context.Context, in *CreateWithdrawRequest, opts ...grpc.CallOption) (*CreateWithdrawResponse, error)
 	CreateWithdraws(ctx context.Context, in *CreateWithdrawsRequest, opts ...grpc.CallOption) (*CreateWithdrawsResponse, error)
-	AddWithdraw(ctx context.Context, in *AddWithdrawRequest, opts ...grpc.CallOption) (*AddWithdrawResponse, error)
+	UpdateWithdraw(ctx context.Context, in *UpdateWithdrawRequest, opts ...grpc.CallOption) (*UpdateWithdrawResponse, error)
 	GetWithdraw(ctx context.Context, in *GetWithdrawRequest, opts ...grpc.CallOption) (*GetWithdrawResponse, error)
 	GetWithdrawOnly(ctx context.Context, in *GetWithdrawOnlyRequest, opts ...grpc.CallOption) (*GetWithdrawOnlyResponse, error)
 	GetWithdraws(ctx context.Context, in *GetWithdrawsRequest, opts ...grpc.CallOption) (*GetWithdrawsResponse, error)
@@ -60,9 +60,9 @@ func (c *managerClient) CreateWithdraws(ctx context.Context, in *CreateWithdraws
 	return out, nil
 }
 
-func (c *managerClient) AddWithdraw(ctx context.Context, in *AddWithdrawRequest, opts ...grpc.CallOption) (*AddWithdrawResponse, error) {
-	out := new(AddWithdrawResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.ledger.withdraw.v1.Manager/AddWithdraw", in, out, opts...)
+func (c *managerClient) UpdateWithdraw(ctx context.Context, in *UpdateWithdrawRequest, opts ...grpc.CallOption) (*UpdateWithdrawResponse, error) {
+	out := new(UpdateWithdrawResponse)
+	err := c.cc.Invoke(ctx, "/ledger.manager.ledger.withdraw.v1.Manager/UpdateWithdraw", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -138,7 +138,7 @@ func (c *managerClient) DeleteWithdraw(ctx context.Context, in *DeleteWithdrawRe
 type ManagerServer interface {
 	CreateWithdraw(context.Context, *CreateWithdrawRequest) (*CreateWithdrawResponse, error)
 	CreateWithdraws(context.Context, *CreateWithdrawsRequest) (*CreateWithdrawsResponse, error)
-	AddWithdraw(context.Context, *AddWithdrawRequest) (*AddWithdrawResponse, error)
+	UpdateWithdraw(context.Context, *UpdateWithdrawRequest) (*UpdateWithdrawResponse, error)
 	GetWithdraw(context.Context, *GetWithdrawRequest) (*GetWithdrawResponse, error)
 	GetWithdrawOnly(context.Context, *GetWithdrawOnlyRequest) (*GetWithdrawOnlyResponse, error)
 	GetWithdraws(context.Context, *GetWithdrawsRequest) (*GetWithdrawsResponse, error)
@@ -159,8 +159,8 @@ func (UnimplementedManagerServer) CreateWithdraw(context.Context, *CreateWithdra
 func (UnimplementedManagerServer) CreateWithdraws(context.Context, *CreateWithdrawsRequest) (*CreateWithdrawsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateWithdraws not implemented")
 }
-func (UnimplementedManagerServer) AddWithdraw(context.Context, *AddWithdrawRequest) (*AddWithdrawResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddWithdraw not implemented")
+func (UnimplementedManagerServer) UpdateWithdraw(context.Context, *UpdateWithdrawRequest) (*UpdateWithdrawResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateWithdraw not implemented")
 }
 func (UnimplementedManagerServer) GetWithdraw(context.Context, *GetWithdrawRequest) (*GetWithdrawResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetWithdraw not implemented")
@@ -232,20 +232,20 @@ func _Manager_CreateWithdraws_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_AddWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddWithdrawRequest)
+func _Manager_UpdateWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateWithdrawRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).AddWithdraw(ctx, in)
+		return srv.(ManagerServer).UpdateWithdraw(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.ledger.withdraw.v1.Manager/AddWithdraw",
+		FullMethod: "/ledger.manager.ledger.withdraw.v1.Manager/UpdateWithdraw",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).AddWithdraw(ctx, req.(*AddWithdrawRequest))
+		return srv.(ManagerServer).UpdateWithdraw(ctx, req.(*UpdateWithdrawRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -392,8 +392,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_CreateWithdraws_Handler,
 		},
 		{
-			MethodName: "AddWithdraw",
-			Handler:    _Manager_AddWithdraw_Handler,
+			MethodName: "UpdateWithdraw",
+			Handler:    _Manager_UpdateWithdraw_Handler,
 		},
 		{
 			MethodName: "GetWithdraw",
