@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package review.manager.v1;
+package review.manager.v2;
 
-option go_package = "github.com/NpoolPlatform/message/npool/review/mgr/v1";
+option go_package = "github.com/NpoolPlatform/message/npool/review/mgr/v2";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";

@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/review/mgr/v2/mgr.proto
 
-package v1
+package v2
 
 import (
 	grpc "google.golang.org/grpc"
@@ -57,7 +57,7 @@ func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "review.manager.v1.Manager",
+	ServiceName: "review.manager.v2.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams:     []grpc.StreamDesc{},
