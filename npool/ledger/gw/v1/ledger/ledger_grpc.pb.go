@@ -27,6 +27,9 @@ type GatewayClient interface {
 	GetDetails(ctx context.Context, in *GetDetailsRequest, opts ...grpc.CallOption) (*GetDetailsResponse, error)
 	GetProfits(ctx context.Context, in *GetProfitsRequest, opts ...grpc.CallOption) (*GetProfitsResponse, error)
 	GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error)
+	CreateWithdraw(ctx context.Context, in *CreateWithdrawRequest, opts ...grpc.CallOption) (*CreateWithdrawRequest, error)
+	GetWithdraws(ctx context.Context, in *GetWithdrawsRequest, opts ...grpc.CallOption) (*GetWithdrawsResponse, error)
+	GetIntervalWithdraws(ctx context.Context, in *GetIntervalWithdrawsRequest, opts ...grpc.CallOption) (*GetIntervalWithdrawsResponse, error)
 }
 
 type gatewayClient struct {
@@ -39,7 +42,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) GetGenerals(ctx context.Context, in *GetGeneralsRequest, opts ...grpc.CallOption) (*GetGeneralsResponse, error) {
 	out := new(GetGeneralsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger.v1.Gateway/GetGenerals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/GetGenerals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -48,7 +51,7 @@ func (c *gatewayClient) GetGenerals(ctx context.Context, in *GetGeneralsRequest,
 
 func (c *gatewayClient) GetIntervalGenerals(ctx context.Context, in *GetIntervalGeneralsRequest, opts ...grpc.CallOption) (*GetIntervalGeneralsResponse, error) {
 	out := new(GetIntervalGeneralsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger.v1.Gateway/GetIntervalGenerals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/GetIntervalGenerals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -57,7 +60,7 @@ func (c *gatewayClient) GetIntervalGenerals(ctx context.Context, in *GetInterval
 
 func (c *gatewayClient) GetDetails(ctx context.Context, in *GetDetailsRequest, opts ...grpc.CallOption) (*GetDetailsResponse, error) {
 	out := new(GetDetailsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger.v1.Gateway/GetDetails", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/GetDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -66,7 +69,7 @@ func (c *gatewayClient) GetDetails(ctx context.Context, in *GetDetailsRequest, o
 
 func (c *gatewayClient) GetProfits(ctx context.Context, in *GetProfitsRequest, opts ...grpc.CallOption) (*GetProfitsResponse, error) {
 	out := new(GetProfitsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger.v1.Gateway/GetProfits", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/GetProfits", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -75,7 +78,34 @@ func (c *gatewayClient) GetProfits(ctx context.Context, in *GetProfitsRequest, o
 
 func (c *gatewayClient) GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error) {
 	out := new(GetIntervalProfitsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger.v1.Gateway/GetIntervalProfits", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/GetIntervalProfits", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) CreateWithdraw(ctx context.Context, in *CreateWithdrawRequest, opts ...grpc.CallOption) (*CreateWithdrawRequest, error) {
+	out := new(CreateWithdrawRequest)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/CreateWithdraw", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetWithdraws(ctx context.Context, in *GetWithdrawsRequest, opts ...grpc.CallOption) (*GetWithdrawsResponse, error) {
+	out := new(GetWithdrawsResponse)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/GetWithdraws", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetIntervalWithdraws(ctx context.Context, in *GetIntervalWithdrawsRequest, opts ...grpc.CallOption) (*GetIntervalWithdrawsResponse, error) {
+	out := new(GetIntervalWithdrawsResponse)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/GetIntervalWithdraws", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -91,6 +121,9 @@ type GatewayServer interface {
 	GetDetails(context.Context, *GetDetailsRequest) (*GetDetailsResponse, error)
 	GetProfits(context.Context, *GetProfitsRequest) (*GetProfitsResponse, error)
 	GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error)
+	CreateWithdraw(context.Context, *CreateWithdrawRequest) (*CreateWithdrawRequest, error)
+	GetWithdraws(context.Context, *GetWithdrawsRequest) (*GetWithdrawsResponse, error)
+	GetIntervalWithdraws(context.Context, *GetIntervalWithdrawsRequest) (*GetIntervalWithdrawsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -112,6 +145,15 @@ func (UnimplementedGatewayServer) GetProfits(context.Context, *GetProfitsRequest
 }
 func (UnimplementedGatewayServer) GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalProfits not implemented")
+}
+func (UnimplementedGatewayServer) CreateWithdraw(context.Context, *CreateWithdrawRequest) (*CreateWithdrawRequest, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateWithdraw not implemented")
+}
+func (UnimplementedGatewayServer) GetWithdraws(context.Context, *GetWithdrawsRequest) (*GetWithdrawsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetWithdraws not implemented")
+}
+func (UnimplementedGatewayServer) GetIntervalWithdraws(context.Context, *GetIntervalWithdrawsRequest) (*GetIntervalWithdrawsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalWithdraws not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -136,7 +178,7 @@ func _Gateway_GetGenerals_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.gateway.ledger.v1.Gateway/GetGenerals",
+		FullMethod: "/ledger.gateway.ledger1.v1.Gateway/GetGenerals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetGenerals(ctx, req.(*GetGeneralsRequest))
@@ -154,7 +196,7 @@ func _Gateway_GetIntervalGenerals_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.gateway.ledger.v1.Gateway/GetIntervalGenerals",
+		FullMethod: "/ledger.gateway.ledger1.v1.Gateway/GetIntervalGenerals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetIntervalGenerals(ctx, req.(*GetIntervalGeneralsRequest))
@@ -172,7 +214,7 @@ func _Gateway_GetDetails_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.gateway.ledger.v1.Gateway/GetDetails",
+		FullMethod: "/ledger.gateway.ledger1.v1.Gateway/GetDetails",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetDetails(ctx, req.(*GetDetailsRequest))
@@ -190,7 +232,7 @@ func _Gateway_GetProfits_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.gateway.ledger.v1.Gateway/GetProfits",
+		FullMethod: "/ledger.gateway.ledger1.v1.Gateway/GetProfits",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetProfits(ctx, req.(*GetProfitsRequest))
@@ -208,10 +250,64 @@ func _Gateway_GetIntervalProfits_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.gateway.ledger.v1.Gateway/GetIntervalProfits",
+		FullMethod: "/ledger.gateway.ledger1.v1.Gateway/GetIntervalProfits",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetIntervalProfits(ctx, req.(*GetIntervalProfitsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_CreateWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateWithdrawRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CreateWithdraw(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.gateway.ledger1.v1.Gateway/CreateWithdraw",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CreateWithdraw(ctx, req.(*CreateWithdrawRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetWithdraws_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWithdrawsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetWithdraws(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.gateway.ledger1.v1.Gateway/GetWithdraws",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetWithdraws(ctx, req.(*GetWithdrawsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetIntervalWithdraws_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIntervalWithdrawsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetIntervalWithdraws(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.gateway.ledger1.v1.Gateway/GetIntervalWithdraws",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetIntervalWithdraws(ctx, req.(*GetIntervalWithdrawsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -220,7 +316,7 @@ func _Gateway_GetIntervalProfits_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ledger.gateway.ledger.v1.Gateway",
+	ServiceName: "ledger.gateway.ledger1.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -242,6 +338,18 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetIntervalProfits",
 			Handler:    _Gateway_GetIntervalProfits_Handler,
+		},
+		{
+			MethodName: "CreateWithdraw",
+			Handler:    _Gateway_CreateWithdraw_Handler,
+		},
+		{
+			MethodName: "GetWithdraws",
+			Handler:    _Gateway_GetWithdraws_Handler,
+		},
+		{
+			MethodName: "GetIntervalWithdraws",
+			Handler:    _Gateway_GetIntervalWithdraws_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
