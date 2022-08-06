@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package review.manager.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/review/mgr/v1";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+}
+
+enum ReviewObjectType {
+    DefaultObjectType     = 0;
+
+    ObjectKyc             = 10;
+    ObjectWithdrawal      = 20;
+}
+
