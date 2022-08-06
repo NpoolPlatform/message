@@ -46,7 +46,7 @@ service Gateway {
         };
     }
 
-    rpc CreateWithdraw (CreateWithdrawRequest) returns (CreateWithdrawRequest) {
+    rpc CreateWithdraw (CreateWithdrawRequest) returns (CreateWithdrawResponse) {
         option (google.api.http) = {
             post: "/v1/create/withdraw"
             body: "*"

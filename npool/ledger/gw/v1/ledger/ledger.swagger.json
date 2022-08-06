@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayledger1v1CreateWithdrawRequest"
+              "$ref": "#/definitions/gatewayledger1v1CreateWithdrawResponse"
             }
           },
           "default": {
@@ -279,6 +279,14 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1WithdrawReq"
+        }
+      }
+    },
+    "gatewayledger1v1CreateWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayledger1v1Withdraw"
         }
       }
     },

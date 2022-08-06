@@ -128,9 +128,10 @@ type ReviewTriggerType int32
 
 const (
 	ReviewTriggerType_DefaultTriggerType ReviewTriggerType = 0
-	ReviewTriggerType_LargeAmount        ReviewTriggerType = 10
-	ReviewTriggerType_Insufficuent       ReviewTriggerType = 20
-	ReviewTriggerType_OutOfGas           ReviewTriggerType = 30
+	// Withdrawal triggers
+	ReviewTriggerType_LargeAmount  ReviewTriggerType = 10
+	ReviewTriggerType_Insufficuent ReviewTriggerType = 20
+	ReviewTriggerType_OutOfGas     ReviewTriggerType = 30
 )
 
 // Enum value maps for ReviewTriggerType.
