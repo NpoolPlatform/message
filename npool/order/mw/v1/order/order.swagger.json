@@ -253,6 +253,13 @@
         "PromotionID": {
           "type": "string"
         },
+        "ID": {
+          "type": "string",
+          "title": "Update"
+        },
+        "PaymentID": {
+          "type": "string"
+        },
         "Canceled": {
           "type": "boolean"
         }

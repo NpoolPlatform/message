@@ -45,7 +45,11 @@ message OrderReq {
     optional uint32 End                       = 200;
 
     optional string PromotionID               = 210;
-    optional bool   Canceled                  = 220;
+
+    // Update
+    optional string ID                        = 220;
+    optional string PaymentID                 = 230;
+    optional bool   Canceled                  = 240;
 }
 
 message Order {
