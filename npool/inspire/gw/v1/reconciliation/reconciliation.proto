@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package inspire.gateway.reconciliation.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/reconciliation";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Gateway {
+    rpc UpdateArchivement (UpdateArchivementRequest) returns (UpdateArchivementResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/archivement"
+            body: "*"
+        };
+    }
+}
+
+message UpdateArchivementRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+}
+
+message UpdateArchivementResponse {
+}
