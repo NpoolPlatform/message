@@ -200,11 +200,12 @@ type Conds struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID        *npool.StringVal `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	AppID     *npool.StringVal `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	CreatedBy *npool.StringVal `protobuf:"bytes,30,opt,name=CreatedBy,proto3" json:"CreatedBy,omitempty"`
-	Role      *npool.StringVal `protobuf:"bytes,40,opt,name=Role,proto3" json:"Role,omitempty"`
-	Default   *npool.BoolVal   `protobuf:"bytes,50,opt,name=Default,proto3" json:"Default,omitempty"`
+	ID        *npool.StringVal      `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+	AppID     *npool.StringVal      `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	CreatedBy *npool.StringVal      `protobuf:"bytes,30,opt,name=CreatedBy,proto3" json:"CreatedBy,omitempty"`
+	Role      *npool.StringVal      `protobuf:"bytes,40,opt,name=Role,proto3" json:"Role,omitempty"`
+	Default   *npool.BoolVal        `protobuf:"bytes,50,opt,name=Default,proto3" json:"Default,omitempty"`
+	Roles     *npool.StringSliceVal `protobuf:"bytes,60,opt,name=Roles,proto3" json:"Roles,omitempty"`
 }
 
 func (x *Conds) Reset() {
@@ -270,6 +271,13 @@ func (x *Conds) GetRole() *npool.StringVal {
 func (x *Conds) GetDefault() *npool.BoolVal {
 	if x != nil {
 		return x.Default
+	}
+	return nil
+}
+
+func (x *Conds) GetRoles() *npool.StringSliceVal {
+	if x != nil {
+		return x.Roles
 	}
 	return nil
 }
@@ -1273,7 +1281,7 @@ var file_npool_appuser_mgr_v2_approle_approle_proto_rawDesc = []byte{
 	0x69, 0x6f, 0x6e, 0x18, 0x32, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x44, 0x65, 0x73, 0x63, 0x72,
 	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x18, 0x0a, 0x07, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c,
 	0x74, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74,
-	0x22, 0xe0, 0x01, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x23, 0x0a, 0x02, 0x49, 0x44,
+	0x22, 0x90, 0x02, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x23, 0x0a, 0x02, 0x49, 0x44,
 	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76,
 	0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x56, 0x61, 0x6c, 0x52, 0x02, 0x49, 0x44, 0x12,
 	0x29, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13,
@@ -1287,7 +1295,10 @@ var file_npool_appuser_mgr_v2_approle_approle_proto_rawDesc = []byte{
 	0x52, 0x04, 0x52, 0x6f, 0x6c, 0x65, 0x12, 0x2b, 0x0a, 0x07, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c,
 	0x74, 0x18, 0x32, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x11, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e,
 	0x76, 0x31, 0x2e, 0x42, 0x6f, 0x6f, 0x6c, 0x56, 0x61, 0x6c, 0x52, 0x07, 0x44, 0x65, 0x66, 0x61,
-	0x75, 0x6c, 0x74, 0x22, 0x52, 0x0a, 0x14, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70,
+	0x75, 0x6c, 0x74, 0x12, 0x2e, 0x0a, 0x05, 0x52, 0x6f, 0x6c, 0x65, 0x73, 0x18, 0x3c, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74,
+	0x72, 0x69, 0x6e, 0x67, 0x53, 0x6c, 0x69, 0x63, 0x65, 0x56, 0x61, 0x6c, 0x52, 0x05, 0x52, 0x6f,
+	0x6c, 0x65, 0x73, 0x22, 0x52, 0x0a, 0x14, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70,
 	0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3a, 0x0a, 0x04, 0x49,
 	0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x61, 0x70, 0x70, 0x75,
 	0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x72,
@@ -1502,6 +1513,7 @@ var file_npool_appuser_mgr_v2_approle_approle_proto_goTypes = []interface{}{
 	(*DeleteAppRoleResponse)(nil),     // 22: appuser.manager.approle.v2.DeleteAppRoleResponse
 	(*npool.StringVal)(nil),           // 23: npool.v1.StringVal
 	(*npool.BoolVal)(nil),             // 24: npool.v1.BoolVal
+	(*npool.StringSliceVal)(nil),      // 25: npool.v1.StringSliceVal
 }
 var file_npool_appuser_mgr_v2_approle_approle_proto_depIdxs = []int32{
 	23, // 0: appuser.manager.approle.v2.Conds.ID:type_name -> npool.v1.StringVal
@@ -1509,45 +1521,46 @@ var file_npool_appuser_mgr_v2_approle_approle_proto_depIdxs = []int32{
 	23, // 2: appuser.manager.approle.v2.Conds.CreatedBy:type_name -> npool.v1.StringVal
 	23, // 3: appuser.manager.approle.v2.Conds.Role:type_name -> npool.v1.StringVal
 	24, // 4: appuser.manager.approle.v2.Conds.Default:type_name -> npool.v1.BoolVal
-	0,  // 5: appuser.manager.approle.v2.CreateAppRoleRequest.Info:type_name -> appuser.manager.approle.v2.AppRoleReq
-	1,  // 6: appuser.manager.approle.v2.CreateAppRoleResponse.Info:type_name -> appuser.manager.approle.v2.AppRole
-	0,  // 7: appuser.manager.approle.v2.CreateAppRolesRequest.Infos:type_name -> appuser.manager.approle.v2.AppRoleReq
-	1,  // 8: appuser.manager.approle.v2.CreateAppRolesResponse.Infos:type_name -> appuser.manager.approle.v2.AppRole
-	1,  // 9: appuser.manager.approle.v2.GetAppRoleResponse.Info:type_name -> appuser.manager.approle.v2.AppRole
-	2,  // 10: appuser.manager.approle.v2.GetAppRolesRequest.Conds:type_name -> appuser.manager.approle.v2.Conds
-	1,  // 11: appuser.manager.approle.v2.GetAppRolesResponse.Infos:type_name -> appuser.manager.approle.v2.AppRole
-	2,  // 12: appuser.manager.approle.v2.GetAppRoleOnlyRequest.Conds:type_name -> appuser.manager.approle.v2.Conds
-	1,  // 13: appuser.manager.approle.v2.GetAppRoleOnlyResponse.Info:type_name -> appuser.manager.approle.v2.AppRole
-	0,  // 14: appuser.manager.approle.v2.UpdateAppRoleRequest.Info:type_name -> appuser.manager.approle.v2.AppRoleReq
-	1,  // 15: appuser.manager.approle.v2.UpdateAppRoleResponse.Info:type_name -> appuser.manager.approle.v2.AppRole
-	2,  // 16: appuser.manager.approle.v2.ExistAppRoleCondsRequest.Conds:type_name -> appuser.manager.approle.v2.Conds
-	2,  // 17: appuser.manager.approle.v2.CountAppRolesRequest.Conds:type_name -> appuser.manager.approle.v2.Conds
-	1,  // 18: appuser.manager.approle.v2.DeleteAppRoleResponse.Info:type_name -> appuser.manager.approle.v2.AppRole
-	3,  // 19: appuser.manager.approle.v2.AppRoleMgr.CreateAppRole:input_type -> appuser.manager.approle.v2.CreateAppRoleRequest
-	5,  // 20: appuser.manager.approle.v2.AppRoleMgr.CreateAppRoles:input_type -> appuser.manager.approle.v2.CreateAppRolesRequest
-	13, // 21: appuser.manager.approle.v2.AppRoleMgr.UpdateAppRole:input_type -> appuser.manager.approle.v2.UpdateAppRoleRequest
-	7,  // 22: appuser.manager.approle.v2.AppRoleMgr.GetAppRole:input_type -> appuser.manager.approle.v2.GetAppRoleRequest
-	11, // 23: appuser.manager.approle.v2.AppRoleMgr.GetAppRoleOnly:input_type -> appuser.manager.approle.v2.GetAppRoleOnlyRequest
-	9,  // 24: appuser.manager.approle.v2.AppRoleMgr.GetAppRoles:input_type -> appuser.manager.approle.v2.GetAppRolesRequest
-	15, // 25: appuser.manager.approle.v2.AppRoleMgr.ExistAppRole:input_type -> appuser.manager.approle.v2.ExistAppRoleRequest
-	17, // 26: appuser.manager.approle.v2.AppRoleMgr.ExistAppRoleConds:input_type -> appuser.manager.approle.v2.ExistAppRoleCondsRequest
-	19, // 27: appuser.manager.approle.v2.AppRoleMgr.CountAppRoles:input_type -> appuser.manager.approle.v2.CountAppRolesRequest
-	21, // 28: appuser.manager.approle.v2.AppRoleMgr.DeleteAppRole:input_type -> appuser.manager.approle.v2.DeleteAppRoleRequest
-	4,  // 29: appuser.manager.approle.v2.AppRoleMgr.CreateAppRole:output_type -> appuser.manager.approle.v2.CreateAppRoleResponse
-	6,  // 30: appuser.manager.approle.v2.AppRoleMgr.CreateAppRoles:output_type -> appuser.manager.approle.v2.CreateAppRolesResponse
-	14, // 31: appuser.manager.approle.v2.AppRoleMgr.UpdateAppRole:output_type -> appuser.manager.approle.v2.UpdateAppRoleResponse
-	8,  // 32: appuser.manager.approle.v2.AppRoleMgr.GetAppRole:output_type -> appuser.manager.approle.v2.GetAppRoleResponse
-	12, // 33: appuser.manager.approle.v2.AppRoleMgr.GetAppRoleOnly:output_type -> appuser.manager.approle.v2.GetAppRoleOnlyResponse
-	10, // 34: appuser.manager.approle.v2.AppRoleMgr.GetAppRoles:output_type -> appuser.manager.approle.v2.GetAppRolesResponse
-	16, // 35: appuser.manager.approle.v2.AppRoleMgr.ExistAppRole:output_type -> appuser.manager.approle.v2.ExistAppRoleResponse
-	18, // 36: appuser.manager.approle.v2.AppRoleMgr.ExistAppRoleConds:output_type -> appuser.manager.approle.v2.ExistAppRoleCondsResponse
-	20, // 37: appuser.manager.approle.v2.AppRoleMgr.CountAppRoles:output_type -> appuser.manager.approle.v2.CountAppRolesResponse
-	22, // 38: appuser.manager.approle.v2.AppRoleMgr.DeleteAppRole:output_type -> appuser.manager.approle.v2.DeleteAppRoleResponse
-	29, // [29:39] is the sub-list for method output_type
-	19, // [19:29] is the sub-list for method input_type
-	19, // [19:19] is the sub-list for extension type_name
-	19, // [19:19] is the sub-list for extension extendee
-	0,  // [0:19] is the sub-list for field type_name
+	25, // 5: appuser.manager.approle.v2.Conds.Roles:type_name -> npool.v1.StringSliceVal
+	0,  // 6: appuser.manager.approle.v2.CreateAppRoleRequest.Info:type_name -> appuser.manager.approle.v2.AppRoleReq
+	1,  // 7: appuser.manager.approle.v2.CreateAppRoleResponse.Info:type_name -> appuser.manager.approle.v2.AppRole
+	0,  // 8: appuser.manager.approle.v2.CreateAppRolesRequest.Infos:type_name -> appuser.manager.approle.v2.AppRoleReq
+	1,  // 9: appuser.manager.approle.v2.CreateAppRolesResponse.Infos:type_name -> appuser.manager.approle.v2.AppRole
+	1,  // 10: appuser.manager.approle.v2.GetAppRoleResponse.Info:type_name -> appuser.manager.approle.v2.AppRole
+	2,  // 11: appuser.manager.approle.v2.GetAppRolesRequest.Conds:type_name -> appuser.manager.approle.v2.Conds
+	1,  // 12: appuser.manager.approle.v2.GetAppRolesResponse.Infos:type_name -> appuser.manager.approle.v2.AppRole
+	2,  // 13: appuser.manager.approle.v2.GetAppRoleOnlyRequest.Conds:type_name -> appuser.manager.approle.v2.Conds
+	1,  // 14: appuser.manager.approle.v2.GetAppRoleOnlyResponse.Info:type_name -> appuser.manager.approle.v2.AppRole
+	0,  // 15: appuser.manager.approle.v2.UpdateAppRoleRequest.Info:type_name -> appuser.manager.approle.v2.AppRoleReq
+	1,  // 16: appuser.manager.approle.v2.UpdateAppRoleResponse.Info:type_name -> appuser.manager.approle.v2.AppRole
+	2,  // 17: appuser.manager.approle.v2.ExistAppRoleCondsRequest.Conds:type_name -> appuser.manager.approle.v2.Conds
+	2,  // 18: appuser.manager.approle.v2.CountAppRolesRequest.Conds:type_name -> appuser.manager.approle.v2.Conds
+	1,  // 19: appuser.manager.approle.v2.DeleteAppRoleResponse.Info:type_name -> appuser.manager.approle.v2.AppRole
+	3,  // 20: appuser.manager.approle.v2.AppRoleMgr.CreateAppRole:input_type -> appuser.manager.approle.v2.CreateAppRoleRequest
+	5,  // 21: appuser.manager.approle.v2.AppRoleMgr.CreateAppRoles:input_type -> appuser.manager.approle.v2.CreateAppRolesRequest
+	13, // 22: appuser.manager.approle.v2.AppRoleMgr.UpdateAppRole:input_type -> appuser.manager.approle.v2.UpdateAppRoleRequest
+	7,  // 23: appuser.manager.approle.v2.AppRoleMgr.GetAppRole:input_type -> appuser.manager.approle.v2.GetAppRoleRequest
+	11, // 24: appuser.manager.approle.v2.AppRoleMgr.GetAppRoleOnly:input_type -> appuser.manager.approle.v2.GetAppRoleOnlyRequest
+	9,  // 25: appuser.manager.approle.v2.AppRoleMgr.GetAppRoles:input_type -> appuser.manager.approle.v2.GetAppRolesRequest
+	15, // 26: appuser.manager.approle.v2.AppRoleMgr.ExistAppRole:input_type -> appuser.manager.approle.v2.ExistAppRoleRequest
+	17, // 27: appuser.manager.approle.v2.AppRoleMgr.ExistAppRoleConds:input_type -> appuser.manager.approle.v2.ExistAppRoleCondsRequest
+	19, // 28: appuser.manager.approle.v2.AppRoleMgr.CountAppRoles:input_type -> appuser.manager.approle.v2.CountAppRolesRequest
+	21, // 29: appuser.manager.approle.v2.AppRoleMgr.DeleteAppRole:input_type -> appuser.manager.approle.v2.DeleteAppRoleRequest
+	4,  // 30: appuser.manager.approle.v2.AppRoleMgr.CreateAppRole:output_type -> appuser.manager.approle.v2.CreateAppRoleResponse
+	6,  // 31: appuser.manager.approle.v2.AppRoleMgr.CreateAppRoles:output_type -> appuser.manager.approle.v2.CreateAppRolesResponse
+	14, // 32: appuser.manager.approle.v2.AppRoleMgr.UpdateAppRole:output_type -> appuser.manager.approle.v2.UpdateAppRoleResponse
+	8,  // 33: appuser.manager.approle.v2.AppRoleMgr.GetAppRole:output_type -> appuser.manager.approle.v2.GetAppRoleResponse
+	12, // 34: appuser.manager.approle.v2.AppRoleMgr.GetAppRoleOnly:output_type -> appuser.manager.approle.v2.GetAppRoleOnlyResponse
+	10, // 35: appuser.manager.approle.v2.AppRoleMgr.GetAppRoles:output_type -> appuser.manager.approle.v2.GetAppRolesResponse
+	16, // 36: appuser.manager.approle.v2.AppRoleMgr.ExistAppRole:output_type -> appuser.manager.approle.v2.ExistAppRoleResponse
+	18, // 37: appuser.manager.approle.v2.AppRoleMgr.ExistAppRoleConds:output_type -> appuser.manager.approle.v2.ExistAppRoleCondsResponse
+	20, // 38: appuser.manager.approle.v2.AppRoleMgr.CountAppRoles:output_type -> appuser.manager.approle.v2.CountAppRolesResponse
+	22, // 39: appuser.manager.approle.v2.AppRoleMgr.DeleteAppRole:output_type -> appuser.manager.approle.v2.DeleteAppRoleResponse
+	30, // [30:40] is the sub-list for method output_type
+	20, // [20:30] is the sub-list for method input_type
+	20, // [20:20] is the sub-list for extension type_name
+	20, // [20:20] is the sub-list for extension extendee
+	0,  // [0:20] is the sub-list for field type_name
 }
 
 func init() { file_npool_appuser_mgr_v2_approle_approle_proto_init() }

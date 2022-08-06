@@ -27,8 +27,6 @@ type AppMwClient interface {
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
 	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
 	GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error)
-	GetSignMethods(ctx context.Context, in *GetSignMethodsRequest, opts ...grpc.CallOption) (*GetSignMethodsResponse, error)
-	GetRecaptchas(ctx context.Context, in *GetRecaptchasRequest, opts ...grpc.CallOption) (*GetRecaptchasResponse, error)
 }
 
 type appMwClient struct {
@@ -84,24 +82,6 @@ func (c *appMwClient) GetUserApps(ctx context.Context, in *GetUserAppsRequest, o
 	return out, nil
 }
 
-func (c *appMwClient) GetSignMethods(ctx context.Context, in *GetSignMethodsRequest, opts ...grpc.CallOption) (*GetSignMethodsResponse, error) {
-	out := new(GetSignMethodsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.AppMw/GetSignMethods", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *appMwClient) GetRecaptchas(ctx context.Context, in *GetRecaptchasRequest, opts ...grpc.CallOption) (*GetRecaptchasResponse, error) {
-	out := new(GetRecaptchasResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.AppMw/GetRecaptchas", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // AppMwServer is the server API for AppMw service.
 // All implementations must embed UnimplementedAppMwServer
 // for forward compatibility
@@ -111,8 +91,6 @@ type AppMwServer interface {
 	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
 	GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error)
-	GetSignMethods(context.Context, *GetSignMethodsRequest) (*GetSignMethodsResponse, error)
-	GetRecaptchas(context.Context, *GetRecaptchasRequest) (*GetRecaptchasResponse, error)
 	mustEmbedUnimplementedAppMwServer()
 }
 
@@ -134,12 +112,6 @@ func (UnimplementedAppMwServer) GetApps(context.Context, *GetAppsRequest) (*GetA
 }
 func (UnimplementedAppMwServer) GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserApps not implemented")
-}
-func (UnimplementedAppMwServer) GetSignMethods(context.Context, *GetSignMethodsRequest) (*GetSignMethodsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSignMethods not implemented")
-}
-func (UnimplementedAppMwServer) GetRecaptchas(context.Context, *GetRecaptchasRequest) (*GetRecaptchasResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetRecaptchas not implemented")
 }
 func (UnimplementedAppMwServer) mustEmbedUnimplementedAppMwServer() {}
 
@@ -244,42 +216,6 @@ func _AppMw_GetUserApps_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppMw_GetSignMethods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSignMethodsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppMwServer).GetSignMethods(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.AppMw/GetSignMethods",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMwServer).GetSignMethods(ctx, req.(*GetSignMethodsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AppMw_GetRecaptchas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetRecaptchasRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppMwServer).GetRecaptchas(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.AppMw/GetRecaptchas",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMwServer).GetRecaptchas(ctx, req.(*GetRecaptchasRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // AppMw_ServiceDesc is the grpc.ServiceDesc for AppMw service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -306,14 +242,6 @@ var AppMw_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetUserApps",
 			Handler:    _AppMw_GetUserApps_Handler,
-		},
-		{
-			MethodName: "GetSignMethods",
-			Handler:    _AppMw_GetSignMethods_Handler,
-		},
-		{
-			MethodName: "GetRecaptchas",
-			Handler:    _AppMw_GetRecaptchas_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -44,6 +44,20 @@
         }
       }
     },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -103,6 +117,12 @@
         },
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "AppIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "RoleIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
