@@ -64,7 +64,8 @@ message Order {
     // @inject_tag: sql:"units"
     uint32 Units                  = 50;
     // @inject_tag: sql:"order_type"
-    order.manager.order.order.v1.OrderType OrderType = 60;
+    string OrderTypeStr           = 60;
+    order.manager.order.order.v1.OrderType OrderType = 61;
     // @inject_tag: sql:"parent_order_id"
     string ParentOrderID          = 70;
     // @inject_tag: sql:"parent_order_good_id"

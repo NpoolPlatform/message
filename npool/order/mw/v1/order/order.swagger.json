@@ -72,9 +72,12 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"units\""
         },
-        "OrderType": {
-          "$ref": "#/definitions/v1OrderType",
+        "OrderTypeStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"order_type\""
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
         },
         "ParentOrderID": {
           "type": "string",
