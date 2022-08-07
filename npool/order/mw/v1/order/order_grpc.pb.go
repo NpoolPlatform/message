@@ -26,6 +26,8 @@ type MiddlewareClient interface {
 	UpdateOrder(ctx context.Context, in *UpdateOrderRequest, opts ...grpc.CallOption) (*UpdateOrderResponse, error)
 	GetOrder(ctx context.Context, in *GetOrderRequest, opts ...grpc.CallOption) (*GetOrderResponse, error)
 	GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error)
+	// Admin apis
+	GetAppOrders(ctx context.Context, in *GetAppOrdersRequest, opts ...grpc.CallOption) (*GetAppOrdersResponse, error)
 }
 
 type middlewareClient struct {
@@ -72,6 +74,15 @@ func (c *middlewareClient) GetOrders(ctx context.Context, in *GetOrdersRequest, 
 	return out, nil
 }
 
+func (c *middlewareClient) GetAppOrders(ctx context.Context, in *GetAppOrdersRequest, opts ...grpc.CallOption) (*GetAppOrdersResponse, error) {
+	out := new(GetAppOrdersResponse)
+	err := c.cc.Invoke(ctx, "/order.middleware.order1.v1.Middleware/GetAppOrders", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -80,6 +91,8 @@ type MiddlewareServer interface {
 	UpdateOrder(context.Context, *UpdateOrderRequest) (*UpdateOrderResponse, error)
 	GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error)
 	GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error)
+	// Admin apis
+	GetAppOrders(context.Context, *GetAppOrdersRequest) (*GetAppOrdersResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -98,6 +111,9 @@ func (UnimplementedMiddlewareServer) GetOrder(context.Context, *GetOrderRequest)
 }
 func (UnimplementedMiddlewareServer) GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrders not implemented")
+}
+func (UnimplementedMiddlewareServer) GetAppOrders(context.Context, *GetAppOrdersRequest) (*GetAppOrdersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppOrders not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -184,6 +200,24 @@ func _Middleware_GetOrders_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetAppOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppOrdersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetAppOrders(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/order.middleware.order1.v1.Middleware/GetAppOrders",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetAppOrders(ctx, req.(*GetAppOrdersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -206,6 +240,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetOrders",
 			Handler:    _Middleware_GetOrders_Handler,
+		},
+		{
+			MethodName: "GetAppOrders",
+			Handler:    _Middleware_GetAppOrders_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
