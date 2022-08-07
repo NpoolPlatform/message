@@ -52,6 +52,9 @@
         }
       }
     },
+    "v1DeleteUserResponse": {
+      "type": "object"
+    },
     "v1GetManyUsersResponse": {
       "type": "object",
       "properties": {

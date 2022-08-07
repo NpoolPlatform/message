@@ -14,7 +14,7 @@ service UserMw {
     rpc GetUser           (GetUserRequest)          returns (GetUserResponse)          {}
     rpc GetManyUsers      (GetManyUsersRequest)     returns (GetManyUsersResponse)     {}
 
-    rpc DeleteUser      (DeleteUserRequest)     returns (GetManyUsersResponse)     {}
+    rpc DeleteUser        (DeleteUserRequest)       returns (DeleteUserResponse)       {}
 
 }
 
