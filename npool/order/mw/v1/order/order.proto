@@ -100,6 +100,10 @@ message Order {
     string PayWithBalanceAmount   = 200;
     // @inject_tag: sql:"paid_at"
     uint32 PaidAt                 = 210;
+    // @inject_tag: sql:"payment_start_amount"
+    string PaymentStartAmount     = 211;
+    // @inject_tag: sql:"payment_finish_amount"
+    string PaymentFinishAmount    = 212;
 
     // @inject_tag: sql:"coupon_id"
     string FixAmountID            = 220;
