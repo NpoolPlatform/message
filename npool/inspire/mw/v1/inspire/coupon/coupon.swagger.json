@@ -75,6 +75,10 @@
           "type": "integer",
           "format": "int64"
         },
+        "CouponID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_id\""
+        },
         "Name": {
           "type": "string",
           "title": "@inject_tag: sql:\"name\""

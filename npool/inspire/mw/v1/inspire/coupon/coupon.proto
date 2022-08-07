@@ -34,6 +34,8 @@ message Coupon {
     // @inject_tag: sql:"duration_days"
     uint32     DurationDays    = 60;
     uint32     End             = 70;
+    // @inject_tag: sql:"coupon_id"
+    string     CouponID        = 71;
     // @inject_tag: sql:"name"
     string     Name            = 80;
     // @inject_tag: sql:"message"
