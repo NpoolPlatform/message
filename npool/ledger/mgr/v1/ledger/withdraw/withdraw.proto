@@ -41,6 +41,7 @@ message WithdrawReq {
     optional string PlatformTransactionID  = 70;
     optional string ChainTransactionID     = 80;
     optional WithdrawState State           = 90;
+    optional string FromOldID              = 100;
 }
 
 message Withdraw {
@@ -54,6 +55,7 @@ message Withdraw {
     string PlatformTransactionID  = 80;
     string ChainTransactionID     = 90;
     WithdrawState State           = 100;
+    string FromOldID              = 101;
 }
 
 message Conds {
