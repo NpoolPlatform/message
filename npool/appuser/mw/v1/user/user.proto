@@ -14,6 +14,8 @@ service UserMw {
     rpc GetUser           (GetUserRequest)          returns (GetUserResponse)          {}
     rpc GetManyUsers      (GetManyUsersRequest)     returns (GetManyUsersResponse)     {}
 
+    rpc DeleteUser      (DeleteUserRequest)     returns (GetManyUsersResponse)     {}
+
 }
 
 message UserReq {
@@ -151,4 +153,11 @@ message GetManyUsersRequest {
 
 message GetManyUsersResponse {
     repeated User Infos = 10;
+}
+
+message DeleteUserRequest {
+    string ID = 10;
+}
+
+message DeleteUserResponse {
 }
