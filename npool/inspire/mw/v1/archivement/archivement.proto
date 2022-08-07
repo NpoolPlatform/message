@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package inspire.middleware.archivement.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/archivement";
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/archivement";
 
 import "npool/inspire/mgr/v1/archivement/detail/detail.proto";
 import "google/api/annotations.proto";
