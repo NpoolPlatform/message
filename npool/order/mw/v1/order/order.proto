@@ -64,7 +64,7 @@ message Order {
     // @inject_tag: sql:"units"
     uint32 Units                  = 50;
     // @inject_tag: sql:"order_type"
-    string OrderType              = 60;
+    order.manager.order.order.v1.OrderType OrderType = 60;
     // @inject_tag: sql:"parent_order_id"
     string ParentOrderID          = 70;
     // @inject_tag: sql:"parent_order_good_id"
@@ -77,19 +77,19 @@ message Order {
     int32  PayWithParentInt       = 110;
 
     // @inject_tag: sql:"payment_coin_type_id"
-    string PaymentCoinTypeID           = 120;
+    string PaymentCoinTypeID       = 120;
     // @inject_tag: sql:"payment_coin_usd_currency"
-    uint64 PaymentCoinUSDCurrencyUint  = 130;
+    string PaymentCoinUSDCurrency  = 130;
     // @inject_tag: sql:"payment_local_coin_usd_currency"
-    uint64 PaymentLocalUSDCurrencyUint = 140;
+    string PaymentLocalUSDCurrency = 140;
     // @inject_tag: sql:"payment_live_coin_usd_currency"
-    uint64 PaymentLiveUSDCurrencyUint  = 150;
+    string PaymentLiveUSDCurrency  = 150;
     // @inject_tag: sql:"payment_id"
     string PaymentID              = 160;
     // @inject_tag: sql:"payment_account_id"
     string PaymentAccountID       = 170;
     // @inject_tag: sql:"payment_amount"
-    uint64 PaymentAmountUint      = 180;
+    string PaymentAmount          = 180;
     // @inject_tag: sql:"payment_state"
     string PaymentState           = 190;
     // @inject_tag: sql:"pay_with_balance_amount"
@@ -110,12 +110,7 @@ message Order {
     uint32 UserCanceled           = 251;
 
     order.manager.order.state.v1.EState    State                        = 260;
-    order.manager.order.order.v1.OrderType Type                         = 270;
     bool                                   PayWithParent                = 280;
-    string                                 PaymentAmount                = 290;
-    string                                 PaymentCoinUSDCurrency       = 300;
-    string                                 PaymentLiveCoinUSDCurrency   = 310;
-    string                                 PaymentLocalCoinUSDCurrency  = 320;
 }
 
 message Conds {

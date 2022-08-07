@@ -73,7 +73,7 @@
           "title": "@inject_tag: sql:\"units\""
         },
         "OrderType": {
-          "type": "string",
+          "$ref": "#/definitions/v1OrderType",
           "title": "@inject_tag: sql:\"order_type\""
         },
         "ParentOrderID": {
@@ -103,19 +103,16 @@
           "type": "string",
           "title": "@inject_tag: sql:\"payment_coin_type_id\""
         },
-        "PaymentCoinUSDCurrencyUint": {
+        "PaymentCoinUSDCurrency": {
           "type": "string",
-          "format": "uint64",
           "title": "@inject_tag: sql:\"payment_coin_usd_currency\""
         },
-        "PaymentLocalUSDCurrencyUint": {
+        "PaymentLocalUSDCurrency": {
           "type": "string",
-          "format": "uint64",
           "title": "@inject_tag: sql:\"payment_local_coin_usd_currency\""
         },
-        "PaymentLiveUSDCurrencyUint": {
+        "PaymentLiveUSDCurrency": {
           "type": "string",
-          "format": "uint64",
           "title": "@inject_tag: sql:\"payment_live_coin_usd_currency\""
         },
         "PaymentID": {
@@ -126,9 +123,8 @@
           "type": "string",
           "title": "@inject_tag: sql:\"payment_account_id\""
         },
-        "PaymentAmountUint": {
+        "PaymentAmount": {
           "type": "string",
-          "format": "uint64",
           "title": "@inject_tag: sql:\"payment_amount\""
         },
         "PaymentState": {
@@ -169,23 +165,8 @@
         "State": {
           "$ref": "#/definitions/v1EState"
         },
-        "Type": {
-          "$ref": "#/definitions/v1OrderType"
-        },
         "PayWithParent": {
           "type": "boolean"
-        },
-        "PaymentAmount": {
-          "type": "string"
-        },
-        "PaymentCoinUSDCurrency": {
-          "type": "string"
-        },
-        "PaymentLiveCoinUSDCurrency": {
-          "type": "string"
-        },
-        "PaymentLocalCoinUSDCurrency": {
-          "type": "string"
         }
       }
     },
