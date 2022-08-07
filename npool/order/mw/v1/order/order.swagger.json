@@ -299,12 +299,13 @@
         "WaitPayment",
         "Paid",
         "PaymentTimeout",
+        "UserCanceled",
         "Canceled",
         "InService",
         "Expired"
       ],
       "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - InService: Cyclation order state"
+      "title": "- WaitPayment: Common state\n - UserCanceled: User set canceled\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
     },
     "v1OrderType": {
       "type": "string",
