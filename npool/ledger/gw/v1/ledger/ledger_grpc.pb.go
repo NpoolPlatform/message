@@ -27,6 +27,7 @@ type GatewayClient interface {
 	GetDetails(ctx context.Context, in *GetDetailsRequest, opts ...grpc.CallOption) (*GetDetailsResponse, error)
 	GetProfits(ctx context.Context, in *GetProfitsRequest, opts ...grpc.CallOption) (*GetProfitsResponse, error)
 	GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error)
+	GetGoodProfits(ctx context.Context, in *GetGoodProfitsRequest, opts ...grpc.CallOption) (*GetGoodProfitsResponse, error)
 	CreateWithdraw(ctx context.Context, in *CreateWithdrawRequest, opts ...grpc.CallOption) (*CreateWithdrawResponse, error)
 	GetWithdraws(ctx context.Context, in *GetWithdrawsRequest, opts ...grpc.CallOption) (*GetWithdrawsResponse, error)
 	GetIntervalWithdraws(ctx context.Context, in *GetIntervalWithdrawsRequest, opts ...grpc.CallOption) (*GetIntervalWithdrawsResponse, error)
@@ -85,6 +86,15 @@ func (c *gatewayClient) GetIntervalProfits(ctx context.Context, in *GetIntervalP
 	return out, nil
 }
 
+func (c *gatewayClient) GetGoodProfits(ctx context.Context, in *GetGoodProfitsRequest, opts ...grpc.CallOption) (*GetGoodProfitsResponse, error) {
+	out := new(GetGoodProfitsResponse)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/GetGoodProfits", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) CreateWithdraw(ctx context.Context, in *CreateWithdrawRequest, opts ...grpc.CallOption) (*CreateWithdrawResponse, error) {
 	out := new(CreateWithdrawResponse)
 	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/CreateWithdraw", in, out, opts...)
@@ -121,6 +131,7 @@ type GatewayServer interface {
 	GetDetails(context.Context, *GetDetailsRequest) (*GetDetailsResponse, error)
 	GetProfits(context.Context, *GetProfitsRequest) (*GetProfitsResponse, error)
 	GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error)
+	GetGoodProfits(context.Context, *GetGoodProfitsRequest) (*GetGoodProfitsResponse, error)
 	CreateWithdraw(context.Context, *CreateWithdrawRequest) (*CreateWithdrawResponse, error)
 	GetWithdraws(context.Context, *GetWithdrawsRequest) (*GetWithdrawsResponse, error)
 	GetIntervalWithdraws(context.Context, *GetIntervalWithdrawsRequest) (*GetIntervalWithdrawsResponse, error)
@@ -145,6 +156,9 @@ func (UnimplementedGatewayServer) GetProfits(context.Context, *GetProfitsRequest
 }
 func (UnimplementedGatewayServer) GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalProfits not implemented")
+}
+func (UnimplementedGatewayServer) GetGoodProfits(context.Context, *GetGoodProfitsRequest) (*GetGoodProfitsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodProfits not implemented")
 }
 func (UnimplementedGatewayServer) CreateWithdraw(context.Context, *CreateWithdrawRequest) (*CreateWithdrawResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateWithdraw not implemented")
@@ -258,6 +272,24 @@ func _Gateway_GetIntervalProfits_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetGoodProfits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodProfitsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetGoodProfits(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.gateway.ledger1.v1.Gateway/GetGoodProfits",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetGoodProfits(ctx, req.(*GetGoodProfitsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_CreateWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateWithdrawRequest)
 	if err := dec(in); err != nil {
@@ -338,6 +370,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetIntervalProfits",
 			Handler:    _Gateway_GetIntervalProfits_Handler,
+		},
+		{
+			MethodName: "GetGoodProfits",
+			Handler:    _Gateway_GetGoodProfits_Handler,
 		},
 		{
 			MethodName: "CreateWithdraw",

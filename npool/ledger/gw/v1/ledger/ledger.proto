@@ -46,6 +46,13 @@ service Gateway {
         };
     }
 
+    rpc GetGoodProfits (GetGoodProfitsRequest) returns (GetGoodProfitsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/goodprofits"
+            body: "*"
+        };
+    }
+
     rpc CreateWithdraw (CreateWithdrawRequest) returns (CreateWithdrawResponse) {
         option (google.api.http) = {
             post: "/v1/create/withdraw"
@@ -162,6 +169,30 @@ message GetIntervalProfitsRequest {
 message GetIntervalProfitsResponse {
     repeated Profit Infos = 10;
     uint32          Total = 20;
+}
+
+message GoodProfit {
+    string GoodID     = 10;
+    string GoodName   = 20;
+    string GoodUnit   = 30;
+    uint32 Units      = 40;
+    string CoinTypeID = 50;
+    string CoinName   = 60;
+    string CoinLogo   = 70;
+    string CoinUnit   = 80;
+    string Incoming   = 90;
+}
+
+message GetGoodProfitsRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    int32  Offset  = 30;
+    int32  Limit   = 40;
+}
+
+message GetGoodProfitsResponse {
+    repeated GoodProfit Infos = 10;
+    uint32              Total = 20;
 }
 
 message Withdraw {
