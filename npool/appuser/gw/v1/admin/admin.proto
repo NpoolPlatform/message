@@ -118,7 +118,7 @@ message GetGenesisRolesRequest {
 }
 
 message GetGenesisRolesResponse {
-    appuser.manager.approle.v2.AppRole Info = 10;
+    repeated appuser.manager.approle.v2.AppRole Infos = 10;
 }
 
 message GetGenesisRoleUsersRequest {

@@ -428,8 +428,11 @@
     "v1GetGenesisRolesResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppRole"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2AppRole"
+          }
         }
       }
     },
