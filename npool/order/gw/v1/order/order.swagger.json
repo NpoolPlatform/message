@@ -207,6 +207,38 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/update/order": {
+      "post": {
+        "operationId": "Gateway_UpdateOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -331,6 +363,9 @@
           "type": "string"
         },
         "GoodName": {
+          "type": "string"
+        },
+        "GoodUnit": {
           "type": "string"
         },
         "Units": {
@@ -550,12 +585,13 @@
         "WaitPayment",
         "Paid",
         "PaymentTimeout",
+        "UserCanceled",
         "Canceled",
         "InService",
         "Expired"
       ],
       "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - InService: Cyclation order state"
+      "title": "- WaitPayment: Common state\n - UserCanceled: User set canceled\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
     },
     "v1GetAppUserOrdersRequest": {
       "type": "object",
@@ -634,6 +670,34 @@
         "Airdrop"
       ],
       "default": "DefaultOrderType"
+    },
+    "v1UpdateOrderRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "PaymentID": {
+          "type": "string"
+        },
+        "Canceled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayorder1v1Order"
+        }
+      }
     }
   }
 }

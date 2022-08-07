@@ -1,0 +1,153 @@
+syntax = "proto3";
+
+package ledger.manager.ledger.withdraw.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mgr/v1/ledger/withdraw";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateWithdraw     (CreateWithdrawRequest)     returns (CreateWithdrawResponse)     {}
+    rpc CreateWithdraws    (CreateWithdrawsRequest)    returns (CreateWithdrawsResponse)    {}
+    rpc UpdateWithdraw     (UpdateWithdrawRequest)     returns (UpdateWithdrawResponse)     {}
+    rpc GetWithdraw        (GetWithdrawRequest)        returns (GetWithdrawResponse)        {}
+    rpc GetWithdrawOnly    (GetWithdrawOnlyRequest)    returns (GetWithdrawOnlyResponse)    {}
+    rpc GetWithdraws       (GetWithdrawsRequest)       returns (GetWithdrawsResponse)       {}
+    rpc ExistWithdraw      (ExistWithdrawRequest)      returns (ExistWithdrawResponse)      {}
+    rpc ExistWithdrawConds (ExistWithdrawCondsRequest) returns (ExistWithdrawCondsResponse) {}
+    rpc CountWithdraws     (CountWithdrawsRequest)     returns (CountWithdrawsResponse)     {}
+    rpc DeleteWithdraw     (DeleteWithdrawRequest)     returns (DeleteWithdrawResponse)     {}
+}
+
+enum WithdrawState {
+    DefaultWithdrawState  = 0;
+    Reviewing             = 10;
+    Transferring          = 20;
+    Rejected              = 30;
+    TransactionFail       = 40;
+    Successful            = 50;
+}
+
+
+message WithdrawReq {
+    optional string ID                     = 10;
+    optional string AppID                  = 20;
+    optional string UserID                 = 30;
+    optional string CoinTypeID             = 40;
+    optional string AccountID              = 50;
+    optional string Amount                 = 60;
+    optional string PlatformTransactionID  = 70;
+    optional string ChainTransactionID     = 80;
+    optional WithdrawState State           = 90;
+}
+
+message Withdraw {
+    string ID                     = 10;
+    string AppID                  = 20;
+    string UserID                 = 30;
+    string CoinTypeID             = 40;
+    string AccountID              = 50;
+    string Amount                 = 60;
+    uint32 CreatedAt              = 70;
+    string PlatformTransactionID  = 80;
+    string ChainTransactionID     = 90;
+    WithdrawState State           = 100;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID         = 10;
+    optional npool.v1.StringVal AppID      = 20;
+    optional npool.v1.StringVal UserID     = 30;
+    optional npool.v1.StringVal CoinTypeID = 40;
+    optional npool.v1.StringVal AccountID  = 50;
+    optional npool.v1.StringVal Amount     = 60;
+    optional npool.v1.Uint32Val CreatedAt  = 70;
+    optional npool.v1.Uint32Val State      = 80;
+}
+
+
+message CreateWithdrawRequest {
+    WithdrawReq Info = 10;
+}
+
+message CreateWithdrawResponse {
+    Withdraw Info = 10;
+}
+
+message CreateWithdrawsRequest {
+    repeated WithdrawReq Infos = 10;
+}
+
+message CreateWithdrawsResponse {
+    repeated Withdraw Infos = 10;
+}
+
+message UpdateWithdrawRequest {
+    WithdrawReq Info = 10;
+}
+
+message UpdateWithdrawResponse {
+    Withdraw Info = 10;
+}
+
+message GetWithdrawRequest {
+    string ID = 10;
+}
+
+message GetWithdrawResponse {
+    Withdraw Info = 10;
+}
+
+message GetWithdrawsRequest {
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetWithdrawsResponse {
+    repeated Withdraw Infos = 10;
+    uint32 Total = 20;
+}
+
+message GetWithdrawOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetWithdrawOnlyResponse {
+    Withdraw Info = 10;
+}
+
+message ExistWithdrawRequest {
+    string ID = 10;
+}
+
+message ExistWithdrawResponse {
+    bool Info = 10;
+}
+
+message ExistWithdrawCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistWithdrawCondsResponse {
+    bool Info = 10;
+}
+
+message CountWithdrawsRequest {
+    Conds Conds = 10;
+}
+
+message CountWithdrawsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteWithdrawRequest {
+    string ID = 10;
+}
+
+message DeleteWithdrawResponse {
+    Withdraw Info = 10;
+}
+

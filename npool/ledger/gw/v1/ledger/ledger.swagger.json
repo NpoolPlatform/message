@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/withdraw": {
+      "post": {
+        "operationId": "Gateway_CreateWithdraw",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/gatewayledger1v1CreateWithdrawResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/gatewayledger1v1CreateWithdrawRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/details": {
       "post": {
         "operationId": "Gateway_GetDetails",
@@ -72,6 +104,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetGeneralsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/goodprofits": {
+      "post": {
+        "operationId": "Gateway_GetGoodProfits",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodProfitsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetGoodProfitsRequest"
             }
           }
         ],
@@ -144,6 +208,38 @@
         ]
       }
     },
+    "/v1/get/intervalwithdraws": {
+      "post": {
+        "operationId": "Gateway_GetIntervalWithdraws",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetIntervalWithdrawsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetIntervalWithdrawsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/profits": {
       "post": {
         "operationId": "Gateway_GetProfits",
@@ -175,9 +271,139 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/get/withdraws": {
+      "post": {
+        "operationId": "Gateway_GetWithdraws",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/gatewayledger1v1GetWithdrawsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/gatewayledger1v1GetWithdrawsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
+    "gatewayledger1v1CreateWithdrawRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        }
+      }
+    },
+    "gatewayledger1v1CreateWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayledger1v1Withdraw"
+        }
+      }
+    },
+    "gatewayledger1v1GetWithdrawsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "gatewayledger1v1GetWithdrawsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/gatewayledger1v1Withdraw"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "gatewayledger1v1Withdraw": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "AddressLabels": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -339,6 +565,48 @@
         }
       }
     },
+    "v1GetGoodProfitsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetGoodProfitsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodProfit"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetIntervalGeneralsRequest": {
       "type": "object",
       "properties": {
@@ -423,6 +691,48 @@
         }
       }
     },
+    "v1GetIntervalWithdrawsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetIntervalWithdrawsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/gatewayledger1v1Withdraw"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetProfitsRequest": {
       "type": "object",
       "properties": {
@@ -457,6 +767,39 @@
         }
       }
     },
+    "v1GoodProfit": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        },
+        "GoodName": {
+          "type": "string"
+        },
+        "GoodUnit": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "Incoming": {
+          "type": "string"
+        }
+      }
+    },
     "v1Profit": {
       "type": "object",
       "properties": {
@@ -476,6 +819,18 @@
           "type": "string"
         }
       }
+    },
+    "v1WithdrawState": {
+      "type": "string",
+      "enum": [
+        "DefaultWithdrawState",
+        "Reviewing",
+        "Transferring",
+        "Rejected",
+        "TransactionFail",
+        "Successful"
+      ],
+      "default": "DefaultWithdrawState"
     }
   }
 }

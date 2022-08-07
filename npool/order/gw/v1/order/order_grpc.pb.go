@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateOrder(ctx context.Context, in *CreateOrderRequest, opts ...grpc.CallOption) (*CreateOrderResponse, error)
+	UpdateOrder(ctx context.Context, in *UpdateOrderRequest, opts ...grpc.CallOption) (*UpdateOrderResponse, error)
 	GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error)
 	CreateUserOrder(ctx context.Context, in *CreateUserOrderRequest, opts ...grpc.CallOption) (*CreateUserOrderResponse, error)
 	CreateAppUserOrder(ctx context.Context, in *CreateAppUserOrderRequest, opts ...grpc.CallOption) (*CreateAppUserOrderResponse, error)
@@ -41,6 +42,15 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 func (c *gatewayClient) CreateOrder(ctx context.Context, in *CreateOrderRequest, opts ...grpc.CallOption) (*CreateOrderResponse, error) {
 	out := new(CreateOrderResponse)
 	err := c.cc.Invoke(ctx, "/order.gateway.order1.v1.Gateway/CreateOrder", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) UpdateOrder(ctx context.Context, in *UpdateOrderRequest, opts ...grpc.CallOption) (*UpdateOrderResponse, error) {
+	out := new(UpdateOrderResponse)
+	err := c.cc.Invoke(ctx, "/order.gateway.order1.v1.Gateway/UpdateOrder", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -97,6 +107,7 @@ func (c *gatewayClient) GetAppUserOrders(ctx context.Context, in *GetAppUserOrde
 // for forward compatibility
 type GatewayServer interface {
 	CreateOrder(context.Context, *CreateOrderRequest) (*CreateOrderResponse, error)
+	UpdateOrder(context.Context, *UpdateOrderRequest) (*UpdateOrderResponse, error)
 	GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error)
 	CreateUserOrder(context.Context, *CreateUserOrderRequest) (*CreateUserOrderResponse, error)
 	CreateAppUserOrder(context.Context, *CreateAppUserOrderRequest) (*CreateAppUserOrderResponse, error)
@@ -111,6 +122,9 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) CreateOrder(context.Context, *CreateOrderRequest) (*CreateOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOrder not implemented")
+}
+func (UnimplementedGatewayServer) UpdateOrder(context.Context, *UpdateOrderRequest) (*UpdateOrderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrder not implemented")
 }
 func (UnimplementedGatewayServer) GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrders not implemented")
@@ -154,6 +168,24 @@ func _Gateway_CreateOrder_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateOrder(ctx, req.(*CreateOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_UpdateOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/order.gateway.order1.v1.Gateway/UpdateOrder",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateOrder(ctx, req.(*UpdateOrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -258,6 +290,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateOrder",
 			Handler:    _Gateway_CreateOrder_Handler,
+		},
+		{
+			MethodName: "UpdateOrder",
+			Handler:    _Gateway_UpdateOrder_Handler,
 		},
 		{
 			MethodName: "GetOrders",

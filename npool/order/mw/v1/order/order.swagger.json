@@ -161,6 +161,11 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"create_at\""
         },
+        "UserCanceled": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"user_canceled\""
+        },
         "State": {
           "$ref": "#/definitions/v1EState"
         },
@@ -252,6 +257,16 @@
         },
         "PromotionID": {
           "type": "string"
+        },
+        "ID": {
+          "type": "string",
+          "title": "Update"
+        },
+        "PaymentID": {
+          "type": "string"
+        },
+        "Canceled": {
+          "type": "boolean"
         }
       }
     },
@@ -289,12 +304,13 @@
         "WaitPayment",
         "Paid",
         "PaymentTimeout",
+        "UserCanceled",
         "Canceled",
         "InService",
         "Expired"
       ],
       "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - InService: Cyclation order state"
+      "title": "- WaitPayment: Common state\n - UserCanceled: User set canceled\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
     },
     "v1OrderType": {
       "type": "string",
@@ -305,6 +321,14 @@
         "Airdrop"
       ],
       "default": "DefaultOrderType"
+    },
+    "v1UpdateOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewareorder1v1Order"
+        }
+      }
     }
   }
 }

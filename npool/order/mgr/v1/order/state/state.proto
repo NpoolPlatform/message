@@ -9,25 +9,15 @@ import "npool/npool.proto";
 
 // Service Name
 service Manager {
-    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {}
-
-    rpc CreateState (CreateStateRequest) returns (CreateStateResponse) {}
-
-    rpc CreateStates (CreateStatesRequest) returns (CreateStatesResponse) {}
-
-    rpc UpdateState (UpdateStateRequest) returns (UpdateStateResponse) {}
-
-    rpc GetState (GetStateRequest) returns (GetStateResponse) {}
-
-    rpc GetStateOnly (GetStateOnlyRequest) returns (GetStateOnlyResponse) {}
-
-    rpc GetStates (GetStatesRequest) returns (GetStatesResponse) {}
-
-    rpc ExistState (ExistStateRequest) returns (ExistStateResponse) {}
-
+    rpc CreateState     (CreateStateRequest)     returns (CreateStateResponse)     {}
+    rpc CreateStates    (CreateStatesRequest)    returns (CreateStatesResponse)    {}
+    rpc UpdateState     (UpdateStateRequest)     returns (UpdateStateResponse)     {}
+    rpc GetState        (GetStateRequest)        returns (GetStateResponse)        {}
+    rpc GetStateOnly    (GetStateOnlyRequest)    returns (GetStateOnlyResponse)    {}
+    rpc GetStates       (GetStatesRequest)       returns (GetStatesResponse)       {}
+    rpc ExistState      (ExistStateRequest)      returns (ExistStateResponse)      {}
     rpc ExistStateConds (ExistStateCondsRequest) returns (ExistStateCondsResponse) {}
-
-    rpc CountStates (CountStatesRequest) returns (CountStatesResponse) {}
+    rpc CountStates     (CountStatesRequest)     returns (CountStatesResponse)     {}
 }
 
 enum EState {
@@ -37,6 +27,9 @@ enum EState {
     WaitPayment       = 10;
     Paid              = 20;
     PaymentTimeout    = 30;
+    // User set canceled
+    UserCanceled      = 31;
+    // Platform confirm canceled
     Canceled          = 40;
 
     // Cyclation order state

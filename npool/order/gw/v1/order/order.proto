@@ -19,6 +19,13 @@ service Gateway {
         };
     }
 
+    rpc UpdateOrder (UpdateOrderRequest) returns (UpdateOrderResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/order"
+            body: "*"
+        };
+    }
+
     rpc GetOrders (GetOrdersRequest) returns (GetOrdersResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders"
@@ -75,6 +82,7 @@ message Order {
 
     string GoodID                 = 120;
     string GoodName               = 130;
+    string GoodUnit               = 131;
     uint32 Units                  = 140;
 
     string PaymentID              = 150;
@@ -126,6 +134,18 @@ message CreateOrderRequest {
 }
 
 message CreateOrderResponse {
+    Order Info = 10;
+}
+
+message UpdateOrderRequest {
+    string          AppID     = 10;
+    string          UserID    = 20;
+    string          ID        = 30;
+    string          PaymentID = 40;
+    optional bool   Canceled  = 50;
+}
+
+message UpdateOrderResponse {
     Order Info = 10;
 }
 

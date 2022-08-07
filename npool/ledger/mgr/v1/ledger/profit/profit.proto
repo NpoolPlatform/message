@@ -9,27 +9,16 @@ import "npool/npool.proto";
 
 // Service Name
 service Manager {
-    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {}
-
-    rpc CreateProfit (CreateProfitRequest) returns (CreateProfitResponse) {}
-
-    rpc CreateProfits (CreateProfitsRequest) returns (CreateProfitsResponse) {}
-
-    rpc AddProfit (AddProfitRequest) returns (AddProfitResponse) {}
-
-    rpc GetProfit (GetProfitRequest) returns (GetProfitResponse) {}
-
-    rpc GetProfitOnly (GetProfitOnlyRequest) returns (GetProfitOnlyResponse) {}
-
-    rpc GetProfits (GetProfitsRequest) returns (GetProfitsResponse) {}
-
-    rpc ExistProfit (ExistProfitRequest) returns (ExistProfitResponse) {}
-
+    rpc CreateProfit     (CreateProfitRequest)     returns (CreateProfitResponse)     {}
+    rpc CreateProfits    (CreateProfitsRequest)    returns (CreateProfitsResponse)    {}
+    rpc AddProfit        (AddProfitRequest)        returns (AddProfitResponse)        {}
+    rpc GetProfit        (GetProfitRequest)        returns (GetProfitResponse)        {}
+    rpc GetProfitOnly    (GetProfitOnlyRequest)    returns (GetProfitOnlyResponse)    {}
+    rpc GetProfits       (GetProfitsRequest)       returns (GetProfitsResponse)       {}
+    rpc ExistProfit      (ExistProfitRequest)      returns (ExistProfitResponse)      {}
     rpc ExistProfitConds (ExistProfitCondsRequest) returns (ExistProfitCondsResponse) {}
-
-    rpc CountProfits (CountProfitsRequest) returns (CountProfitsResponse) {}
-
-    rpc DeleteProfit (DeleteProfitRequest) returns (DeleteProfitResponse) {}
+    rpc CountProfits     (CountProfitsRequest)     returns (CountProfitsResponse)     {}
+    rpc DeleteProfit     (DeleteProfitRequest)     returns (DeleteProfitResponse)     {}
 }
 
 message ProfitReq {

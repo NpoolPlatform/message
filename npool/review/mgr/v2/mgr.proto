@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package review.manager.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/review/mgr/v2";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+}
+
+enum ReviewObjectType {
+    DefaultObjectType     = 0;
+
+    ObjectKyc             = 10;
+    ObjectWithdrawal      = 20;
+}
+
+enum ReviewState {
+    DefaultReviewState    = 0;
+
+    Approved              = 10;
+    Wait                  = 20;
+    Rejected              = 30;
+}
+
+enum ReviewTriggerType {
+    DefaultTriggerType    = 0;
+
+    // Withdrawal triggers
+    AutoReviewed          = 10;
+    LargeAmount           = 20;
+    InsufficientFunds     = 30;
+    InsufficientGas       = 40;
+}

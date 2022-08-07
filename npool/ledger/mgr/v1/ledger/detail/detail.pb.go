@@ -10,7 +10,7 @@ import (
 	npool "github.com/NpoolPlatform/message/npool"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
+	_ "google.golang.org/protobuf/types/known/emptypb"
 	reflect "reflect"
 	sync "sync"
 )
@@ -1495,12 +1495,8 @@ var file_npool_ledger_mgr_v1_ledger_detail_detail_proto_rawDesc = []byte{
 	0x0a, 0x16, 0x54, 0x65, 0x63, 0x68, 0x6e, 0x69, 0x71, 0x75, 0x65, 0x46, 0x65, 0x65, 0x43, 0x6f,
 	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x10, 0x67, 0x12, 0x0b, 0x0a, 0x07, 0x44, 0x65,
 	0x70, 0x6f, 0x73, 0x69, 0x74, 0x10, 0x68, 0x12, 0x0f, 0x0a, 0x0a, 0x57, 0x69, 0x74, 0x68, 0x64,
-	0x72, 0x61, 0x77, 0x61, 0x6c, 0x10, 0xc8, 0x01, 0x32, 0xc4, 0x08, 0x0a, 0x07, 0x4d, 0x61, 0x6e,
-	0x61, 0x67, 0x65, 0x72, 0x12, 0x3e, 0x0a, 0x07, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12,
-	0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
-	0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x19, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e,
-	0x76, 0x31, 0x2e, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x12, 0x7d, 0x0a, 0x0c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x65,
+	0x72, 0x61, 0x77, 0x61, 0x6c, 0x10, 0xc8, 0x01, 0x32, 0x84, 0x08, 0x0a, 0x07, 0x4d, 0x61, 0x6e,
+	0x61, 0x67, 0x65, 0x72, 0x12, 0x7d, 0x0a, 0x0c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x65,
 	0x74, 0x61, 0x69, 0x6c, 0x12, 0x34, 0x2e, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x61,
 	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e, 0x64, 0x65, 0x74,
 	0x61, 0x69, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x65, 0x74,
@@ -1609,8 +1605,6 @@ var file_npool_ledger_mgr_v1_ledger_detail_detail_proto_goTypes = []interface{}{
 	(*CountDetailsResponse)(nil),     // 20: ledger.manager.ledger.detail.v1.CountDetailsResponse
 	(*npool.StringVal)(nil),          // 21: npool.v1.StringVal
 	(*npool.Int32Val)(nil),           // 22: npool.v1.Int32Val
-	(*emptypb.Empty)(nil),            // 23: google.protobuf.Empty
-	(*npool.VersionResponse)(nil),    // 24: npool.v1.VersionResponse
 }
 var file_npool_ledger_mgr_v1_ledger_detail_detail_proto_depIdxs = []int32{
 	0,  // 0: ledger.manager.ledger.detail.v1.DetailReq.IOType:type_name -> ledger.manager.ledger.detail.v1.IOType
@@ -1638,26 +1632,24 @@ var file_npool_ledger_mgr_v1_ledger_detail_detail_proto_depIdxs = []int32{
 	3,  // 22: ledger.manager.ledger.detail.v1.GetDetailOnlyResponse.Info:type_name -> ledger.manager.ledger.detail.v1.Detail
 	4,  // 23: ledger.manager.ledger.detail.v1.ExistDetailCondsRequest.Conds:type_name -> ledger.manager.ledger.detail.v1.Conds
 	4,  // 24: ledger.manager.ledger.detail.v1.CountDetailsRequest.Conds:type_name -> ledger.manager.ledger.detail.v1.Conds
-	23, // 25: ledger.manager.ledger.detail.v1.Manager.Version:input_type -> google.protobuf.Empty
-	5,  // 26: ledger.manager.ledger.detail.v1.Manager.CreateDetail:input_type -> ledger.manager.ledger.detail.v1.CreateDetailRequest
-	7,  // 27: ledger.manager.ledger.detail.v1.Manager.CreateDetails:input_type -> ledger.manager.ledger.detail.v1.CreateDetailsRequest
-	9,  // 28: ledger.manager.ledger.detail.v1.Manager.GetDetail:input_type -> ledger.manager.ledger.detail.v1.GetDetailRequest
-	13, // 29: ledger.manager.ledger.detail.v1.Manager.GetDetailOnly:input_type -> ledger.manager.ledger.detail.v1.GetDetailOnlyRequest
-	11, // 30: ledger.manager.ledger.detail.v1.Manager.GetDetails:input_type -> ledger.manager.ledger.detail.v1.GetDetailsRequest
-	15, // 31: ledger.manager.ledger.detail.v1.Manager.ExistDetail:input_type -> ledger.manager.ledger.detail.v1.ExistDetailRequest
-	17, // 32: ledger.manager.ledger.detail.v1.Manager.ExistDetailConds:input_type -> ledger.manager.ledger.detail.v1.ExistDetailCondsRequest
-	19, // 33: ledger.manager.ledger.detail.v1.Manager.CountDetails:input_type -> ledger.manager.ledger.detail.v1.CountDetailsRequest
-	24, // 34: ledger.manager.ledger.detail.v1.Manager.Version:output_type -> npool.v1.VersionResponse
-	6,  // 35: ledger.manager.ledger.detail.v1.Manager.CreateDetail:output_type -> ledger.manager.ledger.detail.v1.CreateDetailResponse
-	8,  // 36: ledger.manager.ledger.detail.v1.Manager.CreateDetails:output_type -> ledger.manager.ledger.detail.v1.CreateDetailsResponse
-	10, // 37: ledger.manager.ledger.detail.v1.Manager.GetDetail:output_type -> ledger.manager.ledger.detail.v1.GetDetailResponse
-	14, // 38: ledger.manager.ledger.detail.v1.Manager.GetDetailOnly:output_type -> ledger.manager.ledger.detail.v1.GetDetailOnlyResponse
-	12, // 39: ledger.manager.ledger.detail.v1.Manager.GetDetails:output_type -> ledger.manager.ledger.detail.v1.GetDetailsResponse
-	16, // 40: ledger.manager.ledger.detail.v1.Manager.ExistDetail:output_type -> ledger.manager.ledger.detail.v1.ExistDetailResponse
-	18, // 41: ledger.manager.ledger.detail.v1.Manager.ExistDetailConds:output_type -> ledger.manager.ledger.detail.v1.ExistDetailCondsResponse
-	20, // 42: ledger.manager.ledger.detail.v1.Manager.CountDetails:output_type -> ledger.manager.ledger.detail.v1.CountDetailsResponse
-	34, // [34:43] is the sub-list for method output_type
-	25, // [25:34] is the sub-list for method input_type
+	5,  // 25: ledger.manager.ledger.detail.v1.Manager.CreateDetail:input_type -> ledger.manager.ledger.detail.v1.CreateDetailRequest
+	7,  // 26: ledger.manager.ledger.detail.v1.Manager.CreateDetails:input_type -> ledger.manager.ledger.detail.v1.CreateDetailsRequest
+	9,  // 27: ledger.manager.ledger.detail.v1.Manager.GetDetail:input_type -> ledger.manager.ledger.detail.v1.GetDetailRequest
+	13, // 28: ledger.manager.ledger.detail.v1.Manager.GetDetailOnly:input_type -> ledger.manager.ledger.detail.v1.GetDetailOnlyRequest
+	11, // 29: ledger.manager.ledger.detail.v1.Manager.GetDetails:input_type -> ledger.manager.ledger.detail.v1.GetDetailsRequest
+	15, // 30: ledger.manager.ledger.detail.v1.Manager.ExistDetail:input_type -> ledger.manager.ledger.detail.v1.ExistDetailRequest
+	17, // 31: ledger.manager.ledger.detail.v1.Manager.ExistDetailConds:input_type -> ledger.manager.ledger.detail.v1.ExistDetailCondsRequest
+	19, // 32: ledger.manager.ledger.detail.v1.Manager.CountDetails:input_type -> ledger.manager.ledger.detail.v1.CountDetailsRequest
+	6,  // 33: ledger.manager.ledger.detail.v1.Manager.CreateDetail:output_type -> ledger.manager.ledger.detail.v1.CreateDetailResponse
+	8,  // 34: ledger.manager.ledger.detail.v1.Manager.CreateDetails:output_type -> ledger.manager.ledger.detail.v1.CreateDetailsResponse
+	10, // 35: ledger.manager.ledger.detail.v1.Manager.GetDetail:output_type -> ledger.manager.ledger.detail.v1.GetDetailResponse
+	14, // 36: ledger.manager.ledger.detail.v1.Manager.GetDetailOnly:output_type -> ledger.manager.ledger.detail.v1.GetDetailOnlyResponse
+	12, // 37: ledger.manager.ledger.detail.v1.Manager.GetDetails:output_type -> ledger.manager.ledger.detail.v1.GetDetailsResponse
+	16, // 38: ledger.manager.ledger.detail.v1.Manager.ExistDetail:output_type -> ledger.manager.ledger.detail.v1.ExistDetailResponse
+	18, // 39: ledger.manager.ledger.detail.v1.Manager.ExistDetailConds:output_type -> ledger.manager.ledger.detail.v1.ExistDetailCondsResponse
+	20, // 40: ledger.manager.ledger.detail.v1.Manager.CountDetails:output_type -> ledger.manager.ledger.detail.v1.CountDetailsResponse
+	33, // [33:41] is the sub-list for method output_type
+	25, // [25:33] is the sub-list for method input_type
 	25, // [25:25] is the sub-list for extension type_name
 	25, // [25:25] is the sub-list for extension extendee
 	0,  // [0:25] is the sub-list for field type_name

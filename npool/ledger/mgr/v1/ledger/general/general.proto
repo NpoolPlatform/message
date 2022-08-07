@@ -9,27 +9,16 @@ import "npool/npool.proto";
 
 // Service Name
 service Manager {
-    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {}
-
-    rpc CreateGeneral (CreateGeneralRequest) returns (CreateGeneralResponse) {}
-
-    rpc CreateGenerals (CreateGeneralsRequest) returns (CreateGeneralsResponse) {}
-
-    rpc AddGeneral (AddGeneralRequest) returns (AddGeneralResponse) {}
-
-    rpc GetGeneral (GetGeneralRequest) returns (GetGeneralResponse) {}
-
-    rpc GetGeneralOnly (GetGeneralOnlyRequest) returns (GetGeneralOnlyResponse) {}
-
-    rpc GetGenerals (GetGeneralsRequest) returns (GetGeneralsResponse) {}
-
-    rpc ExistGeneral (ExistGeneralRequest) returns (ExistGeneralResponse) {}
-
+    rpc CreateGeneral     (CreateGeneralRequest)     returns (CreateGeneralResponse)     {}
+    rpc CreateGenerals    (CreateGeneralsRequest)    returns (CreateGeneralsResponse)    {}
+    rpc AddGeneral        (AddGeneralRequest)        returns (AddGeneralResponse)        {}
+    rpc GetGeneral        (GetGeneralRequest)        returns (GetGeneralResponse)        {}
+    rpc GetGeneralOnly    (GetGeneralOnlyRequest)    returns (GetGeneralOnlyResponse)    {}
+    rpc GetGenerals       (GetGeneralsRequest)       returns (GetGeneralsResponse)       {}
+    rpc ExistGeneral      (ExistGeneralRequest)      returns (ExistGeneralResponse)      {}
     rpc ExistGeneralConds (ExistGeneralCondsRequest) returns (ExistGeneralCondsResponse) {}
-
-    rpc CountGenerals (CountGeneralsRequest) returns (CountGeneralsResponse) {}
-
-    rpc DeleteGeneral (DeleteGeneralRequest) returns (DeleteGeneralResponse) {}
+    rpc CountGenerals     (CountGeneralsRequest)     returns (CountGeneralsResponse)     {}
+    rpc DeleteGeneral     (DeleteGeneralRequest)     returns (DeleteGeneralResponse)     {}
 }
 
 message GeneralReq {
