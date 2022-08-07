@@ -11,6 +11,13 @@ import "npool/npool.proto";
 
 // Service Name
 service Middleware {
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/v1/version"
+            body: "*"
+        };
+    }
+
     rpc BookKeeping (BookKeepingRequest)  returns (BookKeepingResponse) {}
 }
 
