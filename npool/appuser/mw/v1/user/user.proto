@@ -57,6 +57,8 @@ message UserReq {
     optional bool   Banned                     = 250;
     optional string BanMessage                 = 260;
 
+    // RoleUser
+    optional string RoleID                     = 270;
 }
 
 message User {

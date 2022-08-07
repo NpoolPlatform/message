@@ -299,6 +299,10 @@
         },
         "BanMessage": {
           "type": "string"
+        },
+        "RoleID": {
+          "type": "string",
+          "title": "RoleUser"
         }
       }
     }
