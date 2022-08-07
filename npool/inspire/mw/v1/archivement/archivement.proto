@@ -2,20 +2,22 @@ syntax = "proto3";
 
 package inspire.middleware.archivement.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/archivement";
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/archivement";
 
+import "npool/inspire/mgr/v1/archivement/detail/detail.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
 service Middleware {
-    // Method Version
-    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
-        option (google.api.http) = {
-            post: "/v1/version"
-            body: "*"
-        };
-    }
+    rpc BookKeeping (BookKeepingRequest)  returns (BookKeepingResponse) {}
+}
+
+message BookKeepingRequest {
+    inspire.manager.archivement.detail.v1.DetailReq Info = 10;
+}
+
+message BookKeepingResponse {
 }
 
