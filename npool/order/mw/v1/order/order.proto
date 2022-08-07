@@ -106,6 +106,8 @@ message Order {
 
     // @inject_tag: sql:"create_at"
     uint32 CreatedAt              = 250;
+    // @inject_tag: sql:"user_canceled"
+    uint32 UserCanceled           = 251;
 
     order.manager.order.state.v1.EState    State                        = 260;
     order.manager.order.order.v1.OrderType Type                         = 270;
